@@ -15,6 +15,7 @@ import argparse
 import hashlib
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from fnmatch import fnmatch
 from pathlib import Path
@@ -231,14 +232,35 @@ def _build_artwork_deck(s: _Slot) -> dict:
     choices = {'title': build_choices(arts, 'title', count, bias),
                'creator': build_choices(arts, 'creator', count, bias)}
 
-    items, labels, prompts, answers, imgs, opts = [], [], [], [], [], []
-    assets: dict[str, bytes] = {}
-    for a in arts:
+    # Download + WebP-encode images concurrently: serial + a per-image throttle would take
+    # hours at 10k scale. A thread pool naturally spaces requests; fetch_raw's 429 Retry-After
+    # backoff remains the politeness safety valve, and cached originals skip the network.
+    workers = cfg.get('image_workers', 8)
+    cache_only = cfg.get('cache_only', False)  # checkpoint: assemble only already-downloaded works
+    hint = max(640, px * 2)  # a modest thumbnail is plenty for a px-sized WebP (was 1024)
+
+    def _grab(a):
         rel = f'assets/{deck_stem}/{a.qid}.webp'
         try:
-            assets[rel] = to_webp(fetch_raw(a.image_url, CACHE_DIR, a.qid, throttle=1.0), px)
+            raw = fetch_raw(a.image_url, CACHE_DIR, a.qid, hint_width=hint, cache_only=cache_only)
+            return a.qid, rel, to_webp(raw, px), None
         except Exception as e:  # dead/oversized image — skip this artwork, keep the deck
-            print(f'  ! {a.qid} ({a.title}): image fetch failed ({e}); skipped', file=sys.stderr)
+            return a.qid, rel, None, e
+
+    assets: dict[str, bytes] = {}
+    rel_by_qid: dict[str, str] = {}
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for qid, rel, webp, err in ex.map(_grab, arts):
+            if err is not None:
+                print(f'  ! {qid}: image fetch failed ({err}); skipped', file=sys.stderr)
+                continue
+            assets[rel] = webp
+            rel_by_qid[qid] = rel
+
+    items, labels, prompts, answers, imgs, opts = [], [], [], [], [], []
+    for a in arts:  # assemble in fame order, keeping only successfully-imaged works
+        rel = rel_by_qid.get(a.qid)
+        if rel is None:
             continue
         for attr in ('title', 'creator'):
             if attr == 'creator' and not a.creator:

@@ -1,16 +1,32 @@
-# Famous paintings → image + multiple-choice deck (quiz mode `image-mc`).
+# Famous artworks → image + multiple-choice deck (quiz mode `image-mc`).
 # See docs/design/artworks-pipeline.md. Export with:  deck-export --only 'artworks_*'
 # Preview the resolved set without downloading images:  deck-artworks --config <this>
+#
+# Expanded 2026-07-24: paintings-only 290 → broadened media, fame floor sitelinks>=5, capped
+# at the 10k most famous. Fetch sweeps sitelink bands per media type (a whole-catalog ORDER BY
+# times out WDQS); results are merged + fame-sorted + capped client-side.
 
-deck_name: "Famous Paintings"
+deck_name: "Famous Artworks"
 group: "Artworks"
 
 source: wikidata            # wikidata | curated | collection
-instance_of: [Q3305213]     # painting
-min_sitelinks: 20           # fame threshold (# of Wikipedias); 20 ≈ ~320 works (live count 2026-07)
-limit: 320                  # cap the deck; raise both to grow toward the deep catalog
+instance_of:                # broadened media to keep recognizability high past paintings-only
+  - Q3305213                # painting
+  - Q860861                 # sculpture
+  - Q93184                  # drawing
+  - Q11060274               # print
+  - Q125191                 # photograph
+min_sitelinks: 5            # fame floor (# of Wikipedias) — broadly-known-and-up across media
+limit: 10000                # cap at the 10k most famous
+# Download is Commons-rate-limited (~15-40/min); the full 10k takes hours (resumable — images
+# cache under cache/artworks/ by QID). To export a CHECKPOINT deck from what's already cached
+# without downloading more, add:  cache_only: true  (currently ~4327 works cached & shipped).
+# image_workers: 8 (default) — enough in-flight to absorb 429 retry-backoff.
 
 image_px: 480               # longest side of the downsized WebP (~25 KB each)
+image_workers: 8            # parallel downloads; Commons caps ~40/min via 429s, and enough
+                            # in-flight workers is needed to absorb the retry-backoff waits
+                            # (3 workers under-fills and craters to ~10/min; 8 sustains ~36/min)
 distractors:
   count: 4
   same_creator_bias: true   # title distractors prefer same-creator / same-era works

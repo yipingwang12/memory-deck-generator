@@ -41,18 +41,23 @@ def _retry_wait(exc: Exception, delay: float) -> float:
 
 def fetch_raw(url: str, cache_dir: Path, key: str, *, hint_width: int = 1024,
               session: requests.Session | None = None, retries: int = 5,
-              throttle: float = 0.0) -> bytes:
+              throttle: float = 0.0, cache_only: bool = False) -> bytes:
     """Download (and cache under ``cache_dir/<key>.orig``) the source image bytes.
 
     Sleeps ``throttle`` seconds before each network request to stay under Commons' bot rate
     limit, and retries with exponential backoff (honouring a 429 ``Retry-After``) so a
     transient rate-limit doesn't silently drop the artwork. Cache hits skip both. The caller
-    decides how to handle a final raise (skip + warn on a dead image, not abort the deck)."""
+    decides how to handle a final raise (skip + warn on a dead image, not abort the deck).
+
+    ``cache_only`` never touches the network — a cache miss raises, so a checkpoint export
+    assembles exactly the already-downloaded works and skips the rest."""
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
     cached = cache_dir / f"{key}.orig"
     if cached.exists():
         return cached.read_bytes()
+    if cache_only:
+        raise FileNotFoundError(f"{key}: not cached (cache_only)")
 
     session = session or requests.Session()
     session.headers["User-Agent"] = _UA

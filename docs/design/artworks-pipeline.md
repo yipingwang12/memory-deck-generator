@@ -1,10 +1,24 @@
 # Design — Famous Artworks pipeline (`deck-artworks`)
 
-*Status: scoping, 2026-07-17. A new generator pipeline: Wikidata → famous paintings →
-downsized WebP image assets + an expanded two-card artifact with baked multiple-choice
-distractors, emitted across the `deck-export` seam. Quiz side (display, MC scoring,
-PWA image caching): [`memory-quiz-app/docs/design/artwork-mc-mode.md`](../../../memory-quiz-app/docs/design/artwork-mc-mode.md).
-Two coordinated branches (`artwork-cards`).*
+*Status: **built + scaled (2026-07-24)**. Wikidata → famous artworks → downsized WebP assets +
+a two-card artifact with baked multiple-choice distractors, over the `deck-export` seam. Quiz
+side: [`memory-quiz-app/docs/design/artwork-mc-mode.md`](../../../memory-quiz-app/docs/design/artwork-mc-mode.md).
+**`artworks_famous` grown 290 → 4,327 works (8,489 cards)** — broadened media (painting +
+sculpture + drawing + print + photograph), fame floor sitelinks ≥5, a checkpoint of the deep
+catalog (extendable to the 10k cap; download is Commons-rate-limited, see below).*
+
+### Scaling additions (2026-07-24)
+- **Multiple media types**: `instance_of` is a list; `fetch_artworks` runs one query per type and merges.
+- **Sitelink-band fetching**: a whole-catalog `ORDER BY DESC(sitelinks)` overflows WDQS's 60 s
+  limit (flaky 504s well before), so `fetch_artworks` sweeps narrow `_sitelink_bands` (no ORDER
+  BY) and sorts/limits client-side. Bands that fail after retries are skipped, not fatal.
+- **Retry with backoff** (`wikidata._sparql_session`): 5xx/429/timeout/**truncated-JSON** retried.
+- **Robust date parse**: a P571 'unknown value' (genid URL) → `inception=None`, not a crash.
+- **Parallel downloads** (`deck_export`, thread pool, `image_workers`): Commons still caps the
+  *successful* rate ~15–40/min per IP via 429s (backoff-paced), so 10k images take hours —
+  **resumable** (cache keyed by QID). **`cache_only: true`** exports a checkpoint deck from the
+  already-downloaded images without fetching more (how the 4,327 shipped). Thumbnail hint width
+  dropped 1024 → `2·image_px` (smaller/faster).
 
 ## Goal
 Produce committed artwork decks for the quiz's image + multiple-choice mode: for each famous

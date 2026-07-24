@@ -83,11 +83,24 @@ class TestFetch:
         arts = _fetch([_binding("Q1", "T", "Q2", "C", inception="-0450-01-01T00:00:00Z")])
         assert arts[0].inception == -450
 
+    def test_unknown_value_inception_is_none_not_crash(self):
+        # P571 'unknown value' surfaces as a genid URL — must not crash the fetch
+        arts = _fetch([_binding("Q1", "T", "Q2", "C",
+                                inception="http://www.wikidata.org/.well-known/genid/abc")])
+        assert arts[0].inception is None
+
 
 class TestQuery:
     def test_wikidata_mode_uses_threshold(self):
         q = build_query({"source": "wikidata", "min_sitelinks": 40})
         assert "wdt:P31 wd:Q3305213" in q and "?sitelinks >= 40" in q
+
+    def test_build_query_per_instance_override(self):
+        # multi-media configs query one type at a time (merged in fetch_artworks)
+        cfg = {"source": "wikidata", "instance_of": ["Q3305213", "Q860861", "Q93184"]}
+        assert "wdt:P31 wd:Q3305213" in build_query(cfg)                 # default = first
+        assert "wdt:P31 wd:Q860861" in build_query(cfg, "Q860861")       # override
+        assert "wdt:P31 wd:Q93184" in build_query(cfg, "Q93184")
 
     def test_curated_mode_lists_values(self):
         q = build_query({"source": "curated", "works": ["Q12418", "Q45585"]})
@@ -97,8 +110,12 @@ class TestQuery:
         q = build_query({"source": "collection", "collection": "Q19675"})
         assert "wdt:P195 wd:Q19675" in q
 
-    def test_limit_applied(self):
-        assert "LIMIT 30" in build_query({"source": "wikidata", "limit": 30})
+    def test_limit_is_client_side_not_in_query(self):
+        # limit + fame ordering happen client-side after banded fetch (no ORDER BY / LIMIT in SPARQL)
+        q = build_query({"source": "wikidata", "limit": 30})
+        assert "LIMIT" not in q and "ORDER BY" not in q
 
-    def test_no_limit_when_absent(self):
-        assert "LIMIT" not in build_query({"source": "wikidata"})
+    def test_band_filter(self):
+        q = build_query({"source": "wikidata"}, band=(20, 40))
+        assert "?sitelinks >= 20 && ?sitelinks < 40" in q
+        assert "?sitelinks >= 5" in build_query({"source": "wikidata", "min_sitelinks": 5}, band=(5, None))
