@@ -25,7 +25,9 @@ import sys
 import yaml
 
 from .artwork_images import fetch_raw, to_webp
-from .artworks import fetch_artworks
+from .artworks import (
+    apply_corrections, fetch_artworks_cached, parse_artwork_corrections, stale_corrections,
+)
 from .corruptions import build_pool, classify, pool_warnings
 from .distractors import build_choices
 from .equations import annotate, eligible_indices, load_equations, to_mathml
@@ -39,6 +41,9 @@ _ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_CONFIG_DIR = _ROOT / 'configs'
 DEFAULT_DECKS_DIR = _ROOT / 'data' / 'decks'
 CACHE_DIR = _ROOT / 'cache' / 'artworks'
+
+# Set by main() --refresh-metadata; bypasses the persisted SPARQL metadata cache for this run.
+REFRESH_METADATA = False
 
 # Monarch decks come from separate per-realm configs but share one collapsible menu
 # group in the quiz (like poetry's collection_title). Overridable per-config via `group:`.
@@ -228,7 +233,14 @@ def _build_artwork_deck(s: _Slot) -> dict:
     px = cfg.get('image_px', 480)
     deck_stem = s.filename.removesuffix('.json')
 
-    arts = fetch_artworks(cfg)
+    # Corrections must land BEFORE build_choices: distractors are drawn from other works'
+    # creator values and biased by same-creator, so choosing them from an uncorrected creator
+    # would build the options around a premise the answer no longer holds.
+    arts = fetch_artworks_cached(cfg, refresh=REFRESH_METADATA)
+    corrections = parse_artwork_corrections(cfg.get('corrections'))
+    for note in stale_corrections(arts, corrections):
+        print(f'  ! artworks corrections: {note}', file=sys.stderr)
+    arts = apply_corrections(arts, corrections)
     choices = {'title': build_choices(arts, 'title', count, bias),
                'creator': build_choices(arts, 'creator', count, bias)}
 
@@ -360,14 +372,33 @@ def _rmtree(path: Path) -> None:
 
 
 def _write_assets(decks_dir: Path, deck_stem: str, assets: dict[str, bytes]) -> None:
-    """Replace this deck's asset subfolder wholesale so dropped artworks don't linger.
+    """Sync this deck's asset subfolder to exactly ``assets``, writing only what differs.
 
     Rebuilt in lockstep with the JSON on both a full run and an ``--only`` refresh — the
-    ``img`` paths in the artifact are relative to ``decks_dir``."""
-    _rmtree(decks_dir / 'assets' / deck_stem)
+    ``img`` paths in the artifact are relative to ``decks_dir``. A file the deck no longer
+    references is deleted, so a dropped artwork never lingers.
+
+    **Content-aware, not wholesale.** ``to_webp`` is deterministic, so re-exporting an
+    unchanged image cache regenerates byte-identical files, and rewriting all of them
+    restated ~150 MB per run to produce no change at all. Note this skips the *write*, not
+    the re-encode — that happens upstream in ``_build_artwork_deck``'s thread pool and is
+    only avoidable by caching the fetch itself. The saving that matters is downstream: these
+    files are Git LFS-tracked in the quiz repo, and a correction touching one answer string
+    should not restate 5.5k blobs. Comparing bytes (rather than trusting mtime or size, which
+    a re-encode can preserve while content changes) keeps the guarantee that the tree always
+    ends up matching ``assets``.
+    """
+    root = decks_dir / 'assets' / deck_stem
+    root.mkdir(parents=True, exist_ok=True)
+    wanted = {(decks_dir / rel).resolve() for rel in assets}
+    for existing in root.glob('**/*'):
+        if existing.is_file() and existing.resolve() not in wanted:
+            existing.unlink()
     for rel, data in assets.items():
         dest = decks_dir / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
+        if dest.exists() and dest.read_bytes() == data:
+            continue
         dest.write_bytes(data)
 
 
@@ -380,18 +411,19 @@ def main(argv=None) -> None:
                         "'monarchs_*'). Others are left untouched and not fetched. Without it, "
                         "the output directory is CLEARED and every deck rebuilt "
                         "(hand-authored source:manual artifacts are preserved).")
+    p.add_argument('--refresh-metadata', action='store_true',
+                   help="Re-query Wikidata for artwork metadata instead of reusing "
+                        "cache/artworks_meta.json (use when upstream data has changed).")
     p.add_argument('--reset-identity', action='store_true',
                    help="With --only, re-derive order/config_path instead of preserving the "
                         "existing artifact's. Strands session history keyed on config_path.")
     args = p.parse_args(argv)
+    global REFRESH_METADATA
+    REFRESH_METADATA = args.refresh_metadata
     written = export_decks(args.config_dir, args.out, only=args.only,
                            reset_identity=args.reset_identity)
     scope = f"matching {args.only!r}" if args.only else 'all'
     print(f'Wrote {len(written)} deck artifacts ({scope}) to {args.out}')
-
-
-if __name__ == "__main__":
-    main()
 
 
 _EQ_POOL_CACHE: dict[str, list[dict]] = {}
@@ -537,3 +569,12 @@ def _build_equation_deck(s: _Slot) -> dict | None:
         'config_hash': config_hash(s.yaml_path),
         '_filename': s.filename,
     }
+
+
+# MUST stay the last statement in this module. Under `python -m deck_generator.deck_export`
+# the file executes top-to-bottom as __main__, so a guard placed mid-file calls main() before
+# the definitions below it exist (this sat above _EQ_POOL_CACHE and raised NameError). The
+# `deck-export` console script hid it: an entry point imports the module fully first, so only
+# the -m form — the one the orchestrator's Dagster asset uses — ever broke.
+if __name__ == "__main__":
+    main()

@@ -257,7 +257,8 @@ def _export_artworks(config_dir, decks_dir, only=None, arts=None, fail_qids=()):
             raise RuntimeError("dead image")
         return f"raw:{key}".encode()
 
-    with patch('deck_generator.deck_export.fetch_artworks', return_value=arts if arts is not None else _ARTWORKS), \
+    with patch('deck_generator.deck_export.fetch_artworks_cached',
+               return_value=arts if arts is not None else _ARTWORKS), \
          patch('deck_generator.deck_export.fetch_raw', side_effect=fake_fetch_raw), \
          patch('deck_generator.deck_export.to_webp', side_effect=lambda raw, px: b'WEBP:' + raw):
         return deck_export.export_decks(config_dir, decks_dir, only=only)
@@ -513,3 +514,65 @@ class TestOnly:
         decks = tmp_path / 'decks'
         _export_only(tmp_path, decks)
         assert '_filename' not in json.loads((decks / 'monarchs_britain.json').read_text())
+
+
+class TestAssetWritesAreContentAware:
+    """``to_webp`` is deterministic, so re-exporting an unchanged image cache regenerates
+    byte-identical files. Rewriting them all cost ~2 min and ~118 MB of I/O per run for no
+    change — and these files are Git LFS-tracked downstream, so a correction touching one
+    answer string must not restate thousands of blobs. The tree must still end up matching
+    the deck exactly: unchanged files keep their identity, removed ones go."""
+
+    def test_unchanged_asset_is_not_rewritten(self, tmp_path):
+        _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_artworks(tmp_path, decks)
+        asset = decks / 'assets' / 'artworks_famous' / 'Q12418.webp'
+        before = asset.stat().st_mtime_ns
+        _export_artworks(tmp_path, decks, only='artworks_famous')
+        assert asset.stat().st_mtime_ns == before          # untouched, not rewritten
+        assert asset.read_bytes() == b'WEBP:raw:Q12418'    # and still correct
+
+    def test_changed_asset_is_rewritten(self, tmp_path):
+        _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_artworks(tmp_path, decks)
+        asset = decks / 'assets' / 'artworks_famous' / 'Q12418.webp'
+        asset.write_bytes(b'CORRUPTED')                     # e.g. a partial earlier write
+        _export_artworks(tmp_path, decks, only='artworks_famous')
+        assert asset.read_bytes() == b'WEBP:raw:Q12418'     # repaired
+
+    def test_removed_asset_is_pruned_on_only_refresh(self, tmp_path):
+        _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_artworks(tmp_path, decks, arts=_ARTWORKS)
+        _export_artworks(tmp_path, decks, only='artworks_famous', arts=_ARTWORKS[:1])
+        assert not (decks / 'assets' / 'artworks_famous' / 'Q45585.webp').exists()
+
+    def test_unrelated_file_in_asset_dir_is_pruned(self, tmp_path):
+        # The dir must match the deck exactly — a leftover from an older run is not kept
+        # just because the deck no longer mentions it.
+        _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_artworks(tmp_path, decks)
+        stray = decks / 'assets' / 'artworks_famous' / 'ZZZ.webp'
+        stray.write_bytes(b'old')
+        _export_artworks(tmp_path, decks, only='artworks_famous')
+        assert not stray.exists()
+
+
+def test_module_is_runnable_with_dash_m():
+    """``python -m deck_generator.deck_export`` must work, not just the console script.
+
+    The orchestrator's Dagster asset invokes the module form. Under ``-m`` the file runs
+    top-to-bottom as ``__main__``, so a ``if __name__ == "__main__"`` guard placed above any
+    module-level definition calls main() before that definition exists. This shipped broken
+    (the guard sat above ``_EQ_POOL_CACHE`` → NameError) and the console script hid it, since
+    an entry point imports the module fully before calling main().
+    """
+    import subprocess
+    import sys
+    r = subprocess.run([sys.executable, '-m', 'deck_generator.deck_export', '--help'],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert '--only' in r.stdout
