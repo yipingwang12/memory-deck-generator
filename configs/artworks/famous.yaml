@@ -20,7 +20,7 @@ min_sitelinks: 5            # fame floor (# of Wikipedias) — broadly-known-and
 limit: 10000                # cap at the 10k most famous
 # Download is Commons-rate-limited (~15-40/min); the full 10k takes hours (resumable — images
 # cache under cache/artworks/ by QID). To export a CHECKPOINT deck from what's already cached
-# without downloading more, add:  cache_only: true  (currently ~4327 works cached & shipped).
+# without downloading more, add:  cache_only: true  (currently ~5552 works cached; 4327 shipped to the quiz).
 # image_workers: 8 (default) — enough in-flight to absorb 429 retry-backoff.
 
 image_px: 480               # longest side of the downsized WebP (~25 KB each)
@@ -30,6 +30,866 @@ image_workers: 8            # parallel downloads; Commons caps ~40/min via 429s,
 distractors:
   count: 4
   same_creator_bias: true   # title distractors prefer same-creator / same-era works
+
+# --- sourced manual overrides of Wikidata's creator (P170) -----------------------------
+# Two failure modes, neither fixable by the fetch: a work with several P170 statements (the
+# pipeline cannot know which one carries it), and a plainly wrong single statement. Every entry
+# records why and against what, so it can be re-verified and retired; `deck-artworks --config`
+# reports entries that have gone stale (work left the deck, or Wikidata resolved the ambiguity
+# itself) plus any NEW multi-creator work that no correction covers yet.
+# Corrections rewrite only the answer text, never the item string (`<QID>|creator`), so applying
+# one preserves that card's FSRS review history in the quiz.
+corrections:
+  # --- upstream statement is simply wrong ---
+  - work: Q4429116
+    action: set
+    value: "Claude Monet"
+    reason: "P170 credits Q5593 (Pablo Picasso); the item's own description reads 'painting by Claude Monet' and its P18 is the Google Art Project scan of Monet's La Pie (1868-69, Musee d'Orsay)"
+    source: "https://www.wikidata.org/wiki/Q4429116"
+    checked: "2026-07-25"
+  # --- several P170 statements; one creator carries the work ---
+  - work: Q61588                     # Fiesole Altarpiece
+    action: set
+    value: "Fra Angelico"
+    reason: "lead: \"by … Fra Angelico\"; di Credi only repainted the background"
+    source: "https://en.wikipedia.org/wiki/Fiesole_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q154987                     # Siegessäule
+    action: set
+    value: "Heinrich Strack"
+    reason: "lead: \"Designed by Heinrich Strack\"; von Werner made only the colonnade mosaic"
+    source: "https://en.wikipedia.org/wiki/Berlin_Victory_Column"
+    checked: "2026-07-25"
+  - work: Q186173                     # World Clock
+    action: set
+    value: "Erich John"
+    reason: "designer of the Weltzeituhr; Kunsch was a collaborator"
+    source: "https://en.wikipedia.org/wiki/World_Clock_(Alexanderplatz)"
+    checked: "2026-07-25"
+  - work: Q323141                     # Heller Altarpiece
+    action: set
+    value: "Albrecht Dürer"
+    reason: "lead: Dürer painted the interior (the work is catalogued as his); Grünewald the exterior wings"
+    source: "https://en.wikipedia.org/wiki/Heller_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q521680                     # Perla di Modena
+    action: set
+    value: "Raphael"
+    reason: "lead: \"now attributed to Raphael\""
+    source: "https://en.wikipedia.org/wiki/Perla_di_Modena"
+    checked: "2026-07-25"
+  - work: Q553189                     # Frankfurter Engel
+    action: set
+    value: "Rosemarie Trockel"
+    reason: "artist; the second statement is a funding foundation, not a creator"
+    source: "https://en.wikipedia.org/wiki/Frankfurter_Engel"
+    checked: "2026-07-25"
+  - work: Q573639                     # Kyffhäuser Monument
+    action: set
+    value: "Bruno Schmitz"
+    reason: "lead: \"Designed by architect Bruno Schmitz\"; Hundrieser did the sculpture"
+    source: "https://en.wikipedia.org/wiki/Kyffhäuser_Monument"
+    checked: "2026-07-25"
+  - work: Q593202                     # Dona i Ocell
+    action: set
+    value: "Joan Miró"
+    reason: "lead: \"a 22-metre high sculpture by Joan Miró\"; Artigas tiled it"
+    source: "https://en.wikipedia.org/wiki/Dona_i_Ocell"
+    checked: "2026-07-25"
+  - work: Q631871                     # ArcelorMittal Orbit
+    action: set
+    value: "Anish Kapoor"
+    reason: "artist; Balmond was the structural engineer"
+    source: "https://en.wikipedia.org/wiki/ArcelorMittal_Orbit"
+    checked: "2026-07-25"
+  - work: Q644936                     # The Rape of the Daughters of Leucippus
+    action: set
+    value: "Peter Paul Rubens"
+    reason: "standard credit is Rubens; Wildens painted the landscape"
+    source: "https://en.wikipedia.org/wiki/The_Rape_of_the_Daughters_of_Leucippus"
+    checked: "2026-07-25"
+  - work: Q688214                     # Lion Monument
+    action: set
+    value: "Bertel Thorvaldsen"
+    reason: "lead: \"designed by Bertel Thorvaldsen and hewn … by Lukas Ahorn\""
+    source: "https://en.wikipedia.org/wiki/Lion_Monument"
+    checked: "2026-07-25"
+  - work: Q706964                     # L'Homme qui marche I
+    action: set
+    value: "Alberto Giacometti"
+    reason: "lead: \"created by Swiss sculptor Alberto Giacometti\"; Susse Frères is the foundry"
+    source: "https://en.wikipedia.org/wiki/L'Homme_qui_marche_I"
+    checked: "2026-07-25"
+  - work: Q717956                     # Unisphere
+    action: set
+    value: "Gilmore David Clarke"
+    reason: "lead: \"designed by Gilmore D. Clarke\""
+    source: "https://en.wikipedia.org/wiki/Unisphere"
+    checked: "2026-07-25"
+  - work: Q782639                     # The Wine Glass
+    action: set
+    value: "Johannes Vermeer"
+    reason: "lead: \"by Johannes Vermeer\"; the other candidate is an unrelated Jan Vermeer"
+    source: "https://en.wikipedia.org/wiki/The_Wine_Glass"
+    checked: "2026-07-25"
+  - work: Q924951                     # Maisonneuve Monument
+    action: set
+    value: "Louis-Philippe Hébert"
+    reason: "lead: \"a monument by sculptor Louis-Philippe Hébert\""
+    source: "https://en.wikipedia.org/wiki/Maisonneuve_Monument"
+    checked: "2026-07-25"
+  - work: Q1064990                     # Monument aux Girondins
+    action: set
+    value: "Alphonse Dumilatre"
+    reason: "sculptor of the monument; Rich was the architect"
+    source: "https://www.wikidata.org/wiki/Q1064990"
+    checked: "2026-07-25"
+  - work: Q1187408                     # Peine del Viento XV
+    action: set
+    value: "Eduardo Chillida"
+    reason: "lead: \"three sculptures by Eduardo Chillida\"; Peña Ganchegui did the architectural setting"
+    source: "https://en.wikipedia.org/wiki/The_Comb_of_the_Wind"
+    checked: "2026-07-25"
+  - work: Q1215604                     # The Source
+    action: set
+    value: "Jean-Auguste-Dominique Ingres"
+    reason: "lead attributes to Ingres; Desgoffe and Balze were studio assistants"
+    source: "https://en.wikipedia.org/wiki/The_Source_(Ingres)"
+    checked: "2026-07-25"
+  - work: Q1403946                     # Marine Corps War Memorial
+    action: set
+    value: "Felix de Weldon"
+    reason: "sculptor; Peaslee was the base architect"
+    source: "https://en.wikipedia.org/wiki/Marine_Corps_War_Memorial"
+    checked: "2026-07-25"
+  - work: Q1472798                     # Fountain of Neptune
+    action: set
+    value: "Ventura Rodríguez"
+    reason: "Paseo del Prado fountain designed by Ventura Rodríguez; de Mena carved the central group"
+    source: "https://en.wikipedia.org/wiki/Fountain_of_Neptune_(Madrid)"
+    checked: "2026-07-25"
+  - work: Q1647048                     # Fountain of Apollo
+    action: set
+    value: "Ventura Rodríguez"
+    reason: "third Paseo del Prado fountain; Ventura Rodríguez is the design credit, Álvarez/Bergaz carved it"
+    source: "https://www.wikidata.org/wiki/Q1647048"
+    checked: "2026-07-25"
+  - work: Q1778000                     # Baronci Altarpiece
+    action: set
+    value: "Raphael"
+    reason: "lead: \"a painting by the Italian High Renaissance artist Raphael\""
+    source: "https://en.wikipedia.org/wiki/Baronci_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q1892745                     # Salvator Mundi
+    action: set
+    value: "Leonardo da Vinci"
+    reason: "lead: \"attributed in whole or part to … Leonardo da Vinci\""
+    source: "https://en.wikipedia.org/wiki/Salvator_Mundi_(painting)"
+    checked: "2026-07-25"
+  - work: Q1980313                     # New Bach monument
+    action: set
+    value: "Carl Seffner"
+    reason: "sculptor of the Neues Bachdenkmal; Noack is a foundry"
+    source: "https://en.wikipedia.org/wiki/Statue_of_J._S._Bach"
+    checked: "2026-07-25"
+  - work: Q2157202                     # The Just Judges
+    action: set
+    value: "Jan van Eyck"
+    reason: "panel of the Ghent Altarpiece; standard credit is Jan van Eyck"
+    source: "https://en.wikipedia.org/wiki/The_Just_Judges"
+    checked: "2026-07-25"
+  - work: Q2415079                     # The Washington Family
+    action: set
+    value: "Edward Savage"
+    reason: "both statements are Edward Savage under two QIDs — not ambiguous"
+    source: "https://en.wikipedia.org/wiki/The_Washington_Family"
+    checked: "2026-07-25"
+  - work: Q2467082                     # Visitation
+    action: set
+    value: "Raphael"
+    reason: "lead: \"by Raphael\"; Giulio Romano and Penni executed it in his workshop"
+    source: "https://en.wikipedia.org/wiki/Visitation_(Raphael)"
+    checked: "2026-07-25"
+  - work: Q2511913                     # Equestrian statue of Marshal Mannerheim
+    action: set
+    value: "Aimo Tukiainen"
+    reason: "lead: \"It was made by Aimo Tukiainen\""
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Marshal_Mannerheim"
+    checked: "2026-07-25"
+  - work: Q2529591                     # Deposition of Christ
+    action: set
+    value: "Fra Angelico"
+    reason: "lead: \"a painting by … Fra Angelico\"; Lorenzo Monaco began the frame/pinnacles"
+    source: "https://en.wikipedia.org/wiki/Deposition_of_Christ_(Fra_Angelico)"
+    checked: "2026-07-25"
+  - work: Q2609585                     # Portrait of Charles V
+    action: set
+    value: "Titian"
+    reason: "lead: \"by Titian, painted in 1548\""
+    source: "https://en.wikipedia.org/wiki/Portrait_of_Charles_V_(Titian,_Munich)"
+    checked: "2026-07-25"
+  - work: Q2665840                     # Pietà
+    action: set
+    value: "Titian"
+    reason: "lead: \"one of the last paintings by Titian\", completed posthumously by Palma Giovane"
+    source: "https://en.wikipedia.org/wiki/Pietà_(Titian)"
+    checked: "2026-07-25"
+  - work: Q2680589                     # The Agony in the Garden
+    action: set
+    value: "El Greco"
+    reason: "lead: \"from the studio of El Greco\" — El Greco is the standard credit"
+    source: "https://en.wikipedia.org/wiki/Agony_in_the_Garden_(El_Greco,_London)"
+    checked: "2026-07-25"
+  - work: Q2736564                     # Fountain of Cybele
+    action: set
+    value: "Ventura Rodríguez"
+    reason: "as Neptune/Apollo: Ventura Rodríguez is the design credit for the three Prado fountains"
+    source: "https://en.wikipedia.org/wiki/Fountain_of_Cybele"
+    checked: "2026-07-25"
+  - work: Q2869431                     # Atlas
+    action: set
+    value: "Lee Lawrie"
+    reason: "lead: \"created by the sculptor Lee Lawrie with Rene Paul Chambellan\""
+    source: "https://en.wikipedia.org/wiki/Atlas_(statue)"
+    checked: "2026-07-25"
+  - work: Q3071934                     # The Consecration of Saint Augustine
+    action: set
+    value: "Jaume Huguet"
+    reason: "lead: begun by Huguet, finished by workshop members incl. Vergós"
+    source: "https://en.wikipedia.org/wiki/Saint_Augustine_Altarpiece_(Huguet)"
+    checked: "2026-07-25"
+  - work: Q3201479                     # Adoration of the Magi
+    action: set
+    value: "Domenico Ghirlandaio"
+    reason: "lead: by Ghirlandaio; Bartolomeo di Giovanni painted only the predella"
+    source: "https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(Ospedale_degli_Innocenti)"
+    checked: "2026-07-25"
+  - work: Q3207989                     # Crucifixion of Christ with saints
+    action: set
+    value: "Pietro Perugino"
+    reason: "lead: \"usually attributed to Perugino, with or without assistance\""
+    source: "https://en.wikipedia.org/wiki/Crucifixion_(Perugino_and_Signorelli)"
+    checked: "2026-07-25"
+  - work: Q3213780                     # Madonna and Child
+    action: set
+    value: "Sandro Botticelli"
+    reason: "lead attributes to Botticelli alone"
+    source: "https://en.wikipedia.org/wiki/Madonna_and_Child_(Botticelli,_Avignon)"
+    checked: "2026-07-25"
+  - work: Q3424549                     # Equestrian statue of Frederick V
+    action: set
+    value: "Jacques Saly"
+    reason: "sculptor of the Amalienborg equestrian statue"
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Frederick_V"
+    checked: "2026-07-25"
+  - work: Q3497617                     # equestrian statue of Joan of Arc
+    action: set
+    value: "Emmanuel Frémiet"
+    reason: "lead: \"by Emmanuel Frémiet\"; Thiébaut Frères is a foundry"
+    source: "https://en.wikipedia.org/wiki/Jeanne_d'Arc_(Frémiet)"
+    checked: "2026-07-25"
+  - work: Q3497625                     # Equestrian Statue of Louis XIV
+    action: set
+    value: "Gian Lorenzo Bernini"
+    reason: "lead: \"designed and partially executed by … Bernini\"; Girardon later reworked it"
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Louis_XIV_(Bernini)"
+    checked: "2026-07-25"
+  - work: Q3529509                     # Titanic Engineers' Memorial
+    action: set
+    value: "Ferdinand Victor Blundstone"
+    reason: "sculptor of the memorial"
+    source: "https://en.wikipedia.org/wiki/Titanic_Engineers'_Memorial"
+    checked: "2026-07-25"
+  - work: Q3613121                     # Piccolomini Altarpiece
+    action: set
+    value: "Andrea Bregno"
+    reason: "lead: \"built between 1481 and 1485 by Andrea Bregno\"; Michelangelo added four statues later"
+    source: "https://en.wikipedia.org/wiki/Piccolomini_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q3618186                     # Annunciation
+    action: set
+    value: "Leonardo da Vinci"
+    reason: "Uffizi Annunciation is the standard early Leonardo attribution"
+    source: "https://www.wikidata.org/wiki/Q3618186"
+    checked: "2026-07-25"
+  - work: Q3683526                     # Washington Monument
+    action: set
+    value: "Robert Mills"
+    reason: "architect of the Baltimore monument; Causici carved the statue"
+    source: "https://en.wikipedia.org/wiki/Washington_Monument_(Baltimore)"
+    checked: "2026-07-25"
+  - work: Q3887462                     # Monument to Philip IV of Spain
+    action: set
+    value: "Pietro Tacca"
+    reason: "Tacca cast the 1640 equestrian statue; the later names are the 1843 square installation"
+    source: "https://en.wikipedia.org/wiki/Monument_to_Philip_IV_of_Spain"
+    checked: "2026-07-25"
+  - work: Q3937389                     # Giustiniani Portrait
+    action: set
+    value: "Giorgione"
+    reason: "lead: \"frequently, but not universally, attributed to Giorgione\""
+    source: "https://en.wikipedia.org/wiki/Giustiniani_Portrait"
+    checked: "2026-07-25"
+  - work: Q3978273                     # Susanna and the Elders
+    action: set
+    value: "Artemisia Gentileschi"
+    reason: "lead: signed by Gentileschi and dated"
+    source: "https://en.wikipedia.org/wiki/Susanna_and_the_Elders_(Artemisia_Gentileschi,_Brno)"
+    checked: "2026-07-25"
+  - work: Q4343303                     # Monument to Peter I
+    action: set
+    value: "Carlo Bartolomeo Rastrelli"
+    reason: "lead: Peter the Great \"commissioned the Italian sculptor Carlo Bartolomeo Rastrelli to design\""
+    source: "https://en.wikipedia.org/wiki/Monument_to_Peter_I_(St._Michael's_Castle)"
+    checked: "2026-07-25"
+  - work: Q4780980                     # Appeal to the Great Spirit
+    action: set
+    value: "Cyrus Edwin Dallin"
+    reason: "lead: \"a 1908 equestrian statue by Cyrus Dallin\"; Jaboeuf is a foundry"
+    source: "https://en.wikipedia.org/wiki/Appeal_to_the_Great_Spirit"
+    checked: "2026-07-25"
+  - work: Q5965721                     # The Annunciation
+    action: set
+    value: "El Greco"
+    reason: "lead: \"a 1609 work by El Greco\"; son Jorge Manuel may have finished it"
+    source: "https://en.wikipedia.org/wiki/Annunciation_(El_Greco,_Madrid)"
+    checked: "2026-07-25"
+  - work: Q6791545                     # Fountain of King Matthias
+    action: set
+    value: "Alajos Strobl"
+    reason: "lead: \"Alajos Stróbl’s Neo-Baroque masterpiece\"; Hauszmann was the palace architect"
+    source: "https://en.wikipedia.org/wiki/Matthias_Fountain"
+    checked: "2026-07-25"
+  - work: Q7744744                     # The Kiss of Death
+    action: set
+    value: "Jaume Barba"
+    reason: "lead: \"believed to have been crafted by Jaume Barba … his signature is present\""
+    source: "https://en.wikipedia.org/wiki/The_Kiss_of_Death_(sculpture)"
+    checked: "2026-07-25"
+  - work: Q7835481                     # Transylvania Panorama
+    action: set
+    value: "Jan Styka"
+    reason: "Styka led the panorama team; the others were contributing painters"
+    source: "https://en.wikipedia.org/wiki/Transylvania_Panorama"
+    checked: "2026-07-25"
+  - work: Q9074362                     # Santo Domingo de Silos entronizado como obispo, de B
+    action: set
+    value: "Bartolomé Bermejo"
+    reason: "Prado attributes the panel to Bermejo; Bernat was a collaborator"
+    source: "https://www.wikidata.org/wiki/Q9074362"
+    checked: "2026-07-25"
+  - work: Q9391421                     # The Union of Earth and Water (Antwerp and the Scheld
+    action: set
+    value: "Peter Paul Rubens"
+    reason: "lead: \"a Baroque painting by Flemish artist Peter Paul Rubens\""
+    source: "https://en.wikipedia.org/wiki/The_Union_of_Earth_and_Water"
+    checked: "2026-07-25"
+  - work: Q12334064                     # Absalon
+    action: set
+    value: "Vilhelm Bissen"
+    reason: "sculptor; Nyrop designed the pedestal"
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Absalon"
+    checked: "2026-07-25"
+  - work: Q15008032                     # The Feast of the Gods
+    action: set
+    value: "Giovanni Bellini"
+    reason: "lead: \"by Giovanni Bellini, with substantial additions\" by Dossi and Titian"
+    source: "https://en.wikipedia.org/wiki/The_Feast_of_the_Gods"
+    checked: "2026-07-25"
+  - work: Q15126100                     # Busto de Richard Wagner
+    action: set
+    value: "Max Klinger"
+    reason: "lead: \"design goes back to the Leipzig sculptor Max Klinger\"; Noack is a foundry"
+    source: "https://en.wikipedia.org/wiki/Bust_of_Richard_Wagner"
+    checked: "2026-07-25"
+  - work: Q16944352                     # Prometheus Bound
+    action: set
+    value: "Peter Paul Rubens"
+    reason: "lead: Snyders \"rendered the eagle\" only"
+    source: "https://en.wikipedia.org/wiki/Prometheus_Bound_(Rubens)"
+    checked: "2026-07-25"
+  - work: Q16954398                     # The Descent from the Cross
+    action: set
+    value: "Rembrandt"
+    reason: "lead attributes to Rembrandt; second statement is an anonymous node"
+    source: "https://en.wikipedia.org/wiki/The_Descent_from_the_Cross_(Rembrandt,_1634)"
+    checked: "2026-07-25"
+  - work: Q18508785                     # Portrait of a Stout Man
+    action: set
+    value: "Robert Campin"
+    reason: "Master of Flémalle is the same artist under a notname — not a second creator"
+    source: "https://en.wikipedia.org/wiki/Portrait_of_a_Fat_Man"
+    checked: "2026-07-25"
+  - work: Q33255228                     # The Dream of Ossian
+    action: set
+    value: "Jean-Auguste-Dominique Ingres"
+    reason: "lead: \"an 1813 painting by … Ingres\"; Balze made the enlargement"
+    source: "https://en.wikipedia.org/wiki/The_Dream_of_Ossian"
+    checked: "2026-07-25"
+  - work: Q110996824                     # Panorama Mesdag
+    action: set
+    value: "Hendrik Willem Mesdag"
+    reason: "lead: \"a panorama by Hendrik Willem Mesdag\"; Breitner was one of several assistants"
+    source: "https://en.wikipedia.org/wiki/Panorama_Mesdag"
+    checked: "2026-07-25"
+  # --- several P170 statements; no principal, so the credited set is the answer ---
+  - work: Q32381                     # Virgin and Child with Saint Anne
+    action: set
+    value: "Masaccio & Masolino da Panicale"
+    reason: "lead: \"by … Masaccio, probably in collaboration with Masolino da Panicale\""
+    source: "https://en.wikipedia.org/wiki/Virgin_and_Child_with_Saint_Anne_(Masaccio)"
+    checked: "2026-07-25"
+  - work: Q281309                     # Stravinsky Fountain
+    action: set
+    value: "Jean Tinguely & Niki de Saint Phalle"
+    reason: "lead: \"created in 1983 by sculptors Jean Tinguely and Niki de Saint Phalle\""
+    source: "https://en.wikipedia.org/wiki/Stravinsky_Fountain"
+    checked: "2026-07-25"
+  - work: Q465762                     # Laocoön and His Sons
+    action: set
+    value: "Agesander of Rhodes & Athanadoros & Polydoros"
+    reason: "Pliny credits three Rhodian sculptors; no single principal"
+    source: "https://en.wikipedia.org/wiki/Laocoön_and_His_Sons"
+    checked: "2026-07-25"
+  - work: Q473811                     # Shoes on the Danube Bank
+    action: set
+    value: "Can Togay & Gyula Pauer"
+    reason: "lead: \"Conceived by film director Can Togay … with sculptor Gyula Pauer\""
+    source: "https://en.wikipedia.org/wiki/Shoes_on_the_Danube_Bank"
+    checked: "2026-07-25"
+  - work: Q500812                     # Sleeping Venus
+    action: set
+    value: "Giorgione & Titian"
+    reason: "lead: traditionally Giorgione, \"Titian completed it after Giorgione’s death\""
+    source: "https://en.wikipedia.org/wiki/Sleeping_Venus_(Giorgione)"
+    checked: "2026-07-25"
+  - work: Q581804                     # Farnese Bull
+    action: set
+    value: "Apollonius of Tralles & Tauriskos of Tralles"
+    reason: "the Hellenistic original is credited to both brothers of Tralles"
+    source: "https://en.wikipedia.org/wiki/Farnese_Bull"
+    checked: "2026-07-25"
+  - work: Q734834                     # Ghent Altarpiece
+    action: set
+    value: "Hubert van Eyck & Jan van Eyck"
+    reason: "lead: \"attributed to the Early Netherlandish painters and brothers\" Hubert and Jan"
+    source: "https://en.wikipedia.org/wiki/Ghent_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q786196                     # Portrait of a young woman
+    action: set
+    value: "Raphael & Giulio Romano"
+    reason: "lead: \"by Raphael and Giulio Romano\""
+    source: "https://en.wikipedia.org/wiki/Portrait_of_a_Young_Woman_(Raphael,_Strasbourg)"
+    checked: "2026-07-25"
+  - work: Q979440                     # Annunciation with Saints Maxima and Ansanus
+    action: set
+    value: "Simone Martini & Lippo Memmi"
+    reason: "lead: \"by the Italian Gothic artists Simone Martini and Lippo Memmi\""
+    source: "https://en.wikipedia.org/wiki/Annunciation_with_Saint_Margaret_and_Saint_Ansanus"
+    checked: "2026-07-25"
+  - work: Q1059211                     # The Baptism of Christ
+    action: set
+    value: "Andrea del Verrocchio & Leonardo da Vinci"
+    reason: "lead: \"in the studio of … Verrocchio and generally ascribed to him and his pupil Leonardo\""
+    source: "https://en.wikipedia.org/wiki/The_Baptism_of_Christ_(Verrocchio_and_Leonardo)"
+    checked: "2026-07-25"
+  - work: Q1340523                     # Victory Arch
+    action: set
+    value: "Khaled al-Rahal & Mohammed Ghani Hikmat"
+    reason: "al-Rahal designed the arches, Hikmat completed them after his death"
+    source: "https://en.wikipedia.org/wiki/Victory_Arch"
+    checked: "2026-07-25"
+  - work: Q1410866                     # Martyrdom of Saint Sebastian
+    action: set
+    value: "Antonio del Pollaiuolo & Piero del Pollaiuolo"
+    reason: "lead: \"by the brothers Antonio and Piero del Pollaiuolo\""
+    source: "https://en.wikipedia.org/wiki/Martyrdom_of_Saint_Sebastian_(Pollaiuolo)"
+    checked: "2026-07-25"
+  - work: Q2024954                     # Yama
+    action: set
+    value: "Leanid Levin & Aleksandr Finsky & Elsa Pollak"
+    reason: "the Yama memorial group is credited to all three"
+    source: "https://en.wikipedia.org/wiki/The_Pit_(memorial)"
+    checked: "2026-07-25"
+  - work: Q2417706                     # Arca di San Domenico
+    action: set
+    value: "Nicola Pisano & Niccolò dell’Arca & Michelangelo"
+    reason: "built over centuries; Pisano began it, dell’Arca and Michelangelo added to it"
+    source: "https://en.wikipedia.org/wiki/Arca_di_San_Domenico"
+    checked: "2026-07-25"
+  - work: Q2666439                     # Morning in a Pine Forest
+    action: set
+    value: "Ivan Shishkin & Konstantin Savitsky"
+    reason: "lead: \"by Russian artists Ivan Shishkin and Konstantin Savitsky\""
+    source: "https://en.wikipedia.org/wiki/Morning_in_a_Pine_Forest"
+    checked: "2026-07-25"
+  - work: Q2841473                     # Bridal Procession on the Hardangerfjord
+    action: set
+    value: "Hans Gude & Adolph Tidemand"
+    reason: "lead: Gude painted the landscape, Tidemand the bridal party"
+    source: "https://en.wikipedia.org/wiki/Bridal_Procession_on_the_Hardangerfjord"
+    checked: "2026-07-25"
+  - work: Q3220204                     # The Stolen Kiss
+    action: set
+    value: "Jean-Honoré Fragonard & Marguerite Gérard"
+    reason: "historically Fragonard, now often given to Gérard"
+    source: "https://en.wikipedia.org/wiki/The_Stolen_Kiss_(painting)"
+    checked: "2026-07-25"
+  - work: Q3399388                     # Portrait of Doña Isabel de Requesens y Enríquez de C
+    action: set
+    value: "Raphael & Giulio Romano"
+    reason: "lead: \"executed by Giulio Romano based on a sketch by Raphael\""
+    source: "https://en.wikipedia.org/wiki/Portrait_of_Doña_Isabel_de_Requesens_y_Enríquez_de_Cardona-Anglesola"
+    checked: "2026-07-25"
+  - work: Q3531531                     # Adoration of the Magi
+    action: set
+    value: "Fra Angelico & Filippo Lippi"
+    reason: "lead: recorded as Fra Angelico, but \"most art historians think that Filippo Lippi\" contributed"
+    source: "https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(Fra_Angelico_and_Filippo_Lippi)"
+    checked: "2026-07-25"
+  - work: Q3697665                     # Christ Carrying the Cross
+    action: set
+    value: "Giorgione & Titian"
+    reason: "lead: \"attributed to either Titian or Giorgione\""
+    source: "https://en.wikipedia.org/wiki/Christ_Carrying_the_Cross_(Titian)"
+    checked: "2026-07-25"
+  - work: Q3709937                     # Sermon on the Mount
+    action: set
+    value: "Cosimo Rosselli & Piero di Cosimo"
+    reason: "Sistine wall fresco executed by Rosselli with Piero di Cosimo"
+    source: "https://www.wikidata.org/wiki/Q3709937"
+    checked: "2026-07-25"
+  - work: Q3842637                     # Madonna of the Rose Garden
+    action: set
+    value: "Michelino Molinari da Besozzo & Stefano da Verona"
+    reason: "lead: \"attributed to Michelino da Besozzo or Stefano da Verona\""
+    source: "https://en.wikipedia.org/wiki/Madonna_of_the_Rose_Garden_(Verona)"
+    checked: "2026-07-25"
+  - work: Q3889223                     # Cardinal of Portugal's Altarpiece
+    action: set
+    value: "Antonio del Pollaiuolo & Piero del Pollaiuolo"
+    reason: "lead: \"by one or both of the brothers Antonio and Piero del Pollaiuolo\""
+    source: "https://en.wikipedia.org/wiki/Cardinal_of_Portugal's_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q3898507                     # The Garden of Eden with the Fall of Man
+    action: set
+    value: "Peter Paul Rubens & Jan Brueghel the Elder"
+    reason: "lead: \"by Peter Paul Rubens (figures) and Jan Brueghel the Elder (flora and fauna)\""
+    source: "https://en.wikipedia.org/wiki/The_Garden_of_Eden_with_the_Fall_of_Man"
+    checked: "2026-07-25"
+  - work: Q3910087                     # Saint Mark Preaching in Alexandria
+    action: set
+    value: "Gentile Bellini & Giovanni Bellini"
+    reason: "lead: \"by the Italian Renaissance artists Gentile and Giovanni Bellini\""
+    source: "https://en.wikipedia.org/wiki/Saint_Mark_Preaching_in_Alexandria"
+    checked: "2026-07-25"
+  - work: Q3985203                     # Testament and Death of Moses
+    action: set
+    value: "Luca Signorelli & Bartolomeo della Gatta"
+    reason: "lead: \"attributed to … Luca Signorelli and Bartolomeo della Gatta\""
+    source: "https://en.wikipedia.org/wiki/Testament_and_Death_of_Moses"
+    checked: "2026-07-25"
+  - work: Q4156470                     # Girl with an Oar
+    action: set
+    value: "Ivan Shadr & Romuald Iodko"
+    reason: "lead: \"versions authored by Ivan Shadr and Romuald Iodko\""
+    source: "https://en.wikipedia.org/wiki/Girl_with_an_Oar"
+    checked: "2026-07-25"
+  - work: Q4656688                     # A Faun Teased by Children
+    action: set
+    value: "Gian Lorenzo Bernini & Pietro Bernini"
+    reason: "lead: \"by Italian artists Gian Lorenzo Bernini and his father Pietro Bernini\""
+    source: "https://en.wikipedia.org/wiki/A_Faun_Teased_by_Children"
+    checked: "2026-07-25"
+  - work: Q5384418                     # Manuel Belgrano equestrian monument
+    action: set
+    value: "Albert-Ernest Carrier-Belleuse & Manuel de Santa Coloma"
+    reason: "the Belgrano monument is credited to both sculptors"
+    source: "https://en.wikipedia.org/wiki/Equestrian_monument_to_General_Manuel_Belgrano"
+    checked: "2026-07-25"
+  - work: Q5779800                     # Militia Company of District XI under the Command of 
+    action: set
+    value: "Frans Hals & Pieter Codde"
+    reason: "Hals began the militia piece, Codde finished it"
+    source: "https://en.wikipedia.org/wiki/Meagre_Company"
+    checked: "2026-07-25"
+  - work: Q7514824                     # Silesian Insurgents' Monument
+    action: set
+    value: "Gustaw Zemła & Wojciech Zabłocki"
+    reason: "sculptor + architect pairing, as with the Monte Cassino monument"
+    source: "https://en.wikipedia.org/wiki/Silesian_Insurgents_Memorial"
+    checked: "2026-07-25"
+  - work: Q7674490                     # Tadeusz Kościuszko Monument
+    action: set
+    value: "Leonard Marconi & Antoni Popiel"
+    reason: "lead: \"the work of artists Leonard Marconi … and his son-in-law, sculptor Antoni Popiel\""
+    source: "https://en.wikipedia.org/wiki/Tadeusz_Kościuszko_Monument,_Kraków"
+    checked: "2026-07-25"
+  - work: Q11823137                     # Monument to the Battle of Monte Cassino in Warsaw
+    action: set
+    value: "Kazimierz Gustaw Zemła & Wojciech Zabłocki"
+    reason: "sculptor + architect pairing; neither carries the monument alone"
+    source: "https://en.wikipedia.org/wiki/Monument_to_the_Battle_of_Monte_Cassino,_Warsaw"
+    checked: "2026-07-25"
+  - work: Q13572334                     # Diana at the Hunt - Diana and Her Nymphs on the Poin
+    action: set
+    value: "Peter Paul Rubens & Jan Brueghel the Elder"
+    reason: "lead: \"by Peter Paul Rubens (figures) and Jan Brueghel the Elder (landscape and animals)\""
+    source: "https://en.wikipedia.org/wiki/Diana_and_Her_Nymphs_Leaving_for_the_Hunt"
+    checked: "2026-07-25"
+  - work: Q15272827                     # Robert Edward Lee sculpture
+    action: set
+    value: "Henry Shrady & Leo Lentelli"
+    reason: "Shrady began it and died before completion; Lentelli finished it"
+    source: "https://en.wikipedia.org/wiki/Robert_E._Lee_Monument_(Charlottesville,_Virginia)"
+    checked: "2026-07-25"
+  - work: Q18624915                     # Gänseliesel-Brunnen Göttingen
+    action: set
+    value: "Heinrich Stöckhardt & Paul Nisse"
+    reason: "Stöckhardt designed the fountain, Nisse modelled the Gänseliesel figure"
+    source: "https://en.wikipedia.org/wiki/Gänseliesel"
+    checked: "2026-07-25"
+  - work: Q19890804                     # Death of Cleopatra
+    action: set
+    value: "Orazio Gentileschi & Artemisia Gentileschi"
+    reason: "lead: \"secure authorship to either Orazio or Artemisia is disputed\""
+    source: "https://en.wikipedia.org/wiki/Cleopatra_(Artemisia_Gentileschi,_Milan)"
+    checked: "2026-07-25"
+  - work: Q19960944                     # The Sciences and Arts
+    action: set
+    value: "Adriaen van Stalbemt & Hieronymus Francken the Younger"
+    reason: "lead: traditionally Stalbemt, recently re-attributed to Francken"
+    source: "https://en.wikipedia.org/wiki/The_Sciences_and_the_Arts"
+    checked: "2026-07-25"
+  - work: Q21036718                     # Altarpiece of Saint George
+    action: set
+    value: "Andrés Marzal de Sas & Miguel Alcañiz the Elder"
+    reason: "lead: \"executed around 1400 by Andreu Marçal de Sax and Miquel Alcanyís\""
+    source: "https://en.wikipedia.org/wiki/Altarpiece_of_the_Centenar_de_la_Ploma"
+    checked: "2026-07-25"
+  # --- no answerable creator: creator card suppressed, title card kept ---
+  - work: Q152123                     # Still Life with Beer Mug and Fruit
+    action: exclude
+    reason: "lead: \"originally attributed to Vincent van Gogh, but subsequently found to be the work of an unknown artist\""
+    source: "https://en.wikipedia.org/wiki/Still_Life_with_Beer_Mug_and_Fruit"
+    checked: "2026-07-25"
+  - work: Q205259                     # Riace bronzes
+    action: exclude
+    reason: "creator statement is the ethnonym \"Greeks\", not an artist — the bronzes are anonymous"
+    source: "https://en.wikipedia.org/wiki/Riace_bronzes"
+    checked: "2026-07-25"
+  - work: Q720483                     # Retour des cendres
+    action: exclude
+    reason: "the item is the 1840 historical event (retour des cendres), not an artwork"
+    source: "https://en.wikipedia.org/wiki/Retour_des_cendres"
+    checked: "2026-07-25"
+  - work: Q2233466                     # Seated Woman of Çatalhöyük
+    action: exclude
+    reason: "creator statement is the literal string \"678\"; the figurine is a Neolithic anonymous work"
+    source: "https://en.wikipedia.org/wiki/Seated_Woman_of_Çatalhöyük"
+    checked: "2026-07-25"
+  - work: Q2510869                     # Concert in the Egg
+    action: exclude
+    reason: "lead: not by Bosch — \"based on one of his drawings\", by a follower"
+    source: "https://en.wikipedia.org/wiki/Concert_in_the_Egg"
+    checked: "2026-07-25"
+  - work: Q3829345                     # Leda and the Swan
+    action: exclude
+    reason: "lead: \"by a painter in the circle of Leonardo da Vinci\" — shipped answer (Leonardo) is wrong, no agreed creator"
+    source: "https://en.wikipedia.org/wiki/Leda_and_the_Swan_(Uffizi)"
+    checked: "2026-07-25"
+  - work: Q4390923                     # Isleworth Mona Lisa
+    action: exclude
+    reason: "attribution to Leonardo is contested and not supported by the lead"
+    source: "https://en.wikipedia.org/wiki/Isleworth_Mona_Lisa"
+    checked: "2026-07-25"
+  - work: Q16684555                     # Monument to the laboratory mouse
+    action: exclude
+    reason: "Wikidata creators are bare surnames (\"Kharkevich\", \"Agrikolyansky\"); shipped answer (Dmitriev) is unsupported"
+    source: "https://en.wikipedia.org/wiki/Monument_to_the_laboratory_mouse"
+    checked: "2026-07-25"
+  # --- added 2026-07-25 (second pass): works new since the 4,327-work checkpoint ---
+  - work: Q1137501                     # pulpit of Prato Cathedral
+    action: set
+    value: "Donatello & Michelozzo"
+    reason: "the Prato pulpit is a documented Donatello-Michelozzo collaboration"
+    source: "https://www.wikidata.org/wiki/Q1137501"
+    checked: "2026-07-25"
+  - work: Q2252360                     # The Virgin of Mercy of the Cadard Family
+    action: set
+    value: "Enguerrand Quarton & Pierre Villate"
+    reason: "lead: \"by Enguerrand Quarton and Pierre Vilatte\""
+    source: "https://en.wikipedia.org/wiki/Virgin_of_Mercy_(Quarton_and_Vilatte)"
+    checked: "2026-07-25"
+  - work: Q2402356                     # Monument to Catherine II of Russia, Saint Petersbu
+    action: set
+    value: "Mikhail Mikeshin"
+    reason: "Mikeshin designed the monument; Grimm was the architect"
+    source: "https://www.wikidata.org/wiki/Q2402356"
+    checked: "2026-07-25"
+  - work: Q3076264                     # fontaine du Château d'eau
+    action: set
+    value: "Gabriel Davioud & Henri Alfred Jacquemart"
+    reason: "Davioud designed the fountain, Jacquemart modelled its lions"
+    source: "https://www.wikidata.org/wiki/Q3076264"
+    checked: "2026-07-25"
+  - work: Q3227834                     # The Triumph of the Republic
+    action: set
+    value: "Jules Dalou"
+    reason: "Dalou is the sculptor; Thiébaut Frères and Bingen are founders and Gardet modelled the lions"
+    source: "https://www.wikidata.org/wiki/Q3227834"
+    checked: "2026-07-25"
+  - work: Q3497619                     # equestrian statue of Louis XIII
+    action: set
+    value: "Charles Dupaty & Jean-Pierre Cortot"
+    reason: "Dupaty began the Place des Vosges statue and Cortot finished it after his death"
+    source: "https://www.wikidata.org/wiki/Q3497619"
+    checked: "2026-07-25"
+  - work: Q3497621                     # equestrian statue of Louis XIV
+    action: set
+    value: "Pierre Cartellier & Louis Petitot"
+    reason: "Cartellier began the Versailles statue and his pupil Petitot completed it; Crozatier is the foundry"
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Louis_XIV_(Versailles)"
+    checked: "2026-07-25"
+  - work: Q3862645                     # Monument to King Alfonso XII
+    action: set
+    value: "José Grases Riera"
+    reason: "the 1902 national contest was won by architect José Grases Riera, who designed the monument; the other 18 P170s are the sculptors of its individual figures"
+    source: "https://en.wikipedia.org/wiki/Monument_to_Alfonso_XII"
+    checked: "2026-07-25"
+  - work: Q3998923                     # Detroit Trio
+    action: set
+    value: "Giorgione & Titian & Sebastiano del Piombo"
+    reason: "lead: \"attributed to Giorgione, Titian and Sebastiano del Piombo\""
+    source: "https://en.wikipedia.org/wiki/Detroit_Trio"
+    checked: "2026-07-25"
+  - work: Q6738081                     # Major General Marquis Gilbert de Lafayette
+    action: set
+    value: "Alexandre Falguière & Antonin Mercié"
+    reason: "the Lafayette statue is credited to both sculptors; Barbedienne is the foundry"
+    source: "https://en.wikipedia.org/wiki/Statue_of_the_Marquis_de_Lafayette_(Washington,_D.C.)"
+    checked: "2026-07-25"
+  - work: Q9362336                     # The three Marys at the Tomb
+    action: set
+    value: "Hubert van Eyck"
+    reason: "lead: \"usually attributed to Hubert van Eyck\" — the shipped answer (Jan) is the arbitrary pick"
+    source: "https://en.wikipedia.org/wiki/The_Three_Marys_at_the_Tomb_(Hubert_van_Eyck?)"
+    checked: "2026-07-25"
+  - work: Q11801540                     # Crucifixion Retable
+    action: set
+    value: "Melchior Broederlam & Jacques de Baerze"
+    reason: "lead: \"painted exterior panels by Melchior Broederlam and an interior carved by Jacques de Baerze\""
+    source: "https://en.wikipedia.org/wiki/Crucifixion_Altarpiece"
+    checked: "2026-07-25"
+  - work: Q16366507                     # Monument to Alexander Tamanyan
+    action: set
+    value: "Artashes Hovsepyan"
+    reason: "sculptor of the Tamanyan monument; Petrossian was the architect"
+    source: "https://www.wikidata.org/wiki/Q16366507"
+    checked: "2026-07-25"
+  - work: Q16370033                     # Monument to Avetik Isahakyan
+    action: set
+    value: "Sargis Baghdasaryan"
+    reason: "sculptor of the Isahakyan monument; Sadoyan was the architect"
+    source: "https://www.wikidata.org/wiki/Q16370033"
+    checked: "2026-07-25"
+  - work: Q17496081                     # Venus in Paphos
+    action: set
+    value: "Jean-Auguste-Dominique Ingres"
+    reason: "Ingres; Desgoffe was a studio assistant, as on The Source"
+    source: "https://www.wikidata.org/wiki/Q17496081"
+    checked: "2026-07-25"
+  - work: Q17639414                     # Virgin of the Assumption and St. Michael the Archa
+    action: set
+    value: "Dosso Dossi & Battista Dossi"
+    reason: "lead: \"by the Italian Renaissance painters Dosso Dossi and Battista Dossi\""
+    source: "https://en.wikipedia.org/wiki/Virgin_of_the_Assumption_and_St._Michael_the_Archangel"
+    checked: "2026-07-25"
+  - work: Q18683017                     # Emperor Jahangir Embraces Shah Abbas
+    action: set
+    value: "Abu al-Hasan"
+    reason: "lead: \"a Mughal painting by the artist Abu'l Hasan\""
+    source: "https://en.wikipedia.org/wiki/Jahangir_Embracing_Shah_Abbas"
+    checked: "2026-07-25"
+  - work: Q20899767                     # Goethe-Denkmal
+    action: set
+    value: "Carl Seffner"
+    reason: "sculptor of the Leipzig Goethe monument; Noack is the foundry"
+    source: "https://en.wikipedia.org/wiki/Goethe_Monument_(Leipzig)"
+    checked: "2026-07-25"
+  - work: Q24089142                     # Equestrian statue of Frederick William IV
+    action: set
+    value: "Alexander Calandrelli"
+    reason: "lead: \"an 1875-86 sculpture … by Alexander Calandrelli\" — the shipped answer (Bläser) is the arbitrary pick"
+    source: "https://en.wikipedia.org/wiki/Equestrian_statue_of_Frederick_William_IV"
+    checked: "2026-07-25"
+  - work: Q27699461                     # Flemish Market and Washing Place
+    action: set
+    value: "Joos de Momper the Younger"
+    reason: "lead: \"by Flemish painter Joos de Momper … might be a collaboration\" — de Momper is the principal, not Brueghel"
+    source: "https://en.wikipedia.org/wiki/Flemish_Market_and_Washing_Place"
+    checked: "2026-07-25"
+  - work: Q27949246                     # Statue of Jaroslav Hašek
+    action: set
+    value: "Karel Nepraš & Karolína Neprašová"
+    reason: "lead: \"by Karel Nepraš and Karolína Neprašová\", completed by his daughter"
+    source: "https://en.wikipedia.org/wiki/Statue_of_Jaroslav_Hašek"
+    checked: "2026-07-25"
+  - work: Q29017592                     # Bathsheba
+    action: set
+    value: "Artemisia Gentileschi"
+    reason: "lead: \"by … Artemisia Gentileschi, with contributions by Viviano Codazzi (architecture) and Domenico Gargiulo (landscape)\""
+    source: "https://en.wikipedia.org/wiki/Bathsheba_(Gentileschi)"
+    checked: "2026-07-25"
+  - work: Q30605361                     # Susanna and the Elders
+    action: set
+    value: "Artemisia Gentileschi"
+    reason: "lead: \"a 1652 painting by … Artemisia Gentileschi\", in collaboration with her pupil Palumbo"
+    source: "https://en.wikipedia.org/wiki/Susanna_and_the_Elders_(Artemisia_Gentileschi,_Bologna)"
+    checked: "2026-07-25"
+  - work: Q60022105                     # Excursion in the Countryside of Infanta Isabel Cla
+    action: set
+    value: "Jan Brueghel the Elder & Joos de Momper the Younger"
+    reason: "lead: \"by Flemish artists Jan Brueghel the Elder and Joos de Momper\""
+    source: "https://en.wikipedia.org/wiki/Excursion_in_the_Countryside_of_Infanta_Isabel_Clara_Eugenia"
+    checked: "2026-07-25"
+  - work: Q60022107                     # The Infanta Isabel Clara Eugenia in the Mariemont 
+    action: set
+    value: "Jan Brueghel the Elder & Joos de Momper the Younger"
+    reason: "lead: \"by Flemish artists Jan Brueghel the Elder and Joos de Momper\""
+    source: "https://en.wikipedia.org/wiki/The_Infanta_Isabel_Clara_Eugenia_in_the_Mariemont_Park"
+    checked: "2026-07-25"
+  - work: Q97580153                     # A Harvest of Death, Gettysburg, Pennsylvania
+    action: set
+    value: "Timothy H. O'Sullivan"
+    reason: "lead: \"a photograph taken by Timothy H. O'Sullivan\"; Gardner published it in his Sketch Book"
+    source: "https://en.wikipedia.org/wiki/A_Harvest_of_Death"
+    checked: "2026-07-25"
+  - work: Q111533968                     # Menorah in flames
+    action: set
+    value: "Nandor Glid"
+    reason: "lead: \"created in 1997 by Nandor Glid\"; Daniel Glid oversaw the later installation"
+    source: "https://en.wikipedia.org/wiki/Menorah_in_flames_(Thessaloniki)"
+    checked: "2026-07-25"
+  # --- multi-creator works whose images are not cached yet (no cards today, adjudicated ahead) ---
+  - work: Q25486311
+    action: set
+    value: "Nikolay Nikoghosyan"
+    reason: "sculptor of the Gyumri statue; Torosian was the architect. Distinct work from Q16370033, the Yerevan Isahakyan monument by Sargis Baghdasaryan"
+    source: "https://en.wikipedia.org/wiki/Statue_of_Avetik_Isahakyan"
+    checked: "2026-07-25"
+  - work: Q5002757
+    action: set
+    value: "Daniel Chester French & Thomas Hastings"
+    reason: "a genuine co-credit rather than a pedestal: Hastings designed the fountain architecture and French the sculptural reliefs"
+    source: "https://en.wikipedia.org/wiki/Butt%E2%80%93Millet_Memorial_Fountain"
+    checked: "2026-07-25"
+  - work: Q3979950
+    action: set
+    value: "Fra Angelico"
+    reason: "lead: \"a marble aedicula designed by Lorenzo Ghiberti, with paintings by Fra Angelico\" — the paintings are the work and what the card's image shows; Ghiberti designed its frame"
+    source: "https://en.wikipedia.org/wiki/Tabernacle_of_the_Linaioli"
+    checked: "2026-07-25"
 
 # --- alternative source modes (uncomment one, drop the wikidata knobs above) ---
 # source: curated

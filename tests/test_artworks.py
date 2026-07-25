@@ -40,7 +40,8 @@ class TestFetch:
         arts = _fetch([_binding("Q12418", "Mona Lisa", "Q762", "Leonardo da Vinci",
                                  sitelinks=146, inception="1503-01-01T00:00:00Z")])
         assert arts == [Artwork("Q12418", "Mona Lisa", "Leonardo da Vinci", "Q762",
-                                "http://img/x.jpg", 146, 1503)]
+                                "http://img/x.jpg", 146, 1503,
+                                (("Q762", "Leonardo da Vinci"),))]
 
     def test_dedupes_by_qid_keeping_first(self):
         # two P18 images on one work → two rows, one Artwork
@@ -119,3 +120,33 @@ class TestQuery:
         q = build_query({"source": "wikidata"}, band=(20, 40))
         assert "?sitelinks >= 20 && ?sitelinks < 40" in q
         assert "?sitelinks >= 5" in build_query({"source": "wikidata", "min_sitelinks": 5}, band=(5, None))
+
+
+class TestMultipleCreators:
+    """A work with several P170 statements yields several rows. Which creator ends up on the
+    card used to depend on SPARQL row order, which WDQS does not guarantee without ORDER BY —
+    so a re-export could silently flip a card's answer while its item_key (and its FSRS
+    history) stayed put. The pick is now deterministic, and every candidate is retained."""
+
+    def test_collects_every_candidate(self):
+        arts = _fetch([
+            _binding("Q734834", "Ghent Altarpiece", "Q60083", "Jan van Eyck"),
+            _binding("Q734834", "Ghent Altarpiece", "Q319909", "Hubert van Eyck"),
+        ])
+        assert len(arts) == 1
+        assert arts[0].creator_candidates == (
+            ("Q60083", "Jan van Eyck"), ("Q319909", "Hubert van Eyck"))
+
+    def test_pick_is_independent_of_row_order(self):
+        rows = [_binding("Q1", "W", "Q900", "Late"), _binding("Q1", "W", "Q100", "Early")]
+        assert _fetch(rows)[0].creator == _fetch(list(reversed(rows)))[0].creator == "Early"
+
+    def test_single_creator_is_unambiguous(self):
+        art = _fetch([_binding("Q12418", "Mona Lisa", "Q762", "Leonardo da Vinci")])[0]
+        assert art.creator == "Leonardo da Vinci" and len(art.creator_candidates) == 1
+
+    def test_anonymous_work_has_no_candidates(self):
+        b = _binding("Q1", "W", "Q9", "x")
+        b["creatorLabel"] = {"value": "http://www.wikidata.org/.well-known/genid/abc"}
+        art = _fetch([b])[0]
+        assert art.creator == "" and art.creator_candidates == ()

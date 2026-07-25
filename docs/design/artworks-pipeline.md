@@ -99,6 +99,68 @@ two-card JSON **and** copies the downsized WebP assets into `data/decks/assets/<
 - `downsize` output is WebP within target px / size.
 - Artifact byte-stability: same config → identical `items`/`labels`/`choices` bytes.
 
+## Creator corrections (2026-07-25)
+
+A creator card is only as good as P170, and P170 fails two ways. Both are patched by a sourced
+`corrections:` block in the config, sharing the provenance contract with the monarchs pipeline
+(`corrections.py`: mandatory `reason`/`source`, raise-don't-skip, staleness reporting).
+
+**1. Several creators, no way to choose.** 116 of 4,327 shipped works (2.7%) carry more than one
+P170. These are not data errors — Laocoön has three Rhodian sculptors, the Ghent Altarpiece two
+van Eyck brothers, the Siegessäule six sculptors plus its architect. No Wikidata field settles
+which one carries the work: rank is already applied by `wdt:` (0 works had a single preferred
+statement), P84 `architect` covers 11 and is *actively wrong* for sculpture (it would replace
+Chillida with the site architect on *Peine del Viento XV*), and 85 have no signal at all. So all
+111 with a creator card were adjudicated by hand against their Wikipedia lead: 64 have a
+principal creator, 39 answer with the credited set, 8 have no answerable creator.
+
+**2. A plainly wrong statement.** Q4429116 "The Magpie" credits Picasso on a Monet painting —
+the item's own description and image file both say Monet. Same mechanism, `action: set`.
+
+Two knock-on design points:
+
+- **Joint answers need joint distractors.** A two-name answer among three one-name options is
+  pickable on shape alone, which would test spotting an ampersand rather than recognising the
+  artwork. `distractors._rank` matches shape before era on creator cards, falling back when the
+  deck has too few of a kind.
+- **The pick must be deterministic.** The old dedup kept whichever row SPARQL returned first,
+  and WDQS guarantees no ordering without `ORDER BY` — so a re-export could silently flip a
+  card's answer while its `item_key`, and so its FSRS history, stayed put. `_principal_creator`
+  now picks the lowest QID: still arbitrary, but *fixed*, and `stale_corrections` reports every
+  work answered that way so new ambiguity surfaces instead of passing silently.
+
+Corrections rewrite only the answer text, never the item string (`<QID>|creator`), so applying
+one preserves the card's review history in the quiz — the property this key scheme was chosen
+for. `action: exclude` does drop the creator card (the title card is kept), which parks that
+card's history; because the key derives from the QID, re-including the work later restores it.
+
+## Metadata cache (2026-07-25)
+
+`fetch_artworks_cached` persists the fetch to `cache/artworks_meta.json`, keyed by a hash of the
+query-affecting config plus `_META_ENGINE_VERSION`. The banded sweep is ~60 SPARQL queries
+(12 sitelink bands x 5 media types) and dominated an export at ~10 of its ~12 minutes — while
+being entirely invariant to what actually changes between runs (a creator correction, a
+distractor tweak). Same pattern as `deck_export`'s `cache/equation_pools.json`, and the same
+central lesson: **a stale cache that silently serves old data is worse than a slow rebuild.**
+
+Three deliberate choices follow from that:
+
+- **The key is built by exclusion, not inclusion.** `_NON_FETCH_KEYS` names the config keys that
+  provably cannot change the query (`corrections`, `distractors`, `image_*`, `deck_name`,
+  `group`); everything else contributes to the hash. So a config knob added later busts the cache
+  by default rather than being silently ignored. An include-list would fail the other way — the
+  dangerous way — the first time someone adds a filter and forgets to register it.
+- **Bump `_META_ENGINE_VERSION` when the fetch or its parsing changes** — the query shape,
+  `_BAND_EDGES`, `_is_unresolved`, `_principal_creator`, `_year`, or the `Artwork` fields.
+  Without it, a parser fix keeps serving results produced by the old parser.
+- **Hits are logged, not silent.** Served-from-cache is exactly the state where a wrong answer
+  looks like a fast one, so the export prints the entry key and engine version. `--refresh-metadata`
+  (on both `deck-export` and `deck-artworks`) bypasses the read and rewrites the entry — the
+  escape hatch for when upstream Wikidata itself has moved.
+
+Cache failures are never fatal: an unreadable or unwritable cache degrades to a live fetch,
+because a broken cache must not be able to break an export.
+
 ## Open questions / risks
 - **Image licensing (must-resolve).** Commons images vary — most pre-20th-C paintings are
   public domain (author died >70y), but modern works (Guernica, Klimt's *The Kiss*) may be

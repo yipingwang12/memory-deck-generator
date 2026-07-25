@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from .corrections import provenance, validate
 from .wikidata import _SPARQL_URL, _sparql_session
 
 
@@ -56,15 +57,10 @@ def parse_corrections(raw: list[dict] | None) -> list[Correction]:
         return []
     out = []
     for i, entry in enumerate(raw):
-        missing = [k for k in ('year', 'action', 'reason', 'source') if not entry.get(k)]
-        if missing:
-            raise ValueError(f"corrections[{i}]: missing required key(s): {', '.join(missing)}")
-        if entry['action'] not in _ACTIONS:
-            raise ValueError(f"corrections[{i}]: action must be one of {_ACTIONS}, got {entry['action']!r}")
-        out.append(Correction(
-            year=int(entry['year']), action=entry['action'], reason=entry['reason'],
-            source=entry['source'], checked=str(entry.get('checked', '')),
-        ))
+        validate(entry, i, required=('year', 'action'), actions=_ACTIONS)
+        reason, source, checked = provenance(entry)
+        out.append(Correction(year=int(entry['year']), action=entry['action'],
+                              reason=reason, source=source, checked=checked))
     return out
 
 
