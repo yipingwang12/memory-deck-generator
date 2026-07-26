@@ -576,3 +576,60 @@ def test_module_is_runnable_with_dash_m():
                        capture_output=True, text=True)
     assert r.returncode == 0, r.stderr
     assert '--only' in r.stdout
+
+
+class TestOrphanArtifacts:
+    """A deleted config leaves its built artifact behind: decks_dir is gitignored build
+    output and a partial run skips the stale-clear, so the orphan survives every targeted
+    re-export and the orchestrator's sync copies it onward. Real incident: the Shakespeare
+    sonnet decks were deleted 2026-07-15 and reappeared in the quiz on 2026-07-25."""
+
+    def test_none_when_every_artifact_has_a_config(self, tmp_path):
+        _write_poetry(tmp_path)
+        _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_only(tmp_path, decks)
+        assert deck_export.find_orphan_artifacts(tmp_path, decks) == []
+
+    def test_finds_an_artifact_whose_config_was_deleted(self, tmp_path):
+        poetry_cfg = _write_poetry(tmp_path)
+        _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_only(tmp_path, decks)
+
+        Path(poetry_cfg).unlink()                       # config removed, artifact stays
+        orphans = deck_export.find_orphan_artifacts(tmp_path, decks)
+        assert [p.name for p in orphans] == ['poetry_sonnet.json']
+
+    def test_partial_export_leaves_the_orphan_and_warns(self, tmp_path, capsys):
+        poetry_cfg = _write_poetry(tmp_path)
+        _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_only(tmp_path, decks)
+        Path(poetry_cfg).unlink()
+
+        _export_only(tmp_path, decks, only='monarchs_britain')
+
+        assert (decks / 'poetry_sonnet.json').exists()   # --only never clears
+        err = capsys.readouterr().err
+        assert 'poetry_sonnet.json' in err and 'no config' in err
+
+    def test_full_export_clears_it_and_warns_nothing(self, tmp_path, capsys):
+        poetry_cfg = _write_poetry(tmp_path)
+        _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_only(tmp_path, decks)
+        Path(poetry_cfg).unlink()
+
+        _export_only(tmp_path, decks)                   # full rebuild is authoritative
+
+        assert not (decks / 'poetry_sonnet.json').exists()
+        assert 'no config' not in capsys.readouterr().err
+
+    def test_manual_decks_are_never_orphans(self, tmp_path):
+        _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_only(tmp_path, decks)
+        (decks / 'vocab_hand_authored.json').write_text(
+            json.dumps({'source': 'manual', 'items': ['我']}), encoding='utf-8')
+        assert deck_export.find_orphan_artifacts(tmp_path, decks) == []

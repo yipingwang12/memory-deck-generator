@@ -321,6 +321,37 @@ def _is_manual(path: Path) -> bool:
         return False
 
 
+def find_orphan_artifacts(config_dir: Path, decks_dir: Path) -> list[Path]:
+    """Artifacts in ``decks_dir`` that no config would produce any more.
+
+    Deleting a config removes the recipe but not the already-built artifact: ``decks_dir``
+    is gitignored build output, and a partial run (``only``) deliberately skips the
+    stale-clear. The orphan then survives every targeted re-export, and the orchestrator's
+    ``decks`` sync copies it onward verbatim — so a deck deleted on purpose can reappear in
+    the quiz weeks later (the Shakespeare sonnet decks did exactly this, 2026-07-15 →
+    2026-07-25). Cheap to check: ``_discover_slots`` reads configs only, no network.
+
+    ``source: manual`` decks are never orphans — they are hand-authored and have no config
+    to be built from, which is why the stale-clear preserves them too.
+    """
+    expected = {s.filename for s in _discover_slots(config_dir)}
+    return sorted(p for p in Path(decks_dir).glob('*.json')
+                  if p.name not in expected and not _is_manual(p))
+
+
+def _warn_orphans(config_dir: Path, decks_dir: Path) -> list[Path]:
+    orphans = find_orphan_artifacts(config_dir, decks_dir)
+    if orphans:
+        print(f'  ! {len(orphans)} artifact(s) in {decks_dir} have no config — a deleted '
+              f'config leaves its build output behind, and the sync copies it onward:',
+              file=sys.stderr)
+        for p in orphans:
+            print(f'  !   {p.name}', file=sys.stderr)
+        print('  ! delete them, or run a full export (no --only) to clear them',
+              file=sys.stderr)
+    return orphans
+
+
 def export_decks(config_dir: Path = DEFAULT_CONFIG_DIR,
                  decks_dir: Path = DEFAULT_DECKS_DIR,
                  only: str | None = None,
@@ -361,6 +392,10 @@ def export_decks(config_dir: Path = DEFAULT_CONFIG_DIR,
             _write_assets(decks_dir, deck_stem=path.stem, assets=assets)
         path.write_text(json.dumps(a, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         written.append(path)
+
+    # Runs after every export, not just partial ones: on a full rebuild the clear above
+    # means there should be none, so a hit there signals a filename/slot mismatch instead.
+    _warn_orphans(config_dir, decks_dir)
     return written
 
 
