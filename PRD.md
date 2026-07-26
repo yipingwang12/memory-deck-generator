@@ -14,6 +14,8 @@ A bare run **clears the output directory** and rebuilds every deck — authorita
 
 Use `--only <glob>` to refresh a subset: matching decks are rebuilt, everything else is left untouched and never fetched, and each rebuilt deck keeps the existing artifact's `order`/`config_path` while `items`/`labels`/`config_hash` update. `--reset-identity` opts out (e.g. after genuinely relocating the repo).
 
+**Orphan warning.** Deleting a config removes the recipe but *not* the already-built artifact: `data/decks/` is gitignored build output, and `--only` deliberately skips the stale-clear above. The orphan then survives every targeted re-export, and the orchestrator's `decks` sync copies it into the quiz verbatim — so a deck removed on purpose can reappear weeks later. That happened: the Shakespeare sonnet decks were deleted 2026-07-15 (config *and* quiz artifact) and a `--only` artwork refresh on 2026-07-25 put them back in the quiz menu, byte-identical to their pre-deletion content. Every export now reports them (`find_orphan_artifacts`, comparing the output dir against `_discover_slots` — configs only, no network); fix by deleting the file **from the generator's output dir first**, so the next sync is a no-op rather than a re-copy. `source: manual` artifacts are never orphans, for the same reason the clear preserves them.
+
 **Deck staleness is invisible.** `config_hash` covers the config bytes only, so a change to *generator behaviour* — e.g. the end-year transition rule — leaves every hash identical while the digits change. Decks do not self-report as stale; re-export after any generator change.
 
 ## Users
