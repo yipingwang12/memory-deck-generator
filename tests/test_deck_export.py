@@ -287,6 +287,35 @@ class TestArtworks:
         assert a['answers'][:2] == ['Mona Lisa', 'Leonardo da Vinci']
         assert a['img'][0] == a['img'][1] == 'assets/artworks_famous/Q12418.webp'  # shared per artwork
 
+    def test_sitelinks_exported_per_card(self, tmp_path):
+        # The fame count is the only signal in the deck of how well-known a work is; the
+        # quiz's creator browser sorts on it. Parallel to items, so both of a work's cards
+        # carry it.
+        cfg = _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        _export_artworks(tmp_path, decks)
+        a = _find(decks, cfg)
+        assert len(a['sitelinks']) == len(a['items'])
+        assert a['sitelinks'][:2] == [_ARTWORKS[0].sitelinks] * 2
+
+    def test_cache_only_flag_reaches_the_image_fetch(self, tmp_path):
+        # --cache-only must hold the work set fixed when re-exporting for an unrelated
+        # change; it is the flag form of the config key, so the config stays untouched.
+        cfg = _write_artworks(tmp_path)
+        decks = tmp_path / 'decks'
+        seen = []
+
+        def fake_fetch_raw(url, cache_dir, key, **kw):
+            seen.append(kw.get('cache_only'))
+            return b'raw'
+
+        with patch.object(deck_export, 'CACHE_ONLY', True), \
+             patch('deck_generator.deck_export.fetch_artworks_cached', return_value=_ARTWORKS), \
+             patch('deck_generator.deck_export.fetch_raw', side_effect=fake_fetch_raw), \
+             patch('deck_generator.deck_export.to_webp', side_effect=lambda raw, px: b'W'):
+            deck_export.export_decks(tmp_path, decks, only='artworks_famous')
+        assert seen and all(seen)
+
     def test_choices_include_correct_answer(self, tmp_path):
         cfg = _write_artworks(tmp_path)
         decks = tmp_path / 'decks'
