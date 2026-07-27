@@ -44,6 +44,7 @@ CACHE_DIR = _ROOT / 'cache' / 'artworks'
 
 # Set by main() --refresh-metadata; bypasses the persisted SPARQL metadata cache for this run.
 REFRESH_METADATA = False
+CACHE_ONLY = False        # --cache-only: never download, assemble from the image cache
 
 # Monarch decks come from separate per-realm configs but share one collapsible menu
 # group in the quiz (like poetry's collection_title). Overridable per-config via `group:`.
@@ -248,7 +249,9 @@ def _build_artwork_deck(s: _Slot) -> dict:
     # hours at 10k scale. A thread pool naturally spaces requests; fetch_raw's 429 Retry-After
     # backoff remains the politeness safety valve, and cached originals skip the network.
     workers = cfg.get('image_workers', 8)
-    cache_only = cfg.get('cache_only', False)  # checkpoint: assemble only already-downloaded works
+    # checkpoint: assemble only already-downloaded works (config, or --cache-only for a
+    # one-off re-export that must not change the work set)
+    cache_only = cfg.get('cache_only', False) or CACHE_ONLY
     hint = max(640, px * 2)  # a modest thumbnail is plenty for a px-sized WebP (was 1024)
 
     def _grab(a):
@@ -269,7 +272,7 @@ def _build_artwork_deck(s: _Slot) -> dict:
             assets[rel] = webp
             rel_by_qid[qid] = rel
 
-    items, labels, prompts, answers, imgs, opts = [], [], [], [], [], []
+    items, labels, prompts, answers, imgs, opts, links = [], [], [], [], [], [], []
     for a in arts:  # assemble in fame order, keeping only successfully-imaged works
         rel = rel_by_qid.get(a.qid)
         if rel is None:
@@ -283,6 +286,7 @@ def _build_artwork_deck(s: _Slot) -> dict:
             answers.append(getattr(a, attr))
             imgs.append(rel)
             opts.append(choices[attr][a.qid])
+            links.append(a.sitelinks)      # fame count; the deck's only "how known is it"
 
     return {
         'order': s.order,
@@ -296,6 +300,7 @@ def _build_artwork_deck(s: _Slot) -> dict:
         'answers': answers,
         'img': imgs,
         'choices': opts,
+        'sitelinks': links,
         'group': s.group,
         'poem_title': None,
         'config_path': str(s.yaml_path),
@@ -449,12 +454,18 @@ def main(argv=None) -> None:
     p.add_argument('--refresh-metadata', action='store_true',
                    help="Re-query Wikidata for artwork metadata instead of reusing "
                         "cache/artworks_meta.json (use when upstream data has changed).")
+    p.add_argument('--cache-only', action='store_true',
+                   help="Assemble artwork decks from already-downloaded images only, adding "
+                        "nothing from the network. Keeps the deck's work set exactly as shipped "
+                        "when re-exporting for an unrelated change (same as config cache_only, "
+                        "without editing the config).")
     p.add_argument('--reset-identity', action='store_true',
                    help="With --only, re-derive order/config_path instead of preserving the "
                         "existing artifact's. Strands session history keyed on config_path.")
     args = p.parse_args(argv)
-    global REFRESH_METADATA
+    global REFRESH_METADATA, CACHE_ONLY
     REFRESH_METADATA = args.refresh_metadata
+    CACHE_ONLY = args.cache_only
     written = export_decks(args.config_dir, args.out, only=args.only,
                            reset_identity=args.reset_identity)
     scope = f"matching {args.only!r}" if args.only else 'all'
