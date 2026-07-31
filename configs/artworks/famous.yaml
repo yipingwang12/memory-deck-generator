@@ -10,6 +10,9 @@ deck_name: "Famous Artworks"
 group: "Artworks"
 
 source: wikidata            # wikidata | curated | collection
+# TODO (surveyed 2026-07-30): this list drops ~938 eligible works — P31 is matched exactly, so
+# frescoes/statues/monuments never enter the candidate set (Statue of Liberty, School of Athens,
+# Creation of Adam, The Last Supper). QIDs + counts + tiering: docs/design/artworks-pipeline.md
 instance_of:                # broadened media to keep recognizability high past paintings-only
   - Q3305213                # painting
   - Q860861                 # sculpture
@@ -20,7 +23,7 @@ min_sitelinks: 5            # fame floor (# of Wikipedias) — broadly-known-and
 limit: 10000                # cap at the 10k most famous
 # Download is Commons-rate-limited (~15-40/min); the full 10k takes hours (resumable — images
 # cache under cache/artworks/ by QID). To export a CHECKPOINT deck from what's already cached
-# without downloading more, add:  cache_only: true  (currently ~5552 works cached; 4327 shipped to the quiz).
+# without downloading more, add:  cache_only: true  (5,707 works fetched; 5,552 shipped to the quiz).
 # image_workers: 8 (default) — enough in-flight to absorb 429 retry-backoff.
 
 image_px: 480               # longest side of the downsized WebP (~25 KB each)

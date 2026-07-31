@@ -25,6 +25,10 @@
 - [x] Desktop keyboard input — PyWebView detected via `window.pywebview`; chips rendered non-interactive; text input replaces tap selection; Enter submits; browser/iPhone path unchanged
 
 ### Near-term
+- [ ] **Artworks `instance_of` coverage gap** — whitelist drops ~938 eligible works (frescoes,
+      statues, monuments, polyptychs…), incl. Statue of Liberty, School of Athens, Creation of
+      Adam, The Last Supper. Surveyed 2026-07-30; per-class QIDs + counts + tiering in
+      [artworks-pipeline.md](docs/design/artworks-pipeline.md) "Open questions / risks"
 - [ ] README with install/usage examples (including PWA install instructions)
 - [ ] CI: run pytest + vitest on push
 - [ ] Validate all 31 award configs in CI (smoke test, not full fetch)

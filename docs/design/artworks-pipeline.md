@@ -3,7 +3,7 @@
 *Status: **built + scaled (2026-07-24)**. Wikidata → famous artworks → downsized WebP assets +
 a two-card artifact with baked multiple-choice distractors, over the `deck-export` seam. Quiz
 side: [`memory-quiz-app/docs/design/artwork-mc-mode.md`](../../../memory-quiz-app/docs/design/artwork-mc-mode.md).
-**`artworks_famous` grown 290 → 4,327 works (8,489 cards)** — broadened media (painting +
+**`artworks_famous` grown 290 → 5,552 works (10,867 cards)** — broadened media (painting +
 sculpture + drawing + print + photograph), fame floor sitelinks ≥5, a checkpoint of the deep
 catalog (extendable to the 10k cap; download is Commons-rate-limited, see below).*
 
@@ -17,7 +17,7 @@ catalog (extendable to the 10k cap; download is Commons-rate-limited, see below)
 - **Parallel downloads** (`deck_export`, thread pool, `image_workers`): Commons still caps the
   *successful* rate ~15–40/min per IP via 429s (backoff-paced), so 10k images take hours —
   **resumable** (cache keyed by QID). **`cache_only: true`** exports a checkpoint deck from the
-  already-downloaded images without fetching more (how the 4,327 shipped). Thumbnail hint width
+  already-downloaded images without fetching more (how the 5,552 shipped). Thumbnail hint width
   dropped 1024 → `2·image_px` (smaller/faster).
 
 ## Goal
@@ -105,7 +105,7 @@ A creator card is only as good as P170, and P170 fails two ways. Both are patche
 `corrections:` block in the config, sharing the provenance contract with the monarchs pipeline
 (`corrections.py`: mandatory `reason`/`source`, raise-don't-skip, staleness reporting).
 
-**1. Several creators, no way to choose.** 116 of 4,327 shipped works (2.7%) carry more than one
+**1. Several creators, no way to choose.** 131 of 5,552 shipped works (2.4%) carry more than one
 P170. These are not data errors — Laocoön has three Rhodian sculptors, the Ghent Altarpiece two
 van Eyck brothers, the Siegessäule six sculptors plus its architect. No Wikidata field settles
 which one carries the work: rank is already applied by `wdt:` (0 works had a single preferred
@@ -173,8 +173,46 @@ because a broken cache must not be able to break an export.
   warn on a missing image rather than aborting the deck.
 - **Deep-catalog cost.** ≥5 sitelinks ≈ 5k works ≈ 125 MB of assets in-repo — fine on disk, but
   keep decks scoped (per-threshold or per-collection) so any single deck stays reasonable.
+- **TODO — `instance_of` whitelist drops ~938 eligible works** (surveyed 2026-07-30, not yet
+  acted on). `build_query` binds `?work wdt:P31 wd:{instance}` exactly, no `P279*`, so a work
+  typed as anything outside the 5 listed classes never enters the candidate set — regardless of
+  fame. 938 distinct works pass every *other* deck filter (P170 creator, P18 image, ≥5 sitelinks)
+  and are absent. None are in the deck; the 5,552-work cache is unaffected by fame ranking here,
+  the `limit: 10000` cap never bound (only 5,707 fetched).
+
+  Wikidata's typing is inconsistent, so this cuts arbitrarily: three Sistine ceiling sibyls are
+  typed `painting` and shipped, while *The Creation of Adam* on the same ceiling is typed
+  `fresco` and did not. Same for the Trevi Fountain (`sculpture`, shipped) vs Christ the Redeemer
+  (`monument`, dropped).
+
+  Worst casualties by sitelinks: Statue of Liberty 156 (above *Mona Lisa*'s 146, the deck's
+  current max), Christ the Redeemer 93, The Last Supper 88, Cave of Altamira 75, Washington
+  Monument 70, School of Athens 61, Creation of Adam 61, The Motherland Calls 54, Lincoln
+  Memorial 53, The Last Judgment 49, Elgin Marbles 47. 17 of the 938 have ≥40 sitelinks.
+
+  Three tiers — separate scope calls, not one decision:
+
+  | Tier | Classes (QID: works) | Total |
+  |---|---|---|
+  | Fine-art media | fresco Q22669139: 97, polyptych Q1278452: 21, triptych Q79218: 17, mural Q219423: 16, icon Q132137: 15, watercolour Q18761202: 14, wall painting Q99516640: 8, diptych Q475476: 6, fresco painting Q134194: 5, vase Q191851: 5, artist's book Q1062404: 4, engraving Q11835431: 3, drawing series Q19828370: 3, tapestry Q184296: 2, altarpiece Q46686: 2 | ~218 |
+  | Sculpture-adjacent (consistent with `Q860861` already listed) | statue Q179700: 298, monument Q4989906: 207, memorial Q5003624: 101, fountain Q483453: 89, war memorial Q575759: 48, sculpture group Q2293362: 35, obelisk Q170980: 14, sculpture series Q19479037: 14, equestrian statue Q659396: 13, bust Q241045: 13, relief Q245117: 9, architectural sculpture Q3476515: 1 | ~700 |
+  | Modern forms | installation art Q20437094: 21, poster Q429785: 8, land art Q326478: 1 | ~30 |
+
+  Tier 1 is unambiguously in scope. Tier 2 is where the deck's character shifts — `memorial` /
+  `war memorial` pull a long tail of civic monuments famous in one country only, so raise
+  `min_sitelinks` for that tier rather than reusing the flat 5. Adding classes is
+  history-safe (item strings are `<QID>|attr`) and additive; cost is the Commons download at
+  ~36/min (~6 min for tier 1, ~30 min for all).
+
+  **Survey is a floor, not a census** — only 48 curated media terms were checked. Exhaustive
+  enumeration needs to run outside the sandbox: WDQS 504s on wide `P170` aggregates and
+  `P279*` traversals (`Q4502142`'s closure is 172k classes, useless as a filter), and the
+  sandbox proxy truncates HTTP responses at 32 KB. Do NOT fix this with `P31/P279*` — the
+  closure is far too broad and the banded queries already strain WDQS.
 
 ## Non-goals (v1)
 - Non-free images (dropped, not shipped).
-- Artwork types beyond paintings (schema extensible via `instance_of`, deferred).
+- Media types outside `instance_of` — currently painting, sculpture, drawing, print, photograph
+  (broadened from paintings-only 2026-07-24). See the coverage-gap TODO above for what this
+  still excludes and why it is not just a config edit.
 - Any quiz-time fetch — this pipeline is the only place the network is touched.
