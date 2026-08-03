@@ -28,7 +28,14 @@
 - [ ] **Artworks `instance_of` coverage gap** — whitelist drops ~938 eligible works (frescoes,
       statues, monuments, polyptychs…), incl. Statue of Liberty, School of Athens, Creation of
       Adam, The Last Supper. Surveyed 2026-07-30; per-class QIDs + counts + tiering in
-      [artworks-pipeline.md](docs/design/artworks-pipeline.md) "Open questions / risks"
+      [artworks-pipeline.md](docs/design/artworks-pipeline.md) "Open questions / risks".
+      **Corroborated 2026-08-03**: most of the 1,083 indexed works absent from the deck are
+      non-painting, so this whitelist is the single biggest canon gap —
+      `results/list_missing_works/` is a ready-made target list
+- [ ] **Review canon-coverage output** — triage `results/list_missing_works/missing_works.txt`
+      (1,083) into deck candidates; hand-check `missing_anonymous.txt` (81, ~half noise).
+      Decide whether the 665 book-absent deck creators (19th-c Russian/Polish schools) stay:
+      Wikidata fame says yes, a curated canon says no. See PRD "Coverage analysis"
 - [ ] README with install/usage examples (including PWA install instructions)
 - [ ] CI: run pytest + vitest on push
 - [ ] Validate all 31 award configs in CI (smoke test, not full fetch)

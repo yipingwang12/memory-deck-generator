@@ -133,6 +133,7 @@ There is **no mechanism to correct a ruler's accession/end year directly**; corr
 - **`sitelinks` (2026-07-26)**: the fame count the fetch already ranks by is now emitted as a parallel array, the deck's only measure of how well-known a work is. The quiz's preview creator browser sorts on it. Re-exported from cache — items byte-identical, so no FSRS key moved. Use **`--cache-only`** for a re-export that must not change the work set: it assembles from already-downloaded images alone (the config key of the same name, without editing the config, which would move `config_hash` for an unrelated reason).
 - Key stability: item strings are `<QID>|attr`, so re-fetching an image or a corrected label never strands FSRS history (contrast monarch digits). Image licensing (drop non-free) is the main open risk.
 - **Creator corrections (2026-07-25)** — a sourced `corrections:` block (same provenance contract as monarchs, shared via `corrections.py`) with `set` / `exclude` actions, applied between `fetch_artworks` and `build_choices` so distractors are built from the corrected creator. Fixes two failure modes P170 can't: a work with **several creators** (2.7% of the deck — Laocoön's three sculptors, the Ghent Altarpiece's two van Eycks, the Siegessäule's six-plus-architect; no Wikidata field picks one, so all 111 were adjudicated by hand — 64 principal, 39 credited-set, 8 unanswerable) and a **plainly wrong statement** (The Magpie credited to Picasso on a Monet painting). Joint answers draw joint distractors, since a two-name answer among one-name options is pickable on shape alone. The fallback pick is now **deterministic** (lowest QID): it used to be SPARQL row order, which WDQS doesn't guarantee, so a re-export could silently flip an answer under a stable `item_key`. `stale_corrections` reports entries upstream has caught up on **and** any new multi-creator work no correction covers.
+- **Canon coverage (2026-08-03)**: measured against the index of *Art: The Definitive Visual Guide* — 1,083 indexed works absent from the deck, 665 deck creators absent from the book. See [Coverage analysis](#coverage-analysis--external-reference-comparison-2026-08-03).
 - See [`docs/design/artworks-pipeline.md`](docs/design/artworks-pipeline.md) and the quiz's [`artwork-mc-mode.md`](../memory-quiz-app/docs/design/artwork-mc-mode.md).
 
 ### 7. Equations (`deck-equations`) — *built*
@@ -146,6 +147,40 @@ There is **no mechanism to correct a ruler's accession/end year directly**; corr
 - Pipeline: `rank_candidates` routes each candidate into *clean* (single reading/≤3 senses → CC-CEDICT first-gloss is safe, ~63%) or *needs-LLM* (polyphone ∪ multi-sense ∪ function-word, ~37%, where the first sense is unreliable — 被→"quilt" not the passive marker). Needs-LLM words get an **audited per-word LLM adjudication** (frequency-correct reading+sense + one short gloss + logged reason). The existing 267-word seed is frozen byte-identical (FSRS keys survive). Grown **267→5257** (2026-07-23).
 - Gloss uniqueness is **band-scoped** (`band_collisions`, `FREQ_BAND_SIZE` window): English has no 5000+ distinct short glosses, and a matching round only co-displays same-band words. `deck-vocab build` reproduces the exact artifact shipped to `memory-quiz-app`.
 - Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [`docs/design/vocab-pipeline.md`](docs/design/vocab-pipeline.md) and the quiz's [`matching-mode.md`](../memory-quiz-app/docs/design/matching-mode.md).
+
+## Coverage analysis — external reference comparison (2026-08-03)
+
+Decks are built from Wikidata fame proxies; whether that matches a **curated canon** is a separate
+question. First check: the index of *Art: The Definitive Visual Guide* (DK) vs `artworks_famous`.
+
+- **Input**: 11 photos of the printed index (pages 599–609, full A–Z). Rotated upright with Pillow,
+  OCR'd `tesseract --psm 3` — `--psm 6` assumes one uniform block and produces garbage on a
+  6-column index. Photos are gitignored (~58 MB); the OCR text is committed
+  (`data/art_definitive_index/ocr/`), so the analysis is reproducible without them.
+- **`scripts/compare_art_index.py`** — both directions, on works and artists.
+- **`scripts/list_missing_works.py`** — every work of any medium absent from the deck: **1,083**
+  (954 artist-attributed, 48 culture-attributed, 81 anonymous/heuristic).
+
+**Finding**: 665 deck creators (≈17% of the deck's works) never appear in the book — concentrated in
+19th-century Russian and Polish national schools (Matejko, Levitan, Aivazovsky, Kuindzhi) that
+Wikidata sitelink fame surfaces and a Western-canon print survey omits. Conversely most book works
+the deck lacks are **non-painting** (sculpture, manuscripts, artifacts), outside the current
+`instance of painting` query.
+
+Matching is normalised + fuzzy, never literal — the two sides disagree structurally, and each
+mismatch below was a real defect found by spot-checking against the raw OCR:
+
+- **The book cites works by surname alone** (`(van Gogh)`) while the deck stores full names, so
+  artists match on surname candidates, not full strings.
+- **Particles and epithets diverge**: `Antonio da Correggio` vs `(Correggio)`,
+  `Hans Holbein the Younger` reducing to `younger`. Each name yields several candidate keys.
+- **Compound surnames** need token fallback: `Joaquín Sorolla` vs `(Sorolla y Bastida)`.
+- **Two index entries routinely OCR onto one line**, so all title/artist pairs per line are
+  extracted; taking only the last fuses two works into one.
+
+**Caveat**: the anonymous tier (81) is ~half noise and needs a human pass — nothing structurally
+separates an unattributed title from a topic, and Chinese artists are indexed without a comma
+(`Li Shan 592`). The attributed tiers are reliable. OCR damage still costs a handful of entries.
 
 ## Output
 Excel `.xlsx` workbook, two sheets:
