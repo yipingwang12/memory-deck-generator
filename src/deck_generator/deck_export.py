@@ -36,6 +36,7 @@ from .monarchs import (
     correction_years, fetch_monarchs, filter_by_accession, make_monarch_chunks, parse_corrections,
 )
 from .poetry_parser import extract_poem
+from .wikisource import fetch_text as fetch_wikisource_text
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_CONFIG_DIR = _ROOT / 'configs'
@@ -137,6 +138,31 @@ def _slot_filename(s: _Slot, multi: bool, used: set[str]) -> str:
     return f"{name}.json"
 
 
+def _poem_source_text(cfg: dict, poem_cfg: dict, text_cache: dict) -> str:
+    """Plain text a poem's markers are matched against, from whichever source holds it.
+
+    Gutenberg gives one text per *book* (every sonnet cut from Gutenberg 1041); Wikisource
+    gives one per *page*, and a collection like the Duineser Elegien is a page per poem.
+    Both cache on their natural key, so a shared book is fetched once and a per-poem page
+    is fetched once each.
+    """
+    if cfg.get('gutenberg_id'):
+        key = ('gutenberg', cfg['gutenberg_id'])
+        if key not in text_cache:
+            text_cache[key] = fetch_text(cfg['gutenberg_id'])
+        return text_cache[key]
+    page = poem_cfg.get('page') or cfg.get('page')
+    if not page:
+        raise ValueError(
+            f"poem {poem_cfg.get('poem_title', '?')!r}: config must give `gutenberg_id` "
+            f"or a Wikisource `page`")
+    lang = cfg.get('wikisource_lang', 'de')
+    key = ('wikisource', lang, page)
+    if key not in text_cache:
+        text_cache[key] = fetch_wikisource_text(page, lang=lang)
+    return text_cache[key]
+
+
 def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict]:
     """Run generation and return one artifact dict per deck (see module docstring).
 
@@ -146,18 +172,16 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
     slots = _discover_slots(config_dir)
     wanted = [s for s in slots if _slot_selected(s, only)]
     artifacts: list[dict] = []
-    text_cache: dict[int, str] = {}
+    text_cache: dict[tuple, str] = {}       # ('gutenberg', id) | ('wikisource', lang, page)
 
     for s in wanted:
         if s.deck_type != 'poetry':
             continue
         cfg = yaml.safe_load(s.yaml_path.read_text())
-        gid = cfg['gutenberg_id']
-        if gid not in text_cache:
-            text_cache[gid] = fetch_text(gid)
         pc = s.poem_cfg
         title = pc['poem_title']
-        items = [l for l in extract_poem(text_cache[gid], pc['start_marker'], pc['end_marker'])
+        source_text = _poem_source_text(cfg, pc, text_cache)
+        items = [l for l in extract_poem(source_text, pc['start_marker'], pc['end_marker'])
                  if l is not None]
         artifacts.append({
             'order': s.order,
@@ -169,6 +193,8 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
             'labels': None,
             'group': s.group,
             'poem_title': title,
+            # Which shared lexicon glosses this deck in preview (None = English, no gloss).
+            'language': cfg.get('language'),
             'config_path': str(s.yaml_path),
             'config_hash': config_hash(s.yaml_path),
             '_filename': s.filename,

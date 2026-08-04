@@ -90,6 +90,28 @@ def _write_poetry(config_dir, *, multi=False):
     return path
 
 
+def _write_wikisource_poetry(config_dir):
+    """A collection sourced from Wikisource: one page per poem, and a `language` naming
+    the shared lexicon the quiz app glosses it from."""
+    (config_dir / 'poetry').mkdir(parents=True, exist_ok=True)
+    path = config_dir / 'poetry' / 'elegies.yaml'
+    path.write_text(
+        "collection_title: Duineser Elegien\n"
+        "language: de\n"
+        "wikisource_lang: de\n"
+        "poems:\n"
+        "  - poem_title: Erste Elegie\n"
+        "    page: Die erste Elegie\n"
+        "    start_marker: \"Shall I compare\"\n"
+        "    end_marker: \"temperate:\"\n"
+        "  - poem_title: Zweite Elegie\n"
+        "    page: Die zweite Elegie\n"
+        "    start_marker: \"So long lives\"\n"
+        "    end_marker: \"short a date.\"\n"
+    )
+    return path
+
+
 def _write_monarchs(config_dir):
     (config_dir / 'monarchs').mkdir(parents=True, exist_ok=True)
     path = config_dir / 'monarchs' / 'britain.yaml'
@@ -108,6 +130,53 @@ def _export(config_dir, decks_dir):
         return deck_export.export_decks(config_dir, decks_dir)
 
 
+class TestWikisourceSource:
+    """A poem Gutenberg does not carry (Rilke's Duineser Elegien) comes from Wikisource,
+    one page per poem instead of one book for the whole collection."""
+
+    def _export_ws(self, config_dir, decks_dir):
+        with patch('deck_generator.deck_export.fetch_wikisource_text',
+                   return_value=_POEM_TEXT) as ws, \
+             patch('deck_generator.deck_export.fetch_text') as gutenberg, \
+             patch('deck_generator.deck_export.fetch_monarchs', return_value=_MONARCHS):
+            decks = deck_export.export_decks(config_dir, decks_dir)
+        return decks, ws, gutenberg
+
+    def test_builds_decks_without_touching_gutenberg(self, tmp_path):
+        cfg = _write_wikisource_poetry(tmp_path)
+        decks = tmp_path / 'decks'
+        _, ws, gutenberg = self._export_ws(tmp_path, decks)
+        gutenberg.assert_not_called()
+        assert len(_artifacts(decks)) == 2
+        assert _find(decks, cfg, 'Erste Elegie')['items']
+
+    def test_fetches_the_page_named_by_each_poem(self, tmp_path):
+        _write_wikisource_poetry(tmp_path)
+        _, ws, _ = self._export_ws(tmp_path, tmp_path / 'decks')
+        assert {c.args[0] for c in ws.call_args_list} == {'Die erste Elegie', 'Die zweite Elegie'}
+        assert all(c.kwargs['lang'] == 'de' for c in ws.call_args_list)
+
+    def test_language_reaches_the_artifact(self, tmp_path):
+        cfg = _write_wikisource_poetry(tmp_path)
+        decks = tmp_path / 'decks'
+        self._export_ws(tmp_path, decks)
+        assert _find(decks, cfg, 'Erste Elegie')['language'] == 'de'
+
+    def test_each_page_is_fetched_once(self, tmp_path):
+        """The cache is keyed per page here, per book for Gutenberg — otherwise a
+        ten-elegy collection would re-download every page for every poem."""
+        _write_wikisource_poetry(tmp_path)
+        _, ws, _ = self._export_ws(tmp_path, tmp_path / 'decks')
+        assert ws.call_count == 2
+
+    def test_config_with_neither_source_is_an_error(self, tmp_path):
+        (tmp_path / 'poetry').mkdir(parents=True, exist_ok=True)
+        (tmp_path / 'poetry' / 'broken.yaml').write_text(
+            "poem_title: Nowhere\nstart_marker: a\nend_marker: b\n")
+        with pytest.raises(ValueError, match='gutenberg_id'):
+            self._export_ws(tmp_path, tmp_path / 'decks')
+
+
 # --- schema ---
 
 class TestSchema:
@@ -120,6 +189,13 @@ class TestSchema:
         assert (a['name'], a['deck_type'], a['mode'], a['poem_title']) == ('Sonnet 18', 'poetry', 'words', 'Sonnet 18')
         assert a['config_path'] == str(cfg)
         assert a['group'] is None
+
+    def test_poetry_language_is_none_without_a_config_key(self, tmp_path):
+        """English decks carry no language, which is what keeps Preview off them."""
+        cfg = _write_poetry(tmp_path)
+        decks = tmp_path / 'decks'
+        _export(tmp_path, decks)
+        assert _find(decks, cfg)['language'] is None
 
     def test_monarchs_artifact_fields(self, tmp_path):
         cfg = _write_monarchs(tmp_path)
