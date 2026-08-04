@@ -11,7 +11,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | CLI | Source | Output |
 |---|---|---|
 | `deck-acronyms` | Wikidata SPARQL | Year-chunked laureate initials |
-| `deck-poetry` | Project Gutenberg | Per-line acronyms |
+| `deck-poetry` | Project Gutenberg **or Wikisource** | Per-line acronyms |
 | `deck-monarchs` | Wikidata SPARQL | Per-century transition-digit strings |
 | `deck-artworks` | Wikidata SPARQL + Wikimedia Commons | Artwork title/creator/image → quiz `image-mc` deck (JSON + WebP assets) |
 | `deck-shakespeare` | Folger Digital Texts API | YAML catalogue of monologue passages |
@@ -27,6 +27,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `acronym.py` | `name_initials`: skips particles, expands hyphenated tokens. `line_initials`: all words including particles. |
 | `xlsx_writer.py` | `write_xlsx()` (awards), `write_poetry_xlsx()` (poetry), `write_monarchs_xlsx()` (monarchs). |
 | `gutenberg.py` | HTTP fetch + cache in `cache/gutenberg/`. |
+| `wikisource.py` | Poems Gutenberg lacks. `fetch_wikitext` (cached in `cache/wikisource/<lang>/`) + `poem_text` (the `<poem>` block, transcription markup stripped) + `fetch_text`. **Wikimedia 403s the default `requests` UA** — same policy as the image CDN, needs a real identifying URL (`wiki_api.py`'s `example.com` UA is the kind that fails). Strips `{{Seite\|N}}`, `{{Zeile\|N}}` (glued to the FRONT of every fifth line — dropping the line loses the verse), `{{SperrSchrift\|x}}` (unwrap, keep the word), and **`{{idt}}`, which takes no argument** — a drop pattern requiring `\|` silently leaves it in the text. |
 | `folger.py` | Folger Digital Texts API; caches HTML under `cache/folger/`. |
 | `poetry_parser.py` | `extract_poem(text, start_marker, end_marker)` → `list[str \| None]`. `None` = blank line. |
 | `monarchs.py` | `fetch_monarchs` (includes `wp_title` sitelink + `accession_precision`), `make_monarch_chunks`; deduplicates by person Q-number. `parse_corrections`/`correction_years` read the config's sourced `corrections:` block; `stale_corrections` reports ones upstream has made redundant; `report_imprecise_dates` flags sub-year-precision dates (documentation only — digits unaffected). |
@@ -62,6 +63,28 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 **Literature:** `nobel_literature`, `booker_prize`, `man_booker_international`, `pulitzer_fiction`, `national_book_award_fiction`, `prix_goncourt`, `franz_kafka_prize`
 
 **Human rights:** `sakharov_prize`, `right_livelihood_award`
+
+## Poetry sources
+
+A poetry config names **either** `gutenberg_id` (one text per book — all 154 sonnets are cut
+from Gutenberg 1041) **or** a Wikisource `page` per poem, with optional `wikisource_lang`
+(default `de`). `_poem_source_text` picks; the text cache is keyed per book for Gutenberg
+and per page for Wikisource, so a ten-elegy collection fetches ten pages once each. Markers
+work identically on both — Wikisource text is flattened to plain lines first.
+
+`configs/poetry/rilke_duino_elegies.yaml` is the first: Rilke's *Duineser Elegien* (1923
+Insel), **not on Project Gutenberg** — its Rilke catalogue stops before it. German
+Wikisource has it one page per elegy at `BEARBEITUNGSSTAND=fertig` (proofread). 10 decks,
+860 lines.
+
+An optional `language:` key reaches the artifact and tells `memory-quiz-app` which shared
+lexicon glosses that deck in preview; absent for English decks. Regenerate the lexicon
+(`interactive-reader/build_quiz_lexicon.py`) after adding a deck in an existing language.
+
+⚠ `_discover_slots` globs `poetry/*.yaml` **sorted**, so a new config renumbers the `order`
+of every poetry deck after it alphabetically. `order` is menu position only — item strings
+and `config_hash` are untouched, so no FSRS history moves — but a full re-export will shift
+the sonnets' stored `order` by the number of poems added before them.
 
 ## Key implementation notes
 
