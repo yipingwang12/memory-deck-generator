@@ -70,12 +70,46 @@ def correction_years(corrections: list[Correction]) -> tuple[list[int], list[int
             [c.year for c in corrections if c.action == 'drop'])
 
 
+@dataclass(frozen=True)
+class TransitionEvent:
+    """One transition year, with what happened that year — i.e. **one digit** of a chunk's
+    transition string, and the only thing that explains it.
+
+    The digit string is what gets memorised, so the unit a reference table must be keyed on is
+    the event, not the ruler: an accession contributes a digit, but so does a reign that ends
+    with no same-year successor, and a manual `corrections:` add contributes one belonging to no
+    Wikidata statement at all. A per-ruler table cannot line up with the string (it is missing
+    the second kind entirely and has no row for the third)."""
+
+    year: int
+    kind: str                       # see _EVENT_KINDS
+    monarch: Monarch | None = None  # the acceding / departing ruler; None for 'correction'
+    note: str = ''                  # correction reason — a correction has no Monarch to name
+
+    @property
+    def digit(self) -> str:
+        """The memorised digit. `% 10` on a negative (BCE) year still yields 0-9 in Python."""
+        return str(self.year % 10)
+
+
+# 'accession'  — a ruler took the throne this year.
+# 'reign_end'  — a reign's recorded end year that is nobody's accession year, so the throne did
+#                not pass directly on: a dynasty's last year, an interregnum's start, or
+#                Wikidata coronation-lag (Edward the Elder d. 924, Æthelstan crowned 927).
+# 'correction' — a sourced manual `add`, for a transition Wikidata cannot express (Murad II's
+#                1446 restoration inside one unbroken 1421–1451 statement).
+_EVENT_KINDS = ('accession', 'reign_end', 'correction')
+
+
 @dataclass
 class MonarchChunk:
     start_year: int
     end_year: int
     monarchs: list[Monarch] = field(default_factory=list)
     transition_string: str = ""
+    # Index-aligned with `transition_string`: events[i] is the event digit i stands for.
+    # Built from the same list the string is joined from, so the two cannot disagree.
+    events: list[TransitionEvent] = field(default_factory=list)
 
 
 _QUERY = """\
@@ -197,16 +231,59 @@ def filter_by_accession(
     ]
 
 
-def _raw_transition_events(monarchs: list[Monarch]) -> list[int]:
-    """Transition years implied by Wikidata alone, before any manual correction.
+def _raw_events(monarchs: list[Monarch]) -> list[TransitionEvent]:
+    """Transition events implied by Wikidata alone, before any manual correction.
 
     Every accession year (duplicates kept — two rulers can accede in one year), plus any end
     year that is not itself some ruler's accession year, i.e. the throne did not pass directly
-    to a successor that year."""
+    to a successor that year.
+
+    **Construction order is load-bearing.** Accessions are emitted sorted and first, end-years
+    after them in monarch order; the caller's final sort is stable, so within one year an
+    accession precedes a reign_end and a correction follows both. That is the order the digit
+    string has always been joined in, and the digits are FSRS item strings — reordering two
+    digits of a year rewrites the card and strands its history."""
     accession_year_set = {m.accession_year for m in monarchs}
-    events: list[int] = sorted(m.accession_year for m in monarchs)
-    events += [m.end_year for m in monarchs
+    events = [TransitionEvent(m.accession_year, 'accession', m)
+              for m in sorted(monarchs, key=lambda m: m.accession_year)]
+    events += [TransitionEvent(m.end_year, 'reign_end', m) for m in monarchs
                if m.end_year is not None and m.end_year not in accession_year_set]
+    return events
+
+
+def _raw_transition_events(monarchs: list[Monarch]) -> list[int]:
+    """The years of `_raw_events` — what `stale_corrections` tests membership against."""
+    return [e.year for e in _raw_events(monarchs)]
+
+
+def transition_events(
+    monarchs: list[Monarch],
+    add_transition_years: list[int] | None = None,
+    drop_transition_years: list[int] | None = None,
+    corrections: list[Correction] | None = None,
+) -> list[TransitionEvent]:
+    """Every transition event in year order — the digit string, with its causes attached.
+
+    This is the single source both the deck digits and the reference table are derived from.
+    Deriving them separately is the trap: the table would be built from a second pass over the
+    same data and could disagree with the string the reader is actually memorising, and no test
+    of either alone would catch it.
+
+    ``corrections`` is optional provenance only — the years in ``add_transition_years`` are what
+    apply. Passing it lets an added event carry the ``reason`` that justifies it, which is the
+    only explanation a correction digit has (there is no Wikidata statement behind it).
+    """
+    events = _raw_events(monarchs)
+    if drop_transition_years:
+        dropped = set(drop_transition_years)
+        events = [e for e in events if e.year not in dropped]
+    reasons = {c.year: c.reason for c in corrections or [] if c.action == 'add'}
+    present = {e.year for e in events}
+    for year in add_transition_years or []:
+        if year not in present:      # idempotent — see `make_monarch_chunks`
+            events.append(TransitionEvent(year, 'correction', None, reasons.get(year, '')))
+            present.add(year)
+    events.sort(key=lambda e: e.year)       # stable — see `_raw_events`
     return events
 
 
@@ -247,6 +324,7 @@ def make_monarch_chunks(
     chunk_start_year: int | None = None,
     add_transition_years: list[int] | None = None,
     drop_transition_years: list[int] | None = None,
+    corrections: list[Correction] | None = None,
 ) -> list[MonarchChunk]:
     """Group monarchs into fixed-width year-range chunks.
 
@@ -271,23 +349,19 @@ def make_monarch_chunks(
     Wikidata stays wrong, and Wikidata improves; an unconditional append would silently double
     a digit the day upstream fixed the underlying statement. Use `stale_corrections` to find
     corrections that have become no-ops.
+
+    ``corrections`` is optional and carries provenance only (see `transition_events`); the
+    digits are decided by ``add_transition_years``/``drop_transition_years`` either way.
     """
     if not monarchs:
         return []
 
-    events = _raw_transition_events(monarchs)
-    if drop_transition_years:
-        dropped = set(drop_transition_years)
-        events = [e for e in events if e not in dropped]
-    for year in add_transition_years or []:
-        if year not in events:      # idempotent — see docstring
-            events.append(year)
-    events.sort()
+    events = transition_events(monarchs, add_transition_years, drop_transition_years, corrections)
     if not events:
         return []
 
     min_year = min(m.accession_year for m in monarchs)
-    max_year = max(events)
+    max_year = max(e.year for e in events)
     start = chunk_start_year if chunk_start_year is not None else min_year
 
     chunks: list[MonarchChunk] = []
@@ -297,15 +371,16 @@ def make_monarch_chunks(
         if chunk_start > max_year:
             break
         chunk_end = chunk_start + chunk_years - 1
-        bucket_events = [e for e in events if chunk_start <= e <= chunk_end]
+        bucket_events = [e for e in events if chunk_start <= e.year <= chunk_end]
         bucket_monarchs = [m for m in monarchs if chunk_start <= m.accession_year <= chunk_end]
         if bucket_events:
-            transition_string = "".join(str(e % 10) for e in bucket_events)
             chunks.append(MonarchChunk(
                 start_year=chunk_start,
                 end_year=chunk_end,
                 monarchs=bucket_monarchs,
-                transition_string=transition_string,
+                # Joined from the events themselves, so `events[i]` always explains digit i.
+                transition_string="".join(e.digit for e in bucket_events),
+                events=bucket_events,
             ))
         n += 1
 

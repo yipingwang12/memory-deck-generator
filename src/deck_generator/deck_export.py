@@ -69,6 +69,17 @@ def _slug(text: str) -> str:
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', text.lower())).strip('-')
 
 
+def monarch_item_keys(filename: str, labels: list[str]) -> list[str]:
+    """FSRS identity for monarch cards: ``<deck-stem>|<century label>``.
+
+    Shared with the quiz's in-place artifact migration so the two cannot disagree about a
+    card's identity — a mismatch here silently strands every monarch card's review history.
+    ``filename`` is the artifact filename, with or without the ``.json`` suffix.
+    """
+    stem = filename[:-5] if filename.endswith('.json') else filename
+    return [f"{stem}|{label}" for label in labels]
+
+
 @dataclass(frozen=True)
 class _Slot:
     """One deck's identity, resolved WITHOUT touching the network.
@@ -212,14 +223,25 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
             monarchs, cfg.get('chunk_years', 100), cfg.get('chunk_start_year'),
             add_transition_years=add_years, drop_transition_years=drop_years,
         )
+        labels = [f"{c.start_year}–{c.end_year}" for c in chunks]
         artifacts.append({
             'order': s.order,
             'name': title,
             'deck_type': 'monarchs',
             'mode': 'digits',
             'title': title,
-            'items': [c.transition_string for c in chunks],
-            'labels': [f"{c.start_year}–{c.end_year}" for c in chunks],
+            # IDENTITY, not display — `<deck-stem>|<century>`, following artworks' `<QID>|attr`.
+            # The digit string alone is NOT unique across realms: `62` is both Britain 1200–1299
+            # and the Alaouites' 1600s, and since `item_key = sha256(item)[:16]` ignores the deck,
+            # those were ONE FSRS card — studying Britain marked the Alaouite century learned.
+            # 11 such strings collided across 26 cards. Keying on the realm and century also
+            # makes the key stable under live-Wikidata digit drift, which is what used to strand
+            # monarch history and force `recovery.py` runs (incidents.md).
+            'items': monarch_item_keys(s.filename, labels),
+            # DISPLAY — what the reader is shown and what gets corrupted. Split out for the same
+            # reason artworks carry `answers` and equations carry `mathml` beside their items.
+            'digits': [c.transition_string for c in chunks],
+            'labels': labels,
             'group': s.group,
             'poem_title': None,
             'config_path': str(s.yaml_path),

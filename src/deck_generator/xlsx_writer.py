@@ -103,29 +103,51 @@ def write_monarchs_xlsx(
     wb.save(output_path)
 
 
+# Human-readable label per TransitionEvent.kind, for the Event column.
+_EVENT_LABEL = {
+    'accession': "acceded",
+    'reign_end': "reign ended (no successor this year)",
+    'correction': "sourced correction",
+}
+
+
 def _write_monarchs_sheet(ws, chunks: list[MonarchChunk], subject: str) -> None:
+    """One row per DIGIT, in the order the digits are memorised.
+
+    It used to be one row per ruler with the ruler's own accession digit alongside, which does
+    not reconstruct the string: a `reign_end` year contributes a digit with no row of its own,
+    and a `corrections:` add contributes one belonging to no ruler at all. Reading down the
+    Digit column now reproduces the century string exactly, which is the whole point of the
+    sheet — the string is what is being memorised, so the table has to explain every digit of it.
+    """
     ws.title = subject or "Monarchs"
-    ws.append(["Accession", "End", "Name", "Father", "Mother", "Last Digit", "Century String"])
+    ws.append(["Digit", "Year", "Event", "Name", "Accession", "End", "Father", "Mother",
+               "Century", "Century String"])
     for cell in ws[1]:
         cell.font = _HEADER_FONT
 
     for chunk in chunks:
-        for idx, monarch in enumerate(chunk.monarchs):
-            end = monarch.end_year if monarch.end_year is not None else ""
-            last_digit = monarch.accession_year % 10
-            century_string = chunk.transition_string if idx == 0 else ""
-            ws.append([monarch.accession_year, end, monarch.name, monarch.father, monarch.mother, last_digit, century_string])
-            if idx == 0:
+        for idx, event in enumerate(chunk.events):
+            m = event.monarch
+            first = idx == 0
+            ws.append([
+                event.digit,
+                event.year,
+                _EVENT_LABEL.get(event.kind, event.kind),
+                m.name if m else (event.note or ""),
+                m.accession_year if m else "",
+                (m.end_year if m and m.end_year is not None else ""),
+                m.father if m else "",
+                m.mother if m else "",
+                f"{chunk.start_year}–{chunk.end_year}" if first else "",
+                chunk.transition_string if first else "",
+            ])
+            if first:
                 for cell in ws[ws.max_row]:
                     cell.fill = _CHUNK_FILL
 
-    ws.column_dimensions["A"].width = 10
-    ws.column_dimensions["B"].width = 8
-    ws.column_dimensions["C"].width = 28
-    ws.column_dimensions["D"].width = 24
-    ws.column_dimensions["E"].width = 24
-    ws.column_dimensions["F"].width = 12
-    ws.column_dimensions["G"].width = 30
+    for col, width in zip("ABCDEFGHIJ", (7, 8, 34, 28, 10, 8, 24, 24, 14, 30)):
+        ws.column_dimensions[col].width = width
 
 
 def _write_monarchs_summary(ws, chunks: list[MonarchChunk]) -> None:

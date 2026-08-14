@@ -5,6 +5,7 @@ import pytest
 from deck_generator.monarchs import (
     Correction, Monarch, MonarchChunk, correction_years, fetch_monarchs, filter_by_accession,
     make_monarch_chunks, parse_corrections, report_imprecise_dates, stale_corrections,
+    transition_events,
 )
 
 _SAMPLE_BINDINGS = [
@@ -359,12 +360,13 @@ from deck_generator.xlsx_writer import write_monarchs_xlsx
 
 
 def _sample_chunks():
+    """Built through the real chunker, not by hand: the sheet is one row per transition EVENT,
+    and a hand-made MonarchChunk carries none — so a handwritten fixture would silently assert
+    against an empty sheet."""
     m1 = Monarch("Alfred the Great", 871, 899, "Æthelwulf", "Osburh")
     m2 = Monarch("Edward the Elder", 899, 924, "Alfred the Great", "Ealhswith")
     m3 = Monarch("William I", 1066, 1087, "Robert I", "Herleva")
-    c1 = MonarchChunk(800, 899, [m1, m2], "19")
-    c2 = MonarchChunk(1000, 1099, [m3], "6")
-    return [c1, c2]
+    return make_monarch_chunks([m1, m2, m3], chunk_years=100, chunk_start_year=800)
 
 
 def test_monarchs_xlsx_created(tmp_path):
@@ -384,27 +386,53 @@ def test_monarchs_header(tmp_path):
     out = tmp_path / "monarchs.xlsx"
     write_monarchs_xlsx(_sample_chunks(), out)
     ws = openpyxl.load_workbook(out).active
-    assert ws[1][0].value == "Accession"
-    assert ws[1][2].value == "Name"
-    assert ws[1][6].value == "Century String"
+    assert ws[1][0].value == "Digit"
+    assert ws[1][2].value == "Event"
+    assert ws[1][3].value == "Name"
+    assert ws[1][9].value == "Century String"
 
 
 def test_monarchs_first_data_row(tmp_path):
     out = tmp_path / "monarchs.xlsx"
     write_monarchs_xlsx(_sample_chunks(), out)
     rows = list(openpyxl.load_workbook(out).active.iter_rows(values_only=True))
-    assert rows[1][0] == 871
-    assert rows[1][2] == "Alfred the Great"
-    assert rows[1][3] == "Æthelwulf"
-    assert rows[1][5] == 1       # last digit of 871
-    assert rows[1][6] == "19"    # century string on first row of chunk
+    assert rows[1][0] == "1"                 # last digit of 871
+    assert rows[1][1] == 871
+    assert rows[1][2] == "acceded"
+    assert rows[1][3] == "Alfred the Great"
+    assert rows[1][6] == "Æthelwulf"
+    assert rows[1][9] == "19"                # century string on first row of chunk
 
 
 def test_monarchs_century_string_blank_on_non_first(tmp_path):
     out = tmp_path / "monarchs.xlsx"
     write_monarchs_xlsx(_sample_chunks(), out)
     rows = list(openpyxl.load_workbook(out).active.iter_rows(values_only=True))
-    assert rows[2][6] in (None, "")  # second monarch in chunk has no century string
+    assert rows[2][9] in (None, "")  # second event in chunk has no century string
+
+
+def test_monarchs_sheet_has_a_row_per_digit(tmp_path):
+    """The point of the sheet: reading the Digit column down reproduces the strings exactly.
+
+    The old per-ruler sheet could not — a `reign_end` digit has no ruler acceding to give it a
+    row, so the sheet omitted it and the two disagreed with nothing to catch it."""
+    chunks = _sample_chunks()
+    out = tmp_path / "monarchs.xlsx"
+    write_monarchs_xlsx(chunks, out)
+    rows = list(openpyxl.load_workbook(out).active.iter_rows(values_only=True))[1:]
+    assert "".join(r[0] for r in rows) == "".join(c.transition_string for c in chunks)
+
+
+def test_monarchs_sheet_labels_a_reign_end(tmp_path):
+    """924 is Edward the Elder's death with no successor acceding that year — a digit no
+    accession accounts for, and the row that used to be missing entirely."""
+    out = tmp_path / "monarchs.xlsx"
+    write_monarchs_xlsx(_sample_chunks(), out)
+    rows = list(openpyxl.load_workbook(out).active.iter_rows(values_only=True))
+    row = next(r for r in rows[1:] if r[1] == 924)
+    assert row[0] == "4"
+    assert "reign ended" in row[2]
+    assert row[3] == "Edward the Elder"
 
 
 def test_monarchs_summary_sheet(tmp_path):
@@ -413,9 +441,8 @@ def test_monarchs_summary_sheet(tmp_path):
     wb = openpyxl.load_workbook(out)
     assert "Summary" in wb.sheetnames
     rows = list(wb["Summary"].iter_rows(values_only=True))
-    assert len(rows) == 3  # header + 2 chunks
-    assert rows[1][1] == "19"
-    assert rows[2][1] == "6"
+    assert len(rows) == 4  # header + 3 chunks
+    assert [r[1] for r in rows[1:]] == ["19", "4", "67"]
 
 
 # --- add idempotency: a correction must not double a year Wikidata already supplies ---
@@ -559,3 +586,79 @@ def test_fetch_query_requests_precision():
     with patch("deck_generator.monarchs._sparql_session", return_value=[]) as mock:
         fetch_monarchs(["Q1"])
     assert "wikibase:timePrecision" in mock.call_args[0][1]
+
+
+# --- transition events: the digit string and the table share one source ---------------------
+
+def _britain_ish():
+    """Every event kind at once: two accessions, a reign_end (924, nobody accedes), and a
+    same-year succession that must add nothing."""
+    return [
+        Monarch("Alfred the Great", 871, 899, "Æthelwulf", "Osburh"),
+        Monarch("Edward the Elder", 899, 924, "Alfred the Great", "Ealhswith"),
+        Monarch("Æthelstan", 927, 939, "Edward the Elder", "Ecgwynn"),
+        Monarch("Edmund I", 939, 946, "Edward the Elder", "Eadgifu"),
+    ]
+
+
+def test_events_reproduce_the_digit_string():
+    """The invariant the whole reference table rests on: events[i] explains digit i."""
+    for chunk in make_monarch_chunks(_britain_ish(), 100, 800):
+        assert "".join(e.digit for e in chunk.events) == chunk.transition_string
+
+
+def test_events_are_index_aligned_per_chunk():
+    chunks = make_monarch_chunks(_britain_ish(), 100, 800)
+    for chunk in chunks:
+        assert len(chunk.events) == len(chunk.transition_string)
+
+
+def test_event_kinds_attribute_each_digit():
+    events = transition_events(_britain_ish())
+    by_year = {e.year: e for e in events}
+    assert by_year[871].kind == "accession" and by_year[871].monarch.name == "Alfred the Great"
+    # 924 is Edward the Elder's death; Æthelstan accedes 927, so the throne did not pass on.
+    assert by_year[924].kind == "reign_end" and by_year[924].monarch.name == "Edward the Elder"
+    # 939 is both Æthelstan's end and Edmund I's accession — a direct succession, one digit.
+    assert by_year[939].kind == "accession" and by_year[939].monarch.name == "Edmund I"
+    assert sum(1 for e in events if e.year == 939) == 1
+
+
+def test_correction_add_becomes_a_correction_event_carrying_its_reason():
+    """A manual add has no Wikidata statement behind it, so the config's `reason` is the only
+    thing that can explain its digit."""
+    c = Correction(year=1446, action="add", reason="Murad II restored 1446", source="X")
+    events = transition_events(
+        [Monarch("Murad II", 1421, 1451, "", "")],
+        add_transition_years=[1446], corrections=[c],
+    )
+    added = next(e for e in events if e.year == 1446)
+    assert added.kind == "correction"
+    assert added.monarch is None
+    assert added.note == "Murad II restored 1446"
+
+
+def test_correction_drop_removes_the_event_not_just_the_digit():
+    events = transition_events(
+        [Monarch("Osman I", 1299, 1324, "", ""), Monarch("Orhan", 1326, 1362, "", "")],
+        drop_transition_years=[1326],
+    )
+    assert 1326 not in [e.year for e in events]
+    # 1324 (Osman's end, no successor acceding) and 1362 (Orhan's) are untouched reign_ends.
+    assert [(e.year, e.kind) for e in events] == [
+        (1299, "accession"), (1324, "reign_end"), (1362, "reign_end"),
+    ]
+
+
+def test_within_a_year_accession_precedes_reign_end():
+    """Ordering is FSRS identity: the digits are the item string, so two events sharing a year
+    must keep the order the strings were originally built in."""
+    monarchs = [
+        Monarch("A", 1000, 1050, "", ""),     # ends 1050, nobody accedes then → reign_end
+        Monarch("B", 1050, 1060, "", ""),     # ...except B does, so 1050 is an accession only
+        Monarch("C", 1060, 1060, "", ""),
+    ]
+    events = transition_events(monarchs)
+    assert [(e.year, e.kind) for e in events] == [
+        (1000, "accession"), (1050, "accession"), (1060, "accession"),
+    ]

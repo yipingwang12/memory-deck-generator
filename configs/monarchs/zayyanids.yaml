@@ -1,0 +1,20 @@
+subject: "Zayyanids of Tlemcen"
+# Added 2026-08-11 from a Wikidata coverage survey of 24 North African dynasties.
+# Position and house Q-numbers were verified by counting DATED holders (P580) before
+# building — see the survey notes in PRD.md.
+# THREE positions because each covers a different era and no single one spans the dynasty:
+# Sultan of Tlemcen alone stops at 1383 and drops two-thirds of the reigns. Two are generic,
+# so `houses` is mandatory.
+# KNOWN GAP: the Zayyanids were repeatedly deposed and restored (Abu Hammu Musa II and Abu
+# Zayyan II each hold four separate reign statements). `fetch_monarchs` dedups by person,
+# keeping earliest accession and latest end, so those restorations are LOST from the digits --
+# the same failure mode as Murad II's 1446. They need sourced `add` corrections; not yet done.
+positions:
+  - Q137596297   # Sultan of Tlemcen — dedicated, but only covers 1236-1383
+  - Q1097498   # ruler — GENERIC, covers 1389-1544
+  - Q43292   # sultan — GENERIC, covers 1394-1550
+houses:
+  - Q307697   # Zayyanid Dynasty
+chunk_years: 50
+chunk_start_year: 1200
+group: "North African Monarchs"
