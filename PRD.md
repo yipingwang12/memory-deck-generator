@@ -92,6 +92,45 @@ corrections:
 
 There is **no mechanism to correct a ruler's accession/end year directly**; corrections patch the *transition-year output*, not the underlying data. So a wrong accession year is expressed as a `drop` of the bad year plus an `add` of the right one (and sometimes only a drop — Tahmasp II's true 1722 accession is already a transition year via his predecessor's end year).
 
+##### Item identity — `<deck-stem>|<century>`, not the digit string (2026-08-13)
+
+The quiz derives a card's FSRS key from the item string **alone** (`sha256(item)[:16]`, no deck),
+so item strings must be globally unique. Bare transition-digit strings are not: `62` is Britain
+1200–1299 *and* the Alaouites' 1600s, `9` spans four decks. Eleven strings collided over 26 cards,
+each one card shared between realms — studying Britain marked three unopened decks as learned.
+
+Monarch artifacts therefore emit `items` as `<deck-stem>|<century label>` (`monarch_item_keys`)
+with the display string in a parallel **`digits`** array, matching how artworks (`<QID>|attr` +
+`answers`) and equations (LaTeX + `mathml`) already separate identity from what is rendered. A
+side effect worth having: the key no longer contains the digits, so live-Wikidata drift can no
+longer strand monarch history — the failure that forced the 2026-07-17 and 07-25 recovery runs.
+
+##### Reign reference tables (`deck-monarch-tables`) — one row per digit
+
+A monarch deck ships digit strings and century labels and nothing else, because the digits *are*
+the cards. Nothing on disk said the `4` in `47965958` was Edward the Elder's reign ending in 924.
+`deck-monarch-tables` builds that explanation for **every** monarch config, in two forms from one
+fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch preview renders.
+
+- **The unit is the transition event, not the ruler.** `TransitionEvent` (`year`, `kind`,
+  `monarch`) carries `accession` / `reign_end` / `correction`, and `make_monarch_chunks` now joins
+  the digit string *from those events* — so `chunk.events[i]` is by construction what digit `i`
+  stands for. The previous per-ruler xlsx could not reconstruct the string: a `reign_end` year has
+  no acceding ruler to give it a row, and a `corrections:` add belongs to no Wikidata statement at
+  all. Both are exactly the digits a reader cannot otherwise account for.
+- **Ordering within a year is FSRS identity.** Accessions are emitted sorted and first, end-years
+  after them, corrections last, and the final sort is stable — the order the strings have always
+  been built in. Reordering two digits of a year rewrites the item and strands its history.
+- **Decks are frozen; Wikidata is not.** Every deck is checked before it is explained
+  (`check_against_deck`): if today's fetch no longer reproduces the shipped digit strings, that
+  table is skipped and reported rather than written. A table describing a different deck than the
+  one being studied is the whole failure this guards. All 37 decks rebuilt clean on 2026-08-13.
+- **The sidecar is committed in the quiz repo**, not synced by the orchestrator's `decks` asset —
+  the same out-of-band path as `data/translations/` and `data/lexicons/`. It carries
+  `items_sha256` over the deck's digit strings, and the quiz drops a table failing it rather than
+  showing a shifted one; `config_hash` cannot serve, since it covers config bytes only and a
+  re-fetch that inserts one ruler leaves it unchanged while moving every later digit.
+
 ##### Date precision (documentation only)
 
 `Monarch.accession_precision` carries Wikidata's `timePrecision` for P580 (9 = year, 8 = decade, 7 = century). Below year precision, the source does not actually claim that year — Assyria's Tudiya is stored as `-2450` at decade precision, meaning "the 2450s BC"; Denmark's Sigfred (770) and France's Mallobaudes (378) / Marcomer (380) are decade-precision within shipped decks. **Digit extraction deliberately ignores this**, so decks are byte-identical to before the field existed; `deck-monarchs` merely warns. This matters for any future expansion into ancient series: pharaoh has 527 recorded holders but only 88 with any start date, and Mesopotamian absolute chronology is convention-dependent (High/Middle/Low differ by decades), so precision is the difference between a fact and an artifact.

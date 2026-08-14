@@ -13,6 +13,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-acronyms` | Wikidata SPARQL | Year-chunked laureate initials |
 | `deck-poetry` | Project Gutenberg **or Wikisource** | Per-line acronyms |
 | `deck-monarchs` | Wikidata SPARQL | Per-century transition-digit strings |
+| `deck-monarch-tables` | Wikidata SPARQL | Reign reference table per monarch deck — one row per **digit** (xlsx + JSON sidecar for the quiz preview) |
 | `deck-artworks` | Wikidata SPARQL + Wikimedia Commons | Artwork title/creator/image → quiz `image-mc` deck (JSON + WebP assets) |
 | `deck-shakespeare` | Folger Digital Texts API | YAML catalogue of monologue passages |
 | `deck-equations` | Hand-curated YAML | Equation + verified corruption pool → quiz `error-spot` deck (MathML baked) |
@@ -25,12 +26,14 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `wikidata.py` | SPARQL client: `fetch_entries(item_id, humans_only)` + `count_laureates(item_id, humans_only)`. Skips bare Q-number labels. Gap warning computed before manual entry merging. |
 | `chunker.py` | `make_chunks(entries, chunk_years, chunk_start_year, first_letter_only_from)` → `list[Chunk]`. Empty year windows omitted. |
 | `acronym.py` | `name_initials`: skips particles, expands hyphenated tokens. `line_initials`: all words including particles. |
-| `xlsx_writer.py` | `write_xlsx()` (awards), `write_poetry_xlsx()` (poetry), `write_monarchs_xlsx()` (monarchs). |
+| `xlsx_writer.py` | `write_xlsx()` (awards), `write_poetry_xlsx()` (poetry), `write_monarchs_xlsx()` (monarchs — **one row per digit**, not per ruler; the old per-ruler sheet could not reproduce the string). |
+| `reign_tables.py` | The quiz-facing sidecar: `build_reign_table` (payload + `items_sha256`), `check_against_deck` (refuses to explain a deck today's Wikidata no longer reproduces), `write_reign_table`. |
+| `reign_tables_cli.py` | `deck-monarch-tables` — all 37 configs; writes `results/<slug>.xlsx` + `../memory-quiz-app/data/reigns/<deck>.json`. `--only`, `--no-xlsx`, `--force`. |
 | `gutenberg.py` | HTTP fetch + cache in `cache/gutenberg/`. |
 | `wikisource.py` | Poems Gutenberg lacks. `fetch_wikitext` (cached in `cache/wikisource/<lang>/`) + `poem_text` (the `<poem>` block, transcription markup stripped) + `fetch_text`. **Wikimedia 403s the default `requests` UA** — same policy as the image CDN, needs a real identifying URL (`wiki_api.py`'s `example.com` UA is the kind that fails). Strips `{{Seite\|N}}`, `{{Zeile\|N}}` (glued to the FRONT of every fifth line — dropping the line loses the verse), `{{SperrSchrift\|x}}` (unwrap, keep the word), and **`{{idt}}`, which takes no argument** — a drop pattern requiring `\|` silently leaves it in the text. |
 | `folger.py` | Folger Digital Texts API; caches HTML under `cache/folger/`. |
 | `poetry_parser.py` | `extract_poem(text, start_marker, end_marker)` → `list[str \| None]`. `None` = blank line. |
-| `monarchs.py` | `fetch_monarchs` (includes `wp_title` sitelink + `accession_precision`), `make_monarch_chunks`; deduplicates by person Q-number. `parse_corrections`/`correction_years` read the config's sourced `corrections:` block; `stale_corrections` reports ones upstream has made redundant; `report_imprecise_dates` flags sub-year-precision dates (documentation only — digits unaffected). |
+| `monarchs.py` | `fetch_monarchs` (includes `wp_title` sitelink + `accession_precision`), `transition_events` → `TransitionEvent(year, kind, monarch, note)` with kind `accession`/`reign_end`/`correction`, `make_monarch_chunks` (joins the digit string FROM those events, so `chunk.events[i]` explains digit `i` by construction); deduplicates by person Q-number. `parse_corrections`/`correction_years` read the config's sourced `corrections:` block; `stale_corrections` reports ones upstream has made redundant; `report_imprecise_dates` flags sub-year-precision dates (documentation only — digits unaffected). |
 | `artworks.py` | `fetch_artworks_cached(config, refresh=…)` wraps `fetch_artworks` with a persisted metadata cache (`cache/artworks_meta.json`, keyed by query-affecting config + `_META_ENGINE_VERSION`; **bump it when the fetch/parse changes**). The banded sweep was ~10 of an export's ~12 min and is invariant to corrections/distractors. Key is built by *exclusion* (`_NON_FETCH_KEYS`) so a new config knob busts the cache instead of being ignored; hits are logged; `--refresh-metadata` bypasses. `fetch_artworks(config)` — Wikidata paintings by fame (`min_sitelinks`) / curated QIDs / collection (P195); dedup by QID; `build_query`. `Artwork(qid, title, creator, image_url, sitelinks, inception, creator_candidates)`. Creator corrections: `parse_artwork_corrections`/`apply_corrections`/`stale_corrections` (`set`/`exclude`, sourced); `_principal_creator` picks deterministically (lowest QID) when Wikidata credits several — **was SPARQL row order**, which WDQS doesn't guarantee, so a re-export could silently flip a card's answer under a stable `item_key`. |
 | `equations.py` | LaTeX → MathML with per-token `id`s. `Equation`, `load_equations`, `to_mathml`, `token_texts`, `eligible_indices` (excludes delimiters/accents/differentials), `annotate`. |
 | `corruptions.py` | Generated + verified single-token corruptions. `build_pool` → pool + `bad_pairs`; `differs` proves non-equivalence via **numeric sampling on the residue `a-b`** (never `simplify`, which hangs on infinite integrals; finite ops are `.doit()`'d, infinite/heavy residues rejected — see `equations-pipeline.md` "equivalence predicate"; fails closed; guards sympy's silent mis-parse of `\mathbf`/`\hat`/`\operatorname`); `_variable_tokens` swaps ASCII + whitelisted Greek variables (excludes `\pi`/operators); `classify` splits equations into 2-error / 1-error / drop by supportable pair count; `pool_warnings` flags thin pools. |
@@ -88,6 +91,10 @@ the sonnets' stored `order` by the number of poems added before them.
 
 ## Key implementation notes
 
+- **Monarch `items` are `<deck-stem>|<century>` identities, NOT the digit string** — the quiz keys
+  FSRS on the item text alone, and bare digit strings collide across realms (26 cards were silently
+  one card). Display lives in the parallel `digits` array; `monarch_item_keys` builds the identity
+  and is shared with the quiz's migration so the two cannot disagree
 - Monarch transition years: every accession year, plus any end year that is not itself an accession year (throne didn't pass directly to a successor) — covers Wikidata coronation-lag, interregnum starts, and dynasty terminal years
 - Monarch config corrections (`corrections:`) require `reason` + `source`; add is idempotent so an upstream Wikidata fix can't double a digit. `accession_precision` is recorded and warned on but never affects digits — see PRD
 - Monarch coverage workflow: (1) `deck-registry-generate` → `country_registry.yaml`; (2) add `wikipedia_list` field to config; (3) `deck-coverage-check --config <yaml>` reports gaps; (4) `deck-derive-positions --input politicians_rulers.xlsx` suggests position Q-IDs for historical polities not covered by P1906
