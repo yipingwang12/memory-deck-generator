@@ -283,17 +283,29 @@ class TestParity:
                     if l is not None]
         assert [_item_key(i) for i in items] == [_item_key(e) for e in expected]
 
-    def test_monarchs_items_and_labels_match_live_generation(self, tmp_path):
+    def test_monarchs_digits_and_labels_match_live_generation(self, tmp_path):
         cfg = _write_monarchs(tmp_path)
         decks = tmp_path / 'decks'
         _export(tmp_path, decks)
         chunks = make_monarch_chunks(_MONARCHS, 100, 800)
-        exp_items = [c.transition_string for c in chunks]
         exp_labels = [f"{c.start_year}–{c.end_year}" for c in chunks]
         a = _find(decks, cfg)
-        assert a['items'] == exp_items
+        # `digits` is the display text — this is where the transition strings live now.
+        assert a['digits'] == [c.transition_string for c in chunks]
         assert a['labels'] == exp_labels
         assert a['title'] == 'British Monarchs'
+
+    def test_monarch_items_are_deck_scoped_identities(self, tmp_path):
+        """Not the digit string: `item_key` ignores the deck, so bare digits made one FSRS card
+        out of every realm that happened to share a century's string."""
+        cfg = _write_monarchs(tmp_path)
+        decks = tmp_path / 'decks'
+        _export(tmp_path, decks)
+        a = _find(decks, cfg)
+        stem = 'monarchs_' + Path(cfg).stem
+        assert a['items'] == [f"{stem}|{lb}" for lb in a['labels']]
+        assert a['items'] != a['digits']
+        assert len(a['items']) == len(a['digits'])
 
     def test_relative_and_absolute_config_paths_resolve_same_deck(self, tmp_path, monkeypatch):
         cfg = _write_poetry(tmp_path)
