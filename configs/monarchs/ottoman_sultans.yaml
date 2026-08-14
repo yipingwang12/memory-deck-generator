@@ -9,10 +9,32 @@ corrections:
     reason: "Murad II abdicated in 1444 and was restored in Sep 1446 (Mehmed II held a first reign 1444–1446); Wikidata records Murad II as one unbroken 1421–1451 statement, so the 1446 restoration is missing"
     source: "List of sultans of the Ottoman Empire"
     checked: "2026-07-16"
-# NOT corrected — Orhan's accession is 1326 here vs Wikipedia's "c. 1324". Left as-is deliberately:
-# 1326 is the traditional date (capture of Bursa) and Wikipedia's own "c." concedes the year is
-# uncertain, so this is a historiographic dispute rather than a data error. Revisit only with a
-# decision on which convention the deck should follow.
+  - year: 1326
+    action: drop
+    reason: "Spurious two-year interregnum between Osman I and his son Orhan. Wikidata dates Osman's death 1324-08-29 at DAY precision but Orhan's accession 1326 at YEAR precision — it has taken the modern date for the death and the traditional date for the accession. 1326 is the capture of Bursa (6 Apr 1326), which Ottoman tradition places just before Osman's death; modern scholarship rejects that sequence (a 1324 waqf document has Osman alive, and he is absent from later records), and Wikipedia dates Osman 'c. 1299 – c. 1324' and Orhan 'c. 1324 – March 1362' with no gap. 1324 is already a transition year via Osman's end date, so this is a drop with no matching add"
+    source: "List of sultans of the Ottoman Empire; Orhan; Osman I"
+    checked: "2026-08-11"
+  # The Ottoman Interregnum (28 Jul 1402 – 5 Jul 1413). Wikipedia lists the claimants but marks
+  # them "not formally numbered sultans", so this is an editorial choice to record de facto rule,
+  # not a data fix: the deck previously showed only the boundary years 1402 (Bayezid I's end) and
+  # 1413 (Mehmed I's accession). Wikidata cannot supply these — İsa Çelebi (Q1085744) and Musa
+  # Çelebi (Q1095287) hold this position but carry no P580 start date, and Süleyman Çelebi is not
+  # attached to it at all — so they can only be added by hand and will never go stale.
+  # Only two years are new: Süleyman Çelebi's 20 Jul 1402 accession, his 17 Feb 1411 end and Musa's
+  # 5 Jul 1413 end all coincide with years the deck already carries.
+  - year: 1403
+    action: add
+    reason: "İsa Çelebi ruled at Bursa from Jan 1403 during the Interregnum; Wikidata holds his sultan statement with no start date, so no transition year is emitted"
+    source: "List of sultans of the Ottoman Empire; Ottoman Interregnum"
+    checked: "2026-08-11"
+  - year: 1411
+    action: add
+    reason: "Musa Çelebi took Rumelia on 18 Feb 1411 after Süleyman Çelebi was strangled (17 Feb 1411); Wikidata holds his sultan statement with no start date, so no transition year is emitted"
+    source: "List of sultans of the Ottoman Empire; Ottoman Interregnum"
+    checked: "2026-08-11"
+# NOT added — Mustafa Çelebi (Düzmece Mustafa, Jan 1419 – May 1422, Rumelia). Outside the
+# Interregnum: his revolt falls inside Mehmed I's reign, so including him would make the deck
+# record failed pretenders, which would equally argue for Cem Sultan (1481).
 chunk_years: 100
 chunk_start_year: 1200
 wikipedia_list: "List of sultans of the Ottoman Empire"

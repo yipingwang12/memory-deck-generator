@@ -4,3 +4,25 @@ positions:
 chunk_years: 100
 chunk_start_year: 700
 wikipedia_list: "List of Danish monarchs"
+# Valdemar the Young was JUNIOR KING (co-ruler), never sole monarch: elected co-king 1215,
+# crowned at Schleswig 1218, killed by a stray arrow hunting at Refsnæs 28 Nov 1231 aged 21.
+# Valdemar II reigned continuously 1202–1241 throughout and after, and Eric simply became the
+# next junior co-king — so neither year is a transition of the throne. Same failure mode as the
+# consort contamination on Byzantium's position (see PRD): the title is held by someone who
+# never held the throne. Checked 2026-08-11 against "Valdemar the Young".
+#
+# NOT corrected — 1533/1534 is a REAL interregnum and both digits are earned. Frederick I
+# reigned to his death (Apr 1533); the Catholic Rigsraad refused to elect the Lutheran
+# Christian III and proclaimed Count Christopher of Oldenburg regent instead, which became the
+# Count's Feud (1534–36). Christian III's reign dates from 14 Jul 1534.
+corrections:
+  - year: 1215
+    action: drop
+    reason: "Valdemar the Young's elevation as junior king, not a change of monarch — Valdemar II reigned 1202–1241 throughout"
+    source: "Valdemar the Young; Valdemar II of Denmark"
+    checked: "2026-08-11"
+  - year: 1231
+    action: drop
+    reason: "Death of Valdemar the Young, junior king only; the throne did not pass — his father reigned another ten years and Eric became the next junior co-king"
+    source: "Valdemar the Young"
+    checked: "2026-08-11"
