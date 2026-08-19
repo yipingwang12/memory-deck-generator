@@ -1,0 +1,67 @@
+# Musical themes from the MTD (Musical Theme Dataset, AudioLabs Erlangen) — a digitisation
+# of Barlow & Morgenstern's "A Dictionary of Musical Themes". 2,067 themes, each an
+# editorially-chosen theme rather than a mechanical incipit.
+#
+# The corpus is NOT in this repo: it is a 2.6 GB archive, unpacked under `cache/` like every
+# other heavyweight pipeline input (Gutenberg texts, Folger HTML, artwork images).
+#   curl -O https://www.audiolabs-erlangen.de/resources/MIR/MTD/MTD_1.0.0.zip
+#   unzip MTD_1.0.0.zip 'MTD/data_SCORE_XML/*' 'MTD/data_META/*' -d cache/
+# Only those two folders are read; audio, PDFs and the CSV note lists are not used.
+
+deck_name: Musical Themes
+group: Musical Themes
+mtd_dir: cache/mtd
+
+# CC-BY 4.0 requires credit wherever the material travels, so this is copied into every deck
+# artifact rather than living only here.
+#
+# ⚠ UNRESOLVED, see PRD "Licensing": the archive's LICENSE grants CC-BY to data_ALIGNMENT,
+# data_META, data_SCORE_CSV, data_SCORE_IMG, data_SCORE_MID and data_SCORE_SIB — it does NOT
+# name data_SCORE_XML, which is the folder this pipeline reads. The archive's own README omits
+# it too, while listing two EDM XML folders the archive does not contain, so the documentation
+# has demonstrably drifted. Do not publish the derived MEI until this is confirmed.
+attribution: >-
+  Themes from the Musical Theme Dataset (MTD) — Frank Zalkow, Stefan Balke, Vlora Arifi-Müller
+  and Meinard Müller, International Audio Laboratories Erlangen, 2020, CC-BY 4.0. Derived from
+  "A Dictionary of Musical Themes" by Barlow and Morgenstern (1948).
+
+corruption:
+  types: [pitch_step, pitch_leap, accidental, rhythm_redistribute]
+  # A floor, scaled up to the theme's note count (capped at max_pool) so the error position
+  # does not become predictable on a long theme.
+  pool_size: 16
+  max_pool: 40
+
+selection:
+  # Beethoven alone is 27% of MTD, and ten composers are 73% of it. Uncapped, every fourth
+  # card is Beethoven and the deck teaches his catalogue rather than the repertoire.
+  max_per_composer: 40
+  # Three notes is a card that cannot be got wrong in an interesting way; past thirty the
+  # single error is a needle in a haystack rather than a reading test.
+  min_notes: 8
+  max_notes: 32
+  # 20 themes carry more than one voice. They render fine but a corruption on an inner voice
+  # is a different (harder, differently-skilled) task; excluded until that is a decision.
+  monophonic_only: true
+
+# One deck per stylistic period, by composer birth year. Periods are the axis a listener
+# actually hears, and the split keeps each deck to a size the daily gate can absorb.
+# A theme's FSRS identity is `MTD|<id>`, so redrawing these bands later moves cards between
+# decks WITHOUT stranding a single card's review history.
+decks:
+  - poem_title: Baroque
+    birth_max: 1699
+  - poem_title: Classical
+    birth_min: 1700
+    birth_max: 1759
+  - poem_title: Early Romantic
+    birth_min: 1760
+    birth_max: 1799
+  - poem_title: High Romantic
+    birth_min: 1800
+    birth_max: 1839
+  - poem_title: Late Romantic
+    birth_min: 1840
+    birth_max: 1874
+  - poem_title: Modern
+    birth_min: 1875

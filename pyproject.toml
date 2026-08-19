@@ -18,6 +18,9 @@ dependencies = [
     "antlr4-python3-runtime==4.11",
     # wordfreq: frequency ranking for the Chinese vocab pipeline (deck-vocab).
     "wordfreq",
+    # verovio: MusicXML → MEI → engraved SVG for the MTD musical-theme decks. The quiz
+    # depends on it too — it renders the corrupted notation at display time.
+    "verovio",
 ]
 
 [project.optional-dependencies]
@@ -35,6 +38,7 @@ deck-monologue-archive = "deck_generator.monologue_archive_cli:main"
 deck-registry-generate = "deck_generator.registry_cli:main"
 deck-coverage-check = "deck_generator.coverage_cli:main"
 deck-equations = "deck_generator.equations_cli:main"
+deck-themes = "deck_generator.themes_cli:main"
 deck-vocab = "deck_generator.vocab_cli:main"
 deck-derive-positions = "deck_generator.derive_positions_cli:main"
 

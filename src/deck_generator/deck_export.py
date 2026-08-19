@@ -15,6 +15,7 @@ import argparse
 import hashlib
 import json
 import re
+import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from fnmatch import fnmatch
@@ -36,6 +37,8 @@ from .monarchs import (
     correction_years, fetch_monarchs, filter_by_accession, make_monarch_chunks, parse_corrections,
 )
 from .poetry_parser import extract_poem
+from .theme_corruptions import build_theme_pool, pool_warnings as theme_pool_warnings
+from .themes import discover_theme_ids, load_theme
 from .wikisource import fetch_text as fetch_wikisource_text
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
@@ -53,6 +56,7 @@ _MONARCH_GROUP = 'Monarchs'
 _DEFAULT_CORRUPTION_TYPES = ('sign_flip', 'exponent_off_by_one', 'constant_perturb', 'variable_swap')
 _EQUATION_GROUP = 'Equations'
 _ARTWORK_GROUP = 'Artworks'
+_THEME_GROUP = 'Musical Themes'
 
 
 def config_hash(path: Path) -> str:
@@ -124,6 +128,15 @@ def _discover_slots(config_dir: Path) -> list[_Slot]:
         for variant, ptitle in (('two', '2 errors'), ('one', '1 error')):
             slots.append(_Slot(order, 'equations', yaml_path,
                                {'variant': variant, 'poem_title': ptitle}, group))
+            order += 1
+    for yaml_path in sorted(Path(config_dir).glob('themes/*.yaml')):
+        cfg = yaml.safe_load(yaml_path.read_text())
+        group = cfg.get('group', _THEME_GROUP)
+        # One config → one deck per period band. Enumerable from the config alone (the bands
+        # are declared, not derived from the corpus), so discovery still touches no data —
+        # which is what lets `--only` and the orphan check stay network-and-corpus-free.
+        for deck_cfg in cfg.get('decks', []):
+            slots.append(_Slot(order, 'themes', yaml_path, dict(deck_cfg), group))
             order += 1
 
     per_config: dict[Path, int] = {}
@@ -260,6 +273,14 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
             continue
         deck = _build_equation_deck(s)
         if deck is not None:          # a variant with no qualifying equations is omitted
+            artifacts.append(deck)
+
+    _THEME_ROW_CACHE.clear()  # per-run; a config's period decks share one corpus pass
+    for s in wanted:
+        if s.deck_type != 'themes':
+            continue
+        deck = _build_theme_deck(s)
+        if deck is not None:          # a period band matching no theme yields no deck
             artifacts.append(deck)
 
     artifacts.sort(key=lambda a: a['order'])
@@ -661,6 +682,154 @@ def _build_equation_deck(s: _Slot) -> dict | None:
         'poem_title': ptitle,
         'config_path': str(s.yaml_path),
         'config_hash': config_hash(s.yaml_path),
+        '_filename': s.filename,
+    }
+
+
+_THEME_ROW_CACHE: dict[str, list[dict]] = {}
+
+
+def _theme_rows(yaml_path: Path) -> list[dict]:
+    """Every selected theme's MEI + verified corruption pool, once per config.
+
+    Cached because a config's period decks are filtered *views* over one corpus: without it,
+    six bands would each convert all 2,067 MusicXML files. Unlike equations there is no
+    on-disk pool cache and no engine version to bump — a theme corruption is verified
+    structurally (does the measure still add up, does anything actually change), which is
+    fast enough that the whole corpus builds in about three minutes, and correct by
+    construction rather than by a solver whose behaviour could change under us.
+    """
+    key = str(yaml_path)
+    if key in _THEME_ROW_CACHE:
+        return _THEME_ROW_CACHE[key]
+
+    cfg = yaml.safe_load(yaml_path.read_text())
+    mtd_dir = Path(cfg.get('mtd_dir', 'cache/mtd'))
+    if not mtd_dir.is_absolute():
+        mtd_dir = _ROOT / mtd_dir
+    ccfg = cfg.get('corruption') or {}
+    types = tuple(ccfg.get('types', ('pitch_step', 'pitch_leap', 'accidental',
+                                     'rhythm_redistribute')))
+    pool_size, max_pool = ccfg.get('pool_size', 16), ccfg.get('max_pool', 40)
+    sel = cfg.get('selection') or {}
+
+    rows: list[dict] = []
+    per_composer: dict[str, int] = {}
+    for mtd_id in discover_theme_ids(mtd_dir):
+        theme = load_theme(mtd_dir, mtd_id)
+        if _reject_theme(theme, sel, per_composer):
+            continue
+        pool = build_theme_pool(theme, types, pool_size, max_pool)
+        if not pool:
+            print(f'  ! {theme.item}: no verified corruption — dropped', file=sys.stderr)
+            continue
+        for w in theme_pool_warnings(theme, pool):
+            print(f'  ! {w}', file=sys.stderr)
+        per_composer[theme.composer] = per_composer.get(theme.composer, 0) + 1
+        rows.append({'theme': theme, 'pool': pool})
+
+    _THEME_ROW_CACHE[key] = rows
+    return rows
+
+
+def _reject_theme(theme, sel: dict, per_composer: dict[str, int]) -> bool:
+    """Whether the corpus-wide selection rules exclude this theme.
+
+    The per-composer cap is applied in MTD id order, so a capped composer keeps their
+    lowest-numbered themes — a stable, reproducible subset rather than a random sample. It is
+    not a *quality* ranking: MTD ids run roughly by composer then catalogue number, so this
+    favours early works. Raising the cap only ever adds themes, never reshuffles the kept set.
+    """
+    playable = [n for n in theme.notes if not n.grace]
+    if len(playable) < sel.get('min_notes', 0):
+        return True
+    if len(playable) > sel.get('max_notes', 10_000):
+        return True
+    if sel.get('monophonic_only', True) and _is_polyphonic(theme.mei):
+        return True
+    cap = sel.get('max_per_composer')
+    return cap is not None and per_composer.get(theme.composer, 0) >= cap
+
+
+def _is_polyphonic(mei: str) -> bool:
+    """True if the theme carries more than one voice or staff.
+
+    Twenty MTD themes do. They engrave correctly, but a corruption on an inner voice asks a
+    different question than a corruption on the melody, so they are excluded rather than
+    silently mixed in.
+    """
+    root = ET.fromstring(mei)
+    layers = {e.get('n') for e in root.iter() if e.tag.split('}')[-1] == 'layer'}
+    staves = {e.get('n') for e in root.iter() if e.tag.split('}')[-1] == 'staff'}
+    return len(layers) > 1 or len(staves) > 1
+
+
+def _band_selected(theme, deck_cfg: dict) -> bool:
+    lo, hi = deck_cfg.get('birth_min'), deck_cfg.get('birth_max')
+    birth = theme.birth
+    if not birth:
+        return False          # undated composer belongs to no period band
+    return (lo is None or birth >= lo) and (hi is None or birth <= hi)
+
+
+def _build_theme_deck(s: _Slot) -> dict | None:
+    """One period band of a themes config.
+
+    Each theme becomes one card whose ``item`` is ``MTD|<id>`` — the catalogue identity, never
+    the notes. That matters more here than anywhere else in this repo: MTD ships corrected
+    encodings (its own ``EDM-orig`` / ``EDM-corr`` split exists because the source had
+    errors), so keying on the notation would strand a card's history the first time a wrong
+    pitch was fixed. It also means redrawing the period bands moves a theme between decks
+    without touching its review history.
+
+    The MEI goes out as an **asset file** rather than inline, following artworks' WebP images:
+    ~6 KB per theme is fine on disk and unreasonable to carry in a JSON the quiz parses to
+    list decks.
+    """
+    deck_cfg = s.poem_cfg or {}
+    ptitle = deck_cfg.get('poem_title', s.yaml_path.stem)
+    cfg = yaml.safe_load(s.yaml_path.read_text())
+    base = cfg.get('deck_name', s.yaml_path.stem)
+    n_wrong = (cfg.get('corruption') or {}).get('n_wrong', 1)
+    deck_stem = s.filename.removesuffix('.json')
+
+    chosen = [r for r in _theme_rows(s.yaml_path) if _band_selected(r['theme'], deck_cfg)]
+    if not chosen:
+        return None
+
+    assets: dict[str, bytes] = {}
+    items, labels, mei_paths, pools, composers = [], [], [], [], []
+    for r in chosen:
+        theme = r['theme']
+        rel = f'assets/{deck_stem}/MTD{theme.mtd_id}.mei'
+        assets[rel] = theme.mei.encode('utf-8')
+        items.append(theme.item)
+        labels.append(theme.label)
+        mei_paths.append(rel)
+        pools.append(r['pool'])
+        composers.append(theme.composer)
+
+    return {
+        'order': s.order,
+        'name': f'{base} ({ptitle})',
+        'deck_type': 'themes',
+        'mode': 'notation-spot',
+        'title': f'{base} ({ptitle})',
+        'n_wrong': n_wrong,
+        'items': items,
+        'labels': labels,
+        'mei': mei_paths,
+        'pool': pools,
+        'composers': composers,
+        # Travels WITH the deck, not just in a config comment: the artifact is what gets
+        # copied into the quiz repo and studied, so the attribution has to survive the copy.
+        # MTD is CC-BY 4.0, which requires credit wherever the material is redistributed.
+        'attribution': cfg.get('attribution'),
+        'group': s.group,
+        'poem_title': ptitle,
+        'config_path': str(s.yaml_path),
+        'config_hash': config_hash(s.yaml_path),
+        '_assets': assets,
         '_filename': s.filename,
     }
 
