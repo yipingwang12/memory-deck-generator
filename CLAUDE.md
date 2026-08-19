@@ -18,6 +18,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-shakespeare` | Folger Digital Texts API | YAML catalogue of monologue passages |
 | `deck-equations` | Hand-curated YAML | Equation + verified corruption pool → quiz `error-spot` deck (MathML baked) |
 | `deck-vocab` | wordfreq × CC-CEDICT (+ audited LLM adjudication of hard words) | Curated Chinese `matching` vocab deck (`source: manual`; committed out-of-band, not a full-export deck) |
+| `deck-themes` | MTD (Musical Theme Dataset) MusicXML | Musical theme + verified note corruptions → quiz `notation-spot` deck (MEI assets, engraved by Verovio) |
 
 ## Modules
 
@@ -44,6 +45,9 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `distractors.py` | `build_choices(artworks, attr, n, same_creator_bias)` — deterministic (QID-seeded) MC options; same-creator/era bias; no duplicate values. Creator cards match **answer shape** first (joint `A & B` answers draw joint distractors) — a multi-name answer among single-name options is pickable without knowing the artwork. |
 | `corrections.py` | Shared contract for sourced manual overrides (monarchs + artworks): mandatory `reason`/`source`, `validate` raises rather than skipping a malformed entry, and every pipeline owns a staleness predicate. The correction *types* differ (a monarch patches a scalar year in a multiset, an artwork a field on a keyed record), so only the contract is shared. |
 | `artwork_images.py` | `fetch_raw` (Commons download, cached under `cache/artworks/`, UA-compliant — the CDN 403s placeholder UAs) + `to_webp` (Pillow downsize). |
+| `themes.py` | MTD ingest: `musicxml_to_mei` (Verovio conversion + `canonical_ids`, which renumbers every note to `n1..nN` — Verovio mints RANDOM ids per load, so pool entries would otherwise address a different note on every render), `parse_notes` → `Note` (carries `accid` **and** `accid_ges`; `sounding_accid` prefers the printed sign), `apply_patch` (empty value REMOVES an attribute — how an accidental is taken away), `render_svg`, `load_theme` (lru-cached). Reads `data_SCORE_XML` + `data_META` only. |
+| `theme_corruptions.py` | Generated + verified note corruptions. `build_theme_pool` → pool of `{id, type, positions, patch}`; `verify` fails closed on a no-op, a **respelling** (compares `sounding_accid`, so printing a courtesy sharp on an already-sharp note is refused), a bar that no longer adds up, or a patch whose real effect differs from its claimed positions. `pool_target` scales the pool to the note count; `_sample_by_type` trims round-robin across types so rhythm corruptions aren't sampled away. |
+| `themes_cli.py` | `deck-themes` — `--survey` (period / work type / composer), preview (pool health), `--render DIR` (clean + corrupted SVGs to eyeball), `--export`. |
 | `country_registry.py` | `fetch_country_registry` via Wikidata P1906 → `CountryEntry` list; `save_registry`/`load_registry` YAML I/O. |
 | `coverage.py` | `check_coverage`: compares Wikidata monarch sitelinks against Wikipedia list article links; returns `CoverageReport`. |
 | `derive_positions.py` | `load_ruler_titles` filters xlsx/csv by occupation keywords; `fetch_positions_for_titles` batch-queries Wikidata P39 to rank position Q-IDs by holder count. |
@@ -58,6 +62,39 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `list_parser.py` | Wikipedia wikitext → `[(year, name)]`. Unused by CLI; kept for potential future use. |
 | `wiki_api.py` | MediaWiki API client. `fetch_article_links(title)` used by coverage checker. |
 | `deck_export.py` | `deck-export` entry point — the generator→quiz boundary. **The `if __name__ == "__main__"` guard must stay the LAST statement**: under `python -m deck_generator.deck_export` (how the orchestrator's Dagster asset invokes it) the file runs top-to-bottom as `__main__`, so a mid-file guard calls `main()` before later definitions exist — it sat above `_EQ_POOL_CACHE` and raised `NameError`, which the console script hid because an entry point imports the module fully first. Runs the generation pipeline and writes one self-contained JSON artifact per deck to `data/decks/` (`items`, `labels`, `config_hash`, …). Item strings are byte-identical to live generation, preserving deck ids and FSRS item keys (`sha256(item)[:16]`). Consumed by the `memory-quiz-app` repo. **A bare run CLEARS the output dir and rebuilds everything; use `--only <glob>` to refresh a subset** (leaves others untouched/unfetched and preserves their `order`/`config_path`). Artwork decks additionally emit WebP image files under `data/decks/assets/<deck>/` (cleared/rebuilt in lockstep) and a `sitelinks` array (fame count per card; the quiz's preview creator browser sorts on it). **`--cache-only`** assembles artwork decks from already-downloaded images only — use it when re-exporting for an unrelated change so the work set can't grow (config `cache_only` without the config edit). `source: manual` artifacts (e.g. the quiz's Chinese vocab deck — curated out-of-band by `deck-vocab`, not by `deck-export`) are **preserved through the clear** (`_is_manual`) — a full export has no config to rebuild them. **Every run warns about orphans** (`find_orphan_artifacts`): artifacts in `data/decks/` that no config would produce. Deleting a config removes the recipe but not the built artifact — the dir is gitignored build output and `--only` skips the clear — so the orphan survives every targeted re-export and the orchestrator's `decks` sync copies it onward. That is how the Shakespeare sonnet decks, deleted 2026-07-15, reappeared in the quiz on 2026-07-25. |
+
+## Musical themes (`deck-themes`)
+
+Source is the **MTD** (Musical Theme Dataset, AudioLabs Erlangen) — 2,067 themes digitised from
+Barlow & Morgenstern's *Dictionary of Musical Themes*. The corpus is a 2.6 GB download unpacked
+under `cache/mtd/` (gitignored, like every other heavyweight input); only `data_SCORE_XML` and
+`data_META` are read.
+
+- **The score, not the note list.** MTD also ships `data_SCORE_CSV` as flat `Start;Duration;Pitch`
+  rows. It merges tied notes into one sounding event and so disagrees with the notated score for
+  **566 of 2,067 themes** (561 of those are exactly the tie cases). Corrupting a *sounding*
+  duration would render a dotted quarter the score never showed. The CSVs are what is heard; only
+  the MusicXML is what is read, and reading is the skill being tested.
+- **Item identity is `MTD|<id>`, never the notes.** MTD ships corrected encodings (its own
+  `EDM-orig`/`EDM-corr` split exists because the source had errors), so keying on notation would
+  strand history the first time a wrong pitch was fixed. It also means redrawing the period bands
+  moves a theme between decks without touching its review history. Ids can carry a suffix
+  (`0739-2`) — part of the identity, since two themes share the movement.
+- **Rhythm corruptions edit an adjacent PAIR** and mark both positions. Lengthening one note has
+  to shorten another or the bar stops adding up, and an unbalanced bar re-spaces every following
+  note — the reader would spot it from the spacing without reading the rhythm. `verify` asserts
+  the measure total is unchanged.
+- **`accid` vs `accid.ges`.** Verovio records an unprinted alteration (from the key signature, or
+  a MusicXML `<alter>` with no `<accidental>`) in `accid.ges`. Adding a written sharp to a note
+  already sounding sharp prints a courtesy accidental and changes nothing audible. Both the
+  generator and `verify` compare on `sounding_accid`, so the class is unshippable.
+- **No pool cache, no engine version.** Unlike equations there is nothing to prove: "different" is
+  decidable by looking. The whole corpus builds in ~3 min, and correctness comes from structure
+  rather than from a solver whose behaviour could change.
+- **Selection matters more here than anywhere.** Beethoven alone is 27% of MTD and ten composers
+  are 73%; uncapped, every fourth card is Beethoven. `max_per_composer: 40` takes 2,067 → 899.
+- ⚠ **Licensing is unresolved** — the archive LICENSE grants CC-BY to six folders and does **not**
+  name `data_SCORE_XML`. See PRD "Licensing"; do not publish the derived MEI until settled.
 
 ## Award configs (31)
 

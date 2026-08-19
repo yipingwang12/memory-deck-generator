@@ -187,6 +187,21 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 - Gloss uniqueness is **band-scoped** (`band_collisions`, `FREQ_BAND_SIZE` window): English has no 5000+ distinct short glosses, and a matching round only co-displays same-band words. `deck-vocab build` reproduces the exact artifact shipped to `memory-quiz-app`.
 - Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [`docs/design/vocab-pipeline.md`](docs/design/vocab-pipeline.md) and the quiz's [`matching-mode.md`](../memory-quiz-app/docs/design/matching-mode.md).
 
+### 9. Musical Themes (`deck-themes`) — *built* (899 cards over 6 decks)
+- Source: the **MTD** (Musical Theme Dataset, AudioLabs Erlangen) — 2,067 themes digitised from Barlow & Morgenstern's *Dictionary of Musical Themes* (1948). A theme here is an **editorially-chosen theme**, not a mechanical incipit, which is what makes it a study unit at all; no other open source segments themes at this scale. The 2.6 GB archive is unpacked under `cache/mtd/` (gitignored), and only `data_SCORE_XML` + `data_META` are read.
+- Output: emits **directly to the quiz artifact seam** — a `deck_type: themes` / `mode: notation-spot` deck plus **MEI asset files** under `data/decks/assets/<deck>/`, consumed by `memory-quiz-app`'s `notation-spot` mode, which engraves them with Verovio at display time.
+- **The score, not the note list.** MTD's `data_SCORE_CSV` is a flat `Start;Duration;Pitch` list that merges tied notes into one sounding event; it disagrees with the notated score for **566 of 2,067 themes**, and 561 of those are exactly the tie cases. Corrupting a *sounding* duration would render a dotted quarter the score never showed. The CSVs describe what is heard; the MusicXML describes what is read, and reading is the skill.
+- **Why render rather than bake.** Equations ship finished MathML because a corruption there is a text swap. A wrong note is not: it sits on a different staff line, may gain an accidental, and a retimed note changes its beam and stem — there is no edit to an engraved SVG that yields correct notation. Baking every variant would be ~1 GB across the deck, so the quiz engraves on demand (~10 ms, local, no network — the offline guarantee holds).
+- **Rhythm corruptions are pair edits.** Lengthening a note has to shorten another or the bar stops adding up, and an unbalanced bar re-spaces every following note — the reader would spot the error from *typography* rather than by reading the rhythm. So a rhythmic corruption alters an adjacent pair and marks both positions; the pair is the alteration, and asking for both is what makes it a rhythm question.
+- **Verification is structural, not algebraic** — the reason this pipeline is cheap where equations are expensive. sympy must *prove* a corrupted formula inequivalent; here "different" is decidable by looking. `verify` fails closed on a no-op, a **respelling** (a courtesy accidental on a note the key already alters changes the page but not the music), a measure whose total moved, or a patch whose real effect differs from its claim. No pool cache, no engine version to bump; the whole corpus builds in ~3 min.
+- Key stability: `item` is `MTD|<id>`, never the notation. MTD ships corrected encodings — its own `EDM-orig`/`EDM-corr` split exists because the source had errors — so keying on notes would strand history the first time a wrong pitch was fixed upstream. Redrawing the period bands moves a theme between decks with no effect on its FSRS history.
+- **Selection is the design decision.** Beethoven alone is 27% of MTD and ten composers are 73%; uncapped, every fourth card is Beethoven and the deck teaches one catalogue. `max_per_composer: 40` takes 2,067 → 899, split into six decks by composer birth year.
+
+#### Licensing — unresolved, blocks publishing the derived MEI
+The archive's `LICENSE` grants **CC-BY 4.0** to `data_ALIGNMENT`, `data_META`, `data_SCORE_CSV`, `data_SCORE_IMG`, `data_SCORE_MID` and `data_SCORE_SIB`. It does **not** name `data_SCORE_XML` — the folder this pipeline reads — and neither does the archive's README, which instead lists two `data_EDM-*_XML` folders the archive does not contain. The documentation has demonstrably drifted in both directions, and the deliberate carve-outs (audio recordings, and the `EDM-*` folders derived from the 1949 book) suggest the omission is an oversight rather than a restriction: every other member of the `data_SCORE_*` family is CC-BY, and that family is the newly-engraved material.
+
+But an apparent oversight is not a grant. Until it is confirmed with the authors, the derived MEI should not be published. Attribution is required either way and travels in each artifact's `attribution` field. Fallbacks if it cannot be confirmed: `data_SCORE_MID` and `data_SCORE_SIB` are explicitly covered, but MIDI loses written accidentals, ties-as-notation and correct spelling — a real quality loss for a mode whose whole subject is how the music is *written*.
+
 ## Coverage analysis — external reference comparison (2026-08-03)
 
 Decks are built from Wikidata fame proxies; whether that matches a **curated canon** is a separate
@@ -249,6 +264,7 @@ Design rationale for what this repo emits; the quiz that consumes it (display, s
 
 ## Non-goals
 - Quiz UI, scoring, SRS (all in `memory-quiz-app`)
+- Theme *segmentation* — MTD's 2,067 are taken as given; finding themes in a full score is a research problem, not this repo's
 - Automatic publishing / sharing
 - Non-English **sources** (Chinese vocab is glossed from CC-CEDICT, not scraped)
 
