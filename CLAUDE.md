@@ -65,36 +65,31 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 
 ## Musical themes (`deck-themes`)
 
-Source is the **MTD** (Musical Theme Dataset, AudioLabs Erlangen) — 2,067 themes digitised from
-Barlow & Morgenstern's *Dictionary of Musical Themes*. The corpus is a 2.6 GB download unpacked
-under `cache/mtd/` (gitignored, like every other heavyweight input); only `data_SCORE_XML` and
-`data_META` are read.
+MTD (Musical Theme Dataset) → canonical MEI + verified note corruptions → `notation-spot` deck.
+Corpus is a 2.6 GB download under `cache/mtd/` (gitignored); only `data_SCORE_XML` + `data_META`
+are read. Full design: [docs/design/themes-pipeline.md](docs/design/themes-pipeline.md).
 
-- **The score, not the note list.** MTD also ships `data_SCORE_CSV` as flat `Start;Duration;Pitch`
-  rows. It merges tied notes into one sounding event and so disagrees with the notated score for
-  **566 of 2,067 themes** (561 of those are exactly the tie cases). Corrupting a *sounding*
-  duration would render a dotted quarter the score never showed. The CSVs are what is heard; only
-  the MusicXML is what is read, and reading is the skill being tested.
-- **Item identity is `MTD|<id>`, never the notes.** MTD ships corrected encodings (its own
-  `EDM-orig`/`EDM-corr` split exists because the source had errors), so keying on notation would
-  strand history the first time a wrong pitch was fixed. It also means redrawing the period bands
-  moves a theme between decks without touching its review history. Ids can carry a suffix
-  (`0739-2`) — part of the identity, since two themes share the movement.
-- **Rhythm corruptions edit an adjacent PAIR** and mark both positions. Lengthening one note has
-  to shorten another or the bar stops adding up, and an unbalanced bar re-spaces every following
-  note — the reader would spot it from the spacing without reading the rhythm. `verify` asserts
-  the measure total is unchanged.
-- **`accid` vs `accid.ges`.** Verovio records an unprinted alteration (from the key signature, or
-  a MusicXML `<alter>` with no `<accidental>`) in `accid.ges`. Adding a written sharp to a note
-  already sounding sharp prints a courtesy accidental and changes nothing audible. Both the
-  generator and `verify` compare on `sounding_accid`, so the class is unshippable.
-- **No pool cache, no engine version.** Unlike equations there is nothing to prove: "different" is
-  decidable by looking. The whole corpus builds in ~3 min, and correctness comes from structure
-  rather than from a solver whose behaviour could change.
-- **Selection matters more here than anywhere.** Beethoven alone is 27% of MTD and ten composers
-  are 73%; uncapped, every fourth card is Beethoven. `max_per_composer: 40` takes 2,067 → 899.
-- ⚠ **Licensing is unresolved** — the archive LICENSE grants CC-BY to six folders and does **not**
-  name `data_SCORE_XML`. See PRD "Licensing"; do not publish the derived MEI until settled.
+What will bite you:
+
+- **Read the score, not `data_SCORE_CSV`.** The CSV merges tied notes, so it disagrees with the
+  notation on 566 of 2,067 themes (561 are exactly the tie cases). It is what is *heard*; the
+  MusicXML is what is *read*, and reading is the skill.
+- **Note ids must be renumbered `n1..nN`.** Verovio mints random ids per load, so a pool built
+  against one conversion addresses a different note in the next render.
+- **A rhythmic corruption edits an adjacent PAIR** and marks both positions. Lengthening one
+  note must shorten another or the bar stops adding up — and an unbalanced bar re-spaces
+  everything after it, leaking the answer as typography.
+- **`accid` vs `accid.ges`.** Verovio records an unprinted alteration (key signature, or a
+  MusicXML `<alter>` with no `<accidental>`) in `accid.ges`. Adding a sharp to a note already
+  sounding sharp prints a courtesy accidental and changes nothing audible. Both the generator
+  and `verify` compare on `sounding_accid`, so the class is unshippable.
+- **MTD ids can carry a suffix** (`0739-2`) — part of the identity; dropping it collides two
+  themes from one movement.
+- **No pool cache and no engine version**, unlike equations: verification is structural, so the
+  whole corpus rebuilds in ~90 s and there is nothing to invalidate.
+- **`max_per_composer` is load-bearing.** Beethoven is 27% of MTD; uncapped, the deck teaches
+  one catalogue.
+- ⚠ **Licensing unresolved** — the archive LICENSE does not name `data_SCORE_XML`. See the PRD.
 
 ## Award configs (31)
 

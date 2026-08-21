@@ -10,6 +10,8 @@
 - [x] FSRS-6 SRS scheduler — learning steps, graduated ramp, relearning, forgiveness params
 - [x] Quiz event logger — SQLite sessions/attempts/srs_state tables
 - [x] Shakespeare pipeline — Folger API, monologue catalogue
+- [x] Musical themes pipeline — MTD → canonical MEI + verified note corruptions (`deck-themes`),
+      899 cards over 6 period decks; licensing of `data_SCORE_XML` unresolved
 - [x] Desktop app — PyWebView + Anki-style deck picker, macOS .app bundle with custom icon
 - [x] PWA Phase 1 — JS ports of `quiz.py` and `srs.py` (ts-fsrs, full custom state machine); 82-test suite with Python↔JS parity fixture
 - [x] PWA Phase 2 — Flask `/api` Blueprint: `GET /api/decks`, `GET /api/deck/<id>/content`, `POST /api/sync` (last-write-wins); CORS headers; 16 tests
