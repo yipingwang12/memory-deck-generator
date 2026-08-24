@@ -128,7 +128,7 @@ the sonnets' stored `order` by the number of poems added before them.
   one card). Display lives in the parallel `digits` array; `monarch_item_keys` builds the identity
   and is shared with the quiz's migration so the two cannot disagree
 - Monarch transition years: every accession year, plus any end year that is not itself an accession year (throne didn't pass directly to a successor) — covers Wikidata coronation-lag, interregnum starts, and dynasty terminal years
-- Monarch config corrections (`corrections:`) require `reason` + `source`; add is idempotent so an upstream Wikidata fix can't double a digit. `accession_precision` is recorded and warned on but never affects digits — see PRD
+- Monarch config corrections (`corrections:`) require `reason` + `source`; add is idempotent so an upstream Wikidata fix can't double a digit — it declares the TARGET occurrence count and tops up to it, so an `add` may carry `count: N` when a year holds more than one transition (Hammadid 1105 = two accessions; `add_transition_years` is read as a multiset). `count` on a `drop` raises: drop removes every occurrence. `accession_precision` is recorded and warned on but never affects digits — see PRD
 - Monarch coverage workflow: (1) `deck-registry-generate` → `country_registry.yaml`; (2) add `wikipedia_list` field to config; (3) `deck-coverage-check --config <yaml>` reports gaps; (4) `deck-derive-positions --input politicians_rulers.xlsx` suggests position Q-IDs for historical polities not covered by P1906
 - `Monarch.wp_title` is fetched via SPARQL sitelinks (`schema:isPartOf <https://en.wikipedia.org/>`); used as join key by coverage checker
 - Folger API responses cached under `cache/folger/`; segments under `cache/folger/segments/`
