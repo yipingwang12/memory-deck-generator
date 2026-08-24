@@ -5,11 +5,51 @@ subject: "Zirids"
 # DELIBERATELY EXCLUDES `emir of Granada` (Q33083118), which 3 family members hold: that is the
 # Zirid taifa of Granada in al-Andalus, a different polity from Zirid Ifriqiya. Including it
 # would interleave two realms' successions into one digit string.
+#
+# 2026-08-23: that exclusion was leaking. Q1097498 "ruler" is generic, and it walked the taifa of
+# MALAGA in through the side door — Tamim ben Bologhin (1072–1090), two of the four digits on the
+# 1000s card, from the realm the Granada exclusion exists to keep out. Dropped by year below,
+# since corrections patch transition years and there is no per-person exclusion for monarchs.
+# The generic position cannot simply be removed: Bologhine ibn Ziri and al-Hasan ibn Ali are
+# filed nowhere else.
 positions:
   - Q51680298   # Emir of Ifriqiya
-  - Q1097498   # ruler — GENERIC
+  - Q1097498   # ruler — GENERIC; see the Malaga note above
+  - Q14698333   # viceroy of Ifriqiya — where Yahya ibn Tamim (1108–1116) is filed
 houses:
   - Q205718   # Zirid Dynasty
 chunk_years: 100
 chunk_start_year: 900
 group: "North African Monarchs"
+wikipedia_list: "Zirid dynasty"
+corrections:
+  - year: 995
+    action: drop
+    reason: "Badis ibn al-Mansur acceded in 996, on al-Mansur's death; Wikidata stamps 0995-01-01"
+    source: "Zirid dynasty, List of Zirid rulers (Idris 1962, pp. 831-833)"
+    checked: "2026-08-23"
+  - year: 996
+    action: add
+    reason: "Badis ibn al-Mansur's accession, 996"
+    source: "Zirid dynasty, List of Zirid rulers (Idris 1962, pp. 831-833)"
+    checked: "2026-08-23"
+  - year: 1072
+    action: drop
+    reason: "Accession of Tamim ben Bologhin to the taifa of MALAGA (Q3514822, 'Zirid ruler of Malaga') — al-Andalus, not Ifriqiya; reaches the deck only via the generic Q1097498 position"
+    source: "Wikidata Q3514822; Zirid dynasty, Offshoots of the Zirid dynasty"
+    checked: "2026-08-23"
+  - year: 1090
+    action: drop
+    reason: "End of the same Malaga reign (Almoravid conquest) — wrong realm, same cause as 1072"
+    source: "Wikidata Q3514822; Zirid dynasty, Offshoots of the Zirid dynasty"
+    checked: "2026-08-23"
+  - year: 1152
+    action: drop
+    reason: "Al-Hasan ibn Ali carries two 'ruler' statements, 1121-1152 and 1121-1148; dedup keeps the LATEST end year and so discards the correct one. 1152 conflates the end of Zirid rule with his later detention in Algiers"
+    source: "Zirid dynasty, End of Zirid rule (Abun-Nasr 1987, p. 92; Baadj 2015, p. 35)"
+    checked: "2026-08-23"
+  - year: 1148
+    action: add
+    reason: "Al-Hasan abandoned Mahdia to the Norman fleet in 1148, ending Zirid rule"
+    source: "Zirid dynasty, End of Zirid rule (Abun-Nasr 1987, p. 92; Baadj 2015, p. 35)"
+    checked: "2026-08-23"

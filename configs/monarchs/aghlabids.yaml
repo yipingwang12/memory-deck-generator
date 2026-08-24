@@ -4,10 +4,37 @@ subject: "Aghlabids"
 # building — see the survey notes in PRD.md.
 # Emir of Ifriqiya is shared with the Zirids, so the house filter is required despite the
 # position looking dynasty-specific.
+#
+# 2026-08-23: widened after 800, 863 and 902 were found missing from the digits.
+# Q166382 "Amir" and Q125373423 "Banu Al-Aghlab" are Wikidata filing inconsistencies, not
+# separate institutions — under the house filter the extra position returns exactly Ibrahim II
+# and Abdallah II, and the extra house exactly Ibrahim I. Verified against WDQS 2026-08-23.
 positions:
   - Q51680298   # Emir of Ifriqiya
+  - Q166382     # Amir — where Ibrahim II (875–902) and Abdallah II (902–903) are filed
 houses:
-  - Q207600   # Aghlabids
+  - Q207600       # Aghlabids
+  - Q125373423    # Banu Al-Aghlab — duplicate house item; Ibrahim I (800–812) is its only member
 chunk_years: 100
 chunk_start_year: 800
 group: "North African Monarchs"
+wikipedia_list: "Aghlabid dynasty"
+corrections:
+  # Wikidata dates Abu Ibrahim Ahmad's death and Ziyadat Allah II's accession to 0864-01-01;
+  # EI2 gives 28 December 863 for both. Muhammad II's December 864 accession IS correct, so the
+  # year cannot simply be dropped — drop removes every occurrence, hence the re-add below.
+  - year: 864
+    action: drop
+    reason: "Removes Ziyadat Allah II's mis-dated 864 accession; Wikidata stamps his 28 Dec 863 accession (and Ahmad's death) as 0864-01-01, giving the century two 4s and no 3"
+    source: "Ziyadat Allah II of Ifriqiya; Abu Ibrahim Ahmad ibn Muhammad (both citing EI2 vol. 1, 247–250)"
+    checked: "2026-08-23"
+  - year: 863
+    action: add
+    reason: "Abu Ibrahim Ahmad died 28 December 863 and Ziyadat Allah II acceded the same day"
+    source: "Ziyadat Allah II of Ifriqiya (EI2 vol. 1, 247–250)"
+    checked: "2026-08-23"
+  - year: 864
+    action: add
+    reason: "Restores Muhammad II's genuine December 864 accession, removed by the drop above"
+    source: "Muhammad II of Ifriqiya (EI2 vol. 1, 247–250)"
+    checked: "2026-08-23"
