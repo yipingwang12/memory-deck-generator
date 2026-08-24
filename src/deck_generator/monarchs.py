@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from dataclasses import dataclass, field
 
 from .corrections import provenance, validate
@@ -43,6 +44,13 @@ class Correction:
     reason: str   # why Wikidata's own value is wrong or incomplete
     source: str   # what was checked (e.g. the Wikipedia article title)
     checked: str = ''  # ISO date the source was last verified
+    # How many times this year should appear in the corrected output. A year can carry more
+    # than one transition (two accessions in one year), and a bare add can only assert "at
+    # least once" — Hammadid 1105 needs TWO events while Wikidata, dating Badis to 1104,
+    # supplies one. This states the TARGET COUNT rather than an append, so the add stays
+    # idempotent: it tops up to `count` and does nothing once upstream supplies them all.
+    # Meaningless on a drop, which removes every occurrence; `parse_corrections` refuses it.
+    count: int = 1
 
 
 _ACTIONS = ('add', 'drop')
@@ -59,14 +67,30 @@ def parse_corrections(raw: list[dict] | None) -> list[Correction]:
     for i, entry in enumerate(raw):
         validate(entry, i, required=('year', 'action'), actions=_ACTIONS)
         reason, source, checked = provenance(entry)
+        count = _parse_count(entry, i)
         out.append(Correction(year=int(entry['year']), action=entry['action'],
-                              reason=reason, source=source, checked=checked))
+                              reason=reason, source=source, checked=checked, count=count))
     return out
+
+
+def _parse_count(entry: dict, index: int) -> int:
+    """The optional ``count:`` of an add — how many occurrences of the year the output should
+    carry. Refused on a drop, which removes every occurrence and so cannot honour a count;
+    silently ignoring it there would read as if it removed only some."""
+    if 'count' not in entry:
+        return 1
+    if entry['action'] != 'add':
+        raise ValueError(f"corrections[{index}]: count applies to 'add' only, not "
+                         f"{entry['action']!r} (drop removes every occurrence of a year)")
+    count = int(entry['count'])
+    if count < 1:
+        raise ValueError(f"corrections[{index}]: count must be >= 1, got {count}")
+    return count
 
 
 def correction_years(corrections: list[Correction]) -> tuple[list[int], list[int]]:
     """Split corrections into (add_years, drop_years) for ``make_monarch_chunks``."""
-    return ([c.year for c in corrections if c.action == 'add'],
+    return ([y for c in corrections if c.action == 'add' for y in [c.year] * c.count],
             [c.year for c in corrections if c.action == 'drop'])
 
 
@@ -278,11 +302,14 @@ def transition_events(
         dropped = set(drop_transition_years)
         events = [e for e in events if e.year not in dropped]
     reasons = {c.year: c.reason for c in corrections or [] if c.action == 'add'}
-    present = {e.year for e in events}
-    for year in add_transition_years or []:
-        if year not in present:      # idempotent — see `make_monarch_chunks`
+    # A MULTISET, not a set: listing a year twice asks for two occurrences of it (Hammadid
+    # 1105). Topping up to the requested count keeps the add idempotent — see
+    # `make_monarch_chunks` — where appending per request would double a digit the day
+    # Wikidata supplies the event itself.
+    have = Counter(e.year for e in events)
+    for year, wanted in sorted(Counter(add_transition_years or []).items()):
+        for _ in range(wanted - have[year]):
             events.append(TransitionEvent(year, 'correction', None, reasons.get(year, '')))
-            present.add(year)
     events.sort(key=lambda e: e.year)       # stable — see `_raw_events`
     return events
 
@@ -294,10 +321,12 @@ def stale_corrections(monarchs: list[Monarch], corrections: list[Correction]) ->
     is dead weight: the config keeps asserting something about upstream that stopped being true.
     Neither is an error (add is idempotent, drop is a no-op), which is exactly why they need
     reporting — otherwise they rot invisibly."""
-    events = set(_raw_transition_events(monarchs))
+    events = Counter(_raw_transition_events(monarchs))
     stale = []
     for c in corrections:
-        if c.action == 'add' and c.year in events:
+        # Counted, not tested for membership: a `count: 2` add is still doing work while
+        # upstream supplies only one of the two events.
+        if c.action == 'add' and events[c.year] >= c.count:
             stale.append(f"add {c.year}: Wikidata now supplies this year on its own")
         elif c.action == 'drop' and c.year not in events:
             stale.append(f"drop {c.year}: Wikidata no longer emits this year")
@@ -345,9 +374,13 @@ def make_monarch_chunks(
     al-Musta'in in 865, but he reigned until his 866 deposition). Drop removes every
     occurrence of a year and is applied before add.
 
-    Add is IDEMPOTENT: a year already present is not appended again. Corrections are bets that
-    Wikidata stays wrong, and Wikidata improves; an unconditional append would silently double
-    a digit the day upstream fixed the underlying statement. Use `stale_corrections` to find
+    Add is IDEMPOTENT: it declares HOW MANY times a year should appear, and tops up to that,
+    rather than appending. Corrections are bets that Wikidata stays wrong, and Wikidata
+    improves; an unconditional append would silently double a digit the day upstream fixed the
+    underlying statement. ``add_transition_years`` is therefore read as a MULTISET — listing a
+    year twice asks for two occurrences of it, which is how a year carrying two transitions is
+    expressed when upstream records only one (Hammadid 1105: al-Mansur → Badis in January and
+    Badis → Abd al-Aziz in July, with Badis mis-dated to 1104). Use `stale_corrections` to find
     corrections that have become no-ops.
 
     ``corrections`` is optional and carries provenance only (see `transition_events`); the

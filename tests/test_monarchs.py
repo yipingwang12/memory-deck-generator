@@ -662,3 +662,66 @@ def test_within_a_year_accession_precedes_reign_end():
     assert [(e.year, e.kind) for e in events] == [
         (1000, "accession"), (1050, "accession"), (1060, "accession"),
     ]
+
+
+# --- corrections: `count` — asserting HOW MANY times a year should appear ---
+# A year can carry more than one transition (two accessions in one year), and a bare `add` can
+# only assert "at least once". Hammadid 1105 is the case: al-Mansur → Badis in January and
+# Badis → Abd al-Aziz in July, but Wikidata dates Badis to 1104, so the corrected output needs
+# TWO 1105 events while upstream supplies one. `count` states the target occurrence count, which
+# keeps the add idempotent — it tops up to `count`, it does not append.
+def test_correction_add_count_tops_up_to_the_requested_occurrences():
+    monarchs = _monarchs_with_ends((1088, 1105, "al-Mansur"), (1105, 1121, "Abd al-Aziz"))
+    c = Correction(1105, "add", "Badis reigned Jan-Jul 1105", "Idris p.282", count=2)
+    adds, drops = correction_years([c])
+    events = transition_events(monarchs, adds, drops, [c])
+    assert [e.kind for e in events if e.year == 1105] == ["accession", "correction"]
+    assert make_monarch_chunks(monarchs, 100, 1100, adds, drops, [c])[0].transition_string == "551"
+
+
+def test_correction_add_count_is_still_idempotent():
+    """The whole point of the top-up: when upstream catches up and supplies both events itself,
+    the correction adds nothing rather than doubling a digit."""
+    monarchs = _monarchs((1105, "Badis"), (1105, "Abd al-Aziz"))
+    assert make_monarch_chunks(monarchs, 100, 1100, [1105, 1105])[0].transition_string == "55"
+
+
+def test_correction_add_defaults_to_count_one():
+    assert Correction(1446, "add", "r", "s").count == 1
+    assert correction_years([Correction(1446, "add", "r", "s")]) == ([1446], [])
+
+
+def test_correction_years_expands_count_into_a_multiset():
+    cs = parse_corrections([
+        {"year": 1105, "action": "add", "reason": "r", "source": "s", "count": 2},
+        {"year": 1104, "action": "drop", "reason": "r", "source": "s"},
+    ])
+    assert correction_years(cs) == ([1105, 1105], [1104])
+
+
+def test_parse_corrections_reads_count():
+    cs = parse_corrections([{"year": 1105, "action": "add", "reason": "r", "source": "s", "count": 2}])
+    assert cs == [Correction(1105, "add", "r", "s", count=2)]
+
+
+def test_parse_corrections_rejects_count_on_drop():
+    """Drop already removes EVERY occurrence of a year, so a count on it asserts nothing —
+    and reads as if it removed only some."""
+    with pytest.raises(ValueError, match="count"):
+        parse_corrections([{"year": 1104, "action": "drop", "reason": "r", "source": "s", "count": 2}])
+
+
+@pytest.mark.parametrize("count", [0, -1])
+def test_parse_corrections_rejects_non_positive_count(count):
+    with pytest.raises(ValueError, match="count"):
+        parse_corrections([{"year": 1105, "action": "add", "reason": "r", "source": "s", "count": count}])
+
+
+def test_stale_add_with_count_reported_only_when_upstream_supplies_them_all():
+    """One 1105 from Wikidata does not make a `count: 2` correction stale — it still adds the
+    second. Two does."""
+    one = _monarchs_with_ends((1088, 1105, "al-Mansur"), (1105, 1121, "Abd al-Aziz"))
+    both = _monarchs_with_ends((1105, 1105, "Badis"), (1105, 1121, "Abd al-Aziz"))
+    c = Correction(1105, "add", "r", "s", count=2)
+    assert stale_corrections(one, [c]) == []
+    assert "add 1105" in stale_corrections(both, [c])[0]
