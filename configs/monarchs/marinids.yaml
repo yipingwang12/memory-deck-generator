@@ -9,6 +9,88 @@ positions:
   - Q43292   # sultan — GENERIC
 houses:
   - Q582861   # Marinid dynasty
+# 2026-08-27: Wikidata carries TWO items for the single sultan of 1386-1387, giving the deck two
+# accessions where every Wikipedia source has one (Musa ibn Faris 1384-1386, then one successor
+# to 1387). Q16873118's dates match the articles; Q16142990 is a zero-length "1386-1386"
+# duplicate of the same man. Excluded by person rather than by year so the surviving sultan keeps
+# his name and row — a year-level drop would have anonymised whichever one was re-added.
+exclude_people:
+  - Q16142990   # "Abu Zayyan Muhammad IV" — duplicate item for the 1386-1387 sultan
 chunk_years: 25
-chunk_start_year: 1250
+chunk_start_year: 1175
 group: "North African Monarchs"
+# 2026-08-27: extended back past Abu Yusuf Yaqub to the dynasty's first four leaders, none of
+# whom hold a Wikidata `sultan` statement — the Marinids were a tribal power under Almohad
+# suzerainty until they took Fez, so there is no sultan to fetch. `chunk_start_year` drops
+# 1250 -> 1175; both are multiples of 25 apart, so every existing card label is unchanged and
+# no FSRS identity moves.
+#
+# DATES from the article's own chronology, which is event-anchored and firmer than its prose:
+#   1217  Abd al-Haqq I dies in combat against the Almohads; Uthman I succeeds
+#   1240  Uthman I assassinated by a Christian slave; Muhammad I takes the throne
+#   1244  Muhammad I killed by his own Christian militia; Abu Yahya succeeds
+#
+# 1195 IS THE SOFT ONE. It is the canonical List of rulers of Morocco's start for Abd al-Haqq I,
+# and it is the year his father Muhyu died at the Battle of Alarcos, after which "leadership of
+# the tribe passed on to Abd al-Haqq". But he is a TRIBAL LEADER, not a sultan, and the Marinid
+# Sultanate infobox instead gives him "1215-1217" while dating the sultanate's establishment to
+# 1244. Three defensible starts; 1195 is taken because it is the canonical table's, and because
+# it is the only one that marks an actual succession rather than a change of activity.
+#
+# NOT CHANGED: the deck still has Abu Yusuf Yaqub at 1259 while the same chronology says Abu
+# Yahya died in 1258 and Abu Yusuf succeeded then. Left alone deliberately — correcting it was
+# not authorised, and adding 1258 here while 1259 stands would double-count one succession.
+corrections:
+  - year: 1215
+    action: add
+    reason: "Abd al-Haqq I leads the Banu Marin into the cultivated lands of north-eastern Morocco, the start of his rule as counted by the Marinid ruler list; he died in 1217"
+    source: "Marinid dynasty ruler list ('Abd al-Haqq I 1215-1217'); Marinid Sultanate infobox ('1215-1217 (first)')"
+    checked: "2026-08-27"
+  - year: 1217
+    action: add
+    reason: "Abd al-Haqq I dies in combat against the Almohads; his son Uthman I succeeds"
+    source: "Marinid Sultanate chronology: '1217: Abd al-Haqq I dies during victorious combat'"
+    checked: "2026-08-27"
+  - year: 1240
+    action: add
+    reason: "Uthman I assassinated by a Christian slave; Muhammad I ibn Abd al-Haqq takes the throne"
+    source: "Marinid Sultanate chronology: '1240: Uthman I assassinated'"
+    checked: "2026-08-27"
+  - year: 1244
+    action: add
+    reason: "Muhammad I killed by his own Christian militia; Abu Yahya ibn Abd al-Haqq succeeds and takes Fez, the conventional founding of the sultanate"
+    source: "Marinid Sultanate chronology: '1244: Muhammad I killed'; infobox 'Established 1244'"
+    checked: "2026-08-27"
+#
+# 2026-08-27 (second pass), after checking the Marinid ruler list against the per-ruler articles:
+#
+#   1195 -> 1215.  Added last week from the canonical List of rulers of Morocco, which starts Abd
+#          al-Haqq I at his father Muhyu's death at Alarcos. Two sources now say 1215 — the ruler
+#          list and the Marinid Sultanate infobox — and his own article gives 1213/1214 for when
+#          he led the Banu Marin into Morocco, nowhere near 1195. 1215 wins on weight.
+#
+#   1259 -> 1258.  His article's infobox reads "1258-1286" and the text "succeeded his brother
+#          Abu Yahya in 1258". SIDE EFFECT, accepted: this was Abu Yusuf Yaqub's only transition
+#          event (his 1286 end is Abu Yaqub Yusuf's accession), so his row leaves the table.
+#
+# REJECTED after checking, because the per-ruler articles corroborate what the deck already has:
+#   1269  Marrakesh + the title "Prince of the Muslims" — a TITLE CHANGE by the same man, which
+#         `_merge_reigns` merges by design (George III 1801, Saadi 1549). Adding it would treat
+#         this one title change differently from every other.
+#   1361  Muhammad II's second reign is "again from 1362 to 1366" — the deck's 1362 is right.
+#   1365  Abd al-Aziz I's infobox reads "1366 - 1372", and Muhammad II was killed in 1366.
+#   1373  Ahmad al-Mustansir's infobox reads "1374 - 1384".
+#   1397  Abdallah ibn Ahmad II ruled "1396 to 1398", succeeded by Uthman III in 1398.
+#   1351  Genuine source split, left alone: the infobox reign is "August 1331 - 1348" (when Abu
+#         Inan declared himself sultan) while Abu al-Hasan abdicated late 1350/early 1351 and
+#         died 24 May 1351. The deck follows the infobox, as it does elsewhere.
+  - year: 1259
+    action: drop
+    reason: "Abu Yusuf Yaqub succeeded his brother Abu Yahya in 1258, not 1259"
+    source: "Abu Yusuf Yaqub ibn Abd al-Haqq (Wikipedia): infobox '1258-1286'"
+    checked: "2026-08-27"
+  - year: 1258
+    action: add
+    reason: "Abu Yusuf Yaqub's accession on Abu Yahya's death; he ruled as emir from Fez, taking Marrakesh and the title 'Prince of the Muslims' in 1269"
+    source: "Abu Yusuf Yaqub ibn Abd al-Haqq (Wikipedia): 'succeeded his brother Abu Yahya in 1258'"
+    checked: "2026-08-27"

@@ -10,3 +10,107 @@ houses:
 chunk_years: 100
 chunk_start_year: 1500
 group: "North African Monarchs"
+# 2026-08-27: web-checked. 1557, 1574, 1576, 1578 and 1603 are corroborated exactly.
+#
+# 1549 is the CONQUEST OF FEZ, not Mohammed al-Shaykh's accession — the same error class as the
+# Almohad 1147, with Wikidata stamping a conquest as a reign start. He exiled his brother Ahmad
+# al-A'raj and became sole Saadian ruler in 1543/44; the canonical table gives 1544, and the
+# Saadi Sultanate article dates the capture of Fes to 28 January 1549.
+#
+# STILL WRONG, and not fixable by year corrections: the deck ends at 1631, but Saadi rule ran to
+# 1658/59 (al-Walid 1631-1636, Mohammed esh-Sheikh es-Seghir 1636-1655, Ahmad al-Abbas
+# 1655-1659), and the 1603-1627 fracture among al-Mansur's rival sons is absent. Those need the
+# rulers to exist in Wikidata's Saadi-sultan holders, which they do not.
+corrections:
+  - year: 1549
+    action: drop
+    reason: "1549 is Mohammed al-Shaykh's conquest of Fes (28 January 1549), not his accession; Wikidata stamps it as his reign start"
+    source: "Saadi Sultanate (Wikipedia): sole ruler from 1543, Fes taken 28 January 1549"
+    checked: "2026-08-27"
+  - year: 1544
+    action: add
+    reason: "Mohammed al-Shaykh's accession as sole Saadian ruler, after exiling his brother Ahmad al-A'raj to the Tafilalt"
+    source: "List of rulers of Morocco (1544-1557); Saadi Sultanate"
+    checked: "2026-08-27"
+#
+# 2026-08-27: extended back to the dynasty's origin. The deck began at 1544, but that is when
+# Mohammed al-Shaykh became sole ruler of a UNIFIED Morocco; the Saadi state itself dates from
+# 1510, and the two rulers before him hold no `sultan of Morocco` statement because they ruled
+# the Sous and Marrakesh while the Wattasids still held Fez. Both are adds rather than fetched
+# rulers for that reason, so they carry their explanation in the reason rather than a ruler row.
+  - year: 1510
+    action: add
+    reason: "Muhammad al-Qa'im bi-Amr Allah formally recognised at Tidsi by the tribes of the Sous and the Sufi groups as their leader — the founding of the Saadi state"
+    source: "Saadi Sultanate (Wikipedia): 'Saadi Sultanate 1510-1659'; recognised at Tidsi 1510, died 1517"
+    checked: "2026-08-27"
+  - year: 1517
+    action: add
+    reason: "Ahmad al-A'raj succeeds on al-Qa'im's death, inheriting his father's position at Afughal; he took Marrakesh in 1524/25 and ruled until his exile to the Tafilalt"
+    source: "Saadi Sultanate (Wikipedia): al-Qa'im died 1517, al-A'raj inherited and ruled to 1543"
+    checked: "2026-08-27"
+#
+# 2026-08-27: the 1600s card carried only 1603, 1627 and 1631 — it stopped at Abd al-Malik II
+# while the dynasty ran on to 1659. Now that the succession war has its own two cards, this card
+# is the SULTANATE'S OWN thread: al-Mansur's death, the reunification, and the four reigns of the
+# reunified state to the end. The three years below complete it.
+#
+# Deliberately NOT added here: the 1603-1627 war years. They belong to the Marrakesh and Fes
+# cards, where each line reads as one succession; repeating them here would put transitions on
+# this card that the unified sultanate did not have, since between 1603 and 1627 there was no
+# unified sultanate to have them.
+  - year: 1636
+    action: add
+    reason: "Muhammad al-Shaykh al-Saghir succeeds al-Walid ibn Zidan; neither holds a `sultan of Morocco` statement, so the deck stopped at 1631"
+    source: "Saadi Sultanate (Wikipedia): 'Muhammad al-Walid r. 1631-1636', 'Muhammad al-Shaykh al-Saghir r. 1636-1655'"
+    checked: "2026-08-27"
+  - year: 1655
+    action: add
+    reason: "Ahmad al-Abbas inherits a reduced state from his father al-Saghir"
+    source: "Saadi Sultanate (Wikipedia): 'r. 1636-1655'; Ahmad al-Abbas inherited in 1655"
+    checked: "2026-08-27"
+  - year: 1659
+    action: add
+    reason: "End of Saadi rule — Ahmad al-Abbas assassinated and usurped by his maternal uncle. The article gives his death as '1658 or 1659' but dates the dynasty's disestablishment to 1659; 1659 is taken, and the ambiguity is real"
+    source: "Saadi Sultanate (Wikipedia): 'assassinated and usurped by his maternal uncle in 1658 or 1659'; infobox disestablished 1659"
+    checked: "2026-08-27"
+
+# 2026-08-27: the 1603-1627 succession war split the realm in two, and neither line fits the
+# timeline model. From al-Mansur's death until Abd al-Malik II reunified the sultanate, rival
+# sons ruled simultaneously from Marrakesh and from Fes — moving between the two, so the same
+# man appears on both cards at different dates. One 1600s card cannot carry that: interleaving
+# both lines would join two successions into a single string no ruler ever followed, and the two
+# cannot share a "1603–1627" label because the label is the FSRS identity.
+#
+# So each line gets its own named card. The main 1600–1699 card is untouched and still carries
+# the sultanate's own thread (1603 al-Mansur's death, 1627 reunification, 1631).
+#
+# NOT REPRESENTABLE, and deliberately not attempted: control of Marrakesh changed hands six
+# times during 1606 alone. A digit string has one slot per year, so that year is one digit on
+# each card, not six.
+extra_cards:
+  - label: "Marrakesh 1603–1627"
+    reason: "The Marrakesh line of the Saadi succession war — none of these rulers holds a `sultan of Morocco` statement for these years, because none ruled the whole sultanate"
+    source: "List of rulers of Morocco, Saadi dynasty (1603–27: Succession war, ruling from Marrakesh)"
+    checked: "2026-08-27"
+    events:
+      - year: 1603
+        note: "Abu Faris Abdallah al-Wathiq takes Marrakesh on Ahmad al-Mansur's death; he held it to 1606, then ruled from Fes"
+      - year: 1606
+        note: "Abdallah al-Ghalib II, son of al-Ma'mun, takes Marrakesh; control of the city changed hands six times during this year"
+      - year: 1609
+        note: "Zaydan al-Nasir takes Marrakesh, having ruled in Fez and the Sous before; expelled by a local rebel between 1612 and 1613 but held the line to the 1627 reunification"
+  - label: "Fes 1603–1627"
+    reason: "The Fes line of the same war, running in parallel with Marrakesh and exchanging rulers with it"
+    source: "List of rulers of Morocco, Saadi dynasty (1603–27: Succession war, ruling from Fes)"
+    checked: "2026-08-27"
+    events:
+      - year: 1603
+        note: "Zaydan al-Nasir rules in Fez and Tlemcen on his father's death"
+      - year: 1604
+        note: "Muhammad al-Sheikh al-Ma'mun defeats Zaydan and establishes power in Fes; contested until his assassination in 1613"
+      - year: 1606
+        note: "Abu Faris Abdallah al-Wathiq crosses from Marrakesh and holds Fes to 1609"
+      - year: 1609
+        note: "Abdallah al-Ghalib II takes Fes, having ruled Marrakesh before"
+      - year: 1623
+        note: "Abd al-Malik al-Mu'tasim, son of al-Ma'mun, succeeds in Fes and rules to the 1627 reunification"

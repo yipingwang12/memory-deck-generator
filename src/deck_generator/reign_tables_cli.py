@@ -24,6 +24,7 @@ import yaml
 
 from .monarchs import (
     correction_years, fetch_monarchs, filter_by_accession, make_monarch_chunks,
+    parse_extra_cards,
     parse_corrections, report_imprecise_dates, stale_corrections,
 )
 from .reign_tables import build_reign_table, check_against_deck, write_reign_table
@@ -76,7 +77,8 @@ def build_one(yaml_path: Path, decks_dir: Path) -> tuple[str, list, dict | None,
     if deck is None:
         return stem, [], None, [f"no artifact {stem}.json in {decks_dir}"]
 
-    monarchs = fetch_monarchs(cfg['positions'], house_ids=cfg.get('houses'))
+    monarchs = fetch_monarchs(cfg['positions'], house_ids=cfg.get('houses'),
+                              exclude_people=cfg.get('exclude_people'))
     monarchs = filter_by_accession(monarchs, cfg.get('accession_min_year'),
                                    cfg.get('accession_max_year'))
     if not monarchs:
@@ -88,6 +90,7 @@ def build_one(yaml_path: Path, decks_dir: Path) -> tuple[str, list, dict | None,
         monarchs, cfg.get('chunk_years', 100), cfg.get('chunk_start_year'),
         add_transition_years=add_years, drop_transition_years=drop_years,
         corrections=corrections,
+        extra_cards=parse_extra_cards(cfg.get('extra_cards')),
     )
     check = check_against_deck(chunks, deck.get('digits') or deck['items'], deck['labels'])
     return stem, chunks, deck, check.problems

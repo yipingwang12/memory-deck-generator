@@ -6,3 +6,25 @@ chunk_years: 100
 # accession dates (Jimmu 660 BCE …) are excluded; deck covers the historical line.
 chunk_start_year: 500
 wikipedia_list: "List of emperors of Japan"
+# 2026-08-26: six reigning empresses are absent from Wikidata's `Emperor of Japan` (Q208233)
+# holders — Kōgyoku, Saimei, Genmei, Genshō, Kōken and Shōtoku. Suiko and Jitō are present and
+# correctly dated, so this is not a blanket exclusion of women; it is an upstream coverage gap.
+# Only THREE of the six cost a digit. Genmei (707), Kōken (749) and Shōtoku (764) each acceded
+# in the year the predecessor's reign already ends, and that end year is already a digit — so
+# adding them would double a transition that happened once, not restore a missing one.
+corrections:
+  - year: 642
+    action: add
+    reason: "Empress Kōgyoku's accession; Jomei's reign_end is 641, Kōtoku's accession 645, so 642 has no event at all"
+    source: "Empress Kōgyoku; List of emperors of Japan"
+    checked: "2026-08-26"
+  - year: 655
+    action: add
+    reason: "Empress Saimei's accession (Kōgyoku's second reign); Kōtoku's reign_end is 654 and Tenji's accession 661, so 655 has no event at all"
+    source: "Empress Saimei; List of emperors of Japan"
+    checked: "2026-08-26"
+  - year: 715
+    action: add
+    reason: "Empress Genshō's accession on Genmei's abdication; Shōmu's accession is 724, so 715 has no event at all"
+    source: "Empress Genshō; List of emperors of Japan"
+    checked: "2026-08-26"

@@ -4,3 +4,55 @@ positions:
 chunk_years: 100
 chunk_start_year: 300
 wikipedia_list: "List of Byzantine emperors"
+# 2026-08-26: Wikidata's `Byzantine emperor` position is held by empress CONSORTS as well as
+# emperors — Augustae by marriage, who reigned over nothing. They contributed 20 of the deck's
+# 140 digits, and their reigns running parallel to their husbands' are most of what looked like
+# co-emperor overlap. Found by cross-checking every transition year against
+# "List of Byzantine emperors": each year below appears nowhere in it.
+#
+# This needs per-person exclusion, not `corrections:`. Eight of the twenty share their year with
+# a real accession (Arcadius 395, Leo I 457, Basiliscus 475/476, Justinian I 527, Justin II 565,
+# Maurice 582, and 641's three-way Heraklonas/Heraclius Constantine/Constans II), and a `drop`
+# removes every event in its year — so the only year-level fix would delete those accessions and
+# re-add them as anonymous corrections, stripping Justinian I's name from the reign table.
+#
+# KEPT, deliberately — genuinely regnant, and excluding them would be the opposite error:
+#   Q206737  Irene of Athens          sole ruler 797–802, styled basileus
+#   Q41659   Zoe Porphyrogenita       1042
+#   Q41666   Theodora Porphyrogenita  1042
+# Pulcheria and Ariadne are the judgement calls: Augustae who chose emperors rather than
+# reigning, and neither 453 nor 515 appears in the Wikipedia list. Excluded on that basis.
+exclude_people:
+  - Q232981      # Aelia Eudoxia — consort of Arcadius
+  - Q229307      # Aelia Eudocia — consort of Theodosius II
+  - Q231919      # Pulcheria — Augusta; chose and married Marcian, did not reign
+  - Q258150      # Verina — consort of Leo I
+  - Q291756      # Ariadne — consort of Zeno, then Anastasius I
+  - Q2316077     # Zenonis — consort of Basiliscus
+  - Q204843      # Theodora — consort of Justinian I
+  - Q271671      # Sophia — consort of Justin II
+  - Q125493963   # Ino Anastasia — consort of Tiberius II
+  - Q3695445     # Constantina — consort of Maurice
+  - Q273871      # Gregoria — consort of Constantine III
+  - Q4751845     # Anastasia — consort of Constantine IV
+  - Q2774126     # Anna of Hungary — consort of Andronikos II
+  - Q3657814     # Irene Gattilusio — consort of John VII
+  - Q2028843     # Anna of Moscow — consort of John VIII
+#
+# The 2026-08-26 re-export ALSO picked up an upstream regression, unrelated to the exclusions
+# above and verified separately by re-exporting without them: Theodore I Laskaris, John III
+# Doukas Vatatzes and Theodore II Laskaris have lost their `Byzantine emperor` statements,
+# leaving 1210–1259 empty — the Nicaean emperors, who are the legitimate line through the Latin
+# occupation and appear in every standard list. Theodore I's 1205 accession survives as
+# Konstantinos Laskaris's reign_end, so only the two interior transitions need restoring.
+corrections:
+  - year: 1221
+    action: add
+    reason: "John III Doukas Vatatzes' accession on Theodore I Laskaris' death; both have lost their Byzantine-emperor statements upstream, leaving 1210-1259 with no transition at all"
+    source: "John III Doukas Vatatzes; Empire of Nicaea; List of Byzantine emperors"
+    checked: "2026-08-26"
+  - year: 1254
+    action: add
+    reason: "Theodore II Laskaris' accession on John III's death; same upstream loss"
+    source: "Theodore II Laskaris; List of Byzantine emperors"
+    checked: "2026-08-26"
