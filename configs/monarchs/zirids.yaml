@@ -18,6 +18,12 @@ positions:
   - Q14698333   # viceroy of Ifriqiya — where Yahya ibn Tamim (1108–1116) is filed
 houses:
   - Q205718   # Zirid Dynasty
+# 2026-08-26: the Malaga leak now uses per-person exclusion instead of dropping its two years.
+# The year-drops worked, but said "1072 and 1090 are not transitions" when the truth is "this
+# man ruled a different realm" — and they would go stale silently if either date were revised
+# upstream. `exclude_people` states the actual claim and survives a re-dating.
+exclude_people:
+  - Q3514822   # Tamim ben Bologhin — Zirid taifa of MALAGA, al-Andalus, not Ifriqiya
 chunk_years: 100
 chunk_start_year: 900
 group: "North African Monarchs"
@@ -32,16 +38,6 @@ corrections:
     action: add
     reason: "Badis ibn al-Mansur's accession, 996"
     source: "Zirid dynasty, List of Zirid rulers (Idris 1962, pp. 831-833)"
-    checked: "2026-08-23"
-  - year: 1072
-    action: drop
-    reason: "Accession of Tamim ben Bologhin to the taifa of MALAGA (Q3514822, 'Zirid ruler of Malaga') — al-Andalus, not Ifriqiya; reaches the deck only via the generic Q1097498 position"
-    source: "Wikidata Q3514822; Zirid dynasty, Offshoots of the Zirid dynasty"
-    checked: "2026-08-23"
-  - year: 1090
-    action: drop
-    reason: "End of the same Malaga reign (Almoravid conquest) — wrong realm, same cause as 1072"
-    source: "Wikidata Q3514822; Zirid dynasty, Offshoots of the Zirid dynasty"
     checked: "2026-08-23"
   - year: 1152
     action: drop

@@ -4,7 +4,8 @@ import pytest
 
 from deck_generator.monarchs import (
     Correction, Monarch, MonarchChunk, correction_years, fetch_monarchs, filter_by_accession,
-    make_monarch_chunks, parse_corrections, report_imprecise_dates, stale_corrections,
+    make_monarch_chunks, parse_corrections, parse_extra_cards, report_imprecise_dates,
+    stale_corrections,
     transition_events,
 )
 
@@ -144,6 +145,171 @@ def test_fetch_adds_house_clause_when_given():
     assert "wdt:P53" in query
     assert "wd:Q5185064" in query
     assert "wd:Q934262" in query
+
+
+# --- exclude_people: per-person removal ---------------------------------------
+#
+# Year-level corrections cannot express "this person is not a ruler of this realm".
+# A `drop` removes every event in the year, so a consort or wrong-realm claimant who
+# shares a year with a real transition can only be removed by also deleting that
+# transition and re-adding it as an anonymous correction — which strips the real
+# ruler's name from the reign table. Byzantium needed this for 8 such years.
+
+def test_exclude_people_removes_that_person():
+    with patch("deck_generator.monarchs._sparql_session", return_value=_SAMPLE_BINDINGS):
+        monarchs = fetch_monarchs(["Q18810062"], exclude_people=["Q12346"])
+    assert [m.name for m in monarchs] == ["Alfred the Great", "William I"]
+
+
+def test_exclude_people_leaves_a_shared_year_intact():
+    """The whole point: the excluded person's year-mate keeps their row and their name."""
+    rival = {
+        **_SAMPLE_BINDINGS[1],
+        "person": {"value": "http://www.wikidata.org/entity/Q99999"},
+        "personLabel": {"value": "Consort of Edward"},
+    }
+    with patch("deck_generator.monarchs._sparql_session",
+               return_value=[*_SAMPLE_BINDINGS, rival]):
+        monarchs = fetch_monarchs(["Q18810062"], exclude_people=["Q99999"])
+    edward = [m for m in monarchs if m.accession_year == 899]
+    assert len(edward) == 1
+    assert edward[0].name == "Edward the Elder"   # not replaced, not anonymised
+
+
+def test_exclude_people_defaults_to_nothing():
+    with patch("deck_generator.monarchs._sparql_session", return_value=_SAMPLE_BINDINGS):
+        assert len(fetch_monarchs(["Q18810062"])) == 3
+
+
+def test_exclude_people_is_not_a_query_filter():
+    """Filtered after the fetch, not in SPARQL — so `stale_exclusions` can see that an
+    exclusion no longer matches anything, the way `stale_corrections` does."""
+    with patch("deck_generator.monarchs._sparql_session", return_value=[]) as mock_session:
+        with pytest.warns(UserWarning):      # empty fetch -> the exclusion is trivially stale
+            fetch_monarchs(["Q18810062"], exclude_people=["Q12346"])
+    assert "Q12346" not in mock_session.call_args[0][1]
+
+
+def test_stale_exclusion_warns():
+    """Upstream may fix a holder or move a Q-number; a config full of dead exclusions is
+    one nobody can audit. Warns rather than raising — it cannot change the digits."""
+    with patch("deck_generator.monarchs._sparql_session", return_value=_SAMPLE_BINDINGS):
+        with pytest.warns(UserWarning, match="Q404404"):
+            fetch_monarchs(["Q18810062"], exclude_people=["Q12346", "Q404404"])
+
+
+def test_no_warning_when_every_exclusion_still_applies():
+    import warnings as _w
+    with patch("deck_generator.monarchs._sparql_session", return_value=_SAMPLE_BINDINGS):
+        with _w.catch_warnings():
+            _w.simplefilter("error")
+            fetch_monarchs(["Q18810062"], exclude_people=["Q12345", "Q12346"])
+
+
+# --- separate reigns vs. one reign under two titles ------------------------------
+#
+# One person's position statements were ALWAYS merged into a single reign (earliest
+# accession, latest end). That is right for a title change and wrong for a restoration,
+# and the two are distinguishable: a title change is contiguous (George III is King of
+# Great Britain to 1801 and King of the UK from 1801), a restoration has a GAP (Abdallah
+# of Morocco ruled six times between 1729 and 1757, deposed in between). Merging the
+# second kind erased both transitions of every deposition — sixteen Alaouite reigns
+# collapsed into one digit.
+
+def _reign(qid, name, start, end=None):
+    b = {"person": {"value": f"http://www.wikidata.org/entity/{qid}"},
+         "personLabel": {"value": name},
+         "start": {"value": f"{start:04d}-01-01T00:00:00Z"}}
+    if end is not None:
+        b["end"] = {"value": f"{end:04d}-01-01T00:00:00Z"}
+    return b
+
+
+def test_contiguous_statements_still_merge():
+    """George III: King of Great Britain to 1801, King of the UK from 1801. One reign."""
+    rows = [_reign("Q1", "George III", 1760, 1801), _reign("Q1", "George III", 1801, 1820)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert [(m.accession_year, m.end_year) for m in got] == [(1760, 1820)]
+
+
+def test_overlapping_statements_still_merge():
+    rows = [_reign("Q1", "Someone", 1100, 1150), _reign("Q1", "Someone", 1120, 1160)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert [(m.accession_year, m.end_year) for m in got] == [(1100, 1160)]
+
+
+def test_stephen_still_merges():
+    """The case the original comment was written for: 1135-1141 and 1141-1154 abut."""
+    rows = [_reign("Q1", "Stephen", 1135, 1141), _reign("Q1", "Stephen", 1141, 1154)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert [(m.accession_year, m.end_year) for m in got] == [(1135, 1154)]
+
+
+def test_a_gap_makes_two_reigns():
+    """Deposed and restored: both transitions are real and must both survive."""
+    rows = [_reign("Q1", "Abdallah", 1729, 1734), _reign("Q1", "Abdallah", 1736, 1738)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert [(m.accession_year, m.end_year) for m in got] == [(1729, 1734), (1736, 1738)]
+
+
+def test_abdallah_of_morocco_keeps_his_separate_reigns():
+    """Abdallah bin Ismail's real six reigns, at the year granularity Wikidata stores.
+
+    Five survive, not six: his third ended in June 1741 and his fourth began in November
+    1741, so at YEAR granularity they abut and merge. That is the documented limit of the
+    rule — and it costs no digit here, because Zin al-Abidin reigned between them and 1741
+    is his accession year either way."""
+    rows = [_reign("Q1", "Abdallah", a, b) for a, b in
+            [(1729, 1734), (1736, 1736), (1740, 1741), (1741, 1742), (1743, 1747), (1748, 1757)]]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert [(m.accession_year, m.end_year) for m in got] == [
+        (1729, 1734), (1736, 1736), (1740, 1742), (1743, 1747), (1748, 1757)]
+
+
+def test_reigns_separated_by_a_full_year_all_survive():
+    rows = [_reign("Q1", "X", a, b) for a, b in
+            [(1700, 1710), (1712, 1720), (1722, 1730), (1732, 1740)]]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert len(got) == 4
+
+
+def test_separate_reigns_each_yield_a_transition():
+    """The point of the change: a restoration is two digits, not none."""
+    rows = [_reign("Q1", "Ahmad", 1526, 1545), _reign("Q1", "Ahmad", 1547, 1549)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    years = [e.year for e in transition_events(got)]
+    assert years == [1526, 1545, 1547, 1549]
+
+
+def test_an_open_ended_statement_merges_rather_than_splitting():
+    """A statement with no end year can't be shown to be separate, so it must not split
+    a reign — an unknown end is not evidence of a gap."""
+    rows = [_reign("Q1", "Someone", 1900), _reign("Q1", "Someone", 1910, 1920)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert len(got) == 1
+
+
+def test_split_reigns_carry_the_same_person_id():
+    rows = [_reign("Q1", "Abdallah", 1729, 1734), _reign("Q1", "Abdallah", 1736, 1738)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"])
+    assert {m.person_id for m in got} == {"Q1"}
+
+
+def test_exclude_people_removes_all_of_a_persons_reigns():
+    rows = [_reign("Q1", "Abdallah", 1729, 1734), _reign("Q1", "Abdallah", 1736, 1738),
+            _reign("Q2", "Other", 1800, 1810)]
+    with patch("deck_generator.monarchs._sparql_session", return_value=rows):
+        got = fetch_monarchs(["Qx"], exclude_people=["Q1"])
+    assert [m.name for m in got] == ["Other"]
 
 
 def test_fetch_populates_wp_title():
@@ -725,3 +891,93 @@ def test_stale_add_with_count_reported_only_when_upstream_supplies_them_all():
     c = Correction(1105, "add", "r", "s", count=2)
     assert stale_corrections(one, [c]) == []
     assert "add 1105" in stale_corrections(both, [c])[0]
+
+
+# --- extra_cards: a card that is not a time window --------------------------------
+#
+# Every monarch card is a slice of the timeline, and its label is its year range. That
+# breaks for a realm that split: the Saadi succession war ran two parallel lines, in
+# Marrakesh and in Fes, over the SAME years 1603-1627. Two cards cannot both be labelled
+# "1603-1627" — the label is the FSRS identity — and interleaving both lines into one
+# century card would teach a single succession that never existed.
+
+_MARRAKESH = {
+    'label': 'Marrakesh 1603–1627',
+    'reason': 'the Marrakesh line of the succession war',
+    'source': 'List of rulers of Morocco',
+    'checked': '2026-08-27',
+    'events': [
+        {'year': 1603, 'note': 'Abu Faris Abdallah al-Wathiq'},
+        {'year': 1606, 'note': 'Abdallah al-Ghalib II'},
+        {'year': 1609, 'note': 'Zaydan al-Nasir'},
+    ],
+}
+
+
+def test_extra_card_becomes_a_chunk_with_its_own_label():
+    cards = parse_extra_cards([_MARRAKESH])
+    chunks = make_monarch_chunks(_monarchs((1600, 'A')), 100, 1600, extra_cards=cards)
+    labels = [c.label for c in chunks]
+    assert 'Marrakesh 1603–1627' in labels
+
+
+def test_extra_card_digits_come_from_its_years():
+    cards = parse_extra_cards([_MARRAKESH])
+    chunks = make_monarch_chunks(_monarchs((1600, 'A')), 100, 1600, extra_cards=cards)
+    card = [c for c in chunks if c.label.startswith('Marrakesh')][0]
+    assert card.transition_string == '369'
+    assert [e.year for e in card.events] == [1603, 1606, 1609]
+
+
+def test_extra_card_events_align_with_its_digits():
+    """The invariant every monarch card has: events[i] explains digit i."""
+    cards = parse_extra_cards([_MARRAKESH])
+    chunks = make_monarch_chunks(_monarchs((1600, 'A')), 100, 1600, extra_cards=cards)
+    for c in chunks:
+        assert len(c.events) == len(c.transition_string)
+        assert ''.join(e.digit for e in c.events) == c.transition_string
+
+
+def test_ordinary_chunks_keep_their_year_range_label():
+    chunks = make_monarch_chunks(_monarchs((1600, 'A'), (1650, 'B')), 100, 1600)
+    assert [c.label for c in chunks] == ['1600–1699']
+
+
+def test_extra_cards_are_appended_after_the_timeline():
+    """The time-window spine first, then the special cards — a stable, predictable order,
+    and the one that keeps a reader's century sequence uninterrupted."""
+    cards = parse_extra_cards([_MARRAKESH])
+    chunks = make_monarch_chunks(_monarchs((1600, 'A'), (1700, 'B')), 100, 1600, extra_cards=cards)
+    assert [c.label for c in chunks] == ['1600–1699', '1700–1799', 'Marrakesh 1603–1627']
+
+
+def test_extra_card_does_not_alter_the_timeline_cards():
+    base = make_monarch_chunks(_monarchs((1600, 'A'), (1700, 'B')), 100, 1600)
+    cards = parse_extra_cards([_MARRAKESH])
+    with_extra = make_monarch_chunks(_monarchs((1600, 'A'), (1700, 'B')), 100, 1600, extra_cards=cards)
+    assert [c.transition_string for c in with_extra][:len(base)] == [c.transition_string for c in base]
+
+
+def test_extra_card_requires_a_source():
+    """Same contract as `corrections:` — a hand-authored card is a claim about history."""
+    bad = {**_MARRAKESH}
+    del bad['source']
+    with pytest.raises(ValueError, match='source'):
+        parse_extra_cards([bad])
+
+
+def test_extra_card_requires_events():
+    with pytest.raises(ValueError, match='event'):
+        parse_extra_cards([{**_MARRAKESH, 'events': []}])
+
+
+def test_extra_card_labels_must_be_unique():
+    """The label IS the FSRS identity; two cards sharing one are one card with two homes."""
+    with pytest.raises(ValueError, match='dupl'):
+        parse_extra_cards([_MARRAKESH, _MARRAKESH])
+
+
+def test_extra_card_label_cannot_collide_with_a_year_range():
+    cards = parse_extra_cards([{**_MARRAKESH, 'label': '1600–1699'}])
+    with pytest.raises(ValueError, match='1600–1699'):
+        make_monarch_chunks(_monarchs((1600, 'A')), 100, 1600, extra_cards=cards)

@@ -9,3 +9,38 @@ positions:
 chunk_years: 100
 chunk_start_year: 1100
 group: "North African Monarchs"
+# 2026-08-27: web-checked every digit against Wikipedia. Thirteen of fourteen are corroborated
+# exactly, including the double 1224 (Abd al-Wahid I deposed and al-Adil succeeding in the same
+# year — two real transitions, not a duplicate) and the 1269 end (Marrakesh fell to the Marinids
+# in September 1269 and al-Wathiq was executed).
+#
+# The exception is 1147, which is the Almohad CAPTURE OF MARRAKESH, not Abd al-Mu'min's
+# accession. Wikidata is the outlier and stands alone: Q307312 stamps 1147-01-01, while all
+# three Wikipedia sources disagree with it and with each other only over 1130 vs 1133 —
+#   List of rulers of Morocco (the canonical table):  1133-1163
+#   Abd al-Mu'min (infobox):                          1133-1163
+#   Almohad Caliphate:                                1130-1163
+# 1133 is taken: two of the three sources, and the more precise of the two readings — 1130 is
+# Ibn Tumart's death, 1133 the public proclamation of the succession, which was kept secret in
+# between. Unlike the Almoravid 1042 (merely unsupported, and kept), this year is positively
+# contradicted and puts a famous date on the wrong event.
+#
+# SIDE EFFECT, accepted: 1147 was Abd al-Mu'min's only transition event (his 1163 end is Abu
+# Yaqub Yusuf's accession, so no reign_end is emitted), so the drop removes his row and the add
+# replaces it with a correction. His name survives in the correction's reason, which the preview
+# renders — but the deck's founder is no longer a Wikidata-backed row.
+#
+# NOT ADDED, deliberately: Ibn Tumart (1121). He was the Mahdi and religious founder, never a
+# caliph — Abd al-Mu'min was the first to hold the title this deck's position names. Revisit
+# only if the deck should cover the dynasty rather than the caliphate.
+corrections:
+  - year: 1147
+    action: drop
+    reason: "1147 is the Almohad capture of Marrakesh, not Abd al-Mu'min's accession; Wikidata alone stamps it as his reign start"
+    source: "Abd al-Mu'min (Wikipedia): 'they finally captured it in 1147'; List of rulers of Morocco"
+    checked: "2026-08-27"
+  - year: 1133
+    action: add
+    reason: "Abd al-Mu'min's accession as first Almohad caliph, publicly proclaimed 1133 (he had succeeded Ibn Tumart on the latter's death in 1130, kept secret until then)"
+    source: "List of rulers of Morocco; Abd al-Mu'min infobox (both 1133-1163)"
+    checked: "2026-08-27"

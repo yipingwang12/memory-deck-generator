@@ -48,7 +48,8 @@ def main(argv=None) -> None:
         output = Path("results") / f"{slug}.xlsx"
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    monarchs = fetch_monarchs(position_ids, house_ids=config.get("houses"))
+    monarchs = fetch_monarchs(position_ids, house_ids=config.get("houses"),
+                              exclude_people=config.get("exclude_people"))
     monarchs = filter_by_accession(monarchs, config.get("accession_min_year"), config.get("accession_max_year"))
     if not monarchs:
         print(f"Error: no monarchs found for positions {position_ids}", file=sys.stderr)

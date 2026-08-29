@@ -10,3 +10,14 @@ houses:
 chunk_years: 100
 chunk_start_year: 700
 group: "North African Monarchs"
+# 2026-08-26: Aflah's accession was stamped 823 while his father's reign_end is 824 — the same
+# off-by-one class as the Zirid 995/996 correction. 824 already carries the transition as Abd
+# al-Wahhab's reign_end, so the drop needs no matching `add`.
+# SIDE EFFECT, accepted: this was Aflah's only transition event (Abu Bakr acceded in 872, so he
+# has no reign_end), so his row leaves the reign table. The digit string is what is memorised.
+corrections:
+  - year: 823
+    action: drop
+    reason: "Aflah succeeded on Abd al-Wahhab's death in 824; Wikidata stamps 0823-01-01. The 824 transition is already a digit as his father's reign_end"
+    source: "Rustamid dynasty; Aflah ibn Abd al-Wahhab"
+    checked: "2026-08-26"

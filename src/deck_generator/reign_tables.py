@@ -73,7 +73,7 @@ def build_reign_table(deck: str, subject: str, chunks: list[MonarchChunk],
         'items_sha256': items_digest(digits),
         'chunks': [
             {
-                'label': f"{c.start_year}–{c.end_year}",
+                'label': c.label,
                 'digits': c.transition_string,
                 'events': [_event_row(e) for e in c.events],
             }
@@ -100,7 +100,7 @@ def check_against_deck(chunks: list[MonarchChunk], items: list[str],
     """
     problems = []
     built_items = [c.transition_string for c in chunks]
-    built_labels = [f"{c.start_year}–{c.end_year}" for c in chunks]
+    built_labels = [c.label for c in chunks]
     if len(built_items) != len(items):
         problems.append(f"chunk count {len(built_items)} != deck's {len(items)}")
     for i, (got, want) in enumerate(zip(built_items, items)):

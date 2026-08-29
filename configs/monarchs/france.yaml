@@ -1,10 +1,17 @@
 subject: "Monarchs of France"
 positions:
   - Q22923081   # king of the Franks (Merovingian/Carolingian, 481–987)
-  - Q24851389   # king of France (Capetian/Valois, 1180–1610)
+  - Q18384454   # king of France (Capetian/Valois, 1180–1610)
   - Q3439798    # King of France and Navarre (Bourbon, 1589–1792)
   - Q3439814    # King of the French (1791–1848)
   - Q5373953    # Emperor of the French (1804–1870)
 chunk_years: 100
 chunk_start_year: 480
 wikipedia_list: "List of French monarchs"
+# 2026-08-26: Q24851389 was here in place of Q18384454 and is `count of Foix`, not `king of
+# France`. It put the entire comital line of Foix and the kings of Navarre into the deck — 24
+# digits — while leaving 1180–1610 with no French king at all: Philip II Augustus through Henry
+# IV were simply absent, and Wikidata's `King of France and Navarre` does not start until 1617,
+# so the Bourbons opened on Louis XIII in the wrong year. Swapping the one Q-number removes the
+# 24 wrong digits and restores the 24 right ones, including Henry IV at 1589 and Louis XIII at
+# 1610.

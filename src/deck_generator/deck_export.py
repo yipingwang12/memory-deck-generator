@@ -35,6 +35,7 @@ from .equations import annotate, eligible_indices, load_equations, to_mathml
 from .gutenberg import fetch_text
 from .monarchs import (
     correction_years, fetch_monarchs, filter_by_accession, make_monarch_chunks, parse_corrections,
+    parse_extra_cards,
 )
 from .poetry_parser import extract_poem
 from .theme_corruptions import build_theme_pool, pool_warnings as theme_pool_warnings
@@ -229,14 +230,16 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
             continue
         cfg = yaml.safe_load(s.yaml_path.read_text())
         title = cfg.get('subject', s.yaml_path.stem)
-        monarchs = fetch_monarchs(cfg['positions'], house_ids=cfg.get('houses'))
+        monarchs = fetch_monarchs(cfg['positions'], house_ids=cfg.get('houses'),
+                                  exclude_people=cfg.get('exclude_people'))
         monarchs = filter_by_accession(monarchs, cfg.get('accession_min_year'), cfg.get('accession_max_year'))
         add_years, drop_years = correction_years(parse_corrections(cfg.get('corrections')))
         chunks = make_monarch_chunks(
             monarchs, cfg.get('chunk_years', 100), cfg.get('chunk_start_year'),
             add_transition_years=add_years, drop_transition_years=drop_years,
+            extra_cards=parse_extra_cards(cfg.get('extra_cards')),
         )
-        labels = [f"{c.start_year}–{c.end_year}" for c in chunks]
+        labels = [c.label for c in chunks]
         artifacts.append({
             'order': s.order,
             'name': title,

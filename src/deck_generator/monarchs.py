@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import warnings
 from collections import Counter
 from dataclasses import dataclass, field
 
@@ -19,6 +20,10 @@ class Monarch:
     mother: str
     wp_title: str | None = None  # English Wikipedia article title (from sitelinks)
     accession_precision: int | None = None  # Wikidata timePrecision of P580; see _PRECISION
+    # Wikidata person Q-number. Trailing and defaulted so hand-built Monarchs in tests and
+    # `manual_entries` still compare equal. Only `stale_exclusions` reads it — dedup uses the
+    # binding's id directly, from before the Monarch is built.
+    person_id: str = ""
 
 
 # Wikidata timePrecision codes for a time value. Anything below YEAR means the source does not
@@ -134,6 +139,14 @@ class MonarchChunk:
     # Index-aligned with `transition_string`: events[i] is the event digit i stands for.
     # Built from the same list the string is joined from, so the two cannot disagree.
     events: list[TransitionEvent] = field(default_factory=list)
+    #: Card name. Empty means "derive the year range", which is what every timeline chunk
+    #: does; an `extra_cards:` entry sets it explicitly. This is the FSRS identity
+    #: (`<deck-stem>|<label>`), so it must be unique within a deck — see `make_monarch_chunks`.
+    name: str = ""
+
+    @property
+    def label(self) -> str:
+        return self.name or f"{self.start_year}–{self.end_year}"
 
 
 _QUERY = """\
@@ -170,13 +183,36 @@ def fetch_monarchs(
     position_ids: list[str],
     sparql_url: str = _SPARQL_URL,
     house_ids: list[str] | None = None,
+    exclude_people: list[str] | None = None,
 ) -> list[Monarch]:
     """Fetch monarchs for the given Wikidata position Q-numbers, ordered by accession year.
 
     ``house_ids`` (optional P53 "noble family" Q-numbers) restrict results to holders in
     those houses — needed when a position is shared across dynasties (e.g. "Emperor of
     China" Q268218 spans every Chinese dynasty; the House of Zhu / Aisin-Gioro filters
-    isolate the Ming / Qing rulers from rebels and neighbouring dynasties)."""
+    isolate the Ming / Qing rulers from rebels and neighbouring dynasties).
+
+    Returns one Monarch per REIGN, not per person: a ruler deposed and restored appears
+    once per separate reign, while statements that touch or overlap (a title change) stay
+    one. See `_merge_reigns`.
+
+    ``exclude_people`` (person Q-numbers) drops named holders the position admits but the
+    deck should not contain. Positions and houses filter by *category*; this is the escape
+    hatch for when upstream membership is simply wrong about an individual — Wikidata's
+    ``Byzantine emperor`` is held by thirteen empress *consorts* alongside the emperors and
+    the three genuinely regnant empresses.
+
+    Why this exists rather than a year-level ``drop``: a correction removes every event in
+    its year, so a wrong holder who shares a year with a real transition can only be removed
+    by deleting that transition too and re-adding it as an anonymous ``correction`` — which
+    strips the real ruler's name from the reign table. Eight of Byzantium's twenty consort
+    digits share their year with an emperor's accession, Justinian I's among them.
+
+    Filtered AFTER the fetch rather than in the query, so an entry that no longer matches
+    anyone is visible: upstream may fix a holder or retire a Q-number, and a config full of
+    dead exclusions is one nobody can audit. That case warns rather than raising — a stale
+    exclusion cannot change the digits, unlike a stale *correction*, which is a claim about
+    a year."""
     positions = " ".join(f"wd:{qid}" for qid in position_ids)
     if house_ids:
         houses = " ".join(f"wd:{qid}" for qid in house_ids)
@@ -184,11 +220,18 @@ def fetch_monarchs(
     else:
         house_clause = ""
     bindings = _sparql_session(sparql_url, _QUERY.format(positions=positions, house_clause=house_clause))
+    excluded = set(exclude_people or ())
+    if excluded:
+        seen_ids = {b.get("person", {}).get("value", "").split("/")[-1] for b in bindings}
+        for qid in sorted(excluded - seen_ids):
+            warnings.warn(
+                f"exclude_people: {qid} matches nobody in the current fetch — "
+                "upstream may have fixed it, or the Q-number moved",
+                stacklevel=2)
 
-    # Deduplicate by person Q-number, keeping the earliest accession year.
-    # A monarch can appear multiple times when their title changes (e.g. George III
-    # as King of Great Britain 1760 and King of the UK 1801). We want first accession.
-    seen: dict[str, Monarch] = {}
+    # Group each person's position statements, then merge only the ones that are actually
+    # one reign. See `_merge_reigns` for why that is not the same as "all of them".
+    rows: dict[str, list[dict]] = {}
     for b in bindings:
         person_uri = b.get("person", {}).get("value", "")
         person_id = person_uri.split("/")[-1] if person_uri else ""
@@ -196,47 +239,93 @@ def fetch_monarchs(
         start_val = b.get("start", {}).get("value", "")
         if not person_id or not name or not start_val:
             continue
+        if person_id in excluded:
+            continue
         if name.startswith("Q") and name[1:].isdigit():
             continue
-        year = _parse_year(start_val)
-        if year is None:
+        if _parse_year(start_val) is None:
             continue
-        end_val = b.get("end", {}).get("value", "")
-        end_year = _parse_year(end_val) if end_val else None
-        prec_val = b.get("startPrec", {}).get("value")
-        precision = int(prec_val) if prec_val else None
-        father = b.get("fatherLabel", {}).get("value", "")
-        mother = b.get("motherLabel", {}).get("value", "")
-        wp_title = b.get("wpTitle", {}).get("value") or None
-        if person_id not in seen:
-            seen[person_id] = Monarch(
-                name=name,
-                accession_year=year,
-                end_year=end_year,
-                father=father,
-                mother=mother,
-                wp_title=wp_title,
-                accession_precision=precision,
-            )
-        else:
-            m = seen[person_id]
-            # Keep earliest accession year and latest end year across all position statements.
-            # A monarch deposed and restored (e.g. Stephen 1135–1141, 1141–1154) appears twice;
-            # we want accession=1135 and end_year=1154 so the gap-fill logic doesn't insert the
-            # intermediate deposition year as a spurious transition event.
-            if year < m.accession_year:
-                m.accession_year = year
-                m.accession_precision = precision   # precision must track the year that wins
-            if end_year is not None and (m.end_year is None or end_year > m.end_year):
-                m.end_year = end_year
-            if not m.father and father:
-                m.father = father
-            if not m.mother and mother:
-                m.mother = mother
-            if not m.wp_title and wp_title:
-                m.wp_title = wp_title
+        rows.setdefault(person_id, []).append(b)
 
-    return sorted(seen.values(), key=lambda m: m.accession_year)
+    monarchs: list[Monarch] = []
+    for person_id, group in rows.items():
+        monarchs.extend(_merge_reigns(person_id, group))
+    return sorted(monarchs, key=lambda m: (m.accession_year, m.end_year or 9999))
+
+
+def _merge_reigns(person_id: str, group: list[dict]) -> list[Monarch]:
+    """One person's statements -> one Monarch per REIGN, not per person.
+
+    Statements that touch or overlap are one reign; a gap between them is a deposition,
+    and both of its transitions are real.
+
+    The old rule merged every statement into a single span — earliest accession, latest
+    end — which is right for a title change and wrong for a restoration. Both shapes are
+    common and they are distinguishable:
+
+    * **Title change** — contiguous. George III is King of Great Britain 1760-1801 and
+      King of the UK 1801-1820: one reign, and splitting it would invent a 1801 handover
+      to himself.
+    * **Restoration** — separated. Abdallah of Morocco ruled six times between 1729 and
+      1757, deposed in between; Wattasid Ahmad ibn Muhammad ruled 1526-1545 and 1547-1549.
+      Merging those erased *both* transitions of every deposition — sixteen Alaouite
+      reigns became one digit, and the deck taught an unbroken 28-year reign that never
+      happened.
+
+    An open-ended statement (no end year) cannot be shown to be separate from the next, so
+    it merges: an unknown end is not evidence of a gap.
+    """
+    def field(b, key, sub="value"):
+        return b.get(key, {}).get(sub, "")
+
+    spans = sorted(
+        ((_parse_year(field(b, "start")), _parse_year(field(b, "end")) if field(b, "end") else None, b)
+         for b in group),
+        key=lambda t: (t[0], t[1] if t[1] is not None else 9999),
+    )
+
+    out: list[Monarch] = []
+    cur_start, cur_end, sources = spans[0][0], spans[0][1], [spans[0][2]]
+    for start_year, end_year, b in spans[1:]:
+        # `cur_end is None` -> open-ended, so absorb rather than split on an unknown.
+        if cur_end is None or start_year <= cur_end:
+            if cur_end is not None and (end_year is None or end_year > cur_end):
+                cur_end = end_year
+            sources.append(b)
+        else:
+            out.append(_build_monarch(person_id, cur_start, cur_end, sources))
+            cur_start, cur_end, sources = start_year, end_year, [b]
+    out.append(_build_monarch(person_id, cur_start, cur_end, sources))
+    return out
+
+
+def _build_monarch(person_id: str, accession: int, end: int | None, sources: list[dict]) -> Monarch:
+    """One reign's Monarch. Scalar fields take the first non-empty value across the
+    statements that make up the reign; precision tracks the accession that won."""
+    def first(key):
+        for b in sources:
+            v = b.get(key, {}).get("value")
+            if v:
+                return v
+        return ""
+
+    precision = None
+    for b in sources:
+        if _parse_year(b.get("start", {}).get("value", "")) == accession:
+            prec = b.get("startPrec", {}).get("value")
+            precision = int(prec) if prec else None
+            break
+
+    return Monarch(
+        person_id=person_id,
+        name=first("personLabel"),
+        accession_year=accession,
+        end_year=end,
+        father=first("fatherLabel"),
+        mother=first("motherLabel"),
+        wp_title=first("wpTitle") or None,
+        accession_precision=precision,
+    )
 
 
 def filter_by_accession(
@@ -347,6 +436,61 @@ def report_imprecise_dates(monarchs: list[Monarch]) -> list[str]:
     return out
 
 
+@dataclass
+class ExtraCard:
+    """A card that is not a slice of the timeline.
+
+    Every monarch card is normally a year window, labelled by its range. That model has no
+    room for a realm that SPLIT: the Saadi succession war ran two parallel lines, in
+    Marrakesh and in Fes, over the same years 1603-1627. Two cards cannot both be labelled
+    "1603-1627" — the label is the FSRS identity — and folding both lines into the century
+    card would join two successions into one string that no ruler ever followed.
+
+    So an extra card names itself and lists its own transition years. Its digits are derived
+    from those years exactly as a timeline chunk's are, which keeps the invariant that
+    `events[i]` explains digit `i`; there is no way to state a digit string directly, and
+    therefore no way for the digits and the explanation to drift apart.
+
+    Sourced like a correction, and for the same reason: it is a claim about history that
+    Wikidata does not back.
+    """
+    label: str
+    events: list[tuple[int, str]]      # (year, note)
+    reason: str
+    source: str
+    checked: str = ""
+
+
+def parse_extra_cards(raw: list[dict] | None) -> list[ExtraCard]:
+    """Validate an `extra_cards:` config block. Raises rather than skipping a malformed
+    entry — a card that silently fails to appear is indistinguishable from one nobody
+    wrote, the same rule `corrections.validate` follows."""
+    if not raw:
+        return []
+    cards: list[ExtraCard] = []
+    for i, entry in enumerate(raw):
+        where = entry.get('label') or f'extra_cards[{i}]'
+        for key in ('label', 'reason', 'source'):
+            if not entry.get(key):
+                raise ValueError(f"{where}: extra card needs a {key}")
+        events = entry.get('events') or []
+        if not events:
+            raise ValueError(f"{where}: extra card needs at least one event")
+        parsed: list[tuple[int, str]] = []
+        for e in events:
+            if 'year' not in e:
+                raise ValueError(f"{where}: every event needs a year")
+            parsed.append((int(e['year']), e.get('note', '')))
+        cards.append(ExtraCard(label=entry['label'], events=parsed,
+                               reason=entry['reason'], source=entry['source'],
+                               checked=entry.get('checked', '')))
+    labels = [c.label for c in cards]
+    dupes = {l for l in labels if labels.count(l) > 1}
+    if dupes:
+        raise ValueError(f"duplicate extra_cards labels: {sorted(dupes)}")
+    return cards
+
+
 def make_monarch_chunks(
     monarchs: list[Monarch],
     chunk_years: int = 100,
@@ -354,8 +498,13 @@ def make_monarch_chunks(
     add_transition_years: list[int] | None = None,
     drop_transition_years: list[int] | None = None,
     corrections: list[Correction] | None = None,
+    extra_cards: list[ExtraCard] | None = None,
 ) -> list[MonarchChunk]:
     """Group monarchs into fixed-width year-range chunks.
+
+    ``extra_cards`` appends cards that are not time windows — see `ExtraCard`. They come
+    after the whole timeline rather than interleaved by date, so a reader's century sequence
+    runs uninterrupted and the order does not shift when a card's years change.
 
     The transition_string for each chunk is the last digit of every transition
     year in order. Transition years are accession years plus, for any reign whose
@@ -416,5 +565,21 @@ def make_monarch_chunks(
                 events=bucket_events,
             ))
         n += 1
+
+    for card in extra_cards or ():
+        if any(c.label == card.label for c in chunks):
+            raise ValueError(
+                f"extra card {card.label!r} collides with a timeline card of the same label; "
+                "the label is the FSRS identity, so the two would be one card with two homes")
+        evs = [TransitionEvent(year, 'correction', None, note)
+               for year, note in sorted(card.events, key=lambda t: t[0])]
+        chunks.append(MonarchChunk(
+            start_year=evs[0].year,
+            end_year=evs[-1].year,
+            monarchs=[],
+            transition_string="".join(e.digit for e in evs),
+            events=evs,
+            name=card.label,
+        ))
 
     return chunks

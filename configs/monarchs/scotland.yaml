@@ -4,3 +4,16 @@ positions:
 chunk_years: 100
 chunk_start_year: 800
 wikipedia_list: "List of Scottish monarchs"
+# 2026-08-26: James VI's accession was recorded as 1587 — the year Mary was executed, not the
+# year he actually succeeded. 1567 already carries the transition as Mary's reign_end (it is
+# nobody's recorded accession year), so dropping 1587 leaves exactly one digit for it rather
+# than needing a matching `add`.
+# SIDE EFFECT, accepted: James VI's accession was his only transition event (Charles I acceded
+# in 1625, so he has no reign_end either), and dropping it removes his row from the reign
+# table. The digit string is what is memorised, so a wrong digit is the worse of the two.
+corrections:
+  - year: 1587
+    action: drop
+    reason: "James VI succeeded on Mary's forced abdication, 24 July 1567; 1587 is her execution. The 1567 transition is already a digit as Mary's reign_end"
+    source: "Mary, Queen of Scots (Abdication); James VI and I (Reign in Scotland)"
+    checked: "2026-08-26"
