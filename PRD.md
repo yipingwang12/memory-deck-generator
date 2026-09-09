@@ -6,6 +6,8 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
+Two pipelines are **curated rather than fetched** — `deck-vocab` and `deck-papers` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+
 ### Refreshing decks (`deck-export`)
 
 A bare run **clears the output directory** and rebuilds every deck — authoritative, but it renumbers `order` and re-stamps `config_path` from the running checkout. Both are *identity*, not content: `config_path` keys the quiz's sessions table (`WHERE config_path=?`) and its artifact lookup; `order` sorts the deck list. Because the deck directory accumulates across runs, a fresh numbering agrees with neither — so re-deriving them during a partial refresh strands study history and shuffles the list. (Exporting from a git worktree stamps the *worktree* path in, which strands history once the worktree is removed.)
@@ -204,6 +206,23 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 - ⚠ **Licensing is unresolved and blocks publishing the derived MEI**: the archive LICENSE grants CC-BY to six folders and does **not** name `data_SCORE_XML`, the one this reads. Probably an oversight, but an oversight is not a grant — confirm with the authors.
 - See [`docs/design/themes-pipeline.md`](docs/design/themes-pipeline.md) and the quiz's [`notation-mode.md`](../memory-quiz-app/docs/design/notation-mode.md).
 
+### 10. Paper MCQs (`deck-papers`) — *built*
+- Source: **a scientific paper, read by an LLM session** — the PDF directly, not via `doc2md`. One paper is one deck.
+- Output: emits **directly to the quiz artifact seam** — a `deck_type: paper` / `mode: text-mc` deck (`items` = `<doi>|<qid>`, plus `stems`/`answers`/`choices`). Consumed by `memory-quiz-app`'s `text-mc` mode and its preview.
+- Like `deck-vocab`, a **curate-then-assemble** pipeline: the deck stays `source: manual` (protected from the full-export clear + the orchestrator's sync), the cards are committed as data, and `build` assembles deterministically offline. Authoring rules live in `configs/papers/policy.md` — one shared policy, not one per paper.
+
+**There is no oracle, and that is the design problem.** Every other pipeline can re-derive its content to check it: Wikidata can be re-queried, sympy proves a corruption non-equivalent, `check_against_deck` refuses to explain a deck today's fetch no longer reproduces. Nothing can re-derive a question. So the paper itself is the authority: every card carries the **verbatim sentence** supporting it, and `build` fails on any quote not found in the extracted source text. Both sides are normalised (NFKC, typographic quotes/dashes, whitespace) so a quote survives a PDF line break — nothing that could change *which* sentence matches.
+
+**Identity is authored, not derived.** `<doi>|<qid>`, never the stem — a stem is reworded freely and keying on it would strand history the first time it was, the monarch-digits trap. `qid` is assigned once, is append-only, and leaves a hole when a card is dropped; an LLM re-run that renumbers from `q01` would restrand the deck, so reconciliation against the committed file happens *before* authoring.
+
+**Density is measured, not capped.** The rule is one card per distinct finding — a long paper earns a long deck and a thin one a short deck, and truncating to a round number loses real findings. The extraction pass's `claims.jsonl` is committed as the denominator: `build` reports which findings carry no card and warns below 75% coverage, so *an incomplete extraction* — the actual failure mode, since it produces a small deck that looks fully covered — is visible. Total intake is paced by `study.json`'s shared `Papers` collection budget, so a large deck is a longer introduction rather than a flood. A separate check warns when more than about a third of a deck comes from outside Results.
+
+**Quality checks that fail closed**: duplicate `qid`, answer not among the choices, wrong option count, duplicate or banned option (`none of the above` and friends), curated/audit disagreement. **Warnings** cover what only a human can adjudicate: answers running longer than their distractors (the artwork answer-shape lesson in prose), every answer sitting at one index in the curated file, a previously shipped `qid` that has disappeared.
+
+**Committed data**: `configs/papers/<slug>.{yaml,claims.jsonl,curated.jsonl,audit.jsonl,source.sha256}`. The extracted `source.txt` is **gitignored** — third-party full text — so a fresh clone cannot rebuild a paper deck until it is re-extracted; the committed digest records which extraction the quotes were verified against.
+
+First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 25 extracted findings, 17 Results / 5 Methods / 1 Discussion / 1 Abstract.
+
 ## Coverage analysis — external reference comparison (2026-08-03)
 
 Decks are built from Wikidata fame proxies; whether that matches a **curated canon** is a separate
@@ -269,6 +288,7 @@ Design rationale for what this repo emits; the quiz that consumes it (display, s
 - Theme *segmentation* — MTD's 2,067 are taken as given; finding themes in a full score is a research problem, not this repo's
 - Automatic publishing / sharing
 - Non-English **sources** (Chinese vocab is glossed from CC-CEDICT, not scraped)
+- Figure-bearing paper cards — `deck-papers` is text-only; `doc2md`'s paper pipeline already extracts figures with captions if that changes
 
 ## Success criteria
 - All 31+ award configs produce correct `.xlsx` outputs
