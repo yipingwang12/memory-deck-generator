@@ -19,6 +19,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-equations` | Hand-curated YAML | Equation + verified corruption pool → quiz `error-spot` deck (MathML baked) |
 | `deck-vocab` | wordfreq × CC-CEDICT (+ audited LLM adjudication of hard words) | Curated Chinese `matching` vocab deck (`source: manual`; committed out-of-band, not a full-export deck) |
 | `deck-themes` | MTD (Musical Theme Dataset) MusicXML | Musical theme + verified note corruptions → quiz `notation-spot` deck (MEI assets, engraved by Verovio) |
+| `deck-papers` | A scientific paper, read by an LLM session | Results MCQs → quiz `text-mc` deck (`source: manual`; authored out-of-band per `configs/papers/policy.md`) |
 
 ## Modules
 
@@ -41,6 +42,8 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `normalise.py` | Verification-only LaTeX rewrites so sympy can parse real notation (`\operatorname{Var}(X)`, `E[X^2]`, `P(A\mid B)`, bold vectors). `opaque_spans` marks argument lists where corruption is barred (`Var(X+Y)`→`Var(Y+X)` is an equivalence). Never displayed. |
 | `equations_cli.py` | `deck-equations` — preview pool health + 2/1 classification per config; `--sample` prints a text two-error display; `--export` writes the artifact(s). |
 | `vocab.py` | Chinese vocab pipeline: CC-CEDICT parse/`fetch_cedict` (CC-BY-SA), numbered→diacritic `pinyin_marks`, `load_seed` (freeze existing 267), `rank_candidates` + clean/needs-LLM router, `load_curated`, `band_collisions` (band-scoped uniqueness), `assemble_artifact`. |
+| `papers.py` | Paper MCQ core. `Card`/`AuditRow`/`Claim`; `normalise` (folds typography + whitespace so a quote survives a PDF line break, never changing WHICH sentence matches); `item_string` = `<doi>|<qid>`, never the stem; `validate` — nine checks, failures vs warnings; `uncovered_claims`/`composition` (density measured against the extracted findings, not a fixed range); `shuffled_choices` (deterministic by qid); `assemble_artifact`. **No oracle here** — nothing can re-derive a question, so the verbatim quote IS the verification. |
+| `papers_cli.py` | `deck-papers` — **check** (default, no writes) / `--build`. Fails closed on a quote absent from the source text, a duplicate `qid`, an answer not among the choices, a banned option, or curated/audit disagreement; warns on shape tells, a disappeared shipped `qid`, uncovered findings, and a Methods-heavy mix. Prints the section/type histogram. `--no-verify-quotes` for a clone with no local source text. Writes `<slug>.source.sha256` beside the data. |
 | `vocab_cli.py` | `deck-vocab` — **preview** (clean/needs-LLM split) / **curate** (prepare needs-LLM chunk files for the audited adjudication pass) / **build** (assemble committed curated rows → `source: manual` artifact, deterministic; verifies no-dup-hanzi + band uniqueness). Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [docs/design/vocab-pipeline.md](docs/design/vocab-pipeline.md). |
 | `distractors.py` | `build_choices(artworks, attr, n, same_creator_bias)` — deterministic (QID-seeded) MC options; same-creator/era bias; no duplicate values. Creator cards match **answer shape** first (joint `A & B` answers draw joint distractors) — a multi-name answer among single-name options is pickable without knowing the artwork. |
 | `corrections.py` | Shared contract for sourced manual overrides (monarchs + artworks): mandatory `reason`/`source`, `validate` raises rather than skipping a malformed entry, and every pipeline owns a staleness predicate. The correction *types* differ (a monarch patches a scalar year in a multiset, an artwork a field on a keyed record), so only the contract is shared. |
@@ -62,6 +65,42 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `list_parser.py` | Wikipedia wikitext → `[(year, name)]`. Unused by CLI; kept for potential future use. |
 | `wiki_api.py` | MediaWiki API client. `fetch_article_links(title)` used by coverage checker. |
 | `deck_export.py` | `deck-export` entry point — the generator→quiz boundary. **The `if __name__ == "__main__"` guard must stay the LAST statement**: under `python -m deck_generator.deck_export` (how the orchestrator's Dagster asset invokes it) the file runs top-to-bottom as `__main__`, so a mid-file guard calls `main()` before later definitions exist — it sat above `_EQ_POOL_CACHE` and raised `NameError`, which the console script hid because an entry point imports the module fully first. Runs the generation pipeline and writes one self-contained JSON artifact per deck to `data/decks/` (`items`, `labels`, `config_hash`, …). Item strings are byte-identical to live generation, preserving deck ids and FSRS item keys (`sha256(item)[:16]`). Consumed by the `memory-quiz-app` repo. **A bare run CLEARS the output dir and rebuilds everything; use `--only <glob>` to refresh a subset** (leaves others untouched/unfetched and preserves their `order`/`config_path`). Artwork decks additionally emit WebP image files under `data/decks/assets/<deck>/` (cleared/rebuilt in lockstep) and a `sitelinks` array (fame count per card; the quiz's preview creator browser sorts on it). **`--cache-only`** assembles artwork decks from already-downloaded images only — use it when re-exporting for an unrelated change so the work set can't grow (config `cache_only` without the config edit). `source: manual` artifacts (e.g. the quiz's Chinese vocab deck — curated out-of-band by `deck-vocab`, not by `deck-export`) are **preserved through the clear** (`_is_manual`) — a full export has no config to rebuild them. **Every run warns about orphans** (`find_orphan_artifacts`): artifacts in `data/decks/` that no config would produce. Deleting a config removes the recipe but not the built artifact — the dir is gitignored build output and `--only` skips the clear — so the orphan survives every targeted re-export and the orchestrator's `decks` sync copies it onward. That is how the Shakespeare sonnet decks, deleted 2026-07-15, reappeared in the quiz on 2026-07-25. |
+
+## Paper MCQ decks (`deck-papers`)
+
+One paper = one deck, `source: manual`, the same curate-then-assemble contract as
+`deck-vocab`. An LLM session reads the paper (**not** via doc2md — the Read tool takes PDFs
+directly) and writes three committed files; `build` verifies and assembles.
+Authoring rules: [configs/papers/policy.md](configs/papers/policy.md).
+
+```
+configs/papers/<slug>.yaml            config: doi, group, citation, file names
+               <slug>.claims.jsonl    extraction pass — one row per finding, with its quote
+               <slug>.curated.jsonl   the cards `build` consumes
+               <slug>.audit.jsonl     per-card quote/section/type/reason/decision
+               <slug>.source.txt      extracted paper text — GITIGNORED (third-party full text)
+               <slug>.source.sha256   which extraction the quotes were verified against
+```
+
+What will bite you:
+
+- **`qid` is an identity, never a number.** The item is `<doi>|<qid>`; the stem is reworded
+  freely and must never key anything. Numbering is append-only — a deleted card leaves a hole,
+  and an LLM re-run that renumbers from `q01` strands every card's history. Reconcile against
+  the committed file BEFORE authoring.
+- **The quote is the oracle.** `build` fails on any quote not found verbatim in the source
+  text. Both sides are normalised (NFKC, curly quotes, dashes, whitespace) so a quote survives
+  a PDF line break — nothing that changes which sentence matches.
+- **A fresh clone cannot build**: `source.txt` is gitignored. Re-extract it
+  (`pdftotext -layout`) or pass `--no-verify-quotes`, which turns off the only real check.
+- **Density is not a range.** One card per distinct finding; `build` compares the deck against
+  `claims.jsonl` and names findings with no card. An incomplete *extraction* produces a small
+  deck that looks fully covered — that is where density is actually decided.
+- **`group: Papers` on every paper deck** — it is the key `study.json`'s `group_new_per_day`
+  budget is named by, and one budget paces the whole collection. Varying it per paper defeats
+  that; a budget naming no active deck raises.
+- The artifact is `source: manual`, so `deck-export`'s clear and the orchestrator's sync both
+  preserve it and neither produces it. Copy it to the quiz repo by hand.
 
 ## Musical themes (`deck-themes`)
 

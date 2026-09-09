@@ -1,0 +1,38 @@
+# Template for a paper MCQ deck — copy to `<slug>.yaml`, one file per paper.
+#
+# The deck is a CURATED artifact (`source: manual`): an LLM session reads the paper and
+# writes `<slug>.curated.jsonl` + `<slug>.audit.jsonl`, then `deck-papers build` assembles
+# the artifact deterministically (offline, no network). Same contract as `deck-vocab`.
+# Authoring rules live in the shared `configs/papers/policy.md` — one policy for every
+# paper, unlike vocab's per-config `.policy.md`.
+
+deck_name: "Stuart 2019 — Seurat v3"     # menu name; keep short, `Author Year — subject`
+title: "Stuart 2019 — Seurat v3"
+group: "Papers"                          # THE BUDGET KEY — every paper deck shares it, so
+                                         # study.json's group_new_per_day paces the whole
+                                         # collection with one rate. Changing it per paper
+                                         # defeats that.
+order: 400                               # menu position; papers block sits after artworks
+
+# Identity. `doi` is the item-string namespace: items are `<doi>|<qid>`, so it must be the
+# real DOI and must never change once a card has been studied.
+doi: "10.1016/j.cell.2019.05.031"
+pmid: 31178118
+citation: "Stuart T, Butler A, Hoffman P, et al. Comprehensive integration of single-cell
+  data. Cell. 2019;177(7):1888-1902."
+
+# Committed data (paths relative to this file)
+claims: stuart2019_seurat.claims.jsonl     # the extraction pass's findings — the DENOMINATOR
+                                           # for density: one card per distinct finding, so
+                                           # `build` reports how many findings carry a card
+curated: stuart2019_seurat.curated.jsonl   # source of truth for `build`
+audit: stuart2019_seurat.audit.jsonl       # per-item provenance: quote, reason, decision
+source_text: stuart2019_seurat.source.txt  # extracted paper text; `build` verifies every
+                                           # quote against it and FAILS if one is absent
+
+n_choices: 4          # options per card; fixed per deck so a shape check is meaningful
+
+# There is deliberately NO card-count cap. A paper's findings set its card count; a long
+# paper earns more cards and a thin one fewer, and truncating to a round number loses real
+# findings. Total daily intake is paced by study.json's shared "Papers" collection budget,
+# so a large deck is a longer introduction rather than a flood.
