@@ -6,7 +6,7 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
-Two pipelines are **curated rather than fetched** — `deck-vocab` and `deck-papers` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+Three pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers` and `deck-companies` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
 
 ### Refreshing decks (`deck-export`)
 
@@ -315,3 +315,4 @@ Design rationale for what this repo emits; the quiz that consumes it (display, s
 - CLI runs end-to-end without errors on clean install
 - Shakespeare pipeline downloads and caches all passages from configured plays
 - `deck-export` artifacts load in the quiz with item strings byte-identical to live generation (FSRS keys preserved)
+- `deck-companies` refuses a volatile card outright and reports every card past its `recheck_months` — the deck never asserts a number that will go false unnoticed
