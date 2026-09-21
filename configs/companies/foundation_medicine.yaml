@@ -1,0 +1,34 @@
+# Company MCQ deck — authoring rules in configs/companies/policy.md
+
+deck_name: "Foundation Medicine"
+title: "Foundation Medicine"
+
+# NOT "Papers". That string is study.json's priority_collection and its group_new_per_day
+# budget key, so reusing it would enrol this deck in the daily gate, throttle every other
+# deck to half, and hide it behind the blue launcher. Companies is its own collection.
+group: "Companies"
+order: 500
+
+# The item-string namespace: items are `<namespace>|<qid>`. Must never change once a card
+# has been studied. There is no DOI for a company, so this is authored.
+namespace: "company:foundation-medicine"
+citation: "career_planning/boston_companies.yaml — Boston employer dossier, compiled 2026-09-21"
+
+# Committed data (paths relative to this file)
+facts: foundation_medicine.facts.jsonl       # extraction pass — the DENOMINATOR for density,
+                                             # counting durable rows only
+curated: foundation_medicine.curated.jsonl   # source of truth for `build`
+audit: foundation_medicine.audit.jsonl       # per-card quote, category, volatility, checked
+source_text: foundation_medicine.source.txt  # the research snapshot; every quote is verified
+                                             # against it. COMMITTED, unlike a paper's source
+
+n_choices: 4
+
+# How long a `checked` date stays fresh. Twelve months is the default; this deck sits at nine
+# because five of its fifteen cards are people and product facts, which rot faster than
+# founding history, and because the SAGA integration will change the product answers once it
+# closes. `deck-companies --config ... --stale` is the sweep.
+recheck_months: 9
+
+# No card-count cap. The company's durable facts set the count: 16 extracted, 15 carded, one
+# dropped as sector-level knowledge. A thin company earns four cards and this one earns fifteen.
