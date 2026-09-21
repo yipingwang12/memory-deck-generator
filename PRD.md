@@ -227,6 +227,21 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 
 First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 25 extracted findings, 17 Results / 5 Methods / 1 Discussion / 1 Abstract.
 
+### 11. Company MCQs (`deck-companies`) — *built*
+- Source: **a dated research snapshot of one company**, written by a research session. One company is one deck.
+- Output: emits **directly to the quiz artifact seam** — a `deck_type: company` / `mode: text-mc` deck (`items` = `<namespace>|<qid>`, plus `stems`/`answers`/`choices`). Rides the quiz's existing `text-mc` loop, ramp and preview.
+- Like `deck-papers` and `deck-vocab`, a **curate-then-assemble** pipeline: `source: manual`, cards committed as data, `build` assembles deterministically offline. Authoring rules in `configs/companies/policy.md`.
+
+**The oracle decays, which is the whole design problem.** `deck-papers` verifies each card against a frozen paper; a company contradicts its own snapshot within months — during the first deck's research window Verve was acquired, Arena BioWorks closed and Inari cut a third of its staff. So the quote check proves only that a card matches what was researched, and every audit row carries a **`checked`** date; `--stale` reports cards past the config's `recheck_months`. Staleness is a warning, not a failure — a founding trio does not rot.
+
+**Volatility is enforced, not advised.** A card asserting a cash balance, revenue figure, headcount or runway is false within two quarters and the reader has no way to notice, so `volatility: volatile` on a shipped card **fails the build**. Volatile facts are still extracted into `.facts.jsonl` — marked volatile, excluded from the coverage denominator — so the research is complete and a later pass can see they were considered and rejected. A funding *round* is durable; a *total raised* is volatile.
+
+**Density is measured against durable facts**, exactly as papers measure against extracted findings: one card per distinct durable fact, warning below 75% coverage. Expect ~4 cards for a thin entry and 12–15 for a deeply researched one; that spread is correct.
+
+**`group` is `Companies`, never `Papers`** — the latter is the quiz's `priority_collection` and its shared budget key, so reusing it would silently enrol the deck in the daily gate.
+
+**One deck built** (2026-09-21): Foundation Medicine, 15 cards from 16 durable facts (one dropped as sector-level knowledge, two volatile facts extracted and refused). Distractors are drawn from other companies in the same dossier, so a wrong answer teaches a second entry.
+
 ## Coverage analysis — external reference comparison (2026-08-03)
 
 Decks are built from Wikidata fame proxies; whether that matches a **curated canon** is a separate
