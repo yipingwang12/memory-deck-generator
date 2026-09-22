@@ -1,0 +1,29 @@
+# Template for a source-file MCQ deck — copy to `<slug>.yaml` **in the consuming repo's
+# gitignored deck directory** (e.g. code-drill/decks/), never into this repo: the rows quote
+# work-repo source. Authoring rules: configs/code/policy.md.
+
+deck_name: "exp3_common.py"              # menu name; the file, not the path
+title: "snp-backbone · launch/exp3_common.py"
+group: "Code"                            # budget key shared by every code deck
+order: 450
+
+# Identity. `source_id` is the item-string namespace (`<source_id>|<qid>`): repo plus
+# repo-relative path, because a path alone collides across repos. It must never change once
+# a card has been studied — not when the file moves. Moving the file is a new `path` and the
+# same `source_id`.
+source_id: "snp-backbone-benchmark:snp_backbone/launch/exp3_common.py"
+repo: "snp-backbone-benchmark"
+path: "snp_backbone/launch/exp3_common.py"
+commit: "f90702ac9f14"                   # what the quotes were verified against
+citation: "snp-backbone-benchmark @ f90702ac9f14 — snp_backbone/launch/exp3_common.py"
+
+# Data (paths relative to this file). All gitignored.
+claims: exp3_common.claims.jsonl         # the reading pass — the denominator for density
+curated: exp3_common.curated.jsonl       # source of truth for `build`
+audit: exp3_common.audit.jsonl           # quote, section, type, reason, decision
+source_file: ../targets/snp-backbone-benchmark/snp_backbone/launch/exp3_common.py
+
+n_choices: 4
+
+# No card cap: the file sets the count. `build` fails if any function in the file has no
+# card, which is the floor; the ceiling is however many distinct things the file does.
