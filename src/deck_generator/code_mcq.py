@@ -1,4 +1,4 @@
-"""Source-file MCQ decks — ``deck-code``, the code sibling of ``deck-papers``.
+"""Source-file MCQ decks — ``deck-code-mcq``, the code sibling of ``deck-papers``.
 
 One **source file** is one deck, the way one paper is one deck. Reading unfamiliar code for
 comprehension is slow and open-ended; a card set turns it into a finite, reviewable thing —
@@ -27,10 +27,12 @@ data — only the machinery.
 from __future__ import annotations
 
 import ast
+import hashlib
 import json
 import random
+import re
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from .papers import (  # noqa: F401 — re-exported so a caller needs one import
     AuditRow,
@@ -134,6 +136,8 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
             report.failures.append(f"{row.qid}: unknown type {row.kind!r} "
                                    f"(want one of {', '.join(TYPES)})")
 
+    report.failures += ste_refusals(cards)
+
     if source:
         defined = {s.name for s in defined_symbols(source)}
         missing = sorted(defined - covered_symbols(audit, source))
@@ -142,6 +146,65 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
                 f"functions with no card: {missing} — every function in the file carries "
                 f"one, or the deck is a reading of the interesting parts")
     return report
+
+
+#: ASD-STE100 caps a descriptive sentence at 25 words (procedural at 20).
+STE_WORD_LIMIT = 25
+_SENTENCE_END = re.compile(r"(?<=[.!?])\s+")
+
+
+def ste_word_count(sentence: str) -> int:
+    """Words in a sentence, a `backticked` code span counting as one."""
+    return len(re.sub(r"`[^`]*`", "X", sentence).split())
+
+
+def ste_refusals(cards: list[Card]) -> list[str]:
+    """Stems and choices are ASD-STE100: no sentence over the word cap."""
+    out = []
+    for c in cards:
+        for field, texts in (("stem", [c.stem]), ("choice", c.choices)):
+            for t in texts:
+                if any(ste_word_count(s) > STE_WORD_LIMIT for s in _SENTENCE_END.split(t)):
+                    out.append(f"{c.qid}: {field} sentence over {STE_WORD_LIMIT} words (STE)")
+    return out
+
+
+def file_sha256(source: str) -> str:
+    """Raw sha256 of the file text — the hash code-drill's AI notes record."""
+    return hashlib.sha256(source.encode("utf-8")).hexdigest()
+
+
+def _notes_sha(notes_dir: Path, file_id: str) -> str | None:
+    for p in sorted(notes_dir.glob("code_ai_explanation_*.json")):
+        art = json.loads(p.read_text(encoding="utf-8"))
+        if art.get("source_id") == file_id:
+            return art.get("source_sha256")
+    return None
+
+
+def currency_refusals(file_id: str, reviewed: str | None, notes_dir: Path,
+                      source: str) -> list[str]:
+    """MCQs follow AI notes, and follow every change to the file.
+
+    ``reviewed`` is the file version every card was last checked against; it must be the
+    version the AI notes cover and, when the source is at hand, the file as it is now.
+    """
+    out = []
+    current = file_sha256(source) if source else None
+    if not reviewed:
+        out.append("reviewed_sha256 missing: review every card against the file, then set it "
+                   "to the file's sha256")
+    elif current and reviewed != current:
+        out.append(f"file changed since the cards were reviewed ({reviewed[:12]}… → "
+                   f"{current[:12]}…): review every card — drop obsolete, add for changes — "
+                   f"then set reviewed_sha256")
+    notes = _notes_sha(notes_dir, file_id)
+    if notes is None:
+        out.append(f"no AI notes for {file_id}: MCQs follow notes (code-drill export first)")
+    elif notes != (current or reviewed):
+        out.append(f"AI notes for {file_id} cover another version of the file: update and "
+                   f"export them first")
+    return out
 
 
 def item_string(source_id: str, qid: str) -> str:
@@ -176,10 +239,10 @@ def assemble_artifact(cards: list[Card], cfg: dict, config_path: str,
     return {
         "order": cfg.get("order", 450),
         "name": cfg["deck_name"],
-        "deck_type": "code",
+        "deck_type": "code-mcq",
         "mode": "text-mc",
         "title": cfg.get("title", cfg["deck_name"]),
-        "group": cfg.get("group", "Code"),
+        "group": cfg.get("group", "Code MCQ"),
         "items": [item_string(source_id, c.qid) for c in cards],
         "labels": [c.label for c in cards],
         "stems": [c.stem for c in cards],
@@ -195,3 +258,23 @@ def assemble_artifact(cards: list[Card], cfg: dict, config_path: str,
         "citation": cfg.get("citation", ""),
         "source_sha256": source_sha256,
     }
+
+
+#: Executable source in the work repos. Mirrors code-drill's `scope.py` (EXECUTABLE,
+#: TEST_DIRS, `is_test`) — the two repos share no package, so keep them in step.
+EXECUTABLE = frozenset({".py", ".R", ".r", ".sh", ".bash"})
+TEST_DIRS = frozenset({"tests", "test", "testthat", "testing"})
+
+
+def scope_refusal(path: str) -> str | None:
+    """Why ``path`` may not carry a deck — tests, docs, data, tooling — or None."""
+    p = PurePosixPath(path)
+    stem = p.stem.lower()
+    if p.suffix not in EXECUTABLE:
+        return f"{path}: not executable source ({p.suffix or 'no suffix'})"
+    if any(part.startswith(".") for part in p.parts[:-1]):
+        return f"{path}: tooling directory"
+    if (p.name == "conftest.py" or stem == "test" or stem.startswith(("test_", "test-"))
+            or stem.endswith(("_test", "_tests")) or any(x in TEST_DIRS for x in p.parts[:-1])):
+        return f"{path}: test code"
+    return None

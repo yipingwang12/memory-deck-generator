@@ -136,7 +136,7 @@ class TestArtifact:
         art = code_mcq.assemble_artifact(
             [card()], {"deck_name": "mod.py", "source_id": SOURCE_ID}, "manual/code/x.yaml", "abc")
         assert art["mode"] == "text-mc"
-        assert art["deck_type"] == "code"
+        assert art["deck_type"] == "code-mcq"
         assert art["source"] == "manual"
         assert art["items"] == [f"{SOURCE_ID}|q01"]
 
@@ -158,7 +158,9 @@ class TestCli:
             for r in rows), encoding="utf-8")
         cfg = {"deck_name": "mod.py", "source_id": SOURCE_ID, "n_choices": 4,
                "curated": "demo.curated.jsonl", "audit": "demo.audit.jsonl",
-               "source_file": "mod.py"}
+               "source_file": "mod.py", "reviewed_sha256": code_mcq.file_sha256(SOURCE)}
+        (tmp_path / "code_ai_explanation_mod.json").write_text(json.dumps(
+            {"source_id": SOURCE_ID, "source_sha256": code_mcq.file_sha256(SOURCE)}))
         config = tmp_path / "demo.yaml"
         config.write_text(yaml.safe_dump(cfg), encoding="utf-8")
         return config
@@ -182,5 +184,94 @@ class TestCli:
     def test_a_missing_source_file_stops_the_build(self, tmp_path):
         config = self._deck(tmp_path)
         (tmp_path / "mod.py").unlink()
+        with pytest.raises(SystemExit):
+            code_mcq_cli.main(["--config", str(config), "--build"])
+
+
+@pytest.mark.parametrize("path, ok", [
+    ("pkg/mod.py", True), ("analysis/fit.R", True), ("scripts/run.sh", True),
+    ("tests/test_mod.py", False), ("pkg/test_mod.py", False), ("pkg/mod_test.py", False),
+    ("pkg/conftest.py", False), ("R/tests/testthat/test-fit.R", False),
+    ("README.md", False), ("config/run.json", False), ("data/s.tsv", False),
+    (".github/ci.sh", False),
+])
+def test_only_executable_non_test_source_may_carry_a_deck(path, ok):
+    """Mirror of code-drill's `scope.refusal`: tests, docs and data are never quizzed."""
+    assert (code_mcq.scope_refusal(path) is None) is ok
+
+
+# --- ASD-STE100 and currency: MCQs follow AI notes, and follow every change ------------
+
+def test_a_sentence_over_the_ste_cap_is_refused():
+    long_stem = " ".join(["word"] * 26) + "?"
+    cards, rows = cover_all()
+    cards[0] = card("q01", stem=long_stem)
+    report = code_mcq.validate(cards, rows, SOURCE, 4)
+    assert any("q01: stem sentence over 25 words" in f for f in report.failures)
+
+
+def test_a_backticked_code_span_counts_as_one_word():
+    assert code_mcq.ste_word_count("What does `set(RATIO) - arms` return?") == 4
+
+
+def test_a_long_choice_is_refused():
+    cards, rows = cover_all()
+    cards[0] = card("q01", answer="right one",
+                    choices=["right one", " ".join(["w"] * 26), "wrong two", "odd one"])
+    report = code_mcq.validate(cards, rows, SOURCE, 4)
+    assert any("q01: choice sentence over 25 words" in f for f in report.failures)
+
+
+SHA = code_mcq.file_sha256(SOURCE)
+
+
+def notes(tmp_path, sha=SHA, source_id=SOURCE_ID):
+    (tmp_path / "code_ai_explanation_mod.json").write_text(json.dumps(
+        {"deck_type": "code-ai-explanation", "source_id": source_id, "source_sha256": sha}))
+
+
+class TestCurrency:
+    def test_current_notes_and_review_pass(self, tmp_path):
+        notes(tmp_path)
+        assert code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, SOURCE) == []
+
+    def test_no_notes_is_refused(self, tmp_path):
+        why = code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, SOURCE)
+        assert any("no AI notes" in w for w in why)
+
+    def test_stale_notes_are_refused(self, tmp_path):
+        notes(tmp_path, sha="0" * 64)
+        why = code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, SOURCE)
+        assert any("AI notes" in w and "version" in w for w in why)
+
+    def test_an_unreviewed_deck_is_refused(self, tmp_path):
+        notes(tmp_path)
+        why = code_mcq.currency_refusals(SOURCE_ID, None, tmp_path, SOURCE)
+        assert any("reviewed_sha256" in w for w in why)
+
+    def test_a_changed_file_needs_every_card_reviewed(self, tmp_path):
+        changed = SOURCE + "X = 1\n"
+        notes(tmp_path, sha=code_mcq.file_sha256(changed))
+        why = code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, changed)
+        assert any("review every card" in w for w in why)
+
+    def test_without_the_source_review_and_notes_must_agree(self, tmp_path):
+        notes(tmp_path)
+        assert code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, "") == []
+        assert code_mcq.currency_refusals(SOURCE_ID, "1" * 64, tmp_path, "")
+
+
+class TestCliCurrency:
+    _deck = TestCli._deck
+
+    def test_build_records_the_reviewed_version(self, tmp_path):
+        config = self._deck(tmp_path)
+        code_mcq_cli.main(["--config", str(config), "--build"])
+        art = json.loads((tmp_path / "code_demo.json").read_text(encoding="utf-8"))
+        assert art["notes_sha256"] == SHA
+
+    def test_build_refuses_without_notes(self, tmp_path):
+        config = self._deck(tmp_path)
+        (tmp_path / "code_ai_explanation_mod.json").unlink()
         with pytest.raises(SystemExit):
             code_mcq_cli.main(["--config", str(config), "--build"])

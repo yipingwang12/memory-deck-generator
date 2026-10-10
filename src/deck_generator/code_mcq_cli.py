@@ -1,4 +1,4 @@
-"""``deck-code`` — check / build a source-file MCQ deck.
+"""``deck-code-mcq`` — check / build a source-file MCQ deck.
 
 Curated (``source: manual``), exactly as ``deck-papers``: an LLM session reads the file and
 writes ``<slug>.curated.jsonl`` + ``<slug>.audit.jsonl`` per ``configs/code/policy.md``;
@@ -32,6 +32,12 @@ def _paths(config: Path) -> tuple[Path, Path, Path, Path, Path | None]:
             here / cfg["claims"] if cfg.get("claims") else None)
 
 
+def _file_id(cfg: dict) -> str:
+    """``<repo>:<path>`` as the file is now — what its AI notes are keyed by."""
+    return f"{cfg['repo']}:{cfg['path']}" if cfg.get("repo") and cfg.get("path") \
+        else cfg["source_id"]
+
+
 def _artifact_name(config: Path) -> str:
     return f"code_{config.stem}.json"
 
@@ -55,6 +61,10 @@ def _run_checks(cfg: dict, config: Path, out_dir: Path, verify_quotes: bool):
     shipped = code_mcq.shipped_qids(out_dir / _artifact_name(config), cfg["source_id"])
     report = code_mcq.validate(cards, audit, source, cfg.get("n_choices", 4), shipped,
                                verify_quotes=verify_quotes, claims=claims)
+    if why := code_mcq.scope_refusal(cfg.get("path") or cfg.get("source_file", "")):
+        report.failures.append(why)
+    report.failures += code_mcq.currency_refusals(
+        _file_id(cfg), cfg.get("reviewed_sha256"), config.parent, source)
     if claims_p and not claims_p.exists():
         report.warnings.append(f"claims file named but absent ({claims_p.name}) — density "
                                f"unmeasured")
@@ -90,6 +100,7 @@ def _build(cfg: dict, config: Path, out_dir: Path, verify_quotes: bool) -> None:
     digest = code_mcq.source_digest(source) if source else ""
     art = code_mcq.assemble_artifact(cards, cfg, f"manual/code/{config.name}", digest)
     art["config_hash"] = config_hash(curated_p)
+    art["notes_sha256"] = cfg["reviewed_sha256"]
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / _artifact_name(config)

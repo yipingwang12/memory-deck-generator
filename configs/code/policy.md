@@ -17,6 +17,50 @@ A code card quotes work-repo source. Its config, JSONL rows and built artifact l
 never in `memory-quiz-app/data/decks/` (committed and deployed to fly.io). This repo holds the
 machinery and this policy — no cards.
 
+## Which files — executable code only
+
+Only executable source (`.py`, `.R`, `.sh`) gets a deck. **Never** test code (`test_*`,
+`*_test.*`, `tests/`, `testthat/`, `conftest.py`), docs (`.md`, `.txt`, `.rst`), data or config
+(`.json`, `.tsv`, `.csv`, `.yaml`) or tooling dirs (`.github/`, `.claude/`). `deck-code-mcq`
+refuses them (`code_mcq.scope_refusal`, mirror of code-drill's `scope.py`).
+
+## When — MCQs follow AI notes
+
+A file gets an MCQ deck **if and only if** its AI notes (code-drill `annotations/`) cover it
+as it is now. Notes always cover a whole file, so this never leaves a deck over half a file.
+
+- **Only if**: `build` refuses when code-drill's `code_ai_explanation_*.json` for the file is
+  missing from the deck dir or covers another version.
+- **If**: once notes are exported, the file owes a deck — `code-drill next` lists it under
+  `MCQ  no MCQ deck`.
+- MCQs earn no intake credit; the notes quota sets the pace.
+
+## After the file changes — review every card
+
+`reviewed_sha256` in the config is the file version (raw sha256) every card was last checked
+against. A changed file refuses `build` until it matches again — and its notes come first.
+`code-drill next` lists such a file as `MCQ  MCQ review owed` once its notes are current.
+
+1. Diff the reviewed version to now (find it by hash, as the `code-notes` skill does).
+2. Check **every** card against the new file, not only those on changed lines — a change
+   elsewhere can falsify a stem, an answer or a distractor.
+3. Per card: still true → keep (fix a quote that moved). Wording wrong → reword stem or
+   choices, same `qid`. Asks about removed or rewritten behaviour → `decision: "drop"` with a
+   `reason`, off curated; its review history ends, which is right.
+4. Add cards for new or changed behaviour, continuing from the highest `qid` ever used.
+5. Set `reviewed_sha256` to `shasum -a 256 <file>`, then build.
+
+## Style — ASD-STE100
+
+Stems and choices follow the same Simplified Technical English as the AI notes:
+
+- **≤ 20 words per sentence for a procedure, ≤ 25 for a description.** `build` refuses > 25
+  (a `backticked` code span counts as one word).
+- One idea per sentence. Active voice, present tense, simple words.
+- A stem is one question, plus at most one context sentence before it.
+- Choices are short noun phrases or single sentences, parallel in grammar (the paper policy's
+  homogeneity rule) — STE makes that easier, not harder.
+
 ## What to ask about
 
 The file sets the card count; every function earns at least one card and `build` fails if one
