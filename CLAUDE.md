@@ -20,6 +20,8 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-vocab` | wordfreq × CC-CEDICT (+ audited LLM adjudication of hard words) | Curated Chinese `matching` vocab deck (`source: manual`; committed out-of-band, not a full-export deck) |
 | `deck-themes` | MTD (Musical Theme Dataset) MusicXML | Musical theme + verified note corruptions → quiz `notation-spot` deck (MEI assets, engraved by Verovio) |
 | `deck-papers` | A scientific paper, read by an LLM session | Results MCQs → quiz `text-mc` deck (`source: manual`; authored out-of-band per `configs/papers/policy.md`) |
+| `deck-companies` | A dated research snapshot of one company | Company MCQs → quiz `text-mc` deck (`source: manual`; authored per `configs/companies/policy.md`) |
+| `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 
 ## Modules
 
@@ -44,6 +46,10 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `vocab.py` | Chinese vocab pipeline: CC-CEDICT parse/`fetch_cedict` (CC-BY-SA), numbered→diacritic `pinyin_marks`, `load_seed` (freeze existing 267), `rank_candidates` + clean/needs-LLM router, `load_curated`, `band_collisions` (band-scoped uniqueness), `assemble_artifact`. |
 | `papers.py` | Paper MCQ core. `Card`/`AuditRow`/`Claim`; `normalise` (folds typography + whitespace so a quote survives a PDF line break, never changing WHICH sentence matches); `item_string` = `<doi>|<qid>`, never the stem; `validate` — nine checks, failures vs warnings; `uncovered_claims`/`composition` (density measured against the extracted findings, not a fixed range); `shuffled_choices` (deterministic by qid); `assemble_artifact`. **No oracle here** — nothing can re-derive a question, so the verbatim quote IS the verification. |
 | `papers_cli.py` | `deck-papers` — **check** (default, no writes) / `--build`. Fails closed on a quote absent from the source text, a duplicate `qid`, an answer not among the choices, a banned option, or curated/audit disagreement; warns on shape tells, a disappeared shipped `qid`, uncovered findings, and a Methods-heavy mix. Prints the section/type histogram. `--no-verify-quotes` for a clone with no local source text. Writes `<slug>.source.sha256` beside the data. |
+| `companies.py` | Company MCQ core. Imports the shared contract from `papers.py` (`Card`, `normalise`, `source_digest`, `shuffled_choices`, `BANNED_OPTIONS`, shape ratios) rather than copying it — same reasoning as `corrections.py`. Adds what makes companies different: `Fact`/`AuditRow` carry **`volatility`** (a `volatile` card is a build FAILURE — cash, revenue, headcount and runway are wrong within two quarters and the reader cannot tell) and **`checked`** (`stale_cards` reports cards past the config's `recheck_months`; a malformed date counts as stale). `uncovered_facts` counts **durable rows only** as the coverage denominator. `item_string` is `<namespace>|<qid>` — there is no DOI. |
+| `code_mcq.py` | Source-file MCQ core. Imports the whole shared contract from `papers.py` (`Card`, `validate`, `normalise`, shape ratios, claims coverage) rather than copying it. Adds what makes code different: `source_id` = `<repo>:<path>` as the item namespace (a file has no DOI, a path alone collides across repos), the code section/type vocabularies, and **`defined_symbols`/`covered_symbols` — every function and method in the file must carry a card or `build` FAILS**, derived from the file's AST and from where each quote lands, never from a field the author fills in. |
+| `code_mcq_cli.py` | `deck-code-mcq` — **check** (default) / `--build`. `--out` has no shipping default: a code deck's artifact belongs beside its gitignored config, not in `memory-quiz-app/data/decks`. |
+| `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
 | `vocab_cli.py` | `deck-vocab` — **preview** (clean/needs-LLM split) / **curate** (prepare needs-LLM chunk files for the audited adjudication pass) / **build** (assemble committed curated rows → `source: manual` artifact, deterministic; verifies no-dup-hanzi + band uniqueness). Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [docs/design/vocab-pipeline.md](docs/design/vocab-pipeline.md). |
 | `distractors.py` | `build_choices(artworks, attr, n, same_creator_bias)` — deterministic (QID-seeded) MC options; same-creator/era bias; no duplicate values. Creator cards match **answer shape** first (joint `A & B` answers draw joint distractors) — a multi-name answer among single-name options is pickable without knowing the artwork. |
 | `corrections.py` | Shared contract for sourced manual overrides (monarchs + artworks): mandatory `reason`/`source`, `validate` raises rather than skipping a malformed entry, and every pipeline owns a staleness predicate. The correction *types* differ (a monarch patches a scalar year in a multiset, an artwork a field on a keyed record), so only the contract is shared. |
@@ -101,6 +107,85 @@ What will bite you:
   that; a budget naming no active deck raises.
 - The artifact is `source: manual`, so `deck-export`'s clear and the orchestrator's sync both
   preserve it and neither produces it. Copy it to the quiz repo by hand.
+
+## Company decks (`deck-companies`)
+
+One company = one deck, `source: manual`, curate-then-assemble like `deck-papers`.
+Authoring rules: [configs/companies/policy.md](configs/companies/policy.md).
+
+```
+configs/companies/<slug>.yaml           config: namespace, group, recheck_months, file names
+                  <slug>.facts.jsonl    extraction — one row per fact, with volatility
+                  <slug>.curated.jsonl  the cards `build` consumes
+                  <slug>.audit.jsonl    per-card quote/category/volatility/checked/reason
+                  <slug>.source.txt     research snapshot — COMMITTED (it is ours)
+                  <slug>.source.sha256  which snapshot the quotes were verified against
+```
+
+Why not `deck-papers` with a different config — three things change what `build` enforces:
+
+- **The source decays.** A paper is frozen; a company is not. Within one research window Verve
+  was acquired, Arena BioWorks closed and Inari cut a third of its staff. A verbatim quote
+  proves the card matches the SNAPSHOT, not that it is still true — so every audit row carries
+  `checked` and `--stale` reports cards past `recheck_months`. Staleness warns, never fails:
+  Alnylam's founders will not change.
+- **`volatility: volatile` on a shipped card FAILS the build.** Cash, revenue, headcount,
+  runway, valuation — all wrong within two quarters, and the reader cannot tell. Extract them
+  into `.facts.jsonl` anyway (marked volatile, excluded from the coverage denominator) so the
+  research is complete and a later pass sees they were considered. A **round** is durable; a
+  **total raised** is volatile because it goes up.
+- **There is no DOI.** `namespace` is authored (`company:<slug>`) and must never change once a
+  card has been studied. The source text is ours, so it is committed and there is no
+  `--no-verify-quotes`.
+
+What will bite you:
+
+- **`group` must NOT be `Papers`.** That string is the quiz's `study.json` `priority_collection`
+  AND its `group_new_per_day` budget key — reusing it enrols the deck in the daily gate,
+  throttles every other deck to half, and hides it behind the blue launcher. Use `Companies`.
+- **`text-mc` no longer implies a paper, and the quiz dispatches on TWO fields.** Routes switch
+  on `mode` (so company decks ride the same `mc_routes` loop, ramp and 8/25s thresholds), but
+  `build_deck` switches on **`deck_type`** and used to fall through to the monarchs loader —
+  which loads any items/title/labels artifact without error and renders it as blindman's-bluff
+  cards. Both seams needed fixing in the quiz repo. Also: the review-proof exporter renders only
+  `papers_*.json`, so don't re-key its control on mode.
+- **`qid` is an identity, append-only.** Company facts get *corrected* more often than paper
+  findings do. Reword the stem; never renumber.
+- Artifact is `source: manual` — copy to the quiz repo by hand; neither `deck-export`'s clear
+  nor the orchestrator's sync produces or removes it.
+
+## Source-file decks (`deck-code-mcq`)
+
+One **file** is one deck: what each function is for, what a dense expression evaluates to,
+which constant governs what, how the parts integrate. Same curate-then-assemble contract as
+`deck-papers`. Authoring rules: [configs/code/policy.md](configs/code/policy.md); procedure:
+the `code-mcq` skill.
+
+**This repo holds the machinery and the policy — never the cards.** A code card quotes
+work-repo source, so the config, the three JSONL files and the artifact live in a *gitignored*
+directory under the consuming repo (`code-drill/decks/`), which that repo's pre-commit hook also
+refuses. `memory-quiz-app/data/decks/` is committed and deploys to fly.io; `data/decks/code_*.json`
+is gitignored there so a local copy cannot be committed by accident.
+
+What will bite you:
+
+- **`build` fails without current AI notes** (`code_ai_explanation_*.json` for the file in the
+  deck dir, same version) **or when the file changed since `reviewed_sha256`** — review every
+  card, drop obsolete, add new, then reset it. Also refuses STE sentences > 25 words.
+- **`build` fails on a function with no card.** That check is what makes the deck a reading of
+  the *file* rather than of its interesting parts. Coverage is computed by mapping each quote
+  back to its enclosing function, so a card that quotes the wrong line reports the right
+  function as uncovered — fix the quote.
+- **A quote is matched line by line.** A quote spanning a `def` and the statement under it
+  appears in no single line; whole-quote matching silently reported those functions uncovered.
+- **Nested helpers count as functions.** The closure inside a parsing loop is exactly the thing
+  that goes unread, and it is usually the deck's hardest card.
+- **`source_id` must never change once a card has been studied** — not when the file moves.
+  Moving the file is a new `path` and the same `source_id`.
+- **`group: Code`**, never `Papers` — that string is the quiz's priority collection and its
+  budget key; reusing it enrols the deck in the daily gate and throttles everything else.
+- **The quiz needed a branch.** `build_deck` dispatches on `deck_type` and raises on an unknown
+  one; `code` rides the `paper`/`company` `text-mc` branch.
 
 ## Musical themes (`deck-themes`)
 

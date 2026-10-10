@@ -161,7 +161,8 @@ def load_audit(path: Path) -> list[AuditRow]:
 
 def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: int,
              shipped_qids: tuple[str, ...] = (), verify_quotes: bool = True,
-             claims: list[Claim] | None = None) -> Report:
+             claims: list[Claim] | None = None,
+             primary_section: str | None = "results") -> Report:
     """Every check ``build`` fails closed on, plus the warnings it surfaces.
 
     Failures are defects in the data; warnings are things only a human can adjudicate (a
@@ -257,13 +258,16 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
         elif missing:
             warnings.append(f"findings with no card: {[c.id for c in missing]}")
 
-    # 9. composition — a results deck that is mostly Methods has drifted off the findings
-    counts = composition(audit)["section"]
-    total = sum(counts.values())
-    non_results = total - counts.get("results", 0)
-    if total and non_results / total > MAX_NON_RESULTS_SHARE:
-        warnings.append(f"{non_results}/{total} cards are from outside Results "
-                        f"({non_results / total:.0%}) — {counts}")
+    # 9. composition — a results deck that is mostly Methods has drifted off the findings.
+    #    `primary_section=None` for decks with no single home section (code decks, where
+    #    every section is first-class and coverage is measured per function instead).
+    if primary_section:
+        counts = composition(audit)["section"]
+        total = sum(counts.values())
+        non_primary = total - counts.get(primary_section, 0)
+        if total and non_primary / total > MAX_NON_RESULTS_SHARE:
+            warnings.append(f"{non_primary}/{total} cards are from outside "
+                            f"{primary_section.title()} ({non_primary / total:.0%}) — {counts}")
 
     return Report(failures, warnings)
 

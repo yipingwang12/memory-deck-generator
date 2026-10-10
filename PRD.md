@@ -6,7 +6,7 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
-Two pipelines are **curated rather than fetched** — `deck-vocab` and `deck-papers` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+Four pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies` and `deck-code-mcq` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
 
 ### Refreshing decks (`deck-export`)
 
@@ -227,6 +227,38 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 
 First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 25 extracted findings, 17 Results / 5 Methods / 1 Discussion / 1 Abstract.
 
+### 11. Company MCQs (`deck-companies`) — *built*
+- Source: **a dated research snapshot of one company**, written by a research session. One company is one deck.
+- Output: emits **directly to the quiz artifact seam** — a `deck_type: company` / `mode: text-mc` deck (`items` = `<namespace>|<qid>`, plus `stems`/`answers`/`choices`). Rides the quiz's existing `text-mc` loop, ramp and preview.
+- Like `deck-papers` and `deck-vocab`, a **curate-then-assemble** pipeline: `source: manual`, cards committed as data, `build` assembles deterministically offline. Authoring rules in `configs/companies/policy.md`.
+
+**The oracle decays, which is the whole design problem.** `deck-papers` verifies each card against a frozen paper; a company contradicts its own snapshot within months — during the first deck's research window Verve was acquired, Arena BioWorks closed and Inari cut a third of its staff. So the quote check proves only that a card matches what was researched, and every audit row carries a **`checked`** date; `--stale` reports cards past the config's `recheck_months`. Staleness is a warning, not a failure — a founding trio does not rot.
+
+**Volatility is enforced, not advised.** A card asserting a cash balance, revenue figure, headcount or runway is false within two quarters and the reader has no way to notice, so `volatility: volatile` on a shipped card **fails the build**. Volatile facts are still extracted into `.facts.jsonl` — marked volatile, excluded from the coverage denominator — so the research is complete and a later pass can see they were considered and rejected. A funding *round* is durable; a *total raised* is volatile.
+
+**Density is measured against durable facts**, exactly as papers measure against extracted findings: one card per distinct durable fact, warning below 75% coverage. Expect ~4 cards for a thin entry and 12–15 for a deeply researched one; that spread is correct.
+
+**`group` is `Companies`, never `Papers`** — the latter is the quiz's `priority_collection` and its shared budget key, so reusing it would silently enrol the deck in the daily gate.
+
+**One deck built** (2026-09-21): Foundation Medicine, 15 cards from 16 durable facts (one dropped as sector-level knowledge, two volatile facts extracted and refused). Distractors are drawn from other companies in the same dossier, so a wrong answer teaches a second entry.
+
+### 12. Source-file MCQs (`deck-code-mcq`) — *built*
+- Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
+- Output: a `deck_type: code` / `mode: text-mc` deck (`items` = `<source_id>|<qid>`), riding the quiz's existing single-choice loop.
+- Curate-then-assemble like `deck-papers`, whose validation core it imports rather than copies: the quote check, shape guards, `qid` identity and claim-coverage all come from `papers.py`.
+
+**Why it exists.** It is the answer to `code-drill`'s own finding: spotting a corrupted line proves a file was *read*, not that it is *understood*, and reading unfamiliar code for comprehension is slow and open-ended with nothing to show for it afterwards. A card set makes comprehension finite and reviewable — every function's purpose and contract, dense expressions, what each constant governs, how the file integrates with its neighbours. The two are complements, not rivals: the drill keeps eyes on every line of the repo, a deck is bought deliberately for a file worth understanding.
+
+**Every function in the file must carry a card, or `build` fails.** This is the check that makes a deck a reading of the *file* rather than of its interesting parts, and it is derived — `defined_symbols` parses the file's AST, `covered_symbols` maps each quote back to its enclosing function — never asserted by the author. Nested helpers count: the closure inside a parsing loop is exactly what goes unread, and it is usually the hardest card in the deck. A card that quotes the wrong line therefore reports the right function as uncovered, which is the intended pressure.
+
+**A file has no home section.** A paper drifting out of Results is a smell, so `deck-papers` warns on the mix; a file's structure, functions, expressions, constants and integration points are all first-class, so that check is switched off (`primary_section=None`, parameterised in `papers.py` rather than forked) and function coverage takes its place.
+
+**The data never enters this repo.** Cards quote work-repo source verbatim, so the config, the three JSONL files and the artifact live in a gitignored directory under the consuming repo (`code-drill/decks/`, refused by its pre-commit hook), and `data/decks/code_*.json` is gitignored in the quiz. This repo holds the machinery and `configs/code/policy.md`; `--out` has no default that would ship a deck by accident. Authoring an LLM-read deck over a governed repo is a decision for the repo's owner, not a default — the `code-mcq` skill asks before reading.
+
+**MCQs follow AI notes; changes force a full review** (2026-10-10). A file gets a deck iff code-drill's AI notes cover it as it is now: `build` refuses when the file's `code_ai_explanation_*.json` is absent from the deck dir or covers another version. Config `reviewed_sha256` = file version every card was checked against; a changed file refuses until every card is reviewed (obsolete → `drop`, new behaviour → new `qid`s) and it is reset. Artifact records it as `notes_sha256`; `code-drill next` lists files owing a deck or a review. Stems and choices are ASD-STE100: `build` refuses a sentence > 25 words (code span = 1 word).
+
+**One deck built** (2026-09-22): `snp-backbone-benchmark`'s `launch/exp3_common.py` — 39 cards from 41 extracted claims over 170 non-blank lines, 9/9 functions covered, 7 of them `gotcha` cards. Measured rate ~0.23 cards per line; the repo's 61 in-scope Python files would be ~1,650 cards, which is why the recommendation is the dozen highest-fan-in modules (~325 cards), not the repo. R is out of reach until the coverage check has an R parser.
+
 ## Coverage analysis — external reference comparison (2026-08-03)
 
 Decks are built from Wikidata fame proxies; whether that matches a **curated canon** is a separate
@@ -300,3 +332,4 @@ Design rationale for what this repo emits; the quiz that consumes it (display, s
 - CLI runs end-to-end without errors on clean install
 - Shakespeare pipeline downloads and caches all passages from configured plays
 - `deck-export` artifacts load in the quiz with item strings byte-identical to live generation (FSRS keys preserved)
+- `deck-companies` refuses a volatile card outright and reports every card past its `recheck_months` — the deck never asserts a number that will go false unnoticed
