@@ -6,7 +6,7 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
-Four pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies` and `deck-code-mcq` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+Five pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies`, `deck-code-mcq` and `deck-counties` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
 
 ### Refreshing decks (`deck-export`)
 
@@ -258,6 +258,16 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 **MCQs follow AI notes; changes force a full review** (2026-10-10). A file gets a deck iff code-drill's AI notes cover it as it is now: `build` refuses when the file's `code_ai_explanation_*.json` is absent from the deck dir or covers another version. Config `reviewed_sha256` = file version every card was checked against; a changed file refuses until every card is reviewed (obsolete → `drop`, new behaviour → new `qid`s) and it is reset. Artifact records it as `notes_sha256`; `code-drill next` lists files owing a deck or a review. Stems and choices are ASD-STE100: `build` refuses a sentence > 25 words (code span = 1 word).
 
 **One deck built** (2026-09-22): `snp-backbone-benchmark`'s `launch/exp3_common.py` — 39 cards from 41 extracted claims over 170 non-blank lines, 9/9 functions covered, 7 of them `gotcha` cards. Measured rate ~0.23 cards per line; the repo's 61 in-scope Python files would be ~1,650 cards, which is why the recommendation is the dozen highest-fan-in modules (~325 cards), not the repo. R is out of reach until the coverage check has an R parser.
+
+### 13. County acronyms (`deck-counties`) — *built* (Michigan, 2026-10-11)
+- Source: user's sheet acronym rows (one per atlas group) + global-geo-atlas `results/sheet_rows/<state>.facts.json` (seat, largest city, towns, group per county) + atlas county geometry.
+- `curate STATE --rows TSV` → `configs/counties/<state>.yaml` (`align` DP splits each acronym into `[piece, name]` pairs); **hand-fix, commit** — re-curate overwrites. `build STATE` → 3 decks into the quiz repo:
+  - `<stem>_pieces` (`county-acronym`, text-mc): one card per piece, `marks` = highlighted slice; distractors = names the piece fits → same initial → pool.
+  - `<stem>_seats` (`county-seat`, text-mc): seat card per county + largest-city card when different.
+  - `<stem>_map` (`county-map`, type-in): Pillow-rendered county map per group (red highlight, lossless WebP) → lowercase acronym.
+- Items positional (`counties:MI|piece|g01|p03`) — inserting a piece shifts later identities.
+- Michigan: 25 groups → 166 piece / 111 seat (83 seat + 28 largest) / 25 map cards. Hand fixes: Houghton Lake split, Oakland largest = Troy (atlas CSV has South Lyon 128,071), Mount Clemens / Greilickville spellings.
+- Open: remaining 49 states (atlas draft rows exist for all).
 
 ## Coverage analysis — external reference comparison (2026-08-03)
 
