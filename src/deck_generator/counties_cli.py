@@ -78,7 +78,7 @@ def _build(args) -> int:
     geo_path = ((args.atlas or _sibling("global-geo-atlas")) / "data" / "us" / "regions"
                 / f"{state['atlas_region']}.json")
     geo = json.loads(geo_path.read_text(encoding="utf-8"))
-    decks = counties.assemble(state, raw, f"manual/counties/{args.state}.yaml")
+    decks = counties.assemble(state, raw, f"manual/counties/{args.state}")
 
     asset_dir = out_dir / "assets" / f"{state['deck_stem']}_map"
     asset_dir.mkdir(parents=True, exist_ok=True)

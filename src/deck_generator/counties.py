@@ -306,7 +306,9 @@ def _envelope(state: dict, kind: str, deck_type: str, mode: str, title: str, car
         "stems": [c.stem for c in cards],
         "answers": [c.answer for c in cards],
         "poem_title": None,
-        "config_path": config_path,
+        # One per deck: the quiz keys a deck on its config_path, so three decks sharing one
+        # would load as whichever artifact it found first.
+        "config_path": f"{config_path}/{kind}.yaml",
         "config_hash": config_hash,
         "source": "manual",
         "namespace": f"counties:{state['usps']}|{kind}",
@@ -314,7 +316,8 @@ def _envelope(state: dict, kind: str, deck_type: str, mode: str, title: str, car
 
 
 def assemble(state: dict, config_bytes: bytes, config_path: str) -> dict[str, dict]:
-    """deck stem → artifact, for the three decks."""
+    """deck stem → artifact, for the three decks. ``config_path`` is a base
+    (``manual/counties/michigan``); each deck gets ``<base>/<kind>.yaml``."""
     h = hashlib.sha256(config_bytes).hexdigest()
     stem = state["deck_stem"]
     pieces, seats, maps = piece_cards(state), seat_cards(state), map_cards(state)

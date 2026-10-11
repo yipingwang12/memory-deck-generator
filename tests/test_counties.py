@@ -206,4 +206,6 @@ def test_curate_then_build(tmp_path, monkeypatch):
     assert set(arts) == {"counties_michigan_pieces", "counties_michigan_seats",
                          "counties_michigan_map"}
     assert {a["source"] for a in arts.values()} == {"manual"}
+    # the quiz keys decks on config_path, so each deck needs its own
+    assert len({a["config_path"] for a in arts.values()}) == 3
     assert len(list((out / "assets" / "counties_michigan_map").glob("*.webp"))) == 2
