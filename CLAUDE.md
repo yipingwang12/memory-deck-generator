@@ -21,6 +21,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-themes` | MTD (Musical Theme Dataset) MusicXML | Musical theme + verified note corruptions → quiz `notation-spot` deck (MEI assets, engraved by Verovio) |
 | `deck-papers` | A scientific paper, read by an LLM session | Results MCQs → quiz `text-mc` deck (`source: manual`; authored out-of-band per `configs/papers/policy.md`) |
 | `deck-companies` | A dated research snapshot of one company | Company MCQs → quiz `text-mc` deck (`source: manual`; authored per `configs/companies/policy.md`) |
+| `deck-grammar` | Hand-authored paradigm YAML, re-derived by rule | Verb tense tables → quiz `grammar-table` deck (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 
 ## Modules
@@ -50,6 +51,8 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `code_mcq.py` | Source-file MCQ core. Imports the whole shared contract from `papers.py` (`Card`, `validate`, `normalise`, shape ratios, claims coverage) rather than copying it. Adds what makes code different: `source_id` = `<repo>:<path>` as the item namespace (a file has no DOI, a path alone collides across repos), the code section/type vocabularies, and **`defined_symbols`/`covered_symbols` — every function and method in the file must carry a card or `build` FAILS**, derived from the file's AST and from where each quote lands, never from a field the author fills in. |
 | `code_mcq_cli.py` | `deck-code-mcq` — **check** (default) / `--build`. `--out` has no shipping default: a code deck's artifact belongs beside its gitignored config, not in `memory-quiz-app/data/decks`. |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
+| `grammar.py` | Grammar-table core. `derive_first_conjugation` (indicative active by rule — the second source every authored form must match), `Paradigm`, `wrong_pool` (other persons, other tenses, ending vowel length; root never flipped; never the correct form), `validate`, `item_string` = `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, `assemble_artifact`. |
+| `grammar_cli.py` | `deck-grammar` — **check** (default) / `--build` → `grammar_<stem>.json`. Offline. |
 | `vocab_cli.py` | `deck-vocab` — **preview** (clean/needs-LLM split) / **curate** (prepare needs-LLM chunk files for the audited adjudication pass) / **build** (assemble committed curated rows → `source: manual` artifact, deterministic; verifies no-dup-hanzi + band uniqueness). Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [docs/design/vocab-pipeline.md](docs/design/vocab-pipeline.md). |
 | `distractors.py` | `build_choices(artworks, attr, n, same_creator_bias)` — deterministic (QID-seeded) MC options; same-creator/era bias; no duplicate values. Creator cards match **answer shape** first (joint `A & B` answers draw joint distractors) — a multi-name answer among single-name options is pickable without knowing the artwork. |
 | `corrections.py` | Shared contract for sourced manual overrides (monarchs + artworks): mandatory `reason`/`source`, `validate` raises rather than skipping a malformed entry, and every pipeline owns a staleness predicate. The correction *types* differ (a monarch patches a scalar year in a multiset, an artwork a field on a keyed record), so only the contract is shared. |
@@ -186,6 +189,16 @@ What will bite you:
   budget key; reusing it enrols the deck in the daily gate and throttles everything else.
 - **The quiz needed a branch.** `build_deck` dispatches on `deck_type` and raises on an unknown
   one; `code` rides the `paper`/`company` `text-mc` branch.
+
+## Grammar tables (`deck-grammar`)
+
+`configs/grammar/<slug>.yaml`: principal parts + every form, table by table. First: `latin_porto`
+(1st conj., indicative active, Wheelock macrons: `-ērunt`, short `-erimus`).
+
+- **Forms are authored AND derived**; build refuses any disagreement. Only 1st conj. has rules —
+  another conjugation warns "unchecked" until `grammar.py` gains its rules.
+- **Item is a tag identity, never the form**; `lemma_key`/tense keys must never change once studied.
+- Quiz drops a pool form another cell of the same table is showing — so keep pools broad.
 
 ## Musical themes (`deck-themes`)
 
