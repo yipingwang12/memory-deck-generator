@@ -23,6 +23,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-companies` | A dated research snapshot of one company | Company MCQs → quiz `text-mc` deck (`source: manual`; authored per `configs/companies/policy.md`) |
 | `deck-grammar` | Hand-authored paradigm YAML, re-derived by rule | Verb tense tables → quiz `grammar-table` deck (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
+| `deck-counties` | User's county-group acronyms + atlas facts/geometry | 3 decks per state: acronym pieces + seats (`text-mc`), map → typed acronym (`type-in`, WebP maps) (`source: manual`) |
 
 ## Modules
 
@@ -50,6 +51,8 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `companies.py` | Company MCQ core. Imports the shared contract from `papers.py` (`Card`, `normalise`, `source_digest`, `shuffled_choices`, `BANNED_OPTIONS`, shape ratios) rather than copying it — same reasoning as `corrections.py`. Adds what makes companies different: `Fact`/`AuditRow` carry **`volatility`** (a `volatile` card is a build FAILURE — cash, revenue, headcount and runway are wrong within two quarters and the reader cannot tell) and **`checked`** (`stale_cards` reports cards past the config's `recheck_months`; a malformed date counts as stale). `uncovered_facts` counts **durable rows only** as the coverage denominator. `item_string` is `<namespace>|<qid>` — there is no DOI. |
 | `code_mcq.py` | Source-file MCQ core. Imports the whole shared contract from `papers.py` (`Card`, `validate`, `normalise`, shape ratios, claims coverage) rather than copying it. Adds what makes code different: `source_id` = `<repo>:<path>` as the item namespace (a file has no DOI, a path alone collides across repos), the code section/type vocabularies, and **`defined_symbols`/`covered_symbols` — every function and method in the file must carry a card or `build` FAILS**, derived from the file's AST and from where each quote lands, never from a field the author fills in. |
 | `code_mcq_cli.py` | `deck-code-mcq` — **check** (default) / `--build`. `--out` has no shipping default: a code deck's artifact belongs beside its gitignored config, not in `memory-quiz-app/data/decks`. |
+| `counties.py` | County decks core: `align` (sheet row → `(piece, name)`; prefers known place names, then fewer pieces), `piece_fits`, `validate`, `piece_cards`/`seat_cards`/`map_cards`, `render_map` (Pillow, no GIS deps), `curate`, `assemble`. |
+| `counties_cli.py` | `deck-counties curate STATE --rows TSV` (draft YAML) / `build STATE` (→ `memory-quiz-app/data/decks` + `assets/<stem>_map/`). |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
 | `grammar.py` | Grammar-table core. `derive_first_conjugation` (indicative active by rule — the second source every authored form must match), `Paradigm`, `wrong_pool` (other persons, other tenses, ending vowel length; root never flipped; never the correct form), `validate`, `item_string` = `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, `assemble_artifact`. |
 | `grammar_cli.py` | `deck-grammar` — **check** (default) / `--build` → `grammar_<stem>.json`. Offline. |
@@ -199,6 +202,26 @@ What will bite you:
   another conjugation warns "unchecked" until `grammar.py` gains its rules.
 - **Item is a tag identity, never the form**; `lemma_key`/tense keys must never change once studied.
 - Quiz drops a pool form another cell of the same table is showing — so keep pools broad.
+
+## County decks (`deck-counties`)
+
+One state = three `source: manual` decks from `configs/counties/<state>.yaml`: each atlas group's
+acronym as `[piece, name]` pairs + per-county seat/largest/towns. `curate` drafts it from sheet
+rows (`acronym<TAB>names`, one per atlas group in order) + the atlas's
+`results/sheet_rows/<state>.facts.json` (`sheet_rows.py STATE`); **then hand-fix and commit** —
+re-curating overwrites hand fixes.
+
+What will bite you:
+
+- **Items are positional** (`counties:MI|piece|g01|p03`, `|seat|Kent`, `|map|g01`) — fixing a
+  name keeps history; inserting a piece mid-acronym shifts every later piece's identity.
+- **`align` can pick the wrong split when both halves are counties** (Houghton Lake → Houghton +
+  Lake). Review every row after `curate`.
+- **The atlas town CSV has bad populations** (MI South Lyon 128,071). Eyeball `largest`.
+- **Map highlight = atlas group members**, which can include counties the sheet acronym omits
+  (MI Washtenaw, Branch).
+- `build` writes straight into the quiz repo; the orchestrator's `decks` sync keeps asset dirs
+  of manual decks.
 
 ## Musical themes (`deck-themes`)
 
