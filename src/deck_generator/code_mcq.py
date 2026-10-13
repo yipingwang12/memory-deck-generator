@@ -126,7 +126,7 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
     """The shared checks, plus function coverage and the code section vocabulary."""
     report = validate_shared(cards, audit, source, n_choices, shipped_qids,
                              verify_quotes=verify_quotes, claims=claims,
-                             primary_section=None)
+                             primary_section=None, verify_dropped=False)
 
     for row in audit:
         if row.section and row.section not in SECTIONS:
@@ -177,7 +177,8 @@ def file_sha256(source: str) -> str:
 def _notes_sha(notes_dir: Path, file_id: str) -> str | None:
     for p in sorted(notes_dir.glob("code_ai_explanation_*.json")):
         art = json.loads(p.read_text(encoding="utf-8"))
-        if art.get("source_id") == file_id:
+        # file_id: where the file is now; source_id stays where it was first annotated
+        if (art.get("file_id") or art.get("source_id")) == file_id:
             return art.get("source_sha256")
     return None
 
@@ -205,6 +206,31 @@ def currency_refusals(file_id: str, reviewed: str | None, notes_dir: Path,
         out.append(f"AI notes for {file_id} cover another version of the file: update and "
                    f"export them first")
     return out
+
+
+def broken_quotes(audit: list[AuditRow], source: str) -> list[str]:
+    """qids of kept cards whose quote the file no longer holds — the code they were
+    about has changed or gone, so they may no longer be true."""
+    src = normalise(source)
+    return [r.qid for r in audit if r.decision == "keep" and normalise(r.quote) not in src]
+
+
+def prune(curated_p: Path, audit_p: Path, qids: list[str], reason: str) -> None:
+    """Retire `qids`: out of the curated rows, `drop` in the audit. A qid is never reused."""
+    gone = set(qids)
+    curated = [d for d in _jsonl(curated_p) if d["qid"] not in gone]
+    audit = _jsonl(audit_p)
+    for d in audit:
+        if d["qid"] in gone:
+            d["decision"] = "drop"
+            d["reason"] = f"{reason} — was: {d.get('reason', '')}"
+    for path, rows in ((curated_p, curated), (audit_p, audit)):
+        path.write_text("".join(json.dumps(d, ensure_ascii=False) + "\n" for d in rows),
+                        encoding="utf-8")
+
+
+def _jsonl(path: Path) -> list[dict]:
+    return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
 
 
 def item_string(source_id: str, qid: str) -> str:

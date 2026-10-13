@@ -178,6 +178,11 @@ What will bite you:
 - **`build` fails without current AI notes** (`code_ai_explanation_*.json` for the file in the
   deck dir, same version) **or when the file changed since `reviewed_sha256`** — review every
   card, drop obsolete, add new, then reset it. Also refuses STE sentences > 25 words.
+- **`--prune`** (run by code-drill's `sync` once the notes follow a changed file): drops kept
+  cards whose quote the file no longer holds (`drop` in audit, off curated, qid retired), sets
+  `reviewed_sha256` to the file as now. Dropped rows' quotes are not re-verified for code
+  (`verify_dropped=False`); papers still verify them. `source_file` points at code-drill's
+  `targets/_latest/<repo>/<path>` snapshot — the latest version across branches.
 - **`build` fails on a function with no card.** That check is what makes the deck a reading of
   the *file* rather than of its interesting parts. Coverage is computed by mapping each quote
   back to its enclosing function, so a card that quotes the wrong line reports the right

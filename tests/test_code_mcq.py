@@ -261,6 +261,15 @@ class TestCurrency:
         assert code_mcq.currency_refusals(SOURCE_ID, "1" * 64, tmp_path, "")
 
 
+class TestMovedFile:
+    def test_notes_are_found_where_the_file_is_now(self, tmp_path):
+        """A moved file's notes keep the old source_id (card identity); file_id is current."""
+        (tmp_path / "code_ai_explanation_mod.json").write_text(json.dumps(
+            {"deck_type": "code-ai-explanation", "source_id": "demo-repo:old/mod.py",
+             "file_id": SOURCE_ID, "source_sha256": SHA}))
+        assert code_mcq.currency_refusals(SOURCE_ID, SHA, tmp_path, SOURCE) == []
+
+
 class TestCliCurrency:
     _deck = TestCli._deck
 
@@ -275,3 +284,70 @@ class TestCliCurrency:
         (tmp_path / "code_ai_explanation_mod.json").unlink()
         with pytest.raises(SystemExit):
             code_mcq_cli.main(["--config", str(config), "--build"])
+
+
+class TestPrune:
+    """A changed file: cards whose quote is gone are dropped; the rest survive unreviewed."""
+    _deck = TestCli._deck
+
+    def _change(self, tmp_path, new):
+        (tmp_path / "mod.py").write_text(new, encoding="utf-8")
+        notes(tmp_path, sha=code_mcq.file_sha256(new))
+
+    def test_broken_quotes_are_the_ones_the_source_no_longer_holds(self):
+        _, rows = cover_all()
+        changed = SOURCE.replace("def inner(name):", "def inner(n):")
+        assert code_mcq.broken_quotes(rows, changed) == ["q03"]
+
+    def test_prune_drops_broken_cards_and_resets_the_review(self, tmp_path, capsys):
+        config = self._deck(tmp_path)
+        new = SOURCE.replace("def inner(name):", "def helper(name):")
+        self._change(tmp_path, new)
+        code_mcq_cli.main(["--config", str(config), "--prune"])
+        curated = [json.loads(x) for x in (tmp_path / "demo.curated.jsonl").read_text()
+                   .splitlines()]
+        audit_rows = [json.loads(x) for x in (tmp_path / "demo.audit.jsonl").read_text()
+                      .splitlines()]
+        assert [c["qid"] for c in curated] == ["q01", "q02"]
+        assert {r["qid"]: r["decision"] for r in audit_rows} == {
+            "q01": "keep", "q02": "keep", "q03": "drop"}
+        assert "quoted code changed" in audit_rows[2]["reason"]
+        cfg = yaml.safe_load(config.read_text())
+        assert cfg["reviewed_sha256"] == code_mcq.file_sha256(new)
+        assert "dropped 1" in capsys.readouterr().out
+
+    def test_prune_keeps_the_config_comments(self, tmp_path):
+        config = self._deck(tmp_path)
+        config.write_text("# governed\n" + config.read_text(), encoding="utf-8")
+        new = SOURCE + "X = 1\n"
+        self._change(tmp_path, new)
+        code_mcq_cli.main(["--config", str(config), "--prune"])
+        assert config.read_text().startswith("# governed\n")
+        assert yaml.safe_load(config.read_text())["reviewed_sha256"] == code_mcq.file_sha256(new)
+
+    def test_prune_refuses_until_the_notes_follow_the_file(self, tmp_path):
+        config = self._deck(tmp_path)
+        (tmp_path / "mod.py").write_text(SOURCE + "X = 1\n", encoding="utf-8")
+        with pytest.raises(SystemExit, match="notes"):
+            code_mcq_cli.main(["--config", str(config), "--prune"])
+        assert yaml.safe_load(config.read_text())["reviewed_sha256"] == SHA
+
+    def test_a_pruned_deck_builds(self, tmp_path):
+        config = self._deck(tmp_path)
+        new = SOURCE.replace('    """Ratio arm from the label."""\n', "")
+        new = new.replace("raise ValueError", "raise KeyError")
+        self._change(tmp_path, new)
+        code_mcq_cli.main(["--config", str(config), "--prune"])
+        with pytest.raises(SystemExit, match="refused"):     # arm_of lost its only card
+            code_mcq_cli.main(["--config", str(config), "--build"])
+        cfg = yaml.safe_load(config.read_text())
+        rows = (tmp_path / "demo.audit.jsonl").read_text() + "\n" + json.dumps(
+            {"qid": "q04", "quote": "raise KeyError", "section": "function",
+             "type": "contract", "reason": "new", "decision": "keep"})
+        (tmp_path / "demo.audit.jsonl").write_text(rows, encoding="utf-8")
+        with (tmp_path / "demo.curated.jsonl").open("a") as fh:
+            fh.write("\n" + json.dumps({"qid": "q04", "stem": "Which?", "choices": [
+                "right one", "wrong one", "wrong two", "odd one"], "answer": "right one",
+                "label": "function · arm_of"}))
+        code_mcq_cli.main(["--config", str(config), "--build"])     # dropped quote not checked
+        assert cfg["reviewed_sha256"] == code_mcq.file_sha256(new)

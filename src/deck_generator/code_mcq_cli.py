@@ -12,7 +12,9 @@ and deployed. ``--out`` therefore has no default that would ship it by accident.
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -116,12 +118,35 @@ def _build(cfg: dict, config: Path, out_dir: Path, verify_quotes: bool) -> None:
     print(f"built {out} — {len(cards)} cards (source: manual)")
 
 
+def _prune(cfg: dict, config: Path) -> None:
+    """The file changed: drop the cards whose quotes it no longer holds, then mark every
+    survivor reviewed against the new version. Notes come first, as for a build."""
+    curated_p, audit_p, source_p, _, _ = _paths(config)
+    source = source_p.read_text(encoding="utf-8")
+    current = code_mcq.file_sha256(source)
+    if code_mcq._notes_sha(config.parent, _file_id(cfg)) != current:
+        raise SystemExit(f"AI notes for {_file_id(cfg)} do not cover the file as it is now: "
+                         f"export them first")
+    gone = code_mcq.broken_quotes(code_mcq.load_audit(audit_p), source)
+    if gone:
+        today = datetime.datetime.now(datetime.UTC).date().isoformat()
+        code_mcq.prune(curated_p, audit_p, gone, f"auto: quoted code changed ({today})")
+    text = config.read_text(encoding="utf-8")
+    line = f'reviewed_sha256: "{current}"'
+    text, n = re.subn(r"(?m)^reviewed_sha256:.*$", line, text)
+    config.write_text(text if n else text.rstrip("\n") + "\n" + line + "\n", encoding="utf-8")
+    print(f"{config.name}: dropped {len(gone)} card(s) {gone}; reviewed_sha256 → {current[:12]}…")
+
+
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(description="Check/build a source-file MCQ deck.")
     p.add_argument("--config", type=Path, required=True, help="<slug>.yaml beside its rows")
     p.add_argument("--out", type=Path, default=None,
                    help="artifact directory (default: beside the config — keep it gitignored)")
     p.add_argument("--build", action="store_true", help="assemble the artifact (default: check)")
+    p.add_argument("--prune", action="store_true",
+                   help="after a file change: drop cards whose quotes are gone, mark the rest "
+                        "reviewed (notes must already cover the new version)")
     p.add_argument("--no-verify-quotes", action="store_true",
                    help="skip the verbatim-quote check when the source file is unavailable")
     args = p.parse_args(argv)
@@ -129,7 +154,9 @@ def main(argv: list[str] | None = None) -> None:
     cfg = yaml.safe_load(args.config.read_text(encoding="utf-8"))
     out_dir = args.out or args.config.parent
     verify = not args.no_verify_quotes
-    if args.build:
+    if args.prune:
+        _prune(cfg, args.config)
+    elif args.build:
         _build(cfg, args.config, out_dir, verify)
     else:
         report, cards, audit, source = _run_checks(cfg, args.config, out_dir, verify)
