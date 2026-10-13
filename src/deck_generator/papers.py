@@ -162,7 +162,8 @@ def load_audit(path: Path) -> list[AuditRow]:
 def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: int,
              shipped_qids: tuple[str, ...] = (), verify_quotes: bool = True,
              claims: list[Claim] | None = None,
-             primary_section: str | None = "results") -> Report:
+             primary_section: str | None = "results",
+             verify_dropped: bool = True) -> Report:
     """Every check ``build`` fails closed on, plus the warnings it surfaces.
 
     Failures are defects in the data; warnings are things only a human can adjudicate (a
@@ -186,6 +187,8 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
     # 2. every quote verbatim in the source — the substitute for an oracle
     if verify_quotes:
         for row in audit:
+            if row.decision != "keep" and not verify_dropped:
+                continue
             if normalise(row.quote) not in src:
                 failures.append(f"{row.qid}: quote not found verbatim in source text")
     else:
