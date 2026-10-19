@@ -108,9 +108,9 @@ What will bite you:
 - **Density is not a range.** One card per distinct finding; `build` compares the deck against
   `claims.jsonl` and names findings with no card. An incomplete *extraction* produces a small
   deck that looks fully covered — that is where density is actually decided.
-- **`group: Papers` on every paper deck** — it is the key `study.json`'s `group_new_per_day`
-  budget is named by, and one budget paces the whole collection. Varying it per paper defeats
-  that; a budget naming no active deck raises.
+- **`group: Papers` on every paper deck** — it is `study.json`'s `priority_collection` entry
+  and the `paper_intake` collection (3 papers / 7 days). Papers have no `group_new_per_day`
+  budget since 2026-09-20. Varying the group per paper drops the deck out of both.
 - The artifact is `source: manual`, so `deck-export`'s clear and the orchestrator's sync both
   preserve it and neither produces it. Copy it to the quiz repo by hand.
 
@@ -147,8 +147,8 @@ Why not `deck-papers` with a different config — three things change what `buil
 What will bite you:
 
 - **`group` must NOT be `Papers`.** That string is the quiz's `study.json` `priority_collection`
-  AND its `group_new_per_day` budget key — reusing it enrols the deck in the daily gate,
-  throttles every other deck to half, and hides it behind the blue launcher. Use `Companies`.
+  AND its `paper_intake` collection — reusing it enrols the deck in the daily gate and paper
+  intake, and hides it behind the blue launcher. Use `Companies`.
 - **`text-mc` no longer implies a paper, and the quiz dispatches on TWO fields.** Routes switch
   on `mode` (so company decks ride the same `mc_routes` loop, ramp and 8/25s thresholds), but
   `build_deck` switches on **`deck_type`** and used to fall through to the monarchs loader —
@@ -194,7 +194,7 @@ What will bite you:
 - **`source_id` must never change once a card has been studied** — not when the file moves.
   Moving the file is a new `path` and the same `source_id`.
 - **`group: Code`**, never `Papers` — that string is the quiz's priority collection and its
-  budget key; reusing it enrols the deck in the daily gate and throttles everything else.
+  paper-intake key; reusing it enrols the deck in the daily gate and paper intake.
 - **The quiz needed a branch.** `build_deck` dispatches on `deck_type` and raises on an unknown
   one; `code` rides the `paper`/`company` `text-mc` branch.
 
