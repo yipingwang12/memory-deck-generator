@@ -6,7 +6,7 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
-Five pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies`, `deck-code-mcq` and `deck-counties` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+Six pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies`, `deck-code-mcq`, `deck-counties` and `deck-grammar` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
 
 ### Refreshing decks (`deck-export`)
 
@@ -141,8 +141,8 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 
 `Monarch.accession_precision` carries Wikidata's `timePrecision` for P580 (9 = year, 8 = decade, 7 = century). Below year precision, the source does not actually claim that year — Assyria's Tudiya is stored as `-2450` at decade precision, meaning "the 2450s BC"; Denmark's Sigfred (770) and France's Mallobaudes (378) / Marcomer (380) are decade-precision within shipped decks. **Digit extraction deliberately ignores this**, so decks are byte-identical to before the field existed; `deck-monarchs` merely warns. This matters for any future expansion into ancient series: pharaoh has 527 recorded holders but only 88 with any start date, and Mesopotamian absolute chronology is convention-dependent (High/Middle/Low differ by decades), so precision is the difference between a fact and an artifact.
 
-#### Monarch deck set (2026-07)
-**20 decks.** *European (13):* Britain, English Commonwealth, Scotland, Denmark, Norway, Sweden, Holy Roman Empire, Byzantium, Hungary, Portugal, Bohemia, France, Japan. *Non-European (7, 2026-07):* Umayyad, Abbasid, Fatimid caliphs; Ottoman sultans; Safavid shahs; Ming, Qing emperors. Selection was data-driven from a full Wikidata survey:
+#### Monarch deck set (2026-07; 37 since 2026-08)
+**37 decks** (`configs/monarchs/`). First 20 below; 17 Maghreb, al-Andalus and Sicily dynasties added 2026-08: Aghlabids, Alaouites, Almohads, Almoravids, Hafsids, Hammadids, Idrisids, Kalbids, Marinids, Midrarids, Regency of Algiers, Regency of Tunis, Rustamids, Saadis, Wattasids, Zayyanids, Zirids. *European (13):* Britain, English Commonwealth, Scotland, Denmark, Norway, Sweden, Holy Roman Empire, Byzantium, Hungary, Portugal, Bohemia, France, Japan. *Non-European (7, 2026-07):* Umayyad, Abbasid, Fatimid caliphs; Ottoman sultans; Safavid shahs; Ming, Qing emperors. Selection was data-driven from a full Wikidata survey:
 - **Survey**: ~566 monarch positions (`wdt:P279* wd:Q116`) carry reign holders; 268 have ≥8 reigns. Median date coverage 92%. Full categorized list saved at `results/monarch_positions_wikidata.md`.
 - **Rank by conditioning, not size** (2026-07 re-survey): 325 monarch positions have ≥6 holders but only **272 have ≥6 *dated* ones** — our pipeline needs `P580`. The largest counts are generic umbrella classes, not series (`Q12097` "king" 284, `Q116` "monarch" 158, `Q181888` "khan" 117); they mix every realm and need the same `houses` treatment as Emperor of China. Best unbuilt candidate is **Pope (`Q19546`)**: 268 holders, 99% dated, 229 at day precision, one clean position, irregular reigns. Ancient series are mirages — **pharaoh has 527 holders but only 88 dated (17%)**, and Mesopotamian absolute chronology is convention-dependent (High/Middle/Low differ by decades), so those digits would encode a convention, not a fact.
 - **Quality gates** (what makes a good deck): **date coverage** ≥70% (sparse `P580` start-years → weak deck) and **per-century density** ≤~15 holders (each accession = one transition digit, so a dense century = an unlearnably long card).
@@ -215,7 +215,7 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 
 **Identity is authored, not derived.** `<doi>|<qid>`, never the stem — a stem is reworded freely and keying on it would strand history the first time it was, the monarch-digits trap. `qid` is assigned once, is append-only, and leaves a hole when a card is dropped; an LLM re-run that renumbers from `q01` would restrand the deck, so reconciliation against the committed file happens *before* authoring.
 
-**Density is measured, not capped.** The rule is one card per distinct finding — a long paper earns a long deck and a thin one a short deck, and truncating to a round number loses real findings. The extraction pass's `claims.jsonl` is committed as the denominator: `build` reports which findings carry no card and warns below 75% coverage, so *an incomplete extraction* — the actual failure mode, since it produces a small deck that looks fully covered — is visible. Intake is not paced: as of 2026-09-20 the paper decks carry no collection or per-deck new-card budget, so a long deck is a longer sitting. A separate check warns when more than about a third of a deck comes from outside Results.
+**Density is measured, not capped.** The rule is one card per distinct finding — a long paper earns a long deck and a thin one a short deck, and truncating to a round number loses real findings. The extraction pass's `claims.jsonl` is committed as the denominator: `build` reports which findings carry no card and warns below 75% coverage, so *an incomplete extraction* — the actual failure mode, since it produces a small deck that looks fully covered — is visible. No per-card budget: since 2026-09-20 paper decks carry no `group_new_per_day` entry, so a long deck is a longer sitting. Intake is paced per **paper** instead — `study.json` `paper_intake`: 3 papers per 7 days, collection `Papers`. A separate check warns when more than about a third of a deck comes from outside Results.
 
 **Quality checks that fail closed**: duplicate `qid`, answer not among the choices, wrong option count, duplicate or banned option (`none of the above` and friends), curated/audit disagreement. **Warnings** cover what only a human can adjudicate: answers running longer than their distractors (the artwork answer-shape lesson in prose), every answer sitting at one index in the curated file, a previously shipped `qid` that has disappeared.
 
@@ -223,7 +223,7 @@ fetch: `results/<slug>.xlsx` to read, and a JSON sidecar the quiz's monarch prev
 
 **Extraction is part of the contract, not a preliminary.** Since every card is verified against `source.txt` character-for-character, a bad extraction fails cards that are themselves correct. Plain `pdftotext` is enough for a published two-column article, but an **in-press proof** carries a line number in both margins and interleaves them with the prose — *"the use of at least two 44 sequencing reads per UMI"* — so no quote survives. `scripts/extract_proof_pdf.py` crops by x-coordinate one column at a time, **measuring the column edges per page** from `pdftotext -bbox` word boxes rather than assuming them: a proof's front page carries a correspondence sidebar the body pages do not, and fixed offsets splice it into the abstract. It also strips the soft hyphens the typesetter leaves at line breaks, which `deck-papers`' `normalise` does not fold and which break any quote spanning one.
 
-**Six decks built** (2026-09-20): one arXiv neuroscience paper and five from the *Journal of Molecular Diagnostics*, 153 cards. Two were revised the same day against `build`'s structural warnings: `dascoli2026_tribe` had every answer at choice index 0 in the curated file — harmless at display time, since the artifact reshuffles per card, but it biases authoring — and `lee2026_batch_effects` ran 48% non-Results. The second is the instructive one: dropping cards to fix composition would have pushed claim coverage under 75% and traded one warning for a worse one, and deleting claims to fix *that* would falsify the denominator the coverage check exists to protect. What fixed it was finding that two cards labelled `methods` had quotes sitting inside the Results section — the label was simply wrong — plus dropping four cards that were weak on their own merits (two operational parameters, one generic single-centre limitation, one answer inferable from its stem). The quiz's daily plan treats them as a priority collection with a standing intake rate — see `memory-quiz-app/PRD.md`.
+**Six decks built** (2026-09-20): one arXiv neuroscience paper and five from the *Journal of Molecular Diagnostics*, 153 cards. Two were revised the same day against `build`'s structural warnings: `dascoli2026_tribe` had every answer at choice index 0 in the curated file — harmless at display time, since the artifact reshuffles per card, but it biases authoring — and `lee2026_batch_effects` ran 48% non-Results. The second is the instructive one: dropping cards to fix composition would have pushed claim coverage under 75% and traded one warning for a worse one, and deleting claims to fix *that* would falsify the denominator the coverage check exists to protect. What fixed it was finding that two cards labelled `methods` had quotes sitting inside the Results section — the label was simply wrong — plus dropping four cards that were weak on their own merits (two operational parameters, one generic single-centre limitation, one answer inferable from its stem). The quiz's daily plan treats them as a priority collection with that per-paper intake rate — see `memory-quiz-app/PRD.md`.
 
 First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 25 extracted findings, 17 Results / 5 Methods / 1 Discussion / 1 Abstract.
 
@@ -268,6 +268,13 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - Items positional (`counties:MI|piece|g01|p03`) — inserting a piece shifts later identities.
 - Michigan: 25 groups → 166 piece / 111 seat (83 seat + 28 largest) / 25 map cards. Hand fixes: Houghton Lake split, Oakland largest = Troy (atlas CSV has South Lyon 128,071), Mount Clemens / Greilickville spellings.
 - Open: remaining 49 states (atlas draft rows exist for all).
+
+### 14. Grammar tables (`deck-grammar`) — *built* (Latin `portō`)
+- Source: hand-authored paradigm YAML (`configs/grammar/<slug>.yaml`): principal parts + every form, table by table.
+- Output: `grammar_<stem>.json`, `deck_type` grammar-table, `source: manual`; one form = one card.
+- Forms are authored **and** derived by rule (`derive_first_conjugation`); `build` refuses any disagreement. Only 1st conjugation has rules — others warn "unchecked".
+- Item = tag identity `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, never the form.
+- First: `latin_porto` (indicative active, Wheelock macrons). See `CLAUDE.md` *Grammar tables*.
 
 ## Coverage analysis — external reference comparison (2026-08-03)
 
@@ -333,7 +340,7 @@ Design rationale for what this repo emits; the quiz that consumes it (display, s
 - Quiz UI, scoring, SRS (all in `memory-quiz-app`)
 - Theme *segmentation* — MTD's 2,067 are taken as given; finding themes in a full score is a research problem, not this repo's
 - Automatic publishing / sharing
-- Non-English **sources** (Chinese vocab is glossed from CC-CEDICT, not scraped)
+- Non-English **sources**, except German Wikisource poetry (Rilke, *Duineser Elegien*). Chinese vocab is glossed from CC-CEDICT, not scraped
 - Figure-bearing paper cards — `deck-papers` is text-only; `doc2md`'s paper pipeline already extracts figures with captions if that changes
 
 ## Success criteria
