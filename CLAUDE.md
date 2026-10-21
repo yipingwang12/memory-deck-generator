@@ -24,6 +24,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-grammar` | Hand-authored paradigm YAML, re-derived by rule | Verb tense tables → quiz `grammar-table` deck (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 | `deck-counties` | User's county-group acronyms + atlas facts/geometry | 3 decks per state: acronym pieces + seats (`text-mc`), map → typed acronym (`type-in`, WebP maps) (`source: manual`) |
+| `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet |
 
 ## Modules
 
@@ -53,6 +54,8 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `code_mcq_cli.py` | `deck-code-mcq` — **check** (default) / `--build`. `--out` has no shipping default: a code deck's artifact belongs beside its gitignored config, not in `memory-quiz-app/data/decks`. |
 | `counties.py` | County decks core: `align` (sheet row → `(piece, name)`; prefers known place names, then fewer pieces), `piece_fits`, `validate`, `piece_cards`/`seat_cards`/`map_cards`, `render_map` (Pillow, no GIS deps), `curate`, `assemble`. |
 | `counties_cli.py` | `deck-counties curate STATE --rows TSV` (draft YAML) / `build STATE` (→ `memory-quiz-app/data/decks` + `assets/<stem>_map/`). |
+| `history_dates.py` | Major System core: `major_digits` (CMUdict phones → digits, x cluster = 7), `peg_number` (last two digits; first two for `years_ago` and approximate round years), `entry_problems`/`file_problems`, `peg_load`. |
+| `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break; `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
 | `grammar.py` | Grammar-table core. `derive_first_conjugation` (indicative active by rule — the second source every authored form must match), `Paradigm`, `wrong_pool` (other persons, other tenses, ending vowel length; root never flipped; never the correct form), `validate`, `item_string` = `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, `assemble_artifact`. |
 | `grammar_cli.py` | `deck-grammar` — **check** (default) / `--build` → `grammar_<stem>.json`. Offline. |
