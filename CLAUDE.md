@@ -162,6 +162,14 @@ What will bite you:
   findings do. Reword the stem; never renumber.
 - Artifact is `source: manual` — copy to the quiz repo by hand; neither `deck-export`'s clear
   nor the orchestrator's sync produces or removes it.
+- **Memory scenes** (41 companies, cards due 2026-10-21): config key `mnemonics: <slug>.mnemonics.yaml`, rules in
+  `configs/companies/mnemonic_policy.md`, checked by `company_mnemonics.py` (anchor in capitals
+  in every scene, ≤25 words; every year/count/money/area number in the answer → its peg from
+  `configs/history/major_pegs.yaml`, in answer order; money/area also need a unit image).
+  A bad scene FAILS the build. `--build` writes the sidecar straight to
+  `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
+  deck configs — a loop over `configs/companies/*.yaml` must skip `*.mnemonics.yaml`.
+- **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
 
 ## Source-file decks (`deck-code-mcq`)
 

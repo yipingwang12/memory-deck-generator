@@ -27,7 +27,12 @@ from pathlib import Path
 import yaml
 
 from .deck_export import DEFAULT_DECKS_DIR, config_hash
-from . import companies
+from . import companies, company_mnemonics
+
+_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_PEGS = _ROOT / "configs" / "history" / "major_pegs.yaml"
+# Written straight into the quiz repo, like the reign tables: a sidecar, not a deck.
+DEFAULT_MNEMONICS_OUT = _ROOT.parent / "memory-quiz-app" / "data" / "mnemonics"
 
 
 def _paths(config: Path) -> tuple[Path, Path, Path, Path, Path | None]:
@@ -71,7 +76,29 @@ def _run_checks(cfg: dict, config: Path, out_dir: Path, today: date | None
     if facts_p and not facts_p.exists():
         report.warnings.append(f"facts file named but absent ({facts_p.name}) — density "
                                f"and coverage unmeasured")
+    scenes = _mnemonics(cfg, config)
+    if scenes is not None:
+        report.failures.extend(f"mnemonics: {p}" for p in company_mnemonics.problems(
+            scenes, cards, company_mnemonics.load_pegs(DEFAULT_PEGS)))
     return report, cards, audit, companies.source_digest(source)
+
+
+def _mnemonics(cfg: dict, config: Path) -> dict | None:
+    """The config's memory-scene file, or None when it names none."""
+    name = cfg.get("mnemonics")
+    return yaml.safe_load((config.parent / name).read_text(encoding="utf-8")) if name else None
+
+
+def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_dir: Path) -> None:
+    scenes = _mnemonics(cfg, config)
+    if scenes is None:
+        return
+    deck = Path(_artifact_name(config)).stem
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / f"{deck}.json"
+    out.write_text(json.dumps(company_mnemonics.assemble(scenes, cards, cfg, deck),
+                              ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"built {out} — {len(scenes['cards'])} scenes")
 
 
 def _fmt(counts: dict[str, int]) -> str:
@@ -93,7 +120,8 @@ def _print(report: companies.Report, cards: list[companies.Card], config: Path,
         print(f"  FAIL {f}")
 
 
-def _build(cfg: dict, config: Path, out_dir: Path, today: date | None) -> None:
+def _build(cfg: dict, config: Path, out_dir: Path, today: date | None,
+           mnemonics_out: Path = DEFAULT_MNEMONICS_OUT) -> None:
     report, cards, audit, digest = _run_checks(cfg, config, out_dir, today)
     _print(report, cards, config, audit)
     if not report.ok:
@@ -113,6 +141,7 @@ def _build(cfg: dict, config: Path, out_dir: Path, today: date | None) -> None:
         print(f"  WARN source snapshot changed since the last build ({prior[:12]}… → "
               f"{digest[:12]}…); quotes were re-verified against the new text")
     stamp_p.write_text(digest + "\n", encoding="utf-8")
+    _write_mnemonics(cfg, config, cards, mnemonics_out)
 
     print(f"built {out} — {len(cards)} cards (source: manual)")
     print("  NOT synced: copy to memory-quiz-app/data/decks/ by hand. `source: manual` means "
@@ -138,6 +167,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--config", type=Path, required=True, help="configs/companies/<slug>.yaml")
     p.add_argument("--out", type=Path, default=DEFAULT_DECKS_DIR)
     p.add_argument("--build", action="store_true", help="assemble the artifact (default: check only)")
+    p.add_argument("--mnemonics-out", type=Path, default=DEFAULT_MNEMONICS_OUT,
+                   help="where --build writes the memory-scene sidecar")
     p.add_argument("--stale", action="store_true",
                    help="report only the recheck window and exit; no validation, no writes")
     p.add_argument("--today", type=date.fromisoformat, default=None,
@@ -148,7 +179,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.stale:
         sys.exit(_stale_only(cfg, args.config, args.today))
     if args.build:
-        _build(cfg, args.config, args.out, args.today)
+        _build(cfg, args.config, args.out, args.today, args.mnemonics_out)
     else:
         report, cards, audit, _ = _run_checks(cfg, args.config, args.out, args.today)
         _print(report, cards, args.config, audit)
