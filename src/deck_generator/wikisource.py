@@ -54,10 +54,18 @@ def poem_text(wikitext: str) -> str:
 
     Falls back to the whole page when a transcription omits the ``<poem>`` wrapper, so a
     marker-based extraction can still find its lines rather than failing on an empty body.
+
+    A line with no letter (a row of dots marking a section break) becomes blank: it has
+    nothing to corrupt, so as a verse line it would be a card no answer can score correct.
     """
     match = re.search(r'<poem>(.*?)</poem>', wikitext, flags=re.DOTALL | re.IGNORECASE)
     body = match.group(1) if match else wikitext
-    return '\n'.join(line.rstrip() for line in _strip_markup(body).splitlines())
+    return '\n'.join(_verse_line(line) for line in _strip_markup(body).splitlines())
+
+
+def _verse_line(line: str) -> str:
+    """One stripped source line, or '' when it holds no letter."""
+    return line.rstrip() if any(c.isalpha() for c in line) else ''
 
 
 def fetch_wikitext(page: str, lang: str = 'de', cache_dir: Path = _CACHE_DIR) -> str:

@@ -68,6 +68,12 @@ class TestPoemText:
         for token in ('{{', '}}', '[[', ']]', "'''", '<'):
             assert token not in out
 
+    def test_section_break_rule_becomes_a_blank_line(self):
+        """A row of dots marks a section break (Fünfte Elegie). It has no letter to
+        corrupt, so as a verse line it is a card no answer can score correct."""
+        out = poem_text('<poem>\nWinterhüte des Schicksals.\n.........................\nEngel:\n</poem>')
+        assert out.splitlines() == ['', 'Winterhüte des Schicksals.', '', 'Engel:']
+
     def test_page_without_a_poem_block_falls_back_to_the_whole_text(self):
         assert 'Just a line.' in poem_text('Just a line.')
 
