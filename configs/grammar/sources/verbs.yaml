@@ -1,0 +1,64 @@
+# Verbs for `deck-grammar --import`: one entry per verb = one deck (one deck per conjugation
+# class; each irregular verb is its own class), in menu order. Forms are imported from
+# Wiktionary (kaikki.org JSONL, cached in cache/kaikki_la/<kaikki>.jsonl) and re-derived by
+# grammar.py. Wheelock's model verbs for the five conjugations, then the irregulars.
+#
+# active_only: no passive pages and no passive cells (eō's and edō's passives are impersonal).
+# semi_deponent: active present system, periphrastic perfect active in meaning (fīō: factus sum).
+# prefer: pick the first Wiktionary variant starting with `prefix`, outside the `except` tag
+#   prefixes — for a verb whose irregular forms Wiktionary lists second (edō: edis, then ēs).
+# exclude: tags Wiktionary lists that the standard does not teach — each with a reason, since
+#   a dropped form is otherwise indistinguishable from a missing one. Applied to both sources.
+verbs:
+  - {lemma: portō, lemma_key: porto, class_label: 1st conjugation, conjugation: 1, kaikki: porto,
+     principal_parts: [portō, portāre, portāvī, portātum]}
+  - {lemma: moneō, lemma_key: moneo, class_label: 2nd conjugation, conjugation: 2, kaikki: moneo,
+     principal_parts: [moneō, monēre, monuī, monitum]}
+  - {lemma: dūcō, lemma_key: duco, class_label: 3rd conjugation, conjugation: 3, kaikki: duco,
+     principal_parts: [dūcō, dūcere, dūxī, ductum]}
+  - {lemma: capiō, lemma_key: capio, class_label: 3rd conjugation -iō, conjugation: 3io,
+     kaikki: capio, principal_parts: [capiō, capere, cēpī, captum]}
+  - {lemma: audiō, lemma_key: audio, class_label: 4th conjugation, conjugation: 4, kaikki: audio,
+     principal_parts: [audiō, audīre, audīvī, audītum]}
+  - {lemma: sum, lemma_key: sum, class_label: Irregular, conjugation: irregular, kaikki: sum,
+     active_only: true, principal_parts: [sum, esse, fuī, null]}
+  - {lemma: possum, lemma_key: possum, class_label: Irregular, conjugation: irregular,
+     kaikki: possum, active_only: true, principal_parts: [possum, posse, potuī, null]}
+  - lemma: volō
+    lemma_key: volo
+    class_label: Irregular
+    conjugation: irregular
+    kaikki: volo
+    active_only: true
+    principal_parts: [volō, velle, voluī, null]
+    exclude:
+      - {tags: [ptcp.act.fut, inf.act.fut],
+         reason: "volitūrus (esse) is post-classical; Wheelock gives volō no future participle or infinitive"}
+  - {lemma: eō, lemma_key: eo, class_label: Irregular, conjugation: irregular, kaikki: eo,
+     active_only: true, principal_parts: [eō, īre, iī, itum]}
+  - {lemma: ferō, lemma_key: fero, class_label: Irregular, conjugation: 3, kaikki: fero,
+     principal_parts: [ferō, ferre, tulī, lātum]}
+  - lemma: fīō
+    lemma_key: fio
+    class_label: Irregular
+    conjugation: irregular
+    kaikki: fio
+    active_only: true
+    semi_deponent: true
+    principal_parts: [fīō, fierī, null, factum]
+    exclude:
+      - {tags: [ptcp.act.pres, ger.gen, ger.dat, ger.acc, ger.abl],
+         reason: "fīēns and fīendī are late; Wheelock (ch. 36) gives fīō no present participle or gerund"}
+      - {tags: [sup.acc, sup.abl], reason: "factum/factū are faciō's supine, not fīō's"}
+  - lemma: edō
+    lemma_key: edo
+    class_label: Irregular
+    conjugation: 3
+    kaikki: edo
+    active_only: true
+    standard: "Allen & Greenough §201"
+    principal_parts: [edō, ēsse, ēdī, ēsum]
+    prefer:
+      prefix: ēs
+      except: [subj.act.pres]
+      reason: "edō is learnt for its athematic ēs-forms (ēs, ēst, ēstis, ēsse, ēssem); Wiktionary lists the regular edis/edit first. The present subjunctive stays edam."

@@ -1,0 +1,98 @@
+# Nouns for `deck-grammar --import`: one deck per declension, Wheelock's model nouns, a page
+# holding up to four (one table each: cases × singular/plural). Forms imported from Wiktionary
+# (cache/kaikki_la/<kaikki>.jsonl) and re-derived by grammar_nominal.py.
+#
+# principal_parts: [nominative, genitive] — the dictionary entry the rules decline from.
+# declension: 1, 2, 3 (consonant stem), 3i (i-stem), 4, 5; gender m / f / n.
+# choose: Wheelock's form where Wiktionary lists another variant first — the chosen form must be
+#   one of Wiktionary's variants, and the others stay valid (never offered as wrong).
+# anceps: how a vowel Wiktionary marks as either length (ū̆) is resolved: short (default) or long.
+# exclude: tags Wiktionary lists that the standard does not teach, each with a reason.
+decks:
+  - key: decl1
+    name: 1st declension
+    pages:
+      - key: a
+        label: "-a nouns"
+        lexemes:
+          - {lemma: porta, lemma_key: porta, declension: 1, gender: f, kaikki: porta,
+             principal_parts: [porta, portae]}
+          - {lemma: agricola, lemma_key: agricola, declension: 1, gender: m, kaikki: agricola,
+             principal_parts: [agricola, agricolae]}
+  - key: decl2
+    name: 2nd declension
+    pages:
+      - key: us
+        label: "-us, -ius, -um"
+        lexemes:
+          - {lemma: amīcus, lemma_key: amicus, declension: 2, gender: m, kaikki: amicus,
+             principal_parts: [amīcus, amīcī]}
+          - {lemma: fīlius, lemma_key: filius, declension: 2, gender: m, kaikki: filius,
+             principal_parts: [fīlius, fīliī]}
+          - {lemma: dōnum, lemma_key: donum, declension: 2, gender: n, kaikki: donum,
+             principal_parts: [dōnum, dōnī]}
+      - key: er
+        label: "-er, -ir"
+        lexemes:
+          - {lemma: puer, lemma_key: puer, declension: 2, gender: m, kaikki: puer,
+             principal_parts: [puer, puerī]}
+          - {lemma: ager, lemma_key: ager, declension: 2, gender: m, kaikki: ager,
+             principal_parts: [ager, agrī]}
+          - {lemma: vir, lemma_key: vir, declension: 2, gender: m, kaikki: vir,
+             principal_parts: [vir, virī]}
+  - key: decl3
+    name: 3rd declension
+    pages:
+      - key: cons
+        label: "Consonant stems"
+        lexemes:
+          - {lemma: rēx, lemma_key: rex, declension: 3, gender: m, kaikki: rex,
+             principal_parts: [rēx, rēgis]}
+          - {lemma: corpus, lemma_key: corpus, declension: 3, gender: n, kaikki: corpus,
+             principal_parts: [corpus, corporis]}
+      - key: i
+        label: "i-stems"
+        lexemes:
+          - {lemma: cīvis, lemma_key: civis, declension: 3i, gender: m, kaikki: civis,
+             principal_parts: [cīvis, cīvis]}
+          - {lemma: urbs, lemma_key: urbs, declension: 3i, gender: f, kaikki: urbs,
+             principal_parts: [urbs, urbis]}
+          - {lemma: mare, lemma_key: mare, declension: 3i, gender: n, kaikki: mare,
+             principal_parts: [mare, maris]}
+          - {lemma: vīs, lemma_key: vis, declension: 3i, gender: f, kaikki: vis,
+             principal_parts: [vīs, vīs]}
+  - key: decl4
+    name: 4th declension
+    pages:
+      - key: us
+        label: "-us, -ū; domus"
+        lexemes:
+          - {lemma: frūctus, lemma_key: fructus, declension: 4, gender: m, kaikki: fructus,
+             principal_parts: [frūctus, frūctūs]}
+          - {lemma: cornū, lemma_key: cornu, declension: 4, gender: n, kaikki: cornu, anceps: long,
+             principal_parts: [cornū, cornūs]}
+          - lemma: domus
+            lemma_key: domus
+            declension: 4
+            gender: f
+            kaikki: domus
+            principal_parts: [domus, domūs]
+            choose:
+              - {tag: abl.sg, form: domō, reason: "Wheelock gives domō (domū)"}
+              - {tag: acc.pl, form: domōs, reason: "Wheelock gives domōs (domūs)"}
+  - key: decl5
+    name: 5th declension
+    pages:
+      - key: es
+        label: "-ēs"
+        lexemes:
+          - lemma: diēs
+            lemma_key: dies
+            declension: 5
+            gender: m
+            kaikki: dies
+            principal_parts: [diēs, diēī]
+            exclude:
+              - {tags: [loc.sg, loc.pl], reason: "Wheelock teaches no locative for diēs (diē = ablative of time)"}
+          - {lemma: rēs, lemma_key: res, declension: 5, gender: f, kaikki: res,
+             principal_parts: [rēs, reī]}
