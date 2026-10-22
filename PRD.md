@@ -6,7 +6,7 @@ Memorizing ordered lists (award laureates, poem lines, historical rulers) is har
 ## Goal
 Generate Excel acronym-tables and per-deck JSON artifacts from Wikipedia/Wikidata sources automatically, grouped by configurable time windows. The spaced-repetition **quiz app now lives in a separate repo** (`memory-quiz-app`, see its PRD); this repo is generator-only and emits `data/decks/*.json` consumed by the quiz via the orchestrator's Dagster `decks` asset.
 
-Six pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies`, `deck-code-mcq`, `deck-counties` and `deck-grammar` — where the heavy lifting is an audited LLM pass done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
+Six pipelines are **curated rather than fetched** — `deck-vocab`, `deck-papers`, `deck-companies`, `deck-code-mcq`, `deck-counties` and `deck-grammar` — where the heavy lifting is an audited LLM pass (or, for grammar, a Wiktionary import checked against rules) done once and committed as data, and `build` assembles the artifact deterministically offline. Their decks are `source: manual`: `deck-export` has no config to rebuild them from, so the clear and the sync both preserve them.
 
 ### Refreshing decks (`deck-export`)
 
@@ -269,12 +269,13 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - Michigan: 25 groups → 166 piece / 111 seat (83 seat + 28 largest) / 25 map cards. Hand fixes: Houghton Lake split, Oakland largest = Troy (atlas CSV has South Lyon 128,071), Mount Clemens / Greilickville spellings.
 - Open: remaining 49 states (atlas draft rows exist for all).
 
-### 14. Grammar tables (`deck-grammar`) — *built* (Latin `portō`)
-- Source: hand-authored paradigm YAML (`configs/grammar/<slug>.yaml`): principal parts + every form, table by table.
-- Output: `grammar_<stem>.json`, `deck_type` grammar-table, `source: manual`; one form = one card.
-- Forms are authored **and** derived by rule (`derive_first_conjugation`); `build` refuses any disagreement. Only 1st conjugation has rules — others warn "unchecked".
-- Item = tag identity `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, never the form.
-- First: `latin_porto` (indicative active, Wheelock macrons). See `CLAUDE.md` *Grammar tables*.
+### 14. Grammar tables (`deck-grammar`) — *built* (20 Latin decks, 1,892 cards, 2026-10-22)
+- **Verbs** — one deck per conjugation class: Wheelock's models portō, moneō, dūcō, capiō, audiō; each irregular its own class — sum, possum, volō, eō, ferō, fīō, edō. Pages: indicative act/pass, subjunctive act/pass, imperative & non-finite (participles in dictionary form); active-only verbs 3 pages. 1,352 cards.
+- **Nouns** — one deck per declension (Wheelock's models: porta, agricola; amīcus, fīlius, dōnum, puer, ager, vir; rēx, corpus, cīvis, urbs, mare, vīs; frūctus, cornū, domus; diēs, rēs). 229 cards.
+- **Pronouns** — personal & reflexive (ego, tū, suī); demonstratives (hic, ille, iste, ipse, is, īdem); relative, interrogative & indefinite (quī, quis, aliquis, quīdam, quisque). 311 cards. Possessives wait with the adjectives.
+- Source: Wiktionary via kaikki.org → `configs/grammar/latin_*.yaml`; second source = rules (conjugation and declension endings, Wheelock tables, compound pronouns derived from their bases). Build refuses any disagreement or absence. Each deviation from Wiktionary's first variant is a registry entry with a reason (choose / respell / exclude / anceps); Wiktionary's other variants stay valid and are never offered as wrong forms.
+- Item = tag identity `<lang>:<word>|<tag>`, never the form. portō kept its config path and its first 36 items.
+- See `CLAUDE.md` *Grammar tables*.
 
 ## Coverage analysis — external reference comparison (2026-08-03)
 

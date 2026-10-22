@@ -1,0 +1,129 @@
+# Pronouns for `deck-grammar --import`: three decks (Wheelock's pronoun chapters). Forms
+# imported from Wiktionary (cache/kaikki_la/<kaikki>.jsonl) and re-derived by grammar_nominal.py
+# — explicit tables, except the compounds, which are derived from their bases.
+#
+# type: personal (cases × singular/plural) or gendered (cases × m/f/n, one table per number,
+#   laid out singular beside plural — `flow: row`).
+# kaikki: one entry, or a list merged in order (ego's plural is Wiktionary's separate nōs).
+# partitive: the plural genitive Wiktionary lists second (nostrum, vestrum) gets its own cell.
+# stems: never touched by a vowel-length flip. choose / exclude / anceps: as in nouns.yaml.
+# respell: Wheelock's spelling where Wiktionary has none like it (illīus; Wiktionary writes
+#   illius — the vowel is long in prose, often short in verse). Wiktionary's stays valid.
+# common_singular: one "masc. & fem." column in the singular, as Wheelock gives the
+#   substantive pronouns (quis, quem, quō); Wiktionary's separate feminines are not used.
+decks:
+  - key: personal
+    name: Personal & reflexive pronouns
+    pages:
+      - key: personal
+        label: "ego · tū · suī"
+        lexemes:
+          - {lemma: ego, lemma_key: ego, type: personal, kaikki: [ego, nos], label: "ego, nōs",
+             partitive: {form: nostrum, reason: "nostrum is the partitive genitive (ūnus nostrum), nostrī the objective (memor nostrī)"}}
+          - {lemma: tū, lemma_key: tu, type: personal, kaikki: [tu, vos], label: "tū, vōs",
+             partitive: {form: vestrum, reason: "vestrum is the partitive genitive, vestrī the objective"}}
+          - {lemma: suī, lemma_key: sui, type: personal, kaikki: sui, label: "suī",
+             one_column: "sg. & pl."}
+  - key: demonstratives
+    name: Demonstrative pronouns
+    pages:
+      - key: hic_ille
+        label: "hic · ille"
+        flow: row
+        lexemes:
+          - {lemma: hic, lemma_key: hic, type: gendered, kaikki: hic, stems: [h]}
+          - lemma: ille
+            lemma_key: ille
+            type: gendered
+            kaikki: ille
+            stems: [ill]
+            respell:
+              - {tags: [gen.sg.m, gen.sg.f, gen.sg.n], from: illius, to: illīus, reason: "Wheelock prints illīus"}
+      - key: iste_ipse
+        label: "iste · ipse"
+        flow: row
+        lexemes:
+          - lemma: iste
+            lemma_key: iste
+            type: gendered
+            kaikki: iste
+            stems: [ist]
+            respell:
+              - {tags: [gen.sg.m, gen.sg.f, gen.sg.n], from: istius, to: istīus, reason: "Wheelock prints istīus"}
+          - lemma: ipse
+            lemma_key: ipse
+            type: gendered
+            kaikki: ipse
+            stems: [ips]
+            respell:
+              - {tags: [gen.sg.m, gen.sg.f, gen.sg.n], from: ipsius, to: ipsīus, reason: "Wheelock prints ipsīus"}
+      - key: is_idem
+        label: "is · īdem"
+        flow: row
+        lexemes:
+          - lemma: is
+            lemma_key: is
+            type: gendered
+            kaikki: is
+            stems: [e, i]
+            choose:
+              - {tag: nom.pl.m, form: eī, reason: "Wheelock gives eī (iī)"}
+              - {tags: [dat.pl.m, dat.pl.f, dat.pl.n, abl.pl.m, abl.pl.f, abl.pl.n], form: eīs,
+                 reason: "Wheelock gives eīs (iīs)"}
+          - lemma: īdem
+            lemma_key: idem
+            type: gendered
+            kaikki: idem
+            stems: [e, i, ī]
+            choose:
+              - {tag: nom.pl.m, form: eīdem, reason: "Wheelock gives eīdem (iīdem)"}
+              - {tags: [dat.pl.m, dat.pl.f, dat.pl.n, abl.pl.m, abl.pl.f, abl.pl.n], form: eīsdem,
+                 reason: "Wheelock gives eīsdem (iīsdem)"}
+  - key: relatives
+    name: Relative, interrogative & indefinite pronouns
+    pages:
+      - key: qui_quis
+        label: "quī · quis"
+        flow: row
+        lexemes:
+          - {lemma: quī, lemma_key: qui, type: gendered, kaikki: qui, stems: [qu, cu]}
+          - lemma: quis
+            lemma_key: quis
+            type: gendered
+            kaikki: quis
+            stems: [qu, cu]
+            common_singular: true
+            exclude:
+              - {tags: [nom.pl.m, nom.pl.f, nom.pl.n, gen.pl.m, gen.pl.f, gen.pl.n, dat.pl.m,
+                        dat.pl.f, dat.pl.n, acc.pl.m, acc.pl.f, acc.pl.n, abl.pl.m, abl.pl.f,
+                        abl.pl.n],
+                 reason: "the interrogative's plural is quī's (Wheelock); its cards would duplicate them"}
+      - key: aliquis_quidam
+        label: "aliquis · quīdam"
+        flow: row
+        lexemes:
+          - lemma: aliquis
+            lemma_key: aliquis
+            type: gendered
+            kaikki: aliquis
+            stems: [aliqu, alicu]
+            common_singular: true
+            choose:
+              - {tags: [dat.pl.m, dat.pl.f, dat.pl.n, abl.pl.m, abl.pl.f, abl.pl.n], form: aliquibus,
+                 reason: "Wheelock gives aliquibus; aliquīs is the rarer variant"}
+          - {lemma: quīdam, lemma_key: quidam, type: gendered, kaikki: quidam, stems: [qu, cu]}
+      - key: quisque
+        label: "quisque"
+        flow: row
+        lexemes:
+          - lemma: quisque
+            lemma_key: quisque
+            type: gendered
+            kaikki: quisque
+            stems: [qu, cu]
+            common_singular: true
+            exclude:
+              - {tags: [nom.pl.m, nom.pl.f, nom.pl.n, gen.pl.m, gen.pl.f, gen.pl.n, dat.pl.m,
+                        dat.pl.f, dat.pl.n, acc.pl.m, acc.pl.f, acc.pl.n, abl.pl.m, abl.pl.f,
+                        abl.pl.n],
+                 reason: "the pronoun quisque is singular only; plural quīque is the adjective's"}

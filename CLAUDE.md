@@ -21,7 +21,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-themes` | MTD (Musical Theme Dataset) MusicXML | Musical theme + verified note corruptions → quiz `notation-spot` deck (MEI assets, engraved by Verovio) |
 | `deck-papers` | A scientific paper, read by an LLM session | Results MCQs → quiz `text-mc` deck (`source: manual`; authored out-of-band per `configs/papers/policy.md`) |
 | `deck-companies` | A dated research snapshot of one company | Company MCQs → quiz `text-mc` deck (`source: manual`; authored per `configs/companies/policy.md`) |
-| `deck-grammar` | Hand-authored paradigm YAML, re-derived by rule | Verb tense tables → quiz `grammar-table` deck (`source: manual`; one form = one card) |
+| `deck-grammar` | Wiktionary (kaikki.org) import, re-derived by rule | Latin paradigms → 20 quiz `grammar-table` decks: 12 verbs (one per conjugation class, finite + non-finite), 5 noun declensions, 3 pronoun decks (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 | `deck-counties` | User's county-group acronyms + atlas facts/geometry | 3 decks per state: acronym pieces + seats (`text-mc`), map → typed acronym (`type-in`, WebP maps) (`source: manual`) |
 | `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet |
@@ -57,8 +57,10 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `history_dates.py` | Major System core: `major_digits` (CMUdict phones → digits, x cluster = 7), `peg_number` (last two digits; first two for `years_ago` and approximate round years), `entry_problems`/`file_problems`, `peg_load`. |
 | `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break; `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
-| `grammar.py` | Grammar-table core. `derive_first_conjugation` (indicative active by rule — the second source every authored form must match), `Paradigm`, `wrong_pool` (other persons, other tenses, ending vowel length; root never flipped; never the correct form), `validate`, `item_string` = `<lang>:<lemma_key>|<mood>.<voice>.<tense>.<person>`, `assemble_artifact`. |
-| `grammar_cli.py` | `deck-grammar` — **check** (default) / `--build` → `grammar_<stem>.json`. Offline. |
+| `grammar.py` | Grammar-table core. `derive` (every form of a verb by rule; irregular present systems from `_IRREGULAR`; `semi_deponent`, `exclude`), `PAGES`/`GRID_TABLES`/`page_tables`/`verb_pages` (a verb's pages; empty rows/cols dropped), `parse_pages`, `wrong_pool` (see *Grammar tables*), `validate` (rules vs config, pages and absence included), `item_string` = `<lang>:<lemma_key>|<tag>`, `assemble_artifact` (flat `tables` with `rows`/`cols`/`grid` + `pages`). |
+| `grammar_nominal.py` | Noun + pronoun decks: `derive_noun` (declension rules), `derive_pronoun` (Wheelock tables + derived compounds), `lexeme_tables`, `stems`, `wrong_pool` (same word only), `validate`, `assemble_artifact` (via `grammar.envelope`). |
+| `grammar_kaikki.py` | Wiktionary import: `tag_of` (kaikki tag list → our tag), `parse_variants`/`parse_forms` (first variant wins, or `prefer.prefix`), `verb_forms` (composes periphrastic perfects from *sum*, nominative infinitives, `active_only`/`exclude`), `verb_config`, `config_stem`; nominal: `nominal_tags` (one row → several genders), `resolve_anceps`, `lexeme_variants` (choose/respell/partitive/exclude), `nominal_config`. Never calls the rules. |
+| `grammar_cli.py` | `deck-grammar` — `--import` (regenerate every verb config) / **check** (default) / `--build` → `grammar_<stem>.json`; `--config` takes many. Offline. |
 | `vocab_cli.py` | `deck-vocab` — **preview** (clean/needs-LLM split) / **curate** (prepare needs-LLM chunk files for the audited adjudication pass) / **build** (assemble committed curated rows → `source: manual` artifact, deterministic; verifies no-dup-hanzi + band uniqueness). Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,policy.md}`. See [docs/design/vocab-pipeline.md](docs/design/vocab-pipeline.md). |
 | `distractors.py` | `build_choices(artworks, attr, n, same_creator_bias)` — deterministic (QID-seeded) MC options; same-creator/era bias; no duplicate values. Creator cards match **answer shape** first (joint `A & B` answers draw joint distractors) — a multi-name answer among single-name options is pickable without knowing the artwork. |
 | `corrections.py` | Shared contract for sourced manual overrides (monarchs + artworks): mandatory `reason`/`source`, `validate` raises rather than skipping a malformed entry, and every pipeline owns a staleness predicate. The correction *types* differ (a monarch patches a scalar year in a multiset, an artwork a field on a keyed record), so only the contract is shared. |
@@ -211,13 +213,72 @@ What will bite you:
 
 ## Grammar tables (`deck-grammar`)
 
-`configs/grammar/<slug>.yaml`: principal parts + every form, table by table. First: `latin_porto`
-(1st conj., indicative active, Wheelock macrons: `-ērunt`, short `-erimus`).
+**20 decks, 1,892 cards**, all `group: Latin Grammar`, one page shown at a time:
+- **Verbs** (12, order 600–611): one per conjugation class — Wheelock's portō, moneō, dūcō,
+  capiō, audiō + irregulars sum, possum, volō, eō, ferō, fīō, edō. Pages (`grammar.PAGES`):
+  indicative act/pass, subjunctive act/pass, imperative & non-finite; active-only verbs get 3.
+- **Nouns** (5, 620–624, `kind: noun`): one per declension, Wheelock's models (porta … rēs, plus
+  domus and vīs); one table per noun (cases × sg/pl), ≤ 4 a page. `sources/nouns.yaml`.
+- **Pronouns** (3, 640–642, `kind: pronoun`): personal & reflexive; demonstratives; relative,
+  interrogative & indefinite. Gendered ones = a singular and a plural table side by side
+  (`flow: row`), 2 pronouns a page. `sources/pronouns.yaml`.
 
-- **Forms are authored AND derived**; build refuses any disagreement. Only 1st conj. has rules —
-  another conjugation warns "unchecked" until `grammar.py` gains its rules.
-- **Item is a tag identity, never the form**; `lemma_key`/tense keys must never change once studied.
-- Quiz drops a pool form another cell of the same table is showing — so keep pools broad.
+```sh
+deck-grammar --import                     # sources/{verbs,nouns,pronouns}.yaml + cache/kaikki_la → 20 configs
+deck-grammar --config configs/grammar/latin_*.yaml --out ../memory-quiz-app/data/decks --build
+```
+
+- **Two sources.** `configs/grammar/latin_*.yaml` are GENERATED from Wiktionary (kaikki.org
+  JSONL, `cache/kaikki_la/`, gitignored) by `grammar_kaikki`; `grammar.derive` re-derives every
+  form by rule (5 conjugations + `_OVERRIDES` for ferō) or, for irregular present systems, from
+  `_IRREGULAR` tables written from Wheelock. Build refuses any disagreement **and any absence**
+  (a cell rules give but the config lacks). Never edit a page config — fix `sources/verbs.yaml`
+  (`exclude:` with a `reason`, e.g. volō's post-classical *volitūrus*) or the rules, re-import.
+  `exclude` applies to BOTH sources — it is a choice of standard, not a disagreement.
+- **The import never calls the rules**, or the check is circular. Its conventions: first
+  Wiktionary variant wins (portāvistī, not portāstī) unless the verb's `prefer.prefix` says
+  otherwise — edō takes its athematic ēs-forms (ēs, ēst, ēsse, ēssem; A&G §201), and it is a
+  **prefix, not a substring**: `ederēs` contains ēs in its ending (the rules caught that).
+  Periphrastic perfects composed from Wiktionary's own `X + … of sum` rows, masculine, voice
+  from the row's tags (fīō's `factus sum` is active: `semi_deponent`). Periphrastic
+  infinitives cited in the nominative (Wiktionary's `portātūrum esse` → `portātūrus esse`).
+- Kaikki URL: `kaikki.org/dictionary/Latin/meaning/<p>/<po>/<porto>.jsonl` — page titles have
+  **no macrons**. Not Wikimedia, so no `wiki-open` window. A file holds several entries
+  (volō "wish" / "fly"): `load_entry` picks by infinitive.
+- **Item is a tag identity, never the form**; `lemma_key`/tags must never change once studied.
+  Config = `latin_<lemma_key>.yaml`; portō's is the pre-expansion `latin_porto.yaml`, the path
+  its sessions are keyed on. Labels carry the page (`Indicative active · Present · 3rd sg.`) so
+  they stay unique across pages.
+- **Config**: `pages: [{key, label, tables}]`; a table is person shorthand (`tag` + six `forms`)
+  or grid (`rows`, `cols`, `cells` row-major, null = no form). Rows/columns with no form are
+  dropped (eō has no passive column). Artifact: one flat `tables` list (keys `<page>.<table>`)
+  + `pages: [{key, label, tables: [indices]}]`.
+- **Pools** (`wrong_pool`): rest of the table, same person in other tenses, same cell in the other
+  voice and mood (portat → portātur, portet), rest of the page for non-finite, ending-vowel flips
+  past the longest protected stem (`stems`; root length is lexical, not grammar), drawn within one
+page (`wrong_pool` takes that page's tables). Periphrastic
+  forms flip only the participle. Quiz drops a pool form another cell of the same table is
+  showing — so keep pools broad.
+- **Nouns and pronouns** (`grammar_nominal`; `kind` dispatches validate/assemble): nouns
+  declined by rule from `[nominative, genitive]` + gender (`_NOUN_ENDINGS`; domus/vīs explicit);
+  pronouns are Wheelock tables EXCEPT the compounds, derived from their bases — īdem from is
+  (+dem, m → n: eundem), quīdam from quī, aliquis/quisque from quis, ille/iste/ipse from one
+  ending set. Tags `<case>.<number>[.<gender>]`; `genpart` = nostrum/vestrum; `c` = Wheelock's
+  one masc. & fem. column (`common_singular`: quis, aliquis, quisque). Item `la:<word>|<tag>` —
+  one table per word, `lexeme` on the table. Pools: every other form of the same word on the
+  page + ending flips (porta / portā), never another word's.
+- **Registry knobs**, each with a reason: `choose` (Wheelock's variant first — domō, eī/eīs,
+  aliquibus; must be one of Wiktionary's), `respell` (Wheelock's spelling Wiktionary lacks —
+  illīus for illius; Wiktionary's stays valid), `partitive`, `exclude` (diēs' locative; quis's
+  and quisque's plurals), `anceps` (Wiktionary's ō̆ = either length: short by default — ego,
+  mihi, sibi — long for cornū), `common_singular`.
+- **`also` = a cell's other valid forms** (Wiktionary variants: cīvīs, domū, portāstī). Never
+  shown, never a wrong option — a correct form marked wrong teaches the wrong thing. Verbs
+  carry it too.
+- Pronoun tables abbreviate case names (nom., gen.): three gender columns at full names
+  overflowed the window (quiz e2e GT.4).
+- Only `--import` needs the kaikki cache; check/build run on a fresh clone. Importer tests use
+  `tests/fixtures/kaikki_la/` (CC BY-SA).
 
 ## County decks (`deck-counties`)
 
