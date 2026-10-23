@@ -18,3 +18,8 @@ data/art_definitive_index/*.jpeg
 # `deck-papers build` verifies every card's quote against it, so a fresh clone cannot
 # build a paper deck until the source text is re-extracted.
 configs/papers/*.source.txt
+
+# Scene images: review sheets and batch state are rebuildable/transient; the images themselves are tracked.
+results/generate_scene_images/**/contact_sheet.png
+results/generate_scene_images/**/compare_*.png
+results/generate_scene_images/_batches/

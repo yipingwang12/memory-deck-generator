@@ -152,6 +152,13 @@ class TestAssemble:
                        "cards": [{"item": f"{NS}|q13", "answer": "Cambridge",
                                   "scene": "The LAMB sleeps under a BRIDGE."}]}
 
+    def test_sidecar_names_the_image_of_a_scene_that_has_one(self):
+        data = {"anchor": "LAMB", "cards": [_entry("q13", "The LAMB sleeps under a BRIDGE."),
+                                             _entry("q08", "Six SUSHI plates.")]}
+        out = cm.assemble(data, CARDS, {"namespace": NS}, "d", images={"q13"})
+        assert out["cards"][0]["image"] == "q13.webp"
+        assert "image" not in out["cards"][1]
+
 
 def test_committed_pilot_passes():
     root = Path(__file__).resolve().parents[1] / "configs"
@@ -174,6 +181,22 @@ class TestCli:
         side = json.loads((tmp_path / "m" / "companies_alnylam_pharmaceuticals.json").read_text())
         assert side["anchor"] == "LAMB" and len(side["cards"]) == 13
         assert side["cards"][0]["item"] == "company:alnylam-pharmaceuticals|q01"
+
+    def test_build_copies_current_scene_images(self, tmp_path):
+        import json
+        import yaml
+        from deck_generator import companies_cli, scene_images as si
+        scenes = yaml.safe_load((self.CFG.parent / "alnylam_pharmaceuticals.mnemonics.yaml").read_text())
+        src = si.image_dir("alnylam_pharmaceuticals", root=tmp_path / "gen")
+        job = next(j for j in si.plan(scenes, src) if j.name == "q13")
+        si.record(src, job, model="m")
+        (src / "q13.webp").write_bytes(b"img")
+        companies_cli.main(["--config", str(self.CFG), "--build", "--out", str(tmp_path / "d"),
+                            "--mnemonics-out", str(tmp_path / "m"),
+                            "--scene-images", str(tmp_path / "gen")])
+        side = json.loads((tmp_path / "m" / "companies_alnylam_pharmaceuticals.json").read_text())
+        assert [c["image"] for c in side["cards"] if "image" in c] == ["q13.webp"]
+        assert (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals" / "q13.webp").read_bytes() == b"img"
 
     def test_bad_scene_refuses_the_build(self, tmp_path):
         import shutil

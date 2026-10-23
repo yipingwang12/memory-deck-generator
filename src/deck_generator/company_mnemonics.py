@@ -143,10 +143,13 @@ def problems(data: dict, cards: list[Card], pegs: dict[str, str]) -> list[str]:
     return out
 
 
-def assemble(data: dict, cards: list[Card], cfg: dict, deck: str) -> dict:
-    """The quiz sidecar: one row per scene, keyed by item and the answer it describes."""
+def assemble(data: dict, cards: list[Card], cfg: dict, deck: str,
+             images: set[str] = frozenset()) -> dict:
+    """The quiz sidecar: one row per scene, keyed by item and the answer it describes.
+    ``images``: qids with a current picture, named ``<qid>.webp`` beside the sidecar."""
     by_qid = {c.qid: c for c in cards}
     return {"schema": SCHEMA, "deck": deck, "anchor": data["anchor"],
             "cards": [{"item": f"{cfg['namespace']}|{e['qid']}",
-                       "answer": by_qid[e["qid"]].answer, "scene": e["scene"]}
+                       "answer": by_qid[e["qid"]].answer, "scene": e["scene"],
+                       **({"image": f"{e['qid']}.webp"} if e["qid"] in images else {})}
                       for e in data["cards"]]}

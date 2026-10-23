@@ -56,6 +56,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `counties_cli.py` | `deck-counties curate STATE --rows TSV` (draft YAML) / `build STATE` (→ `memory-quiz-app/data/decks` + `assets/<stem>_map/`). |
 | `history_dates.py` | Major System core: `major_digits` (CMUdict phones → digits, x cluster = 7), `peg_number` (last two digits; first two for `years_ago` and approximate round years), `entry_problems`/`file_problems`, `peg_load`. |
 | `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break; `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
+| `scene_images.py` | Gemini image REST client for scene pictures: `scene_prompt` (mnemonic-aid wording + `STYLES`), `plan`/`record` (manifest, skip unchanged), `current_images` (image matches current scene text), `generate` (backoff on 429/5xx), `api_key` (Keychain). |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
 | `grammar.py` | Grammar-table core. `derive` (every form of a verb by rule; irregular present systems from `_IRREGULAR`; `semi_deponent`, `exclude`), `PAGES`/`GRID_TABLES`/`page_tables`/`verb_pages` (a verb's pages; empty rows/cols dropped), `parse_pages`, `wrong_pool` (see *Grammar tables*), `validate` (rules vs config, pages and absence included), `item_string` = `<lang>:<lemma_key>|<tag>`, `assemble_artifact` (flat `tables` with `rows`/`cols`/`grid` + `pages`). |
 | `grammar_nominal.py` | Noun + pronoun decks: `derive_noun` (declension rules), `derive_pronoun` (Wheelock tables + derived compounds), `lexeme_tables`, `stems`, `wrong_pool` (same word only), `validate`, `assemble_artifact` (via `grammar.envelope`). |
@@ -172,6 +173,7 @@ What will bite you:
   `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
   deck configs — a loop over `configs/companies/*.yaml` must skip `*.mnemonics.yaml`.
 - **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
+- **Scene images** (2026-10-23, Alnylam only): `scripts/generate_scene_images.py <slug>` → `results/generate_scene_images/<slug>/<model>/<style>/` (default `gemini-3.1-flash-image`, `realistic`; key from macOS Keychain `gemini-api-key`). Anchor drawn first, sent as reference with every scene; `manifest.json` records each prompt, so only new/edited scenes are redrawn (paid). `--build` copies images drawn from the scene's CURRENT text to `memory-quiz-app/data/mnemonics/images/<deck>/` and names them in the sidecar (`image`). Model sometimes writes text despite the prompt — eyeball before shipping.
 
 ## Source-file decks (`deck-code-mcq`)
 

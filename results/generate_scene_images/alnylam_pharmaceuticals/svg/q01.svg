@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f8fd8"/>
+      <stop offset="1" stop-color="#bfe1f5"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3b874"/>
+      <stop offset="1" stop-color="#c48f4a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff7c2" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#ffd23f" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffb000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wool" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#fffdf6"/>
+      <stop offset="1" stop-color="#e6dcc8"/>
+    </radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a6537"/>
+      <stop offset="1" stop-color="#6e4422"/>
+    </linearGradient>
+    <g id="puff"><circle r="22" fill="url(#wool)" stroke="#d2c4a8" stroke-width="2"/></g>
+  </defs>
+
+  <!-- sky and desert -->
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <path d="M0 300 Q200 280 400 295 T800 290 V450 H0 Z" fill="url(#sand)"/>
+  <path d="M0 340 Q250 325 520 345 T800 335" fill="none" stroke="#b07c3c" stroke-width="3" opacity="0.5"/>
+
+  <!-- the hot SUN: huge, glowing, rays -->
+  <circle cx="170" cy="115" r="150" fill="url(#glow)"/>
+  <g stroke="#ffb627" stroke-width="10" stroke-linecap="round">
+    <line x1="170" y1="10" x2="170" y2="-20"/><line x1="170" y1="220" x2="170" y2="250"/>
+    <line x1="65" y1="115" x2="35" y2="115"/><line x1="275" y1="115" x2="305" y2="115"/>
+    <line x1="96" y1="41" x2="74" y2="19"/><line x1="244" y1="189" x2="266" y2="211"/>
+    <line x1="96" y1="189" x2="74" y2="211"/><line x1="244" y1="41" x2="266" y2="19"/>
+  </g>
+  <circle cx="170" cy="115" r="72" fill="#ffd23f" stroke="#ff9f1c" stroke-width="6"/>
+  <circle cx="150" cy="95" r="22" fill="#fff3a6" opacity="0.7"/>
+
+  <!-- heat shimmer -->
+  <g fill="none" stroke="#fff4d0" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <path d="M300 250 q8 -10 0 -20 q-8 -10 0 -20"/>
+    <path d="M330 262 q8 -10 0 -20 q-8 -10 0 -20"/>
+    <path d="M720 255 q8 -10 0 -20 q-8 -10 0 -20"/>
+  </g>
+
+  <!-- desk -->
+  <ellipse cx="575" cy="405" rx="150" ry="14" fill="#8a5a2b" opacity="0.35"/>
+  <rect x="440" y="300" width="270" height="22" rx="4" fill="url(#wood)"/>
+  <rect x="458" y="322" width="18" height="82" fill="#6e4422"/>
+  <rect x="674" y="322" width="18" height="82" fill="#6e4422"/>
+
+  <!-- incorporation papers: stacked sheets, lines, red seal (no text) -->
+  <g transform="rotate(-4 590 292)">
+    <rect x="520" y="262" width="150" height="40" fill="#efe6cf" stroke="#b9a983" stroke-width="2"/>
+    <rect x="514" y="256" width="150" height="40" fill="#f8f2df" stroke="#b9a983" stroke-width="2"/>
+    <g stroke="#9a8a66" stroke-width="2">
+      <line x1="526" y1="266" x2="650" y2="266"/>
+      <line x1="526" y1="274" x2="640" y2="274"/>
+      <line x1="526" y1="282" x2="610" y2="282"/>
+    </g>
+    <circle cx="645" cy="285" r="8" fill="#c0392b" stroke="#8e2a1f" stroke-width="2"/>
+    <path d="M560 288 q8 -8 14 0 t14 0" fill="none" stroke="#1d3c78" stroke-width="2.5"/>
+  </g>
+
+  <!-- the LAMB (anchor component): wool body, black face and legs -->
+  <g id="lamb">
+    <ellipse cx="330" cy="400" rx="105" ry="12" fill="#8a5a2b" opacity="0.35"/>
+    <g fill="#2b2622">
+      <rect x="262" y="330" width="16" height="68" rx="6"/>
+      <rect x="292" y="335" width="16" height="64" rx="6"/>
+      <rect x="360" y="335" width="16" height="64" rx="6"/>
+    </g>
+    <g>
+      <use href="#puff" x="260" y="300"/><use href="#puff" x="290" y="280"/>
+      <use href="#puff" x="325" y="275"/><use href="#puff" x="360" y="285"/>
+      <use href="#puff" x="385" y="305"/><use href="#puff" x="270" y="330"/>
+      <use href="#puff" x="305" y="320"/><use href="#puff" x="345" y="322"/>
+      <use href="#puff" x="378" y="330"/><use href="#puff" x="238" y="318"/>
+    </g>
+    <!-- raised front leg reaching to the desk, holding the pen -->
+    <path d="M385 315 Q440 300 488 286" fill="none" stroke="#2b2622" stroke-width="16" stroke-linecap="round"/>
+    <!-- head -->
+    <use href="#puff" x="408" y="232"/>
+    <ellipse cx="380" cy="248" rx="22" ry="10" fill="#2b2622" transform="rotate(-25 380 248)"/>
+    <ellipse cx="452" cy="244" rx="22" ry="10" fill="#2b2622" transform="rotate(25 452 244)"/>
+    <ellipse cx="418" cy="262" rx="28" ry="34" fill="#2b2622"/>
+    <circle cx="406" cy="255" r="5" fill="#fff"/><circle cx="431" cy="255" r="5" fill="#fff"/>
+    <circle cx="407" cy="256" r="2.5" fill="#111"/><circle cx="432" cy="256" r="2.5" fill="#111"/>
+    <path d="M410 283 q8 6 16 0" fill="none" stroke="#6b5f55" stroke-width="2.5"/>
+  </g>
+
+  <!-- fountain pen in the hoof, nib on the signature -->
+  <g transform="rotate(8 480 280)">
+    <rect x="476" y="275" width="62" height="10" rx="4" fill="#1d1d1d"/>
+    <rect x="510" y="275" width="6" height="10" fill="#d4af37"/>
+    <path d="M538 275 L556 280 L538 285 Z" fill="#d4af37"/>
+  </g>
+  <!-- hoof gripping the pen -->
+  <ellipse cx="490" cy="284" rx="11" ry="9" fill="#2b2622"/>
+</svg>
