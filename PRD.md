@@ -242,6 +242,20 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 
 **One deck built** (2026-09-21): Foundation Medicine, 15 cards from 16 durable facts (one dropped as sector-level knowledge, two volatile facts extracted and refused). Distractors are drawn from other companies in the same dossier, so a wrong answer teaches a second entry.
 
+**Memory scenes** (2026-10-21): per company one anchor image (Alnylam → LAMB) in every scene; dates/counts carry Major System pegs. Rules `configs/companies/mnemonic_policy.md`; sidecar → quiz `data/mnemonics/`.
+
+**Scene images** (2026-10-23): one generated picture per scene, so the scene is seen, not only read. Gemini API (`gemini-3.1-flash-image`, "Nano Banana 2") via `scripts/generate_scene_images.py`; key in macOS Keychain. Choices, each from a side-by-side pilot on Alnylam:
+- **Full model over Lite** — Lite dropped the SUN peg (the date) and wrote words into 3 of 5 images; a missing peg is worse than no picture.
+- **Realistic over storybook**; storybook kept as an option.
+- **Prompt names the image a mnemonic aid** for the CAPITALISED objects and asks for something striking or strange — the objects became the subject, not props.
+- **Anchor drawn once, sent as reference with every scene** — without it the lamb changed in every image (lamb, statue, adult sheep), which defeats one anchor per company. Tried as `--no-anchor`, rejected.
+- **Hand-drawn SVG by Claude** tried for one scene: clear and text-free but flat clip-art, ~10k tokens/scene. Rejected.
+- `--batch submit` / `--batch wait`: half price, anchors drawn directly first; 257 scenes returned in ~8 min.
+
+`manifest.json` per company records each prompt: only new or edited scenes are redrawn, and `deck-companies --build` ships only images drawn from the scene's current text. **Shipped: 270 images, 24 companies** (Alnylam + Mass General Brigham → Ginkgo Bioworks).
+- ⚠ **Text still appears** in ~1 in 5 images despite the prompt (labels, signs); review by eye, no automatic check yet.
+- ⚠ **Cost was underestimated**: third-party prices put the run at ~$6.50; Google's $10 monthly cap was reached the same day. Measure real per-image cost (Billing → Reports by SKU) on a few images before any larger run.
+
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
 - Output: a `deck_type: code` / `mode: text-mc` deck (`items` = `<source_id>|<qid>`), riding the quiz's existing single-choice loop.

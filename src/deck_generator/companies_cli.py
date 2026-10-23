@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
@@ -27,7 +28,8 @@ from pathlib import Path
 import yaml
 
 from .deck_export import DEFAULT_DECKS_DIR, config_hash
-from . import companies, company_mnemonics
+
+from . import companies, company_mnemonics, scene_images
 
 _ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PEGS = _ROOT / "configs" / "history" / "major_pegs.yaml"
@@ -89,16 +91,30 @@ def _mnemonics(cfg: dict, config: Path) -> dict | None:
     return yaml.safe_load((config.parent / name).read_text(encoding="utf-8")) if name else None
 
 
-def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_dir: Path) -> None:
+def _copy_scene_images(scenes: dict, src: Path, dest: Path) -> set[str]:
+    """Copy the current pictures to ``dest``, replacing what was there; return their qids."""
+    qids = scene_images.current_images(scenes, src)
+    shutil.rmtree(dest, ignore_errors=True)
+    if qids:
+        dest.mkdir(parents=True)
+        for qid in qids:
+            shutil.copy2(src / f"{qid}.webp", dest / f"{qid}.webp")
+    return qids
+
+
+def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_dir: Path,
+                     images_root: Path = scene_images.ROOT) -> None:
     scenes = _mnemonics(cfg, config)
     if scenes is None:
         return
     deck = Path(_artifact_name(config)).stem
     out_dir.mkdir(parents=True, exist_ok=True)
+    images = _copy_scene_images(scenes, scene_images.image_dir(config.stem, root=images_root),
+                                out_dir / "images" / deck)
     out = out_dir / f"{deck}.json"
-    out.write_text(json.dumps(company_mnemonics.assemble(scenes, cards, cfg, deck),
+    out.write_text(json.dumps(company_mnemonics.assemble(scenes, cards, cfg, deck, images),
                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"built {out} — {len(scenes['cards'])} scenes")
+    print(f"built {out} — {len(scenes['cards'])} scenes, {len(images)} images")
 
 
 def _fmt(counts: dict[str, int]) -> str:
@@ -121,7 +137,8 @@ def _print(report: companies.Report, cards: list[companies.Card], config: Path,
 
 
 def _build(cfg: dict, config: Path, out_dir: Path, today: date | None,
-           mnemonics_out: Path = DEFAULT_MNEMONICS_OUT) -> None:
+           mnemonics_out: Path = DEFAULT_MNEMONICS_OUT,
+           images_root: Path = scene_images.ROOT) -> None:
     report, cards, audit, digest = _run_checks(cfg, config, out_dir, today)
     _print(report, cards, config, audit)
     if not report.ok:
@@ -141,7 +158,7 @@ def _build(cfg: dict, config: Path, out_dir: Path, today: date | None,
         print(f"  WARN source snapshot changed since the last build ({prior[:12]}… → "
               f"{digest[:12]}…); quotes were re-verified against the new text")
     stamp_p.write_text(digest + "\n", encoding="utf-8")
-    _write_mnemonics(cfg, config, cards, mnemonics_out)
+    _write_mnemonics(cfg, config, cards, mnemonics_out, images_root)
 
     print(f"built {out} — {len(cards)} cards (source: manual)")
     print("  NOT synced: copy to memory-quiz-app/data/decks/ by hand. `source: manual` means "
@@ -169,6 +186,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--build", action="store_true", help="assemble the artifact (default: check only)")
     p.add_argument("--mnemonics-out", type=Path, default=DEFAULT_MNEMONICS_OUT,
                    help="where --build writes the memory-scene sidecar")
+    p.add_argument("--scene-images", type=Path, default=scene_images.ROOT,
+                   help="generated scene pictures (scripts/generate_scene_images.py output)")
     p.add_argument("--stale", action="store_true",
                    help="report only the recheck window and exit; no validation, no writes")
     p.add_argument("--today", type=date.fromisoformat, default=None,
@@ -179,7 +198,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.stale:
         sys.exit(_stale_only(cfg, args.config, args.today))
     if args.build:
-        _build(cfg, args.config, args.out, args.today, args.mnemonics_out)
+        _build(cfg, args.config, args.out, args.today, args.mnemonics_out, args.scene_images)
     else:
         report, cards, audit, _ = _run_checks(cfg, args.config, args.out, args.today)
         _print(report, cards, args.config, audit)
