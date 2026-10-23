@@ -250,6 +250,7 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - **Prompt names the image a mnemonic aid** for the CAPITALISED objects and asks for something striking or strange — the objects became the subject, not props.
 - **Anchor drawn once, sent as reference with every scene** — without it the lamb changed in every image (lamb, statue, adult sheep), which defeats one anchor per company. Tried as `--no-anchor`, rejected.
 - **Hand-drawn SVG by Claude** tried for one scene: clear and text-free but flat clip-art, ~10k tokens/scene. Rejected.
+- **Blender render by Claude** (Cycles, primitives only) tried for q01 (`alnylam_pharmaceuticals/blender/`): real light and shadow, objects clear, no text, no API cost; but clay-toy look (bubble wool, no face or hooves), ~150-line hand-built scene + look-and-fix round per scene. Too costly in tokens for 1,000 scenes. Not adopted. Needs unsandboxed run (sandbox blocks Metal GPU check). Untested next option: local open model (FLUX.1 via mflux; Kontext for anchor reference).
 - `--batch submit` / `--batch wait`: half price, anchors drawn directly first; 257 scenes returned in ~8 min.
 
 `manifest.json` per company records each prompt: only new or edited scenes are redrawn, and `deck-companies --build` ships only images drawn from the scene's current text. **Shipped: 270 images, 24 companies** (Alnylam + Mass General Brigham → Ginkgo Bioworks).
