@@ -169,7 +169,9 @@ What will bite you:
   `configs/companies/mnemonic_policy.md`, checked by `company_mnemonics.py` (anchor in capitals
   in every scene, ≤25 words; every year/count/money/area number in the answer → its peg from
   `configs/history/major_pegs.yaml`, in answer order; money/area also need a unit image).
-  A bad scene FAILS the build. `--build` writes the sidecar straight to
+  A bad scene FAILS the build. Optional `story:` (Dewpoint pilot) = scenes as one narrative:
+  qids, link sentences (≤25 words, anchor optional) and `---` paragraph breaks; every scene
+  exactly once (`story_problems`). `--build` writes the sidecar straight to
   `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
   deck configs — a loop over `configs/companies/*.yaml` must skip `*.mnemonics.yaml`.
 - **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
