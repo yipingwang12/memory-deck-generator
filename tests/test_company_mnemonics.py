@@ -142,7 +142,56 @@ class TestProblems:
         assert any("words" in p for p in _problems([_entry("q13", long)]))
 
 
+STORY_CARDS = [_entry("q13", "The LAMB sleeps under a BRIDGE."),
+               _entry("q08", "The LAMB eats six plates of SUSHI.", "sushi")]
+
+
+def _story_problems(story, cards=STORY_CARDS):
+    return _problems(cards) + cm.story_problems(
+        {"anchor": "LAMB", "cards": cards, "story": story})
+
+
+class TestStory:
+    """A company narrative: every scene once, in story order, joined by link sentences."""
+
+    def test_no_story_is_fine(self):
+        assert cm.story_problems({"anchor": "LAMB", "cards": STORY_CARDS}) == []
+
+    def test_good_story_passes(self):
+        assert _story_problems(["At dawn the LAMB wakes.", "q13", "q08"]) == []
+
+    def test_every_scene_must_be_in_the_story(self):
+        assert any("q08" in p for p in _story_problems(["q13"]))
+
+    def test_a_scene_appears_once(self):
+        assert any("twice" in p for p in _story_problems(["q13", "q08", "q13"]))
+
+    def test_a_qid_without_a_scene(self):
+        assert any("q77" in p for p in _story_problems(["q13", "q08", "q77"]))
+
+    def test_link_may_omit_the_anchor(self):
+        """A link is read only inside the story, so it may say "it"; a scene stands alone."""
+        assert _story_problems(["At dawn the barn is quiet.", "q13", "q08"]) == []
+
+    def test_paragraph_break(self):
+        assert _story_problems(["q13", "---", "q08"]) == []
+
+    def test_link_word_limit(self):
+        assert any("words" in p for p in _story_problems(["The LAMB " + "walks " * 30, "q13", "q08"]))
+
+
 class TestAssemble:
+    def test_sidecar_carries_the_story_in_order(self):
+        data = {"anchor": "LAMB", "cards": STORY_CARDS, "story": ["The LAMB wakes.", "q13", "q08"]}
+        out = cm.assemble(data, CARDS, {"namespace": NS}, "d")
+        assert out["story"] == [{"text": "The LAMB wakes."}, {"item": f"{NS}|q13"},
+                                {"item": f"{NS}|q08"}]
+
+    def test_sidecar_marks_paragraph_breaks(self):
+        data = {"anchor": "LAMB", "cards": STORY_CARDS, "story": ["q13", "---", "q08"]}
+        out = cm.assemble(data, CARDS, {"namespace": NS}, "d")
+        assert out["story"][1] == {"break": True}
+
     def test_sidecar_keys_scenes_by_item_and_answer(self):
         cfg = {"namespace": NS}
         data = {"anchor": "LAMB", "cards": [_entry("q13", "The LAMB sleeps under a BRIDGE.")]}
@@ -168,6 +217,22 @@ def test_committed_pilot_passes():
     data = yaml.safe_load((root / "companies" / "alnylam_pharmaceuticals.mnemonics.yaml").read_text())
     assert cm.problems(data, cards, cm.load_pegs(root / "history" / "major_pegs.yaml")) == []
     assert {e["qid"] for e in data["cards"]} == {c.qid for c in cards}
+
+
+def test_committed_stories_pass():
+    root = Path(__file__).resolve().parents[1] / "configs"
+    from deck_generator.companies import load_curated
+    import yaml
+    pegs = cm.load_pegs(root / "history" / "major_pegs.yaml")
+    stories = 0
+    for path in sorted((root / "companies").glob("*.mnemonics.yaml")):
+        data = yaml.safe_load(path.read_text())
+        if not data.get("story"):
+            continue
+        stories += 1
+        cards = load_curated(path.with_name(path.name.replace(".mnemonics.yaml", ".curated.jsonl")))
+        assert cm.problems(data, cards, pegs) == [], path.name
+    assert stories >= 8     # Dewpoint pilot + Tessera…Jnana
 
 
 class TestCli:

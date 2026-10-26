@@ -82,3 +82,17 @@ Institutions use a sound keyword: UMass → MOOSE, Whitehead → white HEAD.
   a scene whose recorded answer no longer matches.
 - Cards with no image fact (strategy names, modality) still get a scene; use the anchor
   and one action that shows the meaning.
+
+## Story (optional; pilot: Dewpoint, 2026-10-24)
+
+The company's scenes as one narrative. Facts in one situation do not interfere (fan effect).
+Unrelated detail hurts recall, and invented detail can become a false "fact".
+
+- `story:` lists entries in order: a scene's qid, a link sentence, or `---` (paragraph).
+- Every scene appears once. The quiz shows the card's own scene after an answer, and the
+  whole story in preview with that scene marked.
+- Each scene must still work alone — it is all the reader sees after the answer.
+- Link sentence: ≤ 25 words, no card fact; may say "it" (read only in the story). It joins
+  parts by cause or time. Never imply a cause the source does not give.
+- Extra detail stays in the mnemonic world (dawn, a leaf). Never a detail that sounds like
+  a fact about the company.

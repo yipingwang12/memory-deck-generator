@@ -140,15 +140,51 @@ def problems(data: dict, cards: list[Card], pegs: dict[str, str]) -> list[str]:
             out.append(f"{qid}: no such card in curated")
             continue
         out.extend(_entry_problems(entry, by_qid[qid], anchor, pegs))
+    return out + story_problems(data)
+
+
+_QID = re.compile(r"q\d+")
+BREAK = "---"
+
+
+def story_problems(data: dict) -> list[str]:
+    """Rule breaks in the optional ``story``: the company's scenes as one narrative.
+    An entry is a scene's qid, ``---`` (paragraph break) or a link sentence. Every scene
+    appears exactly once, so the story and the per-card scenes cannot disagree. A link
+    holds no card fact; unlike a scene it may omit the anchor — it is read only in the story."""
+    story = data.get("story")
+    if story is None:
+        return []
+    scenes = {e["qid"] for e in data["cards"]}
+    out, seen = [], set()
+    for entry in story:
+        if entry == BREAK:
+            continue
+        if _QID.fullmatch(entry):
+            if entry not in scenes:
+                out.append(f"story: {entry} has no scene")
+            elif entry in seen:
+                out.append(f"story: {entry} given twice")
+            seen.add(entry)
+            continue
+        if len(entry.split()) > MAX_WORDS:
+            out.append(f"story: link has {len(entry.split())} words (max {MAX_WORDS})")
+    out += [f"story: {q} missing from the story" for q in sorted(scenes - seen)]
     return out
 
 
 def assemble(data: dict, cards: list[Card], cfg: dict, deck: str,
              images: set[str] = frozenset()) -> dict:
     """The quiz sidecar: one row per scene, keyed by item and the answer it describes.
-    ``images``: qids with a current picture, named ``<qid>.webp`` beside the sidecar."""
+    ``images``: qids with a current picture, named ``<qid>.webp`` beside the sidecar.
+    A ``story`` refers to scenes by item, never copies their text, so a scene the quiz
+    drops for a changed answer leaves the story too."""
     by_qid = {c.qid: c for c in cards}
+    story = [{"break": True} if e == BREAK else
+             {"item": f"{cfg['namespace']}|{e}"} if _QID.fullmatch(e) else {"text": e}
+             for e in data.get("story") or []]
     return {"schema": SCHEMA, "deck": deck, "anchor": data["anchor"],
+            **({"story": story} if story else {}),
             "cards": [{"item": f"{cfg['namespace']}|{e['qid']}",
                        "answer": by_qid[e["qid"]].answer, "scene": e["scene"],
                        **({"image": f"{e['qid']}.webp"} if e["qid"] in images else {})}

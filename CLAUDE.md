@@ -57,6 +57,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `history_dates.py` | Major System core: `major_digits` (CMUdict phones → digits, x cluster = 7), `peg_number` (last two digits; first two for `years_ago` and approximate round years), `entry_problems`/`file_problems`, `peg_load`. |
 | `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break; `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
 | `scene_images.py` | Gemini image REST client for scene pictures: `scene_prompt` (mnemonic-aid wording + `STYLES`), `plan`/`record` (manifest, skip unchanged), `current_images` (image matches current scene text), `generate` (backoff on 429/5xx), `api_key` (Keychain). |
+| `company_snapshot.py` | `python -m deck_generator.company_snapshot NAME OUT --revised DATE` — renders one `career_planning/boston_companies.yaml` entry to `<slug>.source.txt` (the quote oracle). Byte-identical to the earlier hand-rendered snapshots (test pins Tessera). Update the dossier, then re-render; never hand-edit a snapshot. |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
 | `grammar.py` | Grammar-table core. `derive` (every form of a verb by rule; irregular present systems from `_IRREGULAR`; `semi_deponent`, `exclude`), `PAGES`/`GRID_TABLES`/`page_tables`/`verb_pages` (a verb's pages; empty rows/cols dropped), `parse_pages`, `wrong_pool` (see *Grammar tables*), `validate` (rules vs config, pages and absence included), `item_string` = `<lang>:<lemma_key>|<tag>`, `assemble_artifact` (flat `tables` with `rows`/`cols`/`grid` + `pages`). |
 | `grammar_nominal.py` | Noun + pronoun decks: `derive_noun` (declension rules), `derive_pronoun` (Wheelock tables + derived compounds), `lexeme_tables`, `stems`, `wrong_pool` (same word only), `validate`, `assemble_artifact` (via `grammar.envelope`). |
@@ -169,7 +170,9 @@ What will bite you:
   `configs/companies/mnemonic_policy.md`, checked by `company_mnemonics.py` (anchor in capitals
   in every scene, ≤25 words; every year/count/money/area number in the answer → its peg from
   `configs/history/major_pegs.yaml`, in answer order; money/area also need a unit image).
-  A bad scene FAILS the build. `--build` writes the sidecar straight to
+  A bad scene FAILS the build. Optional `story:` (Dewpoint pilot) = scenes as one narrative:
+  qids, link sentences (≤25 words, anchor optional) and `---` paragraph breaks; every scene
+  exactly once (`story_problems`). `--build` writes the sidecar straight to
   `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
   deck configs — a loop over `configs/companies/*.yaml` must skip `*.mnemonics.yaml`.
 - **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
