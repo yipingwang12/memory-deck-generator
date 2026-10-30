@@ -5,6 +5,7 @@ from __future__ import annotations
 import base64
 import io
 import json
+import re
 
 import pytest
 from PIL import Image
@@ -38,6 +39,12 @@ class TestPrompts:
     @pytest.mark.parametrize('style', sorted(si.STYLES))
     def test_every_style_forbids_text(self, style):
         assert 'no text' in si.scene_prompt('x', 'LAMB', style).lower()
+
+    @pytest.mark.parametrize('style', sorted(si.STYLES))
+    def test_no_style_constrains_the_background(self, style):
+        # A detailed background can itself be a memory cue (user's choice, 2026-10-29).
+        assert 'background' not in si.scene_prompt('x', 'LAMB', style).lower()
+        assert 'background' not in si.anchor_prompt('LAMB', style).lower()
 
     def test_scene_prompt_says_it_is_a_mnemonic_for_the_capitalised_objects(self):
         p = si.scene_prompt('x', 'LAMB').lower()
@@ -200,3 +207,45 @@ class TestBatch:
         assert got['acme/q01'].startswith(b'\x89PNG')
         assert 'boom' in got['acme/q02']
         assert 'SAFETY' in got['acme/q03']
+
+
+STORY_SCENES = {
+    'anchor': 'KERNEL',
+    'story': ['q02', 'The soldiers need pay, so the KERNEL asks for help.', '---', 'q01'],
+    'cards': [
+        {'qid': 'q01', 'scene': 'A HARP (ARPA-H) plays beside the KERNEL.'},
+        {'qid': 'q02', 'scene': 'The KERNEL fights MULTIPLE SCARS (multiple sclerosis) on 2 nerves.'},
+    ],
+}
+
+
+class TestChatgptSheet:
+    def test_scene_hint_brackets_are_dropped(self):
+        assert si.strip_hints('A HARP (ARPA-H) plays (loudly).') == 'A HARP plays.'
+
+    def test_scenes_follow_story_order_with_links_as_notes(self):
+        sheet = si.chatgpt_sheet(STORY_SCENES, 'Kernal Biologics')
+        q02, link, q01 = (sheet.index(s) for s in ('| 1 | q02 |', 'The soldiers need pay', '| 2 | q01 |'))
+        assert q02 < link < q01
+
+    def test_without_story_scenes_follow_card_order(self):
+        sheet = si.chatgpt_sheet({**STORY_SCENES, 'story': None}, 'K')
+        assert sheet.index('| 1 | q01 |') < sheet.index('| 2 | q02 |')
+
+    def test_prompts_carry_no_hints_and_setup_names_the_anchor(self):
+        sheet = si.chatgpt_sheet(STORY_SCENES, 'K')
+        assert 'ARPA-H' not in sheet and 'A HARP plays beside the KERNEL.' in sheet
+        assert 'a single KERNEL' in sheet
+
+    def test_setup_forbids_combined_pictures_and_says_nothing_of_background(self):
+        setup = si.CHATGPT_SETUP.lower()
+        assert 'never combine' in setup and 'background' not in setup
+
+    def test_setup_allows_only_lettering_a_scene_describes(self):
+        setup = si.CHATGPT_SETUP.lower()
+        assert 'no captions or labels' in setup and 'lettering a scene itself describes' in setup
+
+    def test_setup_gives_no_example_lettering(self):
+        # ChatGPT painted the old example "SPTX" (Seaport's ticker) on an Asimov flag, 2026-10-29.
+        assert not re.search(r'[A-Z]{2,}[-\d]', si.CHATGPT_SETUP.replace('{anchor}', ''))
+        assert 'SPTX' not in si.CHATGPT_SETUP

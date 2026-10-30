@@ -11,6 +11,7 @@ import base64
 import hashlib
 import io
 import json
+import re
 import subprocess
 import time
 from dataclasses import dataclass
@@ -28,9 +29,8 @@ MANIFEST = 'manifest.json'
 _NO_TEXT = ('Each named object is large, clear and easy to recognise. '
             'No text, letters, numbers or captions anywhere in the image.')
 STYLES = {
-    'storybook': f'Bright, simple storybook illustration on a plain light background. {_NO_TEXT}',
-    'realistic': ('Photorealistic image, natural light, real materials and textures, '
-                  f'uncluttered plain background. {_NO_TEXT}'),
+    'storybook': f'Bright, simple storybook illustration. {_NO_TEXT}',
+    'realistic': f'Photorealistic image, natural light, real materials and textures. {_NO_TEXT}',
 }
 DEFAULT_STYLE = 'realistic'
 
@@ -63,6 +63,47 @@ def scene_prompt(scene: str, anchor: str, style: str = DEFAULT_STYLE,
             f'reader remember the objects written in capitals, so every one of them must be '
             f'clearly visible. Make the scene striking, memorable or strange in some way, '
             f'because unusual images are easier to recall.{ref} {STYLES[style]}')
+
+
+CHATGPT_MODEL = 'chatgpt-instant'
+CHATGPT_SETUP = (
+    "I'm making memory-aid pictures for a flashcard story. All pictures share one character: "
+    'a single {anchor}. Keep this exact {anchor} identical in every picture I ask for in this chat.\n\n'
+    'Style for every picture: photorealistic, natural light, real materials and textures. Every '
+    'object I write in CAPITALS must be large, clear and easy to recognise; it is what the viewer '
+    'has to remember. Make each scene striking or a little strange, because unusual images are '
+    'easier to recall. No captions or labels; the only lettering allowed is lettering a scene '
+    'itself describes, exactly as written there. Draw one picture per message and never combine two scenes; each picture gets its '
+    'own full frame, with no borders or panels.\n\n'
+    'First picture: the {anchor} alone, facing the viewer, as a character reference.')
+
+
+def strip_hints(scene: str) -> str:
+    """Drop bracketed source hints ("a HARP (ARPA-H)"): an image model draws them as labels."""
+    return re.sub(r'\s*\([^)]*\)', '', scene)
+
+
+def chatgpt_sheet(scenes: dict, title: str) -> str:
+    """prompts.md for drawing one company's scenes by hand in ChatGPT: a setup message, then one
+    prompt per scene in story order, story links as notes."""
+    by_qid = {c['qid']: c['scene'] for c in scenes['cards']}
+    order = scenes.get('story') or list(by_qid)
+    rows, n = [], 0
+    for entry in order:
+        if entry == '---':
+            continue
+        if entry not in by_qid:
+            rows.append(f'| — | — | *Story link, no picture: {entry}* |')
+            continue
+        n += 1
+        rows.append(f'| {n} | {entry} | {strip_hints(by_qid[entry])} |')
+    setup = CHATGPT_SETUP.format(anchor=scenes['anchor'])
+    return (f'# {title} — ChatGPT scene prompts\n\n'
+            'ChatGPT (Instant), one chat. Paste message 1, then each scene prompt as its own '
+            'message. Save each picture as `<qid>.png` in this folder.\n\n'
+            f'## Message 1 — rules + anchor\n\n```\n{setup}\n```\n\n'
+            '## Scenes (story order)\n\n| # | qid | Prompt |\n|---|---|---|\n'
+            + '\n'.join(rows) + '\n')
 
 
 def request_body(prompt: str, reference: bytes | None = None) -> dict:

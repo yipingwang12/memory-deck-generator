@@ -257,6 +257,12 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - ⚠ **Text still appears** in ~1 in 5 images despite the prompt (labels, signs); review by eye, no automatic check yet.
 - ⚠ **Cost was underestimated**: third-party prices put the run at ~$6.50; Google's $10 monthly cap was reached the same day. Measure real per-image cost (Billing → Reports by SKU) on a few images before any larger run.
 
+**ChatGPT scene images** (2026-10-29): free alternative to Gemini — user draws scenes in a ChatGPT subscription (Instant). `scripts/chatgpt_scene_prompts.py SLUG…` writes `<slug>/chatgpt-instant/realistic/prompts.md`: one setup message (anchor, style, rules) + scene table in story order, link sentences shown but not drawn, bracketed hints stripped. Downloads → `anchor.webp` + `<qid>.webp` by hand.
+- **No background instruction in any prompt** (Gemini too): a detailed background may itself be a cue. Changes every Gemini prompt digest → plain rerun would redraw all; use `--only`.
+- **Setup must hold no example lettering** — an example ("flag that reads SPTX") was painted into another company's scene. Test-guarded.
+- ⚠ ChatGPT zips are pictures cut from one combined sheet: ~380 px, slivers of neighbours + white gutters → crop each; it may merge two scenes into one picture. Saving each image from the chat avoids this.
+- ⚠ **Not shipped to quiz**: no `manifest.json`, so `current_images` skips them. Done: Kernal, Jnana, Remix, Asimov (q02 to redraw); sheets for 24 decks without images.
+
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
 - Output: a `deck_type: code` / `mode: text-mc` deck (`items` = `<source_id>|<qid>`), riding the quiz's existing single-choice loop.
