@@ -242,7 +242,7 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 
 **One deck built** (2026-09-21): Foundation Medicine, 15 cards from 16 durable facts (one dropped as sector-level knowledge, two volatile facts extracted and refused). Distractors are drawn from other companies in the same dossier, so a wrong answer teaches a second entry.
 
-**Memory scenes** (2026-10-21): per company one anchor image (Alnylam → LAMB) in every scene; dates/counts carry Major System pegs. Rules `configs/companies/mnemonic_policy.md`; sidecar → quiz `data/mnemonics/`.
+**Memory scenes** (2026-10-21; all 108 companies / 1,106 cards + a story each, 2026-10-30): per company one anchor image (Alnylam → LAMB) in every scene; dates/counts carry Major System pegs. Rules `configs/companies/mnemonic_policy.md`; sidecar → quiz `data/mnemonics/`.
 
 **Scene images** (2026-10-23): one generated picture per scene, so the scene is seen, not only read. Gemini API (`gemini-3.1-flash-image`, "Nano Banana 2") via `scripts/generate_scene_images.py`; key in macOS Keychain. Choices, each from a side-by-side pilot on Alnylam:
 - **Full model over Lite** — Lite dropped the SUN peg (the date) and wrote words into 3 of 5 images; a missing peg is worse than no picture.

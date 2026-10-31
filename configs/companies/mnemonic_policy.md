@@ -83,7 +83,7 @@ Institutions use a sound keyword: UMass → MOOSE, Whitehead → white HEAD.
 - Cards with no image fact (strategy names, modality) still get a scene; use the anchor
   and one action that shows the meaning.
 
-## Story (optional; pilot: Dewpoint, 2026-10-24)
+## Story (all 108 companies since 2026-10-30; pilot: Dewpoint, 2026-10-24)
 
 The company's scenes as one narrative. Facts in one situation do not interfere (fan effect).
 Unrelated detail hurts recall, and invented detail can become a false "fact".
@@ -96,3 +96,5 @@ Unrelated detail hurts recall, and invented detail can become a false "fact".
   parts by cause or time. Never imply a cause the source does not give.
 - Extra detail stays in the mnemonic world (dawn, a leaf). Never a detail that sounds like
   a fact about the company.
+- No pronoun for a real person (sources do not state them): use the image or the name.
+  A pronoun for a mnemonic image (the ADMIRAL's egg) is fine.

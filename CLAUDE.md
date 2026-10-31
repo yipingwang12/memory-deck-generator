@@ -166,11 +166,11 @@ What will bite you:
   findings do. Reword the stem; never renumber.
 - Artifact is `source: manual` — copy to the quiz repo by hand; neither `deck-export`'s clear
   nor the orchestrator's sync produces or removes it.
-- **Memory scenes** (41 companies, cards due 2026-10-21): config key `mnemonics: <slug>.mnemonics.yaml`, rules in
+- **Memory scenes** (all 108 companies / 1,106 cards since 2026-10-30; first 41 on 2026-10-21): config key `mnemonics: <slug>.mnemonics.yaml`, rules in
   `configs/companies/mnemonic_policy.md`, checked by `company_mnemonics.py` (anchor in capitals
   in every scene, ≤25 words; every year/count/money/area number in the answer → its peg from
   `configs/history/major_pegs.yaml`, in answer order; money/area also need a unit image).
-  A bad scene FAILS the build. Optional `story:` (Dewpoint pilot) = scenes as one narrative:
+  A bad scene FAILS the build. `story:` (every company since 2026-10-30; Dewpoint pilot) = scenes as one narrative:
   qids, link sentences (≤25 words, anchor optional) and `---` paragraph breaks; every scene
   exactly once (`story_problems`). `--build` writes the sidecar straight to
   `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
