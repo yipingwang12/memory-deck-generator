@@ -263,6 +263,13 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - ⚠ ChatGPT zips are pictures cut from one combined sheet: ~380 px, slivers of neighbours + white gutters → crop each; it may merge two scenes into one picture. Saving each image from the chat avoids this.
 - ⚠ **Not shipped to quiz**: no `manifest.json`, so `current_images` skips them. Done: Kernal, Jnana, Remix, Asimov (q02 to redraw); sheets for 24 decks without images.
 
+**Blender + real assets** (2026-10-30, pilot, not shipped): 2nd Blender try, Alnylam q01/q08/q13 in `alnylam_pharmaceuticals/blender_assets/`. Poly Haven CC0 HDRIs (world light + photo backplate), shadow-catcher ground, sun lamp aligned to measured HDRI sun, area fill, Bloom glare; props/animals from Objaverse (CC-BY, Sketchfab scans). Helpers `scene_kit.py`; one script per scene. Assets in gitignored `cache/scene_assets/` (`polyhaven/ph_get.py`; curl + UA + `-C -`, proxy truncates big downloads).
+- **Better than primitives and Gemini on**: photographic settings, physical light/shadow, exact counts (six plates × two nigiri), deterministic, no text, no API cost; ~15 s/final on Metal GPU.
+- **Worse than Gemini on**: the anchor — toy/figurine scans (porcelain face, pink eye); rigid poses (no hoof on pen, no curled sleep); 2 sheep models → anchor not consistent; settings limited to free HDRIs (q13 = Düsseldorf, not the Charles).
+- Cost: one-time setup (asset search, coordinate bugs) + 3–7 preview rounds per scene.
+- Next (user wants to push further): one rigged, furred sheep (hair system), posed per scene, reused for all 13 Alnylam scenes; reusable composition templates.
+- ⚠ Traps: glTF import sets `rotation_mode='QUATERNION'` → `rotation_euler` silently ignored, set `'XYZ'`; HDRI sun dir x=cos(az)cos(e), y=−sin(az)cos(e), z=sin(e), az=(u−0.5)·2π (measured); Blender 5 compositor = `scene.compositing_node_group`; unsandboxed run only (Metal).
+
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
 - Output: a `deck_type: code` / `mode: text-mc` deck (`items` = `<source_id>|<qid>`), riding the quiz's existing single-choice loop.
