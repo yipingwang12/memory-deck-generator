@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brainco q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — The COCONUT docks at a CYBER PORT in Hong Kong.
+import { THREE, guard, rng, canvasTexture, mat, glow, add, blob, box, cyl, plane, textPlane, makeStage, placeCoconut, reachWorld, finish, palmTree, skyline, junk } from './common.js';
+guard(() => {
+  const { stage, num, scene } = makeStage({ sky: { cover: 0.3, zenith: '#2a1d5e', horizon: '#ff8fb0' }, ambient: { color: '#9aa6ff', intensity: 1.6 } });
+  plane(scene, mat('#1b3a6a', { roughness: 0.2, metalness: 0.3 }), [0, 0, -20], 400, 200);
+  skyline(scene, { z: -65, span: 130, night: true });
+  // quay
+  box(scene, mat('#4a4f66'), [0, -0.3, 2.2], [14, 1.0, 5]);
+  box(scene, glow('#34e8ff', 1.6), [0, 0.22, -0.28], [14, 0.04, 0.06]);
+  // neon gantry cranes + containers
+  const cr = new THREE.Group(); cr.position.set(-4.3, 0.2, 0.6); scene.add(cr);
+  const steel = mat('#5b6bb0', { metalness: 0.4 });
+  for (const [x, z] of [[-1, -0.6], [1, -0.6], [-1, 0.6], [1, 0.6]]) box(cr, steel, [x, 1.6, z], [0.12, 3.2, 0.12]);
+  box(cr, steel, [0, 3.2, 0], [2.6, 0.16, 1.5]); box(cr, steel, [-0.5, 3.35, 0], [0.1, 0.1, 5]);
+  box(cr, glow('#ff3cc8', 1.8), [0, 3.3, 0], [2.7, 0.05, 0.05]); box(cr, glow('#34e8ff', 1.8), [0, 1.0, 0.62], [2.1, 0.05, 0.05]);
+  const cols = ['#ff5a4a', '#34a0ff', '#ffc03a', '#4ac98a'];
+  for (let i = 0; i < 6; i++) for (let j = 0; j < (i % 3) + 1; j++) { const k = box(scene, mat(cols[(i + j) % 4]), [2.0 + i * 1.15, 0.5 + j * 0.62, 1.5 + (i % 2) * 0.1 + 0.2], [1.05, 0.58, 0.5]); box(scene, glow('#34e8ff', 1.2), [2.0 + i * 1.15, 0.5 + j * 0.62, 1.78 + (i % 2) * 0.1 + 0.2], [0.9, 0.03, 0.01]); }
+  // circuit-trace sign
+  const sign = textPlane('CYBERPORT', 3.0, 0.7, { bg: '#0b1030', fg: '#34e8ff', font: 'bold 170px sans-serif' }); sign.position.set(-0.3, 4.1, -1.5); scene.add(sign);
+  box(scene, glow('#34e8ff', 1.5), [-0.3, 3.72, -1.52], [3.1, 0.04, 0.04]);
+  const j = junk(1.0); j.position.set(3.2, 0, -9); j.scale.setScalar(2); scene.add(j);
+  // coconut tied to a bollard on the dock, rope
+  cyl(scene, mat('#222'), [-0.7, 0.45, 1.5], 0.12, 0.5);
+  const c = placeCoconut(scene, { scale: 1.6, x: 0.3, y: 0.2, z: 1.6, ry: -0.25 });
+  c.userData.pose({ arms: { l: [0, 1.7, 0], r: [0.3, 0.6, 0] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  reachWorld(c, 'r', [-0.6, 0.65, 1.55]);
+  const rope = cyl(scene, mat('#d9b878'), [-0.2, 0.62, 1.55], 0.025, 1.0, [0, 0, Math.PI / 2]);
+  finish(stage, scene, num, [c], { cam: [0, 1.5, 6.6], look: [0, 1.9, 0], clouds: false });
+});
+</script></body></html>

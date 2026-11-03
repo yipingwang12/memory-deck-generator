@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// CORNERSTONE ACTS then turns LIQUID
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:null, sky:{cover:0.2}});
+
+scene.background = new THREE.Color('#2a1020');
+box(scene, '#8a5a32', [9, 0.3, 4.5], [0, 0.15, 0]);
+box(scene, '#6a1a30', [9.4, 5.5, 0.2], [0, 3, -2.2]);
+for (const s of [-1, 1]) { box(scene, '#c0243c', [1.6, 5.4, 0.9], [s * 4.1, 2.9, -0.8]); box(scene, '#e8b848', [1.7, 0.2, 0.95], [s * 4.1, 5.6, -0.8]); }
+box(scene, '#c0243c', [9.4, 1.0, 0.9], [0, 5.4, -0.8]);
+const c = stone({ scale: 1.5 }); c.position.set(-0.4, 0.3, 0.7); c.rotation.y = 0.2;
+c.userData.pose({ tilt: 0.12, arms: { l: [-0.5, 1.9, 0], r: [-1.2, 0.5, -0.5] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+const v = L.vial(); v.scale.setScalar(2.4); v.position.set(1.2, 1.1, 1.7); v.rotation.z = -1.5; scene.add(v);
+const drip = cyl(scene, mat('#d8243a', { roughness: 0.2 }), 0.03, 0.9, [1.95, 0.8, 1.7]); 
+cyl(scene, mat('#d8243a', { roughness: 0.15, metalness: 0.2 }), 1.1, 0.02, [2.0, 0.32, 1.5]);
+for (const [x, z, r] of [[1.2, 1.9, 0.3], [2.9, 1.2, 0.35], [2.6, 2.0, 0.2]]) cyl(scene, mat('#d8243a', { roughness: 0.15 }), r, 0.02, [x, 0.32, z]);
+for (const [x, y] of [[-3.0, 3.7], [3.0, 3.8]]) { const m = new THREE.Group(); m.position.set(x, y, -1.9); scene.add(m);
+  blob(m, mat(x < 0 ? '#f2c230' : '#4a8ad0', { roughness: 0.4 }), [0, 0, 0], [0.8, 1.0, 0.18]);
+  for (const s of [-1, 1]) blob(m, mat('#222'), [s * 0.28, 0.2, 0.15], [0.14, 0.09, 0.04], [0, 0, s * -0.3 * (x < 0 ? 1 : -1)]);
+  const mo = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.05, 8, 24, Math.PI), mat('#222')); mo.position.set(0, x < 0 ? -0.15 : -0.4, 0.17); mo.rotation.z = x < 0 ? Math.PI : 0; m.add(mo); }
+const sp = new THREE.SpotLight('#fff1c8', 600, 0, 0.55, 0.5); sp.position.set(0, 9, 5); sp.target.position.set(0, 1, 0.5); scene.add(sp, sp.target);
+finish([0, 3.0, 8.8], [0.2, 2.2, 0]);
+});
+</script></body></html>

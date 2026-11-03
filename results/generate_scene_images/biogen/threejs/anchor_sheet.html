@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buoy sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, water, ripples, makeStage, createBuoy, wrapUp } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  water(scene);
+  const bs = [];
+  [[-0.9, -0.5, 0.5], [0, 0, 0], [0.9, 0.5, -0.6]].forEach(([x, ry, rz], i) => {
+    const b = createBuoy({ scale: 1.2 }); b.position.set(x, 0.0, 0); b.rotation.y = ry; scene.add(b);
+    if (i === 0) b.userData.pose({ arms: { l: [0, 1.0, 0.3], r: [0, 1.0, 0.3] } });
+    if (i === 1) { b.userData.reach('l', [0.2, 0.7, 0.3]); b.userData.pose({ arms: { r: [0, 0.5, 0] } }); }
+    if (i === 2) b.userData.pose({ arms: { l: [-2.4, 0.3, 0], r: [-0.3, 0.6, 0] } });
+    bs.push(b); ripples(scene, x, 0, 0.01, 0.4);
+  });
+  wrapUp(stage, scene, bs, { cx: 0, cy: 0.9, cz: 3.6, tx: 0, ty: 0.65 });
+});
+</script></body></html>

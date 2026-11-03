@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alto q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 - The SAXOPHONE ties ALTO-300's sign to a 5-HT2C receptor key.
+import { THREE, guard, makeStage, ground, finish, createSax, add, mat, blob, box, cyl, label, note, wave, playPose, noteTrail, oak, rng } from './common.js';
+guard(() => {
+
+  const { stage, num } = makeStage({ shadowSize: 5 }); const scene = stage.scene;
+  ground(scene, '#e9b8c8');
+  const sax = createSax({ scale: 1.9 }); sax.position.set(-2.0, 0, 0.8); sax.rotation.y = 0.5; scene.add(sax);
+  sax.userData.pose({ legs: { l: [0.08, 0], r: [-0.08, 0] } });
+  sax.userData.reach('l', [0.3, 1.0, 0.4]); sax.userData.reach('r', [-0.12, 0.6, 0.1]);
+  // membrane + receptor (7 helices) with keyhole
+  const mem = new THREE.Group(); mem.position.set(1.0, 0, -0.3); scene.add(mem);
+  box(mem, mat('#ffb366'), [0, 0.35, 0], [3.4, 0.7, 1.4]);
+  const heads = mat('#ff8c42'); const r = rng(8);
+  for (let i = 0; i < 26; i++) blob(mem, heads, [-1.55 + (i % 13) * 0.26, 0.72, i < 13 ? 0.62 : 0.4], [0.1, 0.1, 0.1]);
+  const rc = mat('#9b5de5', { roughness: 0.5 });
+  for (let i = 0; i < 7; i++) { const a = i / 7 * Math.PI * 2; cyl(mem, rc, [Math.cos(a) * 0.38, 1.0, Math.sin(a) * 0.3 + 0.0], 0.12, 1.4); blob(mem, rc, [Math.cos(a) * 0.38, 1.7, Math.sin(a) * 0.3], [0.12, 0.12, 0.12]); }
+  const kh = new THREE.Group(); kh.position.set(0, 1.35, 0.52); mem.add(kh);
+  blob(kh, mat('#1a1030'), [0, 0.07, 0], [0.12, 0.12, 0.05]); add(kh, new THREE.BoxGeometry(0.08, 0.2, 0.05), mat('#1a1030'), [0, -0.07, 0]);
+  const nm = label('5-HT2C', 1.6, 0.4, { fg: '#ffffff', bg: '#5a2d9c', border: '#ffd23f' }); nm.position.set(0, 0.35, 0.72); mem.add(nm);
+  // key + tag
+  const key = new THREE.Group(); key.position.set(-0.3, 2.3, 0.7); key.rotation.z = -0.5; scene.add(key);
+  const gold = mat('#ffc933', { roughness: 0.3 });
+  add(key, new THREE.TorusGeometry(0.22, 0.06, 12, 28), gold); cyl(key, gold, [0, -0.55, 0], 0.045, 0.9);
+  for (const y of [-0.85, -0.7]) box(key, gold, [0.1, y, 0], [0.2, 0.07, 0.07]);
+  sax.updateMatrixWorld(true);
+  const hw = sax.userData.parts.hands.l.getWorldPosition(new THREE.Vector3()), ring = new THREE.Vector3(-0.05, 2.35, 0.7);
+  const tag = new THREE.Group(); tag.position.set((hw.x + ring.x) / 2 - 0.2, hw.y - 0.35, 0.9); tag.rotation.z = 0.12; scene.add(tag);
+  const tg = label('ALTO-300', 1.2, 0.4, { fg: '#222', bg: '#fff7e0', border: '#e8590c' }); tag.add(tg);
+  const sp = [hw, new THREE.Vector3((hw.x + ring.x) / 2, Math.max(hw.y, ring.y) + 0.15, 0.85), ring];
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(sp), 20, 0.014, 6), mat('#e8590c')));
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([sp[1], new THREE.Vector3(tag.position.x, tag.position.y + 0.2, 0.9)]), 8, 0.012, 6), mat('#e8590c')));
+  finish(stage, [sax], { cam: [0, 1.8, 5.6], look: [0, 1.4, 0], clouds: null });
+
+});
+</script></body></html>

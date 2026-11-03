@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sonde q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, add, mat, blob, box, cyl, ground, makeStage, wrapUp, rng, textPlane } from "./common.js";
+import { createBalloon } from "./balloon.js";
+import { createPerson } from "./people.js";
+// q02 — The BALLOON listens to a few seconds of voice for health signs: vocal biomarkers.
+guard(() => {
+  const { stage, scene, num } = makeStage({ sunAzimuth: 120 });
+  ground(scene, '#6fae45');
+  const p = createPerson({ coat: '#3a7ab8', pants: '#2c3a55', hair: '#6b3a1c' }); p.position.set(-2.6, 0, 0.3); p.scale.setScalar(1.2); p.rotation.y = 0.5; scene.add(p);
+  p.userData.pose({ arms: { l: [0.1, 0.4], r: [0.1, 0.4] } });
+  const wv = mat('#ff9a2a', { emissive: '#ff7a00', emissiveIntensity: 0.4 });
+  for (let i = 0; i < 5; i++) { const t = new THREE.Mesh(new THREE.TorusGeometry(0.28 + i * 0.2, 0.035, 8, 32, 1.6), wv); t.position.set(-2.0 + i * 0.45, 1.65, 0.5); t.rotation.z = -0.8 - 0; t.rotation.y = 0.3; scene.add(t); }
+  const bal = createBalloon({ scale: 1.35, mood: 'listen' }); bal.position.set(1.1, 0.9, 0); bal.rotation.y = -0.4; scene.add(bal);
+  bal.userData.pose({ arms: { r: [0, 0.6, 0] } }); bal.userData.reach('l', [0.58, 1.02, 0.12]);
+  // heart + pulse line the balloon reads from the voice
+  const hs = new THREE.Shape(); hs.moveTo(0, -0.4); hs.bezierCurveTo(-0.7, 0.1, -0.35, 0.6, 0, 0.25); hs.bezierCurveTo(0.35, 0.6, 0.7, 0.1, 0, -0.4);
+  const heart = add(scene, new THREE.ExtrudeGeometry(hs, { depth: 0.2, bevelEnabled: true, bevelSize: 0.04, bevelThickness: 0.04, bevelSegments: 3 }), mat('#e8343f', { roughness: 0.3 }), [1.0, 3.7, 0], [0, -0.3, 0], [1.1, 1.1, 1.1]);
+  const pts = [[-1.6, 0], [-1.0, 0], [-0.8, 0.3], [-0.55, -0.35], [-0.3, 0.7], [-0.1, 0], [0.5, 0]].map(([x, y]) => new THREE.Vector3(x, y, 0));
+  add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, false, 'catmullrom', 0.05), 80, 0.035, 8), mat('#2fcf8a', { emissive: '#12a060', emissiveIntensity: 0.5 }), [0.0, 3.7, 0.0]);
+  // stopwatch: a few seconds
+  const sw = new THREE.Group(); sw.position.set(-2.7, 3.7, 0.3); scene.add(sw);
+  add(sw, new THREE.CylinderGeometry(0.36, 0.36, 0.12, 32), mat('#c7ccd4', { metalness: 0.6, roughness: 0.3 }), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  add(sw, new THREE.CylinderGeometry(0.3, 0.3, 0.02, 32), mat('#ffffff'), [0, 0, 0.065], [Math.PI / 2, 0, 0]);
+  cyl(sw, mat('#c7ccd4'), [0, 0.45, 0], 0.07, 0.07, 0.12);
+  box(sw, mat('#e8343f'), [0.0, 0.1, 0.08], [0.03, 0.22, 0.01], [0, 0, -0.6]);
+  wrapUp(stage, num, [p, bal], [-0.2, 2.1, 7.0], [-0.2, 2.0, 0]);
+});
+</script></body></html>

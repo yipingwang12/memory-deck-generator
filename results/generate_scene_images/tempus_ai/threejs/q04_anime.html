@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q04 — "The HOURGLASS swallows a PERSONAL ISLAND (Personalis)."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+function island(scale = 1) {
+  const g = new THREE.Group();
+  ball(g, 0.5, '#e8c785', [0, 0, 0], [1, 0.32, 1]); ball(g, 0.42, '#62b24a', [0, 0.06, 0], [1, 0.3, 1]);
+  const palm = new THREE.Group(); palm.position.set(-0.12, 0.1, 0.05); g.add(palm);
+  cyl(palm, 0.025, 0.035, 0.5, '#8a5a2e', [0.04, 0.25, 0], [0, 0, -0.15]);
+  for (let i = 0; i < 6; i++) { const a = i * 1.05; const l = add(palm, new THREE.ConeGeometry(0.06, 0.34, 8), mat('#2f9e44'), [0.08 + Math.cos(a) * 0.14, 0.5, Math.sin(a) * 0.14], [Math.sin(a) * 1.2, 0, -Math.cos(a) * 1.2]); }
+  // tiny person: the PERSONal on the island
+  const p = new THREE.Group(); p.position.set(0.17, 0.12, 0.08); g.add(p);
+  cyl(p, 0.035, 0.045, 0.14, '#3b82f6', [0, 0.09, 0]); ball(p, 0.04, '#ffd7b0', [0, 0.2, 0]);
+  for (const s of [-1, 1]) cyl(p, 0.008, 0.008, 0.11, '#ffd7b0', [s * 0.05, 0.16, 0], [0, 0, s * -0.6]);
+  g.scale.setScalar(scale); return g;
+}
+guard(() => {
+  const stage = makeStage({ sky: { cover: 1.6, zenith: '#2a7fd8', horizon: '#bfeaff' } }), scene = stage.scene;
+  const sea = ground(scene, '#2aa7c9', 0.0); sea.material.roughness = 0.35;
+  const h = hero(scene, { scale: num('ps', 2.2), pos: [0, 0.0, 0], ry: 0, pose: { arms: { l: [0, 1.1, 0.2], r: [0, 1.1, 0.2] } } });
+  // open mouth (swallowing) replacing the smile
+  const faceG = h.userData.parts.head.children.at(-1); faceG.visible = false;
+  const m = faceG.parent; const mg = new THREE.Group(); mg.position.copy(faceG.position); mg.rotation.copy(faceG.rotation); m.add(mg);
+  const mouth = new THREE.Mesh(new THREE.CircleGeometry(1, 28), mat('#5a1420')); mouth.scale.set(0.034, 0.042, 1); mouth.position.z = 0.003; mg.add(mouth);
+  const tongue = new THREE.Mesh(new THREE.CircleGeometry(1, 20), mat('#ff7f8f')); tongue.scale.set(0.02, 0.016, 1); tongue.position.set(0, -0.02, 0.0045); mg.add(tongue);
+  // the island, swallowed: sitting in the lower bulb on the sand
+  const isl = island(0.3); isl.position.set(0, 0.42, 0); h.add(isl);
+  // wake rings + gap where the island was
+  for (const r of [1.2, 1.7, 2.3]) { const t = add(scene, new THREE.TorusGeometry(r, 0.03, 8, 60), mat('#e8fbff'), [0, 0.02, 0], [Math.PI / 2, 0, 0]); }
+  add(scene, new THREE.CircleGeometry(0.9, 40), mat('#1a8aa8'), [2.6, 0.012, -1.2], [-Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 6; i++) ball(scene, 0.06, '#e8fbff', [0.4 + i * 0.12, 1.1 + (i % 3) * 0.3, 0.3], [1, 1, 1]);
+  h.userData.reach('l', [0.15, 0.9, 0.2]); h.userData.reach('r', [-0.15, 0.9, 0.2]);
+  finish(stage, [h], { cam: [0, 1.4, 4.6], look: [0, 1.25, 0] });
+});
+</script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sanofi q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q07 — The SUNFLOWER's site is built for two thousand five hundred to two thousand seven hundred staff.
+import { THREE, guard, mat, add, box, cyl, blob, num, makeStage, placeSunflower, finish, person, rng } from './common.js';
+guard(() => {
+  const stage = makeStage({ ground: '#9cbf80' }), sc = stage.scene, r = rng(11);
+  // wide campus building with window grid
+  box(sc, mat('#dfe6ee'), [0, 2.2, -4.2], [11, 4.4, 2.6]);
+  for (let y = 0; y < 4; y++) for (let x = -5; x <= 5; x++) box(sc, mat('#7fb6e0'), [x * 0.95, 0.8 + y * 1.0, -2.87], [0.6, 0.6, 0.04]);
+  box(sc, mat('#f2b61c'), [0, 4.5, -4.2], [11.2, 0.2, 2.8]);
+  // crowd of staff in rows, white coats and blue shirts
+  const cols = ['#ffffff', '#f4f4f4', '#3a82e0', '#ffffff', '#e8e0f0', '#ffffff'];
+  for (let row = 0; row < 4; row++) for (let i = 0; i < 22; i++) {
+    const p = person(cols[(i + row) % cols.length], ['#3a2a20', '#1d1a18', '#8a5a2a', '#d9b04a'][(i * 3 + row) % 4]);
+    p.position.set(-6.2 + i * 0.6 + (row % 2) * 0.3 + r() * 0.1, 0, -1.5 + row * 0.55); p.scale.setScalar(1.3); sc.add(p);
+  }
+  box(sc, mat('#c9c2b4'), [0, 0.01, 0.6], [14, 0.02, 7]);
+  const f = placeSunflower(stage, { pos: [0, 0, 1.6], ry: 0, scale: 1.9, pose: { headTilt: 0.06 } });
+  finish(stage, f, { pos: [0, 2.3, 7.2], at: [0, 1.7, 0] });
+});
+</script></body></html>

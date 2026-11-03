@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><title>q10</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// GB-4362 mops up free MMAE poison leaking from ADCs
+import { THREE, guard, mat, add, blob, box, cyl, textTex, createPerson, createGenerator, setupScene, rng } from './common.js';
+import * as K from './props.js';
+guard(() => {
+  const S = setupScene(new URLSearchParams(location.search), { ground: '#b8b0a0' });
+  const scene = S.scene, num = S.num, chars = [];
+  const gen = (x, z, ry, sc = 1.35) => { const g = createGenerator({ scale: sc }); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g); chars.push(g); return g; };
+  const person = (p, x, z, ry) => { p.position.set(x, 0, z); p.rotation.y = ry; scene.add(p); chars.push(p); return p; };
+  const reachTo = (g, k, w) => { g.updateMatrixWorld(true); const l = g.worldToLocal(new THREE.Vector3(...w)); g.userData.reach(k, [l.x, l.y, l.z]); };
+  const spark = (x, y, z, s = 1, c = '#ffe44a') => { const m = add(scene, new THREE.OctahedronGeometry(0.06 * s), new THREE.MeshBasicMaterial({ color: c }), [x, y, z]); m.scale.set(1, 1.6, 0.5); m.castShadow = false; return m; };
+  const grass = (n, seed, w, d, z0, cols) => { const r = rng(seed); for (let i = 0; i < n; i++) blob(scene, mat(cols[i % cols.length]), [(r() - 0.5) * w, 0.03, z0 - r() * d], [0.04, 0.04, 0.04]); };
+
+  const pud = add(scene, new THREE.CircleGeometry(1.2, 40), mat('#5aff3a', { emissive: '#20c010', emissiveIntensity: 0.6, roughness: 0.1 }), [0.3, 0.02, 0.3], [-Math.PI / 2, 0, 0], [1.3, 1, 1]);
+  const barrel = new THREE.Group(); barrel.position.set(2.0, 0.55, -0.2); barrel.rotation.z = -0.9; scene.add(barrel);
+  cyl(barrel, mat('#4a8a3a'), [0, 0, 0], 0.3, 0.8); add(barrel, new THREE.CircleGeometry(0.2, 20), mat('#f1efe6'), [0, 0, 0.301]);
+  const sk = K.skull(1.1); sk.position.set(0, 0, 0.31); barrel.add(sk);
+  add(scene, new THREE.CircleGeometry(0.7, 30), mat('#5aff3a', { emissive: '#20c010', emissiveIntensity: 0.6 }), [1.7, 0.021, 0], [-Math.PI / 2, 0, 0]);
+  for (const [x, y] of [[1.55, 0.3], [1.65, 0.12], [1.45, 0.45]]) blob(scene, mat('#5aff3a', { emissive: '#20c010' }), [x, y + 0.3, 0.1], [0.05, 0.07, 0.05]);
+  const ab = K.antibody(1.0, '#3a8fe0'); ab.position.set(2.7, 1.5, 0.1); ab.rotation.z = 2.5; scene.add(ab);
+  const g = gen(-0.8, 0.5, 0.35, 1.65); g.userData.pose({ lean: 0.1, arms: { l: [0, 0.5, 0], r: [0, 0.3, 0] } });
+  const mop = K.mop(1.5); mop.position.set(0.0, 0, 1.0); mop.rotation.z = 0.5; scene.add(mop);
+  reachTo(g, 'l', [-0.2, 0.95, 1.0]);
+  const bk = new THREE.Group(); bk.position.set(-2.1, 0, 0.8); scene.add(bk); cyl(bk, mat('#e8c030'), [0, 0.2, 0], 0.2, 0.4, [0, 0, 0], 0.25);
+  S.done(chars, { pos: [0.5, 1.3, 5.0], at: [0.5, 0.8, 0] });
+
+});
+</script></body></html>

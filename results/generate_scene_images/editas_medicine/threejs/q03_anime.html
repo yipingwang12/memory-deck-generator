@@ -1,0 +1,93 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Editas q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — "The PENCIL edits two HAMBURGER switches, HBG1 and HBG2, in blood stem cells."
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createPencil } from './pencil.js';
+
+const mat = (c, o = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.55, ...o });
+const mesh = (g, m, p = [0, 0, 0], s = [1, 1, 1]) => { const o = new THREE.Mesh(g, m); o.position.set(...p); o.scale.set(...s); o.castShadow = o.receiveShadow = true; return o; };
+
+function hamburger(R = 0.2) {
+  const g = new THREE.Group(), bun = mat('#e8a23c', { roughness: 0.7 });
+  g.add(mesh(new THREE.SphereGeometry(R, 32, 16, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), bun, [0, 0, 0], [1, 0.45, 1]));
+  g.add(mesh(new THREE.CylinderGeometry(R * 1.05, R * 1.05, R * 0.3, 32), mat('#6b3418'), [0, R * 0.17, 0]));
+  const cheese = mesh(new THREE.BoxGeometry(R * 2.25, R * 0.07, R * 2.25), mat('#ffd02a'), [0, R * 0.36, 0]); cheese.rotation.y = Math.PI / 4; g.add(cheese);
+  g.add(mesh(new THREE.TorusGeometry(R * 1.05, R * 0.1, 10, 32), mat('#4fb83a'), [0, R * 0.46, 0]).rotateX(Math.PI / 2));
+  g.add(mesh(new THREE.SphereGeometry(R, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), bun, [0, R * 0.5, 0], [1.02, 0.85, 1.02]));
+  for (let i = 0; i < 9; i++) { const a = i * 2.4, r = R * 0.55 * Math.sqrt((i + 1) / 9), y = R * 0.5 + R * 0.85 * Math.sqrt(Math.max(0, 1 - (r / R) ** 2));
+    g.add(mesh(new THREE.SphereGeometry(R * 0.07, 8, 6), mat('#fff2cf'), [Math.cos(a) * r, y, Math.sin(a) * r], [1, 0.5, 1.6]).rotateY(-a)); }
+  return g;
+}
+
+function label(text, w = 0.5) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 160; const x = c.getContext('2d');
+  x.fillStyle = '#fff6e8'; x.fillRect(0, 0, 512, 160); x.fillStyle = '#7a1f2b'; x.font = 'bold 112px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(text, 256, 84);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  return mesh(new THREE.PlaneGeometry(w, w * 160 / 512), new THREE.MeshBasicMaterial({ map: t }));
+}
+
+function toggle(x, tilt, name) {
+  const g = new THREE.Group(); g.position.set(x, 0, 0);
+  g.add(mesh(new THREE.CylinderGeometry(0.17, 0.2, 0.08, 32), mat('#c9ced6', { metalness: 0.6, roughness: 0.3 }), [0, 0.65, 0.04]).rotateX(Math.PI / 2));
+  const pivot = new THREE.Group(); pivot.position.set(0, 0.65, 0.1); pivot.rotation.z = tilt;
+  pivot.add(mesh(new THREE.CylinderGeometry(0.03, 0.04, 0.36, 16), mat('#dfe3ea', { metalness: 0.7, roughness: 0.25 }), [0, 0.18, 0]));
+  g.add(pivot);
+  const tip = new THREE.Vector3(0, 0.36, 0).applyEuler(new THREE.Euler(0, 0, tilt));
+  const b = hamburger(); b.position.set(tip.x, 0.65 + tip.y + 0.03, 0.1); g.add(b);
+  const l = label(name, 0.42); l.position.set(0, 0.34, 0.03); g.add(l);
+  g.userData.knob = new THREE.Vector3(x + tip.x, 0.65 + tip.y + 0.1, 0.1);
+  return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 42), sunElevation: 40, sunAzimuth: 160, exposure: num('exp', 1),
+    sky: { zenith: '#fff0d8', horizon: '#ffe6c8', cover: 0, puffCover: 0 },
+    sunIntensity: 2.2, ambient: { color: '#ffe6e6', intensity: 2.4 }, triBumpScale: 0.2,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0,
+  });
+  const S = stage.scene;
+
+  // blood stem cell backdrop: big rounded cell with nucleus, small red cells floating
+  S.add(mesh(new THREE.SphereGeometry(1, 48, 32), mat('#f48aa0', { roughness: 0.8 }), [0.35, 0.9, -1.6], [4.0, 2.4, 0.6]));
+  S.add(mesh(new THREE.SphereGeometry(0.55, 32, 24), mat('#c04a88', { roughness: 0.7 }), [2.0, 1.05, -0.9], [1.2, 1.1, 0.6]));
+  S.add(mesh(new THREE.SphereGeometry(0.2, 24, 16), mat('#8f2c6a'), [2.1, 1.0, -0.45], [1, 0.9, 0.4]));
+  const rbc = new THREE.LatheGeometry([[0, 0.02], [0.08, 0.04], [0.14, 0.07], [0.17, 0.01], [0.14, -0.05], [0.08, -0.04], [0, -0.02]].map(([x, y]) => new THREE.Vector2(x, y)), 32);
+  [[-1.65, 0.5, -0.4, 1.3], [-1.45, 1.75, -0.5, 1.7], [-2.2, 1.0, -0.3, 1.5], [2.7, 0.2, -0.5, 1.2], [1.2, 1.75, -0.7, 1.1], [-0.4, 1.95, -0.6, 1.4], [0.0, 0.1, -0.3, 1.0]]
+    .forEach(([x, y, z, s], i) => { const c = mesh(rbc, mat('#d6223a', { roughness: 0.5 }), [x, y, z], [s, s, s]); c.rotation.set(1.2 + i * 0.3, i * 0.7, i * 0.4); S.add(c); });
+
+  // switch panel
+  const panel = mesh(new THREE.BoxGeometry(1.6, 1.15, 0.1), mat('#fff0dc'), [0.7, 0.75, -0.05]);
+  S.add(panel);
+  S.add(mesh(new THREE.BoxGeometry(1.68, 1.23, 0.06), mat('#e8a23c'), [0.7, 0.75, -0.11]));
+  const sw1 = toggle(0.3, num('t1', 0.45), 'HBG1'), sw2 = toggle(1.1, num('t2', -0.45), 'HBG2');
+  sw1.position.y = 0.2; sw2.position.y = 0.2; sw1.position.z = sw2.position.z = 0;
+  S.add(sw1, sw2);
+
+  // pencil flips switch 1
+  const pencil = createPencil({ scale: num('ps', 1.5) });
+  pencil.position.set(num('px', -0.55), 0, num('pz', 0.35));
+  pencil.rotation.y = 0.25;
+  S.add(pencil);
+  pencil.updateMatrixWorld(true);
+  const k = sw1.userData.knob.clone().add(new THREE.Vector3(0, 0.2, 0));
+  pencil.userData.pose({ lean: 0.05, headTilt: -0.08, arms: { r: [0, 0.3, 0.2] } });
+  pencil.userData.reach('l', pencil.worldToLocal(k.clone().add(new THREE.Vector3(-0.1, -0.12, 0.08))).toArray());
+
+  const chars = new Set(); pencil.traverse((o) => chars.add(o));
+  stage.toonify(S, (m) => chars.has(m));
+
+  stage.camera.position.set(num('cx', 0.35), num('cy', 1.0), num('cz', 3.3));
+  stage.camera.lookAt(num('tx', 0.3), num('ty', 0.95), 0);
+  stage.finish();
+});
+</script></body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cornerstone anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createCornerstone } from './cornerstone.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 35, sunElevation: 35, sunAzimuth: 150, sky: { cover: 2, seed: 5 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, fog: { near: 120, far: 1500 } });
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: '#6fae45', roughness: 0.9 }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; stage.scene.add(g);
+  const cs = [];
+  [-1.6, 0, 1.6].forEach((x, i) => {
+    const c = createCornerstone(); c.position.x = x; c.rotation.y = [0.7, 0, -1.2][i]; stage.scene.add(c); cs.push(c);
+    c.userData.pose({ arms: { l: [-0.3, 0.3, -0.4], r: [0, 0.3, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+  });
+  const pm = new Set(); cs.forEach((c) => c.traverse((o) => pm.add(o)));
+  stage.toonify(stage.scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [187, 1000, 120, 1.6]]);
+  stage.camera.position.set(0, 0.9, 5); stage.camera.lookAt(0, 0.5, 0);
+  stage.finish();
+});
+</script></body></html>

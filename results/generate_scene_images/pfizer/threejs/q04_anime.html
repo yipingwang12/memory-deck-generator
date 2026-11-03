@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pfizer q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — About a thousand scientists work under the VISOR in Cambridge.
+import { THREE, guard, rng, createVisor, setup, ground, box, add, mat, finish } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = setup(P);
+  ground(scene, '#9aa0a8');
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#a9b0b8'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  // brick Cambridge backdrop
+  [[-9, 6, 4], [-4, 8, 4.5], [1.5, 7, 5], [7, 9, 4.5], [12, 6, 4]].forEach(([x, h, w], i) => {
+    const g = new THREE.Group(); g.position.set(x, 0, -9 - (i % 2) * 1.5); scene.add(g);
+    box(g, w, h, 3, i % 2 ? '#b5563f' : '#a24a38', [0, h / 2, 0]); box(g, w + 0.2, 0.25, 3.2, '#d9d2c0', [0, h + 0.1, 0]);
+    for (let y = 1.2; y < h - 0.5; y += 1.4) for (let k = -1; k <= 1; k += 1) box(g, 0.7, 0.8, 0.05, '#bfe4ff', [k * (w / 3.4), y, 1.52]);
+  });
+  // 1000 scientists: instanced body + head, grid with jitter
+  const N = 1000, cols = 40, r = rng(11);
+  const body = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.14, 0.2, 0.55, 10), mat('#ffffff'), N);
+  const head = new THREE.InstancedMesh(new THREE.SphereGeometry(0.14, 12, 8), mat('#f2c9a0'), N);
+  const hair = new THREE.InstancedMesh(new THREE.SphereGeometry(0.15, 12, 8, 0, Math.PI * 2, 0, Math.PI / 1.8), mat('#fff'), N);
+  body.castShadow = head.castShadow = true;
+  const m = new THREE.Matrix4(), c = new THREE.Color();
+  const hairs = ['#2a1d14', '#5a3a22', '#d8b25a', '#1a1a1a', '#a8a8a8', '#8a3a22'], skins = ['#f2c9a0', '#d9a273', '#a8704a', '#f7dcc0'];
+  for (let i = 0; i < N; i++) {
+    const x = (i % cols - cols / 2) * 0.55 + (r() - 0.5) * 0.25, z = (Math.floor(i / cols) - 12) * 0.55 + (r() - 0.5) * 0.25;
+    m.makeTranslation(x, 0.3, z); body.setMatrixAt(i, m); m.makeTranslation(x, 0.72, z); head.setMatrixAt(i, m); hair.setMatrixAt(i, m.clone().multiply(new THREE.Matrix4().makeTranslation(0, 0.02, -0.01)));
+    c.set(r() < 0.12 ? ['#4aa3e8', '#e8934a', '#6ac48a'][i % 3] : '#ffffff'); body.setColorAt(i, c);
+    head.setColorAt(i, c.set(skins[Math.floor(r() * 4)])); hair.setColorAt(i, c.set(hairs[Math.floor(r() * 6)]));
+  }
+  scene.add(body, head, hair);
+  const v = createVisor({ scale: num('vs', 6.5) }); v.position.set(num('vx', 0), 0, num('vz', -5)); scene.add(v);
+  v.userData.pose({ arms: { l: [0, 0.35, 0], r: [0, 0.35, 0] } });
+  finish(stage, scene, [v], [num('cx', 0), num('cy', 6.5), num('cz', 15)], [0, 2.2, -4]);
+});
+</script></body></html>

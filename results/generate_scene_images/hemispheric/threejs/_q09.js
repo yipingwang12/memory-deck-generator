@@ -1,0 +1,19 @@
+  // q09 — The GLOBE spins in TEL AVIV.
+  const S = makeScene({ ground: '#e8d3a0', sky: { cover: 1.2 } }), scene = S.scene;
+  const sea = add(scene, new THREE.PlaneGeometry(400, 14), mat('#1ba3d6', { roughness: 0.4 }), [0, 0.01, -10], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(400, 40), mat('#9aa39a'), [0, 0.01, -37], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(400, 1.4), mat('#f4fbff'), [0, 0.02, -3.6], [-Math.PI / 2, 0, 0]);
+  const win = (rep, base) => { const t = canvasTexture(256, (ctx, s) => { ctx.fillStyle = base; ctx.fillRect(0, 0, s, s); ctx.fillStyle = '#3d5878'; for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) ctx.fillRect(i * 64 + 14, j * 64 + 14, 34, 36); }); t.repeat.set(rep, rep * 2); return new THREE.MeshStandardMaterial({ map: t, roughness: 0.7 }); };
+  const R = rng(14);
+  // Azrieli towers: round, triangular, square
+  const tw = (geo, x, h, m) => { const o = add(scene, geo, m, [x, h / 2, -26]); return o; };
+  tw(new THREE.CylinderGeometry(2.6, 2.6, 14, 40), -6.5, 14, win(4, '#c9d3e0')); tw(new THREE.CylinderGeometry(3.1, 3.1, 12, 3), 0, 12, win(3, '#d6dde8')).rotation.y = 0.4; tw(new THREE.BoxGeometry(5, 11, 5), 6.5, 11, win(2, '#bcc8d6'));
+  for (let i = 0; i < 24; i++) { const h = 3 + R() * 6, x = -26 + i * 2.3 + R(), z = -20 - R() * 4; if (Math.abs(x) < 10) continue; add(scene, new THREE.BoxGeometry(2 + R(), h, 2 + R()), win(1, ['#ffffff', '#f6efe2', '#e9e4d8'][i % 3]), [x, h / 2, z]); }
+  // palms
+  const palm = (x, z, h) => { const p = new THREE.Group(); add(p, new THREE.CylinderGeometry(0.07, 0.1, h, 10), mat('#8a6a42'), [0, h / 2, 0]); for (let i = 0; i < 7; i++) { const a = i / 7 * Math.PI * 2; add(p, new THREE.ConeGeometry(0.12, 0.9, 6), mat('#3f9a3a'), [Math.sin(a) * 0.42, h + 0.0, Math.cos(a) * 0.42], [Math.cos(a) * 1.2, 0, -Math.sin(a) * 1.2]); } p.position.set(x, 0, z); scene.add(p); };
+  palm(-2.2, -1.5, 2.6); palm(2.4, -1.8, 2.9); palm(-3.4, -0.5, 2.2); palm(3.6, -0.8, 2.4);
+  const globe = createGlobe({ scale: 1.9 }); globe.position.set(0, 0, 0.8); globe.rotation.y = 0.5; scene.add(S.character(globe));
+  globe.userData.pose({ arms: { l: [0, 1.4, 0], r: [0, 1.4, 0] }, legs: { l: [0.35, 0], r: [-0.35, 0] } });
+  const spin = new THREE.MeshStandardMaterial({ color: '#ffffff', emissive: '#ffffff', emissiveIntensity: 0.5 });
+  for (const [r, y, a0] of [[0.85, 1.3, 1.3], [0.72, 1.6, 2.4]]) add(scene, new THREE.TorusGeometry(r * 0.8 * 1.0, 0.035, 8, 48, Math.PI * 0.8), spin, [0, y - 0.28, 0.8], [Math.PI / 2 - 0.2, 0, a0]);
+  const CAM = { cy: 1.2, ty: 1.15, cz: 5.0, tx: 0 };

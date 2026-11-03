@@ -1,0 +1,23 @@
+  // The CROW perches on a BRIDGE in Cambridge.
+  const stage = makeStage({ ground: null }); const S = stage.scene;
+  add(S, new THREE.PlaneGeometry(400, 400), mat('#3d8fb0', { roughness: 0.3 }), [0, 0.02, 0], [-Math.PI / 2, 0, 0]);
+  add(S, new THREE.PlaneGeometry(400, 60), mat('#6fae45'), [0, 0.05, -34], [-Math.PI / 2, 0, 0]);
+  const brick = new THREE.MeshStandardMaterial({ map: brickTex([190, 130, 90], 1), roughness: 0.9 });
+  const stone = mat('#cdbd9a');
+  box(S, new THREE.MeshStandardMaterial({ map: brickTex([196, 150, 106]), roughness: 0.9 }), [10, 1.0, 2], [0, 0.55, 0]);
+  for (const x of [-2.6, 0, 2.6]) cyl(S, mat('#1c3a56'), 0.95, 0.95, 2.04, [x, 0.0, 0], [Math.PI / 2, 0, 0], 32);
+  for (const z of [0.8, -0.8]) { box(S, stone, [10.2, 0.45, 0.4], [0, 1.325, z]); box(S, stone, [10.4, 0.1, 0.5], [0, 1.58, z]); }
+  for (const x of [-4.9, 4.9]) for (const z of [0.8, -0.8]) box(S, stone, [0.5, 0.9, 0.5], [x, 1.4, z]);
+  add(S, new THREE.PlaneGeometry(10, 2), mat('#8d8a85'), [0, 1.11, 0], [-Math.PI / 2, 0, 0]);
+  // lamp posts
+  for (const x of [-3.2, 3.2]) { cyl(S, mat('#2a2f3a'), 0.04, 0.05, 1.3, [x, 2.2, -0.8]); blob(S, mat('#fff1b0', { emissive: '#ffe58a', emissiveIntensity: 0.6 }), [x, 2.95, -0.8], [0.13, 0.17, 0.13]); }
+  // college skyline
+  const sk = mat('#d9c39a'), roof = mat('#8a5a46');
+  for (const [x, w, h] of [[-6, 3, 3], [-2.5, 4, 2.2], [2, 3, 3.8], [6.5, 4, 2.6]]) { box(S, sk, [w, h, 2.5], [x, h / 2, -11]); box(S, roof, [w + 0.2, 0.3, 2.7], [x, h + 0.1, -11]); for (let i = 0; i < 3; i++) box(S, mat('#5a6a88'), [0.4, 0.6, 0.05], [x - w / 3 + i * w / 3, h * 0.55, -9.72]); }
+  box(S, sk, [1.3, 6, 1.3], [-0.2, 3, -12]); cyl(S, roof, 0.01, 0.8, 1.4, [-0.2, 6.7, -12], [0, 0, 0], 4);
+  for (const x of [-8, -4.5, 4.5, 8.5]) tree(S, x, -7, 1.6);
+  // punt boat
+  box(S, mat('#7a5a3a'), [1.8, 0.12, 0.45], [3.4, 0.08, 2.2], [0, 0.1, 0]);
+  const crow = createCrow({ scale: 1.3 }); crow.position.set(0.2, 1.63, 0.8); crow.rotation.y = -0.2; S.add(crow);
+  crow.userData.pose({ headTilt: 0.12, beak: 0.05, wing: { l: [0.15, 0, 0.1], r: [0.15, 0, 0.1] } });
+  finishScene(stage, crow, [num('cx', 1.5), num('cy', 2.3), num('cz', 6)], [0.1, 2.0, 0]);

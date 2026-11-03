@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cognixion q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 - AXON-R is the research twin of the COG ONE headset: two matching cogs in a lab; blue AXON-R beside gold COG ONE wearing the visor.
+import { THREE, mat, add, blob, rbox, cyl, textPlane, visor, start } from './props.js';
+import { createCog } from './cog.js';
+
+function flask(color) {
+  const g = new THREE.Group(), glass = mat('#d6f2ff', { transparent: true, opacity: 0.55, roughness: 0.1 });
+  add(g, new THREE.SphereGeometry(0.11, 24, 16), glass, [0, 0.11, 0]);
+  cyl(g, glass, 0.035, 0.035, 0.14, [0, 0.27, 0]);
+  blob(g, mat(color, { emissive: color, emissiveIntensity: 0.25 }), [0, 0.08, 0], [0.095, 0.075, 0.095]);
+  return g;
+}
+function neuron() {
+  const g = new THREE.Group(), m = mat('#7fe0ff', { emissive: '#3fb8e8', emissiveIntensity: 0.6 });
+  blob(g, m, [0, 0, 0], [0.12, 0.12, 0.12]);
+  for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; add(g, new THREE.CylinderGeometry(0.012, 0.02, 0.22, 8), m, [Math.cos(a) * 0.17, Math.sin(a) * 0.17, 0], [0, 0, a - Math.PI / 2]); }
+  add(g, new THREE.CylinderGeometry(0.014, 0.014, 0.6, 8), m, [0.45, 0, 0], [0, 0, Math.PI / 2]);
+  blob(g, m, [0.78, 0, 0], [0.05, 0.05, 0.05]);
+  return g;
+}
+
+start(({ scene }) => {
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#e9edf2'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(40, 12), mat('#cfe6f2'), [0, 5.5, -2.3]);
+  rbox(scene, mat('#6e7d8c'), [5.6, 0.1, 1.2], [0, 0.82, -1.0], [0, 0, 0], 0.03);
+  for (const x of [-2.6, 2.6]) rbox(scene, mat('#55626f'), [0.15, 0.78, 1.0], [x, 0.4, -1.0], [0, 0, 0], 0.02);
+  textPlane(scene, 'AXON-R', { w: 2.0, h: 0.5, bg: '#2a6fd0', pos: [-1.1, 2.55, -2.25] });
+  const f1 = flask('#ff7ab0'), f2 = flask('#8cf06a'); f1.position.set(-0.2, 0.87, -1.0); f2.position.set(0.2, 0.87, -1.0); scene.add(f1, f2);
+  const n = neuron(); n.position.set(-2.0, 1.7, -1.2); n.scale.setScalar(1.1); scene.add(n);
+
+  const a = createCog({ scale: 1.1, color: '#4f9bff' }); a.position.set(-1.1, 0, 0.4); a.rotation.y = 0.2; scene.add(a);
+  const b = createCog({ scale: 1.1 }); b.position.set(1.1, 0, 0.4); b.rotation.y = -0.2; scene.add(b);
+  a.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, 0.2, 0] } }); a.userData.reach('r', [-0.35, 0.55, 0.2]);
+  b.userData.pose({ arms: { l: [0, 0.2, 0], r: [0, 0.5, 0] } }); b.userData.reach('l', [0.35, 0.55, 0.2]);
+  const v = visor(); v.position.set(0, 0.64 + 0.04, 0.095); b.add(v);
+  textPlane(b, '1', { w: 0.14, h: 0.14, bg: '#ff5a2a', pos: [0.12, 0.64 + 0.04, 0.17] });
+  return [a, b];
+}, { ground: '#e9edf2', fov: 38, cam: [0, 1.0, 3.7], look: [0, 0.95, 0], clouds: false });
+</script></body></html>

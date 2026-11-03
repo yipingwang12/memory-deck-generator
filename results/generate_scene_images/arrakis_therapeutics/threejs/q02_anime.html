@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — A CANOE carries the coins of the Series A
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.2, wx: -1.5, wz: -0.6, wry: 0.45 });
+  const cn = canoe(); cn.scale.setScalar(1.25); cn.position.set(1.2, 0, 0.9); cn.rotation.y = -0.25; c.scene.add(cn);
+  const pile = coinPile(40, 0.2, 0.6, 5); pile.position.set(1.2, 0.5, 0.9); c.scene.add(pile);
+  for (const [x, z, a] of [[2.5, 1.6, 0.3], [-0.2, 1.6, 1.2], [2.2, 0.2, 2]]) { const k = coin(0.17); k.position.set(x, 0.17, z); k.rotation.set(-1.4, a, 0); c.scene.add(k); }
+  c.done([0, 1.6, 6.0], [0, 1.0, 0]);
+});
+</script></body></html>

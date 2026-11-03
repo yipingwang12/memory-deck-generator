@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// NATURE's pocket on the JEANS has labs in AUSTIN, SAN CARLOS and on a BOULDER.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+import { pocketTexture } from './jeans.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ shadowSize: 6 });
+  meadow(scene, '#5faa48'); flowers(scene, 8, 60, [-6, 6], [-4, 2]);
+  const r = rng(5); [[-4.5, -4], [5, -4.5], [0.5, -6]].forEach(([x, z], i) => { const t = PR.tree(3.6, ['#3f9a4a', '#58b052'][i % 2]); t.position.set(x, 0, z); scene.add(t); });
+  const j = placeJeans(scene, num, { scale: 2.4, x: 0.1, z: -0.3, ry: 0, pose: { arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } } });
+  j.userData.parts.frontPockets[1].material = new THREE.MeshStandardMaterial({ map: pocketTexture('#3fae4e', 'front'), roughness: 0.8, side: THREE.DoubleSide });
+  const lab = (parent, pos, s = 1) => { const f = PR.flask('#7ae04a', s); f.position.set(...pos); parent.add(f); return f; };
+  // AUSTIN: the Austin Mini with a flask on the roof
+  const car = PR.miniCar(); car.scale.setScalar(2.2); car.position.set(-3.7, 0, 0.4); car.rotation.y = 0.5; scene.add(car); lab(car, [-0.03, 0.46, 0], 1.1);
+  // SAN CARLOS: a saint with a halo holding a toy car, flask at his feet
+  const saint = PR.saint(); saint.scale.setScalar(1.9); saint.position.set(2.6, 0, 0.8); saint.rotation.y = -0.45; scene.add(saint);
+  const toy = PR.miniCar('#f2c230'); toy.scale.setScalar(0.5); toy.position.set(0.2, 0.34, 0.2); saint.add(toy); lab(scene, [3.4, 0, 1.6], 2);
+  // BOULDER with a flask on top
+  const b = PR.boulder(0.7); b.position.set(-2.0, 0.45, 1.6); scene.add(b); lab(scene, [-2.0, 0.9, 1.6], 1.8);
+  finishScene(stage, num, [j, saint], [0, 1.8, 7.0], [0, 1.2, 0]);
+});
+</script></body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Biogen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q08 — The MIT DOME and a BIOMED REALTY agent build the BUOY's new common.
+import { THREE, guard, mat, glow, add, box, cyl, blob, textPlane, water, ground, ripples, makeStage, createBuoy, person, armPose, dome, grab, wrapUp, rng } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  ground(scene, '#8ac060');
+  add(scene, new THREE.CircleGeometry(1.1, 40), mat('#2f9ad8', { roughness: 0.25 }), [-1.6, 0.01, 1.4], [-Math.PI / 2, 0, 0], [1.4, 1, 1]);
+  const d = dome({ scale: 1.1 }); d.position.set(-0.8, 0, -3.2); scene.add(d);
+  // scaffolding and crane around the dome
+  const steel = mat('#f0b020', { metalness: 0.2 });
+  for (const x of [-3.6, 3.4]) cyl(scene, steel, 0.06, 0.06, 3.2, [x, 1.6, -2.4], [0, 0, 0], 8);
+  box(scene, steel, [7.2, 0.07, 0.07], [-0.1, 3.2, -2.4]); box(scene, steel, [7.2, 0.07, 0.07], [-0.1, 1.6, -2.4]);
+  cyl(scene, steel, 0.1, 0.1, 5, [6.4, 2.5, -3.0]); box(scene, steel, [5.5, 0.12, 0.12], [3.8, 5.0, -3.0]); cyl(scene, mat('#222'), 0.01, 0.01, 1.4, [1.0, 4.3, -3.0], [0, 0, 0], 6); box(scene, mat('#7a5230'), [0.7, 0.22, 0.5], [1.0, 3.5, -3.0]);
+  // DNA helix
+  const helix = new THREE.Group();
+  for (let i = 0; i < 24; i++) { const a = i * 0.55, y = i * 0.09; blob(helix, mat('#3ab0ff'), [0.22 * Math.sin(a), y, 0.22 * Math.cos(a)], [0.05, 0.05, 0.05]); blob(helix, mat('#ff5a8a'), [-0.22 * Math.sin(a), y, -0.22 * Math.cos(a)], [0.05, 0.05, 0.05]); if (i % 2 == 0) cyl(helix, mat('#f2f2f2'), 0.012, 0.012, 0.44, [0, y, 0], [0, 0, a + Math.PI / 2].map((v, k) => k == 2 ? Math.PI / 2 : v), 6).rotation.set(0, a + Math.PI / 2, Math.PI / 2); }
+  helix.position.set(3.0, 0, 0.9); helix.scale.setScalar(1.2); scene.add(helix);
+  // agent
+  const agent = person({ suit: '#2a7a8a', shirt: '#ffffff', hairStyle: 'none', scale: 1.1 }); agent.position.set(1.3, 0, 1.0); agent.rotation.y = -0.3; scene.add(agent);
+  const hat = new THREE.Group(); hat.position.set(0, 1.62, 0); agent.add(hat); blob(hat, mat('#ffd21a'), [0, 0.03, 0], [0.2, 0.14, 0.2]); cyl(hat, mat('#ffd21a'), 0.24, 0.24, 0.03, [0, -0.02, 0.03]);
+  armPose(agent, 'l', [-1.5, 0.2, -0.3]); armPose(agent, 'r', [0, -0.2, 0]);
+  // little house with a red cross, held by the agent
+  const mini = new THREE.Group(); box(mini, mat('#f4e8d0'), [0.36, 0.26, 0.3], [0, 0.13, 0]); add(mini, new THREE.ConeGeometry(0.3, 0.2, 4), mat('#c8483a'), [0, 0.36, 0], [0, Math.PI / 4, 0]);
+  box(mini, mat('#e02a3a'), [0.12, 0.04, 0.02], [0, 0.15, 0.16]); box(mini, mat('#e02a3a'), [0.04, 0.12, 0.02], [0, 0.15, 0.16]);
+  mini.position.set(0.3, 1.55, 1.7); mini.scale.setScalar(1.3); scene.add(mini);
+  const buoy = createBuoy({ scale: 1.5 }); buoy.position.set(-1.6, 0.02, 1.4); buoy.rotation.y = 0.4; scene.add(buoy); ripples(scene, -1.6, 1.4, 0.03, 0.5);
+  grab(buoy, 'l', [-1.5, 1.0, 1.7]); 
+  // turf rolls
+  for (let i = 0; i < 3; i++) add(scene, new THREE.CylinderGeometry(0.2, 0.2, 0.8, 16), mat('#4aa83a'), [-0.2 + i * 0.1, 0.2, 2.2 - i * 0.05], [0, 0, Math.PI / 2]);
+  wrapUp(stage, scene, [buoy, agent], { cx: num('cx', 0.3), cy: num('cy', 1.9), cz: num('cz', 7.4), tx: 0.3, ty: 1.4 });
+});
+</script></body></html>

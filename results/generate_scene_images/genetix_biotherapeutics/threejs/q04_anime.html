@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — a CARLYLE car and an SK sledge take the TICKET private.
+import { THREE, guard, mat, add, blob, cyl, rbox, setup, labelMesh } from './common.js';
+
+function car() {
+  const g = new THREE.Group(), red = mat('#d6283a', { roughness: 0.35 }), glass = mat('#bfe6ff', { roughness: 0.1, metalness: 0.3 });
+  rbox(g, 2.1, 0.5, 1.0, red, [0, 0.55, 0], [0, 0, 0], 0.12);
+  rbox(g, 1.05, 0.45, 0.9, red, [0.0, 0.98, 0], [0, 0, 0], 0.12);
+  rbox(g, 0.85, 0.3, 0.92, glass, [0.0, 1.0, 0], [0, 0, 0], 0.06);
+  for (const [x, z] of [[-0.65, 0.5], [0.65, 0.5], [-0.65, -0.5], [0.65, -0.5]]) {
+    cyl(g, 0.27, 0.27, 0.2, mat('#222'), [x, 0.27, z], [Math.PI / 2, 0, 0]); cyl(g, 0.14, 0.14, 0.22, mat('#d8dde2', { metalness: 0.6 }), [x, 0.27, z], [Math.PI / 2, 0, 0]);
+  }
+  for (const z of [-0.3, 0.3]) blob(g, mat('#fff8c0'), [-1.06, 0.62, z], [0.05, 0.1, 0.1]);
+  rbox(g, 0.08, 0.08, 0.8, mat('#aaa', { metalness: 0.6 }), [1.08, 0.38, 0]);
+  return g;
+}
+function sledge() {
+  const g = new THREE.Group(), wood = mat('#c27a3c'), iron = mat('#6b747e', { metalness: 0.6, roughness: 0.3 });
+  rbox(g, 1.5, 0.08, 0.85, wood, [0, 0.28, 0], [0, 0, 0], 0.03);
+  for (const z of [-0.36, 0.36]) {
+    rbox(g, 1.8, 0.07, 0.07, iron, [0, 0.1, z], [0, 0, 0], 0.02);
+    add(g, new THREE.TorusGeometry(0.2, 0.035, 8, 20, Math.PI / 2), iron, [-0.9, 0.3, z], [0, 0, Math.PI / 2]);
+    for (const x of [-0.5, 0.5]) rbox(g, 0.06, 0.2, 0.06, wood, [x, 0.2, z]);
+  }
+  const lab = labelMesh('SK', 0.9, 0.34, { bg: '#2a62d6', fg: '#fff', font: 'bold 190px sans-serif' }); lab.position.set(0, 0.18, 0.435); g.add(lab);
+  return g;
+}
+
+guard(() => {
+  const S = setup({ ground: '#f3f7ff', sky: { cover: 1.5 } });
+  const { scene, num } = S;
+  const c = car(); c.position.set(-2.1, 0, 0); c.rotation.y = 0.12; scene.add(c);
+  const sl = sledge(); sl.position.set(1.65, 0, 0.1); sl.rotation.y = 0.12; scene.add(sl);
+  const rope = mat('#8a5a2a');
+  add(scene, new THREE.CylinderGeometry(0.022, 0.022, 1.8, 8), rope, [-0.2, 0.35, 0.2], [0, 0, Math.PI / 2 + 0.03]);
+  // padlock on the sledge front
+  const lk = new THREE.Group(); lk.position.set(0.72, 0.45, 0.28); scene.add(lk);
+  rbox(lk, 0.22, 0.2, 0.1, mat('#ffc928', { metalness: 0.6, roughness: 0.3 }), [0, 0, 0]);
+  add(lk, new THREE.TorusGeometry(0.075, 0.022, 8, 20, Math.PI), mat('#c9ced3', { metalness: 0.7 }), [0, 0.1, 0]);
+  const t = S.ticket(1.7, 0.2, 0.0, 1.7, { legs: { l: [-1.5, 0], r: [-1.5, 0] }, arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] } });
+  t.position.y = 0.36 - 0.27 * 1.7;
+  // pines
+  const g2 = mat('#2f7a4a');
+  [[-4.2, -3], [3.9, -3.5], [5.2, -2.2], [-2.6, -4.5]].forEach(([x, z]) => { cyl(scene, 0.08, 0.1, 0.4, mat('#6b4a2a'), [x, 0.2, z]); [0, 0.5, 1.0].forEach((h, i) => add(scene, new THREE.ConeGeometry(0.7 - i * 0.18, 0.9, 16), g2, [x, 0.8 + h, z])); });
+  S.finish([num('cx', 0.0), num('cy', 1.4), num('cz', 5.4)], [0.0, 0.85, 0]);
+});
+</script></body></html>

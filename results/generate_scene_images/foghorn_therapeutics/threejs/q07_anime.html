@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 ER-positive breast cancer: foghorn aims at purple cells feeding on oestrogen beside a pink ribbon and an ER+ sign.
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 30, az: 140 }); const scene = stage.scene;
+  ground(scene, '#f2dfe6');
+  const f = placeFoghorn(scene, { x: -3.3, z: 0.8, scale: 2.0 }); aimAt(f, [1.0, 1.1, 0.3]);
+  const V = (x, y) => new THREE.Vector3(x, y, 0);
+  const rib = new THREE.Group(); rib.position.set(2.7, 0.9, -0.3); rib.scale.setScalar(1.5); scene.add(rib);
+  const pink = mat('#ff4f93', { roughness: 0.35 });
+  const loop = []; for (let i = 0; i < 40; i++) { const t = i / 40 * Math.PI * 2; loop.push(V(0.55 * Math.sin(t) * Math.sin(t / 2) * 1.2, 0.58 * (1 - Math.cos(t)) )); }
+  add(rib, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(loop, true), 80, 0.09, 10, true), pink);
+  add(rib, new THREE.TubeGeometry(new THREE.CatmullRomCurve3([V(0, 0), V(-0.25, -0.5), V(-0.5, -0.95)]), 20, 0.09, 10), pink);
+  add(rib, new THREE.TubeGeometry(new THREE.CatmullRomCurve3([V(0, 0), V(0.25, -0.5), V(0.5, -0.95)]), 20, 0.09, 10), pink);
+  const sign = new THREE.Group(); sign.position.set(0.9, 0, 0.3); scene.add(sign);
+  add(sign, new THREE.CylinderGeometry(0.04, 0.04, 1.2, 10), mat('#6b5b4b'), [0, 0.6, 0]);
+  add(sign, new THREE.BoxGeometry(1.15, 0.7, 0.06), mat('#6b5b4b'), [0, 1.3, 0]);
+  textPlane(sign, 'ER+', { w: 1.05, h: 0.6, bg: '#a82466', fg: '#ffffff', pos: [0, 1.3, 0.035], px: 330 });
+  const r = rng(3);
+  for (let i = 0; i < 6; i++) { const c = new THREE.Group(); c.position.set(0.0 + (i % 3) * 0.55, 0.22 + Math.floor(i / 3) * 0.4, 1.3 + (i % 2) * 0.3); scene.add(c);
+    blob(c, mat('#6e2fb5', { roughness: 0.35 }), [0, 0, 0], [0.24, 0.24, 0.24]); blob(c, mat('#3b1670'), [0.05, 0.03, 0.2], [0.08, 0.08, 0.08]); }
+  for (let i = 0; i < 9; i++) { const g = blob(scene, mat('#ff86b7', { roughness: 0.25 }), [-0.3 + r() * 2.2, 0.6 + r() * 1.5, 1.2 + r() * 0.8], [0.07, 0.1, 0.07]); }
+  soundWaves(scene, f, { n: 4 });
+  finishScene(stage, f, { cam: [-0.5, 1.6, 6.7], look: [-0.4, 1.0, 0.3] });
+
+});
+</script></body></html>

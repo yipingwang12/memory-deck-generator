@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tufts TUCCA q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — Through a TRISH space capsule, NASA money reaches the TOUCAN's CAPTAIN.
+import { THREE, guard, rng, mat, add, blob, cyl, box, labelPlane, canvasPlane, setup, frame, meadow, createCoin, createPerson } from './common.js';
+import { createToucan } from './toucan.js';
+
+function capsule() {
+  const g = new THREE.Group(), V = (x, y) => new THREE.Vector2(x, y);
+  add(g, new THREE.LatheGeometry([V(0.001, 0), V(0.8, 0), V(0.86, 0.06), V(0.84, 0.16), V(0.5, 1.1), V(0.3, 1.5), V(0.18, 1.62), V(0.001, 1.66)], 48), mat('#eef1f6', { roughness: 0.4 }));
+  add(g, new THREE.LatheGeometry([V(0.001, -0.06), V(0.9, -0.06), V(0.92, 0.02), V(0.86, 0.06), V(0.001, 0.06)], 48), mat('#3a2a28'));
+  const band = mat('#e8283a'); add(g, new THREE.LatheGeometry([V(0.713, 0.55), V(0.7, 0.55), V(0.665, 0.7), V(0.678, 0.7)], 48), band);
+  const nameplate = labelPlane('TRISH', 0.78, 0.26, '#1a2f7a', '#ffffff'); nameplate.position.set(0, 0.44, 0.76); nameplate.rotation.x = -0.4; g.add(nameplate);
+  // porthole + open hatch
+  const win = new THREE.Group(); win.position.set(0, 0.95, 0.5); win.rotation.x = -0.9; g.add(win);
+  cyl(win, mat('#9aa4b4', { metalness: 0.6 }), 0.17, 0.17, 0.05, [0, 0, 0], [Math.PI / 2, 0, 0]); cyl(win, mat('#2a3a68', { emissive: '#4a6ab8', emissiveIntensity: 0.6 }), 0.12, 0.12, 0.06, [0, 0, 0.01], [Math.PI / 2, 0, 0]);
+  for (const s of [-1, 1]) cyl(g, mat('#aab2c0', { metalness: 0.5 }), 0.05, 0.07, 0.4, [s * 0.62, -0.18, 0.1], [0.1, 0, s * -0.4]);
+  return g;
+}
+guard(() => {
+  const S = setup({ el: 14, az: 120, sun: 1.6, amb: 1.2, sky: { zenith: '#070b26', horizon: '#3a3f86', cover: 0.0, puffCover: 0.0, towerTop: 0.0 } }); const { scene, num } = S;
+  meadow(scene, '#23542f'); const r = rng(12);
+  // stars + moon
+  const pts = []; for (let i = 0; i < 500; i++) { const a = r() * 6.28, e = 0.1 + r() * 1.2, R = 700; pts.push(Math.cos(a) * Math.cos(e) * R, Math.sin(e) * R, -Math.sin(a) * Math.cos(e) * R - 200); }
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: '#fff7d8', size: 3.2, sizeAttenuation: false, fog: false })));
+  const moon = new THREE.Mesh(new THREE.SphereGeometry(30, 32, 20), new THREE.MeshBasicMaterial({ color: '#fff4d0', fog: false })); moon.position.set(-200, 330, -650); scene.add(moon);
+  const cap = capsule(); cap.scale.setScalar(1.3); cap.position.set(2.6, 0, -0.3); cap.rotation.y = -0.4; scene.add(cap);
+  const c = createPerson({ cap: true, scale: 1.3 }); c.position.set(-0.7, 0, 1.2); c.rotation.y = 0.35; scene.add(c);
+  c.userData.head.rotation.x = -0.35; c.userData.arm('l', [0.5, 1.0], -0.5); c.userData.arm('r', [0, 0.25], -0.3);
+  // coin sack in the captain's hand + coin stream from the capsule porthole
+  const sack = new THREE.Group(); sack.position.set(0.55, 0.9, 1.9); scene.add(sack);
+  blob(sack, mat('#a8803e'), [0, 0, 0], [0.28, 0.3, 0.28]); cyl(sack, mat('#6a4a22'), 0.1, 0.1, 0.08, [0, 0.3, 0]);
+  const t = createToucan({ scale: num('ts', 1.0) }); t.position.set(-1.2, 1.84, 1.55); t.rotation.y = 0.15; scene.add(t);
+  t.userData.pose({ headTilt: -0.05, wings: { l: [0, 0.1], r: [0, 0.1] } });
+  const from = [1.95, 1.25, 0.25], to = [0.6, 1.2, 1.75];
+  for (let i = 0; i < 14; i++) { const f = i / 13, cn = createCoin(0.09);
+    cn.position.set(from[0] + (to[0] - from[0]) * f, from[1] + (to[1] - from[1]) * f + Math.sin(f * Math.PI) * 0.5, from[2] + (to[2] - from[2]) * f); cn.rotation.set(r() * 3, r() * 3, r() * 3); scene.add(cn); }
+  frame(S, [t, c], [0.8, 1.5, 7.4], [0.9, 1.5, 0], null);
+});
+</script></body></html>

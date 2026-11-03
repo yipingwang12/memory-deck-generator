@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><title>q02</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// MALT-shake man wears GENERATOR first CEO crown
+import { THREE, guard, mat, add, blob, box, cyl, textTex, createPerson, createGenerator, setupScene, rng } from './common.js';
+import * as K from './props.js';
+guard(() => {
+  const S = setupScene(new URLSearchParams(location.search), { ground: '#bf9a60' });
+  const scene = S.scene, num = S.num, chars = [];
+  const gen = (x, z, ry, sc = 1.35) => { const g = createGenerator({ scale: sc }); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g); chars.push(g); return g; };
+  const person = (p, x, z, ry) => { p.position.set(x, 0, z); p.rotation.y = ry; scene.add(p); chars.push(p); return p; };
+  const reachTo = (g, k, w) => { g.updateMatrixWorld(true); const l = g.worldToLocal(new THREE.Vector3(...w)); g.userData.reach(k, [l.x, l.y, l.z]); };
+  const spark = (x, y, z, s = 1, c = '#ffe44a') => { const m = add(scene, new THREE.OctahedronGeometry(0.06 * s), new THREE.MeshBasicMaterial({ color: c }), [x, y, z]); m.scale.set(1, 1.6, 0.5); m.castShadow = false; return m; };
+  const grass = (n, seed, w, d, z0, cols) => { const r = rng(seed); for (let i = 0; i < n; i++) blob(scene, mat(cols[i % cols.length]), [(r() - 0.5) * w, 0.03, z0 - r() * d], [0.04, 0.04, 0.04]); };
+
+  for (let i = -8; i <= 8; i++) box(scene, mat(i % 2 ? '#c9a36b' : '#bf9a60'), [i * 0.5, 0.01, 0], [0.48, 0.02, 12]);
+  const man = createPerson({ coat: '#f3f0e8', hair: '#6a3a1a', pants: '#3a3f55', scale: 1.4, eyeColor: '#3a6a9a' }); person(man, -0.75, 0, 0.35);
+  const c = K.crown(1.7); c.position.y = 0.19; man.userData.head.add(c);
+  const m = K.malt(); m.scale.setScalar(1.6); man.userData.arms.l.rotation.z = 2.1; man.userData.arms.l.add(m); m.position.set(0, -0.34, 0.03); m.rotation.z = -2.1;
+  const g = gen(0.85, 0.1, -0.35, 1.4); g.userData.pose({ arms: { l: [0, 0.8, 0], r: [0, 0.3, 0] } });
+  reachTo(g, 'r', [0.2, 1.05, 0.5]);
+  const t = K.tulip; [[2, 3.0], [2.4, 2.8]].forEach(() => 0);
+  spark(-0.75, 2.3, 0.3, 1.2); spark(-1.4, 2.0, 0.2, 0.9); spark(-0.1, 2.1, 0.3, 0.9);
+  S.done(chars, { pos: [0.1, 1.15, 4.2], at: [0, 0.9, 0] });
+
+});
+</script></body></html>

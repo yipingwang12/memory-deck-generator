@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brainco q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — The COCONUT quietly files to sell shares in HONG KONG harbour.
+import { THREE, guard, rng, canvasTexture, mat, glow, add, blob, box, cyl, plane, textPlane, makeStage, placeCoconut, reachWorld, finish, palmTree, skyline, junk } from './common.js';
+guard(() => {
+  const { stage, num, scene } = makeStage({ sky: { cover: 0.8 } });
+  plane(scene, mat('#2f8fb8', { roughness: 0.25 }), [0, 0, -30], 400, 200);
+  skyline(scene, { z: -45, span: 100 });
+  const j = junk(1.0); j.position.set(4.0, 0, -7); j.scale.setScalar(1.8); scene.add(j);
+  const fer = new THREE.Group(); fer.position.set(-5, 0, -9); scene.add(fer);
+  box(fer, mat('#f4f4f0'), [0, 0.6, 0], [3, 0.6, 1]); box(fer, mat('#2a6a3a'), [0, 1.05, 0], [2.4, 0.4, 0.9]); box(fer, mat('#2a6a3a'), [0, 0.3, 0.0], [3.1, 0.2, 1.05]);
+  // promenade + railing
+  box(scene, mat('#b9b2a4'), [0, -0.3, 1.5], [16, 1.0, 5.6]);
+  box(scene, mat('#d8d2c4'), [0, 0.5, -1.2], [16, 0.08, 0.1]);
+  for (let i = -7; i <= 7; i++) cyl(scene, mat('#d8d2c4'), [i * 1.1, 0.25, -1.2], 0.03, 0.5);
+  const hk = textPlane('HONG KONG', 2.6, 0.7, { bg: '#b8101c', fg: '#fff', font: 'bold 170px sans-serif' }); hk.position.set(-0.2, 3.9, -3); scene.add(hk);
+  for (const x of [-1.2, 0.8]) cyl(scene, mat('#555'), [x, 3.3, -3.02], 0.03, 1.2);
+  // filing desk with stamped share certificates
+  box(scene, mat('#7a4a28'), [1.1, 0.55, 1.4], [1.5, 0.1, 0.9]);
+  for (const x of [0.5, 1.7]) box(scene, mat('#7a4a28'), [x, 0.27, 1.4], [0.1, 0.55, 0.8]);
+  for (let i = 0; i < 3; i++) box(scene, mat('#fffbe8'), [1.2 + i * 0.06, 0.62 + i * 0.012, 1.4 - i * 0.05], [0.7, 0.012, 0.5], [0, 0.15 * i, 0]);
+  blob(scene, mat('#d2142c'), [1.4, 0.7, 1.45], [0.13, 0.06, 0.13]);
+  // coconut: finger to lips (shh), other hand holds the filing
+  const c = placeCoconut(scene, { scale: 1.6, x: -0.5, z: 1.4, ry: 0.35 });
+  c.userData.pose({ arms: { l: [0, 0.6, 0] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  reachWorld(c, 'l', [0.55, 0.75, 1.9]);
+  const doc = box(scene, mat('#fffbe8'), [0.75, 0.85, 1.95], [0.5, 0.65, 0.02], [-0.2, 0.2, 0.1]);
+  box(scene, mat('#d2142c'), [0.75, 0.9, 1.97], [0.28, 0.03, 0.01], [-0.2, 0.2, 0.1]);
+  finish(stage, scene, num, [c], { cam: [0.2, 1.4, 5.4], look: [0.2, 1.3, 0] });
+});
+</script></body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alnylam q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { buildQ08 } from './q08_scene.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 46), sunElevation: num('el', 27), sunAzimuth: num('az', 196), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 3), towerTop: num('top', 0.5), puffCover: num('puff', 2) },
+    rim: { color: '#fff3dc', strength: num('rim', 1.4), width: num('rimw', 0.55) },
+    sunIntensity: num('sun', 2.6), ambient: { color: '#e8e2ff', intensity: num('amb', 2.3) }, triBumpScale: num('tbump', 0.3),
+    ink: { width: num('inkw', 1.2), strength: num('ink', 0.85), normalThresh: num('nth', 0.45), normalStrength: num('nstr', 0.45), fadeFar: num('fade', 60) },
+    flare: num('flare', 0.9),
+    fog: { near: 120, far: 1500 },
+  });
+  const { lamb } = buildQ08(stage.scene, num);
+  const lambMeshes = new Set();
+  lamb.traverse((o) => lambMeshes.add(o));
+  stage.toonify(stage.scene, (m) => lambMeshes.has(m));
+
+
+  stage.camera.position.set(num('cx', 0.1), num('cy', 1.15), num('cz', 2.4));
+  stage.camera.lookAt(num('tx', 0), num('ty', 0.5), num('tz', 0.3));
+  stage.finish();
+});
+</script></body></html>

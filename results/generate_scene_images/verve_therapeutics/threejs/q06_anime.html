@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Verve scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import * as PR from "./props.js";
+const { THREE, run, add, mat, blob, bevBox, label, makeStage, createBallerina, lollipop, nail, die, coin, mouse, gene, syringe, hammer, coinStack, canvasTexture } = PR;
+run(() => {
+const { scene, done, num } = makeStage();
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#ffd9a8'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#f3b8b0'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+const red = mat('#d8344a', { side: THREE.DoubleSide, roughness: 0.5 });
+const tg = new THREE.CylinderGeometry(1.6, 1.6, 8, 48, 1, true, Math.PI / 2, Math.PI); tg.rotateZ(Math.PI / 2);
+add(scene, tg, red, [0, 1.6, 0]);
+const yel = mat('#ffd23d', { roughness: 0.4 });
+const wall = (x, ang, s) => { const y = 1.6 + Math.sin(ang) * 1.45, z = -Math.cos(Math.abs(ang)) * 1.45; blob(scene, yel, [x, y, z], [s, s * 0.8, s * 0.7]); };
+for (const [x, a, s] of [[-3, -1.2, 0.4], [-2.6, 1.1, 0.35], [-2.2, -0.8, 0.3], [-3.2, 0.5, 0.35], [-1.7, 1.3, 0.3], [2.4, -1.1, 0.35], [3.0, 1.0, 0.4], [2.8, -0.5, 0.3]]) wall(x, a, s);
+for (const [x, y, z, s] of [[1.2, 2.6, 1.6, 0.26], [1.8, 1.0, 1.9, 0.2], [2.3, 2.3, 1.5, 0.18]]) blob(scene, yel, [x, y, z], [s, s, s]);
+const b = createBallerina({ scale: 1.7 }); b.position.set(0.0, 0.0, -0.2); b.rotation.y = 0.2; scene.add(b);
+b.userData.pose({ lean: 0.0, headTilt: 0.1, arms: { l: [-0.2, 2.4, 0.2], r: [-0.4, -1.4, 0.6] }, legs: { l: [0, 0.1], r: [-1.0, -0.1] } });
+done([0.3, 1.4, 5.4], [0.2, 1.3, 0], [b]);
+});
+</script></body></html>

@@ -1,0 +1,15 @@
+<!doctype html><html><head><title>anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, createGenerator, setupScene } from './common.js';
+guard(() => {
+  const S = setupScene(new URLSearchParams(location.search), { ground: '#d9d2c4' });
+  const gs = [];
+  [[-1.3, 0.0], [0, 0.0], [1.3, -0.5 + 0.5]].forEach(([x, ry], i) => {
+    const g = createGenerator({ scale: 1.2 }); g.position.set(x, 0, 0); g.rotation.y = [0.7, 0, -0.9][i];
+    g.userData.pose({ arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } }); S.scene.add(g); gs.push(g);
+  });
+  S.done(gs, { pos: [0, 0.9, 4.2], at: [0, 0.65, 0] });
+});
+</script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><title>q13</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// The GENIE is the GENERATOR first research partner
+import { THREE, guard, mat, add, blob, box, cyl, textTex, createPerson, createGenerator, setupScene, rng } from './common.js';
+import * as K from './props.js';
+guard(() => {
+  const S = setupScene(new URLSearchParams(location.search), { ground: '#e6c07a' });
+  const scene = S.scene, num = S.num, chars = [];
+  const gen = (x, z, ry, sc = 1.35) => { const g = createGenerator({ scale: sc }); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g); chars.push(g); return g; };
+  const person = (p, x, z, ry) => { p.position.set(x, 0, z); p.rotation.y = ry; scene.add(p); chars.push(p); return p; };
+  const reachTo = (g, k, w) => { g.updateMatrixWorld(true); const l = g.worldToLocal(new THREE.Vector3(...w)); g.userData.reach(k, [l.x, l.y, l.z]); };
+  const spark = (x, y, z, s = 1, c = '#ffe44a') => { const m = add(scene, new THREE.OctahedronGeometry(0.06 * s), new THREE.MeshBasicMaterial({ color: c }), [x, y, z]); m.scale.set(1, 1.6, 0.5); m.castShadow = false; return m; };
+  const grass = (n, seed, w, d, z0, cols) => { const r = rng(seed); for (let i = 0; i < n; i++) blob(scene, mat(cols[i % cols.length]), [(r() - 0.5) * w, 0.03, z0 - r() * d], [0.04, 0.04, 0.04]); };
+
+  const gn = K.genie(1.5); gn.position.set(1.15, 0.25, 0); gn.rotation.y = -0.15; scene.add(gn); chars.push(gn);
+  const lp = K.lamp(1.8); lp.position.set(0.6, 0, 0.7); lp.rotation.y = 0.4; scene.add(lp);
+  const g = gen(-0.35, 0.4, 0.5, 1.6); g.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, 0.3, 0] } });
+  reachTo(g, 'l', [0.45, 1.05, 0.5]);
+  const smoke = mat('#9ad0ff', { transparent: true, opacity: 0.6 }); for (let i = 0; i < 4; i++) blob(scene, smoke, [0.65 + i * 0.03, 0.4 + i * 0.12, 0.7], [0.12 - i * 0.02, 0.12, 0.1]);
+  [[1.9, 3.0, 1.2], [0.1, 2.8, 1], [2.4, 1.8, 1]].forEach(([x, y, s]) => spark(x, y, 0.3, s));
+  S.done(chars, { pos: [0.4, 1.5, 5.4], at: [0.4, 1.2, 0] });
+
+});
+</script></body></html>

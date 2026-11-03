@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Moderna q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — The MODEM changes only the message, not the machine: swaps one bead in the sequence.
+import { THREE, mat, add, rbox, blob, num, makeStage, finishScene, createModem } from './common.js';
+import { guard } from './kit.js';
+function beads(colors, y, z, swapIdx, swapColor) {
+  const g = new THREE.Group();
+  colors.forEach((c, i) => {
+    const sw = i === swapIdx;
+    const b = blob(g, mat(sw ? swapColor : c, { roughness: 0.3 }), [(i - (colors.length - 1) / 2) * 0.3, 0, 0], sw ? [0.17, 0.17, 0.17] : [0.12, 0.12, 0.12]);
+    if (i < colors.length - 1) add(g, new THREE.CylinderGeometry(0.014, 0.014, 0.2, 8), mat('#d9d4c8'), [(i - (colors.length - 1) / 2) * 0.3 + 0.15, 0, 0], [0, 0, Math.PI / 2]);
+  });
+  g.position.set(-0.5, y, z); return g;
+}
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { ground: '#f0e2c4' });
+  const scene = stage.scene;
+  const base = ['#ff8a3d', '#ff8a3d', '#ff8a3d', '#ff8a3d', '#ff8a3d', '#ff8a3d', '#ff8a3d'];
+  // old message (back, faded) and new message (front) differ by one bead
+  const old = beads(base, 2.1, -0.3, -1, ''); scene.add(old);
+  const neu = beads(base, 1.3, 0.2, 5, '#3a7bff'); scene.add(neu);
+  // machine = a gear that is unchanged, beside the modem
+  const gear = new THREE.Group();
+  add(gear, new THREE.CylinderGeometry(0.4, 0.4, 0.14, 32), mat('#9aa6b2', { metalness: 0.5, roughness: 0.35 }), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; add(gear, new THREE.BoxGeometry(0.16, 0.16, 0.14), mat('#9aa6b2', { metalness: 0.5, roughness: 0.35 }), [Math.cos(a) * 0.46, Math.sin(a) * 0.46, 0], [0, 0, a]); }
+  add(gear, new THREE.CylinderGeometry(0.14, 0.14, 0.18, 24), mat('#4a5560'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  gear.position.set(-2.2, 0.75, -0.3); scene.add(gear);
+  // the modem holds the new bead out; a sparkle ring
+  const modem = createModem({ scale: 1.5 }); modem.position.set(1.0, 0, 0.3); modem.rotation.y = 0; scene.add(modem);
+  modem.userData.pose({ arms: { l: [0, 0.5, 0] } });
+  const beadW = new THREE.Vector3(0.3 * 0.0 + 0.0, 1.3, 0.2);
+  // swapped bead world pos: index 3 of 7 => x = 0.0
+  const local = modem.worldToLocal(new THREE.Vector3(0.1, 1.25, 0.25));
+  modem.userData.reach('l', local.toArray());
+  modem.userData.reach('r', modem.worldToLocal(new THREE.Vector3(0.1, 1.05, 0.25)).toArray());
+  const ring = add(scene, new THREE.TorusGeometry(0.28, 0.02, 8, 32), mat('#fff4a0', { emissive: '#ffe070', emissiveIntensity: 0.8 }), [0.1, 1.3, 0.2]);
+  // little arrow: from old bead to new = swap
+  finishScene(stage, P, [modem], [0.1, 1.3, 5.0, 0.1, 1.15, 0]);
+});
+</script></body></html>

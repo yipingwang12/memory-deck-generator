@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// NATURE's pocket (Natera) on the JEANS holds oncology, women's health and organ health.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+import { pocketTexture } from './jeans.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  meadow(scene, '#5faa48'); flowers(scene, 8, 70, [-6, 6], [-5, 2]);
+  const r = rng(5); [[-3.2, -3], [3.6, -3.5], [-5, -5], [5.4, -5.5], [0, -6.5]].forEach(([x, z], i) => { const t = PR.tree(3.4 + r() * 1.5, ['#3f9a4a', '#58b052', '#2f8a46'][i % 3]); t.position.set(x, 0, z); scene.add(t); });
+  const j = placeJeans(scene, num, { scale: 2.3, x: -0.2, ry: -0.5, pose: { arms: { l: [0, 0.4, 0], r: [0, 0.2, 0] } } });
+  const pk = j.userData.parts.frontPockets[1];
+  pk.material = new THREE.MeshStandardMaterial({ map: pocketTexture('#3fae4e', 'front'), roughness: 0.8, side: THREE.DoubleSide });
+  const heartM = PR.heart(); heartM.scale.setScalar(0.15); heartM.position.set(0.11, 0.735, 0.1); heartM.rotation.set(0, 0.2, 0.25); j.add(heartM);
+  const rib = PR.ribbon('#b57ee8'); rib.scale.setScalar(0.17); rib.position.set(0.17, 0.77, 0.115); rib.rotation.set(0, 0.2, -0.05); j.add(rib);
+  const ven = PR.venus('#ff5f9e'); ven.scale.setScalar(0.17); ven.position.set(0.235, 0.74, 0.1); ven.rotation.set(0, 0.5, -0.25); j.add(ven);
+  const leaf = mat('#3fae4e');
+  for (const [x, y, z, a] of [[0.07, 0.69, 0.1, 0.6], [0.24, 0.7, 0.1, -0.6], [0.16, 0.69, 0.11, 0.1], [0.2, 0.52, 0.09, 0.4], [0.1, 0.55, 0.1, -0.3]]) blob(j, leaf, [x, y, z], [0.03, 0.012, 0.016], [0, 0.3, a]);
+  for (const [x, y, c] of [[0.12, 0.6, '#fff'], [0.2, 0.62, '#ffd84a'], [0.09, 0.64, '#ff8fa8']]) blob(j, mat(c), [x, y, 0.1], [0.012, 0.012, 0.008]);
+  finishScene(stage, num, [j], [0.9, 1.6, 5.2], [0.5, 1.45, 0]);
+});
+</script></body></html>

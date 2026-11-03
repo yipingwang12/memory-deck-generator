@@ -1,0 +1,125 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Editas q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — "A donkey (AS) carries a CASK (Cas12a) of lead for the PENCIL: AsCas12a."
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createPencil } from './pencil.js';
+
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, ...e });
+const add = (parent, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; parent.add(o); return o;
+};
+const blob = (parent, m, pos, scl, rot) => add(parent, new THREE.SphereGeometry(1, 32, 20), m, pos, rot, scl);
+
+function woodTexture() {
+  return canvasTexture(512, (ctx, s) => {
+    const r = rng(7); const n = 14;
+    for (let i = 0; i < n; i++) {
+      const l = 150 + r() * 25; ctx.fillStyle = `rgb(${l + 40},${l - 10},${l - 80})`; ctx.fillRect(i * s / n, 0, s / n, s);
+      ctx.fillStyle = 'rgba(60,30,10,0.9)'; ctx.fillRect(i * s / n, 0, 3, s);
+      for (let k = 0; k < 14; k++) { ctx.fillStyle = 'rgba(90,50,20,0.18)'; ctx.fillRect(i * s / n + r() * s / n, 0, 1.5, s); }
+    }
+  });
+}
+
+function buildDonkey() {
+  const g = new THREE.Group();
+  const coat = mat('#8e8b8a'), pale = mat('#e6e0d6'), dark = mat('#4a4745'), hoof = mat('#2b2523');
+  blob(g, coat, [0, 0.62, 0], [0.52, 0.26, 0.23]);                 // barrel body
+  blob(g, coat, [0.38, 0.7, 0], [0.24, 0.27, 0.21]);               // chest
+  blob(g, coat, [-0.4, 0.66, 0], [0.22, 0.25, 0.21]);              // rump
+  blob(g, pale, [0, 0.45, 0], [0.4, 0.09, 0.19]);                  // pale belly
+  // neck + head (facing +x)
+  add(g, new THREE.CylinderGeometry(0.1, 0.15, 0.4, 20), coat, [0.57, 0.92, 0], [0, 0, -0.75]);
+  const head = new THREE.Group(); head.position.set(0.78, 1.08, 0); head.rotation.z = -0.55; g.add(head);
+  blob(head, coat, [0, 0, 0], [0.2, 0.115, 0.1]);
+  blob(head, pale, [0.17, -0.025, 0], [0.11, 0.09, 0.083]);        // pale muzzle
+  blob(head, dark, [0.265, -0.01, 0.0], [0.03, 0.04, 0.05]);       // nose tip
+  for (const s of [-1, 1]) {
+    blob(head, mat('#1a1210', { roughness: 0.3 }), [0.1, 0.05, s * 0.088], [0.028, 0.032, 0.015]); // eye
+    blob(head, mat('#fff', { roughness: 0.3 }), [0.108, 0.058, s * 0.1], [0.008, 0.008, 0.006]);
+    // long ears
+    const ear = new THREE.Group(); ear.position.set(-0.07, 0.09, s * 0.055); ear.rotation.set(s * 0.3, 0, 0.35); head.add(ear);
+    add(ear, new THREE.ConeGeometry(0.06, 0.5, 16), coat, [0, 0.25, 0], [0, 0, 0], [1, 1, 0.5]);
+    add(ear, new THREE.ConeGeometry(0.036, 0.42, 16), mat('#e4b3a6'), [0, 0.23, s * 0.014], [0, 0, 0], [1, 1, 0.3]);
+    add(ear, new THREE.SphereGeometry(0.04, 12, 8), dark, [0, 0.49, 0], [0, 0, 0], [0.9, 1, 0.45]);
+  }
+  // mane (dark strip along neck) + forelock
+  for (let i = 0; i < 7; i++) { const t = (i - 3) * 0.062; blob(g, dark, [0.57 + 0.68 * t - 0.73 * 0.13, 0.92 + 0.73 * t + 0.68 * 0.13, 0], [0.04, 0.075, 0.03], [0, 0, -0.75]); }
+  // legs
+  for (const [x, z] of [[0.4, 0.13], [0.4, -0.13], [-0.4, 0.13], [-0.4, -0.13]]) {
+    add(g, new THREE.CylinderGeometry(0.055, 0.04, 0.5, 14), coat, [x, 0.27, z]);
+    add(g, new THREE.CylinderGeometry(0.052, 0.058, 0.08, 14), dark, [x, 0.04, z]);
+    add(g, new THREE.CylinderGeometry(0.058, 0.066, 0.05, 14), hoof, [x, 0.025, z]);
+    blob(g, pale, [x, 0.4, z], [0.058, 0.07, 0.058]);
+  }
+  // tail
+  add(g, new THREE.CylinderGeometry(0.018, 0.03, 0.42, 10), coat, [-0.66, 0.55, 0], [0, 0, 0.3]);
+  blob(g, dark, [-0.72, 0.33, 0], [0.05, 0.1, 0.05], [0, 0, 0.3]);
+  return g;
+}
+
+function buildCask() {
+  const g = new THREE.Group(), wood = canvasTexture ? woodTexture() : null;
+  const pts = []; const H = 0.36;
+  for (let i = 0; i <= 16; i++) { const t = i / 16 * 2 - 1; pts.push(new THREE.Vector2(0.17 + 0.05 * (1 - t * t), t * H / 2)); }
+  const body = add(g, new THREE.LatheGeometry(pts, 28), new THREE.MeshStandardMaterial({ map: wood, roughness: 0.7 }));
+  add(g, new THREE.CircleGeometry(0.17, 28), mat('#6a3f1d'), [0, H / 2 - 0.02, 0], [-Math.PI / 2, 0, 0]);
+  const steel = mat('#3d4650', { metalness: 0.6, roughness: 0.35 });
+  for (const t of [-0.78, -0.4, 0.4, 0.78]) add(g, new THREE.TorusGeometry(0.17 + 0.05 * (1 - t * t) + 0.004, 0.014, 8, 40), steel, [0, t * H / 2, 0], [Math.PI / 2, 0, 0]);
+  // graphite lead sticks poking out of the top
+  const lead = mat('#5d6166', { metalness: 0.35, roughness: 0.4 });
+  [[-0.06, 0.04, 0.25, 0.2], [0.05, -0.03, 0.3, -0.12], [0.0, 0.07, 0.22, 0.05], [-0.07, -0.05, 0.28, -0.22], [0.08, 0.05, 0.2, 0.3]].forEach(([x, z, h, tilt], i) => {
+    add(g, new THREE.CylinderGeometry(0.014, 0.014, h, 8), lead, [x, H / 2 + h / 2 - 0.05, z], [tilt * 0.6, 0, -tilt]);
+  });
+  return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  const scene = stage.scene;
+  // meadow + dirt path
+  const ground = add(scene, new THREE.PlaneGeometry(400, 400), mat('#6fae45'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(400, 1.6), mat('#c9a56b'), [0, 0.003, 0.1], [-Math.PI / 2, 0, 0]);
+  const r = rng(4);
+  for (let i = 0; i < 60; i++) { const f = add(scene, new THREE.SphereGeometry(0.03, 8, 6), mat(['#ffd84a', '#ffffff', '#ff8fa8'][i % 3]), [(r() - 0.5) * 8, 0.03, -1 - r() * 5]); }
+
+  const donkey = buildDonkey(); donkey.position.set(0.55, 0, -0.1); scene.add(donkey);
+  const cask = buildCask(); cask.position.set(0.0, 1.06, 0); cask.rotation.y = 0.4; donkey.add(cask);
+  // saddle blanket + straps
+  add(donkey, new THREE.CylinderGeometry(0.34, 0.34, 0.1, 28), mat('#b8343a'), [0, 0.85, 0], [0, 0, 0], [1, 1, 0.65]);
+  const rope = mat('#d9b878');
+  for (const x of [-0.12, 0.12]) add(donkey, new THREE.TorusGeometry(0.255, 0.018, 8, 40), rope, [x, 0.62, 0], [0, Math.PI / 2, 0], [1, 1.02, 1]).scale.set(1.0, 1.0, 1.0);
+  add(donkey, new THREE.TorusGeometry(0.2, 0.014, 8, 40), rope, [0, 0.99, 0], [Math.PI / 2, 0, 0]);
+
+  const pencil = createPencil({ scale: num('ps', 1.25) });
+  pencil.position.set(num('px', -0.42), 0, num('pz', 0.6)); pencil.rotation.y = num('pry', 0.55);
+  scene.add(pencil);
+  pencil.userData.pose({ lean: 0.1, headTilt: 0.08, arms: { l: [0.2, 0.1, 0] }, legs: { l: [0.35, 0], r: [-0.3, 0] } });
+  pencil.updateMatrixWorld(true);
+  const target = pencil.worldToLocal(new THREE.Vector3(0.3, 1.1, 0.2));
+  pencil.userData.reach('l', [target.x, target.y, target.z]);
+  const pm = new Set(); pencil.traverse((o) => pm.add(o));
+  stage.toonify(scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [252, 900, 80, 1.1]]);
+
+  stage.camera.position.set(num('cx', 0.3), num('cy', 0.85), num('cz', 3.0));
+  stage.camera.lookAt(num('tx', 0.15), num('ty', 0.75), 0);
+  stage.finish();
+});
+</script></body></html>

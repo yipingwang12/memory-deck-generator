@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A VERY SITE patch on the JEANS finds cancer in tissue and in loose cells: cytology.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+import { pocketTexture } from './jeans.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ shadowSize: 6 });
+  meadow(scene, '#d9c08a');
+  const fence = mat('#ff8a1a'); 
+  for (let i = -4; i <= 4; i++) { add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), mat('#555'), [i * 1.1, 0.6, -3]); }
+  for (const y of [0.35, 0.9]) add(scene, new THREE.BoxGeometry(9.6, 0.12, 0.05), fence, [0, y, -3]);
+  const sg = PR.sign('VERY SITE', 3.6, 1.0, '#ffd21a', '#1a1a1a'); sg.position.set(1.1, 2.2, -3.3); scene.add(sg);
+  for (const x of [-0.7, 2.9]) add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.6, 8), mat('#555'), [x, 1.5, -3.3]);
+  for (const [x, z] of [[-3.4, -1.2], [3.8, -1.0], [-2.6, 1.0]]) { const c = PR.cone(); c.scale.setScalar(1.3); c.position.set(x, 0, z); scene.add(c); }
+  const j = placeJeans(scene, num, { scale: 2.1, x: -1.8, z: 0, ry: 0.35, pose: { arms: { l: [0, 0.3, 0] } }, reach: { r: [-1.0, 1.3, 1.1] } });
+  // knee patch
+  const leg = j.userData.parts.legs.l;
+  const patch = new THREE.Group(); patch.position.set(0, -0.27, 0.088);
+  add(patch, new THREE.BoxGeometry(0.15, 0.15, 0.014), mat('#f4a62a'), [0, 0, 0]);
+  add(patch, new THREE.BoxGeometry(0.125, 0.125, 0.018), mat('#ffd86a'), [0, 0, 0.002]);
+  add(patch, new THREE.BoxGeometry(0.095, 0.014, 0.022), mat('#f4a62a'), [0, 0, 0.003]); add(patch, new THREE.BoxGeometry(0.014, 0.095, 0.022), mat('#f4a62a'), [0, 0, 0.003]);
+  patch.rotation.x = 0; leg.add(patch);
+  // table: tissue slide + dish of loose cells + ribbon
+  add(scene, new THREE.BoxGeometry(2.6, 0.1, 1.1), mat('#e8e2d6'), [1.7, 0.85, 0.6]); for (const [x, z] of [[0.5, 0.2], [2.9, 0.2], [0.5, 1.0], [2.9, 1.0]]) add(scene, new THREE.CylinderGeometry(0.05, 0.05, 0.85, 8), mat('#777'), [x, 0.42, z]);
+  add(scene, new THREE.BoxGeometry(0.9, 0.03, 0.4), mat('#d7efff', { transparent: true, opacity: 0.6 }), [1.1, 0.92, 0.6]);
+  blob(scene, mat('#e98aa8'), [1.1, 0.95, 0.6], [0.3, 0.03, 0.14]); blob(scene, mat('#c8587c'), [1.0, 0.97, 0.58], [0.1, 0.02, 0.06]);
+  add(scene, new THREE.CylinderGeometry(0.4, 0.4, 0.07, 28), mat('#dff4ff', { transparent: true, opacity: 0.55 }), [2.3, 0.94, 0.6]);
+  const r = rng(2); for (let i = 0; i < 18; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * 0.33; blob(scene, mat(i % 5 === 0 ? '#9a3ac8' : '#f0a0c0'), [2.3 + Math.cos(a) * d, 0.98, 0.6 + Math.sin(a) * d], [0.045, 0.045, 0.045]); }
+  const rib = PR.ribbon('#b57ee8'); rib.scale.setScalar(0.5); rib.position.set(1.7, 1.55, 0.5); scene.add(rib);
+  const mag = PR.magnifier(0.34); mag.position.set(1.3, 0.97, 1.0); mag.rotation.set(-1.1, 0, 0); scene.add(mag);
+  finishScene(stage, num, [j], [0.4, 1.8, 6.8], [0.2, 1.2, 0]);
+});
+</script></body></html>

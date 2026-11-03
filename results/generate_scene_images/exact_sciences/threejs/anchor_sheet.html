@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ruler anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, wrapUp, createRuler, armorUp, num } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P), chars = [];
+  [[-0.9, 0.7, false], [0, 0, false], [0.9, -0.7, true]].forEach(([x, ry, arm], i) => {
+    const r = createRuler({ scale: 1.5 }); r.position.set(x * 1.0, 0, 0); r.rotation.y = ry; stage.scene.add(r); chars.push(r);
+    r.userData.pose({ headTilt: 0.06, arms: { l: [0, 0.3, 0.2], r: [0, 0.3, 0.2] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+    if (i === 2) { const sh = armorUp(r, { shield: true }); const a = r.userData.parts.hands.l.parent; sh.position.set(0.05, -0.12, 0.05); a.add(sh); }
+  });
+  wrapUp(stage, P, chars, { pos: [0, 1.2, 4.2], look: [0, 0.8, 0] });
+});
+</script></body></html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — Ten X marks on the LAMPLIGHTER's map (10x Genomics) show single cells and where they sit: spatial.
+import { THREE, mat, add, blob, num, makeStage, clouds, ground, lampPost, polePlaced, handWorld, toon, rng } from './common.js';
+import { guard } from './kit.js';
+import { createLamplighter } from './lamplighter.js';
+
+function mapTexture() {
+  const c = document.createElement('canvas'); c.width = 1024; c.height = 768; const x = c.getContext('2d');
+  x.fillStyle = '#f3deae'; x.fillRect(0, 0, 1024, 768);
+  x.strokeStyle = 'rgba(120,80,40,0.25)'; x.lineWidth = 2;
+  for (let i = 1; i < 8; i++) { x.beginPath(); x.moveTo(i * 128, 0); x.lineTo(i * 128, 768); x.stroke(); }
+  for (let i = 1; i < 6; i++) { x.beginPath(); x.moveTo(0, i * 128); x.lineTo(1024, i * 128); x.stroke(); }
+  x.fillStyle = '#c8dca0'; x.beginPath(); x.ellipse(500, 400, 380, 260, 0.2, 0, 7); x.fill();
+  const pts = [[150, 150], [330, 110], [520, 170], [720, 120], [880, 200], [220, 340], [420, 380], [640, 330], [820, 450], [300, 590]].slice(0, 10);
+  pts.push([560, 590]); pts.pop(); pts[9] = [600, 590];
+  pts.forEach(([px, py], i) => {
+    // single cell beneath the mark
+    x.fillStyle = '#ffb7c8'; x.strokeStyle = '#b04a6a'; x.lineWidth = 5; x.beginPath(); x.ellipse(px, py + 52, 46, 38, 0, 0, 7); x.fill(); x.stroke();
+    x.fillStyle = '#7a3fb0'; x.beginPath(); x.arc(px + 4, py + 50, 15, 0, 7); x.fill();
+    // red X
+    x.strokeStyle = '#d4231f'; x.lineWidth = 22; x.lineCap = 'round';
+    x.beginPath(); x.moveTo(px - 30, py - 48); x.lineTo(px + 30, py + 2); x.moveTo(px + 30, py - 48); x.lineTo(px - 30, py + 2); x.stroke();
+  });
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 40, az: 130 }); const scene = stage.scene;
+  ground(scene, '#78b24a');
+  add(scene, new THREE.PlaneGeometry(400, 3), mat('#c9a56b'), [0, 0.003, 0.3], [-Math.PI / 2, 0, 0]);
+  // easel with big map
+  const wood = mat('#8a5a2e'), easel = new THREE.Group(); easel.position.set(0.9, 0, -0.2); easel.rotation.y = -0.2; scene.add(easel);
+  for (const [x, z, rz] of [[-0.75, -0.25, 0.08], [0.75, -0.25, -0.08]]) add(easel, new THREE.CylinderGeometry(0.035, 0.035, 2.3, 10), wood, [x, 1.1, z + 0.15], [0.12, 0, rz]);
+  add(easel, new THREE.CylinderGeometry(0.035, 0.035, 2.0, 10), wood, [0, 1.05, -0.45], [-0.25, 0, 0]);
+  add(easel, new THREE.BoxGeometry(2.4, 1.85, 0.06), wood, [0, 1.55, 0.05]);
+  add(easel, new THREE.PlaneGeometry(2.3, 1.725), new THREE.MeshStandardMaterial({ map: mapTexture(), roughness: 0.7 }), [0, 1.55, 0.085]);
+  add(easel, new THREE.BoxGeometry(2.4, 0.06, 0.1), wood, [0, 0.6, 0.12]);
+  const ll = createLamplighter({ scale: 1.45 }); ll.position.set(-1.55, 0, 0.9); ll.rotation.y = 0.5; scene.add(ll);
+  ll.userData.pose({ headTilt: 0.05, headYaw: 0.5, headPitch: 0, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+  ll.userData.reach('l', [0.55, 0.9, 0.3]); ll.userData.reach('r', [-0.3, 0.45, 0.1]);
+  const hw = handWorld(ll, 'l'); polePlaced(scene, hw, [-0.1, 1.95, 0.15], 0.4);
+  toon(stage, scene, [ll]);
+  clouds(stage);
+  stage.camera.position.set(num(P, 'cx', 0.0), num(P, 'cy', 1.4), num(P, 'cz', 5.2)); stage.camera.lookAt(num(P, 'tx', -0.1), num(P, 'ty', 1.4), 0);
+  stage.finish();
+});
+</script></body></html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textPlane, heraldicShield, makeStage, meadow, createGuardsman, finishScene, holdAt, helix, cancerCell, bloodCell, magnifier, rng, canvasTexture } from "./common.js";
+import { guard } from "./kit.js";
+// q04 — After surgery, the GUARDSMAN's lamp REVEALs the last hidden cancer cells.
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { sunElevation: 4, exposure: 0.8, ambient: { color: '#7a78c8', intensity: 1.1 }, sunIntensity: 0.7 }); const scene = stage.scene;
+  meadow(scene, '#2e5a3a');
+  const rock = mat('#4a4658', { roughness: 0.9 });
+  const rocks = [[1.3, 0.3, -0.6, 0.55], [2.1, 0.25, -0.2, 0.4], [1.9, 0.35, -1.3, 0.6], [0.5, 0.2, -1.5, 0.45], [2.8, 0.3, -0.9, 0.5]];
+  rocks.forEach(([x, y, z, s]) => blob(scene, rock, [x, y * 0.7, z], [s, s * 0.7, s * 0.8]));
+  const cells = [[1.1, 0.35, 0.2, 1.1], [1.75, 0.3, 0.15, 1.0], [2.45, 0.3, -0.35, 1.1], [1.55, 0.28, -0.7, 0.9], [0.7, 0.28, -0.9, 0.9]];
+  cells.forEach(([x, y, z, s]) => { const c = cancerCell(s * 1.7, '#b03ad0'); c.position.set(x, y + 0.14, z); c.rotation.y = -0.5; scene.add(c); });
+  const g = createGuardsman({ scale: 1.5 }); g.position.set(-0.2, 0, 0.9); g.rotation.y = 0.45; scene.add(g);
+  g.userData.pose({ headYaw: 0.2 }); const lampPos = [0.55, 1.55, 1.3]; holdAt(g, 'l', lampPos);
+  const lamp = new THREE.Group(); const hp = new THREE.Vector3(); g.userData.parts.hands.l.getWorldPosition(hp); lamp.position.set(hp.x, hp.y + 0.2, hp.z); lamp.scale.setScalar(1.6); scene.add(lamp);
+  cyl(lamp, mat('#2a2a30', { metalness: 0.5 }), 0.07, 0.09, 0.03, [0, -0.2, 0]); cyl(lamp, mat('#2a2a30', { metalness: 0.5 }), 0.06, 0.07, 0.03, [0, 0.07, 0]);
+  add(lamp, new THREE.CylinderGeometry(0.08, 0.08, 0.26, 20), new THREE.MeshBasicMaterial({ color: '#fff2a0' }), [0, -0.07, 0]);
+  add(lamp, new THREE.TorusGeometry(0.06, 0.008, 8, 20, Math.PI), mat('#2a2a30'), [0, 0.1, 0]);
+  const pl = new THREE.PointLight('#ffd070', 14, 7, 1.6); pl.position.set(lampPos[0] + 0.3, lampPos[1] - 0.2, lampPos[2] + 0.4); scene.add(pl);
+  finishScene(stage, g, P, { cx: 0.7, cy: 1.1, cz: 4.2, tx: 0.8, ty: 0.85 });
+});
+</script></body></html>

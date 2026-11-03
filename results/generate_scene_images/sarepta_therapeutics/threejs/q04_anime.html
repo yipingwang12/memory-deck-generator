@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarepta scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createSerape, mat, add, box, blob, cyl, num, makeStage, finishScene, ground, textPlane, helix, elevator } from './common.js';
+// q04 — The FDA puts a black BOX on the SERAPE's ELEVATOR: sudden liver injury and failure.
+guard(() => {
+  const stage = makeStage({ sunAzimuth: 160 }), scene = stage.scene; ground(scene, '#c9bfae');
+  box(scene, mat('#d7cdbb'), [16, 7, 0.4], [0, 3.5, -1.4]);
+  const e = elevator(); e.position.set(1.7, 0, 0); scene.add(e);
+  // black box on the roof, with hazard band and white frame
+  const bb = new THREE.Group(); bb.position.set(1.7, 3.95, -0.3); scene.add(bb);
+  box(bb, mat('#0c0c10', { roughness: 0.4 }), [1.5, 1.2, 1.2], [0, 0, 0]);
+  for (let i = 0; i < 6; i++) box(bb, mat(i % 2 ? '#ffd23a' : '#15151a'), [0.25, 0.12, 1.24], [-0.625 + i * 0.25, 0.35, 0]).rotation.z = 0;
+  const fr = mat('#f5f5f5'); box(bb, fr, [1.54, 0.06, 0.06], [0, 0.6, 0.62]); box(bb, fr, [1.54, 0.06, 0.06], [0, -0.6, 0.62]);
+  box(bb, fr, [0.06, 1.2, 0.06], [-0.75, 0, 0.62]); box(bb, fr, [0.06, 1.2, 0.06], [0.75, 0, 0.62]);
+  // liver on a stand, cracked, with injury bolt
+  const lv = new THREE.Group(); lv.position.set(-2.5, 1.5, 0.4); scene.add(lv); lv.rotation.z = 0.15;
+  const red = mat('#8a2a2a', { roughness: 0.35 });
+  blob(lv, red, [0, 0, 0], [0.95, 0.5, 0.5]); blob(lv, red, [0.55, -0.12, 0], [0.55, 0.38, 0.45]); blob(lv, mat('#6e1f1f'), [-0.45, 0.2, 0.1], [0.4, 0.3, 0.4]);
+  blob(lv, mat('#4a8f3a'), [-0.2, -0.35, 0.2], [0.14, 0.2, 0.14]);
+  const bolt = new THREE.Shape(); [[0.2, 0.7], [-0.25, 0.05], [0.0, 0.05], [-0.2, -0.7], [0.3, -0.05], [0.05, -0.05]].forEach(([x, y], i) => i ? bolt.lineTo(x, y) : bolt.moveTo(x, y)); bolt.closePath();
+  const bm = new THREE.Mesh(new THREE.ShapeGeometry(bolt), new THREE.MeshBasicMaterial({ color: '#ffe23a' })); bm.position.set(0, 0, 0.56); lv.add(bm);
+  cyl(scene, mat('#7c8591'), 0.5, 0.65, 0.2, [-2.5, 0.1, 0.4]); cyl(scene, mat('#7c8591'), 0.08, 0.08, 1.0, [-2.5, 0.65, 0.4]);
+  const s = createSerape({ scale: 1.5 }); s.position.set(-0.4, 0, 1.0); s.rotation.y = -0.2; scene.add(s);
+  s.userData.pose({ headTilt: -0.12 }); s.userData.reach('r', [-0.35, 0.95, 0.2]);
+  finishScene(stage, s, [num('cx', 0.0), num('cy', 2.6), num('cz', 8.6)], [num('tx', -0.1), num('ty', 2.5), 0], false);
+});
+</script></body></html>

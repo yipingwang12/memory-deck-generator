@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Moderna q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — The ADMIRAL plugs in the MODEM.
+import { THREE, mat, add, blob, rbox, num, makeStage, finishScene, createModem, createPerson, aimArm } from './common.js';
+import { guard } from './kit.js';
+function ship(x, z, s) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.9, 0.5, 0.5, 5, 1), mat('#7a4a28'), [0, 0.2, 0], [0, 0, 0], [2.2, 1, 0.6]);
+  for (const mx of [-0.7, 0.5]) {
+    add(g, new THREE.CylinderGeometry(0.03, 0.03, 2.2, 8), mat('#5a3a20'), [mx, 1.4, 0]);
+    add(g, new THREE.BoxGeometry(0.02, 1.4, 1.1), mat('#f6efe0'), [mx + 0.03, 1.5, 0]);
+  }
+  g.position.set(x, 0, z); g.scale.setScalar(s); return g;
+}
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { ground: null, el: 28 });
+  const scene = stage.scene;
+  add(scene, new THREE.PlaneGeometry(600, 600), mat('#3f9fd0', { roughness: 0.25 }), [0, -0.05, 0], [-Math.PI / 2, 0, 0]);
+  // wooden dock
+  for (let i = 0; i < 14; i++) add(scene, new THREE.BoxGeometry(0.34, 0.08, 4), mat(i % 2 ? '#a9743f' : '#bd8548'), [-2.4 + i * 0.36, 0.0, 0.3]);
+  for (const x of [-2.2, 0.5, 2.0]) for (const z of [-1.6, 2.1]) add(scene, new THREE.CylinderGeometry(0.09, 0.09, 1.0, 10), mat('#6b4524'), [x, -0.3, z]);
+  scene.add(ship(-5, -9, 1.4), ship(6, -14, 1.9), ship(-14, -18, 1.6));
+  // lighthouse-like harbour tower on far shore
+  // modem on a crate
+  const crate = rbox(scene, mat('#8a5a2e'), 0.8, 0.4, 0.7, [0.65, 0.24, 0.1], [0, 0, 0]);
+  const modem = createModem({ scale: 1.0 }); modem.position.set(0.65, 0.44, 0.1); modem.rotation.y = -0.45; scene.add(modem);
+  modem.userData.pose({ arms: { l: [0, 0.6, 0], r: [0, 0.4, 0] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  // admiral
+  const adm = createPerson({ coat: '#1f3a7a', trim: '#f0c030', hat: 'bicorne', beard: true, hair: '#cfcfd4', scale: 1.15 });
+  adm.position.set(-0.7, 0.04, 0.45); adm.rotation.y = 0.5; scene.add(adm);
+  // cable: admiral hand -> modem port
+  const port = new THREE.Vector3(0.65 + 0.7 * 0.0, 0.48 + 0.36 * 0.7, 0.1 + 0.15 * 0.7);
+  const portW = modem.localToWorld(new THREE.Vector3(0, 0.36, 0.17));
+  aimArm(adm, 'l', portW.clone().add(new THREE.Vector3(-0.2, 0.0, 0.0)));
+  const hand = adm.userData.arms.l.hand.getWorldPosition(new THREE.Vector3());
+  const curve = new THREE.CatmullRomCurve3([hand.clone(), hand.clone().add(new THREE.Vector3(0.05, -0.3, 0.3)), portW.clone().add(new THREE.Vector3(-0.15, -0.15, 0.4)), portW.clone().add(new THREE.Vector3(-0.07, 0, 0.1))]);
+  add(scene, new THREE.TubeGeometry(curve, 40, 0.022, 8), mat('#f2a030'));
+  const plug = add(scene, new THREE.BoxGeometry(0.1, 0.05, 0.08), mat('#e8e8ee'), portW.toArray()); plug.rotation.y = modem.rotation.y;
+  aimArm(adm, 'r', new THREE.Vector3(-0.5, 0.9, 0.6));
+  finishScene(stage, P, [modem, adm], [0.5, 1.1, 3.1, 0.0, 0.8, 0]);
+});
+</script></body></html>

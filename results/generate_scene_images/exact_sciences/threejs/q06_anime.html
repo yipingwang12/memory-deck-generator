@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Exact Sciences q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — "The RULER's CANCER GUARD is for ages 50 to 84."
+import { THREE, guard, mat, add, blob, box, makeStage, wrapUp, guardRuler, textPlane } from './props.js';
+function cake(tiers, flame) {
+  const g = new THREE.Group(), cols = ['#f7b6cf', '#fff1f6', '#f7b6cf'];
+  for (let i = 0; i < tiers; i++) {
+    const r = 0.6 - i * 0.14, y = i * 0.3;
+    add(g, new THREE.CylinderGeometry(r, r, 0.28, 32), mat(cols[i]), [0, 0.14 + y, 0]);
+    add(g, new THREE.TorusGeometry(r, 0.03, 8, 32), mat('#ffffff'), [0, 0.28 + y, 0], [Math.PI / 2, 0, 0]);
+  }
+  const top = tiers * 0.3;
+  for (let i = 0; i < 7; i++) { const a = i / 7 * Math.PI * 2, rr = 0.6 - (tiers - 1) * 0.14 - 0.05; blob(g, mat('#c8192e'), [Math.cos(a) * rr * 0.8, top + 0.03, Math.sin(a) * rr * 0.8], [0.04, 0.04, 0.04]); }
+  for (const x of [-0.15, 0, 0.15]) { add(g, new THREE.CylinderGeometry(0.02, 0.02, 0.2, 8), mat(['#4aa3ff', '#ffd43a', '#6bd36b'][x === 0 ? 1 : x < 0 ? 0 : 2]), [x, top + 0.1, 0]); blob(g, mat('#ffb020', { emissive: '#ff9010' }), [x, top + 0.24, 0], [0.025, 0.045, 0.025]); }
+  return g;
+}
+function sign(txt, color) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.04, 0.04, 1.2, 10), mat('#6a3b1c'), [0, 0.6, 0]);
+  add(g, new THREE.BoxGeometry(1.5, 1.2, 0.07), mat('#fff6d6'), [0, 1.5, 0]);
+  add(g, new THREE.BoxGeometry(1.6, 0.1, 0.09), mat(color), [0, 2.15, 0]); add(g, new THREE.BoxGeometry(1.6, 0.1, 0.09), mat(color), [0, 0.85, 0]);
+  const t = textPlane(txt, 1.5, 1.5, { fg: color, px: 0.56 }); t.position.set(0, 1.5, 0.05); g.add(t); return g;
+}
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P), scene = stage.scene;
+  const s1 = sign('50', '#2a6fd8'); s1.position.set(-2.1, 0, -0.5); scene.add(s1);
+  const s2 = sign('84', '#c8312e'); s2.position.set(2.1, 0, -0.5); scene.add(s2);
+  const c1 = cake(1); c1.position.set(-2.1, 0, 0.7); c1.scale.setScalar(1.1); scene.add(c1);
+  const c2 = cake(3); c2.position.set(2.1, 0, 0.7); c2.scale.setScalar(1.1); scene.add(c2);
+  // arrow between
+  add(scene, new THREE.BoxGeometry(2.2, 0.1, 0.1), mat('#ffd43a'), [0, 0.12, 1.7]);
+  add(scene, new THREE.ConeGeometry(0.2, 0.4, 3), mat('#ffd43a'), [1.2, 0.12, 1.7], [0, 0, -Math.PI / 2]);
+  const r = guardRuler(2.0); r.position.set(0, 0, 0.5); scene.add(r);
+  r.userData.reach('r', [-0.25, 0.7, 0.2]);
+  wrapUp(stage, P, [r], { pos: [0, 1.5, 6.4], look: [0, 1.2, 0] });
+});
+</script></body></html>

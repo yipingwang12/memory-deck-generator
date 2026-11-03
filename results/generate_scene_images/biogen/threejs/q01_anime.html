@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Biogen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q01 — A FEE BAKER (Viehbacher) wears the BUOY's CEO crown.
+import { THREE, guard, mat, glow, add, box, cyl, blob, textPlane, water, ground, ripples, makeStage, createBuoy, person, armPose, dome, grab, wrapUp, rng } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  water(scene);
+  // wooden dock
+  box(scene, mat('#b98550'), [3.2, 0.12, 1.8], [0.2, 0.0, 0.2]);
+  const buoy = createBuoy({ scale: 1.6 }); buoy.position.set(-0.3, 0.06, 0.2); buoy.rotation.y = 0.25; scene.add(buoy);
+  // gold crown on the lantern
+  const gold = mat('#ffc928', { metalness: 0.6, roughness: 0.25 }), crown = new THREE.Group();
+  cyl(crown, gold, 0.17, 0.14, 0.12, [0, 0, 0], [0, 0, 0], 24);
+  for (let i = 0; i < 6; i++) { const a = i / 6 * 6.283; add(crown, new THREE.ConeGeometry(0.04, 0.14, 10), gold, [0.15 * Math.sin(a), 0.12, 0.15 * Math.cos(a)]); blob(crown, glow('#ff3050', 0.6), [0.15 * Math.sin(a), 0.2, 0.15 * Math.cos(a)], [0.025, 0.025, 0.025]); }
+  crown.position.set(-0.3, 1.74, 0.2); crown.scale.setScalar(1.25); scene.add(crown);
+  buoy.userData.pose({ arms: { l: [0, 0.6, 0.2], r: [0, 0.8, 0.2] } });
+  // baker
+  const baker = person({ suit: '#ffffff', pants: '#2a3350', hairStyle: 'short', hair: '#6a4a2a', scale: 1.0 }); baker.position.set(1.35, 0.06, 0.35); baker.rotation.y = -0.35; scene.add(baker);
+  const hatM = mat('#ffffff'); const hat = new THREE.Group(); hat.position.set(0, 1.62, 0); baker.add(hat);
+  cyl(hat, hatM, 0.15, 0.15, 0.1, [0, 0, 0]); blob(hat, hatM, [0, 0.15, 0], [0.2, 0.14, 0.2]); for (const x of [-0.1, 0.1]) blob(hat, hatM, [x, 0.12, 0.05], [0.1, 0.1, 0.1]);
+  box(baker, mat('#e8d8b0'), [0.34, 0.5, 0.03], [0, 0.95, 0.15]);
+  armPose(baker, 'l', [-0.2, 0.35, -0.3]); armPose(baker, 'r', [-1.1, -0.2, -1.2]);
+  // loaf in left hand + coin stack (the fee)
+  const loaf = blob(baker, mat('#d99a4a'), [0.38, 0.8, 0.12], [0.07, 0.07, 0.25], [0, 0.4, 0.2]);
+  for (let i = 0; i < 4; i++) cyl(scene, mat('#ffcf3a', { metalness: 0.5, roughness: 0.3 }), 0.12, 0.12, 0.035, [0.7, 0.14 + i * 0.04, 0.95], [0, 0, 0], 28);
+  wrapUp(stage, scene, [buoy, baker], { cx: num('cx', 0.4), cy: num('cy', 1.2), cz: num('cz', 5.0), tx: 0.4, ty: 1.15 });
+});
+</script></body></html>

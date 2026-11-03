@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Life Biosciences q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — An OCTOPUS, a SOCK and a CLIFF row the LIFEBOAT.
+import { guard } from './kit.js';
+import * as K from './props.js';
+const { THREE, createLifeboat, canvasTexture, rng, mat, add, blob, box, cyl, num, makeStage, finish, water, dock, oar, person, eyeball, nachos, label, cell, rope, syringe, crate } = K;
+guard(() => {
+  const stage = makeStage(), scene = stage.scene; const chars = [];
+
+  water(scene, '#2f93d6', [[0, 0, 1.55]]);
+  const boat = createLifeboat({ scale: 1.9 }); boat.position.set(-0.1, 0, 0); scene.add(boat); chars.push(boat);
+  const crew = new THREE.Group(); boat.add(crew);
+  // octopus
+  const oct = new THREE.Group(); oct.position.set(-0.32, 0.62, -0.02); crew.add(oct);
+  blob(oct, mat('#9b4fd0'), [0, 0.2, 0], [0.22, 0.26, 0.22]);
+  for (let i = 0; i < 8; i++) { const a = i / 8 * 6.28; const t = add(oct, new THREE.ConeGeometry(0.045, 0.3, 10), mat('#8a3fc0'), [Math.cos(a) * 0.15, -0.05, Math.sin(a) * 0.15], [Math.sin(a) * 0.5, 0, -Math.cos(a) * 0.5]); t.rotation.x = Math.PI; }
+  for (const sx of [-1, 1]) { blob(oct, mat('#fff'), [sx * 0.09, 0.2, 0.19], [0.06, 0.075, 0.03]); blob(oct, mat('#1a1020'), [sx * 0.09, 0.2, 0.215], [0.036, 0.05, 0.02]); blob(oct, mat('#fff'), [sx * 0.08, 0.225, 0.23], [0.012, 0.012, 0.01]); }
+  // sock
+  const sock = new THREE.Group(); sock.position.set(0.15, 0.45, -0.02); crew.add(sock);
+  for (let i = 0; i < 6; i++) cyl(sock, mat(i % 2 ? '#ffffff' : '#e23b30'), [0, 0.08 + i * 0.07, 0], 0.115, 0.07);
+  cyl(sock, mat('#2f6fd0'), [0, 0.5, 0], 0.13, 0.08);
+  blob(sock, mat('#e23b30'), [0.06, 0.03, 0.05], [0.16, 0.1, 0.13]);
+  for (const sx of [-1, 1]) { blob(sock, mat('#fff'), [sx * 0.05, 0.3, 0.1], [0.035, 0.045, 0.015]); blob(sock, mat('#1a1020'), [sx * 0.05, 0.3, 0.113], [0.02, 0.03, 0.01]); }
+  // cliff
+  const cliff = new THREE.Group(); cliff.position.set(0.68, 0.45, -0.02); crew.add(cliff);
+  [['#9a6b44', 0.2, 0.14], ['#b98650', 0.17, 0.12], ['#8a5a38', 0.15, 0.16], ['#c9976a', 0.13, 0.12]].reduce((y, [c, w, h]) => { box(cliff, mat(c), [0, y + h / 2, 0], [w * 1.5, h, w * 1.3]); return y + h; }, 0);
+  blob(cliff, mat('#5aa83a'), [0, 0.54, 0], [0.19, 0.06, 0.17]);
+  for (const sx of [-1, 1]) { blob(cliff, mat('#fff'), [sx * 0.06, 0.3, 0.14], [0.035, 0.045, 0.015]); blob(cliff, mat('#1a1020'), [sx * 0.06, 0.3, 0.153], [0.02, 0.03, 0.01]); }
+  oar(boat, [-0.32, 0.7, 0.15], [-0.25, -0.15, 1.35]); oar(boat, [0.68, 0.7, 0.15], [0.75, -0.15, 1.35]); oar(boat, [0.15, 0.8, -0.2], [0.2, -0.15, -1.3]);
+  boat.userData.aim('l', [0.95, 0.5, 0.35]); boat.userData.aim('r', [-0.8, 0.5, 0.3]);
+  finish(stage, [0.6, 1.3, 5.6], [-0.05, 0.9, 0], chars);
+});
+</script></body></html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A STEW LAND wears the GeneDx JEANS CEO crown.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  add(scene, new THREE.PlaneGeometry(600, 600), mat('#3a9ad8', { roughness: 0.3 }), [0, -0.4, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.CylinderGeometry(3.6, 4.2, 0.9, 40), mat('#8a5e3a'), [0, -0.05, 0]);
+  add(scene, new THREE.CylinderGeometry(3.6, 3.6, 0.12, 40), mat('#72b44a'), [0, 0.45, 0]);
+  const t1 = PR.tree(2.2); t1.position.set(-3.0, 0.5, -1.2); scene.add(t1); const t2 = PR.tree(1.6); t2.position.set(3.1, 0.5, -1.6); scene.add(t2);
+  flowers(scene, 6, 40, [-3, 3], [-2.5, 2]); scene.children.slice(-40).forEach((o) => { o.position.y = 0.55; });
+  // stew pot on a fire
+  const pot = new THREE.Group(); pot.position.set(1.2, 0.52, 0.2); scene.add(pot);
+  for (let i = 0; i < 4; i++) add(pot, new THREE.CylinderGeometry(0.07, 0.07, 0.8, 8), mat('#7a4a28'), [Math.cos(i * 1.6) * 0.3, 0.07, Math.sin(i * 1.6) * 0.3], [Math.PI / 2, 0, i * 1.6]);
+  const pts = [[0, 0], [0.5, 0], [0.8, 0.25], [0.85, 0.7], [0.88, 0.95], [0.8, 0.95], [0.77, 0.7]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(pot, new THREE.LatheGeometry(pts, 36), mat('#2b2b34', { metalness: 0.5, roughness: 0.4 }), [0, 0.2, 0]).material.side = THREE.DoubleSide;
+  add(pot, new THREE.CircleGeometry(0.8, 32), mat('#b5651d'), [0, 1.0, 0], [-Math.PI / 2, 0, 0]);
+  const r = rng(3);
+  for (let i = 0; i < 9; i++) { const a = r() * 6.28, d = r() * 0.55; if (i % 2) blob(pot, mat('#ff8a1a'), [Math.cos(a) * d, 1.04, Math.sin(a) * d], [0.12, 0.05, 0.05], [0, a, 0]); else blob(pot, mat('#e8cf85'), [Math.cos(a) * d, 1.05, Math.sin(a) * d], [0.08, 0.06, 0.08]); }
+  for (let i = 0; i < 6; i++) blob(pot, mat('#ffffff', { transparent: true, opacity: 0.75 }), [Math.sin(i) * 0.15, 1.3 + i * 0.22, Math.cos(i) * 0.1], [0.2 + i * 0.03, 0.16, 0.2 + i * 0.03]);
+  add(pot, new THREE.CylinderGeometry(0.02, 0.02, 1.1, 8), mat('#7a4a28'), [0.45, 1.25, 0.2], [0.25, 0, -0.7]);
+  const j = placeJeans(scene, num, { scale: 1.9, x: -0.7, y: 0.52, z: 0.8, ry: 0.35, pose: { arms: { l: [0, 0.3, 0] } }, reach: { l: [0.5, 1.25, 1.35] } });
+  const crown = PR.crown(); crown.scale.multiplyScalar(1.15); crown.position.y = 1.0; j.add(crown);
+  finishScene(stage, num, [j], [0.3, 1.9, 6.2], [0.2, 1.4, 0]);
+});
+</script></body></html>

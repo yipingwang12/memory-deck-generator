@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — A GILL MAN, half fish, wears the SANDWORM first CEO crown
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.25, wx: -1.3, wry: 0.35 });
+  const g = gillMan(); g.scale.setScalar(2.0); g.position.set(0.9, 0, 0.9); g.rotation.y = -0.25; c.scene.add(g); c.char(g);
+  c.done([0.0, 1.8, 6.4], [-0.1, 1.4, 0]);
+});
+</script></body></html>

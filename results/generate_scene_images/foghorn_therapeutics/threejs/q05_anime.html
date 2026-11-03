@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 LOLLIPOP: foghorn holds a half-and-half lollipop.
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 30, az: 140 }); const scene = stage.scene;
+  ground(scene, '#bfe3b0');
+  const f = placeFoghorn(scene, { x: -0.6, z: 0, ry: 0.35, scale: 2.0, pose: { arms: { l: [0, 1.95], r: [0, 0.4] }, lean: 0 } });
+  f.userData.pose({ aim: [0.5, -1.0] });
+  f.updateMatrixWorld(true);
+  const hand = new THREE.Vector3(); f.userData.parts.hands.l.getWorldPosition(hand);
+  const lol = new THREE.Group(); lol.position.copy(hand); lol.position.y -= 0.35; scene.add(lol);
+  add(lol, new THREE.CylinderGeometry(0.035, 0.035, 2.2, 12), mat('#f6efe0'), [0, 0.6, 0]);
+  const head = new THREE.Group(); head.position.set(0, 1.9, 0); head.rotation.y = 0.2; lol.add(head);
+  const half = (c, start) => add(head, new THREE.CylinderGeometry(0.75, 0.75, 0.16, 48, 1, false, start, Math.PI), mat(c, { roughness: 0.3 }), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  half('#ff3d5a', 0); half('#ffd01f', Math.PI);
+  add(head, new THREE.TorusGeometry(0.75, 0.04, 10, 64), mat('#fff3e0'), [0, 0, 0]);
+  [['#ffffff', 0.3], ['#ffffff', 0.5]].forEach(([c, r], i) => add(head, new THREE.TorusGeometry(r, 0.03, 8, 40, Math.PI), mat(i ? '#ffb3c1' : '#ffe9a0'), [0, 0, 0.085], [0, 0, i ? 0 : Math.PI]));
+  finishScene(stage, f, { cam: [0.4, 1.7, 6.2], look: [0.2, 1.5, 0] });
+
+});
+</script></body></html>

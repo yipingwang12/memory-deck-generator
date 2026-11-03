@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — a slow LENTIL virus writes new genes on the TICKET.
+import { THREE, guard, mat, add, blob, cyl, setup, reachTo } from './common.js';
+
+function lentil() {
+  const g = new THREE.Group(), body = mat('#d8742a'), rim = mat('#b85a1c');
+  blob(g, body, [0, 0, 0], [0.9, 0.9, 0.42]);
+  add(g, new THREE.TorusGeometry(0.9, 0.06, 10, 40), rim, [0, 0, 0], [0, 0, 0], [1, 1, 0.5]);
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, c = Math.cos(a), s = Math.sin(a);
+    add(g, new THREE.CylinderGeometry(0.03, 0.045, 0.26, 8), mat('#3aa88a'), [c * 1.0, s * 1.0, 0], [0, 0, a - Math.PI / 2]);
+    blob(g, mat('#7be0c0'), [c * 1.15, s * 1.15, 0], [0.07, 0.07, 0.07]); }
+  for (const k of [-1, 1]) {
+    const x = k * 0.3, y = 0.1, z = 0.4;
+    for (const [rx, ry, c, dz] of [[0.17, 0.2, '#fff', 0], [0.12, 0.17, '#3a2416', 0.004], [0.065, 0.1, '#0b0504', 0.008]]) {
+      const m = new THREE.Mesh(new THREE.CircleGeometry(1, 28), new THREE.MeshStandardMaterial({ color: c, roughness: 0.4 })); m.scale.set(rx, ry, 1); m.position.set(x, y, z + dz); g.add(m); }
+    const hl = new THREE.Mesh(new THREE.CircleGeometry(0.04, 16), new THREE.MeshBasicMaterial({ color: '#fff' })); hl.position.set(x - 0.04, y + 0.06, z + 0.014); g.add(hl);
+    const lid = new THREE.Mesh(new THREE.CircleGeometry(1, 28), new THREE.MeshStandardMaterial({ color: '#b85a1c' })); lid.scale.set(0.185, 0.1, 1); lid.position.set(x, y + 0.1, z + 0.016); g.add(lid);
+  }
+  const mo = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.018, 8, 16, Math.PI), mat('#6a2a18')); mo.rotation.z = Math.PI; mo.position.set(0, -0.22, 0.4); g.add(mo);
+  for (const k of [-1, 1]) cyl(g, 0.05, 0.05, 0.4, mat('#b85a1c'), [k * 0.4, -0.95, 0]);
+  return g;
+}
+function helix(len) {
+  const g = new THREE.Group(), A = mat('#2b6be8'), B = mat('#ff4f8a');
+  for (let i = 0; i <= 26; i++) { const t = i / 26, x = (t - 0.5) * len, a = t * Math.PI * 5;
+    blob(g, A, [x, Math.sin(a) * 0.075, Math.cos(a) * 0.04], [0.032, 0.032, 0.032]); blob(g, B, [x, -Math.sin(a) * 0.075, -Math.cos(a) * 0.04], [0.032, 0.032, 0.032]);
+    if (i % 2 === 0) cyl(g, 0.009, 0.009, Math.abs(Math.sin(a)) * 0.15, mat('#ffe066'), [x, 0, 0]); }
+  return g;
+}
+guard(() => {
+  const S = setup({ ground: '#e8cf9c' });
+  const { scene, num } = S;
+  const t = S.ticket(-0.8, 0, 0.12, 1.7, { arms: { l: [0, 0.4, 0], r: [0, 0.4, 0] } });
+  const L = lentil(); L.position.set(1.75, 1.35, 0.4); L.rotation.y = -0.4; L.scale.setScalar(0.95); S.char(L);
+  const h = helix(0.8); h.position.set(-0.8, 0.66, 0.2); h.rotation.y = 0.12; scene.add(h);
+  const pen = new THREE.Group(); pen.position.set(0.05, 0.85, 0.35); pen.rotation.z = 0.9; scene.add(pen);
+  cyl(pen, 0.025, 0.012, 0.9, mat('#f4ead2'), [0, 0.4, 0]);
+  add(pen, new THREE.ConeGeometry(0.03, 0.14, 12), mat('#222'), [0, -0.1, 0], [Math.PI, 0, 0]);
+  blob(pen, mat('#ffffff'), [0.0, 0.95, 0], [0.12, 0.38, 0.03]);
+  const hand = new THREE.Vector3(0.7, 1.15, 0.5);
+  S.finish([num('cx', 0.45), num('cy', 1.4), num('cz', 6.0)], [0.45, 1.2, 0]);
+});
+</script></body></html>

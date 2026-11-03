@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ summit: { scale: 2.0, pos: [-1.5, 0, 0], ry: 0.25 } }); const { scene, s, num } = B;
+s.userData.pose({ arms: { r: [0, 0.5, 0] } }); reachW(s, 'l', [-0.3, 1.5, 0.6]);
+const h = dna(2.0, 0.22); h.position.set(0.7, 0.0, 0); scene.add(h);
+// price board on a post
+const board = new THREE.Group(); board.position.set(2.5, 0, 0.2); board.rotation.y = -0.2; scene.add(board);
+add(board, new THREE.CylinderGeometry(0.05, 0.05, 1.4, 12), mat('#8a5a2b'), [-0.55, 0.7, -0.05]); add(board, new THREE.CylinderGeometry(0.05, 0.05, 1.4, 12), mat('#8a5a2b'), [0.55, 0.7, -0.05]);
+add(board, new THREE.BoxGeometry(1.7, 0.95, 0.08), mat('#ffffff'), [0, 1.35, 0]);
+sign(board, '$100', 1.55, 0.8, [0, 1.35, 0.045], { bg: '#fff6d6', fg: '#d12a2a', border: '#d12a2a', font: 'bold 260px Arial Black, Arial' });
+const arrow = new THREE.Group(); arrow.position.set(0, 2.25, 0); board.add(arrow);
+add(arrow, new THREE.CylinderGeometry(0.14, 0.14, 0.4, 20), mat('#22b455', { emissive: '#22b455', emissiveIntensity: .3 }), [0, 0.2, 0]);
+add(arrow, new THREE.ConeGeometry(0.3, 0.38, 24), mat('#22b455', { emissive: '#22b455', emissiveIntensity: .3 }), [0, -0.12, 0], [Math.PI, 0, 0]);
+cam(B.stage, num, [0.5, 1.3, 5.9], [0.5, 1.1, 0]); B.finish();
+
+});
+</script></body></html>

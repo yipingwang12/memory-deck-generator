@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// GARRET FRAME's group studies cancer genes, slides read by computer, patient outcomes
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:'#d8e0e8'});
+
+const mo = L.monitor(L.tissueTex(), 2.2, 1.4); mo.position.set(0, 0.4, -1.4); scene.add(mo);
+box(scene, '#8a6a4a', [9, 0.15, 2.4], [0, 0.35, -0.3]);
+const fr = L.frameChar(); fr.scale.setScalar(1.5); fr.position.set(-1.8, 0.43, 1.1); fr.rotation.y = 0.3; scene.add(fr); toon(fr);
+const c = stone({ scale: 1.4 }); c.position.set(1.6, 0.43, 1.1); c.rotation.y = -0.3;
+c.userData.pose({ arms: { l: [-0.6, 0.4, -0.5], r: [-0.3, 0.3, -0.3] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+const dn = L.dna(2.2, 0.3); dn.position.set(-3.6, 1.9, -0.6); scene.add(dn);
+const gr = new THREE.Group(); gr.position.set(3.7, 2.2, -0.9); gr.rotation.y = -0.25; scene.add(gr);
+box(gr, '#fbfbf5', [2.0, 1.5, 0.08], [0, 0, 0]); box(gr, '#8a6a4a', [2.1, 1.6, 0.06], [0, 0, -0.04]);
+tubeAlong(gr, mat('#2fae60'), [[-0.8, -0.5, 0.06], [-0.3, -0.25, 0.06], [0.2, 0.05, 0.06], [0.8, 0.5, 0.06]], 0.035);
+for (const [x, y] of [[-0.8, -0.5], [-0.3, -0.25], [0.2, 0.05], [0.8, 0.5]]) blob(gr, mat('#2fae60'), [x, y, 0.08], [0.08, 0.08, 0.05]);
+box(gr, '#999', [1.7, 0.03, 0.02], [0, -0.65, 0.05]); box(gr, '#999', [0.03, 1.3, 0.02], [-0.9, 0, 0.05]);
+const rc = new THREE.Group(); rc.position.set(3.7, 0.9, -0.9); scene.add(rc); box(rc, '#d8243a', [0.9, 0.3, 0.1]); box(rc, '#d8243a', [0.3, 0.9, 0.1]);
+finish([0, 2.4, 7.4], [0, 1.9, 0]);
+});
+</script></body></html>

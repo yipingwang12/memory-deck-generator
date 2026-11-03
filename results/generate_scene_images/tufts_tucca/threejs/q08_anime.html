@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tufts TUCCA q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — The TOUCAN grows food from ANIMAL CELLS in a flask.
+import { THREE, guard, rng, mat, add, blob, cyl, box, setup, frame, createFlask } from './common.js';
+import { createToucan } from './toucan.js';
+
+function cow() {
+  const g = new THREE.Group(), cw = mat('#fafafa'), cb = mat('#2a2a2e');
+  blob(g, cw, [0, 0.45, 0], [0.5, 0.28, 0.25]); blob(g, cb, [-0.1, 0.55, 0.12], [0.18, 0.12, 0.14]); blob(g, cb, [0.2, 0.4, -0.15], [0.14, 0.11, 0.1]);
+  blob(g, cw, [0.55, 0.62, 0], [0.2, 0.17, 0.16]); blob(g, mat('#ffb6c0'), [0.72, 0.58, 0], [0.09, 0.09, 0.12]);
+  for (const s of [-1, 1]) { blob(g, mat('#111'), [0.62, 0.68, s * 0.12], [0.03, 0.035, 0.02]); blob(g, cb, [0.45, 0.72, s * 0.15], [0.06, 0.03, 0.03]); blob(g, mat('#f4efe6'), [0.52, 0.8, s * 0.1], [0.025, 0.07, 0.025], [0, 0, 0.3]); }
+  for (const [x, z] of [[0.3, 0.12], [0.3, -0.12], [-0.3, 0.12], [-0.3, -0.12]]) cyl(g, cw, 0.05, 0.045, 0.34, [x, 0.17, z]);
+  return g;
+}
+function cell(parent, pos, s) { blob(parent, mat('#ff9fb8', { emissive: '#ff6f9a', emissiveIntensity: 0.35 }), pos, [s, s, s]); blob(parent, mat('#b8325a'), [pos[0] + s * 0.2, pos[1] + s * 0.1, pos[2] + s * 0.7], [s * 0.4, s * 0.4, s * 0.4]); }
+guard(() => {
+  const S = setup({ el: 34, az: 150, sky: { zenith: '#9ad4e8', horizon: '#e8f6f4', cover: 0.3 } }); const { scene, num } = S;
+  add(scene, new THREE.PlaneGeometry(60, 40), mat('#e8f1f2'), [0, 0, -2], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(60, 12), mat('#9fd4d6'), [0, 6, -4.5]);
+  box(scene, mat('#d9b27a'), 7.5, 0.12, 2.6, [0.2, 0.78, 0.7], [0, 0, 0], 0.03); box(scene, mat('#f4efe6'), 7.3, 0.7, 2.4, [0.2, 0.38, 0.7], [0, 0, 0], 0.03);
+  const TOP = 0.84;
+  const fl = createFlask(num('fh', 1.9)); fl.position.set(-0.2, TOP, 0.7); scene.add(fl);
+  // cow -> floating cells -> flask mouth
+  const c = cow(); c.scale.setScalar(1.3); c.position.set(-3.0, TOP, 0.1); c.rotation.y = 0.2; scene.add(c);
+  const mouth = [-0.2, TOP + 1.85, 0.7], start = [-2.3, TOP + 1.2, 0.2];
+  for (let i = 0; i < 6; i++) { const f = i / 5, p = [start[0] + (mouth[0] - start[0]) * f, start[1] + (mouth[1] - start[1]) * f + Math.sin(f * Math.PI) * 0.55, 0.3 + f * 0.4]; cell(scene, p, 0.11 + 0.02 * (i % 2)); }
+  // food: a lab-grown steak on a plate at right
+  cyl(scene, mat('#fdfdfd'), 0.62, 0.55, 0.05, [2.2, TOP + 0.03, 0.9]);
+  box(scene, mat('#c9455a'), 0.8, 0.17, 0.5, [2.2, TOP + 0.16, 0.9], [0, 0.3, 0], 0.07);
+  for (const [x, w] of [[-0.12, 0.3], [0.14, 0.3]]) box(scene, mat('#ffd6dc'), w, 0.02, 0.035, [2.2 + x, TOP + 0.255, 0.9 + x * 0.2], [0, 0.3, 0], 0.01);
+  const t = createToucan({ scale: num('ts', 1.7) }); t.position.set(1.0, TOP, 1.9); t.rotation.y = -0.45; scene.add(t);
+  t.userData.pose({ lean: 0.1, headTilt: 0.05, wings: { l: [0, 0.2], r: [0.9, 0.3] } });
+  frame(S, [t], [0.3, 2.4, 8.2], [0.1, 2.2, 0], null);
+});
+</script></body></html>

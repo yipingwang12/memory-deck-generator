@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — a PIANO prints the first TICKET.
+import { THREE, guard, mat, add, blob, cyl, rbox, setup, reachTo } from './common.js';
+
+guard(() => {
+  const S = setup({ ground: '#e8c9a0' });
+  const { scene, num } = S;
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#d9a066'), [0, 0.002, 0], [-Math.PI / 2, 0, 0]);
+  // upright piano, front toward camera
+  const p = new THREE.Group(); p.position.set(0.95, 0, -0.2); p.rotation.y = -0.15; scene.add(p);
+  const black = mat('#3b4a9a', { roughness: 0.35 }), ivory = mat('#fffaf0', { roughness: 0.4 });
+  rbox(p, 1.9, 1.35, 0.55, black, [0, 0.95, 0], [0, 0, 0], 0.04);                 // cabinet
+  rbox(p, 2.0, 0.08, 0.62, black, [0, 1.66, 0], [0, 0, 0], 0.03);                 // lid
+  rbox(p, 1.75, 0.1, 0.3, black, [0, 0.74, 0.4], [0, 0, 0], 0.03);                // key shelf
+  for (let i = 0; i < 18; i++) rbox(p, 0.092, 0.05, 0.28, ivory, [-0.8 + i * 0.094, 0.81, 0.4], [0, 0, 0], 0.008);
+  for (let i = 0; i < 17; i++) if (![2, 6, 9, 13].includes(i % 7 + 0 * i) || true) if (i % 7 !== 2 && i % 7 !== 6) rbox(p, 0.055, 0.06, 0.17, mat('#15151c'), [-0.753 + i * 0.094, 0.855, 0.35], [0, 0, 0], 0.008);
+  rbox(p, 1.0, 0.5, 0.04, mat('#26306e'), [0, 1.2, 0.285], [0, 0, 0], 0.01);       // music desk
+  for (const x of [-0.85, 0.85]) { rbox(p, 0.12, 0.5, 0.12, black, [x, 0.25, 0.1]); }
+  rbox(p, 1.8, 0.1, 0.4, black, [0, 0.45, 0.1]);
+  // printer slot on the lid front + paper strip curling out
+  rbox(p, 0.7, 0.06, 0.06, mat('#0a0a14'), [0, 1.2, 0.29 + 0.02], [0, 0, 0], 0.01);
+  const sheet = mat('#fff3d6');
+  rbox(p, 0.5, 0.012, 0.9, sheet, [0, 1.19, 0.72], [0.35, 0, 0], 0.004);
+  rbox(p, 0.5, 0.012, 0.8, sheet, [0, 0.78, 1.25], [0.75, 0, 0], 0.004);
+  // musical notes floating
+  const noteM = mat('#ff7a3d');
+  [[-0.5, 2.1, 0.3], [0.3, 2.4, 0.5], [0.9, 2.05, 0.7]].forEach(([x, y, z]) => {
+    blob(p, noteM, [x, y, z], [0.07, 0.055, 0.05]); cyl(p, 0.012, 0.012, 0.3, noteM, [x + 0.06, y + 0.15, z]);
+  });
+  const t = S.ticket(-0.45, 0.9, 0.35, 1.5, { headTilt: 0.05, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+  reachTo(t, 'l', [-0.05, 1.0, 1.2]);
+  S.finish([num('cx', 0.2), num('cy', 1.5), num('cz', 5.0)], [num('tx', 0.2), num('ty', 0.95), 0]);
+});
+</script></body></html>

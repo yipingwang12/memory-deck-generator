@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ summit: { scale: 1.8, pos: [-2.0, 0, 0.6], ry: 0.4 } }); const { scene, s, num } = B;
+s.userData.pose({ arms: { r: [0, -0.7, 0] } }); reachW(s, 'l', [-0.8, 1.5, 0.9]);
+// SOLARIS panel with 2.0 MAX sign
+const g = new THREE.Group(); g.position.set(0.3, 0, -0.8); g.rotation.y = 0.15; scene.add(g);
+const p = solarPanel(2.0, 1.3); p.position.y = 1.5; p.rotation.x = -0.3; g.add(p); add(g, new THREE.CylinderGeometry(0.07, 0.09, 1.1, 10), mat('#8a93a3'), [0, 0.55, -0.1]);
+sign(g, '2.0 MAX', 2.3, 0.7, [0, 2.75, 0.1], { bg: '#ffcf2a', fg: '#173a7a', border: '#173a7a', font: 'bold 230px Arial Black, Arial' });
+const sn = sun(0.45); sn.position.set(-0.8, 4.0, -3); scene.add(sn);
+// wafer on stand with 20B label
+const w = wafer(0.95); w.position.set(2.6, 1.3, 0.8); w.rotation.y = -0.35; scene.add(w); add(scene, new THREE.CylinderGeometry(0.05, 0.05, 0.6, 10), mat('#aab4cc', { metalness: .5 }), [2.6, 0.3, 0.75]);
+add(scene, new THREE.BoxGeometry(0.9, 0.08, 0.4), mat('#aab4cc', { metalness: .5 }), [2.6, 0.04, 0.75], [0, -0.35, 0]);
+sign(scene, '20B', 1.5, 0.7, [2.6, 0.55, 1.4], { bg: '#173a7a', fg: '#ffffff', border: '#ffffff', font: 'bold 250px Arial Black, Arial' }, [0, -0.35, 0]);
+// reads streaming out of the wafer
+const cols = ['#ff5a8a', '#35a7ff', '#ffd34a', '#7ee081', '#b57bff'];
+for (let i = 0; i < 22; i++) { const t = i / 22, a = 0.4 + t * 1.1; const pos = [2.6 + 0.3 + t * 1.6 + Math.sin(i * 5) * 0.12, 1.3 + Math.sin(a * 2) * 0.2 + t * 2.0, 0.95 - t * 0.2];
+  const r = add(scene, new THREE.CapsuleGeometry(0.06, 0.3, 4, 8), new THREE.MeshBasicMaterial({ color: cols[i % 5] }), pos, [0, 0, 0.5 + Math.sin(i) * 0.5]); }
+cam(B.stage, num, [0.7, 1.8, 7.6], [0.7, 1.6, 0]); B.finish();
+
+});
+</script></body></html>

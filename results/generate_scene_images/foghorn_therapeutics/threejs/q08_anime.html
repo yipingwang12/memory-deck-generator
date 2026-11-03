@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 ticker FHTX: foghorn blasts a glowing stock ticker board.
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 30, az: 140 }); const scene = stage.scene;
+  ground(scene, '#c7ccd6');
+  const f = placeFoghorn(scene, { x: -2.9, z: 0.8, scale: 2.1 }); aimAt(f, [1.4, 1.6, 0]);
+  const b = new THREE.Group(); b.position.set(1.4, 0, 0); scene.add(b);
+  add(b, new THREE.BoxGeometry(0.12, 1.3, 0.12), mat('#3a3f48'), [-1.1, 0.65, -0.1]); add(b, new THREE.BoxGeometry(0.12, 1.3, 0.12), mat('#3a3f48'), [1.1, 0.65, -0.1]);
+  add(b, new THREE.BoxGeometry(3.2, 1.35, 0.2), mat('#22262e'), [0, 1.95, 0]);
+  textPlane(b, 'FHTX', { w: 2.9, h: 1.05, bg: '#06130c', fg: '#58ff8a', pos: [0, 1.95, 0.106], px: 330 });
+  const arrow = new THREE.Shape(); arrow.moveTo(0, 0.45); arrow.lineTo(0.35, 0); arrow.lineTo(0.12, 0); arrow.lineTo(0.12, -0.4); arrow.lineTo(-0.12, -0.4); arrow.lineTo(-0.12, 0); arrow.lineTo(-0.35, 0);
+  add(b, new THREE.ShapeGeometry(arrow), new THREE.MeshBasicMaterial({ color: '#58ff8a' }), [1.9, 2.0, 0.13]).castShadow = false;
+  soundWaves(scene, f, { n: 4 });
+  finishScene(stage, f, { cam: [0.0, 1.7, 6.3], look: [0.0, 1.2, 0] });
+
+});
+</script></body></html>

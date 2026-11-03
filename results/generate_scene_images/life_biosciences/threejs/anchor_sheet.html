@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Lifeboat anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { guard } from './kit.js';
+import { THREE, createLifeboat, makeStage, finish, water, num, add, mat } from './props.js';
+guard(() => {
+  const stage = makeStage({ fov: 30 }), scene = stage.scene;
+  water(scene);
+  const chars = [];
+  [[-1.9, 0.3, 0], [0, 0, 0.0], [1.9, 2.5, 0]].forEach(([x, yaw], i) => {
+    const b = createLifeboat({ flag: 'ER-100' }); b.position.set(x * 1.45, 0, 0); b.rotation.y = i === 0 ? -0.5 : i === 1 ? 0 : -2.2; scene.add(b); chars.push(b);
+    if (i === 1) { b.userData.aim('l', [0.8, 0.7, 0.3]); }
+  });
+  finish(stage, [0, 1.0, 6.2], [0, 0.4, 0], chars);
+});
+</script></body></html>

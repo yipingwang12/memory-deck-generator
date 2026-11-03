@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Takeda q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — The TACO is the biggest life-science employer in the state of Massachusetts.
+import { THREE, guard, createTaco, mat, add, box, cyl, ball, person, setup, wrap } from './common.js';
+guard(() => {
+  const { stage, scene, num } = setup({ ground: '#8fcf8a' });
+  // Massachusetts-shaped plinth (x east, y north in 2D), with Cape Cod hook
+  const _unused = [[-4, 0.7], [-4, -0.4], [0.2, -0.5], [1.2, 0.2], [2.2, 0.35], [3.2, 0.1], [3.8, 0.3], [3.9, -0.9], [3.2, -1.3], [3.1, -0.6], [2.8, -0.2], [2.2, -0.6], [1.6, -1.2], [1.0, -1.5], [0.4, -0.9], [-0.2, -1.0], [-4, -1.0]];
+  const poly = [[-5, 1.4], [3.2, 1.6], [3.6, 1.0], [3.0, 0.5], [3.4, 0.2], [4.5, 0.3], [5.0, 0.9], [5.5, 0.8], [5.4, -0.2], [4.2, -0.7], [3.2, -0.8], [2.4, -1.6], [-5, -1.6]];
+  const sh = new THREE.Shape(); poly.forEach(([x, y], i) => sh[i ? 'lineTo' : 'moveTo'](x, y));
+  const g = new THREE.ExtrudeGeometry(sh, { depth: 0.5, bevelEnabled: true, bevelSize: 0.06, bevelThickness: 0.06, bevelSegments: 2 });
+  g.rotateX(-Math.PI / 2); g.translate(0, 0, 0);
+  const plinth = add(scene, g, mat('#e9d9a6'), [0, 0, -0.5]);
+  // blue rivers/ocean stripe
+  add(scene, new THREE.PlaneGeometry(40, 8), mat('#4aa3df'), [14, 0.01, 0], [-Math.PI / 2, 0, 0]);
+  // crowd of lab-coat workers on the map
+  const crowd = [];
+  const lab = ['#ffffff', '#f4f4f8', '#ffffff'];
+  for (let i = 0; i < 18; i++) {
+    const p = person({ body: lab[i % 3], hair: ['#3a2a20', '#222', '#8a5a2b', '#caa04a'][i % 4], scale: 0.55 });
+    p.position.set(-4.4 + (i % 9) * 0.9 + (i > 8 ? 0.4 : 0), 0.57, 0.55 - Math.floor(i / 9) * 0.9 + (i % 2) * 0.15);
+    p.rotation.y = 0.2 - (i % 3) * 0.2; p.userData.arms.l.rotation.z = -0.9; scene.add(p); crowd.push(p);
+  }
+  // flask props
+  for (const x of [-3.2, 1.3, 3.6]) { cyl(scene, 0.02, 0.28, 0.5, '#7fe0c0', [x, 0.95, -0.9]); cyl(scene, 0.07, 0.07, 0.25, '#bff3ff', [x, 1.32, -0.9]); }
+  // giant taco on top, hard-hat free, arms up
+  const taco = createTaco({ scale: 3.6 }); taco.position.set(0.2, 0.55, -0.2); scene.add(taco);
+  taco.userData.pose({ arms: { l: [0, 2.3, 0.4], r: [0, 2.3, 0.4] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  wrap(stage, [taco, ...crowd], [num('cx', 0), num('cy', 11), num('cz', 8)], [num('tx', 0.4), num('ty', 0.8), -0.2]);
+});
+</script></body></html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scholar Rock q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — "An APE TIGER (apitegromab) wears the MORTARBOARD."
+import { THREE, guard, mat, blob, makeScene, wrapUp } from './common.js';
+import { createMortarboard } from './mortarboard.js';
+import { createApeTiger } from './apetiger.js';
+
+guard(() => {
+  const { stage, scene, num } = makeScene({ ground: '#7cb850' });
+  const ape = createApeTiger({ scale: 1.5 }); ape.rotation.y = -0.3; scene.add(ape);
+  ape.userData.pose({ arms: { l: [0, 0.12, 0.1], r: [0, 0.12, 0.1] } });
+  // the anchor sits on the ape tiger's head like a hat
+  const m = createMortarboard({ scale: 0.7 });
+  const ht = ape.userData.headTop; m.position.set(ht.x, ht.y - 0.25 * 0.7 - 0.03, ht.z); m.rotation.x = -0.05;
+  m.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] } }); ape.add(m);
+  for (const [x, z] of [[-1.6, 0.4], [1.7, 0.2], [-2.4, -0.8], [2.5, -0.6]]) blob(scene, mat('#f6d54a'), [x, 0.06, z], [0.07, 0.04, 0.07]);
+  wrapUp(stage, num, [ape, m], [0.2, 2.0, 4.8], [0, 1.75, 0]);
+});
+</script></body></html>

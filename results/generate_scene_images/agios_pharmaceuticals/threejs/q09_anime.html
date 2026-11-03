@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Agios q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AEGIS shield licenses a SEVEN-PLANE (cevidoplenib) to rescue low PLATELETS in immune thrombocytopenia.
+import { THREE, guard, mat, add, blob, box, cyl, rbc, textPlane, makeScene } from './common.js';
+import { createAegis } from './aegis.js';
+import { createPirateKing, createCrab, createPivotDoor, sickle, platelet } from './props.js';
+// shield helper: place + pose + optional reach {hand:'l', to:[x,y,z] world}
+function place(scene, S, x, z, ry, sc, reach) {
+  const a = createAegis({ scale: sc }); a.position.set(x, 0, z); a.rotation.y = ry; scene.add(a);
+  a.userData.pose({ legs: { l: [0.2, 0], r: [-0.15, 0] } });
+  if (reach) { a.updateMatrixWorld(true); const t = a.worldToLocal(new THREE.Vector3(...reach.to)); a.userData.reach(reach.hand, [t.x / sc, t.y / sc, t.z / sc]); }
+  S.mark(a); return a;
+}
+guard(() => {
+  const S = makeScene({ ground: '#8fc46a', cover: 2 }); const { scene } = S;
+  const pl = new THREE.Group(); const red = mat('#e8452c'), cream = mat('#f6efe0');
+  add(pl, new THREE.CapsuleGeometry(0.32, 1.2, 8, 24), cream, [0, 0, 0], [0, 0, Math.PI / 2]);
+  blob(pl, mat('#9ad6ff', { roughness: 0.2 }), [0.35, 0.22, 0], [0.28, 0.18, 0.22]);
+  box(pl, red, [0, -0.02, 0], [0.5, 0.06, 2.8]); add(pl, new THREE.CylinderGeometry(0.34, 0.34, 0.05, 3), red, [-0.85, 0.35, 0], [0, 0, 0]).scale.set(0.4, 1, 1);
+  box(pl, red, [-0.95, 0.35, 0], [0.45, 0.6, 0.06], [0, 0, 0.5]); box(pl, red, [-0.95, 0.0, 0], [0.35, 0.05, 1.0]);
+  cyl(pl, mat('#444'), [0.98, 0, 0], 0.07, 0.12, [0, 0, Math.PI / 2]); box(pl, mat('#333'), [1.04, 0, 0], [0.04, 0.8, 0.1]);
+  for (const s of [-1, 1]) textPlane(pl, '7', 0.6, 0.6, [-0.55, 0.04, s * 0.335], { color: '#e8452c', font: 'bold 400px sans-serif', w: 512, h: 512 }, [0, s > 0 ? 0 : Math.PI, 0]);
+  pl.position.set(0.8, 2.4, 0); pl.rotation.set(0, 0, 0.05); scene.add(pl);
+  // rescue rope + ring
+  cyl(scene, mat('#d9b878'), [0.2, 1.65, 0.1], 0.015, 1.4); add(scene, new THREE.TorusGeometry(0.2, 0.06, 10, 24), mat('#ffffff'), [0.2, 0.95, 0.1]);
+  for (let i = 0; i < 4; i++) add(scene, new THREE.CylinderGeometry(0.062, 0.062, 0.05, 8, 1, false, i * 1.57, 0.78), mat('#ff4a4a'), [0.2 + 0.2 * Math.cos(i * 1.57 + 0.4), 0.95 + 0.2 * Math.sin(i * 1.57 + 0.4), 0.1], [Math.PI / 2, 0, 0]);
+  // low platelets: sad flat pile of purple pieces
+  const sadp = (x, z, sc) => { const g = platelet(0.14); g.scale.setScalar(sc); g.position.set(x, 0.1, z); scene.add(g); S.mark(g);
+    for (const s of [-1, 1]) { blob(g, mat('#fff'), [s * 0.05, 0.05, 0.1], [0.025, 0.028, 0.012]); blob(g, mat('#111'), [s * 0.05, 0.045, 0.114], [0.013, 0.018, 0.008]); }
+    add(g, new THREE.TorusGeometry(0.025, 0.006, 6, 12, Math.PI), mat('#411'), [0, -0.02, 0.1]); };
+  sadp(0.6, 0.9, 1.6); sadp(1.5, 0.4, 1.4); sadp(2.2, 1.0, 1.3);
+  place(scene, S, -1.0, 0.6, 0.3, 1.4, { hand: 'l', to: [-0.1, 1.4, 0.8] });
+  S.finish([0.5, 1.4, 5.6], [0.6, 1.2, 0]);
+
+});
+</script></body></html>

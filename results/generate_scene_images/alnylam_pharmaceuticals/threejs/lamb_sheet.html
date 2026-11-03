@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Lamb sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Anchor inspection: ?view=front|side|three (camera angle around the lamb).
+import { createStage, guard } from './kit.js';
+import { createLamb } from './lamb.js';
+guard(() => {
+  const view = new URLSearchParams(location.search).get('view') ?? 'three';
+  const { THREE, scene, camera, finish } = createStage({ sunElevation: 40, sunAzimuth: 30, exposure: 0.6, shadowSize: 2, bloom: { strength: 0.1, radius: 0.4, threshold: 1 } });
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(30, 64).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#8a7a64', roughness: 1 }));
+  ground.receiveShadow = true;
+  scene.add(ground);
+  const lamb = createLamb();
+  scene.add(lamb);
+  const az = { front: 0, side: 90, three: 35 }[view];
+  const a = THREE.MathUtils.degToRad(az);
+  camera.position.set(Math.sin(a) * 2.6, 0.75, Math.cos(a) * 2.6);
+  camera.lookAt(0, 0.55, 0);
+  finish();
+});
+</script></body></html>

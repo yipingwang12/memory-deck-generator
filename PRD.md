@@ -270,6 +270,15 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - Next (user wants to push further): one rigged, furred sheep (hair system), posed per scene, reused for all 13 Alnylam scenes; reusable composition templates.
 - ⚠ Traps: glTF import sets `rotation_mode='QUATERNION'` → `rotation_euler` silently ignored, set `'XYZ'`; HDRI sun dir x=cos(az)cos(e), y=−sin(az)cos(e), z=sin(e), az=(u−0.5)·2π (measured); Blender 5 compositor = `scene.compositing_node_group`; unsandboxed run only (Metal).
 
+**Three.js anime scenes** (2026-11-02/03, in progress, not shipped): procedural Three.js (r170) in realistic-anime style, rendered headless → `<slug>/threejs/qNN_anime.webp`. Kit in `alnylam_pharmaceuticals/threejs/` (`kit.js`, `kit_anime.js`: toon ramps, ink-line pass, rim light, painted sky, cumulus, flare; `render.mjs`: Playwright + local three); other decks symlink it.
+- Pilot: Alnylam q01 realistic + anime, q08 anime. Editas = first full deck (pencil anchor + 10 scenes).
+- Pipeline: one fresh **Sonnet subagent per deck** reads `THREEJS_COMPANY_BRIEF.md` → anchor module (`createX()`, `pose`, `reach` IK) + one page per scene, ≤3 previews each, contact sheet. Opus main session only dispatches.
+- Measured on $20 Pro: ≈1.3% of 5-h window, ≈0.6% of weekly per scene; ≈$0.45/scene API-equivalent. Weekly cap binds.
+- Done: Editas + 31 decks without Gemini images (Foundation → Sonde), 282 scenes incl. Editas. Partial: Tortugas (anchor), Cognixion (2/7), Arctop, Zander. Left: 548 scenes, 52 decks (Tortugas → Piramidal).
+- Weak spots: thin limbs → grips/handoffs read weakly; small labels; occasional crops; toon shading makes glass opaque.
+- Committed: `.webp` finals, `anchor.png`, page/JS sources. Gitignored: `*_anime.png`, `out/` previews (regenerable).
+- Next: resume from first missing qid; wire into `deck-companies --build` (no `manifest.json` yet → not in quiz).
+
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
 - Output: a `deck_type: code` / `mode: text-mc` deck (`items` = `<source_id>|<qid>`), riding the quiz's existing single-choice loop.

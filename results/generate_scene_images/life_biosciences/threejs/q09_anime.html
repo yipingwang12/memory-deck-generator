@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Life Biosciences q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — In monkeys, the LIFEBOAT puts the METHYL tags on DNA back in place.
+import { guard } from './kit.js';
+import * as K from './props.js';
+const { THREE, createLifeboat, canvasTexture, rng, mat, add, blob, box, cyl, num, makeStage, finish, water, dock, oar, person, eyeball, nachos, label, cell, rope, syringe, crate } = K;
+guard(() => {
+  const stage = makeStage(), scene = stage.scene; const chars = [];
+
+  water(scene, '#2f93d6');
+  dock(scene, -1.5, 5.0, -2, 2.5, 0.28);
+  const dna = new THREE.Group(); dna.position.set(2.7, 0.5, 0.2); scene.add(dna);
+  const tags = [];
+  for (let i = 0; i < 28; i++) {
+    const t = i / 27 * Math.PI * 5, y = i * 0.1 + 0.1, a = [Math.cos(t) * 0.45, y, Math.sin(t) * 0.45], b = [-a[0], y, -a[2]];
+    blob(dna, mat('#ff6f6f'), a, [0.07, 0.07, 0.07]); blob(dna, mat('#4f9cff'), b, [0.07, 0.07, 0.07]);
+    const d = new THREE.Vector3(...a).sub(new THREE.Vector3(...b)); const rung = add(dna, new THREE.CylinderGeometry(0.02, 0.02, d.length(), 8), mat(i % 2 ? '#ffd23a' : '#7be07b'), [0, y, 0]); rung.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
+    if ([4, 11, 18, 24].includes(i)) tags.push(a);
+  }
+  for (const a of tags) { const tg = label('CH3', 0.3, 0.3, { bg: '#ffd23a', fg: '#222', font: 'bold 200px Arial' }); tg.position.set(a[0] * 1.5, a[1] + 0.12, a[2] * 1.5 + 0.2); dna.add(tg); blob(dna, mat('#ffd23a'), [a[0] * 1.1, a[1] + 0.05, a[2] * 1.1], [0.05, 0.05, 0.05]); }
+  // monkey
+  const m = new THREE.Group(); m.position.set(0.3, 0.5, 0.7); m.rotation.y = 0.5; scene.add(m);
+  const fur = mat('#8a5a38'), tan = mat('#e8c8a0');
+  blob(m, fur, [0, 0.45, 0], [0.32, 0.38, 0.28]); blob(m, fur, [0, 1.0, 0.03], [0.28, 0.26, 0.26]); blob(m, tan, [0, 0.98, 0.17], [0.19, 0.17, 0.12]);
+  for (const sx of [-1, 1]) { blob(m, fur, [sx * 0.3, 1.05, 0], [0.11, 0.11, 0.06]); blob(m, tan, [sx * 0.3, 1.05, 0.04], [0.07, 0.07, 0.03]);
+    blob(m, mat('#fff'), [sx * 0.09, 1.07, 0.27], [0.05, 0.065, 0.015]); blob(m, mat('#1a1020'), [sx * 0.09, 1.065, 0.285], [0.03, 0.045, 0.01]); blob(m, mat('#fff'), [sx * 0.08, 1.085, 0.298], [0.012, 0.012, 0.01]);
+    cyl(m, fur, [sx * 0.3, 0.45, 0.05], 0.06, 0.55, [0, 0, sx * 0.25]); cyl(m, fur, [sx * 0.16, 0.12, 0.2], 0.07, 0.3, [1.2, 0, 0]); blob(m, tan, [sx * 0.16, 0.08, 0.42], [0.09, 0.05, 0.11]); }
+  add(m, new THREE.TorusGeometry(0.3, 0.05, 8, 24, 3.4), fur, [-0.3, 0.3, -0.15], [0, 0, 1.4]);
+  const boat = createLifeboat({ scale: 1.5, flag: 'ER-100' }); boat.position.set(-2.4, 0, 1.4); scene.add(boat); chars.push(boat);
+  boat.userData.aim('l', [1.0, 0.9, 0.3]);
+  const handTag = label('CH3', 0.3, 0.3, { bg: '#ffd23a', fg: '#222', font: 'bold 200px Arial' }); boat.userData.parts.hands.l.add(handTag); handTag.position.set(0.0, -0.12, 0.05);
+  finish(stage, [0.4, 1.8, 8.0], [0.4, 1.2, 0], chars);
+});
+</script></body></html>

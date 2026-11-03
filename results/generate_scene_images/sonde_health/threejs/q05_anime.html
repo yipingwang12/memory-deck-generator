@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sonde q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, add, mat, blob, box, cyl, ground, makeStage, wrapUp, rng, textPlane } from "./common.js";
+import { createBalloon } from "./balloon.js";
+import { createPerson } from "./people.js";
+// q05 — The BALLOON rents its ears to big companies: enterprise licensing.
+guard(() => {
+  const { stage, scene, num } = makeStage({ sunAzimuth: 120 });
+  ground(scene, '#9aa0a8');
+  const r = rng(6);
+  for (let i = 0; i < 9; i++) { const h = 6 + r() * 8, x = -14 + i * 3.6; box(scene, mat(['#6f8fb8', '#8aa6c8', '#5c7aa0'][i % 3], { metalness: 0.3, roughness: 0.4 }), [x, h / 2, -12], [3, h, 3]); for (let k = 1; k < h; k += 1.1) box(scene, mat('#d8ecff', { emissive: '#8ab8e8', emissiveIntensity: 0.3 }), [x, k, -10.45], [2.5, 0.35, 0.05]); }
+  // tray with two ears
+  box(scene, mat('#8a5a2c'), [0.0, 0.5, 0.4], [1.3, 0.08, 0.7]); for (const x of [-0.55, 0.55]) cyl(scene, mat('#6b4a2a'), [x, 0.23, 0.4], 0.05, 0.05, 0.5);
+  const skin = mat('#f2b394');
+  for (const s of [-1, 1]) { const e = new THREE.Group(); e.position.set(s * 0.32, 0.95, 0.4); e.rotation.y = s * 0.5; e.scale.setScalar(1.6); scene.add(e); blob(e, skin, [0, 0, 0], [0.12, 0.3, 0.26]); blob(e, mat('#d6866a'), [s * 0.05, 0, 0.0], [0.07, 0.2, 0.16]); add(e, new THREE.TorusGeometry(0.1, 0.03, 8, 16), mat('#e0a086'), [s * 0.08, 0.02, 0.02], [0, Math.PI / 2, 0]); }
+  const bal = createBalloon({ scale: 1.4, string: 0.6 }); bal.position.set(-1.3, 0.95, 0.2); bal.rotation.y = 0.35; scene.add(bal);
+  bal.userData.pose({ arms: { l: [0, 0.5, 0] } }); bal.userData.reach('r', [-0.2, 0.0, 0.6]);
+  const biz = createPerson({ coat: '#1f2a44', pants: '#1f2a44', hair: '#222', tie: '#e8343f', scale: 1.15 }); biz.position.set(1.5, 0, 0.3); biz.rotation.y = -0.45; scene.add(biz);
+  biz.userData.pose({ arms: { l: [0, 0.15] } }); biz.updateMatrixWorld(true);
+  const bw = biz.worldToLocal(new THREE.Vector3(0.6, 1.25, 0.8)); biz.userData.reach('r', [bw.x, bw.y, bw.z]);
+  const cash = new THREE.Group(); cash.position.set(0.55, 1.27, 0.85); scene.add(cash);
+  for (let i = 0; i < 4; i++) box(cash, mat('#3fa65a'), [0, i * 0.045, 0], [0.34, 0.04, 0.2]);
+  box(cash, mat('#f2d84a'), [0, 0.09, 0], [0.08, 0.2, 0.22]);
+  wrapUp(stage, num, [bal, biz], [0.1, 1.7, 5.8], [0.1, 1.5, 0]);
+});
+</script></body></html>

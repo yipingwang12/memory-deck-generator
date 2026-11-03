@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — The SANDWORM burrows under a pocket WATCH in Waltham
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.2, wx: -1.5, wry: 0.4 });
+  const w = pocketWatch(); w.scale.setScalar(2.0); w.position.set(1.4, 0.7, 0.2); w.rotation.set(-0.2, -0.35, 0.1); c.scene.add(w);
+  const sd = mat('#d9a057', { roughness: 1 });
+  for (let i = 0; i < 6; i++) blob(c.scene, sd, [-0.6 + i * 0.35, 0.0, 0.1 + Math.sin(i) * 0.1], [0.35, 0.14 + 0.05 * (i % 2), 0.3]);
+  blob(c.scene, sd, [1.4, 0.1, 0.6], [1.3, 0.3, 0.5]);
+  c.done([0.0, 1.6, 6.2], [0.0, 1.2, 0]);
+});
+</script></body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flourish q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — A REAR door (Reardon) and ROBs WILL scroll (Rob Williams) plant flags in the FLOUR sack.
+import { THREE, guard, canvasTexture, rng, createFlour, mat, add, blob, box, cyl, textTexture, setup, wrap } from './base.js';
+import { buildBrain, buildMill, buildBulb, coin, COIN_MAT, goldBar, flag } from './props.js';
+guard(() => {
+  const { stage, scene } = setup({ ground: '#8cc063' });
+  const D = new THREE.Group(); D.position.set(-1.7, 0, -0.6); D.rotation.y = 0.35; scene.add(D);
+  box(D, mat('#e9d8b8'), [0, 1.2, -0.1], [1.7, 2.4, 0.12]);
+  box(D, mat('#5a3a22'), [0, 1.05, 0], [1.2, 2.1, 0.1]);
+  for (const y of [0.55, 1.55]) box(D, mat('#734a2c'), [0, y, 0.06], [0.9, 0.7, 0.04]);
+  blob(D, mat('#e6b422', { metalness: 0.8, roughness: 0.3 }), [0.42, 1.05, 0.09], [0.06, 0.06, 0.06]);
+  box(D, mat('#e6b422', { metalness: 0.8 }), [-0.58, 1.9, 0.07], [0.06, 0.2, 0.03]); box(D, mat('#e6b422', { metalness: 0.8 }), [-0.58, 0.3, 0.07], [0.06, 0.2, 0.03]);
+  box(D, mat('#c5b08a'), [0, 0.03, 0.4], [1.3, 0.06, 0.8]);
+  cyl(D, mat('#c0392b'), [0.95, 0.2, 0.4], 0.17, 0.4, [0, 0, 0], 0.13); blob(D, mat('#4caf50'), [0.95, 0.5, 0.4], [0.2, 0.18, 0.2]);
+  const f = createFlour({ scale: 1.3 }); f.position.set(0.5, 0, 0.3); f.rotation.y = -0.1; scene.add(f);
+  f.userData.pose({ arms: { l: [0, 2.2, 0.2], r: [0, 2.5, 0.2] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+  const fl1 = flag('#d62828', 0.7), fl2 = flag('#1d6fd6', 0.7);
+  fl1.position.set(-0.07, 1.02, 0.0); fl1.rotation.z = 0.12; fl2.position.set(0.1, 1.02, 0.02); fl2.rotation.z = -0.15; f.add(fl1, fl2);
+  fl1.scale.setScalar(0.85); fl2.scale.setScalar(0.85);
+  const S = new THREE.Group(); S.position.set(2.0, 0, 0.7); S.rotation.y = -0.6; scene.add(S);
+  const parch = mat('#f3e2b3');
+  add(S, new THREE.CylinderGeometry(0.17, 0.17, 1.1, 24), parch, [0, 0.17, 0], [0, 0, Math.PI / 2]);
+  add(S, new THREE.CylinderGeometry(0.19, 0.19, 0.04, 24), mat('#9b5b2b'), [-0.57, 0.17, 0], [0, 0, Math.PI / 2]); add(S, new THREE.CylinderGeometry(0.19, 0.19, 0.04, 24), mat('#9b5b2b'), [0.57, 0.17, 0], [0, 0, Math.PI / 2]);
+  box(S, parch, [0.45, 0.01, 0.55], [0.9, 0.01, 0.9], [0, 0.1, 0]);
+  blob(S, mat('#c62828', { roughness: 0.4 }), [0.5, 0.03, 0.5], [0.09, 0.03, 0.09]);
+  const bird = new THREE.Group(); bird.position.set(0, 0.48, 0); S.add(bird);
+  blob(bird, mat('#8b5a3c'), [0, 0, 0], [0.19, 0.17, 0.15]); blob(bird, mat('#ff6a3d'), [0.06, -0.02, 0.0], [0.13, 0.15, 0.13]);
+  blob(bird, mat('#8b5a3c'), [0.15, 0.12, 0], [0.1, 0.1, 0.1]); blob(bird, mat('#ff6a3d'), [0.2, 0.1, 0], [0.07, 0.08, 0.08]);
+  add(bird, new THREE.ConeGeometry(0.03, 0.09, 8), mat('#ffcc00'), [0.28, 0.12, 0], [0, 0, -Math.PI / 2]);
+  for (const s of [-1, 1]) { blob(bird, mat('#fff'), [0.22, 0.14, s * 0.06], [0.03, 0.035, 0.012]); blob(bird, mat('#111'), [0.23, 0.14, s * 0.068], [0.018, 0.022, 0.01]); }
+  add(bird, new THREE.ConeGeometry(0.06, 0.28, 8), mat('#6f4a30'), [-0.24, -0.02, 0], [0, 0, Math.PI / 2 + 0.2]);
+  for (const s of [-1, 1]) cyl(bird, mat('#333'), [0, -0.2, s * 0.05], 0.01, 0.16);
+  wrap(stage, [f], { cam: [0.3, 1.3, 5.6], look: [0.2, 1.1, 0] });
+});
+</script></body></html>

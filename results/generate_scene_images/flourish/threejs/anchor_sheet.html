@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flour anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createFlour, mat, add, setup, wrap } from './base.js';
+guard(() => {
+  const { stage, scene, num } = setup({ ground: '#f0e6d2' });
+  const anchors = [];
+  [[-1.0, 0.6], [0, 0], [1.0, -0.8]].forEach(([x, ry], i) => {
+    const f = createFlour({ scale: 1.2 }); f.position.set(x, 0, 0); f.rotation.y = ry; scene.add(f); anchors.push(f);
+    if (i === 0) f.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, 0.4, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+    if (i === 1) { f.userData.pose({ lean: 0.08, tilt: 0.05, arms: { l: [0, 2.3, 0], r: [0, 0.5, 0] }, legs: { l: [0.3, 0], r: [-0.3, 0] } }); }
+    if (i === 2) f.userData.pose({ arms: { l: [-0.6, 0.4, -0.4], r: [0, 0.6, 0] } });
+  });
+  wrap(stage, anchors, { cam: [0, 0.9, 4.2], look: [0, 0.65, 0] });
+});
+</script></body></html>

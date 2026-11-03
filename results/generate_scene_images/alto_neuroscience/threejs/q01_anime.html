@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alto q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 - The SAXOPHONE's ticker reads ANRO.
+import { THREE, guard, makeStage, ground, finish, createSax, add, mat, blob, box, cyl, label, note, wave, playPose, noteTrail, oak, rng } from './common.js';
+guard(() => {
+
+  const { stage, num } = makeStage({ shadowSize: 5 }); const scene = stage.scene;
+  ground(scene, '#c99a62');
+  // ticker board on two posts
+  const frame = mat('#232a3d'); const board = new THREE.Group(); board.position.set(1.0, 0, -1.0); scene.add(board);
+  for (const x of [-1.1, 1.1]) cyl(board, frame, [x, 0.6, 0], 0.06, 1.2);
+  box(board, frame, [0, 1.75, 0], [3.0, 1.3, 0.14]);
+  box(board, mat('#0b1020'), [0, 1.75, 0.075], [2.8, 1.1, 0.02]);
+  const t = label('ANRO', 2.5, 0.85, { fg: '#39ff7a', bg: '#0b1020', px: 0.8 }); t.position.set(0, 1.8, 0.1); board.add(t);
+  const tape = label('\u25B2 +4.2%', 2.5, 0.2, { fg: '#39ff7a', bg: '#0b1020', px: 0.7 }); tape.position.set(0, 1.35, 0.1); board.add(tape);
+  const sax = createSax({ scale: 1.9 }); sax.position.set(-1.5, 0, 0.8); sax.rotation.y = 0.45; scene.add(sax);
+  sax.userData.pose({ legs: { l: [0.08, 0], r: [-0.08, 0] } });
+  sax.userData.reach('l', [0.2, 1.15, 0.3]); sax.userData.reach('r', [-0.15, 0.6, 0.1]);
+  sax.updateMatrixWorld(true);
+  finish(stage, [sax], { cam: [0, 1.5, 4.6], look: [0.2, 1.3, 0] });
+
+});
+</script></body></html>

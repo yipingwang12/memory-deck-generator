@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Life Biosciences q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q11 — The LIFEBOAT is moored to a TEA chest in Boston.
+import { guard } from './kit.js';
+import * as K from './props.js';
+const { THREE, createLifeboat, canvasTexture, rng, mat, add, blob, box, cyl, num, makeStage, finish, water, dock, oar, person, eyeball, nachos, label, cell, rope, syringe, crate } = K;
+guard(() => {
+  const stage = makeStage(), scene = stage.scene; const chars = [];
+
+  water(scene, '#2f93d6');
+  dock(scene, -3.4, 2.2, -2, 2.5, 0.28);
+  const tea = crate(1.5, 1.2, 1.1, (c, s) => { c.fillStyle = '#f0d9a0'; c.fillRect(0, 0, s, s); c.fillStyle = '#2f7d32'; for (const [x, y, rot] of [[170, 150, -0.6], [260, 120, 0], [350, 150, 0.6]]) { c.save(); c.translate(x, y); c.rotate(rot); c.beginPath(); c.ellipse(0, 0, 36, 78, 0, 0, 6.3); c.fill(); c.restore(); } c.fillStyle = '#e8e2d0'; c.fillRect(120, 270, 260, 90); c.beginPath(); c.arc(250, 320, 80, 0, Math.PI); c.fill(); c.strokeStyle = '#3b6fb0'; c.lineWidth = 12; c.beginPath(); c.arc(250, 320, 80, 0, Math.PI); c.stroke(); c.beginPath(); c.arc(375, 300, 36, -1.5, 1.5); c.stroke(); c.fillStyle = '#9b5a2e'; c.fillRect(135, 275, 230, 14); });
+  tea.position.set(-1.2, 0.5, 0.5); tea.rotation.y = 0.35; scene.add(tea);
+  const cup = new THREE.Group(); cup.position.set(0.5, 0.5, 0.9); scene.add(cup);
+  cyl(cup, mat('#f4f1ea'), [0, 0.18, 0], 0.22, 0.36, [0, 0, 0], 0.17); cyl(cup, mat('#8a4a1e'), [0, 0.36, 0], 0.19, 0.02);
+  add(cup, new THREE.TorusGeometry(0.1, 0.03, 8, 16, 3.3), mat('#f4f1ea'), [0.22, 0.2, 0], [0, 0, -1.6]);
+  for (let i = 0; i < 3; i++) add(cup, new THREE.TorusGeometry(0.06, 0.012, 6, 16, 4.5), mat('#ffffff', { transparent: true, opacity: 0.7 }), [(i - 1) * 0.08, 0.55 + i * 0.12, 0], [0, 0, i]);
+  const post = cyl(scene, mat('#2b2e36'), [1.6, 0.6, 0.2], 0.14, 0.7, [0, 0, 0], 0.12); blob(scene, mat('#2b2e36'), [1.6, 0.98, 0.2], [0.17, 0.08, 0.17]);
+  const boat = createLifeboat({ scale: 1.5, flag: 'ER-100' }); boat.position.set(3.0, 0, 1.4); scene.add(boat); chars.push(boat);
+  boat.userData.aim('l', [0.9, 0.7, 0.4]); boat.userData.aim('r', [-0.85, 0.7, 0.4]);
+  rope(scene, [2.45, 1.0, 1.1], [1.7, 0.98, 0.3], 0.35, '#d9b878', 0.04);
+  const bricks = canvasTexture(256, (c, s) => { c.fillStyle = '#a8442f'; c.fillRect(0, 0, s, s); c.fillStyle = '#d8b8a0'; for (let y = 0; y < s; y += 32) { c.fillRect(0, y, s, 4); for (let x = (y / 32 % 2) * 32; x < s; x += 64) c.fillRect(x, y, 4, 32); } });
+  bricks.wrapS = bricks.wrapT = THREE.RepeatWrapping; bricks.repeat.set(1, 1);
+  [[-5.2, 3.2, -4.5], [-3.2, 4.2, -4.8], [-1.0, 2.8, -4.6], [4.5, 3.6, -5]].forEach(([x, h, z], i) => { box(scene, new THREE.MeshStandardMaterial({ map: bricks, roughness: 0.8 }), [x, h / 2, z], [1.9, h, 1.7]); box(scene, mat('#fff4c8'), [x, h * 0.6, z + 0.86], [0.3, 0.4, 0.02]); });
+  box(scene, mat('#f2f2f2'), [1.5, 2.2, -5.2], [1.1, 4.4, 1.1]); add(scene, new THREE.ConeGeometry(0.75, 2.2, 4), mat('#f2f2f2'), [1.5, 5.5, -5.2], [0, Math.PI / 4, 0]);
+  finish(stage, [0.7, 1.9, 8.0], [0.7, 1.2, 0], chars);
+});
+</script></body></html>

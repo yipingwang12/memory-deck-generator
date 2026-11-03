@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scholar Rock q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — "The MORTARBOARD is woven from TGF-BETA growth signals."
+import { THREE, guard, mat, add, box, cyl, blob, sign, makeScene, wrapUp } from './common.js';
+import { createMortarboard } from './mortarboard.js';
+
+function weaveTexture() {
+  const c = document.createElement('canvas'); c.width = c.height = 512; const x = c.getContext('2d');
+  const cols = ['#ff5d8f', '#ffb02e', '#4fd1c5', '#7b6cff'];
+  const n = 16, s = 512 / n;
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    const over = (i + j) % 2 === 0; x.fillStyle = cols[(over ? i : j) % 4]; x.fillRect(i * s, j * s, s, s);
+    x.fillStyle = 'rgba(0,0,0,0.28)'; if (over) x.fillRect(i * s, j * s, s, s * 0.18); else x.fillRect(i * s, j * s, s * 0.18, s);
+  }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function spool(parent, color, pos) {
+  const g = new THREE.Group(); g.position.set(...pos); parent.add(g);
+  cyl(g, mat(color), [0, 0.18, 0], 0.17, 0.32);
+  for (const y of [0.01, 0.35]) cyl(g, mat('#d9b878'), [0, y, 0], 0.24, 0.04);
+  return g;
+}
+
+guard(() => {
+  const { stage, scene, num } = makeScene({ ground: '#e8c98c' });
+  const m = createMortarboard({ scale: 1.7 }); m.position.set(0, 0, 0.2); m.rotation.y = -0.15; scene.add(m);
+  m.userData.pose({ tilt: 0.06, arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] } });
+  m.userData.parts.crown.material = new THREE.MeshStandardMaterial({ map: weaveTexture(), roughness: 0.8 });
+  // posts + banner
+  for (const x of [-1.9, 1.9]) cyl(scene, mat('#8a5a30'), [x, 1.3, -1.4], 0.07, 2.6);
+  const b = sign('TGF-β', 3.6, 1.0, { bg: '#fff3d6', fg: '#b3205a', border: '#b3205a' }); b.position.set(0, 2.25, -1.33); scene.add(b);
+  // spools feeding strands into the cap
+  const cols = ['#ff5d8f', '#ffb02e', '#4fd1c5', '#7b6cff'];
+  [[-1.8, 0, 0.5], [-1.5, 0, 1.3], [1.8, 0, 0.5], [1.5, 0, 1.3]].forEach((p, i) => {
+    spool(scene, cols[i], p);
+    const sx = Math.sign(p[0]);
+    const curve = new THREE.CatmullRomCurve3([[p[0], 0.4, p[2]], [p[0] * 0.8, 1.2 + i * 0.1, p[2] * 0.9], [sx * 0.9, 0.9 + i * 0.12, 0.55], [sx * 0.34, 0.85 + i * 0.1, 0.45]].map((q) => new THREE.Vector3(...q)));
+    add(scene, new THREE.TubeGeometry(curve, 30, 0.035, 8), mat(cols[i], { roughness: 0.5 }));
+  });
+  // growth sprouts
+  for (const [x, z] of [[-0.9, 1.7], [0.9, 1.8], [-2.6, 0.2], [2.6, 0.3], [0.2, 2.0]]) {
+    cyl(scene, mat('#3c9a3c'), [x, 0.15, z], 0.015, 0.3);
+    blob(scene, mat('#58c25a'), [x - 0.07, 0.3, z], [0.1, 0.04, 0.06], [0, 0, 0.5]); blob(scene, mat('#58c25a'), [x + 0.07, 0.34, z], [0.1, 0.04, 0.06], [0, 0, -0.5]);
+  }
+  wrapUp(stage, num, [m], [0.1, 1.3, 4.4], [0, 1.0, 0]);
+});
+</script></body></html>

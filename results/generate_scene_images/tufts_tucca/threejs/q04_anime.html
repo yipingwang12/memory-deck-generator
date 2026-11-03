@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tufts TUCCA q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — A CAPTAIN (Kaplan) leads the TOUCAN's national nest.
+import { THREE, guard, rng, mat, add, blob, cyl, box, setup, frame, meadow, createNest, createFlag, createPerson } from './common.js';
+import { createToucan } from './toucan.js';
+
+guard(() => {
+  const S = setup({ el: 28, az: 130 }); const { scene, num } = S;
+  meadow(scene, '#6fae45'); const r = rng(8);
+  add(scene, new THREE.PlaneGeometry(400, 1.8), mat('#c9a56b'), [0, 0.004, 1.2], [-Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 70; i++) { const x = (r() - 0.5) * 12, z = -2 - r() * 4; add(scene, new THREE.SphereGeometry(0.03, 8, 6), mat(['#ffd84a', '#ffffff', '#ff8fa8'][i % 3]), [x, 0.03, z]); }
+  // national nest on a post with flag
+  const post = new THREE.Group(); post.position.set(-1.9, 0, -0.2); scene.add(post);
+  cyl(post, mat('#7a5230'), 0.16, 0.2, 1.6, [0, 0.8, 0]); box(post, mat('#8a6238'), 0.9, 0.1, 0.9, [0, 1.62, 0], [0, 0, 0], 0.03);
+  const nest = createNest(0.6, 6); nest.position.set(0, 1.64, 0); post.add(nest);
+  const fg = createFlag(1.1, 0.66, 3.2); fg.position.set(-0.9, 0, -0.5); post.add(fg);
+  const t = createToucan({ scale: num('ts', 1.7) }); t.userData.crouch(0.1); t.position.set(-1.9, 1.84, -0.15); t.rotation.y = 0.55; scene.add(t);
+  t.userData.pose({ headTilt: -0.05, wings: { l: [0, 0.1], r: [0, 0.1] } });
+  // captain pointing ahead
+  const c = createPerson({ cap: true, scale: 1.25 }); c.position.set(1.0, 0, 1.2); c.rotation.y = -0.35; scene.add(c);
+  c.userData.arm('r', [0.2, -2.0], 0); c.userData.arm('l', [0, 0.55], -1.9);
+  frame(S, [t, c], [0.0, 1.7, 6.6], [-0.2, 1.6, 0]);
+});
+</script></body></html>

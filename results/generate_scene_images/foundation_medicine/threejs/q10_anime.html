@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// BROOCH adds SAGA storybook to CORNERSTONE
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:'#7fb34e'});
+
+const c = stone({ scale: 1.6 }); c.position.set(1.9, 0, 0.5); c.rotation.y = -0.4;
+c.userData.pose({ arms: { l: [-1.2, 0.2, -0.4], r: [-0.5, 0.3, -0.3] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+const br = L.brooch(0.8); br.position.set(-2.8, 1.8, 0); br.rotation.y = 0.4; scene.add(br);
+cyl(scene, mat('#c9b48e'), 0.5, 0.3, [-2.8, 0.15, 0]);
+const bk = L.book({ text: 'SAGA', w: 1.1, h: 1.45, t: 0.22 }); bk.position.set(-0.4, 1.9, 0.9); bk.rotation.set(0.1, -0.35, -0.15); scene.add(bk);
+const r = rng(3); for (let i = 0; i < 7; i++) blob(scene, mat('#8a3f9e'), [0.4 + r() * 1.6, 0.06, 1.6 + r() * 1.0], [0.07, 0.05, 0.07]);
+const mg = L.magnifier(); mg.scale.setScalar(1.6); mg.position.set(0.7, 0.35, 2.6); mg.rotation.set(-1.1, 0, 0); scene.add(mg);
+finish([0, 2.1, 7.0], [0, 1.5, 0]);
+});
+</script></body></html>

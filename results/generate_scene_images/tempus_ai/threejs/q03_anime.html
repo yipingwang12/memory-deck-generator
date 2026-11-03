@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q03 — "The HOURGLASS's core blood tests are marked xF and xM."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+function tube(label_, color) {
+  const g = new THREE.Group();
+  cyl(g, 0.17, 0.17, 0.9, mat('#d8eef7', { transparent: true, opacity: 0.4, depthWrite: false }), [0, 0.45, 0]);
+  add(g, new THREE.SphereGeometry(0.17, 24, 16, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), mat('#d8eef7', { transparent: true, opacity: 0.4, depthWrite: false }), [0, 0.0, 0]).position.y = 0.0;
+  cyl(g, 0.15, 0.15, 0.55, color, [0, 0.3, 0]); ball(g, 0.15, color, [0, 0.02, 0]);
+  cyl(g, 0.19, 0.19, 0.14, '#e5484d', [0, 0.95, 0]);
+  box(g, 0.34, 0.34, 0.01, '#ffffff', [0, 0.5, 0.172]);
+  label(g, label_, 0.34, 0.34, [0, 0.5, 0.18], [0, 0, 0], { fg: '#1b2a41', bg: '#ffffff', w: 256, h: 256, font: 'bold 130px Arial' });
+  return g;
+}
+guard(() => {
+  const stage = makeStage({ sky: { cover: 0.8, zenith: '#5aa7e0', horizon: '#e9f6ff' } }), scene = stage.scene;
+  ground(scene, '#f2efe8');
+  box(scene, 6.4, 0.14, 1.6, '#c98a4b', [0, 0.9, 0]);
+  for (const x of [-3, 3]) box(scene, 0.15, 0.9, 1.4, '#8a5a2e', [x, 0.45, 0]);
+  box(scene, 6.6, 3.2, 0.1, '#cfe3f2', [0, 2.5, -1.6]);
+  const rack = new THREE.Group(); rack.position.set(0, 0.97, 0.05); scene.add(rack);
+  box(rack, 2.7, 0.12, 0.6, '#3b82c4', [0, 0.3, 0]);
+  const tl = tube('xF', '#c4162a'); tl.position.set(-0.95, 0.38, 0); tl.rotation.z = 0.0; rack.add(tl);
+  const tr = tube('xM', '#9b1030'); tr.position.set(0.95, 0.38, 0); rack.add(tr);
+  const h = hero(scene, { scale: num('ps', 1.5), pos: [0, 0.97, 0.9], ry: 0, pose: { arms: { l: [0, 0.8, 0.2], r: [0, 0.8, 0.2] } } });
+  h.userData.reach('l', [0.55, 0.9, 0.2]); h.userData.reach('r', [-0.55, 0.9, 0.2]);
+  finish(stage, [h], { cam: [0, 1.9, 5.6], look: [0, 1.8, 0] });
+});
+</script></body></html>

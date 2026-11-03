@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarepta scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createSerape, mat, add, box, blob, cyl, num, makeStage, finishScene, ground, textPlane, helix, elevator } from './common.js';
+// q07 — The SERAPE's ticker reads SRPT.
+guard(() => {
+  const stage = makeStage(), scene = stage.scene; ground(scene, '#8fbf6a');
+  const dark = mat('#2b3038');
+  for (const x of [-1.6, 1.6]) box(scene, dark, [0.18, 3.0, 0.18], [x, 1.5, -0.5]);
+  box(scene, dark, [4.2, 1.5, 0.25], [0, 3.1, -0.5]);
+  const t = textPlane('SRPT', 3.8, 1.3, { bg: '#0b0f14', fg: '#3df08a' }); t.position.set(0, 3.1, -0.36); scene.add(t);
+  const arrow = new THREE.Shape(); arrow.moveTo(0, 0.5); arrow.lineTo(0.45, -0.1); arrow.lineTo(0.15, -0.1); arrow.lineTo(0.15, -0.5); arrow.lineTo(-0.15, -0.5); arrow.lineTo(-0.15, -0.1); arrow.lineTo(-0.45, -0.1); arrow.closePath();
+  const ar = new THREE.Mesh(new THREE.ShapeGeometry(arrow), new THREE.MeshBasicMaterial({ color: '#3df08a' })); ar.position.set(1.55, 3.1, -0.35); ar.scale.setScalar(0.8); scene.add(ar);
+  box(scene, mat('#3a414b'), [4.4, 0.12, 0.3], [0, 2.3, -0.5]);
+  const s = createSerape({ scale: 1.8 }); s.position.set(-0.6, 0, 1.0); s.rotation.y = 0.2; scene.add(s);
+  s.userData.pose({ headTilt: 0.05 }); s.userData.reach('l', [0.2, 1.0, 0.0]); s.userData.pose({ headTilt: 0.05, arms: { l: [0, 2.2, 0.2] } });
+  s.userData.pose({ headTilt: 0.05, arms: { l: [0, 2.6, 0.1], r: [0, -0.3, 0] } });
+  finishScene(stage, s, [num('cx', 0.4), num('cy', 1.7), num('cz', 6.2)], [num('tx', 0), num('ty', 1.9), 0]);
+});
+</script></body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Takeda q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — The TACO's campus sits at 585 KENDALL Street, near the MIT DOME.
+import { THREE, guard, createTaco, mat, add, box, cyl, ball, textPlane, setup, wrap } from './common.js';
+guard(() => {
+  const { stage, scene, num } = setup({ ground: '#a9b0b8' });
+  add(scene, new THREE.PlaneGeometry(400, 3), mat('#3b3d44'), [0, 0.004, 3.2], [-Math.PI / 2, 0, 0]);       // street
+  add(scene, new THREE.PlaneGeometry(400, 12), mat('#9ccf7a'), [0, 0.003, -5], [-Math.PI / 2, 0, 0]);       // lawn
+  // MIT-style great dome: columned drum + big white dome
+  const stone = mat('#f1ece0', { roughness: 0.6 });
+  box(scene, 7, 1.0, 4, stone, [3, 0.5, -7]);
+  for (let i = 0; i < 8; i++) cyl(scene, 0.18, 0.18, 2.4, stone, [0.9 + i * 0.6, 2.2, -5.2]);
+  box(scene, 6, 0.3, 2.2, stone, [3, 3.5, -6.5]);
+  cyl(scene, 1.9, 1.9, 0.9, stone, [3, 4.1, -6.8]);
+  const dome = add(scene, new THREE.SphereGeometry(2.0, 40, 20, 0, Math.PI * 2, 0, Math.PI / 2), mat('#cfd5dc', { roughness: 0.35, metalness: 0.2 }), [3, 4.55, -6.8]);
+  cyl(scene, 0.06, 0.06, 0.8, '#ddd', [3, 6.8, -6.8]);
+  // campus building (glass) left
+  box(scene, 4.2, 3.4, 2.6, mat('#7fc8ee', { metalness: 0.3, roughness: 0.2 }), [-4.2, 1.7, -4.5]);
+  for (let r = 0.8; r < 3.4; r += 0.8) box(scene, 4.25, 0.07, 2.65, '#fff', [-4.2, r, -4.5]);
+  // street sign post with big canvas text
+  cyl(scene, 0.06, 0.06, 2.6, '#555', [-1.3, 1.3, 1.6]);
+  box(scene, 3.0, 0.9, 0.08, '#1e6b3a', [-1.3, 2.6, 1.6]); box(scene, 3.1, 1.0, 0.06, '#ffffff', [-1.3, 2.6, 1.56]);
+  const t1 = textPlane('585', 1.3, 0.8, { bg: '#1e6b3a', fg: '#fff', px: 300 }); t1.position.set(-2.0, 2.6, 1.65); scene.add(t1);
+  const t2 = textPlane('KENDALL', 1.55, 0.8, { bg: '#1e6b3a', fg: '#fff', px: 150 }); t2.position.set(-0.7, 2.6, 1.65); scene.add(t2);
+  const taco = createTaco({ scale: 2.4 }); taco.position.set(1.6, 0, 1.6); taco.rotation.y = -0.25; scene.add(taco);
+  taco.userData.pose({ arms: { r: [0, 0.6, 0] } }); taco.userData.reach('l', [0.9, 1.0, 0.2]);
+  wrap(stage, [taco], [num('cx', 0.6), num('cy', 2.6), num('cz', 11.5)], [num('tx', 0.8), num('ty', 2.6), 0]);
+});
+</script></body></html>

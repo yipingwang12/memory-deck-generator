@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q05 — "In a DELAWARE court, the GUARDSMAN sues the HOURGLASS."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+/** Royal-guard GUARDSMAN: red tunic, tall black bearskin, pointing arm. Faces +z. */
+function guardsman() {
+  const g = new THREE.Group(), skin = '#ffd7b0';
+  for (const s of [-1, 1]) { cyl(g, 0.09, 0.09, 0.8, '#1d2a4a', [s * 0.13, 0.4, 0]); box(g, 0.2, 0.1, 0.34, '#111', [s * 0.13, 0.05, 0.06]); }
+  cyl(g, 0.3, 0.34, 0.95, '#d62c2c', [0, 1.25, 0]); cyl(g, 0.31, 0.31, 0.08, '#2b1a10', [0, 0.95, 0]);
+  for (const y of [1.0, 1.2, 1.4, 1.6]) ball(g, 0.035, '#ffd23f', [0, y, 0.32], [1, 1, 0.5], { metalness: 0.6 });
+  box(g, 0.1, 0.9, 0.1, '#ffffff', [-0.0, 1.3, 0.305]).rotation.z = 0; 
+  ball(g, 0.27, skin, [0, 1.97, 0]);
+  cyl(g, 0.3, 0.26, 0.55, '#1a1a1a', [0, 2.38, 0]); ball(g, 0.3, '#1a1a1a', [0, 2.62, 0], [1, 0.7, 1]);
+  cyl(g, 0.27, 0.27, 0.04, '#7a1e1e', [0, 2.13, 0]);
+  for (const s of [-1, 1]) { ball(g, 0.045, '#1a1a1a', [s * 0.1, 1.99, 0.24]); ball(g, 0.012, '#fff', [s * 0.1 + 0.012, 2.01, 0.275]); box(g, 0.1, 0.02, 0.02, '#3a2416', [s * 0.1, 2.06 + (s > 0 ? 0.02 : 0.0), 0.255], [0, 0, s * 0.35]); }
+  box(g, 0.1, 0.02, 0.03, '#7a2a2a', [0, 1.88, 0.26], [0, 0, 0]);
+  cyl(g, 0.065, 0.065, 0.5, '#d62c2c', [-0.38, 1.45, 0.1], [0.3, 0, 0.35]); ball(g, 0.07, '#fff', [-0.45, 1.2, 0.24]);
+  // pointing arm toward the hourglass (+x), holding a scroll
+  const arm = new THREE.Group(); arm.position.set(0.32, 1.6, 0.05); arm.rotation.z = 1.35; g.add(arm);
+  cyl(arm, 0.065, 0.065, 0.62, '#d62c2c', [0, -0.31, 0]); ball(arm, 0.07, '#fff', [0, -0.66, 0]);
+  const fing = cyl(arm, 0.02, 0.02, 0.16, '#fff', [0, -0.78, 0]);
+  return g;
+}
+guard(() => {
+  const stage = makeStage({ sky: { cover: 0.3 }, stage: { sunElevation: 30 } }), scene = stage.scene;
+  ground(scene, '#6a4a2e');
+  box(scene, 14, 0.05, 9, '#8a5a35', [0, 0.02, 0]);
+  box(scene, 14, 6, 0.2, '#e9dcc0', [0, 3, -3.2]);
+  box(scene, 14, 1.2, 0.22, '#7a4a28', [0, 0.6, -3.15]);
+  // judge's bench with gavel + scales
+  box(scene, 4.2, 1.5, 1.0, '#5b3a22', [0, 0.75, -2.4]); box(scene, 4.4, 0.12, 1.15, '#7a4a28', [0, 1.5, -2.4]);
+  cyl(scene, 0.07, 0.07, 0.5, '#d9a050', [0.6, 1.8, -2.3], [0, 0, 1.5708]); box(scene, 0.16, 0.16, 0.28, '#8a4b24', [0.4, 1.7, -2.3]);
+  // Delaware flag: colonial-blue field, buff diamond, and a big DELAWARE plaque
+  const flag = new THREE.Group(); flag.position.set(-4.6, 3.6, -3.0); scene.add(flag);
+  cyl(flag, 0.04, 0.04, 3.6, '#c9a56b', [0, -0.4, 0]); ball(flag, 0.09, '#ffd23f', [0, 1.45, 0]);
+  box(flag, 2.2, 1.5, 0.04, '#4f8fcf', [1.1, 0.8, 0]);
+  const dia = add(flag, new THREE.PlaneGeometry(1, 1), mat('#e8cf8f'), [1.1, 0.8, 0.03], [0, 0, Math.PI / 4]); dia.scale.set(0.9, 0.9, 1);
+  ball(flag, 0.15, '#2f9e44', [1.1, 0.8, 0.06], [1, 1.2, 0.3]);
+  label(scene, 'DELAWARE', 2.2, 0.5, [-0.1, 3.5, -3.05], [0, 0, 0], { fg: '#4f8fcf', bg: '#e9dcc0', w: 640, h: 140, font: 'bold 100px Georgia, serif' });
+  // witness box with hourglass
+  box(scene, 1.9, 1.0, 1.1, '#7a4a28', [1.5, 0.5, 0.5]); box(scene, 2.0, 0.08, 1.2, '#9a6038', [1.5, 1.04, 0.5]);
+  const h = hero(scene, { scale: num('ps', 2.5), pos: [1.5, 1.08, 0.5], ry: -0.35, pose: { arms: { l: [0, 1.0, 0.1], r: [0, 1.0, 0.1] } } });
+  h.userData.reach('l', [0.42, 0.55, 0.3]); h.userData.reach('r', [-0.42, 0.55, 0.3]);
+  const gm = guardsman(); gm.position.set(-1.5, 0, 1.0); gm.rotation.y = 0.35; gm.scale.setScalar(1.25); scene.add(gm);
+  finish(stage, [h], { cam: [0, 2.0, 6.6], look: [0, 1.8, 0], clouds: false });
+});
+</script></body></html>

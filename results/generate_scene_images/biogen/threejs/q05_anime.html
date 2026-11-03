@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Biogen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q05 — A LITTLE FILM heals the butterfly rash on the BUOY's skin: cutaneous lupus.
+import { THREE, guard, mat, glow, add, box, cyl, blob, textPlane, water, ground, ripples, makeStage, createBuoy, person, armPose, dome, grab, wrapUp, rng } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  water(scene);
+  const buoy = createBuoy({ scale: 2.2 }); buoy.position.set(-0.4, 0, 0); buoy.rotation.y = 0.15; scene.add(buoy); ripples(scene, -0.4, 0, 0.01, 0.7);
+  buoy.userData.rash();
+  // little film reel + strip held up by the buoy
+  const film = new THREE.Group(); const black = mat('#1c1c22'), red = mat('#d8342c');
+  cyl(film, black, 0.12, 0.12, 0.05, [0, 0, 0], [Math.PI / 2, 0, 0]); cyl(film, red, 0.04, 0.04, 0.07, [0, 0, 0], [Math.PI / 2, 0, 0], 16);
+  for (let i = 0; i < 6; i++) { const a = i / 6 * 6.283; cyl(film, mat('#8a8a94'), 0.025, 0.025, 0.07, [0.075 * Math.sin(a), 0.075 * Math.cos(a), 0], [Math.PI / 2, 0, 0], 12); }
+  for (let i = 0; i < 4; i++) { box(film, mat('#2a2a32'), [0.09, 0.1, 0.006], [0.2 + i * 0.1, -0.12 - i * 0.015, 0.0], [0, 0, -0.15]); box(film, mat('#ffd27a'), [0.06, 0.07, 0.007], [0.2 + i * 0.1, -0.12 - i * 0.015, 0.002], [0, 0, -0.15]); }
+  film.scale.setScalar(1.5); scene.add(film);
+  grab(buoy, 'l', [0.35, 1.0, 0.7], film); film.position.x += 0.12; film.position.y += 0.2; film.position.z += 0.1;
+  for (const [x, y, z] of [[0.7, 1.4, 0.4], [0.95, 1.05, 0.6], [0.3, 1.4, 0.8]]) blob(scene, glow('#fff3a0', 1.5), [x, y, z], [0.06, 0.06, 0.06]);
+  // a calm blue butterfly
+  const bf = new THREE.Group(); for (const s of [-1, 1]) blob(bf, mat('#6ab0ff'), [s * 0.12, 0, 0], [0.12, 0.09, 0.01], [0, s * 0.4, s * 0.3]); bf.position.set(1.4, 1.6, 0.2); scene.add(bf);
+  wrapUp(stage, scene, [buoy, film], { cx: num('cx', 0.3), cy: num('cy', 1.1), cz: num('cz', 4.6), tx: 0.2, ty: 1.0 });
+});
+</script></body></html>

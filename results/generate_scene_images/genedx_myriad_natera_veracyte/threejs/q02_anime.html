@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The GeneDx JEANS hang in a GATHERING BURG (Gaithersburg), Maryland.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ shadowSize: 7 });
+  meadow(scene, '#79b24c');
+  // burg: castle with towers + houses
+  const stone = mat('#c9c2b2'), roof = mat('#c2483a');
+  const castle = new THREE.Group(); castle.position.set(0, 0, -6); scene.add(castle);
+  add(castle, new THREE.BoxGeometry(6, 2.2, 1), stone, [0, 1.1, 0]);
+  for (let i = -5; i <= 5; i++) add(castle, new THREE.BoxGeometry(0.35, 0.3, 1), stone, [i * 0.55, 2.35, 0]);
+  add(castle, new THREE.BoxGeometry(1.2, 1.5, 1.1), mat('#5a3a22'), [0, 0.75, 0.05]);
+  add(castle, new THREE.CylinderGeometry(0.62, 0.62, 0.1, 20), mat('#2b1c10'), [0, 1.5, 0.6], [Math.PI / 2, 0, 0]);
+  for (const x of [-3.2, 3.2]) { add(castle, new THREE.CylinderGeometry(0.85, 0.9, 3.6, 24), stone, [x, 1.8, 0]); add(castle, new THREE.ConeGeometry(1.1, 1.4, 24), roof, [x, 4.3, 0]); }
+  add(castle, new THREE.CylinderGeometry(0.04, 0.04, 1.4, 6), mat('#555'), [-3.2, 5.6, 0]);
+  const flag = add(castle, new THREE.PlaneGeometry(0.9, 0.6), new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, map: (() => {
+    const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d');
+    for (let i = 0; i < 4; i++) for (let k = 0; k < 4; k++) { x.fillStyle = (i + k) % 2 ? '#e8b923' : '#c0392b'; x.fillRect(i * 32, k * 32, 32, 32); if ((i + k) % 2 === 0) { x.fillStyle = '#111'; x.fillRect(i * 32, k * 32, 32, 32); } }
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })() }), [-2.75, 6.1, 0]);
+  for (const [x, z, c] of [[-4.5, -3.5, '#e8d8a0'], [4.7, -3.2, '#e8c0a0'], [-6, -2, '#d8e0b0']]) { add(scene, new THREE.BoxGeometry(1.4, 0.9, 1.1), mat(c), [x, 0.45, z]); add(scene, new THREE.ConeGeometry(1.1, 0.7, 4), roof, [x, 1.25, z], [0, Math.PI / 4, 0]); }
+  // gathering crowd
+  const r = rng(9), cols = ['#e8504a', '#4a8ae8', '#f2c230', '#5ac26a', '#b06ae8', '#ff8a3a'], crowd = [];
+  for (let i = 0; i < 22; i++) {
+    const side = i % 2 ? 1 : -1, x = side * (1.3 + r() * 3.4), z = -3.2 + r() * 2.8;
+    const p = PR.person({ shirt: cols[i % 6], hair: ['#3a2a22', '#e8c070', '#1a1a1a', '#a0522d'][i % 4], scale: 1.4, up: [r() > 0.4 ? 0.3 + r() * 0.4 : 0, r() > 0.5 ? 0.3 : 0] });
+    p.position.set(x, 0, z); p.rotation.y = -side * 0.3 + (r() - 0.5) * 0.4; scene.add(p); crowd.push(p);
+  }
+  // clothesline with the jeans hanging by pegs
+  const post = mat('#8a6a46');
+  for (const x of [-2.4, 2.4]) add(scene, new THREE.CylinderGeometry(0.05, 0.06, 2.6, 8), post, [x, 1.3, 0.5]);
+  add(scene, new THREE.CylinderGeometry(0.012, 0.012, 4.8, 6), mat('#d9d2c0'), [0, 2.5, 0.5], [0, 0, Math.PI / 2]);
+  const j = placeJeans(scene, num, { scale: 1.4, y: 0.95, z: 0.5, pose: { legs: { l: [0.18, 0.04], r: [-0.12, -0.04] }, arms: { l: [0.1, 0.18, 0], r: [0, 0.2, 0] } } });
+  for (const x of [-0.17, 0.17]) { add(scene, new THREE.BoxGeometry(0.06, 0.16, 0.05), mat('#f2c230'), [x * 1.4 / 1.4 * 1.4, 2.32, 0.5 + 0.22]); }
+  finishScene(stage, num, [j, ...crowd], [0, 1.7, 5.4], [0, 1.5, -1]);
+});
+</script></body></html>

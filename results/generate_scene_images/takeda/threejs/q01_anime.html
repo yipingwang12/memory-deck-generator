@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Takeda q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — The TACO comes from JAPAN, wrapped in a kimono.
+import { THREE, guard, canvasTexture, createTaco, mat, add, box, cyl, ball, setup, wrap } from './common.js';
+guard(() => {
+  const { stage, scene, num } = setup({ ground: '#9acb6a', sky: { cover: 0.8 } });
+  // Mt Fuji
+  const fuji = add(scene, new THREE.ConeGeometry(30, 28, 48), mat('#5a78b8'), [-12, 14, -80]);
+  add(scene, new THREE.ConeGeometry(10.5, 10, 48), mat('#ffffff'), [-12, 23, -80]);
+  // torii gate
+  const red = mat('#d8321f', { roughness: 0.5 });
+  for (const s of [-1, 1]) cyl(scene, 0.22, 0.26, 3.6, red, [s * 1.7, 1.8, -3]);
+  box(scene, 4.8, 0.28, 0.4, red, [0, 3.45, -3]); box(scene, 4.2, 0.18, 0.28, '#222', [0, 3.1, -3]);
+  box(scene, 5.6, 0.2, 0.5, '#222', [0, 3.75, -3]);
+  // japanese flag
+  cyl(scene, 0.03, 0.03, 3, '#ccc', [3.6, 1.5, -2]);
+  box(scene, 1.5, 1.0, 0.03, '#ffffff', [4.35, 2.5, -2]);
+  add(scene, new THREE.CircleGeometry(0.3, 32), mat('#d8321f'), [4.35, 2.5, -1.98]);
+  // sakura trees
+  for (const [x, z] of [[-4.5, -4], [6, -6], [-7, -8]]) { cyl(scene, 0.12, 0.18, 1.6, '#6b4a33', [x, 0.8, z]); for (let i = 0; i < 5; i++) ball(scene, 0.7, '#ffb7cf', [x + Math.sin(i * 2) * 0.6, 2 + (i % 2) * 0.4, z + Math.cos(i * 2) * 0.6]); }
+  // taco + kimono
+  const taco = createTaco({ scale: 1.9 }); taco.position.set(0, 0, 0.5); scene.add(taco);
+  const tex = canvasTexture(256, (c, s) => {
+    c.fillStyle = '#d8426f'; c.fillRect(0, 0, s, s);
+    for (let i = 0; i < 18; i++) { const x = (i * 97) % s, y = (i * 53) % s; c.fillStyle = '#ffe2ec'; for (let k = 0; k < 5; k++) { c.beginPath(); c.arc(x + 9 * Math.cos(k * 1.26), y + 9 * Math.sin(k * 1.26), 6, 0, 7); c.fill(); } }
+  });
+  taco.userData.parts.body.material = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.7 });
+  const up = taco.userData.parts.body.parent, cy = 0.66;
+  const white = mat('#ffffff');
+  for (const s of [-1, 1]) box(up, 0.05, 0.55, 0.05, white, [s * 0.2, cy - 0.2, 0.16], [0, 0, -s * 0.75]);
+  box(up, 0.7, 0.07, 0.31, '#e8a317', [0, cy - 0.4, 0]);                               // obi belt
+  box(up, 0.2, 0.2, 0.08, '#c0392b', [0.16, cy - 0.38, 0.18]);                          // bow
+  for (const s of [-1, 1]) box(up, 0.2, 0.34, 0.1, '#d8426f', [s * 0.5, 0.32, 0.0], [0, 0, s * -0.1]);  // sleeves
+  taco.userData.pose({ arms: { l: [0, 0.9, 0.5], r: [0, 0.9, 0.5] }, headTilt: 0.04 });
+  wrap(stage, [taco], [num('cx', 0), num('cy', 1.2), num('cz', 6.4)], [num('tx', 0), num('ty', 1.35), 0]);
+});
+</script></body></html>

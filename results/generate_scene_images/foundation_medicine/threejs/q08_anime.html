@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// HEME test reads blood cancers and SARCOMAS
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:'#d8e6ee'});
+
+const c = stone({ scale: 1.6 }); c.position.set(0.9, 0, 1.2);
+c.userData.pose({ arms: { l: [-0.9, 0.3, -0.7], r: [-0.3, 0.3, -0.3] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+const v = L.vial(); v.scale.setScalar(2.2); v.position.set(1.8, 1.45, 1.75); v.rotation.z = -0.1; scene.add(v);
+const sg = L.sign('HEME', { w: 2.0, h: 0.8, fg: '#c0172e' }); sg.position.set(-1.6, 0.5, -1.2); scene.add(sg);
+const r = rng(11); for (let i = 0; i < 9; i++) { const b = L.bloodCell(0.2); b.position.set(-4 + r() * 3, 0.6 + r() * 3, -0.5 + r() * 1.5); b.rotation.set(r() * 3, r() * 3, 0); scene.add(b); }
+for (let i = 0; i < 3; i++) { const w = L.whiteCell(0.3); w.position.set(-3.2 + i * 0.9, 3.2 - i * 0.3, 0.3); scene.add(w); }
+const bn = L.bone(2.0); bn.position.set(3.4, 1.6, -0.2); bn.rotation.z = 0.45; scene.add(bn);
+cyl(scene, mat('#c9d0d8'), 0.6, 0.5, [3.2, 0.25, 0.3]).visible = false;
+finish([0, 2.2, 6.6], [0, 1.5, 0]);
+});
+</script></body></html>

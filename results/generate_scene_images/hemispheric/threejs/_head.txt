@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hemispheric SCENE</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, makeScene, mat, add, blob, cyl, rng, canvasTexture, sign, createDescartes, createClock, createCoinPile, reachWorld } from "./common.js";
+import { guard } from "./kit.js";
+import { createGlobe } from "./globe.js";
+guard(() => {

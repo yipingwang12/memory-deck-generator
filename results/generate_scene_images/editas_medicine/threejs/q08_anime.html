@@ -1,0 +1,117 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Editas q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — "A JELLY spill washes most of the PENCIL's staff out the door."
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createPencil } from './pencil.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 44), sunElevation: 35, sunAzimuth: num('az', 160), exposure: 1,
+    sky: { cover: 1.5, seed: 3, towerTop: 0.5, puffCover: 1.5 },
+    sunIntensity: 2.2, ambient: { color: '#fff0e0', intensity: 2.2 }, shadowSize: 6,
+    ink: { width: 1.2, strength: 0.85, fadeFar: 60 },
+  });
+  const { scene } = stage;
+  const M = (color, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.6, ...extra });
+  const add = (geo, mat, x, y, z, parent = scene) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = m.receiveShadow = true; parent.add(m); return m; };
+  const box = (w, h, d, c, x, y, z) => add(new THREE.BoxGeometry(w, h, d), M(c), x, y, z);
+
+  // Room: floor, back wall with open doorway (x 1.6..3.0), side wall left.
+  const DX = 2.3, DW = 1.4, DH = 2.3, WALL = '#f3dcc0';
+  box(14, 0.1, 9, '#c98f5a', 0, -0.05, -1);
+  box(DX - DW / 2 + 7, 4, 0.2, WALL, (-7 + DX - DW / 2) / 2, 2, -3);
+  box(7 - (DX + DW / 2), 4, 0.2, WALL, (DX + DW / 2 + 7) / 2, 2, -3);
+  box(DW, 4 - DH, 0.2, WALL, DX, DH + (4 - DH) / 2, -3);
+  for (const s of [-1, 1]) box(0.12, DH, 0.3, '#7a4a2a', DX + s * (DW / 2 + 0.06), DH / 2, -3);
+  box(DW + 0.24, 0.12, 0.3, '#7a4a2a', DX, DH + 0.06, -3);
+  box(14, 0.12, 0.08, '#8a5a38', 0, 0.06, -2.88).visible = true; // baseboard
+  // outdoors glimpse: bright lawn + backdrop through the door
+  add(new THREE.PlaneGeometry(6, 3), new THREE.MeshBasicMaterial({ color: '#9fd66a' }), DX, 0.0, -4, scene).rotation.x = -Math.PI / 2;
+  // window on wall
+  box(1.5, 1.1, 0.06, '#8fd0f5', -2.6, 2.2, -2.88); for (const [w, h, x, y] of [[1.6, 0.08, 0, 0], [0.08, 1.2, 0, 0]]) box(w, h, 0.1, '#fff', -2.6 + x, 2.2 + y, -2.86);
+
+  // Desk (left foreground), pencil clings to its front-right edge.
+  const desk = new THREE.Group(); scene.add(desk);
+  add(new THREE.BoxGeometry(2.2, 0.12, 1.3), M('#b5733f'), 0, 0.9, 0, desk);
+  for (const [x, z] of [[-1, -0.55], [1, -0.55], [-1, 0.55], [1, 0.55]]) add(new THREE.BoxGeometry(0.12, 0.9, 0.12), M('#8a5430'), x, 0.45, z, desk);
+  add(new THREE.BoxGeometry(2.0, 0.05, 1.1), M('#8a5430'), 0, 0.2, 0, desk);
+  desk.position.set(-2.7, 0, 0.1);
+  // desk clutter: a mug and a notebook (no text)
+  add(new THREE.CylinderGeometry(0.1, 0.09, 0.2, 20), M('#3f8fd8'), -3.2, 1.06, -0.25);
+  add(new THREE.BoxGeometry(0.5, 0.04, 0.38), M('#e86a6a'), -2.4, 0.98, -0.3);
+
+  // Main pencil: gripping desk edge, leaning away from the flood, eyes wide.
+  const hero = createPencil({ scale: 1.5 });
+  hero.position.set(-1.35, 0, 1.0); hero.rotation.y = 0.4;
+  scene.add(hero);
+  hero.userData.pose({ lean: -0.1, headTilt: 0.12, arms: { r: [0, 0.9, 0.2] }, legs: { l: [0.05, 0.12], r: [-0.1, -0.12] } });
+  hero.updateMatrixWorld(true);
+  const edge = new THREE.Vector3(-1.75, 1.0, 0.45); // desk front-right corner top
+  hero.userData.reach('r', hero.worldToLocal(edge.clone()).toArray());
+  hero.userData.reach('l', hero.worldToLocal(new THREE.Vector3(-1.75, 1.0, 0.75)).toArray());
+  const heroMeshes = new Set(); hero.traverse((o) => heroMeshes.add(o));
+
+  // Staff: small pencils tumbling in the flood.
+  const staff = [];
+  const cols = ['#e8503a', '#3aa0e8', '#5fc46a', '#b46ae8', '#ff9a3c', '#f06fa8'];
+  const spots = [
+    [0.5, 0.85, 0.0, 0.6, 0.3, -1.4], [1.3, 1.1, -0.8, 1.0, -0.4, 1.2], [2.1, 1.1, -0.1, 0.8, 0.3, 0.6],
+    [2.6, 0.75, -2.0, 0.4, 0.5, -0.5], [0.0, 0.7, -1.3, 1.4, 0.2, 2.0],
+  ];
+  spots.forEach(([x, y, z, ry, rx, rz], i) => {
+    const p = createPencil({ scale: 0.8, bodyColor: cols[i % cols.length] });
+    p.position.set(x, y, z); p.rotation.set(rx, ry, rz);
+    p.userData.pose({ arms: { l: [0, 2.6], r: [0, -2.6] }, legs: { l: [0.6, 0.4], r: [-0.5, -0.4] } });
+    scene.add(p); staff.push(p);
+  });
+  const staffMeshes = new Set(); staff.forEach((p) => p.traverse((o) => staffMeshes.add(o)));
+
+  // Jelly: lumpy glossy blobs. Tipped jar at back-left, flood to the door.
+  const rnd = rng(7);
+  const jelly = [M('#e0203f', { roughness: 0.3 }), M('#c42a72', { roughness: 0.3 }), M('#8a2fc0', { roughness: 0.3 })];
+  const gloss = new THREE.MeshBasicMaterial({ color: '#ffe8f0' });
+  const blob = (x, y, z, r, sy, mi) => {
+    const g = new THREE.IcosahedronGeometry(r, 4), pos = g.attributes.position, v = new THREE.Vector3();
+    for (let i = 0; i < pos.count; i++) { v.fromBufferAttribute(pos, i); const k = 1 + 0.07 * Math.sin(v.x * 9 + z) * Math.sin(v.y * 8 + x) * Math.sin(v.z * 9); pos.setXYZ(i, v.x * k, v.y * k * sy, v.z * k); }
+    g.computeVertexNormals();
+    const m = add(g, jelly[mi], x, y, z);
+    const h = new THREE.Mesh(new THREE.SphereGeometry(r * 0.16, 12, 8), gloss); h.scale.set(1.6, 0.8, 0.8);
+    h.position.set(-r * 0.35, r * sy * 0.62, r * 0.55); h.rotation.z = 0.5; m.add(h);
+  };
+  // flood body: path from jar (-1.3,-2.2) to door (DX,-3), crest near x=1..2.2
+  for (let i = 0; i < 46; i++) {
+    const t = rnd(), x = -0.8 + t * 3.6 + (rnd() - 0.5) * 0.5, z = -1.2 - t * 1.0 + (rnd() - 0.5) * 1.5;
+    const crest = Math.exp(-((t - 0.55) ** 2) / 0.05);
+    const r = 0.28 + rnd() * 0.22 + crest * 0.2;
+    blob(x, r * 0.55 + crest * 0.35 * rnd(), THREE.MathUtils.clamp(z, -2.7, 0.3), r, 0.75 + crest * 0.5, (rnd() < 0.55 ? 0 : 1 + Math.floor(rnd() * 2)));
+  }
+  // splash droplets
+  for (let i = 0; i < 8; i++) blob(0.4 + rnd() * 2.2, 1.4 + rnd() * 0.8, -2.2 + rnd() * 1.6, 0.04 + rnd() * 0.05, 1.2, Math.floor(rnd() * 3));
+  // door puddle spilling out the opening
+  blob(DX, 0.2, -3.0, 0.5, 0.5, 0); blob(DX + 0.3, 0.15, -3.5, 0.45, 0.5, 1);
+
+  // Giant jelly jar tipped over, mouth toward the flood.
+  const jar = new THREE.Group(); scene.add(jar);
+  const glass = M('#cfe9f2', { roughness: 0.1 });
+  add(new THREE.CylinderGeometry(0.62, 0.62, 1.5, 32, 1, true), glass, 0, 0, 0, jar).material.side = THREE.DoubleSide;
+  add(new THREE.CylinderGeometry(0.62, 0.62, 0.05, 32), glass, 0, -0.75, 0, jar);
+  add(new THREE.CylinderGeometry(0.5, 0.5, 1.1, 24), jelly[1], 0, -0.1, 0, jar);
+  add(new THREE.CylinderGeometry(0.66, 0.66, 0.12, 32), M('#d9a441', { metalness: 0.5, roughness: 0.4 }), 0, 0.78, 0, jar); // lip band
+  // label: red band with white heart-free stripe (no text)
+  add(new THREE.CylinderGeometry(0.635, 0.635, 0.4, 32, 1, true), M('#fff4d8'), 0, -0.2, 0, jar).material.side = THREE.DoubleSide;
+  jar.rotation.z = -Math.PI / 2 - 0.2; jar.position.set(-0.9, 0.66, -2.2);
+
+  stage.toonify(scene, (m) => heroMeshes.has(m) || staffMeshes.has(m));
+  stage.camera.position.set(num('cx', 0.3), num('cy', 1.5), num('cz', 4.6));
+  stage.camera.lookAt(num('tx', 0.6), num('ty', 0.85), num('tz', -0.8));
+  stage.finish();
+});
+</script></body></html>

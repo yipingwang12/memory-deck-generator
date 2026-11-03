@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Exact Sciences q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — "The RULER becomes a CANCER GUARD, checking blood for many cancers."
+import { THREE, guard, mat, add, blob, num, makeStage, wrapUp, guardRuler, crab, vial, sword, holdAt, bloodDrop } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P), scene = stage.scene;
+  add(scene, new THREE.PlaneGeometry(400, 2.2), mat('#c9a56b'), [0, 0.003, 0], [-Math.PI / 2, 0, 0]);
+  const r = guardRuler(2.2); r.position.set(-0.4, 0, 0); r.rotation.y = 0.2; scene.add(r);
+  r.userData.reach('r', [-0.2, 0.85, 0.22]);
+  const sw = holdAt(r, 'r', sword(0.5), [0, -0.02, 0.02]); sw.rotation.set(0.1, 0, 0.15);
+  // crabs (cancers) held at bay
+  [['#e4572e', 2.0, 1.3, 0.3], ['#ff8a3d', 1.8, 2.3, -0.5], ['#b83a8a', 1.7, 1.2, -1.4], ['#6a3fb8', 1.6, -1.5, -0.2]].forEach(([c, s, x, z]) => {
+    const k = crab(c, s); k.position.set(x, 0, z); k.rotation.y = Math.atan2(-0.4 - x, 0 - z) ; scene.add(k);
+  });
+  // blood sample vial being guarded
+  const v = vial(0.7, 0.1, 0.7); v.position.set(-2.2, 0, 0.6); scene.add(v);
+  const d = bloodDrop(1.8); d.position.set(-2.2, 1.8, 0.6); scene.add(d);
+  wrapUp(stage, P, [r], { pos: [0.2, 1.2, 4.6], look: [0, 1.1, 0] });
+});
+</script></body></html>

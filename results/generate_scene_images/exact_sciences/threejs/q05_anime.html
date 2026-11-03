@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Exact Sciences q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — "A FALCON writes the RULER's real-world results in a REGISTRY book."
+import { THREE, guard, mat, add, blob, box, makeStage, wrapUp, guardRuler, canvasTexture, limbBetween } from './props.js';
+function falcon() {
+  const g = new THREE.Group(), brown = mat('#6b4a32'), cream = mat('#f1dfc4'), yel = mat('#f2b81c'), dk = mat('#2a1d14');
+  blob(g, brown, [0, 0.42, -0.02], [0.22, 0.34, 0.2], [0.25, 0, 0]);
+  blob(g, cream, [0, 0.38, 0.1], [0.15, 0.27, 0.12], [0.25, 0, 0]);
+  for (let i = 0; i < 4; i++) box(g, mat('#8a6a4a'), [0, 0.5 - i * 0.07, 0.2], [0.14 - i * 0.012, 0.012, 0.01]);
+  blob(g, brown, [0, 0.78, 0.04], [0.15, 0.15, 0.15]); blob(g, dk, [0, 0.9, 0.0], [0.15, 0.08, 0.15]);
+  box(g, dk, [0, 0.8, 0.19], [0.05, 0.04, 0.01]);
+  for (const s of [-1, 1]) {
+    blob(g, brown, [s * 0.2, 0.34, -0.1], [0.07, 0.38, 0.17], [0.55, 0, s * 0.12]);
+    blob(g, mat('#fff'), [s * 0.075, 0.82, 0.16], [0.052, 0.058, 0.02]); blob(g, yel, [s * 0.075, 0.82, 0.175], [0.04, 0.045, 0.01]);
+    blob(g, dk, [s * 0.075, 0.82, 0.185], [0.027, 0.032, 0.01]); blob(g, mat('#fff'), [s * 0.067, 0.832, 0.194], [0.01, 0.01, 0.005]);
+    add(g, new THREE.CylinderGeometry(0.025, 0.02, 0.2, 8), yel, [s * 0.07, 0.1, 0.02]);
+    for (const k of [-1, 0, 1]) add(g, new THREE.CapsuleGeometry(0.012, 0.07, 4, 6), yel, [s * 0.07 + k * 0.025, 0.015, 0.09], [Math.PI / 2, 0, 0]);
+    box(g, dk, [s * 0.09, 0.9, 0.17], [0.07, 0.015, 0.01], [0, 0, s * -0.25]); box(g, dk, [s * 0.085, 0.72, 0.17], [0.025, 0.1, 0.01], [0, 0, s * 0.15]);
+  }
+  box(g, dk, [0, 0.76, 0.19], [0.04, 0.012, 0.01]);
+  add(g, new THREE.ConeGeometry(0.045, 0.14, 12), yel, [0, 0.73, 0.22], [Math.PI / 2 + 0.7, 0, 0]);
+  add(g, new THREE.ConeGeometry(0.17, 0.5, 4), mat('#5a3d28'), [0, 0.15, -0.28], [-2.4, 0.8, 0], [1, 1, 0.25]);
+  return g;
+}
+function pageTex() {
+  return canvasTexture(512, (ctx, s) => {
+    ctx.fillStyle = '#fbf4e0'; ctx.fillRect(0, 0, s, s);
+    ctx.strokeStyle = '#7a6a50'; ctx.lineWidth = 3;
+    for (let r = 0; r <= 8; r++) { ctx.beginPath(); ctx.moveTo(30, 60 + r * 50); ctx.lineTo(s - 30, 60 + r * 50); ctx.stroke(); }
+    for (const x of [30, 150, 300, s - 30]) { ctx.beginPath(); ctx.moveTo(x, 60); ctx.lineTo(x, 460); ctx.stroke(); }
+    ctx.fillStyle = '#2a9d5a'; ctx.lineWidth = 9; ctx.strokeStyle = '#2a9d5a';
+    for (let r = 0; r < 8; r++) { const y = 85 + r * 50; ctx.beginPath(); ctx.moveTo(60, y); ctx.lineTo(80, y + 18); ctx.lineTo(120, y - 14); ctx.stroke(); ctx.fillStyle = '#4a4a4a'; ctx.fillRect(175, y - 8, 70 + (r * 37 % 50), 12); ctx.fillRect(325, y - 8, 90 - (r * 23 % 40), 12); }
+  });
+}
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P), scene = stage.scene;
+  // lectern + registry book
+  const wood = mat('#8a5a30');
+  add(scene, new THREE.BoxGeometry(2.4, 0.12, 1.1), wood, [0.9, 0.9, 0]);
+  for (const [x, z] of [[-0.2, -0.4], [-0.2, 0.4], [2.0, -0.4], [2.0, 0.4]]) add(scene, new THREE.BoxGeometry(0.12, 0.9, 0.12), wood, [x, 0.45, z]);
+  const book = new THREE.Group(); book.position.set(0.9, 0.99, 0.05); scene.add(book);
+  add(book, new THREE.BoxGeometry(2.2, 0.08, 0.95), mat('#7a1f2b'), [0, 0, 0]);
+  const pt = pageTex();
+  for (const s of [-1, 1]) add(book, new THREE.BoxGeometry(1.02, 0.05, 0.84), new THREE.MeshStandardMaterial({ map: pt, roughness: 0.8 }), [s * 0.53, 0.06, 0], [0, 0, s * -0.03]);
+  const f = falcon(); f.scale.setScalar(1.5); f.position.set(1.7, 1.06, 0.05); f.rotation.y = -1.25; scene.add(f);
+  // quill held in the beak, tip on the page
+  const tip = new THREE.Vector3(0.72, 1.1, 0.12), beak = new THREE.Vector3(1.1, 2.1, 0.08);
+  scene.add(limbBetween(tip, beak, 0.012, mat('#f4f0e6')));
+  const vane = limbBetween(new THREE.Vector3(0.95, 1.7, 0.08), new THREE.Vector3(1.2, 2.3, 0.08), 0.05, mat('#fffdf6')); vane.scale.z = 0.2; scene.add(vane);
+  add(scene, new THREE.CylinderGeometry(0.1, 0.1, 0.16, 16), mat('#18204a'), [0.1, 1.1, 0.3]);
+  // ruler guard with an approving glance
+  const r = guardRuler(2.0, { sword: false }); r.position.set(-1.0, 0, 0.7); r.rotation.y = 0.5; scene.add(r);
+  r.userData.reach('r', [-0.2, 0.7, 0.3]);
+  wrapUp(stage, P, [r, f], { pos: [0.4, 1.4, 4.7], look: [0.4, 1.2, 0] });
+});
+</script></body></html>

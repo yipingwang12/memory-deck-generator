@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — a MEEK little DAVID with a sling; the TICKET wears the CEO crown.
+import { THREE, guard, mat, add, blob, cyl, rbox, setup, person, labelMesh } from './common.js';
+
+function crown() {
+  const g = new THREE.Group(), gold = mat('#ffc928', { metalness: 0.5, roughness: 0.3 });
+  cyl(g, 0.2, 0.18, 0.1, gold, [0, 0.05, 0]);
+  for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; add(g, new THREE.ConeGeometry(0.05, 0.16, 12), gold, [0.19 * Math.cos(a), 0.17, 0.19 * Math.sin(a)]); blob(g, mat(['#e8243c', '#2b6be8', '#27b86a'][i % 3]), [0.19 * Math.cos(a), 0.27, 0.19 * Math.sin(a)], [0.03, 0.03, 0.03]); }
+  return g;
+}
+
+guard(() => {
+  const S = setup({ ground: '#78b84a' });
+  const { scene, num } = S;
+  const s = 1.7, t = S.ticket(-0.7, 0, 0.15, s, { headTilt: -0.04, arms: { l: [0, 0.45, 0], r: [0, 0.45, 0] } });
+  const c = crown(); c.position.set(0, 0.97 + 0.02, 0); c.rotation.z = 0.08; t.add(c);
+  // CEO name plate
+  const pl = new THREE.Group(); pl.position.set(-0.9, 0, 1.2); pl.rotation.y = 0.3; scene.add(pl);
+  rbox(pl, 0.5, 0.3, 0.05, mat('#6a4a2a'), [0, 0.2, 0]);
+  const lab = labelMesh('CEO', 0.44, 0.22, { bg: '#ffe9a8', fg: '#2a1a0a', font: 'bold 130px sans-serif' }); lab.position.set(0, 0.2, 0.03); pl.add(lab);
+  cyl(pl, 0.03, 0.03, 0.12, mat('#6a4a2a'), [0, 0.05, 0]);
+  // David
+  const d = person({ shirt: '#c98a4a', pants: '#a56a38', hair: '#5a3a1c' }); d.scale.setScalar(1.15); d.position.set(1.6, 0, 0.7); d.rotation.y = -0.4; S.char(d);
+  d.userData.head.rotation.x = 0.18; d.userData.head.rotation.z = 0.08;
+  d.userData.armL.rotation.set(0, 0, 2.6); d.userData.armR.rotation.set(0.3, 0, -0.35);
+  // sling: cord loop + stone above raised hand
+  const sg = d.userData.armL;
+  const cord = mat('#6a4a2a');
+  add(sg, new THREE.TorusGeometry(0.28, 0.012, 6, 40), cord, [0, -0.58, 0], [0, 0.4, 0]);
+  cyl(sg, 0.012, 0.012, 0.3, cord, [0, -0.42, 0]);
+  blob(sg, mat('#8a8f96'), [0.28, -0.58, 0.1], [0.07, 0.06, 0.06]);
+  // flock hint: a lamb for 'meek'
+  S.finish([num('cx', 0.4), num('cy', 1.7), num('cz', 6.0)], [0.4, 1.35, 0]);
+});
+</script></body></html>

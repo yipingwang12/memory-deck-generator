@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ ground: '#8fb86a', summit: { scale: 1.5, pos: [0, 0.78, 0], ry: 0 } }); const { scene, s, num } = B;
+// stack of wafers = the SUMMIT's base
+for (let i = 0; i < 8; i++) { const w = wafer(1.05, { tint: i % 2 ? '#8a98c0' : '#7a8ab6' }); w.rotation.set(-Math.PI / 2, 0, i * 0.35); w.position.set(0, 0.05 + i * 0.1, 0); scene.add(w); }
+s.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, -0.9, 0] } });
+const big = wafer(1.0); big.position.set(2.2, 1.1, -0.4); big.rotation.set(0, -0.45, 0.12); scene.add(big);
+add(scene, new THREE.BoxGeometry(0.9, 0.08, 0.4), mat('#aab4cc', { metalness: .5 }), [2.2, 0.04, -0.4], [0, -0.45, 0]);
+cam(B.stage, num, [0.5, 1.7, 6.0], [0.5, 1.1, 0]); B.finish();
+
+});
+</script></body></html>

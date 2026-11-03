@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alto anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, ground, finish, createSax, add, mat } from './common.js';
+guard(() => {
+  const { stage, num } = makeStage();
+  ground(stage.scene, '#d9c9a3');
+  add(stage.scene, new THREE.PlaneGeometry(400, 400), mat('#d9c9a3'), [0, -0.001, 0], [-Math.PI / 2, 0, 0]);
+  const saxes = [[-1.0, 0], [0, -0.75], [1.0, -1.5]].map(([x, ry], i) => {
+    const s = createSax({ scale: 1.1 }); s.position.set(x, 0, 0); s.rotation.y = -ry * 0 + [0.0, 0.75, 1.55][i];
+    s.userData.pose({ arms: { l: [0, 0.5, 0.1], r: [0, 0.5, 0.1] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+    stage.scene.add(s); return s;
+  });
+  finish(stage, saxes, { cam: [0, 0.75, 3.3], look: [0, 0.65, 0], clouds: null });
+});
+</script></body></html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Biogen q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q10 — The BUOY's ticker reads BIIB.
+import { THREE, guard, mat, glow, add, box, cyl, blob, textPlane, water, ripples, makeStage, createBuoy, grab, wrapUp } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  water(scene);
+  const buoy = createBuoy({ scale: 1.6 }); buoy.position.set(-0.75, 0, 0.2); buoy.rotation.y = 0.3; scene.add(buoy);
+  ripples(scene, -0.75, 0.2, 0.01, 0.5);
+  // ticker board on two posts
+  const steel = mat('#3a4048', { metalness: 0.5, roughness: 0.4 });
+  for (const x of [0.2, 1.8]) cyl(scene, steel, 0.05, 0.05, 1.6, [x, 0.5, -0.5]);
+  box(scene, mat('#14181f'), [1.9, 0.9, 0.12], [1.0, 1.35, -0.5]);
+  const t = textPlane('BIIB', 1.7, 0.7, { bg: '#0b1a12', fg: '#7dff9a' }); t.position.set(1.0, 1.35, -0.43); scene.add(t);
+  // green up arrow
+  const ar = new THREE.Shape(); ar.moveTo(0, 0.35); ar.lineTo(0.28, 0); ar.lineTo(0.1, 0); ar.lineTo(0.1, -0.3); ar.lineTo(-0.1, -0.3); ar.lineTo(-0.1, 0); ar.lineTo(-0.28, 0); ar.closePath();
+  const arrow = new THREE.Mesh(new THREE.ExtrudeGeometry(ar, { depth: 0.06, bevelEnabled: false }), glow('#3cff7a', 0.8)); arrow.position.set(1.0, 2.2, -0.45); arrow.scale.setScalar(0.9); scene.add(arrow);
+  grab(buoy, 'l', [0.2, 1.1, 0.0]);
+  buoy.userData.pose({});
+  wrapUp(stage, scene, [buoy], { cx: num('cx', 0.15), cy: num('cy', 1.05), cz: num('cz', 4.6), tx: num('tx', 0.15), ty: num('ty', 1.1) });
+});
+</script></body></html>

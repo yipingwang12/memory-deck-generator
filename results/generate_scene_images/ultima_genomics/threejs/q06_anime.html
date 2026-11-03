@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ ground: '#86b97a', summit: { scale: 2.0, pos: [-1.9, 0, 0.2], ry: 0.4 } }); const { scene, s, num } = B;
+// waffle on a plate
+const W = new THREE.Group(); W.position.set(1.4, 0, 0.7); scene.add(W);
+add(W, new THREE.CylinderGeometry(1.35, 1.2, 0.1, 40), mat('#ffffff', { roughness: .3 }), [0, 0.05, 0]);
+const wc = document.createElement('canvas'); wc.width = wc.height = 512; const x = wc.getContext('2d');
+x.fillStyle = '#e8a53a'; x.fillRect(0, 0, 512, 512); x.fillStyle = '#a8651c';
+for (let i = 0; i < 6; i++) for (let j = 0; j < 6; j++) x.fillRect(i * 85 + 12, j * 85 + 12, 61, 61);
+const wt = new THREE.CanvasTexture(wc); wt.colorSpace = THREE.SRGBColorSpace;
+add(W, new THREE.BoxGeometry(1.7, 0.2, 1.7), mat('#d9922e'), [0, 0.2, 0], [0, 0.3, 0]);
+add(W, new THREE.PlaneGeometry(1.7, 1.7), new THREE.MeshStandardMaterial({ map: wt, roughness: .7 }), [0, 0.302, 0], [-Math.PI / 2, 0, -0.3]);
+add(W, new THREE.BoxGeometry(0.4, 0.14, 0.4), mat('#ffe27a'), [0.1, 0.38, 0.05], [0, 0.5, 0]);
+blob(W, mat('#7a3a10', { roughness: .3 }), [-0.3, 0.32, 0.4], [0.5, 0.04, 0.35]);
+// price stick
+const stick = new THREE.Group(); stick.position.set(0.5, 0.35, 0.3); W.add(stick);
+add(stick, new THREE.CylinderGeometry(0.04, 0.04, 1.8, 10), mat('#8a5a2b'), [0, 0.9, 0]);
+sign(stick, '$850K', 1.9, 0.85, [0, 1.9, 0.06], { bg: '#fff6d6', fg: '#d12a2a', border: '#d12a2a', font: 'bold 250px Arial Black, Arial' });
+add(stick, new THREE.BoxGeometry(1.9, 0.85, 0.05), mat('#fff'), [0, 1.9, 0]);
+// coins
+for (let i = 0; i < 28; i++) { const cn = coin(0.17); cn.position.set(-2.0 + (i % 7) * 0.12 + (i >> 3) * 0.03, 0.04 + Math.floor(i / 7) * 0.05, 0.9 + (i % 3) * 0.08); cn.rotation.set(0.05, i, 0); W.add(cn); }
+// single wafer in hand
+const w = wafer(0.55, { label: 'UG200' }); w.position.set(-0.85, 1.85, 1.1); w.rotation.set(0, 0.1, 0.1); scene.add(w);
+s.userData.pose({ arms: { r: [0, -0.7, 0] } }); reachW(s, 'l', [-0.85, 1.45, 1.1]);
+cam(B.stage, num, [0.1, 2.3, 7.4], [0.1, 1.3, 0]); B.finish();
+
+});
+</script></body></html>

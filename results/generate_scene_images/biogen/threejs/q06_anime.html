@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Biogen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q06 — The BUOY sells its building at one-twenty-five BROADWAY, then rents it back.
+import { THREE, guard, mat, glow, add, box, cyl, blob, textPlane, water, ground, ripples, makeStage, createBuoy, person, armPose, dome, grab, wrapUp, rng } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  ground(scene, '#3a3d46');
+  box(scene, mat('#c9c4b8'), [30, 0.12, 2.2], [0, 0.06, -1.8]);                     // sidewalk
+  for (let i = -6; i < 7; i++) box(scene, mat('#f5d442'), [0.9, 0.01, 0.1], [i * 1.6, 0.005, 3.0]);  // wide avenue
+  box(scene, mat('#ffffff'), [30, 0.01, 0.06], [0, 0.006, 5.5]);
+  // brick building with number banner and marquee bulbs
+  const b = box(scene, mat('#b4553e'), [5.2, 6, 1.6], [0, 3.0, -3.6]);
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) box(scene, mat('#ffe9a0', { emissive: '#ffd060', emissiveIntensity: 0.4 }), [0.6, 0.8, 0.05], [-1.9 + c * 1.27, 2.7 + r * 1.2, -2.78]);
+  box(scene, mat('#1c1c28'), [3.4, 1.1, 0.2], [0, 1.45, -2.7]);
+  const t = textPlane('125', 3.2, 0.95, { bg: '#1c1c28', fg: '#ffd23a' }); t.position.set(0, 1.45, -2.58); scene.add(t);
+  for (let i = 0; i < 14; i++) blob(scene, glow('#fff0a0', 2), [-1.65 + i * 0.254, 2.15, -2.55], [0.05, 0.05, 0.05]);
+  for (let i = 0; i < 14; i++) blob(scene, glow('#fff0a0', 2), [-1.65 + i * 0.254, 0.75, -2.55], [0.05, 0.05, 0.05]);
+  // buoy gives key, buyer hands over a sack of cash
+  const buoy = createBuoy({ scale: 1.6 }); buoy.position.set(-1.1, 0.12, 0.6); buoy.rotation.y = 0.45; scene.add(buoy);
+  const buyer = person({ suit: '#3a3f50', shirt: '#ffffff', hairStyle: 'slick', hair: '#1a1a1a', scale: 1.0 }); buyer.position.set(1.3, 0.12, 0.6); buyer.rotation.y = -0.45; scene.add(buyer);
+  armPose(buyer, 'l', [-1.2, 0.2, -0.5]); armPose(buyer, 'r', [0, -0.2, 0]);
+  const gold = mat('#ffcf3a', { metalness: 0.5, roughness: 0.3 });
+  const key = new THREE.Group(); add(key, new THREE.TorusGeometry(0.1, 0.03, 10, 24), gold, [0, 0.16, 0]); cyl(key, gold, 0.025, 0.025, 0.3, [0, -0.04, 0], [0, 0, 0], 10); box(key, gold, [0.1, 0.04, 0.03], [0.05, -0.12, 0]); box(key, gold, [0.08, 0.04, 0.03], [0.04, -0.2, 0]); key.scale.setScalar(1.4); scene.add(key);
+  grab(buoy, 'l', [0.3, 0.85, 1.1], key);
+  const bag = new THREE.Group(); blob(bag, mat('#c8a060'), [0, 0, 0], [0.22, 0.26, 0.2]); cyl(bag, mat('#8a6a3a'), 0.06, 0.1, 0.1, [0, 0.27, 0]);
+  bag.add(textPlane('$', 0.2, 0.2, { bg: '#c8a060', fg: '#2a6a2a' })); bag.children[bag.children.length - 1].position.set(0, 0, 0.21);
+  bag.position.set(0.55, 0.9, 1.0); scene.add(bag);
+  grab(buoy, 'r', [-0.5, 0.9, 1.1]);
+  wrapUp(stage, scene, [buoy, buyer, key], { cx: num('cx', 0.0), cy: num('cy', 1.7), cz: num('cz', 6.2), tx: 0, ty: 1.9 });
+});
+</script></body></html>

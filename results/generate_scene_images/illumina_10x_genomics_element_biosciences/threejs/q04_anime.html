@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — The LAMPLIGHTER and both rivals live in sunny CALIFORNIA (palms, Golden Gate, sun, poppies).
+import { THREE, mat, add, blob, num, makeStage, clouds, ground, lampPost, handWorld, toon, gnome, glow, rng } from './common.js';
+import { guard } from './kit.js';
+import { createLamplighter } from './lamplighter.js';
+
+function palm(h, lean) {
+  const g = new THREE.Group(), trunk = mat('#9c7048');
+  for (let i = 0; i < 8; i++) { const t = i / 8; add(g, new THREE.CylinderGeometry(0.1 - t * 0.03, 0.12 - t * 0.03, h / 8 + 0.02, 12), trunk, [lean * t * t * 0.5, (i + 0.5) * h / 8, 0], [0, 0, -lean * t * 0.3]); }
+  const top = new THREE.Group(); top.position.set(lean * 0.5, h, 0); g.add(top);
+  for (let i = 0; i < 9; i++) {
+    const f = new THREE.Group(); f.rotation.y = i * Math.PI * 2 / 9; top.add(f);
+    const leaf = add(f, new THREE.ConeGeometry(0.16, 1.5, 6), mat('#2e8f3c'), [0.7, -0.15, 0], [0, 0, -Math.PI / 2 - 0.5], [1, 1, 0.25]);
+  }
+  for (const [x, z] of [[0.08, 0.06], [-0.08, 0.05], [0, -0.09]]) blob(top, mat('#6a4a22'), [x, -0.1, z], [0.1, 0.1, 0.1]);
+  return g;
+}
+function bridge() {
+  const g = new THREE.Group(), red = mat('#d8452a', { roughness: 0.5 });
+  add(g, new THREE.BoxGeometry(34, 0.35, 1.2), red, [0, 1.8, 0]);
+  for (const x of [-9, 9]) { for (const z of [-0.4, 0.4]) add(g, new THREE.BoxGeometry(0.5, 10, 0.5), red, [x, 5, z * 1.1]); for (const y of [3.5, 6.5, 9.2]) add(g, new THREE.BoxGeometry(0.5, 0.45, 1.6), red, [x, y, 0]); }
+  for (const s of [-1, 1]) for (let i = 0; i <= 28; i++) {
+    const x = -17 + i * 34 / 28, ax = Math.abs(x);
+    const y = ax <= 9 ? 2.5 + 7.5 * (x / 9) ** 2 : 10 - 7.5 * (ax - 9) / 8;
+    add(g, new THREE.SphereGeometry(0.22, 8, 6), red, [x, y, s * 0.5]);
+    if (i % 2 === 0 && y > 2.2) add(g, new THREE.BoxGeometry(0.06, y - 1.9, 0.06), red, [x, 1.9 + (y - 1.9) / 2, s * 0.5]);
+  }
+  return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 40, az: 150, el: 45 }); const scene = stage.scene;
+  ground(scene, '#c5b46a');
+  add(scene, new THREE.PlaneGeometry(400, 300), mat('#3d9bd0', { roughness: 0.3 }), [0, 0.01, -170], [-Math.PI / 2, 0, 0]);
+  const br = bridge(); br.position.set(4, 0, -34); br.scale.setScalar(1.6); scene.add(br);
+  for (const [x, z, s] of [[-14, -40, 5], [-9, -32, 3.5], [20, -42, 6]]) blob(scene, mat('#9aa56a'), [x, 0, z], [s * 2.5, s * 0.9, s * 1.5]);
+  const sun = new THREE.Mesh(new THREE.SphereGeometry(5, 24, 16), glow('#fff2a8')); sun.position.set(-26, 28, -80); scene.add(sun);
+  // palms
+  for (const [x, z, h, l] of [[-4.2, -2, 4.2, 0.5], [4.6, -2.2, 4.6, -0.5], [-6.8, -5, 5, -0.4], [7, -6, 4.4, 0.4]]) { const p = palm(h, l); p.position.set(x, 0, z); scene.add(p); }
+  // poppies
+  const r = rng(9);
+  for (let i = 0; i < 90; i++) { const x = (r() - 0.5) * 12, z = -3 + r() * 5.5; blob(scene, glow(['#ff8a14', '#ff9d2b', '#ffb02e'][i % 3]), [x, 0.07, z], [0.08, 0.05, 0.08]); }
+  // trio
+  const ll = createLamplighter({ scale: 1.6 }); ll.position.set(0, 0, 0.8); ll.rotation.y = 0; scene.add(ll);
+  ll.userData.pose({ headTilt: 0.05, arms: { l: [0.2, 0.5, 0.3] } });
+  ll.userData.reach('l', [0.55, 0.9, 0.2]); ll.userData.reach('r', [-0.3, 0.5, 0.1]);
+  const g1 = gnome(); g1.scale.setScalar(1.5); g1.position.set(1.6, 0, 0.6); g1.rotation.y = -0.4; scene.add(g1);
+  const g2 = gnome({ cap: '#f2a31f', coat: '#7a3fb0', x: true }); g2.scale.setScalar(1.5); g2.position.set(-1.6, 0, 0.6); g2.rotation.y = 0.4; scene.add(g2);
+  toon(stage, scene, [ll, g1, g2]);
+  clouds(stage);
+  stage.camera.position.set(num(P, 'cx', 0), num(P, 'cy', 1.1), num(P, 'cz', 6.2)); stage.camera.lookAt(num(P, 'tx', 0), num(P, 'ty', 1.6), 0);
+  stage.finish();
+});
+</script></body></html>

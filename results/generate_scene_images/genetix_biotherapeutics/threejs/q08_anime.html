@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — a ZINC TIGER on the TICKET ends blood transfusions.
+import { THREE, guard, mat, add, blob, cyl, rbox, setup, labelMesh } from './common.js';
+
+function tiger() {
+  const g = new THREE.Group(), zinc = mat('#a9bccb', { metalness: 0.45, roughness: 0.35 }), stripe = mat('#1d2630'), white = mat('#f4f8fb');
+  blob(g, zinc, [0, 0.8, 0], [0.8, 0.46, 0.44]);
+  for (const x of [-0.5, -0.3, -0.1, 0.1, 0.3, 0.5]) { const r = 0.46 * Math.sqrt(1 - (x / 0.8) ** 2); add(g, new THREE.TorusGeometry(r + 0.004, 0.035, 8, 28), stripe, [x, 0.8, 0], [0, Math.PI / 2, 0], [1, 0.97, 0.94]); }
+  for (const [x, z] of [[0.5, 0.2], [0.5, -0.2], [-0.5, 0.2], [-0.5, -0.2]]) { cyl(g, 0.09, 0.075, 0.6, zinc, [x, 0.32, z]); blob(g, white, [x, 0.03, z + 0.02], [0.1, 0.05, 0.12]); }
+  const head = new THREE.Group(); head.position.set(0.95, 1.15, 0); g.add(head);
+  blob(head, zinc, [0, 0, 0], [0.36, 0.32, 0.34]);
+  blob(head, white, [0.22, -0.1, 0], [0.18, 0.14, 0.2]); blob(head, mat('#f08aa0'), [0.38, -0.02, 0], [0.05, 0.04, 0.06]);
+  for (const k of [-1, 1]) {
+    blob(head, zinc, [-0.12, 0.3, k * 0.2], [0.11, 0.11, 0.05]); blob(head, mat('#f4b0c0'), [-0.11, 0.3, k * 0.235], [0.06, 0.06, 0.02]);
+    for (const [rx, ry, c, dz] of [[0.075, 0.09, '#fff', 0], [0.055, 0.08, '#d89a1a', 0.003], [0.03, 0.06, '#0b0504', 0.006]]) {
+      const m = new THREE.Mesh(new THREE.CircleGeometry(1, 28), new THREE.MeshStandardMaterial({ color: c, roughness: 0.4 })); m.scale.set(rx, ry, 1);
+      m.position.set(0.21, 0.07, k * (0.3 + dz)); m.rotation.y = k > 0 ? 0.0 : Math.PI; head.add(m); }
+    for (const dy of [0, 0.07]) add(head, new THREE.BoxGeometry(0.03, 0.14 - dy, 0.02), stripe, [0.0 - dy, 0.3 - dy * 0.3, k * 0.1], [0.3 * k, 0, 0]);
+  }
+  for (let i = 0; i < 6; i++) blob(g, i % 2 ? stripe : zinc, [-0.85 - i * 0.12, 0.9 + i * 0.08 - (i > 3 ? 0.0 : 0), 0], [0.09, 0.09, 0.09]);
+  // collar tag with Zn
+  rbox(g, 0.34, 0.3, 0.04, mat('#ffc928', { metalness: 0.4 }), [0.75, 0.78, 0.42], [0, 0.2, 0], 0.02);
+  const lab = labelMesh('Zn', 0.28, 0.24, { bg: '#ffc928', fg: '#1d2630', font: 'bold 170px sans-serif' }); lab.position.set(0.75, 0.78, 0.45); lab.rotation.y = 0.2; g.add(lab);
+  return g;
+}
+function bloodBag() {
+  const g = new THREE.Group(), red = mat('#d41830', { roughness: 0.3 });
+  cyl(g, 0.03, 0.03, 2.4, mat('#9aa'), [0, 1.2, 0]); rbox(g, 0.7, 0.06, 0.06, mat('#9aa'), [0.18, 2.35, 0]);
+  rbox(g, 0.34, 0.5, 0.12, red, [0.35, 2.05, 0], [0, 0, 0], 0.1);
+  cyl(g, 0.012, 0.012, 0.8, mat('#e8f0f4'), [0.35, 1.4, 0]);
+  blob(g, red, [0.35, 1.0, 0], [0.04, 0.07, 0.04]);
+  add(g, new THREE.TorusGeometry(0.42, 0.045, 10, 36), mat('#ff1a2a'), [0.35, 1.9, 0.1]);
+  add(g, new THREE.BoxGeometry(0.9, 0.08, 0.05), mat('#ff1a2a'), [0.35, 1.9, 0.1], [0, 0, 0.8]);
+  return g;
+}
+guard(() => {
+  const S = setup({ ground: '#9ccf6a' });
+  const { scene, num } = S;
+  S.ticket(-0.5, 0.5, 0.25, 1.5, { arms: { l: [0, 0.7, 0], r: [0, 0.7, 0] } });
+  const T = tiger(); T.position.set(1.9, 0, 0); T.rotation.y = -0.7; T.scale.setScalar(1.35); S.char(T);
+  const b = bloodBag(); b.position.set(-2.7, 0, -0.3); scene.add(b);
+  S.finish([num('cx', 0.0), num('cy', 1.6), num('cz', 7.0)], [0.0, 1.35, 0]);
+});
+</script></body></html>

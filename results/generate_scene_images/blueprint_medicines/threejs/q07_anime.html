@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Blueprint q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — The BLUEPRINT office under the Cambridge BRIDGE shuts its doors.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, cyl, blob, makeStage, clouds, ground, look, finishScene, buildBridge, label } from './common.js';
+import { createBlueprint } from './blueprint.js';
+
+guard(() => {
+  const stage = makeStage({ exp: 1, sunIntensity: 2.2, ambient: { color: '#9aa6f0', intensity: 3.2 },
+    sky: { zenith: '#232a6e', horizon: '#f5a070', cover: 0.5 }, flare: 0.2 });
+  stage.camera.fov = 40; const scene = stage.scene; ground(scene, '#3a4a5a');
+  const H = 3.4, SP = 12;
+  const br = buildBridge({ span: SP, h: H }); br.position.set(0, 0, -1.6); scene.add(br);
+  // office back wall + doors under the arch
+  box(scene, mat('#9a5a44'), [0, H / 2, -2.2], [SP - 2, H, 0.3]);
+  for (const x of [-3.2, 3.2]) box(scene, mat('#2a2e48'), [x, 1.8, -2.03], [1.4, 1.4, 0.05]);
+  box(scene, mat('#d9cfc0'), [0, 1.2, -2.0], [2.9, 2.5, 0.1]);
+  box(scene, mat('#5a3a1e'), [-0.7, 1.1, -1.94], [1.3, 2.2, 0.08]);
+  const door = new THREE.Group(); door.position.set(0.0, 0, -1.9); door.rotation.y = 0.9; scene.add(door);
+  box(door, mat('#5a3a1e'), [0.65, 1.1, 0], [1.3, 2.2, 0.08]); cyl(door, mat('#d9b13a'), [1.15, 1.1, 0.07], 0.05, 0.05, [Math.PI / 2, 0, 0]);
+  label(scene, 'CLOSED', [0, 2.4, -1.93], [1.8, 0.6], { bg: '#b02a2a', fg: '#fff', font: 'bold 110px sans-serif' });
+  // unlit lamps
+  for (const x of [-2.6, 2.6]) { cyl(scene, mat('#2a2a30'), [x, 1.2, -1.0], 0.05, 2.4); blob(scene, mat('#555a60'), [x, 2.5, -1.0], [0.2, 0.2, 0.2]); }
+  const bp = createBlueprint({ scale: 1.8 }); bp.position.set(-0.4, 0, -0.9); bp.rotation.y = 0.25; scene.add(bp);
+  bp.userData.pose({ lean: 0.05 }); bp.updateMatrixWorld(true);
+  const t = bp.worldToLocal(new THREE.Vector3(1.35 * Math.cos(0.9) + 0.0 - 0.0, 1.1, -1.9 - 1.3 * Math.sin(0.9) * 0 + 0.55));
+  bp.userData.reach('r', [t.x, t.y, t.z]); bp.userData.pose({ lean: 0.05 }); bp.userData.reach('r', [t.x, t.y, t.z]);
+  clouds(stage); look(stage, 0, 1.6, 6.4, 0, 2.0, 0);
+  finishScene(stage, [bp]);
+});
+</script></body></html>

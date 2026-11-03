@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ ground: '#f1f6ff', sky: { cover: 1.5 }, summit: { scale: 1.9, pos: [-1.2, 0, 0], ry: 0.3 } }); const { scene, s, num } = B;
+s.userData.pose({ arms: { r: [0, -0.7, 0] } }); reachW(s, 'l', [-0.1, 1.5, 0.6]);
+const c = climber({ bib: 'UG 100', scale: 1.5 }); c.position.set(1.3, 0, 0.9); c.rotation.y = -0.2; scene.add(c);
+// ice axe + banner
+add(c, new THREE.CylinderGeometry(0.025, 0.025, 1.1, 10), mat('#8a5a2b'), [0.5, 0.65, 0.12]);
+add(c, new THREE.BoxGeometry(0.3, 0.06, 0.05), mat('#b9c3d6', { metalness: .6 }), [0.58, 1.2, 0.12]);
+// pine trees on snow
+for (const [x, z, h] of [[3.2, -1.5, 1.8], [-3.8, -1.8, 2.2], [2.4, -2.5, 1.4]]) { for (let i = 0; i < 3; i++) add(scene, new THREE.ConeGeometry(0.55 * h / 1.8 * (1 - i * 0.22), 0.8 * h / 1.8, 14), mat('#2e7d52'), [x, 0.5 * h / 1.8 + i * 0.5 * h / 1.8, z]); add(scene, new THREE.CylinderGeometry(0.07, 0.07, 0.4, 8), mat('#6b4a2b'), [x, 0.2, z]); }
+cam(B.stage, num, [0.1, 1.5, 6.4], [0.1, 1.2, 0]); B.finish();
+
+});
+</script></body></html>

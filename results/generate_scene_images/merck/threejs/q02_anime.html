@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Merck q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, box, cyl, blob, textTex, textBoard, person, tent, makeStage, finish, createPond } from "./props.js";
+// q02 — Beside the explorers' camp, the POND keeps a busy INNOVATION HUB, a spinning wheel hub.
+guard(() => {
+  const P = new URLSearchParams(location.search), S = makeStage(P), { scene, num } = S;
+  const t = tent({ w: 2.6, h: 2.1 }); t.position.set(-3.2, 0, -3.4); scene.add(t);
+  // big wheel hub: tyre, rim, hub cap with lug nuts and spokes, motion arcs
+  const w = new THREE.Group(); w.position.set(2.2, 1.5, -0.6); w.rotation.y = -0.6; w.scale.setScalar(0.72); scene.add(w);
+  const wheel = new THREE.Group(); wheel.rotation.x = Math.PI / 2; w.add(wheel);
+  const R = 1.55;
+  add(wheel, new THREE.TorusGeometry(R, 0.4, 24, 48), mat('#2b2b30'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  const fl = add(wheel, new THREE.CylinderGeometry(R - 0.1, R - 0.1, 0.18, 48), mat('#cfd6dc', { metalness: 0.5, roughness: 0.35 }));
+  for (let i = 0; i < 10; i++) { const a = i * Math.PI / 5; const sp = box(wheel, mat('#e8edf2', { metalness: 0.5, roughness: 0.3 }), [Math.cos(a) * 0.8, 0.12, Math.sin(a) * 0.8], [0.22, 0.12, 1.2], [0, -a + Math.PI / 2, 0]); }
+  cyl(wheel, mat('#f2b632', { metalness: 0.6, roughness: 0.3 }), [0, 0.2, 0], 0.42, 0.42, 0.18, [0, 0, 0], 40);
+  for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; cyl(wheel, mat('#7a838c', { metalness: 0.7 }), [Math.cos(a) * 0.62, 0.22, Math.sin(a) * 0.62], 0.075, 0.075, 0.22, [0, 0, 0], 6); }
+  cyl(wheel, mat('#d04a3a'), [0, 0.32, 0], 0.2, 0.2, 0.08, [0, 0, 0], 32);
+  // spin arcs
+  for (const [r, s0] of [[1.95, 0.3], [2.1, 2.5], [1.95, 4.4]]) add(w, new THREE.TorusGeometry(r, 0.03, 6, 30, 1.0), mat('#ffffff'), [0, 0, 0.5], [0, 0, s0]);
+  // lightbulb on top
+  const lb = new THREE.Group(); lb.position.set(2.2, 3.5, -0.6); scene.add(lb);
+  blob(lb, new THREE.MeshStandardMaterial({ color: '#ffe566', emissive: '#ffcf33', emissiveIntensity: 0.6 }), [0, 0, 0], [0.38, 0.45, 0.38]); cyl(lb, mat('#999'), [0, -0.52, 0], 0.17, 0.14, 0.22); cyl(lb, mat('#777'), [0, -0.7, 0], 0.1, 0.08, 0.1);
+  // support post
+  
+  const pond = createPond({ scale: 2.7 }); pond.position.set(-1.4, 0, 1.2); pond.rotation.y = 0.55; scene.add(pond);
+  pond.userData.pose({ tilt: -0.05, arms: { l: [0, 0.5, 0] } }); pond.userData.reach('r', [-0.55, 1.4, 0.35]);
+  finish(S, [pond], [num('cx', 0), num('cy', 2.0), num('cz', 7.4)], [num('tx', 0), num('ty', 1.8), -1]);
+});
+</script></body></html>

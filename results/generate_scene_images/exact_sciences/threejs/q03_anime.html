@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Exact Sciences q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — "A CHEF charges 689 coins for the RULER's CANCER GUARD test."  peg chef = 689
+import { THREE, guard, mat, add, blob, box, num, makeStage, wrapUp, guardRuler, person, faceOn, textPlane, crab } from './props.js';
+function coin(parent, x, y, z) { return add(parent, new THREE.CylinderGeometry(0.11, 0.11, 0.028, 24), mat('#f2c230', { metalness: 0.7, roughness: 0.3 }), [x, y, z]); }
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P), scene = stage.scene;
+  // chef
+  const chef = person({ skin: '#f6cfa6', shirt: '#ffffff', pants: '#3a3a44' }); chef.scale.setScalar(1.55); chef.position.set(1.2, 0, -0.3); chef.rotation.y = -0.25; scene.add(chef);
+  faceOn(chef, { mouth: 'smile' });
+  const white = mat('#ffffff');
+  add(chef, new THREE.CylinderGeometry(0.14, 0.15, 0.2, 20), white, [0, 1.06, 0]);
+  [[-0.1, 1.22], [0.1, 1.22], [0, 1.28], [0, 1.2]].forEach(([x, y], i) => blob(chef, white, [x, y, i === 3 ? 0.08 : 0], [0.12, 0.11, 0.11]));
+  box(chef, mat('#2a1408'), [0, 0.8, 0.17], [0.13, 0.02, 0.02]);
+  for (const s of [-1, 1]) add(chef, new THREE.CylinderGeometry(0.03, 0.03, 0.3, 10), mat('#ffffff'), [s * 0.17, 0.52, 0.04], [s === 1 ? 1.2 : 0.2, 0, s * 0.3]);
+  // price placard
+  add(scene, new THREE.BoxGeometry(0.06, 1.2, 0.06), mat('#6a3b1c'), [2.7, 0.6, 0.2]);
+  const board = add(scene, new THREE.BoxGeometry(1.5, 0.9, 0.06), mat('#fff3c4'), [2.25, 1.75, 0.2]);
+  const t = textPlane('689', 1.1, 1.1, { fg: '#c8312e', px: 0.5 }); t.position.set(2.25, 1.75, 0.24); scene.add(t);
+  // ruler guard
+  const r = guardRuler(2.1, { sword: false }); r.position.set(-1.2, 0, 0.5); r.rotation.y = 0.35; scene.add(r);
+  r.userData.reach('r', [-0.25, 0.7, 0.3]);
+  // coin stacks
+  [[0.3, 0.3, 11], [0.62, 0.45, 8], [0.0, 0.5, 6], [0.3, 0.75, 4]].forEach(([x, z, n]) => { for (let i = 0; i < n; i++) coin(scene, x - 0.1, 0.014 + i * 0.03, z + 0.7); });
+  for (let i = 0; i < 12; i++) coin(scene, 0.8 + (i % 4) * 0.2, 0.014, 1.0 + Math.floor(i / 4) * 0.2);
+  wrapUp(stage, P, [r, chef], { pos: [0.5, 1.5, 4.6], look: [0.4, 1.1, 0] });
+});
+</script></body></html>

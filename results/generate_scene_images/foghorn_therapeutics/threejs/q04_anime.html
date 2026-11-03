@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 SMART CAR-4 broken, in lungs: foghorn aims at a wrecked smart car with a 4 in front of lungs (NSCLC).
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 30, az: 140 }); const scene = stage.scene;
+  ground(scene, '#c9d3c0');
+  const f = placeFoghorn(scene, { x: -3.0, z: 0.9, scale: 2.0 }); aimAt(f, [1.6, 0.9, 0.6]);
+  const lungs = new THREE.Group(); lungs.position.set(2.0, 0, -1.4); scene.add(lungs);
+  const pink = mat('#f08a9c', { roughness: 0.5 }), deep = mat('#c9566e', { roughness: 0.5 });
+  for (const s of [-1, 1]) {
+    blob(lungs, pink, [s * 0.95, 1.7, 0], [0.85, 1.4, 0.5], [0, 0, -s * 0.12]);
+    blob(lungs, deep, [s * 0.95, 0.9, 0.2], [0.5, 0.3, 0.3]);
+    add(lungs, new THREE.TorusGeometry(0.3, 0.05, 8, 20), deep, [s * 0.7, 1.9, 0.5], [0, 0, 0.6 * s]);
+    add(lungs, new THREE.CylinderGeometry(0.07, 0.07, 1.1, 12), mat('#e8dcd0'), [s * 0.34, 2.45, 0.05], [0, 0, s * 0.9]);
+  }
+  add(lungs, new THREE.CylinderGeometry(0.15, 0.15, 1.2, 16), mat('#e8dcd0'), [0, 3.15, 0.05]);
+  const car = new THREE.Group(); car.position.set(1.9, 0, 0.7); car.rotation.set(0, -0.2, 0.08); scene.add(car);
+  blob(car, mat('#ffcf1f', { roughness: 0.35 }), [-0.05, 0.42, 0], [0.55, 0.28, 0.36]);
+  blob(car, mat('#6d655c'), [0.45, 0.5, 0], [0.22, 0.14, 0.34], [0, 0, 0.5]);
+  blob(car, mat('#d7dde3'), [-0.12, 0.7, 0], [0.38, 0.22, 0.3], [0, 0, -0.1]);
+  blob(car, mat('#8fd3ff', { roughness: 0.15 }), [-0.12, 0.73, 0.01], [0.38, 0.15, 0.315]);
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) add(car, new THREE.CylinderGeometry(0.15, 0.15, 0.12, 24), mat('#22262b'), [sx * 0.37, sx > 0 && sz > 0 ? 0.07 : 0.15, sz * 0.31], [Math.PI / 2, 0, 0]);
+  textPlane(car, '4', { w: 0.42, h: 0.42, bg: '#8a1d1d', fg: '#ffffff', pos: [-0.05, 0.43, 0.372], px: 600 });
+  const smoke = mat('#8a8a94', { transparent: true, opacity: 0.9 });
+  [[0.5, 0.85, 0.3, 0.12], [0.58, 1.05, 0.3, 0.16], [0.52, 1.3, 0.3, 0.2]].forEach(([x, y, z, r]) => blob(car, smoke, [x, y, z], [r, r, r]));
+  soundWaves(scene, f, { n: 4 });
+  finishScene(stage, f, { cam: [0.4, 1.9, 6.8], look: [0.3, 1.5, 0] });
+
+});
+</script></body></html>

@@ -1,0 +1,1 @@
+../../alnylam_pharmaceuticals/threejs/kit_anime.js

@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scholar Rock q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — "The MORTARBOARD's ticker reads SRRK."
+import { THREE, guard, mat, add, box, cyl, blob, sign, makeScene, wrapUp } from './common.js';
+import { createMortarboard } from './mortarboard.js';
+
+guard(() => {
+  const { stage, scene, num } = makeScene({ ground: '#9fd08a' });
+  // LED ticker board on two posts
+  for (const x of [-2.4, 2.4]) cyl(scene, mat('#4a4f5c'), [x, 1.4, -1.2], 0.1, 2.8);
+  box(scene, mat('#1a1d26'), [0, 3.1, -1.2], [6.2, 1.5, 0.3]);
+  const led = sign('SRRK', 4.4, 1.1, { bg: '#0b0f14', fg: '#39ff7a', border: '#39ff7a' }); led.position.set(-0.3, 3.1, -1.03); scene.add(led);
+  const arrow = new THREE.Shape(); arrow.moveTo(0, 0.5); arrow.lineTo(0.45, -0.1); arrow.lineTo(0.15, -0.1); arrow.lineTo(0.15, -0.5); arrow.lineTo(-0.15, -0.5); arrow.lineTo(-0.15, -0.1); arrow.lineTo(-0.45, -0.1);
+  const up = new THREE.Mesh(new THREE.ShapeGeometry(arrow), new THREE.MeshBasicMaterial({ color: '#39ff7a' })); up.position.set(2.45, 3.1, -1.02); up.scale.setScalar(0.9); scene.add(up);
+
+  const m = createMortarboard({ scale: 2.4 }); m.position.set(-0.4, 0, 1.0); m.rotation.y = 0.2; scene.add(m);
+  m.userData.pose({ tilt: 0.05, arms: { l: [0, 0.6, 0], r: [0, 0.6, 0] } });
+  scene.updateMatrixWorld(true);
+  const t = m.worldToLocal(new THREE.Vector3(0.9, 3.2, 0.9)); m.userData.reach('l', [t.x, t.y, t.z]);
+  wrapUp(stage, num, [m], [0, 2.2, 8.0], [0, 2.1, 0]);
+});
+</script></body></html>

@@ -1,0 +1,22 @@
+  // q08 — A LION guards fifty-two million coins inside the GLOBE.
+  const S = makeScene({ ground: '#d9b982' }), scene = S.scene;
+  const pile = createCoinPile(1.5, 1500, 8); pile.position.set(0.6, 0, 0.1); scene.add(pile); add(scene, new THREE.ConeGeometry(1.4, 0.8, 32), mat('#b8780e', { roughness: 0.5 }), [0.6, 0.38, 0.1]);
+  const globe = createGlobe({ scale: 1.5 }); globe.position.set(0.65, 0.68, 0.3); globe.rotation.y = -0.2; scene.add(S.character(globe));
+  globe.userData.pose({ arms: { l: [0, 1.0, 0], r: [0, 1.1, 0] }, legs: { l: [0.2, 0], r: [-0.1, 0] } });
+  // lion
+  const lion = new THREE.Group(), fur = mat('#e8a63c'), mane = mat('#a85a1e', { roughness: 0.85 });
+  blob(lion, fur, [0, 0.32, -0.1], [0.3, 0.3, 0.45]);
+  for (const s of [-1, 1]) { cyl(lion, fur, 0.07, 0.065, 0.3, [s * 0.14, 0.15, 0.28]); blob(lion, mat('#f4c06a'), [s * 0.14, 0.03, 0.34], [0.085, 0.05, 0.12]); blob(lion, fur, [s * 0.2, 0.1, -0.35], [0.14, 0.14, 0.22]); }
+  const head = new THREE.Group(); head.position.set(0, 0.72, 0.2); lion.add(head);
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; add(head, new THREE.ConeGeometry(0.1, 0.3, 8), mane, [Math.sin(a) * 0.3, Math.cos(a) * 0.3, -0.04], [0, 0, -a + Math.PI / 2 * 0 ]).rotation.set(Math.PI / 2 * 0, 0, -a); }
+  blob(head, mane, [0, 0, -0.07], [0.33, 0.33, 0.16]);
+  blob(head, fur, [0, 0, 0.04], [0.22, 0.21, 0.19]); blob(head, mat('#f7d28a'), [0, -0.07, 0.17], [0.11, 0.08, 0.08]); blob(head, mat('#3a1c14'), [0, -0.02, 0.24], [0.04, 0.03, 0.025]);
+  for (const s of [-1, 1]) {
+    blob(head, fur, [s * 0.15, 0.18, 0.0], [0.06, 0.06, 0.04]);
+    blob(head, mat('#fff'), [s * 0.08, 0.06, 0.2], [0.04, 0.05, 0.015]); blob(head, mat('#4a2a10'), [s * 0.08, 0.055, 0.213], [0.028, 0.04, 0.012]); blob(head, mat('#fff'), [s * 0.074, 0.075, 0.222], [0.01, 0.01, 0.005]);
+  }
+  add(lion, new THREE.TorusGeometry(0.03, 0.006, 6, 14, Math.PI), mat('#3a1c14'), [0, 0.64, 0.45], [0, 0, Math.PI]);
+  add(lion, new THREE.CylinderGeometry(0.03, 0.04, 0.5, 10), fur, [-0.2, 0.3, -0.6], [0.2, 0, 0.9]); blob(lion, mane, [-0.42, 0.42, -0.6], [0.07, 0.1, 0.07]);
+  lion.position.set(-1.35, 0, 0.7); lion.scale.setScalar(1.55); lion.rotation.y = 0.4; scene.add(S.character(lion));
+  for (const [x, y, z] of [[-0.3, 0.12, 1.2], [0.1, 0.1, 1.5], [2.0, 0.1, 1.1]]) { const c = add(scene, new THREE.CylinderGeometry(0.1, 0.1, 0.02, 20), mat('#f4b81f', { metalness: 0.7, roughness: 0.3 }), [x, y, z], [1.3, 0, 0.2]); }
+  const CAM = { cy: 1.0, ty: 0.7, cz: 4.2, tx: 0.2 };

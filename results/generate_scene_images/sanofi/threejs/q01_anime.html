@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sanofi q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q01 — The SUNFLOWER grows at Cambridge CROSSING.
+import { THREE, guard, mat, add, box, cyl, blob, num, makeStage, placeSunflower, finish, canvasTexture } from './common.js';
+guard(() => {
+  const stage = makeStage({ ground: '#78b04a' }), sc = stage.scene;
+  // road across the view with zebra crossing
+  box(sc, mat('#4a4d55'), [0, 0.01, -1.2], [60, 0.02, 3.2]);
+  box(sc, mat('#d9d4c8'), [0, 0.012, 0.9], [60, 0.02, 1.0]);       // pavement
+  for (let i = -7; i <= 7; i++) box(sc, mat('#fff'), [i * 0.5, 0.025, -1.2], [0.3, 0.012, 3.0]);
+  box(sc, mat('#f2c230'), [0, 0.025, 0.35], [60, 0.012, 0.06]);
+  // crossing sign: blue square with walking figure
+  const post = new THREE.Group(); post.position.set(2.4, 0, 0.8); sc.add(post);
+  cyl(post, mat('#444'), [0, 0.8, 0], 0.03, 1.6);
+  const tex = canvasTexture(256, (ctx, s) => {
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, s, s); ctx.fillStyle = '#1f5fc2'; ctx.fillRect(14, 14, s - 28, s - 28);
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(128, 66, 20, 0, 7); ctx.fill();
+    ctx.lineCap = 'round'; ctx.strokeStyle = '#fff'; ctx.lineWidth = 18; ctx.beginPath();
+    ctx.moveTo(128, 90); ctx.lineTo(120, 150); ctx.lineTo(90, 215); ctx.moveTo(120, 150); ctx.lineTo(160, 215);
+    ctx.moveTo(122, 105); ctx.lineTo(80, 140); ctx.moveTo(122, 105); ctx.lineTo(170, 135); ctx.stroke();
+  });
+  box(post, new THREE.MeshStandardMaterial({ map: tex, roughness: 0.5 }), [0, 1.65, 0], [0.6, 0.6, 0.04]);
+  // brick buildings (Cambridge)
+  const rb = mat('#b4573d'); 
+  for (const [x, w, h] of [[-4.2, 2.4, 3.2], [-1.6, 2.2, 4.4], [1.0, 2.4, 3.6], [4.0, 2.8, 4.0]]) {
+    box(sc, rb, [x, h / 2, -5], [w, h, 2]);
+    for (let r = 0; r < h - 0.6; r += 0.9) for (let c = -w / 2 + 0.4; c < w / 2 - 0.2; c += 0.65) box(sc, mat('#8fc7e8', { emissive: '#233' }), [x + c, 0.7 + r, -3.98], [0.35, 0.5, 0.04]);
+  }
+  const f = placeSunflower(stage, { pos: [-0.4, 0, 1.4], ry: 0.2, scale: 1.9, pose: { headTilt: 0.06 } });
+  finish(stage, f, { pos: [0, 1.9, 6.0], at: [0.2, 1.6, 0] });
+});
+</script></body></html>

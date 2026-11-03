@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Agios q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// At first, the AEGIS shield watches what cancer cells EAT: cancer metabolism.
+import { THREE, guard, mat, add, blob, box, cyl, rbc, textPlane, makeScene } from './common.js';
+import { createAegis } from './aegis.js';
+import { createPirateKing, createCrab, createPivotDoor, sickle, platelet } from './props.js';
+// shield helper: place + pose + optional reach {hand:'l', to:[x,y,z] world}
+function place(scene, S, x, z, ry, sc, reach) {
+  const a = createAegis({ scale: sc }); a.position.set(x, 0, z); a.rotation.y = ry; scene.add(a);
+  a.userData.pose({ legs: { l: [0.2, 0], r: [-0.15, 0] } });
+  if (reach) { a.updateMatrixWorld(true); const t = a.worldToLocal(new THREE.Vector3(...reach.to)); a.userData.reach(reach.hand, [t.x / sc, t.y / sc, t.z / sc]); }
+  S.mark(a); return a;
+}
+guard(() => {
+  const S = makeScene({ ground: '#d7b9e6', cover: 1.5 }); const { scene } = S;
+  const eater = (x, z, sc, ry) => {
+    const g = new THREE.Group(); blob(g, mat('#8a4fb8'), [0, 0.45, 0], [0.45, 0.42, 0.42]); blob(g, mat('#6a3a96'), [-0.12, 0.62, 0.3], [0.1, 0.1, 0.06]);
+    for (const s of [-1, 1]) { blob(g, mat('#fff', { roughness: 0.3 }), [s * 0.16, 0.6, 0.38], [0.08, 0.09, 0.04]); blob(g, mat('#111'), [s * 0.16, 0.6, 0.415], [0.04, 0.055, 0.02]); }
+    blob(g, mat('#3a0d2a'), [0, 0.32, 0.4], [0.17, 0.11, 0.06]); blob(g, mat('#ff7a8a'), [0, 0.27, 0.43], [0.09, 0.04, 0.03]);
+    box(g, mat('#fff'), [-0.06, 0.39, 0.42], [0.04, 0.04, 0.02]); box(g, mat('#fff'), [0.06, 0.39, 0.42], [0.04, 0.04, 0.02]);
+    g.position.set(x, 0, z); g.scale.setScalar(sc); g.rotation.y = ry; scene.add(g); S.mark(g); return g;
+  };
+  eater(0.9, 0, 1.4, -0.4); eater(2.1, -1.0, 1.0, -0.2);
+  // food: sugar cubes (glucose) heap + burger-like donuts flying into mouth
+  const cube = (x, y, z, r) => box(scene, mat('#fffaf0'), [x, y, z], [0.18, 0.18, 0.18], [r, r * 1.3, 0.2]);
+  for (let i = 0; i < 6; i++) cube(0.2 + (i % 3) * 0.17, 0.09 + Math.floor(i / 3) * 0.17, 1.2 + (i % 2) * 0.1, i);
+  cube(0.45, 0.85, 0.95, 0.5); cube(0.35, 1.1, 0.7, 0.9);
+  for (let i = 0; i < 3; i++) add(scene, new THREE.TorusGeometry(0.14, 0.06, 12, 24), mat('#f0a44a'), [0.5 + i * 0.1, 0.55 + i * 0.2, 0.9 - i * 0.2], [1.2, 0.3 * i, 0]);
+  place(scene, S, -0.9, 0.9, 0.5, 1.4, { hand: 'l', to: [-0.2, 1.05, 1.1] });
+  // magnifier
+  const mg = new THREE.Group(); add(mg, new THREE.TorusGeometry(0.2, 0.03, 10, 30), mat('#333')); add(mg, new THREE.CircleGeometry(0.2, 30), mat('#bfe6ff', { transparent: true, opacity: 0.35 })); cyl(mg, mat('#5a3a22'), [0, -0.38, 0], 0.025, 0.3);
+  mg.position.set(-0.25, 1.15, 1.2); scene.add(mg);
+  S.finish([0.5, 1.1, 4.8], [0.7, 0.65, 0]);
+
+});
+</script></body></html>

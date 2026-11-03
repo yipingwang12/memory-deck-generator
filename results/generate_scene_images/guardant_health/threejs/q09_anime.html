@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textPlane, heraldicShield, makeStage, meadow, createGuardsman, finishScene, holdAt, helix, cancerCell, bloodCell, magnifier, rng, canvasTexture } from "./common.js";
+import { guard } from "./kit.js";
+// q09 — The GUARDSMAN's ticker reads GH.
+guard(() => {
+  const P = new URLSearchParams(location.search); const stage = makeStage(P); const scene = stage.scene;
+  meadow(scene, '#5f9e3f');
+  const bd = new THREE.Group(); bd.position.set(0.8, 0, -0.4); scene.add(bd);
+  for (const x of [-1.1, 1.1]) cyl(bd, mat('#4a4a54', { metalness: 0.4 }), 0.06, 0.06, 1.8, [x, 0.9, 0]);
+  box(bd, mat('#23232b'), [0, 1.8, 0], [3.0, 1.45, 0.14]);
+  const t = textPlane('GH', 1.5, 1.2, { bg: '#23232b', fg: '#53ff9a', px: 0.95 }); t.position.set(-0.3, 1.8, 0.08); bd.add(t);
+  const up = new THREE.Mesh(new THREE.ShapeGeometry(new THREE.Shape([new THREE.Vector2(-0.25, -0.3), new THREE.Vector2(0.25, -0.3), new THREE.Vector2(0, 0.25)])), new THREE.MeshBasicMaterial({ color: '#53ff9a' })); up.position.set(1.05, 1.8, 0.085); bd.add(up);
+  box(bd, mat('#08130e'), [0, 2.65, 0.0], [0.01, 0.01, 0.01]);
+  const dots = new THREE.MeshBasicMaterial({ color: '#53ff9a' }); for (let i = 0; i < 24; i++) box(bd, dots, [-1.4 + i * 0.12, 1.2, 0.08], [0.07, 0.07, 0.01]);
+  const g = createGuardsman({ scale: 1.6 }); g.position.set(-1.0, 0, 0.7); g.rotation.y = 0.35; scene.add(g);
+  g.userData.pose({ headYaw: 0.5 }); holdAt(g, 'l', [0.4, 1.9, 0.5]);
+  finishScene(stage, g, P, { cx: 0.1, cy: 1.4, cz: 5.2, tx: 0.1, ty: 1.3 });
+});
+</script></body></html>

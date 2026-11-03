@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — An EAGLE drops 75 million coins into the SANDWORM Series B
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 0.95, wx: 0, ws: 1.2 });
+  const M = c.worm.userData.mouthWorld();
+  const e = eagle(); e.scale.setScalar(1.5); e.position.set(M.x, M.y + 2.3, M.z - 0.2); e.rotation.x = -0.15; c.scene.add(e); c.char(e);
+  for (let i = 0; i < 9; i++) { const k = coin(0.15), t = i / 8; k.position.set(M.x + Math.sin(i * 2.1) * 0.14 * (1 - t), M.y + 0.4 + t * 1.5, M.z + 0.1 + (1 - t) * 0.0); k.rotation.set(-0.8 + i * 0.5, i * 0.9, i * 0.3); c.scene.add(k); }
+  c.done([0, 2.6, 7.2], [0, 2.4, 0]);
+});
+</script></body></html>

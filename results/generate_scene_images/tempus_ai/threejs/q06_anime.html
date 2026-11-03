@@ -1,0 +1,50 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q06 — "The HOURGLASS and the MIXER (Remix) build a test for a MYB poison exon."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+/** Stand mixer (the MIXER): red body, arm, bowl, beater. Faces +z. */
+function mixer() {
+  const g = new THREE.Group(), red = '#d6322f';
+  box(g, 0.9, 0.12, 0.6, red, [0, 0.06, 0]); box(g, 0.28, 0.75, 0.32, red, [-0.28, 0.5, 0]);
+  const head = ball(g, 0.38, red, [0.05, 0.98, 0], [1.6, 0.7, 0.9]); ball(g, 0.12, '#cfd6dd', [0.55, 0.98, 0], [1, 1, 1], { metalness: 0.7, roughness: 0.3 });
+  cyl(g, 0.38, 0.28, 0.4, '#d9dee4', [0.28, 0.4, 0], [0, 0, 0], { metalness: 0.7, roughness: 0.3 });
+  cyl(g, 0.02, 0.02, 0.35, '#b8c0c9', [0.28, 0.65, 0]); 
+  for (const a of [0, 1.05, 2.1]) cyl(g, 0.012, 0.012, 0.3, '#b8c0c9', [0.28 + Math.cos(a) * 0.1, 0.5, Math.sin(a) * 0.1]);
+  // anime eyes
+  for (const s of [-1, 1]) { ball(g, 0.07, '#fff', [0.44, 1.0, s * 0.18], [0.4, 1, 0.8]); ball(g, 0.04, '#2b1a10', [0.47, 1.0, s * 0.18], [0.3, 1, 0.8]); ball(g, 0.014, '#fff', [0.5, 1.03, s * 0.17]); }
+  cyl(g, 0.06, 0.06, 0.05, '#222', [-0.28, 0.72, 0.17], [Math.PI / 2, 0, 0]);
+  return g;
+}
+/** Skull-and-crossbones flask: POISON. */
+function poison() {
+  const g = new THREE.Group();
+  ball(g, 0.3, '#5fd04a', [0, 0.3, 0], [1, 1, 0.7], { transparent: true, opacity: 0.8 }); cyl(g, 0.1, 0.12, 0.25, '#5fd04a', [0, 0.62, 0]); cyl(g, 0.12, 0.12, 0.08, '#8a5a2e', [0, 0.78, 0]);
+  ball(g, 0.1, '#f4f0e8', [0, 0.36, 0.2], [1, 1, 0.5]); box(g, 0.1, 0.07, 0.05, '#f4f0e8', [0, 0.27, 0.2]);
+  for (const s of [-1, 1]) { ball(g, 0.03, '#111', [s * 0.04, 0.37, 0.235]); box(g, 0.22, 0.03, 0.02, '#f4f0e8', [0, 0.18, 0.22], [0, 0, s * 0.5]); }
+  return g;
+}
+guard(() => {
+  const stage = makeStage({ sky: { cover: 0.5, zenith: '#5aa7e0', horizon: '#e9f6ff' } }), scene = stage.scene;
+  ground(scene, '#efe9df');
+  box(scene, 9, 4, 0.1, '#d2e6f5', [0, 2, -2.2]);
+  box(scene, 7, 0.14, 2.0, '#c98a4b', [0, 0.9, 0]); for (const x of [-3.3, 3.3]) box(scene, 0.15, 0.9, 1.8, '#8a5a2e', [x, 0.45, 0]);
+  const t = new THREE.Group(); t.position.set(0, 0.97, 0); scene.add(t);
+  const m = mixer(); m.position.set(-2.3, 0, 0.0); m.rotation.y = 0.5; m.scale.setScalar(1.45); t.add(m);
+  // gene strip: introns (thin) and exons (boxes), one exon poisoned; test cartridge reads MYB
+  const strip = new THREE.Group(); strip.position.set(0.2, 2.3, -1.4); t.add(strip);
+  box(strip, 4.2, 0.05, 0.05, '#7a7f8c', [0, 0, 0]);
+  [[-1.6, '#4aa3ff'], [-0.7, '#4aa3ff'], [0.9, '#4aa3ff'], [1.7, '#4aa3ff']].forEach(([x, c]) => box(strip, 0.5, 0.4, 0.12, c, [x, 0, 0]));
+  box(strip, 0.5, 0.4, 0.12, '#8a2be2', [0.1, 0, 0]); const p = poison(); p.position.set(0.1, 0.25, 0.05); p.scale.setScalar(0.9); strip.add(p);
+  box(t, 1.5, 0.1, 0.8, '#f4f0e8', [1.4, 0.05, 0.6]); box(t, 1.5, 0.3, 0.8, '#2b6cb0', [1.4, 0.2, 0.6]);
+  label(t, 'MYB', 1.4, 0.65, [1.4, 0.58, 1.01], [-0.0, 0, 0], { fg: '#fff', bg: '#2b6cb0', w: 512, h: 238, font: 'bold 170px Arial' });
+  const h = hero(scene, { scale: num('ps', 1.7), pos: [0.2, 0.97, 0.5], ry: -0.15, pose: { arms: { l: [0, 0.9, 0.2], r: [0, 0.9, 0.2] } } });
+  h.userData.reach('l', [0.55, 0.5, 0.35]); h.userData.reach('r', [-0.55, 0.9, 0.2]);
+  finish(stage, [h], { cam: [0.0, 2.4, 7.0], look: [0, 2.1, 0], clouds: false });
+});
+</script></body></html>

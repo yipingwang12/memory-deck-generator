@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flourish q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — A WAIN wagon (Wayne) rolls from DEEPMIND to the FLOUR mill.
+import { THREE, guard, canvasTexture, rng, createFlour, mat, add, blob, box, cyl, textTexture, setup, wrap } from './base.js';
+import { buildBrain, buildMill, buildBulb, coin, COIN_MAT, goldBar, flag } from './props.js';
+guard(() => {
+  const { stage, scene } = setup({ ground: '#8cc063' });
+  add(scene, new THREE.PlaneGeometry(400, 3.0), mat('#c9a56b'), [0, 0.004, 0.3], [-Math.PI / 2, 0, 0]);
+  // DEEPMIND: deep well pit with a brain glowing at its bottom (left, far)
+  const W = new THREE.Group(); W.position.set(-3.6, 0, -2.0); scene.add(W);
+  add(W, new THREE.TorusGeometry(0.9, 0.22, 14, 36), mat('#8d8478'), [0, 0.2, 0], [Math.PI / 2, 0, 0]);
+  cyl(W, mat('#101a3a'), [0, 0.05, 0], 0.88, 0.2);
+  const wb = buildBrain(); wb.scale.setScalar(0.7); wb.position.set(0, 0.45, 0); W.add(wb);
+  cyl(W, mat('#7a5a3a'), [-1.05, 0.9, 0], 0.05, 1.8); cyl(W, mat('#7a5a3a'), [1.05, 0.9, 0], 0.05, 1.8); box(W, mat('#b4472f'), [0, 1.9, 0], [2.6, 0.12, 1.0], [0, 0, 0]);
+  // mill on the right
+  const mill = buildMill(); mill.position.set(4.0, 0, -2.2); mill.scale.setScalar(1.15); mill.rotation.y = -0.4; scene.add(mill);
+  // wain wagon, loaded with flour sacks, rolling right
+  const wag = new THREE.Group(); wag.position.set(0.2, 0, 0.2); scene.add(wag);
+  const wood = mat('#a8683a'), dk = mat('#6b3f1f');
+  box(wag, wood, [0, 0.62, 0], [2.1, 0.12, 1.0]);
+  for (const z of [-0.5, 0.5]) box(wag, wood, [0, 0.9, z], [2.1, 0.5, 0.08]);
+  for (const x of [-1.05, 1.05]) box(wag, wood, [x, 0.9, 0], [0.08, 0.5, 1.0]);
+  cyl(wag, dk, [0, 0.4, 0], 0.05, 1.5, [Math.PI / 2, 0, 0]);
+  for (const x of [-0.65, 0.65]) for (const z of [-0.62, 0.62]) {
+    const w = new THREE.Group(); w.position.set(x, 0.4, z); wag.add(w);
+    add(w, new THREE.TorusGeometry(0.4, 0.06, 10, 28), dk, [0, 0, 0]);
+    for (let i = 0; i < 4; i++) box(w, dk, [0, 0, 0], [0.8, 0.05, 0.05], [0, 0, i * Math.PI / 4]);
+    blob(w, dk, [0, 0, 0], [0.09, 0.09, 0.09]);
+  }
+  box(wag, dk, [1.9, 0.5, 0], [1.6, 0.06, 0.06]); // shaft
+  const sk = new THREE.Group(); sk.position.set(0.0, 1.1, 0); wag.add(sk);
+  const wb2 = buildBrain(); wb2.scale.setScalar(1.15); wb2.position.set(-0.3, 1.0, 0); wag.add(wb2);
+  for (const [x, z] of [[0.5, 0.2], [0.55, -0.2]]) { const s = createFlour({ scale: 0.6 }); s.visible = false; }
+  const f = createFlour({ scale: 1.6 }); f.position.set(2.7, 0, 0.9); f.rotation.y = -1.2; scene.add(f);
+  f.userData.pose({ lean: 0.2, arms: { l: [0, 0.2, 0.2], r: [0, 0.3, 0.2] }, legs: { l: [0.5, 0], r: [-0.5, 0] } });
+  f.updateMatrixWorld(true);
+  const tgt = f.worldToLocal(new THREE.Vector3(2.0, 0.7, 0.3)); f.userData.reach('l', [tgt.x, tgt.y, tgt.z]);
+  const tg2 = f.worldToLocal(new THREE.Vector3(2.0, 0.7, 0.0)); f.userData.reach('r', [tg2.x, tg2.y, tg2.z]);
+  wrap(stage, [f], { cam: [0.4, 1.8, 6.8], look: [0.4, 1.0, 0] });
+});
+</script></body></html>

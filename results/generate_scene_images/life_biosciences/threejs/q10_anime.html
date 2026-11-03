@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Life Biosciences q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — A second NACHO closes the LIFEBOAT's Series D.
+import { guard } from './kit.js';
+import * as K from './props.js';
+const { THREE, createLifeboat, canvasTexture, rng, mat, add, blob, box, cyl, num, makeStage, finish, water, dock, oar, person, eyeball, nachos, label, cell, rope, syringe, crate } = K;
+guard(() => {
+  const stage = makeStage(), scene = stage.scene; const chars = [];
+
+  water(scene, '#2f93d6');
+  dock(scene, -5, 2.0, -2, 2.5, 0.28);
+  const n = nachos(2.0); n.position.set(-1.9, 0.52, 1.5); scene.add(n);
+  const board = label('D', 1.6, 1.6, { bg: '#ffd23a', fg: '#b01e1e', font: 'bold 420px Arial' }); board.position.set(-0.3, 1.75, 0); scene.add(board);
+  box(scene, mat('#7a5230'), [-0.3, 1.75, -0.07], [1.75, 1.75, 0.1]);
+  cyl(scene, mat('#7a5230'), [-0.3, 0.65, -0.1], 0.07, 1.0);
+  const ch = new THREE.Group(); ch.position.set(1.0, 0.5, 1.2); scene.add(ch);
+  box(ch, mat('#8a5a38'), [0, 0.25, 0], [1.0, 0.5, 0.6]); box(ch, mat('#d4a21e'), [0, 0.25, 0.31], [1.04, 0.08, 0.02]); box(ch, mat('#d4a21e'), [0, 0.35, 0.31], [0.1, 0.12, 0.03]);
+  const lid = new THREE.Group(); lid.position.set(0, 0.5, -0.3); lid.rotation.x = -0.3; ch.add(lid);
+  box(lid, mat('#7a5230'), [0, 0.06, 0.3], [1.04, 0.12, 0.64]);
+  for (let i = 0; i < 9; i++) cyl(ch, mat('#ffd23a', { metalness: 0.6, roughness: 0.3 }), [-0.35 + (i % 5) * 0.17, 0.52 + (i > 4 ? 0.04 : 0), -0.1 + (i > 4 ? 0.12 : 0)], 0.07, 0.03, [1.2, 0, 0]);
+  const boat = createLifeboat({ scale: 1.5, flag: 'ER-100' }); boat.position.set(2.5, 0, 1.4); scene.add(boat); chars.push(boat);
+  boat.userData.aim('r', [-0.9, 0.95, 0.4]);
+  finish(stage, [0.3, 1.8, 7.2], [0.4, 1.2, 0], chars);
+});
+</script></body></html>

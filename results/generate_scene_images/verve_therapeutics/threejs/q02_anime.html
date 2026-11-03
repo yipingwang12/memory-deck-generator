@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Verve scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import * as PR from "./props.js";
+const { THREE, run, add, mat, blob, bevBox, label, makeStage, createBallerina, lollipop, nail, die, coin, mouse, gene, syringe, hammer, coinStack, canvasTexture } = PR;
+run(() => {
+const { scene, done, num } = makeStage();
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#ffd9a8'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#9ed8a0'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+add(scene, new THREE.BoxGeometry(0.16, 2.0, 0.12), mat('#a8683a'), [1.55, 1.0, -0.1]);
+scene.add(PR.textPanel('SOLD', 1.8, 1.1, '#d7263d', '#ffffff', [0.7, 1.6, 0]));
+const n = nail(0.55); n.rotation.x = Math.PI / 2; n.position.set(0.05, 1.12, 0.05); n.scale.setScalar(1.8); scene.add(n);
+const h = hammer(1.3); h.position.set(-0.55, 0.7, 0.75); h.rotation.set(0, 0, -0.5); scene.add(h);
+const b = createBallerina({ scale: 1.7 }); b.position.set(-1.1, 0, 0.9); b.rotation.y = 0.9; scene.add(b);
+b.userData.pose({ lean: 0.05, legs: { l: [-0.2, 0.1], r: [0.5, 0] } });
+b.updateMatrixWorld(true);
+h.updateMatrixWorld(true);
+const hp = (y) => { const w = h.localToWorld(new THREE.Vector3(0, y, 0)); const l = b.worldToLocal(w); return [l.x, l.y, l.z]; };
+b.userData.reach('l', hp(0.0)); b.userData.reach('r', hp(0.12));
+done([0.2, 1.4, 4.8], [0.0, 1.3, 0], [b]);
+});
+</script></body></html>

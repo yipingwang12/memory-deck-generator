@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flourish q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — Inside the FLOUR mill, a CORTEX AI thinks like a brain.
+import { THREE, guard, canvasTexture, rng, createFlour, mat, add, blob, box, cyl, textTexture, setup, wrap } from './base.js';
+import { buildBrain, buildMill, buildBulb, coin, COIN_MAT, goldBar, flag } from './props.js';
+guard(() => {
+  const { stage, scene } = setup({ ground: '#caa879', sky: {} });
+  // mill interior: plank back wall + floor, stone wheel, beams, window with sky
+  box(scene, mat('#9a6a3e'), [0, 2.2, -2.6], [14, 5, 0.2]);
+  for (let i = -6; i <= 6; i++) box(scene, mat('#85572f'), [i * 1.0, 2.2, -2.48], [0.04, 5, 0.04]);
+  box(scene, mat('#5e3b1d'), [0, 4.4, -2.3], [14, 0.3, 0.5]);
+  for (const x of [-5, -2.2, 2.2, 5]) box(scene, mat('#5e3b1d'), [x, 2.2, -2.3], [0.3, 5, 0.5]);
+  box(scene, mat('#9ed4f5', { emissive: '#9ed4f5', emissiveIntensity: 0.5 }), [-3.4, 2.6, -2.45], [1.6, 1.4, 0.05]);
+  for (const s of [0, 1]) box(scene, mat('#5e3b1d'), [-3.4, 2.6, -2.4], s ? [1.7, 0.08, 0.08] : [0.08, 1.5, 0.08]);
+  // millstone pedestal
+  cyl(scene, mat('#9aa0a8'), [0, 0.35, -0.4], 1.2, 0.7); cyl(scene, mat('#b3b9c1'), [0, 0.74, -0.4], 1.1, 0.12);
+  // big brain on it, with glowing neural nodes
+  const b = buildBrain(); b.scale.setScalar(1.6); b.position.set(0, 1.55, -0.4); scene.add(b);
+  const nodes = [[-0.5, 0.35, 0.6], [0.5, 0.4, 0.55], [0.0, 0.62, 0.15], [-0.25, 0.1, 0.75], [0.3, 0.05, 0.78]];
+  const gm = mat('#7de3ff', { emissive: '#35c8ff', emissiveIntensity: 1.2 });
+  b.rotation.y = -1.25;
+  nodes.forEach(([x, y, z]) => { const n = blob(b, gm, [x * 0.9, y * 0.5 + 0.12, z * 0.45], [0.045, 0.045, 0.045]); });
+  const cyn = mat('#35c8ff', { emissive: '#35c8ff', emissiveIntensity: 0.9 });
+  [[0, 1], [1, 2], [2, 0], [0, 3], [1, 4], [3, 4]].forEach(([i, j]) => {
+    const a = new THREE.Vector3(nodes[i][0] * 0.9, nodes[i][1] * 0.5 + 0.12, nodes[i][2] * 0.45), c = new THREE.Vector3(nodes[j][0] * 0.9, nodes[j][1] * 0.5 + 0.12, nodes[j][2] * 0.45);
+    const m = add(b, new THREE.CylinderGeometry(0.012, 0.012, a.distanceTo(c), 6), cyn, a.clone().lerp(c, 0.5).toArray());
+    m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), c.clone().sub(a).normalize());
+  });
+  // AI chip-badge on a stand label: "AI" large
+  const chip = new THREE.Group(); chip.position.set(2.2, 1.0, 0.3); chip.rotation.y = -0.4; scene.add(chip);
+  box(chip, mat('#1f2a44'), [0, 0, 0], [0.9, 0.9, 0.12]);
+  for (let i = 0; i < 4; i++) for (const s of [-1, 1]) { box(chip, mat('#c0c8d6', { metalness: 0.7 }), [s * 0.55, -0.33 + i * 0.22, 0], [0.18, 0.06, 0.05]); box(chip, mat('#c0c8d6', { metalness: 0.7 }), [-0.33 + i * 0.22, s * 0.55, 0], [0.06, 0.18, 0.05]); }
+  add(chip, new THREE.PlaneGeometry(0.7, 0.7), new THREE.MeshBasicMaterial({ map: textTexture('AI', { w: 256, h: 256, bg: '#1f2a44', fg: '#7de3ff', font: 'bold 170px sans-serif' }) }), [0, 0, 0.07]);
+  const f = createFlour({ scale: 1.5 }); f.position.set(-1.7, 0, 1.0); f.rotation.y = 0.45; scene.add(f);
+  f.userData.pose({ tilt: 0.04, arms: { l: [0, 0.6, 0], r: [0, 0.4, 0] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+  f.updateMatrixWorld(true);
+  const tg = f.worldToLocal(new THREE.Vector3(-0.8, 1.9, 0.3)); f.userData.reach('r', [tg.x, tg.y, tg.z]);
+  wrap(stage, [f], { cam: [0.3, 1.9, 6.4], look: [0.0, 1.6, 0], clouds: false });
+});
+</script></body></html>

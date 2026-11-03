@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — A famous TERMITE plants a flag on the SANDWORM
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.3, wx: 0 });
+  const box = new THREE.Box3().setFromObject(c.worm.userData.parts.head), top = box.max.y, cx = (box.min.x + box.max.x) / 2, cz = (box.min.z + box.max.z) / 2;
+  const t = termite(); t.scale.setScalar(1.3); t.position.set(cx - 0.65, top + 0.02, cz + 0.4); t.rotation.y = 0.35; c.scene.add(t); c.char(t);
+  const f = flag('#e8344a'); f.scale.setScalar(1.5); f.position.set(cx + 0.28, top - 0.02, cz + 0.3); c.scene.add(f); c.char(f);
+  const sk = mat('#f4dcaa');
+  limb(c.scene, [cx - 0.3, top + 0.7, cz + 0.55], [cx + 0.28, top + 0.9, cz + 0.3], 0.022, mat('#e8a860'));
+  limb(c.scene, [cx - 0.3, top + 0.62, cz + 0.55], [cx + 0.28, top + 0.6, cz + 0.3], 0.022, mat('#e8a860'));
+  c.done([0.1, 2.7, 5.6], [0.0, 2.3, 0]);
+});
+</script></body></html>

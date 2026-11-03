@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarepta scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createSerape, mat, add, box, blob, cyl, num, makeStage, finishScene, ground, textPlane, helix, elevator } from './common.js';
+// q06 — The SERAPE turns to siRNA, small strands that silence genes.
+guard(() => {
+  const stage = makeStage({ sunAzimuth: 150 }), scene = stage.scene; ground(scene, '#78b84e');
+  const s = createSerape({ scale: 1.7 }); s.position.set(-1.0, 0, 0.8); s.rotation.y = 0.15; scene.add(s);
+  s.userData.reach('l', [0.4, 1.05, 0.3]);
+  const si = helix(0.8, 0.1, '#ff9f2f', '#ffdf3a', 2, 0.018); si.position.set(-0.25, 2.0, 1.15); si.rotation.z = 0.3; scene.add(si);
+  // target gene: tall helix with speaker silenced
+  const gene = helix(3.0, 0.3, '#2fa7ff', '#ff4f9a', 3, 0.06); gene.position.set(2.2, 1.7, -0.3); scene.add(gene);
+  const sp = new THREE.Group(); sp.position.set(2.2, 2.7, 0.55); scene.add(sp);
+  const gray = mat('#444b55');
+  box(sp, gray, [0.55, 0.55, 0.4], [-0.3, 0, 0]);
+  add(sp, new THREE.ConeGeometry(0.5, 0.6, 24, 1, true), mat('#6d7681'), [0.15, 0, 0], [0, 0, -Math.PI / 2]).material.side = THREE.DoubleSide;
+  for (let i = 0; i < 3; i++) add(sp, new THREE.TorusGeometry(0.32 + i * 0.16, 0.025, 8, 24, 1.1), mat('#9aa3ad'), [0.55, 0, 0], [0, 0, -0.55]);
+  const ring = add(sp, new THREE.TorusGeometry(0.62, 0.07, 12, 40), new THREE.MeshBasicMaterial({ color: '#e32424' }), [0.05, 0, 0.4]);
+  add(sp, new THREE.BoxGeometry(1.2, 0.13, 0.08), new THREE.MeshBasicMaterial({ color: '#e32424' }), [0.05, 0, 0.4], [0, 0, 0.78]);
+  finishScene(stage, s, [num('cx', 0.6), num('cy', 1.9), num('cz', 7.4)], [num('tx', 0.6), num('ty', 1.8), 0]);
+});
+</script></body></html>

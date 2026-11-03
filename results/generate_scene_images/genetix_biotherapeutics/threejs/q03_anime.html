@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — a NAIL pins the old TICKET back up.
+import { THREE, guard, mat, add, blob, cyl, rbox, setup } from './common.js';
+
+guard(() => {
+  const S = setup({ ground: '#b98a58', clouds: false });
+  const { scene, num } = S;
+  // plank wall
+  const tones = ['#c98d4e', '#b97c40', '#d49a5a', '#c28548'];
+  for (let i = 0; i < 30; i++) rbox(scene, 0.5, 6, 0.1, mat(tones[i % 4]), [-7.5 + i * 0.5, 3, -0.25], [0, 0, 0], 0.01);
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#a67444'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  const s = 2.2, t = S.ticket(0, 0, 0, s, { arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] }, legs: { l: [0, 0.05], r: [0, -0.05] } });
+  t.position.set(0, 0.55, -0.1);
+  // big nail through the top
+  const nailY = 0.55 + 0.9 * s, nx = 0.15;
+  const steel = mat('#9aa3ad', { metalness: 0.7, roughness: 0.3 });
+  const ng = new THREE.Group(); ng.position.set(nx, nailY, 0.05); ng.rotation.set(0.25, -1.0, 0); scene.add(ng);
+  cyl(ng, 0.27, 0.27, 0.08, mat('#c4ccd6', { metalness: 0.5, roughness: 0.3 }), [0, 0, 0.56], [Math.PI / 2, 0, 0]);
+  cyl(ng, 0.07, 0.07, 0.6, steel, [0, 0, 0.28], [Math.PI / 2, 0, 0]);
+  add(ng, new THREE.TorusGeometry(0.17, 0.02, 8, 24, 2.0), mat('#ffffff', { roughness: 0.2 }), [0, 0, 0.61], [0, 0, 0.7]);
+  // hammer on the floor
+  const hm = new THREE.Group(); hm.position.set(-1.9, 0.0, 1.0); hm.rotation.y = 0.5; scene.add(hm);
+  cyl(hm, 0.045, 0.05, 1.0, mat('#d9a35c'), [0.0, 0.05, 0], [0, 0, Math.PI / 2]);
+  rbox(hm, 0.28, 0.24, 0.2, steel, [-0.55, 0.12, 0], [0, 0, 0], 0.03);
+  // spare nails on the floor
+  [[1.8, 0.9, 0.3], [2.1, 1.1, -0.3], [1.55, 1.3, 0.6]].forEach(([x, z, r]) => { const n = new THREE.Group(); n.position.set(x, 0.03, z); n.rotation.y = r; scene.add(n);
+    cyl(n, 0.012, 0.012, 0.5, steel, [0, 0, 0], [0, 0, Math.PI / 2]); cyl(n, 0.045, 0.045, 0.012, steel, [-0.25, 0, 0], [0, 0, Math.PI / 2]); });
+  S.finish([num('cx', 0.6), num('cy', 2.3), num('cz', 5.6)], [0, 1.95, 0]);
+});
+</script></body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarepta scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createSerape, mat, add, box, blob, cyl, num, makeStage, finishScene, ground, textPlane, helix, elevator } from './common.js';
+// q01 — Under the SERAPE, a child's muscles waste away: Duchenne muscular dystrophy.
+guard(() => {
+  const stage = makeStage({ sunAzimuth: 200 }), scene = stage.scene;
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#e8c9a0'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(40, 20), mat('#c7e2f0'), [0, 5, -3.2]);
+  const wood = mat('#a8703c'), sheet = mat('#f4f1ea'), skin = '#ffd9b3';
+  // bed
+  box(scene, wood, [3.2, 0.3, 1.5], [0, 0.55, 0]); box(scene, sheet, [3.0, 0.2, 1.35], [0, 0.78, 0]);
+  box(scene, wood, [0.15, 1.4, 1.6], [-1.65, 0.9, 0]); box(scene, wood, [0.15, 0.9, 1.6], [1.65, 0.7, 0]);
+  for (const x of [-1.5, 1.5]) for (const z of [-0.7, 0.7]) box(scene, wood, [0.15, 0.4, 0.15], [x, 0.2, z]);
+  blob(scene, mat('#ffffff'), [-1.2, 1.0, 0], [0.5, 0.15, 0.4]);                        // pillow
+  // child head + feet
+  blob(scene, mat(skin), [-1.25, 1.2, 0.0], [0.26, 0.24, 0.24]);
+  blob(scene, mat('#5a3a22'), [-1.22, 1.3, -0.04], [0.27, 0.2, 0.25]);
+  for (const sx of [-1, 1]) { blob(scene, mat('#1a1210'), [-1.08, 1.22, sx * 0.1], [0.03, 0.045, 0.02]); }
+    // thin arms outside blanket
+  for (const z of [-0.5, 0.5]) { cyl(scene, mat(skin), 0.03, 0.03, 0.6, [-0.7, 0.93, z * 1.1], [0, 0, Math.PI / 2]); }
+  // serape lying on top, face up
+  const s = createSerape({ scale: 2.0 }); s.rotation.set(-Math.PI / 2, 0, 0); const piv = new THREE.Group(); piv.add(s); piv.rotation.y = Math.PI / 2; piv.position.set(1.2, 0.92, 0); scene.add(piv);
+  // wasted dumbbell: bent bar, sagging plates
+  const iron = mat('#5b636e', { metalness: 0.6, roughness: 0.4 });
+  const bar = new THREE.Group(); scene.add(bar); bar.position.set(2.6, 0.12, 1.2); bar.rotation.y = 0.5;
+  const curve = new THREE.CatmullRomCurve3([new THREE.Vector3(-0.7, 0.15, 0), new THREE.Vector3(-0.3, 0.0, 0), new THREE.Vector3(0.3, 0.0, 0), new THREE.Vector3(0.7, 0.15, 0)]);
+  add(bar, new THREE.TubeGeometry(curve, 24, 0.04, 8), iron);
+  for (const x of [-0.75, 0.75]) cyl(bar, iron, 0.2, 0.2, 0.12, [x, 0.22, 0], [0, 0, Math.PI / 2]).rotation.z = Math.PI / 2;
+  // drooping flexed-arm balloon: deflated
+  const bal = new THREE.Group(); scene.add(bal); bal.position.set(-2.7, 0.2, 1.2);
+  blob(bal, mat('#e86a5a', { roughness: 0.4 }), [0, 0.12, 0], [0.45, 0.12, 0.3]); blob(bal, mat('#e86a5a'), [0.5, 0.08, 0], [0.3, 0.07, 0.2]);
+  finishScene(stage, s, [num('cx', 0.4), num('cy', 3.2), num('cz', 3.0)], [num('tx', -0.2), num('ty', 0.8), 0], false);
+});
+</script></body></html>

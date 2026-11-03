@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — LIFE-GENIE straightens sickle cells for the TICKET.
+import { THREE, guard, mat, add, blob, cyl, setup, reachTo } from './common.js';
+
+function genie() {
+  const g = new THREE.Group(), blue = mat('#4aa8ff', { roughness: 0.4 }), skin = blue;
+  const gold = mat('#ffc928', { metalness: 0.6, roughness: 0.3 });
+  blob(g, gold, [0, 0.12, 0], [0.4, 0.14, 0.26]); add(g, new THREE.ConeGeometry(0.06, 0.3, 12), gold, [0.38, 0.28, 0], [0, 0, -0.9]);
+  for (let i = 0; i < 6; i++) blob(g, blue, [Math.sin(i * 0.9) * 0.08, 0.5 + i * 0.22, 0], [0.2 - i * 0.015, 0.22, 0.2 - i * 0.015]);
+  blob(g, blue, [0, 1.95, 0], [0.4, 0.5, 0.3]);
+  add(g, new THREE.TorusGeometry(0.4, 0.11, 14, 32), mat('#e83a3a'), [0, 1.65, 0], [Math.PI / 2, 0, 0], [1, 0.8, 1]);
+  for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + 0.4; add(g, new THREE.BoxGeometry(0.2, 0.13, 0.13), mat('#fff'), [0.4 * Math.cos(a), 1.65, 0.32 * Math.sin(a)], [0, -a, 0]); }
+  const head = new THREE.Group(); head.position.set(0, 2.6, 0); g.add(head);
+  blob(head, skin, [0, 0, 0], [0.3, 0.32, 0.28]);
+  add(head, new THREE.SphereGeometry(0.34, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2), mat('#8a3ad8'), [0, 0.12, 0], [0, 0, 0], [1, 1.1, 1]);
+  blob(head, gold, [0, 0.44, 0.1], [0.07, 0.07, 0.07]);
+  for (const k of [-1, 1]) {
+    for (const [rx, ry, c, dz] of [[0.09, 0.11, '#fff', 0], [0.065, 0.095, '#3a2416', 0.003], [0.035, 0.055, '#0b0504', 0.006]]) {
+      const m = new THREE.Mesh(new THREE.CircleGeometry(1, 28), new THREE.MeshStandardMaterial({ color: c, roughness: 0.4 })); m.scale.set(rx, ry, 1); m.position.set(k * 0.12, 0.0, 0.27 + dz); head.add(m); }
+    const hl = new THREE.Mesh(new THREE.CircleGeometry(0.022, 14), new THREE.MeshBasicMaterial({ color: '#fff' })); hl.position.set(k * 0.12 - 0.025, 0.04, 0.285); head.add(hl);
+  }
+  const mo = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.012, 8, 16, Math.PI), mat('#1a3a7a')); mo.rotation.z = Math.PI; mo.position.set(0, -0.15, 0.28); head.add(mo);
+  const arm = (k) => { const a = new THREE.Group(); a.position.set(k * 0.42, 2.2, 0); g.add(a); cyl(a, 0.09, 0.08, 0.6, blue, [0, -0.3, 0]); blob(a, blue, [0, -0.62, 0], [0.1, 0.1, 0.1]); return a; };
+  g.userData = { armL: arm(1), armR: arm(-1) };
+  return g;
+}
+function crescent(x, y, z) { const g = new THREE.Group(); g.position.set(x, y, z); add(g, new THREE.TorusGeometry(0.22, 0.07, 12, 28, Math.PI * 1.15), mat('#a81a2c'), [0, 0, 0], [0, 0, 0.6]); return g; }
+function cell(x, y, z) { const g = new THREE.Group(); g.position.set(x, y, z); add(g, new THREE.TorusGeometry(0.17, 0.085, 14, 32), mat('#e8283c')); cyl(g, 0.15, 0.15, 0.07, mat('#cc2034'), [0, 0, 0], [Math.PI / 2, 0, 0]); return g; }
+guard(() => {
+  const S = setup({ ground: '#bfa8e8' });
+  const { scene, num } = S;
+  const t = S.ticket(-0.6, 0.4, 0.2, 1.5, { arms: { l: [0, 0.6, 0], r: [0, 0.6, 0] }, headTilt: 0.04 });
+  const g = genie(); g.position.set(2.0, 0, -0.2); g.rotation.y = -0.45; S.char(g);
+  g.userData.armL.rotation.set(0, 0, 1.9); g.userData.armR.rotation.set(0.3, 0, -0.5);
+  [[-1.5, 2.85, 0.4], [-0.95, 3.0, 0.4]].forEach((p) => scene.add(crescent(...p)));
+  [[0.4, 3.05, 0.3], [0.95, 2.9, 0.3]].forEach((p) => scene.add(cell(...p)));
+  const star = mat('#fff3a0');
+  for (let i = 0; i < 7; i++) blob(scene, star, [-0.5 + i * 0.1 + 0.0, 2.95 + Math.sin(i) * 0.12, 0.35], [0.035, 0.035, 0.035]);
+  S.finish([num('cx', 0.3), num('cy', 1.7), num('cz', 6.8)], [0.3, 1.6, 0]);
+});
+</script></body></html>

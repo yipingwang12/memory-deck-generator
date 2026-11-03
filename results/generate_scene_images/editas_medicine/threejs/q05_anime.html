@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Editas q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — "The PENCIL's lead runner wears number EDIT-401."
+import * as THREE from 'three';
+import { guard, canvasTexture } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createPencil } from './pencil.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 160), exposure: num('exp', 1),
+    sky: { cover: 1.2, seed: 5, towerTop: 0.4, puffCover: 1.2 },
+    sunIntensity: num('sun', 2.6), ambient: { color: '#e8e2ff', intensity: 2.2 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    fog: { near: 60, far: 600 },
+  });
+  const scene = stage.scene;
+  const mat = (c, o = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.85, ...o });
+  const add = (geo, m, x, y, z) => { const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); o.receiveShadow = true; scene.add(o); return o; };
+
+  // Track: grass base, red-brown running surface, white lane lines.
+  add(new THREE.PlaneGeometry(200, 200).rotateX(-Math.PI / 2), mat('#5fae4a'), 0, -0.01, 0);
+  const trackTex = canvasTexture(512, (c, s) => {
+    c.fillStyle = '#d2603f'; c.fillRect(0, 0, s, s);
+    for (let i = 0; i < 4000; i++) { c.fillStyle = `rgba(${150 + Math.random() * 60},70,45,0.25)`; c.fillRect(Math.random() * s, Math.random() * s, 2, 2); }
+  }, { repeat: 6 });
+  add(new THREE.PlaneGeometry(200, 7).rotateX(-Math.PI / 2), mat('#ffffff', { map: trackTex }), 0, 0, -0.5);
+  for (const z of [-4, -2.7, -1.4, -0.1, 1.2, 2.5]) add(new THREE.BoxGeometry(200, 0.004, 0.05), mat('#ffffff'), 0, 0.002, z);
+
+  // Finish tape poles far ahead
+  const finish = new THREE.Group();
+  for (const z of [-3.9, 2.9]) { const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.4, 12), mat('#eeeeee')); pole.position.set(0, 0.7, z); finish.add(pole); }
+  scene.add(finish); finish.position.x = 9;
+  const banner = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.12, 6.8), mat('#ffd23a')); banner.position.set(9, 1.35, -0.5); scene.add(banner);
+
+  // Lead runner: graphite-grey pencil in front, white bib.
+  const lead = createPencil({ scale: 1.8, bodyColor: '#6d717c' });
+  lead.position.set(num('lx', 0.9), 0.42, num('lz', 0.9));
+  lead.rotation.y = num('lyaw', 0.85);
+  lead.userData.pose({ lean: 0.18, headTilt: 0.05,
+    arms: { l: [-1.0, 0.1, -1.3], r: [1.0, -0.1, -1.3] }, legs: { l: [-0.85, 0], r: [0.7, 0] } });
+  scene.add(lead);
+  const bibTex = canvasTexture(512, (c, s) => {
+    c.fillStyle = '#ffffff'; c.fillRect(0, 0, s, s * 0.5);
+    c.strokeStyle = '#d02828'; c.lineWidth = 12; c.strokeRect(10, 10, s - 20, s * 0.5 - 20);
+    c.fillStyle = '#111'; c.font = '900 118px Arial Black, Arial, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.fillText('EDIT-401', s / 2, s * 0.25, s - 40);
+  });
+  bibTex.repeat.set(1, 1);
+  const bibGeo = new THREE.PlaneGeometry(0.40, 0.2);
+  bibGeo.attributes.uv.array.forEach((v, i, a) => { if (i % 2) a[i] = v * 0.5 + 0.5; });
+  const bib = new THREE.Mesh(bibGeo, new THREE.MeshStandardMaterial({ map: bibTex, roughness: 0.9, side: THREE.DoubleSide }));
+  bib.position.set(0, 0.49, 0.131); bib.rotation.x = -0.02; bib.castShadow = true;
+  lead.userData.parts.body.parent.add(bib);
+
+  // Main yellow PENCIL chasing behind, cheering.
+  const hero = createPencil({ scale: 1.5 });
+  hero.position.set(num('hx', -1.2), 0.35, num('hz', 0.3));
+  hero.rotation.y = num('hyaw', 0.6);
+  hero.userData.pose({ lean: 0.12, headTilt: -0.08,
+    arms: { l: [0, 2.6, -0.2], r: [0, -2.6, -0.2] }, legs: { l: [0.7, 0], r: [-0.8, 0] } });
+  scene.add(hero);
+
+  const keep = new Set(); [lead, hero].forEach((g) => g.traverse((o) => keep.add(o)));
+  stage.toonify(scene, (m) => keep.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [187, 1000, 120, 1.6], [232, 1250, 230, 2.4]]);
+
+  stage.camera.position.set(num('cx', 0.2), num('cy', 0.9), num('cz', 5.2));
+  stage.camera.lookAt(num('tx', -0.1), num('ty', 1.0), num('tz', 0.5));
+  stage.finish();
+});
+</script></body></html>

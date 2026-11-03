@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — The LAMPLIGHTER owns the street of short reads: short-read sequencing.
+import { THREE, mat, add, blob, num, makeStage, clouds, ground, lampPost, polePlaced, handWorld, toon, rng } from './common.js';
+import { guard } from './kit.js';
+import { createLamplighter } from './lamplighter.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 42, az: 140 }); const scene = stage.scene;
+  ground(scene, '#78b24a');
+  add(scene, new THREE.PlaneGeometry(4.2, 400), mat('#b9a98f'), [0, 0.003, -150], [-Math.PI / 2, 0, 0]);
+  // road paved with short colored reads (A/T/G/C capsules)
+  const cols = ['#e8433a', '#3a8ee8', '#2fb860', '#f2c12e'], r = rng(11);
+  const cap = new THREE.CapsuleGeometry(0.055, 0.2, 4, 10);
+  for (let row = 0; row < 36; row++) for (let i = 0; i < 9; i++) {
+    const m = new THREE.Mesh(cap, mat(cols[Math.floor(r() * 4)], { roughness: 0.5 }));
+    m.rotation.z = Math.PI / 2; m.position.set(-1.85 + i * 0.46 + (row % 2) * 0.23 + (r() - 0.5) * 0.04, 0.055, 2.6 - row * 0.2);
+    m.castShadow = m.receiveShadow = true; scene.add(m);
+  }
+  // row of lit lamps both sides
+  const lamps = [];
+  for (let i = 0; i < 9; i++) for (const s of [-1, 1]) { const l = lampPost(2.0); l.position.set(s * 2.45, 0, 0.5 - i * 3.2); scene.add(l); lamps.push(l); }
+  for (const x of [-4.5, 4.8, -6.2]) for (let i = 0; i < 4; i++) { // roadside flowers / bushes
+    blob(scene, mat('#4f9a3a'), [x + i * 0.4, 0.25, 1.5 - i * 5], [0.5, 0.35, 0.5]);
+  }
+  const ll = createLamplighter({ scale: 1.55 }); ll.position.set(-0.3, 0, 1.4); ll.rotation.y = 0.35; scene.add(ll);
+  ll.userData.pose({ headTilt: 0.06, headYaw: -0.3, headPitch: -0.08, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+  ll.userData.reach('r', [-0.3, 1.02, 0.1]); ll.userData.reach('l', [0.3, 0.45, 0.1]);
+  const hw = handWorld(ll, 'r'); polePlaced(scene, hw, [-2.45, 2.12, 0.5], 0.45);
+  toon(stage, scene, [ll]);
+  clouds(stage);
+  stage.camera.position.set(num(P, 'cx', 0.5), num(P, 'cy', 1.35), num(P, 'cz', 5.6)); stage.camera.lookAt(num(P, 'tx', -0.4), num(P, 'ty', 1.35), 0);
+  stage.finish();
+});
+</script></body></html>

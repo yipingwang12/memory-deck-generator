@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ ground: '#e9f0f9', summit: { scale: 2.0, pos: [-1.4, 0.45, 0.4], ry: 0.4 } }); const { scene, s, num } = B;
+// stage + curtain + banner
+add(scene, new THREE.BoxGeometry(7, 0.45, 2.8), mat('#7a4b2a'), [0, 0.225, -0.1]);
+add(scene, new THREE.BoxGeometry(7.4, 3.6, 0.15), mat('#b3202e'), [0, 2.25, -1.55]);
+for (let i = -3; i <= 3; i++) add(scene, new THREE.CylinderGeometry(0.16, 0.16, 3.5, 12), mat('#8f1823'), [i * 0.55 + 0.1, 2.25, -1.45]);
+sign(scene, 'AGBT', 3.6, 1.1, [0.9, 3.0, -1.35], { bg: '#fff6d6', fg: '#173a7a', border: '#173a7a', font: 'bold 330px Arial Black, Arial' });
+// UG200 instrument on pedestal
+const inst = new THREE.Group(); inst.position.set(1.4, 0.45, 0.3); scene.add(inst);
+add(inst, new THREE.CylinderGeometry(0.5, 0.58, 0.55, 28), mat('#2a3550'), [0, 0.27, 0]);
+add(inst, new THREE.BoxGeometry(1.6, 1.15, 0.9), mat('#f2f5fa', { roughness: .4 }), [0, 1.1, 0]);
+add(inst, new THREE.BoxGeometry(1.62, 0.12, 0.92), mat('#2f6df0', { emissive: '#2f6df0', emissiveIntensity: .5 }), [0, 1.62, 0]);
+sign(inst, 'UG200', 1.4, 0.5, [0, 1.12, 0.46], { bg: '#173a7a', fg: '#ffffff', font: 'bold 230px Arial Black, Arial' });
+s.userData.pose({ arms: { r: [0, -0.7, 0] } }); reachW(s, 'l', [0.15, 1.7, 1.0]);
+// spotlights + snowflakes
+for (const x of [-2, 2]) add(scene, new THREE.ConeGeometry(0.2, 0.4, 14), mat('#333'), [x, 4.2, -0.8], [0.4, 0, 0]);
+for (let i = 0; i < 60; i++) blob(scene, new THREE.MeshBasicMaterial({ color: '#fff' }), [(Math.sin(i * 12.9) * 4.5), 0.4 + (i * 0.37) % 4.2, 2 + Math.cos(i * 7.3) * 2], [0.04, 0.04, 0.04]);
+cam(B.stage, num, [0, 1.9, 7.4], [0, 1.7, 0]); B.finish();
+
+});
+</script></body></html>

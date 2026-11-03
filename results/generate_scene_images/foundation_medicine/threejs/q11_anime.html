@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// NACHO marks the deadline: SAGA joins CORNERSTONE by third quarter
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:'#7fb34e'});
+
+const c = stone({ scale: 1.6 }); c.position.set(0.3, 0, 0.5); c.rotation.y = -0.1;
+c.userData.pose({ arms: { l: [-1.2, 0.35, -0.6], r: [-0.4, 0.2, -0.3] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+const bk = L.book({ text: 'SAGA', w: 0.8, h: 1.05, t: 0.18 }); bk.position.set(1.3, 1.65, 0.95); bk.rotation.set(0.1, -0.3, 0.2); scene.add(bk);
+const cal = new THREE.Group(); cal.position.set(-2.8, 0, -0.2); scene.add(cal);
+for (const x of [-0.8, 0.8]) cyl(cal, mat('#7a4e2c'), 0.05, 2.4, [x, 1.2, -0.2], [0, 0, x * 0.08]);
+box(cal, '#fbfbf5', [2.0, 1.7, 0.08], [0, 1.9, 0]); box(cal, '#d8243a', [2.0, 0.4, 0.1], [0, 2.55, 0.01]);
+const q3 = L.textSprite('Q3', { w: 1.5, h: 1.1, bg: '#fbfbf5', fg: '#1a3a7a', font: 'bold 260px sans-serif' }); q3.position.set(0, 1.75, 0.05); cal.add(q3);
+const pole = cyl(scene, mat('#7a4e2c'), 0.05, 4.2, [3.0, 2.1, -0.5]); const n = L.nacho(2.2); n.position.set(3.0, 3.6, -0.4); n.rotation.z = 0.15; scene.add(n);
+finish([0, 2.3, 6.6], [0.1, 2.0, 0]);
+});
+</script></body></html>

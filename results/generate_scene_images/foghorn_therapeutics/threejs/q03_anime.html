@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 SMART CAR-2: foghorn aims at a tiny smart car with a big 2.
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 30, az: 140 }); const scene = stage.scene;
+  ground(scene, '#9aa3ad');
+  add(scene, new THREE.PlaneGeometry(400, 3.2), mat('#4a5058'), [0, 0.004, 0.6], [-Math.PI / 2, 0, 0]);
+  const f = placeFoghorn(scene, { x: -2.7, z: 0.6, scale: 2.2 }); aimAt(f, [1.5, 0.7, 0.4]);
+  const car = new THREE.Group(); car.position.set(1.1, 0, 0.5); car.rotation.y = -0.15; scene.add(car);
+  blob(car, mat('#ffcf1f', { roughness: 0.35 }), [0, 0.42, 0], [0.62, 0.3, 0.36]);
+  blob(car, mat('#d7dde3', { roughness: 0.3 }), [0, 0.7, 0], [0.4, 0.25, 0.31]);
+  blob(car, mat('#8fd3ff', { roughness: 0.15 }), [0, 0.74, 0.01], [0.4, 0.17, 0.325]);
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+    add(car, new THREE.CylinderGeometry(0.15, 0.15, 0.12, 24), mat('#22262b'), [sx * 0.37, 0.15, sz * 0.31], [Math.PI / 2, 0, 0]);
+    add(car, new THREE.CylinderGeometry(0.08, 0.08, 0.13, 20), mat('#cfd6dc', { metalness: 0.5 }), [sx * 0.37, 0.15, sz * 0.31], [Math.PI / 2, 0, 0]);
+    blob(car, mat('#fff7c0', { emissive: '#ffe680' }), [sx * 0.6, 0.45, sz * 0.19], [0.05, 0.06, 0.07]);
+  }
+  textPlane(car, '2', { w: 0.42, h: 0.42, bg: '#1d2a6b', fg: '#ffffff', pos: [0.03, 0.43, 0.372], px: 600 });
+  textPlane(car, '2', { w: 0.42, h: 0.42, bg: '#1d2a6b', fg: '#ffffff', pos: [0.03, 0.43, -0.372], rot: [0, Math.PI, 0], px: 600 });
+  soundWaves(scene, f, { n: 4 });
+  finishScene(stage, f, { cam: [-0.8, 1.2, 5.2], look: [-0.8, 0.8, 0.3] });
+
+});
+</script></body></html>

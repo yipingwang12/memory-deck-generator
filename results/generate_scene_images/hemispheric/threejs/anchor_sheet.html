@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Globe anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createGlobe } from './globe.js';
+guard(() => {
+  const stage = createAnimeStage({
+    sunElevation: 35, sunAzimuth: 150, sky: { cover: 2, seed: 5, towerTop: 0.5, puffCover: 2 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.5, fog: { near: 120, far: 1500 },
+  });
+  const scene = stage.scene;
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.MeshStandardMaterial({ color: '#6fae45', roughness: 0.9 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const views = [[-0.9, 0.55, 0.2, [0.3, 0.2, 0]], [0, 0, 0, [0.5, 0.15, 0]], [0.9, -0.5, 0.2, [0, 0.3, 0]]];
+  const pm = new Set();
+  views.forEach(([x, ry, , arms], i) => {
+    const g = createGlobe({ scale: 1 }); g.position.set(-0.9 + i * 0.9, 0, 0); g.rotation.y = [0.7, 0, -0.9][i];
+    if (i === 1) g.userData.pose({ arms: { l: [0, 1.2, 0.6], r: [0, 0.4, 0] } });
+    scene.add(g); g.traverse((o) => pm.add(o));
+  });
+  stage.toonify(scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [200, 1000, 120, 1.6]]);
+  stage.camera.position.set(0, 0.5, 2.6); stage.camera.lookAt(0, 0.33, 0);
+  stage.finish();
+});
+</script></body></html>

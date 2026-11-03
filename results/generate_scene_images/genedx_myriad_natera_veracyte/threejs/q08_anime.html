@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GeneDx q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A MYRIAD of stitches on the JEANS marks hereditary cancer and other inherited risk.
+import { THREE, guard, mat, add, blob, rng, makeStage, meadow, flowers, finishScene, placeJeans, textTexture } from './common.js';
+import * as PR from './props.js';
+import { pocketTexture } from './jeans.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ shadowSize: 6 });
+  meadow(scene, '#e9d2a6');
+  const R0 = 0.2, R1 = 0.172, ZS = 0.62, rAt = (y) => R0 + (R1 - R0) * ((y - 0.5) / 0.5);
+  function stitch(parent, pts) {
+    const im = new THREE.InstancedMesh(new THREE.BoxGeometry(0.034, 0.009, 0.006), mat('#ff9a14', { roughness: 0.5 }), pts.length), o = new THREE.Object3D();
+    pts.forEach((p, i) => { o.position.set(p[0], p[1], p[2]); o.rotation.set(0, p[3], p[4], 'YXZ'); o.updateMatrix(); im.setMatrixAt(i, o.matrix); });
+    parent.add(im);
+  }
+  function cover(j, n) {
+    const r = rng(n), body = j.userData.parts.body.parent, tp = [];
+    for (let i = 0; i < n; i++) { const t = r() * 6.283, y = 0.52 + r() * 0.4; if (Math.cos(t) > 0.3 && y > 0.68 && y < 0.9) continue; const a = rAt(y), x = a * Math.sin(t), z = ZS * a * Math.cos(t); tp.push([x * 1.006, y, z * 1.006 + Math.cos(t) * 0.003, Math.atan2(x / (a * a), z / (ZS * a * ZS * a)), r() * 3.14]); }
+    stitch(body, tp);
+    for (const k of ['l', 'r']) { const lp = []; for (let i = 0; i < n * 0.5; i++) { const t = r() * 6.283, y = -0.05 - r() * 0.36, a = 0.1 - 0.012 * (-y / 0.47), x = a * Math.sin(t), z = 0.9 * a * Math.cos(t); lp.push([x * 1.01, y, z * 1.01, Math.atan2(x / (a * a), z / (0.9 * a * 0.9 * a)), r() * 3.14]); } stitch(j.userData.parts.legs[k], lp); }
+  }
+  const big = placeJeans(scene, num, { scale: 2.3, x: 0, z: 0, ry: 0, pose: { arms: { l: [0, 0.4, 0], r: [0, 0.4, 0] } } }); cover(big, 520);
+  const kid1 = placeJeans(scene, num, { scale: 1.2, x: -2.6, z: 0.8, ry: 0.35, pose: { arms: { l: [0, 0.5, 0], r: [0, 0.3, 0] } } }); cover(kid1, 260);
+  const kid2 = placeJeans(scene, num, { scale: 1.2, x: 2.7, z: 0.8, ry: -0.35, pose: { arms: { l: [0, 0.4, 0], r: [0, 0.5, 0] } } }); cover(kid2, 260);
+  const rib = PR.ribbon('#b57ee8'); rib.scale.setScalar(1.1); rib.position.set(-1.4, 2.7, 0.5); rib.rotation.z = 0.2; scene.add(rib);
+  const rib2 = PR.ribbon('#b57ee8'); rib2.scale.setScalar(0.7); rib2.position.set(1.5, 2.4, 0.5); rib2.rotation.z = -0.2; scene.add(rib2);
+  add(scene, new THREE.CylinderGeometry(0.02, 0.02, 1.4, 8), mat('#c9ced6', { metalness: 0.8, roughness: 0.2 }), [1.6, 0.9, 1.6], [0, 0, 0.5]);
+  finishScene(stage, num, [big, kid1, kid2], [0, 1.9, 6.6], [0, 1.4, 0]);
+});
+</script></body></html>

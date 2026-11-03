@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alto q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 - Before anything else, the SAXOPHONE listens to EEG brain waves.
+import { THREE, guard, makeStage, ground, finish, createSax, add, mat, blob, box, cyl, label, note, wave, playPose, noteTrail, oak, rng } from './common.js';
+guard(() => {
+
+  const { stage, num } = makeStage({ shadowSize: 5 }); const scene = stage.scene;
+  ground(scene, '#b9c3e0');
+  const sax = createSax({ scale: 1.9 }); sax.position.set(0.7, 0, 0.5); sax.rotation.y = -0.45; scene.add(sax);
+  sax.userData.pose({ legs: { l: [0.08, 0], r: [-0.08, 0] }, arms: { l: [0, 0.5, 0.1], r: [0, 0.5, 0.1] } });
+  sax.userData.reach('l', [0.2, 1.05, 0.12]);
+  // headphones
+  const hp = mat('#3b5bdb'), pad = mat('#ff7a59'); const g = new THREE.Group(); sax.add(g);
+  for (const s of [-1, 1]) { cyl(g, hp, [s * 0.15, 0.89, 0], 0.085, 0.07, [0, 0, Math.PI / 2]); cyl(g, pad, [s * 0.12, 0.89, 0], 0.065, 0.04, [0, 0, Math.PI / 2]); }
+  const arc = add(g, new THREE.TorusGeometry(0.2, 0.018, 10, 36, Math.PI), hp, [0, 0.89, 0.0], [0, 0, 0]);
+  arc.scale.set(0.8, 1.1, 1);
+  // EEG screen with waves + waves flowing to the headphones
+  const frame = mat('#232a3d'); const scr = new THREE.Group(); scr.position.set(-1.7, 0, -0.7); scr.rotation.y = 0.35; scene.add(scr);
+  cyl(scr, frame, [0, 0.55, 0], 0.05, 1.1); box(scr, frame, [0, 1.6, 0], [1.9, 1.2, 0.1]); box(scr, mat('#07111f'), [0, 1.6, 0.055], [1.75, 1.05, 0.02]);
+  [['#39ff7a', 0.3, 3], ['#4fd5ff', 0.2, 5], ['#ff7aa8', 0.14, 8]].forEach(([c, a, cy], i) => { const w = wave(c, 1.5, a * 0.6, cy, 0.018, i); w.position.set(0, 1.6 + 0.33 - i * 0.33, 0.075); scr.add(w); });
+  [['#39ff7a', 0.9, 1.15, 0.25, 3], ['#4fd5ff', 1.0, 1.1, 0.15, 5], ['#ff7aa8', 0.8, 1.35, 0.1, 8]].forEach(([c, x, y, a, cy], i) => {
+    const w = wave(c, 1.7, a * 0.5, cy, 0.02, i); w.position.set(-0.4, y + 0.55 - i * 0.1, 1.0 - i * 0.1); w.rotation.set(0, -0.5, 0.15 - i * 0.12); scene.add(w);
+  });
+  finish(stage, [sax], { cam: [0.1, 1.7, 5.0], look: [-0.2, 1.4, 0], chars: [g] });
+
+});
+</script></body></html>

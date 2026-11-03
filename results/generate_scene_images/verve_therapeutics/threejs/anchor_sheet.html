@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Verve anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, run, add, mat, makeStage, createBallerina } from './props.js';
+run(() => {
+  const { scene, done } = makeStage();
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#bfe3d4'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  const chars = [];
+  [[-1.0, -0.9], [0, 0], [1.0, 0.9]].forEach(([x, ry], i) => {
+    const b = createBallerina({ scale: 1.3 }); b.position.set(x, 0, 0); b.rotation.y = ry;
+    b.userData.pose(i === 1 ? { arms: { l: [0, 2.6, 0.2], r: [0, -2.6, 0.2] }, legs: { l: [0, 0.1], r: [0.0, -0.1] } } : { arms: { l: [0, 0.4, 0.1], r: [0, -0.4, 0.1] } });
+    scene.add(b); chars.push(b);
+  });
+  done([0, 0.9, 3.2], [0, 0.6, 0], chars);
+});
+</script></body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Genetix q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — a SKY SONAR on the TICKET scans the brain.
+import { THREE, guard, mat, add, blob, cyl, setup, rng } from './common.js';
+
+function brain() {
+  const g = new THREE.Group(), pink = mat('#f08aa8', { roughness: 0.5 }), deep = mat('#d96a8c', { roughness: 0.5 }), r = rng(11);
+  for (const k of [-1, 1]) blob(g, pink, [0, 0.0, k * 0.2], [0.62, 0.45, 0.32]);
+  for (let i = 0; i < 70; i++) { const u = r() * Math.PI * 2, v = Math.acos(2 * r() - 1), k = r() < 0.5 ? -1 : 1;
+    blob(g, i % 3 ? pink : deep, [0.6 * Math.sin(v) * Math.cos(u), 0.44 * Math.cos(v) * (Math.cos(v) > -0.4 ? 1 : 0.7) + 0.0, k * 0.2 + 0.31 * Math.sin(v) * Math.sin(u) * 1.0], [0.1, 0.1, 0.1]); }
+  blob(g, deep, [-0.42, -0.32, 0], [0.26, 0.17, 0.28]); cyl(g, 0.07, 0.07, 0.3, deep, [-0.05, -0.5, 0]);
+  return g;
+}
+guard(() => {
+  const S = setup({ ground: '#f6fbff', sky: { cover: 1.2 } });
+  const { scene, num } = S;
+  const t = S.ticket(-1.6, 0, 0.1, 1.5, { arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] } });
+  // dish on the ticket's head
+  const d = new THREE.Group(); d.position.set(0, 0.97 + 0.04, 0); d.scale.setScalar(1.7); t.add(d);
+  cyl(d, 0.03, 0.04, 0.2, mat('#7a8590'), [0, 0.1, 0]);
+  const dish = new THREE.Group(); dish.position.set(0, 0.28, 0); dish.rotation.z = -1.25; d.add(dish);
+  const dm = new THREE.Mesh(new THREE.SphereGeometry(0.3, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2.3), new THREE.MeshStandardMaterial({ color: '#dfe6ee', metalness: 0.5, roughness: 0.3, side: THREE.DoubleSide }));
+  dm.castShadow = true; dish.add(dm); cyl(dish, 0.012, 0.012, 0.28, mat('#ff5a3c'), [0, 0.15, 0]); blob(dish, mat('#ff5a3c'), [0, 0.3, 0], [0.04, 0.04, 0.04]);
+  // sonar rings travelling to the brain
+  const dirV = new THREE.Vector3(1, 0.25, 0).normalize();
+  for (let i = 0; i < 6; i++) {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.25 + i * 0.1, 0.022, 8, 40), new THREE.MeshBasicMaterial({ color: '#27c4e8', transparent: true, opacity: 0.9 - i * 0.1 }));
+    const c = new THREE.Vector3(-1.6 + 0.2, 2.05, 0).addScaledVector(dirV, 0.55 + i * 0.5); ring.position.copy(c); ring.rotation.y = Math.PI / 2; ring.rotation.x = 0; ring.lookAt(c.clone().add(dirV)); scene.add(ring);
+  }
+  const b = brain(); b.position.set(2.2, 2.55, 0); b.scale.setScalar(1.35); b.rotation.y = -0.4; scene.add(b);
+  S.finish([num('cx', 0.3), num('cy', 1.9), num('cz', 6.6)], [0.3, 1.9, 0]);
+});
+</script></body></html>

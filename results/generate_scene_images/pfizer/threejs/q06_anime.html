@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pfizer q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — Beside them, the VISOR's BioTherapeutics Research and Development group builds protein drugs.
+import { THREE, guard, createVisor, setup, ground, box, cyl, blob, add, mat, person, finish } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = setup(P);
+  ground(scene, '#c9cfd6');
+  const lab = new THREE.Group(); lab.position.set(0, 0, -4); scene.add(lab);
+  box(lab, 14, 5, 0.4, '#e9eef4', [0, 2.5, 0]); box(lab, 14, 0.15, 3, '#9aa6b4', [0, 0.07, 1.3]);
+  for (const x of [-5, -2.5, 2.5, 5]) box(lab, 1.4, 1.6, 0.06, '#9fd0f0', [x, 3, 0.23]);
+  // bench
+  box(scene, 6, 0.15, 1.6, '#d9d2c0', [0.3, 0.95, 0.4]); for (const x of [-2.4, 3]) for (const z of [-0.2, 1]) box(scene, 0.12, 0.9, 0.12, '#6a7482', [x, 0.45, z]);
+  // protein: folded ribbon tube + antibody Y built from beads
+  const prot = (pos, col, sc, seed) => {
+    const pts = []; for (let i = 0; i < 40; i++) { const t = i / 39 * Math.PI * 4; pts.push(new THREE.Vector3(Math.cos(t * 1.0 + seed) * (0.5 + 0.2 * Math.sin(t * 2.3)), t * 0.12 + Math.sin(t * 1.7) * 0.15, Math.sin(t + seed) * 0.5)); }
+    const g = new THREE.Group(); add(g, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 160, 0.07, 10), mat(col, { roughness: 0.4 }));
+    g.add(...[0, 39].map((i) => blob(g, '#ffffff', pts[i].toArray(), [0.12, 0.12, 0.12]))); g.scale.setScalar(sc); g.position.set(...pos); scene.add(g); return g;
+  };
+  prot([-1.7, 1.05, 0.5], '#e8483c', 0.5, 0); prot([1.9, 1.05, 0.5], '#2fb0a8', 0.5, 2);
+  const ab = new THREE.Group(); ab.position.set(0.4, 1.0, 0.5); scene.add(ab);
+  cyl(ab, 0.06, 0.06, 0.5, '#f2b632', [0, 0.25, 0]);
+  for (const s of [-1, 1]) { cyl(ab, 0.06, 0.06, 0.5, '#f2b632', [s * 0.2, 0.67, 0], [0, 0, s * -0.7]); blob(ab, '#e8483c', [s * 0.37, 0.88, 0], [0.09, 0.09, 0.09]); }
+  ab.scale.setScalar(1.3);
+  // big floating protein being assembled by the visor
+  const big = prot([-0.4, 2.7, 0.8], '#7a5ce8', 0.9, 1); big.rotation.y = 0.4;
+  const v = createVisor({ scale: num('vs', 2.7) }); v.position.set(-1.3, 0, 2.2); v.rotation.y = 0.2; scene.add(v);
+  v.userData.pose({ arms: { r: [0, 0.4, 0] } }); v.updateMatrixWorld(true);
+  let t = v.worldToLocal(new THREE.Vector3(-0.6, 2.0, 1.6)); v.userData.reach('l', t.toArray());
+  const bgp = [[-4.5, 0.4], [4.5, -0.2]].map(([x, ry]) => { const p = person({ coat: '#fff', glasses: true, hat: 'hard' }); p.scale.setScalar(1.7); p.position.set(x, 0, 0.8); p.rotation.y = -ry * 1.5 + Math.sign(-x) * -0.4; scene.add(p); return p; });
+  finish(stage, scene, [v], [num('cx', 0), num('cy', 2.3), num('cz', 7.6)], [0, 1.7, 0]);
+});
+</script></body></html>

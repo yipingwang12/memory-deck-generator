@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sanofi q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q04 — The SUNFLOWER's seed came from FRANCE, beside a baguette.
+import { THREE, guard, mat, add, box, cyl, blob, num, makeStage, placeSunflower, finish, canvasTexture } from './common.js';
+guard(() => {
+  const stage = makeStage({ ground: '#8fbf5a' }), sc = stage.scene;
+  // Eiffel tower
+  const iron = mat('#4b4540', { roughness: 0.5 });
+  const E = new THREE.Group(); E.position.set(-3.4, 0, -6); sc.add(E);
+  [[0, 2.5, 1.4, 0.35, 0.0], [2.2, 1.6, 0.9, 0.25, 0.0], [3.5, 3.2, 0.5, 0.15, 0.0]].forEach(([y0, h, r1, r2]) => {});
+  for (let lvl = 0; lvl < 3; lvl++) { const hs = [2.6, 2.0, 3.4][lvl], y0 = [0, 2.6, 4.6][lvl], r1 = [1.5, 0.75, 0.45][lvl], r2 = [0.75, 0.45, 0.04][lvl];
+    for (const [sx, sz] of [[1, 1], [-1, 1], [1, -1], [-1, -1]]) {
+      const a = new THREE.Vector3(sx * r1, y0, sz * r1), b = new THREE.Vector3(sx * r2, y0 + hs, sz * r2);
+      const d = b.clone().sub(a); const m = add(E, new THREE.CylinderGeometry(0.06, 0.08, d.length(), 8), iron); m.position.copy(a.clone().add(b).multiplyScalar(0.5)); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); }
+    box(E, iron, [0, y0 + hs, 0], [r2 * 2 + 0.1, 0.1, r2 * 2 + 0.1]);
+  }
+  // French flag on a pole
+  const fp = new THREE.Group(); fp.position.set(3.2, 0, -1.2); sc.add(fp);
+  cyl(fp, mat('#ccc'), [0, 1.4, 0], 0.03, 2.8);
+  for (const [i, c] of ['#1f46b8', '#ffffff', '#e0262e'].entries()) box(fp, mat(c), [0.3 + i * 0.3, 2.45, 0], [0.3, 0.6, 0.03]);
+  // baguette
+  const bag = new THREE.Group(); bag.position.set(0.9, 0.2, 2.0); bag.rotation.set(0, 0.5, 0.05); sc.add(bag);
+  const crust = mat('#d99a4a', { roughness: 0.8 });
+  add(bag, new THREE.CapsuleGeometry(0.17, 1.9, 10, 20), crust, [0, 0, 0], [0, 0, Math.PI / 2]);
+  for (let i = -3; i <= 3; i++) blob(bag, mat('#f4d596'), [i * 0.25, 0.14, 0.04], [0.07, 0.025, 0.11], [0, 0, 0.5]);
+  // seed on the flower's hand
+  const seed = new THREE.Group(); seed.position.set(0.3, 1.3, 1.5); seed.rotation.z = 0.5; sc.add(seed);
+  blob(seed, mat('#2a2220'), [0, 0, 0], [0.12, 0.22, 0.08]);
+  for (const x of [-0.05, 0.0, 0.05]) blob(seed, mat('#efe9dc'), [x, 0, 0.065], [0.014, 0.19, 0.012]);
+  const f = placeSunflower(stage, { pos: [-0.5, 0, 1.2], ry: 0.3, scale: 1.8, pose: { headTilt: 0.05 }, reach: { l: [0.3, 1.2, 1.5] } });
+  finish(stage, f, { pos: [0, 1.6, 6.2], at: [0, 1.4, 0] });
+});
+</script></body></html>

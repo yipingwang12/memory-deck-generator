@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TFS</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createThermos } from './thermos.js';
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.65, ...e });
+const add = (parent, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; parent.add(o); return o;
+};
+const txt = (w, h, draw) => canvasTexture(512, (ctx, s) => { ctx.clearRect(0, 0, s, s); draw(ctx, s); });
+function sign(text, w, h, bg, fg, font = 'bold 110px Arial') {
+  const c = document.createElement('canvas'); c.width = 1024; c.height = Math.round(1024 * h / w); const x = c.getContext('2d');
+  x.fillStyle = bg; x.fillRect(0, 0, c.width, c.height); x.fillStyle = fg; x.font = font; x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText(text, c.width / 2, c.height / 2); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+function setup(ground = '#7fbf5a') {
+  const P = new URLSearchParams(location.search); const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 }, sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  add(stage.scene, new THREE.PlaneGeometry(400, 400), mat(ground), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  return { stage, num, scene: stage.scene };
+}
+function finishScene(stage, chars, cam, look) {
+  const pm = new Set(); chars.forEach((c) => c.traverse((o) => pm.add(o)));
+  stage.toonify(stage.scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [252, 900, 80, 1.1]]);
+  stage.camera.position.set(...cam); stage.camera.lookAt(...look); stage.finish();
+}
+function cutBlock(color, title, slitDepth, sx) {
+  const g = new THREE.Group(), W = 1.6, H = 1.3, D = 1.0, sw = 0.55, m = mat(color);
+  const lw = W / 2 + sx - sw / 2, rw = W / 2 - sx - sw / 2;
+  add(g, new THREE.BoxGeometry(lw, H, D), m, [-W / 2 + lw / 2, H / 2, 0]);
+  add(g, new THREE.BoxGeometry(rw, H, D), m, [W / 2 - rw / 2, H / 2, 0]);
+  add(g, new THREE.BoxGeometry(sw, H - slitDepth, D), m, [sx, (H - slitDepth) / 2, 0]);
+  add(g, new THREE.BoxGeometry(sw, slitDepth, 0.05), mat('#1a1018'), [sx, H - slitDepth / 2, -D / 2 + 0.03]);
+  add(g, new THREE.PlaneGeometry(1.5, 0.4), new THREE.MeshBasicMaterial({ map: sign(title, 1.5, 0.4, '#fffdf6', '#1b2a55', 'bold 118px Arial') }), [0, 0.3, D / 2 + 0.003]);
+  return g;
+}
+function beaker() {
+  const g = new THREE.Group(); add(g, new THREE.CylinderGeometry(0.17, 0.15, 0.4, 24), mat('#dff3ff', { transparent: true, opacity: 0.5, depthWrite: false }), [0, 0.2, 0]);
+  add(g, new THREE.CylinderGeometry(0.15, 0.15, 0.2, 24), mat('#44c0e8'), [0, 0.1, 0.001]); return g;
+}
+function pill() {
+  const g = new THREE.Group(); add(g, new THREE.CapsuleGeometry(0.1, 0.22, 8, 16), mat('#e8403a'), [0, 0, 0], [0, 0, Math.PI / 2]);
+  add(g, new THREE.CapsuleGeometry(0.1, 0.11, 8, 16), mat('#fbf6ee'), [0.1, 0, 0.0], [0, 0, Math.PI / 2]).scale.set(1, 1, 1); return g;
+}
+function knife() {
+  const g = new THREE.Group();
+  add(g, new THREE.BoxGeometry(0.46, 1.5, 0.04), mat('#e3e8ee', { metalness: 0.7, roughness: 0.25 }), [0, 0.75, 0]);
+  add(g, new THREE.BoxGeometry(0.1, 0.5, 0.1), mat('#5a3a22'), [0, 1.75, 0]); add(g, new THREE.BoxGeometry(0.5, 0.06, 0.08), mat('#c9a040'), [0, 1.52, 0]);
+  return g;
+}
+guard(() => {
+  const { stage, scene } = setup('#e8f0f8');
+  const a = cutBlock('#3a78d8', 'LAB PRODUCTS', 1.15, -0.1); a.position.set(-2.4, 0, -0.3); scene.add(a);
+  const b = cutBlock('#8a5ad0', 'BIOPHARMA', 0.55, 0.0); b.position.set(2.0, 0, -0.3); scene.add(b);
+  const bk = beaker(); bk.position.set(-3.1, 1.3, -0.3); bk.scale.setScalar(1.4); scene.add(bk);
+  const bk2 = beaker(); bk2.position.set(-1.9, 1.3, -0.2); scene.add(bk2);
+  const p = pill(); p.position.set(2.0, 1.45, -0.3); p.rotation.z = 0.3; scene.add(p);
+  const p2 = pill(); p2.position.set(2.5, 1.4, -0.2); p2.rotation.z = -0.4; p2.scale.setScalar(0.8); scene.add(p2);
+  const th = createThermos({ scale: 2.8 }); th.position.set(-0.75, 0, 0.5); th.rotation.y = 0.1; scene.add(th);
+  th.userData.pose({ lean: 0.05, headTilt: 0.1, arms: { l: [0, 0.4, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+  const k = knife(); k.position.set(-2.5, 0.35, 0.05); scene.add(k);
+  th.updateMatrixWorld(true); const t = th.worldToLocal(new THREE.Vector3(-2.0, 1.9, 0.2)); th.userData.reach('r', [t.x, t.y, t.z]);
+  finishScene(stage, [th], [0, 1.5, 7.2], [0, 1.1, 0]);
+});
+</script></body></html>

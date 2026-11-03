@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q02 — "The HOURGLASS sells its sand: clinical and molecular cancer data is itself the product."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+/** DNA double helix standing on +y, height h. */
+function helix(h = 0.5, r = 0.07, colA = '#ff5c8a', colB = '#4aa3ff') {
+  const g = new THREE.Group(), n = 22;
+  for (let i = 0; i < n; i++) {
+    const t = i / (n - 1), a = t * Math.PI * 4, y = t * h;
+    ball(g, 0.022, colA, [Math.cos(a) * r, y, Math.sin(a) * r]); ball(g, 0.022, colB, [-Math.cos(a) * r, y, -Math.sin(a) * r]);
+    if (i % 2 === 0) cyl(g, 0.007, 0.007, 2 * r, '#f4f0e8', [0, y, 0], [0, 0, Math.PI / 2]).rotation.set(0, -a, Math.PI / 2, 'YXZ');
+  }
+  return g;
+}
+function jar(x, z, sand = '#f2b640') {
+  const g = new THREE.Group(); g.position.set(x, 1.0, z);
+  cyl(g, 0.2, 0.2, 0.42, mat('#cfeaf5', { transparent: true, opacity: 0.35, depthWrite: false }), [0, 0.21, 0]);
+  cyl(g, 0.185, 0.185, 0.3, sand, [0, 0.16, 0]); cyl(g, 0.21, 0.21, 0.06, '#8a4b24', [0, 0.45, 0]);
+  const h = helix(0.55, 0.08); h.position.set(0, 0.55, 0); g.add(h);
+  return g;
+}
+guard(() => {
+  const stage = makeStage({ sky: { cover: 1.4 } }), scene = stage.scene;
+  ground(scene, '#e0c690');
+  box(scene, 4.6, 0.9, 1.0, '#a8672e', [0, 0.45, 0.2]); box(scene, 4.8, 0.1, 1.15, '#d9964a', [0, 0.95, 0.2]);
+  for (const x of [-2.2, 2.2]) cyl(scene, 0.07, 0.07, 3.2, '#6a3f1d', [x, 1.6, -0.3]);
+  for (let i = 0; i < 8; i++) box(scene, 0.62, 0.04, 1.9, i % 2 ? '#fff' : '#e5484d', [-2.17 + i * 0.62, 3.2 - 0.0, -0.3 + 0.0 + 0.5 * 0]).rotation.x = 0.25;
+  for (const x of [-1.5, -0.85, 1.0, 1.7]) scene.add(jar(x, 0.35));
+  // sacks of sand with a pink ribbon (cancer)
+  for (const x of [-1.9, 1.95]) { const s = ball(scene, 0.34, '#d9b878', [x, 1.35, 0.4], [1, 1.1, 0.8]); cyl(scene, 0.05, 0.12, 0.12, '#d9b878', [x, 1.72, 0.4]); }
+  for (let i = 0; i < 8; i++) box(scene, 0.6, 0.3, 0.04, i % 2 ? '#fff' : '#e5484d', [-2.17 + i * 0.62, 3.05, 0.62], [0, 0, 0]);
+  ball(scene, 0.45, '#f2b640', [1.2, 1.0, 0.7], [1.3, 0.6, 1]);
+  const h = hero(scene, { scale: num('ps', 2.0), pos: [0, 0.9, -0.3], ry: 0, pose: { arms: { l: [0, 0.9, 0.2] } } });
+  h.userData.reach('l', [0.4, 0.55, 0.45]); h.userData.reach('r', [-0.35, 0.5, 0.4]);
+  // coins on counter + big DNA price sign
+  for (let i = 0; i < 6; i++) cyl(scene, 0.09, 0.09, 0.02, '#ffd23f', [0.35 + (i % 3) * 0.2, 1.01 + Math.floor(i / 3) * 0.022, 0.65], [0, 0, 0], { metalness: 0.6, roughness: 0.3 });
+  finish(stage, [h], { cam: [0, 1.8, 5.0], look: [0, 1.7, 0] });
+});
+</script></body></html>

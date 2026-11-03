@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ultima q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, sign, wafer, coin, palm, flask, dna, solarPanel, sun, build, cam, reachW, climber } from './props.js';
+guard(() => {
+
+const B = build({ ground: '#7bbf52', summit: { scale: 2.0, pos: [-1.2, 0, 1.0], ry: 0.3 }, sky: { cover: 1 }, el: 22 }); const { scene, s, num } = B;
+s.userData.pose({ arms: { r: [0, -0.7, 0] } }); reachW(s, 'l', [-0.1, 1.5, 1.6]);
+// bay + hills
+add(scene, new THREE.PlaneGeometry(400, 12), mat('#2e8fc9', { roughness: .3 }), [0, 0.01, -9.5], [-Math.PI / 2, 0, 0]);
+for (const [x, sc] of [[-9, 1], [9, 1.3]]) blob(scene, mat('#b89a4a'), [x, 0, -14], [6 * sc, 2.2 * sc, 3 * sc]);
+// Golden Gate bridge
+const red = mat('#d6402a', { roughness: .45 }), Z = -8;
+for (const x of [-3.2, 3.2]) { for (const sx of [-1, 1]) add(scene, new THREE.BoxGeometry(0.22, 4.4, 0.22), red, [x + sx * 0.28, 2.2, Z]); for (const y of [1.6, 2.8, 4.0]) add(scene, new THREE.BoxGeometry(0.85, 0.14, 0.2), red, [x, y, Z]); }
+add(scene, new THREE.BoxGeometry(18, 0.18, 0.7), mat('#b73522'), [0, 1.2, Z]);
+const cab = (x0, x1, y0, ym) => { const pts = []; for (let i = 0; i <= 30; i++) { const t = i / 30; pts.push(new THREE.Vector3(x0 + (x1 - x0) * t, ym + (y0 - ym) * Math.pow(2 * t - 1, 2), Z)); } add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, 0.05, 6), red); };
+cab(-3.2, 3.2, 4.4, 1.5); cab(-9, -3.2, 1.3, 4.4); cab(3.2, 9, 4.4, 1.3);
+for (let i = 0; i <= 14; i++) { const x = -3.0 + i * 6 / 14, t = (x / 3.2); const y = 1.5 + (4.4 - 1.5) * t * t; add(scene, new THREE.CylinderGeometry(0.012, 0.012, y - 1.25, 4), red, [x, 1.25 + (y - 1.25) / 2, Z]); }
+// palms, poppies, CALIFORNIA sign
+for (const [x, z, h] of [[2.6, 0.2, 3.2], [3.8, -1.2, 2.6], [-4.0, -1.0, 2.8]]) { const p = palm(h); p.position.set(x, 0, z); scene.add(p); }
+for (let i = 0; i < 90; i++) { const x = -5 + (i * 0.77) % 10, z = -1.5 + ((i * 1.31) % 4.5); const f = blob(scene, mat('#ff8a1c'), [x, 0.08, z], [0.1, 0.06, 0.1]); }
+add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.2, 10), mat('#8a5a2b'), [1.15, 0.6, 1.4]); add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.2, 10), mat('#8a5a2b'), [2.95, 0.6, 1.4]);
+add(scene, new THREE.BoxGeometry(2.1, 0.62, 0.08), mat('#fff'), [2.05, 1.25, 1.4]);
+sign(scene, 'CALIFORNIA', 2.0, 0.55, [2.05, 1.25, 1.445], { bg: '#fff0c0', fg: '#b3202e', border: '#b3202e', font: 'bold 150px Arial Black, Arial' });
+const sn = sun(0.5); sn.position.set(5.5, 4.8, -12); scene.add(sn);
+cam(B.stage, num, [0.3, 1.8, 7.8], [0.3, 1.9, 0]); B.finish();
+
+});
+</script></body></html>

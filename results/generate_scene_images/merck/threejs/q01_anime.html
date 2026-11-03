@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Merck q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, box, cyl, blob, textTex, textBoard, person, tent, makeStage, finish, createPond } from "./props.js";
+// q01 — Explorers set out from the POND's Cambridge camp: the Exploratory Science Center.
+guard(() => {
+  const P = new URLSearchParams(location.search), S = makeStage(P), { scene, num } = S;
+  const t = tent({ w: 3.2, h: 2.6 }); t.position.set(-0.4, 0, -2.4); scene.add(t);
+  // flask emblem sign on tent
+  const em = new THREE.Group(); em.position.set(-0.4, 1.05, -0.78); scene.add(em);
+  cyl(em, mat('#fff'), [0, 0.25, 0], 0.03, 0.03, 0.3); add(em, new THREE.ConeGeometry(0.3, 0.45, 24), mat('#5fd0e0'), [0, -0.02, 0]); cyl(em, mat('#fff'), [0, 0.42, 0], 0.07, 0.05, 0.05);
+  // stone bridge (Cambridge) behind
+  const br = new THREE.Group(); br.position.set(4.2, 0, -4); scene.add(br);
+  add(br, new THREE.TorusGeometry(1.2, 0.18, 12, 28, Math.PI), mat('#b8a88a'), [0, 0, 0]); box(br, mat('#c9b99a'), [0, 1.25, 0], [3.2, 0.2, 0.7]);
+  // explorers walking away to the right with flag
+  const ex = [];
+  [[2.0, 0.2, -1.2], [3.0, 0.4, -1.8]].forEach(([x, z, ry], i) => {
+    const p = person({ hat: 'pith', backpack: true, shirt: i ? '#4aa86a' : '#e0703a', scale: 1.7 }); p.position.set(x, 0, z + 0.4); p.rotation.y = 0.7; scene.add(p); ex.push(p);
+    p.userData.armL.rotation.x = 0.5; p.userData.armR.rotation.x = -0.5;
+  });
+  const pole = cyl(scene, mat('#6a4a2a'), [3.6, 1.7, 0.5], 0.02, 0.02, 3.4); add(scene, new THREE.PlaneGeometry(0.7, 0.45), new THREE.MeshStandardMaterial({ color: '#e0403a', side: 2 }), [3.95, 3.2, 0.5]);
+  const pond = createPond({ scale: 2.7 }); pond.position.set(-2.4, 0, 0.9); pond.rotation.y = 0.5; scene.add(pond);
+  pond.userData.pose({ tilt: 0.05, arms: { r: [0, 0.4, 0] } }); pond.userData.reach('l', [0.55, 0.95, 0.15]);
+  finish(S, [pond, ...ex], [num('cx', 0.2), num('cy', 1.6), num('cz', 7.0)], [num('tx', 0.2), num('ty', 1.5), -1]);
+});
+</script></body></html>

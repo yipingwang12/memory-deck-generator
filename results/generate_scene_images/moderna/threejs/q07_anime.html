@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Moderna q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — The MODEM's ticker reads MRNA.
+// q07 — The MODEM blinks under a BRIDGE in Cambridge.
+import { THREE, mat, add, rbox, blob, num, makeStage, finishScene, createModem } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { ground: '#6fae45', el: 22, az: 210 });
+  const scene = stage.scene;
+  const stone = mat('#d9b98a', { roughness: 0.9 }), stoneD = mat('#b99668', { roughness: 0.9 });
+  // river along z, under the arch
+  add(scene, new THREE.PlaneGeometry(3.6, 60), mat('#3f9fd0', { roughness: 0.2 }), [2.4, 0.02, 0], [-Math.PI / 2, 0, 0]);
+  // bridge: extruded arch face, axis along x
+  const R = 2.5, W = 5.2, H = 3.4, sh = new THREE.Shape();
+  sh.moveTo(-W, 0); sh.lineTo(W, 0); sh.lineTo(W, H); sh.lineTo(-W, H); sh.lineTo(-W, 0);
+  const hole = new THREE.Path(); hole.moveTo(-R, 0); hole.absarc(0, 0, R, Math.PI, 0, true); hole.lineTo(-R, 0); sh.holes.push(hole);
+  const geo = new THREE.ExtrudeGeometry(sh, { depth: 2.4, bevelEnabled: true, bevelSize: 0.05, bevelThickness: 0.05, bevelSegments: 2, curveSegments: 40 });
+  geo.translate(0, 0, -1.2);
+  const bridge = add(scene, geo, stone, [0.0, 0, 0]); bridge.position.x = 1.7;
+  // keystone ring and parapet
+  const ring = add(scene, new THREE.TorusGeometry(R + 0.12, 0.12, 8, 40, Math.PI), stoneD, [1.7, 0, 1.22]);
+  add(scene, new THREE.BoxGeometry(W * 2 + 0.2, 0.22, 2.6), stoneD, [1.7, H + 0.08, 0]);
+  for (let i = -4; i <= 4; i++) add(scene, new THREE.BoxGeometry(0.4, 0.5, 0.34), stoneD, [1.7 + i * 1.15, H + 0.4, 1.12]);
+  // bank with a path inside the arch, left of the water
+  add(scene, new THREE.BoxGeometry(4.4, 0.12, 30), mat('#c9a56b'), [-1.6, 0.0, 0.0]);
+  // modem blinking under the bridge
+  const modem = createModem({ scale: 1.6 }); modem.position.set(-0.05, 0.06, 0.6); modem.rotation.y = 0.3; scene.add(modem);
+  modem.userData.pose({ arms: { l: [0, 0.8, 0], r: [0, 0.3, 0] }, antenna: [0.2, -0.2] });
+  // LED glow halos
+  modem.userData.parts.leds.forEach((l) => { l.material.emissiveIntensity = 1.6; });
+  const glow = new THREE.PointLight('#7dff9a', 2, 3); glow.position.set(-0.05, 0.9, 1.3); 
+  // background: college tower, willows
+  const tw = new THREE.Group(); tw.position.set(8, 0, -12); scene.add(tw);
+  add(tw, new THREE.BoxGeometry(2.6, 9, 2.6), stone, [0, 4.5, 0]);
+  for (const [x, z] of [[-1.2, -1.2], [1.2, -1.2], [-1.2, 1.2], [1.2, 1.2]]) add(tw, new THREE.ConeGeometry(0.28, 1.2, 8), stoneD, [x, 9.5, z]);
+  add(tw, new THREE.BoxGeometry(1.2, 2, 0.1), mat('#6a5a40'), [0, 6.5, 1.35]);
+  for (const x of [-6.5, 9.5]) { add(scene, new THREE.CylinderGeometry(0.2, 0.3, 2.4, 10), mat('#6b4524'), [x, 1.2, -1.5]); blob(scene, mat('#4e9a3c'), [x, 3.2, -1.5], [1.9, 1.7, 1.9]); }
+  // punt on the water
+  const punt = new THREE.Group(); punt.position.set(2.8, 0.1, -3); punt.rotation.y = 0.3; scene.add(punt);
+  add(punt, new THREE.BoxGeometry(0.7, 0.2, 2.6), mat('#8a5a2e'), [0, 0, 0]);
+  finishScene(stage, P, [modem], [0.9, 1.8, 8.8, 0.9, 1.9, 0]);
+});
+</script></body></html>

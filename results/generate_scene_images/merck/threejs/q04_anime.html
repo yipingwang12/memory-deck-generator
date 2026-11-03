@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Merck q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, box, cyl, blob, textTex, textBoard, person, tent, makeStage, finish, createPond } from "./props.js";
+// q04 — In that room, a TRANSLATOR reads genomes for the POND: Translational Genome Analytics.
+guard(() => {
+  const P = new URLSearchParams(location.search), S = makeStage(P, { pond: false }), { scene, num } = S;
+  add(scene, new THREE.PlaneGeometry(40, 10), mat('#e8c35a'), [0, 4, -4]);
+  add(scene, new THREE.CircleGeometry(30, 32), mat('#d9c7a0'), [0, 0.02, 0], [-Math.PI / 2, 0, 0]);
+  // translator: person with headset + clipboard
+  const tr = person({ shirt: '#7a4fc0', pants: '#2a2a3a', hair: '#1a1210', glasses: true, scale: 2.5 }); tr.position.set(2.4, 0, 0.3); tr.rotation.y = -0.45; scene.add(tr);
+  const hs = new THREE.Group(); tr.userData.head.add(hs); add(hs, new THREE.TorusGeometry(0.15, 0.015, 8, 24, Math.PI), mat('#222'), [0, 0.02, 0], [0, 0, 0]);
+  for (const s of [-1, 1]) cyl(hs, mat('#e0403a'), [s * 0.15, 0, 0], 0.05, 0.05, 0.05, [0, 0, Math.PI / 2]); add(hs, new THREE.TorusGeometry(0.08, 0.008, 6, 12, 1.5), mat('#222'), [0.15, -0.04, 0.05], [0, 0.6, 3.6]);
+  tr.userData.armL.rotation.set(-0.4, 0, 0.6); tr.userData.armR.rotation.set(-1.2, 0, -0.3);
+  // speech bubbles: genome letters -> translated glyph
+  const bub = (txt, col, x, y, w) => { const t = textTex(512, 256, (c, W, H) => { c.fillStyle = '#ffffff'; c.beginPath(); c.roundRect(10, 10, W - 20, H - 60, 50); c.fill(); c.beginPath(); c.moveTo(60, H - 55); c.lineTo(40, H - 8); c.lineTo(130, H - 55); c.fill(); c.fillStyle = col; c.font = 'bold 110px "Arial Black",sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(txt, W / 2, (H - 60) / 2 + 10); }); return add(scene, new THREE.PlaneGeometry(w, w / 2), new THREE.MeshBasicMaterial({ map: t, transparent: true }), [x, y, 0.8]); };
+  bub('ATCG', '#3a4aa0', 0.2, 4.6, 2.6); bub('文 ✓', '#c03a4a', 3.6, 4.6, 2.6);
+  add(scene, new THREE.TorusGeometry(0.5, 0.05, 6, 16, 2.4), mat('#ffd23f'), [2.2, 4.5, 0.8], [0, 0, 0.3]);
+  // genome scroll on desk: DNA helix strand
+  box(scene, mat('#7a5a38'), [-1.3, 0.9, 0.2], [3.4, 0.14, 1.4]); for (const s of [-1, 1]) box(scene, mat('#6a4a2a'), [-1.3 + s * 1.5, 0.45, 0.2], [0.14, 0.9, 1.2]);
+  const sc = textTex(1024, 256, (c, W, H) => { c.fillStyle = '#f5ecd0'; c.fillRect(0, 0, W, H); const L = 'ATCGGATCCATGCAA'; c.font = 'bold 120px monospace'; c.textBaseline = 'middle'; for (let i = 0; i < 12; i++) { c.fillStyle = ['#d03a5a', '#e0a020', '#2aa8a0', '#3a5ac0'][i % 4]; c.fillText(L[i], 40 + i * 82, H / 2); } });
+  add(scene, new THREE.PlaneGeometry(3.0, 0.75), new THREE.MeshStandardMaterial({ map: sc }), [-1.3, 0.985, 0.2], [-Math.PI / 2, 0, 0]);
+  // magnifier
+  const mg = new THREE.Group(); mg.position.set(-1.9, 1.7, 0.7); mg.rotation.set(-0.5, 0, 0.3); scene.add(mg);
+  add(mg, new THREE.TorusGeometry(0.42, 0.06, 10, 32), mat('#c8a028', { metalness: 0.5 }), [0, 0, 0]); add(mg, new THREE.CircleGeometry(0.42, 32), new THREE.MeshStandardMaterial({ color: '#bfeaff', transparent: true, opacity: 0.35 }), [0, 0, 0.0]);
+  cyl(mg, mat('#6a4a2a'), [0.3, -0.62, 0], 0.045, 0.05, 0.6, [0, 0, 0.55]);
+  const pond = createPond({ scale: 2.5 }); pond.position.set(-3.0, 0, 1.6); pond.rotation.y = 0.5; scene.add(pond);
+  pond.userData.pose({ tilt: 0.05, arms: { l: [0, 0.5, 0] } }); pond.userData.reach('r', [-0.35, 0.95, 0.3]);
+  finish(S, [pond, tr], [num('cx', 0), num('cy', 2.2), num('cz', 10.0)], [num('tx', 0), num('ty', 2.5), 0]);
+});
+</script></body></html>

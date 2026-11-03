@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cognixion q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 - The COG helps people with late-stage ALS (ice bucket + wheelchair): cannot move or speak.
+import { THREE, mat, add, blob, rbox, cyl, start } from './props.js';
+import { createCog } from './cog.js';
+
+function wheelchair() {
+  const g = new THREE.Group(), blue = mat('#2f5fb8'), chrome = mat('#cfd6de', { metalness: 0.8, roughness: 0.25 }), rub = mat('#222');
+  rbox(g, blue, [0.7, 0.1, 0.6], [0, 0.55, 0], [0, 0, 0], 0.04);
+  rbox(g, blue, [0.7, 0.8, 0.08], [0, 1.0, -0.3], [-0.05, 0, 0], 0.04);
+  for (const s of [-1, 1]) {
+    const w = add(g, new THREE.TorusGeometry(0.42, 0.035, 12, 40), rub, [s * 0.42, 0.45, -0.1], [0, Math.PI / 2, 0]);
+    add(g, new THREE.TorusGeometry(0.36, 0.01, 8, 40), chrome, [s * 0.44, 0.45, -0.1], [0, Math.PI / 2, 0]);
+    cyl(g, chrome, 0.05, 0.05, 0.06, [s * 0.44, 0.45, -0.1], [0, 0, Math.PI / 2]);
+    for (let i = 0; i < 6; i++) { const a = i * Math.PI / 6; add(g, new THREE.CylinderGeometry(0.006, 0.006, 0.72, 6), chrome, [s * 0.44, 0.45, -0.1], [a, 0, Math.PI / 2 * 0 + 0].map((v, j) => j === 0 ? a : 0)); }
+    cyl(g, rub, 0.08, 0.08, 0.05, [s * 0.34, 0.1, 0.5], [0, 0, Math.PI / 2]);
+    rbox(g, chrome, [0.04, 0.04, 0.5], [s * 0.35, 0.8, -0.05], [0, 0, 0], 0.015);
+    rbox(g, blue, [0.08, 0.04, 0.3], [s * 0.35, 0.84, 0.05], [0, 0, 0], 0.015);
+    rbox(g, chrome, [0.03, 0.4, 0.03], [s * 0.3, 0.3, 0.3], [0.25, 0, 0], 0.01);
+  }
+  rbox(g, mat('#555'), [0.4, 0.04, 0.2], [0, 0.12, 0.55], [0, 0, 0], 0.015);
+  return g;
+}
+function iceBucket() {
+  const g = new THREE.Group();
+  cyl(g, mat('#e9eef5', { metalness: 0.5, roughness: 0.3 }), 0.3, 0.22, 0.45, [0, 0.225, 0]);
+  add(g, new THREE.TorusGeometry(0.3, 0.02, 8, 32), mat('#bfc8d4', { metalness: 0.6 }), [0, 0.45, 0], [Math.PI / 2, 0, 0]);
+  cyl(g, mat('#bfe8ff', { roughness: 0.2 }), 0.28, 0.28, 0.03, [0, 0.42, 0]);
+  const ice = mat('#d6f2ff', { roughness: 0.15, transparent: true, opacity: 0.92 });
+  [[-0.1, 0.05, 0.2], [0.1, -0.05, 0.22], [0, 0.12, 0.18], [-0.12, -0.1, 0.17], [0.13, 0.1, 0.15]].forEach(([x, z, s], i) => rbox(g, ice, [s * 0.9, s * 0.9, s * 0.9], [x, 0.52 + (i % 2) * 0.05, z], [0.3 * i, 0.5 * i, 0.2], 0.02));
+  // drops
+  for (const [x, y] of [[0.38, 0.6], [-0.42, 0.7], [0.45, 0.35]]) { blob(g, mat('#7fd1ff', { roughness: 0.1 }), [x, y, 0.1], [0.04, 0.06, 0.04]); }
+  return g;
+}
+function noSpeech() {
+  const g = new THREE.Group(), bub = mat('#ffffff', { roughness: 0.4 });
+  blob(g, bub, [0, 0, 0], [0.34, 0.24, 0.05]);
+  add(g, new THREE.ConeGeometry(0.07, 0.14, 12), bub, [-0.15, -0.26, 0], [0, 0, 0.5]);
+  const red = mat('#d92b2b');
+  for (const r of [Math.PI / 4, -Math.PI / 4]) rbox(g, red, [0.5, 0.06, 0.04], [0, 0, 0.05], [0, 0, r], 0.02);
+  return g;
+}
+
+start(({ scene }) => {
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#a9d8a0'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  const chair = wheelchair(); chair.rotation.y = 0.35; chair.position.set(-0.2, 0, 0); scene.add(chair);
+  const cog = createCog({ scale: 0.95 }); cog.position.set(-0.2, 0.5, 0.1); cog.rotation.y = 0.35; scene.add(cog);
+  cog.userData.pose({ spin: -0.12, arms: { l: [0, 0.15, 0], r: [0, 0.15, 0] }, legs: { l: [-1.45, 0], r: [-1.45, 0] } });
+  const bucket = iceBucket(); bucket.position.set(1.4, 0, 0.3); bucket.scale.setScalar(1.15); scene.add(bucket);
+  const bub = noSpeech(); bub.position.set(-1.15, 1.6, 0.3); bub.rotation.y = 0.3; bub.scale.setScalar(1.1); scene.add(bub);
+  return [cog];
+}, { ground: '#a9d8a0', fov: 38, cam: [0.1, 1.0, 3.7], look: [0.1, 0.85, 0], sky: { cover: 1.0 } });
+</script></body></html>

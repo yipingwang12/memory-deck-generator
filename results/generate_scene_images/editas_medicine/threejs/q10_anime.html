@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Editas q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — "The PENCIL lies on a BRIDGE in Cambridge." Brick bridge parapet over the Charles, golden hour.
+import * as THREE from 'three';
+import { guard, rng, canvasTexture, boxUV } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createPencil } from './pencil.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 48), sunElevation: num('el', 11), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.4, puffCover: 2, horizon: '#ffd9a8', zenith: '#2a62c8' },
+    rim: { color: '#ffe2b0', strength: num('rim', 1.4), width: 0.55 },
+    sunColor: '#ffc880', sunIntensity: num('sun', 2.8), ambient: { color: '#f2dcff', intensity: num('amb', 2.0) }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 80 },
+    flare: 0.9, fog: { near: 60, far: 700, color: '#ffd9b0' },
+  });
+  const scene = stage.scene, R = rng(7);
+  const std = (color, o = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.85, ...o });
+  const box = (w, h, d, mat, x, y, z, parent = scene) => {
+    const m = new THREE.Mesh(boxUV(new THREE.BoxGeometry(w, h, d), 1 / 3), mat);
+    m.position.set(x, y, z); m.castShadow = m.receiveShadow = true; parent.add(m); return m;
+  };
+
+  const brickTex = (base, rep) => canvasTexture(256, (c, s) => {
+    c.fillStyle = '#d9c7b0'; c.fillRect(0, 0, s, s);
+    const rows = 8, bw = s / 4, bh = s / rows;
+    for (let r = 0; r < rows; r++) for (let i = -1; i < 5; i++) {
+      const sh = base.map((v) => Math.max(0, Math.min(255, v + (R() - 0.5) * 36)));
+      c.fillStyle = `rgb(${sh[0]},${sh[1]},${sh[2]})`;
+      c.fillRect(i * bw + (r % 2) * bw / 2 + 2, r * bh + 2, bw - 4, bh - 4);
+    }
+  }, { repeat: rep });
+  const brick = std('#ffffff', { map: brickTex([158, 72, 52], 1) });
+  const stone = std('#cdbfa8'), dark = std('#6e3a2c');
+
+  // Parapet along x at z = 0, coping top at y = TOP; deck on the viewer's side.
+  const TOP = 1.0;
+  box(12, TOP - 0.1, 0.55, brick, 0, (TOP - 0.1) / 2, 0);
+  box(12, 0.1, 0.78, stone, 0, TOP - 0.05, 0);
+  for (const x of [-5.6, -3.6, 3.6, 5.6]) { box(0.8, TOP + 0.45, 0.8, brick, x, (TOP + 0.45) / 2, 0); box(0.95, 0.12, 0.95, stone, x, TOP + 0.5, 0); }
+  const deck = box(14, 0.4, 7, std('#9c8f80'), 0, -0.2, 3.4);
+  deck.material.map = canvasTexture(256, (c, s) => { c.fillStyle = '#a49685'; c.fillRect(0, 0, s, s); c.strokeStyle = '#6f6458'; c.lineWidth = 3;
+    for (let i = 0; i <= 8; i++) { c.beginPath(); c.moveTo(0, i * 32); c.lineTo(s, i * 32); c.stroke(); c.beginPath(); c.moveTo(i * 32 + (i % 2) * 16, 0); c.lineTo(i * 32 + (i % 2) * 16, s); c.stroke(); } }, { repeat: 3 });
+  // lamp post on a pier
+  const iron = std('#26262c', { roughness: 0.5 });
+  const lampX = 3.6; box(0.08, 1.5, 0.08, iron, lampX, TOP + 0.56 + 0.75, 0);
+  const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), new THREE.MeshBasicMaterial({ color: '#fff0b8' })); lamp.position.set(lampX, TOP + 2.45, 0); scene.add(lamp);
+
+  // River far below, with a gradient streak texture.
+  const water = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), std('#ffffff', { roughness: 0.25, metalness: 0.1, map: canvasTexture(256, (c, s) => {
+    const g = c.createLinearGradient(0, 0, 0, s); g.addColorStop(0, '#5f9ec8'); g.addColorStop(1, '#3f78ae'); c.fillStyle = g; c.fillRect(0, 0, s, s);
+    c.strokeStyle = 'rgba(255,225,170,0.45)'; c.lineWidth = 3; for (let i = 0; i < 40; i++) { const x = R() * s, y = R() * s; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 10 + R() * 30, y); c.stroke(); } }, { repeat: 40 }) }));
+  water.rotation.x = -Math.PI / 2; water.position.y = -7; water.receiveShadow = true; scene.add(water);
+  // Far bank grass strip
+  const bank = new THREE.Mesh(new THREE.PlaneGeometry(900, 120), std('#6d8f3c')); bank.rotation.x = -Math.PI / 2; bank.position.set(0, -6.8, -95); scene.add(bank);
+
+  // Distant low brick buildings
+  for (let i = 0; i < 16; i++) {
+    const w = 8 + R() * 10, h = 6 + R() * 8, x = -90 + i * 12 + R() * 4, z = -70 - R() * 15;
+    const b = box(w, h, 7, std(['#a0553e', '#b8694a', '#8d4a38', '#c98a62'][i % 4]), x, -6.8 + h / 2, z);
+    box(w + 0.6, 0.6, 7.6, std('#6b4a3a'), x, -6.8 + h + 0.3, z);
+    if (i % 5 === 2) box(2.4, 6, 2.4, std('#b0b0a0'), x, -6.8 + h + 3, z); // steeple
+  }
+  // Trees (round canopies) along both distances
+  const leaf = ['#4f8a2c', '#6aa032', '#8aa83a', '#d89a2c'];
+  const tree = (x, z, s) => {
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.15 * s, 0.22 * s, 2 * s, 8), std('#5a3a26')); t.position.set(x, -6.8 + s, z); scene.add(t);
+    for (let k = 0; k < 4; k++) { const c = new THREE.Mesh(new THREE.IcosahedronGeometry((1.2 + R() * 0.5) * s, 1), std(leaf[Math.floor(R() * 4)])); c.position.set(x + (R() - 0.5) * s * 1.6, -6.8 + 2.6 * s + R() * s, z + (R() - 0.5) * s); c.castShadow = true; scene.add(c); }
+  };
+  for (let i = 0; i < 22; i++) tree(-100 + i * 9.5 + R() * 4, -55 - R() * 12, 2.2 + R() * 1.6);
+  // Near trees beyond the parapet on right
+
+
+  // Distant arched brick bridge crossing the river
+  const sh = new THREE.Shape(); sh.moveTo(-40, 0); sh.lineTo(40, 0); sh.lineTo(40, 4); sh.lineTo(-40, 4); sh.lineTo(-40, 0);
+  for (const cx of [-27, -9, 9, 27]) { const h = new THREE.Path(); h.moveTo(cx - 6, 0); h.absarc(cx, 0, 6, Math.PI, 0, true); h.lineTo(cx - 6, 0); sh.holes.push(h); }
+  const fb = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: 3, bevelEnabled: false }), std('#c0694a'));
+  fb.position.set(0, -7, -30); fb.castShadow = true; scene.add(fb);
+
+  // The PENCIL lies along the parapet coping, face up, eraser left.
+  const pencil = createPencil();
+  pencil.userData.lie(Math.PI / 2);
+  pencil.position.set(num("px", 0.5), TOP + pencil.position.y + num('lift', 0.0), 0);
+  scene.add(pencil);
+  const pm = new Set(); pencil.traverse((o) => pm.add(o));
+  stage.toonify(scene, (m) => pm.has(m));
+
+  stage.addClouds([[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [232, 1250, 230, 2.4], [252, 900, 80, 1.1], [130, 1100, 110, 1.3], [270, 1200, 160, 1.8]]);
+
+  stage.camera.position.set(num('cx', 0.5), num('cy', 2.2), num('cz', 1.9));
+  stage.camera.lookAt(num('tx', 0.15), num('ty', 1.3), num('tz', -3));
+  stage.finish();
+});
+</script></body></html>

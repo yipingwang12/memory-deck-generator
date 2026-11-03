@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Agios q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AEGIS shield's ticker reads AGIO.
+import { THREE, guard, mat, add, blob, box, cyl, rbc, textPlane, makeScene } from './common.js';
+import { createAegis } from './aegis.js';
+import { createPirateKing, createCrab, createPivotDoor, sickle, platelet } from './props.js';
+// shield helper: place + pose + optional reach {hand:'l', to:[x,y,z] world}
+function place(scene, S, x, z, ry, sc, reach) {
+  const a = createAegis({ scale: sc }); a.position.set(x, 0, z); a.rotation.y = ry; scene.add(a);
+  a.userData.pose({ legs: { l: [0.2, 0], r: [-0.15, 0] } });
+  if (reach) { a.updateMatrixWorld(true); const t = a.worldToLocal(new THREE.Vector3(...reach.to)); a.userData.reach(reach.hand, [t.x / sc, t.y / sc, t.z / sc]); }
+  S.mark(a); return a;
+}
+guard(() => {
+  const S = makeScene({ ground: '#4a4f66', cover: 1.5 }); const { scene } = S;
+  box(scene, mat('#15171f'), [0.6, 1.6, -0.4], [3.4, 1.3, 0.2]); box(scene, mat('#2a2f3e'), [0.6, 1.6, -0.52], [3.6, 1.5, 0.05]);
+  cyl(scene, mat('#2a2f3e'), [0.6, 0.45, -0.4], 0.1, 0.9);
+  textPlane(scene, 'AGIO', 3.0, 1.1, [0.6, 1.6, -0.29], { color: '#ffb52e', font: 'bold 260px monospace', w: 768, h: 282 });
+  for (let i = 0; i < 4; i++) add(scene, new THREE.ConeGeometry(0.1, 0.18, 3), mat('#35d07f', { emissive: '#35d07f', emissiveIntensity: 0.5 }), [-0.8 + i * 0.28, 2.45, -0.3], [0, 0, -Math.PI / 2]);
+  place(scene, S, -1.4, 0.9, 0.35, 1.5, { hand: 'l', to: [-0.6, 1.5, 0.3] });
+  S.finish([0.5, 1.4, 5.2], [0.5, 1.2, 0]);
+
+});
+</script></body></html>

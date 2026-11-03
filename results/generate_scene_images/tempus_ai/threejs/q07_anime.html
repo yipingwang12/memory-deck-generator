@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tempus scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+
+// q07 — "The HOURGLASS's ticker reads TEM."
+import { THREE, guard, rng, num, mat, add, box, cyl, ball, makeStage, ground, hero, finish, label } from './common.js';
+
+guard(() => {
+  const stage = makeStage({ sky: { cover: 0.4, zenith: '#14204a', horizon: '#5b6fb8' } }), scene = stage.scene;
+  ground(scene, '#2b3350');
+  box(scene, 12, 6.4, 0.3, '#0e1224', [0, 3.9, -2.6]);
+  const scr = label(scene, 'TEM', 5.2, 2.2, [-1.6, 4.6, -2.4], [0, 0, 0], { fg: '#31e06a', bg: '#05080f', w: 760, h: 321, font: 'bold 250px Arial' });
+  // green rising chart on the board
+  const pts = [[0, 0], [0.8, 0.3], [1.4, 0.15], [2.2, 0.8], [2.8, 0.6], [3.6, 1.4], [4.2, 1.2], [5, 2.0]];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [x0, y0] = pts[i], [x1, y1] = pts[i + 1], len = Math.hypot(x1 - x0, y1 - y0);
+    box(scene, len, 0.09, 0.05, '#31e06a', [2.1 + (x0 + x1) / 2 * 0.62 + 0.0, 3.3 + (y0 + y1) / 2 * 0.8, -2.4], [0, 0, Math.atan2(y1 - y0, x1 - x0)], { emissive: '#31e06a' });
+  }
+  add(scene, new THREE.ConeGeometry(0.45, 0.8, 3), mat('#31e06a', { emissive: '#1b9a47' }), [4.9, 5.0, -2.4]);
+  // ticker tape on the floor
+  const tape = box(scene, 9, 0.02, 0.35, '#f4f0e8', [0, 0.04, 1.6], [0, 0.12, 0]);
+  const h = hero(scene, { scale: num('ps', 2.6), pos: [2.6, 0, 0.8], ry: -0.4, pose: { arms: { l: [0, 0.9, 0.2], r: [0, 0.9, 0.2] } } });
+  h.userData.reach('l', [0.5, 1.05, 0.3]); h.userData.reach('r', [-0.5, 0.75, 0.3]);
+  finish(stage, [h], { cam: [0, 2.2, 7.4], look: [0, 2.4, 0], clouds: false });
+});
+</script></body></html>

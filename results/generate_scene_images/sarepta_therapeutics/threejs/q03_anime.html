@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarepta scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, createSerape, mat, add, box, blob, cyl, num, makeStage, finishScene, ground, textPlane, helix, elevator } from './common.js';
+// q03 — Before gene therapy, the SERAPE's short strands SKIP a broken EXON, like a skipping rope.
+guard(() => {
+  const stage = makeStage({ sunAzimuth: 140 }), scene = stage.scene; ground(scene, '#78b84e');
+  const cols = ['#2fa7ff', '#ffb02f', '#ff5f8a'];
+  // exon blocks in a row; middle one is cracked and labeled EXON
+  const lane = new THREE.Group(); scene.add(lane); lane.position.set(0, 0, -0.6);
+  box(lane, mat('#7b7f86'), [8.4, 0.08, 1.2], [0, 0.04, 0]);
+  [[-2.8, cols[0]], [2.8, cols[2]]].forEach(([x, c]) => box(lane, mat(c, { roughness: 0.4 }), [1.5, 0.5, 1.0], [x, 0.33, 0]));
+  const left = box(lane, mat(cols[1], { roughness: 0.4 }), [0.7, 0.5, 1.0], [-0.55, 0.33, 0], [0, 0, 0.12]);
+  const right = box(lane, mat(cols[1], { roughness: 0.4 }), [0.7, 0.5, 1.0], [0.55, 0.33, 0], [0, 0, -0.12]);
+  for (const [txt, x, rz] of [['EX', -0.55, 0.12], ['ON', 0.55, -0.12]]) {
+    const t = textPlane(txt, 0.62, 0.42, { bg: '#ffb02f', fg: '#3b1d00', px: 0.8 }); t.position.set(x, 0.33, -0.095); t.rotation.z = rz; scene.add(t);
+  }
+  // jumping serape
+  const s = createSerape({ scale: 1.7 }); s.position.set(0, 0.9, 0.6); scene.add(s);
+  s.userData.pose({ lean: -0.05, arms: { l: [0, 1.0, 0.2], r: [0, -1.0, 0.2] }, legs: { l: [0, 0.25], r: [0, -0.25] } });
+  // skipping rope: handles in hands, loop under feet
+  const rope = mat('#ff3b3b', { roughness: 0.4 });
+  const c = new THREE.CatmullRomCurve3([[-0.85, 1.45, 0.7], [-1.0, 0.6, 0.7], [-0.7, 0.1, 0.7], [0, 0.0, 0.75], [0.7, 0.1, 0.7], [1.0, 0.6, 0.7], [0.85, 1.45, 0.7]].map((p) => new THREE.Vector3(...p)));
+  add(scene, new THREE.TubeGeometry(c, 60, 0.03, 8), rope);
+  for (const x of [-0.85, 0.85]) cyl(scene, mat('#ffd23a'), 0.05, 0.05, 0.3, [x, 1.5, 0.7]);
+  finishScene(stage, s, [num('cx', 0.3), num('cy', 1.5), num('cz', 6.4)], [num('tx', 0), num('ty', 1.1), 0]);
+});
+</script></body></html>

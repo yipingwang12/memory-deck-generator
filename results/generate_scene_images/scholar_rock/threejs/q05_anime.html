@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scholar Rock q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — "Under the MORTARBOARD, the APE TIGER helps weak spinal muscles: spinal muscular atrophy."
+import { THREE, guard, mat, add, box, cyl, blob, makeScene, wrapUp } from './common.js';
+import { createMortarboard } from './mortarboard.js';
+import { createApeTiger } from './apetiger.js';
+
+function spine(parent, x, z) {
+  const bone = mat('#f4ead2'), g = new THREE.Group(); g.position.set(x, 0, z); parent.add(g);
+  for (let i = 0; i < 11; i++) {
+    const y = 0.35 + i * 0.27, sway = Math.sin(i * 0.55) * 0.12, r = 0.26 - Math.abs(i - 5) * 0.004;
+    const v = new THREE.Group(); v.position.set(sway, y, 0); g.add(v);
+    cyl(v, bone, [0, 0, 0], r, 0.2); add(v, new THREE.TorusGeometry(r, 0.03, 8, 24), bone, [0, 0.1, 0], [Math.PI / 2, 0, 0]);
+    blob(v, bone, [0, 0, -r - 0.05], [0.05, 0.09, 0.12]);
+    cyl(v, bone, [r + 0.1, 0, 0], 0.035, 0.2, [0, 0, Math.PI / 2]); cyl(v, bone, [-r - 0.1, 0, 0], 0.035, 0.2, [0, 0, Math.PI / 2]);
+    if (i < 10) cyl(g, mat('#d9a7b0'), [sway, y + 0.135, 0], r * 0.8, 0.07);
+  }
+  return g;
+}
+const band = (pts, color, r = 0.05) => add(scene0, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 30, r, 8), mat(color, { roughness: 0.6 }));
+let scene0;
+
+guard(() => {
+  const { stage, scene, num } = makeScene({ ground: '#82c0a0' }); scene0 = scene;
+  spine(scene, 1.5, 0);
+  // limp thin muscle bands drooping off the spine
+  band([[1.9, 3.0, 0.0], [2.3, 2.7, 0.1], [2.5, 2.0, 0.2], [2.55, 1.0, 0.35]], '#ff8fa0', 0.075);
+  band([[1.9, 2.4, 0.0], [2.4, 2.2, 0.1], [2.65, 1.5, 0.2], [2.8, 0.7, 0.35]], '#ff9fb0', 0.075);
+  band([[1.1, 2.9, 0.0], [0.8, 2.7, 0.2], [0.6, 2.1, 0.4], [0.55, 1.5, 0.6]], '#ff8fa0', 0.075);
+  band([[1.1, 2.2, 0.0], [0.7, 2.1, 0.2], [0.5, 1.7, 0.4], [0.35, 1.2, 0.6]], '#ff9fb0', 0.075);
+
+  const ape = createApeTiger({ scale: 1.45 }); ape.position.set(-0.8, 0, 1.0); ape.rotation.y = 0.55; scene.add(ape);
+  const m = createMortarboard({ scale: 0.7 }); const ht = ape.userData.headTop; m.position.set(ht.x, ht.y - 0.25 * 0.7 - 0.03, ht.z);
+  m.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] } }); ape.add(m);
+  scene.updateMatrixWorld(true);
+  // hands lift the nearest drooping bands back up
+  const L = ape.worldToLocal(new THREE.Vector3(0.45, 1.8, 0.7)); ape.userData.reach('l', [L.x, L.y, L.z]);
+  const R = ape.worldToLocal(new THREE.Vector3(0.55, 1.55, 0.9)); ape.userData.reach('r', [R.x, R.y, R.z]);
+  wrapUp(stage, num, [ape, m], [0.8, 1.9, 6.6], [0.8, 1.55, 0]);
+});
+</script></body></html>

@@ -1,0 +1,14 @@
+  // The CROW blames its delivery parcel: how it moves through patients' bodies, its pharmacokinetics.
+  const stage = makeStage({ ground: '#f0d4c4' }); const S = stage.scene;
+  // winding vessel with a stuck parcel
+  const pts = [[-3.6, 0.7, -0.3], [-2.4, 1.0, -0.3], [-1.4, 2.0, -0.3], [-0.1, 2.5, -0.3], [1.0, 1.7, -0.3], [1.4, 0.7, -0.3], [2.4, 0.5, -0.3], [3.6, 1.3, -0.3]];
+  tubeAlong(S, pts, 0.42, new THREE.MeshStandardMaterial({ color: '#e0505a', transparent: true, opacity: 0.45, roughness: 0.2, depthWrite: false }));
+  tubeAlong(S, pts, 0.47, new THREE.MeshStandardMaterial({ color: '#c0303a', transparent: true, opacity: 0.18, roughness: 0.2, depthWrite: false }));
+  const parcel = new THREE.Group(); parcel.position.set(1.0, 1.75, 0.35); parcel.scale.setScalar(1.5); parcel.rotation.set(0.2, 0.4, 0.5); S.add(parcel);
+  box(parcel, mat('#c89a5a'), [0.55, 0.45, 0.5]); box(parcel, mat('#e8d9a8'), [0.12, 0.47, 0.52]); box(parcel, mat('#e8d9a8'), [0.57, 0.12, 0.52]);
+  const pk = label('PK', { w: 0.3, h: 0.2, size: 0.6, bg: '#fff6df' }); pk.position.set(0, 0, 0.26); parcel.add(pk);
+  // small dents/question stars
+  for (let i = 0; i < 3; i++) blob(S, mat('#ffd23f', { emissive: '#ffd23f', emissiveIntensity: 0.4 }), [0.3 + i * 0.4, 2.35 - i * 0.1, 0.3], [0.07, 0.07, 0.07]);
+  const crow = createCrow({ scale: 1.8 }); crow.position.set(-2.1, 0, 1.3); crow.rotation.y = 0.55; S.add(crow);
+  crow.userData.pose({ headTilt: 0.15, headYaw: 0.4, headPitch: -0.1, beak: 0.35, wing: { l: [1.9, 0.0, 0.0], r: [0.2, 0, 0.1] } });
+  finishScene(stage, crow, [0.0, 1.9, 6.5], [0.2, 1.4, 0]);

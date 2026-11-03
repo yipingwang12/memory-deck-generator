@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Blueprint q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — A BOOT full of gold bars buys the BLUEPRINT, and a HORSE carries more coins later.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, blob, cyl, box, makeStage, clouds, ground, look, finishScene, goldBar, coin, buildHorse, buildBoot } from './common.js';
+import { createBlueprint } from './blueprint.js';
+
+guard(() => {
+  const stage = makeStage(); const scene = stage.scene; ground(scene);
+  const boot = buildBoot(1.7); boot.position.set(-1.9, 0, -0.3); boot.rotation.y = 0.5; scene.add(boot);
+  [[-0.08, 0.1, 0.25, 0.4], [0.1, -0.05, -0.3, -0.2], [0, 0.0, 0.1, 0.1], [-0.12, -0.08, 0.5, 0.7], [0.12, 0.08, -0.5, 0.5]].forEach(([x, z, r, h], i) => {
+    const b = goldBar(); b.position.set(x * 0.8, 1.02 + (i % 2) * 0.1, z * 0.6); b.rotation.set(0.4 + r * 0.3, r, r * 0.5); b.scale.setScalar(0.9); boot.add(b);
+  });
+  for (let i = 0; i < 4; i++) { const b = goldBar(); b.position.set(-0.85 + i * 0.28, 0.07, 0.5 - (i % 2) * 0.1); b.rotation.set(Math.PI / 2, 0, (i - 1.5) * 0.35); b.scale.setScalar(1.2); scene.add(b); }
+  const horse = buildHorse(); horse.position.set(1.8, 0, -0.5); horse.rotation.y = -Math.PI * 0.8; horse.scale.setScalar(1.15); scene.add(horse);
+  for (const z of [-0.22, 0.22]) {
+    const bag = blob(horse, mat('#b99055'), [0, 0.85, z * 1.6], [0.26, 0.26, 0.12]);
+    for (let i = 0; i < 4; i++) { const c = coin(0.075); c.position.set(-0.12 + i * 0.08, 1.07 + (i % 2) * 0.02, z * 1.6); c.rotation.set(0.5 + i * 0.4, 0, 0.3 * i); horse.add(c); }
+  }
+  for (let i = 0; i < 6; i++) { const c = coin(0.1); c.position.set(0.7 + (i % 3) * 0.2, 0.02 + Math.floor(i / 3) * 0.03, 1.0 - (i % 2) * 0.2); c.rotation.set(Math.PI / 2, 0, 0); scene.add(c); }
+  const bp = createBlueprint({ scale: 1.9 }); bp.position.set(0.1, 0, 1.2); bp.rotation.y = -0.1; scene.add(bp);
+  bp.userData.pose({ headTilt: 0.06, arms: { l: [0, 0.4, 0], r: [0, 0.3, 0] } });
+  clouds(stage); look(stage, 0.0, 1.1, 5.2, 0.0, 0.95, 0);
+  finishScene(stage, [bp, horse]);
+});
+</script></body></html>

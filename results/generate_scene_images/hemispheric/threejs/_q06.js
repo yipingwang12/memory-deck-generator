@@ -1,0 +1,19 @@
+  // q06 — DESCARTES learns from over a quarter of a million hours of brain waves on the GLOBE.
+  const S = makeScene({ ground: '#7bb35a' }), scene = S.scene;
+  const globe = createGlobe({ scale: 1.5 }); globe.position.set(-1.45, 0, 0.2); globe.rotation.y = 0.35; scene.add(S.character(globe));
+  globe.userData.pose({ arms: { l: [0, 1.0, 0], r: [0, 1.0, 0] } });
+  const d = createDescartes({ scale: 1.5 }); d.position.set(0.15, 0, 0.3); d.rotation.y = -0.3; scene.add(S.character(d));
+  // brain waves streaming from the globe into Descartes' head
+  const from = new THREE.Vector3(-1.2, 1.0, 0.3), to = new THREE.Vector3(0.0, 1.38, 0.35);
+  [['#27e0ff', 0], ['#ff4fd8', 0.09], ['#ffe14a', -0.09]].forEach(([c, off], i) => {
+    const pts = []; for (let t = 0; t <= 1; t += 0.01) pts.push(new THREE.Vector3().lerpVectors(from, to, t).add(new THREE.Vector3(0, off + Math.sin(t * 40 + i) * 0.07 * (0.4 + t), 0)));
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 220, 0.016, 8), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.6, roughness: 0.4 }));
+    scene.add(tube);
+  });
+  // hours: a heap of clocks
+  const R = rng(4), pile = new THREE.Group(); let i = 0;
+  for (let row = 0; row < 5; row++) for (let col = 0; col < 5 - row; col++) {
+    const c = createClock(0.12, (i * 5) % 12, (i * 17) % 60); c.position.set(col * 0.27 + row * 0.135, 0.13 + row * 0.235, (R() - 0.5) * 0.05); c.rotation.y = (R() - 0.5) * 0.5; pile.add(c); i++;
+  }
+  pile.position.set(1.2, 0, 0.5); scene.add(pile);
+  const CAM = { cy: 1.0, ty: 0.75, cz: 4.2, tx: 0.1 };

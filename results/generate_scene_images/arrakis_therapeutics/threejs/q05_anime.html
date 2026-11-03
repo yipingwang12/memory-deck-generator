@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — A LONG ladder carries the new CEO crown up
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.25, wx: -0.9, wry: 0.3 });
+  const L = ladder(3.4); L.position.set(0.8, 0, 0.5); L.rotation.set(-0.05, 0.0, 0.36); c.scene.add(L);
+  const k = crown(1.5); k.position.set(0, 3.45, 0); L.add(k);
+  const k2 = crown(0.1); k2.visible = false; c.scene.add(k2);
+  c.done([0.3, 2.2, 7.8], [0.3, 1.9, 0], [[150, 900, 90, 1.2], [187, 1000, 120, 1.6]]);
+});
+</script></body></html>

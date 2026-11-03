@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sonde q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, add, mat, blob, box, cyl, ground, makeStage, wrapUp, rng, textPlane } from "./common.js";
+import { createBalloon } from "./balloon.js";
+import { createPerson } from "./people.js";
+// q06 — PARTNERS holding hands lead the BALLOON's Series B.
+guard(() => {
+  const { stage, scene, num } = makeStage({ sunAzimuth: 120 });
+  ground(scene, '#6fae45');
+  const cols = [['#8e2a3a', '#2a2a33'], ['#2a6a4a', '#2a2a33'], ['#2f4f9a', '#2a2a33']], hairs = ['#3a2a1c', '#c8a050', '#1a1a1a'], xs = [-1.9, -0.95, 0], ps = [];
+  xs.forEach((x, i) => {
+    const p = createPerson({ coat: cols[i][0], pants: cols[i][1], hair: hairs[i], tie: i === 1 ? null : '#f2c230', scale: 1.1 }); p.position.set(x, 0, 0.3); p.rotation.y = 0.15; scene.add(p); ps.push(p);
+    p.userData.pose({ lean: 0.04 });
+  });
+  scene.updateMatrixWorld(true);
+  const bal = createBalloon({ scale: 1.5, string: 0.9 }); bal.position.set(1.0, 1.9, 0.3); bal.rotation.z = -0.05; scene.add(bal);
+  bal.userData.pose({ arms: { l: [0, 0.8, 0], r: [0, 0.8, 0] } });
+  // hand chain: each hand to the midpoint with its neighbour; leader grips the string
+  const mid = (a, b) => new THREE.Vector3().addVectors(ps[a].position, ps[b].position).multiplyScalar(0.5).setY(0.85).setZ(0.4);
+  const reach = (p, k, w) => { p.updateMatrixWorld(true); const t = p.worldToLocal(w.clone()); p.userData.reach(k, [t.x, t.y, t.z]); };
+  reach(ps[0], 'l', mid(0, 1)); reach(ps[1], 'r', mid(0, 1)); reach(ps[1], 'l', mid(1, 2)); reach(ps[2], 'r', mid(1, 2));
+  reach(ps[2], 'l', bal.localToWorld(new THREE.Vector3(0, -0.6, 0.05)));
+  // Series B flag
+  cyl(scene, mat('#d8d8dc', { metalness: 0.5 }), [-3.4, 1.6, -0.3], 0.04, 0.04, 3.2);
+  const f = textPlane('B', 1.5, 1.2, { bg: '#e8343f', fg: '#ffffff' }); f.position.set(-2.65, 2.6, -0.3); scene.add(f);
+  wrapUp(stage, num, [...ps, bal], [-0.4, 2.1, 8.4], [-0.4, 1.9, 0]);
+});
+</script></body></html>

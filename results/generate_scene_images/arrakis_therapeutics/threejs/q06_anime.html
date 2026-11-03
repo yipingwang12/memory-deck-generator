@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arrakis q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — The SANDWORM sets up a secret TRYST between pill and RNA
+import { THREE, guard, rng, mat, add, blob, limb, animeEye, base, coin, coinPile, crown, pill, heart, canoe, ladder, flag, pocketWatch, rna, eagle, termite, gillMan, bicep } from './props.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+
+  const c = base(P, { tilt: 1.2, wx: -1.8, wz: -0.2, wry: 0.8 });
+  const table = new THREE.Group(); table.scale.setScalar(1.9); table.position.set(0.9, 0, 0.6); c.scene.add(table);
+  add(table, new THREE.CylinderGeometry(0.7, 0.7, 0.07, 36), mat('#fff6f0'), [0, 0.75, 0]);
+  add(table, new THREE.CylinderGeometry(0.72, 0.5, 0.2, 36, 1, true), new THREE.MeshStandardMaterial({ color: '#ff6a86', side: THREE.DoubleSide }), [0, 0.64, 0]);
+  add(table, new THREE.CylinderGeometry(0.1, 0.18, 0.64, 16), mat('#8a4a2a'), [0, 0.35, 0]);
+  add(table, new THREE.CylinderGeometry(0.035, 0.035, 0.2, 12), mat('#fff0c0'), [0, 0.89, 0]);
+  add(table, new THREE.ConeGeometry(0.035, 0.1, 10), mat('#ff9a20', { emissive: '#ff7a10', emissiveIntensity: 0.8 }), [0, 1.04, 0]);
+  const p = pill(0.5, 0.14, '#ff5a78', '#fff'); p.rotation.z = Math.PI / 2; p.position.set(-0.4, 1.07, 0.0); table.add(p);
+  animeEye(table, -0.4 - 0.05, 1.12, 0.145, 1.1); animeEye(table, -0.4 + 0.05, 1.12, 0.145, 1.1);
+  const R = rna([[0.42, 0.82, 0.0], [0.52, 1.0, 0.04], [0.34, 1.2, 0.0], [0.52, 1.4, 0.04], [0.42, 1.55, 0.0]], { n: 12 }); table.add(R);
+  for (const [x, y, s] of [[0, 1.5, 0.3], [-0.3, 1.9, 0.2], [0.35, 1.95, 0.24]]) { const h = heart(s); h.position.set(x, y, 0.2); table.add(h); }
+  for (const s of [-1, 0, 1]) add(c.scene, new THREE.BoxGeometry(1.5, 4, 0.1), mat(['#8a2a5a', '#a8386a', '#7a2050'][s + 1]), [0.9 + s * 1.5, 2.0, -1.6], [0, s * 0.35, 0]);
+  c.done([0.0, 2.2, 7.4], [0.0, 1.9, 0])
+});
+</script></body></html>

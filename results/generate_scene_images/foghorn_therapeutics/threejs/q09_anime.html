@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foghorn q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 BRIDGE: foghorn sounds under a bridge on a foggy night.
+import { THREE, guard, rng, mat, add, blob, box, num, makeStage, ground, placeFoghorn, soundWaves, textPlane, aimAt, finishScene } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ el: 12, az: 200, sunIntensity: 1.1, sunColor: '#b9c8ff', exposure: 1.4,
+    sky: { zenith: '#0c1535', horizon: '#6d7fa8', cover: 1, puffCover: 0.4 }, ambient: { color: '#7d8cc4', intensity: 1.8 }, fog: { color: '#7f8db0', near: 4, far: 26 } });
+  const scene = stage.scene;
+  ground(scene, '#4a5a63');
+  add(scene, new THREE.PlaneGeometry(400, 14), mat('#33506e', { roughness: 0.2 }), [0, 0.01, -9], [-Math.PI / 2, 0, 0]);
+  const stone = mat('#b9ab94'), brick = mat('#8a4a3a');
+  const br = new THREE.Group(); br.position.set(0, 0, -2.2); scene.add(br);
+  box(br, stone, [0, 2.9, 0], [11, 0.4, 2.0]); box(br, brick, [0, 3.2, 1.0], [11, 0.35, 0.12]); box(br, brick, [0, 3.2, -1.0], [11, 0.35, 0.12]);
+  for (const x of [-5.2, 5.2]) box(br, brick, [x, 1.5, 0], [1.2, 3, 2]);
+  for (const x of [-4.4, -1.0, 4.4]) { /* arch spandrels */ }
+  const arch = new THREE.Shape(); arch.absarc(0, 0, 2.4, 0, Math.PI, false);
+  const ring = add(br, new THREE.ExtrudeGeometry(arch, { depth: 2.0, bevelEnabled: false }), stone, [0, 0.5, -1.0]);
+  ring.scale.set(1, 1, 1);
+  const ring2 = new THREE.Shape(); ring2.moveTo(-4.6, 0); ring2.lineTo(4.6, 0); ring2.lineTo(4.6, 2.5); ring2.lineTo(-4.6, 2.5);
+  const hole = new THREE.Path(); hole.absarc(0, 0, 2.7, 0, Math.PI, false); hole.lineTo(2.7, 0); ring2.holes.push(hole);
+  add(br, new THREE.ExtrudeGeometry(ring2, { depth: 2.0, bevelEnabled: false }), stone, [0, 0.4, -1.0]);
+  br.remove(ring);
+  for (const x of [-4, -2, 2, 4]) { add(br, new THREE.CylinderGeometry(0.05, 0.05, 1.1, 8), mat('#2a2d35'), [x, 3.9, 1.0]); blob(br, new THREE.MeshBasicMaterial({ color: '#ffe9a6' }), [x, 4.5, 1.0], [0.18, 0.18, 0.18]); }
+  const f = placeFoghorn(scene, { x: -1.4, z: 1.2, scale: 2.0 }); aimAt(f, [3.0, 1.8, 0.2], 0, 0.95);
+  const fog = new THREE.MeshBasicMaterial({ color: '#c9d3ea', transparent: true, opacity: 0.22, depthWrite: false, fog: false });
+  const r = rng(8); for (let i = 0; i < 18; i++) { const m = blob(scene, fog, [-6 + r() * 12, 0.25 + r() * 0.4, -4 + r() * 3.2], [1.6 + r() * 1.6, 0.3 + r() * 0.3, 1.2]); m.castShadow = m.receiveShadow = false; }
+  soundWaves(scene, f, { n: 4, color: '#e8f0ff' });
+  finishScene(stage, f, { cam: [0.3, 1.6, 6.6], look: [0.3, 1.9, -1.2], clouds: false });
+
+});
+</script></body></html>

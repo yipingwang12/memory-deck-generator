@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scholar Rock q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — "Under the MORTARBOARD, the APE TIGER stops MYOSTATIN, the muscle brake, from switching on."
+import { THREE, guard, mat, add, box, cyl, blob, sign, makeScene, wrapUp } from './common.js';
+import { createMortarboard } from './mortarboard.js';
+import { createApeTiger } from './apetiger.js';
+
+guard(() => {
+  const { stage, scene, num } = makeScene({ ground: '#7cb850' });
+  // giant red hand-brake lever on a post, tagged MYOSTATIN
+  const br = new THREE.Group(); br.position.set(1.3, 0, 0.3); scene.add(br);
+  box(br, mat('#4a4f5c'), [0, 0.5, 0], [1.9, 1.0, 0.4]);
+  cyl(br, mat('#c8ccd4', { metalness: 0.6, roughness: 0.3 }), [0, 1.0, 0], 0.13, 0.5, [0, 0, Math.PI / 2]);
+  const lever = new THREE.Group(); lever.position.set(0, 1.0, 0.0); lever.rotation.z = -0.5; br.add(lever);
+  box(lever, mat('#e0302a'), [0, 0.7, 0], [0.16, 1.4, 0.2]);
+  blob(lever, mat('#2a2a30'), [0, 1.45, 0], [0.13, 0.22, 0.13]);
+  const tag = sign('MYOSTATIN', 1.7, 0.4, { bg: '#fff3d6', fg: '#c8201a', border: '#c8201a' }); tag.position.set(0, 0.5, 0.21); br.add(tag);
+  const stopS = sign('BRAKE', 1.0, 0.36, { bg: '#e0302a', fg: '#ffffff', border: '#7a120e' }); stopS.position.set(0.55, 1.6, -0.3); 
+
+  const ape = createApeTiger({ scale: 1.45 }); ape.position.set(-0.35, 0, 0.9); ape.rotation.y = 0.4; scene.add(ape);
+  const m = createMortarboard({ scale: 0.7 }); const ht = ape.userData.headTop; m.position.set(ht.x, ht.y - 0.25 * 0.7 - 0.03, ht.z);
+  m.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] } }); ape.add(m);
+  scene.updateMatrixWorld(true);
+  const grab = lever.localToWorld(new THREE.Vector3(0, 0.85, 0.0));
+  const L = ape.worldToLocal(grab.clone()); ape.userData.reach('l', [L.x, L.y, L.z]);
+  const R = ape.worldToLocal(grab.clone().add(new THREE.Vector3(-0.1, -0.15, 0.15))); ape.userData.reach('r', [R.x, R.y, R.z]);
+  ape.userData.pose({ lean: 0.1 });
+  wrapUp(stage, num, [ape, m], [0.4, 1.8, 6.0], [0.4, 1.35, 0]);
+});
+</script></body></html>

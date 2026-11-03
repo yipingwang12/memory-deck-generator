@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hemispheric q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, makeScene, mat, add, blob, cyl, rng, canvasTexture, sign, createDescartes, createClock, createCoinPile, reachWorld } from "./common.js";
+import { guard } from "./kit.js";
+import { createGlobe } from "./globe.js";
+guard(() => {
+  // q05 — DESCARTES on the GLOBE has six billion tiny knobs: parameters.
+  const S = makeScene({ ground: '#7bb35a' }), scene = S.scene;
+  const globe = createGlobe({ scale: 1.8 }); globe.position.set(0, 0, 0.2); scene.add(S.character(globe));
+  globe.userData.pose({ arms: { l: [0, 1.2, 0], r: [0, 0.7, 0] } });
+  const dome = globe.userData.parts.dome, R = rng(21), colors = ['#ff8a1c', '#f2f2f2', '#e5384f', '#ffd23f'];
+  for (const c of colors) {
+    const geo = new THREE.CylinderGeometry(0.022, 0.028, 0.04, 10), n = 120, inst = new THREE.InstancedMesh(geo, mat(c, { roughness: 0.4 }), n), o = new THREE.Object3D();
+    let k = 0;
+    while (k < n) {
+      const v = new THREE.Vector3(R() * 2 - 1, R(), R() * 2 - 1).normalize(); if (v.y < 0.06) continue;
+      if (v.z > 0.5 && v.y > 0.02 && v.y < 0.8 && Math.abs(v.x) < 0.7) continue;
+      o.position.copy(v).multiplyScalar(0.4); o.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v); o.updateMatrix(); inst.setMatrixAt(k++, o.matrix);
+    }
+    inst.castShadow = true; dome.add(inst);
+  }
+  const d = createDescartes({ scale: 1.0 }); d.position.set(0.1, 1.08, 0.12); d.rotation.y = -0.3; scene.add(S.character(d));
+  d.userData.arms.l.rotation.set(-0.6, 0, 0.9);
+  const CAM = { cy: 1.1, ty: 0.95, cz: 3.7, tx: 0 };
+  const C = { cx: 0.2, cy: 0.85, cz: 3.6, tx: 0.2, ty: 0.55, ...(typeof CAM !== 'undefined' ? CAM : {}) };
+  S.finish([S.num('cx', C.cx), S.num('cy', C.cy), S.num('cz', C.cz)], [S.num('tx', C.tx), S.num('ty', C.ty), 0]);
+});
+</script></body></html>

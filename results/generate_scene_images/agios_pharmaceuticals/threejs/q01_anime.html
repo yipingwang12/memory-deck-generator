@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Agios q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — A PIRATE KING wakes up when the AEGIS shield taps him.
+import { THREE, guard, mat, add, blob, box, cyl, rbc } from './common.js';
+import { makeScene } from './common.js';
+import { createAegis } from './aegis.js';
+import { createPirateKing } from './props.js';
+guard(() => {
+  const S = makeScene({ ground: '#b8453f', cover: 1 });
+  const { scene, num } = S;
+  // bed of blood: red pool + cells
+  add(scene, new THREE.CylinderGeometry(2.4, 2.4, 0.02, 48), mat('#8f1d2c', { roughness: 0.3 }), [0, 0.01, 0]);
+  for (let i = 0; i < 14; i++) { const c = rbc(0.2, '#d8283a'); const a = i * 2.4; c.position.set(Math.cos(a) * (1 + (i % 4) * 0.35), 0.08 + (i % 3) * 0.02, Math.sin(a) * (0.8 + (i % 3) * 0.3) - 0.8); c.rotation.set(0.3 * (i % 3), a, 0.2); scene.add(c); }
+  // bed cushion
+  box(scene, mat('#e9e2d2'), [0.35, 0.12, 0], [1.3, 0.16, 0.7]);
+  const king = createPirateKing({ awake: true }); king.position.set(0.35, 0.2, 0); king.rotation.set(0, 0, 0);
+  scene.add(king); king.rotation.z = 0.0;
+  // king waking: sits up, eyes open; zzz gone -> exclamation sparks
+  for (let i = 0; i < 3; i++) { const sp = add(scene, new THREE.ConeGeometry(0.03, 0.14, 4), mat('#ffe14a'), [0.35 + (i - 1) * 0.28, 1.45 + (i === 1 ? 0.1 : 0), 0.0], [0, 0, (i - 1) * 0.5]); }
+  const aegis = createAegis({ scale: 1.15 }); aegis.position.set(-0.7, 0, 0.5); aegis.rotation.y = 0.5; scene.add(aegis);
+  aegis.userData.pose({ legs: { l: [0.25, 0], r: [-0.2, 0] } }); aegis.updateMatrixWorld(true);
+  const t = aegis.worldToLocal(new THREE.Vector3(0.1, 0.8, 0.3)); aegis.userData.reach('l', [t.x, t.y, t.z]);
+  S.mark(aegis); S.mark(king);
+  S.finish([0.1, 1.0, 3.3], [0, 0.65, 0]);
+});
+</script></body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pfizer q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — A SUMO wrestler carries three old buildings into the VISOR's new campus.
+import { THREE, guard, createVisor, setup, ground, box, cyl, blob, add, mat, house, sumo, finish } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = setup(P);
+  ground(scene, '#8cbf68');
+  add(scene, new THREE.PlaneGeometry(400, 3), mat('#d9d2c0'), [0, 0.003, 0.5], [-Math.PI / 2, 0, 0]);
+  // new glass campus behind
+  [[-4.5, 3.4, 2.2], [-1.5, 4.6, 2.4], [2.0, 3.8, 2.4], [5.2, 3.0, 2.2]].forEach(([x, h, w], i) => {
+    const g = new THREE.Group(); g.position.set(x, 0, -6 - (i % 2)); scene.add(g);
+    box(g, w, h, 2, '#8fd0f0', [0, h / 2, 0], [0, 0, 0], { metalness: 0.5, roughness: 0.15 });
+    for (let k = 1; k < h; k += 0.7) box(g, w + 0.05, 0.05, 2.05, '#e8f4ff', [0, k, 0]);
+  });
+  const s = sumo(); s.scale.setScalar(num('ss', 1.15)); s.position.set(-0.6, 0, 0); s.rotation.y = 0.25; scene.add(s);
+  const old = (w, h, pos, rz) => { const o = house({ w, h, d: w * 0.8, wall: '#a8896a', roof: '#6b4a3a', old: true }); o.scale.setScalar(0.9); o.position.set(...pos); o.rotation.z = rz; scene.add(o); return o; };
+  const y0 = 1.15 * 1.35 + 0.65 * 1.15;
+  old(0.9, 0.7, [-0.6 - 0.75 * 1.15 * 0.95, 1.42 * 1.15 + 0.3, 0.1], 0.08);
+  old(0.9, 0.7, [-0.6 + 0.85 * 1.15 * 0.95, 1.42 * 1.15 + 0.3, 0.1], -0.08);
+  old(1.0, 0.75, [-0.6, 1.98 * 1.15 + 0.35, 0], 0.05);
+  const v = createVisor({ scale: num('vs', 2.4) }); v.position.set(2.5, 0, 1.4); v.rotation.y = -0.5; scene.add(v);
+  v.userData.pose({ arms: { l: [0, 1.7, 0.2], r: [0, 0.5, 0] } });
+  finish(stage, scene, [v, s], [num('cx', 0.7), num('cy', 2.0), num('cz', 8.2)], [num('tx', 0.7), num('ty', 1.6), 0]);
+});
+</script></body></html>

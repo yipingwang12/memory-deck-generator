@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alnylam q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — "Under a hot SUN, the LAMB signs its incorporation papers."
+import * as THREE from 'three';
+import { createStage, guard } from './kit.js';
+import { buildQ01 } from './q01_scene.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const { scene, camera, finish, sunDir } = createStage({
+    fov: num('fov', 40), sunElevation: num('el', 8), sunAzimuth: num('az', 200), exposure: num('exp', 0.5),
+    turbidity: num('turb', 2), rayleigh: num('ray', 1.2), mie: num('mie', 0.0012), mieG: num('mieg', 0.97), shadowSize: 3, sunIntensity: 3.6, envIntensity: 0.8,
+    bloom: { strength: num('bloom', 0.7), radius: num('bradius', 0.5), threshold: num('bth', 25) },
+    fog: { color: '#d9cdb8', near: 150, far: 1400 },
+    grade: { warmth: num('warm', 0.07), contrast: num('con', 1.1), saturation: num('sat', 1.12), vignette: num('vig', 0.4) },
+  });
+
+  buildQ01(scene, num);
+
+  // The SUN itself: an HDR disc far along the sun direction (bloom gives the glow) 
+  const sunDisc = new THREE.Mesh(new THREE.CircleGeometry(num('sunr', 20), 64),
+    new THREE.MeshBasicMaterial({ color: new THREE.Color(1, 0.93, 0.78).multiplyScalar(num('sunk', 30)), fog: false, toneMapped: true }));
+  sunDisc.position.copy(sunDir).multiplyScalar(900);
+  sunDisc.lookAt(0, 0, 0);
+  scene.add(sunDisc);
+
+  // Soft frontal fill so the face is readable against the sun.
+  const fill = new THREE.DirectionalLight(0xffe7cc, num('fill', 0.7));
+  fill.position.set(2, 2, 5);
+  scene.add(fill);
+
+  camera.position.set(num('cx', 0.05), num('cy', 0.8), num('cz', 2.6));
+  camera.lookAt(num('tx', 0.05), num('ty', 0.6), num('tz', 0));
+  finish();
+});
+</script></body></html>

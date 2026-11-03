@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Takeda q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — The TACO is the TRIANGLE's biggest partner.
+import { THREE, guard, createTaco, mat, add, box, cyl, ball, eyes, setup, wrap } from './common.js';
+guard(() => {
+  const { stage, scene, num } = setup({ ground: '#f0d9a8' });
+  // triangle character
+  const tri = new THREE.Group(); const s = new THREE.Shape(); s.moveTo(-0.9, 0); s.lineTo(0.9, 0); s.lineTo(0, 1.6); s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, { depth: 0.4, bevelEnabled: true, bevelSize: 0.06, bevelThickness: 0.06, bevelSegments: 4 }); g.translate(0, 0, -0.2);
+  add(tri, g, mat('#2fa7a0'), [0, 0.35, 0]);
+  eyes(tri, 0.95, 0.27, 0.19, 0.075);
+  const mouth = new THREE.Mesh(new THREE.TorusGeometry(0.09, 0.02, 8, 20, Math.PI), mat('#7a2a2a')); mouth.rotation.z = Math.PI; mouth.position.set(0, 0.77, 0.27); tri.add(mouth);
+  for (const x of [-0.3, 0.3]) cyl(tri, 0.05, 0.05, 0.4, '#ffe0c0', [x, 0.17, 0]), add(tri, new THREE.SphereGeometry(0.1, 16, 12), mat('#2a4aa8'), [x, 0.03, 0.06], [0, 0, 0], [1, 0.6, 1.5]);
+  tri.scale.setScalar(2.0); tri.position.set(-1.5, 0, 0); tri.rotation.y = 0.35; scene.add(tri);
+  const taco = createTaco({ scale: 2.0 }); taco.position.set(1.0, 0, 0.3); taco.rotation.y = -0.2; scene.add(taco);
+  taco.userData.pose({ arms: { l: [0, 0.4, 0] } });
+  const hand = new THREE.Vector3(-0.15, 1.1, 0.8);
+  taco.updateMatrixWorld(true); const t = taco.worldToLocal(hand.clone()); taco.userData.reach('r', [t.x, t.y, t.z]);
+  // triangle's arm to the same hand point
+  tri.updateMatrixWorld(true); const sh = tri.localToWorld(new THREE.Vector3(0.45, 0.85, 0.05));
+  const dir = hand.clone().sub(sh), len = dir.length();
+  const arm = cyl(scene, 0.07, 0.07, len, '#2fa7a0', sh.clone().add(hand).multiplyScalar(0.5)); arm.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.normalize());
+  ball(scene, 0.1, '#2fa7a0', [hand.x, hand.y, hand.z]);
+  wrap(stage, [taco, tri], [num('cx', 0), num('cy', 1.7), num('cz', 8)], [num('tx', 0), num('ty', 1.6), 0]);
+});
+</script></body></html>

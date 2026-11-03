@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flourish q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — Before the FLOUR, the REAR door led an INTERNET EXPLORER with a big blue E.
+import { THREE, guard, canvasTexture, rng, createFlour, mat, add, blob, box, cyl, textTexture, setup, wrap } from './base.js';
+import { buildBrain, buildMill, buildBulb, coin, COIN_MAT, goldBar, flag } from './props.js';
+guard(() => {
+  const { stage, scene } = setup({ ground: '#8cc063' });
+  const D = new THREE.Group(); D.position.set(-2.2, 0, -1.0); D.rotation.y = -0.25; scene.add(D);
+  box(D, mat('#e9d8b8'), [0, 1.2, -0.1], [1.5, 2.4, 0.12]);
+  box(D, mat('#1b2a55'), [0, 1.05, -0.02], [1.0, 2.0, 0.05]);
+  box(D, mat('#5a3a22'), [-0.5, 1.05, 0.38], [0.9, 2.0, 0.08], [0, 1.2, 0]);
+  // blue "e" logo: disc with ring text + gold orbit
+  const logo = new THREE.Group(); logo.position.set(0.6, 1.65, -0.2); logo.rotation.y = 0.2; scene.add(logo);
+  const tex = canvasTexture(512, (ctx, s) => {
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, s, s);
+    ctx.fillStyle = '#1e88e5'; ctx.font = 'bold 480px Georgia, serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('e', s / 2, s / 2 + 30);
+  });
+  const face = add(logo, new THREE.CylinderGeometry(1.1, 1.1, 0.12, 48), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.4 }), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  add(logo, new THREE.CircleGeometry(1.0, 48), new THREE.MeshBasicMaterial({ map: tex }), [0, 0, 0.07]);
+  add(logo, new THREE.TorusGeometry(1.1, 0.07, 12, 56), mat('#1e88e5'), [0, 0, 0]);
+  add(logo, new THREE.TorusGeometry(1.35, 0.045, 10, 64), mat('#ffc107'), [0, 0, 0.0], [1.1, 0.0, -0.5], [1.0, 0.5, 1.0]);
+  cyl(scene, mat('#7a5a3a'), [0.6, 0.5, -0.25], 0.07, 1.0);
+  // explorer hat on top
+  const hat = new THREE.Group(); hat.position.set(0.6, 2.85, -0.2); hat.rotation.z = -0.15; scene.add(hat);
+  add(hat, new THREE.SphereGeometry(0.45, 28, 14, 0, Math.PI * 2, 0, Math.PI / 2), mat('#d9c08a'), [0, 0, 0]);
+  cyl(hat, mat('#d9c08a'), [0, 0, 0], 0.75, 0.05);
+  cyl(hat, mat('#6b4a2b'), [0, 0.1, 0], 0.46, 0.08, [0, 0, 0], 0.47);
+  const f = createFlour({ scale: 1.5 }); f.position.set(-0.4, 0, 1.6); f.rotation.y = 0.25; scene.add(f);
+  f.userData.pose({ arms: { l: [0, 2.4, 0.2], r: [0, 0.5, 0] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+  f.userData.reach('l', [0.7, 1.4, 0.3]);
+  // compass
+  const comp = new THREE.Group(); comp.position.set(1.6, 0.15, 1.5); scene.add(comp);
+  cyl(comp, mat('#d4a017', { metalness: 0.8, roughness: 0.3 }), [0, 0, 0], 0.3, 0.1); cyl(comp, mat('#fff8e1'), [0, 0.06, 0], 0.26, 0.03);
+  add(comp, new THREE.ConeGeometry(0.05, 0.4, 3), mat('#d32f2f'), [0, 0.1, 0.1], [Math.PI / 2, 0, 0]); add(comp, new THREE.ConeGeometry(0.05, 0.4, 3), mat('#1565c0'), [0, 0.1, -0.1], [-Math.PI / 2, 0, 0]);
+  wrap(stage, [f], { cam: [0.2, 1.6, 6.0], look: [-0.1, 1.5, 0] });
+});
+</script></body></html>

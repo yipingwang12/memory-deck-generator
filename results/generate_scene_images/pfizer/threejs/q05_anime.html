@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pfizer q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — Under the VISOR, professors and drug makers meet at the Center for Therapeutic Innovation.
+import { THREE, guard, createVisor, setup, ground, box, cyl, blob, add, mat, sign, person, finish } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = setup(P);
+  ground(scene, '#8cbf68');
+  add(scene, new THREE.PlaneGeometry(400, 5), mat('#d9d2c0'), [0, 0.003, 0.2], [-Math.PI / 2, 0, 0]);
+  const b = new THREE.Group(); b.position.set(0, 0, -4); scene.add(b);
+  box(b, 11, 4, 2.5, '#8fb7d8', [0, 2, 0], [0, 0, 0], { metalness: 0.3, roughness: 0.3 }); box(b, 11.3, 0.25, 2.8, '#eef2f6', [0, 4.1, 0]);
+  const cti = sign('CTI', 3.2, 1.1, { bg: '#1f6fd6', fg: '#ffffff', border: '#ffffff' }); cti.position.set(0, 3.0, 1.27); b.add(cti);
+  for (const x of [-4, -2.6, 2.6, 4]) box(b, 0.9, 1.3, 0.05, '#e8f4ff', [x, 2.2, 1.27]);
+  box(b, 1.6, 2, 0.06, '#33506e', [0, 1, 1.27]);
+  const v = createVisor({ scale: num('vs', 3.4) }); v.position.set(0, 0, -1.2); scene.add(v);
+  v.userData.pose({ arms: { l: [0, 1.9, 0.0], r: [0, 1.9, 0.0] } });
+  const ppl = [];
+  const place = (g, x, z, ry) => { g.scale.setScalar(2.1); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g); ppl.push(g); return g; };
+  // professors (left): mortarboards, robes, beards
+  place(person({ coat: '#1c2a5a', hat: 'cap', beard: true, glasses: true, hair: '#d0d0d0', arms: 'out' }), -1.9, 1.0, 0.6);
+  place(person({ coat: '#5a1c3a', hat: 'cap', glasses: true }), -3.3, 0.3, 0.6);
+  place(person({ coat: '#1c4a2a', hat: 'cap', beard: true, hair: '#8a8a8a' }), -2.7, 2.0, 0.5);
+  // drug makers (right): white coats, hard hats, holding vials/pills
+  const dm = [place(person({ coat: '#ffffff', hat: 'hard', skin: '#d9a273' }), 1.9, 1.0, -0.6), place(person({ coat: '#ffffff', hat: 'hard' }), 3.3, 0.3, -0.6), place(person({ coat: '#ffffff', hat: 'hard', skin: '#a8704a' }), 2.7, 2.0, -0.5)];
+  // flask and pill on a table between the groups
+  box(scene, 1.2, 0.08, 0.6, '#8a5a3a', [0, 0.75, 1.9]); for (const x of [-0.5, 0.5]) box(scene, 0.08, 0.75, 0.08, '#6a4228', [x, 0.37, 1.9]);
+  cyl(scene, 0.17, 0.26, 0.3, '#6ac4e8', [-0.25, 0.94, 1.9]); cyl(scene, 0.07, 0.07, 0.22, '#9fe0ff', [-0.25, 1.15, 1.9]);
+  blob(scene, '#ffffff', [0.25, 0.9, 1.9], [0.18, 0.09, 0.09], [0, 0, 0.4]); blob(scene, '#e83a3a', [0.3, 0.92, 1.9], [0.09, 0.09, 0.09]);
+  finish(stage, scene, [v], [num('cx', 0), num('cy', 2.5), num('cz', 9.5)], [0, 1.9, 0]);
+});
+</script></body></html>

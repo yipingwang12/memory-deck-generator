@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Verve scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import * as PR from "./props.js";
+const { THREE, run, add, mat, blob, bevBox, label, makeStage, createBallerina, lollipop, nail, die, coin, mouse, gene, syringe, hammer, coinStack, canvasTexture } = PR;
+run(() => {
+const { scene, done, num } = makeStage();
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#ffd9a8'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+add(scene, new THREE.PlaneGeometry(400, 400), mat('#7a2a3a'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+add(scene, new THREE.BoxGeometry(4.2, 0.3, 2.6), mat('#d9a35a'), [-0.9, 0.15, 0]);
+add(scene, new THREE.BoxGeometry(4.2, 0.04, 0.08), mat('#ffd23d'), [-0.9, 0.32, 1.25]);
+const g = gene(2.2, 3, 0.2); g.position.set(2.0, 1.7, 0.6); g.rotation.set(0.2, 0.3, 0.9); scene.add(g);
+scene.add(PR.textPanel('PCSK9', 1.3, 0.5, '#ffffff', '#1a2a6a', [2.0, 2.8, 0.6], [0, 0, 0.2]));
+const b = createBallerina({ scale: 1.9 }); b.position.set(0.3, 0.3, 0.7); b.rotation.y = 0.9; scene.add(b);
+b.userData.pose({ lean: -0.2, arms: { l: [0, 2.2, 0.2], r: [0, -1.2, 0.3] }, legs: { l: [0, 0.1], r: [-1.5, -0.1] } });
+for (const [x, y] of [[1.3, 1.0], [1.6, 0.6]]) add(scene, new THREE.SphereGeometry(0.06, 8, 6), mat('#ffd23d'), [x, y, 0.9]);
+done([0.5, 1.7, 5.0], [0.7, 1.6, 0], [b]);
+});
+</script></body></html>

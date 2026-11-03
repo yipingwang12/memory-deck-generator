@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundation q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// PEACH tree drops four coins on the CORNERSTONE
+import * as L from './lib.js';
+const { THREE, guard, mat, add, blob, box, cyl, rng, tubeAlong } = L;
+guard(() => {
+const { scene, num, stone, toon, finish, stage } = L.setup({ground:'#7fb34e'});
+
+const t = L.peachTree(2.6); t.position.set(-2.1, 0, -0.8); t.scale.setScalar(1.35); scene.add(t);
+const c = stone({ scale: 1.25 }); c.position.set(0.7, 0, 0.6); c.rotation.y = -0.2;
+c.userData.pose({ arms: { l: [0, 0.9, 0.2], r: [0, 0.9, 0.2] }, legs: { l: [0.1, 0], r: [-0.1, 0] } });
+[[0.2, 2.1], [0.95, 2.75], [0.45, 3.4], [1.1, 4.0]].forEach(([x, y], i) => { const k = L.coin(0.27); k.position.set(x, y, 0.7); k.rotation.set(0.25 * (i % 2 ? 1 : -1), 0.3, 0.2 * i); scene.add(k); });
+const pp = L.peach(0.2); pp.position.set(-0.4, 0.2, 1.4); scene.add(pp);
+finish([-0.2, 2.5, 6.6], [-0.2, 2.2, 0]);
+});
+</script></body></html>

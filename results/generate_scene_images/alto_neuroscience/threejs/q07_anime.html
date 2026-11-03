@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alto q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 - ALTO-100 on the SAXOPHONE plays for bipolar depression, the low end of a SEESAW.
+import { THREE, guard, makeStage, ground, finish, createSax, add, mat, blob, box, cyl, label, note, wave, playPose, noteTrail, oak, rng } from './common.js';
+guard(() => {
+
+  const { stage, num } = makeStage({ shadowSize: 6 }); const scene = stage.scene;
+  ground(scene, '#7dbb55');
+  const a = 0.25, cy = 0.7;
+  const pl = new THREE.Group(); pl.position.set(0, cy, 0); pl.rotation.z = a; scene.add(pl);
+  box(pl, mat('#c98a4b'), [0, 0, 0], [4.4, 0.12, 0.7]);
+  box(pl, mat('#e8590c'), [-2.0, 0.1, 0], [0.12, 0.15, 0.7]); box(pl, mat('#e8590c'), [2.0, 0.1, 0], [0.12, 0.15, 0.7]);
+  add(scene, new THREE.ConeGeometry(0.5, 0.75, 4), mat('#5c6f91'), [0, 0.37, 0], [0, Math.PI / 4, 0]);
+  const at = (d) => [d * Math.cos(a), cy + d * Math.sin(a) + 0.06];
+  const [sx, sy] = at(-1.4);
+  const sax = createSax({ scale: 1.7 }); sax.position.set(sx, sy, 0); sax.rotation.y = 0.3; scene.add(sax); playPose(sax, 0.05);
+  noteTrail(scene, [sx - 0.3, sy + 1.4, 0], { n: 4, step: [-0.05, 0.3, 0.0], scale: 1.6 });
+  // high end: sun balloons + star
+  const [hx, hy] = at(1.7);
+  const bl = ['#ffd23f', '#ff7a59', '#ffe066', '#ff5d8f', '#ffb703'];
+  bl.forEach((c, i) => { const bx = hx + (i - 2) * 0.28, by = hy + 1.2 + (i % 2) * 0.4; blob(scene, mat(c, { roughness: 0.3 }), [bx, by, 0], [0.25, 0.3, 0.25]);
+    add(scene, new THREE.CylinderGeometry(0.004, 0.004, by - hy, 4), mat('#444'), [(bx + hx) / 2, (by + hy) / 2 - 0.15, 0], [0, 0, (hx - bx) * 0.3]); });
+  const star = new THREE.Mesh(new THREE.OctahedronGeometry(0.28), mat('#fff176', { emissive: '#ffd23f' })); star.position.set(hx, hy + 2.0, 0); scene.add(star);
+  const bn = label('ALTO-100', 1.5, 0.42, { fg: '#fff', bg: '#e8590c', border: '#ffd23f' }); bn.position.set(0, 2.6, -0.5); scene.add(bn);
+  cyl(scene, mat('#6b4a2b'), [-0.65, 1.3, -0.5], 0.03, 2.6); cyl(scene, mat('#6b4a2b'), [0.65, 1.3, -0.5], 0.03, 2.6);
+  finish(stage, [sax], { cam: [0, 1.7, 5.8], look: [0, 1.5, 0] });
+
+});
+</script></body></html>

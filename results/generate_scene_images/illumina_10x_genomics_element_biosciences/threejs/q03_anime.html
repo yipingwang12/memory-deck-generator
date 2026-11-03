@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — An ELEMENT gnome undercuts the LAMPLIGHTER with new chemistry and a lower price.
+import { THREE, mat, add, blob, num, makeStage, clouds, ground, lampPost, handWorld, toon, textBoard, gnome, glow } from './common.js';
+import { guard } from './kit.js';
+import { createLamplighter } from './lamplighter.js';
+
+function elementTile() {
+  const c = document.createElement('canvas'); c.width = 256; c.height = 256; const x = c.getContext('2d');
+  x.fillStyle = '#2d7fd6'; x.fillRect(0, 0, 256, 256); x.strokeStyle = '#fff'; x.lineWidth = 12; x.strokeRect(10, 10, 236, 236);
+  x.fillStyle = '#fff'; x.font = 'bold 150px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('El', 128, 140);
+  x.font = 'bold 40px sans-serif'; x.fillText('1', 40, 50);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  const g = new THREE.Group(); add(g, new THREE.BoxGeometry(0.52, 0.52, 0.04), mat('#1d4f8f'));
+  add(g, new THREE.PlaneGeometry(0.5, 0.5), new THREE.MeshStandardMaterial({ map: t, roughness: 0.5 }), [0, 0, 0.022]); return g;
+}
+function flask(color) {
+  const g = new THREE.Group(), glass = new THREE.MeshStandardMaterial({ color: '#cfeeff', transparent: true, opacity: 0.35, roughness: 0.1 });
+  add(g, new THREE.CylinderGeometry(0.06, 0.06, 0.18, 16), glass, [0, 0.3, 0]); add(g, new THREE.SphereGeometry(0.16, 20, 14), glass, [0, 0.12, 0]);
+  add(g, new THREE.SphereGeometry(0.14, 20, 14), glow(color), [0, 0.1, 0], [0, 0, 0], [1, 0.8, 1]);
+  for (const [x, y] of [[0.02, 0.4], [-0.03, 0.5], [0.04, 0.6]]) add(g, new THREE.SphereGeometry(0.03, 10, 8), glow('#c8ffd8'), [x, y, 0]);
+  return g;
+}
+function stand(sign, signColor, x) {
+  const g = new THREE.Group(); g.position.x = x;
+  add(g, new THREE.BoxGeometry(1.4, 0.4, 0.6), mat('#a8743c'), [0, 0.2, 0]); add(g, new THREE.BoxGeometry(1.5, 0.06, 0.7), mat('#c58b4a'), [0, 0.42, 0]);
+  return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 40, az: 140 }); const scene = stage.scene;
+  ground(scene, '#78b24a'); add(scene, new THREE.PlaneGeometry(400, 4), mat('#c9a56b'), [0, 0.003, 0.3], [-Math.PI / 2, 0, 0]);
+  // left stall: LAMPLIGHTER, tall pricey tag
+  const s1 = stand(null, null, -1.7); scene.add(s1);
+  const lamp = lampPost(0.7); lamp.scale.setScalar(0.6); lamp.position.set(-2.3, 0.45, 0.1); scene.add(lamp);
+  const tag1 = textBoard('$$$$', 0.8, 0.4, { fg: '#c4161c', font: 'bold 190px sans-serif' }); tag1.position.set(-1.7, 0.2, 0.33); scene.add(tag1);
+  const ll = createLamplighter({ scale: 1.9 }); ll.position.set(-1.7, 0, -0.45); ll.rotation.y = 0.35; scene.add(ll);
+  ll.userData.pose({ headTilt: -0.12, headPitch: 0.12, headYaw: 0.35, arms: { l: [0.3, 0.3, 0.2] } });
+  ll.userData.reach('r', [-0.3, 0.8, 0.2]); ll.userData.reach('l', [0.3, 0.8, 0.2]);
+  // sweat drop
+  const drop = blob(scene, mat('#8fd6ff', { roughness: 0.2 }), [-1.15, 1.95, -0.1], [0.05, 0.075, 0.05]);
+  // right stall: ELEMENT gnome, tiny price
+  const s2 = stand(null, null, 1.5); scene.add(s2);
+  const lamp2 = lampPost(0.7); lamp2.scale.setScalar(0.6); lamp2.position.set(0.95, 0.45, 0.1); scene.add(lamp2);
+  const tag2 = textBoard('$', 0.6, 0.4, { fg: '#1f9a3c', font: 'bold 230px sans-serif', bg: '#fffbe0' }); tag2.position.set(1.5, 0.2, 0.33); scene.add(tag2);
+  // arrow down
+  const arrow = new THREE.Group(); add(arrow, new THREE.CylinderGeometry(0.07, 0.07, 0.3, 14), glow('#2fc058'), [0, 0.2, 0]); add(arrow, new THREE.ConeGeometry(0.16, 0.22, 20), glow('#2fc058'), [0, -0.03, 0], [Math.PI, 0, 0]);
+  arrow.position.set(0.9, 1.5, 0.2); scene.add(arrow);
+  const gn = gnome(); gn.scale.setScalar(1.55); gn.position.set(1.65, 0.45, -0.2); gn.rotation.y = -0.25; scene.add(gn);
+  const tile = elementTile(); tile.position.set(2.5, 0.7, 0.2); tile.rotation.set(0, -0.4, 0.1); scene.add(tile);
+  const f = flask('#3be08a'); f.position.set(1.15, 0.45, 0.2); scene.add(f);
+  toon(stage, scene, [ll, gn]);
+  clouds(stage);
+  stage.camera.position.set(num(P, 'cx', 0.1), num(P, 'cy', 1.5), num(P, 'cz', 5.6)); stage.camera.lookAt(num(P, 'tx', 0.1), num(P, 'ty', 1.35), 0);
+  stage.finish();
+});
+</script></body></html>

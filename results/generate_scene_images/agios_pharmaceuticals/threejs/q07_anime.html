@@ -1,0 +1,43 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Agios q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// On the day of the NACHO, the FDA judges the AEGIS shield's MIGHTY PIVOT for sickle cells.
+import { THREE, guard, mat, add, blob, box, cyl, rbc, textPlane, makeScene } from './common.js';
+import { createAegis } from './aegis.js';
+import { createPirateKing, createCrab, createPivotDoor, sickle, platelet } from './props.js';
+// shield helper: place + pose + optional reach {hand:'l', to:[x,y,z] world}
+function place(scene, S, x, z, ry, sc, reach) {
+  const a = createAegis({ scale: sc }); a.position.set(x, 0, z); a.rotation.y = ry; scene.add(a);
+  a.userData.pose({ legs: { l: [0.2, 0], r: [-0.15, 0] } });
+  if (reach) { a.updateMatrixWorld(true); const t = a.worldToLocal(new THREE.Vector3(...reach.to)); a.userData.reach(reach.hand, [t.x / sc, t.y / sc, t.z / sc]); }
+  S.mark(a); return a;
+}
+guard(() => {
+  const S = makeScene({ ground: '#e0c9a0', cover: 1.5 }); const { scene } = S;
+  // judge's bench with FDA sign
+  box(scene, mat('#6a3c1f'), [0, 0.6, -1.2], [3.6, 1.2, 0.8]); box(scene, mat('#7a4a28'), [0, 1.25, -1.2], [3.8, 0.1, 1.0]);
+  cyl(scene, mat('#444'), [-1.3, 1.6, -1.6], 0.04, 1.8); textPlane(scene, 'FDA', 1.5, 0.6, [-1.3, 2.4, -1.55], { color: '#ffe9a8', bg: '#2a3a6a', font: 'bold 170px sans-serif' });
+  // judge
+  const j = new THREE.Group(); add(j, new THREE.CylinderGeometry(0.2, 0.34, 0.7, 24), mat('#1d1a2a'), [0, 0.35, 0]); blob(j, mat('#f3c9a0'), [0, 0.88, 0], [0.19, 0.2, 0.18]);
+  blob(j, mat('#f4f0ea'), [0, 0.95, -0.02], [0.24, 0.17, 0.22]); for (const s of [-1, 1]) { blob(j, mat('#f4f0ea'), [s * 0.22, 0.78, 0], [0.09, 0.14, 0.09]); blob(j, mat('#fff'), [s * 0.07, 0.88, 0.16], [0.04, 0.045, 0.02]); blob(j, mat('#111'), [s * 0.07, 0.88, 0.175], [0.02, 0.03, 0.01]); }
+  j.position.set(0, 1.3, -1.2); scene.add(j); S.mark(j);
+  // gavel
+  const gv = new THREE.Group(); box(gv, mat('#8a4f2a'), [0, 0, 0], [0.3, 0.14, 0.14]); cyl(gv, mat('#8a4f2a'), [0, -0.2, 0], 0.025, 0.4); gv.position.set(0.8, 1.45, -0.7); gv.rotation.z = 0.5; scene.add(gv);
+  // GIANT NACHO: tortilla triangle with melted cheese + jalapeno
+  const n = new THREE.Group(); const chip = add(n, new THREE.CylinderGeometry(0.5, 0.5, 0.06, 3), mat('#e8a93a'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  chip.rotation.set(Math.PI / 2, 0, 0); n.rotation.z = 0; 
+  const ch = add(n, new THREE.CylinderGeometry(0.4, 0.4, 0.04, 3), mat('#ffc01f'), [0, 0, 0.05], [Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 3; i++) blob(n, mat('#ffc01f'), [-0.2 + i * 0.2, -0.28 - (i % 2) * 0.08, 0.06], [0.07, 0.12, 0.04]);
+  for (let i = 0; i < 3; i++) add(n, new THREE.TorusGeometry(0.05, 0.02, 8, 14), mat('#5ea83a'), [-0.12 + i * 0.12, -0.02 + (i % 2) * 0.12, 0.08]);
+  n.position.set(1.7, 1.25, 0.4); n.scale.setScalar(1.3); scene.add(n);
+  // sickle cells on a tray
+  for (let i = 0; i < 4; i++) { const c = sickle(0.16); c.position.set(-1.8 + i * 0.35, 0.3 + (i % 2) * 0.12, 0.4 + (i % 2) * 0.2); c.rotation.y = 0.2; scene.add(c); }
+  const door = createPivotDoor({ open: 0.4 }); door.position.set(-0.9, 0, 0.6); door.scale.setScalar(1.0); scene.add(door); S.mark(door);
+  place(scene, S, 0.3, 1.4, -0.2, 1.3, { hand: 'l', to: [-0.35, 0.9, 1.2] });
+  S.finish([0, 1.5, 5.5], [0, 1.0, 0]);
+
+});
+</script></body></html>

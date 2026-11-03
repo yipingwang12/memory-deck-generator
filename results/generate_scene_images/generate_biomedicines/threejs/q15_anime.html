@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><title>q15</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// GENERATOR hums under a SUMMER sun in Somerville
+import { THREE, guard, mat, add, blob, box, cyl, textTex, createPerson, createGenerator, setupScene, rng } from './common.js';
+import * as K from './props.js';
+guard(() => {
+  const S = setupScene(new URLSearchParams(location.search), { ground: '#5fb83a', sky: { cover: 0.6 }, el: 55 });
+  const scene = S.scene, num = S.num, chars = [];
+  const gen = (x, z, ry, sc = 1.35) => { const g = createGenerator({ scale: sc }); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g); chars.push(g); return g; };
+  const person = (p, x, z, ry) => { p.position.set(x, 0, z); p.rotation.y = ry; scene.add(p); chars.push(p); return p; };
+  const reachTo = (g, k, w) => { g.updateMatrixWorld(true); const l = g.worldToLocal(new THREE.Vector3(...w)); g.userData.reach(k, [l.x, l.y, l.z]); };
+  const spark = (x, y, z, s = 1, c = '#ffe44a') => { const m = add(scene, new THREE.OctahedronGeometry(0.06 * s), new THREE.MeshBasicMaterial({ color: c }), [x, y, z]); m.scale.set(1, 1.6, 0.5); m.castShadow = false; return m; };
+  const grass = (n, seed, w, d, z0, cols) => { const r = rng(seed); for (let i = 0; i < n; i++) blob(scene, mat(cols[i % cols.length]), [(r() - 0.5) * w, 0.03, z0 - r() * d], [0.04, 0.04, 0.04]); };
+
+  K.sun(scene, [0.4, 4.8, -12], 1.6);
+  const h = K.house(1.8); h.position.set(-3.6, 0, -3.5); scene.add(h);
+  const h2 = K.house(1.6); h2.position.set(3.8, 0, -4.5); scene.add(h2);
+  const g = gen(0.2, 1.0, 0, 1.7); g.userData.pose({ arms: { l: [0, 0.8, 0], r: [0, 0.8, 0] } });
+  const sg = K.sunglasses(); sg.position.set(0, 0.66, 0.29); sg.scale.setScalar(1.05); g.userData.parts.face.add(sg);
+  const r = rng(6); for (let i = 0; i < 9; i++) { const f = K.sunflower(1.2 + r() * 0.5); f.position.set(-3.6 + i * 0.9 + r() * 0.2, 0, i > 2 && i < 6 ? -1.2 : 0.8 + r() * 0.6); scene.add(f); }
+  for (let i = 0; i < 3; i++) add(scene, new THREE.TorusGeometry(0.5 + i * 0.25, 0.018, 8, 30, Math.PI), mat('#fff8c0'), [1.05, 1.45 + i * 0.05, 0.3], [0, 0, 0.0 + i * 0.0 - 0.6]);
+  S.done(chars, { pos: [0.2, 1.3, 5.2], at: [0.2, 1.1, 0] });
+
+});
+</script></body></html>
