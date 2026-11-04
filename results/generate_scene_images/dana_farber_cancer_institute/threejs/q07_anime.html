@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// GOLF club (Golub) founds the BROADSWORD cancer program from the farmer's field
+const S = boot(); const sc = S.scene;
+// golf club (standing, with eyes) 
+const gc = new THREE.Group(); gc.position.set(-1.1, 0, 0.2); gc.rotation.y = 0.3; gc.scale.setScalar(1.3); sc.add(gc);
+cyl(gc, '#c8ccd2', [0, 0.9, 0], 0.03, 1.8); cyl(gc, '#222', [0, 1.5, 0], 0.045, 0.5);
+box(gc, '#c8ccd2', [0.17, 0.06, 0], [0.4, 0.14, 0.1], [0, 0, 0.1]);
+blob(sc, '#fff', [-0.9, 0.08, 0.5], [0.08, 0.08, 0.08]);
+// broadsword stuck into the field
+const sw = new THREE.Group(); sw.position.set(1.5, 0, -0.2); sw.scale.setScalar(0.7); sc.add(sw);
+box(sw, '#dfe6ee', [0, 1.6, 0], [0.26, 2.2, 0.05]); add(sw, new THREE.ConeGeometry(0.19, 0.4, 4), '#dfe6ee', [0, 0.5, 0], [Math.PI, Math.PI / 4, 0], [0.9, 1, 0.2]);
+box(sw, '#f2c230', [0, 2.8, 0], [0.9, 0.12, 0.12]); cyl(sw, '#7a4a22', [0, 3.1, 0], 0.05, 0.5); blob(sw, '#f2c230', [0, 3.4, 0], [0.09, 0.09, 0.09]);
+const fg = flag('#e63a3a', 1.0); fg.position.set(2.4, 0, -0.3); sc.add(fg);
+for (const [x, z] of [[-3, -2.2], [3.6, -2.4]]) { const h = hay(1.2); h.position.set(x, 0, z); sc.add(h); }
+const f = farmerAt(sc, { x: 0.0, z: 0.6, ry: 0, s: 1.7, pose: { arms: { r: [0, 0.4, 0] } } }); reachTo(f, 'l', [-0.65, 1.0, 0.5]);
+done(S, f, { pos: [0, 1.3, 4.9], look: [0, 1.25, 0] });
+});
+</script></body></html>

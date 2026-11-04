@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, mat, add, blob, box, cyl, num, textPlane, makeStage, placeAnchor, wrap } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage({ ground: '#e8c48a' });
+  const S = stage.scene;
+  const a = placeAnchor(stage, { x: -1.3, ry: 0.35, scale: 1.7, pose: { arms: { l: [0, 0.5, 0], r: [0, 0.4, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } }, spin: 0.4 });
+  // big borrowed ears on the anchor head (anchor-local, before scale)
+  const skin = mat('#ffcfa8'), inner = mat('#e8908a');
+  for (const s of [-1, 1]) {
+    const ear = new THREE.Group(); ear.position.set(s * 0.25, 0, 0); a.userData.parts.head.add(ear);
+    ear.add(add(ear, new THREE.SphereGeometry(1, 28, 18), skin, [s * 0.04, 0, 0], [0, 0, 0], [0.06, 0.24, 0.18]));
+    add(ear, new THREE.SphereGeometry(1, 28, 18), inner, [s * 0.07, 0, 0.01], [0, 0, 0], [0.035, 0.17, 0.12]);
+  }
+  // speech-recognition machines with big ears
+  const machine = (x, z, h, c) => {
+    const m = new THREE.Group(); m.position.set(x, 0, z); m.rotation.y = -0.35; S.add(m);
+    box(m, mat(c), [0, h / 2, 0], [1.0, h, 0.7]);
+    box(m, mat('#10202e'), [0, h * 0.62, 0.36], [0.74, h * 0.4, 0.02]);
+    for (let i = 0; i < 7; i++) box(m, mat('#47e0c0', { emissive: '#47e0c0', emissiveIntensity: 0.6 }), [-0.27 + i * 0.09, h * 0.62, 0.38], [0.05, 0.08 + 0.12 * Math.abs(Math.sin(i * 1.3)), 0.01]);
+    cyl(m, mat('#2b2b30'), [0, h * 0.25, 0.36], 0.09, 0.04, [Math.PI / 2, 0, 0]);
+    for (const s of [-1, 1]) {
+      blob(m, skin, [s * 0.58, h * 0.55, 0], [0.12, 0.45, 0.33]);
+      blob(m, inner, [s * 0.62, h * 0.55, 0.02], [0.06, 0.32, 0.22]);
+    }
+    return m;
+  };
+  machine(1.2, -0.3, 1.5, '#4a7fc4'); machine(2.9, 0.1, 1.2, '#c4584a');
+  // sound waves
+  for (let i = 0; i < 3; i++) add(S, new THREE.TorusGeometry(0.5 + i * 0.3, 0.025, 8, 40, 1.6), mat('#2a9d8f'), [0.9 + i * 0.05, 1.0, 0.6], [0, 0, -0.8 + 3.14]);
+  wrap(stage, a, P, { cx: 1.0, cz: 5.6, cy: 1.2, tx: 1.0, ty: 0.9 });
+});
+</script></body></html>

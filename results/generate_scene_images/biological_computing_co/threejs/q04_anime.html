@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BioComputing q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textTex, setup, finish, flag, brain, penguin, heart, createCalculator } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+// q04 — CALCULATOR opens flagship lab at a MISSION by the BAY, San Francisco.
+const { stage, scene, num, cam } = setup(new URLSearchParams(location.search), { ground: '#d8c8a0' });
+const water = add(scene, new THREE.PlaneGeometry(400, 160), mat('#2f8fd8', { roughness: 0.2, metalness: 0.1 }), [0, 0.02, -85], [-Math.PI / 2, 0, 0]);
+// Golden Gate bridge
+const red = mat('#d8402a'), BZ = -12;
+for (const x of [-2.5, 2.5]) { box(scene, red, [x, 1.9, BZ], [0.22, 3.8, 0.22]); box(scene, red, [x, 3.3, BZ], [0.3, 0.12, 0.3]); }
+box(scene, red, [0, 0.9, BZ], [14, 0.14, 0.4]);
+const cab = (pts) => add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(p[0], p[1], BZ))), 30, 0.05, 6), red);
+cab([[-7, 0.9], [-5, 2.0], [-2.5, 3.8]]); cab([[-2.5, 3.8], [0, 1.6], [2.5, 3.8]]); cab([[2.5, 3.8], [5, 2.0], [7, 0.9]]);
+// mission church
+const M = new THREE.Group(); M.position.set(1.7, 0, -0.8); scene.add(M);
+const wall = mat('#fbf1df');
+box(M, wall, [0, 1.0, 0], [2.2, 2.0, 1.2]);
+const gable = new THREE.Shape(); gable.moveTo(-1.1, 2.0); gable.lineTo(-1.1, 2.3); gable.quadraticCurveTo(-0.7, 2.4, -0.5, 2.7); gable.quadraticCurveTo(-0.3, 3.1, 0, 3.0); gable.quadraticCurveTo(0.3, 3.1, 0.5, 2.7); gable.quadraticCurveTo(0.7, 2.4, 1.1, 2.3); gable.lineTo(1.1, 2.0);
+add(M, new THREE.ExtrudeGeometry(gable, { depth: 0.3, bevelEnabled: false }), wall, [0, 0, 0.45]);
+const arch = new THREE.Shape(); arch.moveTo(-0.4, 0); arch.lineTo(-0.4, 0.7); arch.absarc(0, 0.7, 0.4, Math.PI, 0, true); arch.lineTo(0.4, 0);
+add(M, new THREE.ShapeGeometry(arch), mat('#5a3320'), [0, 0, 0.77], [0, 0, 0], [1.2, 1.2, 1]);
+const bellArch = new THREE.Shape(); bellArch.moveTo(-0.15, 0); bellArch.lineTo(-0.15, 0.25); bellArch.absarc(0, 0.25, 0.15, Math.PI, 0, true); bellArch.lineTo(0.15, 0);
+add(M, new THREE.ShapeGeometry(bellArch), mat('#3a2a22'), [0, 2.35, 0.76]);
+blob(M, mat('#f2b32c', { metalness: 0.5 }), [0, 2.55, 0.74], [0.07, 0.08, 0.05]);
+add(M, new THREE.CylinderGeometry(0.02, 0.02, 0.5, 8), mat('#3a2a22'), [0, 3.3, 0.55]); box(M, mat('#3a2a22'), [0, 3.4, 0.55], [0.3, 0.04, 0.04]);
+for (const x of [-0.9, 0.9]) box(M, mat('#d96a3c'), [x, 2.15, 0.2], [0.35, 0.3, 0.8]);
+box(M, mat('#c9644a'), [0, 2.04, -0.1], [2.3, 0.08, 1.4]);
+// lab bench + flask
+const bench = new THREE.Group(); bench.position.set(-0.3, 0, 1.3); scene.add(bench);
+box(bench, mat('#e8eef2'), [0, 0.35, 0], [1.0, 0.1, 0.5]); for (const x of [-0.45, 0.45]) box(bench, mat('#9aa6b0'), [x, 0.15, 0], [0.06, 0.3, 0.4]);
+add(bench, new THREE.CylinderGeometry(0.03, 0.14, 0.26, 20), mat('#7be8c0', { transparent: true, opacity: 0.8 }), [0.2, 0.53, 0]); cyl(bench, mat('#7be8c0', { transparent: true, opacity: 0.8 }), [0.2, 0.7, 0], 0.03, 0.1);
+// calculator (lab goggles via white coat disc skipped)
+const calc = createCalculator({ scale: 1.9 }); calc.position.set(-2.0, 0, 1.0); calc.rotation.y = 0.35; scene.add(calc);
+calc.userData.pose({ arms: { l: [0, 0.2, 0], r: [0, 0.3, 0] } }); calc.updateMatrixWorld(true);
+const t = calc.worldToLocal(new THREE.Vector3(-1.2, 1.9, 1.2)); calc.userData.reach('l', [t.x, t.y, t.z]);
+const f = flag('#e8a02a', 0.8); scene.add(f); f.position.set(-1.2, 1.55, 1.2);
+// palms
+cam(0.0, 1.9, 6.6, 0, 1.6); finish(stage, [calc]);
+});
+</script></body></html>

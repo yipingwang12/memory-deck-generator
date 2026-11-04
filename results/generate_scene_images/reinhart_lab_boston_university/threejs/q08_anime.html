@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reinhart q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 - The RAINCOAT syncs the front of the brain with its sides: prefrontal and temporal.
+import { THREE, createRaincoat, mat, glow, add, blob, box, textPlane, makeStage, finishScene, createElder, createScientist, createBrain, waveTube, cable, hoodElectrodes, rings } from './props.js';
+import { guard, rng } from './kit.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ ground: "#6a8ec0", el: 25 });
+  const rc = createRaincoat({ scale: 1.5 }); scene.add(rc); const chars = [rc]; let cam = [0, 1.0, 4.2], look = [0, 0.8, 0];
+
+  rc.position.set(-2.3, 0, 0.5); rc.rotation.y = 0.7; rc.userData.pose({ headTilt: 0.05, arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } });
+  const els = hoodElectrodes(rc, '#2fd0ff');
+  box(scene, mat('#e9eef7'), [0.6, 0.6, 0], [1.7, 1.2, 1.0]);
+  const br = createBrain({ scale: 1.9 }); br.position.set(0.6, 1.95, 0); br.rotation.y = -0.25; scene.add(br);
+  // glowing links: frontal tip and temporal lobe, plus a sync arc between them
+  const hp = new THREE.Vector3(); rc.updateMatrixWorld(true); rc.userData.parts.head.getWorldPosition(hp);
+  const fr = new THREE.Vector3(); br.updateMatrixWorld(true); fr.copy(br.localToWorld(new THREE.Vector3(0.38, 0.12, 0.15)));
+  const tp = br.localToWorld(new THREE.Vector3(0.05, -0.22, 0.25));
+  scene.add(cable(hp.toArray(), fr.toArray(), { color: '#2fd0ff', r: 0.025, sag: -0.35 }));
+  scene.add(cable(hp.toArray(), tp.toArray(), { color: '#ffb02a', r: 0.025, sag: 0.1 }));
+  const arc = new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(fr.clone(), fr.clone().lerp(tp, 0.5).add(new THREE.Vector3(0.7, 0, 0.45)), tp.clone()), 40, 0.03, 8), glow('#ffffff', 1.5)); scene.add(arc);
+  for (const [p, c] of [[fr, '#4f8fe8'], [tp, '#f08a3c']]) blob(scene, glow(c, 1.2), p.toArray(), [0.07, 0.07, 0.07]);
+  cam = [-0.3, 1.7, 6.2]; look = [-0.3, 1.5, 0];
+
+  finishScene(stage, scene, chars, cam, look);
+});
+</script></body></html>

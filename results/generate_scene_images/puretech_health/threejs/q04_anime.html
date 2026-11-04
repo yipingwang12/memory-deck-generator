@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PureTech q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createPuritan, addFace } from './puritan.js';
+import * as K from './props.js';
+const { mat, add, blob, num, makeStage, finishScene, reachWorld } = K;
+guard(() => {
+  const stage = makeStage({ ground: '#78b24a' });
+  const S = stage.scene;
+  add(S, new THREE.PlaneGeometry(400, 1.8), mat('#d1ad74'), [0, 0.004, -0.6], [-Math.PI / 2, 0, 0]);
+  const plank = add(S, new THREE.BoxGeometry(2.2, 0.1, 0.14), mat('#a8703a'), [0.9, 0.05, 0.35], [0, -0.35, 0]);
+  const pur = createPuritan({ scale: num('ps', 2.0) }); pur.position.set(0.0, 0, 0.0); pur.rotation.y = 0.25; S.add(pur);
+  pur.userData.pose({ headTilt: 0.05, arms: { r: [0, 0.35, 0.2] } });
+  const c = K.cert(0.7, 0.5); c.position.set(0.7, 1.75, 0.7); c.rotation.set(-0.1, 0.1, 0.12); S.add(c);
+  reachWorld(pur, 'l', [0.6, 1.62, 0.65]);
+  const robe = K.royalRobe(1.5); robe.position.set(-1.8, 0, -0.1); robe.rotation.y = 0.5; S.add(robe);
+  const ms = K.milestone(2.8); ms.position.set(2.3, 0, -0.5); ms.rotation.y = -0.4; S.add(ms);
+  const b = K.baby(); b.scale.setScalar(2.0); b.position.set(1.15, 0.0, 0.75); b.rotation.y = -0.2; S.add(b);
+  const p = K.purse(2.0); p.position.set(0.7, 0.1, 1.0); S.add(p);
+  finishScene(stage, [pur, b], [num('cx', 0.3), num('cy', 1.5), num('cz', 5.9)], [0.3, 1.1, 0]);
+});
+</script></body></html>

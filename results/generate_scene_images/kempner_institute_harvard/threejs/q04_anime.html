@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q04 - In the CAMPER, brains and AI meet at the level of theory
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ ground: '#c9b98f', camper: { ry: 0.2, pos: [0, 0, 0.3] }, cam: [0, 1.25, 4.9], look: [0, 1.0, 0],
+  build: ({ scene, van }) => {
+    const bd = new THREE.Group(); box(bd, 6.2, 3.0, 0.14, '#7a5030', [0, 0, 0]);
+    panel(bd, 5.9, 2.7, (ctx, w, h) => {
+      ctx.fillStyle = '#2f5a45'; ctx.fillRect(0, 0, w, h); ctx.strokeStyle = '#f4f1e6'; ctx.fillStyle = '#f4f1e6'; ctx.lineWidth = 5; ctx.lineCap = 'round';
+      const L = [[70, 150, 70, 250, 70, 350], [200, 120, 200, 215, 200, 310, 200, 400], [330, 180, 330, 330]];
+      const pts = L.map((l) => { const a = []; for (let i = 0; i < l.length; i += 2) a.push([l[i], l[i + 1]]); return a; });
+      for (let i = 0; i < 2; i++) for (const a of pts[i]) for (const b of pts[i + 1]) { ctx.beginPath(); ctx.moveTo(...a); ctx.lineTo(...b); ctx.globalAlpha = 0.5; ctx.stroke(); }
+      ctx.globalAlpha = 1; for (const l of pts) for (const p of l) { ctx.beginPath(); ctx.arc(p[0], p[1], 14, 0, 7); ctx.fill(); }
+      ctx.font = 'bold 150px serif'; ctx.fillText('\u2211', 440, 150); ctx.fillText('\u222B', 430, 330); ctx.font = 'bold 90px serif'; ctx.fillText('\u03B8', 270, 470); ctx.fillText('\u03BB', 90, 470);
+      ctx.beginPath(); ctx.moveTo(330, 470); ctx.bezierCurveTo(380, 380, 430, 500, 490, 420); ctx.stroke();
+    }, [0, 0, 0.085]);
+    bd.position.set(0, 1.7, -2.2); scene.add(bd);
+    const b = brain(1.0); b.position.set(-2.0, 1.2, 0.3); b.rotation.y = 0.5; scene.add(b);
+    const rb = robotHead(0.95); rb.position.set(2.0, 1.2, 0.3); rb.rotation.y = -0.5; scene.add(rb);
+    for (const x of [-2, 2]) { cyl(scene, 0.4, 0.5, 0.5, '#e8e2d6', [x, 0.25, 0.3]); }
+    for (let i = 0; i < 7; i++) blob(scene, mat('#ffe27a', { emissive: '#ffcc33', emissiveIntensity: 0.9 }), [-1.1 + i * 0.37, 1.3 + Math.sin(i * 0.9) * 0.15, 0.4], [0.07, 0.07, 0.07]);
+    van.userData.pose({ arms: { l: [0, 1.3, 0.2], r: [0, 1.3, 0.2] } });
+  } });
+
+</script></body></html>

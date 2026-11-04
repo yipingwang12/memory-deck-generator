@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q05 - The CELLAR fixes broken cells back to healthy.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'cellar' }); const sc = S.scene;
+S.cellar({ pos: [-2.1, 0, 0.2], scale: 1.6, ry: 0.4, pose: { arms: { l: [0, 0.5], r: [-0.6, 0.4] } } });
+const b = C.cell({ r: 0.75, color: '#b8707e', nucleus: '#5a2a8f', opacity: 0.8 }); C.zigzag(b, 0.75); put(sc, b, -0.2, 0.1, 0, 1);
+const bd = C.bandage(1.1); bd.position.set(-0.2, 1.35, 0.78); bd.rotation.z = -0.5; sc.add(bd);
+arrow(sc, 0.65, 0.95);
+const h = C.cell({ r: 0.8, color: '#ff8aa0' }); put(sc, h, 1.9, 0.1, 0, 1);
+for (const [x, y] of [[1.2, 1.9], [2.7, 1.8], [2.5, 0.3]]) blob(sc, mat('#fff6a0', { emissive: '#ffe85a', emissiveIntensity: 0.8 }), [x, y, 0.4], [0.07, 0.07, 0.07]);
+S.done({ cam: [0, 1.15, 5.2], look: [0, 0.85, 0] });
+});
+</script></body></html>

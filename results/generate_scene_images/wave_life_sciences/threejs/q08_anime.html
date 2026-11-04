@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q08 — The SURFER restores AAT in the RESTORAATION-2 trial.
+  beach(scene, { seaZ: 5 });
+  const ban = textPanel('RESTORAATION-2', { w: 4.6, h: 0.62, bg: '#14405a', fg: '#ffe14a', border: '#ffe14a' }); ban.position.set(0.3, 3.0, -0.4); scene.add(ban);
+  for (const x of [-2.9, 2.7]) add(scene, new THREE.CylinderGeometry(0.07, 0.07, 3.3, 10), mat('#4a3320'), [x, 1.65, -0.45]);
+  // bar chart
+  const chart = new THREE.Group(); chart.position.set(1.2, 0, 0.0); scene.add(chart);
+  add(chart, new THREE.BoxGeometry(2.7, 1.9, 0.1), mat('#f6f2e6'), [0.5, 1.15, -0.2]);
+  [0.3, 0.55, 0.85, 1.25].forEach((h, i) => add(chart, new THREE.BoxGeometry(0.4, h, 0.1), mat(['#e86a5a', '#f0a53c', '#9ad040', '#2fc43c'][i]), [-0.45 + i * 0.58, 0.3 + h / 2, -0.12]));
+  add(chart, new THREE.BoxGeometry(2.4, 0.06, 0.1), mat('#2a3a4a'), [0.5, 0.28, -0.12]);
+  const heal = blob(chart, mat('#2f8ef0', { roughness: 0.25, emissive: '#2f8ef0', emissiveIntensity: 0.35 }), [1.35, 1.75, 0.1], [0.28, 0.28, 0.28]);
+  add(chart, new THREE.TorusGeometry(0.42, 0.04, 8, 32), new THREE.MeshBasicMaterial({ color: '#7ff0a0' }), [1.35, 1.75, 0.1], [0, 0, 0]);
+  const up = add(chart, new THREE.ConeGeometry(0.2, 0.4, 3), mat('#2fc43c'), [1.35, 0.9, 0.0]);
+  // tent
+  const s = addSurfer(stage, P, { x: -1.6, z: 0.4, ry: 0.5, scale: 1.8 });
+  s.userData.pose({ lean: 0.05, headTilt: 0.1, arms: { l: [0.1, 0.3, 0.1] } });
+  const b = s.userData.parts.board; b.position.set(-0.62, 0.65, -0.1); b.rotation.set(0, 0, 0.1);
+  s.updateMatrixWorld(true); const w = s.worldToLocal(new THREE.Vector3(-0.2, 1.4, 0.3)); s.userData.reach('r', [w.x, w.y, w.z]);
+  finish(stage, P, s, [0.2, 1.7, 6.0], [0.2, 1.45, 0]);
+});
+</script></body></html>

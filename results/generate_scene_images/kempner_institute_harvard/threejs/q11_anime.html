@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q11 - The CAMPER is named for a MOTHER and her parents in the ZUCKERBERG family
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ camper: { pos: [-1.5, 0, 0.3], ry: 0.5 }, cam: [0.4, 1.4, 5.2], look: [0.6, 1.1, 0],
+  build: ({ scene, van, toon }) => {
+    const mom = person({ s: 1.6, shirt: '#e8607a', pants: '#e8607a', hair: '#8a4a22', apron: '#fff4d8' }); mom.position.set(1.0, 0, 0.9); mom.rotation.y = -0.2; scene.add(mom); toon(mom);
+    blob(mom, mat('#8a4a22'), [0, 1.17, -0.05], [0.1, 0.1, 0.1]);
+    const dad = person({ s: 1.5, shirt: '#3a6a5a', pants: '#3a3a44', hair: '#bdbdbd', glasses: true }); dad.position.set(2.0, 0, -0.1); dad.rotation.y = -0.4; scene.add(dad); toon(dad);
+    const mum = person({ s: 1.45, shirt: '#9a6ac0', pants: '#6a4a8a', hair: '#d8d8d8', glasses: true }); mum.position.set(0.1, 0, -0.1); mum.rotation.y = 0.2; scene.add(mum); toon(mum);
+    const h = new THREE.Shape(); h.moveTo(0, -0.3); h.bezierCurveTo(-0.6, 0.1, -0.3, 0.5, 0, 0.2); h.bezierCurveTo(0.3, 0.5, 0.6, 0.1, 0, -0.3);
+    const heart = add(scene, new THREE.ExtrudeGeometry(h, { depth: 0.15, bevelEnabled: true, bevelSize: 0.03, bevelThickness: 0.03, bevelSegments: 2 }), mat('#ff4a7a', { emissive: '#ff2a60', emissiveIntensity: 0.5 }), [1.0, 2.35, 0.9], [0, 0, 0], [0.5, 0.5, 0.5]);
+    const cubes = sugarCubes(1.3, 0.45, 70, 6); cubes.position.set(1.1, 0, 2.2); scene.add(cubes);
+    for (const x of [-1, 1]) add(scene, new THREE.ConeGeometry(0.08, 0.5, 8), mat('#ffffff'), [0, 0, 0]);
+    van.userData.pose({ arms: { l: [0, 1.4, 0.3], r: [0, 1.0, 0.2] } });
+  } });
+
+</script></body></html>

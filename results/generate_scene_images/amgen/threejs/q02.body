@@ -1,0 +1,17 @@
+// q02 — The GENIE spells out its first name: APPLIED MOLECULAR GENETICS.
+import { THREE, run, mat, add, panel, tex } from './common.js';
+function letterBlock(ch, c) {
+  const t = tex(128, 128, (x, s) => { x.fillStyle = c; x.fillRect(0, 0, s, s); x.fillStyle = '#fff'; x.font = '900 100px "Arial Black", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(ch, s / 2, s * 0.54); });
+  const m = new THREE.MeshStandardMaterial({ map: t, roughness: 0.5 });
+  const o = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.6, 0.6), m); o.castShadow = true; o.position.y = 0.3; const g = new THREE.Group(); g.add(o); return g;
+}
+run({
+  ground: '#cfe3a8', frame: { x: 0.2, y: 1.95, H: 5.0 },
+  genie: { x: -2.6, scale: 1.5, ry: 0.35, pose: { headTilt: 0.06, arms: { l: [0, 1.5, 0.1], r: [0, -0.45, 0.2] } }, mouth: 0.25 },
+  build({ scene }) {
+    const board = panel(4.3, 2.6, ['APPLIED', 'MOLECULAR', 'GENETICS'], { bg: '#fff6dc', fg: '#d8362e', border: '#7a4a22', d: 0.16, colors: ['#d8362e', '#1f5fc0', '#2a9a4a'] });
+    board.position.set(1.6, 2.6, 0); scene.add(board);
+    for (const x of [-0.3, 3.5]) add(scene, new THREE.CylinderGeometry(0.1, 0.1, 2.4, 12), mat('#7a4a22'), [x, 1.2, -0.1]);
+    [['A', '#e0483a', -0.5], ['M', '#2a6fd8', 0.9], ['G', '#2aa64c', 2.3]].forEach(([ch, c, x], i) => { const b = letterBlock(ch, c); b.position.set(x + 0.3, 0, 1.2); b.rotation.y = (i - 1) * 0.3; b.scale.setScalar(1.15); scene.add(b); });
+  },
+});

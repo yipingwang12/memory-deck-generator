@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q04 - MILES of road lead to a new CEO crown.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'meadow' }); const sc = S.scene;
+add(sc, new THREE.PlaneGeometry(2.6, 80), mat('#55555e'), [0, 0.004, -20], [-Math.PI / 2, 0, 0]);
+for (let i = 0; i < 20; i++) add(sc, new THREE.PlaneGeometry(0.12, 0.7), mat('#ffe27a'), [0, 0.008, 4 - i * 1.6], [-Math.PI / 2, 0, 0]);
+for (let i = 1; i < 5; i++) for (const s of [-1, 1]) { const z = 3 - i * 3.5; const st = new THREE.Group(); box(st, mat('#f2efe6'), 0.34, 0.6, 0.2, [0, 0.3, 0]); blob(st, mat('#f2efe6'), [0, 0.6, 0], [0.17, 0.12, 0.1]); box(st, mat('#c8283c'), 0.34, 0.08, 0.21, [0, 0.4, 0]); put(sc, st, s * 1.75, 0, z, 1.3); }
+const a = S.cellar({ pos: [0, 0, -0.8], scale: 1.7, ry: 0, pose: { arms: { l: [0, 0.6], r: [0, 0.6] } } });
+put(a, C.crown(), 0, 1.1, 0, 1.4);
+S.done({ cam: [0, 1.5, 5.8], look: [0, 1.1, -1] });
+});
+</script></body></html>

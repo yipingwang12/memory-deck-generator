@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const hx = helix(2.2, 0.32, 3); hx.position.set(2.3, 0, -0.5); hx.scale.setScalar(0.95); sc.add(hx);
+  // map board
+  const cv = document.createElement('canvas'); cv.width = 800; cv.height = 560; const x = cv.getContext('2d');
+  x.fillStyle = '#f0dcaa'; x.fillRect(0, 0, 800, 560); x.strokeStyle = '#8a5a2a'; x.lineWidth = 14; x.strokeRect(10, 10, 780, 540);
+  x.fillStyle = '#7a4a1a'; x.font = 'bold 120px sans-serif'; x.textAlign = 'center'; x.fillText('MAAP', 400, 150);
+  x.strokeStyle = '#c0392b'; x.lineWidth = 12; x.setLineDash([26, 20]); x.beginPath(); x.moveTo(110, 460); x.bezierCurveTo(240, 220, 430, 520, 560, 310); x.stroke(); x.setLineDash([]);
+  x.strokeStyle = '#c0392b'; x.lineWidth = 26; x.beginPath(); x.moveTo(560, 270); x.lineTo(640, 350); x.moveTo(640, 270); x.lineTo(560, 350); x.stroke();
+  x.fillStyle = '#4a8a3a'; x.beginPath(); x.arc(150, 260, 55, 0, 7); x.fill(); x.fillStyle = '#4a7ac8'; x.fillRect(360, 400, 120, 60);
+  const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace;
+  const board = new THREE.Group(); board.position.set(0.55, 0, 0.3); board.rotation.y = -0.25; sc.add(board);
+  add(board, new THREE.PlaneGeometry(1.8, 1.26), new THREE.MeshBasicMaterial({ map: t }), [0, 1.15, 0.05]);
+  box(board, mat('#7a4a22'), [0, 1.15, 0.0], [1.9, 1.36, 0.06]);
+  for (const s of [-1, 1]) box(board, mat('#7a4a22'), [s * 0.7, 0.4, -0.1], [0.07, 1.0, 0.07], [0.15, 0, 0]);
+  const mg = new THREE.Group(), gold = mat('#d9b24a', { metalness: 0.6, roughness: 0.3 });
+  add(mg, new THREE.TorusGeometry(0.2, 0.025, 10, 30), gold); add(mg, new THREE.CircleGeometry(0.19, 30), mat('#cfeeff', { transparent: true, opacity: 0.45, roughness: 0.1 }), [0, 0, 0.0]);
+  cyl(mg, gold, [0, -0.35, 0], 0.025, 0.025, 0.3);
+  mg.position.set(-0.62, 1.2, 0.95); mg.rotation.z = -0.2; sc.add(mg);
+  reachW(d, 'l', [-0.45, 0.8, 0.9]);
+}, { dpos: [-1.3, 0, 0.9], dry: 0.35, scl: 1.45, cam: [0.4, 1.2, 5.0], look: [0.5, 0.95, 0],
+  pose: (d) => d.userData.pose({ headTilt: -0.1, headYaw: 0.1 }) });
+
+</script></body></html>

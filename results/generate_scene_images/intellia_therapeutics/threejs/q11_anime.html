@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q11 — The OWL's ticker reads NTLA.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#4a5568', sky: { zenith: '#1c2b5a', horizon: '#6f8fd8' } }); const { scene, num } = ctx;
+  const board = new THREE.Group(); board.position.set(1.0, 0.5, -0.5); scene.add(board);
+  for (const x of [-1.5, 1.5]) cyl(board, '#2a2f3a', 0.07, 0.07, 1.6, [x, 0.8, 0]);
+  box(board, '#12151c', 4.0, 1.5, 0.15, [0, 2.0, 0]); box(board, '#2f3644', 4.15, 1.65, 0.1, [0, 2.0, -0.05]);
+  const t = textPlane('NTLA', 3.6, 1.2, { bg: '#0b1410', fg: '#4dff9a', font: 'bold 150px Arial' }); t.position.set(0.0, 2.0, 0.09); board.add(t);
+  const tri = new THREE.Mesh(new THREE.ShapeGeometry((() => { const s = new THREE.Shape(); s.moveTo(0, 0.2); s.lineTo(0.2, -0.15); s.lineTo(-0.2, -0.15); return s; })()), new THREE.MeshBasicMaterial({ color: '#4dff9a' }));
+  tri.position.set(-1.65, 2.0, 0.1); tri.scale.setScalar(0.8); board.add(tri);
+  const owl = createOwl({ scale: 1.25 }); owl.position.set(-1.45, 0, 1.6); owl.rotation.y = 0.35; scene.add(owl);
+  owl.userData.reach('l', [0.8, 1.0, 0.35]);
+  finish(ctx, [owl], [0.3, 1.3, 5.8], [0.4, 1.3, 0]);
+
+});
+</script></body></html>

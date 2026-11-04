@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — "The MITTEN's CSAIL sail is stitched from two labs: COMPUTER SCIENCE and the AI Laboratory."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const sail = P.sailPanel(3.0, 2.6, (c, s) => {
+    c.fillStyle = '#e8f1ff'; c.fillRect(0, 0, s / 2, s); c.fillStyle = '#ffeed8'; c.fillRect(s / 2, 0, s / 2, s);
+    c.fillStyle = '#2a3a5a'; c.fillRect(s * 0.08, s * 0.25, s * 0.34, s * 0.26); c.fillStyle = '#4fb0ff'; c.fillRect(s * 0.1, s * 0.27, s * 0.3, s * 0.22);
+    c.fillStyle = '#2a3a5a'; c.fillRect(s * 0.22, s * 0.51, s * 0.06, s * 0.08); c.fillRect(s * 0.14, s * 0.59, s * 0.22, s * 0.03);
+    c.fillStyle = '#fff'; c.font = 'bold 60px monospace'; c.fillText('</>', s * 0.12, s * 0.43);
+    c.fillStyle = '#8a95a8'; c.fillRect(s * 0.6, s * 0.28, s * 0.28, s * 0.24); c.fillStyle = '#ffd84a'; for (const x of [0.66, 0.78]) { c.beginPath(); c.arc(s * x, s * 0.4, 20, 0, 6.3); c.fill(); }
+    c.fillStyle = '#8a95a8'; c.fillRect(s * 0.72, s * 0.2, s * 0.04, s * 0.08); c.fillStyle = '#d8333b'; c.beginPath(); c.arc(s * 0.74, s * 0.19, 10, 0, 6.3); c.fill();
+    c.fillRect(s * 0.66, s * 0.47, s * 0.16, s * 0.04);
+    c.strokeStyle = '#d8333b'; c.lineWidth = 8; c.beginPath(); for (let y = 0; y < s; y += 32) { c.moveTo(s / 2 - 22, y); c.lineTo(s / 2 + 22, y + 16); c.moveTo(s / 2 + 22, y + 16); c.lineTo(s / 2 - 22, y + 32); } c.stroke();
+  }, { bulge: 0.12 });
+  const bt = P.boat(sail, { len: 3.2, mastH: 3.6 }); bt.position.set(1.4, 0, -0.8); scene.add(bt);
+  const m = placeMitten(scene, { x: -1.9, z: 1.0, ry: 0.55, s: 2.1, reach: { l: [-0.3, 1.1, 0.5] } });
+  const nd = new THREE.Group(); cyl(nd, mat('#cfd8e3', { metalness: 0.7 }), 0.012, 0.004, 0.7, [0, 0, 0], [0, 0, 1.1]); add(nd, new THREE.TorusGeometry(0.05, 0.01, 6, 14), mat('#cfd8e3'), [0.28, -0.12, 0]); nd.position.set(-0.55, 1.2, 0.55); nd.scale.setScalar(1.8); scene.add(nd);
+  return { chars: [m], cam: { pos: [0.3, 2.0, 6.8], look: [0.3, 1.8, 0] } };
+}, { ground: '#3a8fd0' });
+</script></body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q10 — WVE-003 on the SURFER targets the Huntington's gene (expanded repeat on a DNA helix, bullseye).
+  beach(scene, { seaZ: 5 });
+  const s = addSurfer(stage, P, { x: -1.9, z: 0.3, ry: 0.7, scale: 1.8 });
+  const b = s.userData.parts.board; labelBoard(b, 'WVE-003', { len: 1.0 }); b.position.set(-0.6, 0.65, -0.1); b.rotation.set(0, 0, 0.1);
+  // dartboard
+  const tg = new THREE.Group(); tg.position.set(1.7, 1.65, -0.5); scene.add(tg);
+  [[1.1, '#e8283a'], [0.9, '#ffffff'], [0.7, '#e8283a'], [0.5, '#ffffff'], [0.3, '#e8283a'], [0.14, '#ffd23c']].forEach(([r, c], i) => add(tg, new THREE.CylinderGeometry(r, r, 0.08 + i * 0.01, 40), mat(c, { roughness: 0.5 }), [0, 0, 0], [Math.PI / 2, 0, 0]));
+  add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.6, 8), mat('#4a3320'), [1.7, 0.8, -0.6]);
+  // helix with expanded repeat
+  const hx = new THREE.Group(); hx.position.set(1.7, 0.2, 0.25); scene.add(hx);
+  const n = 26;
+  for (let i = 0; i < n; i++) {
+    const y = i * 0.1, a = i * 0.55, rr = 0.55, bad = i >= 9 && i <= 17;
+    const A = [Math.cos(a) * rr, y, Math.sin(a) * rr], B = [-Math.cos(a) * rr, y, -Math.sin(a) * rr];
+    const sz = bad ? 0.1 : 0.065;
+    blob(hx, mat(bad ? '#ff2a2a' : '#3b6fe0', { emissive: bad ? '#ff2a2a' : '#000', emissiveIntensity: bad ? 0.3 : 0 }), A, [sz, sz, sz]);
+    blob(hx, mat(bad ? '#ff8a1f' : '#2fc43c'), B, [sz, sz, sz]);
+    const m = add(hx, new THREE.CylinderGeometry(bad ? 0.04 : 0.02, bad ? 0.04 : 0.02, 2 * rr, 8), mat(bad ? '#ffd23c' : '#d8d2c4'), [0, y, 0], [0, 0, Math.PI / 2]); m.rotation.set(0, -a, Math.PI / 2);
+  }
+  hx.scale.set(1.4, 1.2, 1.4);
+  // dart in the surfer's hand
+  const dart = new THREE.Group(); dart.scale.setScalar(1.8); scene.add(dart);
+  add(dart, new THREE.CylinderGeometry(0.035, 0.035, 0.5, 10), mat('#2a3a4a'), [0, 0, 0], [0, 0, Math.PI / 2]);
+  add(dart, new THREE.ConeGeometry(0.035, 0.22, 10), mat('#d8dde2', { metalness: 0.7 }), [0.36, 0, 0], [0, 0, -Math.PI / 2]);
+  for (let k = 0; k < 4; k++) { const f = add(dart, new THREE.BoxGeometry(0.16, 0.012, 0.12), mat('#ffd23c'), [-0.28, 0, 0], [k * Math.PI / 4, 0, 0]); f.rotation.x = k * Math.PI / 4; f.position.x = -0.28; }
+  s.updateMatrixWorld(true);
+  const hand = s.userData.parts.hands.r; 
+  const wp = new THREE.Vector3(-0.85, 1.25, 0.95); const w = s.worldToLocal(wp.clone()); s.userData.reach('r', [w.x, w.y, w.z]);
+  dart.position.copy(wp).add(new THREE.Vector3(0.15, 0.05, 0)); dart.rotation.z = 0.12;
+  s.userData.pose({ lean: 0.05, headTilt: 0.05 });
+  finish(stage, P, s, [0.0, 1.7, 6.3], [0.0, 1.35, 0], [b]);
+});
+</script></body></html>

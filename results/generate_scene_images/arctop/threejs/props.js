@@ -20,7 +20,7 @@ export function buildJet(label = '') {
   if (label) {
     for (const s of [-1, 1]) {
       const p = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.2), new THREE.MeshBasicMaterial({ map: textTex(label, { w: 900, h: 200, fg: '#ffffff', font: 'bold 150px Arial' }), transparent: true }));
-      p.position.set(-0.1, 0.0, s * 0.145); p.rotation.y = s > 0 ? 0 : Math.PI; g.add(p);
+      p.position.set(-0.1, 0.075, s * 0.145); p.rotation.y = s > 0 ? 0 : Math.PI; g.add(p);
     }
   }
   return g;

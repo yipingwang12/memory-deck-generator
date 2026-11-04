@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// GORILLA computes children's cancer at the lab
+const S = boot({ ground: '#e9e4d8' }); const sc = S.scene;
+box(sc, '#c9d4de', [0, 1.5, -2.4], [9, 3, 0.1]);
+const dk = new THREE.Group(); dk.position.set(0.5, 0, -1.2); sc.add(dk);
+box(dk, '#8a6a4a', [0, 0.75, 0], [2.0, 0.1, 1.0]); for (const x of [-0.9, 0.9]) box(dk, '#6a4a2a', [x, 0.37, 0], [0.1, 0.75, 0.9]);
+box(dk, '#2a2e3a', [0, 1.35, -0.2], [1.1, 0.7, 0.06]); const scr = textPlane('', 1.0, 0.6, { bg: '#2a6ad0' }); scr.position.set(0, 1.35, -0.16); dk.add(scr);
+for (let i = 0; i < 5; i++) box(dk, '#ffd04a', [-0.4 + i * 0.2, 1.2 + (i % 3) * 0.08, -0.12], [0.1, 0.1 + (i % 3) * 0.12, 0.02]);
+box(dk, '#555', [0, 0.82, 0.2], [0.7, 0.04, 0.25]);
+const gr = gorilla(1.25); gr.position.set(2.0, 0, 0.4); gr.rotation.y = -0.5; sc.add(gr);
+// teddy bear + gold ribbon (children's cancer)
+const tb = new THREE.Group(); tb.position.set(-2.3, 0, 0.5); sc.add(tb);
+blob(tb, '#c8884a', [0, 0.5, 0], [0.4, 0.45, 0.32]); blob(tb, '#c8884a', [0, 1.05, 0], [0.32, 0.3, 0.28]); for (const s of [-1, 1]) { blob(tb, '#c8884a', [s * 0.24, 1.3, 0], [0.12, 0.12, 0.08]); blob(tb, '#222', [s * 0.1, 1.08, 0.25], [0.04, 0.05, 0.03]); blob(tb, '#c8884a', [s * 0.4, 0.6, 0.05], [0.12, 0.25, 0.12]); }
+blob(tb, '#f4d8b0', [0, 0.98, 0.25], [0.13, 0.1, 0.07]); box(tb, '#f2c230', [0, 0.52, 0.31], [0.12, 0.3, 0.03]);
+const f = farmerAt(sc, { x: -0.9, z: 1.0, ry: 0.4, s: 1.9 }); reachTo(f, 'l', [0.3, 1.3, 0.8]);
+done(S, f, { pos: [0, 1.6, 5.8], look: [0, 1.4, 0] }, false);
+});
+</script></body></html>

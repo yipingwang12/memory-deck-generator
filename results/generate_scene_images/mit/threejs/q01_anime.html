@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — four fingers of the MITTEN: CSAIL (sail), BROAD sword, PICOWER (peak tower), IMES (wheel)
+import { THREE, add, mat, placeMitten, run } from './common.js';
+import { sailPanel, boat, sword, tower, wheel } from './props.js';
+run(({ scene }) => {
+  const m = placeMitten(scene, { x: 0, z: 1.6, s: 1.9, pose: { arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] } } });
+  const sail = sailPanel(1.6, 2.1, (c, s) => { c.fillStyle = '#fff8e8'; c.fillRect(0, 0, s, s); c.strokeStyle = '#c9b88a'; c.lineWidth = 3; for (let y = 0; y < s; y += 64) { c.beginPath(); c.moveTo(0, y); c.lineTo(s, y); c.stroke(); } });
+  const b = boat(sail, { len: 1.8, mastH: 2.2 }); b.position.set(-3.1, 0, -0.3); b.scale.setScalar(1.0); b.rotation.y = 0.3; scene.add(b);
+  const sw = sword(); sw.position.set(-1.2, 0, -0.5); sw.scale.setScalar(1.1); scene.add(sw);
+  const t = tower({ h: 2.0 }); t.position.set(1.4, 0, -0.5); t.scale.setScalar(0.85); scene.add(t);
+  const w = wheel({ r: 0.9 }); w.position.set(3.2, 0, -0.3); w.rotation.y = -0.4; scene.add(w);
+  return { chars: [m], cam: { pos: [0, 1.4, 6.6], look: [0, 1.2, 0] } };
+});
+</script></body></html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cahira q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — The MONKS slip through the brain's intact blood wall into the PYRAMID.
+import { THREE, guard, build, finish, add, mat, box, blob, cyl, glow, sign, textTex, chip, monk, mouse, brain, flame, debitCard, reachWorld, canvasTexture, rng } from './common.js';
+guard(() => {
+  const S = build({ ground: '#e0b98c', py: [2.2, 0, 0.5], ps: 1.7, pry: -0.3 });
+  const { scene, pyr } = S;
+  pyr.userData.pose({ arms: { l: [0, 0.5] } }); reachWorld(pyr, 'r', [0.3, 1.4, 0.8]);
+  const brick = canvasTexture(256, (c, s) => { c.fillStyle = '#b8503a'; c.fillRect(0, 0, s, s); for (let i = 0; i < 8; i++) { c.fillStyle = '#f0d9c0'; c.fillRect(0, i * 32, s, 4); for (let j = 0; j < 4; j++) c.fillRect(((i % 2) * 32 + j * 64), i * 32, 4, 32); } }, { repeat: 1 });
+  const bm = new THREE.MeshStandardMaterial({ map: brick, roughness: 0.9 });
+  box(scene, bm, [-2.6, 0.9, 0.0], [2.0, 1.8, 0.45]); box(scene, bm, [0.8, 0.9, 0.0], [1.0, 1.8, 0.45]);
+  box(scene, bm, [-0.65, 1.7, 0.0], [1.95, 0.4, 0.45]);
+  const b = brain(scene, [-2.6, 2.25, 0.0], 2.6);
+  const ms = [[-1.2, 0, 0], [-0.1, 0, 0]].map(([x, z], i) => { const m = monk(scene, [x, 0, 0.1 + i * 0.1], 1.9, 1.3); chip(m, [0, 0.85, 0], 1.5); return m; });
+  finish(S, [pyr], [-0.2, 1.6, 6.0], [-0.2, 1.3, 0]);
+});
+</script></body></html>

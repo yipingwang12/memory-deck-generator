@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// The PORHOLE pill SPT-320 calms a trembling man who worries about everything.
+import { THREE, guard, canvasTexture, rng, makeStage, createPorthole, makeShip, makePerson, makeZorro, makeCapsule, makeGlyph, textPlane, mat, add, blob, box, cyl, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({}), s = stage.scene;
+  const man = makePerson({ coat: '#5a7fa8', pants: '#3a4a66', hair: '#3a2616', eyes: 'wide', scale: 1.1 }); man.position.set(1.5, 0, 0.5); man.rotation.y = -0.35; s.add(man);
+  man.userData.mouth.rotation.z = 0; man.userData.mouth.position.y = 1.5;
+  man.userData.arms.l.rotation.set(-2.3, 0, -0.1); man.userData.arms.r.rotation.set(-2.3, 0, 0.1);
+  const zig = (x, y, side) => { for (let i = 0; i < 3; i++) box(s, '#e8e8f0', [x + side * i * 0.07, y + i * 0.3, 0.8], [0.04, 0.26, 0.03], [0, 0, side * 0.5 * (i % 2 ? 1 : -1)]); };
+  zig(0.55, 0.3, -1); zig(2.55, 0.3, 1); zig(0.45, 1.3, -1); zig(2.65, 1.3, 1);
+  for (const [x, y] of [[0.85, 2.25], [2.2, 2.2], [2.45, 1.9]]) { add(s, new THREE.ConeGeometry(0.08, 0.2, 12), mat('#6fc7ff'), [x, y + 0.1, 0.6]); blob(s, '#6fc7ff', [x, y, 0.6], [0.09, 0.09, 0.09]); }
+  const cl = new THREE.Group(); cl.position.set(1.5, 3.35, 0.2); s.add(cl);
+  for (const [x, y, r] of [[-0.4, 0, 0.35], [0, 0.15, 0.45], [0.45, 0, 0.35], [0.05, -0.1, 0.4]]) blob(cl, '#4a4a58', [x, y, 0], [r, r * 0.8, r * 0.8]);
+  const bolt = new THREE.Shape(); bolt.moveTo(0, 0); bolt.lineTo(0.2, 0); bolt.lineTo(0.08, -0.3); bolt.lineTo(0.22, -0.3); bolt.lineTo(-0.1, -0.75); bolt.lineTo(0, -0.38); bolt.lineTo(-0.14, -0.38);
+  add(cl, new THREE.ShapeGeometry(bolt), new THREE.MeshBasicMaterial({ color: '#ffe23a', side: THREE.DoubleSide }), [0, -0.3, 0.4]);
+  const pill = makeCapsule({ len: 0.8, r: 0.22, a: '#4aa8e8' }); pill.rotation.z = 0.4; s.add(pill);
+  const p = createPorthole({ scale: 1.6 }); p.position.set(-1.0, 0, 0.9); p.rotation.y = -0.15; p.userData.setMood('smile'); p.userData.pose({ arms: { r: [0, -0.8, 0] } }); p.userData.reach('l', [0.65, 0.95, 0.5]); s.add(p);
+  const hp = new THREE.Vector3(0.65, 0.95, 0.5).multiplyScalar(1.6).add(p.position).add(new THREE.Vector3(0.15, 0.12, 0.25)); pill.position.copy(hp);
+  toon(stage, p, man);
+  frame(stage, { cam: [0.3, 1.6, 6.2], look: [0.3, 1.5, 0] });});
+</script></body></html>

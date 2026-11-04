@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Camper anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { run, THREE, mat, add } from './world.js';
+const view = Number(new URLSearchParams(location.search).get('v') ?? 0);
+const ry = [0.5, 2.3, -1.2][view];
+run({ camper: { scale: 1.3, ry }, cam: [0, 1.0, 4.4], look: [0, 0.7, 0], sky: { cover: 1 },
+  build: ({ van }) => { van.userData.pose({ arms: { l: [0.3, 0.8, -0.4], r: [0, 0.5, 0] } }); } });
+</script></body></html>

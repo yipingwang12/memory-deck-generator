@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reinhart q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 - The RAINCOAT's current links THETA and GAMMA waves: theta-gamma coupling.
+import { THREE, createRaincoat, mat, glow, add, blob, box, textPlane, makeStage, finishScene, createElder, createScientist, createBrain, waveTube, cable, hoodElectrodes, rings } from './props.js';
+import { guard, rng } from './kit.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ ground: "#5a78b0", el: 20 });
+  const rc = createRaincoat({ scale: 1.5 }); scene.add(rc); const chars = [rc]; let cam = [0, 1.0, 4.2], look = [0, 0.8, 0];
+
+  rc.position.set(-0.7, 0, 0.5); rc.rotation.y = 0.5; rc.userData.pose({ headTilt: 0.06, arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } });
+  hoodElectrodes(rc, '#2fd0ff');
+  const th = (x) => 0.35 * Math.sin(x * 2.0);
+  const wz = -0.6, y0 = 1.9;
+  scene.add(waveTube(th, -0.9, 4.2, { z: wz, r: 0.045, color: '#ff9a2a', y0, n: 500 }));
+  // gamma bursts riding the theta crests
+  for (let k = 0; k < 3; k++) { const c = Math.PI / 4 + k * Math.PI + 0 - 0; const xc = (Math.PI / 4 + k * Math.PI) / 2 * 1 - 0 + 0.0;
+    const x0 = (Math.PI / 2 * (1 + 2 * k)) / 2 - 0.55, x1 = x0 + 1.1;
+    scene.add(waveTube((x) => th(x) + 0.09 * Math.sin(x * 26), x0, x1, { z: wz + 0.05, r: 0.02, color: '#3ee6ff', y0, n: 400 })); }
+  const tl = textPlane('\u03b8', 0.7, 0.7, { bg: '#ff9a2a', fg: '#ffffff', frame: '#ffffff' }); tl.position.set(0.2, 3.1, wz); scene.add(tl);
+  const gl = textPlane('\u03b3', 0.7, 0.7, { bg: '#18b8e0', fg: '#ffffff', frame: '#ffffff' }); gl.position.set(1.6, 3.1, wz); scene.add(gl);
+  const hp = new THREE.Vector3(); rc.updateMatrixWorld(true); rc.userData.parts.head.getWorldPosition(hp);
+  scene.add(cable(hp.toArray(), [-0.7, y0 + 0.05, wz], { sag: -0.3, color: '#2fd0ff', r: 0.022 }));
+  rings(scene, [-0.9, y0, wz], { n: 2, r0: 0.12, dr: 0.1, rot: [0, 0, 0] });
+  cam = [0.8, 1.5, 5.2]; look = [0.8, 1.5, 0];
+
+  finishScene(stage, scene, chars, cam, look);
+});
+</script></body></html>

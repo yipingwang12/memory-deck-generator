@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — The VORTEX's money comes from cystic fibrosis lungs.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -1.0, vs: 1.3, vry: 0.5, ground: '#e8d8b8' });
+const lg = C.lungs(2.0); lg.position.set(1.5, 0, 0.3); scene.add(lg);
+const rr = C.rng(8); for (let i = 0; i < 9; i++) blob(lg, mat('#8ac84a', { roughness: 0.2 }), [(rr() - 0.5) * 0.9, 0.3 + rr() * 0.5, 0.18], Array(3).fill(0.04 + rr() * 0.04));
+for (let i = 0; i < 8; i++) { const c = C.coin(0.15); const t = i / 7; c.position.set(0.4 - t * 1.6, 1.6 + Math.sin(t * 3.1) * 0.4 - t * 0.2, 0.9); c.rotation.set(0.3, t * 3, 0); scene.add(c); }
+for (let i = 0; i < 8; i++) { const c = C.coin(0.16); c.position.set(-1.9 + (i % 4) * 0.34, 0.04 + Math.floor(i / 4) * 0.06, 1.0 + (i % 2) * 0.2); c.rotation.x = -Math.PI / 2; c.rotation.z = i; c.children[0].rotation.set(0, 0, 0); scene.add(c); }
+reachWorld(vortex, 'l', [-0.2, 1.4, 0.9]); reachWorld(vortex, 'r', [-1.9, 1.3, 0.9]);
+done({ cam: [0, 1.0, 4.6], look: [0, 0.95, 0] });
+});
+</script></body></html>

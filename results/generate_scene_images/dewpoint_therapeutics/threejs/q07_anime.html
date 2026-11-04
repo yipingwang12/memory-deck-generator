@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Dewpoint q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — a deeply TANned man with three red DIAMONDS on his MITTS carries away the ALS ICE BUCKET.
+import { boot, THREE, mat, add, blob, box, cyl, textPlane, bone, eyes, reachWorld } from './props.js';
+
+function mitt(g, x, y, z, side) {
+  const m = mat('#f4ecd8');
+  blob(g, m, [x, y, z], [0.2, 0.24, 0.17]); blob(g, m, [x + side * 0.2, y + 0.04, z], [0.09, 0.09, 0.08]);
+  const spots = [[0, 0.07], [-0.065, -0.045], [0.065, -0.045]];            // three diamonds, Mitsubishi style
+  for (const [dx, dy] of spots) { const d = add(g, new THREE.PlaneGeometry(0.1, 0.1), new THREE.MeshBasicMaterial({ color: '#e0141c' }), [x + dx * 1.15 + side * 0.0, y + dy * 1.15 + 0.02, z + 0.175], [0, 0, Math.PI / 4]); }
+}
+function man() {
+  const g = new THREE.Group(), tan = mat('#a2551f'), shirt = mat('#f2f2f2'), pants = mat('#2b3a5a');
+  for (const x of [-0.14, 0.14]) { bone(g, pants, [x, 0.9, 0], [x, 0.1, 0.02], 0.1); box(g, mat('#3a2a20'), 0.16, 0.08, 0.3, [x, 0.04, 0.08]); }
+  box(g, pants, 0.5, 0.25, 0.28, [0, 0.95, 0]); box(g, shirt, 0.56, 0.7, 0.3, [0, 1.4, 0]);
+  const head = new THREE.Group(); head.position.set(0, 1.95, 0); g.add(head);
+  blob(head, tan, [0, 0, 0], [0.22, 0.25, 0.22]); eyes(head, 0.22, 0.03, 0.4, 0.2);
+  blob(head, mat('#1a1410'), [0, 0.12, -0.03], [0.23, 0.17, 0.22]);
+  add(head, new THREE.TorusGeometry(0.03, 0.01, 6, 12, Math.PI), new THREE.MeshBasicMaterial({ color: '#3a1a10' }), [0, -0.1, 0.215], [0, 0, Math.PI]);
+  cyl(g, tan, 0.08, 0.15, [0, 1.75, 0]);
+  for (const s of [-1, 1]) { bone(g, tan, [s * 0.32, 1.6, 0], [s * 0.52, 1.0, 0.6], 0.07); mitt(g, s * 0.52, 1.0, 0.62, s); }
+  return g;
+}
+function bucket() {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.42, 0.32, 0.66, 32), mat('#3fa0e0', { metalness: 0.3, roughness: 0.4 }), [0, 0, 0]);
+  add(g, new THREE.TorusGeometry(0.42, 0.04, 8, 32), mat('#cfe3f5'), [0, 0.33, 0], [Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 9; i++) { const a = i * 1.1, r = 0.04 + (i % 3) * 0.11; box(g, mat('#ecf9ff', { roughness: 0.2 }), 0.2, 0.2, 0.2, [Math.cos(a) * r * 2.2, 0.4 + (i % 3) * 0.08, Math.sin(a) * r * 2.2], [0.4 * i, 0.5 * i, 0.2 * i]); }
+  const t = textPlane('ALS', 0.5, 0.26, { fg: '#0d2b6b', bg: '#ffffff' }); t.position.set(0, 0.0, 0.405); g.add(t);
+  return g;
+}
+boot(({ scene, dd }) => {
+  const m = man(); m.position.set(2.1, 0, 0); m.rotation.y = 0.3; m.scale.setScalar(1.25); scene.add(m);
+  const b = bucket(); b.position.set(0, 0.95, 0.62); m.add(b);
+  reachWorld(dd, 'l', [0.3, 1.5, 0.9]);
+}, { dd: { pos: [-1.5, 0, 1.2], ry: 0.5, scale: 1.5, pose: { tilt: 0.06 } }, cam: [1.0, 1.7, 6.8], look: [1.0, 1.4, 0] });
+</script></body></html>

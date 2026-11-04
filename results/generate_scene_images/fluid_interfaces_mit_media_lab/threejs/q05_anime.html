@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Fluid q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, add, box, cyl, ball, mat, setup, placeFlute, setCam, paperSheet, pencilProp, coin } from './common.js';
+guard(() => {
+  const env = setup(); const { scene } = env;
+  // CAR in a POOL, with a giant paper and pencil: the car pool writes the paper
+  const pool = new THREE.Group(); pool.position.set(0.9, 0, -0.2); pool.scale.setScalar(0.95); scene.add(pool);
+  box(pool, 3.0, 0.3, 2.0, '#f2f2f2', [0, 0.15, 0]);
+  box(pool, 2.7, 0.06, 1.7, '#38b8f0', [0, 0.31, 0], [0, 0, 0], { roughness: 0.15 });
+  const car = new THREE.Group(); car.position.set(0, 0.45, 0); car.rotation.y = 0.35; pool.add(car);
+  box(car, 1.3, 0.35, 0.65, '#e4312e', [0, 0.18, 0]); box(car, 0.75, 0.32, 0.6, '#e4312e', [-0.05, 0.5, 0]); box(car, 0.6, 0.22, 0.62, '#9fdcff', [-0.05, 0.52, 0]);
+  for (const [x, z] of [[-0.42, 0.33], [0.42, 0.33], [-0.42, -0.33], [0.42, -0.33]]) cyl(car, 0.17, 0.17, 0.1, '#222', [x, 0.05, z], [Math.PI / 2, 0, 0]);
+  for (const z of [0.2, -0.2]) ball(car, '#fff6b0', [0.66, 0.2, z], [0.06, 0.07, 0.07], { emissive: '#ffe45e', emissiveIntensity: 0.6 });
+  paperSheet(pool, 1.3, 1.7, [-0.1, 1.3, -0.7], [0, 0.0, 0.05]);
+  pencilProp(pool, [0.75, 1.2, -0.25], [0.2, 0.3, -2.2], 1.4);
+  placeFlute(env, { s: 1.15, x: -1.9, z: 1.0, ry: 0.55, pose: { lean: 0.06, headTilt: 0.1 }, reach: ['l', [-0.5, 1.2, 0.9]] });
+  setCam(env, { cx: 0.0, cy: 1.8, cz: 5.0, tx: 0.0, ty: 0.9 });
+  env.finish();
+});
+</script></body></html>

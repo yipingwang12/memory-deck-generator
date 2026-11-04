@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Lila scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createLilac } from './lilac.js';
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, ...e });
+const add = (parent, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; parent.add(o); return o;
+};
+const blob = (parent, m, pos, scl, rot) => add(parent, new THREE.SphereGeometry(1, 32, 20), m, pos, rot, scl);
+const box = (p, m, pos, s, rot) => add(p, new THREE.BoxGeometry(...s), m, pos, rot);
+const cyl = (p, m, pos, rt, rb, h, rot, seg = 24) => add(p, new THREE.CylinderGeometry(rt, rb, h, seg), m, pos, rot);
+const P = new URLSearchParams(location.search), num = (k, d) => Number(P.get(k) ?? d);
+function setup(groundColor = '#7fb858', fov = 40) {
+  const stage = createAnimeStage({
+    fov: num('fov', fov), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  add(stage.scene, new THREE.PlaneGeometry(400, 400), mat(groundColor), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  return stage;
+}
+const V = (a) => new THREE.Vector3(...a);
+function strut(p, m, a, b, r) {
+  const A = V(a), B = V(b), d = B.clone().sub(A);
+  const o = add(p, new THREE.CylinderGeometry(r, r, d.length(), 12), m, A.clone().add(B).multiplyScalar(0.5));
+  o.quaternion.setFromUnitVectors(V([0, 1, 0]), d.normalize()); return o;
+}
+function textTex(txt, w, h, bg, fg, font = 'bold 90px sans-serif') {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  x.fillStyle = bg; x.fillRect(0, 0, w, h); x.fillStyle = fg; x.font = font; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(txt, w / 2, h / 2 + 4);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const glow = (c, i = 1, e = {}) => mat(c, { emissive: c, emissiveIntensity: i, ...e });
+const seed = (p, pos, r = 0.1) => blob(p, glow('#9a5cd8', 0.7), pos, [r * 0.8, r * 1.1, r * 0.8]);
+const LIL = (stage, x, z, ry, scale = 1.5, pose = {}) => {
+  const l = createLilac({ scale }); l.position.set(x, 0, z); l.rotation.y = ry; stage.scene.add(l);
+  l.userData.pose(pose); l.updateMatrixWorld(true); return l;
+};
+function crown(p, pos, r = 0.14) {
+  const g = new THREE.Group(); g.position.set(...pos); p.add(g); const gold = mat('#f5c518', { metalness: 0.5, roughness: 0.3 });
+  cyl(g, gold, [0, 0, 0], r, r, 0.08, [0, 0, 0], 20);
+  for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; add(g, new THREE.ConeGeometry(r * 0.28, r * 0.9, 8), gold, [Math.cos(a) * r * 0.8, r * 0.5, Math.sin(a) * r * 0.8]); blob(g, glow('#e03a4a', 0.4), [Math.cos(a) * r * 0.8, r * 1.0, Math.sin(a) * r * 0.8], [0.025, 0.025, 0.025]); }
+  return g;
+}
+function gnome({ hl = [-0.17, 0.25, 0.15], hr = [0.17, 0.25, 0.15], scale = 1.4 } = {}) {
+  const g = new THREE.Group(), skin = mat('#f2c6a0'), blue = mat('#2f6fb5'), red = mat('#d23a32'), white = mat('#f6f6f2');
+  cyl(g, blue, [0, 0.25, 0], 0.09, 0.17, 0.5); cyl(g, mat('#4b2e18'), [0, 0.3, 0], 0.135, 0.135, 0.05);
+  blob(g, skin, [0, 0.58, 0], [0.14, 0.14, 0.14]);
+  add(g, new THREE.ConeGeometry(0.13, 0.32, 20), white, [0, 0.44, 0.07], [Math.PI, 0, 0]);
+  blob(g, mat('#f0907f'), [0, 0.585, 0.15], [0.045, 0.04, 0.04]);
+  for (const s of [-1, 1]) { blob(g, mat('#111'), [s * 0.055, 0.63, 0.125], [0.02, 0.025, 0.015]); blob(g, mat('#fff'), [s * 0.05, 0.64, 0.14], [0.007, 0.007, 0.006]);
+    blob(g, blue, [s * 0.09, 0.45, 0.02], [0.05, 0.05, 0.05]); strut(g, blue, [s * 0.09, 0.45, 0.02], s < 0 ? hl : hr, 0.035); blob(g, skin, s < 0 ? hl : hr, [0.045, 0.045, 0.045]);
+    blob(g, mat('#2a1a10'), [s * 0.07, 0.03, 0.05], [0.07, 0.05, 0.1]); }
+  cyl(g, red, [0, 0.69, 0], 0.17, 0.17, 0.03); add(g, new THREE.ConeGeometry(0.15, 0.45, 24), red, [0.02, 0.93, 0], [0, 0, -0.18]);
+  g.scale.setScalar(scale); return g;
+}
+function man({ hl = [-0.3, 0.7, 0.15], hr = [0.3, 0.7, 0.15], scale = 1.5 } = {}) {
+  const g = new THREE.Group(), suit = mat('#27355e'), skin = mat('#f0c09a');
+  box(g, suit, [0, 0.58, 0], [0.34, 0.5, 0.2]); box(g, mat('#fff'), [0, 0.66, 0.101], [0.08, 0.3, 0.01]); box(g, mat('#d23a4a'), [0, 0.62, 0.108], [0.05, 0.25, 0.01]);
+  for (const s of [-1, 1]) { box(g, mat('#1f2a4a'), [s * 0.09, 0.17, 0], [0.13, 0.34, 0.14]); box(g, mat('#111'), [s * 0.09, 0.02, 0.03], [0.14, 0.05, 0.22]);
+    blob(g, suit, [s * 0.19, 0.78, 0], [0.07, 0.07, 0.07]); strut(g, suit, [s * 0.19, 0.78, 0], s < 0 ? hl : hr, 0.05); blob(g, skin, s < 0 ? hl : hr, [0.055, 0.055, 0.055]); }
+  blob(g, skin, [0, 0.98, 0], [0.14, 0.16, 0.14]); blob(g, mat('#5a3b22'), [0, 1.04, -0.02], [0.145, 0.12, 0.145]);
+  for (const s of [-1, 1]) { blob(g, mat('#fff'), [s * 0.055, 0.99, 0.12], [0.028, 0.034, 0.015]); blob(g, mat('#222'), [s * 0.055, 0.99, 0.133], [0.016, 0.022, 0.01]); }
+  const sm = new THREE.Mesh(new THREE.TorusGeometry(0.03, 0.007, 6, 12, Math.PI), mat('#9a3a3a')); sm.rotation.z = Math.PI; sm.position.set(0, 0.935, 0.135); g.add(sm);
+  crown(g, [0, 1.17, 0], 0.13); g.scale.setScalar(scale); return g;
+}
+function maltGlass(p, pos, s = 1) {
+  const g = new THREE.Group(); g.position.set(...pos); g.scale.setScalar(s); p.add(g);
+  cyl(g, mat('#c98a52'), [0, 0.15, 0], 0.1, 0.075, 0.3); cyl(g, mat('#f4ead6'), [0, 0.32, 0], 0.115, 0.1, 0.06);
+  cyl(g, mat('#bfe6f5', { transparent: true, opacity: 0.4 }), [0, 0.15, 0], 0.115, 0.09, 0.32); cyl(g, mat('#fff'), [0.03, 0.42, 0], 0.012, 0.012, 0.25, [0, 0, 0.2]); blob(g, mat('#d0203a'), [0, 0.38, 0], [0.04, 0.04, 0.04]);
+  return g;
+}
+const finishScene = (stage, chars, cam = [0.2, 0.95, 4.6], look = [0.2, 0.8, 0]) => {
+  const pm = new Set(); chars.forEach((c) => c.traverse((o) => pm.add(o)));
+  stage.toonify(stage.scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [252, 900, 80, 1.1]]);
+  stage.camera.position.set(...cam); stage.camera.lookAt(...look); stage.finish();
+};
+function bell(p, pos, s = 1) {
+  const g = new THREE.Group(); g.position.set(...pos); g.scale.setScalar(s); p.add(g);
+  const gold = mat('#f2b928', { metalness: 0.6, roughness: 0.3 });
+  const pts = [[0.36, 0], [0.32, 0.06], [0.22, 0.32], [0.14, 0.52], [0.08, 0.62], [0.0, 0.66]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(g, new THREE.LatheGeometry(pts, 32), gold, [0, -0.66, 0]); blob(g, mat('#7a5a20'), [0, -0.68, 0], [0.08, 0.08, 0.08]); cyl(g, mat('#5b3a1e'), [0, 0.08, 0], 0.06, 0.06, 0.1);
+  return g;
+}
+function ribbonGeo(t0, t1, n, a, w) {
+  const pos = [], idx = [], f = (t) => [a * Math.cos(t) / (1 + Math.sin(t) ** 2), a * Math.sin(t) * Math.cos(t) / (1 + Math.sin(t) ** 2)];
+  for (let i = 0; i <= n; i++) {
+    const t = t0 + (t1 - t0) * i / n, [x, y] = f(t), [x2, y2] = f(t + 1e-3), l = Math.hypot(x2 - x, y2 - y), nx = -(y2 - y) / l, ny = (x2 - x) / l;
+    pos.push(x + nx * w / 2, y + ny * w / 2, 0, x - nx * w / 2, y - ny * w / 2, 0);
+  }
+  for (let i = 0; i < n; i++) { const k = 2 * i; idx.push(k, k + 1, k + 2, k + 1, k + 3, k + 2); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals(); return g;
+}
+function microscope(p, pos, s = 1) {
+  const g = new THREE.Group(); g.position.set(...pos); g.scale.setScalar(s); p.add(g);
+  const body = mat('#2b3a52', { metalness: 0.3 }), steel = mat('#c9d0da', { metalness: 0.6, roughness: 0.3 });
+  box(g, body, [0, 0.04, 0], [0.7, 0.08, 0.5]); cyl(g, body, [-0.15, 0.4, -0.05], 0.06, 0.07, 0.7); box(g, steel, [0.05, 0.38, 0.0], [0.4, 0.05, 0.3]);
+  const tube = cyl(g, body, [0.0, 0.85, -0.05], 0.07, 0.07, 0.6, [0, 0, -0.45]); cyl(g, steel, [0.14, 0.58, -0.05], 0.04, 0.05, 0.14, [0, 0, -0.45]); cyl(g, steel, [-0.12, 1.1, -0.05], 0.045, 0.04, 0.16, [0, 0, -0.45]);
+  blob(g, glow('#c79aff', 0.9), [0.16, 0.42, 0.0], [0.06, 0.012, 0.05]);
+  return g;
+}
+guard(() => {
+const stage = setup('#9ac879', 44); const S = stage.scene;
+const lil = LIL(stage, -2.1, 0, 0.35, 1.9, { arms: { l: [0.2, 0.9, 0], r: [0, 0.5, 0] } });
+const chip = new THREE.Group(); chip.position.set(1.1, 0, 0); chip.rotation.y = -0.2; S.add(chip);
+const green = mat('#76b900'), dk = mat('#2a3a14'), goldp = mat('#e8c860', { metalness: 0.6, roughness: 0.3 });
+box(chip, dk, [0, 1.25, 0], [1.5, 1.5, 0.2]); box(chip, green, [0, 1.25, 0.11], [1.25, 1.25, 0.04]);
+box(chip, new THREE.MeshStandardMaterial({ map: textTex('NVIDIA', 512, 160, '#76b900', '#0a0a0a', 'bold 110px sans-serif') }), [0, 1.0, 0.14], [1.1, 0.34, 0.01]);
+for (const s of [-1, 1]) { blob(chip, mat('#fff'), [s * 0.28, 1.5, 0.15], [0.16, 0.2, 0.04]); blob(chip, mat('#111'), [s * 0.28, 1.47, 0.18], [0.1, 0.14, 0.04]); blob(chip, mat('#fff'), [s * 0.25, 1.53, 0.2], [0.04, 0.04, 0.03]); }
+for (let i = -3; i <= 3; i++) for (const [x, y, w, h] of [[i * 0.2, 0.47, 0.06, 0.12], [i * 0.2, 2.03, 0.06, 0.12], [-0.81, 1.25 + i * 0.2, 0.12, 0.06], [0.81, 1.25 + i * 0.2, 0.12, 0.06]]) box(chip, goldp, [x, y, 0], [w, h, 0.06]);
+for (const s of [-1, 1]) { strut(chip, goldp, [s * 0.3, 0.45, 0], [s * 0.3, 0.1, 0.05], 0.05); box(chip, mat('#c0392b'), [s * 0.3, 0.04, 0.12], [0.2, 0.08, 0.3]); }
+const bag = new THREE.Group(); bag.position.set(-0.55, 1.0, 0.6); S.add(bag);
+const cloth = mat('#2f9e5a'); blob(bag, cloth, [0, 0, 0], [0.55, 0.6, 0.5]); blob(bag, cloth, [0, 0.6, 0], [0.25, 0.22, 0.22]); add(bag, new THREE.TorusGeometry(0.2, 0.04, 8, 20), mat('#f6c421'), [0, 0.45, 0], [Math.PI / 2, 0, 0]);
+for (const s of [-1, 1]) add(bag, new THREE.ConeGeometry(0.13, 0.35, 10), cloth, [s * 0.15, 0.95, 0], [0, 0, -s * 0.5]);
+box(bag, new THREE.MeshStandardMaterial({ map: textTex('$', 256, 256, '#2f9e5a', '#ffe27a', 'bold 200px sans-serif') }), [0, 0.0, 0.51], [0.55, 0.55, 0.01]);
+bag.updateMatrixWorld(true); chip.updateMatrixWorld(true);
+for (const [sx, tx, hy] of [[-0.78, -0.98, 1.0], [-0.78, -0.35, 0.65]]) { const a = chip.localToWorld(V([sx, hy, 0.05])); strut(S, goldp, a.toArray(), [tx, hy - 0.05, 0.95], 0.06); blob(S, goldp, [tx, hy - 0.05, 0.95], [0.09, 0.09, 0.09]); }
+for (let i = 0; i < 4; i++) cyl(S, mat('#f6c421', { metalness: 0.6 }), [-0.55 + (i - 1.5) * 0.12, 1.75 + (i % 2) * 0.15, 0.6], 0.09, 0.09, 0.03, [Math.PI / 2, 0, 0]);
+finishScene(stage, [lil], [-0.1, 1.45, 5.8], [-0.1, 1.25, 0]);
+});</script></body></html>

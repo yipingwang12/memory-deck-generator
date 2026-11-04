@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tortugas q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, makeScene, createTurtle, createShell, mat, add, blob, box, cyl, link, egg, capsule, textMat, rng } from './common.js';
+// q05 - The TURTLE borrows brain drugs already in trials: in-licensing clinical-stage CNS assets.
+makeScene(({ scene }) => {
+  box(scene, mat('#cdb68a'), [0, -0.05, 0], [14, 0.1, 6]);
+  box(scene, mat('#f2ead6'), [0, 2.2, -2.2], [14, 6, 0.1]);
+  // library/pharma shelf behind with stacked pill bottles
+  box(scene, mat('#8a5a30'), [0, 1.35, -2.0], [5.5, 0.1, 0.5]); box(scene, mat('#8a5a30'), [0, 2.1, -2.0], [5.5, 0.1, 0.5]);
+  const cols = ['#ff7a59', '#ffd23f', '#3bb7a4', '#6c8cff'];
+  for (let i = 0; i < 12; i++) { const x = -2.4 + i * 0.44, c = mat(cols[i % 4]); cyl(scene, mat('#ffffff', { roughness: 0.3 }), [x, 1.6, -2.0], 0.13, 0.38); cyl(scene, c, [x, 1.6, -1.87], 0.131, 0.14, [Math.PI / 2, 0, 0]); cyl(scene, c, [x, 1.82, -2.0], 0.14, 0.07); }
+  for (let i = 0; i < 12; i++) { const x = -2.4 + i * 0.44; cyl(scene, mat('#fff'), [x, 2.37, -2.0], 0.13, 0.38); cyl(scene, mat(cols[(i + 1) % 4]), [x, 2.6, -2.0], 0.14, 0.07); }
+  // counter
+  box(scene, mat('#b5783f'), [0, 0.25, -0.5], [3.4, 0.5, 0.7]); box(scene, mat('#d39a5a'), [0, 0.52, -0.5], [3.5, 0.06, 0.8]);
+  // library checkout card + stamp on counter
+  box(scene, mat('#fff8e0'), [-1.1, 0.56, -0.2], [0.55, 0.02, 0.38]); box(scene, mat('#e0457b'), [-1.1, 0.575, -0.2], [0.3, 0.012, 0.12]);
+  // big pink brain (CNS)
+  const brain = new THREE.Group(); scene.add(brain); brain.position.set(0, 0.95, 0.45); brain.rotation.y = 0.2;
+  const pink = mat('#ff9fb5', { roughness: 0.45 }), pink2 = mat('#ff7f9f', { roughness: 0.45 });
+  blob(brain, pink, [-0.22, 0, 0], [0.34, 0.28, 0.28]); blob(brain, pink, [0.22, 0, 0], [0.34, 0.28, 0.28]);
+  const r = rng(5); for (let i = 0; i < 14; i++) { const a = r() * 6.28, b = (r() - 0.3) * 2.2; blob(brain, pink2, [Math.cos(a) * 0.5 * 0.7, Math.sin(b) * 0.2 + 0.05, 0.26 * Math.cos(b)], [0.1, 0.045, 0.1], [r(), r(), r()]); }
+  box(brain, mat('#c25678'), [0, 0, 0.0], [0.02, 0.4, 0.4]);
+  cyl(brain, mat('#d46a8a'), [0.05, -0.34, 0], 0.07, 0.2);
+  // borrowed tag on brain
+  blob(brain, mat('#ffe27a'), [0.0, 0.2, 0.3], [0.09, 0.07, 0.015]);
+  // pill capsules (red/white) scattered in front
+  const pill = (x, z, ry) => { const g = new THREE.Group(); g.position.set(x, 0.08, z); g.rotation.y = ry; scene.add(g); capsule(g, mat('#ff4d5a', { roughness: 0.3 }), [0.1, 0, 0], 0.075, 0.1, [0, 0, Math.PI / 2]); capsule(g, mat('#ffffff', { roughness: 0.3 }), [-0.1, 0, 0], 0.075, 0.1, [0, 0, Math.PI / 2]); };
+  pill(-1.4, 0.9, 0.5); pill(1.4, 0.8, -0.4); pill(1.0, 1.4, 1.0); pill(-0.9, 1.5, -0.8);
+  // clipboards = "in trials" on the counter
+  for (const x of [1.0, 1.35]) { box(scene, mat('#3d6fb4'), [x, 0.8, -0.35], [0.28, 0.5, 0.03], [0, -0.2, 0.0]); box(scene, mat('#fff'), [x, 0.8, -0.32], [0.22, 0.42, 0.01], [0, -0.2, 0]); }
+  const t = createTurtle({ scale: 1.0 }); t.position.set(0, 0, 1.1); scene.add(t);
+  t.userData.pose({ headTilt: 0.06, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  t.userData.reach('l', [0.2, 0.6, 0.42]); t.userData.reach('r', [-0.2, 0.6, 0.42]);
+  // brain held in front of belly
+  brain.position.set(0, 0.3, 1.1 + 0.4); brain.scale.setScalar(0.62);
+  return [t];
+}, { ground: null, cam: { pos: [0.1, 1.15, 4.0], look: [0, 0.7, 0] } });
+</script></body></html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const kl = C.koala(); kl.position.set(-4.6, 0, 0); kl.scale.setScalar(2.2); kl.rotation.y = 0.5; S.scene.add(kl);
+  const zb = C.zebra(); zb.position.set(4.9, 0, -0.2); zb.scale.setScalar(2.0); zb.rotation.y = Math.PI + 0.45; S.scene.add(zb);
+  const bag = C.moneyBag('$'); bag.position.set(0.2, 5.0, 0); bag.scale.setScalar(1.5); bag.rotation.z = 2.5; S.scene.add(bag);
+  const r = C.rng(11);
+  for (let i = 0; i < 16; i++) { const y = 3.4 + r() * 1.4, x = (r() - 0.5) * 2.4 + 0.2;
+    if (i % 2) box(S.scene, mat('#3fae5a'), [x, y, 0.2 + r()], [0.5, 0.26, 0.02], [r(), r(), r() * 3]); else blob(S.scene, mat('#8a5a2a'), [x, y, 0.2 + r()], [0.1, 0.17, 0.1], [r(), 0, r()]); }
+  const t = C.triangle(S, { scale: 3.3, pos: [0.2, 0, 0.8], ry: 0, pose: { arms: { l: [0, 2.4, 0], r: [0, -2.4, 0] }, legs: { l: [0, 0.15], r: [0, -0.15] } } });
+  C.done(S, [t], [0, 3.1, 10.8], [0, 2.9, 0]);
+});
+</script></body></html>

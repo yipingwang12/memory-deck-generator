@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q04 — The JACKS send their soaps away in a CAN with a VIEW.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#a7d27a' }); const sc = stage.scene;
+  // big tin can with a round window showing a view
+  const can = new THREE.Group(); can.position.set(1.3, 0, 0); sc.add(can);
+  cyl(can, mat('#d9dde2', { metalness: 0.6, roughness: 0.35 }), [0, 1.0, 0], 0.95, 2.0);
+  for (const y of [0.05, 1.95]) cyl(can, mat('#aeb4bb', { metalness: 0.6, roughness: 0.3 }), [0, y, 0], 0.99, 0.1);
+  cyl(can, mat('#e2483c'), [0, 1.0, 0], 0.96, 0.7);
+  const cv = document.createElement('canvas'); cv.width = cv.height = 512; const x = cv.getContext('2d');
+  const g1 = x.createLinearGradient(0, 0, 0, 512); g1.addColorStop(0, '#6db8ff'); g1.addColorStop(1, '#cfeaff'); x.fillStyle = g1; x.fillRect(0, 0, 512, 512);
+  x.fillStyle = '#ffe36a'; x.beginPath(); x.arc(370, 130, 50, 0, 7); x.fill();
+  x.fillStyle = '#7d8fa8'; x.beginPath(); x.moveTo(0, 400); x.lineTo(160, 190); x.lineTo(300, 380); x.lineTo(400, 250); x.lineTo(512, 400); x.lineTo(512, 512); x.lineTo(0, 512); x.fill();
+  x.fillStyle = '#4aa84a'; x.fillRect(0, 400, 512, 112);
+  const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace;
+  const win = new THREE.Mesh(new THREE.CircleGeometry(0.5, 40), new THREE.MeshBasicMaterial({ map: t })); win.position.set(0, 1.0, 0.975); can.add(win);
+  add(can, new THREE.TorusGeometry(0.52, 0.06, 12, 40), mat('#f2b233', { metalness: 0.5 }), [0, 1.0, 0.97]);
+  can.rotation.y = -0.3;
+  // soaps flying in
+  const soap = (px, py, pz, c, r) => { const g = new THREE.Group(); add(g, new THREE.BoxGeometry(0.5, 0.16, 0.3), mat(c), [0, 0, 0], [0, 0, 0]); add(g, new THREE.BoxGeometry(0.34, 0.17, 0.2), mat('#fff', { roughness: 0.4 }), [0, 0, 0]); g.position.set(px, py, pz); g.rotation.set(0.3, r, 0.4 * r); sc.add(g); };
+  soap(-0.5, 2.4, 0.5, '#ff8fb8', 0.5); soap(0.1, 2.8, 0.7, '#7fd6ff', -0.4); soap(0.7, 2.7, 0.9, '#ffe27a', 0.8);
+  // soap bottle
+  const bt = new THREE.Group(); bt.position.set(0.0, 0, 0.9); sc.add(bt); cyl(bt, mat('#6fd0ff', { roughness: 0.3 }), [0, 0.35, 0], 0.17, 0.7); cyl(bt, mat('#fff'), [0, 0.8, 0], 0.07, 0.2); add(bt, new THREE.BoxGeometry(0.2, 0.06, 0.06), mat('#fff'), [0.07, 0.95, 0]);
+  const rr = rng(2); for (let i = 0; i < 14; i++) blob(sc, mat('#ffffff', { transparent: true, opacity: 0.55, roughness: 0.1 }), [-1.5 + rr() * 3, 1.5 + rr() * 2, 0.4 + rr()], [0.12, 0.12, 0.12].map(v => v * (0.5 + rr())));
+  const J = placeJack(stage, { x: -1.7, z: 0.8, s: 1.5, ry: 0.4 }); J.userData.aim('l', new THREE.Vector3(-0.3, 2.4, 0.8));
+  finishScene(stage, J, { cam: [0.0, 1.7, 5.6], look: [0, 1.4, 0] });
+
+});
+</script></body></html>

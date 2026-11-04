@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Whitehead q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The SNOWMAN stands beside the MIT DOME but rules itself: affiliated with MIT, independently governed.
+import { THREE, guard, rng, mat, add, blob, box, cyl, winterStage, clouds, pine, snowfall, person, lamb, hen, egg, pose, openBelly } from './props.js';
+import { createSnowman } from './snowman.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = winterStage(P);
+
+  const stone = mat('#d9d4c8'), dm = mat('#7f95ad');
+  const dome = new THREE.Group(); dome.position.set(2.2, 0, -4.0); scene.add(dome);
+  box(dome, stone, [0, 0.6, 0], [6.6, 1.2, 2.6]);
+  box(dome, stone, [0, 1.35, 0], [5.6, 0.3, 2.3]);
+  cyl(dome, stone, [0, 2.5, 0], 1.55, 1.7, 2.0, undefined, 40);
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; cyl(dome, mat('#cbc5b8'), [Math.cos(a) * 1.62, 2.5, Math.sin(a) * 1.62], 0.07, 0.07, 1.7, undefined, 10); }
+  add(dome, new THREE.CylinderGeometry(1.7, 1.7, 0.12, 40), stone, [0, 3.55, 0]);
+  add(dome, new THREE.SphereGeometry(1.55, 48, 24, 0, Math.PI * 2, 0, Math.PI / 2), dm, [0, 3.6, 0]);
+  cyl(dome, stone, [0, 5.3, 0], 0.18, 0.28, 0.3, undefined, 20);
+  for (let i = 0; i < 6; i++) cyl(dome, mat('#efe9dc'), [-1.5 + i * 0.6, 0.62, 1.4], 0.12, 0.13, 1.1, undefined, 16);
+  box(dome, mat('#8a8a8a'), [0, 0.04, 2.1], [4.5, 0.08, 1.6]);
+  pine(scene, -4.8, -2.6, 2.0); pine(scene, 7.2, -2.8, 2.2);
+  add(scene, new THREE.CylinderGeometry(0.02, 0.02, 1.8, 8), mat('#4a4a4a'), [-1.55, 0.9, 0.2]);
+  add(scene, new THREE.BoxGeometry(0.7, 0.42, 0.02), mat('#c8323a'), [-1.2, 1.55, 0.2]);
+  const sm = createSnowman({ scale: 2.1, hat: 'crown' }); sm.position.set(-1.3, 0, 1.3); sm.rotation.y = 0.2; scene.add(sm);
+  sm.userData.pose({ arms: { l: [0, 1.2], r: [0, -1.2] }, headTilt: 0.06 });
+  sm.userData.reach('l', [0.3, 0.55, 0.15]); sm.userData.reach('r', [-0.3, 0.55, 0.15]);
+  stage.toonify(scene, (m) => m.geometry && m.geometry.type !== 'PlaneGeometry');
+  clouds(stage);
+  stage.camera.position.set(num('cx', 0.3), num('cy', 1.5), num('cz', 5.8));
+  stage.camera.lookAt(num('tx', 0.2), num('ty', 1.3), 0);
+  stage.finish();
+});
+</script></body></html>

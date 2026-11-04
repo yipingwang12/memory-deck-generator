@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const rk = rng(3), ice = mat('#bfe4f5', { roughness: 0.25, flatShading: true }), ice2 = mat('#8fc8e8', { roughness: 0.3, flatShading: true });
+  // cave arch: stacked ice boulders left, right, top
+  const rock = (x, y, z, s, m = ice) => { const o = add(sc, new THREE.IcosahedronGeometry(1, 1), m, [x, y, z], [rk() * 3, rk() * 3, 0], [s * 1.0, s * 1.1, s]); return o; };
+  for (let i = 0; i < 6; i++) { rock(-3.4 + rk() * 0.4, 0.5 + i * 0.85, -2.6 + rk() * 0.6, 0.9 + rk() * 0.3, i % 2 ? ice : ice2); rock(3.6 + rk() * 0.4, 0.5 + i * 0.85, -2.6 + rk() * 0.6, 0.9 + rk() * 0.3, i % 2 ? ice2 : ice); }
+  for (let i = 0; i < 7; i++) rock(-3.0 + i * 1.0, 4.6 + rk() * 0.2, -2.6, 0.95 + rk() * 0.2, i % 2 ? ice : ice2);
+  rock(0, 1.2, -4.2, 2.2, ice2); rock(-1.8, 1.0, -4, 1.8, ice); rock(2.2, 1.1, -4, 1.9, ice);
+  for (let i = 0; i < 14; i++) { const x = -3 + i * 0.46 + rk() * 0.2, h = 0.5 + rk() * 0.7; add(sc, new THREE.ConeGeometry(0.07, h, 6), mat('#e6f6ff', { roughness: 0.1 }), [x, 4.0 - h / 2, -2.2], [Math.PI, 0, 0]); }
+  const c = church(1.35); c.position.set(1.4, 0, -1.2); c.rotation.y = -0.35; sc.add(c);
+  const cap = capsid(0.16, '#ff6fa8'); cap.position.set(0, 0.55 - 0.16, 0.36); d.add(cap);
+  const cap2 = capsid(0.3, '#46c8e8'); cap2.position.set(-1.8, 0, 0.5); sc.add(cap2);
+  const cap3 = capsid(0.24, '#ffb12b'); cap3.position.set(-0.9, 0, -0.9); sc.add(cap3);
+  reachW(d, 'l', d.localToWorld(V3(0.15, 0.55, 0.34))); reachW(d, 'r', d.localToWorld(V3(-0.15, 0.55, 0.34)));
+}, { ground: '#e8f4fb', dpos: [-0.5, 0, 0.7], dry: 0.2, scl: 1.6, cam: [0.2, 1.7, 5.4], look: [0.2, 1.3, 0], el: 30 });
+
+</script></body></html>

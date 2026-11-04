@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BioComputing q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textTex, setup, finish, flag, brain, penguin, heart, createCalculator } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+// q03 — PRIMARY school bell rings in the CALCULATOR's seed round.
+const { stage, scene, num, cam } = setup(new URLSearchParams(location.search));
+const calc = createCalculator({ scale: 1.8 }); calc.position.set(-1.1, 0, 0.5); calc.rotation.y = 0.35; scene.add(calc);
+calc.userData.pose({ lean: 0.05, arms: { l: [0, 0.2, 0], r: [0, 0.2, 0] } });
+calc.updateMatrixWorld(true);
+// seed pot with sprout held in right hand
+const pot = new THREE.Group(); pot.position.set(-0.25, 0.55, 1.2); scene.add(pot);
+add(pot, new THREE.CylinderGeometry(0.2, 0.15, 0.24, 24), mat('#c8663a'), [0, 0, 0]); blob(pot, mat('#5a3a22'), [0, 0.11, 0], [0.19, 0.04, 0.19]);
+cyl(pot, mat('#3da04a'), [0, 0.28, 0], 0.014, 0.3);
+for (const s of [-1, 1]) blob(pot, mat('#52c25a'), [s * 0.1, 0.4, 0], [0.12, 0.05, 0.06], [0, 0, s * 0.5]);
+const t = calc.worldToLocal(new THREE.Vector3(-0.25, 0.65, 1.2)); calc.userData.reach('r', [t.x, t.y, t.z]);
+// bell gantry
+const wood = mat('#8a5a34'), brass = mat('#f2b32c', { metalness: 0.5, roughness: 0.3 });
+box(scene, wood, [0.85, 1.3, -0.3], [0.14, 2.6, 0.14]); box(scene, wood, [2.45, 1.3, -0.3], [0.14, 2.6, 0.14]); box(scene, wood, [1.65, 2.55, -0.3], [1.8, 0.14, 0.14]);
+const bell = new THREE.Group(); bell.position.set(1.65, 2.45, -0.3); bell.rotation.z = 0.2; scene.add(bell);
+const pts = []; for (let i = 0; i <= 20; i++) { const t2 = i / 20; pts.push(new THREE.Vector2(0.12 + 0.5 * Math.pow(t2, 1.8) + 0.04 * t2, -t2)); }
+add(bell, new THREE.LatheGeometry(pts, 40), new THREE.MeshStandardMaterial({ color: '#f2b32c', metalness: 0.5, roughness: 0.3, side: THREE.DoubleSide }), [0, 0, 0]);
+blob(bell, brass, [0, -0.98, 0], [0.54, 0.05, 0.54]);
+blob(bell, mat('#3a2c20'), [-0.1, -1.0, 0], [0.1, 0.1, 0.1]);
+cyl(bell, wood, [0, 0.1, 0], 0.05, 0.25);
+// ring marks
+for (const s of [-1, 1]) for (let k = 0; k < 2; k++) add(bell, new THREE.TorusGeometry(0.75 + k * 0.18, 0.022, 6, 20, 0.8), mat('#ff6a3a'), [0, -0.55, 0], [0, 0, (s > 0 ? -0.5 : Math.PI - 0.3)]);
+// primary colour blocks
+box(scene, mat('#e63946'), [0.3, 0.2, 1.1], [0.4, 0.4, 0.4], [0, 0.2, 0]); box(scene, mat('#ffd23f'), [0.78, 0.2, 1.25], [0.4, 0.4, 0.4], [0, -0.1, 0]);
+box(scene, mat('#2a6fdb'), [0.5, 0.6, 1.15], [0.4, 0.4, 0.4], [0, 0.4, 0]);
+// schoolhouse backdrop
+const sh = new THREE.Group(); sh.position.set(-0.6, 0, -2.4); scene.add(sh);
+box(sh, mat('#e0583c'), [0, 0.9, 0], [3.2, 1.8, 1.4]); add(sh, new THREE.ConeGeometry(2.1, 1.0, 4), mat('#6b3a2a'), [0, 2.3, 0], [0, Math.PI / 4, 0], [1, 1, 0.45]);
+box(sh, mat('#fff3d6'), [0, 0.6, 0.71], [0.6, 1.2, 0.04]); for (const x of [-1.0, 1.0]) box(sh, mat('#9fd6f0'), [x, 1.0, 0.71], [0.5, 0.5, 0.04]);
+cam(0.1, 1.3, 5.0, 0.35, 1.3); finish(stage, [calc]);
+});
+</script></body></html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q18</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q18 — "They sample the front of the brain, behind the MITTEN's forehead: the prefrontal cortex."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const pd = cyl(scene, mat('#d8c8a8'), 0.8, 0.9, 0.9, [1.9, 0.45, -0.2]);
+  const br = P.brain({ s: 2.0 }); br.position.set(1.9, 0.9, -0.2); br.rotation.y = Math.PI; scene.add(br);
+  const m = placeMitten(scene, { x: -1.0, z: 0.8, ry: 0.35, s: 2.1, pose: { headTilt: 0.1 }, reach: { l: [-0.5, 1.85, 1.3] } });
+  const glow = mat('#ffb347', { emissive: '#ff9020', emissiveIntensity: 1 });
+  for (let i = 0; i < 6; i++) blob(scene, glow, [-0.6 + i * 0.28, 2.2 - 0.02 * i * i / 2, 0.3 - i * 0.1], [0.06, 0.06, 0.06]);
+  return { chars: [m], cam: { pos: [0.5, 2.0, 6.6], look: [0.5, 1.8, 0] } };
+});
+</script></body></html>

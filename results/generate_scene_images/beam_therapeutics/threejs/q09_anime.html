@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, run, mat, glow, add, blob, cyl, box, cone, group, label, eyes, coin, bubble, sack, flag, liver, animal } from "./common.js";
+// q09 — A RISOTTO cell (Risto-cel) straightens sickle cells on the GIRDER.
+const sickle = (p, pos, bend, rotZ = 0) => add(p, new THREE.TorusGeometry(0.3, 0.075, 14, 32, bend), mat('#a8142a', { roughness: 0.4 }), pos, [0, 0, rotZ]);
+run({ gAt: [-1.5, 0, 0.6], gRot: 0.4, gScale: 1.4, pose: { arms: { r: [0, 0.4, 0] } }, cam: [0.3, 1.0, 4.5], look: [0.5, 0.8, 0],
+  build({ scene, reach }) {
+    // risotto cell: a big bowl heaped with rice and peas, with a face
+    const b = group(scene, [1.8, 0, 0.1]);
+    const pts = [[0, 0], [0.35, 0.02], [0.62, 0.25], [0.78, 0.55], [0.8, 0.6], [0.74, 0.6], [0.56, 0.3], [0, 0.1]].map(([x, y]) => new THREE.Vector2(x, y));
+    add(b, new THREE.LatheGeometry(pts, 36), new THREE.MeshStandardMaterial({ color: '#f3efe6', roughness: 0.3, side: THREE.DoubleSide }));
+    blob(b, mat('#fff0b0'), [0, 0.62, 0], [0.74, 0.3, 0.74]);
+    for (let i = 0; i < 70; i++) { const a = i * 2.4, r = Math.sqrt(i / 70) * 0.66, y = 0.62 + 0.3 * Math.sqrt(Math.max(0, 1 - (r / 0.74) ** 2)); blob(b, mat(i % 7 === 0 ? '#5fc24a' : i % 5 === 0 ? '#ffd966' : '#fffbe8'), [Math.cos(a) * r, y, Math.sin(a) * r], [0.055, 0.035, 0.03], [0, a, 0.3]); }
+    eyes(b, { y: 0.4, z: 0.72, gap: 0.22, r: 0.09 }); add(b, new THREE.TorusGeometry(0.1, 0.02, 8, 16, Math.PI), mat('#7a2a22'), [0, 0.22, 0.74], [0, 0, Math.PI]);
+    cyl(b, mat('#cfd6dd', { metalness: 0.6 }), 0.025, 0.7, [0.55, 1.15, 0.1], [0, 0, -0.6]);
+    // sickle cells (crescents) on the ground, one half straightened, healthy round cells after
+    sickle(scene, [-0.7, 0.25, 0.9], Math.PI * 1.1, -0.3); sickle(scene, [-0.05, 0.25, 0.9], Math.PI * 1.1, -0.3);
+    add(scene, new THREE.CapsuleGeometry(0.075, 0.5, 8, 16), mat('#e0364a', { roughness: 0.4 }), [0.55, 0.12, 0.9], [0, 0, Math.PI / 2]);
+    for (const [x, z] of [[0.4, 0.35], [0.0, 0.3]]) add(scene, new THREE.TorusGeometry(0.17, 0.08, 14, 28), mat('#d42a3a'), [x, 0.2, z], [Math.PI / 2 - 0.5, 0, 0]);
+    reach('l', [-0.7, 0.6, 0.8]);
+  } });
+</script></body></html>

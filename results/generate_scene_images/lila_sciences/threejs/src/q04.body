@@ -1,0 +1,12 @@
+const stage = setup('#8ec46a', 50); const S = stage.scene;
+const names = ['GENERATE', 'TESSERA', 'QUOTIENT', 'INDIGO'], cols = ['#d23a4a', '#2f8f5a', '#e08a1e', '#3a4ac0'];
+names.forEach((n, i) => {
+  const x = -2.2 + i * 1.25;
+  blob(S, mat('#6b4a2c'), [x, 0.08, 0.3], [0.62, 0.17, 0.5]);
+  cyl(S, mat('#d9d2c0'), [x, 0.75, 0.3], 0.025, 0.025, 1.4);
+  box(S, new THREE.MeshStandardMaterial({ map: textTex(n, 512, 200, cols[i], '#fff', 'bold 70px sans-serif'), roughness: 0.8 }), [x + 0.57, 1.2, 0.3], [1.14, 0.46, 0.03]);
+});
+const m = man({ scale: 1.8, hl: [-0.3, 0.45, 0.2], hr: [0.3, 0.7, 0.2] }); m.position.set(-3.5, 0, 0.9); S.add(m);
+cyl(m, mat('#d9d2c0'), [0.3, 0.9, 0.2], 0.02, 0.02, 0.6);
+const lil = LIL(stage, 3.5, 0.2, -0.3, 2.2, { arms: { l: [0.2, 0.5, 0], r: [0, 0.4, 0] } });
+finishScene(stage, [lil], [0, 1.5, 6.5], [0, 1.2, 0]);

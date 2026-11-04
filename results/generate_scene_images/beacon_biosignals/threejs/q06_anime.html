@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q06</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q06 — The BEACON swallows a DREAM cloud.
+guard(() => {
+
+  const { stage, scene } = setup({ el: 12 });
+  const b = beacon(scene, { x: -0.9, s: 1.4, yaw: 0.45, pose: { mouth: 'open', flame: 1.1, arms: { l: [0.1, 0.9, 0], r: [0, 0.5, 0] } } });
+  const c = makeCloud(1.15, { face: true }); c.position.set(1.15, 1.2, 0.2); c.rotation.y = -0.3; scene.add(c);
+  const m = mat('#f4f0ff', { roughness: 0.9 });
+  [[0.35, 1.0, 0.7, 0.3], [0.0, 0.82, 0.85, 0.22], [-0.3, 0.72, 0.9, 0.14]].forEach(([x, y, z, r]) => blob(scene, m, [x, y, z], [r, r, r]));
+  const r = rng(9); for (let i = 0; i < 9; i++) { const s = add(scene, new THREE.OctahedronGeometry(0.07 + r() * 0.07), glow('#ffe066'), [0.4 + r() * 2.2, 1.9 + r() * 0.5, -0.5 + r()], [r(), r(), r()]); }
+  wrap(stage, scene, [b, c], { pos: [0.2, 1.1, 4.6], look: [0.2, 0.95, 0] });
+});
+</script></body></html>

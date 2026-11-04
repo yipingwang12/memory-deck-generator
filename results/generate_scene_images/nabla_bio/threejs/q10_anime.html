@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const rb = C.person({ shirt: '#8a1f1f', pants: '#2a2a33', hat: 'beret', fist: true }); rb.position.set(-2.8, 0, 0); rb.scale.setScalar(2.4); rb.rotation.y = 0.35; S.scene.add(rb);
+  cyl(S.scene, mat('#ddd', { metalness: 0.5 }), [-2.8 + 0.43 * 2.4 * 0.94, 4.2, 0.25], 0.04, 2.6, [0, 0, 0]);
+  const bn = sign(S.scene, textTex('SERIES A', '#1f4fc0', '#fff', 640, 200, 'bold 120px Arial Black, Arial'), 3.4, 1.06, [-2.8 + 0.43 * 2.4 * 0.94 + 1.72, 5.25, 0.25]);
+  const t = C.triangle(S, { scale: 3.0, pos: [1.8, 0, 0.8], ry: -0.4, pose: { lean: 0.25, arms: { l: [0, 1.6, 0], r: [0, -1.6, 0] }, legs: { l: [0.7, 0], r: [-0.6, 0] } } });
+  for (let i = 0; i < 6; i++) box(S.scene, mat('#ffffff', { transparent: true, opacity: 0.75 }), [5.4 + (i % 2) * 0.6, 0.6 + i * 0.5, 0.2 - i * 0.1], [1.8 + (i % 3) * 0.5, 0.06, 0.06]).castShadow = false;
+  C.done(S, [t, rb], [0, 3.0, 9.8], [0, 2.9, 0]);
+});
+</script></body></html>

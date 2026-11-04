@@ -1,0 +1,24 @@
+  meadow('#c9d4cf'); window.__clouds = [[150, 900, 90, 1.2]];
+  add(scene, new THREE.BoxGeometry(12, 4, 0.2), mat('#e6edf0'), [0, 2, -3]);
+  const mouse = (x, z, ry) => {
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; scene.add(g);
+    const fur = mat('#f4f1ec'), pink = mat('#f3a3b0');
+    blob(g, fur, [0, 0.42, 0], [0.5, 0.4, 0.36]); blob(g, fur, [0.45, 0.42, 0], [0.28, 0.24, 0.22]);
+    blob(g, pink, [0.7, 0.4, 0], [0.05, 0.05, 0.05]);
+    for (const s of [-1, 1]) { blob(g, pink, [0.38, 0.65, s * 0.15], [0.12, 0.14, 0.04]); blob(g, mat('#1a1210', { roughness: 0.2 }), [0.6, 0.48, s * 0.13], [0.04, 0.045, 0.03]); blob(g, fur, [0.2, 0.08, s * 0.2], [0.14, 0.07, 0.07]); }
+    add(g, new THREE.CylinderGeometry(0.02, 0.04, 0.8, 8), pink, [-0.7, 0.2, 0], [0, 0, 1.2]);
+    return g;
+  };
+  mouse(2.0, -1.2, 3.3); mouse(-4.4, -1.4, 0.2);
+  // bullseye target board with arrow
+  const T = new THREE.Group(); T.position.set(-0.4, 1.9, -2.7); scene.add(T);
+  [['#ffffff', 1.1], ['#e03c3c', 0.9], ['#ffffff', 0.68], ['#e03c3c', 0.46], ['#ffd24a', 0.22]].forEach(([c, r], i) => add(T, new THREE.CylinderGeometry(r, r, 0.06 + i * 0.01, 40), mat(c), [0, 0, 0], [Math.PI / 2, 0, 0]));
+  add(T, new THREE.CylinderGeometry(0.015, 0.015, 1.1, 8), mat('#cfd6dc', { metalness: 0.6 }), [0.0, 0.0, 0.5], [Math.PI / 2, 0, 0]);
+  add(T, new THREE.ConeGeometry(0.06, 0.2, 3), glowM('#3ff0ff', 1), [0, 0, 1.05], [-Math.PI / 2, 0, 0]);
+  // micron ruler
+  const R = add(scene, new THREE.BoxGeometry(2.2, 0.16, 0.04), mat('#ffd24a'), [-0.4, 0.75, -2.65]);
+  for (let i = 0; i <= 10; i++) add(scene, new THREE.BoxGeometry(0.02, i % 5 ? 0.07 : 0.12, 0.05), mat('#222'), [-1.5 + i * 0.22, 0.75 + 0.02, -2.62]);
+  const h = hiker(scene, { pos: [-2.1, 0, 0.8], ry: 0.6, s: 1.4, arms: { l: [0.3, 0.1, 0.2], r: [0, 0.1, 0.2] } });
+  h.userData.reach('r', [0.3, 0.95, 0.2]);
+  const rb = add(scene, new THREE.TorusGeometry(0.28, 0.025, 6, 20, 2.6), mat('#7a4a2a')); h.userData.parts.hands.r.add(rb); rb.visible = false;
+  cam.position.set(-0.3, 1.5, 6.0); cam.lookAt(-0.5, 1.3, -1);

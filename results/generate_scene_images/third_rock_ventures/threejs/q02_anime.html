@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Third Rock q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 - "A TATTOO of gold bars covers the PEBBLE's sixth fund."  (6 gold bars tattooed on the belly)
+import { THREE, guard, rng, canvasTexture, createPebble, num, mat, add, blob, box, stage, panel, holdAt, sit, finish } from './common.js';
+
+function goldBars(c, x, y, w, h, ink) {
+  const g = c.createLinearGradient(x, y, x, y + h); g.addColorStop(0, '#ffe680'); g.addColorStop(1, '#e0a400');
+  const sk = w * 0.18; c.beginPath(); c.moveTo(x + sk, y); c.lineTo(x + w - sk, y); c.lineTo(x + w, y + h); c.lineTo(x, y + h); c.closePath();
+  c.fillStyle = g; c.fill(); c.lineWidth = ink; c.strokeStyle = '#1b2a4a'; c.lineJoin = 'round'; c.stroke();
+  c.beginPath(); c.moveTo(x + w * 0.28, y + h * 0.3); c.lineTo(x + w * 0.62, y + h * 0.3); c.lineWidth = ink * 0.6; c.strokeStyle = '#fff6c0'; c.stroke();
+}
+
+/** Texture bent onto the pebble's front ellipsoid. */
+function tattooDecal(parent, cx, cy, w, h) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); const x = c.getContext('2d');
+  x.fillStyle = '#8a7b6b'; x.fillRect(0, 0, c.width, c.height);
+  const bw = 150, bh = c.height / 3 - 8, mid = c.width / 2;
+  for (let r = 0; r < 3; r++) { const n = 3 - r; for (let i = 0; i < n; i++) goldBars(x, mid - n * (bw + 8) / 2 + 4 + i * (bw + 8), 6 + r * (bh + 8), bw, bh, 7); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  const g = new THREE.PlaneGeometry(w, h, 16, 8), p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) { const px = cx + p.getX(i), py = cy + p.getY(i); const z = 0.27 * Math.sqrt(Math.max(0, 1 - (px / 0.31) ** 2 - ((py - 0.42) / 0.34) ** 2)); p.setXYZ(i, px, py, z + 0.01); }
+  g.computeVertexNormals();
+  const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ map: t, transparent: true, roughness: 0.5 })); m.userData.noToon = true; parent.add(m);
+}
+
+guard(() => {
+  const st = stage({ sunElevation: 30, sunAzimuth: 170, sky: { cover: 0.1, puffCover: 0.1, towerTop: 0.1, zenith: '#7b4fa0', horizon: '#ffd2a8' }, ambient: { color: '#ffe0d0', intensity: 2.2 } });
+  const scene = st.scene;
+  add(scene, new THREE.PlaneGeometry(40, 40), new THREE.MeshStandardMaterial({ color: '#7a4a2a', roughness: 0.6 }), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  const wall = add(scene, new THREE.PlaneGeometry(14, 6), mat('#8f2f3a'), [0, 3, -1.6]);
+  for (let i = 0; i < 14; i++) box(scene, mat('#7a2630'), [-6.5 + i, 3, -1.595], [0.04, 6, 0.01]);
+  // flash sheets on the wall
+  const flash = (x, y, kind) => {
+    const p = panel(1.3, 1.7, (c, W, H) => {
+      c.fillStyle = '#fbf1da'; c.fillRect(0, 0, W, H); c.strokeStyle = '#1b2a4a'; c.lineWidth = 8; c.strokeRect(10, 10, W - 20, H - 20);
+      if (kind === 0) { c.fillStyle = '#d63a4a'; c.beginPath(); c.moveTo(W / 2, H * 0.7); c.bezierCurveTo(W * 0.05, H * 0.4, W * 0.3, H * 0.15, W / 2, H * 0.38); c.bezierCurveTo(W * 0.7, H * 0.15, W * 0.95, H * 0.4, W / 2, H * 0.7); c.fill(); c.stroke(); }
+      else if (kind === 1) { c.fillStyle = '#2a63b8'; c.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? W * 0.14 : W * 0.34; c.lineTo(W / 2 + Math.cos(a) * rr, H / 2 + Math.sin(a) * rr); } c.closePath(); c.fill(); c.stroke(); }
+      else { goldBars(c, W * 0.15, H * 0.3, W * 0.7, H * 0.17, 6); goldBars(c, W * 0.15, H * 0.5, W * 0.7, H * 0.17, 6); }
+    }); p.position.set(x, y, -1.58); scene.add(p);
+  };
+  flash(-4.2, 3.2, 0); flash(-2.6, 3.0, 1); flash(3.6, 3.1, 2); flash(5.2, 3.3, 0);
+  // leather chair
+  const leather = mat('#b2262f', { roughness: 0.35 });
+  const chair = new THREE.Group(); scene.add(chair);
+  box(chair, leather, [0, 0.62, 0], [1.9, 0.3, 1.5]); box(chair, leather, [0, 1.3, -0.72], [1.9, 1.4, 0.2], [-0.12, 0, 0]);
+  add(chair, new THREE.CylinderGeometry(0.2, 0.3, 0.5, 20), mat('#2e2e34', { metalness: 0.6, roughness: 0.3 }), [0, 0.25, 0]); add(chair, new THREE.CylinderGeometry(0.8, 0.8, 0.07, 28), mat('#2e2e34', { metalness: 0.6 }), [0, 0.035, 0]);
+  const big = createPebble({ scale: 2.15 }); big.position.set(-0.3, 0.77 - 0.04, 0.0); big.rotation.y = 0.15; scene.add(big);
+  sit(big, 0.3, -1.25); big.userData.pose({ legs: { l: [-1.25, 0.3], r: [-1.25, -0.3] }, arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] }, lean: -0.05 });
+  tattooDecal(big.userData.parts.head, 0, 0.2, 0.3, 0.2);
+  // tattooist pebble with the machine
+  const tp = createPebble({ scale: 1.4, stone: '#8d96a6' }); tp.position.set(1.0, 0, 1.05); tp.rotation.y = -1.25; scene.add(tp);
+  tp.userData.pose({ lean: 0.08 });
+  const tipP = new THREE.Vector3(0.05, 1.08, 0.6), dir = new THREE.Vector3(0.55, 0.45, 0.7).normalize(), grip = tipP.clone().addScaledVector(dir, 0.3);
+  holdAt(tp, 'l', grip.clone().add(new THREE.Vector3(0, 0.05, 0.08))); holdAt(tp, 'r', grip.clone().add(new THREE.Vector3(0, -0.02, -0.08)));
+  const mach = new THREE.Group(); mach.position.copy(tipP).addScaledVector(dir, 0.3); scene.add(mach);
+  mach.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+  add(mach, new THREE.CylinderGeometry(0.035, 0.035, 0.34, 12), mat('#2d2d34', { metalness: 0.5, roughness: 0.3 }), [0, 0, 0]);
+  add(mach, new THREE.CylinderGeometry(0.05, 0.05, 0.1, 12), mat('#d63a4a', { metalness: 0.4 }), [0, 0.2, 0]);
+  add(mach, new THREE.ConeGeometry(0.02, 0.1, 10), mat('#cfd3d8', { metalness: 0.8 }), [0, -0.22, 0], [Math.PI, 0, 0]);
+  finish(st, [big, tp], [num('cx', 0.5), num('cy', 1.5), num('cz', 6.0)], [num('tx', 0.2), num('ty', 1.1), 0]);
+});
+</script></body></html>

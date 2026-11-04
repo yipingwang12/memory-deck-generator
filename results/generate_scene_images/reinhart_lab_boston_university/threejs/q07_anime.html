@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reinhart q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 - The National Institute on AGING funds the RAINCOAT's adaptive tACS.
+import { THREE, createRaincoat, mat, glow, add, blob, box, textPlane, makeStage, finishScene, createElder, createScientist, createBrain, waveTube, cable, hoodElectrodes, rings } from './props.js';
+import { guard, rng } from './kit.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ ground: "#8fbf6a" });
+  const rc = createRaincoat({ scale: 1.5 }); scene.add(rc); const chars = [rc]; let cam = [0, 1.0, 4.2], look = [0, 0.8, 0];
+
+  rc.position.set(0.9, 0, 0.8); rc.rotation.y = -0.5; rc.userData.pose({ headTilt: 0.06 });
+  hoodElectrodes(rc, '#2fd0ff');
+  rc.updateMatrixWorld(true); const ht = rc.worldToLocal(new THREE.Vector3(0.1, 0.95, 1.2)); rc.userData.reach('l', ht.toArray());
+  const elder = createElder({ scale: 1.7, cane: false, cardigan: '#a8452e' }); elder.position.set(-1.0, 0, 0.9); elder.rotation.y = 0.55; scene.add(elder); chars.push(elder);
+  // money bag + coins
+  const bag = new THREE.Group(); bag.position.set(0.05, 1.0, 1.25); scene.add(bag);
+  blob(bag, mat('#b8955a'), [0, 0, 0], [0.22, 0.26, 0.2]); add(bag, new THREE.CylinderGeometry(0.05, 0.1, 0.12, 14), mat('#b8955a'), [0, 0.28, 0]);
+  const dl = textPlane('$', 0.26, 0.26, { bg: null, fg: '#2a5a28' }); dl.position.set(0, 0, 0.205); bag.add(dl);
+  for (let i = 0; i < 6; i++) add(scene, new THREE.CylinderGeometry(0.15, 0.15, 0.035, 24), mat('#f2c230', { metalness: 0.7, roughness: 0.3 }), [-1.4 + (i % 3) * 0.05, 0.02 + i * 0.037, 1.9], [0, 0, 0]);
+  // institute building with pediment + AGING banner
+  const st = mat('#efe6d4'); box(scene, st, [0, 1.5, -2.6], [7.5, 3.0, 1.6]); box(scene, mat('#d9cdb4'), [0, 3.15, -2.0], [7.9, 0.3, 2.4]);
+  const tri = new THREE.Mesh(new THREE.ConeGeometry(1, 1, 3), st); tri.visible = false;
+  for (let i = 0; i < 7; i++) add(scene, new THREE.CylinderGeometry(0.15, 0.17, 2.9, 20), st, [-2.7 + i * 0.9, 1.45, -1.7]);
+  const ban = textPlane('AGING', 3.2, 0.8, { bg: '#1b3f7a', fg: '#ffffff', frame: '#ffd34a' }); ban.position.set(0, 2.75, -0.75); scene.add(ban);
+  box(scene, mat('#d8c9a8'), [0, 0.01, 0.0], [9, 0.02, 7]);
+  cam = [-0.1, 1.5, 6.4]; look = [0, 1.4, 0];
+
+  finishScene(stage, scene, chars, cam, look);
+});
+</script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vortex anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createVortex } from './vortex.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 30, sunElevation: 35, sunAzimuth: 150, sky: { cover: 1.5, seed: 5 }, fog: { near: 120, far: 1500 } });
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: '#e9d9b0' }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; stage.scene.add(g);
+  const vs = [0, 1.6, 3.4].map((ry, i) => {
+    const v = createVortex(); v.position.set((i - 1) * 1.0, 0, 0); v.rotation.y = ry; stage.scene.add(v);
+    v.userData.pose({ arms: { l: [0, 1.0, 0.3], r: [0, -1.0, 0.3] } }); return v;
+  });
+  const vm = new Set(); vs.forEach((v) => v.traverse((o) => vm.add(o)));
+  stage.toonify(stage.scene, (m) => vm.has(m));
+  stage.camera.position.set(0, 0.75, 4.6); stage.camera.lookAt(0, 0.5, 0);
+  stage.finish();
+});
+</script></body></html>

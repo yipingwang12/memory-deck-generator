@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  box(S.scene, mat('#efe3c8'), [4.0, 2.0, -0.4], [4.6, 4.0, 0.3]);
+  const door = new THREE.Group(); door.position.set(4.0, 0, -0.1); S.scene.add(door);
+  box(door, mat('#5a3a22'), [0, 1.6, -0.1], [2.1, 3.2, 0.12]);
+  ['#e23b3b', '#f2832a', '#f2c230', '#4fb53c', '#2fb8c4', '#3b6fe0', '#8a4fd0'].forEach((c, i) => cyl(door, mat(c, { roughness: 0.35 }), [-0.84 + i * 0.28, 1.6, 0.05], 0.13, 3.0, [0, 0, 0], 0.13, 20));
+  const knob = blob(door, mat('#ffd21f', { metalness: 0.7, roughness: 0.2 }), [-0.85, 1.4, 0.35], [0.14, 0.14, 0.14]);
+  const jr = C.jar('JAM', {}); jr.position.set(1.0, 0, 1.0); jr.scale.setScalar(1.9); S.scene.add(jr);
+  bar(S.scene, [1.8, 0.9, 1.0], [3.0, 1.35, 0.4], 0.05, mat('#f1c9a0')); blob(S.scene, mat('#fff'), [3.1, 1.4, 0.35], [0.1, 0.1, 0.1]);
+  box(S.scene, mat('#fff3d6'), [0.0, 4.2, 0.55], [2.1, 2.5, 0.12]); sign(S.scene, textTex('0', '#fff3d6', '#e8302a', 300, 360, 'bold 330px Arial Black, Arial'), 1.9, 2.3, [0.0, 4.2, 0.62]);
+  const t = C.triangle(S, { scale: 2.9, pos: [-2.6, 0, 1.0], ry: 0.3, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [-1.0, 3.0, 1.0]);
+  C.done(S, [t], [0.6, 2.6, 10.0], [0.6, 2.4, 0]);
+});
+</script></body></html>

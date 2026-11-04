@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q13 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AXE rests under a BRIDGE in Cambridge.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ ground: '#6fae45' });
+const sh = new THREE.Shape(); sh.moveTo(-3.6, 0); sh.lineTo(3.6, 0); sh.lineTo(3.6, 4.5); sh.lineTo(-3.6, 4.5); sh.closePath();
+const ho = new THREE.Path(); ho.moveTo(-2.0, 0); ho.lineTo(-2.0, 1.2); ho.absarc(0, 1.2, 2.0, Math.PI, 0, true); ho.lineTo(2.0, 0); ho.closePath(); sh.holes.push(ho);
+const br = add(S.scene, new THREE.ExtrudeGeometry(sh, { depth: 2.2, bevelEnabled: false }), mat('#d4be92'), [0, 0, -1.4]);
+for (let i = 0; i < 17; i++) box(S.scene, mat('#b89f6e'), [-3.3 + i * 0.41, 4.62, 0.85], [0.3, 0.25, 0.08]);
+box(S.scene, mat('#c3ad80'), [0, 4.55, 0.82], [7.4, 0.12, 0.2]);
+const water = add(S.scene, new THREE.PlaneGeometry(14, 3.4), mat('#4aa0d8', { roughness: 0.2 }), [0, 0.02, 3.3], [-Math.PI / 2, 0, 0]);
+// punt boat
+const pu = new THREE.Group(); pu.position.set(3.4, 0.12, 2.7); pu.rotation.y = 0.2; S.scene.add(pu);
+box(pu, mat('#8a5a2b'), [0, 0.1, 0], [1.8, 0.22, 0.65]); seg(pu, mat('#6b4423'), [0.4, 0.1, 0], [1.0, 1.8, 0.0], 0.03);
+const a = placeAxe(S, { pos: [0, 0, 0.1], ry: 0.15, scale: 2.2, pose: { lean: 0.1, headTilt: 0.18, arms: { l: [0, 0.35, 0.4], r: [0, -0.35, 0.4] }, legs: { l: [0.25, 0], r: [-0.25, 0] } } });
+finish(S, [0, 2.3, 10.2], [0, 2.2, 0]);
+
+});
+</script></body></html>

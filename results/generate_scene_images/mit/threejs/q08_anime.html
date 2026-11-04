@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — "A TSAI tea cup on the MITTEN co-founds the MASK (Cognito)."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  box(scene, mat('#9a6a3a'), 3.4, 0.12, 1.6, [1.5, 0.75, 0.2]); for (const x of [0, 3]) box(scene, mat('#7b5230'), 0.14, 0.75, 0.14, [x, 0.38, 0.2]);
+  const c = P.teacup({ s: 2.0 }); c.position.set(1.6, 0.81, 0.2); scene.add(c);
+  const mk = P.mask(); mk.position.set(-1.6, 2.4, 0.7); mk.rotation.y = 0.35; mk.scale.setScalar(1.6); scene.add(mk);
+  const m = placeMitten(scene, { x: -0.9, z: 0.7, ry: 0.35, s: 2.0, reach: { l: [-0.5, 1.1, 1.2], r: [-1.7, 1.4, 1.2] } });
+  return { chars: [m], cam: { pos: [0.3, 1.8, 6.2], look: [0.3, 1.5, 0] } };
+});
+</script></body></html>

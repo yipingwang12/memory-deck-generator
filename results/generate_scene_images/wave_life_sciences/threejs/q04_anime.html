@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q04 — The SURFER tunes three dials: sequence, chemistry, handedness.
+  beach(scene, { seaZ: 5 });
+  const pan = new THREE.Group(); pan.position.set(0.0, 0, -0.2); scene.add(pan);
+  add(pan, new THREE.BoxGeometry(4.0, 2.0, 0.14), mat('#1d3b52'), [1.5, 1.35, 0]);
+  add(pan, new THREE.BoxGeometry(4.2, 0.14, 0.22), mat('#f0a020'), [1.5, 2.4, 0]);
+  for (const x of [-0.3, 3.3]) add(pan, new THREE.CylinderGeometry(0.06, 0.06, 1.0, 10), mat('#4a3320'), [x, 0.5, -0.05]);
+  const icon = (draw) => { const t = labelTex(256, 256, (c, w, h) => { c.fillStyle = '#f6f1e2'; c.beginPath(); c.roundRect(4, 4, w - 8, h - 8, 36); c.fill(); draw(c, w, h); }); return new THREE.Mesh(new THREE.PlaneGeometry(0.85, 0.85), new THREE.MeshBasicMaterial({ map: t })); };
+  const ball = (c, x, y, r, col) => { c.fillStyle = col; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill(); c.strokeStyle = '#222'; c.lineWidth = 4; c.stroke(); };
+  const icons = [
+    icon((c) => { ['#e8283a', '#1f7be8', '#2fc43c', '#f0b020', '#1f7be8', '#e8283a'].forEach((k, i) => { c.fillStyle = k; c.fillRect(28 + i * 33, 90, 28, 76); c.strokeStyle = '#222'; c.lineWidth = 3; c.strokeRect(28 + i * 33, 90, 28, 76); }); }),
+    icon((c) => { c.strokeStyle = '#222'; c.lineWidth = 9; c.beginPath(); for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; c.lineTo(128 + 62 * Math.cos(a), 128 + 62 * Math.sin(a)); } c.closePath(); c.stroke();
+      for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; ball(c, 128 + 62 * Math.cos(a), 128 + 62 * Math.sin(a), 17, i % 2 ? '#1f7be8' : '#e8283a'); } ball(c, 128, 128, 14, '#f0b020'); }),
+    icon((c) => { c.strokeStyle = '#555'; c.lineWidth = 6; c.setLineDash([12, 10]); c.beginPath(); c.moveTo(128, 20); c.lineTo(128, 236); c.stroke(); c.setLineDash([]);
+      for (const [cx, d] of [[68, 1], [188, -1]]) { c.strokeStyle = '#222'; c.lineWidth = 7; const pts = [[0, -48], [-44 * d, 30], [44 * d, 34], [0, 8]]; pts.forEach(([x, y]) => { c.beginPath(); c.moveTo(cx, 128); c.lineTo(cx + x, 128 + y); c.stroke(); });
+        ball(c, cx, 128, 18, '#888'); ['#e8283a', '#1f7be8', '#2fc43c', '#f0b020'].forEach((k, i) => ball(c, cx + pts[(d > 0 ? i : [0, 2, 1, 3][i])][0], 128 + pts[(d > 0 ? i : [0, 2, 1, 3][i])][1], 14, k)); } }),
+  ];
+  const dialPos = [[0.3, 0], [1.5, 0], [2.7, 0]];
+  dialPos.forEach(([x], i) => {
+    const d = new THREE.Group(); d.position.set(x, 0.95, 0.07); pan.add(d);
+    add(d, new THREE.CylinderGeometry(0.42, 0.42, 0.1, 40), mat('#e8e2d2', { metalness: 0.3 }), [0, 0, 0.05], [Math.PI / 2, 0, 0]);
+    for (let k = 0; k < 11; k++) { const a = -2.3 + k * 0.46; add(d, new THREE.BoxGeometry(0.035, 0.1, 0.03), mat('#222'), [Math.sin(a) * 0.47, Math.cos(a) * 0.47, 0.1], [0, 0, -a]); }
+    add(d, new THREE.CylinderGeometry(0.28, 0.3, 0.22, 32), mat(['#e8283a', '#1f7be8', '#2fc43c'][i], { roughness: 0.3 }), [0, 0, 0.17], [Math.PI / 2, 0, 0]);
+    const ptr = add(d, new THREE.BoxGeometry(0.06, 0.3, 0.05), mat('#fff'), [0.1, 0.1, 0.3], [0, 0, -0.7 - i * 0.5]);
+    const ic = icons[i]; ic.position.set(x, 1.85, 0.075); pan.add(ic);
+  });
+  const s = addSurfer(stage, P, { x: -0.4, z: 0.4, ry: 0.5, scale: 1.65 });
+  s.userData.pose({ lean: 0.1, headTilt: 0.1, arms: { l: [0.2, 0.3, 0.1] } });
+  const b = s.userData.parts.board; b.position.set(-0.75, 0.65, -0.1); b.rotation.set(0, 0, 0.1);
+  s.updateMatrixWorld(true);
+  const w = s.worldToLocal(new THREE.Vector3(0.3, 0.98, 0.3)); s.userData.reach('r', [w.x, w.y, w.z]);
+  finish(stage, P, s, [1.4, 1.9, 6.3], [1.35, 1.2, 0]);
+});
+</script></body></html>

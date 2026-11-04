@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  box(S.scene, mat('#7a4a28'), [0.2, 0.55, 0.2], [3.2, 1.1, 1.8]);
+  sign(S.scene, labelTex((c, w, h) => { c.fillStyle = '#fffdf4'; c.fillRect(0, 0, w, h); c.fillStyle = '#c8201a'; c.font = 'bold 90px Arial Black, Arial'; c.textAlign = 'center'; c.fillText('DEAL #2', w / 2, 110);
+    c.fillStyle = '#1a7a3a'; c.font = 'bold 190px Arial Black, Arial'; c.fillText('$1B', w / 2, 330); c.strokeStyle = '#222'; c.lineWidth = 6; c.beginPath(); c.moveTo(60, 470); c.quadraticCurveTo(160, 400, 220, 470); c.quadraticCurveTo(280, 520, 340, 450); c.stroke(); c.lineWidth = 3; c.beginPath(); c.moveTo(40, 485); c.lineTo(360, 485); c.stroke(); }, 400, 520), 2.4, 3.1, [0.3, 1.5, 0.9], [-1.0, 0, 0]);
+  const tc = C.taco(); tc.position.set(3.8, 0, 0.3); tc.scale.setScalar(2.6); tc.rotation.y = -0.45; S.scene.add(tc);
+  bar(S.scene, [3.0, 2.0, 0.9], [1.0, 1.8, 1.4], 0.06, mat('#5a3a20'));
+  const pen = bar(S.scene, [1.0, 1.8, 1.4], [0.6, 1.4, 1.65], 0.045, mat('#1a2a8a'));
+  const t = C.triangle(S, { scale: 2.8, pos: [-2.9, 0, 0.8], ry: 0.35, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [-1.9, 2.7, 0.9]);
+  C.done(S, [t], [0.3, 2.5, 10.2], [0.3, 2.3, 0]);
+});
+</script></body></html>

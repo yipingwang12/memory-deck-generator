@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Whitehead q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The LAY preacher takes over the SNOWMAN from a PAGE boy (David Page).
+import { THREE, guard, rng, mat, add, blob, box, cyl, winterStage, clouds, pine, snowfall, person, lamb, hen, egg, pose, openBelly } from './props.js';
+import { createSnowman } from './snowman.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = winterStage(P);
+
+  pine(scene, -5.0, -3.0, 2.0); pine(scene, 5.4, -3.4, 2.2);
+  const sm = createSnowman({ scale: 2.0 }); sm.position.set(0, 0, 0); scene.add(sm);
+  sm.userData.pose({ arms: { l: [0, 0.9], r: [0, -0.9] }, headTilt: 0.0 });
+  const pg = person({ coat: '#c8323a', kind: 'page', h: 1.4, hair: '#d9b25a' }); pg.position.set(-1.7, 0, 0.9); pg.rotation.y = 0.5; scene.add(pg);
+  pose(pg, 'l', 0, 0, 0.25); pose(pg, 'r', -1.5, 0, -0.3);
+  const sheet = box(pg, mat('#ffffff'), [-0.2, 0.52, 0.4], [0.3, 0.4, 0.015]); sheet.rotation.set(0, 0.2, 0.0);
+  for (let i = 0; i < 4; i++) box(pg, mat('#9ab'), [-0.2, 0.62 - i * 0.08, 0.41], [0.22, 0.012, 0.005]).rotation.set(0, 0.2, 0);
+  const pr = person({ coat: '#26262e', kind: 'preacher', h: 1.7, hair: '#6b4a2a' }); pr.position.set(1.8, 0, 0.9); pr.rotation.y = -0.5; scene.add(pr);
+  pose(pr, 'l', -1.2, 0.2, 0.5); pose(pr, 'r', 0, 0, -0.2);
+  // the preacher grips the snowman's hand; the page boy lets go and steps back
+  sm.updateMatrixWorld(true);
+  const tgt = sm.worldToLocal(new THREE.Vector3(1.0, 1.0, 0.8));
+  sm.userData.reach('l', [tgt.x, tgt.y, tgt.z]);
+  stage.toonify(scene, (m) => m.geometry && m.geometry.type !== 'PlaneGeometry');
+  clouds(stage);
+  stage.camera.position.set(num('cx', 0.0), num('cy', 1.4), num('cz', 5.6));
+  stage.camera.lookAt(num('tx', 0.0), num('ty', 1.1), 0);
+  stage.finish();
+});
+</script></body></html>

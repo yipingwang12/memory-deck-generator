@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, run, mat, glow, add, blob, cyl, box, cone, group, label, eyes, coin, bubble, sack, flag, liver, animal } from "./common.js";
+// q01 — A DOG welds the first GIRDER.
+run({ gAt: [-1.2, 0, 0.3], gScale: 1.4, gRot: 0.15, pose: { arms: { l: [0, 0.5, 0], r: [0, 0.6, 0] } }, cam: [0.1, 0.85, 3.7], look: [0.1, 0.62, 0],
+  build({ scene, reach }) {
+    const dog = animal('dog'); dog.scale.setScalar(1.25); dog.position.set(0.7, 0, 0.3); dog.rotation.y = Math.PI; scene.add(dog);
+    const head = dog.children.find((c) => c.isGroup);
+    // welding mask: dark visor shell over the upper face, with a green glass slit
+    blob(head, mat('#2c3340', { roughness: 0.4 }), [0.06, 0.05, 0], [0.17, 0.15, 0.19]);
+    box(head, mat('#9be8a0', { emissive: '#4ccf6a', emissiveIntensity: 0.6 }), 0.02, 0.05, 0.28, [0.2, 0.05, 0]);
+    // torch tube from the dog's mouth to the girder, blue-white flame at the tip
+    const tip = [-0.77, 0.7, 0.3], mouth = [0.55 - 0.76 * 1.25 + 0.05, 0.7, 0.3];
+    cyl(scene, mat('#3a3f48', { metalness: 0.5 }), 0.035, Math.abs(tip[0] - mouth[0]) - 0.1, [(tip[0] + mouth[0]) / 2 + 0.05, 0.7, 0.3], [0, 0, Math.PI / 2]);
+    cone(scene, glow('#7fd8ff', 2), 0.1, 0.3, [tip[0] - 0.05, 0.7, 0.8], [0, 0, Math.PI / 2]);
+    // sparks
+    const sp = glow('#ffb61e', 2.2);
+    for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, r = 0.16 + (i % 3) * 0.07;
+      blob(scene, sp, [tip[0] + 0.16 + Math.abs(Math.cos(a)) * r * 0.6, 0.7 + Math.sin(a) * r, 0.8 + Math.cos(a) * 0.1], [0.055, 0.055, 0.055]); }
+    for (const a of [0.3, 1.2, 2.2, 3.4, 4.5, 5.4]) cyl(scene, sp, 0.014, 0.2, [tip[0] + 0.2 + Math.abs(Math.cos(a)) * 0.14, 0.7 + Math.sin(a) * 0.14, 0.8], [0, 0, a + 1.57]);
+    reach('l', [-0.75, 0.62, 0.4]);
+  } });
+</script></body></html>

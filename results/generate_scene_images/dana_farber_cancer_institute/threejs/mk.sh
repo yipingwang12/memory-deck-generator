@@ -1,0 +1,15 @@
+mk () {
+	cat > $1_anime.html <<EOF
+<!doctype html>
+<html><head><meta charset="utf-8"><title>$1</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+$(cat)
+});
+</script></body></html>
+EOF
+}

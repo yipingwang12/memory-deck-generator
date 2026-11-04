@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q06 — Inside the MOMENT clock, the JACKS find a NIPPY CALM MAB antibody.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#6b4a37', sky: { cover: 1 } }); const sc = stage.scene;
+  // open clock case: big dial back with gears
+  const bg = new THREE.Group(); bg.position.set(1.0, 1.9, -0.8); sc.add(bg);
+  add(bg, new THREE.TorusGeometry(1.8, 0.14, 16, 56), mat('#e8b33a', { metalness: 0.6, roughness: 0.3 }));
+  cyl(bg, mat('#3b2a24'), [0, 0, -0.1], 1.8, 0.1, [Math.PI / 2, 0, 0]);
+  const gear = (x, y, r, c) => { const g = new THREE.Group(); cyl(g, mat(c, { metalness: 0.6, roughness: 0.35 }), [0, 0, 0], r, 0.1, [Math.PI / 2, 0, 0]); const n = Math.round(r * 18); for (let i = 0; i < n; i++) { const a = i / n * 6.283; box(g, mat(c, { metalness: 0.6, roughness: 0.35 }), [Math.cos(a) * (r + 0.05), Math.sin(a) * (r + 0.05), 0], [0.1, 0.14, 0.1], [0, 0, a]); } cyl(g, mat('#222'), [0, 0, 0.06], r * 0.25, 0.1, [Math.PI / 2, 0, 0]); g.position.set(x, y, 0); bg.add(g); return g; };
+  gear(-0.9, 0.5, 0.65, '#c9a14a'); gear(0.5, 0.7, 0.45, '#d97a3a'); gear(0.2, -0.7, 0.8, '#b8bcc4'); gear(1.15, -0.5, 0.35, '#c9a14a');
+  // Y antibody, calm face, crab pincers
+  const ab = new THREE.Group(); ab.position.set(0.7, 0.55, 1.0); sc.add(ab);
+  const tc = '#34c3a0';
+  const limb = (a, L, r, c) => { const g = new THREE.Group(); g.rotation.z = a; cyl(g, mat(c), [0, L / 2, 0], r, L); blob(g, mat(c), [0, L, 0], [r * 1.25, r * 1.25, r * 1.25]); return g; };
+  const stem = cyl(ab, mat(tc), [0, 0.0, 0], 0.17, 0.9); blob(ab, mat(tc), [0, -0.45, 0], [0.19, 0.19, 0.19]);
+  const b = new THREE.Group(); b.position.y = 0.45; ab.add(b); blob(b, mat(tc), [0, 0, 0], [0.22, 0.22, 0.22]);
+  for (const s of [-1, 1]) { const a = limb(-s * 0.7, 0.9, 0.17, tc); b.add(a);
+    const tipPos = new THREE.Vector3(Math.sin(s * 0.7) * 0.98, Math.cos(0.7) * 0.98 + 0, 0);
+    for (const k of [-1, 1]) { const p = blob(b, mat('#e8473a'), [tipPos.x + s * 0.12, tipPos.y + 0.12 + k * 0.0, 0.1 * k], [0.09, 0.17, 0.05], [0, 0, -s * 0.5 - 0.0]); p.position.z = 0.1 * k + 0; p.rotation.z = -s * (0.5 + k * 0.5); } }
+  // calm closed eyes + smile
+  const eye = (x) => { const m = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.012, 8, 20, Math.PI), mat('#222')); m.position.set(x, 0.55, 0.2); m.rotation.z = Math.PI; ab.add(m); };
+  eye(-0.08); eye(0.08);
+  const sm = new THREE.Mesh(new THREE.TorusGeometry(0.05, 0.012, 8, 20, Math.PI), mat('#7a2a2a')); sm.position.set(0, 0.35, 0.2); sm.rotation.z = Math.PI; ab.add(sm);
+  ab.scale.setScalar(1.0); ab.position.set(1.0, 1.0, 0.9);
+  const J = placeJack(stage, { x: -1.7, z: 0.8, s: 1.5, ry: 0.35 }); J.userData.aim('l', new THREE.Vector3(0.0, 1.9, 0.9));
+  finishScene(stage, J, { cam: [0, 1.9, 5.8], look: [0, 1.6, 0] });
+
+});
+</script></body></html>

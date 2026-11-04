@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Dewpoint q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — the DEWDROP writes D.P. and T.X. on its lead weapon: DPTX3186.
+import { boot, THREE, mat, add, blob, box, cyl, textPlane, sword, scribe, reachWorld } from './props.js';
+boot(({ scene, dd }) => {
+  const sw = sword('DPTX3186', 3.0); sw.position.set(-0.4, 1.35, 0.75); sw.rotation.z = -Math.PI / 2 + 0.18; sw.scale.set(1.25, 1, 1.25); scene.add(sw);
+  sw.children.forEach((c) => { if (c.material?.map) c.rotation.z = Math.PI / 2; });
+  const tag = (t, x, y, bg) => { const m = textPlane(t, 1.2, 0.6, { fg: '#fff', bg, px: 256 }); m.position.set(x, y, 0.3); scene.add(m); };
+  tag('D.P.', 1.2, 3.3, '#1f6fd0'); tag('T.X.', 2.7, 3.3, '#d0541f');
+  const s = scribe('#7a46c8', 1.3); s.position.set(3.6, 0, 1.0); s.rotation.y = -0.4; scene.add(s);
+  reachWorld(dd, 'l', [-0.45, 1.3, 0.8]);
+}, { dd: { pos: [-1.4, 0, 0.8], ry: 0.4, scale: 1.5 }, cam: [1.1, 1.7, 6.4], look: [1.1, 1.5, 0] });
+</script></body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BioComputing q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textTex, setup, finish, flag, brain, penguin, heart, createCalculator } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+// q06 — Melbourne: a brain (CORTEX look-alike) sells a rival CALCULATOR, the CL1.
+const { stage, scene, num, cam } = setup(new URLSearchParams(location.search), { ground: '#c9b99a' });
+// tram backdrop
+const T = new THREE.Group(); T.position.set(-0.6, 0, -3.2); scene.add(T);
+box(T, mat('#2a7a4a'), [0, 0.85, 0], [5.4, 1.5, 1.2]); box(T, mat('#f2c230'), [0, 0.45, 0.61], [5.4, 0.3, 0.02]);
+for (let i = 0; i < 5; i++) box(T, mat('#bfe6f5'), [-2.0 + i * 1.0, 1.1, 0.61], [0.75, 0.55, 0.02]);
+cyl(T, mat('#444'), [0, 2.0, 0], 0.03, 1.0); box(T, mat('#444'), [0, 2.5, 0], [1.6, 0.04, 0.04]);
+box(scene, mat('#6c5f50'), [-0.6, 0.03, -3.2], [9, 0.06, 0.15]);
+// stall
+const S = new THREE.Group(); S.position.set(0.5, 0, 0); scene.add(S);
+const ww = mat('#9b6a3c');
+box(S, ww, [0, 0.45, 0.3], [3.0, 0.9, 0.8]); box(S, mat('#f5ecd8'), [0, 0.92, 0.3], [3.1, 0.06, 0.9]);
+for (const x of [-1.5, 1.5]) cyl(S, ww, [x, 1.6, -0.1], 0.04, 3.2);
+for (let i = 0; i < 8; i++) box(S, mat(i % 2 ? '#fff' : '#2a6fdb'), [-1.4 + i * 0.4, 3.0, -0.1 + 0.0], [0.4, 0.04, 1.3], [0.35, 0, 0]);
+// brain vendor
+const br = brain(0.7); br.position.set(-0.55, 1.55, -0.1); S.add(br);
+for (const x of [-0.2, 0.2]) { blob(S, mat('#fff', { roughness: 0.3 }), [-0.55 + x, 1.55, 0.78], [0.13, 0.16, 0.05]); blob(S, mat('#1a2c4a'), [-0.55 + x, 1.55, 0.82], [0.07, 0.1, 0.04]); blob(S, mat('#fff'), [-0.55 + x - 0.03, 1.6, 0.85], [0.025, 0.03, 0.02]); }
+add(S, new THREE.TorusGeometry(0.07, 0.015, 8, 16, Math.PI), mat('#8a2040'), [-0.55, 1.3, 0.8], [0, 0, Math.PI]);
+cyl(S, mat('#c33'), [-0.55, 2.12, -0.1], 0.3, 0.1); cyl(S, mat('#c33'), [-0.55, 2.2, -0.1], 0.22, 0.12);
+// rival CL1 calculator, orange, on counter, big
+const rival = createCalculator({ scale: 1.5, bodyColor: '#f07a28', eyeColor: '#ff3a5a' }); rival.position.set(1.4, 0.95, 0.5); rival.rotation.y = -0.25; scene.add(rival);
+rival.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] } });
+const sign = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.45, 0.04), new THREE.MeshStandardMaterial({ map: textTex('CL1', { bg: '#17242e', fg: '#40e6ff', w: 512, h: 256 }), roughness: 0.5 }));
+sign.position.set(2.15, 1.75, 0.6); sign.rotation.y = -0.25; sign.castShadow = true; scene.add(sign); cyl(scene, mat('#444'), [2.15, 1.45, 0.55], 0.02, 0.3);
+// our calculator (anchor) looking on
+const calc = createCalculator({ scale: 1.9 }); calc.position.set(-1.9, 0, 1.2); calc.rotation.y = 0.5; scene.add(calc);
+calc.userData.pose({ headTilt: 0.12, arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } });
+cam(0.2, 1.6, 6.5, 0.2, 1.3); finish(stage, [calc, rival]);
+});
+</script></body></html>

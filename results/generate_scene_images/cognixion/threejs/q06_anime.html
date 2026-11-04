@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cognixion</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, rbox, cyl, textPlane, start } from './props.js';
+import { createCog } from './cog.js';
+start(({ scene }) => {
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#e9edf2'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(40, 14), mat('#dff1e6'), [0, 5.5, -2.3]);
+  // steel SAFE
+  const S = new THREE.Group(), steel = mat('#8c97a6', { metalness: 0.5, roughness: 0.35 });
+  rbox(S, steel, [1.5, 1.5, 0.8], [0, 0.75, 0], [0, 0, 0], 0.05);
+  rbox(S, mat('#aab4c2', { metalness: 0.5, roughness: 0.3 }), [1.25, 1.25, 0.06], [0, 0.75, 0.41], [0, 0, 0], 0.04);
+  textPlane(S, 'SAFE', { w: 0.9, h: 0.28, bg: '#1f9d55', pos: [0, 1.12, 0.45] });
+  add(S, new THREE.TorusGeometry(0.2, 0.035, 12, 32), mat('#2a2f3a'), [0, 0.65, 0.46]);
+  for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; add(S, new THREE.CylinderGeometry(0.02, 0.02, 0.5, 8), mat('#2a2f3a'), [0, 0.65, 0.46], [0, 0, a]); }
+  blob(S, mat('#d8b24a', { metalness: 0.6 }), [0, 0.65, 0.48], [0.07, 0.07, 0.07]);
+  S.position.set(1.15, 0, -0.5); S.rotation.y = -0.2; scene.add(S);
+  // green check sign
+  add(scene, new THREE.CylinderGeometry(0.03, 0.03, 1.2, 8), mat('#555'), [-1.9, 0.6, -0.6]);
+  textPlane(scene, '✓', { w: 0.9, h: 0.9, bg: '#2bb24c', pos: [-1.9, 1.5, -0.55] });
+  const c = createCog({ scale: 1.6 }); c.position.set(-0.5, 0, 0.5); c.rotation.y = 0.3; scene.add(c);
+  c.userData.pose({ arms: { l: [0, 0.4, 0], r: [0, 0.4, 0] } });
+  c.userData.reach('l', [0.6, 0.8, 0.4]);
+  return [c];
+}, { fov: 38, cam: [0, 1.2, 4.0], look: [0, 1.0, 0], clouds: false });
+</script></body></html>

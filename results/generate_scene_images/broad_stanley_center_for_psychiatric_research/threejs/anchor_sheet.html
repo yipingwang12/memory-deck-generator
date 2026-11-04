@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Trophy anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createTrophy } from './trophy.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 30, sunElevation: 35, sunAzimuth: 150, sky: { cover: 2, seed: 5, towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 }, sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.7, fog: { near: 120, far: 1500 } });
+  const scene = stage.scene;
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: '#6fae45', roughness: 0.8 }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; scene.add(g);
+  const views = [[-1.25, 0.7, { l: [0, 0, 0], r: [0, 0, 0] }], [0, 0, null], [1.25, -0.7, null]];
+  const all = new Set();
+  views.forEach(([x, ry], i) => {
+    const t = createTrophy({ scale: 1 }); t.position.x = x; t.rotation.y = ry; scene.add(t);
+    if (i === 1) { t.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, 0.9, 0] }, legs: { l: [0, 0.08], r: [0, -0.08] } }); }
+    else t.userData.pose({ arms: { l: [0.2, 0.3, 0.3], r: [0.2, 0.3, 0.3] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+    t.traverse((o) => all.add(o));
+  });
+  stage.toonify(scene, (m) => all.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [190, 1000, 120, 1.6]]);
+  stage.camera.position.set(0, 0.62, 3.9); stage.camera.lookAt(0, 0.52, 0);
+  stage.finish();
+});
+</script></body></html>

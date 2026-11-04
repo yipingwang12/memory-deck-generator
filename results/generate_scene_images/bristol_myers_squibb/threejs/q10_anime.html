@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — The SQUID buys a CAR TUNA to get the COBWEB pill.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#9aa0a8', fov: 38 }), S = C.scene;
+add(S, new THREE.PlaneGeometry(40, 4), mat('#4a4d57', { roughness: 1 }), [0, 0.004, 0.2], [-Math.PI / 2, 0, 0]);
+const cr = put(S, car(), 1.55, 0, 0, -0.6, 1.5);
+const tu = put(S, tuna({ len: 1.1 }), 1.5, 1.35, 0, -0.6, 1); tu.rotation.z = 0.12;
+const q = addSquid(C, { x: -1.5, z: 0.6, s: 1.5, ry: 0.4 });
+put(S, cobPill({ s: 2.0 }), -0.35, 1.45, 1.1, 0.2);
+reachW(q, 'l', [-0.55, 1.2, 1.1]);
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.0, 0] });
+
+});
+</script></body></html>

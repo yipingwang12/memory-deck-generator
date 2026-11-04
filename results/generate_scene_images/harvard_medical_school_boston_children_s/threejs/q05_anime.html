@@ -1,0 +1,182 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>HMS Children's q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05: The CRADLE rocks on a long wooden PLANK in Longwood
+import * as THREE from 'three';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createCradle } from './cradle.js';
+
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.7, ...e });
+const add = (p, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; p.add(o); return o;
+};
+const blob = (p, m, pos, scl, rot) => add(p, new THREE.SphereGeometry(1, 32, 20), m, pos, rot, scl);
+const rbox = (p, m, size, pos, rot = [0, 0, 0], r = 0.03) => add(p, new RoundedBoxGeometry(size[0], size[1], size[2], 4, r), m, pos, rot);
+const disc = (p, rx, ry, color, x, y, z) => {
+  const m = new THREE.Mesh(new THREE.CircleGeometry(1, 40), mat(color, { roughness: 0.4 }));
+  m.scale.set(rx, ry, 1); m.position.set(x, y, z); m.userData.flat = true; p.add(m); return m;
+};
+const Yv = new THREE.Vector3(0, 1, 0);
+function between(p, a, b, r1, r2, m) {
+  const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A), len = d.length();
+  const c = add(p, new THREE.CylinderGeometry(r2, r1, len, 14), m, A.clone().add(B).multiplyScalar(0.5).toArray());
+  c.quaternion.setFromUnitVectors(Yv, d.normalize()); return c;
+}
+function text(str, { w = 512, h = 256, bg = null, fg = '#fff', font = 'bold 150px sans-serif' } = {}) {
+  const t = canvasTexture(w, (ctx) => { if (bg) { ctx.fillStyle = bg; ctx.fillRect(0, 0, w, w); } ctx.fillStyle = fg; ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(str, w / 2, w / 2); });
+  return t;
+}
+function sign(p, str, w, h, pos, { bg = '#1c2f6b', fg = '#fff', font = 'bold 120px sans-serif' } = {}) {
+  const sq = Math.max(w, h), t = canvasTexture(1024, (ctx, s) => {
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, s, s); ctx.fillStyle = fg; ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(str, s / 2, s / 2);
+  });
+  const m = add(p, new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({ map: t, roughness: 0.6 }), pos);
+  m.geometry.attributes.uv.array.forEach((v, i, a) => { a[i] = i % 2 ? 0.5 + (v - 0.5) * (h / w) * 1 : v; }); // letterbox: use full width, central band
+  m.geometry.attributes.uv.needsUpdate = true; return m;
+}
+function eyes(p, { y, z, dx, rx, ry, iris = '#5a3a22' }) {
+  const st = 0.0015;
+  for (const sx of [-1, 1]) {
+    const x = sx * dx;
+    disc(p, rx, ry, '#ffffff', x, y, z); disc(p, rx * 0.82, ry * 0.92, iris, x, y - ry * 0.05, z + st);
+    disc(p, rx * 0.45, ry * 0.58, '#120a10', x, y - ry * 0.05, z + 2 * st);
+    disc(p, rx * 0.28, rx * 0.28, '#ffffff', x - rx * 0.3, y + ry * 0.35, z + 3 * st);
+    disc(p, rx * 0.13, rx * 0.13, '#ffffff', x + rx * 0.3, y - ry * 0.45, z + 3 * st);
+  }
+}
+function smile(p, y, z, r = 0.035) {
+  const m = new THREE.Mesh(new THREE.TorusGeometry(r, r * 0.2, 8, 20, Math.PI), mat('#8a2f35'));
+  m.rotation.z = Math.PI; m.position.set(0, y, z); p.add(m);
+}
+function buildPerson({ coat = '#3d6fb0', pants = '#2c2f45', hair = '#3b2a1d', glasses = false, skin = '#ffdcc0', iris = '#5a3a22' } = {}) {
+  const g = new THREE.Group(), sk = mat(skin);
+  for (const s of [-1, 1]) { add(g, new THREE.CylinderGeometry(0.075, 0.065, 0.75, 14), mat(pants), [s * 0.095, 0.45, 0]); blob(g, mat('#2a2220'), [s * 0.095, 0.06, 0.04], [0.09, 0.06, 0.14]); }
+  add(g, new THREE.CylinderGeometry(0.2, 0.23, 0.7, 24), mat(coat), [0, 1.15, 0]);
+  blob(g, mat(coat), [0, 1.49, 0], [0.24, 0.1, 0.17]);
+  const head = new THREE.Group(); head.position.set(0, 1.72, 0); g.add(head);
+  blob(head, sk, [0, 0, 0], [0.19, 0.21, 0.19]);
+  blob(head, mat(hair), [0, 0.05, -0.035], [0.205, 0.21, 0.2]); blob(head, mat(hair), [0, 0.16, 0.07], [0.19, 0.07, 0.12]);
+  eyes(head, { y: -0.01, z: 0.184, dx: 0.07, rx: 0.042, ry: 0.052, iris }); smile(head, -0.1, 0.176, 0.03);
+  if (glasses) { for (const s of [-1, 1]) add(head, new THREE.TorusGeometry(0.062, 0.008, 8, 24), mat('#222'), [s * 0.07, -0.01, 0.19]); add(head, new THREE.BoxGeometry(0.03, 0.008, 0.008), mat('#222'), [0, 0.0, 0.19]); }
+  g.userData.arms = {};
+  for (const [k, s] of [['l', 1], ['r', -1]]) {
+    const sh = new THREE.Group(); sh.position.set(s * 0.27, 1.47, 0); add(sh, new THREE.CylinderGeometry(0.05, 0.045, 0.52, 12), mat(coat), [0, -0.26, 0]);
+    blob(sh, sk, [0, -0.55, 0], [0.05, 0.06, 0.05]); sh.rotation.z = s * 0.12; g.add(sh); g.userData.arms[k] = sh;
+  }
+  g.userData.head = head; return g;
+}
+function buildOak({ pot = true, acorns = true } = {}) {
+  const g = new THREE.Group(), bark = mat('#7a4f2e');
+  if (pot) {
+    const pts = [[0, 0], [0.2, 0], [0.26, 0.4], [0.29, 0.42], [0.29, 0.46], [0.25, 0.46], [0.22, 0.42], [0, 0.42]].map(([x, y]) => new THREE.Vector2(x, y));
+    add(g, new THREE.LatheGeometry(pts, 32), mat('#c4623a')); add(g, new THREE.CircleGeometry(0.23, 24), mat('#4a3020'), [0, 0.425, 0], [-Math.PI / 2, 0, 0]);
+  }
+  const y0 = pot ? 0.43 : 0;
+  const P = [[0, 0], [0.22, 0.45], [-0.14, 0.95], [0.3, 1.4], [0.12, 1.85]].map(([x, y]) => [x, y + y0, 0]);
+  const curve = new THREE.CatmullRomCurve3(P.map((p) => new THREE.Vector3(...p))), pts = curve.getPoints(18);
+  pts.forEach((p, i) => { if (i) { const t = i / 18; between(g, pts[i - 1].toArray(), p.toArray(), 0.13 - 0.07 * ((i - 1) / 18), 0.13 - 0.07 * t, bark); blob(g, bark, p.toArray(), [0.13 - 0.07 * t, 0.13 - 0.07 * t, 0.13 - 0.07 * t]); } });
+  between(g, pts[9].toArray(), [-0.45, 1.5 + y0, 0.1], 0.06, 0.035, bark); between(g, pts[12].toArray(), [0.7, 1.75 + y0, -0.05], 0.05, 0.03, bark);
+  const leaf = [mat('#3f8f3a'), mat('#58a842'), mat('#2f7a35')], r = rng(3);
+  [[0.12, 2.1, 0, 0.55], [-0.35, 1.85, 0.1, 0.4], [0.62, 1.95, 0, 0.38], [0.1, 2.4, 0.1, 0.38], [-0.55, 1.55, 0.1, 0.3], [0.75, 1.7, 0, 0.28], [0.3, 1.95, 0.35, 0.34], [-0.1, 2.0, -0.3, 0.4]].forEach(([x, y, z, s], i) => blob(g, leaf[i % 3], [x, y + y0, z], [s, s * 0.85, s]));
+  if (acorns) for (const [x, y, z] of [[0.05, 1.6, 0.35], [0.5, 1.62, 0.3], [-0.3, 1.5, 0.3], [0.3, 1.72, 0.45]]) {
+    blob(g, mat('#b07a3a'), [x, y + y0, z], [0.055, 0.07, 0.055]); blob(g, mat('#6b4a24'), [x, y + 0.055 + y0, z], [0.062, 0.035, 0.062]);
+  }
+  return g;
+}
+function buildTree(h = 2.4, c = '#3f8f3a') {
+  const g = new THREE.Group(); add(g, new THREE.CylinderGeometry(0.1, 0.15, h * 0.5, 10), mat('#6e4b2b'), [0, h * 0.25, 0]);
+  blob(g, mat(c), [0, h * 0.7, 0], [h * 0.26, h * 0.28, h * 0.26]); blob(g, mat('#58a842'), [0.15, h * 0.85, 0.1], [h * 0.18, h * 0.18, h * 0.18]); return g;
+}
+function buildBoard(str, w = 2.2, h = 1.3, font = 'bold 300px sans-serif') {
+  const g = new THREE.Group(), t = canvasTexture(1024, (ctx, s) => { ctx.fillStyle = '#2f5d4a'; ctx.fillRect(0, 0, s, s); ctx.fillStyle = '#f4f4ea'; ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(str, s / 2, s / 2); });
+  rbox(g, mat('#8a5a30'), [w + 0.14, h + 0.14, 0.06], [0, 0, 0]);
+  add(g, new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({ map: t, roughness: 0.9 }), [0, 0, 0.035]); return g;
+}
+function buildRoom({ w = 12 } = {}) {
+  const g = new THREE.Group();
+  const floor = canvasTexture(512, (ctx, s) => { for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) { ctx.fillStyle = (i + j) % 2 ? '#e9d8b4' : '#d9c196'; ctx.fillRect(i * s / 8, j * s / 8, s / 8, s / 8); } }, { repeat: 6 });
+  add(g, new THREE.PlaneGeometry(40, 40), new THREE.MeshStandardMaterial({ map: floor, roughness: 0.8 }), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  add(g, new THREE.PlaneGeometry(w * 2, 4), mat('#f6e7c9'), [0, 2, -2.4]); add(g, new THREE.BoxGeometry(w * 2, 0.9, 0.05), mat('#6fa8a0'), [0, 0.45, -2.38]);
+  for (const x of [-3.6, 3.6]) { rbox(g, mat('#ffffff'), [1.2, 1.4, 0.06], [x, 2.3, -2.37]); add(g, new THREE.PlaneGeometry(1.05, 1.25), new THREE.MeshBasicMaterial({ color: '#bfe3ff' }), [x, 2.3, -2.33]); }
+  return g;
+}
+function buildBench() {
+  const g = new THREE.Group();
+  rbox(g, mat('#f4f1ea'), [3.2, 0.9, 0.7], [0, 0.45, 0]); rbox(g, mat('#2f3b46'), [3.3, 0.06, 0.78], [0, 0.93, 0]);
+  const liq = ['#ff5a7a', '#5ad0ff', '#9be15a'];
+  liq.forEach((c, i) => {
+    const x = -0.9 + i * 0.7;
+    add(g, new THREE.CylinderGeometry(0.1, 0.1, 0.3, 20), mat('#dff4ff', { transparent: true, opacity: 0.45, roughness: 0.1 }), [x, 1.11, 0.0]);
+    add(g, new THREE.CylinderGeometry(0.085, 0.085, 0.17, 20), mat(c, { emissive: c, emissiveIntensity: 0.25 }), [x, 1.05, 0]);
+  });
+  return g;
+}
+function buildStage(P, { sun = 35, az = 150 } = {}) {
+  const num = (k, d) => Number(P.get(k) ?? d);
+  return createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', sun), sunAzimuth: num('az', az), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 }, sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+}
+function meadow(scene, c = '#6fae45') { add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, 0, 0], [-Math.PI / 2, 0, 0]); }
+const CLOUDS = [[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [252, 900, 80, 1.1]];
+function finishScene(stage, scene, chars, cam, look) {
+  const pm = new Set(); chars.forEach((c) => c.traverse((o) => pm.add(o)));
+  stage.toonify(scene, (m) => pm.has(m)); stage.addClouds(CLOUDS);
+  stage.camera.position.set(...cam); stage.camera.lookAt(...look); stage.finish();
+}
+function buildTCell() {
+  const g = new THREE.Group(), body = mat('#9bd3f0');
+  blob(g, body, [0, 0.26, 0], [0.26, 0.26, 0.26]);
+  for (let i = 0; i < 14; i++) { const a = i * 2.4, b = Math.acos(1 - 2 * (i + 0.5) / 14); blob(g, mat('#5ab0e0'), [0.26 * Math.sin(b) * Math.cos(a), 0.26 + 0.26 * Math.cos(b), -Math.abs(0.26 * Math.sin(b) * Math.sin(a))], [0.04, 0.04, 0.04]); }
+  eyes(g, { y: 0.32, z: 0.256, dx: 0.085, rx: 0.06, ry: 0.075, iris: '#2a7a5a' }); smile(g, 0.2, 0.252, 0.04);
+  add(g, new THREE.PlaneGeometry(0.16, 0.16), new THREE.MeshBasicMaterial({ map: text('T', { fg: '#1c4f8f', font: 'bold 420px sans-serif' }), transparent: true }), [0, 0.07, 0.25]);
+  for (const s of [-1, 1]) blob(g, body, [s * 0.1, 0.02, 0.05], [0.08, 0.05, 0.1]);
+  return g;
+}
+function buildCrayon() {
+  const g = new THREE.Group(), red = mat('#e0302f'), skin = mat('#e0302f');
+  for (const s of [-1, 1]) { add(g, new THREE.CylinderGeometry(0.045, 0.04, 0.36, 12), mat('#3a3040'), [s * 0.08, 0.2, 0]); blob(g, mat('#2a2220'), [s * 0.08, 0.03, 0.04], [0.07, 0.045, 0.1]); }
+  add(g, new THREE.CylinderGeometry(0.15, 0.15, 0.72, 28), red, [0, 0.74, 0]);
+  add(g, new THREE.CylinderGeometry(0.157, 0.157, 0.38, 28), mat('#f4e2b8'), [0, 0.74, 0]);
+  for (const y of [0.57, 0.91]) add(g, new THREE.CylinderGeometry(0.16, 0.16, 0.03, 28), mat('#b5201f'), [0, y, 0]);
+  add(g, new THREE.ConeGeometry(0.15, 0.3, 28), red, [0, 1.25, 0]); blob(g, mat('#e0302f'), [0, 1.4, 0], [0.035, 0.035, 0.035]);
+  eyes(g, { y: 0.8, z: 0.16, dx: 0.065, rx: 0.045, ry: 0.058, iris: '#3a2416' }); smile(g, 0.7, 0.158, 0.03);
+  g.userData.arms = {};
+  for (const [k, s] of [['l', 1], ['r', -1]]) {
+    const sh = new THREE.Group(); sh.position.set(s * 0.17, 0.9, 0); add(sh, new THREE.CylinderGeometry(0.03, 0.03, 0.32, 10), mat('#ffdcc0'), [0, -0.16, 0]);
+    blob(sh, mat('#ffdcc0'), [0, -0.34, 0], [0.04, 0.045, 0.04]); sh.rotation.z = s * 0.3; g.add(sh); g.userData.arms[k] = sh;
+  }
+  const bag = new THREE.Group(); rbox(bag, mat('#8a4b24'), [0.28, 0.2, 0.08], [0, 0, 0]); add(bag, new THREE.TorusGeometry(0.06, 0.012, 8, 16, Math.PI), mat('#3a2410'), [0, 0.1, 0]);
+  bag.position.set(0.18, 0.5, 0.0); g.add(bag); g.userData.bag = bag; return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+
+  const stage = buildStage(P, { az: 160 }), scene = stage.scene; meadow(scene, '#6aa844');
+  const r = rng(5);
+  for (let i = 0; i < 40; i++) { const t = buildTree(3 + r() * 2.4, ['#3f8f3a', '#2f7a35', '#58a842'][i % 3]); t.position.set(-14 + r() * 28, 0, -5 - r() * 12); scene.add(t); }
+  const wood = canvasTexture(512, (ctx, s) => { const rr = rng(7); for (let i = 0; i < 10; i++) { const l = 150 + rr() * 25; ctx.fillStyle = `rgb(${l + 40},${l - 10},${l - 80})`; ctx.fillRect(0, i * s / 10, s, s / 10); ctx.fillStyle = 'rgba(60,30,10,0.9)'; ctx.fillRect(0, i * s / 10, s, 3); } });
+  const plank = new THREE.Group();
+  add(plank, new THREE.BoxGeometry(1.3, 0.16, 12), new THREE.MeshStandardMaterial({ map: wood, roughness: 0.75 }), [0, 0.5, -3.0]);
+  for (const z of [-0.8, -5.5]) { rbox(plank, mat('#8b8680'), [1.1, 0.45, 0.6], [0, 0.22, z], [0, 0, 0], 0.08); }
+  plank.rotation.y = 0.6; plank.position.set(0.2, 0, 1.0); scene.add(plank);
+  const cradle = createCradle({ scale: 1.5 }); cradle.position.set(0, 0.58, -0.3); plank.add(cradle);
+  cradle.userData.pose({ arms: { l: [0, 1.25, 0.5], r: [0, 1.25, 0.5] } }); cradle.userData.rock(num('rk', 0.17));
+  const postg = new THREE.Group(); add(postg, new THREE.CylinderGeometry(0.07, 0.08, 1.5, 12), mat('#6e4b2b'), [0, 0.75, 0]);
+  sign(postg, 'LONGWOOD', 1.7, 0.45, [0, 1.45, 0.09], { bg: '#7a4a24', font: 'bold 150px sans-serif' }); postg.position.set(-2.6, 0, 0.2); postg.rotation.y = 0.5; scene.add(postg);
+  for (const [s, a] of [[1, 0.5], [-1, 0.5]]) add(scene, new THREE.TorusGeometry(1.1, 0.025, 8, 40, 1.0), mat('#ffffff', { emissive: '#ffffff', emissiveIntensity: 0.6, transparent: true, opacity: 0.75 }), [0.2 + s * 0.0, 1.1, 1.0], [0, 0.6 + (s > 0 ? Math.PI : 0), 0]).visible = false;
+  finishScene(stage, scene, [cradle], [num('cx', 0.6), num('cy', 1.5), num('cz', 6.2)], [-0.6, 0.9, 0]);
+
+});
+</script></body></html>

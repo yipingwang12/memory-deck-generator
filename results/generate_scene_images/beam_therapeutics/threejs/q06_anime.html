@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, run, mat, glow, add, blob, cyl, box, cone, group, label, eyes, coin, bubble, sack, flag, liver, animal } from "./common.js";
+// q06 — The GIRDER aims fat bubbles at blood stem cells.
+run({ gAt: [-1.7, 0, 0.5], gRot: 0.4, gScale: 1.4, pose: { arms: { r: [0, 0.4, 0] } }, cam: [0.3, 1.0, 4.5], look: [0.4, 0.85, 0],
+  build({ scene, reach }) {
+    // bubble wand in the girder's hand
+    const wand = group(scene, [-1.1, 0.95, 0.65], [0, 0, 0.3]); cyl(wand, mat('#c8c2b6'), 0.02, 0.5, [0, -0.15, 0]); add(wand, new THREE.TorusGeometry(0.17, 0.025, 10, 32), mat('#ffd21f'), [0, 0.2, 0], [0, 1.0, 0]);
+    reach('l', [-1.1, 0.8, 0.65]);
+    [[-0.45, 1.05, 0.7, 0.17], [-0.1, 1.2, 0.7, 0.27], [0.5, 1.1, 0.6, 0.36], [0.9, 0.95, 0.5, 0.26]].forEach(([x, y, z, r]) => bubble(scene, [x, y, z], r));
+    // blood stem cell: a fat red cell with a green STEM and leaf sprouting from it
+    const c = group(scene, [1.75, 0.55, 0.2]);
+    blob(c, mat('#e0364a', { roughness: 0.4 }), [0, 0, 0], [0.58, 0.58, 0.5]); blob(c, mat('#7a2a8a'), [0.05, 0.05, 0.4], [0.24, 0.24, 0.12]); eyes(c, { x: 0, y: 0.12, z: 0.45, gap: 0.2, r: 0.08 });
+    add(c, new THREE.TorusGeometry(0.1, 0.02, 8, 16, Math.PI), mat('#6a1a22'), [0, -0.2, 0.5], [0, 0, Math.PI]);
+    cyl(c, mat('#3aa845'), 0.04, 0.5, [0.0, 0.8, 0]); blob(c, mat('#4fc65a'), [0.2, 1.0, 0], [0.22, 0.08, 0.1], [0, 0, 0.5]); blob(c, mat('#4fc65a'), [-0.2, 0.9, 0], [0.2, 0.08, 0.1], [0, 0, -0.5]);
+    // a few small cells
+    for (const [x, y, z] of [[2.5, 0.2, -0.2], [1.1, 0.18, -0.6], [2.2, 0.15, 0.9]]) { const d = group(scene, [x, y, z], [0.4, 0.2, 0]); add(d, new THREE.TorusGeometry(0.16, 0.08, 12, 24), mat('#d42a3a'), [0, 0, 0]); cyl(d, mat('#b21f2f'), 0.14, 0.05, [0, 0, 0], [Math.PI / 2, 0, 0]); }
+  } });
+</script></body></html>

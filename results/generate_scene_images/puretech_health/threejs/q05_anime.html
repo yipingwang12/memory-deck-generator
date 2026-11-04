@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PureTech q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createPuritan, addFace } from './puritan.js';
+import * as K from './props.js';
+const { mat, add, blob, num, makeStage, finishScene, reachWorld } = K;
+guard(() => {
+  const stage = makeStage({ ground: '#e6cf9a' });
+  const S = stage.scene;
+  add(S, new THREE.PlaneGeometry(400, 400), mat('#3a8fc8', { roughness: 0.3 }), [0, 0.012, -202.5], [-Math.PI / 2, 0, 0]);
+  const sh = K.ship(4.2, { portholes: 4 }); sh.position.set(1.3, 0.15, -4.2); sh.rotation.y = 0.15; sh.scale.setScalar(0.8); S.add(sh);
+  const zo = K.zorro(); zo.scale.setScalar(num('zs', 2.0)); zo.position.set(1.4, 0, 0.2); zo.rotation.y = -1.25; S.add(zo);
+  const pur = createPuritan({ scale: num('ps', 2.0) }); pur.position.set(-0.9, 0, 0.3); pur.rotation.y = 1.0; S.add(pur);
+  pur.userData.pose({ headTilt: -0.05, arms: { r: [0, 0.3, 0.2] } });
+  zo.updateMatrixWorld(true);
+  const hp = zo.localToWorld(new THREE.Vector3(0.095, 0.55 - 0.27 * Math.cos(1.35 + 0.0) , 0.01 + 0.27 * Math.sin(1.35)).add(new THREE.Vector3(-0.0, 0.0, 0.03)));
+  const cr = K.crown(1.9); cr.position.copy(hp).add(new THREE.Vector3(0, 0.12, 0)); S.add(cr);
+  reachWorld(pur, 'l', [hp.x - 0.12, hp.y + 0.2, hp.z + 0.02]);
+  finishScene(stage, [pur, zo], [num('cx', 0.3), num('cy', 1.5), num('cz', 5.6)], [0.4, 1.15, 0]);
+});
+</script></body></html>

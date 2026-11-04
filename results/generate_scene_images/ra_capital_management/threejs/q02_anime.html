@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RA q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — the SCARAB rolls its gold ball up every stage, behind a HEDGE.
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createScarab } from './scarab.js';
+import { mat, add, blob, box, makeStage, finishScene, meadow, goldBall } from './common.js';
+
+function hedgeTexture() {
+  return canvasTexture(256, (ctx, s) => {
+    const r = rng(3); ctx.fillStyle = '#2f8a3a'; ctx.fillRect(0, 0, s, s);
+    for (let i = 0; i < 900; i++) { const l = r(); ctx.fillStyle = l < 0.5 ? '#256f30' : l < 0.85 ? '#3fae4a' : '#6fd46a'; ctx.beginPath(); ctx.arc(r() * s, r() * s, 3 + r() * 5, 0, 7); ctx.fill(); }
+  }, { repeat: 6 });
+}
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  meadow(scene);
+  // three rising stages with a seed, a sapling and a tree on each
+  const stageMat = [mat('#e8c98a'), mat('#d9a95c'), mat('#c8893a')];
+  for (let i = 0; i < 3; i++) {
+    const w = 1.5, x = -1.6 + i * 1.5, h = 0.25 * (i + 1);
+    box(scene, stageMat[i], [x + 1.4, h / 2, -1.4], [w, h, 1.4]);
+    const top = [x + 1.4, h, -1.4];
+    if (i === 0) blob(scene, mat('#6b4a2a'), [top[0] + 0.3, top[1] + 0.05, top[2]], [0.09, 0.06, 0.09]);
+    if (i === 1) { add(scene, new THREE.CylinderGeometry(0.02, 0.03, 0.3, 8), mat('#6b4a2a'), [top[0] + 0.3, top[1] + 0.15, top[2]]); blob(scene, mat('#4bb84a'), [top[0] + 0.3, top[1] + 0.35, top[2]], [0.15, 0.13, 0.15]); }
+    if (i === 2) { add(scene, new THREE.CylinderGeometry(0.05, 0.07, 0.6, 10), mat('#6b4a2a'), [top[0] + 0.3, top[1] + 0.3, top[2]]); blob(scene, mat('#3fae4a'), [top[0] + 0.3, top[1] + 0.8, top[2]], [0.38, 0.32, 0.38]); }
+  }
+  // hedge in front
+  const hm = new THREE.MeshStandardMaterial({ map: hedgeTexture(), roughness: 0.9 });
+  const hedge = add(scene, new THREE.BoxGeometry(7, 0.26, 0.5), hm, [0, 0.13, 1.9]);
+  for (let i = -3; i <= 3; i++) blob(scene, hm, [i + 0.0, 0.26, 1.9], [0.5, 0.12, 0.26]);
+  const s = createScarab({ scale: 1.9 }); s.position.set(-0.6, 0, 0.5); s.rotation.y = 0.9; scene.add(s);
+  const ball = goldBall(scene, 0.42, [0.9, 0.42, 0.1]);
+  s.userData.reach('l', [0.3, 0.3, 0.6]); s.userData.reach('r', [-0.3, 0.3, 0.6]);
+  finishScene(stage, scene, [s], [num('cx', 0.2), num('cy', 2.3), num('cz', 5.6)], [num('tx', 0.3), num('ty', 0.5), 0]);
+});
+</script></body></html>

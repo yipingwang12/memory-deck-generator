@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, run, mat, glow, add, blob, cyl, box, cone, group, label, eyes, coin, bubble, sack, flag, liver, animal } from "./common.js";
+// q02 — A LIDO pool (Liu), a ZEN monk (Zhang) and a JOINT (Joung) plant flags on the GIRDER.
+run({ gAt: [-1.5, 0, 0.3], gScale: 1.4, gRot: 0.45, pose: { arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] } }, cam: [0.3, 1.0, 4.3], look: [0.5, 0.7, 0],
+  build({ scene, girder }) {
+    // three flags planted in the girder's hard hat
+    const hat = girder.userData.parts.head;
+    [['#2f7fe0', -0.5], ['#ff8a1e', 0], ['#2fb24a', 0.5]].forEach(([c, t]) => { const f = flag(girder, [t * 0.15, 0.92, 0], c, 0.38, -t * 0.35); f.scale.setScalar(1.0); });
+    // LIDO pool
+    const pool = group(scene, [2.05, 0, -0.3], [0, 0, 0], 0.85);
+    box(pool, mat('#f3f0e8'), 1.5, 0.22, 1.0, [0, 0.11, 0]); box(pool, mat('#35b6f0', { emissive: '#1a8ad0', emissiveIntensity: 0.4 }), 1.3, 0.04, 0.8, [0, 0.225, 0]);
+    const ring = add(pool, new THREE.TorusGeometry(0.2, 0.08, 14, 32), mat('#ffffff'), [0.2, 0.3, 0.1], [Math.PI / 2, 0, 0]);
+    for (let i = 0; i < 4; i++) add(pool, new THREE.TorusGeometry(0.2, 0.082, 14, 8, 0.7), mat('#e5322d'), [0.2, 0.3, 0.1], [Math.PI / 2, 0, i * Math.PI / 2 + 0.2]);
+    for (const x of [-0.62, -0.5]) add(pool, new THREE.TorusGeometry(0.2, 0.02, 8, 16, Math.PI), mat('#cfd6dd', { metalness: 0.6 }), [x, 0.4, 0.4], [0, 0, 0]);
+    const lid = label('LIDO', 1.0, 0.34, { bg: '#ff6a3a', fg: '#fff' }); lid.position.set(0, 0.62, 0.55); pool.add(lid);
+    cyl(pool, mat('#c8c2b6'), 0.02, 0.4, [-0.4, 0.4, 0.55]); cyl(pool, mat('#c8c2b6'), 0.02, 0.4, [0.4, 0.4, 0.55]);
+    // ZEN monk, meditating
+    const monk = group(scene, [-0.1, 0, 0.8], [0, -0.25, 0], 1.25);
+    blob(monk, mat('#ff8a1e'), [0, 0.15, 0], [0.38, 0.14, 0.3]); add(monk, new THREE.ConeGeometry(0.28, 0.5, 28), mat('#ff8a1e'), [0, 0.45, 0], [0, 0, 0], [1, 1, 0.85]);
+    box(monk, mat('#c0281e'), 0.1, 0.5, 0.04, [0.12, 0.45, 0.22], [0, 0, 0.35]);
+    blob(monk, mat('#f4c8a0'), [0, 0.82, 0], [0.19, 0.2, 0.18]); eyes(monk, { y: 0.83, z: 0.15, gap: 0.075, r: 0.04, closed: true });
+    blob(monk, mat('#f4c8a0'), [0, 0.54, 0.22], [0.09, 0.07, 0.07]); add(monk, new THREE.TorusGeometry(0.22, 0.012, 8, 32), glow('#fff2a8', 1), [0, 0.84, -0.2]);
+    // JOINT: big rolled paper cone with glowing ember
+    const jt = group(scene, [0.95, 0, 1.0], [0, 0, -0.18]);
+    add(jt, new THREE.CylinderGeometry(0.15, 0.07, 1.1, 24), mat('#f6f1e4'), [0, 0.6, 0]); add(jt, new THREE.CylinderGeometry(0.15, 0.15, 0.04, 24), mat('#ff5a1e', { emissive: '#ff4a00', emissiveIntensity: 1 }), [0, 1.16, 0]);
+    blob(jt, glow('#ff7a2a', 1.4), [0, 1.2, 0], [0.13, 0.05, 0.13]); for (let i = 0; i < 4; i++) blob(jt, mat('#d8dde3', { transparent: true, opacity: 0.6 }), [0.05 * i, 1.4 + i * 0.16, 0], [0.09 + i * 0.03, 0.08, 0.09 + i * 0.03]);
+    box(jt, mat('#d6c8a6'), 0.2, 0.2, 0.03, [0, 0.15, 0.13]);
+  } });
+</script></body></html>

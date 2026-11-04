@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — CTX460 in the CRISP targets SERPINA1, a SERPENT gene.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, reach, finish }) => {
+  const c = crisp({ s: 2.3, x: -2.4, z: 0.2, ry: 0.4 });
+  const tag = textPlane('CTX460', 1.2, 0.4, { bg: '#fff', fg: '#c01e2e' }); tag.position.set(-2.4, 0.45, 1.5); tag.rotation.x = -0.25; scene.add(tag);
+  const dna = helix({ h: 3.4, r: 0.3, turns: 2.5 }); dna.position.set(1.8, 1.7, 0); scene.add(dna);
+  const pts = []; for (let i = 0; i <= 24; i++) { const t = i / 24, a = t * Math.PI * 4; pts.push([1.8 + Math.cos(a) * 0.55, 0.5 + t * 2.6, Math.sin(a) * 0.55]); }
+  scene.add(snake(pts, { r: 0.11 }));
+  const lab = textPlane('SERPINA1', 2.4, 0.55, { bg: '#2a1a6a', fg: '#ffe14a' }); lab.position.set(1.8, 3.9, 0.3); scene.add(lab);
+  // bow aimed at the snake
+  const bow = new THREE.Group(); bow.position.set(-0.75, 1.75, 0.8); scene.add(bow);
+  add(bow, new THREE.TorusGeometry(0.7, 0.05, 8, 32, Math.PI), mat('#8a5a2a'), [0, 0, 0], [0, 0, -Math.PI / 2]);
+  cyl(bow, mat('#eee'), [0.0, 0, 0], 0.01, 1.4); 
+  cyl(bow, mat('#c9a56b'), [0.5, 0, 0], 0.025, 1.4, [0, 0, Math.PI / 2]); add(bow, new THREE.ConeGeometry(0.07, 0.2, 12), mat('#c33'), [1.25, 0, 0], [0, 0, -Math.PI / 2]);
+  reach(c, 'l', [-0.75, 1.75, 0.8]);
+  finish([-0.1, 2.1, 6.9], [-0.1, 1.9, 0]);
+});
+
+</script></body></html>

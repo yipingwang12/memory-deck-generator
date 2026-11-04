@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const bx = C.launchBox(); bx.position.set(-2.7, 0, -0.2); bx.scale.setScalar(1.4); S.scene.add(bx);
+  const ant = C.ant(); ant.position.set(0.1, 0, 0.4); ant.scale.setScalar(1.6); S.scene.add(ant);
+  const t = C.triangle(S, { scale: 2.6, pos: [-0.2, 1.25, 0.4], ry: 0.15, pose: { arms: { l: [0, 0.9, 0], r: [0, -0.9, 0] }, legs: { l: [0.35, 0.15], r: [0.35, -0.15] } } });
+  C.done(S, [t, ant], [-0.3, 2.3, 8.4], [-0.3, 2.2, 0]);
+});
+</script></body></html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q15 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q15 - A TRITON trident does the CELLAR's computational biology.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'cellar' }); const sc = S.scene;
+S.cellar({ pos: [-2.4, 0, 0.1], scale: 1.8, ry: 0.4, pose: { arms: { l: [0, 0.5], r: [-0.6, 0.3] } } });
+put(sc, C.trident(), -0.7, 0, 0.3, 0.95, 0);
+put(sc, C.laptop(), 1.5, 0.0, 0.3, 1.5, -0.3);
+S.done({ cam: [0, 1.25, 5.4], look: [0, 1.0, 0] });
+});
+</script></body></html>

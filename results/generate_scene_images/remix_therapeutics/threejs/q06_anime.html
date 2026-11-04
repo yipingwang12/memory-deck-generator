@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard, rng } from './kit.js';
+import * as B from './base.js';
+const { THREE, mat, add, blob, box, cyl, textPlane, kitchenStage, frame, toon, createMixer, nose, tank, drop, ribbon, bib } = B;
+guard(() => {
+const { stage, scene, num } = kitchenStage(); const r = rng(3);
+const m = createMixer({ scale: 1.45 }); m.position.set(-1.6, 0, 0); m.rotation.y = 0.5; scene.add(m);
+m.userData.pose({ arms: { l: [0, 0.9, -0.2], r: [0, 0.9, -0.2] } });
+const h = new THREE.Group(); h.position.set(0.9, 0, 0); h.rotation.y = -0.3; scene.add(h);
+const wood = mat('#8a4b24'), glass = mat('#bfeaff', { transparent: true, opacity: 0.45, roughness: 0.1 }), sand = mat('#ffd25a');
+for (const y of [0.08, 1.92]) cyl(h, wood, [0, y, 0], 0.5, 0.16);
+for (const a of [0, 1, 2, 3]) cyl(h, wood, [Math.cos(a * Math.PI / 2) * 0.42, 1.0, Math.sin(a * Math.PI / 2) * 0.42], 0.035, 1.8);
+add(h, new THREE.ConeGeometry(0.42, 0.85, 32, 1, true), glass, [0, 0.58, 0], [0, 0, 0]);
+add(h, new THREE.ConeGeometry(0.42, 0.85, 32, 1, true), glass, [0, 1.42, 0], [Math.PI, 0, 0]);
+add(h, new THREE.ConeGeometry(0.34, 0.5, 28), sand, [0, 1.22, 0]); blob(h, sand, [0, 0.3, 0], [0.34, 0.2, 0.34]);
+const z = 0.43;
+for (const x of [-0.12, 0.12]) { blob(h, mat('#fff'), [x, 1.2, z], [0.1, 0.13, 0.03]); blob(h, mat('#1a1a2a'), [x, 1.19, z + 0.02], [0.06, 0.085, 0.02]); blob(h, mat('#fff'), [x - 0.02, 1.24, z + 0.035], [0.015, 0.015, 0.01]); }
+add(h, new THREE.TorusGeometry(0.06, 0.012, 8, 20, Math.PI), mat('#7a2a2a'), [0, 1.08, z], [0, 0, Math.PI]);
+const b = bib({ s: 0.55 }); b.position.set(-0.1, 1.0, 0.7); b.rotation.y = 0.4; scene.add(b);
+const lens = new THREE.Group(); lens.position.set(-0.1, 1.45, 0.9); add(lens, new THREE.TorusGeometry(0.2, 0.03, 10, 36), mat('#333'), [0, 0, 0]);
+add(lens, new THREE.CircleGeometry(0.2, 32), glass, [0, 0, 0]); cyl(lens, mat('#333'), [-0.17, -0.2, 0], 0.025, 0.35, [0, 0, -0.7]); scene.add(lens);
+toon(stage, scene, [m]); frame(stage, num, { cx: -0.1, cy: 0.95, cz: 4.5, tx: -0.1, ty: 0.95 });
+});
+</script></body></html>

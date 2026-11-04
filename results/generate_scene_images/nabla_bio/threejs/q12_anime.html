@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const bs = C.bus(); bs.position.set(-4.4, 0, -1.0); bs.scale.setScalar(1.7); bs.rotation.y = 0.45; S.scene.add(bs);
+  const st = C.star(1.3); st.position.set(3.5, 5.0, -0.5); st.rotation.y = -0.3; S.scene.add(st);
+  const tc = C.taco(); tc.position.set(3.7, 0, 0.8); tc.scale.setScalar(2.3); tc.rotation.y = -0.35; S.scene.add(tc);
+  const t = C.triangle(S, { scale: 3.2, pos: [0, 0, 1.2], ry: 0.0 });
+  C.reachWorld(t, 'l', [2.6, 2.4, 1.2]); C.reachWorld(t, 'r', [-1.9, 2.3, 0.6]);
+  C.done(S, [t], [0, 3.1, 10.8], [0, 2.9, 0]);
+});
+</script></body></html>

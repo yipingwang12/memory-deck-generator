@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q16</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q16 - The CAMPER computers sit in the Massachusetts GREEN High Performance Computing Center
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ ground: '#7cc060', camper: { pos: [0, 0, 1.0], ry: 0.4, scale: 1.7 }, cam: [0, 1.5, 6.4], look: [0, 1.5, 0],
+  build: ({ scene, van }) => {
+    const B = new THREE.Group(); box(B, 9, 3.4, 2.2, '#f2eee2', [0, 1.7, 0], [0, 0, 0], 0.06);
+    box(B, 9.4, 0.35, 2.6, '#4a9a40', [0, 3.5, 0.1]);
+    for (let i = 0; i < 34; i++) { const r = rng(i + 3)(); blob(B, mat(i % 2 ? '#3f9a4a' : '#6bbf4a'), [-4.3 + (i % 17) * 0.54, 3.75, -0.6 + Math.floor(i / 17) * 1.4], [0.3, 0.2 + r * 0.1, 0.35]); }
+    panel(B, 5.4, 1.9, (ctx, w, h) => { ctx.fillStyle = '#0e1c1a'; ctx.fillRect(0, 0, w, h); for (let i = 0; i < 6; i++) { ctx.fillStyle = '#1d2a28'; ctx.fillRect(14 + i * 82, 20, 66, 470); const r = rng(i)(); for (let j = 0; j < 12; j++) { ctx.fillStyle = (i + j) % 3 ? '#4aff7a' : '#ffd84a'; ctx.fillRect(24 + i * 82, 40 + j * 38, 46, 12); } } }, [1.4, 1.5, 1.11]);
+    panel(B, 2.2, 1.9, (ctx) => { ctx.fillStyle = '#2d9a4a'; ctx.fillRect(0, 0, 512, 512); ctx.fillStyle = '#e8ffe0'; ctx.beginPath(); ctx.moveTo(256, 60); ctx.bezierCurveTo(470, 120, 480, 330, 256, 450); ctx.bezierCurveTo(60, 340, 60, 130, 256, 60); ctx.fill(); ctx.strokeStyle = '#2d9a4a'; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(256, 450); ctx.lineTo(256, 130); ctx.stroke(); }, [-2.9, 1.7, 1.11]);
+    box(B, 2.2, 2.2, 0.01, '#fff', [0, 0, 0]);
+    B.position.set(0, 0, -2.5); scene.add(B);
+    for (const [x, z, s] of [[-4.1, 0.6, 1.5], [4.2, 0.4, 1.6], [-2.6, 1.8, 0.8], [2.9, 2.1, 0.8]]) { const t = tree(s); t.position.set(x, 0, z); scene.add(t); }
+    for (let i = 0; i < 4; i++) box(B, 0.9, 0.05, 0.6, '#2a4a8a', [-3.6 + i * 1.1, 4.1, 0.9], [-0.5, 0, 0], 0.01, { metalness: 0.4 });
+    van.userData.pose({ arms: { l: [0, 1.4, 0.3] } });
+  } });
+
+</script></body></html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RA q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — the SCARAB rolls a TEA chest in Boston (harbor, tall ship, brick row, steeple).
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createScarab } from './scarab.js';
+import { mat, add, blob, box, makeStage, finishScene } from './common.js';
+
+const brick = () => canvasTexture(256, (ctx, s) => {
+  const r = rng(2); ctx.fillStyle = '#a8432f'; ctx.fillRect(0, 0, s, s);
+  for (let y = 0; y < 16; y++) for (let x = 0; x < 8; x++) { ctx.fillStyle = `rgb(${150 + r() * 40},${55 + r() * 20},${40 + r() * 15})`; ctx.fillRect(x * 32 + (y % 2) * 16, y * 16, 29, 13); }
+  for (const [wx, wy] of [[40, 40], [150, 40], [40, 150], [150, 150]]) { ctx.fillStyle = '#f7e9b0'; ctx.fillRect(wx, wy, 50, 70); ctx.fillStyle = '#2a3a58'; ctx.fillRect(wx + 4, wy + 4, 42, 62); ctx.fillStyle = '#fff'; ctx.fillRect(wx + 23, wy + 4, 4, 62); }
+});
+const chestFace = () => canvasTexture(512, (ctx, s) => {
+  ctx.fillStyle = '#7a4a22'; ctx.fillRect(0, 0, s, s);
+  for (let i = 0; i < 6; i++) { ctx.fillStyle = i % 2 ? '#6d4220' : '#8a5628'; ctx.fillRect(0, i * s / 6, s, s / 6 - 3); }
+  ctx.fillStyle = '#f4ead0'; ctx.fillRect(60, 130, 392, 250); ctx.strokeStyle = '#2a1a0a'; ctx.lineWidth = 10; ctx.strokeRect(60, 130, 392, 250);
+  ctx.fillStyle = '#c8283a'; ctx.font = 'bold 230px Georgia, serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('TEA', 256, 262);
+});
+guard(() => {
+  const { stage, scene, num } = makeStage({ sunAzimuth: 130 });
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#4c93c8', { roughness: 0.3 }), [0, -0.5, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.PlaneGeometry(40, 8), mat('#b9a98c'), [0, 0, 1], [-Math.PI / 2, 0, 0]);   // quay
+  add(scene, new THREE.PlaneGeometry(40, 8), mat('#b9a98c'), [0, 0, 1], [-Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 12; i++) box(scene, mat('#8c7e66'), [-9 + i * 1.6, 0.003, -2.9], [1.4, 0.01, 0.12]);
+  box(scene, mat('#9b8b70'), [0, -0.25, -3.0], [40, 0.5, 0.3]);                                   // quay edge
+  // tall ship
+  const ship = new THREE.Group(); ship.position.set(-2.2, -0.35, -9); scene.add(ship);
+  add(ship, new THREE.BoxGeometry(6, 1.1, 1.6), mat('#3b2a1e'), [0, 0.4, 0]);
+  add(ship, new THREE.BoxGeometry(6.1, 0.12, 1.65), mat('#e8c24a'), [0, 0.65, 0]);
+  for (const [x, h] of [[-1.5, 4.4], [0.2, 5.2], [1.9, 4.4]]) {
+    add(ship, new THREE.CylinderGeometry(0.06, 0.08, h, 8), mat('#5a3d28'), [x, 0.9 + h / 2, 0]);
+    for (const [y, w] of [[0.35, 1.7], [0.62, 1.4]]) box(ship, mat('#f4ead0', { side: THREE.DoubleSide }), [x, 0.9 + h * y, 0.08], [w, h * 0.22, 0.04]);
+  }
+  // brick row + steeple on the right
+  const bm = new THREE.MeshStandardMaterial({ map: brick(), roughness: 0.85 });
+  [[3.5, -4.8, 2.2, 3.4], [5.5, -4.8, 2.0, 2.8], [7.4, -4.8, 2.0, 3.8], [-6.5, -5.2, 2.4, 3.0]].forEach(([x, z, w, h], i) => {
+    const b = add(scene, new THREE.BoxGeometry(w, h, 2), bm.clone(), [x, h / 2, z]); b.material.map = b.material.map.clone(); b.material.map.repeat.set(w / 2, h / 3);
+    add(scene, new THREE.BoxGeometry(w + 0.2, 0.15, 2.2), mat('#e9e4d8'), [x, h + 0.05, z]);
+  });
+  box(scene, mat('#f4f0e6'), [1.6, 2.2, -5.6], [1.1, 4.4, 1.1]); box(scene, mat('#f4f0e6'), [1.6, 4.9, -5.6], [0.8, 1.0, 0.8]);
+  add(scene, new THREE.ConeGeometry(0.55, 2.2, 4), mat('#4a5a70'), [1.6, 6.5, -5.6], [0, Math.PI / 4, 0]);
+
+  const s = createScarab({ scale: 1.7 }); s.position.set(-0.9, 0, 0.3); s.rotation.y = 1.15; scene.add(s);
+  // chest on two rollers
+  const chest = new THREE.Group(); chest.position.set(1.0, 0, 0.0); chest.rotation.y = -0.3; scene.add(chest);
+  for (const x of [-0.4, 0.4]) add(chest, new THREE.CylinderGeometry(0.1, 0.1, 1.2, 14), mat('#8a6a42'), [x, 0.1, 0], [Math.PI / 2, 0, 0]);
+  const cm = new THREE.MeshStandardMaterial({ map: chestFace(), roughness: 0.7 }), wood = mat('#7a4a22');
+  add(chest, new THREE.BoxGeometry(1.2, 0.6, 0.9), wood, [0, 0.5, 0]);
+  add(chest, new THREE.PlaneGeometry(1.2, 0.6), cm, [0, 0.5, 0.452]);
+  add(chest, new THREE.CylinderGeometry(0.45, 0.45, 1.2, 24, 1, false, 0, Math.PI), wood, [0, 0.8, 0], [0, 0, Math.PI / 2], [1, 1, 1]).rotation.set(0, 0, Math.PI / 2);
+  const iron = mat('#33363e', { metalness: 0.6, roughness: 0.4 });
+  for (const x of [-0.5, 0.5]) box(chest, iron, [x, 0.62, 0], [0.08, 1.12, 0.92]);
+  blob(chest, mat('#f2c230', { metalness: 0.6 }), [0, 0.68, 0.46], [0.09, 0.09, 0.04]);
+  // steaming cup
+  add(scene, new THREE.CylinderGeometry(0.16, 0.11, 0.2, 20), mat('#ffffff'), [2.35, 0.1, 0.5]);
+  add(scene, new THREE.CylinderGeometry(0.145, 0.145, 0.02, 20), mat('#b5621e'), [2.35, 0.19, 0.5]);
+  add(scene, new THREE.TorusGeometry(0.07, 0.02, 8, 16, Math.PI), mat('#ffffff'), [2.5, 0.12, 0.5], [0, 0, -Math.PI / 2]);
+  s.userData.reach('l', [0.28, 0.32, 0.62]); s.userData.reach('r', [-0.28, 0.32, 0.62]);
+  finishScene(stage, scene, [s], [num('cx', 0.4), num('cy', 1.4), num('cz', 5.0)], [num('tx', 0.3), num('ty', 0.9), 0]);
+});
+</script></body></html>

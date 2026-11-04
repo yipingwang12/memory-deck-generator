@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reinhart q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 - SCIENCE pins a PINS prize for neuromodulation on the RAINCOAT.
+import { THREE, createRaincoat, mat, glow, add, blob, box, textPlane, makeStage, finishScene, createElder, createScientist, createBrain, waveTube, cable, hoodElectrodes, rings } from './props.js';
+import { guard, rng } from './kit.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ ground: "#a9c27a" });
+  const rc = createRaincoat({ scale: 1.5 }); scene.add(rc); const chars = [rc]; let cam = [0, 1.0, 4.2], look = [0, 0.8, 0];
+
+  rc.position.set(0.5, 0, 0.3); rc.rotation.y = -0.35;
+  rc.userData.pose({ headTilt: 0.05, arms: { l: [0, 0.5, 0], r: [0, 0.4, 0] } });
+  // prize rosette pinned on chest
+  const rose = new THREE.Group(); rose.position.set(0.075, 0.46, 0.255); rc.userData.parts.coat.parent.add(rose);
+  for (const [x, c] of [[-0.03, '#c8302a'], [0.03, '#2a56c8']]) add(rose, new THREE.BoxGeometry(0.05, 0.16, 0.012), mat(c), [x, -0.1, 0], [0, 0, x * 8]);
+  add(rose, new THREE.CylinderGeometry(0.07, 0.07, 0.02, 32), mat('#f2c230', { metalness: 0.5, roughness: 0.3 }), [0, 0, 0.008], [Math.PI / 2, 0, 0]);
+  add(rose, new THREE.CylinderGeometry(0.045, 0.045, 0.026, 32), mat('#c8302a'), [0, 0, 0.012], [Math.PI / 2, 0, 0]);
+  const star = add(rose, new THREE.OctahedronGeometry(0.03), mat('#fff6c0'), [0, 0, 0.03]);
+  // scientist reaching to pin
+  const sci = createScientist({ scale: 1.5 }); sci.position.set(-1.0, 0, 0.5); sci.rotation.y = 0.9; scene.add(sci); chars.push(sci);
+  const hand = new THREE.Vector3(); rc.updateMatrixWorld(true); rose.getWorldPosition(hand);
+  sci.updateMatrixWorld(true);
+  const arm = add(sci, new THREE.CylinderGeometry(0.035, 0.035, 0.6, 10), mat('#f6f8ff'), [0, 0, 0]);
+  const a = sci.worldToLocal(new THREE.Vector3(-1.5, 0.95, 0.6).clone()); const sh = new THREE.Vector3(0.2, 0.75, 0.04), tg = sci.worldToLocal(hand.clone());
+  arm.position.copy(sh.clone().lerp(tg, 0.5)); arm.scale.y = sh.distanceTo(tg) / 0.6; arm.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tg.clone().sub(sh).normalize());
+  blob(sci, mat('#f2cba6'), tg.toArray(), [0.035, 0.035, 0.035]);
+  // SCIENCE banner + PINS (bowling pins)
+  const bn = textPlane('SCIENCE', 2.6, 0.6, { bg: '#1b3f7a', fg: '#ffffff', frame: '#ffd34a' }); bn.position.set(-1.2, 2.9, -1.2); scene.add(bn);
+  box(scene, mat('#6b4a2a'), [-2.1, 1.3, -1.25], [0.08, 2.6, 0.08]); box(scene, mat('#6b4a2a'), [-0.3, 1.3, -1.25], [0.08, 2.6, 0.08]);
+  for (let i = 0; i < 4; i++) { const p = new THREE.Group(); p.position.set(1.7 + (i % 2) * 0.35, 0, -0.6 - i * 0.0 + (i >> 1) * -0.4);
+    const pts = [[0, 0], [0.09, 0], [0.11, 0.05], [0.07, 0.25], [0.05, 0.38], [0.075, 0.46], [0.07, 0.52], [0.04, 0.55], [0, 0.55]].map(([x, y]) => new THREE.Vector2(x, y));
+    add(p, new THREE.LatheGeometry(pts, 20), mat('#fff'), [0, 0, 0]); add(p, new THREE.CylinderGeometry(0.058, 0.058, 0.03, 20), mat('#d02a2a'), [0, 0.35, 0]);
+    p.scale.setScalar(1.6); scene.add(p); }
+  cam = [0.2, 1.3, 5.2]; look = [0, 1.0, 0];
+
+  finishScene(stage, scene, chars, cam, look);
+});
+</script></body></html>

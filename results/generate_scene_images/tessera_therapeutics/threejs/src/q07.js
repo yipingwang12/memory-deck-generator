@@ -1,0 +1,39 @@
+// q07 — a LIZARD that REGENERATES its tail crawls out of the frost, shakes the TESSERACT's hand, carries the auntie's page.
+function lizard() {
+  const g = new THREE.Group(), gr = mat('#4ab04a'), lt = mat('#a6e060'), belly = mat('#e8f2b0');
+  blob(g, gr, [0, 0.95, 0], [0.38, 0.62, 0.32]); blob(g, belly, [0.1, 0.9, 0.12], [0.26, 0.5, 0.22]);
+  const head = new THREE.Group(); head.position.set(0.18, 1.7, 0); head.rotation.z = -0.15; g.add(head);
+  blob(head, gr, [0, 0, 0], [0.3, 0.22, 0.24]); blob(head, gr, [0.26, -0.06, 0], [0.2, 0.12, 0.18]);
+  for (const s of [-1, 1]) {
+    blob(head, mat('#fff'), [0.1, 0.12, s * 0.17], [0.1, 0.11, 0.04]); blob(head, mat('#161020'), [0.12, 0.12, s * 0.2], [0.06, 0.08, 0.03]); blob(head, mat('#fff'), [0.14, 0.15, s * 0.225], [0.022, 0.022, 0.012]);
+  }
+  add(head, new THREE.TorusGeometry(0.07, 0.014, 8, 14, Math.PI), mat('#2a5a2a'), [0.3, -0.12, 0.0], [0, 0, Math.PI]).scale.set(1, 0.7, 1);
+  // tail: old green part then lighter regrown tip
+  const seg = (i, n, col) => { const t = i / n, x = -0.3 - t * 1.4, y = 0.45 - t * 0.38 + Math.sin(t * 3) * 0.12; blob(g, col, [x, y, 0.1 * Math.sin(t * 5)], [0.2 - t * 0.12, 0.17 - t * 0.1, 0.17 - t * 0.1]); };
+  for (let i = 0; i < 9; i++) seg(i, 14, gr); for (let i = 9; i <= 14; i++) seg(i, 14, lt);
+  // legs
+  for (const s of [-1, 1]) { blob(g, gr, [0.02, 0.38, s * 0.16], [0.14, 0.4, 0.13]); blob(g, gr, [0.08, 0.05, s * 0.16], [0.2, 0.07, 0.12]); }
+  // front arms: l raised (handshake), r holds scroll
+  const arm = new THREE.Group(); arm.position.set(0.28, 1.3, 0.28); arm.rotation.z = 1.2; g.add(arm);
+  add(arm, new THREE.CapsuleGeometry(0.06, 0.4, 6, 10), gr, [0, -0.25, 0]); blob(arm, gr, [0, -0.55, 0], [0.1, 0.09, 0.09]);
+  const arm2 = new THREE.Group(); arm2.position.set(0.1, 1.25, -0.3); arm2.rotation.z = 0.3; g.add(arm2);
+  add(arm2, new THREE.CapsuleGeometry(0.06, 0.4, 6, 10), gr, [0, -0.25, 0]);
+  const scroll = new THREE.Group(); scroll.position.set(-0.1, 0.95, 0.42); scroll.rotation.z = -0.2; g.add(scroll);
+  cyl(scroll, '#f3e2b4', [0, 0, 0], 0.13, 0.8); cyl(scroll, '#7a5a2a', [0, 0.4, 0], 0.15, 0.06); cyl(scroll, '#7a5a2a', [0, -0.4, 0], 0.15, 0.06); box(scroll, '#c4302b', [0, 0, 0.13], [0.04, 0.5, 0.03]);
+  return g;
+}
+run({
+  ground: '#e6eff5', sky: { cover: 1 },
+  cam: { p: [0.0, 1.6, 5.6], t: [0.0, 1.3, 0] },
+  build({ scene, mark, tess }) {
+    const r = rng(9);
+    for (let i = 0; i < 35; i++) { const c = add(scene, new THREE.ConeGeometry(0.05 + r() * 0.05, 0.25 + r() * 0.3, 5), mat('#ffffff'), [(r() - 0.5) * 12, 0.12, -2 + r() * 4], [0, 0, 0]); c.scale.set(1, 1, 1); }
+    for (let i = 0; i < 6; i++) blob(scene, mat('#ffffff'), [(r() - 0.5) * 8, 0.05, -1.5 - r() * 2], [0.5 + r() * 0.4, 0.07, 0.5], [0, 0, 0]);
+    const l = lizard(); l.scale.setScalar(1.3); l.position.set(-1.8, 0, 0.2); l.rotation.y = -0.15; scene.add(l); mark(l);
+    const t = tess({ scale: 1.8 }); t.position.set(0.55, 0, 0.1); t.rotation.y = -0.5; mark(t);
+    t.userData.pose({ arms: { l: [0, 0.5, 0] } });
+    l.updateMatrixWorld(true);
+    const hand = new THREE.Vector3(0.28 + Math.sin(1.2) * 0.55 + 0.0, 1.3 - Math.cos(1.2) * 0.55, 0.28).applyMatrix4(l.matrixWorld);
+    reachWorld(t, 'r', hand);
+  },
+});

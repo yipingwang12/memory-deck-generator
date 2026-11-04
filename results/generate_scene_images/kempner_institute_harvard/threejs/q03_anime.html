@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q03 - The CAMPER carries a HARVARD shield
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ camper: { pos: [-0.7, 0, 0], ry: 0.55 }, cam: [0.3, 1.1, 4.6], look: [0.3, 0.9, 0],
+  build: ({ scene, van }) => {
+    const s = new THREE.Shape();
+    s.moveTo(-0.55, 0.6); s.lineTo(0.55, 0.6); s.lineTo(0.55, 0); s.quadraticCurveTo(0.55, -0.55, 0, -0.8); s.quadraticCurveTo(-0.55, -0.55, -0.55, 0); s.closePath();
+    const g = new THREE.Group();
+    add(g, new THREE.ExtrudeGeometry(s, { depth: 0.1, bevelEnabled: true, bevelSize: 0.04, bevelThickness: 0.04, bevelSegments: 3 }), mat('#a51c30'), [0, 0, -0.05]);
+    const trim = new THREE.Shape(); trim.moveTo(-0.46, 0.51); trim.lineTo(0.46, 0.51); trim.lineTo(0.46, 0); trim.quadraticCurveTo(0.46, -0.46, 0, -0.68); trim.quadraticCurveTo(-0.46, -0.46, -0.46, 0); trim.closePath();
+    add(g, new THREE.ExtrudeGeometry(trim, { depth: 0.02, bevelEnabled: false }), mat('#c8283f'), [0, 0, 0.1]);
+    const book = (x, y) => { const b = new THREE.Group();
+      for (const sx of [-1, 1]) box(b, 0.26, 0.04, 0.34, '#fffaf0', [sx * 0.13, 0, 0], [0.2, 0, sx * 0.06], 0.012);
+      box(b, 0.03, 0.06, 0.34, '#3a2a1a', [0, -0.012, 0], [0.2, 0, 0], 0.01);
+      for (let i = 0; i < 3; i++) for (const sx of [-1, 1]) box(b, 0.17, 0.008, 0.02, '#b8b0a0', [sx * 0.13, 0.025, -0.08 + i * 0.08], [0.2, 0, 0], 0.003);
+      b.rotation.x = 1.25; b.position.set(x, y, 0.15); g.add(b); };
+    book(-0.24, 0.28); book(0.24, 0.28); book(0, -0.22);
+    g.position.set(1.65, 1.0, 0.4); g.rotation.y = -0.3; g.scale.setScalar(1.35); scene.add(g);
+    cyl(scene, 0.07, 0.07, 0.55, '#7a5030', [1.8, 0.28, -0.1], [0.1, 0, 0]);
+    van.userData.pose({ arms: { l: [0, 1.0, 0.3] } }); van.userData.reach('l', [0.95, 0.6, 0.5]);
+  } });
+
+</script></body></html>

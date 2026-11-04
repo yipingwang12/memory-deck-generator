@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const ped = cyl(sc, mat('#cfc6b6'), [0.9, 0.2, 0], 0.55, 0.62, 0.4); 
+  const cap = capsid(0.62, '#4ec0e8', '#ffd23c'); cap.position.set(0.9, 0.4, 0); sc.add(cap);
+  const hx = helix(0.8, 0.12, 2.5); hx.position.set(2.2, 0, 0.4); sc.add(hx);
+  strut(sc, mat('#ffd23c'), [1.75, 0.4, 0.4], [1.9, 0.5, 0.4], 0.02);
+  sign(sc, 'AI', [0.9, 2.3, 0], 0.9, 0.55, '#6a3fd8', '#ffffff');
+  strut(sc, mat('#b98cff', { transparent: true, opacity: 0.5 }), [0.9, 2.0, 0], [0.9, 1.5, 0], 0.05);
+  // chisel + mallet
+  const steel = mat('#cfd6dc', { metalness: 0.7, roughness: 0.3 });
+  const ch = new THREE.Group(); ch.position.set(0.1, 1.05, 0.55); sc.add(ch);
+  cyl(ch, mat('#8a5a30'), [-0.12, 0.0, 0], 0.045, 0.045, 0.3, [0, 0, Math.PI / 2 - 0.25]);
+  add(ch, new THREE.ConeGeometry(0.045, 0.2, 8), steel, [0.12, -0.03, 0], [0, 0, -Math.PI / 2 - 0.25]);
+  const ml = new THREE.Group(); ml.position.set(-0.25, 1.75, 0.5); ml.rotation.z = -0.5; sc.add(ml);
+  cyl(ml, mat('#8a5a30'), [0, -0.2, 0], 0.03, 0.03, 0.5); box(ml, mat('#6a4a2a'), [0, 0.08, 0], [0.34, 0.2, 0.2]);
+  for (const [x, y, z, c] of [[0.3, 0.2, 0.9], [0.1, 0.1, 0.9], [1.4, 0.1, 0.8]]) add(sc, new THREE.TetrahedronGeometry(0.07), mat('#ffd23c'), [x * 1, y + 0.05, z], [x, y, z]);
+  reachW(d, 'l', [0.12, 1.0, 0.7]); reachW(d, 'r', [-0.25, 1.75, 0.5]);
+}, { dpos: [-0.9, 0, 0.5], dry: 0.5, scl: 1.45, cam: [0.4, 1.3, 4.8], look: [0.5, 1.1, 0] });
+
+</script></body></html>

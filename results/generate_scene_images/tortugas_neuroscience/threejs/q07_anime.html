@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tortugas q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, makeScene, createTurtle, createShell, mat, add, blob, box, cyl, link, egg, capsule, textMat, rng } from './common.js';
+// q07 - The TURTLE quiets the voices of a split mind and a ringing in the ears: schizophrenia and tinnitus.
+makeScene(({ scene }) => {
+  box(scene, mat('#d9cfee'), [0, -0.05, 0], [16, 0.1, 10]);
+  box(scene, mat('#efe9fb'), [0, 2.6, -2.5], [16, 6, 0.1]);
+  // split head: two halves apart, different colours, in a profile-ish front view
+  const head = new THREE.Group(); head.position.set(-0.5, 1.5, -0.3); scene.add(head);
+  const L = mat('#5b8def', { roughness: 0.5 }), R = mat('#ff9a5c', { roughness: 0.5 });
+  const half = (m, s) => { const sp = new THREE.Mesh(new THREE.SphereGeometry(1, 40, 24, s > 0 ? 0 : Math.PI, Math.PI, 0, Math.PI), m); sp.rotation.y = -Math.PI / 2 * 0 ; sp.scale.set(1, 1.15, 1); sp.castShadow = sp.receiveShadow = true; return sp; };
+  const hl = half(L, 1), hr = half(R, -1); hl.rotation.y = Math.PI / 2; hr.rotation.y = Math.PI / 2; hl.position.x = -0.12; hr.position.x = 0.12; head.add(hl, hr);
+  // faces: simple closed eyes + ear
+  for (const s of [-1, 1]) { blob(head, mat('#2a1a3a'), [s * 0.38, 0.15, 0.92], [0.11, 0.03, 0.02]); }
+  blob(head, mat('#e5a07a'), [0, -0.1, 1.0], [0.07, 0.1, 0.06]);
+  blob(head, mat('#4a2a3a'), [0, -0.45, 0.93], [0.16, 0.035, 0.03]);
+  // ear (right side) with ringing bell
+  blob(head, mat('#f1b48e'), [1.05, 0, 0], [0.12, 0.3, 0.2]);
+  const bell = new THREE.Group(); bell.position.set(1.65, 0.55, 0.2); head.add(bell);
+  blob(bell, mat('#ffcc2a', { metalness: 0.5, roughness: 0.3 }), [0, 0, 0], [0.18, 0.2, 0.18]); box(bell, mat('#ffcc2a'), [0, -0.18, 0], [0.4, 0.05, 0.4]).scale.set(1, 1, 1); blob(bell, mat('#8a5a30'), [0, -0.24, 0], [0.05, 0.05, 0.05]);
+  for (let i = 1; i <= 3; i++) { const arc = new THREE.Mesh(new THREE.TorusGeometry(0.16 + i * 0.14, 0.014, 8, 24, Math.PI * 0.7), mat('#ff5a8a')); arc.position.set(0, 0.05, 0); arc.rotation.z = -Math.PI * 0.35; bell.add(arc); const arc2 = arc.clone(); arc2.rotation.z = Math.PI * 0.65; bell.add(arc2); }
+  // voices: bubbles above the split (dim + wavy)
+  for (const [x, y, s] of [[-1.4, 1.5, 0.22], [-1.2, 2.2, 0.28], [-0.3, 2.9, 0.2], [0.3, 2.6, 0.25]]) { const b = blob(head, mat('#fff', { roughness: 0.2 }), [x + 0.5, y - 1.5 + 0.2, 0.3], [s * 1.5, s, 0.05]); }
+  // crack line between halves
+  box(head, mat('#2a1a3a'), [0, 0, 0.0], [0.02, 2.0, 2.0]);
+  // turtle: finger to lips shushing
+  const t = createTurtle({ scale: 1.35 }); t.position.set(1.3, 0, 1.4); t.rotation.y = -0.3; scene.add(t);
+  t.userData.pose({ headTilt: 0.05, legs: { l: [0, 0.1], r: [0, -0.1] }, arms: { l: [0, 0.6, 0] } });
+  t.userData.reach('r', [-0.02, 0.76, 0.2]);
+  return [t];
+}, { ground: null, cam: { pos: [0.2, 1.6, 5.3], look: [0.3, 1.2, 0] } });
+</script></body></html>

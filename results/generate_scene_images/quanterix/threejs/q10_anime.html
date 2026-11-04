@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — The QUARTER LUCENT lamp tests blood for Alzheimer: LucentAD Complete.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#3b4a85', sky: { cover: 0.3, zenith: '#161f5a', horizon: '#7a86cf' }, el: 25 }), { scene } = ctx;
+const q = createQuarter({ scale: 1.9 }); q.position.set(-1.7, 0, 0.3); q.rotation.y = 0.25; scene.add(q);
+q.userData.pose({ arms: { r: [0, -0.7] } });
+// lamp
+const lamp = new THREE.Group(); lamp.position.set(1.7, 0, -0.2); lamp.scale.setScalar(1.15); scene.add(lamp);
+const mt = mat('#f2f2f6', { metalness: 0.3, roughness: 0.3 });
+cyl(lamp, mt, [0, 0.06, 0], 0.5, 0.12); cyl(lamp, mt, [0, 1.0, 0], 0.045, 1.9);
+cyl(lamp, mt, [-0.45, 2.15, 0], 0.045, 1.0, [0, 0, 1.1]);
+const hood = add(lamp, new THREE.ConeGeometry(0.5, 0.6, 32, 1, true), new THREE.MeshStandardMaterial({ color: '#ffd24a', side: THREE.DoubleSide, roughness: 0.4 }), [-0.95, 2.3, 0], [0, 0, 0.95]);
+const bulb = blob(lamp, new THREE.MeshBasicMaterial({ color: '#fffbd0' }), [-1.1, 2.15, 0], [0.2, 0.2, 0.2]);
+const pl = new THREE.PointLight('#ffe9a0', 14, 8); pl.position.set(-1.1, 2.1, 0.2); lamp.add(pl);
+// light beam to tube
+const Bp = new THREE.Vector3(0.6, 2.15, -0.2), Tp = new THREE.Vector3(-0.8, 1.1, 1.0), dir = Tp.clone().sub(Bp), L = dir.length();
+const bg = new THREE.ConeGeometry(0.7, L, 32, 1, true); bg.translate(0, -L / 2, 0);
+const beam = add(scene, bg, new THREE.MeshBasicMaterial({ color: '#fff2a8', transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide }), Bp.toArray());
+beam.quaternion.setFromUnitVectors(new THREE.Vector3(0, -1, 0), dir.normalize()); beam.castShadow = false;
+// blood tube held by the quarter
+const tube = new THREE.Group(); tube.position.set(-0.8, 1.15, 1.0); tube.scale.setScalar(1.25); scene.add(tube);
+cyl(tube, mat('#d8f0ff', { roughness: 0.15 }), [0, 0, 0], 0.17, 1.0);
+cyl(tube, mat('#d3102e', { emissive: '#500010', emissiveIntensity: 0.5 }), [0, -0.1, 0.0], 0.16, 0.75);
+cyl(tube, mat('#2457d6'), [0, 0.55, 0], 0.19, 0.15);
+reachTo(q, 'l', [-0.8, 0.85, 1.0]);
+// brain
+const br = buildBrain({ scale: 1.9 }); br.position.set(3.1, 0.95, 0.7); scene.add(br); const ck = new THREE.MeshBasicMaterial({ color: '#2ecc71' }); box(scene, ck, [2.85, 2.1, 0.7], [0.14, 0.5, 0.05], [0, 0, 0.8]); box(scene, ck, [3.15, 2.2, 0.7], [0.14, 0.9, 0.05], [0, 0, -0.7]); cyl(scene, mat('#e8e8f2'), [3.2, 0.32, 0.7], 0.35, 0.6);
+finishScene(ctx, q, { cam: [0.3, 1.5, 6.4], look: [0.4, 1.35, 0] });
+
+});
+</script></body></html>

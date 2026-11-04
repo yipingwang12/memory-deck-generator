@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BioComputing q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textTex, setup, finish, flag, brain, penguin, heart, createCalculator } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+// q01 — KISSING ZOO penguins + POMEGRANATE plant flags on the CALCULATOR.
+const { stage, scene, num, cam } = setup(new URLSearchParams(location.search));
+const calc = createCalculator({ scale: 1.55 }); calc.position.set(-0.1, 0, 0); calc.rotation.y = 0.2; scene.add(calc);
+calc.userData.pose({ arms: { l: [0, 0.9, 0.6], r: [0, 0.9, 0.6] } });
+const f1 = flag('#d62a3a', 0.8); f1.position.set(-0.12, 1.55, 0); scene.add(f1); f1.position.set(-0.3, 1.52, 0);
+const f2 = flag('#2fa34a', 0.8); f2.position.set(0.0, 1.55, 0); scene.add(f2); f2.position.set(0.12, 1.52, 0); f2.rotation.y = Math.PI;
+// pomegranate
+const pg = new THREE.Group(); pg.position.set(1.5, 0.5, 0.3); scene.add(pg);
+blob(pg, mat('#c4162f', { roughness: 0.35 }), [0, 0, 0], [0.5, 0.46, 0.5]);
+for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; add(pg, new THREE.ConeGeometry(0.06, 0.16, 8), mat('#a01226'), [Math.cos(a) * 0.1, 0.44, Math.sin(a) * 0.1], [0, 0, 0], [1, 1, 1]); }
+add(pg, new THREE.TorusGeometry(0.1, 0.03, 8, 20), mat('#a01226'), [0, 0.43, 0], [Math.PI / 2, 0, 0]);
+// halved pomegranate with seeds
+const half = new THREE.Group(); half.position.set(2.1, 0.3, 0.7); half.rotation.y = -0.4; scene.add(half);
+add(half, new THREE.CircleGeometry(0.3, 32), mat('#ffe4d6'), [0, 0, 0.1]); blob(half, mat('#c4162f'), [0, 0, 0], [0.3, 0.3, 0.12]);
+add(half, new THREE.CircleGeometry(0.26, 32), mat('#ffd2c0'), [0, 0, 0.125]);
+for (let i = 0; i < 26; i++) { const a = i * 2.4, r = 0.03 + 0.2 * Math.sqrt(i / 26); blob(half, mat('#e0203c', { roughness: 0.25 }), [Math.cos(a) * r, Math.sin(a) * r, 0.14], [0.035, 0.035, 0.03]); }
+const fl = flag('#c4162f', 0.5); fl.position.set(1.5, 0.93, 0.3); scene.add(fl);
+// kissing penguins (zoo) + fence
+const p1 = penguin(1), p2 = penguin(-1); p1.scale.setScalar(1.5); p2.scale.setScalar(1.5);
+p1.position.set(-1.9, 0, 0.5); p2.position.set(-1.32, 0, 0.5); scene.add(p1, p2);
+const h = heart('#ff4f7a', 0.13); h.position.set(-1.61, 0.95, 0.5); scene.add(h);
+for (let i = 0; i < 7; i++) box(scene, mat('#8a5a34'), [-3.2 + i * 0.42, 0.35, -0.9], [0.1, 0.7, 0.06]);
+box(scene, mat('#8a5a34'), [-1.9, 0.5, -0.9], [2.9, 0.08, 0.05]);
+const fz = flag('#e8a02a', 0.5); fz.position.set(-1.61, 0, -0.3); scene.add(fz);
+cam(-0.2, 1.3, 5.2, -0.2, 1.1); finish(stage, [calc]);
+});
+</script></body></html>

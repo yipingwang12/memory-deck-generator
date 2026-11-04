@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — The BOGIE ball rolls into the VORTEX from MERCK.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: 1.0, vs: 1.35, vry: -0.35, ground: '#6fb84a' });
+const sign = C.textBoard('MERCK', 1.7, 0.7, { bg: '#0f8a8a', fg: '#ffffff', font: 'bold 190px Arial' }); sign.position.set(-1.9, 1.5, 0); scene.add(sign);
+add(scene, new THREE.CylinderGeometry(0.05, 0.05, 1.2, 10), mat('#444'), [-1.9, 0.6, -0.1]);
+const ramp = add(scene, new THREE.BoxGeometry(2.6, 0.08, 0.7), mat('#d8b878'), [-0.65, 0.5, 0.6], [0, 0, -0.17]); 
+const ball = C.golfBall(0.38); ball.position.set(-0.5, 0.6, 0.6); scene.add(ball);
+for (let i = 1; i < 4; i++) add(scene, new THREE.BoxGeometry(0.4 + i * 0.1, 0.03, 0.04), mat('#fff'), [-1.2 - i * 0.28, 0.82 - i * 0.08, 0.6]);
+add(scene, new THREE.BoxGeometry(0.1, 0.5, 0.1), mat('#8a6a3a'), [0.55, 0.0, 0.6]);
+done({ cam: [0, 1.0, 4.6], look: [0, 0.9, 0] });
+});
+</script></body></html>

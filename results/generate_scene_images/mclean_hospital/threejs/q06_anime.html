@@ -1,0 +1,40 @@
+<!doctype html><html><head><title>McLean q06</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body>
+<script type="module">
+import { THREE, mat, add, blob, num, rng, makeStage, finishScene, guard, HEAD } from './stage_common.js';
+import { createBroom } from './broom.js';
+import * as P from './props.js';
+guard(() => {
+  const stage = makeStage(), scene = stage.scene;
+  const ground = (c, y = 0) => add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, y, 0], [-Math.PI / 2, 0, 0]);
+
+  ground('#f4f8ff');
+  const m = P.buildMountain(4.2, 4.2, '#7f86a8', 6); m.position.set(0, 0, -3); m.scale.set(1.3,1,1); scene.add(m);
+  add(scene, new THREE.CylinderGeometry(1.5, 2.2, 0.5, 9), mat('#ffffff'), [0, 0.25, 0.6]);
+  const flag = P.seg(scene, [0, 0.5, 0.2], [0, 3.1, 0.2], 0.04, mat('#6a4425')); 
+  const c = document.createElement('canvas'); c.width = 512; c.height = 256; const x = c.getContext('2d'); x.fillStyle = '#d8402e'; x.fillRect(0,0,512,256); x.fillStyle = '#fff'; x.font = 'bold 190px sans-serif'; x.textAlign='center'; x.textBaseline='middle'; x.fillText('TIPS',256,138);
+  const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace;
+  const ban = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.75), new THREE.MeshBasicMaterial({ map: tx, side: THREE.DoubleSide })); ban.position.set(0.77, 2.7, 0.2); scene.add(ban);
+  const cols = ['#c98a4a', '#b8703a', '#d9a05a'];
+  const bs = [];
+  [[-1.9, 0.5, 0.4, 'a'], [1.9, 0.5, -0.4, 'b'], [-0.9, 1.2, 0.2, 'c'], [0.9, 1.2, -0.2, 'd']].forEach(([x, z, ry, k], i) => {
+    const b = createBroom({ scale: 1.45, wood: cols[i % 3] }); b.position.set(x, 0.5, z + 0.3); b.rotation.y = ry; scene.add(b); bs.push(b);
+    b.userData.pose({ headTilt: 0.1 * (i % 2 ? 1 : -1), arms: { l: [0, 0.9, 0.2], r: [0, -0.9, 0.2] } });
+  });
+  const scarf = (b) => { add(b, new THREE.TorusGeometry(0.14, 0.035, 8, 20), mat('#e8402e'), [0, 0.48 + 0.0, 0], [Math.PI / 2, 0, 0]).position.y = 0.5; };
+  bs.forEach(scarf);
+  // friend 2 with heart tattoo on its body
+  const tat = P.buildHeart(0.12); tat.position.set(0.0, 0.85, 0.141); bs[2].add(tat);
+  // dice (ten) and tattoo (eleven)
+  const dice = new THREE.Group(); dice.position.set(-3.1, 0.9, 1.6); dice.rotation.set(0.5, 0.6, 0.2); scene.add(dice);
+  add(dice, new THREE.BoxGeometry(0.9, 0.9, 0.9), mat('#fff8ee', { roughness: 0.35 }));
+  const pip = (p, r) => { for (const [a, bb] of p) add(dice, new THREE.CylinderGeometry(0.09, 0.09, 0.02, 16), mat('#d02a2a'), r(a, bb), []); };
+  for (const [a, bb] of [[-0.25,-0.25],[0.25,-0.25],[0,0],[-0.25,0.25],[0.25,0.25]]) { add(dice, new THREE.CylinderGeometry(0.09,0.09,0.02,16), mat('#d02a2a'), [a, 0.455, bb]); add(dice, new THREE.CylinderGeometry(0.09,0.09,0.02,16), mat('#222'), [a, bb, 0.455], [Math.PI/2,0,0]); add(dice, new THREE.CylinderGeometry(0.09,0.09,0.02,16), mat('#222'), [0.455, a, bb], [0,0,Math.PI/2]); }
+  const arm = new THREE.Group(); arm.position.set(3.2, 1.1, 1.5); arm.rotation.z = 0.3; scene.add(arm);
+  add(arm, new THREE.CylinderGeometry(0.28, 0.2, 1.8, 24), mat('#ffd9b8'), [0, 0, 0]); blob(arm, mat('#ffd9b8'), [0, 1.0, 0], [0.3, 0.3, 0.3]);
+  const ht = P.buildHeart(0.5); ht.position.set(0, 0.1, 0.285); arm.add(ht);
+  for (const [x, z, h] of [[-4.5, -0.5, 1.5], [4.4, -0.8, 1.8], [-3.6, -1.6, 1.1], [3.6, -1.9, 1.3]]) { const t = P.buildPine(h, '#2a6f48'); t.position.set(x, 0, z); scene.add(t); for (let i=0;i<3;i++) blob(t, mat('#fff'), [0.08*(i-1), (0.62 + i*0.3)*h, 0.05], [0.12*h, 0.04*h, 0.12*h]); }
+  const r = rng(5); for (let i = 0; i < 70; i++) blob(scene, new THREE.MeshBasicMaterial({ color: '#fff' }), [(r() - 0.5) * 12, 0.5 + r() * 4, 1 + r() * 4], [0.02, 0.02, 0.02]);
+  finishScene(stage, scene, bs, [0, 1.8, 6.8], [0, 1.5, 0]);
+
+});
+</script></body></html>

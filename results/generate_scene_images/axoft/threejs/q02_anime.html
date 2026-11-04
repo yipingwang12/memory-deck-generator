@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AXE handle is soft FLEURON flower.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({});
+const a = placeAxe(S, { pos: [-0.9, 0, 0.3], ry: 0.3, scale: 2.0, pose: { headTilt: 0.06, arms: { l: [0, 1.5, 0], r: [0, -0.5, 0.3] }, legs: { l: [0.15, 0], r: [-0.15, 0] } } });
+// petal collar around the handle: the handle IS the flower stem
+const pink = '#ff8fb8', col = new THREE.Group(); col.position.set(-0.9, 1.1, 0.14); S.scene.add(col);
+for (let i = 0; i < 9; i++) { const t = i / 9 * Math.PI * 2; blob(col, mat(pink, { roughness: 0.55 }), [Math.cos(t) * 0.4, Math.sin(t) * 0.4, 0], [0.3, 0.19, 0.06], [0, 0, t]); }
+blob(col, mat('#ffd54a'), [0, 0, 0.0], [0.07, 0.07, 0.02]);
+for (const s of [-1, 1]) blob(S.scene, mat('#3f9a4a'), [-0.9 + s * 0.2, 0.55, 0.3], [0.16, 0.05, 0.05], [0, 0, s * 0.6]);
+// big fleur flower beside
+const f = flower({ r: 0.7, stem: 1.2, n: 8 }); f.position.set(1.35, 0, 0.1); S.scene.add(f); f.userData.bloom.rotation.y = -0.25;
+const f2 = flower({ r: 0.38, stem: 0.6, petal: '#ffb0d0' }); f2.position.set(2.3, 0, 0.5); S.scene.add(f2);
+for (let i = 0; i < 40; i++) { const r = rng(i + 3); blob(S.scene, mat(['#ffd84a', '#ffffff', '#ff8fa8'][i % 3]), [(r() - 0.4) * 7, 0.04, r() * 3 - 1], [0.04, 0.04, 0.04]); }
+finish(S, [0.35, 1.2, 5.6], [0.35, 1.1, 0]);
+
+});
+</script></body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — A CRISP packet helps the VORTEX make Casgevy.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -0.7, vs: 1.35, vry: 0.4, ground: '#f0c878' });
+const bag = C.crispBag(); bag.scale.setScalar(1.5); bag.position.set(1.5, 0, 0.4); bag.rotation.y = -0.15; scene.add(bag);
+const v = C.vial(); v.scale.setScalar(2.2); v.position.set(0.2, 1.05, 0.9); v.rotation.z = 0.2; scene.add(v);
+reachWorld(vortex, 'l', [0.1, 1.4, 0.9]);
+for (let i = 0; i < 7; i++) { const c = C.chip(); c.scale.setScalar(1.1); c.position.set(-0.2 + i * 0.12, 0.3 + (i % 3) * 0.3 + i * 0.05, 1.3 - i * 0.05); c.rotation.set(i, i * 0.7, i * 0.3); scene.add(c); }
+done({ cam: [0, 1.0, 4.4], look: [0, 0.95, 0] });
+});
+</script></body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q17 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q17 — The SQUID cooks cell therapies in a DEVIL's kitchen (Devens).
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#8a5a44', fov: 38, wall: '#c4553a', clouds: false }), S = C.scene;
+for (let i = 0; i < 12; i++) for (let j = 0; j < 5; j++) box(S, mat((i + j) % 2 ? '#7a2f26' : '#b04a38'), [0.8, 0.5, 0.02], [-4.4 + i * 0.8 + (j % 2) * 0.4, 0.3 + j * 0.5, -2.15]);
+box(S, mat('#8a929c'), [5.0, 0.7, 1.0], [0, 0.35, -1.2]);
+put(S, pot(), 0.2, 0.0, 0.4, 0, 1.9);
+for (const [x, z] of [[-0.2, 0.2], [0.2, 0.5], [0.55, 0.3]]) { const c = cone => c; add(S, new THREE.ConeGeometry(0.12, 0.35, 8), mat('#ff8a1c', { emissive: '#ff6a00', emissiveIntensity: 0.8 }), [x, 0.2, z + 0.25]); }
+for (const [x, y, c] of [[-0.1, 1.5, '#7be0a0'], [0.3, 1.8, '#ffd23c'], [0.6, 1.5, '#7cc8ff'], [0.15, 1.25, '#ff9ac0']]) { blob(S, mat(c, { emissive: c, emissiveIntensity: 0.35 }), [x, y, 0.4], [0.17, 0.17, 0.17]); blob(S, mat('#ffffff', { transparent: true, opacity: 0.7 }), [x, y, 0.55], [0.07, 0.07, 0.07]); }
+const q = addSquid(C, { x: -1.55, z: 0.6, s: 1.5, ry: 0.5 }); 
+const hat = grp(q, [0, 1.05, 0]); cyl(hat, mat('#ffffff'), 0.2, 0.18, 0.3, [0, 0.2, 0]); blob(hat, mat('#ffffff'), [0, 0.38, 0], [0.26, 0.15, 0.26]); toon(C, hat);
+reachW(q, 'l', [-0.35, 1.15, 0.7]);
+const dv = put(S, devil(), 1.95, 0, 0.5, -0.3, 1.9); toon(C, dv);
+const tr = grp(dv.userData.armL, [0, -0.3, 0.03]); cyl(tr, mat('#444', { metalness: 0.6 }), 0.012, 0.012, 1.0, [0, 0.3, 0]); add(tr, new THREE.ConeGeometry(0.04, 0.12, 4), mat('#ccc', { metalness: 0.8 }), [0, 0.85, 0]); dv.userData.armL.rotation.z = 0.05;
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.05, 0] });
+
+});
+</script></body></html>

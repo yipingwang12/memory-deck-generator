@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// IRIS sits in LAVINE (lavender) family chair, cancer prevention
+const S = boot(); const sc = S.scene;
+const ch = new THREE.Group(); ch.position.set(1.0, 0, 0); sc.add(ch);
+const up = '#8a2a4a'; box(ch, up, [0, 0.4, 0], [1.0, 0.3, 0.8]); box(ch, up, [0, 1.0, -0.35], [1.0, 1.0, 0.18]); for (const x of [-0.55, 0.55]) box(ch, up, [x, 0.6, 0], [0.16, 0.5, 0.8]);
+for (const x of [-0.4, 0.4]) cyl(ch, '#5a3418', [x, 0.12, 0.3], 0.05, 0.24);
+const fl = flower('#7a4fd0', 0.7, 1.5); fl.position.set(0, 0.55, 0.05); ch.add(fl);
+for (let i = 0; i < 9; i++) { const x = -3.6 + (i % 3) * 0.35, z = -0.8 - Math.floor(i / 3) * 0.4; for (let k = 0; k < 5; k++) { cyl(sc, '#5a8a3a', [x + k * 0.05, 0.3, z], 0.01, 0.6); blob(sc, '#9a6ad8', [x + k * 0.05, 0.75 + (k % 2) * 0.05, z], [0.05, 0.22, 0.05]); } }
+// pink prevention ribbon
+const rb = new THREE.Group(); rb.position.set(-0.2, 1.7, -0.4); sc.add(rb);
+for (const s of [-1, 1]) add(rb, new THREE.TorusGeometry(0.2, 0.06, 10, 24), '#ff7aa8', [s * 0.17, 0.18, 0], [0, 0, s * 0.6 + Math.PI], [0.8, 1.2, 1]);
+for (const s of [-1, 1]) box(rb, '#ff7aa8', [s * 0.1, -0.12, 0], [0.12, 0.45, 0.06], [0, 0, s * 0.35]);
+const f = farmerAt(sc, { x: -1.2, z: 0.6, ry: 0.4, s: 1.9 }); reachTo(f, 'l', [0.2, 1.1, 0.8]);
+done(S, f, { pos: [0, 1.5, 5.6], look: [0, 1.1, 0] });
+});
+</script></body></html>

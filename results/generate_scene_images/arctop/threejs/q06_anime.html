@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arctop q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, mat, add, blob, num, placeTop, wrap, basic, textTex } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#6fae45', el: 12, az: 200 });
+  const tree = PR.buildFruitTree(5, 3.2); tree.position.set(-1.9, 0, -0.5); scene.add(tree);
+  // enlarge fruits so FIVE reads
+  tree.traverse((o) => { if (o.isMesh && o.geometry.type === 'SphereGeometry' && Math.abs(o.scale.x - 0.1) < 0.01) o.visible = false; });
+  for (let i = 0; i < 5; i++) { const a = -0.9 + i * 0.45; blob(tree, mat('#e8352f', { roughness: 0.35 }), [Math.sin(a) * 1.2, 2.4 + Math.cos(a * 3) * 0.2 - 0.1, 1.05 + Math.cos(a) * 0.3], [0.26, 0.26, 0.26]); }
+  const moon = new THREE.Mesh(new THREE.SphereGeometry(7, 40, 28), basic('#fff1c4')); moon.position.set(6, 9, -32); scene.add(moon);
+  for (const [dx, dy, r] of [[-1.8, 1.2, 1.1], [2, -1.5, 1.4], [1.2, 2.5, 0.8], [-2.5, -2, 0.9]]) { const cr = new THREE.Mesh(new THREE.CircleGeometry(r, 24), basic('#e8d49a')); cr.position.set(6 + dx, 9 + dy, -24.8); scene.add(cr); }
+    const top = placeTop(scene, { x: 1.3, s: 2.6, tilt: 0.14, arms: { l: [0, 2.3], r: [0, 2.3] } });
+  for (const [r, y] of [[0.5, 0.05], [0.8, 0.05], [1.1, 0.05]]) add(scene, new THREE.TorusGeometry(r, 0.025, 6, 48), basic('#ffffff', { transparent: true, opacity: 0.8 }), [1.3, y, 0], [Math.PI / 2, 0, 0]);
+  wrap(stage, scene, [top], { cam: [0, 2.3, 7], look: [0, 2.3, 0] });
+});
+</script></body></html>

@@ -1,0 +1,33 @@
+// q02: a SAKE bottle (Sakellariou) and a PAW (Pahuja) plant flags on the PIRANHA.
+boot({ clouds: [[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9]] }, ({ stage, scene, num, mark }) => {
+  ground(scene);
+  const p = createPiranha({ scale: 1.4 }); p.position.set(0, 0, 0); p.rotation.y = 0; scene.add(p);
+  p.userData.pose({ jaw: .1, arms: { l: [0, .5, 0], r: [0, .5, 0] } }); mark(p);
+  const fa = flag(scene, '#e63946', [-.35, 1.12, 0], .12); fa.scale.setScalar(1.3);
+  const fb = flag(scene, '#2a7de1', [.38, 1.1, 0], -.12); fb.scale.setScalar(1.3);
+  // sake tokkuri character
+  const sk = new THREE.Group(), W = mat('#f4f1ea', { roughness: .3 }), blue = mat('#2c4f9e', { roughness: .3 });
+  const prof = [[0, 0], [.17, 0], [.21, .1], [.2, .34], [.12, .5], [.07, .6], [.075, .72], [.1, .76], [.0, .76]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(sk, new THREE.LatheGeometry(prof, 32), W);
+  cyl(sk, blue, [0, .67, 0], .082, .05); blob(sk, mat('#c8d3dd'), [0, .78, 0], [.05, .03, .05]);
+  for (const s of [-1, 1]) {
+    blob(sk, mat('#fff', { roughness: .3 }), [s * .08, .34, .17], [.065, .08, .035]);
+    blob(sk, mat('#2b3a6a'), [s * .08, .335, .2], [.05, .065, .025]); blob(sk, mat('#10131f'), [s * .08, .335, .22], [.028, .04, .015]);
+    blob(sk, mat('#fff'), [s * .08 - .015, .36, .235], [.015, .017, .01]);
+    cyl(sk, mat('#3a3a46'), [s * .08, -.03, .02], .035, .12);
+  }
+  const lab = new THREE.Mesh(new THREE.CircleGeometry(.07, 24), new THREE.MeshBasicMaterial({ color: '#d6283c' })); lab.position.set(0, .15, .2); lab.rotation.x = -.05; sk.add(lab);
+  add(sk, new THREE.TorusGeometry(.04, .01, 8, 14, Math.PI), mat('#7a2a2a'), [0, .24, .2], [0, 0, Math.PI]);
+  sk.position.set(-1.05, .08, .55); sk.scale.setScalar(1.35); sk.rotation.y = .45; scene.add(sk); mark(sk);
+  const skHand = [-.35, 1.05, .12];
+  rod(scene, [-1.05 + .17, .55, .6], skHand, .035, mat('#f4f1ea')); blob(scene, W, skHand, [.055, .055, .055]); mark(scene.children.at(-1));
+  rod(scene, [-1.05 - .17, .55, .6], [-1.4, .72, .7], .035, mat('#f4f1ea'));
+  // paw
+  const paw = new THREE.Group(), fur = mat('#a86a3c', { roughness: 1 }), pad = mat('#4a2430');
+  blob(paw, fur, [0, 0, 0], [.34, .3, .26]);
+  [[-.24, .26], [-.08, .36], [.1, .36], [.26, .26]].forEach(([x, y]) => { blob(paw, fur, [x, y, 0], [.12, .14, .12]); blob(paw, pad, [x, y + .02, .1], [.065, .08, .03]); });
+  blob(paw, pad, [0, -.04, .22], [.17, .13, .04]); blob(paw, fur, [.34, .02, 0], [.1, .1, .1]);
+  paw.position.set(.5, 1.95, .35); paw.scale.setScalar(.8); paw.rotation.z = -.15; scene.add(paw); mark(paw);
+  const pr = rod(scene, [.9, 2.2, .1], [2.5, 3.3, -.2], .14, fur); pr.castShadow = false; mark(pr);
+  look(stage, num, [.1, 1.6, 4.7], [0, 1.45, 0]);
+});

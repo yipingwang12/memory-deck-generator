@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — The OWL licenses its CRISPR from a BERKELEY bear.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#c9b58a' }); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.1 }); owl.position.set(-0.95, 0, 0.5); owl.rotation.y = 0.5; scene.add(owl);
+  const br = bear({ shirt: '#1f4fa8' }); br.position.set(1.15, 0, 0); br.rotation.y = -0.5; br.scale.setScalar(1.15); scene.add(br);
+  // blue + gold B on bear shirt
+  const B = textPlane('B', 0.3, 0.3, { bg: null, fg: '#ffcf33', font: 'bold 230px Arial' }); B.position.set(0, 0.62, 0.43); br.add(B);
+  // license scroll passing between them
+  const paper = box(scene, '#fff8e6', 0.72, 0.52, 0.02, [0.1, 1.05, 1.0], [0, 0.1, -0.1]);
+  const seal = cyl(scene, '#d62839', 0.09, 0.09, 0.03, [0.1, 0.9, 1.03], [Math.PI / 2, 0, 0]);
+  for (const y of [0.17, 0.07, -0.03]) box(scene, '#6b5a3c', 0.52, 0.025, 0.005, [0.1, 1.05 + y, 1.015], [0, 0.1, -0.1]);
+  // CRISPR scissors on the ground
+  const sc = new THREE.Group(); sc.position.set(0.1, 0.05, 1.5); sc.rotation.set(-Math.PI / 2 + 0.2, 0, 0.5); sc.scale.setScalar(1.5); scene.add(sc);
+  for (const s of [-1, 1]) { box(sc, '#c9d2dc', 0.07, 0.6, 0.02, [s * 0.05, 0.25, 0], [0, 0, -s * 0.12]); add(sc, new THREE.TorusGeometry(0.1, 0.03, 10, 24), mat('#e63946'), [s * 0.12, -0.12, 0]); }
+  owl.userData.reach('l', [0.55, 0.78, 0.55]); br.userData ||= {};
+  finish(ctx, [owl, br], [0, 1.0, 4.2], [0.05, 0.75, 0]);
+
+});
+</script></body></html>

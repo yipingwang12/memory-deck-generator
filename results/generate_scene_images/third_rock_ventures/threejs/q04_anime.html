@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Third Rock q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 - "The PEBBLE helps TRACE the path of ALS: Trace Neuroscience."  (pebble traces a motor neuron on tracing paper)
+import { THREE, guard, rng, createPebble, num, mat, add, blob, box, stage, holdAt, finish, CLOUDS } from './common.js';
+
+const W = 9, H = 4.6, PX = 2048;
+const axonZ = (x) => 0.35 * Math.sin(x * 1.1);
+const cv = (x, z) => [(x + W / 2) / W * PX, (z + H / 2) / H * (PX * H / W)];
+
+function paper(tipX) {
+  const c = document.createElement('canvas'); c.width = PX; c.height = Math.round(PX * H / W); const x = c.getContext('2d');
+  x.fillStyle = '#fbf3df'; x.fillRect(0, 0, c.width, c.height);
+  x.strokeStyle = 'rgba(120,150,200,0.25)'; x.lineWidth = 2; for (let i = 0; i < c.width; i += 64) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, c.height); x.stroke(); } for (let j = 0; j < c.height; j += 64) { x.beginPath(); x.moveTo(0, j); x.lineTo(c.width, j); x.stroke(); }
+  x.lineCap = 'round'; x.lineJoin = 'round';
+  const path = (pts, w, col) => { x.strokeStyle = col; x.lineWidth = w; x.beginPath(); pts.forEach(([a, b], i) => { const [u, v] = cv(a, b); i ? x.lineTo(u, v) : x.moveTo(u, v); }); x.stroke(); };
+  const axon = []; for (let a = -3.1; a <= 3.3; a += 0.05) axon.push([a, axonZ(a)]);
+  const dends = [[[-3.2, 0], [-3.7, -0.5], [-4.1, -0.9]], [[-3.7, -0.5], [-3.7, -1.3]], [[-3.3, 0.1], [-3.8, 0.5], [-4.2, 0.6]], [[-3.8, 0.5], [-3.9, 1.3]], [[-3.2, 0.2], [-3.3, 1.0], [-3.1, 1.7]], [[-3.3, -0.1], [-3.2, -0.9], [-2.9, -1.6]]];
+  const term = [[[3.3, axonZ(3.3)], [3.8, -0.5]], [[3.3, axonZ(3.3)], [3.9, 0.1]], [[3.3, axonZ(3.3)], [3.8, 0.8]]];
+  for (const d of [...dends, ...term]) path(d, 22, '#c9d0f0');
+  path(axon, 44, '#c9d0f0');
+  for (let a = -2.6; a < 2.9; a += 0.62) path([[a, axonZ(a)], [a + 0.42, axonZ(a + 0.42)]], 34, '#e8ecff');   // myelin beads
+  x.fillStyle = '#c9d0f0'; x.beginPath(); const [su, sv] = cv(-3.2, 0); x.arc(su, sv, 82, 0, 7); x.fill();
+  x.fillStyle = '#9aa4dd'; x.beginPath(); x.arc(su, sv, 34, 0, 7); x.fill();
+  for (const [a, b] of term) { x.fillStyle = '#c9d0f0'; x.beginPath(); const [u, v] = cv(b[0], b[1]); x.arc(u, v, 24, 0, 7); x.fill(); }
+  // traced path: bright line from soma to the pen tip
+  const tr = axon.filter(([a]) => a <= tipX); path(tr, 14, '#ff2d6f');
+  const [tu, tv] = cv(tipX, axonZ(tipX)); x.fillStyle = '#ff9bb8'; x.beginPath(); x.arc(tu, tv, 24, 0, 7); x.fill();
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+
+guard(() => {
+  const st = stage({ sunElevation: 42, sunAzimuth: 170, sky: { cover: 0.6, puffCover: 0.6, towerTop: 0.3 } });
+  const scene = st.scene;
+  add(scene, new THREE.PlaneGeometry(200, 200), mat('#9a6b44'), [0, -0.02, 0], [-Math.PI / 2, 0, 0]);
+  const tipX = num('tip', 1.4);
+  add(scene, new THREE.BoxGeometry(W + 0.2, 0.05, H + 0.2), mat('#ede3cc'), [0, 0.0, 0]);
+  add(scene, new THREE.PlaneGeometry(W, H), new THREE.MeshStandardMaterial({ map: paper(tipX), roughness: 0.9 }), [0, 0.03, 0], [-Math.PI / 2, 0, 0]);
+  const px = tipX - 0.55;
+  const pebble = createPebble({ scale: 1.9 }); pebble.position.set(px - 0.1, 0.03, axonZ(px) - 0.55); pebble.rotation.y = 0.45; scene.add(pebble);
+  pebble.userData.pose({ lean: 0.18, headTilt: 0.06, arms: { r: [0, 0.8, 0] } });
+  const tip = new THREE.Vector3(tipX, 0.04, axonZ(tipX));
+  const dir = new THREE.Vector3(-0.3, 1, -0.2).normalize();
+  const grip = tip.clone().addScaledVector(dir, 0.42);
+  holdAt(pebble, 'l', grip);
+  const pen = new THREE.Group(); pen.position.copy(tip); pen.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir); scene.add(pen);
+  add(pen, new THREE.CylinderGeometry(0.05, 0.05, 0.75, 6), mat('#e83d6a', { roughness: 0.35 }), [0, 0.52, 0]);
+  add(pen, new THREE.CylinderGeometry(0.052, 0.052, 0.07, 6), mat('#d9dde2', { metalness: 0.7 }), [0, 0.18, 0]);
+  add(pen, new THREE.ConeGeometry(0.05, 0.14, 10), mat('#ff2d6f'), [0, 0.07, 0], [Math.PI, 0, 0]);
+  add(pen, new THREE.CylinderGeometry(0.052, 0.052, 0.04, 6), mat('#ffffff'), [0, 0.91, 0]);
+  finish(st, [pebble], [num('cx', 0.6), num('cy', 2.6), num('cz', 4.4)], [num('tx', 0.2), 0.5, num('tz', -0.1)]);
+});
+</script></body></html>

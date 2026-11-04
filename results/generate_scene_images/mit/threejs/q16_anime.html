@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q16</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q16 — "A CHAKRA wheel (Chakraborty) is the first director of the MITTEN's IMES."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const w = P.wheel({ r: 1.25 }); w.position.set(1.3, 0, -0.6); scene.add(w);
+  const m = placeMitten(scene, { x: -1.2, z: 0.9, ry: 0.4, s: 2.1, pose: { arms: { r: [0, 0.6, 0] } }, reach: { l: [0.2, 1.2, 0.5] } });
+  const cr = P.crown(); cr.position.set(0, 1.0, 0); cr.scale.setScalar(1.2); m.add(cr);
+  return { chars: [m], cam: { pos: [0.2, 1.8, 6.4], look: [0.2, 1.5, 0] } };
+});
+</script></body></html>

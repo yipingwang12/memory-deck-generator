@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PureTech q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createPuritan, addFace } from './puritan.js';
+import * as K from './props.js';
+const { mat, add, blob, num, makeStage, finishScene, reachWorld } = K;
+guard(() => {
+  const stage = makeStage({ ground: '#b79a6a' });
+  const S = stage.scene;
+  add(S, new THREE.PlaneGeometry(400, 400), mat('#3a86b8', { roughness: 0.3 }), [-210, 0.012, 0], [-Math.PI / 2, 0, 0]);   // water x<-10? shift below
+  S.children[S.children.length - 1].position.set(-203.5, 0.012, 0);
+  add(S, new THREE.PlaneGeometry(400, 400), mat('#8d7a58'), [0, 0.0, 0], [-Math.PI / 2, 0, 0]);
+  const wood = mat('#9a6a38');
+  add(S, new THREE.BoxGeometry(3.4, 0.14, 4.2), wood, [0.3, 0.3, 0.4]);
+  for (const [x, z] of [[-1.3, -1.5], [-1.3, 2.2], [1.9, -1.5], [1.9, 2.2]]) add(S, new THREE.CylinderGeometry(0.1, 0.12, 0.7, 10), mat('#6a4a2a'), [x, 0.3, z]);
+  const boat = new THREE.Group(); boat.position.set(-3.3, 0.18, 1.0); S.add(boat);
+  add(boat, new THREE.SphereGeometry(1, 32, 16, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), mat('#8a3a2a', { side: THREE.DoubleSide }), [0, 0.6, 0], [0, 0, 0], [0.7, 0.55, 1.5]);
+  add(boat, new THREE.TorusGeometry(1, 0.03, 8, 40), mat('#e8dcc0'), [0, 0.6, 0], [Math.PI / 2, 0, 0], [0.7, 1.5, 1]);
+  add(boat, new THREE.BoxGeometry(1.0, 0.05, 0.2), wood, [0, 0.4, 0.2]);
+  add(boat, new THREE.CylinderGeometry(0.02, 0.02, 1.8, 8), wood, [0.0, 0.7, -0.5], [0, 0, 1.2]);
+  const pur = createPuritan({ scale: num('ps', 2.3) }); pur.position.set(-0.7, 0.37, 0.7); pur.rotation.y = 0.6; S.add(pur);
+  pur.userData.pose({ headTilt: -0.05, arms: { l: [0.3, 0.45, 0.2], r: [-0.3, 0.45, 0.2] } });
+  const chest = K.teaChest(2.0); chest.position.set(1.15, 0.37, 0.2); chest.rotation.y = -0.35; S.add(chest);
+  const cup = K.teacup(2.6); cup.position.set(1.15, 0.37 + 1.32, 0.2); S.add(cup);
+  // brick warehouses
+  const r = rng(3);
+  for (let i = 0; i < 6; i++) { const h = 3 + r() * 2.2, w = 2.4; const b = add(S, new THREE.BoxGeometry(w, h, 2), mat(['#b5573d', '#a14a36', '#c26a4a'][i % 3]), [-3 + i * 2.5, h / 2, -5]);
+    for (let a = 0; a < 3; a++) for (let c = 0; c < Math.floor(h / 0.9); c++) add(S, new THREE.BoxGeometry(0.35, 0.5, 0.03), mat('#e8d9a8'), [-3 + i * 2.5 - 0.7 + a * 0.7, 0.8 + c * 0.9, -3.98]); }
+  finishScene(stage, [pur], [num('cx', 0.0), num('cy', 1.9), num('cz', 7.2)], [-0.2, 1.4, 0]);
+});
+</script></body></html>

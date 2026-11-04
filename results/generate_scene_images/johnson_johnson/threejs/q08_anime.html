@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q08 — The JACKS sell the nippy antibody under a new name: IMAAVY.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#c8e6a0' }); const sc = stage.scene;
+  // big name sign
+  const sg = new THREE.Group(); sg.position.set(1.1, 0, -0.2); sc.add(sg);
+  box(sg, mat('#f3f3f0'), [0, 1.8, 0], [3.4, 1.3, 0.12]); box(sg, mat('#c01f2f'), [0, 2.35, 0.07], [3.4, 0.35, 0.03]);
+  const nm = textPlane('IMAAVY', 3.0, 0.9, { bg: '#f3f3f0', fg: '#1a3f8f', px: 280 }); nm.position.set(0, 1.62, 0.075); sg.add(nm);
+  const hl = textPlane('NEW NAME', 2.4, 0.28, { bg: '#c01f2f', fg: '#fff', px: 150 }); hl.position.set(0, 2.35, 0.09); sg.add(hl);
+  for (const x of [-1.4, 1.4]) cyl(sg, mat('#6b4a37'), [x, 0.55, 0], 0.07, 1.1);
+  // antibody product vial
+  const tc = mat('#34c3a0'); const ab = new THREE.Group(); ab.position.set(0.6, 0.0, 1.3); sc.add(ab);
+  cyl(ab, mat('#cfeaff', { transparent: true, opacity: 0.85, roughness: 0.1 }), [0, 0.5, 0], 0.3, 1.0); cyl(ab, mat('#c01f2f'), [0, 1.08, 0], 0.32, 0.16); cyl(ab, tc, [0, 0.35, 0], 0.26, 0.6);
+  for (let i = 0; i < 4; i++) blob(ab, mat('#fff'), [0, 0.2 + i * 0.01, 0.3], [0.001, 0.001, 0.001]);
+  const J = placeJack(stage, { x: -1.9, z: 0.8, s: 1.5, ry: 0.3, pose: { arms: { r: [0, -0.3] } } }); J.userData.aim('l', new THREE.Vector3(-0.4, 2.6, 0.3)); J.userData.mouth(0.6);
+  finishScene(stage, J, { cam: [0, 1.7, 5.8], look: [0.1, 1.45, 0] });
+
+});
+</script></body></html>

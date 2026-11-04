@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — CTX340 lowers the CRISP's refractory high blood pressure.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, finish }) => {
+  const s = 2.3, x0 = -2.3, a = 0.5;
+  const c = crisp({ s, x: x0, z: 0, ry: 0.3 });
+  const cuff = new THREE.Group(); cuff.position.set(x0 + 0.37 * s * 1.0 + Math.sin(a) * 0.12 * s, 0.66 * s - Math.cos(a) * 0.12 * s, 0); cuff.rotation.z = a; scene.add(cuff);
+  cyl(cuff, mat('#2a6dd8'), [0, 0, 0], 0.19, 0.42); cyl(cuff, mat('#9cc0ff'), [0, 0, 0], 0.2, 0.08);
+  // gauge
+  const cv = document.createElement('canvas'); cv.width = cv.height = 512; const g = cv.getContext('2d');
+  g.fillStyle = '#fff'; g.fillRect(0, 0, 512, 512);
+  [['#3cc05a', 0.75, 1.15], ['#ffd02a', 1.15, 1.55], ['#e02a3a', 1.55, 2.25]].forEach(([col, a0, a1]) => { g.strokeStyle = col; g.lineWidth = 60; g.beginPath(); g.arc(256, 256, 170, Math.PI * (a0 + 0.5), Math.PI * (a1 + 0.5)); g.stroke(); });
+  g.strokeStyle = '#222'; g.lineWidth = 6; for (let i = 0; i <= 20; i++) { const an = Math.PI * (0.75 + 0.5 + i * 0.075); g.beginPath(); g.moveTo(256 + Math.cos(an) * 215, 256 + Math.sin(an) * 215); g.lineTo(256 + Math.cos(an) * 240, 256 + Math.sin(an) * 240); g.stroke(); }
+  const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+  const gauge = new THREE.Group(); gauge.position.set(1.4, 2.5, 0); scene.add(gauge);
+  cyl(gauge, mat('#c8ccd4', { metalness: 0.5 }), [0, 0, -0.06], 1.2, 0.14, [Math.PI / 2, 0, 0]);
+  const face = new THREE.Mesh(new THREE.CircleGeometry(1.08, 48), new THREE.MeshStandardMaterial({ map: tx })); face.position.z = 0.02; gauge.add(face);
+  const needle = new THREE.Group(); needle.position.z = 0.05; needle.rotation.z = 2.35; gauge.add(needle); box(needle, mat('#222'), [0, 0.45, 0], [0.07, 0.95, 0.03]); blob(needle, mat('#222'), [0, 0, 0], [0.1, 0.1, 0.05]);
+  add(scene, new THREE.ConeGeometry(0.4, 0.9, 20), mat('#2fbf5a'), [4.0, 2.2, 0], [Math.PI, 0, 0]); cyl(scene, mat('#2fbf5a'), [4.0, 3.0, 0], 0.15, 0.8);
+  // hose + bulb
+  const hose = (pts) => add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 40, 0.045, 8), mat('#222'));
+  hose([[x0 + 0.9, 1.5, 0.1], [-0.5, 1.0, 0.8], [0.6, 1.2, 0.5], [1.4, 1.3, 0.0]]);
+  blob(scene, mat('#e02a3a'), [0.8, 0.45, 0.8], [0.3, 0.38, 0.3]); hose([[0.8, 0.8, 0.8], [1.3, 1.0, 0.4], [1.4, 1.3, 0.0]]);
+  const tag = textPlane('CTX340', 1.3, 0.42, { bg: '#fff', fg: '#c01e2e' }); tag.position.set(x0, 0.5, 1.4); tag.rotation.x = -0.25; scene.add(tag);
+  finish([0.5, 2.2, 7.4], [0.5, 1.9, 0]);
+});
+
+</script></body></html>

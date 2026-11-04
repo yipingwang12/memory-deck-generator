@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, mat, add, blob, box, cyl, num, textPlane, makeStage, placeAnchor, wrap } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage({ ground: '#e8c48a' });
+  const S = stage.scene;
+  // translucent cortex slab (pink) under the anchor, wavy top
+  const inside = mat('#b85a6c');
+  box(S, inside, [0.3, 0.5, 0.0], [8, 1.0, 0.1]); box(S, mat('#a84c60'), [0.3, 0.01, 0.95], [8, 0.04, 1.9]); box(S, inside, [-3.7, 0.5, 0.3], [0.1, 1.0, 3.2]); box(S, inside, [4.3, 0.5, 0.3], [0.1, 1.0, 3.2]);
+  box(S, mat('#e8c6a0'), [0.3, 0.62, 0.07], [8, 0.12, 0.05]); box(S, mat('#d9a0a8'), [0.3, 0.3, 0.07], [8, 0.3, 0.05]);
+  box(S, mat('#e8828e'), [0.3, 0.96, 0.3], [8, 0.08, 3.2]);
+  add(S, new THREE.PlaneGeometry(8, 3.2), mat('#ee8f9a'), [0.3, 1.003, 0.3], [-Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 9; i++) blob(S, mat('#e8828e'), [-3.4 + i * 0.85, 1.02, -0.5 + (i % 2) * 0.9], [0.4, 0.05, 0.2 + (i % 3) * 0.05]);
+  // the array: base plate + needle grid sunk into cortex + gold wire
+  const arr = new THREE.Group(); arr.position.set(1.4, 1.0, 1.0); arr.scale.setScalar(1.3); arr.rotation.y = -0.3; S.add(arr);
+  const N = 7;
+  box(arr, mat('#2b3340'), [0, 0.06, 0], [1.3, 0.12, 1.3]);
+  const needle = mat('#f2c230', { metalness: 0.6, roughness: 0.3 });
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    add(arr, new THREE.CylinderGeometry(0.026, 0.006, 0.8, 8), needle, [-0.55 + i * 0.183, -0.4, -0.55 + j * 0.183]);
+  }
+  const wire = new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(0.65, 0.1, 0), new THREE.Vector3(1.2, 0.8, 0.2), new THREE.Vector3(1.8, 0.3, 0.4), new THREE.Vector3(2.4, 0.02, 0.5)]), 30, 0.03, 8);
+  add(arr, wire, mat('#e6a020'));
+  const a = placeAnchor(stage, { x: -1.5, z: 0.2, ry: 0.35, scale: 1.7, pose: { arms: { l: [0, 0.5, 0], r: [0, 0.4, 0] }, legs: { l: [0.15, 0], r: [-0.15, 0] } }, spin: 0.3 });
+  a.position.y = 1.0;
+  wrap(stage, a, P, { cx: 0.4, cz: 6.0, cy: 1.7, tx: 0.4, ty: 1.4 });
+});
+</script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q09 - A CHAN ZUCKERBERG sugar mountain gives the CAMPER its start
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ camper: { pos: [-0.9, 0, 0.5], ry: 0.6 }, cam: [0.3, 1.5, 5.4], look: [0.4, 1.2, 0],
+  build: ({ scene, van }) => {
+    const sw = (c) => mat(c, { roughness: 0.9 });
+    add(scene, new THREE.ConeGeometry(2.6, 3.6, 9), sw('#f4f8ff'), [2.0, 1.8, -2.0], [0, 0.3, 0], [1, 1, 0.9]);
+    add(scene, new THREE.ConeGeometry(1.5, 2.6, 8), sw('#e3edfa'), [0.6, 1.3, -1.4], [0, 0.8, 0.1]);
+    add(scene, new THREE.ConeGeometry(1.2, 2.2, 8), sw('#ffffff'), [3.4, 1.1, -0.6], [0, 0.2, 0]);
+    const cubes = sugarCubes(1.4, 0.4, 70, 4); cubes.position.set(2.1, 0.0, 0.2); cubes.scale.setScalar(1.3); scene.add(cubes);
+    const c2 = sugarCubes(1.0, 1.4, 45, 7); c2.position.set(1.3, 0.8, -1.4); scene.add(c2);
+    const gb = new THREE.Group(); box(gb, 0.95, 0.8, 0.95, '#d8263a', [0, 0.4, 0], [0, 0, 0], 0.05); box(gb, 1.02, 0.2, 1.02, '#e8384c', [0, 0.85, 0], [0, 0, 0], 0.05);
+    box(gb, 0.16, 0.8, 1.0, '#ffd84a', [0, 0.4, 0], [0, 0, 0], 0.02); box(gb, 1.0, 0.8, 0.16, '#ffd84a', [0, 0.4, 0], [0, 0, 0], 0.02);
+    for (const s of [-1, 1]) add(gb, new THREE.TorusGeometry(0.2, 0.07, 10, 24), mat('#ffd84a'), [s * 0.2, 1.1, 0], [0, s * 0.5, 0], [1, 1.3, 1]);
+    blob(gb, mat('#ffd84a'), [0, 1.0, 0], [0.1, 0.1, 0.1]);
+    gb.position.set(0.9, 0, 1.2); gb.scale.setScalar(1.15); gb.rotation.y = 0.4; scene.add(gb);
+    van.userData.pose({ arms: { l: [0, 1.2, 0.3] } }); van.userData.reach('l', [0.95, 0.9, 0.7]);
+  } });
+
+</script></body></html>

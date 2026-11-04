@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q12 — The SURFER's ticker reads WVE.
+  beach(scene, { seaZ: 5 });
+  const tk = labelTex(1024, 400, (c, w, h) => {
+    c.fillStyle = '#071018'; c.fillRect(0, 0, w, h);
+    c.fillStyle = '#ffb21a'; c.font = 'bold 280px Arial Black, Helvetica, sans-serif'; c.textBaseline = 'middle'; c.fillText('WVE', 40, 215);
+    c.fillStyle = '#2fe060'; c.beginPath(); c.moveTo(830, 290); c.lineTo(930, 90); c.lineTo(1000, 290); c.closePath(); c.fill();
+    c.strokeStyle = '#2fe060'; c.lineWidth = 12; c.beginPath(); c.moveTo(560, 360); [[620, 335], [680, 350], [740, 300], [800, 320]].forEach(([x, y]) => c.lineTo(x, y)); c.stroke();
+  });
+  const T = new THREE.Group(); T.position.set(1.0, 0, -0.2); scene.add(T);
+  add(T, new THREE.BoxGeometry(4.3, 1.9, 0.2), mat('#2a3340'), [0.5, 2.0, 0]);
+  add(T, new THREE.PlaneGeometry(4.0, 1.56), new THREE.MeshBasicMaterial({ map: tk }), [0.5, 2.0, 0.105]);
+  for (const x of [-1.2, 2.2]) add(T, new THREE.CylinderGeometry(0.08, 0.08, 1.3, 10), mat('#4a3320'), [x, 0.65, -0.05]);
+  const strip = new THREE.Group(); strip.position.set(0.5, 0.95, 0.2); T.add(strip);
+  for (let i = 0; i < 12; i++) add(strip, new THREE.BoxGeometry(0.3, 0.16, 0.04), mat(['#e8283a', '#2fc43c', '#ffb21a', '#1f7be8'][i % 4], { emissive: ['#e8283a', '#2fc43c', '#ffb21a', '#1f7be8'][i % 4], emissiveIntensity: 0.3 }), [-1.7 + i * 0.31, 0, 0]);
+  const s = addSurfer(stage, P, { x: -1.35, z: 0.5, ry: 0.55, scale: 1.8 });
+  const b = s.userData.parts.board; b.position.set(-0.62, 0.65, -0.1); b.rotation.set(0, 0, 0.1);
+  s.userData.pose({ lean: 0.0, headTilt: 0.1, arms: { l: [0, 0.3, 0.1] } });
+  s.updateMatrixWorld(true); const w = s.worldToLocal(new THREE.Vector3(-0.6, 1.8, 0.5)); s.userData.reach('r', [w.x, w.y, w.z]);
+  finish(stage, P, s, [0.4, 1.8, 6.0], [0.4, 1.55, 0]);
+});
+</script></body></html>

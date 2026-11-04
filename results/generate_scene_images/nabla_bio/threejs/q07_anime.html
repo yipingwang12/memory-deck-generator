@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const hex = (c, x, y, r, dash) => { c.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 6 + i * Math.PI / 3; c[i ? 'lineTo' : 'moveTo'](x + r * Math.cos(a), y + r * Math.sin(a)); } c.closePath(); c.setLineDash(dash ? [12, 10] : []); c.stroke(); };
+  const ph = C.phone((c, w, h) => {
+    c.fillStyle = '#f7f9ff'; c.fillRect(0, 0, w, h); c.lineWidth = 9; c.lineCap = 'round';
+    c.strokeStyle = '#2a3f8f'; hex(c, 120, 220, 70); hex(c, 242, 290, 70);
+    c.strokeStyle = '#9aa6c8'; hex(c, 262, 150, 70, true); c.strokeStyle = '#9aa6c8'; c.beginPath(); c.moveTo(310, 210); c.lineTo(340, 260); c.setLineDash([12, 10]); c.stroke();
+    c.setLineDash([]); c.fillStyle = '#2a3f8f'; c.font = 'bold 40px Arial'; c.fillText('N', 330, 280); c.strokeStyle = '#2a3f8f'; c.lineWidth = 9; c.beginPath(); c.moveTo(310, 262); c.lineTo(325, 280); c.stroke();
+    for (let i = 0; i < 3; i++) { c.fillStyle = i === 1 ? '#ffe9b8' : '#e4e9f7'; c.beginPath(); c.roundRect(25 + i * 118, 500, 108, 100, 24); c.fill(); c.strokeStyle = '#2a3f8f'; c.lineWidth = 6; c.setLineDash([]); hex(c, 79 + i * 118, 550, 26); }
+    c.fillStyle = '#2a3f8f'; c.fillRect(25, 640, 330, 20);
+  });
+  ph.position.set(0.2, 2.1, 0.5); ph.scale.setScalar(2.1); ph.rotation.y = -0.12; S.scene.add(ph);
+  const jr = C.jar('JAM', {}); jr.position.set(3.8, 0, 0.5); jr.scale.setScalar(2.2); S.scene.add(jr);
+  const t = C.triangle(S, { scale: 2.9, pos: [-3.3, 0, 0.8], ry: 0.3, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [-1.5, 2.2, 0.8]);
+  C.done(S, [t], [0.3, 2.3, 9.4], [0.3, 2.2, 0]);
+});
+</script></body></html>

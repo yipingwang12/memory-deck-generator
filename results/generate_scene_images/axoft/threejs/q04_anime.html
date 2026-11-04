@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// FLEURON thread: 32x more sensors than MOON craters.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ sky: { cover: 1 } });
+const R = 1.8, M = new THREE.Vector3(1.7, 2.45, -4.5);
+const moon = new THREE.Group(); moon.position.copy(M); S.scene.add(moon);
+const mm = add(moon, new THREE.SphereGeometry(R, 40, 28), new THREE.MeshBasicMaterial({ color: '#f4efd8' }));
+const rr = rng(11);
+for (let i = 0; i < 18; i++) {
+  const d = new THREE.Vector3((rr() - 0.5) * 1.6, (rr() - 0.5) * 1.6, 0.55 + rr() * 0.5).normalize(), sz = 0.1 + rr() * 0.28;
+  const c = new THREE.Mesh(new THREE.CircleGeometry(sz, 24), new THREE.MeshBasicMaterial({ color: '#b9b29a' }));
+  c.position.copy(d.clone().multiplyScalar(R * 1.003)); c.lookAt(d.clone().multiplyScalar(R * 2)); moon.add(c);
+  const c2 = new THREE.Mesh(new THREE.CircleGeometry(sz * 0.7, 24), new THREE.MeshBasicMaterial({ color: '#d8d2bb' }));
+  c2.position.copy(d.clone().multiplyScalar(R * 1.004)); c2.lookAt(d.clone().multiplyScalar(R * 2)); moon.add(c2);
+}
+const a = placeAxe(S, { pos: [-1.9, 0, 0.4], ry: 0.35, scale: 1.95, pose: { arms: { r: [0, -1.0, 0.3] } }, reach: { l: [-1.2, 1.3, 0.9] } });
+const h = hand(a, 'l');
+const curve = new THREE.CatmullRomCurve3([h, new THREE.Vector3(-0.2, 1.7, 0.9), new THREE.Vector3(0.7, 1.25, 0.9), new THREE.Vector3(1.5, 1.85, 0.9), new THREE.Vector3(2.4, 1.4, 0.9)]);
+add(S.scene, new THREE.TubeGeometry(curve, 60, 0.05, 8), mat('#ff6fa4'));
+for (let i = 1; i <= 16; i++) { const p = curve.getPoint(i / 17); blob(S.scene, new THREE.MeshBasicMaterial({ color: '#ffe14a' }), [p.x, p.y, p.z + 0.05], [0.085, 0.085, 0.085]); }
+const sg = textPlane('32\u00d7', { w: 1.6, h: 0.8, bg: '#ffffff', fg: '#2a3f6a', frame: '#ffb02e' }); sg.position.set(0.8, 3.0, 0.9); S.scene.add(sg);
+finish(S, [0.2, 1.75, 6.8], [0.2, 1.8, 0], false);
+
+});
+</script></body></html>

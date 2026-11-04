@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q08</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q08 — The BEACON watches trial patients sleep at home.
+guard(() => {
+
+  const { stage, scene } = setup({ el: 14 });
+  const b = beacon(scene, { x: -1.7, s: 1.45, yaw: 0.45, pose: { arms: { r: [0, 0.5, 0] } } });
+  const room = new THREE.Group(); room.position.set(1.25, 0, 0);
+  box(room, mat('#f0d9a8'), [0, 0.9, -0.6], [3.4, 1.8, 0.08]); box(room, mat('#9a6a3e'), [0, 0.04, 0], [3.4, 0.08, 1.4]);
+  box(room, mat('#e8c890'), [-1.66, 0.9, 0], [0.08, 1.8, 1.4]); box(room, mat('#e8c890'), [1.66, 0.9, 0], [0.08, 1.8, 1.4]);
+  box(room, mat('#ffe9a0', { emissive: '#ffd25a', emissiveIntensity: 0.6 }), [0, 1.3, -0.55], [0.6, 0.55, 0.03]);
+  [[-0.85, '#4a7bd0'], [0.75, '#d0584a']].forEach(([x, c]) => { const bd = makeBed({ blanket: c, headband: true }); bd.position.set(x, 0.08, 0.05); bd.scale.setScalar(1.1); room.add(bd); });
+  scene.add(room);
+  // clipboard held by beacon
+  const cb = new THREE.Group(); box(cb, mat('#8a5a34'), [0, 0, 0], [0.56, 0.72, 0.04]); box(cb, mat('#ffffff'), [0, -0.02, 0.025], [0.46, 0.6, 0.01]);
+  add(cb, new THREE.CylinderGeometry(0.06, 0.06, 0.05, 10), mat('#c8ccd4', { metalness: 0.6 }), [0, 0.34, 0.03], [Math.PI / 2, 0, 0]);
+  [0.17, 0, -0.17, -0.34].forEach((y, i) => { box(cb, mat('#555'), [0.08, y - 0.02 + 0.02, 0.035], [0.2, 0.025, 0.005]); if (i < 3) add(cb, new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-0.17, y - 0.01, 0.04), new THREE.Vector3(-0.13, y - 0.05, 0.04), new THREE.Vector3(-0.06, y + 0.04, 0.04)]), 10, 0.016, 6), glow('#2fb84a')); });
+  cb.position.set(0.42, 0.62, 0.22); b.add(cb); cb.scale.setScalar(0.85); cb.rotation.y = 0.0;
+  b.updateMatrixWorld(true); b.userData.reach('l', [0.38, 0.5, 0.2]);
+  wrap(stage, scene, [b], { pos: [0.1, 1.2, 5.2], look: [0.1, 1.0, 0] });
+});
+</script></body></html>

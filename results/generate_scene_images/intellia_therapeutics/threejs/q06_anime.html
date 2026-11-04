@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — LONVO-Z calms the OWL's inherited swelling attacks: hereditary angioedema.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#a9d8c8', sky: { zenith: '#5aa0e0', horizon: '#d6f0ff' } }); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.25 }); owl.position.set(-0.7, 0, 0.3); owl.rotation.y = 0.35; scene.add(owl);
+  owl.userData.pose({ headTilt: 0.12, wings: { l: [0, 0.5], r: [0, 0.5] } });
+  // swollen puffs on cheek, brow and wing
+  owl.userData.parts.head.updateMatrix();
+  const sw = mat('#f58a8a', { roughness: 0.3 });
+  const hd = owl.userData.parts.head;
+  blob(hd, sw, [-0.2, -0.12, 0.2], [0.14, 0.12, 0.1]); blob(hd, sw, [0.04, 0.2, 0.2], [0.1, 0.07, 0.08]); blob(hd, '#ff6f6f', [-0.2, -0.12, 0.28], [0.06, 0.05, 0.03]);
+  blob(owl.userData.parts.body, sw, [0.28, 0.4, 0.15], [0.12, 0.1, 0.1]);
+  // calm rings
+  for (let i = 0; i < 3; i++) add(scene, new THREE.TorusGeometry(0.9 + i * 0.35, 0.025, 10, 64), mat('#7fd6ff', { transparent: true, opacity: 0.8 - i * 0.2, emissive: '#5ac8ff', emissiveIntensity: 0.4 }), [-0.7, 0.03, 0.3], [Math.PI / 2, 0, 0]);
+  const v = vial('LONVO-Z', '#4aa8ff', 0.8); v.position.set(1.75, 0, 0.5); v.scale.setScalar(2.1); v.rotation.y = -0.25; scene.add(v);
+  finish(ctx, [owl], [0.1, 1.0, 5.0], [0.1, 0.85, 0]);
+
+});
+</script></body></html>

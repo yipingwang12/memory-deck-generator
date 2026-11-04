@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q14 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q14 — The QUARTER ticker reads QTRX.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#cfd8e8', sky: { cover: 0.5 } }), { scene } = ctx;
+box(scene, mat('#10161f'), [0, 3.3, -1.4], [6.4, 2.0, 0.2]); box(scene, mat('#5a6577', { metalness: 0.4 }), [0, 3.3, -1.52], [6.6, 2.2, 0.08]);
+label(scene, 'QTRX', [-0.4, 3.35, -1.29], [4.6, 1.6], { bg: '#10161f', fg: '#6dffa8' });
+const up = new THREE.MeshBasicMaterial({ color: '#6dffa8' });
+const tri = new THREE.Shape([new THREE.Vector2(0, 0.5), new THREE.Vector2(0.45, -0.3), new THREE.Vector2(-0.45, -0.3)]);
+add(scene, new THREE.ShapeGeometry(tri), up, [2.5, 3.5, -1.28]); box(scene, up, [2.5, 2.9, -1.28], [0.3, 0.5, 0.02]);
+const q = createQuarter({ scale: 1.9 }); q.position.set(0, 0, 0.6); scene.add(q);
+q.userData.pose({ arms: { l: [0, 0.6] } });
+reachTo(q, 'r', [-1.0, 1.9, 0.8]);
+finishScene(ctx, q, { cam: [0, 2.0, 7.0], look: [0, 2.05, 0] });
+
+});
+</script></body></html>

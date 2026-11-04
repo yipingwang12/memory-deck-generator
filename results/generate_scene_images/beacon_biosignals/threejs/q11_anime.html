@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q11</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q11 — The BEACON burns on a TEA chest in Boston.
+guard(() => {
+
+  const { stage, scene } = setup({ ground: '#2f78b7', sky: { cover: 1.6 } });
+  box(scene, mat('#9a7a52'), [0, -0.1, 0], [9, 0.2, 4.5]);
+  const ch = new THREE.Group(); const wood = mat('#a8672f'), band = mat('#e0aa2e', { metalness: 0.6, roughness: 0.35 });
+  box(ch, wood, [0, 0.4, 0], [1.9, 0.8, 1.1]);
+  add(ch, new THREE.CylinderGeometry(0.55, 0.55, 1.9, 24, 1, false, 0, Math.PI), wood, [0, 0.8, 0], [0, 0, Math.PI / 2]).rotation.set(0, 0, Math.PI / 2);
+  for (const x of [-0.75, 0.75]) { box(ch, band, [x, 0.4, 0], [0.12, 0.84, 1.14]); }
+  box(ch, band, [0, 0.8, 0.56], [1.92, 0.07, 0.04]);
+  const lab = textPlane('TEA', 1.0, 0.45, { bg: '#f6e7b8', fg: '#2f6a2a' }); lab.position.set(0, 0.4, 0.56); ch.add(lab);
+  ch.scale.setScalar(0.8); scene.add(ch);
+  const b = beacon(scene, { x: 0, z: 0, s: 1.3, yaw: 0, pose: { flame: 1.25, mouth: 'open', arms: { l: [0.1, 1.2, 0], r: [0.1, 1.2, 0] } } });
+  b.position.y = 0.97;
+  const r = rng(4); for (let i = 0; i < 14; i++) blob(scene, mat('#4c8a2e'), [-0.7 + r() * 1.4, 0.99, -0.3 + r() * 0.8], [0.07, 0.025, 0.05], [0, r() * 3, 0]);
+  // teapot
+  const tp = new THREE.Group(); blob(tp, mat('#e8e0d4'), [0, 0.2, 0], [0.28, 0.24, 0.28]); blob(tp, mat('#d63a3a'), [0, 0.46, 0], [0.09, 0.05, 0.09]);
+  add(tp, new THREE.TorusGeometry(0.12, 0.03, 8, 16), mat('#e8e0d4'), [0.3, 0.22, 0], [0, 0, 0]); add(tp, new THREE.ConeGeometry(0.06, 0.26, 10), mat('#e8e0d4'), [-0.33, 0.3, 0], [0, 0, 1.1]); tp.position.set(1.7, 0, 0.5); scene.add(tp);
+  // ship
+  const sh = new THREE.Group(); box(sh, mat('#5a3a22'), [0, 0.5, 0], [5, 1.0, 1.6]); for (const x of [-1.2, 0.6, 2]) { add(sh, new THREE.CylinderGeometry(0.06, 0.06, 5, 8), mat('#3a2a1a'), [x, 3.5, 0]); box(sh, mat('#f0ead8'), [x, 3.3, 0.1], [1.4, 2.0, 0.05]); }
+  sh.position.set(4.0, 0.2, -9); scene.add(sh);
+  wrap(stage, scene, [b], { pos: [0, 1.6, 5.4], look: [0, 1.55, 0] });
+});
+</script></body></html>

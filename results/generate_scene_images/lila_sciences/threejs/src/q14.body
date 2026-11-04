@@ -1,0 +1,17 @@
+const stage = setup('#9ac879', 44); const S = stage.scene;
+const lil = LIL(stage, -2.1, 0, 0.35, 1.9, { arms: { l: [0.2, 0.9, 0], r: [0, 0.5, 0] } });
+const chip = new THREE.Group(); chip.position.set(1.1, 0, 0); chip.rotation.y = -0.2; S.add(chip);
+const green = mat('#76b900'), dk = mat('#2a3a14'), goldp = mat('#e8c860', { metalness: 0.6, roughness: 0.3 });
+box(chip, dk, [0, 1.25, 0], [1.5, 1.5, 0.2]); box(chip, green, [0, 1.25, 0.11], [1.25, 1.25, 0.04]);
+box(chip, new THREE.MeshStandardMaterial({ map: textTex('NVIDIA', 512, 160, '#76b900', '#0a0a0a', 'bold 110px sans-serif') }), [0, 1.0, 0.14], [1.1, 0.34, 0.01]);
+for (const s of [-1, 1]) { blob(chip, mat('#fff'), [s * 0.28, 1.5, 0.15], [0.16, 0.2, 0.04]); blob(chip, mat('#111'), [s * 0.28, 1.47, 0.18], [0.1, 0.14, 0.04]); blob(chip, mat('#fff'), [s * 0.25, 1.53, 0.2], [0.04, 0.04, 0.03]); }
+for (let i = -3; i <= 3; i++) for (const [x, y, w, h] of [[i * 0.2, 0.47, 0.06, 0.12], [i * 0.2, 2.03, 0.06, 0.12], [-0.81, 1.25 + i * 0.2, 0.12, 0.06], [0.81, 1.25 + i * 0.2, 0.12, 0.06]]) box(chip, goldp, [x, y, 0], [w, h, 0.06]);
+for (const s of [-1, 1]) { strut(chip, goldp, [s * 0.3, 0.45, 0], [s * 0.3, 0.1, 0.05], 0.05); box(chip, mat('#c0392b'), [s * 0.3, 0.04, 0.12], [0.2, 0.08, 0.3]); }
+const bag = new THREE.Group(); bag.position.set(-0.55, 1.0, 0.6); S.add(bag);
+const cloth = mat('#2f9e5a'); blob(bag, cloth, [0, 0, 0], [0.55, 0.6, 0.5]); blob(bag, cloth, [0, 0.6, 0], [0.25, 0.22, 0.22]); add(bag, new THREE.TorusGeometry(0.2, 0.04, 8, 20), mat('#f6c421'), [0, 0.45, 0], [Math.PI / 2, 0, 0]);
+for (const s of [-1, 1]) add(bag, new THREE.ConeGeometry(0.13, 0.35, 10), cloth, [s * 0.15, 0.95, 0], [0, 0, -s * 0.5]);
+box(bag, new THREE.MeshStandardMaterial({ map: textTex('$', 256, 256, '#2f9e5a', '#ffe27a', 'bold 200px sans-serif') }), [0, 0.0, 0.51], [0.55, 0.55, 0.01]);
+bag.updateMatrixWorld(true); chip.updateMatrixWorld(true);
+for (const [sx, tx, hy] of [[-0.78, -0.98, 1.0], [-0.78, -0.35, 0.65]]) { const a = chip.localToWorld(V([sx, hy, 0.05])); strut(S, goldp, a.toArray(), [tx, hy - 0.05, 0.95], 0.06); blob(S, goldp, [tx, hy - 0.05, 0.95], [0.09, 0.09, 0.09]); }
+for (let i = 0; i < 4; i++) cyl(S, mat('#f6c421', { metalness: 0.6 }), [-0.55 + (i - 1.5) * 0.12, 1.75 + (i % 2) * 0.15, 0.6], 0.09, 0.09, 0.03, [Math.PI / 2, 0, 0]);
+finishScene(stage, [lil], [-0.1, 1.45, 5.8], [-0.1, 1.25, 0]);

@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beacon anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createBeacon } from './beacon.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 30, sunElevation: 30, sunAzimuth: 160, sky: { cover: 1.5, seed: 5 }, shadowSize: 4, fog: { near: 120, far: 1500 } });
+  const scene = stage.scene;
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.MeshStandardMaterial({ color: '#6fae45' }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; scene.add(g);
+  const views = [[-1.5, 0.0, 'smile', { l: [0, 0.5, 0], r: [0, 0.5, 0] }], [0, 0.7, 'open', { l: [0, 1.9, 0.3], r: [0, 0.4, 0] }], [1.5, 1.57, 'smile', { l: [0.3, 0.4, 0], r: [-0.3, 0.4, 0] }]];
+  const bs = new Set();
+  for (const [x, yaw, mouth, arms] of views) {
+    const b = createBeacon({ scale: 1.5 }); b.position.set(x * 1.5, 0, 0); b.rotation.y = yaw; scene.add(b);
+    b.userData.pose({ mouth, arms }); b.traverse((o) => bs.add(o));
+  }
+  stage.toonify(scene, (m) => bs.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [190, 1000, 120, 1.6], [230, 900, 80, 1.1]]);
+  stage.camera.position.set(0, 1.4, 9); stage.camera.lookAt(0, 1.2, 0);
+  stage.finish();
+});
+</script></body></html>

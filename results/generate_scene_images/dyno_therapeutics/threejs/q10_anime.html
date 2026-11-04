@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  box(sc, mat('#23306a'), [0, 3, -2.2], [14, 6, 0.2]);
+  sign(sc, 'ASGCT', [0.6, 2.9, -2.08], 4.2, 1.0, '#ffd23c', '#23306a');
+  box(sc, mat('#a8693a'), [0.5, 0.1, -0.2], [7, 0.2, 3.4]);
+  for (const x of [-3.2, 4.2]) { box(sc, mat('#b8222a'), [x, 2.2, -1.8], [0.9, 4.4, 0.3]); }
+  const cols = ['#ff6fa8', '#46c8e8', '#ffb12b'];
+  [0.7, 1.7, 2.7].forEach((x, i) => {
+    cyl(sc, mat('#f4f4f8'), [x, 0.5, 0.0], 0.38, 0.38, 0.6).position.y = 0.5;
+    const c = capsid(0.36, cols[i]); c.position.set(x, 0.8, 0.0); sc.add(c);
+  });
+  // drape being lifted off first capsid
+  const drape = box(sc, mat('#dfe8ff', { roughness: 0.9 }), [-0.35, 1.45, 0.45], [0.9, 0.6, 0.03], [0.1, 0.3, 0.5]);
+  const rk = rng(2);
+  for (let i = 0; i < 40; i++) box(sc, mat(['#ffd23c', '#ff6fa8', '#46c8e8', '#7cd86a'][i % 4]), [-2 + rk() * 6, 1.2 + rk() * 2.4, -0.5 + rk() * 2.2], [0.07, 0.04, 0.015], [rk() * 3, rk() * 3, rk() * 3]);
+  reachW(d, 'l', [-0.65, 1.25, 0.5]);
+}, { ground: '#8a5a30', dpos: [-1.4, 0, 0.9], dry: 0.5, scl: 1.5, cam: [0.7, 1.5, 5.6], look: [0.7, 1.4, 0],
+  pose: (d) => d.userData.pose({ headTilt: -0.05, arms: { r: [0, 0.5, 0] } }) });
+
+</script></body></html>

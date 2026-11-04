@@ -1,0 +1,143 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Jia Liu q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — BEES buzz around the CYBORG organoid for ninety days while it records.
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createCyborg } from './cyborg.js';
+
+const M = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, ...e });
+const add = (p, g, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(g, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; p.add(o); return o;
+};
+const blob = (p, c, pos, scl, e) => add(p, new THREE.SphereGeometry(1, 24, 16), M(c, e), pos, [0, 0, 0], scl);
+const box = (p, w, h, d, c, pos, rot, e) => add(p, new THREE.BoxGeometry(w, h, d), M(c, e), pos, rot);
+const cyl = (p, r1, r2, h, c, pos, rot, e) => add(p, new THREE.CylinderGeometry(r1, r2, h, 22), M(c, e), pos, rot);
+const GLOW = '#33e0ff', glowE = { emissive: GLOW, emissiveIntensity: 1.1 };
+const floor = (p, c) => add(p, new THREE.PlaneGeometry(400, 400), M(c, { roughness: 0.9 }), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+
+function label(text, w, h, bg, fg, pos = [0, 0, 0], rot = [0, 0, 0]) {
+  const W = Math.round(w * 400), H = Math.round(h * 400), cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const x = cv.getContext('2d'), lines = text.split('\n'), mx = Math.max(...lines.map((l) => l.length));
+  if (bg) { x.fillStyle = bg; x.fillRect(0, 0, W, H); }
+  const fs = Math.min(H / lines.length * 0.7, W / (mx * 0.82));
+  x.font = `900 ${fs}px Arial Black, Arial, sans-serif`; x.fillStyle = fg; x.textAlign = 'center'; x.textBaseline = 'middle';
+  lines.forEach((l, i) => x.fillText(l, W / 2, H * (i + 0.5) / lines.length));
+  const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace;
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, toneMapped: false }));
+  m.position.set(...pos); m.rotation.set(...rot); return m;
+}
+function tube(p, a, b, r, m) {
+  const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A);
+  const o = new THREE.Mesh(new THREE.CylinderGeometry(r, r, d.length(), 8), m);
+  o.position.copy(A.clone().add(B).multiplyScalar(0.5)); o.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); p.add(o); return o;
+}
+function meshNet(R, detail = 1, r = 0.011) {
+  const g = new THREE.Group(), geo = new THREE.IcosahedronGeometry(R, detail).toNonIndexed(), P = geo.attributes.position, seen = new Set(), vs = new Map();
+  const key = (v) => v.toArray().map((n) => n.toFixed(3)).join(','), mt = M('#7af0ff', glowE);
+  const V = (i) => new THREE.Vector3().fromBufferAttribute(P, i);
+  for (let i = 0; i < P.count; i += 3) for (let k = 0; k < 3; k++) {
+    const a = V(i + k), b = V(i + (k + 1) % 3), ka = key(a), kb = key(b), e = ka < kb ? ka + kb : kb + ka;
+    vs.set(ka, a); if (!seen.has(e)) { seen.add(e); tube(g, a.toArray(), b.toArray(), r, mt); }
+  }
+  for (const v of vs.values()) add(g, new THREE.SphereGeometry(r * 2, 10, 8), M('#ffffff', glowE), v.toArray());
+  return g;
+}
+function organoid(R, seed = 3) {
+  const g = new THREE.Group(), r = rng(seed), pal = ['#f6a6c1', '#f9c3d2', '#ffd1a8', '#e7b1f0', '#ffb3b3', '#c9a6f5'];
+  blob(g, '#f4a3bd', [0, 0, 0], [R, R, R]);
+  for (let i = 0; i < 44; i++) {
+    const v = new THREE.Vector3(r() - 0.5, r() - 0.5, r() - 0.5).normalize(), s = R * (0.2 + r() * 0.16);
+    blob(g, pal[i % pal.length], v.multiplyScalar(R * 0.88).toArray(), [s, s, s]);
+  }
+  return g;
+}
+function helix(h, turns, rad, p) {
+  const g = new THREE.Group(), n = 34;
+  for (let i = 0; i <= n; i++) {
+    const t = i / n, a = t * turns * Math.PI * 2, y = t * h;
+    const A = [Math.cos(a) * rad, y, Math.sin(a) * rad], B = [-Math.cos(a) * rad, y, -Math.sin(a) * rad];
+    blob(g, '#ff7aa8', A, [0.035, 0.035, 0.035]); blob(g, '#ffd23f', B, [0.035, 0.035, 0.035]);
+    if (i % 2 === 0) tube(g, A, B, 0.012, M(['#6bd6ff', '#9be36b'][(i / 2) % 2]));
+  }
+  return g;
+}
+function bee(s = 1) {
+  const g = new THREE.Group();
+  blob(g, '#ffcf1f', [0, 0, 0], [0.09, 0.07, 0.07]);
+  for (const x of [-0.02, 0.035]) blob(g, '#2a2118', [x, 0, 0], [0.018, 0.072, 0.072]);
+  blob(g, '#2a2118', [0.1, 0.01, 0], [0.045, 0.045, 0.045]);
+  blob(g, '#2a2118', [-0.1, 0, 0], [0.03, 0.02, 0.02]);
+  for (const z of [-1, 1]) {
+    blob(g, '#ffffff', [-0.01, 0.07, z * 0.05], [0.06, 0.012, 0.035], { transparent: true, opacity: 0.75 }).rotation.set(z * 0.5, 0, 0);
+    blob(g, '#ffffff', [0.12, 0.012, z * 0.026], [0.012, 0.012, 0.012]);
+  }
+  g.scale.setScalar(s); return g;
+}
+function env(s = 1) {
+  const g = new THREE.Group();
+  box(g, 0.2, 0.13, 0.012, '#fffaf0', [0, 0, 0]);
+  const f = new THREE.Shape(); f.moveTo(-0.1, 0.065); f.lineTo(0.1, 0.065); f.lineTo(0, -0.02); f.closePath();
+  add(g, new THREE.ShapeGeometry(f), M('#f0c6a0'), [0, 0, 0.0075]);
+  blob(g, '#e03a4a', [0, -0.018, 0.012], [0.017, 0.017, 0.006]);
+  g.scale.setScalar(s); return g;
+}
+function person(c) {
+  const g = new THREE.Group();
+  cyl(g, 0.16, 0.2, 0.62, c.jacket, [0, 0.95, 0]); cyl(g, 0.1, 0.1, 0.62, '#3a3f55', [-0.08, 0.31, 0]); cyl(g, 0.1, 0.1, 0.62, '#3a3f55', [0.08, 0.31, 0]);
+  blob(g, '#2a2420', [-0.08, 0.04, 0.06], [0.09, 0.05, 0.14]); blob(g, '#2a2420', [0.08, 0.04, 0.06], [0.09, 0.05, 0.14]);
+  blob(g, c.skin, [0, 1.42, 0], [0.17, 0.19, 0.17]);
+  blob(g, c.hair, [0, 1.52, -0.03], [0.17, 0.12, 0.16]);
+  if (c.beard) blob(g, c.hair, [0, 1.31, 0.07], [0.13, 0.12, 0.1]);
+  for (const s of [-1, 1]) {
+    blob(g, '#fff', [s * 0.065, 1.44, 0.15], [0.04, 0.045, 0.02]); blob(g, '#1a1210', [s * 0.065, 1.44, 0.165], [0.022, 0.03, 0.012]);
+    add(g, new THREE.TorusGeometry(0.052, 0.006, 8, 24), M('#2b2b2b'), [s * 0.065, 1.44, 0.175]);
+  }
+  tube(g, [-0.015, 1.44, 0.18], [0.015, 1.44, 0.18], 0.005, M('#2b2b2b'));
+  return g;
+}
+function reachW(c, k, p) { c.updateMatrixWorld(true); const t = c.worldToLocal(new THREE.Vector3(...p)); c.userData.reach(k, [t.x, t.y, t.z]); }
+function confetti(p, n, box_, seed = 2) {
+  const r = rng(seed); for (let i = 0; i < n; i++) box(p, 0.05, 0.03, 0.005, ['#ff5a5f', '#ffd23f', '#3ec6ff', '#7be36b', '#ff9bd2'][i % 5], [box_[0] + (r() - 0.5) * box_[3], box_[1] + r() * box_[4], box_[2] + (r() - 0.5) * box_[5]], [r() * 3, r() * 3, r() * 3]);
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search), num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  const scene = stage.scene;
+  const S = (() => {
+
+  floor(scene, '#8fc66a'); const rr = rng(11);
+  for (let i = 0; i < 50; i++) { const f = blob(scene, ['#ffd84a', '#ffffff', '#ff8fa8'][i % 3], [(rr() - 0.5) * 9, 0.05, -2 + rr() * 2.5], [0.045, 0.045, 0.045]); }
+  cyl(scene, 0.6, 0.65, 0.7, '#e9eef3', [0.5, 0.35, 0.4]);
+  cyl(scene, 0.42, 0.42, 0.06, '#cfe9f5', [0.5, 0.73, 0.4], [0, 0, 0], { transparent: true, opacity: 0.8 });
+  const org = organoid(0.34, 12); org.position.set(0.5, 1.12, 0.4); scene.add(org);
+  const ml = M('#7af0ff', glowE); for (let i = 0; i < 10; i++) { const a = i * 0.63; tube(scene, [0.5 + Math.cos(a) * 0.36, 1.12 + Math.sin(a * 2) * 0.2, 0.4 + Math.sin(a) * 0.36], [0.5 + Math.cos(a) * 0.55, 0.78, 0.4 + Math.sin(a) * 0.55], 0.008, ml); }
+  for (let i = 0; i < 16; i++) { const a = i * 0.9 + 0.3, R = 0.75 + (i % 4) * 0.22, b = bee(1.5); b.position.set(0.5 + Math.cos(a) * R, 1.0 + ((i * 37) % 10) / 10 * 1.1, 0.4 + Math.sin(a) * R * 0.8); b.rotation.y = -a + 1.57; b.rotation.z = 0.2; scene.add(b);
+    for (let k = 1; k < 4; k++) blob(scene, '#fff2a8', [b.position.x - Math.sin(a) * 0.1 * k * -1, b.position.y, b.position.z - Math.cos(a) * 0.1 * k], [0.01, 0.01, 0.01], { emissive: '#fff2a8', emissiveIntensity: 0.6 }); }
+  cyl(scene, 0.62, 0.62, 0.08, '#fdfdfd', [2.9, 1.9, -1.0], [Math.PI / 2, 0, 0]);
+  scene.add(label('90', 1.1, 0.7, null, '#d6212e', [2.9, 1.92, -0.95]));
+  const c = createCyborg({ scale: 1.45 }); c.position.set(-0.8, 0, 0.7); c.rotation.y = 0.55; scene.add(c);
+  c.userData.pose({ headTilt: 0.1 }); reachW(c, 'l', [-0.05, 1.15, 0.65]);
+  return { cam: [0.9, 1.4, 5.0], look: [0.8, 1.3, 0], cy: [c] };
+  })();
+  const pm = new Set(); S.cy.forEach((c) => c.traverse((o) => pm.add(o)));
+  stage.toonify(scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [187, 1000, 120, 1.6], [214, 950, 70, 0.9], [252, 900, 80, 1.1]]);
+  stage.camera.position.set(num('cx', S.cam[0]), num('cy', S.cam[1]), num('cz', S.cam[2]));
+  stage.camera.lookAt(num('tx', S.look[0]), num('ty', S.look[1]), num('tz', S.look[2]));
+  stage.finish();
+});
+</script></body></html>

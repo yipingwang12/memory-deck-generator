@@ -1,0 +1,10 @@
+const stage = setup('#8ec46a'); const S = stage.scene;
+const lil = LIL(stage, -0.9, 0, 0.35, 1.6, { arms: { l: [0.2, 0.5, 0], r: [0, 0.4, 0] } });
+const m = man({ scale: 1.9, hl: [-0.45, 0.95, 0.15], hr: [0.28, 0.75, 0.2] }); m.position.set(1.5, 0, 0.1); S.add(m);
+maltGlass(m, [0.3, 0.75, 0.22], 1.0);
+const can = new THREE.Group(); can.position.set(-0.52, 0.95, 0.15); can.rotation.z = 0.35; m.add(can);
+const tin = mat('#e8913a', { metalness: 0.4, roughness: 0.4 });
+cyl(can, tin, [0, 0, 0], 0.11, 0.11, 0.2); strut(can, tin, [-0.08, -0.02, 0], [-0.3, -0.1, 0], 0.025); cyl(can, tin, [-0.31, -0.1, 0], 0.06, 0.04, 0.03, [0, 0, 1.2]);
+const arc = new THREE.TorusGeometry(0.1, 0.012, 6, 14, Math.PI); add(can, arc, tin, [0.02, 0.1, 0], [0, 0, 0]);
+for (let i = 0; i < 10; i++) blob(S, glow('#4aa8ff', 0.8), [-0.02 - (i % 3) * 0.06, 1.55 - i * 0.075, 0.45], [0.03, 0.045, 0.03]);
+finishScene(stage, [lil], [0.3, 1.05, 5.0], [0.3, 0.95, 0]);

@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q05_anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, blob, box, textTex, makeStage, buildOR, brain, scalpel, neuron, probe, setupSieve, finishScene } from "./props.js";
+guard(() => {
+  const P = new URLSearchParams(location.search); const { stage, num } = makeStage(P); const scene = stage.scene;
+  const lamp = buildOR(scene, { wall: "#f4efe3" });
+  // two copies of NATURE held aloft by the sieve; a stack on a table too
+  const cover = (x, y, rz, ry) => { const g = new THREE.Group(); g.position.set(x, y, 0.8); g.rotation.set(0, ry, rz); scene.add(g);
+    const tex = textTex(['nature'], { ax: 0.75, bg: '#ffffff', fg: '#111', font: 'bold 120px Georgia, serif', bar: '#d6261f' });
+    add(g, new THREE.BoxGeometry(0.9, 1.2, 0.04), mat('#eee')); add(g, new THREE.PlaneGeometry(0.88, 1.18), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.5 }), [0, 0, 0.022]);
+    const pic = new THREE.Mesh(new THREE.CircleGeometry(0.2, 32), new THREE.MeshStandardMaterial({ color: '#f0a0b4', roughness: 0.6 })); pic.position.set(0, -0.38, 0.03); g.add(pic);
+    const b = brain(1.0); b.position.set(0, -0.38, 0.1); b.scale.setScalar(0.75); g.add(b); return g; };
+  const c1 = cover(-1.15, 1.75, 0.12, 0.25), c2 = cover(1.15, 1.75, -0.12, -0.25);
+  const sieve = setupSieve(scene, stage, { pos: [0, 0, 0.8], ry: 0, scale: 1.4, pose: { headTilt: 0.04 }, reach: { l: [0.75, 1.5, 0.9], r: [-0.75, 1.5, 0.9] } });
+  // cheering sparkles (two)
+  for (const x of [-0.55, 0.55]) blob(scene, mat('#ffd24a', { emissive: '#ffd24a', emissiveIntensity: 1 }), [x, 2.55, 0.8], [0.05, 0.05, 0.05]);
+  stage.camera.position.set(num("cx", 0), num("cy", 1.1), num("cz", 4.6)); stage.camera.lookAt(num("tx", 0), num("ty", 1.1), 0);
+  finishScene(scene, stage, sieve, false);
+});
+</script></body></html>

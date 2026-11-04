@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q19 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q19 — A BORE drill (Boerner) wears the SQUID's CEO crown.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#b8a890', fov: 38, wall: '#2a3a5a', clouds: false }), S = C.scene;
+box(S, mat('#6b4a2a'), [5.2, 0.1, 1.6], [0, 0.6, -0.2]); for (const x of [-2.4, 2.4]) box(S, mat('#5a3d22'), [0.12, 0.6, 1.4], [x, 0.3, -0.2]);
+const dr = put(S, bore(), 0.2, 0.55, 0.0, -0.25, 1.4);
+const cw = put(S, crown(0.34), 0.0, 0, 0.0, 0.0, 1.9); cw.rotation.z = 0.12; cw.position.set(-0.3, 2.15, 0.1);
+cyl(S, mat('#c9c9c9', { metalness: 0.7 }), 0.0, 0.0, 0.0, [0, 0, 0]);
+const pl = label('CEO', { w: 1.0, h: 0.36, bg: '#ffd23c', fg: '#1d2a44', size: 0.8, border: '#1d2a44' }); pl.position.set(1.65, 0.83, 0.5); pl.rotation.x = -0.3; S.add(pl);
+const q = addSquid(C, { x: -1.6, z: 0.8, s: 1.6, ry: 0.5 });
+const tie = grp(q, [0, 0.36, 0.2]); add(tie, new THREE.ConeGeometry(0.06, 0.28, 3), mat('#2a4a9a'), [0, -0.12, 0.0], [Math.PI, 0, 0], [1, 1, 0.3]); blob(tie, mat('#2a4a9a'), [0, 0.03, 0], [0.04, 0.04, 0.03]); toon(C, tie);
+reachW(q, 'l', [-0.2, 1.5, 0.7]);
+finish(C, { pos: [0, 1.5, 5.4], look: [0, 1.2, 0] });
+
+});
+</script></body></html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q20</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q20 — "On the MITTEN, the cells' MYELIN wrapping is frayed in Alzheimer's: myelination."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const a = P.axon({ n: 7, frayed: [3, 4] }); a.position.set(1.4, 0.5, -0.7); a.scale.setScalar(1.2); scene.add(a);
+  blob(scene, mat('#f3b7c9'), [-2.4, 1.7, -0.7], [0.65, 0.65, 0.6]); blob(scene, mat('#7a3fd8'), [-2.4, 1.7, -0.1], [0.3, 0.3, 0.2]);
+  const m = placeMitten(scene, { x: -0.8, z: 1.0, ry: 0.45, s: 2.1, reach: { l: [1.9, 1.8, 0.5] } });
+  const mg = new THREE.Group(); add(mg, new THREE.TorusGeometry(0.22, 0.03, 8, 28), mat('#b8860b', { metalness: 0.6 })); add(mg, new THREE.CircleGeometry(0.2, 28), mat('#bfe6ff', { transparent: true, opacity: 0.45 })); cyl(mg, mat('#5a3a1a'), 0.03, 0.03, 0.4, [0.0, -0.4, 0]); mg.position.set(2.3, 2.0, 0.5); scene.add(mg);
+  return { chars: [m], cam: { pos: [0.8, 1.9, 6.8], look: [0.8, 1.7, 0] } };
+}, { ground: '#d9c1e8' });
+</script></body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q01 — The JACKS scatter across a NEW BRUNCH table, New Jersey.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#c9b79c' }); const sc = stage.scene;
+  const wood = mat('#b5763a'), TY = 0.7;
+  box(sc, wood, [0, TY - 0.1, 0], [4.9, 0.2, 2.4]);
+  for (const x of [-2.2, 2.2]) for (const z of [-1.1, 1.1]) box(sc, mat('#8a5528'), [x, TY / 2 - 0.1, z], [0.2, TY - 0.2, 0.2]);
+  box(sc, mat('#fff7ea'), [0.1, TY + 0.005, 0.1], [3.8, 0.02, 1.8]); // cloth
+  const J = placeJack(stage, { x: -1.15, z: 0.1, s: 1.45, ry: 0.35, pose: { arms: { l: [0, 0.5] } } }); J.position.y += TY;
+  J.userData.mouth(0.3);
+  // pancake stack on plate
+  const plate = mat('#ffffff', { roughness: 0.3 });
+  cyl(sc, plate, [0.55, TY + 0.04, 0.2], 0.5, 0.06);
+  for (let i = 0; i < 5; i++) cyl(sc, mat(i % 2 ? '#e8a95a' : '#f2c070'), [0.55, TY + 0.12 + i * 0.1, 0.2], 0.4, 0.09);
+  add(sc, new THREE.BoxGeometry(0.25, 0.1, 0.25), mat('#ffe27a'), [0.55, TY + 0.66, 0.2]);
+  blob(sc, mat('#b8531f'), [0.55, TY + 0.72, 0.2], [0.16, 0.05, 0.16]);
+  // mug + juice
+  cyl(sc, mat('#e0483c'), [1.4, TY + 0.2, 0.0], 0.2, 0.4); add(sc, new THREE.TorusGeometry(0.12, 0.035, 8, 20), mat('#e0483c'), [1.6, TY + 0.2, 0.0]);
+  cyl(sc, mat('#ffa21f', { transparent: true, opacity: 0.9 }), [1.4, TY + 0.2, 0.7], 0.17, 0.4, [0, 0, 0], 0.13);
+  // croissant
+  blob(sc, mat('#d9953c'), [-0.1, TY + 0.14, 0.75], [0.36, 0.14, 0.17], [0, 0.4, 0]);
+  // NEW card
+  const card = textPlane('NEW', 1.1, 0.65, { bg: '#ffd23f', fg: '#c01f2f', px: 330 }); card.position.set(1.65, TY + 0.6, 0.9); card.rotation.y = -0.3; sc.add(card);
+  add(sc, new THREE.BoxGeometry(1.0, 0.04, 0.02), mat('#333'), [1.65, TY + 0.26, 0.9], [0, -0.3, 0]);
+  // scattered small jacks
+  const minis = [[-0.5, 0.6, 0.5], [0.0, -0.45, 1.8], [1.0, -0.6, 0.4], [-0.3, -0.5, 2.6], [1.9, -0.3, 1.0], [1.0, 0.8, 2.0]].map(([x, z, r]) => {
+    const m = createJacks({ scale: 0.22 }); m.position.set(x, TY, z); m.rotation.set(0.3 * r, r, 0.2 * r); m.position.y += 0.18; sc.add(m); return m; });
+  finishScene(stage, [J, ...minis], { cam: [0.1, 1.6, 4.6], look: [0.1, 1.25, 0] });
+
+});
+</script></body></html>

@@ -1,0 +1,13 @@
+  meadow('#d9b878'); window.__clouds = [[150, 900, 90, 1.2], [200, 1200, 120, 1.6]];
+  const sand = mat('#e8c27a');
+  add(scene, new THREE.ConeGeometry(7, 7, 4), sand, [0, 3.5, -12], [0, Math.PI / 4, 0]);
+  for (let i = 1; i < 8; i++) add(scene, new THREE.BoxGeometry(5.7 * (1 - i / 8) * 1.5 + 0.1, 0.05, 5.7 * (1 - i / 8) * 1.5 + 0.1), mat('#b98a45'), [0, i * 0.85, -12], [0, Math.PI / 4, 0]).visible = false;
+  add(scene, new THREE.ConeGeometry(0.4, 0.8, 4), mat('#ffd24a', { metalness: 0.6, roughness: 0.3 }), [0, 6.9, -12], [0, Math.PI / 4, 0]);
+  for (const [x, z, h] of [[-9, -14, 3], [9, -15, 2.4]]) add(scene, new THREE.ConeGeometry(h * 1.0, h, 4), mat('#dcb36e'), [x, h / 2, z], [0, Math.PI / 4, 0]);
+  trail(scene, [[0.8, 6], [0.2, 1], [-0.4, -4], [0, -8.5]], 1.2);
+  for (const [x, z] of [[-3, -3], [3.2, -4], [-4.5, 0], [5, 1]]) blob(scene, mat('#b69a6a'), [x, 0.2, z], [0.5, 0.3, 0.45]);
+  const h = hiker(scene, { pos: [0.2, 0, 0.5], ry: Math.PI - 0.15, arms: { l: [0.2, 0.1, 0.2], r: [-0.3, 0.1, 0.2] } });
+  h.userData.reach('r', [-0.35, 0.75, 0.15]);
+  const f = add(scene, new THREE.PlaneGeometry(0.6, 0.4), mat('#d9552b', { side: THREE.DoubleSide }), [0.3, 7.5, -12]);
+  cam.position.set(2.2, 1.5, 4.8); cam.lookAt(0.2, 2.0, -6);
+  cam.fov = 48; cam.updateProjectionMatrix();

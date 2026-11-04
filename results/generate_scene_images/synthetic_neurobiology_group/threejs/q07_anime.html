@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Synthetic Neurobiology scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, glow, makeScene, synth, paw, note, bow, den, dancer, cheese, sauceBottle, spanner, eyeMask, gel, neuron, lightSwitch, lightCone, brain, church, rna, journal, tree, animeEyes } from './common.js';
+// q07 — lights up a whole brain's voltage in NATURE METHODS.
+makeScene(({ scene }) => {
+  const s = synth(scene, { pos: [-1.4, 0, 0.8], scale: 1.4, ry: 0.3, l: [-0.6, 2.35, 1.0], r: [-2.0, 2.35, 1.0], lean: -0.05 });
+  const b = brain(0.8); b.position.set(-1.4, 2.9, 1.0); scene.add(b);
+  const pl = new THREE.PointLight('#ffd0ff', 6, 6); pl.position.set(-1.4, 2.9, 2); scene.add(pl);
+  const j = journal(); j.position.set(1.8, 0, 0); j.scale.setScalar(1.7); j.rotation.y = -0.25; scene.add(j);
+  for (const [x, z, h] of [[0.2, -2, 2.0], [3.8, -1.6, 2.4], [-3.8, -2, 2.2]]) { const t = tree(h); t.position.set(x, 0, z); scene.add(t); }
+  return [s];
+}, { cam: [0, 1.9, 7.0], look: [0, 1.5, 0.2], fov: 42 });
+</script></body></html>

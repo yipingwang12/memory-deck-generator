@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Superluminal q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The SUPERHERO races through a HYPERLOOP tube to find drugs.
+import * as THREE from 'three';
+import { boot } from './common.js';
+import * as P from './props.js';
+const { add, blob, box, cyl, mat, coin, limbBetween } = P;
+const place = (o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.setScalar(s); return o; };
+const coinAt = (ctx, x, y, z, r = 0.2, ry = 0, rx = 0) => { const c = coin(r); c.position.set(x, y, z); c.rotation.set(rx, ry, 0); ctx.scene.add(c); return c; };
+
+boot((ctx) => {
+  const g = ctx.scene;
+  add(g, new THREE.CylinderGeometry(1.35, 1.35, 16, 40, 1, true, Math.PI / 2, Math.PI), mat('#a9d8f5', { roughness: 0.2, side: THREE.DoubleSide }), [0, 2.0, 0], [0, 0, Math.PI / 2]);
+  for (let i = -7; i <= 7; i++) add(g, new THREE.TorusGeometry(1.38, 0.04, 8, 40), mat(i % 2 ? '#e8edf2' : '#ff7a3d', { metalness: 0.4 }), [i * 1.1, 2.0, 0], [0, Math.PI / 2, 0]);
+  for (const x of [-5, -1.5, 2, 5.5]) { box(g, mat('#cbd2dc'), [x, 0.5, 0], [0.5, 1.0, 0.5]); box(g, mat('#cbd2dc'), [x, 0.95, 0], [1.4, 0.15, 0.7]); }
+  add(g, new THREE.BoxGeometry(16, 0.04, 1.0), mat('#42e8ff', { emissive: '#42e8ff', emissiveIntensity: 0.8 }), [0, 0.8, 0]).position.y = 0.78 + 0.0;
+  const h = ctx.hero({ x: 0.4, y: 2.0, z: 0.1, scale: 2.1, cape: 0.5, pose: { arms: { l: [0, 2.9, 0], r: [0, -2.9, 0] } } }); h.rotation.z = -Math.PI / 2;
+  for (const [x, y, l] of [[-2.4, 2.7, 2.0], [-3.2, 2.0, 2.6], [-2.2, 1.35, 1.8], [-3.6, 2.45, 1.6]]) add(g, new THREE.CylinderGeometry(0.03, 0.03, l, 6), mat('#ffffff', { emissive: '#ffffff', emissiveIntensity: 0.8 }), [x, y, 0.4], [0, 0, Math.PI / 2]);
+  // molecule "drugs" in the tube ahead
+  for (const [x, y, c] of [[3.0, 2.6, '#e0262d'], [3.5, 1.5, '#2ecc71']]) { const m = new THREE.Group(); g.add(m); m.position.set(x, y, 0.2); blob(m, mat(c), [0, 0, 0], [0.22, 0.22, 0.22]); blob(m, mat('#fff'), [0.28, 0.12, 0], [0.12, 0.12, 0.12]); blob(m, mat('#fff'), [-0.24, -0.15, 0.05], [0.12, 0.12, 0.12]); }
+  ctx.cam([0, 2.1, 6.2], [0, 2.0, 0]);
+}, { ground: '#e8b87a', cover: 1 });
+</script></body></html>

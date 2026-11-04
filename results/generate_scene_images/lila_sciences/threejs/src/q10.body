@@ -1,0 +1,29 @@
+const stage = setup('#d9dde6', 44); const S = stage.scene;
+box(S, mat('#eef0f6'), [0, 2.2, -3.2], [14, 5, 0.2]); box(S, mat('#7a8296'), [0, 0.15, -3.05], [14, 0.3, 0.1]);
+for (const x of [-3, 0.5, 3.5]) box(S, mat('#9ec8e8'), [x, 2.6, -3.08], [1.6, 1.2, 0.04]);
+const lil = LIL(stage, -2.1, 0.3, 0.35, 1.9, { arms: { l: [0.2, 0.9, 0], r: [0, 0.5, 0] } });
+const v = new THREE.Group(); v.position.set(1.3, 0, 0); v.scale.setScalar(1.25); v.rotation.y = -0.45; S.add(v);
+const white = mat('#f4f6fa'), teal = mat('#2fb3a3'), tire = mat('#23252b');
+box(v, white, [0, 0.55, 0], [1.3, 0.5, 2.4]); box(v, teal, [0, 0.55, 0], [1.34, 0.12, 2.42]);
+for (const [x, z] of [[-0.7, -0.8], [0.7, -0.8], [-0.7, 0.8], [0.7, 0.8]]) { cyl(v, tire, [x, 0.32, z], 0.32, 0.32, 0.24, [0, 0, Math.PI / 2]); cyl(v, mat('#b9c0c8', { metalness: 0.6 }), [x * 1.05, 0.32, z], 0.15, 0.15, 0.26, [0, 0, Math.PI / 2]); }
+box(v, white, [0, 1.25, -0.55], [1.2, 0.9, 1.1]); box(v, mat('#9ec8e8', { transparent: true, opacity: 0.8 }), [0, 1.3, -0.0], [1.0, 0.7, 0.03]);
+box(v, mat('#3a3f50'), [0, 0.95, 0.75], [1.1, 0.3, 0.5]); box(v, mat('#2c2e36'), [0, 0.88, 0.2], [1.0, 0.2, 0.5]);
+cyl(v, mat('#2c2e36'), [-0.35, 1.75, -0.55], 0.2, 0.24, 0.3); strut(v, mat('#f08a24'), [-0.35, 1.85, -0.55], [-0.9, 2.45, -0.3], 0.11); strut(v, mat('#f08a24'), [-0.9, 2.45, -0.3], [-1.3, 2.0, 0.1], 0.09);
+blob(v, mat('#f08a24'), [-0.9, 2.45, -0.3], [0.15, 0.15, 0.15]); cyl(v, mat('#bfe6f5', { transparent: true, opacity: 0.6 }), [-1.3, 1.78, 0.1], 0.12, 0.17, 0.36); cyl(v, glow('#6aff8a', 0.6), [-1.3, 1.72, 0.1], 0.11, 0.16, 0.2);
+// steering wheel
+add(v, new THREE.TorusGeometry(0.2, 0.035, 8, 24), mat('#1a1a20'), [0, 1.2, 0.75], [-0.9, 0, 0]);
+// feral cat
+const cat = new THREE.Group(); cat.position.set(0, 1.1, 0.4); cat.scale.setScalar(1.6); v.add(cat);
+const fur = mat('#e8822a'), cream = mat('#f6dcb0'), stripe = mat('#8a3a12');
+blob(cat, fur, [0, 0.0, -0.05], [0.3, 0.36, 0.26]); blob(cat, cream, [0, -0.02, 0.15], [0.17, 0.25, 0.1]);
+blob(cat, fur, [0, 0.55, 0.05], [0.31, 0.27, 0.27]);
+for (const s of [-1, 1]) { add(cat, new THREE.ConeGeometry(0.11, 0.26, 4), fur, [s * 0.2, 0.82, 0.0], [0, 0, -s * 0.2]); add(cat, new THREE.ConeGeometry(0.06, 0.18, 4), mat('#f4a0a0'), [s * 0.2, 0.8, 0.04], [0, 0, -s * 0.2]);
+  blob(cat, mat('#fff'), [s * 0.12, 0.6, 0.25], [0.085, 0.095, 0.04]); blob(cat, mat('#7adf3a'), [s * 0.12, 0.6, 0.275], [0.07, 0.08, 0.03]); blob(cat, mat('#111'), [s * 0.12, 0.6, 0.3], [0.018, 0.07, 0.02]); blob(cat, mat('#fff'), [s * 0.1, 0.63, 0.315], [0.015, 0.015, 0.01]);
+  box(cat, stripe, [s * 0.14, 0.7, 0.27], [0.12, 0.025, 0.02], [0, 0, s * 0.35]);
+  for (let k = 0; k < 3; k++) strut(cat, mat('#fff'), [s * 0.1, 0.45 - k * 0.025, 0.3], [s * 0.38, 0.5 - k * 0.07, 0.34], 0.006);
+  strut(cat, fur, [s * 0.22, 0.2, 0.05], [s * 0.2, 0.0, 0.62 - 0.1], 0.06); blob(cat, cream, [s * 0.2, -0.02, 0.5], [0.07, 0.06, 0.07]); }
+blob(cat, mat('#f4a0a0'), [0, 0.48, 0.3], [0.045, 0.03, 0.03]); blob(cat, mat('#5a1a1a'), [0, 0.4, 0.28], [0.1, 0.06, 0.03]);
+for (const s of [-1, 1]) add(cat, new THREE.ConeGeometry(0.018, 0.05, 6), mat('#fff'), [s * 0.04, 0.37, 0.3], [Math.PI, 0, 0]);
+for (let k = 0; k < 6; k++) add(cat, new THREE.ConeGeometry(0.05, 0.16, 5), fur, [(k - 2.5) * 0.09, 0.82 + (k % 2) * 0.03, -0.05], [0, 0, (k - 2.5) * -0.25]);
+strut(cat, fur, [0, -0.1, -0.2], [-0.45, 0.1, -0.5], 0.06); strut(cat, stripe, [-0.45, 0.1, -0.5], [-0.5, 0.45, -0.5], 0.05);
+finishScene(stage, [lil], [0, 1.85, 5.9], [0, 1.75, 0]);

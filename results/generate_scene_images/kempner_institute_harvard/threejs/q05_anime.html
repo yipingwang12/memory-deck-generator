@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q05 - CAMPER fellows get computers and engineers, not just pay
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ ground: '#b9c8d8', camper: { ry: 0.0, pos: [0, 0, 0] }, cam: [0, 1.2, 5.0], look: [0, 0.95, 0],
+  build: ({ scene, van, toon }) => {
+    const lap = new THREE.Group();
+    box(lap, 1.5, 0.08, 1.0, '#9aa4ae', [0, 0, 0], [0, 0, 0], 0.04, { metalness: 0.5 });
+    const scr = new THREE.Group(); box(scr, 1.5, 1.0, 0.07, '#9aa4ae', [0, 0.5, 0], [0, 0, 0], 0.04, { metalness: 0.5 });
+    panel(scr, 1.36, 0.86, (ctx, w, h) => { ctx.fillStyle = '#0f2a4a'; ctx.fillRect(0, 0, w, h); const r = rng(2); for (let i = 0; i < 12; i++) { ctx.fillStyle = ['#5ad1ff', '#9cff9c', '#ffd35a'][i % 3]; ctx.fillRect(40 + (i % 3) * 30, 40 + i * 35, 80 + r() * 260, 16); } }, [0, 0.5, 0.04]);
+    scr.position.set(0, 0.04, -0.5); scr.rotation.x = -0.25; lap.add(scr);
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 9; j++) box(lap, 0.1, 0.02, 0.1, '#2a2f38', [-0.6 + j * 0.15, 0.05, -0.2 + i * 0.14], [0, 0, 0], 0.01);
+    lap.position.set(-1.9, 0.35, 0.8); lap.scale.setScalar(0.85); lap.rotation.y = 0.5; scene.add(lap);
+    box(scene, 1.7, 0.35, 1.2, '#8a6a48', [-1.9, 0.17, 0.8], [0, 0.5, 0], 0.04);
+    const eng = person({ s: 1.7, shirt: '#ff8a2a', pants: '#36527a', hair: '#2a1a10' }); eng.position.set(1.7, 0, 0.6); eng.rotation.y = -0.4; scene.add(eng); toon(eng);
+    cyl(eng, 0.17, 0.2, 0.1, '#ffd21f', [0, 1.12, 0]); blob(eng, mat('#ffd21f'), [0, 1.1, 0], [0.2, 0.14, 0.19]);
+    add(eng, new THREE.TorusGeometry(0.03, 0.012, 8, 20), mat('#c0c8d0', { metalness: 0.8 }), [0.27, 0.5, 0.1], [0, 0, 0], [1.6, 1.6, 1]);
+    cyl(eng, 0.022, 0.022, 0.45, '#c0c8d0', [0.27, 0.28, 0.1], [0, 0, 0], { metalness: 0.8 });
+    for (let i = 0; i < 4; i++) { cyl(scene, 0.4, 0.4, 0.09, '#f5c230', [0.9, 0.05 + i * 0.1, 1.7], [0, 0, 0], { metalness: 0.7 }); }
+    van.userData.pose({ arms: { l: [0, 1.0, 0.2], r: [0, 1.0, 0.2] } });
+  } });
+
+</script></body></html>

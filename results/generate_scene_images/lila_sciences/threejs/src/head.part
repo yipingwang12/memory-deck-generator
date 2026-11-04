@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Lila scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createLilac } from './lilac.js';
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, ...e });
+const add = (parent, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; parent.add(o); return o;
+};
+const blob = (parent, m, pos, scl, rot) => add(parent, new THREE.SphereGeometry(1, 32, 20), m, pos, rot, scl);
+const box = (p, m, pos, s, rot) => add(p, new THREE.BoxGeometry(...s), m, pos, rot);
+const cyl = (p, m, pos, rt, rb, h, rot, seg = 24) => add(p, new THREE.CylinderGeometry(rt, rb, h, seg), m, pos, rot);
+const P = new URLSearchParams(location.search), num = (k, d) => Number(P.get(k) ?? d);
+function setup(groundColor = '#7fb858', fov = 40) {
+  const stage = createAnimeStage({
+    fov: num('fov', fov), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  add(stage.scene, new THREE.PlaneGeometry(400, 400), mat(groundColor), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  return stage;
+}

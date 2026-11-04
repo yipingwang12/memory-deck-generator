@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard, rng } from './kit.js';
+import * as B from './base.js';
+const { THREE, mat, add, blob, box, cyl, textPlane, kitchenStage, frame, toon, createMixer, nose, tank, drop, ribbon, bib } = B;
+guard(() => {
+const { stage, scene, num } = kitchenStage(); const r = rng(3);
+const m = createMixer({ scale: 1.4 }); m.position.set(0, 0, 0); scene.add(m);
+m.userData.pose({ headTilt: 0.04 }); m.userData.reach('l', [0.5, 0.75, 0.45]); m.userData.reach('r', [-0.5, 0.75, 0.45]);
+const bread = mat('#f4cf8a'), crust = mat('#e8b868'), jam = mat('#c2123c', { roughness: 0.2 });
+const s = new THREE.Group(); s.position.set(-1.35, 0.75, 0.2); s.scale.setScalar(0.9); s.rotation.set(0.7, 0.5, 0.1); scene.add(s);
+box(s, crust, [0, -0.2, 0], [0.9, 0.22, 0.9]); box(s, jam, [0, 0, 0], [0.96, 0.2, 0.96]); box(s, crust, [0, 0.2, 0], [0.9, 0.22, 0.9]);
+for (const [x, z] of [[0.46, 0.2], [-0.3, 0.46], [0.46, -0.3]]) blob(s, jam, [x, -0.03, z], [0.1, 0.14, 0.1]);
+const rose = new THREE.Group(); rose.position.set(1.6, 0.9, 0.2); scene.add(rose);
+for (let k = 0; k < 4; k++) for (let i = 0; i < 5 - k; i++) { const a = i / (5 - k) * Math.PI * 2 + k; blob(rose, mat(['#e0204a', '#c01238', '#ff3a60', '#a00e2e'][k]), [Math.cos(a) * 0.17 * (4 - k) / 4 * 1.2, 0.1 + k * 0.06, Math.sin(a) * 0.17 * (4 - k) / 4 * 1.2], [0.2, 0.16, 0.2]); }
+blob(rose, mat('#e0204a'), [0, 0.32, 0], [0.15, 0.15, 0.15]);
+cyl(rose, mat('#2e8a3a'), [0, -0.5, 0], 0.035, 1.1); blob(rose, mat('#2e8a3a'), [0.18, -0.4, 0], [0.18, 0.05, 0.1], [0, 0, 0.4]);
+const gold = mat('#ffc728', { metalness: 0.7, roughness: 0.25 });
+[[-0.95, 1.15], [-0.65, 1.3], [-0.45, 1.05], [0.95, 1.2], [0.65, 1.35], [0.45, 1.05]].forEach(([x, y]) => { const c = cyl(scene, gold, [x, y, 0.4], 0.14, 0.04, [Math.PI / 2, 0.3, 0]); });
+toon(stage, scene, [m]); frame(stage, num, { cx: 0.1, cz: 4.6, tx: 0, ty: 0.75 });
+});
+</script></body></html>

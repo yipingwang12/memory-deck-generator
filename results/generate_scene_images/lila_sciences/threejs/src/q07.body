@@ -1,0 +1,16 @@
+const stage = setup('#9ac879', 44); const S = stage.scene;
+const lil = LIL(stage, -1.6, 0, 0.3, 1.8, { arms: { l: [0.2, 0.6, 0], r: [0, 0.5, 0] } });
+const rb = new THREE.Group(); rb.position.set(1.9, 0, 0); rb.rotation.y = -0.55; rb.scale.setScalar(1.25); S.add(rb);
+const steel = mat('#c4ccd8', { metalness: 0.5, roughness: 0.3 }), navy = mat('#2b3a52');
+cyl(rb, navy, [0, 0.4, 0], 0.5, 0.65, 0.8); box(rb, steel, [0, 1.5, 0], [1.3, 1.05, 1.05]);
+cyl(rb, navy, [0, 0.95, 0], 0.25, 0.3, 0.3); for (const s of [-1, 1]) { cyl(rb, navy, [s * 0.72, 1.5, 0], 0.17, 0.17, 0.22, [0, 0, Math.PI / 2]); }
+box(rb, navy, [0, 1.55, 0.54], [1.0, 0.45, 0.04]);
+for (const s of [-1, 1]) { blob(rb, glow('#3adcff', 1.4), [s * 0.28, 1.56, 0.58], [0.16, 0.16, 0.03]); blob(rb, mat('#fff'), [s * 0.24, 1.6, 0.6], [0.04, 0.04, 0.02]); }
+box(rb, navy, [0, 1.2, 0.54], [0.5, 0.1, 0.04]); strut(rb, steel, [0, 2.0, 0], [0, 2.4, 0], 0.03); blob(rb, glow('#ff6a8a', 1), [0, 2.45, 0], [0.09, 0.09, 0.09]);
+box(rb, mat('#d23a4a'), [0, 0.95, 0.3], [0.3, 0.1, 0.05]);
+rb.updateMatrixWorld(true);
+const A = rb.localToWorld(V([0, 1.56, 0.62])), B = V([-0.7, 1.0, 0.1]), d = A.clone().sub(B);
+const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.38, d.length(), 32, 1, true), new THREE.MeshBasicMaterial({ color: '#fff2a8', transparent: true, opacity: 0.35, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending }));
+beam.position.copy(A.clone().add(B).multiplyScalar(0.5)); beam.quaternion.setFromUnitVectors(V([0, 1, 0]), d.normalize()); S.add(beam);
+for (let i = 0; i < 8; i++) blob(S, glow('#fff6c0', 1.5), [-0.8 + (i % 4) * 0.35 - 0.2, 1.6 + (i % 3) * 0.25, 0.3], [0.03, 0.03, 0.03]);
+finishScene(stage, [lil], [0.3, 1.2, 5.6], [0.3, 1.0, 0]);

@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TITLE</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, mat, glow, add, blob, setup, beacon, wrap } from './common.js';
+// q01 — A TUBA lights the first BEACON.
+guard(() => {
+  const { stage, scene } = setup();
+  const b = beacon(scene, { x: -1.0, s: 1.25, yaw: 0.25, pose: { arms: { l: [0.1, 0.9, 0], r: [0.1, 0.5, 0] }, mouth: 'open' } });
+  const brass = mat('#e8a928', { metalness: 0.75, roughness: 0.28 });
+  const t = new THREE.Group();
+  add(t, new THREE.LatheGeometry([[0.07, 0.25], [0.12, 0.5], [0.3, 0.8], [0.62, 1.05], [0.6, 1.07], [0.28, 0.83], [0.1, 0.52], [0.05, 0.25]].map(([x, y]) => new THREE.Vector2(x, y)), 36), Object.assign(brass.clone(), { side: THREE.DoubleSide }));
+  add(t, new THREE.TorusGeometry(0.62, 0.1, 14, 40), brass, [0, 0.0, 0.0], [0, 0, 0]);
+  add(t, new THREE.TorusGeometry(0.4, 0.085, 14, 40), brass, [0.25, 0.1, 0.05]);
+  for (const x of [-0.12, 0.05, 0.22]) { add(t, new THREE.CylinderGeometry(0.045, 0.045, 0.4, 12), brass, [x + 0.3, 0.52, 0.5], [0.2, 0, 0]); add(t, new THREE.CylinderGeometry(0.075, 0.075, 0.05, 14), mat('#c8cfd6', { metalness: 0.5 }), [x + 0.3, 0.74, 0.55], [0.2, 0, 0]); }
+  add(t, new THREE.CylinderGeometry(0.06, 0.03, 0.3, 12), brass, [0.7, 0.55, 0], [0, 0, -0.5]);
+  add(t, new THREE.TorusGeometry(0.075, 0.025, 8, 16), brass, [0.82, 0.68, 0], [0, 1.2, 0]);
+  t.position.set(1.45, 0.55, 0); t.rotation.z = 0.95; t.scale.setScalar(0.9); scene.add(t);
+  // fire jet from the bell mouth to the bowl
+  const jet = new THREE.Group();
+  add(jet, new THREE.ConeGeometry(0.4, 1.3, 20), glow('#ff7a1a'), [0, 0.65, 0]);
+  add(jet, new THREE.ConeGeometry(0.22, 1.1, 20), glow('#ffd23a'), [0, 0.55, 0]);
+  t.updateMatrixWorld(true);
+  const mouth = new THREE.Vector3(0, 1.1, 0).applyMatrix4(t.matrixWorld), bowl = new THREE.Vector3(-0.75, 1.5, 0.0), d = bowl.clone().sub(mouth);
+  jet.position.copy(mouth); jet.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.clone().normalize()); jet.scale.set(1, d.length() / 1.3, 1); scene.add(jet);
+  wrap(stage, scene, [b], { pos: [0.2, 1.0, 4.3], look: [0.2, 0.8, 0] });
+});
+</script></body></html>

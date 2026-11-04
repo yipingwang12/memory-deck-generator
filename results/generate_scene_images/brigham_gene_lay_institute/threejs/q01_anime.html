@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Gene Lay q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The HEN guards against immunology and inflammation.
+import { THREE, guard, mat, add, blob, box, cyl, makeScene, nest, coin, egg, die, sign, tree, person, rng } from './common.js';
+import * as X from './props2.js';
+const { placeHen, placePerson, placeNest, aimAt } = X;
+guard(() => {
+
+  const S = makeScene({ ground: '#78b24a' }); const { scene, mark } = S;
+  const hen = placeHen(S, { x: -0.5, z: 0.3, ry: 0.35, scale: 1.25 });
+  const sh = X.shield(0.55); sh.position.set(0.6, 0.75, 0.95); sh.rotation.y = 0.45; scene.add(sh); mark(sh);
+  hen.userData.pose({ wings: { r: [0, 0.8] } }); aimAt(hen, hen.userData.reach, 'l', [0.6, 0.75, 0.9]);
+  const f = X.flame(1.1); f.position.set(2.3, 0, 0.0); scene.add(f);
+  const ab = X.antibody(0.95); ab.position.set(-2.3, 0, 0.0); scene.add(ab);
+  [[-1.1, 2.1, 0.0], [-2.3, 2.6, 0.3], [-0.1, 2.4, -0.3]].forEach((p, i) => { const c = X.cell(0.22); c.position.set(...p); scene.add(c); });
+  S.finish([0, 1.15, 5.1], [0, 0.95, 0]);
+});
+</script></body></html>

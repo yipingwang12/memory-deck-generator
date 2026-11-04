@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q10 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AXE opens a branch in GRENOBLE, France, under the Alps.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ ground: '#78b04a' });
+mountain(S.scene, [-6, -16], 7, 8.5); mountain(S.scene, [2, -19], 9, 11); mountain(S.scene, [10, -15], 6.5, 7.5); mountain(S.scene, [-13, -18], 6, 6.5);
+// shopfront
+const wallc = mat('#f2e3c7'); box(S.scene, wallc, [0.8, 1.2, -1.8], [4.6, 2.4, 1.6]); box(S.scene, mat('#b5483a'), [0.8, 2.55, -1.8], [4.9, 0.3, 1.9]);
+box(S.scene, mat('#7a4b22'), [0.8, 0.8, -0.98], [1.0, 1.6, 0.06]); box(S.scene, mat('#9fd3f0'), [-0.6, 1.0, -0.98], [1.0, 0.9, 0.05]); box(S.scene, mat('#9fd3f0'), [2.2, 1.0, -0.98], [1.0, 0.9, 0.05]);
+const sg = textPlane('GRENOBLE', { w: 3.6, h: 0.85, bg: '#1d4f9a', fg: '#ffffff', frame: '#ffffff' }); sg.position.set(0.8, 3.15, -0.85); S.scene.add(sg);
+// French flag
+cyl(S.scene, mat('#ccc'), [3.5, 2.0, -0.6], 0.04, 4.0); for (const [i, c] of ['#1d4fb8', '#ffffff', '#e0262b'].entries()) box(S.scene, new THREE.MeshBasicMaterial({ color: c }), [3.9 + 0.2 - 0.0 + (i - 1) * 0.4 - 0.2, 3.5, -0.6], [0.4, 0.8, 0.03]);
+// ribbon
+const ribY = 0.8; for (const x of [-3.4, 1.9]) cyl(S.scene, mat('#d8c38a'), [x, ribY / 2, 0.8], 0.06, ribY);
+box(S.scene, mat('#e0262b'), [-2.0, ribY, 0.8], [2.8, 0.14, 0.02]); box(S.scene, mat('#e0262b'), [0.9, ribY, 0.8], [1.9, 0.14, 0.02]); box(S.scene, mat('#e0262b'), [-0.2, ribY - 0.3, 0.8], [0.5, 0.14, 0.02], [0, 0, -1.2]);
+const a = placeAxe(S, { pos: [-0.5, 0, 1.8], ry: 0.3, scale: 1.95, pose: { lean: 0.06, arms: { l: [0, 1.7, 0], r: [0, -0.7, 0.2] }, legs: { l: [0.2, 0], r: [-0.2, 0] } } });
+finish(S, [0.3, 1.6, 7.6], [0.5, 1.6, 0]);
+
+});
+</script></body></html>

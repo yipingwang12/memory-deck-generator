@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Porthole anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, makeStage, createPorthole, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({});
+  const set = [];
+  [[-1.5, 0.0, 0.0, 'smile'], [0, 0.55, 0.0, 'open'], [1.5, 1.2, 0.0, 'worry']].forEach(([x, ry, , mood], i) => {
+    const p = createPorthole({ scale: 1.5 }); p.position.set(x * 1.0, 0, 0.3); p.rotation.y = ry * (i === 2 ? 1 : 1) + (i === 2 ? 0.2 : 0);
+    p.userData.setMood(mood);
+    p.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, -0.5, 0] }, legs: { l: [0, 0], r: [0, 0] } });
+    if (i === 1) p.userData.reach('l', [0.55, 1.05, 0.25]);
+    stage.scene.add(p); set.push(p);
+  });
+  toon(stage, ...set);
+  frame(stage, { cam: [0, 1.0, 5.0], look: [0, 0.8, 0] });
+});
+</script></body></html>

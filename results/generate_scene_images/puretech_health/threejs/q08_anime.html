@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PureTech q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, rng } from './kit.js';
+import { createPuritan, addFace } from './puritan.js';
+import * as K from './props.js';
+const { mat, add, blob, num, makeStage, finishScene, reachWorld } = K;
+guard(() => {
+  const stage = makeStage({ ground: '#d3b88a' });
+  const S = stage.scene;
+  const sh = K.ship(3.8, { portholes: 4 }); sh.position.set(1.2, 0.5, -1.4); S.add(sh);
+  for (const x of [-0.6, 0.6, 1.9, 3.0]) { add(S, new THREE.BoxGeometry(0.22, 0.5, 0.22), mat('#8a5a2c'), [x, 0.25, -1.4]); }
+  add(S, new THREE.BoxGeometry(5, 0.1, 0.3), mat('#8a5a2c'), [1.2, 0.46, -1.4]);
+  const pur = createPuritan({ scale: num('ps', 2.4) }); pur.position.set(-1.5, 0, 0.9); pur.rotation.y = 0.75; S.add(pur);
+  pur.userData.pose({ headTilt: 0.05, arms: { r: [0, 0.35, 0.2] } });
+  reachWorld(pur, 'l', [-0.6, 1.6, 1.1]); pur.updateMatrixWorld(true);
+  const mal = new THREE.Group(); pur.userData.parts.hands.l.getWorldPosition(mal.position); S.add(mal);
+  add(mal, new THREE.CylinderGeometry(0.03, 0.03, 0.6, 8), mat('#8a5a2c'), [0, 0.05, 0], [0, 0, 0.5]);
+  add(mal, new THREE.BoxGeometry(0.28, 0.2, 0.2), mat('#6a4a2a'), [0.17, 0.3, 0], [0, 0, 0.5]);
+  [[3.3, 2.6, -0.2, 0.3], [2.6, 3.2, 0.2, -0.2], [3.9, 3.0, 0.4, 0.1]].forEach(([x, y, z, r]) => { const c = K.cert(0.9, 0.64); c.position.set(x, y, z); c.rotation.set(0.1, -0.3, r); S.add(c); });
+  finishScene(stage, [pur], [num('cx', 0.6), num('cy', 1.8), num('cz', 6.8)], [0.6, 1.95, 0]);
+});
+</script></body></html>

@@ -1,0 +1,43 @@
+// q11 — The GENIE buys OATS LA (Otezla) from a CELERY stalk (Celgene).
+import { THREE, run, mat, add, blob, panel, gold, rng } from './common.js';
+function celery() {
+  const g = new THREE.Group(), greens = ['#b5dc74', '#a3d060', '#c2e485'];
+  blob(g, mat('#eef3c0'), [0, 0.25, 0], [0.62, 0.3, 0.5]);
+  [-0.55, -0.32, -0.12, 0.12, 0.32, 0.55].forEach((a, i) => {
+    const st = new THREE.Group(); st.position.set(0, 0.3, i % 2 ? -0.08 : 0.0); st.rotation.z = -a * 0.8; g.add(st);
+    blob(st, mat(greens[i % 3]), [0, 1.0, 0], [0.19, 1.05, 0.12]);
+    for (let k = 0; k < 3; k++) blob(st, mat(k % 2 ? '#3f8f3a' : '#4fa244'), [(k - 1) * 0.16, 2.15 + (k % 2) * 0.1, 0], [0.22, 0.2, 0.12]);
+  });
+  const front = new THREE.Group(); front.position.set(0, 0.3, 0.12); g.add(front);
+  blob(front, mat('#b9e07a'), [0, 1.0, 0], [0.26, 1.0, 0.12]);
+  for (const s of [-1, 1]) {
+    blob(front, mat('#fff', { roughness: 0.3 }), [s * 0.1, 1.25, 0.12], [0.08, 0.1, 0.03]);
+    blob(front, mat('#1a1030'), [s * 0.1, 1.24, 0.14], [0.05, 0.075, 0.03]);
+    blob(front, mat('#fff'), [s * 0.1 - 0.015, 1.28, 0.16], [0.02, 0.02, 0.02]);
+  }
+  add(front, new THREE.TorusGeometry(0.1, 0.02, 8, 16, Math.PI), mat('#5a1030'), [0, 1.08, 0.13], [0, 0, Math.PI]);
+  for (const s of [-1, 1]) { add(g, new THREE.CylinderGeometry(0.045, 0.045, 0.7, 8), mat('#a3d060'), [s * 0.75, 0.9, 0.25], [0, 0, s * 0.9 + 0.2 * (s > 0 ? 0 : 0)]); blob(g, mat('#b9e07a'), [s * 1.0, 1.15, 0.25], [0.1, 0.1, 0.1]); }
+  return g;
+}
+function oatEar(h) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.02, 0.02, h, 6), mat('#d8b658'), [0, h / 2, 0]);
+  for (let i = 0; i < 7; i++) for (const s of [-1, 1]) blob(g, mat('#e8c86a'), [s * 0.07, h - i * 0.12, 0], [0.045, 0.1, 0.04], [0, 0, s * 0.4]);
+  return g;
+}
+run({
+  ground: '#cdb98c', frame: { x: 0.5, y: 2.0, H: 5.2 },
+  genie: { x: -2.3, z: 0.5, scale: 1.55, ry: 0.4, pose: { headTilt: 0.06, arms: { l: [0, 1.3, 0.2], r: [0, -0.5, 0.2] } }, mouth: 0.25 },
+  build({ scene, reachTo }) {
+    const c = celery(); c.position.set(2.9, 0, -0.5); c.scale.setScalar(1.25); scene.add(c);
+    add(scene, new THREE.BoxGeometry(4.4, 1.0, 1.1), mat('#9a6a3a'), [0.7, 0.5, 0.7]);
+    add(scene, new THREE.BoxGeometry(4.6, 0.1, 1.3), mat('#b98650'), [0.7, 1.05, 0.7]);
+    blob(scene, mat('#cdb48a'), [-0.2, 1.7, 0.7], [0.75, 0.65, 0.6]);
+    add(scene, new THREE.CylinderGeometry(0.62, 0.62, 0.05, 28), mat('#e8c86a'), [-0.2, 2.15, 0.7]);
+    for (let i = 0; i < 7; i++) { const e = oatEar(1.0 + (i % 3) * 0.2); e.position.set(-0.55 + i * 0.18, 2.1, 0.7 + ((i % 2) - 0.5) * 0.3); e.rotation.z = (i - 3) * 0.12; scene.add(e); }
+    const p = panel(1.5, 1.1, ['OATS', 'LA'], { bg: '#e0483a', fg: '#fff', border: '#f2b82a', colors: ['#fff', '#ffe27a'] }); p.position.set(1.4, 2.0, 0.9); scene.add(p);
+    add(scene, new THREE.CylinderGeometry(0.04, 0.04, 1.0, 8), mat('#7a4a22'), [1.4, 1.45, 0.88]);
+    for (let k = 0; k < 4; k++) add(scene, new THREE.CylinderGeometry(0.3, 0.3, 0.07, 24), gold(), [-1.0 + k * 0.0, 1.14 + k * 0.075, 1.1]);
+    reachTo('l', [-0.6, 1.5, 1.0]);
+  },
+});

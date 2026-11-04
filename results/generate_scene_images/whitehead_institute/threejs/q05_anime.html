@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Whitehead q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A BARTENDER (Bartel) in the SNOWMAN shows tiny microRNAs touch most human protein-coding genes.
+import { THREE, guard, rng, mat, add, blob, box, cyl, winterStage, clouds, pine, snowfall, person, lamb, hen, egg, pose, openBelly } from './props.js';
+import { createSnowman } from './snowman.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = winterStage(P);
+
+  pine(scene, -5.2, -3.0, 2.0); pine(scene, 5.4, -3.4, 2.2);
+  const sm = createSnowman({ scale: 4.2 }); openBelly(sm, 1.5); scene.add(sm);
+  sm.userData.pose({ arms: { l: [0, 1.3], r: [0, -1.3] }, headTilt: 0.05 });
+  const wood = mat('#8a4b24');
+  box(sm, mat('#6a3a1c'), [0, 0.15, -0.08], [0.3, 0.012, 0.045]);                    // back shelf
+  for (const [x, c] of [[-0.09, '#2fa36b'], [-0.045, '#d8323a'], [0, '#e6b422'], [0.045, '#3a7be0'], [0.09, '#9b59d0']]) { cyl(sm, mat(c, { transparent: true, opacity: 0.85 }), [x, 0.18, -0.08], 0.011, 0.014, 0.05, undefined, 14); cyl(sm, mat(c), [x, 0.215, -0.08], 0.004, 0.006, 0.02, undefined, 8); }
+  box(sm, wood, [0, 0.1, 0.08], [0.34, 0.07, 0.04]); box(sm, mat('#c88a4a'), [0, 0.139, 0.08], [0.36, 0.01, 0.05]);   // bar counter
+  const bt = person({ coat: '#14141a', kind: 'bartender', h: 0.34 }); bt.position.set(-0.03, 0.07, -0.01); sm.add(bt);
+  pose(bt, 'l', -0.5, 0, 1.0); pose(bt, 'r', -1.4, 0, -0.3);
+  cyl(bt, mat('#cfd6dc', { metalness: 0.8, roughness: 0.25 }), [0.12, 0.88, 0.3], 0.07, 0.1, 0.34, [0, 0, -0.5], 18);  // shaker
+  // double helix "gene" with tiny pink microRNAs touching it
+  const hx = new THREE.Group(); hx.position.set(0.12, 0.155, 0.075); sm.add(hx);
+  for (let i = 0; i < 24; i++) { const t = i / 23, a = t * Math.PI * 4;
+    blob(hx, mat('#3a7be0'), [Math.cos(a) * 0.022, t * 0.2, Math.sin(a) * 0.022], [0.005, 0.005, 0.005]);
+    blob(hx, mat('#5ad0e0'), [-Math.cos(a) * 0.022, t * 0.2, -Math.sin(a) * 0.022], [0.005, 0.005, 0.005]); }
+  for (const [y, dx] of [[0.04, 0.045], [0.09, -0.05], [0.14, 0.05], [0.18, -0.045]]) {
+    const c = new THREE.CatmullRomCurve3([new THREE.Vector3(dx * 1.8, y + 0.02, 0.01), new THREE.Vector3(dx * 1.3, y - 0.012, 0), new THREE.Vector3(dx * 0.8, y + 0.012, 0), new THREE.Vector3(dx * 0.45, y, 0)]);
+    add(hx, new THREE.TubeGeometry(c, 14, 0.0035, 6), mat('#ff5fa8', { emissive: '#ff5fa8', emissiveIntensity: 0.4 }));
+    blob(hx, mat('#ff5fa8'), [dx * 1.8, y + 0.02, 0.01], [0.007, 0.007, 0.007]); }
+  stage.toonify(scene, (m) => m.geometry && m.geometry.type !== 'PlaneGeometry');
+  clouds(stage);
+  stage.camera.position.set(num('cx', 0.0), num('cy', 2.0), num('cz', 6.4));
+  stage.camera.lookAt(num('tx', 0.0), num('ty', 2.0), 0);
+  stage.finish();
+});
+</script></body></html>

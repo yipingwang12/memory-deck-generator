@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const j2 = C.jar('JAM-2', { lid: false }); j2.position.set(-0.9, 0, 0.3); j2.scale.setScalar(3.0); S.scene.add(j2);
+  const lid = cyl(S.scene, mat('#e8b41c', { metalness: 0.6, roughness: 0.3 }), [2.0, 3.55, 0.9], 0.9, 0.36, [0.25, 0, -0.25], 0.93, 36);
+  const j1 = C.jar('JAM', {}); j1.position.set(-4.4, 0, -1.0); j1.scale.setScalar(1.7); S.scene.add(j1);
+  const t = C.triangle(S, { scale: 2.9, pos: [3.0, 0, 1.0], ry: -0.3, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [1.6, 3.3, 0.9]); C.reachWorld(t, 'l', [1.2, 1.2, 1.1]);
+  C.done(S, [t], [0, 2.6, 10.0], [0, 2.4, 0]);
+});
+</script></body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Squid anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createSquid } from './squid.js';
+guard(() => {
+  const stage = createAnimeStage({
+    fov: 28, sunElevation: 38, sunAzimuth: 200,
+    sky: { zenith: '#f3c98a', horizon: '#ffe8c2', cover: 0.02, puffCover: 0.02, towerTop: 0.02, cloudLit: '#fff3dc', cloudShade: '#f3d3a0' },
+    ambient: { color: '#fff0e0', intensity: 2.2 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+  });
+  const THREE = stage.THREE;
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(300, 64), new THREE.MeshStandardMaterial({ color: '#f1d9b0', roughness: 1 }));
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; stage.scene.add(floor);
+  const set = new Set();
+  [[-1.15, 0, 0], [0, 0.7, 1], [1.15, Math.PI / 2, 0]].forEach(([x, ry, w]) => {
+    const p = createSquid(); p.position.x = x; p.rotation.y = ry;
+    if (w) p.userData.reach('l', [0.45, 0.75, 0.35]);
+    stage.scene.add(p); p.traverse((m) => set.add(m));
+  });
+  stage.toonify(stage.scene, (m) => set.has(m));
+  stage.camera.position.set(0, 0.75, 4.4); stage.camera.lookAt(0, 0.52, 0);
+  stage.finish();
+});
+</script></body></html>

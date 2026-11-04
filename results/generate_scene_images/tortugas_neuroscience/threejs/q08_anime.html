@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tortugas q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, makeScene, createTurtle, createShell, mat, add, blob, box, cyl, link, egg, capsule, textMat, rng } from './common.js';
+// q08 - A CURE bottle leads the TURTLE's seed round.
+makeScene(({ scene }) => {
+  const round = add(scene, new THREE.CylinderGeometry(2.6, 2.6, 0.2, 64), mat('#6b4426'), [0, 0.1, -0.3]);
+  add(scene, new THREE.TorusGeometry(2.6, 0.07, 10, 80), mat('#b97b43'), [0, 0.2, -0.3], [Math.PI / 2, 0, 0]);
+  // ring of seedlings (the round) with coin seeds
+  const sprout = (x, z, s = 1) => { const g = new THREE.Group(); g.position.set(x, 0.2, z); g.scale.setScalar(s); scene.add(g); cyl(g, mat('#5fb23a'), [0, 0.1, 0], 0.012, 0.2); blob(g, mat('#7fd14a'), [-0.08, 0.2, 0], [0.09, 0.03, 0.05], [0, 0, 0.5]); blob(g, mat('#7fd14a'), [0.08, 0.2, 0], [0.09, 0.03, 0.05], [0, 0, -0.5]); };
+  for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; sprout(Math.cos(a) * 1.9, -0.3 + Math.sin(a) * 1.9, 1.5); }
+  for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2 + 0.2; blob(scene, mat('#7a5a2c'), [Math.cos(a) * 1.1, 0.24, -0.3 + Math.sin(a) * 1.1], [0.08, 0.04, 0.05], [0, a, 0]); }
+  // CURE bottle (amber lathe) with label and flag, leading the round
+  const pts = [[0, 0], [0.4, 0], [0.45, 0.05], [0.45, 0.8], [0.38, 0.95], [0.18, 1.05], [0.17, 1.25], [0, 1.25]].map(([x, y]) => new THREE.Vector2(x, y));
+  const bottle = new THREE.Group(); bottle.position.set(0.7, 0.2, 0.9); bottle.rotation.y = -0.3; scene.add(bottle);
+  add(bottle, new THREE.LatheGeometry(pts, 40), mat('#d9822b', { roughness: 0.15, metalness: 0.1 }));
+  cyl(bottle, mat('#ffffff'), [0, 1.35, 0], 0.2, 0.16);
+  box(bottle, textMat('CURE', { bg: '#ffffff', fg: '#1f9d55', font: 'bold 170px sans-serif', w: 512, h: 256 }), [0, 0.45, 0.455], [0.7, 0.45, 0.02]);
+  box(bottle, mat('#e5383b'), [0, 0.68, 0.46], [0.22, 0.04, 0.01]); box(bottle, mat('#e5383b'), [0, 0.28, 0.46], [0.04, 0.0, 0.01]);
+  // eyes on bottle? no. flag
+  cyl(bottle, mat('#ffffff'), [0, 1.8, 0], 0.015, 0.9); box(bottle, mat('#2a63c9'), [0.2, 2.1, 0], [0.4, 0.26, 0.02]);
+  const t = createTurtle({ scale: 1.0 }); t.position.set(-1.0, 0.2, 0.5); t.rotation.y = 0.35; scene.add(t);
+  t.userData.pose({ headTilt: 0.08, legs: { l: [0.3, 0.1], r: [-0.3, -0.1] }, arms: { r: [0, -0.5, 0] } });
+  t.updateMatrixWorld(true); t.userData.reach('l', [0.38, 0.55, 0.28]);
+  // watering can in the hand and a seed
+  blob(t, mat('#7a5a2c'), [0.38, 0.5, 0.3], [0.06, 0.035, 0.04]);
+  return [t];
+}, { ground: '#8cc860', cam: { pos: [0.3, 1.6, 4.9], look: [0.0, 0.8, 0.2] } });
+</script></body></html>

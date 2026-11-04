@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, mat, add, blob, box, cyl, num, textPlane, makeStage, placeAnchor, wrap } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage({ ground: '#8a8f98', zenith: '#8fa3bd', horizon: '#c9d0da', cloudShade: '#b6bfcc' });
+  const S = stage.scene;
+  // back wall of the cell (brick) with barred window
+  const brick = mat('#9c7a68');
+  box(S, brick, [0.5, 1.7, -0.9], [8, 3.4, 0.3]);
+  for (let r = 0; r < 12; r++) for (let c = 0; c < 8; c++) box(S, mat(r % 2 ? '#8a6a5a' : '#a98878'), [-3 + c * 1.0 + (r % 2) * 0.5, 0.15 + r * 0.28, -0.72], [0.94, 0.02, 0.02]);
+  box(S, mat('#222831'), [-2.4, 2.35, -0.72], [1.0, 0.8, 0.05]);
+  for (let i = 0; i < 5; i++) cyl(S, mat('#6b717c'), [-2.8 + i * 0.2, 2.35, -0.68], 0.025, 0.9);
+  // writing on the wall (chalk) + dotted inner-voice bubble
+  const note = textPlane('hello', { w: 2.4, h: 2.4, bg: '#2f3a44', fg: '#f4f0e0', font: 'italic 170px "Comic Sans MS", cursive' }); note.position.set(1.1, 1.55, -0.7); note.scale.set(1, 0.55, 1); S.add(note);
+  box(S, mat("#2f3a44"), [1.1, 1.55, -0.74], [2.6, 1.5, 0.04]);
+  // jail bars in front, left and right sides
+  const bar = mat('#454b56', { metalness: 0.4 });
+  for (let i = 0; i < 6; i++) cyl(S, bar, [3.2 + i * 0.28, 1.2, 0.8], 0.04, 2.6);
+  box(S, bar, [3.75, 2.45, 0.8], [1.8, 0.07, 0.07]); box(S, bar, [3.75, 0.3, 0.8], [1.8, 0.07, 0.07]);
+  // cot
+  box(S, mat('#5a6f8a'), [-2.2, 0.35, -0.2], [1.5, 0.12, 0.8]); box(S, mat('#e8e2d0'), [-2.6, 0.5, -0.2], [0.4, 0.18, 0.6]);
+  const a = placeAnchor(stage, { x: -0.55, z: -0.3, ry: 0.15, scale: 1.8, pose: { lean: 0.05, legs: { l: [0.2, 0], r: [-0.2, 0] } }, spin: 0.3 });
+  a.updateMatrixWorld(true);
+  const tgt = a.worldToLocal(new THREE.Vector3(0.05, 1.45, -0.62)); a.userData.reach('l', [tgt.x, tgt.y, tgt.z]);
+  // thought bubble dots
+  for (let i = 0; i < 3; i++) blob(S, mat('#ffffff'), [-0.7 + i * -0.05 - 0.4, 2.25 + i * 0.2, 0.3], [0.08 + i * 0.04, 0.08 + i * 0.04, 0.05]);
+  wrap(stage, a, P, { cx: 0.9, cz: 6, cy: 1.4, tx: 0.9, ty: 1.2 });
+});
+</script></body></html>

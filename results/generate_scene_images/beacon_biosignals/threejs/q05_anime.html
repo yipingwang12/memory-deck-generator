@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q05</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q05 — The BEACON wears an FDA-cleared EEG headband.
+guard(() => {
+
+  const { stage, scene } = setup();
+  const b = beacon(scene, { x: -0.7, s: 1.4, yaw: 0.2, pose: { arms: { l: [0.1, 1.0, 0], r: [0.1, 0.5, 0] } } });
+  const band = add(b, new THREE.TorusGeometry(0.232, 0.032, 12, 40), mat('#f4f4f8'), [0, 0.67, 0], [Math.PI / 2, 0, 0]);
+  for (const a of [-0.55, 0, 0.55]) { const x = Math.sin(a) * 0.235, z = Math.cos(a) * 0.235; const e = add(b, new THREE.CylinderGeometry(0.04, 0.04, 0.03, 18), mat('#e8b52a', { metalness: 0.7, roughness: 0.3 }), [x, 0.67, z], [Math.PI / 2, 0, 0]); e.rotation.set(Math.PI / 2, 0, 0); e.lookAt(new THREE.Vector3(x * 2, 0.67, z * 2)); e.rotateX(Math.PI / 2); }
+  // FDA seal
+  const seal = new THREE.Group(); seal.position.set(1.55, 1.35, 0.3); seal.rotation.y = -0.25;
+  add(seal, new THREE.CylinderGeometry(0.65, 0.65, 0.08, 40), mat('#1c4fa0'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  add(seal, new THREE.TorusGeometry(0.65, 0.05, 10, 40), mat('#e8b52a', { metalness: 0.6 }));
+  const t = textPlane('FDA', 0.9, 0.38, { bg: null, fg: '#ffffff' }); t.position.set(0, 0.2, 0.05); seal.add(t);
+  const ck = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-0.3, -0.18, 0.05), new THREE.Vector3(-0.1, -0.38, 0.05), new THREE.Vector3(0.32, -0.02, 0.05)]), 20, 0.055, 8), glow('#5bea6a')); seal.add(ck);
+  scene.add(seal);
+  wrap(stage, scene, [b], { pos: [0.4, 1.1, 4.6], look: [0.4, 0.95, 0] });
+});
+</script></body></html>

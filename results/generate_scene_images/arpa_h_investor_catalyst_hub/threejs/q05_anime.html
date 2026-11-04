@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>ARPA-H q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — The HARP's strings connect ARPA-H money to investors and local inventors.
+import { THREE, guard, rng, mat, add, blob, cyl, box, person, coin, textPlate, setup } from './common.js';
+import { limbTo } from './props.js';
+guard(() => {
+  const S = setup({ harpPos: [0, 0, 0.5], harpScale: 2.3 });
+  const { scene, harp, mark } = S;
+  const r = rng(5);
+  // money stack left: sack labelled ARPA-H + coin pile
+  const bag = new THREE.Group(); bag.position.set(-3.3, 0, 0.3); scene.add(bag);
+  blob(bag, mat('#6a9b4a'), [0, 0.85, 0], [1.05, 1.0, 0.9]); blob(bag, mat('#6a9b4a'), [0, 1.9, 0], [0.5, 0.35, 0.45]);
+  box(bag, mat('#c8102e'), 0.9, 0.12, 0.5, [0, 1.62, 0.05]);
+  const t = textPlate('ARPA-H', 1.5, 1.5, { bg: '#f4ecd0', fg: '#1d4a2a', font: 'bold 96px sans-serif' }); t.scale.set(1, 0.55, 1); t.position.set(0, 0.95, 0.9); bag.add(t);
+  for (let i = 0; i < 34; i++) { const c = coin(0.2), a = r() * 6.28, rd = 0.9 + r() * 0.9; c.position.set(Math.cos(a) * rd * 1.1, 0.05 + r() * 0.12, 0.6 + Math.sin(a) * rd * 0.5 + 0.5); c.rotation.set(Math.PI / 2 + (r() - 0.5), 0, r() * 3); bag.add(c); }
+  // investors (top hats) and local inventor (hard hat + bulb) right
+  const pp = [{ x: 2.5, z: 0.5, o: { hat: 'top', suit: '#222a4a' } }, { x: 3.6, z: 0.1, o: { hat: 'top', suit: '#6a2a4a', tie: '#ffd24a' } }, { x: 3.0, z: 1.6, o: { hat: 'hard', suit: '#e08a1e', tie: '#ffffff' } }];
+  pp.forEach(({ x, z, o }) => { const p = person(o); p.g.scale.setScalar(1.7); p.g.position.set(x, 0, z); p.g.rotation.y = 0.2; p.armR.rotation.z = -0.6; p.armL.rotation.z = 0.2; scene.add(p.g); mark(p.g); });
+  const bulb = new THREE.Group(); bulb.position.set(3.0, 3.0, 1.6); scene.add(bulb);
+  blob(bulb, mat('#fff3a0', { emissive: '#ffe34a', emissiveIntensity: 1.0 }), [0, 0, 0], [0.28, 0.28, 0.28]); cyl(bulb, mat('#999'), 0.1, 0.18, [0, -0.3, 0]);
+  // taut gold strings from the harp's neck to each end
+  const gold = mat('#ffd24a', { metalness: 0.5, roughness: 0.3 }), top = [0.2, 2.5, 0.5];
+  limbTo(scene, gold, [-0.6, 2.9, 0.5], [-3.0, 1.9, 0.4], 0.04); limbTo(scene, gold, [-0.55, 2.5, 0.5], [-2.8, 1.1, 0.9], 0.04);
+  limbTo(scene, gold, [0.75, 2.8, 0.5], [2.3, 1.1, 0.8], 0.04); limbTo(scene, gold, [0.9, 2.45, 0.5], [3.4, 1.2, 0.3], 0.04); limbTo(scene, gold, [0.8, 2.1, 0.5], [2.9, 1.0, 1.7], 0.04);
+  for (let i = 0; i < 8; i++) { const c = coin(0.12); c.position.set(-0.7 - i * 0.36, 2.85 - i * 0.09, 0.55); c.rotation.y = 0.5; scene.add(c); }
+  harp.userData.pose({ arms: { l: [0, 1.2, 0.3], r: [0, 1.2, 0.3] }, tilt: 0 });
+  S.done(0.0, 1.9, 8.8, 0.0, 1.7, 0);
+});
+</script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Superluminal q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A SHREDDER employed the SUPERHERO CEO for eight years of deals.
+import * as THREE from 'three';
+import { boot } from './common.js';
+import * as P from './props.js';
+const { add, blob, box, cyl, mat, coin, limbBetween } = P;
+const place = (o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.setScalar(s); return o; };
+const coinAt = (ctx, x, y, z, r = 0.2, ry = 0, rx = 0) => { const c = coin(r); c.position.set(x, y, z); c.rotation.set(rx, ry, 0); ctx.scene.add(c); return c; };
+
+boot((ctx) => {
+  const s = P.shredder(); ctx.char(s); place(s, 1.7, 0, 0, -0.35, 1.45);
+  const h = ctx.hero({ x: -1.7, ry: 0.55, scale: 1.95, pose: { arms: { l: [0, 0.4, 0], r: [0, 0.3, 0] } } });
+  const bc = new THREE.Group(); ctx.scene.add(bc); place(bc, -0.2, 0.7, 0.9, 0.5);
+  box(bc, mat('#6b3f1d'), [0, 0, 0], [0.9, 0.65, 0.2]); box(bc, mat('#f5b81c', { metalness: 0.5 }), [0, 0.1, 0.11], [0.15, 0.1, 0.02]); add(bc, new THREE.TorusGeometry(0.15, 0.03, 8, 16, Math.PI), mat('#3a2310'), [0, 0.33, 0]);
+  ctx.reach(h, 'l', [-0.2, 0.9, 0.9]);
+  for (let i = 0; i < 8; i++) box(ctx.scene, mat('#fffdf5'), [3.2 + (i % 4) * 0.35, 0.02 + Math.floor(i / 4) * 0.02, 1.2 - Math.floor(i / 4) * 0.5], [0.3, 0.015, 0.4], [0, i * 0.7, 0]);
+  ctx.cam([0.1, 1.6, 7.0], [0.15, 1.35, 0]);
+});
+</script></body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q08 - A NACHO marks the CAMPER application deadline
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ ground: '#e8c9a0', camper: { pos: [-0.7, 0, 0.3], ry: 0.6 }, cam: [0.3, 1.3, 5.0], look: [0.3, 1.0, 0],
+  build: ({ scene, van }) => {
+    const r = rng(8), P = new THREE.Group();
+    cyl(P, 0.2, 0.3, 0.6, '#8a5a38', [0, 0.3, 0]); cyl(P, 1.2, 1.2, 0.08, '#f4f4f0', [0, 0.65, 0]); cyl(P, 0.95, 0.95, 0.02, '#ffffff', [0, 0.7, 0]);
+    for (let i = 0; i < 34; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * 0.95, y = 0.78 + (1 - d) * 0.75 * r() + r() * 0.1;
+      add(P, new THREE.CylinderGeometry(0.32, 0.32, 0.04, 3), mat(i % 3 ? '#f3b83c' : '#e8a22a'), [Math.cos(a) * d, y, Math.sin(a) * d], [r() * 0.9 - 0.45, r() * 6, r() * 0.9 - 0.45], [1, 1, 1]); }
+    for (let i = 0; i < 14; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * 0.7; blob(P, mat('#ff9a1a', { emissive: '#a04a00', emissiveIntensity: 0.2 }), [Math.cos(a) * d, 1.15 - d * 0.5 + r() * 0.2, Math.sin(a) * d], [0.2, 0.06, 0.2]); }
+    for (let i = 0; i < 6; i++) { const a = r() * 6.28, d = 0.2 + r() * 0.55; add(P, new THREE.TorusGeometry(0.1, 0.035, 8, 18), mat('#3fa03a'), [Math.cos(a) * d, 1.2 - d * 0.5, Math.sin(a) * d], [1.2, 0, r() * 3]); }
+    P.position.set(1.6, 0, 0.5); P.scale.setScalar(1.1); scene.add(P);
+    const clk = new THREE.Group();
+    cyl(clk, 0.55, 0.55, 0.22, '#d82a2a', [0, 0, 0], [Math.PI / 2, 0, 0]);
+    panel(clk, 0.9, 0.9, (ctx) => { ctx.fillStyle = '#fffdf0'; ctx.beginPath(); ctx.arc(256, 256, 250, 0, 7); ctx.fill(); ctx.strokeStyle = '#222'; ctx.lineWidth = 14; ctx.lineCap = 'round';
+      for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; ctx.beginPath(); ctx.moveTo(256 + Math.sin(a) * 200, 256 - Math.cos(a) * 200); ctx.lineTo(256 + Math.sin(a) * 230, 256 - Math.cos(a) * 230); ctx.stroke(); }
+      ctx.lineWidth = 22; ctx.beginPath(); ctx.moveTo(256, 256); ctx.lineTo(256, 100); ctx.stroke(); ctx.strokeStyle = '#d82a2a'; ctx.beginPath(); ctx.moveTo(256, 256); ctx.lineTo(350, 300); ctx.stroke(); }, [0, 0, 0.12]);
+    for (const x of [-1, 1]) { blob(clk, mat('#ffd21f', { metalness: 0.5 }), [x * 0.4, 0.55, 0], [0.2, 0.15, 0.1], [0, 0, x * -0.5]); cyl(clk, 0.04, 0.04, 0.3, '#444', [x * 0.35, -0.6, 0], [0, 0, x * 0.4]); }
+    clk.position.set(-2.7, 1.2, -0.6); clk.scale.setScalar(1.1); scene.add(clk);
+    van.userData.pose({ arms: { l: [0, 1.2, 0.3] } }); van.userData.reach('l', [0.95, 0.75, 0.6]);
+  } });
+
+</script></body></html>

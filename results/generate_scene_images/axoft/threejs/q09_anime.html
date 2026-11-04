@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AXE material science appears twice in Nature.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({});
+for (let i = 0; i < 9; i++) tree(S.scene, [-7 + i * 1.8, -4.5 - (i % 2)], 3.4);
+const a = placeAxe(S, { pos: [0, 0, 0.5], ry: 0, scale: 1.95, pose: { headTilt: 0.05, legs: { l: [0.12, 0], r: [-0.12, 0] } }, reach: { l: [0.62, 1.15, 0.4], r: [-0.62, 1.15, 0.4] } });
+const cover = () => { const g = new THREE.Group();
+  const bk = textPlane('Nature', { w: 1.0, h: 1.3, bg: '#0f6b3a', fg: '#ffffff', frame: '#ffffff' }); g.add(bk);
+  blob(g, new THREE.MeshBasicMaterial({ color: '#7bd36a' }), [0, -0.3, 0.01], [0.3, 0.3, 0.01]); blob(g, new THREE.MeshBasicMaterial({ color: '#ffe36a' }), [0.12, -0.22, 0.02], [0.08, 0.08, 0.01]);
+  return g; };
+for (const [k, s] of [['l', 1], ['r', -1]]) { const h = hand(a, k), c = cover(); c.scale.setScalar(1.15); c.position.set(h.x + s * 0.75, h.y + 0.6, h.z + 0.12); c.rotation.z = -s * 0.08; S.scene.add(c);
+  seg(S.scene, mat('#ffe0c0'), [h.x, h.y, h.z], [h.x + s * 0.3, h.y + 0.1, h.z + 0.1], 0.025); }
+finish(S, [0, 1.6, 7.0], [0, 1.55, 0]);
+
+});
+</script></body></html>

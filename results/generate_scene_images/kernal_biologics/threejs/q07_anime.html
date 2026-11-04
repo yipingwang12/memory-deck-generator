@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kernal q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q07 — the HARP's song is EMBODY: the KERNEL must build the cure in the body
+import { THREE, guard, mat, add, blob, box, cyl, rng, harp, note, makeStage } from './common.js';
+guard(() => {
+  const S = makeStage({ seed: 14, sky: { zenith: '#3a4fb0', horizon: '#f8c0a0', cover: 0.3 } }); const { scene } = S;
+  S.ground('#b8d8a0');
+  // big human body (bold teal figure), standing right, glowing heart cure in chest
+  const body = new THREE.Group(); body.position.set(1.8, 0, -0.5); body.scale.setScalar(0.8); scene.add(body);
+  const skin = mat('#ffd0a8', { roughness: 0.5 }), shirt = mat('#4fa8c8');
+  blob(body, skin, [0, 3.05, 0], [0.42, 0.5, 0.4]);                       // head
+  blob(body, mat('#4a3020'), [0, 3.25, -0.05], [0.44, 0.34, 0.4]);        // hair
+  for (const s of [-1, 1]) { blob(body, mat('#fff'), [s * 0.16, 3.07, 0.37], [0.09, 0.11, 0.03]); blob(body, mat('#222'), [s * 0.16, 3.05, 0.4], [0.05, 0.07, 0.02]); }
+  blob(body, shirt, [0, 1.95, 0], [0.75, 1.05, 0.45]);                    // torso
+  for (const s of [-1, 1]) { cyl(body, skin, [s * 0.95, 1.9, 0], 0.17, 1.4, [0, 0, s * 0.12]); cyl(body, mat('#2f3b6b'), [s * 0.32, 0.55, 0], 0.22, 1.2); }
+  // glowing heart in chest cutout
+  const heart = new THREE.Group(); heart.position.set(0, 2.15, 0.44); body.add(heart);
+  blob(heart, mat('#ff4d6d', { emissive: '#ff2a4a', emissiveIntensity: 0.6 }), [-0.11, 0.05, 0], [0.16, 0.16, 0.1]);
+  blob(heart, mat('#ff4d6d', { emissive: '#ff2a4a', emissiveIntensity: 0.6 }), [0.11, 0.05, 0], [0.16, 0.16, 0.1]);
+  add(heart, new THREE.ConeGeometry(0.25, 0.32, 4), mat('#ff4d6d', { emissive: '#ff2a4a', emissiveIntensity: 0.6 }), [0, -0.12, 0], [0, 0.78, Math.PI]);
+  // kernel in front, hammering/building at the heart with a wrench
+  const k = S.kernel({ scale: 1.8 }); k.position.set(-0.3, 0, 1.2); k.rotation.y = 0.55; scene.add(k);
+  k.userData.pose({ legs: { l: [0.1, 0.05], r: [-0.1, -0.05] } });
+  k.userData.reach('l', [0.6, 1.0, 0.4]); k.userData.reach('r', [-0.4, 0.55, 0.3]);
+  S.toon(k);
+  const wr = new THREE.Group(); k.userData.parts.hands.l.add(wr);
+  cyl(wr, mat('#c8cfd9', { metalness: 0.6 }), [0, 0.12, 0], 0.025, 0.3); cyl(wr, mat('#c8cfd9', { metalness: 0.6 }), [0, 0.3, 0], 0.07, 0.05, [Math.PI / 2, 0, 0]);
+  // harp far left with notes drifting to body
+  const hp = harp(); hp.position.set(-2.4, 0, -0.8); hp.scale.setScalar(0.9); hp.rotation.y = 0.5; scene.add(hp);
+  [[-1.5, 2.2, 0.0], [-0.8, 2.6, 0.0], [-0.1, 2.9, 0.0], [0.6, 2.7, 0.0]].forEach(([x, y, z], i) => note(scene, [x, y, z], ['#ffe27a', '#ffffff', '#ffb0d0', '#b8f0ff'][i], 1.4));
+  S.finish({ x: 0.0, y: 1.5, z: 6.0, tx: 0.0, ty: 1.4 });
+});
+</script></body></html>

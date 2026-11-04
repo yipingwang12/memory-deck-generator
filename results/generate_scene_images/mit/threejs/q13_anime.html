@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q13 — "A TONGA WAGON (Tonegawa) founds the MITTEN's PICOWER tower."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const t = P.tower({ h: 2.0 }); t.position.set(3.6, 0, -2.6); t.scale.setScalar(1.1); scene.add(t);
+  const w = P.wagon(); w.position.set(0.7, 0, 0); w.scale.setScalar(1.3); w.rotation.y = -0.25; scene.add(w);
+  cyl(scene, mat('#7b5230'), 0.04, 0.04, 2.4, [0.0, 1.7, 0.1]);
+  const f = P.tongaFlag(1.6, 1.0); f.position.set(0.8, 2.05, 0.1); scene.add(f);
+  const m = placeMitten(scene, { x: -1.8, z: 1.0, ry: 0.5, s: 2.1, reach: { l: [-0.5, 1.1, 0.9] } });
+  return { chars: [m], cam: { pos: [0.7, 2.0, 7.0], look: [0.7, 1.8, 0] } };
+});
+</script></body></html>

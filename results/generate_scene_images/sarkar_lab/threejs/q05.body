@@ -1,0 +1,12 @@
+  meadow('#7cb84c'); 
+  const cloth = add(scene, new THREE.PlaneGeometry(9, 6), new THREE.MeshStandardMaterial({ map: canvasTexture(256, (ctx, s) => { for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) { ctx.fillStyle = (i + j) % 2 ? '#ffffff' : '#e4584a'; ctx.fillRect(i * s / 8, j * s / 8, s / 8, s / 8); } }, { repeat: 1 }), roughness: 0.9 }), [0, 0.01, -0.5], [-Math.PI / 2, 0, 0]);
+  const S = new THREE.Group(); S.position.set(-0.7, 0, -0.8); S.rotation.y = 0.35; scene.add(S);
+  add(S, new THREE.BoxGeometry(2.4, 0.4, 1.6), mat('#d8dde2', { metalness: 0.9, roughness: 0.2 }), [0, 0.2, 0]);      // silver slab
+  // organic polymer layer: green wavy chains
+  const r = rng(5);
+  for (let k = 0; k < 7; k++) for (let i = 0; i < 24; i++) add(S, new THREE.SphereGeometry(0.1, 12, 8), mat(k % 2 ? '#3fbf5f' : '#7fe08a'), [-1.1 + i * 0.095, 0.55 + Math.sin(i * 0.8 + k) * 0.08, -0.65 + k * 0.215]);
+  for (let k = 0; k < 7; k++) add(S, new THREE.CylinderGeometry(0.05, 0.05, 2.25, 8), mat('#2fa04f'), [0, 0.55, -0.65 + k * 0.215], [0, 0, Math.PI / 2]);
+  add(S, new THREE.BoxGeometry(2.4, 0.4, 1.6), mat('#f0c040', { metalness: 0.9, roughness: 0.25 }), [0, 0.95, 0]);       // gold slab
+  const h = hiker(scene, { pos: [1.7, 0, 0.9], ry: -0.5, s: 1.35, arms: { l: [0, 0.1, 0.2], r: [0, 0.1, 0.2] } });
+  h.userData.reach('l', [-0.3, 0.9, 0.35]);
+  cam.position.set(0.3, 1.7, 5.6); cam.lookAt(0, 0.7, 0);

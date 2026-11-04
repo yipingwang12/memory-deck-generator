@@ -1,0 +1,27 @@
+<!doctype html><html><head><title>McLean q03</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body>
+<script type="module">
+import { THREE, mat, add, blob, num, rng, makeStage, finishScene, guard, HEAD } from './stage_common.js';
+import { createBroom } from './broom.js';
+import * as P from './props.js';
+guard(() => {
+  const stage = makeStage(), scene = stage.scene;
+  const ground = (c, y = 0) => add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, y, 0], [-Math.PI / 2, 0, 0]);
+
+  ground('#d9b98a');
+  add(scene, new THREE.BoxGeometry(6.5, 1.6, 2.6), mat('#f3e3c0'), [0, 0.8, -3.0]);
+  add(scene, new THREE.BoxGeometry(6.8, 0.2, 3.0), mat('#c85a3c'), [0, 1.7, -3.0]);
+  for (const [x,y] of [[-1.8,0.9],[1.8,0.9]]) add(scene, new THREE.BoxGeometry(0.9, 0.8, 0.08), mat('#8ac6e8'), [x, y, -1.68]);
+  const table = new THREE.Group(); table.position.set(0.0, 0, 0.1); scene.add(table);
+  add(table, new THREE.BoxGeometry(3.0, 0.1, 1.3), mat('#a8703c'), [0, 0.9, 0]);
+  for (const [x,z] of [[-1.3,-0.5],[1.3,-0.5],[-1.3,0.5],[1.3,0.5]]) add(table, new THREE.CylinderGeometry(0.06,0.06,0.9,10), mat('#7a4a28'), [x,0.45,z]);
+  const baker = P.buildBaker({ handL: [0.45, 1.25, 0.65], handR: [-0.35, 1.2, 0.65] }); baker.position.set(-0.7, 0, -0.9); baker.rotation.y = 0.35; baker.scale.setScalar(1.05); scene.add(baker);
+  const mic = P.buildMicroscope(); mic.scale.setScalar(1.1); mic.position.set(-0.25, 0.95, -0.15); mic.rotation.y = 0.35; scene.add(mic);
+  for (const [x,z,r] of [[0.9,-0.2,0],[1.35,0.1,0.5],[0.7,0.3,1]]) { const l = blob(scene, mat('#d79a4a'), [x, 1.03, z], [0.28, 0.14, 0.15], [0, r, 0]); blob(scene, mat('#f0c27a'), [x, 1.1, z], [0.22, 0.06, 0.11], [0, r, 0]); }
+  const b = createBroom({ scale: 1.6 }); b.position.set(1.7, 0, 1.0); b.rotation.y = -0.45; scene.add(b);
+  b.userData.pose({ headTilt: 0.1 }); b.updateMatrixWorld(true);
+  const t = b.worldToLocal(new THREE.Vector3(0.1, 1.25, 0.3)); b.userData.reach('l', [t.x, t.y, t.z]); b.userData.reach('r', [-0.05, 0.9, 0.05]);
+  for (const [x,y] of [[-0.45,1.2],[0.0,1.35],[-0.85,1.1]]) P.sparkle(scene,[x,y+0.8,0.5],0.07);
+  finishScene(stage, scene, [b, baker], [0.1, 1.5, 4.9], [0.1, 1.2, 0]);
+
+});
+</script></body></html>

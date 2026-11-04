@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — "On the MITTEN, the MANDOLIN finds that Alzheimer's variants act mostly through IMMUNE processes."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const sh = P.shield({ w: 2.2, h: 2.6 }); sh.position.set(1.6, 0, -0.5); scene.add(sh);
+  const br = P.brain({ s: 0.85, front: '#ff9fb5' }); br.position.set(1.6, 2.25, 0.2); scene.add(br);
+  const r = rng(6);
+  for (let i = 0; i < 9; i++) { const a = i / 9 * 6.28; const ab = P.antibody(i % 2 ? '#8a4fd8' : '#f2a93b'); ab.scale.setScalar(1.5); ab.position.set(1.6 + Math.cos(a) * 1.5, 1.8 + Math.sin(a) * 1.5, 0.5); ab.rotation.z = a - Math.PI / 2; scene.add(ab); }
+  const md = P.mandolin(); md.position.set(-1.6, 0, 0.9); md.rotation.set(0, 0.3, -0.1); md.scale.setScalar(1.2); scene.add(md);
+  const m = placeMitten(scene, { x: -0.3, z: 1.2, ry: 0.3, s: 1.95, pose: { arms: { l: [0, 0.8, 0] } }, reach: { r: [-1.1, 1.0, 1.4] } });
+  return { chars: [m], cam: { pos: [0.2, 2.0, 7.0], look: [0.2, 1.7, 0] } };
+});
+</script></body></html>

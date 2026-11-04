@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q09</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q09 — A NACHO tops up the BEACON's Series B past ninety-seven million.
+guard(() => {
+
+  const { stage, scene } = setup();
+  const b = beacon(scene, { x: -0.6, s: 1.3, yaw: 0.15, pose: { mouth: 'open', flame: 1.1, arms: { l: [0.1, 1.2, 0], r: [0, 0.5, 0] } } });
+  const n = new THREE.Group();
+  add(n, new THREE.CylinderGeometry(0.85, 0.85, 0.09, 3), mat('#f0b93a'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+  const r = rng(5); [[0, 0.15], [-0.25, -0.1], [0.28, -0.12], [0, -0.3]].forEach(([x, y]) => blob(n, mat('#ff9a1a', { roughness: 0.3 }), [x, y, 0.07], [0.2, 0.15, 0.04]));
+  for (const [x, y] of [[0.1, 0.0], [-0.2, 0.15], [0.25, -0.3], [-0.3, -0.28]]) { add(n, new THREE.TorusGeometry(0.07, 0.025, 8, 16), mat('#3e9a2e'), [x, y, 0.12]); }
+  for (const sx of [-1, 1]) { blob(n, mat('#fff', { roughness: 0.3 }), [sx * 0.17, 0.0, 0.1], [0.07, 0.09, 0.02]); blob(n, mat('#2a1a10'), [sx * 0.17, -0.01, 0.12], [0.045, 0.065, 0.02]); blob(n, mat('#fff'), [sx * 0.17 - 0.012, 0.025, 0.14], [0.015, 0.015, 0.01]); }
+  n.position.set(1.0, 1.95, 0.2); n.scale.setScalar(0.85); n.rotation.z = 0.0; scene.add(n);
+  // cheese stream into bowl
+  const pts = [[0.95, 1.3, 0.2], [0.5, 1.2, 0.2], [-0.1, 1.5, 0.2], [-0.5, 1.5, 0.15]].map((p) => new THREE.Vector3(...p));
+  add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 30, 0.07, 10), glow('#ff9a1a'));
+  // coins + sign
+  const cs = coinStack(7, 0.32); cs.position.set(1.4, 0, 0.9); scene.add(cs);
+  add(scene, new THREE.CylinderGeometry(0.04, 0.05, 1.0, 8), mat('#7a4a28'), [2.2, 0.4, 0.2]);
+  box(scene, mat('#1c4fa0'), [2.2, 0.85, 0.2], [1.2, 0.6, 0.06]);
+  const t = textPlane('$97M', 1.1, 0.5, { bg: '#1c4fa0', fg: '#ffe066' }); t.position.set(2.2, 0.85, 0.24); scene.add(t);
+  wrap(stage, scene, [b, n], { pos: [0.3, 1.1, 4.8], look: [0.3, 0.95, 0] });
+});
+</script></body></html>

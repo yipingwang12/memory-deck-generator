@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q14 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q14 — The CRISP's ticker reads CRSP.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, reach, finish }) => {
+  const c = crisp({ s: 2.3, x: -2.4, z: 0.4, ry: 0.35 });
+  const B = new THREE.Group(); B.position.set(1.4, 3.0, -0.4); scene.add(B);
+  box(B, mat('#15181f'), [0, 0, 0], [5.4, 2.0, 0.2]); box(B, mat('#e0b02a'), [0, 0, -0.01], [5.6, 2.2, 0.15]);
+  const t = textPlane('CRSP', 3.2, 1.4, { bg: '#0a0f14', fg: '#3cf07a' }); t.position.set(-0.7, 0.0, 0.11); B.add(t);
+  add(B, new THREE.ConeGeometry(0.55, 0.9, 3), mat('#3cf07a'), [2.05, 0.1, 0.12], [0, 0, 0]);
+  const strip = textPlane('+ +  +  +', 5.2, 0.4, { bg: '#0a0f14', fg: '#3cf07a' }); strip.position.set(1.4, 1.62, 0.0); strip.visible = false;
+  for (const x of [-2, 2]) cyl(scene, mat('#4a4f58'), [1.4 + x, 1.0, -0.4], 0.1, 2.0);
+  reach(c, 'l', [-0.2, 3.0, 0.4]);
+  finish([0.1, 2.3, 7.4], [0.1, 2.0, 0]);
+});
+
+</script></body></html>

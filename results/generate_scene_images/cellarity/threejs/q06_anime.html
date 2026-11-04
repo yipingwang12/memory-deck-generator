@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q06 - The CELLAR changes how the whole cell behaves.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'cellar' }); const sc = S.scene;
+S.cellar({ pos: [-1.9, 0, 0.3], scale: 1.6, ry: 0.4, pose: { arms: { l: [0, 0.5], r: [-1.2, 0.2] } } });
+put(sc, C.cell({ r: 1.1, color: '#ff9ab0' }), 0.9, 0, 0, 1);
+const r = C.rng(11), cols = ['#ffd23a', '#3ad0a0', '#4aa8ff', '#ff5a8a'];
+for (let i = 0; i < 18; i++) { const a = r() * 6.28, e = r() * 3 - 1.5; const d = 1.5 * Math.sqrt(1 - Math.min(0.8, e * e / 4)); const x = 0.9 + Math.cos(a) * 0.7, y = 1.1 + e * 0.4; blob(sc, mat(cols[i % 4], { emissive: cols[i % 4], emissiveIntensity: 0.6 }), [x, y, 0.9 + r() * 0.35], [0.1, 0.1, 0.1]); }
+S.done({ cam: [0, 1.2, 5.2], look: [-0.1, 0.9, 0] });
+});
+</script></body></html>

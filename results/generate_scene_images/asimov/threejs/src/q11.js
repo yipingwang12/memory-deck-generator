@@ -1,0 +1,31 @@
+import { THREE, guard, makeStage, createAsimo, wrap, blob, box, cyl, add, mat, limbTo, limbArm, textPlane, tube, ribbon, dnaHelix, blade, person, armW, reachW, handPos, lens, crate, V3, rng, canvasTexture } from './common.js';
+// q11 — In the autumn, a LONE ZEBRA joins the ASIMO robot to make lentil boxes in bulk.
+function zebra() {
+  const g = new THREE.Group();
+  const stripe = (alongU) => { const t = canvasTexture(512, (c, s) => { c.fillStyle = '#f7f7f2'; c.fillRect(0, 0, s, s); c.fillStyle = '#15151a'; const n = 14; for (let i = 0; i < n; i++) { if (alongU) c.fillRect(i * s / n, 0, s / n * 0.5, s); else c.fillRect(0, i * s / n, s, s / n * 0.5); } }); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; };
+  const U = new THREE.MeshStandardMaterial({ map: stripe(true), roughness: 0.7 }), Vv = new THREE.MeshStandardMaterial({ map: stripe(false), roughness: 0.7 });
+  const body = (pos, scl) => { const m = add(g, new THREE.SphereGeometry(1, 40, 24), U, pos, [0, 0, Math.PI / 2], scl); return m; };
+  body([0, 0.66, 0], [0.26, 0.55, 0.23]); body([0.36, 0.72, 0], [0.24, 0.26, 0.21]); body([-0.38, 0.68, 0], [0.24, 0.26, 0.21]);
+  add(g, new THREE.CylinderGeometry(0.1, 0.16, 0.45, 20), Vv, [0.6, 0.98, 0], [0, 0, -0.75]);
+  const head = new THREE.Group(); head.position.set(0.82, 1.15, 0); head.rotation.z = -0.5; g.add(head);
+  blob(head, '#f4f4ee', [0, 0, 0], [0.2, 0.115, 0.1]); blob(head, '#2a2a30', [0.19, -0.02, 0], [0.11, 0.09, 0.085]); blob(head, '#111', [0.285, -0.01, 0], [0.025, 0.04, 0.05]);
+  for (const s of [-1, 1]) { blob(head, '#fff', [0.1, 0.05, s * 0.09], [0.04, 0.045, 0.025]); blob(head, '#15151a', [0.11, 0.05, s * 0.105], [0.026, 0.032, 0.014]); blob(head, '#fff', [0.118, 0.062, s * 0.115], [0.009, 0.009, 0.007]);
+    blob(head, '#f4f4ee', [-0.07, 0.12, s * 0.05], [0.04, 0.12, 0.025], [s * 0.2, 0, 0.2]); blob(head, '#15151a', [-0.07, 0.12, s * 0.07], [0.02, 0.09, 0.012], [s * 0.2, 0, 0.2]); }
+  for (let i = 0; i < 7; i++) { const t = (i - 3) * 0.062; blob(g, '#15151a', [0.6 + 0.68 * t - 0.09, 0.98 + 0.73 * t + 0.09, 0], [0.04, 0.075, 0.03], [0, 0, -0.75]); }
+  for (const [x, z] of [[0.4, 0.13], [0.4, -0.13], [-0.42, 0.13], [-0.42, -0.13]]) { add(g, new THREE.CylinderGeometry(0.055, 0.045, 0.52, 14), Vv, [x, 0.27, z]); cyl(g, '#222', 0.058, 0.066, 0.06, [x, 0.03, z]); }
+  limbTo(g, '#f4f4ee', 0.02, [-0.62, 0.7, 0], [-0.7, 0.35, 0]); blob(g, '#15151a', [-0.71, 0.3, 0], [0.05, 0.1, 0.05]);
+  return g;
+}
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#c9a44a' });
+  const r = rng(8);
+  for (const [x, z, s] of [[-3.2, -3.5, 1.3], [3.4, -4, 1.5], [-1.4, -6, 1.6], [1.2, -7, 1.7], [-4.5, -7, 1.7]]) { add(scene, new THREE.CylinderGeometry(0.12 * s, 0.17 * s, 1.3 * s, 10), mat('#5a3b22'), [x, 0.65 * s, z]); [['#e8761f', 0, 0], ['#d9441f', 0.5, 0.2], ['#f0b21f', -0.45, 0.15]].forEach(([c, dx, dz]) => blob(scene, c, [x + dx * s, (1.75 + dz) * s, z], [0.9 * s, 0.8 * s, 0.9 * s])); }
+  for (let i = 0; i < 36; i++) add(scene, new THREE.BoxGeometry(0.1, 0.01, 0.07), mat(['#e8761f', '#d9441f', '#f0b21f'][i % 3]), [-3 + r() * 6.5, r() < 0.4 ? 0.01 : 0.3 + r() * 1.7, -1.5 + r() * 3.2], [r() * 3, r() * 3, r() * 3]);
+  const a = createAsimo({ scale: 1.35 }); a.position.set(-0.95, 0, 0.1); a.rotation.y = 0.4; scene.add(a);
+  const bxg = crate(scene, [-0.65, 0.4, 0.5], 0.5, 0.2);
+  a.userData.pose({}); reachW(a, 'l', [-0.45, 0.65, 0.45]); reachW(a, 'r', [-0.95, 0.65, 0.45]);
+  const z = zebra(); z.scale.setScalar(1.15); z.position.set(0.75, 0, 0.0); z.rotation.y = Math.PI + 0.35; scene.add(z);
+  const px = 2.0; let k = 0;
+  for (const [row, n] of [[0, 3], [1, 2], [2, 1]]) for (let i = 0; i < n; i++) crate(scene, [px + (i - (n - 1) / 2) * 0.55, row * 0.42, -0.5], 0.52, 0.1 * (k++ % 3));
+  wrap(stage, scene, a, { cam: [0.5, 1.0, 4.7], look: [0.5, 0.95, 0] });
+});

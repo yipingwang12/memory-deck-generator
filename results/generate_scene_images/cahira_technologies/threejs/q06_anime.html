@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cahira q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — Near-infrared light wirelessly powers the chips inside the PYRAMID.
+import { THREE, guard, build, finish, add, mat, box, blob, cyl, glow, sign, textTex, chip, monk, mouse, brain, flame, debitCard, reachWorld, canvasTexture, rng } from './common.js';
+guard(() => {
+  const S = build({ ground: '#e0b98c', py: [1.6, 0, 0], ps: 2.0, pry: -0.2 });
+  const { scene, pyr } = S;
+  pyr.userData.pose({ arms: { l: [0, 1.0], r: [0, 1.0] } });
+  const lamp = new THREE.Group(); lamp.position.set(-3.3, 1.0, 0.8); scene.add(lamp);
+  cyl(lamp, mat('#555d6a', { metalness: 0.5 }), [0, -0.5, 0], 0.08, 1.0);
+  const head = add(lamp, new THREE.CylinderGeometry(0.5, 0.25, 0.7, 28), mat('#d0d4dc', { metalness: 0.6, roughness: 0.3 }), [0, 0, 0], [0, 0, -Math.PI / 2]);
+  add(lamp, new THREE.CircleGeometry(0.46, 28), glow('#ff3b3b', 2), [0.36, 0, 0], [0, Math.PI / 2, 0]);
+  const beamM = new THREE.MeshBasicMaterial({ color: '#ff3040', transparent: true, opacity: 0.22, depthWrite: false });
+  const beam = add(lamp, new THREE.CylinderGeometry(1.0, 0.45, 3.3, 32, 1, true), beamM, [2.15, -0.1, 0], [0, 0, -Math.PI / 2]); beam.castShadow = false;
+  for (let i = 0; i < 6; i++) { const w = add(lamp, new THREE.TorusGeometry(0.2 + i * 0.05, 0.012, 6, 24), glow('#ff6a6a', 1.5), [0.9 + i * 0.5, -0.05, 0.0], [0, Math.PI / 2, 0]); w.castShadow = false; }
+  const inner = new THREE.Group(); inner.position.set(1.65, -0.05, -0.1); scene.add(inner);
+  [[-0.3, 0.8, 0.1], [0.3, 0.8, 0.0], [0.0, 1.3, 0.0], [0.0, 0.55, -0.1]].forEach(([x, y, z], i) => {
+    const c = chip(inner, [x, y, z], 3.2); c.rotation.set(1.2, i, 0);
+    c.children[1].material = glow('#7dff9a', 1.8);
+    for (let k = 0; k < 4; k++) blob(inner, glow('#fff6a0', 2), [x + Math.cos(k * 1.6 + i) * 0.28, y + Math.sin(k * 1.6 + i) * 0.28, z + 0.05], [0.03, 0.03, 0.03]).castShadow = false;
+  });
+  finish(S, [pyr], [-0.2, 1.1, 5.6], [-0.2, 0.9, 0], true, () => {
+    const m = pyr.userData.parts.body.material; m.transparent = true; m.opacity = 0.42; m.depthWrite = false;
+    pyr.userData.parts.cap.material.transparent = true; pyr.userData.parts.cap.material.opacity = 0.6;
+  });
+});
+</script></body></html>

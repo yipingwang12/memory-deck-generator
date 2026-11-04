@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Broad q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, box, cyl, sign, textMat, setup, grab, makeDome, makeShield, makeTelescope, makeCell, makeMouse, makeSumo, makeLander, makeRiver, makeNose, sparks, rng } from './common.js';
+guard(() => {
+const P = new URLSearchParams(location.search);
+const st = setup(P, { cam: [0, 1.5, 5.8], look: [0, 1.3, 0], ground: '#b8b2aa', sky: { cover: 1 } });
+const sc = st.scene;
+const lander = makeLander(1.3); lander.position.set(1.7, 0, -0.5); sc.add(lander);
+const sw = st.sword({ scale: 1.15, pos: [-1.6, 0, 1.0], ry: 0.45 });
+sw.userData.pose({ lean: 0.05, arms: { l: [0, 0.3, 0.2] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+// director's megaphone
+const mg = new THREE.Group(); cyl(mg, mat('#e03a3a'), [0, 0, 0], 0.32, 0.8, [0, 0, -Math.PI / 2], 0.09); mg.position.set(-0.3, 1.0, 1.2); sc.add(mg);
+grab(sw, 'r', [-0.95, 0.88, 1.2]);
+// director's chair + clapboard
+const cb = new THREE.Group(); box(cb, mat('#222'), [0, 0, 0], [0.7, 0.5, 0.06]); box(cb, mat('#f4f4f4'), [0, 0.3, 0], [0.7, 0.1, 0.07], [0, 0, 0.25]); cb.position.set(-2.9, 0.3, 0.6); sc.add(cb);
+st.finishScene();
+});
+</script></body></html>

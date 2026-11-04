@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>HEN anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createHen } from './hen.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 30, sunElevation: 35, sunAzimuth: 150, sky: { cover: 1, seed: 5, towerTop: 0.5, puffCover: 1 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, fog: { near: 120, far: 1500 } });
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: '#7bb84c', roughness: 0.9 }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; stage.scene.add(g);
+  const pm = new Set();
+  [[-1.1, 0], [0, 0.7], [1.1, 1.5707]].forEach(([x, ry], i) => {
+    const h = createHen({ scale: 1 }); h.position.set(x, 0, 0); h.rotation.y = ry; stage.scene.add(h);
+    if (i === 1) h.userData.pose({ wings: { l: [0, 0.5], r: [0, 0.5] } });
+    h.traverse((o) => pm.add(o));
+  });
+  stage.toonify(stage.scene, (m) => pm.has(m));
+  stage.camera.position.set(0, 0.7, 4.0); stage.camera.lookAt(0, 0.52, 0);
+  stage.finish();
+});
+</script></body></html>

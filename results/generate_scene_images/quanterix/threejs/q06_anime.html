@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 — SIMOA: a single-molecule array of tiny wells under the QUARTER.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#1f2a4a', sky: { cover: 0.3, zenith: '#16206a', horizon: '#7a8fd8' } }), { scene } = ctx;
+box(scene, mat('#8ea6d8', { metalness: 0.2, roughness: 0.4 }), [0, 0.12, 0], [5.2, 0.24, 3.0]);
+box(scene, mat('#5f7fc0'), [0, 0.01, 0], [5.4, 0.04, 3.2]);
+const R = rng(4), beads = ['#ffe14a', '#ff6fa8', '#5ff0c4'];
+for (let i = 0; i < 16; i++) for (let j = 0; j < 8; j++) {
+  const x = (i - 7.5) * 0.31, z = (j - 3.5) * 0.34 + 0.1;
+  cyl(scene, mat('#0e1430', { roughness: 0.3 }), [x, 0.245, z], 0.12, 0.012);
+  if (R() < 0.3) { const c = beads[(i + j) % 3]; blob(scene, new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.9 }), [x, 0.3, z], [0.07, 0.07, 0.07]); }
+}
+label(scene, 'SIMOA', [0, 0.12, 1.51], [2.2, 0.2], { bg: '#1d3a6b', fg: '#ffffff' });
+const q = createQuarter({ scale: 1.9 }); q.position.set(0, 0.24, 0.0); scene.add(q);
+q.userData.pose({ arms: { l: [0, 0.8], r: [0, -0.8] } });
+finishScene(ctx, q, { cam: [0, 2.9, 5.2], look: [0, 1.0, 0] });
+
+});
+</script></body></html>

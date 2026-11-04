@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reinhart q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q06 - After the RAINCOAT's buzz, older adults remember better for at least a month.
+import { THREE, createRaincoat, mat, glow, add, blob, box, textPlane, makeStage, finishScene, createElder, createScientist, createBrain, waveTube, cable, hoodElectrodes, rings } from './props.js';
+import { guard, rng } from './kit.js';
+guard(() => {
+  const { stage, scene, num } = makeStage({ ground: "#8cc063" });
+  const rc = createRaincoat({ scale: 1.5 }); scene.add(rc); const chars = [rc]; let cam = [0, 1.0, 4.2], look = [0, 0.8, 0];
+
+  rc.position.set(-1.9, 0, 0.7); rc.rotation.y = 0.5; rc.userData.pose({ headTilt: 0.05, arms: { l: [0, 0.3, 0], r: [0, 0.3, 0] } });
+  hoodElectrodes(rc, '#2fd0ff'); const hp = new THREE.Vector3(); rc.updateMatrixWorld(true); rc.userData.parts.head.getWorldPosition(hp);
+  rings(scene, hp.toArray(), { n: 2, r0: 0.4, dr: 0.12, rot: [Math.PI / 2 + 0.2, 0, 0.2] });
+  const el1 = createElder({ scale: 1.5, cardigan: '#7a4b9e' }); el1.position.set(0.0, 0, 0.5); el1.rotation.y = -0.25; scene.add(el1);
+  const el2 = createElder({ scale: 1.5, cardigan: '#2f8a8a', hair: '#cfcfd8', cane: false }); el2.position.set(1.2, 0, 0.3); el2.rotation.y = -0.4; scene.add(el2); chars.push(el1, el2);
+  // thought bubble with star + key = remembered
+  for (const [x, y, r] of [[0.5, 1.95, 0.07], [0.75, 2.15, 0.1], [1.0, 2.4, 0.14]]) blob(scene, mat('#fff'), [x, y, 0.4], [r, r, r]);
+  blob(scene, mat('#fff'), [1.3, 3.0, 0.4], [0.75, 0.55, 0.2]);
+  add(scene, new THREE.OctahedronGeometry(0.28), glow('#ffd34a', 0.8), [1.1, 3.0, 0.62], [0.5, 0.4, 0.2], [1, 1, 0.5]);
+  add(scene, new THREE.TorusGeometry(0.11, 0.035, 10, 20), mat('#c9a020', { metalness: 0.6 }), [1.55, 3.05, 0.6]); add(scene, new THREE.BoxGeometry(0.34, 0.05, 0.05), mat('#c9a020', { metalness: 0.6 }), [1.7, 2.93, 0.6], [0, 0, 0.5]);
+  // month calendar: 5x6 grid, all ticked
+  const cal = new THREE.Group(); cal.position.set(2.7, 1.9, -0.2); cal.rotation.y = -0.3; scene.add(cal);
+  box(cal, mat('#f8f8f4'), [0, 0, 0], [1.9, 1.9, 0.06]); box(cal, mat('#d83a3a'), [0, 0.8, 0.04], [1.9, 0.3, 0.04]);
+  for (let i = 0; i < 30; i++) { const cx = -0.7 + (i % 6) * 0.28, cy = 0.45 - Math.floor(i / 6) * 0.28;
+    box(cal, mat('#3ca860'), [cx, cy, 0.04], [0.2, 0.2, 0.03]); }
+  cam = [0.6, 1.55, 6.0]; look = [0.7, 1.45, 0];
+
+  finishScene(stage, scene, chars, cam, look);
+});
+</script></body></html>

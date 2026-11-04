@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const tree = (x, z, h = 2.4, c = '#3f8f3a') => { const g = new THREE.Group(); cyl(g, mat('#6b4423'), [0, h * 0.3, 0], 0.12, h * 0.6, [0, 0, 0], 0.16); blob(g, mat(c), [0, h * 0.8, 0], [0.8, 0.9, 0.8]); g.position.set(x, 0, z); S.scene.add(g); };
+  tree(-6, -3); tree(6.5, -2.5, 3); tree(-8, 1, 2.2, '#5aa83a'); tree(9, 2, 2.6, '#4a9a3a');
+  add(S.scene, new THREE.PlaneGeometry(3, 14), mat('#d8c59a'), [0, 0.004, 4], [-Math.PI / 2, 0, 0]);
+  const ch = C.church(); ch.position.set(-2.6, 0, -1.5); ch.scale.setScalar(1.05); S.scene.add(ch);
+  const t = C.triangle(S, { scale: 3.0, pos: [2.0, 0.7, 2.2], ry: 0.3, pose: { arms: { l: [0, 1.2, 0], r: [0, -1.2, 0] }, legs: { l: [0.5, 0.2], r: [-0.4, -0.2] } } });
+  t.rotation.z = 0.2;
+  const ring = add(S.scene, new THREE.TorusGeometry(2.2, 0.06, 8, 80), mat('#ffffff', { emissive: '#ffffff', emissiveIntensity: 0.5 }), [2.0, 1.0, 2.2], [1.45, 0, 0.15]); ring.castShadow = false;
+  C.done(S, [t], [0, 3.3, 11.0], [0, 3.2, 0]);
+});
+</script></body></html>

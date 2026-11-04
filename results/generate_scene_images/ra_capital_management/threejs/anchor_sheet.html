@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Scarab anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createScarab } from './scarab.js';
+import { makeStage, finishScene, meadow } from './common.js';
+guard(() => {
+  const { stage, scene } = makeStage();
+  meadow(scene, '#d9c79a');
+  const views = [[-1.6, 0.6, 0], [0, 0, 0], [1.6, -2.2, 1.0]];
+  const chars = views.map(([x, ry, open]) => {
+    const s = createScarab({ scale: 1.3 }); s.position.set(x, 0, 0); s.rotation.y = ry; s.userData.open(open); scene.add(s); return s;
+  });
+  chars[1].userData.reach('l', [0.25, 0.3, 0.75]);
+  finishScene(stage, scene, chars, [0, 1.5, 4.2], [0, 0.3, 0]);
+});
+</script></body></html>

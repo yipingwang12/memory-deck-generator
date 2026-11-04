@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, run, mat, glow, add, blob, cyl, box, cone, group, label, eyes, coin, bubble, sack, flag, liver, animal } from "./common.js";
+// q11 — A SIXTH STREET sign lends the GIRDER two hundred million.
+run({ gAt: [-1.35, 0, 0.6], gRot: 0.45, gScale: 1.4, pose: { arms: { r: [0, 0.4, 0] } }, cam: [0.3, 1.1, 4.7], look: [0.4, 0.95, 0],
+  build({ scene, reach }) {
+    const sg = group(scene, [1.5, 0, 0], [0, -0.3, 0]);
+    cyl(sg, mat('#6a737d', { metalness: 0.5 }), 0.05, 2.1, [0, 1.05, 0]); 
+    const bd = label('SIXTH\nSTREET', 1.6, 0.8, { bg: '#1f8a4a', fg: '#fff', border: '#fff' }); bd.position.set(0, 1.9, 0.06); sg.add(bd); box(sg, mat('#1f8a4a'), 1.6, 0.8, 0.06, [0, 1.9, 0]);
+    // money sack with amount, plus coin stacks, handed across
+    const s = sack(scene, [0.15, 0, 0.9], 1.1, '$200M');
+    for (const [x, z, n] of [[0.8, 0.9, 5], [1.1, 1.1, 3], [-0.35, 1.15, 4]]) for (let i = 0; i < n; i++) coin(scene, [x, 0.04 + i * 0.045, z], 0.17, [0, 0, 0]);
+    const l = label('$200M', 1.0, 0.4, { bg: '#ffd21f', fg: '#1f6a2a', border: '#1f6a2a' }); l.position.set(1.1, 1.25, 0.9); scene.add(l);
+    reach('l', [-0.35, 0.75, 0.9]);
+  } });
+</script></body></html>

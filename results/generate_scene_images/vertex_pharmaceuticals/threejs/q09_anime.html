@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — The VORTEX's POVERTY sack treats IgA nephropathy, a kidney disease.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -1.8, vs: 1.25, vry: 0.55, ground: '#d8c8a0' });
+const kd = C.kidney(1.6); kd.position.set(0.1, 0, 0.3); scene.add(kd);
+const rr = C.rng(2); for (let i = 0; i < 7; i++) blob(kd, mat('#f0e0a0'), [0.15 + rr() * 0.4, 0.2 + rr() * 1.4, 0.35], Array(3).fill(0.05 + rr() * 0.05));
+const bd = add(kd, new THREE.BoxGeometry(0.55, 0.2, 0.08), mat('#ffe0c0'), [0.5, 0.95, 0.38], [0, 0, 0.5]);
+const sk = C.sack(); sk.scale.setScalar(1.2); sk.position.set(2.05, 0.1, 0.8); sk.rotation.set(0, -0.3, 0.9); scene.add(sk); 
+for (let i = 0; i < 6; i++) add(scene, new THREE.CapsuleGeometry(0.05, 0.12, 4, 10), mat(i % 2 ? '#ff5a8a' : '#4a8cff'), [1.15 - i * 0.08, 1.25 - i * 0.16, 0.8], [0, 0, 1 + i]);
+done({ cam: [0, 1.0, 4.6], look: [0, 0.95, 0] });
+});
+</script></body></html>

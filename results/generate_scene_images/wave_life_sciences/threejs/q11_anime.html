@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q11 — A GSK glove hands the WVE-006 rights back to the SURFER.
+  beach(scene, { seaZ: 5 });
+  const s = addSurfer(stage, P, { x: -0.9, z: 0.7, ry: 0.5, scale: 1.8 });
+  const b = s.userData.parts.board; labelBoard(b, 'WVE-006', { len: 1.0 }); b.position.set(-0.7, 0.65, -0.15); b.rotation.set(0, 0, 0.1);
+  // giant glove from the right
+  const G = new THREE.Group(); G.position.set(1.4, 2.1, 0.5); G.rotation.z = 0.0; scene.add(G);
+  const og = mat('#ff7a1a', { roughness: 0.45 });
+  blob(G, og, [0.5, 0, 0], [0.65, 0.55, 0.42]);
+  [[-0.1, 0.35], [0.0, 0.17], [0.05, -0.03], [-0.02, -0.22]].forEach(([dx, y], i) => {
+    const f = add(G, new THREE.CapsuleGeometry(0.1, 0.45, 8, 14), og, [-0.35 + dx, y, 0.1], [0, 0, Math.PI / 2 + (i - 1.5) * 0.12]);
+  });
+  add(G, new THREE.CapsuleGeometry(0.11, 0.3, 8, 14), og, [0.3, -0.5, 0.15], [0.3, 0, 0.5]);
+  add(G, new THREE.CylinderGeometry(0.55, 0.62, 0.55, 28), mat('#f4f1ea'), [1.4, 0, 0], [0, 0, Math.PI / 2]);
+  const cuff = textPanel('GSK', { w: 0.72, h: 0.42, bg: '#f4f1ea', fg: '#e8601a', border: '#e8601a' }); cuff.position.set(1.4, 0.0, 0.63); G.add(cuff);
+  add(G, new THREE.CylinderGeometry(0.5, 0.5, 2.4, 24), og, [2.9, 0, 0], [0, 0, Math.PI / 2]);
+  // scroll of rights
+  const sc = new THREE.Group(); sc.position.set(-0.55, 1.62, 0.5); sc.rotation.z = 0.2; scene.add(sc); G.userData.sc = sc;
+  add(sc, new THREE.CylinderGeometry(0.22, 0.22, 1.0, 24), mat('#f6ecd0'), [0, 0, 0], [0, 0, Math.PI / 2]);
+  for (const x of [-0.5, 0.5]) add(sc, new THREE.CylinderGeometry(0.11, 0.11, 0.06, 16), mat('#b8702a'), [x * 1.07, 0, 0], [0, 0, Math.PI / 2]);
+  add(sc, new THREE.CylinderGeometry(0.235, 0.235, 0.1, 24), mat('#d02a3a'), [-0.15, 0, 0], [0, 0, Math.PI / 2]);
+  const tag = textPanel('WVE-006', { w: 0.62, h: 0.2, bg: '#ffffff', fg: '#b01020', border: '#b01020' }); tag.position.set(0.2, 0, 0.235); sc.add(tag);
+  G.position.set(1.15, 1.55, 0.95);
+  s.updateMatrixWorld(true);
+  const w = s.worldToLocal(new THREE.Vector3(-0.5, 1.1, 0.95)); s.userData.reach('r', [w.x, w.y, w.z]);
+  sc.position.set(0.05, 1.12, 0.95); sc.rotation.z = 0.12;
+  // arrow showing hand-back
+  const ar = new THREE.Group(); ar.position.set(0.5, 0.6, 0.9); scene.add(ar);
+  add(ar, new THREE.BoxGeometry(0.5, 0.1, 0.07), mat('#ffd23c'), [0, 0, 0]); add(ar, new THREE.ConeGeometry(0.14, 0.26, 3), mat('#ffd23c'), [-0.32, 0, 0], [0, 0, Math.PI / 2]);
+  finish(stage, P, s, [0.5, 1.8, 6.0], [0.5, 1.45, 0], [b]);
+});
+</script></body></html>

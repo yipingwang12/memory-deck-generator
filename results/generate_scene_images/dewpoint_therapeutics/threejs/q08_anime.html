@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Dewpoint q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — an ASPIRIN and a VIKING stay to guard the heart, lungs and sugar store.
+import { boot, THREE, mat, add, blob, box, cyl, eyes, bone } from './props.js';
+
+function aspirin() {
+  const g = new THREE.Group(), w = mat('#ffffff', { roughness: 0.4, emissive: '#999999' });
+  const pill = cyl(g, w, 0.7, 0.34, [0, 1.0, 0], [Math.PI / 2, 0, 0]); 
+  box(g, mat('#cfd6e2'), 0.04, 1.2, 0.04, [0, 1.0, 0.18]);
+  for (const x of [-0.2, 0.2]) { blob(g, new THREE.MeshBasicMaterial({ color: '#fff' }), [x, 1.12, 0.18], [0.09, 0.11, 0.02]); blob(g, new THREE.MeshBasicMaterial({ color: '#16213f' }), [x, 1.11, 0.2], [0.05, 0.07, 0.02]); }
+  for (const s of [-1, 1]) { bone(g, w, [s * 0.68, 1.0, 0], [s * 0.85, 0.7, 0.2], 0.06); bone(g, w, [s * 0.2, 0.3, 0], [s * 0.2, 0.05, 0], 0.07); box(g, mat('#e0392f'), 0.2, 0.08, 0.3, [s * 0.2, 0.04, 0.06]); }
+  const sh = cyl(g, mat('#c8d0e0', { metalness: 0.4 }), 0.35, 0.06, [0.95, 0.75, 0.25], [Math.PI / 2, 0, 0]); box(g, mat('#e0392f'), 0.5, 0.1, 0.02, [0.95, 0.75, 0.3]); box(g, mat('#e0392f'), 0.1, 0.5, 0.02, [0.95, 0.75, 0.3]);
+  return g;
+}
+function viking() {
+  const g = new THREE.Group(), skin = mat('#ffd2b0'), cloth = mat('#2a6fb0');
+  for (const x of [-0.15, 0.15]) { bone(g, mat('#6a4a2a'), [x, 0.8, 0], [x, 0.08, 0], 0.1); box(g, mat('#3a2a20'), 0.2, 0.1, 0.32, [x, 0.05, 0.06]); }
+  cyl(g, cloth, 0.38, 0.9, [0, 1.2, 0], [0, 0, 0], 0.3);
+  box(g, mat('#6a3b1c'), 0.8, 0.12, 0.35, [0, 0.9, 0]);
+  const head = new THREE.Group(); head.position.y = 1.9; g.add(head);
+  blob(head, skin, [0, 0, 0], [0.26, 0.26, 0.26]); eyes(head, 0.26, 0.04, 0.4, 0.2);
+  blob(head, mat('#f2b134'), [0, -0.16, 0.08], [0.24, 0.25, 0.18]);                               // beard
+  blob(head, mat('#b9c2d0', { metalness: 0.5, roughness: 0.35 }), [0, 0.12, 0], [0.29, 0.2, 0.29]);
+  for (const s of [-1, 1]) { add(head, new THREE.ConeGeometry(0.08, 0.45, 12), mat('#f4ecd8'), [s * 0.33, 0.3, 0], [0, 0, -s * 0.7]); }
+  bone(g, skin, [0.3, 1.6, 0], [0.55, 1.2, 0.25], 0.07); bone(g, skin, [-0.3, 1.6, 0], [-0.55, 1.2, 0.25], 0.07);
+  cyl(g, mat('#a8742e'), 0.45, 0.07, [-0.7, 1.25, 0.35], [Math.PI / 2, 0, 0.2]); blob(g, mat('#c9ced9', { metalness: 0.4 }), [-0.7, 1.25, 0.4], [0.12, 0.12, 0.06]);
+  bone(g, mat('#6a4a2a'), [0.55, 0.7, 0.25], [0.6, 2.1, 0.25], 0.04); box(g, mat('#b9c2d0', { metalness: 0.5 }), 0.36, 0.3, 0.06, [0.74, 2.0, 0.25]);
+  return g;
+}
+function heart() { const g = new THREE.Group(), m = mat('#e0243a', { roughness: 0.35 }); blob(g, m, [-0.2, 0.15, 0], [0.28, 0.28, 0.25]); blob(g, m, [0.2, 0.15, 0], [0.28, 0.28, 0.25]); add(g, new THREE.ConeGeometry(0.46, 0.65, 24), m, [0, -0.12, 0], [0, 0, Math.PI], [1, 1, 0.55]); return g; }
+function lungs() { const g = new THREE.Group(), m = mat('#f58aa8', { roughness: 0.4 }); for (const s of [-1, 1]) blob(g, m, [s * 0.28, 0, 0], [0.26, 0.42, 0.2], [0, 0, s * 0.15]); cyl(g, mat('#f6d6dc'), 0.05, 0.4, [0, 0.35, 0]); return g; }
+function sugar() { const g = new THREE.Group(); cyl(g, mat('#ffe9a8', { roughness: 0.3 }), 0.34, 0.6, [0, 0, 0]); cyl(g, mat('#8a5a2a'), 0.37, 0.12, [0, 0.36, 0]); for (let i = 0; i < 4; i++) box(g, mat('#ffffff'), 0.2, 0.2, 0.2, [-0.22 + (i % 2) * 0.44, 0.58 + (i > 1 ? 0.2 : 0), (i % 2 ? 0.1 : -0.05)], [0, i, 0]); return g; }
+
+boot(({ scene, dd }) => {
+  add(scene, new THREE.PlaneGeometry(40, 14), mat('#f3e3c4'), [0, 6.5, -2.4]);
+  [[heart(), -2.5], [lungs(), 0.2], [sugar(), 2.9]].forEach(([o, x]) => { const ped = cyl(scene, mat('#d9c7a0'), 0.55, 1.9, [x, 0.95, -1.7]); ped.geometry = new THREE.CylinderGeometry(0.45, 0.6, 1.9, 24); o.position.set(x, 2.5, -1.7); o.scale.setScalar(1.7); scene.add(o); });
+  const a = aspirin(); a.position.set(-3.0, 0, 0.8); a.rotation.y = 0.35; a.scale.setScalar(1.1); scene.add(a);
+  const v = viking(); v.position.set(2.7, 0, 0.9); v.rotation.y = -0.35; v.scale.setScalar(1.0); scene.add(v);
+}, { dd: { pos: [-0.5, 0, 1.4], ry: 0.1, scale: 1.75, pose: { arms: { l: [0, 0.9], r: [0, 0.9] } } }, ground: '#c9a56b', cam: [0.0, 2.0, 7.6], look: [0.0, 1.8, 0], clouds: false });
+</script></body></html>

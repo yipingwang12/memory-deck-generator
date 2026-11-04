@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const wood = mat('#8a5a30'), dk = mat('#5a3a1e');
+  box(sc, wood, [0.3, 0.7, -0.4], [3.4, 0.1, 1.2]);
+  for (const x of [-1.2, 1.8]) for (const z of [-0.8, 0]) box(sc, dk, [x, 0.33, z], [0.1, 0.66, 0.1]);
+  // throne chair at head of table
+  const ch = new THREE.Group(); ch.position.set(2.5, 0, -0.4); ch.rotation.y = -0.5; sc.add(ch);
+  box(ch, mat('#b8343a'), [0, 0.45, 0], [0.9, 0.12, 0.9]); box(ch, mat('#b8343a'), [0, 1.0, -0.4], [0.9, 1.2, 0.12]);
+  for (const x of [-0.4, 0.4]) { box(ch, dk, [x, 0.2, 0.4], [0.1, 0.4, 0.1]); box(ch, dk, [x, 0.2, -0.4], [0.1, 0.4, 0.1]); box(ch, dk, [x, 0.7, 0], [0.1, 0.1, 0.9]); }
+  const c = church(0.95); c.position.set(0, 0.52, 0.0); ch.add(c);
+  // gavel
+  const gv = new THREE.Group(); gv.position.set(1.4, 0.75, -0.1); gv.rotation.y = -0.4; sc.add(gv);
+  cyl(gv, dk, [0, 0.12, 0], 0.025, 0.025, 0.3, [0, 0, 1.1]); cyl(gv, wood, [0.1, 0.2, 0], 0.07, 0.07, 0.2, [0, 0, Math.PI / 2]).position.set(0.1, 0.16, 0);
+  cyl(gv, dk, [0, 0.0, 0], 0.09, 0.09, 0.03);
+  // papers + chairs along far side
+  for (const x of [-0.6, 0.2, 1.0]) { box(sc, mat('#ffffff'), [x, 0.76, -0.4], [0.4, 0.01, 0.3], [0, 0.1 * x, 0]); }
+  for (const x of [-0.4, 0.8]) { const k = new THREE.Group(); k.position.set(x, 0, -1.3); sc.add(k); box(k, dk, [0, 0.4, 0], [0.5, 0.08, 0.5]); box(k, dk, [0, 0.8, -0.22], [0.5, 0.7, 0.07]); }
+}, { ground: '#8a8f9a', dpos: [-1.5, 0, 0.5], dry: 0.7, scl: 1.45, cam: [0.5, 1.3, 5.2], look: [0.5, 1.0, 0] });
+
+</script></body></html>

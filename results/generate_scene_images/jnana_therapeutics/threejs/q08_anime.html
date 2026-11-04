@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Jnana q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — A JOURNAL with a magnifying glass (Clinical Investigation) prints the BANANA's work.
+import { guard, rng } from './kit.js';
+import { THREE, mat, add, blob, cyl, box, textPlane, makeStage, ground, finishScene, createBanana } from './common.js';
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 38, sky: { zenith: '#ffd9a8', horizon: '#fff0d6', cover: 0.8, seed: 3, towerTop: 0.3, puffCover: 0.8 } }); const scene = stage.scene;
+  ground(scene, '#c99a62');
+  // standing journal
+  const j = new THREE.Group(); j.position.set(1.8, 0, -0.5); j.rotation.y = -0.18; scene.add(j);
+  box(j, mat('#1f3f8f'), [0, 1.65, 0], [2.4, 3.3, 0.35]);
+  box(j, mat('#f6efd8'), [0.05, 1.65, -0.03], [2.3, 3.2, 0.3]);                // page block edge
+  box(j, mat('#1f3f8f'), [0, 1.65, 0.12], [2.4, 3.3, 0.14]);                    // front cover
+  box(j, mat('#14295f'), [-1.2, 1.65, 0], [0.12, 3.3, 0.4]);                    // spine
+  const t = textPlane('JOURNAL', 2.1, 0.5, { fg: '#fff2c0' }); t.position.set(0, 2.75, 0.2); j.add(t);
+  box(j, mat('#f2c230'), [0, 2.38, 0.2], [2.0, 0.05, 0.02]);
+  // banana emblem on cover (crescent) + tiny "printed paper" lines
+  const em = add(j, new THREE.TorusGeometry(0.6, 0.17, 12, 30, Math.PI), mat('#ffd51f'), [0, 1.3, 0.22], [0, 0, Math.PI + 0.0]);
+  for (let i = 0; i < 4; i++) box(j, mat('#cfd8ef'), [0, 0.65 - i * 0.2, 0.2], [1.6 - (i % 2) * 0.4, 0.07, 0.02]);
+  // magnifying glass in front of the emblem, held by banana
+  const mg = new THREE.Group(); mg.position.set(1.2, 1.6, 1.0); scene.add(mg);
+  add(mg, new THREE.TorusGeometry(0.62, 0.07, 14, 36), mat('#c9a227', { metalness: 0.7, roughness: 0.3 }));
+  add(mg, new THREE.CircleGeometry(0.6, 36), mat('#cfeeff', { transparent: true, opacity: 0.35, roughness: 0.05 }), [0, 0, 0.0]);
+  cyl(mg, mat('#5a2a1a'), [-0.62, -0.62, 0], 0.07, 1.1, [0, 0, 0.785]);
+  // enlarged emblem through the lens
+  add(mg, new THREE.TorusGeometry(0.38, 0.1, 10, 24, Math.PI), mat('#ffd51f'), [0, 0.05, -0.01], [0, 0, Math.PI]);
+  const banana = createBanana({ scale: 2.4 }); banana.position.set(-0.1, 0, 1.3); banana.rotation.y = 0.3; scene.add(banana);
+  banana.userData.pose({ lean: 0.05, legs: { l: [0.15, 0], r: [-0.1, 0] } });
+  banana.updateMatrixWorld(true);
+  const h = banana.worldToLocal(new THREE.Vector3(0.62, 1.0, 1.1)); banana.userData.reach('l', [h.x, h.y, h.z]);
+  const h2 = banana.worldToLocal(new THREE.Vector3(0.55, 0.9, 1.15)); banana.userData.reach('r', [h2.x, h2.y, h2.z]);
+  finishScene(stage, P, banana, { pos: [0.4, 2.4, 8.2], look: [0.4, 1.7] });
+});
+</script></body></html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Valo q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — "The VIOLA's OPAL joins real patient data, human tissue models and machine learning."
+import { THREE, guard, mat, add, box, cyl, blob, makeStage, finishScene, placeViola, canvasTexture, buildOpal, sparkle, edge } from './common.js';
+
+function clipboard() {
+  const g = new THREE.Group();
+  const tex = canvasTexture(512, (ctx, s) => {
+    ctx.fillStyle = '#fbfbf6'; ctx.fillRect(0, 0, s, s);
+    ctx.fillStyle = '#d63a4a'; ctx.fillRect(40, 30, 100, 100); ctx.fillStyle = '#fff'; ctx.fillRect(80, 40, 20, 80); ctx.fillRect(50, 70, 80, 20); // medical cross
+    ctx.fillStyle = '#c9d4e0'; for (let i = 0; i < 3; i++) ctx.fillRect(170, 45 + i * 28, 300, 14);
+    [0.5, 0.8, 0.35, 0.95, 0.65].forEach((h, i) => { ctx.fillStyle = ['#2a7fff', '#27c06a', '#ffa030', '#9a5aff', '#e8284a'][i]; ctx.fillRect(50 + i * 85, 440 - h * 230, 60, h * 230); });
+    ctx.strokeStyle = '#e8284a'; ctx.lineWidth = 9; ctx.beginPath(); [[40, 190], [110, 190], [140, 140], [175, 235], [215, 160], [250, 190], [470, 190]].forEach(([x, y], i) => ctx[i ? 'lineTo' : 'moveTo'](x, y)); ctx.stroke();
+  });
+  box(g, mat('#a8743c'), [0, 0, -0.03], [0.95, 1.2, 0.05]);
+  add(g, new THREE.PlaneGeometry(0.8, 0.8), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.7 }), [0, -0.05, 0.0]);
+  box(g, mat('#c8ccd2', { metalness: 0.7 }), [0, 0.58, 0.0], [0.4, 0.1, 0.07]);
+  return g;
+}
+function petri() {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.5, 0.5, 0.12, 40), new THREE.MeshStandardMaterial({ color: '#cfe8ff', transparent: true, opacity: 0.45, roughness: 0.1 }), [0, 0.06, 0]);
+  add(g, new THREE.CylinderGeometry(0.46, 0.46, 0.05, 40), mat('#ffd6d6'), [0, 0.04, 0]);
+  const pink = mat('#e8607a', { roughness: 0.4 });
+  for (let i = 0; i < 18; i++) { const a = i * 2.4, r = 0.05 + (i % 6) * 0.06; blob(g, mat(i % 3 ? '#e8607a' : '#f58aa0'), [Math.cos(a) * r * 1.2, 0.1, Math.sin(a) * r * 1.2], [0.05 + (i % 3) * 0.015, 0.04, 0.05 + (i % 3) * 0.015]); }
+  add(g, new THREE.TorusGeometry(0.5, 0.02, 8, 40), new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.6 }), [0, 0.12, 0], [Math.PI / 2, 0, 0]);
+  return g;
+}
+function neuralNet() {
+  const g = new THREE.Group(), layers = [3, 4, 4, 2], pos = [];
+  layers.forEach((n, li) => { pos.push([]); for (let i = 0; i < n; i++) pos[li].push([(li - 1.5) * 0.42, (i - (n - 1) / 2) * 0.3, 0]); });
+  for (let li = 0; li < layers.length - 1; li++) for (const a of pos[li]) for (const b of pos[li + 1]) edge(g, a, b, '#7aa8ff', 0.007);
+  pos.forEach((L, li) => L.forEach((p) => blob(g, mat(['#2a7fff', '#9a5aff', '#27c06a', '#ffa030'][li], { roughness: 0.3, emissive: ['#2a7fff', '#9a5aff', '#27c06a', '#ffa030'][li], emissiveIntensity: 0.3 }), p, [0.075, 0.075, 0.075])));
+  return g;
+}
+guard(() => {
+  const S = makeStage({ ground: '#e8dcc4', el: 40, az: 150, sky: { cover: 0.8 } }), { scene } = S;
+  box(scene, mat('#dfe9f2'), [0, 1.8, -2.5], [18, 5, 0.1]);
+  const vs = S.num('vs', 2.1), viola = placeViola(scene, { x: 0, scale: vs });
+  viola.userData.reach('l', [0.4, 0.62, 0.15]); viola.userData.reach('r', [-0.38, 0.62, 0.15]);
+  const opal = buildOpal(0.092); opal.scale.setScalar(vs); opal.position.set(0, 0.335 * vs, 0.135 * vs); scene.add(opal);
+  const cb = clipboard(); cb.position.set(-2.2, 1.0, 0.2); cb.rotation.y = 0.3; cb.scale.setScalar(1.15); scene.add(cb);
+  cyl(scene, mat('#6a4a2a'), [-2.2, 0.2, -0.1], 0.04, 0.8, [0, 0, 0]); 
+  const net = neuralNet(); net.position.set(2.1, 1.2, 0.2); net.scale.setScalar(1.25); net.rotation.y = -0.3; scene.add(net);
+  cyl(scene, mat('#4a4a58'), [2.1, 0.3, 0.2], 0.05, 0.6);
+  const dish = petri(); dish.position.set(0, 0.0, 1.0); dish.scale.setScalar(0.8); scene.add(dish);
+  for (const [x, y, z, s] of [[0.4, 0.55, 0.5, 0.15], [-0.45, 0.2, 0.5, 0.12]]) sparkle(scene, x, y + 0.4, z, s);
+  finishScene(S, [viola], [0, 1.8, 5.4], [0, 0.95, 0], false);
+});
+</script></body></html>

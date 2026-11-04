@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — The SERPENT gene in the CRISP's CTX460 gives alpha-1 antitrypsin deficiency.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, finish }) => {
+  const c = crisp({ s: 2.3, x: -2.3, z: 0, ry: 0.4, pose: { arms: { l: [0, 1.2, 0], r: [0, 1.2, 0] } } });
+  const tag = textPlane('CTX460', 1.2, 0.4, { bg: '#fff', fg: '#c01e2e' }); tag.position.set(-2.3, 0.45, 1.3); tag.rotation.x = -0.25; scene.add(tag);
+  // snake rising out of the crisp's top
+  const sp = []; for (let i = 0; i <= 20; i++) { const t = i / 20; sp.push([-2.3 + Math.sin(t * 7) * 0.25, 2.35 + t * 1.2, Math.cos(t * 7) * 0.1 + 0.05]); }
+  scene.add(snake(sp, { r: 0.1 }));
+  // lungs with a snake coiled round them
+  const lungs = new THREE.Group(); lungs.position.set(1.6, 1.7, 0); scene.add(lungs);
+  const pink = mat('#ff8fa6');
+  cyl(lungs, mat('#f3c0cb'), [0, 0.9, 0], 0.1, 0.9); 
+  for (const sx of [-1, 1]) blob(lungs, pink, [sx * 0.62, 0, 0], [0.55, 0.95, 0.4], [0, 0, sx * -0.12]);
+  for (const sx of [-1, 1]) { cyl(lungs, mat('#f3c0cb'), [sx * 0.25, 0.55, 0], 0.05, 0.6, [0, 0, sx * 0.9]); }
+  const lp = []; for (let i = 0; i <= 28; i++) { const t = i / 28, a = t * Math.PI * 5; lp.push([1.6 + Math.cos(a) * 1.15 * (1 - 0.1 * t), 0.9 + t * 1.8, Math.sin(a) * 0.55 + 0.1]); }
+  scene.add(snake(lp, { r: 0.1 }));
+  // deficiency: nearly empty meter
+  box(scene, mat('#2a2f3a'), [4.1, 1.6, 0], [0.7, 2.2, 0.2]); box(scene, mat('#e02a3a'), [4.1, 0.78, 0.12], [0.5, 0.35, 0.05]); box(scene, mat('#4a5060'), [4.1, 1.9, 0.12], [0.5, 1.4, 0.05]);
+  finish([0.7, 2.1, 7.2], [0.7, 1.8, 0]);
+});
+
+</script></body></html>

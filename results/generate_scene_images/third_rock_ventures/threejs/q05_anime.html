@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Third Rock q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 - "The PEBBLE sits on a TEA chest in Boston."
+import { THREE, guard, rng, createPebble, num, mat, add, blob, box, stage, woodTex, panel, holdAt, sit, finish, CLOUDS } from './common.js';
+
+function teaChest(w, h, d) {
+  const g = new THREE.Group(), wood = new THREE.MeshStandardMaterial({ map: woodTex(3, 140, 1, 9), roughness: 0.7 });
+  add(g, new THREE.BoxGeometry(w, h, d), wood, [0, h / 2, 0]);
+  const steel = mat('#3b3f48', { metalness: 0.6, roughness: 0.4 });
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) add(g, new THREE.BoxGeometry(0.05, h + 0.02, 0.05), steel, [sx * (w / 2), h / 2, sz * (d / 2)]);
+  for (const y of [0.04, h - 0.04]) add(g, new THREE.BoxGeometry(w + 0.02, 0.05, d + 0.02), steel, [0, y, 0]);
+  const label = panel(w * 0.62, h * 0.62, (c, W, H) => {
+    c.fillStyle = '#f6e6bd'; c.fillRect(0, 0, W, H); c.strokeStyle = '#b3211f'; c.lineWidth = 14; c.strokeRect(14, 14, W - 28, H - 28);
+    c.fillStyle = '#b3211f'; c.font = `bold ${H * 0.62}px Georgia, serif`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('TEA', W / 2, H / 2 + 6);
+  });
+  label.position.set(0, h * 0.5, d / 2 + 0.006); g.add(label);
+  return g;
+}
+
+guard(() => {
+  const st = stage({ sunElevation: 32, sunAzimuth: 150, sky: { cover: 1.2, seed: 3, towerTop: 0.5, puffCover: 1.2 } });
+  const scene = st.scene;
+  add(scene, new THREE.BoxGeometry(16, 0.4, 8), new THREE.MeshStandardMaterial({ map: woodTex(9, 125, 1, 20), roughness: 0.8 }), [0, -0.2, 0.5]);
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#2f86a6', { roughness: 0.25, metalness: 0.1 }), [0, -0.7, 0], [-Math.PI / 2, 0, 0]);
+  // tall ship
+  const ship = new THREE.Group(); ship.position.set(3.5, -0.4, -13); ship.rotation.y = 0.25; scene.add(ship);
+  box(ship, mat('#5a3a22'), [0, 0.6, 0], [9, 1.6, 2.6]); box(ship, mat('#f0d9a0'), [0, 1.35, 0], [9.1, 0.12, 2.65]);
+  for (const x of [-2.6, 0, 2.6]) {
+    add(ship, new THREE.CylinderGeometry(0.07, 0.09, 8, 10), mat('#3c2a1a'), [x, 5.3, 0]);
+    for (const [y, w] of [[3.4, 2.4], [5.3, 2.0], [6.9, 1.5]]) add(ship, new THREE.BoxGeometry(w, 1.4, 0.05), mat('#f7edd5'), [x, y, 0.1]);
+  }
+  // harbour bollards, barrels, small chests
+  for (const x of [-6.6, -3.2, 3.4, 6.6]) add(scene, new THREE.CylinderGeometry(0.14, 0.18, 0.5, 14), mat('#2a2a30'), [x, 0.25, -3.3]);
+  const small = teaChest(0.6, 0.45, 0.45); small.position.set(-3.1, 0, 0.6); small.rotation.y = 0.4; scene.add(small);
+  const small2 = teaChest(0.55, 0.4, 0.4); small2.position.set(-3.1, 0.45, 0.6); small2.rotation.y = 0.9; scene.add(small2);
+  const chest2 = teaChest(0.7, 0.5, 0.5); chest2.position.set(3.0, 0, 0.9); chest2.rotation.y = -0.5; scene.add(chest2);
+  for (const [x, z] of [[-4.6, -1.5], [4.5, -1.8]]) add(scene, new THREE.CylinderGeometry(0.4, 0.4, 0.8, 18), new THREE.MeshStandardMaterial({ map: woodTex(5, 120, 1, 10), roughness: 0.8 }), [x, 0.4, z]);
+  // main chest with spilled leaves
+  const chest = teaChest(1.5, 0.95, 1.0); scene.add(chest);
+  const r = rng(2);
+  for (let i = 0; i < 40; i++) blob(scene, mat(['#5b7a2c', '#3d5a1f', '#8a6a2b'][i % 3]), [-0.6 + r() * 1.4, 0.03, 0.62 + r() * 0.7], [0.05, 0.015, 0.03], [0, r() * 3, 0]);
+  const pebble = createPebble({ scale: 1.55 });
+  pebble.position.set(0, 0.95 - 0.04 * 1.55, 0.02); pebble.rotation.y = -0.2; scene.add(pebble);
+  sit(pebble, 0.25, -1.2);
+  pebble.userData.pose({ legs: { l: [-1.2, 0.25], r: [-1.2, -0.25] }, headTilt: 0.06, arms: { r: [0, 0.5, 0] } });
+  // teacup
+  const hand = holdAt(pebble, 'l', new THREE.Vector3(0.7, 1.45, 0.6));
+  const cup = new THREE.Group(); cup.position.copy(hand).add(new THREE.Vector3(0.02, 0.07, 0)); scene.add(cup);
+  add(cup, new THREE.CylinderGeometry(0.1, 0.07, 0.12, 24), mat('#fffaf0', { roughness: 0.3 }), [0, 0, 0]);
+  add(cup, new THREE.TorusGeometry(0.04, 0.012, 8, 16), mat('#fffaf0'), [0.11, 0, 0]);
+  add(cup, new THREE.CylinderGeometry(0.095, 0.095, 0.01, 24), mat('#7b4a22'), [0, 0.055, 0]);
+  for (let i = 0; i < 3; i++) { const s = blob(cup, mat('#ffffff', { transparent: true, opacity: 0.55 }), [0.01 * i, 0.15 + i * 0.1, 0], [0.04 + i * 0.015, 0.04, 0.04 + i * 0.015]); s.castShadow = false; }
+  finish(st, [pebble], [num('cx', 0.6), num('cy', 1.35), num('cz', 5.0)], [num('tx', 0.1), num('ty', 1.0), 0], CLOUDS);
+});
+</script></body></html>

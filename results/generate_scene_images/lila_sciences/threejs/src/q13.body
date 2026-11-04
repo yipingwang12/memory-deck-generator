@@ -1,0 +1,17 @@
+const stage = setup('#9ac879', 44); const S = stage.scene;
+const lil = LIL(stage, -2.3, 0, 0.35, 1.9, { arms: { l: [0.2, 0.6, 0], r: [0, 0.5, 0] } });
+const skin = mat('#f0b48c');
+const nose = new THREE.Group(); nose.position.set(-0.1, 1.7, 0.4); nose.rotation.set(-0.35, -0.6, 0); nose.scale.setScalar(1.6); S.add(nose);
+blob(nose, skin, [0, 0.35, -0.35], [0.2, 0.6, 0.3]); blob(nose, skin, [0, -0.02, 0.05], [0.34, 0.3, 0.36]);
+for (const s of [-1, 1]) { blob(nose, skin, [s * 0.27, -0.12, -0.08], [0.19, 0.19, 0.2]); blob(nose, mat('#3a1a18'), [s * 0.13, -0.27, 0.1], [0.1, 0.05, 0.12]); }
+blob(nose, mat('#fff'), [-0.08, 0.1, 0.34], [0.07, 0.05, 0.03]);
+for (const [x, y] of [[-0.1, 0.2], [0.12, 0.15], [0.02, 0.28]]) blob(nose, mat('#d9906a'), [x, y, 0.2], [0.015, 0.015, 0.01]);
+const sack = new THREE.Group(); sack.position.set(1.8, 0, 0.1); S.add(sack);
+blob(sack, mat('#c9a56b'), [0, 0.65, 0], [0.8, 0.7, 0.7]); blob(sack, mat('#c9a56b'), [0, 1.35, 0], [0.35, 0.3, 0.3]);
+add(sack, new THREE.TorusGeometry(0.28, 0.05, 8, 20), mat('#6b4a2c'), [0, 1.15, 0], [Math.PI / 2, 0, 0]); for (const s of [-1, 1]) add(sack, new THREE.ConeGeometry(0.15, 0.4, 10), mat('#c9a56b'), [s * 0.2, 1.65, 0], [0, 0, -s * 0.5]);
+box(sack, new THREE.MeshStandardMaterial({ map: textTex('$', 256, 256, '#c9a56b', '#6b3a1a', 'bold 200px sans-serif') }), [0, 0.7, 0.71], [0.6, 0.6, 0.01]);
+const gold = mat('#f6c421', { metalness: 0.6, roughness: 0.3 });
+for (let i = 0; i < 14; i++) { const a = i * 2.4; cyl(sack, gold, [-0.9 + (i % 5) * 0.16 - 0.1, 0.05 + Math.floor(i / 5) * 0.05, 0.55 + Math.sin(a) * 0.3], 0.14, 0.14, 0.04, [0.2 * Math.cos(a), 0, 0.2 * Math.sin(a)]); }
+for (const [x, y, z] of [[-0.2, 1.7, 0.1], [0.2, 1.8, 0.0], [0.0, 1.95, 0.1]]) cyl(sack, gold, [x, y, z], 0.14, 0.14, 0.04, [Math.PI / 2, 0, 0.3]);
+for (let i = 0; i < 3; i++) add(S, new THREE.TorusGeometry(0.35 + i * 0.12, 0.018, 6, 16, 1.2), mat('#ffffff'), [0.5 + i * 0.12, 1.25 - i * 0.05, 0.5], [0, 0, -0.6 + i * 0.2]);
+finishScene(stage, [lil], [-0.1, 1.45, 6.0], [-0.1, 1.2, 0]);

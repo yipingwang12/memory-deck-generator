@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  // monkeys on a branch/rock
+  const rk = rng(9);
+  box(sc, mat('#7a5a38'), [-1.6, 0.18, 0], [2.6, 0.36, 1.0]);
+  [[-2.4, 0.35, '#8a5a34'], [-1.6, 0.35, '#6b4a2a'], [-0.8, 0.35, '#a06a3a']].forEach(([x, y, c], i) => { const m = monkey(1.35, c); m.position.set(x, y, 0.2); m.rotation.y = 0.5 - i * 0.1; sc.add(m); });
+  d.userData.openMouth(true);
+  d.updateMatrixWorld(true);
+  const mouth = d.userData.parts.head.localToWorld(V3(0, -0.1, 0.36)), start = V3(-1.1, 1.25, 0.5);
+  const curve = new THREE.QuadraticBezierCurve3(start, V3((start.x + mouth.x) / 2, 2.2, 0.7), mouth.clone().add(V3(-0.05, 0.02, 0.05)));
+  for (let i = 0; i < 16; i++) {
+    const t = i / 15, p = curve.getPoint(t), s = 0.2 - 0.09 * t;
+    const m = new THREE.Mesh(new THREE.BoxGeometry(s, s, s), new THREE.MeshBasicMaterial({ map: label(i % 2 ? '01' : '10', 128, 128, '#12d8a0', '#06352a', 'bold 80px monospace') }));
+    m.position.copy(p); m.rotation.set(i * 0.4, i * 0.7, 0); sc.add(m);
+  }
+  sign(sc, 'AI', [1.45, 2.4, 0.4], 0.8, 0.5, '#6a3fd8', '#ffffff');
+  strut(sc, mat('#6a3fd8'), [1.45, 2.15, 0.4], [1.2, 1.7, 0.45], 0.012);
+}, { dpos: [1.2, 0, 0.5], dry: -1.15, scl: 1.6, cam: [-0.2, 1.3, 5.0], look: [-0.1, 1.1, 0],
+  pose: (d) => d.userData.pose({ headPitch: -0.2, lean: -0.05, arms: { l: [0.3, 0.5, 0], r: [0.3, 0.5, 0] } }) });
+
+</script></body></html>

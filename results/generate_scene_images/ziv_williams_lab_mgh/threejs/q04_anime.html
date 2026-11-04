@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q04_anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, blob, box, textTex, makeStage, buildOR, brain, scalpel, neuron, probe, setupSieve, finishScene } from "./props.js";
+guard(() => {
+  const P = new URLSearchParams(location.search); const { stage, num } = makeStage(P); const scene = stage.scene;
+  const lamp = buildOR(scene);
+  // patient in bed with headphones talking + listening; sieve records with a mic
+  const bed = new THREE.Group(); bed.position.set(1.6, 0, -0.9); scene.add(bed);
+  box(bed, mat('#dfe6ec', { metalness: 0.4 }), [0, 0.45, 0], [2.0, 0.14, 0.9]);
+  box(bed, mat('#5bb8a8'), [0.2, 0.58, 0], [1.4, 0.12, 0.8]);
+  for (const x of [-0.9, 0.9]) for (const z of [-0.35, 0.35]) add(bed, new THREE.CylinderGeometry(0.04, 0.04, 0.4, 8), mat('#aeb7c0'), [x, 0.2, z]);
+  box(bed, mat('#ffffff'), [-0.75, 0.68, 0], [0.5, 0.12, 0.55]);
+  blob(bed, mat('#ffd9bd'), [-0.72, 0.95, 0], [0.22, 0.24, 0.2]);
+  blob(bed, mat('#3b2a22'), [-0.72, 1.08, -0.03], [0.22, 0.14, 0.2]);
+  for (const s of [-1, 1]) { blob(bed, mat('#1a0f0a'), [-0.62, 0.99, s * 0.13], [0.025, 0.04, 0.012]); blob(bed, mat('#ff7f8f'), [-0.6, 0.9, s * 0.15], [0.03, 0.02, 0.01]); }
+  add(bed, new THREE.TorusGeometry(0.23, 0.025, 8, 24, Math.PI), mat('#e0443c'), [-0.72, 1.0, 0], [0, 0, 0]);
+  for (const s of [-1, 1]) blob(bed, mat('#e0443c'), [-0.72, 0.96, s * 0.23], [0.06, 0.08, 0.04]);
+  blob(bed, mat('#7a2a2a'), [-0.58, 0.85, 0], [0.03, 0.03, 0.04]);
+  // sound arcs (speech) + headphones listening notes
+  const arc = (r, col, y) => { const a = add(bed, new THREE.TorusGeometry(r, 0.012, 8, 24, 1.5), mat(col, { emissive: col, emissiveIntensity: 0.7 }), [-0.45, y, 0], [0, 0, -0.75]); };
+  [0.15, 0.27, 0.39].forEach((r, i) => arc(r, '#ffd24a', 0.85));
+  const bub = add(bed, new THREE.SphereGeometry(0.3, 24, 16), mat('#ffffff', { emissive: '#ffffff', emissiveIntensity: 0.3 }), [0.1, 1.7, 0], [0, 0, 0], [1.4, 1, 0.3]);
+  for (let i = 0; i < 3; i++) blob(bed, mat('#5b6aff'), [-0.15 + i * 0.25, 1.7, 0.1], [0.05, 0.05, 0.03]);
+  blob(bed, mat('#ffffff'), [-0.45, 1.3, 0], [0.07, 0.07, 0.03]); blob(bed, mat('#ffffff'), [-0.55, 1.15, 0], [0.04, 0.04, 0.03]);
+  const sieve = setupSieve(scene, stage, { pos: [-0.8, 0, 0.6], ry: 0.25, scale: 1.4, pose: { headTilt: 0.04, arms: { r: [0, 0.4, 0.2] } }, reach: { l: [-0.1, 1.15, 1.2] } });
+  // boom microphone toward the patient + red record light
+  const mic = new THREE.Group(); sieve.userData.parts.hands.l.add(mic);
+  add(mic, new THREE.CylinderGeometry(0.02, 0.02, 0.3, 10), mat('#2b2e36'), [0, 0.1, 0], [0, 0, 1.2]);
+  blob(mic, mat('#2b2e36', { metalness: 0.5 }), [0.17, 0.2, 0], [0.09, 0.09, 0.09]); blob(mic, mat('#8a929e', { metalness: 0.6 }), [0.17, 0.2, 0], [0.095, 0.095, 0.095]).scale.set(0.095, 0.095, 0.095);
+  blob(sieve, mat('#ff2a2a', { emissive: '#ff2a2a', emissiveIntensity: 1.5 }), [0.0, 0.9, 0.06], [0.04, 0.04, 0.03]);
+  stage.camera.position.set(num("cx", 0), num("cy", 1.1), num("cz", 3.6)); stage.camera.lookAt(num("tx", 0), num("ty", 0.8), 0);
+  finishScene(scene, stage, sieve, false);
+});
+</script></body></html>

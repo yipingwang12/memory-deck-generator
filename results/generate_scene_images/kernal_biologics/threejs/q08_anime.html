@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kernal q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q08 — a tall red TREE, a FARMER and a JACK-in-the-box of mice share the KERNEL's coins
+import { THREE, guard, mat, add, blob, box, cyl, rng, coin, makeStage } from './common.js';
+guard(() => {
+  const S = makeStage({ seed: 31 }); const { scene } = S; const r = rng(3);
+  S.ground('#79b455');
+  // tall red tree (left)
+  const tree = new THREE.Group(); tree.position.set(-2.6, 0, -0.6); scene.add(tree);
+  cyl(tree, mat('#7a4a28'), [0, 1.0, 0], 0.22, 2.0, [0, 0, 0], 0.15);
+  [[0, 2.7, 0, 0.85], [-0.45, 2.3, 0.1, 0.6], [0.45, 2.4, -0.1, 0.62], [0, 3.35, 0, 0.55], [0.1, 2.0, 0.4, 0.5]].forEach(([x, y, z, s]) => blob(tree, mat('#d6262f', { roughness: 0.7 }), [x, y, z], [s, s * 0.9, s]));
+  // farmer (right-back)
+  const f = new THREE.Group(); f.position.set(2.2, 0, -0.3); f.rotation.y = -0.35; f.scale.setScalar(1.15); scene.add(f);
+  const skin = mat('#ffd0a8');
+  for (const s of [-1, 1]) { cyl(f, mat('#2f5fb0'), [s * 0.16, 0.5, 0], 0.13, 1.0); blob(f, mat('#4a3020'), [s * 0.16, 0.05, 0.1], [0.14, 0.07, 0.2]); cyl(f, skin, [s * 0.5, 1.2, 0.05], 0.07, 0.7, [0, 0, s * 0.3]); }
+  blob(f, mat('#c93a3a'), [0, 1.35, 0], [0.4, 0.5, 0.3]); blob(f, mat('#2f5fb0'), [0, 1.2, 0.05], [0.37, 0.4, 0.3]);
+  blob(f, skin, [0, 2.0, 0], [0.3, 0.33, 0.3]);
+  for (const s of [-1, 1]) { blob(f, mat('#fff'), [s * 0.1, 2.03, 0.27], [0.06, 0.07, 0.03]); blob(f, mat('#222'), [s * 0.1, 2.02, 0.295], [0.035, 0.05, 0.02]); }
+  cyl(f, mat('#e8c66a'), [0, 2.38, 0], 0.5, 0.05); cyl(f, mat('#e8c66a'), [0, 2.5, 0], 0.27, 0.25); cyl(f, mat('#c93a3a'), [0, 2.42, 0], 0.285, 0.06);
+  cyl(f, mat('#8a5a2b'), [0.7, 1.1, 0.2], 0.03, 2.4); for (const x of [-0.08, 0, 0.08]) cyl(f, mat('#c8cfd9'), [0.7 + x * 2, 2.5, 0.2], 0.012, 0.35);
+  // jack-in-the-box with a mouse head (right-front)
+  const j = new THREE.Group(); j.position.set(1.3, 0, 1.0); j.rotation.y = -0.3; scene.add(j);
+  box(j, mat('#3a7bd5'), [0, 0.35, 0], [0.7, 0.7, 0.7]); box(j, mat('#ffd24a'), [0, 0.72, 0], [0.76, 0.06, 0.76]);
+  for (const [x, y] of [[-0.24, 0.35], [0.24, 0.35]]) blob(j, mat('#fff3a0'), [x, y, 0.36], [0.08, 0.08, 0.02]);
+  cyl(j, mat('#c8cfd9', { metalness: 0.6 }), [0.4, 0.4, 0], 0.03, 0.25, [0, 0, Math.PI / 2]); blob(j, mat('#e2453c'), [0.55, 0.4, 0], [0.07, 0.07, 0.07]);
+  const sp = []; for (let i = 0; i < 5; i++) add(j, new THREE.TorusGeometry(0.12, 0.022, 8, 20), mat('#c8cfd9', { metalness: 0.7 }), [0, 0.8 + i * 0.1, 0], [Math.PI / 2, 0, 0]);
+  blob(j, mat('#9a9a9a'), [0, 1.5, 0], [0.32, 0.3, 0.3]);                     // mouse head
+  for (const s of [-1, 1]) { blob(j, mat('#9a9a9a'), [s * 0.26, 1.78, -0.02], [0.15, 0.15, 0.04]); blob(j, mat('#f4b0b8'), [s * 0.26, 1.78, 0.005], [0.1, 0.1, 0.02]);
+    blob(j, mat('#fff'), [s * 0.11, 1.55, 0.27], [0.08, 0.09, 0.03]); blob(j, mat('#222'), [s * 0.11, 1.54, 0.295], [0.045, 0.06, 0.02]); }
+  blob(j, mat('#f4b0b8'), [0, 1.43, 0.3], [0.05, 0.04, 0.04]);
+  for (const s of [-1, 1]) for (let i = 0; i < 2; i++) cyl(j, mat('#444'), [s * 0.16, 1.43 - i * 0.03, 0.32], 0.004, 0.2, [0, 0, Math.PI / 2 * s + (i - 0.5) * 0.3]);
+  add(j, new THREE.ConeGeometry(0.15, 0.28, 16), mat('#e2453c'), [0, 1.9, 0]);
+  // kernel center with coin pile and coins in air
+  const k = S.kernel({ scale: 1.7 }); k.position.set(-0.4, 0, 1.2); k.rotation.y = 0.2; scene.add(k);
+  k.userData.pose({ legs: { l: [0.1, 0.05], r: [-0.1, -0.05] } });
+  k.userData.reach('l', [0.6, 0.85, 0.5]); k.userData.reach('r', [-0.6, 0.85, 0.5]);
+  S.toon(k);
+  for (let i = 0; i < 10; i++) coin(scene, [-0.4 + (r() - 0.5) * 0.7, 0.04 + Math.floor(i / 4) * 0.07, 1.85 + (r() - 0.5) * 0.2], 0.17, [0, r() * 3, 0]);
+  [[0.5, 2.7, 1.6], [1.0, 2.2, 1.9], [-1.4, 2.3, 0.9], [-1.8, 1.9, 1.1], [1.4, 2.6, 1.0]].forEach(([x, y, z]) => coin(scene, [x, y, z], 0.19, [0.4, 0.6, 0]));
+  S.finish({ x: 0.0, y: 1.55, z: 6.3, tx: 0.0, ty: 1.4 });
+});
+</script></body></html>

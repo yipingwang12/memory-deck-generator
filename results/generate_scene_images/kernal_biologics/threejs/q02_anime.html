@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kernal q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q02 — KERNEL's letters build T-cell soldiers inside the patient's own body
+import { THREE, guard, mat, add, blob, box, cyl, rng, letter, tcell, makeStage } from './common.js';
+guard(() => {
+  const S = makeStage({ seed: 3, sky: { zenith: '#c4506a', horizon: '#ff9a86', cover: 0.02, puffCover: 0.02, towerTop: 0.02, cloudLit: '#ffd0c0', cloudShade: '#e08a8a' } });
+  const { scene } = S;
+  // blood-vessel interior: pink floor, dark red walls, red blood cells
+  S.ground('#d9647a');
+  box(scene, mat('#a52a46'), [0, 2.5, -3], [40, 8, 0.5]);
+  for (let i = 0; i < 6; i++) box(scene, mat(i % 2 ? '#b8334f' : '#a52a46'), [-6 + i * 2.4, 1.2, -2.7], [1.2, 3.4, 0.3]);
+  const r = rng(11);
+  for (let i = 0; i < 16; i++) {
+    const c = add(scene, new THREE.TorusGeometry(0.2, 0.1, 14, 28), mat('#e0283b', { roughness: 0.4 }), [-3.2 + r() * 6.4, 0.2 + r() * 2.2, -1.2 - r() * 1.3], [r() * 3, r() * 3, 0]);
+    c.scale.z = 0.7;
+  }
+  // kernel left, letters flying toward soldiers
+  const k = S.kernel({ scale: 1.5 }); k.position.set(-1.05, 0, 0.5); k.rotation.y = 0.45; scene.add(k);
+  k.userData.pose({ legs: { l: [0.1, 0.05], r: [-0.1, -0.05] } });
+  k.userData.reach('l', [0.4, 1.0, 0.45]); k.userData.reach('r', [-0.45, 0.5, 0.25]);
+  S.toon(k);
+  const sol = [[0.35, 0, 0.55, -0.35, 1.5], [1.25, 0, 0.1, -0.15, 1.45], [2.1, 0, 0.6, -0.5, 1.4]];
+  sol.forEach(([x, y, z, ry, sc]) => { const t = tcell({ scale: sc }); t.position.set(x + 0.2, y, z - 0.2); t.rotation.y = ry; scene.add(t); S.toon(t); });
+  letter(scene, [0.0, 1.9, 0.7], [0.1, 0.3, 0.3], 1.4); letter(scene, [1.15, 2.15, 0.4], [0.1, 0.2, -0.2], 1.3);
+  // sparkles of building
+  for (let i = 0; i < 14; i++) { const a = r() * 6.28; blob(scene, mat('#fff3a0', { emissive: '#ffe070', emissiveIntensity: 1 }), [0.9 + Math.cos(a) * 1.5, 0.6 + r() * 1.7, 0.7 + Math.sin(a) * 0.3], [0.035, 0.035, 0.035]); }
+  S.finish({ x: 0.55, y: 1.15, z: 4.6, tx: 0.55, ty: 0.9 });
+});
+</script></body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// Children help the farmer lay the first foundation stone
+const S = boot(); const sc = S.scene;
+box(sc, '#d7c3a0', [0, 0.02, -0.3], [4.4, 0.06, 2.0]);
+for (let i = 0; i < 4; i++) box(sc, '#a9a9b0', [-1.5 + i * 0.95, 0.2, -0.9], [0.9, 0.34, 0.6]);
+box(sc, '#c4c4cc', [0.35, 0.2, 0.2], [0.9, 0.34, 0.6]); const stone = box(sc, '#d0d0d8', [0.0, 0.8, 0.5], [1.1, 0.6, 0.7], [0, 0.2, 0]);
+const kids = []; [[-1.4, 0.8, '#ff7a45', 0.5], [1.5, 0.8, '#4aa0e0', -0.5], [2.3, 0.2, '#2a9a4a', -0.6]].forEach(([x, z, c, ry]) => { const k = person({ body: c, s: 1.3 }); k.position.set(x, 0, z); k.rotation.y = ry; sc.add(k); });
+const ribbon = new THREE.Group(); ribbon.position.set(2.0, 1.3, -0.3); sc.add(ribbon); for (const s of [-1, 1]) add(ribbon, new THREE.TorusGeometry(0.2, 0.06, 10, 24), '#f2c230', [s * 0.17, 0.18, 0], [0, 0, s * 0.6 + Math.PI], [0.8, 1.2, 1]);
+for (const s of [-1, 1]) box(ribbon, '#f2c230', [s * 0.1, -0.12, 0], [0.12, 0.45, 0.06], [0, 0, s * 0.35]);
+const f = farmerAt(sc, { x: -0.8, z: 0.9, ry: 0.3, s: 1.8, pose: { lean: 0.25 } }); reachTo(f, 'l', [-0.4, 0.8, 0.8]); reachTo(f, 'r', [-0.2, 0.8, 0.5]);
+done(S, f, { pos: [0, 1.6, 5.6], look: [0.2, 0.9, 0] });
+});
+</script></body></html>

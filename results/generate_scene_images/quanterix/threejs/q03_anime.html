@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — WALL gets a national medal for technology, pinned to the QUARTER.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#d9c8a8', sky: { cover: 0.4 } }), { scene } = ctx;
+const bw = add(scene, new THREE.BoxGeometry(9, 4, 0.3), brickMat(4, 1.8), [0, 2, -1.6]);
+const wall = buildWall({ scale: 1.3 }); wall.position.set(-3.0, 0, 0); wall.rotation.y = 0.3; scene.add(wall);
+const q = createQuarter({ scale: 2.0 }); q.position.set(0.5, 0, 0.4); scene.add(q);
+q.userData.pose({ arms: { l: [0, 0.6], r: [0, -0.9] } });
+// medal pinned at lower-right of face
+const m = new THREE.Group(); m.position.set(0.27, q.userData.parts.cy - 0.28, 0.1); m.scale.setScalar(1.2); q.add(m);
+for (const [s, c] of [[-1, '#d8341f'], [1, '#2457d6']]) { box(m, mat(c), [s * 0.04, -0.2, 0], [0.07, 0.3, 0.012], [0, 0, s * 0.18]); }
+const gold = mat('#ffc933', { metalness: 0.5, roughness: 0.25 });
+cyl(m, gold, [0, 0, 0.0], 0.15, 0.03, [Math.PI / 2, 0, 0]);
+const gear = new THREE.Group(); gear.position.z = 0.02; m.add(gear);
+cyl(gear, mat('#b8860b', { metalness: 0.5 }), [0, 0, 0], 0.085, 0.02, [Math.PI / 2, 0, 0]);
+for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; box(gear, mat('#b8860b', { metalness: 0.5 }), [Math.cos(a) * 0.1, Math.sin(a) * 0.1, 0], [0.04, 0.04, 0.02], [0, 0, a]); }
+cyl(gear, gold, [0, 0, 0.012], 0.04, 0.02, [Math.PI / 2, 0, 0]);
+// rosette fan on top
+for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; blob(m, mat('#ffe9a0'), [Math.cos(a) * 0.15, Math.sin(a) * 0.15, -0.005], [0.04, 0.04, 0.018]); }
+// bolt of "technology": circuit chip
+box(scene, mat('#2a3148'), [3.0, 0.7, 0.3], [0.9, 0.9, 0.12]);
+for (let i = 0; i < 5; i++) for (const s of [-1, 1]) box(scene, mat('#c9c9c9', { metalness: 0.6 }), [3.0 + (i - 2) * 0.18, 0.7 + s * 0.5, 0.3], [0.06, 0.12, 0.05]);
+label(scene, 'CPU', [3.0, 0.7, 0.37], [0.6, 0.3], { bg: '#2a3148', fg: '#9ad4ff' });
+finishScene(ctx, q, { cam: [0, 1.6, 6.2], look: [0, 1.3, 0] });
+
+});
+</script></body></html>

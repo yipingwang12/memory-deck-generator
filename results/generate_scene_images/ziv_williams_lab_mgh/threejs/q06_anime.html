@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q06_anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, blob, box, textTex, makeStage, buildOR, brain, scalpel, neuron, probe, setupSieve, finishScene } from "./props.js";
+guard(() => {
+  const P = new URLSearchParams(location.search); const { stage, num } = makeStage(P); const scene = stage.scene;
+  const lamp = buildOR(scene, { wall: '#9ccbea', floor: '#8fc66a' }); lamp.visible = false;
+  // MGH facade: Bulfinch-style columned building with dome, big sign, sieve hanging from a crane arm
+  const wall = scene.children.slice(); scene.children.forEach(() => {});
+  scene.remove(lamp);
+  const fac = new THREE.Group(); fac.position.set(0, 0, -2.5); scene.add(fac);
+  box(fac, mat('#d9cdb8'), [0, 1.6, -0.2], [9, 3.2, 0.6]);
+  box(fac, mat('#f4efe6'), [0, 3.3, 0.2], [5.6, 0.3, 1.2]);
+  for (let i = -3; i <= 3; i++) add(fac, new THREE.CylinderGeometry(0.17, 0.2, 3.0, 20), mat('#f6f2ea'), [i * 0.8, 1.5, 0.7]);
+  const tri = new THREE.Shape(); tri.moveTo(-2.9, 0); tri.lineTo(2.9, 0); tri.lineTo(0, 0.9); tri.closePath();
+  add(fac, new THREE.ExtrudeGeometry(tri, { depth: 0.5, bevelEnabled: false }), mat('#efe9dd'), [0, 3.45, 0.4]);
+  add(fac, new THREE.CylinderGeometry(0.9, 0.9, 0.7, 24), mat('#f4efe6'), [0, 4.05, -0.3]);
+  add(fac, new THREE.SphereGeometry(0.95, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), mat('#4fa38a', { metalness: 0.3 }), [0, 4.4, -0.3]);
+  add(fac, new THREE.CylinderGeometry(0.03, 0.03, 0.5, 8), mat('#c9ced4'), [0, 5.6, -0.3]);
+  box(fac, mat('#1f3d7a'), [0, 2.85, 0.84], [3.2, 0.9, 0.04]); add(fac, new THREE.PlaneGeometry(3.1, 0.85), new THREE.MeshStandardMaterial({ map: textTex(['MASSACHUSETTS', 'GENERAL'], { w: 1024, ax: 3.65, bg: '#1f3d7a', fg: '#ffffff', font: 'bold 330px Georgia, serif' }) }), [0, 2.85, 0.865]);
+  box(fac, mat('#7a5a3c'), [0, 0.6, 0.86], [0.9, 1.2, 0.05]);
+  // red cross plaque
+  box(fac, mat('#e0443c'), [-2.9, 2.2, 0.86], [0.12, 0.5, 0.03]); box(fac, mat('#e0443c'), [-2.9, 2.2, 0.86], [0.5, 0.12, 0.03]);
+  // crane arm and rope; sieve hangs by its handle loop
+  const arm = new THREE.Group(); scene.add(arm);
+  add(arm, new THREE.CylinderGeometry(0.07, 0.09, 4.4, 10), mat('#5a6270', { metalness: 0.5 }), [-3.2, 2.2, 0.6]);
+  box(arm, mat('#5a6270', { metalness: 0.5 }), [-1.0, 4.4, 0.6], [5.0, 0.14, 0.14]);
+  add(arm, new THREE.CylinderGeometry(0.015, 0.015, 1.45, 6), mat('#8a7650'), [1.3, 3.7, 0.6]);
+  const sieve = setupSieve(scene, stage, { pos: [1.3, 0.9, 0.6], ry: 0.2, scale: 1.8, pose: { headTilt: 0.04, arms: { l: [0, 0.3, 0.1], r: [0, 0.3, 0.1] }, legs: { l: [0.1, 0], r: [-0.1, 0] } } });
+  stage.camera.position.set(num("cx", 0), num("cy", 2.2), num("cz", 6.0)); stage.camera.lookAt(num("tx", 0), num("ty", 2.4), 0);
+  finishScene(scene, stage, sieve, true);
+});
+</script></body></html>

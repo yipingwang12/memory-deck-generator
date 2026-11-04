@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kernal q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q10 — the KERNEL first sprouts under the BRIDGE over the Charles
+import { THREE, guard, mat, add, blob, box, cyl, rng, makeStage } from './common.js';
+guard(() => {
+  const S = makeStage({ seed: 23, el: 25 }); const { scene } = S; const r = rng(2);
+  S.ground('#6fae45');
+  // river behind the bank
+  add(scene, new THREE.PlaneGeometry(600, 30), mat('#3a8fc8', { roughness: 0.25 }), [0, 0.02, -17], [-Math.PI / 2, 0, 0]);
+  // bridge: long deck on stone arches spanning the Charles, set well back so the kernel sits clear underneath its shadow line
+  const br = new THREE.Group(); br.position.set(0, 0, -8); scene.add(br);
+  box(br, mat('#9aa3ad'), [0, 3.6, 0], [26, 0.5, 3.2]); box(br, mat('#c8cfd9'), [0, 4.0, -1.45], [26, 0.5, 0.2]); box(br, mat('#c8cfd9'), [0, 4.0, 1.45], [26, 0.5, 0.2]);
+  for (let i = -3; i <= 3; i++) {
+    const x = i * 3.6; box(br, mat('#b8a896'), [x, 1.5, 0], [0.9, 3.0, 2.6]);
+    if (i < 3) add(br, new THREE.TorusGeometry(1.45, 0.3, 12, 40, Math.PI), mat('#b8a896'), [x + 1.8, 3.0, 0], [0, 0, 0], [1, 0.95, 1.1]);
+  }
+  for (const x of [-3.6, 3.6]) { box(br, mat('#d8cdb8'), [x, 5.4, 0], [1.3, 3.6, 1.6]); add(br, new THREE.ConeGeometry(1.0, 0.9, 4), mat('#6a7a8a'), [x, 7.65, 0], [0, Math.PI / 4, 0]); }
+  // soil mound and kernel with a sprout, large
+  blob(scene, mat('#7a4a2a'), [0.0, 0.02, 1.4], [1.3, 0.35, 0.9]);
+  const k = S.kernel({ scale: 1.8, sprout: true }); k.position.set(0.0, 0.18, 1.3); k.rotation.y = -0.1; scene.add(k);
+  k.userData.pose({ arms: { l: [0, 1.5, 0], r: [0, 1.5, 0] } });
+  S.toon(k);
+  blob(scene, mat('#7a4a2a'), [0.0, 0.12, 1.75], [1.15, 0.28, 0.5]);
+  for (let i = 0; i < 25; i++) blob(scene, mat(['#ffffff', '#ffd84a', '#ff8fa8'][i % 3]), [(r() - 0.5) * 9, 0.04, 0.2 + r() * 3.5], [0.05, 0.05, 0.05]);
+  S.finish({ x: 0.0, y: 2.2, z: 8.5, tx: 0.0, ty: 2.25 });
+});
+</script></body></html>

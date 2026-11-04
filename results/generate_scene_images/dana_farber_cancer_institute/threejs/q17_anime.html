@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q17</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// star of BETHLEHEM over ISRAEL; a DEACON shakes the farmer's hand at a hospital gate
+const S = boot({ sky: { cover: 0.3 } }); const sc = S.scene;
+// gate arch
+const gt = new THREE.Group(); gt.position.set(0, 0, -1.8); sc.add(gt);
+for (const x of [-2.2, 2.2]) box(gt, '#d9c9a8', [x, 1.2, 0], [0.5, 2.4, 0.5]);
+box(gt, '#d9c9a8', [0, 2.55, 0], [5.1, 0.4, 0.5]); box(gt, '#c94040', [0, 2.95, 0], [1.0, 0.5, 0.4]); box(gt, '#fff', [0, 2.95, 0.22], [0.8, 0.14, 0.03]); box(gt, '#fff', [0, 2.95, 0.22], [0.14, 0.8 * 0.6, 0.03]);
+// Israel flag
+const fl = new THREE.Group(); fl.position.set(-3.2, 0, -0.6); sc.add(fl); cyl(fl, '#ddd', [0, 1.4, 0], 0.03, 2.8); box(fl, '#fff', [0.65, 2.4, 0], [1.3, 0.9, 0.03]); box(fl, '#1a4fb0', [0.65, 2.7, 0.03], [1.3, 0.12, 0.01]); box(fl, '#1a4fb0', [0.65, 2.1, 0.03], [1.3, 0.12, 0.01]);
+const st = star5(0.2, '#1a4fb0', 0.02); st.position.set(0.65, 2.4, 0.03); fl.add(st);
+// star of Bethlehem
+const bs = star5(0.55, '#ffe070', 0.15); bs.position.set(0.3, 3.5, -1.4); sc.add(bs);
+
+const dc = person({ robe: '#f4f0e4', hair: '#6a4a30', s: 1.9 }); dc.position.set(1.4, 0, 0.5); dc.rotation.y = -0.5; sc.add(dc);
+// stole
+box(dc, "#c94040", [0, 0.3, 0.25], [0.1, 0.5, 0.03]);
+const f = farmerAt(sc, { x: -0.5, z: 0.5, ry: 0.4, s: 1.9 }); reachTo(f, 'l', [0.4, 0.95, 0.9]);
+dc.updateMatrixWorld(true); const ar = dc.children.find((c) => c.name === 'arm-1'); if (ar) { ar.rotation.z = 1.2; ar.position.set(-0.19, 0.75, 0); }
+done(S, f, { pos: [0, 1.7, 6.6], look: [0, 1.7, -0.3] });
+});
+</script></body></html>

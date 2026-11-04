@@ -1,0 +1,14 @@
+const stage = setup('#8ec46a', 44); const S = stage.scene;
+const wall = mat('#f1ece0'), roof = mat('#b04a3a');
+box(S, wall, [2.4, 0.8, -1.6], [2.4, 1.6, 1.8]);
+const rf = cyl(S, roof, [2.4, 2.0, -1.6], 1.4, 1.4, 2.5, [-Math.PI / 2, 0, 0], 3); rf.scale.z = 0.55;
+box(S, wall, [3.5, 1.5, -1.3], [0.9, 3.0, 0.9]); box(S, mat('#1a1420'), [3.5, 2.6, -0.84], [0.5, 0.7, 0.05]);
+add(S, new THREE.ConeGeometry(0.72, 1.3, 4), roof, [3.5, 3.65, -1.3], [0, Math.PI / 4, 0]);
+for (const s of [-1, 1]) { cyl(S, mat('#fff'), [3.5 + s * 0.2, 2.0, -0.83], 0.17, 0.17, 0.04, [Math.PI / 2, 0, 0]); cyl(S, mat('#222'), [3.5 + s * 0.2, 2.0, -0.8], 0.07, 0.07, 0.04, [Math.PI / 2, 0, 0]); cyl(S, mat('#3a3a40'), [3.5 + s * 0.2, 2.0, -0.82], 0.19, 0.19, 0.03, [Math.PI / 2, 0, 0]); }
+box(S, mat('#7a4a2a'), [2.4, 0.5, -0.69], [0.5, 0.9, 0.05]); for (const x of [1.9, 2.9]) blob(S, glow('#9ad0ff', 0.6), [x, 0.95, -0.69], [0.12, 0.2, 0.03]);
+const wood = mat('#6b4423');
+cyl(S, wood, [-2.0, 1.75, 0.2], 0.08, 0.08, 3.5); cyl(S, wood, [0.0, 1.75, 0.2], 0.08, 0.08, 3.5); box(S, wood, [-1.0, 3.5, 0.2], [2.4, 0.16, 0.16]);
+const b = new THREE.Group(); b.position.set(-1.0, 3.45, 0.2); b.rotation.z = 0.22; S.add(b); strut(b, wood, [0, 0, 0], [0, -0.2, 0], 0.03); bell(b, [0, -0.2, 0], 1.7);
+for (let i = 1; i <= 3; i++) for (const s of [-1, 1]) add(S, new THREE.TorusGeometry(0.5 + i * 0.28, 0.025, 6, 20, 0.9), glow('#ffe27a', 0.8), [-1.0, 2.55, 0.25], [0, 0, s > 0 ? -0.45 : Math.PI + 0.45 - 0.9 + 0.9 - 0.9 + 0.9 - 0.9 + 0.0 - 0.0 + 0.45 - 0.45 + 0.0], [1, 1, 1]).rotation.z = s > 0 ? -0.45 : Math.PI - 0.45;
+const lil = LIL(stage, -1.0, 0.3, 0.0, 1.8, { arms: { l: [0.2, 0.7, 0], r: [0, 0.7, 0] } });
+finishScene(stage, [lil], [0.7, 1.75, 6.2], [0.7, 1.75, 0]);

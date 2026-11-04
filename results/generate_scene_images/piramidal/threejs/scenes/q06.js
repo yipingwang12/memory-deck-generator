@@ -1,0 +1,22 @@
+// q06 (peg: cheese): a slice of CHEESE buys six million coins of seed for the PIRANHA.
+boot({ clouds: [[150, 900, 90, 1.2], [168, 1300, 200, 2.2], [214, 950, 70, 0.9]] }, ({ stage, scene, num, mark }) => {
+  ground(scene);
+  const gold = mat('#ffc928', { metalness: .6, roughness: .3 }), r = rng(9);
+  const coin = (x, y, z, rx, rz) => { const c = cyl(scene, gold, [x, y, z], .13, .03, [rx, r() * 3, rz]); cyl(c, mat('#e0a410', { metalness: .5 }), [0, .005, 0], .09, .034); };
+  for (let i = 0; i < 300; i++) { const h = Math.pow(r(), 1.4), a = r() * 6.28, rad = (1 - h) * 1.7 * Math.sqrt(r()); coin(2.2 + Math.cos(a) * rad, .05 + h * 1.1, Math.sin(a) * rad - .1, Math.PI / 2 * (r() > .5 ? 1 : 0) + (r() - .5) * 1.2, (r() - .5) * 1.2); }
+  for (let i = 0; i < 12; i++) coin(3.4, .03 + i * .033, .5, 0, 0); for (let i = 0; i < 8; i++) coin(.75, .03 + i * .033, 1.4, 0, 0);
+  const sprout = new THREE.Group(); sprout.position.set(2.0, 1.2, 0); scene.add(sprout);
+  cyl(sprout, mat('#4a9a3a'), [0, .2, 0], .03, .4);
+  for (const s of [-1, 1]) blob(sprout, mat('#6fd05a'), [s * .17, .42, 0], [.18, .08, .1], [0, 0, s * .4]);
+  const sack = new THREE.Group(); sack.position.set(3.0, 0, 1.0); scene.add(sack);
+  blob(sack, mat('#c9a06a', { roughness: 1 }), [0, .35, 0], [.38, .4, .34]); cyl(sack, mat('#a07a44'), [0, .72, 0], .12, .12);
+  const p = createPiranha({ scale: 1.8 }); p.position.set(-.5, 0, .5); p.rotation.y = .25; scene.add(p); mark(p);
+  p.userData.pose({ jaw: .15, arms: { r: [0, .4, 0] } }); p.updateMatrixWorld(true);
+  const H = new THREE.Vector3(.4, 1.5, .9), t = p.worldToLocal(H.clone()); p.userData.reach('l', [t.x, t.y, t.z]);
+  const sh = new THREE.Shape([new THREE.Vector2(0, 0), new THREE.Vector2(.7, 0), new THREE.Vector2(.7, .34)]);
+  const geo = new THREE.ExtrudeGeometry(sh, { depth: .4, bevelEnabled: true, bevelSize: .02, bevelThickness: .02, bevelSegments: 2 }); geo.translate(-.35, -.1, -.2);
+  const ch = new THREE.Group(), cm = mat('#ffcf33', { roughness: .5 });
+  add(ch, geo, cm); [[.15, .05], [.35, .14], [.5, .05], [.5, .22]].forEach(([x, y], i) => blob(ch, mat('#d9a014'), [x - .35, y - .1 + .02, .22], [.055 + i * .004, .055, .02]));
+  ch.position.copy(H).add(new THREE.Vector3(.12, .08, 0)); ch.scale.setScalar(1.7); ch.rotation.set(0, -.35, .35); scene.add(ch);
+  look(stage, num, [.7, 1.3, 5.6], [.8, 1.0, 0]);
+});

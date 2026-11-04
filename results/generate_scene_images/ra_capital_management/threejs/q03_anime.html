@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RA q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — the SCARAB's crew: investor, physician, biologist, engineer.
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createScarab } from './scarab.js';
+import { createKid } from './kid.js';
+import { makeStage, finishScene, meadow } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  meadow(scene);
+  const s = createScarab({ scale: 2.9 }); s.position.set(0, 0, -0.3); s.rotation.y = 0.1; scene.add(s);
+  s.userData.reach('l', [0.4, 0.3, 0.5]); s.userData.reach('r', [-0.4, 0.3, 0.5]);
+  const chars = [s];
+  [['investor', -3.0, 0.5], ['physician', -1.7, 1.1], ['biologist', 1.7, 1.1], ['engineer', 3.0, 0.5]].forEach(([role, x, z], i) => {
+    const k = createKid({ role, scale: 1.9 }); k.position.set(x, 0, z); k.rotation.y = -Math.sign(x) * 0.35; scene.add(k); chars.push(k);
+    k.userData.arms[x < 0 ? 'l' : 'r'].rotation.z = x < 0 ? 0.9 : -0.9;
+    k.userData.arms[x < 0 ? 'r' : 'l'].rotation.z = x < 0 ? -0.15 : 0.15;
+  });
+  finishScene(stage, scene, chars, [0, 1.4, 6.4], [0, 0.8, 0]);
+});
+</script></body></html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// ZORRO with a DAPHNE laurel crown steers the PORTHOLE ship as CEO.
+import { THREE, guard, canvasTexture, rng, makeStage, createPorthole, makeShip, makePerson, makeZorro, makeCapsule, makeGlyph, textPlane, mat, add, blob, box, cyl, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({ dock: false }), s = stage.scene;
+  const ship = makeShip({ len: 4.2 }); ship.position.set(0.4, 0.28, 0); s.add(ship);
+  add(ship, new THREE.PlaneGeometry(1.7, 2.0), mat('#fff6e4', { side: THREE.DoubleSide }), [0.55, 1.6, 0]);
+  const wheel = new THREE.Group(); wheel.position.set(-1.35, 1.0, 0.35); s.add(wheel);
+  add(wheel, new THREE.TorusGeometry(0.42, 0.045, 10, 36), mat('#7a4a1e'));
+  for (let i = 0; i < 4; i++) add(wheel, new THREE.CylinderGeometry(0.03, 0.03, 0.92, 8), mat('#7a4a1e'), [0, 0, 0], [0, 0, i * Math.PI / 4]);
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; blob(wheel, '#e8c26a', [Math.cos(a) * 0.46, Math.sin(a) * 0.46, 0], [0.05, 0.05, 0.05]); }
+  cyl(s, '#6b4423', [-1.35, 0.55, 0.3], 0.07, 0.9);
+  const z = makeZorro(1.0); z.position.set(-0.6, 0.3, 0.45); z.rotation.y = -0.45; s.add(z);
+  z.userData.arms.l.rotation.set(-1.15, 0, 0.15); z.userData.arms.r.rotation.set(-1.15, 0, -0.15);
+  const p = createPorthole({ scale: 1.5 }); p.position.set(1.7, 0.3, 0.3); p.rotation.y = -0.35; p.userData.setMood('smile');
+  p.userData.pose({ arms: { l: [0, 0.9, 0], r: [0, -0.6, 0] } }); s.add(p);
+  toon(stage, p, z);
+  frame(stage, { cam: [0.1, 1.5, 5.6], look: [0.3, 1.2, 0] });});
+</script></body></html>

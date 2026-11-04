@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q13 - The CAMPER parks inside the big SCIENCE AND ENGINEERING COMPLEX
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ ground: '#cfc6b8', camper: { pos: [0, 0, 1.3], ry: 0.4, scale: 1.45 }, cam: [0, 1.4, 6.0], look: [0, 1.25, 0],
+  build: ({ scene, van }) => {
+    const B = new THREE.Group(); box(B, 9, 4.2, 1.8, '#dfe3e8', [0, 2.1, 0], [0, 0, 0], 0.06); box(B, 9.4, 0.3, 2.2, '#8a96a4', [0, 4.3, 0.1]);
+    panel(B, 8.4, 2.6, (ctx, w, h) => { ctx.fillStyle = '#6aa8d8'; ctx.fillRect(0, 0, w, h); ctx.strokeStyle = '#e8f0f8'; ctx.lineWidth = 6; for (let i = 1; i < 8; i++) { ctx.beginPath(); ctx.moveTo(i * 64, 0); ctx.lineTo(i * 64, h); ctx.stroke(); } for (let j = 1; j < 4; j++) { ctx.beginPath(); ctx.moveTo(0, j * 128); ctx.lineTo(w, j * 128); ctx.stroke(); } const g = ctx.createLinearGradient(0, 0, w, h); g.addColorStop(0, 'rgba(255,255,255,0.35)'); g.addColorStop(1, 'rgba(255,255,255,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); }, [0, 1.6, 0.91]);
+    box(B, 1.9, 1.5, 0.3, '#8a96a4', [0, 0.75, 1.0]);
+    panel(B, 1.5, 1.3, (ctx) => { ctx.fillStyle = '#254a66'; ctx.fillRect(0, 0, 512, 512); }, [0, 0.72, 1.16]);
+    const g = gear(0.6); g.position.set(-1.1, 3.4, 1.1); g.scale.setScalar(0.8); B.add(g);
+    const fl = new THREE.Group(); const pts = [[0, 0], [0.5, 0], [0.5, 0.05], [0.12, 0.7], [0.12, 1.1], [0.16, 1.15], [0.1, 1.15], [0, 1.15]].map(([x, y]) => new THREE.Vector2(x, y));
+    add(fl, new THREE.LatheGeometry(pts, 32), mat('#bfe8ff', { transparent: true, opacity: 0.85 })); add(fl, new THREE.CylinderGeometry(0.4, 0.5, 0.25, 32), mat('#4ae0a0', { emissive: '#20c080', emissiveIntensity: 0.6 }), [0, 0.15, 0]);
+    fl.position.set(1.1, 3.0, 1.0); fl.scale.setScalar(0.85); B.add(fl);
+    B.position.set(0, 0, -2.3); scene.add(B);
+    for (const x of [-4.2, 4.2]) { const t = tree(1.4); t.position.set(x, 0, 0.5); scene.add(t); }
+    van.userData.pose({ arms: { l: [0, 1.4, 0.3] } });
+  } });
+
+</script></body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const bag = C.moneyBag('VC'); bag.position.set(-3.6, 0, -0.8); bag.scale.setScalar(2.3); bag.rotation.z = 0.12; S.scene.add(bag);
+  const r = C.rng(3); for (let i = 0; i < 14; i++) { const c = C.coin(0.2, 'F'); c.position.set(-2.4 + r() * 1.4, 0.05 + r() * 0.25, -0.2 + r() * 1.2); c.rotation.set(-Math.PI / 2 + (r() - 0.5) * 0.6, 0, r() * 6); S.scene.add(c); }
+  const co = C.coin(1.35, 'F'); co.position.set(-1.2, 1.35, 1.8); co.rotation.y = 0.5; S.scene.add(co);
+  const t = C.triangle(S, { scale: 2.8, pos: [2.3, 0, 0.4], ry: -0.2, pose: { arms: { l: [0, 0.8, 0], r: [0, -0.9, 0] } } });
+  const fl = C.flag(0.7, 0.8); fl.position.set(0, 1.0, 0); t.userData.parts.upper.add(fl);
+  C.done(S, [t], [0, 2.5, 9.6], [0, 2.4, 0]);
+});
+</script></body></html>

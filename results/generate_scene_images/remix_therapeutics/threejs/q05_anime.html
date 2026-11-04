@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard, rng } from './kit.js';
+import * as B from './base.js';
+const { THREE, mat, add, blob, box, cyl, textPlane, kitchenStage, frame, toon, createMixer, nose, tank, drop, ribbon, bib } = B;
+guard(() => {
+const { stage, scene, num } = kitchenStage(); const r = rng(3);
+const m = createMixer({ scale: 1.4 }); m.position.set(-1.4, 0, 0); m.rotation.y = 0.5; scene.add(m);
+m.userData.pose({ headTilt: 0.12, arms: { l: [0, 1.0, -0.2], r: [0, 1.0, -0.2] } }); m.userData.spin(0.4);
+const b = bib({ s: 0.8 }); b.position.set(-0.2, 0.5, 0.6); b.rotation.set(0, 0.5, 0.2); scene.add(b);
+const g = new THREE.Group(); g.position.set(1.15, 0.95, 0); scene.add(g);
+const pink = mat('#f08ca0');
+blob(g, pink, [0, 0, 0], [0.8, 0.7, 0.6]);
+[[-0.5, 0.45, 0.2], [0.5, 0.5, 0.1], [0, 0.7, 0.1], [0.6, -0.1, 0.4], [-0.6, -0.1, 0.3]].forEach((p) => blob(g, pink, p, [0.32, 0.3, 0.3]));
+const cyst = mat('#9fe4ff', { transparent: true, opacity: 0.8, roughness: 0.1 });
+[[-0.3, 0.1, 0.5, 0.2], [0.2, 0.2, 0.55, 0.26], [0.45, -0.1, 0.5, 0.17], [-0.1, -0.25, 0.55, 0.18], [0.0, 0.45, 0.45, 0.14], [-0.55, 0.3, 0.4, 0.14], [0.6, 0.35, 0.42, 0.13]]
+  .forEach(([x, y, z, s]) => { blob(g, cyst, [x, y, z], [s, s, s]); blob(g, mat('#ffffff'), [x - s * 0.3, y + s * 0.35, z + s * 0.8], [s * 0.2, s * 0.2, s * 0.1]); });
+cyl(g, mat('#e06a88'), [-0.2, -0.9, 0], 0.1, 0.5);
+toon(stage, scene, [m]); frame(stage, num, { cx: 0, cz: 4.1, tx: 0, ty: 0.7 });
+});
+</script></body></html>

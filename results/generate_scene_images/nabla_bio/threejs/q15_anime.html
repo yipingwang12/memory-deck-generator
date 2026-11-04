@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q15</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const water = S.scene.children.find((o) => o.geometry && o.geometry.type === 'PlaneGeometry'); water.material.color.set('#3b86c4');
+  const r = C.rng(8); for (let i = 0; i < 26; i++) box(S.scene, mat(['#c9ced8', '#aeb6c6', '#d8dce4'][i % 3]), [-40 + i * 3.2, 4 + r() * 8, -45], [2.4, 8 + r() * 14, 2.4]);
+  const st = mat('#8a8f9a'), steel = mat('#5a6f8c', { metalness: 0.4, roughness: 0.4 });
+  box(S.scene, st, [0, 4.15, 0], [15, 0.5, 3.2]); box(S.scene, mat('#3a3f4a'), [0, 4.43, 0], [15, 0.06, 3.0]);
+  for (const x of [-6.6, 6.6]) { box(S.scene, mat('#d8d2c4'), [x, 3.2, 0], [1.5, 6.4, 1.5]); blob(S.scene, mat('#e8e2d4'), [x, 6.5, 0], [0.9, 0.7, 0.9]); }
+  for (const z of [-1.3, 1.3]) { const a = add(S.scene, new THREE.TorusGeometry(5.6, 0.14, 10, 60, Math.PI), steel, [0, -1.8, z]); for (const x of [-4.2, -2.1, 0, 2.1, 4.2]) bar(S.scene, [x, 3.9, z], [x, Math.sqrt(Math.max(0, 31 - x * x)) - 1.8, z], 0.05, steel); }
+  box(S.scene, steel, [0, 3.6, 0.2], [3.6, 0.14, 0.14]);
+  const t = C.triangle(S, { scale: 2.6, pos: [0, 0.4, 0.6], ry: 0.15, pose: { legs: { l: [0.35, 0.1], r: [-0.2, -0.1] } } });
+  C.reachWorld(t, 'l', [0.9, 3.6, 0.8]); C.reachWorld(t, 'r', [-0.9, 3.6, 0.8]);
+  C.done(S, [t], [0.4, 2.0, 9.6], [0, 3.0, 0]);
+});
+</script></body></html>

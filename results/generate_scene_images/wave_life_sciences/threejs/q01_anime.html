@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — The SURFER signs papers on a beach in SINGAPORE (Merlion + Marina Bay Sands).
+import { THREE, guard, mat, add, blob, labelTex, makeStage, beach, addSurfer, finish } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  beach(scene, { seaZ: 5 });
+
+  // Merlion: lion head + fish body, spouting water
+  const M = new THREE.Group(); M.position.set(1.7, 0, -2.0); M.rotation.y = -0.35; scene.add(M);
+  const white = mat('#f4f1ea');
+  add(M, new THREE.CylinderGeometry(0.75, 0.9, 0.35, 28), mat('#c9c3b8'), [0, 0.18, 0]);
+  const pts = [[0.0, 0], [0.55, 0], [0.62, 0.3], [0.5, 0.8], [0.42, 1.3], [0.45, 1.7], [0, 1.78]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(M, new THREE.LatheGeometry(pts, 32), white, [0, 0.35, 0]);
+  for (let i = 0; i < 6; i++) blob(M, mat('#d8e6ee'), [0.0, 0.7 + i * 0.17, 0.5 - 0.0 * i], [0.5 - i * 0.02, 0.09, 0.1]);      // scales
+  const tail = add(M, new THREE.TorusGeometry(0.5, 0.15, 12, 24, Math.PI * 1.2), white, [-0.1, 0.55, -0.4], [0, 0, 2.2]);
+  blob(M, white, [0, 2.25, 0.1], [0.72, 0.68, 0.66]);                                                         // head
+  for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; blob(M, white, [Math.cos(a) * 0.78, 2.25 + Math.sin(a) * 0.74, -0.08], [0.2, 0.2, 0.2]); } // mane
+  const dk = mat('#14202a', { roughness: 0.3 });
+  for (const s of [-1, 1]) { blob(M, mat('#fff', { roughness: 0.3 }), [s * 0.26, 2.35, 0.7], [0.14, 0.17, 0.05]); blob(M, dk, [s * 0.26, 2.35, 0.74], [0.08, 0.1, 0.04]); }
+  blob(M, dk, [0, 2.17, 0.74], [0.1, 0.07, 0.07]);
+  blob(M, mat('#7a2020'), [0, 1.98, 0.62], [0.28, 0.12, 0.12]);                                               // open mouth
+  add(M, new THREE.CylinderGeometry(0.1, 0.07, 0.55, 12), mat('#9fe0f2', { transparent: true, opacity: 0.8, emissive: '#6fd0f0', emissiveIntensity: 0.4 }), [0, 1.7, 0.9], [-1.0, 0, 0]);
+  add(M, new THREE.CylinderGeometry(0.28, 0.5, 0.1, 24), mat('#8fdcf0', { transparent: true, opacity: 0.8 }), [0, 0.38, 1.5]);
+
+  // Marina Bay Sands: three towers + sky-boat
+  const MB = new THREE.Group(); MB.position.set(-0.9, 0, -4.2); scene.add(MB);
+  for (const x of [-1.0, 0, 1.0]) add(MB, new THREE.BoxGeometry(0.75, 3.2, 0.7), mat('#d9e6f2'), [x, 1.6, 0]);
+  add(MB, new THREE.BoxGeometry(3.6, 0.22, 0.75), mat('#f0f3f6'), [0, 3.3, 0]);
+  add(MB, new THREE.BoxGeometry(1.4, 0.07, 0.4), mat('#35d0e0'), [0.9, 3.45, 0]);
+
+  // table + papers + pen
+  const T = new THREE.Group(); scene.add(T);
+  add(T, new THREE.BoxGeometry(1.4, 0.07, 0.8), mat('#8b5a2b'), [-0.35, 0.62, 0.55]);
+  for (const [x, z] of [[-0.85, 0.3], [0.15, 0.3], [-0.85, 0.8], [0.15, 0.8]]) add(T, new THREE.CylinderGeometry(0.035, 0.035, 0.62, 10), mat('#5a3a1a'), [x, 0.3, z]);
+  const paper = labelTex(512, 360, (c, w, h) => {
+    c.fillStyle = '#fffdf6'; c.fillRect(0, 0, w, h); c.strokeStyle = '#8a97a6'; c.lineWidth = 6;
+    for (let i = 0; i < 7; i++) { c.beginPath(); c.moveTo(50, 50 + i * 28); c.lineTo(w - 50 - (i % 3) * 40, 50 + i * 28); c.stroke(); }
+    c.strokeStyle = '#1a3a9a'; c.lineWidth = 9; c.beginPath(); c.moveTo(80, 300); for (let i = 0; i < 9; i++) c.quadraticCurveTo(110 + i * 38, 240 + (i % 2) * 70, 130 + i * 38, 300); c.stroke();
+  });
+  const sheet = add(T, new THREE.PlaneGeometry(0.85, 0.6), new THREE.MeshBasicMaterial({ map: paper }), [-0.35, 0.665, 0.55], [-Math.PI / 2, 0, 0.1]);
+  add(T, new THREE.BoxGeometry(0.82, 0.02, 0.58), mat('#fff'), [-0.3, 0.655, 0.52], [0, 0.25, 0]);
+  const pen = add(T, new THREE.CylinderGeometry(0.014, 0.014, 0.32, 10), mat('#d02030'), [-0.18, 0.78, 0.5], [0.5, 0, 0.4]);
+
+  const s = addSurfer(stage, P, { x: -0.95, z: 0.55, ry: 0.5, scale: 1.45 });
+  s.userData.pose({ lean: 0.18, headTilt: 0.12, arms: { l: [0.1, 0.25, 0.1], r: [0, 0.1, 0] } });
+  const b = s.userData.parts.board; b.position.set(-0.62, 0.65, -0.12); b.rotation.set(0, 0, 0.12);
+  s.updateMatrixWorld(true);
+  const w = s.worldToLocal(new THREE.Vector3(-0.2, 0.74, 0.5)); s.userData.reach('r', [w.x, w.y, w.z]);
+  finish(stage, P, s, [0.2, 2.0, 5.6], [0.25, 1.35, 0]);
+});
+</script></body></html>

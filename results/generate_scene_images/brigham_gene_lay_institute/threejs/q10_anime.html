@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Gene Lay q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The HEN nests on a long wooden PLANK in Longwood.
+import { THREE, guard, mat, add, blob, box, cyl, makeScene, nest, coin, egg, die, sign, tree, person, rng } from './common.js';
+import * as X from './props2.js';
+const { placeHen, placePerson, placeNest, aimAt } = X;
+guard(() => {
+
+  const S = makeScene({ ground: '#6fae45' }); const { scene, mark } = S;
+  const tx = X.plankTex(); 
+  const pl = new THREE.Mesh(new THREE.BoxGeometry(5.6, 0.2, 0.95), [mat('#b07a3c'), mat('#b07a3c'), new THREE.MeshStandardMaterial({ map: tx }), mat('#8a5a2b'), mat('#b07a3c'), mat('#b07a3c')]);
+  pl.position.set(0, 0.6, 0.2); pl.castShadow = pl.receiveShadow = true; scene.add(pl);
+  for (const x of [-2.2, 2.2]) { for (const s of [-1, 1]) cyl(scene, mat('#7a4a25'), [x, 0.28, 0.2 + s * 0.2], 0.07, 0.62, [s * 0.25, 0, 0]); }
+  placeNest(S, 0, 0.2, 1.5, 0.7);
+  const hen = placeHen(S, { x: 0, y: 0.83, z: 0.2, ry: 0.2, scale: 1.5, sit: true });
+  [[-4, -4], [-2.5, -6], [2.8, -5], [4.5, -3.5], [0.5, -8]].forEach(([x, z], i) => { const t = tree(3.2 + (i % 2), '#3f9a45'); t.position.set(x, 0, z); scene.add(t); });
+  S.finish([0, 1.5, 5.0], [0, 1.25, 0]);
+});
+</script></body></html>

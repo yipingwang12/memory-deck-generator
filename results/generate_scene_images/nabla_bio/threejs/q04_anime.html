@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const tb = box(S.scene, mat('#8a5a33'), [0, 0.35, 0], [3.4, 0.7, 1.6]); tb.position.z = -0.2;
+  const bk = C.book(); bk.position.set(0, 0.75, 0.2); bk.scale.setScalar(2.0); bk.rotation.x = -0.65; S.scene.add(bk);
+  const L = new THREE.Group(); L.position.set(0, 2.9, 0.1); L.scale.setScalar(1.9); S.scene.add(L);
+  ['P', 'L', 'M'].forEach((ch, i) => { const b = C.beadLetter(ch, 0.075); b.position.set((i - 1) * 1.05, i === 1 ? 0.25 : 0, 0); b.rotation.z = (i - 1) * -0.1; L.add(b); });
+  const sg = C.surge(); sg.position.set(3.6, 0, -0.3); sg.scale.setScalar(1.35); S.scene.add(sg);
+  const pen = new THREE.Group(); S.scene.add(pen); cyl(pen, mat('#f2f2f2'), [0, 0, 0], 0.05, 1.4, [0, 0, 0]); add(pen, new THREE.ConeGeometry(0.05, 0.25, 12), mat('#1a1a2a'), [0, -0.8, 0], [Math.PI, 0, 0]);
+  add(pen, new THREE.ConeGeometry(0.22, 0.9, 6), mat('#e2e8f0'), [0.0, 0.85, 0], [0, 0, 0], [0.3, 1, 1]); pen.position.set(0.5, 1.9, 1.0); pen.rotation.z = 0.5;
+  const t = C.triangle(S, { scale: 2.4, pos: [-2.8, 0, 0.5], ry: 0.3, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [-1.0, 2.2, 0.5]);
+  C.done(S, [t], [0.3, 2.3, 8.6], [0.2, 2.2, 0]);
+});
+</script></body></html>

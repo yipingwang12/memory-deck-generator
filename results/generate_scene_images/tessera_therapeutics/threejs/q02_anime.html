@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tessera q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, label, makePerson, crown, eggBowl, eggTop, page, run, rng, quill, worldHand, reachWorld } from './common.js';
+// q02 — a GIRAFFE with a MALT shake plants a flag by the TESSERACT, who wears its first crown.
+function giraffe() {
+  const g = new THREE.Group(), coat = mat('#f2b63a'), spot = mat('#a8581f'), dk = mat('#5a2f14');
+  blob(g, coat, [0, 1.5, 0], [0.75, 0.4, 0.34]);
+  for (const [x, z] of [[0.5, 0.17], [0.5, -0.17], [-0.5, 0.17], [-0.5, -0.17]]) { cyl(g, coat, [x, 0.7, z], 0.07, 1.4); blob(g, dk, [x, 0.05, z], [0.09, 0.06, 0.1]); }
+  const neck = add(g, new THREE.CylinderGeometry(0.11, 0.2, 1.7, 16), coat, [0.85, 2.3, 0], [0, 0, -0.5]);
+  const head = new THREE.Group(); head.position.set(1.4, 3.05, 0); head.rotation.z = -1.0; g.add(head);
+  blob(head, coat, [0, 0, 0], [0.26, 0.16, 0.14]); blob(head, mat('#f5dcae'), [0.22, -0.03, 0], [0.14, 0.11, 0.11]); blob(head, dk, [0.34, -0.02, 0], [0.03, 0.04, 0.06]);
+  for (const s of [-1, 1]) {
+    blob(head, mat('#fff'), [0.08, 0.07, s * 0.115], [0.055, 0.065, 0.02]); blob(head, mat('#140c10'), [0.09, 0.07, s * 0.13], [0.036, 0.05, 0.016]); blob(head, mat('#fff'), [0.1, 0.09, s * 0.142], [0.012, 0.012, 0.01]);
+    cyl(head, coat, [-0.1, 0.2, s * 0.07], 0.025, 0.2); blob(head, dk, [-0.1, 0.31, s * 0.07], [0.04, 0.04, 0.04]);
+    blob(head, coat, [-0.2, 0.1, s * 0.12], [0.12, 0.05, 0.04], [0, 0, 0.5]);
+  }
+  for (const [x, y, z, r] of [[0.1, 1.6, 0.3, 0.12], [-0.2, 1.55, 0.3, 0.1], [0.4, 1.55, 0.3, 0.1], [-0.4, 1.4, 0.3, 0.09], [0.6, 2.2, 0.15, 0.09], [0.75, 2.6, 0.12, 0.08], [0.3, 1.75, 0.28, 0.07], [-0.6, 1.7, 0.2, 0.1]]) blob(g, spot, [x, y, z], [r * 1.2, r, 0.03]);
+  add(g, new THREE.CylinderGeometry(0.015, 0.025, 0.7, 8), dk, [-0.9, 1.3, 0], [0, 0, 0.3]);
+  return g;
+}
+function malt() {
+  const g = new THREE.Group();
+  const pts = [[0, 0], [0.18, 0], [0.26, 0.5], [0.3, 0.75], [0, 0.75]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(g, new THREE.LatheGeometry(pts, 32), new THREE.MeshStandardMaterial({ color: '#c88a4a', roughness: 0.5, side: THREE.DoubleSide }));
+  blob(g, mat('#fff4e6'), [0, 0.85, 0], [0.32, 0.22, 0.32]); blob(g, mat('#fff4e6'), [0, 1.0, 0], [0.2, 0.15, 0.2]);
+  blob(g, mat('#e0304a'), [0, 1.18, 0], [0.06, 0.06, 0.06]);
+  add(g, new THREE.CylinderGeometry(0.025, 0.025, 0.7, 8), mat('#e0304a'), [0.1, 1.1, 0], [0, 0, -0.25]);
+  const l = label('MALT', 0.5, 0.2, { fg: '#ffffff', bg: '#7a3a1a' }); l.position.set(0, 0.35, 0.265); l.scale.setScalar(0.9); g.add(l);
+  return g;
+}
+run({
+  cam: { p: [0.3, 1.7, 5.2], t: [0.3, 1.25, 0] },
+  build({ scene, mark, tess }) {
+    const t = tess({ scale: 1.8 }); t.position.set(-0.5, 0, 0.5); t.rotation.y = 0.35; mark(t);
+    const c = crown(0.2); c.position.set(0, 1.0, 0); t.add(c);
+    t.userData.pose({ arms: { l: [0, 0.4, 0], r: [0, 0.3, 0] } }); t.userData.reach('r', [0.55, 1.05, 0.3]);
+    // flag
+    const f = new THREE.Group(); f.position.set(-2.1, 0, 0.0); scene.add(f);
+    cyl(f, '#cfcfd6', [0, 1.1, 0], 0.03, 2.2); box(f, '#e0304a', [0.38, 1.9, 0], [0.7, 0.45, 0.02]); blob(f, mat('#ffd24a'), [0.38, 1.9, 0.02], [0.12, 0.12, 0.01]);
+    const g = giraffe(); g.scale.setScalar(0.78); g.position.set(3.0, 0, -0.6); g.rotation.y = Math.PI + 0.15; scene.add(g); mark(g);
+    const m = malt(); m.scale.setScalar(1.35); m.position.set(1.3, 0, 0.3); scene.add(m);
+  },
+});
+
+</script></body></html>

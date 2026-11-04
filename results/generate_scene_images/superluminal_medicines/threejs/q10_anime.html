@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Superluminal q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A BVF beaver leads the SUPERHERO Series B parade.
+import * as THREE from 'three';
+import { boot } from './common.js';
+import * as P from './props.js';
+const { add, blob, box, cyl, mat, coin, limbBetween } = P;
+const place = (o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.setScalar(s); return o; };
+const coinAt = (ctx, x, y, z, r = 0.2, ry = 0, rx = 0) => { const c = coin(r); c.position.set(x, y, z); c.rotation.set(rx, ry, 0); ctx.scene.add(c); return c; };
+
+boot((ctx) => {
+  const b = P.beaver({ hands: { l: [0.35, 0.5, 0.35], r: [-0.55, 1.15, 0.1] } }); ctx.char(b); place(b, -1.9, 0, 0.5, 0.45, 1.75);
+  const dr = new THREE.Group(); b.add(dr); dr.position.set(0, 0.5, 0.42);
+  cyl(dr, mat('#e0262d'), [0, 0, 0], 0.3, 0.3, [Math.PI / 2, 0, 0]); const t = P.textPlane('BVF', 0.5, 0.3, { fg: '#fff', bg: '#1d3a8a' }); t.position.z = 0.16; dr.add(t);
+  // flag B
+  cyl(ctx.scene, mat('#8a6a3a'), [-3.0, 1.7, 0.5], 0.04, 3.4);
+  const fl = P.textPlane('B', 1.4, 1.0, { fg: '#c0392b', bg: '#f5b81c', border: '#c0392b' }); fl.position.set(-2.3, 2.95, 0.5); ctx.scene.add(fl);
+  const h = ctx.hero({ x: 1.5, ry: -0.3, scale: 1.95, pose: { legs: { l: [0.5, 0], r: [-0.5, 0] }, arms: { l: [0.5, 0.4, 0], r: [-0.5, -0.4, 0] } } });
+  [['#e0262d', 0.5, 3.2, -1], ['#f5b81c', 1.9, 3.5, -0.5], ['#2a6fd6', 3.2, 3.1, 0], ['#7ccf4a', 4.0, 3.5, -1]].forEach(([c, x, y, z]) => { const bl = P.balloon(c); ctx.scene.add(bl); bl.position.set(x - 0.5, y, z); bl.scale.setScalar(1.6); });
+  const r = (s) => { let a = s; return () => (a = (a * 9301 + 49297) % 233280) / 233280; }, rr = r(3);
+  for (let i = 0; i < 50; i++) box(ctx.scene, mat(['#e0262d', '#f5b81c', '#2a6fd6', '#7ccf4a', '#ff5fa2'][i % 5]), [(rr() - 0.5) * 9, 0.5 + rr() * 3.5, rr() * 2 - 1], [0.1, 0.18, 0.01], [rr() * 3, rr() * 3, rr() * 3]);
+  ctx.cam([0.2, 1.8, 7.0], [0.1, 1.55, 0]);
+}, { ground: '#d6b98a' });
+</script></body></html>

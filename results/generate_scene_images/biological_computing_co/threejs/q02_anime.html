@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BioComputing q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, box, cyl, textTex, setup, finish, flag, brain, penguin, heart, createCalculator } from './common.js';
+import { guard } from './kit.js';
+guard(() => {
+// q02 — CALCULATOR once lived inside a BLACK BOX (biological: green culture glow).
+const { stage, scene, num, cam } = setup(new URLSearchParams(location.search), { ground: '#d9c4a0' });
+const calc = createCalculator({ scale: 1.9 }); calc.position.set(0, 0.05, -0.02); scene.add(calc);
+calc.userData.pose({ arms: { l: [0, 0.2, 0], r: [0, 0.2, 0] } });
+const blk = mat('#16161c', { roughness: 0.25, metalness: 0.2 });
+const B = new THREE.Group(); scene.add(B); B.position.set(0, 0, 0.1);
+box(B, blk, [0, 0.25, 0.85], [2.2, 0.5, 0.12]);         // front wall
+box(B, blk, [-1.05, 0.45, 0], [0.12, 0.9, 1.9]); box(B, blk, [1.05, 0.45, 0], [0.12, 0.9, 1.9]);
+box(B, blk, [0, 0.45, -0.9], [2.2, 0.9, 0.12]); box(B, blk, [0, 0.03, 0], [2.2, 0.06, 1.9]);
+box(B, mat('#58f08a', { emissive: '#2ee070', emissiveIntensity: 1 }), [0, 0.4, 0.915], [2.0, 0.05, 0.02]);
+const lid = box(B, blk, [0, 0.95, -1.2], [2.2, 0.1, 1.5], [0.5, 0, 0]); lid.position.set(0, 1.2, -1.15); lid.rotation.x = 1.25;
+const glow = mat('#58f08a', { emissive: '#2ee070', emissiveIntensity: 1.2 });
+add(B, new THREE.CylinderGeometry(0.9, 0.9, 0.04, 40), glow, [0, 0.07, 0]);
+for (let i = 0; i < 10; i++) { const a = i * 1.7; blob(B, glow, [Math.cos(a) * 0.7 * ((i % 3) / 3 + 0.3), 0.14, Math.sin(a) * 0.6 * ((i % 4) / 4 + 0.2)], [0.07, 0.07, 0.07]); }
+cam(0, 2.3, 4.2, 0, 0.9); finish(stage, [calc]);
+});
+</script></body></html>

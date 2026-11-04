@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const sc2 = new THREE.Group();
+  for (const [x, h, z] of [[1.5, 1.7, -0.2], [2.1, 1.3, -0.6], [-2.0, 1.5, -0.5]]) { const k = kelp(h); k.position.set(x, 0, z); k.scale.setScalar(1.5); sc.add(k); }
+  const scarf = add(d, new THREE.TorusGeometry(0.25, 0.06, 12, 30), mat('#2f8f45'), [0, 0.6, 0.12], [Math.PI / 2 + 0.1, 0, 0]);
+  [[-0.1, 0.4, 0.4], [0.14, 0.45, 0.4]].forEach(([x, y, z], i) => blob(d, mat(i ? '#3da04e' : '#27683a'), [x, y, z], [0.05, 0.14, 0.03], [0, 0, 0.15 * (i ? 1 : -1)]));
+  const th = add(d, new THREE.CylinderGeometry(0.012, 0.012, 0.28, 10), mat('#e8f4ff', { roughness: 0.2 }), [0.12, 0.7, 0.45], [0.2, 0, -1.25]);
+  blob(d, mat('#e02a3a'), [0.02, 0.69, 0.43], [0.028, 0.028, 0.028]);
+  for (const [x, y] of [[0.3, 1.05], [0.37, 0.95]]) blob(d, mat('#8fd8ff', { roughness: 0.2 }), [x, y, 0.2], [0.03, 0.045, 0.03]);
+}, { dino: { crown: true, body: '#6dc47a' }, dpos: [-0.3, 0, 0.3], scl: 1.7, cam: [0.2, 1.2, 4.0], look: [0.2, 0.95, 0],
+  pose: (d) => d.userData.pose({ headTilt: 0.18, lean: 0.05, arms: { l: [0.2, 0.5, 0], r: [0, 0.5, 0] } }) });
+
+</script></body></html>

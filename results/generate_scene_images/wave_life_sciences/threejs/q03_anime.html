@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q03 — The SURFER looks through a PRISM to find drugs (rainbow lands on pills).
+  beach(scene, { seaZ: 5 });
+  const s = addSurfer(stage, P, { x: -0.8, z: 0.1, ry: 0.35, scale: 1.85 });
+  s.userData.pose({ lean: 0.05, headTilt: 0.15, arms: { r: [0, 0.2, 0.1] } });
+  const px = -0.3, py = 1.05, pz = 0.6;
+  const tri = new THREE.Shape(); tri.moveTo(-0.38, -0.33); tri.lineTo(0.38, -0.33); tri.lineTo(0, 0.33);
+  const prism = add(scene, new THREE.ExtrudeGeometry(tri, { depth: 0.5, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.02 }),
+    mat('#bfe8ff', { transparent: true, opacity: 0.6, roughness: 0.05, emissive: '#8ccfff', emissiveIntensity: 0.25 }), [px, py, pz - 0.25]);
+  s.updateMatrixWorld(true);
+  const hp = s.worldToLocal(new THREE.Vector3(px - 0.3, py - 0.35, pz)); s.userData.reach('r', [hp.x, hp.y, hp.z]);
+  // incoming white beam
+  const beam = (len, col, ang, w = 0.05, from = [px, py, pz]) => {
+    const g = new THREE.Group(); g.position.set(...from); g.rotation.z = ang; scene.add(g);
+    add(g, new THREE.BoxGeometry(len, w, w), new THREE.MeshBasicMaterial({ color: col }), [len / 2, 0, 0]); return g;
+  };
+  const inc = beam(1.8, '#fffbe0', Math.PI / 2 - 0.25, 0.08, [px, py + 0.3, pz]); 
+  const cols = ['#ff2a2a', '#ff9a1a', '#ffe81a', '#2fd23c', '#1aa0ff', '#7a3cff'];
+  cols.forEach((c, i) => beam(2.6, c, -0.55 - i * 0.075, 0.07, [px + 0.25, py - 0.05, pz]));
+  // pills where the rainbow lands
+  const pc = [['#e8283a', '#ffffff'], ['#1f7be8', '#ffe14a'], ['#2fc43c', '#ffffff'], ['#ff8a2a', '#ffffff']];
+  pc.forEach(([a, b2], i) => { const p = pill(a, b2, 0.11, 0.3); p.position.set(0.7 + i * 0.62, 0.11, 0.9 + (i % 2) * 0.35); p.rotation.y = 0.5 + i * 0.7; scene.add(p); });
+  finish(stage, P, s, [0.4, 1.7, 5.0], [0.4, 1.0, 0]);
+});
+</script></body></html>

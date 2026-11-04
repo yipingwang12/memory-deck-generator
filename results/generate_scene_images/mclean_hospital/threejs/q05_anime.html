@@ -1,0 +1,41 @@
+<!doctype html><html><head><title>McLean q05</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body>
+<script type="module">
+import { THREE, mat, add, blob, num, rng, makeStage, finishScene, guard, HEAD } from './stage_common.js';
+import { createBroom } from './broom.js';
+import * as P from './props.js';
+guard(() => {
+  const stage = makeStage(), scene = stage.scene;
+  const ground = (c, y = 0) => add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, y, 0], [-Math.PI / 2, 0, 0]);
+
+  ground('#cdb58a');
+  add(scene, new THREE.BoxGeometry(40, 4.6, 0.2), mat('#e2c9a0'), [0, 2, -4.2]);
+  add(scene, new THREE.BoxGeometry(14, 0.1, 6), mat('#bfa26e'), [0, 0.05, -1.2]);
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.2), new THREE.MeshBasicMaterial({ map: (await_tex()) })); 
+  function await_tex() { const c = document.createElement('canvas'); c.width = 512; c.height = 240; const x = c.getContext('2d'); x.fillStyle = '#2b3a55'; x.fillRect(0,0,512,240); x.strokeStyle='#f2c230'; x.lineWidth=12; x.strokeRect(10,10,492,220); x.fillStyle='#f6e3b4'; x.font='bold 170px sans-serif'; x.textAlign='center'; x.textBaseline='middle'; x.fillText('TAN',256,128); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; }
+  sign.position.set(0, 3.5, -4.05); scene.add(sign);
+  const bench = (x) => { add(scene, new THREE.BoxGeometry(2.2, 0.9, 0.9), mat('#8a6a48'), [x, 0.5, -3.5]); add(scene, new THREE.BoxGeometry(2.4, 0.08, 1.0), mat('#f2f2ee'), [x, 0.98, -3.5]); };
+  bench(-4.2); bench(4.2);
+  for (const [x,c] of [[-4.6,'#e85a8a'],[-4.2,'#5fd0ff'],[-3.8,'#8aff8a']]) { add(scene, new THREE.CylinderGeometry(0.12,0.16,0.35,16), new THREE.MeshStandardMaterial({color:'#e8f6ff',transparent:true,opacity:0.5}), [x,1.2,-3.5]); add(scene, new THREE.CylinderGeometry(0.1,0.14,0.18,16), mat(c), [x,1.1,-3.5]); }
+  const scr = new THREE.Group(); scr.position.set(4.2, 2.0, -3.4); scene.add(scr);
+  add(scr, new THREE.BoxGeometry(1.9, 1.3, 0.1), mat('#22252c')); const brain = P.buildBrain(0.4, '#ff8a7a'); brain.position.z = 0.15; scr.add(brain);
+  add(scr, new THREE.PlaneGeometry(1.7, 1.1), new THREE.MeshBasicMaterial({ color: '#1b3a5e' }), [0, 0, 0.06]);
+  // galley
+  const ship = new THREE.Group(); ship.position.set(0.9, 0.1, -1.0); ship.rotation.y = 0.0; scene.add(ship);
+  add(scene, new THREE.CylinderGeometry(1, 1, 1, 40), new THREE.MeshStandardMaterial({ color: '#4aa8d8', roughness: 0.2 }), [0.9, 0.02, -1.0], [0, 0, 0], [4.6, 0.05, 1.9]);
+  const hullM = mat('#8a4a28'), deck = mat('#c28a52');
+  add(ship, new THREE.BoxGeometry(5.0, 0.5, 1.2), hullM, [0, 0.45, 0]);
+  for (const s of [-1, 1]) add(ship, new THREE.CylinderGeometry(1, 1, 1, 3), hullM, [s * 2.75, 0.5, 0], [0, 0, Math.PI / 2], [0.35, 0.3, 0.35]).rotation.set(0, 0, s * Math.PI / 2 * 1);
+  add(ship, new THREE.BoxGeometry(4.8, 0.06, 1.0), deck, [0, 0.72, 0]);
+  add(ship, new THREE.BoxGeometry(5.0, 0.06, 0.08), mat('#f2c230'), [0, 0.7, 0.62]);
+  for (let i = 0; i < 7; i++) { const x = -2.1 + i * 0.7; P.seg(ship, [x, 0.7, 0.62], [x - 0.15, -0.05, 1.45], 0.04, mat('#d2a86a')); add(ship, new THREE.BoxGeometry(0.1, 0.02, 0.5), mat('#d2a86a'), [x - 0.2, -0.04, 1.6], [0, 0, 0.1]); add(ship, new THREE.CylinderGeometry(0.06,0.06,0.08,12), mat('#f2c230'), [x, 0.73, 0.62]); }
+  P.seg(ship, [-0.6, 0.7, 0], [-0.6, 2.8, 0], 0.07, mat('#6a4425')); P.seg(ship, [-1.8, 2.5, 0], [0.6, 2.5, 0], 0.05, mat('#6a4425'));
+  const sail = add(ship, new THREE.PlaneGeometry(2.3, 1.7), new THREE.MeshStandardMaterial({ color: '#fff2d0', side: THREE.DoubleSide }), [-0.6, 1.65, 0.05]);
+  const pz = P.buildPizza(0.78); pz.position.set(-0.6, 1.68, 0.12); scene.add(ship.add(pz));
+  const pz2 = P.buildPizza(0.5); pz2.position.set(1.7, 1.15, 0.2); pz2.rotation.x = -0.9; ship.add(pz2);
+  const b = createBroom({ scale: 1.8 }); b.position.set(-2.4, 0, 1.2); b.rotation.y = 0.5; scene.add(b); b.userData.pose({ headTilt: 0.08 }); b.updateMatrixWorld(true);
+  const t = b.worldToLocal(new THREE.Vector3(-1.5, 2.4, 0.9)); b.userData.reach('l', [t.x, t.y, t.z]); b.userData.reach('r', [-0.05, 0.9, 0.05]);
+  const coat = add(scene, new THREE.CylinderGeometry(0.2, 0.23, 0.3, 24, 1, true), mat('#f6f6f2'), [0,0,0]); coat.visible = false;
+  finishScene(stage, scene, [b], [0.0, 2.0, 7.6], [0.0, 1.7, 0]);
+
+});
+</script></body></html>

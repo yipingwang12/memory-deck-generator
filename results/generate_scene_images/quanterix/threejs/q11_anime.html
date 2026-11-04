@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q11 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q11 — A FOX builder crew, PD-BUILD, hires the QUARTER as co-investigator.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#c8b48a', sky: { cover: 0.8 } }), { scene } = ctx;
+cyl(scene, mat('#8a5a2e'), [-1.9, 1.5, -1.2], 0.06, 3.0); cyl(scene, mat('#8a5a2e'), [1.9, 1.5, -1.2], 0.06, 3.0);
+box(scene, mat('#ffcc1a'), [0, 3.1, -1.15], [4.2, 0.9, 0.08]);
+label(scene, 'PD-BUILD', [0, 3.1, -1.1], [3.9, 0.7], { bg: '#ffcc1a', fg: '#1a1a1a' });
+const fox = buildFox({ cunning: false }); fox.scale.setScalar(1.7); fox.position.set(-1.9, 0, 0.3); fox.rotation.y = 0.35; scene.add(fox);
+const hat = hardHat('#ff7a1a'); hat.position.set(0, 0.24, 0); hat.scale.setScalar(1.1); fox.userData.head.add(hat);
+const fox2 = buildFox({ cunning: false }); fox2.scale.setScalar(1.3); fox2.position.set(-3.5, 0, -0.4); fox2.rotation.y = 0.5; scene.add(fox2);
+const hat2 = hardHat('#ffcc1a'); hat2.position.set(0, 0.24, 0); hat2.scale.setScalar(1.1); fox2.userData.head.add(hat2);
+const q = createQuarter({ scale: 1.9 }); q.position.set(1.5, 0, 0.6); q.rotation.y = -0.3; scene.add(q);
+const qh = hardHat('#ffcc1a'); qh.position.set(0, q.userData.parts.cy + 0.34, 0); qh.scale.setScalar(1.4); q.add(qh);
+q.userData.pose({ arms: { l: [0, 0.6] } });
+// clipboard from fox
+const cb = new THREE.Group(); cb.position.set(-0.3, 1.2, 1.1); cb.rotation.set(-0.15, 0.3, 0.1); scene.add(cb);
+box(cb, mat('#8a5a2e'), [0, 0, 0], [0.7, 0.9, 0.04]); box(cb, mat('#ffffff'), [0, 0, 0.03], [0.58, 0.76, 0.01]);
+for (let i = 0; i < 4; i++) box(cb, mat('#2457d6'), [0, 0.22 - i * 0.14, 0.04], [0.4, 0.03, 0.005]);
+box(cb, mat('#c0c0c8', { metalness: 0.6 }), [0, 0.45, 0.05], [0.25, 0.08, 0.04]);
+reachTo(q, 'r', [0.25, 1.1, 1.1]);
+const cone = add(scene, new THREE.ConeGeometry(0.28, 0.7, 24), mat('#ff6a1a'), [3.5, 0.35, 0.3]); box(scene, mat('#fff'), [3.5, 0.33, 0.3], [0.3, 0.1, 0.3]).scale.set(1, 1, 1);
+finishScene(ctx, q, { cam: [-0.2, 1.8, 6.4], look: [-0.2, 1.6, 0] });
+
+});
+</script></body></html>

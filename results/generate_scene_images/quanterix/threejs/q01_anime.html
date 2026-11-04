@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — A SKI flips the first QUARTER.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#dfe9f7', sky: { cover: 0.9 } }), { scene } = ctx;
+// ski ramp
+const ski = new THREE.Group(); ski.position.set(-0.9, 0.35, 0.7); ski.rotation.z = 0.22; scene.add(ski);
+box(ski, mat('#d8341f', { roughness: 0.35 }), [0, 0, 0], [3.8, 0.07, 0.38]);
+box(ski, mat('#ffffff'), [0, 0.04, 0], [3.8, 0.01, 0.1]);
+box(ski, mat('#d8341f', { roughness: 0.35 }), [2.0, 0.1, 0], [0.5, 0.07, 0.38], [0, 0, 0.45]);
+box(ski, mat('#222'), [0.2, 0.1, 0], [0.5, 0.12, 0.3]);
+// poles
+for (const [x, z, r] of [[-2.6, -0.5, 0.12], [-2.2, -0.9, -0.08]]) { cyl(scene, mat('#2b2f3a'), [x, 0.9, z], 0.03, 1.8, [0, 0, r]); cyl(scene, mat('#d8341f'), [x, 0.12, z], 0.15, 0.04); }
+// "1" sign
+cyl(scene, mat('#8a5a2e'), [-2.9, 0.7, -1.4], 0.05, 1.4);
+cyl(scene, mat('#ffd24a', { metalness: 0.3 }), [-2.9, 1.7, -1.35], 0.5, 0.08, [Math.PI / 2, 0, 0]);
+label(scene, '1', [-2.9, 1.7, -1.29], [0.7, 0.7], { bg: '#ffd24a', fg: '#7a3b00' });
+// arc of dots
+for (let i = 0; i < 7; i++) { const t = i / 6; blob(scene, mat('#ffffff', { emissive: '#bcd8ff', emissiveIntensity: 0.6 }), [1.0 + t * 0.15, 0.95 + t * 0.5, 0.3], [0.06, 0.06, 0.06]); }
+const q = createQuarter({ scale: 2.0 }); q.position.set(1.2, 1.15, 0.2); q.rotation.set(-0.2, -0.3, -0.3); scene.add(q);
+q.userData.pose({ arms: { l: [0, 2.3], r: [0, -2.3] }, legs: { l: [0.7, 0.3], r: [-0.2, -0.3] } });
+for (let i = 0; i < 40; i++) { const R = rng(2)(); }
+const snow = rng(5); for (let i = 0; i < 30; i++) blob(scene, mat('#fff'), [(snow() - 0.5) * 8, 0.03, -3 + snow() * 3], [0.2, 0.08, 0.2]);
+finishScene(ctx, q, { cam: [0, 1.9, 6.0], look: [0, 1.75, 0], clouds: true });
+
+});
+</script></body></html>

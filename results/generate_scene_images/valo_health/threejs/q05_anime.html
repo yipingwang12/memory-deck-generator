@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Valo q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — "A NOVO egg (Novo Nordisk) partners with the VIOLA on heart and metabolism."
+import { THREE, guard, mat, add, box, cyl, blob, makeStage, finishScene, placeViola, buildEgg, pointArm, heart } from './common.js';
+export function flame(size = 0.5) {
+  const g = new THREE.Group();
+  [['#ff4a1c', 1, 0], ['#ff9a1c', 0.72, 0.08], ['#ffe040', 0.42, 0.16]].forEach(([c, k, z]) => {
+    const s = new THREE.Shape(); s.moveTo(0, -0.5); s.bezierCurveTo(-0.55, -0.45, -0.6, 0.1, -0.1, 0.45); s.bezierCurveTo(-0.1, 0.2, 0.1, 0.1, 0.2, -0.05); s.bezierCurveTo(0.45, 0.2, 0.55, -0.3, 0, -0.5);
+    const m = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: 0.12, bevelEnabled: true, bevelSize: 0.03, bevelThickness: 0.03, bevelSegments: 3 }), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.5, roughness: 0.4 }));
+    m.scale.setScalar(size * k * 1.5); m.position.set(0, -0.22 * size * (1 - k), z); m.castShadow = true; g.add(m);
+  });
+  return g;
+}
+guard(() => {
+  const S = makeStage({ ground: '#8fcf6a', el: 38, az: 150 }), { scene } = S;
+  const vs = S.num('vs', 1.8);
+  const viola = placeViola(scene, { x: -0.75, scale: vs, ry: 0.25 });
+  const egg = buildEgg(); egg.scale.setScalar(S.num('es', 1.75)); egg.position.set(0.8, 0, 0.1); egg.rotation.y = -0.25; scene.add(egg);
+  const hand = [0.0, 0.98, 0.5];
+  viola.updateMatrixWorld(true);
+  const t = viola.worldToLocal(new THREE.Vector3(...hand)); viola.userData.reach('l', [t.x, t.y, t.z]);
+  pointArm(egg, 'r', hand);
+  const h = heart('#e8284a', 0.75); h.position.set(-1.0, 2.65, 0.2); h.rotation.y = 0.3; scene.add(h);
+  const f = flame(0.6); f.position.set(1.1, 2.62, 0.2); scene.add(f);
+  for (const [x, c] of [[-1.0, '#ffd0d8'], [1.1, '#ffe9b0']]) add(scene, new THREE.CircleGeometry(0.6, 32), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.55 }), [x, 2.65, -0.3]);
+  finishScene(S, [viola, egg], [0.0, 1.6, 4.9], [0.0, 1.5, 0]);
+});
+</script></body></html>

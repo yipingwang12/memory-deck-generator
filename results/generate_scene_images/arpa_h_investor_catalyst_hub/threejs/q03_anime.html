@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>ARPA-H q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — A NACHO arrives with a letter that cuts the HARP's strings: termination.
+import { THREE, guard, rng, mat, add, blob, cyl, box, animeEyes, smile, textPlate, setup } from './common.js';
+import { limbTo } from './props.js';
+guard(() => {
+  const S = setup({ harpPos: [2.0, 0, 0.3], harpRy: -0.3, harpScale: 2.2, ground: '#9a8f86', sky: { cover: 2.2 }, el: 25 });
+  const { scene, harp, mark } = S;
+  // office-park backdrop
+  [[-6, 4.5], [-2.5, 3.2], [6, 5]].forEach(([x, h]) => { box(scene, mat('#7e8aa5'), 2.8, h, 1.5, [x, h / 2, -8]); for (let r = 0; r < 4; r++) for (let c = -1; c <= 1; c++) box(scene, mat('#c8d6ee'), 0.5, 0.5, 0.05, [x + c * 0.8, 1 + r * 1, -7.22]); });
+  // NACHO: chip triangle with face, cheese, arms, legs
+  const nacho = new THREE.Group(); nacho.position.set(-2.0, 0, 0.5); nacho.rotation.y = 0.25; scene.add(nacho);
+  const sh = new THREE.Shape(); sh.moveTo(0, 1.25); sh.lineTo(-1.05, -0.65); sh.lineTo(1.05, -0.65); sh.closePath();
+  const chip = add(nacho, new THREE.ExtrudeGeometry(sh, { depth: 0.2, bevelEnabled: true, bevelSize: 0.1, bevelThickness: 0.08, bevelSegments: 4 }), mat('#f2b84a'), [0, 1.35, -0.1]);
+  for (const [x, y, s] of [[-0.55, 0.55, 0.14], [0.5, 0.75, 0.12], [0.05, 1.7, 0.12], [-0.2, 2.1, 0.09]]) blob(nacho, mat('#e8651a'), [x, y + 1.3 - 0.8, 0.2], [s, s * 0.8, 0.04]);
+  blob(nacho, mat('#ffc928'), [0, 1.0, 0.2], [0.55, 0.12, 0.05]);
+  for (const x of [-0.5, 0.35]) blob(nacho, mat('#ffc928'), [x, 0.72, 0.21], [0.12, 0.26, 0.05]);
+  animeEyes(nacho, { y: 1.78, z: 0.22, gap: 0.3, r: 0.18, iris: '#b5542a' }); smile(nacho, 0, 1.38, 0.22, 0.14);
+  for (const s of [-1, 1]) { const b = add(nacho, new THREE.CircleGeometry(1, 24), mat('#ff6f8f'), [s * 0.62, 1.52, 0.22]); b.scale.set(0.13, 0.07, 1); }
+  for (const s of [-1, 1]) { cyl(nacho, mat('#f2b84a'), 0.1, 0.55, [s * 0.4, 0.28, 0]); blob(nacho, mat('#c8483c'), [s * 0.4, 0.04, 0.1], [0.2, 0.1, 0.28]); }
+  // letter held up toward the harp
+  const hand = [1.75, 2.0, 0.55];
+  limbTo(nacho, mat('#f2b84a'), [0.7, 1.45, 0.1], hand, 0.09); blob(nacho, mat('#f2b84a'), hand, [0.13, 0.13, 0.13]);
+  limbTo(nacho, mat('#f2b84a'), [-0.7, 1.4, 0.1], [-1.35, 0.8, 0.3], 0.09);
+  const letter = new THREE.Group(); letter.position.set(2.0, 2.75, 0.65); letter.rotation.set(-0.08, -0.4, 0.15); nacho.add(letter);
+  box(letter, mat('#ffffff'), 1.45, 1.1, 0.06, [0, 0, 0]);
+  const t = textPlate('TERMINATED', 1.4, 1.4, { bg: '#ffffff', fg: '#c8102e', font: 'bold 74px sans-serif' }); t.position.set(0, 0, 0.04); letter.add(t);
+  box(letter, mat('#c8102e'), 1.45, 0.08, 0.07, [0, 0.5, 0.0]);
+  blob(letter, mat('#c8102e'), [0.55, -0.35, 0.06], [0.14, 0.14, 0.03]);
+  mark(nacho);
+  // cut strings: stubs + curled falling pieces
+  const strs = harp.userData.parts.strings, r = rng(3);
+  [1, 3, 4, 6, 8, 9].forEach((i, k) => {
+    const s = strs[i], h = s.geometry.parameters.height, keep = 0.3 + (k % 3) * 0.1, bot = s.position.y - h / 2;
+    s.scale.y = keep; s.position.y = bot + h * keep / 2;
+    const p = s.clone(); p.scale.y = 0.35; p.position.set(s.position.x + (r() - 0.5) * 0.2, 0.7 + r() * 0.2, 0.25 + r() * 0.2); p.rotation.set(0, 0, (r() - 0.5) * 2.4); harp.add(p);
+  });
+  harp.userData.pose({ arms: { l: [0, 1.0, 0.3], r: [0, 1.0, 0.3] }, tilt: 0.06 });
+  harp.userData.reach('l', [0.28, 0.75, 0.2]); harp.userData.reach('r', [-0.28, 0.75, 0.2]);
+  S.done(0.0, 1.9, 7.2, 0.3, 1.7, 0);
+});
+</script></body></html>

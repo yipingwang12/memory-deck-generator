@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// In April, a flag over the PORTHOLE reads SPTX.
+import { THREE, guard, canvasTexture, rng, makeStage, createPorthole, makeShip, makePerson, makeZorro, makeCapsule, makeGlyph, textPlane, mat, add, blob, box, cyl, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({ dock: false }), s = stage.scene;
+  const ship = makeShip({ len: 4.2 }); ship.position.set(0.4, 0.28, 0); s.add(ship);
+  
+  const mast = cyl(ship, '#6b4423', [0.55, 1.9, 0], 0.05, 3.8); mast.position.x = 0.55;
+  const fl = textPlane('SPTX', 2.2, 1.0, { bg: '#16357a', fg: '#ffffff', font: 'bold 200px sans-serif', sy: 2.2 }); fl.position.set(1.7, 3.3, 0); ship.add(fl);
+  blob(ship, '#f2c230', [0.55, 3.85, 0], [0.09, 0.09, 0.09]);
+  const p = createPorthole({ scale: 2.2 }); p.position.set(0.5, 0.3, 0.6); p.userData.setMood('open'); p.userData.pose({ arms: { l: [0, 1.2, 0], r: [0, -1.2, 0] } }); s.add(p);
+  const r = rng(11); for (let i = 0; i < 70; i++) blob(s, i % 3 ? '#ffb7d0' : '#ffffff', [(r() - 0.5) * 9, 0.2 + r() * 4.8, 1 + r() * 2.5], [0.07, 0.03, 0.05], [r() * 3, r() * 3, r() * 3]);
+  toon(stage, p);
+  frame(stage, { cam: [0.9, 1.9, 6.6], look: [0.9, 1.8, 0] });});
+</script></body></html>

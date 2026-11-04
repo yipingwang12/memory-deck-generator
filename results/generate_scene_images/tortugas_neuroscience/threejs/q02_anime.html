@@ -4,7 +4,31 @@
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 </head><body>
 <script type="module">
-// q02 - The TURTLE lives in a picture FRAME of HAM.
 import { THREE, makeScene, createTurtle, createShell, mat, add, blob, box, cyl, link, egg, capsule, textMat, rng } from './common.js';
-
+// q02 - The TURTLE lives in a picture FRAME of HAM.
+makeScene(({ scene }) => {
+  const wall = mat('#f4e6c8'); add(scene, new THREE.PlaneGeometry(14, 8), wall, [0, 3, -1.6]);
+  const ham = mat('#f08a8a', { roughness: 0.45 }), fat = mat('#fff1e2', { roughness: 0.6 }), gold = mat('#e2b04a', { metalness: 0.5, roughness: 0.35 });
+  const W = 2.5, H = 1.9, B = 0.3, D = 0.22, cy = 1.15;
+  // frame bars made of ham slices with fat rim
+  const bar = (x, y, w, h) => { box(scene, ham, [x, y, 0], [w, h, D]); box(scene, fat, [x, y, D / 2 + 0.005], [w - 0.03, h - 0.03, 0.02]).scale.set(1, 1, 1); box(scene, ham, [x, y, D / 2 + 0.02], [w - 0.1, h - 0.1, 0.02]); };
+  bar(0, cy + H / 2 - B / 2, W, B); bar(0, cy - H / 2 + B / 2, W, B); bar(-W / 2 + B / 2, cy, B, H); bar(W / 2 - B / 2, cy, B, H);
+  // gold trim lines + marbling dots
+  const r = rng(3);
+  for (let i = 0; i < 26; i++) { const x = (r() - 0.5) * (W - 0.2), top = i % 2; blob(scene, fat, [x, cy + (top ? 1 : -1) * (H / 2 - B / 2), D / 2 + 0.035], [0.06, 0.035, 0.01]); }
+  box(scene, gold, [0, cy + H / 2 + 0.02, 0], [W + 0.08, 0.04, D + 0.06]); box(scene, gold, [0, cy - H / 2 - 0.02, 0], [W + 0.08, 0.04, D + 0.06]);
+  // cozy interior
+  box(scene, mat('#bfe3f5'), [0, cy, -0.4], [W - 2 * B, H - 2 * B, 0.05]);
+  box(scene, mat('#e87b5b'), [0, cy - 0.5, -0.1], [1.4, 0.04, 0.9]);        // rug
+  const sun = blob(scene, mat('#ffe27a', { emissive: '#ffd24a', emissiveIntensity: 0.4 }), [0.55, cy + 0.4, -0.35], [0.2, 0.2, 0.02]);
+  // floor
+  box(scene, mat('#9a6a3e'), [0, -0.05, 0.5], [9, 0.1, 5]);
+  // whole ham leg beside the frame
+  const hamLeg = new THREE.Group(); scene.add(hamLeg); hamLeg.position.set(1.75, 0.28, 0.9); hamLeg.rotation.z = 0.4;
+  blob(hamLeg, mat('#d9737a', { roughness: 0.4 }), [0, 0.2, 0], [0.42, 0.32, 0.34]); blob(hamLeg, fat, [0, 0.2, 0.28], [0.32, 0.24, 0.1]);
+  cyl(hamLeg, mat('#f3ead8'), [0.5, 0.3, 0], 0.05, 0.4, [0, 0, Math.PI / 2]); blob(hamLeg, mat('#f3ead8'), [0.72, 0.3, 0], [0.09, 0.09, 0.09]);
+  const t = createTurtle({ scale: 1.2 }); t.position.set(0, cy - 0.7, -0.05); t.rotation.y = 0.1; scene.add(t);
+  t.userData.pose({ headTilt: -0.08, arms: { l: [-0.2, 1.7, -0.3], r: [0, 0.5, 0] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  return [t];
+}, { ground: '#9a6a3e', cam: { pos: [0.5, 1.3, 3.5], look: [0.3, 1.05, 0] } });
 </script></body></html>

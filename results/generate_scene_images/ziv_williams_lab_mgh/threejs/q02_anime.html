@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q02_anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { THREE, guard, mat, add, blob, box, textTex, makeStage, buildOR, brain, scalpel, neuron, probe, setupSieve, finishScene } from "./props.js";
+guard(() => {
+  const P = new URLSearchParams(location.search); const { stage, num } = makeStage(P); const scene = stage.scene;
+  const lamp = buildOR(scene);
+  // brain on a stand with Neuropixels probes; neurons glow beside it
+  add(scene, new THREE.CylinderGeometry(0.1, 0.2, 0.8, 20), mat('#aeb7c0', { metalness: 0.6 }), [1.0, 0.4, -0.5]);
+  add(scene, new THREE.CylinderGeometry(0.5, 0.5, 0.06, 32), mat('#dfe6ec', { metalness: 0.4 }), [1.0, 0.83, -0.5]);
+  const b = brain(2.2); b.position.set(1.0, 1.22, -0.5); scene.add(b);
+  [[0.8, 0.12, 0.1], [1.05, -0.1, -0.05], [1.3, 0.14, 0.1]].forEach(([x, rz, rx], i) => {
+    const p = probe(0.75); p.position.set(x, 1.15 + (i === 1 ? 0.05 : 0), -0.4 + rx); p.rotation.z = -rz * 0.5; scene.add(p);
+  });
+  [[2.3, 1.6, -0.3, 1.3], [2.0, 0.6, 0.0, 1.0], [0.3, 2.0, -1.5, 1.1], [1.9, 2.4, -1.0, 1.0]].forEach(([x, y, z, s], i) => { const n = neuron(i % 2 ? '#ffd24a' : '#7fe3ff', s); n.position.set(x, y, z); scene.add(n); });
+  const sieve = setupSieve(scene, stage, { pos: [-0.5, 0, 0.5], ry: 0.4, scale: 1.4, pose: { headTilt: -0.05, arms: { r: [0, 0.4, 0.2] } }, reach: { l: [0.45, 1.1, 0.9] } });
+  sieve.updateMatrixWorld(true);
+  const hw = new THREE.Vector3(); sieve.userData.parts.hands.l.getWorldPosition(hw);
+  const hp = probe(0.7); hp.rotation.z = 1.2; hp.scale.setScalar(1.2); hp.position.set(hw.x + 0.93 * 0.95, hw.y - 0.36 * 0.95, hw.z); scene.add(hp);
+  stage.camera.position.set(num("cx", 0.4), num("cy", 1.1), num("cz", 4.4)); stage.camera.lookAt(num("tx", 0.4), num("ty", 1.05), 0);
+  finishScene(scene, stage, sieve, false);
+});
+</script></body></html>

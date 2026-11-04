@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Harp anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createHarp } from './harp.js';
+guard(() => {
+  const stage = createAnimeStage({
+    fov: 28, sunElevation: 38, sunAzimuth: 200,
+    sky: { zenith: '#f3c98a', horizon: '#ffe8c2', cover: 0.02, puffCover: 0.02, towerTop: 0.02, cloudLit: '#fff3dc', cloudShade: '#f3d3a0' },
+    ambient: { color: '#fff0e0', intensity: 2.2 },
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+  });
+  const THREE = stage.THREE;
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(300, 64), new THREE.MeshStandardMaterial({ color: '#f1d9b0', roughness: 1 }));
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; stage.scene.add(floor);
+  const set = new Set();
+  for (const [x, ry, reach] of [[-1.3, 0, 0], [0, 0.7, 0], [1.3, -0.6, 1]]) {
+    const h = createHarp(); h.position.x = x; h.rotation.y = ry;
+    if (reach) h.userData.reach('l', [0.55, 0.9, 0.3]);
+    stage.scene.add(h); h.traverse((m) => set.add(m));
+  }
+  stage.toonify(stage.scene, (m) => set.has(m));
+  stage.camera.position.set(0, 0.8, 5);
+  stage.camera.lookAt(0, 0.7, 0);
+  stage.finish();
+});
+</script></body></html>

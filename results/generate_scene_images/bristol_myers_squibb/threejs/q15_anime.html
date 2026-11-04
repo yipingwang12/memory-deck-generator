@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q15 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q15 — TWO-SEVENTY hatched from a BLUEBIRD before it swam to the SQUID.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#9acb6a', fov: 38 }), S = C.scene;
+put(S, tree({ h: 3.0 }), 2.3, 0, -1.2, 0, 1);
+const bd = put(S, bird({ s: 2.0 }), 1.45, 0, -0.1, -0.3, 1); toon(C, bd);
+const nest = add(S, new THREE.TorusGeometry(0.55, 0.14, 10, 28), mat('#8a5a2a'), [-0.15, 0.17, 0.7], [Math.PI / 2, 0, 0]); blob(S, mat('#6b4520'), [-0.15, 0.1, 0.7], [0.55, 0.1, 0.55]);
+const eg = grp(S, [-0.15, 0.4, 0.7]); add(eg, new THREE.SphereGeometry(0.3, 28, 16, 0, Math.PI * 2, Math.PI * 0.42, Math.PI * 0.58), mat('#fbf4e0', { side: THREE.DoubleSide }), [0, 0, 0]);
+for (let i = 0; i < 6; i++) add(eg, new THREE.ConeGeometry(0.06, 0.16, 4), mat('#fbf4e0'), [Math.cos(i * 1.05) * 0.28, 0.1, Math.sin(i * 1.05) * 0.28], [0, 0, 0]);
+const ch = put(S, bird({ s: 0.8 }), -0.15, 0.3, 0.7, 0.4, 1); toon(C, ch);
+const sg = label('270', { w: 0.8, h: 0.45, bg: '#fff6df', fg: '#2a4a9a', size: 0.8, border: '#2a4a9a' }); sg.position.set(-0.15, 1.35, 1.0); S.add(sg); cyl(S, mat('#6b4a2a'), 0.025, 0.025, 0.5, [-0.15, 1.05, 0.98]);
+const q = addSquid(C, { x: -1.75, z: 0.8, s: 1.4, ry: 0.5 }); reachW(q, 'l', [-0.6, 0.65, 1.1]);
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.0, 0] });
+
+});
+</script></body></html>

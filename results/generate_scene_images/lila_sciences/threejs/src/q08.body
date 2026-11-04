@@ -1,0 +1,12 @@
+const stage = setup('#9ac879', 44); const S = stage.scene;
+const lil = LIL(stage, -2.9, 0, 0.35, 2.0, { arms: { l: [0.2, 0.6, 0], r: [0, 0.5, 0] } });
+const rib = new THREE.Mesh(ribbonGeo(0.28, Math.PI * 2 - 0.28, 160, 1.7, 0.24), new THREE.MeshStandardMaterial({ color: '#e03a5a', roughness: 0.5, side: THREE.DoubleSide }));
+rib.position.set(0.0, 1.5, 0); rib.rotation.y = -0.15; rib.castShadow = true; S.add(rib);
+for (const s of [-1, 1]) { const end = V([0.0 + 1.55, 1.5 + s * 0.4, 0]); blob(S, mat('#e03a5a'), end.toArray(), [0.12, 0.12, 0.05]); }
+const k = new THREE.Group(); k.position.set(3.05, 1.5, 0.05); k.scale.setScalar(1.2); S.add(k);
+const yel = mat('#f6c421'), blk = mat('#1d1d20');
+box(k, yel, [0.15, 0, 0], [1.4, 0.36, 0.3]); box(k, blk, [0.55, 0, 0.001], [0.5, 0.38, 0.32]);
+box(k, new THREE.MeshStandardMaterial({ map: textTex('STANLEY', 512, 128, '#f6c421', '#1d1d20', 'bold 88px sans-serif') }), [-0.1, 0, 0.152], [0.9, 0.22, 0.004]);
+const blade = box(k, mat('#d8dee6', { metalness: 0.7, roughness: 0.2 }), [-0.85, 0.02, 0.0], [0.7, 0.28, 0.02]); box(k, blk, [-0.5, 0, 0], [0.04, 0.3, 0.2]);
+for (let i = 0; i < 5; i++) blob(S, glow('#fff6c0', 1.4), [1.7 + i * 0.06, 1.9 + (i % 2) * 0.1 - i * 0.08, 0.2], [0.03, 0.03, 0.03]);
+finishScene(stage, [lil], [0.55, 1.4, 7.0], [0.55, 1.2, 0]);

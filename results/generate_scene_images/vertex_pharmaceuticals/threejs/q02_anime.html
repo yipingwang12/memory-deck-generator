@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — A BOGIE golf ball and a KIN family plant flags in the VORTEX.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -0.1, vs: 1.35, vry: 0.2, ground: '#6fb84a' });
+const ball = C.golfBall(0.4); ball.position.set(-1.7, 0, 0.9); scene.add(ball);
+const tee = C.tee(0.42); tee.position.set(-1.9, -0.0, 0.9); 
+const fl = C.flag('#ffd23a', 1.2); fl.position.set(-1.1, 0, 0.5); scene.add(fl);
+[[-0.55, '#ff4a4a'], [0.1, '#4a8cff'], [0.7, '#ffd23a']].forEach(([x, c]) => { const f = C.flag(c, 0.7); f.position.set(x + (-0.1), 1.35, 0.1); scene.add(f); });
+[['#e8504a', 1.1, false, 1.5], ['#e86aa0', 1.0, true, 2.0], ['#4abe6a', 0.7, false, 2.4]].forEach(([c, h, sk, x], i) => { const p = C.person({ shirt: c, h: h * 1.35, skirt: sk }); p.position.set(x - 0.5, 0, 0.7 - i * 0.1); p.rotation.y = -0.5; scene.add(p); const f = C.flag(['#ff4a4a', '#4a8cff', '#ffd23a'][i], 0.9); f.position.set(x - 0.8, 0.5, 0.85 - i * 0.1); f.scale.setScalar(1.1); scene.add(f); });
+done({ cam: [0, 1.0, 4.6], look: [0, 0.9, 0] });
+});
+</script></body></html>

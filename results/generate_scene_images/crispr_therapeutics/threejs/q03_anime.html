@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 — The CARPENTER licenses the CRISPR patent to the CRISP.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, reach, finish }) => {
+  const cp = person({ shirt: '#c9482b', pants: '#6a4a2a', s: 1.15 }); cp.position.set(-1.9, 0, 0); cp.rotation.y = 0.55; scene.add(cp);
+  const P = cp.userData.parts; P.armL.rotation.set(-1.45, 0, 0.35); P.armR.rotation.set(-1.45, 0, -0.1);
+  box(cp, mat('#c88a3c'), [0, 0.85, 0.2], [0.34, 0.5, 0.06]);
+  blob(cp, mat('#ffd02a'), [0, 1.5, 0], [0.3, 0.2, 0.3]); cyl(cp, mat('#ffd02a'), [0, 1.46, 0.1], 0.3, 0.05, [0, 0, 0]);
+  const c = crisp({ s: 2.0, x: 1.9, z: 0.1, ry: -0.5 });
+  // certificate
+  const cert = new THREE.Group(); cert.position.set(-0.2, 1.55, 0.9); cert.rotation.y = 0.0; scene.add(cert);
+  box(cert, mat('#8a5a2a'), [0, 0, -0.02], [1.9, 1.34, 0.04]);
+  const pl = textPlane('PATENT', 1.8, 1.24, { bg: '#fbf3d9', fg: '#7a3a14' }); pl.position.z = 0.005; cert.add(pl);
+  blob(cert, mat('#e0283a'), [0.65, -0.45, 0.04], [0.2, 0.2, 0.05]); box(cert, mat('#e0283a'), [0.55, -0.7, 0.03], [0.1, 0.35, 0.02], [0, 0, 0.2]); box(cert, mat('#e0283a'), [0.78, -0.7, 0.03], [0.1, 0.35, 0.02], [0, 0, -0.2]);
+  cp.updateMatrixWorld(true);
+  const hl = V(-1.05, 1.5, 0.95); const lt = cp.worldToLocal(hl.clone()); 
+  const pr = person.prototype; // no-op
+  P.armL.lookAt; 
+  reach(c, 'r', [0.75, 1.5, 0.95]);
+  finish([0, 1.6, 6.0], [0, 1.1, 0]);
+});
+
+</script></body></html>

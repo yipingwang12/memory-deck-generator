@@ -4,7 +4,40 @@
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 </head><body>
 <script type="module">
-// q03 - JONAH whale wears the TURTLE CEO crown.
 import { THREE, makeScene, createTurtle, createShell, mat, add, blob, box, cyl, link, egg, capsule, textMat, rng } from './common.js';
-
+// q03 - JONAH's whale wears the TURTLE's CEO crown.
+makeScene(({ scene }) => {
+  const water = add(scene, new THREE.PlaneGeometry(400, 400), mat('#2e8fd0', { roughness: 0.25 }), [0, 0.0, 0], [-Math.PI / 2, 0, 0]);
+  const grey = mat('#4f7fb3', { roughness: 0.45 }), belly = mat('#e9f1f7'), pink = mat('#e86a7a');
+  const whale = new THREE.Group(); scene.add(whale); whale.position.set(-1.0, 0.0, -0.6); whale.rotation.y = -0.45;
+  blob(whale, grey, [0, 0.55, 0], [1.9, 0.85, 0.9]);               // body (faces +x)
+  blob(whale, belly, [0.1, 0.25, 0.0], [1.6, 0.5, 0.82]);
+  blob(whale, grey, [1.35, 0.7, 0], [0.8, 0.7, 0.8]);              // head
+  // open mouth with tiny Jonah
+  blob(whale, pink, [1.9, 0.5, 0], [0.32, 0.22, 0.5]);
+  blob(whale, mat('#ffffff'), [2.05, 0.66, 0.3], [0.08, 0.1, 0.07]); blob(whale, mat('#ffffff'), [2.05, 0.66, -0.3], [0.08, 0.1, 0.07]);
+  const jonah = new THREE.Group(); jonah.position.set(2.02, 0.5, 0); whale.add(jonah);
+  cyl(jonah, mat('#e8c9a0'), [0, 0.1, 0], 0.06, 0.2); blob(jonah, mat('#f3cfa6'), [0, 0.24, 0], [0.06, 0.06, 0.06]); blob(jonah, mat('#fff'), [0, 0.18, 0.04], [0.05, 0.05, 0.03]);
+  // eye with catchlight
+  for (const s of [-1, 1]) {
+    blob(whale, mat('#ffffff'), [1.55, 0.88, s * 0.62], [0.13, 0.13, 0.04]); blob(whale, mat('#1b1230'), [1.58, 0.88, s * 0.65], [0.095, 0.1, 0.03]); blob(whale, mat('#fff'), [1.6, 0.93, s * 0.67], [0.035, 0.035, 0.02]);
+    blob(whale, mat('#ff9aa8', { transparent: true, opacity: 0.6 }), [1.5, 0.62, s * 0.7], [0.1, 0.06, 0.03]);
+  }
+  // tail + fluke
+  blob(whale, grey, [-1.9, 0.9, 0], [0.9, 0.3, 0.3], [0, 0, 0.5]);
+  blob(whale, grey, [-2.55, 1.35, 0.25], [0.2, 0.05, 0.4], [0, 0.5, 0.3]); blob(whale, grey, [-2.55, 1.35, -0.25], [0.2, 0.05, 0.4], [0, -0.5, 0.3]);
+  // water spout
+  for (let i = 0; i < 6; i++) blob(whale, mat('#d6f0ff', { transparent: true, opacity: 0.85 }), [1.1 + (i % 2) * 0.05, 1.9 + i * 0.12, 0.02 * i], [0.07, 0.1, 0.07]);
+  // CEO crown on the whale head
+  const gold = mat('#ffcc2a', { metalness: 0.6, roughness: 0.3 }), crown = new THREE.Group(); crown.position.set(1.3, 1.34, 0); crown.rotation.z = -0.1; crown.scale.setScalar(1.7); whale.add(crown);
+  crown.add(add(crown, new THREE.CylinderGeometry(0.3, 0.26, 0.2, 20), gold));
+  for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2; add(crown, new THREE.ConeGeometry(0.07, 0.22, 10), gold, [0.27 * Math.cos(a), 0.2, 0.27 * Math.sin(a)]); blob(crown, mat('#ff3a5c', { roughness: 0.2 }), [0.27 * Math.cos(a), 0.33, 0.27 * Math.sin(a)], [0.035, 0.035, 0.035]); }
+  blob(crown, mat('#2a7fff', { roughness: 0.2 }), [0.0, 0.0, 0.3], [0.06, 0.06, 0.03]);
+  // turtle on a sand islet, pointing at the crown
+  add(scene, new THREE.CylinderGeometry(0.75, 0.95, 0.4, 32), mat('#f0d28a'), [2.3, -0.05, 1.3]);
+  const t = createTurtle({ scale: 1.0 }); t.position.set(2.3, 0.15, 1.3); t.rotation.y = -0.4; scene.add(t);
+  t.userData.pose({ headTilt: 0.1, headYaw: 0.1, arms: { l: [0, 0.4, 0], r: [0, -0.4, 0] }, legs: { l: [0, 0.1], r: [0, -0.1] } });
+  t.updateMatrixWorld(true); const g = t.worldToLocal(new THREE.Vector3(0.9, 1.6, 0.0)); t.userData.reach('r', [g.x * 0.3 - 0.25, 1.05, 0.15]);
+  return [t];
+}, { ground: null, cam: { pos: [0.9, 1.7, 6.3], look: [0.6, 0.8, 0] } });
 </script></body></html>

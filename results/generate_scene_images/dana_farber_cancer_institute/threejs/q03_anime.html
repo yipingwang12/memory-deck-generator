@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// IRIS PhD: models of music sound waves
+const S = boot(); const sc = S.scene;
+const fl = flower('#7a4fd0', 0.9, 1.7); fl.position.set(1.1, 0, 0); fl.rotation.y = -0.5; sc.add(fl);
+const g = new THREE.Group(); sc.add(g);
+for (let k = 0; k < 3; k++) { const pts = []; for (let i = 0; i <= 80; i++) { const x = -1.2 + i * 0.03; pts.push(new THREE.Vector3(x, 1.4 + k * 0.45 + 0.17 * Math.sin(i * 0.35 + k), -0.3)); }
+  add(g, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 100, 0.035, 8), ['#ff7a45', '#ffc233', '#4aa0e0'][k]); }
+const note = (x, y, c) => { blob(sc, c, [x, y, -0.3], [0.17, 0.12, 0.08], [0, 0, 0.4]); box(sc, c, [x + 0.15, y + 0.3, -0.3], [0.04, 0.6, 0.05]); box(sc, c, [x + 0.28, y + 0.55, -0.3], [0.22, 0.07, 0.05], [0, 0, -0.5]); };
+note(-1.6, 2.6, '#222'); note(0.2, 3.0, '#222'); note(1.8, 2.3, '#222');
+const f = farmerAt(sc, { x: -1.0, z: 0.8, ry: 0.4, s: 1.9 }); reachTo(f, 'l', [-0.2, 1.5, 0.9]);
+done(S, f, { pos: [0, 1.6, 5.8], look: [0, 1.5, 0] });
+});
+</script></body></html>

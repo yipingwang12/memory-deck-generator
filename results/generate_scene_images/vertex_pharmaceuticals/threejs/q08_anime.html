@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — A POVERTY sack seeks fast approval from the VORTEX for kidney IgA.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -1.0, vs: 1.35, vry: 0.5, ground: '#d8c8a0' });
+const sk = C.sack(); sk.scale.setScalar(1.25); sk.position.set(1.4, 0, 0.5); sk.rotation.y = -0.5; scene.add(sk); C.eyesOn(sk, 0.68, 0.4, 0.13);
+const ck = new THREE.Group(); ck.position.set(0.15, 1.2, 1.0); scene.add(ck);
+add(ck, new THREE.CylinderGeometry(0.4, 0.4, 0.06, 32), mat('#2fb85a'), [0, 0, 0], [Math.PI / 2, 0, 0]);
+add(ck, new THREE.BoxGeometry(0.12, 0.38, 0.06), mat('#fff'), [-0.1, -0.03, 0.05], [0, 0, 0.7]); add(ck, new THREE.BoxGeometry(0.12, 0.64, 0.06), mat('#fff'), [0.1, 0.05, 0.05], [0, 0, -0.7]);
+const kd = C.kidney(0.75); kd.position.set(1.4, 1.3, 0.7); scene.add(kd);
+reachWorld(vortex, 'l', [0.05, 1.2, 0.9]);
+done({ cam: [0, 1.0, 4.4], look: [0, 0.95, 0] });
+});
+</script></body></html>

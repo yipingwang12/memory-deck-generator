@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  d.userData.openMouth(true); d.updateMatrixWorld(true);
+  const m = d.userData.parts.head.localToWorld(V3(0, -0.1, 0.36));
+  const tw = waterTower(1.0); tw.position.set(m.x + 1.35, 0, m.z - 0.3); sc.add(tw);
+  const nz = V3(m.x + 0.05, 1.75, m.z);
+  strut(sc, mat('#7f8a93', { metalness: 0.4 }), [m.x + 1.35 - 0.55, 1.75, m.z - 0.3], [nz.x, 1.75, nz.z], 0.05);
+  const w = mat('#5ab8f5', { transparent: true, opacity: 0.8, roughness: 0.1 });
+  strut(sc, w, [nz.x, 1.7, nz.z], [m.x, m.y + 0.03, m.z], 0.045);
+  for (const [dx, dy] of [[0.1, 0.25], [-0.08, 0.15], [0.12, 0.05], [-0.1, 0.4]]) blob(sc, w, [m.x + dx, m.y + dy, m.z + 0.04], [0.03, 0.04, 0.03]);
+  const sp = new THREE.Group();
+}, { dpos: [-1.0, 0, 0.5], dry: 0.8, scl: 1.6, cam: [0.5, 1.5, 5.0], look: [0.5, 1.3, 0],
+  pose: (d) => d.userData.pose({ lean: -0.15, headPitch: -0.55, arms: { l: [0.2, 0.5, 0], r: [0.2, 0.5, 0] } }) });
+
+</script></body></html>

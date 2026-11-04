@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q12 — The OWL perches under a BRIDGE in Cambridge.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: null, sky: { cover: 1.2 } }); const { scene, num } = ctx;
+  add(scene, new THREE.PlaneGeometry(600, 600), mat('#4a9ab0', { roughness: 0.2 }), [0, -0.12, 0], [-Math.PI / 2, 0, 0]);
+  const stone = mat('#cdb58a', { roughness: 0.9 }), stone2 = mat('#b89a6a', { roughness: 0.9 });
+  // arched bridge body with an arch-shaped hole
+  const sh = new THREE.Shape(); sh.moveTo(-5, -0.2); sh.lineTo(5, -0.2); sh.lineTo(5, 2.7); sh.lineTo(-5, 2.7); sh.closePath();
+  const hole = new THREE.Path(); hole.moveTo(-1.5, -0.2); hole.lineTo(-1.5, 0.9); hole.absarc(0, 0.9, 1.5, Math.PI, 0, true); hole.lineTo(1.5, -0.2); hole.closePath(); sh.holes.push(hole);
+  const body = add(scene, new THREE.ExtrudeGeometry(sh, { depth: 2.6, bevelEnabled: false }), stone, [0, 0, -1.3]);
+  for (let i = 0; i <= 12; i++) { const a = Math.PI * i / 12; const x = Math.cos(a) * 1.7, y = 0.9 + Math.sin(a) * 1.7;
+    box(scene, stone2, 0.4, 0.34, 2.7, [x, y, 0], [0, 0, a - Math.PI / 2]); }
+  box(scene, stone2, 10.4, 0.25, 2.9, [0, 2.8, 0]); for (let i = -4; i <= 4; i++) box(scene, stone2, 0.5, 0.35, 0.3, [i * 1.1, 3.05, 1.3]);
+  box(scene, '#bfa57a', 3.6, 0.2, 3.4, [0, -0.02, 0.4]);   // ledge under the arch
+  // distant college
+  const col = new THREE.Group(); col.position.set(0, 0, -16); scene.add(col);
+  box(col, '#d8b98a', 12, 3, 2.5, [0, 1.5, 0]); for (const x of [-4, 0, 4]) { box(col, '#cfae7a', 1.4, 5, 1.4, [x, 2.5, 0.3]); cone(col, '#5f7f6a', 1.0, 1.6, [x, 5.8, 0.3]); }
+  // punt boat
+  const boat = add(scene, new THREE.BoxGeometry(2.0, 0.18, 0.5), mat('#6b4a2a'), [2.9, -0.05, 3.0]);
+  const owl = createOwl({ scale: 1.5 }); owl.position.set(0, 0.08, 0.8); scene.add(owl);
+  owl.userData.pose({ headTilt: 0.1, wings: { l: [0, 0.25], r: [0, 0.25] } });
+  finish(ctx, [owl], [0, 1.5, 6.6], [0, 1.45, 0]);
+
+});
+</script></body></html>

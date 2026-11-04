@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Valo q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — "A MOUSE carries three hundred million coins into the VIOLA's Series B."  (spring; coins pour into the open case; B sign)
+import { THREE, guard, mat, add, box, cyl, blob, disc, eyes, smile, makeStage, finishScene, placeViola, coin, buildCase, moneyBag, labelTexture, pointArm } from './common.js';
+
+function buildMouse() {
+  const g = new THREE.Group(), fur = mat('#9a9aa6', { roughness: 0.6 }), pink = mat('#f2a0b4');
+  blob(g, fur, [0, 0.42, 0], [0.28, 0.34, 0.24]); blob(g, mat('#e8e8ee'), [0, 0.38, 0.1], [0.19, 0.24, 0.15]);
+  for (const s of [-1, 1]) { blob(g, fur, [s * 0.3, 0.88, -0.02], [0.2, 0.2, 0.05]); blob(g, pink, [s * 0.3, 0.88, 0.02], [0.14, 0.14, 0.04]); }
+  blob(g, fur, [0, 0.82, 0.04], [0.28, 0.26, 0.26]);
+  blob(g, fur, [0, 0.76, 0.28], [0.1, 0.09, 0.14]); blob(g, pink, [0, 0.8, 0.4], [0.035, 0.035, 0.035]);
+  for (const s of [-1, 1]) { const e = new THREE.Group(); e.position.set(s * 0.1, 0.87, 0.25); e.rotation.y = s * 0.3; g.add(e); eyes(e, { y: 0, z: 0, dx: 0, rw: 0.055, rh: 0.07, iris: '#3a2a60' }); }
+  smile(g, 0, 0.7, 0.285, 0.035);
+  for (const s of [-1, 1]) for (const k of [-1, 0, 1]) cyl(g, mat('#333'), [s * 0.22, 0.76 + k * 0.03, 0.34], 0.004, 0.3, [0, 0, Math.PI / 2 + s * k * 0.15]);
+  const tail = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0.15, -0.2), new THREE.Vector3(-0.3, 0.08, -0.4), new THREE.Vector3(-0.55, 0.2, -0.3), new THREE.Vector3(-0.7, 0.05, -0.1)]), 20, 0.025, 8), pink); tail.castShadow = true; g.add(tail);
+  for (const s of [-1, 1]) { cyl(g, fur, [s * 0.12, 0.1, 0.02], 0.045, 0.2); blob(g, pink, [s * 0.12, 0.02, 0.08], [0.07, 0.04, 0.1]); }
+  const arms = {};
+  for (const [k, s] of [['l', 1], ['r', -1]]) { const sh = new THREE.Group(); sh.position.set(s * 0.27, 0.52, 0.04); g.add(sh); cyl(sh, fur, [0, -0.12, 0], 0.04, 0.26); blob(sh, pink, [0, -0.27, 0], [0.055, 0.055, 0.055]); sh.rotation.z = s * 0.4; arms[k] = sh; }
+  g.userData.arms = arms; return g;
+}
+guard(() => {
+  const S = makeStage({ ground: '#8fd06a', el: 40, az: 150, sky: { cover: 1.2 } }), { scene } = S;
+  // blossom tree + flowers
+  cyl(scene, mat('#6a4a2a'), [-3.4, 1.4, -2.5], 0.18, 2.8, [0, 0, 0], 0.26);
+  for (const [x, y, z, r] of [[-3.4, 3.3, -2.5, 1.2], [-4.2, 2.9, -2.5, 0.9], [-2.6, 3.0, -2.6, 0.95], [-3.4, 3.9, -2.6, 0.8]]) blob(scene, mat('#ffb5cc'), [x, y, z], [r, r * 0.8, r]);
+  for (let i = 0; i < 40; i++) blob(scene, mat(['#ffd84a', '#ffffff', '#ff8fa8', '#c79aff'][i % 4]), [((i * 37) % 100) / 100 * 9 - 4.5, 0.05, -2.5 + ((i * 53) % 100) / 100 * 2], [0.06, 0.05, 0.06]);
+  // "B" series sign
+  cyl(scene, mat('#6a4a2a'), [3.5, 1.0, -1.6], 0.06, 2.0);
+  box(scene, mat('#1d3fb0'), [3.5, 2.2, -1.6], [1.1, 1.1, 0.08]);
+  add(scene, new THREE.PlaneGeometry(0.95, 0.95), new THREE.MeshBasicMaterial({ map: labelTexture('B', '#1d3fb0', '#ffffff') }), [3.5, 2.2, -1.55]);
+  const vs = S.num('vs', 1.8), viola = placeViola(scene, { x: -1.75, z: 0.2, scale: vs, ry: 0.3, pose: { arms: { l: [0, 1.3, 0], r: [0, -0.6, 0] } } });
+  const cs = buildCase(); cs.position.set(1.95, 0, 0.6); cs.scale.setScalar(1.15); cs.rotation.y = -0.15; scene.add(cs);
+  // coin heap in the case
+  for (let i = 0; i < 40; i++) { const a = i * 2.4, r = (i % 7) * 0.08; coin(scene, 1.95 + Math.cos(a) * r * 1.5, 0.22 + (i % 5) * 0.045, 0.6 + Math.sin(a) * r * 0.5, 0.085, [Math.PI / 2 + (i % 3) * 0.3, (i % 4) * 0.5, 0]); }
+  const mouse = buildMouse(); mouse.scale.setScalar(S.num('ms', 1.75)); mouse.position.set(0.4, 0, 0.9); mouse.rotation.y = -0.35; scene.add(mouse);
+  const sack = moneyBag(0.3); sack.scale.setScalar(1.35); sack.position.set(0.95, 1.18, 0.95); sack.rotation.z = -1.1; scene.add(sack);
+  pointArm(mouse, 'l', [0.95, 1.3, 0.95]); pointArm(mouse, 'r', [0.6, 1.2, 1.0]);
+  // pouring coins arc
+  for (let i = 0; i < 14; i++) { const t = i / 13; coin(scene, 1.15 + t * 0.8, 1.35 - t * t * 0.95 + (i % 2) * 0.05, 0.95 - t * 0.3, 0.1, [0.6 + i * 0.5, i * 0.7, 0]); }
+  finishScene(S, [viola, mouse], [0.3, 1.5, 6.2], [0.2, 1.2, 0]);
+});
+</script></body></html>

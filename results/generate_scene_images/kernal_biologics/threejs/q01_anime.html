@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kernal q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q01 — KERNEL prints a letter stamped 2.0 (mRNA 2.0)
+import { THREE, guard, mat, add, blob, box, cyl, sign, textTex, makeStage } from './common.js';
+guard(() => {
+  const S = makeStage({ seed: 9 }); const { scene } = S;
+  S.ground('#79b455');
+  add(scene, new THREE.PlaneGeometry(400, 3), mat('#d9bd86'), [0, 0.004, 0.2], [-Math.PI / 2, 0, 0]);
+  // printing press (right): base, platen, lever
+  const press = new THREE.Group(); press.position.set(1.15, 0, -0.2); scene.add(press);
+  box(press, mat('#3b4a63'), [0, 0.3, 0], [0.95, 0.6, 0.6]);
+  box(press, mat('#8c97aa'), [0, 0.64, 0], [0.8, 0.08, 0.5]);
+  for (const s of [-1, 1]) box(press, mat('#2f3b50'), [s * 0.42, 1.0, 0], [0.09, 0.8, 0.12]);
+  box(press, mat('#2f3b50'), [0, 1.4, 0], [0.95, 0.12, 0.14]);
+  cyl(press, mat('#c8cfd9', { metalness: 0.5 }), [0, 1.22, 0], 0.05, 0.4);
+  cyl(press, mat('#8c97aa'), [0, 0.9, 0], 0.32, 0.06);
+  add(press, new THREE.CylinderGeometry(0.03, 0.03, 0.8, 10), mat('#e2453c'), [0.3, 1.5, 0], [0, 0, Math.PI / 2]);
+  blob(press, mat('#e2453c'), [0.72, 1.5, 0], [0.07, 0.07, 0.07]);
+  // letter coming out of the press, big, stamped 2.0
+  const paper = new THREE.Group(); paper.position.set(1.15, 0.97, 0.62); paper.rotation.set(-0.08, -0.12, 0.03); scene.add(paper);
+  box(paper, mat('#fffaf0'), [0, 0, 0], [1.05, 0.74, 0.03]);
+  const m = new THREE.MeshStandardMaterial({ map: textTex('2.0', { bg: '#fffaf0', fg: '#d52b2b', w: 512, h: 384, font: 'bold 230px sans-serif' }), roughness: 0.8 });
+  add(paper, new THREE.PlaneGeometry(0.9, 0.67), m, [0, -0.02, 0.019]);
+  const ring = add(paper, new THREE.TorusGeometry(0.31, 0.022, 10, 40), mat('#d52b2b'), [0.18, -0.02, 0.02]); ring.visible = false;
+  for (let i = 0; i < 4; i++) box(paper, mat('#9fb3cf'), [-0.22, 0.24 - i * 0.07, 0.019], [0.5, 0.018, 0.002]);
+  // stamped squiggle (mRNA strand)
+  const pts = []; for (let i = 0; i < 40; i++) pts.push(new THREE.Vector3(-0.42 + i * 0.021, 0.27 + Math.sin(i * 0.9) * 0.04, 0.02));
+  add(paper, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 60, 0.01, 6), mat('#3a7bd5'));
+  // kernel
+  const k = S.kernel({ scale: 1.15 }); k.position.set(-0.55, 0, 0.45); k.rotation.y = 0.35; scene.add(k);
+  k.userData.pose({ legs: { l: [0.1, 0.05], r: [-0.1, -0.05] } }); k.updateMatrixWorld(true);
+  const stamp = new THREE.Group(); // rubber stamp in left hand
+  cyl(stamp, mat('#8a5a2b'), [0, 0.12, 0], 0.045, 0.24); cyl(stamp, mat('#8a5a2b'), [0, 0.26, 0], 0.07, 0.04); cyl(stamp, mat('#d52b2b'), [0, 0.0, 0], 0.11, 0.05);
+  k.userData.reach('l', [0.5, 1.0, 0.45]); k.userData.reach('r', [-0.4, 0.55, 0.3]);
+  k.updateMatrixWorld(true);
+  const hp = k.userData.parts.hands.l; stamp.position.set(0, -0.1, 0.0); stamp.rotation.x = 0; hp.add(stamp); stamp.scale.setScalar(0.9);
+  stamp.rotation.set(0, 0, 0); stamp.position.set(0, 0.1, 0);
+  S.toon(k);
+  S.finish({ x: 0.2, y: 1.05, z: 3.4, tx: 0.2, ty: 0.72 });
+});
+</script></body></html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Stanley q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as C from './common.js';
+const { THREE, add, mat, place, makeScene, wave } = C;
+makeScene({ trophyAt:[-0.9,0,0.3], pose: wave, build: ({scene,T,ts}) => {
+  const c = C.crown(); c.position.set(-0.9, 1.2*ts*0.97+0.02, 0.3); c.scale.setScalar(ts*0.9); c.rotation.z=0.05; scene.add(c);
+  place(scene, C.globe(), [0.4,0,0.2], 0, 1.0); place(scene, C.dna(), [1.5,0,0], 0.5, 0.85);
+}});
+</script></body></html>

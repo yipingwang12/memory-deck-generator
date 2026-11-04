@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — "The PICOWER finger of the MITTEN learns and remembers."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const t = P.tower({ h: 1.8, brain: true }); t.position.set(2.8, 0, -1.2); t.scale.setScalar(1.1); scene.add(t);
+  const m = placeMitten(scene, { x: -0.7, z: 0.8, ry: 0.35, s: 2.1, pose: { lean: 0.12 } });
+  const b = P.book(); b.position.set(-0.3, 1.0, 1.75); b.rotation.set(-0.9, 0.3, 0); b.scale.setScalar(1.3); scene.add(b);
+  m.updateMatrixWorld(true);
+  const hand = (k, p) => { const l = m.worldToLocal(new THREE.Vector3(...p)); m.userData.reach(k, [l.x, l.y, l.z]); };
+  hand('l', [0.0, 0.95, 1.7]); hand('r', [-0.65, 1.0, 1.75]);
+  const br = P.brain({ s: 0.9 }); br.position.set(-0.7, 2.85, 0.8); scene.add(br);
+  for (const [x, y, s] of [[-0.6, 2.35, 0.05], [-0.45, 2.55, 0.08]]) blob(scene, mat('#ffffff'), [x, y, 0.9], [s, s, s]);
+  return { chars: [m], cam: { pos: [0.6, 2.0, 7.0], look: [0.6, 1.9, 0] } };
+});
+</script></body></html>

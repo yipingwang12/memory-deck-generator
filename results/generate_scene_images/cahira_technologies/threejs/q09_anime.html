@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cahira q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — A SUMO wrestler waits three years after the mouse paper to enter the PYRAMID first.
+import { THREE, guard, build, finish, add, mat, box, blob, cyl, glow, sign, textTex, chip, monk, mouse, brain, flame, debitCard, reachWorld, canvasTexture, rng } from './common.js';
+guard(() => {
+  const S = build({ ground: '#e0b98c', py: [-0.6, 0, 0], ps: 1.9, pry: -0.45 });
+  const { scene, pyr } = S;
+  pyr.userData.pose({ arms: { l: [0, 0.9], r: [0, 1.3] } });
+  const phi = Math.atan(0.42 / 0.82);
+  const dr = new THREE.Group(); pyr.add(dr);
+  const yc = 0.24 + 0.17, xs = 0.42 * (1 - 0.17 / 0.82) + 0.01;
+  add(dr, new THREE.BoxGeometry(0.03, 0.3, 0.24), mat('#1a0f0a'), [xs, yc, 0], [0, 0, phi]);
+  add(dr, new THREE.BoxGeometry(0.03, 0.34, 0.3), mat('#c99a2e', { metalness: 0.5 }), [xs - 0.005, yc - 0.01, 0], [0, 0, phi]);
+  add(dr, new THREE.BoxGeometry(0.035, 0.3, 0.24), mat('#1a0f0a'), [xs + 0.002, yc, 0], [0, 0, phi]);
+  const s = new THREE.Group(); s.position.set(2.0, 0, 0.8); s.rotation.y = -1.0; s.scale.setScalar(1.55); scene.add(s);
+  const skin = mat('#f2c39a');
+  blob(s, skin, [0, 0.62, 0], [0.42, 0.44, 0.36]);
+  blob(s, mat('#1f2a6a'), [0, 0.38, 0.02], [0.44, 0.1, 0.38]);
+  blob(s, mat('#c99a2e'), [0, 0.38, 0.38], [0.14, 0.12, 0.03]);
+  blob(s, skin, [0, 1.12, 0], [0.22, 0.22, 0.2]);
+  blob(s, mat('#1a1210'), [0, 1.2, -0.04], [0.21, 0.17, 0.2]); blob(s, mat('#1a1210'), [0, 1.38, -0.08], [0.07, 0.09, 0.07]);
+  const f = new THREE.Group(); f.position.set(0, 1.1, 0.19); s.add(f);
+  for (const sx of [-1, 1]) { blob(f, mat('#fff'), [sx * 0.09, 0.03, 0.02], [0.05, 0.06, 0.02]); blob(f, mat('#1c1030'), [sx * 0.09, 0.025, 0.035], [0.035, 0.048, 0.015]); blob(f, mat('#fff'), [sx * 0.09 - 0.01, 0.045, 0.05], [0.012, 0.012, 0.008]); blob(f, mat('#ff8fa0'), [sx * 0.16, -0.05, 0.0], [0.04, 0.02, 0.01]); }
+  add(f, new THREE.TorusGeometry(0.04, 0.008, 8, 16, Math.PI), mat('#7a2a2a'), [0, -0.08, 0.02], [0, 0, Math.PI]);
+  for (const sx of [-1, 1]) { blob(s, skin, [sx * 0.4, 0.62, 0.1], [0.1, 0.2, 0.1], [0, 0, sx * 0.5]); blob(s, skin, [sx * 0.15, 0.17, 0.02], [0.13, 0.17, 0.13]); blob(s, mat('#222'), [sx * 0.15, 0.03, 0.08], [0.1, 0.04, 0.14]); }
+  const cal = new THREE.Group(); cal.position.set(-3.3, 0.0, -1.5); scene.add(cal);
+  box(cal, mat('#7a5a3a'), [0, 0.8, -0.05], [1.5, 1.5, 0.06]); box(cal, mat('#d8282c'), [0, 1.42, 0], [1.5, 0.3, 0.07]);
+  box(cal, mat('#ffffff'), [0, 0.7, 0], [1.4, 1.1, 0.04]);
+  sign(cal, '3', [0.9, 0.9], [0, 0.68, 0.04], { w: 256, h: 256, font: 'bold 230px sans-serif', fg: '#d8282c' });
+  sign(cal, 'YEARS', [1.2, 0.3], [0, 1.43, 0.06], { w: 512, h: 128, font: 'bold 90px sans-serif', fg: '#fff' });
+  finish(S, [pyr], [0.0, 1.3, 5.9], [-0.2, 1.05, 0]);
+});
+</script></body></html>

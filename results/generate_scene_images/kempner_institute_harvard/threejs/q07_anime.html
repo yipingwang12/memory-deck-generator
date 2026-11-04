@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kempner q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q07 - One SODA lasts the CAMPER AI fellow one year
+import { run, THREE, mat, add, blob, box, cyl, panel, bigText, person, rng } from './world.js';
+import { brain, robotHead, coinPile, sugarCubes, gear, tree } from './props.js';
+
+run({ camper: { pos: [-0.9, 0, 0.2], ry: 0.6 }, cam: [0.2, 1.6, 5.2], look: [0.3, 1.25, 0],
+  build: ({ scene, van }) => {
+    const can = (x, z, s, rot = 0) => { const g = new THREE.Group();
+      const body = add(g, new THREE.CylinderGeometry(0.5, 0.5, 1.5, 36), new THREE.MeshStandardMaterial({ roughness: 0.35, metalness: 0.4, map: (() => { const c = document.createElement('canvas'); c.width = 512; c.height = 256; const x = c.getContext('2d'); x.fillStyle = '#e02828'; x.fillRect(0, 0, 512, 256); x.fillStyle = '#fff'; x.beginPath(); x.moveTo(0, 120); x.bezierCurveTo(128, 40, 200, 220, 256, 128); x.bezierCurveTo(320, 40, 400, 220, 512, 120); x.lineTo(512, 170); x.bezierCurveTo(400, 270, 320, 90, 256, 178); x.bezierCurveTo(200, 270, 128, 90, 0, 170); x.fill(); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })() }));
+      for (const y of [0.75, -0.75]) { cyl(g, 0.5, 0.42, 0.08, '#d8dde2', [0, y, 0], [0, 0, y < 0 ? Math.PI : 0], { metalness: 0.8, roughness: 0.25 }); }
+      cyl(g, 0.4, 0.4, 0.03, '#c8ced4', [0, 0.8, 0], [0, 0, 0], { metalness: 0.8 });
+      const st = new THREE.Group(); cyl(st, 0.045, 0.045, 0.9, '#ff3a3a', [0, 0.45, 0]); cyl(st, 0.046, 0.046, 0.2, '#fff', [0, 0.3, 0]); cyl(st, 0.046, 0.046, 0.2, '#fff', [0, 0.7, 0]);
+      st.position.set(0.1, 0.8, 0); st.rotation.z = -0.25; g.add(st);
+      cyl(g, 0.045, 0.045, 0.35, '#ff3a3a', [0.43, 1.78, 0], [0, 0, 1.2]);
+      g.position.set(x, 0.75 * s, z); g.rotation.y = rot; g.scale.setScalar(s); scene.add(g); return g; };
+    can(1.5, 0.3, 1.0, 0.7); can(2.7, -1.2, 0.75, 0.2); can(0.4, -1.6, 0.75, 0.0);
+    for (let i = 0; i < 9; i++) blob(scene, mat('#ffffff', { transparent: true, opacity: 0.6 }), [1.1 + (i % 3) * 0.3 + (i * 0.13 % 0.3), 2.1 + i * 0.12, 0.6 + (i % 2) * 0.2], [0.07 + (i % 3) * 0.03, 0.07 + (i % 3) * 0.03, 0.06]);
+    van.userData.pose({ arms: { l: [0, 1.2, 0.3] } }); van.userData.reach('l', [0.9, 0.9, 0.6]);
+  } });
+
+</script></body></html>

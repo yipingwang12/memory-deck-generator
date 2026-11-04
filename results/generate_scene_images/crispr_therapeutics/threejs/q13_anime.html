@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q13 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q13 — The CRISP's press release starts in ZUG, Switzerland, and on a Boston TEA chest.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, reach, finish }) => {
+  const c = crisp({ s: 2.3, x: 0, z: 0, ry: 0 });
+  const paper = new THREE.Group(); paper.position.set(1.7, 2.3, 0.9); paper.rotation.z = -0.1; scene.add(paper);
+  const pp = textPlane('PRESS', 1.3, 1.7, { bg: '#fffdf2', fg: '#222', h: 300, w: 230 }); paper.add(pp);
+  for (let i = 0; i < 4; i++) box(paper, mat('#8a8f99'), [0, -0.1 - i * 0.2, 0.01], [1.0, 0.07, 0.01]);
+  // ZUG signpost with Swiss flag
+  cyl(scene, mat('#7a5a38'), [-3.0, 1.2, 0], 0.07, 2.4);
+  const sg = textPlane('ZUG', 1.9, 0.75, { bg: '#2a6dd8', fg: '#fff' }); sg.position.set(-3.0, 2.2, 0.1); scene.add(sg);
+  const fg = flag('#e02a2a', { h: 1.0, w: 1.1, cross: true }); fg.position.set(-3.0, 2.7, 0); scene.add(fg);
+  // Boston TEA chest
+  const ch = new THREE.Group(); ch.position.set(2.8, 0, 0.3); ch.rotation.y = -0.3; scene.add(ch);
+  box(ch, mat('#a8763a'), [0, 0.55, 0], [1.7, 1.1, 1.2]); box(ch, mat('#6a4a22'), [0, 1.14, 0], [1.8, 0.12, 1.3]);
+  for (const x of [-0.8, 0.8]) box(ch, mat('#4a4f58'), [x, 0.55, 0], [0.08, 1.14, 1.24]);
+  const tp = textPlane('TEA', 1.3, 0.8, { bg: '#f2e2b0', fg: '#8a1f1f' }); tp.position.set(0, 0.55, 0.61); ch.add(tp);
+  cyl(ch, mat('#fff'), [0.4, 1.4, 0.1], 0.2, 0.3, [0, 0, 0], 0.15); add(ch, new THREE.TorusGeometry(0.1, 0.03, 8, 16), mat('#fff'), [0.62, 1.4, 0.1]);
+  cyl(ch, mat('#8a4a1f'), [0.4, 1.5, 0.1], 0.15, 0.02);
+  reach(c, 'l', [1.1, 2.0, 0.9]);
+  finish([0, 2.0, 7.8], [0, 1.9, 0]);
+});
+
+</script></body></html>

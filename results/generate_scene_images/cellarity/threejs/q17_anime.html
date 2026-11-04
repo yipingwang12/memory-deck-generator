@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q17 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q17 - The CELLAR sits under a SUMMER sun in Somerville.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'meadow' }); const sc = S.scene;
+put(sc, C.sun(0.9), 2.2, 3.8, -8, 2.2);
+put(sc, C.house('#e6c46a'), 1.9, 0, -2.4, 1.2); put(sc, C.house('#9ac4e8'), 3.3, 0, -2.6, 1.0);
+S.cellar({ pos: [-0.5, 0, 0.3], scale: 1.9, ry: 0.2, pose: { arms: { l: [0, 0.9], r: [0, 0.9] } } });
+for (const [x, z, h] of [[-2.7, 0.3, 0.9], [-2.2, -0.6, 1.1], [1.4, 1.0, 0.8], [2.4, 0.9, 0.9]]) put(sc, C.sunflower(h), x, 0, z, 1.0);
+S.done({ cam: [0, 1.5, 6.2], look: [0, 1.5, 0], clouds: true });
+});
+</script></body></html>

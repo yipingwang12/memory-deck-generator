@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q19</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q19 — "Forty-eight brain donors stand on a REEF beside the MITTEN."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  P.water(scene, '#2fb5c8', [0, 0.02, 0]);
+  const rf = P.coralReef(); rf.position.set(1.6, 0, -0.6); rf.scale.setScalar(1.35); scene.add(rf);
+  const cols = ['#3d8c5a', '#d8643a', '#5a6fd8', '#e0b83c', '#d8333b', '#8a4fd8'], r = rng(4);
+  let i = 0; for (const [row, z, y, n, x0] of [[0, 0.5, 0.45, 6, -1.35], [1, -0.1, 0.9, 5, -1.0], [2, -0.6, 1.2, 3, -0.4]]) for (let k = 0; k < n; k++) {
+    const p = P.person({ h: 0.8, shirt: cols[i++ % 6], hair: ['#2a1a10', '#8a5a2a', '#d8c070', '#444'][i % 4] }); p.position.set(1.6 + (x0 + k * 0.55 * (row ? 1.0 : 0.95)) * 1.35, y * 1.1 + 0.3, z); scene.add(p); }
+  const m = placeMitten(scene, { x: -1.7, z: 1.3, ry: 0.5, s: 2.1, pose: { arms: { l: [0, 0.9, 0] } } });
+  return { chars: [m], cam: { pos: [0.4, 2.0, 7.2], look: [0.4, 1.3, 0] } };
+}, { ground: '#e8d49a' });
+</script></body></html>

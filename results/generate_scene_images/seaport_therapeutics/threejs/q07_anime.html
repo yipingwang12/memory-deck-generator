@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q07</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// The first PORTHOLE pill carries a calm PREGNANT mother.
+import { THREE, guard, canvasTexture, rng, makeStage, createPorthole, makeShip, makePerson, makeZorro, makeCapsule, makeGlyph, textPlane, mat, add, blob, box, cyl, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({}), s = stage.scene;
+  const pill = makeCapsule({ len: 3.4, r: 0.5, a: '#ff6b5a', b: '#fff7ea' }); pill.position.set(1.0, 0.5, 0.4); s.add(pill);
+  const m = makePerson({ coat: '#f6a9c0', hair: '#7a4a2a', scale: 1.0, eyes: 'closed', dress: true }); m.position.set(1.0, 0.98, 0.4); m.rotation.y = -0.3; s.add(m);
+  blob(m, '#f6a9c0', [0, 0.95, 0.28], [0.34, 0.36, 0.34]); blob(m, '#7a4a2a', [0, 1.35, -0.12], [0.3, 0.45, 0.2]);
+  m.userData.arms.l.rotation.set(-0.7, 0, -0.3); m.userData.arms.r.rotation.set(-0.7, 0, 0.3);
+  for (let i = 0; i < 3; i++) add(m, new THREE.TorusGeometry(0.55 + i * 0.13, 0.012, 6, 36), mat('#fff3b0', { emissive: '#fff3b0', emissiveIntensity: 0.6 }), [0, 1.0, -0.4], [0, 0, 0]);
+  const p = createPorthole({ scale: 1.6 }); p.position.set(-1.7, 0, 1.0); p.rotation.y = 0.4; p.userData.setMood('smile'); p.userData.pose({ arms: { r: [0, -0.8, 0] } }); p.userData.reach('l', [0.7, 0.6, 0.3]); s.add(p);
+  toon(stage, p, m);
+  frame(stage, { cam: [0, 1.5, 5.8], look: [0, 1.3, 0] });});
+</script></body></html>

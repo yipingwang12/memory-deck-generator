@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CRISPR q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — A CRISP packet lies on a TOMB.
+import { THREE, mat, add, blob, box, cyl, textPlane, textTexture, flag, person, helix, snake, scissors, startScene } from './common.js';
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const hand = (p, k) => { p.updateMatrixWorld(true); return p.userData.parts['arm' + k].localToWorld(V(0, -0.45, 0)); };
+startScene(({ scene, crisp, finish }) => {
+  const stone = mat('#c9bba0'), dark = mat('#a99a7e');
+  box(scene, dark, [0, 0.35, 0], [2.3, 0.7, 4.3]);
+  box(scene, stone, [0, 0.82, 0], [2.05, 0.24, 4.0]);
+  box(scene, dark, [0, 1.0, 0], [1.75, 0.12, 3.6]);
+  for (const z of [-1.9, 1.9]) for (const x of [-0.95, 0.95]) cyl(scene, stone, [x, 0.4, z], 0.17, 0.8);
+  box(scene, stone, [0, 1.3, -2.8], [0.38, 1.9, 0.3]); box(scene, stone, [0, 1.75, -2.8], [1.2, 0.38, 0.3]);
+  [[-1.8, 0.2], [1.8, 0.3], [-1.7, 1.8], [1.9, 1.7]].forEach(([x, z], i) => { cyl(scene, '#3c8a3a', [x, 0.18, z], 0.02, 0.36); blob(scene, mat(['#ff7a9a', '#ffd84a'][i % 2]), [x, 0.42, z], [0.12, 0.12, 0.12]); });
+  const c = crisp({ s: 2.6, x: 0, y: 1.4, z: 1.6 });
+  c.userData.pose({ arms: { l: [0, 0.7, 0], r: [0, 0.7, 0] } }); c.rotation.set(-Math.PI / 2, 0, 0, 'YXZ');
+  finish([2.2, 4.6, 5.6], [0, 0.7, 0.1]);
+}, { ground: '#78a85a' });
+
+</script></body></html>

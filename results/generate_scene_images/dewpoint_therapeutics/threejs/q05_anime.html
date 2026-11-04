@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Dewpoint q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — a WINTER wind pushes a chain of BETA fish; the weapon freezes the chain.
+import { boot, THREE, mat, add, blob, box, cyl, fish, pine, snow, sword, reachWorld } from './props.js';
+boot(({ scene, dd }) => {
+  for (const [x, z, h] of [[-5, -4, 3], [5.5, -5, 3.6], [1, -6, 3], [-2.5, -7, 3.4], [8, -3, 2.8]]) { const p = pine(h); p.position.set(x, 0, z); scene.add(p); }
+  const white = mat('#ffffff'), ice = mat('#aee6ff', { roughness: 0.2 });
+  // gusts
+  for (let i = 0; i < 4; i++) { const c = new THREE.CatmullRomCurve3([-6, -4.5, -3, -1.5].map((x, k) => new THREE.Vector3(x - 2, 3.2 + i * 0.5 + Math.sin(k * 1.8 + i) * 0.35, -1.2 + (i % 2) * 0.4))); add(scene, new THREE.TubeGeometry(c, 30, 0.05, 6), white); }
+  snow(scene, 90, [14, 6, 6], [1, 3, 0]);
+  // chain of fish, each joined by links; right two frozen
+  const xs = [1.1, 2.8, 4.5, 6.0]; 
+  xs.forEach((x, i) => { const f = fish(i < 2 ? '#2f9bd8' : '#c9efff', 1.5); f.position.set(x, 2.3 + Math.sin(i) * 0.15, 0); f.rotation.y = 0.15; scene.add(f);
+    if (i < 3) for (let k = 0; k < 2; k++) add(scene, new THREE.TorusGeometry(0.12, 0.035, 8, 18), mat('#9aa3b0', { metalness: 0.5 }), [x + 0.95 + k * 0.2, 2.3 + Math.sin(i) * 0.15, 0], [k ? 0 : Math.PI / 2, 0, 0]); });
+  for (const x of [4.5, 6.0, 5.2]) for (let k = 0; k < 4; k++) add(scene, new THREE.ConeGeometry(0.1, 0.4, 5), ice, [x - 0.5 + k * 0.35, 2.85 + (k % 2) * 0.1, 0.12], [0, 0, (k - 1.5) * 0.25]);
+  const sw = sword('DPTX3186', 1.6); sw.position.set(1.1, 1.3, 1.5); sw.rotation.z = -0.9; scene.add(sw);
+  sw.children.forEach((c) => { if (c.material?.map) c.visible = false; });
+  for (let k = 0; k < 5; k++) add(scene, new THREE.ConeGeometry(0.08, 0.4, 5), ice, [1.0 + k * 0.5, 1.9 + k * 0.12, 0.7], [0, 0, -1.3 + k * 0.1]);
+  reachWorld(dd, 'l', [1.1, 1.3, 1.5]);
+}, { dd: { pos: [0.2, 0, 1.6], ry: 0.3, scale: 1.8 }, ground: '#f2f6fb', sky: { cover: 3 }, cam: [2.7, 2.0, 7.2], look: [2.7, 1.5, 0] });
+</script></body></html>

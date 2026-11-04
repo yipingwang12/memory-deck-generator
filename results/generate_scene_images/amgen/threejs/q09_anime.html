@@ -1,0 +1,43 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Amgen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — The GENIE buys a CODE book from Reykjavik's volcanoes: deCODE genetics.
+import { THREE, run, mat, add, blob, book, smoke, gold, rng } from './common.js';
+function volcano(s) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.9, 4.2, 3.4, 44), mat('#4d3a3a'), [0, 1.7, 0]);
+  add(g, new THREE.CylinderGeometry(0.95, 1.5, 0.5, 44), mat('#f4f7ff'), [0, 3.15, 0]);
+  add(g, new THREE.CylinderGeometry(0.62, 0.62, 0.1, 30), new THREE.MeshBasicMaterial({ color: '#ff6a10' }), [0, 3.42, 0]);
+  for (const [a, w] of [[0.3, 0.22], [2.3, 0.26], [4.4, 0.2]]) {
+    const st = new THREE.Group(); st.rotation.y = a; g.add(st);
+    add(st, new THREE.BoxGeometry(w, 2.6, 0.1), new THREE.MeshBasicMaterial({ color: '#ff7a18' }), [2.3, 1.9, 0], [0, 0, 0.78]);
+  }
+  smoke(g, [[0.2, 3.9, 0, 0.5], [-0.2, 4.5, 0.1, 0.65], [0.3, 5.2, 0, 0.8]], '#9a95a5', 0.9);
+  g.scale.setScalar(s); return g;
+}
+function house(c, roof) {
+  const g = new THREE.Group();
+  add(g, new THREE.BoxGeometry(1.0, 0.8, 0.9), mat(c), [0, 0.4, 0]);
+  add(g, new THREE.ConeGeometry(0.85, 0.5, 4), mat(roof), [0, 1.05, 0], [0, Math.PI / 4, 0], [1, 1, 0.9]);
+  add(g, new THREE.BoxGeometry(0.22, 0.3, 0.02), mat('#fff'), [0.2, 0.45, 0.46]);
+  return g;
+}
+run({
+  ground: '#5a5666', frame: { x: 0.5, y: 2.0, H: 5.2 }, el: 25,
+  genie: { x: -1.3, z: 0.8, scale: 1.7, ry: 0.35, pose: { headTilt: 0.05, arms: { l: [0, 1.4, 0.3], r: [0, -0.5, 0.2] } }, mouth: 0.2 },
+  build({ scene, reachTo }) {
+    const v1 = volcano(1.0); v1.position.set(4.6, 0, -9); scene.add(v1);
+    const v2 = volcano(0.7); v2.position.set(-6.5, 0, -12); scene.add(v2);
+    const cols = ['#d8453a', '#2a6fd8', '#f2c830', '#3bb87a', '#e8e8e8'], roofs = ['#8a2a2a', '#e8e8e8', '#2a4a8a', '#c8302e', '#2a6fd8'];
+    for (let i = 0; i < 7; i++) { const h = house(cols[i % 5], roofs[i % 5]); h.position.set(-5.0 + i * 1.2, 0, -3.2 - (i % 2) * 0.8); h.scale.setScalar(1.2); scene.add(h); }
+    const r = rng(2); for (let i = 0; i < 14; i++) blob(scene, mat('#f4f7ff'), [(r() - 0.5) * 18, 0.02, -1 - r() * 4], [0.5 + r() * 0.7, 0.05, 0.4 + r() * 0.4]);
+    add(scene, new THREE.BoxGeometry(1.7, 0.7, 0.9), mat('#8a8794'), [0.4, 0.35, 0.5]);
+    const b = book(1.5, 2.1, 0.3, '#c8302e', 'CODE'); b.position.set(0.4, 1.78, 0.45); b.rotation.set(-0.22, -0.15, 0); scene.add(b);
+    for (const [x, z, n] of [[1.6, 1.4, 4], [2.1, 1.2, 3], [1.9, 1.8, 2]]) for (let k = 0; k < n; k++) add(scene, new THREE.CylinderGeometry(0.22, 0.22, 0.07, 22), gold(), [x, 0.04 + k * 0.075, z]);
+    reachTo('l', [-0.2, 1.6, 0.8]);
+  },
+});
+</script></body></html>

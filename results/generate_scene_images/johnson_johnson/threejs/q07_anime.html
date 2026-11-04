@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q07 — The JACKS' nippy antibody lifts drooping eyelids and weak muscles: generalised myasthenia gravis.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#e8d7b8' }); const sc = stage.scene;
+  // big eye with drooping lid
+  const eye = new THREE.Group(); eye.position.set(1.0, 1.55, 0); eye.scale.setScalar(1.05); sc.add(eye);
+  blob(eye, mat('#ffffff', { roughness: 0.3 }), [0, 0, 0], [1.25, 0.8, 0.5]);
+  blob(eye, mat('#3b86d6'), [0, -0.05, 0.4], [0.6, 0.6, 0.12]); blob(eye, mat('#0e1a2c'), [0, -0.05, 0.5], [0.3, 0.3, 0.1]); blob(eye, mat('#fff'), [-0.18, 0.15, 0.58], [0.1, 0.1, 0.05]);
+  const lid = blob(eye, mat('#f1b98f'), [0, 0.32, 0.05], [1.3, 0.55, 0.58]); lid.position.y = 0.3;
+  add(eye, new THREE.TorusGeometry(0.66, 0.045, 8, 40, Math.PI), mat('#4a2a1a'), [0, -0.0, 0.6], [0, 0, Math.PI + 0.0]).scale.set(1.9, 0.9, 1);
+  for (let i = 0; i < 7; i++) { const a = 0.25 + i / 6 * 2.6; add(eye, new THREE.CylinderGeometry(0.012, 0.02, 0.3, 6), mat('#2a1a10'), [Math.cos(a) * 1.25, 0.05 - Math.sin(a) * 0.05 - 0.0, 0.52], [0, 0, 0.2 + (a - 1.5) * 0.4]); }
+  // limp dumbbell on floor (bent bar) 
+  const db = new THREE.Group(); db.position.set(0.5, 0.2, 0.9); db.scale.setScalar(0.85); db.scale.setScalar(1.0); db.rotation.y = -0.3; sc.add(db);
+  cyl(db, mat('#4a5560'), [-0.6, 0.2, 0], 0.4, 0.22, [0, 0, Math.PI / 2]); cyl(db, mat('#e2483c'), [-0.6, 0.2, 0], 0.2, 0.3, [0, 0, Math.PI / 2]);
+  add(db, new THREE.CylinderGeometry(0.06, 0.06, 0.9, 12), mat('#999', { metalness: 0.6 }), [0.0, 0.1, 0], [0, 0, 1.2]);
+  cyl(db, mat('#4a5560'), [0.6, 0.0, 0], 0.4, 0.22, [0, 0, Math.PI / 2]); cyl(db, mat('#e2483c'), [0.6, 0.0, 0], 0.2, 0.3, [0, 0, Math.PI / 2]);
+  // weak limp arm sign: droopy muscle
+  const J = placeJack(stage, { x: -1.7, z: 0.8, s: 1.5, ry: 0.3, pose: { arms: { r: [0, -0.5] } } });
+  J.userData.aim('l', new THREE.Vector3(0.2, 2.5, 0.5));
+  // tiny antibody lifting the lid
+  const ab = new THREE.Group(); ab.position.set(0.0, 2.75, 0.8); sc.add(ab); const tc = mat('#34c3a0');
+  cyl(ab, tc, [0, -0.2, 0], 0.07, 0.4); for (const s of [-1, 1]) { cyl(ab, tc, [s * 0.15, 0.08, 0], 0.07, 0.4, [0, 0, -s * 0.6]); blob(ab, mat('#e8473a'), [s * 0.3, 0.27, 0], [0.09, 0.12, 0.06]); }
+  ab.scale.setScalar(1.3);
+  finishScene(stage, J, { cam: [0.1, 1.8, 6.0], look: [0.2, 1.55, 0] });
+
+});
+</script></body></html>

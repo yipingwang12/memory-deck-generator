@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arctop q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, mat, add, blob, num, placeTop, wrap, basic, textTex } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#e9dcc0' });
+  const top = placeTop(scene, { x: 0.9, s: 2.3, tilt: 0.1, arms: { l: [0, 1.3], r: [0, 1.3] } });
+  const br = PR.buildBrain(); br.scale.setScalar(0.9); br.position.set(-1.9, 2.0, 0); br.rotation.y = 0.6; scene.add(br);
+  // glowing decode beams brain -> top
+  for (let i = 0; i < 5; i++) { const t = i / 4; add(scene, new THREE.TorusGeometry(0.2 + t * 0.25, 0.022, 8, 32), basic('#6ee8ff', { transparent: true, opacity: 0.85 - t * 0.35 }), [-1.1 + t * 1.3, 1.9 - t * 0.4, 0], [0, Math.PI / 2, 0]); }
+  // code screen (software only)
+  const pw = add(scene, new THREE.BoxGeometry(1.7, 1.1, 0.06), mat('#243049'), [1.9, 2.1, -0.4], [0, -0.35, 0]);
+  const scr = new THREE.Mesh(new THREE.PlaneGeometry(1.55, 0.95), new THREE.MeshBasicMaterial({ map: textTex('</>', { w: 512, h: 320, fg: '#7dffb0', bg: '#0f1a2a', font: 'bold 190px monospace' }) }));
+  scr.position.z = 0.035; pw.add(scr);
+  wrap(stage, scene, [top], { cam: [0, 1.6, 5.0], look: [0.1, 1.3, 0] });
+});
+</script></body></html>

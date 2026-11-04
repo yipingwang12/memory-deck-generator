@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q13 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q13 — The SQUID buys TWO-SEVENTY bio to own all of A BIG MAMA.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#f0d8a8', fov: 38, sky: { zenith: '#f0a890', horizon: '#ffe8d0' } }), S = C.scene;
+const m = put(S, mama(), 1.35, 0, -0.2, -0.25, 2.3); toon(C, m);
+const q = addSquid(C, { x: -1.55, z: 0.7, s: 1.4, ry: 0.5 });
+put(S, dna({ h: 1.5, r: 0.2 }), -0.35, 0, 0.5, 0, 1); 
+const sg = label('270', { w: 1.1, h: 0.6, bg: '#fff6df', fg: '#2a4a9a', size: 0.8, border: '#2a4a9a' }); sg.position.set(-0.35, 1.95, 0.5); S.add(sg); cyl(S, mat('#6b4a2a'), 0.03, 0.03, 0.4, [-0.35, 1.5, 0.48]);
+reachW(q, 'l', [-0.1, 0.8, 0.8]);
+finish(C, { pos: [0, 1.5, 5.4], look: [0, 1.2, 0] });
+
+});
+</script></body></html>

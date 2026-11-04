@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Synthetic Neurobiology scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, glow, makeScene, synth, paw, note, bow, den, dancer, cheese, sauceBottle, spanner, eyeMask, gel, neuron, lightSwitch, lightCone, brain, church, rna, journal, tree, animeEyes } from './common.js';
+// q04 — 1000ExM swells tissue a thousand times in volume (1000 -> 00 = SAUCE).
+makeScene(({ scene }) => {
+  const s = synth(scene, { pos: [-2.4, 0, 1.0], scale: 1.9, l: [-1.1, 2.6, 0.9], r: [-3.4, 2.6, 1.0], ry: 0.35 });
+  const tiny = gel(0.22, 2); tiny.position.set(0.5, 0, 1.9); scene.add(tiny);
+  const big = gel(3.0, 4); big.position.set(2.8, 0, -0.5); scene.add(big);
+  for (const [x, z] of [[1.2, 0.2], [1.2, -0.5], [1.2, 0.9]]) add(scene, new THREE.ConeGeometry(0.14, 0.4, 14), glow('#ff8f00', 0.5), [x, 0.9 + z * 0.1, z], [0, 0, -Math.PI / 2]);
+  const sa = sauceBottle(1.4); sa.position.set(-0.3, 0, 0.0); scene.add(sa);
+  note(scene, [-1.9, 3.0, 1.0], '#ffd23c', 1.2);
+  return [s];
+}, { cam: [0.4, 1.9, 8.0], look: [0.4, 1.5, 0.3], fov: 44 });
+</script></body></html>

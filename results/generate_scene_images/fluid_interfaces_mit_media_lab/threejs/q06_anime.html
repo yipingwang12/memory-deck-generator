@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Fluid q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, add, box, cyl, ball, mat, setup, placeFlute, setCam, paperSheet, pencilProp, coin } from './common.js';
+guard(() => {
+  const env = setup({ school: [-3.6, -5.5] }); const { scene } = env;
+  // wooden board outside the school gate: a giant NAIL pins the alter ego's ideas
+  const bd = new THREE.Group(); bd.position.set(1.2, 0, 0); scene.add(bd);
+  box(bd, 0.15, 1.6, 0.15, '#7a4a2a', [-0.8, 0.8, 0]); box(bd, 0.15, 1.6, 0.15, '#7a4a2a', [0.8, 0.8, 0]);
+  box(bd, 2.0, 1.3, 0.1, '#b97b45', [0, 1.45, 0]);
+  paperSheet(bd, 1.0, 1.0, [0, 1.45, 0.08], [0, 0, 0.06]);
+  const nail = new THREE.Group(); nail.position.set(0.0, 1.55, 0.14); nail.rotation.set(1.0, 0, 0.35); nail.scale.setScalar(1.0); bd.add(nail);
+  cyl(nail, 0.08, 0.02, 0.9, '#c7ced6', [0, 0.2, 0], [0, 0, 0], { metalness: 0.7, roughness: 0.3 });
+  cyl(nail, 0.22, 0.22, 0.07, '#dfe5ec', [0, 0.69, 0], [0, 0, 0], { metalness: 0.7, roughness: 0.3 });
+  const fl = placeFlute(env, { s: 1.15, x: -1.0, z: 1.0, ry: 0.5, pose: { lean: 0.08, headTilt: 0.1 }, reach: ['l', [0.1, 1.3, 1.2]] });
+  // hammer in the flute's hand
+  const hm = new THREE.Group(); const hw = new THREE.Vector3(); fl.userData.parts.hands.l.getWorldPosition(hw); hm.position.copy(hw); hm.rotation.set(0, 0, 0.9); scene.add(hm);
+  cyl(hm, 0.04, 0.04, 0.8, '#9a6a3a', [0, 0.2, 0]); box(hm, 0.5, 0.24, 0.24, '#6b7480', [0, 0.65, 0], [0, 0, 0], { metalness: 0.6 });
+  // alter ego (purple flute) beside the board
+  placeFlute(env, { s: 1.15, x: 2.7, z: 0.8, ry: -0.5, color: '#8a4fd0', pose: { headTilt: -0.1 } });
+  setCam(env, { cx: 0.5, cy: 1.2, cz: 4.8, tx: 0.7, ty: 1.0 });
+  env.finish();
+});
+</script></body></html>

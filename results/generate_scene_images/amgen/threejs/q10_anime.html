@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Amgen scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — The GENIE reads the CODE book to find and check targets for human disease.
+import { THREE, run, mat, add, blob, tex, rng } from './common.js';
+function page(side) {
+  const r = rng(side === 1 ? 5 : 9), L = ['#e0483a', '#2a6fd8', '#2aa64c', '#e8a010'];
+  const t = tex(512, 640, (c, w, h) => {
+    c.fillStyle = '#fbf4de'; c.fillRect(0, 0, w, h); c.font = '900 40px "Courier New", monospace'; c.textBaseline = 'middle';
+    for (let j = 0; j < 12; j++) {
+      if (j === 4 || j === 8) { c.fillStyle = 'rgba(255,230,60,0.7)'; c.fillRect(20, 40 + j * 48 - 24, w - 40, 46); }
+      for (let i = 0; i < 12; i++) { const k = Math.floor(r() * 4); c.fillStyle = L[k]; c.fillText('ACGT'[k], 28 + i * 38, 40 + j * 48); }
+    }
+  });
+  return new THREE.MeshBasicMaterial({ map: t });
+}
+function target() {
+  const g = new THREE.Group(), cols = ['#e8e8e8', '#e0302e', '#e8e8e8', '#e0302e', '#e8e8e8', '#e0302e'];
+  cols.forEach((c, i) => add(g, new THREE.CylinderGeometry(1.0 - i * 0.16, 1.0 - i * 0.16, 0.1 + i * 0.012, 40), mat(c, { roughness: 0.6 }), [0, 0, 0], [Math.PI / 2, 0, 0]));
+  add(g, new THREE.CylinderGeometry(0.06, 0.06, 1.2, 8), mat('#333'), [0.1, 0.05, 0.6], [Math.PI / 2 + 0.1, 0, 0.1]);
+  for (const x of [-0.8, 0.8]) add(g, new THREE.CylinderGeometry(0.06, 0.06, 2.4, 8), mat('#7a4a22'), [x, -1.3, -0.2], [0, 0, -x * 0.12]);
+  return g;
+}
+run({
+  ground: '#d9c8a4', frame: { x: 1.0, y: 2.0, H: 5.2 },
+  genie: { x: -1.9, z: 0.3, scale: 1.65, ry: 0.6, pose: { lean: 0.25, headTilt: 0.1, arms: { l: [0, 1.0, 0.3], r: [0, -0.5, 0.3] } }, mouth: 0.15 },
+  build({ scene, reachTo }) {
+    add(scene, new THREE.BoxGeometry(3.6, 0.5, 1.8), mat('#8a5a34'), [0.8, 0.25, 0.9]);
+    const bk = new THREE.Group(); bk.position.set(0.8, 0.75, 0.9); bk.rotation.x = -1.1; scene.add(bk);
+    add(bk, new THREE.BoxGeometry(3.0, 2.0, 0.12), mat('#c8302e'), [0, 0, -0.1]);
+    for (const s of [-1, 1]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(1.35, 1.8), page(s)); p.position.set(s * 0.72, 0, -0.03); bk.add(p); }
+    const ml = new THREE.Group(); ml.position.set(-0.95, 0.75, 1.0); scene.add(ml);
+    add(ml, new THREE.CylinderGeometry(0.06, 0.06, 0.9, 10), mat('#5a3a1e'), [0.2, 0.25, 0], [0, 0, -0.35]);
+    add(ml, new THREE.TorusGeometry(0.55, 0.09, 12, 36), mat('#f2b82a', { metalness: 0.6, roughness: 0.3 }), [0.4, 0.95, 0]);
+    add(ml, new THREE.CircleGeometry(0.52, 32), new THREE.MeshStandardMaterial({ color: '#bfeaff', transparent: true, opacity: 0.35 }), [0.4, 0.95, 0.01]);
+    reachTo('l', [-0.75, 1.15, 1.0]);
+    const t = target(); t.position.set(4.2, 2.3, 0); t.rotation.y = -0.25; t.scale.setScalar(0.85); scene.add(t);
+    const ck = new THREE.Group(); ck.position.set(3.5, 0.75, 1.0);
+    add(ck, new THREE.BoxGeometry(0.25, 0.75, 0.15), mat('#2ab85a'), [-0.28, -0.1, 0], [0, 0, 0.7]);
+    add(ck, new THREE.BoxGeometry(0.25, 1.3, 0.15), mat('#2ab85a'), [0.15, 0.2, 0], [0, 0, -0.7]);
+    ck.scale.setScalar(1.1); scene.add(ck);
+  },
+});
+</script></body></html>

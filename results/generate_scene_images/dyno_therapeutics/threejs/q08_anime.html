@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q08</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const cap = capsid(0.5, '#ff6fa8', '#ffd23c'); cap.position.set(-0.2, 0.0, 0.2); sc.add(cap);
+  const p = puppy(1.9); p.position.set(-0.2, 0.92, 0.2); p.rotation.y = 1.0; sc.add(p); sign(sc, 'YAP!', [0.55, 2.2, 0.3], 1.1, 0.5, '#fff4b0', '#c0392b'); sign(sc, 'yp2', [-0.2, 0.35, 0.72], 0.3, 0.15, '#ffffff', '#222');
+  const tgt = brain(1.55); tgt.position.set(1.7, 0, -0.1); tgt.rotation.y = -0.5; sc.add(tgt);
+  for (let i = 0; i < 5; i++) blob(sc, mat('#ffd23c'), [0.75 + i * 0.22, 0.45 + i * 0.03, 0.5 - i * 0.05], [0.045, 0.045, 0.045]);
+  reachW(d, 'l', [-0.7, 0.75, 0.55]); reachW(d, 'r', [-0.75, 0.55, 0.0]);
+}, { dpos: [-1.6, 0, 0.6], dry: 1.15, scl: 1.45, cam: [0.3, 1.15, 5.0], look: [0.3, 0.9, 0],
+  pose: (d) => d.userData.pose({ lean: 0.12, headYaw: 0.0 }) });
+
+</script></body></html>

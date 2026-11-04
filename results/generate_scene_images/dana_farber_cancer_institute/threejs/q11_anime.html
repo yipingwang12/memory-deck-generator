@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q11</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// farmer plants first flag on a ROCK
+const S = boot(); const sc = S.scene;
+const rk = rock(1.6, '#8b8b92'); rk.position.set(0.9, 0, 0); sc.add(rk);
+const fg = flag('#e63a3a', 2.2); fg.position.set(0.9, 1.0, 0); sc.add(fg);
+for (const [x, z, r] of [[-2.8, -1.2, 0.4], [3.2, 0.6, 0.35]]) { const k = rock(r, '#8f8f96', 5); k.position.set(x, 0, z); sc.add(k); }
+const f = farmerAt(sc, { x: -1.0, z: 0.5, ry: 0.35, s: 1.9, pose: { lean: 0.1 } }); reachTo(f, 'l', [0.9, 1.7, 0.1]); reachTo(f, 'r', [0.95, 1.3, 0.1]);
+done(S, f, { pos: [0, 1.7, 6.2], look: [0, 1.5, 0] });
+});
+</script></body></html>

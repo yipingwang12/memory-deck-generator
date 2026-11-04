@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dyno q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { scene, THREE, mat, add, blob, box, cyl, sign, label, rng, createDinosaur, V3, reachW, strut } from './common.js';
+import { egg, dove, church, capsid, helix, kelp, brain, bean, muscleArm, rocket, waterTower, monkey, puppy, person } from './props.js';
+
+scene(({ sc, d }) => {
+  const names = ['NOVARTIS', 'SAREPTA', 'ROCHE', 'SPARK', 'ASTELLAS'];
+  const spots = [[0.12, 1.08], [-0.13, 0.7], [-0.29, 0.52], [-0.45, 0.39], [-0.62, 0.34]];
+  const cols = ['#e8422f', '#4a7ac8', '#2f9a52', '#ffb12b', '#8a4ad8'], bg = ['#f0742a', '#1f5fa8', '#c8222a', '#f2f2f2', '#e8a8c8'], fg = ['#ffffff', '#ffffff', '#ffffff', '#c0392b', '#7a1a4a'];
+  names.forEach((n, i) => {
+    const p = d.localToWorld(V3(0, spots[i][1], spots[i][0])), top = [3.9, 3.45, 3.0, 2.55, 2.1][i];
+    const g = person(cols[i], ['#222', '#ffd23c', '#fff', '#c0392b', '#2a2a40'][i], 2.7); g.position.copy(p).add(V3(0, -0.12, 0)); g.rotation.y = 0.2; sc.add(g);
+    strut(sc, mat('#7a5a38'), [p.x, p.y + 0.4, p.z], [p.x, top, p.z], 0.015);
+    sign(sc, n, [p.x - 0.7, top - 0.2, p.z + 0.02], 1.4, 0.42, bg[i], fg[i]);
+  });
+}, { dpos: [0.2, 0, 0], dry: 1.05, scl: 2.0, cam: [-0.5, 2.1, 7.0], look: [-0.5, 2.0, 0],
+  pose: (d) => d.userData.pose({ arms: { l: [0.2, 0.4, 0], r: [0.2, 0.4, 0] } }) });
+
+</script></body></html>

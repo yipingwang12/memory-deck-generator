@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>JACKS anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import { guard } from './kit.js';
+import { THREE, makeStage, createJacks, finishScene, num } from './common.js';
+guard(() => {
+  const stage = makeStage({ ground: '#e9dcc0' });
+  const g = new THREE.Group(); stage.scene.add(g);
+  let first;
+  [[-1.9, 0], [0, 0.6], [1.9, 1.3]].forEach(([x, ry], i) => {
+    const j = createJacks({ scale: 1.5 }); j.position.x = x; j.rotation.y = ry; stage.scene.add(j);
+    j.userData.pose(i === 1 ? { arms: { l: [0, 0.6] } } : {}); first ??= j;
+  });
+  finishScene(stage, g, { cam: [0, 1.0, 5.2], look: [0, 0.8, 0], clouds: false });
+});
+</script></body></html>

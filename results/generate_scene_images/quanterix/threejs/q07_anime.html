@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — The QUARTER finds one protein biomarker in a drop of blood.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#f6ddd2', sky: { cover: 0.7 } }), { scene } = ctx;
+const drop = dropMesh(0.85, '#d3102e', 0.9); drop.position.set(-1.7, 1.2, -0.2); scene.add(drop);
+const R = rng(6); for (let i = 0; i < 7; i++) { const a = R() * 6.28; blob(scene, mat('#7a0a1c'), [-1.7 + Math.cos(a) * 0.55, 1.0 + Math.sin(a) * 0.45 - 0.1, 0.6], [0.12, 0.12, 0.03], [0.3, 0.3, 0]); }
+const p = protein(0.14, '#ffe14a'); p.scale.setScalar(1.9); p.position.set(-1.7, 1.45, 1.0); scene.add(p);
+add(scene, new THREE.TorusGeometry(0.6, 0.03, 8, 48), new THREE.MeshBasicMaterial({ color: '#fff7b0' }), [-1.7, 1.45, 0.95]);
+const q = createQuarter({ scale: 1.9 }); q.position.set(1.3, 0, 0.5); q.rotation.y = -0.15; scene.add(q);
+q.userData.pose({ arms: { l: [0, 0.6] } });
+reachTo(q, 'r', [0.5, 1.2, 1.0]);
+const sp = mat('#d3102e'); for (let i = 0; i < 5; i++) blob(scene, sp, [-0.7 + i * 0.1, 0.05, 1.0 + i * 0.05], [0.07, 0.03, 0.07]);
+finishScene(ctx, q, { cam: [0, 1.6, 6.0], look: [-0.2, 1.4, 0] });
+
+});
+</script></body></html>

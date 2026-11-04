@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// A STOVE on a POLE sits in the big chair beside the PORTHOLE.
+import { THREE, guard, canvasTexture, rng, makeStage, createPorthole, makeShip, makePerson, makeZorro, makeCapsule, makeGlyph, textPlane, mat, add, blob, box, cyl, frame, toon } from './stage.js';
+guard(() => {
+  const stage = makeStage({}), s = stage.scene;
+  const red = mat('#b3262f'), gold = mat('#e8b93a', { metalness: 0.4, roughness: 0.4 });
+  const ch = new THREE.Group(); ch.position.set(1.5, 0, 0.2); s.add(ch);
+  box(ch, red, [0, 0.55, 0], [1.7, 0.3, 1.3]); box(ch, '#6a3a1c', [0, 0.25, 0], [1.7, 0.5, 1.3]);
+  box(ch, red, [0, 1.9, -0.55], [1.7, 2.6, 0.22]); box(ch, gold, [0, 3.25, -0.55], [1.8, 0.14, 0.3]);
+  for (const x of [-0.95, 0.95]) { box(ch, '#6a3a1c', [x, 0.95, 0.05], [0.2, 0.7, 1.3]); blob(ch, gold, [x * 1.0, 3.35, -0.55], [0.14, 0.14, 0.14]); }
+  const stripes = canvasTexture(128, (c, n) => { for (let i = 0; i < 8; i++) { c.fillStyle = i % 2 ? '#ffffff' : '#d92a35'; c.fillRect(0, i * n / 8, n, n / 8); } });
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 1.4, 20), new THREE.MeshStandardMaterial({ map: stripes })); pole.position.set(0, 1.4, 0.05); ch.add(pole);
+  blob(ch, gold, [0, 2.12, 0.05], [0.14, 0.1, 0.14]);
+  const st = new THREE.Group(); st.position.set(0, 2.55, 0.05); st.scale.setScalar(1.6); ch.add(st); const iron = mat('#26262e', { metalness: 0.3, roughness: 0.5 });
+  box(st, iron, [0, 0, 0], [0.95, 0.7, 0.7]); cyl(st, iron, [0.3, 0.7, -0.1], 0.08, 0.7);
+  for (const [x, z] of [[-0.22, -0.15], [0.22, -0.15], [-0.22, 0.17], [0.22, 0.17]]) cyl(st, '#555', [x, 0.37, z], 0.14, 0.04);
+  box(st, '#ff8a1a', [0, -0.08, 0.36], [0.6, 0.34, 0.02]); box(st, '#ffd23a', [0, -0.1, 0.375], [0.46, 0.2, 0.02]);
+  for (const x of [-0.3, 0, 0.3]) blob(st, gold, [x, 0.22, 0.36], [0.035, 0.035, 0.035]);
+  for (const x of [-0.22, 0.22]) { blob(st, '#fff', [x, 0.08, 0.37], [0.07, 0.08, 0.02]); blob(st, '#111', [x, 0.075, 0.385], [0.04, 0.05, 0.015]); }
+  const p = createPorthole({ scale: 2.1 }); p.position.set(-1.6, 0, 1.2); p.rotation.y = 0.4; p.userData.setMood('open');
+  p.userData.pose({ arms: { r: [0, -0.8, 0] } }); p.userData.reach('l', [0.7, 1.5, 0.3]); s.add(p);
+  toon(stage, p);
+  frame(stage, { cam: [0.2, 2.0, 7.6], look: [0.2, 1.9, 0] });});
+</script></body></html>

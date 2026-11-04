@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q03 — The JACKS repaint the JANITOR's door.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#b9a98f', sky: { cover: 1.2 } }); const sc = stage.scene;
+  box(sc, mat('#efe3c8'), [0.9, 1.6, -0.45], [5.6, 3.6, 0.2]); // wall
+  const door = new THREE.Group(); door.position.set(1.7, 0, -0.3); sc.add(door);
+  box(door, mat('#8b5a2b'), [0, 1.2, 0], [1.7, 2.4, 0.12]);
+  box(door, mat('#3a7cf0'), [0, 1.65, 0.07], [1.5, 1.35, 0.03]); // repainted half
+  box(door, mat('#8b5a2b'), [0, 0.5, 0.07], [1.5, 0.9, 0.02]);
+  blob(door, mat('#e8c14a', { metalness: 0.6, roughness: 0.3 }), [0.6, 1.1, 0.12], [0.07, 0.07, 0.07]);
+  const sign = textPlane('JANITOR', 1.5, 0.38, { bg: '#fff6dc', fg: '#222', px: 190 }); sign.position.set(0, 2.05, 0.1); door.add(sign);
+  // mop + bucket
+  const bk = new THREE.Group(); bk.position.set(-2.0, 0, 0.0); sc.add(bk);
+  cyl(bk, mat('#f2b233'), [0, 0.3, 0], 0.32, 0.6, [0, 0, 0], 0.4); add(bk, new THREE.TorusGeometry(0.32, 0.02, 8, 24), mat('#888'), [0, 0.6, 0], [Math.PI / 2, 0, 0]);
+  cyl(bk, mat('#6fc3ff', { transparent: true, opacity: 0.9 }), [0, 0.55, 0], 0.33, 0.04);
+  cyl(sc, mat('#b88a4a'), [-2.0, 1.0, -0.1], 0.03, 2.0, [0, 0, 0.1]); blob(sc, mat('#e8e0cf'), [-2.18, 0.05, -0.1], [0.3, 0.1, 0.25]);
+  const J = placeJack(stage, { x: -0.6, z: 0.9, s: 1.5, ry: 0.3 });
+  const hand = new THREE.Vector3(1.3, 1.9, 0.5); J.userData.aim('l', hand);
+  // roller at hand
+  const hp = J.userData.handPos('l'); const roller = new THREE.Group(); roller.position.copy(hp).add(new THREE.Vector3(0.1, 0.05, 0.1)); sc.add(roller);
+  cyl(roller, mat('#3a7cf0'), [0, 0, 0], 0.11, 0.55, [0, 0, Math.PI / 2]); cyl(roller, mat('#777'), [0.35, 0, 0], 0.015, 0.5, [0, 0, 0]);
+  // paint drips
+  for (const x of [0.9, 1.3, 1.65]) blob(sc, mat('#3a7cf0'), [x, 1.0 - (x * 7 % 0.2), -0.2], [0.04, 0.12, 0.02]);
+  finishScene(stage, J, { cam: [0.4, 1.5, 5.2], look: [0.4, 1.2, 0] });
+
+});
+</script></body></html>

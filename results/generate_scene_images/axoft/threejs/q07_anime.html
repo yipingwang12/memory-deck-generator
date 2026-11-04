@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The AXE taps gently to wake disorders of consciousness.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ ground: '#c9a979' });
+const wall = box(S.scene, mat('#f3d9b8'), [0, 2.2, -1.6], [11, 4.4, 0.2]);
+const win = new THREE.Mesh(new THREE.PlaneGeometry(2.2, 1.7), new THREE.MeshBasicMaterial({ color: '#ffe9a0' })); win.position.set(-2.4, 2.4, -1.48); S.scene.add(win);
+box(S.scene, mat('#8a5a2b'), [-2.4, 2.4, -1.5], [2.5, 2.0, 0.08]);
+const win2 = new THREE.Mesh(new THREE.PlaneGeometry(2.2, 1.7), new THREE.MeshBasicMaterial({ color: '#ffe9a0' })); win2.position.set(-2.4, 2.4, -1.44); S.scene.add(win2);
+// bed
+const wood = mat('#8a5a2b'); box(S.scene, wood, [0.3, 0.25, 0], [3.6, 0.5, 1.4]);
+box(S.scene, mat('#ffffff'), [0.3, 0.6, 0], [3.4, 0.2, 1.3]); box(S.scene, wood, [2.1, 0.8, 0], [0.12, 1.2, 1.4]);
+blob(S.scene, mat('#ffffff'), [1.35, 0.85, 0], [0.55, 0.16, 0.45]);
+const hu = human({ closed: true, shirt: '#8fb8e8', scale: 1.5 }); const g = new THREE.Group(); g.position.set(-0.4, 0.92, 0); g.rotation.y = -Math.PI / 2; hu.rotation.x = -Math.PI / 2; g.add(hu); S.scene.add(g);
+box(S.scene, mat('#e86a5a'), [-0.7, 0.98, 0.04], [1.5, 0.3, 1.2]);
+const a = placeAxe(S, { pos: [2.2, 0, 1.0], ry: -0.5, scale: 1.9, pose: { headTilt: 0.1, arms: { l: [0, 0.5, 0.3] } }, reach: { r: [1.4, 1.05, 0.4] } });
+for (const [x, y, s] of [[1.7, 2.2, 0.3], [2.1, 2.55, 0.4]]) { const z = textPlane('z', { w: s, h: s, bg: 'rgba(0,0,0,0)', fg: '#4a6fb8' }); }
+finish(S, [0.8, 1.5, 6.0], [0.9, 1.15, 0]);
+
+});
+</script></body></html>

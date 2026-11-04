@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Whitehead q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A LAY preacher (Lehmann) has directed the SNOWMAN since twenty-twenty.
+import { THREE, guard, rng, mat, add, blob, box, cyl, winterStage, clouds, pine, snowfall, person, lamb, hen, egg, pose, openBelly } from './props.js';
+import { createSnowman } from './snowman.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const { stage, scene, num } = winterStage(P);
+
+  pine(scene, -4.8, -3.0, 2.0); pine(scene, 5.4, -3.4, 2.2); pine(scene, 3.2, -4.8, 1.6);
+  const sm = createSnowman({ scale: 2.3 }); sm.position.set(-1.1, 0, 0); sm.rotation.y = 0.35; scene.add(sm);
+  sm.userData.pose({ arms: { l: [0, 1.0], r: [0, -1.1] }, headTilt: -0.05 });
+  const pr = person({ coat: '#26262e', kind: 'preacher', h: 1.7, hair: '#6b4a2a' }); pr.position.set(1.4, 0, 0.5); pr.rotation.y = -0.5; scene.add(pr);
+  pose(pr, 'l', 0, 0, 1.9); pose(pr, 'r', -1.35, 0, -0.3);   // l arm sweeps toward the snowman
+  const book = box(pr, mat('#7a2a2a'), [-0.1, 0.9, 0.4], [0.22, 0.04, 0.3]); book.rotation.set(0.2, 0, 0); box(pr, mat('#fffaf0'), [-0.1, 0.93, 0.4], [0.2, 0.03, 0.27]).rotation.set(0.2, 0, 0);
+  const nest = new THREE.Group(); nest.position.set(2.0, 0, 1.6); scene.add(nest);
+  add(nest, new THREE.TorusGeometry(0.28, 0.09, 10, 28), mat('#d9b25a'), [0, 0.09, 0], [Math.PI / 2, 0, 0]);
+  const h = hen(); h.scale.setScalar(2.4); h.position.set(0, 0.12, 0); h.rotation.y = -2.4; nest.add(h);
+  const e = egg(); e.position.set(0.38, 0.06, 0.34); e.scale.set(1.3, 1.7, 1.3); nest.add(e);
+  const e2 = egg('#ffeccc'); e2.position.set(-0.4, 0.06, 0.34); e2.scale.set(1.3, 1.7, 1.3); nest.add(e2);
+  stage.toonify(scene, (m) => m.geometry && m.geometry.type !== 'PlaneGeometry');
+  clouds(stage);
+  stage.camera.position.set(num('cx', 0.6), num('cy', 1.2), num('cz', 5.2));
+  stage.camera.lookAt(num('tx', 0.6), num('ty', 1.0), 0);
+  stage.finish();
+});
+</script></body></html>

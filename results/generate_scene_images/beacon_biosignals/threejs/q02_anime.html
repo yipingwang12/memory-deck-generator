@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Beacon q02</title><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body><script type="module">
+import { THREE, guard, rng, mat, glow, add, blob, box, textPlane, makeCloud, coinStack, makeBed, setup, beacon, wrap } from './common.js';
+// q02 — A DONUT in an MD coat and an MIT gown tends the BEACON.
+guard(() => {
+
+  const { stage, scene } = setup();
+  const b = beacon(scene, { x: -1.0, s: 1.25, yaw: 0.3, pose: { arms: { l: [0.1, 0.8, 0], r: [0, 0.4, 0] } } });
+  const d = new THREE.Group();
+  add(d, new THREE.CylinderGeometry(0.42, 0.52, 0.95, 28, 1, true, 1.2, Math.PI * 1.6), Object.assign(mat('#1c1c2e'), { side: THREE.DoubleSide }), [0, 0.55, -0.02]);
+  blob(d, mat('#ffffff'), [0, 0.5, 0.02], [0.4, 0.52, 0.3]);
+  for (const sx of [-1, 1]) box(d, mat('#f0f0f5'), [sx * 0.14, 0.78, 0.3], [0.14, 0.34, 0.03], [0, 0, sx * 0.4]);
+  add(d, new THREE.TorusGeometry(0.17, 0.028, 8, 24), mat('#d63a3a'), [0, 0.62, 0.3], [0.2, 0, 0]);
+  blob(d, mat('#c8ccd4', { metalness: 0.5 }), [0, 0.43, 0.33], [0.06, 0.06, 0.03]);
+  for (const sx of [-1, 1]) { add(d, new THREE.CylinderGeometry(0.03, 0.03, 0.2, 8), mat('#ffd9b8'), [sx * 0.22, 0.08, 0.05]); blob(d, mat('#3a5fa8'), [sx * 0.22, 0.0, 0.1], [0.07, 0.04, 0.1]); }
+  // donut head
+  const head = new THREE.Group(); head.position.y = 1.4; d.add(head);
+  add(head, new THREE.TorusGeometry(0.36, 0.17, 20, 40), mat('#e2a45c'));
+  add(head, new THREE.TorusGeometry(0.36, 0.165, 20, 40), mat('#ff7fb0', { roughness: 0.3 }), [0, 0, 0.05], [0, 0, 0], [1.02, 1.02, 0.8]);
+  const r = rng(3); for (let i = 0; i < 26; i++) { const a = r() * 6.28, rr = 0.26 + r() * 0.2; box(head, mat(['#fff', '#ffd23a', '#47c0ff', '#7de06b'][i % 4]), [Math.cos(a) * rr, Math.sin(a) * rr, 0.17], [0.06, 0.016, 0.016], [0, 0, a * 3]); }
+  for (const sx of [-1, 1]) { blob(head, mat('#fff', { roughness: 0.3 }), [sx * 0.3, 0.06, 0.2], [0.06, 0.08, 0.02]); blob(head, mat('#2a1620'), [sx * 0.3, 0.05, 0.215], [0.04, 0.06, 0.02]); blob(head, mat('#fff'), [sx * 0.3 - 0.012, 0.085, 0.235], [0.014, 0.014, 0.01]); }
+  box(head, mat('#15151f'), [0, 0.5, 0], [0.7, 0.05, 0.7], [0.0, 0.4, 0.0]); add(head, new THREE.CylinderGeometry(0.22, 0.24, 0.16, 20), mat('#15151f'), [0, 0.42, 0]);
+  add(head, new THREE.CylinderGeometry(0.012, 0.012, 0.3, 6), mat('#e8b52a'), [0.3, 0.38, 0.28], [0.2, 0, 0.1]);
+  d.position.set(1.15, 0, 0.1); d.rotation.y = -0.45; d.scale.setScalar(1.1); scene.add(d);
+  // logs
+  for (let i = 0; i < 3; i++) add(scene, new THREE.CylinderGeometry(0.07, 0.07, 0.55, 12), mat('#8a5a34'), [-0.15 + i * 0.01, 0.07 + (i === 2 ? 0.12 : 0), 0.7 - (i % 2) * 0.1 + (i === 2 ? 0.05 : 0)], [0, 0, Math.PI / 2 + 0.1 * i]);
+  wrap(stage, scene, [b, d], { pos: [0.1, 1.05, 4.6], look: [0.1, 0.8, 0] });
+});
+</script></body></html>

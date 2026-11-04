@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — A DOUGHNUT (Doudna) with a gold Nobel medal plants a flag beside the OWL.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial } from './common.js';
+guard(() => {
+
+  const ctx = makeStage(); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.1 }); owl.position.set(-1.1, 0, 0.2); owl.rotation.y = 0.45; scene.add(owl);
+  const f1 = flag('#e63946', 1.15); f1.position.set(-0.35, 0, 0.6); scene.add(f1); owl.userData.reach('l', [0.5, 0.55, 0.35]);
+  // upright doughnut with a pink glaze, a gold medal and its own flag through the hole
+  const dn = new THREE.Group(); dn.position.set(1.0, 0.8, 0); scene.add(dn);
+  add(dn, new THREE.TorusGeometry(0.5, 0.26, 28, 56), mat('#d9964a'));
+  add(dn, new THREE.TorusGeometry(0.5, 0.24, 28, 56, Math.PI * 2), mat('#ff8fc0', { roughness: 0.3 }), [0, 0.0, 0.05], [0, 0, 0], [1, 1, 0.9]);
+  const r = rng(9); for (let i = 0; i < 34; i++) { const a = r() * 6.28, b = r() * 1.0 - 0.1; const R = 0.5 + 0.2 * Math.cos(b); add(dn, new THREE.CylinderGeometry(0.012, 0.012, 0.07, 6), mat(['#fff', '#ffd23a', '#58c8ff', '#9be564'][i % 4]), [Math.cos(a) * R, Math.sin(a) * R, 0.2 * Math.sin(b) + 0.14], [r() * 3, r() * 3, 0]); }
+  // eyes + smile
+  for (const s of [-1, 1]) { blob(dn, '#1a1210', [s * 0.12, 0.62, 0.3], [0.04, 0.055, 0.02]); blob(dn, '#fff', [s * 0.12 + 0.012, 0.635, 0.32], [0.014, 0.014, 0.01]); }
+  const m = gold(dn);
+  function gold(p) {
+    const g = new THREE.Group(); g.position.set(0, -0.1, 0.32); g.scale.setScalar(1.3); p.add(g);
+    box(g, '#d62839', 0.12, 0.6, 0.02, [0, 0.42, -0.03]);
+    add(g, new THREE.CylinderGeometry(0.2, 0.2, 0.045, 40), mat('#ffd23a', { metalness: 0.8, roughness: 0.25 }), [0, 0, 0], [Math.PI / 2, 0, 0]);
+    add(g, new THREE.CylinderGeometry(0.14, 0.14, 0.05, 40), mat('#f5b50a', { metalness: 0.8, roughness: 0.3 }), [0, 0, 0.0], [Math.PI / 2, 0, 0]);
+    return g;
+  }
+  const f2 = flag('#3a5fcd', 1.0); f2.position.set(1.0, 1.52, 0); f2.scale.setScalar(0.4); scene.add(f2);
+  finish(ctx, [owl], [0.05, 1.0, 4.3], [0, 0.75, 0]);
+
+});
+</script></body></html>

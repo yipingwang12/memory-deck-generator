@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q06 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The first human study: FINE delicate FINESSE.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({});
+const a = placeAxe(S, { pos: [-0.8, 0, 0.5], ry: 0.4, scale: 1.95, pose: { headTilt: 0.1, arms: { r: [0, -0.7, 0.3] } }, reach: { l: [0.2, 0.85, 1.0] } });
+const h = hand(a, 'l');
+// fine bone-china teacup, pinky out
+const cup = new THREE.Group(); cup.position.set(h.x + 0.3, h.y - 0.1, h.z + 0.1); S.scene.add(cup);
+const pts = []; for (let i = 0; i <= 10; i++) { const t = i / 10; pts.push(new THREE.Vector2(0.06 + 0.12 * Math.sin(t * 1.4 + 0.3), t * 0.2)); }
+add(cup, new THREE.LatheGeometry(pts, 28), mat('#ffffff', { roughness: 0.2, side: THREE.DoubleSide }));
+add(cup, new THREE.TorusGeometry(0.17, 0.012, 8, 28), mat('#ffc928', { metalness: 0.6 }), [0, 0.2, 0], [Math.PI / 2, 0, 0]);
+add(cup, new THREE.CylinderGeometry(0.2, 0.2, 0.015, 24), mat('#ffffff'), [0, -0.01, 0]);
+cup.scale.setScalar(2.6);
+const hu = human({ shirt: '#f2f6ff', scale: 1.8, hair: '#5a3a28' }); hu.position.set(1.5, 0, 0.3); hu.rotation.y = -0.35; S.scene.add(hu);
+// thin electrode thread on the volunteer's forehead
+const hp = hu.userData.head.getWorldPosition(new THREE.Vector3());
+add(S.scene, new THREE.TorusGeometry(0.38, 0.025, 8, 36), mat('#ff6fa4'), [hp.x, hp.y + 0.18, hp.z], [Math.PI / 2 + 0.15, 0, 0]); blob(S.scene, mat('#ffe14a'), [hp.x - 0.05, hp.y + 0.2, hp.z + 0.38], [0.06, 0.06, 0.04]);
+// 1st star
+const sm = new THREE.Mesh(new THREE.ExtrudeGeometry(starShape(0.35, 0.15), { depth: 0.06, bevelEnabled: false }), mat('#ffc928', { metalness: 0.4 })); sm.position.set(0.5, 2.95, 0); S.scene.add(sm);
+finish(S, [0.4, 1.5, 6.4], [0.4, 1.45, 0]);
+
+});
+</script></body></html>

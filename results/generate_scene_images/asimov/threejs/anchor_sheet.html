@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Asimo anchor sheet</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, createAsimo, wrap } from './common.js';
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#f1d9b0', fov: 28 });
+  const rs = [];
+  [[-1.0, 0.0, 0], [0, 1.0, 1], [1.0, -2.4, 2]].forEach(([x, ry, i]) => {
+    const a = createAsimo({ scale: 1.5 }); a.position.x = x * 1.15; a.rotation.y = ry;
+    a.userData.pose(i === 1 ? { arms: { l: [0, 0.4], r: [0, 0.4] } } : { arms: { l: [0, 0.5], r: [0, 0.5] } });
+    if (i === 0) { a.userData.reach('l', [0.28, 0.75, 0.15]); }
+    scene.add(a); rs.push(a);
+  });
+  wrap(stage, scene, rs, { cam: [0, 0.9, 5.2], look: [0, 0.7, 0], clouds: false });
+});
+</script></body></html>

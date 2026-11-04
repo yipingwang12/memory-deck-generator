@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Atlas Venture q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from "./kit.js";
+import { THREE, mat, add, blob, box, cyl, makeStage, finishScene, placeTitan, coin, coinHeap, bag, horse, owl, house, sapling, rails, railwayCar } from "./props.js";
+guard(() => {
+  const ctx = makeStage(), { scene, num } = ctx;
+  const rl = rails(30, -1.6); scene.add(rl);
+  const car = railwayCar(); car.scale.setScalar(1.5); car.position.set(-0.6, 0, -1.6); scene.add(car);
+  const b = bag({ label: '14', size: 2.0 }); b.position.set(1.7, 0, 0.3); scene.add(b);
+  for (let i = 0; i < 6; i++) coin(scene, [1.55 + i * 0.03, 1.5 - i * 0.2, 0.1 - i * 0.05], 0.1, [1 + i, i, 0.3]);
+  coinHeap(scene, [1.7, 1.25, 0.3], 0.35, 4);
+  const t = placeTitan(scene, { pos: [3.1, 0, 0.6], yaw: -0.5, scale: 1.7, armLen: 1.3, pose: { lean: 0.08, headTilt: 0.1, legs: { l: [0.1, 0], r: [-0.1, 0] } }, hands: { l: [2.5, 1.1, 0.9], r: [2.2, 0.9, 0.0] }, poles: { l: [1, -0.3, 0], r: [-1, -0.3, 0] } });
+  finishScene(ctx, [t], { pos: [0.2, 1.3, 6.8], look: [0.2, 1.1, -0.5] });
+});
+</script></body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>J&J q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q05 — The JACKS buy a MOMENT clock in Cambridge.
+import { guard } from './kit.js';
+import { THREE, num, mat, add, box, blob, cyl, rng, makeStage, placeJack, finishScene, textPlane, createJacks } from './common.js';
+guard(() => {
+
+  const stage = makeStage({ ground: '#9ccf72' }); const sc = stage.scene;
+  add(sc, new THREE.PlaneGeometry(400, 3.5), mat('#4aa3e8'), [0, 0.01, -5], [-Math.PI / 2, 0, 0]); // river
+  const clock = new THREE.Group(); clock.position.set(1.4, 0, 0); clock.scale.setScalar(0.85); sc.add(clock);
+  box(clock, mat('#7a3f1d'), [0, 0.15, 0], [1.6, 0.3, 0.9]); box(clock, mat('#7a3f1d'), [0, 1.0, 0], [0.5, 1.4, 0.5]);
+  const rim = add(clock, new THREE.TorusGeometry(0.95, 0.12, 16, 48), mat('#e8b33a', { metalness: 0.6, roughness: 0.3 }), [0, 2.3, 0]);
+  cyl(clock, mat('#fffaf0'), [0, 2.3, 0], 0.95, 0.12, [Math.PI / 2, 0, 0]);
+  for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; blob(clock, mat('#222'), [Math.sin(a) * 0.78, 2.3 + Math.cos(a) * 0.78, 0.09], i % 3 ? [0.04, 0.04, 0.03] : [0.07, 0.07, 0.03]); }
+  box(clock, mat('#222'), [0.0, 2.55, 0.1], [0.07, 0.5, 0.03]);
+  const mh = box(clock, mat('#222'), [0.22, 2.32, 0.1], [0.5, 0.06, 0.03], [0, 0, 0.5]); blob(clock, mat('#c01f2f'), [0, 2.3, 0.12], [0.07, 0.07, 0.04]);
+  const tag = textPlane('MOMENT', 1.5, 0.4, { bg: '#c01f2f', fg: '#fff', px: 200 }); tag.position.set(0, 0.2, 0.46); clock.add(tag);
+  const J = placeJack(stage, { x: -1.5, z: 0.8, s: 1.5, ry: 0.35, pose: { arms: { r: [0, -0.3] } } }); J.userData.aim('l', new THREE.Vector3(0.6, 1.9, 0.8));
+  // coin stack held out
+  for (let i = 0; i < 6; i++) cyl(sc, mat('#ffcf3a', { metalness: 0.6, roughness: 0.3 }), [-0.1, 0.05 + i * 0.07, 1.0], 0.2, 0.06);
+  finishScene(stage, J, { cam: [0, 1.7, 5.8], look: [0, 1.5, 0] });
+
+});
+</script></body></html>

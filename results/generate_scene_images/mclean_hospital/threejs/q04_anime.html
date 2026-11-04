@@ -1,0 +1,35 @@
+<!doctype html><html><head><title>McLean q04</title><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script></head><body>
+<script type="module">
+import { THREE, mat, add, blob, num, rng, makeStage, finishScene, guard, HEAD } from './stage_common.js';
+import { createBroom } from './broom.js';
+import * as P from './props.js';
+guard(() => {
+  const stage = makeStage(), scene = stage.scene;
+  const ground = (c, y = 0) => add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, y, 0], [-Math.PI / 2, 0, 0]);
+
+  ground('#c9d8a8'); add(scene, new THREE.BoxGeometry(40, 3.6, 0.2), mat('#f2e8d8'), [0, 1.8, -3.4]);
+  const people = [[-2.2, '#e85a5a', 'happy', '#ffd24a', '#5fd0ff'], [0.0, '#4a78d8', 'flat', '#b8c4d8', '#7af0b0'], [2.2, '#6ab86a', 'sad', '#8ab4e8', '#ffb35f']];
+  const ps = [];
+  for (const [x, shirt, mood, mc, hue] of people) {
+    const g = new THREE.Group(); g.position.set(x, 0, -0.9); scene.add(g);
+    for (const s of [-1, 1]) { P.seg(g, [s*0.1, 0.05, 0], [s*0.1, 0.85, 0], 0.075, mat('#3b4a73')); blob(g, mat('#2a2220'), [s*0.1, 0.04, 0.05], [0.09, 0.05, 0.13]); }
+    add(g, new THREE.CylinderGeometry(0.22, 0.26, 0.75, 24), mat(shirt), [0, 1.2, 0]);
+    add(g, new THREE.BoxGeometry(0.2, 0.22, 0.03), mat('#2c3a5e'), [0.12, 0.72, 0.17]);
+    const ph = P.buildPhone(hue); ph.scale.setScalar(1.9); ph.position.set(0.12, 0.9, 0.2); ph.rotation.z = 0.08; g.add(ph);
+    blob(g, mat('#ffd9b8'), [0, 1.75, 0], [0.19, 0.2, 0.19]); blob(g, mat('#4a3020'), [0, 1.84, -0.03], [0.2, 0.15, 0.2]);
+    for (const s of [-1, 1]) { blob(g, mat('#fff'), [s*0.07, 1.76, 0.165], [0.045, 0.055, 0.02]); blob(g, mat('#3a2418'), [s*0.07, 1.755, 0.18], [0.033, 0.044, 0.02]); P.seg(g,[s*0.28,1.45,0],[s*0.32,0.95,0.02],0.045,mat(shirt)); blob(g, mat('#ffd9b8'), [s*0.32,0.9,0.02],[0.055,0.055,0.055]); }
+    const mf = P.moodFace(mood, mc); mf.position.set(x, 2.95, -0.5); mf.scale.setScalar(1.5); scene.add(mf);
+    const link = add(scene, new THREE.TorusGeometry(0.14, 0.02, 8, 24, Math.PI), new THREE.MeshBasicMaterial({ color: hue }), [x, 1.5, 0], [0, 0, 0]).visible = false;
+    ps.push(g);
+    for (let i = 0; i < 4; i++) blob(scene, new THREE.MeshBasicMaterial({ color: hue }), [x + 0.12 + 0.03*i, 1.15 + i*0.45, -0.6], [0.035+0.01*i, 0.035+0.01*i, 0.035]);
+  }
+  const b = createBroom({ scale: 1.6 }); b.position.set(1.0, 0, 0.9); b.rotation.y = -0.35; scene.add(b); b.userData.pose({ headTilt: -0.07 }); b.updateMatrixWorld(true);
+  const lens = new THREE.Group(); lens.position.set(0.1, 1.05, 0.5); scene.add(lens);
+  add(lens, new THREE.TorusGeometry(0.35, 0.05, 12, 32), mat('#b8862e', { metalness: 0.6, roughness: 0.3 })); add(lens, new THREE.CircleGeometry(0.34, 32), new THREE.MeshStandardMaterial({ color: '#cfeeff', transparent: true, opacity: 0.35 }));
+  add(lens, new THREE.CylinderGeometry(0.04, 0.04, 0.6, 10), mat('#6a4425'), [0.3, -0.5, 0], [0, 0, -0.5]);
+  const t = b.worldToLocal(new THREE.Vector3(0.5, 1.0, 0.55)); b.userData.reach('l', [t.x, t.y, t.z]);
+  const t2 = b.worldToLocal(new THREE.Vector3(0.9, 0.8, 0.8)); b.userData.reach('r', [t2.x, t2.y, t2.z]);
+  finishScene(stage, scene, [b, ...ps], [0, 1.6, 5.9], [0, 1.4, 0]);
+
+});
+</script></body></html>

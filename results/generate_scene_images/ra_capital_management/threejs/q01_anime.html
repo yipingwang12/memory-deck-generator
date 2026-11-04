@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RA q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 — inside the SCARAB (shell open) a TECH ATLAS book holds its research and data.
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createScarab } from './scarab.js';
+import { mat, add, blob, box, makeStage, finishScene, meadow } from './common.js';
+
+const cover = () => canvasTexture(512, (ctx, s) => {
+  ctx.fillStyle = '#0f2a5c'; ctx.fillRect(0, 0, s, s);
+  ctx.strokeStyle = '#3ad0ff'; ctx.lineWidth = 3; const r = rng(9);
+  for (let i = 0; i < 14; i++) { let x = r() * s, y = r() * s; ctx.beginPath(); ctx.moveTo(x, y); for (let k = 0; k < 4; k++) { x += (r() - 0.5) * 140; y = Math.max(0, Math.min(s, y + (r() - 0.5) * 140)); ctx.lineTo(x, y); } ctx.stroke(); ctx.fillStyle = '#3ad0ff'; ctx.fillRect(x - 5, y - 5, 10, 10); }
+  ctx.fillStyle = 'rgba(15,42,92,0.85)'; ctx.fillRect(20, 110, 472, 290);
+  ctx.strokeStyle = '#f2c230'; ctx.lineWidth = 8; ctx.strokeRect(20, 110, 472, 290);
+  ctx.fillStyle = '#f2c230'; ctx.font = 'bold 118px Georgia, serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText('TECH', 256, 200); ctx.fillText('ATLAS', 256, 335);
+});
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  meadow(scene);
+  const s = createScarab({ scale: 2.1 }); s.position.set(0, 0, 0); s.rotation.y = 0.55; s.userData.open(1.15); scene.add(s);
+  // book standing in the opened shell, cover to camera
+  const book = new THREE.Group(); book.position.set(0, 0.8, -0.2); book.rotation.set(-0.15, 0.55 + Math.PI, 0); s.add(book);
+  book.rotation.set(-0.1, 0, 0); book.scale.setScalar(0.8); book.position.set(0, 0.2, -0.12);
+  const cm = new THREE.MeshStandardMaterial({ map: cover(), roughness: 0.5 }), pg = mat('#f4ead0'), edge = mat('#0a1d40');
+  add(book, new THREE.BoxGeometry(0.62, 0.8, 0.12), edge, [0, 0.4, 0]);
+  add(book, new THREE.PlaneGeometry(0.62, 0.8), cm, [0, 0.4, 0.062]);
+  add(book, new THREE.BoxGeometry(0.58, 0.76, 0.1), pg, [0.02, 0.4, -0.08]);
+  // glowing data motes: DNA-ish orbs, chart bars, a mini globe above the book
+  const glow = (c) => mat(c, { emissive: c, emissiveIntensity: 0.7 });
+  for (let i = 0; i < 9; i++) blob(s, glow(i % 3 ? '#3ad0ff' : '#ffd84a'), [Math.sin(i * 1.4) * 0.3, 0.95 + i * 0.05, -0.1 + Math.cos(i * 1.4) * 0.12], [0.025, 0.025, 0.025]);
+  const g = new THREE.Mesh(new THREE.SphereGeometry(0.1, 24, 16), new THREE.MeshStandardMaterial({ color: '#3a8ad8', emissive: '#1a5ab8', emissiveIntensity: 0.4 }));
+  g.position.set(0.38, 0.95, -0.1); s.add(g);
+  s.userData.reach('l', [0.34, 0.3, 0.5]); s.userData.reach('r', [-0.34, 0.3, 0.5]);
+  finishScene(stage, scene, [s], [num('cx', 0.5), num('cy', 1.6), num('cz', 4.6)], [num('tx', 0.0), num('ty', 0.7), 0]);
+});
+</script></body></html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — NEX-Z clears TTR amyloid from the OWL's nerves.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#f0e2c8' }); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.35 }); owl.position.set(-1.3, 0, 0.3); owl.rotation.y = 0.5; scene.add(owl);
+  owl.userData.reach('l', [0.7, 0.45, 0.3]);
+  // nerve cord from the wing with branching ends
+  const nerveM = mat('#ffd23a', { roughness: 0.35, emissive: '#e8a800', emissiveIntensity: 0.25 });
+  const path = (pts, r) => add(scene, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 60, r, 12), nerveM);
+  path([[-1.3, 0.62, 0.55], [-0.5, 0.45, 0.6], [0.4, 0.6, 0.55], [1.3, 0.5, 0.6], [2.1, 0.7, 0.6]], 0.1);
+  path([[1.3, 0.5, 0.6], [1.9, 0.3, 0.6], [2.4, 0.2, 0.6]], 0.05); path([[0.4, 0.6, 0.55], [0.7, 1.0, 0.5], [1.0, 1.35, 0.5]], 0.05);
+  // purple amyloid clumps on the right half of the cord; none on the cleared left half
+  const r = rng(5);
+  for (const [x, y] of [[0.5, 0.62], [0.78, 0.58], [1.05, 0.52], [1.3, 0.5], [1.6, 0.56], [1.9, 0.62], [0.72, 1.02]]) {
+    const c = add(scene, new THREE.IcosahedronGeometry(0.15 + r() * 0.08, 1), mat('#7a3fb0', { roughness: 0.5 }), [x, y + 0.08, 0.6]);
+    c.scale.set(1, 0.8 + r() * 0.5, 1); }
+  const sign = new THREE.Group(); sign.position.set(1.0, 1.75, 0.5); scene.add(sign);
+  const t = textPlane('TTR', 0.8, 0.4, { bg: '#f4f1e8', fg: '#6a2f9a', font: 'bold 200px Arial', border: '#6a2f9a' }); sign.add(t); cyl(sign, '#7a5230', 0.02, 0.02, 0.8, [0, -0.6, 0]);
+  const v = vial('NEX-Z', '#43c98a', 0.8); v.position.set(2.1, 0, 0.9); v.scale.setScalar(1.7); v.rotation.y = -0.2; scene.add(v);
+  for (let i = 0; i < 6; i++) bubble(scene, [1.8 - i * 0.22, 1.35 - 0.1 * i + (i % 2) * 0.1, 0.9], 0.08 + 0.01 * i, '#9ff0c8');
+  finish(ctx, [owl], [0.5, 1.0, 4.5], [0.5, 0.8, 0]);
+
+});
+</script></body></html>

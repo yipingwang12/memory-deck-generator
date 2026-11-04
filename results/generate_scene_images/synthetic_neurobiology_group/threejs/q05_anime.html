@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Synthetic Neurobiology scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, glow, makeScene, synth, paw, note, bow, den, dancer, cheese, sauceBottle, spanner, eyeMask, gel, neuron, lightSwitch, lightCone, brain, church, rna, journal, tree, animeEyes } from './common.js';
+// q05 — EXSEQ reads RNA right where it sits (in situ).
+makeScene(({ scene }) => {
+  const s = synth(scene, { pos: [-1.5, 0, 0.6], scale: 1.8, ry: 0.3, l: [-0.9, 2.2, 1.0], r: [-2.1, 2.2, 1.0] });
+  const slab = add(scene, new THREE.BoxGeometry(2.6, 0.5, 1.4), mat('#f3a6b8'), [1.4, 0.25, 0]);
+  add(scene, new THREE.BoxGeometry(2.62, 0.08, 1.42), mat('#e86f8c'), [1.4, 0.54, 0]);
+  const cc = ['#ff6b9d', '#c77dff', '#ffb3c6'];
+  for (let i = 0; i < 8; i++) { const x = 0.5 + (i % 4) * 0.62, z = (i < 4 ? -0.3 : 0.3); blob(scene, mat(cc[i % 3]), [x, 0.62, z], [0.2, 0.12, 0.2]); const r = rna(1.0 + (i % 3) * 0.25, i + 1); r.position.set(x, 0.62, z); scene.add(r); }
+  const lens = new THREE.Group(); add(lens, new THREE.TorusGeometry(0.62, 0.07, 14, 40), mat('#2a2a30', { metalness: 0.5 }));
+  add(lens, new THREE.CircleGeometry(0.6, 36), mat('#cfeeff', { transparent: true, opacity: 0.28, depthWrite: false }));
+  add(lens, new THREE.CylinderGeometry(0.06, 0.06, 0.9, 12), mat('#8b4a1e'), [-0.45, -0.85, 0], [0, 0, -0.5]);
+  lens.position.set(0.2, 2.9, 0.9); lens.rotation.x = -0.15; scene.add(lens);
+  for (const x of [0.5, 1.1, 1.7]) add(scene, new THREE.ConeGeometry(0.03, 0.4, 8), glow('#ffd23c', 0.8), [x + 0.2, 2.2, 0.9], [Math.PI, 0, 0]);
+  note(scene, [-1.7, 3.0, 0.6], '#4dd2ff', 1.1);
+  return [s];
+}, { cam: [0.2, 1.9, 5.8], look: [0.1, 1.4, 0.4], fov: 42 });
+</script></body></html>

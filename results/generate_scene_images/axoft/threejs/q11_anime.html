@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q11 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// A CP chicken leads the AXE fifty-five-million Series A.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ ground: '#78b04a' });
+for (let i = 0; i < 9; i++) tree(S.scene, [-7 + i * 1.8, -5 - (i % 2)], 3.2);
+const a = placeAxe(S, { pos: [-2.0, 0, 0.5], ry: 0.4, scale: 1.95, pose: { headTilt: 0.07, arms: { r: [0, -0.5, 0.3] } }, reach: { l: [-1.4, 1.0, 1.05] } });
+// chicken facing camera, wearing a CP vest
+const ck = new THREE.Group(); ck.position.set(1.9, 0, 0.3); ck.rotation.y = -0.55; ck.scale.setScalar(1.45); S.scene.add(ck);
+const wh = mat('#fffaf0', { roughness: 0.9 }), orange = mat('#f59a1c'), rd = mat('#e8383d');
+blob(ck, wh, [0, 0.72, 0], [0.42, 0.45, 0.52]); blob(ck, wh, [0, 0.95, -0.5], [0.13, 0.3, 0.2], [0.7, 0, 0]);
+const hd = new THREE.Group(); hd.position.set(0, 1.3, 0.38); ck.add(hd); blob(hd, wh, [0, 0, 0], [0.24, 0.24, 0.23]);
+for (const [x, y] of [[-0.07, 0.28], [0, 0.31], [0.07, 0.28]]) blob(hd, rd, [x, y, 0], [0.06, 0.07, 0.05]);
+blob(hd, rd, [0, -0.2, 0.12], [0.05, 0.09, 0.04]); add(hd, new THREE.ConeGeometry(0.07, 0.2, 12), orange, [0, -0.03, 0.27], [Math.PI / 2, 0, 0]);
+eyes(hd, { y: 0.06, z: 0.2, gap: 0.1, size: 0.05, iris: '#2a1a10' });
+for (const s of [-1, 1]) { blob(ck, wh, [s * 0.42, 0.72, -0.05], [0.1, 0.28, 0.4]); seg(ck, orange, [s * 0.15, 0.4, 0], [s * 0.15, 0.03, 0.05], 0.035); blob(ck, orange, [s * 0.15, 0.03, 0.12], [0.07, 0.025, 0.14]); }
+const vest = textPlane('CP', { w: 0.55, h: 0.4, bg: '#f59a1c', fg: '#ffffff', frame: '#ffffff' }); vest.position.set(0, 0.7, 0.56); ck.add(vest);
+// $55M bag, held at the axe's hand
+const hp = hand(a, 'l'), bag = new THREE.Group(); bag.position.set(hp.x + 0.65, hp.y - 0.05, hp.z + 0.1); bag.scale.setScalar(1.1); S.scene.add(bag);
+blob(bag, mat('#c9a56b'), [0, 0, 0], [0.4, 0.42, 0.36]); blob(bag, mat('#c9a56b'), [0, 0.42, 0], [0.16, 0.14, 0.14]); add(bag, new THREE.TorusGeometry(0.11, 0.025, 8, 16), mat('#7a4b22'), [0, 0.32, 0], [Math.PI / 2, 0, 0]);
+const t = textPlane('$55M', { w: 0.6, h: 0.3, bg: '#fff6d6', fg: '#1f7a3a' }); t.position.set(0, 0, 0.37); bag.add(t);
+coinStack(S.scene, [0.2, 0, 1.4], 8, 0.25); coinStack(S.scene, [-0.25, 0, 1.7], 5, 0.25);
+finish(S, [0, 1.6, 7.4], [0, 1.5, 0]);
+
+});
+</script></body></html>

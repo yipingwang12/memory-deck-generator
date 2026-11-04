@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Broad q05 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, box, cyl, sign, textMat, setup, grab, makeDome, makeShield, makeTelescope, makeCell, makeMouse, makeSumo, makeLander, makeRiver, makeNose, sparks, rng } from './common.js';
+guard(() => {
+const P = new URLSearchParams(location.search);
+const st = setup(P, { cam: [0, 1.6, 6.2], look: [0, 1.2, 0], ground: '#7fae6a' });
+const sc = st.scene;
+sc.add(makeRiver([[3.6, -4], [2.4, -1.5], [3.2, 0.8], [1.6, 3.0], [2.4, 5]], 1.6));
+const sw = st.sword({ scale: 1.15, pos: [-1.5, 0, 0.5], ry: 0.5 });
+sw.userData.pose({ arms: { l: [0, 0.4, 0.3] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+const t = makeTelescope(1.5); t.position.set(-0.2, 1.2, 1.2); t.rotation.set(0, -0.15, 0.25); sc.add(t);
+cyl(sc, mat('#5a3a1a'), [-0.55, 0.5, 1.2], 0.05, 1.0); 
+grab(sw, 'r', [-0.5, 1.05, 1.1]);
+const nose = makeNose(1.2); nose.position.set(-3.0, 0, -1.5); nose.rotation.y = 0.5; sc.add(nose);
+for (let i = 0; i < 6; i++) blob(sc, mat('#ffffff', { transparent: true, opacity: 0.8 }), [1.6 + (i % 3) * 0.7, 0.05, -2 + i * 1.4 + (i % 2)], [0.35, 0.03, 0.12]);
+st.finishScene();
+});
+</script></body></html>

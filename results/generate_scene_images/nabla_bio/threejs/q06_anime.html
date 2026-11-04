@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nabla q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import * as C from './common.js';
+const { THREE, mat, add, blob, box, cyl, bar, sign, textTex, labelTex } = C;
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const S = C.base(P, {});
+  const jr = C.jar('JAM', { fill: 0.9 }); jr.position.set(-1.9, 0, 0); jr.scale.setScalar(3.7); S.scene.add(jr);
+  const m = C.molecule(C.CHAIN, 0.075); m.position.set(-0.3, 0.5, 0.42); m.rotation.z = 0.15; jr.add(m);
+  const joint = blob(jr, mat('#ffd21f', { metalness: 0.5, roughness: 0.25 }), [0.0, 0.52, 0.45], [0.07, 0.07, 0.07]);
+  bar(jr, [-0.22, 0.44, 0.45], [0.22, 0.7, 0.45], 0.02, mat('#f2f2f2')); bar(jr, [0.0, 0.52, 0.45], [0.1, 0.34, 0.45], 0.02, mat('#f2f2f2'));
+  const t = C.triangle(S, { scale: 2.9, pos: [2.7, 0, 0.8], ry: -0.3, pose: { arms: { l: [0, 0.5, 0] } } });
+  C.reachWorld(t, 'r', [0.2, 2.0, 1.0]);
+  C.done(S, [t], [0.2, 2.3, 9.0], [0.2, 2.2, 0]);
+});
+</script></body></html>

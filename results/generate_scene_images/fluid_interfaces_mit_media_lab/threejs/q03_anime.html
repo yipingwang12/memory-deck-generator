@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Fluid q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, add, box, cyl, ball, mat, setup, placeFlute, setCam, paperSheet, pencilProp, coin } from './common.js';
+guard(() => {
+  const env = setup(); const { scene } = env;
+  // flute player holds up a wrist with MEMPAL (a RAM-stick pal) ticking off facts
+  const f = placeFlute(env, { s: 1.1, x: -0.6, z: 1.0, ry: 0.35, pose: { lean: 0.04, headTilt: 0.1 }, reach: ['l', [0.1, 1.35, 1.3]] });
+  const pal = new THREE.Group(); const hw = new THREE.Vector3(); f.userData.parts.hands.l.getWorldPosition(hw); pal.position.set(hw.x + 0.22, hw.y + 0.3, hw.z + 0.1); pal.rotation.y = 0.1; pal.scale.setScalar(0.85); scene.add(pal);
+  box(pal, 0.95, 0.5, 0.07, '#2c9a5a');
+  for (const x of [-0.3, -0.05, 0.2, 0.42]) box(pal, 0.2, 0.11, 0.04, '#1b1b22', [x, -0.17, 0.05]);
+  for (let i = 0; i < 7; i++) box(pal, 0.05, 0.1, 0.06, '#ffcf3a', [-0.4 + i * 0.13, -0.3, 0], [0, 0, 0], { metalness: 0.7 });
+  for (const sx of [-1, 1]) { ball(pal, '#fff', [sx * 0.18, 0.1, 0.09], [0.1, 0.12, 0.03]); ball(pal, '#123', [sx * 0.18, 0.08, 0.115], [0.06, 0.08, 0.02]); ball(pal, '#fff', [sx * 0.18 - 0.02, 0.11, 0.14], [0.02, 0.02, 0.01]); }
+  add(pal, new THREE.TorusGeometry(0.06, 0.012, 8, 16, Math.PI), mat('#7a2a2a'), [0, -0.03, 0.09], [0, 0, Math.PI]);
+  for (const sx of [-1, 1]) cyl(pal, 0.02, 0.02, 0.25, '#ffe0c0', [sx * 0.55, 0.0, 0.0], [0, 0, sx * 0.6]);
+  // fact cards with green ticks
+  [[1.5, 2.9, -0.2, 0.12], [2.3, 1.6, 0.0, -0.1]].forEach(([x, y, z, r], i) => {
+    const c = new THREE.Group(); c.position.set(x, y - 0.8, z + 0.5); c.rotation.z = r; scene.add(c);
+    box(c, 0.9, 0.62, 0.04, '#fffdf4'); box(c, 0.55, 0.04, 0.012, '#6b86b8', [-0.1, 0.12, 0.03]); box(c, 0.45, 0.04, 0.012, '#6b86b8', [-0.14, 0.0, 0.03]);
+    box(c, 0.1, 0.26, 0.03, '#2fbf4f', [0.28, -0.16, 0.04], [0, 0, 0.6]); box(c, 0.1, 0.14, 0.03, '#2fbf4f', [0.2, -0.2, 0.04], [0, 0, -0.7]);
+  });
+  setCam(env, { cx: 0.4, cy: 1.4, cz: 4.8, tx: 0.5, ty: 1.2 });
+  env.finish();
+});
+</script></body></html>

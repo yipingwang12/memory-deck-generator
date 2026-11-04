@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q20 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q20 — The SQUID lives in a PRINCE's TOWN (Princeton), New Jersey.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#8fcf6a', fov: 38 }), S = C.scene;
+add(S, new THREE.PlaneGeometry(1.4, 80), mat('#d8c090', { roughness: 1 }), [0.2, 0.005, -10], [-Math.PI / 2, 0, 0]);
+put(S, castle(), 0.2, 0, -1.6, 0, 1.5);
+for (const [x, z, c, r] of [[-2.2, -0.8, '#e9c9a0', '#b8463a'], [2.5, -0.9, '#f2d8e0', '#3a6ab8'], [-1.2, -2.0, '#d8e8c0', '#b8463a'], [2.0, -2.4, '#e9c9a0', '#6a3aa8']]) put(S, house({ wall: c, roof: r }), x, 0, z, 0, 1.4);
+const q = addSquid(C, { x: -0.7, z: 0.8, s: 1.6, ry: 0.4 });
+const pr = human({ shirt: '#2a4a9a', pants: '#f4eee0', hair: '#d8a84a' }); put(S, pr, 1.1, 0, 0.9, -0.4, 1.6);
+const cp = box(pr, mat('#c93d33'), [0.34, 0.6, 0.03], [0, 0.55, -0.16]); cp.rotation.x = 0.1;
+const cw = crown(0.14); cw.position.set(0, 0.1, 0); pr.userData.head.add(cw); toon(C, pr);
+pr.userData.armL.rotation.z = -0.6; reachW(q, 'l', [0.6, 0.55, 1.0]);
+for (const x of [-2.8, 3.0]) put(S, tree({ h: 1.8 }), x, 0, 0.0);
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.0, 0] });
+
+});
+</script></body></html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Third Rock q03</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q03 - "A TUBA plays as the PEBBLE's fifth fund closes."  (5 gold coin stacks, confetti)
+import { THREE, guard, rng, createPebble, num, mat, add, blob, box, stage, holdAt, finish, CLOUDS } from './common.js';
+
+function tuba() {
+  const g = new THREE.Group(), brass = mat('#f2b61c', { metalness: 0.75, roughness: 0.28, side: THREE.DoubleSide });
+  add(g, new THREE.TorusGeometry(0.44, 0.065, 16, 56), brass);
+  add(g, new THREE.TorusGeometry(0.27, 0.05, 16, 48), brass, [0.03, 0, 0.0]);
+  add(g, new THREE.CylinderGeometry(0.06, 0.06, 0.34, 16), brass, [0.44, 0.17, 0]);
+  const prof = [[0.06, 0], [0.075, 0.25], [0.12, 0.45], [0.26, 0.68], [0.44, 0.84], [0.47, 0.86]].map(([x, y]) => new THREE.Vector2(x, y));
+  add(g, new THREE.LatheGeometry(prof, 36), brass, [0.44, 0.32, 0]);
+  add(g, new THREE.CylinderGeometry(0.052, 0.052, 0.34, 14), brass, [-0.6, 0.0, 0], [0, 0, Math.PI / 2]);
+  add(g, new THREE.CylinderGeometry(0.07, 0.04, 0.09, 14), mat('#d9dde2', { metalness: 0.8, roughness: 0.25 }), [-0.82, 0, 0], [0, 0, Math.PI / 2]);
+  for (const x of [-0.12, 0.05, 0.22]) { add(g, new THREE.CylinderGeometry(0.03, 0.03, 0.3, 10), brass, [x, 0.15, 0.1]); add(g, new THREE.CylinderGeometry(0.045, 0.045, 0.04, 12), mat('#f5f1e6'), [x, 0.33, 0.1]); }
+  return g;
+}
+
+guard(() => {
+  const st = stage({ sunElevation: 36, sunAzimuth: 150, sky: { cover: 1.4, seed: 4, towerTop: 0.5, puffCover: 1.4 } });
+  const scene = st.scene;
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#6fae45'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.BoxGeometry(5.5, 0.3, 3.2), mat('#a8774a'), [-0.2, 0.15, 0.4]);
+  const pebble = createPebble({ scale: 2.0 }); pebble.position.set(-1.1, 0.3, 0.8); pebble.rotation.y = 0.75; scene.add(pebble);
+  pebble.userData.pose({ lean: -0.06, headTilt: 0.08 });
+  pebble.updateMatrixWorld(true);
+  const mouth = pebble.localToWorld(new THREE.Vector3(0, 0.33, 0.29));
+  const t = tuba(); t.scale.setScalar(1.4); t.position.copy(mouth).add(new THREE.Vector3(0.82 * 1.4, 0.0, 0.05)); scene.add(t);
+  t.updateMatrixWorld(true);
+  holdAt(pebble, 'l', t.localToWorld(new THREE.Vector3(-0.12, -0.38, 0.12))); holdAt(pebble, 'r', t.localToWorld(new THREE.Vector3(-0.44, -0.1, 0.1)));
+  // five stacks of gold coins
+  const gold = mat('#ffc926', { metalness: 0.8, roughness: 0.25 });
+  for (let i = 0; i < 5; i++) { const n = 3 + i; for (let k = 0; k < n; k++) add(scene, new THREE.CylinderGeometry(0.2, 0.2, 0.06, 28), gold, [1.0 + i * 0.5 - 0.0, 0.33 + k * 0.065, 1.35 - (i % 2) * 0.35], [0, 0, 0]); }
+  // bunting + confetti
+  const r = rng(8);
+  for (let i = 0; i < 90; i++) { const c = box(scene, mat(['#ff4d6d', '#ffd23f', '#3ec1d3', '#ffffff', '#8c5cff'][i % 5], { roughness: 0.5 }), [-3 + r() * 6.5, 0.8 + r() * 3.2, -1 + r() * 3], [0.1, 0.01, 0.06], [r() * 6, r() * 6, r() * 6]); }
+  const poleL = add(scene, new THREE.CylinderGeometry(0.04, 0.04, 3.2, 8), mat('#d9d4c8'), [-3.0, 1.6, -0.9]); const poleR = add(scene, new THREE.CylinderGeometry(0.04, 0.04, 3.2, 8), mat('#d9d4c8'), [3.0, 1.6, -0.9]);
+  for (let i = 0; i < 12; i++) { const x = -3 + i * 0.5, y = 3.0 - 0.45 * Math.sin(Math.PI * i / 11); add(scene, new THREE.ConeGeometry(0.15, 0.3, 3), mat(['#ff4d6d', '#ffd23f', '#3ec1d3'][i % 3]), [x, y - 0.12, -0.9], [0, 0, Math.PI]); }
+  finish(st, [pebble], [num('cx', 0.4), num('cy', 1.9), num('cz', 6.0)], [num('tx', 0.1), num('ty', 1.4), 0], CLOUDS);
+});
+</script></body></html>

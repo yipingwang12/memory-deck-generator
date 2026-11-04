@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Fluid q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, add, box, cyl, ball, mat, setup, placeFlute, setCam, paperSheet, pencilProp, coin } from './common.js';
+guard(() => {
+  const env = setup(); const { scene } = env;
+  // a paper from which the ALTER EGO (a second, purple flute) steps out
+  const pp = paperSheet(scene, 1.5, 1.9, [0.0, 1.1, 0.2], [0, 0, 0.0]);
+  pp.add(new THREE.Group());
+  placeFlute(env, { s: 1.3, x: -1.7, z: 1.0, ry: 0.55, pose: { lean: 0.06, headTilt: 0.1 }, reach: ['l', [-0.5, 1.2, 0.9]] });
+  placeFlute(env, { s: 1.3, x: 1.7, z: 1.0, ry: -0.5, color: '#8a4fd0', pose: { lean: 0.1, headTilt: -0.15 }, reach: ['r', [0.9, 1.2, 0.8]] });
+  // ghosty copy lines linking the paper to the alter ego
+  for (let i = 0; i < 3; i++) add(scene, new THREE.TorusGeometry(0.2 + i * 0.12, 0.018, 8, 24, 2.4), mat('#c9a8ff', { emissive: '#8a4fd0', emissiveIntensity: 0.4 }), [1.0 + i * 0.06, 1.6 - i * 0.1, 0.1], [0, 0, 0.8 + i * 0.2]);
+  setCam(env, { cx: 0.0, cy: 1.2, cz: 4.9, tx: 0.0, ty: 1.0 });
+  env.finish();
+});
+</script></body></html>

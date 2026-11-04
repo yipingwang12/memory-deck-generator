@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q18 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q18 — The DEVIL's kitchen (Devens) makes the SQUID's BRIE wedge (Breyanzi).
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#8a5a44', fov: 38, wall: '#c4553a', clouds: false }), S = C.scene;
+for (let i = 0; i < 12; i++) for (let j = 0; j < 5; j++) box(S, mat((i + j) % 2 ? '#7a2f26' : '#b04a38'), [0.8, 0.5, 0.02], [-4.4 + i * 0.8 + (j % 2) * 0.4, 0.3 + j * 0.5, -2.15]);
+box(S, mat('#2c2f36'), [1.6, 1.3, 0.9], [-0.1, 0.65, -1.4]); box(S, mat('#ff8a1c', { emissive: '#ff6a00', emissiveIntensity: 0.9 }), [1.0, 0.6, 0.02], [-0.1, 0.7, -0.94]);
+const dv = put(S, devil(), 1.0, 0, 0.6, -0.45, 2.0); toon(C, dv);
+const ar = dv.userData.armR; ar.rotation.set(-1.45, 0, 0.1);
+const tray = grp(S, [0.45, 1.0, 1.4]); cyl(tray, mat('#d8dce4', { metalness: 0.6 }), 0.55, 0.5, 0.05, [0, 0, 0]);
+const ch = put(tray, cheese(), 0, 0.03, 0, 2.2, 1.0); ch.rotation.x = 0.35;
+const cap = grp(dv, [0, 0.99, 0]); cyl(cap, mat('#fff'), 0.12, 0.1, 0.18, [0, 0.1, 0]); blob(cap, mat('#fff'), [0, 0.21, 0], [0.14, 0.08, 0.14]); toon(C, cap);
+const q = addSquid(C, { x: -1.55, z: 0.7, s: 1.5, ry: 0.5 }); reachW(q, 'l', [-0.4, 1.1, 1.1]);
+for (const [x, y, c] of [[-1.6, 2.2, '#ffd23c'], [-0.8, 2.4, '#ffd23c']]) blob(S, mat(c, { emissive: c, emissiveIntensity: 0.6 }), [x, y, -1.5], [0.07, 0.07, 0.03]);
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.05, 0] });
+
+});
+</script></body></html>

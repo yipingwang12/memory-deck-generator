@@ -1,0 +1,29 @@
+// q01 — The GENIE rises out of a VASE instead of a lamp.
+import { THREE, run, mat, add, blob, tex, smoke, gold, rng } from './common.js';
+function vase() {
+  const g = new THREE.Group();
+  const t = tex(512, 512, (c, s) => {
+    c.fillStyle = '#f4f7ff'; c.fillRect(0, 0, s, s);
+    c.fillStyle = '#1f4fb0'; for (const y of [0.08, 0.5, 0.9]) c.fillRect(0, s * y, s, s * 0.06);
+    for (let i = 0; i < 10; i++) for (let j = 0; j < 4; j++) {
+      c.fillStyle = '#2a63d0'; c.beginPath(); c.arc(s * (i + 0.5 + (j % 2) * 0.5) / 10, s * (0.2 + j * 0.1), s * 0.028, 0, 7); c.fill();
+    }
+    c.fillStyle = '#f2b82a'; for (const y of [0.14, 0.46, 0.58, 0.86]) c.fillRect(0, s * y, s, s * 0.018);
+  });
+  const prof = [[0.001, 0], [0.4, 0], [0.5, 0.08], [0.7, 0.45], [0.72, 0.65], [0.55, 0.95], [0.36, 1.12], [0.34, 1.25], [0.48, 1.4], [0.5, 1.46], [0.42, 1.46]].map(([x, y]) => new THREE.Vector2(x, y));
+  const m = add(g, new THREE.LatheGeometry(prof, 48), new THREE.MeshStandardMaterial({ map: t, roughness: 0.3 }));
+  add(g, new THREE.CircleGeometry(0.42, 36), mat('#1a1030'), [0, 1.38, 0], [-Math.PI / 2, 0, 0]);
+  for (const s of [-1, 1]) add(g, new THREE.TorusGeometry(0.3, 0.06, 10, 24, Math.PI), gold(), [s * 0.66, 0.85, 0], [0, 0, s > 0 ? -Math.PI / 2 : Math.PI / 2]);
+  return g;
+}
+run({
+  ground: '#ecd4a0', frame: { x: 0, y: 2.8, H: 6.4 },
+  genie: { x: 0, y: 1.75, z: 0, scale: 2.0, pose: { headTilt: 0.07, arms: { l: [0, 1.9, 0.3], r: [0, -1.9, 0.3] } }, mouth: 0 },
+  build({ scene }) {
+    const v = vase(); v.scale.setScalar(1.5); scene.add(v);
+    smoke(scene, [[0.5, 2.2, 0.5, 0.3], [-0.5, 2.22, 0.5, 0.28], [0.05, 2.32, 0.6, 0.24]], '#e9f2ff', 0.8);
+    const r = rng(3);
+    for (const [x, z, s] of [[-4, -4, 2.2], [3.6, -5, 2.8], [-1, -8, 3.2]]) blob(scene, mat('#e3c488'), [x, 0, z], [s * 1.6, s * 0.55, s]);
+    for (let i = 0; i < 14; i++) blob(scene, mat('#ffe27a'), [(r() - 0.5) * 6, 1.2 + r() * 2.6, 0.8 + r()], [0.035, 0.035, 0.035]);
+  },
+});

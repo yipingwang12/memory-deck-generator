@@ -1,0 +1,25 @@
+const stage = setup('#d9dde6', 44); const S = stage.scene;
+box(S, mat('#eef0f6'), [0, 2.4, -3.2], [16, 5.5, 0.2]); box(S, mat('#7a8296'), [0, 0.15, -3.05], [16, 0.3, 0.1]);
+const lil = LIL(stage, -2.2, 0, 0.35, 2.0, { arms: { l: [0.2, 0.9, 0], r: [0, 0.5, 0] } });
+const sprout = (x, y) => {
+  strut(S, mat('#4d9a3c'), [x, y, 0.6], [x, y + 0.5, 0.6], 0.04);
+  for (const s of [-1, 1]) blob(S, mat('#5fae4a'), [x + s * 0.14, y + 0.25, 0.6], [0.14, 0.05, 0.08], [0, 0, s * 0.5]);
+  for (let i = 0; i < 7; i++) { const a = i * 0.9; blob(S, mat(['#b583e0', '#c49af0', '#a46fd6'][i % 3]), [x + Math.cos(a) * 0.14, y + 0.62 + Math.sin(a * 1.4) * 0.12, 0.6 + Math.sin(a) * 0.1], [0.1, 0.1, 0.09]); }
+  blob(S, glow('#ffe27a', 0.6), [x, y + 0.66, 0.72], [0.05, 0.05, 0.05]);
+};
+const glass = { transparent: true, opacity: 0.4, roughness: 0.1 };
+// 1: living cell
+const x1 = -0.5; blob(S, mat('#8fe0a0', { ...glass, opacity: 0.5 }), [x1, 0.62, 0.6], [0.62, 0.55, 0.55]); blob(S, mat('#d0447a'), [x1 - 0.1, 0.6, 0.98], [0.26, 0.26, 0.2]); blob(S, glow('#7a2a5a', 0.4), [x1 - 0.1, 0.6, 1.16], [0.1, 0.1, 0.05]);
+for (const [dx, dy] of [[0.28, 0.5], [0.32, 0.72], [0.2, 0.3], [-0.38, 0.35]]) blob(S, mat('#f6d24a'), [x1 + dx, dy, 1.0], [0.09, 0.06, 0.06]);
+sprout(x1, 1.1);
+// 2: chemical flask
+const x2 = 1.2, pts = [[0.58, 0], [0.55, 0.04], [0.22, 0.78], [0.2, 0.95], [0.26, 1.02]].map(([a, b]) => new THREE.Vector2(a, b));
+add(S, new THREE.LatheGeometry(pts, 32), mat('#bfe6f5', { ...glass, side: THREE.DoubleSide }), [x2, 0.0, 0.6]);
+add(S, new THREE.LatheGeometry([[0.54, 0.02], [0.5, 0.04], [0.34, 0.4], [0.0, 0.4]].map(([a, b]) => new THREE.Vector2(a, b)), 32), mat('#4ac0ff', { transparent: true, opacity: 0.8 }), [x2, 0.0, 0.6]);
+for (const [dx, dy] of [[0.1, 0.2], [-0.15, 0.3], [0.2, 0.32]]) blob(S, mat('#fff'), [x2 + dx, dy, 0.8], [0.04, 0.04, 0.04]);
+sprout(x2, 1.0);
+// 3: metal bar
+const x3 = 2.9; box(S, mat('#aab3bf', { metalness: 0.8, roughness: 0.25 }), [x3, 0.3, 0.6], [1.3, 0.6, 0.7]); box(S, mat('#d8dee8', { metalness: 0.8, roughness: 0.2 }), [x3, 0.62, 0.6], [1.3, 0.05, 0.7]);
+for (const dx of [-0.4, 0, 0.4]) box(S, mat('#8892a0'), [x3 + dx, 0.3, 0.96], [0.05, 0.5, 0.02]);
+sprout(x3, 0.65);
+finishScene(stage, [lil], [0.3, 1.4, 5.8], [0.3, 1.25, 0]);

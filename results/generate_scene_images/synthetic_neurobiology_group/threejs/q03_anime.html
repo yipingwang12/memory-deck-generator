@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Synthetic Neurobiology scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, mat, add, blob, glow, makeScene, synth, paw, note, bow, den, dancer, cheese, sauceBottle, spanner, eyeMask, gel, neuron, lightSwitch, lightCone, brain, church, rna, journal, tree, animeEyes } from './common.js';
+// q03 — two hits: LIGHT switches for neurons (optogenetics) and swollen tissue (expansion microscopy).
+makeScene(({ scene }) => {
+  const s = synth(scene, { pos: [0, 0, 0.5], scale: 1.8, l: [1.1, 1.4, 0.8], r: [-1.1, 1.4, 0.8] });
+  // left: neuron lit by a light, with a switch
+  const n = neuron('#ff7ab8'); n.position.set(-2.1, 1.5, 0); n.scale.setScalar(1.5); scene.add(n);
+  const bulb = blob(scene, glow('#fff3a0', 1.2), [-2.1, 3.35, 0], [0.22, 0.22, 0.22]);
+  add(scene, new THREE.CylinderGeometry(0.1, 0.12, 0.16, 16), mat('#aaa'), [-2.1, 3.58, 0]);
+  const cone = lightCone(1.6, 0.8); cone.position.set(-2.1, 2.5, 0); cone.rotation.x = Math.PI; scene.add(cone);
+  const sw = lightSwitch(true); sw.position.set(-2.8, 0, 0.8); sw.scale.setScalar(1.3); scene.add(sw);
+  // right: small gel swelling into big gel
+  const g1 = gel(0.5, 2); g1.position.set(1.3, 0, 1.8); scene.add(g1);
+  const g2 = gel(1.5, 3); g2.position.set(2.5, 0, 0); scene.add(g2);
+  for (const [a, b] of [[0.0, 0.5], [0.0, -0.5]]) add(scene, new THREE.ConeGeometry(0.1, 0.3, 12), glow('#ff8f00', 0.5), [2.05, 0.7, 0.7 + a], [0, 0, -Math.PI / 2]);
+  // two hit records
+  for (const [x, c] of [[-0.9, '#ffd23c'], [0.9, '#ffd23c']]) { const r = add(scene, new THREE.CylinderGeometry(0.4, 0.4, 0.03, 36), mat(c, { metalness: 0.7, roughness: 0.25 }), [x, 3.1, 0.5], [Math.PI / 2, 0, 0]); add(scene, new THREE.CylinderGeometry(0.1, 0.1, 0.034, 20), mat('#e63946'), [x, 3.1, 0.5], [Math.PI / 2, 0, 0]); }
+  return [s];
+}, { cam: [0, 1.8, 6.4], look: [0, 1.6, 0.3], fov: 42 });
+</script></body></html>

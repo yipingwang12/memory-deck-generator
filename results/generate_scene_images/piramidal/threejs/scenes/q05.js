@@ -1,0 +1,19 @@
+// q05: In the ICU, the PIRANHA watches EEG for seizures, fading awareness and a failing brain.
+boot({ sky: { cover: .02, puffCover: .02, towerTop: .02 } }, ({ stage, scene, num, mark }) => {
+  room(scene, { w: 16, d: 9, wall: '#c4dde8' });
+  const bed = createBed(); bed.position.set(-1.0, 0, -1.4); scene.add(bed);
+  const head = chibiHead({ closed: true, hair: '#6a4a30' }); head.position.set(-1.7, .86, -1.4); head.rotation.set(0, .25, .1); scene.add(head); mark(head);
+  blob(scene, mat('#3fa0ff'), [-1.7, .96, -1.45], [.2, .15, .2]); mark(scene.children.at(-1));
+  const el = [[-1.82, 1.05, -1.3], [-1.6, 1.08, -1.3], [-1.7, 1.12, -1.45], [-1.88, .95, -1.2]];
+  el.forEach((q) => { mark(blob(scene, mat('#ffd54a', { metalness: .5 }), q, [.03, .03, .03])); });
+  C.tube(scene, [[-1.6, 1.08, -1.3], [-1.2, 1.3, -.9], [-.2, 1.2, -.5], [.5, 1.3, -.7]], .012, mat('#333'), 30);
+  const mon = createMonitor({ w: 1.5, h: 1.1 }); mon.position.set(1.6, 0, -.8); mon.rotation.y = -.35; mon.scale.setScalar(1.3); scene.add(mon);
+  const br = createBrain({ color: '#9aa2ad', scale: 1.9 }); br.position.set(-1.7, 2.2, -1.4); br.rotation.y = .3; scene.add(br); mark(br);
+  C.tube(br, [[-.2, .15, .25], [-.05, .02, .27], [-.12, -.1, .24], [.06, -.2, .22]], .012, mat('#2a2f38'), 20);
+  const bulb = new THREE.Group(); bulb.position.set(-.2, 2.15, -1.2); scene.add(bulb);
+  blob(bulb, mat('#8a8460', { roughness: .3 }), [0, 0, 0], [.14, .16, .14]); cyl(bulb, mat('#666'), [0, -.17, 0], .06, .08);
+  const p = createPiranha({ scale: 1.7 }); p.position.set(-.3, 0, 1.0); p.rotation.y = .4; scene.add(p); mark(p);
+  p.userData.pose({ jaw: 0 }); p.updateMatrixWorld(true);
+  const t = p.worldToLocal(new THREE.Vector3(.8, 1.2, .5)); p.userData.reach('l', [t.x, t.y, t.z]);
+  look(stage, num, [.0, 1.5, 4.9], [-.1, 1.3, -.4]);
+});

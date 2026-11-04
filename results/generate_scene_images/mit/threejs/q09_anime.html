@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — "A SUMO wrestler hoists the MITTEN's CSAIL sail."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  add(scene, new THREE.CylinderGeometry(3.4, 3.4, 0.15, 48), mat('#d9b878'), [0.4, 0.07, -0.3]);
+  add(scene, new THREE.TorusGeometry(3.3, 0.07, 8, 60), mat('#c8a050'), [0.4, 0.17, -0.3], [Math.PI / 2, 0, 0]);
+  const s = P.sumo(); s.position.set(0.9, 0.15, -0.3); s.scale.setScalar(1.0); scene.add(s);
+  cyl(scene, mat('#7b5230'), 0.05, 0.05, 2.9, [0.9, 2.45, -0.3], [0, 0, Math.PI / 2]);
+  const sail = P.sailPanel(2.4, 1.8, (c, w) => { c.fillStyle = '#fff8e8'; c.fillRect(0, 0, w, w); c.strokeStyle = '#c9b88a'; c.lineWidth = 3; for (let y = 0; y < w; y += 64) { c.beginPath(); c.moveTo(0, y); c.lineTo(w, y); c.stroke(); } }, { bulge: 0.15 });
+  sail.position.set(0.9, 2.45, -0.3); scene.add(sail);
+  const m = placeMitten(scene, { x: -2.5, z: 1.2, ry: 0.4, s: 2.2, pose: { arms: { l: [0, 2.6, 0], r: [0, 2.6, 0] } } });
+  return { chars: [m], cam: { pos: [0, 2.3, 7.6], look: [0, 2.0, 0] } };
+}, { ground: '#8cc65a' });
+</script></body></html>

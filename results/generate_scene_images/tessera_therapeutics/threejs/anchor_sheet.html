@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tessera anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createTesseract } from './tesseract.js';
+guard(() => {
+  const stage = createAnimeStage({
+    fov: 35, sunElevation: 35, sunAzimuth: 150, exposure: 1, sky: { cover: 2, seed: 5, towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 }, sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.MeshStandardMaterial({ color: '#6fae45', roughness: 0.8 }));
+  g.rotation.x = -Math.PI / 2; g.receiveShadow = true; stage.scene.add(g);
+  const pm = new Set();
+  [[-1.8, 0], [0, 0.6], [1.8, 1.5]].forEach(([x, ry], i) => {
+    const t = createTesseract({ scale: 1.3 }); t.position.set(x, 0, 0); t.rotation.y = ry; stage.scene.add(t);
+    t.userData.pose({ arms: { l: [0, 0.5, 0], r: [0, 0.5, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } });
+    t.traverse((o) => pm.add(o));
+  });
+  stage.toonify(stage.scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [187, 1000, 120, 1.6], [252, 900, 80, 1.1]]);
+  stage.camera.position.set(0, 0.9, 5.2); stage.camera.lookAt(0, 0.8, 0);
+  stage.finish();
+});
+</script></body></html>

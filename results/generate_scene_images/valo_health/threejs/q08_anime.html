@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Valo q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — "The VIOLA buys a TIARA (TARA Biosystems) of beating heart tissue from New York."
+import { THREE, guard, mat, add, box, cyl, blob, makeStage, finishScene, placeViola, heart, coin, canvasTexture } from './common.js';
+
+function tiara() {
+  const g = new THREE.Group(), gold = mat('#f6c21c', { metalness: 0.7, roughness: 0.25 }), R = 0.75;
+  add(g, new THREE.TorusGeometry(R, 0.085, 12, 60, Math.PI * 0.72), gold, [0, 0, 0], [0, 0, Math.PI * 0.14]);
+  for (let i = 0; i <= 8; i++) {
+    const a = Math.PI * 0.14 + i / 8 * Math.PI * 0.72, big = i === 4, len = big ? 0.0 : (i % 2 ? 0.2 : 0.34);
+    if (!big) { add(g, new THREE.ConeGeometry(0.06, len, 12), gold, [Math.cos(a) * (R + len / 2), Math.sin(a) * (R + len / 2), 0], [0, 0, a - Math.PI / 2]);
+      blob(g, mat('#ffffff', { roughness: 0.1, emissive: '#cfe8ff', emissiveIntensity: 0.5 }), [Math.cos(a) * (R + len + 0.03), Math.sin(a) * (R + len + 0.03), 0], [0.05, 0.05, 0.05]); }
+  }
+  const h = heart('#e8284a', 0.62, 0.5); h.position.set(0, R + 0.28, 0); h.scale.setScalar(1); g.add(h);
+  const glow = add(g, new THREE.CircleGeometry(0.4, 32), new THREE.MeshBasicMaterial({ color: '#ff8aa0', transparent: true, opacity: 0.18 }), [0, R + 0.28, -0.3]);
+  return g;
+}
+function liberty() {
+  const g = new THREE.Group(), stone = mat('#bdb6a6'), teal = mat('#6fb7a0');
+  box(g, stone, [0, 0.5, 0], [1.1, 1.0, 1.1]); box(g, stone, [0, 1.15, 0], [0.8, 0.4, 0.8]);
+  add(g, new THREE.CylinderGeometry(0.28, 0.42, 1.5, 24), teal, [0, 2.1, 0]);
+  blob(g, teal, [0, 3.0, 0], [0.22, 0.26, 0.22]);
+  for (let i = 0; i < 7; i++) { const a = -Math.PI * 0.45 + i / 6 * Math.PI * 0.9; add(g, new THREE.ConeGeometry(0.035, 0.28, 6), teal, [Math.sin(a) * 0.28, 3.3 + Math.cos(a) * 0.1, Math.cos(a) * 0.1], [0, 0, -a * 1.0]); }
+  cyl(g, teal, [0.3, 3.2, 0], 0.07, 0.85, [0, 0, -0.25]);
+  add(g, new THREE.ConeGeometry(0.1, 0.35, 12), mat('#ffb830', { emissive: '#ff9a1c', emissiveIntensity: 0.6 }), [0.42, 3.85, 0]);
+  blob(g, mat('#ffe27a', { emissive: '#ffd040', emissiveIntensity: 0.8 }), [0.42, 3.7, 0], [0.12, 0.12, 0.12]);
+  return g;
+}
+guard(() => {
+  const S = makeStage({ ground: '#a8a6a0', el: 36, az: 150, sky: { cover: 1 } }), { scene } = S;
+  // skyline
+  const winTex = canvasTexture(128, (ctx, s) => { ctx.fillStyle = '#3a4a6a'; ctx.fillRect(0, 0, s, s); for (let y = 8; y < s; y += 16) for (let x = 8; x < s; x += 16) { ctx.fillStyle = (x * y) % 5 ? '#ffe9a0' : '#5a6a8a'; ctx.fillRect(x, y, 8, 9); } });
+  [[-6, 3, 5], [-4.2, 4.5, 3], [-2.8, 6, 3.4], [-1.2, 3.6, 2.4], [0.4, 7, 2.6], [2.2, 4, 3], [4.4, 5.5, 3.2], [6.4, 3.2, 2.6]].forEach(([x, h, w], i) => {
+    const m = new THREE.MeshStandardMaterial({ map: winTex.clone(), color: ['#8a9ab8', '#a8a0b8', '#98a8a8'][i % 3] }); m.map.repeat.set(w / 2, h / 2); m.map.wrapS = m.map.wrapT = THREE.RepeatWrapping; m.map.needsUpdate = true;
+    add(scene, new THREE.BoxGeometry(w, h, 1.5), m, [x, h / 2, -7]); });
+  cyl(scene, mat('#98a8a8'), [0.4, 7.9, -7], 0.08, 1.8, [0, 0, 0], 0.01);
+  const lib = liberty(); lib.position.set(4.5, 0, -2.2); lib.scale.setScalar(0.85); scene.add(lib);
+  box(scene, mat('#5a5a66'), [0, -0.02, 3], [20, 0.04, 4]);
+  // pedestal + tiara
+  const px = 1.45; cyl(scene, mat('#6a3aa0'), [px, 0.45, 0.4], 0.45, 0.9); cyl(scene, mat('#e8d8f0'), [px, 0.92, 0.4], 0.55, 0.06);
+  cyl(scene, mat('#8a4ac0'), [px, 1.0, 0.4], 0.42, 0.14, [0, 0, 0], 0.3);
+  const t = tiara(); t.position.set(px, 0.85, 0.4); t.scale.setScalar(S.num('ts', 1.25)); t.rotation.x = -0.2; scene.add(t);
+  const vs = S.num('vs', 1.85), viola = placeViola(scene, { x: -1.2, z: 0.5, scale: vs, ry: 0.35 });
+  viola.userData.pose({ arms: { l: [0, 1.0, 0] } });
+  viola.updateMatrixWorld(true);
+  const tgt = viola.worldToLocal(new THREE.Vector3(px - 0.3, 1.2, 0.8)); viola.userData.reach('r', [-Math.abs(tgt.x) * 0 + tgt.x, tgt.y, tgt.z]);
+  const bag = []; for (const [x, y, z, r] of [[-0.1, 1.6, 1.0, 0.13], [0.35, 1.95, 0.9, 0.12], [0.75, 2.2, 0.8, 0.11]]) coin(scene, x, y, z, r, [1.2, 0.2, 0.2]);
+  finishScene(S, [viola], [0.5, 1.9, 5.4], [0.4, 1.5, 0]);
+});
+</script></body></html>

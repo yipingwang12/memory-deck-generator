@@ -1,0 +1,18 @@
+// q05 — The GENIE's Cambridge lamp sits at three-sixty BINNEY Street.
+import { THREE, run, mat, add, blob, panel, lamp, building } from './common.js';
+run({
+  ground: '#c2b8a8', frame: { x: 0.2, y: 1.9, H: 5.0 },
+  genie: { x: -2.9, z: 0.3, scale: 1.5, ry: 0.4, pose: { headTilt: 0.05, arms: { l: [0, 0.5, 0.2], r: [0, -0.5, 0.2] } } },
+  build({ scene, reachTo }) {
+    add(scene, new THREE.PlaneGeometry(80, 12), mat('#3f8fd0', { roughness: 0.3 }), [0, 0.01, -14], [-Math.PI / 2, 0, 0]);
+    add(scene, new THREE.BoxGeometry(80, 0.5, 0.4), mat('#8c8478'), [0, 0.25, -7.8]);
+    const cols = ['#e2d6c0', '#cdbb9e', '#b9c6d4', '#d8c4a8'];
+    for (let i = 0; i < 10; i++) { const b = building(2.6, 3.4 + (i % 3) * 0.7, 2.4, cols[i % 4], { cols: 3, rows: 4, win: '#f5e6b0' }); b.position.set(-10 + i * 2.8, 0, -4.8); scene.add(b); }
+    add(scene, new THREE.BoxGeometry(1.8, 0.8, 1.2), mat('#a9a191'), [-0.4, 0.4, 0.4]);
+    const l = lamp({ scale: 1.7 }); l.position.set(-1.0, 0.8, 0.4); scene.add(l);
+    reachTo('l', [-1.6, 1.5, 0.5]); reachTo('r', [-3.3, 1.2, 0.6]);
+    const sign = panel(2.9, 1.9, ['360', 'BINNEY', 'STREET'], { bg: '#1c4fa0', fg: '#fff', border: '#e8e8e8', colors: ['#ffe27a', '#fff', '#fff'] });
+    sign.position.set(2.7, 2.7, 0); scene.add(sign);
+    add(scene, new THREE.CylinderGeometry(0.09, 0.11, 3.4, 12), mat('#555a63'), [2.7, 1.7, -0.1]);
+  },
+});

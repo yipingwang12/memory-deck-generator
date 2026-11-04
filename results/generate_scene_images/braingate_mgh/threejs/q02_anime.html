@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { THREE, mat, add, blob, box, cyl, num, textPlane, makeStage, placeAnchor, wrap } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage({ ground: '#e6c58a' });
+  const S = stage.scene;
+  const lean = -0.18;
+  // 1 MGH: hospital sign on posts
+  const mgh = new THREE.Group(); mgh.position.set(-0.1, 0, -0.4); mgh.rotation.set(0, -0.3, -lean); S.add(mgh);
+  box(mgh, mat('#c9d2dc'), [0, 0.6, 0], [0.18, 1.2, 0.18]);
+  box(mgh, mat('#2a6fc4'), [0, 1.35, 0], [1.3, 0.7, 0.1]);
+  const t = textPlane('MGH', { w: 1.2, h: 1.2, bg: '#2a6fc4', fg: '#ffffff', font: 'bold 190px sans-serif' }); t.position.set(0, 1.35, 0.06); mgh.add(t);
+  // 2 BROWN paper bag
+  const bag = new THREE.Group(); bag.position.set(0.95, 0, 0.1); bag.rotation.set(0, -0.35, -lean); S.add(bag);
+  const kraft = mat('#a8703a');
+  box(bag, kraft, [0, 0.5, 0], [0.8, 1.0, 0.5]);
+  box(bag, mat('#8a5a2c'), [0, 1.08, 0], [0.8, 0.16, 0.5], [0.15, 0, 0]);
+  box(bag, mat('#c58a50'), [0, 0.5, 0.26], [0.5, 0.8, 0.02]);
+  // 3 STANFORD tree
+  const tree = new THREE.Group(); tree.position.set(2.0, 0, -0.3); tree.rotation.set(0, 0, -lean); S.add(tree);
+  cyl(tree, mat('#7a4a22'), [0, 0.6, 0], 0.17, 1.2);
+  blob(tree, mat('#2f9a4a'), [0, 1.75, 0], [0.8, 0.8, 0.8]);
+  blob(tree, mat('#3cb056'), [-0.35, 1.5, 0.3], [0.55, 0.5, 0.5]);
+  blob(tree, mat('#2a8a42'), [0.4, 1.55, 0.2], [0.5, 0.5, 0.5]);
+  // 4 EMERY board (nail file)
+  const em = new THREE.Group(); em.position.set(3.0, 0, 0.1); em.rotation.set(0, -0.3, -lean); S.add(em);
+  box(em, mat('#e0457b'), [0, 0.8, 0], [0.34, 1.6, 0.06]);
+  box(em, mat('#2b2b30'), [0, 0.8, 0.035], [0.26, 1.5, 0.02]);
+  for (let i = 0; i < 12; i++) box(em, mat('#8c8c94'), [(i % 2 - 0.5) * 0.12, 0.2 + i * 0.12, 0.05], [0.06, 0.04, 0.01]);
+  // 5 DAVIS cup
+  const cup = new THREE.Group(); cup.position.set(3.85, 0, -0.2); cup.rotation.set(0, 0, -lean); S.add(cup);
+  cyl(cup, mat('#f4efe6'), [0, 0.55, 0], 0.3, 1.1, [0, 0, 0], 0.42);
+  cyl(cup, mat('#d8402e'), [0, 0.55, 0], 0.37, 0.4, [0, 0, 0], 0.4);
+  cyl(cup, mat('#3b2417'), [0, 1.08, 0], 0.4, 0.04);
+  add(cup, new THREE.TorusGeometry(0.2, 0.05, 10, 20, Math.PI), mat('#f4efe6'), [0.4, 0.65, 0], [0, 0, -Math.PI / 2]);
+  const a = placeAnchor(stage, { x: -1.35, ry: 0.5, scale: 1.7, pose: { lean: 0.15, arms: { l: [0, 0.6, 0], r: [0, 0.5, 0] }, legs: { l: [0.3, 0], r: [-0.3, 0] } }, spin: 0.5 });
+  wrap(stage, a, P, { cx: 1.2, cz: 5.1, cy: 1.2, tx: 1.2, ty: 0.9 });
+});
+</script></body></html>

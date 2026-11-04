@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// FARMER works with a HARVARD crimson shield
+const S = boot(); const sc = S.scene;
+const sh = new THREE.Group(); sh.position.set(1.0, 1.35, 0.2); sc.add(sh);
+const shape = new THREE.Shape(); shape.moveTo(-0.6, 0.7); shape.lineTo(0.6, 0.7); shape.lineTo(0.6, -0.1); shape.quadraticCurveTo(0.6, -0.7, 0, -1.0); shape.quadraticCurveTo(-0.6, -0.7, -0.6, -0.1); shape.lineTo(-0.6, 0.7);
+add(sh, new THREE.ExtrudeGeometry(shape, { depth: 0.1, bevelEnabled: true, bevelSize: 0.04, bevelThickness: 0.04 }), mat('#a51c30', { metalness: 0.2 }), [0, 0, 0]);
+const t = textPlane('H', 0.8, 0.8, { bg: '#a51c30', fg: '#f4ead8', font: 'bold 400px serif' }); t.position.set(0, 0.0, 0.16); sh.add(t);
+for (const [x, z] of [[-2.6, -1.4], [2.8, -1.6]]) { const h = hay(1.6); h.position.set(x, 0, z); sc.add(h); }
+const f = farmerAt(sc, { x: -0.6, z: 0.4, ry: 0.35, s: 2.0 }); reachTo(f, 'l', [0.55, 1.2, 0.45]);
+done(S, f, { pos: [0, 1.4, 5.4], look: [0.2, 1.2, 0] });
+});
+</script></body></html>

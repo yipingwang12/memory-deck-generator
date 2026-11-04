@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard, rng } from './kit.js';
+import * as B from './base.js';
+const { THREE, mat, add, blob, box, cyl, textPlane, kitchenStage, frame, toon, createMixer, nose, tank, drop, ribbon, bib } = B;
+guard(() => {
+const { stage, scene, num } = kitchenStage(); const r = rng(3);
+const m = createMixer({ scale: 1.5 }); m.position.set(-1.3, 0, 0); m.rotation.y = 0.4; scene.add(m);
+m.userData.pose({ arms: { l: [0, 0.9, -0.2] } }); m.userData.reach('r', [-0.3, 0.9, 0.6]);
+const brick = mat('#a05a3c'), g = new THREE.Group(); g.position.set(1.3, 0, 0); scene.add(g);
+for (const s of [-1, 1]) for (let i = 0; i < 6; i++) box(g, brick, [s * 0.72, 0.18 + i * 0.34, 0], [0.4, 0.3, 0.7]);
+for (let i = 0; i < 9; i++) { const a = i / 8 * Math.PI; box(g, brick, [Math.cos(a) * 0.72, 2.1 + Math.sin(a) * 0.72, 0], [0.34, 0.4, 0.7], [0, 0, a - Math.PI / 2 + Math.PI]); }
+box(g, mat('#1a1022'), [0, 1.2, -0.25], [1.1, 2.4, 0.05]);
+add(g, new THREE.CircleGeometry(0.55, 24), mat('#ffd878', { emissive: '#ffb030', emissiveIntensity: 0.9 }), [0, 0.9, -0.2]);
+const cal = textPlane('JUNE', { w: 0.7, h: 0.55, bg: '#ffffff', fg: '#d02030', px: 0.45, border: '#d02030' }); cal.position.set(-0.4, 2.7, 0.5); cal.rotation.z = 0.1; scene.add(cal); cal.position.add(g.position);
+[[-0.1, 1.1, 0.5], [0.3, 0.8, 0.6], [-0.4, 0.6, 0.7]].forEach(([x, y, z], i) => { const c = textPlane('%', { w: 0.42, h: 0.5, bg: '#fffbe8', fg: '#2a8a3a', px: 0.7, border: '#2a8a3a' }); c.position.set(x + 0.3, y, z); c.rotation.set(0.2, 0.3 * i, 0.2 * i - 0.2); scene.add(c); });
+toon(stage, scene, [m]); frame(stage, num, { cx: 0.3, cy: 1.4, cz: 5.2, tx: 0.3, ty: 1.4 });
+});
+</script></body></html>

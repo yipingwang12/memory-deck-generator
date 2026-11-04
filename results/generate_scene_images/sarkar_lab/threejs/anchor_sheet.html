@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarkar</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createHiker } from './hiker.js';
+const mat = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.8 });
+guard(() => {
+const P = new URLSearchParams(location.search);
+const num = (k, d) => Number(P.get(k) ?? d);
+const stage = createAnimeStage({
+  fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+  sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+  rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+  sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+  ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+  flare: 0.7, fog: { near: 120, far: 1500 },
+});
+const scene = stage.scene;
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat('#6fae45')); g.rotation.x = -Math.PI / 2; g.receiveShadow = true; scene.add(g);
+  const hs = [];
+  [[-0.9, 0], [0, Math.PI * 0.5], [0.9, Math.PI]].forEach(([x, ry]) => {
+    const h = createHiker({ scale: 1.2 }); h.position.set(x, 0, 0); h.rotation.y = ry; scene.add(h);
+    h.userData.pose({ lean: 0.05, arms: { l: [0.3, 0.1, 0.2], r: [-0.3, 0.1, 0.2] }, legs: { l: [0.25, 0], r: [-0.25, 0] } });
+    h.userData.holdPole('r', 1.1); hs.push(h);
+  });
+  const pm = new Set(); hs.forEach((h) => h.traverse((o) => pm.add(o)));
+  stage.toonify(scene, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [187, 1000, 120, 1.6]]);
+  stage.camera.position.set(0, 0.8, 3.6); stage.camera.lookAt(0, 0.62, 0);
+  stage.finish();
+});
+</script></body></html>

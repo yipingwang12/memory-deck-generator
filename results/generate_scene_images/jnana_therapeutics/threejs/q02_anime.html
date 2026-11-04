@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Jnana q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — BANANA watches small FERRY boats carry salts and sugars across the cell wall.
+import { guard, rng } from './kit.js';
+import { THREE, mat, add, blob, cyl, box, makeStage, ground, finishScene, createBanana } from './common.js';
+
+function ferry(len = 1.5) {
+  const g = new THREE.Group();
+  const hull = mat('#2c6fd1'), white = mat('#fff7ea'), red = mat('#e0463c');
+  const sh = new THREE.Shape(); sh.moveTo(-len / 2, 0); sh.lineTo(len / 2 - 0.2, 0); sh.quadraticCurveTo(len / 2 + 0.25, 0.1, len / 2 + 0.3, 0.32); sh.lineTo(-len / 2 - 0.05, 0.32); sh.lineTo(-len / 2, 0);
+  const hg = new THREE.ExtrudeGeometry(sh, { depth: 0.5, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.02, bevelSegments: 2 }); hg.translate(0, 0, -0.25);
+  add(g, hg, hull);
+  box(g, red, [0, 0.33, 0], [len + 0.1, 0.04, 0.52]);
+  box(g, white, [-0.15, 0.58, 0], [len * 0.55, 0.38, 0.42]);
+  for (let i = 0; i < 4; i++) for (const s of [-1, 1]) blob(g, mat('#7fd0ff', { roughness: 0.2 }), [-0.4 + i * 0.22, 0.62, s * 0.215], [0.05, 0.06, 0.012]);
+  cyl(g, red, [-0.25, 0.95, 0], 0.1, 0.35); cyl(g, mat('#222'), [-0.25, 1.14, 0], 0.105, 0.05);
+  // cargo crates: salt (white cubes) + sugar (pink cubes)
+  box(g, mat('#ffffff'), [0.5, 0.45, 0.1], [0.2, 0.2, 0.2]); box(g, mat('#ffc2d4'), [0.5, 0.45, -0.12], [0.2, 0.2, 0.2]); box(g, mat('#f5f5f5'), [0.5, 0.65, 0], [0.18, 0.18, 0.18]);
+  // flag
+  cyl(g, mat('#555'), [-0.55, 1.0, 0], 0.01, 0.5); box(g, mat('#ffd51f'), [-0.46, 1.17, 0], [0.18, 0.1, 0.01]);
+  return g;
+}
+
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const stage = makeStage(P, { fov: 38 }); const scene = stage.scene;
+  ground(scene, '#d9c28f');
+  // water channel
+  add(scene, new THREE.PlaneGeometry(400, 7), mat('#2e9fd6', { roughness: 0.15 }), [0, 0.02, -3.2], [-Math.PI / 2, 0, 0]);
+  // cell wall: long wall with archways across the channel (lipid-bilayer bricks)
+  const wall = new THREE.Group(); wall.position.set(0, 0, -3.2); scene.add(wall);
+  const brick = [mat('#e8847a'), mat('#f2a79e')];
+  for (let i = -14; i <= 14; i++) {
+    const gap = Math.abs(i * 0.5 - 0.0) < 1.55 || Math.abs(i * 0.5 - 4.5) < 0.0;
+    if (Math.abs(i * 0.5) < 1.6) continue;
+    for (let j = 0; j < 4; j++) box(wall, brick[(i + j) & 1], [i * 0.5, 0.25 + j * 0.5, 0], [0.48, 0.48, 0.5]);
+  }
+  for (let j = 0; j < 4; j++) box(wall, mat('#d8645a'), [0, 1.75 + 0.0, 0], [0.01, 0.01, 0.01]);
+  box(wall, mat('#d8645a'), [0, 1.78, 0], [3.4, 0.28, 0.6]); // lintel above the gate
+  for (const s of [-1, 1]) box(wall, mat('#d8645a'), [s * 1.7, 0.9, 0], [0.3, 1.8, 0.6]);
+  const f1 = ferry(1.7); f1.position.set(-1.2, 0.05, -2.2); f1.rotation.y = -0.15; f1.scale.setScalar(1.45); scene.add(f1);
+  const f2 = ferry(1.2); f2.position.set(2.7, 0.05, -4.4); f2.rotation.y = 0.35; f2.scale.setScalar(0.9); scene.add(f2);
+  const f3 = ferry(1.0); f3.position.set(0.9, 0.05, -3.2); f3.rotation.y = 0.0; scene.add(f3);
+  // shore dock
+  box(scene, mat('#a8703a'), [-1.0, 0.1, 1.6], [4.6, 0.2, 2.4]);
+  const banana = createBanana({ scale: 1.5 }); banana.position.set(-1.9, 0.2, 1.2); banana.rotation.y = 0.5; scene.add(banana);
+  banana.userData.pose({ lean: 0.05, legs: { l: [0.1, 0.05], r: [-0.1, 0] } });
+  banana.userData.reach('l', [0.05, 0.98, 0.3]); banana.userData.reach('r', [-0.3, 0.55, 0.25]);
+  finishScene(stage, P, banana, { pos: [0.3, 2.0, 6.2], look: [0.0, 1.0] });
+});
+</script></body></html>

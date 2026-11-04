@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Quanterix q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q08 — The QUARTER swallows a KOALA (Akoya) in an all-stock deal.
+import { THREE, guard, canvasTexture, mat, add, blob, box, cyl, label, reachTo, rng, createQuarter, setup, finishScene } from './scene_common.js';
+import { buildFox, buildKoala, hardHat, dropMesh, protein, brickMat, buildWall, buildBrain, eye } from './props.js';
+guard(() => {
+
+const ctx = setup({ ground: '#9fd18c', sky: { cover: 0.8 } }), { scene } = ctx;
+const q = createQuarter({ scale: 2.1 }); q.position.set(-0.4, 0, 0); scene.add(q);
+q.userData.pose({ arms: { l: [0, 0.6], r: [0, -0.6] } });
+const cy = q.userData.parts.cy, z = 0.1;
+const mouth = blob(q, mat('#3a0a18', { roughness: 0.4 }), [0, cy - 0.2, z], [0.27, 0.2, 0.02]);
+const tongue = blob(q, mat('#ff7a90'), [0, cy - 0.34, z + 0.012], [0.16, 0.05, 0.01]);
+const k = buildKoala({ scale: 0.46 }); k.position.set(0, cy - 0.38, z + 0.03); q.add(k);
+// stock certificates
+for (let i = 0; i < 4; i++) { const c = box(scene, mat(i % 2 ? '#f4f0e0' : '#fffbee'), [2.3, 0.04 + i * 0.045, 1.0], [1.3, 0.04, 0.9], [0, 0.15 - i * 0.08, 0]); }
+label(scene, 'STOCK', [2.3, 0.215, 1.0], [1.0, 0.32], { bg: '#fffbee', fg: '#1e6b3a', rot: [-Math.PI / 2, 0, 0.15 - 3 * 0.08] });
+finishScene(ctx, q, { cam: [0.4, 1.5, 5.6], look: [0.4, 1.3, 0] });
+
+});
+</script></body></html>

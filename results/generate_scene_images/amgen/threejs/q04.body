@@ -1,0 +1,18 @@
+// q04 — A BROAD WAY sign (Bradway) wears the GENIE's CEO crown.
+import { THREE, run, mat, add, blob, panel, crown, building, rng } from './common.js';
+run({
+  ground: '#c9c6bc', frame: { x: 0.3, y: 1.9, H: 5.0 },
+  genie: { x: -1.9, z: 0.4, scale: 1.5, ry: 0.5, pose: { headTilt: -0.08, arms: { l: [0, 1.75, 0.15], r: [0, -0.5, 0.2] } }, mouth: 0.2 },
+  build({ scene }) {
+    add(scene, new THREE.BoxGeometry(60, 0.04, 6), mat('#4b4e59'), [0, 0.02, -5.5]);
+    for (let i = -10; i < 10; i++) add(scene, new THREE.BoxGeometry(1.2, 0.05, 0.12), mat('#f7d65a'), [i * 2.2, 0.05, -5.5]);
+    for (const z of [-8.4, -2.6]) add(scene, new THREE.BoxGeometry(60, 0.12, 0.2), mat('#e0ddd2'), [0, 0.06, z]);
+    const cols = ['#c8704f', '#d9b36a', '#7a8fb0', '#b5604a', '#8a9a7a'];
+    for (let i = 0; i < 9; i++) { const b = building(2.2, 3 + (i * 37 % 4), 2, cols[i % 5]); b.position.set(-8.8 + i * 2.4, 0, -10.5); scene.add(b); }
+    const sign = panel(3.2, 0.95, ['BROAD WAY'], { bg: '#1f7a4a', fg: '#fff', border: '#e8e8e8', d: 0.1 });
+    sign.position.set(1.8, 2.3, 0); scene.add(sign);
+    add(scene, new THREE.CylinderGeometry(0.08, 0.1, 2.4, 12), mat('#555a63'), [1.8, 1.2, -0.1]);
+    const c = crown(1.5); c.position.set(1.8, 2.78, 0); c.rotation.z = -0.1; scene.add(c);
+    for (const [x, y, z] of [[0.3, 3.6, 0.3], [3.3, 3.5, 0.3], [0.5, 2.9, 0.4], [3.1, 3.0, 0.4]]) add(scene, new THREE.OctahedronGeometry(0.12), new THREE.MeshBasicMaterial({ color: '#fff3a0' }), [x, y, z]);
+  },
+});

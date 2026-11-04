@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q02 — A CARIBOU and an ATLAS globe plant flags with the OWL.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial } from './common.js';
+guard(() => {
+
+  const ctx = makeStage(); const { scene, num } = ctx;
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#f3f6fb'), [0, 0.001, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.CircleGeometry(4.5, 48), mat('#dfe9f3'), [0, 0.004, 0], [-Math.PI / 2, 0, 0]);
+  const owl = createOwl({ scale: 1.2 }); owl.position.set(0, 0, 0.3); owl.rotation.y = 0.15; scene.add(owl);
+  const fl = flag('#e63946', 1.1); fl.position.set(0.55, 0, 0.55); scene.add(fl); owl.userData.reach('l', [0.4, 0.55, 0.3]);
+  const car = caribou(); car.position.set(2.3, 0, -0.5); car.rotation.y = -2.7; car.scale.setScalar(1.15); scene.add(car);
+  const gl = globe(); gl.position.set(-1.8, 0, 0.0); gl.scale.setScalar(1.5); scene.add(gl);
+  const f2 = flag('#2a9d8f', 1.0); f2.position.set(1.3, 0, 1.4); scene.add(f2);
+  const f3 = flag('#f4a261', 1.0); f3.position.set(-0.75, 0, 1.3); scene.add(f3);
+  const f4 = flag('#3a5fcd', 0.8); f4.position.set(-1.8, 1.55, 0.0); f4.scale.setScalar(0.5); scene.add(f4);
+  finish(ctx, [owl, car], [0.1, 1.05, 5.0], [0.2, 0.9, 0]);
+
+});
+</script></body></html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q04</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — "The MANDOLIN's maps on the MITTEN cover seven and a half million single cells."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const r = rng(2), cols = ['#e0457b', '#3b82d6', '#f2a93b', '#52b788', '#8a4fd8', '#e8e8e8'];
+  const bd = P.board((c, s) => { for (let i = 0; i < 2600; i++) { const cl = (i / 430 | 0) % 6, a = r() * 6.28, d = Math.sqrt(r()) * 150, cx = (0.15 + (cl % 3) * 0.35) * s, cy = (0.28 + (cl / 3 | 0) * 0.45) * s; c.fillStyle = cols[cl]; c.beginPath(); c.arc(cx + Math.cos(a) * d, cy + Math.sin(a) * d, 5 + r() * 4, 0, 6.3); c.fill(); } }, 3.4, 2.3);
+  bd.position.set(1.5, 0, -0.9); scene.add(bd);
+  const md = P.mandolin(); md.position.set(-1.9, 0, 0.7); md.rotation.set(0, 0.3, -0.12); md.scale.setScalar(1.2); scene.add(md);
+  const m = placeMitten(scene, { x: -0.3, z: 1.0, ry: 0.2, s: 1.95, pose: { arms: { l: [0, 0.8, 0] } }, reach: { r: [-1.5, 0.9, 1.1] } });
+  return { chars: [m], cam: { pos: [0, 1.7, 6.2], look: [0, 1.5, 0] } };
+});
+</script></body></html>

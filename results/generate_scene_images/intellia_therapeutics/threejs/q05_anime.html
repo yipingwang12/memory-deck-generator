@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q05</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q05 — The OWL sends fat bubbles to the liver to edit genes inside the body.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#e8a0a4', sky: { zenith: '#f08aa0', horizon: '#ffd9d0', cover: 0.3 } }); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.15 }); owl.position.set(-1.6, 0, 0.2); owl.rotation.y = 0.55; scene.add(owl);
+  owl.userData.reach('l', [0.9, 0.9, 0.5]);
+  // liver
+  const liv = new THREE.Group(); liv.position.set(1.5, 0.55, 0); scene.add(liv);
+  const lm = mat('#8e2f2a', { roughness: 0.35 });
+  blob(liv, lm, [-0.1, 0.0, 0], [0.85, 0.5, 0.45], [0, 0, 0.1]); blob(liv, '#a23a33', [0.5, -0.1, 0.05], [0.5, 0.38, 0.4]);
+  blob(liv, '#7d2622', [-0.55, -0.12, 0.05], [0.35, 0.3, 0.38]); blob(liv, '#4aa860', [0.35, -0.38, 0.3], [0.12, 0.16, 0.1]);
+  blob(liv, '#b84a42', [-0.1, 0.18, 0.4], [0.5, 0.12, 0.1]);
+  for (const s of [-1, 1]) { blob(liv, '#fff', [s * 0.2, 0.08, 0.42], [0.1, 0.1, 0.05]); blob(liv, '#1a1210', [s * 0.2, 0.07, 0.46], [0.05, 0.06, 0.03]); }
+  // DNA helix above the liver
+  const dna = new THREE.Group(); dna.position.set(1.5, 1.35, 0.1); scene.add(dna);
+  for (let i = 0; i < 24; i++) { const t = i / 23, y = (t - 0.5) * 1.1, a = t * 4 * Math.PI;
+    blob(dna, '#ffb02e', [Math.cos(a) * 0.17, y, Math.sin(a) * 0.17], [0.045, 0.045, 0.045]);
+    blob(dna, '#3fb6ff', [-Math.cos(a) * 0.17, y, -Math.sin(a) * 0.17], [0.045, 0.045, 0.045]);
+    if (i % 2 === 0) cyl(dna, '#ffffff', 0.012, 0.012, 0.34, [0, y, 0], [0, 0, Math.PI / 2]).rotation.set(0, -a, Math.PI / 2); }
+  // fat bubbles streaming from the owl's wing to the liver
+  for (let i = 0; i < 7; i++) { const t = i / 6, x = -0.7 + t * 1.5, y = 1.0 + Math.sin(t * Math.PI) * 0.35 - t * 0.35, r = 0.14 + 0.05 * Math.sin(i * 1.7) + 0.02 * i / 6;
+    bubble(scene, [x, y, 0.5], r, '#ffd3ea'); blob(scene, '#fff7c2', [x, y - r * 0.1, 0.5], [r * 0.5, r * 0.5, r * 0.5]); }
+  finish(ctx, [owl], [0, 1.0, 4.9], [0, 0.8, 0]);
+
+});
+</script></body></html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q15</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q15 — "A HIGH MAN on stilts (Heiman) now directs the MITTEN's PICOWER tower."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const t = P.tower({ h: 1.8 }); t.position.set(4.3, 0, -2.4); t.scale.setScalar(1.2); scene.add(t);
+  const sm = P.stiltMan(); sm.position.set(1.5, 0, -0.2); sm.scale.setScalar(1.3); sm.rotation.y = -0.35; scene.add(sm);
+  const m = placeMitten(scene, { x: -1.6, z: 1.0, ry: 0.5, s: 2.4, pose: { headTilt: -0.15 }, reach: { l: [-0.6, 2.2, 1.4] } });
+  return { chars: [m], cam: { pos: [1.0, 2.2, 8.2], look: [1.0, 2.2, 0] } };
+});
+</script></body></html>

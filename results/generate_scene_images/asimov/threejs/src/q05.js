@@ -1,0 +1,46 @@
+import { THREE, guard, makeStage, createAsimo, wrap, blob, box, cyl, add, mat, limbTo, limbArm, textPlane, tube, ribbon, dnaHelix, blade, person, armW, reachW, handPos, lens, crate, V3, rng } from './common.js';
+// q05 — An ANDROID reading a HOROSCOPE brings the ASIMO robot a small ROCK of coins: the seed.
+function android() {
+  const g = new THREE.Group(), gr = '#a4c639';
+  for (const s of [-1, 1]) { cyl(g, gr, 0.075, 0.075, 0.4, [s * 0.12, 0.2, 0]); blob(g, gr, [s * 0.12, 0.02, 0.02], [0.08, 0.05, 0.09]); }
+  cyl(g, gr, 0.28, 0.28, 0.6, [0, 0.72, 0]); blob(g, gr, [0, 0.42, 0], [0.28, 0.06, 0.28]); blob(g, gr, [0, 1.02, 0], [0.28, 0.05, 0.28]);
+  cyl(g, '#6f8a1c', 0.285, 0.285, 0.03, [0, 1.07, 0]);
+  add(g, new THREE.SphereGeometry(0.28, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), mat(gr), [0, 1.1, 0]);
+  for (const s of [-1, 1]) {
+    blob(g, '#fff', [s * 0.12, 1.22, 0.23], [0.06, 0.07, 0.03]); blob(g, '#1a2a3a', [s * 0.12, 1.22, 0.255], [0.035, 0.045, 0.018]); blob(g, '#fff', [s * 0.108, 1.235, 0.27], [0.012, 0.012, 0.01]);
+    limbTo(g, gr, 0.016, [s * 0.12, 1.36, 0], [s * 0.2, 1.56, 0]);
+  }
+  blob(g, '#2d5a14', [0, 1.14, 0.265], [0.04, 0.012, 0.02]);
+  const armG = {};
+  g.userData.arm = (k, t) => { const s = k === 'l' ? 1 : -1; armG[k]?.removeFromParent(); armG[k] = limbArm(g, gr, 0.065, [s * 0.34, 0.95, 0], t, gr, [s * 0.05, -0.1, -0.04]); };
+  return g;
+}
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#9fd08c' });
+  const a = createAsimo({ scale: 1.25 }); a.position.set(-0.7, 0, 0.1); a.rotation.y = 0.4; scene.add(a);
+  a.userData.pose({ arms: { r: [0, 0.6] } });
+  const d = android(); d.scale.setScalar(1.1); d.position.set(0.95, 0, 0); d.rotation.y = -0.5; scene.add(d);
+  // rock of coins
+  const rock = new THREE.Group(); rock.position.set(0.12, 0.62, 0.3); scene.add(rock);
+  add(rock, new THREE.DodecahedronGeometry(0.17, 1), mat('#8b909b', { roughness: 0.9 }), [0, 0, 0], [0.3, 0.5, 0], [1.1, 0.9, 1]);
+  const n = 16, up = V3(0, 1, 0);
+  for (let i = 0; i < n; i++) {
+    const y = 1 - 2 * (i + 0.5) / n, rr = Math.sqrt(1 - y * y), th = i * 2.4, nrm = V3(Math.cos(th) * rr, y, Math.sin(th) * rr);
+    const c = add(rock, new THREE.CylinderGeometry(0.07, 0.07, 0.018, 20), mat('#ffc933', { metalness: 0.6, roughness: 0.3, emissive: '#aa7700', emissiveIntensity: 0.25 }), nrm.clone().multiplyScalar(0.17).toArray());
+    c.quaternion.setFromUnitVectors(up, nrm);
+  }
+  // horoscope wheel
+  const wheel = textPlane(scene, '', 0.85, 0.85, [1.25, 1.12, 0.55], [0, -0.3, 0], { bg: '#1d1b4b', border: '#ffd24a', draw: (c, w, h) => {
+    const cx = w / 2, cy = h / 2; c.strokeStyle = '#ffd24a'; c.fillStyle = '#ffd24a'; c.lineWidth = 8;
+    for (const r of [w * 0.44, w * 0.3, w * 0.12]) { c.beginPath(); c.arc(cx, cy, r, 0, 7); c.stroke(); }
+    for (let i = 0; i < 12; i++) { const t = i / 12 * 6.283; c.beginPath(); c.moveTo(cx + Math.cos(t) * w * 0.3, cy + Math.sin(t) * w * 0.3); c.lineTo(cx + Math.cos(t) * w * 0.44, cy + Math.sin(t) * w * 0.44); c.stroke();
+      const m = i / 12 * 6.283 + 0.26, px = cx + Math.cos(m) * w * 0.37, py = cy + Math.sin(m) * w * 0.37; c.beginPath();
+      if (i % 3 === 0) { c.arc(px, py, 14, 0.5, 5.8); c.stroke(); } else if (i % 3 === 1) { c.moveTo(px, py - 17); c.lineTo(px + 15, py + 12); c.lineTo(px - 15, py + 12); c.closePath(); c.fill(); } else c.arc(px, py, 10, 0, 7), c.fill(); }
+    c.beginPath(); for (let i = 0; i < 16; i++) { const t = i * 3.14159 / 8, r = i % 2 ? w * 0.05 : w * 0.11; c.lineTo(cx + Math.cos(t) * r, cy + Math.sin(t) * r); } c.closePath(); c.fill();
+  } });
+  armW(d, 'l', [1.2, 0.9, 0.55]);
+  d.userData.arm('r', d.worldToLocal(V3(0.3, 0.62, 0.32)).toArray());
+  reachW(a, 'l', [-0.03, 0.62, 0.3]);
+  const r = rng(2); for (let i = 0; i < 7; i++) add(scene, new THREE.CylinderGeometry(0.06, 0.06, 0.015, 18), mat('#ffc933', { metalness: 0.6, roughness: 0.3 }), [-0.2 + r() * 1.6, 0.012, 0.6 + r() * 0.8], [0, 0, 0]);
+  wrap(stage, scene, [a, d], { cam: [0.25, 0.95, 4.0], look: [0.25, 0.9, 0] });
+});

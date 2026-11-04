@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Gene Lay q09</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Beside the HEN, the SAVIOUR also runs a centre for computational and integrative biology.
+import { THREE, guard, mat, add, blob, box, cyl, makeScene, nest, coin, egg, die, sign, tree, person, rng } from './common.js';
+import * as X from './props2.js';
+const { placeHen, placePerson, placeNest, aimAt } = X;
+guard(() => {
+
+  const S = makeScene({ ground: '#78b24a' }); const { scene, mark } = S;
+  const hen = placeHen(S, { x: -2.0, z: 0.8, ry: 0.5, scale: 1.4 });
+  const m = X.monitor(2.3, 1.45); m.position.set(1.9, 0, -0.3); m.rotation.y = -0.3; scene.add(m);
+  const sv = X.saviour(S, -0.2, 1.4, 0.45); sv.position.z = 0.6;
+  aimAt(sv, sv.userData.aim, 'l', [1.0, 1.6, 0.5]); 
+  S.finish([0, 1.3, 6.0], [0, 1.05, 0]);
+});
+</script></body></html>

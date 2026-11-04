@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Intellia q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q10 — An FDA pen dips in INK to set the OWL's lonvo-z date.
+import { THREE, guard, rng, createOwl, mat, add, blob, cyl, cone, box, makeStage, finish, textPlane, flag, caribou, fox, bear, globe, bubble, halo, vial, attacker } from './common.js';
+guard(() => {
+
+  const ctx = makeStage({ ground: '#d9c8a8' }); const { scene, num } = ctx;
+  const owl = createOwl({ scale: 1.1 }); owl.position.set(-2.0, 0, 0.4); owl.rotation.y = 0.5; scene.add(owl);
+  // wall calendar with one circled date
+  const cal = new THREE.Group(); cal.position.set(-0.55, 1.25, 0.1); cal.rotation.y = 0.12; scene.add(cal);
+  box(cal, '#fffaf0', 1.15, 1.25, 0.05, [0, 0, 0]); box(cal, '#d9302c', 1.15, 0.3, 0.06, [0, 0.47, 0]);
+  for (let i = 0; i < 4; i++) for (let j = 0; j < 5; j++) box(cal, '#d8dde6', 0.16, 0.13, 0.02, [-0.4 + j * 0.2, 0.18 - i * 0.2, 0.04]);
+  add(cal, new THREE.TorusGeometry(0.12, 0.022, 10, 32), mat('#d9302c'), [0.2, -0.02, 0.07]).scale.set(1, 0.85, 1);
+  // inkwell
+  const ink = new THREE.Group(); ink.position.set(1.7, 0, 0.5); scene.add(ink);
+  cyl(ink, mat('#2a3a8a', { roughness: 0.2 }), 0.42, 0.46, 0.6, [0, 0.3, 0]); cyl(ink, '#1a1a2a', 0.3, 0.3, 0.02, [0, 0.605, 0]);
+  cyl(ink, '#2a3a8a', 0.2, 0.34, 0.14, [0, 0.67, 0]); cyl(ink, '#0c0a18', 0.16, 0.16, 0.03, [0, 0.745, 0]);
+  const il = textPlane('INK', 0.5, 0.26, { bg: '#f4f1e8', fg: '#0c0a18', font: 'bold 150px Arial' }); il.position.set(0, 0.3, 0.46); ink.add(il);
+  // big FDA fountain pen dipping its nib
+  const pen = new THREE.Group(); pen.position.set(1.7, 0.74, 0.5); pen.rotation.z = -0.5; scene.add(pen);
+  cyl(pen, '#1f3f8f', 0.1, 0.1, 1.2, [0, 0.9, 0]); cone(pen, '#d8dde6', 0.1, 0.35, [0, 0.12, 0], [Math.PI, 0, 0]);
+  cone(pen, '#d9b23a', 0.07, 0.3, [0, -0.1, 0], [Math.PI, 0, 0]); cyl(pen, '#d9b23a', 0.105, 0.105, 0.06, [0, 0.32, 0]);
+  cyl(pen, '#d9b23a', 0.105, 0.105, 0.06, [0, 1.5, 0]);
+  const tag = textPlane('FDA', 0.34, 0.2, { bg: '#ffffff', fg: '#1f3f8f', font: 'bold 130px Arial', border: '#1f3f8f' }); tag.position.set(0, 0.95, 0.102); pen.add(tag);
+  finish(ctx, [owl], [0.1, 1.05, 4.7], [0.1, 0.95, 0]);
+
+});
+</script></body></html>

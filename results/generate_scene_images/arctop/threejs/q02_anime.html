@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arctop q02 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, mat, add, blob, num, placeTop, wrap, basic, textTex } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#7fb653' });
+  const fm = PR.buildFurMan(); fm.position.set(-1.3, 0, 0); fm.rotation.y = 0.45; scene.add(fm);
+  const top = placeTop(scene, { x: 1.0, s: 2.3, tilt: 0.1, arms: { l: [0, 0.9], r: [0, 2.3] } });
+  const cr = PR.buildCrown(); cr.scale.setScalar(1.9); cr.position.set(1.0, 1.22, 0); scene.add(cr);
+  wrap(stage, scene, [top, fm], { cam: [0, 1.3, 4.6], look: [0, 0.95, 0] });
+});
+</script></body></html>

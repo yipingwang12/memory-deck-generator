@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q10</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard, rng } from './kit.js';
+import * as B from './base.js';
+const { THREE, mat, add, blob, box, cyl, textPlane, kitchenStage, frame, toon, createMixer, nose, tank, drop, ribbon, bib } = B;
+guard(() => {
+const { stage, scene, num } = kitchenStage(); const r = rng(3);
+const m = createMixer({ scale: 1.45 }); m.position.set(-1.6, 0, 0.2); m.rotation.y = 0.5; scene.add(m);
+m.userData.pose({ arms: { l: [0, 0.9, -0.2], r: [0, 0.9, -0.2] } });
+const post = mat('#6b4a2a');
+for (const x of [-0.9, 0.9]) cyl(scene, post, [x + 0.7, 0.9, 0], 0.07, 1.8);
+box(scene, mat('#fff4dc'), [0.7, 1.6, 0.0], [2.5, 0.95, 0.1]); box(scene, mat('#e0283a'), [0.7, 1.6, -0.05], [2.5, 1.0, 0.06]);
+const t = textPlane('RMTX', { w: 1.7, h: 0.65, bg: '#fff4dc', fg: '#e0283a', px: 0.72 }); t.position.set(0.1, 1.62, 0.07); scene.add(t);
+const x = textPlane('X', { w: 0.7, h: 0.7, bg: '#fff4dc', fg: '#1b2a6e', px: 1.0 }); x.position.set(1.45, 1.62, 0.07); scene.add(x);
+toon(stage, scene, [m]); frame(stage, num, { cx: 0.1, cz: 4.5, tx: 0.1, ty: 0.9 });
+});
+</script></body></html>

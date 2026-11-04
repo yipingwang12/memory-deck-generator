@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cellarity q12 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+// q12 - A NOVO egg brings fatty liver work to the CELLAR.
+import * as C from './common.js';
+const { THREE, mat, add, blob, cyl, box, put, arrow, guard } = C;
+guard(() => {
+
+const S = C.makeScene({ room: 'cellar' }); const sc = S.scene;
+S.cellar({ pos: [-2.3, 0, 0.1], scale: 1.9, ry: 0.4, pose: { arms: { l: [0, 0.5], r: [-0.6, 0.3] } } });
+put(sc, C.egg('NOVO'), -0.1, 0, 0.3, 1.6, 0);
+put(sc, C.liver(), 2.0, 0, 0.3, 1.0, -0.3);
+S.done({ cam: [0, 1.3, 6.0], look: [0, 0.85, 0] });
+});
+</script></body></html>

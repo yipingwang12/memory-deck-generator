@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Arctop q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, mat, add, blob, num, placeTop, wrap, basic, textTex } from './common.js';
+import * as PR from './props.js';
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#c8a86a' });
+  const hill = blob(scene, mat('#b99a5a'), [0, -2, -30], [45, 12, 14]);
+  [...'HOLLYWOOD'].forEach((ch, i) => {
+    const bx = add(scene, new THREE.BoxGeometry(2.6, 3.4, 0.35), mat('#ffffff'), [(i - 4) * 2.9, 11.2, -17.3]);
+    const f = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 3.2), new THREE.MeshBasicMaterial({ map: textTex(ch, { w: 256, h: 340, fg: '#6b7488', bg: '#ffffff', font: 'bold 300px Arial' }) }));
+    f.position.z = 0.18; bx.add(f);
+  });
+  for (const px of [-10, -3, 4, 11]) add(scene, new THREE.BoxGeometry(0.4, 3.4, 0.4), mat('#8d8d94'), [px, 9.6, -17.5]);
+  const t1 = PR.buildPalm(5.5); t1.position.set(-5.5, 0, -3); scene.add(t1);
+  const t2 = PR.buildPalm(4.5); t2.position.set(6, 0, -5); scene.add(t2);
+  const top = placeTop(scene, { x: 0, y: 0, z: 0, s: 3.3, tilt: 0.1, arms: { l: [0, 2.3], r: [0, 2.3] } });
+  for (const [r, y] of [[0.8, 0.05], [1.2, 0.05]]) add(scene, new THREE.TorusGeometry(r, 0.03, 6, 48), basic('#ffffff', { transparent: true, opacity: 0.8 }), [0, y, 0], [Math.PI / 2, 0, 0]);
+  wrap(stage, scene, [top], { cam: [0, 2.0, 9], look: [0, 4.6, -5] });
+});
+</script></body></html>

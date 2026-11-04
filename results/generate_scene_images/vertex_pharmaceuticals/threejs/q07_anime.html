@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vertex q07 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q07 — Casgevy, from the VORTEX, fixes sickle cells and thalassaemia blood.
+import * as C from './common.js';
+const { THREE, mat, add, blob, rbox, reachWorld } = C;
+C.guard(() => {
+
+const { scene, vortex, done } = C.setup({ vx: -1.4, vs: 1.3, vry: 0.5, ground: '#f5d0d0' });
+const tube = new THREE.Group(); scene.add(tube); tube.position.set(0.7, 0, 0.3);
+add(tube, new THREE.CylinderGeometry(0.42, 0.42, 1.9, 32, 1, true), mat('#cfeaff', { transparent: true, opacity: 0.3, side: THREE.DoubleSide }), [0, 1.0, 0]);
+add(tube, new THREE.SphereGeometry(0.42, 32, 16, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), mat('#cfeaff', { transparent: true, opacity: 0.3 }), [0, 0.05, 0]);
+add(tube, new THREE.CylinderGeometry(0.38, 0.38, 1.2, 32), mat('#d4505a', { roughness: 0.3 }), [0, 0.65, 0]);
+const rr = C.rng(5); for (let i = 0; i < 10; i++) { const k = i % 2 ? C.redCell(0.17) : C.sickleCell(0.15); k.position.set((rr() - 0.5) * 0.4, 0.2 + i * 0.1 + (i % 3) * 0.05, 0.38 * 0.9); k.rotation.z = rr() * 6; tube.add(k); }
+for (let i = 0; i < 5; i++) { const k = C.redCell(0.17); k.position.set(1.75 + (i % 2) * 0.25, 0.5 + i * 0.35, 1.0); k.rotation.set(0.5, 0.3, i); scene.add(k); }
+for (let i = 0; i < 3; i++) { const k = C.sickleCell(0.2); k.position.set(-0.1 + i * 0.3, 0.35, 1.3); k.rotation.z = i * 2; scene.add(k); }
+const v = C.vial(); v.scale.setScalar(2.2); v.position.set(0.0, 2.0, 0.9); v.rotation.z = -2.0; scene.add(v);
+reachWorld(vortex, 'l', [-0.15, 1.85, 0.9]);
+done({ cam: [0, 1.0, 4.6], look: [0, 0.95, 0] });
+});
+</script></body></html>

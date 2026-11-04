@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q02</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q02 — VERDANT green wave + WADING heron plant flags on the SURFER's board.
+  beach(scene, { seaZ: 4.5 });
+  const wv = wave(scene, { x: 0.6, z: -7, size: 1.9, len: 2.6, color: '#27d23c' }); wv.rotation.y = 1.45;
+  const s = addSurfer(stage, P, { x: -1.45, z: 0.0, ry: 0.35, scale: 1.95, board: true });
+  const b = s.userData.parts.board; scene.add(b); b.scale.setScalar(1.6);
+  b.rotation.set(-Math.PI / 2, 0, Math.PI / 2, 'XYZ'); b.position.set(-0.1, 0.08, 0.85);
+  b.rotation.order = 'ZYX'; b.rotation.set(0, 0, 0); b.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)); b.rotateZ(Math.PI / 2 - 0.0);
+  s.userData.pose({ lean: 0.1, headTilt: 0.1, arms: { l: [0.2, 0.2, 0.1], r: [0.1, 0.2, 0.1] } });
+  const flag = (x, z, c, h = 0.9, lean = 0) => {
+    const f = new THREE.Group(); f.position.set(x, 0.1, z); f.rotation.z = lean; scene.add(f);
+    add(f, new THREE.CylinderGeometry(0.018, 0.018, h, 8), mat('#f4efe4'), [0, h / 2, 0]);
+    const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.lineTo(0.5, 0.17); sh.lineTo(0, 0.34);
+    add(f, new THREE.ExtrudeGeometry(sh, { depth: 0.02, bevelEnabled: false }), mat(c, { emissive: c, emissiveIntensity: 0.12 }), [0.02, h - 0.34, 0]);
+    return f;
+  };
+  flag(-0.55, 0.85, '#2fc43c', 0.95, -0.05); flag(0.15, 0.82, '#ffffff', 0.85, 0.05); flag(0.7, 0.88, '#2fc43c', 0.95, 0.08);
+  // heron
+  const H = new THREE.Group(); H.position.set(1.7, 0, 0.7); H.rotation.y = -0.5; scene.add(H);
+  const grey = mat('#9fb4c8'), white = mat('#f6f6f2'), yel = mat('#f0b020');
+  add(H, new THREE.CircleGeometry(0.75, 32), mat('#5fd3e0', { transparent: true, opacity: 0.85 }), [0, 0.015, 0], [-Math.PI / 2, 0, 0]);
+  for (const x of [-0.08, 0.1]) {
+    add(H, new THREE.CylinderGeometry(0.018, 0.018, 0.95, 8), yel, [x, 0.5, 0]);
+    add(H, new THREE.BoxGeometry(0.12, 0.02, 0.2), yel, [x, 0.03, 0.06]);
+  }
+  blob(H, grey, [0, 1.15, 0], [0.32, 0.22, 0.2], [0, 0, 0.1]);
+  blob(H, white, [0.12, 1.1, 0.05], [0.2, 0.14, 0.15]);
+  blob(H, grey, [-0.35, 1.2, 0], [0.22, 0.07, 0.08], [0, 0, 0.35]);
+  for (let i = 0; i < 6; i++) { const t = i / 5; blob(H, i % 2 ? white : grey, [0.22 + 0.1 * Math.sin(t * 3.1), 1.25 + t * 0.62, 0], [0.065, 0.1, 0.065]); }
+  blob(H, white, [0.24, 1.93, 0], [0.11, 0.09, 0.09]);
+  add(H, new THREE.ConeGeometry(0.04, 0.5, 10), yel, [0.5, 1.9, 0], [0, 0, -Math.PI / 2 - 0.05]);
+  blob(H, mat('#111'), [0.27, 1.97, 0.07], [0.025, 0.025, 0.02]);
+  add(H, new THREE.CylinderGeometry(0.004, 0.012, 0.35, 6), mat('#222'), [0.1, 2.0, 0], [0, 0, 1.2]);
+  const hf = flag(0, 0, '#2fc43c', 0.55, 0); H.add(hf); hf.position.set(0.72, 1.55, 0); hf.rotation.z = 0.12;
+  finish(stage, P, s, [0.3, 1.6, 5.4], [0.3, 1.0, 0], [b]);
+});
+</script></body></html>

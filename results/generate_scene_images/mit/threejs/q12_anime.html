@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q12</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q12 — "A RUST-red sail (Daniela Rus) directs the MITTEN's CSAIL."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const r = rng(9);
+  const sail = P.sailPanel(2.6, 3.0, (c, s) => { c.fillStyle = '#b5381f'; c.fillRect(0, 0, s, s); for (let i = 0; i < 160; i++) { c.fillStyle = ['#8a2812', '#d8641f', '#6b2010'][i % 3]; c.globalAlpha = 0.5; c.beginPath(); c.arc(r() * s, r() * s, 6 + r() * 26, 0, 6.3); c.fill(); } c.globalAlpha = 1; }, { bulge: 0.22 });
+  const bt = P.boat(sail, { len: 3.4, mastH: 3.8 }); bt.position.set(1.0, 0, -0.8); scene.add(bt);
+  const m = placeMitten(scene, { x: -1.8, z: 1.2, ry: 0.5, s: 2.2, reach: { l: [0.2, 1.7, 0.4] } });
+  return { chars: [m], cam: { pos: [0.2, 2.0, 7.0], look: [0.2, 1.8, 0] } };
+}, { ground: '#3a8fd0' });
+</script></body></html>

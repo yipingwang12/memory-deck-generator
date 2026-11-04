@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q08 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The FDA hands the AXE a breakthrough device badge.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({});
+const a = placeAxe(S, { pos: [-1.3, 0, 0.4], ry: 0.3, scale: 1.95, pose: { headTilt: 0.06, arms: { r: [0, -0.6, 0.3] } }, reach: { l: [-0.65, 1.0, 0.95] } });
+const hp = hand(a, 'l');
+const badge = new THREE.Group(); badge.position.set(hp.x + 0.78, hp.y + 0.12, hp.z + 0.05); badge.scale.setScalar(1.25); S.scene.add(badge);
+const gold = mat('#ffc928', { metalness: 0.6, roughness: 0.25 });
+const st = new THREE.Mesh(new THREE.ExtrudeGeometry(starShape(0.55, 0.26), { depth: 0.08, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.02, bevelSegments: 2 }), gold); st.castShadow = true; badge.add(st);
+const disc = new THREE.Mesh(new THREE.CircleGeometry(0.2, 28), new THREE.MeshStandardMaterial({ color: '#2a6fd4' })); disc.position.z = 0.115; badge.add(disc);
+for (const s of [-1, 1]) add(badge, new THREE.BoxGeometry(0.2, 0.5, 0.04), mat('#e8383d'), [s * 0.13, -0.6, 0], [0, 0, s * 0.25]);
+const hu = human({ shirt: '#1d3557', pants: '#1d3557', scale: 1.5, hair: '#2a2a2a' }); hu.position.set(2.0, 0, 0.1); hu.rotation.y = -0.4; S.scene.add(hu);
+seg(S.scene, mat('#1d3557'), [1.8, 1.1, 0.3], [1.25, 1.2, 0.75], 0.07); blob(S.scene, mat('#ffd9b8'), [1.25, 1.2, 0.75], [0.07, 0.07, 0.07]);
+for (const x of [0.3, 3.4]) box(S.scene, mat('#555'), [x, 1.8, -1.5], [0.12, 3.6, 0.12]);
+const sg = textPlane('FDA', { w: 3.0, h: 0.95, bg: '#1d4f9a', fg: '#ffffff', frame: '#ffffff' }); sg.position.set(1.85, 3.3, -1.4); S.scene.add(sg);
+finish(S, [0.4, 1.6, 6.8], [0.5, 1.55, 0]);
+
+});
+</script></body></html>

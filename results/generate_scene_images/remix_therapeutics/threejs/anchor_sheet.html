@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Mixer anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { guard } from './kit.js';
+import { kitchenStage, frame, toon, createMixer } from './base.js';
+guard(() => {
+  const { stage, scene, num } = kitchenStage();
+  const ms = [];
+  [[-1.0, 0], [0, 0.75], [1.0, Math.PI / 2]].forEach(([x, ry]) => {
+    const m = createMixer({ scale: 1.15 }); m.position.set(x, 0, 0); m.rotation.y = ry; scene.add(m); ms.push(m);
+    m.userData.pose({ headTilt: 0.05, arms: { l: [0, 0.9, -0.3], r: [0, 0.9, -0.3] } });
+  });
+  ms[0].userData.reach('l', [0.3, 0.9, 0.25]); ms[0].userData.spin(0.5);
+  toon(stage, scene, ms);
+  frame(stage, num, { cx: 0, cy: 0.9, cz: 2.9, ty: 0.55 });
+});
+</script></body></html>

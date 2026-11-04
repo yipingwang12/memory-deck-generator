@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Asimov q03 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, makeStage, createAsimo, wrap, blob, box, cyl, add, mat, limbTo, limbArm, textPlane, tube, ribbon, dnaHelix, blade, person, armW, reachW, handPos, lens, crate, V3, rng } from './common.js';
+// q03 — The ASIMO robot is built around a CELLO: each string plays one genetic circuit.
+function cello() {
+  const g = new THREE.Group(), v = '#a3501c', dk = '#241812';
+  blob(g, v, [0, 0.38, 0], [0.34, 0.3, 0.1]); blob(g, v, [0, 0.8, 0], [0.25, 0.22, 0.09]); blob(g, v, [0, 0.6, 0], [0.2, 0.14, 0.09]);
+  for (const s of [-1, 1]) blob(g, dk, [s * 0.11, 0.58, 0.095], [0.014, 0.09, 0.01], [0, 0, s * 0.15]);
+  box(g, '#6e3a14', [0.075, 0.7, 0.05], [0, 1.2, 0.03]); box(g, dk, [0.1, 0.9, 0.03], [0, 1.3, 0.065]);
+  box(g, v, [0.11, 0.2, 0.05], [0, 1.85, 0.0]); add(g, new THREE.TorusGeometry(0.06, 0.028, 10, 24), mat(v), [0, 1.98, 0]);
+  for (const s of [-1, 1]) for (const y of [1.78, 1.9]) cyl(g, dk, 0.016, 0.016, 0.1, [s * 0.09, y, 0], [0, 0, Math.PI / 2]);
+  box(g, '#d9b77a', [0.2, 0.05, 0.035], [0, 0.46, 0.14]); box(g, dk, [0.09, 0.32, 0.02], [0, 0.24, 0.115]);
+  cyl(g, '#aaa', 0.012, 0.012, 0.3, [0, -0.05, 0]);
+  const cols = ['#ff4d4d', '#ffd84d', '#4dff7a', '#4da6ff'];
+  cols.forEach((c, i) => {
+    const bx = (i - 1.5) * 0.05, nx = (i - 1.5) * 0.028;
+    limbTo(g, c, 0.013, [bx, 0.46, 0.15], [nx, 1.78, 0.085], { emissive: c, emissiveIntensity: 0.5 });
+    const side = i < 2 ? -1 : 1, oy = 1.25 + (i % 2) * 0.4, ox = side * 0.38;
+    limbTo(g, c, 0.007, [nx, oy - 0.02, 0.09], [ox, oy, 0.14], { emissive: c, emissiveIntensity: 0.8 });
+    blob(g, c, [ox, oy, 0.14], [0.075, 0.075, 0.075], [0, 0, 0], { emissive: c, emissiveIntensity: 0.9 });
+    add(g, new THREE.TorusGeometry(0.115, 0.012, 8, 28), mat(c, { emissive: c, emissiveIntensity: 0.7 }), [ox, oy, 0.14]);
+  });
+  return g;
+}
+guard(() => {
+  const { stage, scene } = makeStage({ ground: '#b5793f', sky: { cover: 1 } });
+  const cur = new THREE.Group(); scene.add(cur);
+  textPlane(cur, '', 16, 7, [0, 3, -3.5], [0, 0, 0], { bg: '#8d1f2c', draw: (c, w, h) => { for (let i = 0; i < 40; i++) { c.fillStyle = i % 2 ? 'rgba(0,0,0,0.18)' : 'rgba(255,255,255,0.07)'; c.fillRect(i * w / 40, 0, w / 40, h); } } });
+  const c = cello(); c.scale.setScalar(0.85); c.position.set(-0.15, 0, 0.1); c.rotation.y = 0.12; scene.add(c);
+  const a = createAsimo({ scale: 1.15 }); a.position.set(0.7, 0, -0.05); a.rotation.y = -0.55; scene.add(a);
+  a.userData.pose({ arms: { l: [0, 1.1] } });
+  reachW(a, 'r', [0.2, 0.5, 0.35]);
+  const h = handPos(a, 'r'), end = h.clone().add(V3(-1.1, -0.02, 0.28));
+  limbTo(scene, '#3a2414', 0.014, h.toArray(), end.toArray()); limbTo(scene, '#f5f0e0', 0.01, h.clone().add(V3(-0.1, 0, 0.02)).toArray(), end.toArray());
+  box(scene, '#d98a2b', [0.05, 0.05, 0.05], h.toArray());
+  wrap(stage, scene, a, { cam: [0.2, 0.95, 3.3], look: [0.2, 0.92, 0], clouds: false });
+});
+</script></body></html>

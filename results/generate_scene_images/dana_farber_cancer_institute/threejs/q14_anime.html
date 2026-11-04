@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q14</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// CHARLES the DANCER feeds the farmer; the DANCER's name joins the farmer's sign
+const S = boot(); const sc = S.scene;
+const post = new THREE.Group(); post.position.set(-2.2, 0, -0.8); sc.add(post);
+cyl(post, '#7a4a22', [0, 1.1, 0], 0.07, 2.2); box(post, '#d9b27a', [0, 1.8, 0], [1.9, 0.9, 0.08]);
+const t = textPlane('DANA', 1.7, 0.7, { bg: '#d9b27a', fg: '#7a1a1a', font: 'bold 210px serif' }); t.position.set(0, 1.8, 0.05); post.add(t);
+const d = person({ body: '#ff9ad0', skirt: '#ffb7dc', hair: '#2a1a14', s: 2.1 }); d.position.set(2.2, 0, 0.5); d.rotation.y = -0.5; sc.add(d);
+d.rotation.z = 0.0; for (const c of d.children) if (c.name === 'arm1') { c.rotation.z = 1.9; c.position.set(0.35, 0.8, 0); }
+for (const c of d.children) if (c.name === 'arm-1') { c.rotation.z = -1.0; }
+cyl(sc, '#8a5a2a', [1.0, 0.2, 1.0], 0.3, 0.4); for (let i = 0; i < 8; i++) blob(sc, '#e6c050', [1.0 + (i % 4 - 1.5) * 0.1, 0.45, 1.0 + (i % 3 - 1) * 0.1], [0.05, 0.03, 0.05]);
+const f = farmerAt(sc, { x: 0.0, z: 1.0, ry: 0.3, s: 1.9 }); reachTo(f, "l", [1.0, 0.8, 1.0]);
+done(S, f, { pos: [0, 1.5, 5.4], look: [0, 1.1, 0] });
+});
+</script></body></html>

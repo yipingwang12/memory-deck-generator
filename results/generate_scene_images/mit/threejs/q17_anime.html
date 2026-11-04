@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MIT q17</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q17 — "The TSAI cup and the MANDOLIN read eighty thousand six hundred sixty nuclei on the MITTEN."
+import { THREE, add, blob, cyl, box, mat, rng, placeMitten, run } from './common.js';
+import * as P from './props.js';
+run(({ scene }) => {
+  const r = rng(12), nm = mat('#3f5fd8', { emissive: '#2a3fa0', emissiveIntensity: 0.4 }), cm = mat('#a9d4ff', { transparent: true, opacity: 0.35 });
+  for (let i = 0; i < 330; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * 2.1, h = Math.max(0, 1.7 - d * 0.8) * r(); const p = [2.4 + Math.cos(a) * d, 0.12 + h, -0.8 + Math.sin(a) * d * 0.6]; blob(scene, cm, p, [0.15, 0.15, 0.15]); blob(scene, nm, p, [0.11, 0.11, 0.11]); }
+  const c = P.teacup({ s: 1.8 }); c.position.set(-2.3, 0, 0.8); scene.add(c);
+  const md = P.mandolin(); md.position.set(0.6, 0, 0.5); md.rotation.set(0, -0.3, 0.1); md.scale.setScalar(1.1); scene.add(md);
+  const m = placeMitten(scene, { x: -0.7, z: 0.9, ry: 0.2, s: 2.0, reach: { l: [0.3, 1.0, 0.9], r: [-1.6, 1.0, 1.0] } });
+  return { chars: [m], cam: { pos: [0.2, 1.7, 6.8], look: [0.2, 1.3, 0] } };
+});
+</script></body></html>

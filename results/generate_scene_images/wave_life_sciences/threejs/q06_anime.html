@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Wave q06</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, labelTex, textPanel, makeStage, beach, wave, addSurfer, finish, pill, vial, labelBoard, num } from './common.js';
+guard(() => {
+  const P = new URLSearchParams(location.search), stage = makeStage(P), scene = stage.scene;
+  // q06 — WVE-006 makes the SURFER the first to edit RNA in a human.
+  beach(scene, { seaZ: 5 });
+  const pod = new THREE.Group(); scene.add(pod);
+  const blk = (x, h, c, lab) => { add(pod, new THREE.BoxGeometry(1.0, h, 0.9), mat(c), [x, h / 2, 0]); const t = textPanel(lab, { w: 0.55, h: 0.55, bg: c, fg: '#ffffff' }); t.position.set(x, h * 0.55, 0.46); pod.add(t); };
+  blk(-1.05, 0.5, '#7fa3c7', '2'); blk(1.05, 0.35, '#c98a4a', '3'); blk(0, 0.8, '#f0c030', '1');
+  const s = addSurfer(stage, P, { x: 0.0, z: 0.0, ry: 0.0, scale: 1.8 }); s.position.y = 0.8;
+  s.userData.pose({ lean: 0, headTilt: 0.05, arms: { r: [0, 0.35, 0.1] } });
+  const b = s.userData.parts.board; labelBoard(b, 'WVE-006', { len: 1.0 }); b.scale.setScalar(0.8); b.position.set(0.5, 0.75, -0.05);
+  s.userData.pose({ arms: { r: [0, 0.35, 0.1] } });
+  // RNA strand with one edited base
+  const rna = new THREE.Group(); rna.position.set(2.25, 0.1, 0.5); scene.add(rna);
+  const bc = ['#e8283a', '#2fc43c', '#f0b020', '#1f7be8'];
+  for (let i = 0; i < 10; i++) {
+    const y = 0.35 + i * 0.28, x = Math.sin(i * 0.9) * 0.22; const edited = i === 6;
+    add(rna, new THREE.CylinderGeometry(0.02, 0.02, 0.5, 8), mat('#d8d2c4'), [x * 0.5, y, 0], [0, 0, Math.PI / 2]);
+    blob(rna, mat('#8e6cf0'), [x - 0.18, y, 0], [0.085, 0.085, 0.085]);
+    blob(rna, mat(edited ? '#ffffff' : bc[i % 4], { emissive: edited ? '#fff2a0' : '#000', emissiveIntensity: edited ? 1 : 0 }), [x + 0.1, y, 0], edited ? [0.17, 0.17, 0.17] : [0.12, 0.12, 0.12]);
+  }
+  const spark = (x, y, z) => { for (const r of [0, Math.PI / 2, Math.PI / 4, -Math.PI / 4]) add(rna, new THREE.BoxGeometry(0.7, 0.05, 0.05), new THREE.MeshBasicMaterial({ color: '#fff3a0' }), [x, y, z], [0, 0, r]); };
+  spark(0.15, 0.35 + 6 * 0.28 - 0.0, 0.1);
+  // human pictogram sign
+  const pic = labelTex(256, 256, (c) => { c.fillStyle = '#1d3b52'; c.fillRect(0, 0, 256, 256); c.fillStyle = '#fff'; c.beginPath(); c.arc(128, 62, 32, 0, 7); c.fill(); c.beginPath(); c.roundRect(82, 106, 92, 84, 24); c.fill(); c.fillRect(100, 170, 24, 66); c.fillRect(132, 170, 24, 66); });
+  const sg = add(scene, new THREE.PlaneGeometry(0.9, 0.9), new THREE.MeshBasicMaterial({ map: pic }), [-2.4, 1.9, 0.0]);
+  add(scene, new THREE.CylinderGeometry(0.04, 0.04, 1.5, 8), mat('#4a3320'), [-2.4, 0.75, -0.05]);
+  finish(stage, P, s, [0.0, 1.8, 6.2], [0.0, 1.6, 0], [b]);
+});
+</script></body></html>

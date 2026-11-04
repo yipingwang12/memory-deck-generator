@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sarkar scene</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { guard, canvasTexture, rng } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createHiker } from './hiker.js';
+const mat = (c, e = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, ...e });
+const glowM = (c, i = 1.5) => new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: i, roughness: 0.3 });
+const add = (parent, geo, m, pos = [0, 0, 0], rot = [0, 0, 0], scl = [1, 1, 1]) => {
+  const o = new THREE.Mesh(geo, m); o.position.set(...pos); o.rotation.set(...rot); o.scale.set(...scl);
+  o.castShadow = o.receiveShadow = true; parent.add(o); return o;
+};
+const blob = (p, m, pos, scl, rot) => add(p, new THREE.SphereGeometry(1, 32, 20), m, pos, rot, scl);
+const textTex = (txt, bg, fg, w = 512, h = 128, font = 'bold 78px sans-serif') => canvasTexture(w, (ctx, s) => {
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, s, s); ctx.fillStyle = fg; ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, s / 2, s / 2);
+});
+function mountain(scene, x, z, h, r, color, snow = true) {
+  const g = new THREE.Group(); g.position.set(x, 0, z); scene.add(g);
+  add(g, new THREE.ConeGeometry(r, h, 7, 1), mat(color), [0, h / 2, 0], [0, x, 0]);
+  if (snow) add(g, new THREE.ConeGeometry(r * 0.32, h * 0.32, 7, 1), mat('#ffffff'), [0, h * 0.84, 0], [0, x, 0]);
+  return g;
+}
+function tree(scene, x, z, s = 1) {
+  add(scene, new THREE.CylinderGeometry(0.05 * s, 0.07 * s, 0.4 * s, 8), mat('#7a4a2a'), [x, 0.2 * s, z]);
+  for (let i = 0; i < 3; i++) add(scene, new THREE.ConeGeometry((0.4 - i * 0.09) * s, 0.5 * s, 10), mat('#2f8a4a'), [x, (0.55 + i * 0.3) * s, z]);
+}
+function trail(scene, pts, w = 0.5) {
+  const c = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(p[0], 0.012, p[1]))), N = 100, pos = [], idx = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, p = c.getPoint(t), d = c.getTangent(t), nx = -d.z, nz = d.x, ww = w * (1 - 0.5 * t) / 2;
+    pos.push(p.x + nx * ww, p.y, p.z + nz * ww, p.x - nx * ww, p.y, p.z - nz * ww);
+    if (i < N) idx.push(2 * i, 2 * i + 1, 2 * i + 2, 2 * i + 1, 2 * i + 3, 2 * i + 2);
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+  const m = add(scene, g, mat('#d8b27a', { side: THREE.DoubleSide })); m.castShadow = false; return m;
+}
+const chars = new Set();
+function hiker(scene, o = {}) {
+  const h = createHiker({ scale: o.s ?? 1.3, jacket: o.jacket, pack: o.pack });
+  h.position.set(...(o.pos ?? [0, 0, 0])); h.rotation.y = o.ry ?? 0; scene.add(h);
+  h.userData.pose({ lean: 0.05, headTilt: 0.05, arms: o.arms ?? { l: [0.3, 0.1, 0.2], r: [-0.3, 0.1, 0.2] }, legs: o.legs ?? { l: [0.25, 0], r: [-0.25, 0] } });
+  h.traverse((x) => chars.add(x)); return h;
+}
+guard(() => {
+  const P = new URLSearchParams(location.search);
+  const num = (k, d) => Number(P.get(k) ?? d);
+  const stage = createAnimeStage({
+    fov: num('fov', 40), sunElevation: num('el', 35), sunAzimuth: num('az', 150), exposure: num('exp', 1),
+    sky: { cover: num('cover', 2), seed: num('seed', 5), towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 },
+    sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 },
+    flare: 0.7, fog: { near: 120, far: 1500 },
+  });
+  const scene = stage.scene, cam = stage.camera;
+  const meadow = (c = '#6fae45') => add(scene, new THREE.PlaneGeometry(400, 400), mat(c), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  meadow('#7cb84c'); 
+  const cloth = add(scene, new THREE.PlaneGeometry(9, 6), new THREE.MeshStandardMaterial({ map: canvasTexture(256, (ctx, s) => { for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) { ctx.fillStyle = (i + j) % 2 ? '#ffffff' : '#e4584a'; ctx.fillRect(i * s / 8, j * s / 8, s / 8, s / 8); } }, { repeat: 1 }), roughness: 0.9 }), [0, 0.01, -0.5], [-Math.PI / 2, 0, 0]);
+  const S = new THREE.Group(); S.position.set(-0.7, 0, -0.8); S.rotation.y = 0.35; scene.add(S);
+  add(S, new THREE.BoxGeometry(2.4, 0.4, 1.6), mat('#d8dde2', { metalness: 0.9, roughness: 0.2 }), [0, 0.2, 0]);      // silver slab
+  // organic polymer layer: green wavy chains
+  const r = rng(5);
+  for (let k = 0; k < 7; k++) for (let i = 0; i < 24; i++) add(S, new THREE.SphereGeometry(0.1, 12, 8), mat(k % 2 ? '#3fbf5f' : '#7fe08a'), [-1.1 + i * 0.095, 0.55 + Math.sin(i * 0.8 + k) * 0.08, -0.65 + k * 0.215]);
+  for (let k = 0; k < 7; k++) add(S, new THREE.CylinderGeometry(0.05, 0.05, 2.25, 8), mat('#2fa04f'), [0, 0.55, -0.65 + k * 0.215], [0, 0, Math.PI / 2]);
+  add(S, new THREE.BoxGeometry(2.4, 0.4, 1.6), mat('#f0c040', { metalness: 0.9, roughness: 0.25 }), [0, 0.95, 0]);       // gold slab
+  const h = hiker(scene, { pos: [1.7, 0, 0.9], ry: -0.5, s: 1.35, arms: { l: [0, 0.1, 0.2], r: [0, 0.1, 0.2] } });
+  h.userData.reach('l', [-0.3, 0.9, 0.35]);
+  cam.position.set(0.3, 1.7, 5.6); cam.lookAt(0, 0.7, 0);
+  stage.toonify(scene, (m) => chars.has(m));
+  stage.addClouds(window.__clouds ?? [[150, 900, 90, 1.2], [187, 1000, 120, 1.6], [230, 950, 70, 0.9]]);
+  stage.finish();
+});
+</script></body></html>

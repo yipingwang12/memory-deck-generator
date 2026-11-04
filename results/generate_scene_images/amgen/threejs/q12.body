@@ -1,0 +1,14 @@
+// q12 — The GENIE swallows the HORIZON, sun and all.
+import { THREE, run, mat, add, blob, glow, noInk, halo, V } from './common.js';
+run({
+  ground: '#1f78c8', el: 16, az: 90, cover: 1.2, ambient: 2.0, frame: { x: 0.3, y: 2.0, H: 5.2 },
+  genie: { x: -1.8, z: 0.2, scale: 1.75, ry: 1.2, pose: { lean: 0.18, headTilt: -0.05, arms: { l: [0.2, 1.1, 0.1], r: [-0.2, -1.1, 0.1] } }, mouth: 1 },
+  build({ scene }) {
+    noInk(add(scene, new THREE.BoxGeometry(800, 1.6, 2), glow('#ffcf6a'), [0, 1.9, -150]));
+    const sun = new THREE.Group(); sun.position.set(-0.05, 1.55, 0.2); scene.add(sun);
+    noInk(blob(sun, glow('#ffd23a'), [0, 0, 0], [0.62, 0.62, 0.62]));
+    const h = halo(1.35, '255,170,60', 0.85); h.position.set(-0.05, 1.55, 0.1); scene.add(h);
+    const curve = new THREE.CatmullRomCurve3([V(9, 1.95, -3), V(5, 1.9, -1.2), V(2, 1.75, -0.3), V(0, 1.62, 0.05), V(-0.9, 1.5, 0.25)]);
+    noInk(new THREE.Mesh(new THREE.TubeGeometry(curve, 60, 0.09, 10), glow('#ffc24a'))); scene.add(noInk(new THREE.Mesh(new THREE.TubeGeometry(curve, 60, 0.09, 10), glow('#ffc24a'))));
+  },
+});

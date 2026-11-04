@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Axoft q01 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// An ANT forges the first AXE.
+import { THREE, guard, mat, add, blob, box, cyl, eyes, human, sheep, flower, coin, coinStack, tree, setup, finish, placeAxe, canvasTexture, rng } from './lib.js';
+import { seg, hand, textPlane, crown, mountain, starShape, sparks } from './props.js';
+guard(() => {
+
+const S = setup({ ground: '#5f9a3e' });
+for (let i = 0; i < 10; i++) tree(S.scene, [-7 + i * 1.6, -4.5 - (i % 3) * 1.3], 3.6 + (i % 2));
+// anvil
+const iron = mat('#3a3f4a', { metalness: 0.5, roughness: 0.4 });
+const anv = new THREE.Group(); anv.position.set(0.45, 0, 0.2); S.scene.add(anv);
+box(anv, iron, [0, 0.2, 0], [0.7, 0.4, 0.45]); box(anv, iron, [0, 0.55, 0], [0.42, 0.3, 0.36]); box(anv, iron, [0, 0.82, 0], [1.2, 0.24, 0.5]);
+add(anv, new THREE.ConeGeometry(0.17, 0.5, 14), iron, [0.82, 0.82, 0], [0, 0, -Math.PI / 2]);
+box(anv, mat('#ff7a1a', { emissive: '#ff5a00', emissiveIntensity: 1.4 }), [-0.1, 0.99, 0], [0.55, 0.1, 0.16]);
+sparks(S.scene, [0.45, 1.1, 0.2], 34, 0.65);
+const a = placeAxe(S, { pos: [-1.7, 0, 0.5], ry: 0.45, scale: 1.9, pose: { lean: -0.05, headTilt: 0.08, arms: { l: [0, 1.5, 0], r: [0, -1.5, 0] }, legs: { l: [0.2, 0], r: [-0.2, 0] } } });
+// ant, standing upright
+const ant = new THREE.Group(); ant.position.set(2.15, 0, 0.1); ant.rotation.y = -0.85; ant.scale.setScalar(1.15); S.scene.add(ant);
+const red = mat('#b4451f', { roughness: 0.5 }), dk = mat('#4a1d10');
+blob(ant, red, [0, 0.55, -0.5], [0.4, 0.4, 0.52]); blob(ant, red, [0, 0.9, -0.05], [0.25, 0.27, 0.27]);
+const hd = new THREE.Group(); hd.position.set(0, 1.3, 0.08); ant.add(hd); blob(hd, red, [0, 0, 0], [0.31, 0.29, 0.28]);
+eyes(hd, { y: 0.0, z: 0.255, gap: 0.12, size: 0.085, iris: '#1a1a2a' });
+for (const s of [-1, 1]) { seg(ant, dk, [s * 0.08, 1.52, 0.1], [s * 0.3, 1.9, 0.18], 0.018); blob(ant, dk, [s * 0.3, 1.9, 0.18], [0.04, 0.04, 0.04]);
+  seg(ant, red, [s * 0.1, 0.85, -0.08], [s * 0.38, 0.0, 0.18], 0.05); seg(ant, red, [s * 0.1, 0.78, -0.2], [s * 0.38, 0.0, -0.3], 0.05);
+  seg(ant, red, [s * 0.16, 1.0, 0.02], [s * 0.2, 1.2, 0.62], 0.045); }
+// hammer
+seg(ant, mat('#7a4b22'), [0, 1.0, 0.62], [0, 1.8, 0.62], 0.05); box(ant, iron, [0, 1.85, 0.62], [0.5, 0.24, 0.24]);
+finish(S, [0, 1.6, 6.4], [0.3, 1.55, 0]);
+
+});
+</script></body></html>

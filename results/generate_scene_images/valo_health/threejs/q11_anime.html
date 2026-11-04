@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Valo q11 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q11 — "The VIOLA almost marries the KHOSLA koala's SPAC shell, then calls it off."
+import { THREE, guard, mat, add, box, cyl, blob, disc, eyes, smile, makeStage, finishScene, placeViola, heart } from './common.js';
+
+function buildKoala() {
+  const g = new THREE.Group(), fur = mat('#a4a8b0', { roughness: 0.9 }), pale = mat('#e8e6e0', { roughness: 0.9 });
+  blob(g, fur, [0, 0.38, 0], [0.3, 0.36, 0.25]); blob(g, pale, [0, 0.34, 0.1], [0.2, 0.26, 0.17]);
+  for (const s of [-1, 1]) { blob(g, fur, [s * 0.33, 0.92, 0], [0.19, 0.19, 0.08]); blob(g, pale, [s * 0.33, 0.92, 0.05], [0.12, 0.12, 0.05]); }
+  blob(g, fur, [0, 0.82, 0.02], [0.3, 0.27, 0.26]); blob(g, mat('#1c1c22', { roughness: 0.4 }), [0, 0.79, 0.27], [0.09, 0.12, 0.06]);
+  for (const s of [-1, 1]) { const e = new THREE.Group(); e.position.set(s * 0.11, 0.88, 0.25); e.rotation.y = s * 0.3; g.add(e); eyes(e, { y: 0, z: 0, dx: 0, rw: 0.05, rh: 0.065, iris: '#3a2a20' }); }
+  smile(g, 0, 0.68, 0.24, 0.04);
+  // bow tie + tux
+  blob(g, mat('#1a1a22'), [0, 0.42, 0.15], [0.22, 0.28, 0.14]); box(g, mat('#ffffff'), [0, 0.45, 0.285], [0.07, 0.2, 0.01]);
+  for (const s of [-1, 1]) add(g, new THREE.ConeGeometry(0.06, 0.1, 3), mat('#e8284a'), [s * 0.06, 0.6, 0.27], [0, 0, s * Math.PI / 2]);
+  for (const s of [-1, 1]) { cyl(g, fur, [s * 0.12, 0.1, 0.03], 0.05, 0.2); blob(g, pale, [s * 0.12, 0.02, 0.08], [0.07, 0.04, 0.1]); }
+  const arms = {};
+  for (const [k, s] of [['l', 1], ['r', -1]]) { const sh = new THREE.Group(); sh.position.set(s * 0.28, 0.55, 0.04); g.add(sh); cyl(sh, fur, [0, -0.13, 0], 0.045, 0.28); blob(sh, pale, [0, -0.29, 0], [0.06, 0.06, 0.06]); sh.rotation.z = s * 0.35; arms[k] = sh; }
+  g.userData.arms = arms; return g;
+}
+function scallop(R = 1.2) {
+  const g = new THREE.Group(), n = 9;
+  for (let i = 0; i < n; i++) {
+    const th = Math.PI * 0.04 + i / n * Math.PI * 0.92, len = Math.PI * 0.92 / n;
+    const m = new THREE.Mesh(new THREE.CylinderGeometry(R, R, i % 2 ? 0.1 : 0.2, 8, 1, false, th, len), mat(i % 2 ? '#f8b8a0' : '#ffd8c8', { roughness: 0.5 }));
+    m.rotation.x = Math.PI / 2; m.rotation.z = 0; m.castShadow = true; g.add(m);
+  }
+  const hing = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.2, R * 0.2, 0.26, 16, 1, false, 0, Math.PI), mat('#e89880')); hing.rotation.x = Math.PI / 2; hing.rotation.z = Math.PI; g.add(hing);
+  return g;
+}
+guard(() => {
+  const S = makeStage({ ground: '#c9e8a0', el: 40, az: 150, sky: { cover: 1.2 } }), { scene } = S;
+  // flower arch
+  for (const x of [-3.4, 3.4]) cyl(scene, mat('#ffffff'), [x, 1.5, -2.6], 0.1, 3.0);
+  add(scene, new THREE.TorusGeometry(3.4, 0.09, 8, 40, Math.PI), mat('#ffffff'), [0, 3.0, -2.6]);
+  for (let i = 0; i < 26; i++) { const a = i / 25 * Math.PI; blob(scene, mat(['#ff8fa8', '#ffd0dc', '#ffffff'][i % 3]), [Math.cos(a) * 3.4, 3.0 + Math.sin(a) * 3.4 * 1.0, -2.55], [0.15, 0.15, 0.15]); }
+  // koala in the scallop shell
+  const shell = scallop(2.0); shell.position.set(1.7, 0.05, -0.4); scene.add(shell);
+  const koala = buildKoala(); koala.scale.setScalar(S.num('ks', 1.7)); koala.position.set(1.75, 0.0, 0.25); koala.rotation.y = -0.2; scene.add(koala);
+  // ring box in koala's hand
+  koala.userData.arms.r.rotation.z = -0.9; koala.userData.arms.r.rotation.x = -0.8;
+  const rb = new THREE.Group(); rb.position.set(1.0, 1.0, 0.7); scene.add(rb); box(rb, mat('#7a1630'), [0, 0, 0], [0.22, 0.14, 0.22]);
+  add(rb, new THREE.TorusGeometry(0.06, 0.017, 8, 20), mat('#f6c21c', { metalness: 0.8, roughness: 0.2 }), [0, 0.12, 0.0], [0.3, 0, 0]); blob(rb, mat('#ffffff', { emissive: '#cfe8ff', emissiveIntensity: 0.5 }), [0, 0.19, 0.0], [0.035, 0.035, 0.035]);
+  const vs = S.num('vs', 2.2), viola = placeViola(scene, { x: -1.5, z: 0.3, scale: vs, ry: 0.3, pose: { tilt: -0.04, arms: { l: [0, 1.4, 0], r: [0, -0.7, 0] } } });
+  // veil behind the viola + flower crown
+  add(scene, new THREE.PlaneGeometry(1.3, 1.7), new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.6, side: THREE.DoubleSide }), [-1.55, 1.25, -0.3], [0, 0.0, 0]);
+  viola.userData.reach('l', [0.55, 0.9, 0.25]); // raised "stop" hand
+  for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; blob(scene, mat(['#ff8fa8', '#ffffff'][i % 2]), [-1.5 + Math.cos(a) * 0.17, 2.15 + Math.sin(a) * 0.05, 0.3 + Math.sin(a) * 0.17], [0.07, 0.07, 0.07]); }
+  // "called off": prohibition sign over the shell
+  const red = mat('#e8201c', { emissive: '#e8201c', emissiveIntensity: 0.3 });
+  const sign = new THREE.Group(); sign.position.set(0.1, 2.45, 0.9); scene.add(sign);
+  add(sign, new THREE.TorusGeometry(0.62, 0.09, 12, 40), red); box(sign, red, [0, 0, 0], [1.25, 0.14, 0.1], [0, 0, Math.PI / 4]);
+  add(sign, new THREE.CircleGeometry(0.58, 40), new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.35 }), [0, 0, -0.05]);
+  finishScene(S, [viola, koala], [0.15, 1.9, 6.0], [0.15, 1.55, 0]);
+});
+</script></body></html>

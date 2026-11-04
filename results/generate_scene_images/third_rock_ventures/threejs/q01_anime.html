@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Third Rock q01</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q01 - "The PEBBLE builds new companies from its own crew: venture creation."
+import { THREE, guard, rng, canvasTexture, createPebble, num, mat, add, blob, box, stage, panel, holdAt, hardHat, finish, CLOUDS } from './common.js';
+
+function office(w, h, d, color, lit) {
+  const g = new THREE.Group();
+  const tex = canvasTexture(256, (c, s) => {
+    c.fillStyle = color; c.fillRect(0, 0, s, s);
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { c.fillStyle = lit && (i + j) % 3 ? '#ffe9a0' : '#9fd0f0'; c.fillRect(12 + i * 60, 12 + j * 60, 44, 40); }
+  });
+  add(g, new THREE.BoxGeometry(w, h, d), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.6 }), [0, h / 2, 0]);
+  box(g, mat('#e9e4da'), [0, h + 0.04, 0], [w + 0.1, 0.08, d + 0.1]);
+  return g;
+}
+
+guard(() => {
+  const st = stage({ sunElevation: 38, sunAzimuth: 160, sky: { cover: 1.5, seed: 7, towerTop: 0.5, puffCover: 1.5 } });
+  const scene = st.scene;
+  add(scene, new THREE.PlaneGeometry(400, 400), mat('#78b44a'), [0, 0, 0], [-Math.PI / 2, 0, 0]);
+  add(scene, new THREE.CylinderGeometry(7, 7, 0.04, 48), mat('#d6b985'), [0.5, 0.02, 0.5]);
+  // three new companies: finished, finished, under construction
+  const a = office(1.5, 2.6, 1.3, '#d9e6f2', true); a.position.set(-2.4, 0, -2.0); scene.add(a);
+  const b = office(1.4, 1.5, 1.3, '#f4c9a0', true); b.position.set(-0.6, 0, -2.0); scene.add(b);
+  const c = new THREE.Group(); c.position.set(1.4, 0, -2.0); scene.add(c);
+  for (const sx of [-0.6, 0.6]) for (const sz of [-0.55, 0.55]) box(c, mat('#c9c9c9'), [sx, 0.9, sz], [0.1, 1.8, 0.1]);
+  for (const y of [0.9, 1.8]) box(c, mat('#c9c9c9'), [0, y, 0], [1.3, 0.1, 1.2]);
+  box(c, mat('#e8a24a'), [0, 0.45, 0], [1.2, 0.8, 1.1]);
+  // tower crane
+  const cr = new THREE.Group(); cr.position.set(2.9, 0, -2.4); scene.add(cr);
+  box(cr, mat('#f2b01e'), [0, 1.9, 0], [0.18, 3.8, 0.18]); box(cr, mat('#f2b01e'), [-1.1, 3.75, 0], [3.4, 0.16, 0.16]); box(cr, mat('#f2b01e'), [0.7, 3.75, 0], [0.5, 0.35, 0.3]);
+  add(cr, new THREE.CylinderGeometry(0.01, 0.01, 1.1, 6), mat('#222'), [-2.3, 3.2, 0]); box(cr, mat('#d63a2f'), [-2.3, 2.6, 0], [0.45, 0.2, 0.45]);
+  // flags on the finished ones
+  for (const [x, col] of [[-2.4, '#d63a2f'], [-0.6, '#2f6fd6']]) {
+    const y = x < -1 ? 2.75 : 1.65; add(scene, new THREE.CylinderGeometry(0.015, 0.015, 0.6, 6), mat('#999'), [x, y + 0.35, -2.0]); box(scene, mat(col), [x + 0.18, y + 0.55, -2.0], [0.34, 0.2, 0.02]);
+  }
+  // blueprint board
+  const bp = panel(0.7, 0.5, (c, W, H) => {
+    c.fillStyle = '#2a63b8'; c.fillRect(0, 0, W, H); c.strokeStyle = '#d8ecff'; c.lineWidth = 3;
+    c.strokeRect(30, 30, W - 60, H - 60); c.strokeRect(80, 90, 180, 150); c.strokeRect(300, 90, 130, 80); c.beginPath(); c.moveTo(80, 270); c.lineTo(430, 270); c.moveTo(80, 300); c.lineTo(300, 300); c.stroke();
+  });
+  // main pebble
+  const main = createPebble({ scale: 2.2 }); main.position.set(-0.7, 0, 1.6); main.rotation.y = 0.25; scene.add(main);
+  const h = holdAt(main, 'l', new THREE.Vector3(0.3, 1.3, 2.6)); main.userData.parts.arms.r.rotation.set(0, -0.5, -1.7);
+  main.userData.pose({ headTilt: 0.05 });
+  const h2 = holdAt(main, 'l', new THREE.Vector3(0.3, 1.35, 2.6));
+  bp.position.copy(h2).add(new THREE.Vector3(0.08, 0.25, 0.04)); bp.rotation.y = -0.2; bp.castShadow = true; scene.add(bp);
+  holdAt(main, 'r', new THREE.Vector3(-1.7, 1.5, 1.9));
+  // crew
+  const crew = [], bricks = mat('#c4553a');
+  const spec = [[1.2, 1.3, -0.5, 0.0, 'carry', '#9a9aa2'], [2.4, 0.4, -0.4, 0.0, 'carry', '#b0a28f'], [3.3, 1.7, -0.7, 0.0, 'wave', '#8f9aa8'], [1.8, 2.5, -0.3, 0, 'carry', '#a79c9c']];
+  for (const [x, z, yaw, , act, col] of spec) {
+    const p = createPebble({ scale: 0.95, stone: col }); p.position.set(x, 0, z); p.rotation.y = yaw; scene.add(p); hardHat(p); crew.push(p);
+    if (act === 'carry') {
+      const t = new THREE.Vector3(x - 0.08, 0.17, z + 0.4);
+      holdAt(p, 'l', t.clone().add(new THREE.Vector3(0.12, 0, 0))); holdAt(p, 'r', t.clone().add(new THREE.Vector3(-0.12, 0, 0)));
+      box(scene, bricks, [t.x, t.y + 0.07, t.z], [0.3, 0.15, 0.16]).rotation.y = yaw;
+    } else { p.userData.pose({ arms: { l: [0, 2.4, 0] }, headTilt: -0.1 }); p.userData.pose({ arms: { l: [0.4, 2.6, 0.2] }, headTilt: -0.1 }); }
+  }
+  // brick stack
+  for (let i = 0; i < 6; i++) box(scene, bricks, [0.4 + (i % 3) * 0.32, 0.08 + Math.floor(i / 3) * 0.16, 3.2], [0.3, 0.15, 0.16]);
+  finish(st, [main, ...crew], [num('cx', 0.9), num('cy', 1.4), num('cz', 6.6)], [num('tx', 0.5), num('ty', 1.1), 0], CLOUDS);
+});
+</script></body></html>

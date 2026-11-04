@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sieve anchor</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><script type="module">
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createAnimeStage } from './kit_anime.js';
+import { createSieve } from './sieve.js';
+guard(() => {
+  const stage = createAnimeStage({ fov: 30, sunElevation: 35, sunAzimuth: 150, sky: { cover: 2, seed: 5, towerTop: 0.5, puffCover: 2 },
+    rim: { color: '#fff3dc', strength: 1.4, width: 0.55 }, sunIntensity: 2.6, ambient: { color: '#e8e2ff', intensity: 2.3 }, triBumpScale: 0.3,
+    ink: { width: 1.2, strength: 0.85, normalThresh: 0.45, normalStrength: 0.45, fadeFar: 60 }, flare: 0.5, fog: { near: 120, far: 1500 } });
+  const s = stage.scene;
+  const g = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), new THREE.MeshStandardMaterial({ color: '#8fc66a' })); g.rotation.x = -Math.PI / 2; g.receiveShadow = true; s.add(g);
+  const pm = new Set();
+  [[-1.1, 0.7, 'front'], [0, 0, 'wave'], [1.1, -1.2, 'side']].forEach(([x, ry, k]) => {
+    const p = createSieve(); p.position.x = x; p.rotation.y = ry; s.add(p);
+    if (k === 'wave') p.userData.pose({ arms: { l: [0, 2.3, 0.4], r: [0, 0.4, 0] }, headTilt: 0.08 });
+    if (k === 'front') p.userData.pose({ arms: { l: [0, 0.5, 0.3], r: [0, 0.5, 0.3] } });
+    p.traverse((o) => pm.add(o));
+  });
+  stage.toonify(s, (m) => pm.has(m));
+  stage.addClouds([[150, 900, 90, 1.2], [190, 1000, 120, 1.6]]);
+  stage.camera.position.set(0, 0.7, 4.2); stage.camera.lookAt(0, 0.62, 0);
+  stage.finish();
+});
+</script></body></html>

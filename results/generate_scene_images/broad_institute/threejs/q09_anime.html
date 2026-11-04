@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Broad q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, mat, add, blob, box, cyl, sign, textMat, setup, grab, makeDome, makeShield, makeTelescope, makeCell, makeMouse, makeSumo, makeLander, makeRiver, makeNose, sparks, rng } from './common.js';
+guard(() => {
+const P = new URLSearchParams(location.search);
+const st = setup(P, { cam: [0, 2.2, 6.2], look: [0, 2.2, 0], ground: '#6a2f46', sky: { cover: 0.5 } });
+const sc = st.scene;
+box(sc, mat('#4a2a5a'), [0, 2.5, -2.4], [12, 6, 0.2]);
+const neon = add(sc, new THREE.PlaneGeometry(3.6, 0.9), textMat('TALK', { bg: '#ff3d8a', fg: '#fff', font: 'bold 160px Arial', w: 1024 }), [0, 4.3, -2.25]); neon.material.map.repeat.set(1, 0.3); neon.material.map.offset.set(0, 0.35); neon.material.emissive = new THREE.Color('#ff3d8a'); neon.material.emissiveMap = neon.material.map; neon.material.emissiveIntensity = 0.6;
+box(sc, mat('#7a3a2a'), [0, 0.5, 0.2], [3.0, 1.0, 1.0]); box(sc, mat('#c88a5a'), [0, 1.03, 0.2], [3.2, 0.08, 1.1]);
+const sw = st.sword({ scale: 1.35, pos: [-0.7, 1.07, 0.2], ry: 0.2 });
+sw.userData.pose({ arms: { l: [0, 0.7, 0.3], r: [0, -0.5, 0.4] }, legs: { l: [0, 0], r: [0, 0] } });
+const mic = new THREE.Group(); cyl(mic, mat('#222'), [0, 0.35, 0], 0.03, 0.7); blob(mic, mat('#888', { metalness: 0.6 }), [0, 0.75, 0], [0.1, 0.12, 0.1]); mic.position.set(0.3, 1.07, 0.7); sc.add(mic);
+// screen with DNA: a flipped segment
+box(sc, mat('#111'), [3.2, 2.0, -1.5], [2.6, 1.9, 0.12]); box(sc, mat('#0f2a4a', { emissive: '#0b2a55', emissiveIntensity: 0.6 }), [3.2, 2.0, -1.43], [2.4, 1.7, 0.04]);
+for (let i = 0; i < 12; i++) { const y = 1.35 + i * 0.12, flip = i >= 5 && i <= 7, a = i * 0.6; const col = flip ? '#ff5a4a' : '#47d1ff';
+  blob(sc, mat(col, { emissive: col, emissiveIntensity: 0.7 }), [3.2 + Math.sin(a) * 0.5 * (flip ? -1 : 1), y, -1.38], [0.07, 0.05, 0.05]); blob(sc, mat(flip ? '#47d1ff' : '#ff5a4a', { emissive: '#fff', emissiveIntensity: 0.4 }), [3.2 - Math.sin(a) * 0.5 * (flip ? -1 : 1), y, -1.38], [0.07, 0.05, 0.05]); }
+for (const x of [-3.5, -4.3]) blob(sc, mat('#d9475f'), [x, 0.4, 0.2], [0.5, 0.4, 0.5]);
+st.finishScene();
+});
+</script></body></html>

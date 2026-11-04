@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BMS q09 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q09 — To swallow the celery, the SQUID must hand its OATS LA to the GENIE.
+import * as K from './common.js';
+Object.assign(globalThis, K);
+const put = (S, o, x, y, z, ry = 0, s = 1) => { o.position.set(x, y, z); o.rotation.y = ry; o.scale.multiplyScalar(s); S.add(o); return o; };
+const screen = (w, h, draw) => { const c = document.createElement('canvas'); c.width = 512; c.height = Math.round(512 * h / w); draw(c.getContext('2d'), c.width, c.height); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t })); };
+const note = (S, x, y, z, col = '#2a2a3a', s = 1) => { const g = grp(S, [x, y, z]); blob(g, mat(col), [0, 0, 0], [0.07 * s, 0.05 * s, 0.03 * s], [0, 0, 0.4]); cyl(g, mat(col), 0.01 * s, 0.01 * s, 0.25 * s, [0.06 * s, 0.12 * s, 0]); box(g, mat(col), [0.1 * s, 0.04 * s, 0.01], [0.1 * s, 0.24 * s, 0]); };
+guard(() => {
+
+const C = makeScene({ ground: '#e8cf98', fov: 38, sky: { zenith: '#f0b078', horizon: '#ffe8c2' } }), S = C.scene;
+const q = addSquid(C, { x: -1.5, z: 0.5, s: 1.5, ry: 0.5 });
+const ov = put(S, oats(), -0.4, 0.9, 1.0, 0, 1.4); ov.rotation.z = -0.1;
+const tg = label('LA', { w: 0.5, h: 0.32, bg: '#fff6df', fg: '#b3261e', size: 0.8, border: '#b3261e' }); tg.position.set(-0.4, 1.05, 1.45); S.add(tg);
+reachW(q, 'l', [-0.45, 0.8, 1.1]);
+put(S, lamp(), 1.0, 0, 0.3, -0.3, 1.5);
+const g = put(S, genie(), 1.7, 0.3, 0.1, -0.35, 1.25); toon(C, g);
+finish(C, { pos: [0, 1.4, 5.2], look: [0, 1.1, 0] });
+
+});
+</script></body></html>

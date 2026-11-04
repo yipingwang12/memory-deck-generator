@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RA q04 anime</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// q04 — the SCARAB funds the SUPERHERO and gives it its name (scarab emblem on the chest).
+import * as THREE from 'three';
+import { guard } from './kit.js';
+import { createScarab } from './scarab.js';
+import { createKid } from './kid.js';
+import { mat, add, blob, makeStage, finishScene, meadow } from './common.js';
+guard(() => {
+  const { stage, scene, num } = makeStage();
+  meadow(scene);
+  const s = createScarab({ scale: 1.9 }); s.position.set(-1.3, 0, 0); s.rotation.y = 1.15; scene.add(s);
+  const hero = createKid({ role: 'hero', scale: 2.7 }); hero.position.set(1.2, 0, 0.1); hero.rotation.y = -0.6; scene.add(hero);
+  hero.userData.arms.l.rotation.z = 2.6; hero.userData.arms.r.rotation.set(0, 0, -0.6);   // fist raised
+  // gold pouch held out by the scarab, coins spilling
+  const pouch = new THREE.Group(); pouch.position.set(-0.3, 1.0, 0.6); scene.add(pouch);
+  blob(pouch, mat('#c9a26a'), [0, 0, 0], [0.26, 0.28, 0.26]); add(pouch, new THREE.ConeGeometry(0.13, 0.2, 14), mat('#c9a26a'), [0, 0.3, 0]);
+  add(pouch, new THREE.TorusGeometry(0.1, 0.03, 8, 16), mat('#7a4a20'), [0, 0.22, 0], [Math.PI / 2, 0, 0]);
+  blob(pouch, mat('#f2c230', { metalness: 0.6 }), [0, -0.02, 0.24], [0.11, 0.11, 0.03]);
+  for (let i = 0; i < 12; i++) add(scene, new THREE.CylinderGeometry(0.1, 0.1, 0.025, 20), mat('#ffc928', { metalness: 0.7, roughness: 0.25 }),
+    [0.1 + i * 0.07, 0.75 - i * 0.055 + Math.sin(i) * 0.04, 0.5 + Math.cos(i * 2) * 0.1], [Math.sin(i) * 1.2, i, Math.cos(i) * 0.8]);
+  s.userData.reach('l', [0.25, 0.65, 0.55]); s.userData.reach('r', [-0.25, 0.65, 0.55]);
+  finishScene(stage, scene, [s, hero], [0, 1.4, 5.4], [0, 0.9, 0]);
+});
+</script></body></html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>q13</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { THREE, guard, rng, mat, add, blob, box, cyl, textPlane, boot, farmerAt, reachTo, done, barn, fence, flower, flag, rock, crown, bean, eyes, person, gorilla, hay, star5 } from './props.js';
+guard(() => {
+// RED SOCKS on the farmer's fence (Jimmy Fund)
+const S = boot(); const sc = S.scene;
+const fe = fence(8, 0.75, 1.1); fe.position.set(-2.6, 0, -0.4); sc.add(fe);
+const sock = (x) => { const g = new THREE.Group(); g.position.set(x, 0.95, -0.3); g.scale.setScalar(1.25); sc.add(g);
+  cyl(g, '#d02828', [0, -0.35, 0], 0.17, 0.7); blob(g, '#d02828', [0, -0.7, 0.0], [0.17, 0.17, 0.17]); blob(g, '#d02828', [0.17, -0.82, 0.0], [0.3, 0.17, 0.17]);
+  cyl(g, '#fff', [0, -0.02, 0], 0.18, 0.14); cyl(g, '#fff', [0, -0.55, 0], 0.172, 0.06); blob(g, '#fff', [0.28, -0.92, 0], [0.1, 0.06, 0.15]);
+  return g; };
+const s1 = sock(-0.8), s2 = sock(0.6); s2.rotation.z = 0.12;
+for (const x of [-0.5, 0.7]) add(sc, new THREE.TorusGeometry(0.06, 0.015, 8, 16), '#999', [x, 1.0, -0.15]);
+const f = farmerAt(sc, { x: 1.6, z: 0.6, ry: -0.4, s: 1.8 }); reachTo(f, 'r', [0.7, 0.9, -0.1]);
+done(S, f, { pos: [0, 1.1, 4.6], look: [0, 0.9, 0] });
+});
+</script></body></html>
