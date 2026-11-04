@@ -5,6 +5,7 @@ from __future__ import annotations
 import base64
 import io
 import json
+import os
 import re
 
 import pytest
@@ -249,3 +250,56 @@ class TestChatgptSheet:
         # ChatGPT painted the old example "SPTX" (Seaport's ticker) on an Asimov flag, 2026-10-29.
         assert not re.search(r'[A-Z]{2,}[-\d]', si.CHATGPT_SETUP.replace('{anchor}', ''))
         assert 'SPTX' not in si.CHATGPT_SETUP
+
+
+class TestThreejs:
+    """Three.js scene pages are hand-authored, not prompted, but they ship through the same
+    seam: a manifest tying each picture to the scene text it was drawn from."""
+
+    def _deck(self, tmp_path, qids=('q01', 'q13')):
+        d = si.threejs_dir('acme', root=tmp_path)
+        d.mkdir(parents=True)
+        for q in qids:
+            (d / f'{q}{si.THREEJS_SUFFIX}.webp').write_bytes(b'x')
+        return d
+
+    def test_dir_is_the_threejs_folder(self, tmp_path):
+        assert si.threejs_dir('acme', root=tmp_path) == tmp_path / 'acme' / 'threejs'
+
+    def test_stamped_pictures_are_current(self, tmp_path):
+        d = self._deck(tmp_path)
+        assert si.record_threejs(SCENES, d) == {'q01', 'q13'}
+        assert si.current_images(SCENES, d, suffix=si.THREEJS_SUFFIX) == {'q01', 'q13'}
+
+    def test_suffix_is_required_to_see_them(self, tmp_path):
+        d = self._deck(tmp_path)
+        si.record_threejs(SCENES, d)
+        assert si.current_images(SCENES, d) == set()
+
+    def test_editing_a_scene_after_stamping_invalidates_it(self, tmp_path):
+        d = self._deck(tmp_path)
+        si.record_threejs(SCENES, d)
+        edited = {**SCENES, 'cards': [SCENES['cards'][0], {'qid': 'q13', 'scene': 'Edited.'}]}
+        assert si.current_images(edited, d, suffix=si.THREEJS_SUFFIX) == {'q01'}
+
+    def test_a_scene_with_no_picture_is_not_stamped(self, tmp_path):
+        d = self._deck(tmp_path, qids=('q01',))
+        assert si.record_threejs(SCENES, d) == {'q01'}
+        assert 'q13' not in json.loads((d / si.MANIFEST).read_text())
+
+    def test_a_picture_older_than_its_scene_text_is_refused(self, tmp_path):
+        """Stamping asserts the picture was drawn from the text as it now reads. If the YAML
+        was edited afterwards that is false, so the picture must not be certified."""
+        d = self._deck(tmp_path)
+        yaml_file = tmp_path / 'acme.mnemonics.yaml'
+        yaml_file.write_text('x')
+        os.utime(yaml_file, (1_000, 1_000))
+        os.utime(d / f'q01{si.THREEJS_SUFFIX}.webp', (2_000, 2_000))   # drawn after the edit
+        os.utime(d / f'q13{si.THREEJS_SUFFIX}.webp', (1, 1))           # drawn before it
+        assert si.record_threejs(SCENES, d, source=yaml_file) == {'q01'}
+
+    def test_stamping_keeps_the_gemini_entries(self, tmp_path):
+        d = self._deck(tmp_path)
+        si.record(d, si.plan(SCENES, d)[0], model='gemini')
+        si.record_threejs(SCENES, d)
+        assert 'anchor' in json.loads((d / si.MANIFEST).read_text())

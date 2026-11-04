@@ -263,6 +263,44 @@ class TestCli:
         assert [c["image"] for c in side["cards"] if "image" in c] == ["q13.webp"]
         assert (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals" / "q13.webp").read_bytes() == b"img"
 
+    def test_build_falls_back_to_threejs_pictures(self, tmp_path):
+        """A deck with no Gemini pictures ships its hand-authored Three.js finals instead."""
+        import json
+        import yaml
+        from deck_generator import companies_cli, scene_images as si
+        scenes = yaml.safe_load((self.CFG.parent / "alnylam_pharmaceuticals.mnemonics.yaml").read_text())
+        src = si.threejs_dir("alnylam_pharmaceuticals", root=tmp_path / "gen")
+        src.mkdir(parents=True)
+        (src / f"q13{si.THREEJS_SUFFIX}.webp").write_bytes(b"anime")
+        si.record_threejs(scenes, src)
+        companies_cli.main(["--config", str(self.CFG), "--build", "--out", str(tmp_path / "d"),
+                            "--mnemonics-out", str(tmp_path / "m"),
+                            "--scene-images", str(tmp_path / "gen")])
+        side = json.loads((tmp_path / "m" / "companies_alnylam_pharmaceuticals.json").read_text())
+        assert [c["image"] for c in side["cards"] if "image" in c] == ["q13.webp"]
+        # the shipped name drops the renderer's suffix, so the sidecar contract is unchanged
+        assert (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals"
+                / "q13.webp").read_bytes() == b"anime"
+
+    def test_gemini_pictures_win_over_threejs(self, tmp_path):
+        """Where a deck already ships Gemini pictures those stay; Three.js only fills gaps."""
+        import json
+        import yaml
+        from deck_generator import companies_cli, scene_images as si
+        scenes = yaml.safe_load((self.CFG.parent / "alnylam_pharmaceuticals.mnemonics.yaml").read_text())
+        gem = si.image_dir("alnylam_pharmaceuticals", root=tmp_path / "gen")
+        si.record(gem, next(j for j in si.plan(scenes, gem) if j.name == "q13"), model="m")
+        (gem / "q13.webp").write_bytes(b"gemini")
+        tj = si.threejs_dir("alnylam_pharmaceuticals", root=tmp_path / "gen")
+        tj.mkdir(parents=True)
+        (tj / f"q13{si.THREEJS_SUFFIX}.webp").write_bytes(b"anime")
+        si.record_threejs(scenes, tj)
+        companies_cli.main(["--config", str(self.CFG), "--build", "--out", str(tmp_path / "d"),
+                            "--mnemonics-out", str(tmp_path / "m"),
+                            "--scene-images", str(tmp_path / "gen")])
+        assert (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals"
+                / "q13.webp").read_bytes() == b"gemini"
+
     def test_bad_scene_refuses_the_build(self, tmp_path):
         import shutil
         import pytest

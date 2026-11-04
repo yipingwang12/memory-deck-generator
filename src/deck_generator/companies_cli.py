@@ -91,14 +91,30 @@ def _mnemonics(cfg: dict, config: Path) -> dict | None:
     return yaml.safe_load((config.parent / name).read_text(encoding="utf-8")) if name else None
 
 
-def _copy_scene_images(scenes: dict, src: Path, dest: Path) -> set[str]:
-    """Copy the current pictures to ``dest``, replacing what was there; return their qids."""
-    qids = scene_images.current_images(scenes, src)
+def _image_source(slug: str, scenes: dict, images_root: Path) -> tuple[Path, str]:
+    """Which renderer's pictures this deck ships, as ``(dir, file suffix)``.
+
+    Gemini first, Three.js as the fallback: the Gemini pictures are already live in the quiz
+    and a deck should not silently change its look, while the hand-authored Three.js finals
+    cover the decks the Gemini run never reached (its monthly spend cap stopped it at 24).
+    A deck with neither keeps its empty Gemini directory, which ships nothing.
+    """
+    gemini = scene_images.image_dir(slug, root=images_root)
+    if scene_images.current_images(scenes, gemini):
+        return gemini, ""
+    return scene_images.threejs_dir(slug, root=images_root), scene_images.THREEJS_SUFFIX
+
+
+def _copy_scene_images(scenes: dict, src: Path, dest: Path, suffix: str = "") -> set[str]:
+    """Copy the current pictures to ``dest``, replacing what was there; return their qids.
+    The renderer's file suffix is dropped on the way, so the sidecar always names
+    ``<qid>.webp`` whichever renderer drew it."""
+    qids = scene_images.current_images(scenes, src, suffix)
     shutil.rmtree(dest, ignore_errors=True)
     if qids:
         dest.mkdir(parents=True)
         for qid in qids:
-            shutil.copy2(src / f"{qid}.webp", dest / f"{qid}.webp")
+            shutil.copy2(src / f"{qid}{suffix}.webp", dest / f"{qid}.webp")
     return qids
 
 
@@ -109,8 +125,8 @@ def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_d
         return
     deck = Path(_artifact_name(config)).stem
     out_dir.mkdir(parents=True, exist_ok=True)
-    images = _copy_scene_images(scenes, scene_images.image_dir(config.stem, root=images_root),
-                                out_dir / "images" / deck)
+    src, suffix = _image_source(config.stem, scenes, images_root)
+    images = _copy_scene_images(scenes, src, out_dir / "images" / deck, suffix)
     out = out_dir / f"{deck}.json"
     out.write_text(json.dumps(company_mnemonics.assemble(scenes, cards, cfg, deck, images),
                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

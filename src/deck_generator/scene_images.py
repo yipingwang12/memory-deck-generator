@@ -25,6 +25,10 @@ API = 'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateC
 DEFAULT_MODEL = 'gemini-3.1-flash-image'
 KEYCHAIN_SERVICE = 'gemini-api-key'
 MANIFEST = 'manifest.json'
+#: The Three.js renderer's folder and file-stem suffix (``q01_anime.webp``). Its pictures are
+#: authored in-repo rather than bought from an API, so they carry no model/style directory.
+THREEJS_DIR = 'threejs'
+THREEJS_SUFFIX = '_anime'
 
 _NO_TEXT = ('Each named object is large, clear and easy to recognise. '
             'No text, letters, numbers or captions anywhere in the image.')
@@ -154,13 +158,50 @@ def image_dir(slug: str, model: str = DEFAULT_MODEL, style: str = DEFAULT_STYLE,
     return root / slug / model / (style if anchor_ref else f'{style}_no_anchor')
 
 
-def current_images(scenes: dict, out_dir: Path) -> set[str]:
+def threejs_dir(slug: str, root: Path = ROOT) -> Path:
+    """Where one company's hand-authored Three.js pictures live: ``<root>/<slug>/threejs/``.
+    Flat, with no model/style level: the renderer is the repo's own kit, not a paid API."""
+    return root / slug / THREEJS_DIR
+
+
+def current_images(scenes: dict, out_dir: Path, suffix: str = '') -> set[str]:
     """qids whose image exists AND was drawn from the scene as it reads now — a picture of
-    an edited scene would teach the old scene."""
+    an edited scene would teach the old scene. ``suffix`` names the file variant
+    (``_anime`` for Three.js finals), so one manifest convention serves both renderers."""
     seen = _manifest(out_dir) if out_dir.is_dir() else {}
     return {c['qid'] for c in scenes['cards']
-            if (out_dir / f"{c['qid']}.webp").is_file()
+            if (out_dir / f"{c['qid']}{suffix}.webp").is_file()
             and f'"{c["scene"]}"' in seen.get(c['qid'], {}).get('prompt', '')}
+
+
+def record_threejs(scenes: dict, out_dir: Path, source: Path | None = None) -> set[str]:
+    """Stamp the Three.js finals in ``out_dir`` into the manifest and return the qids stamped.
+
+    A Three.js picture has no prompt — it is a hand-written scene page — so the manifest
+    records the scene text it was drawn from, in the same quoted form :func:`current_images`
+    checks. Stamping *asserts* the picture matches the text as it now reads, so a picture
+    older than ``source`` (the scenes YAML) is refused rather than certified: the scene may
+    have been edited after it was drawn, and a wrong certificate is worse than no picture.
+    """
+    data = _manifest(out_dir)
+    edited = source.stat().st_mtime if source and source.exists() else None
+    stamped = set()
+    for card in scenes['cards']:
+        qid = card['qid']
+        image = out_dir / f'{qid}{THREEJS_SUFFIX}.webp'
+        if not image.is_file():
+            continue
+        if edited is not None and edited > image.stat().st_mtime:
+            continue
+        data[qid] = {'digest': hashlib.sha256(card['scene'].encode()).hexdigest()[:16],
+                     'model': THREEJS_DIR,
+                     'prompt': f'Three.js scene page {qid}{THREEJS_SUFFIX}.html '
+                               f'for scene "{card["scene"]}"'}
+        stamped.add(qid)
+    if stamped:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / MANIFEST).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+    return stamped
 
 
 def record(out_dir: Path, job: Job, model: str) -> None:
