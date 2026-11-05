@@ -1,6 +1,6 @@
 """``deck-history-check`` — check history-date files against the Major System rules.
 
-Exit 1 when a file breaks a rule. ``--peg-codes`` also checks the peg list against
+Exit 1 when a file breaks a rule. A peg with too many dates in one file is a warning only. ``--peg-codes`` also checks the peg list against
 CMUdict (``uv run --with cmudict``).
 """
 from __future__ import annotations
@@ -23,6 +23,9 @@ def _check_file(path: Path, pegs: dict[str, str]) -> list[str]:
     load = history_dates.peg_load(dates)
     print(f"{path}: {len(dates)} dates, {len(load)} pegs, "
           f"most loaded {load.most_common(MAX_LOAD_SHOWN)}")
+    for peg, n in history_dates.overloaded_pegs(dates):
+        print(f"WARNING PEG OVERLOAD {peg}: {n} dates in {path.name}; "
+              "give each scene a different role and setting", file=sys.stderr)
     return problems
 
 

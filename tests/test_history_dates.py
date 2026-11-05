@@ -106,3 +106,18 @@ def test_cli_exit_codes(tmp_path, capsys):
     assert main([str(DATE_FILES[0]), *pegs]) == 0
     assert main([str(bad), *pegs]) == 1
     assert "WRONG PEG" in capsys.readouterr().err
+
+
+def test_overloaded_pegs():
+    dates = [{"peg": "lasso"}] * 11 + [{"peg": "dice"}] * 10 + [{"peg": "rhino"}] * 12
+    assert hd.overloaded_pegs(dates) == [("rhino", 12), ("lasso", 11)]
+    assert hd.overloaded_pegs(dates, limit=9) == [("rhino", 12), ("lasso", 11), ("dice", 10)]
+
+
+def test_cli_overload_warns_but_passes(tmp_path, capsys):
+    many = tmp_path / "many.yaml"
+    many.write_text(yaml.safe_dump({"dates": [
+        {"year": 1066 + 100 * i, "peg": "judge", "event": f"Event {chr(65 + i)}",
+         "scene": "A JUDGE."} for i in range(11)]}))
+    assert main([str(many), "--pegs", str(HISTORY / "major_pegs.yaml")]) == 0
+    assert "WARNING PEG OVERLOAD judge: 11" in capsys.readouterr().err

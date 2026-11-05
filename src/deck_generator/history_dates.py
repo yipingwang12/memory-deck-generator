@@ -27,6 +27,7 @@ YEARS_AGO_MIN = 10_000
 PRESENT = 2_000  # years_ago -> year offset
 APPROXIMATE = "(approximate)"
 YEAR_LIKE = re.compile(r"\b\d{3,4}\b")
+PEG_LOAD_LIMIT = 10  # more dates than this on one peg in one file -> warning
 
 
 def major_digits(word: str, phones: list[str]) -> str:
@@ -95,3 +96,9 @@ def peg_code_problems(pegs: dict[str, str], cmu: dict[str, list[list[str]]]) -> 
 def peg_load(dates: list[dict]) -> Counter:
     """Dates per peg."""
     return Counter(d["peg"] for d in dates)
+
+
+def overloaded_pegs(dates: list[dict], limit: int = PEG_LOAD_LIMIT) -> list[tuple[str, int]]:
+    """Pegs that carry more than ``limit`` dates, most loaded first. Each of their scenes
+    must give the peg a different role and setting (policy.md)."""
+    return [(peg, n) for peg, n in peg_load(dates).most_common() if n > limit]

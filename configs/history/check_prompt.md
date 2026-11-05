@@ -37,6 +37,8 @@ Run it end to end, then report. Never ask the user anything.
 - Corrected date falls OUTSIDE the cell's period → delete the entry from this cell and list it in the
   report (old date, new date, source). Never shift a date to keep an event in a cell.
 - Event is clearly outside the cell's region or theme → leave it, but list it in the report.
+- Apply the 2026-11-05 rules in policy.md: inventions by first working public demonstration, the
+  "Scope" section, calendar straddle = `medium`; region boundaries in grid.md.
 - No source found → keep `confidence: unverified`. Never drop an entry only because it is unverified.
 - An entry that is already `high`/`medium`/`low`/`disputed` and has no `source:` — confirm it too if a
   fetched page covers it, and add the source. Do not spend searches only on these.

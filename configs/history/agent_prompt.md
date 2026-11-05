@@ -10,6 +10,10 @@ FILE: /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/c
 4. /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/major_pegs.yaml — peg words. Never choose a peg by hand; the digit rule fixes it.
 5. Grep /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/world_dates.yaml for events in this cell's scope and keep dates consistent (if web sources show world_dates is wrong, use the correct date and report the conflict — do not edit world_dates.yaml).
 
+6. /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/pending_moves.yaml (if it exists) — take
+   every entry and note whose `target` is your slug: entries go into your cell as they are (check them like
+   your own); notes are events you must research and add. Do not edit pending_moves.yaml.
+
 ## The user has pre-authorised the whole pipeline
 Do NOT stop after the memory pass and do NOT wait for permission before the web check. Run skill steps 1–5 end to end, then report (step 6 format below). Never ask the user anything.
 
@@ -40,8 +44,12 @@ Convert to BCE before you apply policy.md.
 Source vs memory: if a source gives a different year from your memory, NEVER drop the item and never
 keep the memory year silently. Search or fetch a second source. If it settles the year, use that year.
 If not, keep the item, use the source year, mark it `disputed`, and name both years in `source:`.
-Timeline pages often carry one-year errors, so a single timeline does not beat a dedicated article. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: no rule yet for demonstration vs patent
-year; use the year that survey histories quote, and list each such case in your report.
+Timeline pages often carry one-year errors, so a single timeline does not beat a dedicated article. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: first working public demonstration;
+patent filing only when no demonstration is on record (policy.md). Scope: an event goes in a region if it
+happens there OR its main subject or effect is there; prizes only if the prize work was done in the region
+(policy.md "Scope"). Region boundaries for Finland, Constantinople and the steppe: grid.md.
+Calendar straddle (one year apart only because of a Hijri or regnal year) is `medium`, not `disputed`.
+`WARNING PEG OVERLOAD` from the check: give each scene of that peg a different role and setting.
 
 ## Web check (step 3)
 - Load WebSearch with ToolSearch ("select:WebSearch") if it is deferred. Use "standard" mode by default; "extended" only for hard items. Send searches in parallel batches.
