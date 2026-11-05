@@ -1,0 +1,386 @@
+# WAVE 2 DRAFT 2026-11-04: web check partial (12-search cap per agent).
+# Cell: Latin America x economy x 1800 to 1944. DRAFT 2026-11-04.
+# Scope: Mexico, Central America, Caribbean, South America. Trade, money, banks, railways, mines, oil, crops, debt crises.
+# Dates: memory pass + web check. Peg rules as world_dates.yaml: peg = last two digits of the year.
+# Range -> conventional "c." date (policy 2026-11-04). "X +/- Y" -> X.
+# Labour strikes, slavery, indenture and migration go to society; constitutions and wars go to politics.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Mexico
+  - {year: 1824, peg: hanger, confidence: unverified,
+     event: "Mexico: first London loan through Goldschmidt and Company",
+     scene: "A London banker hangs sacks of pounds for the new Mexican republic on a coat HANGER."}
+  - {year: 1825, peg: nail, confidence: unverified,
+     event: "Real del Monte: British company brings Cornish miners and steam pumps",
+     scene: "Cornish miners NAIL a steam pump together above the flooded silver shafts of Real del Monte."}
+  - {year: 1827, peg: ink, confidence: unverified,
+     event: "Mexico stops payments on its London loans",
+     scene: "Mexican treasury clerks spill INK over the London bond coupons and stop paying."}
+  - {year: 1830, peg: mouse, confidence: unverified,
+     event: "Banco de Avio: Alaman's state bank lends money to new factories",
+     scene: "Alaman's Banco de Avio lends a MOUSE money to buy cotton spindles."}
+  - {year: 1835, peg: mill, confidence: unverified,
+     event: "La Constancia Mexicana: first mechanised cotton MILL in Puebla",
+     scene: "Water turns the wheel of a cotton MILL at La Constancia in Puebla."}
+  - {year: 1856, peg: leech, confidence: unverified,
+     event: "Lerdo Law: Church and village corporations must sell their land",
+     scene: "The Lerdo Law pulls Church and village land loose like a LEECH from the skin."}
+  - {year: 1861, peg: jet, confidence: unverified,
+     event: "Juarez suspends payments on the foreign debt",
+     scene: "Juarez stops the debt payments, and European creditors fly a JET to Veracruz to complain."}
+  - {year: 1873, peg: comb, confidence: unverified,
+     event: "Mexican Railway: Mexico City to Veracruz line opens",
+     scene: "The first train from Mexico City to Veracruz climbs the mountain grade like the teeth of a COMB."}
+  - {year: 1883, peg: foam, confidence: unverified,
+     event: "Mexico: vacant-lands survey law gives survey companies huge areas of land",
+     scene: "Survey companies mark out vacant land and wash away village titles with FOAM."}
+  - {year: 1884, peg: fairy, confidence: unverified,
+     event: "Banco Nacional de Mexico formed from a merger of two banks",
+     scene: "A FAIRY joins two banks into the Banco Nacional de Mexico with her wand."}
+  - {year: 1884, peg: fairy, confidence: unverified,
+     event: "Mexican Central Railway links Mexico City to the US border at El Paso",
+     scene: "A FAIRY rides the first Mexican Central train north from Mexico City to El Paso."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Cerveceria Cuauhtemoc brewery founded in Monterrey",
+     scene: "BEES buzz over the first barley in the new Cuauhtemoc brewery in Monterrey."}
+  - {year: 1897, peg: pig, confidence: unverified,
+     event: "Mexico: General Law of Credit Institutions sets rules for banks",
+     scene: "Limantour's banking law locks every Mexican bank's cash into a PIG bank with rules."}
+  - {year: 1901, peg: soda, confidence: high,
+     event: "El Ebano: Doheny's well gives Mexico's first commercial oil",
+     scene: "Doheny's well at El Ebano sprays black oil like a shaken SODA bottle."}
+  - {year: 1903, peg: sumo, confidence: unverified,
+     event: "Fundidora de Monterrey: first blast furnace in Latin America makes steel",
+     scene: "A SUMO wrestler shovels coke into the Fundidora blast furnace in Monterrey."}
+  - {year: 1905, peg: seal, confidence: unverified,
+     event: "Mexico: monetary reform puts the silver peso on the gold standard",
+     scene: "A SEAL balances the silver peso on a gold bar after Limantour's reform."}
+  - {year: 1908, peg: sofa, confidence: unverified,
+     event: "National Railways of Mexico: state takes majority control of the main lines",
+     scene: "Limantour buys the main railways and puts a state SOFA in every first-class car."}
+  - {year: 1910, peg: dice, confidence: unverified,
+     event: "Potrero del Llano 4: huge gusher in the Golden Lane oil fields",
+     scene: "Potrero del Llano blows oil sky-high, and a DICE rides the gusher over the Golden Lane."}
+  - {year: 1915, peg: doll, confidence: unverified,
+     event: "Carranza's agrarian law: villages get back their lost common lands",
+     scene: "Carranza hands a village its lost common land, and a child plants a DOLL in the field."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "Mexican oil output peaks; Mexico is the second producer in the world",
+     scene: "A line of ANT tankers carries Mexican oil, second in the world, out of Tampico."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Banco de Mexico founded as the central bank",
+     scene: "Calles hammers the last NAIL into the door of the new Banco de Mexico."}
+  - {year: 1926, peg: nacho, confidence: unverified,
+     event: "Banco Nacional de Credito Agricola lends to farmers",
+     scene: "The farm credit bank lends a farmer money for corn, and he pays back in NACHO chips."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "Nacional Financiera founded as a state development bank",
+     scene: "Nacional Financiera gives a factory builder a HAMMER and a loan."}
+  - {year: 1936, peg: match, confidence: unverified,
+     event: "La Laguna: Cardenas gives cotton estates to collective ejidos",
+     scene: "Cardenas lights a MATCH under the La Laguna estate titles and hands the cotton to ejidos."}
+  - {year: 1937, peg: mug, confidence: unverified,
+     event: "Cardenas nationalises the railways",
+     scene: "Railway workers raise a MUG of coffee as the Mexican state takes the lines."}
+  - {year: 1938, peg: movie, confidence: unverified,
+     event: "Cardenas expropriates the foreign oil companies",
+     scene: "A MOVIE shows crowds giving chickens and rings to pay for the oil expropriation."}
+  - {year: 1938, peg: movie, confidence: unverified,
+     event: "Pemex founded as the state oil company",
+     scene: "The Pemex logo appears on the MOVIE screen over the new state oil wells."}
+  - {year: 1942, peg: rhino, confidence: unverified,
+     event: "Bracero Program: Mexican farm workers go to US fields under contract",
+     scene: "A RHINO pulls a bus of Mexican braceros north to the US harvest."}
+  - {year: 1943, peg: ram, confidence: unverified,
+     event: "Mexican Agricultural Program starts work on new wheat and maize seed",
+     scene: "A RAM eats the first test plot of new high-yield wheat near Mexico City."}
+  # Central America
+  - {year: 1823, peg: gnome, confidence: unverified,
+     event: "Poyais fraud: MacGregor's settlers land on the Mosquito Coast and find no country",
+     scene: "Settlers buy Poyais land from MacGregor and find only a GNOME on the empty Mosquito Coast."}
+  - {year: 1832, peg: moon, confidence: medium,
+     event: "Costa Rica starts to export coffee, first through Chile",
+     scene: "Costa Rican coffee sails to Valparaiso under the MOON and leaves as Chilean coffee."}
+  - {year: 1843, peg: ram, confidence: high,
+     event: "Le Lacheur's ship Monarch carries the first coffee direct from Costa Rica to London",
+     scene: "Le Lacheur's ship Monarch sails to London with a RAM on bags of Costa Rican coffee."}
+  - {year: 1851, peg: wallet, confidence: unverified,
+     event: "Vanderbilt's Accessory Transit Company carries gold seekers across Nicaragua",
+     scene: "Vanderbilt fills his WALLET as gold seekers steam up the San Juan River across Nicaragua."}
+  - {year: 1855, peg: lily, confidence: unverified,
+     event: "Panama Railroad completed across the isthmus",
+     scene: "The first train crosses Panama from sea to sea through swamps of white LILY flowers."}
+  - {year: 1871, peg: cat, confidence: unverified,
+     event: "Costa Rica signs the contract with Meiggs for the Atlantic railway",
+     scene: "Meiggs signs the Costa Rica railway contract while a CAT walks across the map."}
+  - {year: 1873, peg: comb, confidence: unverified,
+     event: "Minor Keith plants bananas beside the Costa Rica railway line (approximate)",
+     scene: "Minor Keith plants banana rows beside his railway, straight as the teeth of a COMB."}
+  - {year: 1881, peg: foot, confidence: unverified,
+     event: "French company of de Lesseps starts to dig the Panama Canal",
+     scene: "De Lesseps puts his FOOT on a spade and starts the French canal at Panama."}
+  - {year: 1889, peg: fob, confidence: unverified,
+     event: "French Panama Canal company goes bankrupt",
+     scene: "The French canal company is bankrupt, and de Lesseps pawns his watch FOB."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Costa Rica Atlantic railway reaches Limon and is complete",
+     scene: "BEES follow the first through train from San Jose down to the port of Limon."}
+  - {year: 1904, peg: sewer, confidence: unverified,
+     event: "United States starts work on the Panama Canal",
+     scene: "US engineers dig a SEWER system in Panama before they start the canal cut."}
+  - {year: 1904, peg: sewer, confidence: unverified,
+     event: "Panama makes the US dollar legal money beside the balboa",
+     scene: "Panama sweeps old coins into the SEWER and uses US dollars beside the balboa."}
+  - {year: 1914, peg: tower, confidence: unverified,
+     event: "Panama Canal opens",
+     scene: "A ship passes the lock TOWER at Panama."}
+  # Caribbean
+  - {year: 1825, peg: nail, confidence: unverified,
+     event: "Haiti agrees to pay France a huge indemnity for recognition",
+     scene: "French warships make Haiti NAIL its name to a huge debt for recognition."}
+  - {year: 1837, peg: mug, confidence: unverified,
+     event: "Cuba: Havana to Bejucal railway, first in Latin America",
+     scene: "Sugar planters raise a MUG of rum as the first train in Latin America leaves Havana."}
+  - {year: 1870, peg: goose, confidence: unverified,
+     event: "Lorenzo Dow Baker ships Jamaican bananas to the United States",
+     scene: "Captain Baker loads green Jamaican bananas, and a GOOSE guards them to Boston."}
+  - {year: 1903, peg: sumo, confidence: unverified,
+     event: "Cuba and the United States sign a trade reciprocity treaty for sugar",
+     scene: "A SUMO wrestler pushes Cuban sugar through a lower US tariff gate."}
+  - {year: 1905, peg: seal, confidence: unverified,
+     event: "Dominican Republic: United States takes control of the customs houses to pay debts",
+     scene: "US agents put a SEAL on the Dominican customs houses and pay the creditors."}
+  - {year: 1908, peg: sofa, confidence: high,
+     event: "Trinidad: commercial oil production begins in the south-west",
+     scene: "Oil from the first Trinidad wells soaks a SOFA near the Pitch Lake."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Curacao: Shell refinery opens for Venezuelan crude",
+     scene: "A DOVE flies over the new Shell refinery that cracks Venezuelan oil on Curacao."}
+  - {year: 1920, peg: nose, confidence: unverified,
+     event: "Cuba: Dance of the Millions sugar boom crashes and the banks fail",
+     scene: "Sugar prices fall on their NOSE, and the Dance of the Millions ends in Havana bank crashes."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Aruba: Lago refinery starts work",
+     scene: "A worker turns the first valve KNOB at the Lago refinery on Aruba."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "Cuba and the United States sign a new reciprocal trade agreement",
+     scene: "A HAMMER stamps a new sugar quota on the Cuban-US trade agreement."}
+  # Brazil
+  - {year: 1808, peg: sofa, confidence: unverified,
+     event: "Brazilian ports open to the trade of friendly nations",
+     scene: "Prince John sits on a SOFA in Salvador and opens Brazil's ports to British ships."}
+  - {year: 1808, peg: sofa, confidence: unverified,
+     event: "First Banco do Brasil founded",
+     scene: "The first Banco do Brasil counts its notes on the royal SOFA in Rio."}
+  - {year: 1810, peg: dice, confidence: unverified,
+     event: "Strangford treaty: British goods enter Brazil at low tariffs",
+     scene: "Britain throws the DICE and wins a low tariff on its cloth in Brazil."}
+  - {year: 1829, peg: knob, confidence: unverified,
+     event: "First Banco do Brasil closes after it prints too many notes",
+     scene: "The first Banco do Brasil prints too many notes, and a clerk locks the door KNOB."}
+  - {year: 1844, peg: warrior, confidence: unverified,
+     event: "Alves Branco tariff raises Brazilian import duties",
+     scene: "A tariff WARRIOR named Alves Branco stops cheap British goods at the dock."}
+  - {year: 1850, peg: lasso, confidence: unverified,
+     event: "Brazil Land Law: public land only by purchase",
+     scene: "Under the Land Law, nobody can LASSO public land; a settler must buy it."}
+  - {year: 1854, peg: lawyer, confidence: unverified,
+     event: "Maua opens Brazil's first railway near Rio",
+     scene: "A LAWYER rides Maua's first Brazilian train from the bay toward Petropolis."}
+  - {year: 1867, peg: jockey, confidence: unverified,
+     event: "Sao Paulo Railway: Santos to Jundiai line opens up the coffee frontier",
+     scene: "A JOCKEY on a coffee sack rides the cable train up the Serra do Mar to Sao Paulo."}
+  - {year: 1875, peg: eagle, confidence: unverified,
+     event: "Maua bank fails",
+     scene: "An EAGLE flies off with the last coins of Maua's bank."}
+  - {year: 1876, peg: cage, confidence: unverified,
+     event: "Wickham takes rubber seeds out of the Amazon for Kew",
+     scene: "Wickham hides seventy thousand rubber seeds in a bird CAGE and sails out of the Amazon."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Encilhamento: Rui Barbosa's bank reform starts a share bubble in Rio",
+     scene: "New banks print notes, and Rio share buyers swarm like BEES in the Encilhamento bubble."}
+  - {year: 1898, peg: beehive, confidence: unverified,
+     event: "Brazil funding loan: Rothschilds roll over the foreign debt",
+     scene: "Rothschild bankers seal Brazil's debt in a BEEHIVE and give it more time."}
+  - {year: 1906, peg: sushi, confidence: unverified,
+     event: "Taubate Agreement: coffee states buy coffee to hold up the price",
+     scene: "Coffee states buy surplus beans and roll them up like SUSHI to hold the price."}
+  - {year: 1912, peg: tongue, confidence: unverified,
+     event: "Madeira-Mamore railway completed in the Amazon",
+     scene: "The Madeira-Mamore train sticks out its TONGUE at the rapids it now passes."}
+  - {year: 1912, peg: tongue, confidence: unverified,
+     event: "Amazon rubber boom collapses as Asian plantation rubber floods the market",
+     scene: "A Manaus rubber baron bites his TONGUE as Asian plantation rubber kills the price."}
+  - {year: 1928, peg: knife, confidence: high,
+     event: "Fordlandia: Ford founds a rubber town on the Tapajos",
+     scene: "Ford's men cut the Tapajos forest with a KNIFE and build an American town for rubber."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Brazil starts to burn surplus coffee to support the price",
+     scene: "A MOTH flies into the smoke of burning coffee sacks at Santos."}
+  - {year: 1939, peg: map, confidence: high,
+     event: "Lobato, Salvador: first oil found in Brazil",
+     scene: "Drillers at Lobato mark Brazil's first oil on the MAP of Bahia."}
+  - {year: 1941, peg: radio, confidence: unverified,
+     event: "Companhia Siderurgica Nacional founded to build the Volta Redonda steelworks",
+     scene: "Vargas announces the Volta Redonda steelworks on the RADIO."}
+  - {year: 1942, peg: rhino, confidence: unverified,
+     event: "Companhia Vale do Rio Doce founded to export iron ore",
+     scene: "A RHINO hauls iron ore from Itabira to the sea for the new Vale company."}
+  - {year: 1942, peg: rhino, confidence: unverified,
+     event: "Cruzeiro replaces the real as Brazil's money",
+     scene: "A RHINO stamps on old reis notes, and the new cruzeiro coin rolls out."}
+  # Andes (Colombia, Venezuela, Ecuador, Peru, Bolivia)
+  - {year: 1822, peg: nun, confidence: unverified,
+     event: "Gran Colombia: Zea raises the first London loan",
+     scene: "Zea sells Gran Colombian bonds in London to a NUN with savings."}
+  - {year: 1826, peg: nacho, confidence: unverified,
+     event: "Gran Colombia and Peru stop paying their London loans (approximate)",
+     scene: "Andean treasuries are empty, and London bondholders get a NACHO in place of interest."}
+  - {year: 1840, peg: horse, confidence: high,
+     event: "Quiros contract: Peru's guano export trade begins",
+     scene: "Quiros rides a HORSE onto the Chincha bird islands and signs the first guano contract."}
+  - {year: 1851, peg: wallet, confidence: unverified,
+     event: "Lima to Callao railway, first in South America",
+     scene: "A Lima merchant opens his WALLET for a ticket on the first railway in South America."}
+  - {year: 1869, peg: ship, confidence: unverified,
+     event: "Dreyfus contract: French firm buys Peru's guano for loans",
+     scene: "Dreyfus fills every SHIP with Peruvian guano and pays Lima in loans."}
+  - {year: 1870, peg: goose, confidence: unverified,
+     event: "Meiggs starts the Central Railway of Peru into the Andes",
+     scene: "Meiggs builds the Central Railway up the Andes, and a GOOSE watches from a high bridge."}
+  - {year: 1875, peg: eagle, confidence: unverified,
+     event: "Peru expropriates the Tarapaca nitrate works",
+     scene: "A Peruvian EAGLE takes the Tarapaca nitrate works from their owners."}
+  - {year: 1876, peg: cage, confidence: unverified,
+     event: "Peru defaults on its foreign debt",
+     scene: "Peru's guano money runs out, and the bondholders sit in an empty CAGE."}
+  - {year: 1878, peg: cave, confidence: unverified,
+     event: "Bolivia puts a ten-centavo tax on nitrate exported from Antofagasta",
+     scene: "Bolivia taxes each sack of Antofagasta nitrate, and the Chilean company hides it in a CAVE."}
+  - {year: 1890, peg: bees, confidence: high,
+     event: "Peruvian Corporation: bondholders take the state railways for the debt",
+     scene: "British bondholders take Peru's railways and guano for the debt, buzzing like BEES."}
+  - {year: 1892, peg: piano, confidence: unverified,
+     event: "Antofagasta railway reaches Oruro in Bolivia",
+     scene: "The Antofagasta train brings a PIANO up to Oruro for the silver barons."}
+  - {year: 1900, peg: sauce, confidence: medium,
+     event: "Patino finds the rich La Salvadora tin vein at Llallagua",
+     scene: "Patino's miners strike the La Salvadora tin vein, rich as a SAUCE of silver."}
+  - {year: 1908, peg: sofa, confidence: unverified,
+     event: "Guayaquil to Quito railway completed",
+     scene: "The first train from Guayaquil climbs the Devil's Nose and brings a SOFA to Quito."}
+  - {year: 1913, peg: tomb, confidence: unverified,
+     event: "Arica to La Paz railway opens",
+     scene: "The Arica to La Paz train passes a TOMB on the high Altiplano."}
+  - {year: 1914, peg: tower, confidence: high,
+     event: "Zumaque I: first big oil well at Mene Grande, Venezuela",
+     scene: "A wooden derrick TOWER at Mene Grande brings in Venezuela's first big oil well."}
+  - {year: 1918, peg: dove, confidence: high,
+     event: "Infantas wells: Colombia's first commercial oil near Barrancabermeja",
+     scene: "A DOVE lands on the first Infantas derrick near Barrancabermeja."}
+  - {year: 1922, peg: nun, confidence: high,
+     event: "Barroso II blowout at Cabimas shows Venezuela's oil wealth",
+     scene: "Barroso II blows oil over Cabimas for days and soaks a NUN at prayer."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "La Oroya smelter of Cerro de Pasco starts work in Peru",
+     scene: "A NUN coughs in the smoke of the new La Oroya copper smelter."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Banco de la Republica founded in Colombia on Kemmerer's advice",
+     scene: "Kemmerer, the money doctor, sets a GNOME to guard the vault of Colombia's new central bank."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Colombia: National Federation of Coffee Growers founded",
+     scene: "Coffee growers sign the founding paper of their federation in coffee-black INK."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Banco Central del Ecuador founded",
+     scene: "Ecuador's new central bank prints its first sucre notes in green INK."}
+  - {year: 1928, peg: knife, confidence: unverified,
+     event: "Venezuela becomes the largest oil exporter in the world",
+     scene: "Venezuela cuts ahead of every rival with a KNIFE and leads the world in oil exports."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Banco Central de Bolivia founded",
+     scene: "A Kemmerer adviser turns the vault KNOB of the new Banco Central de Bolivia."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Banco Central de Reserva del Peru founded",
+     scene: "A MOTH flies out of the empty vault of the new Peruvian central bank."}
+  - {year: 1936, peg: match, confidence: unverified,
+     event: "YPFB founded as Bolivia's state oil company",
+     scene: "Bolivia lights a MATCH to start its own state oil company, YPFB."}
+  - {year: 1937, peg: mug, confidence: unverified,
+     event: "Bolivia nationalises Standard Oil, first oil nationalisation in Latin America",
+     scene: "Bolivian officers toast with a MUG as they take the Standard Oil wells."}
+  - {year: 1943, peg: ram, confidence: unverified,
+     event: "Venezuela Hydrocarbons Law raises the state's share of oil profits",
+     scene: "Medina's oil law butts the oil companies like a RAM and takes a bigger profit share."}
+  # Southern Cone (Argentina, Chile, Uruguay, Paraguay)
+  - {year: 1824, peg: hanger, confidence: unverified,
+     event: "Buenos Aires takes the Baring Brothers loan",
+     scene: "Barings hangs a London loan for Buenos Aires port works on a HANGER."}
+  - {year: 1832, peg: moon, confidence: unverified,
+     event: "Chanarcillo: Juan Godoy finds a great silver lode near Copiapo",
+     scene: "Juan Godoy finds silver at Chanarcillo shining like the MOON on the Atacama."}
+  - {year: 1851, peg: wallet, confidence: unverified,
+     event: "Caldera to Copiapo railway, first in Chile, carries silver ore",
+     scene: "Wheelwright's train carries Copiapo silver to Caldera in a mine owner's WALLET."}
+  - {year: 1857, peg: log, confidence: unverified,
+     event: "Ferrocarril Oeste: first railway in Argentina opens in Buenos Aires",
+     scene: "La Portena locomotive burns a LOG on the first Argentine railway run."}
+  - {year: 1861, peg: jet, confidence: high,
+     event: "Paraguay: first railway opens at Asuncion",
+     scene: "A JET of steam rises as Lopez's first train leaves Asuncion station."}
+  - {year: 1865, peg: jelly, confidence: unverified,
+     event: "Fray Bentos: Liebig's Extract of Meat Company starts work in Uruguay",
+     scene: "Fray Bentos boils Uruguayan beef into Liebig's meat extract, dark as JELLY."}
+  - {year: 1876, peg: cage, confidence: unverified,
+     event: "Le Frigorifique brings chilled meat to Buenos Aires",
+     scene: "Le Frigorifique docks at Buenos Aires with chilled meat in a cold CAGE."}
+  - {year: 1878, peg: cave, confidence: high,
+     event: "Argentina ships its first wheat to Europe",
+     scene: "The first Argentine wheat leaves for Glasgow from a grain CAVE at the port."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Baring crisis: Argentine debt nearly breaks Baring Brothers",
+     scene: "Argentine bonds crash, and Barings is stung by BEES until the Bank of England saves it."}
+  - {year: 1891, peg: boot, confidence: unverified,
+     event: "Banco de la Nacion Argentina founded after the crisis",
+     scene: "Pellegrini puts the BOOT to the bad banks and founds the Banco de la Nacion."}
+  - {year: 1896, peg: peach, confidence: unverified,
+     event: "Uruguay: Banco de la Republica Oriental founded",
+     scene: "Uruguay's state bank opens, and its first client deposits a PEACH crop."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "Argentina: Conversion Office fixes the peso to gold",
+     scene: "The Conversion Office pumps gold through a PIPE to back each paper peso."}
+  - {year: 1905, peg: seal, confidence: medium,
+     event: "El Teniente: Braden Copper starts to mine in Chile",
+     scene: "A SEAL slides down the copper tunnels of Braden's El Teniente mine in the Andes."}
+  - {year: 1907, peg: ski, confidence: unverified,
+     event: "Comodoro Rivadavia: water drillers find Argentina's first oil",
+     scene: "Drillers look for water at Comodoro Rivadavia, find oil, and SKI on it."}
+  - {year: 1910, peg: dice, confidence: unverified,
+     event: "Transandine Railway links Argentina and Chile",
+     scene: "Passengers roll the DICE in the Transandine train as it tunnels under the Andes."}
+  - {year: 1912, peg: tongue, confidence: unverified,
+     event: "Uruguay: state electricity company created under Batlle",
+     scene: "Batlle's state power company sends sparks up a TONGUE of copper wire to Montevideo homes."}
+  - {year: 1915, peg: doll, confidence: high,
+     event: "Chuquicamata: open-pit copper mining begins",
+     scene: "A DOLL sits on the rim of the new Chuquicamata open pit in the Atacama."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "YPF founded as Argentina's state oil company",
+     scene: "Mosconi's YPF opens its first fuel pump, and a NUN fills her car."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Banco Central de Chile founded on Kemmerer's advice",
+     scene: "Kemmerer drives the last NAIL into the counter of Chile's new central bank."}
+  - {year: 1930, peg: mouse, confidence: high,
+     event: "COSACH: Chile joins the state and the nitrate firms in one company",
+     scene: "COSACH tries to save Chilean nitrate, but a MOUSE eats the sacks in the empty depot."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Uruguay: ANCAP founded as the state fuel and alcohol company",
+     scene: "A MOTH flies round the lamp of ANCAP's first state fuel depot in Montevideo."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "Roca-Runciman Pact keeps Argentine beef in the British market",
+     scene: "Argentine beef is wrapped like a MUMMY in a British quota under the Roca-Runciman Pact."}
+  - {year: 1935, peg: mill, confidence: unverified,
+     event: "Banco Central de la Republica Argentina founded",
+     scene: "Prebisch helps start Argentina's central bank, and a paper MILL makes its notes."}
+  - {year: 1939, peg: map, confidence: unverified,
+     event: "CORFO founded to rebuild and develop Chile after the earthquake",
+     scene: "CORFO planners draw new factories and power plants on a MAP of Chile after the Chillan quake."}
