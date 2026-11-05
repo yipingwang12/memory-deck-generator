@@ -94,14 +94,15 @@ def _mnemonics(cfg: dict, config: Path) -> dict | None:
 def _image_source(slug: str, scenes: dict, images_root: Path) -> tuple[Path, str]:
     """Which renderer's pictures this deck ships, as ``(dir, file suffix)``.
 
-    Gemini first, Three.js as the fallback: the Gemini pictures are already live in the quiz
-    and a deck should not silently change its look, while the hand-authored Three.js finals
-    cover the decks the Gemini run never reached (its monthly spend cap stopped it at 24).
-    A deck with neither keeps its empty Gemini directory, which ships nothing.
+    Gemini first (full model, then Lite — ``SHIPPED_MODELS``), Three.js as the fallback: a
+    deck already live with pictures must not silently change its look, while the
+    hand-authored Three.js finals cover decks no Gemini run reached. A deck with none ships
+    nothing.
     """
-    gemini = scene_images.image_dir(slug, root=images_root)
-    if scene_images.current_images(scenes, gemini):
-        return gemini, ""
+    for model in scene_images.SHIPPED_MODELS:
+        gemini = scene_images.image_dir(slug, model, root=images_root)
+        if scene_images.current_images(scenes, gemini):
+            return gemini, ""
     return scene_images.threejs_dir(slug, root=images_root), scene_images.THREEJS_SUFFIX
 
 
