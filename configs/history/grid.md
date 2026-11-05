@@ -36,7 +36,13 @@ shared by every agent; refills about 100/hour; setting `CLAUDE_CODE_MAX_WEB_SEAR
 The cap ran out after the first ~20 searches per agent, so most entries are `unverified`.
 Next: a checking-only pass on the 12 cells, then wave 2 (the 12 cells below), after the cap is raised.
 
-Wave 2 queue: subsaharan_africa religion 500_1500, subsaharan_africa economy 1500_1800,
+## Wave 2 (2026-11-04)
+12 cells below, one agent each, 12 searches per agent (cap still not raised). About 1,770 dates,
+mostly `unverified` (about 1,535). deck-history-check exit 0 on all 12.
+Next: a checking-only pass on waves 1 and 2, after the cap is raised; then wave 3.
+Open: Finland is in no region (western_europe lists only Scandinavia + Iceland).
+
+Wave 2 cells: subsaharan_africa religion 500_1500, subsaharan_africa economy 1500_1800,
 western_europe science 1500_1800, western_europe arts 1800_1945, eastern_europe politics 1500_1800,
 eastern_europe society 1945_present, north_america society 1500_1800, north_america science 1945_present,
 latin_america religion pre500bce, latin_america economy 1800_1945, oceania economy 1800_1945,

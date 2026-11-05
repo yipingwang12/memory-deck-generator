@@ -19,6 +19,12 @@ Do NOT stop after the memory pass and do NOT wait for permission before the web 
 - Depth: EXHAUSTIVE. Every dated event you can find, specialist items included, like the pilot. Do not stop at a round number. Expect roughly 60–150 entries; a thin cell may have fewer — that is fine, do not pad.
 - Group entries by subregion with `# <subregion>` comments.
 
+## Search budget
+Web search is capped per session and shared by every agent running in parallel. You may use at
+most 12 searches. Spend them in this order: items you would mark low or disputed, items with no
+date, items near a period boundary, then extension searches. Everything you do not search is
+`unverified` — never `high` or `medium` from memory. If a search is refused, stop searching and write the cell.
+
 ## Web check (step 3)
 - Load WebSearch with ToolSearch ("select:WebSearch") if it is deferred. Use "standard" mode by default; "extended" only for hard items. Send searches in parallel batches.
 - Check every item below `high` and every item with no date. Also run extension searches ("earliest/first/oldest <theme> <subregion>", finds of the last ~10 years).
