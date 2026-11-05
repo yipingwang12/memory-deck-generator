@@ -42,6 +42,24 @@ mostly `unverified` (about 1,535). deck-history-check exit 0 on all 12.
 Next: a checking-only pass on waves 1 and 2, after the cap is raised; then wave 3.
 Open: Finland is in no region (western_europe lists only Scandinavia + Iceland).
 
+## Check pass on waves 1 + 2 (2026-11-04)
+Search cap raised to 1000. 21 cells, one Sonnet agent each, brief `check_prompt.md`, budget 0.4 search
+per unverified entry (10–70), about 660 searches used. Unverified 2,170 → 668; high 835 → 1,957;
+disputed 40 → 120. 36 dates corrected (new peg + scene). 1,762 entries now carry `source:`.
+WebFetch costs no searches: encyclopedia.com, MacTutor, HistoryWorld, Linda Hall and Kiwix / IPFS
+Wikipedia mirrors work; Britannica, Met, British Museum, Smarthistory refuse.
+Open (not done): relabel 8 western_europe_arts `disputed` works under the first-public-appearance rule;
+Gheo-Shih -6600 is an uncalibrated C14 date; La Galgada / Kotosh start-of-phase; Kanishka era
+(123 vs 127); Panama 1880/1881 text; Ai-Khanoum text; Mugujeonggwang "sealed"; Ouidah 1692 and
+Alaca Höyük -2250 doubtful; one-year calendar `disputed` labels; top-up of the 668 unverified.
+
+## Wave 3 (2026-11-04)
+One new theme per region; each theme and each period twice. Budget 25 searches per agent.
+east_asia arts 1500_1800, south_asia science pre500bce, southeast_asia religion 1500_1800,
+central_asia economy 500bce_500ce, west_asia politics 1945_present, north_africa religion pre500bce,
+subsaharan_africa politics 1800_1945, western_europe society 500_1500, eastern_europe arts 500bce_500ce,
+north_america economy 1800_1945, latin_america science 500_1500, oceania society 1945_present.
+
 Wave 2 cells: subsaharan_africa religion 500_1500, subsaharan_africa economy 1500_1800,
 western_europe science 1500_1800, western_europe arts 1800_1945, eastern_europe politics 1500_1800,
 eastern_europe society 1945_present, north_america society 1500_1800, north_america science 1945_present,

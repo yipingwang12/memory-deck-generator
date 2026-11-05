@@ -21,7 +21,14 @@ Do NOT stop after the memory pass and do NOT wait for permission before the web 
 
 ## Search budget
 Web search is capped per session and shared by every agent running in parallel. You may use at
-most 12 searches. Spend them in this order: items you would mark low or disputed, items with no
+most {budget} searches. Count them; never go over.
+WebFetch does NOT use the search budget: search to FIND a good timeline or reference page, then
+fetch it and confirm every entry it covers. Fetch works on encyclopedia.com, MacTutor
+(mathshistory.st-andrews.ac.uk), historyworld.net, lindahall.org, worldhistory.org (some pages),
+and Wikipedia mirrors on Kiwix or IPFS (e.g. `<cid>.ipfs.4everland.io/wiki/<Article>.html`; slow,
+give up on a host after two timeouts; source as "WP mirror: <article>"). Fetch refuses on
+britannica.com, metmuseum.org, britishmuseum.org, smarthistory.org — use their search summaries only.
+Every entry a source confirms gets a short `source:` field (policy.md). Spend them in this order: items you would mark low or disputed, items with no
 date, items near a period boundary, then extension searches. Everything you do not search is
 `unverified` — never `high` or `medium` from memory. If a search is refused, stop searching and write the cell.
 

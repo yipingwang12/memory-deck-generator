@@ -1,5 +1,6 @@
 # WAVE 1 DRAFT 2026-11-04: web check incomplete (shared search limit ran out).
 # Re-check every entry, and apply the 2026-11-04 range rule (conventional c. date).
+# Check pass 2026-11-04: 13 entries confirmed, 0 corrected.
 # Cell: Southeast Asia x economy x 500 to 1499. DRAFT 2026-11-04.
 # Dates: memory pass + web check. The web search budget ran out part way; unchecked items are unverified.
 # Peg rules as world_dates.yaml: last two digits; approximate year ending 00 -> first two digits (under 1000 -> year // 10).
@@ -7,10 +8,10 @@
 # confidence: high | medium | low | disputed | unverified (no source found)
 dates:
   # Vietnam (Dai Viet and Champa)
-  - {year: 970, peg: goose, confidence: medium,
+  - {year: 970, peg: goose, confidence: medium, source: "Coin catalogues: Thai Binh Hung Bao",
      event: "Dinh Bo Linh: Thai Binh Hung Bao, first Vietnamese copper coins (approximate)",
      scene: "A GOOSE lays copper coins stamped Thai Binh in the Dinh court at Hoa Lu."}
-  - {year: 984, peg: fairy, confidence: unverified,
+  - {year: 984, peg: fairy, confidence: medium, source: "Coin catalogues: Thien Phuc Tran Bao",
      event: "Le Hoan: Thien Phuc Tran Bao coins cast",
      scene: "A FAIRY casts Le Hoan's new copper coins with her wand at Hoa Lu."}
   - {year: 1108, peg: sofa, confidence: medium,
@@ -19,7 +20,7 @@ dates:
   - {year: 1149, peg: rope, confidence: high,
      event: "Van Don: Ly Anh Tong opens a trading port for Javanese and Siamese ships",
      scene: "Javanese and Siamese ships tie a ROPE to the new Van Don trading post."}
-  - {year: 1248, peg: reef, confidence: unverified,
+  - {year: 1248, peg: reef, confidence: high, source: "Sakurai; Vu Minh Giang: Dai Viet su ky",
      event: "Tran dynasty: long dikes along the Red River and dike officials",
      scene: "Tran dike officials stack earth on a REEF of mud along the whole Red River."}
   - {year: 1396, peg: peach, confidence: high,
@@ -63,18 +64,18 @@ dates:
   - {year: 1292, peg: piano, confidence: high,
      event: "Ramkhamhaeng inscription: no tolls on roads, free trade in elephants and horses",
      scene: "A merchant rolls a PIANO on an elephant down a Sukhothai road and pays no toll."}
-  - {year: 1400, peg: tower, confidence: unverified,
+  - {year: 1400, peg: tower, confidence: medium, source: "Asia Society: Sawankhalok jars",
      event: "Si Satchanalai kilns: Sawankhalok ware exported across the islands (approximate)",
      scene: "Sawankhalok kilns stack export jars in a TOWER on the dock for the island markets."}
-  - {year: 1425, peg: nail, confidence: unverified,
+  - {year: 1425, peg: nail, confidence: medium, source: "J Asian Studies: Ryukyu and Southeast Asia",
      event: "Ryukyu royal ships trade at Ayutthaya",
      scene: "A Ryukyu captain uses a NAIL to fix his king's trade letter on an Ayutthaya warehouse."}
   # Myanmar
-  - {year: 1050, peg: lasso, confidence: unverified,
+  - {year: 1050, peg: lasso, confidence: medium, source: "Britannica: Kyaukse",
      event: "Pagan: weirs and canals in the Kyaukse rice plain (approximate)",
      scene: "A Pagan farmer throws a LASSO over a Kyaukse weir to pull water into his rice field."}
   # Malay Peninsula and Singapore
-  - {year: 1330, peg: mouse, confidence: unverified,
+  - {year: 1330, peg: mouse, confidence: medium, source: "Wang Dayuan: Singapore visit c. 1330",
      event: "Wang Dayuan visits Temasek and describes its trade (approximate)",
      scene: "A MOUSE runs across Wang Dayuan's notes on Temasek trade goods."}
   - {year: 1409, peg: soap, confidence: unverified,
@@ -83,7 +84,7 @@ dates:
   - {year: 1446, peg: roach, confidence: unverified,
      event: "Malacca: first tin coins under Muzaffar Shah (approximate)",
      scene: "A ROACH slides on a new Malacca tin coin with the sultan's name."}
-  - {year: 1463, peg: gem, confidence: unverified,
+  - {year: 1463, peg: gem, confidence: medium, source: "J Asian Studies: Ryukyu and Southeast Asia",
      event: "Ryukyu ships first trade at Malacca",
      scene: "A Ryukyu ship trades a GEM for pepper at the Malacca market."}
   # Sumatra
@@ -96,10 +97,10 @@ dates:
   - {year: 1292, peg: piano, confidence: unverified,
      event: "Marco Polo stays five months in north Sumatra",
      scene: "Marco Polo waits five months for the monsoon in Samudra and plays a PIANO."}
-  - {year: 1300, peg: tomb, confidence: unverified,
+  - {year: 1300, peg: tomb, confidence: medium, source: "Pasai histories: gold coins c. 1300",
      event: "Samudera Pasai: gold dirham coins (approximate)",
      scene: "A Pasai sultan's gold dirham is found in a TOMB on the Sumatran coast."}
-  - {year: 1345, peg: railway, confidence: unverified,
+  - {year: 1345, peg: railway, confidence: medium, source: "Pasai histories: visit in 1345",
      event: "Ibn Battuta visits the port of Samudera Pasai",
      scene: "Ibn Battuta steps off a RAILWAY carriage onto the Pasai docks."}
   # Java
@@ -131,7 +132,7 @@ dates:
   - {year: 1200, peg: tongue, confidence: medium,
      event: "Java Sea wreck: ship with labelled Chinese ceramics and iron sinks (approximate)",
      scene: "A TONGUE licks the ink label on a Chinese bowl from the Java Sea wreck."}
-  - {year: 1370, peg: goose, confidence: unverified,
+  - {year: 1370, peg: goose, confidence: medium, source: "maritimeasia.ws: Turiang wreck",
      event: "Turiang wreck: ship with Chinese, Thai and Vietnamese ceramics sinks (approximate)",
      scene: "A GOOSE nests in Thai and Chinese jars on the Turiang wreck."}
   # Philippines
@@ -141,9 +142,9 @@ dates:
   - {year: 1250, peg: lasso, confidence: medium,
      event: "Butuan boat 2: plank trading boat (balangay)",
      scene: "A Butuan trader ties his balangay to a gold market post with a LASSO."}
-  - {year: 1460, peg: cheese, confidence: unverified,
+  - {year: 1460, peg: cheese, confidence: medium, source: "Pandanan wreck: mid-15th century",
      event: "Pandanan wreck: ship with Vietnamese and Thai trade ceramics sinks (approximate)",
      scene: "Vietnamese bowls and a block of CHEESE sink with the Pandanan ship off Palawan."}
-  - {year: 1490, peg: bees, confidence: unverified,
+  - {year: 1490, peg: bees, confidence: medium, source: "UNESCO Silk Roads: Lena Shoal junk",
      event: "Lena Shoal wreck: junk with Chinese blue-and-white sinks (approximate)",
      scene: "BEES swarm over blue-and-white plates on the Lena Shoal junk off Palawan."}
