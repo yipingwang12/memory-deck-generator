@@ -85,11 +85,18 @@ Grid now 49 of 432 cells, about 6,240 dates.
 Mirrors: auto-mode refuses IPFS hosts (dweb.link, ipfs.aleph.im); 4everland times out; Kiwix
 kaweah.freedombox.rocks works. nzhistory.govt.nz returns 403. Brief updated.
 Open:
-- world_dates.yaml: Samarkand paper 751 scene states the Talas-prisoner legend as fact; "Angkor Wat
-  begun 1113" is Suryavarman II's accession; Boudica 60 vs 61; Gauls sack Rome -387 vs 390.
+- world_dates.yaml: FIXED 2026-11-04 (Talas scene no longer states the paper legend; 1113 = accession
+  only; Boudica 60 → 61). Gauls sack Rome stays -387 (390 is Varro's chronology).
 - Scope rule for works printed outside the region (Garcilaso, Ercilla, Sor Juana printed in Spain).
 - north_america_religion: 4 entries keep the memory year against one source (Cumberland 1810/1816,
   Christian Reformed 1857/1858, Southern Baptist Seminary 1859/1860, Andover 1807/1808).
 - Peg overload of round dates is now severe: lasso 17 (north_africa_science), rhino 20 (oceania 1942).
 - Invention cases listed in north_africa_science (water clock, sundial, glass, Egyptian blue, wheel).
 - Future cells: Ambedkar Nagpur conversion 1956 → south_asia religion 1945_present.
+
+## Wave 5 (2026-11-04)
+One new theme per region; each theme and each period twice. Budget 25 searches per agent.
+west_asia religion pre500bce, central_asia arts pre500bce, south_asia politics 500bce_500ce,
+east_asia economy 500bce_500ce, subsaharan_africa arts 500_1500, western_europe economy 500_1500,
+north_america politics 1500_1800, latin_america society 1500_1800, eastern_europe science 1800_1945,
+oceania religion 1800_1945, southeast_asia science 1945_present, north_africa society 1945_present.
