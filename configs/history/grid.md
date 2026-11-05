@@ -251,3 +251,40 @@ Data flags from scene agents (not fixed; for a fix pass):
 - southeast_asia_politics_1800_1945: Trat 1904 vs 1907 (France takes Trat 1904, returns it 1907): check text.
 - central_asia_politics_500_1500: Tong Yabghu killed 628 or 630.
 - Several big cells have entries out of chronological order inside a group.
+
+## Wave 9 (2026-11-05)
+User's aim: the remaining cells with the most entries, and a bigger wave (20). Same log-linear fit, now on 97
+cells (residual sd 0.49). Factors: 1800_1945 3.03, 1945_present 2.40, 1500_1800 1.75; western_europe 1.45.
+Top 20 of 335 taken as is (predicted 262–380). Budget 40 searches per agent (800 of the 1000 cap); target
+200–500. Brief now carries scene METHOD v2 (deletion / action / swap tests), subregion-only layout, and save
+every ~50 entries.
+western_europe society 1800_1945, western_europe religion 1945_present, western_europe science 1945_present,
+north_america politics 1945_present, western_europe economy 1800_1945, south_asia politics 1800_1945,
+east_asia religion 1800_1945, western_europe arts 1945_present, eastern_europe religion 1800_1945,
+western_europe society 1945_present, southeast_asia politics 1945_present, east_asia science 1800_1945,
+east_asia politics 1500_1800, western_europe politics 500_1500, central_asia politics 1800_1945,
+east_asia arts 1800_1945, eastern_europe arts 1800_1945, north_africa politics 1945_present,
+east_asia society 1800_1945, eastern_europe society 1800_1945.
+Result: 8,263 dates over 20 cells (high 6,641, medium 292, low 6, disputed 37, unverified 1,287); sizes
+173–674 (western_europe_politics_500_1500 674, southeast_asia_politics_1945_present 669, western_europe_arts
+622). Check exit 0 on all. Grid now 117 of 432 cells, 26,142 dates. Unverified share 16% (wave 8: 48%).
+Tacked-on scene pattern about 6% of scenes (wave 8 about 14%): METHOD v2 in the brief helped, but some
+scenes still fail the deletion test ("A BELL rings as Olaf lands", "the northeast wobbles like JELLY").
+Limit hit: 20 Opus agents at ~300k tokens each (~6M) reached the ACCOUNT 5-hour usage limit, not the search
+cap. Five agents lost their web check early (western_europe society ×2, religion 1945, economy 1800, politics
+500_1500: their unverified entries are the top-up list); two died mid-run and were resumed with SendMessage
+after the reset. For a 20-cell wave: run Sonnet agents, or two halves of 10 across a reset.
+Main session: world_dates Great Heathen Army 866 → 865 (two sources); Mers El Kébir 1968 restored
+(agent dropped it against the brief; `disputed`, 1967 vs 1968).
+Open:
+- Scope, "issued outside the region": Paris Ballets Russes premieres are split (Rite of Spring + first season
+  in western_europe_arts_1800_1945; Firebird + Petrushka in eastern_europe_arts_1800_1945); Kafka split too
+  (Metamorphosis, Trial west; Castle east). One rule needed.
+- Cross-cell duplicates: Suez, Six-Day War, Camp David, Egypt–Israel treaty, UAR are in both
+  north_africa_politics_1945_present and west_asia_politics_1945_present.
+- Soshi-kaimei: east_asia_politics_1800_1945 has 1940; decree 1939, enforced 1940; a timeline says 1938.
+- Qiu Jin's journal: disputed 1906/1907; first issue January 1907.
+- Shaanxi revolts 1628 vs Wang Er 1627 (start-of-phase rule → 1627?); Grand Council 1729/1733.
+- Recent events (2025–26) in north_america, southeast_asia, western_europe cells: search snippets only.
+- Peg overload: 89 warnings in wave 9 cells (radio 31 for 1941–44 in eastern_europe_society_1800_1945;
+  tattoo 24 for 2011 in north_africa_politics_1945_present; wolf 21 in western_europe_arts_1945_present).

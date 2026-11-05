@@ -20,8 +20,27 @@ Do NOT stop after the memory pass and do NOT wait for permission before the web 
 ## Scope
 - Region, theme and period definitions: /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/grid.md — use the entries for your slugs.
 - Put an event here only if this theme is its MAIN theme. Event must happen inside the region and the period.
-- Depth: EXHAUSTIVE. Every dated event you can find, specialist items included, like the pilot. Do not stop at a round number. Expect roughly 60–150 entries; a thin cell may have fewer — that is fine, do not pad.
-- Group entries by subregion with `# <subregion>` comments.
+- Depth: EXHAUSTIVE. Every dated event you can find, specialist items included, like the pilot. Do not stop at a round number. Expect roughly {expected} entries; a thin cell may have fewer — that is fine, do not pad.
+- Group entries by subregion with `# <subregion>` comments, in date order inside each group. Never group
+  by build stage ("extension", "added after check"): put each new entry in its subregion.
+- Big cell (over 200 entries): write the file early and save it after every ~50 new entries, so a
+  crash loses little. Run deck-history-check at each save.
+
+## Scenes (METHOD v2 — wave 8 dense cells failed with template scenes; follow this for EVERY entry)
+1. key_fact: the one thing to recall, at most 6 words (in your head; do not write it to the file).
+2. scene: the PEG is the subject of the main verb, or the object it acts on, and that verb IS the key fact.
+   Bad:  "French troops take the citadel and an ELBOW sticks out of the window."
+   Good: "A giant ELBOW smashes through the Saigon citadel wall and plants the French tricolour on the rubble."
+   Good: "A SUMO wrestler pins Aceh's last sultan, Muhammad Daud Syah, and carries him off to the Dutch."
+   The picture may be absurd, but it must never state a false fact about the event.
+3. Tests — fail any one, rewrite:
+   - DELETION: remove the peg; the key fact must disappear. If the event still reads complete, FAIL.
+   - ACTION: the peg signs, fires, sinks, is crowned, votes, carries the treaty, becomes the border.
+     "watches", "stands by", "hums near", "hands X the hat" → FAIL.
+   - SWAP: put another event of the same peg in; if the sentence still works, FAIL.
+- Never use a template ("A PEG hands X …", ", and a PEG …" tacked on at the end). Quality does not drop
+  after entry 200: the last scene gets the same care as the first.
+- Correct article before the peg ("an OVEN", not "a OVEN").
 
 ## Search budget
 Web search is capped per session and shared by every agent running in parallel. You may use at
