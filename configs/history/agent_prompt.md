@@ -37,9 +37,10 @@ SPEND THE WHOLE BUDGET. Wave 3 agents stopped with searches unspent and wrote th
 have searches left after checking, use them for extension searches until the budget is used.
 Astronomical years: sources such as Sachs–Hunger diaries write -651 for 652 BCE (year 0 exists).
 Convert to BCE before you apply policy.md.
-Source vs memory: if a source gives a different year from your memory, never keep the memory year
-alone. Use the source year, or, if a second source supports your memory, mark it `disputed` and name
-both. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: no rule yet for demonstration vs patent
+Source vs memory: if a source gives a different year from your memory, NEVER drop the item and never
+keep the memory year silently. Search or fetch a second source. If it settles the year, use that year.
+If not, keep the item, use the source year, mark it `disputed`, and name both years in `source:`.
+Timeline pages often carry one-year errors, so a single timeline does not beat a dedicated article. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: no rule yet for demonstration vs patent
 year; use the year that survey histories quote, and list each such case in your report.
 
 ## Web check (step 3)

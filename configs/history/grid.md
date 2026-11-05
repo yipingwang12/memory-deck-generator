@@ -126,3 +126,22 @@ subsaharan_africa science pre500bce, west_asia arts pre500bce, north_africa econ
 east_asia society 500bce_500ce, eastern_europe religion 500_1500, southeast_asia politics 500_1500,
 western_europe religion 1500_1800, south_asia economy 1500_1800, latin_america politics 1800_1945,
 central_asia society 1800_1945, north_america arts 1945_present, oceania science 1945_present.
+Result: 2,519 dates (high 1,892, medium 262, low 21, disputed 65, unverified 279); check exit 0 on all.
+Every agent spent all 25 searches. Sizes 66–635 (latin_america_politics 635, western_europe_religion 411).
+Every region now has all six themes. Grid 73 of 432 cells, about 10,850 dates.
+Brief wording bug: "never keep the memory year alone" made two agents DROP items. 10 restored
+(7 latin_america_politics, all confirmed high — the timeline pages were wrong; 3 western_europe_religion).
+Brief now says NEVER drop; get a second source, else `disputed` with both years.
+Nimrud banquet -864 → disputed (museum labels give 879).
+Open:
+- Region boundary: Constantinople. eastern_europe_religion_500_1500 counts it (European shore, 44
+  dates); eastern_europe_politics_1500_1800 left Istanbul out. Add to Regions with Finland and steppe.
+- Scope rule, more cases: Nobel prizes (in for north_america_arts, out for oceania_science); films
+  premiered abroad out (north_america_arts); Orenburg-printed Kazakh books out, students sent abroad in
+  (central_asia_society); treaties signed abroad by a regional state in (latin_america_politics).
+- Invention cases (oceania_science): Wi-Fi 1992 patent filing, flight recorder 1958 prototype, syringe
+  1956 patent, cochlear implant 1978 first implant, Mills Cross 1954 first observations.
+- Re-check: Tridentine Creed 1564 (year from the main session, not a fetched page); Way of Perfection
+  Évora 1583 (no fetched source); Hooghly factory 1651; Calcutta villages 1698 vs 1690; Guangwu slave
+  edicts (26, 31, 35) need Hou Hanshu; western_europe_religion has 129 unverified.
+- Future cell: Meroë iron smelting (7th–6th c. BCE) → north_africa economy pre500bce.
