@@ -298,7 +298,8 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - A machine sleep kills every in-flight agent (`ENOTFOUND`), but the filesystem is the recovery point: 12 of 13 anchors survived a mid-wave sleep and resuming skipped a deck's worth of redraw. Verify a surviving `anchor.png` is a real render (dimensions, colour count) before telling an agent to trust it.
 - ⚠ **Agents collide in shared scratchpad space.** One agent overwrote and ran another's generator script, rewriting a finished deck's scene pages. Harmless here — a re-render from the rewritten page came out pixel-identical — but the deck folders are the only isolation; scratch paths are not.
 - ⚠ The **contact sheet is not authoritative**: two decks' sheets show a blank cell for a scene whose final is perfectly good. Verify against the finals, which is what `check_decks.py`-style qid-vs-YAML comparison does.
-- Next: ginkgo_bioworks' 4 uncovered cards; a minimum anchor-height check measured in code rather than by eye.
+- **Ginkgo gap closed 2026-11-05**: q07–q10 drawn with Gemini, the existing anchor sent as reference (not redrawn: its prompt digest changed with the background rule, so a plain `--only` run redraws it and the new scenes' ginkgo would not match q01–q06). **All 1,106 cards now have a picture.** q08 carries lettering (MIT / MARYLAND / NORTHWESTERN on seals and shirts).
+- Next: a minimum anchor-height check measured in code rather than by eye.
 
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
