@@ -219,3 +219,35 @@ Open:
 - Recent events checked only by search snippets (western_europe_politics_1945_present): Bayrou's fall, Merz,
   Dutch and Portuguese 2025 elections, Stocker, Starmer resignation announcement (June 2026). Re-check.
 - eastern_europe_politics_1945_present: 2025–26 entries from memory only.
+
+## Scene pass, first half (2026-11-05) — PAUSED, resume in a new session
+Brief scene_prompt.md (v1). 15 of 30 planned jobs ran (300–800 scenes each), covering 26 of 97 cells;
+jobs 15–29 never launched. 7,448 scenes changed; all 97 cells pass the verifier (only scene text and
+order changed; baseline = commit 158cdb8) and deck-history-check exit 0. Seven big cells regrouped by subregion.
+Result: weak. Agents met the standard only for their first 200–300 entries. The ", and a PEG …" pattern
+(regex: (,| and| as| while| with) (a|an|the) (\w+ )?PEG\b) fell only 2,773 → 2,534 over all cells.
+Pilot of METHOD v2 (key fact first, peg performs it, deletion test; see scene_prompt.md header): 39 of 40 fixed.
+Options for the user (undecided): A = all 17,879 scenes with v2 (~14M subagent tokens); B = weak scenes only
+(the ~2,500 tacked-on + the weak ranges below; ~5–6M tokens; RECOMMENDED); C = stop here.
+Before running: add deck-history-check warnings for (1) the tacked-on pattern, (2) near-duplicate events
+in one year (exact-text DUPLICATE misses reworded copies). Write the tests first.
+Weak ranges named by agents (0-based entry index in the current file):
+- western_europe_politics_1800_1945 285–593; latin_america_politics_1800_1945 ~240–634;
+  eastern_europe_politics_1800_1945 110–581; western_europe_politics_1500_1800 250–479;
+  east_asia_politics_1945_present ~200–476; southeast_asia_politics_1800_1945 300–457;
+  west_asia_politics_1800_1945 200–390; western_europe_religion_1500_1800 285–410;
+  north_america_politics_1500_1800 337–435; eastern_europe_society_1945_present 59–162;
+  north_america_religion_1800_1945 (166 scenes unchanged); western_europe_science_1800_1945 ~100–150 prop scenes;
+  north_america_politics_1800_1945 (only 180 of 607 changed, before the stricter tests).
+- Cells NOT yet touched: the 71 cells of jobs 15–29 (lists in git: compare to 158cdb8; untouched = 0 rewritten).
+Data flags from scene agents (not fixed; for a fix pass):
+- Duplicates: western_europe_science_1800_1945 Davy arc lamp 1809 ×2, Binet–Simon 1905 ×2, Auger 1923 ×2
+  (Joule 1840/1843, Rutherford 1909/1911 near-duplicates); east_asia_politics_1945_present Liu Xiaobo 2010 ×2,
+  Tsai re-election ×2 (should be 2020), Kim Young-sam 1992/1993, Shidehara/Higashikuni 1945;
+  eastern_europe_politics_1800_1945 Ottoman 1808 and 1826 entries moved from west_asia may repeat existing ones.
+- west_asia_politics_1800_1945: 1823 entry named "Second Treaty of Erzurum" (that is 1847; 1823 = First).
+- western_europe_politics_1800_1945: Giolitti 1901 = interior minister, not prime minister.
+- oceania_society_1945_present: Black Summer → 2019 (start of phase).
+- southeast_asia_politics_1800_1945: Trat 1904 vs 1907 (France takes Trat 1904, returns it 1907): check text.
+- central_asia_politics_500_1500: Tong Yabghu killed 628 or 630.
+- Several big cells have entries out of chronological order inside a group.
