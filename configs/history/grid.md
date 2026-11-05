@@ -191,3 +191,31 @@ Open:
 - Nan Madol 800 and Moai 1250 (oceania_arts, disputed): check against the start-of-phase rule.
 - Dalai Lama visits to Mongolia 1979 / 1991 (central_asia_religion): weak, unverified.
 - Guruvayur satyagraha 1931 missing from south_asia_religion (no source found).
+
+## Wave 8 (2026-11-05)
+User's aim: the remaining cells with the most entries. Ranked by a log-linear fit of the 85 built cells'
+sizes (size ≈ region × theme × period factor; residual sd 0.46 in log, so about ±60%). Factors: politics 1.65,
+1800_1945 1.74, 1945_present 1.47, western_europe 1.74, east_asia 1.36, eastern_europe 1.34; subsaharan_africa
+0.65 lowest. Top 12 of 347 taken as is (predicted 311–543 each). Budget 35 searches per agent; target 200–500
+entries; save every 50.
+western_europe politics 1800_1945, western_europe politics 1945_present, east_asia politics 1800_1945,
+eastern_europe politics 1800_1945, east_asia politics 1945_present, eastern_europe politics 1945_present,
+western_europe politics 1500_1800, north_america politics 1800_1945, western_europe religion 1800_1945,
+southeast_asia politics 1800_1945, west_asia politics 1800_1945, western_europe science 1800_1945.
+Result: 6,169 dates over 12 cells (high 3,023, medium 174, disputed 8, unverified 2,964); sizes 342–790,
+mostly ABOVE the model's prediction (western_europe_science 790 vs 311). Check exit 0 on all. Every agent
+spent all 35 searches; free Kiwix fetches did most verification. Unverified share 0–85% (north_america 0,
+western_europe_politics_1800_1945 85%). Grid now 97 of 432 cells, 17,879 dates.
+Lessons: in a dense cell, 35 searches verify too little, and agents fall back to template scenes ("A PEG
+hands X the hat") that fail the policy test; layouts group by build stage instead of subregion. Peg overload
+is severe where dates bunch (dove 43 for 1918 in eastern_europe_politics_1800_1945; rhino 29 for 1942 in
+southeast_asia_politics). 179 OVERLOAD warnings over all cells.
+north_america_politics_1800_1945: 605 high, but some source fields cite the wrong timeline page (Van Buren
+1837 → "Timeline 1790-1819"); dates sampled were right.
+Main session: 23 Istanbul / Macedonia entries left west_asia_politics_1800_1945 (Constantinople rule):
+7 already in eastern_europe_politics_1800_1945 (deleted), 15 moved there. Telekino: one entry, 1906 public
+demonstration (1905 = trial). Pending notes: Teller Amendment, Roosevelt Corollary, Ronald Ross.
+Open:
+- Recent events checked only by search snippets (western_europe_politics_1945_present): Bayrou's fall, Merz,
+  Dutch and Portuguese 2025 elections, Stocker, Starmer resignation announcement (June 2026). Re-check.
+- eastern_europe_politics_1945_present: 2025–26 entries from memory only.
