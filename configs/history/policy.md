@@ -25,6 +25,7 @@ All text in ASD-STE100 style.
 - `year`: int, negative = BCE. Required.
 - `years_ago`: only for dates ≥ 10,000 years. Then `year = 2000 - years_ago`.
 - `confidence`: `high` (source confirms) | `medium` (source close, or several values) | `low` (single weak claim) | `disputed` (sources disagree in print) | `unverified` (no source found).
+  A label other than `unverified` needs a source found in the web check. A date from memory alone is `unverified`, even a textbook date. Keep an unsourced item as `unverified`; do not drop it.
 - `event`: site/name + key fact. **No year-like number** (no 3–4-digit numbers at all; write "2 km high", "thousands of km"). Approximate → append `(approximate)`. Tradition only → `(traditional date)`.
 - One entry per distinct fact. Same site + date + one find → consider one merged entry.
 
@@ -32,7 +33,9 @@ All text in ASD-STE100 style.
 
 - ≥ 10,000 years → `years_ago`.
 - < 10,000 years ago, source gives years ago → BCE = years ago − 2,000, round to nearest century. Source gives BCE/cal BC → use it.
-- Range → younger end. "X ± Y" → X.
+- Range → the **conventional "c." date**: the date survey histories and museums quote (Great Pyramid c. 2560 BCE, early Upanishads c. 600 BCE). With no conventional date: the start of a phase or tradition (a phase is dated by when it begins), or the midpoint of the span for one work of uncertain date. Mark it `(approximate)`. Changed 2026-11-04: the old "younger end" rule dated phases by their end (Wadi Sura 4400 instead of c. 7000 BCE) and pushed works across period lines (Tirukkural).
+- "X ± Y" → X.
+- The cell's period takes the event by its converted date. Never shift a date to keep an event in a cell.
 
 ## Peg digits (`peg_number`)
 
@@ -54,4 +57,4 @@ All text in ASD-STE100 style.
 
 - Tier definition (textbook / regional / specialist).
 - Blind check of the date list in a fresh context.
-- Peg overload where dates bunch (c. 1000 BCE → dice).
+- Peg overload where dates bunch: round "c." dates crowd a few pegs (wave 1: dice 14 in one cell, lasso 13).

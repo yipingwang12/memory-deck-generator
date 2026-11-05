@@ -1,0 +1,458 @@
+# WAVE 1 DRAFT 2026-11-04: web check incomplete (shared search limit ran out).
+# Re-check every entry, and apply the 2026-11-04 range rule (conventional c. date).
+# Cell: East Asia x science and technology x 500 to 1500. DRAFT 2026-11-04.
+# Dates: memory pass + partial web check. The web check stopped early: the session search
+# budget was used up. Entries marked `unverified` were NOT checked; they are model-knowledge
+# dates, not "searched and not found". Run a second web check on them before a deck uses them.
+# Peg rules as world_dates.yaml: encode the LAST TWO digits of the year.
+# Approximate year ending in 00: first two digits (c. 1300 -> 13); under 1000: year // 10 (c. 700 -> 70).
+# Range -> younger end. "X +/- Y" -> X.
+# confidence: high | medium | low | disputed | unverified (no source found or not checked)
+dates:
+  # China
+  - {year: 500, peg: lasso, confidence: unverified,
+     event: "Tao Hongjing: annotated materia medica, drugs sorted into classes (approximate)",
+     scene: "Tao Hongjing throws a LASSO around wild herbs and sorts them into classes for his herbal."}
+  - {year: 510, peg: dice, confidence: unverified,
+     event: "Daming calendar of Zu Chongzhi adopted; first Chinese calendar with precession",
+     scene: "Each year Zu Chongzhi's DICE lands a little to the west: his calendar counts the precession."}
+  - {year: 527, peg: ink, confidence: unverified,
+     event: "Li Daoyuan: Commentary on the Waterways Classic, a survey of rivers",
+     scene: "Li Daoyuan traces every river of China in INK for his waterways book."}
+  - {year: 544, peg: warrior, confidence: unverified,
+     event: "Jia Sixie: Qimin Yaoshu, oldest complete Chinese farming manual (approximate)",
+     scene: "A WARRIOR puts down his sword and reads Jia Sixie's manual on soil, seed and plough."}
+  - {year: 570, peg: goose, confidence: unverified,
+     event: "Zhang Zixin: the sun moves at unequal speed along its path (approximate)",
+     scene: "Zhang Zixin sees a GOOSE fly faster in some seasons, like the sun on its path."}
+  - {year: 600, peg: sauce, confidence: unverified,
+     event: "Liu Zhuo: Huangji calendar uses second-order interpolation",
+     scene: "Liu Zhuo pours SAUCE between two points and fills in the curve of the sun's speed."}
+  - {year: 605, peg: seal, confidence: unverified,
+     event: "Anji Bridge: Li Chun's open-spandrel segmental stone arch",
+     scene: "A SEAL slides through the open holes in Li Chun's flat stone arch over the Xiao River."}
+  - {year: 605, peg: seal, confidence: unverified,
+     event: "Sui Grand Canal: Tongji Canal links the Yellow River and the Huai",
+     scene: "A SEAL swims down the new Tongji Canal from the Yellow River to the Huai."}
+  - {year: 608, peg: sofa, confidence: unverified,
+     event: "Sui Grand Canal: Yongji Canal north toward the Beijing area",
+     scene: "Workers float a SOFA up the new Yongji Canal toward Zhuo commandery near Beijing."}
+  - {year: 610, peg: dice, confidence: unverified,
+     event: "Sui Grand Canal: Jiangnan Canal from the Yangtze to Hangzhou",
+     scene: "A DICE rolls along the Jiangnan Canal from the Yangtze down to Hangzhou."}
+  - {year: 610, peg: dice, confidence: unverified,
+     event: "Chao Yuanfang: Zhubing Yuanhou Lun, treatise on the causes of diseases",
+     scene: "Chao Yuanfang throws a DICE for each disease and writes down its cause and signs."}
+  - {year: 624, peg: hanger, confidence: unverified,
+     event: "Tang Imperial Medical Office: state school of medicine",
+     scene: "Medical students hang their robes on a HANGER at the first Tang state medical school."}
+  - {year: 626, peg: nacho, confidence: unverified,
+     event: "Wang Xiaotong: Jigu Suanjing, cubic equations for earthworks (approximate)",
+     scene: "Wang Xiaotong cuts a NACHO into a cube and solves a cubic equation for its volume."}
+  - {year: 633, peg: mummy, confidence: unverified,
+     event: "Li Chunfeng: armillary sphere with three nested sets of rings",
+     scene: "Li Chunfeng wraps three sets of rings around a MUMMY to make his armillary sphere."}
+  - {year: 652, peg: lion, confidence: unverified,
+     event: "Sun Simiao: Prescriptions Worth a Thousand Gold",
+     scene: "Sun Simiao, the king of medicine, treats a LION with prescriptions worth a thousand gold."}
+  - {year: 656, peg: leech, confidence: unverified,
+     event: "Li Chunfeng: annotated Ten Computational Canons for the state examinations",
+     scene: "A LEECH studies the ten mathematical classics that Li Chunfeng sets for the state exams."}
+  - {year: 659, peg: elbow, confidence: unverified,
+     event: "Xinxiu Bencao: first state pharmacopoeia, with drawings",
+     scene: "A Tang official bends his ELBOW and stamps the first state pharmacopoeia."}
+  - {year: 665, peg: jelly, confidence: unverified,
+     event: "Li Chunfeng: Linde calendar uses the true motion of the moon",
+     scene: "Li Chunfeng's moon wobbles like JELLY: the Linde calendar follows its true, uneven motion."}
+  - {year: 682, peg: oven, confidence: unverified,
+     event: "Sun Simiao: Supplement to the Thousand Gold Prescriptions",
+     scene: "Sun Simiao bakes a second batch of prescriptions in his OVEN."}
+  - {year: 684, peg: fairy, confidence: unverified,
+     event: "Dunhuang star chart: oldest complete star atlas on paper",
+     scene: "A FAIRY unrolls the Dunhuang star chart, the oldest complete star atlas on paper."}
+  - {year: 718, peg: dove, confidence: unverified,
+     event: "Gautama Siddha: Jiuzhi calendar brings Indian numerals and zero",
+     scene: "Gautama Siddha writes a zero on a DOVE: Indian numerals reach the Tang calendar office."}
+  - {year: 724, peg: hanger, confidence: unverified,
+     event: "Yixing and Nangong Yue: meridian arc survey from north to south",
+     scene: "Survey teams hang a gnomon on a HANGER at each station to measure a degree of meridian."}
+  - {year: 725, peg: nail, confidence: unverified,
+     event: "Yixing and Liang Lingzan: water-driven armillary sphere with an escapement",
+     scene: "Yixing's water wheel ticks forward one NAIL at a time: the first escapement turns the sphere."}
+  - {year: 729, peg: knob, confidence: unverified,
+     event: "Yixing: Dayan calendar adopted",
+     scene: "Yixing turns a KNOB on his Dayan calendar and it predicts the next eclipse."}
+  - {year: 739, peg: map, confidence: unverified,
+     event: "Chen Cangqi: Bencao Shiyi adds new drugs to the herbal",
+     scene: "Chen Cangqi adds hundreds of new drugs to the MAP of the Tang herbal."}
+  - {year: 752, peg: lion, confidence: unverified,
+     event: "Wang Tao: Waitai Miyao, secret prescriptions from the palace library",
+     scene: "Wang Tao copies secret prescriptions in the palace library while a LION guards the door."}
+  - {year: 784, peg: fairy, confidence: unverified,
+     event: "Li Gao: warship driven by treadle paddle wheels (approximate)",
+     scene: "A FAIRY pedals the treadle paddle wheels of Prince Li Gao's warship."}
+  - {year: 837, peg: mug, confidence: unverified,
+     event: "Tang astronomers record the closest pass of Halley's comet",
+     scene: "Tang astronomers watch Halley's comet pass close, its long tail pouring out of a MUG."}
+  - {year: 850, peg: lasso, confidence: unverified,
+     event: "Zhenyuan Miaodao Yaolue: first gunpowder mixture, as a fire warning (approximate)",
+     scene: "Alchemists heat saltpetre, sulfur and honey; a LASSO of flame burns their hands and house."}
+  - {year: 868, peg: chef, confidence: unverified,
+     event: "Diamond Sutra: oldest dated printed book",
+     scene: "A CHEF presses an inked woodblock onto paper: the Diamond Sutra, oldest dated printed book."}
+  - {year: 877, peg: cake, confidence: unverified,
+     event: "Dunhuang: oldest printed calendar",
+     scene: "A printed almanac sheet is baked into a CAKE: the oldest printed calendar."}
+  - {year: 904, peg: sewer, confidence: unverified,
+     event: "Siege of Yuzhang: 'flying fire', possibly gunpowder incendiaries",
+     scene: "Yang Xingmi's men shoot 'flying fire' over the Yuzhang gate, and it flows down a SEWER."}
+  - {year: 919, peg: tuba, confidence: unverified,
+     event: "Wuyue: double-piston flamethrower for burning oil",
+     scene: "A double-piston TUBA pumps a steady jet of burning oil from a Wuyue warship."}
+  - {year: 950, peg: lasso, confidence: unverified,
+     event: "Dunhuang silk banner: earliest picture of a fire lance (approximate)",
+     scene: "A demon on a Dunhuang banner swings a fire lance like a LASSO of flame."}
+  - {year: 953, peg: llama, confidence: unverified,
+     event: "Feng Dao: first state-printed set of the Confucian classics completed",
+     scene: "A LLAMA carries Feng Dao's woodblock-printed set of the Nine Classics to the academy."}
+  - {year: 970, peg: goose, confidence: unverified,
+     event: "Feng Jisheng and Yue Yifang: gunpowder fire arrows for the Song",
+     scene: "Feng Jisheng's gunpowder fire arrow trails sparks and hits a GOOSE."}
+  - {year: 973, peg: comb, confidence: unverified,
+     event: "Kaibao Bencao: first printed state herbal",
+     scene: "Song editors COMB through old herbals, then print the Kaibao materia medica."}
+  - {year: 979, peg: cowboy, confidence: unverified,
+     event: "Zhang Sixun: astronomical clock tower driven by mercury",
+     scene: "A COWBOY rides Zhang Sixun's clock tower; it runs on mercury, so it does not freeze."}
+  - {year: 984, peg: fairy, confidence: unverified,
+     event: "Qiao Weiyue: first pound lock with two gates, on a canal",
+     scene: "A FAIRY opens two gates and lifts a grain barge: Qiao Weiyue's pound lock."}
+  - {year: 992, peg: piano, confidence: unverified,
+     event: "Taiping Shenghui Fang: huge state formulary",
+     scene: "Imperial doctors play the Taiping Shenghui Fang, a huge state formulary, like a PIANO."}
+  - {year: 1000, peg: sauce, confidence: unverified,
+     event: "Tang Fu shows gunpowder fire arrows and fire balls to the Song court",
+     scene: "Tang Fu dips his arrows in gunpowder SAUCE and shows the court how they burn."}
+  - {year: 1006, peg: sushi, confidence: unverified,
+     event: "Song astronomers record the brightest supernova in history",
+     scene: "The brightest supernova ever seen lights a plate of SUSHI on a Song astronomer's desk."}
+  - {year: 1027, peg: ink, confidence: unverified,
+     event: "Wang Weiyi: bronze acupuncture figures for teaching",
+     scene: "Wang Weiyi marks each acupuncture point in INK on a hollow bronze man."}
+  - {year: 1027, peg: ink, confidence: unverified,
+     event: "Yan Su: south-pointing chariot with differential gears",
+     scene: "Yan Su's geared chariot turns, but its figure's INK brush still points south."}
+  - {year: 1044, peg: warrior, confidence: unverified,
+     event: "Wujing Zongyao: first written gunpowder formulas",
+     scene: "A WARRIOR weighs saltpetre, sulfur and charcoal from the first written gunpowder formulas."}
+  - {year: 1044, peg: warrior, confidence: unverified,
+     event: "Wujing Zongyao: magnetised iron 'south-pointing fish'",
+     scene: "A WARRIOR floats a thermo-magnetised iron fish in a bowl of water, and it points south."}
+  - {year: 1045, peg: railway, confidence: unverified,
+     event: "Ou Xifan: drawings of dissected human organs",
+     scene: "Ou Xifan draws the organs of executed rebels, laid out like a RAILWAY map."}
+  - {year: 1048, peg: reef, confidence: high,
+     event: "Bi Sheng: movable type of baked clay",
+     scene: "Bi Sheng bakes each clay character as hard as a coral REEF and sets them in a frame."}
+  - {year: 1050, peg: lasso, confidence: unverified,
+     event: "Jia Xian: triangle of binomial coefficients (approximate)",
+     scene: "Jia Xian ropes the binomial coefficients into a triangle with a LASSO."}
+  - {year: 1054, peg: lawyer, confidence: unverified,
+     event: "Song astronomers record the guest star of the Crab supernova",
+     scene: "A LAWYER signs the Song record: a guest star visible in daylight, now the Crab Nebula."}
+  - {year: 1057, peg: log, confidence: unverified,
+     event: "Song Bureau for Revising Medical Texts set up",
+     scene: "Song editors LOG every error in the medical classics, then print correct editions."}
+  - {year: 1061, peg: jet, confidence: unverified,
+     event: "Su Song: Bencao Tujing, illustrated herbal from local drawings",
+     scene: "Drawings of local plants fly to Su Song by JET from every prefecture for his herbal."}
+  - {year: 1088, peg: fife, confidence: medium,
+     event: "Su Song: wooden pilot model of the astronomical clock tower",
+     scene: "Su Song's clock-tower jacks play a FIFE to strike each hour."}
+  - {year: 1088, peg: fife, confidence: high,
+     event: "Shen Kuo: Dream Pool Essays describe the magnetic needle and its declination",
+     scene: "Shen Kuo's needle points a little east of south, like a FIFE held askew."}
+  - {year: 1094, peg: bear, confidence: medium,
+     event: "Su Song: printed book of the clock tower, with star maps",
+     scene: "A BEAR reads Su Song's printed clock-tower plans and star maps."}
+  - {year: 1103, peg: sumo, confidence: unverified,
+     event: "Li Jie: Yingzao Fashi, state building standards",
+     scene: "A SUMO wrestler sits on Li Jie's standard beams and brackets, and they hold."}
+  - {year: 1108, peg: sofa, confidence: unverified,
+     event: "Tang Shenwei: classified herbal reissued as the Daguan Bencao",
+     scene: "Tang Shenwei piles his classified herbal on a SOFA for the court to print."}
+  - {year: 1113, peg: tomb, confidence: unverified,
+     event: "Yang Jie: anatomical drawings from dissections",
+     scene: "Yang Jie opens bodies by an execution TOMB and draws the organs he finds."}
+  - {year: 1116, peg: dish, confidence: unverified,
+     event: "Kou Zongshi: Bencao Yanyi corrects the herbal",
+     scene: "Kou Zongshi tests each drug on a DISH before he corrects the herbal."}
+  - {year: 1116, peg: dish, confidence: unverified,
+     event: "Xuanhua Liao tomb: ceiling star map with zodiac signs",
+     scene: "A star map with the western zodiac signs covers a Liao tomb ceiling like a DISH."}
+  - {year: 1117, peg: dog, confidence: unverified,
+     event: "Shengji Zonglu: imperial medical encyclopedia of Huizong",
+     scene: "Emperor Huizong's DOG guards the huge imperial medical encyclopedia."}
+  - {year: 1119, peg: tuba, confidence: high,
+     event: "Zhu Yu: Pingzhou Ketan, first record of the compass at sea",
+     scene: "On cloudy days, Guangzhou sailors steer by a compass needle floating in a TUBA."}
+  - {year: 1119, peg: tuba, confidence: unverified,
+     event: "Qian Yi: Xiaoer Yaozheng Zhijue, manual of child medicine",
+     scene: "Qian Yi plays a TUBA to calm a sick child while he checks its pulse."}
+  - {year: 1132, peg: moon, confidence: unverified,
+     event: "Siege of De'an: Chen Gui uses gunpowder fire lances",
+     scene: "Under the MOON, Chen Gui's men push bamboo fire lances at the siege towers of De'an."}
+  - {year: 1149, peg: rope, confidence: unverified,
+     event: "Chen Fu: Nongshu, manual of wet-rice farming",
+     scene: "Chen Fu marks his rice paddies with ROPE and writes a manual of wet-rice farming."}
+  - {year: 1181, peg: foot, confidence: unverified,
+     event: "Song and Japanese astronomers record a supernova in Cassiopeia",
+     scene: "A guest star in Cassiopeia lands at the FOOT of Song and Japanese astronomers."}
+  - {year: 1193, peg: palm, confidence: medium,
+     event: "Zhou Bida prints his own book with clay movable type",
+     scene: "Zhou Bida holds clay type in his PALM and prints his own book with Bi Sheng's method."}
+  - {year: 1221, peg: ant, confidence: unverified,
+     event: "Siege of Qizhou: Jin troops throw iron-cased bombs",
+     scene: "Jin troops hurl iron-cased bombs at Qizhou, and an ANT feels the ground shake."}
+  - {year: 1232, peg: moon, confidence: unverified,
+     event: "Siege of Kaifeng: thunderclap bombs and flying fire lances",
+     scene: "Thunderclap bombs drop from the Kaifeng walls and light the Mongol camp like a MOON."}
+  - {year: 1237, peg: mug, confidence: unverified,
+     event: "Chen Ziming: Furen Daquan Liangfang, first full book of women's medicine",
+     scene: "Chen Ziming gives a pregnant woman medicine in a MUG, as his book of women's medicine says."}
+  - {year: 1247, peg: rock, confidence: unverified,
+     event: "Song Ci: Xiyuan Jilu, first manual of forensic medicine",
+     scene: "Song Ci finds the true wound under a ROCK: his forensic manual tells coroners how."}
+  - {year: 1247, peg: rock, confidence: unverified,
+     event: "Qin Jiushao: Shushu Jiuzhang, Chinese remainder theorem method",
+     scene: "Qin Jiushao counts soldiers in rows of three, five and seven; each remainder is a ROCK."}
+  - {year: 1247, peg: rock, confidence: unverified,
+     event: "Suzhou star chart carved in stone",
+     scene: "Nearly fourteen hundred stars are cut into the ROCK of the Suzhou stele."}
+  - {year: 1248, peg: reef, confidence: unverified,
+     event: "Li Ye: Ceyuan Haijing, circles inscribed in triangles",
+     scene: "Li Ye sits on a REEF and measures a round town wall from the corners of a triangle."}
+  - {year: 1249, peg: rope, confidence: unverified,
+     event: "Li Gao: Piwei Lun, treatise on spleen and stomach",
+     scene: "Li Gao ties a ROPE around the spleen and stomach: for him they are the root of health."}
+  - {year: 1259, peg: elbow, confidence: unverified,
+     event: "Shouchun: bamboo 'fire-emitting lance' shoots pellets",
+     scene: "A soldier rests a bamboo gun on his ELBOW, and it shoots pellets out with the flame."}
+  - {year: 1261, peg: jet, confidence: unverified,
+     event: "Yang Hui: triangle of binomial coefficients in print",
+     scene: "A JET draws Yang Hui's triangle of binomial coefficients across the sky."}
+  - {year: 1267, peg: jockey, confidence: unverified,
+     event: "Jamal al-Din brings Persian instruments and a calendar to Kublai",
+     scene: "A Persian JOCKEY rides in with Jamal al-Din's seven astronomical instruments for Kublai."}
+  - {year: 1273, peg: comb, confidence: unverified,
+     event: "Siege of Xiangyang: Persian counterweight trebuchets",
+     scene: "Ismail's counterweight trebuchet hurls stones that COMB the towers off Xiangyang."}
+  - {year: 1275, peg: eagle, confidence: unverified,
+     event: "Yang Hui: magic squares and magic circles",
+     scene: "An EAGLE perches on Yang Hui's magic square, where every row gives the same sum."}
+  - {year: 1276, peg: cage, confidence: unverified,
+     event: "Gaocheng: Guo Shoujing's gnomon tower observatory begun",
+     scene: "Guo Shoujing builds a tall stone CAGE at Gaocheng to catch the noon shadow."}
+  - {year: 1279, peg: cowboy, confidence: unverified,
+     event: "Guo Shoujing: latitude survey across the Yuan empire",
+     scene: "A COWBOY rides to each latitude station of Guo Shoujing's empire-wide survey."}
+  - {year: 1280, peg: vase, confidence: unverified,
+     event: "Guo Shoujing and Wang Xun: Shoushi calendar",
+     scene: "Guo Shoujing pours the Shoushi year into a VASE; it equals the later Gregorian year."}
+  - {year: 1288, peg: fife, confidence: unverified,
+     event: "Heilongjiang hand cannon: bronze gun from a Yuan battle",
+     scene: "A bronze hand cannon, long and thin as a FIFE, lies on a Heilongjiang battlefield."}
+  - {year: 1293, peg: palm, confidence: unverified,
+     event: "Guo Shoujing: Tonghui Canal brings water and grain to Dadu",
+     scene: "Guo Shoujing holds the Tonghui Canal in his PALM: grain barges sail into Dadu."}
+  - {year: 1295, peg: bell, confidence: unverified,
+     event: "Huang Daopo: cotton gin and treadle wheel for three threads (approximate)",
+     scene: "Huang Daopo rings a BELL as her treadle wheel spins three cotton threads at once."}
+  - {year: 1298, peg: beehive, confidence: unverified,
+     event: "Xanadu gun: oldest firearm with a date cast on it",
+     scene: "The Xanadu gun, with its date cast in bronze, blasts a BEEHIVE."}
+  - {year: 1298, peg: beehive, confidence: unverified,
+     event: "Wang Zhen: wooden movable type on a revolving table",
+     scene: "Wang Zhen's revolving table spins like a BEEHIVE of wooden characters."}
+  - {year: 1299, peg: pipe, confidence: unverified,
+     event: "Zhu Shijie: Suanxue Qimeng, introduction to mathematics",
+     scene: "Zhu Shijie teaches arithmetic and counting rods with a PIPE in his mouth."}
+  - {year: 1303, peg: sumo, confidence: unverified,
+     event: "Zhu Shijie: Jade Mirror of the Four Unknowns",
+     scene: "Four SUMO wrestlers stand for four unknowns in Zhu Shijie's Jade Mirror."}
+  - {year: 1313, peg: tomb, confidence: unverified,
+     event: "Wang Zhen: Nong Shu, farm machines and water-powered mills",
+     scene: "A water wheel from Wang Zhen's Nong Shu grinds grain beside a TOMB."}
+  - {year: 1320, peg: nose, confidence: unverified,
+     event: "Zhu Siben: grid map of China",
+     scene: "Zhu Siben lays a grid over China and puts its NOSE at the capital."}
+  - {year: 1330, peg: mouse, confidence: unverified,
+     event: "Hu Sihui: Yinshan Zhengyao, court manual of diet and health",
+     scene: "A MOUSE eats from Hu Sihui's healthy court menu and lives long."}
+  - {year: 1332, peg: moon, confidence: unverified,
+     event: "Yuan bronze cannon with a dated inscription",
+     scene: "A Yuan bronze cannon with its date engraved fires at the MOON."}
+  - {year: 1337, peg: mug, confidence: unverified,
+     event: "Wei Yilin: Shiyi Dexiao Fang, anaesthesia for bone setting",
+     scene: "Wei Yilin gives a patient a MUG of herbal anaesthetic before he sets the broken bone."}
+  - {year: 1341, peg: radio, confidence: unverified,
+     event: "Hua Shou: Shisijing Fahui on the fourteen channels",
+     scene: "Hua Shou tunes a RADIO to each of the fourteen channels of acupuncture."}
+  - {year: 1347, peg: rock, confidence: unverified,
+     event: "Zhu Danxi: Gezhi Yulun, school of nourishing yin",
+     scene: "Zhu Danxi cools too much yang with water from a ROCK spring."}
+  - {year: 1383, peg: foam, confidence: unverified,
+     event: "Ming translation of the Islamic astronomical tables (Huihui Lifa)",
+     scene: "Ming scholars translate Persian star tables while their tea FOAM goes cold."}
+  - {year: 1384, peg: fairy, confidence: unverified,
+     event: "Ming Datong calendar adopted",
+     scene: "A FAIRY hangs the Datong calendar in the new Ming palace."}
+  - {year: 1389, peg: fob, confidence: unverified,
+     event: "Da Ming Hun Yi Tu: world map with Africa and Europe",
+     scene: "A key FOB opens the Da Ming world map, which shows Africa and Europe."}
+  - {year: 1406, peg: sushi, confidence: unverified,
+     event: "Zhu Su: Jiuhuang Bencao, herbal of wild famine plants",
+     scene: "Zhu Su grows wild famine plants in his garden and draws each one next to a SUSHI roll."}
+  - {year: 1406, peg: sushi, confidence: unverified,
+     event: "Puji Fang: largest Chinese formulary",
+     scene: "The Puji Fang lists more prescriptions than a SUSHI bar lists rolls."}
+  - {year: 1412, peg: tongue, confidence: unverified,
+     event: "Huolongjing: manual of gunpowder weapons",
+     scene: "The Fire Dragon Manual shows a rocket with a TONGUE of flame."}
+  - {year: 1436, peg: match, confidence: unverified,
+     event: "Lan Mao: Diannan Bencao, herbal of Yunnan",
+     scene: "Lan Mao lights a MATCH to look at the medicinal plants of Yunnan."}
+  - {year: 1442, peg: rhino, confidence: unverified,
+     event: "Beijing Ancient Observatory: Ming bronze instruments set up",
+     scene: "A RHINO stands under the bronze armillary spheres on the new Beijing observatory."}
+  # Korea
+  - {year: 647, peg: rock, confidence: medium,
+     event: "Cheomseongdae: Silla stone observatory tower",
+     scene: "Silla builders stack ROCK in a bottle shape to watch the sky: Cheomseongdae."}
+  - {year: 692, peg: piano, confidence: unverified,
+     event: "Silla: state school of medicine",
+     scene: "Silla medical students learn the pulse to the beat of a PIANO."}
+  - {year: 751, peg: wallet, confidence: medium,
+     event: "Mugujeonggwang Dharani Sutra: early woodblock print in Bulguksa's Seokgatap",
+     scene: "A printed dharani scroll lies in a WALLET sealed inside the Seokgatap pagoda."}
+  - {year: 1236, peg: match, confidence: unverified,
+     event: "Hyangyak Gugeupbang: oldest surviving Korean medical book",
+     scene: "A MATCH lights the oldest Korean book of first aid with local herbs."}
+  - {year: 1239, peg: map, confidence: medium,
+     event: "Nammyeongcheon: woodblock recut of a lost metal-type book",
+     scene: "A woodblock copies a metal-type page like a MAP, proof that Goryeo cast type."}
+  - {year: 1234, peg: hammer, confidence: medium,
+     event: "Sangjeong Gogeum Yemun: first recorded book printed with metal type",
+     scene: "A HAMMER taps out Goryeo's first metal-type book: copies go to each government office."}
+  - {year: 1377, peg: cake, confidence: unverified,
+     event: "Jikji: oldest surviving book printed with metal movable type",
+     scene: "Monks at Heungdeok Temple print Jikji with metal type and set it on a CAKE."}
+  - {year: 1377, peg: cake, confidence: high,
+     event: "Choe Mu-seon: Directorate of Gunpowder Weapons set up",
+     scene: "Choe Mu-seon mixes saltpetre into a CAKE: Goryeo makes its own gunpowder."}
+  - {year: 1380, peg: vase, confidence: high,
+     event: "Battle of Jinpo: Goryeo ships use gunpowder weapons against pirates",
+     scene: "Goryeo cannon smash the pirate fleet at Jinpo like a VASE."}
+  - {year: 1395, peg: bell, confidence: unverified,
+     event: "Cheonsang Yeolcha Bunyajido: star chart carved in stone",
+     scene: "A BELL rings as the Joseon star chart is cut into a stone slab."}
+  - {year: 1399, peg: pipe, confidence: unverified,
+     event: "Hyangyak Jesaeng Jipseongbang: formulary of local herbs",
+     scene: "Joseon doctors smoke a PIPE of local herbs and list them in a new formulary."}
+  - {year: 1402, peg: sun, confidence: unverified,
+     event: "Kangnido: Korean world map of Asia, Africa and Europe",
+     scene: "The SUN rises over the Kangnido map, which shows Africa, Europe and Korea."}
+  - {year: 1403, peg: sumo, confidence: unverified,
+     event: "Gyemija: first Joseon cast-bronze movable type",
+     scene: "A SUMO wrestler presses the first Joseon bronze type into the paper."}
+  - {year: 1409, peg: soap, confidence: low,
+     event: "First hwacha: cart launcher for gunpowder arrows",
+     scene: "A hwacha cart launches arrows that trail SOAP bubbles of smoke."}
+  - {year: 1429, peg: knob, confidence: unverified,
+     event: "Nongsa Jikseol: Korean farming manual from local practice",
+     scene: "Sejong turns a KNOB on each region's soil and writes Korea's own farming manual."}
+  - {year: 1432, peg: moon, confidence: unverified,
+     event: "Ganuidae: Sejong's royal observatory begun",
+     scene: "Sejong orders a stone platform to watch the MOON: the Ganuidae observatory."}
+  - {year: 1433, peg: mummy, confidence: high,
+     event: "Hyangyak Jipseongbang: compendium of Korean herbal medicine",
+     scene: "A MUMMY unwraps itself to take local Korean herbs from the great compendium."}
+  - {year: 1434, peg: hammer, confidence: high,
+     event: "Jang Yeong-sil: Jagyeongnu, self-striking water clock",
+     scene: "Jang Yeong-sil's water clock swings a HAMMER on a bell, gong and drum each hour."}
+  - {year: 1434, peg: hammer, confidence: unverified,
+     event: "Gabinja: improved Joseon bronze movable type",
+     scene: "A HAMMER taps the new Gabinja bronze type flat in its frame."}
+  - {year: 1434, peg: hammer, confidence: unverified,
+     event: "Angbu Ilgu: bowl-shaped sundial for the public",
+     scene: "A HAMMER rings the hour beside the bowl-shaped sundial in the street."}
+  - {year: 1437, peg: mug, confidence: unverified,
+     event: "Iljeong Jeongsi-ui: instrument for time by sun and stars",
+     scene: "A MUG of tea sits on Sejong's instrument that tells time by day and by night."}
+  - {year: 1438, peg: movie, confidence: unverified,
+     event: "Heumgyeonggaknu: automated astronomical water clock",
+     scene: "Sejong watches a MOVIE: little figures in the water clock move with the seasons."}
+  - {year: 1441, peg: radio, confidence: high,
+     event: "Supyo: river water-level gauge",
+     scene: "A RADIO reads out the height of the Cheonggye stream from the Supyo gauge."}
+  - {year: 1441, peg: radio, confidence: unverified,
+     event: "Cheugugi: standard rain gauge",
+     scene: "Rain fills a standard bronze gauge, and each province reports its rain by RADIO."}
+  - {year: 1442, peg: rhino, confidence: high,
+     event: "Chiljeongsan: calculations of the seven luminaries for Hanyang",
+     scene: "A RHINO watches the sun, moon and five planets from Hanyang: Korea's own calendar."}
+  - {year: 1445, peg: railway, confidence: high,
+     event: "Uibang Yuchwi: classified collection of medical prescriptions",
+     scene: "A RAILWAY carries Sejong's huge classified medical collection to every doctor."}
+  - {year: 1448, peg: reef, confidence: low,
+     event: "Singijeon: gunpowder rocket arrows perfected",
+     scene: "Singijeon rocket arrows streak over a REEF toward the enemy ships."}
+  - {year: 1451, peg: wallet, confidence: low,
+     event: "Munjong hwacha: improved rocket-arrow cart",
+     scene: "King Munjong pays for a new hwacha from his WALLET; it fires a hundred rocket arrows."}
+  # Japan
+  - {year: 554, peg: lawyer, confidence: unverified,
+     event: "Baekje sends doctors, herb experts and calendar scholars to Japan (traditional date)",
+     scene: "A Baekje LAWYER signs over doctors and calendar scholars to the Yamato court."}
+  - {year: 602, peg: sun, confidence: unverified,
+     event: "Gwalleuk brings books of calendar, astronomy and geography to Japan",
+     scene: "The monk Gwalleuk brings books on the SUN and stars to the Yamato court."}
+  - {year: 660, peg: cheese, confidence: unverified,
+     event: "Prince Naka no Oe: first water clock in Japan",
+     scene: "Prince Naka no Oe times his day by water dripping on a wheel of CHEESE."}
+  - {year: 671, peg: cat, confidence: unverified,
+     event: "Omi palace: water clock sounds the hours with bells and drums",
+     scene: "A CAT jumps each time the Omi water clock strikes the hour on a drum."}
+  - {year: 675, peg: eagle, confidence: unverified,
+     event: "Emperor Tenmu: first star-watching platform in Japan",
+     scene: "Tenmu's astronomers watch the stars from a high platform with an EAGLE."}
+  - {year: 690, peg: bees, confidence: unverified,
+     event: "Genka and Giho calendars officially in use",
+     scene: "Empress Jito's court keeps time by Chinese calendars, busy as BEES."}
+  - {year: 770, peg: goose, confidence: high,
+     event: "Hyakumanto Darani: one million printed charms, oldest securely dated prints",
+     scene: "A GOOSE carries one of a million printed charms out of its small wooden pagoda."}
+  - {year: 808, peg: sofa, confidence: unverified,
+     event: "Daido Ruijuho: collection of Japanese native remedies",
+     scene: "A court doctor sits on a SOFA and collects the remedies of Japan's old families."}
+  - {year: 862, peg: chain, confidence: unverified,
+     event: "Senmyo calendar adopted; used for more than eight centuries",
+     scene: "The Senmyo calendar is locked to Japan by a CHAIN for over eight centuries."}
+  - {year: 918, peg: dove, confidence: unverified,
+     event: "Fukane no Sukehito: Honzo Wamyo, Japanese names of medicinal plants",
+     scene: "A DOVE carries Japanese names to each Chinese medicinal plant in Sukehito's list."}
+  - {year: 984, peg: fairy, confidence: unverified,
+     event: "Tamba no Yasuyori: Ishinpo, oldest surviving Japanese medical text",
+     scene: "A FAIRY guards the Ishinpo, the oldest Japanese medical book that survives."}
+  - {year: 1214, peg: tower, confidence: unverified,
+     event: "Eisai: Kissa Yojoki, tea as medicine",
+     scene: "Eisai climbs a TOWER and gives the shogun tea as medicine for his hangover."}
+  - {year: 1230, peg: mouse, confidence: unverified,
+     event: "Fujiwara no Teika: Meigetsuki lists old guest stars",
+     scene: "A MOUSE reads Teika's diary, where he lists the guest stars of past centuries."}
+  - {year: 1304, peg: sewer, confidence: unverified,
+     event: "Kajiwara Shozen: Ton'isho, medical book in Japanese",
+     scene: "Kajiwara Shozen writes medicine in plain Japanese so the poor in the SEWER can read it."}
+  - {year: 1315, peg: doll, confidence: unverified,
+     event: "Kajiwara Shozen: Man'anpo, large medical compendium",
+     scene: "Kajiwara Shozen tests his medical compendium on a DOLL."}
