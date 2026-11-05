@@ -71,3 +71,25 @@ western_europe science 1500_1800, western_europe arts 1800_1945, eastern_europe 
 eastern_europe society 1945_present, north_america society 1500_1800, north_america science 1945_present,
 latin_america religion pre500bce, latin_america economy 1800_1945, oceania economy 1800_1945,
 oceania arts 1945_present.
+
+## Wave 4 (2026-11-04)
+One new theme per region; each theme and each period twice. Budget 25 searches per agent; brief now
+says "spend the whole budget", warns about astronomical years, and asks agents to list invention cases.
+west_asia economy pre500bce, north_africa science pre500bce, western_europe politics 500bce_500ce,
+east_asia religion 500bce_500ce, central_asia science 500_1500, southeast_asia arts 500_1500,
+latin_america arts 1500_1800, eastern_europe economy 1500_1800, north_america religion 1800_1945,
+oceania politics 1800_1945, subsaharan_africa society 1945_present, south_asia society 1945_present.
+Result: 1,858 dates (high 1,166, medium 237, low 13, disputed 41, unverified 401); check exit 0 on all.
+Every agent spent all 25 searches. Sizes 63–376 (western_europe_politics 376, oceania_politics 303).
+Grid now 49 of 432 cells, about 6,240 dates.
+Mirrors: auto-mode refuses IPFS hosts (dweb.link, ipfs.aleph.im); 4everland times out; Kiwix
+kaweah.freedombox.rocks works. nzhistory.govt.nz returns 403. Brief updated.
+Open:
+- world_dates.yaml: Samarkand paper 751 scene states the Talas-prisoner legend as fact; "Angkor Wat
+  begun 1113" is Suryavarman II's accession; Boudica 60 vs 61; Gauls sack Rome -387 vs 390.
+- Scope rule for works printed outside the region (Garcilaso, Ercilla, Sor Juana printed in Spain).
+- north_america_religion: 4 entries keep the memory year against one source (Cumberland 1810/1816,
+  Christian Reformed 1857/1858, Southern Baptist Seminary 1859/1860, Andover 1807/1808).
+- Peg overload of round dates is now severe: lasso 17 (north_africa_science), rhino 20 (oceania 1942).
+- Invention cases listed in north_africa_science (water clock, sundial, glass, Egyptian blue, wheel).
+- Future cells: Ambedkar Nagpur conversion 1956 → south_asia religion 1945_present.

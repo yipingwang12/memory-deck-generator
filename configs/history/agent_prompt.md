@@ -25,12 +25,18 @@ most {budget} searches. Count them; never go over.
 WebFetch does NOT use the search budget: search to FIND a good timeline or reference page, then
 fetch it and confirm every entry it covers. Fetch works on encyclopedia.com, MacTutor
 (mathshistory.st-andrews.ac.uk), historyworld.net, lindahall.org, worldhistory.org (some pages),
-and Wikipedia mirrors on Kiwix or IPFS (e.g. `<cid>.ipfs.4everland.io/wiki/<Article>.html`; slow,
-give up on a host after two timeouts; source as "WP mirror: <article>"). Fetch refuses on
+and the Kiwix Wikipedia mirror at kaweah.freedombox.rocks (source as "WP mirror: <article>"; give up
+after two timeouts). Do NOT use IPFS mirrors (dweb.link, ipfs.aleph.im, 4everland): the auto-mode
+permission check refuses them. Also useful: Livius, Thayer (penelope.uchicago.edu), SAHO, Historic UK. Fetch refuses on
 britannica.com, metmuseum.org, britishmuseum.org, smarthistory.org — use their search summaries only.
 Every entry a source confirms gets a short `source:` field (policy.md). Spend them in this order: items you would mark low or disputed, items with no
 date, items near a period boundary, then extension searches. Everything you do not search is
 `unverified` — never `high` or `medium` from memory. If a search is refused, stop searching and write the cell.
+SPEND THE WHOLE BUDGET. Wave 3 agents stopped with searches unspent and wrote thin cells. If you
+have searches left after checking, use them for extension searches until the budget is used.
+Astronomical years: sources such as Sachs–Hunger diaries write -651 for 652 BCE (year 0 exists).
+Convert to BCE before you apply policy.md. Inventions: no rule yet for demonstration vs patent
+year; use the year that survey histories quote, and list each such case in your report.
 
 ## Web check (step 3)
 - Load WebSearch with ToolSearch ("select:WebSearch") if it is deferred. Use "standard" mode by default; "extended" only for hard items. Send searches in parallel batches.
