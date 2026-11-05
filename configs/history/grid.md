@@ -118,3 +118,11 @@ Open:
   Just–Hanaman patents, Schilling demo, Mozhaysky), southeast_asia_science (ThumbDrive, Sound Blaster,
   CN-235 / N-250 first flight).
 - Peg overload: cage 19 (1776, north_america_politics).
+
+## Wave 6 (2026-11-04)
+Each region takes its last missing theme (oceania has all six: science in a new period); each theme
+and each period twice. Budget 25 searches per agent.
+subsaharan_africa science pre500bce, west_asia arts pre500bce, north_africa economy 500bce_500ce,
+east_asia society 500bce_500ce, eastern_europe religion 500_1500, southeast_asia politics 500_1500,
+western_europe religion 1500_1800, south_asia economy 1500_1800, latin_america politics 1800_1945,
+central_asia society 1800_1945, north_america arts 1945_present, oceania science 1945_present.
