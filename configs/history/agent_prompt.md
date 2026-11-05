@@ -25,8 +25,9 @@ most {budget} searches. Count them; never go over.
 WebFetch does NOT use the search budget: search to FIND a good timeline or reference page, then
 fetch it and confirm every entry it covers. Fetch works on encyclopedia.com, MacTutor
 (mathshistory.st-andrews.ac.uk), historyworld.net, lindahall.org, worldhistory.org (some pages),
-and the Kiwix Wikipedia mirror at kaweah.freedombox.rocks (source as "WP mirror: <article>"; give up
-after two timeouts). Do NOT use IPFS mirrors (dweb.link, ipfs.aleph.im, 4everland): the auto-mode
+and the Kiwix Wikipedia mirror at `kaweah.freedombox.rocks/kiwix/content/wikipedia_en_all_maxi_2023-10/A/<Article>`
+(the bare host shows only an Apache page; snapshot ends October 2023; source as "WP mirror: <article>";
+give up after two timeouts). Do NOT use IPFS mirrors (dweb.link, ipfs.aleph.im, 4everland): the auto-mode
 permission check refuses them. Also useful: Livius, Thayer (penelope.uchicago.edu), SAHO, Historic UK. Fetch refuses on
 britannica.com, metmuseum.org, britishmuseum.org, smarthistory.org — use their search summaries only.
 Every entry a source confirms gets a short `source:` field (policy.md). Spend them in this order: items you would mark low or disputed, items with no
@@ -35,7 +36,10 @@ date, items near a period boundary, then extension searches. Everything you do n
 SPEND THE WHOLE BUDGET. Wave 3 agents stopped with searches unspent and wrote thin cells. If you
 have searches left after checking, use them for extension searches until the budget is used.
 Astronomical years: sources such as Sachs–Hunger diaries write -651 for 652 BCE (year 0 exists).
-Convert to BCE before you apply policy.md. Inventions: no rule yet for demonstration vs patent
+Convert to BCE before you apply policy.md.
+Source vs memory: if a source gives a different year from your memory, never keep the memory year
+alone. Use the source year, or, if a second source supports your memory, mark it `disputed` and name
+both. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: no rule yet for demonstration vs patent
 year; use the year that survey histories quote, and list each such case in your report.
 
 ## Web check (step 3)

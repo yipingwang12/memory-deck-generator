@@ -100,3 +100,21 @@ west_asia religion pre500bce, central_asia arts pre500bce, south_asia politics 5
 east_asia economy 500bce_500ce, subsaharan_africa arts 500_1500, western_europe economy 500_1500,
 north_america politics 1500_1800, latin_america society 1500_1800, eastern_europe science 1800_1945,
 oceania religion 1800_1945, southeast_asia science 1945_present, north_africa society 1945_present.
+Result: 2,097 dates (high 1,475, medium 303, low 28, disputed 59, unverified 232); check exit 0 on all.
+Every agent spent all 25 searches. Sizes 49–436 (north_america_politics 436). Grid now 61 of 432
+cells, about 8,330 dates. Kom Ombo move fixed 1964 → 1963 (start-of-phase rule).
+Brief updated: exact Kiwix path; never keep a memory year against a source; phases by start.
+Open:
+- Scope rule "issued outside the region, effect inside": works printed in Spain (latin_america_arts),
+  crown laws for the Americas (latin_america_society, included), Acts of Parliament (north_america_politics,
+  included), satellites launched abroad (southeast_asia_science, included under owner). One rule needed.
+- Region overlap: central_asia "Eurasian steppe" vs eastern_europe Siberia. central_asia_arts took
+  Trans-Ural and Sayan-Altai steppe; Pontic-Caspian left to eastern_europe. Write into Regions.
+- Alaca Höyük: west_asia_religion uses -2850 (phase start); earlier cell has -2250 (doubtful).
+- Maurya founding: world_dates -322, south_asia_politics -321 (medium).
+- Memory year kept against one source (re-check): Rota Waitoa 1853/1852 (oceania_religion), Golden Rice
+  court 2024/2023 (southeast_asia_science), plus the 4 north_america_religion cases above.
+- Invention cases: eastern_europe_science (Lodygin demo, Kaplan patent + demo, Penkala, Bíró,
+  Just–Hanaman patents, Schilling demo, Mozhaysky), southeast_asia_science (ThumbDrive, Sound Blaster,
+  CN-235 / N-250 first flight).
+- Peg overload: cage 19 (1776, north_america_politics).

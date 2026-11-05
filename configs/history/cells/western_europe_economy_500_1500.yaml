@@ -1,0 +1,729 @@
+# Cell: Western Europe x economy x 500 to 1499. DRAFT 2026-11-04.
+# Scope: Iberia, France, Low Countries, British Isles, Germany, Switzerland, Austria, Italy,
+# Scandinavia, Iceland. Trade, money, agriculture, industry, exploration, trade routes, companies, crises.
+# Atlantic islands of Portugal and Castile (Madeira, Azores, Canaries) are put under Iberia.
+# Voyages count when the event happens in the region (a departure or a return), not the landfall.
+# Dates: memory pass + web check (25 searches, plus fetches of the Kiwix Wikipedia mirror).
+# Peg rules: peg = last two digits. Approximate year ending 00: first two digits (under 1000: year // 10).
+# Range -> conventional "c." date, marked (approximate); with no conventional date, the midpoint.
+# A coin -> the year it is first struck. A charter -> the year it is granted.
+# confidence: high | medium | low | disputed | unverified (no source found or not checked)
+dates:
+  # Iceland and Scandinavia
+  - {year: 720, peg: nose, confidence: low, source: "WP mirror: Ribe",
+     event: "Ribe: the market town possibly strikes its first sceatta coins",
+     scene: "A Frisian trader sniffs a small silver sceatta with his NOSE at the Ribe market."}
+  - {year: 750, peg: lasso, confidence: high, source: "WP mirror: Birka",
+     event: "Birka: trading port founded on Lake Malaren (approximate)",
+     scene: "A Swedish trader throws a LASSO around a mooring post and starts the port of Birka."}
+  - {year: 780, peg: vase, confidence: medium, source: "WP mirror: Kaupang (780s; intro says 800)",
+     event: "Kaupang: first Norwegian trading town founded (approximate)",
+     scene: "At Kaupang, the first Norwegian market sells a glass VASE from the Rhine."}
+  - {year: 808, peg: sofa, confidence: high, source: "WP mirror: Hedeby",
+     event: "Godfred destroys Reric and moves its merchants to Hedeby",
+     scene: "King Godfred carries the Reric merchants to Hedeby on a SOFA."}
+  - {year: 825, peg: nail, confidence: high, source: "WP mirror: Hedeby",
+     event: "Hedeby: first coins struck in Denmark's trade town",
+     scene: "A Hedeby moneyer strikes a silver coin with a NAIL and a hammer."}
+  - {year: 860, peg: cheese, confidence: high, source: "WP mirror: Settlement of Iceland",
+     event: "Gardar Svavarsson sails around Iceland (traditional date)",
+     scene: "Gardar sails all around Iceland and finds that it is an island, not a big CHEESE."}
+  - {year: 874, peg: car, confidence: high, source: "WP mirror: Settlement of Iceland",
+     event: "Ingolfr Arnarson settles at Reykjavik (traditional date)",
+     scene: "Ingolfr throws his high-seat pillars into the sea and follows them to Reykjavik in a CAR."}
+  - {year: 890, peg: bees, confidence: medium, source: "WP mirror: Kaupang (late 9th century)",
+     event: "Ohthere of Halogaland tells King Alfred about his voyage to the far north (approximate)",
+     scene: "Ohthere gives King Alfred walrus ivory, and BEES buzz around the long story of his northern voyage."}
+  - {year: 975, peg: eagle, confidence: medium, source: "WP mirror: Birka (coins suggest 960)",
+     event: "Birka: trading port abandoned (approximate)",
+     scene: "An EAGLE flies over the empty jetties of Birka after the last trader leaves."}
+  - {year: 995, peg: bell, confidence: high, source: "Gothenburg City Museum; Sigtuna sites",
+     event: "Olof Skotkonung: first Swedish coins at the Sigtuna mint (approximate)",
+     scene: "A BELL rings in Sigtuna as the first Swedish penny comes out of Olof's mint."}
+  - {year: 1000, peg: dice, confidence: medium, source: "WP mirror: Stora Kopparberg",
+     event: "Falun: copper mining begins at the Great Copper Mountain (approximate)",
+     scene: "Miners roll a DICE to choose where to dig the first copper at Falun."}
+  - {year: 1161, peg: jet, confidence: high, source: "WP: Treaty of Artlenburg; Hansische Gbl.",
+     event: "Artlenburg privilege: Henry the Lion gives Gotland traders rights in Saxony",
+     scene: "Henry the Lion flies a JET to Artlenburg and gives the Gotland traders free trade in Saxony."}
+  - {year: 1202, peg: sun, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Lubeck builds a light tower at Falsterbo for the Scania herring trade",
+     scene: "The Falsterbo light shines like a SUN and guides Lubeck ships to the herring fair."}
+  - {year: 1284, peg: fairy, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hanseatic towns stop grain trade with Norway (boycott)",
+     scene: "A Hanseatic FAIRY makes Norway's grain ships vanish until the king gives in."}
+  - {year: 1288, peg: fife, confidence: high, source: "WP mirror: Stora Kopparberg",
+     event: "Stora Kopparberg: oldest known share document (one-eighth of the mine)",
+     scene: "The Bishop of Vasteras buys one-eighth of the copper mine and plays a FIFE over his share."}
+  - {year: 1347, peg: rock, confidence: high, source: "WP mirror: Stora Kopparberg",
+     event: "Magnus Eriksson gives the Falun copper mine its charter",
+     scene: "King Magnus carves the mining charter into a ROCK of Falun copper."}
+  - {year: 1350, peg: lasso, confidence: medium, source: "WP mirror: Bryggen (around this date)",
+     event: "Bergen: the Hanseatic office at Bryggen is set up (approximate)",
+     scene: "A German merchant throws a LASSO around the Bryggen wharf and ties it to the Hansa."}
+  - {year: 1370, peg: goose, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Treaty of Stralsund: Denmark gives the Hansa wide trade rights",
+     scene: "Denmark hands the Hansa a golden GOOSE: Sound castles and free trade at Stralsund."}
+  - {year: 1412, peg: tongue, confidence: unverified,
+     event: "Iceland: first English fishing ships come for stockfish",
+     scene: "An English fisherman sticks out his TONGUE to taste dried Icelandic cod."}
+  - {year: 1429, peg: knob, confidence: high, source: "WP mirror: Sound Dues",
+     event: "Eric of Pomerania starts the Sound Dues on ships that pass the Oresund",
+     scene: "King Eric turns a KNOB on the Sound gate, and every ship pays to pass."}
+  - {year: 1435, peg: mill, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Treaty of Vordingborg renews the Hansa's trade rights in Denmark",
+     scene: "At Vordingborg, a MILL starts to turn again for the Hansa's trade in Denmark."}
+  # British Isles
+  - {year: 700, peg: goose, confidence: medium, source: "WP mirror: Hamwic",
+     event: "Hamwic: planned trading port on the Itchen (approximate)",
+     scene: "A GOOSE waddles along the new streets of Hamwic, Wessex's trading port."}
+  - {year: 785, peg: waffle, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "Offa of Mercia brings in the broad silver penny (approximate)",
+     scene: "Offa stamps his name on a thin silver penny as wide as a WAFFLE."}
+  - {year: 786, peg: fish, confidence: high, source: "WP mirror: Hamwic",
+     event: "Hamwic: royal mint begins to strike coins",
+     scene: "A FISH swims up the Itchen with a new coin from the Hamwic mint in its mouth."}
+  - {year: 792, peg: piano, confidence: medium, source: "WP mirror: Offa of Mercia (792-793)",
+     event: "Offa: heavy penny with one standard design at all mints (approximate)",
+     scene: "Offa drops a PIANO on the penny dies so every mint strikes the same heavy coin."}
+  - {year: 796, peg: peach, confidence: high, source: "WP mirror: Offa of Mercia",
+     event: "Charlemagne writes to Offa about merchants, black stones and cloaks",
+     scene: "Charlemagne sends Offa a PEACH with his letter: protect my merchants, and send good cloaks."}
+  - {year: 973, peg: comb, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "Edgar's coinage reform: one penny type for all England (approximate)",
+     scene: "King Edgar runs a COMB through England's mints and makes every penny the same."}
+  - {year: 991, peg: boot, confidence: high, source: "WP mirror: Danegeld",
+     event: "England pays the first Danegeld after the Battle of Maldon",
+     scene: "After Maldon, Ethelred fills a Viking BOOT with silver to buy peace."}
+  - {year: 997, peg: pig, confidence: medium, source: "WP mirror: Sihtric Silkbeard (990s)",
+     event: "Sihtric Silkbeard opens Ireland's first mint at Dublin (approximate)",
+     scene: "Sihtric's Dublin mint strikes the first Irish penny, and a PIG roots in the Liffey mud for it."}
+  - {year: 1012, peg: tongue, confidence: high, source: "WP mirror: Danegeld",
+     event: "Ethelred starts the heregeld, a yearly land tax to pay mercenaries",
+     scene: "Thorkell the Tall licks his TONGUE: the new heregeld pays his ships every year."}
+  - {year: 1051, peg: wallet, confidence: high, source: "WP mirror: Danegeld",
+     event: "Edward the Confessor stops the heregeld tax",
+     scene: "Edward the Confessor closes the tax WALLET and ends the heregeld."}
+  - {year: 1085, peg: waffle, confidence: high, source: "WP mirror: Domesday Book",
+     event: "William I orders a survey of the land of England",
+     scene: "William I eats a WAFFLE at Christmas and orders a count of every English manor."}
+  - {year: 1086, peg: fish, confidence: high, source: "WP mirror: Domesday Book",
+     event: "Domesday Book completed: land, stock and thousands of watermills counted",
+     scene: "Clerks count every FISH in every mill pond for the Domesday Book."}
+  - {year: 1096, peg: peach, confidence: unverified,
+     event: "William II grants the St Giles Fair at Winchester to the bishop",
+     scene: "William Rufus hands the Bishop of Winchester a PEACH and the right to hold St Giles Fair."}
+  - {year: 1110, peg: dice, confidence: high, source: "WP mirror: Exchequer",
+     event: "Exchequer: first mention in a writ of Henry I",
+     scene: "Clerks move counters on the checkered Exchequer cloth like DICE on a board."}
+  - {year: 1130, peg: mouse, confidence: high, source: "WP mirror: Exchequer",
+     event: "Oldest surviving Pipe Roll of the Exchequer",
+     scene: "A MOUSE nibbles the oldest Pipe Roll, but the royal accounts survive."}
+  - {year: 1136, peg: match, confidence: high, source: "WP mirror: Scottish coinage",
+     event: "David I takes the Carlisle mint and strikes the first Scottish pennies",
+     scene: "David I lights a MATCH under the Carlisle furnace and strikes the first Scottish penny."}
+  - {year: 1155, peg: lily, confidence: high, source: "WP mirror: Worshipful Company of Weavers",
+     event: "Weavers of London get a royal charter (oldest livery company)",
+     scene: "A London weaver weaves a white LILY into the cloth of the first livery charter."}
+  - {year: 1158, peg: wolf, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "Henry II fixes the English penny at sterling silver",
+     scene: "A WOLF bites Henry II's new penny and finds pure sterling silver."}
+  - {year: 1175, peg: eagle, confidence: medium, source: "WP mirror: Hanseatic League (1173-1175)",
+     event: "Cologne merchants in London win freedom from tolls (approximate)",
+     scene: "The Cologne EAGLE flies over the merchants' Guildhall in London, free of tolls."}
+  - {year: 1176, peg: cage, confidence: high, source: "WP mirror: Exchequer",
+     event: "Dialogue of the Exchequer describes how royal accounts work",
+     scene: "Richard FitzNeal opens the CAGE of the Exchequer and explains every coin inside."}
+  - {year: 1199, peg: pipe, confidence: high, source: "WP mirror: Stourbridge Fair",
+     event: "King John grants a fair to the Cambridge leper chapel (Stourbridge Fair)",
+     scene: "King John smokes a PIPE and grants the Stourbridge lepers a fair to raise money."}
+  - {year: 1201, peg: soda, confidence: high, source: "Fordham Sourcebook; Cornwall stannaries",
+     event: "King John's charter frees tin miners of Cornwall and Devon from other courts",
+     scene: "King John pours a SODA for the tinners and gives them their own stannary courts."}
+  - {year: 1211, peg: tattoo, confidence: high, source: "WP mirror: Stourbridge Fair",
+     event: "First Stourbridge Fair held on the common beside the Cam",
+     scene: "A barge from The Wash brings fish and wax, and a trader shows his TATTOO at Stourbridge."}
+  - {year: 1222, peg: nun, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "First English halfpennies and farthings struck in small numbers",
+     scene: "A NUN pays for bread with a tiny new farthing."}
+  - {year: 1239, peg: map, confidence: unverified,
+     event: "Henry III lets Newcastle townsmen dig coal",
+     scene: "Henry III marks the Newcastle coal seams on a MAP and lets the town dig."}
+  - {year: 1257, peg: log, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "Henry III tries a gold penny",
+     scene: "Henry III's gold penny is worth too much, and it sinks like a LOG out of use."}
+  - {year: 1266, peg: judge, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Henry III gives Lubeck and Hamburg merchants a charter for trade in England",
+     scene: "A JUDGE in London reads Henry III's charter to the Lubeck and Hamburg merchants."}
+  - {year: 1266, peg: judge, confidence: unverified,
+     event: "Assize of Bread and Ale fixes bread weight to the price of wheat",
+     scene: "A JUDGE weighs a loaf: when wheat costs more, the loaf must be lighter."}
+  - {year: 1275, peg: eagle, confidence: high, source: "National Archives: customs accounts",
+     event: "Edward I's Great Custom: first regular duty on exported wool",
+     scene: "An EAGLE takes half a mark from every sack of English wool that leaves port."}
+  - {year: 1279, peg: cowboy, confidence: high, source: "WP mirror: Penny (English coin)",
+     event: "Edward I's recoinage brings the groat, halfpenny and farthing",
+     scene: "A COWBOY pays with Edward I's new groat, worth four pennies."}
+  - {year: 1282, peg: oven, confidence: high, source: "WP mirror: Steelyard",
+     event: "German Hansa in London first named (later the Steelyard)",
+     scene: "The German merchants bake rye bread in a London OVEN at their new Hansa hall."}
+  - {year: 1283, peg: foam, confidence: high, source: "WP mirror: Statute of Merchants",
+     event: "Statute of Acton Burnell gives merchants a security for debts",
+     scene: "Beer FOAM spills as Edward I lets a merchant seize a bad debtor's goods."}
+  - {year: 1285, peg: waffle, confidence: high, source: "WP mirror: Statute of Merchants",
+     event: "Statute of Merchants: a creditor may seize the land of a debtor",
+     scene: "The creditor holds the debtor's land until the debt is paid, and eats his WAFFLE too."}
+  - {year: 1303, peg: sumo, confidence: high, source: "WP mirror: Carta Mercatoria",
+     event: "Carta Mercatoria: Edward I gives foreign merchants trade rights for a new import tax",
+     scene: "A SUMO wrestler pays the new import tax, and Edward I lets him trade freely."}
+  - {year: 1305, peg: seal, confidence: high, source: "WP mirror: Stannary",
+     event: "Edward I's stannary charter names the Devon stannary towns",
+     scene: "A SEAL stamps Edward I's charter for Tavistock, Ashburton and Chagford tin."}
+  - {year: 1314, peg: tower, confidence: high, source: "WP mirror: Company of the Staple",
+     event: "England orders all exported wool through one staple market",
+     scene: "All English wool must pass through one TOWER, the staple, before it goes abroad."}
+  - {year: 1319, peg: tuba, confidence: high, source: "WP mirror: Company of the Staple",
+     event: "Company of the Staple gets a royal charter (oldest English trading company)",
+     scene: "A TUBA plays as the wool merchants of the Staple get their charter."}
+  - {year: 1327, peg: ink, confidence: high, source: "WP mirror: Worshipful Company of Goldsmiths",
+     event: "Goldsmiths of London get a royal charter",
+     scene: "Edward III signs the goldsmiths' charter in gold INK."}
+  - {year: 1336, peg: match, confidence: medium, source: "Popular histories (12 August 1336)",
+     event: "Edward III stops wool exports to Flanders",
+     scene: "Edward III strikes a MATCH under the wool ships, and the Flemish looms stop."}
+  - {year: 1344, peg: warrior, confidence: high, source: "WP mirror: Florin; Penny (English coin)",
+     event: "Edward III strikes the first lasting English gold coins: noble and florin",
+     scene: "A WARRIOR king in a ship decorates Edward III's gold noble."}
+  - {year: 1353, peg: llama, confidence: high, source: "WP mirror: Company of the Staple",
+     event: "Wool staple moved home to English towns, with Westminster as its seat",
+     scene: "A LLAMA carries the wool staple from Flanders to Westminster."}
+  - {year: 1357, peg: log, confidence: high, source: "WP mirror: Scottish coinage",
+     event: "Scotland strikes its first groats and gold nobles",
+     scene: "David II floats the first Scottish groats and nobles home on a LOG."}
+  - {year: 1381, peg: foot, confidence: high, source: "WP mirror: Navigation Acts",
+     event: "Richard II's navigation law: goods must go in English ships",
+     scene: "Richard II puts his FOOT down: English cargo sails only in English ships."}
+  - {year: 1390, peg: bees, confidence: medium, source: "WP mirror: Scottish coinage (1390-1392)",
+     event: "Robert III strikes the gold lion coin of Scotland (approximate)",
+     scene: "BEES swarm around Robert III's gold lion coin."}
+  - {year: 1394, peg: bear, confidence: high, source: "WP mirror: Worshipful Company of Mercers",
+     event: "Mercers of London get a royal charter",
+     scene: "A BEAR in silk robes holds the mercers' charter."}
+  - {year: 1407, peg: ski, confidence: high, source: "WP mirror: Merchant Adventurers of London",
+     event: "Henry IV gives the Merchant Adventurers a royal charter",
+     scene: "The Merchant Adventurers SKI down to the Thames with cloth for the Low Countries."}
+  - {year: 1465, peg: jelly, confidence: unverified,
+     event: "Edward IV brings in the gold angel coin",
+     scene: "Saint Michael spears a dragon on Edward IV's gold angel, and it wobbles like JELLY."}
+  - {year: 1475, peg: eagle, confidence: high, source: "WP mirror: Steelyard",
+     event: "Hanseatic League buys the Steelyard site in London outright",
+     scene: "The Hansa's EAGLE lands on the Steelyard roof, now owned by the League."}
+  - {year: 1480, peg: vase, confidence: medium, source: "WP mirror: John Cabot (from this date)",
+     event: "Bristol ships begin to search for the Isle of Brasil",
+     scene: "Bristol sailors look for the Isle of Brasil and find only a VASE floating in the Atlantic."}
+  - {year: 1484, peg: fairy, confidence: medium, source: "WP mirror: Scottish coinage (1484-85)",
+     event: "James III strikes the gold unicorn coin of Scotland",
+     scene: "A FAIRY rides the unicorn on James III's new gold coin."}
+  - {year: 1489, peg: fob, confidence: high, source: "WP mirror: Carolingian monetary system",
+     event: "Henry VII strikes the first gold sovereign",
+     scene: "Henry VII hangs the first gold sovereign on his watch FOB."}
+  - {year: 1489, peg: fob, confidence: medium, source: "Stubbs; secondary studies (4 Hen. VII c. 19)",
+     event: "Henry VII's law against pulling down farm towns for sheep pasture",
+     scene: "Henry VII locks the village houses with a key on a FOB so no landlord pulls them down for sheep."}
+  - {year: 1496, peg: peach, confidence: high, source: "WP mirror: John Cabot",
+     event: "Henry VII's letters patent let John Cabot sail west for trade",
+     scene: "Henry VII gives John Cabot a PEACH and the right to find new trade lands for Bristol."}
+  - {year: 1497, peg: pig, confidence: high, source: "WP mirror: John Cabot",
+     event: "John Cabot sails west from Bristol on the Matthew",
+     scene: "A PIG squeals on the deck as the Matthew leaves Bristol for the west."}
+  # France
+  - {year: 629, peg: knob, confidence: disputed, source: "Fordham Sourcebook (629, maybe forged); 635",
+     event: "Dagobert I grants a fair at Saint-Denis",
+     scene: "Dagobert I turns the KNOB of the abbey gate and opens the October fair at Saint-Denis."}
+  - {year: 755, peg: lily, confidence: unverified,
+     event: "Pepin's coin reform: only the king may mint silver deniers",
+     scene: "Pepin closes the nobles' mints, and only the royal LILY stamps the new denier."}
+  - {year: 771, peg: cat, confidence: medium, source: "WP mirror: Carolingian monetary system",
+     event: "New Frankish silver coinage spreads through the empire (approximate)",
+     scene: "A CAT chases new silver deniers across the Frankish empire."}
+  - {year: 793, peg: palm, confidence: high, source: "WP mirror: Carolingian monetary system",
+     event: "Charlemagne's reform: one pound of silver makes twenty shillings of twelve pence (approximate)",
+     scene: "Charlemagne counts twelve pence into each PALM, twenty palms to the pound."}
+  - {year: 794, peg: bear, confidence: high, source: "WP mirror: Carolingian monetary system",
+     event: "Frankfurt decree: all must accept Charlemagne's new pennies",
+     scene: "A BEAR at the Frankfurt market must take Charlemagne's new penny for its honey."}
+  - {year: 800, peg: vase, confidence: disputed, source: "WP mirror: Capitulare de villis (771-800)",
+     event: "Capitulare de villis: rules for the royal estates and their crops (approximate)",
+     scene: "Charlemagne's steward fills a VASE with seed of every plant the capitulary lists."}
+  - {year: 823, peg: gnome, confidence: high, source: "WP mirror: Polyptych of Irminon",
+     event: "Polyptych of Irminon: survey of the Saint-Germain abbey estates (approximate)",
+     scene: "A GNOME helps Abbot Irminon write down every peasant on the abbey lands."}
+  - {year: 845, peg: railway, confidence: high, source: "WP mirror: Danegeld",
+     event: "Paris: Charles the Bald pays the Vikings tons of silver to leave",
+     scene: "A RAILWAY wagon full of silver carries Ragnar's payment out of Paris."}
+  - {year: 864, peg: cherry, confidence: high, source: "WP mirror: Edict of Pitres",
+     event: "Edict of Pitres: fewer mints and hard penalties for false coins",
+     scene: "Charles the Bald puts a CHERRY on only a few mints and punishes the false coiners."}
+  - {year: 1137, peg: mug, confidence: high, source: "WP mirror: Les Halles",
+     event: "Paris: Louis VI shares control of the Champeaux market",
+     scene: "Louis VI and the bishop share a MUG of wine over the Champeaux market."}
+  - {year: 1183, peg: foam, confidence: high, source: "WP mirror: Les Halles",
+     event: "Philip Augustus builds two market halls at Les Halles",
+     scene: "Philip Augustus builds two halls at Les Halles, and the cloth stays dry from the river FOAM."}
+  - {year: 1209, peg: soap, confidence: high, source: "WP mirror: Champagne fairs",
+     event: "Philip Augustus gives safe passage to merchants who go to the Champagne fairs",
+     scene: "Philip Augustus washes the roads with SOAP so merchants reach the Champagne fairs safely."}
+  - {year: 1246, peg: roach, confidence: high, source: "WP mirror: Gabelle",
+     event: "Aigues-Mortes: royal port and salt ponds founded",
+     scene: "A ROACH runs across the new salt ponds of Aigues-Mortes."}
+  - {year: 1259, peg: elbow, confidence: high, source: "WP mirror: Gabelle",
+     event: "Charles of Anjou takes the Berre saltworks and extends the salt tax",
+     scene: "Charles of Anjou pushes his ELBOW into the Berre salt and keeps the tax."}
+  - {year: 1261, peg: jet, confidence: high, source: "WP mirror: Etienne Boileau",
+     event: "Louis IX makes Etienne Boileau provost of Paris",
+     scene: "Etienne Boileau flies a JET over Paris to bring order to its trades."}
+  - {year: 1266, peg: judge, confidence: high, source: "WP mirror: French franc",
+     event: "Louis IX strikes the gros tournois silver coin",
+     scene: "A JUDGE weighs Louis IX's big silver gros tournois and finds it full weight."}
+  - {year: 1268, peg: chef, confidence: high, source: "WP mirror: Etienne Boileau",
+     event: "Boileau's Book of Trades records the rules of the Paris crafts",
+     scene: "A CHEF reads Boileau's Book of Trades to learn the rules of the Paris cooks."}
+  - {year: 1285, peg: waffle, confidence: high, source: "WP mirror: Champagne fairs",
+     event: "Champagne joins the French crown, and its fairs begin to decline",
+     scene: "Philip the Fair takes Champagne, and the fair's WAFFLE stall loses its customers."}
+  - {year: 1299, peg: pipe, confidence: medium, source: "WP mirror: Double-entry bookkeeping",
+     event: "Farolfi ledger: earliest full double-entry accounts in Europe (approximate)",
+     scene: "Amatino Manucci smokes a PIPE and writes every sum twice in the Farolfi ledger."}
+  - {year: 1341, peg: radio, confidence: high, source: "WP mirror: Gabelle",
+     event: "Philip VI makes the gabelle a permanent royal salt tax",
+     scene: "A RADIO tells France that Philip VI's salt tax will never stop."}
+  - {year: 1358, peg: wolf, confidence: high, source: "WP mirror: Francesco di Marco Datini",
+     event: "Francesco Datini goes to Avignon and begins his trade there",
+     scene: "Young Datini rides to Avignon, where a WOLF guards his first shop."}
+  - {year: 1358, peg: wolf, confidence: medium, source: "WP mirror: Nicole Oresme (1356-1360)",
+     event: "Nicole Oresme's treatise on money attacks debasement by kings (approximate)",
+     scene: "Oresme calls a king who debases coins a WOLF that eats his people."}
+  - {year: 1360, peg: cheese, confidence: high, source: "WP mirror: French franc",
+     event: "First franc, a gold coin to pay King John II's ransom",
+     scene: "John II rides on the first gold franc, and France pays England with CHEESE and gold."}
+  - {year: 1363, peg: gem, confidence: high, source: "WP mirror: Company of the Staple",
+     event: "Calais becomes the English wool staple",
+     scene: "Calais shines like a GEM as all English wool must now pass through it."}
+  - {year: 1365, peg: jelly, confidence: high, source: "WP mirror: French franc",
+     event: "Charles V strikes the franc a pied, worth one livre",
+     scene: "Charles V stands on his new gold franc, and it does not wobble like JELLY."}
+  - {year: 1436, peg: match, confidence: high, source: "WP mirror: Jacques Coeur",
+     event: "Charles VII makes Jacques Coeur master of the Paris mint",
+     scene: "Jacques Coeur strikes a MATCH and lights the furnace of the Paris mint."}
+  - {year: 1439, peg: map, confidence: high, source: "WP mirror: Taille",
+     event: "Charles VII makes the taille a permanent tax for a standing army",
+     scene: "Charles VII spreads a MAP of France and taxes every parish for his army."}
+  - {year: 1446, peg: roach, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank opens its Avignon branch",
+     scene: "A ROACH runs over the counting table of the new Medici branch at Avignon."}
+  - {year: 1451, peg: wallet, confidence: high, source: "WP mirror: Jacques Coeur",
+     event: "Charles VII arrests Jacques Coeur and seizes his goods",
+     scene: "The king's men take Jacques Coeur's WALLET and his ships."}
+  - {year: 1463, peg: gem, confidence: unverified,
+     event: "Louis XI gives Lyon four yearly fairs",
+     scene: "Louis XI sets a GEM on each of Lyon's four new fairs."}
+  - {year: 1466, peg: judge, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank completes the move of its Geneva branch to Lyon",
+     scene: "A JUDGE in Lyon welcomes the Medici bankers from Geneva."}
+  - {year: 1466, peg: judge, confidence: unverified,
+     event: "Louis XI orders a silk industry at Lyon",
+     scene: "A JUDGE in a silk robe opens the first royal silk works at Lyon."}
+  - {year: 1475, peg: eagle, confidence: high, source: "WP mirror: French franc",
+     event: "Louis XI debases the livre parisis",
+     scene: "An EAGLE picks the silver out of Louis XI's thin new coins."}
+  # Low Countries
+  - {year: 853, peg: llama, confidence: medium, source: "WP mirror: Dorestad (851-855)",
+     event: "Dorestad: denier of Lothair I struck at the trading port (approximate)",
+     scene: "A LLAMA carries Lothair's new Dorestad denier along the Rhine quay."}
+  - {year: 1128, peg: knife, confidence: high, source: "WP mirror: Bruges",
+     event: "Bruges gets its city charter and new canals",
+     scene: "Bruges cuts new canals with a KNIFE after it gets its charter."}
+  - {year: 1134, peg: hammer, confidence: high, source: "WP mirror: Bruges",
+     event: "Storm opens the Zwin channel and gives Bruges a way to the sea",
+     scene: "A storm strikes the coast like a HAMMER and opens the Zwin for Bruges ships."}
+  - {year: 1255, peg: lily, confidence: high, source: "WP mirror: Hoogheemraadschap van Rijnland",
+     event: "Rijnland water board: oldest surviving charter, for the Spaarndam dike wardens",
+     scene: "A water LILY floats behind the Spaarndam dike that the Rijnland wardens guard."}
+  - {year: 1277, peg: cake, confidence: high, source: "WP mirror: Bruges",
+     event: "First Genoese merchant fleet reaches Bruges",
+     scene: "The Genoese galleys bring a CAKE of Mediterranean sugar to Bruges."}
+  - {year: 1280, peg: vase, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hansa moves its Bruges trade to Aardenburg to put pressure on Bruges",
+     scene: "The Hansa picks up its VASE from Bruges and sets it down in Aardenburg."}
+  - {year: 1305, peg: seal, confidence: medium, source: "WP mirror: Merchant Adventurers",
+     event: "English merchants at Antwerp get a charter (later the Merchant Adventurers)",
+     scene: "A SEAL stamps the charter of the English cloth merchants at Antwerp."}
+  - {year: 1309, peg: soap, confidence: high, source: "WP mirror: Bruges",
+     event: "Bruges: the Bourse, a meeting place for money trade, opens",
+     scene: "Merchants wash with SOAP before they trade bills at the Van der Beurse inn in Bruges."}
+  - {year: 1310, peg: dice, confidence: high, source: "WP mirror: History of insurance",
+     event: "Bruges: Chamber of Assurance set up",
+     scene: "Bruges merchants roll a DICE on the sea and buy insurance at the new chamber."}
+  - {year: 1314, peg: tower, confidence: high, source: "WP mirror: Bruges",
+     event: "Venetian galleys first reach Bruges",
+     scene: "The Belfry TOWER of Bruges sees the first Venetian galleys come in."}
+  - {year: 1347, peg: rock, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hanseatic office at Bruges divides into three regional thirds",
+     scene: "A ROCK splits into three parts: the three thirds of the Bruges Hansa office."}
+  - {year: 1358, peg: wolf, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hansa moves its Bruges trade to Dordrecht",
+     scene: "A Hanseatic WOLF leaves Bruges and carries the trade to Dordrecht."}
+  - {year: 1386, peg: fish, confidence: low, source: "WP mirror: Willem Beukelszoon (weak source)",
+     event: "Willem Beukelszoon: gutting and salting herring in the barrel (traditional date)",
+     scene: "Beukelszoon cuts the gills from a FISH and packs it in salt in a barrel."}
+  - {year: 1388, peg: fife, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hansa again moves its Bruges trade to Dordrecht",
+     scene: "A FIFE plays as the Hansa leaves Bruges for Dordrecht a second time."}
+  - {year: 1433, peg: mummy, confidence: unverified,
+     event: "Philip the Good makes one coinage for his Low Countries lands",
+     scene: "Philip the Good wraps his four lands in one coin, like a MUMMY in one cloth."}
+  - {year: 1436, peg: match, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hansa moves its Bruges trade to Antwerp",
+     scene: "The Hansa strikes a MATCH and lights a new office in Antwerp."}
+  - {year: 1439, peg: map, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank founds its Bruges branch",
+     scene: "The Medici add Bruges to their MAP of bank branches."}
+  - {year: 1474, peg: car, confidence: high, source: "WP mirror: Hanseatic League; Steelyard",
+     event: "Treaty of Utrecht: England confirms the Hansa's trade rights",
+     scene: "At Utrecht, Edward IV gives the Hansa the keys to a CAR full of trade rights."}
+  - {year: 1480, peg: vase, confidence: medium, source: "WP mirror: Madeira",
+     event: "Antwerp: many ships in the Madeira sugar trade (approximate)",
+     scene: "Antwerp refiners pour Madeira sugar into a VASE for all of northern Europe."}
+  # Germany, Switzerland and Austria
+  - {year: 956, peg: leech, confidence: high, source: "Luneburg sources; Der Anschnitt 1981",
+     event: "Luneburg: Otto I's charter gives salt income to Saint Michael's abbey",
+     scene: "A LEECH sucks salt water from the Luneburg spring for Saint Michael's monks."}
+  - {year: 968, peg: chef, confidence: high, source: "WP mirror: Rammelsberg",
+     event: "Rammelsberg: silver mining begins near Goslar (approximate)",
+     scene: "Otto the Great's CHEF finds silver ore where a knight's horse kicks the ground."}
+  - {year: 1143, peg: ram, confidence: high, source: "WP mirror: Lubeck",
+     event: "Adolf II of Holstein founds Lubeck as a trade town",
+     scene: "Count Adolf builds Lubeck on an island, and a RAM guards the new market."}
+  - {year: 1159, peg: elbow, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Henry the Lion rebuilds Lubeck, the future head of the Hansa",
+     scene: "Henry the Lion pushes his ELBOW into the Baltic and rebuilds Lubeck as its port."}
+  - {year: 1165, peg: jelly, confidence: high, source: "WP mirror: Leipzig Trade Fair",
+     event: "Leipzig fair first recorded",
+     scene: "Traders sell JELLY at the first Leipzig fair where two roads cross."}
+  - {year: 1168, peg: chef, confidence: medium, source: "WP: Christiansdorf (Freiberg); tradition",
+     event: "Silver found at Christiansdorf, start of Freiberg mining",
+     scene: "A CHEF at Christiansdorf finds silver ore in the salt of his cooking pot."}
+  - {year: 1175, peg: eagle, confidence: high, source: "WP mirror: Rammelsberg",
+     event: "Henry the Lion destroys the Rammelsberg mines at Goslar",
+     scene: "Henry the Lion sends an EAGLE to smash the Goslar mine wheels."}
+  - {year: 1189, peg: fob, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Hamburg port receives imperial trade rights",
+     scene: "Barbarossa gives Hamburg the FOB key to free trade on the lower Elbe."}
+  - {year: 1221, peg: ant, confidence: high, source: "Vienna history wiki; HIS studies",
+     event: "Vienna's charter gives it a staple right over passing trade",
+     scene: "Every merchant ANT must stop in Vienna and offer its load to the citizens first."}
+  - {year: 1230, peg: mouse, confidence: medium, source: "WP: Schollenen Gorge (1220 or 1230)",
+     event: "Schollenen gorge bridged; the Gotthard route opens to trade (approximate)",
+     scene: "A MOUSE runs over the new Schollenen bridge, the short way over the Alps."}
+  - {year: 1240, peg: horse, confidence: high, source: "WP mirror: Frankfurt Trade Fair",
+     event: "Frederick II gives protection to the Frankfurt autumn fair",
+     scene: "Frederick II sends a HORSE guard to protect merchants on the way to Frankfurt."}
+  - {year: 1241, peg: radio, confidence: high, source: "WP mirror: Hanseatic League",
+     event: "Lubeck and Hamburg agree to protect the road between them",
+     scene: "Lubeck and Hamburg talk by RADIO to guard the merchants on their road."}
+  - {year: 1254, peg: lawyer, confidence: unverified,
+     event: "Rhenish League of towns forms against river tolls",
+     scene: "A LAWYER for the Rhine towns fights the robber tolls on the river."}
+  - {year: 1268, peg: chef, confidence: high, source: "WP mirror: Leipzig Trade Fair",
+     event: "Margrave Theodoric guarantees safe passage to merchants at Leipzig",
+     scene: "A CHEF from Venice reaches the Leipzig fair safely under the margrave's guard."}
+  - {year: 1330, peg: mouse, confidence: high, source: "WP mirror: Frankfurt Trade Fair",
+     event: "Louis IV gives Frankfurt the privilege of a spring fair",
+     scene: "A MOUSE comes out in spring for Frankfurt's new second fair."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "WP mirror: Rhenish gulden",
+     event: "First Rhenish gold gulden, copied from the florin",
+     scene: "A LAWYER on the Rhine pays in a new gold gulden copied from Florence."}
+  - {year: 1356, peg: leech, confidence: medium, source: "WP mirror: Hanseatic League (some date)",
+     event: "First general Hanseatic Diet meets at Lubeck",
+     scene: "The Hanseatic towns meet at Lubeck, and a LEECH sucks dues from every member."}
+  - {year: 1359, peg: elbow, confidence: high, source: "WP mirror: Rammelsberg",
+     event: "Goslar town council buys the Rammelsberg mining rights",
+     scene: "The Goslar council pushes its ELBOW in and buys the mine from the crown."}
+  - {year: 1367, peg: jockey, confidence: high, source: "WP mirror: Fugger",
+     event: "Hans Fugger, a weaver, comes to Augsburg",
+     scene: "A JOCKEY rides with Hans Fugger, the weaver, to Augsburg."}
+  - {year: 1379, peg: cowboy, confidence: unverified,
+     event: "Wendish towns form a coinage union for the Lubeck mark",
+     scene: "A COWBOY rides between Lubeck, Hamburg and Wismar with one shared coin."}
+  - {year: 1380, peg: vase, confidence: high, source: "WP: Ravensburg; Ravensburg museum",
+     event: "Great Ravensburg Trading Company founded (approximate)",
+     scene: "The Humpis family fills a VASE with saffron for the new Ravensburg company."}
+  - {year: 1386, peg: fish, confidence: unverified,
+     event: "Rhenish electors form a coinage union for the gold gulden",
+     scene: "Four Rhine electors share one FISH-shaped mould for their gold gulden."}
+  - {year: 1390, peg: bees, confidence: high, source: "Stromer diary; WP: Ulman Stromer",
+     event: "Ulman Stromer starts the first German paper mill at Nuremberg",
+     scene: "BEES buzz around the water wheel of Stromer's paper mill outside Nuremberg."}
+  - {year: 1398, peg: beehive, confidence: high, source: "Luneburg history sources",
+     event: "Stecknitz Canal opens and carries Luneburg salt to Lubeck",
+     scene: "A BEEHIVE of salt barges moves along the new Stecknitz Canal to Lubeck."}
+  - {year: 1409, peg: soap, confidence: unverified,
+     event: "Schwaz in Tyrol: silver mining boom begins (approximate)",
+     scene: "Schwaz miners wash rich silver ore with SOAP."}
+  - {year: 1458, peg: wolf, confidence: high, source: "WP mirror: Leipzig Trade Fair",
+     event: "Leipzig gets a third yearly fair at New Year",
+     scene: "A WOLF howls at the new winter fair of Leipzig."}
+  - {year: 1486, peg: fish, confidence: high, source: "WP mirror: Guldiner",
+     event: "Archduke Sigismund strikes the guldiner, the first large silver coin",
+     scene: "Sigismund's large silver guldiner is as big as a FISH, worth one gold gulden."}
+  - {year: 1487, peg: fox, confidence: high, source: "WP mirror: Fugger",
+     event: "Fuggers lend to Archduke Sigismund against Tyrol silver and copper",
+     scene: "Jakob Fugger lends Sigismund gold, and a FOX guards the Tyrol silver he takes as security."}
+  - {year: 1493, peg: palm, confidence: high, source: "WP mirror: Guldiner",
+     event: "Bern begins to strike its own guldiner",
+     scene: "A Bern bear holds the city's first silver guldiner in its PALM."}
+  - {year: 1494, peg: bear, confidence: high, source: "WP mirror: Fugger",
+     event: "Jakob Fugger forms the first Fugger trading company",
+     scene: "A BEAR signs the first Fugger company contract to gain a copper monopoly."}
+  - {year: 1497, peg: pig, confidence: high, source: "WP mirror: Leipzig Trade Fair",
+     event: "Maximilian I confirms the three Leipzig fairs and bans new fairs nearby",
+     scene: "Maximilian I puts a PIG fence around Leipzig: no other fair may open nearby."}
+  # Italy
+  - {year: 840, peg: horse, confidence: high, source: "WP mirror: Pactum Lotharii",
+     event: "Pactum Lotharii: Venice and the Frankish empire agree on trade and security",
+     scene: "Lothair and the Venetian doge shake hands over a HORSE at Pavia."}
+  - {year: 1097, peg: pig, confidence: high, source: "WP mirror: Rialto",
+     event: "Venice: the main market moves to the Rialto",
+     scene: "A PIG runs to the Rialto, where all of Venice now buys and sells."}
+  - {year: 1104, peg: sewer, confidence: medium, source: "WP mirror: Venetian Arsenal (no proof)",
+     event: "Venetian Arsenal: state shipyard founded (traditional date)",
+     scene: "Venetian workers build galleys over a SEWER in the new state Arsenal."}
+  - {year: 1140, peg: horse, confidence: high, source: "WP mirror: Ducat",
+     event: "Roger II of Sicily strikes the first ducat coins",
+     scene: "Roger II rides a HORSE through Ariano and strikes the first ducat."}
+  - {year: 1147, peg: rock, confidence: high, source: "Abulafia; Otto of Freising",
+     event: "Roger II brings captive Greek silk weavers to Palermo",
+     scene: "Roger II's ships take silk weavers from Thebes to a ROCK above Palermo."}
+  - {year: 1154, peg: lawyer, confidence: medium, source: "Musei di Genova; Calleri (1154 or 1155)",
+     event: "Genoa: Giovanni Scriba's register, oldest surviving notary record of trade deals",
+     scene: "A Genoese LAWYER, Giovanni Scriba, writes down every sea trade contract."}
+  - {year: 1193, peg: palm, confidence: medium, source: "Stahl (1193 or 1194); coin sources",
+     event: "Enrico Dandolo strikes the Venetian grosso silver coin",
+     scene: "Doge Dandolo holds the big new silver grosso in his PALM."}
+  - {year: 1228, peg: knife, confidence: high, source: "WP mirror: Fondaco dei Tedeschi",
+     event: "Venice: first Fondaco dei Tedeschi for German merchants",
+     scene: "A German merchant cuts cloth with a KNIFE in his new Venice warehouse."}
+  - {year: 1231, peg: moth, confidence: high, source: "WP mirror: Augustalis",
+     event: "Frederick II strikes the gold augustalis in Sicily",
+     scene: "A MOTH flies around Frederick II's gold augustalis, struck at Messina."}
+  - {year: 1236, peg: match, confidence: high, source: "WP mirror: History of insurance",
+     event: "Gregory IX's decretal Naviganti calls the sea loan usury",
+     scene: "Gregory IX burns the sea-loan contract with a MATCH."}
+  - {year: 1252, peg: lion, confidence: high, source: "WP mirror: Florin",
+     event: "Florence strikes the gold florin",
+     scene: "The Florentine LION guards the first gold florin."}
+  - {year: 1252, peg: lion, confidence: high, source: "WP mirror: Ducat",
+     event: "Genoa strikes the gold genovino",
+     scene: "A LION from the Genoese harbour bites the new gold genovino."}
+  - {year: 1262, peg: chain, confidence: high, source: "Global Financial Data; Mueller",
+     event: "Venice joins its state loans into one fund, the Monte Vecchio",
+     scene: "Venice puts all its loans on one CHAIN: the Monte Vecchio pays five per cent."}
+  - {year: 1271, peg: cat, confidence: medium, source: "WP mirror: Murano glass (c.)",
+     event: "Venetian glassmakers' guild rules protect trade secrets (approximate)",
+     scene: "A CAT watches the glassmakers so no secret leaves Venice."}
+  - {year: 1271, peg: cat, confidence: high, source: "WP mirror: Marco Polo",
+     event: "Marco Polo leaves Venice with his father and uncle for Asia",
+     scene: "Young Marco Polo leaves Venice with a CAT on his shoulder for the long trade road."}
+  - {year: 1276, peg: cage, confidence: medium, source: "Dard Hunter (1276); others 1270, 1279",
+     event: "Fabriano: first record of paper mills in Italy",
+     scene: "Fabriano paper makers dry their sheets in a CAGE beside the water wheel."}
+  - {year: 1284, peg: fairy, confidence: high, source: "WP mirror: Ducat",
+     event: "Venice strikes the gold ducat",
+     scene: "A FAIRY drops the first gold ducat into the doge's hand."}
+  - {year: 1291, peg: boot, confidence: high, source: "WP mirror: Murano glass",
+     event: "Venice moves its glass furnaces to Murano",
+     scene: "Venice kicks the glass furnaces to Murano with a BOOT to stop fires."}
+  - {year: 1291, peg: boot, confidence: high, source: "WP mirror: Vandino and Ugolino Vivaldi",
+     event: "Vivaldi brothers sail west from Genoa to find a sea route to India",
+     scene: "The Vivaldi brothers sail out of Genoa past the BOOT of Italy, to India by the west."}
+  - {year: 1295, peg: bell, confidence: high, source: "WP mirror: Marco Polo",
+     event: "The Polos come back to Venice from China",
+     scene: "A BELL rings as the Polos come home and rip jewels out of their old coats."}
+  - {year: 1320, peg: nose, confidence: high, source: "WP mirror: Venetian Arsenal",
+     event: "Venice builds the New Arsenal for state and merchant ships",
+     scene: "The NOSE of a merchant galley comes out of the new Arsenal basin."}
+  - {year: 1339, peg: map, confidence: medium, source: "WP mirror: Pegolotti (1335-1343)",
+     event: "Pegolotti's Practice of Commerce lists routes, coins and weights (approximate)",
+     scene: "Pegolotti draws a MAP from Azov to Beijing with every coin and weight on it."}
+  - {year: 1340, peg: horse, confidence: high, source: "WP mirror: Double-entry bookkeeping",
+     event: "Genoa: city treasurers' ledgers, oldest complete double-entry system",
+     scene: "A Genoese HORSE carries two ledgers: one for debit, one for credit."}
+  - {year: 1343, peg: ram, confidence: medium, source: "Cambridge (1343); WP: bankrupt 1345",
+     event: "Florence: the Peruzzi company collapses",
+     scene: "A RAM butts the Peruzzi bank in Florence, and it falls."}
+  - {year: 1343, peg: ram, confidence: low, source: "WP mirror: History of insurance (reported)",
+     event: "Pisa: earliest written insurance contracts reported",
+     scene: "A RAM stands on a Pisan ship, insured by the first written contract."}
+  - {year: 1345, peg: railway, confidence: medium, source: "Linkiesta; Armstrong (1343-1345)",
+     event: "Florence joins its state debts into the Monte Comune",
+     scene: "Florence puts all its debts on one RAILWAY: the Monte Comune."}
+  - {year: 1346, peg: roach, confidence: disputed, source: "Cambridge (1346); WP (1344, 1345)",
+     event: "Florence: the Bardi company collapses",
+     scene: "A ROACH runs over the empty Bardi strongbox after English loans go unpaid."}
+  - {year: 1347, peg: rock, confidence: high, source: "WP mirror: History of insurance",
+     event: "Genoa: first known insurance contract",
+     scene: "A Genoese ship sails past a ROCK, and the first insurance contract covers it."}
+  - {year: 1382, peg: oven, confidence: high, source: "WP mirror: Francesco di Marco Datini",
+     event: "Francesco Datini comes home to Prato with his trade",
+     scene: "Datini bakes bread in a Prato OVEN as his trade grows."}
+  - {year: 1383, peg: foam, confidence: medium, source: "WP mirror: Francesco di Marco Datini",
+     event: "Datini begins his system of partnerships",
+     scene: "Datini's partners drink beer FOAM together and sign one partnership each."}
+  - {year: 1397, peg: pig, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Giovanni di Bicci founds the Medici Bank in Florence",
+     scene: "Giovanni di Bicci fills a piggy bank PIG with florins and starts the Medici Bank."}
+  - {year: 1402, peg: sun, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank opens its Venice branch",
+     scene: "The SUN shines on the new Medici office in Venice."}
+  - {year: 1407, peg: ski, confidence: high, source: "WP mirror: Bank of Saint George",
+     event: "Genoa: Bank of Saint George founded to manage the state debt",
+     scene: "Saint George rides a SKI down to Genoa and takes charge of the public debt."}
+  - {year: 1436, peg: match, confidence: high, source: "WP mirror: History of insurance",
+     event: "Venice sets up a merchants' court for sea insurance",
+     scene: "The Venetian judges strike a MATCH to light the new insurance court."}
+  - {year: 1460, peg: cheese, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Alum found at Tolfa in the Papal States",
+     scene: "At Tolfa, a miner finds white alum that looks like CHEESE."}
+  - {year: 1462, peg: chain, confidence: high, source: "WP mirror: Mount of piety",
+     event: "Perugia: first Monte di Pieta lends to the poor",
+     scene: "A poor man in Perugia pawns his CHAIN at the first Monte di Pieta."}
+  - {year: 1462, peg: chain, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Papal alum company formed for the Tolfa mines",
+     scene: "The pope puts a CHAIN on the Tolfa alum trade."}
+  - {year: 1472, peg: coin, confidence: high, source: "WP mirror: Monte dei Paschi di Siena",
+     event: "Siena: Monte dei Paschi founded (oldest bank still at work)",
+     scene: "Siena drops one COIN into the new Monte dei Paschi, and it still pays today."}
+  - {year: 1478, peg: cave, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank closes its London and Bruges branches with heavy losses",
+     scene: "The Medici London and Bruges branches fall into a CAVE of bad debts."}
+  - {year: 1482, peg: oven, confidence: medium, source: "Global Financial Data (Monte Nuovo)",
+     event: "Venice opens a new state loan fund, the Monte Nuovo",
+     scene: "Venice bakes a new loan fund in its OVEN for the War of Ferrara."}
+  - {year: 1494, peg: bear, confidence: high, source: "WP mirror: Medici Bank",
+     event: "Medici Bank collapses when the Medici fall from power",
+     scene: "A BEAR breaks into the Medici Bank as the mob burns it."}
+  - {year: 1494, peg: bear, confidence: high, source: "WP mirror: Double-entry bookkeeping",
+     event: "Luca Pacioli's Summa published in Venice: double-entry bookkeeping explained",
+     scene: "A BEAR holds Pacioli's Summa and writes each sum on both sides."}
+  - {year: 1496, peg: peach, confidence: high, source: "WP mirror: Mount of piety",
+     event: "Florence drafts the rules of its Monte di Pieta",
+     scene: "Eight Florentines eat a PEACH and draft the rules of their pawn bank."}
+  # Iberia and the Atlantic islands
+  - {year: 929, peg: knob, confidence: high, source: "IJMES (Cambridge); Muslim Heritage",
+     event: "Abd al-Rahman III opens a Cordoba mint and strikes gold dinars",
+     scene: "The new caliph turns a KNOB on the Cordoba mint, and gold dinars flow out."}
+  - {year: 1150, peg: lasso, confidence: unverified,
+     event: "Xativa: paper made in al-Andalus, earliest in western Europe (approximate)",
+     scene: "A Xativa paper maker throws a LASSO around a drying sheet of paper."}
+  - {year: 1172, peg: coin, confidence: disputed, source: "Fordham UP (early 1170s); MAN (1174)",
+     event: "Alfonso VIII strikes the gold morabetino in Toledo",
+     scene: "Alfonso VIII copies an Almoravid gold COIN in Toledo, with Arabic letters."}
+  - {year: 1252, peg: lion, confidence: high, source: "WP mirror: Mesta",
+     event: "Castile's Cortes regulate tolls on moving flocks",
+     scene: "The Castilian LION counts the toll on every flock that walks south."}
+  - {year: 1258, peg: wolf, confidence: high, source: "WP mirror: Consulate of the Sea",
+     event: "James I lets Barcelona merchants settle trade disputes in their own court",
+     scene: "A WOLF of the sea comes to the merchants' own court in Barcelona."}
+  - {year: 1269, peg: ship, confidence: high, source: "WP mirror: Mesta",
+     event: "Cortes of Burgos tax moving flocks and herds",
+     scene: "Burgos puts a tax on every sheep, and the herders pay like a SHIP at port."}
+  - {year: 1273, peg: comb, confidence: high, source: "WP mirror: Mesta",
+     event: "Alfonso X's charter to the Mesta, the sheep owners' guild",
+     scene: "Alfonso X runs a COMB through merino wool and gives the Mesta its charter."}
+  - {year: 1283, peg: foam, confidence: high, source: "WP mirror: Consulate of the Sea",
+     event: "Valencia: Consulate of the Sea set up for sea trade disputes",
+     scene: "Sea FOAM splashes the new Consulate of the Sea in Valencia."}
+  - {year: 1285, peg: waffle, confidence: high, source: "WP mirror: Croat (coin)",
+     event: "Peter III of Aragon strikes the silver croat of Barcelona",
+     scene: "Peter III stamps the silver croat like a WAFFLE iron in Barcelona."}
+  - {year: 1293, peg: palm, confidence: high, source: "WP mirror: History of insurance",
+     event: "King Denis sets up the Bolsa de Comercio, a fund for merchant ships",
+     scene: "King Denis puts a coin in each merchant's PALM from the new Bolsa fund."}
+  - {year: 1341, peg: radio, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Canary Islands: voyage under the Portuguese king's flag",
+     scene: "A RADIO reports the Portuguese ships at the Canary Islands."}
+  - {year: 1353, peg: llama, confidence: disputed, source: "Algarve History Assn (1353); other 1352",
+     event: "Lisbon merchants make a trade treaty with Edward III",
+     scene: "A LLAMA carries Lisbon wine to London under the merchants' treaty."}
+  - {year: 1375, peg: eagle, confidence: unverified,
+     event: "Lei das Sesmarias: Ferdinand I orders idle farmland to be worked",
+     scene: "Ferdinand I's EAGLE flies over idle fields and orders them plowed."}
+  - {year: 1401, peg: soda, confidence: high, source: "WP mirror: Taula de canvi de Barcelona",
+     event: "Barcelona: Taula de Canvi, a city deposit bank, opens",
+     scene: "Barcelona's new city bank pays out deposits and a SODA in the Llotja."}
+  - {year: 1418, peg: dove, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Zarco and Teixeira reach Porto Santo",
+     scene: "A DOVE leads Zarco and Teixeira to Porto Santo."}
+  - {year: 1420, peg: nose, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Madeira: Portuguese settlement begins",
+     scene: "Settlers follow their NOSE to the wood smoke of Madeira and plant wheat."}
+  - {year: 1427, peg: ink, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Diogo de Silves finds Santa Maria in the Azores",
+     scene: "Diogo de Silves marks Santa Maria in INK on the chart."}
+  - {year: 1432, peg: moon, confidence: medium, source: "WP mirror: Portuguese discoveries (1431)",
+     event: "Azores: Gonçalo Velho Cabral begins settlement",
+     scene: "Cabral lands sheep on the Azores under a full MOON."}
+  - {year: 1435, peg: mill, confidence: high, source: "WP mirror: History of insurance",
+     event: "Barcelona ordinance sends insurance disputes to formal courts",
+     scene: "Barcelona's insurance cases go through the court MILL."}
+  - {year: 1443, peg: ram, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Prince Pedro gives Henry the Navigator the trade monopoly south of Cape Bojador",
+     scene: "Henry the Navigator puts a RAM at the gate: no trade south of Bojador without him."}
+  - {year: 1455, peg: lily, confidence: medium, source: "WP mirror: Madeira (by this date)",
+     event: "Madeira: water-driven sugar mill at work",
+     scene: "A water wheel crushes Madeira cane, and the sugar is white as a LILY."}
+  - {year: 1457, peg: log, confidence: medium, source: "Numista (struck 1457-1481)",
+     event: "Afonso V strikes the gold cruzado",
+     scene: "Afonso V stamps a cross on a gold cruzado and floats the gold on a LOG."}
+  - {year: 1469, peg: ship, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Afonso V rents the Guinea trade to Fernao Gomes",
+     scene: "Fernao Gomes rents the Guinea trade for one SHIP a year of new coast."}
+  - {year: 1487, peg: fox, confidence: high, source: "WP mirror: Portuguese discoveries",
+     event: "Paiva and Covilha leave Lisbon by land to find the spice routes",
+     scene: "Covilha follows a FOX on the land road east from Lisbon to find the spice ports."}
+  - {year: 1487, peg: fox, confidence: medium, source: "WP mirror: Bartolomeu Dias (July)",
+     event: "Bartolomeu Dias sails from Lisbon",
+     scene: "Bartolomeu Dias sails out of Lisbon, and a FOX on the quay watches him go south."}
+  - {year: 1488, peg: fife, confidence: high, source: "WP mirror: Bartolomeu Dias",
+     event: "Bartolomeu Dias returns to Lisbon after he rounds the Cape",
+     scene: "A FIFE plays as Dias sails into Lisbon with news of the open sea to India."}
+  - {year: 1492, peg: piano, confidence: high, source: "WP mirror: Capitulations of Santa Fe",
+     event: "Capitulations of Santa Fe give Columbus a tenth of all the trade he finds",
+     scene: "Isabella plays a PIANO at Santa Fe and gives Columbus a tenth of the riches."}
+  - {year: 1492, peg: piano, confidence: high, source: "WP mirror: Voyages of Columbus",
+     event: "Columbus sails from Palos",
+     scene: "Columbus loads a PIANO on the Santa Maria at Palos."}
+  - {year: 1492, peg: piano, confidence: high, source: "WP mirror: Mesta",
+     event: "Mesta issues its rules of internal government",
+     scene: "The Mesta shepherds sing their new rules at a PIANO."}
+  - {year: 1493, peg: palm, confidence: high, source: "WP mirror: Voyages of Columbus",
+     event: "Columbus returns to Palos",
+     scene: "Columbus comes back to Palos with a PALM leaf and gold from the Indies."}
+  - {year: 1493, peg: palm, confidence: high, source: "WP mirror: Voyages of Columbus",
+     event: "Columbus sails from Cadiz with seventeen ships",
+     scene: "Seventeen ships leave Cadiz, each with a PALM cutting to plant."}
+  - {year: 1494, peg: bear, confidence: high, source: "Medina del Campo decree; RAE legal dict.",
+     event: "Consulate of Burgos founded for the wool merchants",
+     scene: "A BEAR guards the wool bales of the new Burgos consulate."}
+  - {year: 1497, peg: pig, confidence: high, source: "WP mirror: Ducat",
+     event: "Castile reforms the gold excelente as a copy of the ducat",
+     scene: "Ferdinand and Isabella put a ducat stamp on the excelente, and a PIG squeals."}
+  - {year: 1497, peg: pig, confidence: high, source: "WP mirror: Vasco da Gama",
+     event: "Vasco da Gama sails from Lisbon for India",
+     scene: "Vasco da Gama loads a salted PIG on his ship at Lisbon for the long way to India."}
+  - {year: 1498, peg: beehive, confidence: high, source: "WP mirror: Voyages of Columbus",
+     event: "Columbus sails from Sanlucar on his third voyage",
+     scene: "Columbus leaves Sanlucar with a BEEHIVE for the new colony."}
+  - {year: 1499, peg: pipe, confidence: high, source: "WP mirror: Vasco da Gama",
+     event: "Vasco da Gama's ships return to Lisbon with pepper",
+     scene: "Da Gama's sailors smoke a PIPE in Lisbon and sell Calicut pepper."}
