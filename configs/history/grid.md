@@ -59,6 +59,12 @@ east_asia arts 1500_1800, south_asia science pre500bce, southeast_asia religion 
 central_asia economy 500bce_500ce, west_asia politics 1945_present, north_africa religion pre500bce,
 subsaharan_africa politics 1800_1945, western_europe society 500_1500, eastern_europe arts 500bce_500ce,
 north_america economy 1800_1945, latin_america science 500_1500, oceania society 1945_present.
+Result: about 1,110 dates (high ~480, medium ~150, disputed ~30, unverified ~440); check exit 0 on all.
+Cells are thinner than waves 1–2 (26–212); some agents stopped with searches unspent — the brief
+must say "spend the whole budget". Grid now 37 of 432 cells, about 4,400 dates.
+Open: Jin Ping Mei 1610 → 1617 (first print); Palace of Eternal Life → 1689 premiere; Karnak
+Senusret I uses accession year; an invention rule (demonstration vs patent: McCormick 1831/1834);
+weak 1861 "jet" scenes in subsaharan_africa_politics.
 
 Wave 2 cells: subsaharan_africa religion 500_1500, subsaharan_africa economy 1500_1800,
 western_europe science 1500_1800, western_europe arts 1800_1945, eastern_europe politics 1500_1800,

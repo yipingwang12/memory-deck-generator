@@ -1,0 +1,649 @@
+# Cell: Sub-Saharan Africa x politics x 1800 to 1944. DRAFT 2026-11-04.
+# Dates: memory pass + web check (21 searches, plus fetches of Wikipedia mirrors; the rest is unverified).
+# Peg rules as policy.md: last two digits; years_ago not used in this period.
+# Range -> conventional "c." date, else start of a phase; "X +/- Y" -> X. Work or law -> first public appearance.
+# Scope: states, rulers, wars, battles, treaties, revolts, laws, independence, colonial conquest. Northern Sudan (Mahdist state, Omdurman) is in the north_africa cell.
+# Slave-trade and abolition events stay in the society cell. 1945 events belong to the next period.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # South Africa and the Cape
+  - {year: 1806, peg: sushi, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Battle of Blaauwberg: Britain retakes the Cape Colony",
+     scene: "British soldiers land at Blaauwberg and push a plate of SUSHI into the Dutch governor's hands to take the Cape."}
+  - {year: 1814, peg: tower, confidence: unverified,
+     event: "Anglo-Dutch treaty: the Netherlands gives up the Cape Colony to Britain",
+     scene: "A Dutch governor hands the keys of the Cape to Britain from the top of a TOWER."}
+  - {year: 1815, peg: doll, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Slagtersnek rebellion crushed by the Cape government",
+     scene: "Frontier farmers who rise at Slagtersnek hang from a gallows where a DOLL dangles beside them."}
+  - {year: 1816, peg: dish, confidence: disputed, source: "WP mirror: SA timeline (1816); Darling (1818)",
+     event: "Shaka founds the Zulu kingdom",
+     scene: "Shaka serves the whole Zulu nation from one huge DISH shaped like a war shield."}
+  - {year: 1822, peg: nun, confidence: medium, source: "WP mirror: Timeline of South Africa",
+     event: "Moshoeshoe I founds the Basotho kingdom",
+     scene: "Moshoeshoe gathers refugees on a mountain, and a NUN blesses the first Basotho village."}
+  - {year: 1828, peg: knife, confidence: high, source: "Search: Shaka killed by Dingane (Wikipedia)",
+     event: "Dingane and his brothers kill Shaka",
+     scene: "Dingane's brother pulls a KNIFE on Shaka, and the Zulu king falls."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "The Great Trek begins: Boer families leave the Cape Colony",
+     scene: "Ox wagons leave the Cape in a line, and the first one turns a MILL wheel as it rolls."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Battle of Vegkop: trekkers hold off the Ndebele",
+     scene: "Trekkers ring their wagons at Vegkop and light a MATCH to keep the Ndebele away."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Zulu king Dingane has Piet Retief and his party killed",
+     scene: "Dingane shows a MOVIE of a dance, and his warriors then rise and kill Retief's party."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Battle of Blood River: trekkers defeat the Zulu",
+     scene: "Trekker guns stop Zulu regiments at the river, and the red water looks like a MOVIE screen."}
+  - {year: 1839, peg: map, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Trekkers found the Natalia Republic and Pietermaritzburg",
+     scene: "Trekkers unroll a MAP of Natalia and mark the first town on it."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Mpande overthrows Dingane as Zulu king",
+     scene: "Mpande rides a HORSE into the Zulu capital and takes the throne from Dingane."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Britain conquers the Natalia Republic",
+     scene: "British troops charge into Natalia on the back of a RHINO and take the republic."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Seventh Xhosa War begins on the Cape frontier",
+     scene: "A ROACH carries the first spear into the Seventh Xhosa War."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Battle of Boomplaats: Britain defeats Boers who reject its rule",
+     scene: "At Boomplaats the British soldiers cross a rocky REEF to beat the Boer farmers."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Eighth Xhosa War begins",
+     scene: "A Xhosa warrior throws a LASSO over a British wagon to start the Eighth Xhosa War."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Sand River Convention: Britain recognises the Transvaal Boers",
+     scene: "A LION signs the Sand River Convention with a paw to free the Transvaal Boers."}
+  - {year: 1853, peg: llama, confidence: medium, source: "WP mirror: Timeline of South Africa",
+     event: "Cape Colony opens its first parliament",
+     scene: "A LLAMA sits in the first seat of the new Cape parliament."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Orange River Convention: Britain recognises the Orange Free State",
+     scene: "A LAWYER reads the Orange River Convention that sets the Free State free."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Pretorius becomes the first president of the South African Republic",
+     scene: "Pretorius is sworn in as first president while he stands on a LOG."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "First Basotho War between Basotho and the Free State",
+     scene: "A WOLF howls from Moshoeshoe's mountain as the First Basotho War starts."}
+  - {year: 1868, peg: chef, confidence: high, source: "Darling: Africa in 19th century",
+     event: "Lesotho becomes the British protectorate of Basutoland",
+     scene: "A CHEF in Moshoeshoe's kitchen cooks a feast for the British officers who protect Basutoland."}
+  - {year: 1871, peg: cat, confidence: disputed, source: "WP mirror: SA timeline (1870)",
+     event: "Britain annexes Griqualand West around the diamond fields",
+     scene: "A CAT paws a diamond at Kimberley as Britain claims Griqualand West."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Molteno becomes the first prime minister of the Cape Colony",
+     scene: "Molteno flips a COIN to open the first Cape cabinet with responsible government."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Britain annexes the Transvaal",
+     scene: "Shepstone cuts a CAKE shaped like the Transvaal and takes the biggest slice."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Britannica: Isandlwana and Rorke's Drift",
+     event: "Battle of Isandlwana: the Zulu destroy a British column",
+     scene: "A Zulu COWBOY on a hill rounds up a whole British column at Isandlwana."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Search: Battle of Ulundi 4 July 1879",
+     event: "Battle of Ulundi: Britain breaks the Zulu army",
+     scene: "A COWBOY with a hat shoots from the British square at Ulundi and the Zulu army breaks."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Search: Cetshwayo captured Aug 1879",
+     event: "Britain captures the Zulu king Cetshwayo",
+     scene: "A COWBOY ropes Cetshwayo in his hiding place and takes him to Cape Town."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Paardekraal revolt: the Boers restore the South African Republic",
+     scene: "Each Boer at Paardekraal drops a stone into a giant VASE and swears to be free."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Battle of Majuba Hill: the Boers defeat Britain",
+     scene: "A Boer sharpshooter on Majuba Hill shoots a British FOOT soldier off the ridge."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Pretoria Convention restores Transvaal self-rule under British oversight",
+     scene: "Boers and British sign the Pretoria Convention on a giant FOOT print on the floor."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Paul Kruger becomes president of the Transvaal",
+     scene: "Kruger takes the oath of office, and his pipe smoke fills the hall like FOAM."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "London Convention: Britain changes the terms of Transvaal self-rule",
+     scene: "A FAIRY in London crosses out words in the Transvaal treaty with a gold pen."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Britain annexes Bechuanaland",
+     scene: "A WAFFLE with a Union Jack stuck in it lies on the map of Bechuanaland."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Britain annexes Zululand",
+     scene: "A FOX leads British surveyors over the hills of Zululand and marks it British."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Cecil Rhodes becomes prime minister of the Cape Colony",
+     scene: "BEES swarm around Rhodes as he enters the Cape parliament as prime minister."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "First Matabele War: the Company defeats Lobengula",
+     scene: "Maxim guns cut down Lobengula's regiments, and Rhodes shades himself under a PALM."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Jameson Raid begins: Company police ride into the Transvaal",
+     scene: "A BELL rings in Johannesburg as Jameson's raiders ride in, and then they are captured."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Second Boer War begins",
+     scene: "A Boer commando lights a PIPE and rides out to the border to start the Second Boer War."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Bloemfontein Conference between Kruger and Milner fails",
+     scene: "Kruger and Milner pass a PIPE at Bloemfontein, but neither will give up the franchise talks."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Britain conquers the Orange Free State and the Transvaal",
+     scene: "British troops pour SAUCE over the maps of both Boer republics and claim them."}
+  - {year: 1902, peg: sun, confidence: high, source: "Darling: Africa in 19th century",
+     event: "Treaty of Vereeniging ends the Second Boer War",
+     scene: "The SUN sets on the Boer commandos as their leaders sign the Treaty of Vereeniging."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Bambatha rebellion against the Natal poll tax",
+     scene: "Chief Bambatha refuses to pay a tax and throws a plate of SUSHI at the magistrate."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Transvaal and the Orange River Colony get self-government",
+     scene: "A SKI trail opens between the two former Boer republics as they get their own governments."}
+  - {year: 1909, peg: soap, confidence: unverified,
+     event: "South Africa Act passed by the British parliament",
+     scene: "Lawmakers in London wash the four colonies together with SOAP in the South Africa Act."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Union of South Africa formed; Louis Botha is the first prime minister",
+     scene: "Four colonies throw their DICE, and Botha wins the first prime minister's seat."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "African National Congress founded in Bloemfontein",
+     scene: "The ANC finds one TONGUE for all the African peoples at its first meeting."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Natives Land Act limits African land ownership",
+     scene: "A TOMB stone is set on each African claim to land outside the reserves."}
+  - {year: 1914, peg: tower, confidence: medium, source: "Search: National Party founded 1914 (SAHO)",
+     event: "Hertzog founds the National Party",
+     scene: "Hertzog raises the new National Party flag on a TOWER in Bloemfontein."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Maritz rebellion: Boer veterans rise against fighting Germany",
+     scene: "Maritz fires from a TOWER and rebels against South Africa's plan to fight Germany."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "South Africa captures German South West Africa",
+     scene: "South African troops carry a DOLL dressed as a German officer out of Windhoek."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Afrikaner Broederbond founded",
+     scene: "A DOVE carries the secret oath of the Broederbond to its first members."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Botha dies and Smuts becomes prime minister",
+     scene: "A TUBA plays at Botha's funeral, and Smuts steps up to take his place."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: History of Namibia",
+     event: "South Africa takes South West Africa under a League mandate",
+     scene: "A South African official lays a hand on the NOSE of the map of South West Africa."}
+  - {year: 1921, peg: ant, confidence: high, source: "Search: Bulhoek massacre (Wikipedia, SAHO)",
+     event: "Bulhoek massacre: police kill many members of the Israelite sect",
+     scene: "An ANT line of police marches on the hill at Bulhoek, and machine guns fire on the Israelites."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Communist Party of South Africa founded",
+     scene: "An ANT with a red flag leads the new Communist Party into the hall."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Rand Rebellion: the army crushes the white miners' strike",
+     scene: "A NUN walks away from the guns as the army crushes the Rand miners."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Natives (Urban Areas) Act sets up town segregation",
+     scene: "A GNOME marks the town edge where the Natives Urban Areas Act says Africans must stop."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "Southern Rhodesia becomes a self-governing colony",
+     scene: "A GNOME in a top hat takes over the keys to Southern Rhodesia from the Company."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Hertzog becomes prime minister of South Africa",
+     scene: "Hertzog hangs Smuts' coat on a HANGER and takes the prime minister's chair."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "Land Apportionment Act splits Southern Rhodesian land by race",
+     scene: "A MOUSE runs along the line that the Land Apportionment Act draws between white and African land."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "White women win the vote in South Africa",
+     scene: "A white woman drops a ballot into a box while a MOUSE sits on top of it."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "Status of the Union Act; South African Party and National Party merge into the United Party",
+     scene: "A HAMMER fuses the two party badges into one United Party badge."}
+  - {year: 1936, peg: match, confidence: high, source: "Search: Representation of Natives Act 1936",
+     event: "Representation of Natives Act removes Cape African voters from the common roll",
+     scene: "A MATCH burns the names of Cape African voters off the common roll."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Timeline of South Africa",
+     event: "South Africa declares war on Germany; Hertzog resigns and Smuts returns",
+     scene: "Smuts spreads a MAP of Europe on his desk after Hertzog quits over the war vote."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Search: ANC Youth League founded 1944",
+     event: "ANC Youth League founded with Anton Lembede as its first president",
+     scene: "A young WARRIOR leads the new ANC Youth League and demands bolder action."}
+  # Namibia, Botswana, Lesotho and Eswatini
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Basters found the Free Republic of Rehoboth",
+     scene: "The Baster council tosses a COIN to choose the first captain of the Rehoboth republic."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Cape Colony annexes Walvis Bay",
+     scene: "A British flag flies over a CAVE on the dunes of Walvis Bay."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Adolf Lüderitz buys Angra Pequena from a Nama chief",
+     scene: "Lüderitz trades guns for the bay, and sea FOAM washes over the bill of sale."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Bismarck claims German South West Africa",
+     scene: "A FAIRY waves a German flag over the desert and Bismarck's claim is made."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Hendrik Witbooi signs a protection treaty with Germany",
+     scene: "Hendrik Witbooi signs the treaty with a BEAR paw print next to the German governor's name."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP mirror: History of Namibia",
+     event: "Herero and Nama wars begin; Battle of Waterberg crushes the Herero",
+     scene: "Herero fleeing from Waterberg crawl through a SEWER into the dry desert."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: History of Namibia",
+     event: "South African forces kill Mandume, king of the Kwanyama",
+     scene: "A DOG howls at Mandume's grave after the South African forces kill the Kwanyama king."}
+  # Zimbabwe, Zambia and Malawi
+  - {year: 1821, peg: ant, confidence: medium, source: "WP mirror: History of Zimbabwe",
+     event: "Mzilikazi breaks from Shaka and founds the Ndebele (approximate)",
+     scene: "An ANT leads the Khumalo clan away from Shaka, and Mzilikazi becomes a king."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "Ndebele settle in Matabeleland and build their capital at Bulawayo",
+     scene: "A HORSE draws the royal wagon to the new Ndebele capital at Bulawayo."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "Lobengula succeeds Mzilikazi as Ndebele king after a power struggle",
+     scene: "A CHEF serves Lobengula the feast of kingship after the struggle for his father's seat."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: History of Zimbabwe",
+     event: "Rudd Concession: Lobengula grants Rhodes' agents mining rights",
+     scene: "Lobengula plays a FIFE while Rhodes' agents slip the Rudd Concession under his hand."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Pioneer Column enters Mashonaland for the British South Africa Company",
+     scene: "BEES follow the Pioneer Column wagons into Mashonaland."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Second Matabele War and Shona rising against the Company",
+     scene: "Shona and Ndebele fighters share a PEACH under a tree before they rise against the Company."}
+  - {year: 1891, peg: boot, confidence: medium, source: "Search: Nyasaland protectorate 1891 (Wikipedia)",
+     event: "Britain declares the British Central Africa Protectorate, later Nyasaland",
+     scene: "A BOOT stamps the shore of Lake Malawi, and Britain claims the land."}
+  - {year: 1915, peg: doll, confidence: high, source: "Search: Chilembwe uprising (Wikipedia)",
+     event: "Chilembwe uprising against British rule in Nyasaland",
+     scene: "John Chilembwe holds up a DOLL at his church, and his followers rise against the plantation."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Northern Rhodesia becomes a British crown colony",
+     scene: "The Company hangs its flag on a HANGER and hands Northern Rhodesia to the Colonial Office."}
+  # Madagascar and the Indian Ocean
+  - {year: 1810, peg: dice, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Radama I becomes king of the Merina and starts to unite Madagascar",
+     scene: "Radama I throws DICE and wins the Merina throne."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Radama I dies; Ranavalona I begins a long reign",
+     scene: "Ranavalona I sets a KNIFE on the throne table as she begins her rule."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Radama II's Lambert Charter gives a French businessman broad rights",
+     scene: "Lambert holds a LILY while the prince signs away rights in the charter."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Ranavalona I dies; Radama II becomes king and opens the island",
+     scene: "Radama II waves a JET of water from the fountain of welcome to foreigners when he takes the throne."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "A coup strangles Radama II; Rasoherina is crowned",
+     scene: "Courtiers take a GEM from the dead king's crown and place it on Rasoherina."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Rainilaiarivony becomes prime minister and rules behind the throne",
+     scene: "Rainilaiarivony holds a CHERRY branch like a puppeteer's stick over the queens."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "First Franco-Hova War begins with a French invasion",
+     scene: "French ships churn the sea into FOAM as they attack the Malagasy coast."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Franco-Malagasy treaty gives France a protectorate over Diego-Suarez and nearby islands",
+     scene: "France cuts a WAFFLE in four and keeps the pieces called Diego-Suarez."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Second Franco-Hova War: French troops take Antananarivo",
+     scene: "A BELL tolls in Antananarivo as the French army enters the queen's city."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "France annexes Madagascar; General Gallieni arrives",
+     scene: "Gallieni bites into a PEACH labelled Madagascar and the French parliament cheers."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "France abolishes the Malagasy monarchy and exiles Ranavalona III",
+     scene: "A PIG wears the queen's crown as French officers send her into exile."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "British troops occupy Vichy-held Madagascar",
+     scene: "A RHINO charges onto the beach at Diego-Suarez with the British landing."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Britain hands Madagascar to the Free French",
+     scene: "A RAM butts Britain's flag off the pole as Free French hoist theirs."}
+  # Horn of Africa
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Tewodros II becomes emperor of Ethiopia and ends the era of the princes",
+     scene: "Tewodros stands among LILY flowers as the new emperor who ends the era of the princes."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Magdala: British force storms the fort and Tewodros kills himself",
+     scene: "A CHEF on the British side watches the fort of Magdala fall and Tewodros fire his last shot."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Ethiopian-Egyptian War begins",
+     scene: "A toy CAR with an Egyptian flag rolls into the Ethiopian highlands."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Italians take Assab on the Red Sea",
+     scene: "Italians cook a pizza in an OVEN on the shore of Assab."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Hewett Treaty between Britain and Ethiopia",
+     scene: "A FAIRY brings the Hewett Treaty to the Ethiopian emperor across the hills."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Yohannes IV dies in battle against the Mahdists",
+     scene: "The emperor's FOB watch stops at Gallabat when Yohannes IV dies in battle."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Menelik II becomes emperor of Ethiopia",
+     scene: "Menelik II pins a gold FOB chain on his robe as he is crowned emperor."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Treaty of Wuchale between Menelik and Italy",
+     scene: "Italy and Menelik sign the Wuchale treaty, but the two texts say different things, as on a FOB watch face."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Britain forms the Somaliland protectorate",
+     scene: "A British officer plays a FIFE on the Somali coast to mark the new protectorate."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Italy begins to take Somali land in the south",
+     scene: "An Italian clerk hangs a FOB watch on a Somali sultan's gate and claims the coast."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Italy declares the colony of Eritrea",
+     scene: "BEES from Asmara fly in a swarm under the new Italian flag of Eritrea."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Battle of Adwa: Ethiopia defeats Italy",
+     scene: "Ethiopian soldiers at Adwa throw Italy out like a rotten PEACH."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Treaty of Addis Ababa: Italy recognises Ethiopian independence",
+     scene: "Italy signs the Treaty of Addis Ababa and hands back a PEACH-coloured map of free Ethiopia."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: History of Somalia",
+     event: "Mohammed Abdullah Hassan starts the Dervish revolt in Somaliland",
+     scene: "Hassan lights a PIPE in the camp, and the Dervish revolt begins."}
+  - {year: 1916, peg: dish, confidence: high, source: "Search: Iyasu deposed 1916 (timeline)",
+     event: "Lij Iyasu is deposed; Zewditu becomes empress with Tafari as regent",
+     scene: "Ras Tafari carries a DISH to the new empress Zewditu after Iyasu falls."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: History of Somalia",
+     event: "British aircraft end the Dervish movement in Somaliland",
+     scene: "A British aircraft with a long NOSE bombs the last Dervish forts."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Ethiopia joins the League of Nations",
+     scene: "A GNOME hands the Ethiopian delegate a seat at the League of Nations."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Italy annexes Jubaland into Italian Somaliland",
+     scene: "An Italian officer hammers a NAIL into a border post at Jubaland."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Zewditu dies; Haile Selassie reigns as emperor of Ethiopia",
+     scene: "A MOUSE wearing a crown sits on the throne after Haile Selassie takes the title of emperor."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Haile Selassie issues the first Ethiopian constitution",
+     scene: "A MOTH eats a hole in the first Ethiopian constitution, with its two-chamber parliament."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Search: Walwal incident 5 December 1934",
+     event: "Walwal incident: Italian and Ethiopian forces clash at a border well",
+     scene: "A HAMMER strikes the well pump at Walwal as the shooting between Italy and Ethiopia begins."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Italy invades Ethiopia",
+     scene: "Mussolini's tanks crush Ethiopia like a MILL."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Italians take Addis Ababa; Haile Selassie goes into exile",
+     scene: "Haile Selassie strikes a MATCH on the dark night as he leaves Addis Ababa for exile."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Italy joins Ethiopia, Eritrea and Somalia as Italian East Africa",
+     scene: "Italy lights one MATCH to burn Ethiopia, Eritrea and Somalia into one colony."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Yekatit 12 massacre in Addis Ababa after an attack on Graziani",
+     scene: "A MUG falls from a table at the Addis Ababa ceremony as the attack on Graziani starts the massacre."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: History of Somalia",
+     event: "Italy invades and occupies British Somaliland",
+     scene: "Italian troops ride a HORSE down to Berbera and take British Somaliland."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Haile Selassie returns to the throne in Addis Ababa",
+     scene: "A RADIO announces that Haile Selassie is back on the Ethiopian throne."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Britain begins its military occupation of Eritrea",
+     scene: "A British RADIO crackles in Asmara as the army takes over Eritrea."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: History of Somalia",
+     event: "British military administration replaces Italian rule in Somalia",
+     scene: "A RADIO in Mogadishu reads out the British military order that ends Italian rule."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "First Anglo-Ethiopian Agreement",
+     scene: "A RHINO stamps the First Anglo-Ethiopian Agreement with its hoof."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Timeline of the Ethiopian Empire",
+     event: "Second Anglo-Ethiopian Agreement",
+     scene: "A WARRIOR stands guard as Britain gives back more Ethiopian territory."}
+  # East Africa
+  - {year: 1840, peg: horse, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Sultan Said moves his capital from Oman to Zanzibar",
+     scene: "Sultan Said rides a HORSE onto the beach of Zanzibar and makes it his capital."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Zanzibar splits from Oman; Majid becomes first Sultan of Zanzibar",
+     scene: "Majid lands from a JET-black ship in Zanzibar as the first sultan."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Germany announces a protectorate in East Africa; the German East Africa Company forms",
+     scene: "Karl Peters stamps a WAFFLE with the German eagle to claim East Africa."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Heligoland-Zanzibar Treaty: Zanzibar becomes a British protectorate",
+     scene: "BEES carry a treaty from Germany to Britain in exchange for Zanzibar."}
+  - {year: 1895, peg: bell, confidence: medium, source: "Search: East Africa Protectorate (Wikipedia mirrors)",
+     event: "Britain forms the East Africa Protectorate",
+     scene: "A BELL rings in Mombasa as Britain takes over the East Africa Company's land."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Anglo-Zanzibar War: a short bombardment ends the sultan's resistance",
+     scene: "British shells hit the palace like a ripe PEACH and the war ends in minutes."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Chief Mkwawa of the Hehe dies by suicide rather than be captured",
+     scene: "Mkwawa hides in a BEEHIVE hut before he takes his own life instead of being captured."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Search: Buganda Agreement 10 March 1900",
+     event: "Buganda Agreement brings Buganda into the Uganda Protectorate",
+     scene: "The Kabaka's advisers pour SAUCE on the Buganda Agreement and sign it with Tucker."}
+  - {year: 1894, peg: bear, confidence: medium, source: "Search: Buganda Agreement / Uganda Protectorate",
+     event: "Britain declares a protectorate over Buganda",
+     scene: "A British BEAR cub wears the flag of the new Buganda protectorate."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Maji Maji rebellion against German rule begins",
+     scene: "A SEAL sprays holy water and the Maji Maji rebels rise against the Germans."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "German forces end the Maji Maji rebellion",
+     scene: "German troops on SKI skim over the burned fields to end the Maji Maji rebellion."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Battle of Tanga: Germans defeat a British landing",
+     scene: "German riflemen shoot from a TOWER at the British landing at Tanga."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "British and South African troops occupy Dar es Salaam",
+     scene: "A satellite DISH on the port roof of Dar es Salaam is the first target of the British landing."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "British mandate over Tanganyika takes effect",
+     scene: "The British governor of Tanganyika holds his NOSE as he signs the mandate."}
+  - {year: 1920, peg: nose, confidence: high, source: "Search: Kenya Colony (Wikipedia mirrors)",
+     event: "Britain turns the East Africa Protectorate into the Colony of Kenya",
+     scene: "A NOSE shaped like Mount Kenya sniffs the new colony flag."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "Harry Thuku is arrested in Nairobi; protesters are shot",
+     scene: "A NUN runs from the crowd outside the Nairobi police station after Harry Thuku is arrested."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Belgium takes Ruanda-Urundi as a League mandate",
+     scene: "A NUN holds the League of Nations paper that gives Ruanda-Urundi to Belgium."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Timeline of Tanzanian history",
+     event: "Tanganyika African Association founded",
+     scene: "Members of the new Tanganyika African Association turn a door KNOB and walk into their first meeting."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Search: Kenya African Union (Wikipedia)",
+     event: "Kenya African Union formed; Eliud Mathu is the first African on the Legislative Council",
+     scene: "A WARRIOR hands Eliud Mathu his first seat in the Kenyan council."}
+  # Central Africa
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Leopold II organises the International African Association",
+     scene: "Leopold II keeps an African lion in a CAGE labelled International African Association."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Berlin Conference opens and sets the rules for claiming Africa",
+     scene: "A wicked FAIRY in Berlin cuts Africa into colonies."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: History of the DR Congo",
+     event: "Leopold II founds the Congo Free State and its Force Publique",
+     scene: "Leopold II cuts a WAFFLE the size of Belgium eighty times over and calls it the Congo."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Berlin Act signed: the Congo Basin becomes a free-trade area",
+     scene: "Delegates sign the Berlin Act on a giant WAFFLE shaped like the Congo Basin."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Stairs expedition kills Msiri and takes Katanga for the Congo Free State",
+     scene: "Stairs' BOOT steps on Msiri's flag at Bunkeya and Katanga is lost."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP mirror: History of the DR Congo",
+     event: "Roger Casement's report exposes abuses in the Congo Free State",
+     scene: "Casement pulls a report out of a SEWER and shows the abuses of the Free State."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: History of the DR Congo",
+     event: "Belgium takes the Congo from Leopold II",
+     scene: "Leopold II lies on a SOFA and gives up the Congo to Belgium."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "France founds French Equatorial Africa",
+     scene: "France throws DICE and four colonies join as French Equatorial Africa."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Chad and other equatorial colonies join Free France",
+     scene: "A HORSE gallops from Fort-Lamy with news that Chad is with De Gaulle."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: History of Madagascar",
+     event: "Brazzaville Conference: De Gaulle plans a new status for the French colonies",
+     scene: "A WARRIOR in Free French uniform opens the Brazzaville Conference with De Gaulle."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Fashoda Incident: Kitchener and Marchand meet on the Nile",
+     scene: "Kitchener and Marchand meet at Fashoda by a BEEHIVE and neither will leave."}
+  # West Africa and the Sahel
+  - {year: 1804, peg: sewer, confidence: high, source: "Darling: Africa in 19th century",
+     event: "Usman dan Fodio's jihad founds the Sokoto Caliphate",
+     scene: "Usman dan Fodio washes the Hausa courts into the SEWER."}
+  - {year: 1808, peg: sofa, confidence: medium, source: "Search: Sokoto Caliphate (Wikipedia mirrors)",
+     event: "Fulani forces capture the Gobir capital and end the Hausa kingdom",
+     scene: "Fulani warriors sit on the Gobir king's SOFA after they take his capital."}
+  - {year: 1808, peg: sofa, confidence: unverified,
+     event: "Sierra Leone becomes a British crown colony",
+     scene: "A SOFA with a crown on it stands in Freetown as Britain takes the colony."}
+  - {year: 1816, peg: dish, confidence: high, source: "Search: Bathurst (Banjul) founded 1816",
+     event: "Britain founds Bathurst on the Gambia river",
+     scene: "Captain Grant plants a DISH shaped like a fort on the river island of Bathurst."}
+  - {year: 1817, peg: dog, confidence: unverified,
+     event: "Usman dan Fodio dies; Muhammad Bello leads Sokoto",
+     scene: "A DOG leads Muhammad Bello to the grave of his father, Usman dan Fodio."}
+  - {year: 1818, peg: dove, confidence: unverified,
+     event: "Seku Amadu founds Hamdullahi, the capital of Massina",
+     scene: "A DOVE carries a brick to the new city of Hamdullahi."}
+  - {year: 1821, peg: ant, confidence: high, source: "Search: Liberia, ACS buys Cape Mesurado",
+     event: "American Colonization Society acquires Cape Mesurado, the site of Monrovia",
+     scene: "An ANT carries a deed for Cape Mesurado to the agent of the American Colonization Society."}
+  - {year: 1824, peg: hanger, confidence: high, source: "Search: Anglo-Ashanti wars, Nsamankow",
+     event: "Battle of Nsamankow: the Asante army kills British governor MacCarthy",
+     scene: "MacCarthy's coat hangs on a HANGER in Kumasi after the Asante win at Nsamankow."}
+  - {year: 1826, peg: nacho, confidence: medium, source: "Search: Anglo-Ashanti wars, Dodowa",
+     event: "Battle of Dodowa (Katamanso): Britain and its allies defeat the Asante",
+     scene: "Allied troops at Dodowa scoop up a NACHO-shaped Asante flag after the battle."}
+  - {year: 1838, peg: movie, confidence: disputed, source: "WP mirror: History of Liberia (1838 and 1839)",
+     event: "American settlements unite as the Commonwealth of Liberia",
+     scene: "Settlers watch a MOVIE of their united colony, called the Commonwealth of Liberia."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP mirror: History of Liberia",
+     event: "Liberia declares independence",
+     scene: "Liberia raises its flag on a ROCK at Monrovia."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: History of Liberia",
+     event: "Britain recognises Liberian independence",
+     scene: "A British ship sails around a REEF to greet the new republic of Liberia."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: History of Liberia",
+     event: "Maryland in Africa is forced to join Liberia",
+     scene: "A LAWYER pleads for Maryland in Africa as the Grebo and Kru fight and the state joins Liberia."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Treaty of Cession: Britain annexes Lagos",
+     scene: "King Dosunmu signs Lagos away as a JET of steam rises from the British gunboat."}
+  - {year: 1861, peg: jet, confidence: unverified,
+     event: "Umar Tall's army takes Segou for the Tukulor Empire",
+     scene: "Umar Tall's army sends a JET of fire over the Bambara palace at Segou."}
+  - {year: 1874, peg: car, confidence: high, source: "Search: Anglo-Ashanti wars (Kumasi sacked 1874)",
+     event: "British troops burn Kumasi; Britain declares the Gold Coast a colony",
+     scene: "A British staff CAR drives through burning Kumasi before Britain declares the Gold Coast a colony."}
+  - {year: 1874, peg: car, confidence: high, source: "Search: Anglo-Ashanti wars (Treaty of Fomena)",
+     event: "Treaty of Fomena ends the war between Britain and the Asante",
+     scene: "The Asante king signs the Treaty of Fomena on the hood of a CAR."}
+  - {year: 1879, peg: cowboy, confidence: unverified,
+     event: "Samori Toure begins to build the Wassoulou Empire",
+     scene: "A COWBOY on a Guinea savanna rounds up the villages for Samori Toure."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Britain exiles King Jaja of Opobo",
+     scene: "A FOX leads King Jaja onto the British ship that takes him into exile."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "British Maxim guns defeat the Ijebu kingdom",
+     scene: "A PIANO rolls on a gunboat in the Lagos lagoon as the guns play against the Ijebu."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Second Franco-Dahomean War begins",
+     scene: "A French band plays a PIANO outside Abomey as the Second Franco-Dahomean War begins."}
+  - {year: 1894, peg: bear, confidence: high, source: "Search: Behanzin surrenders January 1894",
+     event: "King Behanzin of Dahomey surrenders to France",
+     scene: "A BEAR brings Behanzin out of the bush and he surrenders to the French."}
+  - {year: 1894, peg: bear, confidence: low, source: "Search: Gambia Colony and Protectorate (one source)",
+     event: "Britain declares a protectorate over the interior of the Gambia",
+     scene: "A BEAR guards the upper Gambia river for the British flag."}
+  - {year: 1888, peg: fife, confidence: disputed, source: "Search: Gambia colony 1886, 1888, 1889",
+     event: "The Gambia becomes a separate British crown colony",
+     scene: "A FIFE plays at Bathurst as the Gambia becomes a crown colony."}
+  - {year: 1895, peg: bell, confidence: high, source: "Search: French West Africa created 1895",
+     event: "France creates French West Africa",
+     scene: "A BELL in Dakar rings for four colonies that France ties into French West Africa."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "King Koko of Nembe attacks the Royal Niger Company at Akassa",
+     scene: "King Koko rings a BELL as his canoes hit the Royal Niger Company depot at Akassa."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Portuguese capture Gungunhana, ruler of Gaza",
+     scene: "Mouzinho ties a BELL to Gungunhana's wrist as he captures him at Chaimite."}
+  - {year: 1896, peg: peach, confidence: high, source: "Search: Prempeh I arrested January 1896",
+     event: "British troops enter Kumasi and arrest the Asantehene Prempeh I",
+     scene: "A British officer picks a PEACH from the palace tree in Kumasi and arrests Prempeh I."}
+  - {year: 1896, peg: peach, confidence: high, source: "Search: Sierra Leone protectorate 1896",
+     event: "Britain declares a protectorate over the Sierra Leone interior",
+     scene: "A governor hands a PEACH to each chief to claim the Sierra Leone interior."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "British Benin Expedition captures Benin City",
+     scene: "A PIG runs through the ruined streets of Benin City as British troops march in."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Search: Samori Toure captured 29 September 1898",
+     event: "French capture Samori Toure",
+     scene: "French soldiers pull Samori Toure out of a BEEHIVE-shaped hut at Guelemou."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Search: Hut Tax War of 1898",
+     event: "Hut Tax War in Sierra Leone",
+     scene: "Bai Bureh sets a BEEHIVE on the tax collector's desk to rise against the hut tax."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Protectorate of Northern Nigeria created under Crown rule",
+     scene: "Lugard pours SAUCE on the map of Northern Nigeria and calls it his protectorate."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Search: Battle of Kousseri 22 April 1900",
+     event: "Battle of Kousseri: French defeat and kill Rabih",
+     scene: "Rabih's camp at Kousseri is drenched in SAUCE and the French soldiers move in."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Search: War of the Golden Stool 1900",
+     event: "War of the Golden Stool: the Asante rise against Britain under Yaa Asantewaa",
+     scene: "Yaa Asantewaa spills SAUCE on the governor's chair as she calls the Asante to fight for the Golden Stool."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Anglo-Aro War begins",
+     scene: "British troops open a bottle of SODA at the Aro oracle as the war begins."}
+  - {year: 1902, peg: sun, confidence: unverified,
+     event: "Britain annexes the Asante kingdom to the Gold Coast",
+     scene: "The SUN falls on a Gold Coast flag raised in Kumasi."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "British troops capture Kano and Sokoto; the Sokoto Caliphate ends",
+     scene: "A SUMO wrestler in a British helmet pins the last caliph at Sokoto."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Lagos Colony joins the Southern Nigeria Protectorate",
+     scene: "Lagos sets a plate of SUSHI beside the plate of Southern Nigeria."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Lugard joins Northern and Southern Nigeria into one colony",
+     scene: "Lugard ties the north and south of Nigeria with a rope on a TOWER."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Blaise Diagne is elected the first African deputy for Senegal",
+     scene: "Blaise Diagne waves to voters from a TOWER in Dakar after his win."}
+  - {year: 1916, peg: dish, confidence: medium, source: "WP mirror: Scramble for Africa",
+     event: "Britain and France divide German Togoland",
+     scene: "Britain and France split a DISH of Togo between them."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "National Congress of British West Africa founded in Accra",
+     scene: "Delegates at Accra follow their NOSE to the first meeting of the Congress of British West Africa."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Clifford Constitution gives Nigeria its first elected African members",
+     scene: "A NUN counts the first elected Nigerian members under the Clifford Constitution."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Women's War: Igbo women protest against colonial taxation",
+     scene: "Igbo women turn the door KNOB of the district office to protest the new tax."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: History of Liberia",
+     event: "League of Nations report condemns Liberia; President King resigns",
+     scene: "A MOUSE bites the report and President King signs his resignation."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "Nigerian Youth Movement founded",
+     scene: "A MATCH lights the new flag of the Nigerian Youth Movement."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: History of Liberia",
+     event: "Liberia and the United States sign a defense pact",
+     scene: "A US RHINO guards a Liberian airfield under the new defense pact."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Timeline of Nigerian history",
+     event: "National Council of Nigeria and the Cameroons founded by Nnamdi Azikiwe",
+     scene: "A WARRIOR carries Azikiwe's banner to the first meeting of the new national council."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Search: Nachtigal and Togoland treaty July 1884",
+     event: "Germany declares a protectorate over Togoland",
+     scene: "A FAIRY sprinkles German flags over the Togo coast after Nachtigal's treaty."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Search: Nachtigal Cameroon treaty July 1884",
+     event: "Germany makes treaties with Duala chiefs and claims Kamerun",
+     scene: "A FAIRY lays a German treaty on the table of the Duala chiefs."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "France and Britain receive League mandates over Cameroon",
+     scene: "A NUN holds a split cake marked Cameroun for France and the British Cameroons."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Scramble for Africa",
+     event: "Bailundo revolt against Portuguese rule in Angola",
+     scene: "The Bailundo rebels rise at sunrise under a red SUN against the Portuguese."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "British ultimatum forces Portugal to give up its claim to the land between Angola and Mozambique",
+     scene: "BEES swarm a Portuguese map as the British ultimatum cuts out the land between Angola and Mozambique."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "Anglo-French declaration sets the border between the Nile and Chad spheres",
+     scene: "A French and a British diplomat smoke one PIPE after they settle the border on the map."}
