@@ -52,8 +52,14 @@ class TestPrompts:
         assert 'mnemonic' in p and 'capital' in p
         assert all(w in p for w in ('striking', 'memorable', 'strange'))
 
-    def test_default_model_is_the_full_one(self):
-        assert si.DEFAULT_MODEL == 'gemini-3.1-flash-image'
+    def test_default_model_is_lite(self):
+        # User's choice 2026-11-05: Nano Banana Lite draws by default; the full model is opt-in.
+        assert si.DEFAULT_MODEL == si.LITE_MODEL == 'gemini-3.1-flash-lite-image'
+
+    def test_build_looks_in_full_model_dir_before_lite(self):
+        # The 24 decks drawn with the full model before the switch must keep their pictures.
+        assert si.SHIPPED_MODELS == (si.FULL_MODEL, si.LITE_MODEL)
+        assert si.FULL_MODEL == 'gemini-3.1-flash-image'
 
     def test_realistic_style_asks_for_a_photo(self):
         assert 'photorealistic' in si.anchor_prompt('LAMB', 'realistic').lower()
@@ -77,6 +83,11 @@ class TestRequestBody:
         body = si.request_body('draw it')
         assert body['contents'][0]['parts'] == [{'text': 'draw it'}]
         assert body['generationConfig']['responseModalities'] == ['IMAGE']
+
+    def test_every_request_asks_for_landscape(self):
+        # Unset, Lite drew two whole decks portrait (Engramme, Ark Biotech; 2026-11-05).
+        for body in (si.request_body('x'), si.request_body('x', reference=b'J')):
+            assert body['generationConfig']['imageConfig'] == {'aspectRatio': '16:9'}
 
     def test_reference_image_rides_as_inline_data(self):
         body = si.request_body('draw it', reference=b'JPGBYTES')

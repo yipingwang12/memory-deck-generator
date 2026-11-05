@@ -301,6 +301,39 @@ class TestCli:
         assert (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals"
                 / "q13.webp").read_bytes() == b"gemini"
 
+    def _gemini_picture(self, tmp_path, model, data):
+        """One current q13 picture in ``model``'s Gemini directory."""
+        import yaml
+        from deck_generator import scene_images as si
+        scenes = yaml.safe_load((self.CFG.parent / "alnylam_pharmaceuticals.mnemonics.yaml").read_text())
+        d = si.image_dir("alnylam_pharmaceuticals", model, root=tmp_path / "gen")
+        si.record(d, next(j for j in si.plan(scenes, d) if j.name == "q13"), model=model)
+        (d / "q13.webp").write_bytes(data)
+
+    def _built_q13(self, tmp_path):
+        from deck_generator import companies_cli
+        companies_cli.main(["--config", str(self.CFG), "--build", "--out", str(tmp_path / "d"),
+                            "--mnemonics-out", str(tmp_path / "m"),
+                            "--scene-images", str(tmp_path / "gen")])
+        return (tmp_path / "m" / "images" / "companies_alnylam_pharmaceuticals" / "q13.webp").read_bytes()
+
+    def test_build_ships_full_model_pictures_drawn_before_the_lite_default(self, tmp_path):
+        from deck_generator import scene_images as si
+        self._gemini_picture(tmp_path, si.FULL_MODEL, b"full")
+        assert self._built_q13(tmp_path) == b"full"
+
+    def test_build_ships_lite_pictures(self, tmp_path):
+        from deck_generator import scene_images as si
+        self._gemini_picture(tmp_path, si.LITE_MODEL, b"lite")
+        assert self._built_q13(tmp_path) == b"lite"
+
+    def test_full_model_pictures_win_over_lite(self, tmp_path):
+        """A live deck does not silently change look when a Lite set also exists."""
+        from deck_generator import scene_images as si
+        self._gemini_picture(tmp_path, si.FULL_MODEL, b"full")
+        self._gemini_picture(tmp_path, si.LITE_MODEL, b"lite")
+        assert self._built_q13(tmp_path) == b"full"
+
     def test_bad_scene_refuses_the_build(self, tmp_path):
         import shutil
         import pytest

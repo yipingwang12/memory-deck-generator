@@ -22,7 +22,15 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2] / 'results' / 'generate_scene_images'
 API = 'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
-DEFAULT_MODEL = 'gemini-3.1-flash-image'
+FULL_MODEL = 'gemini-3.1-flash-image'
+LITE_MODEL = 'gemini-3.1-flash-lite-image'
+#: Lite draws by default (user's choice, 2026-11-05); pass ``--model`` for the full model.
+DEFAULT_MODEL = LITE_MODEL
+#: Gemini directories the build ships from, in order. Full first: the 24 decks drawn with it
+#: before the switch keep their look even if a Lite set is drawn later.
+SHIPPED_MODELS = (FULL_MODEL, LITE_MODEL)
+#: Requested on every draw. Unset, the model picks: Lite drew two whole decks portrait.
+ASPECT_RATIO = '16:9'
 KEYCHAIN_SERVICE = 'gemini-api-key'
 MANIFEST = 'manifest.json'
 #: The Three.js renderer's folder and file-stem suffix (``q01_anime.webp``). Its pictures are
@@ -117,7 +125,8 @@ def request_body(prompt: str, reference: bytes | None = None) -> dict:
         parts.append({'inline_data': {'mime_type': 'image/jpeg',
                                       'data': base64.b64encode(reference).decode()}})
     return {'contents': [{'parts': parts}],
-            'generationConfig': {'responseModalities': ['IMAGE']}}
+            'generationConfig': {'responseModalities': ['IMAGE'],
+                                 'imageConfig': {'aspectRatio': ASPECT_RATIO}}}
 
 
 def extract_image(response: dict) -> bytes:
