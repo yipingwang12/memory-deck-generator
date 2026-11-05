@@ -166,7 +166,7 @@ What will bite you:
   findings do. Reword the stem; never renumber.
 - Artifact is `source: manual` — copy to the quiz repo by hand; neither `deck-export`'s clear
   nor the orchestrator's sync produces or removes it.
-- **Memory scenes** (all 108 companies / 1,106 cards since 2026-10-30; first 41 on 2026-10-21): config key `mnemonics: <slug>.mnemonics.yaml`, rules in
+- **Memory scenes** (all 121 companies / 1,218 cards; 108 since 2026-10-30, 13 more 2026-11-05; first 41 on 2026-10-21): config key `mnemonics: <slug>.mnemonics.yaml`, rules in
   `configs/companies/mnemonic_policy.md`, checked by `company_mnemonics.py` (anchor in capitals
   in every scene, ≤25 words; every year/count/money/area number in the answer → its peg from
   `configs/history/major_pegs.yaml`, in answer order; money/area also need a unit image).
@@ -176,7 +176,7 @@ What will bite you:
   `memory-quiz-app/data/mnemonics/` (`--mnemonics-out`). The scene file is `.yaml` beside the
   deck configs — a loop over `configs/companies/*.yaml` must skip `*.mnemonics.yaml`.
 - **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
-- **Scene images** (2026-10-23, Alnylam only): `scripts/generate_scene_images.py <slug>` → `results/generate_scene_images/<slug>/<model>/<style>/` (default `gemini-3.1-flash-image`, `realistic`; key from macOS Keychain `gemini-api-key`). Anchor drawn first, sent as reference with every scene; `manifest.json` records each prompt, so only new/edited scenes are redrawn (paid). `--build` copies images drawn from the scene's CURRENT text to `memory-quiz-app/data/mnemonics/images/<deck>/` and names them in the sidecar (`image`). Model sometimes writes text despite the prompt — eyeball before shipping.
+- **Scene images** (2026-10-23, Alnylam only): `scripts/generate_scene_images.py <slug>` → `results/generate_scene_images/<slug>/<model>/<style>/` (default **`gemini-3.1-flash-lite-image`** since 2026-11-05, user's choice; `--model gemini-3.1-flash-image` for the full model; `realistic`; key from macOS Keychain `gemini-api-key`). `--build` ships from the full-model dir first, then Lite, then Three.js (`SHIPPED_MODELS`) — so the 24 full-model decks keep their look. Changing `DEFAULT_MODEL` alone would have dropped them: `image_dir` defaults to it. Anchor drawn first, sent as reference with every scene; `manifest.json` records each prompt, so only new/edited scenes are redrawn (paid). `--build` copies images drawn from the scene's CURRENT text to `memory-quiz-app/data/mnemonics/images/<deck>/` and names them in the sidecar (`image`). Model sometimes writes text despite the prompt — eyeball before shipping.
 
 ## Source-file decks (`deck-code-mcq`)
 
