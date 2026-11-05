@@ -14,6 +14,15 @@
 - latin_america: Mexico, Central America, Caribbean, South America
 - oceania: Australia, New Zealand, New Guinea, Pacific islands
 
+Boundary rules (2026-11-05):
+- Finland → western_europe (with Scandinavia), in every period.
+- Constantinople / Istanbul (the city, both shores) → eastern_europe, in every period (Byzantine and
+  Ottoman). Anatolia outside the city → west_asia.
+- Steppe: the Pontic-Caspian steppe west of the Ural River → eastern_europe. The Kazakh steppe east of
+  the Ural River, Mongolia and the Altai-Sayan mountains → central_asia, also the parts inside modern
+  Russia. The Siberian forest and tundra → eastern_europe.
+- Scope of events issued outside a region: policy.md "Scope".
+
 ## Themes (slug: scope)
 - politics: states, rulers, wars, battles, treaties, revolutions, laws, independence
 - science: science, technology, medicine, mathematics, engineering, inventions, astronomy
@@ -145,3 +154,40 @@ Open:
   Évora 1583 (no fetched source); Hooghly factory 1651; Calcutta villages 1698 vs 1690; Guangwu slave
   edicts (26, 31, 35) need Hou Hanshu; western_europe_religion has 129 unverified.
 - Future cell: Meroë iron smelting (7th–6th c. BCE) → north_africa economy pre500bce.
+
+## Rules + fix pass (2026-11-05)
+Rules added (policy.md, grid.md): Scope (happens in region OR main subject/effect there; prizes only for
+work done in region), invention = first working public demonstration (patent only as fallback), calendar
+straddle = `medium`, boundaries (Finland → western_europe; Constantinople → eastern_europe always; steppe
+split at the Ural River). deck-history-check warns above 10 dates per peg per cell (38 pegs then).
+Fix pass (one Sonnet agent, brief `fix_prompt.md`, 29 of 60 searches): Jin Ping Mei 1617, Palace of Eternal
+Life 1689, 8 western_europe_arts relabelled, Gheo-Shih -7600 (calibrated), La Galgada / Kotosh -3000
+(Kotosh disputed), Alaca Höyük -2850 both cells (disputed), Maurya -321 in world_dates, Kanishka 127 everywhere
+(Sarnath 129), 8 one-source dates now high, Mugujeonggwang text fixed, McCormick 1831 demonstration, Bíró 1931.
+pending_moves.yaml started (Ambedkar, Meroë notes; cell agents read it).
+Still open: Karnak Senusret I (accession year only, `low`); Guangwu edicts unverified (Hou Hanshu
+unreachable); Ouidah disputed 1692/1650; Hong Canal, Esen, Emerald Buddha, Khuc Thua Du disputed — maybe
+calendar straddle; water clock / sundial / glass / wheel invention dates not checked; Khashoggi (Istanbul)
+kept in west_asia_politics under Scope (b).
+
+## Wave 7 (2026-11-05)
+Each region takes a period it had no cell in; each theme and each period twice; fills the five empty
+theme × period pairs (politics + society pre500bce, science 500bce_500ce, religion + economy 1945_present).
+western_europe politics pre500bce, eastern_europe society pre500bce, subsaharan_africa politics 500bce_500ce,
+latin_america science 500bce_500ce, north_america society 500_1500, oceania arts 500_1500,
+west_asia science 1500_1800, north_africa economy 1500_1800, south_asia religion 1800_1945,
+southeast_asia arts 1800_1945, east_asia economy 1945_present, central_asia religion 1945_present.
+Result: 866 dates (high 465, medium 234, low 51, disputed 40, unverified 76); check exit 0 on all.
+Every agent spent all 25 searches. Sizes 14–192 (south_asia_religion 192, southeast_asia_arts 141;
+oceania_arts_500_1500 14, subsaharan_africa_politics_500bce_500ce 21 — little datable material, not padded).
+Grid now 85 of 432 cells, about 11,720 dates. Main session fixed: Bank of Japan negative rate 2014 → 2016
+(CNN), Burmese Days 1935 → 1934 (New York first edition; first-public-appearance rule).
+The Constantinople rule moved Ottoman science out of west_asia_science_1500_1800 (Taqi al-Din, Müteferrika)
+→ pending_moves.yaml for eastern_europe_science_1500_1800. Endubis coins and the explorers → pending for
+subsaharan_africa_economy_500bce_500ce.
+Open:
+- El Palmar Stela 46 (180 CE, latin_america_science) rests on 2026 press reports; re-check.
+- Theme fit: Pyramid of the Sun (arts?) and Paracas skull shaping (society?) in latin_america_science.
+- Nan Madol 800 and Moai 1250 (oceania_arts, disputed): check against the start-of-phase rule.
+- Dalai Lama visits to Mongolia 1979 / 1991 (central_asia_religion): weak, unverified.
+- Guruvayur satyagraha 1931 missing from south_asia_religion (no source found).
