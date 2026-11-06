@@ -1,0 +1,707 @@
+# Cell: Western Europe x economy x 1500 to 1799. DRAFT 2026-11-05.
+# Scope: Iberia, France, Low Countries, British Isles, Germany, Switzerland, Austria, Italy,
+# Scandinavia, Finland, Iceland. Trade, money, agriculture, industry, exploration, trade routes,
+# companies, economic crises. Voyages count by their departure or return in the region.
+# Inventions (steam engine, spinning machines, coke smelting) stay in western_europe_science_1500_1800;
+# factories, firms and canals that use them are here. Joachimsthal (Bohemia) is eastern_europe.
+# Dates: memory pass + web check (50 searches, plus fetches of the Kiwix Wikipedia mirror).
+# Peg rules as policy.md: last two digits of the year; approximate year ending 00: first two digits.
+# A company or bank -> the year it is founded or chartered. A law -> the year it is passed.
+# A crisis or phase -> the year it starts. A voyage -> the year of departure or return named in the text.
+# confidence: high | medium | low | disputed | unverified (no source found or not checked)
+dates:
+  # British Isles
+  - {year: 1544, peg: warrior, confidence: high, source: "WP mirror: Great Debasement",
+     event: "Henry VIII starts the Great Debasement of the coinage",
+     scene: "A WARRIOR melts Henry VIII's silver shillings in a camp fire and recasts them with cheap copper: the Great Debasement starts."}
+  - {year: 1545, peg: railway, confidence: high, source: "Web search: Usury Act 1545 (vLex)",
+     event: "Usury Act makes interest legal up to ten percent",
+     scene: "A RAILWAY signal stops at ten in the hundred: Henry VIII's Act lets lenders charge interest up to that rate."}
+  - {year: 1551, peg: wallet, confidence: high, source: "WP mirror: Great Debasement",
+     event: "Edward VI's council ends the Great Debasement",
+     scene: "A giant WALLET swallows the last copper-rich shillings as Edward VI's council orders the debasement to stop."}
+  - {year: 1553, peg: llama, confidence: high, source: "WP mirror: Muscovy Company",
+     event: "Willoughby and Chancellor sail from London to seek a north-east route to Asia",
+     scene: "A LLAMA tows Willoughby's and Chancellor's three ships down the Thames, bound north-east for Cathay."}
+  - {year: 1555, peg: lily, confidence: high, source: "WP mirror: Muscovy Company",
+     event: "Muscovy Company chartered for trade with Russia",
+     scene: "Mary I presses a frozen LILY seal on the charter that gives the Muscovy Company all English trade with Russia."}
+  - {year: 1560, peg: cheese, confidence: high, source: "WP mirror: Great Debasement",
+     event: "Elizabeth I calls in the debased coins for a full recoinage",
+     scene: "CHEESE graters at the Tower shave down every debased coin that Elizabeth I calls in, and fine silver replaces them."}
+  - {year: 1563, peg: gem, confidence: high, source: "Web search: Statute of Artificers 1562",
+     event: "Statute of Artificers: seven-year apprenticeships and wages set by justices",
+     scene: "A GEM cutter's boy signs on for seven years, the term the Statute of Artificers now demands of every apprentice."}
+  - {year: 1571, peg: cat, confidence: high, source: "WP mirror: London Stock Exchange",
+     event: "Elizabeth I opens Gresham's exchange and names it the Royal Exchange",
+     scene: "A CAT in a crown cuts the ribbon on Gresham's bourse, and Elizabeth I names it the Royal Exchange."}
+  - {year: 1571, peg: cat, confidence: high, source: "Web search: Usury Act 1571",
+     event: "Act against Usury allows interest up to ten percent again",
+     scene: "A CAT counts out ten coins on every hundred lent, the most interest the restored usury law lets it take."}
+  - {year: 1576, peg: cage, confidence: high, source: "WP mirror: Martin Frobisher",
+     event: "Frobisher sails from Blackwall to seek a north-west passage",
+     scene: "A CAGE door swings open at Blackwall, and Frobisher's two small ships sail out to hunt a north-west way to Cathay."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP mirror: Muscovy Company",
+     event: "Elizabeth I gives the Muscovy Company a whaling monopoly",
+     scene: "Elizabeth I cuts a whale-shaped CAKE and gives the whole of it to the Muscovy Company: all English whaling is theirs."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP mirror: Martin Frobisher",
+     event: "Frobisher's second voyage brings home ore thought to hold gold; it is worthless",
+     scene: "A black CAKE of rock from Frobisher's second voyage is unloaded as gold ore; the smelters find nothing in it."}
+  - {year: 1580, peg: vase, confidence: high, source: "WP mirror: Francis Drake",
+     event: "Drake returns to Plymouth with Spanish treasure from his voyage round the world",
+     scene: "A VASE of Spanish silver rolls down the Golden Hind's gangplank at Plymouth and pays the investors many times over."}
+  - {year: 1581, peg: foot, confidence: high, source: "Web search: Levant Company (Turkey Co. 1581)",
+     event: "Turkey Company chartered for trade with the Ottoman Empire",
+     scene: "A FOOT in a Turkish slipper stamps the Turkey Company's charter and opens English trade with the Ottomans."}
+  - {year: 1592, peg: piano, confidence: high, source: "Web search: Levant Company 1592 merger",
+     event: "Turkey and Venice Companies merge as the Levant Company",
+     scene: "Two halves of a PIANO are glued into one: the Turkey and Venice Companies become the Levant Company."}
+  - {year: 1598, peg: beehive, confidence: unverified,
+     event: "Elizabeth I closes the Hanseatic Steelyard in London",
+     scene: "A BEEHIVE swarms the London Steelyard and drives the Hansa merchants out on Elizabeth I's order."}
+  - {year: 1600, peg: sauce, confidence: high, source: "Web search: EIC charter 31 Dec 1600",
+     event: "Elizabeth I charters the East India Company",
+     scene: "A pot of curry SAUCE carries Elizabeth I's charter: the East India Company gets all English trade east of the Cape."}
+  - {year: 1601, peg: soda, confidence: high, source: "Web search: 1601 East India Company Voyage",
+     event: "East India Company's first fleet sails under James Lancaster",
+     scene: "A SODA bottle pops its cork and blasts the Red Dragon out of Woolwich at the head of the first East India fleet."}
+  - {year: 1614, peg: tower, confidence: high, source: "Web search: Cockayne Project (WP, Edmundson)",
+     event: "Cockayne Project: only dyed and finished cloth may leave England",
+     scene: "A dye TOWER rises in London, and Alderman Cockayne's new company stops all undyed English cloth from going abroad."}
+  - {year: 1617, peg: dog, confidence: high, source: "Web search: Cockayne Project 1614-1617",
+     event: "Cockayne Project fails; the Merchant Adventurers get their charter back",
+     scene: "A DOG drags the old charter back to the Merchant Adventurers as Cockayne's dyed-cloth company collapses."}
+  - {year: 1624, peg: hanger, confidence: unverified,
+     event: "Statute of Monopolies limits royal monopolies and protects patents for new inventions",
+     scene: "A HANGER strips the royal monopolies off Parliament's rail and leaves only patents for new inventions."}
+  - {year: 1630, peg: mouse, confidence: unverified,
+     event: "Earl of Bedford and Vermuyden start to drain the Great Level of the Fens",
+     scene: "A MOUSE army digs the first Bedford drain and pulls the water out of the Fens for Vermuyden."}
+  - {year: 1640, peg: horse, confidence: unverified,
+     event: "Charles I seizes the merchants' bullion held in the Tower mint",
+     scene: "A HORSE carts away the merchants' gold from the Tower mint, seized by Charles I."}
+  - {year: 1643, peg: ram, confidence: unverified,
+     event: "Parliament brings in the excise tax on goods",
+     scene: "A RAM butts open every beer barrel to collect Parliament's new excise duty."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP mirror: Navigation Acts",
+     event: "First Navigation Act: goods may come into England only in English ships",
+     scene: "A WALLET-shaped boom closes English harbours to Dutch carriers under the first Navigation Act."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP mirror: Navigation Acts",
+     event: "Navigation Act lists colonial goods that may go only to England",
+     scene: "A CHEESE-wax seal on each sugar and tobacco cask says it may sail only to England, by the new Navigation Act."}
+  - {year: 1660, peg: cheese, confidence: medium, source: "Web search: Royal Adventurers (1660; WP 1662)",
+     event: "Company of Royal Adventurers gets a monopoly of English trade with West Africa",
+     scene: "A CHEESE-yellow nugget on the charter seal: the Royal Adventurers get all English trade with West Africa, gold first."}
+  - {year: 1662, peg: chain, confidence: unverified,
+     event: "Hearth tax charged on every fireplace",
+     scene: "A CHAIN runs from every chimney to the Exchequer: the new hearth tax charges each fireplace."}
+  - {year: 1663, peg: gem, confidence: high, source: "WP mirror: Navigation Acts",
+     event: "Staple Act: European goods for the colonies must pass through England",
+     scene: "A GEM bound for Virginia must first unload at an English port, as the Staple Act demands."}
+  - {year: 1663, peg: gem, confidence: unverified,
+     event: "First turnpike act: tolls pay for the Great North Road in Hertfordshire",
+     scene: "A GEM-studded toll gate swings across the Great North Road at Wadesmill under the first turnpike act."}
+  - {year: 1663, peg: gem, confidence: unverified,
+     event: "Royal Mint strikes the first gold guinea",
+     scene: "A GEM-hard gold coin drops from the Royal Mint's new press: the first guinea."}
+  - {year: 1672, peg: coin, confidence: high, source: "Web search: Stop of the Exchequer (WP)",
+     event: "Stop of the Exchequer: Charles II stops paying the goldsmith bankers",
+     scene: "A COIN freezes in the air at the Exchequer door as Charles II stops paying the goldsmith bankers."}
+  - {year: 1672, peg: coin, confidence: high, source: "Web search: Royal African Company, 1672 charter",
+     event: "Royal African Company chartered",
+     scene: "A COIN press stamps an elephant on Guinea gold as the new Royal African Company takes over the Africa trade."}
+  - {year: 1680, peg: vase, confidence: disputed, source: "Web search: Barbon Fire Office 1680 vs 1681",
+     event: "Nicholas Barbon opens the Fire Office, an early fire insurer",
+     scene: "A VASE pours water on a burning London house that wears the badge of Nicholas Barbon's new Fire Office."}
+  - {year: 1688, peg: fife, confidence: medium, source: "WP mirror: Lloyd's of London (1686/1688)",
+     event: "Lloyd's coffee house first named in print; ship insurers meet there",
+     scene: "A FIFE plays in Edward Lloyd's coffee house to call shipowners and underwriters to the tables."}
+  - {year: 1689, peg: fob, confidence: unverified,
+     event: "Corn bounty: Parliament pays a bounty on grain exports",
+     scene: "A silver watch FOB is paid to every merchant who ships English grain abroad under the new export bounty."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP mirror: Lloyd's of London",
+     event: "Lloyd's coffee house moves to Lombard Street",
+     scene: "A BOOT carries Lloyd's coffee pots to Lombard Street, the new home of London ship insurance."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP mirror: Bank of England",
+     event: "Bank of England founded to lend to the government",
+     scene: "A BEAR hands King William a huge war loan and gets the charter of the Bank of England in return."}
+  - {year: 1695, peg: bell, confidence: high, source: "Web search: Bank of Scotland Act 17 July 1695",
+     event: "Scottish Parliament creates the Bank of Scotland",
+     scene: "The Scottish Parliament rings a BELL that cracks open into a vault: the new Bank of Scotland."}
+  - {year: 1696, peg: peach, confidence: high, source: "Web search: William III Great Recoinage",
+     event: "Great Recoinage replaces the clipped silver coins",
+     scene: "A clipped shilling as thin as a PEACH skin is melted as the Great Recoinage replaces all worn silver."}
+  - {year: 1696, peg: peach, confidence: high, source: "Web search: Hand in Hand Fire Office 1696",
+     event: "Hand in Hand Fire Office founded at Tom's Coffee House",
+     scene: "Two hands clasp over a PEACH to seal the mutual pact of the new Hand in Hand fire office at Tom's Coffee House."}
+  - {year: 1697, peg: pig, confidence: high, source: "WP mirror: London Stock Exchange",
+     event: "Act limits licensed London brokers to one hundred",
+     scene: "A PIG wears a numbered licence badge: one of only a hundred brokers that the new Act lets trade in London."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP mirror: London Stock Exchange",
+     event: "John Castaing starts printing price lists at Jonathan's Coffee House",
+     scene: "A BEEHIVE prints honey-coloured sheets of share and exchange prices for John Castaing at Jonathan's."}
+  - {year: 1698, peg: beehive, confidence: high, source: "Web search: NLS Scotland and Darien",
+     event: "Company of Scotland's first fleet sails from Leith for Darien",
+     scene: "A BEEHIVE of Scottish savings fills five ships, and they sail from Leith to plant a trading colony at Darien."}
+  - {year: 1700, peg: sauce, confidence: high, source: "Web search: Calico Acts (WP)",
+     event: "Calico Act bans imports of printed Indian calico",
+     scene: "A SAUCE boat full of printed Indian calico is turned back at London under the new Calico Act."}
+  - {year: 1710, peg: dice, confidence: medium, source: "Web search: Sun Fire Office 1710 (or 1708)",
+     event: "Sun Fire Office founded",
+     scene: "A DICE with a sun on every face is the badge nailed to houses insured by the new Sun Fire Office."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "WP mirror: South Sea Company",
+     event: "South Sea Company founded to take over government debt",
+     scene: "A TATTOO of a South Sea ship covers the government's war debt, swapped for shares in the new South Sea Company."}
+  - {year: 1717, peg: dog, confidence: high, source: "Web search: Newton guinea report 1717",
+     event: "Newton's report cuts the guinea to twenty-one shillings; Britain drifts onto gold",
+     scene: "A DOG bites the sixpence off the guinea, fixing it at twenty-one shillings as Newton advises; gold now rules."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: South Sea Company",
+     event: "South Sea Bubble: shares soar in spring and crash by autumn",
+     scene: "A NOSE swells like a balloon with South Sea shares all summer, then bursts in the autumn crash."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: South Sea Company",
+     event: "Bubble Act bans joint-stock companies without a charter",
+     scene: "A giant NOSE sniffs out every company without a royal charter, all now banned by the Bubble Act."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: South Sea Company",
+     event: "Royal Exchange Assurance and London Assurance get charters for marine insurance",
+     scene: "Two insurers balance a ship on one NOSE: Royal Exchange and London Assurance win the only marine insurance charters."}
+  - {year: 1721, peg: ant, confidence: high, source: "Web search: Calico Acts (WP)",
+     event: "Second Calico Act bans the sale and wearing of most cotton cloth",
+     scene: "A giant ANT strips a printed cotton dress off its wearer: the new Calico Act bans selling and wearing such cloth."}
+  - {year: 1727, peg: ink, confidence: high, source: "Web search: RBS chartered 31 May 1727",
+     event: "Royal Bank of Scotland chartered",
+     scene: "INK floods the royal charter in Edinburgh and the Royal Bank of Scotland is born."}
+  - {year: 1728, peg: knife, confidence: high, source: "Web search: RBS first overdraft 1728",
+     event: "Royal Bank of Scotland gives the first overdraft, to William Hog",
+     scene: "A KNIFE cuts below zero on William Hog's account: the Royal Bank of Scotland lets him draw more than he holds."}
+  - {year: 1730, peg: mouse, confidence: unverified,
+     event: "Viscount Townshend leaves politics to farm turnips and clover in rotation in Norfolk",
+     scene: "A MOUSE pulls 'Turnip' Townshend's plough through Norfolk, turning turnips, clover and grain in rotation."}
+  - {year: 1734, peg: hammer, confidence: high, source: "WP mirror: Bank of England",
+     event: "Bank of England moves to Threadneedle Street",
+     scene: "A HAMMER nails the Bank of England's sign over its new hall in Threadneedle Street."}
+  - {year: 1734, peg: hammer, confidence: unverified,
+     event: "Lloyd's List of ship news first published",
+     scene: "A HAMMER pins the first Lloyd's List of ship arrivals and losses to the coffee-house wall."}
+  - {year: 1740, peg: horse, confidence: unverified,
+     event: "Anson's squadron sails to raid Spanish trade in the Pacific",
+     scene: "A HORSE hauls Anson's squadron out of Spithead on a raid against Spanish trade round the world."}
+  - {year: 1744, peg: warrior, confidence: high, source: "WP mirror: George Anson",
+     event: "Anson returns with the silver of the captured Manila galleon",
+     scene: "A WARRIOR drives wagons of Manila galleon silver through London after Anson comes home round the world."}
+  - {year: 1746, peg: roach, confidence: high, source: "Web search: British Linen Company 1746",
+     event: "British Linen Company chartered in Edinburgh",
+     scene: "A ROACH spins flax into thread for the new British Linen Company, chartered in Edinburgh to grow the linen trade."}
+  - {year: 1759, peg: elbow, confidence: high, source: "WP mirror: Josiah Wedgwood",
+     event: "Josiah Wedgwood starts his own pottery at Burslem",
+     scene: "An ELBOW pushes the first clay pot round on Josiah Wedgwood's own wheel at the Ivy Works, Burslem."}
+  - {year: 1759, peg: elbow, confidence: high, source: "WP mirror: Bridgewater Canal",
+     event: "First Bridgewater Canal Act",
+     scene: "An ELBOW of the Duke of Bridgewater's canal bends from Worsley toward Manchester under the first Canal Act."}
+  - {year: 1759, peg: elbow, confidence: unverified,
+     event: "Carron Company founded near Falkirk",
+     scene: "Each of three partners locks an ELBOW with the next on the banks of the Carron and founds the Carron ironworks company."}
+  - {year: 1760, peg: cheese, confidence: unverified,
+     event: "Robert Bakewell starts selective breeding of sheep and cattle at Dishley",
+     scene: "Robert Bakewell mates only his fattest sheep, and their meat sets as thick as CHEESE at Dishley."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Bridgewater Canal",
+     event: "Bridgewater Canal opens from Worsley to Manchester",
+     scene: "A JET of water fills the new Bridgewater Canal, and coal barges float from Worsley to Manchester."}
+  - {year: 1762, peg: chain, confidence: high, source: "Web search: Barings Bank 1762",
+     event: "John and Francis Baring found Barings bank in London",
+     scene: "A gold CHAIN links brothers John and Francis Baring as they open their London merchant bank."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Web search: Taylors and Lloyds, June 1765",
+     event: "Taylors and Lloyds bank opens in Birmingham",
+     scene: "A Quaker JELLY in grey unlocks the door of Taylors and Lloyds, the Birmingham bank that grows into Lloyds."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Bridgewater Canal",
+     event: "Trent and Mersey Canal Act",
+     scene: "A JUDGE in Parliament bangs his gavel and passes the Trent and Mersey Canal Act, backed by Wedgwood."}
+  - {year: 1768, peg: chef, confidence: high, source: "WP mirror: James Cook",
+     event: "Cook's first voyage leaves England on the Endeavour",
+     scene: "A CHEF takes the wheel of the Endeavour and steers Cook out of Plymouth for the Pacific."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Josiah Wedgwood",
+     event: "Wedgwood opens his Etruria works",
+     scene: "A SHIP of cream-coloured pots sails from Wedgwood's new Etruria factory into the world."}
+  - {year: 1771, peg: cat, confidence: high, source: "WP mirror: Cromford Mill",
+     event: "Arkwright's Cromford Mill, a water-powered cotton-spinning factory",
+     scene: "A CAT runs inside the water wheel that drives Arkwright's new cotton-spinning mill at Cromford."}
+  - {year: 1772, peg: coin, confidence: high, source: "Web search: Ayr Bank collapse June 1772",
+     event: "Ayr Bank collapses in a credit crisis",
+     scene: "A last COIN rolls out of the Ayr Bank's empty vault as the bank fails and ruins western Scotland."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP mirror: London Stock Exchange",
+     event: "London brokers open their own building, named the Stock Exchange",
+     scene: "A COMB sorts the brokers out of Jonathan's into their own house in Sweeting's Alley, named the Stock Exchange."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP mirror: Bridgewater Canal",
+     event: "Bridgewater Canal reaches the Mersey at Runcorn",
+     scene: "A COMB of locks at Runcorn lets the Bridgewater Canal step down into the Mersey."}
+  - {year: 1774, peg: car, confidence: disputed, source: "WP mirror: Lloyd's of London (1773 vs 1774)",
+     event: "Lloyd's underwriters move into rooms at the Royal Exchange",
+     scene: "A CAR drives Lloyd's underwriters out of the coffee house and into their own rooms at the Royal Exchange."}
+  - {year: 1775, peg: eagle, confidence: unverified,
+     event: "Boulton and Watt form their engine partnership in Birmingham",
+     scene: "An EAGLE carries James Watt's engine patent to Matthew Boulton, and they form a partnership in Birmingham."}
+  - {year: 1776, peg: cage, confidence: unverified,
+     event: "Adam Smith publishes The Wealth of Nations",
+     scene: "Adam Smith opens a CAGE, and the invisible hand lets trade fly free: The Wealth of Nations is published."}
+  - {year: 1777, peg: cake, confidence: unverified,
+     event: "Trent and Mersey Canal is complete",
+     scene: "A CAKE of salt and pottery floats the full length of the finished Trent and Mersey Canal."}
+  - {year: 1784, peg: fairy, confidence: high, source: "Web search: Commutation Act 1784",
+     event: "Commutation Act cuts the tea duty and ends most tea smuggling",
+     scene: "A FAIRY slashes the tea duty with her wand, and the smugglers' boats sink overnight."}
+  - {year: 1784, peg: fairy, confidence: high, source: "Web search: Palmer mail coach 2 Aug 1784",
+     event: "First mail coach runs from Bristol to London",
+     scene: "A FAIRY drives John Palmer's first mail coach from Bristol to London through the night."}
+  - {year: 1786, peg: fish, confidence: unverified,
+     event: "Eden Treaty cuts tariffs between Britain and France",
+     scene: "A FISH swims both ways across the Channel paying low duty, thanks to the Eden trade treaty."}
+  - {year: 1788, peg: fife, confidence: unverified,
+     event: "African Association founded in London to explore the interior of Africa",
+     scene: "A FIFE plays at St Alban's Tavern as Joseph Banks and friends found the African Association to find the Niger."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP mirror: Bank of England",
+     event: "Bank Restriction Act: the Bank of England stops paying gold for its notes",
+     scene: "A PIG sits on the Bank of England's gold and will not let note holders swap paper for coin."}
+  - {year: 1797, peg: pig, confidence: unverified,
+     event: "Bank of England issues its first one-pound notes",
+     scene: "A PIG prints the Bank of England's first one-pound note to fill the gap left by hoarded gold."}
+  - {year: 1799, peg: pipe, confidence: high, source: "Web search: Duties on Income Act 1799",
+     event: "Pitt's first income tax becomes law",
+     scene: "A PIPE siphons a tenth from every large income: Pitt's first income tax becomes law."}
+  # Ireland
+  - {year: 1667, peg: jockey, confidence: high, source: "Web search: Importation Act 1667",
+     event: "English Cattle Act bans Irish cattle from sale in England",
+     scene: "A JOCKEY turns back a herd of Irish cattle at the English shore, now barred by the Cattle Act."}
+  - {year: 1699, peg: pipe, confidence: high, source: "Web search: Wool Act 1698 (assent 1699)",
+     event: "Wool Act bans Irish wool exports except to England",
+     scene: "A PIPE drains all Irish wool to England, as the Wool Act bans its export to anywhere else."}
+  - {year: 1759, peg: elbow, confidence: unverified,
+     event: "Arthur Guinness leases the St James's Gate brewery in Dublin",
+     scene: "Arthur Guinness bends his ELBOW and signs a nine-thousand-year lease on the St James's Gate brewery."}
+  - {year: 1783, peg: foam, confidence: high, source: "Web search: Bank of Ireland 25 June 1783",
+     event: "Bank of Ireland opens in Dublin",
+     scene: "A wave of FOAM washes the royal charter into St Mary's Abbey, where the Bank of Ireland opens for business."}
+  # France
+  - {year: 1534, peg: hammer, confidence: high, source: "WP mirror: Jacques Cartier",
+     event: "Cartier sails from Saint-Malo on his first voyage to seek a way to Asia",
+     scene: "A HAMMER knocks away the chocks, and Cartier's two ships slide out of Saint-Malo to seek a way to Asia."}
+  - {year: 1536, peg: match, confidence: high, source: "Web search: Silk industry in Lyon",
+     event: "Francis I gives royal privileges to the Lyon silk weavers Turquet and Naris",
+     scene: "A MATCH lights the first silk loom of Turquet and Naris, who get Francis I's privileges in Lyon."}
+  - {year: 1540, peg: horse, confidence: high, source: "Web search: Silk industry in Lyon",
+     event: "Lyon gets the monopoly on raw silk imports into France",
+     scene: "A HORSE carries every bale of raw silk that enters France to Lyon, which now holds the import monopoly."}
+  - {year: 1555, peg: lily, confidence: unverified,
+     event: "Henry II's Grand Parti: one big royal loan from the Lyon bankers",
+     scene: "A French LILY borrows from all the bankers of Lyon at once in Henry II's Grand Parti loan."}
+  - {year: 1604, peg: sewer, confidence: high, source: "Web search: Paulette (tax), Dec 1604",
+     event: "The paulette lets officeholders pass their posts to heirs for a yearly fee",
+     scene: "A SEWER grate takes a yearly coin from every French official, and his office passes to his heir: the paulette."}
+  - {year: 1604, peg: sewer, confidence: high, source: "WP mirror: French East India Company",
+     event: "Henry IV charters the first French East India Company",
+     scene: "A SEWER barge with Henry IV's charter floats down the Seine: France's first East India Company."}
+  - {year: 1642, peg: rhino, confidence: high, source: "Web search: Canal de Briare opened 1642",
+     event: "Canal de Briare opens and joins the Loire to the Seine basin",
+     scene: "A RHINO wades from the Loire to the Seine basin along the newly opened Briare canal."}
+  - {year: 1664, peg: cherry, confidence: high, source: "WP mirror: French East India Company",
+     event: "Colbert founds the French East India Company",
+     scene: "A CHERRY-red flag rises on the first ship of Colbert's new French East India Company."}
+  - {year: 1664, peg: cherry, confidence: high, source: "Web search: Colbert tariff 1664 (eumed)",
+     event: "Colbert's tariff turns the road and river tolls into one border tariff",
+     scene: "A CHERRY pit drops in one border box instead of dozens of river toll boxes: Colbert's single tariff."}
+  - {year: 1664, peg: cherry, confidence: unverified,
+     event: "French West India Company founded",
+     scene: "Colbert puts all French Atlantic trade into one CHERRY basket: the French West India Company."}
+  - {year: 1665, peg: jelly, confidence: high, source: "WP mirror: Jean-Baptiste Colbert",
+     event: "Colbert becomes controller general of finances",
+     scene: "Colbert pours all French finance into his own JELLY mould as he becomes controller general."}
+  - {year: 1665, peg: jelly, confidence: high, source: "WP mirror: Jean-Baptiste Colbert",
+     event: "Royal mirror-glass works founded in Paris to beat Venetian glass (later Saint-Gobain)",
+     scene: "Molten glass wobbles like JELLY in the new royal mirror works, set up to beat the Venetian glassmakers."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP mirror: Canal du Midi",
+     event: "Royal edict lets Riquet build the Canal du Midi",
+     scene: "A JUDGE reads out the royal edict that lets Riquet dig the Canal du Midi."}
+  - {year: 1667, peg: jockey, confidence: high, source: "Web search: Colbert tariff 1667 (eumed)",
+     event: "Colbert's second tariff taxes or bars foreign manufactured goods",
+     scene: "A JOCKEY rides Colbert's new tariff over the Dutch and English cloth at the border and blocks it."}
+  - {year: 1669, peg: ship, confidence: unverified,
+     event: "Colbert's forest ordinance guards royal oak for the navy",
+     scene: "A SHIP needs French oak, so Colbert's ordinance puts a guard on every royal forest."}
+  - {year: 1673, peg: comb, confidence: unverified,
+     event: "Ordinance of Commerce (Code Savary) sets rules for merchants",
+     scene: "A COMB untangles French merchant law into one Ordinance of Commerce, drafted with Savary."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP mirror: Canal du Midi",
+     event: "Canal du Midi opens and joins the Atlantic and the Mediterranean",
+     scene: "A FOOT pushes the first barge from Toulouse onto the open Canal du Midi, between the Atlantic and the Mediterranean."}
+  - {year: 1695, peg: bell, confidence: high, source: "Web search: capitation 1695 (Vikidia, HES)",
+     event: "Capitation: a poll tax on almost every subject, in classes",
+     scene: "A BELL tolls once for each head in France, sorted into classes, to pay Pontchartrain's new capitation."}
+  - {year: 1710, peg: dice, confidence: high, source: "Web search: dixième Oct 1710 (Vikidia)",
+     event: "The dixième taxes a tenth of every income",
+     scene: "A DICE shows ten pips: the king now takes one tenth of every income under the dixième."}
+  - {year: 1716, peg: dish, confidence: high, source: "WP mirror: Mississippi Company",
+     event: "John Law opens the Banque Générale in Paris",
+     scene: "A DISH of paper notes takes the place of gold coins at John Law's new Banque Générale."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP mirror: Mississippi Company",
+     event: "Law takes over the Mississippi trade as the Company of the West",
+     scene: "A DOG paddles up the Mississippi with John Law's Company of the West charter in its jaws."}
+  - {year: 1718, peg: dove, confidence: high, source: "WP mirror: Mississippi Company",
+     event: "Law's bank becomes the Banque Royale",
+     scene: "A DOVE sets the royal crown on Law's bank, and it becomes the Banque Royale."}
+  - {year: 1719, peg: tuba, confidence: high, source: "WP mirror: Mississippi Company",
+     event: "Law merges the French overseas trading companies into the Company of the Indies",
+     scene: "A TUBA blows all the French overseas trading companies into one: Law's Company of the Indies."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: Mississippi Company",
+     event: "Mississippi Bubble bursts and John Law flees France",
+     scene: "John Law's paper NOSE crumples as Mississippi shares crash, and he runs from France."}
+  - {year: 1724, peg: hanger, confidence: medium, source: "Web search: Paris Bourse 1724 (citeco)",
+     event: "Royal decree sets up the Paris Bourse",
+     scene: "A HANGER hooks the rowdy traders off the Rue Quincampoix and hangs them in the new regulated Paris Bourse."}
+  - {year: 1726, peg: nacho, confidence: unverified,
+     event: "Livre tournois fixed to a set weight of silver until the Revolution",
+     scene: "A NACHO chip snaps the livre to one fixed weight of silver, where it stays until the Revolution."}
+  - {year: 1749, peg: rope, confidence: high, source: "Web search: vingtième, registered May 1749",
+     event: "The vingtième, a tax of one twentieth on income",
+     scene: "A ROPE ties off one twentieth of every income for Machault's new vingtième."}
+  - {year: 1758, peg: wolf, confidence: high, source: "WP mirror: Physiocracy",
+     event: "Quesnay prints the Tableau économique at Versailles",
+     scene: "A WOLF zigzags across Quesnay's Tableau économique, tracing money from the farmer to the landlord and back."}
+  - {year: 1763, peg: gem, confidence: high, source: "Web search: déclaration 25 mai 1763 (Turgot)",
+     event: "Royal declaration frees the grain trade inside France",
+     scene: "A GEM-bright grain cart rolls across provincial borders with no permit, under the royal declaration on grain."}
+  - {year: 1764, peg: cherry, confidence: high, source: "Web search: édit de juillet 1764 (Turgot)",
+     event: "Edict lets France export grain",
+     scene: "A CHERRY-red sail carries French wheat abroad, now allowed by the July edict."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Louis Antoine de Bougainville",
+     event: "Bougainville sails from Nantes on the first French voyage round the world",
+     scene: "A JUDGE sentences Bougainville to circle the globe, and he sails from Nantes on the first French voyage round it."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: French East India Company",
+     event: "Company of the Indies loses its trade monopoly",
+     scene: "A SHIP of private merchants sails past Lorient after the Company of the Indies loses its monopoly."}
+  - {year: 1770, peg: goose, confidence: high, source: "Web search: Terray revokes free grain trade",
+     event: "Abbé Terray brings back grain controls and cuts state payments",
+     scene: "A GOOSE locks the grain barns again and pecks the state's rentes in half: Abbé Terray ends free trade."}
+  - {year: 1774, peg: car, confidence: high, source: "Web search: Turgot, controller general Aug 1774",
+     event: "Turgot becomes controller general and frees the grain trade again",
+     scene: "A CAR drives grain freely across France on Turgot's edict, weeks after he becomes controller general."}
+  - {year: 1776, peg: cage, confidence: high, source: "Web search: Turgot Six Edicts 1776",
+     event: "Turgot's Six Edicts abolish the Paris guilds and the road corvée",
+     scene: "A CAGE springs open, and Paris guildsmen and corvée road workers walk out, freed by Turgot's edicts."}
+  - {year: 1776, peg: cage, confidence: high, source: "Web search: Caisse d'Escompte, 24 Mar 1776",
+     event: "Caisse d'Escompte founded in Paris",
+     scene: "A CAGE full of bills of exchange is cashed at a discount by the new Caisse d'Escompte in Paris."}
+  - {year: 1781, peg: foot, confidence: high, source: "Web search: Necker Compte rendu, Jan 1781",
+     event: "Necker publishes the Compte rendu, the first public account of royal finance",
+     scene: "A FOOT kicks open the king's books: Necker's Compte rendu shows the people the royal accounts."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP mirror: French East India Company",
+     event: "Company of the Indies is formed again",
+     scene: "A WAFFLE iron presses out forty thousand new shares for the reborn Company of the Indies."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP mirror: Lapérouse",
+     event: "La Pérouse sails from Brest to chart the Pacific",
+     scene: "A WAFFLE-shaped raft carries La Pérouse's two frigates out of Brest to chart the Pacific for whaling and fur trade."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP mirror: Assignat",
+     event: "Assembly decrees the first assignats, paid for by church land",
+     scene: "A FOB of church land hangs from each of the first assignats, decreed by the Assembly in December."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: Assignat",
+     event: "Assignats become legal tender",
+     scene: "BEES swarm the shops with assignats, now legal money for every payment."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: French East India Company",
+     event: "National Assembly ends the monopoly of the Company of the Indies",
+     scene: "BEES chase the Company of the Indies out of its monopoly after the Assembly's vote."}
+  - {year: 1791, peg: boot, confidence: unverified,
+     event: "Allarde decree abolishes the guilds",
+     scene: "A BOOT kicks down every guild door in France under the Allarde decree."}
+  - {year: 1793, peg: palm, confidence: high, source: "WP mirror: Assignat",
+     event: "Law of the Maximum caps prices",
+     scene: "A heavy PALM presses down on every price in France: the Law of the Maximum."}
+  - {year: 1795, peg: bell, confidence: high, source: "Web search: napoleon.org history of the franc",
+     event: "The franc becomes the decimal money of France",
+     scene: "A BELL rings ten times for ten décimes: the franc becomes the decimal money of France."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP mirror: Assignat",
+     event: "Mandats territoriaux replace the assignats",
+     scene: "A PEACH swaps places with a burning assignat: the Directory's mandats territoriaux take over."}
+  - {year: 1797, peg: pig, confidence: high, source: "Web search: citeco, two-thirds bankruptcy",
+     event: "Bankruptcy of the two-thirds: Ramel writes off most of the state debt",
+     scene: "A PIG eats two thirds of every French bond, and Ramel keeps only the last third."}
+  - {year: 1798, peg: beehive, confidence: high, source: "Web search: Exposition des produits 1798",
+     event: "First national exhibition of industrial products on the Champ de Mars",
+     scene: "A BEEHIVE of French workshops sets out its goods on the Champ de Mars at the first industrial exhibition."}
+  # Low Countries
+  - {year: 1531, peg: moth, confidence: high, source: "Web search: Bourse of Antwerp, nieuwe beurs",
+     event: "Antwerp opens its new Bourse building for merchants of every nation",
+     scene: "A MOTH unlocks the gates of Antwerp's new Bourse to merchants of every nation."}
+  - {year: 1585, peg: waffle, confidence: unverified,
+     event: "Dutch rebels close the Scheldt and cut Antwerp's sea trade",
+     scene: "A WAFFLE grid of rebel ships blocks the Scheldt, and Antwerp's sea trade dies."}
+  - {year: 1594, peg: bear, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "Amsterdam merchants form the Compagnie van Verre",
+     scene: "A BEAR in a merchant's hat signs up with the Compagnie van Verre to sail for the spice islands."}
+  - {year: 1594, peg: bear, confidence: high, source: "WP mirror: Willem Barentsz",
+     event: "Barentsz sails from Texel to seek a north-east passage",
+     scene: "A polar BEAR tows Barentsz's little Mercury out of Texel and north-east toward Novaya Zemlya."}
+  - {year: 1595, peg: bell, confidence: high, source: "Web search: First Dutch Expedition (1595-97)",
+     event: "Houtman's fleet sails on the first Dutch voyage to the East Indies",
+     scene: "A BELL-shaped hull leads Houtman's four ships out of Texel on the first Dutch voyage to the East Indies."}
+  - {year: 1595, peg: bell, confidence: unverified,
+     event: "First fluyt cargo ship built at Hoorn",
+     scene: "The first fluyt at Hoorn has a hull shaped like a BELL: a wide hold, a narrow deck, a small crew."}
+  - {year: 1597, peg: pig, confidence: high, source: "Web search: Houtman fleet home Aug 1597",
+     event: "Houtman's fleet returns with pepper from Banten",
+     scene: "A PIG trots off Houtman's ship loaded with Banten pepper: the first Dutch fleet is home."}
+  - {year: 1599, peg: pipe, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "Van Neck's fleet returns with a rich cargo of spices",
+     scene: "A PIPE of cloves and pepper pours out of van Neck's returning ships and makes a huge profit."}
+  - {year: 1602, peg: sun, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "States General charters the Dutch East India Company (VOC), shares open to all",
+     scene: "The SUN rises over the States General as it charters the VOC, with shares open to anyone."}
+  - {year: 1609, peg: soap, confidence: high, source: "WP mirror: Bank of Amsterdam",
+     event: "Bank of Amsterdam (Wisselbank) founded",
+     scene: "A bar of SOAP scrubs the clipped coins clean: the new Bank of Amsterdam pays only in good bank money."}
+  - {year: 1609, peg: soap, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "Isaac Le Maire's petition against the VOC, an early shareholder protest",
+     scene: "Isaac Le Maire climbs on a SOAP box and protests to the States General about how the VOC is run."}
+  - {year: 1610, peg: dice, confidence: high, source: "WP mirror: Tulip mania",
+     event: "Edict bans short selling of shares in Holland",
+     scene: "A DICE player bets that VOC shares will fall; a new edict bans such short selling."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "Web search: Beurs van Hendrick de Keyser",
+     event: "Hendrick de Keyser's Amsterdam Exchange opens",
+     scene: "A TATTOO of a ship marks each merchant's pillar in Hendrick de Keyser's new Amsterdam Exchange."}
+  - {year: 1612, peg: tongue, confidence: unverified,
+     event: "Beemster lake drained into a polder",
+     scene: "A TONGUE of windmills licks the Beemster lake dry and leaves new farmland."}
+  - {year: 1621, peg: ant, confidence: high, source: "WP mirror: Economic history of the Dutch Republic",
+     event: "Dutch West India Company founded",
+     scene: "An ANT carries the charter of the new Dutch West India Company across the Atlantic map."}
+  - {year: 1637, peg: mug, confidence: high, source: "WP mirror: Tulip mania",
+     event: "Tulip mania collapses",
+     scene: "A MUG crashes on a Haarlem inn table, and the bids for tulip bulbs stop at once."}
+  - {year: 1674, peg: car, confidence: high, source: "WP mirror: Economic history of the Dutch Republic",
+     event: "A second Dutch West India Company replaces the bankrupt first one",
+     scene: "A CAR tows the bankrupt West India Company away, and a second company is set up in its place."}
+  - {year: 1688, peg: fife, confidence: high, source: "Web search: Confusion de Confusiones (DBNL)",
+     event: "Joseph de la Vega publishes Confusion of Confusions, a book on share trading",
+     scene: "A FIFE plays a confused tune as Joseph de la Vega writes the first book on share trading, Confusion of Confusions."}
+  - {year: 1722, peg: nun, confidence: high, source: "Web search: Ostend Company charter Dec 1722",
+     event: "Charles VI charters the Ostend Company for trade with China and India",
+     scene: "A NUN in Ostend signs Charles VI's charter for the Ostend Company to trade with China and India."}
+  - {year: 1727, peg: ink, confidence: high, source: "Web search: Ostend Company suspended 1727",
+     event: "Ostend Company's charter is suspended under British and Dutch pressure",
+     scene: "INK blots out the Ostend Company's charter, suspended by Charles VI to win support for his heir."}
+  - {year: 1763, peg: gem, confidence: high, source: "WP mirror: Bank of Amsterdam",
+     event: "Amsterdam banking crisis after the De Neufville firm fails",
+     scene: "A GEM falls from De Neufville's crown as his firm fails, and panic shuts the Amsterdam banks."}
+  - {year: 1774, peg: car, confidence: high, source: "Web search: Eendragt Maakt Magt 1774",
+     event: "Abraham van Ketwich founds Eendragt Maakt Magt, an early investment fund",
+     scene: "A CAR full of small investors joins van Ketwich's Eendragt Maakt Magt, an early investment fund."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP mirror: Bank of Amsterdam",
+     event: "City of Amsterdam takes over the failing Bank of Amsterdam",
+     scene: "A BOOT kicks open the empty vaults, and the City of Amsterdam takes over its failing bank."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "Batavian Republic nationalises the VOC",
+     scene: "The Batavian Republic picks the VOC like a ripe PEACH and makes it state property."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP mirror: Dutch East India Company",
+     event: "VOC charter ends and the company is dissolved",
+     scene: "The VOC's old clay PIPE puffs its last smoke as the company's charter runs out on the last day of the year."}
+  # Germany, Switzerland and Austria
+  - {year: 1519, peg: tuba, confidence: high, source: "WP mirror: Fugger",
+     event: "Fugger loans pay for the election of Charles V as emperor",
+     scene: "A TUBA of Fugger gold blares in Frankfurt and buys the electors' votes for Charles V."}
+  - {year: 1585, peg: waffle, confidence: high, source: "Web search: Frankfurt Stock Exchange 1585",
+     event: "Frankfurt fair merchants fix common exchange rates: start of the Frankfurt exchange",
+     scene: "A WAFFLE grid of coin rates, fixed by the fair merchants, begins the Frankfurt exchange."}
+  - {year: 1619, peg: tuba, confidence: high, source: "Web search: Hamburger Bank 1619",
+     event: "Hamburger Bank opens as a giro bank",
+     scene: "A TUBA swallows the bad coins and pays out clean Mark Banco at the new Hamburger Bank."}
+  - {year: 1619, peg: tuba, confidence: high, source: "Web search: NY Fed, Kipper und Wipper 1619-23",
+     event: "Kipper und Wipper: German mints debase small coins",
+     scene: "A brass TUBA is melted into cheap kreuzer as German mints debase their coins: Kipper und Wipper begins."}
+  - {year: 1623, peg: gnome, confidence: high, source: "Web search: NY Fed, Kipper und Wipper 1619-23",
+     event: "Kipper und Wipper ends with a return to sound coin",
+     scene: "A GNOME recalls the copper kreuzer and brings back full silver, ending the Kipper und Wipper years."}
+  - {year: 1669, peg: ship, confidence: unverified,
+     event: "Last Hanseatic Diet meets in Lübeck",
+     scene: "The last Hansa SHIP sails into Lübeck for the final Hanseatic Diet; the league fades away."}
+  - {year: 1676, peg: cage, confidence: high, source: "Web search: Hamburger Feuerkasse 1676",
+     event: "Hamburg's General Fire Fund (Feuerkasse), the oldest public fire insurer",
+     scene: "A CAGE of fire buckets hangs on every Hamburg house insured by the new General Fire Fund."}
+  - {year: 1684, peg: fairy, confidence: unverified,
+     event: "Hörnigk's Austria Over All, a plan for Austria to make its own goods",
+     scene: "A FAIRY waves Hörnigk's book Austria Over All: the lands can grow rich if they make their own goods."}
+  - {year: 1710, peg: dice, confidence: high, source: "Web search: Meissen manufactory 1710",
+     event: "Meissen porcelain manufactory set up in the Albrechtsburg",
+     scene: "Porcelain DICE roll out of the first kiln of the Meissen manufactory in Albrechtsburg castle."}
+  - {year: 1718, peg: dove, confidence: unverified,
+     event: "Vienna porcelain manufactory founded by Du Paquier",
+     scene: "A porcelain DOVE is the first piece from Du Paquier's new Vienna porcelain works."}
+  - {year: 1727, peg: ink, confidence: unverified,
+     event: "First university chairs in cameral science at Halle and Frankfurt an der Oder",
+     scene: "INK fills the first lectures in cameral science at Halle, a chair set up by Frederick William I."}
+  - {year: 1751, peg: wallet, confidence: medium, source: "Web search: Emden Company (1751; Cambridge 1750)",
+     event: "Frederick II's Asiatic Company of Emden founded for trade with Canton",
+     scene: "A WALLET of Prussian silver sails from Emden with Frederick II's new Asiatic Company for Canton."}
+  - {year: 1756, peg: leech, confidence: high, source: "Web search: Kartoffelbefehl 24 March 1756",
+     event: "Frederick II's potato order tells Silesian farmers to grow potatoes",
+     scene: "Frederick II's potato order sticks to every Silesian farmer like a LEECH: plant potatoes or pay a fine."}
+  - {year: 1762, peg: chain, confidence: unverified,
+     event: "Austria issues its first paper money, the Bancozettel",
+     scene: "A CHAIN of paper Bancozettel, Austria's first banknotes, pays for the Seven Years' War."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Web search: Giro- und Lehnbank 17 June 1765",
+     event: "Frederick II founds the Royal Giro and Loan Bank in Berlin",
+     scene: "A JELLY in the shape of the Prussian eagle sets in Berlin: Frederick II's Royal Giro and Loan Bank."}
+  - {year: 1769, peg: ship, confidence: unverified,
+     event: "Mayer Amschel Rothschild becomes court agent of Hesse-Kassel",
+     scene: "A SHIP-shaped sign over Rothschild's Frankfurt shop now reads Court Agent of Hesse."}
+  - {year: 1771, peg: cat, confidence: high, source: "Web search: Wiener Börse 250 years",
+     event: "Maria Theresa founds the Vienna Stock Exchange",
+     scene: "A CAT in Maria Theresa's crown rings in the first day of trade in state bonds at the new Vienna Bourse."}
+  - {year: 1783, peg: foam, confidence: unverified,
+     event: "Brügelmann's Cromford mill at Ratingen, the first German cotton-spinning factory",
+     scene: "FOAM churns under the wheel of Brügelmann's spinning mill at Ratingen, named Cromford after Arkwright's."}
+  # Italy
+  - {year: 1579, peg: cowboy, confidence: unverified,
+     event: "Genoese bankers move their exchange fairs to Piacenza",
+     scene: "A COWBOY herds the Genoese exchange fairs over the Alps and pens them in Piacenza."}
+  - {year: 1587, peg: fox, confidence: high, source: "Web search: Banco della Piazza di Rialto",
+     event: "Venice founds the Banco della Piazza di Rialto, its first public bank",
+     scene: "A FOX guards the merchants' deposits at Rialto, the first public bank of Venice."}
+  - {year: 1591, peg: boot, confidence: high, source: "Web search: Livornine laws 1591 and 1593",
+     event: "First Livornina invites foreign merchants to Livorno",
+     scene: "A BOOT kicks open Livorno's gates to merchants of every nation under the first Livornina."}
+  - {year: 1593, peg: palm, confidence: high, source: "Web search: Livornina 10 June 1593",
+     event: "Livornina charter gives merchants of every faith rights in Livorno",
+     scene: "An open PALM gives Jewish and foreign merchants freedom of worship and trade in Livorno under Ferdinando I's charter."}
+  - {year: 1619, peg: tuba, confidence: high, source: "Web search: Banco del Giro, statutes 1619",
+     event: "Venice founds the Banco del Giro for transfers between accounts",
+     scene: "A TUBA pipes each payment from one account to another at the new Banco del Giro in Venice."}
+  - {year: 1719, peg: tuba, confidence: high, source: "Web search: Trieste free port, 18 Mar 1719",
+     event: "Charles VI makes Trieste a free port",
+     scene: "A Habsburg TUBA blows Trieste's harbour open to all ships, free of duty, by Charles VI's patent."}
+  - {year: 1751, peg: wallet, confidence: high, source: "Web search: Galiani, Della moneta 1751",
+     event: "Galiani publishes Della moneta, a book on money, in Naples",
+     scene: "A WALLET opens and Galiani explains what gives its coins their value in Della moneta."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "Web search: Genovesi chair Naples 1754",
+     event: "Genovesi takes the first chair of political economy, at Naples",
+     scene: "A LAWYER gives up his seat to Genovesi, who teaches the first university economics lectures in Naples."}
+  # Iberia
+  - {year: 1500, peg: sauce, confidence: high, source: "WP mirror: Pedro Álvares Cabral",
+     event: "Cabral's fleet sails from Lisbon for the pepper of India",
+     scene: "A SAUCE boat leads Cabral's thirteen ships out of Lisbon on the road to the pepper of Calicut."}
+  - {year: 1501, peg: soda, confidence: high, source: "WP mirror: Pedro Álvares Cabral",
+     event: "Cabral returns to Lisbon with spices from India",
+     scene: "A SODA spray of pepper and cinnamon covers Lisbon's docks as Cabral's surviving ships come home."}
+  - {year: 1503, peg: sumo, confidence: high, source: "WP mirror: Casa de Contratación",
+     event: "Casa de Contratación founded in Seville to control the Indies trade",
+     scene: "A SUMO sits on the Seville gate, and every ship to the Indies must pass the new Casa de Contratación."}
+  - {year: 1519, peg: tuba, confidence: high, source: "World dates; Magellan sails from Seville",
+     event: "Magellan's fleet sails from Seville for the Spice Islands",
+     scene: "A huge TUBA swallows Magellan's five ships and blows them down the Guadalquivir toward the Spice Islands."}
+  - {year: 1522, peg: nun, confidence: high, source: "World dates; Victoria returns 1522",
+     event: "Victoria returns to Seville from the first voyage round the world, with cloves",
+     scene: "A NUN unloads the Victoria's cloves at Seville, and the cargo pays for the whole voyage round the world."}
+  - {year: 1529, peg: knob, confidence: high, source: "Web search: Treaty of Zaragoza, April 1529",
+     event: "Treaty of Zaragoza: Spain sells its claim to the Moluccas to Portugal",
+     scene: "A KNOB on the Spice Islands globe turns, and Spain sells its Moluccas claim to Portugal for gold at Zaragoza."}
+  - {year: 1543, peg: ram, confidence: unverified,
+     event: "Merchant guild (Consulado) of Seville founded for the Indies trade",
+     scene: "A RAM guards the door of Seville's new merchant guild, the Consulado of the Indies trade."}
+  - {year: 1557, peg: log, confidence: high, source: "Web search: Philip II bankruptcies",
+     event: "Philip II's first state bankruptcy",
+     scene: "A LOG drops on the Genoese and German bankers as Philip II stops paying his debts."}
+  - {year: 1564, peg: cherry, confidence: unverified,
+     event: "Fleet system: two armed convoys a year to the Indies",
+     scene: "A CHERRY pair of armed convoys leaves Seville each year under the new fleet system."}
+  - {year: 1576, peg: cage, confidence: disputed, source: "Web search: Philip II default 1576 (decree 1575)",
+     event: "Philip II's third state bankruptcy",
+     scene: "A CAGE traps the Genoese bankers' loans as Philip II stops paying them again."}
+  - {year: 1596, peg: peach, confidence: high, source: "Web search: Philip II bankruptcies",
+     event: "Philip II's fourth state bankruptcy",
+     scene: "A rotten PEACH drops on the bankers' table: Philip II defaults for the fourth time."}
+  - {year: 1599, peg: pipe, confidence: unverified,
+     event: "Philip III mints vellón coins of pure copper",
+     scene: "A PIPE pours pure copper into Castile's vellón coins, with no silver left in them."}
+  - {year: 1649, peg: rope, confidence: unverified,
+     event: "Brazil Company founded in Lisbon to run sugar fleets in convoy",
+     scene: "A ROPE ties Lisbon's sugar ships into convoys for the new Brazil Company."}
+  - {year: 1680, peg: vase, confidence: unverified,
+     event: "Spain cuts the value of vellón copper coins",
+     scene: "A VASE of copper coins shatters as Charles II's decree cuts their value."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP mirror: Methuen Treaty",
+     event: "Methuen Treaty swaps English cloth for Portuguese wine at low duties",
+     scene: "A SUMO trades a bolt of English wool for a barrel of port: the Methuen Treaty cuts both duties."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP mirror: Casa de Contratación",
+     event: "Casa de Contratación moves from Seville to Cádiz",
+     scene: "A DOG drags the Casa de Contratación's sea chests from Seville down to Cádiz."}
+  - {year: 1728, peg: knife, confidence: high, source: "Web search: Guipuzcoan Company, Sept 1728",
+     event: "Guipuzcoan Company of Caracas founded",
+     scene: "A KNIFE cuts open a cacao pod in San Sebastián, where the new Caracas Company gets the Venezuela trade."}
+  - {year: 1756, peg: leech, confidence: high, source: "Web search: Douro company, 10 Sept 1756",
+     event: "Pombal's Douro Wine Company founded; the port vineyards are marked out",
+     scene: "A LEECH sucks all port-wine trade into Pombal's new Douro Company, inside the first marked wine region."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Web search: decree 16 Oct 1765 (Cambridge)",
+     event: "Charles III opens the Caribbean trade to nine Spanish ports",
+     scene: "A JELLY of nine Spanish ports breaks Cádiz's grip on the Caribbean trade."}
+  - {year: 1778, peg: cave, confidence: high, source: "Web search: Reglamento 12 Oct 1778",
+     event: "Free Trade Regulation opens the Indies trade to many Spanish ports",
+     scene: "A CAVE in Cádiz is unsealed, and the Indies trade pours out to ports all round Spain."}
+  - {year: 1782, peg: oven, confidence: high, source: "Web search: Banco de San Carlos, 2 June 1782",
+     event: "Banco de San Carlos founded, Spain's first national bank",
+     scene: "An OVEN bakes Cabarrús's new bank's first notes: the Banco de San Carlos, Spain's first national bank."}
+  - {year: 1785, peg: waffle, confidence: medium, source: "Web search: Caracas Co. ends 1785 (WP infobox)",
+     event: "Caracas Company becomes the Royal Philippine Company",
+     scene: "A WAFFLE iron presses the Caracas Company into a new shape: the Royal Philippine Company."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: Casa de Contratación",
+     event: "Charles IV abolishes the Casa de Contratación",
+     scene: "BEES swarm out of the empty Casa de Contratación in Cádiz as Charles IV abolishes it."}
+  # Scandinavia, Finland and Iceland
+  - {year: 1602, peg: sun, confidence: high, source: "WP mirror: Danish–Icelandic Trade Monopoly",
+     event: "Danish trade monopoly on Iceland begins",
+     scene: "The SUN shines only on ships from Copenhagen, Malmö and Helsingør: they alone may now trade with Iceland."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP mirror: Swedish East India Co. (see also)",
+     event: "Christian IV founds the Danish East India Company",
+     scene: "A DISH of pepper is promised to the founders of Christian IV's Danish East India Company."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP mirror: Danish–Icelandic Trade Monopoly",
+     event: "Iceland trade limited to Copenhagen merchants",
+     scene: "A Copenhagen merchant's NOSE alone may now sniff Iceland's fish: no other town may trade there."}
+  - {year: 1623, peg: gnome, confidence: high, source: "WP mirror: Kongsberg Silver Mines",
+     event: "Silver found at Kongsberg in Norway",
+     scene: "A GNOME with a pickaxe strikes silver at Kongsberg."}
+  - {year: 1644, peg: warrior, confidence: medium, source: "Web search: Røros Copper Works (1644/1646)",
+     event: "Copper ore found at Røros; the copper works begin",
+     scene: "A reindeer-hunting WARRIOR kicks a stone at Røros and finds copper ore, and the copper works begin."}
+  - {year: 1644, peg: warrior, confidence: unverified,
+     event: "Sweden mints copper plate money",
+     scene: "A WARRIOR uses one copper plate coin as a shield: Sweden's plate money is that big."}
+  - {year: 1657, peg: log, confidence: high, source: "WP mirror: Stockholms Banco",
+     event: "Palmstruch's Stockholms Banco opens",
+     scene: "A LOG of heavy copper plate money is deposited at Palmstruch's new Stockholms Banco."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP mirror: Stockholms Banco",
+     event: "Stockholms Banco issues the first European banknotes",
+     scene: "A JET prints Europe's first banknotes at Stockholms Banco, far lighter than the copper plates."}
+  - {year: 1668, peg: chef, confidence: high, source: "WP mirror: Stockholms Banco",
+     event: "Swedish Riksdag founds the Riksbank, oldest central bank still at work",
+     scene: "A CHEF in the Riksdag cooks up the Riksbank from the ruins of Palmstruch's failed bank."}
+  - {year: 1724, peg: hanger, confidence: unverified,
+     event: "Swedish Produktplakat: foreign ships may bring only their own country's goods",
+     scene: "A HANGER hooks foreign ships out of Swedish harbours unless they bring only their own country's goods."}
+  - {year: 1731, peg: moth, confidence: high, source: "WP mirror: Swedish East India Company",
+     event: "Swedish East India Company chartered in Gothenburg",
+     scene: "A MOTH flies to Canton on the charter of the new Swedish East India Company in Gothenburg."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP mirror: Swedish East India Company",
+     event: "First Swedish East India ship sails from Gothenburg for Canton",
+     scene: "The MOON guides the Friedericus Rex Sueciae out of Gothenburg, the first Swedish ship to Canton."}
+  - {year: 1732, peg: moon, confidence: medium, source: "Web search: Danish Asiatic Company 1732",
+     event: "Danish Asiatic Company chartered with a monopoly east of the Cape",
+     scene: "A MOON-shaped seal gives the Danish Asiatic Company forty years of trade east of the Cape."}
+  - {year: 1736, peg: match, confidence: disputed, source: "Web search: Kurantbanken 1736 vs 1738",
+     event: "Kurantbank, Denmark's first note-issuing bank, founded in Copenhagen",
+     scene: "A MATCH lights the first paper notes of Copenhagen's Kurantbank."}
+  - {year: 1745, peg: railway, confidence: high, source: "WP mirror: Swedish East India Company",
+     event: "East Indiaman Götheborg sinks at the mouth of Gothenburg harbour",
+     scene: "A RAILWAY of tea chests floats away as the Götheborg sinks on a rock at Gothenburg's harbour mouth."}
+  - {year: 1751, peg: wallet, confidence: unverified,
+     event: "Skúli Magnússon founds the Innréttingar workshops in Reykjavík",
+     scene: "A WALLET of royal money pays for Skúli Magnússon's wool workshops, the start of Reykjavík as a town."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Web search: The National Gain (WP)",
+     event: "Anders Chydenius publishes The National Gain, a case for free trade",
+     scene: "A JELLY spreads freely over every border as Anders Chydenius argues for free trade in The National Gain."}
+  - {year: 1786, peg: fish, confidence: medium, source: "WP mirror: Danish–Icelandic Trade Monopoly",
+     event: "Danish crown ends the Iceland trade monopoly",
+     scene: "A FISH swims free from Iceland to any Danish subject's ship as the trade monopoly ends."}

@@ -353,3 +353,35 @@ Fix-pass list (not done):
   (subsaharan_africa_politics_1945_present).
 - Tacked-on regex: north_africa_politics_1500_1800 has 26 hits.
 - Duplicates: 4 events shared oceania politics/society 1945_present, 1 oceania/southeast_asia politics.
+
+## Wave 12 (2026-11-05)
+User's aim: 8 cells, largest predicted first. Same log-linear fit, now on 145 cells (residual sd 0.40);
+top 8 of 287 (predicted 201–213). Opus agents, budget 50 searches each (fresh session, 400 of the cap).
+east_asia politics 500_1500, eastern_europe economy 1945_present, south_asia arts 1800_1945,
+western_europe economy 1500_1800, north_america society 1800_1945, southeast_asia science 1800_1945,
+north_africa arts 1800_1945, west_asia arts 1800_1945.
+Result: 2,432 dates over 8 cells (high 2,030, medium 144, low 3, disputed 38, unverified 217 = 9%); sizes
+187–537 (north_america_society_1800_1945 537, east_asia_politics_500_1500 447, south_asia_arts 324). Check
+exit 0 on all; all years inside the period. Grid now 153 of 432 cells, about 36,730 dates. 8 Opus agents at
+~250–440k tokens each: no usage-limit deaths. All spent the whole budget; Kiwix fetches did most checking.
+Unverified share by cell: eastern_europe_economy_1945_present 36%, western_europe_economy_1500_1800 20%;
+north_america_society_1800_1945 0% (sourced mostly to WP mirror timelines: African-American history, labor,
+disasters, civil unrest).
+Fix-pass list (not done):
+- Dropped against the brief, restore: Agnon, A Guest for the Night (west_asia_arts; agent found 1938 vs 1939
+  and the entry is gone).
+- world_dates conflicts: Chanyuan 1004 (world_dates) vs 1005 (cell; January 1005 = 12th lunar month 1004),
+  one rule needed for the lunar new-year gap; Beijing Ming capital 1421 (world_dates, usual) vs 1420 (cell,
+  disputed) → prefer 1421.
+- Likely wrong: Philip II third bankruptcy moved 1575 → 1576 on one timeline (decree is September 1575);
+  Yoshimitsu "King of Japan" 1402 → 1404 marked disputed, but 1402 (Jianwen) and 1404 (Yongle) are two
+  events; Bangkok–Ayutthaya railway high at 1897 while the mirror says 1896 (1897 likely right; mark
+  disputed or cite a second source); Vigathakumaran 1928 vs 1930 = made vs first shown, split the event text.
+- Cross-cell: New Delhi inauguration 1931 in south_asia arts + politics 1800_1945. About 13 economy events
+  (Comecon, Kosygin reform, Gaidar, 1998 default, euro changeovers, currency reforms) sit in
+  eastern_europe_politics/society_1945_present; the economy cell names them in its header — move?
+- Scope: Mahjar works printed in New York filed in west_asia_arts (Lebanon/Syria) — same open
+  "issued outside the region" rule as Ballets Russes / Kafka.
+- Thin: southeast_asia_science has 1 Laos/Cambodia entry; south_asia_arts none for Bhutan/Maldives.
+- Peg overload: north_america_society mill 17, dog 16, dish 13, ink 12, mug 11, tuba 11; south_asia_arts
+  match 11. Weak scenes self-reported: north_africa_arts 1923/1932/1934, west_asia_arts Ankara 1924/1935.

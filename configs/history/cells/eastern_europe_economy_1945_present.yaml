@@ -1,0 +1,825 @@
+# Cell: Eastern Europe x economy x 1945 to present. DRAFT 2026-11-05.
+# Scope: Poland, Czechia, Slovakia, Hungary, Balkans, Greece, Romania, Moldova, Baltic states,
+# Belarus, Ukraine, Russia (including Siberia), plus Istanbul (both shores). Trade, money,
+# agriculture, industry, trade routes, pipelines, companies, economic crises.
+# Left in other cells: Comecon founding and end, Kosygin reform, Gaidar price liberalisation,
+# Russian default, Stalin's currency reform, Plzen currency riots, the Baltic, Slovene and
+# Croatian euro changeovers (politics); bridges and power plants (science); strikes and price riots (society).
+# Dates: memory pass + web check (50 searches, plus fetches of the Kiwix Wikipedia mirror).
+# A law -> the year it is passed or takes effect. A company or plant -> first output or opening.
+# A crisis or phase -> the year it starts. Peg = last two digits of the year (policy.md).
+# confidence: high | medium | low | disputed | unverified (no source found or not checked)
+dates:
+  # Russia and the USSR
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Soviet Union does not ratify Bretton Woods and stays out of the IMF and World Bank",
+     scene: "A RAILWAY guard sends the Bretton Woods papers back unsigned, and the Soviet train stays out of the IMF station."}
+  - {year: 1946, peg: roach, confidence: unverified,
+     event: "Fourth Five-Year Plan adopted to rebuild war-ruined industry",
+     scene: "A ROACH unrolls the Fourth Five-Year Plan in the Supreme Soviet and orders the burnt mines and mills rebuilt first."}
+  - {year: 1948, peg: reef, confidence: unverified,
+     event: "Great Plan for the Transformation of Nature: forest belts across the southern steppe",
+     scene: "A green REEF of oak belts grows across the southern steppe under Stalin's plan to stop dry winds."}
+  - {year: 1950, peg: lasso, confidence: unverified,
+     event: "Ruble is pegged to gold, and its link to the dollar ends",
+     scene: "A LASSO pulls the ruble off the dollar and ties it to a gold bar."}
+  - {year: 1950, peg: lasso, confidence: unverified,
+     event: "Khrushchev's campaign merges small collective farms into giant ones",
+     scene: "Khrushchev's LASSO drags small kolkhozes together into a few giant collective farms."}
+  - {year: 1952, peg: lion, confidence: high, source: "Web search: Volga-Don Canal, first use 1 June",
+     event: "Volga-Don Canal opens and joins the Volga to the Don",
+     scene: "A LION tows the first barge through the locks of the new Volga-Don Canal."}
+  - {year: 1953, peg: llama, confidence: unverified,
+     event: "After Stalin's death the state raises the prices it pays collective farms",
+     scene: "A LLAMA collects the higher state price for kolkhoz grain and meat that the September plenum votes after Stalin's death."}
+  - {year: 1957, peg: log, confidence: high, source: "WP mirror: Sovnarkhoz",
+     event: "Khrushchev replaces industrial ministries with regional economic councils",
+     scene: "A LOG splits the Moscow ministries into a hundred regional economic councils."}
+  - {year: 1957, peg: log, confidence: unverified,
+     event: "Khrushchev freezes repayment of state loan bonds for twenty years",
+     scene: "A LOG bars the state savings bank door: bond holders must wait twenty years for their money."}
+  - {year: 1958, peg: wolf, confidence: high, source: "Britannica: machine-tractor station",
+     event: "Machine-tractor stations are abolished, and collective farms buy their machines",
+     scene: "A WOLF drives the tractors out of the machine-tractor station and sells them to the kolkhoz."}
+  - {year: 1959, peg: elbow, confidence: unverified,
+     event: "Party congress adopts a Seven-Year Plan in place of a five-year plan",
+     scene: "An ELBOW pushes the five-year plan off the congress table, and delegates adopt a Seven-Year Plan."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Economy of the Soviet Union",
+     event: "Ruble redenomination: ten old rubles become one new ruble",
+     scene: "A JET flies off with the last zero of every ruble note as ten old rubles become one."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: 1965 Soviet economic reform",
+     event: "Liberman's Pravda article 'Plan, Profits, Bonuses' asks to judge factories by profit",
+     scene: "Liberman hangs a CHAIN of bonus medals on the factory that makes a profit in his Pravda article."}
+  - {year: 1963, peg: gem, confidence: unverified,
+     event: "Harvest failure: Soviet Union buys large amounts of Western wheat for the first time",
+     scene: "Moscow pays for Canadian wheat with a GEM after the harvest fails, its first big grain purchase abroad."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: AvtoVAZ",
+     event: "Fiat agreement founds the AvtoVAZ car plant at Togliatti",
+     scene: "A JUDGE stamps the Fiat contract, and a car city starts to rise at Togliatti on the Volga."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Economy of the Soviet Union",
+     event: "State Quality Mark introduced for the best Soviet goods",
+     scene: "A JOCKEY pins the pentagon State Quality Mark on a Soviet television set like a winner's rosette."}
+  - {year: 1968, peg: chef, confidence: unverified,
+     event: "First Soviet natural gas exports to the West reach Austria",
+     scene: "A Viennese CHEF lights his stove with the first Soviet gas that the pipeline brings to Austria."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: KAMAZ",
+     event: "Ground broken for the KamAZ heavy truck plant on the Kama River",
+     scene: "A SHIP on the Kama unloads the first cranes as builders break ground for the KamAZ truck plant."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: AvtoVAZ",
+     event: "First Zhiguli car rolls off the AvtoVAZ line at Togliatti",
+     scene: "A GOOSE honks behind the wheel of the first Zhiguli as it drives off the Togliatti line."}
+  - {year: 1970, peg: goose, confidence: unverified,
+     event: "Pipes-for-gas deal: West Germany sends steel pipe in exchange for Soviet gas",
+     scene: "A GOOSE flies German steel pipe to Moscow and flies home with Soviet gas: the first pipes-for-gas deal."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: 1973 US-Soviet wheat deal",
+     event: "'Great Grain Robbery': Soviet agents secretly buy huge amounts of American grain",
+     scene: "Soviet buyers drop one COIN at a time with six grain firms and quietly buy up American wheat."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Baikal-Amur Mainline",
+     event: "Construction of the Baikal-Amur Mainline restarts with Komsomol volunteers",
+     scene: "A CAR full of Komsomol volunteers drives into the taiga to restart the Baikal-Amur railway."}
+  - {year: 1975, peg: eagle, confidence: unverified,
+     event: "Long-term grain agreement binds the Soviet Union to buy American grain every year",
+     scene: "An American EAGLE signs a five-year deal that makes Moscow buy its grain every year."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "First KamAZ truck leaves the Kama plant",
+     scene: "A steel CAGE on six wheels rolls off the line: the first KamAZ truck."}
+  - {year: 1980, peg: vase, confidence: unverified,
+     event: "United States embargoes grain sales to the Soviet Union after the Afghan invasion",
+     scene: "An American farmer snatches back a VASE of wheat from a Soviet ship as the grain embargo starts."}
+  - {year: 1982, peg: oven, confidence: high, source: "Web search: Food Programme, 24 May plenum",
+     event: "Brezhnev's Food Programme adopted to end food shortages",
+     scene: "Brezhnev opens a giant OVEN at the May plenum and promises his Food Programme loaf to every Soviet family."}
+  - {year: 1983, peg: foam, confidence: unverified,
+     event: "Andropov's industrial experiment gives some ministries' factories more freedom",
+     scene: "Factory managers in five ministries break out of a block of FOAM as Andropov's experiment gives them freedom."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Economy of the Soviet Union",
+     event: "World oil price collapses and cuts Soviet export income",
+     scene: "A dead FISH floats in a barrel of oil that is now worth half, and Soviet export income sinks."}
+  - {year: 1986, peg: fish, confidence: high, source: "Web search: law on individual labor 19 Nov",
+     event: "Law on Individual Labour Activity allows small family businesses",
+     scene: "A FISH seller sets up a legal family stall under the new law on individual labour."}
+  - {year: 1987, peg: fox, confidence: high, source: "Web search: joint venture decree 13 Jan",
+     event: "Decree allows joint ventures with Western firms, up to a minority foreign share",
+     scene: "A FOX signs a Moscow decree that lets a Western firm own part of a Soviet company."}
+  - {year: 1987, peg: fox, confidence: high, source: "Web search: Law on State Enterprise",
+     event: "Law on State Enterprise makes factories self-financing",
+     scene: "A FOX hands each Soviet factory its own cash box under the Law on State Enterprise."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Law on Cooperatives",
+     event: "Law on Cooperatives lets private cooperatives open cafes, shops and firms",
+     scene: "A FIFE plays as the first private cooperative cafe opens its doors under the new law."}
+  - {year: 1990, peg: bees, confidence: high, source: "Web search: McDonald's Pushkin Square",
+     event: "First McDonald's in the Soviet Union opens on Pushkin Square in Moscow",
+     scene: "BEES swarm the endless queue at the first Soviet McDonald's on Pushkin Square."}
+  - {year: 1990, peg: bees, confidence: high, source: "Web search: 500 Days, Sept 1990",
+     event: "Shatalin's Five Hundred Days programme for a fast move to a market economy",
+     scene: "BEES count down the Five Hundred Days of Shatalin's plan to turn the Soviet economy into a market."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Pavlov reform",
+     event: "Pavlov reform: fifty- and hundred-ruble notes are withdrawn",
+     scene: "A BOOT stamps out every fifty- and hundred-ruble note in Pavlov's surprise exchange."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Pavlov reform",
+     event: "State retail prices roughly triple on the second of April",
+     scene: "A BOOT kicks every price tag in the state shops up threefold on the second of April."}
+  - {year: 1992, peg: piano, confidence: high, source: "Web search: voucher privatisation, Oct 1992",
+     event: "Russia gives every citizen a privatisation voucher",
+     scene: "A PIANO prints a ten-thousand-ruble privatisation voucher for every Russian citizen."}
+  - {year: 1993, peg: palm, confidence: high, source: "Web search: monetary reform 26 July 1993",
+     event: "Russian currency exchange withdraws Soviet ruble notes",
+     scene: "A PALM slaps down the old Soviet ruble notes, and Russians rush to exchange them in two weeks."}
+  - {year: 1993, peg: palm, confidence: unverified,
+     event: "Gazprom becomes a joint-stock company",
+     scene: "A PALM-shaped gas flame lights the first share certificate as the Soviet gas ministry becomes Gazprom company."}
+  - {year: 1994, peg: bear, confidence: high, source: "Moscow Times: MMM collapse July 1994",
+     event: "MMM pyramid scheme collapses, and millions lose their savings",
+     scene: "A BEAR knocks over the MMM pyramid, and the savings of millions of Russians fall with it."}
+  - {year: 1994, peg: bear, confidence: unverified,
+     event: "Black Tuesday: the ruble loses about a quarter of its value in one day",
+     scene: "A BEAR claws a quarter off the ruble in one day on Black Tuesday."}
+  - {year: 1994, peg: bear, confidence: high, source: "Web search: voucher privatisation end",
+     event: "Voucher privatisation ends after thousands of firms pass to private hands",
+     scene: "A BEAR closes the last voucher auction as thousands of Russian firms pass into private hands."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Loans for shares",
+     event: "Loans-for-shares auctions give Norilsk Nickel, Yukos and Sibneft to bankers",
+     scene: "An auction BELL rings, and bankers take Norilsk Nickel, Yukos and Sibneft for loans to the state."}
+  - {year: 1995, peg: bell, confidence: unverified,
+     event: "Central bank holds the ruble inside an exchange-rate corridor",
+     scene: "A glass BELL is put over the ruble, and it can move only inside the new exchange-rate corridor."}
+  - {year: 1997, peg: pig, confidence: unverified,
+     event: "Svyazinvest telecom auction starts the 'bankers' war'",
+     scene: "Two oligarchs fight over a PIG-shaped telephone in the Svyazinvest auction, and the bankers' war begins."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Russian ruble",
+     event: "Ruble redenomination: a thousand old rubles become one",
+     scene: "A BEEHIVE swallows three zeros from every ruble note on New Year's Day."}
+  - {year: 2001, peg: soda, confidence: high, source: "Hoover: Russian flat tax",
+     event: "Russia introduces a flat thirteen-percent income tax",
+     scene: "A SODA machine charges every Russian the same flat thirteen percent of income."}
+  - {year: 2004, peg: sewer, confidence: unverified,
+     event: "Oil Stabilisation Fund created to save surplus oil revenue",
+     scene: "A SEWER drains the extra oil money into the new Stabilisation Fund under the Finance Ministry."}
+  - {year: 2004, peg: sewer, confidence: unverified,
+     event: "Yuganskneftegaz, main unit of Yukos, is sold at a forced auction and passes to Rosneft",
+     scene: "A SEWER pipe carries Yukos's main oil unit into Rosneft after a forced auction."}
+  - {year: 2006, peg: sushi, confidence: unverified,
+     event: "Ruble becomes fully convertible on the capital account",
+     scene: "A SUSHI chef in Moscow takes rubles, dollars or euros freely as capital controls end."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: AvtoVAZ",
+     event: "Renault buys a quarter of AvtoVAZ",
+     scene: "Renault carries a French SOFA into the AvtoVAZ boardroom and takes a quarter of the seats."}
+  - {year: 2008, peg: sofa, confidence: unverified,
+     event: "Moscow stock market crashes, and trading is halted",
+     scene: "A SOFA falls through the floor of the Moscow exchange, and trading stops as shares crash."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Nord Stream",
+     event: "Nord Stream gas pipeline under the Baltic starts gas to Germany",
+     scene: "A TATTOO of a pipe runs from Vyborg down the Baltic seabed, and Nord Stream gas reaches Germany."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Mondaq: Russia WTO 22 Aug 2012",
+     event: "Russia joins the World Trade Organization after nineteen years of talks",
+     scene: "A TONGUE licks the stamp on Russia's WTO membership card after nineteen years of talks."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Russian financial crisis 2014",
+     event: "Ruble crash: central bank raises its rate to seventeen percent overnight",
+     scene: "The central bank stacks a TOWER of rate hikes to seventeen percent overnight, and the ruble still falls."}
+  - {year: 2014, peg: tower, confidence: unverified,
+     event: "Russia bans food imports from the West in reply to sanctions",
+     scene: "Customs guards build a TOWER of banned Western cheese at the border as Russia stops Western food."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Nord Stream",
+     event: "Nord Stream 2 is completed but never enters service",
+     scene: "An ANT welds the last joint of Nord Stream 2, but no gas ever flows through it."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: sanctions during the invasion",
+     event: "Western states freeze the Russian central bank's foreign reserves",
+     scene: "A NUN locks the Russian central bank's foreign reserves in a Western vault."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: AvtoVAZ",
+     event: "Renault sells its AvtoVAZ stake to the Russian state for one ruble",
+     scene: "A NUN buys Renault's AvtoVAZ stake for a single ruble coin."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: sanctions during the invasion",
+     event: "Russia misses foreign-debt payments under sanctions: first foreign default since the revolution",
+     scene: "A NUN rings the bell for Russia's first foreign-debt default since the revolution."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: sanctions during the invasion",
+     event: "EU embargo and G7 price cap on Russian sea-borne oil start",
+     scene: "A NUN caps every barrel of Russian sea-borne oil at sixty dollars at the tanker rail."}
+  - {year: 2023, peg: gnome, confidence: high, source: "TASS: key rate 12 percent, 15 Aug",
+     event: "Ruble falls past a hundred to the dollar; emergency rate rise to twelve percent",
+     scene: "A GNOME drags the ruble past a hundred to the dollar, and the central bank jumps to twelve percent."}
+  - {year: 2024, peg: hanger, confidence: high, source: "TASS: key rate 21 percent, 25 Oct",
+     event: "Central bank raises its key rate to a record twenty-one percent",
+     scene: "The central bank hangs its key rate on a HANGER at a record twenty-one percent."}
+  # Siberia and the Russian Far East
+  - {year: 1955, peg: lily, confidence: unverified,
+     event: "Mir kimberlite pipe found in Yakutia: first big Soviet diamond deposit",
+     scene: "A LILY's roots crack the Yakutian permafrost and bring up the diamonds of the Mir pipe."}
+  - {year: 1960, peg: cheese, confidence: unverified,
+     event: "Shaim: first West Siberian oil strike",
+     scene: "A CHEESE drill bit strikes the first West Siberian oil at Shaim on the Konda River."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Samotlor field",
+     event: "Samotlor, the largest Soviet oil field, is discovered",
+     scene: "A JELLY of oil wobbles up from the swamp as drillers find Samotlor, the largest Soviet oil field."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Urengoy gas field",
+     event: "Urengoy giant gas field is discovered in the Arctic tundra",
+     scene: "A JUDGE's gavel cracks the tundra, and gas roars out of the giant Urengoy field."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Samotlor field",
+     event: "Samotlor starts to produce oil",
+     scene: "The first tanker SHIP fills with Samotlor oil as the giant field starts to produce."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Urengoy gas field",
+     event: "Urengoy gas field starts production",
+     scene: "A CAVE under the tundra starts to pour Urengoy gas into the pipelines."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Baikal-Amur Mainline",
+     event: "Golden link joins the east and west halves of the Baikal-Amur Mainline",
+     scene: "A FAIRY taps the golden spike that joins the east and west halves of the BAM railway."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Urengoy gas field",
+     event: "Urengoy-Pomary-Uzhhorod pipeline starts gas exports to Western Europe",
+     scene: "A FAIRY flies Siberian gas from Urengoy along the new pipeline over Ukraine to Western Europe."}
+  - {year: 2009, peg: soap, confidence: unverified,
+     event: "Sakhalin-2 plant ships the first Russian liquefied natural gas",
+     scene: "A SOAP bubble of frozen gas floats off Sakhalin: the first Russian LNG cargo."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Power of Siberia",
+     event: "Power of Siberia: thirty-year gas contract with China",
+     scene: "Putin and Xi raise a gas TOWER in Shanghai and sign a thirty-year Siberian gas contract."}
+  - {year: 2017, peg: dog, confidence: unverified,
+     event: "Yamal LNG on the Arctic coast ships its first cargo",
+     scene: "A sled DOG pulls the first Yamal LNG tanker out of the Arctic ice."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Power of Siberia",
+     event: "Power of Siberia pipeline starts gas deliveries to China",
+     scene: "A TUBA blows the first Siberian gas through the Power of Siberia pipe into China."}
+  # Ukraine
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Rebuilt Dnieper hydroelectric station starts its first restored unit",
+     scene: "A ROCK plugs the gap in the blown-up Dnieper dam, and the first restored turbine turns."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Ukraine introduces the karbovanets coupon in place of the ruble",
+     scene: "A PIANO keyboard made of karbovanets coupons replaces the ruble in Ukrainian shops."}
+  - {year: 1993, peg: palm, confidence: unverified,
+     event: "Ukrainian hyperinflation: prices rise more than a hundredfold in a year",
+     scene: "A PALM full of karbovanets coupons buys a loaf in January and a sweet in December."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Ukrainian hryvnia",
+     event: "Hryvnia replaces the karbovanets at one to a hundred thousand",
+     scene: "A PEACH that cost a hundred thousand karbovanets now costs one new hryvnia."}
+  - {year: 1998, peg: beehive, confidence: medium, source: "WP mirror: 1998 Russian financial crisis",
+     event: "Ukraine fails to pay its debts a month after Russia",
+     scene: "The Russian crisis swarms out of a BEEHIVE and stings Kyiv into a default a month later."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Russia-Ukraine gas disputes",
+     event: "Gazprom cuts gas to Ukraine on New Year's Day in a price dispute",
+     scene: "A SUSHI chef in Kyiv works on a cold stove as Gazprom cuts the gas on New Year's Day."}
+  - {year: 2008, peg: sofa, confidence: unverified,
+     event: "Ukraine joins the World Trade Organization",
+     scene: "Ukraine carries a SOFA into the WTO hall in Geneva and takes its seat as a member."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Russia-Ukraine gas disputes",
+     event: "New ten-year gas contract ends the January gas war",
+     scene: "Tymoshenko and Putin wash their hands with SOAP after the ten-year gas contract ends the January gas war."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Ukrainian hryvnia",
+     event: "Hryvnia is floated and loses about two thirds of its value",
+     scene: "The hryvnia jumps off a TOWER after the float and loses two thirds of its value."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Russia-Ukraine gas disputes",
+     event: "Ukraine stops buying Russian gas and buys from EU states",
+     scene: "A Ukrainian DOLL turns its back on Gazprom and fills its gas can from European pipes."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: PrivatBank",
+     event: "PrivatBank, the largest Ukrainian bank, is nationalised",
+     scene: "The state lifts PrivatBank off its owners' DISH and takes the largest Ukrainian bank."}
+  - {year: 2016, peg: dish, confidence: unverified,
+     event: "Free-trade area with the EU takes effect",
+     scene: "A DISH of Ukrainian grain slides across the open EU border as the free-trade area starts."}
+  - {year: 2021, peg: ant, confidence: high, source: "Web search: Ukraine land market 1 July",
+     event: "Farmland market opens after a twenty-year ban on sales",
+     scene: "An ANT buys the first plot of black earth as Ukraine's farmland market opens."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Black Sea Grain Initiative",
+     event: "Black Sea Grain Initiative signed in Istanbul lets Ukrainian grain ships sail",
+     scene: "A NUN signs the grain deal in Istanbul and waves the first grain ship out of Odesa."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Black Sea Grain Initiative",
+     event: "Russia leaves the grain deal; Ukraine opens its own sea corridor",
+     scene: "A GNOME steers a grain ship down Ukraine's own Black Sea corridor after Russia quits the deal."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: transit end 1 Jan 2025",
+     event: "Russian gas transit through Ukraine to Europe ends",
+     scene: "A NAIL is hammered into the Ukrainian pipe, and Russian gas stops flowing to Europe."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: minerals deal 30 April",
+     event: "Minerals deal with the United States sets up a joint reconstruction fund",
+     scene: "A NAIL fixes the United States and Ukraine to one minerals fund for reconstruction."}
+  # Belarus and Moldova
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Belarus introduces its own ruble, the 'bunny'",
+     scene: "A PIANO plays as a hare springs off the first Belarusian ruble note."}
+  - {year: 1993, peg: palm, confidence: unverified,
+     event: "Moldova introduces the leu",
+     scene: "A PALM holds the first Moldovan leu note in Chisinau."}
+  - {year: 2000, peg: sauce, confidence: unverified,
+     event: "Belarusian ruble loses three zeros in a redenomination",
+     scene: "A SAUCE pot boils three zeros off every Belarusian ruble note."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Jamestown: wine ban 27 March 2006",
+     event: "Russia bans Moldovan wine",
+     scene: "A Russian customs officer pours Moldovan wine over a SUSHI plate and bans every bottle."}
+  - {year: 2007, peg: ski, confidence: unverified,
+     event: "Russia-Belarus oil dispute stops Druzhba pipeline flows",
+     scene: "A SKI blocks the Druzhba valve in Belarus, and oil stops for Poland and Germany."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Bloomberg: Belarus ruble devalued May 2011",
+     event: "Belarus currency crisis: ruble devalued by about a third",
+     scene: "Belarusians queue for dollars with a TATTOO of a falling ruble as it loses a third of its value."}
+  - {year: 2016, peg: dish, confidence: unverified,
+     event: "Belarus cuts four zeros from its ruble",
+     scene: "A DISH washer rinses four zeros off every Belarusian ruble note."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: Moldova gas cut 1 Jan 2025",
+     event: "Gazprom stops gas to Moldova and Transnistria",
+     scene: "Gazprom drives a NAIL into the Moldovan gas pipe, and Transnistria's factories go cold."}
+  # Baltic states
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Estonian kroon",
+     event: "Estonia brings back the kroon, the first new currency of the former Soviet republics",
+     scene: "A PIANO plays as Estonia trades ten rubles for one kroon, the first post-Soviet currency."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Latvian lats",
+     event: "Latvia brings back the lats",
+     scene: "A PALM tree grows a lats coin in Riga as Latvia swaps two hundred rubles for one."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Lithuanian litas",
+     event: "Lithuania brings back the litas",
+     scene: "A PALM in Vilnius trades a hundred talonas for one new litas."}
+  - {year: 1994, peg: bear, confidence: high, source: "Hoover: Estonian flat tax",
+     event: "Estonia introduces Europe's first flat income tax",
+     scene: "A BEAR taxes every Estonian income at the same flat rate, the first in Europe."}
+  - {year: 1994, peg: bear, confidence: medium, source: "WP mirror: Lithuanian litas",
+     event: "Lithuania ties the litas to the dollar under a currency board",
+     scene: "A BEAR chains the litas to the dollar under a currency board."}
+  - {year: 2003, peg: sumo, confidence: unverified,
+     event: "Skype, built by Estonian programmers in Tallinn, goes public",
+     scene: "A SUMO wrestler makes the first free Skype call from a Tallinn office."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Web search: Parex 51 percent, Nov 2008",
+     event: "Latvian state takes over Parex bank after a run",
+     scene: "Depositors carry their SOFA out of Parex bank, and the Latvian state takes it over."}
+  - {year: 2008, peg: sofa, confidence: medium, source: "Web search: Latvia IMF-EU package",
+     event: "Latvia accepts a rescue package from the IMF and the EU",
+     scene: "The IMF and the EU fly a rescue SOFA into Riga with seven billion euros."}
+  - {year: 2014, peg: tower, confidence: high, source: "portnews: Independence arrives 27 Oct",
+     event: "Floating LNG terminal Independence arrives at Klaipeda",
+     scene: "The ship Independence docks at Klaipeda like a floating TOWER, and Lithuania gets gas not from Russia."}
+  - {year: 2014, peg: tower, confidence: unverified,
+     event: "Estonia starts e-Residency for foreign entrepreneurs",
+     scene: "A digital TOWER in Tallinn issues the first e-Residency card to a foreign entrepreneur."}
+  - {year: 2018, peg: dove, confidence: unverified,
+     event: "Danske Bank's Estonian branch money-laundering scandal comes to light",
+     scene: "A DOVE carries the leaked file that shows billions of dirty money through Danske Bank's Tallinn branch."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: BRELL exit 8-9 Feb 2025",
+     event: "Baltic states leave the Russian power grid and join the European grid",
+     scene: "A NAIL cuts the last wire to Russia, and the Baltic grids join Europe the next day."}
+  # Poland
+  - {year: 1946, peg: roach, confidence: high, source: "Web search: nationalisation law 3 Jan",
+     event: "Polish law nationalises industry with more than fifty workers a shift",
+     scene: "A ROACH swallows every Polish factory with more than fifty workers a shift in the nationalisation law."}
+  - {year: 1947, peg: rock, confidence: high, source: "Web search: Three-Year Plan",
+     event: "Polish Three-Year Plan to rebuild the economy starts",
+     scene: "A ROCK is the first stone of Warsaw's rebuilding as the Three-Year Plan starts."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "'Battle for trade' against private shops and merchants",
+     scene: "Tax inspectors throw a ROCK through private shop windows in the communist battle for trade."}
+  - {year: 1949, peg: rope, confidence: high, source: "In Your Pocket: Nowa Huta, 23 June",
+     event: "Building of Nowa Huta steel town begins near Krakow",
+     scene: "Builders stretch a ROPE across fields near Krakow and dig the first block of Nowa Huta."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Polish zloty",
+     event: "Polish currency reform: new zloty takes most of people's savings",
+     scene: "A LASSO pulls a hundred old zlotys out of each pocket and leaves one new zloty."}
+  - {year: 1950, peg: lasso, confidence: unverified,
+     event: "Polish Six-Year Plan of heavy industry starts",
+     scene: "A LASSO hauls Poland's farm workers into new steel mills under the Six-Year Plan."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "Web search: Nowa Huta furnace 1954",
+     event: "First blast furnace of the Nowa Huta steelworks is lit",
+     scene: "A LAWYER lights the first Nowa Huta blast furnace with his court papers."}
+  - {year: 1956, peg: leech, confidence: unverified,
+     event: "After the Polish October most collective farms dissolve",
+     scene: "Polish farmers pull the collective-farm LEECH off their land after October."}
+  - {year: 1967, peg: jockey, confidence: unverified,
+     event: "FSO Warsaw starts making the Polski Fiat under licence",
+     scene: "A JOCKEY rides the first Polski Fiat off the FSO line in Warsaw."}
+  - {year: 1973, peg: comb, confidence: unverified,
+     event: "Production of the small Polski Fiat 'Maluch' begins",
+     scene: "A COMB fits in the boot of the first tiny Maluch car built in Bielsko-Biala."}
+  - {year: 1976, peg: cage, confidence: high, source: "Web search: sugar ration August 1976",
+     event: "Poland rations sugar",
+     scene: "Polish shops lock the sugar in a CAGE, and families get it only with ration coupons."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Katowice Steelworks makes its first steel",
+     scene: "A CAGE of iron ore tips into the new Katowice Steelworks for its first steel."}
+  - {year: 1981, peg: foot, confidence: high, source: "CS Monitor: meat ration 1 April 1981",
+     event: "Poland rations meat",
+     scene: "A pig's FOOT is all a Polish ration card buys at the butcher's after meat rationing starts."}
+  - {year: 1981, peg: foot, confidence: unverified,
+     event: "Poland stops payments on its Western debt and seeks rescheduling",
+     scene: "Poland puts its FOOT on the debt book and stops paying Western banks."}
+  - {year: 1982, peg: oven, confidence: unverified,
+     event: "Martial-law price reform raises food prices steeply",
+     scene: "Under martial law an OVEN bakes bread that costs three times more overnight."}
+  - {year: 1986, peg: fish, confidence: high, source: "IMF: list of members, 12 June 1986",
+     event: "Poland rejoins the IMF",
+     scene: "A FISH swims back into the IMF pond as Poland rejoins after thirty-six years."}
+  - {year: 1988, peg: fife, confidence: high, source: "rp.pl: Wilczek Act, 23 Dec 1988",
+     event: "Wilczek Act: everything not forbidden is allowed in business",
+     scene: "Minister Wilczek plays a FIFE, and Poles may start any business not forbidden by law."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Balcerowicz Plan",
+     event: "Balcerowicz presents his shock-therapy plan; the Sejm passes it in December",
+     scene: "Balcerowicz swings a watch FOB on television and counts down to shock therapy."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Balcerowicz Plan",
+     event: "Balcerowicz Plan takes effect: prices freed, zloty made convertible",
+     scene: "BEES burst out of the price controls on New Year's Day as the Balcerowicz Plan frees Polish prices."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Warsaw Stock Exchange",
+     event: "Warsaw Stock Exchange holds its first session with five companies",
+     scene: "A BOOT kicks open the door of the old party building, and the Warsaw exchange trades five companies."}
+  - {year: 1991, peg: boot, confidence: high, source: "Paris Club: Poland 21 April 1991",
+     event: "Paris Club creditors cut Poland's official debt by half",
+     scene: "A Paris Club BOOT stamps half of Poland's official debt into the floor."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Polish zloty",
+     event: "Zloty redenomination: ten thousand old zlotys become one",
+     scene: "A BELL rings at midnight, and ten thousand old zlotys turn into one new zloty."}
+  - {year: 1995, peg: bell, confidence: unverified,
+     event: "Mass privatisation through National Investment Funds",
+     scene: "A BELL calls Poles to collect share certificates in the new National Investment Funds."}
+  - {year: 1999, peg: pipe, confidence: unverified,
+     event: "Pension reform creates private open pension funds",
+     scene: "A PIPE splits each Polish worker's pension money into a state part and a private fund."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Economic history of Poland",
+     event: "Poland is the only EU economy that does not fall into recession",
+     scene: "Poland slides on a SOAP bar past the 2009 crash: the only EU economy with no recession."}
+  - {year: 2014, peg: tower, confidence: unverified,
+     event: "State takes over the bond holdings of the private pension funds",
+     scene: "The state lifts the bonds out of the private pension funds' TOWER into the social insurance office."}
+  - {year: 2015, peg: doll, confidence: high, source: "Gulf Times: Qatargas cargo, Dec 2015",
+     event: "Swinoujscie LNG terminal receives its first cargo, from Qatar",
+     scene: "A Qatari DOLL steps off the tanker Al Nuaman with the first LNG at Swinoujscie."}
+  - {year: 2022, peg: nun, confidence: high, source: "Norwegian govt: Baltic Pipe opening",
+     event: "Baltic Pipe opens and brings Norwegian gas to Poland",
+     scene: "A NUN opens the Baltic Pipe valve at Goleniow, and Norwegian gas flows into Poland."}
+  # Czechia and Slovakia
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Benes decrees nationalise banks, mines and large industry",
+     scene: "A RAILWAY wagon carries Czech banks, mines and big factories into state ownership under Benes's decrees."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: Czechoslovak koruna",
+     event: "Czechoslovak koruna is re-established",
+     scene: "A RAILWAY clerk sells the first ticket for the re-established Czechoslovak koruna."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Czechoslovak Two-Year Plan starts",
+     scene: "A ROCK sets the first stone of Czechoslovakia's Two-Year Plan for reconstruction."}
+  - {year: 1949, peg: rope, confidence: unverified,
+     event: "Law on unified farm cooperatives starts collectivisation",
+     scene: "A ROPE ties Czech village fields into one collective farm under the new cooperative law."}
+  - {year: 1965, peg: jelly, confidence: unverified,
+     event: "Party adopts Ota Sik's market-style economic reform",
+     scene: "Ota Sik spreads market JELLY on the stale bread of the Czechoslovak plan, and the party approves."}
+  - {year: 1991, peg: boot, confidence: high, source: "Radio Prague: price liberalisation",
+     event: "Czechoslovakia frees most prices on New Year's Day",
+     scene: "A BOOT kicks the price controls off most goods in Czechoslovak shops on New Year's Day."}
+  - {year: 1991, peg: boot, confidence: high, source: "Skoda Storyboard: VW joint venture",
+     event: "Volkswagen takes a first stake in Skoda Auto",
+     scene: "A Volkswagen BOOT steps into the Mlada Boleslav works and takes the first share of Skoda."}
+  - {year: 1992, peg: piano, confidence: high, source: "CERGE: first voucher wave May 1992",
+     event: "First wave of Czechoslovak voucher privatisation",
+     scene: "Citizens play a PIANO of voucher points and bid for shares in the first privatisation wave."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Czechoslovak koruna",
+     event: "Common currency splits into Czech and Slovak korunas",
+     scene: "A PALM tears the Czechoslovak koruna in two, and each half gets its own stamp."}
+  - {year: 1993, peg: palm, confidence: high, source: "Newstream: Prague exchange 6 April 1993",
+     event: "Prague Stock Exchange reopens",
+     scene: "A broker raises his PALM for the first bid as the Prague Stock Exchange reopens."}
+  - {year: 1995, peg: bell, confidence: unverified,
+     event: "Czech Republic is the first post-communist member of the OECD",
+     scene: "The OECD BELL in Paris rings for the Czech Republic, the first post-communist member."}
+  - {year: 1997, peg: pig, confidence: unverified,
+     event: "Czech currency crisis: koruna is set free to float",
+     scene: "The koruna escapes its pen like a PIG and floats away after speculators attack."}
+  - {year: 2004, peg: sewer, confidence: high, source: "NBS annual report: tax reform 1 Jan 2004",
+     event: "Slovakia introduces a flat nineteen-percent tax",
+     scene: "A SEWER drains every Slovak tax into one flat nineteen-percent pipe."}
+  - {year: 2006, peg: sushi, confidence: unverified,
+     event: "Kia car plant at Zilina starts production",
+     scene: "A SUSHI chef from Korea cuts the ribbon as the Kia plant at Zilina builds its first car."}
+  - {year: 2009, peg: soap, confidence: high, source: "EU Business: Slovakia euro 1 Jan 2009",
+     event: "Slovakia adopts the euro",
+     scene: "Slovaks wash their korunas away with SOAP and pay in euros on New Year's Day."}
+  # Hungary
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Hungarian land reform breaks up the great estates",
+     scene: "A RAILWAY surveyor cuts the great Hungarian estates into small plots for peasants."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Hungarian pengo",
+     event: "Tax pengo introduced as a daily-indexed money against hyperinflation",
+     scene: "A ROACH counts the tax pengo each morning as its value is re-set daily."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Hungarian pengo",
+     event: "Pengo hyperinflation reaches its peak, the worst ever recorded",
+     scene: "A ROACH sweeps pengo notes worth septillions into the gutter at the peak of the worst hyperinflation ever."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Hungarian pengo",
+     event: "Forint replaces the pengo and ends the hyperinflation",
+     scene: "A ROACH carries the first forint coin out of the pengo rubbish heap, and prices stop rising."}
+  - {year: 1947, peg: rock, confidence: medium, source: "Web search: banks nationalised by 1947 law",
+     event: "Hungarian banks are nationalised",
+     scene: "A ROCK seals the vault doors of the Hungarian banks as the state nationalises them."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Hungarian Three-Year Plan starts",
+     scene: "A ROCK on the Budapest planning desk holds down the papers of the Three-Year Plan."}
+  - {year: 1948, peg: reef, confidence: high, source: "libcom: nationalisation law 25 March",
+     event: "Hungary nationalises all firms with more than a hundred workers",
+     scene: "A REEF of state flags rises over every Hungarian factory with more than a hundred workers."}
+  - {year: 1953, peg: llama, confidence: unverified,
+     event: "Imre Nagy's New Course slows heavy industry and favours consumers",
+     scene: "Imre Nagy loads a LLAMA with shoes and food instead of steel under his New Course."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: New Economic Mechanism",
+     event: "Party announces the New Economic Mechanism reform",
+     scene: "A JUDGE in Budapest reads out Kadar's plan for a New Economic Mechanism."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: New Economic Mechanism",
+     event: "New Economic Mechanism takes effect: firms set prices and keep profits",
+     scene: "A Budapest CHEF sets his own menu prices and keeps the profit as the New Economic Mechanism starts."}
+  - {year: 1972, peg: coin, confidence: medium, source: "WP mirror: New Economic Mechanism",
+     event: "Hungarian reform is curtailed and large firms brought back under control",
+     scene: "Moscow flips a COIN, and Budapest pulls its fifty biggest firms back under central control."}
+  - {year: 1982, peg: oven, confidence: high, source: "IMF: list of members, 6 May 1982",
+     event: "Hungary joins the IMF and World Bank",
+     scene: "Hungary bakes its IMF membership in an OVEN and pulls it out in May."}
+  - {year: 1987, peg: fox, confidence: medium, source: "WP mirror: Economic history of Hungary",
+     event: "Two-tier bank system separates the central bank from commercial banks",
+     scene: "A FOX splits the Hungarian National Bank into a central bank and commercial banks."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Economic history of Hungary",
+     event: "Hungary introduces personal income tax and VAT",
+     scene: "A FIFE pipes the first Hungarian income tax and VAT forms into every office."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Budapest Stock Exchange",
+     event: "Budapest Stock Exchange reopens",
+     scene: "BEES swarm back into the Budapest Stock Exchange as it reopens after forty years."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Suzuki plant at Esztergom starts car production",
+     scene: "A PIANO-black Suzuki rolls off the new line at Esztergom."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Economic history of Hungary",
+     event: "Bokros austerity package",
+     scene: "A BELL tolls as Finance Minister Bokros cuts spending and devalues the forint in one package."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Economic history of Hungary",
+     event: "Hungary joins the OECD",
+     scene: "A Hungarian PEACH is set on the OECD table in Paris as Hungary joins."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Economic history of Hungary",
+     event: "IMF and EU rescue Hungary in the financial crisis",
+     scene: "The IMF throws a rescue SOFA under a falling Hungary in the financial crisis."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP mirror: Economic history of Hungary",
+     event: "Hungarian state takes over the private pension funds",
+     scene: "Orban rolls a DICE, and the savings in Hungary's private pension funds pass to the state."}
+  - {year: 2011, peg: tattoo, confidence: unverified,
+     event: "Hungarians may repay foreign-currency mortgages at a fixed low rate",
+     scene: "A Hungarian borrower gets a TATTOO of a Swiss franc and pays it off at a fixed low rate."}
+  # Romania
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Romanian land reform takes estates over fifty hectares",
+     scene: "A RAILWAY surveyor cuts each Romanian estate over fifty hectares into peasant plots."}
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Soviet-Romanian joint companies (SovRoms) set up to take Romanian resources",
+     scene: "A Soviet RAILWAY carries Romanian oil and timber east through the new SovRom companies."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP mirror: Romanian leu",
+     event: "Romanian currency reform: twenty thousand old lei become one",
+     scene: "A ROCK crushes twenty thousand old lei into one stabilised leu."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Economy of Socialist Romania",
+     event: "Romania nationalises almost all industry",
+     scene: "A REEF of red flags covers every Romanian factory as the nationalisation law passes."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Economy of Socialist Romania",
+     event: "Forced collectivisation of Romanian farms begins",
+     scene: "A ROPE drags Romanian peasants and their oxen into the first collective farms."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Romanian leu",
+     event: "Second Romanian currency reform takes much of people's cash",
+     scene: "A LION eats most of each family's lei in the second currency reform."}
+  - {year: 1954, peg: lawyer, confidence: unverified,
+     event: "Most SovRom joint companies are dissolved and sold back to Romania",
+     scene: "A LAWYER signs back the SovRom companies to Romania and the Soviet shares leave."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Economy of Socialist Romania",
+     event: "Collectivisation of Romanian farms is complete",
+     scene: "A CHAIN closes around the last private Romanian farm, and collectivisation is complete."}
+  - {year: 1968, peg: chef, confidence: high, source: "Agerpres: Pitesti plant, Aug 1968",
+     event: "First Dacia car built under a Renault licence at Pitesti",
+     scene: "A French CHEF hands Romania the Renault recipe, and the first Dacia leaves Pitesti."}
+  - {year: 1972, peg: coin, confidence: high, source: "IMF: list of members, Dec 1972",
+     event: "Romania is the first Comecon state to join the IMF and World Bank",
+     scene: "Ceausescu drops a COIN into the IMF box: the first Comecon member to join."}
+  - {year: 1981, peg: foot, confidence: unverified,
+     event: "Romanian debt crisis: bread and food rationing begins",
+     scene: "A Romanian queue stands foot to FOOT for rationed bread as the debt crisis bites."}
+  - {year: 1984, peg: fairy, confidence: high, source: "UPI: canal opened 26 May 1984",
+     event: "Danube-Black Sea Canal opens",
+     scene: "A FAIRY cuts the ribbon at Cernavoda, and Danube ships sail straight to the Black Sea."}
+  - {year: 1989, peg: fob, confidence: high, source: "Web search: debt repaid, April 1989",
+     event: "Ceausescu announces Romania has repaid all its foreign debt",
+     scene: "Ceausescu dangles a gold FOB to show Romania's foreign debt is fully paid."}
+  - {year: 1994, peg: bear, confidence: unverified,
+     event: "Caritas pyramid scheme in Cluj collapses",
+     scene: "A BEAR sits on the Caritas pyramid in Cluj, and it collapses on its investors."}
+  - {year: 1999, peg: pipe, confidence: high, source: "Web search: Renault buys Dacia 1999",
+     event: "Renault buys the Dacia car company",
+     scene: "Renault smokes a victory PIPE as it buys the Dacia car works."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Romanian leu",
+     event: "Romanian leu loses four zeros",
+     scene: "A SEAL balances a new leu on its nose; ten thousand old lei are gone."}
+  - {year: 2005, peg: seal, confidence: unverified,
+     event: "Romania introduces a flat sixteen-percent tax",
+     scene: "A SEAL stamps one flat sixteen-percent rate on every Romanian tax form."}
+  - {year: 2009, peg: soap, confidence: unverified,
+     event: "IMF-led rescue loan for Romania",
+     scene: "The IMF hands Romania a bar of SOAP and twenty billion euros to clean up its budget."}
+  - {year: 2010, peg: dice, confidence: unverified,
+     event: "Romania cuts public-sector wages by a quarter",
+     scene: "Bucharest rolls a DICE and cuts every public-sector wage by a quarter."}
+  # Bulgaria
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Bulgaria nationalises industry and banks",
+     scene: "A ROCK lands on every Bulgarian factory gate and bank door as the state takes them."}
+  - {year: 1952, peg: lion, confidence: medium, source: "WP mirror: Bulgarian lev",
+     event: "Bulgarian currency reform: a hundred old leva become one",
+     scene: "A LION eats ninety-nine of every hundred old leva in the Bulgarian currency reform."}
+  - {year: 1958, peg: wolf, confidence: unverified,
+     event: "Bulgaria completes farm collectivisation",
+     scene: "A WOLF herds the last private Bulgarian farmer into a collective farm."}
+  - {year: 1962, peg: chain, confidence: medium, source: "WP mirror: Bulgarian lev",
+     event: "Bulgarian lev is redenominated ten to one",
+     scene: "A CHAIN drags one zero off every Bulgarian lev note."}
+  - {year: 1970, peg: goose, confidence: unverified,
+     event: "Bulgaria merges collective farms into giant agro-industrial complexes",
+     scene: "A GOOSE flock grows into one giant agro-industrial complex as Bulgaria merges its farms."}
+  - {year: 1990, peg: bees, confidence: high, source: "Wilson Center: moratorium 29 March 1990",
+     event: "Bulgaria stops payments on its foreign debt",
+     scene: "BEES swarm the Bulgarian Foreign Trade Bank, and it stops paying Western creditors."}
+  - {year: 1991, peg: boot, confidence: unverified,
+     event: "Bulgaria frees most prices",
+     scene: "A BOOT kicks open the Sofia price board, and most prices are free."}
+  - {year: 1996, peg: peach, confidence: unverified,
+     event: "Bulgarian banking crisis and hyperinflation begin",
+     scene: "A PEACH costs more each hour as Bulgarian banks fail and the lev collapses."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Bulgarian lev",
+     event: "Bulgarian lev loses three zeros and equals one Deutsche Mark",
+     scene: "A PIPE blows three zeros off the lev, and one lev now equals one Deutsche Mark."}
+  - {year: 2008, peg: sofa, confidence: unverified,
+     event: "Bulgaria introduces a flat ten-percent income tax",
+     scene: "A SOFA in Sofia charges every Bulgarian a flat ten percent of income."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Bulgarian lev",
+     event: "Bulgaria enters the euro waiting room, ERM II",
+     scene: "Bulgaria puts its NOSE through the door of ERM II, the euro waiting room."}
+  - {year: 2026, peg: nacho, confidence: high, source: "Al Jazeera: Bulgaria adopts euro",
+     event: "Bulgaria adopts the euro as the twenty-first member",
+     scene: "A Sofia shopper pays for a NACHO with the first Bulgarian euro on New Year's Day."}
+  # Yugoslavia and its successor states
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Yugoslav agrarian reform takes large estates and church land",
+     scene: "A RAILWAY carries Yugoslav estate and church land to new peasant owners under the agrarian reform."}
+  - {year: 1946, peg: roach, confidence: unverified,
+     event: "Yugoslavia nationalises industry, banks and trade",
+     scene: "A ROACH crawls into every Yugoslav bank and factory as the state takes them."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Youth work brigades build the Brcko-Banovici railway",
+     scene: "A ROACH rides the first coal train on the Brcko-Banovici railway that youth brigades built."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "First Yugoslav Five-Year Plan starts",
+     scene: "Tito's planners blast a ROCK for the first steel works of the Five-Year Plan."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Youth brigades build the Samac-Sarajevo railway",
+     scene: "Youth brigades break each ROCK by hand to lay the Samac-Sarajevo railway."}
+  - {year: 1950, peg: lasso, confidence: high, source: "Marxists.org: self-management law 1950",
+     event: "Law on workers' self-management: workers' councils run Yugoslav firms",
+     scene: "Workers throw a LASSO over the factory director, and their workers' council runs the firm."}
+  - {year: 1953, peg: llama, confidence: unverified,
+     event: "Yugoslav peasants may leave the collective farms",
+     scene: "A LLAMA leads Yugoslav peasants out of the collective farms as the decree lets them go."}
+  - {year: 1955, peg: lily, confidence: unverified,
+     event: "Zastava starts building Fiat cars under licence at Kragujevac",
+     scene: "A LILY decorates the bonnet of the first Fiat-licence Zastava at Kragujevac."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Yugoslav market reform and new dinar",
+     scene: "A JELLY of old dinars sets into one new dinar as the market reform starts."}
+  - {year: 1966, peg: judge, confidence: unverified,
+     event: "Yugoslavia becomes a full member of GATT",
+     scene: "A JUDGE in Geneva admits Yugoslavia as a full member of GATT."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Yugoslav law allows joint ventures with foreign partners",
+     scene: "A foreign JOCKEY may now ride a Yugoslav firm with a minority share in a joint venture."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Associated Labour Act divides firms into self-managed units",
+     scene: "The Associated Labour Act puts each work unit of a Yugoslav firm in its own CAGE."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Belgrade-Bar railway opens to the Adriatic",
+     scene: "A CAGE lift of a hundred bridges carries the Belgrade-Bar railway to the Adriatic."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Yugoslav debt crisis: IMF and creditors take control",
+     scene: "Yugoslavia's debt overheats in an OVEN, and the IMF and Paris Club take the controls."}
+  - {year: 1985, peg: waffle, confidence: unverified,
+     event: "Yugo car goes on sale in the United States",
+     scene: "A Yugo car the size of a WAFFLE goes on sale in America."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Economy of SFR Yugoslavia",
+     event: "Markovic reform: new dinar tied to the Deutsche Mark ends hyperinflation",
+     scene: "Markovic hangs the new dinar on a Deutsche Mark FOB, and hyperinflation stops."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Slovenian tolar",
+     event: "Slovenia introduces the tolar",
+     scene: "A Slovene BOOT kicks out the Yugoslav dinar, and the tolar takes its place."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Hyperinflation in FR Yugoslavia",
+     event: "Serbian and Montenegrin hyperinflation begins under sanctions",
+     scene: "A PIANO costs a billion dinars by evening as Serbian hyperinflation starts."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Hyperinflation in FR Yugoslavia",
+     event: "Avramovic programme stops Yugoslav hyperinflation",
+     scene: "Avramovic wrestles the hyperinflation BEAR to the ground with a new dinar."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Croatian kuna",
+     event: "Croatia introduces the kuna",
+     scene: "A BEAR trades a marten pelt for the first Croatian kuna note."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: 1997 Albanian civil unrest",
+     event: "Albanian pyramid schemes collapse, wiping out savings",
+     scene: "A piggy-bank PIG cracks open in Tirana, empty, as the pyramid schemes collapse."}
+  - {year: 1998, peg: beehive, confidence: high, source: "CBBH: convertible mark 22 June 1998",
+     event: "Bosnia introduces the convertible mark under a currency board",
+     scene: "A BEEHIVE in Sarajevo issues the convertible mark, worth one Deutsche Mark."}
+  - {year: 1999, peg: pipe, confidence: high, source: "CBCG: euroisation, 2 Nov 1999",
+     event: "Montenegro makes the Deutsche Mark legal tender",
+     scene: "Montenegro lights a PIPE with Yugoslav dinars and pays in Deutsche Marks."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Kosovo and the euro",
+     event: "Kosovo and Montenegro adopt the euro without joining the euro area",
+     scene: "The SUN shines on euro coins in Pristina and Podgorica, though neither is in the euro area."}
+  - {year: 2017, peg: dog, confidence: unverified,
+     event: "Croatian state takes control of the failing Agrokor food group",
+     scene: "A DOG guards the Agrokor shops as the Croatian state takes over the failing food giant."}
+  # Albania
+  - {year: 1945, peg: railway, confidence: unverified,
+     event: "Albanian land reform takes the beys' estates",
+     scene: "A RAILWAY surveyor splits the beys' estates among Albanian peasants."}
+  - {year: 1978, peg: cave, confidence: unverified,
+     event: "China stops all aid to Albania",
+     scene: "China walls up the aid CAVE, and Albania is left alone."}
+  # Greece
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Modern drachma",
+     event: "Drachma devalued and fixed to the dollar under Bretton Woods",
+     scene: "A LLAMA carries half the drachma's value away as Markezinis fixes it at thirty to the dollar."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Modern drachma",
+     event: "New drachma: a thousand old drachmas become one",
+     scene: "A LAWYER signs away three zeros: a thousand old drachmas become one."}
+  - {year: 1957, peg: log, confidence: unverified,
+     event: "Onassis founds Olympic Airways",
+     scene: "Onassis carves the Olympic rings into a LOG and founds his new airline."}
+  - {year: 1961, peg: jet, confidence: high, source: "CVCE: Greece-EEC agreement 9 July 1961",
+     event: "Greece signs the first EEC association agreement",
+     scene: "A JET flies the first EEC association agreement to Athens, and Greece signs."}
+  - {year: 1962, peg: chain, confidence: high, source: "CVCE: in force 1 November 1962",
+     event: "Greek association with the EEC takes effect",
+     scene: "A customs CHAIN drops at the Greek border as the EEC association takes effect."}
+  - {year: 1985, peg: waffle, confidence: unverified,
+     event: "Simitis stabilisation programme devalues the drachma",
+     scene: "Simitis cuts the drachma like a WAFFLE in his stabilisation programme."}
+  - {year: 1999, peg: pipe, confidence: unverified,
+     event: "Athens stock market bubble peaks and starts to crash",
+     scene: "A PIPE of hot air bursts over the Athens exchange as its bubble peaks."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Modern drachma",
+     event: "Greece adopts the euro",
+     scene: "A SODA can in Athens is priced in euros as Greece adopts the euro."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Port of Piraeus",
+     event: "COSCO takes a long lease on the Piraeus container piers",
+     scene: "A Chinese crane washes the Piraeus container piers with SOAP as COSCO takes its lease."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Economic history of Greece",
+     event: "Private bondholders accept the largest sovereign debt write-off in history",
+     scene: "Bondholders bite their TONGUE and write off half of Greece's private debt."}
+  - {year: 2015, peg: doll, confidence: high, source: "Web search: capital controls 28 June 2015",
+     event: "Greek banks close and capital controls start",
+     scene: "A Greek DOLL stands at a closed bank with a sixty-euro daily limit."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Greek government-debt crisis",
+     event: "Greece misses an IMF payment, the first developed state to do so",
+     scene: "An IMF DOLL waits in vain for the Greek payment on the last day of June."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Greek government-debt crisis",
+     event: "Third Greek bailout agreed after the referendum",
+     scene: "Tsipras signs the third bailout with a DOLL in his hand after the referendum."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Port of Piraeus",
+     event: "COSCO buys a majority of the Piraeus Port Authority",
+     scene: "COSCO serves the Piraeus port on a DISH and eats more than half."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Greek government-debt crisis",
+     event: "Greece leaves its bailout programme",
+     scene: "A DOVE flies out of the bailout cage on the twentieth of August."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: capital controls end 1 Sep",
+     event: "Greece lifts the last capital controls",
+     scene: "A TUBA plays as the last Greek capital controls are lifted."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Bloomberg: S&P investment grade",
+     event: "Greece regains investment-grade credit rating",
+     scene: "A GNOME climbs back over the investment-grade line, and S&P returns Greece's rating."}
+  # Istanbul
+  - {year: 1986, peg: fish, confidence: medium, source: "Web search: Istanbul exchange Jan 1986",
+     event: "Istanbul Stock Exchange starts trading",
+     scene: "A FISH seller from Galata buys the first share as the Istanbul Stock Exchange starts trading."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Black Sea Economic Cooperation founded in Istanbul",
+     scene: "Leaders of the Black Sea states play one PIANO in Istanbul and found Black Sea Economic Cooperation."}
+  - {year: 2018, peg: dove, confidence: unverified,
+     event: "New Istanbul Airport opens north of the city",
+     scene: "A DOVE lands first on the new Istanbul Airport runway north of the city."}
+  # Several states
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Druzhba pipeline",
+     event: "Comecon agrees to build the Druzhba oil pipeline",
+     scene: "A WOLF bites a Comecon pen and signs the deal for the Druzhba oil pipeline."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Comecon",
+     event: "Comecon adopts its Basic Principles of the socialist division of labour",
+     scene: "A JET drops one job on each Comecon country under the Basic Principles."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Druzhba pipeline",
+     event: "Druzhba pipeline delivers its first oil to Czechoslovakia",
+     scene: "A CHAIN of oil barrels links Russia to Czechoslovakia as the first Druzhba oil arrives."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Comecon",
+     event: "International Bank for Economic Cooperation founded for Comecon trade",
+     scene: "A GEM sits in the vault of the new Comecon bank and backs the transferable ruble."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Druzhba pipeline",
+     event: "Whole Druzhba oil pipeline enters service",
+     scene: "A CHERRY rolls the full length of the Druzhba pipeline from the Volga to East Germany."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Comecon",
+     event: "Comecon adopts the Comprehensive Programme of economic integration",
+     scene: "A CAT knits all Comecon economies together with one ball of yarn: the Comprehensive Programme."}
+  - {year: 1972, peg: coin, confidence: high, source: "Web search: Iron Gate I, 16 May 1972",
+     event: "Iron Gate I dam and power station opens on the Danube",
+     scene: "Tito and Ceausescu split a COIN at the Iron Gate dam that shares its power."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Comecon",
+     event: "Comecon trade switches to hard currency and world prices",
+     scene: "A BOOT kicks the transferable ruble out, and Comecon partners pay in dollars."}
+  - {year: 1991, peg: boot, confidence: unverified,
+     event: "European Bank for Reconstruction and Development opens for the former East",
+     scene: "A BOOT steps into the new EBRD office in London with loans for the former Eastern bloc."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Central European Free Trade Agreement signed in Krakow",
+     scene: "Poland, Hungary and Czechoslovakia play one PIANO in Krakow and sign the free-trade agreement."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Eurasian Economic Union",
+     event: "Eurasian Economic Union of Russia, Belarus and others starts",
+     scene: "A Russian nesting DOLL opens to show Belarus, Kazakhstan and Armenia inside the Eurasian Economic Union."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Druzhba pipeline",
+     event: "Polluted oil stops the Druzhba pipeline",
+     scene: "A TUBA chokes on dirty oil, and the Druzhba pipeline stops."}
