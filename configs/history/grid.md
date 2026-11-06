@@ -496,7 +496,9 @@ Fix-pass list (not done):
 - Likely wrong / to settle: Occom sermon 1771 vs 1772 (execution 1772); Uruguay abolition 1842 unverified (mirror
   1830); Bíró 1943 Argentine patent vs eastern_europe Bíró (dup?); Pittier institute 1887/1889; Brazil e-voting
   2000/2002; Cuba Christmas 1997/1998; Central Banking Enquiry 1929/1930; Raniganj 1832/1835; Ezra–Nehemiah 1950.
-- Theme: north_africa_science_1945_present counts excavations / fossils as science (open excavation question).
+- Excavations → science (user rule 2026-11-06, policy.md). Move excavation / discovery entries out of arts cells
+  (north_africa_arts: Tutankhamun, Nefertiti bust, Abu Simbel; others by grep) into the science cell of the same
+  region and period (first-come does not apply: this is a rule change).
 - Peg overload: lasso 22 (western_europe_arts_pre500bce, "c. x50" midpoints; lasso scenes repetitive), jockey 18,
   chain 18, wolf 16, chef 15 (latin_america_arts_1945_present), lasso 15 (western_europe_arts_500bce_500ce),
   piano 12 (west_asia_politics_500_1500); 23 OVERLOAD warnings in wave 14 cells.

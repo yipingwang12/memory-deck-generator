@@ -30,6 +30,9 @@ All text in ASD-STE100 style.
 - Nobel and other prizes: IN only if the prize work was done in the region. A prize to an emigrant for work
   done abroad goes to the region where the work was done.
 - Region boundaries: see `grid.md` Regions (Finland, Constantinople, the steppe, Hawaii).
+- Excavations (user rule 2026-11-06): the discovery or excavation of a site, find, fossil or text goes under
+  science (archaeology), in the region where it is found. The making of the work itself stays in its own theme
+  and period (Tutankhamun's tomb is made: arts, pre500bce; Carter finds it: science, 1800_1945).
 - Already in an older cell (user rule 2026-11-06): if an older cell of another theme already holds the event,
   leave it there and do not repeat it, even when this cell's theme is its main theme (first-come).
 
