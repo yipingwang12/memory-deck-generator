@@ -19,10 +19,13 @@ Do NOT stop after the memory pass and do NOT wait for permission before the web 
 
 ## Scope
 - Region, theme and period definitions: /Users/yipingwa/Documents/Projects/memory-deck-generator/configs/history/grid.md — use the entries for your slugs.
-- Put an event here only if this theme is its MAIN theme. Event must happen inside the region and the period.
+- Put an event here only if this theme is its MAIN theme. If an older cell of another theme already holds it, leave it there
+  and do not repeat it (first-come; grep the other cells of your region and period). Event must happen inside the region and the period.
 - Depth: EXHAUSTIVE. Every dated event you can find, specialist items included, like the pilot. Do not stop at a round number. Expect roughly {expected} entries; a thin cell may have fewer — that is fine, do not pad.
 - Group entries by subregion with `# <subregion>` comments, in date order inside each group. Never group
   by build stage ("extension", "added after check"): put each new entry in its subregion.
+  Geography first. Group by era or state only where one subregion holds most of the cell (Greek
+  city-states, US by period); never by build stage.
 - Big cell (over 200 entries): write the file early and save it after every ~50 new entries, so a
   crash loses little. Run deck-history-check at each save.
 
@@ -53,6 +56,8 @@ and the Kiwix Wikipedia mirror at `kaweah.freedombox.rocks/kiwix/content/wikiped
 give up after two timeouts). Do NOT use IPFS mirrors (dweb.link, ipfs.aleph.im, 4everland): the auto-mode
 permission check refuses them. Also useful: Livius, Thayer (penelope.uchicago.edu), SAHO, Historic UK. Fetch refuses on
 britannica.com, metmuseum.org, britishmuseum.org, smarthistory.org — use their search summaries only.
+A WebFetch summary can echo the items you named in its prompt as if they were page text: ask the fetch
+for the dates the page states, not "confirm X in year Y"; a summary that only repeats your list is no source.
 Every entry a source confirms gets a short `source:` field (policy.md). Spend them in this order: items you would mark low or disputed, items with no
 date, items near a period boundary, then extension searches. Everything you do not search is
 `unverified` — never `high` or `medium` from memory. If a search is refused, stop searching and write the cell.
@@ -66,9 +71,10 @@ If not, keep the item, use the source year, mark it `disputed`, and name both ye
 Timeline pages often carry one-year errors, so a single timeline does not beat a dedicated article. A phase (a migration, a famine, a riot) is dated by its START, not its end. Inventions: first working public demonstration;
 patent filing only when no demonstration is on record (policy.md). Scope: an event goes in a region if it
 happens there OR its main subject or effect is there; prizes only if the prize work was done in the region
-(policy.md "Scope"). Region boundaries for Finland, Constantinople and the steppe: grid.md.
-Calendar straddle (one year apart only because of a Hijri or regnal year) is `medium`, not `disputed`.
-`WARNING PEG OVERLOAD` from the check: give each scene of that peg a different role and setting.
+(policy.md "Scope"). Region boundaries for Finland, Constantinople, the steppe and Hawaii: grid.md.
+Calendar straddle (one year apart only because of a Hijri or regnal year) is `medium`, not `disputed`. Lunar new-year gap: use the Western year of the day (policy.md).
+`WARNING PEG OVERLOAD` from the check: give each scene of that peg a different role and setting. It is a warning only:
+NEVER drop or merge an item to keep a peg under the limit.
 
 ## Web check (step 3)
 - Load WebSearch with ToolSearch ("select:WebSearch") if it is deferred. Use "standard" mode by default; "extended" only for hard items. Send searches in parallel batches.

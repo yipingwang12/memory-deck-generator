@@ -22,9 +22,16 @@ All text in ASD-STE100 style.
   regional owner; students the region sends abroad; works by regional authors or filmmakers that appear first
   abroad (Garcilaso and Sor Juana printed in Spain, Kazakh books printed in Orenburg, films premiered at
   Cannes). Date a work by its first public appearance, wherever that is.
+- Works made or shown outside the author's region (user rule 2026-11-06): the work goes to the region it is
+  set in or about; if it has no such setting, to the author's (or company's) home region. Never by the place of
+  premiere or print alone. Midnight's Children → south_asia; The Plague (Oran) → north_africa; Kafka's novels
+  → eastern_europe; Ballets Russes premieres in Paris (Firebird, Petrushka, Rite of Spring) → eastern_europe;
+  Mahjar poets printed in New York → west_asia.
 - Nobel and other prizes: IN only if the prize work was done in the region. A prize to an emigrant for work
   done abroad goes to the region where the work was done.
-- Region boundaries: see `grid.md` Regions (Finland, Constantinople, the steppe).
+- Region boundaries: see `grid.md` Regions (Finland, Constantinople, the steppe, Hawaii).
+- Already in an older cell (user rule 2026-11-06): if an older cell of another theme already holds the event,
+  leave it there and do not repeat it, even when this cell's theme is its main theme (first-come).
 
 ## Entry
 
@@ -39,7 +46,10 @@ All text in ASD-STE100 style.
 - `confidence`: `high` (source confirms) | `medium` (source close, or several values) | `low` (single weak claim) | `disputed` (sources disagree in print) | `unverified` (no source found).
   A label other than `unverified` needs a source found in the web check.
   Calendar straddle (added 2026-11-05): when sources differ by one year only because a Hijri, regnal or other
-  calendar year covers two Common Era years, use `medium`, not `disputed`, and the year the main source gives. A date from memory alone is `unverified`, even a textbook date. Keep an unsourced item as `unverified`; do not drop it.
+  calendar year covers two Common Era years, use `medium`, not `disputed`, and the year the main source gives.
+  Lunar new-year gap (user rule 2026-11-06): when the day is known and falls early in a Western year but in
+  the previous lunar, Hijri or regnal year, use the Western (Julian, Gregorian from 1582) year of that day:
+  Chanyuan treaty, January 1005 = 12th month of 1004 → 1005, `medium`. A date from memory alone is `unverified`, even a textbook date. Keep an unsourced item as `unverified`; do not drop it.
 - `source`: optional, short (< 60 characters): the site or work that confirms the date, e.g. `"Britannica: Treaty of Andrusovo"`. Added from the 2026-11-04 check pass; give it on every entry a check confirms or corrects.
 - `event`: site/name + key fact. **No year-like number** (no 3–4-digit numbers at all; write "2 km high", "thousands of km"). Approximate → append `(approximate)`. Tradition only → `(traditional date)`.
 - One entry per distinct fact. Same site + date + one find → consider one merged entry.

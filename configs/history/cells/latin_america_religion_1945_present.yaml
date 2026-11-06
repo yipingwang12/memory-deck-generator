@@ -1,0 +1,962 @@
+# Cell: Latin America x religion and philosophy x 1945 to present. DRAFT 2026-11-06.
+# Dates: memory pass + web check (45 searches plus fetches of the WP mirror; the rest is unverified).
+# Peg rules as policy.md: last two digits; years_ago not used in this period.
+# Range -> conventional "c." date, else start of a phase; "X +/- Y" -> X. Work -> first public appearance.
+# Scope: Mexico, Central America, Caribbean, South America. Churches, sects, councils, saints, religious
+# buildings, church-state agreements, attacks on clergy, religious and philosophical works.
+# Acts in Rome go in when their main subject is in the region (canonizations, notifications, popes from the region).
+# Coups, wars and elections stay in politics; events already in latin_america_politics_1945_present stay there.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Regional (CELAM, liberation theology, ecumenical bodies, Amazon)
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Latin American Episcopal Council",
+     event: "CELAM, the Latin American bishops' council, is founded at its first meeting in Rio de Janeiro",
+     scene: "A giant LILY opens in Rio and every bishop of Latin America steps out of its petals to found CELAM."}
+  - {year: 1959, peg: elbow, confidence: unverified,
+     event: "CLAR, the Latin American confederation of religious orders, is founded",
+     scene: "Monks and nuns from every country link ELBOW to ELBOW and form one confederation, CLAR."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Latin American Episcopal Council",
+     event: "Medellín: second CELAM conference commits the Church to the poor",
+     scene: "A CHEF in Medellín serves the bishops a meal of beans for the poor, and they vote to side with them."}
+  - {year: 1969, peg: ship, confidence: unverified,
+     event: "CLADE I: first Latin American congress on evangelization meets in Bogotá",
+     scene: "A SHIP full of Protestant preachers docks in Bogotá for the first Latin American congress on evangelization."}
+  - {year: 1970, peg: goose, confidence: high, source: "Evangelical Review of Theology: FTL founded",
+     event: "Latin American Theological Fraternity (FTL) is founded near Cochabamba",
+     scene: "A GOOSE gathers twenty-five evangelical theologians under its wings at Cochabamba and hatches the Theological Fraternity."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Latin American Episcopal Council",
+     event: "López Trujillo becomes CELAM general secretary; conservatives take control",
+     scene: "A COIN flips in Sucre and lands on López Trujillo, and the conservatives take over CELAM."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WebSearch: Puebla 27 Jan-13 Feb 1979",
+     event: "Puebla: third CELAM conference adopts the preferential option for the poor",
+     scene: "A COWBOY lassoes the bishops at Puebla and ties them to the preferential option for the poor."}
+  - {year: 1982, peg: oven, confidence: high, source: "WebSearch: CLAI founded 16 Nov 1982",
+     event: "Latin American Council of Churches (CLAI) is founded at Huampaní, Peru",
+     scene: "An OVEN at Huampaní bakes one loaf from the flour of many Protestant churches: the Council of Churches."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Gustavo Gutiérrez (6 Aug 1984)",
+     event: "Vatican instruction warns against Marxist elements in liberation theology",
+     scene: "A FAIRY from Rome waves her wand and strikes the Marxist pages out of a liberation theology book."}
+  - {year: 1986, peg: fish, confidence: medium, source: "WP mirror: Latin American Episcopal Council",
+     event: "Second Vatican instruction on liberation theology takes a milder line",
+     scene: "A FISH swims out of Rome with a second, softer instruction that lets liberation theology live."}
+  - {year: 1992, peg: piano, confidence: high, source: "WebSearch: Santo Domingo 12-28 Oct 1992",
+     event: "Santo Domingo: fourth CELAM conference marks five centuries of evangelization",
+     scene: "A PIANO in Santo Domingo plays five hundred notes, one per year, as the fourth CELAM conference opens."}
+  - {year: 2007, peg: ski, confidence: high, source: "WebSearch: Aparecida 13-31 May 2007",
+     event: "Aparecida: fifth CELAM conference calls for a continental mission",
+     scene: "Bishops glide out of Aparecida on SKI tracks in every direction to start the continental mission."}
+  - {year: 2014, peg: tower, confidence: high, source: "WebSearch: REPAM created Sep 2014",
+     event: "REPAM, the Pan-Amazonian church network, is founded in Brasília",
+     scene: "A TOWER of woven vines rises in Brasília and links the dioceses of nine Amazon countries in one network."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WebSearch: REPAM, Amazon synod 2019",
+     event: "Synod on the Amazon meets in Rome",
+     scene: "A TUBA blows river water across the Vatican hall as bishops of the Amazon open their synod."}
+  - {year: 2020, peg: nose, confidence: unverified,
+     event: "Pope Francis publishes Querida Amazonia after the Amazon synod",
+     scene: "A NOSE sniffs the rainforest and Francis writes Querida Amazonia, his love letter to the Amazon."}
+  - {year: 2020, peg: nose, confidence: high, source: "WebSearch: CEAMA founded 2020",
+     event: "Ecclesial Conference of the Amazon (CEAMA) is founded",
+     scene: "A giant NOSE in a bishop's mitre becomes the first president of the new Ecclesial Conference of the Amazon."}
+  - {year: 2021, peg: ant, confidence: unverified,
+     event: "First Ecclesial Assembly of Latin America and the Caribbean meets in Mexico",
+     scene: "An ANT colony of lay people, nuns and bishops fills the first Ecclesial Assembly of the continent."}
+  # Mexico
+  - {year: 1945, peg: railway, confidence: high, source: "Vatican: Pius XII radio message 12 Oct 1945",
+     event: "Pius XII names the Virgin of Guadalupe Empress of the Americas",
+     scene: "A RAILWAY carries a crown from Rome to Tepeyac, and Pius XII names Guadalupe Empress of the Americas."}
+  - {year: 1948, peg: reef, confidence: unverified,
+     event: "Hiperión group of young philosophers forms in Mexico City to study Mexican identity",
+     scene: "A coral REEF grows under Mexico City, and young philosophers name it Hiperión to study the Mexican mind."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: La Luz del Mundo",
+     event: "La Luz del Mundo founds its holy city, Hermosa Provincia, at Guadalajara",
+     scene: "A LION marks out Hermosa Provincia on the edge of Guadalajara as La Luz del Mundo's holy city."}
+  - {year: 1952, peg: lion, confidence: unverified,
+     event: "Emilio Uranga publishes Análisis del ser del mexicano",
+     scene: "A LION on the couch is analysed for the Mexican soul in Uranga's Análisis del ser del mexicano."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP mirror: Samael Aun Weor",
+     event: "Samael Aun Weor moves his Gnostic movement from Colombia to Mexico City",
+     scene: "A LEECH carries the Gnostic teacher Samael Aun Weor from Colombia and drops him in Mexico City."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Edmundo O'Gorman",
+     event: "Edmundo O'Gorman publishes La invención de América",
+     scene: "A WOLF invents America on a blank map in O'Gorman's book: the continent was invented, not discovered."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Marcial Maciel",
+     event: "Marcial Maciel founds Regnum Christi, the lay movement of the Legion of Christ",
+     scene: "Marcial Maciel uses his ELBOW to push lay people into a new movement, Regnum Christi."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Samuel Ruiz",
+     event: "Samuel Ruiz becomes bishop of San Cristóbal de las Casas",
+     scene: "Samuel Ruiz gets a mitre made of CHEESE as he is consecrated bishop of San Cristóbal in Chiapas."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Ivan Illich",
+     event: "Ivan Illich founds a training centre for missionaries at Cuernavaca, later CIDOC",
+     scene: "A JET lands foreign missionaries in Cuernavaca, where Ivan Illich trains them in his new centre."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: La Luz del Mundo",
+     event: "Aarón Joaquín dies; his son Samuel Joaquín Flores leads La Luz del Mundo",
+     scene: "A CHERRY drops from the dying Aarón Joaquín into the hand of his son Samuel, the new leader."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Basilica of Our Lady of Guadalupe",
+     event: "Construction of the new Basilica of Guadalupe begins",
+     scene: "A CAR with a bulldozer blade digs the first ground for the new round Basilica of Guadalupe."}
+  - {year: 1974, peg: car, confidence: unverified,
+     event: "Indigenous Congress meets in San Cristóbal de las Casas at the call of Bishop Ruiz",
+     scene: "A CAR brings Tzotzil, Tzeltal, Tojolabal and Chol delegates to Bishop Ruiz's Indigenous Congress."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Basilica of Our Lady of Guadalupe",
+     event: "New Basilica of Guadalupe opens; the image of the Virgin moves into it",
+     scene: "A golden CAGE carries the image of Guadalupe in procession into the new basilica."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Ivan Illich",
+     event: "Ivan Illich closes CIDOC in Cuernavaca",
+     scene: "Ivan Illich locks CIDOC in a CAGE and throws away the key before it becomes an institution."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Samael Aun Weor (24 Dec 1977)",
+     event: "Samael Aun Weor dies in Mexico City",
+     scene: "A Christmas Eve CAKE goes uncut as the Gnostic teacher Samael Aun Weor dies in Mexico City."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Enrique Dussel; WebSearch",
+     event: "Enrique Dussel, in exile in Mexico, publishes Filosofía de la liberación",
+     scene: "Enrique Dussel slices a CAKE so the poor get the first piece: his Filosofía de la liberación."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II makes his first papal trip to Mexico",
+     scene: "A Mexican COWBOY on horseback escorts John Paul II from the airport on the first papal visit to Mexico."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: La Luz del Mundo (3 Jul 1983)",
+     event: "Samuel Joaquín lays the cornerstone of La Luz del Mundo's great temple in Guadalajara",
+     scene: "Wet FOAM concrete pours over the cornerstone that Samuel Joaquín lays for the Guadalajara temple."}
+  - {year: 1983, peg: foam, confidence: high, source: "WebSearch: Mexico City Temple 2 Dec 1983",
+     event: "First Latter-day Saint temple in Mexico is dedicated in Mexico City",
+     scene: "Shaving FOAM shapes the white Mayan-style walls of the first Latter-day Saint temple in Mexico City."}
+  - {year: 1988, peg: fife, confidence: unverified,
+     event: "Jesuit martyr Miguel Pro is beatified",
+     scene: "A FIFE plays as Miguel Pro, shot with arms spread, is declared blessed."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Juan Diego (6 May 1990)",
+     event: "John Paul II beatifies Juan Diego at the Basilica of Guadalupe",
+     scene: "BEES carry roses into the basilica and John Paul II declares Juan Diego blessed."}
+  - {year: 1992, peg: piano, confidence: high, source: "CSMonitor: Mexico church reform Jan 1992",
+     event: "Mexico amends its constitution to give churches legal status",
+     scene: "A PIANO lid slams on the old anticlerical articles as Mexico gives churches legal status."}
+  - {year: 1992, peg: piano, confidence: high, source: "WebSearch: Ley de Asociaciones Religiosas",
+     event: "Law on Religious Associations and Public Worship sets the rules for churches",
+     scene: "A PIANO keyboard lists every church as a key; each must register under the new law to play."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Mexico and the Holy See open diplomatic relations",
+     scene: "A PIANO duet: a Mexican diplomat and a papal nuncio play the first notes of formal relations."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: La Luz del Mundo (1 Aug 1992)",
+     event: "La Luz del Mundo completes its great temple in Guadalajara",
+     scene: "A PIANO is hoisted to the spire of the finished Guadalajara temple of La Luz del Mundo."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Juan Jesús Posadas Ocampo",
+     event: "Cardinal Posadas Ocampo is shot dead at Guadalajara airport",
+     scene: "A PALM tree at Guadalajara airport is riddled with the bullets that kill Cardinal Posadas in his car."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II meets Indigenous peoples at Izamal, Yucatán",
+     scene: "Maya leaders wave PALM leaves as John Paul II meets the Indigenous peoples of the Americas at Izamal."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Samuel Ruiz",
+     event: "Bishop Samuel Ruiz becomes mediator between the Zapatistas and the government",
+     scene: "A BEAR in a bishop's stole sits between the Zapatistas and the government and makes them talk."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Samuel Ruiz",
+     event: "Samuel Ruiz resigns as mediator, saying the government only simulates peace talks",
+     scene: "Samuel Ruiz kicks over the BEEHIVE of fake peace talks and walks out as mediator."}
+  - {year: 1999, peg: pipe, confidence: medium, source: "WP mirror: Basilica of Guadalupe; JPII visits",
+     event: "John Paul II signs Ecclesia in America in Mexico City",
+     scene: "John Paul II signs Ecclesia in America with a PIPE dipped in ink at the Basilica of Guadalupe."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Saints canonized by John Paul II",
+     event: "Cristóbal Magallanes and other Cristero war martyrs are canonized",
+     scene: "Red SAUCE drips from the Cristero martyrs' wounds as Rome declares Magallanes and his companions saints."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Samuel Ruiz (13 Mar 2000)",
+     event: "Samuel Ruiz retires as bishop of San Cristóbal",
+     scene: "Samuel Ruiz hands a bowl of mole SAUCE to his successor Arizmendi and retires from San Cristóbal."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Santa Muerte",
+     event: "Enriqueta Romero sets up the first public Santa Muerte shrine in Tepito",
+     scene: "Enriqueta Romero places a SODA bottle at the feet of a life-size Santa Muerte outside her Tepito home."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Juan Diego (31 Jul 2002)",
+     event: "John Paul II canonizes Juan Diego in Mexico City",
+     scene: "The SUN shines through Juan Diego's cloak as John Paul II declares him the first Indigenous saint of the Americas."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Marcial Maciel",
+     event: "Vatican orders Marcial Maciel to a life of prayer and penance",
+     scene: "Rome takes away Maciel's SUSHI and orders him to a quiet life of prayer and penance."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Saints canonized by Benedict XVI",
+     event: "Bishop Rafael Guízar Valencia is canonized",
+     scene: "A SUSHI chef carves a halo for Rafael Guízar Valencia, the bishop of Veracruz, now a saint."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Santa Muerte",
+     event: "Mexican army demolishes dozens of Santa Muerte roadside shrines near the US border",
+     scene: "Army bulldozers wash away forty Santa Muerte shrines with SOAP along the border roads."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Marcial Maciel (1 May 2010)",
+     event: "Vatican denounces Maciel's crimes and puts the Legion of Christ under a papal delegate",
+     scene: "A DICE rolls out of Maciel's secret life and the Vatican puts the Legion of Christ under a delegate."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Santa Muerte",
+     event: "Santa Muerte church leader David Romo is arrested",
+     scene: "Police find a loaded DICE in the robes of self-made bishop David Romo and arrest him for a kidnap gang."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Samuel Ruiz (24 Jan 2011)",
+     event: "Bishop Samuel Ruiz dies",
+     scene: "Chiapas villagers wear a TATTOO of Samuel Ruiz's face as they carry his coffin to San Cristóbal."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Pastoral visits of Benedict XVI",
+     event: "Benedict XVI visits Mexico, starting at León",
+     scene: "A giant TONGUE of cheering crowds licks the road from León airport as Benedict XVI arrives in Mexico."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Mother Lupita, nurse of the poor in Guadalajara, is canonized",
+     scene: "Mother Lupita rises from her TOMB in Guadalajara with a nurse's bowl and is declared a saint."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: La Luz del Mundo (14 Dec 2014)",
+     event: "Naasón Joaquín García succeeds his father as head of La Luz del Mundo",
+     scene: "Naasón Joaquín climbs his dead father's TOWER and takes command of La Luz del Mundo."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis visits Mexico, from the Basilica of Guadalupe to Ciudad Juárez",
+     scene: "Francis carries a DISH of bread from the Guadalupe basilica to the migrants at Ciudad Juárez."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Cristero boy martyr José Sánchez del Río is canonized",
+     scene: "A DISH of salt is rubbed on the cut feet of teenage José Sánchez del Río, now a saint."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Child martyrs of Tlaxcala, first Indigenous child converts killed, are canonized",
+     scene: "A DOG guards three Tlaxcalan boys, the child martyrs, as Rome declares them saints."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: La Luz del Mundo (4 Jun 2019)",
+     event: "La Luz del Mundo leader Naasón Joaquín is arrested on abuse charges",
+     scene: "A police TUBA blares as Naasón Joaquín steps off his jet and is arrested for abuse."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: La Luz del Mundo (8 Jun 2022)",
+     event: "Naasón Joaquín is sentenced to nearly seventeen years in prison",
+     scene: "A NUN with a judge's gavel sentences Naasón Joaquín to almost seventeen years in prison."}
+  - {year: 2022, peg: nun, confidence: high, source: "WebSearch: Cerocahui Jesuits 20 Jun 2022",
+     event: "Gunmen kill two Jesuit priests inside the church of Cerocahui, Chihuahua",
+     scene: "A NUN finds the Cerocahui church empty: gunmen shot the two old Jesuits and took their bodies."}
+  # Central America
+  - {year: 1954, peg: lawyer, confidence: unverified,
+     event: "Guatemala's Archbishop Rossell calls Catholics to rise against communism",
+     scene: "A LAWYER reads Archbishop Rossell's pastoral letter calling Guatemalan Catholics to rise against communism."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "WebSearch: Mennonites in Belize (Mar 1958)",
+     event: "Mennonites from Mexico found Spanish Lookout and Shipyard colonies in Belize",
+     scene: "A WOLF watches hundreds of Mennonite wagons cross into Belize to found Spanish Lookout."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Ignacio Ellacuría",
+     event: "Jesuits found the Central American University (UCA) in San Salvador",
+     scene: "Jesuits pour JELLY into moulds and set the walls of the new university of San Salvador, the UCA."}
+  - {year: 1965, peg: jelly, confidence: medium, source: "WP mirror: Ernesto Cardenal",
+     event: "Ernesto Cardenal starts his community on the Solentiname islands (approximate)",
+     scene: "Ernesto Cardenal spreads guava JELLY on bread for peasant painters at his new Solentiname community."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Miguel Obando y Bravo",
+     event: "Miguel Obando y Bravo becomes archbishop of Managua",
+     scene: "A GOOSE lays the archbishop's ring for Miguel Obando y Bravo in Managua."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WebSearch: Los Horcones massacre 25 Jun",
+     event: "Los Horcones, Honduras: soldiers kill two priests and peasant activists",
+     scene: "An EAGLE circles the Los Horcones ranch in Olancho where soldiers murder two priests and peasant leaders."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Óscar Romero (3 Feb 1977)",
+     event: "Óscar Romero becomes archbishop of San Salvador",
+     scene: "The elite of San Salvador bake Óscar Romero a welcome CAKE, thinking the new archbishop is safe."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Óscar Romero (12 Mar 1977)",
+     event: "Jesuit Rutilio Grande is murdered on the road to El Paisnal",
+     scene: "A death squad shoots Rutilio Grande on the road to El Paisnal; his feast-day CAKE falls in the cane field."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Ernesto Cardenal (19 Jul 1979)",
+     event: "Priest Ernesto Cardenal becomes Nicaragua's minister of culture",
+     scene: "A Sandinista COWBOY gives the beret-wearing priest Ernesto Cardenal the keys of the ministry of culture."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Óscar Romero (24 Mar 1980)",
+     event: "Archbishop Óscar Romero is shot dead while saying Mass",
+     scene: "A sniper's bullet smashes a VASE of flowers on the altar as Archbishop Romero falls during Mass."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Óscar Romero (30 Mar 1980)",
+     event: "Gunfire and a stampede kill mourners at Romero's funeral",
+     scene: "Funeral VASE after VASE topples as shots and panic kill mourners outside San Salvador cathedral."}
+  - {year: 1980, peg: vase, confidence: unverified,
+     event: "Salvadoran soldiers rape and kill four US churchwomen",
+     scene: "Four broken VASE shards mark the roadside grave of the four American nuns and lay workers."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Stanley Rother",
+     event: "US priest Stanley Rother is murdered in his rectory at Santiago Atitlán",
+     scene: "Gunmen kick in the rectory door with a heavy FOOT at Santiago Atitlán and kill Father Stanley Rother."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: Pastoral visits of JPII; Cardenal",
+     event: "In Managua John Paul II scolds the kneeling Ernesto Cardenal",
+     scene: "FOAM flies from the pope's lips as he wags a finger at the kneeling Ernesto Cardenal at Managua airport."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Ernesto Cardenal (4 Feb 1984)",
+     event: "Vatican suspends Ernesto Cardenal from the priesthood",
+     scene: "A Vatican FAIRY taps Ernesto Cardenal with her wand and he can no longer say Mass."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Miguel Obando y Bravo (25 May)",
+     event: "Obando y Bravo becomes Nicaragua's first cardinal",
+     scene: "A red WAFFLE becomes the cardinal's hat of Obando y Bravo, the first cardinal of Nicaragua."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Ignacio Ellacuría (16 Nov 1989)",
+     event: "Soldiers murder six Jesuits, their housekeeper and her daughter at the UCA",
+     scene: "Ellacuría's watch FOB stops at night as soldiers shoot six Jesuits and two women at the UCA."}
+  - {year: 1991, peg: boot, confidence: medium, source: "WP mirror: Jorge Serrano Elías",
+     event: "Evangelical Jorge Serrano takes office, Guatemala's first non-Catholic elected president",
+     scene: "An evangelical BOOT steps into the palace: Jorge Serrano, first elected non-Catholic president of Guatemala."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II returns to Guatemala, Nicaragua and El Salvador in peacetime",
+     scene: "John Paul II hands a PEACH to Nicaragua's crowds, who now cheer him, on his peacetime return."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Juan José Gerardi (24 Apr)",
+     event: "Catholic REMHI report Guatemala: Nunca Más blames the army for most killings",
+     scene: "A BEEHIVE of fifty thousand testimonies becomes the Church's report, Guatemala: Nunca Más."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Juan José Gerardi (26 Apr)",
+     event: "Bishop Juan Gerardi is beaten to death two days after the REMHI report",
+     scene: "Killers smash a BEEHIVE over Bishop Gerardi's head in his garage two days after his report."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Juan José Gerardi (8 Jun 2001)",
+     event: "Three army officers are convicted of Gerardi's murder",
+     scene: "A SODA bottle with army fingerprints convicts three officers of Bishop Gerardi's murder."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Saints canonized by John Paul II",
+     event: "Hermano Pedro de San José Betancur is canonized in Guatemala City",
+     scene: "The SUN rises over Guatemala City as John Paul II makes Hermano Pedro the first saint of Central America."}
+  - {year: 2007, peg: ski, confidence: high, source: "Fides: CDF notification on Sobrino",
+     event: "Vatican declares errors in the books of Jon Sobrino of the UCA",
+     scene: "A SKI slope in Rome marks Jon Sobrino's Christology as a dangerous run: erroneous propositions."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Óscar Romero",
+     event: "El Salvador's government formally apologises for the murder of Romero",
+     scene: "President Funes throws away the loaded DICE of the past and apologises for the state's murder of Romero."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Óscar Romero (23 May 2015)",
+     event: "Óscar Romero is beatified as a martyr in San Salvador",
+     scene: "A DOLL of Romero in a red martyr's stole is carried through San Salvador as he is beatified."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Óscar Romero (14 Oct 2018)",
+     event: "Óscar Romero is canonized in Rome",
+     scene: "A white DOVE lands on the blood-stained belt Romero wore when shot, and Rome declares him a saint."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Miguel Obando y Bravo (3 Jun)",
+     event: "Cardinal Obando y Bravo dies in Managua",
+     scene: "A DOVE flies from the Managua bedroom where Cardinal Obando dies aged ninety-two."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "World Youth Day is held in Panama",
+     scene: "A TUBA band leads half a million young pilgrims along Panama City's coast for World Youth Day."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Ernesto Cardenal (18 Feb 2019)",
+     event: "Vatican lifts Ernesto Cardenal's suspension from the priesthood",
+     scene: "A TUBA sounds in his hospital room as the nuncio tells Ernesto Cardenal he may say Mass again."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Ernesto Cardenal (1 Mar 2020)",
+     event: "Ernesto Cardenal dies in Managua",
+     scene: "A NOSE peeks from under Ernesto Cardenal's beret for the last time as he dies in Managua."}
+  - {year: 2021, peg: ant, confidence: unverified,
+     event: "Ten martyrs of Quiché, priests and catechists, are beatified",
+     scene: "An ANT column of catechists carries the ten martyrs of Quiché to their beatification."}
+  - {year: 2022, peg: nun, confidence: high, source: "Vatican News: beatification 22 Jan 2022",
+     event: "Rutilio Grande and three companions are beatified in San Salvador",
+     scene: "A NUN rings the bells of San Salvador as Rutilio Grande and his companions are declared blessed."}
+  - {year: 2022, peg: nun, confidence: medium, source: "AP via WebSearch: Nicaragua nuns expelled",
+     event: "Nicaragua expels the Missionaries of Charity",
+     scene: "Ortega's police march every NUN of Mother Teresa's order to the Costa Rican border."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Vatican News: Álvarez sentenced 10 Feb",
+     event: "Bishop Rolando Álvarez is sentenced to twenty-six years after refusing exile",
+     scene: "A GNOME judge sentences Bishop Álvarez to twenty-six years the day after he refuses the exile plane."}
+  - {year: 2023, peg: gnome, confidence: high, source: "AP: Nicaragua seizes UCA 16 Aug 2023",
+     event: "Nicaragua seizes the Jesuit UCA in Managua and bans the Jesuit order",
+     scene: "A GNOME in police uniform padlocks the Jesuit university of Managua and calls it a terror centre."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WebSearch: Álvarez expelled 14 Jan 2024",
+     event: "Nicaragua frees Bishop Álvarez and expels him with other clergy to Rome",
+     scene: "Bishop Álvarez's cassock hangs on a HANGER in an empty cell after Nicaragua flies him to Rome."}
+  # Caribbean
+  - {year: 1947, peg: rock, confidence: medium, source: "WebSearch: Temple in the Sea (1947 / 1952)",
+     event: "Siewdass Sadhu builds his first Hindu temple at Waterloo, Trinidad, on sugar estate land",
+     scene: "Siewdass Sadhu sets a ROCK as the first stone of his Hindu temple on the sugar company's land."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Spiritual Baptist",
+     event: "Trinidad repeals the ordinance that banned the Spiritual Baptist Shouters",
+     scene: "A WALLET of banned bells and white headwraps is handed back to the Shouters as Trinidad repeals the ban."}
+  - {year: 1952, peg: lion, confidence: unverified,
+     event: "Bhadase Maraj founds the Sanatan Dharma Maha Sabha, Trinidad's main Hindu body",
+     scene: "A LION roars at the founding of the Maha Sabha as Bhadase Maraj unites Trinidad's Hindus."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Leonard Howell",
+     event: "Police destroy Pinnacle, Leonard Howell's Rastafari commune in Jamaica",
+     scene: "A crown LAWYER signs the order and police burn the Rastafari commune of Pinnacle to the ground."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WebSearch: Concordat of 1954 (16 Jun)",
+     event: "Trujillo's Dominican Republic signs a concordat with the Holy See",
+     scene: "Trujillo's LAWYER and a cardinal sign the concordat in Rome that makes Catholicism the state religion."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Rastafari",
+     event: "First Rastafarian Universal Convention meets at Back-o-Wall, Kingston",
+     scene: "A WOLF howls as thousands of Rastafari gather for three weeks at Back-o-Wall for the first convention."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Bobo Ashanti",
+     event: "Emmanuel Charles Edwards founds the Bobo Ashanti order of Rastafari",
+     scene: "A WOLF in a turban guards Prince Emmanuel's new camp, the Bobo Ashanti order."}
+  - {year: 1958, peg: wolf, confidence: unverified,
+     event: "White marble Christ of Havana statue is unveiled above the harbour",
+     scene: "A marble WOLF lies at the feet of the new Christ of Havana, unveiled over the bay."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Rastafari",
+     event: "Claudius Henry sells Rastafari tickets for a ship to Africa that never comes",
+     scene: "Claudius Henry's followers ELBOW their way to the Kingston docks with tickets for a ship to Africa that never sails."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WebSearch: Dominican pastoral letter Jan 1960",
+     event: "Dominican bishops read a pastoral letter against Trujillo's mass arrests",
+     scene: "Trujillo chokes on his CHEESE as every church reads the bishops' letter against his arrests."}
+  - {year: 1961, peg: jet, confidence: medium, source: "WebSearch: Duvalier excommunicated 1961",
+     event: "Vatican excommunicates Haiti's Duvalier for expelling the archbishop",
+     scene: "A Vatican JET flies Papa Doc's excommunication to Port-au-Prince after he expels the archbishop."}
+  - {year: 1961, peg: jet, confidence: high, source: "WebSearch: Covadonga 17 Sep 1961",
+     event: "Cuba expels more than a hundred priests on the ship Covadonga",
+     scene: "No JET for them: Castro packs Bishop Boza Masvidal and over a hundred priests onto the ship Covadonga."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Catholic Church in Cuba",
+     event: "Cuba bars church people from Communist Party membership",
+     scene: "A CHAIN across the door of the Communist Party keeps every believer in Cuba out."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Coral Gardens incident",
+     event: "Coral Gardens incident: Jamaican police round up and beat Rastafari",
+     scene: "Police tear the red, gold and green GEM from Rastafari necks as they round them up at Coral Gardens."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Rastafari (21 Apr 1966)",
+     event: "Haile Selassie visits Jamaica; Rastafari celebrate Grounation Day",
+     scene: "A JUDGE declares the rain stopped as Haile Selassie steps off the plane to cheering Rastafari in Kingston."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Catholic Church in Haiti",
+     event: "Duvalier makes peace with Rome and a Haitian becomes archbishop for the first time",
+     scene: "A JUDGE ends the case: Duvalier names the bishops now, and Haiti gets its first Haitian archbishop."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Twelve Tribes of Israel",
+     event: "Vernon Carrington founds the Twelve Tribes of Israel Rastafari group",
+     scene: "A CHEF called Prophet Gad cooks twelve pots of ital food, one per tribe, to found the Twelve Tribes."}
+  - {year: 1970, peg: goose, confidence: unverified,
+     event: "Ethiopian Orthodox Church sets up its first parish in Jamaica",
+     scene: "A GOOSE flies an Ethiopian Orthodox archbishop to Kingston to open the first parish in Jamaica."}
+  - {year: 1971, peg: cat, confidence: high, source: "WebSearch: Higüey basilica 21 Jan 1971",
+     event: "New Basilica of Our Lady of Altagracia opens at Higüey",
+     scene: "A CAT climbs the tall concrete arch of the new Altagracia basilica at Higüey on its opening day."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II starts his first trip to the Americas in Santo Domingo",
+     scene: "A Dominican COWBOY catches John Paul II as he kneels and kisses the ground of Santo Domingo."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Leonard Howell (23 Jan 1981)",
+     event: "Leonard Howell, first preacher of Rastafari, dies in Kingston",
+     scene: "Leonard Howell's bare FOOT leaves the last print in the sand as the first Rastafari preacher dies."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: Catholic Church in Haiti",
+     event: "John Paul II tells Haiti that things must change",
+     scene: "Sea FOAM splashes Port-au-Prince as John Paul II tells Baby Doc's Haiti: things must change here."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Puerto Rico",
+     scene: "A coquí FAIRY sings for John Paul II on his day in San Juan, Puerto Rico."}
+  - {year: 1985, peg: waffle, confidence: unverified,
+     event: "Frei Betto publishes his interviews Fidel and Religion in Havana",
+     scene: "Fidel Castro eats a WAFFLE with Frei Betto and talks about God in Fidel y la religión."}
+  - {year: 1986, peg: fish, confidence: high, source: "WebSearch: ENEC 1986 (Acta Historica)",
+     event: "Cuban Catholics hold their National Church Encounter (ENEC)",
+     scene: "A FISH, the old Christian sign, swims through Havana as Cuban Catholics hold their national encounter."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Catholic Church in Haiti",
+     event: "Haiti's constitution guarantees the right to practise vodou",
+     scene: "A FOX dances in a vodou ceremony that Haiti's new constitution now protects."}
+  - {year: 1991, peg: boot, confidence: high, source: "WebSearch: PCC 4th Congress Oct 1991",
+     event: "Cuba's Communist Party opens its membership to religious believers",
+     scene: "A Party BOOT kicks open the door, and a woman with a rosary walks into the Cuban Communist Party."}
+  - {year: 1992, peg: piano, confidence: unverified,
+     event: "Cuba's amended constitution makes the state secular instead of atheist",
+     scene: "A PIANO in the Havana parliament plays a new tune: the state is secular, no longer atheist."}
+  - {year: 1995, peg: bell, confidence: high, source: "WebSearch: Temple in the Sea rebuilt 1995",
+     event: "Temple in the Sea at Waterloo, Trinidad, is rebuilt and reopens",
+     scene: "A temple BELL rings over the waves as Trinidad's Temple in the Sea reopens, rebuilt."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Spiritual Baptist",
+     event: "Trinidad makes Spiritual Baptist Liberation Day a public holiday",
+     scene: "Spiritual Baptists hand out PEACH slices as Trinidad gives their liberation day a public holiday."}
+  - {year: 1997, peg: pig, confidence: medium, source: "WebSearch: Christmas restored before visit",
+     event: "Cuba gives Christmas Day off again for the first time in decades",
+     scene: "A roast PIG is back on the Havana table as Cuba lets people keep Christmas Day before the papal visit."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Cuba and says Mass in Havana's Revolution Square",
+     scene: "Havana's Revolution Square buzzes like a BEEHIVE as John Paul II says Mass under Che's portrait."}
+  - {year: 2001, peg: soda, confidence: unverified,
+     event: "Carlos Manuel Rodríguez becomes the first Puerto Rican beatified",
+     scene: "A SODA toast in San Juan for Charlie Rodríguez, the first Puerto Rican declared blessed."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WebSearch: Haiti vodou decree Apr 2003",
+     event: "Aristide's decree recognises vodou as a religion",
+     scene: "A SUMO wrestler in vodou beads stamps the decree that lets houngans marry and baptise by law."}
+  - {year: 2003, peg: sumo, confidence: unverified,
+     event: "A giant Hanuman statue is consecrated at Carapichaima, Trinidad",
+     scene: "A SUMO wrestler holds up the giant Hanuman murti as it is consecrated at Carapichaima."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WebSearch: Greek Orthodox Havana 2004",
+     event: "Patriarch Bartholomew consecrates the Greek Orthodox cathedral of Havana",
+     scene: "Bartholomew blesses even the SEWER grate outside Havana's new Greek Orthodox cathedral of Saint Nicholas."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WebSearch: Kazan cathedral 19 Oct 2008",
+     event: "Russian Orthodox cathedral of Our Lady of Kazan is consecrated in Havana",
+     scene: "Raúl Castro sits on a red SOFA as Metropolitan Kirill consecrates the Russian cathedral in Havana."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Catholic Church in Haiti",
+     event: "Earthquake destroys Port-au-Prince cathedral and kills Archbishop Miot",
+     scene: "The earth rolls like a DICE and brings down Port-au-Prince cathedral and Archbishop Miot with it."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Pastoral visits of Benedict XVI",
+     event: "Benedict XVI visits Cuba and meets Fidel Castro",
+     scene: "Fidel Castro sticks out his TONGUE in a grin as he asks Benedict XVI what a pope does."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Catholic Church in Haiti",
+     event: "Chibly Langlois becomes the first Haitian cardinal",
+     scene: "A TOWER of red hats in Rome has one new hat at the top: Chibly Langlois, first cardinal of Haiti."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis visits Cuba and says Mass in Revolution Square",
+     scene: "A wooden DOLL of Francis replaces Che on the wall as the pope says Mass in Havana's Revolution Square."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis and Patriarch Kirill meet at Havana airport and sign a joint declaration",
+     scene: "Pope and patriarch eat from one DISH at Havana airport, the first meeting of Rome and Moscow."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Coral Gardens incident",
+     event: "Jamaica's government apologises to the Rastafari for Coral Gardens",
+     scene: "A DOG drops its police leash as Jamaica's prime minister apologises to the Rastafari for Coral Gardens."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Rastafari",
+     event: "Barbados legalises cannabis for religious use",
+     scene: "A Rastafari TUBA player in Bridgetown lights the holy herb now legal for worship in Barbados."}
+  # Brazil
+  - {year: 1945, peg: railway, confidence: high, source: "WebSearch: Barquinha 1945 (academic)",
+     event: "Daniel Pereira de Mattos founds the Barquinha ayahuasca church in Rio Branco",
+     scene: "Ex-sailor Daniel Pereira de Mattos lays a RAILWAY for his little boat church, the Barquinha, in Rio Branco."}
+  - {year: 1951, peg: wallet, confidence: high, source: "Pew: Pentecostalism in Brazil",
+     event: "Foursquare Gospel Church begins its tent crusades in Brazil",
+     scene: "A WALLET of American mission money buys the first Foursquare healing tent in São Paulo."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Hélder Câmara",
+     event: "Brazil's bishops found their national conference, the CNBB, with Hélder Câmara as secretary",
+     scene: "A LION writes the minutes as Hélder Câmara, first secretary, founds the Brazilian bishops' conference."}
+  - {year: 1955, peg: lily, confidence: disputed, source: "Revue Conflits 1955; WP mirror 1956",
+     event: "Manoel de Mello founds the Pentecostal church O Brasil para Cristo",
+     scene: "A LILY grows from Manoel de Mello's radio mast as he founds O Brasil para Cristo."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Basilica of Aparecida",
+     event: "Construction of the national shrine of Aparecida begins",
+     scene: "A LILY marks the first stake of the giant new shrine of Our Lady of Aparecida."}
+  - {year: 1955, peg: lily, confidence: unverified,
+     event: "International Eucharistic Congress meets in Rio de Janeiro",
+     scene: "A LILY altar on Rio's Flamengo shore holds the host for the International Eucharistic Congress."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Irmã Dulce (26 May 1959)",
+     event: "Irmã Dulce sets up her charitable foundation in Salvador",
+     scene: "Irmã Dulce pushes her ELBOW into the convent henhouse door and turns it into a foundation for the sick."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Chico Xavier",
+     event: "Spiritist medium Chico Xavier moves to Uberaba",
+     scene: "Chico Xavier rests his writing ELBOW on a new desk in Uberaba, where spirits keep dictating."}
+  - {year: 1959, peg: elbow, confidence: unverified,
+     event: "Church finally consecrates Niemeyer's modernist São Francisco chapel at Pampulha",
+     scene: "A bishop's ELBOW finally pushes open Niemeyer's wavy Pampulha chapel after years of refusal."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: União do Vegetal",
+     event: "Mestre Gabriel founds the União do Vegetal ayahuasca church",
+     scene: "A JET of vine tea sprays from Mestre Gabriel's cup as he founds the União do Vegetal in Rondônia."}
+  - {year: 1962, peg: chain, confidence: high, source: "WebSearch: Deus é Amor 1962 (Mariano)",
+     event: "David Miranda founds the Deus é Amor Pentecostal church in São Paulo",
+     scene: "David Miranda breaks a CHAIN of poverty on the radio and founds the church Deus é Amor."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Hélder Câmara (12 Mar 1964)",
+     event: "Hélder Câmara becomes archbishop of Olinda and Recife",
+     scene: "A CHERRY tree in Recife bears fruit for the poor as Hélder Câmara arrives as archbishop."}
+  - {year: 1964, peg: cherry, confidence: unverified,
+     event: "March of the Family with God for Liberty fills São Paulo against Goulart",
+     scene: "Rosary-waving marchers throw CHERRY stones at Goulart's portrait in the March with God for Liberty."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Basilica of Aparecida",
+     event: "Paul VI sends a Golden Rose to Our Lady of Aparecida",
+     scene: "A JOCKEY gallops from Rome with Paul VI's Golden Rose for Our Lady of Aparecida."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Vale do Amanhecer",
+     event: "Tia Neiva founds the Vale do Amanhecer spiritual community near Brasília",
+     scene: "Tia Neiva lands a spirit SHIP at Planaltina and founds the Valley of the Dawn."}
+  - {year: 1969, peg: ship, confidence: unverified,
+     event: "Catholic Charismatic Renewal begins in Brazil at Campinas",
+     scene: "A SHIP of praying, hand-raising Catholics docks in Campinas and starts the Charismatic Renewal in Brazil."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Paulo Evaristo Arns",
+     event: "Paulo Evaristo Arns becomes archbishop of São Paulo",
+     scene: "A Franciscan GOOSE hatches São Paulo's new archbishop, Paulo Evaristo Arns."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Cathedral of Brasília (31 May)",
+     event: "Niemeyer's Cathedral of Brasília officially opens",
+     scene: "A GOOSE flies between the sixteen concrete ribs as Niemeyer's Brasília cathedral opens."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Santo Daime",
+     event: "Mestre Irineu, founder of Santo Daime, dies; the church splits",
+     scene: "A CAT knocks over Mestre Irineu's daime cup as he dies and his followers split."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Pedro Casaldáliga (23 Oct 1971)",
+     event: "Pedro Casaldáliga becomes bishop of São Félix do Araguaia",
+     scene: "A jungle CAT watches Pedro Casaldáliga take a straw hat for a mitre by the Araguaia river."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Pedro Casaldáliga",
+     event: "Bishops found CIMI, the Indigenist Missionary Council",
+     scene: "A COIN with an Indigenous face is minted as the bishops found CIMI to defend native peoples."}
+  - {year: 1972, peg: coin, confidence: unverified,
+     event: "Leonardo Boff publishes Jesus Cristo Libertador",
+     scene: "Leonardo Boff melts a COIN into a broken chain on the cover of Jesus Cristo Libertador."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WebSearch: CPT founded Jun 1975 Goiânia",
+     event: "Comissão Pastoral da Terra is founded at Goiânia to defend peasants",
+     scene: "An EAGLE carries a plot of land in its claws to the Goiânia meeting that founds the Pastoral Land Commission."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WebSearch: Herzog service 31 Oct 1975",
+     event: "Arns, Rabbi Sobel and Pastor Wright lead an interfaith service for Vladimir Herzog",
+     scene: "An EAGLE perches on São Paulo cathedral as a cardinal, a rabbi and a pastor mourn Herzog together."}
+  - {year: 1975, peg: eagle, confidence: unverified,
+     event: "First national meeting of base ecclesial communities is held in Vitória",
+     scene: "An EAGLE gathers Bible circles from the slums and fields into Vitória for the first base community meeting."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Universal Church (9 Jul 1977)",
+     event: "Edir Macedo founds the Universal Church of the Kingdom of God in Rio",
+     scene: "Edir Macedo cuts a CAKE in a rented funeral parlour in Méier and founds the Universal Church."}
+  - {year: 1978, peg: cave, confidence: high, source: "WebSearch: São Paulo Temple 30 Oct 1978",
+     event: "First Latter-day Saint temple in Latin America is dedicated in São Paulo",
+     scene: "Kimball opens a CAVE of white stone in São Paulo, the first Latter-day Saint temple of Latin America."}
+  - {year: 1978, peg: cave, confidence: high, source: "WebSearch: Canção Nova Feb 1978",
+     event: "Jonas Abib founds the Canção Nova Catholic media community",
+     scene: "A CAVE echoes with the new song of Jonas Abib's Canção Nova, broadcast to all Brazil."}
+  - {year: 1978, peg: cave, confidence: medium, source: "WP mirror: João Teixeira de Faria",
+     event: "Faith healer João de Deus starts healing at Abadiânia (approximate)",
+     scene: "Sick pilgrims crowd into a CAVE-like hall at Abadiânia where João de Deus starts his healings."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II makes a twelve-day trip across Brazil",
+     scene: "John Paul II carries a VASE of Amazon water through twelve days and thirteen cities of Brazil."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Basilica of Aparecida (4 Jul)",
+     event: "John Paul II consecrates the basilica of Aparecida",
+     scene: "John Paul II sets a VASE of roses before the little black Virgin and consecrates the Aparecida basilica."}
+  - {year: 1980, peg: vase, confidence: medium, source: "WP mirror: Universal Church",
+     event: "R. R. Soares leaves Macedo and founds the International Grace of God Church",
+     scene: "R. R. Soares smashes a VASE in a quarrel with Macedo and walks out to found his own Grace of God church."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Chico Xavier",
+     event: "Two million signatures nominate Chico Xavier for the Nobel Peace Prize",
+     scene: "A FOOT-long scroll of two million names nominates the medium Chico Xavier for the Nobel Peace Prize."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WebSearch: Casa Branca tombamento 1984",
+     event: "Casa Branca in Salvador becomes the first Candomblé temple listed as national heritage",
+     scene: "An orixá FAIRY waves over Casa Branca, the first Candomblé terreiro listed as national heritage."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Paulo Evaristo Arns",
+     event: "Arns and Wright publish Brasil: Nunca Mais on torture under the dictatorship",
+     scene: "A WAFFLE iron leaves its grid on a torture file, one of thousands copied in secret for Brasil: Nunca Mais."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Leonardo Boff",
+     event: "Vatican orders Leonardo Boff to a year of silence",
+     scene: "Cardinal Ratzinger stuffs a WAFFLE into Leonardo Boff's mouth: one year of silence."}
+  - {year: 1989, peg: fob, confidence: disputed, source: "WP mirror: Universal Church (1989 / 1990)",
+     event: "Edir Macedo buys the Record television network",
+     scene: "Edir Macedo hangs the Record TV key on his watch FOB after buying the network from Silvio Santos."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Universal Church",
+     event: "Edir Macedo is jailed for eleven days in São Paulo",
+     scene: "Edir Macedo plays a jail PIANO for eleven days and reads his Bible behind bars."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Leonardo Boff",
+     event: "Facing a second silencing, Leonardo Boff leaves the Franciscans and the priesthood",
+     scene: "Leonardo Boff closes the PIANO lid on his priesthood rather than be silenced again before Eco-92."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Irmã Dulce (13 Mar 1992)",
+     event: "Irmã Dulce, the Good Angel of Bahia, dies in Salvador",
+     scene: "A PIANO falls silent in Salvador's hospital as Irmã Dulce dies among her patients."}
+  - {year: 1993, peg: palm, confidence: high, source: "WebSearch: March for Jesus SP 1993",
+     event: "Renascer em Cristo holds the first March for Jesus in São Paulo",
+     scene: "Evangelicals wave PALM fronds down São Paulo's avenues in the first March for Jesus."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Universal Church (12 Oct 1995)",
+     event: "A Universal Church bishop kicks a statue of Our Lady of Aparecida on live TV",
+     scene: "A church BELL clangs in anger as a Universal Church bishop kicks the statue of Aparecida on TV."}
+  - {year: 1995, peg: bell, confidence: unverified,
+     event: "Vatican orders feminist theologian Ivone Gebara to two years of silence",
+     scene: "A BELL is muffled with cloth as Ivone Gebara is sent to two silent years of study."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Rio de Janeiro for the World Meeting of Families",
+     scene: "A family PIG in a party hat joins John Paul II's Meeting of Families at Maracanã."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Hélder Câmara (27 Aug 1999)",
+     event: "Hélder Câmara dies in Recife",
+     scene: "Smoke from a PIPE drifts over Recife as Dom Hélder Câmara, bishop of the poor, dies aged ninety."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WebSearch: Mãe Gilda died 21 Jan 2000",
+     event: "Mãe Gilda dies after attacks on her Candomblé temple in Salvador",
+     scene: "Attackers pour SAUCE over the altars of Mãe Gilda's terreiro and she dies of a heart attack."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Chico Xavier (30 Jun 2002)",
+     event: "Spiritist medium Chico Xavier dies in Uberaba",
+     scene: "The SUN sets on Uberaba as Chico Xavier dies on the day Brazil wins the World Cup."}
+  - {year: 2002, peg: sun, confidence: unverified,
+     event: "Mother Paulina is canonized, the first saint who worked in Brazil",
+     scene: "The SUN haloes Mother Paulina of Santa Catarina as she becomes the first saint of Brazil."}
+  - {year: 2003, peg: sumo, confidence: unverified,
+     event: "Zu Lai, the largest Buddhist temple in Latin America, opens at Cotia",
+     scene: "A SUMO wrestler bows at the gate of Zu Lai, the giant new Buddhist temple near São Paulo."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Dorothy Stang",
+     event: "US-born nun Dorothy Stang is shot dead in Anapu, Pará",
+     scene: "A gunman fires six shots at Sister Dorothy Stang as she reads him the Bible; a SEAL guards her Amazon road."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Saints canonized by Benedict XVI",
+     event: "Benedict XVI canonizes Frei Galvão in São Paulo, the first Brazilian-born saint",
+     scene: "Frei Galvão's paper pills slide down a SKI jump into a million hands as he becomes Brazil's first native saint."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Christ the Redeemer (7 Jul 2007)",
+     event: "Christ the Redeemer is voted one of the New Seven Wonders of the World",
+     scene: "Christ the Redeemer wins the vote and takes a SKI lift down Corcovado to collect his wonder medal."}
+  - {year: 2007, peg: ski, confidence: high, source: "WebSearch: Lei 11.635 (27 Dec 2007)",
+     event: "Law creates Brazil's National Day against Religious Intolerance",
+     scene: "A SKI pole pins Mãe Gilda's day, the twenty-first of January, to Brazil's calendar against religious intolerance."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WebSearch: Brazil-Holy See accord 13 Nov",
+     event: "Brazil and the Holy See sign an agreement on the legal status of the Church",
+     scene: "Lula and Benedict XVI sit on one SOFA and sign the agreement on the Church's legal status in Brazil."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: União do Vegetal (25 Jan 2010)",
+     event: "Brazil's drug council sets rules for religious ayahuasca use",
+     scene: "A DICE cup of ayahuasca gets a federal stamp: legal in religious rites."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Irmã Dulce (22 May 2011)",
+     event: "Irmã Dulce is beatified in Salvador",
+     scene: "Bahia fans get a TATTOO of Irmã Dulce's face as she is declared blessed in Salvador."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "World Youth Day in Rio: Francis says Mass for millions on Copacabana beach",
+     scene: "Francis says Mass on a sand TOMB built on Copacabana for millions at World Youth Day."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Temple of Solomon (31 Jul 2014)",
+     event: "Universal Church opens its Temple of Solomon in São Paulo",
+     scene: "A stone TOWER copied from Jerusalem opens in São Paulo: Macedo's ten-thousand-seat Temple of Solomon."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Jesuit José de Anchieta, apostle of Brazil, is canonized",
+     scene: "José de Anchieta writes his poem on the beach sand from a TOWER of shells and becomes a saint."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Paulo Evaristo Arns",
+     event: "Cardinal Paulo Evaristo Arns dies in São Paulo",
+     scene: "A DISH of torture files stays on the desk of Cardinal Arns as he dies in São Paulo."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Martyrs of Natal, killed by Dutch-led raiders in colonial times, are canonized",
+     scene: "A DOG guards the church at Natal as André de Soveral and twenty-nine companions are made saints."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: João Teixeira de Faria",
+     event: "Faith healer João de Deus surrenders to police after abuse charges",
+     scene: "A DOVE flies away from Abadiânia as João de Deus gives himself up to the police."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Irmã Dulce (13 Oct 2019)",
+     event: "Irmã Dulce is canonized in Rome",
+     scene: "A TUBA band from Bahia plays in Saint Peter's Square as Irmã Dulce becomes a saint."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: João Teixeira de Faria",
+     event: "João de Deus is sentenced to over nineteen years for rape",
+     scene: "A court TUBA sounds nineteen long notes, one per year of João de Deus's sentence for rape."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Pedro Casaldáliga (8 Aug 2020)",
+     event: "Bishop Pedro Casaldáliga dies",
+     scene: "A straw hat slides down over the NOSE of Pedro Casaldáliga as the bishop of the Araguaia dies."}
+  - {year: 2022, peg: nun, confidence: high, source: "WebSearch: Jonas Abib died 12 Dec 2022",
+     event: "Monsignor Jonas Abib, founder of Canção Nova, dies",
+     scene: "A NUN switches off the Canção Nova microphone as its founder Jonas Abib dies."}
+  - {year: 2025, peg: nail, confidence: high, source: "WebSearch: IBGE religion data 6 Jun 2025",
+     event: "Census data: Catholics fall to about fifty-seven percent of Brazilians, evangelicals reach over a quarter",
+     scene: "A census NAIL pins the chart: Catholics down to fifty-seven percent, evangelicals over a quarter."}
+  # Southern Cone (Argentina, Chile, Paraguay, Uruguay)
+  - {year: 1947, peg: rock, confidence: high, source: "WebSearch: Mennonites in Paraguay 1947",
+     event: "Mennonite refugees from the Soviet Union found Neuland and Volendam in Paraguay",
+     scene: "Mennonite refugees break the Chaco ROCK with ploughs to found Neuland after the war."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WebSearch: Tommy Hicks 1954 crusade",
+     event: "Tommy Hicks's healing crusade fills Buenos Aires stadiums and sparks Argentine Pentecostalism",
+     scene: "Perón's LAWYER grants the stadium, and Tommy Hicks's healing crusade fills Huracán to overflowing."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Catholic Church in Argentina",
+     event: "Corpus Christi procession in Buenos Aires turns into a mass protest against Perón",
+     scene: "Two hundred thousand marchers carry a LILY each in the banned Corpus Christi procession against Perón."}
+  - {year: 1955, peg: lily, confidence: high, source: "Time; CONICET: night of 16 Jun 1955",
+     event: "Peronist mobs burn churches in central Buenos Aires",
+     scene: "A burning LILY falls from the altar of San Francisco as Peronist mobs set nine churches on fire."}
+  - {year: 1955, peg: lily, confidence: medium, source: "WebSearch: Perón excommunicated Jun 1955",
+     event: "Vatican excommunicates those who expelled Argentine bishops, Perón included",
+     scene: "Rome nails a black LILY to Perón's door: excommunicated for expelling two bishops."}
+  - {year: 1962, peg: chain, confidence: unverified,
+     event: "Rabbi Marshall Meyer founds the Latin American Rabbinical Seminary in Buenos Aires",
+     scene: "Marshall Meyer links a CHAIN of new rabbis in Buenos Aires: the Latin American Rabbinical Seminary."}
+  - {year: 1962, peg: chain, confidence: unverified,
+     event: "Rodolfo Kusch publishes América profunda",
+     scene: "Rodolfo Kusch lowers a CHAIN into the Andean earth and pulls up América profunda."}
+  - {year: 1966, peg: judge, confidence: high, source: "Vatican index: accord 10 Oct 1966",
+     event: "Argentina and the Holy See sign an accord giving the pope the choice of bishops",
+     scene: "A JUDGE hands the pope the list of Argentine bishops: from now Rome alone chooses them."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Movement of Priests for Third World",
+     event: "Movement of Priests for the Third World holds its first meeting in Argentina",
+     scene: "A CHEF in a cassock serves soup in a slum as the Third World priests hold their first meeting."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Mario Rodríguez Cobos",
+     event: "Silo gives The Healing of Suffering at Punta de Vacas, founding Siloism",
+     scene: "Silo speaks from a stone SHIP in the snow at Punta de Vacas: the Healing of Suffering."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Catholic Church in Chile",
+     event: "The Eighty, a group of Chilean priests, declare support for Allende's socialism",
+     scene: "Eighty priests and a CAT sign a declaration in Santiago backing Allende's road to socialism."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Catholic Church in Chile",
+     event: "First Latin American congress of Christians for Socialism meets in Santiago",
+     scene: "A COIN with a cross on one side and a red star on the other opens the Christians for Socialism congress."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Catholic Church in Chile (6 Oct)",
+     event: "Churches in Chile found the Committee for Peace to help victims of the coup",
+     scene: "A COMB untangles lists of the missing as Chile's churches found the Committee for Peace."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Pope Francis",
+     event: "Jorge Bergoglio becomes Jesuit provincial of Argentina",
+     scene: "Young Jorge Bergoglio takes a COMB and parts the Argentine Jesuits into order as their provincial."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Carlos Mugica (11 May 1974)",
+     event: "Slum priest Carlos Mugica is shot dead after Mass in Buenos Aires",
+     scene: "A gunman jumps from a CAR and shoots the slum priest Carlos Mugica outside his church."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Vicariate of Solidarity",
+     event: "Pinochet forces the Committee for Peace to close",
+     scene: "Pinochet's EAGLE seal tops the letter that forces Cardinal Silva to close the Committee for Peace."}
+  - {year: 1975, peg: eagle, confidence: unverified,
+     event: "Pinochet attends the first evangelical Te Deum at the Jotabeche church",
+     scene: "An EAGLE on Pinochet's cap bows at the Jotabeche Pentecostal cathedral's first evangelical Te Deum."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Vicariate of Solidarity (1 Jan)",
+     event: "Cardinal Silva Henríquez founds the Vicariate of Solidarity in Santiago",
+     scene: "Cardinal Silva opens the CAGE door: the Vicariate of Solidarity shelters the persecuted inside the cathedral."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Enrique Angelelli (4 Aug 1976)",
+     event: "Bishop Enrique Angelelli of La Rioja is killed in a staged car crash",
+     scene: "A military CAGE truck forces Bishop Angelelli's car off the road in La Rioja."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Five Pallottine religious are murdered in their Buenos Aires parish house",
+     scene: "Killers lock five Pallottine priests and seminarians in a CAGE of fear and shoot them in San Patricio."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II makes the first papal visit to Argentina during the Falklands war",
+     scene: "John Paul II cools the war OVEN as he flies into Buenos Aires during the Falklands fighting."}
+  - {year: 1983, peg: foam, confidence: high, source: "WebSearch: San Nicolás 25 Sep 1983",
+     event: "Gladys Motta reports apparitions of Mary at San Nicolás de los Arroyos",
+     scene: "A glowing rosary rises from river FOAM as Gladys Motta first sees Mary at San Nicolás."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Catholic Church in Chile",
+     event: "Police fire kills French priest André Jarlan in La Victoria",
+     scene: "A police bullet hits Father Jarlan at his desk in La Victoria; a FAIRY closes his open Bible."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Teresa of the Andes (3 Apr 1987)",
+     event: "John Paul II visits Chile and beatifies Teresa of the Andes",
+     scene: "A FOX watches from the balcony as John Paul II beatifies Teresa of the Andes in Santiago's O'Higgins Park."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: World Youth Day 1987",
+     event: "Buenos Aires holds the first World Youth Day outside Rome",
+     scene: "A FOX scarf for every one of a million young people at the first World Youth Day outside Rome, Buenos Aires."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Saints canonized by John Paul II",
+     event: "Roque González and two Jesuit companions are canonized in Asunción",
+     scene: "A FIFE plays Guaraní hymns as John Paul II makes Roque González Paraguay's first saint in Asunción."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Vicariate of Solidarity",
+     event: "Vicariate of Solidarity closes after democracy returns to Chile",
+     scene: "A PIANO plays the last chord in the Vicariate's archive room as it closes under democracy."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Teresa of the Andes (21 Mar 1993)",
+     event: "Teresa of the Andes is canonized, Chile's first saint",
+     scene: "Teresa of the Andes holds a PALM of victory as Rome makes her Chile's first saint."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: 1994 AMIA bombing",
+     event: "Bomb destroys the AMIA Jewish centre in Buenos Aires and kills eighty-five",
+     scene: "A truck bomb tears the AMIA building apart, and a BEAR digs through the rubble for eighty-five dead."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Pope Francis (28 Feb 1998)",
+     event: "Bergoglio becomes archbishop of Buenos Aires",
+     scene: "Bergoglio takes the subway to his new BEEHIVE, the archdiocese of Buenos Aires."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WebSearch: Ley 19.638 (14 Oct 1999)",
+     event: "Chile's Law of Worship gives all churches equal legal status",
+     scene: "A PIPE organ and a Pentecostal tambourine get the same legal status under Chile's Law of Worship."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Pope Francis (21 Feb 2001)",
+     event: "Bergoglio is made a cardinal",
+     scene: "Bergoglio pours a SODA instead of champagne as John Paul II makes him a cardinal."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Saints canonized by Benedict XVI",
+     event: "Alberto Hurtado, founder of Hogar de Cristo, is canonized",
+     scene: "A SEAL pulls Alberto Hurtado's green truck full of street children as he becomes a saint."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Catholic Church in Chile",
+     event: "The Karadima abuse case comes to light in Chile",
+     scene: "A DICE rolls out of El Bosque parish and the victims' accusations against Karadima become public."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Mario Rodríguez Cobos",
+     event: "Silo, founder of the Humanist Movement, dies",
+     scene: "A DICE stops rolling at Punta de Vacas as Silo, founder of the Humanist Movement, dies."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Catholic Church in Chile",
+     event: "Vatican finds Fernando Karadima guilty of abuse",
+     scene: "Rome stamps a TATTOO of guilt on Karadima and orders him to a life of prayer."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Pope Francis (13 Mar 2013)",
+     event: "Jorge Bergoglio is elected Pope Francis, the first pope from the Americas",
+     scene: "Bergoglio walks past Saint Peter's TOMB onto the balcony as Francis, the first pope from the Americas."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Enrique Angelelli (5 Jul 2014)",
+     event: "Two officers get life sentences for the murder of Bishop Angelelli",
+     scene: "A prison TOWER takes Menéndez and Estrella for life for the murder of Bishop Angelelli."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "José Gabriel Brochero, the gaucho priest, is canonized",
+     scene: "The gaucho priest Brochero rides his mule with a DISH of maté into the company of saints."}
+  - {year: 2016, peg: dish, confidence: high, source: "WebSearch: San Nicolás decree 22 May 2016",
+     event: "Bishop of San Nicolás declares the apparitions supernatural",
+     scene: "The bishop of San Nicolás signs his decree on a DISH: the apparitions are supernatural."}
+  - {year: 2016, peg: dish, confidence: high, source: "WebSearch: Mama Antula beatified 2016",
+     event: "Mama Antula is beatified",
+     scene: "Barefoot Mama Antula carries a DISH of bread to retreat houses as she is declared blessed."}
+  - {year: 2016, peg: dish, confidence: unverified,
+     event: "Bahá'í Temple of South America opens in Santiago",
+     scene: "A white glass DISH with nine petals lands in the Andean foothills: the Bahá'í Temple of Santiago."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis visits Chile amid protests over the Barros abuse cover-up",
+     scene: "A DOVE in Santiago carries protest signs against Bishop Barros as Francis visits Chile."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Catholic Church in Chile (18 May)",
+     event: "All Chilean bishops offer the pope their resignation over abuse",
+     scene: "Thirty-four Chilean bishops let every DOVE go at once: all offer Francis their resignation."}
+  - {year: 2018, peg: dove, confidence: unverified,
+     event: "Chiquitunga is beatified in Asunción, the first blessed of Paraguay",
+     scene: "A DOVE lands on the Carmelite veil of Chiquitunga as Asunción declares her Paraguay's first blessed."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Enrique Angelelli (27 Apr 2019)",
+     event: "Bishop Angelelli is beatified as a martyr in La Rioja",
+     scene: "A TUBA band leads La Rioja's crowd as Bishop Angelelli is declared a blessed martyr."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Artémides Zatti, Salesian nurse of Patagonia, is canonized",
+     scene: "A NUN rides Zatti's bicycle round the Viedma hospital as the Salesian nurse becomes a saint."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Casa Rosada: canonization 11 Feb 2024",
+     event: "Mama Antula is canonized, Argentina's first female saint",
+     scene: "Mama Antula's black shawl hangs on a HANGER in Saint Peter's as she becomes Argentina's first woman saint."}
+  # Andes and northern South America (Colombia, Venezuela, Ecuador, Peru, Bolivia, Guianas)
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Samael Aun Weor",
+     event: "Samael Aun Weor publishes The Perfect Matrimony in Colombia",
+     scene: "A LASSO ties bride and groom together on the cover of The Perfect Matrimony, the Gnostic manual."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Salt Cathedral of Zipaquirá",
+     event: "Salt Cathedral of Zipaquirá opens inside a salt mine",
+     scene: "A LAWYER licks the walls of the new Salt Cathedral deep in the Zipaquirá mine."}
+  - {year: 1954, peg: lawyer, confidence: unverified,
+     event: "Leonidas Proaño becomes bishop of Riobamba",
+     scene: "A LAWYER in a poncho hands the Riobamba crozier to Leonidas Proaño, the new bishop."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WebSearch: Mennonites in Bolivia",
+     event: "Mennonites from Paraguay found the first colony in Bolivia near Santa Cruz",
+     scene: "A LAWYER signs land deeds for thirty-seven Mennonite families who found Bolivia's first colony."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Martin de Porres (6 May 1962)",
+     event: "Martin de Porres of Lima is canonized, the first Black saint of the Americas",
+     scene: "John XXIII breaks the CHAIN of colour bars and makes Martin de Porres of Lima a saint."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WebSearch: Venezuela accord 6 Mar 1964",
+     event: "Venezuela and the Holy See sign an agreement ending state patronage over the Church",
+     scene: "A CHERRY on top of the Venezuela accord: the state gives up its old patronage over the Church."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Camilo Torres Restrepo",
+     event: "Priest-guerrilla Camilo Torres is killed in his first battle with the ELN",
+     scene: "A JUDGE in uniform lists Camilo Torres, priest turned ELN guerrilla, among the dead of his first fight."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Gustavo Gutiérrez (21-25 Jul 1968)",
+     event: "Gustavo Gutiérrez gives his talk Towards a Theology of Liberation at Chimbote",
+     scene: "A CHEF at the Chimbote fish plant hears Gutiérrez first speak of a theology of liberation."}
+  - {year: 1968, peg: chef, confidence: high, source: "Redalyc: AEMINPU founded 27 Oct 1968",
+     event: "Ezequiel Ataucusi founds the Israelites of the New Universal Covenant in Peru",
+     scene: "A CHEF bakes unleavened bread for Ezequiel Ataucusi's new Israelites of the New Universal Covenant."}
+  - {year: 1968, peg: chef, confidence: unverified,
+     event: "Paul VI visits Bogotá, the first pope to set foot in Latin America",
+     scene: "A Colombian CHEF serves Paul VI arepas as the first pope ever to land in Latin America."}
+  - {year: 1968, peg: chef, confidence: high, source: "Dussel archive PDF; academic reviews",
+     event: "Augusto Salazar Bondy publishes ¿Existe una filosofía de nuestra América?",
+     scene: "A CHEF asks Salazar Bondy's question: is there a Latin American philosophy, or only imported recipes?"}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Gustavo Gutiérrez",
+     event: "Gustavo Gutiérrez publishes Teología de la liberación in Lima",
+     scene: "A CAT sits on the first copy of Gutiérrez's Teología de la liberación, fresh from the Lima press."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Sodalitium Christianae Vitae",
+     event: "Luis Fernando Figari founds the Sodalitium Christianae Vitae in Lima",
+     scene: "A black CAT in a soldier-monk's habit swears the first members of Figari's Sodalitium in Lima."}
+  - {year: 1973, peg: comb, confidence: medium, source: "Academic essay: Colombia concordat 1973",
+     event: "Colombia signs a new concordat with the Holy See",
+     scene: "A COMB tidies away the old concordat as Colombia signs a new one with the Holy See."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Gustavo Gutiérrez",
+     event: "Gutiérrez founds the Bartolomé de las Casas Institute in Lima",
+     scene: "A CAR full of books parks at the new Bartolomé de las Casas Institute that Gutiérrez founds in Lima."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Jonestown",
+     event: "Peoples Temple leases jungle land in Guyana for Jonestown",
+     scene: "Jim Jones drives a CAR into the Guyana jungle on land his Peoples Temple has leased."}
+  - {year: 1976, peg: cage, confidence: high, source: "WebSearch: Riobamba raid Aug 1976",
+     event: "Ecuador's military arrests seventeen bishops at Proaño's pastoral meeting in Riobamba",
+     scene: "Soldiers load seventeen bishops into a bus CAGE at Riobamba and drive them to Quito."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "María Esperanza reports apparitions of Mary at Betania, Venezuela",
+     scene: "A bird CAGE opens at Betania farm and María Esperanza sees the Virgin above the waterfall."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Jonestown",
+     event: "Jim Jones moves to Jonestown with most of the Peoples Temple",
+     scene: "Jim Jones cuts a welcome CAKE at Jonestown as nearly a thousand followers arrive from California."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Jonestown (18 Nov 1978)",
+     event: "Over nine hundred die in the Jonestown mass murder-suicide",
+     scene: "A CAVE of silence falls on Jonestown after Jim Jones makes over nine hundred followers drink poison."}
+  - {year: 1980, peg: vase, confidence: high, source: "Vatican index: Peru accord 26 Jul 1980",
+     event: "Peru and the Holy See sign an agreement on Church and state",
+     scene: "Peru's new government and the nuncio sign the accord beside a Nazca VASE in Lima."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Luis Espinal Camps",
+     event: "Jesuit journalist Luis Espinal is tortured and killed in La Paz",
+     scene: "Paramilitaries smash Luis Espinal's camera and a VASE of flowers, then dump his body on the road to Chacaltaya."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Venezuela, Ecuador and Peru",
+     scene: "Andean crowds give John Paul II a quinoa WAFFLE on his tour of Venezuela, Ecuador and Peru."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Colombia",
+     scene: "A golden FISH from Lake Guatavita leaps up as John Paul II lands in Colombia."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Pastoral visits of John Paul II",
+     event: "John Paul II visits Bolivia and Peru",
+     scene: "Bolivian miners play a FIFE as John Paul II comes down into their tin mine."}
+  - {year: 1988, peg: fife, confidence: unverified,
+     event: "Leonidas Proaño, bishop of the Indians, dies",
+     scene: "A Quichua FIFE plays at Riobamba as Leonidas Proaño, bishop of the Indians, dies."}
+  - {year: 1989, peg: fob, confidence: high, source: "WebSearch: FREPAP founded 1989",
+     event: "Ataucusi founds FREPAP, the political party of his Israelite church",
+     scene: "Ezequiel Ataucusi hangs a party badge on his FOB and founds FREPAP for his Israelites."}
+  - {year: 1989, peg: fob, confidence: medium, source: "Aleteia (Vatican Radio): Jaramillo 2 Oct",
+     event: "ELN guerrillas kidnap and kill Bishop Jesús Emilio Jaramillo of Arauca",
+     scene: "ELN guerrillas take the gold FOB of Bishop Jaramillo before they shoot him in Arauca."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Michał Tomaszek (9 Aug 1991)",
+     event: "Shining Path kills two Polish Franciscans at Pariacoto",
+     scene: "A Shining Path BOOT kicks open the Pariacoto friary and the two Polish Franciscans are shot."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Michał Tomaszek (25 Aug 1991)",
+     event: "Shining Path kills Italian priest Alessandro Dordi in Ancash",
+     scene: "Two weeks later a second BOOT stops Father Dordi's truck in Ancash, and Shining Path kills him."}
+  - {year: 1991, peg: boot, confidence: unverified,
+     event: "Colombia's new constitution ends the Catholic state and grants full freedom of worship",
+     scene: "A BOOT kicks the state altar out of Colombia's new constitution: all faiths are now equal."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Cristo de la Concordia",
+     event: "Cristo de la Concordia, then the tallest Christ statue, is completed in Cochabamba",
+     scene: "A BEAR climbs the arms of Cochabamba's new Christ, taller than the one in Rio."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Salt Cathedral (16 Dec 1995)",
+     event: "New Salt Cathedral of Zipaquirá opens deeper in the mine",
+     scene: "A salt BELL rings two hundred metres underground as the new Salt Cathedral of Zipaquirá opens."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Sodalitium Christianae Vitae",
+     event: "John Paul II gives pontifical approval to the Sodalitium",
+     scene: "Figari's PIG wears a Vatican ribbon as John Paul II approves the Sodalitium."}
+  - {year: 2002, peg: sun, confidence: high, source: "USCCB letter: Duarte killed 16 Mar 2002",
+     event: "Archbishop Isaías Duarte Cancino is shot dead in Cali after a wedding",
+     scene: "Gunmen shoot Archbishop Duarte in the Cali SUN as he leaves the church after a wedding."}
+  - {year: 2006, peg: sushi, confidence: high, source: "MercoPress: Tiwanaku Jan 2006",
+     event: "Evo Morales is invested as spiritual leader at Tiwanaku before his inauguration",
+     scene: "Aymara priests offer Pachamama SUSHI of coca leaves as they invest Evo Morales at Tiwanaku."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Saints canonized by Benedict XVI",
+     event: "Narcisa de Jesús of Ecuador is canonized",
+     scene: "Narcisa de Jesús leaves a hard bench for no SOFA, only sainthood: Ecuador's mystic is canonized."}
+  - {year: 2009, peg: soap, confidence: medium, source: "WebSearch: Bolivian constitution 2009",
+     event: "Bolivia's new constitution separates state and church and protects ancestral religions",
+     scene: "A bar of SOAP washes the Catholic state out of Bolivia's new constitution; Andean rites gain protection."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Saints canonized by Pope Francis",
+     event: "Laura Montoya is canonized, the first saint of Colombia",
+     scene: "Laura Montoya climbs out of a jungle TOMB in Antioquia and becomes Colombia's first saint."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis visits Ecuador, Bolivia and Paraguay",
+     scene: "A Russian DOLL opens into three countries, Ecuador, Bolivia and Paraguay, on Francis's tour."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "In Santa Cruz Pope Francis apologises for the Church's sins in colonial times",
+     scene: "Francis kneels before an Indigenous DOLL in Santa Cruz and asks pardon for the Church's colonial crimes."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Sodalitium (1 Oct 2015)",
+     event: "Pedro Salinas's book Mitad monjes, mitad soldados exposes abuse in the Sodalitium",
+     scene: "A soldier-monk DOLL cracks open in Salinas's book and the Sodalitium's secret abuse spills out."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Michał Tomaszek (5 Dec 2015)",
+     event: "Martyrs of Pariacoto and Dordi are beatified in Chimbote",
+     scene: "Each of three DOLL figures in friars' habits gets a palm branch as Chimbote beatifies the Pariacoto martyrs."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis beatifies Bishop Jaramillo and Father Ramírez at Villavicencio",
+     scene: "A DOG of the plains barks as Francis beatifies the martyrs Jaramillo and Ramírez at Villavicencio."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Pastoral visits of Pope Francis",
+     event: "Pope Francis visits Peru and meets Amazon peoples at Puerto Maldonado",
+     scene: "A DOVE with Amazon feathers greets Francis at Puerto Maldonado among the forest peoples."}
+  - {year: 2020, peg: nose, confidence: high, source: "WebSearch: FREPAP 15 seats Jan 2020",
+     event: "Israelite party FREPAP wins fifteen seats in Peru's congress",
+     scene: "Bearded Israelites push their NOSE through the door of Peru's congress with fifteen seats."}
+  - {year: 2021, peg: ant, confidence: unverified,
+     event: "José Gregorio Hernández, the doctor of the poor, is beatified in Caracas",
+     scene: "An ANT carries the black hat of José Gregorio Hernández as he is declared blessed in Caracas."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WebSearch: El País Pedrajas 29 Apr 2023",
+     event: "El País publishes the diary of Jesuit Alfonso Pedrajas on abuse in Bolivia",
+     scene: "A GNOME finds Father Pedrajas's diary on a computer and El País prints his abuse of Bolivian boys."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WebSearch: Figari expelled Aug 2024",
+     event: "Pope Francis expels Sodalitium founder Luis Fernando Figari",
+     scene: "Figari's habit is left on a HANGER as Francis expels the Sodalitium founder."}
+  - {year: 2024, peg: hanger, confidence: high, source: "AP via WebSearch: died 22 Oct 2024",
+     event: "Gustavo Gutiérrez, father of liberation theology, dies in Lima",
+     scene: "Gustavo Gutiérrez's white Dominican habit hangs on a HANGER in Lima as he dies at ninety-six."}
+  - {year: 2025, peg: nail, confidence: high, source: "WebSearch: SCV dissolution Jan 2025",
+     event: "Pope Francis dissolves the Sodalitium Christianae Vitae",
+     scene: "Francis drives a NAIL into the Sodalitium's door and dissolves the society for abuse."}
+  - {year: 2025, peg: nail, confidence: high, source: "AP via WebSearch: Leo XIV 8 May 2025",
+     event: "Robert Prevost, former bishop of Chiclayo and Peruvian citizen, is elected Pope Leo XIV",
+     scene: "Chiclayo crowds hammer a NAIL to hang his photo: their former bishop is now Pope Leo XIV."}
+  - {year: 2025, peg: nail, confidence: high, source: "WebSearch: canonization 19 Oct 2025",
+     event: "José Gregorio Hernández and Carmen Rendiles become Venezuela's first saints",
+     scene: "A stethoscope hangs on a NAIL in Caracas as José Gregorio and Mother Carmen become Venezuela's first saints."}

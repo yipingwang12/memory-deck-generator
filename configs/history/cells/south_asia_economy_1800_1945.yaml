@@ -1,0 +1,821 @@
+# Cell: South Asia x economy x 1800 to 1944. DRAFT 2026-11-06.
+# Scope: India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives.
+# Trade, money, banks, currency, tariffs, taxes, land revenue, plantations, industry, companies, ports, plans.
+# Acts made abroad for the region are in (policy.md Scope). Burma, Tibet and Afghanistan events are out.
+# Left in older cells (first-come): railway and telegraph openings, canals, Tata hydro and airmail (science);
+# famines, factory and union laws, indenture, strikes (society); Charter Acts, indigo revolt, Champaran,
+# Kheda, Bardoli, Salt March, Swadeshi boycott (politics).
+# Dates: memory pass + web check (45 searches, WP mirror fetches). Peg = last two digits of the year.
+# Phases are dated by their start. Events from 1945 on are out.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # British India: currency, banking law and the central bank
+  - {year: 1835, peg: mill, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Coinage Act gives Company India one uniform silver rupee",
+     scene: "A MILL grinds the old local coins to dust and stamps out one silver rupee for all Company India."}
+  - {year: 1850, peg: lasso, confidence: high, source: "ICSI: history of the Companies Act",
+     event: "Joint Stock Companies Act, the first company law in India, lets companies register",
+     scene: "A LASSO ropes the first joint-stock companies into a public register under India's first company law."}
+  - {year: 1857, peg: log, confidence: medium, source: "iPleaders: company law history (1857/1860)",
+     event: "Joint Stock Companies Act allows companies with limited liability",
+     scene: "A LOG blocks the creditors' path at the shareholder's purse: the new Act limits each owner's loss."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Paper Currency Act: the Government of India issues its first paper money",
+     scene: "A JET sprays the first government paper rupee notes over India under the Paper Currency Act."}
+  - {year: 1866, peg: judge, confidence: high, source: "ICSI: history of the Companies Act",
+     event: "Indian Companies Act gives the first full code for companies, on the English model",
+     scene: "A JUDGE in an English wig reads out the Indian Companies Act, the first full code for Indian companies."}
+  - {year: 1872, peg: coin, confidence: unverified,
+     event: "Indian Contract Act sets one law for agreements across British India",
+     scene: "A COIN is pressed into every handshake as the Indian Contract Act makes one law for all bargains."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Silver falls against gold and the 'fall of the rupee' begins",
+     scene: "A COMB scrapes silver off the rupee, and its value against gold sterling starts a long slide."}
+  - {year: 1893, peg: palm, confidence: high, source: "Encyclopedia.com: Money and Credit",
+     event: "Herschell Committee report: Indian mints close to the free coinage of silver",
+     scene: "A PALM slams the mint door shut, and no one may bring silver to be coined into rupees."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Fowler Committee is appointed to study the Indian currency",
+     scene: "A BEEHIVE of experts, the Fowler Committee, buzzes over how to tie the falling rupee to gold."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Gold sovereign becomes legal tender in India at fifteen rupees",
+     scene: "A PIPE pours gold sovereigns into Indian tills as each becomes legal tender for fifteen rupees."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Coinage Act: bronze replaces copper in the three smallest coins",
+     scene: "A SUSHI chef rolls the three smallest Indian coins in bronze instead of copper under the new Coinage Act."}
+  - {year: 1912, peg: tongue, confidence: high, source: "LIC India: history",
+     event: "Indian Life Assurance Companies Act, the first law to regulate life insurers",
+     scene: "A TONGUE licks the seal on India's first law that puts life insurance companies under control."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "Encyclopedia.com: Money and Credit",
+     event: "Chamberlain Commission on Indian Currency and Finance begins its work",
+     scene: "In a TOMB of ledgers, the Chamberlain Commission studies Indian currency until the war buries its advice."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ICSI: history of the Companies Act",
+     event: "Indian Companies Act replaces the old company law",
+     scene: "The old company law of the eighteen-eighties is laid in a TOMB as the Indian Companies Act takes its place."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "Encyclopedia.com: Money and Credit",
+     event: "Babington Smith Committee is appointed and advises a rupee of two shillings gold",
+     scene: "A TUBA blasts the Babington Smith Committee's advice: value the rupee at two shillings gold."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Reserve Bank of India",
+     event: "Hilton Young Commission advises a central bank and a gold bullion standard",
+     scene: "The Hilton Young Commission shares out a NACHO platter: one chip for a central bank, one for gold bullion."}
+  - {year: 1927, peg: ink, confidence: high, source: "Hansard 1931: India rupee rate",
+     event: "Currency Act fixes the rupee at eighteen pence and starts the ratio quarrel",
+     scene: "INK writes the rupee's value as eighteen pence into the Currency Act, and Indian businessmen protest."}
+  - {year: 1930, peg: mouse, confidence: disputed, source: "GKToday: appointed 1930 (memory 1929)",
+     event: "Indian Central Banking Enquiry Committee is appointed",
+     scene: "A MOUSE runs through every bank ledger in India for the Central Banking Enquiry Committee."}
+  - {year: 1931, peg: moth, confidence: high, source: "Encyclopedia.com: Money and Credit",
+     event: "Rupee is linked to sterling when Britain leaves the gold standard",
+     scene: "A MOTH ties the rupee to the pound with a silk thread the week Britain leaves gold."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Distress gold starts to flow out of India to London in the slump",
+     scene: "A MOTH flies out of Indian jewel boxes with gold in its legs, bound for London as the slump bites."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Reserve Bank of India",
+     event: "Reserve Bank of India Act is passed",
+     scene: "A HAMMER nails down the Reserve Bank of India Act, which creates India's central bank."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Reserve Bank of India",
+     event: "Reserve Bank of India opens in Calcutta",
+     scene: "A MILL starts to grind out India's money policy as the Reserve Bank opens its doors in Calcutta."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Reserve Bank of India",
+     event: "Reserve Bank moves its central office from Calcutta to Bombay",
+     scene: "The Reserve Bank packs its central office into a giant MUG and carries it from Calcutta to Bombay."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Reserve Bank of India",
+     event: "Reserve Bank of India issues its first banknotes",
+     scene: "A MOVIE camera films the first Reserve Bank notes as they roll off the press."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Insurance in India",
+     event: "Insurance Act brings every form of insurance under state control",
+     scene: "A MOVIE shows life, fire and marine insurers lined up for inspection under the new Insurance Act."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Banking in India",
+     event: "C. D. Deshmukh becomes the first Indian governor of the Reserve Bank",
+     scene: "A RAM butts the British governors aside, and C. D. Deshmukh takes the Reserve Bank chair."}
+  # British India: trade, tariffs, taxes and salt
+  - {year: 1860, peg: cheese, confidence: high, source: "Deccan Herald: colonial India's first budget",
+     event: "James Wilson presents the first Indian budget and brings in income tax",
+     scene: "James Wilson slices a wheel of CHEESE into shares and takes one from every income: India's first income tax."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Inland Customs Line",
+     event: "Inland Customs Line and its great thorn hedge are abandoned",
+     scene: "A COWBOY rides along the great thorn hedge of the salt customs line and chops it open for good."}
+  - {year: 1882, peg: oven, confidence: high, source: "Encyclopedia.com: Trade Policy",
+     event: "Import duties on cotton goods and most other imports are abolished",
+     scene: "An OVEN burns the tariff book as the government ends the import duties on Lancashire cotton."}
+  - {year: 1886, peg: fish, confidence: medium, source: "Taxguru: history of income tax",
+     event: "Income Tax Act brings back a lasting income tax",
+     scene: "A FISH swims back into the tax net as the Income Tax Act makes income tax a fixed part of Indian finance."}
+  - {year: 1894, peg: bear, confidence: high, source: "Encyclopedia.com: Trade Policy",
+     event: "Import duties return, with an equal excise on Indian mill cloth",
+     scene: "A BEAR puts a duty on imported cloth and claws the same excise from Indian mill cloth to please Lancashire."}
+  - {year: 1896, peg: peach, confidence: high, source: "Encyclopedia.com: Trade Policy",
+     event: "Cotton Duties Act taxes all Indian mill cloth at the import rate",
+     scene: "A PEACH-coloured excise stamp marks every bolt of Indian mill cloth at the rate imports pay."}
+  - {year: 1907, peg: ski, confidence: high, source: "Britannica: Ten Years' Agreement",
+     event: "Ten Years' Agreement: Indian opium sales to China are to fall each year and end",
+     scene: "On a SKI slope, Indian opium chests for China slide down five hundred fewer each year."}
+  - {year: 1916, peg: dish, confidence: high, source: "NVLI: Indian Industrial Commission report",
+     event: "Indian Industrial Commission under Thomas Holland is appointed",
+     scene: "A DISH of Indian ores and fibres is served to Holland's Industrial Commission as it tours the factories."}
+  - {year: 1921, peg: ant, confidence: high, source: "Spontaneous Order: Fiscal Commission report",
+     event: "Indian Fiscal Commission begins work and advises discriminating protection",
+     scene: "An ANT army of Fiscal Commissioners builds a tariff wall only around chosen Indian industries."}
+  - {year: 1921, peg: ant, confidence: high, source: "GKToday: Acworth Committee",
+     event: "Acworth Committee report: the state should run the railways and their budget",
+     scene: "An ANT colony carries the railways from the companies to the state, as the Acworth report asks."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Tribune: protection to steel industry",
+     event: "First Indian Tariff Board is set up and studies the steel industry",
+     scene: "A GNOME sits on the first Tariff Board and weighs whether Indian steel needs protection."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Sansad: Assembly debates June 1924",
+     event: "Steel Industry (Protection) Act puts protective duties on imported steel",
+     scene: "A coat HANGER holds up a tariff wall of steel sheet when the Steel Industry Protection Act passes."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Sansad: Railway Convention Committee",
+     event: "Separation Convention takes the railway budget out of the general budget",
+     scene: "A HANGER lifts the railway budget off the general budget and hangs it on its own hook."}
+  - {year: 1925, peg: nail, confidence: medium, source: "Tribune / Spectator: cotton excise",
+     event: "Cotton excise duty on Indian mill cloth is ended",
+     scene: "Bombay millowners pull out the last NAIL of the cotton excise notice, and the hated duty falls."}
+  - {year: 1932, peg: moon, confidence: high, source: "Britannica: Ottawa Agreements",
+     event: "Ottawa Agreement: India and Britain give each other tariff preference",
+     scene: "Under a MOON over Ottawa, India and Britain swap lower duties on each other's goods."}
+  - {year: 1932, peg: moon, confidence: high, source: "Casemine: Sugar Industry (Protection) Act",
+     event: "Sugar Industry (Protection) Act shields Indian sugar, and factories multiply",
+     scene: "A sugar MOON rises over dozens of new mills as the Sugar Industry Protection Act blocks foreign sugar."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Hansard 1934: Indo-Japanese agreement",
+     event: "Indo-Japanese trade agreement links Japanese cloth quotas to Indian cotton purchases",
+     scene: "A HAMMER stamps a quota on Japanese cloth, tied to how much Indian raw cotton Japan buys."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Eastern Group Supply Conference in Delhi plans war supplies from India",
+     scene: "A war HORSE hauls Indian-made boots and shells as the Delhi conference plans the Eastern Group's supplies."}
+  - {year: 1942, peg: rhino, confidence: unverified,
+     event: "Grow More Food campaign begins to raise food crops",
+     scene: "A RHINO pulls a plough as the Grow More Food campaign asks farmers to grow grain, not cash crops."}
+  # British India: labour contracts, companies, plans and economic thought
+  - {year: 1859, peg: elbow, confidence: high, source: "Royal Commission on Labour in India",
+     event: "Workmen's Breach of Contract Act makes a broken labour contract a crime",
+     scene: "An ELBOW shoves a runaway worker into jail, since the new Act makes breaking a labour contract a crime."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Royal Commission on Labour in India",
+     event: "Repeal of the Workmen's Breach of Contract Act takes effect",
+     scene: "A NACHO crunches in two: the repeal of the Breach of Contract Act ends jail for quitting a job."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Indian Culture: Royal Commission report",
+     event: "Royal Commission on Agriculture in India is appointed under Linlithgow",
+     scene: "Linlithgow's Royal Commission digs through a field of NACHO maize to study Indian farming."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Romesh Chunder Dutt",
+     event: "R. C. Dutt's Open Letters to Lord Curzon blame land tax for famine",
+     scene: "In Dutt's Open Letters to Curzon, a SAUCE of land tax drowns the famine-hit peasant."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Dadabhai Naoroji",
+     event: "Naoroji publishes Poverty and Un-British Rule in India on the drain of wealth",
+     scene: "A SODA bottle fizzes over as Naoroji's book Poverty and Un-British Rule spills out India's drained wealth."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Romesh Chunder Dutt",
+     event: "R. C. Dutt publishes the first volume of The Economic History of India",
+     scene: "The SUN sets on India's looms in the first volume of Dutt's Economic History of India."}
+  - {year: 1904, peg: sewer, confidence: high, source: "GKToday: Co-operative Credit Societies Act",
+     event: "Co-operative Credit Societies Act starts the co-operative movement",
+     scene: "A SEWER pipe drains village savings away from moneylenders into the first co-operative credit societies."}
+  - {year: 1905, peg: seal, confidence: unverified,
+     event: "Railway Board takes over the control of the Indian railways",
+     scene: "A SEAL balances the new Railway Board on its nose as the Board takes charge of India's railways."}
+  - {year: 1912, peg: tongue, confidence: high, source: "Courtkutchehry: Co-operative Societies Act",
+     event: "Co-operative Societies Act allows non-credit co-operatives and their unions",
+     scene: "A TONGUE licks the stamps on new weavers' and buyers' co-operatives, now legal under the Act."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: FICCI",
+     event: "G. D. Birla and Purshottamdas Thakurdas found FICCI",
+     scene: "Birla and Thakurdas dip their pens in INK and sign FICCI into being, one voice for Indian business."}
+  - {year: 1938, peg: movie, confidence: high, source: "ClearIAS: planning history",
+     event: "Congress sets up the National Planning Committee under Nehru",
+     scene: "A MOVIE screen shows Nehru taking the chair of Bose's National Planning Committee for Congress."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Bombay Plan",
+     event: "Eight industrialists publish the Bombay Plan",
+     scene: "A WARRIOR band of eight industrialists, Tata and Birla in front, marches out with the Bombay Plan."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "GKToday: history of planning",
+     event: "S. N. Agarwal's Gandhian Plan puts village industries first",
+     scene: "A WARRIOR armed with a spinning wheel carries Agarwal's Gandhian Plan for village industries."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "GKToday: planning (1944 or 1945)",
+     event: "M. N. Roy drafts the People's Plan for the Indian Federation of Labour",
+     scene: "A WARRIOR of labour, M. N. Roy, writes the People's Plan, which puts farming first."}
+  # Bengal and Bihar
+  - {year: 1801, peg: soda, confidence: high, source: "WP mirror: Economic history of India",
+     event: "Gun and Shell Factory is set up in Calcutta",
+     scene: "A SODA bottle-shaped shell is cast at the new Gun and Shell Factory in Calcutta."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP mirror: Imperial Bank of India",
+     event: "Bank of Calcutta opens, the first presidency bank",
+     scene: "A SUSHI roll of rupee notes comes out of the new Bank of Calcutta, first of the presidency banks."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP mirror: Banking in India",
+     event: "Bank of Calcutta is renamed the Bank of Bengal",
+     scene: "SOAP washes the old name off the bank's sign, and the Bank of Calcutta becomes the Bank of Bengal."}
+  - {year: 1818, peg: dove, confidence: high, source: "GKToday / textbooks: Fort Gloster",
+     event: "Fort Gloster near Calcutta: the first cotton mill in India",
+     scene: "A DOVE flies out of Fort Gloster's new spinning mill, the first in India, which soon fails."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP mirror: Raniganj Coalfield",
+     event: "Alexander and Company start organised coal mining at Raniganj",
+     scene: "A NOSE sniffs coal dust at Raniganj, where Alexander and Company begin organised mining."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Dwarkanath Tagore",
+     event: "Dwarkanath Tagore founds the Union Bank of Calcutta",
+     scene: "Dwarkanath Tagore turns the brass KNOB on the door of his new Union Bank in Calcutta."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Palmer and Company",
+     event: "Palmer and Company, the largest agency house, fails and starts a crisis",
+     scene: "A MOUSE gnaws through Palmer and Company's ledgers, and Calcutta's biggest agency house goes bankrupt."}
+  - {year: 1832, peg: moon, confidence: disputed, source: "WP: Dwarkanath Tagore 1832; Raniganj 1835",
+     event: "Dwarkanath Tagore buys the Raniganj colliery",
+     scene: "Dwarkanath Tagore buys the Raniganj pits and digs coal by the light of the MOON."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: Carr, Tagore and Company",
+     event: "Carr, Tagore and Company is founded, an early managing agency",
+     scene: "A HAMMER forges the partnership of William Carr and Dwarkanath Tagore into one managing agency."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: Raniganj Coalfield",
+     event: "Carr, Tagore and Company and Gilmore Homfray form the Bengal Coal Company",
+     scene: "A RAM butts two coal firms together, and the Bengal Coal Company is born."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP mirror: History of rail transport",
+     event: "East Indian Railway Company is formed to build lines from Calcutta",
+     scene: "A toy RAILWAY is sold in shares as the East Indian Railway Company forms to build out of Calcutta."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Banking in India",
+     event: "Union Bank of Calcutta fails in the commercial crisis",
+     scene: "The Union Bank of Calcutta runs onto a REEF in the commercial crisis and sinks."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP mirror: Bengal Chamber of Commerce",
+     event: "Bengal Chamber of Commerce replaces the Calcutta Chamber",
+     scene: "A LLAMA carries the new sign, Bengal Chamber of Commerce, to the old Calcutta Chamber's door."}
+  - {year: 1855, peg: lily, confidence: high, source: "Banglapedia: Jute Industry",
+     event: "Rishra: George Acland starts the first jute mill in India",
+     scene: "A LILY of jute fibre is spun on Acland's Dundee machines at Rishra, India's first jute mill."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: Jute trade",
+     event: "Borneo Company starts a steam-powered jute mill in Bengal",
+     scene: "A LOG feeds the boiler of the Borneo Company's steam-powered jute mill on the Hooghly."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Eastern Bengal Railway Company is incorporated",
+     scene: "A WOLF signs for the Eastern Bengal Railway Company with a pawprint on its charter."}
+  - {year: 1859, peg: elbow, confidence: high, source: "GKToday: Bengal tenancy laws",
+     event: "Bengal Rent Act gives occupancy rights to tenants of twelve years",
+     scene: "An ELBOW holds back the zamindar, since Rent Act Ten lets a twelve-year tenant keep his land."}
+  - {year: 1861, peg: jet, confidence: high, source: "Telegraph: Kolkata's past, Dec 1861",
+     event: "First tea auction in India is held in Calcutta",
+     scene: "A JET of steam rises from tea chests at Calcutta's first tea auction."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Kolkata Port",
+     event: "Calcutta Port Act creates the Calcutta Port Commissioners",
+     scene: "A GOOSE leads the new Calcutta Port Commissioners up the Hooghly to take charge of the port."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "WP: Kulti (1874 and 1870 also given)",
+     event: "Kulti ironworks makes pig iron but finds no market",
+     scene: "An EAGLE sits on unsold pig iron piled beside the new blast furnace at Kulti."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Calcutta International Exhibition",
+     event: "Calcutta International Exhibition opens and draws about a million visitors",
+     scene: "FOAM of a million visitors washes through the halls of the Calcutta International Exhibition."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Banglapedia: Jute Industry",
+     event: "Calcutta jute mills form the Indian Jute Manufacturers Association",
+     scene: "A FAIRY ties the Calcutta jute mill owners together with one jute string into their own association."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: Bengal Tenancy Act",
+     event: "Bengal Tenancy Act defines the rights of each class of tenant",
+     scene: "A WAFFLE grid sorts Bengal's tenants into boxes as the Bengal Tenancy Act defines their rights."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Kolkata Port",
+     event: "Kidderpore wet dock opens in Calcutta",
+     scene: "A PIANO is swung by crane into the new wet dock at Kidderpore."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Jharia coalfield",
+     event: "Coal mining begins in the Jharia field",
+     scene: "A BEAR claws open the first coal seam of the Jharia field for Kutchi railway contractors."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Kolkata Port",
+     event: "Petroleum wharf is built at Budge Budge for Calcutta",
+     scene: "A PEACH tin full of kerosene is swung onto the new petroleum wharf at Budge Budge."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Tata Steel",
+     event: "Tata Iron and Steel Company is founded",
+     scene: "Dorabji Tata rides a SKI jump of Indian investors' money into the new Tata Iron and Steel Company."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Calcutta Stock Exchange",
+     event: "Calcutta Stock Exchange Association is formed",
+     scene: "Calcutta brokers leave the street corner for a SOFA in the room of the new Stock Exchange Association."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "WP mirror: Jute trade",
+     event: "Calcutta passes Dundee as the largest jute producer in the world",
+     scene: "Calcutta's jute mills pull Dundee's SOFA out from under it and take the world lead in jute."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: ITC Limited",
+     event: "Imperial Tobacco Company of India is registered in Calcutta",
+     scene: "A cigarette packet the shape of a DICE carries the name of the new Imperial Tobacco Company of India."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Tata Steel",
+     event: "Tata's Sakchi works makes its first pig iron",
+     scene: "A TATTOO of glowing iron runs across the sky as the first Sakchi blast furnace pours pig iron."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Tata Steel",
+     event: "Tata works rolls its first steel ingot",
+     scene: "A red-hot TONGUE of steel slides out as the Tata works casts its first ingot."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Jharia coalfield",
+     event: "First underground coal fire is found in the Jharia field",
+     scene: "A DISH of fire glows under the Jharia fields: the first underground coal fire is found."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: IISCO Steel Plant",
+     event: "Burn and Company found the Indian Iron and Steel Company",
+     scene: "A DOVE carries Burn and Company's papers to register the Indian Iron and Steel Company."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Business Standard: Jamshedpur turns 100",
+     event: "Lord Chelmsford renames Sakchi as Jamshedpur",
+     scene: "Lord Chelmsford plays a TUBA at Sakchi and renames the steel town Jamshedpur after Jamsetji Tata."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Banglapedia / FIBIS: Birlapur",
+     event: "Birla Jute mill is set up at Birlapur",
+     scene: "A TUBA of Marwari money trumpets open the Birla jute mill at Birlapur on the Hooghly."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Tata Steel",
+     event: "Tinplate Company of India is set up beside the Tata works",
+     scene: "A tin NOSE is stamped out by the new Tinplate Company of India beside the Tata steel works."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Imperial Bank of India",
+     event: "Three presidency banks merge into the Imperial Bank of India",
+     scene: "An ANT carries the banks of Bengal, Bombay and Madras into one nest: the Imperial Bank of India."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Tata Steel",
+     event: "First finished tinplate rolls off the line at Jamshedpur",
+     scene: "A NUN sees her face in the first sheet of shiny tinplate rolled at Jamshedpur."}
+  - {year: 1925, peg: nail, confidence: high, source: "Janata Weekly: lessons of khadi",
+     event: "Gandhi founds the All India Spinners' Association at Patna",
+     scene: "Gandhi drives a NAIL into a spinning wheel at Patna, and the All India Spinners' Association begins."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Kolkata Port",
+     event: "King George's Dock is commissioned in Calcutta",
+     scene: "A ship's bow cuts like a KNIFE into the water of the new King George's Dock in Calcutta."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Imperial Bank of India",
+     event: "Badridas Goenka becomes the first Indian chairman of the Imperial Bank",
+     scene: "Badridas Goenka unwraps a MUMMY of British bankers and takes the Imperial Bank chair, its first Indian chief."}
+  - {year: 1936, peg: match, confidence: medium, source: "WP: IISCO Steel Plant",
+     event: "Indian Iron and Steel Company absorbs the Bengal Iron Company",
+     scene: "A MATCH lights one furnace for both works as the Indian Iron and Steel Company swallows Bengal Iron."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Tata Steel",
+     event: "Jamshedpur is the largest steel plant in the British Empire",
+     scene: "On the MAP of the British Empire, the biggest steel works is now Jamshedpur."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: UCO Bank",
+     event: "G. D. Birla founds the United Commercial Bank in Calcutta",
+     scene: "G. D. Birla rides a RAM through the Quit India unrest to open the United Commercial Bank in Calcutta."}
+  # Assam: tea and oil
+  - {year: 1823, peg: gnome, confidence: high, source: "Indian Culture: Bruce brothers",
+     event: "Robert Bruce sees wild tea plants with the Singpho in Upper Assam",
+     scene: "A Singpho GNOME leads Robert Bruce to wild tea bushes in the Upper Assam forest."}
+  - {year: 1834, peg: hammer, confidence: high, source: "Tocklai: history of tea cultivation",
+     event: "Bentinck sets up the Tea Committee to start tea growing in India",
+     scene: "Bentinck bangs a HAMMER on the table: a Tea Committee will find where India can grow tea."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP mirror: History of tea in India",
+     event: "First English tea garden is set up at Chabua",
+     scene: "A MUG of tea from Chabua's first English garden steams in Upper Assam."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: Assam Company",
+     event: "Wasteland Rules give Assam land to European planters",
+     scene: "A MOVIE shows Assam forest handed to Europeans under the Wasteland Rules, which shut out native planters."}
+  - {year: 1839, peg: map, confidence: high, source: "Indian Culture: Bruce brothers",
+     event: "First Assam tea is sold at auction in London",
+     scene: "A MAP of Assam hangs over the London auction room as eight chests of Assam tea are sold."}
+  - {year: 1839, peg: map, confidence: high, source: "WP mirror: Assam Company",
+     event: "Assam Company is formed to grow tea",
+     scene: "The new Assam Company cuts the MAP of Upper Assam into tea gardens."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: Assam Company",
+     event: "Easier land rules start a rush for tea land in Assam",
+     scene: "A LAWYER loosens the waste-land rules, and planters rush to stake out Assam tea land."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Assam Company",
+     event: "Tea gardens start to bring in labourers from central India",
+     scene: "An ELBOW of a recruiter pushes workers from central India onto steamers bound for Assam gardens."}
+  - {year: 1859, peg: elbow, confidence: unverified,
+     event: "Jorehaut Tea Company is formed",
+     scene: "An ELBOW makes room beside the Assam Company as the Jorehaut Tea Company starts up."}
+  - {year: 1866, peg: judge, confidence: unverified,
+     event: "Assam tea boom collapses in a crash",
+     scene: "A JUDGE hammers the bankrupt tea companies one by one as the Assam tea mania ends."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: Digboi Refinery",
+     event: "Railway builders find oil at Digboi by chance",
+     scene: "A JOCKEY on a railway elephant near Digboi finds its feet black with oil."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Indian Tea Association",
+     event: "Indian Tea Association is formed",
+     scene: "Planters put their FOOT down together and form the Indian Tea Association."}
+  - {year: 1882, peg: oven, confidence: high, source: "Hansard 1888: Inland Emigration Act",
+     event: "Inland Emigration Act lets planters arrest runaway workers without a warrant",
+     scene: "In an OVEN-hot Assam garden, a planter arrests a runaway worker without a warrant under the new Act."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Digboi Refinery",
+     event: "Drilling for oil begins at Digboi",
+     scene: "A watch FOB swings from the driller's coat as the first oil well is bored at Digboi."}
+  - {year: 1899, peg: pipe, confidence: high, source: "FIBIS: Oil industry",
+     event: "Assam Railways and Trading Company forms the Assam Oil Company",
+     scene: "A PIPE joins the railway company's oil wells to a new firm, the Assam Oil Company."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Digboi Refinery",
+     event: "Digboi refinery starts work",
+     scene: "A SODA fountain of crude oil turns into kerosene as the Digboi refinery starts work."}
+  - {year: 1901, peg: soda, confidence: high, source: "Royal Commission on Labour in India",
+     event: "Assam Labour and Emigration Act controls tea-garden recruiting",
+     scene: "A SODA cart of labour contractors must now carry a licence under the Assam Labour and Emigration Act."}
+  - {year: 1915, peg: doll, confidence: high, source: "Royal Commission on Labour in India",
+     event: "Planters lose the power of private arrest in the Assam valley",
+     scene: "A planter's DOLL loses its handcuffs as private arrest of tea workers ends in the Assam valley."}
+  # Bombay, Gujarat and central India
+  - {year: 1836, peg: match, confidence: high, source: "Madras Musings: chambers of commerce",
+     event: "Bombay Chamber of Commerce is founded",
+     scene: "A MATCH lights the lamps of the Bombay Chamber of Commerce at its first meeting."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP mirror: Imperial Bank of India",
+     event: "Bank of Bombay is incorporated",
+     scene: "A HORSE gallops the new charter of the Bank of Bombay down the Fort's streets."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP mirror: Oriental Bank Corporation",
+     event: "Bank of Western India opens in Bombay",
+     scene: "A RHINO charges into Bombay finance as the Bank of Western India opens its doors."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP mirror: Oriental Bank Corporation",
+     event: "Bank of Western India moves its head office to London",
+     scene: "A RAILWAY to the ships carries the Bank of Western India's head office from Bombay to London."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Act of Parliament incorporates the Great Indian Peninsula Railway",
+     scene: "A ROPE ties Parliament's charter to the Great Indian Peninsula Railway, the company for Bombay's lines."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Guarantee contracts promise railway companies free land and a fixed return",
+     scene: "A ROPE of guaranteed interest pulls British investors into Indian railway shares, with free land as bait."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "Byju's / GKToday: Davar's mill",
+     event: "C. N. Davar founds the Bombay Spinning and Weaving Company",
+     scene: "A LAWYER signs Davar's papers for the Bombay Spinning and Weaving Company, Bombay's first cotton mill."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Bombay, Baroda and Central India Railway Company is incorporated",
+     scene: "A LILY seal stamps the charter of the new Bombay, Baroda and Central India Railway Company."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: Ranchhodlal Chhotalal",
+     event: "Ranchhodlal Chhotalal opens Ahmedabad's first cotton mill",
+     scene: "A JET of steam starts Ranchhodlal's looms: the Ahmedabad Spinning and Weaving Company opens."}
+  - {year: 1861, peg: jet, confidence: medium, source: "Business Standard: Bombay crash",
+     event: "American Civil War starts a cotton boom in Bombay",
+     scene: "A JET of cotton bales shoots out of Bombay to Lancashire when war cuts off American cotton."}
+  - {year: 1865, peg: jelly, confidence: high, source: "Spectator 1865: Bombay bubble",
+     event: "Bombay share mania collapses when the American war ends",
+     scene: "Back Bay Reclamation shares wobble like JELLY and collapse as peace in America sinks cotton prices."}
+  - {year: 1868, peg: chef, confidence: high, source: "UMD thesis: failure of the Bank of Bombay",
+     event: "Old Bank of Bombay goes into liquidation and a new bank replaces it",
+     scene: "A CHEF throws out the spoiled old Bank of Bombay and cooks up a new one in its place."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: Tata Group",
+     event: "Jamsetji Tata starts his trading firm, the start of the Tata group",
+     scene: "Jamsetji Tata, a CHEF of army supply deals, stirs his profits into a trading firm of his own."}
+  - {year: 1870, peg: goose, confidence: medium, source: "LIC India history (1870; some say 1871)",
+     event: "Bombay Mutual Life Assurance Society, the first Indian life insurer, starts",
+     scene: "A GOOSE gets life cover at normal rates from Bombay Mutual, the first Indian life insurer."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Mumbai Port Trust",
+     event: "Bombay Port Trust is set up",
+     scene: "A COMB tidies Bombay's tangled wharves into one body, the new Bombay Port Trust."}
+  - {year: 1874, peg: car, confidence: high, source: "Tata: Empress Mills heritage",
+     event: "Tata floats the Central India Spinning, Weaving and Manufacturing Company",
+     scene: "A CAR loaded with a lakh and a half of rupees drives Tata's new spinning company toward Nagpur."}
+  - {year: 1874, peg: car, confidence: medium, source: "IndiaFirst Life: history of insurance",
+     event: "Oriental Government Security Life Assurance Company is founded in Bombay",
+     scene: "A CAR crash is covered by the new Oriental Government Security Life Assurance Company of Bombay."}
+  - {year: 1875, peg: eagle, confidence: high, source: "IIMA library: Millowners' Association",
+     event: "Bombay Millowners' Association is formed",
+     scene: "An EAGLE spreads its wings over the mill chimneys as Bombay's millowners form their association."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Bombay Stock Exchange",
+     event: "Native Share and Stock Brokers' Association is formed (the Bombay Stock Exchange)",
+     scene: "An EAGLE drives the brokers from under the banyan tree into the new Native Share and Stock Brokers' Association."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Dadabhai Naoroji",
+     event: "Dadabhai Naoroji reads his paper Poverty of India in Bombay",
+     scene: "Naoroji opens a CAGE of figures in Bombay to show that India is poor under British rule."}
+  - {year: 1877, peg: cake, confidence: high, source: "Tata: Empress Mills heritage",
+     event: "Empress Mills opens in Nagpur",
+     scene: "Tata cuts a CAKE as Empress Mills opens in Nagpur on the day Victoria is proclaimed Empress."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Bombay Dyeing",
+     event: "Bombay Dyeing is founded",
+     scene: "A COWBOY's red bandana is the first cloth coloured at the new Bombay Dyeing works."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Indian Kanoon: Deccan Agriculturists' Act",
+     event: "Deccan Agriculturists' Relief Act protects indebted farmers",
+     scene: "A COWBOY lassoes the Deccan moneylender and frees the indebted farmer's land under the Relief Act."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Kirloskar Group",
+     event: "Laxmanrao Kirloskar starts the business that becomes Kirloskar Brothers",
+     scene: "Laxmanrao Kirloskar plays a FIFE to open the small workshop that grows into Kirloskar Brothers."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Mumbai Port Trust",
+     event: "Victoria Dock opens in Bombay",
+     scene: "A giant BOOT steps into the water of Bombay's new Victoria Dock."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Godrej Group",
+     event: "Godrej makes the first lever lock in India",
+     scene: "A PIG noses at the new Godrej lever lock, India's first, and cannot get into the pantry."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Godrej Group",
+     event: "Godrej makes the first Indian safe",
+     scene: "A SUN-hot blowtorch fails on the first Indian-made safe, built by Godrej."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Bank of India",
+     event: "Bank of India is founded in Bombay",
+     scene: "A SUSHI platter is shared by Hindu, Muslim, Parsi and Jewish merchants as they found the Bank of India."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Indian Merchants' Chamber",
+     event: "Indian Merchants' Chamber is founded in Bombay",
+     scene: "A SKI team of Indian traders races past the British chamber and forms the Indian Merchants' Chamber."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Bank of Baroda",
+     event: "Maharaja Sayajirao Gaekwad founds the Bank of Baroda",
+     scene: "Maharaja Sayajirao sits on a gold SOFA and founds the Bank of Baroda for his state."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Central Bank of India",
+     event: "Sorabji Pochkhanawala founds the Central Bank of India",
+     scene: "Pochkhanawala gets a TATTOO that reads Central Bank of India the day he founds it in Bombay."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Mumbai Port Trust",
+     event: "Alexandra (Indira) Dock opens in Bombay",
+     scene: "A crane TOWER swings the first cargo into Bombay's new Alexandra Dock."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Indian rupee",
+     event: "Bombay mint strikes gold sovereigns and gold fifteen-rupee coins",
+     scene: "A DOVE flies out of the Bombay mint with a gold fifteen-rupee coin in its beak."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Godrej Group",
+     event: "Godrej Soaps is incorporated",
+     scene: "A DOVE-white bar is the first product of the new Godrej Soaps company."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Scindia Steam Navigation Company",
+     event: "SS Loyalty of the new Scindia Steam Navigation Company sails for Britain",
+     scene: "A TUBA blares on deck as Scindia's SS Loyalty, an Indian-owned liner, steams out for Britain."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: New India Assurance",
+     event: "Dorabji Tata founds the New India Assurance Company",
+     scene: "Dorabji Tata blows a TUBA to launch New India Assurance, an Indian company for fire and marine cover."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Union Bank of India",
+     event: "Seth Sitaram Poddar founds the Union Bank of India in Bombay",
+     scene: "Sitaram Poddar pours rupees into a TUBA, which becomes the strongroom of the Union Bank of India."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Godrej Group",
+     event: "Godrej sells the first soap made from vegetable oil",
+     scene: "A vegetarian's NOSE approves the first Godrej soap made from vegetable oil, with no animal fat."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "East India Cotton Association is formed to run the Bombay cotton market",
+     scene: "An ANT army carries cotton bales into the new East India Cotton Association's trading ring."}
+  - {year: 1934, peg: hammer, confidence: high, source: "MK Gandhi: village industries",
+     event: "All India Village Industries Association is founded at Wardha",
+     scene: "Gandhi's HAMMER mends an oil press as the All India Village Industries Association forms at Wardha."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Cipla",
+     event: "K. A. Hamied founds Cipla in Bombay",
+     scene: "Khwaja Abdul Hamied's MILL grinds medicines at his new Bombay firm, Cipla."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: ACC Limited",
+     event: "Eleven cement firms merge into the Associated Cement Companies",
+     scene: "One MATCH lights eleven cement kilns as their firms merge into the Associated Cement Companies."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Larsen and Toubro",
+     event: "Henning Holck-Larsen and Soren Toubro start their firm in Bombay",
+     scene: "Two Danish engineers make a MOVIE about dairies and start Larsen and Toubro in Bombay to sell dairy plant."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Dena Bank",
+     event: "Devkaran Nanjee family founds the bank later called Dena Bank",
+     scene: "A MOVIE reel's credits name the Devkaran Nanjee brothers as founders of their family bank, later Dena Bank."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Tata Chemicals",
+     event: "Tata Chemicals is founded",
+     scene: "A MAP of the Mithapur salt flats is marked out for the new Tata Chemicals company."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Habib Bank Limited",
+     event: "Habib family opens Habib Bank in Bombay at Jinnah's urging",
+     scene: "A RADIO in the Habib family office announces the new Habib Bank for Muslim traders in Bombay."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Asian Paints",
+     event: "Four friends start Asian Paints in a Bombay garage",
+     scene: "Four friends paint a RHINO in a Girgaon garage, and Asian Paints begins."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Hindustan Motors",
+     event: "B. M. Birla founds Hindustan Motors with an assembly plant at Port Okha",
+     scene: "A RHINO-sized Morris car is put together at Port Okha by Birla's new Hindustan Motors."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "WP mirror: Premier Automobiles",
+     event: "Walchand Hirachand founds Premier Automobiles",
+     scene: "A WARRIOR of industry, Walchand Hirachand, founds Premier Automobiles to build cars in Bombay."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Tata Chemicals",
+     event: "Tata Chemicals' soda ash plant starts work",
+     scene: "A salt WARRIOR shovels sea salt into Tata Chemicals' soda ash plant as it starts work."}
+  # Madras, Mysore, Hyderabad, Travancore and Cochin
+  - {year: 1804, peg: sewer, confidence: high, source: "WP mirror: List of oldest banks in India",
+     event: "Asiatic Bank is founded in the Madras Presidency",
+     scene: "A SEWER grate in Madras opens into the vault of the new Asiatic Bank."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP mirror: Ryotwari",
+     event: "Thomas Munro becomes Governor of Madras and spreads the ryotwari settlement",
+     scene: "Munro pokes his NOSE into every field as Madras governor and taxes each ryot direct under ryotwari."}
+  - {year: 1830, peg: mouse, confidence: unverified,
+     event: "Josiah Heath's ironworks at Porto Novo starts smelting",
+     scene: "A MOUSE scurries from the heat as Josiah Heath's Porto Novo furnace pours its first iron."}
+  - {year: 1836, peg: match, confidence: high, source: "Madras Chamber of Commerce: history",
+     event: "Madras Chamber of Commerce is founded a week after Bombay's",
+     scene: "A MATCH carried from Bombay lights a second fire a week later: the Madras Chamber of Commerce."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: Imperial Bank of India",
+     event: "Bank of Madras is incorporated",
+     scene: "A RAM butts open the doors of the new Bank of Madras, third of the presidency banks."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Madras Railway Company is incorporated",
+     scene: "A RAILWAY company for the south gets its papers: the Madras Railway is incorporated."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Chennai Port",
+     event: "Madras gets an iron screw-pile pier for ships",
+     scene: "A JET of surf breaks under the new iron pier at Madras as the first ships tie up."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: History of rail transport",
+     event: "Two lines merge to form the South Indian Railway Company",
+     scene: "A CAR couples two small southern lines into one: the South Indian Railway Company."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Kolar Gold Fields",
+     event: "John Taylor and Sons take over mines at the Kolar Gold Fields",
+     scene: "John Taylor and Sons fill a VASE with gold from the Kolar mines they take over."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Chennai Port",
+     event: "Storm wrecks the almost finished Madras harbour",
+     scene: "A giant FOOT of storm water stamps on the nearly finished Madras harbour and washes it away."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Kolar Gold Fields",
+     event: "Kolar gold mines get electric power from Shivanasamudra",
+     scene: "A SUN of electric light floods the Kolar gold mines through a long cable from Shivanasamudra."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Indian Bank",
+     event: "Arbuthnot and Company fails in the worst Madras financial crisis",
+     scene: "A SUSHI knife slices Arbuthnot and Company apart, and Madras has its worst financial crisis."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Canara Bank",
+     event: "Ammembal Subba Rao Pai founds the Canara Hindu Permanent Fund in Mangalore",
+     scene: "Subba Rao Pai saves SUSHI money in a jar in Mangalore, and it becomes the Canara Hindu Permanent Fund."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Corporation Bank",
+     event: "Haji Abdullah Haji Kasim founds Corporation Bank in Udupi",
+     scene: "Haji Abdullah pays for the first SUSHI meal in Udupi with a cheque on his new Corporation Bank."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Swadeshi Steam Navigation Company",
+     event: "V. O. Chidambaram Pillai registers the Swadeshi Steam Navigation Company",
+     scene: "A SUSHI boat flying the Swadeshi flag is the first vessel of Chidambaram Pillai's Tuticorin shipping company."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Swadeshi Steam Navigation Company",
+     event: "SS Galia, the first Swadeshi company ship, reaches Tuticorin",
+     scene: "The SS Galia slides into Tuticorin like a SKI, the first ship of the Swadeshi company."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Indian Bank",
+     event: "Indian Bank is founded in Madras after the Arbuthnot crash",
+     scene: "Madras savers ski down a SKI slope from Arbuthnot's ruins into the new Indian Bank."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Swadeshi Steam Navigation Company",
+     event: "Swadeshi Steam Navigation Company is wound up",
+     scene: "The Swadeshi company's TATTOO fades as it is wound up and a ship is sold to its British rival."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Chennai Port",
+     event: "Madras harbour works are completed under Francis Spring",
+     scene: "Francis Spring gets a TATTOO of an anchor the day the Madras harbour works are done."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: ITC Limited",
+     event: "Indian Leaf Tobacco Development Company is formed in Guntur",
+     scene: "A TONGUE tastes Guntur leaf for the new Indian Leaf Tobacco Development Company."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: ITC Limited",
+     event: "Imperial Tobacco opens its first cigarette factory in Bangalore",
+     scene: "A cigarette-shaped TOMB rises in Bangalore: Imperial Tobacco's first cigarette factory."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: State Bank of Mysore",
+     event: "Visvesvaraya founds the Bank of Mysore",
+     scene: "Visvesvaraya carves the name Bank of Mysore on a TOMB-sized stone safe as he founds the bank."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Karur Vysya Bank",
+     event: "Karur Vysya Bank is founded in Karur",
+     scene: "Two Karur Chettiars pass a DISH of rupees round the table and found the Karur Vysya Bank."}
+  - {year: 1916, peg: dish, confidence: unverified,
+     event: "Mysore Government Soap Factory is set up in Bangalore",
+     scene: "A soap DISH holds the first sandalwood bar from Mysore's new government soap factory."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: CSB Bank",
+     event: "Catholic Syrian Bank is founded in Thrissur",
+     scene: "A NOSE for thrift leads Thrissur's Syrian Christians to found the Catholic Syrian Bank."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP: Singareni Collieries Company",
+     event: "Singareni Collieries Company is formed in Hyderabad State",
+     scene: "A coal-black NOSE sticks out of the Singareni pit as the new Singareni Collieries Company forms."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Tamilnad Mercantile Bank",
+     event: "Nadar Bank (Tamilnad Mercantile Bank) is founded in Tuticorin",
+     scene: "An ANT colony of Nadar traders stores its savings in the new Nadar Bank at Tuticorin."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Visvesvaraya Iron and Steel Plant",
+     event: "Mysore Iron Works at Bhadravati makes its first pig iron",
+     scene: "A GNOME taps the first pig iron from the Mysore Iron Works furnace at Bhadravati."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Andhra Bank",
+     event: "Pattabhi Sitaramayya founds Andhra Bank at Machilipatnam",
+     scene: "A GNOME guards the strongbox of Pattabhi Sitaramayya's new Andhra Bank at Machilipatnam."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Karnataka Bank",
+     event: "Karnataka Bank is founded in Mangalore",
+     scene: "A HANGER in Mangalore holds the first cashier's coat at the new Karnataka Bank."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Syndicate Bank",
+     event: "Pai family founds the Syndicate Bank at Udupi",
+     scene: "The Pai family hammers a NAIL into a wooden sign for their new Syndicate Bank near Udupi."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Lakshmi Vilas Bank",
+     event: "Lakshmi Vilas Bank is founded in Karur",
+     scene: "Seven Karur businessmen share a NACHO plate and found the Lakshmi Vilas Bank."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Cochin Port",
+     event: "Cochin port opens on land dredged by Robert Bristow",
+     scene: "Bristow's dredger cuts like a KNIFE through the backwater sandbar, and Cochin port opens."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: South Indian Bank",
+     event: "South Indian Bank starts business in Thrissur",
+     scene: "A brass KNOB turns on the door of the South Indian Bank in Thrissur on its first day."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Federal Bank",
+     event: "K. P. Hormis's Travancore Federal Bank is founded near Thiruvalla",
+     scene: "A MOTH flutters round the lamp in the tiny Nedumpuram office of the new Travancore Federal Bank."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Visakhapatnam Port",
+     event: "Visakhapatnam port opens to ocean ships",
+     scene: "A MUMMY steps off the SS Jaladurga, the first ship into the new Visakhapatnam harbour."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Indian Overseas Bank",
+     event: "M. Ct. M. Chidambaram Chettyar founds the Indian Overseas Bank",
+     scene: "Chidambaram Chettyar raises a MUG to the new Indian Overseas Bank, with branches in Karaikudi, Madras and Rangoon."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Hindustan Aeronautics",
+     event: "Walchand Hirachand founds Hindustan Aircraft in Bangalore",
+     scene: "A winged HORSE takes off from Bangalore as Walchand Hirachand founds Hindustan Aircraft."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: State Bank of Hyderabad",
+     event: "Nizam founds the Hyderabad State Bank",
+     scene: "A RADIO in the Nizam's palace announces his new Hyderabad State Bank."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Hindustan Aeronautics",
+     event: "Government of India takes over Hindustan Aircraft",
+     scene: "A RHINO of government money pushes Walchand out, and the state takes over Hindustan Aircraft."}
+  # Northern India (Agra, Oudh, Delhi)
+  - {year: 1822, peg: nun, confidence: high, source: "WP mirror: Mahalwari",
+     event: "Regulation VII sets the mahalwari settlement, village by village",
+     scene: "A NUN counts each village's dues as one sum under Holt Mackenzie's mahalwari Regulation VII."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: Mahalwari",
+     event: "Regulation IX: Bird's survey sets village revenue at two-thirds of rent",
+     scene: "Bird unwraps a MUMMY of village records and fixes the state's share at two-thirds of the rent."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: List of oldest banks in India",
+     event: "Agra and United Service Bank is founded at Agra",
+     scene: "A MUMMY of an old soldier banks his pension at the new Agra and United Service Bank."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP mirror: List of oldest banks in India",
+     event: "Delhi Bank Corporation is founded",
+     scene: "A Mughal WARRIOR deposits his sword money in the new Delhi Bank Corporation."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Mahalwari",
+     event: "Saharanpur Rules cut the revenue demand to half the rent",
+     scene: "A LILY petal falls on the ledger as the Saharanpur Rules cut the state's share to half the rent."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Banking in India",
+     event: "Bank of Upper India is founded",
+     scene: "A GEM sits in the first vault of the Bank of Upper India."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP mirror: Allahabad Bank",
+     event: "Allahabad Bank is founded at Allahabad",
+     scene: "A pot of JELLY seals the first deposit box of the new Allahabad Bank."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Banking in India",
+     event: "Oudh Commercial Bank is founded at Faizabad",
+     scene: "The Oudh Commercial Bank sets its FOOT down in Faizabad and opens its doors."}
+  - {year: 1889, peg: fob, confidence: unverified,
+     event: "Delhi Cloth Mills starts work",
+     scene: "A watch FOB times the first shift at the Delhi Cloth Mills."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Banking in India",
+     event: "Bank of Upper India fails as a wave of bank failures starts",
+     scene: "A TOMB is dug for the Bank of Upper India, first of a dozen banks to fail this year."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Central Bank of India",
+     event: "Alliance Bank of Simla fails",
+     scene: "A garden GNOME is all that stays in the empty vault when the Alliance Bank of Simla fails."}
+  # Punjab, Sindh and Balochistan
+  - {year: 1852, peg: lion, confidence: high, source: "WP mirror: Scinde Dawk",
+     event: "Bartle Frere's Scinde Dawk stamps, the first in India, are issued",
+     scene: "A LION's paw presses red wax into Frere's Scinde Dawk stamps, the first postage stamps in India."}
+  - {year: 1872, peg: coin, confidence: high, source: "Showcaves: Khewra salt mine",
+     event: "Warth lays out the main tunnel of the Khewra salt mine",
+     scene: "Warth tosses a COIN down the new main tunnel of the Khewra salt mine to check its level."}
+  - {year: 1873, peg: comb, confidence: medium, source: "Timeline of Karachi; FIBIS: built to 1874",
+     event: "Manora breakwater is completed at Karachi",
+     scene: "A stone COMB, the Manora breakwater, now combs the monsoon waves away from Karachi harbour."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Port of Karachi",
+     event: "Building of the Karachi wharves begins",
+     scene: "An OVEN bakes the bricks for the first Karachi wharves."}
+  - {year: 1887, peg: fox, confidence: medium, source: "Business Recorder: KPT 1887; WP says 1857",
+     event: "Karachi Port Trust takes charge of the port",
+     scene: "A FOX takes the keys of Karachi harbour from the old Harbour Board for the new Port Trust."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Punjab National Bank",
+     event: "Punjab National Bank is registered in Lahore",
+     scene: "A BEAR in Lahore's Anarkali Bazaar signs as a founder of the Punjab National Bank."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Punjab National Bank",
+     event: "Punjab National Bank opens for business in Lahore",
+     scene: "A BELL rings in Anarkali Bazaar as the Punjab National Bank opens its doors."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Punjab Zameen: Act XIII of 1900",
+     event: "Punjab Land Alienation Act stops moneylenders buying farmers' land",
+     scene: "A SAUCE pan boils over on any moneylender who tries to buy a Punjab farmer's field under the new Act."}
+  - {year: 1901, peg: soda, confidence: unverified,
+     event: "Harkishen Lal founds the People's Bank of India in Lahore",
+     scene: "Harkishen Lal opens a SODA bottle to toast his new People's Bank of India in Lahore."}
+  - {year: 1913, peg: tomb, confidence: high, source: "Attock Oil Company: history",
+     event: "Attock Oil Company is registered",
+     scene: "A TOMB-shaped derrick stands on the Potwar plateau for the newly registered Attock Oil Company."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: Attock Oil Company",
+     event: "Attock Oil finds oil at Khaur",
+     scene: "A DOLL floats up on a gush of oil as Attock Oil strikes at Khaur."}
+  - {year: 1922, peg: nun, confidence: medium, source: "FIBIS: Oil industry",
+     event: "Khaur oil production and the Morgah refinery begin",
+     scene: "A NUN blesses the first barrel of Khaur oil refined at Morgah."}
+  # East Bengal
+  - {year: 1846, peg: roach, confidence: high, source: "WP mirror: List of oldest banks in India",
+     event: "Dacca Bank is founded",
+     scene: "A ROACH scuttles over the muslin bales pledged at the new Dacca Bank."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Chittagong Port",
+     event: "Port Commissioners Act sets up the modern port of Chittagong",
+     scene: "A FOX runs the new Chittagong Port Commissioners' office on the Karnaphuli."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Dhakeshwari Cotton Mills is founded near Dhaka",
+     scene: "INK dyes the first cloth from the new Dhakeshwari Cotton Mills near Dhaka."}
+  # Ceylon
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Sterling replaces the rixdollar as Ceylon's currency",
+     scene: "A NAIL pins a sterling price over the old rixdollar price on every Colombo shop board."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Coffee production in Sri Lanka",
+     event: "Governor Barnes starts a coffee plantation at Gannoruwa",
+     scene: "Governor Barnes hangs his coat on a NAIL in the new coffee plantation at Gannoruwa."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Coffee production in Sri Lanka",
+     event: "First coffee plantation in the Kandyan hills is set up",
+     scene: "INK on a land deed marks the first coffee estate in the Kandyan hills."}
+  - {year: 1832, peg: moon, confidence: high, source: "Britannica: rajakariya",
+     event: "Rajakariya, compulsory service for the state, is abolished in Ceylon",
+     scene: "Under a full MOON, Kandyan villagers drop their forced-labour tools as rajakariya is abolished."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Indian rupee becomes Ceylon's standard coin",
+     scene: "A MATCH burns the last rixdollar note as the Indian rupee becomes Ceylon's standard coin."}
+  - {year: 1839, peg: map, confidence: medium, source: "WP: Ceylon tea (single source)",
+     event: "Ceylon Chamber of Commerce is founded",
+     scene: "Colombo merchants spread a trade MAP on the table at the first Ceylon Chamber of Commerce meeting."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP: Crown Lands Ordinance",
+     event: "Crown Lands Encroachment Ordinance makes unproved land Crown property",
+     scene: "A HORSE gallops over Kandyan fields with no title deeds, and the Crown claims them all."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP mirror: List of oldest banks in India",
+     event: "Bank of Ceylon (the private bank) is founded in Colombo",
+     scene: "A RADIO tower built of rupee coins rises in Colombo for the new private Bank of Ceylon."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP mirror: Coffee production in Sri Lanka",
+     event: "World depression hits Ceylon coffee",
+     scene: "A ROACH crawls over unsold coffee sacks in Colombo as the world slump ruins planters."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "History of Ceylon Tea (1854; some say 1856)",
+     event: "Coffee planters form the Planters' Association at Kandy",
+     scene: "A LAWYER writes the rules as a hundred coffee planters meet in Kandy and form the Planters' Association."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: Tea production in Sri Lanka",
+     event: "James Taylor plants the first tea estate at Loolecondera",
+     scene: "A JOCKEY gallops past James Taylor's new tea bushes at Loolecondera, the first tea estate in Ceylon."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Coffee production in Sri Lanka",
+     event: "Ceylon coffee reaches its largest area",
+     scene: "A GOOSE flies over more coffee bushes than Ceylon will ever grow again."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Ceylon rupee is divided into one hundred cents",
+     scene: "A CAT cuts the Ceylon rupee into a hundred cents with its claws."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Decimal rupee becomes Ceylon's only legal tender in place of sterling",
+     scene: "A copper cent COIN pushes the British penny out of every Ceylon till."}
+  - {year: 1873, peg: comb, confidence: high, source: "Daily Mirror LK: Ceylon tea history",
+     event: "First Ceylon tea, a small parcel from Loolecondera, reaches London",
+     scene: "A COMB of tea leaves, twenty-three pounds from Loolecondera, reaches the London auction room."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Henarathgoda Botanical Garden",
+     event: "Kew sends rubber seedlings to the new Henaratgoda garden",
+     scene: "A CAGE of Wickham's rubber seedlings arrives from Kew at the new Henaratgoda garden."}
+  - {year: 1883, peg: foam, confidence: high, source: "Colombo Tea Auction: history",
+     event: "First Colombo tea auction is held",
+     scene: "Tea FOAM rises from the tasting cups at Somerville and Company's first Colombo tea auction."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Oriental Bank Corporation",
+     event: "Oriental Bank Corporation stops payment and starts a Ceylon banking crisis",
+     scene: "A FAIRY's wand fails to save the Oriental Bank, which stops payment and leaves Ceylon short of notes."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Paper Currency Ordinance sets up a currency board for Ceylon",
+     scene: "A FAIRY board of commissioners takes over the printing of Ceylon's notes under the Paper Currency Ordinance."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Sri Lankan rupee",
+     event: "Government of Ceylon issues its first rupee banknotes",
+     scene: "A WAFFLE-patterned watermark marks the first rupee notes of the Government of Ceylon."}
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "South-west breakwater of Colombo harbour is completed",
+     scene: "Giant concrete blocks stack like a WAFFLE into the finished south-west breakwater at Colombo."}
+  - {year: 1890, peg: bees, confidence: high, source: "Sunday Times LK: Lipton's legacy",
+     event: "Thomas Lipton buys tea estates around Haputale",
+     scene: "A swarm of BEES follows Thomas Lipton up to Haputale as he buys bankrupt tea estates."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Port of Colombo",
+     event: "Colombo Port Commission is set up",
+     scene: "A lighthouse like a TOMB watches the new Colombo Port Commission take charge of the harbour."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Bank of Ceylon",
+     event: "State-owned Bank of Ceylon opens in Colombo",
+     scene: "Sir Ernest de Silva pins a MAP of the island in the new Bank of Ceylon, opened in Colombo."}
+  # Nepal
+  - {year: 1936, peg: match, confidence: high, source: "WP: Biratnagar Jute Mill",
+     event: "Biratnagar Jute Mill, Nepal's first modern industry, is founded",
+     scene: "A MATCH lights the boiler of the Biratnagar Jute Mill, Nepal's first factory."}
+  - {year: 1936, peg: match, confidence: high, source: "Country Studies: Nepal",
+     event: "Nepal Companies Act allows joint-stock companies with limited liability",
+     scene: "A MATCH box is the first share certificate printed under the Nepal Companies Act."}
+  - {year: 1936, peg: match, confidence: medium, source: "TU thesis: Udyog Parishad (1935 or 1936)",
+     event: "Juddha Shumsher sets up the Udyog Parishad, an industry council",
+     scene: "Juddha Shumsher strikes a MATCH to light Nepal's industries and names the Udyog Parishad to tend the fire."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Nepal Bank",
+     event: "King Tribhuvan opens Nepal Bank, the first bank in Nepal",
+     scene: "King Tribhuvan raises a MUG of tea to open Nepal Bank, the kingdom's first bank."}

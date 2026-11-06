@@ -21,6 +21,7 @@ Boundary rules (2026-11-05):
 - Steppe: the Pontic-Caspian steppe west of the Ural River → eastern_europe. The Kazakh steppe east of
   the Ural River, Mongolia and the Altai-Sayan mountains → central_asia, also the parts inside modern
   Russia. The Siberian forest and tundra → eastern_europe.
+- Hawaii → oceania, in every period, also after statehood in 1959 (user rule 2026-11-06).
 - Scope of events issued outside a region: policy.md "Scope".
 
 ## Themes (slug: scope)
@@ -441,3 +442,61 @@ Fix-pass list (not done):
 - Peg overload: hanger 16, radio 13, gem 11 (latin_america_politics_1500_1800); knife/moth/mug 12,
   movie/warrior 11 (latin_america_arts_1800_1945); eagle 13 (southeast_asia_religion); lawyer 13
   (south_asia_arts_1945); sofa 12 (north_america_economy); judge 11 (north_america_society_1945).
+
+## Rules settled (2026-11-06)
+User answers to open rules (written into policy.md "Scope" / "Entry" and agent_prompt.md):
+- Hawaii → oceania in every period, also after statehood (1959). Done: Keck I + Keeling (duplicates) deleted
+  from north_america_science_1945_present; Lahaina 2023 → oceania_society_1945_present; Iolani Palace 1882 →
+  pending_moves.yaml (oceania_arts_1800_1945).
+- First-come: an event already in an older cell of another theme stays there; the newer cell does not
+  repeat it, even when the newer cell's theme is the main theme. (Cross-cell duplicates: delete the copy in
+  the NEWER cell.)
+- Works made or shown outside the author's region: region of the work's setting or subject, else the
+  author's home region; never premiere or print place alone.
+- Lunar new-year gap: Western year of the day, `medium` (Chanyuan → 1005).
+- Layout: geography first; era or state groups accepted where one subregion holds most of a cell.
+- Scene pass: deferred (A or B later, not now).
+Fix pass these rules imply (not done):
+- Kafka (Metamorphosis, Trial) and Rite of Spring + Ballets Russes first season: western_europe_arts_1800_1945
+  → eastern_europe_arts_1800_1945. Midnight's Children → add to south_asia_arts_1945_present.
+- Chanyuan: world_dates 1004 → 1005.
+- Delete newer-cell copies of the cross-cell duplicates in the wave 9–13 lists (Suez, Six-Day War, Camp David,
+  Egypt–Israel treaty, UAR; 1924 caliphate; New Delhi 1931; Bede 731; Sudan apostasy 2020; Spartacus 1956;
+  Koch/Laveran) — check which cell is older by commit.
+
+## Wave 14 (2026-11-06)
+User's aim: 20 cells, most entries first. Same log-linear fit, now on 178 cells (residual sd 0.43); top 22 of 254
+(predicted 166–216) less two fit artifacts (north_america politics 500_1500 and 500bce_500ce: few dated
+pre-Columbian events). Opus agents, rolling queue of 8, budget 45 searches each (900 of the 1000 cap).
+latin_america arts 1945_present, west_asia science 1945_present, latin_america religion 1800_1945, latin_america
+religion 1945_present, latin_america science 1800_1945, western_europe science 500_1500, latin_america science
+1945_present, south_asia politics 500_1500, north_africa science 1945_present, west_asia society 1945_present,
+south_asia economy 1800_1945, south_asia economy 1945_present, latin_america society 1800_1945, north_africa
+society 1800_1945, north_america arts 1500_1800, western_europe arts 500bce_500ce, latin_america society
+1945_present, west_asia politics 500_1500, western_europe arts pre500bce, east_asia religion 1500_1800.
+Result: 5,569 dates over 20 cells (high 4,141, medium 725, low 14, disputed 78, unverified 611 = 11%); sizes
+188–536 (latin_america_arts_1945_present 536, west_asia_politics_500_1500 499 ≈ 3× the fit,
+south_asia_politics_500_1500 343). Every cell came in ABOVE the fit (×1.1–3.0). Check exit 0 on all; all years
+inside the period. Grid now 198 of 432 cells, 49,204 dates. No usage-limit deaths (~5.9M subagent tokens).
+Main session: 11 cross-cell near-duplicates removed from the newer cell (first-come; where both cells were new,
+kept the main-theme copy): Sivas 1993, Tenorio polio 1991, smallpox 1971, Estadio Azteca 1966, MGNREGA 2005,
+Maturana–Varela 1973, Taj Mahal Hotel 1903, Christ the Redeemer 1931, Mexican Agricultural Program 1943, Church
+of the Company fire 1863, Dionysius Exiguus 525. Restored: western_europe_science Oresme graphs c. 1350 and
+al-Qalasadi c. 1450 (agent dropped them to keep lasso ≤ 10); Operation Moses 1984 added to
+subsaharan_africa_society_1945_present (west_asia_society left it out "to match" Solomon). Hijra + first
+revelation → pending_moves.yaml (west_asia_religion_500_1500).
+Brief updated during the wave: overload never justifies a drop; WebFetch summaries can echo the prompt's own
+items as page text (latin_america_religion_1800_1945: Rivadavia 1822/1823 rest on such a page, medium).
+Fix-pass list (not done):
+- Prize lists: latin_america_arts_1945_present has ~110 prize entries (Cervantes, Gallegos, Nobel, Pritzker,
+  Oscars, festivals) ≈ 20% of the cell. Lifetime prizes fit the "work done in region" rule badly (Cabrera Infante
+  and Condé wrote mostly abroad). OPEN USER QUESTION: keep lifetime literary prizes at all?
+- Recent events on search snippets only: west_asia_science 2023–25 satellites + Iron Beam; latin_america_arts 2026
+  prizes (Bad Bunny Grammy, Alfaguara, Biblioteca Breve).
+- Likely wrong / to settle: Occom sermon 1771 vs 1772 (execution 1772); Uruguay abolition 1842 unverified (mirror
+  1830); Bíró 1943 Argentine patent vs eastern_europe Bíró (dup?); Pittier institute 1887/1889; Brazil e-voting
+  2000/2002; Cuba Christmas 1997/1998; Central Banking Enquiry 1929/1930; Raniganj 1832/1835; Ezra–Nehemiah 1950.
+- Theme: north_africa_science_1945_present counts excavations / fossils as science (open excavation question).
+- Peg overload: lasso 22 (western_europe_arts_pre500bce, "c. x50" midpoints; lasso scenes repetitive), jockey 18,
+  chain 18, wolf 16, chef 15 (latin_america_arts_1945_present), lasso 15 (western_europe_arts_500bce_500ce),
+  piano 12 (west_asia_politics_500_1500); 23 OVERLOAD warnings in wave 14 cells.
