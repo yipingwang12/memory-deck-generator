@@ -81,6 +81,7 @@ Calendar straddle (one year apart only because of a Hijri or regnal year) is `me
 - Run: cd /Users/yipingwa/Documents/Projects/memory-deck-generator && .venv/bin/deck-history-check configs/history/cells/{slug}.yaml
 - Exit 0 is required. Fix every problem it prints and re-run.
 - Write ONLY your one cell file. Do not edit any other file. Do not commit.
+- The scratchpad is shared by all parallel agents. Keep every working file in scratchpad/{slug}/. Never use or run a script you did not write.
 
 ## Final report (your last message; under 250 words, no scene tables)
 - Entry count, per subregion.
