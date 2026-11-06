@@ -328,3 +328,28 @@ Fix-pass list (not done):
 - Cross-cell: 1924 caliphate abolition in west_asia religion + politics; 5 events shared
   western_europe economy/politics 1945_present.
 - Top-up: Belize 1, Costa Rica 3 entries (latin_america_politics_1945_present).
+
+## Wave 11 (2026-11-05)
+User's aim: one more Sonnet wave, the next 8 cells by predicted size (fit on 137 cells, residual sd 0.41;
+predicted 210–224). Budget 25 searches per agent: about 226 of the 1000 cap were left after wave 10.
+north_america religion 1945_present, oceania politics 1945_present, north_africa politics 1500_1800,
+south_asia politics 1500_1800, east_asia economy 1800_1945, subsaharan_africa politics 1945_present,
+eastern_europe politics 500_1500, southeast_asia arts 1945_present.
+Result: 2,176 dates over 8 cells (high 1,388, medium 160, low 3, disputed 22, unverified 611 = 28%); sizes
+204–345. Check exit 0 on all; all years inside the period; no cross-cell contamination (private scratch
+folders worked). Grid now 145 of 432 cells, 34,300 dates. 7 of 8 cells came in ABOVE the fit (×1.1–1.6).
+Unverified share by cell: east_asia_economy_1800_1945 65%, subsaharan_africa_politics_1945_present 48%;
+north_africa_politics_1500_1800 1%, south_asia_politics_1500_1800 7%.
+Fix-pass list (not done):
+- OPEN RULE (user): Hawaii. oceania_politics_1945_present files 15 Hawaii entries under Polynesia; grid has
+  US → north_america, Pacific islands → oceania. Options: always oceania, or oceania until statehood 1959.
+- Dropped against the brief, restore: NZ 1951 snap election (oceania_politics; the day was wrong, the year
+  is right). Uganda 1966: Obote suspends the constitution (removed from the text; it is a fact).
+- Scope: north_africa_politics_1500_1800 files Chaul 1508, Diu 1509 (India) and Marj Dabiq 1516 (Syria)
+  under Egypt; check against south_asia / west_asia cells.
+- Layout: north_america_religion_1945_present grouped by denomination, not subregion.
+- Disputed to settle: Glover locomotive at Nagasaki 1865 (usual) vs 1868 (mirror).
+- Peg overload: cheese 23 (1960 independence wave), boot 12, jet 11, judge 11
+  (subsaharan_africa_politics_1945_present).
+- Tacked-on regex: north_africa_politics_1500_1800 has 26 hits.
+- Duplicates: 4 events shared oceania politics/society 1945_present, 1 oceania/southeast_asia politics.

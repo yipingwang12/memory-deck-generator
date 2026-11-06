@@ -1,0 +1,946 @@
+# Cell: South Asia x politics x 1500 to 1799. DRAFT 2026-11-05.
+# Scope: India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives. States, rulers, wars, battles,
+# treaties, laws and independence. Company charters and trade grants stay in economy.
+# Dates: memory pass + web check (25 searches + fetches). Gregorian years. Work for the region first
+# seen abroad (Acts of Parliament, treaties) is included by the 2026-11-05 scope rule.
+# Peg = last two digits of the year. Range -> conventional "c." date (rule of 2026-11-04).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Mughal north India
+  - {year: 1505, peg: seal, confidence: medium, source: "WP mirror: Babur",
+     event: "Babur makes his first raid into India across the Khyber Pass",
+     scene: "A SEAL waddles through the Khyber Pass at the head of Babur's first raid into India."}
+  - {year: 1517, peg: dog, confidence: unverified,
+     event: "Ibrahim Lodi becomes Sultan of Delhi after Sikandar Lodi dies",
+     scene: "A royal DOG is crowned on the Delhi throne as Ibrahim Lodi after Sikandar Lodi dies."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "WP mirror: Babur",
+     event: "Babur's army marches to the Chenab river in his first Punjab campaign",
+     scene: "A TUBA blasts Babur's army forward to the banks of the Chenab in his first Punjab campaign."}
+  - {year: 1524, peg: hanger, confidence: high, source: "WP mirror: Babur",
+     event: "Babur burns Lahore for two days",
+     scene: "Babur lifts a flaming HANGER and burns Lahore for two days."}
+  - {year: 1525, peg: nail, confidence: high, source: "WP mirror: Babur",
+     event: "Daulat Khan Lodi surrenders and Babur becomes master of the Punjab",
+     scene: "Daulat Khan Lodi surrenders, and Babur hammers a NAIL through the Punjab to claim it."}
+  - {year: 1526, peg: nacho, confidence: high, source: "WP mirror: Babur",
+     event: "First Battle of Panipat: Babur kills Ibrahim Lodi and founds the Mughal Empire",
+     scene: "A NACHO topples Ibrahim Lodi at Panipat and becomes the first brick of the Mughal Empire."}
+  - {year: 1528, peg: knife, confidence: high, source: "WP mirror: Babur",
+     event: "Babur takes Chanderi, and its Rajput women die in a mass fire",
+     scene: "A KNIFE slices open the gate of Chanderi for Babur; behind it Rajput women die in a mass fire."}
+  - {year: 1529, peg: knob, confidence: unverified,
+     event: "Battle of Ghaghra: Babur defeats the Afghans and the Sultan of Bengal",
+     scene: "Babur twists a KNOB, and the Afghans and the Sultan of Bengal lose the Battle of Ghaghra."}
+  - {year: 1530, peg: mouse, confidence: high, source: "WP mirror: Humayun",
+     event: "Babur dies in Agra and Humayun becomes emperor",
+     scene: "Babur dies in Agra, and a MOUSE carries the crown to his son Humayun, the new emperor."}
+  - {year: 1532, peg: moon, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Humayun lifts the siege of Chunar after Sher Khan submits",
+     scene: "A MOON lifts the siege of Chunar: Sher Khan submits and Humayun marches away."}
+  - {year: 1540, peg: horse, confidence: high, source: "WP mirror: Humayun",
+     event: "Battle of Kannauj: Sher Shah defeats Humayun, who goes into exile",
+     scene: "Sher Shah's HORSE tramples Humayun's army at Kannauj and drives the emperor into exile."}
+  - {year: 1542, peg: rhino, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Sher Shah conquers Malwa, with Gwalior and Sarangpur",
+     scene: "A RHINO charges through Malwa, Gwalior and Sarangpur and conquers them for Sher Shah."}
+  - {year: 1545, peg: railway, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Sher Shah dies at Kalinjar and Islam Shah Suri takes the throne",
+     scene: "A RAILWAY carries Islam Shah Suri to the throne after Sher Shah dies at Kalinjar."}
+  - {year: 1555, peg: lily, confidence: high, source: "WP mirror: Humayun",
+     event: "Battle of Sirhind: Humayun beats the Suri army",
+     scene: "Humayun's army, led by a giant LILY, beats the Suri army at Sirhind."}
+  - {year: 1555, peg: lily, confidence: high, source: "WP mirror: Humayun",
+     event: "Humayun regains Delhi",
+     scene: "Humayun plants a LILY on the Delhi throne to show that he has regained the city."}
+  - {year: 1556, peg: leech, confidence: high, source: "WP mirror: Humayun",
+     event: "Humayun dies after a fall on his library stairs",
+     scene: "A LEECH makes Humayun slip on his library stairs, and the fall kills him."}
+  - {year: 1556, peg: leech, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar becomes emperor at Kalanaur with Bairam Khan as regent",
+     scene: "A LEECH is crowned beside the regent Bairam Khan: Akbar becomes emperor at Kalanaur."}
+  - {year: 1556, peg: leech, confidence: high, source: "WP mirror: Akbar",
+     event: "Second Battle of Panipat: Akbar's army defeats Hemu",
+     scene: "At the Second Battle of Panipat, a LEECH drains Hemu's strength and Akbar's army wins."}
+  - {year: 1560, peg: cheese, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar dismisses his regent Bairam Khan",
+     scene: "Akbar throws a wheel of CHEESE at his regent Bairam Khan and dismisses him."}
+  - {year: 1563, peg: gem, confidence: medium, source: "Search: Akbar pilgrim tax",
+     event: "Akbar abolishes the tax on Hindu pilgrims",
+     scene: "Akbar returns a pilgrim's GEM: he abolishes the tax on Hindu pilgrims."}
+  - {year: 1564, peg: cherry, confidence: medium, source: "Search: Akbar jizya",
+     event: "Akbar abolishes the jizya tax on non-Muslims",
+     scene: "Akbar plucks a CHERRY from the jizya ledger and abolishes the tax on non-Muslims."}
+  - {year: 1564, peg: cherry, confidence: high, source: "WP mirror: Akbar",
+     event: "Mughal army conquers the Gond kingdom of Garha",
+     scene: "A giant CHERRY rolls over the Gond kingdom of Garha as the Mughal army conquers it."}
+  - {year: 1579, peg: cowboy, confidence: medium, source: "WP mirror: Akbar",
+     event: "Akbar signs the mahzar, which makes the emperor the final judge in religious law",
+     scene: "A COWBOY signs the mahzar, which makes Akbar the final judge in religious law."}
+  - {year: 1585, peg: waffle, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar moves his capital to Lahore after his half-brother Hakim dies",
+     scene: "A WAFFLE carries Akbar's court to Lahore, his new capital, after Hakim dies."}
+  - {year: 1599, peg: pipe, confidence: medium, source: "WP mirror: Akbar",
+     event: "Akbar moves the capital back to Agra",
+     scene: "A PIPE carries Akbar's court back from Lahore to Agra, the capital once more."}
+  - {year: 1605, peg: seal, confidence: high, source: "WP mirror: Jahangir",
+     event: "Akbar dies and Jahangir becomes emperor",
+     scene: "Akbar dies, and a SEAL stamps the throne for Jahangir, the new emperor."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP mirror: Jahangir",
+     event: "Jahangir defeats his rebel son Khusrau",
+     scene: "A roll of SUSHI binds the rebel prince Khusrau as Jahangir defeats him."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "WP mirror: Jahangir",
+     event: "Jahangir marries Nur Jahan, who comes to rule the court",
+     scene: "A TATTOO of Nur Jahan covers Jahangir's arm: he marries her and she rules the court."}
+  - {year: 1622, peg: nun, confidence: high, source: "WP mirror: Jahangir",
+     event: "Prince Khusrau is murdered in custody",
+     scene: "A NUN stabs Prince Khusrau in his cell, and he is murdered in custody."}
+  - {year: 1623, peg: gnome, confidence: medium, source: "WP mirror: Shah Jahan",
+     event: "Prince Khurram's revolt is beaten at Bilochpur",
+     scene: "A GNOME beats Prince Khurram's revolt at Bilochpur."}
+  - {year: 1626, peg: nacho, confidence: high, source: "Search: Mahabat Khan",
+     event: "Mahabat Khan seizes Emperor Jahangir on the Jhelum river",
+     scene: "Mahabat Khan ties Emperor Jahangir to a giant NACHO and seizes him on the Jhelum river."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP mirror: Jahangir",
+     event: "Jahangir dies and a fight for the throne begins",
+     scene: "Jahangir dies, and INK spills across the throne: the fight for succession begins."}
+  - {year: 1628, peg: knife, confidence: high, source: "WP mirror: Shah Jahan",
+     event: "Shah Jahan kills his rivals and is crowned at Agra",
+     scene: "Shah Jahan's KNIFE removes his rivals, and he is crowned at Agra."}
+  - {year: 1657, peg: log, confidence: high, source: "WP mirror: Shah Jahan",
+     event: "Shah Jahan falls ill and his sons begin the war of succession",
+     scene: "Shah Jahan falls ill on a LOG, and his sons begin the war of succession."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Battle of Dharmat: Aurangzeb defeats the army of Dara Shikoh's ally",
+     scene: "A WOLF howls at Dharmat, and the army of Dara Shikoh's ally flees from Aurangzeb."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Battle of Samugarh: Aurangzeb beats Dara Shikoh",
+     scene: "At Samugarh, a WOLF chases Dara Shikoh off the field and Aurangzeb wins."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP mirror: Shah Jahan",
+     event: "Aurangzeb locks his father Shah Jahan in Agra Fort",
+     scene: "A WOLF turns the key and locks Shah Jahan in Agra Fort for his son Aurangzeb."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb is crowned emperor in Delhi",
+     scene: "A WOLF lifts the crown onto Aurangzeb in Delhi."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP mirror: Shah Jahan",
+     event: "Aurangzeb has Dara Shikoh killed",
+     scene: "An ELBOW strikes down Dara Shikoh on Aurangzeb's order."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb has his brother Murad Bakhsh executed",
+     scene: "A JET carries Murad Bakhsh to the execution that his brother Aurangzeb orders."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Shah Jahan dies in captivity at Agra",
+     scene: "A JUDGE closes Shah Jahan's eyes: he dies a prisoner at Agra."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Satnami revolt against Aurangzeb",
+     scene: "A COIN leads the Satnami revolt against Aurangzeb."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Khushal Khan Khattak leads a Pashtun revolt against Aurangzeb",
+     scene: "Khushal Khan Khattak hurls a COIN at the Mughal governor and starts a Pashtun revolt."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb puts the jizya tax back on non-Muslims",
+     scene: "A COWBOY collects the jizya again: Aurangzeb puts the tax back on non-Muslims."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb dies at Bhingar, aged 88",
+     scene: "A SKI carries the body of Aurangzeb, dead at Bhingar, aged 88."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Battle of Jajau: Bahadur Shah defeats his brother Azam Shah",
+     scene: "Bahadur Shah rides a SKI over his brother Azam Shah at Jajau and wins."}
+  - {year: 1712, peg: tongue, confidence: medium, source: "Search: Sayyid brothers",
+     event: "Bahadur Shah I dies and Jahandar Shah takes the throne",
+     scene: "A TONGUE licks Bahadur Shah's crown: he dies and Jahandar Shah takes the throne."}
+  - {year: 1713, peg: tomb, confidence: medium, source: "Search: Sayyid brothers",
+     event: "Farrukhsiyar overthrows Jahandar Shah with the help of the Sayyid brothers",
+     scene: "Farrukhsiyar and the Sayyid brothers lock Jahandar Shah in a TOMB and take the throne."}
+  - {year: 1719, peg: tuba, confidence: medium, source: "Search: Sayyid brothers",
+     event: "Sayyid brothers depose and blind Farrukhsiyar",
+     scene: "The Sayyid brothers stuff Farrukhsiyar into a TUBA, depose him and blind him."}
+  - {year: 1719, peg: tuba, confidence: medium, source: "Search: Sayyid brothers",
+     event: "Muhammad Shah is crowned as puppet emperor of the Sayyid brothers",
+     scene: "The Sayyid brothers crown Muhammad Shah, their puppet, on a throne shaped like a TUBA."}
+  - {year: 1720, peg: nose, confidence: unverified,
+     event: "Sayyid Husain Ali Khan is murdered at Fatehpur Sikri",
+     scene: "A NOSE sniffs out Husain Ali Khan at Fatehpur Sikri, where he is murdered."}
+  - {year: 1722, peg: nun, confidence: unverified,
+     event: "Saadat Khan becomes governor of Awadh and founds a line of Nawabs",
+     scene: "A NUN hands Saadat Khan the keys of Awadh, and he founds a line of Nawabs."}
+  - {year: 1739, peg: map, confidence: high, source: "Search: Nader Shah",
+     event: "Battle of Karnal: Nader Shah defeats the Mughal army",
+     scene: "At Karnal, a MAP shows Nader Shah's army breaking the Mughal army."}
+  - {year: 1739, peg: map, confidence: high, source: "WP mirror: Nader Shah",
+     event: "Nader Shah sacks Delhi and kills thousands",
+     scene: "Nader Shah burns the MAP of Delhi while his troops sack the city and kill thousands."}
+  - {year: 1748, peg: reef, confidence: medium, source: "Search: Sayyid brothers",
+     event: "Muhammad Shah dies and Ahmad Shah Bahadur becomes emperor",
+     scene: "A REEF wrecks the ship of Muhammad Shah, who dies, and Ahmad Shah Bahadur becomes emperor."}
+  - {year: 1753, peg: llama, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Jat king Suraj Mal captures Delhi",
+     scene: "A LLAMA of the Jat king Suraj Mal tramples into Delhi and captures it."}
+  - {year: 1754, peg: lawyer, confidence: unverified,
+     event: "Imad-ul-Mulk blinds Ahmad Shah Bahadur and puts Alamgir II on the throne",
+     scene: "A LAWYER signs the order: Imad-ul-Mulk blinds Ahmad Shah Bahadur and enthrones Alamgir II."}
+  - {year: 1757, peg: log, confidence: high, source: "WP mirror: Ahmad Shah Durrani",
+     event: "Ahmad Shah Durrani sacks Delhi and takes the booty home",
+     scene: "Ahmad Shah Durrani rolls a LOG of Delhi booty home after he sacks the city."}
+  - {year: 1759, peg: elbow, confidence: unverified,
+     event: "Alamgir II is murdered and Shah Alam II is proclaimed emperor",
+     scene: "An ELBOW strikes Alamgir II dead, and Shah Alam II is proclaimed emperor."}
+  - {year: 1761, peg: jet, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Jats of Bharatpur take Agra Fort",
+     scene: "A JET of the Jats of Bharatpur lands on Agra Fort and captures it."}
+  - {year: 1763, peg: gem, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Jat king Suraj Mal dies in battle",
+     scene: "A GEM falls from Suraj Mal's crown when the Jat king dies in battle."}
+  - {year: 1771, peg: cat, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Mahadji Shinde retakes Delhi and makes Shah Alam II his puppet",
+     scene: "A CAT carries Shah Alam II back to Delhi, where Mahadji Shinde retakes the city."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP mirror: Sikh Confederacy",
+     event: "Sikh horsemen under Baghel Singh enter Delhi",
+     scene: "Sikh horsemen under Baghel Singh ride into Delhi on a wave of FOAM."}
+  - {year: 1788, peg: fife, confidence: medium, source: "Search: Ghulam Qadir",
+     event: "Ghulam Qadir blinds the emperor Shah Alam II in Delhi",
+     scene: "A FIFE shrieks as Ghulam Qadir blinds the emperor Shah Alam II in Delhi."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Mahadji Shinde drives out Ghulam Qadir and restores Shah Alam II",
+     scene: "Mahadji Shinde plays a FIFE, Ghulam Qadir flees, and Shah Alam II is restored."}
+  - {year: 1794, peg: bear, confidence: unverified,
+     event: "Mahadji Shinde dies at Wanavdi near Pune",
+     scene: "A BEAR carries the dead Mahadji Shinde from Wanavdi near Pune."}
+  # Rajputana, Gujarat and Malwa
+  - {year: 1518, peg: dove, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Rana Sanga of Mewar defeats Ibrahim Lodi at Khatoli",
+     scene: "A DOVE lands on Rana Sanga's spear at Khatoli, and Mewar defeats Ibrahim Lodi."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Rana Sanga defeats the rulers of Malwa and Gujarat at Gagron",
+     scene: "Rana Sanga's TUBA scatters the armies of Malwa and Gujarat at Gagron."}
+  - {year: 1527, peg: ink, confidence: high, source: "WP mirror: Babur",
+     event: "Battle of Khanwa: Babur defeats Rana Sanga",
+     scene: "Babur's INK writes the defeat of Rana Sanga at Khanwa."}
+  - {year: 1535, peg: mill, confidence: high, source: "WP mirror: Humayun",
+     event: "Humayun takes Mandu and Champaner from Bahadur Shah of Gujarat",
+     scene: "Humayun's MILL grinds Mandu and Champaner out of Bahadur Shah's hands."}
+  - {year: 1537, peg: mug, confidence: high, source: "WP mirror: Humayun",
+     event: "Bahadur Shah of Gujarat drowns in a fight with the Portuguese",
+     scene: "Bahadur Shah of Gujarat falls from a boat shaped like a MUG and drowns in a fight with the Portuguese."}
+  - {year: 1543, peg: ram, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Sher Shah defeats Maldeo Rathore at Sammel and begins to conquer Marwar",
+     scene: "A RAM butts Maldeo Rathore at Sammel, and Sher Shah begins to conquer Marwar."}
+  - {year: 1562, peg: chain, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar marries Mariam-uz-Zamani, daughter of the Raja of Amer",
+     scene: "A golden CHAIN links Akbar to Mariam-uz-Zamani, daughter of the Raja of Amer."}
+  - {year: 1567, peg: jockey, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar begins the siege of Chittorgarh",
+     scene: "A JOCKEY leads Akbar's army to besiege Chittorgarh."}
+  - {year: 1568, peg: chef, confidence: high, source: "WP mirror: Akbar",
+     event: "Chittorgarh falls to Akbar",
+     scene: "A CHEF serves Chittorgarh on a plate to Akbar as the fort falls."}
+  - {year: 1568, peg: chef, confidence: disputed, source: "Search: Siege of Ranthambore, 1568; one source says 1569",
+     event: "Rao Surjan Hada hands Ranthambore fort to Akbar",
+     scene: "A CHEF unlocks Ranthambore fort for Akbar as Rao Surjan Hada surrenders."}
+  - {year: 1572, peg: coin, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar takes Ahmedabad and annexes Gujarat",
+     scene: "A COIN stamped with Akbar's face flips Ahmedabad into his empire: Gujarat is annexed."}
+  - {year: 1573, peg: comb, confidence: high, source: "WP mirror: Akbar",
+     event: "Akbar beats the Mirzas at Ahmedabad and Surat submits",
+     scene: "Akbar's COMB rakes the Mirzas out of Ahmedabad, and Surat submits."}
+  - {year: 1576, peg: cage, confidence: high, source: "WP mirror: Akbar",
+     event: "Battle of Haldighati: Akbar's army defeats Maharana Pratap",
+     scene: "A CAGE of Mughal soldiers closes round Maharana Pratap at Haldighati, and Akbar's army wins."}
+  - {year: 1582, peg: oven, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Maharana Pratap defeats the Mughals at Dewair",
+     scene: "Maharana Pratap bakes the Mughals in an OVEN at Dewair and defeats them."}
+  - {year: 1615, peg: doll, confidence: medium, source: "WP mirror: Shah Jahan",
+     event: "Rana Amar Singh of Mewar submits to Prince Khurram and becomes a Mughal vassal",
+     scene: "A DOLL of Rana Amar Singh bows to Prince Khurram: Mewar becomes a Mughal vassal."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Rathore Rajputs revolt after Aurangzeb seizes Marwar",
+     scene: "A COWBOY leads the Rathore Rajputs in revolt after Aurangzeb seizes Marwar."}
+  - {year: 1787, peg: fox, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Battle of Lalsot: Jaipur halts Mahadji Shinde",
+     scene: "A FOX stops Mahadji Shinde at Lalsot, where Jaipur halts him."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Battle of Patan: Shinde's army under de Boigne beats Jaipur and Marwar",
+     scene: "BEES swarm Jaipur and Marwar at Patan while de Boigne's guns win the battle for Shinde."}
+  # Bengal, Bihar and Orissa
+  - {year: 1534, peg: hammer, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Sher Khan defeats Bengal and the Lohani chiefs at Surajgarh",
+     scene: "Sher Khan swings a HAMMER at Surajgarh and defeats Bengal and the Lohani chiefs."}
+  - {year: 1538, peg: movie, confidence: high, source: "WP mirror: Sher Shah Suri",
+     event: "Sher Shah takes Gauda and is crowned for the first time",
+     scene: "A MOVIE screen shows Sher Shah taking Gauda and being crowned for the first time."}
+  - {year: 1539, peg: map, confidence: high, source: "WP mirror: Humayun",
+     event: "Battle of Chausa: Sher Shah routs Humayun's camp at night",
+     scene: "A MAP of the Ganges shows Sher Shah's night raid routing Humayun's camp at Chausa."}
+  - {year: 1568, peg: chef, confidence: medium, source: "Search: Karrani conquest of Orissa",
+     event: "Sulaiman Karrani of Bengal conquers Orissa and kills King Mukunda Deva",
+     scene: "Sulaiman Karrani sends a CHEF to take Orissa, and King Mukunda Deva dies."}
+  - {year: 1575, peg: eagle, confidence: high, source: "WP mirror: Akbar",
+     event: "Battle of Tukaroi: Akbar's army defeats the Afghans of Bengal",
+     scene: "An EAGLE of Akbar's army swoops on the Afghans of Bengal at Tukaroi."}
+  - {year: 1576, peg: cage, confidence: high, source: "Search: Battle of Rajmahal",
+     event: "Battle of Rajmahal: Daud Khan Karrani is beheaded and the Bengal sultanate ends",
+     scene: "A CAGE traps Daud Khan Karrani at Rajmahal: he is beheaded and Bengal's sultanate ends."}
+  - {year: 1592, peg: piano, confidence: high, source: "Search: Mughal conquest of Orissa",
+     event: "Man Singh defeats the Afghans in Orissa for Akbar",
+     scene: "A PIANO falls on the Afghans in Orissa as Man Singh defeats them for Akbar."}
+  - {year: 1608, peg: sofa, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Islam Khan Chishti becomes viceroy of Bengal",
+     scene: "Islam Khan Chishti sits on a SOFA as the new viceroy of Bengal."}
+  - {year: 1610, peg: dice, confidence: disputed, source: "WP mirror: Bengal Subah; infobox says 1608",
+     event: "Islam Khan moves the Bengal capital from Rajmahal to Dhaka",
+     scene: "Islam Khan rolls DICE and moves the Bengal capital from Rajmahal to Dhaka."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Shaista Khan takes Chittagong from the Arakanese",
+     scene: "A JUDGE rules against Arakan: Shaista Khan takes Chittagong from the Arakanese."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Murshid Quli Khan becomes hereditary Nawab of Bengal",
+     scene: "A DOG sits on Murshid Quli Khan's throne to show that the Nawabship of Bengal is hereditary."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Alivardi Khan wins the Battle of Giria and becomes Nawab of Bengal",
+     scene: "Alivardi Khan's HORSE wins the Battle of Giria and carries him to the Nawab's throne."}
+  - {year: 1741, peg: radio, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Maratha raids on Bengal begin",
+     scene: "A RADIO broadcasts the start of the Maratha raids on Bengal."}
+  - {year: 1751, peg: wallet, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Alivardi Khan cedes Orissa and pays chauth to the Marathas",
+     scene: "A fat WALLET of chauth money buys the Marathas Orissa from Alivardi Khan."}
+  - {year: 1756, peg: leech, confidence: high, source: "Search: Battle of Plassey",
+     event: "Siraj ud-Daulah becomes Nawab of Bengal",
+     scene: "A LEECH sits on the Nawab's throne: Siraj ud-Daulah becomes Nawab of Bengal."}
+  - {year: 1756, peg: leech, confidence: high, source: "Search: Battle of Plassey",
+     event: "Siraj ud-Daulah takes Calcutta from the English",
+     scene: "A LEECH drains the English out of Calcutta when Siraj ud-Daulah takes the city."}
+  - {year: 1756, peg: leech, confidence: high, source: "Search: Battle of Plassey",
+     event: "Black Hole of Calcutta: prisoners are locked in a small cell",
+     scene: "In the Black Hole of Calcutta, a LEECH shares the small cell with the locked-in prisoners."}
+  - {year: 1757, peg: log, confidence: high, source: "Search: Battle of Plassey",
+     event: "Treaty of Alinagar: Siraj ud-Daulah restores English rights in Bengal",
+     scene: "Siraj ud-Daulah rolls a LOG across the Treaty of Alinagar and restores English rights in Bengal."}
+  - {year: 1757, peg: log, confidence: high, source: "Search: Battle of Plassey",
+     event: "Clive captures the French town of Chandannagar",
+     scene: "Clive's LOG rams the gates of the French town of Chandannagar."}
+  - {year: 1757, peg: log, confidence: high, source: "Search: Battle of Plassey",
+     event: "Battle of Plassey: Clive defeats Siraj ud-Daulah",
+     scene: "A LOG rolls over Siraj ud-Daulah's army at Plassey, and Clive wins."}
+  - {year: 1757, peg: log, confidence: high, source: "Search: Battle of Plassey",
+     event: "Mir Jafar is placed on the throne at Murshidabad",
+     scene: "Clive carries Mir Jafar on a LOG to the throne at Murshidabad."}
+  - {year: 1757, peg: log, confidence: high, source: "Search: Battle of Plassey",
+     event: "Siraj ud-Daulah is captured and murdered",
+     scene: "Soldiers catch Siraj ud-Daulah on the run, and a LOG crushes him: he is murdered."}
+  - {year: 1760, peg: cheese, confidence: unverified,
+     event: "The English make Mir Qasim Nawab of Bengal in place of Mir Jafar",
+     scene: "The English hand Mir Qasim a crown of CHEESE in place of Mir Jafar, making him Nawab."}
+  - {year: 1763, peg: gem, confidence: unverified,
+     event: "Mir Qasim kills the English prisoners at Patna",
+     scene: "A GEM-studded sword kills the English prisoners at Patna on Mir Qasim's order."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Battle of Buxar: the Company defeats Mir Qasim, Awadh and the emperor",
+     scene: "A CHERRY explodes at Buxar, and the Company beats Mir Qasim, Awadh and the emperor."}
+  - {year: 1765, peg: jelly, confidence: high, source: "WP mirror: Bengal Subah",
+     event: "Treaty of Allahabad: Shah Alam II gives the Company the diwani of Bengal",
+     scene: "Shah Alam II spreads JELLY on the Treaty of Allahabad and gives the Company the diwani of Bengal."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP mirror: Warren Hastings",
+     event: "Warren Hastings becomes Governor of Bengal",
+     scene: "A COIN with Hastings's face makes him Governor of Bengal."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP mirror: Warren Hastings",
+     event: "Regulating Act makes Hastings the first Governor-General of India",
+     scene: "A COMB runs through the Regulating Act and makes Hastings the first Governor-General."}
+  - {year: 1774, peg: car, confidence: high, source: "Search: First Rohilla War",
+     event: "Battle of Miranpur Katra: Rohilla leader Hafiz Rahmat Khan dies",
+     scene: "A CAR runs down the Rohilla leader Hafiz Rahmat Khan at Miranpur Katra."}
+  - {year: 1775, peg: eagle, confidence: unverified,
+     event: "Maharaja Nandakumar is hanged in Calcutta after a trial by the Supreme Court",
+     scene: "An EAGLE flies over the Calcutta court that hangs Maharaja Nandakumar."}
+  - {year: 1781, peg: foot, confidence: unverified,
+     event: "Raja Chait Singh of Benares revolts against Warren Hastings",
+     scene: "A giant FOOT kicks Raja Chait Singh's revolt in Benares against Warren Hastings."}
+  - {year: 1784, peg: fairy, confidence: medium, source: "Search: Pitt's India Act",
+     event: "Pitt's India Act sets up the Board of Control over the Company",
+     scene: "A FAIRY waves a wand over the Company: Pitt's India Act sets up the Board of Control."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP mirror: Warren Hastings",
+     event: "Warren Hastings resigns as Governor-General",
+     scene: "Warren Hastings resigns and leaves a WAFFLE on the Governor-General's desk."}
+  - {year: 1786, peg: fish, confidence: medium, source: "Search: Pitt's India Act",
+     event: "Lord Cornwallis becomes Governor-General",
+     scene: "A FISH arrives from England as Lord Cornwallis, the new Governor-General."}
+  - {year: 1788, peg: fife, confidence: medium, source: "WP mirror: Warren Hastings",
+     event: "Trial of Warren Hastings opens in Westminster Hall",
+     scene: "A FIFE sounds in Westminster Hall as the trial of Warren Hastings opens."}
+  - {year: 1793, peg: palm, confidence: medium, source: "Search: Pitt's India Act",
+     event: "Cornwallis Code and Charter Act set the Company's law and rule",
+     scene: "A PALM tree holds the Cornwallis Code and the Charter Act, which set the Company's law and rule."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP mirror: Warren Hastings",
+     event: "House of Lords acquits Warren Hastings",
+     scene: "A BELL rings in the House of Lords as it acquits Warren Hastings."}
+  # Assam and the northeast
+  - {year: 1532, peg: moon, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Ahom army defeats the Bengal Sultanate at Hatbor",
+     scene: "A MOON drives the army of the Bengal Sultanate from Hatbor for the Ahoms."}
+  - {year: 1616, peg: dish, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Ahom king Susenghphaa defeats the Mughals at Bharali",
+     scene: "Ahom king Susenghphaa smashes a DISH on the Mughals at Bharali."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Mir Jumla reaches the Ahom capital Garhgaon",
+     scene: "Mir Jumla drags a CHAIN into the Ahom capital Garhgaon."}
+  - {year: 1667, peg: jockey, confidence: unverified,
+     event: "Lachit Borphukan retakes Guwahati from the Mughals",
+     scene: "Lachit Borphukan's JOCKEY retakes Guwahati from the Mughals."}
+  - {year: 1671, peg: cat, confidence: high, source: "Search: Moamoria rebellion",
+     event: "Battle of Saraighat: Ahom navy beats the Mughals",
+     scene: "An Ahom CAT leaps across the Brahmaputra and sinks the Mughal fleet at Saraighat."}
+  - {year: 1682, peg: oven, confidence: high, source: "Search: Moamoria rebellion",
+     event: "Battle of Itakhuli: Ahoms drive the Mughals out of Guwahati",
+     scene: "An OVEN bakes the Mughals out of Guwahati as the Ahoms win at Itakhuli."}
+  - {year: 1769, peg: ship, confidence: medium, source: "Search: Moamoria rebellion",
+     event: "Moamoria rebellion shakes the Ahom kingdom",
+     scene: "A SHIP rocks the Ahom kingdom as the Moamoria rebellion shakes it."}
+  # Deccan and Maratha country
+  - {year: 1518, peg: dove, confidence: unverified,
+     event: "Quli Qutb Shah makes Golconda independent of the Bahmani sultan",
+     scene: "Quli Qutb Shah frees a DOVE: Golconda is now independent of the Bahmani sultan."}
+  - {year: 1595, peg: bell, confidence: high, source: "WP mirror: Akbar",
+     event: "Chand Bibi defends Ahmednagar and gives Berar to the Mughals",
+     scene: "Chand Bibi rings a BELL from Ahmednagar's walls and gives Berar to the Mughals."}
+  - {year: 1600, peg: sauce, confidence: high, source: "WP mirror: Akbar",
+     event: "Ahmednagar falls to the Mughals",
+     scene: "The Mughals pour SAUCE over Ahmednagar and eat it: the fort falls."}
+  - {year: 1601, peg: soda, confidence: high, source: "WP mirror: Akbar",
+     event: "Asirgarh falls to Akbar",
+     scene: "Akbar pops a SODA at Asirgarh, which falls to him."}
+  - {year: 1624, peg: hanger, confidence: unverified,
+     event: "Malik Ambar defeats a Mughal army at Bhatvadi",
+     scene: "A HANGER hooks a Mughal army at Bhatvadi for Malik Ambar."}
+  - {year: 1633, peg: mummy, confidence: disputed, source: "Search: Siege of Daulatabad; several sources say 1632",
+     event: "Mahabat Khan takes Daulatabad and ends Nizam Shahi rule",
+     scene: "A MUMMY takes Daulatabad for Mahabat Khan and ends Nizam Shahi rule."}
+  - {year: 1636, peg: match, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Shah Jahan ends the Nizam Shahi dynasty of Ahmednagar",
+     scene: "A MATCH sets Ahmednagar alight: Shah Jahan ends the Nizam Shahi dynasty."}
+  - {year: 1636, peg: match, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb becomes viceroy of the Deccan",
+     scene: "Aurangzeb strikes a MATCH at the Deccan border and becomes its viceroy."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji captures the fort of Torna",
+     scene: "A ROACH crawls through the wall of Torna, and Shivaji captures the fort."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Aurangzeb attacks Golconda",
+     scene: "A LEECH clamps onto Golconda as Aurangzeb attacks the fort."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji kills Chandrarao More and takes Javali",
+     scene: "A LEECH sucks Chandrarao More dry as Shivaji kills him and takes Javali."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji kills Afzal Khan at Pratapgad",
+     scene: "Shivaji's ELBOW crushes Afzal Khan at Pratapgad."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP mirror: Shivaji",
+     event: "Battle of Pavan Khind: Baji Prabhu holds the pass so Shivaji can reach Vishalgad",
+     scene: "Baji Prabhu stands on a CHEESE in the pass at Pavan Khind and holds it for Shivaji."}
+  - {year: 1663, peg: gem, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji raids Shaista Khan's camp at Pune",
+     scene: "Shivaji grabs a GEM and raids Shaista Khan's camp at Pune."}
+  - {year: 1664, peg: cherry, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji sacks Surat",
+     scene: "Shivaji shakes a CHERRY tree, and Surat's wealth falls: he sacks the city."}
+  - {year: 1665, peg: jelly, confidence: high, source: "WP mirror: Shivaji",
+     event: "Treaty of Purandar: Shivaji gives 23 forts to the Mughals",
+     scene: "A JELLY mould shaped like 23 forts is Shivaji's price in the Treaty of Purandar."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji escapes from house arrest in Agra",
+     scene: "Shivaji outwits a JUDGE and escapes house arrest in Agra."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji sacks Surat a second time",
+     scene: "A GOOSE honks as Shivaji sacks Surat a second time."}
+  - {year: 1670, peg: goose, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Marathas capture Sinhagad from the Mughals",
+     scene: "A GOOSE chases the Mughal garrison out of Sinhagad when the Marathas capture it."}
+  - {year: 1672, peg: coin, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Marathas defeat the Mughals at Salher",
+     scene: "A COIN toss decides it: the Marathas defeat the Mughals at Salher."}
+  - {year: 1674, peg: car, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji is crowned Chhatrapati at Raigad",
+     scene: "A CAR carries Shivaji to Raigad, where he is crowned Chhatrapati."}
+  - {year: 1677, peg: cake, confidence: high, source: "WP mirror: Shivaji",
+     event: "Shivaji's southern campaign takes Vellore and Gingee",
+     scene: "Shivaji cuts a CAKE with Vellore and Gingee as slices in his southern campaign."}
+  - {year: 1680, peg: vase, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Shivaji dies at Raigad",
+     scene: "A VASE breaks at Raigad when Shivaji dies."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Sambhaji becomes Chhatrapati",
+     scene: "A FOOT steps onto the throne: Sambhaji becomes Chhatrapati."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Aurangzeb marches south to the Deccan",
+     scene: "Aurangzeb's FOOT marches him south to the Deccan."}
+  - {year: 1686, peg: fish, confidence: high, source: "Search: Siege of Bijapur",
+     event: "Aurangzeb takes Bijapur",
+     scene: "A FISH jumps out of Bijapur's moat as Aurangzeb takes the city."}
+  - {year: 1687, peg: fox, confidence: high, source: "Search: Siege of Golconda",
+     event: "Aurangzeb takes Golconda after an eight-month siege",
+     scene: "A FOX sneaks into Golconda after an eight-month siege, and Aurangzeb takes it."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Mughals capture and execute Sambhaji",
+     scene: "A FOB chain binds Sambhaji, whom the Mughals capture and execute."}
+  - {year: 1690, peg: bees, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Marathas defeat the Mughals at Athani",
+     scene: "BEES swarm the Mughals at Athani, where the Marathas defeat them."}
+  - {year: 1692, peg: piano, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Santaji Ghorpade defeats and captures Alimardan Khan",
+     scene: "A PIANO falls on Alimardan Khan as Santaji Ghorpade defeats and captures him."}
+  - {year: 1695, peg: bell, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Santaji Ghorpade defeats and kills Kasim Khan",
+     scene: "A BELL tolls for Kasim Khan, defeated and killed by Santaji Ghorpade."}
+  - {year: 1698, peg: beehive, confidence: unverified,
+     event: "Mughals take Gingee from the Marathas",
+     scene: "A BEEHIVE swarms Gingee as the Mughals take it from the Marathas."}
+  - {year: 1700, peg: sauce, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Rajaram dies and Tarabai rules as regent",
+     scene: "Tarabai stirs a pot of SAUCE and rules as regent once Rajaram dies."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Shahu is released from Mughal custody and claims the Maratha throne",
+     scene: "Shahu skis out of Mughal custody on a SKI and claims the Maratha throne."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Shahu names Balaji Vishwanath as his Peshwa",
+     scene: "A TOMB-shaped hat is placed on Balaji Vishwanath as Shahu names him Peshwa."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Treaty of Lonavala makes Kanhoji Angre the Maratha naval chief",
+     scene: "A TOWER at sea flies Kanhoji Angre's flag: the Treaty of Lonavala makes him naval chief."}
+  - {year: 1719, peg: tuba, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Maratha troops reach Delhi to back the Sayyid brothers",
+     scene: "A TUBA announces Maratha troops at the gates of Delhi, backing the Sayyid brothers."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Baji Rao I becomes Peshwa",
+     scene: "A NOSE wears the Peshwa's turban: Baji Rao I becomes Peshwa."}
+  - {year: 1724, peg: hanger, confidence: high, source: "Search: Battle of Shakar Kheda",
+     event: "Battle of Shakar Kheda: Asaf Jah I defeats Mubariz Khan",
+     scene: "A HANGER hooks Mubariz Khan off his elephant at Shakar Kheda, where Asaf Jah I wins."}
+  - {year: 1728, peg: knife, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Battle of Palkhed: Baji Rao defeats the Nizam",
+     scene: "At Palkhed, Baji Rao's KNIFE cuts off the Nizam's supplies and defeats him."}
+  - {year: 1731, peg: moth, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Battle of Dabhoi: Baji Rao beats the rebel Dabhade",
+     scene: "A MOTH flutters over Dabhoi, where Baji Rao beats the rebel Dabhade."}
+  - {year: 1737, peg: mug, confidence: high, source: "Search: Battle of Bhopal; one article says 1738",
+     event: "Battle of Bhopal: Baji Rao defeats the Nizam",
+     scene: "A MUG traps the Nizam at Bhopal, where Baji Rao defeats him."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Baji Rao raids the suburbs of Delhi",
+     scene: "Baji Rao hangs a MUG on the gates of Delhi as he raids its suburbs."}
+  - {year: 1739, peg: map, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Marathas take Vasai and the Northern Province from the Portuguese",
+     scene: "A MAP on the wall of Vasai shows the Marathas taking the town from the Portuguese."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Balaji Baji Rao becomes Peshwa",
+     scene: "A HORSE carries Balaji Baji Rao to the Peshwa's seat."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Raghuji Bhonsle beats Dost Ali at Damalcherry and takes Arcot",
+     scene: "Raghuji Bhonsle's HORSE tramples Dost Ali at Damalcherry and wins Arcot."}
+  - {year: 1741, peg: radio, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Raghuji Bhonsle takes Trichinopoly",
+     scene: "A RADIO reports that Raghuji Bhonsle has taken Trichinopoly."}
+  - {year: 1748, peg: reef, confidence: medium, source: "WP mirror: Hyderabad State",
+     event: "Asaf Jah I dies and the Nizam's state passes to his heirs",
+     scene: "Asaf Jah I dies on a REEF, and the Nizam's state passes to his heirs."}
+  - {year: 1757, peg: log, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Raghunath Rao takes Delhi from the Afghan garrison",
+     scene: "Raghunath Rao rolls a LOG at the Afghan garrison and takes Delhi."}
+  - {year: 1758, peg: wolf, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Marathas capture Attock and Peshawar",
+     scene: "A WOLF takes Attock and Peshawar for the Marathas."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Battle of Udgir: Sadashivrao Bhau defeats the Nizam",
+     scene: "Sadashivrao Bhau slices a CHEESE at Udgir, and the Nizam is defeated."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Sadashivrao Bhau retakes Delhi",
+     scene: "A giant CHEESE rolls into Delhi, and Sadashivrao Bhau retakes the city."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Third Battle of Panipat: Ahmad Shah Durrani crushes the Marathas",
+     scene: "A JET crushes the Marathas at the Third Battle of Panipat for Ahmad Shah Durrani."}
+  - {year: 1763, peg: gem, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Madhavrao I defeats the Nizam at Rakshasbhuvan",
+     scene: "A GEM blinds the Nizam at Rakshasbhuvan, and Madhavrao I defeats him."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Madhavrao I defeats Hyder Ali at Sira",
+     scene: "A JOCKEY rides Hyder Ali down at Sira for Madhavrao I."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Peshwa Madhavrao I dies",
+     scene: "A COIN rolls from the hand of Peshwa Madhavrao I as he dies."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP mirror: Timeline of Indian history",
+     event: "Narayanrao is murdered at Shaniwar Wada",
+     scene: "A COMB stabs Narayanrao at Shaniwar Wada: he is murdered."}
+  - {year: 1775, peg: eagle, confidence: high, source: "Search: First Anglo-Maratha War",
+     event: "First Anglo-Maratha War begins with the Treaty of Surat",
+     scene: "An EAGLE carries the Treaty of Surat and starts the First Anglo-Maratha War."}
+  - {year: 1776, peg: cage, confidence: medium, source: "Search: First Anglo-Maratha War",
+     event: "Treaty of Purandar cancels the Treaty of Surat",
+     scene: "A CAGE snaps shut on the Treaty of Surat when the Treaty of Purandar cancels it."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "WP mirror: Timeline of Indian history",
+     event: "Mahadji Shinde defeats the Company at Wadgaon",
+     scene: "A COWBOY lassoes the Company's army at Wadgaon for Mahadji Shinde."}
+  - {year: 1782, peg: oven, confidence: high, source: "Search: First Anglo-Maratha War",
+     event: "Treaty of Salbai ends the First Anglo-Maratha War",
+     scene: "An OVEN bakes the Treaty of Salbai and ends the First Anglo-Maratha War."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Mahadji Shinde takes Gwalior",
+     scene: "FOAM covers Gwalior fort as Mahadji Shinde takes it."}
+  - {year: 1787, peg: fox, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Treaty of Gajendragad ends the war with Tipu Sultan",
+     scene: "A FOX signs the Treaty of Gajendragad that ends the war with Tipu Sultan."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP mirror: Timeline of Indian history",
+     event: "Battle of Kharda: Marathas defeat the Nizam",
+     scene: "A BELL rings out the Marathas' win over the Nizam at Kharda."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP mirror: Maratha Empire",
+     event: "Baji Rao II becomes Peshwa",
+     scene: "A PEACH is crowned in the Peshwa palace, and Baji Rao II becomes Peshwa."}
+  # South India and Mysore
+  - {year: 1509, peg: soap, confidence: high, source: "WP mirror: Vijayanagara Empire",
+     event: "Krishnadevaraya becomes ruler of Vijayanagara",
+     scene: "Krishnadevaraya slides on SOAP onto the throne of Vijayanagara."}
+  - {year: 1520, peg: nose, confidence: high, source: "WP mirror: Timeline of Indian history",
+     event: "Krishnadevaraya defeats Bijapur at Raichur",
+     scene: "A NOSE leads Krishnadevaraya's army to defeat Bijapur at Raichur."}
+  - {year: 1529, peg: knob, confidence: high, source: "WP mirror: Vijayanagara Empire",
+     event: "Achyuta Deva Raya succeeds Krishnadevaraya",
+     scene: "A KNOB on the throne turns, and Achyuta Deva Raya succeeds Krishnadevaraya."}
+  - {year: 1542, peg: rhino, confidence: high, source: "WP mirror: Vijayanagara Empire",
+     event: "Rama Raya becomes the real ruler of Vijayanagara",
+     scene: "A RHINO makes Rama Raya the real ruler of Vijayanagara."}
+  - {year: 1565, peg: jelly, confidence: high, source: "WP mirror: Vijayanagara Empire",
+     event: "Battle of Talikota: the Deccan sultans defeat Rama Raya",
+     scene: "At Talikota, the Deccan sultans smash Rama Raya like JELLY."}
+  - {year: 1646, peg: roach, confidence: medium, source: "WP mirror: Vijayanagara Empire",
+     event: "Vijayanagara Empire ends",
+     scene: "A ROACH crawls over the ruins of Vijayanagara as the empire ends."}
+  - {year: 1729, peg: knob, confidence: medium, source: "Search: Battle of Colachel",
+     event: "Marthanda Varma becomes king of Travancore",
+     scene: "A KNOB on the royal seat turns Marthanda Varma into the king of Travancore."}
+  - {year: 1741, peg: radio, confidence: high, source: "Search: Battle of Colachel",
+     event: "Battle of Colachel: Travancore defeats the Dutch",
+     scene: "A RADIO announces Travancore's win over the Dutch at Colachel."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Battle of Ambur: Nawab Anwaruddin is killed",
+     scene: "A ROPE trips Nawab Anwaruddin at Ambur and kills him."}
+  - {year: 1751, peg: wallet, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Clive defends Arcot",
+     scene: "A WALLET shields Clive as he defends Arcot."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP mirror: Timeline of Indian history",
+     event: "Treaty of Mavelikkara ends Dutch power on the Kerala coast",
+     scene: "A LLAMA stamps the Treaty of Mavelikkara, which ends Dutch power on the Kerala coast."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Treaty of Pondicherry names Muhammad Ali Khan Nawab of the Carnatic",
+     scene: "A LAWYER argues the Treaty of Pondicherry: Muhammad Ali Khan is Nawab of the Carnatic."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Battle of Wandiwash: Coote defeats the French",
+     scene: "Coote slices a CHEESE at Wandiwash, where he defeats the French."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Pondicherry falls to the British",
+     scene: "A JET bombs Pondicherry until it falls to the British."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "Hyder Ali becomes the real ruler of Mysore",
+     scene: "Hyder Ali's JET carries him to power as the real ruler of Mysore."}
+  - {year: 1763, peg: gem, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Treaty of Paris returns Pondicherry to France",
+     scene: "A GEM, Pondicherry, goes back to France by the Treaty of Paris."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "Hyder Ali takes Calicut and Malabar",
+     scene: "A JUDGE condemns Calicut: Hyder Ali takes Calicut and Malabar."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "First Anglo-Mysore War begins",
+     scene: "A JOCKEY starts the First Anglo-Mysore War."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "Treaty of Madras ends the First Anglo-Mysore War",
+     scene: "A SHIP carries the Treaty of Madras that ends the First Anglo-Mysore War."}
+  - {year: 1778, peg: cave, confidence: medium, source: "WP mirror: Hyderabad State",
+     event: "Company places a British resident in the Nizam's court",
+     scene: "A British resident moves into a CAVE beside the Nizam's court."}
+  - {year: 1780, peg: vase, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "Battle of Pollilur: Hyder Ali destroys Baillie's force",
+     scene: "A VASE smashes Baillie's force at Pollilur on Hyder Ali's order."}
+  - {year: 1781, peg: foot, confidence: high, source: "WP mirror: Hyder Ali",
+     event: "Battle of Porto Novo: Coote defeats Hyder Ali",
+     scene: "Coote's FOOT crushes Hyder Ali at Porto Novo."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Hyder Ali dies and Tipu Sultan takes the throne",
+     scene: "Hyder Ali dies, and Tipu Sultan lifts his crown out of an OVEN."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Treaty of Mangalore ends the Second Anglo-Mysore War",
+     scene: "A FAIRY signs the Treaty of Mangalore that ends the Second Anglo-Mysore War."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Louis XVI receives Tipu Sultan's envoys in France",
+     scene: "A FIFE greets Tipu Sultan's envoys at the court of Louis XVI."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Tipu Sultan attacks the Travancore lines at Nedumkotta",
+     scene: "Tipu Sultan hurls a FOB at the Travancore lines at Nedumkotta."}
+  - {year: 1791, peg: boot, confidence: unverified,
+     event: "Cornwallis takes Bangalore from Tipu Sultan",
+     scene: "Cornwallis kicks Tipu Sultan out of Bangalore with a BOOT."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Treaty of Seringapatam: Tipu gives up half his lands",
+     scene: "A PIANO stands for the half of his lands that Tipu gives up by the Treaty of Seringapatam."}
+  - {year: 1795, peg: bell, confidence: unverified,
+     event: "Dutch hand Cochin to the British",
+     scene: "A BELL rings as the Dutch hand Cochin to the British."}
+  - {year: 1798, peg: beehive, confidence: medium, source: "WP mirror: Hyderabad State",
+     event: "Nizam Ali Khan signs the subsidiary alliance with the Company",
+     scene: "Nizam Ali Khan signs the subsidiary alliance inside a BEEHIVE."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP mirror: Tipu Sultan",
+     event: "Tipu Sultan dies defending Seringapatam",
+     scene: "A PIPE blows Tipu Sultan off the wall as he dies defending Seringapatam."}
+  - {year: 1799, peg: pipe, confidence: unverified,
+     event: "The British restore the Wodeyar family to the throne of Mysore",
+     scene: "A PIPE passes the crown back to the Wodeyar family in Mysore."}
+  # Portuguese, Dutch, French and English in India
+  - {year: 1505, peg: seal, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Francisco de Almeida becomes the first Portuguese viceroy in India",
+     scene: "A SEAL stamps Francisco de Almeida as the first Portuguese viceroy in India."}
+  - {year: 1508, peg: sofa, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Battle of Chaul: Lourenco de Almeida is killed",
+     scene: "A SOFA crushes Lourenco de Almeida at the Battle of Chaul."}
+  - {year: 1509, peg: soap, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Battle of Diu: Portugal destroys the Mamluk and Indian fleet",
+     scene: "SOAP foam sinks the Mamluk and Indian fleet at the Battle of Diu for Portugal."}
+  - {year: 1510, peg: dice, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Albuquerque takes Goa from Bijapur",
+     scene: "Albuquerque rolls DICE and wins Goa from Bijapur."}
+  - {year: 1530, peg: mouse, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Portuguese capital moves from Cochin to Goa",
+     scene: "A MOUSE runs the Portuguese capital from Cochin to Goa."}
+  - {year: 1534, peg: hammer, confidence: high, source: "Search: Treaty of Bassein",
+     event: "Treaty of Bassein: Bahadur Shah gives Bassein to the Portuguese",
+     scene: "A HAMMER seals the Treaty of Bassein as Bahadur Shah gives Bassein to the Portuguese."}
+  - {year: 1535, peg: mill, confidence: high, source: "Search: Treaty of Bassein",
+     event: "Bahadur Shah lets the Portuguese build a fort at Diu",
+     scene: "A MILL grinds stone for the Portuguese fort that Bahadur Shah lets them build at Diu."}
+  - {year: 1538, peg: movie, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Ottoman fleet besieges Diu for four months and fails",
+     scene: "A MOVIE shows the Ottoman fleet failing in its four-month siege of Diu."}
+  - {year: 1546, peg: roach, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Portuguese hold Diu in a second siege",
+     scene: "A ROACH crawls over the Diu wall, but the Portuguese hold the fort in the second siege."}
+  - {year: 1571, peg: cat, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Portuguese hold Goa against Bijapur's army",
+     scene: "A CAT guards Goa as the Portuguese hold it against Bijapur's army."}
+  - {year: 1612, peg: tongue, confidence: unverified,
+     event: "Battle of Swally: English ships beat the Portuguese off Surat",
+     scene: "A TONGUE of flame from English ships beats the Portuguese off Surat at Swally."}
+  - {year: 1632, peg: moon, confidence: high, source: "WP mirror: Shah Jahan",
+     event: "Mughals take the Portuguese town of Hooghly",
+     scene: "The Mughals fire under the MOON and take the Portuguese town of Hooghly."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP mirror: Portuguese India",
+     event: "Bombay passes to England in Catherine of Braganza's dowry",
+     scene: "A JET carries Bombay to England as part of Catherine of Braganza's dowry."}
+  - {year: 1663, peg: gem, confidence: high, source: "Search: Dutch capture of Cochin",
+     event: "Dutch take Cochin from the Portuguese",
+     scene: "The Dutch pluck a GEM, Cochin, from the Portuguese."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Anglo-Mughal War begins",
+     scene: "A FISH starts the Anglo-Mughal War."}
+  - {year: 1690, peg: bees, confidence: high, source: "WP mirror: Aurangzeb",
+     event: "Anglo-Mughal War ends when the English ask for pardon",
+     scene: "BEES sting the English into asking for pardon, which ends the Anglo-Mughal War."}
+  - {year: 1702, peg: sun, confidence: medium, source: "WP mirror: Aurangzeb",
+     event: "Daud Khan Panni blockades Fort St George at Madras",
+     scene: "The SUN beats down on Fort St George while Daud Khan Panni blockades it."}
+  - {year: 1746, peg: roach, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "French capture Madras",
+     scene: "A ROACH crawls into Madras as the French capture it."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP mirror: Carnatic Wars",
+     event: "Treaty of Aix-la-Chapelle returns Madras to Britain",
+     scene: "A REEF holds the Treaty of Aix-la-Chapelle that returns Madras to Britain."}
+  - {year: 1759, peg: elbow, confidence: unverified,
+     event: "Company defeats the Dutch at Biderra near Chinsurah",
+     scene: "An ELBOW of the Company knocks out the Dutch at Biderra near Chinsurah."}
+  # Sikhs, Punjab and the northwest
+  - {year: 1555, peg: lily, confidence: disputed, source: "Search: Sack of Thatta; sources say 1555 or 1557",
+     event: "Portuguese sack the city of Thatta in Sindh",
+     scene: "Portuguese sailors toss a LILY into the fire that sacks the city of Thatta."}
+  - {year: 1586, peg: fish, confidence: high, source: "WP mirror: Akbar",
+     event: "Birbal is killed at the Malandarai Pass fighting the Yusufzai",
+     scene: "A FISH kills Birbal at the Malandarai Pass in the Yusufzai fight."}
+  - {year: 1586, peg: fish, confidence: medium, source: "WP mirror: Timeline of Indian history",
+     event: "Akbar's army enters Kashmir",
+     scene: "A FISH leads Akbar's army into Kashmir."}
+  - {year: 1589, peg: fob, confidence: high, source: "WP mirror: Akbar",
+     event: "Yaqub Shah Chak surrenders at Srinagar and Kashmir becomes Mughal",
+     scene: "A FOB chain binds Yaqub Shah Chak as he surrenders at Srinagar and Kashmir becomes Mughal."}
+  - {year: 1591, peg: boot, confidence: high, source: "Search: Mughal conquest of Sindh",
+     event: "Mughal army under Abdul Rahim defeats Mirza Jani Beg in Sindh",
+     scene: "A BOOT kicks Mirza Jani Beg out of Sindh for Abdul Rahim's Mughal army."}
+  - {year: 1593, peg: palm, confidence: high, source: "WP mirror: Akbar",
+     event: "Jani Beg Tarkhan pays homage to Akbar at Lahore",
+     scene: "Jani Beg Tarkhan lays a PALM before Akbar at Lahore in homage."}
+  - {year: 1595, peg: bell, confidence: medium, source: "WP mirror: Akbar",
+     event: "Akbar conquers Baluchistan",
+     scene: "A BELL rings as Akbar conquers Baluchistan."}
+  - {year: 1634, peg: hammer, confidence: medium, source: "WP mirror: Shah Jahan",
+     event: "Sikhs under Guru Hargobind defeat Mughal troops near Amritsar",
+     scene: "Guru Hargobind's HAMMER breaks the Mughal troops near Amritsar."}
+  - {year: 1709, peg: soap, confidence: high, source: "WP mirror: Banda Singh Bahadur",
+     event: "Battle of Samana: Banda Singh Bahadur raids Mughal Punjab",
+     scene: "SOAP spills at Samana as Banda Singh Bahadur raids Mughal Punjab."}
+  - {year: 1710, peg: dice, confidence: high, source: "WP mirror: Banda Singh Bahadur",
+     event: "Banda Singh Bahadur takes Sirhind",
+     scene: "Banda Singh Bahadur rolls DICE and takes Sirhind."}
+  - {year: 1715, peg: doll, confidence: high, source: "WP mirror: Banda Singh Bahadur",
+     event: "Mughals break into Gurdas Nangal and capture Banda Singh Bahadur",
+     scene: "A DOLL of Banda Singh Bahadur is captured when the Mughals break into Gurdas Nangal."}
+  - {year: 1716, peg: dish, confidence: high, source: "WP mirror: Banda Singh Bahadur",
+     event: "Mughals execute Banda Singh Bahadur in Delhi",
+     scene: "A DISH holds Banda Singh Bahadur's fate in Delhi: the Mughals execute him."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP mirror: Ahmad Shah Durrani",
+     event: "Ahmad Shah Durrani invades India for the first time",
+     scene: "A REEF wrecks the road as Ahmad Shah Durrani invades India for the first time."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP mirror: Sikh Confederacy",
+     event: "Sikhs form the Dal Khalsa at Amritsar",
+     scene: "A REEF at the Amritsar tank unites the Sikhs as the Dal Khalsa."}
+  - {year: 1752, peg: lion, confidence: disputed, source: "WP mirror: Ahmad Shah Durrani; article says 1749",
+     event: "Mughals give Lahore and Multan to Ahmad Shah Durrani",
+     scene: "The Mughals hand a LION from Lahore and Multan to Ahmad Shah Durrani."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Sikh Confederacy",
+     event: "Vadda Ghalughara: Durrani army kills thousands of Sikhs",
+     scene: "A CHAIN of Durrani soldiers kills thousands of Sikhs in the Vadda Ghalughara."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP mirror: Sikh Confederacy",
+     event: "Sikh misls take Sirhind",
+     scene: "A CHERRY ripens on Sirhind's wall as the Sikh misls take the town."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP mirror: Sind",
+     event: "Talpur dynasty begins to rule Sindh",
+     scene: "FOAM carries the Talpurs into Sindh as their dynasty begins to rule."}
+  - {year: 1799, peg: pipe, confidence: high, source: "Search: Ranjit Singh Lahore",
+     event: "Ranjit Singh takes Lahore from the Bhangi chiefs",
+     scene: "A PIPE leads Ranjit Singh into Lahore, which he takes from the Bhangi chiefs."}
+  # Sri Lanka
+  - {year: 1505, peg: seal, confidence: high, source: "WP mirror: Portuguese Ceylon",
+     event: "Lourenco de Almeida's fleet first reaches Ceylon",
+     scene: "A SEAL climbs ashore from Lourenco de Almeida's fleet, the first to reach Ceylon."}
+  - {year: 1521, peg: ant, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Vijayabahu is killed and the Kotte kingdom splits",
+     scene: "An ANT stings Vijayabahu dead, and the Kotte kingdom splits."}
+  - {year: 1581, peg: foot, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Rajasinha I of Sitawaka annexes Kandy",
+     scene: "Rajasinha I's FOOT stamps on Kandy: Sitawaka annexes it."}
+  - {year: 1594, peg: bear, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Rajasinha I dies and the Sitawaka kingdom falls apart",
+     scene: "A BEAR sits on the throne of Sitawaka after Rajasinha I dies and the kingdom falls apart."}
+  - {year: 1597, peg: pig, confidence: high, source: "WP mirror: Portuguese Ceylon",
+     event: "King Dharmapala dies and Portugal rules Kotte directly",
+     scene: "A PIG carries the Kotte crown to Portugal when Dharmapala dies."}
+  - {year: 1603, peg: sumo, confidence: high, source: "WP mirror: Dutch Ceylon",
+     event: "Dutch admiral Sebald de Weert is killed at Batticaloa",
+     scene: "A SUMO kills the Dutch admiral Sebald de Weert at Batticaloa."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "King Senarat signs a treaty with the Dutch East India Company",
+     scene: "A TONGUE licks the seal on King Senarat's treaty with the Dutch East India Company."}
+  - {year: 1619, peg: tuba, confidence: high, source: "WP mirror: Portuguese Ceylon",
+     event: "Portuguese conquer the Jaffna kingdom",
+     scene: "A TUBA announces the Portuguese conquest of the Jaffna kingdom."}
+  - {year: 1630, peg: mouse, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Battle of Randeniwela: Kandyans kill the Portuguese captain-general",
+     scene: "A MOUSE kills the Portuguese captain-general at Randeniwela for the Kandyans."}
+  - {year: 1638, peg: movie, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Battle of Gannoruwa: Kandy beats the Portuguese",
+     scene: "A MOVIE of the Battle of Gannoruwa shows Kandy beating the Portuguese."}
+  - {year: 1640, peg: horse, confidence: high, source: "WP mirror: Dutch Ceylon",
+     event: "Dutch storm Galle",
+     scene: "A HORSE leaps the wall of Galle as the Dutch storm it."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Dutch take Colombo from the Portuguese",
+     scene: "A LEECH sucks Colombo from Portuguese hands when the Dutch take it."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP mirror: Portuguese Ceylon",
+     event: "Portuguese surrender Jaffna to the Dutch",
+     scene: "A WOLF takes Jaffna from the Portuguese when they surrender it to the Dutch."}
+  - {year: 1739, peg: map, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Sri Vijaya Rajasinha begins the Nayakkar dynasty of Kandy",
+     scene: "A MAP of Kandy is handed to Sri Vijaya Rajasinha, who starts the Nayakkar dynasty."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Kirti Sri Rajasinha invades the Dutch lowlands",
+     scene: "A JET of Kirti Sri Rajasinha sweeps over the Dutch lowlands."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Dutch burn Kandy",
+     scene: "A CHERRY-red flame set by the Dutch burns Kandy."}
+  - {year: 1766, peg: judge, confidence: high, source: "Search: Kandyan-Dutch war",
+     event: "Treaty gives the Dutch Kandy's coastal lands",
+     scene: "A JUDGE signs the treaty that gives the Dutch the coastal lands of Kandy."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "British seize Trincomalee from the Dutch",
+     scene: "A BELL rings as the British seize Trincomalee from the Dutch."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP mirror: Dutch Ceylon",
+     event: "Dutch surrender Colombo to the British",
+     scene: "A PEACH is handed over as the Dutch surrender Colombo to the British."}
+  - {year: 1798, peg: beehive, confidence: high, source: "WP mirror: Kingdom of Kandy",
+     event: "Frederick North becomes the first British Governor of Ceylon",
+     scene: "A BEEHIVE crowns Frederick North as the first British Governor of Ceylon."}
+  # Nepal and Bhutan
+  - {year: 1559, peg: elbow, confidence: unverified,
+     event: "Dravya Shah founds the Gorkha kingdom",
+     scene: "An ELBOW nudges Dravya Shah onto the throne of the Gorkha kingdom that he founds."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Zhabdrung Ngawang Namgyal arrives and begins to unify Bhutan",
+     scene: "A DISH carries the Zhabdrung Ngawang Namgyal into Bhutan, where he begins to unify it."}
+  - {year: 1634, peg: hammer, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Battle of Five Lamas: Bhutan defeats the Tibetan army",
+     scene: "A HAMMER defeats the Tibetan army at the Battle of Five Lamas for Bhutan."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Zhabdrung Ngawang Namgyal dies, and Bhutan hides his death",
+     scene: "Bhutan hides the death of the Zhabdrung in a WALLET."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Bhutan beats a Tibetan and Mongol invasion",
+     scene: "A TOWER stops a Tibetan and Mongol invasion of Bhutan."}
+  - {year: 1730, peg: mouse, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Raja of Cooch Behar asks Bhutan for help against the Mughals",
+     scene: "A MOUSE carries the Raja of Cooch Behar's request for Bhutan's help against the Mughals."}
+  - {year: 1743, peg: ram, confidence: disputed, source: "Search: Prithvi Narayan Shah; Britannica says 1742",
+     event: "Prithvi Narayan Shah becomes king of Gorkha",
+     scene: "A RAM wears the crown of Gorkha: Prithvi Narayan Shah becomes king."}
+  - {year: 1744, peg: warrior, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Gorkha army takes Nuwakot",
+     scene: "A WARRIOR of Gorkha takes Nuwakot."}
+  - {year: 1757, peg: log, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Gorkha army loses the first Battle of Kirtipur",
+     scene: "A LOG crushes the Gorkha army at the first Battle of Kirtipur."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Battle of Makwanpur: Gorkha takes Sindhuli",
+     scene: "A CHAIN of Gorkha soldiers takes Sindhuli at the Battle of Makwanpur."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Gorkha army captures Kirtipur",
+     scene: "A JUDGE surrenders the keys of Kirtipur to the Gorkha army that captures it."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Gorkha army beats Kinloch's British force at Sindhuli",
+     scene: "A JOCKEY beats Kinloch's British force at Sindhuli for Gorkha."}
+  - {year: 1768, peg: chef, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Prithvi Narayan Shah conquers Kathmandu and Patan and founds the Kingdom of Nepal",
+     scene: "A CHEF cooks Kathmandu and Patan: Prithvi Narayan Shah conquers them and founds the Kingdom of Nepal."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Gorkha army conquers Bhaktapur",
+     scene: "A battering ram shaped like a SHIP breaks into Bhaktapur for the Gorkha army."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "British drive the Bhutanese out of Cooch Behar",
+     scene: "The British flip a COIN and drive the Bhutanese out of Cooch Behar."}
+  - {year: 1774, peg: car, confidence: high, source: "WP mirror: History of Bhutan",
+     event: "Bhutan signs a peace treaty with the East India Company",
+     scene: "A CAR carries Bhutan's peace treaty to the East India Company."}
+  - {year: 1775, peg: eagle, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Prithvi Narayan Shah dies and Pratap Singh Shah becomes king",
+     scene: "An EAGLE carries the crown from the dead Prithvi Narayan Shah to King Pratap Singh Shah."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Bahadur Shah takes the regency of Nepal",
+     scene: "A WAFFLE hands the regency of Nepal to Bahadur Shah."}
+  - {year: 1788, peg: fife, confidence: medium, source: "Search: Sino-Nepalese War",
+     event: "Nepal invades Tibet",
+     scene: "A FIFE sounds as Nepal invades Tibet."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: Unification of Nepal",
+     event: "Nepal annexes Kumaon and Garhwal",
+     scene: "BEES swarm Kumaon and Garhwal as Nepal annexes them."}
+  - {year: 1792, peg: piano, confidence: medium, source: "Search: Sino-Nepalese War",
+     event: "Treaty of Betrawati ends the Nepal-Tibet war",
+     scene: "A PIANO plays the Treaty of Betrawati that ends the Nepal-Tibet war."}
+  # Maldives
+  - {year: 1558, peg: wolf, confidence: high, source: "WP mirror: History of Maldives",
+     event: "Portuguese set up rule in the Maldives from Goa",
+     scene: "A WOLF from Goa rules the Maldives for the Portuguese."}
+  - {year: 1573, peg: comb, confidence: high, source: "WP mirror: History of Maldives",
+     event: "Muhammad Thakurufaanu drives the Portuguese out of the Maldives",
+     scene: "A COMB drags the Portuguese out of the Maldives under Muhammad Thakurufaanu."}
+  - {year: 1658, peg: wolf, confidence: medium, source: "WP mirror: History of Maldives",
+     event: "Dutch take control of Maldivian affairs from Ceylon (approximate)",
+     scene: "A WOLF from Ceylon takes charge of Maldivian affairs for the Dutch."}
+  - {year: 1774, peg: car, confidence: high, source: "WP mirror: History of Maldives",
+     event: "Second Huraa dynasty begins to rule the Maldives",
+     scene: "A CAR drives the Second Huraa dynasty to power in the Maldives."}
