@@ -1,0 +1,971 @@
+# Cell: West Asia x economy x 1945 to present. DRAFT 2026-11-06.
+# Scope: Anatolia, Levant, Mesopotamia, Arabian Peninsula, Iran, Caucasus, Cyprus.
+# Istanbul (both shores) is eastern_europe (grid.md): its stock exchange, bridges and car plants are not here.
+# Dates: memory pass + web check (45 searches + WebFetch of reference pages). Peg rules as policy.md.
+# Encode the last two digits of the year. No years_ago entries in this period.
+# Range -> conventional c. date, else the start of the phase (policy 2026-11-04). Work -> first public appearance.
+# Out of scope here (older cells hold them): oil nationalisation in Iran, the oil embargo of the
+# October War, the Aramco strike, dams, metros, desalination plants, the GCC, nuclear plants (politics,
+# science, society cells of this region and period).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Region-wide: oil cartels, prices and Gulf trade
+  - {year: 1945, peg: railway, confidence: high, source: "encyclopedia.com: Arab Boycott",
+     event: "Arab League declares a boycott of Jewish-made goods from Palestine",
+     scene: "Arab League officials pull up the RAILWAY tracks so that no Jewish-made goods from Palestine can reach Arab markets."}
+  - {year: 1951, peg: wallet, confidence: high, source: "encyclopedia.com: Boycott, Arab",
+     event: "Arab League opens the Central Boycott Office in Damascus",
+     scene: "In Damascus, the new Central Boycott Office snaps shut its WALLET on any firm that trades with Israel."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: OPEC",
+     event: "Iran, Iraq, Kuwait, Saudi Arabia and Venezuela found OPEC at Baghdad",
+     scene: "Five oil ministers in Baghdad cut one giant CHEESE into five equal wedges and call their club OPEC."}
+  - {year: 1968, peg: chef, confidence: high, source: "OAPEC: History",
+     event: "Kuwait, Libya and Saudi Arabia found OAPEC, the Arab oil exporters' group",
+     scene: "A CHEF stirs Kuwaiti, Libyan and Saudi crude in one pot and serves it as OAPEC, the Arab oil club."}
+  - {year: 1971, peg: cat, confidence: high, source: "Search: CIA FOIA; Posted oil price",
+     event: "Tehran Agreement: Gulf producers force the oil companies to raise posted prices",
+     scene: "In Tehran, a Gulf CAT claws the oil companies until they sign a higher posted price for crude."}
+  - {year: 1973, peg: comb, confidence: high, source: "Search: OGJ; MOFA Japan communique",
+     event: "Gulf OPEC ministers meet in Kuwait and raise the posted oil price by about seventy percent on their own",
+     scene: "At the Kuwait meeting, Gulf ministers drag a COMB up the price chart and set oil seventy percent higher without the companies."}
+  - {year: 1973, peg: comb, confidence: medium, source: "Search: chronology Dec 22-24; Tehran place contested",
+     event: "OPEC Gulf meeting in Tehran doubles the posted price again",
+     scene: "In Tehran, the Shah runs a golden COMB through the price list and doubles the posted price of Gulf oil again."}
+  - {year: 1984, peg: fairy, confidence: high, source: "Search: Tanker war; Operation Earnest Will",
+     event: "Tanker War: Iraq and Iran attack oil tankers in the Gulf",
+     scene: "A FAIRY drops bombs from an Iraqi jet onto tankers at Kharg, and Iran hits back at Gulf ships: the Tanker War."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: OPEC",
+     event: "Saudi Arabia stops cutting output to defend prices; the oil price falls by more than half",
+     scene: "Saudi Arabia opens its taps, and a dead FISH floats on a sea of cheap crude as oil prices lose half their value."}
+  - {year: 1987, peg: fox, confidence: high, source: "Search: Operation Earnest Will",
+     event: "Kuwaiti tankers sail under the American flag to escape attack",
+     scene: "A FOX paints the Stars and Stripes on the sides of Kuwaiti tankers so they can sail the Gulf under US escort."}
+  - {year: 2003, peg: sumo, confidence: high, source: "Search: Al Jazeera Studies; GCC sources",
+     event: "GCC customs union starts with one common external tariff",
+     scene: "A SUMO wrestler stands at the Gulf's outer border and charges every import the same five percent tariff."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Search: bilaterals.org; GCC sources",
+     event: "GCC common market starts: Gulf citizens get equal economic rights in all member states",
+     scene: "A Gulf citizen carries his SOFA from Riyadh to Muscat and opens a shop there on equal terms in the new common market."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: OPEC",
+     event: "OPEC meeting: Saudi Arabia blocks output cuts as the oil price crashes",
+     scene: "At the OPEC meeting, the Saudi minister builds a TOWER of full barrels and refuses to cut, so the oil price crashes."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Saudi Arabia and the UAE bring in value-added tax at five percent",
+     scene: "A DOVE pecks five percent off every Saudi and Emirati shopping bill: the first value-added tax in the Gulf."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: OPEC",
+     event: "Saudi-Russian oil price war: Riyadh floods the market and prices collapse",
+     scene: "Riyadh punches Moscow on the NOSE by flooding the market, and the oil price collapses in a price war."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: OPEC",
+     event: "Saudi Arabia and the UAE quarrel over OPEC+ output quotas",
+     scene: "An Emirati ANT and a Saudi ANT tug at the same OPEC+ quota chart until the meeting breaks down."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: OPEC",
+     event: "OPEC+ led by Saudi Arabia cuts output by two million barrels a day",
+     scene: "A NUN with a Saudi rosary turns two million barrels a day off the OPEC+ tap, against Washington's wishes."}
+  # Saudi Arabia
+  - {year: 1945, peg: railway, confidence: high, source: "Search: Aramco timelines (MEED, AramcoWorld)",
+     event: "Aramco's Ras Tanura refinery starts work",
+     scene: "A RAILWAY of tank cars rolls into Ras Tanura as Aramco's first big refinery starts to run."}
+  - {year: 1945, peg: railway, confidence: high, source: "Search: Saudia; Saudipedia",
+     event: "Saudi Arabian Airlines (Saudia) starts with a DC-3 from Roosevelt",
+     scene: "The DC-3 that Roosevelt gave Ibn Saud lands on a RAILWAY track in the desert and becomes the first plane of Saudia."}
+  - {year: 1948, peg: reef, confidence: high, source: "Search: MEED Saudi Aramco timeline",
+     event: "Ain Dar well strikes oil in Ghawar, the largest oilfield in the world",
+     scene: "The Ain Dar drill punches through a buried REEF of limestone and taps Ghawar, the largest oilfield on Earth."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Aramco agrees to split its profits fifty-fifty with the Saudi state",
+     scene: "Ibn Saud throws a LASSO around Aramco's profits and pulls exactly half of them to the Saudi treasury."}
+  - {year: 1950, peg: lasso, confidence: medium, source: "WP mirror: Trans-Arabian Pipeline; Econ. of Saudi Arabia",
+     event: "Tapline is complete and carries Saudi crude across the desert to Sidon in Lebanon",
+     scene: "Tapline stretches like a steel LASSO from the Saudi fields over the desert and ties its end to the port of Sidon."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Aramco finds Safaniya, the largest offshore oilfield in the world",
+     scene: "A diver opens a sunken WALLET off Safaniya, and oil from the largest offshore field on Earth pours out."}
+  - {year: 1951, peg: wallet, confidence: high, source: "Saudipedia: first railway in Saudi Arabia",
+     event: "Saudi Government Railroad opens from Dammam to Riyadh",
+     scene: "The first train from Dammam to Riyadh pulls a carriage shaped like a fat WALLET full of oil money."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Saudi Central Bank",
+     event: "King Abdulaziz founds SAMA, the Saudi Arabian Monetary Agency",
+     scene: "A LION guards the vault of SAMA, the new Saudi central bank, and stamps the first official riyals."}
+  - {year: 1962, peg: chain, confidence: unverified,
+     event: "Saudi Arabia founds Petromin, the state petroleum and minerals company",
+     scene: "A CHAIN of state pipes and mines is locked under one Saudi name: Petromin."}
+  - {year: 1970, peg: goose, confidence: medium, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Saudi Arabia starts its first five-year development plan",
+     scene: "A GOOSE lays five golden eggs, one for each year of Saudi Arabia's first development plan."}
+  - {year: 1971, peg: cat, confidence: high, source: "Search: PIF royal decree M/24",
+     event: "Saudi Arabia founds the Public Investment Fund",
+     scene: "A CAT sits on the first deposit of the Public Investment Fund, the Saudi state's new savings box."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Saudi state takes a twenty-five percent share of Aramco",
+     scene: "The Saudi oil minister combs a quarter of Aramco's assets to his side with a long COMB."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Saudi share of Aramco rises to sixty percent",
+     scene: "A Saudi CAR pulls sixty percent of Aramco across the line with a tow rope."}
+  - {year: 1975, peg: eagle, confidence: high, source: "Search: Royal Commission for Jubail and Yanbu",
+     event: "Royal Commission for Jubail and Yanbu is set up to build two industrial cities",
+     scene: "An EAGLE drops a factory on a fishing village at each coast, and Jubail and Yanbu become industrial cities."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Royal decree founds SABIC, the Saudi petrochemical company",
+     scene: "A royal decree opens a CAGE of gas flares and turns their waste into plastics: SABIC is born."}
+  - {year: 1980, peg: vase, confidence: disputed, source: "Econ. of Saudi Arabia: 1980; Saudi Aramco page: 1976",
+     event: "Saudi Arabia takes full ownership of Aramco",
+     scene: "The last American share of Aramco is put into a Saudi VASE, and the oil company is wholly Saudi."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "East-West pipeline links the Gulf fields to Yanbu on the Red Sea",
+     scene: "A giant FOOT strides from the Gulf to the Red Sea, and the East-West pipeline follows its steps to Yanbu."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Saudi riyal is pegged to the US dollar at three point seven five",
+     scene: "A FISH swallows a dollar and coughs up three riyals and seventy-five halalas: the fixed peg."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Royal decree creates the Saudi Arabian Oil Company (Saudi Aramco)",
+     scene: "A FIFE plays at the royal decree as the old Aramco becomes the Saudi Arabian Oil Company."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Foreign Investment Act allows wholly foreign-owned projects; SAGIA is set up",
+     scene: "A foreign firm pours its own SAUCE on a Saudi project it owns outright under the new Foreign Investment Act."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Saudi Arabia joins the World Trade Organization",
+     scene: "A SEAL balances a WTO ball on its nose as Saudi Arabia becomes a full member."}
+  - {year: 2005, peg: seal, confidence: medium, source: "Saudipedia: King Abdullah Economic City",
+     event: "King Abdullah Economic City is launched on the Red Sea north of Jeddah",
+     scene: "A SEAL lays the first stone of King Abdullah Economic City on the Red Sea shore north of Jeddah."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Search: CMA report; Al Jazeera",
+     event: "Saudi stock market crashes after a speculative boom",
+     scene: "Saudi share prices fall off the SUSHI belt one after another as the stock bubble crashes."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Search: Global AgInvesting; MEED",
+     event: "Saudi Arabia decides to phase out wheat growing to save groundwater",
+     scene: "A farmer drags his SOFA off the dry wheat circle: Riyadh ends wheat growing to save its old groundwater."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Mohammed bin Salman announces the Vision plan to end the dependence on oil",
+     scene: "Mohammed bin Salman serves a DISH with no oil on it and calls the menu Vision 2030."}
+  - {year: 2017, peg: dog, confidence: high, source: "Search: Saudipedia NEOM timeline",
+     event: "Mohammed bin Salman announces NEOM, a new city zone in the north-west",
+     scene: "A robot DOG unrolls the plan of NEOM, a giant new city zone on the Red Sea, at a Riyadh investment forum."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Drone attack on Abqaiq and Khurais halves Saudi oil output",
+     scene: "Drones blow a giant TUBA flat at Abqaiq, and half of Saudi oil output goes silent."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Saudi Aramco",
+     event: "Saudi Aramco floats its shares on Tadawul, the largest IPO in history",
+     scene: "A TUBA blasts the opening note on Tadawul as Aramco shares start trading: the largest IPO ever."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Visa policy of Saudi Arabia",
+     event: "Saudi Arabia opens tourist visas for the first time",
+     scene: "A Saudi border guard plays a TUBA to welcome the first holders of a Saudi tourist visa."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Economy of Saudi Arabia",
+     event: "Saudi Arabia triples value-added tax to fifteen percent",
+     scene: "Prices in a Riyadh mall grow like Pinocchio's NOSE as value-added tax triples to fifteen percent."}
+  - {year: 2021, peg: ant, confidence: high, source: "Al Arabiya: The Line",
+     event: "Mohammed bin Salman unveils The Line, a linear city in NEOM",
+     scene: "A single ANT leads a column that marches in one straight row across the desert: the plan of The Line in NEOM."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Riyadh Air",
+     event: "Saudi Arabia founds Riyadh Air, a new national airline",
+     scene: "A GNOME in a purple uniform waves the first Riyadh Air jet down the runway."}
+  - {year: 2023, peg: gnome, confidence: unverified,
+     event: "Riyadh wins the vote to host the world expo of the next decade",
+     scene: "A GNOME holds up Riyadh's ballot card as the city wins the vote to host the world expo."}
+  # Kuwait
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Kuwait Oil Company",
+     event: "Kuwait ships its first crude oil",
+     scene: "A ROACH turns the valve at Mina al-Ahmadi, and Kuwait's first crude flows into a tanker."}
+  - {year: 1949, peg: rope, confidence: high, source: "Search: KNPC; Mina Al-Ahmadi refinery",
+     event: "Mina al-Ahmadi refinery starts work in Kuwait",
+     scene: "Workers haul the first towers of the Mina al-Ahmadi refinery upright with a ROPE."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Economy of Kuwait",
+     event: "Kuwaiti merchants found the National Bank of Kuwait, the first local bank in the Gulf",
+     scene: "A LION in a merchant's robe opens the doors of the National Bank of Kuwait, the first local bank in the Gulf."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Kuwait Investment Authority",
+     event: "Kuwait Investment Board in London starts the first sovereign wealth fund",
+     scene: "A LLAMA carries Kuwait's spare oil money to London, where the first sovereign wealth fund invests it."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "Search: company-histories; Kuwait Airways",
+     event: "Kuwait Airways is founded",
+     scene: "A LAWYER signs the papers for Kuwait Airways and flies off in its first plane."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Kuwaiti dinar",
+     event: "Kuwaiti dinar replaces the Gulf rupee",
+     scene: "A JET flies the Gulf rupees out of Kuwait and drops the new Kuwaiti dinars in their place."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Economy of Kuwait",
+     event: "Kuwait founds the Kuwait Fund for Arab Economic Development",
+     scene: "A JET full of Kuwaiti loans takes off for other Arab states: the Kuwait Fund begins."}
+  - {year: 1975, peg: eagle, confidence: medium, source: "WP mirror: Kuwait Oil Co. 1975; Econ. of Kuwait 1976",
+     event: "Kuwait takes full ownership of the Kuwait Oil Company",
+     scene: "An EAGLE snatches the last foreign shares of the Kuwait Oil Company and drops them in the emir's lap."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Economy of Kuwait",
+     event: "Kuwait sets up the Fund for Future Generations",
+     scene: "Kuwait locks part of its oil money in a CAGE marked 'for future generations' and throws away the key."}
+  - {year: 1980, peg: vase, confidence: high, source: "Search: KPC Oil History",
+     event: "Kuwait Petroleum Corporation is founded to run the state oil firms",
+     scene: "All Kuwait's state oil companies are put into one VASE and labelled Kuwait Petroleum Corporation."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Souk Al-Manakh stock market crash",
+     event: "Souk al-Manakh stock market crashes when post-dated cheques bounce",
+     scene: "A bounced post-dated cheque catches fire in an OVEN, and the whole Souk al-Manakh share market burns down."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Economy of Kuwait",
+     event: "Kuwait buys a large share of British Petroleum",
+     scene: "A Kuwaiti FOX trots off with almost a fifth of BP's shares in its mouth."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Kuwaiti oil fires",
+     event: "Retreating Iraqi troops set Kuwait's oil wells on fire",
+     scene: "An Iraqi BOOT kicks over burning barrels, and hundreds of Kuwaiti oil wells blaze until November."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Economy of Kuwait",
+     event: "Jazeera Airways, the first private Kuwaiti airline, starts to fly",
+     scene: "A private jet climbs out of a SEWER grate and flies as Jazeera Airways, Kuwait's first private airline."}
+  # Bahrain
+  - {year: 1950, peg: lasso, confidence: high, source: "Search: Gulf Aviation",
+     event: "Gulf Aviation, later Gulf Air, is founded in Bahrain",
+     scene: "A pilot throws a LASSO around an old Anson plane in Bahrain and starts Gulf Aviation, later Gulf Air."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Gulf rupee",
+     event: "Bahraini dinar replaces the Gulf rupee",
+     scene: "Gulf rupees melt into a JELLY in Manama and set again as the new Bahraini dinar."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Aluminium Bahrain",
+     event: "Aluminium Bahrain (Alba) smelter pours its first metal",
+     scene: "A CAT watches the Alba smelter pour Bahrain's first molten aluminium into moulds."}
+  - {year: 1975, peg: eagle, confidence: medium, source: "Search: Majalla; country study (c. 1973-75)",
+     event: "Bahrain licenses offshore banking units and becomes a Gulf banking centre",
+     scene: "An EAGLE flies the bankers of burning Beirut to Manama, where new offshore banking licences wait."}
+  - {year: 1977, peg: cake, confidence: high, source: "Maritime Reporter: ASRY inaugurated",
+     event: "ASRY dry dock for supertankers opens in Bahrain",
+     scene: "A supertanker sits like a CAKE on the new ASRY dry dock in Bahrain while workers fix its hull."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Economy of Bahrain",
+     event: "Bahrain National Oil Company takes sixty percent of the Bapco refinery",
+     scene: "Bahrain pours sixty percent of the Bapco refinery into its own VASE and leaves the rest to Caltex."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Economy of Bahrain",
+     event: "GPIC petrochemical plant is complete in Bahrain",
+     scene: "The GPIC plant in Bahrain presses gas into ammonia and methanol like batter in a WAFFLE iron."}
+  - {year: 1986, peg: fish, confidence: high, source: "Search: King Fahd Causeway",
+     event: "King Fahd Causeway opens between Saudi Arabia and Bahrain",
+     scene: "A long FISH lies across the sea from Khobar to Bahrain, and cars drive over its back on the new causeway."}
+  - {year: 2005, peg: seal, confidence: disputed, source: "Econ. of Bahrain: 2005; memory: signed 2004",
+     event: "Bahrain signs a free trade agreement with the United States, the first in the Gulf",
+     scene: "A SEAL stamps the US-Bahrain free trade agreement, the first such deal in the Gulf."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Economy of Bahrain",
+     event: "Bahrain starts unemployment insurance, the first in the Gulf states",
+     scene: "Bahrain takes one percent off each pay slip and puts it in a SKI lift that carries the jobless to their next job."}
+  # Qatar
+  - {year: 1949, peg: rope, confidence: high, source: "Search: MEED QP timeline; QatarEnergy",
+     event: "Qatar exports its first oil from the Dukhan field",
+     scene: "A ROPE pulls the first tanker of Dukhan crude out from Umm Said, and Qatar is an oil exporter."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Gulf rupee",
+     event: "Qatar and Dubai riyal replaces the Gulf rupee after India devalues it",
+     scene: "A JUDGE rules the devalued Gulf rupee dead, and Qatar and Dubai print a shared riyal."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: South Pars/North Dome",
+     event: "Shell finds the North Field, the largest gas field in the world",
+     scene: "A CAT sniffs gas under the sea north of Qatar: Shell has found the North Field, the largest on Earth."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Qatari riyal",
+     event: "Qatari riyal replaces the Qatar and Dubai riyal",
+     scene: "Qatar combs its own riyal out of the shared Qatar-Dubai note with a fine COMB."}
+  - {year: 1974, peg: car, confidence: high, source: "Search: QGPC company history",
+     event: "Qatar General Petroleum Corporation (now QatarEnergy) is founded",
+     scene: "A CAR with QGPC on its doors drives away with Qatar's oil and gas: the state company is founded."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Economy of Qatar",
+     event: "First phase of North Field gas production is complete",
+     scene: "A BOOT stamps on the valve, and the first North Field gas flows ashore at Ras Laffan."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Economy of Qatar",
+     event: "Qatar Airways is founded",
+     scene: "A PALM tree spreads its leaves like wings and takes off as the first Qatar Airways jet."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Economy of Qatar",
+     event: "Qatargas sends its first cargo of liquefied natural gas to Japan",
+     scene: "A frozen PEACH rides in a domed LNG tanker from Ras Laffan to Japan: Qatar's first gas cargo."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Qatar Investment Authority",
+     event: "Qatar founds the Qatar Investment Authority",
+     scene: "A SEAL juggles Qatar's gas money into London shops and stocks for the new Qatar Investment Authority."}
+  - {year: 2005, peg: seal, confidence: medium, source: "Search: Reuters via The Edge (12-year freeze)",
+     event: "Qatar stops new North Field projects with a moratorium",
+     scene: "A SEAL lies across the North Field wellheads: Qatar stops all new gas projects there."}
+  - {year: 2006, peg: sushi, confidence: unverified,
+     event: "Qatar becomes the largest exporter of liquefied natural gas",
+     scene: "Qatar ships so much liquefied gas that it chills SUSHI on every continent: it is now the top LNG exporter."}
+  - {year: 2014, peg: tower, confidence: high, source: "Search: Hamad International Airport",
+     event: "Hamad International Airport opens in Doha",
+     scene: "A control TOWER shaped like a question mark rises over Doha as Hamad International Airport opens."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Hamad Port",
+     event: "Hamad Port south of Doha is officially opened",
+     scene: "A DOG pulls the first container off a ship as the emir opens Hamad Port, Qatar's way round the blockade."}
+  - {year: 2017, peg: dog, confidence: high, source: "Search: Reuters via The Star, 3 April",
+     event: "Qatar ends its North Field moratorium",
+     scene: "A DOG digs up the North Field again: Qatar ends its pause on new gas projects."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: OPEC",
+     event: "Qatar leaves OPEC to focus on gas",
+     scene: "Qatar puts its TUBA back in the case and walks out of the OPEC orchestra to play gas music alone."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Economy of Qatar",
+     event: "QatarEnergy signs the contract for the North Field East expansion",
+     scene: "A giant ANT signs on to build four huge LNG trains for the North Field East expansion."}
+  # United Arab Emirates
+  - {year: 1958, peg: wolf, confidence: high, source: "Search: The National; Umm Shaif page",
+     event: "Umm Shaif: first oil found off Abu Dhabi",
+     scene: "A WOLF of a drilling barge howls as it strikes Abu Dhabi's first oil at Umm Shaif under the sea."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: ADNOC",
+     event: "Bab: first commercial oil found on land in Abu Dhabi",
+     scene: "A drill bites into the desert at Bab like a knife into CHEESE and strikes Abu Dhabi's first onshore oil."}
+  - {year: 1962, peg: chain, confidence: high, source: "The National: Abu Dhabi first oil shipment",
+     event: "Abu Dhabi ships its first oil from Das Island",
+     scene: "A CHAIN of tankers lines up at Das Island to load Abu Dhabi's first exported oil."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: ADNOC",
+     event: "Onshore oil exports begin from the Jebel Dhanna terminal",
+     scene: "A GEM of crude drips from the Jebel Dhanna jetty into the first tanker of onshore Abu Dhabi oil."}
+  - {year: 1963, peg: gem, confidence: medium, source: "WP mirror: History of Dubai",
+     event: "Dubai Creek is dredged so that larger ships can dock",
+     scene: "Dredgers pull a GEM out of the deepened Dubai Creek, where large ships can now dock."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: History of Dubai",
+     event: "Dubai finds oil at the offshore Fateh field",
+     scene: "A JUDGE in Dubai bangs his gavel on the seabed and oil gushes up from the Fateh field."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP mirror: History of Dubai (body text)",
+     event: "Dubai exports its first oil",
+     scene: "A SHIP fills its tanks from a floating Fateh storage tank and carries Dubai's first oil away."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: ADNOC",
+     event: "Abu Dhabi founds ADNOC, its national oil company",
+     scene: "A CAT with ADNOC on its collar takes charge of every oil well in Abu Dhabi."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Port Rashid",
+     event: "Port Rashid opens in Dubai",
+     scene: "Sheikh Rashid drops a COIN in the water, and his new deep-water port opens in Dubai."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: United Arab Emirates dirham",
+     event: "UAE dirham replaces the Bahraini dinar and the Qatar and Dubai riyal",
+     scene: "The seven emirates comb out their old dinars and riyals with one COMB, and the UAE dirham is left."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Abu Dhabi Investment Authority",
+     event: "Abu Dhabi Investment Authority is founded",
+     scene: "Abu Dhabi locks its spare oil money in a golden CAGE run by the new Abu Dhabi Investment Authority."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Jebel Ali Free Zone",
+     event: "Jebel Ali port opens, the largest man-made harbour",
+     scene: "A COWBOY ropes container ships into Jebel Ali, the largest man-made harbour, on its opening day."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Dubai World Trade Centre",
+     event: "Dubai World Trade Centre tower opens",
+     scene: "A COWBOY rides a lift to the top of the Dubai World Trade Centre, then the tallest tower in the region."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Jebel Ali Free Zone",
+     event: "Jebel Ali Free Zone opens with full foreign ownership and no taxes",
+     scene: "A WAFFLE grid of empty plots at Jebel Ali fills with foreign firms that pay no tax in the new free zone."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Economy of Dubai",
+     event: "Dubai founds Emirates airline",
+     scene: "Emirates' first jet takes off from Dubai with a WAFFLE on every tray."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Dubai Shopping Festival",
+     event: "Dubai Shopping Festival is held for the first time",
+     scene: "A shopper fills a bag with gold and a golden PEACH in the first Dubai Shopping Festival."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: United Arab Emirates dirham",
+     event: "UAE dirham is formally pegged to the dollar",
+     scene: "A PIG piggy bank ties the dirham to the dollar at three point six seven to one."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Dubai Internet City",
+     event: "Dubai Internet City opens",
+     scene: "Programmers dip cables in SAUCE at the opening of Dubai Internet City."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Palm Jumeirah",
+     event: "Land reclamation for the Palm Jumeirah begins",
+     scene: "Dredgers spray sand from the sea like SODA fizz and shape the first fronds of Palm Jumeirah."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Economy of Dubai",
+     event: "Dubai allows foreigners to buy property",
+     scene: "Under the Dubai SUN, a foreign buyer signs for his first flat on the Marina: property is open to non-citizens."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Etihad Airways",
+     event: "Abu Dhabi founds Etihad Airways",
+     scene: "A SUMO wrestler pushes Etihad's first jet out of the hangar in Abu Dhabi."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: DIFC",
+     event: "Dubai International Financial Centre opens with its own courts and laws",
+     scene: "A SEWER of English common law runs under the new Dubai International Financial Centre and keeps it apart."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: DP World",
+     event: "DP World buys P&O, the British ports company",
+     scene: "DP World swallows P&O, the British ports company, like a piece of SUSHI."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Dubai World",
+     event: "Dubai World asks its creditors for a standstill on its debts",
+     scene: "Dubai World slips on a bar of SOAP and asks its banks to freeze its debts."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Al Maktoum International Airport",
+     event: "Al Maktoum International Airport opens to cargo flights at Jebel Ali",
+     scene: "A cargo plane rolls a DICE onto the runway of the new Al Maktoum airport at Jebel Ali."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Economy of Dubai",
+     event: "UAE lets foreigners own all of a mainland company",
+     scene: "A foreign ANT carries the whole company sign home: the UAE drops its local-partner rule."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Economy of Dubai",
+     event: "Dubai's world expo opens after a delay of one year",
+     scene: "An ANT colony of visitors fills the pavilions of the Dubai world expo, which opens a year late."}
+  - {year: 2022, peg: nun, confidence: unverified,
+     event: "UAE and India sign a free trade agreement (CEPA)",
+     scene: "A NUN signs the UAE-India trade deal on the back of a gold bar."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Taxation in the UAE",
+     event: "UAE starts a federal corporate tax",
+     scene: "A GNOME tax collector knocks on every Emirati company door for the first federal corporate tax."}
+  # Oman
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Petroleum Development Oman",
+     event: "Yibal: first commercial oil found in Oman",
+     scene: "A drill pulls a CHAIN of oily mud out of the ground at Yibal, Oman's first commercial oil."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "WP mirror: Economy of Oman; PDO page: c. 1963",
+     event: "Oil is found at Fahud, where the first well had been dry",
+     scene: "A CHERRY of black crude pops out at Fahud, where the first well had been dry."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Petroleum Development Oman",
+     event: "Oman exports its first oil",
+     scene: "A JOCKEY rides the first barrel of Omani oil down the pipe to the tanker at Mina al-Fahal."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Gulf rupee",
+     event: "Oman drops the Gulf rupee for its own rial",
+     scene: "A GOOSE carries the last Gulf rupees out of Muscat and lays a new Omani rial."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Petroleum Development Oman",
+     event: "Oman takes a sixty percent share of Petroleum Development Oman",
+     scene: "The Sultan's CAR pulls sixty percent of PDO into the state garage."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Economy of Oman",
+     event: "Oman joins the World Trade Organization",
+     scene: "Oman pours its trade rules into the WTO SAUCE pot and becomes a member."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Petroleum Development Oman",
+     event: "Oman LNG at Sur ships its first cargo, to Korea",
+     scene: "A tanker carries a frozen bottle of SAUCE from Sur to Korea: Oman's first liquefied gas cargo."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Economy of Oman",
+     event: "US Congress approves the US-Oman free trade agreement",
+     scene: "A US senator and an Omani merchant share SUSHI as Congress passes the US-Oman trade deal."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Economy of Oman",
+     event: "US-Oman free trade agreement enters into force",
+     scene: "Omani dates and US goods slide through customs on SOAP as the free trade deal starts."}
+  - {year: 2021, peg: ant, confidence: high, source: "Search: PwC; Arab News",
+     event: "Oman brings in value-added tax",
+     scene: "An ANT takes five percent of every sugar grain in Muscat as Oman brings in value-added tax."}
+  # Yemen
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP mirror: Economy of Yemen (1950s)",
+     event: "BP's Little Aden refinery opens",
+     scene: "A LAWYER cuts the ribbon at BP's new refinery at Little Aden, built after Abadan was lost."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Aden's transit trade collapses as Suez closes and Britain leaves",
+     scene: "A JOCKEY rides the last British ship out of an empty Aden harbour; Suez is shut and trade dies."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Hunt Oil finds oil near Marib",
+     scene: "A FAIRY taps her wand on the sand near Marib, and Hunt Oil strikes North Yemen's first oil."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Small refinery at Marib starts work",
+     scene: "A FISH swims through the pipes of the small new refinery at Marib."}
+  - {year: 1987, peg: fox, confidence: unverified,
+     event: "Marib-Ras Isa pipeline is commissioned for North Yemen's first oil exports",
+     scene: "A FOX runs along the new pipeline from Marib to Ras Isa ahead of the first barrel of North Yemen's oil."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Oil exports start from the Masila field in Hadhramaut",
+     scene: "Oil spurts from a PALM trunk in Wadi Masila, and Hadhramaut's crude starts to flow to the sea."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Yemen floats the rial under an IMF programme",
+     scene: "A PEACH floats down the Sanaa canal as the rial is set free on the market."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Economy of Yemen",
+     event: "Yemen LNG at Balhaf starts production",
+     scene: "Gas bubbles like SOAP foam out of the new Balhaf plant as Yemen LNG starts work."}
+  - {year: 2016, peg: dish, confidence: high, source: "Al Arabiya: Yemen moves central bank HQ",
+     event: "Hadi government moves the central bank from Sanaa to Aden",
+     scene: "The Yemeni central bank is carried on a DISH from Sanaa to Aden, and the country has two money centres."}
+  # Iraq
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Kirkuk-Haifa oil pipeline",
+     event: "Iraq stops oil flow through the Kirkuk-Haifa pipeline",
+     scene: "Iraq blocks the Kirkuk-Haifa pipeline with a REEF of rocks, and no oil reaches Haifa."}
+  - {year: 1950, peg: lasso, confidence: unverified,
+     event: "Iraq sets up the Development Board to spend oil money on projects",
+     scene: "The Development Board throws a LASSO around seventy percent of Iraq's oil money for dams and roads."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Iraq Petroleum Company",
+     event: "Iraq and the Iraq Petroleum Company agree a fifty-fifty profit split",
+     scene: "A LION tears the IPC profit sheet into two equal halves, one for Baghdad."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Rumaila oil field",
+     event: "Basrah Petroleum Company finds the Rumaila oilfield",
+     scene: "A LLAMA kicks the sand near Basra, and oil from the Rumaila field spurts out."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "WP mirror: Land reform (Iraq: seizures)",
+     event: "Qasim's agrarian reform law breaks up large estates",
+     scene: "A WOLF tears the big sheikhs' estates into small plots under Qasim's land reform law."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Iraq Petroleum Company",
+     event: "Law No. 80 takes back almost all of the IPC concession area",
+     scene: "A JET flies over Iraq and erases the IPC concession map, all but the fields that pump."}
+  - {year: 1966, peg: judge, confidence: medium, source: "WP mirror: Iraq National Oil Company",
+     event: "Iraq National Oil Company (INOC) is founded",
+     scene: "A JUDGE hands the seized oil areas to the new Iraq National Oil Company."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Iraq National Oil Company",
+     event: "North Rumaila field starts to produce with Soviet help",
+     scene: "A Soviet COIN drops into the North Rumaila well, and Iraq's own oil starts to flow."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Iraq Petroleum Company",
+     event: "Iraq nationalises the Iraq Petroleum Company",
+     scene: "Baghdad flips a COIN, and it lands with INOC's face up: the Iraq Petroleum Company is nationalised."}
+  - {year: 1977, peg: cake, confidence: disputed, source: "WP mirror: 1970 (commissioned); memory: 1977",
+     event: "Kirkuk-Ceyhan pipeline carries Iraqi oil to the Turkish coast",
+     scene: "A long CAKE of steel pipe carries Kirkuk crude across Turkey to the tankers at Ceyhan."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Iraq National Oil Company",
+     event: "INOC is merged into the oil ministry and split into regional companies",
+     scene: "A FOX swallows the Iraq National Oil Company into the ministry and spits out North Oil and South Oil."}
+  - {year: 1990, peg: bees, confidence: medium, source: "WP mirror: Oil-for-Food Programme",
+     event: "UN Security Council puts full trade sanctions on Iraq",
+     scene: "A swarm of UN BEES surrounds Iraq and stings every ship that tries to trade with Baghdad."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Oil-for-Food Programme",
+     event: "UN Security Council creates the Oil-for-Food programme",
+     scene: "A UN BELL rings the deal: Iraq may sell oil, but only to buy food and medicine."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Oil-for-Food Programme",
+     event: "Oil-for-Food starts: Iraqi oil flows again under UN control",
+     scene: "A barrel of Iraqi oil is swapped for a PEACH crate at the UN desk as Oil-for-Food begins."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Iraqi dinar",
+     event: "New Iraqi dinar notes replace the Saddam notes",
+     scene: "A SUMO wrestler sits on Saddam's face on the old notes and squashes them into new Iraqi dinars."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Paris Club",
+     event: "Paris Club cancels most of Iraq's debt",
+     scene: "Creditors in Paris flush eighty percent of Iraq's debt down the SEWER."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Rumaila oil field",
+     event: "BP and CNPC win the Rumaila contract in Iraq's first licensing round",
+     scene: "BP and CNPC scrub Rumaila's old wells with SOAP after they win the field at two dollars a barrel."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Kirkuk-Ceyhan Oil Pipeline",
+     event: "Kurdistan Region loads its first independent oil at Ceyhan",
+     scene: "A Kurdish TOWER of barrels is loaded onto a tanker at Ceyhan without Baghdad's approval."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Iraqi dinar",
+     event: "Iraq devalues the dinar by about a quarter",
+     scene: "The central bank cuts a quarter off the dinar's NOSE to pay salaries when oil prices fall."}
+  - {year: 2023, peg: gnome, confidence: medium, source: "Search: Reuters headline, 25 March",
+     event: "Turkey stops Kurdish oil exports through Ceyhan after an arbitration ruling",
+     scene: "A GNOME closes the valve at Ceyhan after the Paris court ruling, and Kurdish oil stops."}
+  - {year: 2023, peg: gnome, confidence: unverified,
+     event: "Iraq launches the Development Road plan from Faw to Turkey",
+     scene: "A GNOME lays rail and road from the Faw port to the Turkish border: the Development Road plan."}
+  # Iran
+  - {year: 1949, peg: rope, confidence: high, source: "Encyclopaedia Iranica: Plan Organization",
+     event: "Iran starts its first Seven-Year Plan under the Plan Organization",
+     scene: "A ROPE with seven knots ties up Iran's first development plan at the new Plan Organization."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Consortium Agreement of 1954",
+     event: "Consortium Agreement gives Western oil companies control of Iranian oil again",
+     scene: "A LAWYER for eight Western oil companies signs the Consortium Agreement and takes back Iran's oilfields."}
+  - {year: 1956, peg: leech, confidence: high, source: "Guinness: largest oil gusher",
+     event: "Alborz well near Qom blows out in a huge oil gusher",
+     scene: "A LEECH stuck on the Alborz well near Qom bursts as oil gushes out for weeks."}
+  - {year: 1957, peg: log, confidence: high, source: "Search: Eni-NIOC deal, 14 March",
+     event: "NIOC and Italy's AGIP make a seventy-five to twenty-five deal",
+     scene: "Mattei splits a LOG three to one with NIOC: Iran takes seventy-five percent of the profit."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Iranian rial",
+     event: "Central Bank of Iran takes over the issue of banknotes",
+     scene: "A JET drops fresh rial notes printed by the new Central Bank of Iran over Tehran."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Land reform",
+     event: "Land Reform Law: landlords must sell villages to peasants",
+     scene: "Peasants break the CHAIN that ties them to the landlord and buy their village fields under the land reform law."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Tehran Stock Exchange",
+     event: "Tehran Stock Exchange opens",
+     scene: "A JOCKEY rings the opening bell at the Tehran Stock Exchange, where only bonds trade at first."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Paykan",
+     event: "Iran National makes the first Paykan car",
+     scene: "A JOCKEY drives the first Paykan off the Iran National line in Tehran."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Consortium Agreement of 1954",
+     event: "Sales and Purchase Agreement gives NIOC full control of Iranian oil",
+     scene: "The Shah combs the consortium out of the oilfields with a COMB, and NIOC runs Iran's oil alone."}
+  - {year: 1973, peg: comb, confidence: unverified,
+     event: "Aryamehr steel mill at Isfahan, built with Soviet help, starts work",
+     scene: "Soviet engineers pull a red-hot COMB of steel bars from the new Isfahan mill."}
+  - {year: 1974, peg: car, confidence: unverified,
+     event: "Iran buys a quarter of Krupp's steel business",
+     scene: "Iran drives a CAR into the Krupp works and takes a quarter of its steel arm."}
+  - {year: 1978, peg: cave, confidence: unverified,
+     event: "Oil workers' strike stops Iran's oil exports",
+     scene: "Oil workers shut the valves and hide in a CAVE, and Iran's oil exports stop."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Economy of Iran",
+     event: "Revolutionary government nationalises banks, insurers and big industry",
+     scene: "A revolutionary COWBOY ropes every bank and big factory in Iran into state hands."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "United States freezes Iranian assets after the embassy is seized",
+     scene: "A US COWBOY locks billions of Iranian dollars in a bank vault after the embassy is seized."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Algiers Accords",
+     event: "Algiers Accords release frozen Iranian assets",
+     scene: "A FOOT kicks open the vault, and frozen Iranian assets flow out as the hostages fly home."}
+  - {year: 1989, peg: fob, confidence: unverified,
+     event: "Kish Island becomes Iran's first free trade zone",
+     scene: "A key FOB opens the gate of Kish Island, Iran's first free trade zone."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "Clinton orders ban US trade and investment with Iran",
+     scene: "A BELL tolls in the White House as Clinton bans US trade and investment with Iran."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "Iran and Libya Sanctions Act punishes foreign firms that invest in Iranian oil",
+     scene: "A rotten PEACH is thrown at any foreign firm that invests in Iranian oil under the new US law."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Iranian rial",
+     event: "Iran unifies its exchange rates into one market rate",
+     scene: "Iran's many rial rates melt under one SUN into a single market rate."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: South Pars/North Dome",
+     event: "South Pars gas field starts to produce",
+     scene: "The SUN rises over the Gulf as the first South Pars gas flows ashore at Assaluyeh."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Economy of Iran",
+     event: "Article 44 change lets Iran privatise most state companies",
+     scene: "State companies are flushed down a SEWER into private hands after the Article 44 change."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Iranian targeted subsidy plan",
+     event: "Iran cuts fuel and food subsidies and pays cash to families",
+     scene: "Ahmadinejad rolls a DICE, ends fuel subsidies and pays every family cash instead."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "European Union agrees an embargo on Iranian oil",
+     scene: "Europe sticks out its TONGUE at Iranian crude and stops buying it."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "SWIFT cuts Iranian banks off from the global payment network",
+     scene: "SWIFT cuts the TONGUE out of Iran's banks, and they can no longer talk to the world's payment network."}
+  - {year: 2012, peg: tongue, confidence: medium, source: "WP mirror: Iranian rial",
+     event: "Rial loses most of its value under sanctions",
+     scene: "A rial note shrivels like a burnt TONGUE as the currency loses most of its value."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "Implementation Day: nuclear-related sanctions on Iran are lifted",
+     scene: "Western ministers serve Iran a DISH of unfrozen money on Implementation Day."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Sanctions against Iran",
+     event: "US oil and banking sanctions on Iran take effect again",
+     scene: "A DOVE falls dead on Kharg Island as US oil and banking sanctions come back."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Iranian rial",
+     event: "Iranian parliament votes to cut four zeros and rename the currency toman",
+     scene: "Parliament snips four zeros off the rial's NOSE and renames it the toman."}
+  - {year: 2021, peg: ant, confidence: high, source: "Search: Dawn; Al Arabiya",
+     event: "Iran and China sign a twenty-five-year cooperation agreement",
+     scene: "An ANT trail of tankers runs from Iran to China under their new twenty-five-year agreement."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Economy of Iran",
+     event: "Iran ends the cheap-dollar subsidy for food imports",
+     scene: "A NUN in a Tehran bakery sees bread prices jump when the cheap import dollar is cut."}
+  # Turkey (Anatolia)
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Turkish lira",
+     event: "Turkey devalues the lira to two point eight a dollar",
+     scene: "A ROACH chews the Turkish lira down until it takes almost three to buy one dollar."}
+  - {year: 1948, peg: reef, confidence: high, source: "Search: US treaty text, Ankara 4 July",
+     event: "Turkey joins the OEEC and receives Marshall Plan aid",
+     scene: "A REEF of American tractors washes up at İzmir as Marshall Plan aid reaches Turkey."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Economic history of Turkey",
+     event: "Foreign Investment Act offers good terms to foreign investors",
+     scene: "A LAWYER in Ankara rolls out a red carpet for foreign capital under the new Foreign Investment Act."}
+  - {year: 1954, peg: lawyer, confidence: unverified,
+     event: "Petroleum Law opens Turkey to foreign oil firms; TPAO is founded",
+     scene: "A LAWYER signs the new Petroleum Law and hands the first drilling permit to the state oil firm TPAO."}
+  - {year: 1958, peg: wolf, confidence: high, source: "Search: Krueger NBER; Turkish sources",
+     event: "Menderes accepts an IMF stabilisation plan and the lira is devalued",
+     scene: "An IMF WOLF corners Menderes, and the lira falls from under three to nine a dollar."}
+  - {year: 1960, peg: cheese, confidence: high, source: "Search: State Planning Organization (Turkey)",
+     event: "Turkey sets up the State Planning Organisation",
+     scene: "Planners in Ankara cut the Turkish economy like a CHEESE into five-year slices."}
+  - {year: 1961, peg: jet, confidence: high, source: "German Foreign Office: recruitment agreement",
+     event: "Turkey and West Germany sign the labour recruitment agreement",
+     scene: "A JET carries the first Turkish guest workers to West German factories under the new agreement."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: EU-Turkey Customs Union",
+     event: "Ankara Agreement makes Turkey an associate of the EEC",
+     scene: "A GEM seals the Ankara Agreement that ties Turkey to the European Economic Community."}
+  - {year: 1963, peg: gem, confidence: unverified,
+     event: "Turkey's first Five-Year Development Plan starts",
+     scene: "A GEM is cut into five faces, one for each year of Turkey's first development plan."}
+  - {year: 1965, peg: jelly, confidence: high, source: "Erdemir: corporate history",
+     event: "Ereğli iron and steel works (Erdemir) makes its first steel",
+     scene: "Molten steel pours like red JELLY from the first furnace at Ereğli on the Black Sea."}
+  - {year: 1970, peg: goose, confidence: high, source: "Search: Krueger NBER; Turkish sources",
+     event: "Turkey devalues the lira from nine to fifteen a dollar",
+     scene: "A GOOSE pecks the lira, and it falls from nine to fifteen to the dollar."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Oyak-Renault",
+     event: "Oyak-Renault starts building cars in Bursa",
+     scene: "A CAT drives the first Renault 12 off the Oyak-Renault line in Bursa."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Tofaş",
+     event: "Tofaş starts building the Murat car in Bursa under Fiat licence",
+     scene: "A Fiat CAT rides on the bonnet of the first Murat car from the Tofaş works in Bursa."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Economic history of Turkey",
+     event: "January 24 decisions: Özal turns Turkey to free markets and exports",
+     scene: "Özal smashes the VASE of state controls and pours its pieces into export ships: the January 24 decisions."}
+  - {year: 1985, peg: waffle, confidence: high, source: "Search: 1985 in Turkey; Avalara",
+     event: "Turkey brings in value-added tax",
+     scene: "A WAFFLE vendor in Ankara adds the new value-added tax to every waffle he sells."}
+  - {year: 1989, peg: fob, confidence: high, source: "Search: Decree No. 32 studies",
+     event: "Turkey frees capital movements and makes the lira convertible",
+     scene: "A key FOB opens Turkey's capital account, and money flows in and out in lira freely."}
+  - {year: 1989, peg: fob, confidence: medium, source: "WP mirror: Southeastern Anatolia Project",
+     event: "GAP master plan turns the south-east dams into a regional development project",
+     scene: "A key FOB unlocks the GAP master plan, which turns the Euphrates dams into farms and factories."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Economic history of Turkey",
+     event: "Currency crisis: the lira loses more than half its value and an austerity package follows",
+     scene: "A BEAR mauls the lira after Turkey's debt is downgraded, and Çiller announces an austerity package."}
+  - {year: 1996, peg: peach, confidence: medium, source: "WP mirror: EU-Turkey Customs Union (31 Dec 1995)",
+     event: "Customs union between Turkey and the European Union starts",
+     scene: "A truck with a giant Bursa PEACH rolls into Europe with no customs check under the new customs union."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: 2001 Turkish economic crisis",
+     event: "Financial crash: interest rates soar and the lira is floated",
+     scene: "Turkish banks fizz over like shaken SODA after Ecevit's row with the president, and the lira is floated."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Turkish lira",
+     event: "New Turkish lira removes six zeros",
+     scene: "A SEAL balances six zeros on its nose and drops them all: the new Turkish lira."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Blue Stream",
+     event: "Blue Stream gas pipeline under the Black Sea is officially opened near Samsun",
+     scene: "A SEAL swims along the Blue Stream pipe from Russia to Samsun as it is opened."}
+  - {year: 2018, peg: dove, confidence: medium, source: "WP mirror: Turkish lira",
+     event: "Currency and debt crisis: the lira crashes",
+     scene: "A DOVE carrying a lira note drops like a stone over Ankara as the currency crashes."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Trans-Anatolian gas pipeline",
+     event: "TANAP gas pipeline across Anatolia is opened",
+     scene: "A DOVE flies the length of the TANAP pipeline from the Georgian border to Eskişehir on opening day."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Sakarya Gas Field",
+     event: "Turkey finds the Sakarya gas field in the Black Sea",
+     scene: "A drillship's NOSE sniffs out the Sakarya gas field under the Black Sea."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Turkish lira",
+     event: "Lira crashes after repeated interest rate cuts",
+     scene: "An ANT carries away a lira coin that grows lighter each week as Erdoğan cuts interest rates."}
+  - {year: 2022, peg: nun, confidence: high, source: "Search: Daily Sabah; Reuters",
+     event: "Turkish inflation peaks at about eighty-five percent",
+     scene: "A NUN's bread costs almost twice as much as a year ago: Turkish inflation peaks near eighty-five percent."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Togg",
+     event: "Togg opens its electric car factory at Gemlik",
+     scene: "A NUN cuts the ribbon at the Togg factory in Gemlik, and the first Turkish electric car rolls out."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Sakarya Gas Field",
+     event: "Sakarya gas field starts to produce",
+     scene: "A GNOME lights the first flame of Sakarya gas at Filyos on the Black Sea coast."}
+  # Israel
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Israel starts the tzena austerity and rationing programme",
+     scene: "A ROPE ties every family's food box shut at one ration in the tzena austerity programme."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Reparations Agreement with West Germany",
+     scene: "A LION carries West German reparations goods into Haifa port after the agreement is signed."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Israeli new shekel",
+     event: "Israeli pound replaces the Palestine pound",
+     scene: "A LION's face is printed over the old Palestine pound, and Bank Leumi issues the Israeli pound."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Tel Aviv Stock Exchange",
+     event: "Tel Aviv Stock Exchange begins trading",
+     scene: "A LLAMA shouts prices on the floor of the new Tel Aviv Stock Exchange."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Bank of Israel",
+     event: "Knesset founds the Bank of Israel",
+     scene: "A LAWYER in the Knesset signs the Bank of Israel Law, and Horowitz becomes the first governor."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Heletz oil field",
+     event: "Heletz: Israel's first commercial oil well",
+     scene: "Oil seeps from under a LILY at Heletz, Israel's first commercial oil well."}
+  - {year: 1977, peg: cake, confidence: unverified,
+     event: "Begin government's 'economic upheaval' frees foreign exchange",
+     scene: "Finance minister Ehrlich cuts the CAKE of currency controls, and Israelis may hold foreign money."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Israeli new shekel",
+     event: "Shekel replaces the Israeli pound",
+     scene: "Ten Israeli pounds go into a VASE and one shekel comes out."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Bank stock crisis: bank shares collapse and the state takes over the banks",
+     scene: "Israeli bank shares dissolve into FOAM, and the state takes over the big banks."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Israeli inflation reaches about four hundred and fifty percent",
+     scene: "A FAIRY's wand makes prices in a Tel Aviv shop go up four and a half times in one year."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Economic Stabilization Plan stops hyperinflation",
+     scene: "Peres and Modai freeze prices on a WAFFLE iron, and hyperinflation stops under the stabilization plan."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Israel signs a free trade agreement with the United States",
+     scene: "A US WAFFLE and an Israeli falafel cross the border with no tariff under the first US free trade agreement."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Israeli new shekel",
+     event: "New shekel notes are issued at one thousand old shekels each",
+     scene: "Three zeros fall off a shekel note into a WAFFLE iron, and the new shekel comes out."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Venture capital in Israel",
+     event: "Israel starts the Yozma venture capital programme",
+     scene: "A PALM tree grows ten venture funds from one government seed: the Yozma programme."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: ICQ",
+     event: "AOL buys Mirabilis, the maker of ICQ",
+     scene: "AOL takes the whole BEEHIVE of ICQ users when it buys Mirabilis for hundreds of millions of dollars."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Israeli new shekel",
+     event: "Shekel becomes freely convertible",
+     scene: "A SUMO wrestler pushes open the last currency gate, and the shekel trades freely."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Search: BIS paper; Insurance Journal",
+     event: "Buffett's Berkshire Hathaway buys most of Iscar",
+     scene: "Buffett eats SUSHI with the Wertheimers as Berkshire buys most of the toolmaker Iscar."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Tamar gas field is found off Haifa",
+     scene: "Gas bubbles rise like SOAP suds from the sea off Haifa: the Tamar field."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Leviathan gas field",
+     event: "Leviathan gas field is found",
+     scene: "A DICE dropped into the sea lands on Leviathan, a gas field twice as big as Tamar."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Israel joins the OECD",
+     scene: "Israel throws a DICE onto the OECD table and takes its seat as a full member."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Economic history of Israel",
+     event: "Tamar starts to produce gas",
+     scene: "Gas from Tamar rises out of an undersea TOMB and lights the stoves of Israel."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Waze",
+     event: "Google buys the Israeli navigation app Waze",
+     scene: "Waze guides Google's car to a TOMB of traffic jams, and Google buys the app."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Mobileye",
+     event: "Intel buys Mobileye, the Jerusalem self-driving car firm",
+     scene: "Intel buys Mobileye and puts its camera on a robot DOG that drives itself through Jerusalem."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Leviathan gas field",
+     event: "Leviathan starts to produce gas",
+     scene: "A TUBA blasts on the Leviathan platform as its first gas flows to shore."}
+  # Palestine
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Paris Protocol",
+     event: "Paris Protocol sets the economic rules between Israel and the Palestinian Authority",
+     scene: "A BEAR signs the Paris Protocol and ties Palestinian trade, tax and money to Israel."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Palestine Exchange",
+     event: "Palestine Securities Exchange starts trading in Nablus",
+     scene: "A PIG rings the first trading bell at the Palestine Securities Exchange in Nablus."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Search: Yasser Arafat Intl Airport; NPR",
+     event: "Gaza International Airport opens",
+     scene: "Planes buzz like a BEEHIVE over Rafah as Gaza International Airport opens."}
+  # Jordan
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Jordanian dinar",
+     event: "Jordanian dinar replaces the Palestine pound",
+     scene: "A LASSO pulls the Palestine pound out of Amman, and the Jordanian dinar takes its place."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP mirror: Arab Potash Company",
+     event: "Arab Potash Company is founded to mine the Dead Sea",
+     scene: "A LEECH sucks potash out of the Dead Sea for the new Arab Potash Company."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Jordanian dinar",
+     event: "Central Bank of Jordan starts work",
+     scene: "A CHERRY on the vault door: the Central Bank of Jordan opens and takes over the dinar."}
+  - {year: 1978, peg: cave, confidence: unverified,
+     event: "Amman Financial Market starts trading",
+     scene: "Traders shout prices in a CAVE under Amman: the Amman Financial Market starts trading."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Qualifying Industrial Zone",
+     event: "First Qualifying Industrial Zone opens in Irbid",
+     scene: "A BEEHIVE of garment workers in Irbid ships goods duty-free to the US from the first Qualifying Industrial Zone."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Economy of Jordan",
+     event: "Jordan joins the World Trade Organization",
+     scene: "Jordan dips its trade rules in WTO SAUCE and becomes a member."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Jordan-US Free Trade Agreement",
+     event: "Jordan signs a free trade agreement with the United States, the first with an Arab state",
+     scene: "A US chef pours SAUCE on Jordanian food, and the first US trade deal with an Arab state is signed."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: ASEZA",
+     event: "Aqaba Special Economic Zone is set up",
+     scene: "Aqaba fizzes like a SODA as it becomes a low-tax special economic zone."}
+  # Lebanon
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: Middle East Airlines",
+     event: "Middle East Airlines is founded in Beirut",
+     scene: "A RAILWAY carriage grows wings in Beirut and flies as the first Middle East Airlines plane."}
+  - {year: 1950, peg: lasso, confidence: unverified,
+     event: "Customs union between Syria and Lebanon ends",
+     scene: "A LASSO that tied Syria and Lebanon in one customs union is cut at the border."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Intra Bank",
+     event: "Yousef Beidas founds Intra Bank in Beirut",
+     scene: "Yousef Beidas opens a WALLET in Beirut, and it grows into Intra Bank."}
+  - {year: 1956, peg: leech, confidence: high, source: "Search: CIA FOIA; Lebanon Law 1/1956",
+     event: "Lebanon passes its bank secrecy law",
+     scene: "A LEECH seals Beirut bank files shut with its mouth under the new bank secrecy law."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Economy of Lebanon",
+     event: "Code of Money and Credit sets up the Lebanese central bank",
+     scene: "A GEM is set in the new Code of Money and Credit that creates the Banque du Liban."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Intra Bank",
+     event: "Intra Bank collapses after a run on deposits",
+     scene: "A JUDGE closes the doors of Intra Bank after depositors run on it."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Economy of Lebanon",
+     event: "Horizon plan for post-war reconstruction is launched",
+     scene: "Hariri plants a PALM in the rubble of Beirut and launches the Horizon reconstruction plan."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Solidere",
+     event: "Solidere is founded to rebuild Beirut's city centre",
+     scene: "A BEAR with a hard hat takes over downtown Beirut for Solidere's rebuilding."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Economy of Lebanon",
+     event: "Beirut Stock Exchange reopens after the civil war",
+     scene: "A trader rings a bell made from a PEACH stone as the Beirut Stock Exchange reopens after the war."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Lebanese liquidity crisis",
+     event: "Lebanese pound is fixed to the dollar at about one and a half thousand",
+     scene: "A PIG piggy bank fixes the Lebanese pound to the dollar for the next twenty-five years."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Economy of Lebanon",
+     event: "Lebanon brings in value-added tax",
+     scene: "The SUN shines on Beirut shoppers as the first value-added tax appears on their receipts."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Lebanese liquidity crisis",
+     event: "Banks close and limit withdrawals as the financial crisis breaks",
+     scene: "A TUBA blocks the bank door in Beirut, and depositors cannot take their dollars out."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Lebanese liquidity crisis",
+     event: "Lebanon defaults on its foreign debt for the first time",
+     scene: "Lebanon turns up its NOSE at a Eurobond payment: its first default."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Lebanese liquidity crisis",
+     event: "Lebanon's central bank ends fuel subsidies",
+     scene: "An ANT queues all night at a Beirut petrol station after the central bank ends fuel subsidies."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Lebanese liquidity crisis",
+     event: "Lebanon cuts the official value of the pound by ninety percent",
+     scene: "A GNOME cuts ninety percent off the official Lebanese pound with garden shears."}
+  # Syria
+  - {year: 1956, peg: leech, confidence: unverified,
+     event: "Syrian army blows up the IPC pumping stations during the Suez war",
+     scene: "Syrian soldiers blow up the IPC pump stations, and a LEECH can suck no more oil to the coast."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Land reform (Syria)",
+     event: "Agrarian reform law breaks up large estates in Syria",
+     scene: "A WOLF tears the big Syrian estates into small plots for peasants under the new agrarian reform law."}
+  - {year: 1961, peg: jet, confidence: unverified,
+     event: "July laws nationalise Syrian banks and big firms under the UAR",
+     scene: "A JET from Cairo drops the July laws on Damascus, and Syrian banks and big firms become state property."}
+  - {year: 1963, peg: gem, confidence: medium, source: "Search: Syrian Ba'ath sources (2 May)",
+     event: "New Ba'ath government nationalises Syria's banks",
+     scene: "Ba'ath officers pry every GEM out of the private bank vaults of Damascus and lock them in state hands."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "Search: Syrian five-year plans",
+     event: "Syria nationalises its oil industry",
+     scene: "Damascus picks every oil CHERRY off the foreign concession trees and puts them in the state basket."}
+  - {year: 1965, peg: jelly, confidence: high, source: "Search: Ramadan decrees; Syrian five-year plans",
+     event: "Ba'ath government nationalises most of Syria's industry",
+     scene: "Syrian factories are poured into one state JELLY mould by the Ba'ath nationalisation decrees."}
+  - {year: 1968, peg: chef, confidence: high, source: "Search: country study (Tartus pipeline)",
+     event: "Syria starts to export its own oil",
+     scene: "A CHEF in Tartus loads Syria's first exported crude onto a tanker."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Economy of Syria",
+     event: "Investment Law No. 10 opens Syria to private and foreign investment",
+     scene: "A BOOT kicks open Syria's closed door to private and foreign investors under Law No. 10."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Economy of Syria",
+     event: "Syria's first private banks open",
+     scene: "Four private banks climb out of a SEWER of state control and open their doors in Damascus."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Economy of Syria",
+     event: "Damascus Securities Exchange opens",
+     scene: "Traders wash their hands with SOAP and open the first session of the Damascus Securities Exchange."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Search: CS Monitor; Intl sanctions vs Syria",
+     event: "European Union bans imports of Syrian oil",
+     scene: "Europe stamps a TATTOO of a ban on every barrel of Syrian oil."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Economy of Syria",
+     event: "US Caesar Act sanctions take effect and the Syrian pound tumbles",
+     scene: "The Caesar Act hits Syria on the NOSE, and the pound tumbles on the black market."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Economy of Syria",
+     event: "Syria joins China's Belt and Road Initiative",
+     scene: "A NUN ties a Chinese silk belt round Syria's waist as Damascus joins the Belt and Road Initiative."}
+  - {year: 2025, peg: nail, confidence: high, source: "Al Jazeera: Trump lifts Syria sanctions",
+     event: "United States lifts most sanctions on Syria",
+     scene: "Washington pulls out the NAIL that held the sanctions shut on Syria's economy."}
+  # Caucasus
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Rustavi Metallurgical Plant",
+     event: "Rustavi metallurgical plant is founded, the first full steel works in the South Caucasus",
+     scene: "Molten iron flows like lava over a REEF of slag at the new Rustavi plant, the first full steel works in the South Caucasus."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Sumgait",
+     event: "Sumgait tube-rolling plant makes its first pipes",
+     scene: "A LION rolls red-hot steel into the first oil pipes at the new Sumgait tube plant."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Sumgait",
+     event: "Sumgait aluminium plant in Azerbaijan starts work",
+     scene: "A LILY made of aluminium blooms at the new Sumgait plant on the Caspian shore."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Azerbaijani manat",
+     event: "Azerbaijan brings in the manat",
+     scene: "A PIANO plays as Azerbaijan prints its own manat beside the Soviet rouble."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Armenian dram",
+     event: "Armenia brings in the dram",
+     scene: "A PALM leaf wraps the first Armenian dram notes as the rouble leaves Yerevan."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Contract of the Century",
+     event: "Contract of the Century: Azerbaijan signs the Caspian oil deal with Western firms",
+     scene: "A BEAR signs the Contract of the Century in Baku and opens the Caspian oilfields to Western firms."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Georgian lari",
+     event: "Georgia brings in the lari and drops the coupon",
+     scene: "A BELL rings in Tbilisi as one lari replaces a million coupons."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Chirag oil field",
+     event: "First early oil flows from the Chirag platform",
+     scene: "A PIG runs through the pipe from the Chirag platform, pushing out the first early oil of the Caspian deal."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Baku-Supsa Pipeline",
+     event: "Baku-Supsa pipeline opens to the Georgian Black Sea coast",
+     scene: "A PIPE carries Caspian oil from Baku through Georgia to the tankers at Supsa."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Shah Deniz gas field",
+     event: "Shah Deniz gas field is found in the Caspian",
+     scene: "A PIPE pushed into the Caspian floor hisses with gas: Shah Deniz is found."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Baku-Tbilisi-Ceyhan pipeline",
+     event: "Azerbaijan, Georgia and Turkey sign the Baku-Tbilisi-Ceyhan pipeline agreement",
+     scene: "Three presidents sign a long PIPE that will carry Baku oil through Tbilisi to Ceyhan."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: State Oil Fund of Azerbaijan",
+     event: "Azerbaijan sets up its State Oil Fund (SOFAZ)",
+     scene: "A PIPE pours Azerbaijan's oil money into a vault: the State Oil Fund."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WTO press release",
+     event: "Georgia joins the World Trade Organization",
+     scene: "Georgian wine and WTO SAUCE mix in Tbilisi as Georgia joins the World Trade Organization."}
+  - {year: 2003, peg: sumo, confidence: high, source: "Search: Armenia Ministry of Economy; RFE/RL",
+     event: "Armenia joins the World Trade Organization",
+     scene: "A SUMO wrestler carries Armenian brandy into the WTO hall as Armenia joins."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Baku-Tbilisi-Ceyhan pipeline",
+     event: "Baku-Tbilisi-Ceyhan pipeline is opened at Sangachal",
+     scene: "A SEAL turns the wheel at Sangachal, and Caspian oil starts its trip to Ceyhan."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Baku-Tbilisi-Ceyhan pipeline",
+     event: "First Caspian oil from the BTC pipeline is loaded at Ceyhan",
+     scene: "A tanker at Ceyhan loads the first BTC oil, and the crew eat SUSHI to celebrate."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Azerbaijani manat",
+     event: "New manat removes three zeros (five thousand old manats to one)",
+     scene: "A SUSHI chef slices five thousand old manats into one new manat."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Shah Deniz gas field",
+     event: "Shah Deniz gas starts to flow through the South Caucasus Pipeline",
+     scene: "Shah Deniz gas flows to Georgia and Turkey and warms the plates of a SUSHI bar in Erzurum."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: 2006 Russian ban of Georgian wines",
+     event: "Russia bans Georgian wine and Borjomi mineral water",
+     scene: "Russia pours Georgian wine and Borjomi into the sink and serves SUSHI with water instead."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Iran-Armenia gas pipeline",
+     event: "Iran-Armenia gas pipeline is opened",
+     scene: "A SKI track of pipe runs over the mountains from Iran to Armenia, carrying gas."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: 2006 Russian ban of Georgian wines",
+     event: "Russia lifts its ban on Georgian wine",
+     scene: "Georgian wine rises from a TOMB of empty barrels as Russia lifts the ban."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Georgia-EU relations",
+     event: "Georgia signs the EU Association Agreement with a free trade area",
+     scene: "A TOWER of Georgian goods crosses into the EU under the new deep free trade agreement."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Eurasian Economic Union",
+     event: "Armenia joins the Eurasian Economic Union",
+     scene: "A Russian DOLL opens, and Armenia steps inside the Eurasian Economic Union."}
+  - {year: 2015, peg: doll, confidence: medium, source: "WP mirror: Azerbaijani manat (rate table)",
+     event: "Azerbaijan devalues the manat twice as oil prices fall",
+     scene: "A manat DOLL loses its head in February and its arms in December as Azerbaijan devalues twice."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Baku-Tbilisi-Kars railway",
+     event: "Baku-Tbilisi-Kars railway opens",
+     scene: "A DOG rides the first freight train from Baku through Tbilisi to Kars."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Contract of the Century",
+     event: "Azerbaijan extends the Azeri-Chirag-Gunashli oil contract to the middle of the century",
+     scene: "A DOG drags the old ACG contract into the future and signs it on for another thirty years."}
+  - {year: 2020, peg: nose, confidence: unverified,
+     event: "Georgia cancels the Anaklia deep-sea port contract",
+     scene: "Tbilisi turns up its NOSE at the Anaklia port group and cancels its contract."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Trans Adriatic Pipeline",
+     event: "Azerbaijani gas reaches Europe through the TAP pipeline",
+     scene: "Italy sniffs Azerbaijani gas with its NOSE as the first TAP flows arrive."}
+  # Cyprus
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Cypriot pound",
+     event: "Cyprus adopts the euro",
+     scene: "A Cypriot drops his last pounds behind the SOFA and pays in euros."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Aphrodite gas field",
+     event: "Aphrodite gas field is found off Cyprus",
+     scene: "Aphrodite with a gas-flame TATTOO rises from the sea south of Cyprus: a new gas field."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: 2012-2013 Cypriot financial crisis",
+     event: "Cyprus bailout: banks close, Laiki is shut and large deposits take losses",
+     scene: "Laiki bank is buried in a TOMB, and big Cypriot depositors lose part of their money in the bail-in."}
+  - {year: 2020, peg: nose, confidence: medium, source: "Search: citizenship-advisory site (single)",
+     event: "Cyprus ends its golden passport scheme after an exposé",
+     scene: "A reporter's hidden camera sniffs out the sale with its NOSE, and Cyprus ends its golden passports."}

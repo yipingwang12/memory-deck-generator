@@ -502,3 +502,45 @@ Fix-pass list (not done):
 - Peg overload: lasso 22 (western_europe_arts_pre500bce, "c. x50" midpoints; lasso scenes repetitive), jockey 18,
   chain 18, wolf 16, chef 15 (latin_america_arts_1945_present), lasso 15 (western_europe_arts_500bce_500ce),
   piano 12 (west_asia_politics_500_1500); 23 OVERLOAD warnings in wave 14 cells.
+
+## Wave 15 (2026-11-06)
+User's aim: next wave, largest cells first. Same log-linear fit, now on 198 cells (residual sd 0.40); top 23 of 234
+less the three north_america politics fit artifacts (pre500bce, 500bce_500ce, 500_1500: few dated pre-Columbian
+events). Opus agents, rolling queue of 8, budget 45 searches each; {expected} = fit × 1.3 (wave 14 cells all came in
+above the fit).
+latin_america politics 500_1500, west_asia economy 1945_present, latin_america economy 1945_present, west_asia economy
+1800_1945, north_africa politics 500_1500, central_asia arts 1945_present, southeast_asia economy 1945_present,
+central_asia arts 1800_1945, eastern_europe religion 1500_1800, central_asia politics 1500_1800, south_asia arts
+1500_1800, southeast_asia economy 1800_1945, east_asia science 1500_1800, north_africa economy 1945_present,
+eastern_europe science 1500_1800, north_africa economy 1800_1945, north_america religion 1500_1800, western_europe
+religion 500bce_500ce, east_asia society 1500_1800, east_asia arts 500_1500.
+Result (after main-session fixes): 4,710 dates over 20 cells (high 3,394, medium 725, low 38, disputed 102,
+unverified 451 = 10%); sizes 149–368 (north_america_religion_1500_1800 368 ≈ 2.4× the fit,
+north_africa_politics_500_1500 357, latin_america_politics_500_1500 324). Economy cells near or below the fit: older
+politics/science/society cells already hold their main events (first-come). Check exit 0 on all; all years inside the
+period. Grid now 218 of 432 cells, 53,914 dates. No usage-limit deaths (~5.7M subagent tokens).
+Unverified highest: east_asia_arts_500_1500 41%, east_asia_society_1500_1800 23%, east_asia_science_1500_1800 21%,
+north_america_religion_1500_1800 20% → first candidates for the next check pass.
+Main session: 20 cross-cell duplicates removed from the newer cell (first-come; where both cells were new, kept one):
+Omnibus Law 2020, Timor maritime treaty 2018, Bre-X 1997, Marina Bay Sands 2010 (southeast_asia_economy_1945_present);
+Royal Dutch Shell 1907, Royal Dutch Petroleum 1890, East Asiatic Company 1897, galleon trade end 1815
+(southeast_asia_economy_1800_1945); NAFTA 1994, USMCA 2020, Tin Council 1985 (latin_america_economy_1945_present; Tin
+Council kept in southeast_asia); ILSA 1996 (north_africa_economy_1945_present; kept in west_asia); SPG 1701
+(north_america_religion_1500_1800); Zhangzhou–Quanzhou feud 1782, Joseon embassy 1607 (east_asia_society_1500_1800);
+Petah Tikva 1878, Hindiya Barrage 1913 (west_asia_economy_1800_1945); Suez shares 1875
+(north_africa_economy_1800_1945); Hjortspring c. 350 BCE, Roquepertuse c. 300 BCE
+(western_europe_religion_500bce_500ce). Added: Todaiji Great Buddha 752 to east_asia_arts_500_1500 (agent left it out
+only because world_dates has it; world_dates is not a cell). Pending moves done: Taqi al-Din observatory, Müteferrika
+press (eastern_europe_science_1500_1800) → removed from pending_moves.yaml.
+Fix-pass list (not done):
+- Region: Battle of Merv 1510 sits in a west_asia cell, but Merv is in Turkmenistan → move to central_asia (politics
+  1500_1800). Inner Mongolia events (Ulan Butung, Dolon Nor, Ligdan's last years) are in
+  central_asia_politics_1500_1800 by the main-effect rule; Inner Mongolia is China = east_asia. Accept?
+- Scope: central_asia_arts_1800_1945 includes Kazakh books printed in Orenburg (main-effect rule), which
+  central_asia_society_1800_1945 left out. eastern_europe_science_1500_1800 files works printed abroad under the
+  author's home region (Bošković, Getaldić, Vrančić, Siemienowicz, Lubieniecki, Theotokis, Kopievsky); check for copies
+  in western_europe_science_1500_1800 (the duplicate scan found none).
+- Likely wrong / to settle: Kantajew temple completion 1752 → 1722 on one mirror page (both current) → disputed;
+  Wang Xichan's Xiao'an xinfa kept at 1663 against its one source (1643; author would be 15) — memory looks right;
+  Clovis's baptism 496 vs 508; Qatar Dukhan oil 1939/1940.
+- Peg overload: lasso 12 (latin_america_politics_500_1500), sofa 11 (central_asia_arts_1945_present).

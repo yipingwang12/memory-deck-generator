@@ -1,0 +1,609 @@
+# Cell: North Africa x economy x 1800 to 1944. DRAFT 2026-11-06.
+# Dates: memory pass + web check (45 searches, Kiwix WP mirror fetches). Peg rules as policy.md.
+# Range -> conventional c. date, else start of phase; work -> first public appearance (policy 2026-11-04).
+# Scope: trade, money, banks, debt, loans, land and tax law, companies, mines, tourism, exploration.
+# Left to older cells: railways, canals, dams, harbours, telegraph, air routes, mineral finds (science);
+# slave trade, strikes, unions, famine, locusts, settler villages (society); trade treaties of war (politics).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Egypt
+  - {year: 1808, peg: sofa, confidence: high,
+     source: "WP mirror: History of Egypt under Muhammad Ali",
+     event: "Muhammad Ali starts to seize private and tax-farm land for the state",
+     scene: "Muhammad Ali pulls the SOFA out from under the tax farmers and claims their fields for the state."}
+  - {year: 1813, peg: tomb, confidence: disputed,
+     source: "MESA abstract 1813; CIHEAM paper 1812",
+     event: "Muhammad Ali abolishes the tax farms (iltizam); the state collects land tax itself",
+     scene: "Muhammad Ali buries the last tax-farm contract in a TOMB, and his own clerks now collect every land tax."}
+  - {year: 1816, peg: dish, confidence: high,
+     source: "CIHEAM paper on Egyptian monopolies",
+     event: "Muhammad Ali makes a state monopoly of surplus wheat, beans and barley",
+     scene: "A state DISH swallows every surplus grain of wheat, beans and barley: only Muhammad Ali may buy and sell it."}
+  - {year: 1816, peg: dish, confidence: medium,
+     source: "EKB paper: al-Khurunfish factory (memory 1818)",
+     event: "Muhammad Ali's first textile factory starts at al-Khurunfish in Cairo",
+     scene: "A DISH of raw cotton feeds the first spinning frames of Muhammad Ali's state factory at al-Khurunfish."}
+  - {year: 1822, peg: nun, confidence: medium,
+     source: "WP mirror: Muhammad Ali dynasty 1822; others 1821",
+     event: "Jumel's long-staple cotton is first grown as a crop in the Nile Delta",
+     scene: "A NUN plants Maho Bey's long-staple seeds in the Delta, and Jumel's cotton becomes Egypt's cash crop."}
+  - {year: 1829, peg: knob, confidence: high,
+     source: "WP mirror: Timeline of Alexandria",
+     event: "Alexandria dockyard and arsenal open to build Egypt's own warships",
+     scene: "Cerisy turns the KNOB on the gate of the new Alexandria arsenal, and Egyptian workers start to build warships."}
+  - {year: 1834, peg: hammer, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "Decree sets a bimetallic standard and makes the Egyptian pound (geneih) the main unit",
+     scene: "A HAMMER strikes the first gold Egyptian pound, and the geneih replaces the piastre as the main coin."}
+  - {year: 1841, peg: radio, confidence: high,
+     source: "WP mirror: Shepheard's Hotel",
+     event: "Samuel Shepheard opens his Hotel des Anglais in Cairo, later Shepheard's Hotel",
+     scene: "A RADIO on the roof of Samuel Shepheard's new Hotel des Anglais calls British travellers to Cairo."}
+  - {year: 1854, peg: lawyer, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Said gives de Lesseps the first concession for a Suez canal company",
+     scene: "A LAWYER writes Said's first concession on the sand: de Lesseps may form a company to cut a canal at Suez."}
+  - {year: 1855, peg: lily, confidence: medium,
+     source: "Britannica: Said Pasha (search summary)",
+     event: "Said's law lets the male heirs of a peasant inherit his land",
+     scene: "A LILY grows on a peasant father's grave, and Said's law lets his sons inherit the field."}
+  - {year: 1856, peg: leech, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Said's second canal concession fixes a direct route and makes Egypt supply most diggers",
+     scene: "A LEECH signs Said's second canal concession, which drains Egypt of the men who must dig most of the canal."}
+  - {year: 1856, peg: leech, confidence: disputed,
+     source: "Ottoman Bank article 1856; Britannica 1858",
+     event: "Bank of Egypt opens as the country's first joint-stock bank",
+     scene: "A LEECH opens the first share account at the Bank of Egypt, the country's first joint-stock bank."}
+  - {year: 1858, peg: wolf, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Suez Canal Company share offer; Said buys the unsold shares; company formed",
+     scene: "A WOLF gobbles up the unsold Suez Canal shares for Said, and de Lesseps declares the company formed."}
+  - {year: 1858, peg: wolf, confidence: high,
+     source: "WP mirror: Muhammad Ali dynasty; EB1911",
+     event: "Said's land law gives the fellahin freehold rights against the state",
+     scene: "A WOLF guards a fellah's field after Said's land law makes the plot the farmer's own against the state."}
+  - {year: 1861, peg: jet, confidence: high,
+     source: "WP mirror: Timeline of Alexandria; Smithsonian",
+     event: "Cotton boom starts when the American Civil War cuts Southern cotton exports",
+     scene: "A JET of cotton bales shoots out of Alexandria when the American war stops the flow of Southern cotton."}
+  - {year: 1862, peg: chain, confidence: unverified,
+     event: "Said takes Egypt's first large public foreign loan, from Fruhling and Goschen",
+     scene: "Fruhling and Goschen lock a gold CHAIN round Said's wrist: Egypt's first large public foreign loan."}
+  - {year: 1864, peg: cherry, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Napoleon III's award: canal corvee ends and Egypt pays the company compensation",
+     scene: "Napoleon III drops a CHERRY on the scale: Egypt pays the canal company millions and the forced diggers go home."}
+  - {year: 1864, peg: cherry, confidence: high,
+     source: "WP mirror: Anglo-Egyptian Bank",
+     event: "Anglo-Egyptian Bank is founded in London and opens its Alexandria branch",
+     scene: "A CHERRY is the wax seal on the founding papers of the Anglo-Egyptian Bank, which opens a branch in Alexandria."}
+  - {year: 1865, peg: jelly, confidence: high,
+     source: "Smithsonian: Civil War and Egyptian cotton",
+     event: "Cotton prices crash at the end of the American war; the boom ends",
+     scene: "Egyptian cotton prices melt into JELLY when the American war ends, and indebted farmers sink in it."}
+  - {year: 1866, peg: judge, confidence: high,
+     source: "WP mirror: Caisse de la Dette Publique",
+     event: "Egypt borrows three million pounds from the Anglo-Egyptian Bank for railways",
+     scene: "A JUDGE stamps the loan papers: the Anglo-Egyptian Bank lends Ismail three million pounds for railways."}
+  - {year: 1867, peg: jockey, confidence: high,
+     source: "WP mirror: Caisse de la Dette Publique",
+     event: "Egypt takes a loan to buy estates and build sugar refineries",
+     scene: "A JOCKEY gallops sacks of borrowed money to Ismail's new sugar refineries and estates."}
+  - {year: 1869, peg: ship, confidence: high,
+     source: "Sea Museum: Cook's Nile services",
+     event: "Thomas Cook's first tourist party goes up the Nile on hired khedivial steamers",
+     scene: "Thomas Cook hires a khedivial SHIP and sends his first party of paying tourists up the Nile."}
+  - {year: 1871, peg: cat, confidence: high,
+     source: "WP mirror: Isma'il Pasha",
+     event: "Muqabala law: landowners who pay six years' tax in advance get lower tax for ever",
+     scene: "A fat CAT pays six years of land tax in advance and gets Ismail's promise of lower tax for ever."}
+  - {year: 1873, peg: comb, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Ismail takes a loan of about thirty million pounds, his largest",
+     scene: "A gold COMB rakes about thirty million pounds out of the European bankers for Ismail's biggest loan."}
+  - {year: 1875, peg: eagle, confidence: medium,
+     source: "WP mirror: Mixed Courts of Egypt (memory 1876)",
+     event: "Mixed Courts are set up to judge cases between foreigners and Egyptians",
+     scene: "An EAGLE in judge's robes hears the first claim of a foreign creditor in Egypt's new Mixed Courts."}
+  - {year: 1876, peg: cage, confidence: high,
+     source: "WP mirror: Muhammad Ali dynasty (Cave report)",
+     event: "Egypt cannot pay its debts; the Cave report calls bankruptcy certain",
+     scene: "Ismail's treasury is an empty CAGE, and the Cave report says Egypt is bankrupt."}
+  - {year: 1876, peg: cage, confidence: high,
+     source: "WP mirror: Caisse de la Dette Publique",
+     event: "Khedive's decree creates the Caisse de la Dette Publique",
+     scene: "Foreign commissioners lock Egypt's tax money in a CAGE: the Caisse de la Dette Publique is born."}
+  - {year: 1876, peg: cage, confidence: high,
+     source: "WP mirror: Muhammad Ali dynasty",
+     event: "Goschen-Joubert mission sets up Dual Control of Egypt's finances",
+     scene: "Goschen and Joubert fit a CAGE with two locks: an English controller takes revenue, a French one takes spending."}
+  - {year: 1876, peg: cage, confidence: high,
+     source: "WP mirror: Suez Canal Company",
+     event: "Egypt sells its share of canal profits to a French bank",
+     scene: "A French bank buys the CAGE that holds Egypt's future canal profits for twenty-two million francs."}
+  - {year: 1878, peg: cave, confidence: high,
+     source: "WP mirror: Isma'il Pasha; Muhammad Ali dynasty",
+     event: "Commission of inquiry makes Ismail give his private estates to the state",
+     scene: "Baring's commission drags Ismail's private estates out of his CAVE and hands them to the state."}
+  - {year: 1878, peg: cave, confidence: unverified,
+     event: "Rothschild loan secured on the khedive's family estates",
+     scene: "A Rothschild banker opens a CAVE of gold for Egypt and takes the khedive's estates as his security."}
+  - {year: 1880, peg: vase, confidence: high,
+     source: "EB1911: Egypt (Law of Liquidation)",
+     event: "Law of Liquidation consolidates Egypt's debt and gives half the revenue to the creditors",
+     scene: "The Law of Liquidation breaks Egypt's VASE of revenue in two: one half for the creditors, one for the state."}
+  - {year: 1880, peg: vase, confidence: high,
+     source: "entreprises-coloniales: Credit Foncier Egyptien",
+     event: "Credit Foncier Egyptien is founded to lend money on land",
+     scene: "A VASE stuffed with land mortgages stands on the desk of the new Credit Foncier Egyptien in Cairo."}
+  - {year: 1880, peg: vase, confidence: medium,
+     source: "Pitt Rivers Museum: Cook's notice",
+     event: "Government gives Thomas Cook control of its Nile passenger steamers for ten years",
+     scene: "A VASE painted with Nile steamers seals Cook's ten-year contract to run every government passenger boat."}
+  - {year: 1883, peg: foam, confidence: high,
+     source: "WP mirror: Egyptian Exchange",
+     event: "Alexandria Stock Exchange is founded, first as a cotton futures market",
+     scene: "Cotton futures FOAM over the first trading floor of the Alexandria Stock Exchange."}
+  - {year: 1885, peg: waffle, confidence: high,
+     source: "EB1911: Egypt (London Convention)",
+     event: "London Convention: the powers guarantee a nine-million-pound loan to Egypt",
+     scene: "Six powers each hold one square of a WAFFLE that guarantees Egypt's new nine-million-pound loan."}
+  - {year: 1885, peg: waffle, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "Egypt puts its pound on a gold standard and starts millieme coinage",
+     scene: "A WAFFLE iron stamps the new millieme coins, and the Egyptian pound is fixed to gold."}
+  - {year: 1898, peg: beehive, confidence: high,
+     source: "WP mirror: National Bank of Egypt",
+     event: "Cassel, the Suares brothers and partners found the National Bank of Egypt",
+     scene: "Cassel and the Suares brothers found the National Bank of Egypt in a BEEHIVE that hums with state money."}
+  - {year: 1899, peg: pipe, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "National Bank of Egypt issues its first banknotes",
+     scene: "A PIPE blows out the first Egyptian banknotes of the National Bank, from fifty piastres to a hundred pounds."}
+  - {year: 1902, peg: sun, confidence: high,
+     source: "WP mirror: National Bank of Egypt",
+     event: "Agricultural Bank of Egypt is set up to lend to small farmers",
+     scene: "The SUN dries the ink on cheap crop loans from the new Agricultural Bank of Egypt."}
+  - {year: 1903, peg: sumo, confidence: high,
+     source: "WP mirror: Egyptian Exchange",
+     event: "Cairo Stock Exchange is founded",
+     scene: "A SUMO wrestler shoves open the doors of the new Cairo Stock Exchange for the first day of trade."}
+  - {year: 1904, peg: sewer, confidence: medium,
+     source: "HWWA archive: SA de Wadi Kom-Ombo",
+     event: "Wadi Kom Ombo company is founded to irrigate desert land for sugar cane",
+     scene: "A giant SEWER pipe pumps Nile water onto the desert of the new Wadi Kom Ombo company."}
+  - {year: 1906, peg: sushi, confidence: medium,
+     source: "WP mirror: Heliopolis (1905 and 1906)",
+     event: "Baron Empain founds the Heliopolis Oases Company to build a desert suburb",
+     scene: "A SUSHI chef slices the desert into building lots for Baron Empain's new Heliopolis Oases Company."}
+  - {year: 1907, peg: ski, confidence: high,
+     source: "MESA abstracts; Egyptian Gazette May 1907",
+     event: "Crash on the Cairo and Alexandria bourses ends the land and share boom",
+     scene: "Share prices SKI straight down the Cairo and Alexandria bourses, and the land bubble bursts."}
+  - {year: 1908, peg: sofa, confidence: medium,
+     source: "Egypt Oil and Gas: Gemsa 1908 (also 1909)",
+     event: "Oil is found at Gemsa on the Red Sea, Egypt's first oil field",
+     scene: "Oil soaks a SOFA left in the Red Sea desert at Gemsa, Egypt's first oil field."}
+  - {year: 1910, peg: dice, confidence: unverified,
+     event: "General Assembly refuses to extend the Suez Canal Company's concession",
+     scene: "The General Assembly throws away the DICE and refuses to extend the Suez Canal Company's concession."}
+  - {year: 1911, peg: tattoo, confidence: high,
+     source: "WP: Anglo-Egyptian Oilfields (search summary)",
+     event: "Anglo-Egyptian Oilfields, a Shell and BP company, is registered in London",
+     scene: "Shell and BP get a matching TATTOO: Anglo-Egyptian Oilfields, their joint company for Egypt's oil."}
+  - {year: 1912, peg: tongue, confidence: medium,
+     source: "Egyptian legal archive: decree of November 1912",
+     event: "Five Feddan Law protects a small farmer's last land, house and tools from creditors",
+     scene: "Kitchener's TONGUE forbids creditors to seize a farmer's last five feddans, his house or his tools."}
+  - {year: 1913, peg: tomb, confidence: medium,
+     source: "WP: Anglo-Egyptian Oilfields 1913; others 1914",
+     event: "Oil is found at Hurghada on the Red Sea",
+     scene: "Drillers break open an oil TOMB at Hurghada, and the second Red Sea field starts to flow."}
+  - {year: 1914, peg: tower, confidence: high,
+     source: "Egyptian monetary history: decree of August 1914",
+     event: "National Bank notes become legal tender and gold leaves circulation",
+     scene: "A TOWER of paper notes replaces Egypt's gold coins when a war decree makes the notes legal tender."}
+  - {year: 1916, peg: dish, confidence: high,
+     source: "WP mirror: Economic history of Egypt",
+     event: "Commission on Commerce and Industry is appointed to plan Egyptian industry",
+     scene: "A DISH of foreign goods sits empty in wartime, so a Commission on Commerce and Industry is set up."}
+  - {year: 1917, peg: dog, confidence: high,
+     source: "WP mirror: Economic history of Egypt",
+     event: "Commission on Commerce and Industry reports and urges industrialisation",
+     scene: "A DOG carries the commission's report into the ministry: Egypt must build its own factories."}
+  - {year: 1920, peg: nose, confidence: high,
+     source: "WP mirror: Banque Misr",
+     event: "Talaat Harb and Joseph Cattaui found Bank Misr with Egyptian capital",
+     scene: "Talaat Harb's NOSE sniffs out Egyptian savings for Bank Misr, a bank owned by Egyptians."}
+  - {year: 1920, peg: nose, confidence: medium,
+     source: "QDL: British report on Egypt, 1921",
+     event: "Cotton prices collapse; the crop is worth less than half that of the year before",
+     scene: "Egyptian cotton prices fall flat on their NOSE: the new crop sells for less than half of the last."}
+  - {year: 1922, peg: nun, confidence: high,
+     source: "WP mirror: Economic history of Egypt",
+     event: "Egyptian Federation of Industries is founded",
+     scene: "A NUN rings the bell that founds the Egyptian Federation of Industries, the voice of factory owners."}
+  - {year: 1922, peg: nun, confidence: high,
+     source: "WP mirror: Talaat Harb",
+     event: "Misr Printing House, Bank Misr's first company, is founded",
+     scene: "A NUN sets the type at Misr Printing House, the first company that Bank Misr founds."}
+  - {year: 1923, peg: gnome, confidence: high,
+     source: "WP mirror: Talaat Harb",
+     event: "Bank Misr founds the Misr Cotton Ginning Company",
+     scene: "A GNOME feeds raw cotton into the gin of Bank Misr's new Misr Cotton Ginning Company."}
+  - {year: 1927, peg: ink, confidence: high,
+     source: "WP mirror: Misr Spinning and Weaving Company",
+     event: "Misr Spinning and Weaving Company is founded at Mahalla al-Kubra",
+     scene: "Bank Misr signs in INK and founds the Misr Spinning and Weaving Company at Mahalla al-Kubra."}
+  - {year: 1929, peg: knob, confidence: medium,
+     source: "Papers Past: NZ Herald, August 1930",
+     event: "Cotton prices fall in the world slump; the government buys cotton from growers",
+     scene: "As cotton prices fall, the government turns the KNOB of the treasury and buys the growers' bales."}
+  - {year: 1930, peg: mouse, confidence: high,
+     source: "WP mirror: Economic history of Egypt",
+     event: "Egypt's first protective tariff starts when the last old trade treaty ends",
+     scene: "A MOUSE guards Egypt's customs gate as the first protective tariff starts the day after the Italian treaty ends."}
+  - {year: 1930, peg: mouse, confidence: high,
+     source: "WP mirror: Talaat Harb",
+     event: "Bank Misr founds the Misr Transport and Shipping Company",
+     scene: "A MOUSE takes the helm of the first vessel of Bank Misr's new Misr Transport and Shipping Company."}
+  - {year: 1932, peg: moon, confidence: high,
+     source: "WP mirror: EgyptAir",
+     event: "Misr Airwork, Egypt's first airline, is founded",
+     scene: "Bank Misr and Airwork aim a plane at the MOON and found Misr Airwork, Egypt's first airline."}
+  - {year: 1933, peg: mummy, confidence: high,
+     source: "WP mirror: EgyptAir",
+     event: "Misr Airwork starts flights from Cairo to Alexandria and Mersa Matruh",
+     scene: "A MUMMY buys the first ticket on Misr Airwork's new passenger flight from Cairo to Alexandria."}
+  - {year: 1934, peg: hammer, confidence: high,
+     source: "EKB article: Misr Insurance",
+     event: "Misr General Insurance, the first Egyptian insurance company, is founded",
+     scene: "A shop smashed by a HAMMER gets the first payout from Misr Insurance, Egypt's first national insurer."}
+  - {year: 1935, peg: mill, confidence: high,
+     source: "WP mirror: Talaat Harb",
+     event: "Bank Misr founds the Misr Mines and Quarries Company",
+     scene: "A stone MILL grinds the first rock from the pits of Bank Misr's new Misr Mines and Quarries Company."}
+  - {year: 1938, peg: movie, confidence: high,
+     source: "OneMine: oil in Egypt in 1938",
+     event: "Ras Gharib oil field opens, Egypt's first large commercial field",
+     scene: "A MOVIE camera films oil gushing at Ras Gharib, Egypt's first big commercial oil field."}
+  - {year: 1939, peg: map, confidence: high,
+     source: "WP mirror: Banque Misr",
+     event: "Bank Misr fails in a run on deposits and is reorganised; Talaat Harb resigns",
+     scene: "Bank Misr's MAP of companies tears apart in a run on deposits, and Talaat Harb leaves the bank."}
+  - {year: 1940, peg: horse, confidence: high,
+     source: "WP mirror: Caisse de la Dette Publique",
+     event: "Anglo-Egyptian agreement abolishes the Caisse de la Dette",
+     scene: "The last foreign debt commissioner rides out of Cairo on a HORSE: the Caisse de la Dette is abolished."}
+  - {year: 1941, peg: radio, confidence: high,
+     source: "WP mirror: Middle East Supply Centre",
+     event: "Britain sets up the Middle East Supply Centre in Cairo to plan wartime imports",
+     scene: "A RADIO in Cairo orders ships about for the new Middle East Supply Centre, which cuts wartime imports."}
+
+  # Nubia and northern Sudan
+  - {year: 1838, peg: movie, confidence: medium,
+     source: "Sudan Studies: Muhammad Ali's visit, Oct 1838",
+     event: "Muhammad Ali travels to Fazughli in the Sudan to look for gold",
+     scene: "A MOVIE follows old Muhammad Ali up the Blue Nile to Fazughli, where he digs for gold he never finds."}
+  - {year: 1839, peg: map, confidence: high,
+     source: "ECAS paper: Salim Qapudan, Nov 1839",
+     event: "Salim Qapudan's first voyage up the White Nile opens the river to the ivory trade",
+     scene: "Salim Qapudan unrolls a MAP of the White Nile, and traders follow his boats south for ivory."}
+  - {year: 1884, peg: fairy, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "Gordon signs his own paper money in besieged Khartoum",
+     scene: "A FAIRY watches over each banknote that Gordon signs by hand in besieged Khartoum to pay his men."}
+  - {year: 1899, peg: pipe, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "The Egyptian pound becomes the money of the Anglo-Egyptian Sudan",
+     scene: "Egyptian pound notes pour down a PIPE into Khartoum, and the Sudan takes the pound as its money."}
+  - {year: 1901, peg: soda, confidence: high,
+     source: "WP mirror: National Bank of Egypt",
+     event: "National Bank of Egypt opens a branch in Khartoum as the government's banker",
+     scene: "A SODA fountain pays out the first deposits at the National Bank of Egypt's new Khartoum branch."}
+  - {year: 1904, peg: sewer, confidence: medium,
+     source: "Durham thesis (Gaitskell): Zeidab concession",
+     event: "Leigh Hunt gets a cotton concession at Zeidab, the first big farm scheme in the Sudan",
+     scene: "A SEWER-sized pump lifts Nile water onto Leigh Hunt's new cotton concession at Zeidab."}
+  - {year: 1911, peg: tattoo, confidence: disputed,
+     source: "Irrigation in Sudan 1911; Barakat article 1910",
+     event: "Sudan Plantations Syndicate's pump farm at Tayiba shows the Gezira can grow cotton",
+     scene: "A cotton-boll TATTOO marks the Syndicate's win at Tayiba: its pumped fields prove the Gezira can grow cotton."}
+  - {year: 1926, peg: nacho, confidence: high,
+     source: "Encyclopedia.com: Gezira Scheme",
+     event: "Gezira Scheme opens: government, Syndicate and tenants share the cotton profit",
+     scene: "Three hands share one NACHO plate: the Gezira Scheme splits its cotton money between state, Syndicate and tenants."}
+  - {year: 1929, peg: knob, confidence: high,
+     source: "WP mirror: History of irrigation in Sudan",
+     event: "Nile Waters Agreement limits the Sudan's dry-season use of Nile water",
+     scene: "Egypt grips the KNOB of the Nile tap: the Nile Waters Agreement limits Sudan's dry-season irrigation."}
+
+  # Libya
+  - {year: 1819, peg: tuba, confidence: unverified,
+     event: "Ritchie and Lyon reach Murzuq on a British attempt to cross from Tripoli to Bornu",
+     scene: "Ritchie and Lyon march into Murzuq behind a TUBA on Britain's first try to reach Bornu from Tripoli."}
+  - {year: 1822, peg: nun, confidence: high,
+     source: "WP mirror: Hugh Clapperton",
+     event: "Oudney, Denham and Clapperton leave Tripoli on the British mission to Bornu",
+     scene: "A NUN waves Oudney, Denham and Clapperton out of Tripoli on the British trade mission across the Sahara to Bornu."}
+  - {year: 1825, peg: nail, confidence: high,
+     source: "WP mirror: Alexander Gordon Laing",
+     event: "Laing leaves Tripoli to cross the Sahara to Timbuktu",
+     scene: "Laing hammers a NAIL into his Tripoli door two days after his wedding and sets out across the Sahara for Timbuktu."}
+  - {year: 1850, peg: lasso, confidence: high,
+     source: "WP mirror: Heinrich Barth",
+     event: "Richardson and Barth leave Tripoli on the British mission to open trade with central Sudan",
+     scene: "Richardson throws a trade LASSO south from Tripoli as Barth's mission sets out to open commerce with central Sudan."}
+  - {year: 1865, peg: jelly, confidence: high,
+     source: "WP mirror: Friedrich Gerhard Rohlfs",
+     event: "Rohlfs starts his crossing of Africa from Tripoli to Lagos",
+     scene: "Rohlfs walks out of Tripoli with a JELLY jar and does not stop until Lagos on the Atlantic."}
+  - {year: 1869, peg: ship, confidence: high,
+     source: "WP mirror: Gustav Nachtigal",
+     event: "Nachtigal sets out from Tripoli with the Prussian king's gifts for Bornu",
+     scene: "Nachtigal loads the Prussian king's gifts for Bornu on a desert SHIP, a camel, and leaves Tripoli."}
+  - {year: 1869, peg: ship, confidence: high,
+     source: "WP mirror: Alexandrine Tinne",
+     event: "Alexandrine Tinne is killed by Tuareg on the road from Murzuq to Ghat",
+     scene: "Tuareg raiders sink Alexandrine Tinne's desert SHIP: they plunder her caravan and kill her near Murzuq."}
+  - {year: 1873, peg: comb, confidence: medium,
+     source: "Cambridge JAH abstracts (Ghadames trade)",
+     event: "Tripoli Jewish merchants start their own caravans and end the Ghadames traders' monopoly",
+     scene: "A COMB splits the Ghadames merchants' hold: Tripoli's Jewish traders send their own caravans to Bornu and Kano."}
+  - {year: 1875, peg: eagle, confidence: medium,
+     source: "Cambridge JAH abstract (Newbury)",
+     event: "Trans-Saharan caravan trade through Tripoli reaches its peak value",
+     scene: "An EAGLE loaded with ostrich plumes and ivory flies into Tripoli in the record year of the Saharan caravan trade."}
+  - {year: 1878, peg: cave, confidence: disputed,
+     source: "WP mirror: Rohlfs 1878; memory 1879",
+     event: "Rohlfs and Stecker reach the Kufra oases and are forced to flee",
+     scene: "Rohlfs and Stecker crawl into the CAVE of the Kufra basin, the first Europeans there, and must run for their lives."}
+  - {year: 1907, peg: ski, confidence: high,
+     source: "WP: Umma Bank; Belleten article",
+     event: "Banco di Roma opens a branch in Tripoli",
+     scene: "Banco di Roma's manager rides a SKI down a dune into Tripoli and opens Italy's bank branch there."}
+  - {year: 1923, peg: gnome, confidence: medium,
+     source: "WP mirror: Ahmed Hassanein (start Dec 1922)",
+     event: "Hassanein Bey's expedition reaches the lost oases of Arkenu and Uweinat",
+     scene: "A GNOME leads Hassanein Bey's camels across the Libyan Desert to the lost oases of Arkenu and Uweinat."}
+  - {year: 1927, peg: ink, confidence: high,
+     source: "ICCD record: first Fiera Campionaria di Tripoli",
+     event: "First Tripoli Trade Fair opens, the oldest trade fair in Africa",
+     scene: "Italy prints the first Tripoli Trade Fair poster in INK, and Africa's oldest trade fair opens its gates."}
+  - {year: 1928, peg: knife, confidence: high,
+     source: "Archistor article on Libya colonisation laws",
+     event: "De Bono's decrees give Libyan state land to Italian peasant families",
+     scene: "A KNIFE carves Libya's state land into farm lots, and De Bono's decrees hand them to Italian peasant families."}
+  - {year: 1932, peg: moon, confidence: high,
+     source: "Cambridge article: Fascist agriculture in Libya",
+     event: "Ente per la Colonizzazione della Cirenaica is founded to settle Italian farmers",
+     scene: "By the light of the MOON, the new Cyrenaica Colonisation Agency stakes out farms for Italian settlers."}
+  - {year: 1942, peg: rhino, confidence: high,
+     source: "WP mirror: Egyptian pound",
+     event: "Egyptian pound becomes the money of British-held Cyrenaica",
+     scene: "A British RHINO charges into Cyrenaica loaded with Egyptian pound notes, and the province now pays in Egypt's money."}
+
+  # Tunisia
+  - {year: 1840, peg: horse, confidence: medium,
+     source: "WP: Ahmad I ibn Mustafa (search summary)",
+     event: "Ahmad Bey's water-powered cloth mill for the army opens at Tebourba",
+     scene: "A HORSE hauls the first bolts of army cloth out of Ahmad Bey's water-powered mill at Tebourba."}
+  - {year: 1847, peg: rock, confidence: medium,
+     source: "WP: Dar al-Mal; Tunisian stamp note (also 1846)",
+     event: "Dar al-Mal, Tunisia's state bank, issues the first Tunisian banknotes",
+     scene: "Ahmad Bey's Dar al-Mal bank weighs down Tunisia's first paper banknotes with a ROCK so they do not blow away."}
+  - {year: 1852, peg: lion, confidence: medium,
+     source: "WP: Dar al-Mal (search summary)",
+     event: "Mahmoud Ben Ayed flees Tunisia and the Dar al-Mal bank stops",
+     scene: "Mahmoud Ben Ayed runs off to France with the LION's share of the money, and the Dar al-Mal bank dies."}
+  - {year: 1863, peg: gem, confidence: high,
+     source: "CADTM: Debt, how France took Tunisia",
+     event: "The bey takes his first foreign loan, arranged by Emile Erlanger",
+     scene: "Erlanger pockets a GEM from every bond of the bey's first foreign loan, and Tunisia gets far less than it owes."}
+  - {year: 1865, peg: jelly, confidence: medium,
+     source: "Kapitalis: debt and the French conquest",
+     event: "Tunisia takes a second foreign loan on worse terms",
+     scene: "The bey signs a second, worse loan in Paris, and his debts set round Tunisia like cold JELLY."}
+  - {year: 1869, peg: ship, confidence: high,
+     source: "WP mirror: Husainid dynasty; Kapitalis",
+     event: "International Financial Commission takes control of Tunisia's debt and revenue",
+     scene: "A SHIP of French, British and Italian commissioners docks at Tunis and takes over the bey's revenue."}
+  - {year: 1880, peg: vase, confidence: high,
+     source: "entreprises-coloniales: Enfida (April or July)",
+     event: "Khayr al-Din sells the Enfida estate to the Societe Marseillaise; the Levy dispute follows",
+     scene: "Khayr al-Din hides the Enfida deed in a VASE for a Marseille company, and Levy smashes it to claim the land."}
+  - {year: 1884, peg: fairy, confidence: high,
+     source: "WP: Conventions of La Marsa",
+     event: "Tunisian debt is converted with a French guarantee; the debt commission is dissolved",
+     scene: "A FAIRY taps Tunisia's debt with a French guarantee, converts it, and the international commission disappears."}
+  - {year: 1885, peg: waffle, confidence: high,
+     source: "WP: Couiteas affair; Tunisian state paper",
+     event: "Decree sets up registration of land titles in Tunisia",
+     scene: "A WAFFLE grid of numbered plots: Tunisia's new decree lets every owner register a land title."}
+  - {year: 1891, peg: boot, confidence: high,
+     source: "WP mirror: Tunisian franc",
+     event: "The franc replaces the rial as Tunisia's money",
+     scene: "A French BOOT kicks the old rial off the counter, and the Tunisian franc becomes the money."}
+  - {year: 1892, peg: piano, confidence: unverified,
+     event: "Settlers plant olive groves at Sfax under m'gharsa sharecrop contracts",
+     scene: "A PIANO keyboard of olive rows spreads round Sfax as settlers plant groves under m'gharsa contracts."}
+  - {year: 1897, peg: pig, confidence: medium,
+     source: "entreprises-coloniales: Gafsa (1896 or 1897)",
+     event: "Gafsa Phosphate and Railway Company is founded",
+     scene: "A PIG roots up phosphate rock at Metlaoui for the newly founded Gafsa Phosphate and Railway Company."}
+  - {year: 1898, peg: beehive, confidence: unverified,
+     event: "Decree opens habous endowment land to French settlers",
+     scene: "A BEEHIVE of French settlers swarms onto habous endowment land after a decree opens it to them."}
+  - {year: 1899, peg: pipe, confidence: medium,
+     source: "WP: Metlaoui (search summary)",
+     event: "First underground phosphate mine opens at Metlaoui",
+     scene: "A PIPE of phosphate dust blows out of the first underground mine at Metlaoui."}
+  - {year: 1904, peg: sewer, confidence: high,
+     source: "WP mirror: Banque de l'Algerie",
+     event: "Banque de l'Algerie's note monopoly is extended to Tunisia",
+     scene: "Banque de l'Algerie notes flow through a SEWER under the border: its note monopoly now covers Tunisia."}
+
+  # Algeria
+  - {year: 1826, peg: nacho, confidence: disputed,
+     source: "WP mirror: Bakri-Busnach affair 1826; memory 1820",
+     event: "France agrees to pay only seven million francs of the Bakri-Busnach wheat debt",
+     scene: "France pays for a mountain of Bakri-Busnach wheat with one NACHO: seven million francs of a far larger debt."}
+  - {year: 1830, peg: mouse, confidence: high,
+     source: "Herodote; FOTW (48 to 50 million francs)",
+     event: "The French take the Dey's treasury in the Casbah of Algiers",
+     scene: "A French MOUSE runs off with gold from the Casbah treasury: about fifty million francs of the Dey's wealth."}
+  - {year: 1844, peg: warrior, confidence: high,
+     source: "WP mirror: French Algeria",
+     event: "Bugeaud's land rules let the state seize tribal land it calls unused",
+     scene: "A WARRIOR plants the state flag on tribal pasture: Bugeaud's rules take land the French call unused."}
+  - {year: 1851, peg: wallet, confidence: high,
+     source: "WP mirror: Banque de l'Algerie",
+     event: "Banque de l'Algerie is founded with the right to issue notes",
+     scene: "Algeria gets its own WALLET: the new Banque de l'Algerie opens with sole right to print notes."}
+  - {year: 1851, peg: wallet, confidence: medium,
+     source: "Lille univ. paper: customs law of January 1851",
+     event: "Customs law lets most Algerian goods into France free of duty",
+     scene: "An Algerian WALLET crosses to Marseille unopened: the customs law lets most Algerian goods in duty-free."}
+  - {year: 1857, peg: log, confidence: high,
+     source: "WP mirror: Societe Mokta El Hadid",
+     event: "Talabot's group gets the concession for the Mokta el Hadid iron mine near Bone",
+     scene: "Talabot's men roll a LOG off the iron hill of Mokta el Hadid and take its mining concession."}
+  - {year: 1859, peg: elbow, confidence: high,
+     source: "WP mirror: Henri Duveyrier",
+     event: "Duveyrier starts his journey of exploration among the northern Tuareg",
+     scene: "Young Duveyrier pushes an ELBOW through a Tuareg tent flap and starts his long Sahara journey."}
+  - {year: 1863, peg: gem, confidence: high,
+     source: "HAL paper: imperial law of 1863",
+     event: "Senatus-consulte delimits tribal land and prepares it for private ownership",
+     scene: "A GEM cutter slices each tribe's land into marked plots under the senatus-consulte."}
+  - {year: 1863, peg: gem, confidence: high,
+     source: "WP mirror: Societe Mokta El Hadid",
+     event: "Societe de Mokta el Hadid is formally established",
+     scene: "A GEM of black magnetite becomes the badge of the newly formed Mokta el Hadid company."}
+  - {year: 1865, peg: jelly, confidence: high,
+     source: "WP mirror: Societe Mokta El Hadid",
+     event: "Talabot founds the Societe Generale Algerienne, a land and credit company",
+     scene: "Talabot spreads his Societe Generale Algerienne like JELLY across Algerian land and credit."}
+  - {year: 1873, peg: comb, confidence: high,
+     source: "Algerian univ. course; EB1911",
+     event: "Warnier law turns tribal and family land into private property",
+     scene: "Warnier's COMB pulls tribal and family land apart into private plots that settlers can buy."}
+  - {year: 1881, peg: foot, confidence: high,
+     source: "WP mirror: Flatters expedition",
+     event: "Tuareg destroy the Flatters railway survey at Bir el-Garama",
+     scene: "Tuareg stop the Flatters railway survey at Bir el-Garama, and only four FOOT soldiers walk back to Ouargla."}
+  - {year: 1884, peg: fairy, confidence: high,
+     source: "Lille univ. paper: law of December 1884",
+     event: "Customs law makes Algeria's tariff the same as France's",
+     scene: "A FAIRY wand makes Algeria's tariff wall the same as France's: full customs union with the metropole."}
+  - {year: 1885, peg: waffle, confidence: high,
+     source: "Reclus: Africa vol. 2",
+     event: "Phylloxera first appears in Algeria at Mansourah near Tlemcen",
+     scene: "Phylloxera eats a WAFFLE of vine roots at Mansourah near Tlemcen, its first attack in Algeria."}
+  - {year: 1898, peg: beehive, confidence: high,
+     source: "Nature review (Foureau-Lamy)",
+     event: "Foureau-Lamy mission leaves Ouargla for Lake Chad",
+     scene: "Foureau and Lamy lead a BEEHIVE of a thousand camels out of Ouargla on the long road to Lake Chad."}
+  - {year: 1900, peg: sauce, confidence: high,
+     source: "EB1911: Algeria; Statesman's Year-Book",
+     event: "Law gives Algeria a separate budget and the power to borrow",
+     scene: "Algeria gets its own pot of SAUCE: a December law gives it a separate budget and power to borrow."}
+  - {year: 1913, peg: tomb, confidence: high,
+     source: "WP mirror: Societe de l'Ouenza",
+     event: "Societe de l'Ouenza is founded to mine the Ouenza iron hill",
+     scene: "Steel makers open an iron TOMB at Ouenza: the Societe de l'Ouenza forms with huge capital."}
+  - {year: 1921, peg: ant, confidence: high,
+     source: "WP mirror: Societe de l'Ouenza",
+     event: "Mining starts at Ouenza when its narrow-gauge railway opens",
+     scene: "ANT columns carry the first iron ore out of Ouenza as mining starts on the new narrow railway."}
+  - {year: 1934, peg: hammer, confidence: medium,
+     source: "Meloni and Swinnen: law of December 1934",
+     event: "Wine market law limits wine output and new vineyards in France and Algeria",
+     scene: "A HAMMER falls on Algeria's vineyards: the wine market law caps output and new planting."}
+
+  # Morocco
+  - {year: 1828, peg: knife, confidence: high,
+     source: "WP mirror: Rene Caillie",
+     event: "Caillie reaches Fez after crossing the Sahara from Timbuktu",
+     scene: "Caillie cuts north across the Sahara with a KNIFE in his belt and walks into Fez from Timbuktu."}
+  - {year: 1830, peg: mouse, confidence: medium,
+     source: "WP mirror: Timeline of Casablanca",
+     event: "The port of Casablanca reopens to foreign trade",
+     scene: "A MOUSE gnaws through the chain, and the port of Casablanca reopens to foreign ships."}
+  - {year: 1861, peg: jet, confidence: high,
+     source: "WP mirror: 1861 British loan to Morocco",
+     event: "British loan pays Spain's war indemnity; half the port customs repay it",
+     scene: "A JET of British pounds pays Spain's war indemnity, and half of Morocco's port customs flows back to repay it."}
+  - {year: 1863, peg: gem, confidence: medium,
+     source: "US State Dept: French protection rules of 1863",
+     event: "French protection rules: Moroccan agents of French firms become tax-free protégés",
+     scene: "Beclard pins a GEM badge on Moroccan agents of French firms: as protégés they pay no tax."}
+  - {year: 1880, peg: vase, confidence: high,
+     source: "WP: Treaty of Madrid (1880)",
+     event: "Madrid Convention keeps the protégé system that exempts foreign agents from tax",
+     scene: "Hassan I asks the powers to break the protégé VASE at Madrid, but they glue it together and keep it."}
+  - {year: 1882, peg: oven, confidence: high,
+     source: "WP mirror: Moroccan rial",
+     event: "Hassan I's reform brings modern coinage based on the silver rial",
+     scene: "Hassan I bakes new silver rials in an OVEN, and Morocco gets its first modern coins."}
+  - {year: 1883, peg: foam, confidence: high,
+     source: "WP mirror: Charles de Foucauld",
+     event: "Charles de Foucauld, dressed as a rabbi, starts his survey journey through Morocco",
+     scene: "Dressed as a rabbi, Foucauld starts to map Morocco and hides his notes in a block of FOAM."}
+  - {year: 1901, peg: soda, confidence: high,
+     source: "le360: dahir of September 1901",
+     event: "Abdelaziz's tertib puts one tax on all farm land and stock, protégés included",
+     scene: "A SODA bottle fizzes over with anger: Abdelaziz's tertib taxes every farmer, sharif and protégé alike."}
+  - {year: 1904, peg: sewer, confidence: high,
+     source: "WP mirror: Moroccan Debt Administration",
+     event: "French bank loan to Morocco is secured on customs, with a debt administration",
+     scene: "Morocco's customs money drains down a SEWER to Paris to repay the big French bank loan."}
+  - {year: 1906, peg: sushi, confidence: disputed,
+     source: "Timeline of Casablanca 1906; history page 1907",
+     event: "Work on the modern port of Casablanca begins",
+     scene: "Workers set stone blocks like SUSHI rolls into the sea as building of Casablanca's modern port starts."}
+  - {year: 1907, peg: ski, confidence: high,
+     source: "WP mirror: State Bank of Morocco",
+     event: "State Bank of Morocco is established with its seat in Tangier",
+     scene: "A SKI lift carries crates of gold up to Tangier, seat of the new State Bank of Morocco."}
+  - {year: 1910, peg: dice, confidence: high,
+     source: "WP mirror: Moroccan Debt Administration",
+     event: "Morocco takes another French loan to pay its debts",
+     scene: "The sultan rolls the DICE on one more French loan to pay off the old ones."}
+  - {year: 1915, peg: doll, confidence: high,
+     source: "WP: Casablanca Fair of 1915",
+     event: "Franco-Moroccan Fair at Casablanca shows French goods to Morocco",
+     scene: "A French DOLL in a shop window opens the Casablanca Fair, Lyautey's show of French goods for Morocco."}
+  - {year: 1919, peg: tuba, confidence: high,
+     source: "WP mirror: Economic history of Morocco",
+     event: "Compagnie de Transports au Maroc (CTM) is founded",
+     scene: "A TUBA honks the horn of the first bus of the new Compagnie de Transports au Maroc."}
+  - {year: 1920, peg: nose, confidence: high,
+     source: "WP mirror: OCP Group",
+     event: "Office Cherifien des Phosphates is founded as the state phosphate company",
+     scene: "A NOSE sniffs phosphate dust at Khouribga as the Office Cherifien des Phosphates is set up."}
+  - {year: 1920, peg: nose, confidence: disputed,
+     source: "State Bank of Morocco 1920; Moroccan rial 1921",
+     event: "The Moroccan franc replaces the Hassani rial in the French zone",
+     scene: "The State Bank blows its NOSE on the old Hassani rial and issues Moroccan francs instead."}
+  - {year: 1921, peg: ant, confidence: high,
+     source: "WP mirror: OCP Group",
+     event: "Mining starts at Khouribga; the first phosphate is exported through Casablanca",
+     scene: "ANT trains carry the first Khouribga phosphate down to Casablanca for export."}
+  - {year: 1927, peg: ink, confidence: medium,
+     source: "Oujda platform via news (some say 1930s)",
+     event: "Coal is reported at Jerada in eastern Morocco",
+     scene: "Geologist Horry finds coal as black as INK in the Jerada hills."}
+  - {year: 1929, peg: knob, confidence: high,
+     source: "WP mirror: Timeline of Casablanca",
+     event: "Casablanca Stock Exchange is founded",
+     scene: "A brass KNOB opens the door of the new Casablanca Stock Exchange."}
+  - {year: 1929, peg: knob, confidence: high,
+     source: "WP mirror: Societe Mokta El Hadid",
+     event: "Mokta founds SACEM to mine manganese at Imini",
+     scene: "Mokta turns a KNOB on the High Atlas: its new company SACEM starts to dig the Imini manganese."}
+  - {year: 1931, peg: moth, confidence: high,
+     source: "WP mirror: OCP Group",
+     event: "Phosphate mining starts at Youssoufia, the OCP's second mine",
+     scene: "A MOTH flies out of the new phosphate pit at Youssoufia, the second mine of the OCP."}
