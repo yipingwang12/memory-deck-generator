@@ -385,3 +385,59 @@ Fix-pass list (not done):
 - Thin: southeast_asia_science has 1 Laos/Cambodia entry; south_asia_arts none for Bhutan/Maldives.
 - Peg overload: north_america_society mill 17, dog 16, dish 13, ink 12, mug 11, tuba 11; south_asia_arts
   match 11. Weak scenes self-reported: north_africa_arts 1923/1932/1934, west_asia_arts Ankara 1924/1935.
+
+## Wave 13 (2026-11-05/06)
+User's aim: one big wave of 25 cells to use the night. Fit on 153 cells (residual sd 0.41); top 25 of 279
+(predicted 175–215), except north_america politics 500_1500 (fit says 199; few dated pre-Columbian events)
+→ replaced by #26, north_africa religion 1945_present. Opus agents, rolling queue of 8 at a time, budget 22
+searches each (~550 of the ~600 left in the session).
+north_america society 1945_present, south_asia arts 1945_present, south_asia science 1800_1945, west_asia arts
+1945_present, east_asia politics pre500bce, latin_america politics 1500_1800, southeast_asia religion
+1945_present, western_europe arts 500_1500, south_asia religion 1945_present, eastern_europe politics
+pre500bce, north_africa arts 1945_present, southeast_asia society 1800_1945, north_africa religion 1800_1945,
+west_asia science 1800_1945, south_asia society 1800_1945, north_america economy 1945_present, south_asia
+science 1945_present, eastern_europe politics 500bce_500ce, north_africa science 1800_1945, latin_america arts
+1800_1945, eastern_europe arts 1500_1800, west_asia religion 1945_present, western_europe religion 500_1500,
+west_asia society 1800_1945, north_africa religion 1945_present.
+Result: 6,905 dates over 25 cells (high 5,037, medium 559, low 17, disputed 107, unverified 1,185 = 17%);
+sizes 134–416. Check exit 0 on all; all years inside the period. Grid now 178 of 432 cells, 43,637 dates.
+Rolling queue of 8 Opus agents (~200–330k tokens each, ~6.3M total over ~3 h): no usage-limit deaths.
+Unverified highest: western_europe_religion_500_1500 41%, south_asia_science_1945_present 39%,
+latin_america_arts_1800_1945 34%. 22 searches is too few for dense cells; Kiwix fetches carried the rest.
+eastern_europe_politics_500bce_500ce set "high" by a script (year + keyword match in ~270 mirror pages, then
+hand-checked); main-session audit of 14 random high entries: all correct (Agis III 331 vs 330 debatable).
+Pending moves done: Ronald Ross (south_asia_science_1800_1945), Ambedkar Nagpur 1956
+(south_asia_religion_1945_present) → remove both from pending_moves.yaml.
+
+OPEN RULE (user), main theme vs "already in an older cell": religion and economy agents left out events whose
+main theme is theirs because an older politics/society cell already holds them — Babri, Blue Star, Ram temple
+(South Asia); Quang Duc (SE Asia); Muslim Brotherhood, Mahdi, Qutb hanging, Tibhirine, church bombings (North
+Africa); Grand Mosque seizure (West Asia); Canossa, Becket, Templars (Western Europe); NAFTA, USMCA, tax acts,
+2025 tariffs (North America economy); Comecon, Gaidar, euro changeovers (wave 12, Eastern Europe economy).
+Options: move to the main-theme cell, or keep first-come.
+Fix-pass list (not done):
+- Dropped against the brief, restore: Benedictional of St Aethelwold (western_europe_arts_500_1500; dropped to
+  keep eagle ≤ 10), Sarawak abolition of slavery (southeast_asia_society_1800_1945; 1886 vs 1915, disputed),
+  IS killing of Ethiopian Christians in Libya 2015 (north_africa_religion_1945_present; no passing scene).
+- Likely wrong: Sahitya Akademi first awards 1955 → 1954 (Akademi founded 1954; split); Kutiyattam/Ramlila
+  proclamation 2001/2005 vs inscription 2008 = two events; Rajputana famine 1868 → 1869 (phase-start rule →
+  1868); La cumparsita 1917 → 1916 (premiere 1917, composed 1916; fix text); Felitsa 1782 (first printed 1783);
+  Karekin I 1994 (elected Catholicos of All Armenians April 1995); Synod of Hertford 673 → 672 (Bede 673);
+  Saha Institute 1943 vs 1949 (usual 1949); Montevideo 1724 (fort) vs 1726 (formal founding) — fix text.
+- Scope: Midnight's Children left out of south_asia_arts_1945_present (written in UK) but Camus's The Plague
+  (Oran) is in north_africa_arts_1945_present — same open "issued outside the region" rule. Excavations
+  (Tutankhamun, Abu Simbel, Nefertiti) sit in north_africa arts; west_asia science counts excavation as science.
+- Cross-cell: Spartacus premiere 1956 (Leningrad) in west_asia_arts_1945_present AND eastern_europe_arts_1945
+  → delete from west_asia; Bede's History 731 in western_europe arts + religion 500_1500; Sudan apostasy repeal
+  2020 in north_africa religion + society 1945. Koch 1883 (Egypt) and Laveran 1880 (Algeria) in both
+  north_africa_science_1800_1945 and western_europe_science_1800_1945 → delete from western_europe. Move to
+  eastern_europe_arts_1500_1800 from western_europe_arts_1500_1800: Don Giovanni Prague, Paisiello's Barber
+  St Petersburg, Haydn Farewell at Eszterháza. Kreta Ayer 1927 missing from southeast_asia_politics_1800_1945.
+- Recent events from search snippets only: north_america_society_1945_present 2023–26 (Key Bridge, Jasper
+  fire, Tumbler Ridge, No Kings, measles status); PFBR first criticality April 2026; Zayed National Museum 2025.
+- Hawaii: Lahaina 2023 filed under US (fits "oceania until statehood 1959").
+- Layout: some cells group by era/state instead of geography (east_asia pre500bce, eastern_europe 500bce_500ce
+  Greece, north_america economy US by period, south_asia society "All-India" groups). Acceptable?
+- Peg overload: hanger 16, radio 13, gem 11 (latin_america_politics_1500_1800); knife/moth/mug 12,
+  movie/warrior 11 (latin_america_arts_1800_1945); eagle 13 (southeast_asia_religion); lawyer 13
+  (south_asia_arts_1945); sofa 12 (north_america_economy); judge 11 (north_america_society_1945).

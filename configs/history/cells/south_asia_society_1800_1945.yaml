@@ -1,0 +1,760 @@
+# Cell: South Asia x society x 1800 to 1944. DRAFT 2026-11-06.
+# Scope: India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives. Social change, education,
+# rights movements, caste reform without a religious core, women's rights, labour, slavery and indenture,
+# epidemics, natural disasters, famines, census and population, sport.
+# Out (in other cells): sati regulation, temple entry, Brahmo/Arya/SNDP/Satyashodhak and the Manusmriti
+# burning (religion); Slavery Act, Thuggee Act, Indigo revolt, Kisan Sabha, Poona Pact (politics);
+# medical colleges, vaccines, Haffkine (science); art schools (arts).
+# Emigrants and athletes the region sends abroad are in (policy Scope).
+# Dates: memory pass + web check (22 searches + WP mirror fetches). Gregorian years.
+# Peg = last two digits of the year. Range -> conventional c. date, else start of the phase.
+# A school or society is dated by its founding; a law by its passing; a disaster by its start.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # All-India: laws, commissions and census
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Charter Act makes the Company spend a lakh of rupees a year on education",
+     scene: "A TOMB cracks open and spills a lakh of silver rupees into Company schools, as the Charter Act orders."}
+  - {year: 1835, peg: mill, confidence: unverified,
+     event: "Macaulay's Minute on Education argues for English over Sanskrit and Arabic",
+     scene: "Macaulay feeds Sanskrit and Arabic books into a MILL, and only English textbooks come out at the other end."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "English Education Act makes English the medium of state-funded schools",
+     scene: "Bentinck turns the MILL wheel of the new Act, and every Company school drops Persian and teaches in English."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Wood's Despatch plans graded schools from village level up to universities",
+     scene: "A LAWYER named Charles Wood dictates a despatch that builds a ladder from village schools up to universities."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP mirror: Hindu Widows' Remarriage Act",
+     event: "Hindu Widows' Remarriage Act makes the remarriage of Hindu widows legal",
+     scene: "A LEECH of old custom drops off a young widow's arm when the new Act frees her to marry again."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Women in India",
+     event: "Female Infanticide Prevention Act targets the killing of baby girls",
+     scene: "A GOOSE spreads its wings over a cradle of baby girls as the new Act forbids their killing."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP mirror: Census of India prior to independence",
+     event: "First all-India census is completed, though not on a single day",
+     scene: "Clerks drop one COIN in a jar for each person, and the first all-India census adds up the jars region by region."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Women in India",
+     event: "Married Women's Property Act lets wives keep their own earnings",
+     scene: "A wife drives off in her own CAR, bought with wages the new Property Act lets her keep."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Famines in India",
+     event: "First Famine Commission finds lost wages are the main cause of famine",
+     scene: "The Famine Commission smashes a VASE of grain and finds empty wage purses inside, the true cause of famine."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "First synchronous census counts British India on a single night",
+     scene: "Enumerators set FOOT in every house of British India on the same night for the first synchronous census."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Trade unions in India",
+     event: "First Factories Act limits the work of young children in factories",
+     scene: "A small FOOT stops at the mill gate: the first Factories Act limits the shifts of young children."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Hunter's Education Commission calls for more primary and local schools",
+     scene: "William Hunter's commission bakes village primary schools in a giant OVEN and hands them to local boards."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Famines in India",
+     event: "Indian Famine Code sets rules for relief works and food aid",
+     scene: "Ripon's officials spray FOAM from the new Famine Code onto the fire of famine: relief works and grain doles."}
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "Countess of Dufferin's Fund starts to train women doctors for Indian women",
+     scene: "Lady Dufferin sells WAFFLE stacks to pay for women doctors and women's wards across India."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Age of Consent Act, 1891",
+     event: "Age of Consent Act raises the age of consent for girls from ten to twelve",
+     scene: "A BOOT kicks the age of consent for girls up from ten to twelve."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "Baines's census counts about two hundred and eighty-seven million people",
+     scene: "Census men leave a BOOT print at each head counted, and the prints total two hundred and eighty-seven million."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Famines in India",
+     event: "Famine spreads across Madras Presidency and much of India",
+     scene: "A shrivelled PEACH hangs on every tree from Madras to the Punjab as the famine spreads."}
+  - {year: 1897, peg: pig, confidence: high, source: "Search: Act III of 1897 assent, 4 Feb",
+     event: "Epidemic Diseases Act gives officials wide powers against plague",
+     scene: "Officers seize a PIG with plague fleas as the Epidemic Diseases Act lets them search houses and burn goods."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Search: Indian Plague Commission, Nov 1898",
+     event: "Indian Plague Commission meets in Bombay and tours India",
+     scene: "The Plague Commission pokes into every BEEHIVE-shaped hut from Bombay onward to study how plague spreads."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Famines in India",
+     event: "Famine strikes large parts of India and kills at least a million",
+     scene: "A dry PIPE drips nothing over Gujarat and the Deccan, and the famine kills at least a million."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "Risley's census lists more than sixteen hundred castes",
+     scene: "Risley pours SODA into numbered glasses, one for each of the sixteen hundred castes his census lists."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Famines in India",
+     event: "MacDonnell's Famine Commission asks for early relief and more irrigation",
+     scene: "MacDonnell shakes a SODA bottle and sprays new famine rules: early relief, irrigation canals and farm banks."}
+  - {year: 1904, peg: sewer, confidence: high, source: "Search: Indian Universities Act, 21 Mar",
+     event: "Indian Universities Act puts the universities under tighter state control",
+     scene: "Curzon lifts a SEWER lid and pushes the five university senates down under government control."}
+  - {year: 1911, peg: tattoo, confidence: unverified,
+     event: "Factories Act limits the working day of men in textile mills to twelve hours",
+     scene: "A TATTOO of a clock with twelve marks goes on every mill hand's arm: the Act limits the day to twelve hours."}
+  - {year: 1917, peg: dog, confidence: high, source: "Search: Sadler Commission appointed",
+     event: "Calcutta University Commission under Michael Sadler is appointed",
+     scene: "A DOG named Sadler sniffs through every room of Calcutta University and digs up plans for its reform."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Sarojini Naidu leads a women's deputation to Montagu to ask for the vote",
+     scene: "Sarojini Naidu's DOG drops a petition for women's votes at Edwin Montagu's feet."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Trade unions in India",
+     event: "All India Trade Union Congress is founded, the first union federation",
+     scene: "A NOSE for union power sniffs out workers in every province, and they join the first all-India union federation."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "Census uses the category 'depressed classes' for low castes",
+     scene: "Census clerks sort an ANT colony into a new box labelled 'depressed classes'."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Women in India",
+     event: "Workmen's Compensation Act makes employers pay for injuries at work",
+     scene: "A GNOME hurt in a mine accident collects money from the owner, as the Workmen's Compensation Act orders."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "National Council of Women in India is founded",
+     scene: "Women hammer a NAIL into the wall to hang the banner of the new National Council of Women in India."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Trade unions in India",
+     event: "Trade Unions Act lets unions register and protects them by law",
+     scene: "Union men register their NACHO stall with the state, and the new Trade Unions Act shields them in law."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Royal Commission on Labour under John Whitley is appointed",
+     scene: "John Whitley turns the KNOB of every factory door as the Royal Commission on Labour inspects the mills."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Child Marriage Restraint Act",
+     event: "Age of Consent Committee under Moropant Joshi reports on child marriage",
+     scene: "Moropant Joshi turns a door KNOB and shows the room full of child brides in his committee's report."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Child Marriage Restraint Act",
+     event: "Child Marriage Restraint Act sets a minimum age of fourteen for brides",
+     scene: "Har Bilas Sarda locks the wedding hall with a KNOB that turns only for brides of fourteen and over."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "Hutton's census is the last full count of castes",
+     scene: "A MOTH eats the caste column out of every census form after Hutton's count, the last full caste census."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Harijan Sevak Sangh",
+     event: "Gandhi founds the Harijan Sevak Sangh in Poona to serve untouchables",
+     scene: "A full MOON rises over Poona and becomes the lamp of the Harijan Sevak Sangh, Gandhi's league to serve untouchables."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "Gandhi starts the weekly Harijan against untouchability",
+     scene: "A MUMMY unwraps its bandages, and each strip is a page of Gandhi's new weekly, Harijan."}
+  - {year: 1937, peg: mug, confidence: unverified,
+     event: "Hindu Women's Rights to Property Act gives widows a share of the estate",
+     scene: "A widow lifts a MUG from the family table as the new Act gives her a share of her husband's estate."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Census of India prior to independence",
+     event: "Census is cut short by the war, and little of its data is published",
+     scene: "A war RADIO drowns out the census clerks, and most of their tables never reach print."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Search: Sargent Report, CABE",
+     event: "Sargent Plan proposes universal free schooling within forty years",
+     scene: "A WARRIOR named Sargent marches a forty-year plan for free schooling through every province."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Famines in India",
+     event: "Famine Inquiry Commission begins its work on the Bengal famine",
+     scene: "A WARRIOR judge, Woodhead, leads the Famine Inquiry Commission into the ruins of the Bengal famine."}
+  # All-India: emigration and indenture
+  - {year: 1834, peg: hammer, confidence: high, source: "Search: lemauricien.com, Atlas, 2 Nov",
+     event: "Atlas lands the first indentured Indian labourers at Port Louis, Mauritius",
+     scene: "A HAMMER nails the first indenture contract to the Port Louis dock as the Atlas lands thirty-six Indians."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Whitby sails from Calcutta with the first Indian labourers for British Guiana",
+     scene: "The Whitby hoists a MOVIE screen for a sail and carries the first Indian labourers from Calcutta to British Guiana."}
+  - {year: 1839, peg: map, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Government bans the emigration of Indian manual labourers overseas",
+     scene: "A Company clerk tears up the MAP of the sea routes, and overseas labour emigration is banned."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Britain lets emigration to Mauritius start again from three ports",
+     scene: "A RHINO charges open the closed gates of Calcutta, Bombay and Madras, and emigration to Mauritius starts again."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "India makes emigration to Jamaica, Trinidad and Demerara legal",
+     scene: "A WARRIOR cuts open the sea lane to Jamaica, Trinidad and Demerara as India makes emigration there legal."}
+  - {year: 1845, peg: railway, confidence: medium, source: "WP mirror: Indo-Trinidadians and Tobagonians",
+     event: "First indentured Indians reach Trinidad on the Fatel Razack",
+     scene: "The Fatel Razack docks at Port of Spain and lays a RAILWAY of gangplanks for Trinidad's first indentured Indians."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "First indentured Indians from Madras land at Durban in Natal",
+     scene: "A wheel of CHEESE rolls down the ship's gangway at Durban, and Natal's first indentured Indians follow it ashore."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Lalla Rookh lands the first indentured Indians in Suriname",
+     scene: "A giant COMB rakes the Lalla Rookh's passengers onto the Suriname shore, the first Indians indentured to the Dutch."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Leonidas lands the first indentured Indians in Fiji",
+     scene: "A COWBOY lassoes the Leonidas into Levuka harbour and herds the first indentured Indians ashore in Fiji."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Gokhale's motion to stop indenture to Natal passes without a vote against",
+     scene: "Gokhale throws the DICE on the council table, and every member votes to stop indenture to Natal."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Ban on indentured emigration to Natal takes effect",
+     scene: "Indenture marks wash off like a fake TATTOO when the ban on labour to Natal takes effect."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Indian indenture system",
+     event: "Government stops all new indentured emigration from India",
+     scene: "A sheep DOG turns back the last coolie ship, and new indentured emigration from India ends."}
+  # All-India: sport
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Parsis in Bombay begin to play cricket in their own club",
+     scene: "Parsi boys carve bats from REEF coral and form their own cricket club in Bombay."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Madras plays Calcutta, the start of top-level cricket in India",
+     scene: "Madras bowls a CHERRY-red ball at Calcutta in the first big inter-city cricket match."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: History of Indian football",
+     event: "Calcutta Football Club is founded, the first football club in India",
+     scene: "A COIN toss starts the first game of the Calcutta Football Club, India's first football club."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "First Bombay Presidency match: Europeans play Parsis",
+     scene: "Europeans and Parsis fight over a CAKE in the first Bombay Presidency cricket match."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Parsi cricket team tours England, the first Indian tour there",
+     scene: "The Parsi cricket team rides a giant FISH to England for the first Indian tour there."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: History of Indian football",
+     event: "Durand Cup football tournament starts at Shimla",
+     scene: "Mortimer Durand plays a FIFE on the Shimla ground to open the first Durand Cup match."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: History of Indian football",
+     event: "Mohun Bagan football club is founded in Calcutta",
+     scene: "A green-and-maroon watch FOB on a Calcutta gentleman's waistcoat becomes the badge of the new Mohun Bagan club."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Parsis beat the Europeans in the first first-class Presidency match",
+     scene: "A Parsi batsman hits the ball through a PIANO in the Bombay pavilion and beats the Europeans in the first first-class Presidency match."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: History of Indian football",
+     event: "Indian Football Association is founded in Calcutta with no Indian on its board",
+     scene: "A PALM tree is the only native member on the board of the new Indian Football Association in Calcutta."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Ranji Trophy",
+     event: "Ranjitsinhji of Nawanagar makes his Test debut for England",
+     scene: "Ranjitsinhji glances a PEACH to fine leg on his Test debut for England."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Search: olympics.com, Norman Pritchard",
+     event: "Calcutta-born Norman Pritchard wins two Olympic silver medals in Paris",
+     scene: "Norman Pritchard sprints and hurdles through a pool of SAUCE in Paris and comes out with two silver medals."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Hindus join, and the Bombay tournament becomes the Triangular",
+     scene: "Hindu cricketers glide in on a SKI, and the Bombay Presidency tournament becomes the Triangular."}
+  - {year: 1910, peg: dice, confidence: high, source: "Search: Gama v Zbyszko, John Bull belt",
+     event: "Gama wins the John Bull wrestling belt in London when Zbyszko does not return",
+     scene: "Zbyszko throws the DICE and runs off; Gama takes the John Bull belt in London by default."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: History of the Indian cricket team",
+     event: "First All-India cricket team tours England under the Maharaja of Patiala",
+     scene: "The Maharaja of Patiala stamps a TATTOO of his crest on every player of the first All-India team to tour England."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: History of Indian football",
+     event: "Mohun Bagan beats the East Yorkshire Regiment to win the IFA Shield",
+     scene: "Barefoot Mohun Bagan players beat a British regiment, and Calcutta fans TATTOO the IFA Shield on their arms."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: History of cricket in India to 1918",
+     event: "Muslims join, and the Bombay tournament becomes the Quadrangular",
+     scene: "A fourth TONGUE joins the Bombay cricket chant as Muslims enter and the Quadrangular begins."}
+  - {year: 1920, peg: nose, confidence: medium, source: "Search: India 1920 Antwerp (sources vary)",
+     event: "India sends its first Olympic team, to Antwerp",
+     scene: "Dorabji Tata pays the fare, and India's first Olympic team follows its NOSE to Antwerp."}
+  - {year: 1924, peg: hanger, confidence: medium, source: "WP mirror: History of Indian football",
+     event: "Gostha Paul leads the first known Indian football tour abroad",
+     scene: "Gostha Paul hangs his boots on a HANGER in a ship's cabin as captain of India's first football tour abroad."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "Indian Hockey Federation is founded",
+     scene: "A NAIL holds up the first rule book of the new Indian Hockey Federation."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "Indian hockey team plays its first international, in New Zealand",
+     scene: "India's hockey team beats New Zealand in Christchurch, and a NACHO stand pays its first international fee."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Indian Olympic Association is founded",
+     scene: "Dorabji Tata dips a pen in INK and signs the charter of the Indian Olympic Association."}
+  - {year: 1928, peg: knife, confidence: high, source: "Search: BCCI founded Dec 1928",
+     event: "Board of Control for Cricket in India is founded",
+     scene: "A KNIFE cuts the ribbon on the new Board of Control for Cricket in India."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "India wins its first Olympic hockey gold at Amsterdam",
+     scene: "Jaipal Singh's team slices through every defence like a KNIFE and wins the Amsterdam gold without losing a goal."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: History of the Indian cricket team",
+     event: "India plays its first Test match, against England at Lord's",
+     scene: "C. K. Nayudu leads India out at Lord's under a MOON-white flag for its first Test match."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "India beats the United States twenty-four to one and wins hockey gold at Los Angeles",
+     scene: "India's hockey players hit twenty-four goals over the MOON past the United States on the way to Los Angeles gold."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "Search: Bombay Gymkhana Test, Dec 1933",
+     event: "First Test match in India is played at the Bombay Gymkhana",
+     scene: "England's cricketers unwrap a MUMMY of a pitch at the Bombay Gymkhana for the first Test in India."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "Search: Amarnath 118 on debut, 17 Dec",
+     event: "Lala Amarnath scores the first Test century by an Indian",
+     scene: "Lala Amarnath hits a MUMMY out of the Gymkhana ground for the first Test century by an Indian."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Ranji Trophy",
+     event: "First Ranji Trophy match: Madras plays Mysore at Chepauk",
+     scene: "A HAMMER bangs in the first stumps at Chepauk for Madras against Mysore, and the Ranji Trophy begins."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "Dhyan Chand's team beats Germany to win Olympic hockey gold in Berlin",
+     scene: "Dhyan Chand strikes a MATCH under the German defence, and India burns Germany eight to one in the Berlin final."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: History of Indian football",
+     event: "All India Football Federation is formed",
+     scene: "Officials raise a MUG to toast the new All India Football Federation."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: History of Indian football",
+     event: "IFA starts the Santosh Trophy national football championship",
+     scene: "A RADIO calls teams from every province to the first Santosh Trophy, the new national football championship."}
+  # Bengal, Bihar, Odisha, Assam and the Bay islands
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Cholera pandemic (first)",
+     event: "Cholera breaks out at Jessore and reaches Calcutta: the first pandemic begins",
+     scene: "Cholera bursts out of a DOG kennel at Jessore and races to Calcutta, and the first world pandemic begins."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Hindu School, Kolkata",
+     event: "Hindu College opens in Calcutta to teach Western learning",
+     scene: "A DOG carries David Hare's satchel into the new Hindu College, Calcutta's school of Western learning."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Backerganj cyclone drowns tens of thousands in the delta",
+     scene: "The Backerganj cyclone whirls like a NUN's spinning habit and drowns tens of thousands in the delta."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Cyclone strikes the Barisal coast and kills about twenty thousand",
+     scene: "A giant MOTH beats its wings over Barisal, and the cyclone kills about twenty thousand people."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP mirror: Women in India",
+     event: "Peary Charan Sarkar opens the first free girls' school, at Barasat",
+     scene: "Peary Charan Sarkar builds a free girls' school on a ROCK at Barasat, the first of its kind."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: Bethune College",
+     event: "Drinkwater Bethune opens the Calcutta Female School",
+     scene: "Drinkwater Bethune pulls a ROPE bell and opens the Calcutta Female School to Bengali girls."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Hindu School, Kolkata",
+     event: "Hindu College's upper section becomes Presidency College",
+     scene: "Hindu College splits, and its upper half opens like a LILY into Presidency College."}
+  - {year: 1856, peg: leech, confidence: high, source: "Search: Kalimati and Srischandra, 7 Dec",
+     event: "Vidyasagar arranges the first lawful Hindu widow remarriage, in Calcutta",
+     scene: "Vidyasagar pulls a LEECH of shame off the child widow Kalimati, and she marries Srischandra Vidyaratna."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Calcutta is founded",
+     scene: "A LOG of Bengal sal becomes the first lectern of the University of Calcutta."}
+  - {year: 1863, peg: gem, confidence: unverified,
+     event: "Abdul Latif founds the Muhammadan Literary Society in Calcutta",
+     scene: "Abdul Latif hands a GEM to each member of his new Muhammadan Literary Society in Calcutta."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: Calcutta cyclone",
+     event: "Calcutta cyclone drowns about sixty thousand people",
+     scene: "A CHERRY-red storm sky falls on Calcutta, and the cyclone drowns about sixty thousand people."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Famines in India",
+     event: "Orissa famine kills about a third of the people of Orissa",
+     scene: "A JUDGE condemns the late rice of the Board of Revenue as the Orissa famine kills a third of the province."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Cachar earthquake shakes southern Assam",
+     scene: "A SHIP on the Barak River rolls over as the Cachar earthquake shakes southern Assam."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Famines in India",
+     event: "Bihar famine: Richard Temple's relief keeps the deaths low",
+     scene: "Richard Temple combs Burma for rice with a giant COMB and keeps the deaths low in the Bihar famine."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Backerganj cyclone and storm wave kill about two hundred thousand",
+     scene: "The Backerganj storm wave slams down on the delta like a CAGE of water and kills about two hundred thousand."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Bethune College",
+     event: "Bethune School becomes Bethune College, the first women's college in India",
+     scene: "A COWBOY ropes the Bethune School to a college sign: it becomes India's first college for women."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Car Nicobar earthquake shakes the Nicobar and Andaman Islands",
+     scene: "A giant FOOT stamps on Car Nicobar, and the quake sends a sea wave across the Bay of Bengal."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Women in India",
+     event: "Chandramukhi Basu and Kadambini Ganguly are the first women graduates",
+     scene: "Chandramukhi Basu and Kadambini Ganguly blow FOAM off their caps as the first women graduates of the Empire."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: List of famines",
+     event: "Famine strikes Orissa, Ganjam and north Bihar",
+     scene: "A FIFE plays a death march through Ganjam and north Bihar during the famine."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Great Assam earthquake shakes Shillong",
+     scene: "A PIG is thrown into the air at Shillong as the great Assam earthquake shakes the hills."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Chittagong cyclone strikes Kutubdia, and cholera follows",
+     scene: "A PIG sty on Kutubdia island is swept away by the cyclone, and cholera kills thousands more after it."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Third plague pandemic",
+     event: "Plague breaks out in Calcutta",
+     scene: "Plague breaks out of a BEEHIVE of crowded tenements in Calcutta."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Women in India",
+     event: "Sister Nivedita opens a girls' school in Bagbazar, Calcutta",
+     scene: "Sister Nivedita opens a girls' school in Bagbazar, and its little room hums like a BEEHIVE."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Khulna cyclone kills hundreds of people and many cattle",
+     scene: "A cyclone whips Khulna into SOAP foam and kills hundreds of people and tens of thousands of cattle."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP mirror: Begum Rokeya",
+     event: "Begum Rokeya opens a girls' school at Bhagalpur with five pupils",
+     scene: "Begum Rokeya hands out SOAP to five girls on the first day of her school at Bhagalpur."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Begum Rokeya",
+     event: "Rokeya moves the Sakhawat Memorial Girls' School to Calcutta",
+     scene: "Rokeya carries her school to Calcutta with its name as a TATTOO on her arm: Sakhawat Memorial."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Patna University is founded for Bihar and Orissa",
+     scene: "A DOG digs out the first stone of Patna University, Bihar's own university."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: List of Bangladesh tropical cyclones",
+     event: "Khulna cyclone kills hundreds of people",
+     scene: "A sea DOG of a storm bites Khulna and kills hundreds of people and their cattle."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "WP mirror: List of deadliest tropical cyclones",
+     event: "Cyclone strikes eastern Bengal and kills about forty thousand",
+     scene: "A giant TUBA blows a storm over eastern Bengal, and the cyclone kills about forty thousand."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Dhaka is founded for East Bengal",
+     scene: "An ANT army carries books to Ramna, and the University of Dhaka opens for East Bengal."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Visva-Bharati University",
+     event: "Tagore founds Visva-Bharati at Santiniketan",
+     scene: "Tagore turns an ANT hill under the Santiniketan trees into Visva-Bharati, a university for the world."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "Tea workers leave the Chargola valley gardens of Assam in a mass exodus",
+     scene: "Thousands of tea workers march out of Chargola like an ANT column and leave the Assam gardens."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Bengal council gives women the vote",
+     scene: "Bengali women NAIL their votes to the council door when the province passes women's suffrage."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Dhubri earthquake shakes western Assam",
+     scene: "A MOUSE runs from the Brahmaputra bank as the Dhubri earthquake shakes western Assam."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Bihar-Nepal earthquake kills thousands in north Bihar and Nepal",
+     scene: "A HAMMER blow splits the north Bihar plain and the Kathmandu valley, and the quake kills thousands."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Andaman earthquake and sea wave kill thousands",
+     scene: "A RADIO mast at Port Blair falls as the Andaman earthquake and its sea wave kill thousands."}
+  - {year: 1942, peg: rhino, confidence: medium, source: "Search: Midnapore cyclone, 16 Oct (tolls vary)",
+     event: "Cyclone and storm wave strike Midnapore and kill thousands",
+     scene: "A RHINO-sized storm wave charges over Contai in Midnapore and kills thousands of people."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Famines in India",
+     event: "Bengal famine kills millions",
+     scene: "A starving RAM butts open empty rice stores in Calcutta while the Bengal famine kills millions."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Utkal University is founded for Orissa",
+     scene: "A RAM pushes open the gates of Utkal University, Orissa's first university."}
+  # Bombay, Gujarat and western India
+  - {year: 1803, peg: sumo, confidence: unverified,
+     event: "Famine strikes the Deccan and the Bombay region",
+     scene: "A SUMO wrestler eats every grain store in the Deccan, and famine spreads to Bombay."}
+  - {year: 1812, peg: tongue, confidence: unverified,
+     event: "Famine strikes Gujarat and Kathiawar",
+     scene: "A dry TONGUE hangs from every mouth in Kathiawar as famine strikes Gujarat."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP mirror: Cholera pandemic (first)",
+     event: "Cholera pandemic reaches Bombay on the west coast",
+     scene: "A DOVE falls dead on a Bombay roof as the cholera pandemic reaches the west coast."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Rann of Kutch earthquake raises the Allah Bund ridge",
+     scene: "A TUBA blast splits the Rann of Kutch, and the quake pushes up a new ridge, the Allah Bund."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Savitribai Phule",
+     event: "Jyotirao and Savitribai Phule open a girls' school at Bhide Wada in Pune",
+     scene: "Savitribai Phule walks through a REEF of mud and dung thrown at her to teach girls at Bhide Wada."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: Savitribai Phule",
+     event: "Fatima Sheikh and Savitribai Phule open a school in Sheikh's home",
+     scene: "Fatima Sheikh lowers a ROPE ladder from her home, and it becomes a girls' school with Savitribai Phule."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Bombay is founded",
+     scene: "A teak LOG becomes the first desk of the University of Bombay."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Pandita Ramabai",
+     event: "Pandita Ramabai founds the Arya Mahila Samaj in Pune",
+     scene: "Pandita Ramabai pulls women away from the kitchen OVEN and into the Arya Mahila Samaj in Pune."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Age of Consent Act, 1891",
+     event: "Behramji Malabari publishes his Notes on infant marriage and enforced widowhood",
+     scene: "A FAIRY carries Malabari's Notes on infant marriage and widowhood to every official in India."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Search: fergusson.edu, 24 Oct",
+     event: "Tilak, Agarkar and others found the Deccan Education Society in Pune",
+     scene: "A FAIRY taps Tilak and Agarkar with her wand, and the Deccan Education Society is born in Pune."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Rukhmabai",
+     event: "Dadaji Bhikaji starts legal action to make Rukhmabai join him",
+     scene: "Dadaji sends a FAIRY with a court notice to bring his child bride, Rukhmabai, to his home."}
+  - {year: 1885, peg: waffle, confidence: high, source: "Search: fergusson.edu, 2 Jan",
+     event: "Fergusson College opens in Pune",
+     scene: "A WAFFLE grid of new classrooms opens in Pune as Fergusson College starts to teach."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Rukhmabai",
+     event: "Justice Pinhey refuses to force Rukhmabai to live with her husband",
+     scene: "Justice Pinhey slams a WAFFLE iron shut on Dadaji's claim and does not force Rukhmabai to join him."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Anandi Gopal Joshi",
+     event: "Anandibai Joshi earns an MD in Pennsylvania, the first Indian woman to do so",
+     scene: "Anandibai Joshi catches a FISH-shaped diploma in Philadelphia, the first Indian woman with a Western MD."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Rukhmabai",
+     event: "Justice Farran orders Rukhmabai to join her husband or go to jail",
+     scene: "Justice Farran sets a FOX trap: Rukhmabai must join her husband or go to jail, and she picks jail."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Rukhmabai",
+     event: "Dadaji gives up his claim on Rukhmabai for money",
+     scene: "Dadaji sells his claim on Rukhmabai for two thousand rupees, and she plays a FIFE on her way to freedom."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Pandita Ramabai",
+     event: "Pandita Ramabai opens Sharada Sadan, a school for child widows",
+     scene: "Pandita Ramabai unlocks Sharada Sadan with a FOB key and lets in child widows to study."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Trade unions in India",
+     event: "Narayan Lokhande founds the Bombay Mill-Hands Association",
+     scene: "Narayan Lokhande gathers mill hands like BEES into the first Indian workers' association in Bombay."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Cornelia Sorabji",
+     event: "Cornelia Sorabji is the first woman to sit the Oxford law degree exam",
+     scene: "Cornelia Sorabji wheels a PIANO into the Oxford exam hall and is the first woman to sit the law degree exam."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Third plague pandemic",
+     event: "Bubonic plague breaks out in Bombay",
+     scene: "Plague fleas jump from a rotten PEACH crate on a Bombay dock, and the epidemic begins."}
+  - {year: 1896, peg: peach, confidence: high, source: "Search: maharshikarve.ac.in, 14 Jun",
+     event: "Dhondo Karve opens a home and school for widows near Pune",
+     scene: "Dhondo Karve gives a widow a PEACH and a school bench at his new widows' home near Pune."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Savitribai Phule",
+     event: "Savitribai Phule dies of plague caught while nursing a sick boy",
+     scene: "Savitribai Phule carries a plague-sick boy past a PIG sty to a clinic and catches the disease herself."}
+  - {year: 1905, peg: seal, confidence: high, source: "Search: Servants of India Society, 12 Jun",
+     event: "Gokhale founds the Servants of India Society in Pune",
+     scene: "Gokhale stamps a SEAL on the oath of each member of his new Servants of India Society."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Baroda State makes primary education compulsory",
+     scene: "Sayajirao serves SUSHI to every child at the school gate as Baroda makes primary school compulsory."}
+  - {year: 1909, peg: soap, confidence: high, source: "Search: Poona Seva Sadan, Ramabai Ranade",
+     event: "Ramabai Ranade starts the Poona Seva Sadan to train women",
+     scene: "Ramabai Ranade hands SOAP and nursing aprons to the women trained at the new Poona Seva Sadan."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Women in India",
+     event: "Dhondo Karve founds the first women's university in India",
+     scene: "Dhondo Karve serves a DISH of degrees to women at India's first women's university, near Pune."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: 1918 flu pandemic in India",
+     event: "Influenza pandemic reaches Bombay and spreads across India",
+     scene: "A sick DOVE lands on a Bombay troopship dock, and the influenza pandemic spreads across India."}
+  - {year: 1918, peg: dove, confidence: high, source: "Search: Ahmedabad mill strike, fast 15 Mar",
+     event: "Gandhi fasts for Ahmedabad's mill workers, who win a pay rise",
+     scene: "Gandhi feeds his bread to a DOVE and fasts until Ahmedabad's mill owners give the workers a raise."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: B. R. Ambedkar",
+     event: "Ambedkar starts the weekly Mooknayak in Bombay",
+     scene: "Ambedkar gives a NOSE and a mouth to the voiceless in his new weekly, Mooknayak."}
+  - {year: 1920, peg: nose, confidence: medium, source: "Search: Majoor Mahajan, 25 Feb",
+     event: "Anasuya Sarabhai founds the Ahmedabad Textile Labour Association",
+     scene: "Anasuya Sarabhai pulls the NOSE ring of the mill owners and founds the Textile Labour Association."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Bombay council removes sex as a bar to voting",
+     scene: "An ANT queen casts the first ballot as the Bombay council removes sex as a bar to voting."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Mahad Satyagraha",
+     event: "Bombay council lets untouchables use public tanks and wells",
+     scene: "A GNOME draws water from a public well as the Bombay council opens wells and tanks to untouchables."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Rajkot State elects two women, the first on a council in India",
+     scene: "A GNOME counts the ballots in Rajkot State, which elects two women, the first women on any council in India."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Bahishkrit Hitakarini Sabha",
+     event: "Ambedkar founds the Bahishkrit Hitakarini Sabha in Bombay",
+     scene: "Ambedkar hangs the motto 'educate, organize and agitate' on a HANGER at his new Bahishkrit Hitakarini Sabha."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Mahad Satyagraha",
+     event: "Ambedkar leads untouchables to drink from the Chavdar tank at Mahad",
+     scene: "Ambedkar drinks from the Chavdar tank at Mahad, and the INK of caste rules runs off the water."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "All India Women's Conference first meets in Poona",
+     scene: "Margaret Cousins dips a pen in INK and signs the call that brings the All India Women's Conference to Poona."}
+  - {year: 1928, peg: knife, confidence: medium, source: "Search: Bombay textile strike, April",
+     event: "Bombay textile workers begin a six-month general strike",
+     scene: "Mill owners cut wages with a KNIFE called rationalisation, and Bombay's textile workers strike for six months."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: B. R. Ambedkar",
+     event: "Ambedkar publishes Annihilation of Caste",
+     scene: "Ambedkar's banned Lahore speech flares like a MATCH when he prints it himself as Annihilation of Caste."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Mahad Satyagraha",
+     event: "Bombay High Court rules that untouchables may use the Chavdar tank",
+     scene: "Bombay High Court fills a MUG at the Chavdar tank and rules that untouchables may use its water."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Bombay explosion (1944)",
+     event: "Fort Stikine explodes in Bombay docks and kills hundreds",
+     scene: "The ammunition ship Fort Stikine blows up like a WARRIOR's powder keg in Bombay docks and kills hundreds."}
+  # Madras, Travancore, Cochin, Mysore and Hyderabad
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: Channar revolt",
+     event: "Munro lets convert Nadar women wear an upper cloth, then withdraws the order",
+     scene: "Colonel Munro opens a TOMB of old dress rules for Nadar women, then slams it shut again."}
+  - {year: 1817, peg: dog, confidence: unverified,
+     event: "Travancore's regent orders the state to pay for the education of its people",
+     scene: "Regent Gowri Parvati Bayi sends a DOG with her rescript: the state will pay to educate its people."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Channar revolt",
+     event: "Travancore proclamation denies Nadar women the upper cloth",
+     scene: "Queen Gowri Parvati Bayi turns a KNOB and locks the upper cloth away from Nadar women."}
+  - {year: 1832, peg: moon, confidence: high, source: "WP mirror: List of famines",
+     event: "Guntur famine kills about a hundred and fifty thousand",
+     scene: "Under a dry MOON, the Guntur famine kills about a hundred and fifty thousand people."}
+  - {year: 1839, peg: map, confidence: high, source: "WP mirror: Coringa cyclone",
+     event: "Coringa cyclone kills an estimated three hundred thousand",
+     scene: "The Coringa cyclone wipes the Godavari port off the MAP and kills an estimated three hundred thousand."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Madras is founded",
+     scene: "A LOG raft carries the first matriculation papers to the new University of Madras."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Channar revolt",
+     event: "Travancore lets Nadar women cover their breasts with a jacket",
+     scene: "Each Nadar woman pushes an ELBOW through a new jacket as Travancore's king lets her cover her breasts."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Famines in India",
+     event: "Great Famine begins in Madras, Mysore, Hyderabad and Bombay",
+     scene: "Drought locks the Deccan in a CAGE, and the Great Famine kills more than five million."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Ayyankali",
+     event: "Ayyankali drives a bullock cart down a road barred to his caste",
+     scene: "Ayyankali drives a bullock cart through a PALM-leaf barrier on a road closed to Pulayas."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Ayyankali",
+     event: "Ayyankali founds the Sadhu Jana Paripalana Sangham for Pulaya rights",
+     scene: "Ayyankali goes on a SKI from village to village to build the Sadhu Jana Paripalana Sangham."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Ayyankali",
+     event: "Travancore orders schools to admit untouchable children",
+     scene: "Travancore orders schools to admit untouchable children, but local officials SKI around the order."}
+  - {year: 1907, peg: ski, confidence: disputed, source: "WP mirror: Ayyankali (1907 or 1915)",
+     event: "Pulaya farm workers strike for their children's right to school",
+     scene: "Pulaya farm workers park their plough on a SKI slope and strike until their children can go to school."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Muthulakshmi Reddy",
+     event: "Muthulakshmi Reddy graduates from Madras Medical College",
+     scene: "Muthulakshmi Reddy holds up a TONGUE depressor as she graduates in medicine at Madras."}
+  - {year: 1915, peg: doll, confidence: medium, source: "WP mirror: Ayyankali (1915 or 1916)",
+     event: "Pulaya women win the right to cover their upper bodies",
+     scene: "Pulaya women dress a DOLL in a blouse and then themselves, as they win the right to cover the upper body."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Mysore is founded",
+     scene: "Krishnaraja Wadiyar serves a DISH of degrees as the University of Mysore opens."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Margaret Cousins founds the Women's Indian Association at Adyar",
+     scene: "Margaret Cousins's DOG carries the first membership cards of the Women's Indian Association around Adyar."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Osmania University is founded in Hyderabad and teaches in Urdu",
+     scene: "A DOVE carries Urdu textbooks into Osmania University, which teaches every subject in Urdu."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Trade unions in India",
+     event: "B. P. Wadia founds the Madras Labour Union, an early trade union",
+     scene: "B. P. Wadia releases a DOVE over the Madras mills as the Madras Labour Union forms."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Madras city gives women the municipal vote, the first place in India",
+     scene: "A TUBA sounds in Madras as the city gives women the municipal vote, the first place in India to do so."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Travancore grants women the vote",
+     scene: "Travancore puts a ballot paper under every woman's NOSE as it grants women the vote."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Madras Presidency lets women stand in local elections",
+     scene: "An ANT stands for the local board in Madras as women win the right to stand in local elections."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Mysore council grants women the vote",
+     scene: "A NUN casts the first woman's ballot in Mysore after the council grants women the vote."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Cochin lets women vote and stand for election",
+     scene: "Cochin women hang the old sex bar on a HANGER and then vote and stand for election."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Self-Respect Movement",
+     event: "Self-Respect Movement starts, with Periyar as its leader",
+     scene: "Periyar drives a NAIL through the caste ladder and starts the Self-Respect Movement in Tamil country."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Andhra University is founded",
+     scene: "Telugu students share a NACHO plate on the first day of Andhra University."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Kamaladevi Chattopadhyay is the first woman to stand for a provincial seat",
+     scene: "Kamaladevi Chattopadhyay hands out NACHO snacks as the first woman to stand for a provincial seat."}
+  - {year: 1927, peg: ink, confidence: disputed, source: "WP mirror: Women's suffrage (1927); M. Reddy (1926)",
+     event: "Muthulakshmi Reddy is the first woman member of a provincial legislature",
+     scene: "Muthulakshmi Reddy signs the Madras council roll in INK, the first woman member of a provincial legislature."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Self-Respect Movement",
+     event: "First Self-Respect Conference sets out equality of women and an end to caste",
+     scene: "Periyar turns the KNOB on a door marked 'caste' and the first Self-Respect Conference locks it for good."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Self-Respect Movement",
+     event: "Gurusamy and Kunjidham hold the first self-respect marriage, with no priest",
+     scene: "Periyar turns the KNOB of a hall with no priest, where Gurusamy and Kunjidham hold the first self-respect marriage."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Annamalai University is founded at Chidambaram",
+     scene: "Annamalai Chettiar hands a brass KNOB key to the first rector of Annamalai University at Chidambaram."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Guruvayur Satyagraha",
+     event: "Guruvayur Satyagraha begins for the entry of all castes to the temple",
+     scene: "A MOTH flies to the Guruvayur temple lamp as Kelappan starts a satyagraha for all-caste entry."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Guruvayur Satyagraha",
+     event: "Kelappan fasts at Guruvayur until Gandhi asks him to stop",
+     scene: "Kelappan fasts under the MOON at Guruvayur until Gandhi asks him to stop."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Travancore is founded",
+     scene: "The Maharaja of Travancore raises a MUG to open the University of Travancore."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Self-Respect Movement",
+     event: "Seventy-three women protesting against Hindi are arrested in Madras",
+     scene: "A MOVIE camera films seventy-three women arrested in Madras for protesting against compulsory Hindi."}
+  # Northern and central India
+  - {year: 1803, peg: sumo, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Garhwal earthquake shakes the Himalayan foothills",
+     scene: "A SUMO wrestler drops on Garhwal, and the earthquake shakes the hills as far as Delhi."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Kashmir earthquake kills about a thousand",
+     scene: "A KNIFE of shock cuts through Srinagar, and the Kashmir earthquake kills about a thousand."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP mirror: Famines in India",
+     event: "Agra famine kills about eight hundred thousand",
+     scene: "An empty MUG in every hand: the Agra famine kills about eight hundred thousand."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP mirror: Famines in India",
+     event: "Upper Doab famine kills perhaps two million",
+     scene: "Rats eat the last CHEESE in the Doab, and the famine kills perhaps two million people."}
+  - {year: 1869, peg: ship, confidence: medium, source: "WP mirror: List of famines (1868-70 phase)",
+     event: "Rajputana famine kills about a million and a half",
+     scene: "A desert SHIP, a camel, falls dead in Rajputana as the famine kills about a million and a half."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Aligarh Muslim University",
+     event: "Syed Ahmad Khan opens the Muhammadan Anglo-Oriental College at Aligarh",
+     scene: "Syed Ahmad Khan's EAGLE spreads its wings over Aligarh as the Muhammadan Anglo-Oriental College opens."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP mirror: Aligarh Muslim University",
+     event: "Viceroy Lytton lays a foundation stone at the Aligarh college",
+     scene: "Lord Lytton sets a foundation stone, shaped like a CAKE, in the grounds of the Aligarh college."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Kashmir earthquake kills about three thousand",
+     scene: "A WAFFLE grid of cracks splits Srinagar as the Kashmir earthquake kills about three thousand."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Allahabad University is founded",
+     scene: "A FOX leads the first exam candidates into the new Allahabad University."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Women's Christian Medical College opens at Ludhiana",
+     scene: "A BEAR cub guards the door at Ludhiana, where the new Women's Christian Medical College trains women doctors."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Banaras Hindu University",
+     event: "Annie Besant founds the Central Hindu College in Benares",
+     scene: "Annie Besant fills a BEEHIVE of classrooms in Benares: the Central Hindu College opens."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Cornelia Sorabji",
+     event: "Cornelia Sorabji passes the pleader's exam at Allahabad, the first woman advocate",
+     scene: "Cornelia Sorabji lights a judge's PIPE after she passes the Allahabad pleader's exam as India's first woman advocate."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Kangra earthquake kills more than twenty thousand",
+     scene: "A SEAL slides down the Dhauladhar as the Kangra earthquake kills more than twenty thousand."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Banaras Hindu University",
+     event: "Banaras Hindu University is founded as Hardinge lays its stone",
+     scene: "Lord Hardinge lays the first stone of Banaras Hindu University on a silver DISH."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Aligarh college becomes Aligarh Muslim University",
+     scene: "The Aligarh college lifts its NOSE to university rank: Aligarh Muslim University is born."}
+  - {year: 1920, peg: nose, confidence: high, source: "Search: jmi.ac.in, 29 Oct",
+     event: "Students and teachers leave Aligarh and found Jamia Millia Islamia",
+     scene: "Students walk out of Aligarh after their NOSE for freedom and found Jamia Millia Islamia in a mosque."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Lucknow University is founded",
+     scene: "An ANT colony moves into the Canning College buildings and forms Lucknow University."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of Delhi is founded",
+     scene: "A NUN rings the bell for the first three colleges of the new University of Delhi."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Nagpur University is founded",
+     scene: "A GNOME digs the foundations of Nagpur University in the Central Provinces."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "United Provinces council votes for women's suffrage without a vote against",
+     scene: "A GNOME smiles as every member of the United Provinces council votes for women's suffrage."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Agra University is founded",
+     scene: "Agra University stamps its first degrees in red INK."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: India men's national field hockey team",
+     event: "Western Asiatic Games are held in Delhi",
+     scene: "A HAMMER thrower opens the Western Asiatic Games in Delhi, where India also wins the hockey gold."}
+  - {year: 1937, peg: mug, confidence: high, source: "Search: Wardha conference, 22-23 Oct",
+     event: "Wardha conference backs Gandhi's basic education through crafts",
+     scene: "Gandhi turns a clay MUG on a potter's wheel at Wardha, and the conference backs learning through craft."}
+  # Punjab, Sindh and Baluchistan (now Pakistan)
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "Government College opens in Lahore",
+     scene: "Government College Lahore opens with a CHERRY tree in its first courtyard and Gottlieb Leitner as principal."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: History of education (subcontinent)",
+     event: "University of the Punjab is founded in Lahore",
+     scene: "Leitner bakes a new university in his OVEN: the University of the Punjab, Lahore."}
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "Hassanally Effendi opens the Sindh Madressatul Islam in Karachi",
+     scene: "Hassanally Effendi serves WAFFLE breakfasts to the first Muslim pupils of the Sindh Madressatul Islam in Karachi."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Women's suffrage in India",
+     event: "Punjab council grants women the vote",
+     scene: "Punjab women break a NACHO in half, one half for men and one for them, as the council grants women the vote."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Quetta earthquake kills tens of thousands",
+     scene: "A MILL of rubble grinds Quetta flat as the earthquake kills tens of thousands."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Women in India",
+     event: "Sarla Thakral is the first Indian woman to fly an aircraft",
+     scene: "Sarla Thakral strikes a MATCH to light her engine and flies solo from Lahore, the first Indian woman pilot."}
+  # Ceylon
+  - {year: 1832, peg: moon, confidence: disputed, source: "Search: rajakariya ends 1832 (others 1833)",
+     event: "Ceylon ends rajakariya, forced caste labour for the state",
+     scene: "The MOON sets on rajakariya as Ceylon ends forced caste labour for the state."}
+  - {year: 1835, peg: mill, confidence: unverified,
+     event: "Colombo Academy opens, later Royal College",
+     scene: "A MILL in Colombo grinds out English schooling as the Colombo Academy, later Royal College, opens."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Search: Abolition of Slavery Ordinance No 20",
+     event: "Ceylon's Abolition of Slavery Ordinance frees all slaves",
+     scene: "A WARRIOR breaks the last slave chains in Jaffna as Ceylon's Abolition of Slavery Ordinance frees all slaves."}
+  - {year: 1871, peg: cat, confidence: unverified,
+     event: "Ceylon holds its first modern census",
+     scene: "A CAT counts every house as Ceylon holds its first modern census."}
+  - {year: 1921, peg: ant, confidence: high, source: "Search: Ceylon University College, Jan 1921",
+     event: "Ceylon University College opens in Colombo for London degrees",
+     scene: "An ANT carries London exam papers into the new Ceylon University College in Colombo."}
+  - {year: 1922, peg: nun, confidence: high, source: "Search: Ceylon Labour Union, 10 Sep 1922",
+     event: "Victor Corea and A. E. Goonesinha found the Ceylon Labour Union",
+     scene: "Goonesinha signs up a NUN, a docker and a clerk on the first day of his Ceylon Labour Union."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Search: Ceylon general strike, Feb 1923",
+     event: "Railway workers lead Ceylon's first general strike",
+     scene: "A GNOME stops the Colombo trains as railway workers lead Ceylon's first general strike."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Search: Hansard, Ceylon malaria from Sep 1934",
+     event: "Malaria epidemic begins in Ceylon and kills about eighty thousand",
+     scene: "Drought swings a HAMMER at the dry zone, and Ceylon's malaria epidemic kills about eighty thousand."}
+  - {year: 1942, peg: rhino, confidence: high, source: "Search: University of Ceylon, 1 July 1942",
+     event: "University of Ceylon is formed from the University and Medical Colleges",
+     scene: "A RHINO pushes Ceylon University College and the Medical College together into the University of Ceylon."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "Search: Kannangara bill, 30 May 1944",
+     event: "Kannangara moves his free education proposals in the State Council",
+     scene: "C. W. W. Kannangara, a WARRIOR for free schooling, moves his education bill in the State Council."}
+  # Nepal
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: List of earthquakes in India",
+     event: "Great earthquake shakes Kathmandu and Bihar",
+     scene: "A MUMMY tumbles out of a Kathmandu temple as the earthquake shakes Nepal and Bihar."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP mirror: Durbar High School (1853 or 1854)",
+     event: "Jung Bahadur Rana opens Durbar High School, Nepal's first modern school",
+     scene: "Jung Bahadur hires a LAWYER from Britain to teach English at Durbar High School, Nepal's first modern school."}
+  - {year: 1918, peg: dove, confidence: high, source: "Search: trc.tu.edu.np, 28 Aug 1918",
+     event: "Tri-Chandra College opens in Kathmandu, Nepal's first college",
+     scene: "A DOVE lands on the roof of Tri-Chandra College in Kathmandu, Nepal's first college."}
+  - {year: 1920, peg: nose, confidence: high, source: "Search: nepjol.info, sati ban 8 July 1920",
+     event: "Chandra Shumsher abolishes sati in Nepal",
+     scene: "Chandra Shumsher grabs a widow's NOSE ring and pulls her back from the pyre as Nepal bans sati."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Durbar High School",
+     event: "Nepal sets up its own School Leaving Certificate board",
+     scene: "A MUMMY sits Nepal's own school-leaving exam, set by the new board in Kathmandu."}
+  # Bhutan
+  - {year: 1914, peg: tower, confidence: high, source: "Search: Haa school, Church of Scotland teachers",
+     event: "First modern school in Bhutan opens at Haa",
+     scene: "A TOWER of slates rises at Haa as Bhutan's first modern school opens."}
+  - {year: 1914, peg: tower, confidence: medium, source: "Search: Bhutanese boys to Kalimpong (45 or 46)",
+     event: "Bhutanese boys are sent to study in Kalimpong",
+     scene: "Forty-six Bhutanese boys climb a TOWER of luggage and leave for school in Kalimpong."}
+  - {year: 1915, peg: doll, confidence: medium, source: "Search: Bumthang school for the crown prince",
+     event: "School opens at Bumthang for the crown prince and court children",
+     scene: "The crown prince puts down his DOLL and starts lessons at the new school at Bumthang."}
+  # Maldives
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Majeediyya School opens in Male, the first modern school in the Maldives",
+     scene: "Maldivian boys dip their pens in INK at Majeediyya School, the first modern school in Male."}
