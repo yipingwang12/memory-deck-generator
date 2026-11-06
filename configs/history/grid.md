@@ -288,3 +288,43 @@ Open:
 - Recent events (2025–26) in north_america, southeast_asia, western_europe cells: search snippets only.
 - Peg overload: 89 warnings in wave 9 cells (radio 31 for 1941–44 in eastern_europe_society_1800_1945;
   tattoo 24 for 2011 in north_africa_politics_1945_present; wolf 21 in western_europe_arts_1945_present).
+
+## Wave 10 (2026-11-05)
+User's aim: the next 20 cells, most entries first. Same log-linear fit, now on 117 cells (residual sd 0.43).
+Top 20 of 315 taken as is (predicted 218–313). Budget 40 searches per agent (800 of the 1000 cap).
+Sonnet agents (wave 9 lesson: 20 Opus agents hit the account 5-hour usage limit).
+south_asia politics 1945_present, western_europe economy 1945_present, latin_america politics 1945_present,
+eastern_europe religion 1945_present, east_asia religion 1945_present, eastern_europe arts 1945_present,
+central_asia politics 1945_present, western_europe arts 1500_1800, eastern_europe science 1945_present,
+east_asia arts 1945_present, east_asia science 1945_present, southeast_asia politics 1500_1800,
+western_europe society 1500_1800, eastern_europe economy 1800_1945, southeast_asia religion 1800_1945,
+west_asia politics 1500_1800, north_america arts 1800_1945, north_america science 1800_1945,
+east_asia society 1945_present, west_asia religion 1800_1945.
+Result: 5,982 dates over 20 cells (high 3,708, medium 399, low 13, disputed 39, unverified 1,843 = 31%);
+sizes 109–509 (south_asia_politics_1945_present 509, western_europe_economy_1945_present 486,
+western_europe_arts_1500_1800 454). Check exit 0 on all; all years inside the period. Grid now 137 of 432
+cells, 32,124 dates. Sonnet stayed under the usage limit (~5.6M subagent tokens, no deaths), but: unverified
+31% (Opus wave 9: 16%) and many agents self-report scenes weaker than METHOD v2 (peg as prop or decoration).
+Tacked-on regex hits only 1.9%, so the weakness is a different kind (peg present but not the actor).
+Cells far ABOVE the fit: east_asia_arts, western_europe_arts_1500_1800, north_america_science/arts (×1.5–1.8);
+far BELOW: west_asia_religion_1800_1945 (109 vs 218), eastern_europe_economy_1800_1945 (144 vs 230).
+Shared scratchpad collisions: generic names (build.py, gen.py) were overwritten across agents; one gen.py
+wrote to another agent's cell. Agents told mid-run to use scratchpad/<slug>/; no cross-cell contamination
+found (exact-event duplicates only with neighbouring theme cells, 15). Next waves: put "use scratchpad/<slug>/
+for all working files" in agent_prompt.md.
+Main session: Baqi demolition 1925 → 1926 (8 Shawwal 1344 = 21 April 1926).
+Fix-pass list (not done):
+- Dropped against the brief, restore: Borujerdi to Qom 1944 (west_asia_religion), 2001 Tiananmen
+  self-immolation (east_asia_religion), Kyiv Lavra closure 1961 (eastern_europe_religion), Chenonceau,
+  Azay-le-Rideau, Byrd 1607, Blue Boy c. 1770, Ewald, Dalin (western_europe_arts_1500_1800);
+  missing Pangestu 1932, Mathla'ul Anwar 1916 (southeast_asia_religion).
+- Likely wrong: BNP founding kept 1977 (usual date 1 Sep 1978); Lutosławski Funeral Music and Penderecki
+  Threnody premieres moved Katowice → Warsaw Autumn (Funeral Music = Katowice 1958?); Beaumont 1822 → 1833
+  (check event text = publication); Morse demo 1837 NYU vs 1838 Speedwell (policy: first public demo).
+- Thin sourcing: west_asia_politics_1500_1800 and southeast_asia_politics_1500_1800 "high" rest on one WP
+  mirror article each; west_asia_politics left 19 searches unspent.
+- Peg overload: sofa 17, piano 15 (western_europe_economy_1945_present), judge 13 (eastern_europe_arts),
+  seal/dove 11 (south_asia_politics).
+- Cross-cell: 1924 caliphate abolition in west_asia religion + politics; 5 events shared
+  western_europe economy/politics 1945_present.
+- Top-up: Belize 1, Costa Rica 3 entries (latin_america_politics_1945_present).

@@ -1,0 +1,457 @@
+# Cell: Eastern Europe x economy x 1800 to 1944. DRAFT 2026-11-05.
+# Scope: Poland, Czechia, Slovakia, Hungary, Balkans, Greece, Romania, Moldova, Baltic states,
+# Belarus, Ukraine, Russia (including Siberia), plus Constantinople (both shores). Trade, money,
+# agriculture, industry, railways, companies, economic crises. Modern borders: Breslau is
+# Wroclaw, Lemberg is Lviv, Yuzovka is Donetsk, Narva is in Estonia.
+# Baku oil (west_asia), Kazakh steppe lines such as Turksib (central_asia), Anatolian railways
+# (west_asia) are out. Serf emancipation and famines are in society and politics.
+# Dates: memory pass + web check (see the report). Gregorian years.
+# Peg = last two digits of the year. Range -> conventional "c." date (rule of 2026-11-04).
+# Work or opening -> first public appearance. Inventions: first public demonstration.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Russia
+  - {year: 1801, peg: soda, confidence: disputed, source: "Kirov Plant: 1789 or 1801",
+     event: "Putilov ironworks founded in St Petersburg as a state foundry (sources give an older start as well)",
+     scene: "A fizzing SODA geyser founds the Putilov foundry on the Neva bank and casts the first cannonballs."}
+  - {year: 1803, peg: sumo, confidence: unverified,
+     event: "Alexander I lets landlords free serfs as free cultivators",
+     scene: "A SUMO wrestler lifts a serf out of the landlord's field and sets him down as a free cultivator."}
+  - {year: 1815, peg: doll, confidence: high, source: "Grace's Guide: Charles Baird",
+     event: "Baird yard launches the Elizaveta, first Russian steamship, for the Kronstadt run",
+     scene: "A giant DOLL puffs smoke from its funnel and paddles the Elizaveta, the first Russian steamship, to Kronstadt."}
+  - {year: 1817, peg: dog, confidence: unverified,
+     event: "Great Makaryev trade fair moves to Nizhny Novgorod after a fire",
+     scene: "A DOG drags the burned Makaryev fair stalls on a sled to the new fair site at Nizhny Novgorod."}
+  - {year: 1822, peg: nun, confidence: unverified,
+     event: "Russia adopts a protective customs tariff",
+     scene: "A NUN bars the Russian customs gate and turns back British cloth under the new protective tariff."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP mirror: Rail transport in Russia",
+     event: "Tsarskoye Selo Railway opens: first public railway in Russia",
+     scene: "A giant MUG opens Russia's first public railway and steams from St Petersburg to Tsarskoye Selo."}
+  - {year: 1839, peg: map, confidence: high, source: "Bank of Russia Museum: Kankrin reform",
+     event: "Kankrin starts the monetary reform that makes silver the base of the ruble",
+     scene: "A silver MAP replaces the paper assignats, and Kankrin pays out silver ruble for ruble."}
+  - {year: 1842, peg: rhino, confidence: unverified,
+     event: "Law on obligated peasants lets landlords free serfs by contract",
+     scene: "A RHINO charges a landlord until he signs a contract that frees his obligated peasants."}
+  - {year: 1851, peg: wallet, confidence: high, source: "Wikipedia: Saint Petersburg-Moscow railway",
+     event: "Moscow to St Petersburg railway (Nikolayevskaya) opens",
+     scene: "A fat WALLET opens like a train door, and the first Moscow to St Petersburg train rolls through."}
+  - {year: 1857, peg: log, confidence: unverified,
+     event: "Russia adopts a liberal customs tariff with lower duties",
+     scene: "A LOG blocks the border road, then rolls aside as the new tariff cuts duties on foreign goods."}
+  - {year: 1860, peg: cheese, confidence: unverified,
+     event: "State Bank of the Russian Empire replaces the Commercial Bank",
+     scene: "A giant CHEESE stamped State Bank swallows the old Commercial Bank in St Petersburg."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP mirror: Rail transport in Russia",
+     event: "Moscow to Nizhny Novgorod railway opens",
+     scene: "A CHAIN of carriages couples Moscow to Nizhny Novgorod and hauls goods to the great fair."}
+  - {year: 1882, peg: oven, confidence: unverified,
+     event: "Peasant Land Bank founded to lend money for land purchase",
+     scene: "An OVEN bakes cheap loans at the new Peasant Land Bank so peasants can buy land."}
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "Morozov mill strike at Orekhovo-Zuyevo over wage fines",
+     scene: "Weavers at the Morozov mill throw a WAFFLE stack of fine slips at the owner and strike."}
+  - {year: 1891, peg: boot, confidence: high, source: "Wikipedia: Trans-Siberian Railway",
+     event: "Construction of the Trans-Siberian Railway begins at Vladivostok",
+     scene: "A giant BOOT stamps the first spade into the soil near Vladivostok and starts the Trans-Siberian Railway."}
+  - {year: 1892, peg: piano, confidence: medium, source: "Britannica-style search: Witte",
+     event: "Sergei Witte becomes Finance Minister and drives fast industrial growth",
+     scene: "Witte sits at a PIANO as Russia's new finance minister and plays the tune of fast industrial growth."}
+  - {year: 1895, peg: bell, confidence: unverified,
+     event: "State vodka monopoly starts to replace tax farming",
+     scene: "A BELL rings over each state shop as the government alone starts to sell vodka."}
+  - {year: 1897, peg: pig, confidence: high, source: "Bank of Russia Museum: Witte reform",
+     event: "Russia adopts the gold standard for the ruble",
+     scene: "A golden PIG becomes the anchor of the ruble as Witte ties it to gold."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "Financial crisis ends the Russian industrial boom",
+     scene: "A PIPE bursts under the Russian stock market and floods away the boom of the nineties."}
+  - {year: 1904, peg: sewer, confidence: unverified,
+     event: "Circum-Baikal line completes the rail link around Lake Baikal",
+     scene: "A SEWER rat leads the first train through the last tunnel of the line around Lake Baikal."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Slavic Review: Stolypin land reform",
+     event: "Stolypin decree of November starts the agrarian reform that lets peasants leave the village commune",
+     scene: "Stolypin slices a SUSHI roll of village land and hands each peasant a private piece."}
+  - {year: 1907, peg: ski, confidence: medium, source: "Slavic Review: Stolypin land reform",
+     event: "Redemption payments for peasant land end",
+     scene: "A SKI sweeps the redemption debts off the peasants' slope and leaves them free of payments."}
+  - {year: 1912, peg: tongue, confidence: high, source: "Wikipedia: Lena massacre",
+     event: "Troops shoot striking gold miners in the Lena goldfields",
+     scene: "A TONGUE of fire licks the striking Lena gold miners as troops open fire."}
+  - {year: 1914, peg: tower, confidence: unverified,
+     event: "Russia bans alcohol sales at the start of the war",
+     scene: "A TOWER of vodka bottles crashes as the Tsar bans alcohol for the war."}
+  - {year: 1916, peg: dish, confidence: medium, source: "WP mirror: Rail transport in Russia",
+     event: "Amur Railway and Khabarovsk bridge finish the Trans-Siberian route on Russian soil",
+     scene: "A DISH of steel spans the Amur at Khabarovsk and finishes a Trans-Siberian line wholly on Russian soil."}
+  - {year: 1916, peg: dish, confidence: unverified,
+     event: "Murmansk Railway opens to carry Allied supplies to the interior",
+     scene: "A DISH of Allied shells rides the new Murmansk railway south from the Arctic port."}
+  - {year: 1917, peg: dog, confidence: medium, source: "Study notes: bank nationalisation",
+     event: "Bolsheviks nationalise all private banks",
+     scene: "A DOG guards the nationalised vaults and bites a private banker who tries to open one."}
+  - {year: 1917, peg: dog, confidence: medium, source: "Study notes: VSNKh founded",
+     event: "Supreme Council of the National Economy founded to run industry",
+     scene: "In a Moscow office a DOG sits in the chair of the new council and signs orders to run all industry."}
+  - {year: 1918, peg: dove, confidence: medium, source: "Study notes: War Communism",
+     event: "Decree takes large industry into state ownership at the start of War Communism",
+     scene: "A DOVE carries the red decree that takes the big factories from their owners."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "Study notes: grain requisitioning",
+     event: "Compulsory grain requisitioning (prodrazvyorstka) starts",
+     scene: "A TUBA blasts armed squads into the village, and they load every spare sack of grain."}
+  - {year: 1920, peg: nose, confidence: high, source: "Wikipedia: GOELRO",
+     event: "GOELRO plan to electrify all Russia",
+     scene: "A giant NOSE with a light bulb on its tip becomes the sign of the plan to electrify all Russia."}
+  - {year: 1921, peg: ant, confidence: high, source: "Encyclopedia.com: NEP",
+     event: "New Economic Policy replaces grain requisitioning with a tax and lets peasants sell the surplus",
+     scene: "An ANT sells a sack of surplus grain in the open market once the state allows it."}
+  - {year: 1921, peg: ant, confidence: medium, source: "Study notes: Gosplan",
+     event: "Gosplan, the state planning commission, is set up",
+     scene: "An ANT with a clipboard drafts the first state plan in the new Gosplan office."}
+  - {year: 1922, peg: nun, confidence: high, source: "Wikipedia: Soviet monetary reform",
+     event: "Decree creates the gold-backed chervonets banknote",
+     scene: "A NUN offers a ten-ruble chervonets note backed by gold, and the market trusts it."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Scissors crisis: farm prices fall while factory prices rise",
+     scene: "A GNOME cuts the price of grain and lifts the price of tools with giant scissors."}
+  - {year: 1924, peg: hanger, confidence: medium, source: "Wikipedia: Soviet monetary reform",
+     event: "Currency reform ends: the chervonets ruble becomes the only legal money",
+     scene: "A HANGER lifts the worthless old banknotes off the market and leaves only the new ruble."}
+  - {year: 1928, peg: knife, confidence: medium, source: "Wikipedia: Industrialization in USSR",
+     event: "First Five-Year Plan begins and sets heavy industry first",
+     scene: "A KNIFE cuts a five-slice cake labelled heavy industry, and the first Five-Year Plan begins."}
+  - {year: 1929, peg: knob, confidence: high, source: "Wikipedia: Magnitogorsk works",
+     event: "Magnitogorsk is founded on the Magnet mountain when the first train arrives",
+     scene: "A door KNOB turns on the Magnet mountain and the first train unloads builders to found Magnitogorsk."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Mass collectivisation of agriculture begins",
+     scene: "A KNOB on the village hall door locks peasants' horses and cows inside a new collective farm."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Wikipedia: Volgograd Tractor Plant",
+     event: "Stalingrad Tractor Plant opens and builds its first tractor",
+     scene: "A MOUSE rides the first tractor off the Stalingrad assembly line."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "Torgsin shops start to sell food for gold and foreign money",
+     scene: "A MOUSE trades a gold ring for a sack of flour at a Torgsin shop."}
+  - {year: 1932, peg: moon, confidence: high, source: "Wikipedia: Magnitogorsk works",
+     event: "Magnitogorsk lights its first blast furnace",
+     scene: "A MOON of molten iron pours from the first Magnitogorsk blast furnace."}
+  - {year: 1932, peg: moon, confidence: unverified,
+     event: "Gorky Automobile Plant starts to build trucks with American help",
+     scene: "A pale MOON-white truck rolls out of the new Gorky plant that Ford helped to plan."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "White Sea to Baltic Canal opens, dug by convict labour",
+     scene: "A MUMMY steers the first steamer through the canal that convict labour dug to the White Sea."}
+  - {year: 1935, peg: mill, confidence: high, source: "Moscow Times: Moscow Metro opening",
+     event: "Moscow Metro opens its first line",
+     scene: "A MILL wheel turns the first escalator as the Moscow Metro opens to passengers."}
+  - {year: 1935, peg: mill, confidence: unverified,
+     event: "Model charter for collective farms lets each family keep a small plot",
+     scene: "A MILL grinds the collective farm charter into law and leaves each family a small plot of its own."}
+  - {year: 1937, peg: mug, confidence: unverified,
+     event: "Moscow to Volga Canal opens and brings river water to Moscow",
+     scene: "A giant MUG fills with Volga water as the new canal brings the river to Moscow."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Law makes quitting a job or coming late to work a crime",
+     scene: "A HORSE drags late workers to court under the new law that makes quitting a crime."}
+  - {year: 1941, peg: radio, confidence: medium, source: "WP mirror: Evacuation in the Soviet Union",
+     event: "Soviet state moves thousands of factories east of the Urals after the German invasion",
+     scene: "A RADIO orders factories east, and whole plants are loaded on trains behind the Urals."}
+  - {year: 1941, peg: radio, confidence: unverified,
+     event: "United States extends Lend-Lease aid to the Soviet Union",
+     scene: "A RADIO broadcasts Roosevelt's order that makes the Soviet Union eligible for Lend-Lease supplies."}
+  # Siberia
+  - {year: 1893, peg: palm, confidence: unverified,
+     event: "Novonikolayevsk (Novosibirsk) founded at the Ob railway bridge site",
+     scene: "A PALM presses a first stake into the Ob bank where the railway bridge will rise and founds Novonikolayevsk."}
+  # Ukraine
+  - {year: 1819, peg: tuba, confidence: high, source: "prlib.ru: Odessa port-franco",
+     event: "Odesa gets free port status (porto franco) with no customs duties",
+     scene: "A TUBA blares from the Odesa quay as the port opens with no customs duties."}
+  - {year: 1853, peg: llama, confidence: high, source: "bobrka.pl: Lukasiewicz",
+     event: "Kerosene lamp lights a Lviv hospital for an operation: start of the oil era",
+     scene: "A LLAMA carries a glowing kerosene lamp into a Lviv hospital and lights an operation for the first time."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Rail transport in Russia",
+     event: "Balaklava Railway built in weeks to supply the siege of Sevastopol",
+     scene: "A LILY of steel opens as new rails carry shells from Balaklava port up to the besiegers."}
+  - {year: 1869, peg: ship, confidence: high, source: "History Hit: John Hughes",
+     event: "Welshman John Hughes founds the Yuzovka ironworks town in the Donbas",
+     scene: "Hughes steers a SHIP of rails into the steppe and founds Yuzovka, the Donbas steel town."}
+  - {year: 1881, peg: foot, confidence: medium, source: "Encyclopedia of Ukraine: Kryvyi Rih",
+     event: "Industrial iron ore mining starts at Kryvyi Rih",
+     scene: "A giant FOOT stamps open the red earth at Kryvyi Rih and starts industrial iron ore mining."}
+  - {year: 1884, peg: fairy, confidence: medium, source: "Wikipedia: Kryvyi Rih",
+     event: "Railway links Kryvyi Rih ore to Donbas coal",
+     scene: "A FAIRY waves a wand and a railway joins Kryvyi Rih ore to Donbas coal."}
+  - {year: 1895, peg: bell, confidence: medium, source: "moniacs.kh.ua: Kharkiv locomotive works",
+     event: "Company founds the Kharkiv Locomotive Works",
+     scene: "A BELL rings over Kharkiv as a new company founds its locomotive works."}
+  - {year: 1927, peg: ink, confidence: high, source: "jmhum.org: DniproHES start",
+     event: "Foundation stone laid for the Dnipro Hydroelectric Station at Zaporizhzhia",
+     scene: "Workers dip a pen in INK and sign the first stone of the Dnieper dam at Zaporizhzhia."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Kharkiv Tractor Plant opens",
+     scene: "A MOTH lands on the first tractor as it rolls out of the new Kharkiv plant."}
+  - {year: 1932, peg: moon, confidence: medium, source: "Wikipedia: Dnieper Hydroelectric Station",
+     event: "Dnipro Hydroelectric Station opens and sends power to factories",
+     scene: "The Dnieper dam traps a MOON-round lake, and its turbines send power to the factories."}
+  - {year: 1935, peg: mill, confidence: high, source: "Moscow Times: Stakhanovite movement",
+     event: "Miner Stakhanov sets a coal cutting record in the Donbas and starts a productivity campaign",
+     scene: "Stakhanov's pick cuts so much coal that a MILL cannot grind it all in one shift."}
+  # Poland
+  - {year: 1828, peg: knife, confidence: high, source: "Wikipedia: Bank Polski",
+     event: "Bank Polski founded in Warsaw",
+     scene: "A KNIFE slices the ribbon on Bank Polski's door in Warsaw."}
+  - {year: 1833, peg: mummy, confidence: unverified,
+     event: "Filip de Girard founds the Zyrardow linen mill town",
+     scene: "A MUMMY wrapped in fresh linen steps from Girard's new mill and founds Zyrardow."}
+  - {year: 1835, peg: mill, confidence: high, source: "Wikipedia: White Factory",
+     event: "Ludwik Geyer starts to build the White Factory, the first mechanised cotton mill in Lodz",
+     scene: "A MILL wheel turns the first steam engine in Lodz at Geyer's White Factory."}
+  - {year: 1842, peg: rhino, confidence: medium, source: "Brilliant Maps: first railways",
+     event: "Upper Silesian Railway opens its first section from Breslau to Ohlau",
+     scene: "A RHINO charges along the first rails in Polish lands from Breslau to Ohlau."}
+  - {year: 1845, peg: railway, confidence: high, source: "Wikipedia: Warsaw-Vienna Railway",
+     event: "Warsaw to Vienna Railway opens its first section: first railway in Congress Poland",
+     scene: "A RAILWAY ribbon unrolls from Warsaw toward Vienna, and the first train rolls out."}
+  - {year: 1846, peg: roach, confidence: high, source: "Regionwielkopolska: Cegielski origins",
+     event: "Hipolit Cegielski opens an iron goods shop in Poznan, the start of his machine works",
+     scene: "A ROACH scuttles through Cegielski's new Poznan iron shop, where a machine works begins."}
+  - {year: 1848, peg: reef, confidence: medium, source: "WP mirror: Rail transport in Russia",
+     event: "Warsaw to Vienna Railway is complete to the Austrian border",
+     scene: "A coral REEF of iron rails reaches the Austrian border, so trains run from Warsaw to Vienna."}
+  - {year: 1850, peg: lasso, confidence: unverified,
+     event: "Customs border between Congress Poland and Russia is removed",
+     scene: "A LASSO pulls down the customs posts between Congress Poland and Russia."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "ERIH: Lukasiewicz",
+     event: "Lukasiewicz and partners open the Bobrka oil mine in Galicia",
+     scene: "Oil gushes from the first Bobrka well and drenches a LAWYER."}
+  - {year: 1922, peg: nun, confidence: medium, source: "Search: Gdynia port resolution",
+     event: "Polish parliament votes to build a sea port at Gdynia",
+     scene: "A NUN blesses the plan for a new port in the fishing village of Gdynia."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Poland introduces the zloty and ends its inflation",
+     scene: "A HANGER holds crisp new zloty notes beside the tattered marks, and Poland ends its inflation."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Customs war between Germany and Poland starts",
+     scene: "A NAIL bars the border gate as Germany and Poland start a customs war."}
+  - {year: 1936, peg: match, confidence: medium, source: "Wikipedia: Central Industrial Region",
+     event: "Polish government approves the Central Industrial Region plan",
+     scene: "A MATCH lights the fuse of the Central Industrial Region, the planned triangle of factories."}
+  # Hungary
+  - {year: 1830, peg: mouse, confidence: unverified,
+     event: "Danube steamship service links Vienna and Pest",
+     scene: "A MOUSE is the first passenger to step off the Danube steamship from Vienna onto the Pest quay."}
+  - {year: 1841, peg: radio, confidence: unverified,
+     event: "Pest Hungarian Commercial Bank opens, the first Hungarian bank",
+     scene: "A RADIO announces the opening of the first Hungarian bank in Pest."}
+  - {year: 1844, peg: warrior, confidence: unverified,
+     event: "Abraham Ganz founds his iron foundry in Buda",
+     scene: "A WARRIOR hammers a hard iron wheel in Ganz's new foundry in Buda."}
+  - {year: 1846, peg: roach, confidence: high, source: "Search: Hungary first railway",
+     event: "Pest to Vac railway opens: first railway in Hungary",
+     scene: "A ROACH rides the first Hungarian train from Pest to Vac."}
+  - {year: 1847, peg: rock, confidence: medium, source: "Search: Hungary first railway",
+     event: "Pest to Szolnok railway reaches the Tisza river",
+     scene: "A ROCK is the first cargo hauled on the Pest to Szolnok line to the Tisza."}
+  - {year: 1849, peg: rope, confidence: high, source: "Grace's Guide: Szechenyi Chain Bridge",
+     event: "Chain Bridge opens: first permanent bridge over the Danube in Hungary",
+     scene: "A ROPE-thick iron chain hangs from the bridge towers and ties Buda to Pest."}
+  - {year: 1864, peg: cherry, confidence: unverified,
+     event: "Pest stock exchange opens",
+     scene: "Brokers shout prices over a CHERRY basket at the new Pest stock exchange."}
+  - {year: 1896, peg: peach, confidence: high, source: "Wikipedia: Millennium Underground",
+     event: "Millennium Underground opens in Budapest: first electric metro in continental Europe",
+     scene: "A PEACH rides the little yellow train under Andrassy Avenue on the first metro of the continent."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Hungarian National Bank founded as the bank of issue",
+     scene: "A HANGER holds the gold keys of the new Hungarian National Bank."}
+  - {year: 1927, peg: ink, confidence: high, source: "Wikipedia: Hungarian pengo",
+     event: "Pengo replaces the korona as Hungarian money",
+     scene: "INK stamps the word pengo on new notes that replace the korona."}
+  # Czechia and Slovakia
+  - {year: 1827, peg: ink, confidence: medium, source: "Wikipedia: 1827 in rail transport",
+     event: "Horse-drawn railway opens from Ceske Budejovice: first railway in the Czech lands",
+     scene: "Horses pull a giant INK barrel along the first rails out of Ceske Budejovice."}
+  - {year: 1839, peg: map, confidence: medium, source: "Brilliant Maps: first railways",
+     event: "Northern Railway brings steam trains to the Czech lands as far as Brno",
+     scene: "A MAP unfolds the Northern Railway line, and steam trains reach Brno for the first time."}
+  - {year: 1840, peg: horse, confidence: unverified,
+     event: "Horse-drawn railway opens from Bratislava to Svaty Jur: first railway in Slovakia",
+     scene: "A HORSE pulls the first Slovak railway car from Bratislava to Svaty Jur."}
+  - {year: 1842, peg: rhino, confidence: high, source: "Pilsner Urquell: brewery timeline",
+     event: "First batch of Pilsner lager brewed in Plzen",
+     scene: "A RHINO butts open a barrel of the first golden lager at the Plzen brewery."}
+  - {year: 1845, peg: railway, confidence: unverified,
+     event: "Railway from Olomouc reaches Prague",
+     scene: "A RAILWAY ribbon runs from Olomouc into Prague, and the first train arrives."}
+  - {year: 1859, peg: elbow, confidence: high, source: "Grace's Guide: Skoda Steel Works",
+     event: "Count Waldstein founds the Plzen machine works that later becomes Skoda",
+     scene: "An ELBOW swings a hammer in Count Waldstein's new Plzen machine works."}
+  - {year: 1869, peg: ship, confidence: high, source: "Grace's Guide: Skoda Steel Works",
+     event: "Emil Skoda buys the Plzen works",
+     scene: "Emil Skoda buys the Plzen works and steers it away like a SHIP."}
+  - {year: 1871, peg: cat, confidence: medium, source: "Tozsde muzeum: Kassa-Oderberg line",
+     event: "Kosice to Bohumin railway links Slovakia to Silesia",
+     scene: "A CAT rides the first train over the Kosice to Bohumin line."}
+  - {year: 1894, peg: bear, confidence: high, source: "Zlin.eu: Bata empire",
+     event: "Tomas Bata and his siblings found the Bata shoe company in Zlin",
+     scene: "A BEAR cobbles the first shoes in the Bata family workshop in Zlin."}
+  - {year: 1895, peg: bell, confidence: disputed, source: "Grace's Guide: 1895 or 1896",
+     event: "Laurin and Klement found their bicycle works in Mlada Boleslav",
+     scene: "A BELL rings on a bicycle in Mlada Boleslav, where Laurin and Klement set up their works."}
+  - {year: 1897, peg: pig, confidence: disputed, source: "NTM gives 1898; others 1897",
+     event: "Nesselsdorf shows the Prasident, the first Czech petrol car built in series",
+     scene: "A PIG drives the Prasident, the first Czech petrol car, out of the Nesselsdorf works."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Czechoslovakia stamps banknotes and splits its currency from the old Austrian crown",
+     scene: "A TUBA announces that Austrian notes are stamped, and the Czechoslovak koruna stands alone."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Czechoslovak land reform law breaks up large estates",
+     scene: "A TUBA blasts over the manor fields as the law splits the big estates into small farms."}
+  - {year: 1925, peg: nail, confidence: medium, source: "Grace's Guide: Laurin and Klement",
+     event: "Skoda takes over Laurin and Klement",
+     scene: "A NAIL pins Laurin and Klement to the Skoda works."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Merger forms CKD (Ceskomoravska Kolben-Danek)",
+     scene: "INK flows over the papers that merge Kolben and Danek into CKD."}
+  # Romania
+  - {year: 1857, peg: log, confidence: unverified,
+     event: "First oil refinery near Ploiesti and kerosene street lamps in Bucharest",
+     scene: "A LOG feeds the fire under the still of the first Ploiesti refinery."}
+  - {year: 1860, peg: cheese, confidence: unverified,
+     event: "Railway opens from Cernavoda on the Danube to Constanta on the Black Sea",
+     scene: "A wheel of CHEESE rolls from the Danube at Cernavoda to the Black Sea port on the new railway."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Wikipedia: Land reform in Romania",
+     event: "Cuza's rural law gives peasants land from the big estates",
+     scene: "A CHERRY orchard on former estate land is handed to the peasants by Cuza's land law."}
+  - {year: 1867, peg: jockey, confidence: high, source: "BNR: monetary history",
+     event: "Romania adopts the leu as its money",
+     scene: "A JOCKEY waves a silver leu coin as Romania makes the leu its money."}
+  - {year: 1869, peg: ship, confidence: high, source: "Britannica: Romania railways",
+     event: "Bucharest to Giurgiu railway opens: first railway line in the old kingdom",
+     scene: "A SHIP waits at Giurgiu on the Danube as the first Bucharest train arrives to meet it."}
+  - {year: 1880, peg: vase, confidence: high, source: "BNR: history 1880-2010",
+     event: "National Bank of Romania founded",
+     scene: "A VASE of gold coins becomes the first stock of the National Bank of Romania."}
+  - {year: 1895, peg: bell, confidence: unverified,
+     event: "Cernavoda bridge over the Danube opens the rail route to Constanta",
+     scene: "A BELL rings as the first train crosses the Cernavoda bridge over the Danube."}
+  - {year: 1921, peg: ant, confidence: high, source: "Wikipedia: Land reform in Romania",
+     event: "Land reform splits the large estates and gives land to peasants",
+     scene: "An ANT-size peasant receives a huge plot as the big estates are split up."}
+  # Bulgaria
+  - {year: 1866, peg: judge, confidence: high, source: "BTA: Ruse-Varna railway",
+     event: "Ruse to Varna railway opens: first railway in the Bulgarian lands",
+     scene: "A JUDGE bangs his gavel, and the first Bulgarian railway from Ruse to Varna opens."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "BNB: central bank history",
+     event: "Bulgarian National Bank founded",
+     scene: "A COWBOY deposits the first herd of silver coins at the new Bulgarian National Bank."}
+  - {year: 1880, peg: vase, confidence: unverified,
+     event: "Bulgaria introduces the lev as its money",
+     scene: "A VASE full of silver leva stands in the Sofia treasury as the new national money."}
+  - {year: 1888, peg: fife, confidence: medium, source: "BTA: Ruse-Varna railway",
+     event: "Bulgarian state buys the Ruse to Varna line and starts state railways",
+     scene: "A FIFE whistles as the Bulgarian state buys the Ruse to Varna line and runs it."}
+  # Serbia and the western Balkans
+  - {year: 1862, peg: chain, confidence: unverified,
+     event: "First train reaches Zagreb on the Southern Railway link",
+     scene: "A CHAIN of carriages pulls the first train into Zagreb."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Serbian Railways: history",
+     event: "Belgrade to Nis railway opens: first railway in Serbia",
+     scene: "A FAIRY rides the first Serbian train from Belgrade to Nis."}
+  - {year: 1896, peg: peach, confidence: unverified,
+     event: "Iron Gates canal opens a clear Danube route for ships",
+     scene: "A PEACH floats through the new Iron Gates canal and shows ships a clear Danube route."}
+  # Greece
+  - {year: 1828, peg: knife, confidence: unverified,
+     event: "Kapodistrias issues the phoenix, the first modern Greek money",
+     scene: "A KNIFE carves a phoenix on the first coin of the new Greek state under Kapodistrias."}
+  - {year: 1841, peg: radio, confidence: medium, source: "Search: National Bank of Greece",
+     event: "National Bank of Greece opens in Athens",
+     scene: "A RADIO crackles with the price of drachmas as the National Bank of Greece opens its doors."}
+  - {year: 1864, peg: cherry, confidence: unverified,
+     event: "Lavrion mining boom starts when old slag is smelted again",
+     scene: "Lavrion workers smelt old slag in a CHERRY-red furnace and start the Greek mining boom."}
+  - {year: 1869, peg: ship, confidence: unverified,
+     event: "Athens to Piraeus railway opens",
+     scene: "A SHIP docks at Piraeus and unloads passengers onto the new railway to Athens."}
+  - {year: 1893, peg: palm, confidence: high, source: "Wikipedia: Corinth Canal",
+     event: "Corinth Canal opens (open to ships a few months later)",
+     scene: "A PALM tree is cut in two as the Corinth Canal opens through the isthmus."}
+  - {year: 1893, peg: palm, confidence: high, source: "Greek Herald: bankruptcy of 1893",
+     event: "Prime Minister Trikoupis tells parliament that Greece is bankrupt",
+     scene: "Trikoupis shows an empty PALM to parliament and says the state cannot pay its debts."}
+  - {year: 1898, peg: beehive, confidence: unverified,
+     event: "International Financial Commission takes control of Greek revenues",
+     scene: "A BEEHIVE of foreign officials swarms over Greek revenues as the International Financial Commission starts work."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Refugee Settlement Commission starts to house and farm refugees",
+     scene: "A GNOME builds houses and plants fields for refugees as the settlement commission begins."}
+  - {year: 1928, peg: knife, confidence: high, source: "To Vima: Bank of Greece",
+     event: "Bank of Greece opens as the only bank of issue",
+     scene: "A KNIFE cuts the ribbon of the Bank of Greece, now the only bank that prints notes."}
+  - {year: 1932, peg: moon, confidence: unverified,
+     event: "Greece stops paying foreign debt in the Depression",
+     scene: "A MOON eclipses the debt book as Greece stops paying its foreign creditors."}
+  # Constantinople
+  - {year: 1845, peg: railway, confidence: high, source: "Wikipedia: Galata Bridge",
+     event: "First Galata Bridge opens across the Golden Horn",
+     scene: "A RAILWAY of wooden planks carries the first Galata Bridge across the Golden Horn."}
+  - {year: 1856, peg: leech, confidence: high, source: "Wikipedia: Ottoman Bank",
+     event: "Ottoman Bank chartered in Galata as an English bank",
+     scene: "A LEECH feeds on the Ottoman Bank's vault of gold as the bank opens in Galata."}
+  - {year: 1866, peg: judge, confidence: unverified,
+     event: "Bond exchange opens in Galata",
+     scene: "A JUDGE bangs his gavel to open the first bond exchange in Galata."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "Wikipedia: Bankalar Caddesi",
+     event: "Tunel funicular opens at Galata: second underground railway in the world",
+     scene: "An EAGLE flies down the Tunel, the second underground railway in the world."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Wikipedia: Ottoman public debt",
+     event: "Ottoman state stops paying interest on its debt",
+     scene: "An EAGLE drops an empty purse, and the Ottoman state stops paying half of its debt."}
+  - {year: 1881, peg: foot, confidence: high, source: "Wikipedia: Ottoman Public Debt Administration",
+     event: "Ottoman Public Debt Administration starts to collect state revenue for creditors",
+     scene: "A giant FOOT of European creditors steps on Ottoman revenue as the Public Debt Administration begins."}
+  - {year: 1889, peg: fob, confidence: high, source: "Wikipedia: Orient Express",
+     event: "First direct Orient Express train reaches Constantinople from Paris",
+     scene: "A FOB watch ticks as the first direct Orient Express train arrives from Paris."}
+  - {year: 1890, peg: bees, confidence: high, source: "Wikipedia: Sirkeci railway station",
+     event: "Sirkeci terminus opens for the Orient Express",
+     scene: "BEES swarm the new Sirkeci terminus where the Orient Express now ends."}
+  - {year: 1914, peg: tower, confidence: high, source: "Wikipedia: Capitulations",
+     event: "Ottoman state cancels the capitulations that gave foreigners trade privileges",
+     scene: "A TOWER of foreign trade privileges crashes down as the Ottoman state cancels the capitulations."}
+  # Baltic states
+  - {year: 1857, peg: log, confidence: unverified,
+     event: "Kreenholm cotton mill founded at the Narva falls",
+     scene: "A LOG turns the first water wheel of the Kreenholm cotton mill at the Narva falls."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Rail transport in Russia",
+     event: "Riga to Dunaburg railway opens: first railway in Latvia",
+     scene: "A JET races the first train from Riga to Daugavpils and loses."}
+  - {year: 1870, peg: goose, confidence: unverified,
+     event: "Baltic Railway opens from Tallinn to Narva",
+     scene: "A GOOSE leads the first train from Tallinn to Narva."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Wikipedia: Estonian Land Reform",
+     event: "Estonia seizes the Baltic German manors and shares the land",
+     scene: "A TUBA announces that the Baltic German manors are seized and shared among Estonian farmers."}
+  - {year: 1920, peg: nose, confidence: high, source: "Wikipedia: Latvian Land Reform",
+     event: "Latvian agrarian reform splits the manor lands into farms",
+     scene: "A NOSE points at the manor lands, and the Latvian state splits them into small farms."}
+  - {year: 1922, peg: nun, confidence: high, source: "Bank of Latvia: national currency",
+     event: "Latvia introduces the lats",
+     scene: "A NUN counts out the first lats and santims as Latvia sets up its own money."}
+  - {year: 1922, peg: nun, confidence: high, source: "Pinigu muziejus: first litas notes",
+     event: "Lithuania introduces the litas",
+     scene: "A NUN weighs a gold-backed litas note against the scales of a Kaunas market stall."}
+  - {year: 1928, peg: knife, confidence: high, source: "ERR News: Baltic currencies",
+     event: "Estonia introduces the kroon",
+     scene: "A KNIFE cuts the old mark loose and the kroon becomes the money of Estonia."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Soviet state nationalises banks and large industry in the Baltic states",
+     scene: "A HORSE hauls the bank safes and factory keys of the Baltic states to the Soviet state."}
+  # Belarus
+  - {year: 1871, peg: cat, confidence: unverified,
+     event: "Moscow to Smolensk to Brest railway completes and crosses Belarus",
+     scene: "A CAT rides the Moscow to Brest train through Minsk and the Belarusian forests."}

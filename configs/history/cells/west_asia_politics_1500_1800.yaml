@@ -1,0 +1,764 @@
+# Cell: West Asia x politics x 1500-1800. DRAFT 2026-11-05.
+# Dates: memory pass + web check (source field on checked entries). Peg rules as world_dates.yaml.
+# Approximate round years encode first two digits; otherwise last two digits of the year.
+# A phase is dated by its start; a work by first public appearance. Calendar straddle = medium.
+# Constantinople is in eastern_europe; Ottoman Egypt is in north_africa.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Anatolia
+  - {year: 1511, peg: tattoo, confidence: high,
+     event: "Shahkulu rebellion in southern Anatolia defeats an Ottoman army",
+     scene: "A TATTOO of a red Safavid hat leads the Shahkulu rebels through southern Anatolia and beats an Ottoman army.", source: "WP mirror: Ismail I"}
+  - {year: 1513, peg: tomb, confidence: high,
+     event: "Selim wins the Battle of Yenisehir in the Ottoman civil war",
+     scene: "A TOMB opens under his rival's army at Yenisehir, and Selim wins the Ottoman civil war.", source: "WP mirror: Selim I"}
+  - {year: 1514, peg: tower, confidence: high,
+     event: "Battle of Chaldiran: Selim I defeats Ismail I",
+     scene: "A TOWER of Ottoman cannon fire levels Ismail's cavalry at Chaldiran.", source: "WP mirror: Ismail I"}
+  - {year: 1515, peg: doll, confidence: high,
+     event: "Selim defeats the Dulkadir beylik at Turnadag and annexes it",
+     scene: "A DOLL-sized Ottoman cannon smashes the Dulkadir beylik at Turnadag, and Selim annexes it.", source: "Web: Battle of Turnadag"}
+  - {year: 1519, peg: tuba, confidence: high,
+     event: "First Celali revolt near Tokat, led by the Alevi preacher Celal",
+     scene: "A TUBA blares from Celal's pulpit near Tokat and calls Anatolian villagers to the first Celali revolt.", source: "WP mirror: Celali rebellions"}
+  - {year: 1553, peg: llama, confidence: medium,
+     event: "Suleiman has his son Prince Mustafa strangled at Eregli during the Persian campaign",
+     scene: "A LLAMA drags Prince Mustafa into Suleiman's tent at Eregli, where the sultan's guards strangle him.", source: "Web: Sehzade Mustafa"}
+  - {year: 1559, peg: elbow, confidence: high,
+     event: "Prince Bayezid loses to his brother Selim at the Battle of Konya",
+     scene: "An ELBOW of Selim's cavalry knocks his brother Bayezid's rebel army off the field at Konya.", source: "Web: Selim II (Konya, late May)"}
+  - {year: 1598, peg: beehive, confidence: high,
+     event: "Karayazici Abdulhalim unites the rebels of Sivas and Dulkadir",
+     scene: "A BEEHIVE of angry sekban soldiers swarms round Karayazici at Sivas and makes him chief of the Anatolian rebels.", source: "WP mirror: Celali rebellions"}
+  - {year: 1602, peg: sun, confidence: high,
+     event: "Karayazici dies of natural causes after defeat by government forces",
+     scene: "A scorching SUN dries up the last rebel camp of Karayazici, who dies of natural causes after his defeat.", source: "WP mirror: Celali rebellions"}
+  - {year: 1607, peg: ski, confidence: high,
+     event: "Kuyucu Murad Pasha starts his campaign against the Celali rebels",
+     scene: "A SKI carries Kuyucu Murad Pasha down on the Celali rebel bands of Anatolia.", source: "WP mirror: Ottoman-Safavid War 1603-1618"}
+  - {year: 1622, peg: nun, confidence: high,
+     event: "Abaza Mehmed Pasha rises against the Janissary government after Osman II is murdered",
+     scene: "A NUN leads Abaza Mehmed Pasha's rebel troops against the Janissaries who murdered Osman II.", source: "WP mirror: Celali rebellions"}
+  - {year: 1659, peg: elbow, confidence: high,
+     event: "Abaza Hasan Pasha's revolt is crushed and the Celali rebellions end",
+     scene: "Abaza Hasan Pasha's rebellion lies pinned under an ELBOW of the sultan's army, and the Celali age ends.", source: "WP mirror: Celali rebellions"}
+  - {year: 1745, peg: railway, confidence: high,
+     event: "Battle of Kars between Nader Shah and the Ottomans",
+     scene: "A RAILWAY of Persian cannon carts rolls up to Kars, where Nader Shah fights the Ottomans on the plain.", source: "WP mirror: Nader Shah"}
+  - {year: 1770, peg: goose, confidence: high,
+     event: "Russian fleet destroys most of the Ottoman fleet at Cesme off western Anatolia",
+     scene: "A Russian fire ship shaped like a GOOSE sets the Ottoman fleet ablaze in Cesme Bay.", source: "WP mirror: Battle of Cesme"}
+  # Iran
+  - {year: 1501, peg: soda, confidence: high,
+     event: "Ismail I takes Tabriz and proclaims himself shah of Iran",
+     scene: "A giant SODA bottle cap is placed on young Ismail's head in Tabriz and crowns him shah of Iran.", source: "WP mirror: Ismail I"}
+  - {year: 1501, peg: soda, confidence: high,
+     event: "Battle of Sharur: Ismail defeats the Aq Qoyunlu",
+     scene: "A SODA geyser at Sharur washes away the Aq Qoyunlu army and clears Ismail's road to the throne.", source: "WP mirror: Ismail I"}
+  - {year: 1502, peg: sun, confidence: high,
+     event: "Ismail defeats an Aq Qoyunlu army and takes Erzincan and Erzurum",
+     scene: "A blazing SUN banner leads the Qizilbash into Erzincan and Erzurum and drives out the Aq Qoyunlu.", source: "WP mirror: Ismail I"}
+  - {year: 1503, peg: sumo, confidence: high,
+     event: "Ismail conquers Fars and central Iran",
+     scene: "A SUMO wrestler in a red hat shoves the Aq Qoyunlu out of Fars and central Iran for Ismail.", source: "WP mirror: Ismail I"}
+  - {year: 1504, peg: sewer, confidence: high,
+     event: "Ismail conquers Mazandaran, Gorgan and Yazd",
+     scene: "A SEWER of red-hatted Qizilbash floods Mazandaran, Gorgan and Yazd for Ismail.", source: "WP mirror: Ismail I"}
+  - {year: 1507, peg: ski, confidence: high,
+     event: "Ismail conquers Diyarbakir",
+     scene: "A SKI carries Ismail's raiders downhill into Diyarbakir and takes the city.", source: "WP mirror: Ismail I"}
+  - {year: 1508, peg: sofa, confidence: high,
+     event: "Ismail takes Baghdad and ends the Aq Qoyunlu state",
+     scene: "A SOFA flies out of the palace window as Ismail takes Baghdad and ends the Aq Qoyunlu.", source: "WP mirror: Ismail I"}
+  - {year: 1510, peg: dice, confidence: high,
+     event: "Ismail kills the Uzbek khan Shaybani at Merv and the Safavids hold Khorasan",
+     scene: "A giant DICE crushes the Uzbek khan Shaybani at Merv and rolls Khorasan to Ismail.", source: "WP mirror: Tahmasp I"}
+  - {year: 1524, peg: hanger, confidence: high,
+     event: "Ismail I dies and ten-year-old Tahmasp I becomes shah",
+     scene: "A HANGER props up the huge crown on ten-year-old Tahmasp after Ismail I dies near Tabriz.", source: "WP mirror: Tahmasp I"}
+  - {year: 1528, peg: knife, confidence: high,
+     event: "Tahmasp defeats the Uzbeks at the Battle of Jam",
+     scene: "A KNIFE cuts through the Uzbek line at Jam, and Tahmasp wins.", source: "WP mirror: Tahmasp I"}
+  - {year: 1532, peg: moon, confidence: high,
+     event: "Ottoman forces seize Tabriz and Kurdistan",
+     scene: "A MOON-shaped Ottoman banner is planted on Tabriz, and the Ottoman army seizes Kurdistan.", source: "WP mirror: Tahmasp I"}
+  - {year: 1533, peg: mummy, confidence: high,
+     event: "Tahmasp ends Qizilbash control and rules alone",
+     scene: "A MUMMY wrapped in red Qizilbash turbans is carried out as Tahmasp overthrows Husayn Khan Shamlu and rules alone.", source: "WP mirror: Tahmasp I"}
+  - {year: 1534, peg: hammer, confidence: high,
+     event: "Ottoman grand vizier Ibrahim Pasha occupies Tabriz",
+     scene: "A HAMMER smashes Tabriz's gate, and Ibrahim Pasha walks in for the Ottomans.", source: "WP mirror: Tahmasp I"}
+  - {year: 1548, peg: reef, confidence: high,
+     event: "In Suleiman's second campaign the Ottomans take Tabriz, Van and Persian Armenia",
+     scene: "A REEF of Ottoman spears cuts off Tabriz and Van from Tahmasp, who burns the land behind him.", source: "WP mirror: Ottoman-Safavid War 1532-1555"}
+  - {year: 1555, peg: lily, confidence: high,
+     event: "Peace of Amasya: Suleiman keeps Baghdad and returns Tabriz",
+     scene: "A LILY seals the Peace of Amasya: Suleiman keeps Baghdad and gives Tabriz back to Tahmasp.", source: "WP mirror: Ottoman-Safavid War 1532-1555"}
+  - {year: 1559, peg: elbow, confidence: high,
+     event: "Prince Bayezid flees to Tahmasp's court in Iran",
+     scene: "An ELBOW shoves Prince Bayezid across the border into Tahmasp's court.", source: "WP mirror: Tahmasp I"}
+  - {year: 1561, peg: jet, confidence: high,
+     event: "Tahmasp hands Prince Bayezid to Ottoman envoys, who kill him",
+     scene: "A JET engine roars as Tahmasp hands Prince Bayezid to the Ottoman envoys, who strangle him near Qazvin.", source: "Web: Sehzade Bayezid"}
+  - {year: 1576, peg: cage, confidence: high,
+     event: "Tahmasp I dies and a succession crisis begins",
+     scene: "A CAGE of poisoned sweets ends old Tahmasp, and the Safavid princes fight over the throne.", source: "WP mirror: Tahmasp I"}
+  - {year: 1577, peg: cake, confidence: high,
+     event: "Ismail II purges the royal princes",
+     scene: "Ismail II slices the royal family like a CAKE and kills the Safavid princes.", source: "WP mirror: Tahmasp I"}
+  - {year: 1577, peg: cake, confidence: high,
+     event: "Ismail II dies of poisoned opium",
+     scene: "A CAKE of poisoned opium ends the short reign of Ismail II.", source: "WP mirror: Abbas I"}
+  - {year: 1578, peg: cave, confidence: high,
+     event: "Mohammad Khodabanda is chosen shah",
+     scene: "Qizilbash drag half-blind Khodabanda out of a CAVE and choose him as shah.", source: "WP mirror: Abbas I"}
+  - {year: 1581, peg: foot, confidence: high,
+     event: "Ali-Qoli Khan proclaims the boy Abbas shah in Khorasan",
+     scene: "A giant FOOT kicks over the old throne as Ali-Qoli Khan proclaims young Abbas shah in Khorasan.", source: "WP mirror: Abbas I"}
+  - {year: 1585, peg: waffle, confidence: high,
+     event: "Ottomans under Osman Pasha take Tabriz and hold it for two decades",
+     scene: "A WAFFLE iron stamps Ottoman squares on Tabriz after Osman Pasha takes the city.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1586, peg: fish, confidence: high,
+     event: "Qizilbash emirs kill the crown prince Hamza Mirza",
+     scene: "A FISH leaps onto the throne of Hamza Mirza as the Qizilbash emirs kill the crown prince.", source: "Web: Hamza Mirza"}
+  - {year: 1587, peg: fox, confidence: high,
+     event: "Ottomans take Luristan and Hamadan",
+     scene: "A FOX leads Sinan Pasha's Ottoman troops into Luristan and Hamadan.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1588, peg: fife, confidence: high,
+     event: "Abbas I takes the throne at Qazvin after his father abdicates",
+     scene: "A FIFE plays Abbas onto the throne at Qazvin as his father steps down.", source: "WP mirror: Abbas I"}
+  - {year: 1589, peg: fob, confidence: high,
+     event: "Abbas has his regent Murshid Qoli Khan killed",
+     scene: "A FOB drops from Murshid Qoli Khan's belt as Abbas has the old regent killed.", source: "WP mirror: Abbas I"}
+  - {year: 1590, peg: bees, confidence: high,
+     event: "Treaty of Istanbul: Iran confirms the Ottoman conquests",
+     scene: "BEES carry Tabriz, Georgia and Revan in wax to the Ottoman sultan and seal the treaty.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1591, peg: boot, confidence: high,
+     event: "Safavid invasion of Gilan under Farhad Khan",
+     scene: "A BOOT stomps into Gilan behind Farhad Khan Qaramanlu.", source: "WP mirror: Abbas I"}
+  - {year: 1595, peg: bell, confidence: high,
+     event: "Allahverdi Khan, a Georgian, becomes governor-general of Fars",
+     scene: "A BELL rings in Shiraz as the Georgian Allahverdi Khan takes over Fars.", source: "WP mirror: Safavid Iran"}
+  - {year: 1597, peg: pig, confidence: high,
+     event: "Abbas deposes the Khorshidi ruler of Lar",
+     scene: "A PIG pushes the Khorshidi ruler out of Lar for Abbas.", source: "WP mirror: Abbas I"}
+  - {year: 1598, peg: beehive, confidence: high,
+     event: "Abbas moves the capital from Qazvin to Isfahan",
+     scene: "A BEEHIVE of courtiers carries the throne from Qazvin to Isfahan.", source: "WP mirror: Abbas I"}
+  - {year: 1598, peg: beehive, confidence: high,
+     event: "Abbas retakes Mashhad from the Uzbeks",
+     scene: "Uzbek horsemen flee like a BEEHIVE kicked over as Abbas retakes Mashhad.", source: "WP mirror: Abbas I"}
+  - {year: 1600, peg: sauce, confidence: medium,
+     event: "Abbas I enlarges the ghulam regiments into a standing army",
+     scene: "A SAUCE pot feeds a huge new standing army of ghulam soldiers for Abbas.", source: "WP mirror: Safavid Iran"}
+  - {year: 1602, peg: sun, confidence: high,
+     event: "Abbas expels the Portuguese from Bahrain",
+     scene: "A red SUN rises over Bahrain as Abbas's troops push the Portuguese into the sea.", source: "WP mirror: Abbas I"}
+  - {year: 1603, peg: sumo, confidence: high,
+     event: "Abbas retakes Tabriz from the Ottomans",
+     scene: "A SUMO wrestler hurls the Ottoman garrison out of Tabriz for Abbas.", source: "WP mirror: Ottoman-Safavid War 1603-1618"}
+  - {year: 1605, peg: seal, confidence: high,
+     event: "Safavids defeat the Ottomans at Sufiyan",
+     scene: "A SEAL on Abbas's letter stamps the Ottoman army flat at Sufiyan.", source: "WP mirror: Abbas I"}
+  - {year: 1612, peg: tongue, confidence: high,
+     event: "Treaty of Nasuh Pasha restores the old borders and Abbas must send silk",
+     scene: "A TONGUE of raw silk licks the Treaty of Nasuh Pasha shut, and Abbas must send the silk each year.", source: "WP mirror: Ottoman-Safavid War 1603-1618"}
+  - {year: 1621, peg: ant, confidence: high,
+     event: "Abbas blinds his heir after a failed succession plot",
+     scene: "An ANT crawls over the blinded eyes of Abbas's heir after the failed plot.", source: "WP mirror: Abbas I"}
+  - {year: 1622, peg: nun, confidence: high,
+     event: "Safavid and English forces take Hormuz from the Portuguese",
+     scene: "A NUN with an English flag rows Persian troops across to Hormuz and ousts the Portuguese.", source: "WP mirror: Abbas I"}
+  - {year: 1629, peg: knob, confidence: high,
+     event: "Abbas I dies and Safi succeeds him",
+     scene: "A KNOB falls off the throne when Abbas dies, and young Safi grabs it.", source: "WP mirror: Abbas I"}
+  - {year: 1630, peg: mouse, confidence: high,
+     event: "Husrev Pasha beats the Persians at Mahidasht and sacks Hamadan",
+     scene: "A MOUSE leads the Ottoman charge at Mahidasht and chews through Hamadan.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1636, peg: match, confidence: high,
+     event: "Shah Safi retakes Revan and beats an Ottoman army",
+     scene: "A MATCH ignites the Ottoman powder carts as Shah Safi retakes Revan.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1642, peg: rhino, confidence: high,
+     event: "Abbas II becomes shah",
+     scene: "A RHINO charges onto the Safavid throne and becomes Shah Abbas II.", source: "Web: Abbas II of Persia"}
+  - {year: 1666, peg: judge, confidence: medium,
+     event: "Abbas II dies and Suleiman I succeeds him",
+     scene: "A JUDGE crowns Suleiman I after the death of Abbas II.", source: "Web: Abbas II of Persia (death date varies)"}
+  - {year: 1694, peg: bear, confidence: high,
+     event: "Soltan Hoseyn becomes Safavid shah",
+     scene: "A BEAR lumbers onto the Safavid throne and becomes the shah Soltan Hoseyn.", source: "WP mirror: Hotak dynasty"}
+  - {year: 1720, peg: nose, confidence: high,
+     event: "Mahmud Hotak's Afghans cross the Sistan deserts and take Kerman",
+     scene: "A NOSE sniffs out the way across the Sistan desert for Mahmud's Afghans, who take Kerman.", source: "WP mirror: Hotak dynasty"}
+  - {year: 1722, peg: nun, confidence: high,
+     event: "Mahmud Hotak defeats the Safavid army at Gulnabad",
+     scene: "A NUN rings the alarm bells at Gulnabad as Mahmud's Afghans rout the Safavid army.", source: "WP mirror: Hotak dynasty"}
+  - {year: 1722, peg: nun, confidence: high,
+     event: "Peter the Great starts the Russo-Persian War",
+     scene: "A NUN blesses Peter the Great's flotilla as it sails to start the war on Safavid Iran.", source: "WP mirror: Russo-Persian War 1722-1723"}
+  - {year: 1722, peg: nun, confidence: high,
+     event: "Soltan Hoseyn abdicates and recognises Mahmud as shah",
+     scene: "A NUN reads out the abdication of Soltan Hoseyn, who hands his crown to Mahmud Hotak at Isfahan.", source: "WP mirror: Hotak dynasty"}
+  - {year: 1722, peg: nun, confidence: high,
+     event: "Tahmasp II declares himself shah at Qazvin",
+     scene: "A NUN crowns Tahmasp II in Qazvin while Isfahan lies under siege.", source: "WP mirror: Tahmasp II"}
+  - {year: 1724, peg: hanger, confidence: high,
+     event: "Treaty of Constantinople divides Iranian lands between Russia and the Ottomans",
+     scene: "A HANGER splits the map of Iran into two coats, one for Russia and one for the Ottomans.", source: "WP mirror: Russo-Persian War 1722-1723"}
+  - {year: 1725, peg: nail, confidence: high,
+     event: "Mahmud dies and Ashraf takes the throne in a palace coup",
+     scene: "A NAIL jabs Mahmud's throne, and Ashraf takes the seat in a palace coup.", source: "WP mirror: Hotak dynasty"}
+  - {year: 1729, peg: knob, confidence: high,
+     event: "Nader defeats Ashraf at Damghan and drives out the Hotaks",
+     scene: "Nader's mace shaped like a KNOB cracks Ashraf's army at Damghan.", source: "WP mirror: Nader Shah"}
+  - {year: 1730, peg: mouse, confidence: high,
+     event: "Nader attacks the Ottomans and starts the Ottoman-Persian War",
+     scene: "A MOUSE leads Nader's army over the Ottoman frontier.", source: "WP mirror: Nader Shah"}
+  - {year: 1732, peg: moon, confidence: high,
+     event: "Nader forces Tahmasp II to abdicate and makes the infant Abbas III shah",
+     scene: "A MOON lights the night when Nader removes Tahmasp II and crowns the baby Abbas III.", source: "WP mirror: Nader Shah"}
+  - {year: 1732, peg: moon, confidence: high,
+     event: "Treaty of Resht: Russia returns lands it annexed",
+     scene: "A MOON rises over Rasht as Russia hands back the Persian lands it took.", source: "WP mirror: Russo-Persian War 1722-1723"}
+  - {year: 1735, peg: mill, confidence: high,
+     event: "Nader wins the Battle of Baghavard",
+     scene: "A MILL grinds the Ottoman army to flour at Baghavard for Nader.", source: "WP mirror: Nader Shah"}
+  - {year: 1735, peg: mill, confidence: high,
+     event: "Treaty of Ganja: Russia returns the Caucasus to Iran",
+     scene: "A MILL wheel in Ganja grinds out the treaty that gives the Caucasus back to Iran.", source: "WP mirror: Nader Shah"}
+  - {year: 1736, peg: match, confidence: high,
+     event: "Nader is crowned shah on the Moghan plain and Safavid rule ends",
+     scene: "A MATCH lights the gold crown that Nader raises over his own head on the Moghan plain.", source: "WP mirror: Nader Shah"}
+  - {year: 1740, peg: horse, confidence: high,
+     event: "Reza-qoli Mirza murders Tahmasp II and Abbas III at Sabzevar",
+     scene: "A HORSE carries Reza-qoli Mirza to Sabzevar, where he kills Tahmasp II and Abbas III.", source: "WP mirror: Tahmasp II"}
+  - {year: 1741, peg: radio, confidence: high,
+     event: "An assassin wounds Nader in Mazandaran",
+     scene: "A RADIO crackles a warning in the Mazandaran forest, but a gunman wounds Nader Shah.", source: "WP mirror: Nader Shah"}
+  - {year: 1746, peg: roach, confidence: high,
+     event: "Treaty of Kerden ends the second Ottoman war",
+     scene: "A ROACH scuttles over the Treaty of Kerden, which leaves the border where Zuhab put it.", source: "WP mirror: Nader Shah"}
+  - {year: 1747, peg: rock, confidence: high,
+     event: "Nader Shah is assassinated at Quchan",
+     scene: "A ROCK blocks the tent door as conspirators kill Nader Shah in his sleep at Quchan.", source: "WP mirror: Nader Shah"}
+  - {year: 1748, peg: reef, confidence: high,
+     event: "Adil Shah is deposed and Shahrokh becomes shah",
+     scene: "A REEF of Khorasani spears drives Adil Shah off the throne and lifts Shahrokh up.", source: "WP mirror: Afsharid dynasty"}
+  - {year: 1750, peg: lasso, confidence: high,
+     event: "Karim Khan Zand storms Isfahan and names Ismail III as puppet shah",
+     scene: "A LASSO pulls open the gates of Isfahan for the Zand army, which names a puppet shah, Ismail III.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1751, peg: wallet, confidence: high,
+     event: "Karim Khan returns to Isfahan and begins his rule",
+     scene: "A WALLET snaps shut on corruption as Karim Khan returns to Isfahan and restores order.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1752, peg: lion, confidence: high,
+     event: "Karim Khan beats Ali Mardan Khan near Nahavand",
+     scene: "A LION from Karim's banner mauls the army of Ali Mardan Khan near Nahavand.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1759, peg: elbow, confidence: high,
+     event: "A Zand army defeats Mohammad Hasan Khan Qajar, who is then killed",
+     scene: "An ELBOW flattens Mohammad Hasan Khan Qajar, who loses to the Zands and is then killed.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1760, peg: cheese, confidence: high,
+     event: "Karim Khan defeats his rivals and takes the title Vakil",
+     scene: "A CHEESE wedge labeled Vakil is slid across the table to Karim Khan, who refuses the title of king.", source: "WP mirror: Zand dynasty"}
+  - {year: 1763, peg: gem, confidence: high,
+     event: "Agha Mohammad Khan is sent as a hostage to Karim Khan's court in Shiraz",
+     scene: "Zand guards lock a GEM-set collar on young Agha Mohammad Khan and lead him to Shiraz.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1778, peg: cave, confidence: high,
+     event: "Tehran becomes the second capital of the Zands",
+     scene: "A CAVE of builders digs the foundation of Tehran, the second Zand capital.", source: "WP mirror: Zand dynasty"}
+  - {year: 1779, peg: cowboy, confidence: high,
+     event: "Karim Khan Zand dies in Shiraz",
+     scene: "A COWBOY tips his hat at Karim Khan's deathbed in Shiraz, and Zand rule starts to crumble.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1779, peg: cowboy, confidence: high,
+     event: "Agha Mohammad Khan defeats his brothers and conquers Mazandaran",
+     scene: "A COWBOY rides out of Astarabad and ropes Mazandaran from Agha Mohammad's brothers.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1781, peg: foot, confidence: high,
+     event: "Agha Mohammad Khan lures the Russian envoy Voinovich to Astarabad and holds him",
+     scene: "A chained FOOT in a Russian boot sits in Astarabad: Agha Mohammad Khan has trapped the envoy Voinovich.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1782, peg: oven, confidence: high,
+     event: "Agha Mohammad Khan invades Gilan and takes Qazvin and Zanjan",
+     scene: "An OVEN of Qajar fire burns through Gilan, Qazvin and Zanjan.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1782, peg: oven, confidence: high,
+     event: "Ali-Morad Khan begins his reign as Zand ruler",
+     scene: "An OVEN in Shiraz bakes the crown that Ali-Morad Khan takes as Zand ruler.", source: "WP mirror: Zand dynasty"}
+  - {year: 1785, peg: waffle, confidence: high,
+     event: "Agha Mohammad Khan reaches Isfahan and Tehran submits",
+     scene: "A WAFFLE-patterned Qajar banner is planted in Isfahan, and Tehran submits.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1785, peg: waffle, confidence: high,
+     event: "Jafar Khan begins his reign as Zand ruler",
+     scene: "A WAFFLE iron stamps the name of Jafar Khan on the Zand coins after he takes power.", source: "WP mirror: Zand dynasty"}
+  - {year: 1786, peg: fish, confidence: high,
+     event: "Agha Mohammad Khan makes Tehran his capital",
+     scene: "Agha Mohammad Khan pins a FISH-shaped banner on Tehran and makes it his capital.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1789, peg: fob, confidence: high,
+     event: "Jafar Khan Zand is murdered and a civil war follows",
+     scene: "A giant FOB pins the Zand ruler Jafar Khan as plotters murder him in Shiraz.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1789, peg: fob, confidence: high,
+     event: "Lotf Ali Khan wins the Zand civil war and enters Shiraz",
+     scene: "A FOB key opens the gate of Shiraz to young Lotf Ali Khan, winner of the Zand civil war.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1792, peg: piano, confidence: high,
+     event: "Agha Mohammad Khan enters Shiraz and moves Karim Khan's body to Tehran",
+     scene: "A PIANO-shaped coffin carries Karim Khan Zand's body from Shiraz to Tehran at Agha Mohammad's order.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1793, peg: palm, confidence: high,
+     event: "Kerman falls to Agha Mohammad Khan and Lotf Ali Khan flees",
+     scene: "A PALM tree hides Lotf Ali Khan on his flight from fallen Kerman toward Bam.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1794, peg: bear, confidence: disputed,
+     event: "Lotf Ali Khan is captured and killed at Bam and the Zand dynasty ends",
+     scene: "A BEAR at the gate of Bam seizes Lotf Ali Khan, and the Zand dynasty ends.", source: "WP mirror: Zand dynasty (Agha page: 1793)"}
+  - {year: 1796, peg: peach, confidence: high,
+     event: "Agha Mohammad Khan is formally crowned shah",
+     scene: "A PEACH-colored crown settles on Agha Mohammad Khan as he is formally crowned shah.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1796, peg: peach, confidence: high,
+     event: "Agha Mohammad Khan enters Mashhad and deposes Shahrokh Shah",
+     scene: "A PEACH stone knocks the crown off the old shah Shahrokh as Agha Mohammad Khan enters Mashhad.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  # Caucasus
+  - {year: 1500, peg: sauce, confidence: high,
+     event: "Ismail defeats the Shirvanshah Farrukh Yassar and takes Baku",
+     scene: "A SAUCE pot spills over Baku as Ismail's Qizilbash defeat the Shirvanshah.", source: "WP mirror: Ismail I"}
+  - {year: 1538, peg: movie, confidence: high,
+     event: "Shirvan passes to a Safavid governor and the Shirvanshah line ends",
+     scene: "A MOVIE ends in Shirvan: the last Shirvanshah leaves the screen and a Safavid governor takes over.", source: "WP mirror: Ismail I"}
+  - {year: 1540, peg: horse, confidence: high,
+     event: "Tahmasp starts four campaigns against the Georgian kingdoms",
+     scene: "A HORSE gallops into Georgia at the head of Tahmasp's first campaign, and three more follow.", source: "WP mirror: Tahmasp I"}
+  - {year: 1547, peg: rock, confidence: high,
+     event: "Tahmasp conquers Derbent",
+     scene: "A ROCK from Tahmasp's catapults smashes the wall of Derbent.", source: "WP mirror: Tahmasp I"}
+  - {year: 1576, peg: cage, confidence: high,
+     event: "Ottomans take Akhaltsikhe",
+     scene: "A CAGE closes round Akhaltsikhe as Ottoman troops take the fortress.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1578, peg: cave, confidence: high,
+     event: "Battle of Cildir: Ottomans defeat the Safavids, then take Tiflis",
+     scene: "A CAVE of Ottoman guns blasts the Safavid army at Cildir, and Tiflis falls soon after.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1578, peg: cave, confidence: high,
+     event: "Shirvan falls to the Ottomans",
+     scene: "Ottoman scouts crawl out of a CAVE and open the gates of Shamakhi, and Shirvan falls.", source: "WP mirror: Ottoman-Safavid War 1578-1590"}
+  - {year: 1583, peg: foam, confidence: high,
+     event: "Battle of Torches near Derbent: the Ottomans win",
+     scene: "FOAM sprays from the Caspian shore as torchlit armies clash near Derbent, and the Ottomans win the Battle of Torches.", source: "Web: Battle of Torches"}
+  - {year: 1604, peg: sewer, confidence: high,
+     event: "Yerevan falls to Safavid forces after a long siege",
+     scene: "A giant SEWER pipe pours Abbas's soldiers into Yerevan, which falls after a long siege.", source: "WP mirror: Abbas I"}
+  - {year: 1604, peg: sewer, confidence: disputed,
+     event: "Abbas forces the Armenians of Julfa to move to Isfahan",
+     scene: "A SEWER of Armenian carts flows from Julfa to Isfahan as Abbas moves the whole town.", source: "Iranica: Julfa (sources: 1604, 1605, 1606)"}
+  - {year: 1606, peg: sushi, confidence: high,
+     event: "Safavids recapture Ganja, Baku, Shirvan and Shamakhi",
+     scene: "A SUSHI chef serves Ganja, Baku and Shirvan back to Abbas on one plate.", source: "WP mirror: Ottoman-Safavid War 1603-1618"}
+  - {year: 1614, peg: tower, confidence: high,
+     event: "Abbas invades Kartli and Kakheti",
+     scene: "A TOWER of Safavid cavalry rolls into Kartli and Kakheti.", source: "WP mirror: Abbas I"}
+  - {year: 1615, peg: doll, confidence: high,
+     event: "Ottoman forces besiege Yerevan",
+     scene: "A giant DOLL leads the Ottoman siege lines round Yerevan.", source: "WP mirror: Timeline of Yerevan"}
+  - {year: 1618, peg: dove, confidence: high,
+     event: "Treaty of Serav confirms the old Ottoman-Safavid border",
+     scene: "A DOVE flies the Treaty of Serav to Constantinople and confirms the old border.", source: "Web: Treaty of Serav"}
+  - {year: 1622, peg: nun, confidence: high,
+     event: "The Georgian king Luarsab II is executed in Iran",
+     scene: "A NUN carries the death warrant of Luarsab II, the Georgian king executed in Iran.", source: "WP mirror: Abbas I"}
+  - {year: 1624, peg: hanger, confidence: high,
+     event: "Giorgi Saakadze leads a Georgian rebellion against Abbas",
+     scene: "A HANGER on Saakadze's wall holds the banner of the Georgian rebellion against Abbas.", source: "WP mirror: Abbas I"}
+  - {year: 1634, peg: hammer, confidence: high,
+     event: "Rustam Khan defeats Teimuraz of Kakheti, who flees to Imereti",
+     scene: "A HAMMER from Rustam Khan flattens Teimuraz of Kakheti, who runs to Imereti.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1635, peg: mill, confidence: high,
+     event: "Murad IV captures Revan and plunders Tabriz",
+     scene: "A MILL grinds the walls of Revan to dust as Murad IV takes the fortress and plunders Tabriz.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1659, peg: elbow, confidence: high,
+     event: "Kakheti rebels in the Bakhtrioni Uprising and Abbas II defeats it",
+     scene: "The Bakhtrioni rebels of Kakheti lie under the ELBOW of Abbas II, who wins at last.", source: "WP mirror: Safavid Iran"}
+  - {year: 1722, peg: nun, confidence: high,
+     event: "Davit Bek leads the Armenian revolt in Syunik",
+     scene: "A NUN rings the mountain bells of Syunik as Davit Bek starts the Armenian revolt.", source: "Web: Syunik rebellion"}
+  - {year: 1723, peg: gnome, confidence: medium,
+     event: "The Ottomans take Tbilisi",
+     scene: "A GNOME opens the gate of Tbilisi to the Ottoman commander Ibrahim Pasha.", source: "Web: Vakhtang VI"}
+  - {year: 1724, peg: hanger, confidence: high,
+     event: "Vakhtang VI loses his throne and seeks Russian protection",
+     scene: "A HANGER holds the empty crown of Vakhtang VI as he leaves Georgia for Russia.", source: "WP mirror: Russo-Persian War 1722-1723"}
+  - {year: 1744, peg: warrior, confidence: high,
+     event: "Nader makes Erekle II king of Kakheti and Teimuraz II king of Kartli",
+     scene: "A WARRIOR crowns Erekle II and Teimuraz II at Nader's order.", source: "WP mirror: Heraclius II"}
+  - {year: 1745, peg: railway, confidence: high,
+     event: "Erekle II is crowned at Svetitskhoveli in Mtskheta",
+     scene: "A RAILWAY of candles leads Erekle II into Svetitskhoveli, where he is crowned.", source: "WP mirror: Heraclius II"}
+  - {year: 1747, peg: rock, confidence: high,
+     event: "Georgian kings expel the Persian garrisons after Nader's death",
+     scene: "A ROCK from the walls of Tbilisi knocks out the Persian garrison after Nader dies.", source: "WP mirror: Heraclius II"}
+  - {year: 1747, peg: rock, confidence: high,
+     event: "Panah Ali Khan seizes most of Karabakh",
+     scene: "A ROCK-hard Panah Ali Khan seizes most of Karabakh when Nader dies.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1748, peg: reef, confidence: high,
+     event: "The Karabakh Khanate is established under Adil Shah",
+     scene: "A REEF of fortress stones forms the new Karabakh Khanate under Panah Ali Khan.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1749, peg: rope, confidence: high,
+     event: "Erekle II occupies Yerevan",
+     scene: "A ROPE hauls Erekle II's flag up the tower of Yerevan.", source: "WP mirror: Heraclius II"}
+  - {year: 1751, peg: wallet, confidence: high,
+     event: "Erekle II defeats Azat Khan at Kirkhbulakh",
+     scene: "A WALLET thrown down at Kirkhbulakh marks the spot where Erekle II beats Azat Khan.", source: "WP mirror: Heraclius II"}
+  - {year: 1752, peg: lion, confidence: medium,
+     event: "Panah Ali Khan builds Panahabad and Shusha becomes the capital (approximate)",
+     scene: "A LION carves out the walls of Panahabad, and Shusha becomes the capital of Karabakh.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1757, peg: log, confidence: high,
+     event: "Mohammad Hasan Khan Qajar fails to take Shusha",
+     scene: "A LOG jams the gate of Shusha and stops Mohammad Hasan Khan Qajar.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1761, peg: jet, confidence: high,
+     event: "Fath-Ali Khan Afshar besieges Shusha and leaves when Panah Ali Khan gives a hostage",
+     scene: "A JET of water soars over Shusha and drives off Fath-Ali Khan Afshar once Panah Ali gives a hostage.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1762, peg: chain, confidence: high,
+     event: "Teimuraz II dies and Erekle II unites Kartli and Kakheti",
+     scene: "A CHAIN links Kartli to Kakheti in the hand of Erekle II, who unites eastern Georgia.", source: "WP mirror: Heraclius II"}
+  - {year: 1762, peg: chain, confidence: high,
+     event: "Panah Ali Khan submits to Karim Khan and dies in Shiraz",
+     scene: "A CHAIN of Zand soldiers leads Panah Ali Khan to Shiraz, where he dies.", source: "WP mirror: Karabakh Khanate"}
+  - {year: 1783, peg: foam, confidence: high,
+     event: "Treaty of Georgievsk makes Kartli-Kakheti a Russian protectorate",
+     scene: "FOAM-white Russian flags rise over Tbilisi after the Treaty of Georgievsk.", source: "WP mirror: Heraclius II"}
+  - {year: 1790, peg: bees, confidence: high,
+     event: "Erekle II concludes the Treaty of the Iberians with western Georgian states",
+     scene: "BEES from Imereti and Kartli settle in one hive in the Treaty of the Iberians.", source: "WP mirror: Heraclius II"}
+  - {year: 1795, peg: bell, confidence: high,
+     event: "Agha Mohammad Khan sacks Tbilisi after the Battle of Krtsanisi",
+     scene: "A BELL of Tbilisi tolls as Agha Mohammad Khan's army sacks the city after Krtsanisi.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1796, peg: peach, confidence: high,
+     event: "The Russian Persian Expedition briefly occupies Derbent and Baku",
+     scene: "A PEACH rolls south from Derbent to Baku in the Russian Persian Expedition.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1797, peg: pig, confidence: high,
+     event: "Agha Mohammad Khan is assassinated at Shusha and Fath-Ali Shah succeeds",
+     scene: "A PIG squeals in Agha Mohammad Khan's tent at Shusha as assassins kill him, and Fath-Ali Shah takes the throne.", source: "WP mirror: Agha Mohammad Khan Qajar"}
+  - {year: 1798, peg: beehive, confidence: high,
+     event: "Erekle II dies and George XII succeeds him",
+     scene: "A BEEHIVE buzzes at Erekle II's deathbed and then settles on the crown of George XII.", source: "WP mirror: Heraclius II"}
+  # Mesopotamia (Iraq)
+  - {year: 1508, peg: sofa, confidence: high,
+     event: "Ismail's Safavids take Baghdad",
+     scene: "A SOFA of the caliphs is thrown out of Baghdad's palace as the Safavids take the city.", source: "WP mirror: Ismail I"}
+  - {year: 1534, peg: hammer, confidence: high,
+     event: "Suleiman takes Baghdad",
+     scene: "A HAMMER of Ottoman cannon opens Baghdad's gates for Suleiman.", source: "WP mirror: Tahmasp I"}
+  - {year: 1546, peg: roach, confidence: medium,
+     event: "Ottomans take Basra",
+     scene: "A ROACH scuttles up the Basra quay as the Ottomans take the port.", source: "Web: Bassora annexation 1546 (article title)"}
+  - {year: 1621, peg: ant, confidence: high,
+     event: "The Janissary officer Bakr takes control of Baghdad",
+     scene: "An ANT swarm hands the Baghdad citadel to the Janissary officer Bakr.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1624, peg: hanger, confidence: high,
+     event: "Abbas I takes Baghdad with the help of Bakr's son",
+     scene: "A HANGER on the gate of Baghdad lets Abbas's troops in, and the city turns Persian.", source: "Web: Capture of Baghdad (1624)"}
+  - {year: 1625, peg: nail, confidence: high,
+     event: "Hafiz Ahmed Pasha besieges Baghdad until Abbas's relief army arrives",
+     scene: "A NAIL jams the gate of Baghdad as Hafiz Ahmed Pasha's siege begins, and Abbas's relief army comes.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1638, peg: movie, confidence: high,
+     event: "Murad IV takes Baghdad after a long siege",
+     scene: "A MOVIE screen shows Murad IV's cannon flatten the wall of Baghdad after a siege of 39 days.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1639, peg: map, confidence: high,
+     event: "Treaty of Zuhab fixes the border and leaves Iraq Ottoman",
+     scene: "A MAP is cut in two at Zuhab: Iraq stays Ottoman for good and the border is fixed.", source: "WP mirror: Ottoman-Safavid War 1623-1639"}
+  - {year: 1704, peg: sewer, confidence: high,
+     event: "Hasan Pasha begins Mamluk rule in Baghdad",
+     scene: "A SEWER grate opens in the Baghdad citadel and lets the new governor Hasan Pasha in.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1723, peg: gnome, confidence: high,
+     event: "Ahmad Pasha succeeds his father Hasan in Baghdad",
+     scene: "A GNOME hands Ahmad Pasha the keys of Baghdad as his father Hasan Pasha dies.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1733, peg: mummy, confidence: high,
+     event: "Topal Osman Pasha beats Nader near Baghdad",
+     scene: "A MUMMY of Topal Osman Pasha rises near Baghdad and beats Nader Shah, his only defeat.", source: "WP mirror: Nader Shah"}
+  - {year: 1747, peg: rock, confidence: high,
+     event: "Sulayman Abu Layla ousts the Ottoman administrator sent to Baghdad",
+     scene: "A ROCK from the citadel knocks the Ottoman administrator out of Baghdad for Sulayman Abu Layla.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1750, peg: lasso, confidence: medium,
+     event: "The Porte recognises Sulayman Abu Layla as the first Mamluk pasha of Iraq",
+     scene: "A LASSO ropes the title of pasha for Sulayman Abu Layla from the Porte.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1762, peg: chain, confidence: high,
+     event: "Omar Pasha begins his rule in Baghdad",
+     scene: "A CHAIN of office slides over the neck of Omar Pasha in Baghdad.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1763, peg: gem, confidence: high,
+     event: "The British East India Company opens an agency in Basra",
+     scene: "A GEM-laden British merchant opens the East India Company agency in Basra.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1775, peg: eagle, confidence: high,
+     event: "Zand forces under Sadeq Khan begin the siege of Basra",
+     scene: "An EAGLE with a Zand banner circles Basra as Sadeq Khan begins the siege.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1776, peg: cage, confidence: high,
+     event: "Basra surrenders to the Zands",
+     scene: "A CAGE closes round the Ottoman garrison of Basra, which surrenders to the Zands.", source: "WP mirror: Karim Khan Zand"}
+  - {year: 1779, peg: cowboy, confidence: high,
+     event: "Sulayman the Great returns from exile in Shiraz",
+     scene: "A COWBOY leads Sulayman the Great home from exile in Shiraz to Baghdad.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1780, peg: vase, confidence: high,
+     event: "Sulayman the Great becomes governor of Baghdad, Basra and Shahrizor",
+     scene: "A VASE holding three keys is handed to Sulayman the Great for Baghdad, Basra and Shahrizor.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  - {year: 1784, peg: fairy, confidence: high,
+     event: "Ibrahim Pasha Baban founds Sulaymaniyah as the Baban capital",
+     scene: "A FAIRY lays the first stone of Sulaymaniyah for Ibrahim Pasha Baban.", source: "Web: Sulaymaniyah history"}
+  - {year: 1798, peg: beehive, confidence: high,
+     event: "Sulayman the Great allows a permanent British agent in Baghdad",
+     scene: "A BEEHIVE buzzes in the garden of Baghdad where a permanent British agent settles by leave of Sulayman.", source: "WP mirror: Mamluk dynasty (Iraq)"}
+  # Levant
+  - {year: 1516, peg: dish, confidence: high,
+     event: "Selim defeats the Mamluks at Marj Dabiq",
+     scene: "A DISH-shaped Ottoman shield flattens the Mamluk charge at Marj Dabiq.", source: "WP mirror: Selim I"}
+  - {year: 1516, peg: dish, confidence: high,
+     event: "Selim conquers Damascus",
+     scene: "A second DISH holds the keys of Damascus as Selim I walks in.", source: "WP mirror: Selim I"}
+  - {year: 1516, peg: dish, confidence: high,
+     event: "Fakhr al-Din I is awarded the Shuf for backing Selim and the Mount Lebanon emirate begins",
+     scene: "A DISH of Shuf cherries is given to the Druze chief who backed Selim, and the Lebanon emirate begins.", source: "WP mirror: Emirate of Mount Lebanon"}
+  - {year: 1521, peg: ant, confidence: high,
+     event: "Canbirdi Gazali revolts against the Ottomans in Damascus",
+     scene: "An ANT colony swarms the gates of Damascus as Canbirdi Gazali revolts against the Ottomans.", source: "Web: Janbirdi al-Ghazali"}
+  - {year: 1579, peg: cowboy, confidence: high,
+     event: "Tripoli becomes a permanent separate province",
+     scene: "A COWBOY lassoes Tripoli away from the Damascus province and makes it separate.", source: "WP mirror: Damascus Eyalet"}
+  - {year: 1585, peg: waffle, confidence: high,
+     event: "Ottomans punish the Druze with an expedition after a tax caravan is plundered",
+     scene: "A WAFFLE tower of confiscated Druze muskets stands in the Ottoman camp after the punitive expedition.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1591, peg: boot, confidence: high,
+     event: "Fakhr al-Din II succeeds his father as emir of the Chouf",
+     scene: "A BOOT kicks open the gate of the Chouf for young Fakhr al-Din II.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1598, peg: beehive, confidence: high,
+     event: "Fakhr al-Din defeats Yusuf Sayfa at the Nahr al-Kalb",
+     scene: "A BEEHIVE of Druze archers swarms over Yusuf Sayfa at the Nahr al-Kalb.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1608, peg: sofa, confidence: high,
+     event: "Fakhr al-Din signs a treaty with Tuscany",
+     scene: "A SOFA in Florence seals the treaty of Fakhr al-Din II with Tuscany.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1613, peg: tomb, confidence: high,
+     event: "Ottomans blockade Sidon and Fakhr al-Din flees by sea to Tuscany",
+     scene: "A TOMB-shaped boat floats out of Sidon with Fakhr al-Din II, who flees to Tuscany.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1614, peg: tower, confidence: high,
+     event: "The Sidon and Safed districts form a short-lived Sidon Eyalet",
+     scene: "A TOWER of provincial paperwork rises in Sidon as the new Sidon Eyalet forms.", source: "WP mirror: Damascus Eyalet"}
+  - {year: 1618, peg: dove, confidence: high,
+     event: "Fakhr al-Din returns to Acre after a pardon",
+     scene: "A DOVE with a pardon lands on the mast as Fakhr al-Din returns to Acre.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1623, peg: gnome, confidence: high,
+     event: "Fakhr al-Din wins the Battle of Anjar and is called Sultan of the Land",
+     scene: "A GNOME crowns Fakhr al-Din Sultan of the Land after his win at Anjar.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1633, peg: mummy, confidence: high,
+     event: "Fakhr al-Din surrenders in a cave and his sons are captured",
+     scene: "A MUMMY steps out of a cave and surrenders as Fakhr al-Din II.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1635, peg: mill, confidence: high,
+     event: "Fakhr al-Din II is beheaded in Constantinople",
+     scene: "A MILL blade falls on Fakhr al-Din II, who is beheaded in Constantinople.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1660, peg: cheese, confidence: high,
+     event: "Ottomans re-establish the Sidon Eyalet",
+     scene: "A CHEESE wheel marked Sidon is rolled back into the list of Ottoman provinces.", source: "WP mirror: Fakhr-al-Din II"}
+  - {year: 1697, peg: pig, confidence: high,
+     event: "The last male Ma'n dies and Haydar Shihab is chosen emir",
+     scene: "A PIG in a Shihab turban takes the Lebanon emirate when the last male Ma'n dies.", source: "WP mirror: Emirate of Mount Lebanon"}
+  - {year: 1711, peg: tattoo, confidence: high,
+     event: "Haydar Shihab wins the Battle of Ain Dara",
+     scene: "A TATTOO-covered Haydar Shihab wins the Battle of Ain Dara and takes Deir el Qamar.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1725, peg: nail, confidence: high,
+     event: "Isma'il Pasha al-Azm begins governing Damascus",
+     scene: "A NAIL on the door of the governor's palace in Damascus bears the name of Isma'il Pasha al-Azm.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1738, peg: movie, confidence: high,
+     event: "Zahir al-Umar defeats Ahmad al-Husayn near Jiddin",
+     scene: "A MOVIE of Zahir al-Umar's win over Ahmad al-Husayn plays at Jiddin fortress.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1743, peg: ram, confidence: high,
+     event: "Sulayman Pasha al-Azm dies besieging Tiberias",
+     scene: "A RAM butts the siege ladders at Tiberias until Sulayman Pasha al-Azm dies in camp.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1744, peg: warrior, confidence: medium,
+     event: "Zahir al-Umar takes Acre by force (probable date)",
+     scene: "A WARRIOR climbs the wall of Acre and plants Zahir al-Umar's flag.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1746, peg: roach, confidence: high,
+     event: "Zahir is formally appointed tax farmer of Acre",
+     scene: "A ROACH carries the tax-farm deed of Acre to Zahir al-Umar.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1757, peg: log, confidence: high,
+     event: "Zahir takes Haifa, Tira and Tantura",
+     scene: "A LOG bridge carries Zahir's troops into Haifa, Tira and Tantura.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1757, peg: log, confidence: high,
+     event: "Bedouin tribes raid the Hajj caravan",
+     scene: "A LOG blocks the pilgrim road as Bedouin raid the Hajj caravan.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1768, peg: chef, confidence: high,
+     event: "The Porte grants Zahir the title Sheikh of Acre and emir of Nazareth, Tiberias and Safed",
+     scene: "A CHEF serves Zahir al-Umar the new title of Sheikh of Acre on a silver plate.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1771, peg: cat, confidence: high,
+     event: "Abu al-Dhahab's army takes Damascus",
+     scene: "A CAT in an Egyptian helmet leads Abu al-Dhahab's army into Damascus.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1771, peg: cat, confidence: high,
+     event: "Zahir defeats Uthman Pasha at Lake Hula",
+     scene: "A CAT pounces on the army of Uthman Pasha at Lake Hula for Zahir.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1772, peg: coin, confidence: high,
+     event: "Zahir and Ali Bey recapture Jaffa and Zahir takes Beirut",
+     scene: "A COIN spins over Jaffa and Beirut as Zahir and Ali Bey win both cities.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1775, peg: eagle, confidence: high,
+     event: "Zahir al-Umar is killed outside Acre",
+     scene: "An EAGLE circles over Acre as Hasan Pasha's men kill the old ruler Zahir al-Umar.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1776, peg: cage, confidence: high,
+     event: "Deir Hanna falls to Hasan Pasha and Jazzar Pasha",
+     scene: "A CAGE closes round the fortress of Deir Hanna, which falls to Hasan Pasha and Jazzar Pasha.", source: "WP mirror: Zahir al-Umar"}
+  - {year: 1788, peg: fife, confidence: high,
+     event: "Bashir II begins his reign as emir of Mount Lebanon",
+     scene: "A FIFE plays Bashir II onto the emir's seat of Mount Lebanon.", source: "WP mirror: Emirate of Mount Lebanon"}
+  - {year: 1789, peg: fob, confidence: high,
+     event: "Jazzar defeats the Shihabs in the Bekaa and Yusuf abdicates",
+     scene: "A FOB drops from the belt of Yusuf Shihab as Jazzar beats the Shihabs in the Bekaa and he abdicates.", source: "WP mirror: Emirate of Mount Lebanon"}
+  - {year: 1799, peg: pipe, confidence: high,
+     event: "The French begin the siege of Acre",
+     scene: "A PIPE-shaped French cannon fires on the walls of Acre as Napoleon's siege begins.", source: "WP mirror: Siege of Acre (1799)"}
+  - {year: 1799, peg: pipe, confidence: high,
+     event: "Napoleon's final assault fails and he lifts the siege of Acre",
+     scene: "A PIPE of black smoke covers the failed last assault, and Napoleon leaves Acre for Egypt.", source: "WP mirror: Siege of Acre (1799)"}
+  # Arabian Peninsula
+  - {year: 1507, peg: ski, confidence: high,
+     event: "Albuquerque's Portuguese capture Muscat",
+     scene: "A SKI cuts a track through Muscat's sand as Albuquerque's Portuguese capture the town.", source: "Web: Capture of Muscat (1507)"}
+  - {year: 1515, peg: doll, confidence: high,
+     event: "Albuquerque conquers Hormuz and builds a fort",
+     scene: "A DOLL-sized fort rises on Hormuz as Albuquerque conquers the island for Portugal.", source: "Web: Portuguese conquest of Hormuz"}
+  - {year: 1517, peg: dog, confidence: high,
+     event: "Selim's conquests bring Hejaz and Tihamah under Ottoman rule",
+     scene: "A DOG carries the keys of Mecca and Medina to Selim.", source: "WP mirror: Selim I"}
+  - {year: 1521, peg: ant, confidence: high,
+     event: "Portuguese and Hormuz seize Bahrain",
+     scene: "An ANT-sized Portuguese fleet swarms into Bahrain and seizes the islands.", source: "WP mirror: Bahrain"}
+  - {year: 1538, peg: movie, confidence: high,
+     event: "Ottomans storm Aden",
+     scene: "A MOVIE of the Ottoman fleet storming Aden plays on the harbour wall.", source: "Web: Ottoman conquest of Yemen"}
+  - {year: 1547, peg: rock, confidence: medium,
+     event: "Ozdemir Pasha takes Sanaa",
+     scene: "A ROCK rolls down the Yemeni hills as Ozdemir Pasha's Ottomans take Sanaa.", source: "Web: Ottoman conquest of Yemen"}
+  - {year: 1548, peg: reef, confidence: medium,
+     event: "Ozdemir Pasha captures Saada",
+     scene: "A REEF of Ottoman spears closes round Saada, which Ozdemir Pasha captures.", source: "Web: Ottoman conquest of Yemen"}
+  - {year: 1560, peg: cheese, confidence: high,
+     event: "The Ottomans set up the Lahsa Eyalet",
+     scene: "A CHEESE wheel marked Lahsa is stamped on the Ottoman map of Arabia.", source: "WP mirror: Ottoman Arabia"}
+  - {year: 1597, peg: pig, confidence: high,
+     event: "Imam al-Mansur al-Qasim founds the Qasimid state in Yemen",
+     scene: "A PIG in an imam's turban founds the Qasimid state in the Yemeni highlands.", source: "Web: Qasimid State"}
+  - {year: 1624, peg: hanger, confidence: high,
+     event: "Nasir bin Murshid is elected the first Yarubid imam",
+     scene: "A HANGER holds the imam's cloak that is given to Nasir bin Murshid at Nizwa.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1633, peg: mummy, confidence: high,
+     event: "Yarubid forces expel the Portuguese from Julfar",
+     scene: "A MUMMY of a Portuguese captain is thrown from the fort at Julfar by Yarubid forces.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1635, peg: mill, confidence: disputed,
+     event: "Ottomans leave Yemen after the Zaydi imam expels them",
+     scene: "A MILL wheel grinds the last Ottoman garrison out of Yemen and the imam is free.", source: "Web: Yemen sources give 1635 or 1638"}
+  - {year: 1643, peg: ram, confidence: high,
+     event: "Yarubids take the fort at Sohar",
+     scene: "A RAM batters the gate of Sohar fort until the Yarubids take it.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1649, peg: rope, confidence: high,
+     event: "Sultan bin Saif is proclaimed imam",
+     scene: "A ROPE lifts Sultan bin Saif onto the shoulders of the crowd at Rustaq as imam.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1650, peg: lasso, confidence: high,
+     event: "Sultan bin Saif takes Muscat and expels the Portuguese from Oman",
+     scene: "A LASSO pulls the Portuguese flag down from Fort Muscat as Sultan bin Saif takes the town.", source: "Web: Capture of Muscat (1650)"}
+  - {year: 1670, peg: goose, confidence: high,
+     event: "Bani Khalid drive the Ottomans out of al-Ahsa",
+     scene: "A GOOSE honks the Ottoman garrison out of al-Ahsa for the Bani Khalid.", source: "Web: Lahsa Eyalet"}
+  - {year: 1679, peg: cowboy, confidence: high,
+     event: "Bil'arab bin Sultan becomes imam after his father",
+     scene: "A COWBOY hands Bil'arab bin Sultan the imam's cloak after his father dies.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1692, peg: piano, confidence: high,
+     event: "Saif bin Sultan becomes imam when Bil'arab dies",
+     scene: "A PIANO plays at Jabrin for the new imam Saif bin Sultan as Bil'arab dies.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1701, peg: soda, confidence: high,
+     event: "The Ottomans set up the Jeddah Eyalet",
+     scene: "A SODA fountain bubbles up in Jeddah where the Ottomans set up the new province.", source: "WP mirror: Ottoman Arabia"}
+  - {year: 1711, peg: tattoo, confidence: high,
+     event: "Sultan bin Saif II succeeds his father Saif as imam",
+     scene: "A TATTOO of Saif's dagger appears on the arm of his son Sultan bin Saif II, the new imam.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1717, peg: dog, confidence: high,
+     event: "Ibadi forces from Oman invade Bahrain",
+     scene: "A DOG in an Omani turban leads Ibadi forces ashore in Bahrain.", source: "WP mirror: Bahrain"}
+  - {year: 1719, peg: tuba, confidence: high,
+     event: "Muhanna bin Sultan is proclaimed imam of Oman",
+     scene: "A TUBA blasts as Muhanna bin Sultan is proclaimed imam.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1720, peg: nose, confidence: high,
+     event: "Ya'arub bin Bal'arab deposes and kills Muhanna",
+     scene: "A NOSE leads Ya'arub bin Bal'arab to Muhanna, whom he deposes and kills.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1724, peg: hanger, confidence: high,
+     event: "Muhammad bin Nasir is elected imam",
+     scene: "A HANGER holds the cloak given to Muhammad bin Nasir, the new imam.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1727, peg: ink, confidence: high,
+     event: "The Emirate of Diriyah is established",
+     scene: "An INK blot makes the Emirate of Diriyah on the map of Najd.", source: "WP mirror: Emirate of Diriyah"}
+  - {year: 1728, peg: knife, confidence: medium,
+     event: "The Abdali sultanate of Lahej begins self-rule",
+     scene: "A KNIFE cuts the tie between Lahej and the Qasimid imam.", source: "Web: Sultanate of Lahej"}
+  - {year: 1728, peg: knife, confidence: high,
+     event: "Muhammad bin Nasir is killed at Sohar and Saif bin Sultan II returns to Nizwa",
+     scene: "A KNIFE cuts down Muhammad bin Nasir at Sohar, and Saif bin Sultan II returns to Nizwa.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1737, peg: mug, confidence: high,
+     event: "A Persian force arrives in Oman",
+     scene: "A MUG of Persian tea is poured in Oman as Nader's force lands.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1742, peg: rhino, confidence: high,
+     event: "Sultan bin Murshid is proclaimed imam",
+     scene: "A RHINO charges ahead of Sultan bin Murshid, whom the crowd proclaims imam.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1743, peg: ram, confidence: high,
+     event: "The Persians take Muscat",
+     scene: "A RAM butts the last gate of Muscat, and the Persians take the town.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1744, peg: warrior, confidence: high,
+     event: "Ahmad bin Said is elected imam after the siege of Sohar",
+     scene: "A WARRIOR who held Sohar for nine months is elected imam: Ahmad bin Said.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1744, peg: warrior, confidence: high,
+     event: "Muhammad bin Saud and Ibn Abd al-Wahhab ally to found the Saudi state",
+     scene: "A WARRIOR of Diriyah shakes hands for Muhammad bin Saud and Ibn Abd al-Wahhab and founds the Saudi state.", source: "WP mirror: Emirate of Diriyah"}
+  - {year: 1747, peg: rock, confidence: high,
+     event: "Ahmad bin Said massacres the Persian garrison at Barka",
+     scene: "A ROCK crushes the Persian garrison at Barka for Ahmad bin Said.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1749, peg: rope, confidence: high,
+     event: "Ahmad bin Said becomes the undisputed ruler of Oman",
+     scene: "A ROPE ties all of Oman to the hand of Ahmad bin Said.", source: "WP mirror: Yaruba dynasty"}
+  - {year: 1752, peg: lion, confidence: medium,
+     event: "Kuwait becomes independent of the Bani Khalid",
+     scene: "A LION leaves the Bani Khalid pride and roams free as Kuwait.", source: "WP mirror: Kuwait"}
+  - {year: 1753, peg: llama, confidence: high,
+     event: "The Huwala invade Bahrain for Karim Khan Zand and restore direct Iranian rule",
+     scene: "A LLAMA carries the Huwala invaders ashore in Bahrain for Karim Khan Zand.", source: "WP mirror: Bahrain"}
+  - {year: 1765, peg: jelly, confidence: high,
+     event: "Muhammad bin Saud dies and Abdulaziz succeeds him",
+     scene: "A JELLY of tears wobbles at Diriyah as Muhammad bin Saud dies and Abdulaziz takes over.", source: "WP mirror: Emirate of Diriyah"}
+  - {year: 1782, peg: oven, confidence: high,
+     event: "The Bani Utbah defeat Al-Madhkur at the Battle of Zubarah",
+     scene: "An OVEN of Utbah fire roasts Al-Madhkur's army at Zubarah.", source: "WP mirror: Bahrain"}
+  - {year: 1783, peg: foam, confidence: high,
+     event: "The Bani Utbah take Bahrain and the Al Khalifa rule begins",
+     scene: "FOAM washes the shore of Bahrain as the Bani Utbah land and the Al Khalifa begin to rule.", source: "WP mirror: Bahrain"}
+  - {year: 1788, peg: fife, confidence: high,
+     event: "Ghalib ibn Masaad becomes sharif of Mecca",
+     scene: "A FIFE plays for Ghalib ibn Masaad as he becomes sharif of Mecca.", source: "WP mirror: Sharifate of Mecca"}
+  - {year: 1792, peg: piano, confidence: disputed,
+     event: "The Saudis take al-Hasa (sources give two years)",
+     scene: "A PIANO plays as Saudi troops enter al-Hasa.", source: "WP mirror: Ottoman Arabia"}
+  - {year: 1798, peg: beehive, confidence: high,
+     event: "Sultan bin Ahmad signs the first treaty between an Arab Gulf state and Britain",
+     scene: "A BEEHIVE seals the Anglo-Omani agreement of Sultan bin Ahmad with the East India Company.", source: "Web: Anglo-Omani Treaties"}
+  - {year: 1799, peg: pipe, confidence: high,
+     event: "The Al Khalifa move from Qatar to Bahrain",
+     scene: "A PIPE of smoke follows the Al Khalifa boats from Qatar to Bahrain.", source: "WP mirror: Bahrain"}
+  # Cyprus
+  - {year: 1570, peg: goose, confidence: high,
+     event: "Ottoman forces land at Salines near Larnaca",
+     scene: "A GOOSE honks as the Ottoman fleet lands unopposed at Salines near Larnaca.", source: "Web: Ottoman conquest of Cyprus"}
+  - {year: 1570, peg: goose, confidence: high,
+     event: "Nicosia falls to the Ottomans",
+     scene: "A GOOSE flaps over the broken walls of Nicosia as the city falls to the Ottomans.", source: "Web: Ottoman conquest of Cyprus"}
+  - {year: 1571, peg: cat, confidence: high,
+     event: "Famagusta surrenders to the Ottomans",
+     scene: "A CAT sits on the Famagusta wall as the garrison surrenders to the Ottomans.", source: "Web: Ottoman conquest of Cyprus"}
+  - {year: 1571, peg: cat, confidence: high,
+     event: "Cyprus becomes an Ottoman province with Lala Mustafa Pasha as first governor",
+     scene: "A CAT in an Ottoman turban takes the governor's chair as Cyprus becomes a province under Lala Mustafa Pasha.", source: "WP mirror: Cyprus Eyalet"}
+  - {year: 1573, peg: comb, confidence: high,
+     event: "Venice cedes Cyprus in a separate peace",
+     scene: "A COMB drags the Lion of Venice off Cyprus as Venice signs a separate peace.", source: "Web: Ottoman conquest of Cyprus"}
+  - {year: 1670, peg: goose, confidence: high,
+     event: "Cyprus becomes a sanjak under the Eyalet of the Archipelago",
+     scene: "A GOOSE flies Cyprus off the list of provinces and drops it under the Archipelago admiral.", source: "WP mirror: Cyprus Eyalet"}
+  - {year: 1703, peg: sumo, confidence: high,
+     event: "Cyprus is placed under the Grand Vizier and a muhassil",
+     scene: "A SUMO wrestler called the muhassil sits on Cyprus under the Grand Vizier's orders.", source: "WP mirror: Cyprus Eyalet"}
+  - {year: 1745, peg: railway, confidence: high,
+     event: "Cyprus briefly becomes an eyalet again",
+     scene: "A RAILWAY of tax carts rolls into Nicosia, which is a full province again.", source: "WP mirror: Cyprus Eyalet"}
+  - {year: 1764, peg: cherry, confidence: high,
+     event: "The muhassil Cil Osman Agha is killed amid unrest",
+     scene: "A giant CHERRY rolls through Nicosia and crushes the muhassil Cil Osman Agha.", source: "WP mirror: Cyprus Eyalet"}
+  - {year: 1784, peg: fairy, confidence: high,
+     event: "Cyprus becomes a sanjak again under the Eyalet of the Archipelago",
+     scene: "A FAIRY waves her wand, and Cyprus drops back to a sanjak under the Archipelago.", source: "WP mirror: Cyprus Eyalet"}
