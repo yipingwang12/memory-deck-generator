@@ -1,0 +1,823 @@
+# Cell: Central Asia x science and technology x 1945 to present. DRAFT 2026-11-07.
+# Scope: Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzstan, Tajikistan, Afghanistan, Mongolia,
+# Tibet, Xinjiang, the steppe east of the Ural River and the Altai-Sayan mountains (also the parts
+# inside Russia: Denisova, Pazyryk, Ukok, Arzhan). Science, technology, medicine, mathematics,
+# engineering, astronomy; excavations and fossil finds made in the region (policy.md Scope).
+# Test and launch sites go by geography (user rule 2026-11-07): Baikonur missions (and events on the
+# craft and stations they launch), Semipalatinsk tests and Lop Nur tests are in this cell.
+# Dates: memory pass + web check (WP mirror articles, web search). Peg rules as world_dates.yaml:
+# encode the last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Kazakhstan
+  - {year: 1946, peg: roach, confidence: high, source: "Web search: Kazakhstan Academy of Sciences",
+     event: "Kazakh Academy of Sciences is founded in Alma-Ata, with Kanysh Satpayev as its first president (June)",
+     scene: "A giant ROACH carries Satpayev's chair into the new Kazakh Academy of Sciences in Alma-Ata, and he becomes its first president."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Baikonur Cosmodrome",
+     event: "The Soviet missile test range at Tyuratam, later Baikonur, is founded (2 June)",
+     scene: "A LILY takes root in the Tyuratam steppe and grows into the launch towers of the new test range, later Baikonur."}
+  - {year: 1957, peg: log, confidence: high, source: "Web search: INP Kazakhstan (25 July)",
+     event: "Institute of Nuclear Physics is founded in Alma-Ata",
+     scene: "A LOG splits into atoms and its halves become the walls of the new Institute of Nuclear Physics in Alma-Ata."}
+  - {year: 1966, peg: judge, confidence: unverified,
+     event: "Directed blasts throw rock into the Medeu gorge and make a dam against mudflows above Alma-Ata",
+     scene: "A JUDGE fires the blasts that throw a mountainside into the Medeu gorge and build a dam against mudflows."}
+  - {year: 1967, peg: jockey, confidence: high, source: "Web search: WWR-K reactor (RERTR)",
+     event: "WWR-K research reactor near Alma-Ata starts work (November)",
+     scene: "A JOCKEY rides the control rod out, and the WWR-K reactor near Alma-Ata starts its chain reaction."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Issyk kurgan",
+     event: "Issyk kurgan: Kemal Akishev's team finds the Golden Man",
+     scene: "A SHIP of gold plaques rises from the Issyk kurgan as Akishev's team uncovers the Golden Man."}
+  - {year: 1970, peg: goose, confidence: medium, source: "WP mirror: Kapshagay HPP (built 1965-1970)",
+     event: "Kapchagay hydroelectric dam on the Ili River is finished",
+     scene: "A GOOSE stuffs the Ili River behind the Kapchagay dam, and the new turbines start to turn."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: BN-350 reactor",
+     event: "Shevchenko (Aktau) fast-breeder reactor makes its first power and desalinates Caspian water",
+     scene: "A COMB of sodium-cooled fuel rods at Shevchenko makes power and turns Caspian salt water into drinking water."}
+  - {year: 1980, peg: vase, confidence: medium, source: "WP mirror: Botai culture (discovered 1980)",
+     event: "Botai: archaeologists find the settlement of early horse-herders in north Kazakhstan",
+     scene: "A VASE pushes up through the steppe and leads archaeologists to the Botai horse-herders' settlement."}
+  - {year: 1985, peg: waffle, confidence: high, source: "Web search: Ekibastuz-Kokshetau line, Guinness",
+     event: "Ekibastuz-Kokshetau power line starts work at the highest transmission voltage in the world",
+     scene: "A WAFFLE-grid pylon carries the first current on the Ekibastuz-Kokshetau line at the highest voltage ever used."}
+  - {year: 1987, peg: fox, confidence: unverified,
+     event: "Ekibastuz GRES-2 power station finishes the tallest chimney in the world",
+     scene: "A FOX climbs to the top of the new Ekibastuz chimney and plants a flag on the tallest stack in the world."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Toktar Aubakirov",
+     event: "Toktar Aubakirov flies on Soyuz TM-13, the first person from Kazakhstan in space (2 October)",
+     scene: "Toktar Aubakirov leaves his BOOT print on the Mir hatch as the first person from Kazakhstan in space."}
+  - {year: 1992, peg: piano, confidence: high, source: "Web search: NNC decree No. 779 (15 May)",
+     event: "National Nuclear Center of Kazakhstan is founded on the former Semipalatinsk test-site labs at Kurchatov",
+     scene: "A PIANO is rolled into the old test-site labs at Kurchatov and turns them into the National Nuclear Center."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Talgat Musabayev",
+     event: "Talgat Musabayev makes his first flight, to Mir on Soyuz TM-19 (July)",
+     scene: "A BEAR rides with Talgat Musabayev to Mir on Soyuz TM-19 and stays four months beside him."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Web search: archaeology.kz Berel",
+     event: "Berel kurgan 11: Samashev's Kazakh-French team finds thirteen frozen harnessed horses",
+     scene: "A BEEHIVE of ice breaks open in Berel kurgan 11 and frees thirteen frozen horses in harness."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: BN-350 reactor",
+     event: "Aktau fast-breeder reactor stops for good and decommissioning starts (April)",
+     scene: "A PIPE drains the last liquid sodium, and the Aktau fast reactor stops for good."}
+  - {year: 2005, peg: seal, confidence: high, source: "Web search: Kok-Aral dam (August)",
+     event: "Kok-Aral dam is finished, and the North Aral Sea starts to rise again",
+     scene: "A SEAL lies across the Syr Darya mouth as the Kok-Aral dam, and the North Aral Sea rises behind it."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: KazSat",
+     event: "KazSat-1, the first Kazakh satellite, is launched from Baikonur (June)",
+     scene: "A SUSHI roll rides a Proton rocket up and unrolls into KazSat-1, the first Kazakh satellite."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Kazcosmos (27 March)",
+     event: "Kazcosmos, the Kazakh national space agency, is founded",
+     scene: "A SKI jump launches the new Kazakh space agency, Kazcosmos, with Musabayev at its head."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: KazSat (26 November)",
+     event: "KazSat-1 stops answering control signals and is lost",
+     scene: "A SOFA cushion drifts away in orbit as KazSat-1 stops answering and is lost."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Botai culture (Outram, Science)",
+     event: "Botai pots show mare's-milk fat: the earliest evidence of horse milking and harness",
+     scene: "SOAP-white mare's-milk fat scraped from Botai pots proves the earliest horse milking."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Kazcosmos (16 July)",
+     event: "KazSat-2 communications satellite is launched on a Proton",
+     scene: "A TATTOO of the Kazakh flag on its side, KazSat-2 rides a Proton out of Baikonur into orbit."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Almaty Metro (1 December)",
+     event: "Almaty Metro opens its first line",
+     scene: "A TATTOO artist inks the last station sign, and the Almaty Metro opens its first line."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Semipalatinsk Test Site",
+     event: "Secret clean-up that sealed plutonium in the Semipalatinsk test tunnels is finished (October)",
+     scene: "A TONGUE of concrete seals the last Semipalatinsk tunnel with plutonium, and the secret clean-up ends."}
+  - {year: 2014, peg: tower, confidence: high, source: "Web search: KazSat-3 (28 April)",
+     event: "KazSat-3 communications satellite is launched from Baikonur",
+     scene: "A TOWER of Proton rocket hurls KazSat-3, the third Kazakh communications satellite, out of Baikonur."}
+  - {year: 2014, peg: tower, confidence: medium, source: "Web search: KazEOSat-1, Vega (April)",
+     event: "KazEOSat-1, the first Kazakh Earth-observation satellite, is launched on a Vega from Kourou",
+     scene: "A slim TOWER of Vega rocket in Kourou carries KazEOSat-1, the first Kazakh Earth-watching satellite."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Aidyn Aimbetov",
+     event: "Aidyn Aimbetov flies to the International Space Station on Soyuz TMA-18M (2 September)",
+     scene: "A DOLL straps Aidyn Aimbetov into Soyuz TMA-18M and launches him to the space station."}
+  - {year: 2017, peg: dog, confidence: high, source: "Web search: Al-Farabi-1 (15 February)",
+     event: "Al-Farabi-1, a cubesat built by students in Almaty, is launched on an Indian PSLV",
+     scene: "A DOG fetches Al-Farabi-1, the cubesat of Almaty students, from India's record rocket and drops it in orbit."}
+  - {year: 2017, peg: dog, confidence: high, source: "Web search: IAEA LEU bank (29 August)",
+     event: "IAEA low-enriched uranium bank opens in Oskemen",
+     scene: "A guard DOG locks the doors of the IAEA low-enriched uranium bank in Oskemen as it opens."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Botai culture (Gaunitz, Science)",
+     event: "Ancient genomes show Botai horses are the ancestors of Przewalski's horses",
+     scene: "A DOVE flies from Botai to the wild Przewalski's herd, and genomes show Botai horses are its ancestors."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: IAEA fuel bank (17 October)",
+     event: "First delivery of low-enriched uranium reaches the IAEA bank in Oskemen",
+     scene: "A TUBA packed with uranium cylinders rolls into the Oskemen fuel bank as its first delivery."}
+  - {year: 2021, peg: ant, confidence: high, source: "Web search: QazVac rollout (26 April)",
+     event: "Kazakhstan starts to vaccinate with QazVac, its own COVID-19 vaccine",
+     scene: "An ANT army carries QazVac, the home-made Kazakh COVID-19 vaccine, to the first arms in April."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: Rosatom, CNNC consortia (June)",
+     event: "Kazakhstan picks Rosatom to lead its first nuclear power plant",
+     scene: "A NAIL fixes Rosatom's name on the first Kazakh nuclear plant, and CNNC gets the second."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: Ulken site surveys (August)",
+     event: "Ulken on Lake Balkhash: Rosatom drills the first survey borehole for the nuclear plant",
+     scene: "A NAIL-shaped drill bores the first test hole at Ulken on Lake Balkhash for the nuclear plant."}
+  # Kazakhstan: Baikonur launches and Semipalatinsk tests (moved from eastern_europe, 2026-11-07)
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Soviet atomic bomb project",
+     event: "First Soviet atomic bomb test",
+     scene: "A ROPE pulls the trigger, and the first Soviet atomic bomb explodes."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Soviet atomic bomb project",
+     event: "First Soviet hydrogen bomb test",
+     scene: "A LLAMA spits at the sky as the first Soviet hydrogen bomb explodes."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Soviet atomic bomb project",
+     event: "First Soviet true hydrogen bomb test (two-stage)",
+     scene: "A LILY unfolds into a mushroom cloud above the first Soviet two-stage hydrogen bomb."}
+  - {year: 1957, peg: log, confidence: high, source: "WP mirror: R-7 Semyorka",
+     event: "First successful flight of the R-7, the first intercontinental missile",
+     scene: "An R-7 rocket hurls a LOG across 6000 km of Siberia in the first successful intercontinental flight."}
+  - {year: 1957, peg: log, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Sputnik 1: first artificial satellite",
+     scene: "Sputnik 1 spins a LOG round the Earth with four antennas and beeps over every country."}
+  - {year: 1957, peg: log, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Sputnik 2 carries Laika, the first animal in orbit",
+     scene: "A LOG kennel carries the dog Laika into orbit aboard Sputnik 2."}
+  - {year: 1958, peg: wolf, confidence: unverified,
+     event: "Sputnik 3: a large orbiting geophysical laboratory",
+     scene: "A WOLF in a lab coat howls its data down from Sputnik 3, the first big orbiting geophysics lab."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 1: first spacecraft to leave Earth's pull and fly past the Moon",
+     scene: "Luna 1 slips past the Moon and an ELBOW flings it into orbit round the Sun."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 2: first spacecraft to hit the Moon",
+     scene: "An ELBOW punches into the Moon and plants the Luna 2 pennants on its surface."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 3: first photographs of the far side of the Moon",
+     scene: "Luna 3 photographs a huge ELBOW sticking out of the far side of the Moon."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Belka and Strelka: first animals to return alive from orbit",
+     scene: "Two dogs ride a CHEESE-yellow capsule down from orbit and walk out alive."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 1: first probe launched toward Venus",
+     scene: "A JET carries Venera 1 off the pad toward Venus."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Vostok 1: Yuri Gagarin is the first human in space",
+     scene: "A JET lifts Yuri Gagarin into orbit, and he is the first human in space."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Vostok 2: Titov is the first person to spend more than a day in space",
+     scene: "German Titov rides a JET round the Earth for more than a day."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Vostok 3 and Vostok 4: first two crewed ships in orbit together",
+     scene: "A CHAIN links Vostok 3 and Vostok 4 as they fly side by side in orbit."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Mars 1: first probe launched toward Mars",
+     scene: "A CHAIN yanks Mars 1 off the pad and pulls it toward Mars."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Vostok 6: Valentina Tereshkova is the first woman in space",
+     scene: "Valentina Tereshkova launches the first woman into space and a GEM shines on her helmet."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Voskhod 1: first spacecraft with a crew of three",
+     scene: "Three cosmonauts squeeze into Voskhod 1 and a CHERRY on top of the capsule marks the first crew of three."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Voskhod 2: Alexei Leonov makes the first spacewalk",
+     scene: "Alexei Leonov floats out of Voskhod 2 and a JELLY blob trails behind him on the first spacewalk."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Molniya (satellite)",
+     event: "Molniya 1: first Soviet communications satellite",
+     scene: "A JELLY relays the first Soviet telephone calls through Molniya 1 in its looping orbit."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Proton rocket family",
+     event: "First launch of the Proton rocket",
+     scene: "A JELLY-fuelled Proton rocket blasts off from Baikonur for the first time."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Zond 3: first space radio telescope flies past the Moon",
+     scene: "Zond 3 photographs the Moon and a JELLY telescope tests its radio link."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 3 becomes the first spacecraft to reach another planet's surface",
+     scene: "The Venera 3 probe hits Venus, and a JUDGE declares it the first craft on another planet."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 9: first soft landing on the Moon",
+     scene: "A JUDGE lowers Luna 9 gently onto the Moon, the first soft landing there."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 10: first spacecraft to orbit the Moon",
+     scene: "Luna 10 circles the Moon wearing a JUDGE's wig as the first lunar orbiter."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Soyuz 1 crashes and kills Vladimir Komarov",
+     scene: "A JOCKEY rides the tangled Soyuz 1 parachutes to the ground, and Komarov dies."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 4: first probe to send data from the atmosphere of Venus",
+     scene: "A JOCKEY on a Venera 4 capsule reads out the hot air of Venus."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Kosmos 186",
+     event: "Two Kosmos ships: first automatic docking of two spacecraft",
+     scene: "Two robot ships dock nose to nose as a JOCKEY rides across between them."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Zond 5: first spacecraft to fly round the Moon and return, with living animals",
+     scene: "Zond 5 carries tortoises round the Moon, and a CHEF finds them alive on return."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Soyuz 4 and Soyuz 5: first docking of crewed spacecraft and crew transfer",
+     scene: "Two cosmonauts cross from Soyuz 5 to Soyuz 4 by spacewalk and board a SHIP."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 15 races Apollo 11 to the Moon and crashes in a failed sample return",
+     scene: "Luna 15 sails like a SHIP to the Moon and crashes on its sample return try."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 16: first robotic return of Moon soil",
+     scene: "A GOOSE on Luna 16 scoops Moon soil and brings it home with no crew."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Lunokhod 1: first remote-controlled rover on another world",
+     scene: "A GOOSE drives the Lunokhod 1 rover over the Moon by remote control."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 7: first soft landing on another planet",
+     scene: "Venera 7 lands softly on Venus and a GOOSE honks its data home."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Salyut 1: first space station",
+     scene: "A CAT moves into Salyut 1, the first space station."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Soyuz 11 crew die when the cabin loses air during return",
+     scene: "A CAT tries to seal the leaking Soyuz 11 hatch too late, and the crew die."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Mars 2 is the first craft to hit the surface of Mars",
+     scene: "A CAT crashes into Mars as the Mars 2 lander."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Mars 3 makes the first landing on Mars",
+     scene: "A CAT lands the Mars 3 probe on the red planet, and it sends data for seconds."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 20 returns Moon soil from a rough highland region",
+     scene: "A COIN lies in the highland soil that Luna 20 scoops up and carries home."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Lunokhod 2: second Soviet lunar rover",
+     scene: "A COMB drags the Lunokhod 2 rover across the Moon's dust."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 9: first images from the surface of another planet",
+     scene: "An EAGLE photographs the rocks of Venus for Venera 9, the first pictures from another planet."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Soviet space program",
+     event: "A Soyuz launch aborts: the first crewed launch abort",
+     scene: "An EAGLE snatches the Soyuz crew capsule away from a failing rocket."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Apollo-Soyuz",
+     event: "Apollo-Soyuz: first joint US-Soviet crewed flight",
+     scene: "An EAGLE and a bear shake hands in orbit as Apollo and Soyuz dock."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Luna 24: last Soviet Moon sample return",
+     scene: "A CAGE holds the last Moon soil Luna 24 brings back to the Soviet Union."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Salyut 6",
+     event: "Salyut 6 launches, a station with two docking ports",
+     scene: "A CAKE with two doors floats up as Salyut 6, the first two-port station."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Venera 11 and Venera 12 land on Venus",
+     scene: "A CAVE opens on Venus where Venera 11 and Venera 12 land."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Salyut 7",
+     event: "Salyut 7 space station launches",
+     scene: "An OVEN heats the new Salyut 7 station in orbit."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: GLONASS",
+     event: "First launch of a GLONASS navigation satellite",
+     scene: "A GLONASS satellite sits in an OVEN, the first Soviet navigation satellite in orbit."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Venera 13",
+     event: "Venera 13 and Venera 14 land on Venus and photograph the surface",
+     scene: "An OVEN bakes Venera 13 and Venera 14 on the surface of Venus, but both land and send pictures."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Soyuz pad explosion: abort system saves the crew",
+     scene: "An escape rocket FOAM bursts out as the Soyuz pad explodes and saves the crew."}
+  - {year: 1983, peg: foam, confidence: unverified,
+     event: "Venera 15 and Venera 16 map the north of Venus by radar",
+     scene: "FOAM clouds hide Venus, but Venera 15 and Venera 16 map it by radar."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Salyut 7",
+     event: "Svetlana Savitskaya is the first woman to walk in space",
+     scene: "A FAIRY, Svetlana Savitskaya, welds metal in the first spacewalk by a woman."}
+  - {year: 1985, peg: waffle, confidence: unverified,
+     event: "Vega 1 drops a balloon into the atmosphere of Venus",
+     scene: "A WAFFLE balloon floats in the clouds of Venus after Vega 1 drops it."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Zenit rocket family",
+     event: "First launch of the Zenit rocket",
+     scene: "A WAFFLE launches the first Zenit rocket from Baikonur."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Mir",
+     event: "Mir space station core module launches",
+     scene: "A FISH swims out of the Mir core module as it reaches orbit."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Vega 1 and Vega 2 fly past Halley's Comet",
+     scene: "A FISH swims through the tail of Halley's Comet beside Vega 1 and Vega 2."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Energia (rocket)",
+     event: "First launch of the Energia rocket, carrying Polyus",
+     scene: "A FOX rides the Energia rocket on its first launch with Polyus."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Titov and Manarov complete a year in space aboard Mir",
+     scene: "Two cosmonauts feed a FOX for a year in space aboard Mir."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Mir",
+     event: "Kvant-1 module docks with Mir after a troubled rendezvous",
+     scene: "A FOX nudges the Kvant-1 module until it docks with Mir after a troubled rendezvous."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Energia (rocket)",
+     event: "Buran: only flight of the Soviet shuttle, without a crew",
+     scene: "A FIFE plays as the Buran shuttle lands on its own after two orbits."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Phobos 1 and Phobos 2 launch toward Mars and both fail",
+     scene: "A FIFE sounds as Phobos 1 and Phobos 2 lose contact on the way to Mars."}
+  - {year: 1989, peg: fob, confidence: unverified,
+     event: "Granat gamma-ray observatory launches",
+     scene: "A FOB opens the sky for Granat, a Soviet gamma-ray observatory."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Mir",
+     event: "Mir begins continuous crewed presence, lasting ten years",
+     scene: "A FOB key locks a new crew into Mir and starts ten years of continuous occupation."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Mir",
+     event: "Kvant-2 module docks manually with Mir",
+     scene: "A FOB key turns as cosmonauts dock the Kvant-2 module by hand."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Soviet space program",
+     event: "Soyuz TM-13: last Soviet crewed flight",
+     scene: "A BOOT kicks the last Soviet crew into orbit on Soyuz TM-13."}
+  - {year: 1995, peg: bell, confidence: unverified,
+     event: "Valeri Polyakov returns after the longest single spaceflight",
+     scene: "A BELL rings as Valeri Polyakov lands after the longest single spaceflight."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Mir",
+     event: "Shuttle Atlantis docks with Mir for the first time",
+     scene: "A BELL clangs as Space Shuttle Atlantis docks with Mir."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Mars 96 fails to leave Earth orbit",
+     scene: "A PEACH falls back with Mars 96 and burns up in the sky."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Mir",
+     event: "Progress freighter hits the Spektr module of Mir and punctures it",
+     scene: "A PIG in a Progress freighter rams the Spektr module and punctures Mir."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: International Space Station",
+     event: "Zarya, first module of the International Space Station, launches",
+     scene: "A BEEHIVE module, Zarya, hums into orbit as the first piece of the space station."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: International Space Station",
+     event: "Zvezda service module launches",
+     scene: "A SAUCE bottle is the Zvezda service module that gives the station its living space."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: International Space Station",
+     event: "First crew arrives at the International Space Station",
+     scene: "A crew arrives at the space station and spreads SAUCE on the first bread there."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Mir",
+     event: "Mir re-enters the atmosphere and falls into the Pacific",
+     scene: "A SODA fizzes over the Pacific as Mir burns up and falls."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Soyuz-2",
+     event: "First orbital launch of Soyuz-2, with the MetOp-A satellite",
+     scene: "A SUSHI roll of fire lifts Soyuz-2 on its first orbital flight with MetOp-A."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Radioastron",
+     event: "Radioastron launches: space radio telescope with a huge dish",
+     scene: "A TATTOO of a radio dish covers Radioastron as it opens its huge antenna in orbit."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Timeline of Solar System exploration",
+     event: "Fobos-Grunt launches toward Phobos and fails to leave Earth orbit",
+     scene: "A TATTOO of Mars fades as Fobos-Grunt fails to leave Earth orbit."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Spektr-RG",
+     event: "Spektr-RG X-ray observatory launches",
+     scene: "A TUBA plays X-rays as Spektr-RG launches to map the sky."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: International Space Station",
+     event: "Nauka laboratory module launches to the space station",
+     scene: "An ANT carries the Nauka lab module up to the space station."}
+  # Altai and Tuva (Russia)
+  - {year: 1947, peg: rock, confidence: high, source: "WP mirror: Pazyryk burials",
+     event: "Sergei Rudenko excavates the frozen Pazyryk barrows, with the oldest knotted carpet",
+     scene: "A ROCK of ice in a Pazyryk barrow cracks open for Rudenko and gives up the oldest knotted carpet."}
+  - {year: 1971, peg: cat, confidence: medium, source: "WP mirror: Arzhan (Gryaznov, 1970s)",
+     event: "Gryaznov starts to excavate the Arzhan-1 royal kurgan in Tuva",
+     scene: "A CAT digs into Arzhan-1 beside Gryaznov and finds a wheel of log chambers full of horses."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Denisova Cave",
+     event: "Denisova Cave: a baby molar is found, later named the first Denisovan tooth",
+     scene: "A tooth FAIRY pulls a baby molar out of Denisova Cave, later named the first Denisovan tooth."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Siberian Ice Maiden",
+     event: "Ukok Plateau: Natalia Polosmak finds the tattooed Ice Maiden",
+     scene: "A PALM pours hot water over the ice in an Ukok kurgan and melts it off the tattooed Ice Maiden."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Denisova Cave",
+     event: "Denisova Cave: a large upper molar is found, later named Denisovan",
+     scene: "A pot of SAUCE spills in the South Gallery and washes out a huge upper molar, later named Denisovan."}
+  - {year: 2001, peg: soda, confidence: high, source: "Web search: Arzhan-2 (Chugunov, Parzinger)",
+     event: "Arzhan-2: a Russian-German team opens an untouched royal grave with thousands of gold items",
+     scene: "A SODA fountain of gold sprays out of the untouched royal grave in Arzhan-2 in Tuva."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Okladnikov Cave",
+     event: "Okladnikov Cave bones yield Neanderthal DNA, so Neanderthals reached the Altai",
+     scene: "A SKI slides Neanderthals east: DNA from Okladnikov Cave bones shows they reached the Altai."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Denisova Cave",
+     event: "Denisova Cave: Shunkov's team finds the finger bone of a girl",
+     scene: "A SOFA cushion buried in Denisova Cave gives up a girl's finger bone to Shunkov's team."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Denisova Cave (Krause et al.)",
+     event: "Mitochondrial DNA from the Denisova finger bone shows an unknown human line (March)",
+     scene: "DICE rolled on the finger-bone DNA come up with a human line nobody knows."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Denisova Cave (Reich et al.)",
+     event: "Nuclear genome names the Denisovans and finds their genes in Melanesians (December)",
+     scene: "DICE of nuclear DNA land in New Guinea and show that Melanesians carry Denisovan genes."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Denisova Cave",
+     event: "Denisova Cave: a Neanderthal toe bone is found in the East Gallery",
+     scene: "A DICE cube rolls into a crack of the East Gallery and knocks loose a Neanderthal toe bone."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Denisovan (Meyer et al.)",
+     event: "High-coverage Denisovan genome is read from the finger bone",
+     scene: "A TONGUE reads the whole Denisovan genome aloud, letter by letter, from one finger bone."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Siberian Ice Maiden",
+     event: "The Ice Maiden goes back from Novosibirsk to a museum mausoleum in Gorno-Altaysk (September)",
+     scene: "A TONGUE-shaped sled drags the Ice Maiden from Novosibirsk home to her mausoleum in Gorno-Altaysk."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Denisova Cave (Prufer et al.)",
+     event: "Full genome of the Altai Neanderthal shows her parents were close relatives",
+     scene: "A TOMB of DNA opens, and the Altai Neanderthal genome shows her parents were half-siblings."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Siberian Ice Maiden",
+     event: "MRI scans suggest breast cancer killed the Ice Maiden",
+     scene: "A TOWER of MRI magnets scans the Ice Maiden and finds the breast cancer behind her death."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Denisova Cave",
+     event: "Denisova Cave: a bone needle about fifty thousand years old is found",
+     scene: "A DISH in Denisova Cave turns up a bone needle with an eye, about fifty thousand years old."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Denisova Cave (Slon et al.)",
+     event: "Denisovan and Neanderthal DNA is recovered from cave sediments",
+     scene: "A DOG digs up cave dirt, and Slon's team pulls Denisovan and Neanderthal DNA straight from it."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Denisova Cave (Slon et al.)",
+     event: "Denisova 11, 'Denny', is a first-generation child of a Neanderthal mother and a Denisovan father",
+     scene: "A DOVE hatches from a Neanderthal mother and a Denisovan father: Denny's bone shows a first-generation hybrid."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Denisova Cave (Jacobs et al.)",
+     event: "New dating gives the timeline of Denisovan and Neanderthal life in Denisova Cave",
+     scene: "A TUBA blasts out the new timeline of Denisova Cave layers: Denisovans first, then Neanderthals, in turn."}
+  - {year: 2020, peg: nose, confidence: unverified,
+     event: "Chagyrskaya Cave: a second high-quality Altai Neanderthal genome is published",
+     scene: "A NOSE sniffs a Chagyrskaya Cave bone, and a second high-quality Neanderthal genome comes out."}
+  - {year: 2022, peg: nun, confidence: unverified,
+     event: "Chagyrskaya Cave DNA shows a Neanderthal family: a father, his daughter and relatives",
+     scene: "A NUN draws the family tree of Chagyrskaya bones: a Neanderthal father, his teenage daughter and cousins."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Denisova Cave (Essel et al.)",
+     event: "Human DNA is read from a deer-tooth pendant from Denisova Cave",
+     scene: "A GNOME's deer-tooth pendant gives up the DNA of the woman who wore it in Denisova Cave."}
+  # Mongolia
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Tarbosaurus",
+     event: "Soviet-Mongolian expedition finds a giant tyrannosaur skull in the Gobi",
+     scene: "A ROACH-shaped Soviet truck hauls a giant tyrannosaur skull out of the Gobi for the Soviet-Mongolian expedition."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Therizinosaurus",
+     event: "Nemegt: the first Therizinosaurus claws are found",
+     scene: "A REEF of Nemegt sandstone gives up three huge claws, the first Therizinosaurus bones."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Trans-Mongolian Railway",
+     event: "Railway from the Soviet border at Naushki reaches Ulaanbaatar (November)",
+     scene: "A ROPE of steel rail ties Ulaanbaatar to the Soviet border station at Naushki."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Therizinosaurus",
+     event: "Maleev names Therizinosaurus and thinks it is a giant turtle",
+     scene: "A LAWYER files the giant claws as Therizinosaurus, a huge turtle, just as Maleev first thinks."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Tarbosaurus",
+     event: "Maleev names the Gobi skull Tyrannosaurus bataar",
+     scene: "Maleev ties a LILY label on the Gobi skull and names it Tyrannosaurus bataar."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP mirror: Trans-Mongolian Railway (1 January)",
+     event: "Railway from Ulaanbaatar reaches China at Erenhot",
+     scene: "A LEECH-like train closes the last gap, and the line from Ulaanbaatar reaches China at Erenhot."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Mongolian Academy of Sciences",
+     event: "Mongolian Academy of Sciences takes its present form",
+     scene: "A JET stamps a new name on the old Institute of Sciences in Ulaanbaatar: the Mongolian Academy of Sciences."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Tarbosaurus",
+     event: "Polish-Mongolian palaeontological expeditions to the Gobi start",
+     scene: "A GEM glitters in the Gobi and lures the first Polish-Mongolian fossil expedition across the desert."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Gallimimus",
+     event: "Kielan-Jaworowska finds the largest Gallimimus skeleton at Tsaagan Khushuu",
+     scene: "A CHERRY-red skeleton, the largest Gallimimus, is lifted from Tsaagan Khushuu by Kielan-Jaworowska."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Deinocheirus (9 July)",
+     event: "Polish-Mongolian team finds the giant arms of Deinocheirus",
+     scene: "A JELLY wobbles in the grip of two huge clawed arms that the Polish-Mongolian team digs up."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Tarbosaurus",
+     event: "Rozhdestvensky moves Tyrannosaurus bataar into a new genus, Tarbosaurus",
+     scene: "A JELLY mould recasts Tyrannosaurus bataar as a new genus when Rozhdestvensky names it Tarbosaurus."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Deinocheirus",
+     event: "Osmolska and Roniewicz name the giant arms Deinocheirus mirificus",
+     scene: "A GOOSE signs the name Deinocheirus, 'terrible hand', under the giant Gobi arms for Osmolska and Roniewicz."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Fighting Dinosaurs (3 August)",
+     event: "Tugrikin Shiree: the Fighting Dinosaurs, a Velociraptor locked with a Protoceratops, are found",
+     scene: "A CAT scratches the sand at Tugrikin Shiree and finds a Velociraptor locked in a fight with a Protoceratops."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Gallimimus",
+     event: "Osmolska, Roniewicz and Barsbold name Gallimimus bullatus",
+     scene: "A COIN stamped Gallimimus names the Gobi ostrich dinosaur for Osmolska, Roniewicz and Barsbold."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Therizinosaurus",
+     event: "Hermiin Tsav: a complete Therizinosaurus arm is collected",
+     scene: "A COMB of three giant claws on a complete arm comes out of Hermiin Tsav for Therizinosaurus."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Therizinosaurus",
+     event: "Barsbold shows that Therizinosaurus is a theropod, not a turtle",
+     scene: "A CAGE of arm bones proves to Barsbold that Therizinosaurus is a theropod dinosaur, not a turtle."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Interkosmos",
+     event: "Jugderdemidiin Gurragchaa flies on Soyuz 39, the first Mongolian in space (March)",
+     scene: "A FOOT in a Mongolian boot steps into Soyuz 39, and Gurragchaa is the first Mongolian in space."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Citipati",
+     event: "Ukhaa Tolgod: the AMNH team finds 'Big Mama', an oviraptorid sitting on its nest",
+     scene: "A giant PALM scoops up Big Mama, an oviraptorid fossil still sitting on its nest at Ukhaa Tolgod."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP mirror: Citipati (Nature)",
+     event: "Paper on the Ukhaa Tolgod fossil shows a dinosaur brooding its eggs like a bird",
+     scene: "A BELL rings in Nature: the Ukhaa Tolgod fossil shows a dinosaur brooding its eggs like a bird."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Citipati",
+     event: "The Ukhaa Tolgod brooders are named Citipati, after the Tibetan skeleton lords",
+     scene: "A SODA bottle labelled Citipati names the Ukhaa Tolgod brooders after the Tibetan skeleton lords."}
+  - {year: 2006, peg: sushi, confidence: unverified,
+     event: "Salkhit: miners find a skullcap, the only Pleistocene human fossil from Mongolia",
+     scene: "A SUSHI knife of a Salkhit miner digs up a human skullcap, the only Pleistocene human fossil of Mongolia."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Tarbosaurus (6 May)",
+     event: "A smuggled Tarbosaurus skeleton is returned from New York to Mongolia",
+     scene: "A TOMB-shaped crate carries the smuggled Tarbosaurus skeleton from a New York auction back to Ulaanbaatar."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Deinocheirus",
+     event: "Two new skeletons show Deinocheirus whole: a humped, duck-billed giant",
+     scene: "A TOWER of new bones stands up as Deinocheirus at last: a humped giant with a duck bill."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Deinocheirus (1 May)",
+     event: "A poached Deinocheirus skull is returned from a Belgian museum to Mongolia",
+     scene: "A TOWER of crates delivers the poached Deinocheirus skull from a Belgian museum back to Mongolia."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Halszkaraptor (Nature)",
+     event: "Halszkaraptor, an amphibious raptor, is named from a poached Gobi fossil",
+     scene: "A DOG retrieves Halszkaraptor from the water: the poached Gobi fossil is named as a swimming raptor."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Mazaalai (satellite)",
+     event: "Mazaalai, the first Mongolian satellite, is released from the space station (July)",
+     scene: "A DOG leaps out of the Kibo airlock with Mazaalai, the first Mongolian satellite, in its mouth."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: UC Davis, Tolbor-16",
+     event: "Tolbor-16 stone tools show modern humans in Mongolia about forty-five thousand years ago",
+     scene: "A TUBA calls modern humans across the steppe: Tolbor-16 tools put them in Mongolia forty-five thousand years ago."}
+  # Xinjiang
+  - {year: 1964, peg: cherry, confidence: unverified,
+     event: "China explodes its first atomic bomb at Lop Nur (October)",
+     scene: "A CHERRY pops on a desert tower at Lop Nur as China tests its first atomic bomb."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Chinese space program",
+     event: "Dongfeng-2A missile carries a nuclear warhead to the target and detonates it (October)",
+     scene: "A JUDGE orders the Dongfeng-2A missile to fly its nuclear warhead to the target and detonate it."}
+  - {year: 1967, peg: jockey, confidence: unverified,
+     event: "China explodes its first hydrogen bomb (June)",
+     scene: "A JOCKEY rides the first Chinese hydrogen bomb out of the plane and over Lop Nur."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Tarim mummies",
+     event: "Loulan Beauty: a mummy is found near Lop Nur during a Silk Road film",
+     scene: "A VASE of sand breaks open near Lop Nur and gives the Loulan Beauty to a film crew's archaeologists."}
+  - {year: 1995, peg: bell, confidence: medium, source: "WP mirror: Tarim Desert Highway (built 1993-95)",
+     event: "Tarim Desert Highway, the first road straight across the Taklamakan, is finished",
+     scene: "A BELL rings at both ends of the Tarim Desert Highway, the first road straight across the Taklamakan."}
+  - {year: 1995, peg: bell, confidence: high, source: "Web search: Niya armband (October)",
+     event: "Niya: a Sino-Japanese team finds the 'Five stars rise in the East' brocade armband",
+     scene: "A BELL-shaped tomb at Niya opens and a Sino-Japanese team lifts out the 'Five stars rise in the East' armband."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Tarim mummies",
+     event: "Xiaohe cemetery: Xinjiang archaeologists start to uncover its mummies",
+     scene: "The SUN burns off the sand over Xiaohe's forest of oar posts, and archaeologists uncover its mummies."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Tarim mummies",
+     event: "Xiaohe tomb M11: the 'Princess of Xiaohe' is unearthed",
+     scene: "A SUMO wrestler lifts the boat-coffin lid of tomb M11, and the Princess of Xiaohe looks out."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Yanghai Tombs (Beck et al.)",
+     event: "Yanghai trousers from Turpan are shown to be the oldest known trousers",
+     scene: "A TOWER of horsemen pulls on the Yanghai trousers, which tests show are the oldest known pants."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Lanzhou-Xinjiang HSR (16 November)",
+     event: "First high-speed railway in Xinjiang opens, from Urumqi to Hami",
+     scene: "A speeding TOWER of steel, the first high-speed train in Xinjiang, runs from Urumqi to Hami."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: Jirzankal, Science Advances",
+     event: "Jirzankal braziers in the Pamirs show the earliest clear evidence of cannabis smoking",
+     scene: "A TUBA puffs cannabis smoke out of the Jirzankal braziers, the earliest clear proof of cannabis smoking."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Tarim mummies (Zhang et al.)",
+     event: "Genomes show the Tarim mummies came from an old local population, not migrants",
+     scene: "An ANT colony that never moved: genomes show the Tarim mummies came from an isolated local people."}
+  - {year: 2022, peg: nun, confidence: high, source: "Web search: Hotan-Ruoqiang railway (16 June)",
+     event: "Hotan-Ruoqiang line completes a railway ring round the Taklamakan",
+     scene: "A NUN closes the circle: her Hotan-Ruoqiang line finishes the railway ring round the Taklamakan."}
+  - {year: 2022, peg: nun, confidence: high, source: "Web search: CAS, QTT (21 September)",
+     event: "Qitai: work starts on a giant fully steerable radio telescope",
+     scene: "A NUN lays the first stone of the Qitai radio telescope, the largest steerable dish ever planned."}
+  # Tibet
+  - {year: 1954, peg: lawyer, confidence: high, source: "Web search: China Daily, Tibet highways (25 Dec)",
+     event: "Qinghai-Tibet and Sichuan-Tibet highways open to Lhasa together",
+     scene: "A LAWYER cuts two ribbons in Lhasa, and the Qinghai-Tibet and Sichuan-Tibet highways open together."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Yangbajain",
+     event: "Yangbajain geothermal power plant, the first in Tibet, is set up",
+     scene: "A CAKE of steaming ground at Yangbajain bakes the steam that drives the first geothermal plant in Tibet."}
+  - {year: 1990, peg: bees, confidence: high, source: "Web search: ICRR, Tibet AS-gamma",
+     event: "Yangbajing: the China-Japan Tibet air-shower array starts to record cosmic rays",
+     scene: "BEES of detectors swarm over the Yangbajing plain as the China-Japan Tibet air-shower array starts work."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Qinghai-Tibet railway (29 June)",
+     event: "Work starts on the Golmud-Lhasa railway",
+     scene: "A SODA bottle smashes on the first sleeper at Golmud, and work on the railway to Lhasa begins."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Qinghai-Tibet railway (24 August)",
+     event: "Track is laid across Tanggula Pass, the highest point of any railway",
+     scene: "A SEAL slides the last rail into place at Tanggula Pass, the highest railway track in the world."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Qinghai-Tibet railway (1 July)",
+     event: "Qinghai-Tibet railway opens to Lhasa",
+     scene: "A SUSHI train on a conveyor belt pulls into Lhasa as the Qinghai-Tibet railway opens."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: EPAS1 (Yi et al., Beall et al.)",
+     event: "Gene studies find that EPAS1 helps Tibetans live at high altitude",
+     scene: "DICE loaded with the EPAS1 gene let Tibetans roll high numbers in thin mountain air."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Web search: China Daily, Medog Highway (31 Oct)",
+     event: "Medog Highway opens, and the last roadless county of China gets a road",
+     scene: "A TOMB of rock is blasted open in the Himalaya, and the Medog Highway reaches the last roadless county."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Denisovan (Huerta-Sanchez et al.)",
+     event: "The Tibetan high-altitude form of EPAS1 is traced to Denisovans",
+     scene: "A TOWER of DNA shows the Tibetan high-altitude EPAS1 gene came down from Denisovans."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Qinghai-Tibet railway",
+     event: "Railway from Lhasa reaches Shigatse (August)",
+     scene: "A TOWER of the Tashilhunpo monastery greets the first train from Lhasa as the line reaches Shigatse."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Zangmu Dam (23 November)",
+     event: "Zangmu Dam on the Yarlung Tsangpo starts its first generator",
+     scene: "A concrete TOWER across the Yarlung Tsangpo at Zangmu spins up its first generator."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Zangmu Dam (13 October)",
+     event: "Zangmu hydropower station runs at full power",
+     scene: "A DOLL throws the last switch at Zangmu, and the Yarlung Tsangpo plant runs at full power."}
+  - {year: 2018, peg: dove, confidence: high, source: "Web search: phys.org, Nwya Devu",
+     event: "Nwya Devu: a dated stone-tool site shows people on the high Tibetan plateau thirty to forty thousand years ago",
+     scene: "A DOVE lands at Nwya Devu, and dating shows stone-tool makers lived there thirty to forty thousand years ago."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: CAS, Tibet AS-gamma Crab",
+     event: "Tibet air-shower array detects gamma rays above a hundred TeV from the Crab Nebula",
+     scene: "A TUBA at Yangbajing catches gamma rays above a hundred TeV blasting from the Crab Nebula."}
+  - {year: 2021, peg: ant, confidence: high, source: "Web search: CAS bulletin, Tibet AS-gamma",
+     event: "Tibet air-shower array finds diffuse gamma rays near the PeV range from the Galactic disk",
+     scene: "An ANT army on the Yangbajing plain counts the ultra-high-energy gamma rays from the Milky Way disk."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Lhasa-Nyingchi railway (25 June)",
+     event: "Lhasa-Nyingchi railway, the first electric railway in Tibet, opens",
+     scene: "An ANT pulls the first electric train in Tibet from Lhasa to Nyingchi."}
+  - {year: 2021, peg: ant, confidence: disputed, source: "Web search: Quesang (2021 claim; 2025 younger date)",
+     event: "Quesang hand and foot prints in travertine are claimed as the oldest known art",
+     scene: "An ANT guide leads scientists to child hand prints in Quesang travertine and claims them as the oldest known art."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: Xinhua, Yarlung Tsangpo dam (19 July)",
+     event: "Work starts on the giant lower Yarlung Tsangpo hydropower project in Nyingchi",
+     scene: "A NAIL is hammered into the Yarlung Tsangpo gorge, and work on the largest hydropower project starts."}
+  # Uzbekistan
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Dalverzin Tepe",
+     event: "Al'baum discovers the Kushan city of Dalverzin Tepe",
+     scene: "Al'baum trips over a ROPE in a cotton field and discovers the buried Kushan city of Dalverzin Tepe."}
+  - {year: 1956, peg: leech, confidence: high, source: "Web search: INP Uzbekistan (IAEA)",
+     event: "Institute of Nuclear Physics is founded in Tashkent",
+     scene: "A LEECH sucks uranium from the hills and builds the new Institute of Nuclear Physics in Tashkent."}
+  - {year: 1959, peg: elbow, confidence: high, source: "Web search: IAEA Yuldashev (1 September)",
+     event: "Tashkent research reactor goes critical, the first nuclear reactor in Central Asia",
+     scene: "An ELBOW pulls the control rod, and the Tashkent reactor goes critical, the first in Central Asia."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Obi-Rakhmat Grotto",
+     event: "Obi-Rakhmat grotto is discovered by Mukhamedzhanov's team",
+     scene: "A CHAIN of climbers led by Mukhamedzhanov swings into the Obi-Rakhmat grotto and discovers it."}
+  - {year: 1965, peg: jelly, confidence: high, source: "Web search: Afrasiab murals",
+     event: "Afrasiyab: road work on the Samarkand mound uncovers the Ambassadors' Painting",
+     scene: "A JELLY-soft bulldozer cut in the Afrasiyab mound opens a wall of Sogdian ambassadors in Samarkand."}
+  - {year: 1966, peg: judge, confidence: medium, source: "Web search: UBAI reorganised 1966",
+     event: "Tashkent observatory becomes the Ulugh Beg Astronomical Institute",
+     scene: "A JUDGE in an astronomer's robe renames the Tashkent observatory the Ulugh Beg Astronomical Institute."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Dalverzin Tepe",
+     event: "Dalverzin Tepe: the first Buddhist temple complex is excavated",
+     scene: "A JOCKEY digs with his whip at Dalverzin Tepe and uncovers its first Buddhist temple."}
+  - {year: 1970, peg: goose, confidence: medium, source: "Web search: Maidanak observatory (1970)",
+     event: "Maidanak high-altitude observatory is founded near Kitab",
+     scene: "A GOOSE flies to the top of Mount Maidanak and builds a dome for the new high-altitude observatory."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Dalverzin Tepe",
+     event: "Dalverzin Tepe: the largest gold hoard of Central Asia is found",
+     scene: "A gold COIN rolls out of a Dalverzin Tepe wall and leads to the largest gold hoard in Central Asia."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Tashkent Metro (6 November)",
+     event: "Tashkent Metro opens, the first metro in Central Asia",
+     scene: "A CAKE with nine candles opens the nine stations of the Tashkent Metro, the first in Central Asia."}
+  - {year: 1987, peg: fox, confidence: medium, source: "Web search: IntechOpen, Solar Furnace",
+     event: "Parkent: the Big Solar Furnace starts work",
+     scene: "A FOX holds a mirror to the Sun, and the Parkent Big Solar Furnace melts its first sample."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Obi-Rakhmat Grotto",
+     event: "Obi-Rakhmat: teeth and skull fragments of a juvenile hominin are found",
+     scene: "A SUMO wrestler sifts Obi-Rakhmat's stratum and finds a child's teeth and skull fragments."}
+  - {year: 2016, peg: dish, confidence: high, source: "Web search: Kamchiq Tunnel (22 June)",
+     event: "Kamchiq railway tunnel, the longest in Central Asia, opens",
+     scene: "A DISH-shaped drill head breaks through the Kamchiq pass, and the longest tunnel in Central Asia opens."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Web search: gov.uz, Uzbekcosmos (30 Aug)",
+     event: "Uzbekcosmos, the Uzbek space agency, is founded",
+     scene: "A TUBA announces Uzbekcosmos as President Mirziyoyev signs the decree that founds the space agency."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Tashkent Metro (30 August)",
+     event: "Tashkent opens its overground ring metro line",
+     scene: "A NOSE-ring loop of track opens above Tashkent as the overground ring metro line."}
+  - {year: 2021, peg: ant, confidence: unverified,
+     event: "Uzbekistan approves the Chinese-Uzbek ZF-UZ-VAC COVID-19 vaccine",
+     scene: "An ANT carries the ZF-UZ-VAC vaccine from its joint Chinese-Uzbek lab to the approval stamp."}
+  - {year: 2025, peg: nail, confidence: high, source: "Web search: WNN, Uzbekistan SMR pit (October)",
+     event: "Jizzakh: excavation starts for the first small modular nuclear reactor",
+     scene: "A NAIL-tipped digger starts the deep pit at Jizzakh for Uzbekistan's first small nuclear reactor."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "Web search: Times CA, Uzbek SMR first concrete",
+     event: "Jizzakh: first concrete is poured under the reactor building (March)",
+     scene: "A NACHO chip of concrete is poured into the Jizzakh pit as the first slab under the reactor."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "Web search: gov.uz Uzspace (5 August)",
+     event: "A hyperspectral satellite built by a Chinese firm with Uzbekcosmos is launched from China",
+     scene: "A NACHO-shaped satellite, built with Uzbekcosmos, rides a Chinese rocket to scan Uzbek fields in many colours."}
+  # Turkmenistan
+  - {year: 1951, peg: wallet, confidence: high, source: "Web search: Turkmen Academy (29 June)",
+     event: "Turkmen Academy of Sciences is founded",
+     scene: "A WALLET of Soviet roubles pays for the new Turkmen Academy of Sciences in Ashgabat."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP mirror: Karakum Canal",
+     event: "Work starts on the Karakum Canal",
+     scene: "A LAWYER signs the order, and diggers cut the first trench of the Karakum Canal into the sand."}
+  - {year: 1955, peg: lily, confidence: unverified,
+     event: "Jeitun: Masson starts to excavate the first farming village of Central Asia",
+     scene: "Masson digs a LILY bed at Jeitun and finds the first farming village of Central Asia."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Altyndepe",
+     event: "Altyn Depe: large-scale excavations of the Bronze Age town begin",
+     scene: "A JELLY of mud bricks is scraped away as the big dig at Altyn Depe begins."}
+  - {year: 1971, peg: cat, confidence: disputed, source: "WP mirror: Darvaza gas crater (1960s or 1971)",
+     event: "Darvaza gas crater collapses during drilling and is set alight",
+     scene: "A CAT drops a match into the Darvaza crater, and the gas pit starts to burn without end."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Gonur Depe",
+     event: "Gonur Depe: Viktor Sarianidi discovers the Bronze Age capital",
+     scene: "A COIN glints among Gonur pottery shards and leads Sarianidi to the Bronze Age capital."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Gonur Depe",
+     event: "Sarianidi starts the long excavation of Gonur Depe",
+     scene: "Sarianidi's CAR plows into the Gonur mound, and forty years of digging start."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Karakum Canal",
+     event: "Karakum Canal is completed",
+     scene: "A FIFE pipes water into the last stretch of the Karakum Canal, and the channel is complete."}
+  - {year: 2009, peg: soap, confidence: high, source: "Web search: Golden Age Lake (July)",
+     event: "Work officially starts on the Golden Age Lake in the Karashor depression",
+     scene: "A bar of SOAP slides into the Karashor depression, and work on the Golden Age Lake starts."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Darvaza gas crater",
+     event: "George Kourounis is the first person to reach the bottom of the Darvaza crater",
+     scene: "A TOMB of fire swallows George Kourounis, the first person to stand on the floor of the Darvaza crater."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: TurkmenAlem 52E (27 April)",
+     event: "TurkmenAlem 52E, the first Turkmen satellite, is launched on a Falcon 9",
+     scene: "A DOLL in Turkmen dress rides a Falcon 9 up as TurkmenAlem, the first Turkmen satellite."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Darvaza gas crater (January)",
+     event: "Berdimuhamedow orders a search for a way to put out the Darvaza crater",
+     scene: "A NUN pours holy water into the Darvaza crater as Berdimuhamedow orders the fire put out."}
+  # Tajikistan
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Academy of Sciences of Tajikistan",
+     event: "Tajik Academy of Sciences is founded",
+     scene: "A WALLET opens in Stalinabad and pays the founders of the Tajik Academy of Sciences."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Nurek Dam",
+     event: "Work starts on the Nurek Dam on the Vakhsh",
+     scene: "A JET of water is blocked as the first truckloads of rock start the Nurek Dam on the Vakhsh."}
+  - {year: 1966, peg: judge, confidence: high, source: "Web search: Ajina Tepa Buddha (1966)",
+     event: "Ajina Tepe: Litvinsky's team excavates a giant reclining Buddha",
+     scene: "A JUDGE helps Litvinsky lift the giant reclining clay Buddha out of Ajina Tepe in pieces."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Nurek Dam",
+     event: "Nurek hydroelectric plant starts its first generator",
+     scene: "A COIN drops into the Nurek turbine slot, and the first generator starts to spin."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Takht-i Sangin",
+     event: "Takht-i Sangin: Pichikyan and Litvinsky start to excavate the Temple of the Oxus",
+     scene: "A CAGE of ivory and gold offerings opens as Pichikyan and Litvinsky start to dig the Temple of the Oxus."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Rogun Dam",
+     event: "Soviet work starts on the Rogun Dam",
+     scene: "A CAGE of steel reinforcement drops into the Vakhsh gorge as Soviet work on the Rogun Dam starts."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Sarazm",
+     event: "Sarazm: Abdullah Isakov starts to excavate the oldest town of Tajikistan",
+     scene: "A CAKE of layered soil is cut open as Isakov starts to dig Sarazm, the oldest town of Tajikistan."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Okno",
+     event: "Soviet work starts on the Okno space-watching station near Nurek",
+     scene: "A COWBOY ropes the night sky near Nurek as the Okno space-watching station is started."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Nurek Dam",
+     event: "Nurek Dam is completed, the tallest dam in the world at the time",
+     scene: "A VASE as tall as the Nurek Dam is set on top as the tallest dam in the world is completed."}
+  - {year: 1981, peg: foot, confidence: high, source: "Web search: Kuldara (Ranov, 1981-83)",
+     event: "Kuldara: Ranov excavates the oldest stone-tool site in Central Asia",
+     scene: "Ranov's FOOT slips into the Kuldara loess and uncovers the oldest stone tools in Central Asia."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Rogun Dam",
+     event: "Floodwater destroys the unfinished Rogun Dam",
+     scene: "A muddy PALM of floodwater slaps down and washes away the unfinished Rogun Dam."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Okno",
+     event: "Okno station near Nurek goes on duty under Russian ownership",
+     scene: "A SEWER grate opens to the stars as Okno goes on duty near Nurek, now Russian property."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "Web search: RFE/RL, Anzob Tunnel (26 July)",
+     event: "Anzob (Istiqlol) road tunnel on the Dushanbe-Khujand highway opens",
+     scene: "A SUSHI roll of a road tunnel is pushed under the Anzob pass, and the Dushanbe-Khujand road stays open in winter."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Sangtuda 1 HPP (20 January)",
+     event: "Sangtuda-1 hydroelectric plant starts its first unit in a hard winter",
+     scene: "A SOFA by a cold stove lights up as Sangtuda-1 starts its first unit in a hard winter."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Rogun Dam (29 October)",
+     event: "The Vakhsh is turned through tunnels, and work on Rogun starts again",
+     scene: "A giant DISH scoops up the Vakhsh and pours it into the tunnels, and Rogun work begins again."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Rogun Dam (November)",
+     event: "Rogun hydroelectric plant starts its first unit",
+     scene: "A DOVE flies out of the Rogun turbine hall as the first unit makes power."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Rogun Dam (September)",
+     event: "Rogun hydroelectric plant starts its second unit",
+     scene: "A second TUBA joins the first in the Rogun turbine hall as the second unit starts."}
+  # Kyrgyzstan
+  - {year: 1954, peg: lawyer, confidence: high, source: "Web search: interacademies, NAS KR (1954)",
+     event: "Kyrgyz Academy of Sciences is founded from the Soviet academy's branch",
+     scene: "A LAWYER signs the charter that turns the Frunze branch into the Kyrgyz Academy of Sciences."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Toktogul Dam",
+     event: "Work starts on the Toktogul Dam on the Naryn",
+     scene: "A wheel of CHEESE plugs the Naryn gorge as work on the Toktogul Dam starts."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Toktogul Dam",
+     event: "Toktogul Dam is completed, and its reservoir starts to fill",
+     scene: "A CAGE of concrete closes the Naryn gorge, and the Toktogul reservoir fills behind it."}
+  - {year: 2010, peg: dice, confidence: high, source: "Web search: Moscow Times, Kambarata-2 (August)",
+     event: "Kambarata-2 hydroelectric plant starts its first unit",
+     scene: "Roza Otunbayeva rolls the DICE onto a red button, and the first Kambarata-2 unit starts."}
+  - {year: 2026, peg: nacho, confidence: high, source: "Web search: Times CA, Kyrgyz satellite (1 Oct)",
+     event: "The first Kyrgyz national satellite is launched on a Falcon 9 from Vandenberg",
+     scene: "A NACHO-sized Kyrgyz satellite rides a Falcon 9 from Vandenberg as the first of Kyrgyzstan."}
+  # Afghanistan
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Surkh Kotal",
+     event: "Surkh Kotal: Schlumberger starts to excavate the Kushan fire temple",
+     scene: "A stone LION steps aside on the Surkh Kotal stairs as Schlumberger starts to dig the Kushan temple."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Kajaki Dam",
+     event: "Kajaki Dam on the Helmand is finished",
+     scene: "A LLAMA spits the last stone into place, and the Kajaki Dam on the Helmand is finished."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Ai-Khanoum",
+     event: "Ai-Khanoum: King Zahir Shah sees the outline of a Greek city while hunting",
+     scene: "A JET of sunlight from a Corinthian capital shows King Zahir Shah the lost Greek city of Ai-Khanoum."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Salang Tunnel",
+     event: "Salang Tunnel through the Hindu Kush opens",
+     scene: "A CHERRY rolls through the Hindu Kush as the Soviet-built Salang Tunnel opens."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Ai-Khanoum",
+     event: "Ai-Khanoum: French excavations under Paul Bernard begin",
+     scene: "A CHERRY pit hits a Greek column, and the French dig at Ai-Khanoum begins."}
+  - {year: 1973, peg: comb, confidence: medium, source: "WP mirror: Mes Aynak (1973-74)",
+     event: "Mes Aynak: Soviet and Afghan geologists find the ancient Buddhist town on the copper hill",
+     scene: "A geologist's COMB scrapes the Mes Aynak copper hill and uncovers Buddhist walls."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Kajaki Dam",
+     event: "Kajaki powerhouse starts its first two units",
+     scene: "An EAGLE dives through the Kajaki spillway and spins the first two power units."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Salma Dam",
+     event: "Work starts on the Salma Dam on the Hari River",
+     scene: "A CAGE of steel bars is sunk into the Hari River as work on the Salma Dam starts."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Tillya Tepe",
+     event: "Tillya Tepe: Sarianidi's Soviet-Afghan team finds the Bactrian gold",
+     scene: "A CAVE of six graves at Tillya Tepe pours out thousands of gold pieces to Sarianidi's team."}
+  - {year: 1978, peg: cave, confidence: high, source: "Web search: Academy of Sciences of Afghanistan",
+     event: "Academy of Sciences of Afghanistan is founded from older learned bodies",
+     scene: "A CAVE library in Kabul merges the Pashto Academy and the history society into the new Academy of Sciences."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Interkosmos",
+     event: "Abdul Ahad Mohmand flies on Soyuz TM-6, the first Afghan in space (August)",
+     scene: "Abdul Ahad Mohmand pipes a FIFE in Pashto from Soyuz TM-6, the first Afghan in space."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Rabatak inscription",
+     event: "Rabatak inscription, with the list of Kushan kings, is found",
+     scene: "A PALM brushes the dust off a stone at Rabatak and reveals the list of Kanishka's Kushan ancestors."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Salang Tunnel (19 January)",
+     event: "Salang Tunnel reopens after mines and rubble are cleared",
+     scene: "The SUN burns the mines and rubble out of the Salang Tunnel, and it reopens."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Tillya Tepe",
+     event: "The Bactrian gold is found safe in vaults under the Kabul central bank",
+     scene: "A SUMO wrestler forces the Kabul bank vault door, and the Bactrian gold is found safe inside."}
+  - {year: 2009, peg: soap, confidence: high, source: "Web search: Mes Aynak rescue digs (2009)",
+     event: "Mes Aynak: rescue excavations begin before the copper mine",
+     scene: "A bar of SOAP scrubs copper dust off Buddha statues as the Mes Aynak rescue excavation begins."}
+  - {year: 2014, peg: tower, confidence: high, source: "Web search: MCIT, Afghansat 1 (10 May)",
+     event: "Afghansat 1, a leased satellite, starts service as the first Afghan satellite",
+     scene: "A TOWER dish in Kabul locks onto Afghansat 1 as the first Afghan satellite starts service."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Salma Dam (4 June)",
+     event: "Salma Dam (Afghan-India Friendship Dam) is inaugurated",
+     scene: "A DISH of water fills behind the Salma Dam as Modi and Ghani open the Afghan-India Friendship Dam."}
+  - {year: 2021, peg: ant, confidence: high, source: "Web search: Pajhwok, Kamal Khan Dam (March)",
+     event: "Kamal Khan Dam on the Helmand in Nimroz opens",
+     scene: "An ANT army piles the last stones, and the Kamal Khan Dam holds back the Helmand in Nimroz."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Qosh Tepa Canal",
+     event: "Work starts on the Qosh Tepa Canal from the Amu Darya",
+     scene: "A NUN cuts the first trench of the Qosh Tepa Canal to draw water from the Amu Darya."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Qosh Tepa Canal (October)",
+     event: "First phase of the Qosh Tepa Canal is completed",
+     scene: "A GNOME opens the sluice, and water runs through the finished first phase of the Qosh Tepa Canal."}
+  - {year: 2025, peg: nail, confidence: medium, source: "Web search: Kamal Khan Dam (final phase)",
+     event: "Kamal Khan Dam's third and final phase is completed (February)",
+     scene: "A NAIL fixes the last gate of the Kamal Khan Dam, and its final phase is complete."}

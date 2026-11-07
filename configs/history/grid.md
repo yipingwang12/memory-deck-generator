@@ -22,6 +22,11 @@ Boundary rules (2026-11-05):
   the Ural River, Mongolia and the Altai-Sayan mountains → central_asia, also the parts inside modern
   Russia. The Siberian forest and tundra → eastern_europe.
 - Hawaii → oceania, in every period, also after statehood in 1959 (user rule 2026-11-06).
+- Malta → western_europe, in every period (user rule 2026-11-07).
+- Test and launch sites go by geography (user rule 2026-11-07): Baikonur missions (and events on the craft and
+  stations they launch) and Semipalatinsk and Lop Nur tests → central_asia. Kapustin Yar, Plesetsk, Vostochny →
+  eastern_europe; Jiuquan (Inner Mongolia) → east_asia. A flight whose subject is a regional cosmonaut (Intercosmos,
+  first Korean in space) stays with the cosmonaut's region.
 - Scope of events issued outside a region: policy.md "Scope".
 
 ## Themes (slug: scope)
@@ -543,3 +548,61 @@ Fix-pass list (not done):
   Wang Xichan's Xiao'an xinfa kept at 1663 against its one source (1643; author would be 15) — memory looks right;
   Clovis's baptism 496 vs 508; Qatar Dukhan oil 1939/1940.
 - Peg overload: lasso 12 (latin_america_politics_500_1500), sofa 11 (central_asia_arts_1945_present).
+
+## Wave 16 (2026-11-07)
+User's aim: next 20 cells, largest predicted first. Search-budget model (PRD §15): log-linear fit of entries on
+region + theme + period + log(searches per agent), plus a built-sibling term (same region and period), refit on
+218 cells (residual sd 0.38, log-search coefficient 0.36; forecast 23,567 dates in 214 unbuilt cells at 45
+searches). Ranks 4–23 (predicted 165–190; {expected} = prediction, no ×1.3) less the three north_america politics
+pre-Columbian fit artifacts (ranks 1–3). Opus agents, rolling queue of 8, budget 45 searches each.
+north_america science 1500_1800, eastern_europe society 1500_1800, oceania politics 1500_1800, west_asia arts
+1500_1800, south_asia religion 1500_1800, south_asia politics pre500bce, latin_america politics 500bce_500ce,
+eastern_europe arts 500_1500, west_asia politics 500bce_500ce, central_asia religion 1800_1945, north_america arts
+500_1500, western_europe religion pre500bce, west_asia politics pre500bce, oceania arts 1800_1945, latin_america
+religion 1500_1800, subsaharan_africa politics 1500_1800, western_europe science 500bce_500ce, oceania religion
+1945_present, north_america economy 1500_1800, central_asia science 1945_present.
+Result (after main-session fixes): 3,827 dates over 20 cells (high ~2,580, medium ~875, low 106, disputed 139,
+unverified 147 = 3.8%, lowest of any wave); sizes 110–363. Above the fit: west_asia_politics_500bce_500ce 363 (×2.1),
+north_america_economy_1500_1800 ~294, west_asia_politics_pre500bce 264, oceania_arts_1800_1945 253,
+subsaharan_africa_politics_1500_1800 237. Well below: western_europe_religion_pre500bce 110 and
+western_europe_science_500bce_500ce 134 (older arts/politics cells hold their main items, first-come),
+latin_america_politics_500bce_500ce 112 (Long Count stelae already in science), north_america_arts_500_1500 121
+(pre-Columbian, like the skipped politics cells; no dated California / Great Basin items), south_asia_politics_pre500bce
+124. Check exit 0 on all 238 cells. Grid now 238 of 432 cells, 57,696 dates (after dropping the king lists). No usage-limit deaths (~5.6M subagent
+tokens, every agent spent 45 searches).
+Main session: 18 cross-cell duplicates removed (IDF scan): Jama Masjid 1656, Thembavani 1726, Kumari Ghar 1757,
+Narayaneeyam 1586, Zhabdrung's death 1651, Bara Imambara 1784 (south_asia_religion; arts/politics older); Council of
+Four Lands 1764, Peter III's manifesto 1762 (eastern_europe_society); Whitney musket contract 1798
+(north_america_science; kept in economy); Navigation Acts 1651 + 1660, Staple Act 1663, Dutch WIC 1621, French WIC 1664,
+Company of the West 1717 (north_america_economy; western_europe_economy older); Tawagalawa letter c. 1250 BCE
+(west_asia_politics_pre500bce; eastern_europe older); Typee 1846 removed from north_america_arts_1800_1945 (setting
+rule: Marquesas → oceania; kept in oceania_arts_1800_1945). Pending moves: Iolani Palace done (removed); added Dupain's
+Sunbaker → oceania_arts_1945_present, Bighorn Medicine Wheel c. 1760 → north_america_arts_1500_1800. Ferapontov
+frescoes (left out of eastern_europe_arts_500_1500) are already in eastern_europe_arts_1500_1800 at 1502.
+Settled by user (2026-11-07), done in the main session:
+- Legendary king lists dropped (policy.md Scope): south_asia_politics_pre500bce loses 44 entries (Puranic Barhadratha
+  line 22, Pradyota line of Avanti 6, Kalhana's Kashmir list 16); historical Bimbisara (c. 544) and Pukkusati (c. 550)
+  kept. Cell now 80. Mahavamsa founding traditions (Vijaya) stay, low.
+- Malta → western_europe (boundary rule above). The 8 Maltese entries stay in western_europe_religion_pre500bce; the
+  three other Malta mentions (north_africa politics, The Maltese Falcon) only name it.
+- Test and launch sites by geography (boundary rule above): 78 entries moved from eastern_europe_science_1945_present
+  to central_asia_science_1945_present (75 Baikonur missions and station events, 3 Semipalatinsk bomb tests; new group
+  "Kazakhstan: Baikonur launches and Semipalatinsk tests"); Lop Nur atomic bomb 1964, Dongfeng-2A 1966 and hydrogen bomb
+  1967 from east_asia_science_1945_present, and the politics copy of the 1964 test from east_asia_politics_1945_present
+  to central_asia_politics_1945_present (Xinjiang groups). Left in place: Kosmos 954 falling on Canada 1978 (effect in
+  north_america; not moved), agency founding and Gore–Chernomyrdin (decisions in Moscow).
+Fix-pass list (not done):
+- Cross-cell date conflicts: Lord of Sipán burial c. 250 (latin_america_politics_500bce_500ce) vs 300 (science cell);
+  Siyaj Chan K'awiil II death 456 vs Burial 48 457 (same pair); Dinder River defeat 1744 in north_africa_politics_1500_1800
+  vs 1738 (Iyasu II source, subsaharan agent).
+- Scope: Freetown founding 1792 sits in north_america_society_1500_1800 (effect in Sierra Leone → subsaharan_africa);
+  Kino's Dolores mission 1687 sits in north_america_religion_1500_1800 (Dolores is in Sonora → latin_america); Moravians
+  on St Thomas 1732 left out of latin_america_religion because western_europe has the Herrnhut departure (separate event?).
+- Unchecked recent items left out of oceania_religion_1945_present as society-theme (attacks on places of worship 2024–25):
+  verify before adding to oceania_society_1945_present.
+- Weak scenes self-reported (north_america_science_1500_1800): 1717 swim fins (dog), 1775 Turtle (eagle), 1713 (tomb),
+  1687 (fox).
+- Peg overload: lasso 20 + dice 13 (north_america_arts_500_1500, c. x50 dates), lasso 18
+  (latin_america_politics_500bce_500ce), lasso 16 (west_asia_politics_pre500bce), bees 13 + bell 12
+  (oceania_politics_1500_1800), tower 11 (central_asia_science_1945_present), lasso 11
+  (western_europe_science_500bce_500ce). Round-date lasso overload is now the main overload source.

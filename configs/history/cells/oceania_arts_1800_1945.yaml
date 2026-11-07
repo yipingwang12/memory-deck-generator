@@ -1,0 +1,786 @@
+# Cell: Oceania x arts x 1800 to 1944. DRAFT 2026-11-07.
+# Dates: memory pass + web check (45 searches, plus fetches of Wikipedia mirror articles; the rest is unverified).
+# Peg rules as policy.md: last two digits; years_ago not used in this period.
+# Range -> conventional "c." date, else start of a phase. Work -> first public appearance
+# (premiere, publication, first serial part, opening, exhibition); a painting with no known first show -> the year painted.
+# Scope: Australia, New Zealand, New Guinea, Pacific islands, Hawaii. Literature, visual art, architecture, music, theatre, film.
+# Works set in the region go here wherever they appear (Typee, Gauguin's Paris shows, Hollywood films of Tahiti).
+# Works set outside the region stay out (Forty Thousand Horsemen, Rats of Tobruk, Mansfield's German Pension).
+# Churches, cathedrals, Bibles and hymn books are in oceania_religion_1800_1945; the Harbour Bridge is in oceania_economy_1800_1945.
+# Australia holds most of the cell, so it is split by era.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Australia, to the gold rush and the colonial galleries
+  - {year: 1802, peg: sun, confidence: high, source: "historyofinformation: Howe, Standing Orders",
+     event: "George Howe prints the General Standing Orders, the first book printed in Australia",
+     scene: "The SUN shines through the window and prints the Standing Orders, the first Australian book, on George Howe's Sydney press."}
+  - {year: 1803, peg: sumo, confidence: high, source: "WP mirror: The Sydney Gazette",
+     event: "First issue of the Sydney Gazette, the first newspaper in Australia",
+     scene: "A SUMO wrestler pulls the press lever and the first Sydney Gazette, Australia's first newspaper, comes out."}
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: John Lewin",
+     event: "John Lewin's Birds of New South Wales, the first illustrated book printed in Australia",
+     scene: "Lewin's painted birds fly out of a TOMB in Sydney as the first illustrated book printed in Australia."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP mirror: Hyde Park Barracks, Sydney",
+     event: "Francis Greenway's Hyde Park Barracks opens in Sydney",
+     scene: "A TUBA blast opens convict architect Greenway's brick Hyde Park Barracks, and hundreds of convicts march inside."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP mirror: Australian literature",
+     event: "William Wentworth publishes the first book written by an Australian",
+     scene: "Young Wentworth writes his account of New South Wales on the brass bell of a TUBA, the first book by an Australian."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP mirror: Australian literature",
+     event: "The Australian Magazine starts, the first literary journal in the colony",
+     scene: "An ANT colony edits and prints the Australian Magazine, the first literary journal in New South Wales."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Australian literature",
+     event: "Henry Savery's Quintus Servinton, the first novel published in Australia, appears in Hobart",
+     scene: "A MOUSE in a Hobart print shop sets the type of Savery's Quintus Servinton, the first Australian novel."}
+  - {year: 1833, peg: mummy, confidence: medium, source: "WP mirror: Barnett Levey",
+     event: "Barnett Levey opens the Theatre Royal, the first licensed theatre in Sydney",
+     scene: "A MUMMY unwraps its bandages as the curtain of Barnett Levey's Theatre Royal, Sydney's first licensed theatre."}
+  - {year: 1836, peg: match, confidence: unverified,
+     event: "Ross Bridge in Van Diemen's Land is finished with carved arch stones by convict Daniel Herbert",
+     scene: "Convict Daniel Herbert carves faces into the Ross Bridge arches with a burning MATCH as his chisel."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP mirror: Theatre Royal, Hobart",
+     event: "First performances at the Theatre Royal, Hobart, now the oldest working theatre in Australia",
+     scene: "A giant MUG lifts its lid like a curtain for the first show at Hobart's Theatre Royal."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: Australian literature",
+     event: "Anna Maria Bunn's The Guardian, first novel printed on the mainland and first by a woman",
+     scene: "A MOVIE projector throws Anna Maria Bunn's The Guardian onto Sydney's sky: the first mainland novel, and by a woman."}
+  - {year: 1840, peg: horse, confidence: medium, source: "Duterrau article; MoAD: first national epic",
+     event: "Benjamin Duterrau paints The Conciliation in Hobart, called the first national epic painting",
+     scene: "A HORSE carries George Robinson into the middle of Duterrau's Conciliation, the first Australian epic painting."}
+  - {year: 1841, peg: radio, confidence: medium, source: "Photography in Australia; Trove blog",
+     event: "Captain Lucas takes the first daguerreotype in Australia, a view of Bridge Street, Sydney",
+     scene: "Captain Lucas turns an old RADIO into a daguerreotype camera and takes Australia's first photograph of Bridge Street."}
+  - {year: 1842, peg: rhino, confidence: high, source: "Trove blog: first professional photographer",
+     event: "George Goodman opens the first photographic studio in Australia, on a Sydney hotel roof",
+     scene: "A RHINO sits still for a one-guinea portrait in George Goodman's rooftop studio, the first in Australia."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP mirror: Isaac Nathan",
+     event: "Premiere of Isaac Nathan's Don John of Austria, the first opera written and staged in Australia",
+     scene: "A ROCK sings the title role in Nathan's Don John of Austria, the first opera composed and staged in Australia."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP mirror: Australian art",
+     event: "First of the regular art exhibitions is held in Melbourne",
+     scene: "A gold-rich LAWYER hangs the paintings himself at Melbourne's first regular art exhibition."}
+  - {year: 1855, peg: lily, confidence: high, source: "ADB: Lola Montez",
+     event: "Lola Montez dances her Spider Dance at the Theatre Royal, Melbourne",
+     scene: "Lola Montez shakes a spider out of a LILY on her skirt in the Spider Dance that shocks Melbourne."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP mirror: State Library Victoria",
+     event: "Melbourne Public Library opens its first stage",
+     scene: "A LEECH sucks up the words of the first books when the Melbourne Public Library opens its doors."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Geoffry Hamlyn",
+     event: "Henry Kingsley's squatter novel The Recollections of Geoffry Hamlyn is published",
+     scene: "Henry Kingsley's ELBOW pushes his Australian squatter novel, Geoffry Hamlyn, onto the London shelves."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: National Gallery of Victoria",
+     event: "Museum of Art opens in Melbourne, the start of the National Gallery of Victoria",
+     scene: "A JET flies plaster casts into Melbourne's new Museum of Art, the start of the National Gallery of Victoria."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Australian art",
+     event: "Eugene von Guérard paints the north-east view from the top of Mount Kosciusko",
+     scene: "Von Guérard climbs Mount Kosciusko and paints the whole Alps glittering inside one GEM."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Australian art",
+     event: "Nicholas Chevalier paints Mount Arapiles and the Mitre Rock",
+     scene: "Chevalier's brush cuts the Mitre Rock into a red GEM beside Mount Arapiles."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: Australian art",
+     event: "William Strutt paints the Black Thursday bushfire",
+     scene: "CHERRY-red flames chase settlers and animals across William Strutt's huge Black Thursday canvas."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Australian art",
+     event: "Louis Buvelot paints Summer Afternoon, Templestowe, in the Barbizon manner",
+     scene: "A JUDGE in a straw hat paints Summer Afternoon, Templestowe, with Buvelot's Barbizon brush."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: National Gallery of Victoria",
+     event: "National Gallery of Victoria Art School is founded",
+     scene: "A JOCKEY in silks poses as the first life model for students of the new National Gallery School."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: Adam Lindsay Gordon",
+     event: "Adam Lindsay Gordon publishes Sea Spray and Smoke Drift",
+     scene: "Steeplechase JOCKEY Adam Lindsay Gordon gallops through spray and smoke in his first book of verse."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Adam Lindsay Gordon",
+     event: "Adam Lindsay Gordon publishes Bush Ballads and Galloping Rhymes",
+     scene: "A GOOSE gallops across the cover of Gordon's Bush Ballads and Galloping Rhymes."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: For the Term of His Natural Life",
+     event: "Marcus Clarke's His Natural Life starts as a serial in the Australian Journal",
+     scene: "A convict GOOSE drags its chain through the first instalment of Marcus Clarke's His Natural Life."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Art Gallery of New South Wales",
+     event: "New South Wales Academy of Art holds its first public exhibition",
+     scene: "A CAR full of oil paintings drives into the first public show of the New South Wales Academy of Art."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP mirror: Advance Australia Fair",
+     event: "First performance of Advance Australia Fair at a Highland Society night in Sydney",
+     scene: "A singing CAVE gives the first performance of McCormick's Advance Australia Fair to Sydney's Highland Society."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "WP mirror: Garden Palace",
+     event: "James Barnet's Garden Palace is built for the Sydney International Exhibition",
+     scene: "A COWBOY lassos the great dome onto Barnet's Garden Palace, built in eight months for the Sydney exhibition."}
+
+  # Australia, from The Bulletin to Federation
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: The Bulletin",
+     event: "First issue of The Bulletin, founded by J. F. Archibald and John Haynes in Sydney",
+     scene: "A VASE tips black ink over George Street as Archibald and Haynes print the first Bulletin."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Royal Exhibition Building",
+     event: "Joseph Reed's Exhibition Building opens for the Melbourne International Exhibition",
+     scene: "A giant VASE turns upside down to become the dome of Reed's Exhibition Building as Melbourne's fair opens."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Art Gallery of New South Wales",
+     event: "Art Gallery of New South Wales opens officially in a wooden annexe of the Garden Palace",
+     scene: "A porcelain VASE is the first exhibit wheeled into the wooden annexe as the Art Gallery of New South Wales opens."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Art Gallery of South Australia",
+     event: "National Gallery of South Australia is established in Adelaide",
+     scene: "A giant FOOT kicks open the doors of the new National Gallery of South Australia in Adelaide."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Robbery Under Arms",
+     event: "Rolf Boldrewood's Robbery Under Arms starts as a serial in the Sydney Mail",
+     scene: "An OVEN bakes the first weekly part of Boldrewood's bushranger tale, Robbery Under Arms, for the Sydney Mail."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Box Hill artists' camp starts, the first camp of the Heidelberg School",
+     scene: "Roberts and McCubbin cook a WAFFLE on the campfire at Box Hill, the first artists' camp."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: The Mystery of a Hansom Cab",
+     event: "Fergus Hume self-publishes The Mystery of a Hansom Cab in Melbourne",
+     scene: "A dead FISH lies in the Melbourne cab of Fergus Hume's self-published murder mystery, the colonial best seller."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: For the Term of His Natural Life",
+     event: "George Leitch's stage version of His Natural Life opens at the Theatre Royal, Brisbane",
+     scene: "A FISH in chains plays the convict Rufus Dawes in Leitch's stage version of His Natural Life in Brisbane."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Henry Lawson",
+     event: "Henry Lawson's first poem, A Song of the Republic, appears in The Bulletin",
+     scene: "A red FOX sings young Lawson's first poem, A Song of the Republic, off the page of The Bulletin."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Charles Conder paints A Holiday at Mentone",
+     scene: "A FIFE player marches along the bay in Conder's sunny A Holiday at Mentone."}
+  - {year: 1888, peg: fife, confidence: high, source: "NGA: Aboriginal artists of the 19th century",
+     event: "Drawings by Aboriginal prisoners of Fannie Bay Gaol are shown in Melbourne as The Dawn of Art",
+     scene: "A FIFE sounds 'The Dawn of Art': Fannie Bay prisoners' drawings, the first Aboriginal drawings shown publicly in Australia."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "9 by 5 Impression Exhibition opens at Buxton's Rooms, Melbourne",
+     scene: "Streeton paints a sunset on a cigar-box lid no bigger than a FOB, one of the 9 by 5 Impressions."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Arthur Streeton paints Golden Summer, Eaglemont",
+     scene: "Streeton hangs a gold FOB in the sky as the sun of Golden Summer, Eaglemont."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Frederick McCubbin paints Down on His Luck",
+     scene: "McCubbin's swagman, Down on His Luck, pawns his last silver FOB beside his bush fire."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Banjo Paterson",
+     event: "Banjo Paterson's Clancy of the Overflow appears",
+     scene: "Clancy of the Overflow's letter, written with a thumbnail dipped in tar, comes back wrapped round a FOB."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Australian art",
+     event: "Tom Roberts paints Shearing the Rams",
+     scene: "BEES swarm out of the fleece as the shearers in Roberts' Shearing the Rams cut the wool."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Banjo Paterson",
+     event: "Banjo Paterson's The Man from Snowy River appears in The Bulletin",
+     scene: "A swarm of BEES chases the colt from Old Regret down the mountain in Paterson's The Man from Snowy River."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Critic Sidney Dickinson coins the name Heidelberg School",
+     scene: "Critic Sidney Dickinson kicks the name 'Heidelberg School' into print with his BOOT."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Tom Roberts paints A break away!",
+     scene: "Thirsty sheep stampede over a drover's BOOT toward the dam in Roberts' A break away!"}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Arthur Streeton paints Fire's On",
+     scene: "The rock blast in Streeton's Fire's On throws a navvy's BOOT out of the railway tunnel."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Henry Lawson",
+     event: "Henry Lawson's story The Drover's Wife appears",
+     scene: "The Drover's Wife sits all night on an old PIANO with a stick, waiting for the snake, in Lawson's story."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Australian art",
+     event: "Frederick McCubbin paints Bush Idyll",
+     scene: "A boy blows a whistle made from a PALM leaf to a girl in McCubbin's Bush Idyll."}
+  - {year: 1893, peg: palm, confidence: high, source: "ADB / NGA: Mickey of Ulladulla",
+     event: "Paintings by Mickey of Ulladulla are shown at the Chicago World's Fair",
+     scene: "A PALM-leaf raft carries Mickey of Ulladulla's paintings of fish and boats to the Chicago World's Fair."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Australian literature",
+     event: "Ethel Turner's Seven Little Australians is published",
+     scene: "A BEAR adopts the seven noisy Woolcot children in Ethel Turner's Seven Little Australians."}
+  - {year: 1895, peg: bell, confidence: medium, source: "WP mirror: Waltzing Matilda (written Aug-Sep)",
+     event: "Banjo Paterson writes Waltzing Matilda near Winton, Queensland",
+     scene: "A sheep BELL clangs inside the swagman's tucker bag as Paterson writes Waltzing Matilda near Winton."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Banjo Paterson",
+     event: "Paterson's The Man from Snowy River and Other Verses is published",
+     scene: "Angus and Robertson ring a shop BELL each time a copy of Paterson's The Man from Snowy River and Other Verses sells."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Australian art",
+     event: "William Barak paints Corroboree",
+     scene: "Wurundjeri elder William Barak paints a Corroboree whose dancers stamp to the beat of a BELL."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Tom Roberts paints Bailed Up",
+     scene: "A bushranger rings a BELL to stop the coach in Tom Roberts' Bailed Up."}
+  - {year: 1895, peg: bell, confidence: high, source: "Univ. Melbourne archives: opened 18 Feb",
+     event: "Marshall-Hall's University Conservatorium of Music opens in Melbourne",
+     scene: "Marshall-Hall strikes a BELL to open the University Conservatorium of Music in a Carlton coffee palace."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Queensland Art Gallery",
+     event: "Queensland National Art Gallery is established in Brisbane",
+     scene: "A BELL-shaped crate holds the first picture of the new Queensland National Art Gallery in Brisbane."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Henry Lawson",
+     event: "Henry Lawson's While the Billy Boils is published",
+     scene: "A PEACH stews in the black billy while Lawson's bushmen tell the stories of While the Billy Boils."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Australian art",
+     event: "Walter Withers wins the first Wynne Prize",
+     scene: "Judges crown Walter Withers' landscape with a golden PEACH as the first Wynne Prize winner."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Australian art",
+     event: "Arthur Streeton paints The purple noon's transparent might",
+     scene: "A purple PEACH burns as the sun over the Hawkesbury in Streeton's The purple noon's transparent might."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Frederick McCubbin paints On the Wallaby Track",
+     scene: "A swagman's wife and baby rest on the road with only a PEACH tin for food in McCubbin's On the Wallaby Track."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "First films shown to a paying audience in Australia, at the Melbourne Opera House",
+     scene: "A PEACH-coloured beam throws the first paid film show in Australia onto the screen of Rickards' Melbourne Opera House."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Salon Lumière in Sydney shows the first film made in Australia, of passengers leaving the Manly ferry",
+     scene: "Passengers step off the Manly ferry onto a giant PEACH in the first film made in Australia."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Art Gallery of New South Wales",
+     event: "First stage of Vernon's sandstone Art Gallery of New South Wales opens",
+     scene: "A PIG in a top hat trots through the first sandstone halls of Vernon's new art gallery in the Domain."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Queen Victoria Building",
+     event: "George McRae's Queen Victoria Building opens in Sydney",
+     scene: "McRae's Queen Victoria Building rises like a BEEHIVE of shops under its great copper dome."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Steele Rudd",
+     event: "Steele Rudd's On Our Selection is published as a book",
+     scene: "Dad blows smoke from his PIPE over the slab hut in Steele Rudd's On Our Selection."}
+
+  # Australia, Federation to the First World War
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Soldiers of the Cross (film)",
+     event: "Salvation Army Limelight Department premieres Soldiers of the Cross at Melbourne Town Hall",
+     scene: "Salvation Army film makers pour red SAUCE as martyrs' blood for Soldiers of the Cross."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Art Gallery of South Australia",
+     event: "Elder Wing, the first purpose-built home of the Adelaide art gallery, opens",
+     scene: "Governor Tennyson cuts a ribbon dipped in tomato SAUCE to open the Elder Wing of the Adelaide gallery."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Australian literature",
+     event: "Miles Franklin's My Brilliant Career is published",
+     scene: "Teenage Miles Franklin pops a SODA bottle and Sybylla's My Brilliant Career sprays out of it."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Henry Lawson",
+     event: "Henry Lawson's Joe Wilson and His Mates is published",
+     scene: "Joe Wilson and his mates pass round one bottle of SODA in Lawson's new book of stories."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Waltzing Matilda",
+     event: "First sheet music of Waltzing Matilda, Harry Nathan's setting, is published in Brisbane",
+     scene: "The SUN rises over Harry Nathan's first printed sheet music of Waltzing Matilda in Brisbane."}
+  - {year: 1902, peg: sun, confidence: unverified,
+     event: "Barbara Baynton's Bush Studies is published",
+     scene: "A pitiless SUN beats down on the lonely women of Barbara Baynton's Bush Studies."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Such Is Life",
+     event: "Joseph Furphy's Such Is Life is published",
+     scene: "A SUMO wrestler reads aloud from Tom Collins' rambling diary in Furphy's Such Is Life."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Tom Roberts finishes The Big Picture of the opening of the first federal Parliament",
+     scene: "A SUMO wrestler lifts Roberts' giant Big Picture of the first Parliament into place."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Waltzing Matilda",
+     event: "Marie Cowan's version of Waltzing Matilda is published",
+     scene: "A SUMO wrestler hums Marie Cowan's new tune for Waltzing Matilda, now the one the whole nation sings."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP mirror: Heidelberg School",
+     event: "Frederick McCubbin paints the three panels of The Pioneer",
+     scene: "Settlers dig a SEWER trench through the bush clearing in McCubbin's three-panel The Pioneer."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP mirror: Australian art",
+     event: "Hugh Ramsay paints The Sisters",
+     scene: "Hugh Ramsay's two Sisters in white gowns climb out of a SEWER grate, spotless."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP mirror: National Gallery of Victoria",
+     event: "Felton Bequest starts buying works for the National Gallery of Victoria",
+     scene: "Felton Bequest money flows through a SEWER pipe straight into the National Gallery of Victoria's first purchases."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP mirror: Banjo Paterson",
+     event: "Paterson's collection Old Bush Songs is published",
+     scene: "A SEAL on a woolshed bench sings the Old Bush Songs that Paterson collected."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: The Story of the Kelly Gang",
+     event: "The Story of the Kelly Gang, the first feature-length film, premieres at the Athenaeum, Melbourne",
+     scene: "A SUSHI roll in iron armour plays Ned Kelly in The Story of the Kelly Gang, the world's first feature film."}
+  - {year: 1906, peg: sushi, confidence: high, source: "MSO / ADB: Alberto Zelman",
+     event: "Alberto Zelman conducts the first concert of the Melbourne Symphony Orchestra",
+     scene: "Zelman conducts the first Melbourne Symphony Orchestra concert with a SUSHI chopstick as his baton."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: We of the Never Never",
+     event: "Jeannie Gunn's We of the Never Never is published",
+     scene: "Jeannie Gunn writes We of the Never Never on a SOFA at the Elsey cattle station."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Dorothea Mackellar",
+     event: "Dorothea Mackellar's My Country first appears, as Core of My Heart, in the London Spectator",
+     scene: "Homesick on a London SOFA, Dorothea Mackellar writes of 'a sunburnt country': My Country."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Australian literature",
+     event: "Henry Handel Richardson's The Getting of Wisdom is published",
+     scene: "Laura hides a pair of DICE in her school trunk at the Melbourne ladies' college in The Getting of Wisdom."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Flinders Street railway station",
+     event: "Fawcett and Ashworth's Flinders Street Station building opens officially",
+     scene: "A giant DICE rolls onto the roof and becomes the dome of Flinders Street Station at its opening."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Australian art",
+     event: "E. Phillips Fox paints The Ferry",
+     scene: "A sailor with an anchor TATTOO helps the ladies off the boat in Phillips Fox's sunny The Ferry."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Walter Burley Griffin",
+     event: "Walter Burley Griffin and Marion Mahony Griffin win the design competition for Canberra",
+     scene: "The Griffins draw Canberra's lake on a giant TONGUE and win the federal capital design contest."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Steele Rudd",
+     event: "Bert Bailey's stage play of On Our Selection opens",
+     scene: "Dad Rudd sticks out his TONGUE at the audience in Bert Bailey's stage play of On Our Selection."}
+  - {year: 1912, peg: tongue, confidence: high, source: "Museums Victoria: Spencer bark paintings",
+     event: "Baldwin Spencer collects bark paintings at Oenpelli for the National Museum of Victoria",
+     scene: "A painted ancestor spirit sticks out its TONGUE from the Oenpelli barks that Baldwin Spencer carries to Melbourne."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Official ban on bushranger films starts",
+     scene: "A censor cuts the TONGUE out of every bushranger film reel: the ban on bushranger films starts."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Sentimental Bloke",
+     event: "C. J. Dennis's The Songs of a Sentimental Bloke is published as a book",
+     scene: "The Sentimental Bloke buys his Doreen a china DOLL in C. J. Dennis's best-selling verse."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Sydney Conservatorium of Music",
+     event: "New South Wales State Conservatorium of Music is established in Greenway's old stables",
+     scene: "A DOLL plays the violin in Greenway's old stables, now the New South Wales State Conservatorium."}
+  - {year: 1915, peg: doll, confidence: unverified,
+     event: "Grace Cossington Smith paints The Sock Knitter, called the first post-impressionist painting in Australia",
+     scene: "Grace Cossington Smith's sister knits army socks for a DOLL in The Sock Knitter."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: The Fortunes of Richard Mahony",
+     event: "Henry Handel Richardson's Australia Felix is published",
+     scene: "A DOG digs for gold beside Mahony's store at Ballarat in Richardson's Australia Felix."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: The Magic Pudding",
+     event: "Norman Lindsay's The Magic Pudding is published",
+     scene: "A DOVE steals a slice of Albert, Norman Lindsay's Magic Pudding, and the pudding grows back."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Snugglepot and Cuddlepie",
+     event: "May Gibbs' Snugglepot and Cuddlepie is published",
+     scene: "A DOVE carries May Gibbs' gumnut babies, Snugglepot and Cuddlepie, out into the bush."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Australian art",
+     event: "Elioth Gruner paints Spring Frost",
+     scene: "A white DOVE flies out of the morning mist in Elioth Gruner's Spring Frost."}
+  - {year: 1919, peg: tuba, confidence: high, source: "NFSA / AusStage: premiere 4 Oct",
+     event: "Raymond Longford's film The Sentimental Bloke premieres at Melbourne Town Hall",
+     scene: "Arthur Tauchert's Bloke blows a TUBA through the silent premiere of Longford's film The Sentimental Bloke."}
+
+  # Australia, between the wars and the Second World War
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Archibald Prize",
+     event: "William McInnes wins the first Archibald Prize with a portrait of Desbrowe Annear",
+     scene: "An ANT army carries the first Archibald Prize to McInnes for his portrait of Desbrowe Annear."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Australian art",
+     event: "Hans Heysen paints Droving into the Light",
+     scene: "An ANT trail follows the cattle into the dusty gold light of Heysen's Droving into the Light."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Henry Lawson",
+     event: "Henry Lawson receives the first state funeral for an Australian writer",
+     scene: "A NUN leads the long procession of Henry Lawson's state funeral, the first for an Australian writer."}
+  - {year: 1922, peg: nun, confidence: high, source: "Along the Road to Gundagai: Allans, 1922",
+     event: "Jack O'Hagan's song Along the Road to Gundagai is published and first sung on stage",
+     scene: "A NUN sings Along the Road to Gundagai in a Melbourne Christmas pantomime."}
+  - {year: 1922, peg: nun, confidence: high, source: "AusStage: The Battler, Pioneer Players",
+     event: "Louis Esson's Pioneer Players stage their first Australian play, The Battler",
+     scene: "A NUN plays the lead in Esson's The Battler, the first show of the Pioneer Players."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Kangaroo (novel)",
+     event: "D. H. Lawrence's Kangaroo, written at Thirroul, is published",
+     scene: "A GNOME bounces like a kangaroo along the Thirroul beach in D. H. Lawrence's novel Kangaroo."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Walter Burley Griffin",
+     event: "The Griffins' Capitol Theatre opens in Melbourne",
+     scene: "A HANGER of coloured crystal lights forms the ceiling of the Griffins' Capitol Theatre on opening night."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Kenneth Slessor",
+     event: "Kenneth Slessor's Thief of the Moon is published",
+     scene: "A thief hooks the moon down with a coat HANGER in Slessor's Thief of the Moon."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Waltzing Matilda",
+     event: "First recording of Waltzing Matilda, by John Collinson and Russell Callow",
+     scene: "Collinson and Callow sing Waltzing Matilda into a horn made from a NACHO bowl: the first recording."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Silent film For the Term of His Natural Life is released",
+     scene: "A convict signs away his life in INK in the big silent film For the Term of His Natural Life."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Coonardoo; The Bulletin",
+     event: "First Bulletin novel competition: Coonardoo and A House is Built share the prize; Coonardoo runs as a serial",
+     scene: "The judges cut the first Bulletin novel prize in two with a KNIFE: Coonardoo and A House is Built."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: The Fortunes of Richard Mahony",
+     event: "Henry Handel Richardson's Ultima Thule is published",
+     scene: "Ruined Richard Mahony turns the KNOB of his last door in Ultima Thule."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: State Theatre (Sydney)",
+     event: "Henry White's State Theatre opens in Sydney",
+     scene: "A golden door KNOB opens the State Theatre, Sydney's Gothic palace of cinema."}
+  - {year: 1929, peg: knob, confidence: medium, source: "Bowers Museum record: NMV, July 1929",
+     event: "National Museum of Victoria holds the exhibition Australian Aboriginal Art",
+     scene: "A curator turns the KNOB of a glass case and opens the Australian Aboriginal Art exhibition in Melbourne."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "F. W. Thring sets up Efftee Studios in Melbourne",
+     scene: "A MOUSE turns the camera handle at F. W. Thring's new Efftee Studios."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: The Fortunes of Richard Mahony",
+     event: "The Fortunes of Richard Mahony is published as one volume",
+     scene: "A MOUSE stitches Richardson's three Mahony novels into one fat book, The Fortunes of Richard Mahony."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Ken G. Hall's Cinesound Productions is established",
+     scene: "A MOTH spreads its wings as the logo over the first films of Ken G. Hall's Cinesound Productions."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "First Australian sound feature films, among them Diggers",
+     scene: "A MOTH buzzes into the microphone and is heard on Diggers, one of the first Australian sound films."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Kenneth Slessor",
+     event: "Kenneth Slessor's Five Visions of Captain Cook is published",
+     scene: "A MOTH flutters in Cook's lantern through Slessor's Five Visions of Captain Cook."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Ion Idriess's Lasseter's Last Ride is published",
+     scene: "A MOTH eats Lasseter's map of the lost gold reef in Idriess's Lasseter's Last Ride."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Cinesound's sound film On Our Selection is released",
+     scene: "Dad Rudd howls at the MOON in Cinesound's sound film On Our Selection."}
+  - {year: 1932, peg: moon, confidence: high, source: "Sydney Symphony: ABC founded 1 July",
+     event: "New ABC enlarges its Sydney studio orchestra, the start of the Sydney Symphony Orchestra",
+     scene: "The MOON conducts the new ABC's studio orchestra over the radio, the start of the Sydney Symphony."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Cinema of Australia",
+     event: "Charles Chauvel's In the Wake of the Bounty, Errol Flynn's first film, is released",
+     scene: "Errol Flynn, wrapped like a MUMMY in sailcloth, plays Fletcher Christian in his first film, In the Wake of the Bounty."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Shrine of Remembrance",
+     event: "Shrine of Remembrance in Melbourne is dedicated",
+     scene: "A HAMMER taps the last stone of Melbourne's Shrine of Remembrance as it is dedicated on Armistice Day."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Anzac Memorial",
+     event: "Bruce Dellit's Anzac Memorial, with sculpture by Rayner Hoff, opens in Sydney",
+     scene: "Rayner Hoff's HAMMER shapes the bronze figures of Dellit's Anzac Memorial, opened in Hyde Park."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Seven Poor Men of Sydney",
+     event: "Christina Stead's Seven Poor Men of Sydney is published",
+     scene: "Seven poor men share one HAMMER in a Sydney print shop in Christina Stead's first novel."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "WP mirror: Albert Namatjira",
+     event: "Albert Namatjira starts to paint watercolours under Rex Battarbee at Hermannsburg",
+     scene: "Albert Namatjira lays down his woodcarving HAMMER and picks up Rex Battarbee's watercolour brush."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Art Gallery of New South Wales",
+     event: "First Sulman Prize is awarded",
+     scene: "A burning MATCH writes the winner's name on the first Sulman Prize certificate in Sydney."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Australian art",
+     event: "Australian Academy of Art is founded",
+     scene: "Menzies raises a MUG of tea to found his Australian Academy of Art, and the modernists walk out."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Capricornia (novel)",
+     event: "Xavier Herbert's Capricornia is published",
+     scene: "Xavier Herbert runs a MOVIE of Port Zodiac's racial cruelty across the Top End: his novel Capricornia."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Australian art",
+     event: "Contemporary Art Society is founded in Melbourne",
+     scene: "George Bell and his modernists shoot a MOVIE manifesto as the Contemporary Art Society forms in Melbourne."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Albert Namatjira",
+     event: "Albert Namatjira holds his first solo exhibition, in Melbourne",
+     scene: "A MOVIE poster of the MacDonnell Ranges announces Albert Namatjira's first solo exhibition in Melbourne."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Archibald Prize",
+     event: "Nora Heysen becomes the first woman to win the Archibald Prize",
+     scene: "Newsreel MOVIE cameras film Nora Heysen, the first woman to win the Archibald Prize."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Jindyworobak Movement",
+     event: "First Jindyworobak Anthology is published",
+     scene: "A MOVIE of red desert country opens the first Jindyworobak Anthology of Rex Ingamells' poets."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Kenneth Slessor",
+     event: "Kenneth Slessor's Five Bells is published",
+     scene: "A harbour MAP marks where Joe Lynch drowned, and Slessor's Five Bells ring over the spot."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Australian literature",
+     event: "Patrick White's first novel, Happy Valley, is published",
+     scene: "Patrick White draws a MAP of a cold Monaro town for his first novel, Happy Valley."}
+  - {year: 1939, peg: map, confidence: medium, source: "Herald Exhibition article: Melb. 16 Oct",
+     event: "Herald Exhibition of French and British Contemporary Art opens in Melbourne Town Hall",
+     scene: "Murdoch's Herald unrolls a MAP of modern art, and Picasso and Van Gogh hang in Melbourne Town Hall."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Angry Penguins",
+     event: "Max Harris founds the journal Angry Penguins in Adelaide",
+     scene: "Eighteen-year-old Max Harris rides a HORSE with a penguin on its back to launch Angry Penguins in Adelaide."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Meanjin",
+     event: "Clem Christesen founds Meanjin Papers in Brisbane",
+     scene: "A pack HORSE carries the first Meanjin Papers from Clem Christesen's Brisbane desk."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: The Timeless Land",
+     event: "Eleanor Dark's The Timeless Land is published",
+     scene: "Bennelong hears the First Fleet coming on a RADIO in Eleanor Dark's The Timeless Land."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Australian War Memorial",
+     event: "Australian War Memorial opens in Canberra",
+     scene: "A RADIO broadcasts Lord Gowrie as he opens the domed Australian War Memorial on Remembrance Day."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Ern Malley",
+     event: "Ern Malley hoax poems appear in Angry Penguins and are exposed",
+     scene: "A fake WARRIOR poet, Ern Malley, made up in one afternoon, fools Angry Penguins and is unmasked."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Dobell case: NSW Supreme Court, Oct",
+     event: "Supreme Court hears the case against Dobell's Archibald-winning portrait of Joshua Smith",
+     scene: "Two losing painters send a WARRIOR lawyer to court to call Dobell's Joshua Smith a caricature, and lose."}
+
+  # New Zealand
+  - {year: 1832, peg: moon, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Augustus Earle's Narrative of a Nine Months' Residence in New Zealand is published",
+     scene: "Augustus Earle paints the MOON rising over the Bay of Islands for his Narrative of Nine Months' Residence."}
+  - {year: 1842, peg: rhino, confidence: medium, source: "Te Papa / Te Ara: early 1840s, Oct 1842",
+     event: "Raharuhi Rukupo starts building the carved house Te Hau ki Tūranga at Ōrakaiapu",
+     scene: "Master carver Raharuhi Rukupo shapes a RHINO horn into the first carved post of Te Hau ki Tūranga."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "George French Angas publishes The New Zealanders Illustrated",
+     scene: "George French Angas paints Maori chiefs on a cliff ROCK for The New Zealanders Illustrated."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "George Grey publishes Polynesian Mythology, a book of Maori legends",
+     scene: "Governor Grey presses a LILY between the pages of Polynesian Mythology, his book of Maori legends."}
+  - {year: 1861, peg: jet, confidence: high, source: "Te Ara: Fiction; NZETC",
+     event: "Henry Butler Stoney's Taranaki: A Tale of the War, the first novel published in New Zealand",
+     scene: "A JET of musket smoke rises from Stoney's Taranaki: A Tale of the War, the first New Zealand novel."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Erewhon",
+     event: "Samuel Butler's essay Darwin among the Machines appears in the Christchurch Press",
+     scene: "A GEM-like clockwork machine evolves and takes over in Butler's Darwin among the Machines."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Frederick Broome publishes Poems from New Zealand",
+     scene: "A station CHEF stirs the pot and recites Frederick Broome's Poems from New Zealand."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Lady Barker's Station Life in New Zealand is published",
+     scene: "Lady Barker chases a GOOSE across her Canterbury sheep run in Station Life in New Zealand."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Erewhon",
+     event: "Samuel Butler's Erewhon, its land modelled on the Canterbury high country, is published",
+     scene: "A traveller crosses the Canterbury ranges and finds his COIN useless in Erewhon, the land with no machines."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Alfred Domett publishes his long poem Ranolf and Amohia",
+     scene: "Alfred Domett flips a COIN between the lovers of his long Maori poem, Ranolf and Amohia."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "RNZ / Papers Past: opened 8 March",
+     event: "Ngāti Awa open the carved meeting house Mataatua at Whakatāne",
+     scene: "A carved EAGLE spreads its wings across the porch as Ngāti Awa open Mataatua at Whakatāne."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: God Defend New Zealand",
+     event: "First performance of Bracken and Woods' God Defend New Zealand, at the Queen's Theatre, Dunedin",
+     scene: "A CAGE of songbirds sings Bracken and Woods' God Defend New Zealand on Christmas Day in Dunedin."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP mirror: God Defend New Zealand",
+     event: "Thomas Henry Smith translates God Defend New Zealand into Maori",
+     scene: "Thomas Smith sings his Maori words of God Defend New Zealand, and a CAVE echoes them back."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "RNZ / Spinoff: Mataatua to Sydney",
+     event: "Mataatua meeting house is taken apart and shipped to the Sydney International Exhibition",
+     scene: "A COWBOY ropes the carved panels of Mataatua onto the steamer Staffa for the Sydney exhibition."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: New Zealand art",
+     event: "Canterbury College School of Art is founded in Christchurch",
+     scene: "A pottery OVEN fires the first student work at the new Canterbury College School of Art."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Dunedin Public Art Gallery",
+     event: "Dunedin Public Art Gallery opens, the first public art gallery in New Zealand",
+     scene: "A FAIRY hangs the first picture in the Dunedin Public Art Gallery, New Zealand's first."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: New Zealand art",
+     event: "Wellington School of Design, later the Massey School of Fine Arts, is founded",
+     scene: "Students copy the grid of a WAFFLE in the first pattern class of the Wellington School of Design."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Auckland Art Gallery",
+     event: "Auckland Art Gallery opens, the first permanent art gallery building in New Zealand",
+     scene: "A bronze FIFE player leads the first visitors into the Auckland Art Gallery, New Zealand's first permanent gallery."}
+  - {year: 1888, peg: fife, confidence: disputed, source: "Te Ara/Orbell 1888; NZHistory 1887",
+     event: "Rongopai, a painted meeting house, is built at Waituhi for a visit by Te Kooti",
+     scene: "Painted birds play the FIFE among the flowers on the walls of Rongopai, built for Te Kooti, who never comes."}
+  - {year: 1888, peg: fife, confidence: high, source: "Te Ara: opened 11 April",
+     event: "Tūhoe open the meeting house Te Whai-a-te-Motu at Ruatāhuna",
+     scene: "A FIFE sounds the chase as Tūhoe open Te Whai-a-te-Motu, 'the pursuit through the island'."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: New Zealand art",
+     event: "Elam School of Fine Arts is founded in Auckland",
+     scene: "BEES build the first wax studio of the Elam School of Fine Arts in Auckland."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: New Zealand art",
+     event: "Gottfried Lindauer paints his portrait of Hinepare of Ngāti Kahungunu",
+     scene: "BEES trace the lines of Hinepare's moko as Lindauer paints her portrait."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Charles Baeyertz founds the magazine The Triad in Dunedin",
+     scene: "Baeyertz prints the first Triad on a nīkau PALM leaf in Dunedin."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "First public film screening in New Zealand, at the Opera House, Auckland",
+     scene: "A PEACH rolls across the screen in the first moving picture shown in New Zealand, at Auckland's Opera House."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "Roxburgh cinema in Central Otago opens, now the oldest surviving cinema in New Zealand",
+     scene: "A PIG buys the first ticket at the Roxburgh cinema in Central Otago."}
+  - {year: 1899, peg: pipe, confidence: medium, source: "Auckland Art Gallery: first shown 1899",
+     event: "Goldie and Steele's The Arrival of the Maoris in New Zealand is first exhibited",
+     scene: "Starving voyagers cling to a canoe like a broken PIPE in Goldie and Steele's The Arrival of the Maoris."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "Alfred Whitehouse films the Second Contingent leaving for the Boer War, the oldest surviving New Zealand film",
+     scene: "SAUCE-red tunics march to the troopship in Whitehouse's film, the oldest surviving New Zealand film."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Dunedin Railway Station",
+     event: "George Troup's Dunedin Railway Station opens",
+     scene: "A SUSHI train runs through Troup's gingerbread Dunedin Railway Station on its opening day."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "New Zealand School Journal is founded",
+     scene: "A SKI slides through the pages of the first New Zealand School Journal into every classroom."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Johannes Andersen publishes Maori Fairy Tales",
+     scene: "Johannes Andersen reads Maori Fairy Tales to children on a SOFA."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "Hinemoa, the first feature film made in New Zealand, premieres at the Lyric Theatre, Auckland",
+     scene: "Hinemoa swims across the lake to a TOWER on Mokoia Island in the first New Zealand feature film."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Auckland Art Gallery",
+     event: "Henry Partridge gives Gottfried Lindauer's Maori portraits to Auckland",
+     scene: "Henry Partridge gives his Lindauer portraits to Auckland as carefully as a child gives up a DOLL."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Katherine Mansfield",
+     event: "Katherine Mansfield's Prelude is published",
+     scene: "A DOVE flies over the Burnells' new house near Wellington in Mansfield's Prelude."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Mansfield's The Garden Party and Other Stories is published",
+     scene: "A NUN eats cream puffs at the Sheridans' Wellington party in Mansfield's The Garden Party."}
+  - {year: 1922, peg: nun, confidence: high, source: "Heritage NZ / WP: completed 1922",
+     event: "John Campbell's Parliament House in Wellington is completed",
+     scene: "A NUN lays the last marble step of John Campbell's Parliament House in Wellington."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "Rudall Hayward's silent film Rewi's Last Stand is released",
+     scene: "Rewi nails his flag to the pā with a NAIL in Hayward's silent film Rewi's Last Stand."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Te Ara / NZETC: Act of 1926",
+     event: "Maori Arts and Crafts Act sets up a board to save Maori carving",
+     scene: "Ngata's Maori Arts and Crafts Act passes, and a carver cuts koru patterns into a NACHO."}
+  - {year: 1927, peg: ink, confidence: high, source: "Te Ara: carving school, Rotorua",
+     event: "School of Maori Arts and Crafts opens at Rotorua",
+     scene: "Young carvers at the new Rotorua school mark their designs on the timber in INK."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Charles Marris founds the magazine Art in New Zealand",
+     scene: "A palette KNIFE cuts the first cover of the magazine Art in New Zealand."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Auckland War Memorial Museum",
+     event: "Auckland War Memorial Museum opens on the Domain",
+     scene: "A bronze door KNOB opens the Auckland War Memorial Museum on the Domain."}
+  - {year: 1929, peg: knob, confidence: high, source: "Te Ao Māori News / Te Ara: March 1929",
+     event: "Te Puea's meeting house Mahinārangi opens at Tūrangawaewae, Ngāruawāhia",
+     scene: "Te Puea turns the KNOB of Mahinārangi, the house she built as a hospital, at Ngāruawāhia."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Ursula Bethell publishes her first book of poems, From a Garden in the Antipodes",
+     scene: "Ursula Bethell turns the gate KNOB of her Christchurch hill garden in her first book of poems."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Student magazine Phoenix starts in Auckland",
+     scene: "A phoenix rises past the MOON on the cover of the Auckland student magazine Phoenix."}
+  - {year: 1933, peg: mummy, confidence: high, source: "NZHistory: National Tobacco Co. (1933)",
+     event: "Louis Hay's National Tobacco Company building is finished in rebuilt Art Deco Napier",
+     scene: "A MUMMY unrolls its tobacco-brown bandages under the rose doorway of Louis Hay's building in Napier."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Kennaway Henderson founds the magazine Tomorrow in Christchurch",
+     scene: "Kennaway Henderson's HAMMER bangs out the first issue of Tomorrow in Christchurch."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: New Zealand art",
+     event: "National Art Gallery of New Zealand is established in Wellington",
+     scene: "A giant MATCH lights the new National Art Gallery on Wellington's Mount Cook."}
+  - {year: 1936, peg: match, confidence: high, source: "Christchurch Art Gallery: Cass",
+     event: "Rita Angus paints Cass",
+     scene: "Rita Angus strikes a MATCH on the little red Cass railway station and paints it."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Robin Hyde's The Godwits Fly is published",
+     scene: "Godwits fly across a MOVIE screen to the north in Robin Hyde's The Godwits Fly."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "John Mulgan's Man Alone is published",
+     scene: "Johnson escapes over the Kaimanawa ranges with no MAP in Mulgan's Man Alone."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "New Zealand Listener is founded",
+     scene: "A MAP of radio stations fills the first issue of the New Zealand Listener."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: New Zealand literature",
+     event: "Frank Sargeson's A Man and His Wife is published",
+     scene: "A man and his wife share one tired HORSE on a back-country farm in Sargeson's stories."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Cinema of New Zealand",
+     event: "Rudall Hayward remakes Rewi's Last Stand with sound",
+     scene: "Rewi's HORSE finally neighs aloud: Hayward remakes Rewi's Last Stand as a sound film."}
+  - {year: 1940, peg: horse, confidence: high, source: "Waitangi Trust / Evening Post: 6 Feb",
+     event: "Te Whare Rūnanga, the carved meeting house of all iwi, opens at Waitangi",
+     scene: "Carvers from every iwi lift a HORSE-sized tekoteko onto Te Whare Rūnanga, opened at Waitangi for the centennial."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: God Defend New Zealand",
+     event: "Government buys the copyright of God Defend New Zealand and makes it the national hymn for the centennial",
+     scene: "A HORSE cart carries the copyright of God Defend New Zealand to Parliament, and it becomes the national hymn."}
+  - {year: 1941, peg: radio, confidence: high, source: "Archives NZ: NFU, August 1941",
+     event: "National Film Unit is set up to film the war effort",
+     scene: "A RADIO calls the camera crews together: the National Film Unit starts to film the war effort."}
+
+  # Hawaii
+  - {year: 1822, peg: nun, confidence: high, source: "Mission Houses / Punahou: 7 January",
+     event: "First printing in Hawaiian: the Pīʻāpā spelling book, at the mission press in Honolulu",
+     scene: "The press stamps the Hawaiian alphabet onto a NUN's white habit: the Pīʻāpā, the first Hawaiian printing."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Hula",
+     event: "Queen Kaʻahumanu bans public hula",
+     scene: "Queen Kaʻahumanu sets a MOUSE trap on the dance ground and bans public hula."}
+  - {year: 1834, peg: hammer, confidence: high, source: "Maui Now / AAS: from 14 Feb",
+     event: "Ka Lama Hawaii, the first newspaper in Hawaii, is printed at Lahainaluna",
+     scene: "Lahainaluna students HAMMER the type into place for Ka Lama Hawaii, the first newspaper in Hawaii."}
+  - {year: 1862, peg: chain, confidence: high, source: "Bishop Museum blog: Kuokoa serial",
+     event: "S. N. Haleʻole's Laʻieikawai, the first Hawaiian novel, starts as a serial in Ka Nupepa Kuokoa",
+     scene: "A CHAIN of weekly parts carries Haleʻole's Laʻieikawai, the first Hawaiian novel, through Ka Nupepa Kuokoa."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Hawaiʻi Ponoʻī",
+     event: "Liliʻuokalani's He Mele Lāhui Hawaiʻi becomes the kingdom's anthem",
+     scene: "A JUDGE bangs his gavel and makes Princess Liliʻuokalani's He Mele Lāhui Hawaiʻi the national anthem."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Henri Berger",
+     event: "Henri Berger arrives in Honolulu to lead the royal band",
+     scene: "Henri Berger lands at Honolulu and flips a COIN into the harbour before he takes up the royal band baton."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Hawaiʻi Ponoʻī",
+     event: "Kalākaua's Hawaiʻi Ponoʻī, set by Berger, becomes the national anthem",
+     scene: "A CAGE of honeycreepers sings Kalākaua's Hawaiʻi Ponoʻī as it becomes the kingdom's anthem."}
+  - {year: 1878, peg: cave, confidence: medium, source: "WP mirror: Aloha ʻOe (c. 1878)",
+     event: "Liliʻuokalani writes Aloha ʻOe at Maunawili",
+     scene: "Liliʻuokalani sees a farewell embrace at the mouth of a Maunawili CAVE and writes Aloha ʻOe."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Ukulele",
+     event: "Ravenscrag lands Madeiran workers in Honolulu with the small guitar that becomes the ukulele",
+     scene: "A paniolo COWBOY dances on the dock as Madeirans off the Ravenscrag play the little guitar that becomes the ukulele."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: ʻIolani Palace",
+     event: "ʻIolani Palace is completed for King Kalākaua in Honolulu",
+     scene: "Builders bake the last bricks of ʻIolani Palace in an OVEN for King Kalākaua."}
+  - {year: 1883, peg: foam, confidence: high, source: "Bishop Museum blog: Hula Resilience",
+     event: "Hula is danced in public at Kalākaua's coronation celebrations",
+     scene: "Skirts of sea FOAM swirl as hula comes back to the open air at Kalākaua's coronation."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Music of Hawaii",
+     event: "Eating of the Poi, the earliest known hapa haole song, is published",
+     scene: "A FIFE plays Eating of the Poi, the first song in English and Hawaiian, the earliest hapa haole song."}
+  - {year: 1889, peg: fob, confidence: medium, source: "WP mirror: Music of Hawaii (c. 1889)",
+     event: "Joseph Kekuku slides steel across guitar strings and invents the steel guitar (approximate)",
+     scene: "Schoolboy Joseph Kekuku slides a watch FOB along his guitar strings and invents the Hawaiian steel guitar."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Kaulana Nā Pua",
+     event: "Ellen Prendergast writes Kaulana Nā Pua for royal band players who refuse the loyalty oath",
+     scene: "Royal band players hold up an open PALM, refuse the oath, and sing Kaulana Nā Pua."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Music of Hawaii",
+     event: "Honolulu Symphony Orchestra is founded",
+     scene: "The conductor stirs a pot of SAUCE with his baton at the founding of the Honolulu Symphony."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Moana Surfrider Hotel",
+     event: "Oliver Traphagen's Moana Hotel opens in Waikīkī",
+     scene: "A SODA fountain bubbles in the lobby as Traphagen's Moana Hotel opens on Waikīkī beach."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Music of Hawaii",
+     event: "Victor makes the first recordings in the Territory of Hawaii",
+     scene: "Victor engineers stop for SUSHI between the first records made in Honolulu."}
+  - {year: 1912, peg: tongue, confidence: high, source: "IBDB: opened 8 Jan",
+     event: "Richard Walton Tully's Hawaiian play The Bird of Paradise opens on Broadway",
+     scene: "A stage volcano sticks out a lava TONGUE in Tully's Hawaiian play The Bird of Paradise on Broadway."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Music of Hawaii",
+     event: "Hawaiian steel guitar at the Panama-Pacific Exposition starts a mainland craze",
+     scene: "A hula DOLL dances to the steel guitar at San Francisco's fair, and America catches the Hawaiian craze."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Aloha Tower",
+     event: "Aloha Tower opens at Honolulu Harbor",
+     scene: "A NACHO-shaped clock face tops the new Aloha Tower and greets the ships in Honolulu Harbor."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Royal Hawaiian Hotel",
+     event: "Pink Royal Hawaiian Hotel opens in Waikīkī",
+     scene: "Pink INK pours down the walls of the Royal Hawaiian Hotel for its opening gala in Waikīkī."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Honolulu Museum of Art",
+     event: "Anna Rice Cooke's Honolulu Academy of Arts opens",
+     scene: "Anna Rice Cooke signs away her art collection in INK, and the Honolulu Academy of Arts opens."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Moana Surfrider Hotel",
+     event: "Radio show Hawaii Calls starts from the Moana Hotel courtyard",
+     scene: "A sugar MILL whistle starts the first broadcast of Hawaii Calls from the Moana courtyard to the mainland."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Music of Hawaii",
+     event: "Kodak Hula Show starts in Waikīkī",
+     scene: "Tourists put down a coffee MUG and click their Kodaks at the first Kodak Hula Show."}
+  - {year: 1937, peg: mug, confidence: high, source: "Sweet Leilani / Waikiki Wedding articles",
+     event: "Waikiki Wedding is released with Harry Owens' Sweet Leilani, which wins the Oscar for best song",
+     scene: "Bing Crosby croons Sweet Leilani into a coffee MUG in Waikiki Wedding, and Harry Owens' song wins the Oscar."}
+
+  # Polynesia and Micronesia: Tahiti, Marquesas, Samoa, Tonga, Fiji
+  - {year: 1846, peg: roach, confidence: high, source: "WP mirror: Typee",
+     event: "Herman Melville's Typee, set in the Taipi valley of Nuku Hiva, is published",
+     scene: "A ROACH runs across Melville's page as he escapes the Taipi valley of Nuku Hiva in Typee."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP mirror: Typee",
+     event: "Herman Melville's Omoo, set in Tahiti, is published",
+     scene: "Melville jumps ship onto a Tahitian ROCK and wanders the island in Omoo."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "Tonga guides: assembled 1864-67",
+     event: "Wooden Royal Palace of kauri timber is completed in Nukuʻalofa, Tonga",
+     scene: "A JOCKEY rides the New Zealand kauri planks to Nukuʻalofa, where Tonga's wooden Royal Palace is completed."}
+  - {year: 1869, peg: ship, confidence: high, source: "Fiji Times history: 4 Sep, Levuka",
+     event: "First issue of the Fiji Times in Levuka",
+     scene: "A SHIP lands George Griffiths' press at Levuka, and the first Fiji Times comes off it."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Le Mariage de Loti",
+     event: "Pierre Loti's Tahiti novel Le Mariage de Loti is published",
+     scene: "Loti fills a VASE with tiare flowers for Rarahu in Le Mariage de Loti, set in Tahiti."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Robert Louis Stevenson",
+     event: "Robert Louis Stevenson buys Vailima in Samoa and builds his house",
+     scene: "BEES help Stevenson build Vailima, the first two-storey house in Samoa."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Paul Gauguin sails for Tahiti and starts his first Tahitian stay",
+     scene: "Gauguin steps ashore at Papeete and leaves one painter's BOOT print in the black sand."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin paints Spirit of the Dead Watching in Tahiti",
+     scene: "A hooded ghost sits at a PIANO behind Teha'amana in Gauguin's Spirit of the Dead Watching."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Robert Louis Stevenson",
+     event: "Stevenson's The Beach of Falesá appears in the Illustrated London News",
+     scene: "Case's fake devils play a hidden PIANO in the bush in Stevenson's The Beach of Falesá."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Robert Louis Stevenson",
+     event: "Stevenson's A Footnote to History, on the Samoan civil wars, is published",
+     scene: "Stevenson plays the Samoan civil wars on a PIANO, key by key, in A Footnote to History."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin shows his Tahiti paintings at the Durand-Ruel gallery in Paris",
+     scene: "Gauguin hangs his Tahiti canvases in PALM frames at the Durand-Ruel show, and Paris frowns."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Robert Louis Stevenson",
+     event: "Stevenson and Lloyd Osbourne's The Ebb-Tide, set in Tahiti, is published",
+     scene: "A BEAR drinks on the Papeete beach with Stevenson's three outcasts in The Ebb-Tide."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Robert Louis Stevenson",
+     event: "Stevenson's In the South Seas is published as a book",
+     scene: "A PEACH-coloured sail carries Stevenson's In the South Seas round the Marquesas and Gilberts."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Parts of Gauguin's Tahiti journal Noa Noa appear in La Revue Blanche",
+     scene: "A Tahitian PIG noses through Gauguin's journal Noa Noa as La Revue Blanche prints it."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin's Where Do We Come From? What Are We? Where Are We Going? is shown at Vollard's gallery",
+     scene: "A BEEHIVE hums at the centre of Gauguin's huge Where Do We Come From?, shown at Vollard's."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin settles at Atuona on Hiva Oa and builds his House of Pleasure",
+     scene: "Gauguin carves 'House of Pleasure' over his Hiva Oa door and pops a SODA to open it."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin paints Primitive Tales (Contes barbares) on Hiva Oa",
+     scene: "A red SUN glows behind the seated figures of Gauguin's Primitive Tales on Hiva Oa."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Paul Gauguin",
+     event: "Gauguin dies at Atuona, Hiva Oa",
+     scene: "A SUMO wrestler carries Gauguin's coffin up the hill to the Atuona graveyard."}
+  - {year: 1911, peg: tattoo, confidence: unverified,
+     event: "Jack London's South Sea Tales is published",
+     scene: "A Marquesan TATTOO spreads across the cover of Jack London's South Sea Tales."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: The Moon and Sixpence",
+     event: "Somerset Maugham's The Moon and Sixpence, ending in Tahiti, is published",
+     scene: "A TUBA sprays paint over Strickland's Tahiti hut walls in Maugham's The Moon and Sixpence."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Rain (short story)",
+     event: "Maugham's story Miss Thompson, later Rain, set in Pago Pago, appears in The Smart Set",
+     scene: "Rain floods Pago Pago and an ANT colony climbs onto Sadie Thompson in Maugham's Miss Thompson."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Moana (1926 film)",
+     event: "Robert Flaherty's Samoan film Moana is released",
+     scene: "A Savaiʻi boy fries a taro NACHO over the fire in Flaherty's Samoan film Moana."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "Musée de l'Orangerie / Quai Branly",
+     event: "Henri Matisse spends months in Tahiti and draws its plants",
+     scene: "Matisse draws a MOUSE hiding in a pandanus leaf during his months in Tahiti."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Tabu (1931 film)",
+     event: "F. W. Murnau's Tabu, filmed on Bora Bora, premieres in New York",
+     scene: "A MOTH settles on the sacred maiden in Murnau's Tabu, filmed on Bora Bora."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Mutiny on the Bounty (1935)",
+     event: "Nordhoff and Hall's novel Mutiny on the Bounty is published",
+     scene: "Fletcher Christian seizes the Bounty under a full MOON in Nordhoff and Hall's novel."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Mutiny on the Bounty (1935)",
+     event: "MGM's Mutiny on the Bounty, shot partly in Tahiti, is released and wins Best Picture",
+     scene: "Clark Gable's Fletcher Christian grinds Bligh's orders in a MILL in MGM's Mutiny on the Bounty, the Best Picture winner."}
+
+  # Melanesia and New Guinea
+  - {year: 1921, peg: ant, confidence: high, source: "NFSA: Pearls and Savages, Globe, Dec",
+     event: "Frank Hurley's film of Papua and the Torres Strait, Pearls and Savages, opens in Sydney",
+     scene: "Frank Hurley films pearl divers and a giant ANT hill in Papua for Pearls and Savages."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Kokoda Front Line!",
+     event: "Damien Parer's newsreel Kokoda Front Line! is released and becomes Australia's first Oscar winner",
+     scene: "A RHINO charges up the Kokoda Track in Parer's Kokoda Front Line!, Australia's first Oscar winner."}

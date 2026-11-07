@@ -29,7 +29,13 @@ All text in ASD-STE100 style.
   Mahjar poets printed in New York → west_asia.
 - Nobel and other prizes: IN only if the prize work was done in the region. A prize to an emigrant for work
   done abroad goes to the region where the work was done.
-- Region boundaries: see `grid.md` Regions (Finland, Constantinople, the steppe, Hawaii).
+- Region boundaries: see `grid.md` Regions (Finland, Constantinople, the steppe, Hawaii, Malta).
+- Test and launch sites (user rule 2026-11-07): a launch, a mission or a weapons test goes to the region of its
+  site (Baikonur, Semipalatinsk, Lop Nur → central_asia), not of the state that runs it. A flight whose subject is
+  a regional cosmonaut stays with the cosmonaut's region.
+- Legendary king lists (user rule 2026-11-07): leave out reigns dated only by a traditional list (Puranic
+  dynasties, Kalhana's early Kashmir kings). Their years are the tradition's own, not historical dates. A single
+  founding tradition with a well-known date (Rome 753 BCE, Vijaya) may stay, marked `(traditional date)`.
 - Excavations (user rule 2026-11-06): the discovery or excavation of a site, find, fossil or text goes under
   science (archaeology), in the region where it is found. The making of the work itself stays in its own theme
   and period (Tutankhamun's tomb is made: arts, pre500bce; Carter finds it: science, 1800_1945).
