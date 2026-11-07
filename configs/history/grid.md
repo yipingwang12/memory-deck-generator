@@ -533,13 +533,12 @@ Petah Tikva 1878, Hindiya Barrage 1913 (west_asia_economy_1800_1945); Suez share
 only because world_dates has it; world_dates is not a cell). Pending moves done: Taqi al-Din observatory, Müteferrika
 press (eastern_europe_science_1500_1800) → removed from pending_moves.yaml.
 Fix-pass list (not done):
-- Region: Battle of Merv 1510 sits in a west_asia cell, but Merv is in Turkmenistan → move to central_asia (politics
-  1500_1800). Inner Mongolia events (Ulan Butung, Dolon Nor, Ligdan's last years) are in
-  central_asia_politics_1500_1800 by the main-effect rule; Inner Mongolia is China = east_asia. Accept?
-- Scope: central_asia_arts_1800_1945 includes Kazakh books printed in Orenburg (main-effect rule), which
-  central_asia_society_1800_1945 left out. eastern_europe_science_1500_1800 files works printed abroad under the
-  author's home region (Bošković, Getaldić, Vrančić, Siemienowicz, Lubieniecki, Theotokis, Kopievsky); check for copies
-  in western_europe_science_1500_1800 (the duplicate scan found none).
+- Settled by user (2026-11-06): keep all three where they are — Battle of Merv 1510 stays in its west_asia cell;
+  the Inner Mongolia events stay in central_asia_politics_1500_1800; the Orenburg-printed Kazakh books stay in
+  central_asia_arts_1800_1945 (central_asia_society_1800_1945 unchanged).
+- Scope: eastern_europe_science_1500_1800 files works printed abroad under the author's home region (Bošković,
+  Getaldić, Vrančić, Siemienowicz, Lubieniecki, Theotokis, Kopievsky); check for copies in
+  western_europe_science_1500_1800 (the duplicate scan found none).
 - Likely wrong / to settle: Kantajew temple completion 1752 → 1722 on one mirror page (both current) → disputed;
   Wang Xichan's Xiao'an xinfa kept at 1663 against its one source (1643; author would be 15) — memory looks right;
   Clovis's baptism 496 vs 508; Qatar Dukhan oil 1939/1940.
