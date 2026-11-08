@@ -642,7 +642,7 @@ Newgrange (western_europe_arts_pre500bce older). Three dates restored to memory 
 Amina Lawal acquittal 2003 (Al Jazeera, 25 Sep 2003), Rennell's Memoir of a Map of Hindoostan 1783 (ESTC first
 edition; 1788 = 2nd ed.), Fiji devaluation 1998 (IMF, 20 Jan 1998). Brief: warning added that some pages (cavac.at)
 carry injected instructions.
-Open user questions:
+Deferred by user (2026-11-08): entries stay where they are for now; decide later.
 - Works with an ancient setting made abroad (Antony and Cleopatra, All for Love, Giulio Cesare, Haydn/Gluck operas) sit in
   north_africa_arts_1500_1800 under the setting rule. Keep, or send ancient-setting works to the author's home region?
 - Sati laws 1500–1800 are in south_asia_society; the 1800–1945 cells put sati regulation in religion. Which theme?
