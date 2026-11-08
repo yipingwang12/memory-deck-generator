@@ -338,7 +338,7 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - Item = tag identity `<lang>:<word>|<tag>`, never the form. portō kept its config path and its first 36 items.
 - See `CLAUDE.md` *Grammar tables*.
 
-### 15. History dates (`deck-history-check`) — *in progress* (238 of 432 cells, 57,696 dates, 2026-11-07)
+### 15. History dates (`deck-history-check`) — *in progress* (268 of 432 cells, 62,220 dates, 2026-11-07)
 - Topic cells of world-history dates (region × theme × period) with Major System pegs, built by agents with the `history-cell` skill. Grid, waves and open items: `configs/history/grid.md`; rules: `configs/history/policy.md`.
 - **Cell-size prediction: use the search-budget model** (2026-11-07). Log-linear fit of entries per cell on region + theme + period + log(searches per agent). Backtest on waves 9–15 (each wave predicted from the cells built before it): the best ranking of cells (Spearman 0.38, against 0.32 for the plain region + theme + period fit), but still about ×1.25 too low. Doubling the searches gives a cell about 28% more entries. For each agent's expected size, add the count of sibling cells already built (same region and period): bias near zero. The sibling count stands in for time, not for first-come crowding-out.
 - **Forecast**: the 214 unbuilt cells hold about **24,600 more dates (cards)**, or 23,900 without the three north_america politics pre-Columbian cells (Opus agents, 45 searches each). Grid total at the end: about 78,500. The cells left are the small tail, so this is probably a slight overestimate.

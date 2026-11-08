@@ -1,0 +1,619 @@
+# Cell: Oceania x science and technology x 1800 to 1944. DRAFT 2026-11-07.
+# Dates: memory pass + web check (45 searches + WebFetch of the Kiwix WP mirror). Peg rules as world_dates.yaml.
+# Encode the last two digits of the year. No years_ago entries in this period.
+# Range -> conventional "c." date, else start of the phase (policy 2026-11-04).
+# Invention -> first working public demonstration; patent only when no demonstration is on record.
+# A discovery or excavation takes the year of the find or of the publication, as the event text says.
+# Overland exploration, telegraph trunk lines, railways, frozen-meat shipping: oceania_economy_1800_1945.
+# Australasian expeditions to Antarctica go here (home region of the expedition).
+# Australia holds most of the cell, so it is grouped by colony / state.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Australia: whole continent
+  - {year: 1810, peg: dice, confidence: high, source: "WP mirror: Robert Brown (botanist)",
+     event: "Robert Brown publishes Prodromus Florae Novae Hollandiae, the first flora of Australia",
+     scene: "Robert Brown rolls a DICE for each of his thousands of new Australian plants and prints them all in the Prodromus."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "WP mirror: Baudin expedition to Australia",
+     event: "Freycinet map: first published map with the full outline of Australia",
+     scene: "Freycinet inks the whole coast of Australia as a TATTOO on a sailor's back, the first full outline in print."}
+  - {year: 1840, peg: horse, confidence: medium, source: "WP mirror: John Gould (span 1840-48)",
+     event: "John Gould starts to publish The Birds of Australia",
+     scene: "A HORSE gallops into London with the first coloured plates of Gould's Birds of Australia in its saddlebags."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Bureau of Meteorology",
+     event: "Commonwealth Bureau of Meteorology starts work",
+     scene: "On New Year's Day a SOFA becomes the desk where the new Commonwealth Bureau of Meteorology draws the first national weather map."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: CSIRO",
+     event: "Hughes sets up the Advisory Council of Science and Industry",
+     scene: "Billy Hughes serves the new Advisory Council of Science and Industry its first budget on a nearly empty DISH."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: CSIRO",
+     event: "Science and Industry Research Act creates the CSIR",
+     scene: "A giant NACHO is cut into divisions as the Act creates the Council for Scientific and Industrial Research."}
+  # Australia: Australian Capital Territory
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Mount Stromlo Observatory",
+     event: "Baracchi sets up the Oddie telescope on Mount Stromlo",
+     scene: "Baracchi gives Mount Stromlo its first TATTOO: a small dome for the Oddie telescope, the first Commonwealth building in the territory."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Mount Stromlo Observatory",
+     event: "Commonwealth Solar Observatory is established on Mount Stromlo",
+     scene: "The Sun hangs on a coat HANGER above Mount Stromlo as the Commonwealth Solar Observatory opens to watch it."}
+  # Australia: New South Wales
+  - {year: 1804, peg: sewer, confidence: high, source: "MJA; Bull Hist Med: vaccine on Coromandel",
+     event: "Coromandel brings live cowpox vaccine to Sydney",
+     scene: "A SEWER rat rides the Coromandel into Sydney Cove carrying live cowpox vaccine, the first to reach the colony."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Royal Botanic Garden, Sydney",
+     event: "Macquarie founds the Botanic Garden in Sydney",
+     scene: "Governor Macquarie plants the first bed of the Sydney Botanic Garden in a huge DISH by the harbour."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Royal Botanic Garden, Sydney",
+     event: "Charles Fraser becomes the first Colonial Botanist",
+     scene: "A DOG sniffs out plants for Charles Fraser, the first Colonial Botanist of New South Wales."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP mirror: Royal Society of New South Wales",
+     event: "Philosophical Society of Australasia is founded in Sydney",
+     scene: "An ANT chairs the first meeting of the Philosophical Society of Australasia, the first learned society in the colony."}
+  - {year: 1822, peg: nun, confidence: high, source: "Parramatta history; CSIRO HR04009",
+     event: "Brisbane's Parramatta Observatory begins observations",
+     scene: "A NUN climbs into Governor Brisbane's new Parramatta Observatory and starts to log the southern stars."}
+  - {year: 1822, peg: nun, confidence: high, source: "Cambridge Rumker page; hills-observatory",
+     event: "Rumker recovers Encke's comet at Parramatta, as Encke predicted",
+     scene: "A NUN with a telescope catches Encke's comet coming back on time, and Rumker sends the proof to Europe."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Australian Museum",
+     event: "Australian Museum is founded in Sydney",
+     scene: "Earl Bathurst signs the grant for the Australian Museum in INK, the first museum in the colony."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Wellington Caves",
+     event: "Ranken finds Diprotodon and giant kangaroo bones in Wellington Caves",
+     scene: "A MOUSE leads George Ranken deep into Wellington Caves to a jaw of Diprotodon."}
+  - {year: 1836, peg: match, confidence: unverified,
+     event: "Darwin visits Sydney and the Blue Mountains on the Beagle",
+     scene: "Darwin strikes a MATCH at a Blue Mountains campfire and studies a platypus by its light."}
+  - {year: 1838, peg: movie, confidence: high, source: "Diprotodon refs: Owen 1838 in Mitchell",
+     event: "Owen names Diprotodon, the first named Australian fossil mammal",
+     scene: "A MOVIE shows Owen fit Wellington teeth into a skull and name it Diprotodon."}
+  - {year: 1847, peg: rock, confidence: medium, source: "litfl/UIA40: Belisario and Nathan, 6 June",
+     event: "Belisario and Nathan pull teeth in Sydney under ether",
+     scene: "A dentist in Sydney knocks out a patient with ether and pulls a tooth as hard as a ROCK."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP mirror: Royal Society of New South Wales",
+     event: "Philosophical Society is revived as the Australian Philosophical Society",
+     scene: "A LASSO drags the dead Philosophical Society back to life as the Australian Philosophical Society."}
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP mirror: Sydney Observatory (time ball)",
+     event: "Sydney Observatory drops its time ball for the first time",
+     scene: "A WOLF bites the rope at one o'clock and the first time ball drops on Sydney Observatory."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: John Tebbutt",
+     event: "Tebbutt discovers the Great Comet at Windsor",
+     scene: "A JET of light streaks over Windsor, and farmer Tebbutt is the first to see the Great Comet."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP mirror: John Tebbutt",
+     event: "Tebbutt finds a naked-eye nova in Scorpius",
+     scene: "Tebbutt pulls a CHAIN and a new star lights up in Scorpius, bright enough for the naked eye."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Royal Society of New South Wales",
+     event: "Royal Assent: the Royal Society of New South Wales takes its name",
+     scene: "A JUDGE in a wig reads the Royal Assent and renames the society the Royal Society of New South Wales."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Wellington Caves",
+     event: "Krefft starts large excavations in Wellington Caves",
+     scene: "Krefft hands a JUDGE a shovel, and together they dig crates of fossils out of Wellington Caves."}
+  - {year: 1874, peg: car, confidence: medium, source: "WP: 1874 transit of Venus (via search)",
+     event: "Sydney Observatory party observes the transit of Venus at Goulburn",
+     scene: "A CAR carries Sydney's astronomers to Goulburn, where they time Venus as it crosses the Sun."}
+  - {year: 1874, peg: car, confidence: unverified,
+     event: "Linnean Society of New South Wales is founded",
+     scene: "A CAR with Linnaeus at the wheel delivers the first naturalists to the new Linnean Society of New South Wales."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP mirror: Nicholas Miklouho-Maclay",
+     event: "Miklouho-Maclay's marine biological station at Watsons Bay is approved",
+     scene: "Miklouho-Maclay turns a sea CAVE at Watsons Bay into the first marine biological station in Australia."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: John Tebbutt",
+     event: "Tebbutt discovers a second great comet",
+     scene: "Tebbutt kicks the sky with his FOOT and a second great comet flies out over Windsor."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: ANZAAS",
+     event: "Australasian Association for the Advancement of Science holds its first meeting in Sydney",
+     scene: "A FIFE plays the opening tune of the first congress of the Australasian Association for the Advancement of Science in Sydney."}
+  - {year: 1888, peg: fife, confidence: high, source: "Academy of Science: Loir and the rabbit plague",
+     event: "Loir's Pasteur team tests chicken cholera on rabbits at Rodd Island",
+     scene: "On Rodd Island, Loir lures the test rabbits to the chicken cholera pens with a FIFE."}
+  - {year: 1888, peg: fife, confidence: high, source: "Engineers Australia: Tamworth plant",
+     event: "Tamworth switches on the first municipal electric street lights in Australia",
+     scene: "The Mayoress turns the gold key, a FIFE plays, and electric lamps light every Tamworth street."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Lawrence Hargrave",
+     event: "Hargrave builds his rotary engine",
+     scene: "Hargrave hangs a spinning watch FOB in front of his rotary engine, its cylinders turning round the shaft."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Lawrence Hargrave",
+     event: "Hargrave invents the box kite",
+     scene: "A PALM tree is lifted out of the sand by Hargrave's new box kite, so strong is its lift."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Lawrence Hargrave",
+     event: "Stanwell Park: four box kites lift Hargrave off the beach",
+     scene: "Four box kites lift Hargrave and a BEAR five metres above Stanwell Park beach."}
+  - {year: 1900, peg: sauce, confidence: medium, source: "NMA; ADB: Thompson (bacillus in rat fleas)",
+     event: "Ashburton Thompson's team finds the plague bacillus in fleas from Sydney rats",
+     scene: "Thompson's microscope finds plague germs in a flea that fell into the SAUCE from a Sydney wharf rat."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: William Farrer",
+     event: "Farrer's Federation wheat is released to farmers",
+     scene: "A SUMO wrestler eats bread made from Farrer's Federation wheat, the new rust-resistant variety."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Broken Hill: Potter and Delprat develop froth flotation",
+     scene: "A SUMO wrestler sinks in the Broken Hill tank while zinc ore rides up on the froth."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Bondi: Ormsby demonstrates the surf life-saving reel",
+     scene: "Lifesavers at Bondi wind in a swimmer on Ormsby's new reel like a roll of SUSHI."}
+  - {year: 1909, peg: soap, confidence: high, source: "Museums Victoria: Defries, 9 December",
+     event: "Defries makes the first powered flight in Australia at Victoria Park racecourse",
+     scene: "Colin Defries lifts his Wright Flyer off Victoria Park racecourse, slides like SOAP, and lands hard."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Cliff Howard invents the rotary hoe at Gilgandra",
+     scene: "Sixteen-year-old Cliff Howard's rotary hoe licks the Gilgandra soil like a spinning TONGUE."}
+  - {year: 1917, peg: dog, confidence: high, source: "WEHI; J Hyg: Cleland and Campbell",
+     event: "Cleland and Campbell describe Australian X disease",
+     scene: "Cleland marks an X on a DOG's chart: Australian X disease, a new brain fever, not polio."}
+  - {year: 1918, peg: dove, confidence: high, source: "SLNSW: Fisk; WIA",
+     event: "Fisk receives the first direct wireless message from England at Wahroonga",
+     scene: "A DOVE of radio waves flies from Wales to Fisk's house at Wahroonga with Billy Hughes's message."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "McGarvie Smith finds a non-perishable anthrax vaccine",
+     scene: "McGarvie Smith stores his anthrax vaccine in a TUBA, and it keeps without spoiling."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Timeline of Australian radio; NFSA",
+     event: "2SB in Sydney makes the first licensed radio broadcast in Australia",
+     scene: "A GNOME sings into the 2SB microphone, the first licensed broadcast to Sydney's sealed sets."}
+  - {year: 1924, peg: hanger, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Kellys Motors fits the first car radio",
+     scene: "Kellys Motors bends a coat HANGER into an aerial for the first car radio."}
+  - {year: 1928, peg: knife, confidence: disputed, source: "Lidwill refs: 1926 or 1928",
+     event: "Lidwill and Booth revive a newborn with an electric pacemaker at Crown Street",
+     scene: "At Crown Street, Lidwill pushes a needle like a KNIFE into a still baby's heart, and the pulses restart it."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Postmaster-General's engineer builds a letter sorting machine at Sydney GPO",
+     scene: "A MOUSE runs the new letter sorting machine at Sydney GPO, dropping each letter into its slot."}
+  - {year: 1932, peg: moon, confidence: low, source: "WP mirror: List of Australian inventions",
+     event: "An Australian sunscreen is made (approximate)",
+     scene: "A pale MOON rubs on the first Australian sunscreen before it goes out in the summer Sun."}
+  - {year: 1939, peg: map, confidence: high, source: "CSIROpedia: Radar; NAA fact sheet",
+     event: "CSIR sets up the secret Radiophysics Laboratory in Sydney",
+     scene: "A secret MAP of British radar plans reaches Sydney, and CSIR builds the Radiophysics Laboratory to use it."}
+  - {year: 1939, peg: map, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Franklin Barnes invents and patents degaussing of ships",
+     scene: "Barnes wraps a ship in cable and wipes its magnetic MAP clean, so mines cannot find it."}
+  - {year: 1943, peg: ram, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "William McArthur invents the splayd",
+     scene: "A RAM eats with McArthur's splayd: knife, fork and spoon in one."}
+  # Australia: Victoria
+  - {year: 1853, peg: llama, confidence: high, source: "WP mirror: Ferdinand von Mueller",
+     event: "Mueller becomes Government Botanist of Victoria",
+     scene: "La Trobe hands Ferdinand von Mueller a LLAMA loaded with plant presses: Victoria's first Government Botanist."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "Telsoc; WP: telegraphy in Australia",
+     event: "Melbourne to Williamstown: the first telegraph line in Australia opens",
+     scene: "A LAWYER taps the first telegraph message from Melbourne to Williamstown along McGowan's wire."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: Royal Society of Victoria",
+     event: "Philosophical Society of Victoria is founded",
+     scene: "A LAWYER, Andrew Clarke, opens the first meeting of the Philosophical Society of Victoria."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: James Harrison (engineer)",
+     event: "Geelong: Harrison builds the first commercial ice-making machine",
+     scene: "Harrison's ether machine at Geelong freezes a LAWYER into a block of ice for sale."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: Ferdinand von Mueller",
+     event: "Mueller becomes director of the Melbourne Botanic Gardens",
+     scene: "Mueller plants a LOG of a gum tree as the first act of his directorship of Melbourne's Botanic Gardens."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Royal Society of Victoria",
+     event: "Royal charter: the Royal Society of Victoria takes its name",
+     scene: "Mueller, the first president, bends his ELBOW to sign the charter of the Royal Society of Victoria."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Osborne develops photolithography at the Crown Lands Office",
+     scene: "Osborne presses an ELBOW onto a stone, and photolithography prints its photograph as a map."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP mirror: Melbourne Observatory",
+     event: "Melbourne Observatory is founded beside the Botanic Gardens",
+     scene: "Surveyors measure the hill beside the Botanic Gardens with a CHAIN and build Melbourne Observatory on it."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP mirror: Great Melbourne Telescope",
+     event: "Great Melbourne Telescope starts to observe nebulae",
+     scene: "A SHIP brings the Great Melbourne Telescope from Dublin, and its mirror turns to the southern nebulae."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: James Harrison (engineer)",
+     event: "Harrison's frozen beef on the ship Norfolk spoils on the way to London",
+     scene: "Harrison's ice melts on the Norfolk, and a COMB of rotten beef is all that reaches London."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Louis Brennan invents the wire-guided torpedo in Melbourne",
+     scene: "Brennan's torpedo runs like a CAR on two wires that he steers from the shore."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Wolseley develops a practical mechanical sheep shears handpiece",
+     scene: "Wolseley's mechanical shears slice the fleece off a sheep like icing off a CAKE."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "WP: H V McKay; NMA (patent March)",
+     event: "McKay patents his stripper-harvester, later the Sunshine Harvester",
+     scene: "McKay's harvester strips, threshes and cleans the wheat and drops it on a WAFFLE in one pass."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Arnot patents the electric drill in Melbourne",
+     scene: "Arnot's electric drill bores through a gold watch FOB in a Melbourne workshop."}
+  - {year: 1890, peg: bees, confidence: medium, source: "Telegraphic Journal (via search); Sutton refs",
+     event: "Sutton's telephane design for sending pictures is published in London",
+     scene: "Sutton draws a swarm of BEES on paper as the first picture his telephane design would send by wire."}
+  - {year: 1896, peg: peach, confidence: medium, source: "WP mirror: Thomas Ranken Lyle",
+     event: "Lyle makes one of the first X-ray photographs in Australia",
+     scene: "Lyle's X-ray shows the bones of Professor Masson's foot through a PEACH-coloured skin."}
+  - {year: 1907, peg: ski, confidence: high, source: "STLE; ADB: Michell (patent 1905)",
+     event: "Michell thrust bearing first works in a pump at Cohuna",
+     scene: "A SKI of oil carries the tilting pads of Michell's bearing in a Murray River pump at Cohuna."}
+  - {year: 1910, peg: dice, confidence: high, source: "Museums Victoria; Diggers Rest monument",
+     event: "Houdini makes a controlled powered flight at Diggers Rest",
+     scene: "Houdini throws a DICE, escapes the ground and flies his Voisin in a controlled circle over Diggers Rest."}
+  - {year: 1910, peg: dice, confidence: high, source: "Museums Victoria: Duigan, 16 July",
+     event: "Duigan flies the first Australian-built aeroplane at Mia Mia",
+     scene: "Duigan builds his biplane in a shed at Mia Mia, rolls a DICE on its wing and hops into the air."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Dethridge invents a wheel that meters irrigation water",
+     scene: "Each turn of the Dethridge wheel counts the irrigation water like the dots on a DICE."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Walter and Eliza Hall Institute",
+     event: "Walter and Eliza Hall Institute is founded in Melbourne",
+     scene: "Eliza Hall gives a DOLL dressed as a doctor to the new Walter and Eliza Hall Institute."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Commonwealth Serum Laboratories",
+     event: "Commonwealth Serum Laboratories is founded",
+     scene: "The Commonwealth Serum Laboratories grows its first vaccine in a glass DISH."}
+  - {year: 1917, peg: dog, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "George Nicholas makes Aspro aspirin in Melbourne",
+     scene: "A DOG with a headache swallows Nicholas's first Aspro tablet."}
+  - {year: 1920, peg: nose, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Anthony Michell invents the crankless engine",
+     scene: "Michell's crankless engine turns its shaft with a swash plate, and the NOSE of the shaft spins."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Vegemite (first sold 25 October)",
+     event: "Callister's Vegemite is first sold",
+     scene: "A GNOME spreads the first jar of Callister's yeast spread, Vegemite, on Melbourne toast."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Commonwealth Serum Laboratories",
+     event: "CSL starts to make insulin",
+     scene: "A GNOME with a needle gives an Australian child the first CSL-made insulin."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Commonwealth Serum Laboratories",
+     event: "CSL tiger snake antivenene passes clinical tests",
+     scene: "A MOUSE bitten by a tiger snake lives after the new CSL antivenene."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Frank Thring invents the clapperboard at Efftee Studios",
+     scene: "A MOUSE caught in Thring's new clapperboard marks the start of each take at Efftee Studios."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Lewis Bandt designs the coupe utility at Ford in Geelong",
+     scene: "Bandt beats a car and a truck together with a HAMMER, and the ute is born at Geelong."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Keilor site; emelbourne",
+     event: "James White finds the Keilor cranium near the Maribyrnong River",
+     scene: "A quarry HORSE kicks up the Keilor skull from the river sand, then the oldest human remains known in Australia."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP mirror: Norman Gregg",
+     event: "Gregg shows that rubella in pregnancy causes congenital cataract",
+     scene: "Gregg announces on the RADIO that German measles in pregnancy blinds babies with cataracts."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Commonwealth Serum Laboratories",
+     event: "CSL starts to make penicillin",
+     scene: "A WARRIOR in New Guinea gets a shot of the first Australian penicillin from CSL."}
+  # Australia: South Australia and the Centre
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Bull and Ridley's mechanical grain stripper",
+     scene: "A RAM pushes Ridley's stripper through the wheat, combing off the heads in one pass."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP mirror: Horn Expedition",
+     event: "Horn Expedition surveys the natural history of central Australia",
+     scene: "A BEAR leads Spencer and Tate across the MacDonnell Ranges to collect desert mammals and fish for the Horn Expedition."}
+  - {year: 1896, peg: peach, confidence: high, source: "Adelaide Uni; WP: W H Bragg (29 May)",
+     event: "Bragg demonstrates X-rays to Adelaide doctors",
+     scene: "Bragg X-rays a PEACH for Adelaide doctors, and the stone shows through the flesh."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP: W H Bragg (21 September)",
+     event: "Bragg gives the first public demonstration of wireless telegraphy in Australia",
+     scene: "A PIG squeals when Bragg's wireless rings a bell across the Adelaide lecture hall."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: W H Bragg; Adelaide Uni tape",
+     event: "Bragg and Todd send wireless messages across Adelaide",
+     scene: "Bragg and Todd send the first wireless messages in South Australia through a PIPE aerial to Henley Beach."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Cambridge UP; Spencer and Gillen refs",
+     event: "Spencer and Gillen publish The Native Tribes of Central Australia",
+     scene: "Spencer and Gillen record Arrernte ceremony at Alice Springs, and a PIPE of smoke rises from their book."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Walter Hume develops the spun concrete pipe process in Adelaide",
+     scene: "Hume spins wet concrete inside a mould like a DICE in a cup and makes a strong pipe."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "De Mole sends his tank design to the British War Office",
+     scene: "De Mole's armoured tank sticks out its TONGUE at the War Office clerks who file it away."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "James Stobie invents the Stobie pole in Adelaide",
+     scene: "Stobie fills two steel beams with concrete and hangs Adelaide's power lines on it like a HANGER."}
+  - {year: 1927, peg: ink, confidence: disputed, source: "WP list: 1927; RFDS: mid-1920s; memory 1929",
+     event: "Traeger invents the pedal wireless in Adelaide",
+     scene: "A station hand pedals Traeger's wireless and the dots and dashes flow like INK to the Flying Doctor."}
+  - {year: 1929, peg: knob, confidence: high, source: "SA History Hub; SA Museum archives",
+     event: "Hale and Tindale excavate the Devon Downs rock shelter layer by layer",
+     scene: "Tindale turns a KNOB on each layer of the Devon Downs shelter and reads six metres of Aboriginal history."}
+  - {year: 1937, peg: mug, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Edward Both invents a cheap iron lung",
+     scene: "Edward Both builds an iron lung that breathes in and out of a plywood MUG for a polio child."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Faulding develops zinc cream",
+     scene: "A lifeguard paints a white HORSE nose with Faulding's new zinc cream."}
+  # Australia: Queensland and the Torres Strait
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Queensland lungfish",
+     event: "Krefft describes the Queensland lungfish",
+     scene: "A GOOSE watches a fish breathe air at the surface, and Krefft names it the Queensland lungfish."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Royal Society of Victoria",
+     event: "Royal Society of Victoria sends an eclipse expedition to Cape York",
+     scene: "A black CAT covers the Sun over Cape York while the Royal Society's eclipse party takes notes."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: William Hay Caldwell",
+     event: "Caldwell shows that monotremes lay eggs and wires the news to Montreal",
+     scene: "On the Burnett River a FAIRY hands Caldwell a platypus egg: monotremes oviparous, ovum meroblastic."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Talgai Skull",
+     event: "Fencer William Naish finds the Talgai skull",
+     scene: "A FISH swims out of a flooded gully at Talgai, and Naish finds an ancient human skull in the bank."}
+  - {year: 1887, peg: fox, confidence: high, source: "ADB; SLQ: Wragge",
+     event: "Wragge becomes Queensland Government Meteorologist and gives cyclones names",
+     scene: "Clement Wragge names a cyclone after a sly FOX of a politician on his first Queensland weather chart."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror: Cambridge Anthropological Expedition",
+     event: "Haddon's Cambridge Anthropological Expedition arrives in the Torres Strait",
+     scene: "Haddon and Rivers set up a BEEHIVE of instruments on Mer to test Torres Strait islanders' senses."}
+  - {year: 1902, peg: sun, confidence: high, source: "ADB; QSA blog: Wragge",
+     event: "Charleville: Wragge's Stiger vortex guns fail to make rain",
+     scene: "The six Charleville vortex guns fire at a blue sky, and the SUN keeps burning without a drop of rain."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Talgai Skull",
+     event: "Stewart Arthur Smith describes the Talgai skull",
+     scene: "A DOVE carries the Talgai skull to London, where Smith describes it for the Royal Society."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Cactoblastis cactorum",
+     event: "Cactoblastis moth is brought from Argentina against prickly pear",
+     scene: "Cactoblastis caterpillars drive a NAIL into each prickly pear pad and eat Queensland's cactus plague."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Southern Cross (aircraft)",
+     event: "Kingsford Smith lands at Brisbane after the first flight across the Pacific",
+     scene: "The Southern Cross cuts the Pacific like a KNIFE from Oakland to Brisbane, via Hawaii and Fiji."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Royal Flying Doctor Service",
+     event: "Aerial Medical Service makes its first flight from Cloncurry",
+     scene: "Affleck flies the first Flying Doctor out of Cloncurry with a surgeon's KNIFE in the bag."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "WP mirror: Elizabeth Kenny",
+     event: "Elizabeth Kenny opens her polio clinic in Townsville",
+     scene: "Sister Kenny unwraps a polio child like a MUMMY from splints and treats the limbs with hot packs in Townsville."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Cane toads in Australia",
+     event: "Cane toads from Hawaii are released at Gordonvale against cane beetles",
+     scene: "A sugar MILL at Gordonvale takes in a crate of Hawaiian cane toads to eat the cane beetles."}
+  - {year: 1937, peg: mug, confidence: high, source: "MJA 2008; WEHI: Q fever",
+     event: "Derrick describes Q fever in Brisbane meat workers; Burnet isolates the germ",
+     scene: "A Brisbane meat worker drinks from a MUG with a question mark on it: Derrick's Query fever."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Elizabeth Kenny",
+     event: "Royal Commission reports against Kenny's polio treatment",
+     scene: "A MOVIE of Kenny's patients fails to win the Royal Commission, which reports against her method."}
+  - {year: 1943, peg: ram, confidence: high, source: "ADB: Fairley; Army history",
+     event: "Cairns: Fairley's unit tests atebrin on volunteers infected with malaria",
+     scene: "At Cairns a RAM of volunteers takes atebrin daily while malaria mosquitoes bite, and none fall sick."}
+  # Australia: Tasmania
+  - {year: 1808, peg: sofa, confidence: high, source: "WP mirror: Thylacine",
+     event: "George Harris publishes the first scientific description of the thylacine",
+     scene: "A thylacine lies on a SOFA while Deputy Surveyor Harris draws its stripes for the first description."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP mirror: Royal Society of Tasmania",
+     event: "Franklin forms the Tasmanian Society of Natural History",
+     scene: "Governor Franklin raises a MUG of tea to open the Tasmanian Society of Natural History."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP mirror: John Gould",
+     event: "John and Elizabeth Gould reach Tasmania to study Australian birds",
+     scene: "A MOVIE camera follows John and Elizabeth Gould ashore at Hobart to draw Australian birds."}
+  - {year: 1840, peg: horse, confidence: unverified,
+     event: "Ross sets up the Rossbank magnetic observatory in Hobart",
+     scene: "James Clark Ross ties a HORSE to an iron-free hut at Rossbank and measures the Earth's magnetism."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: Royal Society of Tasmania",
+     event: "Botanical and Horticultural Society of Van Diemen's Land, later the Royal Society of Tasmania",
+     scene: "A RAM grazes in the new garden of the society that soon becomes the Royal Society of Tasmania."}
+  - {year: 1847, peg: rock, confidence: high, source: "ADB; litfl: Pugh, 7 June",
+     event: "Launceston: Pugh operates under ether, the first surgery under anaesthetic in Australia",
+     scene: "Pugh puts a woman to sleep with ether and cuts a tumour as hard as a ROCK from her jaw."}
+  - {year: 1874, peg: car, confidence: medium, source: "WP: 1874 transit of Venus (via search)",
+     event: "American party observes the transit of Venus at Hobart",
+     scene: "An American CAR of instruments parks in Hobart to photograph Venus on the face of the Sun."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: List of Australian inventions",
+     event: "Birchall cuts and glues paper into the first notepad in Launceston",
+     scene: "Birchall glues sheets of paper into a block and writes SUN on the first notepad in Launceston."}
+  - {year: 1925, peg: nail, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Eric Waterworth invents a record changer in Hobart",
+     scene: "Waterworth's record changer drops each disc on a NAIL spindle, one after another."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Thylacine",
+     event: "Wilf Batty shoots the last known wild thylacine",
+     scene: "A MOUSE hides as Wilf Batty shoots the last wild thylacine at Mawbanna."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Thylacine",
+     event: "Last known thylacine dies at Hobart Zoo, weeks after legal protection",
+     scene: "A MATCH goes out in a cold Hobart Zoo cage as the last thylacine dies."}
+  # Australia: Western Australia and the Northern Territory
+  - {year: 1892, peg: piano, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "McCormick's Coolgardie safe cools food by evaporation",
+     scene: "On the goldfields, McCormick hangs a wet hessian bag over a PIANO crate, and the breeze keeps the meat cool."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: 1919 England to Australia flight",
+     event: "Ross and Keith Smith land at Darwin, the first flight from England to Australia",
+     scene: "A TUBA band greets the Vimy as Ross and Keith Smith land at Darwin from England."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Bert Hinkler",
+     event: "Hinkler lands at Darwin after the first solo flight from England",
+     scene: "Hinkler slices a cake with a KNIFE at Darwin, the first man to fly alone from England."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Jean Batten",
+     event: "Jean Batten lands at Darwin with a women's solo record from England",
+     scene: "Jean Batten breaks Amy Johnson's record with a HAMMER as her Moth lands at Darwin."}
+  # Australasian expeditions to Antarctica
+  - {year: 1909, peg: soap, confidence: high, source: "Aust Geographic; Linda Hall: David",
+     event: "David, Mawson and Mackay reach the South Magnetic Pole area",
+     scene: "David, Mawson and Mackay haul a sledge on SOAP-smooth ice to the South Magnetic Pole and raise the flag."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Australasian Antarctic Expedition",
+     event: "Mawson's Australasian Antarctic Expedition sails from Hobart",
+     scene: "The Aurora sails from Hobart with Mawson, a TATTOO of a penguin on every sailor's arm."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Australasian Antarctic Expedition",
+     event: "Macquarie Island hears the first wireless signals from Antarctica",
+     scene: "Cape Denison's wireless clicks its TONGUE, and Macquarie Island hears the first signals from Antarctica."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Australasian Antarctic Expedition",
+     event: "Mertz dies and Mawson sledges on alone",
+     scene: "Mawson lays Mertz in an ice TOMB and drags his half sledge alone back to Cape Denison."}
+  - {year: 1928, peg: knife, confidence: high, source: "Australian Antarctic Division: aviation",
+     event: "Hubert Wilkins makes the first powered flight in Antarctica, from Deception Island",
+     scene: "Wilkins's Lockheed cuts the Antarctic sky like a KNIFE in a twenty-minute flight round Deception Island."}
+  - {year: 1929, peg: knob, confidence: high, source: "Australian Antarctic Division: BANZARE",
+     event: "Mawson's BANZARE sails south with a seaplane for aerial survey",
+     scene: "Mawson turns the KNOB on a Gypsy Moth seaplane's camera and maps the Antarctic coast from the air."}
+  # New Zealand
+  - {year: 1839, peg: map, confidence: medium, source: "WP mirror: Moa (Harris, Rule, Owen)",
+     event: "A moa bone from Poverty Bay is sent to Richard Owen in London",
+     scene: "A trader rolls a strange bone in a MAP of Poverty Bay and posts it to Owen in London."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: Moa (Dinornis Owen, 1843)",
+     event: "Owen names the giant moa Dinornis",
+     scene: "Owen builds a giant bird from moa bones, taller than a RAM on stilts, and names it Dinornis."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP mirror: Royal Society Te Aparangi",
+     event: "George Grey founds the New Zealand Society",
+     scene: "Governor Grey opens his WALLET to found the New Zealand Society for science and letters."}
+  - {year: 1859, peg: elbow, confidence: medium, source: "Te Ara: geological exploration",
+     event: "Hochstetter makes the first geological surveys of Auckland and Nelson",
+     scene: "Hochstetter puts his ELBOW on the cone of Mount Eden and maps the Auckland volcanoes."}
+  - {year: 1861, peg: jet, confidence: medium, source: "Te Ara: geological exploration",
+     event: "James Hector becomes provincial geologist of Otago",
+     scene: "Otago pays for a JET boat that takes James Hector up its rivers to draw the first geological map of the province."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP mirror: Royal Society Te Aparangi",
+     event: "Colonial Museum is founded in Wellington under Hector",
+     scene: "Hector puts a JELLY of moa bones and rocks in the first case of the Colonial Museum in Wellington."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "Te Ara: geological exploration",
+     event: "Hector compiles the first geological map of New Zealand",
+     scene: "Hector colours the rocks of all New Zealand in JELLY tints on its first geological map."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: Royal Society Te Aparangi",
+     event: "New Zealand Institute is created by Act of Parliament",
+     scene: "A JOCKEY rides the new Act into Parliament and the New Zealand Institute for science is born."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP mirror: Haast's eagle (1871 or 1872)",
+     event: "Haast describes Haast's eagle from bones found in a Canterbury swamp",
+     scene: "Haast flips a COIN, and a giant eagle swoops from the swamp bones onto a moa."}
+  - {year: 1874, peg: car, confidence: medium, source: "WP: 1874 transit of Venus; Te Ara",
+     event: "British station at Burnham and American party at Queenstown observe the transit of Venus",
+     scene: "A CAR of telescopes splits between Burnham and Queenstown to time Venus crossing the Sun."}
+  - {year: 1876, peg: cage, confidence: high, source: "Engineering NZ; atlantic-cable.com",
+     event: "Trans-Tasman telegraph cable opens from La Perouse to Nelson",
+     scene: "A CAGE of copper wire is laid across the Tasman, and Nelson telegraphs Sydney for the first time."}
+  - {year: 1886, peg: fish, confidence: medium, source: "Heritage NZ; DOC (1885 or 1886)",
+     event: "Bullendale: first industrial hydro-electric plant in New Zealand",
+     scene: "A FISH in the Skippers creek turns the Bullendale dynamo that sends power to the Phoenix stamper battery."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Reefton",
+     event: "Reefton is the first town in New Zealand with a public electricity supply",
+     scene: "A FIFE player marches down Reefton's main street under the first electric street lights in New Zealand."}
+  - {year: 1894, peg: bear, confidence: high, source: "Te Ara; DNZB: Rutherford",
+     event: "Rutherford describes his magnetic detector of radio waves at Canterbury College",
+     scene: "A BEAR hugs Rutherford's coil of magnetised needles, and it detects radio waves sent across Canterbury College."}
+  - {year: 1896, peg: peach, confidence: medium, source: "RNZ; ODT 2025 (Hamilton, May)",
+     event: "Augustus Hamilton makes an X-ray of a frog for a lecture",
+     scene: "Augustus Hamilton X-rays a frog sitting on a PEACH, and the lecture hall sees its bones."}
+  - {year: 1903, peg: sumo, confidence: disputed, source: "WP mirror: Richard Pearse (1903 or 1904)",
+     event: "Richard Pearse's powered aircraft may fly a short way at Waitohi",
+     scene: "Pearse's home-built plane lifts a SUMO wrestler a few metres and drops him into a gorse hedge."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Vivian Walsh (aviator)",
+     event: "Vivian Walsh makes the first powered flight in New Zealand",
+     scene: "Vivian Walsh lifts the Howard Wright biplane off the ground with a TATTOO of a manuka flower on its tail."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "WP mirror: List of Australian inventions",
+     event: "Julius's automatic totalisator is first used at Ellerslie",
+     scene: "Julius's totalisator adds up every bet at Ellerslie, and the old hand-counted books go to the TOMB."}
+  - {year: 1914, peg: tower, confidence: high, source: "Engineering NZ; Te Ara: Lake Coleridge",
+     event: "Lake Coleridge power station, the first state hydro scheme, supplies Christchurch",
+     scene: "A pylon TOWER carries Lake Coleridge power down the Rakaia valley to Christchurch."}
+  - {year: 1921, peg: ant, confidence: high, source: "Te Ara: Robert Jack; Otago blog",
+     event: "Robert Jack makes the first radio broadcast in New Zealand from Dunedin",
+     scene: "An ANT dances to Hello my dearie on Robert Jack's first Dunedin broadcast."}
+  - {year: 1921, peg: ant, confidence: medium, source: "Te Ara: Cawthron (2 or 21 April)",
+     event: "Cawthron Institute opens in Nelson",
+     scene: "Thomas Cawthron's money builds a laboratory where an ANT is the first soil specimen of the Cawthron Institute."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: DSIR (New Zealand)",
+     event: "Department of Scientific and Industrial Research is founded under Marsden",
+     scene: "Ernest Marsden shares out a NACHO among the first branches of the new DSIR."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Southern Cross (aircraft)",
+     event: "Kingsford Smith makes the first flight across the Tasman Sea",
+     scene: "The Southern Cross cuts the Tasman with a KNIFE and lands at Christchurch."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Royal Society Te Aparangi",
+     event: "New Zealand Institute is renamed the Royal Society of New Zealand",
+     scene: "A MUMMY unwraps the old name and the Royal Society of New Zealand steps out."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Royal Society Te Aparangi",
+     event: "Kathleen Curtis becomes the first woman Fellow of the Royal Society of New Zealand",
+     scene: "Kathleen Curtis strikes a MATCH and lights the first fellowship candle for a woman."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Jean Batten",
+     event: "Jean Batten flies solo from England to New Zealand in record time",
+     scene: "A MATCH lights the flare path at Auckland as Jean Batten lands from England in eleven days."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Wairau Bar",
+     event: "Schoolboy Jim Eyles finds the moa-hunter site at Wairau Bar",
+     scene: "Jim Eyles follows a MAP of shells to a moa egg and a burial at Wairau Bar."}
+  - {year: 1939, peg: map, confidence: medium, source: "AUT conf. paper (via search)",
+     event: "Marsden sets up secret radar laboratories in Wellington and Christchurch",
+     scene: "Marsden brings a secret radar MAP back from Britain and sets up hidden laboratories in Wellington and Christchurch."}
+  # New Guinea and nearby islands
+  - {year: 1846, peg: roach, confidence: medium, source: "WP mirror: HMS Rattlesnake (1846-50)",
+     event: "HMS Rattlesnake starts its survey of north Australia and New Guinea, with Huxley",
+     scene: "Huxley finds a ROACH in his microscope on the Rattlesnake as it charts the Barrier Reef and New Guinea."}
+  - {year: 1871, peg: cat, confidence: medium, source: "WP mirror: Nicholas Miklouho-Maclay",
+     event: "Miklouho-Maclay lands at Astrolabe Bay to study its people",
+     scene: "A CAT steps off the Vityaz with Miklouho-Maclay at Astrolabe Bay, where he lives among the villagers."}
+  - {year: 1901, peg: soda, confidence: medium, source: "orchidsnewguinea: Schlechter (1901-02)",
+     event: "Schlechter starts to collect orchids in German New Guinea",
+     scene: "Schlechter pours SODA into a jar of new orchids from the German New Guinea forest."}
+  - {year: 1909, peg: soap, confidence: high, source: "ANU: Meyer, Watom; Anthropos",
+     event: "Father Otto Meyer describes Lapita pottery from Watom Island",
+     scene: "A storm washes SOAP-smooth sherds out of the Watom beach, and Father Meyer prints the first Lapita pottery."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Bronislaw Malinowski",
+     event: "Malinowski starts fieldwork in Papua, on Mailu Island",
+     scene: "Malinowski climbs down from his ivory TOWER and pitches his tent on Mailu Island."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Bronislaw Malinowski",
+     event: "Malinowski starts his Trobriand Islands fieldwork",
+     scene: "A Trobriand child gives Malinowski a DOLL, and he stays a year to learn the village language."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Bronislaw Malinowski",
+     event: "Malinowski publishes Argonauts of the Western Pacific about the kula ring",
+     scene: "A NUN passes a shell necklace round the kula ring in Malinowski's Argonauts."}
+  - {year: 1922, peg: nun, confidence: medium, source: "CSIRO HR18019: Lane Poole (1922-24)",
+     event: "Lane Poole starts the forest survey of Papua and New Guinea",
+     scene: "A NUN counts the trees for Lane Poole's first forest survey of Papua and New Guinea."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Baliem Valley",
+     event: "Archbold's survey flight finds the Baliem Valley and its large population",
+     scene: "Archbold's flying boat films a MOVIE of the hidden Baliem Valley, full of gardens and people."}
+  # Pacific islands: Hawaii
+  - {year: 1840, peg: horse, confidence: unverified,
+     event: "Wilkes's United States Exploring Expedition camps on the summit of Mauna Loa",
+     scene: "A HORSE carries Wilkes's pendulum up Mauna Loa to measure gravity on the summit."}
+  - {year: 1886, peg: fish, confidence: high, source: "Civil Beat; Hawaiian Electric history",
+     event: "Electric light is demonstrated at Iolani Palace",
+     scene: "King Kalakaua switches on electric lamps at Iolani Palace, and every FISH in the moat glows."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Bishop Museum",
+     event: "Charles Reed Bishop founds the Bishop Museum in Honolulu",
+     scene: "Charles Reed Bishop hangs Princess Pauahi's watch FOB in the first case of the Bishop Museum."}
+  - {year: 1895, peg: bell, confidence: high, source: "HARC history; HSPA Experiment Station",
+     event: "Hawaiian Sugar Planters' Association opens its Experiment Station",
+     scene: "A BELL rings in Makiki as Walter Maxwell opens the sugar Experiment Station's first test plots."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Hawaiian Volcano Observatory",
+     event: "Jaggar founds the Hawaiian Volcano Observatory at Kilauea",
+     scene: "Jaggar dips a thermometer into a TONGUE of lava at Halemaumau to start the Hawaiian Volcano Observatory."}
+  - {year: 1916, peg: dish, confidence: medium, source: "WP mirror: Alice Ball (died Dec. 1916)",
+     event: "Alice Ball makes an injectable chaulmoogra oil for leprosy (approximate)",
+     scene: "Alice Ball turns chaulmoogra oil into an injection in a glass DISH, the best leprosy treatment of its day."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Bishop Museum",
+     event: "Pacific Science Association secretariat starts at the Bishop Museum",
+     scene: "Scientists from round the Pacific rub NOSE to nose at the Bishop Museum, new home of the Pacific Science Association."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Bishop Museum",
+     event: "Kaimiloa expedition sails with Bishop Museum scientists",
+     scene: "Bishop Museum scientists hang their nets on a HANGER as the Kaimiloa sails for remote islands."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Dole Air Race",
+     event: "Maitland and Hegenberger make the first flight from the mainland to Hawaii",
+     scene: "The Bird of Paradise flies from Oakland to Oahu, and Maitland signs the arrival log in INK."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Dole Air Race",
+     event: "Dole Air Race: Woolaroc wins the flight from Oakland to Honolulu",
+     scene: "Dole pours pineapple juice into INK and writes Woolaroc's name on the winner's cheque in Honolulu."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Amelia Earhart",
+     event: "Earhart makes the first solo flight from Honolulu to Oakland",
+     scene: "Earhart takes off past a Honolulu sugar MILL and flies alone to Oakland."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: China Clipper",
+     event: "China Clipper carries the first transpacific airmail via Honolulu",
+     scene: "A MILL of mailbags rides the China Clipper from Alameda via Honolulu, Midway, Wake and Guam to Manila."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Te Rangi Hiroa",
+     event: "Te Rangi Hiroa (Peter Buck) becomes director of the Bishop Museum",
+     scene: "Te Rangi Hiroa strikes a MATCH and lights the director's lamp at the Bishop Museum, the first Maori to lead it."}
+  # Pacific islands: Micronesia
+  - {year: 1873, peg: comb, confidence: medium, source: "Paideuma; Pacific Archaeology (1873/74)",
+     event: "Kubary publishes the first study of the Nan Madol ruins on Pohnpei",
+     scene: "Kubary runs a COMB through the mangroves of Nan Madol and maps its basalt islets."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Challenger Deep",
+     event: "HMS Challenger sounds the Challenger Deep near Guam, over eight km deep",
+     scene: "Challenger ties a stone EAGLE to its sounding rope near Guam, and it sinks more than eight kilometres."}
+  - {year: 1910, peg: dice, confidence: high, source: "Pacific Archaeology; Paideuma: Hambruch",
+     event: "Hambruch surveys and maps Nan Madol",
+     scene: "Hambruch numbers every islet of Nan Madol like the spots on a DICE in his survey map."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Amelia Earhart",
+     event: "Earhart and Noonan vanish near Howland Island",
+     scene: "A MUG of coffee waits on Howland Island, but Earhart and Noonan never land."}
+  # Pacific islands: Fiji, Polynesia and Melanesia
+  - {year: 1842, peg: rhino, confidence: unverified,
+     event: "Darwin publishes his theory that atolls grow on sinking volcanoes",
+     scene: "A RHINO sinks into the sea, and a coral ring grows on its horn, as Darwin explains atolls."}
+  - {year: 1864, peg: cherry, confidence: high, source: "UH Manoa: Eyraud letter, December",
+     event: "Brother Eyraud reports rongorongo tablets on Easter Island",
+     scene: "Eyraud finds a CHERRY-wood tablet in a Rapa Nui house, carved with signs no one can read."}
+  - {year: 1869, peg: ship, confidence: medium, source: "UH Manoa; WP: Jaussen (1868 or 1869)",
+     event: "Bishop Jaussen in Tahiti receives a rongorongo tablet and orders a search for more",
+     scene: "A SHIP brings Bishop Jaussen a gift wrapped in a rongorongo tablet, and he sends priests to find more."}
+  - {year: 1885, peg: waffle, confidence: high, source: "Fiji Times; WP: Fiji School of Medicine",
+     event: "Suva Medical School starts to train native medical practitioners",
+     scene: "Fijian students learn to vaccinate at the new Suva Medical School, practising on a WAFFLE."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Funafuti",
+     event: "Funafuti: Sollas's Royal Society expedition drills into the coral atoll",
+     scene: "Sollas drills a PEACH-sized hole into Funafuti atoll to test Darwin's coral theory."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Funafuti",
+     event: "Edgeworth David leads the second coral boring at Funafuti",
+     scene: "Edgeworth David's drill goes down so deep at Funafuti that a PIG could hide in the core box."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Pacific Cable (31 October)",
+     event: "Pacific Cable opens from Canada via Fanning, Fiji and Norfolk Island",
+     scene: "The SUN never sets on the new Pacific Cable from Canada to Fiji, Norfolk Island and Australasia."}
+  - {year: 1902, peg: sun, confidence: high, source: "Otto Tetens refs; Commonwealth Walkway",
+     event: "Tetens founds the Samoa Observatory at Mulinu'u",
+     scene: "Tetens measures the SUN and the magnetic field at his new Samoa Observatory on Mulinu'u point."}
+  - {year: 1914, peg: tower, confidence: high, source: "Mana Expedition refs; Archaeology mag.",
+     event: "Routledges' Mana Expedition arrives on Easter Island to survey the moai",
+     scene: "Katherine Routledge climbs a TOWER of scaffolding beside a moai at Rano Raraku to record it."}
+  - {year: 1928, peg: knife, confidence: high, source: "Fiji Times: CMS opened 29 December",
+     event: "Central Medical School opens in Suva for students from across the Pacific",
+     scene: "A surgeon's KNIFE cuts the ribbon of the Central Medical School in Suva for Pacific students."}

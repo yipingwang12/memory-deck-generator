@@ -606,3 +606,60 @@ Fix-pass list (not done):
   (latin_america_politics_500bce_500ce), lasso 16 (west_asia_politics_pre500bce), bees 13 + bell 12
   (oceania_politics_1500_1800), tower 11 (central_asia_science_1945_present), lasso 11
   (western_europe_science_500bce_500ce). Round-date lasso overload is now the main overload source.
+
+## Wave 17 (2026-11-07)
+User's aim: 30 cells, largest predicted first; search cap raised to 2000. Search-budget model refit on 238 cells
+(residual sd 0.38, log-search coefficient 0.36; forecast 19,883 dates in 194 unbuilt cells at 45 searches). Ranks
+4–33 (predicted 140–175, total about 4,640; {expected} = prediction), less the three north_america politics
+pre-Columbian fit artifacts (ranks 1–3). Opus agents, rolling queue of 8, budget 45 searches each (1,350 in all).
+west_asia religion 1500_1800, east_asia economy 1500_1800, subsaharan_africa arts 1945_present, southeast_asia arts
+1500_1800, central_asia society 1945_present, south_asia science 1500_1800, central_asia science 1800_1945,
+north_africa arts 1500_1800, western_europe society 500bce_500ce, latin_america science 1500_1800, south_asia society
+1500_1800, north_america religion 500_1500, subsaharan_africa arts 1800_1945, west_asia society 1500_1800,
+subsaharan_africa religion 1945_present, east_asia religion 500_1500, central_asia economy 1945_present, latin_america
+politics pre500bce, southeast_asia politics 500bce_500ce, north_africa politics 500bce_500ce, oceania science 1800_1945,
+western_europe science pre500bce, western_europe economy 500bce_500ce, north_africa religion 1500_1800, central_asia
+economy 1800_1945, west_asia economy 1500_1800, north_america science 500_1500, subsaharan_africa religion 1800_1945,
+oceania politics 500_1500, oceania economy 1945_present.
+Result (after main-session fixes): 4,525 dates over 30 cells (high 3,231, medium 840, low 81, disputed 119,
+unverified 284 = 6.3%); total = 99% of the prediction (4,584), but spread is wide: sizes 25–332. Above the fit:
+subsaharan_africa_arts_1945_present 332 (×2.0), east_asia_religion_500_1500 242, subsaharan_africa_religion_1800_1945
+236, central_asia_economy_1945_present 232, subsaharan_africa_religion_1945_present 226, oceania_economy_1945_present
+210, north_africa_politics_500bce_500ce 201, oceania_science_1800_1945 198. Most others came in 10–25% low
+(first-come: older cells hold the main events). Far below: oceania_politics_500_1500 25 (king-list rule),
+latin_america_politics_pre500bce 45, north_america_science_500_1500 48, north_america_religion_500_1500 60.
+Model fix needed before the next refit: pre-Columbian north_america / latin_america and pre-1500 Pacific cells are
+overpredicted for every theme, not only politics (add a term or leave them out of the fit). Check exit 0 on all 268
+cells. Grid now 268 of 432 cells, 62,220 dates. No usage-limit deaths (~7.6M subagent tokens, every agent spent 45
+searches; ~1,355 of 2,000 session searches used).
+Main session: 13 cross-cell duplicates removed (IDF scan): Ovadia Yosef's Beta Israel ruling 1973 (west_asia older),
+Humboldt's Leonids (the 1800 copy in latin_america_science_1800_1945; correct date Nov 1799, kept in 1500_1800), Garnier's
+nickel 1864 (oceania_economy older), Yamoussoukro basilica 1990 (kept in religion: religious building), Commodus'
+African grain fleet 186 (north_africa_economy older), Xi's Silk Road Economic Belt 2013 (east_asia_economy older),
+Cyprus muhassil 1703 (politics older), Nathu La 2006 (south_asia_politics older), Yushu earthquake 2010 (east_asia
+older), Crimean Tatar return 1989 (eastern_europe older), Avidius Cassius 175 (west_asia older), Skara Brae and
+Newgrange (western_europe_arts_pre500bce older). Three dates restored to memory year after a main-session search:
+Amina Lawal acquittal 2003 (Al Jazeera, 25 Sep 2003), Rennell's Memoir of a Map of Hindoostan 1783 (ESTC first
+edition; 1788 = 2nd ed.), Fiji devaluation 1998 (IMF, 20 Jan 1998). Brief: warning added that some pages (cavac.at)
+carry injected instructions.
+Open user questions:
+- Works with an ancient setting made abroad (Antony and Cleopatra, All for Love, Giulio Cesare, Haydn/Gluck operas) sit in
+  north_africa_arts_1500_1800 under the setting rule. Keep, or send ancient-setting works to the author's home region?
+- Sati laws 1500–1800 are in south_asia_society; the 1800–1945 cells put sati regulation in religion. Which theme?
+- Antarctic expeditions: oceania_science_1800_1945 files 6 Australasian ones under oceania (home region). Make that the rule?
+- Empire-wide Ottoman decrees (capitulations, malikane, coinage) sit under Anatolia (west_asia) in the economy cells,
+  though Istanbul is eastern_europe. Keep?
+Fix-pass list (not done):
+- Monte Alban founding c. 500 BCE and the Takalik Abaj Olmec-to-Maya change c. 500 BCE are missing from
+  latin_america_politics_500bce_500ce (year -500 belongs there).
+- Tonga: Tu'i Ha'atakalaua title c. 1470 (oceania_politics_500_1500) vs Takalaua's killing 1535 (oceania_politics_1500_1800);
+  one source puts the title after the killing.
+- Mongolia's first five-year plan: 1931 in central_asia_economy_1800_1945 and 1948 in central_asia_economy_1945_present
+  (both may be real: the 1931 plan was dropped); check the texts say which.
+- Unverified-heavy cells for a check pass: subsaharan_africa_religion_1800_1945 (39), western_europe_science_pre500bce (36
+  of 107), western_europe_society_500bce_500ce (22), central_asia_science_1800_1945 (19).
+- Peg overload: lasso 18 (north_america_science_500_1500, c. x50 dates), mill 12 (subsaharan_africa_arts_1800_1945).
+- Grouping slip: Vanuatu tax haven 1971 sits in the Nauru/Kiribati group of oceania_economy_1945_present.
+- Scope: Umar Tall's jihad 1852 / death 1864 and the Buganda religious wars 1888, 1892 put in subsaharan_africa_religion_1800_1945
+  (agent says no politics cell holds them; subsaharan_africa_politics_1800_1945 has Segou only).
+

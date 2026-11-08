@@ -1,0 +1,430 @@
+# Cell: West Asia x economy x 1500-1799. DRAFT 2026-11-07.
+# Dates: memory pass + web check (source field on checked entries). Peg rules as world_dates.yaml.
+# Approximate round years encode first two digits; otherwise last two digits of the year.
+# A phase is dated by its start; a building by its completion; an agreement by its signature.
+# Ottoman decrees and trade treaties for the whole empire go under Anatolia (as in the 1800-1944
+# cell); events inside Istanbul stay in eastern_europe. Turkey and Levant Company charters stay in
+# western_europe; the Moscow-Julfa silk agreement stays in eastern_europe. Hormuz, Bahrain, Muscat
+# conquests, the silk tribute of 1612 and the Basra agency of 1763 are in west_asia_politics;
+# coffeehouses, famines and plagues in west_asia_society; presses and the paper mill in science.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Anatolia and the Ottoman Empire as a whole
+  - {year: 1502, peg: sun, confidence: unverified,
+     event: "Bursa: Bayezid II issues a market law that fixes prices and checks weights",
+     scene: "The SUN burns the fixed prices of Bayezid II's market law into every stall of the Bursa market."}
+  - {year: 1514, peg: tower, confidence: high,
+     event: "Selim I bans the silk trade with Iran and seizes Iranian merchants' silk at Bursa",
+     scene: "Selim I locks the Iranian merchants' silk in a Bursa TOWER and bans all silk trade with Iran.",
+     source: "Iranica / EBSCO: Selim I silk embargo"}
+  - {year: 1520, peg: nose, confidence: medium,
+     event: "Suleiman pays the Iranian merchants of Bursa for the silk that Selim seized",
+     scene: "A giant NOSE sneezes Selim's silk ban away, and Suleiman pays the Iranian merchants of Bursa for their silk.",
+     source: "Secondary account of Suleiman's first acts (no year)"}
+  - {year: 1536, peg: match, confidence: medium,
+     event: "La Forêt and Ibrahim Pasha draft the first French trade treaty, start of the capitulations",
+     scene: "A burning MATCH seals the draft treaty of La Forêt and Ibrahim Pasha, which opens Ottoman ports to French merchants.",
+     source: "WP mirror: Capitulations (c. 1535; draft 1536)"}
+  - {year: 1540, peg: horse, confidence: high,
+     event: "Venice gets a new capitulation that reopens its trade after the war of Preveza",
+     scene: "A HORSE tows the first Venetian galley back into Ottoman ports under the new capitulation after Preveza.",
+     source: "WP mirror: Capitulations of the Ottoman Empire"}
+  - {year: 1566, peg: judge, confidence: high,
+     event: "After the Ottomans take Chios, European merchants begin to move to Izmir",
+     scene: "A JUDGE moves the European merchants' desks from fallen Chios to the small town of Izmir.",
+     source: "WP mirror: Timeline of Izmir"}
+  - {year: 1569, peg: ship, confidence: high,
+     event: "Selim II grants capitulations to Charles IX of France",
+     scene: "A SHIP carries Selim II's capitulations to Charles IX, and French merchants sail under them to the Levant.",
+     source: "WP mirror: Economic history of the Ottoman Empire"}
+  - {year: 1580, peg: vase, confidence: high,
+     event: "Murad III grants the first trade capitulation to English merchants, won by Harborne",
+     scene: "Murad III paints the first English trade privileges on a VASE and gives it to William Harborne.",
+     source: "IJMES: The English capitulation of 1580"}
+  - {year: 1585, peg: waffle, confidence: medium,
+     event: "Akce debasement: the new coin holds about half its old silver",
+     scene: "A WAFFLE iron presses the akce flat until half of its silver drips away.",
+     source: "Pamuk; Fodor: debasement of 1584-86 / 1585-89"}
+  - {year: 1611, peg: tattoo, confidence: high,
+     event: "William Markham becomes the first English consul at Smyrna",
+     scene: "William Markham gets a TATTOO of the English arms and starts work as the first English consul at Smyrna.",
+     source: "Epstein 1908; WP mirror: Levant Company"}
+  - {year: 1612, peg: tongue, confidence: high,
+     event: "Ahmed I grants the first Dutch capitulation to Cornelis Haga",
+     scene: "Cornelis Haga's silver TONGUE talks Ahmed I into the first Dutch capitulation.",
+     source: "NINO Leiden: The Ottoman Empire and the Dutch Republic"}
+  - {year: 1619, peg: tuba, confidence: high,
+     event: "The French consulate moves from Chios to Izmir",
+     scene: "A TUBA leads the French consul's parade from Chios to his new consulate in Izmir.",
+     source: "WP mirror: Timeline of Izmir"}
+  - {year: 1621, peg: ant, confidence: medium,
+     event: "The English consulate moves from Chios to Izmir",
+     scene: "An ANT carries the English consulate, flag and all, from Chios to Izmir.",
+     source: "WP mirror: Timeline of Izmir (consul named 1611)"}
+  - {year: 1630, peg: mouse, confidence: medium,
+     event: "Iranian silk caravans reach Izmir; silk and local cotton lead its trade (approximate)",
+     scene: "A MOUSE rides a camel loaded with Iranian silk into Izmir, now the silk and cotton port.",
+     source: "Levantine Heritage: Izmir trade by 1630"}
+  - {year: 1673, peg: comb, confidence: high,
+     event: "Renewed French capitulations cut customs duties to three percent",
+     scene: "A COMB scrapes French customs duties down to three percent in the renewed capitulations.",
+     source: "WP mirror: Economic history of the Ottoman Empire"}
+  - {year: 1675, peg: eagle, confidence: high,
+     event: "The English capitulations get their final, renewed form",
+     scene: "An EAGLE flies the renewed English capitulations from the sultan's camp to the Levant Company ships.",
+     source: "WP mirror: Capitulations; DergiPark: ahdnames to 1675"}
+  - {year: 1688, peg: fife, confidence: medium,
+     event: "The Ottoman state puts a tax on tobacco, so smoking becomes legal in practice",
+     scene: "A tobacco FIFE now pays Ottoman tax, so the old smoking ban falls silent.",
+     source: "Daily Sabah: tax of 1688 (one source: tax under Ibrahim)"}
+  - {year: 1690, peg: bees, confidence: medium,
+     event: "The Ottoman mint strikes the first large silver kurus coins",
+     scene: "BEES carry the first large silver kurus coins out of the Ottoman mint.",
+     source: "Pamuk: kurus 1690/91; catalogues give 1688-91"}
+  - {year: 1695, peg: bell, confidence: high,
+     event: "Malikane: tax farms are now sold for the holder's life",
+     scene: "A BELL tolls the end of each malikane contract, because the tax farm now lasts until the holder dies.",
+     source: "TDV Islam Ansiklopedisi: Malikane"}
+  - {year: 1737, peg: mug, confidence: high,
+     event: "Sweden signs a trade treaty with the Ottoman Empire",
+     scene: "Swedish and Ottoman envoys drink to their first trade treaty from one MUG.",
+     source: "WP mirror: Capitulations of the Ottoman Empire"}
+  - {year: 1740, peg: horse, confidence: high,
+     event: "France gets permanent capitulations with duties again at three percent",
+     scene: "A HORSE gallops the permanent French capitulations from the Porte to every Levant port.",
+     source: "WP mirror: Economic history of the Ottoman Empire"}
+  - {year: 1744, peg: warrior, confidence: high,
+     event: "Izmir: the Kizlaragasi Han, a merchants' inn in the market, is completed",
+     scene: "A WARRIOR lays the last stone of the Kizlaragasi Han, the merchants' inn in Izmir's market.",
+     source: "WP mirror: Timeline of Izmir"}
+  - {year: 1756, peg: leech, confidence: medium,
+     event: "Denmark signs a trade treaty with the Ottoman Empire",
+     scene: "A LEECH clings to the Ottoman door until Denmark wins its treaty of commerce.",
+     source: "WP mirror: Capitulations (list gives 1746 or 1756)"}
+  - {year: 1761, peg: jet, confidence: high,
+     event: "Prussia signs a treaty of friendship and commerce with the Ottoman Empire",
+     scene: "A JET of ink signs Prussia's first treaty of friendship and commerce with the Ottomans.",
+     source: "WP mirror: Capitulations of the Ottoman Empire"}
+  - {year: 1775, peg: eagle, confidence: high,
+     event: "Esham: the Ottoman treasury sells life shares in tax income, the first state bonds",
+     scene: "An EAGLE sells shares of the customs income as esham, the first Ottoman government bonds.",
+     source: "TDV Islam Ansiklopedisi: Malikane (esham)"}
+  - {year: 1782, peg: oven, confidence: high,
+     event: "Spain signs a peace and trade treaty with the Ottoman Empire",
+     scene: "An OVEN bakes the first Spanish-Ottoman peace and trade treaty after centuries of war.",
+     source: "WP mirror: Capitulations of the Ottoman Empire"}
+  - {year: 1783, peg: foam, confidence: high,
+     event: "Russia signs a commercial treaty with the Ottoman Empire",
+     scene: "Black Sea FOAM carries Russian merchant ships to Ottoman ports under the new commercial treaty.",
+     source: "WP mirror: Capitulations of the Ottoman Empire"}
+  - {year: 1793, peg: palm, confidence: unverified,
+     event: "Irad-i Cedid: a new treasury pays for Selim III's new army",
+     scene: "A PALM tree drops new taxes into the Irad-i Cedid treasury that pays Selim III's new army."}
+  # Levant (Syria, Lebanon, Palestine)
+  - {year: 1539, peg: map, confidence: high,
+     event: "Aleppo: the Souq Khan al-Nahhasin of the coppersmiths is built in the covered market",
+     scene: "A MAP of Aleppo's market grows a new street: the Souq Khan al-Nahhasin of the coppersmiths.",
+     source: "WP mirror: Timeline of Aleppo"}
+  - {year: 1546, peg: roach, confidence: high,
+     event: "Aleppo: the Khan al-Shouneh is built in the covered market",
+     scene: "A ROACH unlocks the doors of the new Khan al-Shouneh in Aleppo's covered market.",
+     source: "WP mirror: Timeline of Aleppo"}
+  - {year: 1548, peg: reef, confidence: high,
+     event: "Venice opens a consulate in Aleppo",
+     scene: "A coral REEF rises from the sea and carries the Venetian consul's flag inland to Aleppo.",
+     source: "WP mirror: Timeline of Aleppo; Aleppo Eyalet"}
+  - {year: 1562, peg: chain, confidence: high,
+     event: "France opens a consulate in Aleppo",
+     scene: "A CHAIN of French merchants pulls the French consulate into Aleppo.",
+     source: "WP mirror: Timeline of Aleppo"}
+  - {year: 1574, peg: car, confidence: high,
+     event: "Aleppo: Ibrahim Pasha builds the Khan al-Gumruk, the customs khan",
+     scene: "A CAR stops at the gate of Ibrahim Pasha's new Khan al-Gumruk and pays its Aleppo customs.",
+     source: "ArchNet: Khan al-Jumruk (facade dated 1569-70)"}
+  - {year: 1574, peg: car, confidence: high,
+     event: "Damascus: the Khan al-Harir, the silk khan, is built",
+     scene: "A CAR full of silk bales drives into the new Khan al-Harir, the silk khan of Damascus.",
+     source: "WP mirror: Timeline of Damascus"}
+  - {year: 1583, peg: foam, confidence: disputed,
+     event: "England opens a consulate in Aleppo",
+     scene: "A wave of FOAM carries the first English consul up from the coast to his new consulate in Aleppo.",
+     source: "Timeline of Aleppo 1583; Levant Co page: consul 1580"}
+  - {year: 1613, peg: tomb, confidence: high,
+     event: "The Netherlands opens a consulate in Aleppo",
+     scene: "A TOMB in Aleppo's market opens, and the first Dutch consul steps out to start work.",
+     source: "WP mirror: Timeline of Aleppo"}
+  - {year: 1616, peg: dish, confidence: high,
+     event: "Sidon: the French consul makes the Khan al-Franj his seat",
+     scene: "A silver DISH carries the French consul's seal into the Khan al-Franj, his new seat at Sidon.",
+     source: "WP mirror: Khan al-Franj"}
+  - {year: 1629, peg: knob, confidence: high,
+     event: "Aleppo: the makers of swords, knives, bows and shields form a guild",
+     scene: "Aleppo's sword and bow makers turn a KNOB and lock the door of their new guild hall.",
+     source: "WP mirror: Timeline of Aleppo"}
+  - {year: 1682, peg: oven, confidence: high,
+     event: "Aleppo: the Khan al-Wazir, a merchants' inn, is built",
+     scene: "A giant OVEN opens its door, and out comes the Khan al-Wazir, Aleppo's new merchants' inn.",
+     source: "ArchNet; Brill: Khan al-Wazir"}
+  - {year: 1730, peg: mouse, confidence: medium,
+     event: "Zahir al-Umar gets the tax farm of Tiberias and Arraba (approximate)",
+     scene: "A MOUSE hands Zahir al-Umar the tax-farm papers for Tiberias and Arraba.",
+     source: "WP mirror: Zahir al-Umar (around this year)"}
+  - {year: 1731, peg: moth, confidence: high,
+     event: "Zahir al-Umar pays his brother's debts to French merchants, his first trade with them",
+     scene: "A MOTH eats the unpaid bills of Zahir's brother after Zahir pays the French merchants in full.",
+     source: "WP mirror: Zahir al-Umar"}
+  - {year: 1736, peg: match, confidence: medium,
+     event: "Damascus: the Khan Sulayman Pasha is completed",
+     scene: "A MATCH lights the lamps of the finished Khan Sulayman Pasha in the Damascus market.",
+     source: "Archnet: started 1732, done 1736"}
+  - {year: 1753, peg: llama, confidence: high,
+     event: "Acre: Zahir al-Umar makes a formal trade agreement with the European merchants",
+     scene: "A LLAMA signs Zahir's first formal trade agreement with the European merchants of Acre.",
+     source: "WP mirror: Zahir al-Umar"}
+  - {year: 1764, peg: cherry, confidence: high,
+     event: "Acre: Zahir al-Umar restores the Khan al-Shunah caravanserai",
+     scene: "A CHERRY tree grows through the ruined Khan al-Shunah, and Zahir rebuilds the caravanserai around it.",
+     source: "WP mirror: Zahir al-Umar"}
+  - {year: 1784, peg: fairy, confidence: high,
+     event: "Acre: Jezzar Pasha builds the Khan al-Umdan caravanserai",
+     scene: "A FAIRY lifts the granite columns into place for Jezzar's Khan al-Umdan in Acre.",
+     source: "WP mirror: Khan al-Umdan; Jezzar Pasha"}
+  - {year: 1786, peg: fish, confidence: high,
+     event: "Jezzar Pasha tries to force all Hauran grain trade through Acre",
+     scene: "A FISH swallows every Hauran grain ship and spits it out only at Jezzar's port of Acre.",
+     source: "WP mirror: Jezzar Pasha"}
+  - {year: 1790, peg: bees, confidence: high,
+     event: "Jezzar Pasha restores his grain monopoly over Damascus and the Hauran",
+     scene: "BEES guard the Damascus and Hauran grain stores for Jezzar, who takes back his grain monopoly.",
+     source: "WP mirror: Jezzar Pasha"}
+  - {year: 1791, peg: boot, confidence: unverified,
+     event: "Jezzar Pasha expels the French cotton merchants from Acre and Sidon",
+     scene: "A BOOT kicks the French cotton merchants out of Jezzar's ports of Acre and Sidon."}
+  - {year: 1791, peg: boot, confidence: medium,
+     event: "The Levant Company closes its factory in Aleppo",
+     scene: "A BOOT slams the door of the Levant Company factory in Aleppo, and the English merchants leave.",
+     source: "WP mirror: Levant Company (closed 1791-1803)"}
+  - {year: 1793, peg: palm, confidence: high,
+     event: "Aleppo issues fifteen hundred berats that give non-Muslim traders privileges",
+     scene: "Aleppo's officials press a PALM print on fifteen hundred berats that give non-Muslim traders privileges.",
+     source: "WP mirror: Economic history of the Ottoman Empire"}
+  # Mesopotamia
+  - {year: 1635, peg: mill, confidence: medium,
+     event: "The English East India Company begins trade at Basra",
+     scene: "A MILL wheel grinds the first English Company cargo into the port of Basra.",
+     source: "EIC timeline (Klais): trade at Basra"}
+  - {year: 1640, peg: horse, confidence: medium,
+     event: "The Dutch first appear at Basra (approximate)",
+     scene: "A Dutch HORSE trots off the first Dutch ship and into the Basra market.",
+     source: "QDL (Lorimer): Dutch at Basra about 1640"}
+  - {year: 1643, peg: ram, confidence: disputed,
+     event: "The English set up their first factory at Basra",
+     scene: "A RAM butts open the door of the first English factory at Basra.",
+     source: "Article 1643; EIC memo 1639-40"}
+  - {year: 1723, peg: gnome, confidence: high,
+     event: "The English East India Company sets up a permanent factory at Basra",
+     scene: "A GNOME nails the English Company sign over its permanent factory at Basra.",
+     source: "EIC timeline (Klais): factory 1723"}
+  - {year: 1723, peg: gnome, confidence: high,
+     event: "The Dutch East India Company rents a trading post at Basra",
+     scene: "A GNOME signs the Dutch Company's rent for a trading house on the Basra waterfront.",
+     source: "Atlas of Mutual Heritage: Basra"}
+  - {year: 1753, peg: llama, confidence: high,
+     event: "The Dutch East India Company leaves its Basra post after quarrels with the governor",
+     scene: "A LLAMA carries the Dutch Company's last goods out of Basra after its quarrels with the governor.",
+     source: "Atlas of Mutual Heritage: Basra"}
+  # Arabia and the Gulf coast
+  - {year: 1609, peg: soap, confidence: unverified,
+     event: "The Ascension reaches Aden and Mocha, the first English Company ship in the Red Sea",
+     scene: "A tide of SOAP washes the Ascension into Aden and Mocha, the first English Company ship in the Red Sea."}
+  - {year: 1610, peg: dice, confidence: unverified,
+     event: "The Ottoman governor holds Henry Middleton prisoner at Mocha",
+     scene: "A DICE rolls 'prison' for Henry Middleton, and the Ottoman governor of Mocha locks him up."}
+  - {year: 1616, peg: dish, confidence: high,
+     event: "Pieter van den Broecke takes coffee bushes from Mocha to Amsterdam",
+     scene: "Pieter van den Broecke carries Mocha coffee bushes on a DISH all the way to Amsterdam.",
+     source: "WP mirror: History of coffee"}
+  - {year: 1618, peg: dove, confidence: high,
+     event: "The English East India Company opens a factory at Mocha",
+     scene: "A DOVE flies the English Company flag to its new coffee factory at Mocha.",
+     source: "Mooflife: the 1618 British factory at Mocha"}
+  - {year: 1620, peg: nose, confidence: unverified,
+     event: "The Dutch East India Company opens a factory at Mocha",
+     scene: "A Dutch NOSE follows the smell of coffee and opens the Dutch Company factory at Mocha."}
+  - {year: 1709, peg: soap, confidence: medium,
+     event: "Saint-Malo ships reach Mocha, the first French voyage to buy coffee direct",
+     scene: "SOAP bubbles float two Saint-Malo ships into Mocha, the first French voyage to buy coffee there direct.",
+     source: "La Roque: Voyage to Arabia Felix (voyage 1708-10)"}
+  - {year: 1711, peg: tattoo, confidence: high,
+     event: "Imam Saif bin Sultan dies owning many ships and slaves and a third of Oman's date palms",
+     scene: "Saif bin Sultan dies with a TATTOO that lists his ships, his slaves and a third of Oman's date palms.",
+     source: "WP mirror: Yaruba dynasty"}
+  - {year: 1737, peg: mug, confidence: medium,
+     event: "A French squadron attacks Mocha to collect coffee debts",
+     scene: "A French squadron fires coffee MUG shells into Mocha until the governor pays his coffee debts.",
+     source: "Relation de l'expedition de Moka en 1737"}
+  - {year: 1766, peg: judge, confidence: high,
+     event: "The Al Khalifa move from Kuwait to Zubarah, which grows rich on pearls",
+     scene: "A JUDGE leads the Al Khalifa from Kuwait to Zubarah and hands them its pearl banks.",
+     source: "WP mirror: History of Kuwait; Aramco World"}
+  - {year: 1775, peg: eagle, confidence: high,
+     event: "Zand siege of Basra: merchants and the English Company mail move to Kuwait",
+     scene: "An EAGLE carries the English Company mail through Kuwait while Zand troops besiege Basra.",
+     source: "WP mirror: History of Kuwait; Fanack"}
+  - {year: 1793, peg: palm, confidence: medium,
+     event: "Resident Samuel Manesty moves the English factory from Basra to Kuwait",
+     scene: "Samuel Manesty sets up the English factory under a Kuwaiti PALM after his quarrel with the Basra pasha.",
+     source: "QDL: Manesty leaves Basra April 1793 (WP: 1792)"}
+  # Iran
+  - {year: 1523, peg: gnome, confidence: medium,
+     event: "Hormuz treaty: the Portuguese pay dues only on their exports",
+     scene: "A GNOME tears up the Portuguese import bill at Hormuz: they now pay dues on exports only.",
+     source: "History of India vol. 6 (Wikisource mirror)"}
+  - {year: 1543, peg: ram, confidence: disputed,
+     event: "The king of Hormuz gives all his customs income to the king of Portugal",
+     scene: "A RAM carries the whole Hormuz customs chest onto a ship for the king of Portugal.",
+     source: "Sources give 1540 and 1542/43"}
+  - {year: 1562, peg: chain, confidence: high,
+     event: "Jenkinson reaches Qazvin, but Shah Tahmasp gives the Muscovy Company no trade grant",
+     scene: "Shah Tahmasp puts a CHAIN across his Qazvin gate, and Jenkinson leaves with no trade grant.",
+     source: "Iranica: Jenkinson (arrives 2 Nov. 1562)"}
+  - {year: 1566, peg: judge, confidence: high,
+     event: "Shah Tahmasp grants Arthur Edwards of the Muscovy Company better trade privileges",
+     scene: "A JUDGE in Qazvin reads out Tahmasp's new trade privileges to Arthur Edwards of the Muscovy Company.",
+     source: "Iranica: Anglo-Iranian relations (29 June 1566)"}
+  - {year: 1598, peg: beehive, confidence: medium,
+     event: "Kerman: Ganj Ali Khan's caravanserai on the new market square is built",
+     scene: "A BEEHIVE grows into the domed caravanserai of Ganj Ali Khan on the new Kerman square.",
+     source: "Portal dated 1598; MIT Dome 1598-1615"}
+  - {year: 1616, peg: dish, confidence: high,
+     event: "The James lands at Jask, the first English Company ship to trade with Persia",
+     scene: "The ship James serves a DISH of Surat cloth at Jask, the first English cargo for Persia.",
+     source: "Iranica; Lorimer: James at Jask, Dec. 1616"}
+  - {year: 1617, peg: dog, confidence: high,
+     event: "Edward Connock wins a trade firman from Shah Abbas",
+     scene: "A DOG fetches Shah Abbas's trade firman and drops it at Edward Connock's feet.",
+     source: "Iranica; Lorimer: firman of July-Aug. 1617"}
+  - {year: 1619, peg: tuba, confidence: medium,
+     event: "Shah Abbas makes the export of raw silk a royal monopoly",
+     scene: "A royal TUBA blows, and all Persian silk for export now belongs to Shah Abbas alone.",
+     source: "Iranica: Safi I (1619); other sources 1617"}
+  - {year: 1619, peg: tuba, confidence: medium,
+     event: "The Julfa Armenians outbid the English Company at the shah's silk auction",
+     scene: "The Julfa Armenians fill a TUBA with silver and outbid the English Company at the shah's silk auction.",
+     source: "Ganjalyan, EGO (Trier): Armenian trade networks"}
+  - {year: 1619, peg: tuba, confidence: medium,
+     event: "Isfahan: the royal Qeysarieh bazaar is completed",
+     scene: "A TUBA plays from the drum gallery over the Qeysarieh portal as Abbas's royal bazaar opens.",
+     source: "Archnet: built 1617-19"}
+  - {year: 1622, peg: nun, confidence: unverified,
+     event: "The English Company gets half the customs of Bandar Abbas as its reward for Hormuz",
+     scene: "A NUN counts out half of the Bandar Abbas customs as the English Company's reward for Hormuz."}
+  - {year: 1623, peg: gnome, confidence: high,
+     event: "Huybert Visnich arrives to open the first Dutch Company trading station in Persia",
+     scene: "A GNOME leads Huybert Visnich into Isfahan to open the first Dutch Company station.",
+     source: "Iranica: Dutch-Persian relations"}
+  - {year: 1626, peg: nacho, confidence: high,
+     event: "Visnich signs a three-year contract with Molayem Beg: pepper and cash for silk",
+     scene: "A NACHO piled with pepper buys the shah's silk under Visnich's contract with Molayem Beg.",
+     source: "Iranica: Dutch-Persian relations"}
+  - {year: 1629, peg: knob, confidence: high,
+     event: "Shah Safi ends the royal silk monopoly, and any merchant may export silk",
+     scene: "Shah Safi turns a KNOB and opens silk export to every merchant: the royal monopoly ends.",
+     source: "Iranica: Safi I"}
+  - {year: 1645, peg: railway, confidence: high,
+     event: "The Dutch attack Qeshm in the first Dutch-Persian trade war",
+     scene: "A RAILWAY of Dutch warships rolls up to Qeshm fort in the first Dutch-Persian trade war.",
+     source: "Floor and Faghfoory: the attack on Qeshm"}
+  - {year: 1652, peg: lion, confidence: medium,
+     event: "Anglo-Dutch war: the English lose their Bandar Abbas and Basra trade to the Dutch",
+     scene: "A Dutch LION chases the English out of their Bandar Abbas and Basra trade.",
+     source: "National Library UAE: Dutch era"}
+  - {year: 1654, peg: lawyer, confidence: medium,
+     event: "After a sea fight with the English, the Dutch control the Bandar Abbas spice and silk trade",
+     scene: "A Dutch LAWYER claims the whole Bandar Abbas spice and silk trade after the sea fight with the English.",
+     source: "WP mirror: Bandar Abbas"}
+  - {year: 1665, peg: jelly, confidence: high,
+     event: "Abbas II's firman gives the French Company free trade and a house at Bandar Abbas",
+     scene: "Abbas II seals the French Company's firman with JELLY: free trade and a house at Bandar Abbas.",
+     source: "Iranica: East India Company, French"}
+  - {year: 1684, peg: fairy, confidence: disputed,
+     event: "The Dutch block Bandar Abbas and take Qeshm to force better silk terms",
+     scene: "A FAIRY waves the Dutch flag over captured Qeshm while Dutch ships block Bandar Abbas.",
+     source: "Lorimer 1684; Iranica 1683; another 1685"}
+  - {year: 1688, peg: fife, confidence: high,
+     event: "London: the English Company makes a trade agreement with the Julfa Armenian merchants",
+     scene: "A FIFE pipes the Julfa Armenians' bales onto English Company ships under their London agreement.",
+     source: "Makepeace and Baladouni: agreement of 22 June 1688"}
+  - {year: 1708, peg: sofa, confidence: high,
+     event: "Shah Sultan Husayn concludes a trade treaty with France",
+     scene: "A SOFA carries the French envoy into Isfahan, and Sultan Husayn signs a trade treaty with France on it.",
+     source: "Iranica (via search summary)"}
+  - {year: 1715, peg: doll, confidence: high,
+     event: "Versailles: the Persian envoy Mohammad Reza Beg signs a commerce treaty with Louis XIV",
+     scene: "A Persian DOLL in silk robes signs the commerce treaty with Louis XIV at Versailles.",
+     source: "WP: Persian embassy to Louis XIV (13 Aug. 1715)"}
+  - {year: 1717, peg: dog, confidence: high,
+     event: "Volynsky's treaty lets Russian merchants trade in all Iran and buy silk in Gilan",
+     scene: "A DOG drags Russian silk bales out of Gilan under Volynsky's trade treaty.",
+     source: "WP: Russo-Iranian treaty of 1717; Tambov Univ."}
+  - {year: 1737, peg: mug, confidence: high,
+     event: "The Dutch East India Company opens a trading post at Bushehr",
+     scene: "A giant MUG turns into the first Dutch Company warehouse on the Bushehr shore.",
+     source: "WP mirror: Bushehr (1737-1753)"}
+  - {year: 1753, peg: llama, confidence: medium,
+     event: "Kniphausen buys Kharg island for the Dutch Company and builds a fort",
+     scene: "A LLAMA pays Mir Nasir for Kharg island, and Kniphausen builds a Dutch fort there.",
+     source: "WP mirror: Kharg Island (agreement 1752)"}
+  - {year: 1759, peg: elbow, confidence: high,
+     event: "A French squadron under d'Estaing takes and destroys the English factory at Gombroon",
+     scene: "A French ELBOW smashes the English factory at Gombroon for the Comte d'Estaing.",
+     source: "QDL: English factory taken Oct. 1759"}
+  - {year: 1763, peg: gem, confidence: high,
+     event: "Karim Khan's firman gives the English Company a tax-free factory at Bushehr",
+     scene: "Karim Khan hands the English Company a GEM: a tax-free factory with sole trade rights at Bushehr.",
+     source: "Iranica: EIC, Zand period"}
+  - {year: 1766, peg: judge, confidence: high,
+     event: "Mir Muhanna drives the Dutch out of their fort on Kharg",
+     scene: "Mir Muhanna swings a JUDGE's hammer and knocks the Dutch out of their Kharg fort.",
+     source: "WP mirror: Kharg Island; QDL"}
+  - {year: 1778, peg: cave, confidence: medium,
+     event: "The English Company settles at Bushehr for good",
+     scene: "The English Company stores its goods in a Bushehr CAVE and never leaves again.",
+     source: "Iranica 1778; QDL: re-established 1775"}
+  # Caucasus
+  - {year: 1562, peg: chain, confidence: medium,
+     event: "Shamakhi: Abdullah Khan of Shirvan grants Jenkinson safe conduct for English traders",
+     scene: "Abdullah Khan of Shirvan breaks the CHAIN on the Shamakhi gate and lets English traders in safely.",
+     source: "Iranica: Jenkinson (one source dates the decree 1563)"}
+  - {year: 1594, peg: bear, confidence: medium,
+     event: "Balakhani: a stone records a hand-dug oil well, thirty-five metres deep",
+     scene: "A BEAR digs the Balakhani oil well thirty-five metres down, and a stone records the digger's name.",
+     source: "Min. of Energy Azerbaijan; SOCAR (some give 1593)"}
+  - {year: 1636, peg: match, confidence: high,
+     event: "Adam Olearius counts thirty oil wells at Baku",
+     scene: "Adam Olearius strikes a MATCH over the Baku oil field and counts thirty wells.",
+     source: "WP mirror: Petroleum industry in Azerbaijan"}
+  - {year: 1683, peg: foam, confidence: high,
+     event: "Engelbert Kaempfer gives the first detailed description of the Baku oil industry",
+     scene: "Oil FOAM bubbles over Kaempfer's notebook as he writes the first full report on the Baku oil wells.",
+     source: "WP mirror: Petroleum industry in Azerbaijan"}
+  - {year: 1770, peg: goose, confidence: unverified,
+     event: "Erekle II brings Greek miners to dig silver at Akhtala (approximate)",
+     scene: "A GOOSE leads the Greek miners to Akhtala, where they dig silver for Erekle II."}
+  # Cyprus
+  - {year: 1572, peg: coin, confidence: high,
+     event: "The first Ottoman fiscal survey of Cyprus records its crops and taxes",
+     scene: "An Ottoman clerk weighs every COIN of cotton and salt tax in the first survey of Cyprus.",
+     source: "DergiPark / YOK theses: Cyprus tahrir of 1572"}
+  - {year: 1636, peg: match, confidence: high,
+     event: "Richard Glover becomes the first English consul for Cyprus, at Larnaca",
+     scene: "A MATCH lights Richard Glover's lamp at Larnaca, the first English consulate on Cyprus.",
+     source: "Cyprus economy notes: Glover 1636"}
+  - {year: 1670, peg: goose, confidence: high,
+     event: "Cyprus goes under the Kapudan Pasha, and the local aghas become its tax collectors",
+     scene: "A GOOSE hands the Cyprus tax bags to the local aghas, who now collect the island's taxes.",
+     source: "WP mirror: Ottoman Cyprus"}
+  - {year: 1785, peg: waffle, confidence: medium,
+     event: "Cyprus: the muhassils lose power and the Orthodox clergy collect the taxes",
+     scene: "The Orthodox bishops of Cyprus collect the taxes in a WAFFLE basket, and the muhassil loses power.",
+     source: "WP mirror: Ottoman Cyprus (intro gives 1784)"}
