@@ -9,15 +9,23 @@ title: "German — Common Words"
 group: "Vocabulary"
 order: 301
 target_n: 1000              # first pass (2026-11-08); ranking is cap-independent, raise to grow
-surface_n: 40000             # wordfreq surface forms scanned to reach target_n lemmas
+surface_n: 80000             # wordfreq surface forms scanned (tail forms add up for rank ~5000)
 # Case-preserving word counts (gitignored cache): wordfreq lowercases, which merges a
 # noun's forms with a verb's (Schulen / schulen). Download:
 #   curl -L https://downloads.wortschatz-leipzig.de/corpora/deu_news_2024_1M.tar.gz \
 #     | tar -xz -C cache/leipzig_de '*-words.txt'
 case_counts: cache/leipzig_de/deu_news_2024_1M/deu_news_2024_1M-words.txt
+# Lemma counts in context (gitignored cache): which lemma each form is, measured on a
+# lemmatised corpus sample (spaCy de_core_news_md + parser for separable verbs).
+# Build with `deck-vocab --config <this> --tag-corpus`; sentences come from the same
+# Leipzig archive as case_counts (extract '*-sentences.txt').
+lemma_corpus:
+  sentences: cache/leipzig_de/deu_news_2024_1M/deu_news_2024_1M-sentences.txt
+  sample: 1000000
+lemma_counts: cache/lemma_counts/deu_news_2024_1M.spacy_md.v3.tsv
 curated: german_common.curated.jsonl   # source of truth for `build` (relative to this file)
 audit: german_common.audit.jsonl       # per-word adjudication provenance
 policy: configs/vocab/german_common.policy.md
 artifact: vocab_german_common.json
 config_path: manual/vocab_german_common.yaml
-license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — Wiktionary via kaikki.org; ranking uses capitalisation counts from the Leipzig Corpora Collection (deu_news_2024_1M, CC BY 4.0; Goldhahn, Eckart & Quasthoff, LREC 2012)"
+license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — Wiktionary via kaikki.org; ranking uses capitalisation and lemma counts from the Leipzig Corpora Collection (deu_news_2024_1M, CC BY 4.0; Goldhahn, Eckart & Quasthoff, LREC 2012)"

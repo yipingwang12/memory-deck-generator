@@ -164,3 +164,60 @@ Result (top 5000): *Ende* 1461→173, *Arbeit* 1275→186, *Frage* 929→138, *F
 unchanged. 79 words swapped in the top 1000 (nouns in, borrowed-rank verbs out).
 `--merge` now sets aside adjudications for words a re-rank moved past `target_n` instead
 of failing, so they wait for the deck to grow.
+
+### Lemma counts in context — measured shares (2026-11-09)
+
+The kaikki form index is a dictionary lookup: it lists every lemma a lowercase form *can*
+be, never which one it *is*. wordfreq has no sentences, so a contextual lemmatiser cannot
+run on it. The split rules above (proportional split, citation claim, case split, LLM
+flags) all guess what context would show.
+
+**Design — measure the split, keep wordfreq's frequencies.** `deck-vocab --tag-corpus`
+(module `vocab_lemmas`) lemmatises a sample of a Leipzig news corpus and caches
+`surface, lemma, POS, count` rows (config `lemma_corpus`, `lemma_counts`; gitignored
+under `cache/lemma_counts/`). `vocab_kaikki.measured_shares` maps each tagger
+(lemma, POS) to a kaikki headword and gives, per form, the share of its uses that is
+each headword. `rank_lemmas(measured=…)` splits a measured form by those shares; the
+case split and the proportional split apply only to forms without enough data
+(< 20 mapped uses, or < 50% of uses mapped). wordfreq stays the frequency source: a
+news corpus over-ranks *Regierung* and under-ranks *Mama*, but the *split* of a form
+between its lemmas is much less genre-bound.
+
+**Taggers.** German: spaCy `de_core_news_md` with the parser — a `svp` child joins a
+separable particle to its verb (*fängt … an* → *anfangen*), which the one-token form
+index cannot see. 1M sentences ≈ 11 min. Polish: Stanza (PDB models in `cache/stanza`):
+spaCy's Polish lemmatiser left capitalised forms unlemmatised (*Robię*) and read every
+*lata* as *rok*; Stanza tells *lata* (flies, → latać) from *lata* (years) by context.
+300k sentences ≈ 40 min. Both are the optional `lemmas` extra. About 2% of the Polish
+corpus lines are double-encoded (*te¿* for *też*); `skip_chars` drops them. Leipzig
+files are sorted alphabetically, so the sample takes every k-th line.
+
+**Mapping rules** (`_headword`), each from a preview failure:
+- an adjective, adverb or pronoun form that is its own kaikki headword keeps its uses
+  (the tagger reduces *später* → *spät*, *erste* → *erster*, and — the UD convention —
+  *ona*/*oni*/*ono* → *on*). It brings in oblique pronoun forms too (*nich*, *nim*);
+  the policy drops those. Not for verbs: *jestem* (I am) is also the interjection
+  "present!", so a verb-form headword cannot be told from the verb;
+- an exact headword is accepted even when the form index does not list it for the form
+  (*anfangen* for `fängt`);
+- a capitalised lemma may map to the form's lowercase headword, never the reverse — in
+  German a capital marks a noun (*erster* ≠ *Erster*).
+
+**German tagging rules** (`de_token_lemma`): skip a sentence's first token and any token
+after punctuation other than a comma — a question starts with its verb and quoted speech
+starts mid-sentence, and the tagger reads those capitals as nouns (*Muss*, *Ich*,
+*Bitte*); a capitalised *sie*/*ihr* inside a sentence is formal (*Sie*, *Ihnen* → *Sie*).
+Single capital letters (*S*, *D* from abbreviations) are never ranked.
+
+**`unmeasured`** (config list): verb forms used mostly as formulas, which the tagger reads
+as the verb — Polish *proszę* (please → prosić), *dziękuję*, *przepraszam*, *słucham*,
+*znaczy*. They keep the heuristic split, where the interjection claims its own form.
+
+Result vs. the heuristic ranking (top 1000 overlap): German 922, Polish 946. Shared-form
+LLM flags: German 197 → 33, Polish 132 → 3. Polish gains *wszystko* 2741→85, *warto*
+(not the river *Warta*), *temu*, *dane*; *lat* goes to *rok* (years), not *lato*.
+
+**Participles.** An adjective that a verb lists as one of its forms is flagged
+`participle_of` for the LLM: drop a plain "verb-ed" (*durchgeführt*), keep one with its
+own meaning (*ausgezeichnet*, *zmęczony*). Verbal uses (*wurde durchgeführt*) already go
+to the verb through the measured shares.

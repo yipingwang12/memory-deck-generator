@@ -5,6 +5,8 @@ committed as data, then ``build`` assembles the artifact deterministically (no n
 API key). The config's ``lang`` picks the source: ``zh`` (default) = wordfreq × CC-CEDICT;
 ``de``/``pl`` = wordfreq × Wiktionary (kaikki.org), with inflected forms summed per lemma.
 
+- **tag-corpus** (``de``/``pl``): lemmatise a corpus sample → the ``lemma_counts`` file
+  that ranking reads (surface → lemma counts in context). Needs spaCy/Stanza; run once.
 - **preview** (default): rank candidates, report the clean/needs-LLM split. No writes.
 - **curate**: write the needs-LLM chunk files for the audited adjudication pass. The pass
   itself is external; for ``de``/``pl`` it writes ``chunk_NN.out.jsonl`` beside each chunk.
@@ -26,7 +28,7 @@ import yaml
 from .deck_export import DEFAULT_DECKS_DIR, config_hash
 from wordfreq import top_n_list
 
-from . import vocab, vocab_kaikki
+from . import vocab, vocab_kaikki, vocab_lemmas
 
 _DEFAULT_ARTIFACT = "vocab_chinese_common.json"
 
@@ -66,6 +68,26 @@ def _curate(cfg: dict, seed_deck: Path, out_dir: Path, chunk: int) -> None:
     print(f"  these chunks and write {cfg['curated']} + {cfg['audit']}, then `deck-vocab build`.")
 
 
+def _tag_corpus(cfg: dict) -> None:
+    """Lemmatise the config's corpus sample and write its ``lemma_counts`` file."""
+    lc = cfg["lemma_corpus"]
+    model_dir = Path(lc["model_dir"]) if lc.get("model_dir") else None
+    counts = vocab_lemmas.tag_corpus(cfg["lang"], Path(lc["sentences"]), lc["sample"],
+                                     lc.get("skip_chars", ""), model_dir)
+    vocab_lemmas.write_counts(Path(cfg["lemma_counts"]), counts)
+
+
+def _measured(cfg: dict, lex: vocab_kaikki.Lexicon) -> dict[str, dict[str, float]] | None:
+    """Measured lemma shares from the config's ``lemma_counts`` file, if it names one."""
+    if not cfg.get("lemma_counts"):
+        return None
+    path = Path(cfg["lemma_counts"])
+    if not path.exists():
+        raise SystemExit(f"error: {path} is missing; run `deck-vocab --tag-corpus` first")
+    return vocab_kaikki.measured_shares(vocab_lemmas.read_counts(path), lex,
+                                        unmeasured=cfg.get("unmeasured", ()))
+
+
 def _kaikki_candidates(cfg: dict) -> list[vocab_kaikki.Candidate]:
     """Lemma candidates for a ``de``/``pl`` config, ranked by summed form frequency."""
     spec = vocab_kaikki.LANGS[cfg["lang"]]
@@ -76,7 +98,8 @@ def _kaikki_candidates(cfg: dict) -> list[vocab_kaikki.Candidate]:
         non_noun = {s for s in surfaces
                     if (ls := lex.lemmas_for(s)) and not any(w[:1].isupper() for w in ls)}
         shares = vocab_kaikki.case_shares(Path(cfg["case_counts"]), non_noun)
-    return vocab_kaikki.rank_lemmas(lex, spec, surfaces, cfg["target_n"], case_shares=shares)
+    return vocab_kaikki.rank_lemmas(lex, spec, surfaces, cfg["target_n"], case_shares=shares,
+                                    measured=_measured(cfg, lex))
 
 
 def _kaikki_preview(cfg: dict) -> None:
@@ -148,12 +171,18 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--merge", action="store_true",
                    help="de/pl: clean rows + adjudicated chunk outputs → curated + audit JSONL")
     p.add_argument("--build", action="store_true", help="assemble artifact from committed curated rows")
+    p.add_argument("--tag-corpus", action="store_true",
+                   help="de/pl: lemmatise the corpus sample → lemma_counts file")
     p.add_argument("--chunk", type=int, default=100)
     args = p.parse_args(argv)
 
     cfg, curated, config_path = _load_cfg(args.config)
     kaikki = cfg.get("lang", "zh") in vocab_kaikki.LANGS
-    if args.build:
+    if args.tag_corpus:
+        if not kaikki:
+            p.error("--tag-corpus is for de/pl configs")
+        _tag_corpus(cfg)
+    elif args.build:
         _build(cfg, curated, config_path, args.out)
     elif args.merge:
         if not kaikki:

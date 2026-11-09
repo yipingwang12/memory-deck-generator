@@ -16,6 +16,7 @@ speech and sense Wiktionary lists for it.
 - `evidence` (only when present): the word ranks mostly through forms it **shares** with
   other lemmas — `{"form", "share", "also"}`. `share` is this word's part of that form.
 - `case_twin` (only when present): another lemma differs from this one only by capitals.
+- `participle_of` (only when present): this adjective is also a participle of these verbs.
 
 ## Sense + hint selection
 - Pick the part of speech and sense of the word's **most frequent modern use**, and write
@@ -34,6 +35,11 @@ speech and sense Wiktionary lists for it.
     own sense is rare or a duplicate;
   - it is a proper noun, an abbreviation, a letter name, a symbol, or a bound morpheme;
   - it is vulgar or a slur **and** its rank comes from a non-vulgar homograph.
+  - it is a pronoun whose only use is a case form of another pronoun (ihn, ihm, mir → er, ich).
+    **Keep** possessives and pronouns with a meaning of their own (dein, euer);
+  - it has `participle_of` and only means "verb-ed" — a learner who knows the verb knows
+    it (durchgeführt (← durchführen), eingesetzt, gestellt). **Keep** a participle with a meaning of its own that the verb does not
+    give (ausgezeichnet "excellent", geeignet "suitable", angemessen "appropriate", gelungen "successful", gerecht "fair", sogenannt "so-called"); gloss that meaning.
 - Otherwise keep. Do not drop a word because it is a cognate of English.
 
 ## Gloss style

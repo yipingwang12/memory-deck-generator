@@ -25,6 +25,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest"]
+# lemmas: `deck-vocab --tag-corpus` only (German spaCy, Polish Stanza). The German model is a
+# wheel: de_core_news_md @ https://github.com/explosion/spacy-models/releases/download/
+# de_core_news_md-3.8.0/de_core_news_md-3.8.0-py3-none-any.whl. The Stanza Polish PDB models
+# go in cache/stanza (see configs/vocab/polish_common.yaml).
+lemmas = ["spacy>=3.8", "stanza>=1.10"]
 
 [project.scripts]
 deck-acronyms = "deck_generator.cli:main"

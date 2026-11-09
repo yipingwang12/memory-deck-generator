@@ -9,10 +9,25 @@ title: "Polish — Common Words"
 group: "Vocabulary"
 order: 302
 target_n: 1000              # first pass (2026-11-08); ranking is cap-independent, raise to grow
-surface_n: 60000             # wordfreq surface forms scanned to reach target_n lemmas
+surface_n: 150000            # wordfreq surface forms scanned (an adjective has ~a dozen forms)
+# Lemma counts in context (gitignored cache): which lemma each form is, measured on a
+# lemmatised corpus sample (Stanza pl, PDB models, in model_dir). Build with
+# `deck-vocab --config <this> --tag-corpus`. Corpus (CC BY 4.0):
+#   curl -L https://downloads.wortschatz-leipzig.de/corpora/pol_news_2024_1M.tar.gz \
+#     | tar -xz -C cache/leipzig_pl '*-sentences.txt'
+# About 2% of its lines are double-encoded ("te¿" for "też"); skip_chars drops them.
+lemma_corpus:
+  sentences: cache/leipzig_pl/pol_news_2024_1M/pol_news_2024_1M-sentences.txt
+  sample: 300000
+  skip_chars: "¿³¹œŸ¥êæñ"
+  model_dir: cache/stanza
+lemma_counts: cache/lemma_counts/pol_news_2024_1M.stanza_pdb.v2.tsv
+# Verb forms used mostly as formulas; the tagger reads them as the verb (proszę → prosić).
+# These keep the heuristic split, where the interjection claims its own form.
+unmeasured: [proszę, dziękuję, przepraszam, słucham, znaczy]
 curated: polish_common.curated.jsonl   # source of truth for `build` (relative to this file)
 audit: polish_common.audit.jsonl       # per-word adjudication provenance
 policy: configs/vocab/polish_common.policy.md
 artifact: vocab_polish_common.json
 config_path: manual/vocab_polish_common.yaml
-license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — Wiktionary via kaikki.org"
+license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — Wiktionary via kaikki.org; ranking uses lemma counts from the Leipzig Corpora Collection (pol_news_2024_1M, CC BY 4.0; Goldhahn, Eckart & Quasthoff, LREC 2012)"

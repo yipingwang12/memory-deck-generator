@@ -259,6 +259,77 @@ def case_shares(
             for w, n in total.items() if n >= min_count}
 
 
+# --- measured lemma shares ------------------------------------------------------
+# Universal POS (tagger) → kaikki parts of speech it can match.
+_UPOS_KAIKKI = {
+    "NOUN": {"noun"}, "PROPN": {"name", "noun"}, "VERB": {"verb"}, "AUX": {"verb"},
+    "ADJ": {"adj"}, "ADV": {"adv"}, "PRON": {"pron"}, "DET": {"det", "article", "pron"},
+    "ADP": {"prep", "postp"}, "CCONJ": {"conj"}, "SCONJ": {"conj"}, "PART": {"particle"},
+    "INTJ": {"intj"}, "NUM": {"num"},
+}
+
+
+# Tagger POS → kaikki POS of the surface's own headword that keeps the uses.
+_OWN_HEADWORD_POS = {
+    "ADJ": {"adj"}, "ADV": {"adv"}, "PRON": {"pron"},
+}
+
+
+def _headword(lex: Lexicon, surface: str, lemma: str, upos: str) -> str | None:
+    """The kaikki headword for a tagger (lemma, POS), or None when the lexicon has none.
+
+    1. The surface's own headword when exactly one has a POS in `_OWN_HEADWORD_POS`
+       for the tagger's POS: the tagger reduces forms that Wiktionary keeps as words
+       (später → spät, erste → erster, ona → on). Not for verbs: "jestem" (I am)
+       is also an interjection headword ("present!"); see `unmeasured`.
+    2. The exact lemma, even when the form index does not list it for `surface`
+       (kaikki indexes one-token forms only: "fängt … an" → anfangen).
+    3. A capitalised lemma to the one lowercase headword of the surface that matches
+       it. Never the reverse: in German a capital marks a noun (erster ≠ Erster).
+    """
+    pos = _OWN_HEADWORD_POS.get(upos, set())
+    own = [w for w in lex.lemmas_for(surface) if w.lower() == surface
+           and any(p["pos"] in pos for p in lex.parts[w])]
+    if len(own) == 1:
+        return own[0]
+    if lemma in lex.parts:
+        return lemma
+    if lemma[:1].isupper():
+        low = [w for w in lex.lemmas_for(surface) if w == lemma.lower()]
+        if len(low) == 1:
+            return low[0]
+    return None
+
+
+def measured_shares(
+    counts: dict[str, dict[tuple[str, str], int]], lex: Lexicon,
+    min_count: int = 20, min_matched: float = 0.5, unmeasured: Iterable[str] = (),
+) -> dict[str, dict[str, float]]:
+    """Surface → kaikki headword → share of its corpus uses, from tagger (lemma, POS) counts.
+
+    A surface is left out (the heuristic split applies) when fewer than `min_count`
+    uses map to headwords, or when less than `min_matched` of its uses do (the tagger
+    disagrees with the lexicon: names, foreign words, lemmatiser errors), and when it is
+    in `unmeasured`: a verb form used mostly as a formula (proszę "please", tagged as
+    prosić "to ask"), which the tagger cannot tell from the verb.
+    """
+    out: dict[str, dict[str, float]] = {}
+    skip = set(unmeasured)
+    for s, by_lemma in counts.items():
+        if s in skip:
+            continue
+        total = sum(by_lemma.values())
+        matched: dict[str, int] = defaultdict(int)
+        for (lemma, upos), n in by_lemma.items():
+            if (w := _headword(lex, s, lemma, upos)) is not None:
+                matched[w] += n
+        n_matched = sum(matched.values())
+        if n_matched < min_count or n_matched < min_matched * total:
+            continue
+        out[s] = {w: n / n_matched for w, n in sorted(matched.items())}
+    return out
+
+
 # --- hint -----------------------------------------------------------------------
 def make_hint(spec: LangSpec, part: dict) -> str:
     """The line shown below the word: article + plural (de noun), gender (pl noun),
@@ -289,6 +360,7 @@ class Candidate:
     evidence: list[dict] = field(default_factory=list)  # top shared forms
     case_twin: bool = False  # another lemma differs only by capitals (Essen/essen)
     noun_collision: list[str] = field(default_factory=list)  # nouns whose forms it borrows
+    participle_of: list[str] = field(default_factory=list)  # verbs it is a participle of
 
     @property
     def shared_evidence(self) -> bool:
@@ -315,7 +387,8 @@ class Candidate:
         # An aspect pair shares one English gloss, so the LLM must tag it to keep the
         # pair apart in a matching round.
         return (self.functional or self.multipos or self.multisense or self.aspect_pair
-                or self.shared_evidence or self.case_twin or bool(self.noun_collision))
+                or self.shared_evidence or self.case_twin or bool(self.noun_collision)
+                or bool(self.participle_of))
 
 
 _SPLIT_ROUNDS = 3
@@ -371,12 +444,27 @@ def _is_verb(lex: Lexicon, w: str) -> bool:
     return w[:1].islower() and any(p["pos"] == "verb" for p in lex.parts[w])
 
 
+def _is_letter(w: str) -> bool:
+    """A single capital letter: a letter name or abbreviation (S., D), not a word."""
+    return len(w) == 1 and w.isupper()
+
+
+def _participle_of(lex: Lexicon, w: str) -> list[str]:
+    """Verbs that list adjective `w` as one of their forms (a participle)."""
+    if not any(p["pos"] == "adj" for p in lex.parts[w]):
+        return []
+    return [v for v in lex.lemmas_for(w) if v != w and _is_verb(lex, v)]
+
+
 def _case_split_forms(
     lex: Lexicon, spec: LangSpec, surfaces: Iterable[str],
     freq: Callable[[str, str], float], shares: dict[str, float],
+    measured: dict[str, dict[str, float]],
 ) -> tuple[list[tuple[str, list[str], float]], dict[int, dict[str, set[str]]]]:
-    """Forms for the frequency split, mixed-case forms divided by `shares`.
+    """Forms for the frequency split.
 
+    A form with `measured` shares becomes one single-lemma form per lemma, so the
+    split does not touch it. Else mixed-case forms are divided by case `shares`.
     Returns the forms and, per form index without case data, the lowercase verbs that
     share it with capitalised nouns (→ those nouns).
     """
@@ -385,10 +473,13 @@ def _case_split_forms(
     for s in surfaces:
         if not _WORD.fullmatch(s):
             continue
+        f = freq(s, spec.code)
+        if s in measured:
+            forms += [(s, [w], f * p) for w, p in measured[s].items()]
+            continue
         ls = lex.lemmas_for(s)
         if not ls:
             continue
-        f = freq(s, spec.code)
         cap = [w for w in ls if w[:1].isupper()]
         low = [w for w in ls if not w[:1].isupper()]
         if cap and low and s in shares and all(_rarely_initial(lex, w) for w in low):
@@ -411,6 +502,7 @@ def rank_lemmas(
     freq: Callable[[str, str], float] = word_frequency,
     exclude: Iterable[str] = (),
     case_shares: dict[str, float] | None = None,
+    measured: dict[str, dict[str, float]] | None = None,
 ) -> list[Candidate]:
     """Lemmas ranked by summed surface-form frequency, minus `exclude`, capped at `target_n`.
 
@@ -418,10 +510,16 @@ def rank_lemmas(
     split first: the capitalised share goes to the capitalised lemmas, the rest to the
     others — only when the lowercase lemmas are verbs, adjectives or numerals. A function
     word, adverb or interjection starts sentences far above the baseline ("Aber …"), so
-    its capitals say nothing about a noun twin. Without case data for such a form, a lowercase verb that earns most of its
-    score from it is flagged `noun_collision` for the LLM to check.
+    its capitals say nothing about a noun twin. Without case data for such a form, a
+    lowercase verb that earns most of its score from it is flagged `noun_collision`
+    for the LLM to check.
+
+    `measured` shares (from a lemmatised corpus, see `measured_shares`) come first: a
+    form with them is split by them, and the case split and heuristic split do not
+    apply to it.
     """
-    forms, uncased = _case_split_forms(lex, spec, surfaces, freq, case_shares or {})
+    forms, uncased = _case_split_forms(lex, spec, surfaces, freq, case_shares or {},
+                                       measured or {})
     claims = [[w.lower() == s and any(p["pos"] in CLAIM_POS for p in lex.parts[w])
                for w in ls] for s, ls, _f in forms]
     shares = _split_frequencies([(ls, f) for _s, ls, f in forms], claims)
@@ -446,7 +544,7 @@ def rank_lemmas(
         lower_count[w.lower()] += 1
     skip = set(exclude)
     ranked = [w for w in sorted(score, key=lambda w: (-score[w], w))
-              if w not in skip and score[w] > 0]
+              if w not in skip and score[w] > 0 and not _is_letter(w)]
     out = []
     for rank, w in enumerate(ranked[:target_n]):
         parts = [{"pos": p["pos"], "hint": make_hint(spec, p), "glosses": p["glosses"]}
@@ -455,7 +553,7 @@ def rank_lemmas(
         nc = sorted(partners[w]) if collided[w] / score[w] > _SHARED_LIMIT else []
         out.append(Candidate(w, rank, round(score[w], 12), parts,
                              round(shared[w] / score[w], 3), top,
-                             lower_count[w.lower()] > 1, nc))
+                             lower_count[w.lower()] > 1, nc, _participle_of(lex, w)))
     return out
 
 
@@ -479,6 +577,8 @@ def llm_record(c: Candidate) -> dict:
         rec["case_twin"] = True
     if c.noun_collision:
         rec["noun_collision"] = c.noun_collision
+    if c.participle_of:
+        rec["participle_of"] = c.participle_of
     return rec
 
 
