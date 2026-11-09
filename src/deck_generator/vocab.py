@@ -240,6 +240,11 @@ def assemble_artifact(
     Keeps `source: manual`. The config can pin `config_path` (the quiz session key) and
     `license`, so a rebuild keeps the identity of the shipped artifact. Chinese keeps the
     hint array under `pinyin`; other languages put it under `hints`.
+
+    Other languages also split identity from display: the quiz keys a card on its item
+    string alone, so German "ich" (I) and Polish "ich" (their) would be one card. Their
+    `items` are `<artifact stem>|<word>` and `words` is what the board shows. Chinese
+    items stay the bare hanzi, which is what its review history is keyed on.
     """
     lang = cfg.get("lang", "zh")
     hint_key = "pinyin" if lang == "zh" else "hints"
@@ -260,5 +265,8 @@ def assemble_artifact(
         "license": cfg.get("license", CEDICT_LICENSE),
     }
     if lang != "zh":
+        stem = Path(cfg["artifact"]).stem
+        art["items"] = [f"{stem}|{r.word}" for r in rows]
+        art["words"] = [r.word for r in rows]
         art["lang"] = lang
     return art
