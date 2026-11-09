@@ -10,6 +10,8 @@ API key). The config's ``lang`` picks the source: ``zh`` (default) = wordfreq ×
 - **preview** (default): rank candidates, report the clean/needs-LLM split. No writes.
 - **curate**: write the needs-LLM chunk files for the audited adjudication pass. The pass
   itself is external; for ``de``/``pl`` it writes ``chunk_NN.out.jsonl`` beside each chunk.
+- **review-clean** (``de``/``pl``): clean rows never reviewed → ``chunk_qa_NN.json``; the
+  reviewer writes only changed rows to ``chunk_qa_NN.out.jsonl``.
 - **merge** (``de``/``pl``): clean rows + adjudicated chunk outputs → the committed
   ``*.curated.jsonl`` + ``*.audit.jsonl``.
 - **build**: assemble the committed ``*.curated.jsonl`` into the deck artifact. Verifies
@@ -119,15 +121,51 @@ def _chunk_dir(out: Path, cfg: dict) -> Path:
     return out / "vocab_chunks" / cfg.get("lang", "zh")
 
 
-def _kaikki_curate(cfg: dict, out_dir: Path, chunk: int) -> None:
-    batch = [vocab_kaikki.llm_record(c) for c in _kaikki_candidates(cfg) if c.needs_llm]
+def _adjudicated(chunk_dir: Path) -> set[str]:
+    """Words that already have an adjudicated row in any chunk output."""
+    return {d["word"] for p in chunk_dir.glob("chunk_*.out.jsonl")
+            for d in vocab_kaikki.read_jsonl(p)}
+
+
+def _write_chunks(out_dir: Path, stem: str, records: list[dict], chunk: int) -> int:
+    """Write `records` as `<stem>NN.json` files of `chunk` records; return the file count."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    for i in range(0, len(batch), chunk):
-        (out_dir / f"chunk_{i//chunk:02d}.json").write_text(
-            json.dumps(batch[i:i + chunk], ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"wrote {-(-len(batch) // chunk)} chunk files ({len(batch)} needs-LLM words) to {out_dir}")
+    for i in range(0, len(records), chunk):
+        (out_dir / f"{stem}{i//chunk:02d}.json").write_text(
+            json.dumps(records[i:i + chunk], ensure_ascii=False, indent=1), encoding="utf-8")
+    return -(-len(records) // chunk)
+
+
+def _kaikki_curate(cfg: dict, out_dir: Path, chunk: int, batch_name: str | None) -> None:
+    """Needs-LLM chunk files, minus words already adjudicated (so a deck can grow)."""
+    done = _adjudicated(out_dir) if out_dir.exists() else set()
+    batch = [vocab_kaikki.llm_record(c) for c in _kaikki_candidates(cfg)
+             if c.needs_llm and c.word not in done]
+    stem = f"chunk_{batch_name}_" if batch_name else "chunk_"
+    n = _write_chunks(out_dir, stem, batch, chunk)
+    print(f"wrote {n} chunk files ({len(batch)} needs-LLM words) to {out_dir}")
     print(f"→ adjudicate each chunk_NN.json per {cfg['policy']} into chunk_NN.out.jsonl,")
     print("  then `deck-vocab --merge` and `deck-vocab --build`.")
+
+
+def _kaikki_review_clean(cfg: dict, config_path: Path, out_dir: Path, chunk: int) -> None:
+    """Clean rows never reviewed (not in the curated file, not adjudicated) → `chunk_qa_NN`.
+
+    The reviewer writes an adjudicated row to `chunk_qa_NN.out.jsonl` only for a row it
+    changes (re-gloss or drop); that row overrides the clean row at `--merge`.
+    """
+    curated = config_path.parent / cfg["curated"]
+    seen = {r["word"] for r in vocab_kaikki.read_jsonl(curated)} if curated.exists() else set()
+    seen |= _adjudicated(out_dir) if out_dir.exists() else set()
+    rows = []
+    for c in _kaikki_candidates(cfg):
+        if c.needs_llm or c.word in seen:
+            continue
+        r = vocab_kaikki.clean_row(c)
+        rows.append({"word": r.word, "freq_rank": c.freq_rank, "hint": r.hint,
+                     "gloss": r.gloss, "glosses": c.parts[0]["glosses"]})
+    n = _write_chunks(out_dir, "chunk_qa_", rows, chunk)
+    print(f"wrote {n} review files ({len(rows)} clean rows) to {out_dir}")
 
 
 def _kaikki_merge(cfg: dict, config_path: Path, chunk_dir: Path) -> None:
@@ -173,6 +211,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--build", action="store_true", help="assemble artifact from committed curated rows")
     p.add_argument("--tag-corpus", action="store_true",
                    help="de/pl: lemmatise the corpus sample → lemma_counts file")
+    p.add_argument("--batch", help="de/pl --curate: name new chunks chunk_<batch>_NN")
+    p.add_argument("--review-clean", action="store_true",
+                   help="de/pl: unreviewed clean rows → chunk_qa_NN.json review files")
     p.add_argument("--chunk", type=int, default=100)
     args = p.parse_args(argv)
 
@@ -188,8 +229,12 @@ def main(argv: list[str] | None = None) -> None:
         if not kaikki:
             p.error("--merge is for de/pl configs; Chinese rows are already committed")
         _kaikki_merge(cfg, config_path, _chunk_dir(args.out, cfg))
+    elif args.review_clean:
+        if not kaikki:
+            p.error("--review-clean is for de/pl configs")
+        _kaikki_review_clean(cfg, config_path, _chunk_dir(args.out, cfg), args.chunk)
     elif args.curate and kaikki:
-        _kaikki_curate(cfg, _chunk_dir(args.out, cfg), args.chunk)
+        _kaikki_curate(cfg, _chunk_dir(args.out, cfg), args.chunk, args.batch)
     elif args.curate:
         _curate(cfg, args.seed_deck, args.out / "vocab_chunks", args.chunk)
     elif kaikki:
