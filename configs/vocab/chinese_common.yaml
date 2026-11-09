@@ -11,3 +11,8 @@ target_n: 5000              # new words beyond the frozen 267-word seed
 seed_count: 267
 curated: chinese_common.curated.jsonl   # source of truth for `build` (relative to this file)
 audit: chinese_common.audit.jsonl       # per-word adjudication provenance
+# Identity of the shipped artifact — `build` must keep these, or a rebuild strands the
+# quiz's session history (config_path keys its sessions table).
+artifact: vocab_chinese_common.json
+config_path: manual/vocab_chinese_common.yaml
+license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — CC-CEDICT"

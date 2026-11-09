@@ -1,0 +1,18 @@
+# Polish — Common Words (word↔meaning matching deck)
+# Frequency-ranked lemmas: wordfreq surface forms summed per lemma via Wiktionary (kaikki.org).
+# The deck is `source: manual` (protected from the full-export clear + orchestrator sync);
+# `deck-vocab --build` assembles it deterministically from the committed curated rows.
+# See docs/design/vocab-pipeline.md, "Inflected languages".
+lang: pl
+deck_name: "Polish — Common Words"
+title: "Polish — Common Words"
+group: "Vocabulary"
+order: 302
+target_n: 1000              # first pass (2026-11-08); ranking is cap-independent, raise to grow
+surface_n: 60000             # wordfreq surface forms scanned to reach target_n lemmas
+curated: polish_common.curated.jsonl   # source of truth for `build` (relative to this file)
+audit: polish_common.audit.jsonl       # per-word adjudication provenance
+policy: configs/vocab/polish_common.policy.md
+artifact: vocab_polish_common.json
+config_path: manual/vocab_polish_common.yaml
+license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — Wiktionary via kaikki.org"

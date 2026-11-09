@@ -114,11 +114,15 @@ class Candidate:
 
 @dataclass
 class CuratedRow:
-    """One deck row: an FSRS-keyed hanzi with its chosen pinyin + gloss and provenance."""
-    hanzi: str
-    pinyin: str
+    """One deck row: an FSRS-keyed word with its display hint, gloss and provenance.
+
+    The hint is the line below the word: pinyin for Chinese, article + plural or
+    aspect partner for German and Polish.
+    """
+    word: str
+    hint: str
     gloss: str
-    source: str  # "seed" | "cedict-first" | "llm"
+    source: str  # "seed" | "cedict-first" | "kaikki-first" | "llm"
 
 
 # Function/grammatical gloss signals — CC-CEDICT's first sense is unreliable for these
@@ -144,7 +148,7 @@ def load_seed(deck_path: Path) -> list[CuratedRow]:
     d = json.loads(deck_path.read_text(encoding="utf-8"))
     return [
         CuratedRow(h, p, g, "seed")
-        for h, p, g in zip(d["items"], d["pinyin"], d["labels"])
+        for h, p, g in zip(d["items"], d.get("pinyin") or d["hints"], d["labels"])
     ]
 
 
@@ -201,12 +205,17 @@ FREQ_BAND_SIZE = 30  # mirrors memory-quiz-app matching.FREQ_BAND_SIZE (band-sco
 
 
 def load_curated(path: Path) -> list[CuratedRow]:
-    """Committed curated rows — the deterministic `build` source of truth."""
+    """Committed curated rows — the deterministic `build` source of truth.
+
+    Chinese rows use the keys `hanzi`/`pinyin`; other languages use `word`/`hint`.
+    """
     rows = []
     for ln in path.read_text(encoding="utf-8").splitlines():
         if ln.strip():
             d = json.loads(ln)
-            rows.append(CuratedRow(d["hanzi"], d["pinyin"], d["gloss"], d.get("source", "curated")))
+            word = d["word"] if "word" in d else d["hanzi"]
+            hint = d["hint"] if "hint" in d else d["pinyin"]
+            rows.append(CuratedRow(word, hint, d["gloss"], d.get("source", "curated")))
     return rows
 
 
@@ -217,30 +226,39 @@ def band_collisions(rows: list[CuratedRow], window: int = FREQ_BAND_SIZE) -> lis
         g = r.gloss.strip().lower()
         for j in range(max(0, i - window + 1), i):
             if rows[j].gloss.strip().lower() == g:
-                out.append((rows[j].hanzi, r.hanzi, r.gloss))
+                out.append((rows[j].word, r.word, r.gloss))
                 break
     return out
 
 
 # --- artifact assembly ----------------------------------------------------------
-def assemble_artifact(rows: list[CuratedRow], cfg: dict, config_path: str) -> dict:
+def assemble_artifact(
+    rows: list[CuratedRow], cfg: dict, config_path: str, config_hash: str,
+) -> dict:
     """The exact envelope the quiz `deck_loader` reads for a vocab/matching deck.
 
-    Keeps `source: manual`. `config_hash` is stamped by the caller (sha256 of config bytes),
-    matching `deck_export.config_hash`.
+    Keeps `source: manual`. The config can pin `config_path` (the quiz session key) and
+    `license`, so a rebuild keeps the identity of the shipped artifact. Chinese keeps the
+    hint array under `pinyin`; other languages put it under `hints`.
     """
-    return {
+    lang = cfg.get("lang", "zh")
+    hint_key = "pinyin" if lang == "zh" else "hints"
+    art = {
         "order": cfg.get("order", 300),
         "name": cfg["deck_name"],
         "deck_type": "vocab",
         "mode": "matching",
         "title": cfg.get("title", cfg["deck_name"]),
         "group": cfg.get("group", "Vocabulary"),
-        "items": [r.hanzi for r in rows],
-        "pinyin": [r.pinyin for r in rows],
+        "items": [r.word for r in rows],
+        hint_key: [r.hint for r in rows],
         "labels": [r.gloss for r in rows],
         "poem_title": None,
-        "config_path": config_path,
+        "config_path": cfg.get("config_path", config_path),
+        "config_hash": config_hash,
         "source": "manual",
-        "license": CEDICT_LICENSE,
+        "license": cfg.get("license", CEDICT_LICENSE),
     }
+    if lang != "zh":
+        art["lang"] = lang
+    return art
