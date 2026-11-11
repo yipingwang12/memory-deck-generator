@@ -122,7 +122,7 @@ class CuratedRow:
     word: str
     hint: str
     gloss: str
-    source: str  # "seed" | "cedict-first" | "kaikki-first" | "llm"
+    source: str  # "seed" | "cedict-first" | "kaikki-first" | "kaikki-unreviewed" | "llm"
 
 
 # Function/grammatical gloss signals — CC-CEDICT's first sense is unreliable for these

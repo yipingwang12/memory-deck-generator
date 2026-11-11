@@ -13,6 +13,7 @@ Everything here runs offline from the kaikki cache. Wiktionary text is CC-BY-SA 
 """
 from __future__ import annotations
 
+import dataclasses
 import gzip
 import json
 import re
@@ -583,15 +584,21 @@ def llm_record(c: Candidate) -> dict:
 
 
 # --- merge ----------------------------------------------------------------------
+#: Curated ``source`` of a clean row no review pass has read yet.
+UNREVIEWED = "kaikki-unreviewed"
+
+
 def merge_curated(
-    cands: list[Candidate], adjudicated: list[dict],
+    cands: list[Candidate], adjudicated: list[dict], reviewed: set[str] | None = None,
 ) -> tuple[list[CuratedRow], list[dict]]:
     """Clean rows + adjudicated rows in rank order → (curated rows, audit rows).
 
     Every needs-LLM candidate must have an adjudicated row. A clean candidate may have one
     too (a review pass that corrects a misleading first gloss); it then wins. A row for a
     word outside the candidates (a re-rank moved it past `target_n`) is set aside for
-    when the deck grows. `decision: drop` rows go to the audit only.
+    when the deck grows. `decision: drop` rows go to the audit only. When several rows
+    name one word, the last wins. With ``reviewed``, a clean row whose word it lacks gets
+    source :data:`UNREVIEWED`.
     """
     by_word = {d["word"]: d for d in adjudicated}
     need = {c.word for c in cands if c.needs_llm}
@@ -601,7 +608,10 @@ def merge_curated(
     rows, audit = [], []
     for c in cands:
         if c.word not in by_word:
-            rows.append(clean_row(c))
+            row = clean_row(c)
+            if reviewed is not None and c.word not in reviewed:
+                row = dataclasses.replace(row, source=UNREVIEWED)
+            rows.append(row)
             continue
         d = by_word[c.word]
         audit.append(d)

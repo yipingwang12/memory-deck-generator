@@ -94,8 +94,11 @@ is not Wikimedia, so no `wiki-open` window). Code: `vocab_kaikki.py`.
    each, per `configs/vocab/<lang>_common.policy.md`. Each record carries `evidence` (top
    shared forms + who else claims them) so the pass can drop a word whose rank is borrowed.
 5. **Merge** (`--merge`) — clean + adjudicated rows in rank order → committed
-   `*.curated.jsonl` (`word`/`hint`/`gloss`/`source`) + `*.audit.jsonl`. Refuses a missing or
-   extra word. Drops come off `target_n`.
+   `*.curated.jsonl` (`word`/`hint`/`gloss`/`source`) + `*.audit.jsonl`. Refuses a missing
+   word. Drops come off `target_n`. Adjudicated rows = the committed audit first, then the
+   chunk outputs oldest file first, so a newer adjudication of a word replaces an older one
+   (by file time, not file name). A clean row no `--review-clean` pass has read gets
+   `source: kaikki-unreviewed`.
 6. **Build** — the shared `build`: unique words, band-scoped gloss uniqueness, artifact with
    `items`/`hints`/`labels`, `lang`, and `source: manual`.
 
