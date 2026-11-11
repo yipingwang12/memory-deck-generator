@@ -66,7 +66,10 @@ def _run_checks(cfg: dict, config: Path, out_dir: Path, verify_quotes: bool):
     if why := code_mcq.scope_refusal(cfg.get("path") or cfg.get("source_file", "")):
         report.failures.append(why)
     report.failures += code_mcq.currency_refusals(
-        _file_id(cfg), cfg.get("reviewed_sha256"), config.parent, source)
+        _file_id(cfg), cfg.get("reviewed_sha256"), config.parent, source,
+        cfg.get("pruned_sha256"))
+    if owed := code_mcq.review_owed(cfg.get("reviewed_sha256"), cfg.get("pruned_sha256"), source):
+        report.warnings.append(owed)
     if claims_p and not claims_p.exists():
         report.warnings.append(f"claims file named but absent ({claims_p.name}) — density "
                                f"unmeasured")
@@ -118,9 +121,19 @@ def _build(cfg: dict, config: Path, out_dir: Path, verify_quotes: bool) -> None:
     print(f"built {out} — {len(cards)} cards (source: manual)")
 
 
+def _set_config_key(config: Path, key: str, value: str) -> None:
+    """Set one top-level ``key: "value"`` line in the config, keeping its comments."""
+    text = config.read_text(encoding="utf-8")
+    line = f'{key}: "{value}"'
+    text, n = re.subn(rf"(?m)^{key}:.*$", line, text)
+    config.write_text(text if n else text.rstrip("\n") + "\n" + line + "\n", encoding="utf-8")
+
+
 def _prune(cfg: dict, config: Path) -> None:
-    """The file changed: drop the cards whose quotes it no longer holds, then mark every
-    survivor reviewed against the new version. Notes come first, as for a build."""
+    """The file changed: drop the cards whose quotes it no longer holds, and record the
+    version pruned against in ``pruned_sha256``. The survivors are NOT marked reviewed: a
+    card whose quoted line survived can still be false, so ``reviewed_sha256`` stays until a
+    person reviews every card. Notes come first, as for a build."""
     curated_p, audit_p, source_p, _, _ = _paths(config)
     source = source_p.read_text(encoding="utf-8")
     current = code_mcq.file_sha256(source)
@@ -131,11 +144,9 @@ def _prune(cfg: dict, config: Path) -> None:
     if gone:
         today = datetime.datetime.now(datetime.UTC).date().isoformat()
         code_mcq.prune(curated_p, audit_p, gone, f"auto: quoted code changed ({today})")
-    text = config.read_text(encoding="utf-8")
-    line = f'reviewed_sha256: "{current}"'
-    text, n = re.subn(r"(?m)^reviewed_sha256:.*$", line, text)
-    config.write_text(text if n else text.rstrip("\n") + "\n" + line + "\n", encoding="utf-8")
-    print(f"{config.name}: dropped {len(gone)} card(s) {gone}; reviewed_sha256 → {current[:12]}…")
+    _set_config_key(config, "pruned_sha256", current)
+    print(f"{config.name}: dropped {len(gone)} card(s) {gone}; pruned_sha256 → {current[:12]}…; "
+          f"review of the survivors owed")
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -145,8 +156,9 @@ def main(argv: list[str] | None = None) -> None:
                    help="artifact directory (default: beside the config — keep it gitignored)")
     p.add_argument("--build", action="store_true", help="assemble the artifact (default: check)")
     p.add_argument("--prune", action="store_true",
-                   help="after a file change: drop cards whose quotes are gone, mark the rest "
-                        "reviewed (notes must already cover the new version)")
+                   help="after a file change: drop cards whose quotes are gone and record "
+                        "pruned_sha256; the rest stay unreviewed (notes must already cover "
+                        "the new version)")
     p.add_argument("--no-verify-quotes", action="store_true",
                    help="skip the verbatim-quote check when the source file is unavailable")
     args = p.parse_args(argv)
