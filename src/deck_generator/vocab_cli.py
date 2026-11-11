@@ -50,7 +50,7 @@ def _load_cfg(path: Path) -> tuple[dict, Path, Path]:
 def _preview(cfg: dict, seed_deck: Path) -> None:
     vocab.fetch_cedict()
     cedict = vocab.load_cedict()
-    exclude = {r.hanzi for r in vocab.load_seed(seed_deck)} if seed_deck.exists() else set()
+    exclude = {r.word for r in vocab.load_seed(seed_deck)} if seed_deck.exists() else set()
     cands = vocab.rank_candidates(cedict, exclude=exclude, target_n=cfg["target_n"])
     n_llm = sum(c.needs_llm for c in cands)
     print(f"CC-CEDICT entries : {len(cedict):,}")
@@ -63,7 +63,7 @@ def _preview(cfg: dict, seed_deck: Path) -> None:
 def _curate(cfg: dict, seed_deck: Path, out_dir: Path, chunk: int) -> None:
     vocab.fetch_cedict()
     cedict = vocab.load_cedict()
-    exclude = {r.hanzi for r in vocab.load_seed(seed_deck)} if seed_deck.exists() else set()
+    exclude = {r.word for r in vocab.load_seed(seed_deck)} if seed_deck.exists() else set()
     cands = vocab.rank_candidates(cedict, exclude=exclude, target_n=cfg["target_n"])
     batch = vocab.llm_batch_records(cands)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -74,6 +74,75 @@ def _curate(cfg: dict, seed_deck: Path, out_dir: Path, chunk: int) -> None:
     print(f"wrote {n} chunk files ({len(batch)} needs-LLM words) to {out_dir}")
     print("→ run the audited adjudication pass (per-word sense/reading/gloss + reason) over")
     print(f"  these chunks and write {cfg['curated']} + {cfg['audit']}, then `deck-vocab build`.")
+
+
+# --- zh: words from a level list (HSK) ------------------------------------------
+def _list_selection(cfg: dict, config_path: Path) -> vocab.ListSelection:
+    """The config's `include` list words that the committed curated rows do not have yet."""
+    inc = cfg["include"]
+    vocab.fetch_cedict()
+    have = {r.word for r in vocab.load_curated(config_path.parent / cfg["curated"])}
+    return vocab.list_candidates(
+        vocab.load_cedict(), vocab.load_word_list(config_path.parent / inc["list"]),
+        exclude=have, ranks=vocab.wordfreq_ranks(), max_rank=inc["max_rank"],
+        all_levels_upto=inc["all_levels_upto"])
+
+
+def _zh_adjudications(cfg: dict, config_path: Path, chunk_dir: Path) -> dict[str, dict]:
+    """hanzi -> adjudication: the committed audit first, then chunk outputs oldest file
+    first, so the newest adjudication of a word wins."""
+    audit = _audit_path(cfg, config_path)
+    rows = vocab_kaikki.read_jsonl(audit) if audit.exists() else []
+    files = sorted(chunk_dir.glob("chunk_*.out.jsonl"), key=lambda p: (p.stat().st_mtime, p.name)) \
+        if chunk_dir.exists() else []
+    for f in files:
+        rows += vocab_kaikki.read_jsonl(f)
+    return {d["hanzi"]: d for d in rows}
+
+
+def _zh_list_preview(cfg: dict, config_path: Path) -> None:
+    sel = _list_selection(cfg, config_path)
+    n_llm = sum(c.needs_llm for c in sel.candidates)
+    print(f"{cfg['include']['name']} words to add : {len(sel.candidates)}")
+    print(f"  clean (no LLM)  : {len(sel.candidates) - n_llm}")
+    print(f"  needs LLM       : {n_llm}")
+    print(f"  not in CC-CEDICT: {len(sel.not_in_cedict)} {sel.not_in_cedict[:20]}")
+
+
+def _zh_list_curate(cfg: dict, config_path: Path, out_dir: Path, chunk: int) -> None:
+    """Needs-LLM list words -> `chunk_list_NN.json`; clean rows -> `chunk_list_qa_NN.json`
+    for review. A reviewer writes a row to the `.out.jsonl` beside each file only for a
+    word it changes or drops."""
+    sel = _list_selection(cfg, config_path)
+    done = _zh_adjudications(cfg, config_path, out_dir)
+    todo = [c for c in sel.candidates if c.hanzi not in done]
+    llm = vocab.llm_batch_records(todo)
+    qa = [{"hanzi": c.hanzi, "freq_rank": c.freq_rank, "pinyin": r.hint, "gloss": r.gloss,
+           "glosses": c.readings[0].glosses}
+          for c in todo if not c.needs_llm for r in [vocab.clean_row(c)]]
+    n = _write_chunks(out_dir, "chunk_list_", llm, chunk)
+    m = _write_chunks(out_dir, "chunk_list_qa_", qa, chunk)
+    print(f"wrote {n} adjudication files ({len(llm)} words) and {m} review files "
+          f"({len(qa)} clean rows) to {out_dir}")
+
+
+def _zh_list_merge(cfg: dict, config_path: Path, chunk_dir: Path) -> None:
+    """Committed rows + list words (adjudicated or clean) -> curated + audit JSONL."""
+    sel = _list_selection(cfg, config_path)
+    curated = config_path.parent / cfg["curated"]
+    existing = vocab_kaikki.read_jsonl(curated)
+    adjudicated = _zh_adjudications(cfg, config_path, chunk_dir)
+    rows, new_audit = vocab.merge_list_rows(existing, sel.candidates, adjudicated,
+                                            vocab.wordfreq_ranks())
+    audit_path = _audit_path(cfg, config_path)
+    audit = vocab_kaikki.read_jsonl(audit_path) if audit_path.exists() else []
+    known = {d["hanzi"] for d in audit}
+    audit += [d for d in new_audit if d["hanzi"] not in known]
+    vocab_kaikki.write_jsonl(curated, rows)
+    vocab_kaikki.write_jsonl(audit_path, audit)
+    dropped = sum(d["decision"] == "drop" for d in new_audit)
+    print(f"merged {len(rows) - len(existing)} list words ({len(new_audit)} adjudicated, "
+          f"{dropped} dropped) → {curated} ({len(rows)} rows)")
 
 
 def _tag_corpus(cfg: dict) -> None:
@@ -280,20 +349,26 @@ def main(argv: list[str] | None = None) -> None:
         _tag_corpus(cfg)
     elif args.build:
         _build(cfg, curated, config_path, args.out)
-    elif args.merge:
-        if not kaikki:
-            p.error("--merge is for de/pl configs; Chinese rows are already committed")
+    elif args.merge and kaikki:
         _kaikki_merge(cfg, config_path, _chunk_dir(args.out, cfg))
+    elif args.merge:
+        if "include" not in cfg:
+            p.error("--merge for zh needs an `include` word list in the config")
+        _zh_list_merge(cfg, config_path, _chunk_dir(args.out, cfg))
     elif args.review_clean:
         if not kaikki:
             p.error("--review-clean is for de/pl configs")
         _kaikki_review_clean(cfg, config_path, _chunk_dir(args.out, cfg), args.chunk)
     elif args.curate and kaikki:
         _kaikki_curate(cfg, config_path, _chunk_dir(args.out, cfg), args.chunk, args.batch)
+    elif args.curate and "include" in cfg:
+        _zh_list_curate(cfg, config_path, _chunk_dir(args.out, cfg), args.chunk)
     elif args.curate:
         _curate(cfg, args.seed_deck, args.out / "vocab_chunks", args.chunk)
     elif kaikki:
         _kaikki_preview(cfg)
+    elif "include" in cfg:
+        _zh_list_preview(cfg, config_path)
     else:
         _preview(cfg, args.seed_deck)
 
