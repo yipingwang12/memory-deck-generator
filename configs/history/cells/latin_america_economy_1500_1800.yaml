@@ -1,0 +1,420 @@
+# Cell: Latin America x economy x 1500 to 1799. DRAFT 2026-11-11.
+# Scope: Mexico, Central America, Caribbean, South America. Trade, money, mints, mines, crops,
+# trade companies, taxes on trade, exploration and trade routes.
+# Dates: memory pass + web check (45 searches + WebFetch). Peg = last two digits of the year.
+# Range -> conventional "c." date (policy 2026-11-04). "X +/- Y" -> X.
+# Left to older cells: Casa de Contratacion, Seville consulado, fleet system, Cadiz move, Free Trade
+# Regulation, Brazil Company and Caracas Company founding (western_europe_economy); patio process and
+# amalgamation (science); mita, encomienda, slavery, epidemics (society); conquest, treaties (politics).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Spanish crown rules for the whole region
+  - {year: 1634, peg: hammer, confidence: medium, source: "PUCP Historica: de la Serna (also 1631)",
+     event: "Philip IV bans all trade between New Spain and Peru",
+     scene: "Philip IV slams a HAMMER down on the Acapulco to Callao route, and no ship may sail it."}
+  - {year: 1736, peg: match, confidence: high, source: "WP mirror: Bourbon Reforms",
+     event: "Crown cuts the tax on American silver from a fifth to a tenth",
+     scene: "A royal MATCH burns half of the silver fifth away, and the tax on American silver falls to a tenth."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Bourbon Reforms",
+     event: "Single register ships replace the convoy fleets on the Indies routes",
+     scene: "A lone register ship gallops out of Cadiz on a HORSE, and the old convoy stays in port."}
+  - {year: 1789, peg: fob, confidence: medium, source: "Search: Venezuela decree 1789 (also 1788)",
+     event: "Free trade rules extend to New Spain and Venezuela",
+     scene: "A FOB key unlocks the ports of Veracruz and La Guaira to the free trade rules."}
+  - {year: 1797, peg: pig, confidence: high, source: "Marichal: Comercio neutral",
+     event: "Wartime order lets neutral ships trade with Spanish America",
+     scene: "A neutral American PIG sails into Havana and Veracruz under a flag that the British blockade must let pass."}
+  - {year: 1799, peg: pipe, confidence: medium, source: "Search: Central American study",
+     event: "Crown cancels the neutral trade permit",
+     scene: "Madrid stuffs the neutral trade permit into a PIPE and smokes it to ash."}
+  # Mexico (New Spain)
+  - {year: 1518, peg: dove, confidence: high, source: "World History Encyclopedia: Grijalva",
+     event: "Grijalva sails the Gulf coast and trades beads for gold",
+     scene: "A white DOVE carries Grijalva's glass beads to Tabasco and flies back with gold jewels."}
+  - {year: 1535, peg: mill, confidence: high, source: "Banxico: Real Cedula of the Mexico mint",
+     event: "Royal decree founds the Mexico City mint, the first in the Americas",
+     scene: "A MILL in Mexico City starts to stamp silver into the first coins of the Americas."}
+  - {year: 1537, peg: mug, confidence: high, source: "Dusenberry: Ordinances of the Mesta",
+     event: "Mesta ordinances regulate cattle and sheep ranching in New Spain",
+     scene: "A MUG of branding ink marks every cow under the new Mesta rules of New Spain."}
+  - {year: 1546, peg: roach, confidence: high, source: "WP mirror: Zacatecas City",
+     event: "Tolosa's party finds silver ore at La Bufa, Zacatecas",
+     scene: "Juan de Tolosa's ROACH crawls out of La Bufa hill dragging a lump of silver ore."}
+  - {year: 1548, peg: reef, confidence: high, source: "WP mirror: Zacatecas City",
+     event: "Zacatecas: the San Bernabe vein opens and a mining camp is founded",
+     scene: "A REEF of pure silver breaks the surface at San Bernabe, and miners pitch camp on it."}
+  - {year: 1548, peg: reef, confidence: medium, source: "NM Tech abstract: Rayas claim",
+     event: "Guanajuato: the muleteer Juan Rayas files the first silver claim",
+     scene: "Juan Rayas pegs his silver claim at Guanajuato to a coral REEF of white ore."}
+  - {year: 1552, peg: lion, confidence: high, source: "WP mirror: Pachuca",
+     event: "Silver deposits found at Pachuca",
+     scene: "A LION digs at Pachuca hill and paws out the first silver ore."}
+  - {year: 1558, peg: wolf, confidence: medium, source: "Blanco-Parra-Ruiz via search",
+     event: "Guanajuato: miners find the Veta Madre, the mother vein",
+     scene: "A WOLF follows the scent down a shaft and uncovers the Veta Madre, the mother vein of Guanajuato."}
+  - {year: 1565, peg: jelly, confidence: high, source: "WP mirror: Manila galleon",
+     event: "Urdaneta finds the return route across the Pacific and reaches Acapulco",
+     scene: "Urdaneta rides a wave of JELLY east across the Pacific and lands the first return galleon at Acapulco."}
+  - {year: 1567, peg: jockey, confidence: medium, source: "WP mirror: Hidalgo del Parral",
+     event: "Santa Barbara silver mines open in Nueva Vizcaya",
+     scene: "A JOCKEY races north to stake the Santa Barbara silver mines in Nueva Vizcaya."}
+  - {year: 1573, peg: comb, confidence: unverified,
+     event: "Manila galleons bring the first Chinese silks and porcelain to Acapulco",
+     scene: "A porcelain COMB and a bolt of silk are the first Chinese goods carried off a galleon at Acapulco."}
+  - {year: 1574, peg: car, confidence: disputed, source: "WP: Alcabala 1574; Litle (UNAM) 1575",
+     event: "Crown imposes the alcabala sales tax in New Spain",
+     scene: "A tax collector parks his CAR at every Mexican market stall and takes the new alcabala."}
+  - {year: 1592, peg: piano, confidence: high, source: "Encyclopedia.com: Consulado",
+     event: "Royal order sets up the merchant guild (Consulado) of Mexico City",
+     scene: "A PIANO lid slams on the bench as Mexico City's merchants open their own guild court, the Consulado."}
+  - {year: 1592, peg: piano, confidence: high, source: "WP mirror: San Luis Potosi City",
+     event: "Mines of Cerro de San Pedro found; San Luis Potosi founded",
+     scene: "A PIANO falls off a mule on Cerro de San Pedro and cracks open a vein of silver and gold."}
+  - {year: 1593, peg: palm, confidence: high, source: "WP mirror: Manila galleon",
+     event: "Decree limits the Manila galleon trade to two ships a year",
+     scene: "A giant PALM blocks the Acapulco quay and lets only two Manila galleons a year sail past."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP mirror: Hidalgo del Parral",
+     event: "Great silver strike at Parral; the town is founded",
+     scene: "A MOTH flutters into a Parral cave and lights up a vast silver strike."}
+  - {year: 1635, peg: mill, confidence: high, source: "WP mirror: Spanish treasure fleet",
+     event: "New Spain raises its sales tax to pay for the Armada de Barlovento",
+     scene: "A tax MILL grinds more silver from every Mexican sale to pay for the Windward Fleet."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP mirror: Spanish dollar",
+     event: "Mexico City mint strikes the first machine-milled pillar dollars",
+     scene: "A screw press stamps the two Pillars of Hercules on a round silver MOON: the first milled dollar."}
+  - {year: 1741, peg: radio, confidence: medium, source: "WP mirror: Pachuca",
+     event: "Pedro Romero de Terreros starts to drain and revive the Real del Monte mines",
+     scene: "Romero de Terreros sets up a RADIO on the flooded Real del Monte shafts and calls in pumps."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Deans-Smith: The Money Plant",
+     event: "Galvez enforces the royal tobacco monopoly; private growing is banned",
+     scene: "Galvez wraps every tobacco field in New Spain in royal JELLY so no private farmer can plant it."}
+  - {year: 1768, peg: chef, confidence: medium, source: "WP: Valenciana mine (1768 to 1804 peak)",
+     event: "Guanajuato: the Valenciana mine begins its great bonanza",
+     scene: "A CHEF at the Valenciana shaft serves up silver by the cartload as the great bonanza begins."}
+  - {year: 1770, peg: goose, confidence: medium, source: "Search: Real Loteria (Aug or Sep)",
+     event: "Charles III authorises the Royal Lottery of New Spain",
+     scene: "Charles III pulls the first winning ticket of the Royal Lottery of New Spain from a GOOSE's beak."}
+  - {year: 1772, peg: coin, confidence: medium, source: "History.com: San Luis Potosi (also 1773)",
+     event: "Silver found at Real de Catorce",
+     scene: "A COIN rolls down the Catorce mountain and marks the spot of the new silver find."}
+  - {year: 1775, peg: eagle, confidence: disputed, source: "HMDB marker 1775; WP timeline 1776/1777",
+     event: "Romero de Terreros opens the Monte de Piedad pawn bank in Mexico City",
+     scene: "The poor pawn a silver EAGLE at Romero de Terreros's new Monte de Piedad and get an interest-free loan."}
+  - {year: 1777, peg: cake, confidence: high, source: "Britannica: Real Cuerpo de Mineria",
+     event: "Mining Tribunal of New Spain is set up to run and fund the mines",
+     scene: "The new Mining Tribunal bakes a CAKE from the miners' silver tax and lends slices to fund New Spain's mines."}
+  - {year: 1783, peg: foam, confidence: high, source: "Britannica: Real Cuerpo de Mineria",
+     event: "Charles III approves the Mining Ordinances of New Spain",
+     scene: "Charles III signs the Mining Ordinances in FOAM, and the code rules Spanish American mines for a century."}
+  - {year: 1795, peg: bell, confidence: high, source: "Search: Real Cedula of the Veracruz consulado",
+     event: "Merchant guilds (Consulados) of Veracruz and Guadalajara are set up",
+     scene: "Veracruz and Guadalajara merchants swing a BELL to call the first sessions of their new merchant courts."}
+  # Central America
+  - {year: 1502, peg: sun, confidence: high, source: "Library of Congress: Honduras",
+     event: "Columbus meets a large Maya trading canoe off Guanaja",
+     scene: "Columbus's men haul a SUN-shaped copper bell out of a big Maya trading canoe off Guanaja, full of cacao and cloth."}
+  - {year: 1522, peg: nun, confidence: unverified,
+     event: "Andagoya sails south from Panama and hears of the rich land of Biru",
+     scene: "A NUN steers Andagoya's ship south from Panama toward Biru, the rumoured land of gold."}
+  - {year: 1578, peg: cave, confidence: unverified,
+     event: "Silver mines open at Tegucigalpa",
+     scene: "A CAVE in the hills of Tegucigalpa opens into the first silver mine of Honduras."}
+  - {year: 1733, peg: mummy, confidence: high, source: "Banguat: epoca colonial",
+     event: "Guatemala mint begins to strike coins",
+     scene: "The new Guatemala mint stamps its first silver coins onto the bandages of a MUMMY."}
+  - {year: 1766, peg: judge, confidence: high, source: "Search: Guatemala tobacco monopoly",
+     event: "Royal tobacco monopoly begins in Guatemala",
+     scene: "A royal JUDGE declares every tobacco leaf in Guatemala crown property as the monopoly begins."}
+  - {year: 1782, peg: oven, confidence: unverified,
+     event: "Guatemala: indigo growers set up a credit fund (Montepio de Cosecheros de Anil)",
+     scene: "Indigo growers stuff their savings into a blue OVEN, a fund that lends them money between harvests."}
+  - {year: 1793, peg: palm, confidence: high, source: "Search: Real Cedula of the Guatemala consulado",
+     event: "Merchant guild (Consulado) of Guatemala is set up",
+     scene: "A royal charter written on a PALM leaf creates the merchant Consulado of Guatemala."}
+  # New Granada, Venezuela and the Guianas
+  - {year: 1500, peg: sauce, confidence: disputed, source: "Cartagena timeline 1500; usual date 1501",
+     event: "Bastidas and Juan de la Cosa sail along the coast of Colombia and trade for gold",
+     scene: "Bastidas pours SAUCE on Indian gold traded on the beach of Baru bay as he sails the Colombian coast."}
+  - {year: 1523, peg: gnome, confidence: medium, source: "WP mirror: Timeline of Cartagena",
+     event: "Oviedo gets a royal licence to trade in Cartagena Bay",
+     scene: "A GNOME with a royal licence trades beads for gold for Oviedo in Cartagena Bay."}
+  - {year: 1528, peg: knife, confidence: high, source: "Search: royal decree of Charles V",
+     event: "Cubagua: the pearl town of Nueva Cadiz gets a city charter",
+     scene: "A pearl diver comes up with a KNIFE in his teeth and the royal charter of Nueva Cadiz."}
+  - {year: 1531, peg: moth, confidence: medium, source: "Search: pearl beds depleted by this year",
+     event: "Cubagua: pearl beds run low and the Spaniards limit the harvest",
+     scene: "A MOTH eats through the empty oyster beds of Cubagua, and the pearl harvest is cut."}
+  - {year: 1531, peg: moth, confidence: unverified,
+     event: "Diego de Ordaz sails up the Orinoco to look for gold",
+     scene: "Diego de Ordaz follows a MOTH up the Orinoco toward a rumoured land of gold."}
+  - {year: 1582, peg: oven, confidence: disputed, source: "Cartagena timeline 1582; usual date 1650",
+     event: "Canal del Dique links Cartagena Bay to the Magdalena River",
+     scene: "An OVEN of a dredge digs the Canal del Dique and joins Cartagena Bay to the Magdalena River."}
+  - {year: 1606, peg: sushi, confidence: unverified,
+     event: "Philip III bans tobacco growing in Venezuela for ten years to stop smuggling",
+     scene: "Philip III rolls the Venezuelan tobacco crop into SUSHI and bans it for ten years to stop smuggling."}
+  - {year: 1620, peg: nose, confidence: high, source: "Search: royal order to Turrillo de Yebra",
+     event: "Crown licenses Turrillo de Yebra to set up a mint in New Granada",
+     scene: "Turrillo de Yebra carries a royal licence for a mint to Bogota on his NOSE."}
+  - {year: 1622, peg: nun, confidence: high, source: "Sedwick and Commodore: Cartagena 2 escudos",
+     event: "Cartagena mint strikes the first gold coins of the Americas",
+     scene: "A NUN at the Cartagena mint holds up the first gold coin ever struck in the Americas."}
+  - {year: 1625, peg: nail, confidence: medium, source: "WP mirror: Timeline of Cartagena",
+     event: "Cartagena's customs house (Aduana) is finished",
+     scene: "Customs men NAIL a sign to the new Cartagena Aduana and tax every bale that lands."}
+  - {year: 1683, peg: foam, confidence: high, source: "Search: Society of Suriname",
+     event: "Society of Suriname is founded to run the Dutch sugar colony",
+     scene: "Three Dutch shareholders buy Suriname with a pot of FOAM and found the Society to run its sugar estates."}
+  - {year: 1720, peg: nose, confidence: high, source: "Search: Society of Berbice",
+     event: "Society of Berbice is founded to raise money for the colony",
+     scene: "The owners of Berbice put a NOSE ring on the colony and sell shares in the new Society."}
+  - {year: 1730, peg: mouse, confidence: high, source: "WP mirror: Guipuzcoan Company of Caracas",
+     event: "Caracas Company sends its first four ships from San Sebastian to Venezuela",
+     scene: "A MOUSE runs up the mast of the first Caracas Company ship as four of them sail for Venezuelan cacao."}
+  - {year: 1746, peg: roach, confidence: high, source: "Search: Storm van 's Gravesande",
+     event: "Storm van 's Gravesande opens the Demerara River to sugar planters",
+     scene: "Storm van 's Gravesande sends a ROACH up the Demerara to mark land grants for sugar estates."}
+  - {year: 1758, peg: wolf, confidence: disputed, source: "Sources give 1732, 1749 and 1758",
+     event: "Popayan mint is founded",
+     scene: "A WOLF guards the gold dust of the Cauca as it enters the new Popayan mint."}
+  - {year: 1776, peg: cage, confidence: medium, source: "WP mirror: Guipuzcoan Company of Caracas",
+     event: "Venezuelan trade opens, and the Caracas Company loses its monopoly",
+     scene: "Venezuelan cacao breaks out of the Caracas Company CAGE as trade opens to other merchants."}
+  - {year: 1793, peg: palm, confidence: high, source: "Search: Real Cedula of the Caracas consulado",
+     event: "Merchant guild (Consulado) of Caracas is set up",
+     scene: "Caracas cacao merchants carve the seal of their new Consulado out of a PALM trunk."}
+  - {year: 1795, peg: bell, confidence: high, source: "Search: Real Cedula of the Cartagena consulado",
+     event: "Merchant guild (Consulado) of Cartagena is set up",
+     scene: "A BELL-shaped seal stamps the royal charter of the Cartagena merchant Consulado."}
+  # Caribbean
+  - {year: 1516, peg: dish, confidence: disputed, source: "Sources: Vellosa mill c. 1510 to 1517",
+     event: "Hispaniola: Gonzalo de Vellosa builds the first sugar mill to make sugar for export",
+     scene: "Gonzalo de Vellosa boils the first export sugar of Hispaniola in a giant copper DISH at his mill."}
+  - {year: 1516, peg: dish, confidence: medium, source: "UToronto: Visualizing the Americas",
+     event: "Friar Tomas de Berlanga brings banana plants from the Canaries to Hispaniola",
+     scene: "Friar Berlanga carries a DISH of Canary banana shoots ashore and plants them in Hispaniola."}
+  - {year: 1640, peg: horse, confidence: high, source: "WP mirror: Sugar plantations in the Caribbean",
+     event: "James Drax buys a three-roller sugar mill in Dutch Brazil for Barbados",
+     scene: "James Drax loads a three-roller sugar mill on a HORSE in Dutch Brazil and takes it to Barbados."}
+  - {year: 1643, peg: ram, confidence: medium, source: "Sugar Barons (Parker): letter of seventy chests",
+     event: "Barbados ships its first large sugar cargo; the island turns from tobacco to sugar",
+     scene: "A RAM butts the tobacco plants off Barbados and seventy chests of sugar sail out in their place."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Spanish treasure fleet",
+     event: "The treasure galleon Maravillas sinks off the Bahamas with its silver",
+     scene: "A LEECH clings to the hull of the Maravillas and drags it and its silver to the floor off the Bahamas."}
+  - {year: 1723, peg: gnome, confidence: disputed, source: "Coffee history sources: 1723 (also 1720)",
+     event: "Gabriel de Clieu brings a coffee plant to Martinique",
+     scene: "Gabriel de Clieu shares his water with a coffee seedling in a GNOME pot and plants it in Martinique."}
+  - {year: 1728, peg: knife, confidence: high, source: "Jamaica Gleaner: coffee history",
+     event: "Governor Nicholas Lawes brings coffee seedlings to Jamaica",
+     scene: "Governor Lawes digs holes with a KNIFE at Temple Hall and plants the first coffee seedlings of Jamaica."}
+  - {year: 1740, peg: horse, confidence: high, source: "Encyclopedia.com: Havana Company",
+     event: "Royal Havana Company gets the monopoly of Cuban trade and tobacco",
+     scene: "The Havana Company rides a HORSE to Seville with three million pounds of Cuban tobacco a year."}
+  - {year: 1764, peg: cherry, confidence: unverified,
+     event: "Monthly royal mail ships begin to sail from Corunna to Havana",
+     scene: "A CHERRY-red mail packet leaves Corunna each month with letters and trade news for Havana."}
+  - {year: 1766, peg: judge, confidence: high, source: "Cambridge JBS: Empire of Free Ports",
+     event: "Free Port Act opens four Jamaican and two Dominican ports to foreign ships",
+     scene: "A JUDGE swings open six free ports in Jamaica and Dominica to Spanish and French traders."}
+  - {year: 1767, peg: jockey, confidence: high, source: "French arret of 29 July (bibliography)",
+     event: "France opens a free port for foreign trade at the Carenage, Saint-Domingue",
+     scene: "A French JOCKEY gallops foreign lumber and salt fish into the new free port at the Carenage."}
+  - {year: 1784, peg: fairy, confidence: unverified,
+     event: "French order opens more free ports to foreign trade in the Antilles",
+     scene: "A French FAIRY waves her wand and more Antilles ports open to foreign flour and lumber."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: Timeline of Havana",
+     event: "Havana: the Economic Society of Friends of the Country is founded",
+     scene: "Havana planters sit at a PIANO and found the Economic Society to push sugar and trade."}
+  - {year: 1794, peg: bear, confidence: high, source: "WP mirror: Timeline of Havana",
+     event: "Havana: the Royal Consulado of agriculture and trade is set up",
+     scene: "A BEAR sits as judge in Havana's new Consulado, the court of the planters and traders."}
+  # Andes (Peru, Upper Peru, Ecuador)
+  - {year: 1524, peg: hanger, confidence: unverified,
+     event: "Pizarro and Almagro make their first trade-and-gold voyage south from Panama",
+     scene: "Pizarro's ship swings from a giant HANGER as it sails south from Panama on his first voyage for Peruvian gold."}
+  - {year: 1526, peg: nacho, confidence: disputed, source: "Britannica: Ruiz 1526; Harvard paper 1527",
+     event: "Bartolome Ruiz captures an Inca trading raft with cloth, silver and gold",
+     scene: "Bartolome Ruiz scoops a NACHO-shaped balsa raft off the sea and finds Peruvian cloth, silver and gold on it."}
+  - {year: 1541, peg: radio, confidence: unverified,
+     event: "Gonzalo Pizarro leaves Quito to look for the land of cinnamon",
+     scene: "Gonzalo Pizarro tunes a RADIO to the jungle east of Quito and marches off to find the land of cinnamon."}
+  - {year: 1545, peg: railway, confidence: high, source: "WP mirror: Potosi",
+     event: "Silver is found at Potosi and the mining town is founded",
+     scene: "A RAILWAY of silver bursts out of the Cerro Rico, and miners found Potosi on its slope."}
+  - {year: 1563, peg: gem, confidence: disputed, source: "Encyclopedia.com 1563; Brading/Cross 1564",
+     event: "Huancavelica: Amador de Cabrera learns of the mercury deposits",
+     scene: "A GEM-red cinnabar stone in Amador de Cabrera's hand reveals the mercury mountain of Huancavelica."}
+  - {year: 1565, peg: jelly, confidence: medium, source: "WP mirror: Potosi",
+     event: "Potosi: the rich surface ore runs out and silver output falls",
+     scene: "The JELLY of easy ore melts away at Potosi, and the silver output collapses."}
+  - {year: 1568, peg: chef, confidence: high, source: "Coinsweekly: Peruvian coins",
+     event: "Lima mint strikes its first coins, the first mint of South America",
+     scene: "A CHEF in Lima bakes the first silver coins of South America in the new mint."}
+  - {year: 1570, peg: goose, confidence: disputed, source: "WP mirror: Huancavelica 1570; Cross 1572",
+     event: "Crown takes control of the Huancavelica mercury mines",
+     scene: "The crown snatches the Huancavelica mercury mines from Cabrera and locks them in a GOOSE cage."}
+  - {year: 1574, peg: car, confidence: high, source: "Coinsweekly: Peruvian coins",
+     event: "Potosi mint strikes its first coins",
+     scene: "A CAR of Potosi silver drives into the new mint and comes out as the first Potosi coins."}
+  - {year: 1591, peg: boot, confidence: high, source: "WP: Alcabala",
+     event: "Crown extends the alcabala sales tax to Peru",
+     scene: "A BOOT kicks the alcabala sales tax over the Andes into Peru."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP mirror: Oruro",
+     event: "Oruro is founded as a silver-mining town",
+     scene: "Castro de Padilla serves silver ore on a SUSHI plate and founds Oruro as a mining town."}
+  - {year: 1613, peg: tomb, confidence: high, source: "WP mirror: Timeline of Lima",
+     event: "Lima's merchant guild (Consulado) begins to work",
+     scene: "Lima's merchants open their Consulado and hang their trade court's seal on a TOMB of old disputes."}
+  - {year: 1630, peg: mouse, confidence: high, source: "Britannica: Cerro de Pasco",
+     event: "Rich silver ores found at Cerro de Pasco",
+     scene: "A MOUSE scurries out of a Pasco cave with a shining silver crumb, and a new mine begins."}
+  - {year: 1649, peg: rope, confidence: medium, source: "WP mirror: Spanish dollar (Potosi Mint Fraud)",
+     event: "Great Potosi mint fraud: underweight silver coins are exposed",
+     scene: "Royal inspectors tie the crooked Potosi mint masters with a ROPE for their thin, underweight coins."}
+  - {year: 1747, peg: rock, confidence: high, source: "Search: Compania de Azogueros",
+     event: "Potosi refiners form a company to lend money and supplies to the mines",
+     scene: "Potosi refiners throw their silver into a ROCK vault, a shared fund that lends to the mines."}
+  - {year: 1752, peg: lion, confidence: high, source: "Encyclopedia.com: Banco de San Carlos",
+     event: "Potosi refiners' fund becomes a silver-buying bank under part royal control",
+     scene: "A royal LION sits on the Potosi refiners' fund and buys raw silver for cash."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Search: Real Cedula of December",
+     event: "Royal decree orders the tobacco monopoly for Peru and New Granada",
+     scene: "Royal JELLY seals shut every private tobacco shop from Lima to Bogota under the new crown monopoly."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "Encyclopedia.com: Banco de San Carlos",
+     event: "Potosi bank becomes the royal Banco de San Carlos",
+     scene: "A COWBOY ropes the Potosi refiners' bank and brands it Banco de San Carlos for the king."}
+  - {year: 1787, peg: fox, confidence: medium, source: "WP mirror: Bourbon Reforms",
+     event: "Mining Tribunal of Lima is set up for Peru",
+     scene: "A FOX in a judge's wig takes its seat on Lima's new Mining Tribunal for the mines of Peru."}
+  - {year: 1799, peg: pipe, confidence: medium, source: "WP mirror: Timeline of Lima",
+     event: "New highway opens between Lima and its port, Callao",
+     scene: "A long PIPE of paved road carries carts of silver and goods from Lima to the port of Callao."}
+  # Brazil
+  - {year: 1500, peg: sauce, confidence: medium, source: "Encyclopedia.com: Pinzon (Mar Dulce)",
+     event: "Vicente Yanez Pinzon reaches the mouth of the Amazon and calls it the Freshwater Sea",
+     scene: "Pinzon dips a cup of SAUCE-brown fresh water out of the open sea and finds the mouth of the Amazon."}
+  - {year: 1502, peg: sun, confidence: medium, source: "WP mirror: Timeline of Salvador, Bahia",
+     event: "Vespucci's Portuguese voyage names the Bay of All Saints",
+     scene: "Vespucci holds up the SUN to light a wide Brazilian bay and names it the Bay of All Saints."}
+  - {year: 1502, peg: sun, confidence: high, source: "Cambridge (Americas): leasing of Brazil",
+     event: "Fernao de Loronha's merchants lease the brazilwood trade from the crown",
+     scene: "Loronha's Lisbon merchants rent the whole SUN-baked Brazil coast to cut brazilwood."}
+  - {year: 1504, peg: sewer, confidence: unverified,
+     event: "Gonneville's French ship loads brazilwood on the Brazilian coast",
+     scene: "Gonneville's French ship drops anchor by a SEWER of red dye and fills its hold with brazilwood."}
+  - {year: 1511, peg: tattoo, confidence: unverified,
+     event: "The ship Bretoa loads brazilwood, parrots and captives at Cabo Frio",
+     scene: "A TATTOO of red brazilwood dye marks every log the Bretoa loads at Cabo Frio."}
+  - {year: 1512, peg: tongue, confidence: medium, source: "Search: charter to Jorge Lopes Bixorda",
+     event: "Brazilwood lease passes to a new group under Jorge Lopes Bixorda",
+     scene: "Loronha hands his brazilwood lease to Jorge Lopes Bixorda on the tip of his TONGUE."}
+  - {year: 1534, peg: hammer, confidence: high, source: "WP: Engenho dos Erasmos",
+     event: "Sao Vicente: Martim Afonso and partners build the Governor's sugar mill",
+     scene: "Martim Afonso swings a HAMMER to build the Governor's sugar mill, later the Erasmos mill, at Sao Vicente."}
+  - {year: 1637, peg: mug, confidence: high, source: "Encyclopedia.com: Pedro de Teixeira",
+     event: "Pedro Teixeira's canoe fleet starts up the Amazon from Para to Quito",
+     scene: "Pedro Teixeira paddles a MUG-shaped canoe fleet up the whole Amazon from Para to Quito."}
+  - {year: 1674, peg: car, confidence: unverified,
+     event: "Fernao Dias Pais leads his bandeira into the interior to look for emeralds",
+     scene: "Fernao Dias Pais drives his CAR into the backlands of Minas, hunting for green emeralds."}
+  - {year: 1682, peg: oven, confidence: unverified,
+     event: "Maranhao Trade Company gets the monopoly of trade and slaves for Maranhao",
+     scene: "The Maranhao Trade Company puts every bale of the colony's trade in its OVEN."}
+  - {year: 1693, peg: palm, confidence: disputed, source: "UNL eve: 1693 Arzao; WP: 1695 Borba Gato",
+     event: "Bandeirantes find gold in Minas Gerais and start the gold rush",
+     scene: "A paulista bandeirante pans a PALM full of gold dust from a Minas stream, and the gold rush starts."}
+  - {year: 1694, peg: bear, confidence: high, source: "Search: Casa da Moeda founding decree",
+     event: "Pedro II orders Brazil's first mint at Salvador",
+     scene: "A BEAR in Salvador stamps the first Brazilian coins at the new mint."}
+  - {year: 1702, peg: sun, confidence: medium, source: "Search: Casa da Moeda moves (also 1699)",
+     event: "Brazil's mint moves to Rio de Janeiro to coin Minas gold",
+     scene: "The Rio SUN pulls the Brazilian mint south from Salvador, closer to the Minas gold."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "UNL eve: Antonil (seized in May)",
+     event: "Antonil's book on the wealth of Brazil is printed in Lisbon and seized at once",
+     scene: "Royal agents seize every copy of Antonil's book on Brazil's sugar and gold mines and wrap them in a TATTOO-ink blacklist."}
+  - {year: 1718, peg: dove, confidence: medium, source: "USP article: Cuiaba gold (also 1719)",
+     event: "Gold found on the Coxipo and Cuiaba rivers",
+     scene: "A DOVE drinks from the Coxipo river and flies up with gold dust on its feet."}
+  - {year: 1725, peg: nail, confidence: disputed, source: "UEG: 1725; other historians 1726",
+     event: "Bartolomeu Bueno, the Anhanguera, finds gold in Goias",
+     scene: "The Anhanguera hammers a NAIL into the bank of the Vermelho river to mark the gold of Goias."}
+  - {year: 1727, peg: ink, confidence: high, source: "WP mirror: Coffee production in Brazil",
+     event: "Francisco de Melo Palheta plants the first coffee in Brazil, in Para",
+     scene: "Palheta writes his name in INK on the first coffee seedling of Brazil and plants it in Para."}
+  - {year: 1729, peg: knob, confidence: high, source: "Search: diamonds at Arraial do Tejuco",
+     event: "Diamonds found at Tejuco in the Serro do Frio",
+     scene: "A KNOB of rough diamond rolls out of a gold pan at Tejuco."}
+  - {year: 1734, peg: hammer, confidence: high, source: "Search: demarcation of the Diamond District",
+     event: "Crown marks out the Diamond District around Tejuco",
+     scene: "A royal HAMMER drives in the boundary posts of the closed Diamond District."}
+  - {year: 1734, peg: hammer, confidence: disputed, source: "Search: Guapore 1734; other source 1736",
+     event: "Gold found on the Guapore in Mato Grosso",
+     scene: "A HAMMER cracks quartz on the Guapore river and gold spills out in Mato Grosso."}
+  - {year: 1735, peg: mill, confidence: high, source: "Carrara: capitation (to August of the next year)",
+     event: "Minas Gerais: a head tax on each slave replaces the royal fifth on gold",
+     scene: "Officials count heads at a gold MILL in Minas and charge a tax for every slave instead of the fifth."}
+  - {year: 1739, peg: map, confidence: unverified,
+     event: "Diamond District is leased to private contractors",
+     scene: "Contractor Joao Fernandes de Oliveira rents the Diamond District and pays for it with a MAP of every stream."}
+  - {year: 1750, peg: lasso, confidence: high, source: "Search: alvara of December",
+     event: "Royal decree brings back the smelting houses and the royal fifth on gold",
+     scene: "A royal LASSO pulls all Minas gold back into the smelting houses to pay the fifth."}
+  - {year: 1755, peg: lily, confidence: high, source: "dl.uc.pt: decree of 7 June",
+     event: "Pombal founds the Grao-Para and Maranhao Company with a monopoly of trade",
+     scene: "Pombal hangs a LILY over the mouth of the Amazon: only his Grao-Para company may trade there."}
+  - {year: 1759, peg: elbow, confidence: high, source: "dl.uc.pt: decree of August",
+     event: "Pombal founds the Pernambuco and Paraiba Company for the sugar trade",
+     scene: "Pombal shakes the ELBOW of the Pernambuco sugar planters and makes them sell to his new company."}
+  - {year: 1763, peg: gem, confidence: medium, source: "Search: derrama only in this year and next",
+     event: "Minas Gerais: the first derrama makes residents pay the missing gold quota",
+     scene: "A GEM is torn from every Minas household in the first derrama to fill the crown's gold quota."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP mirror: Coffee production in Brazil",
+     event: "Coffee reaches Rio de Janeiro from Para",
+     scene: "A GOOSE flies a coffee branch from Para down the coast to Rio de Janeiro."}
+  - {year: 1771, peg: cat, confidence: high, source: "Search: Pombal and the Real Extracao",
+     event: "Pombal sets up the Royal Extraction, a crown monopoly of diamond mining",
+     scene: "Pombal's CAT pounces on the Diamond District and keeps every stone for the crown's Royal Extraction."}
+  - {year: 1785, peg: waffle, confidence: high, source: "USP: alvara of 5 January",
+     event: "Maria I bans gold, silk, linen and fine cotton manufactures in Brazil",
+     scene: "Maria I flips a WAFFLE iron shut on every Brazilian loom, except coarse cotton for sacks."}
+  # Southern Cone (Rio de la Plata, Paraguay, Chile)
+  - {year: 1516, peg: dish, confidence: high, source: "Britannica: Juan Diaz de Solis",
+     event: "Juan Diaz de Solis reaches the Rio de la Plata and is killed on its shore",
+     scene: "Warriors smash a DISH over Solis's head on the shore of the Rio de la Plata, which he has just reached."}
+  - {year: 1527, peg: ink, confidence: unverified,
+     event: "Sebastian Cabot sails up the Parana for silver and builds the fort of Sancti Spiritus",
+     scene: "Sebastian Cabot dips his pen in INK and names the river Plata for the silver he hopes to find up the Parana."}
+  - {year: 1541, peg: radio, confidence: unverified,
+     event: "Chile: Valdivia's men wash gold at Marga-Marga",
+     scene: "Valdivia's men pan gold from the Marga-Marga stream and pack the first Chilean gold into a RADIO case."}
+  - {year: 1587, peg: fox, confidence: medium, source: "Diario Jornada: first export",
+     event: "First export ship sails from Buenos Aires to Brazil with Tucuman cloth and flour",
+     scene: "Bishop Vitoria's caravel sails out of Buenos Aires carrying Tucuman cloth, and a FOX steals silver in the hold."}
+  - {year: 1602, peg: sun, confidence: unverified,
+     event: "Crown lets Buenos Aires export a small quota of grain and hides",
+     scene: "A royal SUN shines on a small permit: Buenos Aires may ship out a few holds of grain and hides."}
+  - {year: 1611, peg: tattoo, confidence: medium, source: "INAC Uruguay: 1611/1617",
+     event: "Hernandarias lands cattle in the Banda Oriental",
+     scene: "Hernandarias rows heifers and bulls to the Banda Oriental, and one calf wears a TATTOO of his brand."}
+  - {year: 1622, peg: nun, confidence: unverified,
+     event: "Dry customs house at Cordoba taxes goods between Buenos Aires and Peru",
+     scene: "A NUN at the Cordoba dry customs house taxes every cart on the road from Buenos Aires to Peru."}
+  - {year: 1680, peg: vase, confidence: medium, source: "La Manana (Uruguay): vaquerias",
+     event: "Cattle hunts (vaquerias) begin to drive Banda Oriental herds to the Jesuit missions",
+     scene: "Mission riders lure wild Banda Oriental cattle with a VASE of salt and drive them to the Jesuit missions."}
+  - {year: 1743, peg: ram, confidence: medium, source: "Casa de Moneda de Chile (also 1749)",
+     event: "Santiago de Chile mint is founded",
+     scene: "A RAM butts open the gates of the new Santiago mint, the first mint of Chile."}
+  - {year: 1777, peg: cake, confidence: unverified,
+     event: "Cevallos lets goods from Buenos Aires go freely into the interior",
+     scene: "Cevallos cuts a CAKE of trade rules and lets Buenos Aires goods roll free to Peru."}
+  - {year: 1789, peg: fob, confidence: unverified,
+     event: "Royal Maritime Company is founded for whaling and fishing off Patagonia",
+     scene: "The Royal Maritime Company hooks a whale with a FOB chain off Patagonia."}
+  - {year: 1794, peg: bear, confidence: high, source: "WP mirror: Timeline of Buenos Aires",
+     event: "Merchant guild (Consulado) of Buenos Aires is set up; Belgrano is its secretary",
+     scene: "Belgrano bangs a BEAR-skin drum to open the Buenos Aires Consulado as its secretary."}
+  - {year: 1795, peg: bell, confidence: unverified,
+     event: "Merchant guild (Consulado) of Santiago de Chile is set up",
+     scene: "Santiago merchants hang a BELL over the door of their new merchant Consulado."}

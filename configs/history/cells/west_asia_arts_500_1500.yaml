@@ -1,0 +1,692 @@
+# Cell: West Asia x arts x 500 to 1499. DRAFT 2026-11-11.
+# Scope: Anatolia (not Constantinople), Levant, Mesopotamia, Arabian Peninsula, Iran, Caucasus, Cyprus.
+# Literature, visual art, architecture (religious buildings included: no older west_asia religion cell
+# for this period), music, calligraphy, manuscripts. Rulers, wars and city foundings as states (Baghdad,
+# Samarra as capital) are in west_asia_politics_500_1500. Constantinople works are in eastern_europe.
+# Dates: memory pass + web check (45 searches + WebFetch of the Kiwix WP mirror). Peg rules as world_dates.yaml.
+# A work -> its first public appearance (completion or opening of a building, completion of a book).
+# Range rule: conventional c. date, else start of phase; one work of uncertain date -> midpoint of span.
+# Hijri straddle (one year apart only by the Hijri year): medium. Peg = last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Arabia and Yemen
+  - {year: 544, peg: warrior, confidence: disputed, source: "WP mirror: Imru' al-Qais (544; text c. 561-565)",
+     event: "Imru' al-Qais, poet of the first Mu'allaqa ode, dies (approximate)",
+     scene: "Imru' al-Qais, the WARRIOR prince of the first hanging ode, dies far from the Kinda kingdom he never wins back."}
+  - {year: 622, peg: nun, confidence: high, source: "WP mirror: Al-Masjid an-Nabawi (622; infobox 623)",
+     event: "Muhammad builds the first mosque at Medina, of mud brick and palm trunks",
+     scene: "A NUN stacks mud bricks around palm-trunk pillars, and the first mosque of Medina rises beside the Prophet's house."}
+  - {year: 630, peg: mouse, confidence: medium, source: "Search: Copenhagen Islam Horn db (9 AH = 630/631)",
+     event: "Ka'b ibn Zuhayr recites his ode Banat Su'ad to Muhammad and receives his mantle",
+     scene: "A MOUSE recites Banat Su'ad in Ka'b's voice, and Muhammad throws his own mantle over the little poet."}
+  - {year: 646, peg: roach, confidence: medium, source: "WP mirror: Al-Khansa (c. 646)",
+     event: "Al-Khansa, the great woman poet of elegies, dies (approximate)",
+     scene: "Al-Khansa's last elegy for her brother Sakhr floods a ROACH with tears, and the old poet of laments dies."}
+  - {year: 674, peg: car, confidence: medium, source: "WP mirror: Hassan ibn Thabit (674)",
+     event: "Hassan ibn Thabit, the poet of the Prophet, dies at Medina",
+     scene: "A CAR carries old Hassan ibn Thabit, the Prophet's own poet, to his grave in Medina."}
+  - {year: 707, peg: ski, confidence: medium, source: "WP mirror: Al-Masjid an-Nabawi (706 or 707)",
+     event: "Al-Walid I orders the Prophet's Mosque at Medina rebuilt in stone and mosaic",
+     scene: "Al-Walid's builders slide marble columns on a SKI into Medina and rebuild the Prophet's Mosque with gold mosaic."}
+  - {year: 712, peg: tongue, confidence: unverified,
+     event: "Umar ibn Abi Rabi'a, the love poet of Mecca, dies (approximate)",
+     scene: "Umar ibn Abi Rabi'a's TONGUE sings one last love song to the pilgrim girls of Mecca, and the poet dies."}
+  - {year: 1088, peg: fife, confidence: medium, source: "Search: Archnet / WP Queen Arwa Mosque (1087-1088)",
+     event: "Queen Arwa moves to Jibla and turns her old palace into the great mosque",
+     scene: "Queen Arwa plays a FIFE in her old Jibla palace hall, and the hall becomes the great mosque."}
+  - {year: 1295, peg: bell, confidence: medium, source: "Search: Archnet Ashrafiyya Ta'izz (phase one 1295-1297)",
+     event: "Rasulid sultan al-Ashraf Umar builds the first Ashrafiyya mosque at Ta'izz",
+     scene: "Rasulid al-Ashraf Umar hangs a white BELL-shaped dome over his new Ashrafiyya mosque below the Ta'izz citadel."}
+  # Levant: Syria, Palestine, Jordan, Lebanon
+  - {year: 542, peg: rhino, confidence: high, source: "WP mirror: Madaba Map (Nea dedicated 20 Nov 542)",
+     event: "Justinian's Nea Church of the Theotokos is dedicated in Jerusalem",
+     scene: "A RHINO hauls giant red columns up to Jerusalem, and Justinian's Nea Church is dedicated in November."}
+  - {year: 556, peg: leech, confidence: medium, source: "WP mirror: Madaba Map (between 542 and 570)",
+     event: "Madaba Map: a floor mosaic map of the Holy Land is laid in a church at Madaba (approximate)",
+     scene: "A LEECH sucks colour from tiny stones, and Madaba masons spit them out as a floor map of Jerusalem and the Holy Land."}
+  - {year: 564, peg: cherry, confidence: unverified,
+     event: "Qasr ibn Wardan: a palace, church and barracks of brick and basalt rise in the Syrian steppe",
+     scene: "Justinian's builders stack CHERRY-red brick between black basalt and raise the palace and church of Qasr ibn Wardan."}
+  - {year: 586, peg: fish, confidence: high, source: "WP mirror: Rabbula Gospels",
+     event: "Rabbula Gospels: the scribe Rabbula finishes a painted Syriac Gospel book at Zagba",
+     scene: "A FISH-tailed scribe named Rabbula signs the last page of his painted Syriac Gospels at the monastery of Zagba."}
+  - {year: 587, peg: fox, confidence: high, source: "WP mirror: Um er-Rasas (Bishop Sergius 587)",
+     event: "Umm ar-Rasas: the mosaic floor of the Church of Bishop Sergius is laid",
+     scene: "A FOX lays the last stone of the mosaic floor in Bishop Sergius's church at Umm ar-Rasas."}
+  - {year: 691, peg: boot, confidence: medium, source: "WP mirror: Dome of the Rock (AH 72 = 691/692)",
+     event: "Dome of the Rock in Jerusalem is completed for Abd al-Malik",
+     scene: "A golden BOOT kicks the last scaffold off Abd al-Malik's Dome of the Rock, and the gold dome shines over Jerusalem."}
+  - {year: 705, peg: seal, confidence: medium, source: "WP mirror: Al-Aqsa Mosque (Abd al-Malik or al-Walid)",
+     event: "Al-Aqsa Mosque is built on the Haram in Jerusalem (approximate)",
+     scene: "A SEAL balances the first al-Aqsa Mosque on its nose and sets it down on the Jerusalem Haram for the Umayyads."}
+  - {year: 714, peg: tower, confidence: medium, source: "WP mirror: Anjar (graffiti 714; start 709-710)",
+     event: "Anjar: the Umayyads build a walled palace town in the Beqaa valley",
+     scene: "Al-Walid's son al-Abbas raises a round TOWER on every corner of the new walled town of Anjar."}
+  - {year: 715, peg: doll, confidence: medium, source: "WP mirror: Umayyad architecture (706-715)",
+     event: "Great Mosque of Damascus is completed for al-Walid I, with gold mosaic walls",
+     scene: "A DOLL dressed in green and gold mosaic opens the doors of al-Walid's finished Great Mosque of Damascus."}
+  - {year: 715, peg: doll, confidence: high, source: "WP mirror: Great Mosque of Aleppo",
+     event: "Al-Walid I begins the first Great Mosque of Aleppo",
+     scene: "Al-Walid's masons bury a clay DOLL in the foundation trench and begin the first Great Mosque of Aleppo."}
+  - {year: 727, peg: ink, confidence: high, source: "WP mirror: Umayyad architecture",
+     event: "Qasr al-Hayr al-Gharbi: Caliph Hisham builds a desert palace with painted floors",
+     scene: "Caliph Hisham pours INK and plaster over the floors of his new desert palace, Qasr al-Hayr al-Gharbi."}
+  - {year: 728, peg: knife, confidence: medium, source: "WP mirror: Umayyad architecture (inscription)",
+     event: "Qasr al-Hayr al-Sharqi: an inscription records Hisham's work on the eastern palace town",
+     scene: "A KNIFE carves Hisham's name into the gate of Qasr al-Hayr al-Sharqi, and the eastern palace town grows."}
+  - {year: 733, peg: mummy, confidence: medium, source: "WP mirror: Qusayr 'Amra (between 723 and 743)",
+     event: "Qusayr Amra: a desert bath lodge is painted with hunts, kings and a dome of stars (approximate)",
+     scene: "A MUMMY paints the zodiac on the bath dome of Qusayr Amra, then hunters and six kings on its walls."}
+  - {year: 734, peg: hammer, confidence: medium, source: "WP mirror: Hisham's Palace (724-743)",
+     event: "Hisham's Palace near Jericho is built, with the Tree of Life mosaic (approximate)",
+     scene: "A HAMMER taps lions and gazelles under the Tree of Life into the bath-hall floor of Hisham's Palace at Jericho."}
+  - {year: 743, peg: ram, confidence: medium, source: "WP mirror: Mshatta Facade (al-Walid II, 743-744)",
+     event: "Mshatta: work starts on a desert palace with a richly carved stone facade",
+     scene: "A RAM butts the carved stone vines into place on the facade of Mshatta, the palace of al-Walid II."}
+  - {year: 756, peg: leech, confidence: medium, source: "Search: ACOR / WP Umm ar-Rasas (756; also 718, 785)",
+     event: "Umm ar-Rasas: the Church of Saint Stephen receives its mosaic of walled cities",
+     scene: "A LEECH crawls from Jerusalem to Gaza across the mosaic of walled cities on Saint Stephen's floor at Umm ar-Rasas."}
+  - {year: 772, peg: coin, confidence: high, source: "WP mirror: Abbasid architecture",
+     event: "Al-Mansur builds al-Rafiqa, a walled city with a horseshoe plan beside Raqqa",
+     scene: "Al-Mansur presses a giant COIN into the Euphrates bank, and its rim becomes the horseshoe wall of al-Rafiqa."}
+  - {year: 796, peg: peach, confidence: high, source: "WP mirror: Abbasid architecture (796-808)",
+     event: "Harun al-Rashid builds his palaces at Raqqa and holds court there",
+     scene: "Harun al-Rashid plants a PEACH orchard among his new Raqqa palaces and moves his court to the Euphrates."}
+  - {year: 948, peg: reef, confidence: high, source: "WP mirror: Al-Mutanabbi",
+     event: "Al-Mutanabbi joins the court of Sayf al-Dawla at Aleppo",
+     scene: "Al-Mutanabbi swims across a REEF of rival poets and becomes Sayf al-Dawla's court poet in Aleppo."}
+  - {year: 957, peg: log, confidence: high, source: "WP mirror: Al-Mutanabbi",
+     event: "Al-Mutanabbi leaves Aleppo for Egypt",
+     scene: "Al-Mutanabbi floats away from Aleppo on a LOG down the coast to Egypt, angry with Sayf al-Dawla's court."}
+  - {year: 962, peg: chain, confidence: disputed, source: "WP mirror: Abu Firas (962; Ibn Khallikan 959)",
+     event: "Byzantines capture Abu Firas, who writes his prison poems, the Rumiyyat",
+     scene: "A Byzantine CHAIN binds Abu Firas, and in prison the Hamdanid prince writes his Rumiyyat poems."}
+  - {year: 968, peg: chef, confidence: high, source: "WP mirror: Abu Firas al-Hamdani (4 April 968)",
+     event: "The poet prince Abu Firas al-Hamdani is killed in a fight for Aleppo",
+     scene: "A CHEF of war, Karghawayh, carves up the poet prince Abu Firas in April as he fights for the Aleppo throne."}
+  - {year: 1010, peg: dice, confidence: medium, source: "WP mirror: Al-Ma'arri (in about 1010)",
+     event: "Blind poet al-Ma'arri leaves Baghdad and goes home to Ma'arra (approximate)",
+     scene: "Blind al-Ma'arri throws DICE on the Baghdad road, they say go home, and he shuts himself up in Ma'arra."}
+  - {year: 1022, peg: nun, confidence: high, source: "WP mirror: Dome of the Rock (1015 fall; 1022-23)",
+     event: "The fallen dome of the Dome of the Rock is rebuilt under the Fatimids",
+     scene: "A NUN hammers new timber ribs over the Rock and the Fatimids lift the fallen dome back into the sky."}
+  - {year: 1034, peg: hammer, confidence: medium, source: "WP mirror: Al-Aqsa Mosque (1034-1036)",
+     event: "Fatimid caliph al-Zahir starts to rebuild al-Aqsa after an earthquake",
+     scene: "Al-Zahir's HAMMER knocks the earthquake rubble out of al-Aqsa, and the Fatimid rebuilding begins."}
+  - {year: 1057, peg: log, confidence: high, source: "WP mirror: Al-Ma'arri (May 1057)",
+     event: "Al-Ma'arri, blind poet of the Luzumiyyat, dies at Ma'arra",
+     scene: "Blind al-Ma'arri, who never eats meat, sits on a LOG in his Ma'arra garden and dies in May."}
+  - {year: 1094, peg: bear, confidence: high, source: "WP mirror: Great Mosque of Aleppo (1090-1094)",
+     event: "The Seljuk minaret of the Great Mosque of Aleppo is completed",
+     scene: "A BEAR climbs the new square Seljuk minaret of Aleppo's Great Mosque and sets the last carved stone."}
+  - {year: 1137, peg: mug, confidence: medium, source: "Search: British Library Melisende Psalter (1131-1143)",
+     event: "Melisende Psalter: Basilius and other artists paint a psalter for Queen Melisende in Jerusalem (approximate)",
+     scene: "Basilius dips his brush in a MUG of gold and signs the psalter he paints for Queen Melisende of Jerusalem."}
+  - {year: 1149, peg: rope, confidence: high, source: "Search: Custodia; Runciman (15 July 1149)",
+     event: "Crusaders consecrate the rebuilt Church of the Holy Sepulchre",
+     scene: "Crusaders pull a ROPE, the curtain falls, and their rebuilt Holy Sepulchre is consecrated in July."}
+  - {year: 1159, peg: elbow, confidence: high, source: "WP mirror: Great Mosque of Aleppo",
+     event: "Nur al-Din restores and enlarges the Great Mosque of Aleppo after a fire",
+     scene: "Nur al-Din pushes the burnt walls of Aleppo's Great Mosque out with his ELBOW and builds them wider."}
+  - {year: 1187, peg: fox, confidence: high, source: "WP mirror: Al-Aqsa Mosque (November 1187)",
+     event: "Saladin puts Nur al-Din's carved minbar into al-Aqsa",
+     scene: "A FOX carries Nur al-Din's carved wooden minbar from Aleppo, and Saladin sets it up in al-Aqsa."}
+  - {year: 1235, peg: mill, confidence: medium, source: "Search: Archnet / WP al-Firdaws Madrasa (1235-36)",
+     event: "Dayfa Khatun founds the Madrasa al-Firdaws outside Aleppo",
+     scene: "Queen Dayfa Khatun turns a water MILL into a courtyard pool and opens her Madrasa al-Firdaws outside Aleppo."}
+  - {year: 1277, peg: cake, confidence: medium, source: "WP mirror: Al-Zahiriyya Library (1277-1281)",
+     event: "Work starts on the domed tomb madrasa of Baybars, al-Zahiriyya, in Damascus",
+     scene: "A domed CAKE with gold mosaic icing becomes the tomb of Baybars, and the Zahiriyya rises in Damascus."}
+  - {year: 1285, peg: waffle, confidence: high, source: "WP mirror: Great Mosque of Aleppo",
+     event: "Sultan Qalawun replaces the burnt mihrab of the Great Mosque of Aleppo",
+     scene: "Qalawun presses a stone WAFFLE of coloured marble into the burnt prayer niche of Aleppo's Great Mosque."}
+  - {year: 1329, peg: knob, confidence: medium, source: "Search: Archnet Tankiziyya (729 AH = 1328-29)",
+     event: "Governor Tankiz finishes his madrasa, the Tankiziyya, beside the Haram in Jerusalem",
+     scene: "Tankiz turns the bronze KNOB of his new madrasa at the Chain Gate of the Jerusalem Haram."}
+  - {year: 1336, peg: match, confidence: high, source: "Search: WP Cotton Merchants' Market (737 AH)",
+     event: "Tankiz builds the Cotton Merchants' Market and its gate in Jerusalem",
+     scene: "A MATCH lights the lamps of Tankiz's new vaulted Cotton Merchants' Market and its gate to the Haram."}
+  - {year: 1417, peg: dog, confidence: disputed, source: "Search: WP Nasimi (1417; most likely 1418-19)",
+     event: "Hurufi poet Imadaddin Nasimi is executed in Aleppo",
+     scene: "Aleppo's judges set a DOG on the Hurufi poet Nasimi, and the master of Turkic verse is executed."}
+  - {year: 1482, peg: oven, confidence: high, source: "Search: WP Madrasa al-Ashrafiyya (1480-1482)",
+     event: "Sultan Qaytbay's Ashrafiyya madrasa is completed on the Jerusalem Haram",
+     scene: "Qaytbay's masons bake red and cream stones in an OVEN and finish the Ashrafiyya madrasa on the Haram."}
+  - {year: 1482, peg: oven, confidence: high, source: "Search: Archnet / WP Fountain of Qayt Bay (887 AH)",
+     event: "Qaytbay rebuilds the domed public fountain beside his madrasa on the Haram",
+     scene: "Qaytbay pours water from an OVEN-shaped carved stone dome, and his rebuilt fountain serves the Haram."}
+  # Iraq and the Jazira
+  - {year: 540, peg: horse, confidence: low, source: "Search: Madain Project (after 540; some say 3rd c.)",
+     event: "Taq Kasra: the great brick vault of the Sasanian palace at Ctesiphon is built (approximate)",
+     scene: "Khosrow I rides a HORSE under the new brick vault of Taq Kasra, the widest arch of Ctesiphon."}
+  - {year: 661, peg: jet, confidence: medium, source: "Search: Dergipark article (660/661 in Kufa)",
+     event: "Labid, the last living poet of the Mu'allaqat, dies at Kufa (approximate)",
+     scene: "A JET flies old Labid's hanging ode out of Kufa, and the last of the Mu'allaqa poets dies there."}
+  - {year: 708, peg: sofa, confidence: medium, source: "WP mirror: Al-Akhtal (92/708)",
+     event: "Al-Akhtal, the Christian court poet of the Umayyads, dies",
+     scene: "Al-Akhtal, the Christian poet of the caliphs, falls asleep on a wine-stained SOFA and dies."}
+  - {year: 750, peg: lasso, confidence: medium, source: "WP mirror: Kalila and Dimna (eighth century)",
+     event: "Ibn al-Muqaffa' puts the animal fables Kalila wa Dimna into Arabic prose (approximate)",
+     scene: "Ibn al-Muqaffa' throws a LASSO round two jackals, Kalila and Dimna, and drags their fables into Arabic."}
+  - {year: 775, peg: eagle, confidence: medium, source: "Search: WP Ukhaidir (775; Isa ibn Musa)",
+     event: "Ukhaidir: a fortified Abbasid palace is built in the desert west of Karbala",
+     scene: "An EAGLE drops brick after brick in the desert west of Karbala, and the fortress palace of Ukhaidir stands."}
+  - {year: 783, peg: foam, confidence: high, source: "WP mirror: Bashshar ibn Burd (714-783)",
+     event: "Blind poet Bashshar ibn Burd is put to death as a heretic",
+     scene: "Al-Mahdi's men drown blind Bashshar ibn Burd in FOAM, and the bold poet of Basra dies a heretic."}
+  - {year: 814, peg: tower, confidence: medium, source: "WP mirror: Abu Nuwas (c. 814)",
+     event: "Abu Nuwas, poet of wine and love, dies at Baghdad (approximate)",
+     scene: "Abu Nuwas lifts his last cup of wine from a Baghdad TOWER and the wine poet dies."}
+  - {year: 836, peg: match, confidence: medium, source: "WP mirror: Abbasid architecture (begun c. 836)",
+     event: "Samarra: al-Mu'tasim begins the palace of the caliphate, the Jawsaq al-Khaqani",
+     scene: "Al-Mu'tasim lays out his huge Samarra palace with MATCH sticks, and the Jawsaq al-Khaqani begins."}
+  - {year: 845, peg: railway, confidence: high, source: "WP mirror: Abu Tammam (845, in Mosul)",
+     event: "Abu Tammam, poet and compiler of the Hamasa anthology, dies at Mosul",
+     scene: "Abu Tammam's Hamasa anthology rides a RAILWAY of verse to Mosul, where its old compiler dies."}
+  - {year: 852, peg: lion, confidence: medium, source: "WP mirror: Abbasid architecture (848-852)",
+     event: "Great Mosque of Samarra is completed, with its spiral minaret al-Malwiya",
+     scene: "A LION runs up the spiral ramp of al-Malwiya and roars from the top of the finished Great Mosque of Samarra."}
+  - {year: 861, peg: jet, confidence: medium, source: "WP mirror: Abbasid architecture (859-861)",
+     event: "Abu Dulaf Mosque with a second spiral minaret is completed at Samarra",
+     scene: "A JET spirals around the brick minaret of the new Abu Dulaf Mosque in al-Mutawakkil's north Samarra."}
+  - {year: 862, peg: chain, confidence: medium, source: "WP mirror: Abbasid architecture (c. 862)",
+     event: "Qubbat al-Sulaybiyya: an octagonal domed tomb, the first of its kind, is built at Samarra (approximate)",
+     scene: "A CHAIN of eight arches closes around a dome, and Qubbat al-Sulaybiyya, Islam's first domed tomb, stands at Samarra."}
+  - {year: 869, peg: ship, confidence: medium, source: "WP mirror: Al-Jahiz (Muharram 255 = Dec 868-Jan 869)",
+     event: "Al-Jahiz, author of the Book of Animals and the Book of Misers, dies at Basra",
+     scene: "Al-Jahiz's Book of Animals sails away in a SHIP full of beasts, and its old author dies at Basra."}
+  - {year: 882, peg: oven, confidence: medium, source: "WP mirror: Abbasid architecture (878-882)",
+     event: "Qasr al-Ashiq: the last Abbasid palace at Samarra is completed",
+     scene: "Al-Mu'tamid's bricks come out of the OVEN for the last Samarra palace, Qasr al-Ashiq, across the Tigris."}
+  - {year: 888, peg: fife, confidence: high, source: "WP mirror: Ibn al-Mu'tazz (composed 888)",
+     event: "Ibn al-Mu'tazz writes the Kitab al-Badi', the first Arabic book on poetic style",
+     scene: "Prince Ibn al-Mu'tazz plays each figure of speech on a FIFE and writes the Kitab al-Badi'."}
+  - {year: 940, peg: horse, confidence: high, source: "WP mirror: Ibn Muqla (20 July 940)",
+     event: "Ibn Muqla, who gave Arabic script its fixed proportions, dies in prison",
+     scene: "A HORSE kicks Ibn Muqla's prison door in vain: the master of proportioned script dies inside, his right hand cut off."}
+  - {year: 965, peg: jelly, confidence: high, source: "WP mirror: Al-Mutanabbi (23 September 965)",
+     event: "Al-Mutanabbi is killed by robbers near Baghdad",
+     scene: "Robbers slip on JELLY and still kill al-Mutanabbi on the road near Baghdad in September."}
+  - {year: 967, peg: jockey, confidence: medium, source: "WP mirror: Abu al-Faraj al-Isfahani (967)",
+     event: "Abu al-Faraj al-Isfahani, author of the Book of Songs, dies at Baghdad",
+     scene: "A JOCKEY sings each song of the Kitab al-Aghani as he gallops behind the coffin of Abu al-Faraj."}
+  - {year: 987, peg: fox, confidence: high, source: "WP mirror: Ibn al-Nadim (began 987)",
+     event: "Ibn al-Nadim begins the Fihrist, a catalogue of all books in Arabic, at Baghdad",
+     scene: "A FOX runs through every Baghdad bookshop while Ibn al-Nadim starts his Fihrist catalogue of all Arabic books."}
+  - {year: 1000, peg: sauce, confidence: medium, source: "Search: Google Arts / Chester Beatty (391 AH)",
+     event: "Ibn al-Bawwab copies a Qur'an on paper in cursive script at Baghdad",
+     scene: "Ibn al-Bawwab dips his reed pen in black SAUCE and writes a whole Qur'an on paper in his round cursive hand."}
+  - {year: 1022, peg: nun, confidence: disputed, source: "WP mirror: Ibn al-Bawwab (1022 or 1031)",
+     event: "Calligrapher Ibn al-Bawwab dies at Baghdad",
+     scene: "A NUN puts down the reed pen of Ibn al-Bawwab, and the great calligrapher dies at Baghdad."}
+  - {year: 1085, peg: waffle, confidence: high, source: "Search: Archnet / Smarthistory Imam Dur (1085)",
+     event: "Imam Dur: a tomb near Samarra gets the oldest dated muqarnas dome",
+     scene: "A WAFFLE of stacked brick cells grows into a dome, and Imam Dur gets the first dated muqarnas roof."}
+  - {year: 1122, peg: nun, confidence: high, source: "WP mirror: Maqamat al-Hariri (10 September 1122)",
+     event: "Al-Hariri of Basra, author of the Maqamat, dies",
+     scene: "A NUN reads the last trick of the rogue Abu Zayd to al-Hariri, and the Basra author of the Maqamat dies."}
+  - {year: 1172, peg: coin, confidence: high, source: "Search: Google Arts al-Hadba (1172; 568 AH)",
+     event: "Nur al-Din builds the Great Mosque of al-Nuri at Mosul with its minaret al-Hadba",
+     scene: "Nur al-Din pays a gold COIN per brick, and al-Hadba, the leaning minaret of his Mosul mosque, goes up."}
+  - {year: 1199, peg: pipe, confidence: medium, source: "Search: QSpace, Kitab al-Diryaq frontispiece 1199",
+     event: "Kitab al-Diryaq: an illustrated Book of Antidotes is made in northern Iraq",
+     scene: "A snake slides out of a PIPE across the painted frontispiece of the Book of Antidotes in northern Iraq."}
+  - {year: 1218, peg: dove, confidence: medium, source: "Search: WP Kitab al-Aghani (Mosul, c. 1217-1219)",
+     event: "Mosul painters make a twenty-volume Book of Songs for Badr al-Din Lu'lu'",
+     scene: "A DOVE flies into each frontispiece of the twenty-volume Book of Songs painted at Mosul for Badr al-Din Lu'lu'."}
+  - {year: 1220, peg: nose, confidence: disputed, source: "Search: Leiden; Kominko (1220, 1239 or 1260)",
+     event: "A monk of Mar Mattai near Mosul copies and paints an illustrated Syriac Gospel book",
+     scene: "A painted Syriac Gospel book pokes its NOSE out of Mar Mattai: the monk Mubarak has copied and illustrated it."}
+  - {year: 1221, peg: ant, confidence: high, source: "WP mirror: Abbasid architecture",
+     event: "Wastani Gate, a brick gate of the walls of Baghdad, is built",
+     scene: "An ANT army carries brick dragons up to the new Wastani Gate in the east wall of Baghdad."}
+  - {year: 1232, peg: moon, confidence: high, source: "Search: British Museum / WP Blacas ewer",
+     event: "Blacas ewer: Shuja' ibn Man'a makes an inlaid brass ewer at Mosul",
+     scene: "Shuja' ibn Man'a inlays a silver MOON and court scenes in a brass ewer and signs it at Mosul."}
+  - {year: 1233, peg: mummy, confidence: high, source: "WP mirror: Abbasid architecture (1228-1233)",
+     event: "Mustansiriya Madrasa in Baghdad is completed",
+     scene: "A MUMMY unwraps itself into the scholars' gowns of the finished Mustansiriya Madrasa, open to all four law schools in Baghdad."}
+  - {year: 1237, peg: mug, confidence: high, source: "WP mirror: Maqamat al-Hariri (BnF, 1237)",
+     event: "Al-Wasiti copies and paints the Maqamat of al-Hariri at Baghdad",
+     scene: "Al-Wasiti fills a MUG with ink and paints dozens of lively scenes into his Baghdad copy of the Maqamat."}
+  - {year: 1282, peg: oven, confidence: medium, source: "WP mirror: Yaqut al-Musta'simi (681 AH)",
+     event: "Yaqut al-Musta'simi copies a Qur'an at Baghdad",
+     scene: "Yaqut al-Musta'simi cuts his reed pen slant over an OVEN fire and copies a Qur'an in Baghdad."}
+  - {year: 1294, peg: bear, confidence: medium, source: "Search: Qatar Digital Library (693 AH)",
+     event: "Safi al-Din al-Urmawi, author of the Book of Cycles on music, dies",
+     scene: "A BEAR plays the last cycle of Safi al-Din's music book on the lute, and the great music theorist dies."}
+  - {year: 1298, peg: beehive, confidence: medium, source: "WP mirror: Yaqut al-Musta'simi",
+     event: "Yaqut al-Musta'simi, master of the six scripts, dies at Baghdad",
+     scene: "Six pupils carry Yaqut al-Musta'simi out of Baghdad in a BEEHIVE, one for each of his six scripts."}
+  - {year: 1357, peg: log, confidence: high, source: "Search: Archnet / WP Mirjan Mosque (758 AH)",
+     event: "Amin al-Din Mirjan completes the Mirjaniyya madrasa in Baghdad",
+     scene: "Mirjan sets a carved LOG of brick lettering over the gate of his finished Mirjaniyya madrasa in Baghdad."}
+  # Iran
+  - {year: 570, peg: goose, confidence: medium, source: "Search: Borzuya encyclopedia entry (around 570)",
+     event: "Borzuya puts the Indian fables of Kalila and Dimna into Middle Persian for Khosrow I (approximate)",
+     scene: "A GOOSE flies the Indian fable book home to Khosrow I, and Borzuya puts Kalila and Dimna into Persian."}
+  - {year: 600, peg: cheese, confidence: low, source: "WP mirror: Taq-e Bostan (Khosrow II, 591-628)",
+     event: "Taq-e Bostan: Khosrow II cuts a large grotto with royal hunt reliefs near Kermanshah (approximate)",
+     scene: "Khosrow II carves a cliff like CHEESE and leaves a big grotto with his armoured horseman and royal hunts."}
+  - {year: 770, peg: goose, confidence: medium, source: "WP mirror: Abbasid architecture (750-789)",
+     event: "Tarikhaneh mosque at Damghan is built (approximate)",
+     scene: "A GOOSE waddles between the fat round brick piers of the new Tarikhaneh mosque at Damghan."}
+  - {year: 771, peg: cat, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (circa 771)",
+     event: "The first Friday Mosque of Isfahan is built (approximate)",
+     scene: "A CAT marks out a square with its paws, and Isfahan builds its first Friday Mosque on the spot."}
+  - {year: 841, peg: radio, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (840-841)",
+     event: "A larger second Friday Mosque replaces the first at Isfahan",
+     scene: "A RADIO announces the new, bigger Friday Mosque of Isfahan, and the old one comes down."}
+  - {year: 977, peg: cake, confidence: high, source: "WP mirror: Shahnameh",
+     event: "Ferdowsi begins the Shahnameh at Tus",
+     scene: "Ferdowsi cuts a CAKE shaped like Iran and writes the first lines of the Shahnameh at Tus."}
+  - {year: 1006, peg: sushi, confidence: medium, source: "WP mirror: Gonbad-e Qabus (1006/7)",
+     event: "Gonbad-e Qabus: Qabus raises a tall brick tomb tower near Gorgan",
+     scene: "Qabus stacks SUSHI rolls of brick into a tall ribbed tower near Gorgan for his own tomb."}
+  - {year: 1010, peg: dice, confidence: high, source: "WP mirror: Shahnameh (8 March 1010)",
+     event: "Ferdowsi completes the Shahnameh",
+     scene: "Ferdowsi throws DICE for fifty thousand couplets, and the last one completes the Shahnameh in March."}
+  - {year: 1020, peg: nose, confidence: medium, source: "WP mirror: Persian literature (d. 1020)",
+     event: "Ferdowsi dies at Tus",
+     scene: "Ferdowsi's NOSE draws its last breath at Tus, over the finished pages of his Shahnameh."}
+  - {year: 1037, peg: mug, confidence: high, source: "Search: Archnet / WP Davazdah Imam (429 AH)",
+     event: "Davazdah Imam: the oldest dated building in Yazd is built",
+     scene: "A MUG of mortar sets the bricks of the Davazdah Imam tomb, and Yazd gets its oldest dated building."}
+  - {year: 1054, peg: lawyer, confidence: unverified,
+     event: "Gorgani writes Vis and Ramin, a Persian love romance (approximate)",
+     scene: "A LAWYER for old King Mobad loses the case, and Gorgani's lovers Vis and Ramin win in verse."}
+  - {year: 1068, peg: chef, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Kharraqan: the first of two brick tomb towers is built",
+     scene: "A CHEF pipes brick patterns like icing round the first Kharraqan tomb tower in the Qazvin plain."}
+  - {year: 1082, peg: oven, confidence: high, source: "Search: Iranica Kaykavus (475/1082)",
+     event: "Kai Kavus writes the Qabusnama, a book of advice for his son",
+     scene: "Old Kai Kavus bakes advice in an OVEN for his son Gilan Shah, and the Qabusnama comes out."}
+  - {year: 1086, peg: fish, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (1086-87)",
+     event: "Nizam al-Mulk builds the great south dome of the Isfahan Friday Mosque",
+     scene: "Nizam al-Mulk hangs a brick dome as big as a FISH pond over the prayer niche of Isfahan's Friday Mosque."}
+  - {year: 1088, peg: fife, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (1088-89)",
+     event: "Taj al-Mulk builds the small north dome of the Isfahan Friday Mosque",
+     scene: "Taj al-Mulk plays a FIFE under his small perfect north dome, built to beat his rival Nizam al-Mulk."}
+  - {year: 1093, peg: palm, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Kharraqan: the second brick tomb tower is built",
+     scene: "A PALM tree grows up beside the first Kharraqan tower, and the second tomb tower is built in its shade."}
+  - {year: 1114, peg: tower, confidence: medium, source: "WP mirror: Seljuk architecture (1114-1115)",
+     event: "Ribat-i Sharaf: a royal caravanserai is built in Khorasan",
+     scene: "Sultan Sanjar's caravans see the TOWER gate of Ribat-i Sharaf rise in brick on the Khorasan road."}
+  - {year: 1121, peg: ant, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (1121-22)",
+     event: "Fire damages the Friday Mosque of Isfahan",
+     scene: "An ANT drags a burning crumb into the wooden halls of the Isfahan Friday Mosque and sets them on fire."}
+  - {year: 1135, peg: mill, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1135-1136)",
+     event: "Zavareh: the earliest dated four-iwan mosque is built",
+     scene: "A MILL wheel with four iwans for blades turns at Zavareh, the first dated four-iwan mosque."}
+  - {year: 1139, peg: map, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Toghrol Tower: a fluted brick tomb tower is built at Rayy",
+     scene: "A MAP of Rayy is folded into twenty-four sharp flutes, and the brick Toghrol Tower stands."}
+  - {year: 1147, peg: rock, confidence: high, source: "Search: Archnet / UCLA gazetteer (542 AH)",
+     event: "Gonbad-e Sorkh: the red brick tomb is built at Maragheh",
+     scene: "A ROCK of red brick is carved with patterns and becomes the Gonbad-e Sorkh tomb at Maragheh."}
+  - {year: 1160, peg: cheese, confidence: medium, source: "WP mirror: Seljuk architecture (1158-1160)",
+     event: "The four-iwan Friday Mosque of Ardestan is completed",
+     scene: "Ardestan masons cut four iwans out of a giant CHEESE wheel and finish their Friday Mosque."}
+  - {year: 1177, peg: cake, confidence: medium, source: "WP mirror: The Conference of the Birds (c. 1177)",
+     event: "Attar of Nishapur writes the Conference of the Birds",
+     scene: "Thirty birds fly over seven valleys for a CAKE and find the Simurgh, and Attar writes it down."}
+  - {year: 1186, peg: fish, confidence: medium, source: "Search: WP Abu Zayd al-Kashani (from 26 March 1186)",
+     event: "Kashan potter Abu Zayd signs and dates his earliest known lustre piece",
+     scene: "Abu Zayd paints a golden lustre FISH on a Kashan bowl and signs the date beside it."}
+  - {year: 1197, peg: pig, confidence: high, source: "WP mirror: Seljuk architecture (1196-1197)",
+     event: "Gonbad-e Kabud: the blue-tiled tomb tower is built at Maragheh",
+     scene: "A PIG rolls in blue tile paint and leans on the new ten-sided Gonbad-e Kabud tomb at Maragheh."}
+  - {year: 1215, peg: doll, confidence: high, source: "Search: UMich Khamseen (Rabi' II 612 / August 1215)",
+     event: "Kashan potters make the lustre mihrab of the Imam Reza shrine at Mashhad",
+     scene: "A golden lustre DOLL is fired into every tile of the Kashan mihrab set up in the Mashhad shrine."}
+  - {year: 1226, peg: nacho, confidence: high, source: "Search: Berlin Museum / Iranica (Safar 623)",
+     event: "Hasan ibn Arabshah makes the lustre mihrab of the Maydan mosque at Kashan",
+     scene: "Hasan ibn Arabshah serves a golden NACHO from his kiln and fires the lustre mihrab of the Kashan Maydan mosque."}
+  - {year: 1257, peg: log, confidence: high, source: "WP mirror: Saadi Shirazi",
+     event: "Saadi completes the Bustan at Shiraz",
+     scene: "Saadi sits on a LOG in his Shiraz orchard and completes the Bustan, his book of moral verse."}
+  - {year: 1258, peg: wolf, confidence: high, source: "WP mirror: Gulistan of Sa'di (written 1258)",
+     event: "Saadi completes the Gulistan, the Rose Garden, at Shiraz",
+     scene: "A WOLF eats the roses but Saadi's Rose Garden never dies: he finishes the Gulistan in Shiraz."}
+  - {year: 1270, peg: goose, confidence: medium, source: "Search: Met essay Takht-i Sulayman (ca. 1270)",
+     event: "Takht-e Soleyman: Abaqa builds a summer palace with lustre tiles (approximate)",
+     scene: "A GOOSE lands on the crater lake while Abaqa's summer palace at Takht-e Soleyman glitters with lustre tiles."}
+  - {year: 1291, peg: boot, confidence: medium, source: "WP mirror: Saadi Shirazi (1291 or 1292)",
+     event: "Saadi dies at Shiraz",
+     scene: "A traveller's BOOT stands empty by the door at Shiraz: Saadi, who walked half the world, dies."}
+  - {year: 1310, peg: dice, confidence: high, source: "Search: Kenyon slides; WP mirror Isfahan mosque",
+     event: "Oljeitu's carved stucco mihrab is set in the Isfahan Friday Mosque",
+     scene: "A stucco DICE cube opens into Oljeitu's carved mihrab, and the sculptor Haydar signs it in Isfahan."}
+  - {year: 1312, peg: tongue, confidence: medium, source: "Search: UNESCO (1302-1312; main phase by 1313)",
+     event: "Dome of Soltaniyeh, the tomb of Oljeitu, is completed",
+     scene: "A turquoise TONGUE licks the vast new dome of Oljeitu's tomb at Soltaniyeh, and the work is complete."}
+  - {year: 1314, peg: tower, confidence: medium, source: "WP mirror: Jami' al-tawarikh (Khalili folios 1314)",
+     event: "Tabriz painters copy and illustrate Rashid al-Din's world history, the Jami' al-tawarikh",
+     scene: "Rashid al-Din's TOWER of a scriptorium at Tabriz turns out a painted copy of his world history."}
+  - {year: 1322, peg: nun, confidence: high, source: "Search: Tehran Times / Archnet Varamin (722 AH)",
+     event: "Friday Mosque of Varamin is built",
+     scene: "A NUN climbs the tiled portal of the new Varamin Friday Mosque, the oldest surviving Ilkhanid mosque."}
+  - {year: 1324, peg: hanger, confidence: medium, source: "WP mirror: Jameh Mosque of Yazd (1324-1365)",
+     event: "Rebuilding of the Friday Mosque of Yazd begins",
+     scene: "A coat HANGER holds up the tall new portal frame as Yazd begins to rebuild its Friday Mosque."}
+  - {year: 1330, peg: mouse, confidence: medium, source: "WP mirror: Shahnameh (Tabriz, c. 1330)",
+     event: "Great Mongol Shahnameh is painted at Tabriz for Abu Sa'id (approximate)",
+     scene: "A MOUSE runs between huge painted kings and dragons in the Great Mongol Shahnameh of Tabriz."}
+  - {year: 1341, peg: radio, confidence: high, source: "Search: Walters / Smithsonian (Ramadan 741)",
+     event: "Inju Shahnameh is copied and painted at Shiraz for the vizier Qavam al-Din Hasan",
+     scene: "A RADIO in Shiraz reads out the new Inju Shahnameh, painted in bright red and gold for vizier Qavam al-Din."}
+  - {year: 1365, peg: jelly, confidence: medium, source: "WP mirror: Jameh Mosque of Yazd (mihrab 1365)",
+     event: "The tile mosaic mihrab of the Yazd Friday Mosque is completed",
+     scene: "Yazd tilers set blue and white mosaic like JELLY in the new mihrab of their Friday Mosque."}
+  - {year: 1389, peg: fob, confidence: medium, source: "WP mirror: Hafez (AH 791 = 1389; also 1390)",
+     event: "Hafez, master of the Persian ghazal, dies at Shiraz",
+     scene: "Hafez's watch FOB stops in a Shiraz garden, and the master of the ghazal dies."}
+  - {year: 1411, peg: tattoo, confidence: medium, source: "Search: Met 13.228.19; Gulbenkian (1410-11)",
+     event: "Iskandar Sultan's anthology of poetry is copied and painted at Shiraz",
+     scene: "Iskandar Sultan puts a gold TATTOO of verse on every margin of his small anthology, copied and painted at Shiraz."}
+  - {year: 1418, peg: dove, confidence: medium, source: "WP mirror: Goharshad Mosque (built 1418)",
+     event: "Goharshad Mosque is built at Mashhad by the architect Qavam al-Din Shirazi",
+     scene: "Queen Goharshad releases a DOVE from the blue tiled iwan of her new mosque at the Mashhad shrine."}
+  - {year: 1451, peg: wallet, confidence: medium, source: "WP mirror: Hafez (AH 855 = 1451)",
+     event: "A domed tomb is built over the grave of Hafez at Shiraz",
+     scene: "A Shiraz governor opens his WALLET and builds the first domed tomb over the grave of Hafez."}
+  - {year: 1465, peg: jelly, confidence: high, source: "WP mirror: Blue Mosque, Tabriz",
+     event: "Blue Mosque of Tabriz is built for Jahan Shah",
+     scene: "Jahan Shah covers his Tabriz mosque in blue tile JELLY, and the Blue Mosque shines."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "WP mirror: Jameh Mosque of Isfahan (1475-6)",
+     event: "Uzun Hasan adds tilework to the south iwan of the Isfahan Friday Mosque",
+     scene: "An EAGLE carries Uzun Hasan's tiles up and covers the south iwan of the Isfahan Friday Mosque."}
+  - {year: 1481, peg: foot, confidence: high, source: "Search: WP Khamsa of Nizami (Tabriz, 1481)",
+     event: "Calligrapher Abd al-Rahim al-Khwarazmi copies a royal Khamsa of Nizami at Tabriz",
+     scene: "Abd al-Rahim's finished copy of Nizami's Khamsa walks out of his Tabriz workshop on one gold FOOT, ready for the Turkman court."}
+  # Anatolia (outside Constantinople)
+  - {year: 960, peg: cheese, confidence: medium, source: "Search: Wharton Epstein; artofthemiddleages (c. 960)",
+     event: "Tokali Church at Goreme gets its New Church and blue-ground frescoes (approximate)",
+     scene: "Cappadocian monks carve the New Church out of the Tokali rock like CHEESE and paint it deep blue."}
+  - {year: 1135, peg: mill, confidence: medium, source: "WP mirror: Seljuk architecture (founded 1135)",
+     event: "The Danishmendids found the Great Mosque of Kayseri",
+     scene: "A Danishmendid MILL grinds basalt for the pillars of the new Great Mosque of Kayseri."}
+  - {year: 1180, peg: vase, confidence: high, source: "WP mirror: Seljuk architecture (1180-1181)",
+     event: "Citadel Mosque of Divrigi is built",
+     scene: "The Mengujekids carry a stone VASE up the Divrigi hill and set it on the dome of their new citadel mosque."}
+  - {year: 1197, peg: pig, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Great Mosque of Sivas is built",
+     scene: "A PIG carries the stone columns one by one into the new Great Mosque of Sivas."}
+  - {year: 1205, peg: seal, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1205)",
+     event: "Gevher Nesibe twin madrasa and hospital is built at Kayseri (approximate)",
+     scene: "A SEAL balances two madrasas on its nose, and Kayseri's Gevher Nesibe medical school opens."}
+  - {year: 1217, peg: dog, confidence: high, source: "WP mirror: Seljuk architecture (1217-1218)",
+     event: "Sifaiye hospital madrasa is built at Sivas for Kaykaus I",
+     scene: "A sick DOG limps into Kaykaus I's new Sifaiye hospital in Sivas, with tiled iwans and the sultan's tomb."}
+  - {year: 1220, peg: nose, confidence: medium, source: "Search: WP / TDV Alaeddin Mosque (617 AH)",
+     event: "Kayqubad I completes the Alaeddin Mosque on the citadel hill of Konya",
+     scene: "Kayqubad I puts his NOSE into his brother's mosque, finishes it, and carves his own name over the Konya gate."}
+  - {year: 1223, peg: gnome, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Alaeddin Mosque of Nigde is built",
+     scene: "A GNOME carves a crown of stone lace on the gate of the new Alaeddin Mosque of Nigde."}
+  - {year: 1226, peg: nacho, confidence: medium, source: "WP mirror: Seljuk architecture (1221-1226)",
+     event: "Kizil Kule, the red octagonal harbour tower, is completed at Alanya",
+     scene: "Kayqubad's builders stack red brick like NACHO chips into the eight-sided Red Tower over Alanya harbour."}
+  - {year: 1228, peg: knife, confidence: medium, source: "WP mirror: Seljuk architecture (1228-29)",
+     event: "Great Mosque and Hospital of Divrigi are built, with deep-carved stone portals",
+     scene: "A KNIFE carves stone jungle into the portals of the Great Mosque and Hospital of Divrigi."}
+  - {year: 1229, peg: knob, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Sultan Han, the great Seljuk caravanserai, is built on the Konya to Aksaray road",
+     scene: "A caravan leader turns the brass KNOB of Sultan Han's great gate on the Konya to Aksaray road."}
+  - {year: 1232, peg: moon, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Great Mosque of Sivrihisar is built with a forest of wooden columns",
+     scene: "A MOON-faced carver cuts every wooden column for the new Great Mosque of Sivrihisar."}
+  - {year: 1237, peg: mug, confidence: medium, source: "WP mirror: Seljuk architecture (1236-1237)",
+     event: "Sultan Han near Kayseri is built for Kayqubad I",
+     scene: "Kayqubad I raises a MUG of tea in the courtyard kiosk of his new Sultan Han near Kayseri."}
+  - {year: 1238, peg: movie, confidence: medium, source: "WP mirror: Seljuk architecture (1237-1238)",
+     event: "Huand Hatun complex of mosque, madrasa and bath is built at Kayseri",
+     scene: "A MOVIE shows Mahperi Huand Hatun open her mosque, madrasa and bath in Kayseri."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP mirror: Hagia Sophia, Trabzon (1238-1263)",
+     event: "Hagia Sophia of Trebizond is built for Manuel I (approximate)",
+     scene: "Manuel I throws a LASSO round the sea cliff of Trebizond and builds his Hagia Sophia church on it."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "Search: Photo12 / WP Varka and Golshah (c. 1250)",
+     event: "Varqa and Gulshah: Abd al-Mu'min al-Khuyi paints a Persian romance, most likely at Konya (approximate)",
+     scene: "Abd al-Mu'min paints Varqa throwing a LASSO for his lost Gulshah in the only illustrated copy of the romance."}
+  - {year: 1251, peg: wallet, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1251)",
+     event: "Karatay Madrasa with its tiled dome is built at Konya",
+     scene: "Emir Karatay empties his WALLET for turquoise tiles and builds his Konya madrasa under a starry dome."}
+  - {year: 1258, peg: wolf, confidence: medium, source: "WP mirror: Masnavi (around 1258)",
+     event: "Rumi begins to dictate the Masnavi at Konya (approximate)",
+     scene: "A WOLF howls the first line about the reed flute, and Rumi starts to dictate the Masnavi in Konya."}
+  - {year: 1265, peg: jelly, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1265)",
+     event: "Ince Minareli Madrasa with its carved ribbon portal is built at Konya",
+     scene: "Konya carvers pour stone JELLY into two twisting ribbons on the portal of the Ince Minareli Madrasa."}
+  - {year: 1271, peg: cat, confidence: high, source: "WP mirror: Seljuk architecture (1271-1272)",
+     event: "Gok Medrese, the blue madrasa of Sahib Ata, is built at Sivas",
+     scene: "A blue CAT lays turquoise tiles on the minarets of Sahib Ata's new Gok Medrese in Sivas."}
+  - {year: 1271, peg: cat, confidence: high, source: "WP mirror: Seljuk architecture (1271-1272)",
+     event: "Cifte Minareli Madrasa of the vizier Juvayni is built at Sivas",
+     scene: "A CAT stretches up both twin minarets of vizier Juvayni's new madrasa in Sivas and plants a tile on each."}
+  - {year: 1272, peg: coin, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Great Mosque of Afyonkarahisar is built with wooden columns",
+     scene: "A COIN buys each carved wooden column of the new Great Mosque of Afyonkarahisar."}
+  - {year: 1273, peg: comb, confidence: high, source: "WP mirror: Masnavi (death 1273)",
+     event: "Rumi dies at Konya",
+     scene: "A COMB falls from Rumi's white beard on the Night of Union in December, and the poet of Konya dies."}
+  - {year: 1274, peg: car, confidence: high, source: "WP mirror: Mevlana Museum (completed 1274)",
+     event: "The tiled dome over Rumi's tomb is completed at Konya",
+     scene: "A turquoise CAR carries the last tiles up to Rumi's tomb dome in Konya, and the shrine is complete."}
+  - {year: 1276, peg: cage, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1275; 1276)",
+     event: "Doner Kumbet, a carved conical tomb, is built at Kayseri",
+     scene: "A stone bird CAGE with a cone roof and carved palm trees becomes Kayseri's Doner Kumbet tomb."}
+  - {year: 1290, peg: bees, confidence: medium, source: "WP mirror: Seljuk architecture (c. 1290)",
+     event: "Arslanhane Mosque is built at Ankara (approximate)",
+     scene: "BEES build wax columns that turn to wood, and the Arslanhane Mosque stands under Ankara castle."}
+  - {year: 1297, peg: pig, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Esrefoglu Mosque with its wooden hall is built at Beysehir",
+     scene: "Builders split a PIG-sized cedar trunk into the wooden columns of the new Esrefoglu Mosque at Beysehir."}
+  - {year: 1310, peg: dice, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Yakutiye Madrasa is built at Erzurum",
+     scene: "Governor Yakut rolls DICE on the floor of his new madrasa at Erzurum and names it Yakutiye."}
+  - {year: 1312, peg: tongue, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Hudavend Hatun tomb is built at Nigde",
+     scene: "A stone TONGUE of carved lace wraps round the new tomb of the princess Hudavend Hatun at Nigde."}
+  - {year: 1320, peg: nose, confidence: disputed, source: "WP mirror: Yunus Emre (1320 or 1328)",
+     event: "Yunus Emre, mystic poet in plain Turkish, dies",
+     scene: "Yunus Emre sniffs one last rose with his NOSE, sings a Turkish hymn, and the folk poet dies."}
+  - {year: 1371, peg: cat, confidence: medium, source: "WP mirror: Seljuk architecture",
+     event: "Great Mosque of Manisa is built for the Saruhan beys",
+     scene: "A Saruhan CAT carries the last dome tile up, and the Great Mosque of Manisa is complete."}
+  - {year: 1374, peg: car, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Isa Bey Mosque is built at Selcuk near Ephesus",
+     scene: "A CAR drags Roman columns from Ephesus into Isa Bey's new mosque at Selcuk."}
+  - {year: 1390, peg: bees, confidence: medium, source: "Search: Britannica / BigEnc Ahmedi (first version)",
+     event: "Ahmedi completes the first version of his Iskendername in Anatolian Turkish",
+     scene: "BEES carry Ahmedi's Turkish Book of Alexander from Germiyan to the Ottoman court, its first version complete."}
+  - {year: 1399, peg: pipe, confidence: high, source: "WP mirror: Bursa Grand Mosque (1396-1399)",
+     event: "Grand Mosque of Bursa with its twenty domes is completed",
+     scene: "Water runs from a PIPE into the fountain under the twenty domes of Bayezid's finished Grand Mosque of Bursa."}
+  - {year: 1404, peg: sewer, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Ilyas Bey Mosque is built at Miletus",
+     scene: "A SEWER pipe carries Roman marble from Miletus into Ilyas Bey's new mosque."}
+  - {year: 1404, peg: sewer, confidence: high, source: "WP mirror: Seljuk architecture",
+     event: "Ak Medrese, the white madrasa, is built at Nigde",
+     scene: "Nigde builders cover a SEWER with white stone arcades, and the Ak Medrese stands on top."}
+  - {year: 1409, peg: soap, confidence: high, source: "WP mirror: Suleyman Celebi (poet) (1409)",
+     event: "Suleyman Celebi completes the Mevlid, a Turkish poem on the birth of the Prophet, at Bursa",
+     scene: "Suleyman Celebi washes his hands with SOAP, then finishes the Mevlid poem in the Bursa mosque."}
+  - {year: 1419, peg: tuba, confidence: medium, source: "WP mirror: Green Mosque, Bursa (Dec 1419/Jan 1420)",
+     event: "Green Mosque of Bursa is completed for Mehmed I",
+     scene: "A green TUBA sounds over Bursa, and Mehmed I's Green Mosque opens its doors."}
+  - {year: 1421, peg: ant, confidence: high, source: "WP mirror: Green Mosque, Bursa (May 1421)",
+     event: "Green Tomb of Mehmed I is completed at Bursa",
+     scene: "A green ANT lays the last turquoise tile on Mehmed I's new Green Tomb on the hill at Bursa."}
+  - {year: 1424, peg: hanger, confidence: high, source: "WP mirror: Green Mosque, Bursa (August 1424)",
+     event: "Masters of Tabriz finish the tile decoration of the Green Mosque at Bursa",
+     scene: "The masters of Tabriz hang the last tile on a HANGER in the sultan's loge, and the Green Mosque decoration is done."}
+  - {year: 1426, peg: nacho, confidence: high, source: "WP mirror: Muradiye Complex (completed 1426)",
+     event: "Muradiye Mosque of Murad II is completed at Bursa",
+     scene: "Murad II shares a NACHO plate with his builders at Bursa, and his Muradiye Mosque is complete."}
+  # Armenia and Cilicia
+  - {year: 618, peg: dove, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Church of Saint Hripsime is built at Vagharshapat",
+     scene: "Catholicos Komitas releases a DOVE from the dome of his new church of Saint Hripsime."}
+  - {year: 630, peg: mouse, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Church of Saint Gayane is built at Vagharshapat",
+     scene: "A MOUSE lays the last stone on the dome of the new church of Saint Gayane at Vagharshapat."}
+  - {year: 639, peg: map, confidence: medium, source: "WP mirror: Armenian architecture (631-639)",
+     event: "Cathedral of Mren is completed",
+     scene: "Prince David Saharuni unrolls a MAP and shows where his new cathedral of Mren stands, complete."}
+  - {year: 652, peg: lion, confidence: high, source: "WP mirror: Zvartnots Cathedral (643-652)",
+     event: "Zvartnots, the round cathedral of Catholicos Nerses III, is consecrated",
+     scene: "A LION of stone guards the three-tier round church of Zvartnots as Nerses III consecrates it."}
+  - {year: 862, peg: chain, confidence: disputed, source: "Search: WP Gospel of Queen Mlke (862; also 851)",
+     event: "Gospel of Queen Mlke: one of the oldest dated Armenian illuminated manuscripts is made",
+     scene: "A gold CHAIN locks the painted Gospel of Queen Mlke, the oldest fully kept Armenian illuminated book."}
+  - {year: 874, peg: car, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Sevanavank monastery churches are built on Lake Sevan",
+     scene: "Princess Mariam drives a CAR over the ice to the island of Lake Sevan and builds the Sevanavank churches."}
+  - {year: 906, peg: sushi, confidence: medium, source: "WP mirror: Armenian architecture (895-906)",
+     event: "Church of Saints Paul and Peter at Tatev is completed",
+     scene: "Monks roll SUSHI on the gorge edge at Tatev and finish their church of Saints Paul and Peter."}
+  - {year: 921, peg: ant, confidence: medium, source: "WP mirror: Armenian architecture (915-921)",
+     event: "Church of the Holy Cross on Aghtamar island is completed with carved reliefs",
+     scene: "An ANT carves Jonah, David and Goliath round the outer walls of the Holy Cross church on Aghtamar."}
+  - {year: 936, peg: match, confidence: medium, source: "WP mirror: Armenian architecture (931-936)",
+     event: "Gndevank monastery church is built",
+     scene: "Princess Sophia strikes a MATCH in the Arpa gorge and lights the first lamp of her Gndevank church."}
+  - {year: 966, peg: judge, confidence: medium, source: "WP mirror: Armenian architecture (957-966)",
+     event: "Sanahin monastery church is completed",
+     scene: "A JUDGE in a black robe opens the new Sanahin monastery church, a school of learned monks."}
+  - {year: 989, peg: fob, confidence: high, source: "Search: Kouymjian catalogue (Echmiadzin Gospels 989)",
+     event: "Etchmiadzin Gospels are copied, bound with ivory covers and older painted leaves",
+     scene: "A gold FOB hangs from the ivory covers of the new Etchmiadzin Gospels, with its old painted leaves inside."}
+  - {year: 991, peg: boot, confidence: medium, source: "WP mirror: Armenian architecture (976-991)",
+     event: "Church of the Holy Sign at Haghpat monastery is completed",
+     scene: "Queen Khosrovanuysh kicks off her BOOT and enters the finished Holy Sign church at Haghpat."}
+  - {year: 1001, peg: soda, confidence: high, source: "WP mirror: Armenian architecture (989-1001)",
+     event: "Cathedral of Ani by the architect Trdat is completed",
+     scene: "Trdat pops a SODA on the dome of his finished Ani cathedral, with its tall pointed arches."}
+  - {year: 1002, peg: sun, confidence: high, source: "Search: encyclopedia.com / WP Gregory of Narek",
+     event: "Gregory of Narek completes his Book of Lamentations",
+     scene: "The SUN sets over Lake Van as Gregory of Narek writes the last prayer of his Book of Lamentations."}
+  - {year: 1029, peg: knob, confidence: medium, source: "WP mirror: Armenian architecture (988-1029)",
+     event: "Marmashen monastery's main church is completed",
+     scene: "Prince Vahram turns the KNOB of the red stone door of his finished Marmashen church."}
+  - {year: 1035, peg: mill, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Church of the Holy Redeemer at Ani is built",
+     scene: "A MILL grinds red tuff for the round, many-sided Church of the Holy Redeemer at Ani."}
+  - {year: 1196, peg: peach, confidence: medium, source: "WP mirror: Armenian architecture (1191-1196)",
+     event: "Goshavank monastery church of Mkhitar Gosh is completed",
+     scene: "Mkhitar Gosh plants a PEACH tree at his new Goshavank church and writes his fables in its shade."}
+  - {year: 1215, peg: doll, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "The main church of Geghard is built against the cliff",
+     scene: "A DOLL of the Holy Lance stands in the main church of Geghard, newly built against the rock cliff."}
+  - {year: 1215, peg: doll, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Church of Saint Gregory of Tigran Honents is built at Ani, with painted walls",
+     scene: "The merchant Tigran Honents paints a saint on every wall like a DOLL's house in his Ani church."}
+  - {year: 1238, peg: movie, confidence: medium, source: "WP mirror: Armenian architecture (1216-1238)",
+     event: "Gandzasar monastery cathedral is completed",
+     scene: "Prince Hasan-Jalal films a MOVIE of his finished cathedral at Gandzasar, its drum carved with his own figure."}
+  - {year: 1256, peg: leech, confidence: high, source: "WP mirror: Toros Roslin",
+     event: "Toros Roslin signs his first dated Gospel book, the Zeytun Gospel",
+     scene: "Toros Roslin paints a LEECH-thin gold line and signs the first of his dated Gospel books, the Zeytun Gospel."}
+  - {year: 1262, peg: chain, confidence: high, source: "WP mirror: Toros Roslin",
+     event: "Toros Roslin paints a Gospel book at Hromkla for the Cilician court",
+     scene: "Toros Roslin hangs a gold CHAIN of saints round the pages of his Hromkla Gospel for the Cilician court."}
+  - {year: 1321, peg: ant, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Areni church of the Holy Mother of God is built by Momik",
+     scene: "Momik the sculptor carves an ANT on a grape leaf and finishes his church at Areni."}
+  - {year: 1339, peg: map, confidence: high, source: "WP mirror: Armenian architecture",
+     event: "Noravank: the two-storey church of the Holy Mother of God is completed",
+     scene: "Prince Burtel unrolls a MAP of the red gorge and puts his two-storey church on top of Noravank."}
+  # Georgia
+  - {year: 605, peg: seal, confidence: medium, source: "WP mirror: Jvari Monastery (590-605)",
+     event: "Jvari church is completed on the hill above Mtskheta",
+     scene: "A SEAL balances the four-apse church of Jvari on the hilltop over the meeting of two rivers at Mtskheta."}
+  - {year: 897, peg: pig, confidence: high, source: "Search: WP / Georgian Encyclopedia Adysh Gospels",
+     event: "Adishi Gospels: the oldest dated Georgian Gospel book is copied at Shatberdi",
+     scene: "A PIG skin of parchment takes the ink as Mikael finishes the Adishi Gospels at Shatberdi."}
+  - {year: 973, peg: comb, confidence: high, source: "WP mirror: Oshki (963-973)",
+     event: "Oshki church in Tao is completed",
+     scene: "A stone COMB carves the giant saints on the walls of the finished Oshki church in Tao."}
+  - {year: 1003, peg: sumo, confidence: high, source: "WP mirror: Bagrati Cathedral (floor 1003)",
+     event: "Bagrati Cathedral at Kutaisi gets its floor, the year of its inscription",
+     scene: "A SUMO wrestler stamps flat the new floor of Bagrati Cathedral at Kutaisi."}
+  - {year: 1029, peg: knob, confidence: high, source: "WP mirror: Svetitskhoveli (1010-1029)",
+     event: "Arsukisdze completes the rebuilt Svetitskhoveli Cathedral at Mtskheta",
+     scene: "Arsukisdze turns the KNOB of his new Svetitskhoveli Cathedral, and a carved hand shows his name."}
+  - {year: 1106, peg: sushi, confidence: high, source: "WP mirror: Gelati Monastery",
+     event: "David IV begins Gelati Monastery near Kutaisi",
+     scene: "David the Builder rolls SUSHI on a hill near Kutaisi and begins the Gelati Monastery."}
+  - {year: 1130, peg: mouse, confidence: high, source: "WP mirror: Gelati Monastery",
+     event: "Church of the Virgin at Gelati is completed",
+     scene: "A MOUSE carries the last tile to the apse, and King Demetrius completes the Church of the Virgin at Gelati."}
+  - {year: 1185, peg: waffle, confidence: medium, source: "WP mirror: Vardzia (between 1184 and 1186)",
+     event: "Vardzia: the cave church of the Dormition is painted, with a portrait of Queen Tamar",
+     scene: "A WAFFLE of cave rooms opens in the cliff of Vardzia, and painters put Queen Tamar on the church wall."}
+  - {year: 1200, peg: tongue, confidence: medium, source: "WP mirror: Knight in the Panther's Skin (c. 1180-1207)",
+     event: "Shota Rustaveli writes The Knight in the Panther's Skin (approximate)",
+     scene: "A panther's TONGUE licks Rustaveli's pen, and The Knight in the Panther's Skin takes shape for Queen Tamar."}
+  # Azerbaijan, Shirvan and Nakhchivan
+  - {year: 1066, peg: judge, confidence: unverified,
+     event: "Asadi Tusi completes the Garshaspnama, a Persian epic, at Nakhchivan",
+     scene: "A JUDGE at Nakhchivan reads Asadi's finished epic of the hero Garshasp and rules it worthy of a king."}
+  - {year: 1162, peg: chain, confidence: high, source: "Search: Eurasia.Travel / YOK abstract (1162)",
+     event: "Ajami builds the octagonal tomb of Yusuf ibn Kuseyir at Nakhchivan",
+     scene: "Ajami links a CHAIN of eight brick walls and builds the tomb of Yusuf ibn Kuseyir at Nakhchivan."}
+  - {year: 1163, peg: gem, confidence: disputed, source: "WP mirror: Nizami Ganjavi (1163; some date it 1176)",
+     event: "Nizami completes the Treasury of Mysteries, the first poem of his Khamsa",
+     scene: "Nizami locks a GEM in the Treasury of Mysteries, the first poem of his Khamsa, at Ganja."}
+  - {year: 1180, peg: vase, confidence: medium, source: "WP mirror: Nizami Ganjavi (1177-1180)",
+     event: "Nizami completes Khosrow and Shirin",
+     scene: "Farhad cuts a stone VASE out of the mountain for Shirin, and Nizami completes Khosrow and Shirin."}
+  - {year: 1186, peg: fish, confidence: high, source: "WP mirror: Momine Khatun Mausoleum",
+     event: "Ajami builds the Momine Khatun tomb tower at Nakhchivan",
+     scene: "Ajami tiles the ten-sided Momine Khatun tower with blue glaze like FISH scales at Nakhchivan."}
+  - {year: 1188, peg: fife, confidence: medium, source: "Iranica / WP: Layla and Majnun (584/1188; also 1192)",
+     event: "Nizami writes Layla and Majnun for the Shirvanshah Akhsitan",
+     scene: "Majnun plays a FIFE in the desert for Layla, and Nizami writes their story for the Shirvanshah."}
+  - {year: 1197, peg: pig, confidence: high, source: "WP mirror: Nizami Ganjavi",
+     event: "Nizami completes the Seven Beauties, the Haft Paykar",
+     scene: "A PIG runs out of each of seven coloured domes, and Nizami completes the Seven Beauties."}
+  - {year: 1199, peg: pipe, confidence: disputed, source: "WP mirror: Khaqani (gravestone 1199; 1186-1199)",
+     event: "Khaqani, panegyric poet of Shirvan, dies at Tabriz",
+     scene: "Khaqani's last ode whistles out of a PIPE in Tabriz, and the poet of Shirvan dies."}
+  - {year: 1209, peg: soap, confidence: high, source: "WP mirror: Nizami Ganjavi",
+     event: "Nizami dies at Ganja",
+     scene: "A bar of rose SOAP washes the hands of Nizami for the last time at Ganja."}
+  - {year: 1411, peg: tattoo, confidence: high, source: "WP mirror: Palace of the Shirvanshahs",
+     event: "Shirvanshah Ibrahim I begins the palace complex in Baku",
+     scene: "Ibrahim I draws a TATTOO of his palace plan on his arm and begins the Shirvanshahs' palace on the Baku hill."}
+  - {year: 1435, peg: mill, confidence: medium, source: "WP mirror: Palace of the Shirvanshahs (839 AH)",
+     event: "The burial vault of the Shirvanshahs is built in the Baku palace",
+     scene: "A MILL grinds limestone for the carved portal of the Shirvanshahs' new burial vault in Baku."}
+  # Cyprus
+  - {year: 530, peg: mouse, confidence: low, source: "Search: Sussex mosaics db (6th c.; or late 5th c.)",
+     event: "Panagia Kanakaria: the apse mosaic of the Virgin and Child is made (approximate)",
+     scene: "A MOUSE sets the last gold stone, and the Virgin and Child appear in the apse mosaic of Kanakaria."}
+  - {year: 1106, peg: sushi, confidence: medium, source: "Search: IBCC Asinou (1105/6 inscription)",
+     event: "Asinou: the church of Panagia Phorbiotissa is painted for Nikephoros Ischyrios",
+     scene: "Nikephoros Ischyrios pays for the frescoes of Asinou with a tray of SUSHI, and painters cover its apse."}
+  - {year: 1183, peg: foam, confidence: high, source: "Search: Apsida CUT archive (1183 inscription)",
+     event: "Theodore Apseudes paints the cave hermitage of Saint Neophytos near Paphos",
+     scene: "Theodore Apseudes mixes paint in FOAM and covers Saint Neophytos's cave hermitage with frescoes."}
+  - {year: 1192, peg: piano, confidence: high, source: "WP mirror: Panagia tou Araka (December 1192)",
+     event: "Lagoudera: the church of Panagia tou Arakos is painted",
+     scene: "A PIANO plays as the Lagoudera painters finish the last saint on the dome of Panagia tou Arakos in December."}
+  - {year: 1198, peg: beehive, confidence: medium, source: "WP mirror: Bellapais Abbey (1198-1205)",
+     event: "Bellapais Abbey: the first buildings go up above Kyrenia",
+     scene: "Canons from the Holy Sepulchre set a BEEHIVE on the hill above Kyrenia and start the first Bellapais buildings."}
+  - {year: 1209, peg: soap, confidence: high, source: "WP mirror: Selimiye Mosque, Nicosia",
+     event: "Foundation stone of Saint Sophia Cathedral in Nicosia is laid",
+     scene: "Archbishop Thierry lays a cake of SOAP for the foundation stone of Saint Sophia Cathedral in Nicosia."}
+  - {year: 1298, peg: beehive, confidence: high, source: "WP mirror: Lala Mustafa Pasha Mosque",
+     event: "Work begins on Saint Nicholas Cathedral at Famagusta",
+     scene: "Masons knock down a BEEHIVE in Famagusta and start the Gothic Saint Nicholas Cathedral."}
+  - {year: 1326, peg: nacho, confidence: high, source: "WP mirror: Selimiye Mosque, Nicosia",
+     event: "Saint Sophia Cathedral in Nicosia is consecrated",
+     scene: "Nicosia's bishops bless a NACHO-coloured stone nave, and Saint Sophia Cathedral is consecrated."}
+  - {year: 1328, peg: knife, confidence: high, source: "WP mirror: Lala Mustafa Pasha Mosque",
+     event: "Saint Nicholas Cathedral at Famagusta is consecrated",
+     scene: "A KNIFE cuts the ribbon at Famagusta, and the Gothic Saint Nicholas Cathedral is consecrated."}
+  - {year: 1332, peg: moon, confidence: medium, source: "Search: Frankika EFA Asinou (1332-1333)",
+     event: "Monks pay for new paintings in the narthex of the Asinou church",
+     scene: "A silver MOON of coins from the Asinou monks pays painters for new frescoes in the narthex."}

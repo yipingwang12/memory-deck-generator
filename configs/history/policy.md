@@ -36,6 +36,8 @@ All text in ASD-STE100 style.
 - Legendary king lists (user rule 2026-11-07): leave out reigns dated only by a traditional list (Puranic
   dynasties, Kalhana's early Kashmir kings). Their years are the tradition's own, not historical dates. A single
   founding tradition with a well-known date (Rome 753 BCE, Vijaya) may stay, marked `(traditional date)`.
+  Chronicle foundings dated only by the tradition's own count (Hong Bang / Van Lang, Tagaung, Dhanyawadi,
+  Yonok) are left out too (user rule 2026-11-11).
 - Excavations (user rule 2026-11-06): the discovery or excavation of a site, find, fossil or text goes under
   science (archaeology), in the region where it is found. The making of the work itself stays in its own theme
   and period (Tutankhamun's tomb is made: arts, pre500bce; Carter finds it: science, 1800_1945).

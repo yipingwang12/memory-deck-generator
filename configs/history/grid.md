@@ -663,3 +663,52 @@ Fix-pass list (not done):
 - Scope: Umar Tall's jihad 1852 / death 1864 and the Buganda religious wars 1888, 1892 put in subsaharan_africa_religion_1800_1945
   (agent says no politics cell holds them; subsaharan_africa_politics_1800_1945 has Segou only).
 
+
+## Wave 18 (2026-11-11)
+User's aim: next 20 cells, largest predicted first. Search-budget model refit on 268 cells with a new pre-contact term
+(north_america, latin_america and oceania cells in pre500bce, 500bce_500ce and 500_1500): residual sd 0.36, log-search
+coefficient 0.35; forecast 14,914 dates in 164 unbuilt cells at 45 searches. The term moves the north_america politics
+pre-Columbian artifacts out of the top ranks, so ranks 1–20 were taken with no skips (predicted 143–174, total 3,099;
+{expected} = prediction). Opus agents, rolling queue of 8, budget 45 searches each.
+subsaharan_africa politics 500_1500, south_asia arts 500_1500, west_asia arts 500_1500, eastern_europe science 500_1500,
+subsaharan_africa science 1945_present, latin_america economy 1500_1800, oceania society 1800_1945, east_asia society
+500_1500, eastern_europe society 500_1500, south_asia religion 500_1500, west_asia religion 500_1500, subsaharan_africa
+science 1800_1945, north_africa arts 500_1500, north_africa politics pre500bce, southeast_asia politics pre500bce,
+subsaharan_africa society 1800_1945, south_asia science 500_1500, east_asia economy 500_1500, western_europe society
+pre500bce, eastern_europe economy 500_1500.
+Result (after main-session fixes): 3,013 dates over 20 cells (high 1,852, medium 813, low 57, disputed 132, unverified
+159 = 5.3%); total = 97% of the prediction. Above the fit: subsaharan_africa_science_1800_1945 208 (×1.35),
+oceania_society_1800_1945 211, west_asia_arts_500_1500 224, north_africa_arts_500_1500 193, west_asia_religion_500_1500
+196, subsaharan_africa_science_1945_present 201. Far below: southeast_asia_politics_pre500bce 20 (×0.14; almost no
+dated material), eastern_europe_science_500_1500 66 (arts and western_europe_science hold the main items),
+western_europe_society_pre500bce 95, south_asia_science_500_1500 106. Model note: Southeast Asia pre500bce is
+overpredicted like the pre-contact cells. Check exit 0 on all 288 cells. Grid now 288 of 432 cells, 65,233 dates.
+No usage-limit deaths (~5.4M subagent tokens, every agent spent 45 searches).
+Main session: south_asia_arts_500_1500 and south_asia_religion_500_1500 ran in parallel and both took the temples and
+mosques. 33 building entries removed from arts (grid: religious buildings → religion; Yamoussoukro precedent), among
+them Brihadisvara, Konark, Khajuraho, Qutb Minar, Quwwat-ul-Islam, Adina, Elephanta, the Dnyaneshwari and Gommateshwara.
+Arts keeps the dates where the two disagreed only through the removed copy (Vishvanatha 999/1002, Kandariya 1029/1030,
+Hoysaleswara 1120/1121, Adina 1375 completion/1373 start: the religion years stand). 3 more cross-cell duplicates
+removed: RASCOM-QAF1 2007 (north_africa_science older), Atlas indentured workers to Mauritius 1834 (south_asia_society
+older), French abolition 1848 (western_europe_politics older). pending_moves: Muhammad's first revelation 610 and the
+Hijra 622 added to west_asia_religion_500_1500, note removed.
+Settled by user (2026-11-11): 11 legendary chronicle foundings removed from southeast_asia_politics_pre500bce
+(now 9 dates; policy.md Scope); Darfur, the Olympic victors, the 1868 cricket tour and infrastructure-as-science stay.
+Open user questions (answered 2026-11-11: entries stay):
+- Darfur filed under subsaharan_africa (western Sudan); grid puts "Nubia / northern Sudan" in north_africa. Rule?
+- 14 Olympic victors from Italy and Sicily in western_europe_society_pre500bce: the games are at Olympia (eastern_europe).
+  Home city or venue?
+- 1868 Aboriginal cricket tour of England kept in oceania_society_1800_1945 under the made-abroad rule; does it cover sport?
+- Infrastructure as science: subsaharan_africa_science cells put railways, dams and telegraph under engineering
+  (as north_africa_science). Economy cells may claim them later.
+Fix-pass list (not done):
+- Peg overload: lasso 22 in south_asia_arts_500_1500 (century midpoints), lasso 14 in western_europe_society_pre500bce.
+- Conflicts with world_dates (kept as world_dates has them): Sea Peoples -1177 vs c. 1179; Hyksos -1550 with Avaris
+  fall -1533 as a separate entry; Narmer -3100 vs c. 3150; silkworm smuggling 552 vs 553–554.
+- Cross-cell date clashes: Dukki Gel statues -593 (arts) vs Napata sack -592 (politics); Sima de los Huesos 530 ka
+  (society, Benjamina skull) vs 430 ka (religion, burials).
+- Rule exceptions to review: Khaza'in ul-Futuh kept 1311 against a source 1296 (the book describes 1310–11);
+  Kitab al-Adwar dated by al-Urmawi's death 1294 (no dated early copy).
+- Weak scenes (agent flag): subsaharan_africa_society_1800_1945 1897 Zanzibar (PIG of silver), 1906 Barotseland and
+  Nevinson (SUSHI).
+- Unverified-heavy cells for a check pass: south_asia_arts_500_1500 (27 before the removals), latin_america_economy_1500_1800 (22).
