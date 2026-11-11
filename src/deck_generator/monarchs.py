@@ -409,16 +409,26 @@ def stale_corrections(monarchs: list[Monarch], corrections: list[Correction]) ->
     An 'add' whose year Wikidata now supplies, or a 'drop' whose year Wikidata no longer emits,
     is dead weight: the config keeps asserting something about upstream that stopped being true.
     Neither is an error (add is idempotent, drop is a no-op), which is exactly why they need
-    reporting — otherwise they rot invisibly."""
-    events = Counter(_raw_transition_events(monarchs))
+    reporting — otherwise they rot invisibly.
+
+    Judged per YEAR, against the corrected output itself: the corrections on a year are stale
+    exactly when the year occurs as often with them as without them. So a `drop` + `add` pair
+    that resets a year (Aghlabid 864: two raw events, one real) stays live while it changes the
+    count, and two `add` entries on one year count together."""
+    raw = Counter(_raw_transition_events(monarchs))
+    add_years, drop_years = correction_years(corrections)
+    final = Counter(e.year for e in transition_events(monarchs, add_years, drop_years))
     stale = []
     for c in corrections:
-        # Counted, not tested for membership: a `count: 2` add is still doing work while
-        # upstream supplies only one of the two events.
-        if c.action == 'add' and events[c.year] >= c.count:
+        if final[c.year] != raw[c.year]:
+            continue
+        if c.action == 'add':
             stale.append(f"add {c.year}: Wikidata now supplies this year on its own")
-        elif c.action == 'drop' and c.year not in events:
+        elif raw[c.year] == 0:
             stale.append(f"drop {c.year}: Wikidata no longer emits this year")
+        else:
+            stale.append(f"drop {c.year}: Wikidata now emits this year {raw[c.year]} time(s), "
+                         f"the corrected count")
     return stale
 
 
