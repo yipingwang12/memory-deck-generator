@@ -712,3 +712,52 @@ Fix-pass list (not done):
 - Weak scenes (agent flag): subsaharan_africa_society_1800_1945 1897 Zanzibar (PIG of silver), 1906 Barotseland and
   Nevinson (SUSHI).
 - Unverified-heavy cells for a check pass: south_asia_arts_500_1500 (27 before the removals), latin_america_economy_1500_1800 (22).
+
+## Wave 19 (2026-11-11)
+User's aim: 10 cells from the least complete regions, themes and periods (not largest first). Score per unbuilt cell =
+fraction built of its region + of its theme + of its period; lowest first, and after each pick the cell counts as
+built (so one region or theme does not take every slot). Opus agents, rolling queue of 8, 45 searches each. Same
+region-and-period economy/society cells ran in parallel, so each brief named its partner and gave a split rule
+(trade, farming, herding, crafts → economy; settlement, population, burials, diet, violence → society). Items an
+agent found for a sibling period were sent to the running sibling agent.
+oceania economy 500bce_500ce, subsaharan_africa society 500bce_500ce, oceania economy pre500bce, central_asia society
+500bce_500ce, subsaharan_africa economy pre500bce, oceania society 500bce_500ce, central_asia economy pre500bce,
+subsaharan_africa economy 500bce_500ce, oceania society pre500bce, southeast_asia society 500bce_500ce.
+Result (after main-session fixes): 328 dates over 10 cells (high 62, medium 188, low 39, disputed 30, unverified 9);
+84% of the prediction (390). Sizes 19–44. Most dates are radiocarbon ranges, so few are high. Check exit 0 on all
+298 cells. Grid now 298 of 432 cells, 65,550 dates. No real cross-cell duplicates (IDF scan). ~1.8M subagent tokens.
+Main session: 2 Xiongnu items the central_asia_society agent had dropped are back as unverified (snow and disease
+-89; 58 groups surrender 87). Pulu pottery (-500) added to oceania_economy_500bce_500ce; Naton Beach (-500) and
+Watom burials (-500) added to oceania_society_500bce_500ce. pending_moves: Endubis coins used (note removed); new
+notes for Kimberley points (oceania_economy_500_1500) and Chau Can boat coffins (southeast_asia_society_pre500bce).
+Fix-pass list (not done):
+- Jeitun first farming: -6000 disputed in central_asia_economy_pre500bce (Harris & Gosden) vs -7200 high in
+  central_asia_arts_pre500bce. Settle one year.
+- Scope: six Egyptian voyages to Punt sit in subsaharan_africa_economy_pre500bce (Horn); north_africa_economy_pre500bce
+  has none. Keep (effect and destination in the Horn) or move?
+- Weak scenes (agent flag): central_asia_society_500bce_500ce -323 GNOME, -271 CAT.
+- Weipa shell mounds (-700) and Tonga–Samoa exchange break (-650) in oceania_economy_pre500bce are unverified.
+
+## Wave 20 (2026-11-11)
+User's aim: one more wave of 10, least complete first (same greedy score as wave 19). Opus agents, rolling queue of
+8, 45 searches each; partner cells built at the same time got a split rule (central_asia society/religion pre500bce:
+burial as rank or violence → society, burial as ritual → religion); finds for a sibling cell were sent to the
+running agent.
+central_asia society pre500bce, oceania science 500bce_500ce, subsaharan_africa society pre500bce, southeast_asia
+economy 500bce_500ce, central_asia science 500bce_500ce, north_america economy pre500bce, oceania religion
+500bce_500ce, southeast_asia economy pre500bce, subsaharan_africa science 500bce_500ce, central_asia religion pre500bce.
+Result: 305 dates over 10 cells (high 69, medium 163, low 31, disputed 39, unverified 3); 68% of the prediction
+(449). Sizes 8–44: oceania_religion_500bce_500ce 8 (no dated marae or platform in the period), subsaharan_africa_science
+_500bce_500ce 21, central_asia_religion_pre500bce 27 (9 disputed: Sarianidi vs Shenkar on the Margiana temples).
+Above the fit: north_america_economy_pre500bce 41 (×1.4). Check exit 0 on all 308 cells. Grid now 308 of 432 cells,
+65,855 dates. No real cross-cell duplicates (IDF scan). ~1.8M subagent tokens. Session searches ≈ 1,800 of 2,000.
+pending_moves: Saka furnaces + first Chorasmian canals → central_asia_science_pre500bce; Bulanovo plague →
+eastern_europe_society_pre500bce (check that it lies west of the Ural River). Jirzankal braziers already in
+central_asia_religion_500bce_500ce.
+Fix-pass list (not done):
+- Wazeba: subsaharan_africa_politics_500bce_500ce dates his reign 335 (after Ezana's accession 330); the Ge'ez source in
+  subsaharan_africa_science_500bce_500ce calls him Ezana's predecessor and dates his coin c. 300. Settle the order.
+- Scope: Terqa cloves (found in Syria, c. 1720 BCE) kept in southeast_asia_economy_pre500bce under the main-subject rule.
+- Hominin health items in subsaharan_africa_society_pre500bce (sediba tumour, Swartkrans cancer, Homo naledi) sit near
+  the science cell's fossil finds; first-come check passed (no IDF hits).
+- Weak scenes (agent flag): central_asia_society_pre500bce Xiaohe ANT, Salkhit.
