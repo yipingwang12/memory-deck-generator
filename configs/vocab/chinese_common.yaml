@@ -16,3 +16,13 @@ audit: chinese_common.audit.jsonl       # per-word adjudication provenance
 artifact: vocab_chinese_common.json
 config_path: manual/vocab_chinese_common.yaml
 license: "CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — CC-CEDICT"
+# Words from a level list, added beside the frequency ranking (2026-11-11). Selected: every
+# list word ranked inside `max_rank` in wordfreq, and every word of level <= `all_levels_upto`
+# at any rank — textbook words (汉字, 洗澡, 行李) rank low in web text. They are inserted
+# into the curated rows in wordfreq-rank order; existing rows do not change.
+# `deck-vocab --curate` / `--merge` / `--build`; see docs/design/vocab-pipeline.md "HSK words".
+include:
+  name: "HSK 3.0"
+  list: hsk30.tsv             # word<TAB>level; MIT, github.com/drkameleon/complete-hsk-vocabulary
+  max_rank: 10000
+  all_levels_upto: 3

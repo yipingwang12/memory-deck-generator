@@ -62,6 +62,55 @@ Committed data: `configs/vocab/chinese_common.{yaml,curated.jsonl,audit.jsonl,po
 Raise `target_n`; re-run route → adjudicate the new needs-LLM words → rebuild. The seed +
 existing curated rows stay frozen; only new words are adjudicated.
 
+## HSK words (2026-11-11) — 5257 → 7711
+
+The frequency ranking misses textbook vocabulary. Against HSK 3.0 (GF 0025-2021), the deck
+held every HSK word up to wordfreq rank ~5000, but 374 words of HSK levels 1–3 ranked lower:
+汉字 (5872), 洗澡, 行李, 沙发, 早餐 — common in a classroom, rare in web text.
+
+The config's `include` block names a level list and a selection rule:
+
+```yaml
+include:
+  name: "HSK 3.0"
+  list: hsk30.tsv        # word<TAB>level; level 7 = levels 7–9
+  max_rank: 10000        # any level, if ranked inside the top 10,000
+  all_levels_upto: 3     # levels 1–3 at any rank (unranked words too)
+```
+
+`hsk30.tsv` is the simplified form + lowest level of each word in
+github.com/drkameleon/complete-hsk-vocabulary (MIT), 10,969 words (the official list's
+11,092 counts some words twice).
+
+- `deck-vocab` (preview) — how many list words are new, the clean / needs-LLM split, and
+  list words CC-CEDICT does not have (15: 不太, 车上, 送到 — compositional, left out).
+- `--curate` — needs-LLM words → `chunk_list_NN.json`; clean rows → `chunk_list_qa_NN.json`
+  for review. Both under `data/decks/vocab_chunks/zh/` (gitignored).
+- `--merge` — every `chunk_*.out.jsonl` (keyed on `hanzi`, newest file wins) + clean rows →
+  inserted into the committed curated file **in wordfreq-rank order**. Existing rows stay
+  byte for byte and keep their order; the committed audit stays as a prefix and the new
+  adjudications are appended. A needs-LLM word without an adjudication stops the merge.
+  New rows carry `source` (`llm` / `cedict-first`); the old rows have none.
+- `--build` — as before.
+
+Rank order matters because the quiz bands a matching round by the word's **position** in
+the deck (`matching.freq_band = index // 30`). Appending 2454 words of rank 5000–35000 after
+the deck's tail would be harmless for history (item keys are hanzi hashes) but would put a
+level-1 word like 汉字 in a band of rare words.
+
+The first pass (2026-11-11) added 2454 words: 640 needs-LLM words adjudicated, all 1831 clean
+rows read, 993 rows re-glossed or dropped. What the review caught:
+
+- **Pointer glosses.** A "clean" CC-CEDICT entry can be a pointer: 知识分子 "variant of
+  知識分子", 体检 "abbr. for 体格检查", erhua words "erhua variant of X". The router counts
+  senses, not content; these took the pointer as the gloss.
+- **Erhua duplicates.** HSK lists 女孩儿 beside 女孩. An erhua form whose base is already a
+  card is dropped (15 words; also 干吗 beside 干嘛, 有一点儿 beside 有点). An erhua form
+  with no base card stays (玩意儿, 有空儿, 干活儿).
+- **Near-synonyms.** HSK lists pairs that a matching tile cannot tell apart: 星期日 / 星期天,
+  剧场 / 剧院, 部件 / 零件, 一路顺风 / 一路平安. Each pair is tagged apart ("Sunday (formal)" /
+  "Sunday (spoken)"), even where the band check would not catch it.
+
 ## Inflected languages — German and Polish (2026-11-08)
 
 `configs/vocab/{german,polish}_common.yaml` (`lang: de` / `lang: pl`) run the same

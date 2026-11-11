@@ -152,6 +152,20 @@ def load_seed(deck_path: Path) -> list[CuratedRow]:
     ]
 
 
+def _candidate(w: str, rank: int, cedict: dict[str, list[tuple[str, list[str]]]]) -> Candidate:
+    """One routed candidate from the CC-CEDICT entries of `w`."""
+    readings = [Reading(p, pinyin_marks(p), gl) for p, gl in cedict[w]]
+    all_glosses = [g for r in readings for g in r.glosses]
+    return Candidate(
+        hanzi=w,
+        freq_rank=rank,
+        readings=readings,
+        polyphone=len({r.pinyin_numbered for r in readings}) > 1,
+        multisense=len(all_glosses) > 3,
+        functional=_looks_functional(all_glosses),
+    )
+
+
 def rank_candidates(
     cedict: dict[str, list[tuple[str, list[str]]]],
     exclude: set[str],
@@ -162,21 +176,95 @@ def rank_candidates(
     for rank, w in enumerate(top_n_list("zh", max(target_n * 3, 10000))):
         if w in exclude or not _is_han(w) or w not in cedict:
             continue
-        readings = [Reading(p, pinyin_marks(p), gl) for p, gl in cedict[w]]
-        all_glosses = [g for r in readings for g in r.glosses]
-        out.append(
-            Candidate(
-                hanzi=w,
-                freq_rank=rank,
-                readings=readings,
-                polyphone=len({r.pinyin_numbered for r in readings}) > 1,
-                multisense=len(all_glosses) > 3,
-                functional=_looks_functional(all_glosses),
-            )
-        )
+        out.append(_candidate(w, rank, cedict))
         if len(out) >= target_n:
             break
     return out
+
+
+# --- word lists (HSK) -----------------------------------------------------------
+UNRANKED = 10**7  # rank of a word that is not in the wordfreq list; sorts after all others
+RANK_DEPTH = 300_000  # wordfreq list depth used to rank list words
+
+
+def wordfreq_ranks(n: int = RANK_DEPTH) -> dict[str, int]:
+    """Word -> 0-based wordfreq rank, for the top `n` Chinese words."""
+    return {w: i for i, w in enumerate(top_n_list("zh", n))}
+
+
+def load_word_list(path: Path) -> dict[str, int]:
+    """A `word<TAB>level` list -> {word: level}. Lines that start with `#` and the
+    `word` header line are not words."""
+    out: dict[str, int] = {}
+    for ln in path.read_text(encoding="utf-8").splitlines():
+        if not ln.strip() or ln.startswith("#") or ln.startswith("word\t"):
+            continue
+        w, level = ln.split("\t")
+        out.setdefault(w, int(level))
+    return out
+
+
+@dataclass
+class ListSelection:
+    """List words selected for the deck, and selected words that CC-CEDICT does not have."""
+    candidates: list[Candidate]
+    not_in_cedict: list[str]
+
+
+def list_candidates(
+    cedict: dict[str, list[tuple[str, list[str]]]],
+    levels: dict[str, int],
+    exclude: set[str],
+    ranks: dict[str, int],
+    max_rank: int,
+    all_levels_upto: int,
+) -> ListSelection:
+    """List words not in `exclude` that rank inside `max_rank`, or whose level is at most
+    `all_levels_upto` at any rank. Sorted by wordfreq rank (unranked words last)."""
+    picked, missing = [], []
+    for w, level in levels.items():
+        rank = ranks.get(w, UNRANKED)
+        if w in exclude or not _is_han(w) or (rank >= max_rank and level > all_levels_upto):
+            continue
+        if w not in cedict:
+            missing.append(w)
+            continue
+        picked.append(_candidate(w, rank, cedict))
+    picked.sort(key=lambda c: (c.freq_rank, c.hanzi))
+    return ListSelection(picked, sorted(missing))
+
+
+def merge_list_rows(
+    existing: list[dict],
+    candidates: list[Candidate],
+    adjudicated: dict[str, dict],
+    ranks: dict[str, int],
+) -> tuple[list[dict], list[dict]]:
+    """Insert list words into the committed rows in wordfreq-rank order.
+
+    Existing rows are kept byte for byte and keep their relative order. A candidate with
+    an adjudication takes it (a `drop` leaves it out); a clean candidate without one takes
+    CC-CEDICT's first sense. Returns (all rows, audit rows for the new words).
+    A needs-LLM candidate without an adjudication is an error: its first sense is not
+    reliable."""
+    unjudged = [c.hanzi for c in candidates if c.needs_llm and c.hanzi not in adjudicated]
+    if unjudged:
+        raise ValueError(f"{len(unjudged)} needs-LLM words have no adjudication: {unjudged[:10]}")
+    new, audit = [], []
+    for c in candidates:
+        a = adjudicated.get(c.hanzi)
+        if a is not None:
+            audit.append(a)
+            if a["decision"] == "drop":
+                continue
+            row = {"hanzi": c.hanzi, "pinyin": a["pinyin"], "gloss": a["gloss"], "source": "llm"}
+        else:
+            r = clean_row(c)
+            row = {"hanzi": c.hanzi, "pinyin": r.hint, "gloss": r.gloss, "source": r.source}
+        new.append((c.freq_rank, 1, row))
+    old = [(ranks.get(d["hanzi"], UNRANKED), 0, d) for d in existing]
+    merged = sorted(old + new, key=lambda t: (t[0], t[1]))  # stable: equal keys keep order
+    return [d for _, _, d in merged], audit
 
 
 def clean_row(c: Candidate) -> CuratedRow:
