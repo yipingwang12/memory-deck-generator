@@ -1,0 +1,29 @@
+# Lipovsek et al. 2021 — Patch-seq: past, present, and future (J Neurosci mini-symposium
+# review): experimental workflow, library chemistry, data analysis and the biological
+# questions Patch-seq has answered. A REVIEW, not a research paper: there is no Results
+# section, so every card is labelled `review` honestly and build's Results-share warning is
+# EXPECTED, as for kornfeld2018_volume_em and chen2026_brain_scaling.
+# Extraction: plain `pdftotext` interleaves the two columns (and, on pages 2 and 6, a narrow
+# text column with the figure caption beside it), so source.txt is page 1 plain plus each
+# page cropped into left/right columns at x=292, plus pages 2 and 6 cropped at x=210:
+#   pdftotext -f P -l P -x 0 -y 0 -W 292 -H 790 / -x 292 -W 300   (all pages)
+#   pdftotext -f P -l P -x 0 -y 0 -W 210 -H 790 / -x 210 -W 380   (pages 2, 6)
+# Every crop is verbatim paper text; the overlap only lets a quote match in one of them.
+# Curated MCQ deck (`source: manual`); cards authored per configs/papers/policy.md and
+# assembled by `deck-papers --build`.
+deck_name: "Lipovsek 2021 — Patch-seq review"
+title: "Lipovsek 2021 — Patch-seq review"
+group: "Papers"
+order: 427
+
+doi: "10.1523/JNEUROSCI.1653-20.2020"
+pmid: null
+citation: "Lipovsek M, Bardy C, Cadwell CR, Hadley K, Kobak D, Tripathy SJ. Patch-seq: past,
+  present, and future. J Neurosci. 2021;41(5):937-946. doi:10.1523/JNEUROSCI.1653-20.2020."
+
+claims: lipovsek2021_patchseq.claims.jsonl
+curated: lipovsek2021_patchseq.curated.jsonl
+audit: lipovsek2021_patchseq.audit.jsonl
+source_text: lipovsek2021_patchseq.source.txt
+
+n_choices: 4
