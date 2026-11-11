@@ -47,10 +47,6 @@ DEFAULT_CONFIG_DIR = _ROOT / 'configs'
 DEFAULT_DECKS_DIR = _ROOT / 'data' / 'decks'
 CACHE_DIR = _ROOT / 'cache' / 'artworks'
 
-# Set by main() --refresh-metadata; bypasses the persisted SPARQL metadata cache for this run.
-REFRESH_METADATA = False
-CACHE_ONLY = False        # --cache-only: never download, assemble from the image cache
-
 # Monarch decks come from separate per-realm configs but share one collapsible menu
 # group in the quiz (like poetry's collection_title). Overridable per-config via `group:`.
 _MONARCH_GROUP = 'Monarchs'
@@ -188,12 +184,16 @@ def _poem_source_text(cfg: dict, poem_cfg: dict, text_cache: dict) -> str:
     return text_cache[key]
 
 
-def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict]:
+def build_deck_artifacts(config_dir: Path, only: str | None = None,
+                         refresh_metadata: bool = False,
+                         cache_only: bool = False) -> list[dict]:
     """Run generation and return one artifact dict per deck (see module docstring).
 
     ``only`` is an fnmatch pattern over artifact filenames (e.g. ``monarchs_britain`` or
     ``monarchs_*``); non-matching decks are skipped entirely — not fetched, not built —
-    while still consuming their ``order``."""
+    while still consuming their ``order``. ``refresh_metadata`` bypasses the persisted
+    artwork metadata cache; ``cache_only`` assembles artwork decks from downloaded images
+    only."""
     slots = _discover_slots(config_dir)
     wanted = [s for s in slots if _slot_selected(s, only)]
     artifacts: list[dict] = []
@@ -268,7 +268,7 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
     for s in wanted:
         if s.deck_type != 'artworks':
             continue
-        artifacts.append(_build_artwork_deck(s))
+        artifacts.append(_build_artwork_deck(s, refresh_metadata, cache_only))
 
     _EQ_POOL_CACHE.clear()   # per-run; the two variant slots of a config share it
     for s in wanted:
@@ -290,7 +290,8 @@ def build_deck_artifacts(config_dir: Path, only: str | None = None) -> list[dict
     return artifacts
 
 
-def _build_artwork_deck(s: _Slot) -> dict:
+def _build_artwork_deck(s: _Slot, refresh_metadata: bool = False,
+                        cache_only: bool = False) -> dict:
     """Fetch metadata + images and expand to a two-card-per-artwork artifact.
 
     Each artwork becomes two FSRS cards — ``<QID>|title`` and ``<QID>|creator`` — keyed on
@@ -309,7 +310,7 @@ def _build_artwork_deck(s: _Slot) -> dict:
     # Corrections must land BEFORE build_choices: distractors are drawn from other works'
     # creator values and biased by same-creator, so choosing them from an uncorrected creator
     # would build the options around a premise the answer no longer holds.
-    arts = fetch_artworks_cached(cfg, refresh=REFRESH_METADATA)
+    arts = fetch_artworks_cached(cfg, refresh=refresh_metadata)
     corrections = parse_artwork_corrections(cfg.get('corrections'))
     for note in stale_corrections(arts, corrections):
         print(f'  ! artworks corrections: {note}', file=sys.stderr)
@@ -323,7 +324,7 @@ def _build_artwork_deck(s: _Slot) -> dict:
     workers = cfg.get('image_workers', 8)
     # checkpoint: assemble only already-downloaded works (config, or --cache-only for a
     # one-off re-export that must not change the work set)
-    cache_only = cfg.get('cache_only', False) or CACHE_ONLY
+    cache_only = cfg.get('cache_only', False) or cache_only
     hint = max(640, px * 2)  # a modest thumbnail is plenty for a px-sized WebP (was 1024)
 
     def _grab(a):
@@ -432,12 +433,17 @@ def _warn_orphans(config_dir: Path, decks_dir: Path) -> list[Path]:
 def export_decks(config_dir: Path = DEFAULT_CONFIG_DIR,
                  decks_dir: Path = DEFAULT_DECKS_DIR,
                  only: str | None = None,
-                 reset_identity: bool = False) -> list[Path]:
+                 reset_identity: bool = False,
+                 refresh_metadata: bool = False,
+                 cache_only: bool = False) -> list[Path]:
     """Write deck artifacts to ``decks_dir`` and return their paths.
 
-    A full export (``only=None``) clears ``decks_dir`` first — a rebuild is authoritative
-    — but preserves hand-authored ``source: manual`` artifacts (see ``_is_manual``), which
-    have no generator config to rebuild from. With ``only``, nothing is cleared and only
+    A full export (``only=None``) clears ``decks_dir`` — a rebuild is authoritative — but
+    preserves hand-authored ``source: manual`` artifacts (see ``_is_manual``), which have
+    no generator config to rebuild from. The clear happens only AFTER every deck has been
+    built in memory: a build that fails partway (a closed Wikimedia window, a hung sympy
+    pool) raises before anything is deleted, so the directory is never left cleared but
+    not rebuilt for the orchestrator's sync to copy. With ``only``, nothing is cleared and only
     matching decks are overwritten; their
     ``order`` and ``config_path`` are taken from the existing artifact when one is present.
     Those two fields are IDENTITY, not content: ``config_path`` keys the quiz's sessions
@@ -449,13 +455,13 @@ def export_decks(config_dir: Path = DEFAULT_CONFIG_DIR,
     """
     decks_dir = Path(decks_dir)
     decks_dir.mkdir(parents=True, exist_ok=True)
+    artifacts = build_deck_artifacts(config_dir, only=only, refresh_metadata=refresh_metadata,
+                                     cache_only=cache_only)
     if only is None:  # full rebuild is authoritative: drop stale JSON *and* image assets
         for stale in decks_dir.glob('*.json'):
             if not _is_manual(stale):
                 stale.unlink()
         _rmtree(decks_dir / 'assets')
-
-    artifacts = build_deck_artifacts(config_dir, only=only)
     written: list[Path] = []
     for a in artifacts:
         a = dict(a)
@@ -535,11 +541,9 @@ def main(argv=None) -> None:
                    help="With --only, re-derive order/config_path instead of preserving the "
                         "existing artifact's. Strands session history keyed on config_path.")
     args = p.parse_args(argv)
-    global REFRESH_METADATA, CACHE_ONLY
-    REFRESH_METADATA = args.refresh_metadata
-    CACHE_ONLY = args.cache_only
     written = export_decks(args.config_dir, args.out, only=args.only,
-                           reset_identity=args.reset_identity)
+                           reset_identity=args.reset_identity,
+                           refresh_metadata=args.refresh_metadata, cache_only=args.cache_only)
     scope = f"matching {args.only!r}" if args.only else 'all'
     print(f'Wrote {len(written)} deck artifacts ({scope}) to {args.out}')
 

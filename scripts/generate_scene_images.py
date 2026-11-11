@@ -8,6 +8,10 @@ Anchor picture first, then each scene with the anchor as a reference. Skips imag
 prompt is unchanged (manifest.json), so a rerun only pays for new or edited scenes. In batch
 mode the anchors are drawn directly (scenes need them), the scenes go to inline batches, and
 `wait` polls with exponential backoff (1 min doubling, 30 min cap) then saves the results.
+
+A submitted batch stays *in flight* until `wait` harvests it and marks its state file
+`harvested`. `submit` skips every scene an in-flight batch already holds, so a second submit
+does not pay for the same scenes twice; `--force` submits them anyway.
 """
 
 from __future__ import annotations
@@ -29,6 +33,16 @@ STATE_DIR = si.ROOT / '_batches'
 
 def _load_scenes(slug: str) -> dict:
     return yaml.safe_load((ROOT / 'configs' / 'companies' / f'{slug}.mnemonics.yaml').read_text())
+
+
+def in_flight(state_dir: Path = STATE_DIR) -> dict[str, Path]:
+    """Item key → state file, for every submitted batch not yet harvested by `wait`."""
+    out: dict[str, Path] = {}
+    for f in sorted(state_dir.glob('*.json')) if state_dir.is_dir() else []:
+        state = json.loads(f.read_text())
+        if not state.get('harvested'):
+            out.update({k: f for k in state['items']})
+    return out
 
 
 def _draw(job: si.Job, out_dir: Path, key: str, model: str, reference: bytes | None) -> bool:
@@ -76,6 +90,13 @@ def run_submit(args) -> int:
             if not job.done:
                 item = si.BatchItem(f'{slug}/{job.name}', out_dir, job)
                 (anchors if job.name == 'anchor' else items).append(item)
+    pending = {} if args.force else in_flight()
+    held = [it for it in items if it.key in pending]
+    if held:
+        files = sorted({pending[it.key].name for it in held})
+        print(f'{len(held)} scenes already in flight ({", ".join(files)}) — skipped; run '
+              f'--batch wait --state FILE, or pass --force to submit them again')
+        items = [it for it in items if it.key not in pending]
     print(f'{len(args.slugs)} companies: {len(anchors)} anchors to draw now, '
           f'{len(items)} scenes to batch with {args.model}, style {args.style}')
     if args.dry_run or not (anchors or items):
@@ -97,7 +118,8 @@ def run_submit(args) -> int:
     state = STATE_DIR / f'{stamp}.json'
     state.write_text(json.dumps({
         'model': args.model, 'style': args.style, 'batches': names,
-        'items': {it.key: {'out_dir': str(it.out_dir), 'name': it.job.name, 'prompt': it.job.prompt}
+        'items': {it.key: {'out_dir': str(it.out_dir), 'name': it.job.name, 'prompt': it.job.prompt,
+                           'scene': it.job.scene}
                   for it in items}}, indent=2) + '\n')
     print(f'submitted {len(names)} batch(es): {", ".join(names)}\nstate: {state}')
     return 0
@@ -105,9 +127,10 @@ def run_submit(args) -> int:
 
 def run_wait(args) -> int:
     """Poll every batch in the state file until finished, then save its images."""
-    state = json.loads(Path(args.state).read_text())
+    state_file = Path(args.state)
+    state = json.loads(state_file.read_text())
     key = si.api_key()
-    delay, pending, ops = 60, list(state['batches']), {}
+    delay, pending, ops, final = 60, list(state['batches']), {}, {}
     while pending:
         for name in list(pending):
             op = si.get_batch(name, key)
@@ -115,6 +138,7 @@ def run_wait(args) -> int:
             print(f'{datetime.now():%H:%M} {name}: {st}', flush=True)
             if si.batch_finished(st):
                 ops[name] = op
+                final[name] = st
                 pending.remove(name)
         if pending:
             time.sleep(delay)
@@ -130,9 +154,16 @@ def run_wait(args) -> int:
                 continue
             out_dir = Path(meta['out_dir'])
             si.save_webp(result, out_dir / f"{meta['name']}.webp")
-            si.record(out_dir, si.Job(meta['name'], meta['prompt']), state['model'])
+            si.record(out_dir, si.Job(meta['name'], meta['prompt'], scene=meta.get('scene')),
+                      state['model'])
             saved += 1
     missing = len(state['items']) - saved - len(failed)
+    state['final'] = final
+    state['harvested'] = datetime.now().isoformat(timespec='seconds')
+    state_file.write_text(json.dumps(state, indent=2) + '\n')
+    for name, st in final.items():
+        if st != 'BATCH_STATE_SUCCEEDED':
+            print(f'  batch {name} ended {st}', file=sys.stderr)
     print(f'saved {saved} images; {len(failed)} failed; {missing} absent from the results')
     for f in failed:
         print(f'  {f}', file=sys.stderr)
@@ -149,6 +180,8 @@ def main() -> int:
                     help='no anchor reference picture; the model draws its own anchor each time')
     ap.add_argument('--batch', choices=('submit', 'wait'))
     ap.add_argument('--state', help='batch state file written by --batch submit')
+    ap.add_argument('--force', action='store_true',
+                    help='--batch submit: also submit scenes an unharvested batch already holds')
     ap.add_argument('--dry-run', action='store_true', help='list what would be drawn; no API call')
     args = ap.parse_args()
     if args.batch == 'wait':

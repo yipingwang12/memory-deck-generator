@@ -91,19 +91,46 @@ def _mnemonics(cfg: dict, config: Path) -> dict | None:
     return yaml.safe_load((config.parent / name).read_text(encoding="utf-8")) if name else None
 
 
-def _image_source(slug: str, scenes: dict, images_root: Path) -> tuple[Path, str]:
-    """Which renderer's pictures this deck ships, as ``(dir, file suffix)``.
+RENDERERS = (*scene_images.SHIPPED_MODELS, scene_images.THREEJS_DIR)
 
-    Gemini first (full model, then Lite — ``SHIPPED_MODELS``), Three.js as the fallback: a
-    deck already live with pictures must not silently change its look, while the
-    hand-authored Three.js finals cover decks no Gemini run reached. A deck with none ships
-    nothing.
+
+def _renderer_dir(slug: str, renderer: str, images_root: Path) -> tuple[Path, str]:
+    """``(dir, file suffix)`` of one renderer's pictures for one deck."""
+    if renderer == scene_images.THREEJS_DIR:
+        return scene_images.threejs_dir(slug, root=images_root), scene_images.THREEJS_SUFFIX
+    if renderer not in scene_images.SHIPPED_MODELS:
+        raise SystemExit(f"unknown renderer {renderer!r}; use one of {', '.join(RENDERERS)}")
+    return scene_images.image_dir(slug, renderer, root=images_root), ""
+
+
+def _image_source(slug: str, scenes: dict, images_root: Path,
+                  shipped: str | None = None) -> tuple[Path, str, str]:
+    """Which renderer's pictures this deck ships, as ``(dir, file suffix, renderer)``.
+
+    The renderer is recorded, not inferred from which pictures happen to be current:
+    1. ``renderer:`` in the scenes YAML, when set — the way to switch a deck on purpose;
+    2. else the renderer the shipped sidecar records (``shipped``) — a deck already live must
+       not change its look because its pictures went out of date;
+    3. else, for a deck shipping for the first time, Gemini (full model, then Lite —
+       ``SHIPPED_MODELS``) if it has a current picture, Three.js otherwise.
     """
-    for model in scene_images.SHIPPED_MODELS:
-        gemini = scene_images.image_dir(slug, model, root=images_root)
-        if scene_images.current_images(scenes, gemini):
-            return gemini, ""
-    return scene_images.threejs_dir(slug, root=images_root), scene_images.THREEJS_SUFFIX
+    current = {r: len(scene_images.current_images(scenes, *_renderer_dir(slug, r, images_root)))
+               for r in RENDERERS}
+    renderer = scenes.get("renderer") or (shipped if shipped in RENDERERS else None)
+    if renderer is None:
+        renderer = next((m for m in scene_images.SHIPPED_MODELS if current[m]),
+                        scene_images.THREEJS_DIR)
+    best = max(RENDERERS, key=lambda r: current[r])
+    if current[best] > current[renderer]:
+        print(f"  WARN {slug}: ships {renderer} ({current[renderer]} current pictures) but "
+              f"{best} has {current[best]}; set renderer: in the scenes YAML to switch",
+              file=sys.stderr)
+    return (*_renderer_dir(slug, renderer, images_root), renderer)
+
+
+def _shipped_renderer(sidecar: Path) -> str | None:
+    """The renderer the deck's current sidecar was built from, or None."""
+    return json.loads(sidecar.read_text(encoding="utf-8")).get("renderer") if sidecar.exists() else None
 
 
 def _copy_scene_images(scenes: dict, src: Path, dest: Path, suffix: str = "") -> set[str]:
@@ -126,11 +153,12 @@ def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_d
         return
     deck = Path(_artifact_name(config)).stem
     out_dir.mkdir(parents=True, exist_ok=True)
-    src, suffix = _image_source(config.stem, scenes, images_root)
-    images = _copy_scene_images(scenes, src, out_dir / "images" / deck, suffix)
     out = out_dir / f"{deck}.json"
-    out.write_text(json.dumps(company_mnemonics.assemble(scenes, cards, cfg, deck, images),
-                              ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    src, suffix, renderer = _image_source(config.stem, scenes, images_root, _shipped_renderer(out))
+    images = _copy_scene_images(scenes, src, out_dir / "images" / deck, suffix)
+    sidecar = company_mnemonics.assemble(scenes, cards, cfg, deck, images)
+    sidecar["renderer"] = renderer
+    out.write_text(json.dumps(sidecar, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"built {out} — {len(scenes['cards'])} scenes, {len(images)} images")
 
 

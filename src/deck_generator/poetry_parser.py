@@ -11,6 +11,9 @@ def _norm(s: str) -> str:
 def extract_poem(text: str, start_marker: str, end_marker: str) -> list[str | None]:
     """Return poem lines between start_marker and end_marker (inclusive).
 
+    The end marker is searched after the start line first; only when no later line holds it
+    does the start line itself count, so a one-line poem extracts instead of raising.
+
     None entries represent blank lines in the source. Consecutive blank lines
     collapse to one. Leading and trailing blank lines are stripped.
     """
@@ -25,6 +28,8 @@ def extract_poem(text: str, start_marker: str, end_marker: str) -> list[str | No
         elif start_idx is not None and norm_end in norm_line:
             end_idx = i
             break
+    if start_idx is not None and end_idx is None and norm_end in _norm(lines[start_idx]):
+        end_idx = start_idx     # a one-line poem: both markers on the start line, no later end
     if start_idx is None:
         raise ValueError(f"start_marker not found: {start_marker!r}")
     if end_idx is None:

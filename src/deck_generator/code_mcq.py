@@ -184,18 +184,21 @@ def _notes_sha(notes_dir: Path, file_id: str) -> str | None:
 
 
 def currency_refusals(file_id: str, reviewed: str | None, notes_dir: Path,
-                      source: str) -> list[str]:
+                      source: str, pruned: str | None = None) -> list[str]:
     """MCQs follow AI notes, and follow every change to the file.
 
     ``reviewed`` is the file version every card was last checked against; it must be the
     version the AI notes cover and, when the source is at hand, the file as it is now.
+    ``pruned`` is the file version ``--prune`` last removed broken cards against: a deck
+    pruned for the file as it is now may build, but its survivors are still unreviewed
+    (see :func:`review_owed`), so ``reviewed`` stays where it was.
     """
     out = []
     current = file_sha256(source) if source else None
     if not reviewed:
         out.append("reviewed_sha256 missing: review every card against the file, then set it "
                    "to the file's sha256")
-    elif current and reviewed != current:
+    elif current and reviewed != current and pruned != current:
         out.append(f"file changed since the cards were reviewed ({reviewed[:12]}… → "
                    f"{current[:12]}…): review every card — drop obsolete, add for changes — "
                    f"then set reviewed_sha256")
@@ -206,6 +209,19 @@ def currency_refusals(file_id: str, reviewed: str | None, notes_dir: Path,
         out.append(f"AI notes for {file_id} cover another version of the file: update and "
                    f"export them first")
     return out
+
+
+def review_owed(reviewed: str | None, pruned: str | None, source: str) -> str | None:
+    """A warning when the deck was pruned for the file as it is now but not reviewed.
+
+    A prune removes only the cards whose quote is gone. A card whose quoted line survived can
+    still be false — the code around it changed — so a pruned deck is a separate state from a
+    reviewed one, and the review stays owed until ``reviewed_sha256`` is reset by hand."""
+    current = file_sha256(source) if source else None
+    if current and reviewed and reviewed != current and pruned == current:
+        return (f"pruned for {current[:12]}… but reviewed against {reviewed[:12]}…: review "
+                f"every surviving card against the file, then set reviewed_sha256")
+    return None
 
 
 def broken_quotes(audit: list[AuditRow], source: str) -> list[str]:

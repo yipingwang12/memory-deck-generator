@@ -16,20 +16,22 @@ def parse_entries(wikitext: str, year_col: int, name_col: int) -> list[Entry]:
     table = _extract_first_table(wikitext)
     if not table:
         return []
+    rows = [_parse_cells(b) for b in _split_rows(table)]
+    width = max((len(c) for c in rows), default=0)
     entries = []
     last_year: int | None = None
-    for row_block in _split_rows(table):
-        cells = _parse_cells(row_block)
-        # Year col may be absent (rowspan) — fall back to last known year
+    for cells in rows:
         year = _parse_year(cells[year_col]) if len(cells) > year_col else None
-        rowspan = year is None  # year cell was merged into prior row
+        # No year: either the year cell is merged into a row above (rowspan — the row is one
+        # cell short and its columns shift left), or it is present but holds no year (the
+        # row is full width and its columns stay put). Both inherit the last known year.
+        rowspan = year is None and len(cells) < width
         if year is not None:
             last_year = year
         elif last_year is None:
             continue
         else:
             year = last_year
-        # When year cell is absent, all columns shift left by one
         effective_name_col = (name_col - 1) if rowspan else name_col
         if len(cells) <= effective_name_col:
             continue

@@ -56,6 +56,7 @@ class Job:
     name: str           # 'anchor' or the card qid; also the file stem
     prompt: str
     done: bool = False
+    scene: str | None = None   # the scene text the prompt was built from; None for the anchor
 
     @property
     def digest(self) -> str:
@@ -152,7 +153,7 @@ def plan(scenes: dict, out_dir: Path, style: str = DEFAULT_STYLE,
     qids); ``done`` when the image exists for this prompt."""
     anchor = scenes['anchor']
     jobs = [Job('anchor', anchor_prompt(anchor, style))] if anchor_ref else []
-    jobs += [Job(c['qid'], scene_prompt(c['scene'], anchor, style, anchor_ref))
+    jobs += [Job(c['qid'], scene_prompt(c['scene'], anchor, style, anchor_ref), scene=c['scene'])
              for c in scenes['cards'] if only is None or c['qid'] in only]
     seen = _manifest(out_dir)
     for job in jobs:
@@ -173,6 +174,19 @@ def threejs_dir(slug: str, root: Path = ROOT) -> Path:
     return root / slug / THREEJS_DIR
 
 
+def is_current(entry: dict | None, scene: str) -> bool:
+    """True when the manifest ``entry`` records a picture drawn from ``scene`` as it reads now.
+
+    The one test of "this picture matches its scene", for both renderers. Entries carry the
+    scene text in ``scene``; entries written before that field existed are matched on the
+    quoted scene inside their prompt."""
+    if not entry:
+        return False
+    if 'scene' in entry:
+        return entry['scene'] == scene
+    return f'"{scene}"' in entry.get('prompt', '')
+
+
 def current_images(scenes: dict, out_dir: Path, suffix: str = '') -> set[str]:
     """qids whose image exists AND was drawn from the scene as it reads now — a picture of
     an edited scene would teach the old scene. ``suffix`` names the file variant
@@ -180,17 +194,19 @@ def current_images(scenes: dict, out_dir: Path, suffix: str = '') -> set[str]:
     seen = _manifest(out_dir) if out_dir.is_dir() else {}
     return {c['qid'] for c in scenes['cards']
             if (out_dir / f"{c['qid']}{suffix}.webp").is_file()
-            and f'"{c["scene"]}"' in seen.get(c['qid'], {}).get('prompt', '')}
+            and is_current(seen.get(c['qid']), c['scene'])}
 
 
 def record_threejs(scenes: dict, out_dir: Path, source: Path | None = None) -> set[str]:
     """Stamp the Three.js finals in ``out_dir`` into the manifest and return the qids stamped.
 
     A Three.js picture has no prompt — it is a hand-written scene page — so the manifest
-    records the scene text it was drawn from, in the same quoted form :func:`current_images`
-    checks. Stamping *asserts* the picture matches the text as it now reads, so a picture
-    older than ``source`` (the scenes YAML) is refused rather than certified: the scene may
-    have been edited after it was drawn, and a wrong certificate is worse than no picture.
+    records the scene text it was drawn from, which :func:`is_current` checks. Stamping
+    *asserts* the picture matches the text as it now reads, so a picture older than ``source``
+    (the scenes YAML) is refused rather than certified: the scene may have been edited after
+    it was drawn, and a wrong certificate is worse than no picture. The exception is a picture
+    already stamped for the scene text as it reads now: an edit to a different scene in the
+    same file changes the file time but not this scene, so its stamp stays.
     """
     data = _manifest(out_dir)
     edited = source.stat().st_mtime if source and source.exists() else None
@@ -200,10 +216,11 @@ def record_threejs(scenes: dict, out_dir: Path, source: Path | None = None) -> s
         image = out_dir / f'{qid}{THREEJS_SUFFIX}.webp'
         if not image.is_file():
             continue
-        if edited is not None and edited > image.stat().st_mtime:
+        if (edited is not None and edited > image.stat().st_mtime
+                and not is_current(data.get(qid), card['scene'])):
             continue
         data[qid] = {'digest': hashlib.sha256(card['scene'].encode()).hexdigest()[:16],
-                     'model': THREEJS_DIR,
+                     'model': THREEJS_DIR, 'scene': card['scene'],
                      'prompt': f'Three.js scene page {qid}{THREEJS_SUFFIX}.html '
                                f'for scene "{card["scene"]}"'}
         stamped.add(qid)
@@ -216,7 +233,8 @@ def record_threejs(scenes: dict, out_dir: Path, source: Path | None = None) -> s
 def record(out_dir: Path, job: Job, model: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     data = _manifest(out_dir)
-    data[job.name] = {'digest': job.digest, 'model': model, 'prompt': job.prompt}
+    data[job.name] = {'digest': job.digest, 'model': model, 'prompt': job.prompt,
+                      **({'scene': job.scene} if job.scene is not None else {})}
     (out_dir / MANIFEST).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
 
 
@@ -314,9 +332,15 @@ def get_batch(name: str, key: str) -> dict:
 
 
 def batch_state(op: dict) -> str:
-    """The batch state, wherever the response puts it (top level, or an Operation's metadata)."""
+    """The batch state, wherever the response puts it (top level, or an Operation's metadata).
+
+    A done Operation with no state counts as succeeded only when it carries no ``error``."""
     state = op.get('state') or (op.get('metadata') or {}).get('state')
-    return state or ('BATCH_STATE_SUCCEEDED' if op.get('done') else 'BATCH_STATE_UNSPECIFIED')
+    if state:
+        return state
+    if op.get('error'):
+        return 'BATCH_STATE_FAILED'
+    return 'BATCH_STATE_SUCCEEDED' if op.get('done') else 'BATCH_STATE_UNSPECIFIED'
 
 
 def batch_finished(state: str) -> bool:
