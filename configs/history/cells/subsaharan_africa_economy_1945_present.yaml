@@ -1,0 +1,678 @@
+# Cell: Sub-Saharan Africa x economy x 1945 to present. DRAFT 2026-11-11.
+# Dates: memory pass + web check (45 searches) + WP mirror (Kiwix) economy, currency and company pages.
+# Rules: phase -> start date; work -> first public appearance; law -> year it is signed or takes effect. Year = last two digits for the peg.
+# Scope: trade, money, banks, oil and mining, railways and ports, companies, economic crises and reforms.
+# Left out (older cells hold them): ECOWAS and SADC(C) founding (politics), dams and M-Pesa (science), strikes, famines and the Ugandan Asian expulsion (society), Arusha Declaration and Rhodesia sanctions (politics).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Pan-African and regional bodies
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: CFA franc",
+     event: "France creates the CFA franc for its African colonies",
+     scene: "A RAILWAY mail van leaves Paris loaded with brand-new CFA franc notes, the first money of France's African colonies."}
+  - {year: 1958, peg: wolf, confidence: unverified,
+     event: "UN Economic Commission for Africa is set up in Addis Ababa",
+     scene: "A WOLF in a UN sash opens the first office of the Economic Commission for Africa in Addis Ababa."}
+  - {year: 1963, peg: gem, confidence: unverified,
+     event: "Yaounde Convention: the European Community gives trade and aid terms to eighteen African states",
+     scene: "In Yaounde, a GEM seals the first trade-and-aid pact between the European Community and eighteen African states."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: African Development Bank",
+     event: "African Development Bank agreement comes into force",
+     scene: "A CHERRY drops into the vault and the African Development Bank comes to life, owned by African governments."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: African Development Bank",
+     event: "African Development Bank starts operations in Abidjan",
+     scene: "A JUDGE bangs his gavel in Abidjan and the African Development Bank opens for business."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: African Development Bank",
+     event: "African Development Fund is set up to give soft loans to the poorest African states",
+     scene: "A giant COIN rolls out of the new African Development Fund as a cheap loan to the poorest states."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Lome Convention",
+     event: "Lome Convention: African, Caribbean and Pacific states sign a trade and aid pact with the EEC in Togo",
+     scene: "An EAGLE signs the Lome Convention in Togo with its claw, opening Europe's markets to former colonies."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "OAU adopts the Lagos Plan of Action for African self-reliance",
+     scene: "In Lagos, a VASE holds the OAU's plan for Africa to feed and industrialise itself without outside help."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "Abuja Treaty: OAU states agree to build an African Economic Community",
+     scene: "A BOOT stamps the Abuja Treaty, the first step on a road to one African Economic Community."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: CFA franc",
+     event: "CFA franc is devalued by half overnight",
+     scene: "A BEAR tears every CFA franc note in half overnight, and prices in fourteen countries leap."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: African Growth and Opportunity Act",
+     event: "AGOA, a US law, gives African exports duty-free access to America",
+     scene: "A bottle of SAUCE crosses the Atlantic duty-free under Clinton's new African Growth and Opportunity Act."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Cotonou Agreement",
+     event: "Cotonou Agreement replaces the Lome Convention for ACP-EU trade and aid",
+     scene: "In Cotonou, a SAUCE pot boils away the old Lome Convention and cooks a new EU trade-and-aid pact."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Kimberley Process",
+     event: "Diamond states meet at Kimberley to stop the trade in conflict diamonds",
+     scene: "At Kimberley, a SAUCE of blood drips off rough diamonds, and ministers meet to stop conflict stones."}
+  - {year: 2001, peg: soda, confidence: unverified,
+     event: "NEPAD, the New Partnership for Africa's Development, is adopted in Lusaka",
+     scene: "A SODA fountain in Lusaka pours out NEPAD, Africa's new partnership plan for development."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Kimberley Process",
+     event: "Kimberley Process certificates for rough diamonds start",
+     scene: "A SUMO wrestler stamps a certificate on every parcel of rough diamonds as the Kimberley Process starts."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "African leaders sign the African Continental Free Trade Area at Kigali",
+     scene: "A DOVE carries the pen as African leaders sign the continental free trade area in Kigali."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "African Continental Free Trade Area agreement comes into force",
+     scene: "A TUBA blasts as the twenty-second ratification arrives and the continental free trade area takes legal force."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "Trading under the African Continental Free Trade Area officially starts",
+     scene: "On New Year's Day, an ANT carries the first crate across an African border under the free trade area."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: African Continental Free Trade Area",
+     event: "Pan-African Payment and Settlement System, PAPSS, is launched",
+     scene: "A NUN pays a trader in another African currency through PAPSS, with no dollar in between."}
+
+  # West Africa: franc zone and Sahel
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: CFA franc",
+     event: "Guinea leaves the franc zone and issues its own Guinean franc",
+     scene: "Guinea cuts a CHEESE stamped with the CFA franc out of its pocket and prints its own franc."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: CFA franc",
+     event: "Mali leaves the franc zone",
+     scene: "Mali snaps the CHAIN that ties its money to the CFA franc and walks out of the franc zone."}
+  - {year: 1963, peg: gem, confidence: medium, source: "Country study: Mauritania (MIFERMA)",
+     event: "MIFERMA starts iron ore mining at Zouerate in Mauritania",
+     scene: "A red GEM of iron ore rides the new desert railway from Zouerate to Nouadhibou as MIFERMA starts mining."}
+  - {year: 1971, peg: cat, confidence: high, source: "World Nuclear Assoc.: uranium in Niger",
+     event: "SOMAIR starts uranium production at Arlit in Niger",
+     scene: "A glowing CAT digs the first uranium ore at Arlit, in the Niger desert, for SOMAIR."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Mauritanian ouguiya",
+     event: "Mauritania leaves the CFA franc and introduces the ouguiya",
+     scene: "A COMB scrapes the CFA franc out of Mauritania's wallet and leaves the new ouguiya behind."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: CFA franc",
+     event: "Mali rejoins the CFA franc",
+     scene: "A FAIRY waves her wand and the Malian franc turns back into the CFA franc."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Ecobank",
+     event: "Ecobank Transnational is founded in Lome, a private pan-West African bank",
+     scene: "West African traders buy shares in a WAFFLE in Lome, and Ecobank, their own cross-border bank, is born."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: West African Economic and Monetary Union",
+     event: "ECOWAS signs a revised treaty in Cotonou to build a common market",
+     scene: "A PALM tree in Cotonou signs the revised ECOWAS treaty with a frond, aiming at one West African market."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: West African Economic and Monetary Union",
+     event: "UEMOA, the West African Economic and Monetary Union, is founded in Dakar",
+     scene: "In Dakar, a BEAR hugs eight franc-zone states into one West African Economic and Monetary Union."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: West African Economic and Monetary Union",
+     event: "Guinea-Bissau joins UEMOA and the CFA franc",
+     scene: "A PIG trades Guinea-Bissau's peso for CFA francs and trots into the West African monetary union."}
+  - {year: 1998, peg: beehive, confidence: unverified,
+     event: "BRVM, a regional stock exchange for eight franc-zone states, opens in Abidjan",
+     scene: "A BEEHIVE in Abidjan buzzes with traders as the regional stock exchange BRVM opens for eight countries."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: CFA franc",
+     event: "Ouattara and Macron announce the Eco to replace the West African CFA franc",
+     scene: "In Abidjan, a TUBA plays the CFA franc's farewell as Ouattara and Macron name its successor, the Eco."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: CFA franc",
+     event: "French National Assembly votes to end France's role in the West African CFA franc",
+     scene: "A French NOSE sniffs the reserve vault one last time as the Assembly ends France's role in the West African franc."}
+  - {year: 2024, peg: hanger, confidence: high, source: "S&P Global: Sangomar first oil",
+     event: "Sangomar field: Senegal produces its first oil",
+     scene: "A coat HANGER hooks Senegal's first barrel of oil out of the Sangomar field."}
+  - {year: 2025, peg: nail, confidence: high, source: "World Oil: Greater Tortue first LNG",
+     event: "Greater Tortue Ahmeyim: Mauritania and Senegal produce their first liquefied gas",
+     scene: "A NAIL pins the gas flare as the Gimi ship off Mauritania and Senegal makes their first liquefied gas."}
+
+  # West Africa: Nigeria
+  - {year: 1956, peg: leech, confidence: high, source: "Oloibiri histories (DPR, ThisDay)",
+     event: "Oloibiri: Shell-BP finds commercial oil in Nigeria",
+     scene: "A LEECH sucks black crude out of the Oloibiri swamp, Nigeria's first commercial oil strike."}
+  - {year: 1958, peg: wolf, confidence: high, source: "currentaffairs.ng: Oloibiri; DPR history",
+     event: "Nigeria exports its first crude oil from Oloibiri",
+     scene: "A WOLF rides the first tanker of Nigerian crude out of the Niger Delta to Europe."}
+  - {year: 1959, peg: elbow, confidence: unverified,
+     event: "Central Bank of Nigeria starts operations and issues the Nigerian pound",
+     scene: "An ELBOW shoves the colonial West African pound aside as the Central Bank of Nigeria opens its doors."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Nigerian Exchange Group",
+     event: "Lagos Stock Exchange starts official trading",
+     scene: "A JET flies over Lagos trailing a share ticker as the Lagos Stock Exchange opens official trading."}
+  - {year: 1971, peg: cat, confidence: high, source: "fmino.gov.ng: Nigeria joins OPEC",
+     event: "Nigeria joins OPEC as its eleventh member",
+     scene: "A CAT with an oil can takes the eleventh chair at OPEC's table for Nigeria."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Nigeria creates the Nigerian National Oil Corporation by decree",
+     scene: "A CAT signs Gowon's decree with a paw print, creating Nigeria's own national oil company."}
+  - {year: 1972, peg: coin, confidence: high, source: "Cambridge BHR: Nigerian indigenisation",
+     event: "Nigerian Enterprises Promotion Decree reserves many firms for Nigerians",
+     scene: "A COIN stamped 'Nigerians only' locks foreigners out of twenty-two kinds of business under Gowon's decree."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Nigerian naira",
+     event: "Nigeria replaces its pound with the naira",
+     scene: "A COMB combs the shillings and pence out of Nigeria's money, leaving the decimal naira."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Obasanjo launches Operation Feed the Nation to grow more food",
+     scene: "Students open a CAGE of chickens on a Lagos lawn as Obasanjo's Operation Feed the Nation begins."}
+  - {year: 1977, peg: cake, confidence: high, source: "Cambridge BHR: Nigerian indigenisation",
+     event: "Second indigenisation decree raises the Nigerian share in foreign firms",
+     scene: "A CAKE is cut again, and Nigerians must now own sixty percent of many foreign firms."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Nigerian Exchange Group",
+     event: "Lagos Stock Exchange becomes the Nigerian Stock Exchange",
+     scene: "A CAKE iced 'Lagos' is re-iced 'Nigerian Stock Exchange' as branches open across the country."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "NNOC and the oil ministry merge into the Nigerian National Petroleum Corporation",
+     scene: "A COWBOY lassoes the oil ministry and the NNOC together into one Nigerian National Petroleum Corporation."}
+  - {year: 1986, peg: fish, confidence: medium, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Nigeria starts an IMF-style Structural Adjustment Programme",
+     scene: "A FISH flops on the naira's back as Babangida's structural adjustment lets the currency fall."}
+  - {year: 2005, peg: seal, confidence: high, source: "Paris Club / Probe International",
+     event: "Paris Club cancels about eighteen billion dollars of Nigeria's debt",
+     scene: "A SEAL balances Nigeria's debt ledger on its nose and flips most of it into the sea at the Paris Club."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Nigeria lifts the fuel subsidy and petrol prices double; Occupy Nigeria protests follow",
+     scene: "A TONGUE licks the fuel subsidy off the pump on New Year's Day, and petrol prices double."}
+  - {year: 2014, peg: tower, confidence: high, source: "allafrica: Nigeria GDP rebasing",
+     event: "GDP rebasing makes Nigeria Africa's largest economy",
+     scene: "Statisticians add Nollywood and phones, and Nigeria's TOWER of GDP grows past South Africa's."}
+  - {year: 2016, peg: dish, confidence: medium, source: "WP mirror: Nigerian naira",
+     event: "Central Bank of Nigeria lets the naira float",
+     scene: "A DISH of naira notes slides off its peg and floats away on the market."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Jumia group news: NYSE listing",
+     event: "Jumia lists on the New York Stock Exchange, the first African start-up there",
+     scene: "A TUBA in Jumia orange rings the New York Stock Exchange bell for Africa's first listed start-up."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Nigerian naira",
+     event: "Nigeria launches the eNaira, Africa's first central bank digital currency",
+     scene: "An ANT carries a glowing eNaira coin into a phone wallet, the first digital central bank money in Africa."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Nigerian naira",
+     event: "Naira note redesign causes a severe cash shortage",
+     scene: "A GNOME hoards the few new naira notes while queues at Nigerian banks stretch for blocks."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Africanews: Dangote refinery",
+     event: "Dangote refinery, the world's largest single-train refinery, is inaugurated in Lagos",
+     scene: "A GNOME cuts the ribbon on a refinery taller than a city block at Lekki, Lagos, for Aliko Dangote."}
+  - {year: 2023, peg: gnome, confidence: high, source: "S&P Global: Nigeria scraps subsidy",
+     event: "Tinubu ends the petrol subsidy on his first day in office",
+     scene: "On inauguration day, a GNOME pulls the plug on the petrol subsidy, and pump prices triple."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Nigerian naira",
+     event: "Nigeria drops the naira peg; the currency falls a fifth in one day",
+     scene: "A GNOME cuts the string of the naira's peg, and the currency drops a fifth in one day."}
+
+  # West Africa: Ghana
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Gold Coast Cocoa Marketing Board is set up to buy the whole crop",
+     scene: "A ROCK-heavy sack of cocoa goes to the new Marketing Board, the only buyer allowed in the Gold Coast."}
+  - {year: 1948, peg: reef, confidence: unverified,
+     event: "Accra: Nii Kwabena Bonne leads a boycott of European import shops",
+     scene: "A REEF of unsold European cloth piles up as Accra shoppers boycott foreign import stores."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "WP mirror: Ghanaian cedi",
+     event: "Bank of Ghana issues the Ghanaian pound, the new nation's own money",
+     scene: "A WOLF guards the Bank of Ghana vault as the first Ghanaian pound notes replace West African money."}
+  - {year: 1962, peg: chain, confidence: high, source: "theghanareport: Tema Port opened",
+     event: "Nkrumah opens Tema harbour",
+     scene: "Nkrumah cuts a giant anchor CHAIN, and ships enter the new harbour at Tema."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Ghanaian cedi",
+     event: "Ghana introduces the cedi",
+     scene: "A cowrie shell set in JELLY is printed on the first cedi, Ghana's new decimal money."}
+  - {year: 1967, peg: jockey, confidence: medium, source: "USBM yearbook; Wisconsin library",
+     event: "Valco aluminium smelter at Tema starts commercial production",
+     scene: "A JOCKEY rides the first aluminium ingot out of the Valco smelter at Tema, powered by the Volta."}
+  - {year: 1978, peg: cave, confidence: high, source: "Farmer's Weekly; Pulse Ghana",
+     event: "Cote d'Ivoire overtakes Ghana as the world's largest cocoa producer",
+     scene: "Ghana's cocoa crown rolls into an Ivorian CAVE, and Cote d'Ivoire becomes the top grower."}
+  - {year: 1983, peg: foam, confidence: high, source: "CODESRIA: Ghana ERP",
+     event: "Ghana launches its IMF-backed Economic Recovery Programme",
+     scene: "Rawlings washes Ghana's broken economy in IMF FOAM and launches the Economic Recovery Programme."}
+  - {year: 1990, peg: bees, confidence: high, source: "GSE bulletin; eaumf.org",
+     event: "Ghana Stock Exchange starts trading in Accra",
+     scene: "A swarm of BEES buzzes over the trading floor as the Ghana Stock Exchange makes its first trades."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Economy of Ghana",
+     event: "Jubilee field: Ghana finds a large offshore oilfield",
+     scene: "A SKI slides off the drill ship and strikes the big Jubilee oilfield off Ghana's coast."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Ghanaian cedi",
+     event: "Ghana knocks four zeros off the cedi",
+     scene: "A SKI slices four zeros off every cedi note, and ten thousand old cedis become one."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: Economy of Ghana",
+     event: "Jubilee field starts Ghana's first commercial oil production",
+     scene: "A pair of DICE rolls Ghana's first barrels of Jubilee crude onto the deck of the production ship."}
+  - {year: 2022, peg: nun, confidence: high, source: "Al Jazeera: Ghana suspends debt payments",
+     event: "Ghana suspends payments on most of its external debt",
+     scene: "A NUN locks Ghana's cash box and stops paying its Eurobond holders."}
+
+  # West Africa: Cote d'Ivoire, Liberia, Guinea
+  - {year: 1948, peg: reef, confidence: high, source: "LISCR; Fred Lininger obituary",
+     event: "Liberia's Maritime Code creates an open ship registry",
+     scene: "A REEF of foreign tankers lines up to fly Liberia's flag under its new open ship registry."}
+  - {year: 1949, peg: rope, confidence: high, source: "LISCR / registry histories",
+     event: "The tanker World Peace becomes the first ship on the Liberian registry",
+     scene: "A ROPE hoists Liberia's flag on Niarchos's tanker World Peace, the registry's first ship."}
+  - {year: 1987, peg: fox, confidence: high, source: "Country study: Ivory Coast economy",
+     event: "Cote d'Ivoire suspends payments on its foreign debt",
+     scene: "A FOX shuts Houphouet's cash box as cocoa prices fall, and Cote d'Ivoire stops paying its foreign debt."}
+  - {year: 2025, peg: nail, confidence: high, source: "Rio Tinto Guinee; Caixin",
+     event: "Simandou: Guinea's giant iron ore mine loads its first cargo",
+     scene: "A NAIL forged from Simandou ore rides the first cargo out of Guinea toward China."}
+
+  # Central Africa: Congo-Kinshasa
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Gecamines",
+     event: "Mobutu's state takes over Union Miniere in Katanga as Gecomin",
+     scene: "A JOCKEY rides off with Union Miniere's copper mines and hands them to Mobutu's new Gecomin."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Congolese franc",
+     event: "The zaire replaces the Congolese franc",
+     scene: "A JOCKEY wins a race and is paid in the new zaire, worth a thousand old francs."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Gecamines",
+     event: "Gecomin is renamed Gecamines",
+     scene: "A CAT paints out 'Gecomin' on the Katanga copper smelter and writes 'Gecamines'."}
+  - {year: 1973, peg: comb, confidence: high, source: "GlobalSecurity: Zairianization",
+     event: "Zairianisation: Mobutu seizes foreign-owned farms, shops and firms",
+     scene: "A COMB rakes foreign owners off Zaire's farms and shops, and Mobutu hands them to his friends."}
+  - {year: 1974, peg: car, confidence: medium, source: "Zaire glossary (govdocs); GlobalSecurity",
+     event: "Retrocession: Zaire returns part of seized firms to foreign owners",
+     scene: "A CAR full of keys drives back to the foreign owners as Zaire returns part of the seized firms."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Gecamines",
+     event: "Kamoto copper mine collapses and closes",
+     scene: "A swarm of BEES pours out as the Kamoto mine caves in, and Gecamines' copper output collapses."}
+  - {year: 1997, peg: pig, confidence: disputed, source: "WP mirror: Congolese franc 1997; memory 1998",
+     event: "The Congolese franc replaces the new zaire",
+     scene: "A PIG eats a pile of worthless new zaires and gives back one Congolese franc."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Gecamines",
+     event: "Congo adopts a new Mining Code that opens mines to foreign firms",
+     scene: "A SUN rises over Katanga as Kabila's new Mining Code invites foreign miners back."}
+  - {year: 2008, peg: sofa, confidence: high, source: "mining.com: Sicomines review",
+     event: "Sicomines: Congo trades copper and cobalt for Chinese-built infrastructure",
+     scene: "A SOFA of copper and cobalt goes to China, and Chinese crews build Congo roads in exchange."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Gecamines",
+     event: "Congo revises its Mining Code and raises royalties",
+     scene: "A DOVE carries higher cobalt royalties in its beak as Congo rewrites its Mining Code."}
+  - {year: 2025, peg: nail, confidence: high, source: "IEA policy: DRC cobalt export ban",
+     event: "Congo bans cobalt exports to lift low prices",
+     scene: "A NAIL seals every cobalt crate at the Congo border, and world cobalt prices jump."}
+
+  # Central Africa: Gabon, Cameroon, Chad, Equatorial Guinea, Congo-Brazzaville
+  - {year: 1962, peg: chain, confidence: high, source: "COMILOG histories (search summary)",
+     event: "COMILOG ships the first manganese ore from Moanda in Gabon",
+     scene: "A cableway CHAIN carries the first buckets of Moanda manganese over the forest to Congo."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "WP mirror: CEMAC",
+     event: "Brazzaville Treaty founds UDEAC, the Central African customs union",
+     scene: "A CHERRY bowl in Brazzaville is shared by five states as they found the UDEAC customs union."}
+  - {year: 1975, peg: eagle, confidence: high, source: "Search: OPEC membership lists",
+     event: "Gabon joins OPEC",
+     scene: "An EAGLE flies Gabon's oil flag to Vienna and takes a seat in OPEC."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: CEMAC",
+     event: "ECCAS, the Economic Community of Central African States, is founded",
+     scene: "In Libreville, a FOAM of handshakes binds ten states into the Economic Community of Central African States."}
+  - {year: 1986, peg: fish, confidence: disputed, source: "MIGA and USBM 1986; WP 1987",
+     event: "Transgabonais railway reaches Franceville",
+     scene: "A FISH rides the first Transgabonais train from the coast into Franceville."}
+  - {year: 1994, peg: bear, confidence: medium, source: "WP mirror: CEMAC",
+     event: "Central African states agree to form CEMAC to replace UDEAC",
+     scene: "A BEAR signs the CEMAC treaty with its paw, turning the old UDEAC into a monetary community."}
+  - {year: 1995, peg: bell, confidence: high, source: "Oil & Gas Journal: Zafiro discovery",
+     event: "Zafiro: Mobil finds Equatorial Guinea's first big oilfield",
+     scene: "A BELL rings on Mobil's rig off Bioko as the Zafiro well flows Equatorial Guinea's first big oil."}
+  - {year: 1995, peg: bell, confidence: medium, source: "Search: OPEC membership lists",
+     event: "Gabon leaves OPEC",
+     scene: "Gabon rings a BELL at the OPEC door and walks out to pump without quotas."}
+  - {year: 1996, peg: peach, confidence: high, source: "Offshore Magazine: Zafiro on stream",
+     event: "Zafiro field starts production; Equatorial Guinea becomes an oil exporter",
+     scene: "A PEACH-coloured tanker loads the first Zafiro crude, and Equatorial Guinea becomes an oil exporter."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Chad-Cameroon pipeline",
+     event: "Chad-Cameroon oil pipeline opens; Chad starts exporting oil",
+     scene: "A SUMO wrestler shoves Chad's first crude a thousand kilometres through the pipeline to Kribi."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Chad-Cameroon pipeline",
+     event: "Chad prepays its World Bank pipeline loans and ends the Bank's role",
+     scene: "Chad pays off the World Bank from its SOFA cushion and throws the Bank out of the pipeline deal."}
+  - {year: 2016, peg: dish, confidence: medium, source: "Search: OPEC membership lists",
+     event: "Gabon rejoins OPEC",
+     scene: "Gabon brings a DISH to the OPEC table and sits down as a member again."}
+  - {year: 2017, peg: dog, confidence: high, source: "Ballotpedia: OPEC",
+     event: "Equatorial Guinea joins OPEC",
+     scene: "A DOG from Malabo fetches OPEC's membership card for Equatorial Guinea."}
+  - {year: 2018, peg: dove, confidence: high, source: "Energy Institute: OPEC records",
+     event: "Republic of the Congo joins OPEC",
+     scene: "A DOVE from Brazzaville lands at OPEC's Vienna table and takes Congo's new seat."}
+
+  # Central Africa: Angola
+  - {year: 1966, peg: judge, confidence: unverified,
+     event: "Cabinda: Gulf Oil finds large offshore oilfields",
+     scene: "A JUDGE in a hard hat declares the Cabinda sea floor rich in oil for Gulf."}
+  - {year: 1976, peg: cage, confidence: high, source: "Cambridge JMAS: rise of Sonangol",
+     event: "Angola founds Sonangol, its state oil company",
+     scene: "Neto's government locks Angola's oil in a CAGE and hands the key to the new Sonangol."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Angolan kwanza",
+     event: "Angola replaces the escudo with the kwanza",
+     scene: "A CAKE decorated with escudos is sliced and served as the first kwanza notes."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Economy of Angola",
+     event: "Angola joins OPEC",
+     scene: "A SKI glides Angola onto OPEC's slope on New Year's Day as its newest member."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Search: OPEC membership lists",
+     event: "Angola leaves OPEC over production quotas",
+     scene: "Angola hangs its OPEC badge on a HANGER and walks out over quotas."}
+
+  # East Africa: Tanganyika and Tanzania
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Tanganyika groundnut scheme",
+     event: "Britain sends the Wakefield mission to plan the Tanganyika groundnut scheme",
+     scene: "A ROACH carries a single peanut across a map as the Wakefield mission plans millions of acres of groundnuts."}
+  - {year: 1947, peg: rock, confidence: medium, source: "WP mirror: Tanganyika groundnut scheme",
+     event: "Groundnut scheme: bulldozers start clearing bush at Kongwa",
+     scene: "Bulldozers break on hard ROCK and baobab roots as clearing for groundnuts begins at Kongwa."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Tanganyika groundnut scheme",
+     event: "Overseas Food Corporation takes over the groundnut scheme",
+     scene: "A REEF of broken tractors passes to the new Overseas Food Corporation as it takes over the groundnut scheme."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Tanganyika groundnut scheme",
+     event: "Tanganyika groundnut scheme is abandoned as a failure",
+     scene: "Britain's empty WALLET drops into the dust at Kongwa as the groundnut scheme is abandoned."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Tanzanian shilling",
+     event: "Bank of Tanzania issues the Tanzanian shilling",
+     scene: "A JUDGE in Dar es Salaam rules the East African shilling dead and issues the Tanzanian shilling."}
+  - {year: 1967, peg: jockey, confidence: high, source: "Nyerere: Arusha Declaration Ten Years After",
+     event: "Tanzania nationalises the commercial banks into the National Bank of Commerce",
+     scene: "A JOCKEY rides into Barclays and Standard Bank and carries their keys to the new National Bank of Commerce."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: TAZARA Railway",
+     event: "Tanzania, Zambia and China sign the TAZARA railway agreement in Beijing",
+     scene: "A JOCKEY in Beijing gallops the signed TAZARA treaty to Lusaka and Dar es Salaam."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: TAZARA Railway",
+     event: "Construction of the TAZARA railway formally starts",
+     scene: "A GOOSE lays the first sleeper as Chinese workers start building the TAZARA line."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: TAZARA Railway",
+     event: "TAZARA's first passenger train reaches Dar es Salaam from Zambia",
+     scene: "An EAGLE flies ahead of the first TAZARA passenger train as it pulls into Dar es Salaam."}
+  - {year: 1986, peg: fish, confidence: high, source: "WP mirror: Economy of Tanzania",
+     event: "Tanzania agrees an IMF programme and starts to dismantle socialist controls",
+     scene: "Tanzania trades its ujamaa price controls for an IMF FISH and starts to free the market."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Economy of Tanzania",
+     event: "Golden Pride, Tanzania's first modern gold mine, opens",
+     scene: "A PIPE pours molten gold at Golden Pride, the first modern gold mine in Tanzania."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP mirror: Economy of Tanzania",
+     event: "Songo Songo gas field starts commercial production for Dar es Salaam",
+     scene: "A SEWER-sized pipe carries Songo Songo island gas under the sea to power Dar es Salaam."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP mirror: Economy of Tanzania",
+     event: "Large offshore gas finds begin off southern Tanzania",
+     scene: "DICE rolled on the drill floor come up gas, again and again, off southern Tanzania."}
+
+  # East Africa: Kenya and Uganda
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: East African Community",
+     event: "East African High Commission starts to run shared railways, posts and customs",
+     scene: "A REEF of rail, post and customs files joins Kenya, Uganda and Tanganyika under one High Commission."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "Business Daily; EANSO journal",
+     event: "Swynnerton Plan lets African smallholders in Kenya grow cash crops on titled land",
+     scene: "A LAWYER hands a Kikuyu farmer a land title and coffee seedlings under the Swynnerton Plan."}
+  - {year: 1954, peg: lawyer, confidence: unverified,
+     event: "Nairobi Stock Exchange starts as a brokers' association",
+     scene: "A LAWYER chalks the first share prices on a board in Nairobi as brokers form a stock exchange."}
+  - {year: 1962, peg: chain, confidence: disputed, source: "EANSO journal (1962); others say 1963",
+     event: "Million-Acre Scheme starts to settle Africans on former White Highlands farms",
+     scene: "A CHAIN fence around a White Highlands farm is cut, and African families move onto small plots."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Economy of Uganda",
+     event: "Uganda joins GATT",
+     scene: "Uganda clips its coffee sacks to the GATT trade CHAIN two weeks after independence."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP mirror: Economy of Kenya",
+     event: "Kenya's Sessional Paper No. 10 sets out African socialism",
+     scene: "Mboya spreads a policy of African socialism like JELLY on Kenya's economy in Sessional Paper Ten."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Kenyan shilling",
+     event: "Kenya shilling replaces the East African shilling",
+     scene: "A JUDGE in Nairobi swaps each East African shilling for a Kenya shilling, one for one."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Economy of Uganda",
+     event: "Bank of Uganda starts to issue Uganda's own currency",
+     scene: "A JUDGE in Kampala stamps the first Uganda shilling note of the new Bank of Uganda."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: East African Community",
+     event: "First East African Community collapses",
+     scene: "The East African Community CAKE crumbles, and Kenya, Uganda and Tanzania each grab a piece."}
+  - {year: 1980, peg: vase, confidence: medium, source: "CSIS Africa Notes: Kenya SAL",
+     event: "Kenya gets one of the World Bank's first structural adjustment loans",
+     scene: "A World Bank VASE full of conditional dollars is handed to Kenya, an early structural adjustment loan."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Economy of Uganda",
+     event: "Uganda signs an IMF and World Bank adjustment framework",
+     scene: "A FOX signs Museveni's policy paper with the IMF, and Uganda's structural adjustment begins."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Economy of Kenya",
+     event: "Donors freeze aid to Kenya",
+     scene: "A donor BOOT stamps on Kenya's aid pipeline, and the flow of money stops."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Economy of Kenya",
+     event: "Kenya removes price controls, import licences and exchange controls",
+     scene: "A PALM opens and lets go of Kenya's price, import and currency controls all at once."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: East African Community",
+     event: "Kenya, Uganda and Tanzania sign a treaty to re-establish the East African Community",
+     scene: "Three presidents share a peace PIPE in Arusha and sign the treaty that revives the East African Community."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: East African Community",
+     event: "East African Community customs union takes effect",
+     scene: "A SEAL balances one common tariff on its nose for all three East African states."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Oil & Gas Journal; Uganda PAU",
+     event: "Lake Albert: Hardman and Tullow find commercial oil in Uganda",
+     scene: "A SUSHI roll of waxy crude comes up from the Lake Albert rift, Uganda's first commercial oil find."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Economy of Kenya",
+     event: "Kenya launches its long-term Vision plan for rapid growth to middle income",
+     scene: "A SKI jump points Kenya up toward middle-income status as Kibaki launches his long-term Vision plan."}
+  - {year: 2008, peg: sofa, confidence: high, source: "nextbillion; telecoms.com",
+     event: "Safaricom shares start trading after East Africa's largest IPO",
+     scene: "Hundreds of thousands of Kenyans buy SOFA-shaped share certificates in Safaricom, East Africa's biggest IPO."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP mirror: East African Community",
+     event: "East African Community common market protocol takes effect",
+     scene: "DICE roll freely across East African borders as the common market lets people, goods and capital move."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Tullow press release: Ngamia-1",
+     event: "Ngamia-1: Tullow finds Kenya's first oil in Turkana",
+     scene: "A camel's TONGUE tastes waxy crude at the Ngamia well, Kenya's first oil find, in Turkana."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Mombasa-Nairobi SGR",
+     event: "Mombasa-Nairobi Standard Gauge Railway opens",
+     scene: "A DOG rides the first Madaraka Express from Mombasa to Nairobi on Chinese-built standard-gauge track."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: AGOA",
+     event: "US suspends Rwanda's AGOA apparel benefits over its ban on used clothes",
+     scene: "A DOVE drops a bale of used American clothes, and Washington cuts Rwanda's duty-free apparel trade."}
+
+  # East Africa: Ethiopia, Eritrea, South Sudan
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: Ethiopian Airlines",
+     event: "Ethiopian Airlines is founded",
+     scene: "Haile Selassie swaps a RAILWAY ticket for an airline ticket as Ethiopian Airlines is founded."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: Ethiopian birr",
+     event: "Ethiopia brings back its own currency, the birr or Ethiopian dollar",
+     scene: "A RAILWAY freight car carries the new Ethiopian dollar to Addis Ababa, ending use of the East African shilling."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Ethiopian Airlines",
+     event: "Ethiopian Airlines flies its first scheduled service",
+     scene: "A ROACH buckles into a Dakota seat on Ethiopian Airlines' first scheduled flight from Addis Ababa."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP mirror: Ethiopian Airlines",
+     event: "Ethiopian Airlines starts jet service with a Boeing to Nairobi",
+     scene: "A GEM flashes on the nose of Ethiopian's first Boeing jet as it roars to Nairobi."}
+  - {year: 1975, peg: eagle, confidence: high, source: "Country study: Ethiopia; Addis Standard",
+     event: "Derg nationalises all rural land: land to the tiller",
+     scene: "An EAGLE snatches every rural title deed from the landlords and drops the land to the tillers."}
+  - {year: 1975, peg: eagle, confidence: high, source: "MERIP: revolution from above",
+     event: "Derg nationalises urban land and rental houses",
+     scene: "An EAGLE takes the rent money from Addis Ababa landlords as the Derg seizes urban land and rental houses."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Ethiopian birr",
+     event: "Ethiopia drops the name 'dollar'; the birr is its only name",
+     scene: "The word 'dollar' is locked in a CAGE, and only 'birr' stays on Ethiopia's notes."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Eritrean nakfa",
+     event: "Eritrea introduces the nakfa and drops the Ethiopian birr",
+     scene: "A PIG swaps its Ethiopian birr for Eritrean nakfa notes, one for one."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Economy of Ethiopia",
+     event: "Ethiopia Commodity Exchange opens in Addis Ababa",
+     scene: "Coffee farmers sit on a SOFA in Addis Ababa watching their bean prices on the new commodity exchange board."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Ethiopian Airlines",
+     event: "Ethiopian Airlines joins the Star Alliance",
+     scene: "Ethiopian Airlines gets a Star Alliance TATTOO on its tail, the alliance's new African member."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: South Sudanese pound",
+     event: "South Sudan introduces the South Sudanese pound",
+     scene: "Garang's face is printed like a TATTOO on the new South Sudanese pound, a week after independence."}
+  - {year: 2012, peg: tongue, confidence: unverified,
+     event: "South Sudan shuts down its oil production in a dispute with Sudan",
+     scene: "A TONGUE licks the valve shut, and South Sudan stops pumping its oil through Sudan."}
+  - {year: 2016, peg: dish, confidence: medium, source: "WP mirror: Addis Ababa-Djibouti Railway",
+     event: "Addis Ababa-Djibouti electric railway is inaugurated",
+     scene: "A DISH of coffee rides the new electric train from Addis Ababa to the port of Djibouti."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: AGOA",
+     event: "US removes Ethiopia from AGOA over the Tigray war",
+     scene: "A NUN locks the duty-free door to America in Ethiopia's face over the Tigray war."}
+  - {year: 2022, peg: nun, confidence: unverified,
+     event: "Safaricom Ethiopia launches, ending Ethio Telecom's monopoly",
+     scene: "A NUN answers the first call on Safaricom Ethiopia, the end of the state telecom monopoly."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Credendo; Fitch via news reports",
+     event: "Ethiopia misses a Eurobond coupon and defaults",
+     scene: "A GNOME hides Ethiopia's Eurobond coupon money, and the country slips into default."}
+  - {year: 2024, peg: hanger, confidence: high, source: "BNN Bloomberg: Ethiopia frees currency",
+     event: "Ethiopia lets the birr float; it falls about a third",
+     scene: "A HANGER drops the birr off its hook, and the currency falls a third in one day."}
+  - {year: 2025, peg: nail, confidence: high, source: "Addis Fortune: ESX debut",
+     event: "Ethiopian Securities Exchange is launched, the country's first in about fifty years",
+     scene: "Abiy hammers a NAIL into the trading-floor wall as the Ethiopian Securities Exchange opens."}
+
+  # Southern Africa: South Africa
+  - {year: 1946, peg: roach, confidence: high, source: "SAHO: Odendaalsrus",
+     event: "Free State gold rush: a borehole on the farm Geduld strikes rich gold",
+     scene: "A ROACH crawls out of a borehole at Geduld covered in gold, and the Free State gold rush begins."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Sasol",
+     event: "Sasol, a state company to make oil from coal, is founded",
+     scene: "A LASSO ropes a lump of coal and turns it into a fuel drum as the state founds Sasol."}
+  - {year: 1952, peg: lion, confidence: unverified,
+     event: "West Rand gold mines start producing uranium",
+     scene: "A LION digs uranium out of the gold dumps of the West Rand for the nuclear powers."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: South African rand",
+     event: "South Africa replaces its pound with the rand",
+     scene: "A JET drops rand coins with a springbok over Pretoria as the decimal rand replaces the pound."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Sasol (Natref)",
+     event: "Natref crude oil refinery is commissioned at Sasolburg",
+     scene: "A CAT turns the valve and the Natref refinery at Sasolburg starts refining imported crude."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Sasol",
+     event: "Secunda: Sasol Two coal-to-fuel plant is completed",
+     scene: "A VASE of coal goes in at Secunda and comes out as petrol as Sasol Two is completed."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Sasol",
+     event: "Secunda: Sasol Three comes on stream",
+     scene: "A giant OVEN at Secunda fires up Sasol Three, doubling the petrol made from coal."}
+  - {year: 1985, peg: waffle, confidence: high, source: "SARB speech 1997; Mail & Guardian",
+     event: "Chase Manhattan stops rolling over loans; South Africa freezes foreign debt repayment",
+     scene: "A WAFFLE with Chase's logo is snatched back, and South Africa freezes repayment of its foreign debt."}
+  - {year: 1986, peg: fish, confidence: high, source: "Reagan Library; WP: Anti-Apartheid Act",
+     event: "US Congress overrides Reagan and passes the Comprehensive Anti-Apartheid Act sanctions",
+     scene: "A FISH flips Reagan's veto into the Potomac, and US sanctions on South Africa become law."}
+  - {year: 1994, peg: bear, confidence: medium, source: "Springer; SARPN (RDP)",
+     event: "Reconstruction and Development Programme becomes the ANC government's economic plan",
+     scene: "A BEAR builds houses and water taps from the ANC's Reconstruction and Development Programme."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: MTN Group",
+     event: "M-Cell, later MTN, is founded in South Africa",
+     scene: "A BEAR makes the first call on a cellphone of M-Cell, the company that grows into MTN."}
+  - {year: 1996, peg: peach, confidence: high, source: "Springer; Lehigh (GEAR)",
+     event: "GEAR replaces the RDP with a market-friendly growth plan",
+     scene: "A PEACH labelled GEAR rolls in, and the ANC government swaps social spending targets for budget cuts."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Johannesburg Stock Exchange",
+     event: "Johannesburg Stock Exchange ends floor trading for electronic trading",
+     scene: "A PEACH lands on an empty trading floor as the JSE ends open outcry and trades by computer."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: South African rand",
+     event: "Rand crashes to its weakest level then on record",
+     scene: "The rand fizzes away like a SODA, falling to almost fourteen per dollar by December."}
+  - {year: 2004, peg: sewer, confidence: high, source: "Webber Wentzel; acts.co.za",
+     event: "Broad-Based Black Economic Empowerment Act becomes law",
+     scene: "Firms must now open the SEWER pipes of procurement to black-owned suppliers under the B-BBEE Act."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Northern Miner: power crisis shuts mines",
+     event: "Eskom load shedding shuts South Africa's gold and platinum mines",
+     scene: "Miners sit on a SOFA in the dark as Eskom cuts power and the platinum and gold mines stop."}
+  - {year: 2010, peg: dice, confidence: high, source: "gov.za: SA full membership of BRICS",
+     event: "China invites South Africa to join BRIC, which becomes BRICS",
+     scene: "China throws DICE with an S on them to South Africa, and BRIC becomes BRICS."}
+
+  # Southern Africa: Zambia and Zimbabwe
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Economy of Zambia; Britannica",
+     event: "Mulungushi reforms: Zambia's state takes majority stakes in big foreign firms",
+     scene: "A CHEF at Mulungushi serves Kaunda fifty-one percent of every big foreign firm on a plate."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Zambian kwacha",
+     event: "Zambia's kwacha notes replace the Zambian pound",
+     scene: "A CHEF slices the Zambian pound into ten-shilling kwachas and serves the new notes."}
+  - {year: 1969, peg: ship, confidence: high, source: "SAHO: 10 August 1969",
+     event: "Kaunda announces the state will take over the copper mines",
+     scene: "A copper SHIP changes flags at Matero as Kaunda announces the state will take the mines."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Economy of Zambia",
+     event: "Zambia takes majority holdings in Anglo American and RST copper mines",
+     scene: "A GOOSE that lays copper eggs now belongs fifty-one percent to Zambia, not to Anglo and RST."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Zimbabwean dollar",
+     event: "Rhodesia replaces its pound with the Rhodesian dollar",
+     scene: "A GOOSE lays decimal Rhodesian dollars in Salisbury as the sanctioned state drops its pound."}
+  - {year: 1973, peg: comb, confidence: unverified,
+     event: "Zambia closes its border with Rhodesia and reroutes copper exports",
+     scene: "A COMB blocks the Victoria Falls bridge, and Zambian copper turns north to Dar es Salaam."}
+  - {year: 1982, peg: oven, confidence: high, source: "Britannica: Mulungushi Reforms",
+     event: "Zambia merges its copper companies into ZCCM",
+     scene: "Two copper companies melt together in one OVEN and pour out ZCCM."}
+  - {year: 1986, peg: fish, confidence: high, source: "FES journal; CS Monitor",
+     event: "Zambia's maize meal price riots on the Copperbelt",
+     scene: "A FISH and empty mealie-meal sacks fly on the Copperbelt as subsidy cuts double the maize price."}
+  - {year: 1987, peg: fox, confidence: high, source: "CS Monitor; WP mirror: Economy of Zambia",
+     event: "Kaunda breaks with the IMF",
+     scene: "A FOX tears up the IMF contract in Lusaka as Kaunda drops the adjustment programme."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Zimbabwean dollar",
+     event: "Black Friday: the Zimbabwe dollar crashes after war veterans' payouts",
+     scene: "A PIG eats the Zimbabwe dollar on Black Friday after Mugabe pays out unbudgeted war veterans' grants."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Land reform in Zimbabwe",
+     event: "Zimbabwe lists nearly fifteen hundred white farms for compulsory purchase",
+     scene: "A PIG marks nearly fifteen hundred white-owned farms on a list for the state to seize."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Economy of Zambia",
+     event: "Zambia completes the privatisation of ZCCM",
+     scene: "The last ZCCM mines are sold, and a SAUCE of copper pours into Anglo American's cup."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Land reform in Zimbabwe",
+     event: "Zimbabwe's fast-track land reform starts with farm occupations",
+     scene: "War veterans pour SAUCE over the gates of white-owned farms as fast-track land seizure begins."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Economy of Zimbabwe",
+     event: "Marange diamond fields are found in Zimbabwe",
+     scene: "A SUSHI roll studded with diamonds is dug up at Marange, and a diamond rush starts."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Zimbabwean dollar",
+     event: "Zimbabwe cuts ten zeros from its dollar as hyperinflation explodes",
+     scene: "A SOFA stuffed with trillion-dollar notes buys one loaf, and Zimbabwe cuts ten zeros off its dollar."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Zimbabwean dollar",
+     event: "Zimbabwe abandons its dollar and uses foreign currencies",
+     scene: "A bar of SOAP is priced in US dollars and rand as Zimbabwe abandons its own currency."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Zambian kwacha",
+     event: "Zambia rebases the kwacha, cutting three zeros",
+     scene: "Three zeros are buried in a TOMB as one new kwacha replaces a thousand old ones."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Economy of Zimbabwe",
+     event: "Zimbabwe issues bond notes pegged to the US dollar",
+     scene: "A DISH of bond notes is served as US dollars, but Harare shoppers refuse to eat."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Zimbabwean dollar",
+     event: "Zimbabwe bans foreign currency and brings back the Zimbabwe dollar",
+     scene: "A TUBA plays the old anthem as Zimbabwe bans the US dollar and revives its own currency."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP mirror: Economy of Zambia",
+     event: "Zambia misses a Eurobond payment, Africa's first default of the pandemic",
+     scene: "A masked NOSE turns away from the Eurobond bill, and Zambia becomes Africa's first pandemic default."}
+  - {year: 2024, peg: hanger, confidence: high, source: "AP via KSAT: Zimbabwe's ZiG",
+     event: "Zimbabwe launches the ZiG, a gold-backed currency",
+     scene: "A gold bar on a HANGER backs the new ZiG, Zimbabwe's sixth try at a currency since independence."}
+
+  # Southern Africa: Botswana, Namibia, Lesotho, Eswatini, Mozambique
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Southern African Customs Union",
+     event: "South Africa, Botswana, Lesotho and Swaziland sign the new SACU agreement",
+     scene: "Four states sail one customs SHIP as the new Southern African Customs Union shares its duties."}
+  - {year: 1971, peg: cat, confidence: high, source: "mining-technology; Debswana histories",
+     event: "Orapa diamond mine opens in Botswana",
+     scene: "A CAT digs a diamond out of the Orapa pipe as Seretse Khama opens Botswana's first mine."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: South African rand",
+     event: "Swaziland introduces its own currency, the lilangeni",
+     scene: "A CAR in Mbabane pays its toll in the new lilangeni, Swaziland's own money beside the rand."}
+  - {year: 1976, peg: cage, confidence: high, source: "Bank of Botswana: history of currency",
+     event: "Botswana introduces the pula and leaves the rand",
+     scene: "Botswana opens the rand's CAGE and lets the pula fly free on Pula Day."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "Rossing uranium mine starts production in Namibia",
+     scene: "A CAGE lowers miners into Rossing's open pit as the Namib desert's great uranium mine starts."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: South African rand",
+     event: "Lesotho introduces the loti",
+     scene: "A Basotho hat on a VASE marks the first loti notes, Lesotho's own currency."}
+  - {year: 1982, peg: oven, confidence: high, source: "Flagspot; Bus-ex (Jwaneng)",
+     event: "Jwaneng, the world's richest diamond mine, opens in Botswana",
+     scene: "Jwaneng's giant OVEN of kimberlite yields more diamond value than any other mine as it opens."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Economy of Botswana",
+     event: "Botswana Stock Exchange is set up",
+     scene: "A watch FOB ticks in Gaborone as the Botswana Stock Exchange opens."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Namibian dollar",
+     event: "Namibia introduces the Namibian dollar",
+     scene: "A PALM in Windhoek holds the first Namibian dollar, pegged one for one to the rand."}
+  - {year: 2000, peg: sauce, confidence: unverified,
+     event: "Mozal aluminium smelter near Maputo starts production",
+     scene: "A SAUCE of molten aluminium pours from Mozal, Mozambique's first big foreign factory, outside Maputo."}
+  - {year: 2008, peg: sofa, confidence: unverified,
+     event: "SADC Free Trade Area is launched",
+     scene: "Southern African leaders sit on one SOFA as the SADC Free Trade Area cuts tariffs between them."}
+  - {year: 2010, peg: dice, confidence: high, source: "Daily Maverick: Mozambique gas",
+     event: "Rovuma Basin: Anadarko finds giant gas fields off Mozambique",
+     scene: "Anadarko throws DICE off Cabo Delgado and wins one of the world's biggest gas finds."}
+  - {year: 2016, peg: dish, confidence: high, source: "CRS report R45817",
+     event: "Mozambique's hidden debts are exposed; the IMF suspends lending",
+     scene: "A DISH lid lifts on two billion dollars of secret loans, and the IMF freezes Mozambique's aid."}
+
+  # Indian Ocean islands
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Economy of Mauritius",
+     event: "Meade report predicts a bleak future for sugar-dependent Mauritius",
+     scene: "A JET brings economist James Meade, who warns Mauritius it will sink under sugar and too many people."}
+  - {year: 1970, peg: goose, confidence: high, source: "Commonwealth iLibrary; Neveling",
+     event: "Mauritius passes the Export Processing Zone Act",
+     scene: "A GOOSE sews shirts tax-free in Port Louis as the Export Processing Zone Act opens Mauritius to factories."}
+  - {year: 1973, peg: comb, confidence: disputed, source: "WP mirror: CFA franc (1973; one source 1972)",
+     event: "Madagascar leaves the franc zone",
+     scene: "A COMB parts Madagascar's hair from the franc zone, and the island runs its own money."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Economy of Mauritius",
+     event: "Stock Exchange of Mauritius opens in Port Louis",
+     scene: "A gold FOB chain swings over Port Louis as the Stock Exchange of Mauritius makes its first trade."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Malagasy ariary",
+     event: "The ariary replaces the Malagasy franc as Madagascar's official currency",
+     scene: "A SEAL on the beach trades its last Malagasy francs for ariary as the old money ends."}
+  - {year: 2008, peg: sofa, confidence: unverified,
+     event: "Seychelles defaults on its foreign debt",
+     scene: "Seychelles lounges on a SOFA of unpaid bonds and defaults on its foreign debt."}

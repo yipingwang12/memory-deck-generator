@@ -1,0 +1,619 @@
+# Cell: Sub-Saharan Africa x economy x 1800 to 1944. DRAFT 2026-11-11.
+# Dates: memory pass + web check (45 searches, plus many fetches of the Kiwix Wikipedia mirror; the rest is unverified).
+# Peg rules as policy.md: last two digits; years_ago not used in this period.
+# Range -> conventional "c." date, else start of a phase; "X +/- Y" -> X. Work or law -> first public appearance.
+# Scope: trade, money, banks, companies, mining, crops, ports, exploration. Railways and telegraphs stay in the
+# science cell; strikes, labour laws and indenture in the society cell; land acts, concessions to rulers and
+# colonial charters of rule in the politics cell (first-come). Northern Sudan is in north_africa.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Senegambia and the Western Sudan
+  - {year: 1805, peg: seal, confidence: high, source: "WP mirror: Mungo Park (explorer)",
+     event: "Mungo Park's second expedition reaches the Niger and sails down it from Sansanding",
+     scene: "A SEAL pulls Mungo Park's boat Joliba off the bank at Sansanding and swims it down the Niger."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Alexander Gordon Laing",
+     event: "Alexander Gordon Laing becomes the first European to reach Timbuktu",
+     scene: "Alexander Gordon Laing crosses the Sahara on a giant NACHO and slides it through the Timbuktu gate first of all Europeans."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: René Caillié",
+     event: "René Caillié reaches Timbuktu and is the first European to come back alive",
+     scene: "René Caillié cuts his way out of Timbuktu with a KNIFE and carries it home alive across the Sahara."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "Search: Gambia groundnut shipments 1829-30",
+     event: "Gambia: the first groundnut exports leave for the West Indies",
+     scene: "A MOUSE drags the first sack of Gambian groundnuts up the gangway of a ship bound for the West Indies."}
+  - {year: 1840, peg: horse, confidence: medium, source: "Search: Brooks, groundnuts in Senegal, early 1840s",
+     event: "Senegal: Bordeaux merchants start the groundnut export trade (approximate)",
+     scene: "A HORSE hauls a Bordeaux merchant's cart of Senegal groundnuts to the ships at Saint-Louis."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP mirror: Heinrich Barth",
+     event: "Heinrich Barth reaches Timbuktu and stays for months",
+     scene: "A LLAMA carries Heinrich Barth and his notebooks through the Timbuktu gate."}
+  - {year: 1853, peg: llama, confidence: high, source: "Search: Banque du Sénégal decree 21 Dec 1853",
+     event: "Napoleon III decrees the Banque du Sénégal, the first bank in French West Africa",
+     scene: "A LLAMA opens the first bank vault in Saint-Louis after Napoleon III signs the Banque du Sénégal decree."}
+  - {year: 1901, peg: soda, confidence: high, source: "Search: BAO decree 29 June 1901",
+     event: "Banque de l'Afrique Occidentale replaces the Banque du Sénégal as note issuer",
+     scene: "A SODA can prints the new notes of the Banque de l'Afrique Occidentale and the old Banque du Sénégal goes flat."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Office du Niger",
+     event: "France forms the Office du Niger to irrigate the inner Niger delta for cotton",
+     scene: "The MOON pulls the Niger into French irrigation canals for cotton when the Office du Niger forms."}
+  # Gold Coast and Togo
+  - {year: 1877, peg: cake, confidence: unverified,
+     event: "Wassa: Pierre Bonnat starts the first European gold-mining company in the Gold Coast",
+     scene: "Pierre Bonnat cuts the first Wassa gold-mine CAKE and sells slices of it as company shares."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Tetteh Quarshie",
+     event: "Tetteh Quarshie plants cocoa from Fernando Po at Mampong",
+     scene: "A COWBOY lassos cocoa pods on Fernando Po and Tetteh Quarshie plants them in his Mampong farm."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Tetteh Quarshie",
+     event: "The Gold Coast exports its first cocoa",
+     scene: "A BOOT stuffed with the Gold Coast's first export cocoa is kicked onto a ship at Accra."}
+  - {year: 1897, peg: pig, confidence: high, source: "Search: Ashanti Goldfields listed 1897",
+     event: "Edwin Cade floats the Ashanti Goldfields Corporation to mine Obuasi",
+     scene: "A PIG digs up Obuasi gold and Edwin Cade sells it as Ashanti Goldfields shares in London."}
+  - {year: 1901, peg: soda, confidence: medium, source: "Search: Zimmerman, Tuskegee in Togo, Jan 1901",
+     event: "Tuskegee cotton experts arrive in German Togo to start export cotton",
+     scene: "Tuskegee experts water the first German Togo cotton field from a giant SODA bottle."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "Search: Statesman's Year-Book 1913 cocoa table",
+     event: "The Gold Coast becomes the world's largest cocoa producer, ahead of São Tomé",
+     scene: "A TATTOO artist inks 'world's number one cocoa' on the Gold Coast's arm, and São Tomé drops to second."}
+  - {year: 1914, peg: tower, confidence: medium, source: "Search: Kitson finds manganese May 1914 (or 1915)",
+     event: "Albert Kitson finds manganese near the railway at Nsuta",
+     scene: "Albert Kitson climbs a TOWER of black manganese rock beside the Sekondi line at Nsuta."}
+  - {year: 1916, peg: dish, confidence: medium, source: "Search: Ghana Manganese Co. starts 1916",
+     event: "Nsuta manganese mine starts work",
+     scene: "A DISH scoops the first manganese ore out of the Nsuta pit and pours it into railway wagons."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Search: Kitson finds diamonds, Birim, Feb 1919",
+     event: "Kitson and Teale find the first Gold Coast diamonds in the Birim River gravels",
+     scene: "Kitson tips a TUBA full of Birim River gravel and the first Gold Coast diamonds roll out."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Takoradi",
+     event: "Takoradi opens as the Gold Coast's first deep-water harbour",
+     scene: "A giant KNIFE cuts a deep-water harbour into the Takoradi coast so ships no longer anchor offshore."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "Gold Coast cocoa farmers hold back their crop against low prices",
+     scene: "A MOUSE sits on the cocoa sacks and stops Gold Coast farmers from selling at the low price."}
+  - {year: 1937, peg: mug, confidence: high, source: "Search: Swarthmore NV database, cocoa hold-up",
+     event: "Cocoa hold-up begins against the buying agreement of the European firms",
+     scene: "Gold Coast farmers fill a MUG with cocoa beans and refuse to pour it out for the buying-pool firms."}
+  - {year: 1938, peg: movie, confidence: high, source: "Search: Hansard 1938, Nowell Commission",
+     event: "Nowell Commission reports on the cocoa hold-up and blames the brokers",
+     scene: "The Nowell Commission shows a MOVIE of the cocoa hold-up that puts the brokers in the villain's role."}
+  # British West Africa (currency and marketing)
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: British West African pound",
+     event: "First coins for British West Africa; Liberia also adopts the pound",
+     scene: "A SKI slides the first holed British West African penny down to Monrovia, and Liberia takes up the pound."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: British West African pound",
+     event: "West African Currency Board is set up in London",
+     scene: "A TONGUE licks the seal of the new West African Currency Board and gives the colonies their own coins."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: British West African pound",
+     event: "West African Currency Board issues its first banknotes",
+     scene: "A DISH serves up the first West African Currency Board banknotes, two shillings to one pound."}
+  - {year: 1939, peg: map, confidence: unverified,
+     event: "Britain sets up a control board that buys the whole West African cocoa crop",
+     scene: "A wartime MAP of West Africa marks every cocoa farm whose crop the British control board buys."}
+  # Nigeria and the lower Niger
+  - {year: 1806, peg: sushi, confidence: high, source: "WP mirror: Mungo Park (explorer)",
+     event: "Mungo Park dies in the Bussa rapids of the Niger",
+     scene: "Mungo Park's boat breaks on the Bussa rocks and his last SUSHI roll sinks into the Niger with him."}
+  - {year: 1823, peg: gnome, confidence: high, source: "WP mirror: Hugh Clapperton",
+     event: "Clapperton, Denham and Oudney reach Kukawa and Lake Chad from Tripoli",
+     scene: "A GNOME guides Clapperton, Denham and Oudney across the Sahara to the shore of Lake Chad."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Hugh Clapperton",
+     event: "Clapperton starts his second expedition inland from Badagry",
+     scene: "Clapperton hammers a NAIL into the Badagry beach and starts walking inland toward Sokoto."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Hugh Clapperton",
+     event: "Clapperton dies at Sokoto; Richard Lander carries his journals home",
+     scene: "Clapperton's journal INK dries at Sokoto, where he dies, and Richard Lander carries the pages home."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Richard Lander",
+     event: "Richard and John Lander trace the lower Niger to the sea",
+     scene: "A MOUSE paddles the Lander brothers' canoe from Bussa down the Niger until it reaches the sea."}
+  - {year: 1832, peg: moon, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "Macgregor Laird and Richard Lander take trading steamers up the Niger",
+     scene: "Laird's iron steamer chugs up the Niger under the MOON to trade palm oil, and most of the crew die of fever."}
+  - {year: 1841, peg: radio, confidence: high, source: "Search: Niger expedition of 1841",
+     event: "British Niger expedition sets up a model farm at Lokoja, but fever kills many",
+     scene: "A RADIO on the steamer Albert calls off the Lokoja model farm as fever kills forty Europeans."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP mirror: Heinrich Barth",
+     event: "Heinrich Barth is the first European to reach Adamawa and the upper Benue",
+     scene: "Heinrich Barth opens his WALLET to pay the ferry across the upper Benue into Adamawa."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "Lokoja trading post is founded at the Niger-Benue confluence",
+     scene: "Baikie lays the first LOG of the Lokoja trading post where the Benue joins the Niger."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "George Goldie joins the Niger trading firms into the United African Company",
+     scene: "A COWBOY ropes the rival Niger trading firms together into George Goldie's United African Company."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "Goldie's National African Company takes over the United African Company",
+     scene: "Goldie bakes the old United African Company in an OVEN and takes out the National African Company."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "Royal Niger Company receives its royal charter",
+     scene: "A FISH swims up the Niger with the royal charter that turns Goldie's firm into the Royal Niger Company."}
+  - {year: 1894, peg: bear, confidence: high, source: "Search: BBWA began trading 31 March 1894",
+     event: "Bank of British West Africa begins trading in Lagos",
+     scene: "A BEAR stands guard at the Lagos counter where Alfred Jones' Bank of British West Africa opens."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Royal Niger Company",
+     event: "Royal Niger Company sells its territories to the British government",
+     scene: "The Royal Niger Company pours its territories into a bowl of SAUCE and sells the bowl to the British crown."}
+  - {year: 1902, peg: sun, confidence: medium, source: "Search: Niger Company tin search 1902",
+     event: "Niger Company sends an expedition to find the source of plateau tin",
+     scene: "The SUN glints on tin ore in a trader's hand at Ibi, and the Niger Company sends men up the plateau to find its source."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "Search: core.ac.uk, Jos tin production from 1904",
+     event: "Jos Plateau: commercial tin mining begins",
+     scene: "A SEWER of muddy water washes black tin ore out of the Jos Plateau streams into the first sluice boxes."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: Enugu",
+     event: "Coal is found under Enugwu Ngwo in the Udi hills",
+     scene: "A miner washes black coal dust off with SOAP after the first find under Enugwu Ngwo."}
+  - {year: 1912, peg: tongue, confidence: unverified,
+     event: "Kano: Hausa farmers start the groundnut export boom",
+     scene: "A TONGUE tastes the first Kano groundnuts sent by rail to the coast, and Hausa farmers plant more."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Port Harcourt",
+     event: "Port Harcourt is built as the port for Enugu coal",
+     scene: "A long TONGUE of quay sticks out into the Bonny River at the new Port Harcourt to load Enugu coal."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Enugu",
+     event: "Udi coal mine opens at Enugu",
+     scene: "A DOLL rides the first coal tub out of the Udi mine at Enugu."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: United Africa Company",
+     event: "Lever Brothers buys the Niger Company",
+     scene: "William Lever follows his NOSE to palm oil and buys the whole Niger Company."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: United Africa Company",
+     event: "United Africa Company forms from the Niger Company and African and Eastern",
+     scene: "A door KNOB joins the Niger Company and African and Eastern into one United Africa Company office."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Nigerian Bitumen Corporation starts the first oil search in Nigeria",
+     scene: "A SUMO wrestler stamps on the Lagos coast and black bitumen oozes up for the Nigerian Bitumen Corporation."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Shell D'Arcy starts oil exploration in Nigeria",
+     scene: "A Shell D'Arcy geologist fills a MUG with Niger delta swamp water and smells it for oil."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Petroleum industry in Nigeria",
+     event: "Nigeria gives Shell D'Arcy the sole right to search for oil and minerals",
+     scene: "A MOVIE poster of the whole map of Nigeria shows one name only: Shell D'Arcy, sole oil prospector."}
+  # Sierra Leone and Liberia
+  - {year: 1871, peg: cat, confidence: high, source: "Search: liberiapastandpresent.org, 1871 loan",
+     event: "Liberia takes a costly London loan of one hundred thousand pounds",
+     scene: "A CAT claws most of Liberia's London loan off the table before the money reaches Monrovia."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Firestone Natural Rubber Company",
+     event: "Liberia leases a million acres to Firestone for rubber",
+     scene: "Firestone pays Liberia six cents an acre and spreads its rubber trees like cheese over a giant NACHO."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Search: Sierra Leone diamonds found 1930",
+     event: "First diamonds are found in Sierra Leone",
+     scene: "A MOUSE digs the first Sierra Leone diamond out of a Kono stream bed."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Search: Britannica, Pepel iron ore from 1933",
+     event: "Marampa iron ore line opens and Pepel starts iron ore exports",
+     scene: "A MUMMY rides the first Marampa iron ore train to Pepel pier and tips the ore into a ship."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Search: SLST formed 1934",
+     event: "Sierra Leone Selection Trust gets the diamond monopoly",
+     scene: "The Selection Trust brings down a HAMMER on all Sierra Leone diamond claims and owns the monopoly."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: British West African pound",
+     event: "Liberia changes its currency to the US dollar",
+     scene: "A RAM butts the British pound out of Monrovia and the US dollar takes its place."}
+  # Congo basin, Gabon and Angola
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone crosses from the upper Zambezi to Luanda on the Atlantic",
+     scene: "A LAWYER signs in David Livingstone at Luanda after his walk from the upper Zambezi to the Atlantic."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Verney Lovett Cameron",
+     event: "Cameron reaches the Atlantic, the first European to cross equatorial Africa east to west",
+     scene: "An EAGLE flies Verney Cameron the last miles from Bihe to the Atlantic, first across equatorial Africa."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Pierre Savorgnan de Brazza",
+     event: "Brazza starts his expedition up the Ogooué",
+     scene: "An EAGLE perches on the bow of Brazza's canoe as he starts up the Ogooué."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP mirror: Henry Morton Stanley",
+     event: "Stanley reaches Boma and proves that the Lualaba is the Congo",
+     scene: "Stanley cuts a CAKE at Boma shaped like the Lualaba flowing into the Congo."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Henry Morton Stanley",
+     event: "Stanley leaves Vivi to build Leopold's road and stations up the Congo",
+     scene: "Stanley smashes a VASE of rock at Vivi and starts cutting Leopold's road up the Congo."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Henry Morton Stanley",
+     event: "Stanley's caravan reaches Stanley Pool, site of Leopoldville",
+     scene: "Stanley builds a bread OVEN on the shore of Stanley Pool where Leopoldville will grow."}
+  - {year: 1886, peg: fish, confidence: medium, source: "Search: Ball, Angola rubber boom 1886-1902",
+     event: "Angola's wild-rubber boom begins; Ovimbundu traders carry rubber to Benguela",
+     scene: "Ovimbundu caravans trade a FISH for each ball of root rubber and carry the rubber to Benguela."}
+  - {year: 1887, peg: fox, confidence: disputed, source: "WP mirror: Stanley (1886 in text, 1887 in list)",
+     event: "Emin Pasha Relief Expedition starts up the Congo",
+     scene: "A FOX leads Stanley's relief column for Emin Pasha up the Congo into the Ituri forest."}
+  - {year: 1891, peg: boot, confidence: high, source: "Search: EB1911, Congo decree of 21 Sept 1891",
+     event: "Secret decree gives the Congo Free State the rubber and ivory of the vacant lands",
+     scene: "Leopold's BOOT kicks the traders off the 'vacant lands' and keeps all Congo rubber and ivory for the state."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Abir Congo Company",
+     event: "ABIR rubber company is founded with a concession on the Maringa and Lopori",
+     scene: "ABIR's directors play a PIANO in Antwerp while their sentries force Maringa villagers to bring rubber."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Search: Cookey, French Congo concessions 1899",
+     event: "France divides most of the French Congo among concession companies",
+     scene: "A French minister draws the French Congo on a long PIPE and cuts it into forty concession companies."}
+  - {year: 1903, peg: sumo, confidence: high, source: "Search: Kilo-Moto gold found 1903",
+     event: "Hannam and O'Brien find gold at Kilo in the Ituri",
+     scene: "A SUMO wrestler squeezes gold out of the Ituri gravel for the prospectors Hannam and O'Brien."}
+  - {year: 1905, peg: seal, confidence: medium, source: "Search: Kilo mine opens 1905",
+     event: "Kilo gold mine opens as a state mine",
+     scene: "A SEAL balances the first Kilo gold bar on its nose for the Congo Free State."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Forminière",
+     event: "Forminière is founded to prospect the Congo",
+     scene: "Jean Jadot rolls Forminière's prospecting licence into a SUSHI roll and serves it to the Free State."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Abir Congo Company",
+     event: "Congo Free State takes over the ABIR rubber concession",
+     scene: "The Free State takes ABIR's whole SUSHI tray of rubber posts and ABIR leaves the Maringa."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "Search: Belgian convention of 21 Feb 1911",
+     event: "Lever signs the Huileries du Congo Belge palm-oil concession",
+     scene: "William Lever gets a palm-tree TATTOO when he signs the Belgian Congo palm-oil convention."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Forminière",
+     event: "Forminière starts diamond mining in the Kasai",
+     scene: "Forminière opens a stone TOMB in the Kasai and diamonds pour out."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Diamang",
+     event: "Diamang diamond company is formed for Angola's Lunda",
+     scene: "A DOG sniffs out Lunda diamonds and investors form Diamang to dig them."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: Diamang",
+     event: "Angola grants Diamang the sole right to mine diamonds",
+     scene: "Diamang puts its NOSE into every Angolan river bed when it gets the sole diamond rights."}
+  # Katanga and the Copperbelt
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Roan Antelope Copper Mine",
+     event: "William Collier finds copper at Luanshya, the Roan Antelope deposit",
+     scene: "William Collier shoots a roan antelope by the Luanshya, and the SUN shows copper stains on the rock under it."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Kabwe",
+     event: "Lead and zinc are found at Broken Hill (Kabwe)",
+     scene: "The SUN bakes a hill of lead and zinc ore at Broken Hill, and prospectors peg it."}
+  - {year: 1910, peg: dice, confidence: high, source: "Search: Lubumbashi founded 1910",
+     event: "Elisabethville is founded beside the Union Minière smelter",
+     scene: "Belgian planners throw DICE on the Lubumbashi riverbank and lay out Elisabethville next to the smelter."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Union Minière du Haut Katanga",
+     event: "Union Minière's Ruashi mine and first smelter start copper production",
+     scene: "The first Katanga copper from Ruashi is poured into a mould shaped like a TATTOO of a cross ingot."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Shinkolobwe",
+     event: "Robert Sharp finds uranium at Shinkolobwe",
+     scene: "Robert Sharp picks up a glowing DOLL of yellow rock at Shinkolobwe: uranium."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Shinkolobwe",
+     event: "Shinkolobwe uranium and radium mine opens",
+     scene: "An ANT carries the first Shinkolobwe radium ore out of the new mine."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Roan Antelope Copper Mine",
+     event: "Roan Antelope Copper Mines company is formed",
+     scene: "INK spells Roan Antelope Copper Mines on the company papers, and the Luanshya shafts begin."}
+  - {year: 1928, peg: knife, confidence: high, source: "Search: UFS history, RST formed May 1928",
+     event: "Chester Beatty's group forms the Rhodesian Selection Trust",
+     scene: "Chester Beatty cuts the Copperbelt claims with a KNIFE and keeps Roan and Mufulira for the Rhodesian Selection Trust."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP mirror: Roan Antelope Copper Mine",
+     event: "Roan Antelope produces the first Copperbelt copper",
+     scene: "A MOTH flies to the glow of the first copper poured at Roan Antelope."}
+  - {year: 1932, peg: moon, confidence: high, source: "Search: ZCCM-IH, Rhokana first production 1932",
+     event: "Rhokana's Nkana mine at Kitwe starts copper production",
+     scene: "The MOON shines on the first copper bars from Nkana as Rhokana starts work at Kitwe."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "Mufulira copper mine starts production",
+     scene: "A MUMMY wrapped in copper wire walks out of the new Mufulira mine."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Shinkolobwe",
+     event: "Edgar Sengier ships Shinkolobwe uranium ore to New York",
+     scene: "A HORSE pulls twelve hundred tons of Shinkolobwe uranium ore onto a ship for New York."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Union Minière du Haut Katanga",
+     event: "Sengier sells Katanga uranium to the Manhattan Project",
+     scene: "A RHINO charges into General Nichols' office and Sengier sells him the Katanga uranium for the bomb."}
+  # Zambezi, Malawi, Mozambique and the Rhodesias
+  - {year: 1851, peg: wallet, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone reaches the upper Zambezi at Sesheke",
+     scene: "Livingstone drops his WALLET into the upper Zambezi when he first sees the river."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: European exploration of Africa",
+     event: "Livingstone is the first European to see Victoria Falls",
+     scene: "A water LILY goes over Mosi-oa-Tunya in front of Livingstone, the first European to see the falls."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone's Zambezi expedition reaches the river",
+     scene: "A WOLF steers the steam launch Ma Robert into the Zambezi delta for Livingstone's expedition."}
+  - {year: 1859, peg: elbow, confidence: unverified,
+     event: "Livingstone's expedition reaches Lake Nyasa up the Shire River",
+     scene: "Livingstone pushes his ELBOW through the Shire reeds and sees Lake Nyasa."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone reaches Lake Mweru",
+     scene: "A JOCKEY rides Livingstone's donkey to the shore of Lake Mweru."}
+  - {year: 1867, peg: jockey, confidence: unverified,
+     event: "Karl Mauch reports gold at Tati and in Mashonaland",
+     scene: "A JOCKEY gallops Karl Mauch's gold report from Tati to the newspapers and starts a rush."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone dies at Chitambo near Lake Bangweulu",
+     scene: "Susi and Chuma find Livingstone dead at Chitambo with his COMB still in his hand."}
+  - {year: 1878, peg: cave, confidence: disputed, source: "Search: African Lakes Co. founded 1877 or 1878",
+     event: "Glasgow traders found the African Lakes Company; the Moir brothers arrive",
+     scene: "The Moir brothers stack ivory in a lakeside CAVE as the first African Lakes Company store."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Mozambique Company",
+     event: "Mozambique Company is founded to run Manica and Sofala",
+     scene: "A Portuguese BOOT stamps the charter that hands Manica and Sofala to the Mozambique Company."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Hwange",
+     event: "Frederick Burnham finds the Wankie coal field",
+     scene: "Frederick Burnham rings a BELL made of Wankie coal to tell the Company he has found it."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Search: Hwange Colliery history, 1899",
+     event: "Wankie coal company is registered in London",
+     scene: "A London clerk smokes Wankie coal in his PIPE as he registers the Wankie coal company."}
+  - {year: 1903, peg: sumo, confidence: high, source: "Search: Sunday News, first coal train Sept 1903",
+     event: "First Wankie coal goes south by rail to Bulawayo",
+     scene: "A SUMO wrestler shovels the first Wankie coal into the train to Bulawayo."}
+  - {year: 1909, peg: soap, confidence: high, source: "Search: Hansard 5 April 1909; Britannica",
+     event: "Mozambique Convention trades mine labour for Rand rail traffic through Lourenço Marques",
+     scene: "Transvaal and Portugal seal a deal in SOAP: Mozambique miners for the Rand, Rand freight for Lourenço Marques."}
+  - {year: 1920, peg: nose, confidence: high, source: "Search: Sena Sugar Estates consolidated 1920",
+     event: "Hornung's estates on the Zambezi join as Sena Sugar Estates",
+     scene: "Hornung follows his NOSE to the smell of Zambezi cane and joins his estates as Sena Sugar Estates."}
+  - {year: 1936, peg: match, confidence: medium, source: "Search: Tobacco Marketing Board auctions 1936",
+     event: "Southern Rhodesia starts tobacco auction sales under a marketing board",
+     scene: "An auctioneer strikes a MATCH under each bale on the first Southern Rhodesian tobacco auction floor."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Mozambique Company",
+     event: "Mozambique Company's charter ends and Portugal takes back Manica and Sofala",
+     scene: "A RHINO tears up the Mozambique Company charter and Portugal takes Manica and Sofala back."}
+  # Zanzibar, Kenya, Uganda and Tanganyika
+  - {year: 1812, peg: tongue, confidence: medium, source: "Search: College Board, cloves to Zanzibar c. 1812",
+     event: "Saleh bin Haramil brings clove trees to Zanzibar from Réunion",
+     scene: "Saleh bin Haramil carries clove seedlings from Réunion to Zanzibar on his TONGUE."}
+  - {year: 1833, peg: mummy, confidence: high, source: "Search: Roberts treaty signed 21 Sept 1833",
+     event: "Sultan Said signs a trade treaty with the United States; Salem ships come to Zanzibar",
+     scene: "A MUMMY from Salem signs Sultan Said's trade treaty and sails American cloth to Zanzibar."}
+  - {year: 1837, peg: mug, confidence: medium, source: "Search: Richard Waters consul 1836 or 1837",
+     event: "Richard Waters arrives as the first American consul in Zanzibar",
+     scene: "Richard Waters raises a MUG of Salem coffee as the first American consul ashore in Zanzibar."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Johannes Rebmann",
+     event: "Johannes Rebmann is the first European to see Kilimanjaro",
+     scene: "Johannes Rebmann sees a REEF of white snow on Kilimanjaro, the first European to see the mountain."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: Johannes Rebmann",
+     event: "Ludwig Krapf is the first European to see Mount Kenya",
+     scene: "Ludwig Krapf climbs a ROPE up a tree at Kitui and sees snowy Mount Kenya."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP mirror: John Hanning Speke",
+     event: "Burton and Speke reach Lake Tanganyika at Ujiji",
+     scene: "A WOLF leads Burton and Speke down the hill to Lake Tanganyika at Ujiji."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP mirror: John Hanning Speke",
+     event: "Speke is the first European to see Lake Victoria",
+     scene: "Speke leaves Burton sick, and a WOLF howls beside him on the shore of Lake Victoria."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP mirror: John Hanning Speke",
+     event: "Speke finds the Nile flowing out of Lake Victoria at Ripon Falls",
+     scene: "Speke hangs a CHAIN across Ripon Falls where the Nile pours out of Lake Victoria."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: John Hanning Speke",
+     event: "Speke and Grant meet Samuel Baker at Gondokoro",
+     scene: "Speke hands Samuel Baker a GEM at Gondokoro: the news that the Nile source is found."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP mirror: Samuel Baker",
+     event: "Samuel and Florence Baker reach Lake Albert",
+     scene: "Samuel Baker throws a CHERRY into Lake Albert and names the water."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone leaves Zanzibar on his last journey to find the Nile source",
+     scene: "A JUDGE in Zanzibar sends Livingstone on his last journey to settle the Nile source."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Henry Morton Stanley",
+     event: "Stanley finds Livingstone at Ujiji",
+     scene: "Stanley lifts his hat to a CAT on Livingstone's lap at Ujiji: 'Dr Livingstone, I presume?'"}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Henry Morton Stanley",
+     event: "Stanley sails round Lake Victoria and shows it has one outlet",
+     scene: "An EAGLE flies above Stanley's boat Lady Alice all round Lake Victoria and sees one outlet."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Joseph Thomson (explorer)",
+     event: "Joseph Thomson leads the first crossing of Maasailand to Lake Victoria",
+     scene: "Joseph Thomson makes FOAM bubble on his false teeth to amaze the Maasai, and they let him cross to Lake Victoria."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Sámuel Teleki (explorer)",
+     event: "Teleki and von Höhnel reach Lake Rudolf (Turkana)",
+     scene: "Count Teleki plays a FIFE on the jade shore of Lake Rudolf, the first Europeans there."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Imperial British East Africa Company",
+     event: "Imperial British East Africa Company receives its royal charter",
+     scene: "A FIFE plays at Mombasa as William Mackinnon's company gets its royal charter."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Hans Meyer (geographer)",
+     event: "Meyer, Purtscheller and Lauwo make the first ascent of Kibo",
+     scene: "Hans Meyer hangs his watch FOB on the Kibo summit rock after the first ascent with Lauwo and Purtscheller."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Imperial British East Africa Company",
+     event: "Company starts the Mackinnon-Sclater road from Mombasa inland",
+     scene: "A swarm of BEES clears the bush ahead of the Mackinnon-Sclater road from Mombasa."}
+  - {year: 1893, peg: palm, confidence: high, source: "Search: Hindorf sisal 1893, Potsdam garden",
+     event: "Richard Hindorf brings sisal plants to German East Africa",
+     scene: "Richard Hindorf plants sixty sisal bulbils in his PALM at Kikogwe near Pangani."}
+  - {year: 1893, peg: palm, confidence: medium, source: "Search: Holy Ghost Fathers coffee at Bura 1893",
+     event: "Holy Ghost Fathers plant the first Kenyan coffee at Bura in the Taita Hills",
+     scene: "A Holy Ghost Father holds coffee seedlings from Réunion in his PALM and plants them at Bura."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Nairobi",
+     event: "Nairobi grows up as the railway depot on the Uganda line",
+     scene: "A railway engine blows steam through a PIPE at the swamp depot that becomes Nairobi."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Halford Mackinder",
+     event: "Halford Mackinder leads the first ascent of Mount Kenya",
+     scene: "Halford Mackinder smokes his PIPE on the top of Mount Kenya after the first ascent."}
+  - {year: 1903, peg: sumo, confidence: high, source: "Search: Tea Board of Kenya, Limuru 1903",
+     event: "G. W. L. Caine plants the first tea in Kenya at Limuru",
+     scene: "A SUMO wrestler pours Caine the first cup of Limuru tea in Kenya."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "Search: Borup cotton seed 1903 or 1904",
+     event: "Uganda: Kristen Borup gives out cotton seed and the Uganda Company starts cotton buying",
+     scene: "Kristen Borup scatters cotton seed from a SEWER pipe across Buganda, and the Uganda Company buys the crop."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: East African shilling",
+     event: "East African shilling replaces the florin in Kenya, Uganda and Tanganyika",
+     scene: "An ANT cuts each East African florin in two and makes two shillings."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Search: Tea Board of Kenya, commercial 1924",
+     event: "Brooke Bond starts commercial tea estates in Kenya",
+     scene: "Brooke Bond hangs Kenya's first commercial tea leaves on a coat HANGER to wither."}
+  - {year: 1925, peg: nail, confidence: medium, source: "Search: KNPA 1925 (one source 1922)",
+     event: "Chagga growers form the Kilimanjaro Native Planters Association",
+     scene: "Chagga coffee growers NAIL up the sign of the Kilimanjaro Native Planters Association in Moshi."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "Search: KNCU co-operatives from 1933",
+     event: "Kilimanjaro Native Co-operative Union takes over Chagga coffee marketing",
+     scene: "A MUMMY wrapped in coffee sacks seals the Chagga crop into the Kilimanjaro Native Co-operative Union."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: East African shilling",
+     event: "Zanzibar replaces its rupee with the East African shilling",
+     scene: "A MATCH burns the last Zanzibar rupee note, and the East African shilling takes its place."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: East African Community",
+     event: "Kenya and Uganda form a customs union",
+     scene: "A DOG chews through the customs post between Kenya and Uganda when they form one customs union."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: East African Community",
+     event: "Tanganyika joins the Kenya-Uganda customs union",
+     scene: "Tanganyika signs the Kenya-Uganda customs union in INK and its border posts come down."}
+  # Horn of Africa
+  - {year: 1855, peg: lily, confidence: unverified,
+     event: "Richard Burton is the first European to enter Harar",
+     scene: "Richard Burton walks into Harar in disguise holding a LILY, the first European inside the walls."}
+  - {year: 1894, peg: bear, confidence: disputed, source: "Search: Menelik mint 1894; first coins 1897",
+     event: "Menelik II orders a national silver coinage on the Maria Theresa thaler pattern",
+     scene: "A BEAR stamps Menelik's head on a silver thaler at the new Harar mint."}
+  - {year: 1905, peg: seal, confidence: high, source: "Search: Bank of Abyssinia founded 1905",
+     event: "Menelik and the National Bank of Egypt found the Bank of Abyssinia",
+     scene: "A SEAL stamps the convention that founds the Bank of Abyssinia for Menelik."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Search: Bank of Abyssinia opens Feb 1906",
+     event: "Bank of Abyssinia opens in Addis Ababa, Ethiopia's first bank",
+     scene: "Menelik eats SUSHI at the counter as the Bank of Abyssinia opens in Addis Ababa."}
+  - {year: 1915, peg: doll, confidence: high, source: "Search: Bank of Abyssinia notes 1915",
+     event: "Bank of Abyssinia issues the first Ethiopian banknotes",
+     scene: "A DOLL pays at the Addis Ababa market with the first Ethiopian paper banknote."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Bank of Ethiopia replaces the Bank of Abyssinia",
+     scene: "A MOTH eats the Bank of Abyssinia sign, and Haile Selassie's Bank of Ethiopia goes up in its place."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Italian East African lira",
+     event: "Italy imposes the lira on occupied Ethiopia",
+     scene: "Italian officers burn Ethiopian thalers with a MATCH and force the lira on the Addis Ababa market."}
+  # South Africa: Cape and Natal
+  - {year: 1825, peg: nail, confidence: unverified,
+     event: "Cape Colony puts British silver coin in place of the rixdollar",
+     scene: "A NAIL pins a British shilling over each rixdollar note in the Cape Town treasury."}
+  - {year: 1851, peg: wallet, confidence: medium, source: "Search: SAHRA, first sugar Dec 1851",
+     event: "Edmund Morewood makes the first Natal sugar at Compensation",
+     scene: "Edmund Morewood pours the first Natal sugar into his WALLET at Compensation."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP mirror: Okiep",
+     event: "Namaqualand: James Alexander starts copper mining at the old Dutch shafts",
+     scene: "A LION guards the old Dutch shafts in Namaqualand until James Alexander starts mining the copper."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP mirror: Standard Bank",
+     event: "John Paterson's group founds the Standard Bank of British South Africa",
+     scene: "John Paterson locks the first Standard Bank strongbox with a CHAIN for South Africa."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Standard Bank",
+     event: "Standard Bank starts work in Port Elizabeth",
+     scene: "A GEM is the first deposit at Standard Bank's Port Elizabeth counter."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Okiep",
+     event: "Namaqualand Railway starts to carry copper ore to Port Nolloth",
+     scene: "Mules pull a CAGE of Okiep copper ore down the Namaqualand line to Port Nolloth."}
+  - {year: 1914, peg: tower, confidence: high, source: "Search: Oudtshoorn feather boom peaked 1913",
+     event: "Ostrich feather market collapses; Oudtshoorn farmers go bankrupt",
+     scene: "A TOWER of unsold ostrich feathers falls on the Oudtshoorn feather palaces in the crash."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: KWV",
+     event: "Cape wine farmers form the KWV co-operative",
+     scene: "A DOVE carries the first KWV co-operative contract to the Cape wine farmers at Paarl."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "Search: Alexander Bay diamonds 1925 or 1926",
+     event: "Hans Merensky finds rich diamond beds near Alexander Bay",
+     scene: "Hans Merensky finds diamonds in old oyster beds, scooped up with a NACHO, near Alexander Bay."}
+  - {year: 1928, peg: knife, confidence: medium, source: "Search: State Alluvial Diggings 1928",
+     event: "The state takes over the Alexander Bay diggings",
+     scene: "The Union government fences off Alexander Bay with a KNIFE-edge fence and runs the diggings itself."}
+  # South Africa: Kimberley diamond fields
+  - {year: 1867, peg: jockey, confidence: high, source: "WP mirror: Eureka Diamond",
+     event: "Erasmus Jacobs finds the Eureka diamond near Hopetown",
+     scene: "A JOCKEY trips over the Eureka diamond that young Erasmus Jacobs picks up near Hopetown."}
+  - {year: 1869, peg: ship, confidence: high, source: "Search: Star of South Africa found 1869",
+     event: "Star of South Africa diamond is found and starts the diamond rush",
+     scene: "A SHIP's flag shows the Star of South Africa diamond, and diggers rush to the Orange River."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Kimberley Mine",
+     event: "Diamonds are found on Colesberg Kopje; the New Rush starts the Kimberley mine",
+     scene: "A CAT scratches a diamond out of Colesberg Kopje and fifty thousand diggers rush in."}
+  - {year: 1880, peg: vase, confidence: high, source: "Search: Kimberley history, 28 April 1880",
+     event: "Rhodes and Rudd form the De Beers Mining Company",
+     scene: "Rhodes and Rudd fill a VASE with De Beers claims and register the De Beers Mining Company."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Kimberley Mine",
+     event: "De Beers Consolidated Mines joins the Kimberley diggings under Rhodes",
+     scene: "Rhodes plays a FIFE as Barnato's claims march into De Beers Consolidated Mines."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: De Beers",
+     event: "De Beers makes a deal with the London Diamond Syndicate to control prices",
+     scene: "Rhodes hangs the London Diamond Syndicate on his watch FOB and controls the world price."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Cullinan Diamond",
+     event: "Thomas Cullinan opens the Premier diamond mine near Pretoria",
+     scene: "The SUN shines on Thomas Cullinan's new Premier mine near Pretoria."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP mirror: Cullinan Diamond",
+     event: "Cullinan Diamond, the largest rough diamond, is found at the Premier mine",
+     scene: "A SEAL balances the Cullinan Diamond, biggest ever found, on its nose at the Premier mine."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Cullinan Diamond",
+     event: "Transvaal buys the Cullinan Diamond and gives it to Edward VII",
+     scene: "The Cullinan Diamond rides a SKI from the Transvaal gift ceremony across the snow to Edward VII at Sandringham."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Kimberley Mine",
+     event: "Work stops at the Kimberley Mine, the Big Hole",
+     scene: "The last winding TOWER at the Big Hole stops turning when Kimberley Mine closes."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "Search: Lichtenburg find 13 March 1926",
+     event: "Lichtenburg diamond rush in the western Transvaal",
+     scene: "A NACHO-shaped diamond turns up at Lichtenburg, and tens of thousands of diggers race to peg claims."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Anglo American plc",
+     event: "Anglo American becomes the largest shareholder in De Beers",
+     scene: "Oppenheimer's Anglo American takes the biggest slice of the De Beers NACHO platter."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: De Beers",
+     event: "Ernest Oppenheimer becomes chairman of De Beers",
+     scene: "Ernest Oppenheimer turns the KNOB of the De Beers chairman's office door and walks in."}
+  # South Africa: Transvaal and the Rand
+  - {year: 1852, peg: lion, confidence: high, source: "WP mirror: Witwatersrand Gold Rush",
+     event: "John Henry Davis finds gold at Pardekraal; the republic orders him out",
+     scene: "A Boer LION chases John Henry Davis and his Pardekraal gold out of the republic."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP mirror: Witwatersrand Gold Rush",
+     event: "Pieter Jacob Marais finds gold in the Jukskei River",
+     scene: "A LLAMA drinks from the Jukskei River, and Pieter Marais pans gold from its hoofprints."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Pilgrim's Rest, Mpumalanga",
+     event: "Pilgrim's Rest is declared a gold field",
+     scene: "Alec Patterson combs Pilgrim's Creek with a COMB and pulls out alluvial gold."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Barberton, Mpumalanga",
+     event: "'French Bob' Roberts finds gold in Concession Creek in the De Kaap valley",
+     scene: "French Bob sees gold under the FOAM of Concession Creek in the De Kaap valley."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Barberton, Mpumalanga",
+     event: "Barber cousins find payable gold and Barberton is declared",
+     scene: "A FAIRY taps Graham Barber's pan with her wand, and the gold commissioner declares Barberton."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Barberton, Mpumalanga",
+     event: "Edwin Bray finds the Sheba Reef and forms its company",
+     scene: "Edwin Bray breaks a WAFFLE of quartz above Barberton and finds the Sheba Reef gold inside."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Witwatersrand Gold Rush",
+     event: "George Harrison finds the Main Reef at Langlaagte; the Witwatersrand gold rush begins",
+     scene: "George Harrison pulls a gold FISH out of the rock at Langlaagte and the Witwatersrand rush begins."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Standard Bank",
+     event: "Standard Bank opens a branch in a tent at Ferreira's Camp",
+     scene: "A FISH tank stands on the counter in Standard Bank's tent at Ferreira's Camp, the first bank on the Rand."}
+  - {year: 1887, peg: fox, confidence: high, source: "Search: Gold Fields registered Feb 1887",
+     event: "Rhodes and Rudd form Gold Fields of South Africa",
+     scene: "A FOX digs up the Witwatersrand claims that Rhodes and Rudd put into Gold Fields of South Africa."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Johannesburg Stock Exchange",
+     event: "Johannesburg Stock Exchange is founded",
+     scene: "A FOX in a top hat calls out gold share prices on the floor of the new Johannesburg Stock Exchange."}
+  - {year: 1889, peg: fob, confidence: high, source: "Search: Minerals Council, 5 Oct 1889",
+     event: "Witwatersrand Chamber of Mines is formally constituted",
+     scene: "Each mine owner hangs his watch FOB on one chain to found the Witwatersrand Chamber of Mines."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Pilgrim's Rest, Mpumalanga",
+     event: "Transvaal Gold Mining Estates forms at Pilgrim's Rest, first listed South African gold company",
+     scene: "The London exchange BELL rings for Transvaal Gold Mining Estates, the first listed South African gold company."}
+  - {year: 1901, peg: soda, confidence: medium, source: "Search: UJ TEBA history, WNLA 1901 (or 1902)",
+     event: "Chamber of Mines forms the Witwatersrand Native Labour Association",
+     scene: "WNLA recruiters hand a SODA to each Mozambican man who signs a Rand mine contract."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Anglo American plc",
+     event: "Ernest Oppenheimer founds the Anglo American Corporation",
+     scene: "A DOG fetches Morgan's American money, and Ernest Oppenheimer founds the Anglo American Corporation."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Merensky Reef",
+     event: "A. F. Lombaard finds platinum in the Bushveld near Lydenburg",
+     scene: "A. F. Lombaard hangs a nugget of Bushveld platinum on a coat HANGER for Merensky to see."}
+  # South Africa: Union finance and industry
+  - {year: 1920, peg: nose, confidence: high, source: "WP mirror: South African Reserve Bank",
+     event: "Currency and Banking Act provides for a South African reserve bank",
+     scene: "Parliament puts its NOSE to the gold vault and passes the Currency and Banking Act."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: South African Reserve Bank",
+     event: "South African Reserve Bank opens for business",
+     scene: "An ANT carries the first gold bar into the South African Reserve Bank on its opening day."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: South African Reserve Bank",
+     event: "South African Reserve Bank issues its first banknotes",
+     scene: "A NUN pays at a Pretoria shop with the first South African Reserve Bank note."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP mirror: Eskom",
+     event: "Electricity Supply Commission (ESCOM) is founded under van der Bijl",
+     scene: "A GNOME flips the main switch for Hendrik van der Bijl's new Electricity Supply Commission."}
+  - {year: 1928, peg: knife, confidence: high, source: "Search: ISCOR constituted 5 June 1928",
+     event: "Iron and Steel Industry Act sets up ISCOR as a state steel company",
+     scene: "A steel KNIFE cuts the ribbon on ISCOR, the new state iron and steel corporation."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Eskom",
+     event: "ESCOM's first power stations, Congella and Salt River, are completed",
+     scene: "A KNIFE switch closes at Congella and Salt River, ESCOM's first power stations."}
+  - {year: 1932, peg: moon, confidence: high, source: "Search: SAHO, gold standard 27 Dec 1932",
+     event: "South Africa leaves the gold standard; a gold-mining boom follows",
+     scene: "The South African pound jumps off its gold MOON, and the mines boom."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Search: ISCOR first steel 4 April 1934",
+     event: "ISCOR taps its first steel at the Pretoria works",
+     scene: "A HAMMER strikes the tap hole and ISCOR's first steel pours at the Pretoria works."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Southern African Customs Union",
+     event: "Cape Colony and the Orange Free State form the first southern African customs union",
+     scene: "The Cape and the Orange Free State hang one customs key on a shared watch FOB."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Southern African Customs Union",
+     event: "New customs convention joins the southern African colonies after the Boer War",
+     scene: "A SUMO wrestler pushes all the southern African colonies into one customs ring after the Boer War."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Southern African Customs Union",
+     event: "Customs Union Agreement joins the Union with Basutoland, Bechuanaland and Swaziland",
+     scene: "The Union and the three High Commission Territories throw their customs duties into one DICE cup and share the roll."}
+  - {year: 1934, peg: hammer, confidence: disputed, source: "Agent note: sources give 1934 or 1938",
+     event: "Prospectors' borehole finds gold near Odendaalsrus in the Orange Free State",
+     scene: "A drill HAMMER breaks gold reef deep under the Odendaalsrus veld, the first sign of the Free State goldfield."}
+  # Namibia and Botswana
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: David Livingstone",
+     event: "Livingstone crosses the Kalahari and reaches Lake Ngami",
+     scene: "Livingstone pulls his ox-wagon across the Kalahari with a ROPE and reaches Lake Ngami."}
+  - {year: 1905, peg: seal, confidence: medium, source: "WP mirror: Tsumeb",
+     event: "Tsumeb copper mine starts recorded production",
+     scene: "A SEAL from the Skeleton Coast balances the first Tsumeb copper ingot on its nose."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Kolmanskop",
+     event: "Zacharias Lewala finds a diamond near Kolmanskop; the Sperrgebiet is closed off",
+     scene: "Zacharias Lewala finds a diamond under a SOFA in the Kolmanskop sand and shows it to August Stauch."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP mirror: Standard Bank",
+     event: "Standard Bank opens its first South West Africa branch at Lüderitz",
+     scene: "A DOLL makes the first deposit at Standard Bank's new branch in Lüderitz."}
+  # Madagascar and the Mascarenes
+  - {year: 1825, peg: nail, confidence: high, source: "Search: Hansard 3 June 1825, Mauritius Trade Bill",
+     event: "Britain puts Mauritius sugar on equal duty with West Indian sugar; a sugar boom starts",
+     scene: "A NAIL fixes Mauritius sugar to the same duty board as West Indian sugar, and the cane fields spread."}

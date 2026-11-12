@@ -23,6 +23,9 @@ Boundary rules (2026-11-05):
   Russia. The Siberian forest and tundra → eastern_europe.
 - Hawaii → oceania, in every period, also after statehood in 1959 (user rule 2026-11-06).
 - Malta → western_europe, in every period (user rule 2026-11-07).
+- Western Sahara and Mauritania → subsaharan_africa, in every period (user rule 2026-11-12).
+- Chalcedon (Kadıköy) counts as Istanbul → eastern_europe; the Council of Chalcedon (451) goes to
+  eastern_europe_religion_500bce_500ce (user rule 2026-11-12).
 - Test and launch sites go by geography (user rule 2026-11-07): Baikonur missions (and events on the craft and
   stations they launch) and Semipalatinsk and Lop Nur tests → central_asia. Kapustin Yar, Plesetsk, Vostochny →
   eastern_europe; Jiuquan (Inner Mongolia) → east_asia. A flight whose subject is a regional cosmonaut (Intercosmos,
@@ -761,3 +764,50 @@ Fix-pass list (not done):
 - Hominin health items in subsaharan_africa_society_pre500bce (sediba tumour, Swartkrans cancer, Homo naledi) sit near
   the science cell's fossil finds; first-come check passed (no IDF hits).
 - Weak scenes (agent flag): central_asia_society_pre500bce Xiaohe ANT, Salkhit.
+
+## Wave 21 (2026-11-11)
+User's aim: 20 cells that COMPLETE groups close to completion. Score per unbuilt cell = sum of 1/(unbuilt cells in group)
+over its six groups (region, theme, period, region×theme, region×period, theme×period); greedy, counts updated after
+each pick. Opus agents, rolling queue of 8, 45 searches each (fresh session). {expected} = search-budget fit refit on
+308 cells. Partner cells built at the same time got split rules (east_asia pre500bce religion/society/economy;
+north_america 500_1500 politics/economy). west_asia arts 500bce_500ce ran only AFTER religion of the same region/period
+finished (wave 18 lesson); arts left all temples to religion. Out-of-period finds were forwarded to running siblings.
+Cells: subsaharan_africa economy 1800_1945 / 1945_present / 500_1500, western_europe economy pre500bce, north_america
+politics + economy 500_1500, southeast_asia economy 1500_1800, subsaharan_africa politics pre500bce, west_asia society
+pre500bce + 500_1500, west_asia religion + arts 500bce_500ce, eastern_europe arts pre500bce, eastern_europe society
+500bce_500ce, south_asia arts pre500bce, east_asia religion + society + economy pre500bce, central_asia politics pre500bce
++ 500bce_500ce.
+Groups now complete: periods 1800_1945 and 1945_present; region western_europe; politics 500_1500; economy 1800_1945 and
+1945_present; region×period west_asia pre500bce, north_america 500_1500, subsaharan_africa 1800_1945 and 1945_present;
+region×theme southeast_asia economy, subsaharan_africa politics + economy, west_asia society + religion + arts,
+eastern_europe society + arts, south_asia arts, east_asia economy + religion + society, central_asia politics.
+Result (after 9 dup removals): 2,025 dates over 20 cells (high 845, medium 797, low 104, disputed 102, unverified 197);
+102% of the prediction (1,976), but spread wide: subsaharan_africa_economy_1945_present 214 and 1800_1945 198 (explorers
+had no older cell), west_asia_religion_500bce_500ce 190 (×2.1); subsaharan_africa_politics_pre500bce 14 (older economy/
+society/science cells hold Punt, Nataruk, Tichitt, Dʿmt), central_asia_politics_pre500bce 41, north_america 47/49.
+Late cells with most siblings built come in thin (first-come). Check exit 0 on all 328 cells. Grid now 328 of 432,
+67,879 dates (after the Tomyris drop). ~4.8M subagent tokens, no deaths, ~900 searches.
+Dups removed by the main session (IDF scan, first-come — older cell keeps): Union Minière 1906 (western_europe_economy),
+Luntai edict -89 (east_asia_politics), Fernão Gomes lease 1469 (western_europe_economy), Treaty of Kampala 1967
+(subsaharan_africa_politics), Vesuvius ash 472 (western_europe_society), Cyrene grain -330 (north_africa_economy), Cabot
+patent 1496 (western_europe_economy), Onomastus Olympic boxing -688 (eastern_europe_society), Sasol One 1954
+(subsaharan_africa_science).
+ctext.org refuses fetches → east_asia pre500bce Zuozhuan items mostly unverified (religion 33, society 29, economy 19).
+Settled by user 2026-11-12: Chalcedon → eastern_europe (pending_moves note); Tomyris -530 dropped from
+central_asia_politics_pre500bce (west_asia keeps Cyrus's death); Western Sahara / Mauritania → subsaharan_africa.
+Questions as asked:
+- Council of Chalcedon 451: Chalcedon is Kadıköy (Asian shore of modern Istanbul). Rule "Istanbul, both shores →
+  eastern_europe" would put it in eastern_europe_religion_500bce_500ce (unbuilt). Left out of west_asia_religion.
+- Cyrus's death -530: west_asia_politics_pre500bce has it; central_asia_politics_pre500bce adds Tomyris's victory (battle
+  in Central Asia). Keep both?
+- Western Sahara / Mauritania are in no region list; the ssa economy 500_1500 agent put Bojador, Rio de Oro, Arguin in
+  subsaharan_africa.
+Fix-pass list (not done):
+- Peg overload: west_asia_arts_500bce_500ce lasso 20 (c. x50 dates), eastern_europe_arts_pre500bce lasso 14 + cheese 11,
+  north_america_politics_500_1500 lasso 13.
+- Near-dups kept as different aspects: Dias 1488 (ssa rounds the Cape / western_europe return), Hittite plague -1322
+  (society outbreak / religion prayer), Khirokitia -7000 (society wall / religion floor burials), Synod of Dadisho 424.
+- eastern_europe_arts_pre500bce agent saw its scratch build.py changed by another process; cell checked clean.
+- western_europe_economy_pre500bce: 6 unverified (Bajo de la Campana, Huelva deposit, Tievebulliagh, Fengate, Parys
+  Mountain, Spina).
+- Odendaalsrus gold 1934 vs 1938 unresolved (ssa economy 1800_1945, disputed).
