@@ -24,7 +24,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-grammar` | Wiktionary (kaikki.org) import, re-derived by rule | Latin paradigms → 20 quiz `grammar-table` decks: 12 verbs (one per conjugation class, finite + non-finite), 5 noun declensions, 3 pronoun decks (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 | `deck-counties` | User's county-group acronyms + atlas facts/geometry | 3 decks per state: acronym pieces + seats (`text-mc`), map → typed acronym (`type-in`, WebP maps) (`source: manual`) |
-| `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet. Also city timelines (`configs/history/cities/<city>/<era>.yaml`, `city-timeline` skill, rules `cities.md`): `--cells` checks their `world_refs` against the world grid |
+| `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet. Also city timelines (`configs/history/cities/<city>/<era>.yaml`, `city-timeline` skill, rules `cities.md`): `--cells` checks their `world_refs` against the world grid; `out_refs` (national events left out) need year, event, reason |
 
 ## Modules
 

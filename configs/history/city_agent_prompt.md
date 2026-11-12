@@ -18,10 +18,15 @@ cell holds goes under `world_refs:` (cities.md), never under `dates:`. Use the w
 ## The user has pre-authorised the whole pipeline
 Memory pass → web check → write → check, end to end. Never stop for review. Never ask the user anything.
 
+## Sources and budget
+Follow cities.md "Sources and search budget": no unauthorised book copies (erenow.org and similar); your
+budget is {budget} searches and it is a maximum, not a target. Follow cities.md "Archaeological dates".
+
 ## Depth
-EXHAUSTIVE inside scope: every dated event you can find, specialist items included. Expect roughly {expected}
-cards; a thin era may have fewer — do not pad. National events are OUT (cities.md); when unsure whether the city is
-the subject, leave it out and list it in your report.
+EXHAUSTIVE inside scope: every dated event you can find, specialist items included. Cover every subject
+in the cities.md IN list, and put each card in its theme by "Theme of each subject". Expect roughly {expected}
+cards; a thin era may have fewer — do not pad. National events are OUT (cities.md); list each notable one under `out_refs:` with its
+reason. When unsure whether the city is the subject, leave it out (out_refs) and list it in your report.
 
 ## File header
 Copy the header layout of a world cell (comment lines, then `dates:`), naming the city and era.

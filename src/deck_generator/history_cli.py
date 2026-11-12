@@ -2,7 +2,8 @@
 
 Exit 1 when a file breaks a rule. A peg with too many dates in one file is a warning only. ``--peg-codes`` also checks the peg list against
 CMUdict (``uv run --with cmudict``). A city file's ``world_refs`` must point to world-grid cells
-(``--cells``) that hold a date of the same year.
+(``--cells``) that hold a date of the same year. Its ``out_refs`` (events the OUT rule leaves out)
+need a year, an event and a reason.
 """
 from __future__ import annotations
 
@@ -24,6 +25,7 @@ def _check_file(path: Path, pegs: dict[str, str], cells: Path) -> list[str]:
     dates = data["dates"]
     problems = history_dates.file_problems(dates, pegs)
     problems += history_dates.world_ref_problems(data.get("world_refs") or [], cells, dates)
+    problems += history_dates.out_ref_problems(data.get("out_refs") or [], dates)
     load = history_dates.peg_load(dates)
     print(f"{path}: {len(dates)} dates, {len(load)} pegs, "
           f"most loaded {load.most_common(MAX_LOAD_SHOWN)}")

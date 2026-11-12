@@ -108,6 +108,22 @@ def world_ref_problems(refs: list[dict], cells_dir: Path,
     return problems
 
 
+OUT_REF_FIELDS = ("year", "event", "reason")
+
+
+def out_ref_problems(refs: list[dict], dates: list[dict] | None = None) -> list[str]:
+    """Rule breaks in a city file's ``out_refs`` (events the OUT rule leaves out): each has a
+    year, an event and a reason, and no event is both a card and a reference."""
+    problems = []
+    cards = {(d["year"], d["event"]) for d in dates or []}
+    for ref in refs:
+        problems += [f"OUT REF FIELD MISSING {ref.get('year')}: {f}"
+                     for f in OUT_REF_FIELDS if not ref.get(f)]
+        if (ref.get("year"), ref.get("event")) in cards:
+            problems.append(f"CARD AND OUT REF {ref['year']}: {ref['event']}")
+    return problems
+
+
 def peg_code_problems(pegs: dict[str, str], cmu: dict[str, list[list[str]]]) -> list[str]:
     """Pegs whose CMUdict pronunciations do not give their number."""
     return [f"PEG CODE {num} {word}" for num, word in pegs.items()
