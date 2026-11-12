@@ -8,6 +8,9 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from pathlib import Path
+
+import yaml
 
 DIGIT = {
     "S": "0", "Z": "0",
@@ -85,6 +88,24 @@ def file_problems(dates: list[dict], pegs: dict[str, str]) -> list[str]:
     keys = Counter((d["year"], d["event"]) for d in dates)
     problems = [f"DUPLICATE {k}" for k, n in keys.items() if n > 1]
     return problems + [p for d in dates for p in entry_problems(d, pegs)]
+
+
+def world_ref_problems(refs: list[dict], cells_dir: Path,
+                       dates: list[dict] | None = None) -> list[str]:
+    """Rule breaks in a city file's ``world_refs``: each names a world-grid cell that exists and
+    holds a date of the same year, and no event is both a card and a reference."""
+    problems = []
+    cards = {(d["year"], d["event"]) for d in dates or []}
+    for ref in refs:
+        year, cell = ref["year"], ref["cell"]
+        path = cells_dir / f"{cell}.yaml"
+        if (year, ref["event"]) in cards:
+            problems.append(f"CARD AND WORLD REF {year}: {ref['event']}")
+        if not path.exists():
+            problems.append(f"WORLD REF CELL MISSING {year}: {cell}")
+        elif year not in {d["year"] for d in yaml.safe_load(path.read_text(encoding="utf-8"))["dates"]}:
+            problems.append(f"WORLD REF YEAR NOT IN CELL {year}: {cell}")
+    return problems
 
 
 def peg_code_problems(pegs: dict[str, str], cmu: dict[str, list[list[str]]]) -> list[str]:

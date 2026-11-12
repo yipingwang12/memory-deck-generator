@@ -1,7 +1,8 @@
 """``deck-history-check`` — check history-date files against the Major System rules.
 
 Exit 1 when a file breaks a rule. A peg with too many dates in one file is a warning only. ``--peg-codes`` also checks the peg list against
-CMUdict (``uv run --with cmudict``).
+CMUdict (``uv run --with cmudict``). A city file's ``world_refs`` must point to world-grid cells
+(``--cells``) that hold a date of the same year.
 """
 from __future__ import annotations
 
@@ -14,12 +15,15 @@ import yaml
 from . import history_dates
 
 DEFAULT_PEGS = Path("configs/history/major_pegs.yaml")
+DEFAULT_CELLS = Path("configs/history/cells")
 MAX_LOAD_SHOWN = 6
 
 
-def _check_file(path: Path, pegs: dict[str, str]) -> list[str]:
-    dates = yaml.safe_load(path.read_text(encoding="utf-8"))["dates"]
+def _check_file(path: Path, pegs: dict[str, str], cells: Path) -> list[str]:
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    dates = data["dates"]
     problems = history_dates.file_problems(dates, pegs)
+    problems += history_dates.world_ref_problems(data.get("world_refs") or [], cells, dates)
     load = history_dates.peg_load(dates)
     print(f"{path}: {len(dates)} dates, {len(load)} pegs, "
           f"most loaded {load.most_common(MAX_LOAD_SHOWN)}")
@@ -34,6 +38,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("files", nargs="+", type=Path)
     ap.add_argument("--pegs", type=Path, default=DEFAULT_PEGS)
     ap.add_argument("--peg-codes", action="store_true")
+    ap.add_argument("--cells", type=Path, default=DEFAULT_CELLS,
+                    help="world-grid cells that a city file's world_refs point to")
     args = ap.parse_args(argv)
     pegs = yaml.safe_load(args.pegs.read_text(encoding="utf-8"))["pegs"]
     problems = []
@@ -41,7 +47,7 @@ def main(argv: list[str] | None = None) -> int:
         import cmudict
         problems += history_dates.peg_code_problems(pegs, cmudict.dict())
     for path in args.files:
-        problems += _check_file(path, pegs)
+        problems += _check_file(path, pegs, args.cells)
     for p in problems:
         print(p, file=sys.stderr)
     return 1 if problems else 0

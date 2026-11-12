@@ -24,7 +24,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `deck-grammar` | Wiktionary (kaikki.org) import, re-derived by rule | Latin paradigms → 20 quiz `grammar-table` decks: 12 verbs (one per conjugation class, finite + non-finite), 5 noun declensions, 3 pronoun decks (`source: manual`; one form = one card) |
 | `deck-code-mcq` | One source file, read by an LLM session | Source-file MCQs → quiz `text-mc` deck (`source: manual`; **data lives outside this repo**, see below) |
 | `deck-counties` | User's county-group acronyms + atlas facts/geometry | 3 decks per state: acronym pieces + seats (`text-mc`), map → typed acronym (`type-in`, WebP maps) (`source: manual`) |
-| `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet |
+| `deck-history-check` | Topic cells of dates, LLM-authored per `configs/history/policy.md` (`history-cell` skill) | Checks Major System peg, scene, event text; no artifact yet. Also city timelines (`configs/history/cities/<city>/<era>.yaml`, `city-timeline` skill, rules `cities.md`): `--cells` checks their `world_refs` against the world grid |
 
 ## Modules
 
@@ -57,7 +57,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `counties.py` | County decks core: `align` (sheet row → `(piece, name)`; prefers known place names, then fewer pieces), `piece_fits`, `validate`, `piece_cards`/`seat_cards`/`map_cards`, `render_map` (Pillow, no GIS deps), `curate`, `assemble`. |
 | `counties_cli.py` | `deck-counties curate STATE --rows TSV` (draft YAML) / `build STATE` (→ `memory-quiz-app/data/decks` + `assets/<stem>_map/`). |
 | `history_dates.py` | Major System core: `major_digits` (CMUdict phones → digits, x cluster = 7), `peg_number` (last two digits; first two for `years_ago` and approximate round years), `entry_problems`/`file_problems`, `peg_load`. |
-| `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break; `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
+| `history_cli.py` | `deck-history-check FILES` — exit 1 on any rule break (incl. `world_ref_problems` for city files); `--peg-codes` checks `major_pegs.yaml` against CMUdict (`uv run --with cmudict`). |
 | `scene_images.py` | Gemini image REST client for scene pictures: `scene_prompt` (mnemonic-aid wording + `STYLES`), `plan`/`record` (manifest, skip unchanged), `current_images` (image matches current scene text), `generate` (backoff on 429/5xx), `api_key` (Keychain). `chatgpt_sheet`/`strip_hints`: hand-drawn path via a ChatGPT subscription — `scripts/chatgpt_scene_prompts.py SLUG…` → `<slug>/chatgpt-instant/realistic/prompts.md` (setup + one prompt per scene in story order, bracket hints dropped; never overwrites without `--force`). No background instruction in any prompt (user's choice 2026-10-29). |
 | `company_snapshot.py` | `python -m deck_generator.company_snapshot NAME OUT --revised DATE` — renders one `career_planning/boston_companies.yaml` entry to `<slug>.source.txt` (the quote oracle). Byte-identical to the earlier hand-rendered snapshots (test pins Tessera). Update the dossier, then re-render; never hand-edit a snapshot. |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
