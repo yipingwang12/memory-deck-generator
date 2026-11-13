@@ -862,3 +862,49 @@ Fix-pass list (not done):
 - Weak scenes (agent flags): north_africa_society_1500_1800 1646 Cason ROACH; oceania_arts_1500_1800 Webber at
   Adventure Bay CAKE, Waimea CAVE, Duche de Vancy FISH, Forrest COWBOY.
 - Peg load: north_africa_science_1500_1800 pipe 11 before dup removal; eastern_europe_science_500bce_500ce horse 10.
+
+## Wave 23 (2026-11-13)
+User's aim: 25 cells, next wave (rule kept from wave 22: largest predicted first). fit.py refit on 353 cells (sd 0.41,
+log-search coefficient 0.09, sibling coefficient 0.056; WAVES now has a8c1671 = wave 22). The fit is now flat:
+predictions 22–98 per cell, 4,745 dates in the 79 unbuilt cells at 45 searches. Ranks 1–25 taken (74–98, total 2,121;
+{expected} = prediction). Opus agents, rolling queue of 8, 45 searches each; no deaths, no network drops.
+north_africa_arts_500bce_500ce started only after north_africa_religion_500bce_500ce finished (no temple clashes).
+latin_america_arts_500_1500 and southeast_asia_arts_500bce_500ce left every religious building to their unbuilt religion
+cells (lists in pending_moves). "For siblings" finds went by SendMessage to running agents, the rest to pending_moves.
+Cells: central_asia religion 500_1500 + 1500_1800, central_asia science + society 1500_1800, central_asia society 500_1500,
+eastern_europe religion + science pre500bce, eastern_europe economy 500bce_500ce, east_asia science pre500bce, southeast_asia
+science + society 500_1500, southeast_asia arts 500bce_500ce, oceania science + society + economy 1500_1800, south_asia
+religion + science 500bce_500ce, subsaharan_africa science + society 1500_1800 and 500_1500, west_asia economy 500bce_500ce,
+north_africa religion + arts 500bce_500ce, latin_america arts 500_1500.
+Result (after 8 removals): 1,879 dates over 25 cells (high 788, medium 759, low 121, disputed 120, unverified 91 = 4.8%);
+89% of the prediction. Sizes 30–138. Above the fit: central_asia_religion_1500_1800 138, oceania_economy_1500_1800 133,
+central_asia_religion_500_1500 125, north_africa_religion_500bce_500ce 121, subsaharan_africa_society_1500_1800 100,
+south_asia_religion_500bce_500ce 100. Far below (first-come or few dated items): southeast_asia_arts_500bce_500ce 30,
+central_asia_society_1500_1800 35, subsaharan_africa_science_500_1500 35, central_asia_science_1500_1800 41,
+southeast_asia_science_500_1500 44. Religion cells came in high; science/society cells with five built siblings low.
+Check exit 0 on all 378 cells. Grid now 378 of 432 cells, 72,016 dates. ~5.8M subagent tokens, ~1,125 searches.
+Settled in the wave: Diocletian's Price Edict 301 → west_asia_economy_500bce_500ce (issued at Antioch, Corcoran 2000),
+with his currency edict 301 (Aphrodisias).
+Removed by the main session: out of period in south_asia_science_pre500bce (Panini -400, Kodumanal -300, Abhaya Wewa
+-377, Wari-Bateshwar -450; the new 500bce_500ce cell holds them). Dups, first-come (older cell keeps): Timur's Damascus
+craftsmen 1401 (central_asia_society_500_1500; west_asia_society keeps), Cyrene grain -330 (eastern_europe_economy;
+north_africa_economy keeps), al-Kashnawi magic squares 1732 (subsaharan_africa_science; north_africa_science keeps),
+Athanasius exiled to Trier 335 (north_africa_religion; western_europe_religion keeps).
+Open user questions:
+- Gamatai (Qinghai) in east_asia_science_pre500bce: Qinghai/Amdo is Tibetan — central_asia?
+- Antrea Net (Finland then, Russia now) filed in eastern_europe_science_pre500bce against the Finland rule.
+- Maikop (North Caucasus) items: Caucasus = west_asia by the grid.
+- 1587 Galik letters (central_asia_society_1500_1800) may be Inner Mongolian → east_asia.
+- Near-dups kept as different aspects: Barros 1552 (science: Great Zimbabwe / arts: Kilwa Chronicle); Sushruta Samhita
+  -600 traditional (south_asia_science_pre500bce) vs c. 300 recension (500bce_500ce); Haenke and Nee at Port Jackson
+  1793 / on Luzon 1792; Nadir Divan-begi khanqah / Lyab-i Hauz pool 1620.
+Fix-pass list (not done):
+- Out of period in older cells: eastern_europe_society_pre500bce Hippokles -498; oceania_science_pre500bce Lapita end
+  -500; southeast_asia_politics_1800_1945 Siam puts Ang Eng on the throne 1794.
+- Peg overload warnings (round c. dates): south_asia_religion_500bce_500ce lasso 26, south_asia_science_500bce_500ce
+  lasso 14, latin_america_arts_500_1500 lasso 13, southeast_asia_arts_500bce_500ce lasso 11, oceania_economy_1500_1800
+  fife 12 (1788); oceania_society_1500_1800 bees 10.
+- Weak scenes (agent flags): north_africa_religion_500bce_500ce bishop installations (reef, fairy, tongue).
+- Kanishka council 78 (south_asia_religion_500bce_500ce) vs Kanishka era 127 (politics) — old open item.
+- Blue Beryl 1688 unverified (central_asia_science_1500_1800; religion agent said 1687).
+- Finds for built cells: in pending_moves (wave 23 block, "cell exists").
