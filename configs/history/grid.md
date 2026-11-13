@@ -908,3 +908,26 @@ Fix-pass list (not done):
 - Kanishka council 78 (south_asia_religion_500bce_500ce) vs Kanishka era 127 (politics) — old open item.
 - Blue Beryl 1688 unverified (central_asia_science_1500_1800; religion agent said 1687).
 - Finds for built cells: in pending_moves (wave 23 block, "cell exists").
+
+## Wave 24 (2026-11-13)
+User's aim: 10 cells, the SMALLEST predicted (not largest first). fit.py on 378 cells; ranks 45–54 of the unbuilt list
+(22–30 each, total 280). Opus agents, 45 searches each, 8 at once; no deaths, no network drops.
+oceania_arts_pre500bce started only after oceania_religion_pre500bce finished (rock art → arts, ritual → religion; the
+religion agent handed 9 art items to the arts brief). Siblings built together with split rules in the prompt:
+latin_america science + society + economy pre500bce (domestication/trade → economy, techniques → science, arrival/burials
+→ society); north_america science + society pre500bce; oceania society + economy 500_1500 (settlement → society).
+Cells: oceania religion + arts pre500bce, oceania arts 500bce_500ce, oceania economy + society 500_1500, latin_america
+science + society + economy pre500bce, north_america science + society pre500bce.
+Result: 361 dates over 10 cells (high 111, medium 172, low 29, disputed 40, unverified 9 = 2.5%); 129% of the prediction —
+the fit undercounts thin pre-contact cells. Sizes: latin_america_economy_pre500bce 52, north_america_society_pre500bce 48,
+latin_america_society_pre500bce 46, latin_america_science_pre500bce 39, oceania_society_500_1500 38,
+north_america_science_pre500bce 38, oceania_economy_500_1500 33, oceania_arts_pre500bce 29, oceania_religion_pre500bce 24,
+oceania_arts_500bce_500ce 14 (the only cell below the fit; most rock art in the period has no published date).
+Agents removed their own overlaps with siblings (first-come). Main-session dups scan: no removals (all hits are other facts
+at the same site, e.g. Teouma cone-shell rings: arts = how made, religion = put in graves in place of skulls).
+Check exit 0 on all 388 cells. Grid now 388 of 432 cells, 72,377 dates. ~1.9M subagent tokens, ~450 searches.
+Refit on 388 cells: sd 0.41, log-search coef 0.11, sibling coef 0.042; 44 unbuilt cells forecast 2,425 dates (33–82).
+Fix-pass list (not done):
+- Fell's Cave: latin_america_society_pre500bce gives -9000 from 11,000 14C BP (uncalibrated); science gives 12,800 cal BP
+  (Waters 2015). Recalibrate the society entry.
+- Finds for built cells: in pending_moves (wave 24 block, "cell exists").
