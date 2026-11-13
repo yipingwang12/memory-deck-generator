@@ -811,3 +811,54 @@ Fix-pass list (not done):
 - western_europe_economy_pre500bce: 6 unverified (Bajo de la Campana, Huelva deposit, Tievebulliagh, Fengate, Parys
   Mountain, Spina).
 - Odendaalsrus gold 1934 vs 1938 unresolved (ssa economy 1800_1945, disputed).
+
+## Wave 22 (2026-11-12/13)
+User's aim: 25 cells, largest predicted first again. Search-budget model rebuilt (fit.py was lost with the old scratchpad):
+log entries ~ region + theme + period + pre-contact term + log(searches per agent) + built siblings, refit on 328 cells
+(sd 0.41; log-search coefficient 0.11, lower than the 0.35 of earlier fits; sibling coefficient 0.066). Forecast 7,809
+dates in the 104 unbuilt cells at 45 searches. Ranks 1–25 taken (predicted 97–155, total 2,959; {expected} = prediction).
+Opus agents, rolling queue of 8, 45 searches each. Arts after religion of the same region and period (oceania and
+subsaharan_africa 1500_1800: arts started only when religion finished; no temple clashes). The two central_asia arts
+cells left every religious building to the unbuilt religion cells (lists in pending_moves). Partner cells running at the
+same time got split rules; agents listed finds for other cells under "For siblings" and the main session sent them to
+running agents with SendMessage (no agent-to-agent messages).
+Cells: west_asia science + economy 500_1500, east_asia arts 500bce_500ce + pre500bce, east_asia science 500bce_500ce,
+north_africa science + society 1500_1800, north_africa religion + science + society + economy 500_1500, south_asia
+society + economy 500_1500, oceania religion + arts 1500_1800, subsaharan_africa religion + arts 1500_1800, southeast_asia
+science + society 1500_1800, southeast_asia religion 500_1500, eastern_europe religion + science 500bce_500ce, central_asia
+arts 500_1500 + 1500_1800, west_asia science 500bce_500ce.
+Interruptions: a network drop (laptop closed) killed all 9 running agents; all resumed via SendMessage from their
+transcripts, two with part-written files, the rest restarted their pipeline (some had to recount searches). Later the
+user paused the wave: 8 agents stopped with TaskStop and resumed via SendMessage. No work lost.
+Result (after 20 dup removals): 2,261 dates over 25 cells (high 906, medium 915, low 149, disputed 101, unverified 190
+= 8.4%); 76% of the prediction. Sizes 55–230. Above the fit: north_africa_religion_500_1500 230 (every Coptic pope and
+Melkite patriarch), subsaharan_africa_religion_1500_1800 127, eastern_europe_religion_500bce_500ce 120. Near the fit:
+central_asia_arts_500_1500 103, southeast_asia_society_1500_1800 106. Far below (first-come; older cells hold the main
+items, or only century dates exist): north_africa_society_500_1500 55, central_asia_arts_1500_1800 58,
+north_africa_society_1500_1800 63, north_africa_economy_500_1500 64, south_asia society 70 / economy 73. Model note: the
+largest-first ranks are now mostly late cells with many built siblings; the fit overpredicts them (×0.5–0.8).
+Check exit 0 on all 353 cells. Grid now 353 of 432 cells, 70,140 dates. ~5.6M subagent tokens, ~1,125 searches.
+Dups removed by the main session (IDF scan, first-come — older cell keeps): Jian'an plague 217, Spring and Autumn
+Annals qilin -481, Cui Hao 450, Lushi Chunqiu -239, Xi Kang 262, Sima Qian castration -99, Li Si memorial -237 (all
+east_asia_arts_500bce_500ce); Panhellenion 131, Herms -415 (eastern_europe_religion_500bce_500ce); Ibn Yasin 1059, Ibn
+al-Farid 1235, al-Busiri 1294, al-Musta'li 1094 (north_africa_religion_500_1500); Thomas Shaw 1738, al-Akhdari 1575,
+Dawud al-Antaki 1599, Forsskal 1775 (north_africa_science_1500_1800); Selim's craftsmen 1517, Maria and Dauphin 1785
+(north_africa_society_1500_1800); Soranus 118 (west_asia_science_500bce_500ce; he wrote in Rome).
+pending_moves: ~60 notes for other cells (wave 22 block); the bimaristan/House of Wisdom, Socrates/Stoa and Chalcedon
+notes are done and removed.
+Settled by user (2026-11-13): Stone Drums of Qin → east_asia_arts_500bce_500ce at the 5th century BCE (-450,
+approximate, disputed against 374 BCE and Duke Jing 576–537 BCE). Cell now 100 entries; wave total 2,262; grid 70,141.
+Fix-pass list (not done):
+- Rule breaks: Fath al-Bari completion DROPPED from north_africa_religion_500_1500 (restore as disputed; pending note);
+  Theophrastus On Stones kept at memory -314 against source c. -322 (eastern_europe_science_500bce_500ce: use -322,
+  disputed); Maimonides as court physician left out (1185 vs 1190s; add as disputed).
+- Morocco plague years in north_africa_society_1500_1800: agent report garbled (1597–98 vs 1797 vs 1603); check entries.
+- Near-dups kept as different aspects: Pomare II maro 'ura 1791 (religion) / Pomare I abdicates (politics); Fasilides'
+  castle 1636 (arts) / founds Gondar (politics); Nikitin 1469 at Hormuz (west_asia_economy) and at Chaul (south_asia_economy).
+- Scope: Sagang Sechen 1662 and Bolor Erike 1774 (Inner Mongolian authors) stay in central_asia_arts_1500_1800 (Inner
+  Mongolia rule, 2026-11-07).
+- Unverified-heavy cells for a check pass: east_asia_arts_pre500bce 23 (Zuozhuan; ctext.org refuses fetch),
+  subsaharan_africa_religion_1500_1800 23, west_asia_science_500_1500 22.
+- Weak scenes (agent flags): north_africa_society_1500_1800 1646 Cason ROACH; oceania_arts_1500_1800 Webber at
+  Adventure Bay CAKE, Waimea CAVE, Duche de Vancy FISH, Forrest COWBOY.
+- Peg load: north_africa_science_1500_1800 pipe 11 before dup removal; eastern_europe_science_500bce_500ce horse 10.
