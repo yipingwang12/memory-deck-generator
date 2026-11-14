@@ -931,3 +931,37 @@ Fix-pass list (not done):
 - Fell's Cave: latin_america_society_pre500bce gives -9000 from 11,000 14C BP (uncalibrated); science gives 12,800 cal BP
   (Waters 2015). Recalibrate the society entry.
 - Finds for built cells: in pending_moves (wave 24 block, "cell exists").
+
+## Wave 25 (2026-11-13) — grid complete
+User's aim: all 44 cells left, in one wave. fit.py on 388 cells at 43 searches: 2,413 predicted (33–82 each); the four
+pre-contact politics cells (north_america and oceania, pre500bce and 500bce_500ce) were set to 12–25 by hand (fit
+artifacts). Opus agents, rolling queue of 8, 43 searches each (1,892 of the 2,000 cap). Arts started only after religion
+of the same region and period (SEA pre, SSA pre and 500bce, NA pre and 500bce, LA 500bce). Sibling cells got split rules
+in the brief; "For siblings" finds went by SendMessage to running agents or into the next brief, the rest to pending_moves.
+No deaths, no network drops, no usage-limit hit (~9.0M subagent tokens, ~1,890 searches).
+Result (after 5 removals): 1,935 dates over 44 cells (high 405, medium 1,051, low 241, disputed 151, unverified 87 =
+4.5%); 80% of the prediction. Largest: latin_america_religion_500_1500 77, north_africa_science_500bce_500ce 76,
+latin_america_society_500_1500 75, south_asia_society_pre500bce 67, south_asia_economy_500bce_500ce 66. Smallest:
+oceania_politics_pre500bce 7, oceania_politics_500bce_500ce 9, north_america_politics_500bce_500ce 14,
+north_america_politics_pre500bce 15. Thin religion/arts/science cells (22–34) lost their main items to older cells.
+Check exit 0 on all 432 cells. GRID COMPLETE: 432 of 432 cells, 74,312 dates.
+Removed by the main session (IDF scan, first-come): Amasis income decree -550 (north_africa_economy_pre500bce; society
+keeps), Colaeus to Tartessos -640 (eastern_europe_economy_pre500bce; western_europe keeps), Santa Elina pendants -23000
+(latin_america_arts_pre500bce; society keeps), Cerro Baul brewery 1000 (latin_america_society_500_1500; economy keeps),
+Liang Bua tool-stone change -44000 (southeast_asia_science_pre500bce; society keeps the arrival).
+pending_moves: 22 notes for the new cells taken in and removed; ~28 new notes for built cells (wave 25, "cell exists").
+Open user questions:
+Settled by user (2026-11-13): Jebel Moya (Gezira, south of Khartoum) stays in subsaharan_africa; Turner airburst removed from
+north_america_society_500bce_500ce (Sci Rep 2022 paper retracted 2023).
+- Near-dups kept as different aspects: Calio, Wolo Sege, Talepu (SEA science tools / society arrival); Taforalt, Heqanakht
+  (NAf economy / society); Diepkloof flasks (SSA science / engraved in arts); Okvik, Lolomai, Marpole (NA economy / siblings).
+Fix-pass list (not done):
+- Mehrgarh re-dated to c. 5000 BCE (Mutin, Zazzo 2025): south_asia_science_pre500bce c. -7000 items → disputed (pending note).
+- Sun Pyramid: latin_america_science_500bce_500ce c. 100 vs religion dedication caches c. 200.
+- Weak low items an agent suggests dropping: Purusha Sukta -1000, Gargi -700, Riwat, Masol (south_asia_society_pre500bce).
+- Weak scene: central_asia_economy_500_1500 726 Kucha horse seizure (NACHO carries a detail only).
+- Peg overload warnings (round c. dates): north_africa_science_500bce_500ce lasso 18, south_asia_economy_500bce_500ce lasso 17,
+  southeast_asia_religion_500bce_500ce lasso 16, north_america_religion_500bce_500ce dice 15, latin_america_religion_500bce_500ce
+  lasso 14 + mouse 14, latin_america_economy_500bce_500ce lasso 14, latin_america_arts_500bce_500ce nose 13,
+  latin_america_society_500_1500 lasso 13, latin_america_economy_500_1500 lasso 13, south_asia_economy_pre500bce nail 12.
+- Finds for built cells: in pending_moves (wave 25 block, "cell exists").

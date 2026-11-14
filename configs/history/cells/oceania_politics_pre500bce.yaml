@@ -1,0 +1,43 @@
+# Cell: Oceania x politics x before 500 BCE. DRAFT 2026-11-13.
+# Dates: memory pass + web check (36 searches + fetches). Peg rules as world_dates.yaml.
+# years_ago: dates of 10,000+ years; encode its first two digits. Range -> conventional date, else start of phase; "X +/- Y" -> X.
+# Under 10,000 years: BCE = years ago - 2,000, rounded to the nearest century, unless the source gives BCE.
+# Approximate year ending 00 -> first two digits (under 1000: year // 10).
+# Scope: evidence of conflict between people and groups, weapons of war, ranked and chiefly societies.
+# Narrabeen Man spearing stays in oceania_society_pre500bce (first-come).
+# Thin cell: pre-contact, mostly archaeology and historical linguistics. No dated polity, fort or ruler before 500 BCE.
+# Left out (next period): Palau defensive earthworks (from c. 2500 years ago), Marianas sling stones (c. 500 BCE or later),
+# Fiji cannibalism (500-100 BCE at earliest), Proto-Polynesian words for war, weapon and fort (after 500 BCE).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # Australia
+  - {years_ago: 10000, year: -8000, peg: dice, confidence: high,
+     source: "Tacon & Chippindale 1994, CAJ 4(2): at least 10 ka",
+     event: "Arnhem Land: Dynamic Figure paintings show duels with boomerangs and barbed spears, the oldest known fighting scenes",
+     scene: "A DICE with barbed spears for arms fights a boomerang-thrower in a one-on-one duel on an Arnhem Land rock wall."}
+  - {year: -5000, peg: lasso, confidence: medium,
+     source: "Clark & Litster 2022, Terra Australis 54 (Pardoe)",
+     event: "Murray Valley: skull and bone injuries show fighting between groups from about seven thousand years ago (approximate)",
+     scene: "A LASSO of river clans pulls tight, and their clubs crack skulls along the Murray in fights between neighbouring groups."}
+  - {year: -4000, peg: horse, confidence: medium,
+     source: "Tacon & Chippindale 1994 abstract: c. 6 ka change",
+     event: "Arnhem Land: rock art starts to show organised battles between large groups instead of duels (approximate)",
+     scene: "A painted HORSE leads fifty spear-throwers into one battle line, the first mass fight on the Arnhem Land rocks."}
+  # Island Melanesia and Lapita
+  - {year: -1300, peg: tomb, confidence: low,
+     source: "Pawley, TLOPO 6.4; doubted by Lichtenberk",
+     event: "Proto-Oceanic speakers of the Lapita culture have ranked descent groups under hereditary chiefs, a contested reconstruction (approximate)",
+     scene: "The firstborn son climbs onto his ancestors' TOMB and inherits the chief's title for the whole Proto-Oceanic clan."}
+  - {year: -1300, peg: tomb, confidence: medium,
+     source: "Kirch (via lapita.ihp.sinica): 1300-1100 BC",
+     event: "Talepakemalai, Mussau: the spread of pots and valuables between stilt houses shows social differences inside Lapita society (approximate)",
+     scene: "A TOMB-shaped stilt house at Talepakemalai takes all the fine pots and shell valuables, and the plain houses around it get none."}
+  - {year: -1000, peg: dice, confidence: low,
+     source: "Clark & Litster 2022 (Green 1979; Kirch & Green doubt)",
+     event: "Reef and Santa Cruz Islands: shaped shell and basalt sling stones, possibly the oldest weapons in Oceania (approximate)",
+     scene: "A pointed basalt DICE flies from a Lapita sling on the Reef Islands and hits an enemy, if it is a weapon."}
+  # Polynesia
+  - {year: -700, peg: goose, confidence: medium,
+     source: "Petchey & Kirch 2019: Plainware c. 2700 BP (not 2850)",
+     event: "Tonga and Samoa: Ancestral Polynesian society forms with ranked descent groups under hereditary chiefs, the qariki (approximate)",
+     scene: "A GOOSE is crowned the first qariki of Tonga and Samoa and leads its ranked flock by right of birth."}
