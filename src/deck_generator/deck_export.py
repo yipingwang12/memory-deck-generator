@@ -113,6 +113,8 @@ def _discover_slots(config_dir: Path) -> list[_Slot]:
         slots.append(_Slot(order, 'monarchs', yaml_path, None, cfg.get('group', _MONARCH_GROUP)))
         order += 1
     for yaml_path in sorted(Path(config_dir).glob('artworks/*.yaml')):
+        if yaml_path.name.endswith('.mnemonics.yaml'):
+            continue  # memory hooks beside the deck config, not a deck recipe
         cfg = yaml.safe_load(yaml_path.read_text())
         slots.append(_Slot(order, 'artworks', yaml_path, None, cfg.get('group', _ARTWORK_GROUP)))
         order += 1

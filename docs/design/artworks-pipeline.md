@@ -48,7 +48,7 @@ studied decks (see quiz doc), so the phone footprint is a fraction of this.
 | Source | Wikidata SPARQL, ranked by `wikibase:sitelinks`; config knob for threshold / top-N |
 | Image format | Download from Wikimedia Commons → downsize to ~480px **WebP** (~25 KB), store as files |
 | Asset layout | `data/decks/assets/<deck>/<QID>.webp`, referenced by relative path from the JSON |
-| Distractors | **Baked at export**, 4 choices, same-domain bias, **deterministic** (seeded by QID) |
+| Distractors | **Baked at export**, 4 choices, same-domain bias, **deterministic** (seeded by QID), no near-duplicate spellings |
 | Card expansion | Artifact `items` expanded **2× per artwork** (`<QID>\|title`, `<QID>\|creator`) |
 | Licensing | Restrict to **freely-licensed** images (see risks) |
 
@@ -216,3 +216,39 @@ because a broken cache must not be able to break an export.
   (broadened from paintings-only 2026-07-24). See the coverage-gap TODO above for what this
   still excludes and why it is not just a config edit.
 - Any quiz-time fetch — this pipeline is the only place the network is touched.
+
+## Near-duplicate options (2026-11-15)
+
+Wikidata holds many works under one name in two spellings: "Last Judgment" / "The Last
+Judgement", "Lot and His Daughters" / "Lot and his Daughters", "Mystic" / "Mystical Marriage of
+Saint Catherine". Same-creator bias put such pairs into one question (37 title cards), which then
+tested spelling, not recognition. `distractors.is_near_duplicate` now refuses a candidate that
+matches the answer or a kept distractor after normalisation (case, accents, punctuation,
+"the/a/an", "St" → "saint") at a `SequenceMatcher` ratio of 0.9 or more.
+
+**Series siblings are kept on purpose** (user's choice): a different number ("Composition IV" /
+"VI", "Philip III" / "IV", "part one" / "part two") or a different word ("Dance in the City" /
+"Country") is a different work, and telling them apart is real recognition. Re-export changed
+only `choices` on those 37 cards; `items` and `answers` are byte-identical, so no FSRS key moved.
+
+## Creator labels and the kept work set (2026-11-15)
+
+238 works shipped with no creator card. The query asked the label service for `"en"` only, and
+Wikidata had moved many names to the language-neutral `mul` label and removed `en`: John Singer
+Sargent (`Q155626`), Paul Klee (`Q44007`). The service then returns the bare Q-number, which
+`_is_unresolved` correctly reads as no name, so every work by such a creator became a title-only
+card. Fix: `wikibase:language "en,mul"`, engine `v2-mul-labels-2026-11-15`.
+
+The re-fetch also showed **upstream drift drops works**: 58 shipped works were absent because
+their P31 changed (David → statue / marble sculpture), their P170 was removed (most of the 34
+photographs, e.g. Raising the Flag on Iwo Jima) or their P18 was removed (8). The deck shipped
+the July work set instead: `scripts/merge_artwork_creators.py OLD_KEY NEW_KEY` writes, under the
+current cache key, the old rows with an empty creator filled from the new fetch, and keeps the
+new fetch as `<key>-fresh`. Result: +58 creator cards, none removed, titles unchanged.
+
+⚠ A later `--refresh-metadata` will drop those works again. The durable fix is to widen the
+query: P170 optional (no creator → title-only card) and the statue, marble sculpture and
+triptych types. With `--cache-only` only works whose images are already cached can join.
+
+A separate class stays anonymous on purpose: P170 = "unknown value" (Bosch's The Conjurer,
+Landscape with the Fall of Icarus, the Mérode Altarpiece), where the attribution is disputed.

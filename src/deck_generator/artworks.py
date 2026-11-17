@@ -36,7 +36,7 @@ _ROOT = Path(__file__).resolve().parent.parent.parent
 # **Bump ``_META_ENGINE_VERSION`` whenever the fetch or its parsing changes** — the query shape,
 # ``_BAND_EDGES``, ``_is_unresolved``, ``_principal_creator``, ``_year``, or the ``Artwork`` fields.
 # Otherwise a fix to any of them keeps serving results produced by the old logic.
-_META_ENGINE_VERSION = "v1-principal-creator-2026-07-25"
+_META_ENGINE_VERSION = "v2-mul-labels-2026-11-15"
 _META_CACHE_PATH = _ROOT / "cache" / "artworks_meta.json"
 
 # The cache key hashes the config MINUS these — deliberately an exclude-list, not an include-list.
@@ -94,13 +94,18 @@ _CORE = {
     ),
 }
 
+# Labels: "en" first, then "mul". Wikidata moved many names to the language-neutral "mul" label
+# and removed their "en" label (John Singer Sargent, Paul Klee, Pieter Bruegel the Elder). With
+# "en" only, the label service returns the bare Q-number, which ``_is_unresolved`` correctly
+# reads as no name — so every work by such a creator became an anonymous, title-only card.
+#
 # No ORDER BY: sorting the whole fame-filtered catalog on WDQS overflows its 60 s limit (and is
 # flaky well before that). Instead ``fetch_artworks`` sweeps narrow sitelink *bands* — each a
 # bounded FILTER range that returns fast — and sorts/limits client-side.
 _QUERY = """\
 SELECT ?work ?workLabel ?creator ?creatorLabel ?img ?sitelinks ?inception WHERE {{
 {core}  OPTIONAL {{ ?work wdt:P571 ?inception . }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en,mul" }}
 }}"""
 
 # Upper band edges (exclusive). A config's ``min_sitelinks`` becomes the lowest edge; the top

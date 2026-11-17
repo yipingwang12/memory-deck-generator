@@ -11,12 +11,50 @@ re-export produces byte-identical ``choices`` and never churns the quiz's FSRS `
 
 from __future__ import annotations
 
+import difflib
 import hashlib
 import random
+import re
+import unicodedata
 
 from .artworks import JOINT_SEP, Artwork
 
 _ERA_UNKNOWN = 10 ** 6
+
+# Two options at or above this similarity (after normalisation) are one name in two spellings.
+_NEAR_DUP_RATIO = 0.9
+_DROPPED_WORDS = {"the", "a", "an"}
+_WORD_ALIASES = {"st": "saint"}
+_NUMBER_WORDS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+                 "first", "second", "third", "fourth", "fifth"}
+_ROMAN = re.compile(r"^(?=[ivxlcdm]+$)m{0,3}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$")
+
+
+def _name_words(value: str) -> list[str]:
+    """Words of ``value`` without case, accents, punctuation or articles; "St" → "saint"."""
+    text = unicodedata.normalize("NFKD", value)
+    text = "".join(c for c in text if not unicodedata.combining(c)).casefold()
+    words = re.sub(r"[^\w\s]", " ", text).split()
+    return [_WORD_ALIASES.get(w, w) for w in words if w not in _DROPPED_WORDS]
+
+
+def _number_words(words: list[str]) -> set[str]:
+    """The words that number a work in a series: digits, Roman numerals, number words."""
+    return {w for w in words if w.isdigit() or _ROMAN.match(w) or w in _NUMBER_WORDS}
+
+
+def is_near_duplicate(a: str, b: str) -> bool:
+    """True when ``a`` and ``b`` are one name in two spellings.
+
+    Examples: "Last Judgment" / "The Last Judgement", "Lot and His Daughters" / "Lot and his
+    Daughters". Two such options in one question test spelling, not recognition. Series
+    siblings stay distinct: a different number ("Composition IV" / "Composition VI") or a
+    different word ("Dance in the City" / "Dance in the Country") is a different work.
+    """
+    wa, wb = _name_words(a), _name_words(b)
+    if _number_words(wa) != _number_words(wb):
+        return False
+    return difflib.SequenceMatcher(None, " ".join(wa), " ".join(wb)).ratio() >= _NEAR_DUP_RATIO
 
 
 def _stable_tiebreak(a_qid: str, b_qid: str) -> int:
@@ -57,8 +95,8 @@ def _options_for(art: Artwork, others: list[Artwork], attr: str, count: int,
     distractors: list[str] = []
     for o in ranked:
         value = getattr(o, attr)
-        if not value or value == correct or value in distractors:  # skip empty (anon) + dedup
-            continue
+        if not value or any(is_near_duplicate(value, kept) for kept in [correct, *distractors]):
+            continue  # skip empty (anon), exact and near duplicates
         distractors.append(value)
         if len(distractors) == count - 1:
             break

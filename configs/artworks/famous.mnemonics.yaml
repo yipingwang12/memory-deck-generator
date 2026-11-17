@@ -1,0 +1,114 @@
+# Memory hooks for series siblings in artworks_famous — titles that differ by one number or
+# one word (Composition IV / VI, Dance in the City / Country). Same-creator bias puts the
+# siblings into one question, so each hook ties the DIFFERENT word or number to a thing you
+# can see in that picture. Numbers use the Major System pegs (configs/history/major_pegs.yaml),
+# two digits, peg in CAPITALS. Shown after an answer on the title card only.
+#
+# `answer` must equal the deck's title for `work`; the build refuses a mismatch, and the quiz
+# drops a hook whose answer changed.
+deck: artworks_famous
+cards:
+  # --- Kandinsky, Compositions (peg = number) ---
+  - work: Q8348832
+    answer: Composition IV
+    scene: "Two black poles drop into a SEWER (04) beside the blue mountain and the rainbow."
+  - work: Q18709552
+    answer: Composition V
+    scene: "A SEAL (05) balances the one long black whip-line that sweeps across the top."
+  - work: Q16543389
+    answer: Composition VI
+    scene: "A flood of soy sauce: dark brown waves crash over the SUSHI (06). This is Kandinsky's flood."
+  - work: Q2990634
+    answer: Composition VII
+    scene: "A SKIER (07) spins down into the brightest, busiest whirlpool. VII is the fullest of all."
+  - work: Q18705560
+    answer: Composition IX
+    scene: "Bars of SOAP (09) in pastel colours lie in diagonal stripes across the canvas."
+  - work: Q3685303
+    answer: Composition X
+    scene: "Small coloured DICE (10) float on a black night sky between the big shapes."
+
+  # --- Whistler, Symphonies in White (peg = number) ---
+  - work: Q970968
+    answer: "Symphony in White, No. 1: The White Girl"
+    scene: "ONE girl stands alone, full length, on a wolf-skin rug. Someone spilled SODA (01) on the wolf's head."
+  - work: Q7661687
+    answer: "Symphony in White, No. 2: The Little White Girl"
+    scene: "TWO faces: the girl and her reflection in the mirror. The fire under the mantel is warm as the SUN (02)."
+
+  # --- Botticelli, Nastagio panels (story order + peg) ---
+  - work: Q1131019
+    answer: "The Story of Nastagio Degli Onesti, part one"
+    scene: "Part one, the CHASE starts: the knight and his dog run after the woman. A SODA (01) can rolls through the pines."
+  - work: Q3203525
+    answer: "The Story of Nastagio Degli Onesti, part two"
+    scene: "Part two, the KILL: the woman lies on the ground and the dogs eat. The SUN (02) shines between the pines."
+  - work: Q3203527
+    answer: "The Story of Nastagio Degli Onesti, part three"
+    scene: "Part three, the FEAST: the chase breaks into a banquet. A SUMO (03) wrestler jumps up from the long table."
+
+  # --- Velázquez, equestrian Philips (count) ---
+  - work: Q3380043
+    answer: Equestrian Portrait of Philip III
+    scene: "Philip the THIRD shows three whites: white ruff, white feather, white horse."
+  - work: Q3076680
+    answer: Equestrian Portrait of Philip IV
+    scene: "Philip the FOURTH rides a brown horse. Count its FOUR legs, all off the ground in the leap."
+
+  # --- one-word differences ---
+  - work: Q2624258
+    answer: A Young Woman Standing at a Virginal
+    scene: "The blue chair is empty because she STANDS. Cupid on the wall behind her stands too."
+  - work: Q2267440
+    answer: A Young Woman seated at a Virginal
+    scene: "A big viol leans against the keyboard, so she SITS down to play the duet."
+  - work: Q3223900
+    answer: The Rising of the Sun
+    scene: "RISING: the sky is bright blue, and Apollo climbs up and away from the sea."
+  - work: Q3796075
+    answer: The setting of the sun
+    scene: "SETTING: the sky is dark, and Apollo sinks down into a sea nymph's arms."
+  - work: Q3612413
+    answer: Allegory of Vices
+    scene: "VICES: a naked man is tied to a tree in a dark wood, and tormentors play music at him."
+  - work: Q3612419
+    answer: Allegory of Virtues
+    scene: "VIRTUES: Minerva sits in armour, and winged virtues fly down to crown her."
+  - work: Q4993494
+    answer: Femme couchée
+    scene: "Short title, short pose: the red-haired woman CURLS up and holds a white sheet."
+  - work: Q4808368
+    answer: Femme nue couchée
+    scene: "Longer title, longer pose: the dark-haired woman STRETCHES out full length, in white stockings only."
+  - work: Q3842692
+    answer: Madonna of the Cherries
+    scene: "The two children give Mary bunches of red CHERRIES."
+  - work: Q1235695
+    answer: Madonna of the Harpies
+    scene: "Mary stands high on a stone pedestal. HARPIES are carved on its corners."
+  - work: Q3633456
+    answer: Dance in the City
+    scene: "CITY: white satin gown, long gloves, black tailcoat, and potted palms of a city ballroom."
+  - work: Q1114718
+    answer: Dance in the Country
+    scene: "COUNTRY: red bonnet, a fan, and a straw hat dropped on the ground outside."
+
+  # --- Mondrian, abstract works (titles alike; hooks tie each title to its layout) ---
+  - work: Q19609196
+    answer: Composition 10 in Black and White
+    scene: "No colour: an oval cloud of black plus and minus dashes, like the pips of DICE (10). Nickname: Pier and Ocean."
+  - work: Q19609193
+    answer: "Composition II in Red, Blue, and Yellow"
+    scene: "A huge red square glows top right like a red SUN (02). Title order is size order: red big, blue middle, yellow tiny."
+  - work: Q15965694
+    answer: "Composition with Red, Yellow and Blue"
+    scene: "No number, because black lines crowd too thick to count. Colour only in small corner patches: yellow, red, a blue bar."
+  - work: Q2915406
+    answer: Broadway Boogie Woogie
+    scene: "BROADWAY traffic: yellow streets dotted with red and blue squares, like taxis on the Manhattan grid. Upright square canvas."
+  - work: Q1248830
+    answer: Victory Boogie Woogie
+    scene: "VICTORY stands on its point: a diamond whose lower half makes a V. Unfinished, with small pieces of coloured tape."
+  - work: Q18710663
+    answer: New York City
+    scene: "NEW YORK CITY: only lines, no blocks. Yellow, red and blue strips weave over and under like subway lines on a map."
