@@ -250,5 +250,40 @@ new fetch as `<key>-fresh`. Result: +58 creator cards, none removed, titles unch
 query: P170 optional (no creator → title-only card) and the statue, marble sculpture and
 triptych types. With `--cache-only` only works whose images are already cached can join.
 
+### Wider query and `keep_works:` (in progress, branch `feat/artworks-keep-works`)
+
+The merge script fixes the data but not the method: the decision to keep the 58 works lives
+only in a cache entry, has no reason, and is lost on the next `--refresh-metadata`. The monarch
+decks keep such decisions in the config with provenance (`corrections:`, `extra_cards:`), so the
+artwork deck follows them.
+
+1. **Wider query.** `wdt:P170 ?creator` is `OPTIONAL` in every mode, and `famous.yaml` adds
+   statue (`Q179700`), marble sculpture (`Q837249`) and triptych (`Q79218`). Engine
+   `v3-optional-creator-keep-works-2026-11-15`.
+2. **`keep_works:`** — one entry per work the wider sweep still misses:
+
+   ```yaml
+   keep_works:
+     - work: Q179900
+       reason: "David: in the July 2026 deck with review history; its type (P31) is now statue"
+       source: "Wikidata Q179900 (P31), queried 2026-11-17"
+       checked: "2026-11-17"
+       image: "http://commons.wikimedia.org/wiki/Special:FilePath/…"   # only when P18 was removed
+   ```
+
+   `parse_keep_works` validates through `corrections.validate` and refuses a duplicate. After the
+   sweep and the `limit` cut, `_fetch_kept` fetches the missing QIDs in one query with no type or
+   fame filter (image optional, filled from `image`) and marks them `Artwork.kept`. They join
+   after the cut on purpose: the entry is a decision, so fame must not remove the work.
+3. **Staleness.** `stale_keeps` reports an entry when the sweep returns its work on its own
+   (`kept` is False) and when the QID fetch finds no title or image. `deck-export` prints both.
+4. **Cache key.** Only each entry's `(work, image)` enters the key, so rewording a reason does not
+   force a re-fetch.
+
+Remaining, with a Wikidata window: run the wider sweep; report how many works it ADDS (it will
+bring in anonymous works and statues the deck never had: the user decides); draft the entries
+from each missing work's current P31 / P18 / sitelinks; rebuild with `--cache-only`; delete the
+merge script and the merged / `-fresh` cache entries.
+
 A separate class stays anonymous on purpose: P170 = "unknown value" (Bosch's The Conjurer,
 Landscape with the Fall of Icarus, the Mérode Altarpiece), where the attribution is disputed.

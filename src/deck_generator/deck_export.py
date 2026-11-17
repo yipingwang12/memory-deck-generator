@@ -27,7 +27,8 @@ import yaml
 
 from .artwork_images import fetch_raw, to_webp
 from .artworks import (
-    apply_corrections, fetch_artworks_cached, parse_artwork_corrections, stale_corrections,
+    apply_corrections, fetch_artworks_cached, parse_artwork_corrections, parse_keep_works,
+    stale_corrections, stale_keeps,
 )
 from .corruptions import build_pool, classify, pool_warnings
 from .distractors import build_choices
@@ -316,6 +317,8 @@ def _build_artwork_deck(s: _Slot, refresh_metadata: bool = False,
     corrections = parse_artwork_corrections(cfg.get('corrections'))
     for note in stale_corrections(arts, corrections):
         print(f'  ! artworks corrections: {note}', file=sys.stderr)
+    for note in stale_keeps(arts, parse_keep_works(cfg.get('keep_works'))):
+        print(f'  ! artworks keep_works: {note}', file=sys.stderr)
     arts = apply_corrections(arts, corrections)
     choices = {'title': build_choices(arts, 'title', count, bias),
                'creator': build_choices(arts, 'creator', count, bias)}

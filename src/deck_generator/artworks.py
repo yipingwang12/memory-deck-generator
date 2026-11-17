@@ -36,7 +36,7 @@ _ROOT = Path(__file__).resolve().parent.parent.parent
 # **Bump ``_META_ENGINE_VERSION`` whenever the fetch or its parsing changes** — the query shape,
 # ``_BAND_EDGES``, ``_is_unresolved``, ``_principal_creator``, ``_year``, or the ``Artwork`` fields.
 # Otherwise a fix to any of them keeps serving results produced by the old logic.
-_META_ENGINE_VERSION = "v2-mul-labels-2026-11-15"
+_META_ENGINE_VERSION = "v3-optional-creator-keep-works-2026-11-15"
 _META_CACHE_PATH = _ROOT / "cache" / "artworks_meta.json"
 
 # The cache key hashes the config MINUS these — deliberately an exclude-list, not an include-list.
@@ -69,12 +69,14 @@ class Artwork:
     # one means ``creator`` above was *chosen*, not read — see ``_principal_creator``. Kept so
     # ``stale_corrections`` can tell a settled work from one answered by tiebreak.
     creator_candidates: tuple[tuple[str, str], ...] = ()
+    # True when only a ``keep_works:`` entry holds this work in the deck: the sweep no longer
+    # returns it. ``stale_keeps`` uses it to find entries that upstream has made unnecessary.
+    kept: bool = False
 
 
 _CORE = {
     "wikidata": (
         "  ?work wdt:P31 wd:{instance} ;\n"
-        "        wdt:P170 ?creator ;\n"
         "        wdt:P18 ?img ;\n"
         "        wikibase:sitelinks ?sitelinks .\n"
         "  FILTER({band})\n"
@@ -82,18 +84,30 @@ _CORE = {
     "collection": (
         "  ?work wdt:P31 wd:{instance} ;\n"
         "        wdt:P195 wd:{collection} ;\n"
-        "        wdt:P170 ?creator ;\n"
         "        wdt:P18 ?img ;\n"
         "        wikibase:sitelinks ?sitelinks .\n"
     ),
     "curated": (
         "  VALUES ?work {{ {works} }}\n"
-        "  ?work wdt:P170 ?creator ;\n"
-        "        wdt:P18 ?img ;\n"
+        "  ?work wdt:P18 ?img ;\n"
         "        wikibase:sitelinks ?sitelinks .\n"
+    ),
+    # One query for the ``keep_works:`` QIDs the sweep did not return. Image and fame are
+    # optional here: the work is in the deck by a sourced decision, and a removed P18 is filled
+    # from the entry's ``image``.
+    "keep": (
+        "  VALUES ?work {{ {works} }}\n"
+        "  OPTIONAL {{ ?work wdt:P18 ?img . }}\n"
+        "  OPTIONAL {{ ?work wikibase:sitelinks ?sitelinks . }}\n"
     ),
 }
 
+# The SPARQL comment that starts the keep query. Tests use it to tell that query from the sweep.
+KEEP_MARKER = "# keep_works"
+
+# Creator is OPTIONAL: Wikidata removes P170 from works (the Iwo Jima photograph lost it), and
+# a work with no creator still makes an answerable title card.
+#
 # Labels: "en" first, then "mul". Wikidata moved many names to the language-neutral "mul" label
 # and removed their "en" label (John Singer Sargent, Paul Klee, Pieter Bruegel the Elder). With
 # "en" only, the label service returns the bare Q-number, which ``_is_unresolved`` correctly
@@ -104,7 +118,8 @@ _CORE = {
 # bounded FILTER range that returns fast — and sorts/limits client-side.
 _QUERY = """\
 SELECT ?work ?workLabel ?creator ?creatorLabel ?img ?sitelinks ?inception WHERE {{
-{core}  OPTIONAL {{ ?work wdt:P571 ?inception . }}
+{core}  OPTIONAL {{ ?work wdt:P170 ?creator . }}
+  OPTIONAL {{ ?work wdt:P571 ?inception . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en,mul" }}
 }}"""
 
@@ -144,6 +159,66 @@ def build_query(config: dict, instance: str | None = None,
     else:
         raise ValueError(f"unknown source mode: {mode!r}")
     return _QUERY.format(core=core)
+
+
+def build_keep_query(qids: list[str]) -> str:
+    """The SPARQL that fetches ``keep_works:`` QIDs by identity, with no type or fame filter."""
+    works = " ".join(f"wd:{q}" for q in qids)
+    return KEEP_MARKER + "\n" + _QUERY.format(core=_CORE["keep"].format(works=works))
+
+
+@dataclass(frozen=True)
+class KeptWork:
+    """A sourced decision to keep one work in the deck after the sweep stops returning it.
+
+    Upstream drift removes works that have review history: Wikidata reclassifies an item
+    (Michelangelo's David became a "statue"), or removes its P170 or P18. The entry records why,
+    so the decision lives in the config and survives ``--refresh-metadata``. ``image`` is the
+    Commons URL to use when Wikidata no longer has a P18.
+    """
+
+    work: str          # QID
+    reason: str        # what changed upstream
+    source: str        # what was checked
+    checked: str = ''  # ISO date the source was last verified
+    image: str = ''    # fallback image URL
+
+
+def parse_keep_works(raw: list[dict] | None) -> dict[str, KeptWork]:
+    """Parse and validate a config's ``keep_works:`` block, keyed by QID.
+
+    Raises on a missing key or a duplicate ``work``, the same rule as the corrections block.
+    """
+    if not raw:
+        return {}
+    out: dict[str, KeptWork] = {}
+    for i, entry in enumerate(raw):
+        validate(entry, i, required=('work',), label='keep_works')
+        reason, source, checked = provenance(entry)
+        work = str(entry['work'])
+        if work in out:
+            raise ValueError(f"keep_works[{i}]: duplicate entry for {work}")
+        out[work] = KeptWork(work=work, reason=reason, source=source, checked=checked,
+                             image=str(entry.get('image', '')))
+    return out
+
+
+def stale_keeps(artworks: list[Artwork], keeps: dict[str, KeptWork]) -> list[str]:
+    """``keep_works:`` entries that no longer do their job.
+
+    An entry is stale when the sweep returns the work on its own again, and it fails when the
+    QID fetch finds no title or image. Both are reported, not raised: neither is an error in the
+    deck, but an entry that does nothing rots without notice.
+    """
+    present = {a.qid: a for a in artworks}
+    notes = []
+    for qid in sorted(keeps):
+        a = present.get(qid)
+        if a is None:
+            notes.append(f"{qid} (keep): not found by QID (no title or image on Wikidata)")
+        elif not a.kept:
+            notes.append(f"{qid} (keep): Wikidata now returns this work on its own")
+    return notes
 
 
 @dataclass(frozen=True)
@@ -285,6 +360,9 @@ def fetch_artworks(config: dict, sparql_url: str = _SPARQL_URL) -> list[Artwork]
     A work with several P18 images or P170 creators yields multiple rows; the highest-fame is
     kept. A row without a usable title or image is dropped; a row whose *creator* is unresolved
     (an anonymous work) is kept with an empty creator (a title-only card downstream).
+
+    ``keep_works:`` QIDs the sweep did not return are then fetched by identity and added after
+    the ``limit`` cut (see ``_fetch_kept``).
     """
     mode = config.get("source", "wikidata")
     if mode == "wikidata":
@@ -304,38 +382,78 @@ def fetch_artworks(config: dict, sparql_url: str = _SPARQL_URL) -> list[Artwork]
             print(f"  ! artworks fetch: {instance} band {band} failed ({type(e).__name__}) — skipped",
                   file=sys.stderr)
             continue
-        for b in bindings:
-            qid = _qid(b["work"]["value"])
-            title = b.get("workLabel", {}).get("value", "")
-            img = b.get("img", {}).get("value", "")
-            if not title or not img or _is_unresolved(title):
-                continue  # a card needs a real title and an image
-            creator = b.get("creatorLabel", {}).get("value", "")
-            creator_qid = _qid(b["creator"]["value"]) if b.get("creator") else ""
-            if creator and creator_qid and not _is_unresolved(creator):
-                candidates.setdefault(qid, {})[creator_qid] = creator
-            sitelinks = int(b.get("sitelinks", {}).get("value", 0))
-            if qid in by_qid and by_qid[qid].sitelinks >= sitelinks:
-                continue  # already have a same-or-famer row for this work
-            by_qid[qid] = Artwork(
-                qid=qid, title=title, creator="", creator_qid="", image_url=img,
-                sitelinks=sitelinks, inception=_year(b.get("inception", {}).get("value")),
-            )
-    # Creator is settled only after every band/type query has been seen, since a work's P170
-    # statements arrive as separate rows that may straddle queries.
+        _collect(bindings, by_qid, candidates)
+    out = _settle(by_qid, candidates)
+    limit = config.get("limit")
+    out = out[:limit] if limit else out
+    return out + _fetch_kept(config, {a.qid for a in out}, sparql_url)
+
+
+def _fetch_kept(config: dict, have: set[str], sparql_url: str) -> list[Artwork]:
+    """The ``keep_works:`` works the sweep did not return, fetched by QID and marked ``kept``.
+
+    They are added after the ``limit`` cut: the entry is a decision to keep the work, so fame
+    must not remove it.
+    """
+    keeps = parse_keep_works(config.get("keep_works"))
+    missing = sorted(q for q in keeps if q not in have)
+    if not missing:
+        return []
+    bindings = _sparql_session(sparql_url, build_keep_query(missing))
+    by_qid: dict[str, Artwork] = {}
+    candidates: dict[str, dict[str, str]] = {}
+    _collect(bindings, by_qid, candidates, {q: keeps[q].image for q in missing})
+    return [replace(a, kept=True) for a in _settle(by_qid, candidates)]
+
+
+def _collect(bindings: list[dict], by_qid: dict[str, Artwork],
+             candidates: dict[str, dict[str, str]],
+             fallback_img: dict[str, str] | None = None) -> None:
+    """Add SPARQL rows to ``by_qid`` (highest-fame row per work) and ``candidates``.
+
+    A row with no real title, or no image from Wikidata or ``fallback_img``, is dropped.
+    """
+    for b in bindings:
+        qid = _qid(b["work"]["value"])
+        title = b.get("workLabel", {}).get("value", "")
+        img = b.get("img", {}).get("value", "") or (fallback_img or {}).get(qid, "")
+        if not title or not img or _is_unresolved(title):
+            continue  # a card needs a real title and an image
+        creator = b.get("creatorLabel", {}).get("value", "")
+        creator_qid = _qid(b["creator"]["value"]) if b.get("creator") else ""
+        if creator and creator_qid and not _is_unresolved(creator):
+            candidates.setdefault(qid, {})[creator_qid] = creator
+        sitelinks = int(b.get("sitelinks", {}).get("value", 0))
+        if qid in by_qid and by_qid[qid].sitelinks >= sitelinks:
+            continue  # already have a same-or-famer row for this work
+        by_qid[qid] = Artwork(
+            qid=qid, title=title, creator="", creator_qid="", image_url=img,
+            sitelinks=sitelinks, inception=_year(b.get("inception", {}).get("value")),
+        )
+
+
+def _settle(by_qid: dict[str, Artwork], candidates: dict[str, dict[str, str]]) -> list[Artwork]:
+    """Pick each work's creator and sort by descending fame.
+
+    Creator is settled only after every query has been seen, since a work's P170 statements
+    arrive as separate rows that may straddle queries.
+    """
     out = []
     for qid, a in by_qid.items():
         cands = tuple(sorted(candidates.get(qid, {}).items(), key=_qid_sort))
         cqid, cname = _principal_creator(cands)
         out.append(replace(a, creator=cname, creator_qid=cqid, creator_candidates=cands))
     out.sort(key=lambda a: (-a.sitelinks, a.qid))
-    limit = config.get("limit")
-    return out[:limit] if limit else out
+    return out
 
 
 def _meta_cache_key(config: dict) -> str:
     """Hash of everything about ``config`` that can change what the fetch returns."""
     payload = {k: v for k, v in sorted(config.items()) if k not in _NON_FETCH_KEYS}
+    # Only a kept work's QID and image change the fetch; rewording its provenance must not.
+    if "keep_works" in payload:
+        payload["keep_works"] = sorted((str(e.get("work", "")), str(e.get("image", "")))
+                                       for e in payload["keep_works"] or [])
     payload["_engine"] = _META_ENGINE_VERSION
     return hashlib.sha256(
         json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str).encode()
