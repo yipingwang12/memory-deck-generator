@@ -29,7 +29,7 @@ import yaml
 
 from .deck_export import DEFAULT_DECKS_DIR, config_hash
 
-from . import companies, company_mnemonics, scene_images
+from . import companies, company_mnemonics, person_mnemonics, scene_images
 
 _ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PEGS = _ROOT / "configs" / "history" / "major_pegs.yaml"
@@ -47,8 +47,13 @@ def _paths(config: Path) -> tuple[Path, Path, Path, Path, Path | None]:
             here / cfg["facts"] if cfg.get("facts") else None)
 
 
-def _artifact_name(config: Path) -> str:
-    return f"companies_{config.stem}.json"
+def _prefix(cfg: dict) -> str:
+    """Artifact family: ``companies`` by default, ``people`` for the CoevCon decks."""
+    return cfg.get("artifact_prefix", "companies")
+
+
+def _artifact_name(config: Path, cfg: dict) -> str:
+    return f"{_prefix(cfg)}_{config.stem}.json"
 
 
 def _checked_range(audit: list[companies.AuditRow]) -> tuple[str, str] | None:
@@ -71,7 +76,7 @@ def _run_checks(cfg: dict, config: Path, out_dir: Path, today: date | None
             "git rather than skipping the quote check.")
     source = source_p.read_text(encoding="utf-8")
 
-    shipped = companies.shipped_qids(out_dir / _artifact_name(config), cfg["namespace"])
+    shipped = companies.shipped_qids(out_dir / _artifact_name(config, cfg), cfg["namespace"])
     report = companies.validate(
         cards, audit, source, cfg.get("n_choices", 4), shipped, facts,
         cfg.get("recheck_months", companies.DEFAULT_RECHECK_MONTHS), today)
@@ -82,6 +87,12 @@ def _run_checks(cfg: dict, config: Path, out_dir: Path, today: date | None
     if scenes is not None:
         report.failures.extend(f"mnemonics: {p}" for p in company_mnemonics.problems(
             scenes, cards, company_mnemonics.load_pegs(DEFAULT_PEGS)))
+        if cfg.get("mnemonic_rules") == "person":
+            report.failures.extend(f"mnemonics: {p}" for p in person_mnemonics.problems(scenes))
+            report.failures.extend(f"mnemonics: {p}" for p in person_mnemonics.anchor_clashes(
+                scenes["anchor"], config, company_mnemonics.load_pegs(DEFAULT_PEGS)))
+    if cfg.get("deck_type") == "person":
+        report.failures.extend(person_mnemonics.stem_problems(cards, cfg))
     return report, cards, audit, companies.source_digest(source)
 
 
@@ -151,12 +162,14 @@ def _write_mnemonics(cfg: dict, config: Path, cards: list[companies.Card], out_d
     scenes = _mnemonics(cfg, config)
     if scenes is None:
         return
-    deck = Path(_artifact_name(config)).stem
+    deck = Path(_artifact_name(config, cfg)).stem
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{deck}.json"
     src, suffix, renderer = _image_source(config.stem, scenes, images_root, _shipped_renderer(out))
     images = _copy_scene_images(scenes, src, out_dir / "images" / deck, suffix)
     sidecar = company_mnemonics.assemble(scenes, cards, cfg, deck, images)
+    if cfg.get("mnemonic_rules") == "person":
+        sidecar = person_mnemonics.add_etymology(sidecar, scenes, cfg)
     sidecar["renderer"] = renderer
     out.write_text(json.dumps(sidecar, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"built {out} — {len(scenes['cards'])} scenes, {len(images)} images")
@@ -191,11 +204,11 @@ def _build(cfg: dict, config: Path, out_dir: Path, today: date | None,
 
     curated_p, _, _, stamp_p, _ = _paths(config)
     art = companies.assemble_artifact(
-        cards, cfg, f"manual/companies/{config.name}", digest, _checked_range(audit))
+        cards, cfg, f"manual/{_prefix(cfg)}/{config.name}", digest, _checked_range(audit))
     art["config_hash"] = config_hash(curated_p)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    out = out_dir / _artifact_name(config)
+    out = out_dir / _artifact_name(config, cfg)
     out.write_text(json.dumps(art, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     prior = stamp_p.read_text(encoding="utf-8").strip() if stamp_p.exists() else ""
@@ -206,8 +219,9 @@ def _build(cfg: dict, config: Path, out_dir: Path, today: date | None,
     _write_mnemonics(cfg, config, cards, mnemonics_out, images_root)
 
     print(f"built {out} — {len(cards)} cards (source: manual)")
-    print("  NOT synced: copy to memory-quiz-app/data/decks/ by hand. `source: manual` means "
-          "neither deck-export's clear nor the orchestrator's sync touches it.")
+    if out_dir.resolve() == DEFAULT_DECKS_DIR.resolve():
+        print("  NOT synced: copy to memory-quiz-app/data/decks/ by hand. `source: manual` means "
+              "neither deck-export's clear nor the orchestrator's sync touches it.")
 
 
 def _stale_only(cfg: dict, config: Path, today: date | None) -> int:

@@ -85,6 +85,10 @@ class Fact:
     quote: str
     category: str          # history | platform | product | funding | people | location
     volatility: str        # durable | volatile
+    #: False for a durable fact the policy refuses to card (person decks: inferred, disputed,
+    #: not from an official page). Needs a ``reason``; excluded from the coverage denominator.
+    cardable: bool = True
+    reason: str = ""
 
 
 @dataclass
@@ -116,7 +120,7 @@ def load_curated(path: Path) -> list[Card]:
 
 def load_facts(path: Path) -> list[Fact]:
     return [Fact(d["id"], d["fact"], d["quote"], d.get("category", ""),
-                 d.get("volatility", "durable"))
+                 d.get("volatility", "durable"), d.get("cardable", True), d.get("reason", ""))
             for d in _rows(path)]
 
 
@@ -149,8 +153,12 @@ def uncovered_facts(facts: list[Fact], audit: list[AuditRow]) -> list[Fact]:
     complete and so a later pass can see they were considered and deliberately not carded.
     """
     quoted = {normalise(r.quote) for r in audit if r.decision == "keep"}
-    return [f for f in facts
-            if f.volatility == "durable" and normalise(f.quote) not in quoted]
+    return [f for f in _countable(facts) if normalise(f.quote) not in quoted]
+
+
+def _countable(facts: list[Fact]) -> list[Fact]:
+    """The coverage denominator: durable facts not marked ``cardable: false``."""
+    return [f for f in facts if f.volatility == "durable" and f.cardable]
 
 
 def _months_between(earlier: date, later: date) -> int:
@@ -295,7 +303,12 @@ def validate(cards: list[Card], audit: list[AuditRow], source: str, n_choices: i
 
     # 10. density — measured against the extracted durable facts, never a fixed range
     if facts:
-        durable = [f for f in facts if f.volatility == "durable"]
+        failures += [f"fact {f.id} is cardable: false with no reason"
+                     for f in facts if not f.cardable and not f.reason.strip()]
+        quoted = {normalise(r.quote) for r in audit if r.decision == "keep"}
+        failures += [f"fact {f.id} is cardable: false but a kept card quotes it"
+                     for f in facts if not f.cardable and normalise(f.quote) in quoted]
+        durable = _countable(facts)
         if durable:
             missing_facts = uncovered_facts(facts, audit)
             covered = len(durable) - len(missing_facts)
@@ -324,7 +337,8 @@ def assemble_artifact(cards: list[Card], cfg: dict, config_path: str,
     artifact = {
         "order": cfg.get("order", 500),
         "name": cfg["deck_name"],
-        "deck_type": "company",
+        # `person` for the CoevCon attendee decks, which ride the same pipeline.
+        "deck_type": cfg.get("deck_type", "company"),
         "mode": "text-mc",
         "title": cfg.get("title", cfg["deck_name"]),
         "group": cfg.get("group", "Companies"),

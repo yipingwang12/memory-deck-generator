@@ -61,6 +61,7 @@ See [PRD.md](PRD.md) for pipeline configs, output format, and success criteria.
 | `scene_images.py` | Gemini image REST client for scene pictures: `scene_prompt` (mnemonic-aid wording + `STYLES`), `plan`/`record` (manifest, skip unchanged), `current_images` (image matches current scene text), `generate` (backoff on 429/5xx), `api_key` (Keychain). `chatgpt_sheet`/`strip_hints`: hand-drawn path via a ChatGPT subscription — `scripts/chatgpt_scene_prompts.py SLUG…` → `<slug>/chatgpt-instant/realistic/prompts.md` (setup + one prompt per scene in story order, bracket hints dropped; never overwrites without `--force`). No background instruction in any prompt (user's choice 2026-10-29). |
 | `company_snapshot.py` | `python -m deck_generator.company_snapshot NAME OUT --revised DATE` — renders one `career_planning/boston_companies.yaml` entry to `<slug>.source.txt` (the quote oracle). Byte-identical to the earlier hand-rendered snapshots (test pins Tessera). Update the dossier, then re-render; never hand-edit a snapshot. |
 | `companies_cli.py` | `deck-companies` — **check** (default, no writes) / `--build` / `--stale` (recheck sweep only). No `--no-verify-quotes`: the source snapshot is OUR prose and is committed, so the quote check can always run. |
+| `person_mnemonics.py` | Etymology layer for person-deck scenes (`mnemonic_rules: person`): `problems` requires a sourced `anchor_etymology` and a `term`/`origin`/`source` on every scene `etymology` entry; `add_etymology` appends "Etymology: …" to each scene in the sidecar and the anchor's to the story's first scene. |
 | `grammar.py` | Grammar-table core. `derive` (every form of a verb by rule; irregular present systems from `_IRREGULAR`; `semi_deponent`, `exclude`), `PAGES`/`GRID_TABLES`/`page_tables`/`verb_pages` (a verb's pages; empty rows/cols dropped), `parse_pages`, `wrong_pool` (see *Grammar tables*), `validate` (rules vs config, pages and absence included), `item_string` = `<lang>:<lemma_key>|<tag>`, `assemble_artifact` (flat `tables` with `rows`/`cols`/`grid` + `pages`). |
 | `grammar_nominal.py` | Noun + pronoun decks: `derive_noun` (declension rules), `derive_pronoun` (Wheelock tables + derived compounds), `lexeme_tables`, `stems`, `wrong_pool` (same word only), `validate`, `assemble_artifact` (via `grammar.envelope`). |
 | `grammar_kaikki.py` | Wiktionary import: `tag_of` (kaikki tag list → our tag), `parse_variants`/`parse_forms` (first variant wins, or `prefer.prefix`), `verb_forms` (composes periphrastic perfects from *sum*, nominative infinitives, `active_only`/`exclude`), `verb_config`, `config_stem`; nominal: `nominal_tags` (one row → several genders), `resolve_anceps`, `lexeme_variants` (choose/respell/partitive/exclude), `nominal_config`. Never calls the rules. |
@@ -181,6 +182,20 @@ What will bite you:
 - **Dates are year-only** (2026-10-21): a day or month is not worth a card's reviews.
 - **Renderer is recorded, not inferred** (2026-11-10): the sidecar carries `renderer` (a Gemini model or `threejs`) and the next build keeps it, warning when another renderer has more current pictures. `renderer:` in the scenes YAML switches a deck on purpose. A sidecar without the field (pre-2026-11-10) falls back to Gemini-first once, then records it. Freshness is one test, `scene_images.is_current` (manifest entries now store `scene`). Batch submit skips scenes held by an unharvested state file in `_batches/` (`--force` overrides); `--batch wait` marks the file `harvested`.
 - **Scene images** (2026-10-23, Alnylam only): `scripts/generate_scene_images.py <slug>` → `results/generate_scene_images/<slug>/<model>/<style>/` (default **`gemini-3.1-flash-lite-image`** since 2026-11-05, user's choice; `--model gemini-3.1-flash-image` for the full model; `realistic`; key from macOS Keychain `gemini-api-key`). `--build` ships from the full-model dir first, then Lite, then Three.js (`SHIPPED_MODELS`) — so the 24 full-model decks keep their look. Changing `DEFAULT_MODEL` alone would have dropped them: `image_dir` defaults to it. Anchor drawn first, sent as reference with every scene; `manifest.json` records each prompt, so only new/edited scenes are redrawn (paid). `--build` copies images drawn from the scene's CURRENT text to `memory-quiz-app/data/mnemonics/images/<deck>/` and names them in the sidecar (`image`). Model sometimes writes text despite the prompt — eyeball before shipping.
+
+## Person decks (CoevCon, 2026-11-17)
+
+`deck-companies` with three config keys: `deck_type: person`, `artifact_prefix: people`
+(artifact `people_<slug>.json`, `config_path` `manual/people/…`) and `mnemonic_rules: person`
+(`person_mnemonics`). Rules: [configs/people/policy.md](configs/people/policy.md) and
+[configs/people/mnemonic_policy.md](configs/people/mnemonic_policy.md) — anchors and place
+images from **etymology**, each with a cited source (a pilot of that method).
+
+- **The data never enters this repo** — facts about private people. Configs, JSONL and scenes
+  live in `career_planning/coevcon_deck/`; `source_text` points at the person's dossier in
+  `career_planning/research_notes/CoevCon attendees/`. `career_planning/coevcon_deck/build.sh
+  <slug> [--build]` runs the check/build with the right `--out` and `--mnemonics-out`.
+- The quiz gitignores `people_*.json` and enrols them as the uncapped `CoevCon` priority collection.
 
 ## Source-file decks (`deck-code-mcq`)
 
