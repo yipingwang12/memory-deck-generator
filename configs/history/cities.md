@@ -165,39 +165,73 @@ city at a time, then Tier 2, then Tier 3. Each city gets its section (area + era
 | tier | city (slug) | region | area note for the user's decision |
 |---|---|---|---|
 | 1 | London (`london`) | western_europe | Greater London (decided) |
-| 1 | Paris (`paris`) | western_europe | Métropole du Grand Paris or Île-de-France (Saint-Denis, Versailles) |
+| 1 | Paris (`paris`) | western_europe | Île-de-France (decided) |
 | 1 | Rome (`rome`) | western_europe | Metropolitan City of Rome Capital (decided) |
-| 1 | Istanbul (`istanbul`) | eastern_europe | Istanbul Province, both shores |
-| 1 | Moscow (`moscow`) | eastern_europe | Moscow city or with Moscow Oblast |
-| 1 | Cairo (`cairo`) | north_africa | Greater Cairo: Memphis, Giza, Saqqara in or out |
-| 1 | Beijing (`beijing`) | east_asia | Beijing Municipality (Zhoukoudian) |
-| 1 | Tokyo (`tokyo`) | east_asia | Tokyo Metropolis or Greater Tokyo (Yokohama, Kamakura) |
-| 1 | Delhi (`delhi`) | south_asia | NCT of Delhi or the National Capital Region |
-| 1 | New York (`new_york`) | north_america | five boroughs or the metropolitan area (Newark, Long Island) |
-| 1 | Mexico City (`mexico_city`) | latin_america | Mexico City or the Valley of Mexico metro (Teotihuacan) |
-| 2 | Shanghai (`shanghai`) | east_asia | Shanghai Municipality |
-| 2 | Seoul (`seoul`) | east_asia | Seoul or the Seoul Capital Area (Incheon, Suwon) |
-| 2 | Osaka (`osaka`) | east_asia | Osaka Prefecture or Keihanshin (Kyoto, Kobe, Nara) |
-| 2 | Mumbai (`mumbai`) | south_asia | Mumbai Metropolitan Region (Elephanta, Thane) |
-| 2 | Kolkata (`kolkata`) | south_asia | Kolkata Metropolitan Area |
-| 2 | Bangkok (`bangkok`) | southeast_asia | Bangkok or the metro region (Thonburi is inside either) |
-| 2 | Jakarta (`jakarta`) | southeast_asia | Jakarta or Jabodetabek |
-| 2 | Tehran (`tehran`) | west_asia | Tehran Province (Rey) |
-| 2 | Berlin (`berlin`) | western_europe | Berlin or the capital region (Potsdam) |
-| 2 | Madrid (`madrid`) | western_europe | Community of Madrid (Alcalá de Henares, El Escorial) |
-| 2 | Chicago (`chicago`) | north_america | city or the metropolitan area |
-| 2 | São Paulo (`sao_paulo`) | latin_america | metropolitan region |
-| 3 | Lagos (`lagos`) | subsaharan_africa | Lagos State |
-| 3 | Johannesburg (`johannesburg`) | subsaharan_africa | city or Gauteng (Pretoria, Cradle of Humankind) |
-| 3 | Buenos Aires (`buenos_aires`) | latin_america | city or Greater Buenos Aires |
-| 3 | Los Angeles (`los_angeles`) | north_america | county or the metropolitan area |
-| 3 | Sydney (`sydney`) | oceania | Greater Sydney |
-| 3 | Singapore (`singapore`) | southeast_asia | the island state (city-state rule) |
-| 3 | Baghdad (`baghdad`) | west_asia | Baghdad Governorate (Ctesiphon in or out) |
+| 1 | Istanbul (`istanbul`) | eastern_europe | Istanbul Province, both shores (decided) |
+| 1 | Moscow (`moscow`) | eastern_europe | Moscow city + Moscow Oblast (Trinity Lavra, New Jerusalem, Borodino) (decided 2026-11-19) |
+| 1 | Cairo (`cairo`) | north_africa | Greater Cairo (Cairo + Giza governorates) with Memphis, Saqqara, Dahshur (decided 2026-11-19) |
+| 1 | Beijing (`beijing`) | east_asia | Beijing Municipality (Zhoukoudian, Ming Tombs, Great Wall sections) (decided 2026-11-19) |
+| 1 | Tokyo (`tokyo`) | east_asia | Tokyo Metropolis (23 wards, Tama, islands); Kamakura and Yokohama out (decided 2026-11-19) |
+| 1 | Delhi (`delhi`) | south_asia | National Capital Region (NCT + Gurgaon, Noida, Faridabad, Ghaziabad) (decided 2026-11-19) |
+| 1 | New York (`new_york`) | north_america | metropolitan area (five boroughs, Long Island, Westchester, northern New Jersey) (decided 2026-11-19) |
+| 1 | Mexico City (`mexico_city`) | latin_america | Valley of Mexico metro (CDMX + State of Mexico metro: Teotihuacan, Texcoco, Tenayuca) (decided 2026-11-19) |
+| 2 | Shanghai (`shanghai`) | east_asia | Shanghai Municipality (decided 2026-11-19) |
+| 2 | Seoul (`seoul`) | east_asia | Seoul Capital Area (Seoul, Incheon, Gyeonggi: Suwon, Ganghwa, Namhansanseong) (decided 2026-11-19) |
+| 2 | Osaka (`osaka`) | east_asia | Osaka Prefecture (Sakai, Mozu-Furuichi); Kyoto, Nara, Kobe out (decided 2026-11-19) |
+| 2 | Mumbai (`mumbai`) | south_asia | Mumbai Metropolitan Region (Elephanta, Kanheri, Thane, Sopara, Vasai) (decided 2026-11-19) |
+| 2 | Kolkata (`kolkata`) | south_asia | Kolkata Metropolitan Area (Howrah, Serampore, Chandannagar, Chinsurah, Barrackpore) (decided 2026-11-19) |
+| 2 | Bangkok (`bangkok`) | southeast_asia | Bangkok Metropolitan Region (with Thonburi and the ring provinces); Ayutthaya out (decided 2026-11-19) |
+| 2 | Jakarta (`jakarta`) | southeast_asia | Jabodetabek (Bogor, Tangerang, Bekasi) (decided 2026-11-19) |
+| 2 | Tehran (`tehran`) | west_asia | Tehran Province (Rey, Varamin, Damavand) (decided 2026-11-19) |
+| 2 | Berlin (`berlin`) | western_europe | Berlin + Potsdam (decided 2026-11-19) |
+| 2 | Madrid (`madrid`) | western_europe | Community of Madrid (Alcalá de Henares, El Escorial, Aranjuez) (decided 2026-11-19) |
+| 2 | Chicago (`chicago`) | north_america | metropolitan area (Cook and collar counties, northwest Indiana) (decided 2026-11-19) |
+| 2 | São Paulo (`sao_paulo`) | latin_america | metropolitan region + Santos and São Vicente (decided 2026-11-19) |
+| 3 | Lagos (`lagos`) | subsaharan_africa | Lagos State (Badagry, Epe, Ikorodu) (decided 2026-11-19) |
+| 3 | Johannesburg (`johannesburg`) | subsaharan_africa | Gauteng Province (Pretoria, Soweto, Sharpeville, Cradle of Humankind) (decided 2026-11-19) |
+| 3 | Buenos Aires (`buenos_aires`) | latin_america | Greater Buenos Aires (CABA + conurbation) (decided 2026-11-19) |
+| 3 | Los Angeles (`los_angeles`) | north_america | metropolitan area (LA, Orange and Inland Empire counties) (decided 2026-11-19) |
+| 3 | Sydney (`sydney`) | oceania | Greater Sydney + Blue Mountains + Wollongong (decided 2026-11-19) |
+| 3 | Singapore (`singapore`) | southeast_asia | Singapore island + Johor Bahru (city-state rule for Singapore from 1965; Johor state seat rule) (decided 2026-11-19) |
+| 3 | Baghdad (`baghdad`) | west_asia | Baghdad Governorate + Ctesiphon and Seleucia on the Tigris (decided 2026-11-19) |
 
 Not on the list: historic cities that are not major today (Jerusalem, Kyoto, Xi'an, Athens, Venice,
 Samarkand); megacities with little old history (Karachi, Dhaka, Kinshasa, Shenzhen). Central Asia has no
 city here; Tashkent is the best one if the user wants the region.
+
+## Planned eras for the remaining cities (approved 2026-11-19)
+
+Area for each city: City list. Each era runs from its start to the year before the next one. Budgets:
+the first era (prehistory and early sites) 25 searches, every later era 45. Expected cards: about 50 for
+the first era and 150–250 for later eras (London, Paris and Rome yields); a guide, not a target. When a
+city starts, its full section (area notes, OUT rules for its seats of government) is added above.
+
+- **Moscow (`moscow`)**: `pre1147`, `1147_1460`, `1461_1612`, `1613_1711`, `1712_1812`, `1813_1917`, `1918_1940`, `1941_1991`, `1992_present`
+- **Cairo (`cairo`)**: `pre3100bce`, `3100bce_2181bce`, `2180bce_332bce`, `331bce_640`, `641_968`, `969_1249`, `1250_1516`, `1517_1797`, `1798_1922`, `1923_present`
+- **Beijing (`beijing`)**: `pre1045bce`, `1045bce_937`, `938_1271`, `1272_1420`, `1421_1643`, `1644_1860`, `1861_1927`, `1928_1948`, `1949_1976`, `1977_present`
+- **Tokyo (`tokyo`)**: `pre1457`, `1457_1602`, `1603_1715`, `1716_1867`, `1868_1922`, `1923_1945`, `1946_1989`, `1990_present`
+- **Delhi (`delhi`)**: `pre1060`, `1060_1205`, `1206_1525`, `1526_1707`, `1708_1857`, `1858_1946`, `1947_1983`, `1984_present`
+- **New York (`new_york`)**: `pre1609`, `1609_1782`, `1783_1860`, `1861_1897`, `1898_1929`, `1930_1964`, `1965_2000`, `2001_present`
+- **Mexico City (`mexico_city`)**: `pre100bce`, `100bce_1324`, `1325_1520`, `1521_1699`, `1700_1820`, `1821_1910`, `1911_1967`, `1968_present`
+- **Shanghai (`shanghai`)**: `pre1292`, `1292_1842`, `1843_1926`, `1927_1949`, `1950_1990`, `1991_present`
+- **Seoul (`seoul`)**: `pre1392`, `1392_1591`, `1592_1875`, `1876_1909`, `1910_1945`, `1946_1987`, `1988_present`
+- **Osaka (`osaka`)**: `pre645`, `645_1495`, `1496_1614`, `1615_1867`, `1868_1944`, `1945_present`
+- **Mumbai (`mumbai`)**: `pre1534`, `1534_1667`, `1668_1856`, `1857_1946`, `1947_1991`, `1992_present`
+- **Kolkata (`kolkata`)**: `pre1690`, `1690_1856`, `1857_1910`, `1911_1946`, `1947_present`
+- **Bangkok (`bangkok`)**: `pre1767`, `1767_1867`, `1868_1931`, `1932_1972`, `1973_present`
+- **Jakarta (`jakarta`)**: `pre1527`, `1527_1799`, `1800_1941`, `1942_1965`, `1966_present`
+- **Tehran (`tehran`)**: `pre1220`, `1220_1785`, `1786_1924`, `1925_1978`, `1979_present`
+- **Berlin (`berlin`)**: `pre1237`, `1237_1700`, `1701_1870`, `1871_1918`, `1919_1945`, `1946_1989`, `1990_present`
+- **Madrid (`madrid`)**: `pre1561`, `1561_1807`, `1808_1930`, `1931_1975`, `1976_present`
+- **Chicago (`chicago`)**: `pre1833`, `1833_1871`, `1872_1918`, `1919_1955`, `1956_present`
+- **São Paulo (`sao_paulo`)**: `pre1554`, `1554_1821`, `1822_1929`, `1930_1984`, `1985_present`
+- **Lagos (`lagos`)**: `pre1861`, `1861_1959`, `1960_1990`, `1991_present`
+- **Johannesburg (`johannesburg`)**: `pre1886`, `1886_1947`, `1948_1993`, `1994_present`
+- **Buenos Aires (`buenos_aires`)**: `pre1810`, `1810_1879`, `1880_1945`, `1946_1983`, `1984_present`
+- **Los Angeles (`los_angeles`)**: `pre1781`, `1781_1849`, `1850_1919`, `1920_1964`, `1965_present`
+- **Sydney (`sydney`)**: `pre1788`, `1788_1850`, `1851_1913`, `1914_1969`, `1970_present`
+- **Singapore (`singapore`)**: `pre1819`, `1819_1941`, `1942_1964`, `1965_present`
+- **Baghdad (`baghdad`)**: `pre762`, `762_1257`, `1258_1916`, `1917_1978`, `1979_present`
 
 ## Cities and eras
 
@@ -275,5 +309,37 @@ Vatican City is inside the area. Region: western_europe.
 | `1798_1870` | Roman Republics, French rule, Risorgimento | 45 | ~200 |
 | `1871_1944` | capital of Italy, Fascism, the war | 45 | ~280 |
 | `1945_present` | post-war | 45 | ~300 |
+
+Expected cards are a guide, not a target.
+
+### Istanbul (2026-11-19)
+
+Area: the whole of Istanbul Province, both shores (user's choice): the historic peninsula, Galata and
+Pera, the Bosphorus villages, Üsküdar (Chrysopolis), Kadıköy (Chalcedon), the Princes' Islands,
+Yarımburgaz, Küçükçekmece, Silivri, Şile. Region: eastern_europe; the grid also files Istanbul events
+under west_asia, so Step 0 greps both `eastern_europe_*` and `west_asia_*` cells.
+
+- The OUT rule covers the Roman, Byzantine and Ottoman courts while the city is the capital (330–1922,
+  except 1204–1261 for the Byzantine court, when the Latin emperors' court is OUT instead): accessions,
+  coronations, imperial births, marriages and funerals, palace coups with no street fighting, laws for
+  the empire. An emperor's or sultan's building, water supply, fire relief or city law is IN. Riots,
+  sieges, janissary revolts in the streets and massacres are IN (main-stage rule).
+- The Ecumenical Patriarchate is treated like the Holy See: councils, synods and patriarchal elections
+  are OUT unless the city is the subject. Building a church or mosque is IN; a ceremony in it is OUT.
+- After 1923 Ankara is the capital: Istanbul is no longer the seat, so national events that take place
+  in the city are IN.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre667bce` | prehistory: Yarımburgaz, Fikirtepe, Yenikapı Neolithic, Bronze Age | 25 | ~50 |
+| `667bce_329` | Greek and Roman Byzantion | 25 | ~70 |
+| `330_716` | Constantinople to the Arab siege | 45 | ~200 |
+| `717_1203` | middle Byzantine | 45 | ~180 |
+| `1204_1452` | Latin Empire, the Palaiologan city | 45 | ~150 |
+| `1453_1565` | the conquest to Suleiman | 45 | ~220 |
+| `1566_1807` | later classical Ottoman, the Tulip Era | 45 | ~250 |
+| `1808_1922` | reform, the Tanzimat, the end of the empire | 45 | ~300 |
+| `1923_1979` | the Republic, the city after the capital moves | 45 | ~200 |
+| `1980_present` | the megacity | 45 | ~250 |
 
 Expected cards are a guide, not a target.
