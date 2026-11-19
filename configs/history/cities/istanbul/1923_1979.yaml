@@ -1,0 +1,696 @@
+# City: Istanbul x 1923 to 1979 (the Republic, the city after the capital moves to Ankara). DRAFT 2026-11-19.
+# Area: the whole of Istanbul Province, both shores (historic peninsula, Galata and Pera, Bosphorus villages,
+# Uskudar, Kadikoy, Princes' Islands, Bakirkoy, Yesilkoy, Zeytinburnu, Kartal, Silivri, Sile, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Ankara is the capital after 1923,
+# so national events that take place in the city are IN. Ecumenical Patriarchate is treated like the Holy See.
+# World-grid events -> world_refs. National events not staged in the city -> out_refs.
+# Dates: memory pass + web check (43 of 45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Timeline of Istanbul and topic articles, 2023-10), Buyuk Istanbul Tarihi
+# (istanbultarihi.ist: Republican architecture; districts of Istanbul), Turkish press, ITOPF, JTA.
+# A work -> first public appearance; a building -> opening; an estate -> start of building.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1926, peg: nacho, confidence: medium, source: "Buyuk Istanbul Tarihi: districts of Istanbul",
+     event: "Uskudar, Bakirkoy and Catalca become districts of Istanbul province",
+     place: "Uskudar",
+     scene: "A giant NACHO bridges the Bosphorus and scoops Uskudar, Bakirkoy and Catalca into Istanbul province as new districts."}
+  - {year: 1928, peg: knife, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Pasakapisi Prison opens in Uskudar",
+     place: "Pasakapisi, Uskudar",
+     scene: "A jailer's KNIFE cuts the ribbon on the iron gate of the new Pasakapisi Prison in Uskudar."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Buyuk Istanbul Tarihi: districts (law of 15 May)",
+     event: "A law creates the districts of Fatih, Eminonu, Kadikoy, Besiktas and Sariyer",
+     place: "Fatih",
+     scene: "A MOUSE nibbles five new borders into the city map: Fatih, Eminonu, Kadikoy, Besiktas and Sariyer become districts."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The postal law makes Istanbul the only official name of the city",
+     place: "Sirkeci Grand Post Office",
+     scene: "A MOUSE in the Sirkeci post office chews the word Constantinople off every envelope, and only Istanbul stays."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "A competition opens for an Istanbul master plan; the winning plan is never used",
+     place: "Istanbul municipality",
+     scene: "A MUMMY wraps the winning Istanbul master plan in bandages and buries it, unused, in the city hall archive."}
+  - {year: 1935, peg: mill, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "The German planner Martin Wagner writes a planning report for Istanbul; the city does not use it",
+     place: "Istanbul municipality",
+     scene: "A paper MILL grinds Martin Wagner's Istanbul planning report into pulp before anyone reads it."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Gezi Park; Buyuk Istanbul Tarihi",
+     event: "The French planner Henri Prost comes to Istanbul to plan the city",
+     place: "Taksim",
+     scene: "Henri Prost strikes a MATCH over a map of Istanbul and lights the first lines of his city plan."}
+  - {year: 1936, peg: match, confidence: high, source: "Buyuk Istanbul Tarihi: districts of Istanbul",
+     event: "Eyup becomes a district of Istanbul",
+     place: "Eyup",
+     scene: "A MATCH lights a lamp over the Eyup town hall as the old nahiye becomes its own district."}
+  - {year: 1937, peg: mug, confidence: medium, source: "Buyuk Istanbul Tarihi (report of October)",
+     event: "Prost finishes the report of his master plan for Istanbul",
+     place: "Beyoglu",
+     scene: "Prost sets his coffee MUG down on the last page of his Istanbul master plan report and signs it."}
+  - {year: 1938, peg: movie, confidence: high, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "Lutfi Kirdar becomes governor and mayor of Istanbul and starts to apply the Prost plan",
+     place: "Istanbul governor's office",
+     scene: "A MOVIE camera films Lutfi Kirdar as governor and mayor, and he waves the bulldozers into the Prost plan."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Gezi Park; Buyuk Istanbul Tarihi",
+     event: "The Prost master plan for Istanbul is approved",
+     place: "Istanbul municipality",
+     scene: "Officials stamp the Prost MAP of Istanbul, and the master plan becomes the law of the city."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Gezi Park (demolished 1939-1940)",
+     event: "The Taksim artillery barracks and the Taksim Stadium in its yard are demolished",
+     place: "Taksim",
+     scene: "A cart HORSE drags the last stones of the Taksim artillery barracks away, and its old stadium goes with it."}
+  - {year: 1945, peg: railway, confidence: high, source: "Dergipark: Basinda Tan Olayi, 4 Aralik",
+     event: "A student mob destroys the printing house of the left-wing newspaper Tan",
+     place: "Cagaloglu",
+     scene: "A student mob rolls a RAILWAY trolley through the Tan printing house in Cagaloglu and smashes every press."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "Buyuk Istanbul Tarihi: districts of Istanbul",
+     event: "Sisli is split from Beyoglu and becomes a district",
+     place: "Sisli",
+     scene: "A LAWYER draws a line through Beyoglu's deed, and Sisli walks out of it as a district of its own."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Rumelihisari (16 May)",
+     event: "Restoration of the Rumeli Hisari fortress begins",
+     place: "Rumeli Hisari",
+     scene: "Masons plant a white LILY in the cracked tower of Rumeli Hisari and start to rebuild the fortress walls."}
+  - {year: 1956, peg: leech, confidence: medium, source: "Dergipark; Marmara Univ. (from September)",
+     event: "Prime minister Menderes starts mass demolitions to cut new avenues through the old city",
+     place: "Aksaray",
+     scene: "A giant LEECH sucks whole Aksaray streets into its mouth as Menderes cuts Vatan and Millet avenues."}
+  - {year: 1957, peg: log, confidence: high, source: "Buyuk Istanbul Tarihi: districts (1 September)",
+     event: "Zeytinburnu becomes a district of Istanbul",
+     place: "Zeytinburnu",
+     scene: "A LOG raft carries Zeytinburnu's squatter town away from Bakirkoy, and it lands as a district of its own."}
+  - {year: 1957, peg: log, confidence: medium, source: "Dergipark; WP: Fahrettin Kerim Gokay",
+     event: "The posts of governor and mayor of Istanbul are separated",
+     place: "Istanbul city hall",
+     scene: "An axe splits a LOG in two: one half for the governor, one half for a separate mayor of Istanbul."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: 28-29 April events; Sozcu",
+     event: "Police fire on protesting students at Istanbul University and kill Turan Emeksiz",
+     place: "Beyazit Square",
+     scene: "A police bullet passes through a CHEESE wheel on Beyazit Square and kills the student Turan Emeksiz."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Yassiada trials (14 October)",
+     event: "The trials of the deposed government begin on Yassiada island",
+     place: "Yassiada",
+     scene: "Judges on Yassiada slice a CHEESE into portions, one for each deposed Democrat minister they put on trial."}
+  - {year: 1963, peg: gem, confidence: high, source: "Buyuk Istanbul Tarihi: districts of Istanbul",
+     event: "Gaziosmanpasa becomes a district of Istanbul",
+     place: "Gaziosmanpasa",
+     scene: "A GEM is set in the Istanbul crown when the hill village of Taslitarla becomes the district of Gaziosmanpasa."}
+  - {year: 1963, peg: gem, confidence: high, source: "Sabah: Afyoncu; WP: Hasim Iscan",
+     event: "Istanbul elects its mayor by popular vote for the first time; Hasim Iscan takes office",
+     place: "Istanbul city hall",
+     scene: "Voters drop a GEM into the ballot box, and Hasim Iscan becomes Istanbul's first elected mayor."}
+  - {year: 1968, peg: chef, confidence: high, source: "Verso blog; Cumhuriyet (15-18 July)",
+     event: "Students throw American Sixth Fleet sailors into the sea at Dolmabahce",
+     place: "Dolmabahce quay",
+     scene: "A CHEF with a ladle leads students at Dolmabahce quay, and they toss US Sixth Fleet sailors into the Bosphorus."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP: Bayrampasa Prison",
+     event: "Sagmalcilar Prison opens",
+     place: "Sagmalcilar",
+     scene: "A prison CHEF serves the first meal behind the walls of the new Sagmalcilar Prison."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Bloody Sunday (1969)",
+     event: "Bloody Sunday: right-wing attackers kill two leftists in a march against the US Sixth Fleet",
+     place: "Taksim Square",
+     scene: "Marchers try to drag the US Sixth Fleet SHIP out of the Bosphorus, and knife men attack them on Taksim Square and kill two."}
+  - {year: 1971, peg: cat, confidence: high, source: "JTA archive; WP: Assassination of Efraim Elrom",
+     event: "Left-wing militants kidnap and kill the Israeli consul-general Efraim Elrom",
+     place: "Nisantasi",
+     scene: "A black CAT finds the body of the kidnapped Israeli consul Efraim Elrom in a Nisantasi flat."}
+  - {year: 1973, peg: comb, confidence: unverified,
+     event: "Ahmet Isvan of the Republican People's Party is elected mayor of Istanbul",
+     place: "Istanbul city hall",
+     scene: "Ahmet Isvan runs a COMB through his hair and walks into Istanbul city hall as the newly elected mayor."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP: Beyazit massacre; Cumhuriyet (16 March)",
+     event: "Beyazit massacre: a bomb and gunfire kill seven left-wing students outside the Faculty of Pharmacy",
+     place: "Beyazit, Faculty of Pharmacy",
+     scene: "Gunmen hide in a CAVE under Beyazit Square, then bomb and shoot students outside the Faculty of Pharmacy and kill seven."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Abdi Ipekci (1 February)",
+     event: "Gunmen kill the newspaper editor Abdi Ipekci in his car",
+     place: "Macka",
+     scene: "A COWBOY with a gun steps out at Ipekci's home and shoots the Milliyet editor dead in his car."}
+
+  # science
+  - {year: 1924, peg: hanger, confidence: medium, source: "WP mirror: Timeline of Istanbul (15 October)",
+     event: "Bakirkoy Psychiatric Hospital is founded",
+     place: "Bakirkoy",
+     scene: "A nurse hangs the first white coat on a HANGER in the new Bakirkoy Psychiatric Hospital."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: IETT (four buses)",
+     event: "City bus service starts with four buses",
+     place: "Taksim",
+     scene: "A NACHO-yellow bus leaves Taksim, one of four that start Istanbul's first city bus service."}
+  - {year: 1927, peg: ink, confidence: high, source: "NTV; Ataturk Ansiklopedisi (6 May)",
+     event: "Istanbul Radio makes its first broadcast from the basement of the Grand Post Office",
+     place: "Sirkeci Grand Post Office",
+     scene: "An INK-black microphone in the Sirkeci post office basement says 'Alo, alo', and Istanbul Radio goes on air."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Trams in Istanbul (8 June)",
+     event: "Electric trams start to run on the Asian side",
+     place: "Kadikoy",
+     scene: "A KNIFE-sharp spark leaps from the overhead wire, and the first electric tram rolls out of Kadikoy."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Istanbul Ataturk Airport",
+     event: "Yesilkoy airfield gets a passenger terminal; airline flights to Ankara and Athens begin",
+     place: "Yesilkoy",
+     scene: "A MUMMY buys the first ticket at the new Yesilkoy terminal and flies to Ankara in a Curtiss Kingbird."}
+  - {year: 1936, peg: match, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Istanbul University Observatory is founded",
+     place: "Beyazit",
+     scene: "An astronomer strikes a MATCH to read the dials of the new Istanbul University Observatory telescope."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Ataturk Bridge",
+     event: "A storm damages the old pontoon bridge at Unkapani and ends its service",
+     place: "Unkapani, Golden Horn",
+     scene: "Lightning strikes like a MATCH, and the storm tears the old Unkapani pontoon bridge off its moorings."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Ataturk Bridge (1936-1940)",
+     event: "The Gazi (Ataturk) Bridge opens over the Golden Horn",
+     place: "Unkapani, Golden Horn",
+     scene: "A HORSE cart makes the first crossing of the new Gazi Bridge over the Golden Horn at Unkapani."}
+  - {year: 1941, peg: radio, confidence: high, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "Ataturk Boulevard opens from the Golden Horn to Aksaray",
+     place: "Ataturk Boulevard",
+     scene: "A car RADIO plays as the first driver speeds down the new Ataturk Boulevard from Unkapani to Aksaray."}
+  - {year: 1949, peg: rope, confidence: high, source: "Sozcu; Ataturk Ansiklopedisi (19 November)",
+     event: "Istanbul Radio starts to broadcast from its new Radio House in Harbiye",
+     place: "Harbiye",
+     scene: "Inonu cuts a ROPE at the new Harbiye Radio House, and Istanbul Radio goes back on the air."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP mirror: Timeline of Istanbul (9 March)",
+     event: "Istanbul Technical University makes the first television broadcast in Turkey",
+     place: "Istanbul Technical University",
+     scene: "A LION roars on a flickering screen in the first Turkish television broadcast from Istanbul Technical University."}
+  - {year: 1953, peg: llama, confidence: medium, source: "WP mirror: Istanbul Ataturk Airport",
+     event: "Yesilkoy opens as a full civil airport with a new terminal",
+     place: "Yesilkoy",
+     scene: "A LLAMA carries the first suitcases into the new Yesilkoy airport terminal."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Railway electrification in Turkey (4 Dec)",
+     event: "The Sirkeci to Halkali suburban line becomes the first electric railway in Turkey",
+     place: "Sirkeci station",
+     scene: "A LILY on the pantograph opens as the first electric train in Turkey glides out of Sirkeci toward Halkali."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Trams in Istanbul; IETT",
+     event: "The last tram runs on the European side",
+     place: "Beyazit",
+     scene: "A JET flies low over Beyazit, and the last European-side tram rolls into the depot for good."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: IETT (27 May)",
+     event: "Trolleybuses start to run, first between Topkapi and Eminonu",
+     place: "Topkapi",
+     scene: "A trolleybus with a JET engine on its roof hums from Topkapi to Eminonu on the first trolleybus line."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP mirror: Trams in Istanbul (14 November)",
+     event: "The last tram runs on the Asian side",
+     place: "Kadikoy",
+     scene: "A JUDGE bangs his gavel in Kadikoy and sentences the last Asian-side tram to the scrapyard."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Omerli Dam",
+     event: "Work begins on the Omerli Dam for the city's drinking water",
+     place: "Omerli",
+     scene: "A CHEF dips his ladle into the Omerli valley as workers start the dam for Istanbul's drinking water."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Tunel",
+     event: "The Tunel funicular closes for renovation",
+     place: "Karakoy Tunel station",
+     scene: "A CHEF hangs a 'closed for repairs' sign on the Tunel funicular car at Karakoy."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Haydarpasa suburban (29 May)",
+     event: "Electric suburban trains start to run from Haydarpasa to Gebze",
+     place: "Haydarpasa station",
+     scene: "A SHIP's horn sounds at Haydarpasa as the first electric suburban train leaves for Gebze."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Bosphorus Bridge (20 February)",
+     event: "Construction of the Bosphorus Bridge begins",
+     place: "Ortakoy",
+     scene: "A GOOSE flies the first steel cable from Ortakoy to Beylerbeyi as work starts on the Bosphorus Bridge."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Tunel; Timeline (2 November)",
+     event: "The Tunel funicular reopens, modernised and electrified",
+     place: "Beyoglu Tunel station",
+     scene: "A CAT rides up the hill in the new electric Tunel car when the funicular reopens at Beyoglu."}
+  - {year: 1971, peg: cat, confidence: disputed, source: "WP: TRT 1 says 1971; Kure Ansiklopedi says 1972",
+     event: "TRT starts television broadcasts from Istanbul",
+     place: "Macka",
+     scene: "A CAT sits on the camera in the Macka studio as TRT begins its Istanbul television broadcasts."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Halic Bridge",
+     event: "Construction of the Halic Bridge over the Golden Horn begins",
+     place: "Golden Horn",
+     scene: "A CAT walks the first steel beam across the upper Golden Horn as work starts on the Halic Bridge."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Omerli Dam",
+     event: "The Omerli Dam goes into service",
+     place: "Omerli",
+     scene: "Water pours through the teeth of a giant COMB on the Omerli Dam into Istanbul's taps."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Halic Bridge (10 September)",
+     event: "The Halic Bridge opens over the Golden Horn",
+     place: "Golden Horn",
+     scene: "The first CAR speeds over the new Halic Bridge and links the ring road across the Golden Horn."}
+  - {year: 1976, peg: cage, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Camlica TRT television tower is built",
+     place: "Camlica Hill",
+     scene: "A steel CAGE climbs up Camlica Hill and becomes the TRT television tower."}
+  - {year: 1977, peg: cake, confidence: medium, source: "Seat61; SNCF archive (19 or 20 May)",
+     event: "The last Direct Orient Express from Paris arrives at Sirkeci",
+     place: "Sirkeci station",
+     scene: "A farewell CAKE waits on the Sirkeci platform for the last Direct Orient Express from Paris."}
+
+  # religion
+  - {year: 1924, peg: hanger, confidence: medium, source: "WP: Autocephalous Turkish Orthodox Patriarchate",
+     event: "Papa Eftim's Turkish Orthodox Church takes the Panagia Kafatiani church in Galata",
+     place: "Galata",
+     scene: "Papa Eftim hangs his robe on a HANGER in the Panagia Kafatiani church and claims it for his Turkish Orthodox Church."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "WP: Autocephalous Turkish Orthodox Patriarchate",
+     event: "The Turkish Orthodox Church takes the Church of the Transfiguration in Karakoy",
+     place: "Karakoy",
+     scene: "A NACHO wedged in the door of the Karakoy Church of the Transfiguration keeps its Greek priests out."}
+  - {year: 1931, peg: moth, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Italian Synagogue in Galata is built",
+     place: "Galata",
+     scene: "A MOTH circles the first lamp lit in the new Italian Synagogue in Galata."}
+  - {year: 1949, peg: rope, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Sisli Mosque is built",
+     place: "Sisli",
+     scene: "Workers pull a ROPE and raise the crescent onto the dome of the new Sisli Mosque."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP mirror: Neve Shalom Synagogue (25 March)",
+     event: "The Neve Shalom Synagogue is inaugurated",
+     place: "Galata",
+     scene: "Galata's Jews empty their WALLET into the building fund, and Neve Shalom Synagogue opens its doors."}
+  - {year: 1965, peg: jelly, confidence: disputed, source: "WP: Turkish Orthodox (1956 or 1965)",
+     event: "The Turkish Orthodox Church takes the Galata churches of Saint Nicholas and Saint John of the Chiots",
+     place: "Galata",
+     scene: "JELLY smeared on two Galata church doors sticks them to the Turkish Orthodox: Saint Nicholas and Saint John."}
+
+  # arts
+  - {year: 1923, peg: gnome, confidence: medium, source: "Buyuk Istanbul Tarihi (1923-1924)",
+     event: "Beyazit Square is laid out again to a design by Asim Komurcuoglu",
+     place: "Beyazit Square",
+     scene: "A GNOME with a surveyor's rod lays new paths across Beyazit Square to Asim Komurcuoglu's plan."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Topkapi Palace (3 April)",
+     event: "A decree makes Topkapi Palace a museum",
+     place: "Topkapi Palace",
+     scene: "A HANGER holds a sultan's kaftan behind glass as a decree turns Topkapi Palace into a museum."}
+  - {year: 1924, peg: hanger, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Emek cinema opens",
+     place: "Istiklal Avenue",
+     scene: "An usher hangs coats on a HANGER as the Emek cinema on Istiklal Avenue shows its first film."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Statue of Ataturk (Sarayburnu), 3 October",
+     event: "The first Ataturk statue in Turkey, by Heinrich Krippel, is unveiled at Sarayburnu",
+     place: "Sarayburnu",
+     scene: "A giant NACHO falls away like a veil, and Krippel's bronze Ataturk, the country's first, stands at Sarayburnu."}
+  - {year: 1927, peg: ink, confidence: medium, source: "WP mirror: Timeline of Istanbul (6 March)",
+     event: "The Sureyya Opera House opens in Kadikoy",
+     place: "Kadikoy",
+     scene: "An INK-blue curtain rises in Kadikoy, and the Sureyya Opera House opens."}
+  - {year: 1928, peg: knife, confidence: high, source: "Sozcu; WP: Republic Monument (8 August)",
+     event: "Pietro Canonica's Republic Monument is unveiled in Taksim Square",
+     place: "Taksim Square",
+     scene: "A KNIFE cuts the cords, and the cloth falls from Canonica's Republic Monument in Taksim Square."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Topkapi Palace",
+     event: "Topkapi Palace Museum puts its arms and armour on show in the old treasury",
+     place: "Topkapi Palace",
+     scene: "A sultan's jewelled KNIFE leads the arms and armour into their new show cases in the Topkapi treasury."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "The state liquor factory is finished, called the first modern building in Istanbul",
+     place: "Mecidiyekoy",
+     scene: "A MOUSE runs along the flat white roof of the new Mecidiyekoy liquor factory, Istanbul's first modern building."}
+  - {year: 1931, peg: moth, confidence: disputed, source: "SALT archive says 1931; Buyuk Istanbul Tarihi 1934",
+     event: "The Darulbedayi becomes the Istanbul City Theatre under the municipality",
+     place: "Tepebasi",
+     scene: "A MOTH flies out of the old Darulbedayi sign at Tepebasi, and the new City Theatre sign lights up."}
+  - {year: 1931, peg: moth, confidence: medium, source: "Kure Ansiklopedi; IMDb (2 December)",
+     event: "Ipek Film's 'On the Streets of Istanbul', called the first Turkish sound film, is released",
+     place: "Beyoglu",
+     scene: "A MOTH flutters in the projector beam as 'On the Streets of Istanbul' speaks the first Turkish film words in Beyoglu."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "Buyuk Istanbul Tarihi (built 1932-1934)",
+     event: "Georges Debes's modernist Findikli primary school is completed",
+     place: "Findikli",
+     scene: "A HAMMER drives the last nail into Georges Debes's white modernist primary school at Findikli."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Florya Ataturk Marine Mansion",
+     event: "Seyfi Arkan's Florya Marine Mansion for Ataturk is completed",
+     place: "Florya",
+     scene: "A wind MILL on the Florya shore powers the new sea pavilion that Seyfi Arkan builds for Ataturk on stilts."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Istanbul Painting and Sculpture Museum",
+     event: "The Painting and Sculpture Museum is founded in the crown prince's wing of Dolmabahce Palace",
+     place: "Dolmabahce Palace",
+     scene: "A painter's MUG of brushes hangs the first canvas in the crown prince's wing of Dolmabahce, now a painting museum."}
+  - {year: 1938, peg: movie, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "Ruknettin Guney's Taksim Municipal Casino opens in the corner of the park",
+     place: "Taksim",
+     scene: "A MOVIE star dances on the terrace of Ruknettin Guney's new Taksim Municipal Casino."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Gezi Park",
+     event: "Taksim Gezi Park, the Inonu Esplanade, is completed",
+     place: "Taksim Gezi Park",
+     scene: "A RAM grazes the fresh lawns of the new Inonu Esplanade, today's Taksim Gezi Park."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "WP mirror: Timeline; Buyuk Istanbul Tarihi",
+     event: "Eldem and Onat's Faculty of Science and Letters building of Istanbul University is built",
+     place: "Beyazit",
+     scene: "A stone WARRIOR guards the tall colonnade of Eldem and Onat's new Faculty of Science and Letters in Beyazit."}
+  - {year: 1945, peg: railway, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Asiyan Museum opens in the poet Tevfik Fikret's house",
+     place: "Asiyan, Bebek",
+     scene: "A toy RAILWAY runs through Tevfik Fikret's study at Asiyan when his house opens as a museum."}
+  - {year: 1947, peg: rock, confidence: medium, source: "WP mirror: Timeline of Istanbul (9 August)",
+     event: "The Cemil Topuzlu Open-Air Theatre opens",
+     place: "Harbiye",
+     scene: "A ROCK band of the age plays from the stone seats of the new Cemil Topuzlu Open-Air Theatre in Harbiye."}
+  - {year: 1948, peg: reef, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "Sedad Hakki Eldem's Taslik coffee house is built above the Bosphorus",
+     place: "Macka",
+     scene: "A coral REEF is carved into the eaves of Eldem's new Taslik coffee house above the Bosphorus."}
+  - {year: 1953, peg: llama, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Tiled Kiosk opens as a museum of Turkish tiles and ceramics",
+     place: "Tiled Kiosk, Gulhane",
+     scene: "A LLAMA carries Iznik tiles into the Tiled Kiosk as it opens as a ceramics museum."}
+  - {year: 1955, peg: lily, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Adam Mickiewicz Museum opens in the house where the Polish poet died",
+     place: "Tarlabasi",
+     scene: "A LILY on the desk marks the room where Mickiewicz died, now his museum in Tarlabasi."}
+  - {year: 1957, peg: log, confidence: medium, source: "Buyuk Istanbul Tarihi (built 1951-1957)",
+     event: "Cansever and Hanci's Anatolian Club building on Buyukada is finished",
+     place: "Buyukada",
+     scene: "A pine LOG becomes the last roof beam of Cansever's modern Anatolian Club on Buyukada."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "WP: The Chora (museum 1958; designated 1945)",
+     event: "The Chora church opens as the Kariye Museum after the Byzantine Institute restoration",
+     place: "Chora, Edirnekapi",
+     scene: "A WOLF licks the plaster off the Chora mosaics, and the restored Kariye Museum opens at Edirnekapi."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Sait Faik Abasiyanik Museum opens on Burgazada",
+     place: "Burgazada",
+     scene: "Sait Faik's ELBOW still leans on his desk in the Burgazada house that opens as his museum."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Rumelihisari",
+     event: "Rumeli Hisari opens as a museum and open-air theatre",
+     place: "Rumeli Hisari",
+     scene: "Actors share a CHEESE in the first open-air show inside Rumeli Hisari, now a museum."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Harbiye Muhsin Ertugrul Stage opens",
+     place: "Harbiye",
+     scene: "A CHERRY falls on the stage boards at the opening night of the Harbiye Muhsin Ertugrul Stage."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "Sedad Eldem's Social Security complex in Zeyrek is completed",
+     place: "Zeyrek",
+     scene: "A CHERRY tree grows in the courtyard of Eldem's Social Security complex in Zeyrek, finished among old wooden houses."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Galata Tower (1965-1967)",
+     event: "The Galata Tower reopens after restoration with a new conical roof",
+     place: "Galata Tower",
+     scene: "A JOCKEY rides up the stairs of the restored Galata Tower and sits on its new cone roof."}
+  - {year: 1973, peg: comb, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Sculptures for the fiftieth anniversary of the Republic are put up across the city",
+     place: "Macka Park",
+     scene: "A giant COMB of abstract steel sculptures rises in Macka Park for the Republic's fiftieth birthday."}
+  - {year: 1973, peg: comb, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Istanbul Foundation for Culture and Arts is founded",
+     place: "Beyoglu",
+     scene: "Eczacibasi's friends brush a COMB through the city's art scene and found the Istanbul Foundation for Culture and Arts."}
+  - {year: 1978, peg: cave, confidence: high, source: "Cumhuriyet; Bianet (6 October)",
+     event: "The burnt Istanbul Culture Palace reopens as the Ataturk Cultural Centre",
+     place: "Taksim Square",
+     scene: "The blackened CAVE of the burnt opera house becomes a bright hall again: the Ataturk Cultural Centre reopens in Taksim."}
+
+  # economy
+  - {year: 1923, peg: gnome, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The newspaper Vatan is founded",
+     place: "Cagaloglu",
+     scene: "A GNOME pulls the first sheet of Vatan off the press in Cagaloglu."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Timeline of Istanbul (7 May)",
+     event: "The newspaper Cumhuriyet is founded",
+     place: "Cagaloglu",
+     scene: "Yunus Nadi hangs the first issue of Cumhuriyet on a HANGER to dry in Cagaloglu."}
+  - {year: 1925, peg: nail, confidence: medium, source: "WP mirror: Timeline of Istanbul (12 July)",
+     event: "The Greek-language newspaper Apoyevmatini is founded",
+     place: "Beyoglu",
+     scene: "A NAIL pins the first issue of the Greek daily Apoyevmatini to a Beyoglu kiosk."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Fourth Vakif Han office building is completed",
+     place: "Sirkeci",
+     scene: "A NACHO-shaped dome crowns the new Fourth Vakif Han office block in Sirkeci."}
+  - {year: 1929, peg: knob, confidence: high, source: "Borsa Istanbul history (law of 16 May)",
+     event: "A law reorganises the Istanbul Securities and Foreign Exchange Bourse",
+     place: "Bahcekapi",
+     scene: "Brokers turn a brass KNOB on the trading board as the reorganised Istanbul Bourse opens."}
+  - {year: 1937, peg: mug, confidence: high, source: "Dergipark; EMO (from 31 December)",
+     event: "The state buys the Silahtaraga power station from its foreign company",
+     place: "Silahtaraga",
+     scene: "The minister raises a MUG of tea to the Silahtaraga power station as the state buys it from its Belgian owners."}
+  - {year: 1938, peg: movie, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "The Karakoy maritime passenger hall is built",
+     place: "Karakoy",
+     scene: "A MOVIE crowd waves from the new Karakoy passenger hall as the first liner docks."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: IETT (16 June)",
+     event: "The British and French tram, Tunel, bus and electricity companies are nationalised as the IETT",
+     place: "Karakoy",
+     scene: "A city MAP passes from British and French hands to the new IETT, owner of the trams, Tunel and power."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP mirror: Timeline of Istanbul (31 August)",
+     event: "The Armenian-language newspaper Marmara begins to publish",
+     place: "Beyoglu",
+     scene: "A newsboy on a HORSE rides through Beyoglu with the first issue of the Armenian daily Marmara."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Struma disaster",
+     event: "The refugee ship Struma, held at Istanbul for ten weeks, is towed out of the Bosphorus and sunk by a torpedo",
+     place: "Bosphorus mouth",
+     scene: "A tug drags the Struma out of the Bosphorus like a RHINO on a chain, and a torpedo sinks it off Sile."}
+  - {year: 1942, peg: rhino, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The VitrA sanitaryware company is founded",
+     place: "Kartal",
+     scene: "A RHINO splashes in the first VitrA bathtub made in Istanbul."}
+  - {year: 1944, peg: warrior, confidence: medium, source: "WP mirror: Timeline of Istanbul (22 February)",
+     event: "The Ulker biscuit company is founded",
+     place: "Eminonu",
+     scene: "A WARRIOR carries a shield of fresh Ulker biscuits out of the first small bakery in Eminonu."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: IETT",
+     event: "The Bosphorus ferry companies are nationalised",
+     place: "Bosphorus piers",
+     scene: "A RAILWAY signalman waves the state flag on every Bosphorus ferry as the ferry companies are nationalised."}
+  - {year: 1946, peg: roach, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "The city and the Emlak Bank found the Istanbul Imar company to build housing",
+     place: "Istanbul municipality",
+     scene: "A ROACH scuttles out of an old slum as the city and Emlak Bank sign up Istanbul Imar to build new homes."}
+  - {year: 1947, peg: rock, confidence: medium, source: "WP mirror: Timeline of Istanbul (29 October)",
+     event: "The Jewish weekly Salom begins to publish",
+     place: "Galata",
+     scene: "A ROCK holds down the first stack of the weekly Salom on a Galata doorstep."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Timeline of Istanbul (1 May)",
+     event: "The newspaper Hurriyet begins to publish",
+     place: "Cagaloglu",
+     scene: "Sedat Simavi throws the first bundle of Hurriyet like a REEF anchor onto the Cagaloglu pavement."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Timeline of Istanbul (3 May)",
+     event: "The newspaper Milliyet begins to publish",
+     place: "Cagaloglu",
+     scene: "A LASSO ties the first bundles of Milliyet onto the delivery trucks in Cagaloglu."}
+  - {year: 1952, peg: lion, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Turk Ticaret Bankasi moves its head office to Istanbul",
+     place: "Karakoy",
+     scene: "A stone LION carries Turk Ticaret Bankasi's safe into its new Istanbul head office."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The appliance maker Arcelik is founded",
+     place: "Sutluce",
+     scene: "A LAWYER signs Arcelik's founding papers on the lid of its first washing machine in Sutluce."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Migros Turk is founded and its sales trucks start to sell food in the streets",
+     place: "Istanbul streets",
+     scene: "A LAWYER buys the first bag of rice from a Migros sales truck in an Istanbul street."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Akbank moves its head office from Adana to Istanbul",
+     place: "Karakoy",
+     scene: "A LAWYER carries Akbank's deeds from Adana into its new Istanbul head office."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Hilton Istanbul Bosphorus (10 June)",
+     event: "The Istanbul Hilton by Skidmore, Owings and Merrill and Sedad Eldem opens",
+     place: "Harbiye",
+     scene: "A LILY in every room greets the first guests of the white modernist Istanbul Hilton above the Bosphorus."}
+  - {year: 1955, peg: lily, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The appliance maker Beko is founded",
+     place: "Istanbul",
+     scene: "A LILY wilts on the cold shelf of the first Beko refrigerator."}
+  - {year: 1956, peg: leech, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Divan Hotel opens",
+     place: "Elmadag",
+     scene: "A LEECH-shaped chocolate sits on the pillow of the first guest at the new Divan Hotel."}
+  - {year: 1957, peg: log, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Pudding Shop opens in Sultanahmet and becomes a meeting place of the hippie trail",
+     place: "Sultanahmet",
+     scene: "Hippies pin notes to a LOG wall in the new Pudding Shop at Sultanahmet."}
+  - {year: 1957, peg: log, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The building company Enka is founded",
+     place: "Istanbul",
+     scene: "A LOG becomes the first beam the new Enka construction company lifts."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The new Karakoy pier opens",
+     place: "Karakoy",
+     scene: "Passengers ELBOW their way off the first ferry to dock at the new Karakoy pier."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "List of Turkish Straits incidents; Novi list",
+     event: "The tankers World Harmony and Petar Zoranic collide in the Bosphorus and burn for weeks",
+     place: "Kanlica",
+     scene: "Two tankers crush a CHEESE wheel between their bows off Kanlica, and the Bosphorus burns for weeks."}
+  - {year: 1961, peg: jet, confidence: medium, source: "WP mirror: Timeline of Istanbul (March)",
+     event: "The English-language Hurriyet Daily News is founded",
+     place: "Cagaloglu",
+     scene: "A JET drops the first copies of the English-language Hurriyet Daily News over Cagaloglu."}
+  - {year: 1963, peg: gem, confidence: medium, source: "WP mirror: Koc Holding",
+     event: "Vehbi Koc joins his companies into Koc Holding",
+     place: "Istanbul",
+     scene: "Vehbi Koc sets each of his companies like a GEM into one ring: Koc Holding."}
+  - {year: 1966, peg: judge, confidence: medium, source: "Buyuk Istanbul Tarihi (built 1959-1966)",
+     event: "The Drapers' Bazaar, the first modern shopping centre in Istanbul, is completed",
+     place: "Unkapani",
+     scene: "A JUDGE cuts the ribbon of the concrete Drapers' Bazaar at Unkapani, Istanbul's first shopping centre."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Efes Beverage Group is founded",
+     place: "Istanbul",
+     scene: "A SHIP loaded with the first crates of Efes beer sails into Istanbul harbour."}
+  - {year: 1971, peg: cat, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Istanbul industrialists found the business association TUSIAD",
+     place: "Istanbul",
+     scene: "A fat CAT in a suit chairs the first meeting of the industrialists' association TUSIAD."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "ITOPF; NOAA (15 November)",
+     event: "The tanker Independenta collides with a freighter off Haydarpasa, explodes and burns for weeks",
+     place: "Haydarpasa",
+     scene: "A COWBOY rams his freighter into the tanker Independenta off Haydarpasa, and the oil explodes into flame."}
+
+  # society
+  - {year: 1923, peg: gnome, confidence: high, source: "Sozcu; FourFourTwo (26 October)",
+     event: "Turkey plays its first international football match, against Romania, at Taksim Stadium",
+     place: "Taksim Stadium",
+     scene: "A GNOME in red kicks Turkey's first international goal at Taksim Stadium, in a draw with Romania."}
+  - {year: 1923, peg: gnome, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The football club Maltepespor is founded",
+     place: "Maltepe",
+     scene: "A GNOME pumps up the first ball of the new Maltepespor club."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "WP mirror: Timeline of Istanbul (4 January)",
+     event: "The sports club Istanbulspor is founded",
+     place: "Istanbul High School",
+     scene: "Pupils of Istanbul High School share a NACHO and found the Istanbulspor club."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The football club Fatih Karagumruk is founded",
+     place: "Karagumruk",
+     scene: "Boys in Karagumruk kick a NACHO-shaped ball and found the Fatih Karagumruk club."}
+  - {year: 1927, peg: ink, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Istanbul Basketball League is established",
+     place: "Istanbul",
+     scene: "A referee writes the first Istanbul Basketball League table in INK."}
+  - {year: 1929, peg: knob, confidence: high, source: "Buyuk Istanbul Tarihi: districts of Istanbul",
+     event: "Turkish immigrants from Bulgaria buy the Amindos farm and found the village of Avcilar",
+     place: "Avcilar",
+     scene: "A door KNOB from Bulgaria fits the first house of Avcilar, built by immigrants on the Amindos farm."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP mirror: Sukru Saracoglu Stadium (27 May)",
+     event: "Fenerbahce buys its stadium in Kadikoy from the state",
+     place: "Kadikoy",
+     scene: "A MUMMY signs the deed in Kadikoy, and the old Union Club field becomes Fenerbahce's own stadium."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "WP mirror: Timeline of Istanbul (October)",
+     event: "The sports club Gunes SK is founded",
+     place: "Istanbul",
+     scene: "A MUMMY in a yellow shirt kicks off the first match of the new Gunes club."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "WP mirror: Timeline of Istanbul (26 September)",
+     event: "Haydarpasa High School is founded",
+     place: "Haydarpasa",
+     scene: "A HAMMER rings the first school bell of Haydarpasa High School."}
+  - {year: 1938, peg: movie, confidence: high, source: "NZ press (18 Nov); Sabah: Afyoncu (16 Nov)",
+     event: "A crowd crush at Dolmabahce Palace kills eleven mourners who file past Ataturk's coffin",
+     place: "Dolmabahce Palace",
+     scene: "Newsreel MOVIE cameras film the crowd at the Dolmabahce gate, where the crush kills eleven mourners."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The census counts about seven hundred and ninety thousand people in Istanbul",
+     place: "Istanbul",
+     scene: "A census HORSE pulls a cart of ledgers that count almost eight hundred thousand Istanbul people."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Istanbul Technical University",
+     event: "The engineering school takes the name Istanbul Technical University",
+     place: "Taskisla",
+     scene: "A WARRIOR carves 'Istanbul Technical University' over the gate of the Taskisla barracks."}
+  - {year: 1945, peg: railway, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The census counts about eight hundred and sixty thousand people in Istanbul",
+     place: "Istanbul",
+     scene: "A RAILWAY carriage brings new migrants, and the census counts eight hundred and sixty thousand Istanbul people."}
+  - {year: 1946, peg: roach, confidence: medium, source: "Evrensel: gecekondulasma seruveni",
+     event: "The first squatter houses (gecekondu) of Istanbul go up at Kazlicesme",
+     place: "Kazlicesme, Zeytinburnu",
+     scene: "A ROACH watches migrants build the first gecekondu overnight at Kazlicesme."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP mirror: BJK Inonu Stadium (19 May)",
+     event: "The Inonu Stadium opens at Dolmabahce",
+     place: "Dolmabahce",
+     scene: "Inonu kicks a ROCK-hard ball onto the field, and the new Dolmabahce stadium opens."}
+  - {year: 1947, peg: rock, confidence: high, source: "Buyuk Istanbul Tarihi (1947-1957)",
+     event: "Building begins on the Levent housing estate",
+     place: "Levent",
+     scene: "Builders lay the first foundation ROCK of the garden houses of Levent."}
+  - {year: 1948, peg: reef, confidence: high, source: "Istanbul Ansiklopedisi; TRT Haber (1 April)",
+     event: "Fire destroys the Fine Arts Academy in the Cemile Sultan Palace and thousands of artworks",
+     place: "Findikli",
+     scene: "A burning REEF of canvases floats out of the Fine Arts Academy at Findikli as the palace burns."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP mirror: Timeline (3 June); Buyuk Ist. Tarihi",
+     event: "The Lutfi Kirdar Sports and Exhibition Palace opens",
+     place: "Harbiye",
+     scene: "Wrestlers pull a ROPE across the floor of the new Lutfi Kirdar Sports and Exhibition Palace in Harbiye."}
+  - {year: 1949, peg: rope, confidence: medium, source: "WP mirror: Timeline of Istanbul (18 August)",
+     event: "The football club Kartal SK is founded",
+     place: "Kartal",
+     scene: "Kartal fishermen use a net ROPE as goal posts and found the Kartal football club."}
+  - {year: 1953, peg: llama, confidence: medium, source: "WP mirror: Timeline of Istanbul (1 March)",
+     event: "Istanbul Technical University opens its School of Mines",
+     place: "Macka",
+     scene: "A LLAMA carries ore samples into the first class of the ITU School of Mines."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "Le Petit Journal; SALT archive (November)",
+     event: "Fire burns down most of the Grand Bazaar",
+     place: "Grand Bazaar",
+     scene: "A LAWYER's cigarette sets the Grand Bazaar alight, and hundreds of shops burn down."}
+  - {year: 1955, peg: lily, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Kadikoy Anatolian High School is founded",
+     place: "Kadikoy",
+     scene: "A LILY sits on the teacher's desk on the first day of Kadikoy Anatolian High School."}
+  - {year: 1957, peg: log, confidence: medium, source: "Buyuk Istanbul Tarihi: Republican architecture",
+     event: "The Emlak Bank starts the Atakoy housing estate in Bakirkoy",
+     place: "Atakoy",
+     scene: "A LOG boom marks the shore at Bakirkoy where Emlak Bank begins the Atakoy estate."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Ali Sami Yen Stadium (20 December)",
+     event: "The Ali Sami Yen Stadium opens with Turkey against Bulgaria",
+     place: "Mecidiyekoy",
+     scene: "A CHERRY-red ball starts Turkey against Bulgaria at the opening of Ali Sami Yen Stadium."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP mirror: Timeline of Istanbul (17 January)",
+     event: "The Vehbi Koc Foundation is established",
+     place: "Istanbul",
+     scene: "Vehbi Koc launches a SHIP of schools and hospitals: the Vehbi Koc Foundation."}
+  - {year: 1970, peg: goose, confidence: high, source: "Turkish J. Public Health; Spectator (13 October)",
+     event: "A cholera outbreak starts in Sagmalcilar and kills dozens",
+     place: "Sagmalcilar",
+     scene: "A GOOSE drinks from a dirty Sagmalcilar well, and cholera spreads through the shanty town."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Ataturk Cultural Center (27 November)",
+     event: "Fire guts the new Istanbul Culture Palace during a play by Arthur Miller",
+     place: "Taksim Square",
+     scene: "A GOOSE flaps from the burning stage of the Culture Palace as fire stops 'The Crucible' in Taksim."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Bogazici University",
+     event: "Robert College's higher school becomes the state Bogazici University",
+     place: "Bebek",
+     scene: "A CAT naps on the Bebek campus lawn as Robert College hands its college to the new Bogazici University."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Turkish Airlines Flight 345",
+     event: "A Turkish Airlines jet crashes into the Sea of Marmara off Yesilkoy and kills all forty-two on board",
+     place: "Yesilkoy",
+     scene: "An EAGLE dives into the Marmara where a Turkish Airlines jet crashes off Yesilkoy, killing all forty-two."}
+  - {year: 1979, peg: cowboy, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The first Istanbul Marathon is run",
+     place: "Bosphorus Bridge",
+     scene: "A COWBOY runs from Asia to Europe over the Bosphorus Bridge in the first Istanbul Marathon."}
+
+world_refs:
+  - {year: 1923, event: "Allied occupation of Constantinople ends", cell: eastern_europe_politics_1800_1945}
+  - {year: 1923, event: "Ankara becomes the capital of Turkey", cell: west_asia_politics_1800_1945}
+  - {year: 1923, event: "Population exchange with Greece (Istanbul Greeks exempt)", cell: west_asia_politics_1800_1945}
+  - {year: 1924, event: "Caliphate abolished; the Ottoman dynasty leaves Istanbul", cell: west_asia_politics_1800_1945}
+  - {year: 1925, event: "Turkey expels Ecumenical Patriarch Constantine VI", cell: eastern_europe_religion_1800_1945}
+  - {year: 1929, event: "Trotsky deported from the Soviet Union to Istanbul", cell: eastern_europe_politics_1800_1945}
+  - {year: 1932, event: "First public recitation of the Quran in Turkish in Istanbul", cell: eastern_europe_religion_1800_1945}
+  - {year: 1932, event: "Call to prayer first sung in Turkish", cell: west_asia_religion_1800_1945}
+  - {year: 1933, event: "Darulfunun becomes Istanbul University", cell: eastern_europe_society_1800_1945}
+  - {year: 1934, event: "Government decides to make Hagia Sophia a museum", cell: eastern_europe_religion_1800_1945}
+  - {year: 1935, event: "Hagia Sophia opens as a museum", cell: eastern_europe_religion_1800_1945}
+  - {year: 1936, event: "Montreux Convention on the Straits", cell: eastern_europe_politics_1800_1945}
+  - {year: 1936, event: "School of Political Science moves from Istanbul to Ankara", cell: west_asia_society_1800_1945}
+  - {year: 1938, event: "Ataturk dies at Dolmabahce Palace", cell: west_asia_politics_1800_1945}
+  - {year: 1941, event: "SS Kurtulus carries food aid from Istanbul to Athens", cell: eastern_europe_society_1800_1945}
+  - {year: 1942, event: "Wealth Tax hits Istanbul minorities", cell: west_asia_politics_1800_1945}
+  - {year: 1950, event: "Census counts more than one million in Istanbul", cell: west_asia_society_1945_present}
+  - {year: 1955, event: "Istanbul pogrom", cell: west_asia_society_1945_present}
+  - {year: 1960, event: "Army coup removes the Menderes government", cell: west_asia_politics_1945_present}
+  - {year: 1964, event: "Turkey expels Greek citizens from Istanbul", cell: west_asia_society_1945_present}
+  - {year: 1965, event: "Census counts more than two million in Istanbul", cell: west_asia_society_1945_present}
+  - {year: 1965, event: "Pope and Patriarch lift the mutual excommunications", cell: eastern_europe_religion_1945_present}
+  - {year: 1966, event: "Gecekondu Law legalises squatter houses", cell: west_asia_society_1945_present}
+  - {year: 1967, event: "Pope Paul VI visits Istanbul", cell: eastern_europe_religion_1945_present}
+  - {year: 1967, event: "DISK holds its first meeting in Istanbul", cell: west_asia_society_1945_present}
+  - {year: 1969, event: "Ataturk Cultural Centre opens on Taksim Square", cell: eastern_europe_arts_1945_present}
+  - {year: 1970, event: "June uprising of workers in Istanbul", cell: west_asia_society_1945_present}
+  - {year: 1971, event: "Turkey closes the Halki seminary", cell: eastern_europe_religion_1945_present}
+  - {year: 1973, event: "Bosphorus Bridge opens", cell: eastern_europe_science_1945_present}
+  - {year: 1973, event: "First International Istanbul Festival", cell: eastern_europe_arts_1945_present}
+  - {year: 1977, event: "Taksim Square massacre", cell: west_asia_society_1945_present}
+  - {year: 1979, event: "Pope John Paul II visits the Phanar", cell: eastern_europe_religion_1945_present}
+
+out_refs:
+  - {year: 1923, event: "Republic proclaimed in Ankara", reason: "national government outside the city"}
+  - {year: 1928, event: "Latin alphabet law; Ataturk teaches the new letters in Gulhane Park", reason: "national reform"}
+  - {year: 1934, event: "Surname Law", reason: "national law"}
+  - {year: 1946, event: "First multiparty general election", reason: "national election"}
+  - {year: 1950, event: "Democrat Party wins the general election", reason: "national election"}
+  - {year: 1961, event: "Menderes hanged on Imrali island", reason: "national court case, outside the province"}
+  - {year: 1971, event: "Army memorandum; martial law in Istanbul and ten other provinces", reason: "national army"}
+  - {year: 1978, event: "Martial law in Istanbul and twelve other provinces", reason: "national army"}

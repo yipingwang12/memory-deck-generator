@@ -1,0 +1,855 @@
+# City: Istanbul x 1808 to 1922 (reform, the Tanzimat, the Young Turks, the Allied occupation, to the end of the sultanate). DRAFT 2026-11-19.
+# Area: Istanbul Province, both shores (historic peninsula, Galata and Pera, Bosphorus villages, Uskudar, Kadikoy,
+# Princes' Islands, San Stefano, Catalca, Silivri, Sile).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Imperial court, national government
+# and Patriarchate events -> out_refs, unless the city is the subject or the main stage.
+# World-grid events -> world_refs (world cell year). Dates: memory pass + web check (searches within the 45 budget;
+# no unauthorised book copies). Main sources: WP mirror (Kiwix 2023-10: Timeline of Istanbul and per-site articles),
+# Britannica summaries, Dergipark and Marmara University papers, Daily Sabah, Archnet, Facing History, Project MUSE.
+# A building -> its opening or completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1808, peg: sofa, confidence: high, source: "Britannica: Ottoman Empire 1807-1920; WP mirror: Alemdar Mustafa",
+     event: "Janissaries storm the Porte; Alemdar Mustafa Pasha dies when his powder store explodes",
+     place: "Sublime Porte",
+     scene: "Janissaries ram a burning SOFA into the powder store at the Porte, and Alemdar Mustafa Pasha blows up inside."}
+  - {year: 1808, peg: sofa, confidence: unverified,
+     event: "Street fighting in the janissary revolt sets large parts of the old city on fire",
+     place: "Divanyolu",
+     scene: "Janissaries throw a blazing SOFA from roof to roof along Divanyolu until whole streets of the old city burn."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP mirror: Timeline of Istanbul; Constantinople massacre of 1821",
+     event: "Constantinople massacre: the authorities behead leading Greeks and kill many in the Greek quarters",
+     place: "Phanar",
+     scene: "A giant ANT army marches through the Phanar and carries the Greek notables of the city to the executioner's block."}
+  - {year: 1826, peg: nacho, confidence: unverified,
+     event: "A new market inspectorate (Ihtisab) takes over the daily order of the city",
+     place: "Eminönü markets",
+     scene: "An inspector of the new Ihtisab office weighs each NACHO in the Eminönü market and fines the cheating baker."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: Timeline of Istanbul (Selimiye Barracks)",
+     event: "Selimiye Barracks are rebuilt in stone at Üsküdar",
+     place: "Selimiye, Üsküdar",
+     scene: "Mahmud II's masons cut the stone walls of the Selimiye Barracks with a giant KNIFE on the hill above Üsküdar."}
+  - {year: 1832, peg: moon, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Davutpaşa Barracks are built outside the land walls",
+     place: "Davutpaşa",
+     scene: "A crescent MOON of cut stone becomes the gate of the new Davutpaşa Barracks outside the land walls."}
+  - {year: 1833, peg: mummy, confidence: high, source: "kureansiklopedi; encyclopedia.com: Hunkar-Iskelesi",
+     event: "Russian troops land at Beykoz and camp at Hünkâr İskelesi to guard the city",
+     place: "Hünkâr İskelesi, Beykoz",
+     scene: "Russian soldiers unwrap a MUMMY's bandages into tent ropes and pitch their camp on the Beykoz shore."}
+  - {year: 1848, peg: reef, confidence: unverified,
+     event: "Building Regulation orders wider streets and masonry houses after the fires",
+     place: "historic peninsula",
+     scene: "Inspectors lay a REEF of stone blocks along a widened street, and the Building Regulation bans new wooden rows."}
+  - {year: 1852, peg: lion, confidence: medium, source: "WP mirror: Timeline of Istanbul (Taşkışla)",
+     event: "Taşkışla barracks are complete above Taksim",
+     place: "Taşkışla",
+     scene: "A stone LION climbs onto the gate of the new Taşkışla barracks and roars over the Taksim valley."}
+  - {year: 1855, peg: lily, confidence: high, source: "Dergipark: Şehremaneti founded 1271 AH (1855)",
+     event: "Şehremaneti, the first municipality, replaces the market inspectorate",
+     place: "Şehremaneti",
+     scene: "The first Şehremini plants a LILY on his municipal desk and takes the city's markets from the old inspectors."}
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP mirror: Beyoğlu; Dergipark (laws of 1857 and 1858)",
+     event: "Sixth District municipality starts work in Galata and Pera",
+     place: "Galata and Pera",
+     scene: "A WOLF in a top hat chairs the Sixth District council and orders paved streets for Galata and Pera."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Byzantine Legacy: Galata; METU JFA (newspaper of November)",
+     event: "The municipality starts to pull down the Galata walls",
+     place: "Galata",
+     scene: "Workmen swing a CHERRY-red wrecking ball at the Galata walls until only the tower stands alone."}
+  - {year: 1866, peg: judge, confidence: medium, source: "WP mirror: Istanbul University (main building 1865-66)",
+     event: "Bourgeois's new War Ministry building and gate rise at Beyazıt",
+     place: "Beyazıt",
+     scene: "A JUDGE in a fez cuts the ribbon at Bourgeois's grand War Ministry gate on Beyazıt Square."}
+  - {year: 1868, peg: chef, confidence: medium, source: "Dergipark: Dersaadet municipality regulation",
+     event: "A new regulation reorganises the Şehremaneti and its district councils",
+     place: "Şehremaneti",
+     scene: "A CHEF stirs the district councils into one big pot, and the new regulation reshapes the Şehremaneti."}
+  - {year: 1876, peg: cage, confidence: medium, source: "Spectator, 20 May; WP mirror: 1876 Ottoman coup",
+     event: "Madrasa students march through the city and force the grand vizier out",
+     place: "Fatih",
+     scene: "Madrasa students in Fatih rattle a CAGE with Grand Vizier Mahmud Nedim inside until the Sultan lets him go."}
+  - {year: 1877, peg: cake, confidence: unverified,
+     event: "Municipal law divides the city into twenty districts",
+     place: "Şehremaneti",
+     scene: "The city council cuts a giant CAKE into twenty slices, one for each new municipal district."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP: Çırağan incident; TDV: Çırağan Vakası",
+     event: "Ali Suavi's refugees storm Çırağan Palace to free Murad V; Suavi is killed",
+     place: "Çırağan Palace",
+     scene: "Ali Suavi leads refugees out of a CAVE on the shore into Çırağan, and a police chief's club kills him."}
+  - {year: 1878, peg: cave, confidence: unverified,
+     event: "The Russian army camps at San Stefano, at the edge of the city",
+     place: "San Stefano (Yeşilköy)",
+     scene: "Russian soldiers dig a CAVE into the beach at San Stefano and camp within sight of the city's domes."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP: Kum Kapu demonstration; Marmara Univ. Turks and Armenians",
+     event: "Kumkapı demonstration: Hunchaks stop the liturgy at the Armenian cathedral; clashes follow",
+     place: "Kumkapı",
+     scene: "Hunchak activists release BEES in the Kumkapı cathedral, the liturgy stops, and police fight the crowd outside."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Bab Ali demonstration; Facing History",
+     event: "Armenian march to the Sublime Porte ends in a week of killings in the city",
+     place: "Sublime Porte",
+     scene: "Armenian marchers ring a BELL at the Sublime Porte with their petition, and police and mobs answer with a week of killing."}
+  - {year: 1896, peg: peach, confidence: medium, source: "armenian-genocide.org; Papers Past press reports",
+     event: "Mobs kill thousands of Armenians in the city after the bank seizure",
+     place: "Galata and Kasımpaşa",
+     scene: "Club-carrying mobs smash every PEACH crate on the Galata quay as they hunt Armenian porters after the bank seizure."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: 31 March Incident",
+     event: "31 March mutiny: soldiers from Taşkışla rise and kill officers and two deputies",
+     place: "Taşkışla",
+     scene: "Mutinous soldiers at Taşkışla slide out on a river of SOAP and kill officers in the streets."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: 31 March Incident",
+     event: "The Action Army enters the city and takes the Taksim and Taşkışla barracks",
+     place: "Taksim Barracks",
+     scene: "Action Army troops skid on SOAP into Taksim Barracks and force the last rebels to surrender by the afternoon."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP mirror: 31 March Incident (courts martial, no day)",
+     event: "Courts-martial hang the mutineers in public squares",
+     place: "Sultanahmet and Beyazıt",
+     scene: "Hangmen rub each noose with SOAP before the courts-martial hang the mutineers in the city squares."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: First Battle of Çatalca",
+     event: "First Battle of Çatalca: the Ottoman lines stop the Bulgarian army west of the city",
+     place: "Çatalca lines",
+     scene: "The Çatalca lines stick out a huge stone TONGUE, and the Bulgarian assault trips over it short of the city."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Second Battle of Çatalca",
+     event: "Second Battle of Çatalca: Bulgarian attacks on the lines fail",
+     place: "Çatalca lines",
+     scene: "Bulgarian attacks on the Çatalca lines sink into a TOMB of mud, and the trenches before the city hold."}
+  - {year: 1913, peg: tomb, confidence: high, source: "Boğaziçi thesis: assassination of 11 June; WP",
+     event: "Gunmen shoot Grand Vizier Mahmud Şevket Pasha dead in his car at Beyazıt",
+     place: "Beyazıt Square",
+     scene: "Gunmen fire into Mahmud Şevket Pasha's car at Beyazıt, and it rolls on across the square like a TOMB on wheels."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "Hansard, 30 June: executions in Constantinople",
+     event: "The plotters of the murder are hanged in Beyazıt Square",
+     place: "Beyazıt Square",
+     scene: "A row of gallows rises around a marble TOMB in Beyazıt Square, and the plotters hang for the vizier's murder."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: 20 Hunchakian gallows",
+     event: "Twenty Hunchak activists are hanged in Beyazıt Square",
+     place: "Beyazıt Square",
+     scene: "Hangmen string twenty Hunchak activists from one puppet frame in Beyazıt Square, each limp as a rag DOLL."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: HMS E11; Papers Past press",
+     event: "British submarine E11 torpedoes the transport Stamboul at the city quay",
+     place: "Sarayburnu quay",
+     scene: "A British submarine fires a torpedo shaped like a DOLL into the transport Stamboul at the quay, and the city panics."}
+  - {year: 1917, peg: dog, confidence: medium, source: "Papers Past; Spectator, 14 July (raid of 9 July)",
+     event: "A British bomber raids the warships in the Golden Horn and the War Office",
+     place: "Golden Horn",
+     scene: "A British bomber drops a DOG kennel full of bombs on the warships in the Golden Horn and the War Office."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Occupation of Istanbul (8 February)",
+     event: "General Franchet d'Espèrey parades into Pera on a white horse",
+     place: "Grande Rue de Péra",
+     scene: "Franchet d'Espèrey blows a giant TUBA from his white horse as he parades up the Grande Rue de Péra."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Occupation of Istanbul (10 February)",
+     event: "The Allies split the city into British, French and Italian police zones",
+     place: "Allied headquarters, Pera",
+     scene: "Allied officers lay a giant TUBA on the city map, and its three loops become the British, French and Italian police zones."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Occupation of Istanbul (23 May); Timeline of Istanbul",
+     event: "Sultanahmet rally: huge crowds protest the Greek landing at Smyrna",
+     place: "Sultanahmet Square",
+     scene: "Halide Edib speaks through a TUBA to the vast crowd at Sultanahmet, and the city protests the Smyrna landing."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Sultanahmet Jail is built",
+     place: "Sultanahmet",
+     scene: "Guards lock the first prisoners into the new Sultanahmet Jail, and a TUBA's bell serves as each cell's peephole."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "Refet Pasha lands with gendarmes and takes control of the city for the Ankara government",
+     place: "Sirkeci pier",
+     scene: "Crowds hoist Refet Pasha onto a NUN's shoulders at Sirkeci pier as he lands to take the city for Ankara."}
+  # science
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of Istanbul (31 May)",
+     event: "Surp Pırgiç Armenian hospital opens",
+     place: "Zeytinburnu",
+     scene: "Armenian masons swing a HAMMER on the last stone, and Surp Pırgiç hospital opens at Zeytinburnu."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Galata Bridge (3 September)",
+     event: "The Hayratiye bridge opens across the Golden Horn at Unkapanı",
+     place: "Unkapanı",
+     scene: "Workers float each pontoon on a giant MATCH from Azapkapı to Unkapanı, and the Hayratiye bridge opens."}
+  - {year: 1837, peg: mug, confidence: medium, source: "WP mirror: Ferries in Istanbul",
+     event: "The first private steam ferries cross the Bosphorus",
+     place: "Bosphorus",
+     scene: "A steam ferry with a giant MUG for a funnel carries the first paying passengers across the Bosphorus."}
+  - {year: 1837, peg: mug, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Surp Agop Armenian hospital opens",
+     place: "Elmadağ",
+     scene: "A nurse hands each patient a steaming MUG of broth in the new Surp Agop hospital at Elmadağ."}
+  - {year: 1845, peg: railway, confidence: high, source: "Dergipark (opened 4 April); Dynamis: Shefer",
+     event: "Bezmiâlem Valide Sultan's Gureba hospital opens for poor Muslims",
+     place: "Fatih",
+     scene: "A toy RAILWAY carries the first sick strangers into Bezmiâlem's new Gureba hospital beside the Valens aqueduct."}
+  - {year: 1851, peg: wallet, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Emirgan ferry pier opens",
+     place: "Emirgan",
+     scene: "Each ferry passenger at the new Emirgan pier drops a coin into a giant WALLET at the gangway."}
+  - {year: 1852, peg: lion, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The German Hospital is founded at Taksim",
+     place: "Taksim",
+     scene: "A LION in a doctor's coat takes the pulse of the first patient at the new German Hospital in Taksim."}
+  - {year: 1853, peg: llama, confidence: medium, source: "Marmara Univ.: Dolmabahçe Gazhanesi (1853; some say 1856)",
+     event: "Dolmabahçe gasworks starts to make gas for the palace",
+     place: "Dolmabahçe",
+     scene: "A LLAMA shovels coal into the Dolmabahçe gasworks, and the first gas flames light the palace."}
+  - {year: 1853, peg: llama, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Üsküdar ferry pier opens",
+     place: "Üsküdar",
+     scene: "A LLAMA carries the first ferry passengers' bags up the new pier at Üsküdar."}
+  - {year: 1856, peg: leech, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Fenerbahçe Lighthouse is built on the Asian point",
+     place: "Fenerbahçe",
+     scene: "A glowing LEECH sucks onto the top of the new Fenerbahçe Lighthouse and warns ships off the point."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Ahırkapı Lighthouse is built below the old palace walls",
+     place: "Ahırkapı",
+     scene: "Cranes stand a giant LOG upright as the tower of the new Ahırkapı Lighthouse below the old palace walls."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP mirror: Galata Bridge",
+     event: "A second wooden Galata Bridge replaces the first",
+     place: "Galata Bridge",
+     scene: "Ethem Pertev Pasha sets a GEM in the middle of the second wooden Galata Bridge for Sultan Abdülaziz."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "WP: Kuzguncuk Gasworks (1864 or 1865)",
+     event: "Kuzguncuk gasworks lights Beylerbeyi Palace",
+     place: "Kuzguncuk",
+     scene: "The Kuzguncuk gasworks pumps glowing JELLY up the shore, and the lamps of Beylerbeyi Palace light."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: Kandilli Observatory; Timeline of Istanbul",
+     event: "The Imperial Observatory is founded for weather forecasts and time signals",
+     place: "Pera",
+     scene: "A CHEF reads the barometer at the new Imperial Observatory and shouts tomorrow's weather to the city."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Sirkeci railway station (4 June)",
+     event: "Work starts on the railway from the city to Halkalı",
+     place: "Yedikule",
+     scene: "A GOOSE hammers in the first rail spike at Yedikule as work starts on the line to Halkalı."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Sirkeci railway station (4 January)",
+     event: "The railway from the city to Halkalı is complete",
+     place: "Halkalı",
+     scene: "A CAT rides the cowcatcher of the first train as it runs from the land walls out to Halkalı."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Trams in Istanbul; Daily Sabah (31 July)",
+     event: "Horse trams start on four lines, first from Azapkapı to Beşiktaş",
+     place: "Tophane Square",
+     scene: "A CAT the size of a horse pulls the first tramcar from Azapkapı past Tophane to Beşiktaş."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Sirkeci railway station; Timeline of Istanbul",
+     event: "The railway reaches Sirkeci on the Golden Horn",
+     place: "Sirkeci",
+     scene: "Railway workers hammer a gold COIN under the last rail at Sirkeci, and trains reach the Golden Horn."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Haydarpaşa railway station (22 September)",
+     event: "The first Haydarpaşa station opens, with trains to Gebze",
+     place: "Haydarpaşa",
+     scene: "A COIN-faced clock starts on the first Haydarpaşa station as the trains leave for Gebze."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Timeline of Istanbul (22 July)",
+     event: "Bakırköy and Küçükçekmece stations open on the western line",
+     place: "Bakırköy",
+     scene: "Passengers drop a COIN in the box at the new Bakırköy station and ride on to Küçükçekmece."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Timeline of Istanbul (22 September)",
+     event: "Suburban stations from Feneryolu to Kartal open on the Asian line",
+     place: "Asian shore line",
+     scene: "A giant COIN rolls down the Asian line and stops at each new station from Feneryolu to Kartal."}
+  - {year: 1872, peg: coin, confidence: high, source: "AA archive report; Dergipark (Suhulet, 1872)",
+     event: "The Suhulet car ferry starts between Kabataş and Üsküdar",
+     place: "Kabataş",
+     scene: "Horse carts roll onto the Suhulet over a ramp shaped like a giant COIN and cross from Kabataş to Üsküdar."}
+  - {year: 1873, peg: comb, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Fenerbahçe station opens on the Asian line",
+     place: "Fenerbahçe",
+     scene: "A COMB of new rails reaches Fenerbahçe, and its station opens on the Asian line."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Galata Bridge",
+     event: "The third Galata Bridge, on iron pontoons, opens",
+     place: "Galata Bridge",
+     scene: "An EAGLE lifts the old wooden span away and drops the third Galata Bridge onto iron pontoons."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Yedikule Gasworks (works from 1873)",
+     event: "Yedikule gasworks opens",
+     place: "Yedikule",
+     scene: "A gasholder like a giant VASE rises beside the Yedikule walls and fills the old city's lamps."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Utilities in Istanbul (July)",
+     event: "The first telephone line links the Post Ministry with the Yenicami post office",
+     place: "Soğukçeşme and Yenicami",
+     scene: "A clerk at Soğukçeşme talks into a FOOT-shaped receiver, and the post office at Yenicami answers."}
+  - {year: 1883, peg: foam, confidence: medium, source: "Marmara Univ.: Terkos su şirketi (company of 1883)",
+     event: "The Terkos water company is founded to bring lake water to the city",
+     place: "Lake Terkos",
+     scene: "Engineers pump FOAM out of Lake Terkos, and the new water company pipes it to the houses of Pera."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Sirkeci railway station (11 February)",
+     event: "Work starts on the new Sirkeci terminal",
+     place: "Sirkeci",
+     scene: "Jasmund's builders march to a FIFE as they lay the first stones of the new Sirkeci terminal."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: Hasanpaşa Gasworks",
+     event: "Hasanpaşa gasworks opens in Kadıköy",
+     place: "Hasanpaşa, Kadıköy",
+     scene: "A gas-lit PIANO plays in Kadıköy as the Hasanpaşa gasworks sends gas to the Asian shore."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Russian Archaeological Institute of Constantinople is founded",
+     place: "Pera",
+     scene: "Russian scholars ring a BELL to call the first meeting of their Archaeological Institute in Pera."}
+  - {year: 1898, peg: beehive, confidence: medium, source: "Haydarpaşa hospital history (Gülhane, 1898)",
+     event: "Gülhane military hospital opens",
+     place: "Gülhane",
+     scene: "Army doctors swarm like a BEEHIVE into the new Gülhane military hospital below Topkapı."}
+  - {year: 1899, peg: pipe, confidence: high, source: "DOAJ: Hamidiye Etfal (5 June)",
+     event: "Hamidiye Etfal, the first children's hospital, opens at Şişli",
+     place: "Şişli",
+     scene: "A nurse blows bubbles from a PIPE for the sick children in the new Hamidiye Etfal hospital at Şişli."}
+  - {year: 1902, peg: sun, confidence: high, source: "Project MUSE (1 September); Yale: Mizbani",
+     event: "The Hamidiye water system opens with new fountains fed from Kağıthane",
+     place: "Kağıthane",
+     scene: "The SUN pumps Kağıthane spring water down the Hamidiye line into each new city fountain."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Haydarpaşa railway station",
+     event: "Work starts on the new Haydarpaşa terminal",
+     place: "Haydarpaşa",
+     scene: "German builders drive SUSHI-roll piles into the Haydarpaşa shore for the new terminal."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: Utilities in Istanbul (23 May)",
+     event: "A manual telephone exchange opens at the Grand Post Office",
+     place: "Sirkeci",
+     scene: "Operators scrub their hands with SOAP and plug in the first lines at the Grand Post Office exchange."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: Kandilli Observatory",
+     event: "Rebels wreck the Imperial Observatory in the 31 March Incident",
+     place: "Pera",
+     scene: "Rebels hurl SOAP bars through the windows of the Imperial Observatory and smash its instruments."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Suadiye station opens on the Asian line",
+     place: "Suadiye",
+     scene: "A giant DICE rolls along the Asian line and stops at the new Suadiye station."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Kandilli Observatory (1 July)",
+     event: "The observatory starts work again on the hill at Kandilli",
+     place: "Kandilli",
+     scene: "Fatin points a telescope with a star TATTOO on its tube at the sky and restarts the observatory at Kandilli."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Galata Bridge",
+     event: "The fourth Galata Bridge, built in Germany, opens",
+     place: "Galata Bridge",
+     scene: "A German steel TONGUE floats out across the Golden Horn and becomes the fourth Galata Bridge."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Galata Bridge",
+     event: "The old third bridge is towed up the Golden Horn to replace the upper bridge",
+     place: "Unkapanı",
+     scene: "A tug wraps its long TONGUE round the old Galata Bridge and drags it up the Golden Horn to Unkapanı."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP mirror: Trams in Istanbul",
+     event: "Horse trams stop when the army takes the tram horses for the war",
+     place: "Tophane tram depot",
+     scene: "Army officers pull the bit off each tram horse's TONGUE, take the horses to war, and the horse trams stop."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Trams in Istanbul (25 January)",
+     event: "Electric trams start, the first from Karaköy across Galata Bridge",
+     place: "Karaköy",
+     scene: "A TOWER of sparks shoots up from the first electric tram as it crosses Galata Bridge from Karaköy."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Utilities in Istanbul; Timeline (11 February)",
+     event: "Silahtarağa power station starts to make the city's electricity",
+     place: "Silahtarağa",
+     scene: "The chimney TOWER of Silahtarağa puffs its first smoke, and electric current flows into the city."}
+  # religion
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The wooden Hidayet Mosque is built at Eminönü",
+     place: "Eminönü",
+     scene: "Carpenters roof the new wooden Hidayet Mosque at Eminönü with a dome shaped like a TOMB."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Nusretiye, the Victory Mosque, is complete at Tophane",
+     place: "Tophane",
+     scene: "Mahmud II snaps a giant NACHO into a baroque arch over the door of his new Victory Mosque at Tophane."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Fossati rebuilds the Dominican church of Saints Peter and Paul in Galata",
+     place: "Galata",
+     scene: "A RAM butts down the old walls, and Fossati rebuilds the Dominican church of Saints Peter and Paul in Galata."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Catholic Cathedral of the Holy Spirit is built at Harbiye",
+     place: "Harbiye",
+     scene: "Builders sweep the last ROACH out of the nave and open the Catholic Cathedral of the Holy Spirit at Harbiye."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The little Küçük Mecidiye Mosque is built on the Çırağan shore",
+     place: "Çırağan",
+     scene: "A coral REEF grows out of the Bosphorus and turns into the little Küçük Mecidiye Mosque on the Çırağan shore."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP mirror: Timeline of Istanbul (9 October)",
+     event: "The first Bulgarian church of Saint Stephen opens at Balat",
+     place: "Balat",
+     scene: "Bulgarian merchants haul on a ROPE to raise the first wooden church of Saint Stephen on the Balat shore."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Hırka-i Şerif Mosque is built for the Prophet's mantle in Fatih",
+     place: "Fatih",
+     scene: "Abdülmecid empties his WALLET to build the Hırka-i Şerif Mosque around the Prophet's mantle in Fatih."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Teşvikiye Mosque is built in Nişantaşı",
+     place: "Nişantaşı",
+     scene: "A LAWYER reads Abdülmecid's deed aloud, and masons raise the Teşvikiye Mosque in Nişantaşı."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Dolmabahçe Mosque is complete beside the new palace",
+     place: "Dolmabahçe",
+     scene: "A giant stone LILY opens its petals and becomes the Dolmabahçe Mosque beside the new palace."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Balyan's Ortaköy Mosque is built on the Bosphorus shore",
+     place: "Ortaköy",
+     scene: "Balyan fixes the Ortaköy Mosque to the water's edge like a LEECH clinging to the Bosphorus shore."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Altunizade Mosque is built on the Asian hills",
+     place: "Altunizade",
+     scene: "A wobbling JELLY dome settles on the walls of the new Altunizade Mosque in the Asian hills."}
+  - {year: 1868, peg: chef, confidence: high, source: "Archiseek; WP: Crimea Memorial Church",
+     event: "The Crimean Memorial Church is consecrated in Beyoğlu",
+     place: "Beyoğlu",
+     scene: "A British army CHEF carries the altar stone into the Crimean Memorial Church in Beyoğlu for its consecration."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Pertevniyal Valide Sultan Mosque is complete at Aksaray",
+     place: "Aksaray",
+     scene: "Pertevniyal Valide Sultan presses one giant gold COIN into the dome to finish her mosque at Aksaray."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Timeline of Istanbul (14 September)",
+     event: "The Greek Orthodox church of Hagia Triada opens at Taksim",
+     place: "Taksim",
+     scene: "Greek builders set a giant VASE upside down as the dome of the new Hagia Triada church at Taksim."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Yıldız Hamidiye Mosque is built beside the palace",
+     place: "Yıldız",
+     scene: "Abdülhamid hangs a gilded FISH lamp under the dome of his new Yıldız Hamidiye Mosque."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Ertuğrul Tekke Mosque is built at Beşiktaş",
+     place: "Beşiktaş",
+     scene: "A FOX leads the dervishes into the new Ertuğrul Tekke Mosque that Abdülhamid builds at Beşiktaş."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Hidayet Mosque is rebuilt in stone at Eminönü",
+     place: "Eminönü",
+     scene: "A FOX gnaws through the old wooden Hidayet Mosque, and builders raise it again in stone at Eminönü."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The church of Saint Anthony of Padua is built on the Grande Rue",
+     place: "Grande Rue de Péra",
+     scene: "A red-brick TONGUE of Gothic arches unrolls along the Grande Rue and becomes the church of Saint Anthony of Padua."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Kemaleddin's Bebek Mosque is built on the Bosphorus shore",
+     place: "Bebek",
+     scene: "Kemaleddin lifts a marble TOMB lid onto four walls, and it becomes the dome of the Bebek Mosque."}
+  # arts
+  - {year: 1814, peg: tower, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Sultan Mahmud's fountain is built",
+     scene: "Water pours from the windows of a small marble TOWER, the new fountain of Sultan Mahmud."}
+  - {year: 1828, peg: knife, confidence: high, source: "Structurae: Beyazıt Tower (works 1828-29); WP",
+     event: "Senekerim Balyan builds the stone fire tower at Beyazıt",
+     place: "Beyazıt",
+     scene: "Senekerim Balyan carves the tall stone fire tower at Beyazıt out of the rock with a KNIFE."}
+  - {year: 1832, peg: moon, confidence: high, source: "WP mirror: Maiden's Tower",
+     event: "Mahmud II restores the Maiden's Tower",
+     place: "Maiden's Tower",
+     scene: "A crescent MOON settles on the new lantern of the Maiden's Tower that Mahmud II restores."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Naum Theatre",
+     event: "The Naum Theatre opens in Pera as the city's main opera house",
+     place: "Pera",
+     scene: "A WARRIOR in operatic armour sings the first aria on the opening night of the Naum Theatre in Pera."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Nusretiye clock tower is built at Tophane",
+     place: "Tophane",
+     scene: "Gunners at Tophane stack a REEF of cannonballs into the new Nusretiye clock tower."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Ihlamur Pavilion is built in its linden garden",
+     place: "Ihlamur",
+     scene: "Abdülmecid floats on a LILY pad in the pond of his new Ihlamur pavilion among the linden trees."}
+  - {year: 1857, peg: log, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Küçüksu Pavilion is built on the Asian shore",
+     place: "Küçüksu",
+     scene: "Balyan carves the white Küçüksu pavilion out of one giant LOG on the Asian shore."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Adile Sultan Palace is built at Kandilli",
+     place: "Kandilli",
+     scene: "A JET lands on the Kandilli hill and unfolds into the new Adile Sultan Palace."}
+  - {year: 1863, peg: gem, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The first painting exhibition opens with Sultan Abdülaziz's support",
+     scene: "Abdülaziz sets a GEM on the frame of each canvas at the city's first painting exhibition."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Beylerbeyi Palace is complete on the Asian shore",
+     place: "Beylerbeyi",
+     scene: "Sarkis Balyan pours white marble JELLY onto the Asian shore, and it sets as Beylerbeyi Palace."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Gedikpaşa Theatre opens",
+     place: "Gedikpaşa",
+     scene: "A JUDGE in the stalls bangs his gavel to start the first play at the new Gedikpaşa Theatre."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP mirror: Istanbul Archaeology Museums",
+     event: "The Imperial Museum opens in the church of Hagia Irene",
+     place: "Hagia Irene",
+     scene: "A SHIP unloads crates of antiquities at Hagia Irene, and the Imperial Museum opens inside."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Malta Kiosk is built in Yıldız park",
+     place: "Yıldız park",
+     scene: "A GOOSE builds its nest into the walls of the new Malta Kiosk in Yıldız park."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Feriye palaces are built on the Ortaköy shore",
+     place: "Ortaköy",
+     scene: "A long CAT stretches out on the Ortaköy shore and turns into the row of Feriye palaces."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "WP mirror: Istanbul Archaeology Museums (1875-1891)",
+     event: "The Imperial Museum moves into the Tiled Kiosk",
+     place: "Tiled Kiosk",
+     scene: "An EAGLE carries the museum's statues one by one from Hagia Irene into the Tiled Kiosk."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Palazzo Corpi is built on the slope of Pera",
+     place: "Pera",
+     scene: "A Genoese merchant bakes his marble Palazzo Corpi in a giant OVEN on the slope of Pera."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Yıldız Clock Tower is built beside the Hamidiye Mosque",
+     place: "Yıldız",
+     scene: "BEES build a honeycomb clock face on the new Yıldız clock tower beside the Hamidiye Mosque."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror: Istanbul Archaeology Museums (13 June)",
+     event: "The new building of the Imperial Museum opens with the Sidon sarcophagi",
+     place: "Gülhane",
+     scene: "Osman Hamdi kicks open Vallaury's new museum building with his BOOT and shows the Sidon sarcophagi."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Dolmabahçe Clock Tower is built beside the palace",
+     place: "Dolmabahçe",
+     scene: "A great BELL swings inside the new Dolmabahçe clock tower and chimes the hours to the palace."}
+  - {year: 1896, peg: peach, confidence: medium, source: "Dergipark; CEU thesis (Sponeck, 1896)",
+     event: "The first public film show takes place at the Sponeck beer hall in Pera",
+     place: "Sponeck beer hall, Pera",
+     scene: "A PEACH flies off the screen into the crowd at the Sponeck beer hall during the city's first public film show."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Naval Museum is founded",
+     place: "Kasımpaşa",
+     scene: "A PIG in a sailor's cap stands guard over the first ship models in the new Naval Museum."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Alexander Vallaury; Pera Palace blog",
+     event: "Vallaury's Public Debt Administration building opens at Cağaloğlu",
+     place: "Cağaloğlu",
+     scene: "Foreign creditors fill a gold PIG bank inside Vallaury's new Public Debt building at Cağaloğlu."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: Russian Monument at San Stefano",
+     event: "The Russian memorial chapel opens at San Stefano for the dead of the last war",
+     place: "San Stefano (Yeşilköy)",
+     scene: "Russians raise a domed BEEHIVE of a memorial at San Stefano over the bones of their soldiers."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Timeline of Istanbul (27 January)",
+     event: "Kaiser Wilhelm's German Fountain opens in the Hippodrome",
+     place: "Hippodrome",
+     scene: "Kaiser Wilhelm's new German Fountain in the Hippodrome sprays fizzing SODA under its gilded dome."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Khedive Palace is built at Çubuklu",
+     place: "Çubuklu",
+     scene: "Khedive Abbas Hilmi glides on a SKI down the Çubuklu hill to the door of his new palace."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Etfal hospital clock tower is built at Şişli",
+     place: "Şişli",
+     scene: "A SKI pole becomes the minute hand of the new clock tower at the Etfal hospital in Şişli."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Grand Post Office (built 1905-1909)",
+     event: "Vedat Tek's Grand Post Office opens at Sirkeci",
+     place: "Sirkeci",
+     scene: "Vedat Tek scrubs the tiles of his new Grand Post Office at Sirkeci with SOAP until they shine."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Mısır Apartment is built on the Grande Rue",
+     place: "Grande Rue de Péra",
+     scene: "Builders stack giant DICE floor on floor, and the Mısır Apartment rises on the Grande Rue."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Timeline of Istanbul (23 July)",
+     event: "The Monument of Liberty for the Action Army dead is complete at Şişli",
+     place: "Şişli",
+     scene: "The names of the Action Army dead appear as a TATTOO on the stone of the Monument of Liberty at Şişli."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Museum of Turkish and Islamic Arts opens at Süleymaniye",
+     place: "Süleymaniye",
+     scene: "Carpets and tiles climb out of a TOMB at Süleymaniye and fill the new Museum of Islamic Arts."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Timeline of Istanbul (28 June)",
+     event: "Darülbedayi, the city theatre company, is founded",
+     place: "Şehremaneti",
+     scene: "Actors climb a TOWER of scripts and found Darülbedayi, the new city theatre."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Aviation Martyrs' Monument is complete at Fatih",
+     place: "Fatih",
+     scene: "Masons set a stone DISH on top of the column of the new Aviation Martyrs' Monument at Fatih."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Tayyare Apartments are built at Laleli",
+     place: "Laleli",
+     scene: "A NUN rattles a tin for warplanes, and her money builds the Tayyare Apartments at Laleli."}
+  # economy
+  - {year: 1835, peg: mill, confidence: medium, source: "Archnet: Feshane (1835); others 1833",
+     event: "The Feshane factory at Eyüp starts to make fezzes for the new army",
+     place: "Eyüp",
+     scene: "A MILL wheel on the Golden Horn at Eyüp spins red felt, and the Feshane factory makes fezzes for the army."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP mirror: Ferries in Istanbul; bianet",
+     event: "Şirket-i Hayriye is founded and starts the Bosphorus ferry service",
+     place: "Bosphorus piers",
+     scene: "Shareholders fill one big WALLET, and Şirket-i Hayriye launches its first Bosphorus ferries."}
+  - {year: 1869, peg: ship, confidence: high, source: "Dergipark; Daily Sabah (contract of 30 August)",
+     event: "Karapano Efendi wins the forty-year concession for city trams",
+     place: "Sublime Porte",
+     scene: "Karapano Efendi signs the forty-year tram contract on the deck of a SHIP and founds the tram company."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Beyoğlu",
+     event: "The Cité de Péra arcade, later the Çiçek Pasajı, opens on the Grande Rue",
+     place: "Grande Rue de Péra",
+     scene: "Shops and flats rise round a glass CAGE as the Cité de Péra opens on the Grande Rue."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP mirror: Timeline of Istanbul (14 January)",
+     event: "The Istanbul Chamber of Commerce is founded",
+     place: "Galata",
+     scene: "Galata merchants found the Chamber of Commerce round a warm OVEN and bake its first rules."}
+  - {year: 1890, peg: bees, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Bomonti brewery starts to make beer at Feriköy",
+     place: "Feriköy",
+     scene: "BEES buzz over the copper vats as the Bomonti brothers start their brewery at Feriköy."}
+  - {year: 1891, peg: boot, confidence: high, source: "Levantine Heritage: Frank Han; Marmara Univ.",
+     event: "The Quay Company takes over the concession for the Galata quays",
+     place: "Galata",
+     scene: "A BOOT stamps the contract, and the new Quay Company takes Michel Pasha's rights to the Galata waterfront."}
+  - {year: 1892, peg: piano, confidence: high, source: "Levantine Heritage: Frank Han (April)",
+     event: "Work starts on the stone quay from Karaköy to Tophane",
+     place: "Karaköy",
+     scene: "Divers lower stone blocks the size of a PIANO, and work on the quay from Karaköy to Tophane starts."}
+  - {year: 1894, peg: bear, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Pando's creamery opens",
+     place: "Beşiktaş",
+     scene: "A BEAR licks the cream from the first bowl at Pando's new creamery."}
+  - {year: 1895, peg: bell, confidence: medium, source: "Levantine Heritage; ITU JFA (quays done 1895)",
+     event: "The first passenger steamer docks at the new Galata quay",
+     place: "Galata quay",
+     scene: "A ship's BELL rings as the first passenger steamer ties up at the new Galata quay."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Tokatlıyan Hotel opens on the Grande Rue",
+     place: "Grande Rue de Péra",
+     scene: "Waiters carry a roast PIG through the dining room on the opening night of the Tokatlıyan Hotel."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP mirror: Timeline of Istanbul (20 April)",
+     event: "The port of Haydarpaşa opens at the end of the Anatolian line",
+     place: "Haydarpaşa",
+     scene: "A giant steam PIPE blows as the first cranes of the new Haydarpaşa port swing cargo from train to ship."}
+  - {year: 1900, peg: sauce, confidence: medium, source: "WP mirror: Timeline of Istanbul; Marmara Univ.",
+     event: "The Quay Company completes the quays on the Eminönü side",
+     place: "Eminönü",
+     scene: "Workers pour a SAUCE of wet cement along the Eminönü shore, and the new quays are complete."}
+  - {year: 1908, peg: sofa, confidence: unverified,
+     event: "Port porters boycott Austrian goods after Austria takes Bosnia",
+     place: "Galata quay",
+     scene: "Galata porters drop an Austrian SOFA into the sea and refuse to unload any Austrian ship."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The National Bank of Turkey is founded with British capital",
+     place: "Galata",
+     scene: "British financiers float the National Bank of Turkey in Galata on a giant bubble of SOAP."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Apikoğlu company starts to make sausage",
+     scene: "The Apikoğlu brothers chop beef into DICE and start the city's sausage company."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Orfeon Records starts to press gramophone records in the city",
+     place: "Feriköy",
+     scene: "Singers stick out their TONGUE at the horn of the gramophone as Orfeon Records presses its first discs."}
+  - {year: 1914, peg: tower, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Tünel company's Metrohan office is built in Beyoğlu",
+     place: "Tünel, Beyoğlu",
+     scene: "The Tünel company moves into the Metrohan, a stone TOWER of offices at its top station in Beyoğlu."}
+  # society
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Mkhitarist monks open their school at Pangaltı",
+     place: "Pangaltı",
+     scene: "Mkhitarist monks drive a NAIL into the door of their new school at Pangaltı and call in the first boys."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Maiden's Tower",
+     event: "The Maiden's Tower becomes a quarantine station",
+     place: "Maiden's Tower",
+     scene: "Doctors turn the KNOB on the Maiden's Tower door and lock the ship passengers inside for quarantine."}
+  - {year: 1831, peg: moth, confidence: high, source: "Dergipark: cholera in Istanbul (more than five thousand dead)",
+     event: "Cholera reaches the city for the first time on a ship from Odessa",
+     place: "Golden Horn",
+     scene: "A MOTH flies off a ship from Odessa onto the Golden Horn quay and carries cholera into the city."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: Pera House (2 August); Times report",
+     event: "A great fire burns Pera and nearly all its embassies",
+     place: "Pera",
+     scene: "A burning MOTH flutters from roof to roof in Pera and sets nearly every embassy on fire."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Military Academy opens",
+     place: "Maçka",
+     scene: "The first cadets swing a HAMMER to open the gates of the new Military Academy at Maçka."}
+  - {year: 1847, peg: rock, confidence: high, source: "Dergipark: thousands dead October 1847-November 1849",
+     event: "Cholera returns and kills thousands in the city over two years",
+     place: "Kasımpaşa",
+     scene: "A great ROCK of cholera rolls down from Kasımpaşa and crushes thousands across the city for two years."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP mirror: Timeline of Istanbul (22 March)",
+     event: "The Cağaloğlu secondary school opens",
+     place: "Cağaloğlu",
+     scene: "A teacher throws a LASSO round the first pupils of the new Cağaloğlu school and pulls them to their desks."}
+  - {year: 1856, peg: leech, confidence: disputed, source: "Boğaziçi thesis: Aksaray fire 1855; other accounts 1856",
+     event: "A great fire burns Aksaray; the quarter is rebuilt on a grid of straight streets",
+     place: "Aksaray",
+     scene: "A burning LEECH crawls across Aksaray and eats its wooden lanes, and surveyors redraw them as a grid."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP mirror: Timeline of Istanbul (27 November)",
+     event: "The Notre Dame de Sion girls' school opens",
+     place: "Harbiye",
+     scene: "A nun of Sion pulls a LEECH off a girl's arm in the first class of the new school at Harbiye."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Timeline of Istanbul (12 February)",
+     event: "Mekteb-i Mülkiye, the civil service school, opens",
+     place: "Beyazıt",
+     scene: "Young clerks ELBOW each other through the door of the new Mekteb-i Mülkiye civil service school."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Greek Orthodox cemetery at Şişli is founded",
+     place: "Şişli",
+     scene: "A gravedigger bends his ELBOW over the spade and opens the first grave in the Şişli Greek cemetery."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Liceo Italiano opens",
+     place: "Galata",
+     scene: "Italian teachers land by JET on a Galata roof and open the Liceo Italiano."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP mirror: Timeline of Istanbul (1 May)",
+     event: "The Deutsche Schule opens",
+     place: "Beyoğlu",
+     scene: "A German CHEF writes the first lesson on the board of the new Deutsche Schule in Beyoğlu."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Pertevniyal secondary school opens beside the mosque at Aksaray",
+     place: "Aksaray",
+     scene: "The Valide Sultan gives each new pupil a COIN on the first day of the Pertevniyal school at Aksaray."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Darüşşafaka, a school for orphans, opens",
+     place: "Fatih",
+     scene: "A teacher runs a COMB through each orphan's hair on the first day of the Darüşşafaka school in Fatih."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Ödön Széchenyi",
+     event: "Count Széchenyi sets up a trained fire brigade",
+     place: "Beyazıt",
+     scene: "Count Széchenyi drives a red fire CAR to the blaze and starts the city's trained fire brigade."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The American Academy for Girls opens at Üsküdar",
+     place: "Üsküdar",
+     scene: "A CAGE full of schoolbooks arrives by ferry at Üsküdar, and the American Academy for Girls opens."}
+  - {year: 1878, peg: cave, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Istanbul Bar Association is founded",
+     place: "Sultanahmet",
+     scene: "Lawyers meet in a CAVE under Sultanahmet and found the Istanbul Bar Association."}
+  - {year: 1882, peg: oven, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Numune-i Terakki, a new-method school, opens",
+     place: "Beyazıt",
+     scene: "A teacher bakes alphabet letters in an OVEN for the first class of the Numune-i Terakki school."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP mirror: Timeline of Istanbul (1 September)",
+     event: "Getronagan Armenian High School opens at Karaköy",
+     place: "Karaköy",
+     scene: "A fisherman hands a FISH to each boy on the first day of the Getronagan Armenian school at Karaköy."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Tribal School opens for the sons of Arab and Kurdish chiefs",
+     place: "Kabataş",
+     scene: "The sons of tribal chiefs play a school PIANO on their first day at the new Tribal School."}
+  - {year: 1893, peg: palm, confidence: high, source: "Dergipark: cholera of 1893 began in Hasköy",
+     event: "Cholera breaks out in Hasköy and spreads through the city",
+     place: "Hasköy",
+     scene: "Cholera sails into Hasköy on a PALM-log raft and spreads up the Golden Horn into the city."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Zografeion Greek lycée opens",
+     place: "Tarlabaşı",
+     scene: "The banker Zografos plants a PALM tree as the corner stone of his new lycée in Tarlabaşı."}
+  - {year: 1896, peg: peach, confidence: high, source: "Leiden thesis (31 January); Dergipark",
+     event: "The Darülaceze poorhouse opens",
+     place: "Okmeydanı",
+     scene: "The old and the poor get a PEACH each as they enter the new Darülaceze poorhouse at Okmeydanı."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP mirror: Timeline of Istanbul (1 January)",
+     event: "The Kurtuluş sports club is founded",
+     place: "Kurtuluş",
+     scene: "Boys in Kurtuluş kick a PEACH as their ball and found the Kurtuluş sports club."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Moda football club is founded",
+     place: "Moda, Kadıköy",
+     scene: "A SUMO wrestler stands in goal for the first match of the new Moda football club."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The football ground at Kızıltoprak, later Fenerbahçe's stadium, opens",
+     place: "Kızıltoprak, Kadıköy",
+     scene: "Players drag an old SOFA off the pitch, and the new football ground at Kızıltoprak opens."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Vefa sports club is founded",
+     place: "Vefa",
+     scene: "Schoolboys of Vefa found their sports club and use an old SOFA as the goal."}
+  - {year: 1910, peg: dice, confidence: high, source: "Bilkent repository; White Rose paper (summer)",
+     event: "The city ships tens of thousands of street dogs to Sivriada to die",
+     place: "Sivriada",
+     scene: "Mayor Suphi rolls the DICE for the city's street dogs and ships tens of thousands to die on Sivriada."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP mirror: Çırağan Palace (19 January)",
+     event: "Fire destroys Çırağan Palace, the seat of parliament",
+     place: "Çırağan Palace",
+     scene: "A burning DICE rolls through Çırağan Palace, and the parliament's hall burns down to its outer walls."}
+  - {year: 1911, peg: tattoo, confidence: disputed, source: "Daily Sabah: Ekinci (1911); Dergipark (1912)",
+     event: "A great fire burns the Aksaray quarter again",
+     place: "Aksaray",
+     scene: "A TATTOO of flames spreads over the wooden houses of Aksaray until the whole quarter burns."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The school of civil engineers, later Yıldız Technical University, opens",
+     place: "Yıldız",
+     scene: "Each new student of the civil engineers' school gets a TATTOO of a compass on the first day."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Erenköy Girls High School opens",
+     place: "Erenköy",
+     scene: "Each girl at the new Erenköy Girls High School gets a TATTOO of a book on her school bag."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The English High School, later the Istanbul International Community School, opens",
+     place: "Pera",
+     scene: "An English teacher draws a TATTOO of the Union flag on the door of the new English High School."}
+  - {year: 1912, peg: tongue, confidence: unverified,
+     event: "Balkan War refugees crowd the mosques, and cholera spreads among them",
+     place: "Hagia Sophia courtyard",
+     scene: "Refugees crowd the mosque courtyards, and cholera licks through them with a long green TONGUE."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Gülhane Park opens to the public",
+     place: "Gülhane",
+     scene: "The palace garden sticks out a green TONGUE through its wall, and Gülhane Park opens to the public."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Veliefendi race course opens",
+     place: "Veliefendi",
+     scene: "Racehorses gallop round an old TOMB in the middle of the new Veliefendi race course."}
+  - {year: 1916, peg: dish, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Kandilli girls' secondary school opens",
+     place: "Kandilli",
+     scene: "A DISH of sweets welcomes the first girls of the new Kandilli secondary school on the Bosphorus."}
+  - {year: 1917, peg: dog, confidence: high, source: "Levantine Heritage; Hürriyet Daily News (6 September)",
+     event: "Ammunition trains explode at Haydarpaşa station, and the station burns",
+     place: "Haydarpaşa",
+     scene: "Ammunition trains at Haydarpaşa explode, and the blast throws a DOG kennel over the burning station roof."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "The Darülelhan music conservatory opens",
+     place: "Şehzadebaşı",
+     scene: "A DOG howls the first scale at the new Darülelhan conservatory, and the teachers tune it up."}
+  - {year: 1920, peg: nose, confidence: medium, source: "Papers Past, 23 November; WP: Evacuation of the Crimea",
+     event: "Russian refugees from Wrangel's fleet crowd into the city",
+     place: "Pera",
+     scene: "Russian refugees from Wrangel's ships fill the streets of Pera, each with a frozen red NOSE."}
+  - {year: 1920, peg: nose, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "The Green Crescent temperance society is founded",
+     place: "Istanbul",
+     scene: "Doctors grab the red NOSE of a drunkard and found the Green Crescent society against alcohol."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP mirror: Timeline of Istanbul",
+     event: "Taksim Stadium opens in the yard of the old artillery barracks",
+     place: "Taksim",
+     scene: "A giant ANT carries the first football into the new Taksim Stadium in the yard of the old artillery barracks."}
+  - {year: 1921, peg: ant, confidence: medium, source: "WP mirror: Timeline of Istanbul",
+     event: "Kasımpaşa sports club is founded",
+     place: "Kasımpaşa",
+     scene: "An ANT kicks the first ball for the new Kasımpaşa sports club by the old naval yard."}
+world_refs:
+  - {year: 1808, event: "Janissary coup of July ends with Mahmud II as sultan", cell: eastern_europe_politics_1800_1945}
+  - {year: 1812, event: "Plague kills tens of thousands in the city", cell: eastern_europe_society_1800_1945}
+  - {year: 1821, event: "Patriarch Gregory V hanged at the Patriarchate gate", cell: eastern_europe_religion_1800_1945}
+  - {year: 1826, event: "Auspicious Incident: janissary corps destroyed", cell: eastern_europe_politics_1800_1945}
+  - {year: 1827, event: "Imperial School of Medicine opens", cell: eastern_europe_society_1800_1945}
+  - {year: 1844, event: "Halki Theological School opens", cell: eastern_europe_religion_1800_1945}
+  - {year: 1845, event: "First Galata Bridge opens", cell: eastern_europe_economy_1800_1945}
+  - {year: 1846, event: "Istanbul slave market closed", cell: eastern_europe_society_1800_1945}
+  - {year: 1846, event: "Armenian Evangelical Church forms", cell: eastern_europe_religion_1800_1945}
+  - {year: 1849, event: "Hagia Sophia reopens after the Fossati restoration", cell: eastern_europe_religion_1800_1945}
+  - {year: 1854, event: "Florence Nightingale arrives at Scutari", cell: western_europe_science_1800_1945}
+  - {year: 1856, event: "Dolmabahçe Palace opens", cell: eastern_europe_arts_1800_1945}
+  - {year: 1856, event: "Ottoman Bank chartered in Galata", cell: eastern_europe_economy_1800_1945}
+  - {year: 1863, event: "Robert College opens", cell: eastern_europe_society_1800_1945}
+  - {year: 1863, event: "Darulfunun starts science courses", cell: eastern_europe_society_1800_1945}
+  - {year: 1865, event: "Cholera and the Hocapaşa fire", cell: eastern_europe_society_1800_1945}
+  - {year: 1866, event: "Bond exchange opens in Galata", cell: eastern_europe_economy_1800_1945}
+  - {year: 1868, event: "Galatasaray Lyceum opens", cell: eastern_europe_society_1800_1945}
+  - {year: 1870, event: "Great Pera fire", cell: eastern_europe_society_1800_1945}
+  - {year: 1871, event: "Çırağan Palace complete", cell: eastern_europe_arts_1800_1945}
+  - {year: 1871, event: "American College for Girls opens in Arnavutköy", cell: eastern_europe_society_1800_1945}
+  - {year: 1873, event: "Namık Kemal's play Homeland staged", cell: eastern_europe_arts_1800_1945}
+  - {year: 1875, event: "Tünel funicular opens", cell: eastern_europe_economy_1800_1945}
+  - {year: 1882, event: "Osman Hamdi opens the School of Fine Arts", cell: eastern_europe_arts_1800_1945}
+  - {year: 1889, event: "First direct Orient Express reaches the city", cell: eastern_europe_economy_1800_1945}
+  - {year: 1889, event: "Young Turk society formed at the Military School of Medicine", cell: eastern_europe_politics_1800_1945}
+  - {year: 1890, event: "Sirkeci station opens", cell: eastern_europe_arts_1800_1945}
+  - {year: 1890, event: "Sirkeci terminus opens for the Orient Express", cell: eastern_europe_economy_1800_1945}
+  - {year: 1892, event: "Pera Palace Hotel opens", cell: eastern_europe_arts_1800_1945}
+  - {year: 1894, event: "Earthquake damages the Grand Bazaar", cell: eastern_europe_society_1800_1945}
+  - {year: 1894, event: "Earthquake destroys the Halki Theological School", cell: eastern_europe_religion_1800_1945}
+  - {year: 1896, event: "Armenian revolutionaries occupy the Ottoman Bank", cell: eastern_europe_politics_1800_1945}
+  - {year: 1896, event: "Rebuilt Halki Theological School opens", cell: eastern_europe_religion_1800_1945}
+  - {year: 1898, event: "Iron Bulgarian church of Saint Stephen consecrated", cell: eastern_europe_religion_1800_1945}
+  - {year: 1900, event: "Darulfunun refounded as the imperial university", cell: eastern_europe_society_1800_1945}
+  - {year: 1903, event: "Beşiktaş sports club founded", cell: eastern_europe_society_1800_1945}
+  - {year: 1904, event: "Istanbul Football League starts", cell: eastern_europe_society_1800_1945}
+  - {year: 1905, event: "Armenian bomb attempt on Abdülhamid II at Yıldız", cell: eastern_europe_politics_1800_1945}
+  - {year: 1905, event: "Galatasaray football club founded", cell: eastern_europe_society_1800_1945}
+  - {year: 1907, event: "Fenerbahçe sports club founded", cell: eastern_europe_society_1800_1945}
+  - {year: 1909, event: "Haydarpaşa station opens", cell: eastern_europe_arts_1800_1945}
+  - {year: 1909, event: "Abdülhamid II deposed after the counter-coup", cell: eastern_europe_politics_1800_1945}
+  - {year: 1913, event: "Raid on the Sublime Porte", cell: eastern_europe_politics_1800_1945}
+  - {year: 1914, event: "Film of the demolition of the San Stefano monument", cell: eastern_europe_arts_1800_1945}
+  - {year: 1914, event: "Women's university section opens", cell: eastern_europe_society_1800_1945}
+  - {year: 1915, event: "Arrest of Armenian leaders in the city", cell: west_asia_politics_1800_1945}
+  - {year: 1918, event: "Allied occupation of the city begins", cell: eastern_europe_politics_1800_1945}
+  - {year: 1918, event: "Great fires in the Fatih district", cell: eastern_europe_society_1800_1945}
+  - {year: 1919, event: "Noufrakis serves a liturgy in Hagia Sophia", cell: eastern_europe_religion_1800_1945}
+  - {year: 1920, event: "Allies formally occupy the city and dissolve parliament", cell: eastern_europe_politics_1800_1945}
+out_refs:
+  - {year: 1808, event: "Selim III is killed in Topkapı Palace", reason: "palace coup"}
+  - {year: 1831, event: "Takvim-i Vekayi, the state gazette, starts", reason: "imperial government"}
+  - {year: 1840, event: "Ministry of Post is founded", reason: "imperial government"}
+  - {year: 1859, event: "Kuleli plot against the sultan is broken up", reason: "palace plot"}
+  - {year: 1861, event: "Abdülaziz becomes sultan", reason: "imperial accession"}
+  - {year: 1876, event: "Abdülaziz is found dead at Feriye", reason: "imperial death"}
+  - {year: 1877, event: "First Ottoman parliament opens at Dolmabahçe", reason: "national parliament"}
+  - {year: 1904, event: "Murad V dies in confinement at Çırağan", reason: "imperial death"}
+  - {year: 1908, event: "Ottoman parliament meets again", reason: "national parliament"}
+  - {year: 1909, event: "Mehmed V becomes sultan", reason: "imperial accession"}
+  - {year: 1918, event: "Karakol secret society is founded against the occupation", reason: "national resistance"}
+  - {year: 1919, event: "Ottoman courts-martial try the wartime leaders", reason: "national court"}
+  - {year: 1920, event: "Ottoman parliament holds its last session", reason: "national parliament"}
+  - {year: 1922, event: "Ankara government takes over the city administration", reason: "national government"}
+  - {year: 1922, event: "Mehmed VI leaves the city on HMS Malaya", reason: "imperial departure"}
+  - {year: 1922, event: "Abdülmecid II is chosen caliph", reason: "religious office"}
