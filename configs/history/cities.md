@@ -9,7 +9,7 @@ peg digits, scene method) except what this file changes. All text in ASD-STE100 
 - File: `cities/<city>/<era>.yaml`, e.g. `cities/london/43_409.yaml`. City slug = lowercase English name,
   underscores for spaces (`new_york`, `mexico_city`, `sao_paulo`).
 - Eras are the city's own, listed in the city's section below. Era slug = first and last year included;
-  negative = BCE; `pre<year>` for prehistory; `<year>_present` for the last era.
+  BCE years take a `bce` suffix (`52bce_485`, `pre52bce`), never a minus sign; `pre<year>` for prehistory; `<year>_present` for the last era.
 - A city with no section: before its first era, propose 6–10 eras (each about 50–300 events) and the area
   (see "Area"), get the user's yes, then add the section.
 - Group entries by theme with `# <theme>` comments, in date order inside each group. Themes and their scope
@@ -214,3 +214,28 @@ Area: Greater London, all 32 boroughs and the City.
 
 Expected cards are a guide, not a target (capital: many events go to world_refs and out_refs).
 The 4 unverified Londinium cards stay (user, 2026-11-19).
+
+### Paris (2026-11-19)
+
+Area: Île-de-France, the whole region (user's choice): Paris, the inner and outer départements,
+Saint-Denis, Vincennes, Versailles, Saint-Germain-en-Laye, Fontainebleau. Region: western_europe.
+
+- The OUT rule covers the royal and imperial court wherever it sits in the area: Paris, and
+  Versailles while the court lives there (1682–1789). Building a palace, park or basilica is IN;
+  royal ceremonies, births, marriages and burials in it (Saint-Denis royal burials) are OUT.
+- A BCE era slug uses the `bce` suffix, because a file name cannot start with `-`.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre52bce` | before 52 BCE (prehistory, the Parisii) | 25 | ~40 |
+| `52bce_485` | Lutetia (Roman), 52 BCE–485 | 25 | ~60 |
+| `486_986` | Merovingian and Carolingian | 25 | ~70 |
+| `987_1328` | Capetian | 45 | ~180 |
+| `1329_1588` | Valois, Hundred Years' War, Wars of Religion | 45 | ~220 |
+| `1589_1788` | Bourbon, to the eve of the Revolution | 45 | ~300 |
+| `1789_1851` | Revolution to the Second Republic | 45 | ~280 |
+| `1852_1913` | Haussmann, the Commune, Belle Époque | 45 | ~350 |
+| `1914_1944` | the world wars | 45 | ~220 |
+| `1945_present` | post-war | 45 | ~300 |
+
+Expected cards are a guide, not a target.

@@ -1,0 +1,801 @@
+# City: Paris x 987 to 1328 (Capetian Paris). DRAFT 2026-11-19.
+# Area: Ile-de-France, the whole region (Paris, Saint-Denis, Vincennes, Saint-Germain-en-Laye, Fontainebleau,
+# Melun, Meaux, Provins, Etampes, Mantes, Pontoise, Montlhery, Dourdan, Houdan, Argenteuil, Royaumont, Poissy, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Royal court events -> out_refs;
+# building a palace, castle or church is IN. World-grid events -> world_refs.
+# Dates: memory pass + web check (43 of 45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Timeline of Paris, Paris in the Middle Ages, Notre-Dame, Basilica of Saint-Denis,
+# University of Paris, and other 2023-10 articles), archeologie.culture.gouv.fr (Saint-Denis), BnF/Biblissima,
+# Monumentum, Lazare's Dictionnaire des rues, town and heritage pages of Ile-de-France.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year (approximate round years: first two digits).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 991, peg: boot, confidence: medium, source: "WP: Odo I of Blois; Bouchard I of Vendome",
+     event: "Melun: Odo of Blois takes the town by treason; Hugh Capet and his allies take it back",
+     place: "Melun",
+     scene: "A heavy BOOT kicks open the Melun gate for Odo of Blois, then Capet's allies boot him out again."}
+  - {year: 1015, peg: doll, confidence: low, source: "PSS-archi: tour de Montlhery (castle c. 991-1015)",
+     event: "Montlhery: a castle and tower rise on the hill south of Paris (approximate)",
+     place: "Montlhery",
+     scene: "A giant DOLL stands on the Montlhery hill, and masons build the first castle tower around her body."}
+  - {year: 1087, peg: fox, confidence: high, source: "Mantes-la-Jolie magazine; IDF inventaire",
+     event: "Mantes: William the Conqueror burns the town and is fatally hurt there",
+     place: "Mantes",
+     scene: "A burning FOX runs through Mantes and sets the town alight, and William's horse throws him in the embers."}
+  - {year: 1110, peg: dice, confidence: unverified,
+     event: "Mantes: Louis VI grants the town a commune charter",
+     place: "Mantes",
+     scene: "Louis VI rolls a DICE on the Mantes town table: the citizens win a commune charter."}
+  - {year: 1124, peg: hanger, confidence: medium, source: "Search: Chateau de Saint-Germain-en-Laye (c. 1124)",
+     event: "Saint-Germain-en-Laye: Louis VI builds a fortified castle above the Seine (approximate)",
+     place: "Saint-Germain-en-Laye",
+     scene: "Louis VI hangs a coat HANGER on the cliff at Saint-Germain and builds a castle wall from it."}
+  - {year: 1130, peg: mouse, confidence: medium, source: "Monumentum: Tour Guinette (c. 1130-1150)",
+     event: "Etampes: Louis VI builds the Guinette keep (approximate)",
+     place: "Etampes",
+     scene: "A MOUSE runs round and round a ring of stones at Etampes until the four-lobed Guinette keep stands."}
+  - {year: 1130, peg: mouse, confidence: medium, source: "PSS-archi: donjon de Houdan (c. 1130)",
+     event: "Houdan: Amaury III de Montfort builds the round keep (approximate)",
+     place: "Houdan",
+     scene: "Amaury de Montfort's cat drives a MOUSE into a hole at Houdan, and he builds the round keep over it."}
+  - {year: 1131, peg: moth, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Paris bans free-running pigs from the streets after a pig kills the king's son Philip",
+     place: "Rue Saint-Antoine",
+     scene: "After a pig trips Prince Philip's horse, Paris sweeps every loose pig off its streets with a giant MOTH net."}
+  - {year: 1170, peg: goose, confidence: medium, source: "Search: Chateau de Brie-Comte-Robert (vers 1170)",
+     event: "Brie-Comte-Robert: Robert of Dreux builds a square castle with seven towers (approximate)",
+     place: "Brie-Comte-Robert",
+     scene: "Robert of Dreux sets a GOOSE on each of seven corners, and seven towers grow round his square moat."}
+  - {year: 1179, peg: cowboy, confidence: unverified,
+     event: "Meaux: the count of Champagne grants the town a commune",
+     place: "Meaux",
+     scene: "A COWBOY lassos the Meaux town hall and ropes in a commune charter from the count of Champagne."}
+  - {year: 1188, peg: fife, confidence: high, source: "Pontoise fortifications leaflet (sites-cites)",
+     event: "Pontoise: Philip Augustus grants a commune charter; the citizens must build the walls",
+     place: "Pontoise",
+     scene: "A FIFE player marches Pontoise citizens to the walls: Philip's charter gives them self-rule if they build them."}
+  - {year: 1190, peg: bees, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "Philip Augustus orders a stone wall round the right bank before he leaves on crusade",
+     place: "Right bank",
+     scene: "Swarms of BEES carry stones from the Seine and build the right-bank wall while Philip sails away."}
+  - {year: 1190, peg: bees, confidence: high, source: "WP mirror: Louvre Castle",
+     event: "Philip Augustus begins the Louvre fortress on the west side of the new wall",
+     place: "Louvre",
+     scene: "Philip plants a hive of BEES on the riverbank, and their comb hardens into the stone Louvre fortress."}
+  - {year: 1202, peg: sun, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The Louvre fortress and its great round tower are finished",
+     place: "Louvre",
+     scene: "The SUN rises over the round Grosse Tour of the Louvre: the last stone is set."}
+  - {year: 1208, peg: sofa, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "The right-bank section of Philip Augustus's wall is finished",
+     place: "Right bank",
+     scene: "Philip sits on a SOFA on top of the last right-bank wall tower: the circuit is closed."}
+  - {year: 1209, peg: soap, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Work begins on the left-bank section of Philip Augustus's wall",
+     place: "Left bank",
+     scene: "Masons wash the left bank with SOAP to mark the line, and the wall's first stones go down."}
+  - {year: 1220, peg: nose, confidence: disputed, source: "WP mirror: Paris in MA (1220); Wall of Philip II (1213)",
+     event: "The left-bank section of Philip Augustus's wall is finished",
+     place: "Tour de Nesle",
+     scene: "A giant NOSE sniffs along the left-bank wall to the Tour de Nesle and finds no gap left."}
+  - {year: 1222, peg: nun, confidence: high, source: "Chateau de Dourdan press kit (April charter)",
+     event: "Dourdan: Philip Augustus finishes a new square castle",
+     place: "Dourdan",
+     scene: "A NUN lays the last stone of Philip Augustus's square castle at Dourdan."}
+  - {year: 1222, peg: nun, confidence: unverified,
+     event: "Philip Augustus and the bishop of Paris divide justice in the city by an agreement",
+     place: "Bourg l'Eveque",
+     scene: "A NUN cuts a Paris map in two and hands one half to the king, one to the bishop."}
+  - {year: 1229, peg: knob, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Carnival riot: the provost's sergeants kill students in a street fight",
+     place: "Faubourg Saint-Marcel",
+     scene: "A brass KNOB on a sergeant's club cracks a student's head in the Carnival brawl at Saint-Marcel."}
+  - {year: 1230, peg: mouse, confidence: high, source: "Geneawiki: Provins (September letters)",
+     event: "Provins: Count Thibaut IV grants the town a commune and a mayor",
+     place: "Provins",
+     scene: "Thibaut hands Provins a MOUSE wearing the mayor's chain: the town now elects its own mayor."}
+  - {year: 1233, peg: mummy, confidence: medium, source: "Search: Montfaucon study, Gutenberg (Sept)",
+     event: "Montfaucon gibbet: first mention in a written act",
+     place: "Montfaucon",
+     scene: "A MUMMY hangs from the Montfaucon gibbet in the first deed that names it."}
+  - {year: 1240, peg: horse, confidence: medium, source: "Vikidia: Tour du Temple",
+     event: "Temple: the Templars begin their great tower in Paris",
+     place: "Enclos du Temple",
+     scene: "A Templar HORSE drags huge blocks into the Temple enclosure, and the great tower starts to rise."}
+  - {year: 1251, peg: wallet, confidence: medium, source: "Catholic Encyclopedia: Pastoureaux",
+     event: "Shepherds' Crusade: the Pastoureaux march into Paris and free the Chatelet prisoners",
+     place: "Grand Chatelet",
+     scene: "A shepherd waves a fat WALLET of royal coins and leads the Pastoureaux to free the Chatelet prisoners."}
+  - {year: 1260, peg: cheese, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Geoffroy de Courferraud is the first known knight of the watch (chevalier du guet)",
+     place: "Grand Chatelet",
+     scene: "The first knight of the watch carries a lantern made of CHEESE on his night patrol of Paris."}
+  - {year: 1263, peg: gem, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Evroin de Valenciennes: first recorded provost of the merchants",
+     place: "Parloir aux Bourgeois",
+     scene: "Evroin of Valenciennes wears a GEM on his cap: the first recorded provost of the Paris merchants."}
+  - {year: 1280, peg: vase, confidence: medium, source: "WP mirror: Wall of Philip II Augustus",
+     event: "Porte du Temple: the last right-bank gate opens in the wall",
+     place: "Porte du Temple",
+     scene: "A giant VASE is wedged into the wall near the Temple and becomes the last right-bank gate."}
+  - {year: 1280, peg: vase, confidence: low, source: "HiSCoD: Provins conflict (date only)",
+     event: "Provins: cloth workers rise against the town government",
+     place: "Provins",
+     scene: "Provins weavers smash a VASE of town tax money on the mayor's floor and rise against the council."}
+  - {year: 1296, peg: peach, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Paris forms a city council of twenty-four burghers",
+     place: "Parloir aux Bourgeois",
+     scene: "Twenty-four burghers share one PEACH at a round table: Paris now has a council of twenty-four."}
+  - {year: 1301, peg: soda, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "The provost of Paris gets sixty more clerks",
+     place: "Grand Chatelet",
+     scene: "Sixty new clerks pop out of a SODA bottle into the provost's office at the Chatelet."}
+  - {year: 1306, peg: sushi, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "Rent riot: Parisians attack Etienne Barbette's house; twenty-eight rioters are hanged",
+     place: "Rue Barbette",
+     scene: "Rioters shake SUSHI rice over Etienne Barbette's burning house, and twenty-eight of them hang for it."}
+  - {year: 1320, peg: nose, confidence: medium, source: "WP: Shepherds' Crusade (1320)",
+     event: "Second Shepherds' Crusade: the Pastoureaux break into the Grand Chatelet and free its prisoners",
+     place: "Grand Chatelet",
+     scene: "A shepherd's giant NOSE rams the Chatelet door open, and the prisoners run out behind the Pastoureaux."}
+  # science
+  - {year: 1113, peg: tomb, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Work begins on a new Grand Pont; the Petit Pont is rebuilt",
+     place: "Grand Pont",
+     scene: "A TOMB lid becomes the first span of the new Grand Pont across the Seine."}
+  - {year: 1157, peg: log, confidence: medium, source: "WP mirror: Hotel-Dieu de Paris",
+     event: "Hotel-Dieu: first written mention, as the hospital of Saint-Christophe",
+     place: "Parvis Notre-Dame",
+     scene: "A LOG floats to the parvis with Saint Christopher carved on it: the hospital's first written name."}
+  - {year: 1165, peg: jelly, confidence: high, source: "WP mirror: Hotel-Dieu de Paris",
+     event: "Hotel-Dieu: Bishop Maurice de Sully starts to rebuild the hospital",
+     place: "Parvis Notre-Dame",
+     scene: "Maurice de Sully pours JELLY into new foundations and the Hotel-Dieu wards rise beside the cathedral."}
+  - {year: 1171, peg: cat, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Hospital of Saint-Gervais is founded",
+     place: "Saint-Gervais",
+     scene: "A CAT nurses a sick traveller in the new Saint-Gervais hospital beds."}
+  - {year: 1178, peg: cave, confidence: medium, source: "techno-science: Eaux de Belleville",
+     event: "Saint-Lazare: first written record of the water channels from the Pre-Saint-Gervais springs",
+     place: "Pre-Saint-Gervais",
+     scene: "Spring water pours out of a CAVE at Pre-Saint-Gervais into Saint-Lazare's new stone channels."}
+  - {year: 1185, peg: waffle, confidence: medium, source: "Lazare, Dictionnaire des rues: Petit Pont",
+     event: "Petit Pont: Maurice de Sully rebuilds it in stone",
+     place: "Petit Pont",
+     scene: "Maurice de Sully lays stone WAFFLE slabs over the Seine: the Petit Pont is stone now."}
+  - {year: 1186, peg: fish, confidence: high, source: "WP mirror: Timeline of Paris",
+     event: "Philip Augustus orders the main streets of Paris paved with stone",
+     place: "Rue Saint-Denis",
+     scene: "Philip smells a rotten FISH in the mud of his street and orders the streets of Paris paved."}
+  - {year: 1188, peg: fife, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Hospital of Sainte-Catherine is founded",
+     place: "Rue Saint-Denis",
+     scene: "A FIFE calls the sick into the new Sainte-Catherine hospital on the Rue Saint-Denis."}
+  - {year: 1206, peg: sushi, confidence: medium, source: "Lazare, Dictionnaire des rues: Petit Pont",
+     event: "Petit Pont: the bridge is restored after the flood",
+     place: "Petit Pont",
+     scene: "Workers glue the broken Petit Pont back together with sticky SUSHI rice."}
+  - {year: 1210, peg: dice, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Hospital of the Trinity is founded for travellers",
+     place: "Rue Saint-Denis",
+     scene: "Three travellers roll a DICE for the beds of the new Trinity hospital on the road to Saint-Denis."}
+  - {year: 1222, peg: nun, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "A plan sets the width of the Rue Saint-Honore at six metres",
+     place: "Rue Saint-Honore",
+     scene: "A NUN lies across the Rue Saint-Honore with her arms out: six metres, no more."}
+  - {year: 1231, peg: moth, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Draining of the Marais marshes begins",
+     place: "Marais",
+     scene: "A MOTH flies over the Marais as monks dig the first ditches and the marsh water runs off."}
+  - {year: 1255, peg: lily, confidence: medium, source: "WP mirror: Hotel-Dieu de Paris",
+     event: "Hotel-Dieu: the new hospital buildings are finished",
+     place: "Parvis Notre-Dame",
+     scene: "A white LILY goes on every bed of the finished Hotel-Dieu wards."}
+  - {year: 1260, peg: cheese, confidence: high, source: "WP mirror: Quinze-Vingts",
+     event: "Quinze-Vingts: Louis IX founds a hospital for three hundred blind men",
+     place: "Rue Saint-Honore",
+     scene: "Blind men smell their way to a wheel of CHEESE inside Louis IX's new Quinze-Vingts hospice."}
+  - {year: 1260, peg: cheese, confidence: low, source: "Search: Fountains in Paris (one source)",
+     event: "Fontaine des Innocents: first fountain at the cemetery, fed from the Pre-Saint-Gervais (approximate)",
+     place: "Les Innocents",
+     scene: "Water spouts from a hollow CHEESE at the Innocents corner: the first fountain there."}
+  - {year: 1306, peg: sushi, confidence: unverified,
+     event: "Haudriettes: Etienne Haudry founds a house for poor widows",
+     place: "Rue de la Mortellerie",
+     scene: "Etienne Haudry serves SUSHI to poor widows in the house he founds near the Greve."}
+  - {year: 1319, peg: tuba, confidence: unverified,
+     event: "Hospital of Saint-Jacques-aux-Pelerins opens for pilgrims to Compostela",
+     place: "Rue Saint-Denis",
+     scene: "A pilgrim plays a TUBA at the door of the new Saint-Jacques hospital on the Rue Saint-Denis."}
+  - {year: 1322, peg: nun, confidence: high, source: "Hektoen International; EBSCO: Jacqueline Felicie",
+     event: "Jacqueline Felicie, a woman healer, is tried and excommunicated for practising medicine without a licence",
+     place: "Faculty of Medicine",
+     scene: "The medical faculty sends a NUN to drag Jacqueline Felicie from a sickbed: no licence, so she is tried and excommunicated."}
+  - {year: 1325, peg: nail, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "First record of the bishop's sewer on the Ile de la Cite",
+     place: "Ile de la Cite",
+     scene: "A rusty NAIL marks the grate of the bishop's sewer, the first sewer named in Paris records."}
+  # religion
+  - {year: 990, peg: bees, confidence: medium, source: "WP mirror: Abbey of Saint-Germain-des-Pres",
+     event: "Saint-Germain-des-Pres: work begins on the bell tower (approximate)",
+     place: "Saint-Germain-des-Pres",
+     scene: "BEES build their comb high up, and Abbot Morard's masons follow them to begin the bell tower."}
+  - {year: 1014, peg: tower, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Saint-Germain-des-Pres: work begins on a new nave (approximate)",
+     place: "Saint-Germain-des-Pres",
+     scene: "A TOWER crane of oak lifts the first arches of the new Saint-Germain nave."}
+  - {year: 1020, peg: nose, confidence: medium, source: "WP mirror: Abbey of Saint-Germain-des-Pres",
+     event: "Saint-Germain-des-Pres: the chapel of Saint-Symphorien is built (approximate)",
+     place: "Saint-Germain-des-Pres",
+     scene: "A NOSE-shaped apse pokes out of the bell tower's base: the Saint-Symphorien chapel."}
+  - {year: 1060, peg: cheese, confidence: high, source: "WP mirror: Saint-Martin-des-Champs Priory",
+     event: "Saint-Martin-des-Champs: Henry I refounds the ruined abbey as a priory of canons",
+     place: "Saint-Martin-des-Champs",
+     scene: "Henry I trades a wheel of CHEESE for the ruins and refounds Saint-Martin-des-Champs."}
+  - {year: 1067, peg: jockey, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Saint-Martin-des-Champs: the new church is consecrated",
+     place: "Saint-Martin-des-Champs",
+     scene: "A JOCKEY gallops round the new church of Saint-Martin-des-Champs sprinkling holy water."}
+  - {year: 1079, peg: cowboy, confidence: high, source: "WP mirror: Saint-Martin-des-Champs Priory",
+     event: "Saint-Martin-des-Champs is given to Cluny",
+     place: "Saint-Martin-des-Champs",
+     scene: "A COWBOY ropes Saint-Martin-des-Champs and drags it to Abbot Hugh of Cluny."}
+  - {year: 1108, peg: sofa, confidence: medium, source: "WP mirror: Abbey of Saint Victor, Paris",
+     event: "William of Champeaux retires to a hermitage: the start of Saint-Victor (approximate)",
+     place: "Saint-Victor",
+     scene: "William of Champeaux leaves his school and lies down on a SOFA in a hermit's hut at Saint-Victor."}
+  - {year: 1113, peg: tomb, confidence: high, source: "WP mirror: Abbey of Saint Victor, Paris",
+     event: "Louis VI makes Saint-Victor an abbey of canons",
+     place: "Saint-Victor",
+     scene: "Louis VI breaks open a TOMB of gold coins and endows Saint-Victor as a royal abbey."}
+  - {year: 1118, peg: dove, confidence: unverified,
+     event: "Chapel of Saint-Aignan: Etienne de Garlande builds it in the Notre-Dame cloister",
+     place: "Rue des Ursins",
+     scene: "A white DOVE lands on the altar of Etienne de Garlande's new Saint-Aignan chapel."}
+  - {year: 1129, peg: knob, confidence: medium, source: "medievalists.net; Encyclopedia.com (some 1128)",
+     event: "Argenteuil: Abbot Suger expels the nuns, and Heloise must leave",
+     place: "Argenteuil",
+     scene: "Suger turns the door KNOB and pushes Heloise and her nuns out of Argenteuil."}
+  - {year: 1134, peg: hammer, confidence: high, source: "WP mirror: Montmartre",
+     event: "Montmartre: Louis VI founds a royal Benedictine abbey for nuns",
+     place: "Montmartre",
+     scene: "Louis VI swings a HAMMER on the hilltop and founds the royal abbey of Montmartre."}
+  - {year: 1135, peg: mill, confidence: medium, source: "WP mirror: Saint-Martin-des-Champs Priory",
+     event: "Saint-Martin-des-Champs: the choir with its double ambulatory is finished",
+     place: "Saint-Martin-des-Champs",
+     scene: "A MILL wheel turns twice round the new choir: the double ambulatory of Saint-Martin."}
+  - {year: 1139, peg: map, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The Knights Templar settle in Paris",
+     place: "Old Temple",
+     scene: "A Templar spreads a MAP of Paris and marks the house where his order settles."}
+  - {year: 1145, peg: railway, confidence: medium, source: "Mantes-la-Jolie: collegiale (begun 1140-1150)",
+     event: "Mantes: building of the collegiate church of Notre-Dame begins (approximate)",
+     place: "Mantes",
+     scene: "A RAILWAY of carts rolls stone from the Seine to start the Mantes collegiate church."}
+  - {year: 1147, peg: rock, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Montmartre: Pope Eugene III consecrates Saint-Pierre",
+     place: "Saint-Pierre de Montmartre",
+     scene: "Pope Eugene III anoints a ROCK on Montmartre and consecrates Saint-Pierre's church."}
+  - {year: 1147, peg: rock, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The Templars move into their new Paris house",
+     place: "Enclos du Temple",
+     scene: "Templar knights roll a ROCK across their new gate as they move into the Paris Temple."}
+  - {year: 1148, peg: reef, confidence: medium, source: "WP mirror: Abbey of Saint Victor, Paris",
+     event: "Sainte-Genevieve: canons from Saint-Victor reform the abbey",
+     place: "Montagne Sainte-Genevieve",
+     scene: "Saint-Victor canons sail a REEF of reform up the hill and take over Sainte-Genevieve."}
+  - {year: 1156, peg: leech, confidence: medium, source: "Musee du Patrimoine: Argenteuil abbey",
+     event: "Argenteuil: the monks find the Holy Tunic, and pilgrims come",
+     place: "Argenteuil",
+     scene: "A LEECH clings to an old robe in an Argenteuil chest: the monks find the Holy Tunic."}
+  - {year: 1157, peg: log, confidence: medium, source: "Search: Saint-Quiriace (1157; Biblissima c. 1160)",
+     event: "Provins: Henry the Liberal begins the new collegiate church of Saint-Quiriace",
+     place: "Provins",
+     scene: "Henry the Liberal rolls a giant LOG up the Provins hill as the base of Saint-Quiriace."}
+  - {year: 1163, peg: gem, confidence: high, source: "WP mirror: Abbey of Saint-Germain-des-Pres",
+     event: "Saint-Germain-des-Pres: Pope Alexander III consecrates the rebuilt church",
+     place: "Saint-Germain-des-Pres",
+     scene: "Pope Alexander III sets a GEM in the new choir altar of Saint-Germain-des-Pres."}
+  - {year: 1165, peg: jelly, confidence: medium, source: "Search: Saint-Julien-le-Pauvre (c. 1165-1170)",
+     event: "Saint-Julien-le-Pauvre: building begins on the left bank (approximate)",
+     place: "Saint-Julien-le-Pauvre",
+     scene: "Builders spread red JELLY on the old foundations and begin Saint-Julien-le-Pauvre."}
+  - {year: 1169, peg: ship, confidence: high, source: "Larousse; techno-science: Chateau de Fontainebleau",
+     event: "Fontainebleau: Thomas Becket consecrates the castle chapel of Saint-Saturnin",
+     place: "Fontainebleau",
+     scene: "Thomas Becket blesses the Fontainebleau chapel standing on the deck of a SHIP from Sens."}
+  - {year: 1175, peg: eagle, confidence: high, source: "Structurae; diocese of Meaux (850 years)",
+     event: "Meaux: building of the Gothic cathedral of Saint-Etienne begins (approximate)",
+     place: "Meaux",
+     scene: "An EAGLE drops the first stone into the choir trench at Meaux."}
+  - {year: 1183, peg: foam, confidence: medium, source: "Jewish Encyclopedia: Paris (1183)",
+     event: "The Cite synagogue becomes the church of Sainte-Madeleine after the Jews are expelled",
+     place: "Rue de la Juiverie",
+     scene: "Workers paint a cross in white FOAM over the synagogue door in the Rue de la Juiverie."}
+  - {year: 1198, peg: beehive, confidence: medium, source: "BnF via Biblissima: Saint-Antoine-des-Champs",
+     event: "Saint-Antoine-des-Champs: Fulk of Neuilly founds a house for repentant women",
+     place: "Faubourg Saint-Antoine",
+     scene: "Fulk of Neuilly hangs a BEEHIVE over the door, and repentant women swarm into Saint-Antoine-des-Champs."}
+  - {year: 1200, peg: tongue, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: the nave with its flying buttresses is finished (approximate)",
+     place: "Notre-Dame",
+     scene: "A huge TONGUE licks the last mortar into the Notre-Dame nave and its flying buttresses."}
+  - {year: 1204, peg: sewer, confidence: high, source: "WP mirror: Port-Royal-des-Champs",
+     event: "Port-Royal-des-Champs: the abbey for nuns is founded",
+     place: "Port-Royal-des-Champs",
+     scene: "A SEWER drains the wet valley, and nuns found Port-Royal on the dry ground."}
+  - {year: 1210, peg: dice, confidence: high, source: "WP mirror: Paris in MA; Timeline of Paris",
+     event: "Amalricians: followers of Amalric of Bena are burned for heresy",
+     place: "Champeaux",
+     scene: "The judges throw a DICE onto the pyre, and ten Amalrician heretics burn at Champeaux."}
+  - {year: 1210, peg: dice, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: work begins on the two west towers (approximate)",
+     place: "Notre-Dame",
+     scene: "Masons stack two piles of DICE: the west towers of Notre-Dame begin."}
+  - {year: 1219, peg: tuba, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "The Franciscans arrive in Paris (approximate)",
+     place: "Left bank",
+     scene: "A barefoot friar plays a TUBA as the first Franciscans walk into Paris."}
+  - {year: 1225, peg: nail, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: the west rose window is finished (approximate)",
+     place: "Notre-Dame",
+     scene: "A glazier hammers a NAIL into the centre of the west rose, and its wheel of glass is whole."}
+  - {year: 1226, peg: nacho, confidence: high, source: "Universalis: Filles-Dieu",
+     event: "Filles-Dieu: Bishop Guillaume d'Auvergne founds a house for reformed prostitutes",
+     place: "Rue Saint-Denis",
+     scene: "Bishop Guillaume offers a NACHO plate to street women at the gate of the new Filles-Dieu."}
+  - {year: 1228, peg: knife, confidence: high, source: "WP mirror: Royaumont Abbey",
+     event: "Royaumont: building of the Cistercian abbey begins with Louis IX's support",
+     place: "Royaumont",
+     scene: "Young Louis IX cuts the first sod at Royaumont with a KNIFE."}
+  - {year: 1230, peg: mouse, confidence: medium, source: "Search: Cordeliers (vers 1230)",
+     event: "Cordeliers: the Franciscan convent is founded on the left bank (approximate)",
+     place: "Cordeliers",
+     scene: "A MOUSE chews through a friar's rope belt, the cordelier, at the gate of the new Franciscan convent."}
+  - {year: 1231, peg: moth, confidence: high, source: "WP mirror: Basilica of Saint-Denis",
+     event: "Saint-Denis: Abbot Odo Clement begins to rebuild the old nave",
+     place: "Saint-Denis",
+     scene: "A MOTH eats the old wooden nave of Saint-Denis, and Abbot Odo begins it again in stone."}
+  - {year: 1235, peg: mill, confidence: medium, source: "WP mirror: Royaumont Abbey",
+     event: "Royaumont: building of the abbey is finished",
+     place: "Royaumont",
+     scene: "A water MILL turns at Royaumont as the monks move into their finished abbey."}
+  - {year: 1236, peg: match, confidence: high, source: "WP mirror: Maubuisson Abbey",
+     event: "Maubuisson: Blanche of Castile founds a Cistercian abbey for nuns",
+     place: "Saint-Ouen-l'Aumone",
+     scene: "Blanche of Castile strikes a MATCH and lights the first candle of Maubuisson Abbey."}
+  - {year: 1238, peg: movie, confidence: high, source: "Search: Chateau de Saint-Germain-en-Laye",
+     event: "Saint-Germain-en-Laye: Louis IX's castle chapel is finished",
+     place: "Saint-Germain-en-Laye",
+     scene: "A MOVIE projector beams light through the tall windows of Louis IX's finished chapel at Saint-Germain."}
+  - {year: 1239, peg: map, confidence: medium, source: "WP mirror: Abbey of Saint-Germain-des-Pres",
+     event: "Saint-Germain-des-Pres: Pierre de Montreuil begins the new refectory",
+     place: "Saint-Germain-des-Pres",
+     scene: "Pierre de Montreuil unrolls a MAP on the monks' table and begins their new refectory."}
+  - {year: 1242, peg: rhino, confidence: medium, source: "WP mirror: Palais de la Cite (1241 or 1242)",
+     event: "Sainte-Chapelle: Louis IX begins the chapel in the palace",
+     place: "Palais de la Cite",
+     scene: "A RHINO charges into the palace yard and breaks the ground for the Sainte-Chapelle."}
+  - {year: 1244, peg: warrior, confidence: high, source: "Seine-et-Marne tourism: abbaye du Lys",
+     event: "Le Lys: Blanche of Castile founds a Cistercian abbey near Melun",
+     place: "Dammarie-les-Lys",
+     scene: "A WARRIOR plants a lily in the field near Melun where Blanche founds the abbey of Le Lys."}
+  - {year: 1244, peg: warrior, confidence: medium, source: "WP mirror: Abbey of Saint-Germain-des-Pres",
+     event: "Saint-Germain-des-Pres: Pierre de Montreuil begins the Lady Chapel (approximate)",
+     place: "Saint-Germain-des-Pres",
+     scene: "A WARRIOR guards the Virgin's statue as Pierre de Montreuil starts her Lady Chapel."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: the two west towers are finished (approximate)",
+     place: "Notre-Dame",
+     scene: "A LASSO thrown from the north tower catches the south tower: both are finished."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: Jean de Chelles finishes the north transept rose (approximate)",
+     place: "Notre-Dame",
+     scene: "Jean de Chelles throws a glass LASSO into the north transept, and it hardens into the rose."}
+  - {year: 1254, peg: lawyer, confidence: high, source: "Search: Carmelite account (Louis IX)",
+     event: "Carmelites: Louis IX brings Carmelite friars from the Holy Land to Paris",
+     place: "Quai des Celestins",
+     scene: "A LAWYER signs the landing papers of the Carmelites Louis IX brings home from crusade."}
+  - {year: 1255, peg: lily, confidence: medium, source: "WP: Longchamp Abbey (1255; Isabelle article 1256)",
+     event: "Longchamp: Isabelle of France founds a convent of Poor Clares",
+     place: "Bois de Boulogne",
+     scene: "Isabelle of France plants a LILY in the Rouvray forest where her Longchamp convent will stand."}
+  - {year: 1257, peg: log, confidence: high, source: "BnF via Biblissima: Chartreuse de Vauvert",
+     event: "Carthusians: Louis IX calls them to Paris and gives them Vauvert",
+     place: "Vauvert",
+     scene: "Louis IX pushes a burning LOG out of haunted Vauvert castle and gives the house to the Carthusians."}
+  - {year: 1258, peg: wolf, confidence: medium, source: "Search: Blancs-Manteaux (1258)",
+     event: "Blancs-Manteaux: Louis IX settles the Servite friars in the Marais",
+     place: "Rue des Blancs-Manteaux",
+     scene: "A WOLF in a white cloak leads the Servite friars into their new Marais house."}
+  - {year: 1258, peg: wolf, confidence: high, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: work begins on the south transept front",
+     place: "Notre-Dame",
+     scene: "A WOLF digs at the south side of Notre-Dame, and masons begin the new transept front."}
+  - {year: 1259, peg: elbow, confidence: medium, source: "Search: Fontainebleau Trinitaires (1254 or 1259)",
+     event: "Fontainebleau: Trinitarian friars are settled in the castle grounds",
+     place: "Fontainebleau",
+     scene: "A Trinitarian friar nudges his ELBOW through the Fontainebleau castle gate and moves in."}
+  - {year: 1264, peg: cherry, confidence: unverified,
+     event: "Beguinage of Paris: Louis IX founds a house for beguines",
+     place: "Rue des Barres",
+     scene: "Louis IX shares a CHERRY basket with the beguines at the gate of their new house."}
+  - {year: 1270, peg: goose, confidence: medium, source: "WP mirror: Notre-Dame de Paris",
+     event: "Notre-Dame: Pierre de Montreuil finishes the south transept and its rose",
+     place: "Notre-Dame",
+     scene: "Pierre de Montreuil fits the last glass into the south rose while a GOOSE honks from the gable."}
+  - {year: 1290, peg: bees, confidence: high, source: "Search: Billettes affair (2 April 1290)",
+     event: "Billettes affair: a Jewish lender is burned on a charge of boiling a host",
+     place: "Rue des Jardins",
+     scene: "BEES swarm from a boiling pot in the Rue des Jardins, and the lender Jonathas burns on the charge."}
+  - {year: 1294, peg: bear, confidence: high, source: "Search: Eglise des Billettes (chapel 1294)",
+     event: "Billettes: an expiatory chapel is built on the site of the host affair",
+     place: "Rue des Archives",
+     scene: "A BEAR carries the stones of the expiatory chapel to the site of the house in the Rue des Jardins."}
+  - {year: 1296, peg: peach, confidence: medium, source: "Notre-Dame site / Sandron (c. 1296)",
+     event: "Notre-Dame: Pierre de Chelles begins the chapels round the apse",
+     place: "Notre-Dame",
+     scene: "Pierre de Chelles cuts a PEACH into slices and builds a chapel in each gap round the apse."}
+  - {year: 1297, peg: pig, confidence: high, source: "Monumentum: Poissy (built from 1297, charter 1304)",
+     event: "Poissy: Philip IV begins a Dominican priory on the birthplace of Saint Louis",
+     place: "Poissy",
+     scene: "A PIG roots up the ground at Poissy where Saint Louis was born, and Philip IV's priory begins."}
+  - {year: 1318, peg: dove, confidence: high, source: "Search: Notre-Dame choir screen (Ravy 1318-1344)",
+     event: "Notre-Dame: Jean Ravy begins the carved choir screen",
+     place: "Notre-Dame",
+     scene: "A DOVE perches on Jean Ravy's chisel as he carves the first scene of the choir screen."}
+  - {year: 1320, peg: nose, confidence: medium, source: "WP mirror: Basilica of Saint-Denis",
+     event: "Saint-Denis: six chapels are added on the north side of the nave (approximate)",
+     place: "Saint-Denis",
+     scene: "Six altar boys pick their NOSE in six new chapels on the north side of the Saint-Denis nave."}
+  # arts
+  - {year: 1030, peg: mouse, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Saint-Germain-des-Pres: the monk Ingelard paints manuscript miniatures (approximate)",
+     place: "Saint-Germain-des-Pres",
+     scene: "A MOUSE dips its tail in gold, and the monk Ingelard paints miniatures with it."}
+  - {year: 1160, peg: cheese, confidence: medium, source: "Search: Saint-Loup-de-Naud portal (c. 1160)",
+     event: "Saint-Loup-de-Naud: the carved west portal (approximate)",
+     place: "Saint-Loup-de-Naud",
+     scene: "Sculptors carve column statues out of a giant CHEESE for the Saint-Loup-de-Naud portal."}
+  - {year: 1175, peg: eagle, confidence: medium, source: "WP mirror: Basilica of Saint-Denis",
+     event: "Saint-Denis: the statues of the Valois portal are carved (approximate)",
+     place: "Saint-Denis",
+     scene: "An EAGLE sits on the sculptor's shoulder as he carves the Valois portal statues."}
+  - {year: 1178, peg: cave, confidence: medium, source: "WP mirror: Chateau de Vincennes",
+     event: "Vincennes: Louis VII builds the first royal house in the forest",
+     place: "Vincennes",
+     scene: "Louis VII takes shelter in a forest CAVE at Vincennes and builds a royal lodge over it."}
+  - {year: 1183, peg: foam, confidence: unverified,
+     event: "Vincennes: Philip Augustus walls the forest as a royal deer park",
+     place: "Bois de Vincennes",
+     scene: "Philip Augustus fills a stone wall round the Vincennes forest with FOAM to keep the deer in."}
+  - {year: 1230, peg: mouse, confidence: medium, source: "WP mirror: Louvre Castle (1230-1240)",
+     event: "Louvre: Louis IX adds new halls, among them the later Salle Saint-Louis (approximate)",
+     place: "Louvre",
+     scene: "A MOUSE runs into Louis IX's new ceremonial hall in the Louvre, the Salle Saint-Louis."}
+  - {year: 1264, peg: cherry, confidence: high, source: "WP mirror: Basilica of Saint-Denis",
+     event: "Saint-Denis: Abbot Matthew of Vendome moves sixteen kings and queens into new tombs",
+     place: "Saint-Denis",
+     scene: "A CHERRY rests on each of sixteen new stone effigies round the Saint-Denis crossing."}
+  - {year: 1274, peg: car, confidence: unverified,
+     event: "Saint-Denis: the monk Primat gives the king the Grandes Chroniques de France",
+     place: "Saint-Denis",
+     scene: "The monk Primat drives his big chronicle to the king in a CAR from Saint-Denis."}
+  - {year: 1296, peg: peach, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Palais de la Cite: Philip IV pulls down the old walls and enlarges the palace",
+     place: "Palais de la Cite",
+     scene: "Philip IV throws a PEACH at the old palace walls; they fall, and new halls rise."}
+  - {year: 1300, peg: tomb, confidence: medium, source: "Search: Le Dit des rues de Paris (vers 1300)",
+     event: "Guillot of Paris names the streets of Paris in his poem Dit des rues (approximate)",
+     place: "Left bank",
+     scene: "Guillot walks from a TOMB to the next street and rhymes each street name of Paris."}
+  - {year: 1310, peg: dice, confidence: low, source: "WP mirror: Timeline of Paris",
+     event: "Palais de la Cite: work begins on a clock tower",
+     place: "Quai de l'Horloge",
+     scene: "A DICE with a clock face on each side sits on the new palace tower."}
+  - {year: 1321, peg: ant, confidence: unverified,
+     event: "Jean des Murs writes his Ars novae musicae at the Sorbonne",
+     place: "Sorbonne",
+     scene: "An ANT marches across the staff as Jean des Murs writes new note values."}
+  - {year: 1323, peg: gnome, confidence: high, source: "Search: John of Jandun, Tractatus (4 Nov)",
+     event: "John of Jandun finishes his treatise in praise of Paris",
+     place: "Left bank",
+     scene: "A GNOME reads John of Jandun's praise of Paris aloud from Notre-Dame's gallery."}
+  - {year: 1325, peg: nail, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Jean Pucelle paints the Hours of Jeanne d'Evreux (approximate)",
+     place: "Rue Neuve-Notre-Dame",
+     scene: "Jean Pucelle uses a NAIL to scratch fine grey figures into the tiny Hours of Jeanne d'Evreux."}
+  # economy
+  - {year: 1053, peg: llama, confidence: medium, source: "archeologie.culture.gouv.fr: Lendit fair",
+     event: "Saint-Denis: the opening of Saint Denis's shrine starts the Lendit fair",
+     place: "Saint-Denis",
+     scene: "A LLAMA laden with goods follows the pilgrims to the opened shrine of Saint Denis: the Lendit fair begins."}
+  - {year: 1120, peg: nose, confidence: medium, source: "WP mirror: Provins",
+     event: "Provins: the Champagne fairs begin in the town",
+     place: "Provins",
+     scene: "A merchant's long NOSE sniffs cloth at the first Provins fair."}
+  - {year: 1121, peg: ant, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "Louis VI gives the Paris water merchants a fee on each wine boat",
+     place: "Port de Greve",
+     scene: "An ANT climbs each wine boat at the Greve and takes one coin for the water merchants."}
+  - {year: 1124, peg: hanger, confidence: high, source: "archeologie.culture.gouv.fr: Saint-Denis",
+     event: "Saint-Denis: Louis VI gives the abbey all revenues of the Lendit fair",
+     place: "Plaine Saint-Denis",
+     scene: "Louis VI hangs the Lendit fair's purse on a HANGER in the abbot's room."}
+  - {year: 1134, peg: hammer, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Louis VI lets Paris merchants seize the goods of debtors",
+     place: "Paris",
+     scene: "A merchant smashes a debtor's chest open with a HAMMER, with Louis VI's leave."}
+  - {year: 1141, peg: radio, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "First record of money changers working in Paris",
+     place: "Grand Pont",
+     scene: "A money changer counts coins into a RADIO speaker on the Grand Pont."}
+  - {year: 1141, peg: radio, confidence: unverified,
+     event: "Louis VII sells the Place de Greve to the burghers on condition it stays an open market",
+     place: "Place de Greve",
+     scene: "Louis VII sells the Greve for a RADIO, and the burghers keep it an open market square."}
+  - {year: 1146, peg: roach, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "First written mention of the Paris butchers' guild",
+     place: "Grande Boucherie",
+     scene: "A ROACH runs over the butchers' block in the first deed that names their guild."}
+  - {year: 1170, peg: goose, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "Louis VII confirms the privileges of the Paris water merchants",
+     place: "Port de Greve",
+     scene: "A GOOSE carries Louis VII's sealed charter to the water merchants at the Greve."}
+  - {year: 1176, peg: cage, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "First written mention of the Saint-Germain fair",
+     place: "Saint-Germain-des-Pres",
+     scene: "A CAGE of song birds is the first thing sold at the Saint-Germain fair."}
+  - {year: 1220, peg: nose, confidence: unverified,
+     event: "Philip Augustus gives the water merchants the town criers and the weights and measures",
+     place: "Port de Greve",
+     scene: "A town crier shouts through a giant NOSE: Philip gives the criers to the water merchants."}
+  - {year: 1260, peg: cheese, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The surgeons and the barbers of Paris form guilds",
+     place: "Rue de la Harpe",
+     scene: "A barber shaves a CHEESE and a surgeon cuts it: both crafts now form guilds."}
+  - {year: 1292, peg: piano, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "The first surviving tax roll (livre de la taille) lists the Paris taxpayers",
+     place: "Paris",
+     scene: "A tax clerk plays a PIANO whose keys are the names of thousands of Paris taxpayers."}
+  - {year: 1304, peg: sewer, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "The money changers move onto the Grand Pont, which becomes the Pont au Change",
+     place: "Pont au Change",
+     scene: "Money changers fish coins out of a SEWER under the Grand Pont and set up their stalls on it."}
+  - {year: 1305, peg: seal, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Philip IV fixes a top price for grain brought to Paris",
+     place: "Halles",
+     scene: "A SEAL balances a grain sack on its nose at the Halles: the price cannot go higher."}
+  - {year: 1321, peg: ant, confidence: high, source: "medievalists.net; WP: 1320s in music",
+     event: "Thirty-seven minstrels sign the charter of the Paris minstrels' guild",
+     place: "Rue des Jongleurs",
+     scene: "An ANT orchestra of thirty-seven minstrels signs the guild charter in the Rue des Jongleurs."}
+  # society
+  - {year: 1021, peg: ant, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Students begin to come to the Notre-Dame cathedral school",
+     place: "Notre-Dame cloister",
+     scene: "Each student rides an ANT over the Petit Pont to the Notre-Dame cathedral school."}
+  - {year: 1102, peg: sun, confidence: medium, source: "Search: Abelard career (school at Melun c. 1102)",
+     event: "Abelard opens a school at Melun, then moves it to Corbeil",
+     place: "Melun",
+     scene: "Abelard opens a sunshade on the Melun island: under the SUN he starts his own school."}
+  - {year: 1112, peg: tongue, confidence: high, source: "archeologie.culture.gouv.fr: Saint-Denis",
+     event: "Saint-Denis: Louis VI lets five Jewish families settle in the walled town",
+     place: "Saint-Denis",
+     scene: "Louis VI sticks out his TONGUE as a seal on the deed for five Jewish families at Saint-Denis."}
+  - {year: 1113, peg: tomb, confidence: low, source: "Search: Abelard summary (one weak source)",
+     event: "Abelard opens a school of theology in Paris",
+     place: "Notre-Dame cloister",
+     scene: "Abelard lectures from a TOMB lid in the Notre-Dame cloister to hundreds of students."}
+  - {year: 1117, peg: dog, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Fulbert's men attack and castrate Abelard",
+     place: "Notre-Dame cloister",
+     scene: "Fulbert's DOG leads his men to Abelard's bed at night, and they castrate him."}
+  - {year: 1120, peg: nose, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Teachers and students settle on the Montagne Sainte-Genevieve: the start of the Latin Quarter (approximate)",
+     place: "Montagne Sainte-Genevieve",
+     scene: "Students follow a big NOSE up the Montagne Sainte-Genevieve and settle: the Latin Quarter begins."}
+  - {year: 1180, peg: vase, confidence: high, source: "WP: College des Dix-Huit",
+     event: "College des Dix-Huit: the first college in Paris, for eighteen poor students",
+     place: "Hotel-Dieu",
+     scene: "Eighteen poor students share one VASE of soup in the first Paris college."}
+  - {year: 1186, peg: fish, confidence: medium, source: "Search: Innocents (1186; Neyrinck doubts)",
+     event: "Les Innocents: Philip Augustus walls the cemetery",
+     place: "Les Innocents",
+     scene: "A FISH-shaped stone wall closes round the Innocents cemetery by Philip's order."}
+  - {year: 1196, peg: peach, confidence: disputed, source: "Lazare: Petit Pont (1196); Timeline of Paris (1197)",
+     event: "Seine flood carries away the Petit Pont and drives the king from his palace",
+     place: "Petit Pont",
+     scene: "A giant PEACH stone floats down the flooded Seine and knocks the Petit Pont away."}
+  - {year: 1202, peg: sun, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Sainte-Genevieve's abbot buys the clos Garlande and builds houses for students",
+     place: "Clos Garlande",
+     scene: "Sainte-Genevieve's abbot buys the clos Garlande under a blazing SUN and builds student houses on it."}
+  - {year: 1207, peg: ski, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The pope limits the chairs of theology in Paris to eight",
+     place: "Notre-Dame cloister",
+     scene: "Eight theology masters SKI down from the pope's letter; no more chairs are allowed."}
+  - {year: 1209, peg: soap, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The second college for poor students opens in Paris",
+     place: "Paris",
+     scene: "Poor students wash with one cake of SOAP in the second Paris college."}
+  - {year: 1219, peg: tuba, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "The pope bans the teaching of Roman civil law in Paris",
+     place: "Left bank",
+     scene: "A TUBA blast from Rome drowns out the law masters: civil law teaching in Paris is banned."}
+  - {year: 1222, peg: nun, confidence: medium, source: "WP mirror: University of Paris",
+     event: "A papal bull first names the nations of the University of Paris",
+     place: "Left bank",
+     scene: "A NUN reads out the names of the university nations in Honorius III's bull."}
+  - {year: 1229, peg: knob, confidence: high, source: "WP mirror: University of Paris",
+     event: "University of Paris strike: masters and students leave the city",
+     place: "Left bank",
+     scene: "The masters hang a door KNOB with a closed sign on the schools and leave Paris."}
+  - {year: 1231, peg: moth, confidence: high, source: "WP mirror: University of Paris",
+     event: "Parens scientiarum: Gregory IX's bull ends the strike and gives the university its rights",
+     place: "Left bank",
+     scene: "A MOTH flies the pope's bull to Paris, and the masters return with the right to strike."}
+  - {year: 1245, peg: railway, confidence: medium, source: "Search: College des Bernardins (1245/1246/1248)",
+     event: "College des Bernardins: Stephen of Lexington founds a college for Cistercian students",
+     place: "Rue de Poissy",
+     scene: "A RAILWAY of Cistercian monks arrives at Stephen of Lexington's new college by the Seine."}
+  - {year: 1248, peg: reef, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Bonaventure begins teaching at the University of Paris",
+     place: "Cordeliers",
+     scene: "Bonaventure steers a boat through a coral REEF to reach his teaching chair."}
+  - {year: 1249, peg: rope, confidence: medium, source: "WP mirror: University of Paris",
+     event: "The four nations of the university have their own proctors",
+     place: "Left bank",
+     scene: "Four proctors pull one ROPE: the French, Picard, Norman and English nations."}
+  - {year: 1252, peg: lion, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Thomas Aquinas begins teaching in Paris",
+     place: "Saint-Jacques",
+     scene: "A LION lies down at Thomas Aquinas's feet as he gives his first lecture at Saint-Jacques."}
+  - {year: 1254, peg: lawyer, confidence: medium, source: "WP mirror: University of Paris",
+     event: "The four faculties of the university are formally set up",
+     place: "Left bank",
+     scene: "A LAWYER divides the university into four faculties: arts, law, medicine, theology."}
+  - {year: 1254, peg: lawyer, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Alphonse of Poitiers builds a town house near the Louvre, and nobles follow",
+     place: "Louvre",
+     scene: "A LAWYER sells Alphonse of Poitiers a plot by the Louvre, and other nobles queue behind him."}
+  - {year: 1256, peg: leech, confidence: medium, source: "WP mirror: Paris in the Middle Ages",
+     event: "Louis IX tries to limit prostitutes to certain streets",
+     place: "Rue Glatigny",
+     scene: "A LEECH sucks prostitutes off the main streets into a few back lanes, by Louis IX's order."}
+  - {year: 1257, peg: log, confidence: medium, source: "WP mirror: University of Paris",
+     event: "A college for Danish students is founded in Paris",
+     place: "Rue de la Montagne-Sainte-Genevieve",
+     scene: "Danish students float to Paris on a LOG and found their own college."}
+  - {year: 1261, peg: jet, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "A college for students of Cluny is set up in Paris",
+     place: "Place de la Sorbonne",
+     scene: "A JET flies Cluny monks to Paris, where they found their students' college."}
+  - {year: 1280, peg: vase, confidence: high, source: "WP mirror: University of Paris",
+     event: "College d'Harcourt: Raoul d'Harcourt founds a college for Norman students",
+     place: "Rue de la Harpe",
+     scene: "Raoul d'Harcourt fills a VASE with Norman apples for the students of his new college."}
+  - {year: 1280, peg: vase, confidence: high, source: "Search: monuments-nationaux; WP: Paris in MA",
+     event: "December flood carries away the Grand Pont and damages the Petit Pont",
+     place: "Grand Pont",
+     scene: "A floating VASE the size of a barge smashes the Grand Pont in the December flood."}
+  - {year: 1296, peg: peach, confidence: high, source: "HAL: Noizet (20 Dec); monuments-nationaux",
+     event: "Seine flood: the Grand Pont collapses and the Petit Pont goes again",
+     place: "Grand Pont",
+     scene: "PEACH stones fill the flooding Seine and push both Paris bridges down in December."}
+  - {year: 1302, peg: sun, confidence: medium, source: "BnF via Biblissima (1302; Initiale 1303)",
+     event: "College du Cardinal Lemoine: Cardinal Jean Lemoine founds it on the Rue Saint-Victor",
+     place: "Rue Saint-Victor",
+     scene: "Cardinal Lemoine opens a red umbrella against the SUN over his new college gate."}
+  - {year: 1305, peg: seal, confidence: high, source: "WP mirror: College de Navarre",
+     event: "College de Navarre: Queen Joan of Navarre founds it by her will",
+     place: "Montagne Sainte-Genevieve",
+     scene: "A SEAL balances Queen Joan's will on its nose: the College de Navarre is founded."}
+  - {year: 1309, peg: soap, confidence: unverified,
+     event: "College de Bayeux: Bishop Guillaume Bonnet founds it",
+     place: "Rue de la Harpe",
+     scene: "Bishop Bonnet washes the new Bayeux college floors with SOAP before the students arrive."}
+  - {year: 1314, peg: tower, confidence: high, source: "WP: College de Montaigu",
+     event: "College de Montaigu: Gilles Aycelin de Montaigu founds it",
+     place: "Montagne Sainte-Genevieve",
+     scene: "Gilles Aycelin builds a TOWER of books on the hill and calls it his college."}
+  - {year: 1314, peg: tower, confidence: high, source: "Search: College de Laon (1314)",
+     event: "College de Laon and de Presles: Raoul de Presles and Guy of Laon found it",
+     place: "Rue du Clos-Bruneau",
+     scene: "Raoul de Presles and Guy of Laon share one TOWER room with twenty-eight students."}
+  - {year: 1317, peg: dog, confidence: medium, source: "Search: College du Plessis (vers 1317)",
+     event: "College du Plessis: Geoffroy du Plessis founds it (approximate)",
+     place: "Rue Saint-Jacques",
+     scene: "A DOG guards the door of Geoffroy du Plessis's new college on the Rue Saint-Jacques."}
+  - {year: 1317, peg: dog, confidence: unverified,
+     event: "College de Narbonne: Archbishop Bernard de Farges founds it",
+     place: "Rue de la Harpe",
+     scene: "A DOG from Narbonne carries the archbishop's founding deed to the new college."}
+  - {year: 1321, peg: ant, confidence: unverified,
+     event: "College de Cornouaille is founded for Breton students",
+     place: "Rue du Plâtre",
+     scene: "An ANT hill grows into the small college of Cornouaille for Breton students."}
+  - {year: 1325, peg: nail, confidence: medium, source: "WP mirror: University of Paris",
+     event: "Scots College: a college for Scottish students is founded",
+     place: "Rue des Amandiers",
+     scene: "A Scottish student hammers a NAIL into the door of the new Scots College."}
+  - {year: 1325, peg: nail, confidence: high, source: "Cotes-d'Armor archives: College de Treguier",
+     event: "College de Treguier: Guillaume de Coatmohan founds it for six Breton students",
+     place: "Place Cambrai",
+     scene: "Guillaume de Coatmohan gives six Breton students one NAIL each to hang their gowns."}
+  - {year: 1326, peg: nacho, confidence: medium, source: "WP mirror: Timeline of Paris",
+     event: "Ice breaks the wooden bridges; boats supply the Ile de la Cite for five weeks",
+     place: "Ile de la Cite",
+     scene: "A frozen NACHO plate of ice floes smashes the bridges, and boats feed the Cite for five weeks."}
+  - {year: 1328, peg: knife, confidence: high, source: "WP mirror: Paris in the Middle Ages",
+     event: "Census of parishes and hearths: about sixty-one thousand hearths in Paris",
+     place: "Paris",
+     scene: "A tax clerk cuts tally marks with a KNIFE: sixty-one thousand hearths, two hundred thousand people."}
+  - {year: 1328, peg: knife, confidence: unverified,
+     event: "Jean Buridan is rector of the University of Paris",
+     place: "Left bank",
+     scene: "Jean Buridan carries a KNIFE in his rector's procession through the Latin Quarter."}
+world_refs:
+  - {year: 1124, event: "Louis VI raises the Oriflamme at Saint-Denis against Henry V", cell: western_europe_politics_500_1500}
+  - {year: 1137, event: "Champeaux market: Louis VI shares control (origin of Les Halles)", cell: western_europe_economy_500_1500}
+  - {year: 1140, event: "Saint-Denis: Suger's west front dedicated", cell: western_europe_arts_500_1500}
+  - {year: 1144, event: "Saint-Denis: Suger's choir dedicated, the first Gothic choir", cell: western_europe_arts_500_1500}
+  - {year: 1150, event: "Peter Lombard writes the Sentences in Paris", cell: western_europe_religion_500_1500}
+  - {year: 1150, event: "University of Paris takes shape from the cathedral schools", cell: western_europe_society_500_1500}
+  - {year: 1160, event: "Leonin's Magnus liber organi at Notre-Dame", cell: western_europe_arts_500_1500}
+  - {year: 1163, event: "Notre-Dame de Paris: cornerstone laid", cell: western_europe_arts_500_1500}
+  - {year: 1182, event: "Notre-Dame: high altar of the new choir consecrated", cell: western_europe_arts_500_1500}
+  - {year: 1183, event: "Philip Augustus builds two market halls at Les Halles", cell: western_europe_economy_500_1500}
+  - {year: 1198, event: "Perotin's four-voice organum sung at Notre-Dame", cell: western_europe_arts_500_1500}
+  - {year: 1200, event: "Student-townsmen fight; Philip II gives Paris scholars church courts", cell: western_europe_society_500_1500}
+  - {year: 1215, event: "Papal legate gives the University of Paris its first statutes", cell: western_europe_society_500_1500}
+  - {year: 1217, event: "Dominicans in Paris: priory of Saint-Jacques", cell: western_europe_religion_500_1500}
+  - {year: 1220, event: "Sacrobosco in Paris: On the Sphere", cell: western_europe_science_500_1500}
+  - {year: 1229, event: "Treaty of Paris (Meaux) ends the Albigensian Crusade", cell: western_europe_politics_500_1500}
+  - {year: 1240, event: "Disputation of Paris: the Talmud on trial", cell: western_europe_religion_500_1500}
+  - {year: 1242, event: "Talmud books burned in Paris", cell: western_europe_religion_500_1500}
+  - {year: 1248, event: "Sainte-Chapelle consecrated", cell: western_europe_arts_500_1500}
+  - {year: 1257, event: "Robert de Sorbon founds the Sorbonne", cell: western_europe_society_500_1500}
+  - {year: 1258, event: "Treaty of Corbeil", cell: western_europe_politics_500_1500}
+  - {year: 1259, event: "Treaty of Paris between Louis IX and Henry III", cell: western_europe_politics_500_1500}
+  - {year: 1261, event: "Etienne Boileau becomes provost of Paris", cell: western_europe_economy_500_1500}
+  - {year: 1268, event: "Boileau's Book of Trades", cell: western_europe_economy_500_1500}
+  - {year: 1270, event: "Tempier condemns thirteen Aristotelian errors", cell: western_europe_religion_500_1500}
+  - {year: 1277, event: "Tempier condemns two hundred and nineteen propositions", cell: western_europe_religion_500_1500}
+  - {year: 1296, event: "Lanfranc of Milan completes his Great Surgery in Paris", cell: western_europe_science_500_1500}
+  - {year: 1302, event: "First Estates-General (at Notre-Dame)", cell: western_europe_politics_500_1500}
+  - {year: 1306, event: "Philip IV expels the Jews (Paris property seized)", cell: western_europe_society_500_1500}
+  - {year: 1307, event: "Arrest of the Templars at the Paris Temple", cell: western_europe_politics_500_1500}
+  - {year: 1310, event: "Marguerite Porete burned in Paris", cell: western_europe_religion_500_1500}
+  - {year: 1314, event: "Jacques de Molay burned on the Ile aux Juifs", cell: western_europe_politics_500_1500}
+  - {year: 1320, event: "Paris version of the Alfonsine Tables", cell: western_europe_science_500_1500}
+  - {year: 1322, event: "Philippe de Vitry's Ars nova", cell: western_europe_arts_500_1500}
+out_refs:
+  - {year: 996, event: "Hugh Capet dies in Paris and is buried at Saint-Denis", reason: "royal burial"}
+  - {year: 1031, event: "Robert II dies at Melun", reason: "royal death"}
+  - {year: 1130, event: "Council of Etampes chooses Innocent II", reason: "church council"}
+  - {year: 1131, event: "Prince Philip, the king's son, dies after a fall in Paris", reason: "royal death"}
+  - {year: 1147, event: "Louis VII takes the Oriflamme at Saint-Denis for the Second Crusade", reason: "national army"}
+  - {year: 1180, event: "Philip Augustus arrests the Jewish leaders of Paris for ransom", reason: "royal fiscal act"}
+  - {year: 1182, event: "Philip Augustus expels the Jews from the royal domain", reason: "royal edict for the domain"}
+  - {year: 1185, event: "Patriarch Heraclius preaches the crusade at Notre-Dame", reason: "crusade appeal"}
+  - {year: 1190, event: "Philip Augustus's testament puts Paris burghers in charge of the royal treasure", reason: "national regency"}
+  - {year: 1198, event: "Philip Augustus lets the Jews come back", reason: "royal edict for the domain"}
+  - {year: 1214, event: "Louis IX born at Poissy", reason: "royal birth"}
+  - {year: 1214, event: "Paris celebrates the victory of Bouvines for a week", reason: "national victory"}
+  - {year: 1239, event: "Louis IX carries the Crown of Thorns into Paris", reason: "royal relic ceremony"}
+  - {year: 1250, event: "Parlement of Paris takes shape", reason: "national court"}
+  - {year: 1268, event: "Philip IV born at Fontainebleau", reason: "royal birth"}
+  - {year: 1270, event: "Louis IX leaves Vincennes for his last crusade", reason: "national army"}
+  - {year: 1274, event: "Philip III marries Marie of Brabant at Vincennes", reason: "royal marriage"}
+  - {year: 1291, event: "Philip IV arrests the Lombard money lenders", reason: "national finance"}
+  - {year: 1303, event: "Estates-General meet at the Louvre", reason: "national assembly"}
+  - {year: 1307, event: "Philip IV orders the Templar trials from Maubuisson", reason: "national court case"}
+  - {year: 1313, event: "Pentecost feast in Paris for the knighting of Philip IV's sons", reason: "royal ceremony"}
+  - {year: 1314, event: "Tour de Nesle affair: the king's daughters-in-law condemned", reason: "royal court scandal"}
+  - {year: 1315, event: "Enguerrand de Marigny hanged at Montfaucon", reason: "national minister"}
+  - {year: 1316, event: "Louis X dies at Vincennes", reason: "royal death"}
+  - {year: 1322, event: "Philip V dies at Vincennes", reason: "royal death"}
+  - {year: 1328, event: "Charles IV dies at Vincennes; the Capetian line ends", reason: "royal death"}
