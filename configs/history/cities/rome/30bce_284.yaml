@@ -1,0 +1,578 @@
+# City: Rome x 30 BCE to 284 CE (the Principate, Augustus to Diocletian). DRAFT 2026-11-19.
+# Area: Metropolitan City of Rome Capital (Rome, Ostia, Portus, Antium, Lanuvium, Albano, Nemi, Subiaco,
+# Centumcellae, Prima Porta, Fidenae, Praeneste, ...). Imperial court OUT; emperors' buildings, games,
+# fire relief and city laws IN; a national event whose main stage is the city is a card (cities.md).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs (the world grid holds most famous Roman monuments of this era).
+# Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: Cassius Dio books 54, 55, 59 (Thayer), Canter "Conflagrations in Ancient Rome" (CJ 27, Thayer),
+# ostia-antica.org, Platner (via search), Livius, Turismo Roma, WP mirror (monument articles, 2023-10).
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year. Approximate year ending 00 -> year // 10 under 1000.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: -29, peg: knob, confidence: unverified,
+     event: "Curia Julia: Octavian dedicates the new senate house in the Forum",
+     scene: "Octavian twists a giant bronze KNOB on the door of the new Curia Julia, and the senate house in the Forum opens."}
+  - {year: -26, peg: nacho, confidence: high, source: "WP mirror: Saepta Julia (completed 26 BCE)",
+     event: "Agrippa completes and dedicates the Saepta Julia, the marble voting hall",
+     place: "Campus Martius",
+     scene: "Agrippa sets a marble NACHO, big as a field, on the Campus Martius: the finished Saepta Julia, where citizens file in to vote."}
+  - {year: -26, peg: nacho, confidence: disputed, source: "List of urban prefects (26 BCE); WP Messalla (25 BCE)",
+     event: "Messalla Corvinus, the first city prefect, resigns the post after six days",
+     scene: "Messalla Corvinus eats one NACHO a day in the city prefect's chair, then throws down the office after six days."}
+  - {year: -22, peg: nun, confidence: high, source: "Cassius Dio 54.1 (Thayer)",
+     event: "Famine riot: the people threaten to burn the senate in its house unless Augustus becomes dictator",
+     place: "Curia",
+     scene: "A NUN with a torch leads the hungry crowd, locks the senators in the Curia and threatens to burn it unless Augustus becomes dictator."}
+  - {year: -21, peg: ant, confidence: high, source: "Cassius Dio 54.6 (Thayer)",
+     event: "Riots in the city over the election of the consuls",
+     place: "Campus Martius",
+     scene: "An army of ANT voters brawls in the Campus Martius over who will be consul, and the city riots for days."}
+  - {year: -19, peg: tuba, confidence: high, source: "Cassius Dio 54.10 (Thayer)",
+     event: "Election violence and murders; the senate votes the consul a guard",
+     scene: "A TUBA player clubs a rival candidate's man to death at the consular election, and the senate votes the consul a bodyguard."}
+  - {year: -19, peg: tuba, confidence: medium, source: "Smith's Dictionary; WP Egnatius Rufus (19 BCE)",
+     event: "Egnatius Rufus, popular for his private fire brigade, is executed for a plot against Augustus",
+     place: "Tullianum prison",
+     scene: "In the Tullianum the executioner strangles Egnatius Rufus, hero of the fire brigade, with the cord of a brass TUBA."}
+  - {year: -8, peg: sofa, confidence: medium, source: "Cassius Dio 55.6 (Thayer)",
+     event: "Augustus enlarges the pomerium, the sacred boundary of the city",
+     scene: "Augustus drags a giant SOFA round the edge of Rome and pushes the sacred pomerium boundary further out."}
+  - {year: -7, peg: ski, confidence: high, source: "Cassius Dio 55.8 (Thayer)",
+     event: "Augustus opens the Diribitorium, the largest building under a single roof, and the Campus Agrippae",
+     place: "Campus Martius",
+     scene: "A giant SKI forms the roof beam of the Diribitorium, the widest single roof ever built, and Augustus opens it to the people."}
+  - {year: -7, peg: ski, confidence: high, source: "Britannica; WP 14 regions; Cassius Dio 55.8",
+     event: "Augustus divides the city into fourteen regions and its streets into wards with their own masters",
+     scene: "Augustus slices the map of Rome with a SKI into fourteen regions and hands every street ward to its own masters."}
+  - {year: 15, peg: doll, confidence: high, source: "Tacitus Ann. 1.77 (Hamburg violence database)",
+     event: "Theatre riot over pantomime dancers: a centurion and soldiers are killed",
+     scene: "Fans of a rival pantomime dancer swing a heavy DOLL like a club in the theatre and kill a centurion and his soldiers."}
+  - {year: 23, peg: gnome, confidence: high, source: "WP mirror: Castra Praetoria (built 23)",
+     event: "Sejanus builds the Castra Praetoria and brings all the guard cohorts into one walled camp",
+     place: "Viminal",
+     scene: "A GNOME surveyor marks out a walled camp on the Viminal for Sejanus, and every praetorian cohort marches into the Castra Praetoria."}
+  - {year: 32, peg: moon, confidence: high, source: "Tacitus Ann. 6.13 (MIT OCW source text)",
+     event: "Grain prices nearly cause a riot; the theatre crowd shouts demands for days",
+     scene: "The theatre crowd hurls a MOON-shaped loaf at the stage and shouts for days against the price of grain."}
+  - {year: 49, peg: rope, confidence: high, source: "the-past.com: Claudian pomerium cippus (49)",
+     event: "Claudius extends the pomerium and marks it with boundary stones",
+     scene: "Claudius stretches a ROPE out past the Aventine and sets boundary stones along it: the pomerium grows."}
+  - {year: 60, peg: cheese, confidence: medium, source: "WP: Antium (colony and harbour 60)",
+     event: "Antium: Nero founds a colony of veterans in his birthplace",
+     scene: "Nero hands each veteran a wheel of CHEESE and a plot of land at Antium, and a colony is founded in his birthplace."}
+  - {year: 62, peg: chain, confidence: high, source: "Tacitus Ann. 14.61 (CAMWS abstracts)",
+     event: "Mass protest for Octavia: crowds pull down Poppaea's statues in the Forum",
+     scene: "The crowd loops a CHAIN round Poppaea's statues and pulls them down in the Forum, until soldiers drive the people off."}
+  - {year: 64, peg: cherry, confidence: unverified,
+     event: "Nero's rebuilding law after the fire: wide streets, porches, stone walls and water at hand",
+     scene: "Nero's builders face every new block with fire-proof stone hard as a CHERRY pit and leave the streets wide and straight."}
+  - {year: 75, peg: eagle, confidence: high, source: "Univ. Complutense GERI article; WP Pomerium cippi",
+     event: "Vespasian and Titus extend the pomerium",
+     scene: "An EAGLE drops new boundary stones in a wider ring round Rome as Vespasian and Titus push out the pomerium."}
+  - {year: 97, peg: pig, confidence: high, source: "Livius: Casperius Aelianus; WP",
+     event: "Praetorians besiege Nerva in the palace and kill Domitian's killers",
+     place: "Palatine",
+     scene: "Mutinous praetorians tie the chamberlain Parthenius to a PIG, drag him out of Nerva's palace and kill him for Domitian's murder."}
+  - {year: 121, peg: ant, confidence: medium, source: "Univ. Complutense GERI article (Hadrian 121)",
+     event: "Hadrian renews the line of the pomerium with new boundary stones",
+     scene: "A line of ANT surveyors marches round Rome for Hadrian and drops fresh boundary stones on the old pomerium."}
+  - {year: 192, peg: piano, confidence: disputed, source: "Britannica; History Collection (192); luc.edu (190)",
+     event: "Commodus renames Rome the Colony of Commodus",
+     scene: "Commodus plays a hymn to himself on a PIANO and renames Rome the Colony of Commodus, with himself as founder."}
+  - {year: 193, peg: palm, confidence: medium, source: "Herodian 2.7 (Livius); Historia Augusta",
+     event: "The crowd in the Circus Maximus jeers Didius Julianus and calls for Niger",
+     scene: "Angry Romans wave PALM fronds in the Circus Maximus, jeer Didius Julianus and shout for Niger to come and save them."}
+  - {year: 198, peg: beehive, confidence: disputed, source: "WP Castra Albana (c. 198); italia.it (202)",
+     event: "Severus builds Castra Albana, the fortress of the Second Parthian legion at Albano",
+     place: "Albano Laziale",
+     scene: "Severus builds a stone BEEHIVE of barracks at Albano, and the Second Parthian legion swarms into it, a day's march from Rome."}
+  - {year: 211, peg: tattoo, confidence: high, source: "WP mirror: Geta (26 Dec 211); Cassius Dio",
+     event: "Caracalla has Geta killed in the palace; about twenty thousand of his people are killed",
+     place: "Palatine",
+     scene: "After centurions kill Geta in his mother's arms, Caracalla reads a TATTOO-covered list, and twenty thousand of Geta's friends die."}
+  - {year: 222, peg: nun, confidence: high, source: "WP mirror: Elagabalus (March 222); Cassius Dio",
+     event: "Praetorians kill Elagabalus, drag his body through the streets and throw it into the Tiber",
+     scene: "Praetorians kill Elagabalus in their camp, drag his body through the streets, and a NUN shoves it off a bridge into the Tiber."}
+  - {year: 228, peg: knife, confidence: disputed, source: "WP mirror: Ulpian (228; Cleve argues 223)",
+     event: "Praetorians kill the prefect Ulpian in the palace during fighting with the people",
+     place: "Palatine",
+     scene: "A praetorian's KNIFE kills the jurist Ulpian in the palace while soldiers and the city crowd fight in the streets."}
+  - {year: 238, peg: movie, confidence: high, source: "Herodian 7.12 (Livius); WP Castra Praetoria",
+     event: "The people besiege the Castra Praetoria and cut its water; the street war burns a great part of Rome",
+     scene: "Like an action MOVIE, the people storm the Castra Praetoria, cut its water, and the street war sets a huge part of Rome alight."}
+  - {year: 238, peg: movie, confidence: high, source: "WP mirror: Pupienus; Livius (29 July 238)",
+     event: "Praetorians drag Pupienus and Balbinus from the palace to their camp and kill them",
+     place: "Castra Praetoria",
+     scene: "Praetorians tie Pupienus and Balbinus to a MOVIE camera cart, wheel them to the camp baths and hack them to death."}
+  - {year: 275, peg: eagle, confidence: medium, source: "WP mirror: Aurelian Walls (built 271-275)",
+     event: "The Aurelian Walls are completed round the city",
+     scene: "An EAGLE sets the last brick on the Aurelian Walls, and Rome stands behind nineteen km of new defences."}
+  # science
+  - {year: -20, peg: nose, confidence: high, source: "Cassius Dio 54.8 (Thayer); Encyclopaedia Romana",
+     event: "Augustus takes charge of the roads and sets up the Golden Milestone in the Forum",
+     scene: "Augustus, commissioner of the roads, gilds a stone NOSE in the Forum: the Golden Milestone, where every road begins."}
+  - {year: -11, peg: tattoo, confidence: medium, source: "Britannica; CSUN (11 BCE; some name Agrippa first)",
+     event: "Messalla Corvinus becomes curator of the water supply, a new standing board",
+     scene: "Messalla Corvinus gets a TATTOO of an aqueduct on his arm as Rome's new curator of the water supply."}
+  - {year: -11, peg: tattoo, confidence: high, source: "WP mirror: Aqua Marcia (rebuilt 11-4 BCE)",
+     event: "Augustus begins to rebuild the Aqua Marcia, Tepula and Julia",
+     scene: "Augustus seals each repaired arch of the Marcia, Tepula and Julia aqueducts with a TATTOO of his name."}
+  - {year: -8, peg: sofa, confidence: high, source: "Platner; OSU KB CIL 6.31541 (8 BCE)",
+     event: "The consuls mark the public banks of the Tiber with boundary stones",
+     scene: "The consuls set a stone SOFA every few metres along the Tiber bank to show where public river land begins."}
+  - {year: -7, peg: ski, confidence: medium, source: "Platner (Augustus, year after 8 BCE); CIL 6.31542",
+     event: "Augustus marks the Tiber banks again with a second set of boundary stones",
+     scene: "Augustus plants a SKI upright at each bend of the Tiber as a new marker of the public bank."}
+  - {year: 37, peg: mug, confidence: medium, source: "WP mirror: Aqua Virgo (Tiberius 37)",
+     event: "Tiberius repairs the Aqua Virgo",
+     scene: "Tiberius pours mortar from a MUG into the cracked arches of the Aqua Virgo and seals Agrippa's aqueduct."}
+  - {year: 46, peg: roach, confidence: high, source: "WP mirror: Aqua Virgo (inscription, Via del Nazareno)",
+     event: "Claudius rebuilds the arches of the Aqua Virgo that Caligula pulled apart",
+     place: "Via del Nazareno",
+     scene: "A giant ROACH hauls back the stones Caligula took, and Claudius sets the Aqua Virgo arches up again by the Via del Nazareno."}
+  - {year: 46, peg: roach, confidence: high, source: "WP mirror: Portus (Claudian inscription 46)",
+     event: "Portus: Claudius digs canals from the Tiber to the sea and claims to free Rome from floods",
+     scene: "A ROACH digs canals from the Tiber to the sea at Portus, and Claudius boasts that Rome is now safe from floods."}
+  - {year: 60, peg: cheese, confidence: low, source: "italia.it Nero's villa (60); WP Subiaco Dams",
+     event: "Subiaco: Nero dams the Aniene and makes three lakes below his villa (approximate)",
+     scene: "Nero blocks the Aniene at Subiaco with three dams like walls of CHEESE, and pleasure lakes fill below his villa."}
+  - {year: 71, peg: cat, confidence: high, source: "WP mirror: Aqua Claudia (Vespasian 71)",
+     event: "Vespasian repairs the Aqua Claudia",
+     place: "Porta Maggiore",
+     scene: "A CAT plugs the leaking Aqua Claudia with its body until Vespasian's masons repair the channel at Porta Maggiore."}
+  - {year: 81, peg: foot, confidence: high, source: "WP mirror: Aqua Claudia (Titus 81)",
+     event: "Titus repairs the Aqua Claudia again",
+     place: "Porta Maggiore",
+     scene: "Titus kicks the sagging Aqua Claudia back into line with his FOOT, ten years after his father's repair."}
+  - {year: 134, peg: hammer, confidence: unverified,
+     event: "Hadrian completes the Pons Aelius, the bridge to his mausoleum",
+     scene: "Hadrian strikes the last HAMMER blow on the Pons Aelius, the new bridge across the Tiber to his tomb."}
+  - {year: 198, peg: beehive, confidence: low, source: "ostia-antica.org (Severus improves the road)",
+     event: "Severus builds the Via Severiana along the coast from Ostia (approximate)",
+     place: "Ostia",
+     scene: "Bees from a BEEHIVE lay paving stones down the shore south of Ostia, and Severus names the coast road the Via Severiana."}
+  - {year: 207, peg: ski, confidence: medium, source: "WP mirror: Forma Urbis (203-211; Cadario 205-208)",
+     event: "The Severan Marble Plan of the whole city is cut for a wall of the Temple of Peace (approximate)",
+     scene: "Surveyors SKI down a marble wall in the Temple of Peace and carve every street and house of Rome as they go."}
+  - {year: 212, peg: tongue, confidence: unverified,
+     event: "Caracalla adds the Aqua Antoniniana, a branch of the Aqua Marcia, to feed his baths",
+     scene: "Caracalla's long stone TONGUE licks water off the Aqua Marcia and carries it down a new branch to his baths."}
+  - {year: 226, peg: nacho, confidence: high, source: "Turismo Roma: Trofei di Mario (226)",
+     event: "Severus Alexander builds the great fountain house at the end of the Aqua Alexandrina",
+     place: "Piazza Vittorio",
+     scene: "Water bursts from a NACHO-shaped fountain house on the Esquiline as Severus Alexander ends his aqueduct there."}
+  # religion
+  - {year: -22, peg: nun, confidence: high, source: "WP Temple of Jupiter Tonans (1 Sep 22 BCE)",
+     event: "Augustus dedicates the temple of Jupiter the Thunderer on the Capitol",
+     scene: "Saved from lightning in Spain, Augustus has a NUN hang bells on his new temple of Jupiter the Thunderer on the Capitol."}
+  - {year: -21, peg: ant, confidence: high, source: "Cassius Dio 54.6 (Thayer)",
+     event: "Agrippa bans Egyptian rites within a mile of the city",
+     scene: "Agrippa's ANT army carries every altar of Isis out beyond the first mile from the city gates."}
+  - {year: -16, peg: dish, confidence: high, source: "Cassius Dio 54.19; Platner; Res Gestae",
+     event: "Augustus dedicates the rebuilt temple of Quirinus",
+     place: "Quirinal",
+     scene: "Augustus serves the rebuilt temple of Quirinus to the people on a giant DISH, and gladiators fight at its dedication."}
+  - {year: -12, peg: tongue, confidence: unverified,
+     event: "Augustus, now chief priest, puts a shrine of Vesta in his house on the Palatine",
+     scene: "Augustus lights Vesta's sacred flame from a TONGUE of fire in a new shrine inside his own Palatine house."}
+  - {year: 6, peg: sushi, confidence: high, source: "WP mirror: Temple of Castor and Pollux (6 AD)",
+     event: "Tiberius dedicates the rebuilt temple of Castor and Pollux in the Forum",
+     scene: "Tiberius lays SUSHI on the new marble steps of Castor and Pollux and dedicates the rebuilt temple in the Forum."}
+  - {year: 10, peg: dice, confidence: high, source: "WP mirror: Temple of Concord (16 Jan 10)",
+     event: "Tiberius rededicates the rebuilt temple of Concord below the Capitol",
+     scene: "Tiberius rolls a white marble DICE onto the altar and rededicates the rebuilt temple of Concord below the Capitol."}
+  - {year: 37, peg: mug, confidence: high, source: "WP mirror: Temple of Divus Augustus (Aug 37)",
+     event: "Caligula dedicates the temple of the Deified Augustus",
+     scene: "Caligula raises a golden MUG and dedicates the temple of the Deified Augustus with hymns, races and hundreds of bears."}
+  - {year: 50, peg: lasso, confidence: medium, source: "ostia-antica.org (synagogue, mid 1st c.)",
+     event: "Ostia: a synagogue is built near the beach (approximate)",
+     scene: "Jews at Ostia throw a LASSO round the new walls of their synagogue by the beach and pull them upright."}
+  - {year: 54, peg: lawyer, confidence: medium, source: "WP Temple of Claudius (begun 54)",
+     event: "Agrippina begins the temple of the Deified Claudius on the Caelian",
+     scene: "Agrippina pays a LAWYER to prove Claudius a god and starts his temple on the Caelian hill."}
+  - {year: 75, peg: eagle, confidence: high, source: "WP mirror: Temple of Jupiter Optimus Maximus (75)",
+     event: "Vespasian dedicates the rebuilt temple of Jupiter on the Capitol",
+     scene: "Jupiter's EAGLE lands on the new roof as Vespasian dedicates the rebuilt Capitoline temple, six years after the fire."}
+  - {year: 82, peg: oven, confidence: high, source: "WP mirror: Temple of Jupiter Optimus Maximus (82)",
+     event: "Domitian completes the fourth temple of Jupiter on the Capitol",
+     scene: "Domitian bakes gilded roof tiles in a giant OVEN for his new Capitoline temple, the fourth temple of Jupiter there."}
+  - {year: 89, peg: fob, confidence: medium, source: "WP mirror: Temple of Divus Augustus (89/90)",
+     event: "Domitian rebuilds the burnt temple of the Deified Augustus",
+     scene: "Domitian hangs a golden FOB on the door of the temple of the Deified Augustus, rebuilt after the fire."}
+  - {year: 120, peg: nose, confidence: low, source: "ostia-antica.org (Hadrianic Capitolium)",
+     event: "Ostia: a great brick Capitolium rises over the Forum (approximate)",
+     scene: "A huge brick NOSE juts up north of the Forum of Ostia as Hadrian's builders raise the new Capitolium."}
+  - {year: 145, peg: railway, confidence: high, source: "WP mirror: Temple of Hadrian (145)",
+     event: "Antoninus Pius dedicates the temple of the Deified Hadrian",
+     place: "Campus Martius",
+     scene: "Antoninus Pius lays a RAILWAY of marble columns across the Campus Martius and dedicates the temple of the Deified Hadrian."}
+  - {year: 180, peg: vase, confidence: low, source: "WP mirror: Catacomb of Priscilla (late 2nd c.)",
+     event: "Catacomb of Priscilla: Christian burials begin in the old quarry on the Via Salaria (approximate)",
+     scene: "Christians slide a VASE of ashes and their dead into niches of a tufa quarry on the Via Salaria: Priscilla's catacomb starts."}
+  - {year: 212, peg: tongue, confidence: low, source: "WP: Temple of Serapis, Quirinal (c. 212)",
+     event: "Caracalla's huge temple of Serapis on the Quirinal (approximate)",
+     scene: "A giant stone TONGUE of stairs rolls up the Quirinal to the huge temple of Serapis that Caracalla builds."}
+  - {year: 220, peg: nose, confidence: low, source: "WP Santa Prisca (enlarged c. 220); Turismo Roma",
+     event: "The Mithraeum under Santa Prisca on the Aventine is enlarged (approximate)",
+     scene: "Mithras worshippers ram through walls with a stone NOSE and enlarge their cave temple under Santa Prisca on the Aventine."}
+  - {year: 221, peg: ant, confidence: high, source: "Platner (Chronograph 354); Livius; Pantheon.org",
+     event: "Elagabalus dedicates the Elagabalium, the temple of his sun god on the Palatine",
+     scene: "An ANT colony drags the black stone of Emesa up the Palatine into the new Elagabalium, and Elagabalus dedicates it."}
+  - {year: 240, peg: horse, confidence: low, source: "WP mirror: Pope Fabian (Liber Pontificalis)",
+     event: "Bishop Fabian divides the church of Rome into seven districts under deacons (approximate)",
+     scene: "Bishop Fabian rides a HORSE round the city and splits the Roman church into seven districts, each under a deacon."}
+  - {year: 248, peg: reef, confidence: disputed, source: "WP Timeline of Rome (247); Philip's games 248",
+     event: "Philip holds the games for the thousandth year of Rome",
+     place: "Circus Maximus",
+     scene: "Philip floods the Circus with a coral REEF of hippos, elephants and big cats for Rome's thousandth birthday games."}
+  - {year: 251, peg: wallet, confidence: high, source: "Eusebius via WP; Catholic Encyclopedia (Cornelius)",
+     event: "Bishop Cornelius counts his clergy: forty-six priests, seven deacons and over fifteen hundred widows",
+     scene: "Bishop Cornelius opens the church WALLET to feed fifteen hundred widows and pay forty-six priests and seven deacons."}
+  - {year: 258, peg: wolf, confidence: high, source: "WP mirror: Catacombs of San Sebastiano (258)",
+     event: "Christians begin to honour Peter and Paul together at the Memoria Apostolorum on the Appian Way",
+     scene: "On the Appian Way a WOLF scratches the names of Peter and Paul into a wall, and Christians gather there to honour both."}
+  # arts
+  - {year: -29, peg: knob, confidence: high, source: "Pleiades; Ancient Rome Live; Met essay",
+     event: "Statilius Taurus opens the first stone amphitheatre in Rome",
+     place: "Campus Martius",
+     scene: "Statilius Taurus turns the KNOB of his own money chest and opens Rome's first stone amphitheatre with gladiator games."}
+  - {year: -25, peg: nail, confidence: high, source: "WP mirror: Baths of Agrippa (25 BC)",
+     event: "Agrippa completes the Baths of Agrippa, the first great public baths",
+     place: "Campus Martius",
+     scene: "Agrippa hammers the last NAIL into the Baths of Agrippa, the first great public baths of Rome, near the Pantheon."}
+  - {year: -19, peg: tuba, confidence: unverified,
+     event: "A triple arch for the return of the Parthian standards is set up in the Forum",
+     scene: "A TUBA blasts from the top of a new triple arch in the Forum that hails the standards won back from Parthia."}
+  - {year: -15, peg: doll, confidence: medium, source: "ostia-antica.org (18-12 BCE); Cooley PBSR 1999",
+     event: "Ostia: Agrippa builds the first theatre (approximate)",
+     scene: "Agrippa's actors carry a giant DOLL onto the first stage of the new theatre at Ostia, built for three thousand people."}
+  - {year: -10, peg: dice, confidence: high, source: "WP mirror: Flaminio Obelisk (10 BC)",
+     event: "Augustus sets up an Egyptian obelisk on the spine of the Circus Maximus",
+     scene: "A giant DICE rolls Ramesses II's obelisk from Heliopolis and stands it upright on the spine of the Circus Maximus."}
+  - {year: -7, peg: ski, confidence: high, source: "WP mirror: Porticus of Livia (Jan 7 BCE)",
+     event: "Porticus of Livia opens on the site of Vedius Pollio's pulled-down mansion",
+     place: "Oppian",
+     scene: "Tiberius and Livia SKI over the rubble of Vedius Pollio's mansion on the Oppian and open the Porticus of Livia there."}
+  - {year: 12, peg: tongue, confidence: high, source: "WP mirror: Basilica Julia (rebuilt, 12 AD)",
+     event: "The rebuilt Basilica Julia is dedicated in the names of Gaius and Lucius",
+     scene: "A long stone TONGUE of arcades rolls out again along the Forum: the rebuilt Basilica Julia, named for Gaius and Lucius."}
+  - {year: 16, peg: dish, confidence: high, source: "WP mirror: Arch of Tiberius (16 AD)",
+     event: "Arch of Tiberius in the Forum for the recovery of the legion eagles lost with Varus",
+     scene: "Tiberius sets a recovered legion eagle on a silver DISH on top of his new arch by the temple of Saturn."}
+  - {year: 22, peg: nun, confidence: high, source: "WP mirror: Basilica Aemilia (restored 22 AD)",
+     event: "The Basilica Aemilia is restored again",
+     scene: "A NUN scrubs the soot off the marble of the Basilica Aemilia while builders restore it on the north side of the Forum."}
+  - {year: 40, peg: horse, confidence: high, source: "WP mirror: Vatican obelisk (40)",
+     event: "Caligula brings an obelisk from Alexandria for the spine of the Vatican Circus",
+     scene: "A HORSE tows Caligula's obelisk from the Alexandria ship up to the spine of his new circus on the Vatican."}
+  - {year: 51, peg: wallet, confidence: medium, source: "Encyclopaedia Romana; WP Arch of Claudius (51-52)",
+     event: "Arch of Claudius carries the Aqua Virgo over the Via Lata and names eleven beaten British kings",
+     scene: "Claudius pays from his WALLET for an arch that carries the Aqua Virgo over the Via Lata and boasts of eleven British kings."}
+  - {year: 62, peg: chain, confidence: disputed, source: "WP mirror: Baths of Nero (62 or 64)",
+     event: "Nero opens his baths and gymnasium on the Campus Martius",
+     scene: "Nero pulls a gold CHAIN, the sluice opens, and water floods the new Baths of Nero and their gymnasium."}
+  - {year: 81, peg: foot, confidence: medium, source: "WP mirror: Baths of Titus (81); Suetonius says 80",
+     event: "Titus opens his baths beside the Colosseum",
+     scene: "Titus puts his FOOT first into the hot pool of the new Baths of Titus, built in haste beside the Colosseum."}
+  - {year: 81, peg: foot, confidence: high, source: "WP mirror: Arch of Titus, Circus Maximus (81)",
+     event: "The senate builds a triple arch for Titus at the curved end of the Circus Maximus",
+     scene: "At the curved end of the Circus Maximus a giant FOOT of marble kicks up into a triple arch the senate builds for Titus."}
+  - {year: 92, peg: piano, confidence: medium, source: "WP mirror: Domus Augustana (92)",
+     event: "Domitian's new palace on the Palatine is finished",
+     scene: "Domitian rolls a grand PIANO into the throne hall of his finished palace on the Palatine, the Domus Flavia and Augustana."}
+  - {year: 97, peg: pig, confidence: high, source: "WP mirror: Forum of Nerva (97)",
+     event: "Nerva opens the Forum begun by Domitian, with its temple of Minerva",
+     scene: "Nerva leads a PIG to the altar of Minerva and opens the narrow Forum that Domitian started."}
+  - {year: 109, peg: soap, confidence: high, source: "WP mirror: Baths of Trajan (July 109)",
+     event: "Trajan dedicates his great baths on the Oppian, over Nero's Golden House",
+     scene: "Trajan hands out SOAP at the opening of his vast baths on the Oppian, built over the ruins of Nero's Golden House."}
+  - {year: 128, peg: knife, confidence: medium, source: "WP mirror: Colossus of Nero (around 128)",
+     event: "Hadrian moves Nero's Colossus with elephants to clear the site for Venus and Roma (approximate)",
+     scene: "Hadrian cuts the Colossus free of its base with a giant KNIFE, and elephants drag the statue across the valley."}
+  - {year: 139, peg: map, confidence: medium, source: "Ostia site panels; Baths at Ostia (138 or 139)",
+     event: "Ostia: the Baths of Neptune, begun by Hadrian, are opened by Antoninus Pius",
+     scene: "Antoninus Pius unrolls a MAP of the Baths of Neptune at Ostia and opens them, with Neptune's horses in mosaic."}
+  - {year: 161, peg: jet, confidence: high, source: "WP mirror: Column of Antoninus Pius (161)",
+     event: "Marcus Aurelius and Lucius Verus set up a column to Antoninus Pius",
+     place: "Campus Martius",
+     scene: "A red granite JET shoots up on the Campus Martius: the column Marcus and Lucius raise to their father Antoninus."}
+  - {year: 202, peg: sun, confidence: high, source: "CIL 6.896 (worldhistory.org; core.ac.uk)",
+     event: "Severus and Caracalla restore the Pantheon and add their names below Agrippa's",
+     scene: "Severus and Caracalla polish the dome until the SUN pours back into the restored Pantheon, then carve their names on it."}
+  - {year: 203, peg: sumo, confidence: high, source: "WP mirror: Septizodium (203)",
+     event: "Severus builds the Septizodium, a tall decorated facade at the foot of the Palatine",
+     scene: "A SUMO wrestler holds up the stacked columns of the Septizodium that Severus raises at the foot of the Palatine."}
+  - {year: 203, peg: sumo, confidence: high, source: "WP mirror: Porticus Octaviae (fire and restoration 203)",
+     event: "Severus and Caracalla restore the Porticus of Octavia after a fire",
+     scene: "A SUMO wrestler lifts the fallen columns of the burnt Porticus of Octavia back onto their bases for Severus and Caracalla."}
+  - {year: 203, peg: sumo, confidence: medium, source: "WP mirror: Temple of Peace (restored c. 203)",
+     event: "Severus restores the Temple of Peace after the fire",
+     scene: "A SUMO wrestler sweeps the ashes out of the Temple of Peace with one shove, and Severus rebuilds its halls."}
+  - {year: 204, peg: sewer, confidence: unverified,
+     event: "Bankers and cattle dealers set up the Arch of the Argentarii for Severus",
+     place: "Forum Boarium",
+     scene: "Bankers and cattle dealers climb out of a SEWER at the Forum Boarium and set up a carved gate to Severus and his family."}
+  - {year: 227, peg: ink, confidence: disputed, source: "WP mirror: Baths of Nero (rebuilt 227 or 229)",
+     event: "Severus Alexander rebuilds the Baths of Nero as the Baths of Alexander",
+     scene: "Severus Alexander signs his name in INK over Nero's on the old baths and rebuilds them as the Baths of Alexander."}
+  - {year: 262, peg: chain, confidence: high, source: "WP mirror: Arch of Gallienus (262)",
+     event: "The old Esquiline gate is rededicated as the Arch of Gallienus",
+     scene: "Aurelius Victor hangs a CHAIN of new bronze letters on the old Esquiline gate and rededicates it to Gallienus."}
+  # economy
+  - {year: -7, peg: ski, confidence: medium, source: "Platner; Stanford Forma Urbis (probable)",
+     event: "Macellum of Livia: a meat and food market on the Esquiline is dedicated",
+     scene: "A SKI-shaped butcher's counter runs round the new Macellum of Livia, the market Tiberius dedicates on the Esquiline."}
+  - {year: 39, peg: map, confidence: low, source: "WP mirror: Nemi ships (Caligula's reign)",
+     event: "Nemi: Caligula's two great palace ships float on the lake (approximate)",
+     scene: "Caligula's shipwrights follow a MAP of a floating palace and launch two giant ships on the lake of Nemi."}
+  - {year: 41, peg: radio, confidence: low, source: "Cassius Dio 60.6 (Thayer; year not stated)",
+     event: "Claudius closes the drinking taverns and bans the sale of boiled meat and hot water",
+     scene: "Claudius switches off the RADIO in every tavern and bans the sale of boiled meat and hot water in Rome."}
+  - {year: 44, peg: warrior, confidence: medium, source: "ostia-antica.org (procurator annonae 44)",
+     event: "Ostia: Claudius creates a procurator for the harbour grain supply",
+     scene: "A WARRIOR stands on the grain sacks at Ostia as Claudius's new procurator of the harbour grain supply."}
+  - {year: 59, peg: elbow, confidence: high, source: "Pleiades; Stanford Forma Urbis (59)",
+     event: "Nero dedicates the Macellum Magnum, the great market on the Caelian",
+     scene: "Nero opens the domed Macellum Magnum on the Caelian, and shoppers push in ELBOW to elbow."}
+  - {year: 60, peg: cheese, confidence: medium, source: "WP Antium; romanports.org",
+     event: "Antium: Nero builds a new harbour with long concrete moles (approximate)",
+     scene: "Nero curves two concrete moles round the sea at Antium like a wheel of CHEESE, and a new harbour opens."}
+  - {year: 62, peg: chain, confidence: high, source: "ostia-antica.org; WP Portus (Tacitus)",
+     event: "Portus: a storm sinks two hundred grain ships inside Claudius's harbour",
+     scene: "A storm snaps every anchor CHAIN in Claudius's harbour at Portus, and two hundred grain ships sink at their moorings."}
+  - {year: 64, peg: cherry, confidence: unverified,
+     event: "After the fire Nero cuts the price of grain to three sesterces a measure",
+     scene: "After the fire Nero sells grain for three sesterces, cheap as a CHERRY, to the homeless crowds of Rome."}
+  - {year: 107, peg: ski, confidence: medium, source: "Pliny Ep. 6.31 (107); pharology.eu (105-110)",
+     event: "Centumcellae: Trajan builds a new harbour, and Pliny sees its breakwater built",
+     place: "Civitavecchia",
+     scene: "Barges drop stone after stone until a SKI-shaped breakwater rises at Centumcellae, Trajan's new harbour by his villa."}
+  # society
+  - {year: -27, peg: ink, confidence: high, source: "Cassius Dio 53.20 (lexundria)",
+     event: "Tiber flood: boats move through the low city",
+     scene: "The Tiber spreads like INK over the low city on the night Octavian becomes Augustus, and boats row through the streets."}
+  - {year: -22, peg: nun, confidence: high, source: "Cassius Dio 54.1 (Thayer)",
+     event: "The Tiber floods the city again",
+     scene: "A NUN rows a boat across the drowned Campus Martius as the Tiber floods the low city again."}
+  - {year: -22, peg: nun, confidence: high, source: "Cassius Dio 54.2 (Thayer)",
+     event: "Augustus gives the aediles six hundred slaves to fight fires",
+     scene: "Augustus hands each of six hundred public slaves a NUN's water bucket, and the aediles march them off to fight fires."}
+  - {year: -22, peg: nun, confidence: disputed, source: "WP Egnatius Rufus (22 BCE); Dio 53.24 (26 BCE)",
+     event: "The aedile Egnatius Rufus forms a private fire brigade of slaves",
+     scene: "A NUN with a leather fire hose leads Egnatius Rufus's private brigade of slaves through the burning streets."}
+  - {year: -20, peg: nose, confidence: medium, source: "WP mirror: Tomb of Caecilia Metella (30-10 BCE)",
+     event: "Tomb of Caecilia Metella, a great round drum tomb on the Appian Way (approximate)",
+     scene: "A giant stone NOSE of ox skulls rings the round tomb of Caecilia Metella that rises on the Appian Way."}
+  - {year: -16, peg: dish, confidence: high, source: "Cassius Dio 54.19 (Thayer)",
+     event: "The temple of Youth burns, and a wolf kills people in the Forum",
+     scene: "Fire cracks the temple of Youth like a hot DISH, and a wolf runs into the Forum and kills people there."}
+  - {year: -14, peg: tower, confidence: high, source: "Cassius Dio 54.24; WP Basilica Aemilia",
+     event: "Fire burns the Basilica Aemilia and spreads to the temple of Vesta",
+     scene: "Flames climb the Basilica Aemilia like a TOWER and leap to Vesta's temple, and the Vestals run the sacred objects to the Palatine."}
+  - {year: -12, peg: tongue, confidence: high, source: "Cassius Dio 54.29 (Thayer); Canter",
+     event: "Fire destroys many buildings, among them the hut of Romulus",
+     place: "Palatine",
+     scene: "A TONGUE of fire licks across the Palatine and burns the old thatched hut of Romulus with many other buildings."}
+  - {year: -9, peg: soap, confidence: high, source: "Cassius Dio 55.1 (Thayer)",
+     event: "Storms and lightning destroy many buildings, the Capitoline temple among them",
+     scene: "Lightning bolts slide down from the sky like wet SOAP and smash many buildings, the temple of Jupiter on the Capitol among them."}
+  - {year: -7, peg: ski, confidence: high, source: "Cassius Dio 55.8 (Thayer); Canter",
+     event: "Fire burns many buildings round the Forum",
+     scene: "A burning SKI slides down the Sacred Way and sets fire to many buildings round the Forum."}
+  - {year: 3, peg: sumo, confidence: medium, source: "WP House of Augustus; Platner (Dio 55.12)",
+     event: "Fire destroys Augustus's house on the Palatine; the people pay to rebuild it",
+     scene: "A burning roof falls on a SUMO wrestler in Augustus's Palatine house, and citizens bring coins to rebuild it."}
+  - {year: 5, peg: seal, confidence: high, source: "Cassius Dio 55.22 (Thayer)",
+     event: "Tiber flood carries away a bridge and the city is navigable for seven days",
+     scene: "A SEAL swims through the streets of Rome for seven days after the Tiber tears away a bridge and floods the city."}
+  - {year: 9, peg: soap, confidence: medium, source: "WP mirror: Basilica Julia (burned 9 AD)",
+     event: "Fire burns the new Basilica Julia",
+     scene: "The new Basilica Julia melts in the flames like a bar of SOAP, only a few years after Augustus finished it."}
+  - {year: 12, peg: tongue, confidence: high, source: "WP mirror: Circus Maximus (flood, AD 12)",
+     event: "A flood fills the Circus Maximus and the games of Mars move elsewhere",
+     scene: "The muddy TONGUE of the Tiber floods the Circus Maximus, and the games of Mars must move to another place."}
+  - {year: 21, peg: ant, confidence: disputed, source: "WP mirror: Theatre of Pompey (21); Tacitus Ann. 3.72 (22)",
+     event: "Fire damages the Theatre of Pompey; Tiberius begins to rebuild it",
+     scene: "An ANT drops a spark backstage, the Theatre of Pompey burns, and Tiberius starts to rebuild the stage."}
+  - {year: 27, peg: ink, confidence: medium, source: "Tacitus Ann. 4.64; Canter (27); WP list (26)",
+     event: "Fire sweeps the Caelian hill; Tiberius pays the owners",
+     scene: "Fire spreads like spilled INK over the Caelian hill, and Tiberius pays every owner for the lost houses."}
+  - {year: 38, peg: movie, confidence: medium, source: "Cassius Dio 59.9 (Thayer); Platner index (Aemiliana)",
+     event: "Caligula helps his soldiers fight a fire in the Aemiliana district",
+     scene: "Caligula plays the hero of a MOVIE and passes water buckets to his soldiers at a fire in the Aemiliana district."}
+  - {year: 38, peg: movie, confidence: low, source: "Cassius Dio 59.10 (Thayer; year inferred)",
+     event: "Caligula floods the Saepta for a sea battle show",
+     place: "Saepta Julia",
+     scene: "Caligula floods the Saepta voting hall and films a sea battle MOVIE inside it."}
+  - {year: 71, peg: cat, confidence: disputed, source: "Britannica (Vespasian); some sources 71, others 78",
+     event: "Vespasian pays the first state salaries to teachers of rhetoric; Quintilian holds the Latin chair",
+     scene: "Vespasian's CAT carries a purse of a hundred thousand sesterces to Quintilian, Rome's first state-paid teacher of rhetoric."}
+  - {year: 86, peg: fish, confidence: high, source: "WP mirror: Stadium of Domitian (dedicated 86)",
+     event: "Domitian dedicates his stadium for Greek athletics, now Piazza Navona",
+     scene: "Runners chase a giant FISH down the long track of Domitian's new stadium, the shape that is now Piazza Navona."}
+  - {year: 103, peg: sumo, confidence: high, source: "WP mirror: Circus Maximus (coin of 103)",
+     event: "Trajan rebuilds the Circus Maximus in stone with thousands more seats",
+     scene: "A SUMO wrestler stacks new stone seats into the Circus Maximus as Trajan rebuilds it for thousands more fans."}
+  - {year: 104, peg: sewer, confidence: high, source: "WP mirror: Baths of Trajan (fire 104)",
+     event: "Fire destroys what remains of Nero's Golden House on the Oppian",
+     scene: "Fire bursts up out of a SEWER under Nero's Golden House on the Oppian and burns the old palace."}
+  - {year: 110, peg: dice, confidence: disputed, source: "worldhistory.org Pantheon (110); Canter (111)",
+     event: "Lightning sets fire to Agrippa's Pantheon",
+     scene: "Lightning throws a burning DICE through the roof of Agrippa's Pantheon, and the temple burns again."}
+  - {year: 135, peg: mill, confidence: disputed, source: "Boll. Archeol. Online (135); Archaeology mag. (123)",
+     event: "Hadrian founds the Athenaeum, a school of rhetoric and public readings near the Capitol",
+     scene: "Hadrian builds a word MILL near the Capitol, the Athenaeum, where state teachers grind young men into orators."}
+  - {year: 136, peg: match, confidence: high, source: "CIL 14.2112 (AGRW; followinghadrian.com)",
+     event: "Lanuvium: the burial club of Diana and Antinous carves its rules in marble",
+     scene: "At Lanuvium the burial club of Diana and Antinous strikes a MATCH for each member's funeral pyre and carves its rules in marble."}
+  - {year: 175, peg: eagle, confidence: medium, source: "Cambridge mummies text; Palazzo Massimo record",
+     event: "Grottarossa: a mummified girl of eight is buried with an ivory doll in a marble coffin (approximate)",
+     place: "Via Cassia",
+     scene: "An EAGLE wraps a girl of eight in mummy cloth and lays her with her ivory doll in a marble coffin on the Via Cassia."}
+  - {year: 189, peg: fob, confidence: medium, source: "Canter, CJ 27 (Thayer)",
+     event: "Lightning burns the temple of Jupiter on the Capitol and its library",
+     scene: "Lightning melts the golden FOB on Jupiter's statue and burns the Capitoline temple and its library."}
+  - {year: 199, peg: pipe, confidence: medium, source: "WP mirror: Basilica Julia (fire 199)",
+     event: "Fire damages the Basilica Julia; Severus restores it",
+     scene: "A lit PIPE falls in the Basilica Julia, fire guts the law courts, and Septimius Severus repairs them."}
+  - {year: 217, peg: dog, confidence: high, source: "Canter (217); WP Timeline of Rome",
+     event: "Lightning sets fire to the Colosseum; its upper floor burns",
+     scene: "Lightning strikes the Colosseum, and a DOG drags burning beams off the top floor as the arena shuts for years."}
+  - {year: 230, peg: mouse, confidence: medium, source: "Pleiades (c. 230); Turismo Roma",
+     event: "Hypogeum of the Aurelii: a painted family tomb on the Via Labicana (approximate)",
+     place: "Viale Manzoni",
+     scene: "A painter's MOUSE runs a brush over the walls of the Aurelii family tomb, filling it with shepherds and sheep."}
+  - {year: 247, peg: rock, confidence: high, source: "Canter, CJ 27; WP mirror: Theatre of Pompey",
+     event: "The Theatre of Pompey burns again",
+     scene: "A burning ROCK crashes onto the stage roof, and the Theatre of Pompey burns once more."}
+  - {year: 283, peg: foam, confidence: high, source: "WP mirror: Curia Julia, Basilica Julia; Canter",
+     event: "Two fires burn the Curia, the Basilica Julia, the Forum of Caesar and the Theatre of Pompey",
+     scene: "No fire FOAM can stop it: flames burn the senate house, the Basilica Julia and the Forum of Caesar."}
+world_refs:
+  - {year: -30, event: "Prima Porta: painted garden room in the villa of Livia", cell: western_europe_arts_500bce_500ce}
+  - {year: -29, event: "Temple of the Deified Julius dedicated in the Forum", cell: western_europe_arts_500bce_500ce}
+  - {year: -28, event: "Mausoleum of Augustus begun", cell: western_europe_arts_500bce_500ce}
+  - {year: -28, event: "Temple of Apollo on the Palatine with its libraries", cell: western_europe_arts_500bce_500ce}
+  - {year: -28, event: "Augustus restores eighty-two temples in Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: -25, event: "Agrippa builds the first Pantheon", cell: western_europe_arts_500bce_500ce}
+  - {year: -22, event: "Famine at Rome; Augustus takes charge of the grain supply", cell: western_europe_society_500bce_500ce}
+  - {year: -22, event: "Pylades and Bathyllus bring pantomime to Rome", cell: western_europe_arts_500bce_500ce}
+  - {year: -20, event: "Augustus of Prima Porta statue", cell: western_europe_arts_500bce_500ce}
+  - {year: -19, event: "Agrippa opens the Aqua Virgo", cell: western_europe_science_500bce_500ce}
+  - {year: -13, event: "Theatre of Marcellus completed", cell: western_europe_arts_500bce_500ce}
+  - {year: -13, event: "Theatre of Balbus opens", cell: western_europe_arts_500bce_500ce}
+  - {year: -12, event: "Pyramid of Cestius", cell: western_europe_arts_500bce_500ce}
+  - {year: -10, event: "Obelisk sundial of Augustus on the Campus Martius", cell: western_europe_science_500bce_500ce}
+  - {year: -9, event: "Altar of Augustan Peace consecrated", cell: western_europe_arts_500bce_500ce}
+  - {year: -7, event: "Agrippa's world map on the Porticus Vipsania", cell: western_europe_science_500bce_500ce}
+  - {year: -7, event: "Augustus's Genius among the Lares of the street shrines", cell: western_europe_religion_500bce_500ce}
+  - {year: -7, event: "Standing prefect for Rome's grain supply", cell: western_europe_economy_500bce_500ce}
+  - {year: -2, event: "Forum of Augustus and temple of Mars the Avenger", cell: western_europe_arts_500bce_500ce}
+  - {year: -2, event: "Aqua Alsietina for the mock sea battle lake", cell: western_europe_science_500bce_500ce}
+  - {year: -2, event: "Augustus's mock sea battle across the Tiber", cell: western_europe_society_500bce_500ce}
+  - {year: 6, event: "Augustus creates the vigiles", cell: western_europe_society_500bce_500ce}
+  - {year: 6, event: "Famine: gladiators and foreigners sent away from Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 15, event: "Tiber flood; senators made curators of the river", cell: western_europe_society_500bce_500ce}
+  - {year: 19, event: "Tiberius expels Jews and Isis worshippers; temple of Isis pulled down", cell: western_europe_religion_500bce_500ce}
+  - {year: 25, event: "Porta Maggiore underground basilica", cell: western_europe_religion_500bce_500ce}
+  - {year: 27, event: "Fidenae amphitheatre collapse", cell: western_europe_society_500bce_500ce}
+  - {year: 33, event: "Credit crisis in Rome", cell: western_europe_economy_500bce_500ce}
+  - {year: 36, event: "Fire burns the Circus Maximus and the Aventine", cell: western_europe_society_500bce_500ce}
+  - {year: 38, event: "Caligula begins the Aqua Claudia and Anio Novus", cell: western_europe_science_500bce_500ce}
+  - {year: 40, event: "Caligula taxes porters and food sold in Rome", cell: western_europe_economy_500bce_500ce}
+  - {year: 41, event: "Caligula is murdered on the Palatine", cell: western_europe_politics_500bce_500ce}
+  - {year: 42, event: "Claudius begins the harbour at Portus", cell: western_europe_science_500bce_500ce}
+  - {year: 47, event: "Claudius's Secular Games", cell: western_europe_religion_500bce_500ce}
+  - {year: 49, event: "Claudius expels Jews from Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 51, event: "Famine: crowd pelts Claudius in the Forum", cell: western_europe_society_500bce_500ce}
+  - {year: 52, event: "Aqua Claudia and Anio Novus completed", cell: western_europe_science_500bce_500ce}
+  - {year: 57, event: "Nero's mock sea battle in his wooden amphitheatre", cell: western_europe_society_500bce_500ce}
+  - {year: 60, event: "Nero founds the Neronia games", cell: western_europe_arts_500bce_500ce}
+  - {year: 60, event: "Paul reaches Rome as a prisoner", cell: western_europe_religion_500bce_500ce}
+  - {year: 61, event: "Pedanius Secundus murdered; his slaves executed", cell: western_europe_society_500bce_500ce}
+  - {year: 64, event: "Great Fire of Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 64, event: "Nero begins the Golden House", cell: western_europe_arts_500bce_500ce}
+  - {year: 64, event: "Nero blames and kills the Christians", cell: western_europe_religion_500bce_500ce}
+  - {year: 64, event: "Peter crucified on the Vatican hill", cell: western_europe_religion_500bce_500ce}
+  - {year: 64, event: "Nero opens the harbour at Portus", cell: western_europe_science_500bce_500ce}
+  - {year: 64, event: "Lugdunum mint moves to Rome", cell: western_europe_economy_500bce_500ce}
+  - {year: 65, event: "Plague in Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 67, event: "Paul beheaded on the road to Ostia", cell: western_europe_religion_500bce_500ce}
+  - {year: 69, event: "Year of the Four Emperors: fighting in Rome", cell: western_europe_politics_500bce_500ce}
+  - {year: 69, event: "Capitoline temple burns", cell: western_europe_religion_500bce_500ce}
+  - {year: 69, event: "Tiber flood", cell: western_europe_society_500bce_500ce}
+  - {year: 71, event: "Vespasian expels philosophers from Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 72, event: "Vespasian begins the Colosseum", cell: western_europe_arts_500bce_500ce}
+  - {year: 75, event: "Vespasian builds the Temple of Peace", cell: western_europe_arts_500bce_500ce}
+  - {year: 80, event: "Colosseum opens", cell: western_europe_arts_500bce_500ce}
+  - {year: 80, event: "Fire burns central Rome for three days", cell: western_europe_society_500bce_500ce}
+  - {year: 81, event: "Arch of Titus on the Sacred Way", cell: western_europe_arts_500bce_500ce}
+  - {year: 86, event: "Domitian founds the Capitoline Games", cell: western_europe_arts_500bce_500ce}
+  - {year: 88, event: "Domitian's Secular Games", cell: western_europe_religion_500bce_500ce}
+  - {year: 90, event: "Two new circus factions, Purples and Golds", cell: western_europe_society_500bce_500ce}
+  - {year: 91, event: "Chief Vestal Cornelia buried alive", cell: western_europe_religion_500bce_500ce}
+  - {year: 95, event: "Charioteer Scorpus dies", cell: western_europe_society_500bce_500ce}
+  - {year: 96, event: "Domitian murdered in the palace", cell: western_europe_politics_500bce_500ce}
+  - {year: 97, event: "Frontinus becomes water commissioner", cell: western_europe_science_500bce_500ce}
+  - {year: 106, event: "Trajan's hexagonal basin at Portus", cell: western_europe_science_500bce_500ce}
+  - {year: 107, event: "Trajan's Dacian victory games", cell: western_europe_society_500bce_500ce}
+  - {year: 109, event: "Aqua Traiana opens", cell: western_europe_science_500bce_500ce}
+  - {year: 109, event: "Trajan's mock sea battle by the Vatican", cell: western_europe_society_500bce_500ce}
+  - {year: 110, event: "Trajan's Markets", cell: western_europe_economy_500bce_500ce}
+  - {year: 112, event: "Forum of Trajan and Basilica Ulpia", cell: western_europe_arts_500bce_500ce}
+  - {year: 113, event: "Trajan's Column", cell: western_europe_arts_500bce_500ce}
+  - {year: 120, event: "Hadrian's Villa at Tivoli", cell: western_europe_arts_500bce_500ce}
+  - {year: 121, event: "Temple of Venus and Roma begun", cell: western_europe_arts_500bce_500ce}
+  - {year: 122, event: "Charioteer Diocles first races in Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 126, event: "Hadrian's Pantheon dedicated", cell: western_europe_arts_500bce_500ce}
+  - {year: 134, event: "Hadrian begins his mausoleum", cell: western_europe_arts_500bce_500ce}
+  - {year: 135, event: "Temple of Venus and Roma dedicated", cell: western_europe_arts_500bce_500ce}
+  - {year: 140, event: "Monte Testaccio grows from broken oil jars", cell: western_europe_economy_500bce_500ce}
+  - {year: 141, event: "Temple of Antoninus and Faustina", cell: western_europe_religion_500bce_500ce}
+  - {year: 146, event: "Diocles retires", cell: western_europe_society_500bce_500ce}
+  - {year: 148, event: "Games for Rome's nine hundredth year", cell: western_europe_religion_500bce_500ce}
+  - {year: 160, event: "Trophy of Gaius over Peter's grave", cell: western_europe_religion_500bce_500ce}
+  - {year: 162, event: "Galen's public dissections in Rome", cell: western_europe_science_500bce_500ce}
+  - {year: 165, event: "Justin beheaded at Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 166, event: "Antonine Plague reaches Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 169, event: "Palace treasures auctioned in Trajan's Forum", cell: western_europe_economy_500bce_500ce}
+  - {year: 175, event: "Equestrian statue of Marcus Aurelius", cell: western_europe_arts_500bce_500ce}
+  - {year: 189, event: "Plague kills thousands a day in Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 190, event: "Grain riot in the Circus brings down Cleander", cell: western_europe_society_500bce_500ce}
+  - {year: 192, event: "Fire in the Temple of Peace", cell: western_europe_science_500bce_500ce}
+  - {year: 192, event: "Commodus murdered", cell: western_europe_politics_500bce_500ce}
+  - {year: 192, event: "Commodus fights as a gladiator at the Plebeian Games", cell: western_europe_society_500bce_500ce}
+  - {year: 193, event: "Pertinax killed; Julianus buys the throne at the Castra Praetoria", cell: western_europe_politics_500bce_500ce}
+  - {year: 193, event: "Column of Marcus Aurelius finished", cell: western_europe_arts_500bce_500ce}
+  - {year: 200, event: "Callixtus runs the church cemetery on the Appian Way", cell: western_europe_religion_500bce_500ce}
+  - {year: 203, event: "Arch of Septimius Severus", cell: western_europe_arts_500bce_500ce}
+  - {year: 204, event: "Severus's Secular Games", cell: western_europe_religion_500bce_500ce}
+  - {year: 216, event: "Baths of Caracalla opened", cell: western_europe_arts_500bce_500ce}
+  - {year: 219, event: "Elagabalus brings the black stone of Emesa to Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 226, event: "Aqua Alexandrina", cell: western_europe_science_500bce_500ce}
+  - {year: 244, event: "Plotinus opens his school in Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 250, event: "Decius's sacrifice order; Pope Fabian dies", cell: western_europe_religion_500bce_500ce}
+  - {year: 250, event: "Janiculum water mills", cell: western_europe_science_500bce_500ce}
+  - {year: 250, event: "Ludovisi Battle Sarcophagus", cell: western_europe_arts_500bce_500ce}
+  - {year: 251, event: "Plague of Cyprian reaches Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 258, event: "Sixtus II and Lawrence executed in Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 271, event: "Aurelian begins the new walls of Rome", cell: western_europe_politics_500bce_500ce}
+  - {year: 271, event: "Mint workers revolt in Rome", cell: western_europe_economy_500bce_500ce}
+  - {year: 274, event: "Temple of the Unconquered Sun", cell: western_europe_religion_500bce_500ce}
+  - {year: 274, event: "Pork, oil and salt added to the free bread", cell: western_europe_society_500bce_500ce}
+out_refs:
+  - {year: -29, event: "Octavian's triple triumph", reason: "triumph for foreign wars"}
+  - {year: -29, event: "Octavian closes the gates of Janus", reason: "state ceremony"}
+  - {year: 14, event: "Funeral of Augustus and burial in his Mausoleum", reason: "imperial funeral"}
+  - {year: 20, event: "Trial of Piso before the senate", reason: "national court case"}
+  - {year: 23, event: "Tiberius expels pantomime actors from Italy after theatre bloodshed", reason: "law for Italy"}
+  - {year: 37, event: "Funeral of Tiberius", reason: "imperial funeral"}
+  - {year: 66, event: "Nero crowns Tiridates king of Armenia in the Forum", reason: "imperial ceremony"}
+  - {year: 71, event: "Triumph of Vespasian and Titus over Judaea", reason: "triumph for a foreign war"}
+  - {year: 176, event: "Triumph of Marcus Aurelius and Commodus", reason: "triumph for a foreign war"}
+  - {year: 193, event: "Severus disbands the old praetorian guard", reason: "imperial army"}
+  - {year: 205, event: "Plautianus is killed in the palace", reason: "court intrigue"}
+  - {year: 274, event: "Aurelian's triumph with Zenobia and Tetricus", reason: "triumph for a foreign war"}

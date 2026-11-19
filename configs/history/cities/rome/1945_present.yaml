@@ -1,0 +1,899 @@
+# City: Rome x 1945 to the present (post-war). DRAFT 2026-11-19.
+# Area: the Metropolitan City of Rome Capital (Rome, Ostia, Fiumicino, Ciampino, Tivoli, Frascati,
+# the Castelli Romani, Guidonia, Pomezia and Torvaianica, Civitavecchia, Cerveteri). Vatican City is inside the area.
+# Rules: cities.md (Rome section), then policy.md. Grouped by theme ("Theme of each subject").
+# National events (Italian state seated in Rome) and Holy See acts -> out_refs. World-grid events -> world_refs.
+# A national event whose main stage is the city (riot, attack, mass protest) is a card.
+# Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Mayor of Rome, Rome Metro, Trams in Rome, Fiumicino Airport, Grande Raccordo
+# Anulare, Stadio Olimpico, Foro Italico, Cinecitta, EUR, Years of Lead, Rome), Italian press archives.
+# A work -> first public appearance (premiere, release, opening); a building -> its opening.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1946, peg: roach, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Christian Democrat Salvatore Rebecchini becomes mayor, chosen by the first post-war city council",
+     place: "Campidoglio",
+     scene: "A ROACH in a Christian Democrat shield climbs the Campidoglio steps and pins the mayor's sash on Salvatore Rebecchini."}
+  - {year: 1952, peg: lion, confidence: medium, source: "WP mirror: Mayor of Rome (new term)",
+     event: "Rebecchini starts a new term after the city election; the plan for a joint list with the far right fails",
+     place: "Campidoglio",
+     scene: "A LION tears up the joint list with the far right, and Rebecchini keeps the Campidoglio chair for a new term."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Umberto Tupini becomes mayor at the head of a centrist city government",
+     place: "Campidoglio",
+     scene: "A LEECH sucks the last term out of Rebecchini, then clings to Umberto Tupini as he takes the mayor's chair."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP mirror: Rome (twinning)",
+     event: "Rome and Paris become exclusive twin cities",
+     place: "Campidoglio",
+     scene: "A LEECH stretches from the Campidoglio to the Hotel de Ville and joins Rome and Paris as only twins."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Urbano Cioccetti becomes mayor",
+     place: "Campidoglio",
+     scene: "The Capitoline WOLF steps off her plinth and leads Urbano Cioccetti into the mayor's office."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Foro Italico",
+     event: "The Farnesina palace becomes the seat of the Foreign Ministry",
+     place: "Farnesina, Foro Italico",
+     scene: "A giant ELBOW pushes the Foreign Ministry's files into the new Farnesina palace below Monte Mario."}
+  - {year: 1960, peg: cheese, confidence: high, source: "Search: Fanpage, ANPI Patria Indipendente",
+     event: "Mounted police charge an anti-fascist crowd at Porta San Paolo and hurt opposition deputies",
+     place: "Porta San Paolo",
+     scene: "Mounted police gallop through a rolling wheel of CHEESE at Porta San Paolo and strike the anti-fascist deputies."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "The city council falls; the prefect keeps Cioccetti as special commissioner",
+     place: "Campidoglio",
+     scene: "A JET blasts the city council out of the Campidoglio, and only Cioccetti stays, now as the prefect's commissioner."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Glauco Della Porta becomes mayor and ends the commissioner's rule",
+     place: "Campidoglio",
+     scene: "Glauco Della Porta cuts the commissioner's CHAIN off the Campidoglio door and walks in as mayor."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Amerigo Petrucci becomes mayor",
+     place: "Campidoglio",
+     scene: "A CHERRY rolls down the Cordonata and stops at Amerigo Petrucci's feet, and the council crowns him mayor."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Rinaldo Santini replaces Amerigo Petrucci as mayor",
+     place: "Campidoglio",
+     scene: "A JOCKEY unseats Petrucci from the Capitoline horse and puts Rinaldo Santini in the mayor's saddle."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Battle of Valle Giulia",
+     event: "Students fight police at the Valle Giulia architecture faculty; hundreds are hurt",
+     place: "Valle Giulia",
+     scene: "A CHEF hurls pots from the Valle Giulia architecture faculty as students and police fight on its steps."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Clelio Darida becomes mayor",
+     place: "Campidoglio",
+     scene: "A SHIP sails up the Tiber and drops Clelio Darida at the Campidoglio as the new mayor."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP mirror: Rome (government)",
+     event: "The city is divided into local administrative districts, the circoscrizioni",
+     scene: "A COIN splits into twenty pieces on the city map, and each piece becomes a district with its own council."}
+  - {year: 1972, peg: coin, confidence: medium, source: "penitenziaria.it: Storia penitenziaria (1972)",
+     event: "The new Rebibbia prison complex opens",
+     place: "Rebibbia",
+     scene: "A COIN drops into the lock of the new Rebibbia prison gate and opens the complex to its first prisoners."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Primavalle fire",
+     event: "Primavalle arson: far-left militants burn the home of a neo-fascist party member; two sons die",
+     place: "Primavalle",
+     scene: "A burning COMB pushed under a Primavalle door sets the Mattei flat alight, and two brothers die inside."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "Palestinian gunmen throw phosphorus bombs into a Pan Am airliner at Fiumicino and kill about thirty passengers",
+     place: "Fiumicino airport",
+     scene: "Gunmen at Fiumicino throw a burning COMB of phosphorus bombs into a Pan Am airliner full of passengers."}
+  - {year: 1974, peg: car, confidence: medium, source: "Ciampino municipal document (50 years)",
+     event: "Ciampino separates from Marino and becomes its own municipality",
+     place: "Ciampino",
+     scene: "A CAR with Ciampino plates pulls away from Marino's town hall and parks in front of its own new one."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Far-left militants kill the Greek student Mikis Mantakas during riots in Prati",
+     place: "Via Ottaviano",
+     scene: "An EAGLE dives over the riot in Prati as a far-left bullet kills the Greek student Mikis Mantakas."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Neo-fascist Pierluigi Concutelli kills judge Vittorio Occorsio",
+     scene: "Concutelli locks judge Vittorio Occorsio's car in a CAGE of machine-gun fire on a Roman street."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Art historian Giulio Carlo Argan becomes the first mayor from outside the Christian Democrats",
+     place: "Campidoglio",
+     scene: "Giulio Carlo Argan opens the Christian Democrats' CAGE on the Campidoglio and walks out the first left-wing mayor."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Movement of 1977",
+     event: "Students in the occupied university chase union leader Luciano Lama off his stage",
+     place: "La Sapienza",
+     scene: "Occupying students throw a CAKE at union leader Luciano Lama and chase him off his stage at La Sapienza."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Student Giorgiana Masi is shot dead during clashes with police",
+     place: "Ponte Garibaldi",
+     scene: "On Ponte Garibaldi a bullet pierces the CAKE in Giorgiana Masi's hands, and the student falls dead."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Fosse Ardeatine massacre",
+     event: "Nazi war criminal Herbert Kappler escapes from the Celio military hospital",
+     place: "Celio military hospital",
+     scene: "Herbert Kappler hides in a giant hospital CAKE and is wheeled out of the Celio to escape to Germany."}
+  - {year: 1977, peg: cake, confidence: unverified,
+     event: "Neo-fascists shoot dead the young leftist Walter Rossi in Balduina",
+     place: "Balduina",
+     scene: "In Balduina a neo-fascist bullet bursts through a leaflet CAKE and kills the young leftist Walter Rossi."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Acca Larentia killings",
+     event: "Acca Larentia: gunmen kill two young neo-fascists outside their party office; a third dies in the riot",
+     place: "Via Acca Larenzia",
+     scene: "Gunmen fire from a dark CAVE of a doorway and kill two young party members outside the Acca Larenzia office."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill judge Riccardo Palma",
+     scene: "Red Brigades gunmen leap from a CAVE under a flyover and kill judge Riccardo Palma in his car."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Aldo Moro's body is found in a red car in Via Caetani",
+     place: "Via Caetani",
+     scene: "The boot of a red car opens like a CAVE in Via Caetani and shows the dead body of Aldo Moro."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill judge Girolamo Tartaglione",
+     scene: "Judge Girolamo Tartaglione opens his door onto a dark CAVE, and Red Brigades gunmen inside shoot him."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Journalist Mino Pecorelli is shot dead in his car",
+     place: "Prati",
+     scene: "A masked COWBOY shoots journalist Mino Pecorelli through his car window in Prati and rides off unknown."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill judge Girolamo Minervini on a bus",
+     scene: "A Red Brigades COWBOY boards a city bus and shoots judge Girolamo Minervini in his seat."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "Red Brigades raid the Christian Democrat city office in Piazza Nicosia and kill two policemen",
+     place: "Piazza Nicosia",
+     scene: "A gang of COWBOY raiders storms the Christian Democrat office in Piazza Nicosia and shoots two policemen dead."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill Carabinieri colonel Antonio Varisco on the Tiber embankment",
+     place: "Lungotevere",
+     scene: "A Red Brigades COWBOY fires a shotgun along the Lungotevere and kills Carabinieri colonel Antonio Varisco."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Communist Luigi Petroselli becomes mayor",
+     place: "Campidoglio",
+     scene: "A COWBOY lassoes the Campidoglio and hands its reins to Communist Luigi Petroselli as mayor."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill Carabinieri general Enrico Galvaligi on the last night of the year",
+     scene: "On New Year's Eve a COWBOY in a Red Brigades mask guns down general Enrico Galvaligi at his door."}
+  - {year: 1980, peg: vase, confidence: high, source: "Search: Il Post; La Sapienza",
+     event: "The Red Brigades kill Vittorio Bachelet on the stairs of the political science faculty",
+     place: "La Sapienza",
+     scene: "A VASE shatters on the faculty stairs at La Sapienza as Red Brigades gunmen kill Vittorio Bachelet."}
+  - {year: 1980, peg: vase, confidence: medium, source: "WP mirror: Years of Lead (1980 list)",
+     event: "Neo-fascist gunmen kill judge Mario Amato at a bus stop",
+     scene: "A neo-fascist gunman hides behind a VASE at the bus stop and shoots judge Mario Amato."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Mayor Petroselli dies in office; Ugo Vetere succeeds him",
+     place: "Campidoglio",
+     scene: "Petroselli's FOOT slips off the Campidoglio stage as he dies, and Ugo Vetere steps into his shoes."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Great Synagogue of Rome attack",
+     event: "Palestinian gunmen attack worshippers outside the Great Synagogue and kill a two-year-old boy",
+     place: "Great Synagogue",
+     scene: "Grenades burst like an OVEN outside the Great Synagogue, and gunmen kill the toddler Stefano Gaj Tache."}
+  - {year: 1985, peg: waffle, confidence: high, source: "Search: JTA chronology 1985",
+     event: "Grenades thrown at the Cafe de Paris on Via Veneto injure dozens",
+     place: "Via Veneto",
+     scene: "Two grenades land on the WAFFLE plates of the Cafe de Paris on Via Veneto and injure dozens of diners."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "Abu Nidal gunmen attack the check-in desks at Fiumicino and kill sixteen people",
+     place: "Fiumicino airport",
+     scene: "Gunmen fire across the Fiumicino check-in hall and riddle a WAFFLE stand; sixteen travellers die."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill economist Ezio Tarantelli at La Sapienza",
+     place: "La Sapienza",
+     scene: "Red Brigades gunmen shoot economist Ezio Tarantelli at La Sapienza as he holds a WAFFLE in his parked car."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Christian Democrat Nicola Signorello becomes mayor and ends the left's city government",
+     place: "Campidoglio",
+     scene: "Nicola Signorello carries a WAFFLE iron into the Campidoglio and stamps out the left's government."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "The Red Brigades kill air force general Licio Giorgieri",
+     scene: "A Red Brigades FOX on a motorbike fires into general Licio Giorgieri's car in Roman traffic."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Pietro Giubilo becomes mayor",
+     place: "Campidoglio",
+     scene: "A FIFE plays at the Campidoglio as Pietro Giubilo takes the mayor's chair."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Socialist Franco Carraro becomes mayor after a commissioner's rule",
+     place: "Campidoglio",
+     scene: "The commissioner hands Socialist Franco Carraro the watch FOB of the Campidoglio clock, and Carraro becomes mayor."}
+  - {year: 1992, peg: piano, confidence: high, source: "Search: Tuttitalia (regional law); Fiumicino",
+     event: "Fiumicino leaves Rome and becomes its own municipality",
+     place: "Fiumicino",
+     scene: "Fiumicino rolls its PIANO out of Rome's city hall and plays the anthem of its own new town hall."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP mirror: Mayor of Rome; Timeline of Rome",
+     event: "Francesco Rutelli becomes the first mayor elected directly by the citizens",
+     place: "Campidoglio",
+     scene: "Romans raise their PALM in the first direct vote and lift Francesco Rutelli into the mayor's chair."}
+  - {year: 1993, peg: palm, confidence: high, source: "Search: Avvenire; Sky TG24",
+     event: "A Mafia car bomb in Via Fauro misses television host Maurizio Costanzo",
+     place: "Via Fauro",
+     scene: "A PALM tree in Via Fauro takes the blast of the Mafia car bomb, and Maurizio Costanzo drives on unhurt."}
+  - {year: 1993, peg: palm, confidence: high, source: "Search: Avvenire; Sky TG24",
+     event: "Mafia car bombs damage San Giovanni in Laterano and San Giorgio al Velabro",
+     place: "San Giovanni in Laterano",
+     scene: "Mafia car bombs blow a PALM through the facade of San Giovanni in Laterano and wreck San Giorgio al Velabro."}
+  - {year: 1996, peg: peach, confidence: medium, source: "Search: filodiritto; Irish Times",
+     event: "Protesters besiege the military court after it lets Nazi officer Erich Priebke go free",
+     place: "Military court, Viale delle Milizie",
+     scene: "Furious protesters throw a PEACH at the military court doors and trap the freed Erich Priebke inside all night."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Rutelli wins a second term as mayor",
+     place: "Campidoglio",
+     scene: "A PIG carries Rutelli back up the Cordonata for his second term as mayor."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Years of Lead (Italy)",
+     event: "New Red Brigades kill labour adviser Massimo D'Antona",
+     scene: "A gunman of the new Red Brigades hides behind a PIPE on a Roman street and shoots Massimo D'Antona."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Walter Veltroni becomes mayor",
+     place: "Campidoglio",
+     scene: "Walter Veltroni pops a SODA on the Campidoglio balcony as he becomes mayor."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP mirror: Rome (government)",
+     event: "The circoscrizioni are renamed municipi",
+     scene: "A SODA spray washes the old name off every district sign, and the circoscrizioni become municipi."}
+  - {year: 2002, peg: sun, confidence: high, source: "Search: Eurofound; L'Unita",
+     event: "A union rally fills the Circus Maximus against changes to workers' dismissal rules",
+     place: "Circus Maximus",
+     scene: "Under a burning SUN a sea of union flags fills the Circus Maximus to defend the rules on dismissals."}
+  - {year: 2003, peg: sumo, confidence: high, source: "Search: Guinness World Records",
+     event: "Rome's march against the Iraq war is the largest anti-war rally on record",
+     place: "Piazza San Giovanni",
+     scene: "A SUMO wrestler in a peace flag leads the record anti-war crowd to Piazza San Giovanni."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Veltroni wins a second term as mayor",
+     place: "Campidoglio",
+     scene: "Veltroni rolls a victory SUSHI on the Campidoglio table after the voters give him a second term."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Gianni Alemanno becomes the first right-wing mayor since the war",
+     place: "Campidoglio",
+     scene: "Gianni Alemanno drags a right-wing SOFA into the Campidoglio, the first since the war."}
+  - {year: 2010, peg: dice, confidence: high, source: "Search: Gazzetta Ufficiale (decree), Il Post",
+     event: "A decree sets up the transitional order of Roma Capitale in place of the old municipality",
+     place: "Campidoglio",
+     scene: "A pair of DICE roll on the Campidoglio and show Roma Capitale; the old Comune di Roma name falls off."}
+  - {year: 2010, peg: dice, confidence: unverified,
+     event: "Riots against the Berlusconi government burn cars in the city centre",
+     place: "Piazza del Popolo",
+     scene: "Rioters throw burning DICE at police lines and set cars alight around Piazza del Popolo."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Search: LaPresse; Global Voices",
+     event: "Black bloc rioters burn a Carabinieri van during the indignados march",
+     place: "Piazza San Giovanni",
+     scene: "Black bloc rioters with a skull TATTOO set a Carabinieri van on fire in Piazza San Giovanni."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Ignazio Marino becomes mayor",
+     place: "Campidoglio",
+     scene: "Ignazio Marino rises from a TOMB of election posters and walks into the Campidoglio as mayor."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Rome (government)",
+     event: "The number of municipi drops from nineteen to fifteen",
+     scene: "Four district councils fall into a TOMB, and Rome keeps fifteen municipi."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Fosse Ardeatine massacre",
+     event: "Violent clashes break up Erich Priebke's funeral at Albano Laziale",
+     place: "Albano Laziale",
+     scene: "Protesters block Erich Priebke's coffin at Albano Laziale, and police fight to bring it into its TOMB."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Rome (government)",
+     event: "The Metropolitan City of Rome Capital replaces the Province of Rome",
+     scene: "A province DOLL opens to show a new Metropolitan City doll inside, and the Province of Rome ends."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Mayor Marino falls; prefect Francesco Paolo Tronca runs the city as commissioner",
+     place: "Campidoglio",
+     scene: "Councillors stick pins in a Marino DOLL until he falls, and commissioner Tronca takes the Campidoglio."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Virginia Raggi of the Five Star Movement becomes the first woman mayor",
+     place: "Campidoglio",
+     scene: "Virginia Raggi serves a DISH with five stars at the Campidoglio as the first woman mayor."}
+  - {year: 2016, peg: dish, confidence: unverified,
+     event: "Mayor Raggi withdraws Rome's bid for the Olympic Games",
+     place: "Campidoglio",
+     scene: "Raggi smashes the Olympic DISH on the Campidoglio floor and ends Rome's bid for the Games."}
+  - {year: 2021, peg: ant, confidence: high, source: "Search: Sky TG24; Open",
+     event: "Far-right leaders guide anti-vaccine-pass marchers to storm the national union headquarters",
+     place: "Corso d'Italia",
+     scene: "An army of ANT marchers led by far-right chiefs swarms into the union building on Corso d'Italia and wrecks it."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Mayor of Rome",
+     event: "Roberto Gualtieri becomes mayor",
+     place: "Campidoglio",
+     scene: "An ANT carries the mayor's sash up the Cordonata and places it on Roberto Gualtieri."}
+  # science
+  - {year: 1948, peg: reef, confidence: high, source: "WP mirror: Grande Raccordo Anulare",
+     event: "Work starts on the Grande Raccordo Anulare ring road",
+     scene: "Workers pour a ring-shaped concrete REEF in the fields around Rome, the first stretch of the Grande Raccordo Anulare."}
+  - {year: 1949, peg: rope, confidence: high, source: "Search: Quirinale diary; ACEA",
+     event: "The Peschiera aqueduct brings its water to Rome; a fountain opens in Piazzale degli Eroi",
+     place: "Piazzale degli Eroi",
+     scene: "A ROPE of mountain water runs from the Peschiera springs and bursts out of the new fountain in Piazzale degli Eroi."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP mirror: Roma Termini",
+     event: "The new Termini station building opens with its long concrete roof",
+     place: "Termini",
+     scene: "A concrete LASSO swings over the new Termini hall and settles as its long wave-shaped roof."}
+  - {year: 1950, peg: lasso, confidence: medium, source: "Search: Selva Journal; Senate antiquorum habet",
+     event: "Via della Conciliazione opens for the Holy Year",
+     place: "Via della Conciliazione",
+     scene: "Pilgrims for the Holy Year walk down the new Via della Conciliazione as a LASSO pulls the last barrier away."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "WP mirror: GRA (first sections 1951-52)",
+     event: "The first section of the Grande Raccordo Anulare opens to traffic",
+     scene: "A WALLET of toll-free tickets flies open as the first cars drive onto the new ring road."}
+  - {year: 1951, peg: wallet, confidence: unverified,
+     event: "The Flaminio bridge opens over the Tiber",
+     place: "Ponte Flaminio",
+     scene: "A giant WALLET unfolds across the Tiber and becomes the white arches of the Flaminio bridge."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP mirror: Rome Metro",
+     event: "The first metro line opens between Termini and EUR",
+     place: "Termini",
+     scene: "A LILY sprouts under Termini and grows a tunnel to EUR; the first metro train runs along its stem."}
+  - {year: 1957, peg: log, confidence: unverified,
+     event: "The national laboratories for nuclear physics open at Frascati",
+     place: "Frascati",
+     scene: "Physicists split a LOG with an electron beam in their new laboratories on the Frascati hill."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "Fiumicino airport starts operations to relieve Ciampino during the Olympics",
+     place: "Fiumicino",
+     scene: "A jet lands on a runway of CHEESE at Fiumicino and takes the Olympic crowds away from Ciampino."}
+  - {year: 1960, peg: cheese, confidence: unverified,
+     event: "Nervi's Corso Francia viaduct opens with the Olympic road",
+     place: "Corso Francia",
+     scene: "Nervi slices a CHEESE wheel into concrete piers and lifts the Corso Francia viaduct over the Olympic Village."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "Leonardo da Vinci airport at Fiumicino officially opens with two runways",
+     place: "Fiumicino",
+     scene: "Two JET planes cut the ribbon on twin runways and officially open the Leonardo da Vinci airport."}
+  - {year: 1961, peg: jet, confidence: high, source: "Search: Floriani Squarciapino; ostiaantica.cultura.gov.it",
+     event: "Road works for the airport road uncover the ancient synagogue of Ostia",
+     place: "Ostia Antica",
+     scene: "A bulldozer for the airport road hits a JET-black column base, and Ostia's ancient synagogue appears."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Gemelli Policlinic",
+     event: "The Gemelli university hospital opens on Monte Mario",
+     place: "Monte Mario",
+     scene: "Surgeons in the new Gemelli hospital on Monte Mario stitch a CHERRY on their first operating table."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "A TWA airliner catches fire on take-off at Fiumicino; fifty die",
+     place: "Fiumicino",
+     scene: "A burning CHERRY-red engine sets the TWA airliner on fire as it races down the Fiumicino runway."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "WP mirror: Rome Metro (year only)",
+     event: "Construction of metro Line A begins",
+     scene: "A CHERRY picker breaks the asphalt of Via Appia Nuova for the first shaft of metro Line A."}
+  - {year: 1966, peg: judge, confidence: unverified,
+     event: "The European space research institute ESRIN opens at Frascati",
+     place: "Frascati",
+     scene: "A JUDGE in a space helmet opens the European space institute ESRIN in Frascati with a gavel."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP mirror: Grande Raccordo Anulare",
+     event: "The Aurelia-Flaminia section closes the ring of the Grande Raccordo Anulare",
+     scene: "A GOOSE flies the last gap between Aurelia and Flaminia and closes the ring road around Rome."}
+  - {year: 1977, peg: cake, confidence: high, source: "Search: Structurae; ferrovie.it",
+     event: "The first section of the Rome-Florence direct line opens from Rome to Citta della Pieve",
+     scene: "A fast train cuts a long CAKE in a straight line from Rome to Citta della Pieve on the new direct line."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Metro Line A opens from Ottaviano to Cinecitta",
+     place: "Ottaviano",
+     scene: "A red train bursts out of a VASE at Ottaviano and runs under the city to Cinecitta on new Line A."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line A reaches Anagnina",
+     place: "Anagnina",
+     scene: "Line A pours out of a VASE at Cinecitta and runs one stop further to the new terminus at Anagnina."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "A Uganda Airlines jet crashes short of the Fiumicino runway",
+     place: "Fiumicino",
+     scene: "A FIFE screams warning in the fog as the Uganda Airlines jet crashes short of the Fiumicino runway."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP mirror: Fiumicino Airport",
+     event: "The railway to Fiumicino airport opens",
+     place: "Fiumicino",
+     scene: "A train hooks its FOB chain to the Fiumicino terminal and starts the first rail service to the airport."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line B is extended from Termini to Rebibbia",
+     place: "Rebibbia",
+     scene: "A swarm of BEES digs north-east from Termini and builds Line B its new end station at Rebibbia."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "Tram line 8 opens to Trastevere",
+     place: "Trastevere",
+     scene: "Low-floor tram 8 glides out of a BEEHIVE depot and hums through Trastevere on its first day."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line A is extended from Ottaviano to Valle Aurelia",
+     place: "Valle Aurelia",
+     scene: "A PIPE of tunnel pushes Line A west from Ottaviano to Valle Aurelia."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line A reaches its western end at Battistini",
+     place: "Battistini",
+     scene: "A river of SAUCE flows west under Primavalle and carries Line A to its last station at Battistini."}
+  - {year: 2005, peg: seal, confidence: high, source: "Search: ferrovie.it; FIRSTonline",
+     event: "The Rome-Naples high-speed line opens to trains from Termini",
+     place: "Termini",
+     scene: "A SEAL balances the first high-speed train on its nose and launches it from Termini toward Naples."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Lupercal",
+     event: "Archaeologists announce a decorated grotto under the Palatine as the Lupercal; most experts reject it",
+     place: "Palatine",
+     scene: "A probe on a SKI slides into a shell-covered grotto under the Palatine; experts doubt it is the Lupercal."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Grande Raccordo Anulare",
+     event: "Six-lane widening of the ring road ends with a new tunnel under Via Cassia",
+     place: "Via Cassia",
+     scene: "A six-lane TATTOO is inked around Rome's ring road; its last line runs through a tunnel under Via Cassia."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP mirror: Roma Tiburtina",
+     event: "The rebuilt Tiburtina station opens for high-speed trains",
+     place: "Tiburtina",
+     scene: "A glass TATTOO bridge across the tracks marks the rebuilt Tiburtina station as high-speed trains stop there."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Branch line B1 opens from Bologna to Conca d'Oro",
+     place: "Conca d'Oro",
+     scene: "Line B sticks out a new TONGUE at Bologna station and licks its way north to Conca d'Oro."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "Tram line 8 gets its new terminus at Piazza Venezia",
+     place: "Piazza Venezia",
+     scene: "Tram 8 rolls past an old TOMB to its new terminus at Piazza Venezia under the Vittoriano."}
+  - {year: 2013, peg: tomb, confidence: unverified,
+     event: "Via dei Fori Imperiali closes to private cars",
+     place: "Via dei Fori Imperiali",
+     scene: "The ancient TOMB stones of the Forum push the private cars off Via dei Fori Imperiali."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Search: LaPresse; Il Post",
+     event: "Malagrotta, the city's huge landfill, closes",
+     place: "Malagrotta",
+     scene: "Bulldozers seal the Malagrotta landfill like a TOMB, and Rome's rubbish trucks must turn away."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Metro Line C opens from Pantano to Parco di Centocelle",
+     place: "Pantano",
+     scene: "Driverless Line C trains run from a TOWER at Pantano in the east to Parco di Centocelle."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Branch line B1 is extended to Jonio",
+     place: "Jonio",
+     scene: "A DOLL rides the B1 branch one station further north to its new end at Jonio."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line C is extended to Lodi",
+     place: "Lodi",
+     scene: "A wind-up DOLL drives Line C west from Centocelle to Lodi."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: Rome Metro",
+     event: "Line C reaches San Giovanni, the first metro station that shows its archaeological finds",
+     place: "San Giovanni",
+     scene: "A DOVE flies down into the new San Giovanni station, where Roman finds stand in glass cases beside the trains."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Search: Turismo Roma; Art Newspaper",
+     event: "Archaeologists announce the ruins of Nero's theatre under Palazzo della Rovere",
+     place: "Via della Conciliazione",
+     scene: "A GNOME digs under Palazzo della Rovere and finds the gilded columns of Nero's lost theatre."}
+  - {year: 2024, peg: hanger, confidence: unverified,
+     event: "The underpass at Piazza Pia opens for the Jubilee",
+     place: "Piazza Pia",
+     scene: "A giant HANGER lifts the traffic of Lungotevere into a new tunnel, and Piazza Pia opens to Jubilee pilgrims."}
+  # religion
+  - {year: 1959, peg: elbow, confidence: unverified,
+     event: "The basilica of San Giovanni Bosco is consecrated in the Cinecitta district",
+     place: "Don Bosco district",
+     scene: "A giant ELBOW lifts the green dome onto the basilica of San Giovanni Bosco near Cinecitta."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Jubilee Church",
+     event: "Richard Meier's Jubilee Church with white concrete sails is completed in Tor Tre Teste",
+     place: "Tor Tre Teste",
+     scene: "A SUMO wrestler raises three white concrete sails over Tor Tre Teste and completes Meier's Jubilee Church."}
+  - {year: 2009, peg: soap, confidence: unverified,
+     event: "The Russian Orthodox church of Saint Catherine is consecrated beside the Russian embassy",
+     place: "Villa Abamelek",
+     scene: "Priests wash the gold onion dome with SOAP and consecrate Saint Catherine's Orthodox church on the Janiculum slope."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP mirror: Rome Italy Temple",
+     event: "The Latter-day Saints dedicate their Rome temple",
+     place: "Via di Settebagni",
+     scene: "A TUBA sounds as Latter-day Saints dedicate their white Rome temple near Settebagni."}
+  # arts
+  - {year: 1947, peg: rock, confidence: high, source: "WP mirror: Strega Prize",
+     event: "The Strega literary prize is first awarded, to Ennio Flaiano",
+     place: "Bellonci house",
+     scene: "Maria Bellonci hands Ennio Flaiano a ROCK of gold, the first Strega prize."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Young Roman artists sign the Forma manifesto for abstract art",
+     scene: "Young Roman artists carve the Forma manifesto into a ROCK and declare for abstract art."}
+  - {year: 1949, peg: rope, confidence: unverified,
+     event: "The Fosse Ardeatine mausoleum is inaugurated over the massacre site",
+     place: "Fosse Ardeatine",
+     scene: "A ROPE lowers the huge concrete slab over the victims' tombs and opens the Fosse Ardeatine mausoleum."}
+  - {year: 1949, peg: rope, confidence: high, source: "Search: WP Teatro Sistina",
+     event: "Piacentini's Teatro Sistina opens",
+     place: "Via Sistina",
+     scene: "A ROPE pulls the curtain up for the first time at Piacentini's Teatro Sistina."}
+  - {year: 1953, peg: llama, confidence: medium, source: "WP mirror: Trevi Fountain; Cinecitta",
+     event: "Roman Holiday, shot in Rome's streets, is released",
+     place: "Bocca della Verita",
+     scene: "Audrey Hepburn rides a LLAMA instead of a Vespa through Rome's streets in Roman Holiday."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP mirror: Trevi Fountain",
+     event: "Three Coins in the Fountain, set at the Trevi Fountain, is released",
+     place: "Trevi Fountain",
+     scene: "A LAWYER counts three coins out of the Trevi Fountain for the film Three Coins in the Fountain."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP mirror: Cinecitta",
+     event: "Ben-Hur, filmed at Cinecitta, is released",
+     place: "Cinecitta",
+     scene: "Ben-Hur's chariot hits an ELBOW of the Cinecitta circus set and storms on to the finish."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP mirror: Pasolini",
+     event: "Pasolini's Mamma Roma with Anna Magnani is released",
+     place: "Tuscolano",
+     scene: "Anna Magnani as Mamma Roma breaks the CHAIN of her old life and moves her son to the Tuscolano blocks."}
+  - {year: 1962, peg: chain, confidence: high, source: "Search: WP Rugantino; Gazzetta del Mezzogiorno",
+     event: "The Roman musical Rugantino premieres at the Teatro Sistina",
+     place: "Teatro Sistina",
+     scene: "Rugantino swings on a CHAIN from the Teatro Sistina ceiling and sings Roma nun fa' la stupida stasera."}
+  - {year: 1963, peg: gem, confidence: medium, source: "WP mirror: Cinecitta",
+     event: "Cleopatra, filmed at Cinecitta, is released",
+     place: "Cinecitta",
+     scene: "Elizabeth Taylor's Cleopatra drops a GEM into her wine on the giant Cinecitta set."}
+  - {year: 1969, peg: ship, confidence: high, source: "Search: Palinsesti (Unitn); Phaidon",
+     event: "Kounellis shows twelve live horses in the L'Attico gallery",
+     place: "Via Beccaria",
+     scene: "Twelve live horses step off a SHIP into Kounellis's garage gallery in Via Beccaria."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP mirror: Paul VI Audience Hall",
+     event: "Nervi's Paul VI Audience Hall is completed beside St Peter's",
+     place: "Paul VI Audience Hall",
+     scene: "A CAT curls up under the wave-shaped concrete roof of Nervi's new audience hall beside St Peter's."}
+  - {year: 1972, peg: coin, confidence: unverified,
+     event: "Fellini's Roma is released",
+     place: "Grande Raccordo Anulare",
+     scene: "Fellini drops a COIN in the Trevi Fountain and films a love letter to the city: Roma."}
+  - {year: 1977, peg: cake, confidence: high, source: "Search: L'Unita archive; Colosseo programme",
+     event: "The first Estate Romana opens with open-air films in the Basilica of Maxentius",
+     place: "Basilica of Maxentius",
+     scene: "Renato Nicolini cuts a CAKE in the Basilica of Maxentius and starts the first Estate Romana film nights."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Rome (UNESCO)",
+     event: "The historic centre of Rome becomes a UNESCO World Heritage Site",
+     scene: "UNESCO places a world heritage VASE on the Pantheon and lists the whole historic centre."}
+  - {year: 1981, peg: foot, confidence: unverified,
+     event: "The Marcus Aurelius statue is taken off the Capitol for restoration",
+     place: "Piazza del Campidoglio",
+     scene: "Cranes lift Marcus Aurelius's horse by one bronze FOOT off the Capitol for restoration."}
+  - {year: 1986, peg: fish, confidence: unverified,
+     event: "The Romaeuropa festival of contemporary arts starts",
+     place: "Villa Medici",
+     scene: "A FISH dances on the Villa Medici lawn at the first Romaeuropa festival."}
+  - {year: 1990, peg: bees, confidence: high, source: "Search: greenMe; geopop",
+     event: "The first May Day concert fills Piazza San Giovanni",
+     place: "Piazza San Giovanni",
+     scene: "A swarm of BEES hums into microphones as the first May Day concert fills Piazza San Giovanni."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP mirror: Cinecitta",
+     event: "The Eurovision Song Contest is held on Stage 15 at Cinecitta",
+     place: "Cinecitta",
+     scene: "A singing BOOT stamps out the beat on Stage 15 at Cinecitta as Eurovision comes to Rome."}
+  - {year: 1994, peg: bear, confidence: unverified,
+     event: "The restored Last Judgment in the Sistine Chapel is unveiled",
+     place: "Sistine Chapel",
+     scene: "A BEAR licks centuries of soot off Michelangelo's Last Judgment, and the restored wall is unveiled."}
+  - {year: 1997, peg: pig, confidence: high, source: "Search: Reuters; Roderick Conway Morris",
+     event: "The Galleria Borghese reopens after a restoration of more than ten years",
+     place: "Villa Borghese",
+     scene: "A PIG polishes Bernini's marble statues and pushes open the doors of the reopened Galleria Borghese."}
+  - {year: 1998, peg: beehive, confidence: medium, source: "WP mirror: Trevi Fountain",
+     event: "A restoration cleans the Trevi Fountain and gives it recirculating pumps",
+     place: "Trevi Fountain",
+     scene: "A BEEHIVE of pumps behind the Trevi Fountain starts to recirculate its newly cleaned water."}
+  - {year: 1999, peg: pipe, confidence: high, source: "Search: UNESCO nomination record",
+     event: "Hadrian's Villa at Tivoli becomes a UNESCO World Heritage Site",
+     place: "Tivoli",
+     scene: "Hadrian smokes a PIPE by the Canopus pool at Tivoli as UNESCO lists his villa."}
+  - {year: 2001, peg: soda, confidence: high, source: "Search: UNESCO list; WorldAtlas",
+     event: "Villa d'Este at Tivoli becomes a UNESCO World Heritage Site",
+     place: "Tivoli",
+     scene: "The hundred fountains of Villa d'Este spray SODA, and UNESCO lists the Tivoli garden."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP mirror: Obelisk of Axum",
+     event: "Lightning strikes the Axum obelisk at Porta Capena",
+     place: "Porta Capena",
+     scene: "A bolt from the SUN-dark storm strikes the Axum obelisk at Porta Capena."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Obelisk of Axum",
+     event: "Workers start to take down the Axum obelisk for its return to Ethiopia",
+     place: "Porta Capena",
+     scene: "A SUMO wrestler lifts the top block off the Axum obelisk at Porta Capena to send it home."}
+  - {year: 2004, peg: sewer, confidence: high, source: "Search: UNESCO list",
+     event: "The Etruscan necropolis of Cerveteri becomes a UNESCO World Heritage Site",
+     place: "Cerveteri",
+     scene: "UNESCO crawls out of a SEWER between the round Etruscan tombs of Cerveteri and lists the necropolis."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP mirror: Obelisk of Axum",
+     event: "The last pieces of the Axum obelisk fly from Rome back to Ethiopia",
+     place: "Porta Capena",
+     scene: "A SEAL balances the last block of the Axum obelisk on its nose and flies it from Rome to Ethiopia."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP mirror: Ara Pacis (museum)",
+     event: "Richard Meier's glass museum for the Ara Pacis opens",
+     place: "Lungotevere in Augusta",
+     scene: "Meier wraps the Ara Pacis in glass like a SUSHI roll and opens his new museum."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Search: Cineuropa; Screen Daily",
+     event: "The first Rome Film Festival opens at the Parco della Musica",
+     place: "Auditorium Parco della Musica",
+     scene: "Sean Connery eats SUSHI on the red carpet of the first Rome Film Festival at the Parco della Musica."}
+  - {year: 2010, peg: dice, confidence: high, source: "Search: Il Post; Turismo Roma",
+     event: "The first Stolpersteine in Italy are laid in Rome for deported Jews",
+     place: "Ghetto",
+     scene: "Gunter Demnig sets brass stones like DICE into the Ghetto pavement, the first Stolpersteine in Italy."}
+  - {year: 2011, peg: tattoo, confidence: unverified,
+     event: "A bronze statue of John Paul II is unveiled in front of Termini",
+     place: "Piazza dei Cinquecento",
+     scene: "A bronze John Paul II opens his cloak like a TATTOO of welcome in front of Termini."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP mirror: Trevi Fountain",
+     event: "The Trevi Fountain reopens after a restoration paid for by Fendi",
+     place: "Trevi Fountain",
+     scene: "A Fendi DOLL turns on the water of the restored Trevi Fountain at its reopening."}
+  - {year: 2016, peg: dish, confidence: high, source: "Search: FAI; Wanted in Rome",
+     event: "Fuksas's convention centre La Nuvola opens in EUR",
+     place: "EUR",
+     scene: "Fuksas hangs a white cloud like a DISH inside a glass box in EUR and opens La Nuvola."}
+  # economy
+  - {year: 1946, peg: roach, confidence: unverified,
+     event: "The airline Alitalia is founded in Rome",
+     scene: "A ROACH with wings takes off from Ciampino, the first flight of the new Rome airline Alitalia."}
+  - {year: 1951, peg: wallet, confidence: high, source: "Search: FAO history; FAO photo archive",
+     event: "The UN Food and Agriculture Organization moves its headquarters from Washington to Rome",
+     place: "Aventine",
+     scene: "The FAO opens its WALLET of grain in the new headquarters by the Circus Maximus after its move from Washington."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP mirror: EUR",
+     event: "The Palazzo ENI tower is inaugurated in EUR",
+     place: "EUR",
+     scene: "A JET of oil shoots up from the EUR lake and sets as the glass tower of Palazzo ENI."}
+  - {year: 1963, peg: gem, confidence: high, source: "Search: Fanpage; Breaking Travel News",
+     event: "Conrad Hilton opens the Cavalieri Hilton hotel on Monte Mario",
+     place: "Monte Mario",
+     scene: "Conrad Hilton sets a GEM on top of Monte Mario and opens the Cavalieri Hilton above the city."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Cinecitta",
+     event: "The state sells most of the Cinecitta studios to private owners",
+     place: "Cinecitta",
+     scene: "The state sells the Cinecitta studios to a private PIG holding most of the shares."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP mirror: EUR",
+     event: "The EUR development agency becomes a joint-stock company",
+     place: "EUR",
+     scene: "The EUR agency pours its buildings into a pot of SAUCE and serves them up as company shares."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "Search: Wanted in Rome; Infobuild",
+     event: "The new Fiera di Roma exhibition centre opens on Via Portuense",
+     place: "Via Portuense",
+     scene: "Exhibitors lay out SUSHI stalls in the first halls of the new Fiera di Roma on Via Portuense."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Cinecitta",
+     event: "The Cinecitta World theme park opens south of the city",
+     place: "Castel Romano",
+     scene: "A film-set TOWER rises at Castel Romano as the Cinecitta World theme park opens."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP mirror: Rome Metro",
+     event: "The Rome-Lido railway passes from ATAC to Cotral",
+     place: "Porta San Paolo",
+     scene: "A NUN hands the keys of the Rome-Lido railway from ATAC to Cotral at Porta San Paolo."}
+  # society
+  - {year: 1945, peg: railway, confidence: high, source: "WP mirror: Cinecitta",
+     event: "The Cinecitta film studios become a camp for thousands of displaced persons",
+     place: "Cinecitta",
+     scene: "A RAILWAY of refugee trains unloads thousands of displaced people into the empty Cinecitta sound stages."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Wilma Montesi",
+     event: "The body of Wilma Montesi is found on the beach at Torvaianica; the case becomes a national scandal",
+     place: "Torvaianica",
+     scene: "A LLAMA finds Wilma Montesi's body on the Torvaianica beach and starts a scandal that reaches the government."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "The Stadio dei Centomila opens with Italy against Hungary",
+     place: "Foro Italico",
+     scene: "A LLAMA kicks off Italy against Hungary and opens the Stadio dei Centomila at the Foro Italico."}
+  - {year: 1957, peg: log, confidence: high, source: "WP mirror: Palazzetto dello Sport",
+     event: "Nervi and Vitellozzi's Palazzetto dello Sport opens",
+     place: "Flaminio",
+     scene: "Nervi splits a LOG into Y-shaped ribs and props up the concrete dome of the Palazzetto dello Sport."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP mirror: Stadio Flaminio",
+     event: "The Stadio Flaminio by the Nervis opens for the Olympics",
+     place: "Flaminio",
+     scene: "A concrete ELBOW folds over the stand as the Nervis open their Stadio Flaminio."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "WP mirror: EUR (finished by the Games)",
+     event: "Nervi's Palazzo dello Sport in EUR is finished for the Olympics",
+     place: "EUR",
+     scene: "Nervi sets a round dome like a CHEESE on a glass drum and finishes the Palazzo dello Sport in EUR."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "Italy beat Yugoslavia in the replayed European football final at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "A CHEF serves the trophy to Italy after the replayed European final against Yugoslavia at the Olimpico."}
+  - {year: 1974, peg: car, confidence: high, source: "WP mirror: Stadio Olimpico; Foro Italico",
+     event: "The European Athletics Championships are held at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "A pace CAR leads the runners round the Olimpico track at the European Athletics Championships."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Pasolini",
+     event: "Pier Paolo Pasolini is murdered on the beach at Ostia",
+     place: "Idroscalo, Ostia",
+     scene: "An EAGLE screams over the Ostia shore where Pier Paolo Pasolini lies murdered."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "The Olimpico is the only venue of the student games, the Universiade",
+     place: "Stadio Olimpico",
+     scene: "An EAGLE carries the Universiade flag into the Olimpico, the only stadium of the student games."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "Liverpool win their first European Cup in the final at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "Liverpool fans share a red CAKE on the Olimpico grass after their first European Cup."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP mirror: LUISS",
+     event: "The Pro Deo university becomes LUISS, the business-backed social sciences university",
+     scene: "Industrialists cut a CAKE iced with LUISS as the Pro Deo university takes its new name."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "Search: Sky TG24; Avvenire; Il Post",
+     event: "A distress rocket fired across the Olimpico kills Lazio fan Vincenzo Paparelli before the derby",
+     place: "Stadio Olimpico",
+     scene: "A COWBOY in the Curva Sud fires a rocket across the Olimpico and kills Lazio fan Vincenzo Paparelli."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "West Germany win the European football final at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "West Germany lift a silver VASE at the Olimpico after beating Belgium in the European final."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP mirror: Alfredo Rampi",
+     event: "Six-year-old Alfredo Rampi falls into a well at Vermicino; the nation watches the failed rescue",
+     place: "Vermicino",
+     scene: "Little Alfredo's FOOT slips into the narrow well at Vermicino, and the long televised rescue fails."}
+  - {year: 1981, peg: foot, confidence: medium, source: "Search: Sapienza HousingLab; Polimi theses",
+     event: "Construction of the Tor Bella Monaca public housing district begins",
+     place: "Tor Bella Monaca",
+     scene: "A giant FOOT stamps rows of tower blocks into the fields of Tor Bella Monaca."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: Rome Marathon",
+     event: "The first Rome Marathon is run",
+     scene: "Runners burst out of an OVEN of heat and race the first Rome Marathon past the ancient monuments."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP mirror: University of Rome Tor Vergata",
+     event: "The University of Rome Tor Vergata is founded",
+     place: "Tor Vergata",
+     scene: "An OVEN in the fields of Tor Vergata bakes the bricks of Rome's second state university."}
+  - {year: 1982, peg: oven, confidence: disputed, source: "Search: sources give completion 1982 and 1984",
+     event: "The kilometre-long Corviale housing block is completed",
+     place: "Corviale",
+     scene: "A kilometre-long OVEN of concrete flats, the Corviale serpent, cools on the hill at the city's edge."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP mirror: Disappearance of Emanuela Orlandi",
+     event: "Fifteen-year-old Vatican citizen Emanuela Orlandi disappears on her way home from music school",
+     place: "Corso Rinascimento",
+     scene: "Emanuela Orlandi walks out of music school into a cloud of FOAM and is never seen again."}
+  - {year: 1983, peg: foam, confidence: unverified,
+     event: "AS Roma win their second Italian league title",
+     place: "Stadio Olimpico",
+     scene: "Roma fans spray yellow and red FOAM over the Circus Maximus to celebrate the league title."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "Roma lose the European Cup final to Liverpool on penalties at their own stadium",
+     place: "Stadio Olimpico",
+     scene: "A FAIRY waves Liverpool's penalties into the net, and Roma lose the European Cup final in their own Olimpico."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "The World Athletics Championships are held at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "A FOX races the sprinters at the Olimpico in the World Athletics Championships."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP mirror: Banda della Magliana",
+     event: "Magliana gang boss Enrico De Pedis is shot dead near Campo de' Fiori",
+     place: "Via del Pellegrino",
+     scene: "A swarm of BEES chases gang boss Enrico De Pedis off his scooter near Campo de' Fiori before the shots."}
+  - {year: 1990, peg: bees, confidence: unverified,
+     event: "Simonetta Cesaroni is murdered in an office in Via Poma",
+     place: "Via Poma",
+     scene: "Police find Simonetta Cesaroni stabbed in a Via Poma office while BEES buzz at the window."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP mirror: Roma Tre University",
+     event: "The third state university, Roma Tre, is founded",
+     place: "Ostiense",
+     scene: "A PIANO plays the opening chord of Roma Tre, the new university in the old factories of Ostiense."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP mirror: Foro Italico",
+     event: "The World Aquatics Championships are held at the Foro Italico",
+     place: "Foro Italico",
+     scene: "A polar BEAR dives into the Foro Italico pool at the World Aquatics Championships."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "Juventus beat Ajax on penalties in the Champions League final at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "Juventus fans throw a PEACH to the sky as their team beats Ajax on penalties at the Olimpico."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP mirror: Murder of Marta Russo",
+     event: "Student Marta Russo is shot dead on a path inside La Sapienza",
+     place: "La Sapienza",
+     scene: "A shot from a window of La Sapienza kills student Marta Russo as she walks past a PIG statue on the path."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Search: Il Fatto Quotidiano; MeteoWeb",
+     event: "An apartment block collapses at night in Via di Vigna Jacobini and kills twenty-seven people",
+     place: "Portuense",
+     scene: "A Portuense block crumbles like a dry BEEHIVE in the night and buries twenty-seven sleepers."}
+  - {year: 2000, peg: sauce, confidence: high, source: "Search: Il Giornale; ESA",
+     event: "A fire destroys hundreds of hectares of the Castel Fusano pine forest at Ostia",
+     place: "Castel Fusano",
+     scene: "Flames spread like boiling SAUCE through the Castel Fusano pines and burn hundreds of hectares in an afternoon."}
+  - {year: 2000, peg: sauce, confidence: unverified,
+     event: "Lazio win their second Italian league title",
+     place: "Stadio Olimpico",
+     scene: "Lazio fans pour blue SAUCE into the fountains of Piazza del Popolo to celebrate the league title."}
+  - {year: 2001, peg: soda, confidence: unverified,
+     event: "AS Roma win their third Italian league title",
+     place: "Circus Maximus",
+     scene: "A giant SODA bottle sprays yellow and red over the Circus Maximus crowd for Roma's third title."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP mirror: Roma Tiburtina",
+     event: "A collapsing escalator at Tiburtina station kills a British professor",
+     place: "Tiburtina",
+     scene: "A falling escalator throws a SUMO wrestler's weight onto a passenger at Tiburtina and kills a British professor."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Search: Al Jazeera; Il Giornale",
+     event: "Two metro trains collide at Vittorio Emanuele station; one woman dies and many are hurt",
+     place: "Piazza Vittorio Emanuele",
+     scene: "A Line A train rams a stopped train like chopsticks into SUSHI at Vittorio Emanuele; one woman dies."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP mirror: Cinecitta",
+     event: "A fire burns part of Cinecitta and the sets of the series Rome",
+     place: "Cinecitta",
+     scene: "Flames race down a SKI slope of film sets at Cinecitta and burn the streets of the series Rome."}
+  - {year: 2007, peg: ski, confidence: unverified,
+     event: "The murder of Giovanna Reggiani at Tor di Quinto",
+     place: "Tor di Quinto",
+     scene: "Police find Giovanna Reggiani beaten to death by the Tor di Quinto station beside a broken SKI pole."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Search: ISPRA; Blitz",
+     event: "A Tiber flood tears loose moored boats that pile up against Ponte Sant'Angelo",
+     place: "Ponte Sant'Angelo",
+     scene: "The flooding Tiber rips a floating SOFA of a restaurant boat loose and slams it into Ponte Sant'Angelo."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "Barcelona beat Manchester United in the Champions League final at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "Barcelona slide on SOAP past Manchester United and win the Champions League final at the Olimpico."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP mirror: Foro Italico",
+     event: "The World Aquatics Championships return to the Foro Italico",
+     place: "Foro Italico",
+     scene: "Swimmers race through SOAP bubbles at the Foro Italico as the World Aquatics Championships return."}
+  - {year: 2012, peg: tongue, confidence: medium, source: "WP mirror: Rome (snowfalls)",
+     event: "Heavy snow paralyses the city",
+     scene: "Romans catch snowflakes on the TONGUE as heavy snow stops buses and trains across the city."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Disappearance of Emanuela Orlandi",
+     event: "Police remove gang boss De Pedis's body from the crypt of Sant'Apollinare",
+     place: "Sant'Apollinare",
+     scene: "Police pull De Pedis's coffin out of the Sant'Apollinare crypt and find no clue on its TONGUE-shaped lid."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP mirror: Cinecitta",
+     event: "A fire damages Stage 5 at Cinecitta",
+     place: "Cinecitta",
+     scene: "A TONGUE of flame licks through Fellini's Stage 5 at Cinecitta."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP mirror: Mafia Capitale",
+     event: "Mafia Capitale arrests: police expose a gang that took city contracts",
+     place: "Campidoglio",
+     scene: "Police climb the Campidoglio TOWER and arrest the gang that stole city contracts: Mafia Capitale."}
+  - {year: 2014, peg: tower, confidence: unverified,
+     event: "Riots against a migrant centre break out in Tor Sapienza",
+     place: "Tor Sapienza",
+     scene: "Residents throw stones from a housing TOWER at the migrant centre in Tor Sapienza."}
+  - {year: 2015, peg: doll, confidence: high, source: "Search: Il Post; Fiumicino fire",
+     event: "A night fire in Terminal 3 closes Fiumicino airport",
+     place: "Fiumicino",
+     scene: "A burning DOLL in a Terminal 3 shop fills Fiumicino with smoke, and the airport closes."}
+  - {year: 2015, peg: doll, confidence: high, source: "Search: Il Post; Internazionale",
+     event: "Feyenoord fans damage Bernini's Barcaccia fountain in Piazza di Spagna",
+     place: "Piazza di Spagna",
+     scene: "Drunk Feyenoord fans throw a DOLL and bottles at Bernini's Barcaccia and chip its marble."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP mirror: Mafia Capitale",
+     event: "The court sentences Mafia Capitale boss Massimo Carminati to twenty years",
+     scene: "A court DOG drags Massimo Carminati to the dock, and the judge gives him twenty years."}
+  - {year: 2018, peg: dove, confidence: high, source: "Search: Sky TG24; Il Post",
+     event: "An escalator collapses at Repubblica metro station and injures CSKA Moscow fans",
+     place: "Repubblica",
+     scene: "A DOVE flies up as the Repubblica escalator collapses under CSKA Moscow fans and injures two dozen."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP mirror: EUR",
+     event: "The first Formula E race runs on the EUR street circuit",
+     place: "EUR",
+     scene: "An electric car with a DOVE on its nose wins the first Formula E race through the streets of EUR."}
+  - {year: 2020, peg: nose, confidence: high, source: "Search: Quotidiano Sanita; ANSA",
+     event: "Two Chinese tourists at the Spallanzani hospital are the first confirmed coronavirus cases in Italy",
+     place: "Spallanzani hospital",
+     scene: "Doctors at the Spallanzani swab the NOSE of two Chinese tourists, Italy's first coronavirus cases."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP mirror: Stadio Olimpico",
+     event: "The delayed European football championship opens at the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "An ANT carries the ball to the centre spot and opens the delayed European championship at the Olimpico."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Rome (record temperature)",
+     event: "Rome records its highest temperature, about forty-three degrees",
+     scene: "A garden GNOME melts on a Roman balcony as the thermometer hits a new record of about forty-three degrees."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: Trevi Fountain",
+     event: "Climate activists dye the water of the Trevi Fountain black",
+     place: "Trevi Fountain",
+     scene: "Climate activists pour black charcoal from a GNOME-shaped bucket and dye the Trevi Fountain dark."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP mirror: 2023 Ryder Cup",
+     event: "Europe win the Ryder Cup at Marco Simone near Guidonia",
+     place: "Marco Simone Golf Club",
+     scene: "A GNOME holes the last putt at Marco Simone, and Europe win the Ryder Cup."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP mirror: Stadio Olimpico; Foro Italico",
+     event: "The European Athletics Championships return to the Olimpico",
+     place: "Stadio Olimpico",
+     scene: "Medals hang on a giant HANGER at the Olimpico as the European Athletics Championships return."}
+world_refs:
+  - {year: 1945, event: "Rossellini's Rome, Open City is released", cell: western_europe_arts_1945_present}
+  - {year: 1946, event: "De Sica's Shoeshine is released", cell: western_europe_arts_1945_present}
+  - {year: 1948, event: "De Sica's Bicycle Thieves is released", cell: western_europe_arts_1945_present}
+  - {year: 1948, event: "Communist leader Togliatti shot and wounded", cell: western_europe_politics_1945_present}
+  - {year: 1950, event: "Excavations find the tomb of Saint Peter", cell: western_europe_religion_1945_present}
+  - {year: 1955, event: "Pasolini publishes Ragazzi di vita", cell: western_europe_arts_1945_present}
+  - {year: 1957, event: "Fellini's Nights of Cabiria is released", cell: western_europe_arts_1945_present}
+  - {year: 1960, event: "Fellini's La Dolce Vita is released", cell: western_europe_arts_1945_present}
+  - {year: 1960, event: "Rome Olympics: Bikila wins the marathon barefoot", cell: western_europe_society_1945_present}
+  - {year: 1961, event: "Pasolini's Accattone is released", cell: western_europe_arts_1945_present}
+  - {year: 1961, event: "Frascati: ADA storage ring", cell: western_europe_science_1945_present}
+  - {year: 1968, event: "Community of Sant'Egidio founded in Rome", cell: western_europe_religion_1945_present}
+  - {year: 1978, event: "Red Brigades kidnap Aldo Moro", cell: western_europe_politics_1945_present}
+  - {year: 1981, event: "Ali Agca shoots John Paul II in St Peter's Square", cell: western_europe_religion_1945_present}
+  - {year: 1990, event: "West Germany win the World Cup in Rome", cell: western_europe_society_1945_present}
+  - {year: 1995, event: "Great Mosque of Rome opens", cell: western_europe_religion_1945_present}
+  - {year: 2002, event: "Piano's Parco della Musica opens", cell: western_europe_arts_1945_present}
+  - {year: 2010, event: "Zaha Hadid's MAXXI opens", cell: western_europe_arts_1945_present}
+  - {year: 2013, event: "Rosi's Sacro GRA wins the Golden Lion", cell: western_europe_arts_1945_present}
+  - {year: 2013, event: "Sorrentino's The Great Beauty premieres", cell: western_europe_arts_1945_present}
+  - {year: 2019, event: "Amazon synod figures thrown into the Tiber", cell: western_europe_religion_1945_present}
+out_refs:
+  - {year: 1945, event: "De Gasperi forms his first government", reason: "national government"}
+  - {year: 1946, event: "Referendum makes Italy a republic", reason: "national election"}
+  - {year: 1947, event: "Constituent Assembly approves the constitution", reason: "national law"}
+  - {year: 1950, event: "European Convention on Human Rights signed in Rome", reason: "treaty signed in the city"}
+  - {year: 1950, event: "Maria Goretti canonised in St Peter's Square", reason: "Holy See ceremony"}
+  - {year: 1954, event: "RAI starts regular television", reason: "national broadcaster"}
+  - {year: 1957, event: "Treaties of Rome found the EEC", reason: "treaty signed in the city"}
+  - {year: 1958, event: "Pius XII dies at Castel Gandolfo", reason: "papal death"}
+  - {year: 1962, event: "Second Vatican Council opens", reason: "church council"}
+  - {year: 1963, event: "Paul VI crowned, the last papal coronation", reason: "Holy See ceremony"}
+  - {year: 1965, event: "Paul VI says Mass in Italian at a Roman parish", reason: "Holy See liturgy"}
+  - {year: 1970, event: "First election of the Lazio regional council", reason: "regional government"}
+  - {year: 1978, event: "Two conclaves elect John Paul I and John Paul II", reason: "papal election"}
+  - {year: 1984, event: "Funeral of Enrico Berlinguer in Piazza San Giovanni", reason: "national party funeral"}
+  - {year: 1984, event: "Youth jubilee in Rome", reason: "Holy See event"}
+  - {year: 1986, event: "John Paul II visits the Great Synagogue", reason: "papal act"}
+  - {year: 1999, event: "John Paul II opens the Holy Door for the Great Jubilee", reason: "Holy See ceremony"}
+  - {year: 2000, event: "World Youth Day mass at Tor Vergata", reason: "Holy See event"}
+  - {year: 2004, event: "European constitutional treaty signed in Rome", reason: "treaty signed in the city"}
+  - {year: 2005, event: "Funeral of John Paul II", reason: "papal funeral"}
+  - {year: 2012, event: "Italian Space Agency headquarters opens at Tor Vergata", reason: "national agency"}
+  - {year: 2013, event: "Benedict XVI resigns; Francis elected", reason: "papal election"}
+  - {year: 2016, event: "Parliament passes the civil unions law", reason: "national law"}
+  - {year: 2020, event: "Francis blesses the world in an empty St Peter's Square", reason: "Holy See ceremony"}
+  - {year: 2022, event: "Meloni becomes prime minister", reason: "national government"}
+  - {year: 2025, event: "Leo XIV elected pope", reason: "papal election"}

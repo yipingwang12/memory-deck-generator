@@ -1,0 +1,473 @@
+# City: Rome x 285 to 800 (late empire, Goths, Byzantines, the papal city to Charlemagne).
+# DRAFT 2026-11-19. Area: Metropolitan City of Rome Capital (Rome, Vatican, Ostia and Portus, Tivoli,
+# Subiaco, Veii, Castelli Romani, Civitavecchia / Centumcellae, Palestrina).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Imperial court events
+# (accessions, visits, triumphs) and Holy See acts (papal elections, councils, synods) -> out_refs.
+# An emperor's or a pope's buildings, walls, aqueducts and relief works for the city are IN.
+# Sieges, sacks, coups and riots in the city are IN (main-stage rule). World-grid events -> world_refs.
+# Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: WP mirror 2023-10 (Gothic War, sieges of Rome, Aurelian Walls, Colosseum, church
+# articles), Prosopography of the Byzantine Empire (pbe.kcl.ac.uk), Ammianus (Perseus), Anonymus
+# Valesianus (Perseus), Platner, EAGLE inscriptions, Oxford Cult of Saints, Turismo Roma.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year. Approximate year ending 00 -> year // 10 under 1000.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 303, peg: sumo, confidence: high, source: "Platner: Curia; columns for the vicennalia",
+     event: "Two colossal honorary columns go up before the Senate house for the anniversaries of the tetrarchs",
+     place: "Comitium, Roman Forum",
+     scene: "Two SUMO wrestlers lift giant columns upright in front of the Senate house and plant them for the tetrarchs."}
+  - {year: 312, peg: tongue, confidence: medium, source: "WP mirror: Castra Praetoria; Praetorian Guard",
+     event: "Constantine disbands the Praetorian Guard and wrecks its camp",
+     place: "Castra Praetoria",
+     scene: "A huge TONGUE licks through the Castra Praetoria and sweeps the disbanded guardsmen out of their barracks."}
+  - {year: 350, peg: lasso, confidence: high, source: "WP: Nepotianus (3 June to 30 June)",
+     event: "Nepotianus seizes Rome with gladiators; after four weeks Magnentius' men kill him and many senators",
+     scene: "Nepotianus swings a gladiator's LASSO round the Capitol, but Magnentius' men snare him with it four weeks later."}
+  - {year: 401, peg: soda, confidence: high, source: "EAGLE: CIL VI 1188, 1190 (Porta Portuensis)",
+     event: "Honorius, on Stilicho's advice, raises and repairs the Aurelian Walls, gates and towers",
+     place: "Porta Tiburtina, Porta Portuensis",
+     scene: "Masons mix SODA into their mortar and build the Aurelian Walls twice as high at the Porta Tiburtina."}
+  - {year: 408, peg: sofa, confidence: high, source: "WP mirror: Sack of Rome (410)",
+     event: "Alaric's first siege of Rome; the city buys him off with gold, silver, silk and pepper",
+     scene: "Senators carry a SOFA heaped with gold, silk and pepper out of the gate to make Alaric lift the siege."}
+  - {year: 408, peg: sofa, confidence: medium, source: "WP mirror: Sack of Rome (410), first siege",
+     event: "The Senate has Serena, Stilicho's widow, strangled during Alaric's siege",
+     scene: "Senators press Serena down on a SOFA in the besieged city and strangle her as a traitor."}
+  - {year: 409, peg: soap, confidence: medium, source: "WP mirror: Sack of Rome (410), late 409",
+     event: "Alaric takes Portus and its grain stores and blockades Rome a second time",
+     place: "Portus",
+     scene: "Alaric's Goths spread SOAP on the quays of Portus, slide the grain sacks away and starve Rome again."}
+  - {year: 472, peg: coin, confidence: high, source: "WP: Siege of Rome (472); Britannica 1911",
+     event: "Ricimer besieges Rome for months, breaks in and his troops plunder the city",
+     place: "Pons Aelius",
+     scene: "Ricimer flips a COIN over the Pons Aelius, his soldiers storm across and loot the starving city."}
+  - {year: 500, peg: sauce, confidence: high, source: "Anonymus Valesianus 12.67 (Perseus)",
+     event: "Theoderic gives two hundred pounds a year from the wine tax to repair the palace and the walls",
+     place: "Palatine",
+     scene: "Theoderic pours the wine-tax SAUCE into a mason's bucket each year to patch the Palatine palace and the city walls."}
+  - {year: 537, peg: mug, confidence: high, source: "WP mirror: Siege of Rome (537-538), 2 March",
+     event: "The Goths under Vitiges begin a siege of Rome that lasts a year",
+     place: "Salarian Gate",
+     scene: "Vitiges slams a beer MUG on a camp table outside the Salarian Gate and orders a siege of the whole city."}
+  - {year: 537, peg: mug, confidence: medium, source: "WP mirror: Siege of Rome (537-538)",
+     event: "Belisarius' archers stop the Gothic siege towers by shooting the oxen that pull them",
+     scene: "A Byzantine archer drinks from his MUG, then shoots the oxen, and the four Gothic siege towers stop dead."}
+  - {year: 538, peg: movie, confidence: high, source: "WP mirror: Siege of Rome (537-538), 12 March",
+     event: "The Goths burn their camps and give up the siege of Rome",
+     scene: "Romans on the walls watch the Gothic camps burn like the last scene of a MOVIE as Vitiges marches away."}
+  - {year: 546, peg: roach, confidence: high, source: "WP mirror: Sack of Rome (546), 17 December",
+     event: "Totila takes Rome after Isaurian guards open the Asinarian Gate at night",
+     place: "Porta Asinaria",
+     scene: "A ROACH squeezes under the Porta Asinaria at night and pulls back the bolt for Totila's Goths."}
+  - {year: 546, peg: roach, confidence: medium, source: "WP mirror: Gothic War; Sack of Rome (546)",
+     event: "Totila tears down about a third of the walls of Rome",
+     scene: "Giant ROACH swarms chew one third of the Aurelian Wall into rubble on Totila's order."}
+  - {year: 547, peg: rock, confidence: high, source: "WP mirror: Sack of Rome (546), spring 547",
+     event: "Belisarius returns to the empty city and quickly rebuilds the broken walls",
+     scene: "Belisarius' men pile loose ROCK into the gaps of the wall without mortar, and Rome is closed again."}
+  - {year: 549, peg: rope, confidence: high, source: "WP mirror: Siege of Rome (549-550), June",
+     event: "Totila begins his third siege of Rome",
+     scene: "Totila's Goths tie a ROPE round the whole circuit of the walls and start the third siege."}
+  - {year: 550, peg: lasso, confidence: disputed, source: "WP: Siege 549-550 (Feb 550); Gothic War 549",
+     event: "Totila takes Rome again when garrison soldiers open a gate",
+     place: "Porta Ostiensis",
+     scene: "A traitor in the garrison throws a LASSO over the Porta Ostiensis and drags it open for Totila."}
+  - {year: 552, peg: lion, confidence: medium, source: "WP mirror: Byzantine Papacy (Narses captures Rome)",
+     event: "Narses takes Rome back from the Goths after Taginae",
+     scene: "Narses rides a LION through the gates and the last Gothic garrison of Rome surrenders."}
+  - {year: 579, peg: cowboy, confidence: medium, source: "Catholic Encyclopedia: Pelagius II",
+     event: "The Lombards blockade Rome",
+     scene: "Lombard COWBOY riders circle the walls of Rome and let no cart in or out."}
+  - {year: 593, peg: palm, confidence: medium, source: "EBSCO: Lombard sieges of Rome 592-593",
+     event: "Agilulf's Lombards besiege Rome; Gregory pays silver to make them leave",
+     scene: "Gregory presses silver into Agilulf's open PALM at the gate, and the Lombard army leaves Rome."}
+  - {year: 603, peg: sumo, confidence: medium, source: "WP: Roman Senate (last attested act)",
+     event: "Last recorded act of the Roman Senate: it acclaims images of Phocas and Leontia",
+     place: "Lateran",
+     scene: "A lonely SUMO senator gives the last cheer of the Senate before the portraits of Phocas and Leontia."}
+  - {year: 640, peg: horse, confidence: medium, source: "PBE: Maurikios 7 (between 638 and 640)",
+     event: "The chartularius Maurice and the exarch Isaac plunder the Lateran treasury",
+     place: "Lateran",
+     scene: "Maurice loads the Lateran treasure onto a HORSE and Isaac rides off with it to Ravenna."}
+  - {year: 643, peg: ram, confidence: medium, source: "WP: Maurikios Chartoularios; PBE 643 or 644",
+     event: "Maurice raises the troops of Rome in revolt; the exarch's army crushes it and beheads him",
+     scene: "Maurice charges out of Rome on a RAM, but the exarch's men catch him and cut off his head."}
+  - {year: 694, peg: bear, confidence: medium, source: "PBE: Zacharias 15 (694 or 695)",
+     event: "Troops of Ravenna stop the imperial guard Zacharias from arresting Pope Sergius; Zacharias hides under the pope's bed",
+     place: "Lateran palace",
+     scene: "The guard Zacharias hides under the pope's bed like a frightened BEAR while Ravenna soldiers hammer on the Lateran door."}
+  - {year: 701, peg: soda, confidence: unverified,
+     event: "The militia of Italy gathers at Rome against the exarch Theophylact; the pope calms it",
+     scene: "Pope John VI hands out SODA to the angry militia camped outside Rome, and they let the exarch go."}
+  - {year: 712, peg: tongue, confidence: medium, source: "PBE: Christophoros 23 (LP 90.10; 711-713)",
+     event: "Fighting on the Via Sacra: Romans resist Peter, the duke sent by Philippicus",
+     place: "Via Sacra",
+     scene: "Duke Christopher's men lash out with a whip-like TONGUE on the Via Sacra and drive back Philippicus' duke Peter."}
+  - {year: 715, peg: doll, confidence: medium, source: "WP: Pope Gregory II (wall work before Oct 716)",
+     event: "Gregory II begins to repair the city walls (approximate)",
+     scene: "Gregory II stacks bricks like a DOLL's house to mend the gaps in the walls of Rome."}
+  - {year: 729, peg: knob, confidence: unverified,
+     event: "Liutprand and the exarch camp on the field of Nero; Gregory II persuades the king to withdraw",
+     place: "Campus Neronis",
+     scene: "Gregory II turns the KNOB of Liutprand's tent door on the Neronian field and talks the Lombard into going home."}
+  - {year: 739, peg: map, confidence: high, source: "PBE: Liutprand 1; Duchy of Rome",
+     event: "Liutprand besieges Rome and takes four towns of the Roman duchy",
+     scene: "Liutprand spreads a MAP of the Roman duchy on the Campagna grass and stabs four towns with his sword."}
+  - {year: 756, peg: leech, confidence: high, source: "PBE: Aistulf 1; Cath. Encyc. (January)",
+     event: "Aistulf besieges Rome for three months and lays waste the Campagna",
+     scene: "Aistulf's Lombards cling to the walls of Rome like a LEECH for three months, sucking the Campagna dry."}
+  - {year: 767, peg: jockey, confidence: high, source: "WP: Toto of Nepi; Antipope Constantine II",
+     event: "Toto of Nepi brings an armed band into Rome and makes his brother Constantine pope",
+     scene: "Toto of Nepi rides into Rome like a JOCKEY at the head of his armed peasants and puts his brother on the throne."}
+  - {year: 768, peg: chef, confidence: medium, source: "WP: Toto of Nepi (killed by Lombard troops)",
+     event: "Lombard troops enter Rome; Toto is killed and Constantine is deposed",
+     place: "Porta San Pancrazio",
+     scene: "A Lombard CHEF stabs Toto at the gate of San Pancrazio with a kitchen knife, and Constantine loses his throne."}
+  - {year: 771, peg: cat, confidence: unverified,
+     event: "Christopher and Sergius, leaders of the clergy, are blinded; Christopher dies of it",
+     scene: "Paul Afiarta's men claw out Christopher's and Sergius' eyes like a wild CAT outside Saint Peter's."}
+  - {year: 791, peg: boot, confidence: low, source: "ruwiki: Adrian I (walls 791)",
+     event: "Hadrian I rebuilds the walls and towers of Rome",
+     scene: "Hadrian I kicks each loose stone back into the walls of Rome with an iron BOOT and adds new towers."}
+  - {year: 799, peg: pipe, confidence: high, source: "WP mirror: Pope Leo III (25 April)",
+     event: "Kinsmen of Hadrian I attack Pope Leo III during the Greater Litany procession and try to blind him",
+     place: "Via Lata, towards the Flaminian Gate",
+     scene: "Attackers jump from the procession, beat Leo III with an iron PIPE in the Via Lata and try to cut his eyes."}
+  # science
+  - {year: 370, peg: goose, confidence: high, source: "Platner: pons Cestius (pons Gratiani, 370)",
+     event: "The Pons Cestius is rebuilt and dedicated as the Bridge of Gratian",
+     place: "Tiber Island",
+     scene: "A GOOSE waddles first over the new Bridge of Gratian to the Tiber Island on its opening day."}
+  - {year: 398, peg: beehive, confidence: disputed, source: "WP: Pammachius 398; Heidelberg 395",
+     event: "Pammachius and Fabiola build a hostel for sick travellers at Portus",
+     place: "Portus",
+     scene: "Pammachius hangs a BEEHIVE sign over the new pilgrims' hostel at Portus, where the sick sailors find honey and beds."}
+  - {year: 537, peg: mug, confidence: high, source: "WP mirror: Siege of Rome (537-538)",
+     event: "The Goths cut the aqueducts of Rome and stop the Janiculum mills",
+     place: "Janiculum",
+     scene: "Gothic soldiers smash the aqueducts, and the Janiculum millers tip out an empty MUG where water used to flow."}
+  - {year: 537, peg: mug, confidence: medium, source: "WP mirror: Siege of Rome (537-538)",
+     event: "Belisarius builds floating mills on boats in the Tiber to grind grain",
+     place: "Tiber below the Pons Aurelius",
+     scene: "Belisarius moors boats in the Tiber, and the current turns a mill wheel shaped like a giant MUG to grind flour."}
+  - {year: 544, peg: warrior, confidence: medium, source: "Turismo Roma: Ponte Salario (544)",
+     event: "Totila breaks the Ponte Salario over the Aniene",
+     place: "Ponte Salario, Aniene",
+     scene: "A Gothic WARRIOR smashes the arch of the Ponte Salario with his axe, and it falls into the Aniene."}
+  - {year: 565, peg: jelly, confidence: high, source: "Vasi/romeartlover: Ponte Salario (Narses, 565)",
+     event: "Narses rebuilds the Ponte Salario and puts his inscription on it",
+     place: "Ponte Salario",
+     scene: "Narses glues the stones of the Ponte Salario back together with JELLY and carves his name on the new arch."}
+  - {year: 775, peg: eagle, confidence: low, source: "ruwiki: Adrian I (Trajan aqueduct 775)",
+     event: "Hadrian I restores the Aqua Traiana to Trastevere and Saint Peter's",
+     place: "Janiculum",
+     scene: "An EAGLE flies along the broken Aqua Traiana and drops new pipes into every gap until water reaches Saint Peter's."}
+  # religion
+  - {year: 312, peg: tongue, confidence: medium, source: "WP mirror: Castra of ancient Rome",
+     event: "Constantine razes the barracks of the horse guards; the Lateran basilica rises on the site",
+     place: "Lateran",
+     scene: "A giant TONGUE licks the horse guards' barracks flat, and builders lay the Lateran basilica on the clean ground."}
+  - {year: 324, peg: hanger, confidence: medium, source: "WP mirror: Basilica of St Paul Outside the Walls",
+     event: "Pope Sylvester consecrates Constantine's first church over the grave of Paul",
+     place: "Via Ostiense",
+     scene: "Pope Sylvester hangs Paul's old cloak on a coat HANGER over the grave and consecrates the small new church."}
+  - {year: 336, peg: match, confidence: medium, source: "WP: Pope Mark (LP: basilica ad Pallacinas)",
+     event: "Pope Mark founds the basilica of San Marco",
+     place: "ad Pallacinas, near the Capitol",
+     scene: "Pope Mark strikes a MATCH and lights the first lamp in his new basilica beside the Capitol."}
+  - {year: 340, peg: horse, confidence: medium, source: "WP mirror: Santa Maria in Trastevere",
+     event: "Pope Julius I rebuilds the church of Santa Maria in Trastevere on a larger scale",
+     place: "Trastevere",
+     scene: "A cart HORSE drags column after column into Trastevere for Pope Julius' bigger church of Santa Maria."}
+  - {year: 386, peg: fish, confidence: high, source: "WP mirror: St Paul Outside the Walls",
+     event: "Theodosius begins a much larger basilica of Saint Paul",
+     place: "Via Ostiense",
+     scene: "Theodosius' builders cut the plan of the huge new Saint Paul's into the riverbank with a giant FISH bone."}
+  - {year: 387, peg: fox, confidence: high, source: "WP: Saint Monica; Confessions IX",
+     event: "Monica, mother of Augustine, dies at Ostia as they wait for a ship to Africa",
+     place: "Ostia",
+     scene: "At an Ostia window Monica tells Augustine of heaven, then dies, while a FOX waits on the empty quay below."}
+  - {year: 402, peg: sun, confidence: medium, source: "WP mirror: St Paul Outside the Walls (c. 402)",
+     event: "Pope Innocent I consecrates the new basilica of Saint Paul (approximate)",
+     place: "Via Ostiense",
+     scene: "The SUN breaks through the new roof of Saint Paul's as Innocent I sprinkles the walls with holy water."}
+  - {year: 419, peg: tuba, confidence: medium, source: "WP: Antipope Eulalius (18 March 419)",
+     event: "The city prefect's men drive the rival pope Eulalius out of the Lateran",
+     place: "Lateran",
+     scene: "The prefect's trumpeter blows a TUBA in the Lateran courtyard, and his guards march Eulalius out of the basilica."}
+  - {year: 439, peg: map, confidence: high, source: "WP mirror: San Pietro in Vincoli",
+     event: "Sixtus III consecrates the basilica of Saint Peter in Chains",
+     place: "Esquiline",
+     scene: "Sixtus III rolls out a MAP of the Esquiline and marks the spot where Peter's chains will rest."}
+  - {year: 440, peg: horse, confidence: medium, source: "WP mirror: Lateran Baptistery",
+     event: "Sixtus III builds the octagonal Lateran baptistery",
+     place: "Lateran",
+     scene: "A HORSE walks in circles round the Lateran, and its hoof prints mark the eight walls of Sixtus' baptistery."}
+  - {year: 455, peg: lily, confidence: medium, source: "WP mirror: Santo Stefano Rotondo (dendro)",
+     event: "Roof beams of the round church of Santo Stefano Rotondo are cut (approximate)",
+     place: "Caelian",
+     scene: "Carpenters on the Caelian carve a LILY into each new roof beam of the round church of Saint Stephen."}
+  - {year: 475, peg: eagle, confidence: medium, source: "Kalas, PBSR 2013: Sant'Andrea (470s)",
+     event: "The Goth Valila gives the hall of Junius Bassus to the church; it becomes Sant'Andrea (approximate)",
+     place: "Esquiline",
+     scene: "Valila's Gothic EAGLE banner comes down from the hall of Junius Bassus, and a cross of Saint Andrew goes up."}
+  - {year: 500, peg: lasso, confidence: medium, source: "Encyclopedia.com: Subiaco monasteries",
+     event: "Benedict lives as a hermit in a cave at Subiaco (approximate)",
+     place: "Sacro Speco, Subiaco",
+     scene: "A monk lowers bread to Benedict's cave above Subiaco on a LASSO with a bell tied to it."}
+  - {year: 527, peg: ink, confidence: medium, source: "artofthemiddleages: Felix IV (526-530)",
+     event: "Felix IV turns a hall of the Forum of Peace into the church of Cosmas and Damian",
+     place: "Temple of Romulus, Via Sacra",
+     scene: "Felix IV writes Cosmas and Damian in gold INK over the door of the old Forum hall."}
+  - {year: 570, peg: goose, confidence: medium, source: "WP mirror: Santi Apostoli (c. 570)",
+     event: "John III dedicates the church of the Apostles Philip and James, built with Narses",
+     place: "Santi Apostoli",
+     scene: "A GOOSE carries the relics of Philip and James up the aisle as John III dedicates Narses' church."}
+  - {year: 590, peg: bees, confidence: high, source: "WP: Roman Plague of 590; Cambridge, Church History",
+     event: "Gregory leads the sevenfold litany: seven processions cross the city against the plague",
+     place: "Santa Maria Maggiore",
+     scene: "Seven columns of BEES fly from seven churches and meet at Santa Maria Maggiore as Gregory prays against the plague."}
+  - {year: 618, peg: dove, confidence: medium, source: "WP: Adeodatus I (August 618)",
+     event: "An earthquake strikes Rome, then a skin disease spreads",
+     scene: "A DOVE falls from a cracked church roof in the earthquake, and the people below break out in sores."}
+  - {year: 630, peg: mouse, confidence: high, source: "WP mirror: Sant'Adriano al Foro (630)",
+     event: "Honorius I turns the Senate house into the church of Sant'Adriano",
+     place: "Curia Julia",
+     scene: "A MOUSE runs over the empty senators' benches as Honorius I sets an altar in the Curia."}
+  - {year: 630, peg: mouse, confidence: high, source: "WP mirror: Temple of Venus and Roma (630)",
+     event: "Honorius I strips the gilt bronze roof tiles of the Temple of Venus and Rome for Saint Peter's",
+     scene: "A MOUSE army carries the gilt roof tiles of Venus and Rome across the Tiber to the roof of Saint Peter's."}
+  - {year: 630, peg: mouse, confidence: medium, source: "WP mirror: Timeline of the city of Rome (630)",
+     event: "Honorius I builds the new church of Sant'Agnese over the grave of Agnes",
+     place: "Via Nomentana",
+     scene: "A MOUSE digs down to Agnes' grave on the Via Nomentana, and Honorius I builds the new church over its hole."}
+  - {year: 648, peg: reef, confidence: high, source: "WP mirror: Santo Stefano Rotondo (648)",
+     event: "Theodore I builds the chapel of Primus and Felician in Santo Stefano Rotondo and brings their relics",
+     place: "Santo Stefano Rotondo",
+     scene: "Theodore I pulls the bones of Primus and Felician off a REEF of catacomb rock and lays them in his new chapel."}
+  - {year: 678, peg: cave, confidence: medium, source: "WP mirror: Byzantine Papacy (678)",
+     event: "Four Greek monasteries are recorded in Rome, among them San Saba and Aquae Salviae",
+     place: "Aventine, Aquae Salviae",
+     scene: "Greek monks sing in a CAVE under the little Aventine, one of four Greek houses now in Rome."}
+  - {year: 680, peg: vase, confidence: medium, source: "Notre Dame Church Life: Paul the Deacon VI.5",
+     event: "Plague in Rome; it stops when an altar of Saint Sebastian is set up in Saint Peter in Chains",
+     place: "San Pietro in Vincoli",
+     scene: "A monk puts a VASE of Sebastian's arrows on the new altar in Saint Peter in Chains, and the plague stops."}
+  - {year: 706, peg: sushi, confidence: medium, source: "WP: Pope John VII (705-707)",
+     event: "John VII builds an oratory of the Mother of God inside Old Saint Peter's (approximate)",
+     place: "Old Saint Peter's",
+     scene: "John VII lays a SUSHI roll of gold mosaic cubes on the wall of his new chapel of Mary in Saint Peter's."}
+  - {year: 746, peg: roach, confidence: medium, source: "PBE: Zacharias 16 (741-752)",
+     event: "Zachary places the head of Saint George in San Giorgio in Velabro (approximate)",
+     place: "Velabrum",
+     scene: "A ROACH scuttles from the old casket as Zachary lifts George's head into the church in the Velabrum."}
+  - {year: 752, peg: lion, confidence: high, source: "PBE: Stephanos 8; WP: Donation of Pepin",
+     event: "Stephen II walks barefoot with the Lateran icon of Christ to Santa Maria Maggiore against Aistulf",
+     place: "Lateran to Santa Maria Maggiore",
+     scene: "Barefoot Stephen II leads a LION through the streets, the Christ icon on its back and Aistulf's broken treaty on a cross."}
+  - {year: 761, peg: jet, confidence: high, source: "San Silvestro in Capite: chronology; Turismo Roma",
+     event: "Paul I founds San Silvestro in Capite in his family house and moves martyrs' bones there from the catacombs",
+     place: "San Silvestro in Capite",
+     scene: "Paul I flies the martyrs' bones by JET from the plundered catacombs into the new church in his family house."}
+  # arts
+  - {year: 294, peg: bear, confidence: medium, source: "Platner; ancientromelive: Curia (284-305)",
+     event: "Diocletian rebuilds the Senate house after the fire of Carinus (approximate)",
+     place: "Curia Julia",
+     scene: "A BEAR carries bricks up the burnt Curia, and Diocletian's new Senate house rises to the old height."}
+  - {year: 298, peg: beehive, confidence: unverified,
+     event: "Work begins on the Baths of Diocletian, the largest baths of Rome",
+     place: "Viminal",
+     scene: "Diocletian's architect sketches the Baths on the Viminal like a giant BEEHIVE with thousands of cells."}
+  - {year: 307, peg: ski, confidence: high, source: "WP mirror: Temple of Venus and Roma",
+     event: "Fire damages the Temple of Venus and Rome; Maxentius rebuilds it",
+     place: "Velia",
+     scene: "Maxentius slides down the burnt temple roof on a SKI and orders the Temple of Venus and Rome rebuilt."}
+  - {year: 309, peg: soap, confidence: medium, source: "WP: Circus of Maxentius (Romulus d. 309)",
+     event: "Maxentius opens his circus on the Via Appia with funeral games for his son Romulus",
+     place: "Via Appia",
+     scene: "Chariots skid on SOAP round the new circus on the Via Appia in the funeral games for little Romulus."}
+  - {year: 328, peg: knife, confidence: medium, source: "WP: Mausoleum of Helena (326-330)",
+     event: "The Mausoleum of Helena rises on the Via Labicana (approximate)",
+     place: "Tor Pignattara, Via Labicana",
+     scene: "A mason cuts Helena's porphyry coffin with a KNIFE inside the new round tomb on the Via Labicana."}
+  - {year: 331, peg: moth, confidence: medium, source: "Kalas, PBSR 2013: Junius Bassus (331)",
+     event: "The consul Junius Bassus builds his hall with marble inlay pictures on the Esquiline",
+     place: "Esquiline",
+     scene: "A MOTH lands on the marble inlay tiger in Junius Bassus' new hall on the Esquiline."}
+  - {year: 367, peg: jockey, confidence: high, source: "Kahlos, Arctos; CIL VI 102",
+     event: "Praetextatus restores the portico of the twelve gods in the Forum",
+     place: "Porticus Deorum Consentium",
+     scene: "A JOCKEY carries the twelve gods' statues back to their portico below the Capitol for Praetextatus."}
+  - {year: 458, peg: wolf, confidence: high, source: "Dialnet: Novella Maioriani IV (458)",
+     event: "Majorian's law forbids pulling down public buildings in Rome for their stone",
+     scene: "The WOLF of Rome guards the temples with bared teeth as Majorian's law bans the stone thieves."}
+  - {year: 470, peg: goose, confidence: unverified,
+     event: "Junius Valentinus adds a speakers' platform to the Forum after a naval victory over the Vandals",
+     place: "Rostra Vandalica, Roman Forum",
+     scene: "A GOOSE stands on the new Vandal Rostra in the Forum and honks the news of the sea victory."}
+  - {year: 484, peg: fairy, confidence: medium, source: "WP mirror: Colosseum (Basilius, 484)",
+     event: "The consul Basilius pays to repair the Colosseum after an earthquake",
+     place: "Colosseum",
+     scene: "A FAIRY waves her wand over the cracked arena seats, and Basilius' gold repairs the Colosseum."}
+  - {year: 580, peg: vase, confidence: medium, source: "WP mirror: Byzantine Papacy (580s mosaics)",
+     event: "Pelagius II rebuilds San Lorenzo outside the walls with a mosaic arch (approximate)",
+     place: "San Lorenzo fuori le Mura",
+     scene: "Pelagius II holds up a model church like a VASE in the new mosaic arch of San Lorenzo."}
+  - {year: 608, peg: sofa, confidence: high, source: "WP mirror: Column of Phocas (1 August 608)",
+     event: "The exarch Smaragdus sets a gilded statue of Phocas on a column in the Forum",
+     place: "Roman Forum",
+     scene: "Smaragdus hoists a golden Phocas on a SOFA to the top of the last column built in the Forum."}
+  - {year: 649, peg: rope, confidence: medium, source: "WP mirror: Santa Maria Antiqua (649)",
+     event: "Martin I has Fathers of the Church painted in Santa Maria Antiqua",
+     place: "Santa Maria Antiqua",
+     scene: "Painters hang from a ROPE in Santa Maria Antiqua and brush the Church Fathers on the walls for Martin I."}
+  - {year: 705, peg: seal, confidence: medium, source: "Cath. Encyc.: John VII; WP: Santa Maria Antiqua",
+     event: "John VII builds a bishop's palace on the Palatine above Santa Maria Antiqua and repaints the church",
+     place: "Palatine",
+     scene: "A SEAL balances John VII's new palace on its nose high on the Palatine, above freshly painted Santa Maria Antiqua."}
+  - {year: 782, peg: oven, confidence: medium, source: "WP mirror: Santa Maria in Cosmedin (c. 782)",
+     event: "Hadrian I rebuilds Santa Maria in Cosmedin for the Greek quarter (approximate)",
+     place: "Forum Boarium",
+     scene: "Greek monks bake mosaic tiles in an OVEN beside the old grain hall as Hadrian rebuilds Santa Maria in Cosmedin."}
+  - {year: 796, peg: peach, confidence: high, source: "WP mirror: Pope Adrian I (epitaph)",
+     event: "Charlemagne has a black marble epitaph for Hadrian I carved with Alcuin's verses",
+     place: "Old Saint Peter's",
+     scene: "Charlemagne sets a PEACH on the black marble slab carved with Alcuin's lines for Hadrian I in Saint Peter's."}
+  - {year: 799, peg: pipe, confidence: medium, source: "Curzi, triclinia (c. 799)",
+     event: "Leo III builds a great banquet hall with an apse mosaic in the Lateran palace (approximate)",
+     place: "Lateran palace",
+     scene: "Leo III puffs a PIPE at the head table of his new mosaic banquet hall in the Lateran."}
+  # economy
+  - {year: 746, peg: roach, confidence: medium, source: "PBE: Zacharias 16 (741-752)",
+     event: "Zachary sets up the papal farm of Saint Cecilia on the Via Tiburtina (approximate)",
+     place: "Via Tiburtina",
+     scene: "A ROACH hauls a sack of grain into the first barn of Zachary's papal farm on the Via Tiburtina."}
+  - {year: 776, peg: cage, confidence: low, source: "Numisquare: denier of Adrian I (772-781)",
+     event: "Hadrian I strikes the first papal silver pennies in Rome (approximate)",
+     scene: "Hadrian I opens a CAGE in the Rome mint, and the first silver pennies with his name fly out."}
+  - {year: 780, peg: vase, confidence: unverified,
+     event: "Hadrian I gathers his estates north of Veii into the papal farm of Capracorum (approximate)",
+     place: "Capracorum, near Veii",
+     scene: "Hadrian I pours his family lands into one big VASE north of Veii and calls the papal farm Capracorum."}
+  # society
+  - {year: 359, peg: elbow, confidence: medium, source: "Ammianus 19.10 (Perseus)",
+     event: "Grain riot: the prefect Tertullus shows his small sons to the mob, and grain ships reach Portus",
+     place: "Ostia, temple of Castor and Pollux",
+     scene: "Tertullus pushes his little sons forward with his ELBOW to calm the hungry mob, and grain ships sail into port."}
+  - {year: 365, peg: jelly, confidence: medium, source: "Ammianus 27.3 (Perseus)",
+     event: "A mob throws firebrands at the house of the prefect Lampadius near the Baths of Constantine",
+     place: "Quirinal",
+     scene: "The mob throws burning pots of JELLY at Lampadius' house near the Baths of Constantine."}
+  - {year: 414, peg: tower, confidence: low, source: "WP: Caecina Decius Aginatius Albinus",
+     event: "The prefect Albinus asks for more grain for Rome because its people come back after the sack",
+     scene: "Albinus climbs a TOWER and counts the returning crowds, then writes to Honorius for more bread."}
+  - {year: 443, peg: ram, confidence: low, source: "WP mirror: Colosseum (443, possible)",
+     event: "An earthquake damages the Colosseum, which is then repaired",
+     place: "Colosseum",
+     scene: "A giant RAM butts the Colosseum, the earth shakes, and part of the outer ring falls."}
+  - {year: 508, peg: sofa, confidence: low, source: "WP mirror: Colosseum (508)",
+     event: "More repair work on the Colosseum after earthquake damage",
+     place: "Colosseum",
+     scene: "Workers prop a cracked Colosseum arch with an old SOFA until the new stones arrive."}
+  - {year: 523, peg: gnome, confidence: medium, source: "WP mirror: Colosseum (Anicius Maximus, 523)",
+     event: "The consul Anicius Maximus holds the last recorded animal hunts in the Colosseum",
+     place: "Colosseum",
+     scene: "A GNOME hunter chases the last bear across the Colosseum sand at Anicius Maximus' consul games."}
+  - {year: 535, peg: mill, confidence: medium, source: "Encyclopedia.com: Cassiodorus (535-536)",
+     event: "Cassiodorus and Pope Agapetus plan a Christian school with a library in Rome",
+     scene: "Cassiodorus and Agapetus grind Greek and Latin books in a MILL to make the flour of a Christian school."}
+  - {year: 546, peg: roach, confidence: high, source: "WP mirror: Sack of Rome (546)",
+     event: "Famine during Totila's siege: Romans eat bran and nettles",
+     scene: "Starving Romans eat nettles, bran and even a ROACH from the cracks in the walls during Totila's siege."}
+  - {year: 549, peg: rope, confidence: disputed, source: "worldhistory.org: Circus Maximus (549)",
+     event: "Totila holds the last chariot races in the Circus Maximus",
+     place: "Circus Maximus",
+     scene: "Totila cuts the starting ROPE, and the last chariots of Rome race round the Circus Maximus."}
+  - {year: 589, peg: fob, confidence: high, source: "WP: Roman Plague of 590; Gregory of Tours X",
+     event: "The Tiber floods Rome, ruins church granaries and leaves dead serpents in the streets",
+     place: "Tiber",
+     scene: "A Tiber flood sweeps a deacon's watch FOB into a granary, and a dead serpent floats past it."}
+  - {year: 590, peg: bees, confidence: high, source: "WP: Roman Plague of 590 (February)",
+     event: "Plague strikes Rome and kills Pope Pelagius II",
+     scene: "Plague BEES swarm out of the flooded mud and sting Pelagius II to death in the Lateran."}
+  - {year: 590, peg: bees, confidence: high, source: "WP mirror: Pope Gregory I (590)",
+     event: "Gregory organises church food deliveries to the hungry poor of Rome",
+     scene: "Gregory's deacons spread honey from church BEES and loaves to hungry families in each quarter of Rome."}
+  - {year: 604, peg: sewer, confidence: unverified,
+     event: "Famine in Rome; Pope Sabinian sells church grain instead of giving it",
+     scene: "Pope Sabinian sells grain at the SEWER mouth, and hungry Romans curse him for not giving it free."}
+  - {year: 716, peg: dish, confidence: high, source: "WP: Pope Gregory II (October 716)",
+     event: "The Tiber floods Rome for eight days; Gregory II orders litanies",
+     place: "Via Lata",
+     scene: "Romans row along the Via Lata in a DISH for eight days, chanting Gregory II's litanies against the Tiber flood."}
+  - {year: 727, peg: ink, confidence: medium, source: "Medievalists.net: Schola Saxonum (727)",
+     event: "Ine of Wessex founds the Saxon hostel and quarter near Saint Peter's",
+     place: "Borgo, Santo Spirito in Sassia",
+     scene: "King Ine signs the charter of the Saxon quarter by Saint Peter's in thick INK, and pilgrims move in."}
+world_refs:
+  - {year: 306, event: "Baths of Diocletian finished", cell: western_europe_arts_500bce_500ce}
+  - {year: 306, event: "Maxentius seizes power in Rome", cell: western_europe_politics_500bce_500ce}
+  - {year: 312, event: "Battle of the Milvian Bridge", cell: western_europe_politics_500bce_500ce}
+  - {year: 312, event: "Basilica of Maxentius completed by Constantine", cell: western_europe_arts_500bce_500ce}
+  - {year: 315, event: "Arch of Constantine opens", cell: western_europe_arts_500bce_500ce}
+  - {year: 320, event: "Old Saint Peter's begun", cell: western_europe_religion_500bce_500ce}
+  - {year: 324, event: "Lateran basilica dedicated", cell: western_europe_religion_500bce_500ce}
+  - {year: 350, event: "Santa Costanza mausoleum", cell: western_europe_arts_500bce_500ce}
+  - {year: 354, event: "Calendar of Filocalus", cell: western_europe_arts_500bce_500ce}
+  - {year: 357, event: "Obelisk set up in the Circus Maximus", cell: western_europe_arts_500bce_500ce}
+  - {year: 357, event: "Altar of Victory removed from the Senate house", cell: western_europe_religion_500bce_500ce}
+  - {year: 359, event: "Sarcophagus of Junius Bassus", cell: western_europe_arts_500bce_500ce}
+  - {year: 366, event: "Damasus and Ursinus: deadly fights over the papacy", cell: western_europe_religion_500bce_500ce}
+  - {year: 368, event: "Fourteen public doctors for Rome's poor", cell: western_europe_science_500bce_500ce}
+  - {year: 370, event: "Law on students in Rome", cell: western_europe_society_500bce_500ce}
+  - {year: 380, event: "Projecta Casket from the Esquiline", cell: western_europe_arts_500bce_500ce}
+  - {year: 382, event: "Altar of Victory removed again", cell: western_europe_religion_500bce_500ce}
+  - {year: 383, event: "Famine at Rome: foreigners driven out", cell: western_europe_society_500bce_500ce}
+  - {year: 384, event: "Symmachus pleads for the Altar of Victory", cell: western_europe_religion_500bce_500ce}
+  - {year: 390, event: "Fabiola founds the first public hospital in Rome", cell: western_europe_science_500bce_500ce}
+  - {year: 390, event: "Law at Rome: male prostitutes to be burnt", cell: western_europe_society_500bce_500ce}
+  - {year: 394, event: "Serena takes Rhea's necklace; the last Vestal curses her", cell: western_europe_religion_500bce_500ce}
+  - {year: 397, event: "Gildo stops the African grain for Rome", cell: north_africa_politics_500bce_500ce}
+  - {year: 400, event: "Bronze statue of Claudian in the Forum", cell: western_europe_arts_500bce_500ce}
+  - {year: 400, event: "Vergilius Vaticanus made in Rome", cell: western_europe_arts_500bce_500ce}
+  - {year: 404, event: "Telemachus dies; gladiator games end", cell: western_europe_religion_500bce_500ce}
+  - {year: 408, event: "Stilicho burns the Sibylline Books", cell: western_europe_religion_500bce_500ce}
+  - {year: 410, event: "Alaric sacks Rome", cell: western_europe_politics_500bce_500ce}
+  - {year: 432, event: "Santa Sabina finished", cell: western_europe_arts_500bce_500ce}
+  - {year: 434, event: "Santa Maria Maggiore consecrated", cell: western_europe_arts_500bce_500ce}
+  - {year: 443, event: "Leo hunts out the Manichaeans in Rome", cell: western_europe_religion_500bce_500ce}
+  - {year: 455, event: "Vandals sack Rome", cell: western_europe_politics_500bce_500ce}
+  - {year: 455, event: "Petronius Maximus lynched", cell: western_europe_politics_500bce_500ce}
+  - {year: 456, event: "Sidonius' statue in Trajan's Forum", cell: western_europe_arts_500bce_500ce}
+  - {year: 495, event: "Gelasius ends the Lupercalia", cell: western_europe_religion_500bce_500ce}
+  - {year: 498, event: "Double papal election: Symmachus and Laurentius", cell: western_europe_religion_500bce_500ce}
+  - {year: 536, event: "Belisarius takes Rome", cell: western_europe_politics_500_1500}
+  - {year: 590, event: "Gregory the Great becomes pope", cell: western_europe_religion_500_1500}
+  - {year: 609, event: "Pantheon becomes Santa Maria ad Martyres", cell: western_europe_religion_500_1500}
+  - {year: 649, event: "Lateran Council", cell: western_europe_religion_500_1500}
+  - {year: 653, event: "Byzantine troops arrest Pope Martin I in Rome", cell: western_europe_religion_500_1500}
+  - {year: 663, event: "Constans II visits and strips Rome", cell: western_europe_politics_500_1500}
+  - {year: 731, event: "Gregory III's Roman synod against iconoclasm", cell: western_europe_religion_500_1500}
+  - {year: 752, event: "Donation of Constantine forged", cell: western_europe_religion_500_1500}
+  - {year: 769, event: "Lateran synod on papal elections", cell: western_europe_religion_500_1500}
+  - {year: 800, event: "Leo III crowns Charlemagne in Rome", cell: western_europe_politics_500_1500}
+out_refs:
+  - {year: 303, event: "Diocletian celebrates his twenty years of rule in Rome", reason: "imperial ceremony"}
+  - {year: 326, event: "Constantine's last visit to Rome", reason: "imperial visit"}
+  - {year: 357, event: "Constantius II visits Rome", reason: "imperial visit"}
+  - {year: 389, event: "Theodosius visits Rome", reason: "imperial visit"}
+  - {year: 402, event: "The western court moves to Ravenna", reason: "imperial government"}
+  - {year: 404, event: "Honorius holds a triumph and his consulship in Rome", reason: "imperial ceremony"}
+  - {year: 409, event: "Alaric makes Priscus Attalus emperor in Rome", reason: "imperial succession"}
+  - {year: 438, event: "The Theodosian Code is read to the Senate", reason: "law for the empire"}
+  - {year: 500, event: "Theoderic visits Rome and speaks to the people", reason: "royal visit"}
+  - {year: 537, event: "Belisarius deposes Pope Silverius", reason: "papal succession"}
+  - {year: 545, event: "Imperial agents take Pope Vigilius from Rome to Constantinople", reason: "papal affairs"}
+  - {year: 554, event: "Pragmatic Sanction restores Roman order in Italy", reason: "law for Italy"}
+  - {year: 579, event: "Pelagius II is consecrated without the emperor's approval", reason: "papal election"}
+  - {year: 687, event: "Disputed papal election: Paschal, Theodore and Sergius", reason: "papal election"}
+  - {year: 710, event: "Pope Constantine sails to Constantinople", reason: "papal affairs"}
+  - {year: 774, event: "Charlemagne's first visit to Rome; he confirms the Donation", reason: "royal visit"}
+  - {year: 781, event: "Hadrian I anoints Charlemagne's sons in Rome", reason: "royal ceremony"}

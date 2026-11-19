@@ -1,0 +1,959 @@
+# City: Rome x 1527 to 1797 (Sack of Rome to the Baroque and the eve of the French Republic). DRAFT 2026-11-19.
+# Area: Metropolitan City of Rome Capital (Rome, Vatican, Ostia and Fiumicino, Tivoli, the Castelli Romani and Castel Gandolfo, Frascati, Ariccia, Civitavecchia, Anzio).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Holy See and papal acts -> out_refs,
+# except where Rome is the subject (a pope's walls, streets, fountains, aqueducts, churches, prisons). City as main stage -> card.
+# World-grid events -> world_refs. Dates: memory pass + web check (45 of 45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Kiwix 2023-10: building, fountain, theatre and institution articles), Turismo Roma, Aquae Urbis Romae, Met.
+# A building -> its opening or completion (or a named first stone); a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1528, peg: knife, confidence: high, source: "Search: Sack of Rome (1527); encyclopedia.com (Feb)",
+     event: "The imperial army leaves Rome after nine months of occupation",
+     scene: "The last landsknecht sheathes his KNIFE, dripping with Roman loot, and marches out through the Porta del Popolo."}
+  - {year: 1535, peg: mill, confidence: disputed, source: "Search: Oxford Cabinet 1535; Museionline 1537",
+     event: "Paul III's fort at Civitavecchia harbour is completed",
+     place: "Forte Michelangelo, Civitavecchia",
+     scene: "A MILL wheel grinds the last stone for the round towers of the harbour fort at Civitavecchia, finished against pirates."}
+  - {year: 1536, peg: match, confidence: medium, source: "Turismo Roma; Capitoline Museums timeline: Bastione Ardeatino",
+     event: "Paul III starts a new bastion on the Aurelian Walls against a second sack",
+     place: "Bastione Ardeatino",
+     scene: "Sangallo strikes a MATCH to test a new cannon port in the angled brick bastion between Porta San Paolo and San Sebastiano."}
+  - {year: 1559, peg: elbow, confidence: high, source: "Search: encyclopedia.com Paul IV; 1559 conclave",
+     event: "On the death of Paul IV a mob topples his statue and frees the prisoners of the Inquisition",
+     place: "Capitol and Palazzo dell'Inquisizione",
+     scene: "A rioter drives his ELBOW into Paul IV's marble statue, and the crowd runs on to burn the Inquisition files and free its prisoners."}
+  - {year: 1561, peg: jet, confidence: high, source: "WP mirror: Porta Pia (built 1561 to 1565)",
+     event: "Work starts on Michelangelo's Porta Pia at the end of the new Via Pia",
+     place: "Porta Pia",
+     scene: "A JET of white stone dust bursts from the Aurelian Wall as masons cut the opening for Michelangelo's Porta Pia."}
+  - {year: 1582, peg: oven, confidence: medium, source: "WP mirror: Capitoline Hill (1578 to 1582)",
+     event: "Martino Longhi finishes the bell tower of the Palazzo Senatorio",
+     place: "Campidoglio",
+     scene: "Martino Longhi pulls a bronze bell from an OVEN and hangs it high in the new tower of the Senators' palace."}
+  - {year: 1585, peg: waffle, confidence: medium, source: "WP mirror: Pope Sixtus V (bandits executed)",
+     event: "Sixtus V starts his campaign against bandits and shows their heads on Ponte Sant'Angelo",
+     place: "Ponte Sant'Angelo",
+     scene: "Sixtus V presses bandits' heads flat in a WAFFLE iron and sets them in a row on the spikes of Ponte Sant'Angelo."}
+  - {year: 1586, peg: fish, confidence: high, source: "Search: Turismo Roma: Rione XIV Borgo (9 Dec)",
+     event: "Sixtus V makes the Borgo the fourteenth rione of Rome",
+     place: "Borgo",
+     scene: "A huge FISH swims down the Passetto from the Vatican and stamps the Borgo with the badge of a new Roman rione."}
+  - {year: 1596, peg: peach, confidence: medium, source: "WP mirror: Apostolic Palace of Castel Gandolfo",
+     event: "The papacy takes the castle of Castel Gandolfo from the Savelli family to pay a debt",
+     place: "Castel Gandolfo",
+     scene: "A Savelli lord hands over a PEACH basket and the keys of Castel Gandolfo castle to clear his debt to the pope."}
+  - {year: 1599, peg: pipe, confidence: high, source: "Search: executedtoday; Atlas Obscura (11 Sep)",
+     event: "Beatrice Cenci is beheaded for the murder of her father",
+     place: "Piazza di Ponte Sant'Angelo",
+     scene: "The executioner's axe has a PIPE for a handle; it falls on Beatrice Cenci on the scaffold by Ponte Sant'Angelo."}
+  - {year: 1600, peg: sauce, confidence: high, source: "world_dates; WP mirror: Timeline of Rome",
+     event: "Giordano Bruno is burned alive as a heretic",
+     place: "Campo de' Fiori",
+     scene: "Inquisitors pour a burning SAUCE of pitch over Giordano Bruno at his stake in the Campo de' Fiori market."}
+  - {year: 1643, peg: ram, confidence: medium, source: "Search: WP Janiculum walls; Turismo Roma (1642 to 1644)",
+     event: "Urban VIII builds new walls round the Janiculum against the Farnese",
+     place: "Janiculum",
+     scene: "A RAM butts the last bastion stones into place along Urban VIII's new wall on the Janiculum ridge."}
+  - {year: 1655, peg: lily, confidence: high, source: "Search: Carceri Nuove (built 1652 to 1655)",
+     event: "The Carceri Nuove, a new prison, are completed in Via Giulia",
+     place: "Via Giulia",
+     scene: "A white LILY is chained in each clean new cell of the Carceri Nuove, Rome's first modern prison, in Via Giulia."}
+  - {year: 1655, peg: lily, confidence: high, source: "WP mirror: Piazza del Popolo",
+     event: "Bernini decorates the inner face of the Porta del Popolo for Queen Christina's entry",
+     place: "Porta del Popolo",
+     scene: "Bernini carves a stone LILY garland over the inner arch of the Porta del Popolo, ready for Christina of Sweden."}
+  - {year: 1662, peg: chain, confidence: high, source: "Search: History Today: The Corsican Affair (20 Aug)",
+     event: "The pope's Corsican Guard shoots at the French ambassador's palace and coach",
+     place: "Palazzo Farnese",
+     scene: "Corsican guards break the gate CHAIN of the Palazzo Farnese and fire at the French ambassador's coach."}
+  - {year: 1664, peg: cherry, confidence: medium, source: "Search: Corsican Guard (pyramid built after Pisa)",
+     event: "A pyramid of shame for the Corsican Guard goes up near their barracks",
+     place: "Trinità dei Pellegrini",
+     scene: "A CHERRY-red pyramid rises by the Corsican barracks with an inscription that shames the guard before all Rome."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP mirror: Timeline of Rome",
+     event: "Carlo Fontana finishes the Palazzo di Montecitorio as the seat of the papal law courts",
+     place: "Montecitorio",
+     scene: "A BEAR in a judge's robe climbs Fontana's new steps at Montecitorio and opens the papal courts."}
+  - {year: 1703, peg: sumo, confidence: medium, source: "Search: San Michele a Ripa (1703 or 1704)",
+     event: "A house of correction for boys opens at San Michele a Ripa",
+     place: "San Michele a Ripa",
+     scene: "A SUMO warder sits at the end of each bench in the new boys' reformatory of San Michele, where they spin wool in silence."}
+  - {year: 1735, peg: mill, confidence: high, source: "Search: San Michele a Ripa inscription (Clement XII)",
+     event: "Fuga builds a women's prison at San Michele a Ripa",
+     place: "San Michele a Ripa",
+     scene: "Women prisoners turn a MILL wheel in Fuga's new prison wing at San Michele a Ripa."}
+  - {year: 1736, peg: match, confidence: medium, source: "Search: James Cummins: anti-Spanish riots in Rome (March)",
+     event: "Romans riot against Spanish troops who pass through the city",
+     scene: "A Roman boy throws a lit MATCH into a Spanish army cart, and the whole street rises against the soldiers."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP mirror: Palazzo della Consulta (1732 to 1737)",
+     event: "Fuga finishes the Palazzo della Consulta on the Quirinal",
+     place: "Piazza del Quirinale",
+     scene: "Fuga raises a MUG of wine on the roof of his finished Palazzo della Consulta opposite the papal palace."}
+  - {year: 1744, peg: warrior, confidence: disputed, source: "Search: WP Rioni; NGA Bernardini 1744; Turismo Roma 1748",
+     event: "Benedict XIV marks the borders of the fourteen rioni with marble plaques",
+     scene: "A WARRIOR hammers a marble plaque into a corner wall to mark where one Roman rione ends and the next begins."}
+  - {year: 1793, peg: palm, confidence: high, source: "Search: Britannica; V&A: Hugou de Bassville (13 Jan)",
+     event: "A Roman crowd kills the French envoy Hugou de Bassville on the Corso",
+     place: "Via del Corso",
+     scene: "A rioter slaps his PALM on Bassville's French cockade on the Corso, and the crowd stones and stabs him."}
+  - {year: 1797, peg: pig, confidence: high, source: "Search: frenchempire.net; WP: Duphot (27/28 Dec)",
+     event: "Papal troops shoot the French general Duphot in a street clash at the French embassy",
+     place: "Palazzo Corsini",
+     scene: "A PIG runs between the rioters and the papal troops outside Palazzo Corsini, and General Duphot falls shot beside it."}
+
+  # science
+  - {year: 1551, peg: wallet, confidence: high, source: "Search: Met; Nolli sources (Bufalini woodcut)",
+     event: "Leonardo Bufalini prints the first measured street plan of Rome",
+     scene: "Bufalini opens a WALLET and unfolds his woodcut plan of Rome, every street drawn to scale."}
+  - {year: 1557, peg: log, confidence: medium, source: "Search: Ponte Santa Maria fell in the 1557 flood",
+     event: "The flood sweeps away the Ponte Santa Maria",
+     place: "Ponte Rotto",
+     scene: "A floating LOG rams the old Ponte Santa Maria, and two arches crash into the brown Tiber."}
+  - {year: 1570, peg: goose, confidence: medium, source: "Search: WP Fontana di Piazza Colonna; thehistoryblog",
+     event: "Pius V completes the restoration of the Acqua Vergine aqueduct",
+     place: "Trevi",
+     scene: "A GOOSE paddles down the cleared Acqua Vergine channel from Salone and splashes out at the Trevi basin."}
+  - {year: 1573, peg: comb, confidence: low, source: "Search: Warburg PDF (Gregory XIII bridge, no year)",
+     event: "Gregory XIII rebuilds the Ponte Santa Maria",
+     place: "Ponte Rotto",
+     scene: "Masons COMB the river mud from the piers as they close the gap in the Ponte Santa Maria."}
+  - {year: 1575, peg: eagle, confidence: high, source: "Search: Senato antiquorum habet; WP Via Merulana",
+     event: "Gregory XIII opens Via Merulana between Santa Maria Maggiore and the Lateran",
+     place: "Via Merulana",
+     scene: "An EAGLE flies a straight line from Santa Maria Maggiore to the Lateran, and the new Via Merulana is cut beneath it."}
+  - {year: 1583, peg: foam, confidence: medium, source: "WP mirror: Villa Medici",
+     event: "Diggers find the ancient Niobe Group of statues in a Roman vineyard",
+     scene: "Diggers wash FOAM off the marble daughters of Niobe as they lift the statue group out of a Roman vineyard."}
+  - {year: 1586, peg: fish, confidence: high, source: "WP mirror: Acqua Felice (water by October)",
+     event: "The Acqua Felice aqueduct brings water to the Esquiline and Quirinal hills",
+     place: "Villa Montalto",
+     scene: "A live FISH shoots out of the first spout of the Acqua Felice into Sixtus V's garden at Villa Montalto."}
+  - {year: 1586, peg: fish, confidence: high, source: "WP mirror: St. Peter's Basilica (Fontana)",
+     event: "Domenico Fontana moves the Vatican obelisk to St Peter's Square",
+     place: "St Peter's Square",
+     scene: "Forty winches haul the Vatican obelisk upright, and a FISH-shaped bronze cross is set on its tip."}
+  - {year: 1586, peg: fish, confidence: low, source: "Search: Trinita dei Monti (road after 1585)",
+     event: "Sixtus V opens the Strada Felice from Santa Trinità dei Monti to Santa Maria Maggiore",
+     place: "Via Sistina",
+     scene: "A FISH cart rolls the full length of the new Strada Felice from Trinità dei Monti down to Santa Maria Maggiore."}
+  - {year: 1593, peg: palm, confidence: medium, source: "Search: WP Antonio Bosio; Catacomb Society",
+     event: "Antonio Bosio starts to explore and map the catacombs",
+     scene: "Antonio Bosio holds a PALM-oil lamp and crawls into the catacomb galleries to map the first Christian tombs."}
+  - {year: 1598, peg: beehive, confidence: high, source: "Search: Carleton CGMR: Ponte Rotto",
+     event: "The Christmas flood breaks the Ponte Santa Maria again, leaving the Ponte Rotto",
+     place: "Ponte Rotto",
+     scene: "A BEEHIVE floats down the flood and three arches of the Ponte Santa Maria fall away, never to be rebuilt."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP mirror: Acqua Paola",
+     event: "Paul V's Acqua Paola aqueduct brings Bracciano water to the Janiculum",
+     place: "Janiculum",
+     scene: "A giant TONGUE laps the first water of the Acqua Paola as it pours from the new Fontanone on the Janiculum."}
+  - {year: 1612, peg: tongue, confidence: medium, source: "Search: romeartlover Ostiapolis; kupi (Fossa Traiana)",
+     event: "Paul V digs out the Fiumicino canal again so boats can reach the Tiber from the sea",
+     place: "Fiumicino",
+     scene: "A long TONGUE of seawater licks up the cleared Fiumicino canal, and barges sail in from the sea toward Rome."}
+  - {year: 1632, peg: moon, confidence: disputed, source: "Search: WP Bosio 1632; Cambridge exhibit 1632 [1635]",
+     event: "Bosio's book Roma sotterranea on the catacombs is published after his death",
+     scene: "By MOON light a printer lifts the first sheet of Roma sotterranea, the map of the Christian catacombs."}
+  - {year: 1702, peg: sun, confidence: high, source: "WP mirror: Santa Maria degli Angeli",
+     event: "Francesco Bianchini completes the meridian line in Santa Maria degli Angeli",
+     place: "Santa Maria degli Angeli",
+     scene: "A beam of SUN falls through a hole in the wall and lands on Bianchini's bronze meridian line in the church floor."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP mirror: Sapienza University of Rome",
+     event: "Clement XI founds a botanical garden on the Janiculum",
+     place: "Janiculum",
+     scene: "A SUMO gardener plants rare herbs in neat rows in Clement XI's new botanical garden on the Janiculum."}
+  - {year: 1725, peg: nail, confidence: high, source: "Search: INMP San Gallicano history (14 Mar)",
+     event: "The first stone of the San Gallicano hospital for skin diseases is laid in Trastevere",
+     place: "Trastevere",
+     scene: "Benedict XIII drives a NAIL into the first stone of San Gallicano, the Trastevere hospital for scabies and ringworm."}
+  - {year: 1743, peg: ram, confidence: high, source: "Search: Cambridge Lopez; Senato: dome consolidation",
+     event: "Vanvitelli starts to fit iron rings round the cracked dome of St Peter's",
+     place: "St Peter's",
+     scene: "A RAM's-horn iron ring is hammered tight round the cracked drum of St Peter's dome, the first of six."}
+  - {year: 1748, peg: reef, confidence: high, source: "Search: WP Giambattista Nolli; Met",
+     event: "Giambattista Nolli publishes his great plan of Rome",
+     scene: "Nolli draws every church, court and street of Rome so finely that his plan looks like a white coral REEF."}
+
+  # religion
+  - {year: 1547, peg: rock, confidence: high, source: "WP mirror: St. Peter's Basilica (1 Jan)",
+     event: "Michelangelo becomes architect of St Peter's and redesigns the dome",
+     place: "St Peter's",
+     scene: "Michelangelo cracks a ROCK in two and shapes from it a new, simpler dome for St Peter's."}
+  - {year: 1561, peg: jet, confidence: high, source: "WP mirror: Santa Maria degli Angeli (27 Jul)",
+     event: "Pius IV orders a church in the Baths of Diocletian, Santa Maria degli Angeli",
+     place: "Baths of Diocletian",
+     scene: "A JET of holy water arcs into the ruined hall of Diocletian's baths, which Michelangelo turns into a church."}
+  - {year: 1575, peg: eagle, confidence: high, source: "WP mirror: Santa Maria in Vallicella",
+     event: "The Oratorians start to rebuild Santa Maria in Vallicella as the Chiesa Nuova",
+     place: "Chiesa Nuova",
+     scene: "An EAGLE drops the first stone of the new church onto the old Vallicella site for Philip Neri's priests."}
+  - {year: 1580, peg: vase, confidence: medium, source: "WP mirror: Church of the Gesu",
+     event: "The body of the Gesu church is completed",
+     place: "Il Gesu",
+     scene: "A Jesuit sets a VASE of lilies on the high altar as the last vault of the Gesu is closed."}
+  - {year: 1585, peg: waffle, confidence: high, source: "Search: WP Trinita dei Monti",
+     event: "Sixtus V consecrates Trinità dei Monti",
+     place: "Trinità dei Monti",
+     scene: "Sixtus V breaks a WAFFLE of blessed bread on the altar of Trinità dei Monti and consecrates the French church."}
+  - {year: 1589, peg: fob, confidence: medium, source: "WP mirror: Roman Ghetto (late 1580s)",
+     event: "Sixtus V enlarges the Jewish Ghetto and gives it five gates",
+     place: "Ghetto",
+     scene: "A watchman's FOB hangs on the ring with five keys, one for each gate of the enlarged Ghetto."}
+  - {year: 1590, peg: bees, confidence: medium, source: "WP mirror: Sant'Andrea della Valle (around 1590)",
+     event: "Work starts on Sant'Andrea della Valle",
+     place: "Sant'Andrea della Valle",
+     scene: "BEES swarm out of the Theatine garden as the first trench for Sant'Andrea della Valle is dug."}
+  - {year: 1599, peg: pipe, confidence: high, source: "WP mirror: Santa Maria in Vallicella",
+     event: "The Chiesa Nuova is consecrated",
+     place: "Chiesa Nuova",
+     scene: "Philip Neri's priests puff incense from a long PIPE as the bishop consecrates the Chiesa Nuova."}
+  - {year: 1603, peg: sumo, confidence: high, source: "WP mirror: Santa Susanna",
+     event: "Carlo Maderno completes the facade of Santa Susanna",
+     place: "Santa Susanna",
+     scene: "A SUMO wrestler pushes Maderno's tall facade upright at Santa Susanna, the first full Baroque front in Rome."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP mirror: St. Peter's Basilica (18 Feb)",
+     event: "Workmen start to pull down what is left of Constantine's old St Peter's",
+     place: "St Peter's",
+     scene: "Workmen roll the old basilica's mosaics up like SUSHI before they pull down Constantine's last walls."}
+  - {year: 1606, peg: sushi, confidence: medium, source: "WP mirror: Santa Maria in Vallicella (1605 or 1606)",
+     event: "The facade of the Chiesa Nuova is completed",
+     place: "Chiesa Nuova",
+     scene: "A SUSHI chef carves the last scroll on the travertine facade of the Chiesa Nuova."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP mirror: St. Peter's Basilica (7 May)",
+     event: "Maderno starts the nave that turns St Peter's into a Latin cross",
+     place: "St Peter's",
+     scene: "Maderno lays a long SKI on the plan of St Peter's to stretch Michelangelo's cross into a nave."}
+  - {year: 1612, peg: tongue, confidence: medium, source: "WP mirror: St. Peter's Basilica (inscribed year)",
+     event: "Maderno completes the facade of St Peter's",
+     place: "St Peter's",
+     scene: "A stone TONGUE of lettering runs across Maderno's new facade with the name of Paul V Borghese."}
+  - {year: 1615, peg: doll, confidence: high, source: "WP mirror: St. Peter's Basilica (Palm Sunday)",
+     event: "The partition wall comes down and the new nave of St Peter's opens",
+     place: "St Peter's",
+     scene: "A DOLL dressed as a cardinal leads the Palm Sunday crowd into the new nave once the partition wall falls."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP mirror: Santa Maria della Vittoria (1608 to 1620)",
+     event: "Santa Maria della Vittoria is completed",
+     place: "Santa Maria della Vittoria",
+     scene: "A Carmelite rings the bell with his NOSE as the last altar of Santa Maria della Vittoria is set in place."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP mirror: Sant'Ignazio (2 Aug)",
+     event: "The first stone of Sant'Ignazio is laid",
+     place: "Sant'Ignazio",
+     scene: "A cheesy NACHO is cemented under the first stone of Sant'Ignazio by the Jesuits of the Collegio Romano."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP mirror: Santa Maria della Vittoria (1624 to 1626)",
+     event: "Giovanni Battista Soria completes the facade of Santa Maria della Vittoria",
+     place: "Santa Maria della Vittoria",
+     scene: "Soria lays a NACHO on the top cornice as the last stone of the Santa Maria della Vittoria facade."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP mirror: St. Peter's Basilica",
+     event: "Bernini becomes architect of St Peter's after Maderno",
+     place: "St Peter's",
+     scene: "Bernini turns the brass KNOB of the fabbrica office at St Peter's and sits in dead Maderno's chair."}
+  - {year: 1635, peg: mill, confidence: high, source: "WP mirror: Santi Luca e Martina",
+     event: "Pietro da Cortona starts to rebuild Santi Luca e Martina in the Forum",
+     place: "Roman Forum",
+     scene: "A MILL turns in the Forum to grind the old stone for Pietro da Cortona's new church of Santi Luca e Martina."}
+  - {year: 1637, peg: mug, confidence: high, source: "WP mirror: Francesco Borromini",
+     event: "Borromini starts the Oratory of the Filippini beside the Chiesa Nuova",
+     place: "Oratorio dei Filippini",
+     scene: "Borromini bends a clay MUG into a curve and copies it for the concave brick front of the Filippini Oratory."}
+  - {year: 1641, peg: radio, confidence: high, source: "WP mirror: Francesco Borromini (built 1638 to 1641)",
+     event: "Borromini finishes the body of San Carlo alle Quattro Fontane",
+     place: "San Carlo alle Quattro Fontane",
+     scene: "A RADIO rolls round Borromini's tiny oval dome at San Carlo, and its sound swirls in the coffers."}
+  - {year: 1641, peg: radio, confidence: high, source: "WP mirror: St. Peter's Basilica (29 Jun)",
+     event: "Bernini completes the south bell tower of St Peter's",
+     place: "St Peter's",
+     scene: "A RADIO mast tops Bernini's new south bell tower on St Peter's facade, on time for the feast of Saint Peter."}
+  - {year: 1646, peg: roach, confidence: high, source: "Search: Finestre sull'Arte; Vatican bells (Feb)",
+     event: "Bernini's cracked bell tower on St Peter's is pulled down",
+     place: "St Peter's",
+     scene: "A ROACH crawls out of a crack in the facade, and workmen pull down Bernini's bell tower stone by stone."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP mirror: Francesco Borromini",
+     event: "San Carlo alle Quattro Fontane is dedicated",
+     place: "San Carlo alle Quattro Fontane",
+     scene: "A ROACH scuttles out of the wavy chapel as the Trinitarian friars dedicate Borromini's San Carlo."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP mirror: Sant'Ignazio",
+     event: "Sant'Ignazio opens for worship",
+     place: "Sant'Ignazio",
+     scene: "A Jesuit throws a LASSO round the great doors of Sant'Ignazio and pulls them open to the Jubilee crowds."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP mirror: Sant'Andrea della Valle",
+     event: "Sant'Andrea della Valle is consecrated",
+     place: "Sant'Andrea della Valle",
+     scene: "A cowhand's LASSO ties the bell rope under the high dome as Sant'Andrea della Valle is consecrated."}
+  - {year: 1650, peg: lasso, confidence: unverified,
+     event: "Borromini finishes his rebuilt nave of the Lateran basilica",
+     place: "San Giovanni in Laterano",
+     scene: "Borromini swings a LASSO round each old column of the Lateran and wraps it in a new white pier."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP mirror: Sant'Agnese in Agone",
+     event: "Work starts on Sant'Agnese in Agone on Piazza Navona",
+     place: "Piazza Navona",
+     scene: "A stone LION lifts the first block for Sant'Agnese in Agone on the west side of Piazza Navona."}
+  - {year: 1657, peg: log, confidence: high, source: "WP mirror: Timeline of Rome",
+     event: "Borromini leaves Sant'Agnese in Agone after shaping its dome and concave facade",
+     place: "Piazza Navona",
+     scene: "Borromini throws down a LOG of a ruler and walks off the Sant'Agnese site on Piazza Navona."}
+  - {year: 1660, peg: cheese, confidence: medium, source: "WP mirror: Francesco Borromini (1642 to 1660)",
+     event: "Borromini completes Sant'Ivo alla Sapienza with its spiral lantern",
+     place: "Sapienza",
+     scene: "Borromini twists a wheel of CHEESE into a spiral and sets it on Sant'Ivo as the lantern."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP mirror: Santa Maria della Pace (1658 to 1660)",
+     event: "Pietro da Cortona completes the facade of Santa Maria in Via Lata",
+     place: "Via del Corso",
+     scene: "Pietro da Cortona carves his two-storey portico on Via del Corso out of a giant CHEESE wheel."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1658 to 1661)",
+     event: "Bernini completes San Tommaso da Villanova at Castel Gandolfo",
+     place: "Castel Gandolfo",
+     scene: "A JET of lake air blows through the open doors of Bernini's domed San Tommaso on the Castel Gandolfo square."}
+  - {year: 1663, peg: gem, confidence: high, source: "WP mirror: Sant'Andrea della Valle (1655 to 1663)",
+     event: "Carlo Rainaldi completes the facade of Sant'Andrea della Valle",
+     place: "Sant'Andrea della Valle",
+     scene: "Carlo Rainaldi fits a GEM into the angel's wing on the last corner of the Sant'Andrea della Valle facade."}
+  - {year: 1664, peg: cherry, confidence: medium, source: "WP mirror: Gian Lorenzo Bernini (1662 to 1664 or 1665)",
+     event: "Bernini completes the round church of Santa Maria Assunta at Ariccia",
+     place: "Ariccia",
+     scene: "A CHERRY rolls round the circular floor of Bernini's new Assunta church in Ariccia."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP mirror: St. Peter's Basilica (16 Jan)",
+     event: "Bernini's Cathedra Petri is unveiled in the apse of St Peter's",
+     place: "St Peter's",
+     scene: "A JUDGE climbs into the gilded bronze throne of Bernini's Cathedra Petri, held up by four doctors of the Church."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: St. Peter's Basilica (1656 to 1667)",
+     event: "Bernini completes the colonnade of St Peter's Square",
+     place: "St Peter's Square",
+     scene: "A JOCKEY gallops round the four rows of columns as the last saint goes up on Bernini's colonnade."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: Santa Maria della Pace (1656 to 1667)",
+     event: "Pietro da Cortona completes the curved facade and small square of Santa Maria della Pace",
+     place: "Santa Maria della Pace",
+     scene: "A JOCKEY trots round the tiny new square that Pietro da Cortona cut in front of Santa Maria della Pace."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Sant'Andrea al Quirinale",
+     event: "Bernini completes Sant'Andrea al Quirinale",
+     place: "Sant'Andrea al Quirinale",
+     scene: "A GOOSE spreads its wings on the oval dome as the last gilded coffer goes up in Sant'Andrea al Quirinale."}
+  - {year: 1675, peg: eagle, confidence: medium, source: "WP mirror: Piazza del Popolo (1662 to 1675)",
+     event: "Santa Maria in Montesanto, the first twin church on Piazza del Popolo, is completed",
+     place: "Piazza del Popolo",
+     scene: "An EAGLE lands on the dome of Santa Maria in Montesanto, the first of the two twin churches at the Tridente."}
+  - {year: 1679, peg: cowboy, confidence: medium, source: "WP mirror: Piazza del Popolo (1675 to 1679)",
+     event: "Santa Maria dei Miracoli, the second twin church on Piazza del Popolo, is completed",
+     place: "Piazza del Popolo",
+     scene: "A COWBOY ropes the round dome of Santa Maria dei Miracoli into line with its twin across Via del Corso."}
+  - {year: 1679, peg: cowboy, confidence: medium, source: "WP mirror: Church of the Gesu (1678 to 1679)",
+     event: "Gaulli completes the Triumph of the Name of Jesus on the Gesu vault",
+     place: "Il Gesu",
+     scene: "A COWBOY tumbles out of the painted frame as sinners fall from Gaulli's Triumph of the Name of Jesus."}
+  - {year: 1700, peg: sauce, confidence: medium, source: "WP mirror: Church of the Gesu (1696 to 1700)",
+     event: "Andrea Pozzo completes the altar of Saint Ignatius in the Gesu",
+     place: "Il Gesu",
+     scene: "Andrea Pozzo pours a SAUCE of lapis and gold over the altar of Saint Ignatius in the Gesu."}
+  - {year: 1722, peg: nun, confidence: high, source: "WP mirror: Sant'Ignazio",
+     event: "Sant'Ignazio is finally consecrated",
+     place: "Sant'Ignazio",
+     scene: "A NUN rings the bell as Cardinal Zondadari at last consecrates Sant'Ignazio, open for worship for decades."}
+  - {year: 1735, peg: mill, confidence: high, source: "WP mirror: Archbasilica of St John Lateran",
+     event: "Alessandro Galilei completes the new facade of the Lateran basilica",
+     place: "San Giovanni in Laterano",
+     scene: "A MILL wheel of saints turns along the top of Galilei's new Lateran facade, all fifteen statues in a row."}
+  - {year: 1743, peg: ram, confidence: high, source: "Search: Met; Vatican press: Santa Maria Maggiore",
+     event: "Ferdinando Fuga completes the new facade of Santa Maria Maggiore",
+     place: "Santa Maria Maggiore",
+     scene: "A RAM butts the scaffold away from Fuga's new loggia facade, and the old mosaics shine behind it."}
+  - {year: 1750, peg: lasso, confidence: medium, source: "WP mirror: Pope Benedict XIV (Jubilee)",
+     event: "Benedict XIV dedicates the Colosseum to the martyrs and sets up the Stations of the Cross",
+     place: "Colosseum",
+     scene: "A LASSO of fourteen small shrines is strung round the Colosseum arena for the Stations of the Cross."}
+  - {year: 1797, peg: pig, confidence: medium, source: "WP mirror: Church of the Gesu",
+     event: "The silver statue of Saint Ignatius in the Gesu is melted down to pay the French",
+     place: "Il Gesu",
+     scene: "A silver PIG and the silver statue of Saint Ignatius go into the Gesu melting pot to pay Napoleon."}
+
+  # arts
+  - {year: 1536, peg: match, confidence: high, source: "WP mirror: Capitoline Hill",
+     event: "Michelangelo draws his first plan for the Campidoglio square",
+     place: "Campidoglio",
+     scene: "Michelangelo strikes a MATCH and lights the plan of an oval star pattern for the Capitol square."}
+  - {year: 1536, peg: match, confidence: high, source: "WP mirror: Castel Sant'Angelo",
+     event: "Raffaello da Montelupo's marble Saint Michael is set on top of Castel Sant'Angelo",
+     place: "Castel Sant'Angelo",
+     scene: "Montelupo's marble angel sheathes a sword as thin as a MATCH on the roof of Castel Sant'Angelo."}
+  - {year: 1538, peg: movie, confidence: high, source: "Search: Musei Capitolini; Smarthistory: Marcus Aurelius",
+     event: "The bronze Marcus Aurelius moves from the Lateran to the Capitol",
+     place: "Campidoglio",
+     scene: "A MOVIE crew films the bronze horseman Marcus Aurelius as he rides from the Lateran up to the Capitol."}
+  - {year: 1560, peg: cheese, confidence: high, source: "WP mirror: Villa d'Este",
+     event: "Building starts on the Villa d'Este at Tivoli",
+     place: "Tivoli",
+     scene: "Cardinal Ippolito slices a CHEESE wheel into terraces to show how his Tivoli hillside villa will step down."}
+  - {year: 1570, peg: goose, confidence: high, source: "WP mirror: Villa d'Este (1565 to 1570)",
+     event: "The Oval Fountain at the Villa d'Este is finished",
+     place: "Tivoli",
+     scene: "A GOOSE swims round the curved cascade of the new Oval Fountain at Tivoli."}
+  - {year: 1571, peg: cat, confidence: high, source: "WP mirror: Villa d'Este",
+     event: "The water organ is fitted in the Fountain of the Organ at Tivoli",
+     place: "Tivoli",
+     scene: "A CAT jumps as the water organ at Tivoli plays its first chord, blown only by falling water."}
+  - {year: 1572, peg: coin, confidence: medium, source: "Turismo Roma; WP mirror: Piazza del Popolo",
+     event: "Giacomo della Porta's fountain is set up in Piazza del Popolo",
+     place: "Piazza del Popolo",
+     scene: "A pilgrim throws a COIN into Giacomo della Porta's first Acqua Vergine fountain, in Piazza del Popolo."}
+  - {year: 1574, peg: car, confidence: medium, source: "WP mirror: Fountains of Rome (1572 or 1574)",
+     event: "Giacomo della Porta builds the basin of the south fountain in Piazza Navona",
+     place: "Piazza Navona",
+     scene: "A toy CAR floats in Giacomo della Porta's new marble basin at the north end of Piazza Navona."}
+  - {year: 1575, peg: eagle, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "Giacomo della Porta builds the Fontana del Pantheon",
+     place: "Piazza della Rotonda",
+     scene: "An EAGLE drinks from Giacomo della Porta's new basin in front of the Pantheon portico."}
+  - {year: 1575, peg: eagle, confidence: high, source: "WP mirror: Fountains of Rome; Piazza Navona",
+     event: "Giacomo della Porta builds the basin later known as the Fontana del Moro",
+     place: "Piazza Navona",
+     scene: "An EAGLE splashes in Giacomo della Porta's basin at the south end of Piazza Navona, later the Moro fountain."}
+  - {year: 1576, peg: cage, confidence: high, source: "WP mirror: Villa Medici",
+     event: "Cardinal Ferdinando de' Medici buys the villa on the Pincian and has Ammannati finish it",
+     place: "Villa Medici",
+     scene: "Ferdinando de' Medici opens a gilded CAGE of Medici lions in the garden of his new Pincian villa."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "The fountain in Piazza Colonna is completed",
+     place: "Piazza Colonna",
+     scene: "A pink marble CAKE of a fountain is set below the Column of Marcus Aurelius in Piazza Colonna."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP mirror: Villa d'Este (1566 to 1577)",
+     event: "The Hundred Fountains at the Villa d'Este are completed",
+     place: "Tivoli",
+     scene: "A hundred candles on a CAKE become a hundred jets along the long terrace of the Villa d'Este."}
+  - {year: 1581, peg: foot, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "The Babuino fountain is set up in Via del Babuino",
+     place: "Via del Babuino",
+     scene: "A reclining stone satyr dips his FOOT in the new street fountain that gives Via del Babuino its name."}
+  - {year: 1587, peg: fox, confidence: high, source: "WP mirror: List of obelisks in Rome",
+     event: "The Esquiline obelisk is raised behind Santa Maria Maggiore",
+     place: "Piazza dell'Esquilino",
+     scene: "A FOX hauls on the winch ropes until the Esquiline obelisk stands upright behind Santa Maria Maggiore."}
+  - {year: 1587, peg: fox, confidence: medium, source: "WP mirror: Acqua Felice (designed 1587)",
+     event: "The Moses fountain, show end of the Acqua Felice, is designed",
+     place: "Largo di Santa Susanna",
+     scene: "A FOX sketches three arches and a stone Moses who strikes the rock for the show end of the Acqua Felice."}
+  - {year: 1588, peg: fife, confidence: high, source: "WP mirror: List of obelisks in Rome",
+     event: "The Lateran obelisk, the tallest in Rome, is raised at the Lateran",
+     place: "Piazza di San Giovanni in Laterano",
+     scene: "A FIFE player marks each heave as the tallest obelisk in Rome rises on the Lateran square."}
+  - {year: 1588, peg: fife, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "The Turtle Fountain is completed in Piazza Mattei",
+     place: "Piazza Mattei",
+     scene: "Four bronze boys play the FIFE to bronze turtles they push up into the basin of the Fontana delle Tartarughe."}
+  - {year: 1589, peg: fob, confidence: high, source: "WP mirror: List of obelisks in Rome; Piazza del Popolo",
+     event: "The Flaminio obelisk is raised in Piazza del Popolo",
+     place: "Piazza del Popolo",
+     scene: "Fontana's men hang a pocket-watch FOB on the Flaminio obelisk as it rises in Piazza del Popolo."}
+  - {year: 1589, peg: fob, confidence: high, source: "WP mirror: Palazzo Farnese",
+     event: "Giacomo della Porta finishes the Tiber facade of the Palazzo Farnese",
+     place: "Palazzo Farnese",
+     scene: "A gold FOB glints in the new loggia of the Palazzo Farnese that looks over the garden to the Tiber."}
+  - {year: 1589, peg: fob, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "Giacomo della Porta builds the fountain of Piazza dei Monti",
+     place: "Piazza della Madonna dei Monti",
+     scene: "A housewife drops her FOB into Giacomo della Porta's new basin in the Piazza dei Monti."}
+  - {year: 1593, peg: palm, confidence: high, source: "WP mirror: Fountains of Rome (1588 to 1593)",
+     event: "The Quattro Fontane are completed at the crossroads of Strada Pia and Strada Felice",
+     place: "Quattro Fontane",
+     scene: "A PALM tree grows in each of the four corner fountains at the crossing of Strada Pia and Strada Felice."}
+  - {year: 1597, peg: pig, confidence: medium, source: "WP mirror: Palazzo Farnese (1597 to 1608)",
+     event: "Annibale Carracci starts the Loves of the Gods ceiling in the Farnese Gallery",
+     place: "Palazzo Farnese",
+     scene: "Annibale Carracci paints a flying PIG among the loves of the gods on the Farnese Gallery vault."}
+  - {year: 1598, peg: beehive, confidence: high, source: "WP mirror: Villa Medici",
+     event: "The marble Medici lions are completed for the loggia of the Villa Medici",
+     place: "Villa Medici",
+     scene: "A marble Medici lion puts its paw on a BEEHIVE in the garden loggia of the Villa Medici."}
+  - {year: 1600, peg: sauce, confidence: high, source: "Search: JSCM Morelli; WP: Rappresentatione",
+     event: "Cavalieri's Rappresentatione di Anima et di Corpo is first performed in the Oratory at the Vallicella",
+     place: "Oratorio dei Filippini",
+     scene: "Soul and Body sing over a boiling SAUCE pan in the Vallicella oratory, the first sung drama in Rome."}
+  - {year: 1601, peg: soda, confidence: high, source: "WP mirror: Caravaggio",
+     event: "Caravaggio's Conversion of Saint Paul and Crucifixion of Saint Peter are installed in the Cerasi Chapel",
+     place: "Santa Maria del Popolo",
+     scene: "A SODA bottle explodes in light over Saint Paul as he falls from his horse in Caravaggio's Cerasi Chapel."}
+  - {year: 1603, peg: sumo, confidence: high, source: "WP mirror: Villa Aldobrandini",
+     event: "The core of the Villa Aldobrandini at Frascati is complete",
+     place: "Frascati",
+     scene: "A SUMO wrestler carries Giacomo della Porta's plans up the Frascati hill to the finished Villa Aldobrandini."}
+  - {year: 1605, peg: seal, confidence: high, source: "WP mirror: Villa Borghese gardens",
+     event: "Cardinal Scipione Borghese starts the gardens of the Villa Borghese",
+     place: "Villa Borghese",
+     scene: "A SEAL balances a vine stake on its nose as Scipione Borghese turns the Pincian vineyard into a garden."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP mirror: Caravaggio",
+     event: "The Carmelites of Santa Maria della Scala reject Caravaggio's Death of the Virgin",
+     place: "Santa Maria della Scala",
+     scene: "The Carmelites push a plate of SUSHI away, then push away Caravaggio's Death of the Virgin too."}
+  - {year: 1608, peg: sofa, confidence: medium, source: "WP mirror: Fountains of Rome",
+     event: "The bronze Pigna is moved to its niche in the Vatican courtyard",
+     place: "Cortile della Pigna",
+     scene: "Workmen carry the bronze pine cone on a SOFA into its niche in the Vatican courtyard."}
+  - {year: 1614, peg: tower, confidence: high, source: "WP mirror: Fountains of Rome; St. Peter's",
+     event: "Maderno's fountain in St Peter's Square is completed",
+     place: "St Peter's Square",
+     scene: "A TOWER of water climbs from Maderno's new fountain to the right of the Vatican obelisk."}
+  - {year: 1614, peg: tower, confidence: medium, source: "Search: WP Aurora (Reni)",
+     event: "Guido Reni paints the Aurora ceiling in the Casino Rospigliosi",
+     place: "Casino Rospigliosi",
+     scene: "Guido Reni's Aurora scatters flowers from a TOWER of clouds ahead of Apollo's chariot in the Casino Rospigliosi."}
+  - {year: 1621, peg: ant, confidence: high, source: "Search: Met: Guercino, Casino Ludovisi",
+     event: "Guercino paints the Aurora ceiling in the Casino Ludovisi",
+     place: "Casino Ludovisi",
+     scene: "A giant ANT pulls Guercino's Aurora in her chariot across the ceiling of the Casino Ludovisi."}
+  - {year: 1622, peg: nun, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1621 to 1622)",
+     event: "Bernini finishes The Rape of Proserpina for Scipione Borghese",
+     place: "Villa Borghese",
+     scene: "A NUN blushes as Pluto's marble fingers sink into Proserpina's thigh in Bernini's group."}
+  - {year: 1624, peg: hanger, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1623 to 1624)",
+     event: "Bernini finishes his marble David",
+     place: "Villa Borghese",
+     scene: "Bernini's David hangs his cloak on a HANGER and twists to sling the stone, lips bitten tight."}
+  - {year: 1625, peg: nail, confidence: medium, source: "WP mirror: Bernini (1622 to 1625); Timeline gives 1624",
+     event: "Bernini finishes Apollo and Daphne",
+     place: "Villa Borghese",
+     scene: "Daphne's fingernails sprout NAIL-sharp laurel leaves as Bernini's Apollo grabs her."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "The Mascherone fountain is set up in Via Giulia",
+     place: "Via Giulia",
+     scene: "The giant stone face of the Mascherone spits water onto a NACHO tray in Via Giulia."}
+  - {year: 1629, peg: knob, confidence: medium, source: "WP mirror: Spanish Steps (1627 to 1629)",
+     event: "The Barcaccia boat fountain is completed in Piazza di Spagna",
+     place: "Piazza di Spagna",
+     scene: "Pietro Bernini turns a brass KNOB, and water spills over the sides of the sinking stone boat in Piazza di Spagna."}
+  - {year: 1629, peg: knob, confidence: medium, source: "WP mirror: Santa Maria della Pace (1624 to 1629)",
+     event: "Pietro da Cortona completes the Villa Sacchetti at Castel Fusano",
+     place: "Castel Fusano",
+     scene: "Pietro da Cortona turns the brass KNOB of the new Sacchetti villa in the pine woods of Castel Fusano."}
+  - {year: 1632, peg: moon, confidence: high, source: "WP mirror: List of theatres in Rome",
+     event: "The Barberini theatre opens in the Palazzo Barberini with Landi's Sant'Alessio",
+     place: "Palazzo Barberini",
+     scene: "A paper MOON rises over the stage in the Barberini theatre as Landi's Sant'Alessio opens it."}
+  - {year: 1633, peg: mummy, confidence: high, source: "WP mirror: Palazzo Barberini",
+     event: "Bernini completes the Palazzo Barberini",
+     place: "Palazzo Barberini",
+     scene: "A MUMMY wrapped in Barberini bee cloth climbs Bernini's grand square staircase in the finished palace."}
+  - {year: 1639, peg: map, confidence: high, source: "WP mirror: Palazzo Barberini",
+     event: "Pietro da Cortona finishes the Divine Providence ceiling in the Palazzo Barberini",
+     place: "Palazzo Barberini",
+     scene: "Pietro da Cortona unrolls a MAP of the heavens on the Barberini ceiling where Providence crowns the bees."}
+  - {year: 1643, peg: ram, confidence: high, source: "WP mirror: Fountains of Rome (1642 to 1643)",
+     event: "Bernini's Triton Fountain is completed in Piazza Barberini",
+     place: "Piazza Barberini",
+     scene: "Bernini's Triton blows a RAM's horn shell and sends a jet up over Piazza Barberini."}
+  - {year: 1644, peg: warrior, confidence: high, source: "WP mirror: Fountains of Rome",
+     event: "Bernini makes the Fountain of the Bees",
+     place: "Via Veneto",
+     scene: "A WARRIOR swats at three marble bees drinking from Bernini's shell fountain at Via Veneto."}
+  - {year: 1647, peg: rock, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1627 to 1647)",
+     event: "Bernini's tomb of Urban VIII is unveiled in St Peter's",
+     place: "St Peter's",
+     scene: "A gilded skeleton on Urban VIII's tomb writes his name on a black ROCK in Bernini's monument."}
+  - {year: 1647, peg: rock, confidence: high, source: "WP mirror: Villa Doria Pamphili (1645 to 1647)",
+     event: "The Casino del Bel Respiro of the Villa Pamphili is completed",
+     place: "Villa Doria Pamphili",
+     scene: "Algardi sets ancient reliefs into the walls of the Casino del Bel Respiro like ROCK in a quarry face."}
+  - {year: 1650, peg: lasso, confidence: high, source: "Search: Met; WP Portrait of Juan de Pareja (19 Mar)",
+     event: "Velazquez's portrait of Juan de Pareja is shown at the Pantheon",
+     place: "Pantheon",
+     scene: "Velazquez throws a LASSO round the Pantheon portico and hangs his portrait of Juan de Pareja for all to see."}
+  - {year: 1651, peg: wallet, confidence: high, source: "Search: WP Kircherian Museum",
+     event: "Athanasius Kircher founds his museum of curiosities at the Collegio Romano",
+     place: "Collegio Romano",
+     scene: "Athanasius Kircher opens a WALLET of fossils, magnets and mummies and lays them out in the Collegio Romano."}
+  - {year: 1653, peg: llama, confidence: high, source: "Search: Galleria Spada site; Turismo Roma (1652 to 1653)",
+     event: "Borromini builds the false perspective gallery in the Palazzo Spada",
+     place: "Palazzo Spada",
+     scene: "A LLAMA at the end of Borromini's Palazzo Spada colonnade looks giant, though the gallery is only short."}
+  - {year: 1653, peg: llama, confidence: high, source: "WP mirror: Villa Doria Pamphili",
+     event: "The gardens of the Villa Pamphili are finished",
+     place: "Villa Doria Pamphili",
+     scene: "A LLAMA grazes on the box hedges of the finished Pamphili gardens above the Via Aurelia."}
+  - {year: 1654, peg: lawyer, confidence: high, source: "WP mirror: Capitoline Hill",
+     event: "The Palazzo Nuovo on the Capitol is finished",
+     place: "Campidoglio",
+     scene: "A LAWYER signs the last paper, and the Palazzo Nuovo finally faces the Conservatori across Michelangelo's square."}
+  - {year: 1654, peg: lawyer, confidence: medium, source: "WP mirror: Bernini (1653 to 1654); Navona page says later",
+     event: "Bernini's Moor statue is set in the south fountain of Piazza Navona",
+     place: "Piazza Navona",
+     scene: "A LAWYER argues with Bernini's Moor, who wrestles a dolphin in the south fountain of Piazza Navona."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP mirror: Villa d'Este (1660 to 1661)",
+     event: "Bernini makes the Bicchierone fountain at the Villa d'Este",
+     place: "Tivoli",
+     scene: "A JET of water fills Bernini's giant stone goblet, the Bicchierone, in the Tivoli gardens."}
+  - {year: 1665, peg: jelly, confidence: medium, source: "WP mirror: Francesco Borromini (1660 to 1665)",
+     event: "Borromini completes the Palazzo di Propaganda Fide and its Re Magi chapel",
+     place: "Piazza di Spagna",
+     scene: "Borromini pushes the front of Propaganda Fide in and out like JELLY until the facade waves on Via di Propaganda."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: List of obelisks; Bernini",
+     event: "Bernini's elephant carries the Minerva obelisk",
+     place: "Piazza della Minerva",
+     scene: "A tiny JOCKEY rides Bernini's marble elephant, which carries a small obelisk in front of the Minerva."}
+  - {year: 1669, peg: ship, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1667 to 1669)",
+     event: "Bernini's angels with the instruments of the Passion are made for Ponte Sant'Angelo",
+     place: "Ponte Sant'Angelo",
+     scene: "A SHIP sails under Ponte Sant'Angelo as ten marble angels with the cross, nails and crown line the bridge."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1663 to 1670)",
+     event: "Bernini's Constantine on horseback is unveiled at the foot of the Scala Regia",
+     place: "Scala Regia",
+     scene: "Bernini's Constantine rears his horse at a flying GOOSE at the foot of the Vatican's Scala Regia."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Teatro Tordinona (Jan)",
+     event: "The Teatro Tordinona opens as Rome's first public theatre, with Cavalli's Scipione affricano",
+     place: "Tor di Nona",
+     scene: "A CAT yowls on the stage of the Tordinona, the old prison tower now a theatre for anyone with a ticket."}
+  - {year: 1674, peg: car, confidence: medium, source: "WP mirror: Gian Lorenzo Bernini (1671 to 1674 or 1675)",
+     event: "Bernini's Blessed Ludovica Albertoni is installed in San Francesco a Ripa",
+     place: "San Francesco a Ripa",
+     scene: "Bernini drives his marble Ludovica in a CAR to San Francesco a Ripa and lays her on the altar."}
+  - {year: 1677, peg: cake, confidence: disputed, source: "WP mirror: Fountains of Rome 1677; St Peter's gives 1675",
+     event: "Bernini adds a second matching fountain in St Peter's Square",
+     place: "St Peter's Square",
+     scene: "Bernini sets a twin CAKE of water on the left of the obelisk to match Maderno's fountain."}
+  - {year: 1678, peg: cave, confidence: high, source: "WP mirror: Gian Lorenzo Bernini (1671 to 1678)",
+     event: "Bernini's tomb of Alexander VII is unveiled in St Peter's",
+     place: "St Peter's",
+     scene: "A gilded skeleton lifts a marble shroud over a dark CAVE door below Alexander VII in Bernini's last tomb."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Teatro Capranica (6 Jan)",
+     event: "The Teatro Capranica opens with Pasquini's opera, Corelli leading the orchestra",
+     place: "Palazzo Capranica",
+     scene: "A COWBOY fiddles beside Corelli as Pasquini's opera opens the Capranica theatre."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP mirror: Sant'Ignazio",
+     event: "Andrea Pozzo paints the false dome of Sant'Ignazio on flat canvas",
+     place: "Sant'Ignazio",
+     scene: "Andrea Pozzo paints a flat WAFFLE of coffers so well that the church seems to have a real dome."}
+  - {year: 1690, peg: bees, confidence: high, source: "WP mirror: Acqua Paola",
+     event: "Carlo Fontana enlarges the Fontanone of the Acqua Paola with one great basin",
+     place: "Janiculum",
+     scene: "BEES drink at the one wide basin Carlo Fontana puts in place of five small tubs under the Fontanone."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP mirror: Teatro Capranica (18 Jan)",
+     event: "The Teatro Capranica reopens as a public theatre",
+     place: "Palazzo Capranica",
+     scene: "A BELL rings at the door of the Capranica, and paying Romans crowd in for its first public season."}
+  - {year: 1697, peg: pig, confidence: high, source: "WP mirror: Teatro Alibert (Innocent XII)",
+     event: "Innocent XII has the Teatro Tordinona pulled down",
+     place: "Tor di Nona",
+     scene: "A PIG roots in the rubble after Innocent XII's workmen pull down the Tordinona theatre."}
+  - {year: 1707, peg: ski, confidence: medium, source: "Search: Cambridge article on Il trionfo del Tempo",
+     event: "Handel's first oratorio, Il trionfo del Tempo e del Disinganno, is first performed",
+     scene: "Time rides a SKI down a slope of hourglass sand and teaches Beauty her lesson in Handel's first oratorio, Il trionfo del Tempo."}
+  - {year: 1708, peg: sofa, confidence: high, source: "Search: takte-online; La resurrezione (8 Apr)",
+     event: "Handel's La resurrezione is first performed in Ruspoli's Palazzo Bonelli",
+     place: "Palazzo Bonelli",
+     scene: "The risen Christ steps off a velvet SOFA on Ruspoli's stage in the Palazzo Bonelli at Easter."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "WP mirror: List of obelisks in Rome; Fountains",
+     event: "The Macuteo obelisk is set on the fountain in front of the Pantheon",
+     place: "Piazza della Rotonda",
+     scene: "A TATTOO of hieroglyphs covers the small obelisk lifted onto the Pantheon fountain."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Caldara's Tito e Berenice is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Titus waves goodbye to Berenice from a painted TOWER on the Capranica stage."}
+  - {year: 1718, peg: dove, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "The Teatro Alibert opens with Mancini's Alessandro Severo",
+     place: "Via Margutta",
+     scene: "A DOVE flies over the wooden boxes of Antonio d'Alibert's new theatre on its opening night."}
+  - {year: 1721, peg: ant, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Alessandro Scarlatti's Griselda is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Patient Griselda carries an ANT-heap of insults on the Capranica stage in Scarlatti's last opera."}
+  - {year: 1723, peg: gnome, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Vivaldi's Ercole su'l Termodonte is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "A GNOME holds Hercules' club as Vivaldi's hero fights the Amazons on the Capranica stage."}
+  - {year: 1724, peg: hanger, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Vivaldi's Giustino is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "The peasant Giustino hangs his plough on a HANGER and takes up the sword in Vivaldi's opera at the Capranica."}
+  - {year: 1725, peg: nail, confidence: medium, source: "Search: Turismo Roma; Arcadia text (Oct)",
+     event: "Work starts on the Bosco Parrasio, garden theatre of the Arcadians on the Janiculum",
+     place: "Janiculum",
+     scene: "Arcadian poets NAIL the first board of their garden theatre to an oak on the Janiculum slope."}
+  - {year: 1726, peg: nacho, confidence: high, source: "WP mirror: Teatro Valle",
+     event: "The Teatro Valle opens with the tragedy Matilde",
+     place: "Teatro Valle",
+     scene: "The Capranica family hands each guest a NACHO at the door of their new Teatro Valle on its first night."}
+  - {year: 1726, peg: nacho, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Albinoni's La Statira is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Queen Statira throws a NACHO at her rival on the Capranica stage in Albinoni's opera."}
+  - {year: 1728, peg: knife, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Riccardo Broschi's L'isola di Alcina is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "The sorceress Alcina cuts the spell with a KNIFE on her magic island at the Capranica."}
+  - {year: 1728, peg: knife, confidence: medium, source: "Search: Turismo Roma (1727 to 1728); WP gives to 1735",
+     event: "Filippo Raguzzini lays out Piazza Sant'Ignazio like a stage set",
+     place: "Piazza Sant'Ignazio",
+     scene: "Raguzzini cuts the house fronts with a KNIFE into curved stage wings round Piazza Sant'Ignazio."}
+  - {year: 1730, peg: mouse, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "Leonardo Vinci's Artaserse is first performed at the Teatro delle Dame",
+     place: "Teatro delle Dame",
+     scene: "A MOUSE runs across the stage of the Teatro delle Dame as Vinci's Artaserse is crowned king."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP mirror: Teatro Argentina (31 Jan)",
+     event: "The Teatro Argentina opens with Sarro's Berenice",
+     place: "Largo di Torre Argentina",
+     scene: "A paper MOON lights the six tiers of boxes of the new Teatro Argentina on its opening night."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP mirror: Trevi Fountain",
+     event: "Work starts on Nicola Salvi's Trevi Fountain",
+     place: "Trevi",
+     scene: "Salvi's men cut the first block for the Trevi Fountain by MOON light against the Palazzo Poli wall."}
+  - {year: 1734, peg: hammer, confidence: high, source: "WP mirror: Capitoline Museums; Capitoline Hill",
+     event: "Clement XII opens the Capitoline Museums to the public",
+     place: "Campidoglio",
+     scene: "Clement XII knocks a HAMMER on the door of the Palazzo Nuovo and lets the public in to see the statues."}
+  - {year: 1735, peg: mill, confidence: high, source: "Search: WP L'Olimpiade (Pergolesi); Metastasio database",
+     event: "Pergolesi's L'Olimpiade is first performed at the Teatro Tordinona",
+     place: "Tor di Nona",
+     scene: "Pergolesi's Olympic athletes race round a MILL wheel on the Tordinona stage, and the Carnival crowd jeers."}
+  - {year: 1738, peg: movie, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "The Teatro delle Dame reopens after Fuga's rebuilding",
+     place: "Teatro delle Dame",
+     scene: "A MOVIE screen of painted scenery rises in Fuga's rebuilt Teatro delle Dame for Logroscino's Quinto Fabio."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP mirror: Castel Sant'Angelo",
+     event: "Verschaffelt's bronze angel replaces the marble one on Castel Sant'Angelo",
+     place: "Castel Sant'Angelo",
+     scene: "A LLAMA carries Verschaffelt's bronze angel up the ramps of Castel Sant'Angelo to replace the marble one."}
+  - {year: 1756, peg: leech, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Galuppi's comic opera La cantarina is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Galuppi's little singer pulls a LEECH off her suitor's nose on the Capranica stage."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "Piccinni's La buona figliuola is first performed at the Teatro delle Dame",
+     place: "Teatro delle Dame",
+     scene: "Cecchina the gardener girl hands out CHEESE to the boxes as Piccinni's comic opera takes Rome by storm."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Sacchini's intermezzo La vendemmia is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Grape pickers trade CHEESE for wine in Sacchini's short harvest comedy at the Capranica."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Villa Albani",
+     event: "Anton Raphael Mengs paints the Parnassus on the vault of the Villa Albani",
+     place: "Villa Albani",
+     scene: "A JET of white light frames Mengs' calm Apollo and the Muses on the vault of the Villa Albani."}
+  - {year: 1763, peg: gem, confidence: disputed, source: "WP mirror: Villa Albani (1763 in history, 1767 in lead)",
+     event: "The Villa Albani of Cardinal Alessandro Albani is completed",
+     place: "Villa Albani",
+     scene: "Cardinal Albani sets the last GEM, an ancient relief, into the wall of his finished villa on the Via Salaria."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP mirror: Teatro Capranica",
+     event: "Piccinni's La donna di spirito is first performed at the Teatro Capranica",
+     place: "Palazzo Capranica",
+     scene: "Piccinni's witty heroine chases a GOOSE round the Capranica stage and outwits her guardian."}
+  - {year: 1771, peg: cat, confidence: high, source: "WP mirror: Vatican Museums",
+     event: "Clement XIV founds the Museo Pio-Clementino in the Vatican",
+     place: "Vatican",
+     scene: "A marble CAT from the Vatican's new animal hall greets visitors to Clement XIV's Museo Pio-Clementino."}
+  - {year: 1775, peg: eagle, confidence: medium, source: "WP mirror: Galleria Borghese (about)",
+     event: "Antonio Asprucci starts to redecorate the Casino Borghese (approximate)",
+     place: "Villa Borghese",
+     scene: "An EAGLE from the Borghese arms holds the plans as Asprucci regilds every room of the Casino Borghese."}
+  - {year: 1776, peg: cage, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "Anfossi's La vera costanza is first performed at the Teatro delle Dame",
+     place: "Teatro delle Dame",
+     scene: "The fisher girl Rosina stays faithful in a gilded CAGE in Anfossi's opera at the Teatro delle Dame."}
+  - {year: 1777, peg: cake, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "Anfossi's Il curioso indiscreto is first performed at the Teatro delle Dame",
+     place: "Teatro delle Dame",
+     scene: "Anfossi's nosy husband pokes his finger in a CAKE to test his wife at the Teatro delle Dame."}
+  - {year: 1780, peg: vase, confidence: high, source: "WP mirror: Teatro Alibert",
+     event: "Myslivecek's Antigono is first performed at the Teatro delle Dame",
+     place: "Teatro delle Dame",
+     scene: "King Antigono smashes a VASE in rage on the stage of the Teatro delle Dame in Myslivecek's opera."}
+  - {year: 1786, peg: fish, confidence: high, source: "WP mirror: List of obelisks in Rome",
+     event: "Pius VI raises the Quirinal obelisk between the Horse Tamers",
+     place: "Piazza del Quirinale",
+     scene: "A FISH flips in the air between the two marble Horse Tamers as Pius VI's obelisk rises on the Quirinal."}
+  - {year: 1787, peg: fox, confidence: high, source: "Search: WP Tomb of Pope Clement XIV",
+     event: "Canova's tomb of Clement XIV is unveiled in Santi Apostoli",
+     place: "Santi Apostoli",
+     scene: "A FOX slips through the crowd that rushes into Santi Apostoli to see Canova's white tomb of Clement XIV."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP mirror: List of obelisks in Rome",
+     event: "Pius VI raises the Sallustiano obelisk in front of Trinità dei Monti",
+     place: "Trinità dei Monti",
+     scene: "A gold FOB swings from the top of the Sallustiano obelisk as it rises above the Spanish Steps."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: List of obelisks in Rome",
+     event: "Pius VI raises the sundial obelisk of Augustus in Piazza di Montecitorio",
+     place: "Piazza di Montecitorio",
+     scene: "A PIANO is rolled away so Augustus' sundial obelisk can stand again in front of Montecitorio."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: Timeline of Rome",
+     event: "Canova completes the tomb of Clement XIII in St Peter's",
+     place: "St Peter's",
+     scene: "Canova plays a soft PIANO chord as his white lions sleep under the tomb of Clement XIII."}
+  - {year: 1792, peg: piano, confidence: medium, source: "WP mirror: Villa Borghese gardens (1785 to 1792)",
+     event: "The Temple of Aesculapius is completed on the lake of the Villa Borghese",
+     place: "Villa Borghese",
+     scene: "A PIANO floats on a raft past the new Temple of Aesculapius on the Borghese garden lake."}
+
+  # economy
+  - {year: 1539, peg: map, confidence: high, source: "Search: Heidelberg paper; RiMe (brief 9 Sep)",
+     event: "The Monte di Pieta of Rome is founded to lend money on pledges",
+     scene: "A poor Roman pawns a MAP of his vineyard at the new Monte di Pieta and walks away with a loan."}
+  - {year: 1575, peg: eagle, confidence: medium, source: "WP mirror: Pope Gregory XIII",
+     event: "Gregory XIII turns part of the Baths of Diocletian into a public granary",
+     place: "Baths of Diocletian",
+     scene: "An EAGLE drops sacks of grain into the vaulted halls of the Baths of Diocletian, now the city granary."}
+  - {year: 1605, peg: seal, confidence: high, source: "Search: WP; RiMe: Banco di Santo Spirito (13 Dec)",
+     event: "Paul V founds the Banco di Santo Spirito, Rome's first public deposit bank",
+     place: "Banco di Santo Spirito",
+     scene: "A SEAL guards the strongbox of Paul V's new Banco di Santo Spirito, the first deposit bank of Rome."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP mirror: Palazzo Barberini",
+     event: "Cardinal Francesco Barberini founds the Barberini tapestry works",
+     place: "Palazzo Barberini",
+     scene: "Weavers dip wool in INK-blue dye at Cardinal Barberini's new tapestry looms."}
+  - {year: 1695, peg: bell, confidence: disputed, source: "Search: WP Temple of Hadrian 1695; other source 1696",
+     event: "Carlo Fontana builds the land customs house into the Temple of Hadrian",
+     place: "Piazza di Pietra",
+     scene: "A customs BELL rings between the ancient columns of the Temple of Hadrian, now the Dogana di Terra."}
+  - {year: 1696, peg: peach, confidence: high, source: "WP mirror: Civitavecchia",
+     event: "Innocent XII makes Civitavecchia a free port",
+     place: "Civitavecchia",
+     scene: "Ships unload PEACH crates at Civitavecchia with no duty to pay, now that it is a free port."}
+  - {year: 1698, peg: beehive, confidence: disputed, source: "Search: Tor Vergata PDF 1698; other source 1697",
+     event: "Innocent XII starts a new harbour at Anzio",
+     place: "Anzio",
+     scene: "Convicts dredge sand from a BEEHIVE-shaped basin at Anzio for Innocent XII's new harbour."}
+  - {year: 1704, peg: sewer, confidence: high, source: "WP mirror: Porto di Ripetta",
+     event: "Alessandro Specchi builds the Porto di Ripetta, a curved river port with steps",
+     place: "Ripetta",
+     scene: "A barge glides out of a SEWER mouth into Specchi's curved new steps at the Porto di Ripetta."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Antico Caffe Greco",
+     event: "Nicola di Madalena opens the Caffe Greco in Via dei Condotti",
+     place: "Via dei Condotti",
+     scene: "Nicola di Madalena serves coffee and CHEESE to the first guests of the Caffe Greco in Via dei Condotti."}
+
+  # society
+  - {year: 1530, peg: mouse, confidence: high, source: "Search: Aquae Urbis Romae; Atlas Obscura (8 Oct)",
+     event: "A great Tiber flood fills the streets of Rome",
+     place: "Santa Maria sopra Minerva",
+     scene: "A MOUSE swims past the door of Santa Maria sopra Minerva as the Tiber floods the streets."}
+  - {year: 1534, peg: hammer, confidence: medium, source: "WP mirror: Sapienza University of Rome",
+     event: "Paul III restores the university of Rome after the Sack",
+     place: "Sapienza",
+     scene: "Paul III knocks a HAMMER on the door of the Sapienza, and the professors come back after the Sack."}
+  - {year: 1552, peg: lion, confidence: high, source: "Search: WP Collegium Germanicum (31 Aug)",
+     event: "Julius III founds the German College in Rome at the request of Ignatius of Loyola",
+     scene: "A LION in a red cassock guards the door of the new German College founded by Ignatius."}
+  - {year: 1557, peg: log, confidence: high, source: "WP mirror: Tiber (15 Sep)",
+     event: "A Tiber flood drowns over a thousand people",
+     scene: "A LOG raft carries survivors over the drowned rooftops as the September flood kills more than a thousand."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP mirror: Accademia di San Luca",
+     event: "A papal brief approves the Academy of painters and sculptors of Rome, later San Luca",
+     scene: "Painters cut a CAKE shaped like a palette to celebrate the brief that founds their Roman academy."}
+  - {year: 1577, peg: cake, confidence: medium, source: "Search: WP Greek College (1577; bull 1578)",
+     event: "Gregory XIII founds the Greek College of Saint Athanasius",
+     place: "Via del Babuino",
+     scene: "Greek students cut a honey CAKE at the opening of Gregory XIII's new college in Via del Babuino."}
+  - {year: 1578, peg: cave, confidence: high, source: "Search: International Catacomb Society (31 May)",
+     event: "Quarrymen break into a lost catacomb on the Via Salaria",
+     place: "Via Salaria",
+     scene: "Quarrymen dig through pozzolana into a CAVE full of painted Christian tombs under a Via Salaria vineyard."}
+  - {year: 1579, peg: cowboy, confidence: high, source: "WP mirror: Venerable English College (23 Apr)",
+     event: "Gregory XIII founds the English College in the old English hospice",
+     place: "Via di Monserrato",
+     scene: "A COWBOY ties his horse outside the old English hospice, now Gregory XIII's English College."}
+  - {year: 1580, peg: vase, confidence: medium, source: "WP mirror: Pope Gregory XIII",
+     event: "The Dominican school of Santa Maria sopra Minerva becomes the College of Saint Thomas",
+     place: "Santa Maria sopra Minerva",
+     scene: "A Dominican sets a VASE of lilies on the lectern of the new College of Saint Thomas at the Minerva."}
+  - {year: 1593, peg: palm, confidence: high, source: "WP mirror: Accademia di San Luca",
+     event: "Federico Zuccari becomes first head of the Accademia di San Luca",
+     scene: "Federico Zuccari takes the PALM of office and opens the first lessons of the Accademia di San Luca."}
+  - {year: 1598, peg: beehive, confidence: high, source: "Search: Turismo Roma flood plaques; Aquae Urbis Romae",
+     event: "The Christmas flood is the highest Tiber flood on record",
+     scene: "A BEEHIVE floats past the Pantheon portico as the Tiber rises to its highest mark at Christmas."}
+  - {year: 1600, peg: sauce, confidence: high, source: "Search: Scots College Rome (5 Dec)",
+     event: "Clement VIII founds the Scots College",
+     place: "Scots College",
+     scene: "Scottish students spoon SAUCE onto haggis at the first dinner of Clement VIII's new Scots College."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP mirror: Caravaggio (29 May)",
+     event: "Caravaggio kills Ranuccio Tomassoni in a brawl and flees Rome",
+     place: "Campo Marzio",
+     scene: "Caravaggio swings a SUSHI knife in a street fight in the Campo Marzio, and Ranuccio Tomassoni falls dead."}
+  - {year: 1628, peg: knife, confidence: high, source: "Search: Irish College history; WP Pontifical Irish College",
+     event: "Luke Wadding and Cardinal Ludovisi found the Irish College",
+     scene: "Luke Wadding cuts the ribbon with a KNIFE at the door of the new Irish College for exiled students."}
+  - {year: 1652, peg: lion, confidence: medium, source: "WP mirror: Piazza Navona",
+     event: "Piazza Navona is first flooded for summer weekend festivals",
+     place: "Piazza Navona",
+     scene: "A stone LION from the Four Rivers paddles as carriages splash across the flooded Piazza Navona in August."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Naples Plague (June)",
+     event: "Plague reaches Rome and kills about one in five people",
+     scene: "A plague doctor puts a LEECH on a sick Roman as the plague from Naples kills one in five in the city."}
+  - {year: 1656, peg: leech, confidence: medium, source: "WP mirror: Roman Ghetto",
+     event: "Plague kills hundreds in the locked Ghetto",
+     place: "Ghetto",
+     scene: "A LEECH crawls under the locked Ghetto gate as the plague kills one in five behind it."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: Sapienza University of Rome",
+     event: "Alexander VII founds the Biblioteca Alessandrina of the university",
+     place: "Sapienza",
+     scene: "A JOCKEY gallops along the shelves of the new Biblioteca Alessandrina, carrying books for the students."}
+  - {year: 1686, peg: fish, confidence: medium, source: "Search: Turismo Roma: San Michele a Ripa (1686 to 1689)",
+     event: "The Ospizio di San Michele a Ripa for poor boys and old people is founded",
+     place: "San Michele a Ripa",
+     scene: "A FISH seller at Ripa Grande teaches the first poor boys of the new San Michele hospice a trade."}
+  - {year: 1703, peg: sumo, confidence: medium, source: "WP mirror: 1703 Apennine earthquakes (2 Feb)",
+     event: "The Apennine earthquake shakes Rome and damages buildings",
+     scene: "A SUMO wrestler stamps in the Apennines on Candlemas, and plaster falls from Roman churches miles away."}
+  - {year: 1716, peg: dish, confidence: high, source: "WP mirror: Protestant Cemetery",
+     event: "The first known Protestant burial is made near the Pyramid of Cestius",
+     place: "Pyramid of Cestius",
+     scene: "A pewter DISH marks the grave of Dr Arthur, the first known Protestant buried by the Pyramid of Cestius."}
+  - {year: 1764, peg: cherry, confidence: medium, source: "Search: EBSCO: Famine in Southern Italy",
+     event: "Famine drives country people into Rome to beg for bread",
+     scene: "Starving peasants pick the last wild CHERRY on the Campagna and walk into Rome to beg for bread."}
+
+world_refs:
+  - {year: 1527, event: "Sack of Rome by imperial troops", cell: western_europe_politics_1500_1800}
+  - {year: 1540, event: "Paul III approves the Jesuits", cell: western_europe_religion_1500_1800}
+  - {year: 1541, event: "Michelangelo unveils The Last Judgment in the Sistine Chapel", cell: western_europe_arts_1500_1800}
+  - {year: 1542, event: "Paul III founds the Roman Inquisition", cell: western_europe_religion_1500_1800}
+  - {year: 1551, event: "Collegium Romanum founded", cell: western_europe_society_1500_1800}
+  - {year: 1553, event: "Talmud burned in Rome", cell: western_europe_religion_1500_1800}
+  - {year: 1555, event: "Paul IV orders Rome's Jews into a ghetto", cell: western_europe_society_1500_1800}
+  - {year: 1564, event: "Michelangelo dies in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1568, event: "The Jesuits begin Il Gesu", cell: western_europe_arts_1500_1800}
+  - {year: 1575, event: "Philip Neri's Oratory approved", cell: western_europe_religion_1500_1800}
+  - {year: 1584, event: "Church of the Gesu consecrated", cell: western_europe_religion_1500_1800}
+  - {year: 1588, event: "Baronius: first volume of the Annales Ecclesiastici", cell: western_europe_religion_1500_1800}
+  - {year: 1590, event: "Dome of St Peter's completed", cell: western_europe_religion_1500_1800}
+  - {year: 1590, event: "Famine strikes Italy", cell: western_europe_society_1500_1800}
+  - {year: 1597, event: "Joseph Calasanz opens a free public school in Rome", cell: western_europe_religion_1500_1800}
+  - {year: 1600, event: "Caravaggio's Calling of St Matthew in the Contarelli Chapel", cell: western_europe_arts_1500_1800}
+  - {year: 1603, event: "Federico Cesi founds the Accademia dei Lincei", cell: western_europe_science_1500_1800}
+  - {year: 1622, event: "Congregation for the Propagation of the Faith founded", cell: western_europe_religion_1500_1800}
+  - {year: 1626, event: "Urban VIII consecrates the new St Peter's", cell: western_europe_arts_1500_1800}
+  - {year: 1633, event: "Bernini finishes the baldacchino of St Peter's", cell: western_europe_arts_1500_1800}
+  - {year: 1633, event: "Trial of Galileo", cell: western_europe_science_1500_1800}
+  - {year: 1635, event: "Frescobaldi publishes Fiori musicali in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1642, event: "Borromini begins Sant'Ivo alla Sapienza", cell: western_europe_arts_1500_1800}
+  - {year: 1651, event: "Bernini unveils the Fountain of the Four Rivers", cell: western_europe_arts_1500_1800}
+  - {year: 1652, event: "Bernini finishes The Ecstasy of St Teresa", cell: western_europe_arts_1500_1800}
+  - {year: 1656, event: "Bernini begins the colonnade of St Peter's Square", cell: western_europe_arts_1500_1800}
+  - {year: 1666, event: "Colbert founds the French Academy in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1681, event: "Corelli publishes his Op. 1 trio sonatas in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1690, event: "The Arcadian Academy is founded in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1700, event: "Corelli publishes his Op. 5 violin sonatas in Rome", cell: western_europe_arts_1500_1800}
+  - {year: 1725, event: "The Spanish Steps are inaugurated", cell: western_europe_arts_1500_1800}
+  - {year: 1750, event: "Piranesi publishes the Carceri etchings", cell: western_europe_arts_1500_1800}
+  - {year: 1762, event: "The Trevi Fountain is inaugurated", cell: western_europe_arts_1500_1800}
+  - {year: 1770, event: "Mozart writes down Allegri's Miserere from memory in Rome", cell: western_europe_arts_1500_1800}
+
+out_refs:
+  - {year: 1527, event: "Clement VII escapes from Castel Sant'Angelo to Orvieto", reason: "papal court"}
+  - {year: 1557, event: "The Duke of Alba's army reaches the walls of Rome in the war with Paul IV", reason: "national war, no siege"}
+  - {year: 1559, event: "Paul IV issues the first Roman Index of Forbidden Books", reason: "papal act"}
+  - {year: 1564, event: "Pius IV confirms the Council of Trent", reason: "papal act"}
+  - {year: 1570, event: "Pius V's Roman Missal", reason: "papal act"}
+  - {year: 1582, event: "Gregorian calendar reform", reason: "papal act"}
+  - {year: 1584, event: "Gregory XIII orders forced sermons for the Jews", reason: "papal bull"}
+  - {year: 1585, event: "Sixtus V is elected pope", reason: "papal election"}
+  - {year: 1588, event: "Sixtus V reorganises the Curia into congregations", reason: "papal act"}
+  - {year: 1590, event: "Sixtine Vulgate", reason: "papal act"}
+  - {year: 1600, event: "Jubilee year of Clement VIII", reason: "papal Jubilee"}
+  - {year: 1622, event: "Ignatius, Francis Xavier and Teresa of Avila canonised", reason: "canonisation"}
+  - {year: 1641, event: "War of Castro: Urban VIII against the Farnese", reason: "papal state war"}
+  - {year: 1650, event: "Jubilee year of Innocent X", reason: "papal Jubilee"}
+  - {year: 1653, event: "Innocent X condemns Jansenism", reason: "papal bull"}
+  - {year: 1655, event: "Queen Christina of Sweden enters Rome", reason: "royal visit"}
+  - {year: 1664, event: "Treaty of Pisa ends the Corsican Guard quarrel", reason: "treaty"}
+  - {year: 1689, event: "Christina of Sweden is buried in St Peter's", reason: "royal funeral"}
+  - {year: 1738, event: "Clement XII condemns Freemasonry", reason: "papal bull"}
+  - {year: 1773, event: "Clement XIV suppresses the Jesuits", reason: "papal act"}
+  - {year: 1775, event: "Jubilee year of Pius VI", reason: "papal Jubilee"}
+  - {year: 1796, event: "Armistice of Bologna", reason: "treaty"}
+  - {year: 1797, event: "Treaty of Tolentino", reason: "treaty"}

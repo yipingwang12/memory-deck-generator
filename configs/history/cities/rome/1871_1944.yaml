@@ -1,0 +1,868 @@
+# City: Rome x 1871 to 1944 (capital of Italy, Fascism, the Second World War to the liberation). DRAFT 2026-11-19.
+# Area: Metropolitan City of Rome Capital (Rome, Ostia, Tivoli, Frascati and the Castelli Romani, Castel Gandolfo,
+# Nemi, Guidonia, Pomezia, Colleferro, Civitavecchia, Anzio). Vatican City is inside the area.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Italian national government
+# and Holy See acts -> out_refs (or world_refs when a world cell holds them). World-grid events -> world_refs.
+# Dates: memory pass + web check (45 of 45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Kiwix, 2023-10: bridges, buildings, stations, Bombing of Rome, Ardeatine massacre),
+# Turismo Roma, Archivio Capitolino, Gazzetta Ufficiale, Vatican Museums, ATAC, Enel, newspapers (Papers Past).
+# A work -> first public appearance; a building -> opening; a district -> first stone.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1871, peg: cat, confidence: high, source: "WP mirror: Palazzo Montecitorio",
+     event: "Comotto roofs the courtyard of Palazzo Montecitorio and makes it the Chamber of Deputies hall",
+     place: "Palazzo Montecitorio",
+     scene: "A CAT lays iron roof beams across the Montecitorio courtyard and turns it into a half-round hall for the deputies."}
+  - {year: 1873, peg: comb, confidence: medium, source: "Archivio Capitolino; Sapienza plan studies",
+     event: "Viviani presents the first master plan of the capital to the city council",
+     place: "Campidoglio",
+     scene: "Engineer Viviani drags a giant COMB across the city map on the Capitoline and scratches in the new streets of the first master plan."}
+  - {year: 1877, peg: cake, confidence: unverified,
+     event: "Army engineers start the fortified camp: a ring of forts round the city",
+     place: "Forte Monte Mario",
+     scene: "Army engineers cut the Roman Campagna like a round CAKE and set a fort on every slice of its rim."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP mirror: Regina Coeli (prison)",
+     event: "The state turns the old Regina Coeli convent in Trastevere into a prison",
+     place: "Via della Lungara",
+     scene: "A huge iron FOOT stamps on the Regina Coeli convent in Trastevere, and its nuns' cells lock as prison cells."}
+  - {year: 1881, peg: foot, confidence: high, source: "FRUS 1881; NZ Tablet (Papers Past)",
+     event: "Anticlerical rioters attack the night procession that carries Pius IX's body to San Lorenzo",
+     place: "Ponte Sant'Angelo",
+     scene: "A rioter's FOOT shoves Pius IX's coffin toward the Tiber parapet at Ponte Sant'Angelo while stones fly at the night procession."}
+  - {year: 1883, peg: foam, confidence: medium, source: "Sapienza plan studies: first plan made law",
+     event: "The master plan becomes law: the first binding plan for the new quarters",
+     place: "Esquilino",
+     scene: "Builders squirt FOAM along the lines of the new master plan, the first that the law makes binding, and it sets into streets."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Palace of Justice, Rome (14 March)",
+     event: "First stone of the Palace of Justice in Prati",
+     place: "Piazza Cavour",
+     scene: "A FIFE drives a pile into the Prati mud as the first stone of the Palace of Justice goes down."}
+  - {year: 1891, peg: boot, confidence: high, source: "cultura.gov.it; Il Comune (Padua), 3 May",
+     event: "Police and cavalry break up the May Day rally at Santa Croce in Gerusalemme",
+     place: "Piazza di Santa Croce in Gerusalemme",
+     scene: "A cavalry BOOT kicks through the May Day crowd at Santa Croce the moment Cipriani starts to speak."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP mirror: Ernesto Nathan",
+     event: "Ernesto Nathan becomes the first Jewish mayor of Rome",
+     place: "Campidoglio",
+     scene: "Ernesto Nathan glides up the Capitoline ramp on a SKI and takes the mayor's chair, Rome's first Jewish mayor."}
+  - {year: 1909, peg: soap, confidence: high, source: "Sapienza plan studies (council, 10 February)",
+     event: "The council approves the Sanjust master plan",
+     place: "Campidoglio",
+     scene: "Sanjust washes the old map with SOAP, and the council approves his clean new master plan for the city."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Palace of Justice, Rome (11 January)",
+     event: "The king opens the Palace of Justice in Prati",
+     place: "Piazza Cavour",
+     scene: "A TATTOO of the scales of justice covers the new marble Palace of Justice as the king opens its doors."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Palace of Justice, Rome",
+     event: "Parliament opens an inquiry into the cost of the Palace of Justice: the Palazzaccio scandal",
+     place: "Palace of Justice",
+     scene: "A long TONGUE licks gold dust off the Palace of Justice, and parliament starts an inquiry into its cost."}
+  - {year: 1918, peg: dove, confidence: medium, source: "WP mirror: Palazzo Montecitorio",
+     event: "The deputies return to Montecitorio and Basile's new Chamber hall",
+     place: "Palazzo Montecitorio",
+     scene: "A flock of DOVE leads the deputies back into Basile's new Montecitorio hall after years in a temporary room."}
+  - {year: 1921, peg: ant, confidence: medium, source: "WP mirror: Arditi del Popolo",
+     event: "The anti-fascist Arditi del Popolo make their first public march in Rome",
+     place: "Orto Botanico",
+     scene: "Thousands of Arditi del Popolo march like an ANT column through Rome in the first public parade against the fascist squads."}
+  - {year: 1922, peg: nun, confidence: medium, source: "NZ press 1 November; Internazionale",
+     event: "Fascist squads attack the working-class San Lorenzo district and fight its people",
+     place: "San Lorenzo",
+     scene: "A NUN bars a San Lorenzo doorway as armed fascist squads storm the workers' district and shoot into the streets."}
+  - {year: 1925, peg: nail, confidence: high, source: "Gazzetta Ufficiale: decree-law 28 October",
+     event: "A decree-law replaces the elected city council with the Governatorato under an appointed governor",
+     place: "Campidoglio",
+     scene: "A NAIL fixes the governor's chair to the Capitoline floor and shuts the elected council out of the hall."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Assassination attempts on Mussolini",
+     event: "Police arrest Zaniboni before his plan to shoot Mussolini from a hotel window",
+     place: "Palazzo Chigi",
+     scene: "Police NAIL shut the hotel window where Zaniboni waits with a rifle aimed at Palazzo Chigi."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Palazzo del Viminale (9 July)",
+     event: "Palazzo del Viminale opens on the Viminal hill",
+     place: "Viminale",
+     scene: "Workers drive the last NAIL into Manfredi's Palazzo del Viminale, and the giant palace opens on its hill."}
+  - {year: 1926, peg: nacho, confidence: high, source: "History Ireland; WP mirror: Violet Gibson",
+     event: "Violet Gibson shoots Mussolini on the Campidoglio and grazes his nose",
+     place: "Piazza del Campidoglio",
+     scene: "Violet Gibson fires a NACHO from a pistol on the Capitoline square and grazes Mussolini's nose."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Gino Lucetti",
+     event: "Lucetti throws a bomb at Mussolini's car at Porta Pia",
+     place: "Porta Pia",
+     scene: "Anarchist Lucetti hurls a NACHO-shaped bomb at Mussolini's car at Porta Pia; it bounces off and wounds passers-by."}
+  - {year: 1931, peg: moth, confidence: high, source: "Royal Decree 981 of 6 July (plan sources)",
+     event: "Royal decree approves the new master plan of Rome",
+     place: "Campidoglio",
+     scene: "A MOTH flies over the new master plan and lights on the royal seal that makes it law."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Anarchist Schirru is shot at Forte Braschi for a plan to kill Mussolini",
+     place: "Forte Braschi",
+     scene: "A MOTH lands on Michele Schirru's blindfold at Forte Braschi just before the firing squad shoots him."}
+  - {year: 1932, peg: moon, confidence: unverified,
+     event: "Anarchist Sbardellotto is shot at Forte Braschi",
+     place: "Forte Braschi",
+     scene: "Under a cold MOON a firing squad shoots the young anarchist Sbardellotto in the ditch of Forte Braschi."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Bombing of Rome in WWII (19 July)",
+     event: "Allied bombers hit the San Lorenzo district and kill well over a thousand people",
+     place: "San Lorenzo",
+     scene: "A RAM of bombs smashes the San Lorenzo freight yard and blocks of flats and kills over a thousand people."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Bombing of Rome in WWII (13 August)",
+     event: "A second big raid hits San Lorenzo and the Littorio rail yard",
+     place: "Scalo del Littorio",
+     scene: "A second RAM of bombers butts the Littorio rail yard and San Lorenzo in August and kills hundreds more."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Bombing of Rome in WWII (14 August)",
+     event: "Rome is declared an open city",
+     place: "Piazza Venezia",
+     scene: "A RAM pushes open the city gates as Rome is declared an open city, with no army to defend it."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Operation Achse (8 September)",
+     event: "Allied bombers strike Kesselring's headquarters at Frascati and wreck the town",
+     place: "Frascati",
+     scene: "A RAM of bombs charges down onto Frascati, aimed at Kesselring's headquarters, and flattens the hill town."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Porta San Paolo (10 September)",
+     event: "Soldiers and citizens fight the Germans at Porta San Paolo",
+     place: "Porta San Paolo",
+     scene: "Soldiers and citizens push an old battering RAM against German tanks at Porta San Paolo and fight till evening."}
+  - {year: 1943, peg: ram, confidence: high, source: "Turismo Roma: Museo storico della Liberazione",
+     event: "The SS make Via Tasso their headquarters and prison",
+     place: "Via Tasso",
+     scene: "A RAM with an SS collar butts open the flats at Via Tasso and turns them into cells for the Resistance."}
+  - {year: 1943, peg: ram, confidence: high, source: "Wikipedia mirror via search; ANPI; JTA (26-28 Sept)",
+     event: "Kappler forces the Jews of Rome to pay a ransom of fifty kilograms of gold",
+     place: "Tempio Maggiore",
+     scene: "Kappler's golden RAM demands fifty kilos of gold from Rome's Jews, and they fill its scales in thirty-six hours."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP mirror: Bombing of Rome in WWII (5 November)",
+     event: "A lone aircraft drops bombs on Vatican City",
+     place: "Vatican Gardens",
+     scene: "A RAM falls from a lone plane into the Vatican gardens and shatters the windows of St Peter's dome."}
+  - {year: 1943, peg: ram, confidence: medium, source: "ANPI/CGIL anniversary note (14 May)",
+     event: "Allied bombers destroy most of the port town of Civitavecchia",
+     place: "Civitavecchia harbour",
+     scene: "A RAM of bombers butts Civitavecchia's harbour and old town into rubble in the heaviest raid on the port."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Regina Coeli (prison)",
+     event: "Leone Ginzburg dies after torture in Regina Coeli prison",
+     place: "Regina Coeli",
+     scene: "A German WARRIOR beats Leone Ginzburg in a Regina Coeli cell, and the writer dies of his wounds."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Museivaticani: Castel Gandolfo 1944 (10 February)",
+     event: "Allied bombs hit the Propaganda Fide villa at Castel Gandolfo and kill hundreds of refugees",
+     place: "Castel Gandolfo",
+     scene: "A sky WARRIOR drops bombs on the papal villa at Castel Gandolfo and kills hundreds of refugees inside."}
+  - {year: 1944, peg: warrior, confidence: high, source: "LRB diary; ANPI (3 March)",
+     event: "German soldiers shoot Teresa Gullace outside a barracks on Viale Giulio Cesare",
+     place: "Viale Giulio Cesare",
+     scene: "A German WARRIOR shoots the pregnant Teresa Gullace as she calls to her captive husband outside the barracks."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Bombing of Rome in WWII (3 March)",
+     event: "A big raid on the Tiburtino, Littorio and Ostiense rail yards kills hundreds of civilians",
+     place: "Tiburtino",
+     scene: "Two hundred bomber WARRIOR pilots hit the Tiburtino and Ostiense rail yards and kill hundreds of nearby civilians."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Via Rasella attack (23 March)",
+     event: "Partisans bomb a column of German police in Via Rasella",
+     place: "Via Rasella",
+     scene: "A partisan WARRIOR disguised as a street sweeper lights a rubbish-cart bomb as the German police column marches up Via Rasella."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Ardeatine massacre (24 March)",
+     event: "The SS kill over three hundred prisoners and civilians at the Ardeatine Caves",
+     place: "Fosse Ardeatine",
+     scene: "SS WARRIOR guards march over three hundred prisoners into the Ardeatine Caves and shoot them, then blow up the entrance."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Avvenire; Straginazifasciste (3 April)",
+     event: "Father Giuseppe Morosini is shot at Forte Bravetta",
+     place: "Forte Bravetta",
+     scene: "A priest WARRIOR of the Resistance, Father Morosini, blesses the firing squad at Forte Bravetta before it shoots him."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Wanted in Rome; Internazionale (17 April)",
+     event: "German troops round up hundreds of men in the Quadraro district and deport them",
+     place: "Quadraro",
+     scene: "German WARRIOR troops seal the Quadraro district at dawn and drag hundreds of its men to the deportation trucks."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Internazionale; ANFIM (4 June)",
+     event: "Retreating Germans kill fourteen prisoners at La Storta",
+     place: "La Storta",
+     scene: "A retreating German WARRIOR stops the prisoner truck at La Storta and shoots fourteen men, Bruno Buozzi among them."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Espansione TV; British Pathe (18 September)",
+     event: "A mob lynches the former prison director Carretta at the Caruso trial",
+     place: "Palace of Justice",
+     scene: "An angry crowd WARRIOR drags Donato Carretta out of the Caruso trial and beats him to death by the Palace of Justice."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Pietro Caruso (22 September)",
+     event: "Fascist police chief Caruso is shot at Forte Bravetta",
+     place: "Forte Bravetta",
+     scene: "A police WARRIOR squad ties chief Caruso to a chair in Forte Bravetta's courtyard and shoots him."}
+
+  # science
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Roma Termini railway station",
+     event: "Bianchi's permanent Termini station is completed",
+     place: "Termini",
+     scene: "The first railway CAR rolls under Salvatore Bianchi's new iron roof as the permanent Termini station opens."}
+  - {year: 1874, peg: car, confidence: high, source: "WP mirror: Accademia dei Lincei",
+     event: "Sella reforms the Lincei into the national academy of sciences and letters",
+     place: "Palazzo Corsini",
+     scene: "Quintino Sella drives a CAR full of historians and philosophers into the Lincei and makes it a national academy."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP mirror: Lungotevere (6 July)",
+     event: "A law orders the Tiber embankments and riverside boulevards",
+     place: "Lungotevere",
+     scene: "An EAGLE drops the new law onto the flooded Tiber banks: tear down the river houses and build high walls."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Lungotevere",
+     event: "Work starts on the Tiber embankment walls, the muraglioni",
+     place: "Lungotevere",
+     scene: "Masons lock the Tiber in a stone CAGE as work starts on the high embankment walls."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "First horse tram runs from Piazzale Flaminio to Ponte Milvio",
+     place: "Piazzale Flaminio",
+     scene: "A horse tram carries a wedding CAKE from Piazzale Flaminio to Ponte Milvio on Rome's first tram line."}
+  - {year: 1883, peg: foam, confidence: medium, source: "Ca' Foscari thesis (Lanciani digs)",
+     event: "Demolitions start to cut Corso Vittorio Emanuele II through the old centre",
+     place: "Corso Vittorio Emanuele II",
+     scene: "A wave of FOAM washes away medieval houses and opens Corso Vittorio Emanuele through the old centre."}
+  - {year: 1888, peg: fife, confidence: high, source: "Sapienza 'Medicina nei secoli' (19 January)",
+     event: "First stone of the Policlinico Umberto I hospital",
+     place: "Viale del Policlinico",
+     scene: "Minister Baccelli plays a FIFE as the first stone of the giant Policlinico hospital sinks into the ground."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Ponte Garibaldi",
+     event: "Ponte Garibaldi opens between Trastevere and the centre",
+     place: "Ponte Garibaldi",
+     scene: "A FIFE band marches over the new iron Ponte Garibaldi, the first open road from Trastevere to the centre."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP mirror: Ponte Palatino",
+     event: "Ponte Palatino, the English Bridge, is completed beside the old Ponte Rotto",
+     place: "Ponte Palatino",
+     scene: "A swarm of BEES builds the last iron arch of Ponte Palatino next to the broken stump of Ponte Rotto."}
+  - {year: 1891, peg: boot, confidence: high, source: "Turismo Roma: Ponte Regina Margherita",
+     event: "Ponte Margherita, the first masonry Tiber bridge for centuries, is completed",
+     place: "Ponte Margherita",
+     scene: "A stone BOOT steps across the Tiber as Ponte Margherita opens, the first masonry bridge there for centuries."}
+  - {year: 1892, peg: piano, confidence: high, source: "Enel Green Power (4 July)",
+     event: "Alternating current from the Tivoli hydro plant reaches Rome and lights the city",
+     place: "Porta Pia",
+     scene: "A PIANO wire strung from Tivoli's falls to Porta Pia carries alternating current and lights Rome's lamps."}
+  - {year: 1895, peg: bell, confidence: high, source: "Turismo Roma: Ponte Umberto I (22 September)",
+     event: "King Umberto I and Queen Margherita open Ponte Umberto I",
+     place: "Ponte Umberto I",
+     scene: "A BELL rings as Umberto and Margherita walk over the new Ponte Umberto by the Palace of Justice site."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "First electric tram runs from Termini to Piazza San Silvestro",
+     place: "Piazza San Silvestro",
+     scene: "The BELL of Rome's first electric tram clangs from Termini down to Piazza San Silvestro."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Ponte Cavour (25 May)",
+     event: "Ponte Cavour opens between Prati and the Campo Marzio",
+     place: "Ponte Cavour",
+     scene: "A SODA fountain sprays over the opening of Ponte Cavour, linking Prati to the Ara Pacis bank."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Lazio region rail history (19 February)",
+     event: "The electric tramway from Rome to Frascati opens, first of the Castelli lines",
+     place: "Frascati",
+     scene: "A SUSHI chef rides the first electric tram up to Frascati, the start of the Castelli Romani lines."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "WP mirror: Rome-Civita Castellana-Viterbo railway",
+     event: "The interurban tramway from Rome to Civita Castellana opens",
+     place: "Piazzale Flaminio",
+     scene: "A tram loaded with SUSHI leaves Piazzale Flaminio for Civita Castellana on the new northern interurban line."}
+  - {year: 1907, peg: ski, confidence: medium, source: "WP mirror: Lido di Ostia",
+     event: "The new Via Ostiense links the Ostia village to central Rome",
+     place: "Via Ostiense",
+     scene: "A farmer on one SKI glides down the straight new Via Ostiense from Rome to the reclaimed village at Ostia."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Ponte Mazzini",
+     event: "Ponte Mazzini opens below the Gianicolo",
+     place: "Ponte Mazzini",
+     scene: "A SOFA rests on the three new arches of Ponte Mazzini below the Gianicolo on opening day."}
+  - {year: 1909, peg: soap, confidence: high, source: "Henry Ford collection; WP mirror: Centocelle Airport",
+     event: "Wilbur Wright flies at Centocelle, and the field becomes Italy's first airfield",
+     place: "Centocelle",
+     scene: "Wilbur Wright's biplane lifts a SOAP crate over the Centocelle plain, and the field becomes Italy's first airport."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP mirror: Ponte Risorgimento (inscription 11 May)",
+     event: "Ponte Risorgimento, Rome's first reinforced concrete bridge, opens with one long arch",
+     place: "Ponte Risorgimento",
+     scene: "Porcheddu sits in a boat under Ponte Risorgimento as the scaffold drops, and a concrete TATTOO arch holds."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Ponte Vittorio Emanuele II",
+     event: "Ponte Vittorio Emanuele II opens towards St Peter's",
+     place: "Ponte Vittorio Emanuele II",
+     scene: "Bronze Victories with a royal TATTOO on each arm crown Ponte Vittorio Emanuele as it opens towards St Peter's."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Roma Trastevere railway station (1 May)",
+     event: "The new Trastevere railway station opens",
+     place: "Piazza Flavio Biondo",
+     scene: "A ticket clerk stamps a TATTOO on every arm at the new Trastevere station on its first day."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "Il Giornale (first public plant, June)",
+     event: "The first municipal power station starts to supply electricity to the city",
+     place: "Via Ostiense",
+     scene: "A crackling TONGUE of electricity leaps from the city's first municipal power station on Via Ostiense."}
+  - {year: 1916, peg: dish, confidence: high, source: "WP mirror: Rome Ciampino Airport",
+     event: "Ciampino airfield opens",
+     place: "Ciampino",
+     scene: "A radar-like DISH marks the grass of Ciampino as the new airfield opens south-east of the city."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP mirror: Ponte Sublicio",
+     event: "Piacentini's new Ponte Sublicio is built near the site of the ancient bridge",
+     place: "Ponte Sublicio",
+     scene: "A DOVE lands on Piacentini's new Ponte Sublicio, where Rome's first wooden bridge once stood."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Rome-Lido railway (10 August)",
+     event: "The Rome-Ostia railway opens from Porta San Paolo to the sea",
+     place: "Porta San Paolo",
+     scene: "Bathers hang swimsuits on a HANGER in the first train from Porta San Paolo to the beach at Ostia."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Rome Ciampino Airport (10 April)",
+     event: "The airship Norge leaves Ciampino on its flight to the North Pole",
+     place: "Ciampino",
+     scene: "Nobile's airship Norge lifts a giant NACHO off the Ciampino field and heads north for the Pole."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Lungotevere",
+     event: "The Tiber embankment walls are completed",
+     place: "Lungotevere",
+     scene: "A mason sets the last stone of the Tiber walls with a NACHO as a trowel, fifty years after the first."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Rome Urbe Airport (21 April)",
+     event: "Littorio airport opens on the Via Salaria",
+     place: "Via Salaria",
+     scene: "Mussolini cuts the ribbon with a KNIFE and opens Littorio airport, later Urbe, on the Via Salaria."}
+  - {year: 1928, peg: knife, confidence: high, source: "Turismo Roma; italia.it",
+     event: "The Via del Mare to Ostia opens, the first fully lit road in Italy",
+     place: "Via del Mare",
+     scene: "A lit KNIFE slices a straight road from Rome to Ostia, and street lamps glow along all of the Via del Mare."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Ponte Giacomo Matteotti (21 April)",
+     event: "Ponte del Littorio opens, now Ponte Matteotti",
+     place: "Ponte Matteotti",
+     scene: "A brass KNOB on the parapet turns, and the new Ponte del Littorio opens over the Tiber."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "San Camillo hospital opens at Monteverde",
+     place: "Monteverde",
+     scene: "A nurse turns the door KNOB of the new San Camillo hospital at Monteverde and lets in the first patients."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "Trams leave the centre inside the walls, and buses replace them",
+     place: "Piazza Venezia",
+     scene: "A MOUSE chews through the tram wires in the centre, and buses replace the trams inside the walls."}
+  - {year: 1932, peg: moon, confidence: high, source: "U. Washington: Via dei Fori Imperiali (28 October)",
+     event: "Via dell'Impero opens through the imperial forums to the Colosseum",
+     place: "Via dei Fori Imperiali",
+     scene: "A full MOON shines down Via dell'Impero, cut straight through the forums from Piazza Venezia to the Colosseum."}
+  - {year: 1932, peg: moon, confidence: medium, source: "WP mirror: Rome-Civita Castellana-Viterbo railway",
+     event: "The Rome North railway is rebuilt with a tunnel to Piazzale Flaminio",
+     place: "Piazzale Flaminio",
+     scene: "A MOON-white train comes out of the new tunnel at Piazzale Flaminio on the rebuilt Rome North railway."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Istituto Superiore di Sanita (21 April)",
+     event: "The public health institute opens in Viale Regina Elena",
+     place: "Viale Regina Elena",
+     scene: "A lab HAMMER taps the first test tube in the new public health institute beside the university."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "The Forlanini tuberculosis hospital opens at Monteverde",
+     place: "Monteverde",
+     scene: "A HAMMER rings on the last girder of the Forlanini tuberculosis hospital, the biggest sanatorium in Rome."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Via della Conciliazione (29 October)",
+     event: "Mussolini starts the demolition of the Spina di Borgo for Via della Conciliazione",
+     place: "Borgo",
+     scene: "Mussolini strikes the first roof of the Spina di Borgo, and the houses burn like a MATCH for the new road to St Peter's."}
+  - {year: 1937, peg: mug, confidence: high, source: "Turismo Roma; Affaritaliani (13 July)",
+     event: "The Gazometro gas holder on Via Ostiense starts to work",
+     place: "Ostiense",
+     scene: "A giant steel MUG fills with town gas as the Gazometro starts to work on the Ostiense skyline."}
+  - {year: 1937, peg: mug, confidence: medium, source: "AGI; Acea (stone 1938)",
+     event: "Work starts on the Peschiera aqueduct to bring spring water to Rome",
+     place: "Peschiera springs",
+     scene: "A MUG dips into the Peschiera springs, and work starts on the long aqueduct that carries their water to Rome."}
+  - {year: 1937, peg: mug, confidence: medium, source: "WP mirror: Roma Termini railway station",
+     event: "The plan to replace the old Termini station starts, with Mazzoni's side wings",
+     place: "Termini",
+     scene: "A stationmaster raises a MUG to the old Termini as demolition starts for Mazzoni's new wings."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Roma Ostiense railway station (28 October)",
+     event: "Ostiense station opens, built for Hitler's arrival",
+     place: "Piazzale dei Partigiani",
+     scene: "A marble HORSE stands in the new Ostiense station hall, built to receive Hitler and opened two years after his visit."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Ponte Duca d'Aosta",
+     event: "Ponte Duca d'Aosta opens by the Foro Mussolini",
+     place: "Ponte Duca d'Aosta",
+     scene: "A RHINO trots over the white Ponte Duca d'Aosta from the Foro Mussolini on opening day."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: Ponte Principe Amedeo",
+     event: "Ponte Principe Amedeo opens by the Gianicolo tunnel",
+     place: "Ponte Principe Amedeo",
+     scene: "A RHINO charges across the new Ponte Principe Amedeo, built where the old Fiorentini ferry bridge stood."}
+  # science: archaeology
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "Workers dig up the bronze Boxer at Rest on the Quirinal",
+     place: "Via Nazionale",
+     scene: "Builders lift a bronze boxer who sits eating a WAFFLE out of the earth on the Quirinal slope."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "Boni finds the black stone, the Lapis Niger, in the Forum",
+     place: "Comitium",
+     scene: "Giacomo Boni's PIPE smoke drifts over a black stone slab he uncovers in the Forum, the Lapis Niger."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Ara Pacis",
+     event: "Excavation of the Ara Pacis starts again under a palace in Via in Lucina",
+     place: "Via in Lucina",
+     scene: "A SUMO wrestler holds up Palazzo Fiano while diggers pull carved pieces of the Ara Pacis from beneath it."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP mirror: Villa Torlonia, Rome",
+     event: "A large Jewish catacomb is found under Villa Torlonia",
+     place: "Villa Torlonia",
+     scene: "A gardener's TUBA sinks through the Villa Torlonia lawn into a Jewish catacomb of thousands of graves."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: Largo di Torre Argentina",
+     event: "Demolitions at Largo Argentina reveal four Republican temples",
+     place: "Largo di Torre Argentina",
+     scene: "Demolition crews spill INK on the rubble at Largo Argentina and find four Republican temples beneath it."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP mirror: Nemi ships (20 October)",
+     event: "Pumps start to drain Lake Nemi to reach Caligula's ships",
+     place: "Lake Nemi",
+     scene: "A KNIFE cuts the old Roman drain open, and pumps start to lower Lake Nemi to reach Caligula's ships."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Nemi ships (28 March)",
+     event: "The first Nemi ship comes out of the lake mud",
+     place: "Lake Nemi",
+     scene: "A bronze lion KNOB on a rotten hull breaks the surface of Lake Nemi as the first ship appears."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Nemi ships (October)",
+     event: "The second Nemi ship is recovered",
+     place: "Lake Nemi",
+     scene: "Under a harvest MOON the second huge Nemi ship rises from the drained lake bed."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Excavations start under St Peter's and reach the old necropolis",
+     place: "St Peter's Basilica",
+     scene: "A stone HORSE head on a pagan tomb meets the diggers under St Peter's as they open the necropolis."}
+
+  # religion
+  - {year: 1873, peg: comb, confidence: unverified,
+     event: "A law extends the suppression of religious orders to Rome and takes their convents",
+     place: "Collegio Romano",
+     scene: "State officials COMB Rome's convents room by room and take them for ministries, schools and barracks."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: St. Paul's Within the Walls",
+     event: "St Paul's Within the Walls, the first Protestant church in the city, opens",
+     place: "Via Nazionale",
+     scene: "American Episcopalians open the striped CAGE of St Paul's Within the Walls, Rome's first Protestant church."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: Sacro Cuore di Gesu a Castro Pretorio (14 May)",
+     event: "Don Bosco's Sacred Heart basilica by Termini is consecrated",
+     place: "Via Marsala",
+     scene: "A FOX carries Don Bosco's keys into the new Sacred Heart basilica by Termini on its consecration day."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP mirror: Sant'Anselmo all'Aventino (19 April)",
+     event: "First stone of the Benedictine college of Sant'Anselmo on the Aventine",
+     place: "Aventino",
+     scene: "Benedictine monks plant a PALM by the first stone of Sant'Anselmo on the Aventine."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: Sant'Anselmo all'Aventino (11 November)",
+     event: "The church of Sant'Anselmo on the Aventine is consecrated",
+     place: "Aventino",
+     scene: "Monks pour holy SAUCE over the altar of Sant'Anselmo, and the Aventine church is consecrated."}
+  - {year: 1904, peg: sewer, confidence: high, source: "Turismo Roma; meer.com (day disputed)",
+     event: "The Great Synagogue opens on the Tiber bank beside the old ghetto",
+     place: "Lungotevere de' Cenci",
+     scene: "Out of an old ghetto SEWER rises the square dome of the Great Synagogue on the Tiber bank."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Santa Maria Liberatrice a Monte Testaccio",
+     event: "Santa Maria Liberatrice opens for the Testaccio workers",
+     place: "Piazza Testaccio",
+     scene: "Testaccio workers carry a SOFA into Santa Maria Liberatrice, the new church of their district."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP mirror: Sacro Cuore del Suffragio (1 November)",
+     event: "The Gothic Sacro Cuore del Suffragio in Prati opens",
+     place: "Lungotevere Prati",
+     scene: "A DOG howls at the Gothic spires of Sacro Cuore del Suffragio as the Prati church opens."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Christuskirche, Rome",
+     event: "The Lutheran Christuskirche is completed in Via Sicilia",
+     place: "Via Sicilia",
+     scene: "A Lutheran NUN rings the first bell of the new Christuskirche in Via Sicilia."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP mirror: Sacro Cuore di Cristo Re",
+     event: "Piacentini's church of Christ the King opens in Viale Mazzini",
+     place: "Viale Mazzini",
+     scene: "A HAMMER sets the last brick of Piacentini's Christ the King church in Viale Mazzini."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Santi Pietro e Paolo a Via Ostiense",
+     event: "Work starts on the basilica of Saints Peter and Paul at E42",
+     place: "EUR",
+     scene: "Architects unroll a MAP of the E42 hill and mark the domed basilica of Saints Peter and Paul at its top."}
+
+  # arts
+  - {year: 1871, peg: cat, confidence: high, source: "Turismo Roma; WP mirror: Teatro Quirino",
+     event: "The wooden Teatro Quirino opens near the Trevi Fountain",
+     place: "Via delle Vergini",
+     scene: "A CAT walks on stage of the new wooden Teatro Quirino, put up in a single day near the Trevi Fountain."}
+  - {year: 1880, peg: vase, confidence: high, source: "Turismo Roma: Teatro dell'Opera (27 November)",
+     event: "Teatro Costanzi opens with Rossini's Semiramide",
+     place: "Piazza Beniamino Gigli",
+     scene: "Semiramide's VASE shatters on the stage of the new Teatro Costanzi on its opening night."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Palazzo delle Esposizioni",
+     event: "Palazzo delle Esposizioni opens on Via Nazionale with a fine arts show",
+     place: "Via Nazionale",
+     scene: "FOAM-white columns of Piacentini's Palazzo delle Esposizioni open on Via Nazionale for a fine arts show."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP mirror: Galleria Nazionale d'Arte Moderna",
+     event: "The National Gallery of Modern Art is founded",
+     place: "Via delle Belle Arti",
+     scene: "Minister Baccelli founds the modern art gallery and paints its first canvas with sea FOAM."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: Campo de' Fiori",
+     event: "Ettore Ferrari's statue of Giordano Bruno is unveiled in Campo de' Fiori",
+     place: "Campo de' Fiori",
+     scene: "Bronze Giordano Bruno checks a watch FOB as his statue is unveiled where the Inquisition burned him."}
+  - {year: 1889, peg: fob, confidence: high, source: "museonazionaleromano.beniculturali.it (7 March)",
+     event: "The National Roman Museum is founded in the Baths of Diocletian",
+     place: "Terme di Diocleziano",
+     scene: "A curator hangs his key FOB on the door of the Baths of Diocletian, the new National Roman Museum."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP mirror: National Etruscan Museum",
+     event: "The National Etruscan Museum is founded in Villa Giulia",
+     place: "Villa Giulia",
+     scene: "An Etruscan couple on their sarcophagus swing a FOB as the National Etruscan Museum opens at Villa Giulia."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP mirror via search: L'amico Fritz (31 October)",
+     event: "Mascagni's L'amico Fritz premieres at the Costanzi",
+     place: "Teatro Costanzi",
+     scene: "Fritz tosses a cherry into a farm girl's BOOT in the premiere of Mascagni's L'amico Fritz at the Costanzi."}
+  - {year: 1895, peg: bell, confidence: unverified,
+     event: "The equestrian monument to Garibaldi is unveiled on the Gianicolo",
+     place: "Gianicolo",
+     scene: "A BELL rings from the Gianicolo as bronze Garibaldi on horseback faces the Vatican for the first time."}
+  - {year: 1898, peg: beehive, confidence: medium, source: "Teatro alla Scala; Goldoni (one source 1899)",
+     event: "Mascagni's Iris premieres at the Costanzi",
+     place: "Teatro Costanzi",
+     scene: "A BEEHIVE sun rises over the stage in the Hymn to the Sun at the Costanzi premiere of Mascagni's Iris."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP mirror via search: Teatro Adriano (1 June)",
+     event: "Teatro Adriano opens in Piazza Cavour with La Gioconda",
+     place: "Piazza Cavour",
+     scene: "La Gioconda sings from a BEEHIVE box on the opening night of the huge Teatro Adriano in Piazza Cavour."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Fontana delle Naiadi",
+     event: "Rutelli's bronze naiads are unveiled on the fountain in Piazza Esedra",
+     place: "Piazza della Repubblica",
+     scene: "Rutelli's bronze naiads ride sea beasts and spray SODA in Piazza Esedra; Romans gasp at the nudes."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP mirror: Le maschere (17 January)",
+     event: "Mascagni's Le maschere premieres at the Costanzi on the same night as five other cities",
+     place: "Teatro Costanzi",
+     scene: "Masked Harlequin pours SODA in six theatres at once; one is the Costanzi, where Le maschere premieres that night."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP mirror: Galleria Borghese",
+     event: "The state buys Villa Borghese and its collection, and the Galleria Borghese opens to the public",
+     place: "Villa Borghese",
+     scene: "The SUN pours into the Borghese Casino as the state buys it, with Bernini and Caravaggio inside."}
+  - {year: 1905, peg: seal, confidence: high, source: "Affaritaliani; Museo Risorgimento Lucca (20 September)",
+     event: "Alberini's film La presa di Roma is shown in the open air at Porta Pia",
+     place: "Porta Pia",
+     scene: "A SEAL flaps at a white sheet by Porta Pia as Alberini's film La presa di Roma plays to the crowd."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP mirror: Anfiteatro Correa (16 February)",
+     event: "The Augusteo concert hall opens on top of the Mausoleum of Augustus",
+     place: "Mausoleo di Augusto",
+     scene: "Martucci conducts from a SOFA on the Mausoleum of Augustus as the Augusteo concert hall opens."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP mirror: Keats-Shelley Memorial House",
+     event: "The Keats-Shelley House opens beside the Spanish Steps",
+     place: "Piazza di Spagna",
+     scene: "Keats blows a SOAP bubble from his old window over the Spanish Steps as the Keats-Shelley House opens."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: International Exhibition of Art (29 April)",
+     event: "The international art exhibition for the jubilee of unity opens in Valle Giulia",
+     place: "Valle Giulia",
+     scene: "National pavilions with a flag TATTOO on each facade open in Valle Giulia for the jubilee of Italian unity."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: International Exhibition of Art (1911)",
+     event: "The British School at Rome moves into Lutyens' exhibition pavilion",
+     place: "Valle Giulia",
+     scene: "A British scholar sticks out his TONGUE at the rain and moves into Lutyens' pavilion, the new British School."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "Wyke (UCL) on Quo Vadis; release March",
+     event: "The Cines epic Quo Vadis premieres at the Costanzi",
+     place: "Teatro Costanzi",
+     scene: "Nero's lions burst from a TOMB on the Costanzi screen at the premiere of the Cines epic Quo Vadis."}
+  - {year: 1913, peg: tomb, confidence: unverified,
+     event: "The first Rome Secession art exhibition opens",
+     place: "Palazzo delle Esposizioni",
+     scene: "Young painters climb out of an academic TOMB and open the first Rome Secession show."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Fontana delle Naiadi",
+     event: "The Glaucus group is set in the Naiad fountain, and the fountain opens again",
+     place: "Piazza della Repubblica",
+     scene: "Glaucus wrestles a dolphin on a water TOWER in the middle of the Naiad fountain as it reopens."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP mirror: Teatro Quirino",
+     event: "Piacentini rebuilds the Teatro Quirino with a third tier of boxes",
+     place: "Teatro Quirino",
+     scene: "Piacentini stacks a third TOWER of boxes inside the Teatro Quirino and opens a sunroof above them."}
+  - {year: 1915, peg: doll, confidence: unverified,
+     event: "Building starts on Coppede's fairy-tale quarter",
+     place: "Piazza Mincio",
+     scene: "Gino Coppede builds palaces like a giant DOLL house around Piazza Mincio, with spiders and frogs on the walls."}
+  - {year: 1917, peg: dog, confidence: high, source: "Berliner Philharmoniker notes (11 March)",
+     event: "Respighi's Fountains of Rome premieres at the Augusteo",
+     place: "Teatro Augusteo",
+     scene: "A DOG drinks from four fountains on the Augusteo stage at the premiere of Respighi's Fountains of Rome."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Mascagni's operetta Si premieres at the Teatro Quirino",
+     place: "Teatro Quirino",
+     scene: "A TUBA honks a loud 'yes' at the Teatro Quirino premiere of Mascagni's operetta Si."}
+  - {year: 1924, peg: hanger, confidence: high, source: "AGI (14 December)",
+     event: "Respighi's Pines of Rome premieres at the Augusteo",
+     place: "Teatro Augusteo",
+     scene: "A nightingale sings from a coat HANGER in the Augusteo at the premiere of Respighi's Pines of Rome."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP mirror: Palace of Justice, Rome",
+     event: "Ximenes' bronze quadriga is set on the Palace of Justice",
+     place: "Palace of Justice",
+     scene: "A crane lifts Ximenes' bronze chariot, its horses eating NACHO, onto the river front of the Palace of Justice."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Turismo Roma: Teatro dell'Opera",
+     event: "The city buys the Teatro Costanzi and renames it the Royal Opera",
+     place: "Teatro Costanzi",
+     scene: "The governor pays for the Teatro Costanzi with a NACHO and paints Royal Opera over its door."}
+  - {year: 1928, peg: knife, confidence: high, source: "Turismo Roma; NZ press (27 February)",
+     event: "The rebuilt Royal Opera reopens with Boito's Nerone",
+     place: "Teatro dell'Opera",
+     scene: "Boito's Nero cuts the curtain with a KNIFE as Piacentini's rebuilt Royal Opera reopens."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "The first Rome Quadriennale of Italian art opens",
+     place: "Palazzo delle Esposizioni",
+     scene: "A MOTH lands on each canvas of the first Rome Quadriennale at the Palazzo delle Esposizioni."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Exhibition of the Fascist Revolution (28 October)",
+     event: "The Exhibition of the Fascist Revolution opens in the Palazzo delle Esposizioni",
+     place: "Via Nazionale",
+     scene: "Giant steel fasces hide the Palazzo delle Esposizioni facade, and a MOON lamp lights the Fascist Revolution show."}
+  - {year: 1932, peg: moon, confidence: high, source: "Vatican Museums: La Pinacoteca (27 October)",
+     event: "Beltrami's new Vatican Picture Gallery opens",
+     place: "Musei Vaticani",
+     scene: "A MOON of north light falls on Raphael's Transfiguration as Beltrami's new Vatican Picture Gallery opens."}
+  - {year: 1936, peg: match, confidence: high, source: "WP mirror: Nemi ships (January)",
+     event: "The museum of the Nemi ships opens on the lake shore",
+     place: "Nemi",
+     scene: "A MATCH-thin guide leads visitors into the long hangar museum that holds the two Nemi ships."}
+  - {year: 1936, peg: match, confidence: medium, source: "Sapienza paper; WP mirror: Anfiteatro Correa",
+     event: "The Augusteo concert hall closes, and its roof comes off the Mausoleum of Augustus",
+     place: "Mausoleo di Augusto",
+     scene: "A MATCH burns the last concert poster as workers strip the Augusteo roof off the Mausoleum of Augustus."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Palazzo delle Esposizioni",
+     event: "The Augustan exhibition of Romanness opens for Augustus' two-thousandth birthday",
+     place: "Palazzo delle Esposizioni",
+     scene: "Augustus raises a birthday MUG among plaster casts of his empire at the Augustan exhibition."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Ara Pacis",
+     event: "The rebuilt Ara Pacis opens in Morpurgo's glass pavilion",
+     place: "Lungotevere in Augusta",
+     scene: "A MOVIE camera films the Ara Pacis pieces fitting together inside Morpurgo's glass pavilion by the Tiber."}
+  - {year: 1938, peg: movie, confidence: high, source: "Turismo Roma: Piazza Augusto Imperatore (28 October)",
+     event: "Piazza Augusto Imperatore opens round the cleared Mausoleum of Augustus",
+     place: "Piazza Augusto Imperatore",
+     scene: "A newsreel MOVIE shows the new Piazza Augusto Imperatore, its fascist arcades round the bare Mausoleum."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Teatro Eliseo",
+     event: "The old Arena Nazionale is rebuilt as the Teatro Eliseo",
+     place: "Via Nazionale",
+     scene: "A MOVIE poster comes down from the old wooden Arena Nazionale, rebuilt in stone as the Teatro Eliseo."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP mirror: Palazzo della Civilta Italiana (30 November)",
+     event: "The unfinished Palace of Italian Civilisation, the Square Colosseum, is inaugurated at E42",
+     place: "EUR",
+     scene: "Four marble HORSE groups guard the corners of the Square Colosseum at E42 as it opens half finished."}
+
+  # economy
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP mirror: Il Messaggero (first issue 1 January)",
+     event: "First issue of the newspaper Il Messaggero",
+     place: "Via del Tritone",
+     scene: "A COWBOY newsboy gallops down the Corso with the first issue of Il Messaggero."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP mirror: Banco di Roma (9 March)",
+     event: "The Banco di Roma is founded",
+     place: "Via del Corso",
+     scene: "Catholic bankers fill a VASE with gold coins and found the Banco di Roma."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Bulgari",
+     event: "Sotirios Bulgari opens his first shop in Via Sistina",
+     place: "Via Sistina",
+     scene: "A FAIRY taps her wand, and Sotirios Bulgari's first jewellery shop opens in Via Sistina."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP mirror: La Rinascente",
+     event: "The Bocconi brothers open a department store in Piazza Colonna",
+     place: "Piazza Colonna",
+     scene: "A FOX in a new coat struts out of the Bocconi brothers' department store by the Column of Marcus Aurelius."}
+  - {year: 1891, peg: boot, confidence: medium, source: "Turismo Roma: Mattatoio (built 1888-1891)",
+     event: "Ersoch's slaughterhouse at Testaccio is completed",
+     place: "Mattatoio, Testaccio",
+     scene: "A butcher's BOOT kicks open the gates of Ersoch's new slaughterhouse at Testaccio."}
+  - {year: 1892, peg: piano, confidence: medium, source: "WP mirror: Palazzo Koch (built 1888-1892)",
+     event: "Palazzo Koch on Via Nazionale is completed, later the Bank of Italy head office",
+     place: "Via Nazionale",
+     scene: "Bankers roll a PIANO-sized safe into Koch's new palace on Via Nazionale."}
+  - {year: 1894, peg: bear, confidence: high, source: "Michelin guide; St Regis Magazine (11 January)",
+     event: "Cesar Ritz opens the Grand Hotel with a dinner by Escoffier",
+     place: "Via Vittorio Emanuele Orlando",
+     scene: "A dancing BEAR serves Escoffier's sixteen-course dinner on the opening night of Ritz's Grand Hotel."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP mirror: Bulgari",
+     event: "Bulgari opens his flagship shop in Via Condotti",
+     place: "Via Condotti",
+     scene: "A SEAL balances a jewel on its nose in the window of Bulgari's new Via Condotti shop."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP mirror: Cines (1 April)",
+     event: "The Cines film company is founded",
+     place: "Via Appia Nuova",
+     scene: "A SUSHI chef cranks the first camera of the new Cines film company on Via Appia Nuova."}
+  - {year: 1909, peg: soap, confidence: medium, source: "Il Giornale (20 September)",
+     event: "A city referendum votes to make electricity a municipal service",
+     place: "Campidoglio",
+     scene: "Voters drop SOAP into ballot boxes and vote to put Rome's electricity into city hands."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ATAC history (21 March)",
+     event: "The municipal tram company runs its first line, Piazza Colonna to Santa Croce",
+     place: "Piazza Colonna",
+     scene: "Every driver of the city's first municipal tram line wears a TATTOO of the city wolf, Piazza Colonna to Santa Croce."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP mirror: Colleferro",
+     event: "The BPD explosives factory opens at Colleferro",
+     place: "Colleferro",
+     scene: "A TONGUE of flame licks the old sugar factory at Colleferro, now the BPD explosives works."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Galleria Alberto Sordi (20 October)",
+     event: "The Galleria Colonna shopping arcade opens on Via del Corso",
+     place: "Via del Corso",
+     scene: "A NUN window-shops under the glass roof of the new Galleria Colonna on Via del Corso."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP mirror: Istituto Luce",
+     event: "The Istituto Luce newsreel company is founded",
+     place: "Via Santa Susanna",
+     scene: "Film reels hang on a HANGER in the first Istituto Luce office, ready for the newsreels."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "The first regular radio broadcast in Italy goes out from Rome",
+     place: "Palazzo Corradi",
+     scene: "A singer hangs her coat on a HANGER and sings into the first regular Italian radio broadcast from Rome."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP mirror: Fendi",
+     event: "Adele and Edoardo Fendi open a fur and leather shop in Via del Plebiscito",
+     place: "Via del Plebiscito",
+     scene: "Adele Fendi hangs her first fur on a NAIL in the new shop on Via del Plebiscito."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: Trams in Rome",
+     event: "The state-controlled ATAG takes over the tram network",
+     place: "Piazza dei Cinquecento",
+     scene: "An ATAG manager turns the control KNOB of every tram line in Rome."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Cines",
+     event: "Fire destroys the Cines film studios",
+     place: "Via Veio",
+     scene: "Fire turns the Cines studios into a burning MILL, and the city's main film stages are lost."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: La Rinascente",
+     event: "The Rinascente store in Piazza Colonna puts in the first escalator in an Italian shop",
+     place: "Piazza Colonna",
+     scene: "A shopper rides the first Italian store escalator up the Rinascente with a MUG of coffee."}
+
+  # society
+  - {year: 1876, peg: cage, confidence: high, source: "WP mirror: Biblioteca Nazionale Centrale di Roma (14 March)",
+     event: "The National Central Library opens in the Collegio Romano",
+     place: "Collegio Romano",
+     scene: "Librarians open a giant book CAGE in the old Jesuit Collegio Romano, the new National Central Library."}
+  - {year: 1881, peg: foot, confidence: high, source: "Turismo Roma: Capannelle centenary",
+     event: "The first Capannelle racecourse opens on the Appia",
+     place: "Capannelle",
+     scene: "A racehorse's FOOT thunders down the first Capannelle track on the Appian plain."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP mirror: Lido di Ostia",
+     event: "Labourers from Ravenna start to drain the Ostia marsh and found the modern village",
+     place: "Ostia Antica",
+     scene: "A swamp FAIRY flees as Ravenna labourers dig ditches through the Ostia marsh and found a new village."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP mirror: Villa Ludovisi",
+     event: "Prince Boncompagni sells Villa Ludovisi to builders, and the park is cut up for the Ludovisi quarter",
+     place: "Via Veneto",
+     scene: "Builders slice Villa Ludovisi's park like a WAFFLE into lots for the new quarter and Via Veneto."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP mirror: Roman Ghetto; Turismo Roma",
+     event: "The ghetto is cleared and its walls come down",
+     place: "Portico d'Ottavia",
+     scene: "A FIFE band plays as workers pull down the ghetto walls by the Portico d'Ottavia."}
+  - {year: 1891, peg: boot, confidence: high, source: "Gazzetta Ufficiale (inquiry); NZ press, April",
+     event: "The Vigna Pia powder magazine explodes and wrecks houses at Monteverde",
+     place: "Vigna Pia, Monteverde",
+     scene: "A BOOT of fire kicks the Vigna Pia powder magazine into the sky and blows in windows all over Monteverde."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP mirror: S.S. Lazio (9 January)",
+     event: "Lazio sports club is founded in Prati",
+     place: "Piazza della Liberta",
+     scene: "Young runners spill white and sky-blue SAUCE on a Prati bench and found the Lazio sports club."}
+  - {year: 1900, peg: sauce, confidence: high, source: "Politecnico di Torino journal; Tor Vergata (2 December)",
+     event: "A Tiber flood brings down part of the new embankment wall by Ponte Garibaldi",
+     place: "Lungotevere degli Anguillara",
+     scene: "The Tiber rises like brown SAUCE and knocks down a long piece of the new wall between Ponte Garibaldi and Ponte Cestio."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP mirror: Villa Borghese gardens",
+     event: "Villa Borghese opens as a public park",
+     place: "Villa Borghese",
+     scene: "A SUMO wrestler pushes open the Villa Borghese gates, and Romans picnic in their new public park."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "Joelho journal paper",
+     event: "The Institute for Public Housing of Rome is founded",
+     place: "Testaccio",
+     scene: "A SUMO wrestler carries a block of flats on his back for the new public housing institute."}
+  - {year: 1903, peg: sumo, confidence: high, source: "italia.it: Circolo del Golf Roma Acquasanta",
+     event: "The Acquasanta golf club, the first in Italy, is founded on the Appia Nuova",
+     place: "Via Appia Nuova",
+     scene: "A SUMO wrestler tees off by the aqueduct arches at Acquasanta, Italy's first golf club."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP mirror: Bioparco di Roma (5 January)",
+     event: "The zoo opens in Villa Borghese with Hagenbeck's open enclosures",
+     place: "Villa Borghese",
+     scene: "A tiger with a striped TATTOO looks across Hagenbeck's ditch, not bars, as the Villa Borghese zoo opens."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "StadiumDB (10 June); WP: Stadio Nazionale PNF",
+     event: "The Stadio Nazionale opens on Via Flaminia",
+     place: "Via Flaminia",
+     scene: "Athletes with a laurel TATTOO run the first race in the new Stadio Nazionale on Via Flaminia."}
+  - {year: 1920, peg: nose, confidence: high, source: "Wanted in Rome; Immobiliare (18 February)",
+     event: "The king lays the first stone of the Garbatella garden suburb",
+     place: "Piazza Benedetto Brin",
+     scene: "The king lays the first stone of Garbatella in Piazza Benedetto Brin, and every lilac garden there tickles his NOSE."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP mirror: Villa Borghese gardens",
+     event: "First horse show at Piazza di Siena",
+     place: "Piazza di Siena",
+     scene: "A NUN cheers from the grass bank as the first show jumper clears a fence at Piazza di Siena."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP mirror: A.S. Roma (7 June)",
+     event: "Three clubs merge to found AS Roma",
+     place: "Via Uffici del Vicario",
+     scene: "Three club presidents dip pens in red and gold INK and sign the merger that founds AS Roma."}
+  - {year: 1928, peg: knife, confidence: disputed, source: "WP: 1928 rebuild; StadiumDB: 1927",
+     event: "The Stadio Nazionale is rebuilt as the stadium of the Fascist Party",
+     place: "Via Flaminia",
+     scene: "A KNIFE carves the party's fasces over the rebuilt national stadium on Via Flaminia."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP mirror: A.S. Roma (November)",
+     event: "AS Roma's wooden Campo Testaccio ground opens",
+     place: "Testaccio",
+     scene: "A Roma fan turns the wooden door KNOB of Campo Testaccio and finds the new ground packed."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP mirror: Foro Italico (4 November)",
+     event: "The Foro Mussolini opens with the Stadio dei Marmi and the physical education academy",
+     place: "Foro Italico",
+     scene: "Sixty marble athletes of the Stadio dei Marmi pose under the MOON as the Foro Mussolini opens."}
+  - {year: 1935, peg: mill, confidence: high, source: "Sapienza; flt.hf.uio.no (31 October)",
+     event: "The king opens Piacentini's new University City",
+     place: "Citta Universitaria",
+     scene: "A paper MILL turns out diplomas as the king opens Piacentini's new University City for twelve thousand students."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Centro Sperimentale di Cinematografia",
+     event: "The national film school, the Centro Sperimentale, is founded",
+     place: "Via Tuscolana",
+     scene: "Students crank a film camera like a MILL handle in the first class of the Centro Sperimentale film school."}
+  - {year: 1935, peg: mill, confidence: high, source: "World Tennis; Papers Past (April)",
+     event: "The Italian tennis championships move to the Foro Mussolini",
+     place: "Foro Italico",
+     scene: "A tennis ball hits a MILL wheel and bounces onto the new marble courts as the championships come to Rome."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP mirror: Colleferro",
+     event: "The factory town of Colleferro becomes a separate comune",
+     place: "Colleferro",
+     scene: "The BPD factory MILL whistles as Colleferro breaks away from Valmontone and becomes a town of its own."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: EUR, Rome (26 April)",
+     event: "Mussolini plants a pine at the centre of the E42 site, and the new quarter starts",
+     place: "EUR",
+     scene: "Mussolini waters a young pine from a MUG at the centre of the empty E42 site, and the new quarter starts."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP mirror: Guidonia Montecelio",
+     event: "The aviation town of Guidonia is founded",
+     place: "Guidonia",
+     scene: "Pilots raise a MUG to General Guidoni as the new aviation town by the airfield takes his name."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP mirror: Colleferro (1 February)",
+     event: "A huge explosion at the BPD works in Colleferro kills and injures many workers",
+     place: "Colleferro",
+     scene: "A newsreel MOVIE shows the BPD powder works at Colleferro blown apart, with many workers dead."}
+  - {year: 1939, peg: map, confidence: high, source: "WP mirror: Pomezia (29 October)",
+     event: "The new town of Pomezia is inaugurated on the reclaimed land",
+     place: "Pomezia",
+     scene: "Settlers unroll a MAP of brand-new Pomezia on reclaimed land near old Lavinium on its opening day."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP mirror: A.S. Roma (1941-42 season)",
+     event: "AS Roma wins its first league title",
+     place: "Stadio Nazionale",
+     scene: "A RHINO in red and gold charges round the Stadio Nazionale with Roma's first league title."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP mirror: Nemi ships (night of 31 May)",
+     event: "Fire destroys the Nemi ships in their museum",
+     place: "Nemi",
+     scene: "A torch WARRIOR walks through the Nemi museum at night, and both Roman ships burn to ash."}
+
+world_refs:
+  - {year: 1871, event: "Rome becomes the capital; Law of Guarantees", cell: western_europe_politics_1800_1945}
+  - {year: 1871, event: "Law of Guarantees sets the Pope's status", cell: western_europe_religion_1800_1945}
+  - {year: 1878, event: "Leo XIII is elected pope", cell: western_europe_religion_1800_1945}
+  - {year: 1881, event: "Leo XIII opens the Vatican Archives", cell: western_europe_religion_1800_1945}
+  - {year: 1890, event: "Cavalleria Rusticana premieres in Rome", cell: western_europe_arts_1800_1945}
+  - {year: 1893, event: "Banca d'Italia founded after the Banca Romana scandal", cell: western_europe_economy_1800_1945}
+  - {year: 1898, event: "Grassi shows Anopheles carry malaria", cell: western_europe_science_1800_1945}
+  - {year: 1899, event: "Plenary Council of Latin America meets in Rome", cell: latin_america_religion_1800_1945}
+  - {year: 1900, event: "Tosca premieres in Rome", cell: western_europe_arts_1800_1945}
+  - {year: 1903, event: "Pius X is elected pope", cell: western_europe_religion_1800_1945}
+  - {year: 1907, event: "Montessori opens the first Casa dei Bambini", cell: western_europe_society_1800_1945}
+  - {year: 1908, event: "First Amharic novel published in Rome", cell: subsaharan_africa_arts_1800_1945}
+  - {year: 1909, event: "Pontifical Biblical Institute founded", cell: western_europe_religion_1800_1945}
+  - {year: 1911, event: "Vittoriano monument opened", cell: western_europe_arts_1800_1945}
+  - {year: 1914, event: "Benedict XV is elected pope", cell: western_europe_religion_1800_1945}
+  - {year: 1921, event: "Six Characters in Search of an Author premieres", cell: western_europe_arts_1800_1945}
+  - {year: 1922, event: "March on Rome", cell: western_europe_politics_1800_1945}
+  - {year: 1922, event: "Pius XI is elected pope", cell: western_europe_religion_1800_1945}
+  - {year: 1924, event: "Matteotti murdered", cell: western_europe_politics_1800_1945}
+  - {year: 1925, event: "Mussolini announces dictatorship in the Chamber", cell: western_europe_politics_1800_1945}
+  - {year: 1925, event: "Therese of Lisieux canonised in Rome", cell: western_europe_religion_1800_1945}
+  - {year: 1926, event: "Pius XI consecrates the first six Chinese bishops in Rome", cell: east_asia_religion_1800_1945}
+  - {year: 1929, event: "Lateran Treaty creates Vatican City State", cell: western_europe_religion_1800_1945}
+  - {year: 1930, event: "D'Ascanio's helicopter record at Ciampino", cell: western_europe_science_1800_1945}
+  - {year: 1931, event: "Vatican Radio begins broadcasting", cell: western_europe_religion_1800_1945}
+  - {year: 1933, event: "Pius XI canonises Bernadette Soubirous", cell: western_europe_religion_1800_1945}
+  - {year: 1934, event: "Fermi's group finds slow-neutron radioactivity in Rome", cell: western_europe_science_1800_1945}
+  - {year: 1934, event: "Italy hosts and wins the World Cup; final in Rome", cell: western_europe_society_1800_1945}
+  - {year: 1936, event: "Pontifical Academy of Sciences reorganised", cell: western_europe_religion_1800_1945}
+  - {year: 1936, event: "Italy proclaims the empire", cell: western_europe_politics_1800_1945}
+  - {year: 1937, event: "Cinecitta film studios open", cell: western_europe_arts_1800_1945}
+  - {year: 1938, event: "Cerletti and Bini introduce electroconvulsive therapy", cell: western_europe_science_1800_1945}
+  - {year: 1938, event: "Fermi's Nobel prize for neutron work in Rome", cell: western_europe_science_1800_1945}
+  - {year: 1939, event: "Pius XII is elected pope", cell: western_europe_religion_1800_1945}
+  - {year: 1940, event: "Italy enters World War II", cell: western_europe_politics_1800_1945}
+  - {year: 1943, event: "Mussolini deposed", cell: western_europe_politics_1800_1945}
+  - {year: 1943, event: "Armistice; Germans occupy Italy and Rome", cell: western_europe_politics_1800_1945}
+  - {year: 1943, event: "Nazi round-up of Rome's Jews", cell: western_europe_society_1800_1945}
+  - {year: 1944, event: "Anzio landing; Allies take Rome", cell: western_europe_politics_1800_1945}
+
+out_refs:
+  - {year: 1871, event: "Victor Emmanuel II enters Rome and makes the Quirinal his palace", reason: "royal court"}
+  - {year: 1871, event: "Ministry of the Interior moves into Palazzo Braschi", reason: "national government"}
+  - {year: 1871, event: "Parliament opens its first session in Rome", reason: "national parliament"}
+  - {year: 1878, event: "Victor Emmanuel II is buried in the Pantheon", reason: "royal funeral"}
+  - {year: 1888, event: "Wilhelm II visits Rome", reason: "state visit"}
+  - {year: 1900, event: "Umberto I is buried in the Pantheon", reason: "royal funeral"}
+  - {year: 1900, event: "Leo XIII opens the Holy Year", reason: "papal act"}
+  - {year: 1915, event: "Interventionist crowds fill Rome in the radiant days of May", reason: "national war campaign"}
+  - {year: 1919, event: "Sturzo founds the Italian People's Party at a Rome hotel", reason: "national party"}
+  - {year: 1921, event: "Fascist congress at the Augusteo founds the National Fascist Party", reason: "national party"}
+  - {year: 1921, event: "Unknown Soldier is buried at the Vittoriano", reason: "national ceremony"}
+  - {year: 1925, event: "Mussolini takes Villa Torlonia as his residence", reason: "head of government"}
+  - {year: 1925, event: "Pius XI opens the Holy Year", reason: "papal act"}
+  - {year: 1926, event: "Special Tribunal for the Defence of the State set up", reason: "national court"}
+  - {year: 1929, event: "Mussolini moves his office to Palazzo Venezia", reason: "national government"}
+  - {year: 1933, event: "Pius XI opens the extraordinary Holy Year", reason: "papal act"}
+  - {year: 1938, event: "Hitler visits Rome", reason: "state visit"}
+  - {year: 1939, event: "The Accademia d'Italia absorbs the Lincei", reason: "national academy reform"}
+  - {year: 1943, event: "Pius XII visits bombed San Lorenzo", reason: "papal act"}
+  - {year: 1943, event: "King and Badoglio flee Rome", reason: "national government"}
+  - {year: 1944, event: "Pius XII makes a vow at Divino Amore for the city", reason: "papal act"}
