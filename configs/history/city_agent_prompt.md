@@ -26,10 +26,15 @@ budget is {budget} searches and it is a maximum, not a target. Follow cities.md 
 EXHAUSTIVE inside scope: every dated event you can find, specialist items included. Cover every subject
 in the cities.md IN list, and put each card in its theme by "Theme of each subject". Expect roughly {expected}
 cards; a thin era may have fewer — do not pad. National events are OUT (cities.md); list each notable one under `out_refs:` with its
-reason. When unsure whether the city is the subject, leave it out (out_refs) and list it in your report.
+reason. A national event whose main stage is the city (occupation, public execution, mass protest, riot, attack, siege) is a card (cities.md). When unsure whether the city is the subject, leave it out (out_refs) and list it in your report.
 
 ## File header
 Copy the header layout of a world cell (comment lines, then `dates:`), naming the city and era.
+
+## Duplicate scan (after the check passes)
+Run `cd /Users/yipingwa/Documents/Projects/memory-deck-generator && .venv/bin/deck-history-dups configs/history/cities/{city}/{era_slug}.yaml`.
+For each candidate pair: a card that rewords an event a world cell holds → move it to `world_refs` (world year,
+world cell stem); a different aspect of the same event → keep. Run the check again.
 
 ## Final report (your last message; under 250 words, no scene tables)
 - Card count per theme; world_refs count.

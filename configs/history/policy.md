@@ -69,6 +69,10 @@ All text in ASD-STE100 style.
 
 - ≥ 10,000 years → `years_ago`.
 - < 10,000 years ago, source gives years ago → BCE = years ago − 2,000, round to nearest century. Source gives BCE/cal BC → use it.
+- Radiocarbon (user rule 2026-11-19): prefer a **calibrated** date (cal BC, cal BP) when any source gives one.
+  An uncalibrated "14C BP" figure is younger than the real age (by about 1,000 years at 8,000 BP and about
+  2,500 at 12,500 BP), so do not convert it with BP − 2,000. A card that has only an uncalibrated BP date →
+  `disputed`, and the source field says "uncal. BP". Thermoluminescence (TL) and OSL ages are calendar ages already.
 - Range → the **conventional "c." date**: the date survey histories and museums quote (Great Pyramid c. 2560 BCE, early Upanishads c. 600 BCE). With no conventional date: the start of a phase or tradition (a phase is dated by when it begins), or the midpoint of the span for one work of uncertain date. Mark it `(approximate)`. Changed 2026-11-04: the old "younger end" rule dated phases by their end (Wadi Sura 4400 instead of c. 7000 BCE) and pushed works across period lines (Tirukkural).
 - "X ± Y" → X.
 - A work (book, play, opera, film, painting, building) → its **first public appearance**: premiere, first publication, first exhibition, or opening. Not the year it was written, made or finished. The event text names which one ("premiere", "published", "opens"). A source that gives the year of writing for the same work is not a dispute. Added 2026-11-04: the check pass marked eight works `disputed` that were only written-year vs premiere-year (Carmina Burana 1936 / 1937).

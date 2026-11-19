@@ -65,6 +65,10 @@ The event happens in the area AND the city is its subject or main stage. This in
   that rebuilds an Istanbul quarter, a pope's water supply for Rome). Then the event is IN.
 - The rule applies only while the city is the seat (Kyoto before 1869, Rio de Janeiro to 1960).
 - A city-state (Singapore after 1965) has no higher government: its national events are IN.
+- City as main stage (user rule 2026-11-19): a national event whose stage is the city's streets, buildings
+  and people is IN as a card, even when a higher government acts: occupations, public executions and
+  burnings, mass protests and riots, assassinations and attacks in the city, sieges. The London and Paris
+  borderline cards are the examples.
 - When unsure whether the city is the subject, leave the event out and list it in the report.
 - Record each notable event that this rule leaves out under `out_refs:`, after `world_refs:`, in date
   order. Reference only: no peg, no scene, no card. `reason` = a short phrase for the rule (imperial visit,
@@ -136,6 +140,7 @@ world_refs:
   event (the London Mithraeum found in 1954 → `1945_present`).
 - Tree-ring felling year (winter X/X+1): use the year that the source names. Coin-dated deposits and
   pottery-dated phases are ranges: conventional c. date, else midpoint (policy.md).
+- Radiocarbon: calibrated date first; a card with only an uncalibrated BP date is `disputed` (policy.md, 2026-11-19).
 
 ## Sources and search budget
 
@@ -161,7 +166,7 @@ city at a time, then Tier 2, then Tier 3. Each city gets its section (area + era
 |---|---|---|---|
 | 1 | London (`london`) | western_europe | Greater London (decided) |
 | 1 | Paris (`paris`) | western_europe | Métropole du Grand Paris or Île-de-France (Saint-Denis, Versailles) |
-| 1 | Rome (`rome`) | western_europe | Roma Capitale or the metropolitan city (Ostia, Tivoli); Vatican: Holy See events OUT |
+| 1 | Rome (`rome`) | western_europe | Metropolitan City of Rome Capital (decided) |
 | 1 | Istanbul (`istanbul`) | eastern_europe | Istanbul Province, both shores |
 | 1 | Moscow (`moscow`) | eastern_europe | Moscow city or with Moscow Oblast |
 | 1 | Cairo (`cairo`) | north_africa | Greater Cairo: Memphis, Giza, Saqqara in or out |
@@ -236,6 +241,39 @@ Saint-Denis, Vincennes, Versailles, Saint-Germain-en-Laye, Fontainebleau. Region
 | `1789_1851` | Revolution to the Second Republic | 45 | ~280 |
 | `1852_1913` | Haussmann, the Commune, Belle Époque | 45 | ~350 |
 | `1914_1944` | the world wars | 45 | ~220 |
+| `1945_present` | post-war | 45 | ~300 |
+
+Expected cards are a guide, not a target.
+
+### Rome (2026-11-19)
+
+Area: the Metropolitan City of Rome Capital (user's choice): Rome, Ostia and Portus, Tivoli and
+Hadrian's Villa, the Castelli Romani and Castel Gandolfo, Veii, Palestrina (Praeneste), Civitavecchia.
+Vatican City is inside the area. Region: western_europe.
+
+- Republic (509–27 BCE), user rule: the city is the subject only. Laws of the Senate and assemblies for
+  Italy and the provinces, wars, treaties, triumphs for foreign wars and provincial commands are OUT.
+  City laws, buildings, roads and aqueducts that start in Rome, fires, floods, riots, street violence
+  and murders in the city (the Gracchi, Clodius) are IN.
+- Emperors: the OUT rule covers the imperial court (accessions, births, imperial funerals). An emperor's
+  building, games, fire relief or city law is IN.
+- Holy See and papal acts are OUT unless the city is the subject (papal elections, bulls, councils,
+  canonisations OUT; a pope's walls, streets, fountains, aqueducts, a Jubilee's works in Rome IN).
+  Building a basilica is IN; a ceremony in it is OUT, as for Paris.
+- The traditional dates of the kings and of the founding are legendary (Legendary dates): OUT. Cards for
+  the regal period come from archaeology (Latial culture, Forum drainage, the first temples).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre509bce` | prehistory, Latial culture, the regal period | 25 | ~70 |
+| `509bce_31bce` | Republic (city-subject only) | 45 | ~220 |
+| `30bce_284` | Principate, Augustus to Diocletian | 45 | ~300 |
+| `285_800` | late empire, Goths, Byzantines, papal city to Charlemagne | 45 | ~200 |
+| `801_1308` | medieval commune, Senate, Saracens, Normans, Jubilee of 1300 | 45 | ~170 |
+| `1309_1526` | Avignon, the return, Renaissance popes | 45 | ~220 |
+| `1527_1797` | Sack of Rome to the Baroque | 45 | ~300 |
+| `1798_1870` | Roman Republics, French rule, Risorgimento | 45 | ~200 |
+| `1871_1944` | capital of Italy, Fascism, the war | 45 | ~280 |
 | `1945_present` | post-war | 45 | ~300 |
 
 Expected cards are a guide, not a target.
