@@ -233,6 +233,19 @@ city starts, its full section (area notes, OUT rules for its seats of government
 - **Singapore (`singapore`)**: `pre1819`, `1819_1941`, `1942_1964`, `1965_present`
 - **Baghdad (`baghdad`)**: `pre762`, `762_1257`, `1258_1916`, `1917_1978`, `1979_present`
 
+## Further cities after the 30 (proposed 2026-11-19, areas and eras not yet chosen)
+
+Order: Group A first (Kano and Marrakech before the rest: the user's city-history volumes exist), then
+Group B, then Group C. Historic cities give many world_refs and fewer cards (Rome ~2/3 of expected).
+
+- **A, historic cities, not major today**: Kano, Marrakech, Jerusalem, Athens, Kyoto, Xi'an, Venice,
+  Vienna, St Petersburg, Isfahan, Samarkand, Damascus.
+- **B, regional gaps**: Addis Ababa, Timbuktu, Kinshasa, Lima (Cusco in or separate), Havana, Hanoi,
+  Manila, Lahore or Varanasi, Boston, Quebec City.
+- **C, more depth**: Florence, Amsterdam, Prague, Lisbon, Kyiv, Edinburgh, Kraków, Budapest, Barcelona;
+  Alexandria, Carthage–Tunis, Cape Town, Zanzibar or Mombasa; Rio de Janeiro, Philadelphia, Cusco,
+  Montreal, Washington; Nanjing, Hangzhou, Hong Kong, Kathmandu, Yangon; Melbourne.
+
 ## Cities and eras
 
 ### London (2026-11-12)
