@@ -1,0 +1,1416 @@
+# City: London x 1666 to 1836 (Great Fire to Victoria). DRAFT 2026-11-19.
+# Area: Greater London, all 32 boroughs and the City (Westminster, Southwark, Chelsea, Kew, Greenwich, Woolwich, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches max; no unauthorised book copies).
+# Main sources: WP mirror (Timeline of London; Timeline of London (1800s); building and institution articles, 2023-10),
+# Royal Museums Greenwich, Royal Mint Museum, V&A, Canal Museum, London Gazette, Museum of London.
+# A building -> its opening or completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: Timeline of London (Act in force 8 Feb)",
+     event: "Rebuilding Act: new City houses must be of brick or stone, in set classes",
+     place: "Cheapside",
+     scene: "A JOCKEY rides through the ash of Cheapside and whips down every timber frame: the Rebuilding Act allows only brick and stone."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP mirror: Timeline of London (Fire Court)",
+     event: "The Fire Court sits at Clifford's Inn to settle disputes over burnt houses",
+     place: "Clifford's Inn",
+     scene: "At Clifford's Inn, a JOCKEY in a judge's wig weighs landlord against tenant and splits the cost of each burnt house."}
+  - {year: 1668, peg: chef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Bawdy House Riots: apprentices pull down brothels at Easter",
+     place: "Moorfields",
+     scene: "A CHEF leads the Easter apprentices with a meat cleaver and chops down the brothel walls in Moorfields."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Second Rebuilding Act: a coal tax pays for St Paul's and the City churches",
+     place: "Billingsgate",
+     scene: "A GOOSE pecks a coin from every coal sack landed at Billingsgate and drops it into the church-building chest."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Ludgate, Moorgate and Newgate are rebuilt; work on Wren's Temple Bar begins",
+     place: "Temple Bar",
+     scene: "A giant COIN rolls into the gap at Temple Bar and becomes the keystone of Wren's new stone gateway."}
+  - {year: 1674, peg: car, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The burnt Old Bailey sessions house is rebuilt beside Newgate",
+     place: "Old Bailey",
+     scene: "A CAR tips a load of new stone at the Old Bailey, and the burnt sessions house rises again beside Newgate."}
+  - {year: 1683, peg: foam, confidence: high, source: "aim25; Commons Journal (judgment 12 June)",
+     event: "Quo warranto: King's Bench cancels the City's charter, and royal commissioners govern the City",
+     place: "Guildhall",
+     scene: "FOAM from the King's Bench floods Guildhall and washes away the City charter; royal commissioners wade in to rule."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Downing Street: Sir George Downing's brick terrace, number ten among it, is built",
+     place: "Downing Street",
+     scene: "A FAIRY taps her wand on cheap Westminster bricks, and Downing's terrace springs up, number ten among it."}
+  - {year: 1690, peg: bees, confidence: high, source: "Search: Quo Warranto Judgment Reversed Act (May)",
+     event: "An Act reverses the quo warranto judgment and gives the City back its charter",
+     place: "Guildhall",
+     scene: "BEES carry the City charter back to Guildhall and sting the royal commissioners out of the aldermen's chairs."}
+  - {year: 1705, peg: seal, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The City first recognises paid, able-bodied night watchmen",
+     place: "City of London",
+     scene: "A SEAL with a lantern and a rattle waddles through the City at night: the first paid, fit watchman on his beat."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Timeline of London",
+     event: "London Building Act: no timber eaves; parapet walls on new houses",
+     scene: "A SKI of a wooden cornice slides off a new Bloomsbury house, because the Building Act wants brick parapets instead."}
+  - {year: 1710, peg: dice, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Sacheverell riots: mobs burn Dissenting meeting houses",
+     place: "Lincoln's Inn Fields",
+     scene: "Rioters roll DICE for which Dissenting chapel to burn next, and a bonfire of its pews blazes in Lincoln's Inn Fields."}
+  - {year: 1736, peg: match, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Riots in east London against cheap Irish labour",
+     place: "Shoreditch",
+     scene: "A MATCH thrown by unpaid weavers sets fire to Irish lodgings in Shoreditch, and the riot spreads for days."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Thomas de Veil opens the first Bow Street magistrates' court",
+     place: "Bow Street",
+     scene: "Thomas de Veil ties his HORSE outside his Bow Street house and opens the first magistrates' court inside."}
+  - {year: 1749, peg: rope, confidence: medium, source: "WP mirror: Bow Street Runners (timeline 1748)",
+     event: "Henry Fielding forms the Bow Street Runners, paid thief-takers",
+     place: "Bow Street",
+     scene: "Henry Fielding hands each Bow Street Runner a ROPE and sends them running after thieves through Covent Garden."}
+  - {year: 1752, peg: lion, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Mansion House, the Lord Mayor's official residence, is finished",
+     place: "Mansion House",
+     scene: "A stone LION settles on the pediment of the Mansion House, and the Lord Mayor moves in for the first time."}
+  - {year: 1759, peg: elbow, confidence: high, source: "WP mirror: Horse Guards (1750-59)",
+     event: "Kent's Horse Guards building is finished in Whitehall",
+     place: "Whitehall",
+     scene: "A mounted guard's ELBOW knocks the last stone into the clock tower of Kent's new Horse Guards in Whitehall."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Bishopsgate, Cripplegate and Ludgate are pulled down",
+     place: "London Wall",
+     scene: "Carts carry away Ludgate, Bishopsgate and Cripplegate like rounds of CHEESE, and traffic flows freely into the City."}
+  - {year: 1763, peg: gem, confidence: high, source: "WP mirror: Bow Street Runners",
+     event: "The Bow Street Horse Patrol rides the roads against highwaymen",
+     scene: "A highwayman grabs a GEM from a coach on the Kensington road, and the Bow Street Horse Patrol gallops to take it back."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Paving and Lighting Act: commissioners pave and light the streets",
+     place: "Strand",
+     scene: "A JUDGE lays the first flat paving stone in the Strand and orders a lamp over every doorway."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Newgate is pulled down; Temple Bar is the last City gate",
+     place: "Newgate Street",
+     scene: "A JOCKEY gallops through the rubble of Newgate and stops only at Temple Bar, the last City gate still standing."}
+  - {year: 1768, peg: chef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "St George's Fields Massacre: troops fire on Wilkes's supporters outside the King's Bench prison",
+     place: "St George's Fields",
+     scene: "A CHEF's soup pot is shot through as troops fire into the Wilkes crowd outside the King's Bench prison."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Spitalfields riots: silk weavers cut the work from looms in a wage dispute",
+     place: "Spitalfields",
+     scene: "Cutters slash silk from Spitalfields looms like sails off a SHIP, and soldiers march in to end the wage riot."}
+  - {year: 1771, peg: cat, confidence: medium, source: "WP mirror: Brass Crosby (clash of 1771)",
+     event: "Lord Mayor Brass Crosby protects the printers of Commons debates and is sent to the Tower",
+     place: "Mansion House",
+     scene: "Lord Mayor Brass Crosby guards the City printers like a CAT with kittens and is carried off to the Tower for it."}
+  - {year: 1774, peg: car, confidence: high, source: "London Gazette (sworn Nov); search",
+     event: "John Wilkes becomes Lord Mayor of London",
+     place: "Guildhall",
+     scene: "A CAR crowned with a cap of liberty carries John Wilkes to Guildhall, where he is sworn in as Lord Mayor."}
+  - {year: 1774, peg: car, confidence: high, source: "WP mirror: Timeline of London",
+     event: "London Building Act: four rates of house, and fire-proof brick party walls",
+     place: "Marylebone",
+     scene: "A CAR crushes a timber shopfront in Marylebone because the new Building Act wants party walls of fireproof brick."}
+  - {year: 1776, peg: cage, confidence: high, source: "WP mirror: Somerset House",
+     event: "Chambers begins Somerset House, offices for the Navy Board and other boards",
+     place: "Strand",
+     scene: "On the Strand, Chambers builds a giant stone CAGE round a courtyard to hold the Navy Board clerks: Somerset House."}
+  - {year: 1780, peg: vase, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Middlesex Sessions House opens on Clerkenwell Green",
+     place: "Clerkenwell Green",
+     scene: "A stone VASE of justice is hoisted on the new Middlesex Sessions House, and the county court opens on Clerkenwell Green."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Dance's rebuilt Newgate Prison is completed",
+     place: "Newgate",
+     scene: "Dance's new Newgate rises out of the Gordon Riots ruins like bread from an OVEN, its blank walls of rough stone."}
+  - {year: 1792, peg: piano, confidence: high, source: "Search: London Gazette; londonlives.org",
+     event: "Middlesex Justices Act: paid magistrates sit in seven public police offices",
+     scene: "Seven paid magistrates play one PIANO tune together in seven new police offices across Westminster and Middlesex."}
+  - {year: 1794, peg: bear, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Coldbath Fields House of Correction is rebuilt",
+     place: "Clerkenwell",
+     scene: "A BEAR is locked into a new cell at Coldbath Fields, the rebuilt house of correction in Clerkenwell."}
+  - {year: 1798, peg: beehive, confidence: high, source: "Search: Thames River Police (2 July)",
+     event: "The Marine Police, London's first regular police, start work on the Thames",
+     place: "Wapping New Stairs",
+     scene: "At Wapping New Stairs, river police swarm out of a BEEHIVE to guard West India cargoes from thieves."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Horsemonger Lane Gaol, the Surrey county prison, is completed",
+     place: "Southwark",
+     scene: "Builders lay a drain PIPE as the outer wall of Horsemonger Lane Gaol, Surrey's new prison in Southwark, closes round it."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Old Price riots at the new Covent Garden theatre against higher prices",
+     place: "Covent Garden",
+     scene: "Covent Garden patrons throw SOAP at the stage for sixty-four nights until the new higher prices come down."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Riots in Piccadilly when Sir Francis Burdett is taken to the Tower",
+     place: "Piccadilly",
+     scene: "Crowds throw DICE and cobbles at troops round Burdett's Piccadilly house as he is taken to the Tower."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Millbank Penitentiary takes its first prisoners, all women",
+     place: "Millbank",
+     scene: "A star-shaped DISH of six pentagons sits on the Millbank marsh: the new penitentiary locks in its first women."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The General Post Office opens its headquarters at St Martin's le Grand",
+     place: "St Martin's le Grand",
+     scene: "Smirke turns a brass KNOB in the great portico, and the General Post Office opens at St Martin's le Grand."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Monument (removed 1830)",
+     event: "The Common Council removes the words on the Monument that blame Catholics for the Fire",
+     place: "Monument",
+     scene: "A MOUSE nibbles away the words that blame Catholics for the Fire from the base of the Monument."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Old Bailey becomes the Central Criminal Court for the whole metropolis",
+     place: "Old Bailey",
+     scene: "A judge's HAMMER bangs at the Old Bailey, now the Central Criminal Court for the whole metropolis."}
+  # science
+  - {year: 1666, peg: judge, confidence: high, source: "Search: Museum of London; UCL Hebbert (11 Sept)",
+     event: "Wren gives the King a plan of wide streets and piazzas for the burnt City; it is never built",
+     place: "Whitehall",
+     scene: "Wren spreads his street plan before the King like a JUDGE's verdict, but the old property lines win."}
+  - {year: 1673, peg: comb, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Apothecaries lay out their physic garden at Chelsea",
+     place: "Chelsea",
+     scene: "The Apothecaries rake their new Chelsea garden beds with a giant COMB and plant healing herbs by the Thames."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The York Buildings Company is formed to pump Thames water to the West End",
+     place: "Strand",
+     scene: "An EAGLE perches on the York Buildings water tower as its pumps lift Thames water to West End houses."}
+  - {year: 1676, peg: cage, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Bethlem Hospital moves to Hooke's new building in Moorfields",
+     place: "Moorfields",
+     scene: "Patients leave their old CAGE at Bishopsgate for Hooke's palace-like new Bethlem in Moorfields."}
+  - {year: 1682, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Building of Wren's Royal Hospital Chelsea for old soldiers begins",
+     place: "Chelsea",
+     scene: "Wren bakes red bricks in an OVEN by the river at Chelsea and begins a hospital for old soldiers."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Edward Hemming's oil lamps: the first organised street lighting",
+     scene: "Edward Hemming hangs a glowing WAFFLE-patterned lamp outside every tenth door and lights the dark streets."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP mirror: Royal Hospital Chelsea",
+     event: "The Royal Hospital Chelsea is complete and takes in its pensioners",
+     place: "Chelsea",
+     scene: "Old soldiers in red coats wheel a PIANO into the finished Royal Hospital Chelsea and move in."}
+  - {year: 1710, peg: dice, confidence: high, source: "WP mirror: Royal Society (26 Oct)",
+     event: "The Royal Society buys two houses in Crane Court for its rooms",
+     place: "Crane Court, Fleet Street",
+     scene: "President Newton throws DICE and buys two houses in Crane Court, off Fleet Street, for the Royal Society."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: Westminster Hospital; timeline",
+     event: "Westminster Public Infirmary takes its first patients in Petty France",
+     place: "Petty France",
+     scene: "In Petty France a doctor wipes a NOSE in the ten-bed Westminster Infirmary, which takes its first patient."}
+  - {year: 1721, peg: ant, confidence: high, source: "WP mirror: Guy's Hospital",
+     event: "Thomas Guy founds Guy's Hospital with his South Sea profits",
+     place: "Southwark",
+     scene: "Thomas Guy, rich from South Sea shares, sets an ANT colony to work on his new hospital in Southwark."}
+  - {year: 1722, peg: nun, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Traffic on London Bridge must keep to the left",
+     place: "London Bridge",
+     scene: "A NUN directs carts on London Bridge: from now on everyone keeps to the left."}
+  - {year: 1723, peg: gnome, confidence: high, source: "WP mirror: Chelsea Waterworks (8 March)",
+     event: "The Chelsea Waterworks Company gets its royal charter",
+     place: "Pimlico",
+     scene: "A GNOME turns the pump wheel of the new Chelsea Waterworks, chartered to send Thames water to Westminster."}
+  - {year: 1729, peg: knob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first wooden Putney Bridge opens to Fulham",
+     place: "Putney",
+     scene: "A KNOB of oak caps each pier of the first wooden Putney Bridge across the Thames to Fulham."}
+  - {year: 1730, peg: mouse, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Westbourne is dammed to make the Serpentine in Hyde Park",
+     place: "Hyde Park",
+     scene: "A MOUSE dams the Westbourne in Hyde Park with twigs, and the long Serpentine lake fills behind it."}
+  - {year: 1733, peg: mummy, confidence: high, source: "WP mirror: St George's Hospital",
+     event: "St George's Hospital opens at Hyde Park Corner",
+     place: "Hyde Park Corner",
+     scene: "A MUMMY in bandages is the first patient carried into Lanesborough House, the new St George's Hospital."}
+  - {year: 1739, peg: map, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Building of Westminster Bridge begins",
+     place: "Westminster",
+     scene: "Labelye spreads a MAP on the Thames mud and sinks the first caisson for Westminster Bridge."}
+  - {year: 1740, peg: horse, confidence: high, source: "WP mirror: Royal London Hospital",
+     event: "The London Infirmary opens in a house in Moorfields",
+     place: "Moorfields",
+     scene: "A HORSE cart brings the first patients to a Moorfields house: the London Infirmary opens."}
+  - {year: 1742, peg: rhino, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Chelsea Water Works puts a Newcomen steam engine to work at Pimlico",
+     place: "Pimlico",
+     scene: "A RHINO-strong Newcomen steam engine starts to pump Thames water for Chelsea Water Works at Pimlico."}
+  - {year: 1745, peg: railway, confidence: high, source: "WP mirror: Middlesex Hospital",
+     event: "The Middlesex Infirmary opens in Windmill Street",
+     place: "Windmill Street",
+     scene: "A toy RAILWAY carries the sick into the Middlesex Infirmary, new in Windmill Street, Fitzrovia."}
+  - {year: 1746, peg: roach, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Rocque publishes his large map of London",
+     scene: "A ROACH crawls over every street and alley of John Rocque's huge new map of London."}
+  - {year: 1747, peg: rock, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Lock Hospital opens, the first clinic for venereal disease",
+     place: "Hyde Park Corner",
+     scene: "A ROCK seals the door of the Lock Hospital at Hyde Park Corner, the first clinic for venereal disease."}
+  - {year: 1750, peg: lasso, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Westminster Bridge opens, the second bridge in central London",
+     place: "Westminster",
+     scene: "A LASSO pulls the last stone into place, and Westminster Bridge opens, the second bridge in central London."}
+  - {year: 1751, peg: wallet, confidence: high, source: "WP mirror: Timeline of London",
+     event: "St Luke's Hospital for Lunatics is founded",
+     place: "Moorfields",
+     scene: "Founders empty a WALLET to start St Luke's Hospital for Lunatics in Moorfields, a rival to Bethlem."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first Hampton Court Bridge opens",
+     place: "Hampton Court",
+     scene: "A LLAMA is the first to cross the new wooden bridge over the Thames to Hampton Court."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "WP mirror: Royal Society of Arts",
+     event: "William Shipley founds the Society of Arts",
+     place: "Covent Garden",
+     scene: "William Shipley and a LAWYER meet in a Covent Garden coffee house and found the Society of Arts."}
+  - {year: 1756, peg: leech, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first section of the New Road, a bypass from Paddington to Islington, opens",
+     place: "Marylebone",
+     scene: "A LEECH sucks the cattle herds off Oxford Street onto the New Road, the bypass from Paddington to Islington."}
+  - {year: 1759, peg: elbow, confidence: high, source: "Search: Kew history (Princess Augusta)",
+     event: "Princess Augusta founds the botanic garden at Kew",
+     place: "Kew",
+     scene: "Princess Augusta digs her ELBOW into the Kew soil and plants the first beds of the botanic garden."}
+  - {year: 1759, peg: elbow, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first Kew Bridge opens",
+     place: "Kew",
+     scene: "An ELBOW-shaped timber bridge reaches across the Thames: the first Kew Bridge opens to Brentford."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The last houses are cleared from London Bridge",
+     place: "London Bridge",
+     scene: "A CHAIN gang pulls the last houses off London Bridge, and the roadway lies open to the sky."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Mylne's Blackfriars Bridge opens",
+     place: "Blackfriars",
+     scene: "A SHIP sails under Mylne's new Blackfriars Bridge, the third bridge in central London."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Hackney Cut opens, a straight canal past the bends of the Lea",
+     place: "Hackney",
+     scene: "A barge SHIP takes the Hackney Cut, a straight canal that skips the bends of the River Lea."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Limehouse Cut opens from the Lea to the Thames",
+     place: "Limehouse",
+     scene: "A GOOSE leads the barges down the new Limehouse Cut from the Lea to the Thames."}
+  - {year: 1771, peg: cat, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first wooden Battersea Bridge opens to people on foot",
+     place: "Battersea",
+     scene: "A CAT walks across the new wooden Battersea Bridge to Chelsea before any cart may use it."}
+  - {year: 1777, peg: cake, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Richmond Bridge opens",
+     place: "Richmond",
+     scene: "A stone bridge iced like a CAKE opens at Richmond, its five arches spanning the Thames."}
+  - {year: 1780, peg: vase, confidence: high, source: "WP mirror: Royal Society; Somerset House",
+     event: "The Royal Society moves into Somerset House",
+     place: "Somerset House",
+     scene: "Royal Society fellows carry a VASE of specimens up the Strand into their new rooms at Somerset House."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "William Roy measures a survey baseline on Hounslow Heath",
+     place: "Hounslow Heath",
+     scene: "A FAIRY lays glass rods end to end across Hounslow Heath for William Roy: the baseline of a national survey."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Lunardi makes the first hydrogen balloon flight in Britain",
+     place: "Artillery Ground",
+     scene: "Lunardi's balloon lifts a FAIRY, a cat and a dog from the Artillery Ground in front of a huge crowd."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP mirror: Linnean Society",
+     event: "The Linnean Society is founded",
+     place: "Marlborough Coffee House",
+     scene: "A FIFE plays at the Marlborough Coffee House as James Edward Smith founds the Linnean Society."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first stone Kew Bridge opens",
+     place: "Kew",
+     scene: "A watch FOB swings over the parapet of the new stone Kew Bridge, opened in place of the timber one."}
+  - {year: 1800, peg: sauce, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Company of Surgeons becomes the Royal College of Surgeons",
+     place: "Lincoln's Inn Fields",
+     scene: "Surgeons seal their new royal charter with SAUCE from a gravy boat at Lincoln's Inn Fields: the Royal College of Surgeons."}
+  - {year: 1801, peg: soda, confidence: high, source: "Search: Canal Museum; Paddington Arm (10 July)",
+     event: "The Paddington Arm of the Grand Junction Canal opens to its basin",
+     place: "Paddington Basin",
+     scene: "Twenty thousand people drink SODA at Paddington as the Grand Junction Canal's arm opens to the basin."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Garnerin flies a balloon from Lord's to Chingford",
+     place: "Lord's, Marylebone",
+     scene: "Garnerin's balloon climbs toward the SUN from Lord's ground and comes down at Chingford."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Fever Hospital is founded",
+     scene: "Fever patients cool off out of the SUN in the new London House of Recovery, the fever hospital."}
+  - {year: 1803, peg: sumo, confidence: medium, source: "WP mirror: Timeline of London (1800s) (after April)",
+     event: "Trevithick drives his London Steam Carriage through the streets",
+     place: "Oxford Street",
+     scene: "A SUMO wrestler rides Trevithick's steam carriage down Oxford Street, the first steam road car in London."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Horticultural Society of London is founded",
+     scene: "Gardeners spread SEWER mud on a bed as John Wedgwood and friends found the Horticultural Society."}
+  - {year: 1805, peg: seal, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Dispensary for the eye and ear, later Moorfields Eye Hospital, opens",
+     place: "Moorfields",
+     scene: "A SEAL with a bandaged eye waits at the new eye and ear dispensary in Moorfields."}
+  - {year: 1805, peg: seal, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The City Canal opens across the Isle of Dogs",
+     place: "Isle of Dogs",
+     scene: "A SEAL swims the new City Canal straight across the Isle of Dogs and skips the river loop."}
+  - {year: 1807, peg: ski, confidence: high, source: "WP mirror: Geological Society (13 Nov)",
+     event: "The Geological Society is founded at the Freemasons' Tavern",
+     place: "Great Queen Street",
+     scene: "Founders SKI down a heap of rock samples at the Freemasons' Tavern and found the Geological Society."}
+  - {year: 1808, peg: sofa, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Trevithick shows his locomotive Catch Me Who Can on a circular track",
+     place: "Euston Square",
+     scene: "Trevithick's Catch Me Who Can pulls a SOFA of paying riders round a fenced circle of track near Euston."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Croydon Canal opens",
+     place: "Croydon",
+     scene: "Barges slide on SOAP suds along the new Croydon Canal from the Grand Surrey to Croydon."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP mirror: Gas Light and Coke Co (30 April)",
+     event: "The Gas Light and Coke Company gets its royal charter",
+     place: "Westminster",
+     scene: "A TONGUE of flame licks from a Westminster pipe as the Gas Light and Coke Company gets its royal charter."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "A half-built road tunnel under Highgate Hill collapses",
+     place: "Archway",
+     scene: "Highgate Hill sticks out its TONGUE of clay: the half-built Archway road tunnel caves in."}
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Archway Road cutting opens under Highgate Hill",
+     place: "Archway",
+     scene: "Diggers open a TOMB-deep cutting through Highgate Hill, and the Archway Road opens beneath a new bridge."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Permanent gas street lamps are lit in St Margaret's, Westminster",
+     place: "Westminster",
+     scene: "A lamplighter climbs a TOWER ladder and lights St Margaret's, Westminster: the first permanent gas street lamps."}
+  - {year: 1815, peg: doll, confidence: high, source: "Search: Wellcome; Museum of the Mind (Aug)",
+     event: "Bethlem Hospital moves to St George's Fields",
+     place: "St George's Fields",
+     scene: "Patients each hold a DOLL in Hackney coaches as Bethlem moves to its new building at St George's Fields."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Vauxhall Bridge opens, the first iron bridge over the Thames",
+     place: "Vauxhall",
+     scene: "Iron arches curved like DISH rims carry the new Vauxhall Bridge, the first iron bridge over the Thames."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Regent's Canal opens from Paddington to Camden",
+     place: "Camden",
+     scene: "A silver DISH rides a barge from Paddington to Camden on the first open length of the Regent's Canal."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Rennie's Waterloo Bridge opens",
+     place: "Waterloo Bridge",
+     scene: "A DOG runs across Rennie's granite Waterloo Bridge, opened on the second anniversary of the battle."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP mirror: Charing Cross Hospital",
+     event: "Dr Golding opens the West London Infirmary, later Charing Cross Hospital",
+     place: "Suffolk Street",
+     scene: "Dr Golding lets a DOVE fly from Suffolk Street and opens the West London Infirmary, later Charing Cross Hospital."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Rennie's iron Southwark Bridge opens as a toll bridge",
+     place: "Southwark",
+     scene: "A TUBA booms under the three iron arches of Rennie's new toll bridge at Southwark."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Regent's Canal opens from Camden to Limehouse",
+     place: "Limehouse Basin",
+     scene: "A barge's NOSE pushes out of the Islington tunnel, and the Regent's Canal reaches Limehouse."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Astronomical Society of London is founded",
+     scene: "Babbage points his NOSE at the stars and founds the Astronomical Society of London with his friends."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Thames Tunnel (Feb)",
+     event: "Brunel begins the Thames Tunnel at Rotherhithe",
+     place: "Rotherhithe",
+     scene: "Brunel hammers a NAIL into his tunnelling shield at Rotherhithe and begins the Thames Tunnel."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The foundation stone of Rennie's new London Bridge is laid",
+     place: "London Bridge",
+     scene: "A silver NAIL fixes the foundation stone of the new London Bridge, upstream of the old one."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Zoological Society of London is founded",
+     scene: "Raffles feeds a NACHO to a tapir and founds the Zoological Society of London."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Rennie's bridge across the Serpentine opens",
+     place: "Hyde Park",
+     scene: "Ducks fight over a NACHO under Rennie's new stone bridge across the Serpentine."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The first Hammersmith Bridge opens, a suspension bridge",
+     place: "Hammersmith",
+     scene: "Tierney Clark draws Hammersmith Bridge in INK: chains hang from towers, the first suspension bridge on the Thames."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: Thames Tunnel (12 Jan)",
+     event: "The Thames Tunnel floods, and work stops",
+     place: "Rotherhithe",
+     scene: "Water slices in like a KNIFE; the Thames Tunnel floods, young Brunel nearly drowns, and work stops."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Royal Free Hospital opens",
+     place: "Hatton Garden",
+     scene: "A surgeon's KNIFE is free to all at Marsden's new hospital, which needs no letter of recommendation."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Zoological Society opens its gardens in Regent's Park",
+     place: "Regent's Park",
+     scene: "A KNIFE cuts the ribbon in Regent's Park, and the zoo opens with animals from the Tower menagerie."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The stone Kingston Bridge opens",
+     place: "Kingston",
+     scene: "A KNIFE cuts the toll ribbon on the new stone bridge at Kingston upon Thames."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Chelsea Waterworks",
+     event: "James Simpson's slow sand filter cleans Chelsea's water",
+     place: "Chelsea",
+     scene: "James Simpson turns a KNOB at Chelsea, and Thames water drains clean through his slow sand filter."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Hertford Union Canal opens from the Lea to the Regent's Canal",
+     place: "Victoria Park",
+     scene: "A MOUSE steers a barge down the new Hertford Union Canal from the Lea to the Regent's Canal."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "William IV opens Rennie's new London Bridge",
+     place: "London Bridge",
+     scene: "A MOTH flies from the old bridge to the new one as William IV opens Rennie's London Bridge."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Middlesex County Asylum opens at Hanwell",
+     place: "Hanwell",
+     scene: "A MOTH beats on the window of the Middlesex County Asylum, opened at Hanwell for the county's poor insane."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: University College Hospital",
+     event: "The North London Hospital, later University College Hospital, opens",
+     place: "Gower Street",
+     scene: "A HAMMER fixes the nameplate on the North London Hospital, opened by London University in Gower Street."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London and Greenwich Railway opens from Spa Road to Deptford, London's first railway",
+     place: "Bermondsey",
+     scene: "A MATCH lights the boiler, and trains run on brick arches from Spa Road to Deptford: London's first railway."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "London Bridge station opens for the Greenwich trains",
+     place: "London Bridge",
+     scene: "A MATCH flares on the platform at London Bridge, the first terminus in London, as Greenwich trains arrive."}
+  # religion
+  - {year: 1676, peg: cage, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first Greek Orthodox church in England is consecrated in Hog Lane",
+     place: "Soho",
+     scene: "A golden CAGE of icons is set up in Hog Lane, Soho: the first Greek Orthodox church in England."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Wren churches list",
+     event: "Wren's domed St Stephen Walbrook is finished",
+     place: "Walbrook",
+     scene: "A COWBOY spins his rope round sixteen columns, and Wren's dome settles onto St Stephen Walbrook."}
+  - {year: 1682, peg: oven, confidence: high, source: "WP mirror: Wren churches list",
+     event: "Wren's St Clement Danes is finished on its island in the Strand",
+     place: "Strand",
+     scene: "Wren pulls St Clement Danes out of an OVEN and sets it on its island in the middle of the Strand."}
+  - {year: 1683, peg: foam, confidence: high, source: "WP mirror: Wren churches list",
+     event: "Wren's St Mary-le-Bow is finished, with its tall steeple over Cheapside",
+     place: "Cheapside",
+     scene: "Bow bells ring out FOAM from Wren's finished steeple over Cheapside."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP mirror: Wren churches list",
+     event: "Wren's St James's Church, Piccadilly, is finished for the new West End",
+     place: "Piccadilly",
+     scene: "A FAIRY carves the font as Wren finishes St James's Church on Piccadilly for the new West End."}
+  - {year: 1686, peg: fish, confidence: medium, source: "WP mirror: Wren churches list (timeline 1687)",
+     event: "Wren's St Lawrence Jewry, the Corporation's church, is finished",
+     place: "Gresham Street",
+     scene: "Aldermen carry a gilded FISH from Guildhall into Wren's finished St Lawrence Jewry next door."}
+  - {year: 1687, peg: fox, confidence: disputed, source: "WP mirror: Wren churches list 1687; timeline 1676",
+     event: "Wren's St Magnus the Martyr at the foot of London Bridge is finished",
+     place: "Lower Thames Street",
+     scene: "A FOX runs off London Bridge and hides in Wren's finished St Magnus the Martyr at its foot."}
+  - {year: 1690, peg: bees, confidence: medium, source: "WP mirror: Timeline of London (approximate date)",
+     event: "The Ashkenazi community builds the Great Synagogue in Duke's Place (approximate)",
+     place: "Duke's Place, Aldgate",
+     scene: "BEES swarm into Duke's Place by Aldgate as the Ashkenazi community builds its Great Synagogue."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "WP mirror: Fifty New Churches (Act 1710, Commission 1711)",
+     event: "The Commission for Building Fifty New Churches is set up for the suburbs",
+     scene: "Commissioners TATTOO a cross on fifty spots of London's new suburbs, one for each church to be built."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The chapel of St Anne on Kew Green is consecrated",
+     place: "Kew Green",
+     scene: "A bell TOWER rises on Kew Green for St Anne's chapel, consecrated on land from Queen Anne."}
+  - {year: 1718, peg: dove, confidence: medium, source: "WP mirror: Fifty New Churches (1712-18)",
+     event: "Hawksmoor's rebuilt St Alfege, Greenwich, is finished",
+     place: "Greenwich",
+     scene: "A DOVE lands on Hawksmoor's rebuilt St Alfege at Greenwich, the first finished of the new churches."}
+  - {year: 1723, peg: gnome, confidence: medium, source: "WP mirror: Fifty New Churches (1714-23)",
+     event: "Gibbs's St Mary le Strand is finished",
+     place: "Strand",
+     scene: "A GNOME polishes Gibbs's St Mary le Strand, a small Baroque church on an island in the Strand."}
+  - {year: 1724, peg: hanger, confidence: medium, source: "WP mirror: Fifty New Churches (1716-24)",
+     event: "Hawksmoor's rebuilt St Mary Woolnoth is finished",
+     place: "Lombard Street",
+     scene: "Hawksmoor hangs his broad twin-turreted tower on a HANGER above Lombard Street: St Mary Woolnoth."}
+  - {year: 1725, peg: nail, confidence: high, source: "WP mirror: Timeline of London",
+     event: "St George's, Hanover Square, the church of new Mayfair, is finished",
+     place: "Hanover Square",
+     scene: "A NAIL fixes the last column of the portico of St George's, Hanover Square, the church of fashionable Mayfair."}
+  - {year: 1726, peg: nacho, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Gibbs's new St Martin-in-the-Fields is dedicated",
+     place: "Trafalgar Square",
+     scene: "A NACHO-shaped spire rises over the temple front of Gibbs's new St Martin-in-the-Fields."}
+  - {year: 1728, peg: knife, confidence: medium, source: "WP mirror: Fifty New Churches (1713-28)",
+     event: "Archer's St John's, Smith Square, with four corner towers, is finished",
+     place: "Smith Square",
+     scene: "Archer carves St John's, Smith Square, with a KNIFE into an upturned footstool with a tower in each corner."}
+  - {year: 1729, peg: knob, confidence: medium, source: "WP mirror: Fifty New Churches (1714-29)",
+     event: "Hawksmoor's Christ Church, Spitalfields, is finished",
+     place: "Spitalfields",
+     scene: "Hawksmoor screws a KNOB onto the spire of Christ Church, high over the Huguenot weavers of Spitalfields."}
+  - {year: 1729, peg: knob, confidence: medium, source: "WP mirror: Fifty New Churches (1714-29)",
+     event: "Hawksmoor's St George in the East is finished",
+     place: "Wapping",
+     scene: "A pepper-pot KNOB tops each turret of Hawksmoor's St George in the East above the Wapping docks."}
+  - {year: 1730, peg: mouse, confidence: medium, source: "WP mirror: Fifty New Churches (1714-30)",
+     event: "Hawksmoor's St Anne's, Limehouse, is finished",
+     place: "Limehouse",
+     scene: "A ship's MOUSE climbs Hawksmoor's tower of St Anne's, Limehouse, to read the church clock above the river."}
+  - {year: 1730, peg: mouse, confidence: medium, source: "WP mirror: Fifty New Churches (1713-30)",
+     event: "Archer's St Paul's, Deptford, is finished",
+     place: "Deptford",
+     scene: "A MOUSE runs round the half-round portico of Archer's St Paul's, Deptford, near the naval dockyard."}
+  - {year: 1731, peg: moth, confidence: medium, source: "WP mirror: Fifty New Churches (1716-31)",
+     event: "Hawksmoor's St George's, Bloomsbury, is finished",
+     place: "Bloomsbury",
+     scene: "A MOTH circles the statue of George I on top of Hawksmoor's stepped steeple at St George's, Bloomsbury."}
+  - {year: 1733, peg: mummy, confidence: medium, source: "WP mirror: Fifty New Churches (1727-33)",
+     event: "St Luke's, Old Street, with its obelisk spire, is finished",
+     place: "Old Street",
+     scene: "A MUMMY stands on the obelisk spire of St Luke's, Old Street, by Hawksmoor and James."}
+  - {year: 1745, peg: railway, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Hawksmoor's west towers of Westminster Abbey are finished",
+     place: "Westminster Abbey",
+     scene: "A RAILWAY of scaffold lifts the last stones of Hawksmoor's two west towers onto Westminster Abbey."}
+  - {year: 1778, peg: cave, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Wesley's Chapel opens on City Road",
+     place: "City Road",
+     scene: "John Wesley opens his chapel on City Road, a CAVE of plain worship facing Bunhill Fields."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first St James's, Spanish Place, a Catholic chapel, is built",
+     place: "Marylebone",
+     scene: "A Spanish BOOT kicks open the door of St James's, Spanish Place, the Catholic chapel of the Spanish embassy."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: Timeline of London",
+     event: "St Patrick's, Soho Square, is consecrated for the Irish poor of St Giles",
+     place: "Soho Square",
+     scene: "Irish Catholics push a PIANO into St Patrick's, Soho Square, consecrated for the poor of St Giles."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Hardwick's new St Marylebone Parish Church is consecrated",
+     place: "Marylebone Road",
+     scene: "A DOG sits on the portico steps of Hardwick's new St Marylebone Parish Church as the bishop consecrates it."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP mirror: St Pancras New Church (7 May)",
+     event: "The Inwoods' Greek Revival St Pancras New Church is consecrated",
+     place: "Euston Road",
+     scene: "A NUN poses as a caryatid on the Inwoods' St Pancras New Church, copied from the Erechtheion in Athens."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP mirror: All Souls, Langham Place",
+     event: "Nash's All Souls, Langham Place, is consecrated",
+     place: "Langham Place",
+     scene: "Nash hangs a needle spire like a HANGER hook over All Souls, Langham Place, at the bend of Regent Street."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Exeter Hall opens on the Strand for religious and charity meetings",
+     place: "Strand",
+     scene: "A MOTH flies into the crowded first meeting at Exeter Hall, the new evangelical hall on the Strand."}
+  # arts
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Duke's Theatre opens at Dorset Garden",
+     place: "Dorset Garden",
+     scene: "A CAT walks the riverside stage of the new Duke's Theatre at Dorset Garden, opened by the Thames."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Banister starts the first public paid concerts in Europe",
+     place: "Whitefriars",
+     scene: "Each guest pays a COIN at the door of John Banister's room in Whitefriars: the first paid public concerts."}
+  - {year: 1674, peg: car, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The rebuilt Theatre Royal, Drury Lane, opens",
+     place: "Drury Lane",
+     scene: "A CAR full of actors rolls into the rebuilt Theatre Royal, Drury Lane, after the fire."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Le Sueur's bronze Charles I is set up again at Charing Cross",
+     place: "Charing Cross",
+     scene: "An EAGLE lands on Le Sueur's bronze Charles I, set back up on his horse at Charing Cross."}
+  - {year: 1677, peg: cake, confidence: high, source: "WP mirror: Monument (1671-77)",
+     event: "The Monument to the Great Fire is finished near Pudding Lane",
+     place: "Fish Street Hill",
+     scene: "A golden flame of copper tops the Monument near Pudding Lane like a candle on a very tall CAKE."}
+  - {year: 1683, peg: foam, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Richard Sadler opens a music house at his spring: Sadler's Wells",
+     place: "Clerkenwell",
+     scene: "Richard Sadler finds a spring of FOAM-topped water at Clerkenwell and opens a music house beside it."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "William and Mary buy Nottingham House, which Wren makes into Kensington Palace",
+     place: "Kensington",
+     scene: "William III pays with his watch FOB for Nottingham House, and Wren turns it into Kensington Palace."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Wren begins to rebuild Hampton Court Palace for William and Mary",
+     place: "Hampton Court",
+     scene: "Wren checks his watch FOB as workmen pull down Tudor rooms at Hampton Court for new Baroque wings."}
+  - {year: 1702, peg: sun, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Daily Courant, the first daily newspaper, is published",
+     place: "Fleet Street",
+     scene: "The SUN rises over Fleet Street on the first issue of the Daily Courant, a newspaper every day."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Buckingham House is built at the end of St James's Park",
+     place: "St James's Park",
+     scene: "A SUMO wrestler squats on the steps of Buckingham House, the Duke's new mansion at the end of the Mall."}
+  - {year: 1705, peg: seal, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Vanbrugh's Queen's Theatre opens in the Haymarket",
+     place: "Haymarket",
+     scene: "A SEAL balances a ball on the stage of Vanbrugh's new Queen's Theatre in the Haymarket."}
+  - {year: 1719, peg: tuba, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Nobles found the Royal Academy of Music, an opera company for Handel",
+     place: "Haymarket",
+     scene: "A TUBA blows the overture as nobles found the Royal Academy of Music to stage Handel's operas in the Haymarket."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Little Theatre in the Haymarket opens",
+     place: "Haymarket",
+     scene: "A clown's red NOSE opens the Little Theatre in the Haymarket, across the road from the opera house."}
+  - {year: 1726, peg: nacho, confidence: medium, source: "WP mirror: Painted Hall (1707-26)",
+     event: "Thornhill finishes the Painted Hall at Greenwich",
+     place: "Greenwich",
+     scene: "Thornhill flicks his last NACHO crumb of paint onto the ceiling of the Painted Hall at Greenwich."}
+  - {year: 1729, peg: knob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Marble Hill House, Henrietta Howard's Palladian villa, is finished",
+     place: "Twickenham",
+     scene: "Henrietta Howard turns the brass KNOB of her new Palladian villa, Marble Hill House at Twickenham."}
+  - {year: 1731, peg: moth, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Gentleman's Magazine is first published",
+     place: "St John's Gate, Clerkenwell",
+     scene: "A MOTH eats the corner of the first Gentleman's Magazine, printed at St John's Gate in Clerkenwell."}
+  - {year: 1738, peg: movie, confidence: high, source: "Search: V&A; Fitzwilliam (April/May)",
+     event: "Roubiliac's marble statue of Handel is set up in Vauxhall Gardens",
+     place: "Vauxhall Gardens",
+     scene: "Vauxhall visitors watch Roubiliac's marble Handel strum his lyre like the star of a MOVIE."}
+  - {year: 1743, peg: ram, confidence: high, source: "WP mirror: Messiah (23 March)",
+     event: "Handel's Messiah has its first London performance",
+     place: "Covent Garden",
+     scene: "A RAM's horn sounds the first trumpet of Messiah in London, at the Covent Garden theatre."}
+  - {year: 1745, peg: railway, confidence: high, source: "WP mirror: Timeline of London",
+     event: "God Save the King is first sung in public at Drury Lane",
+     place: "Drury Lane",
+     scene: "The whole Drury Lane audience stands up on a RAILWAY platform of benches and sings God Save the King."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Handel gives a benefit concert for the Foundling Hospital",
+     place: "Foundling Hospital",
+     scene: "Handel pulls a bell ROPE in the Foundling Hospital and conducts a benefit concert for its children."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP mirror: British Museum (7 June)",
+     event: "The British Museum Act buys Sir Hans Sloane's collection",
+     place: "Westminster",
+     scene: "A LLAMA carries Sir Hans Sloane's collection into Parliament, and the British Museum Act is passed."}
+  - {year: 1753, peg: llama, confidence: medium, source: "WP mirror: Strawberry Hill (stage 1749-53)",
+     event: "The first stage of Walpole's Gothic Strawberry Hill is finished",
+     place: "Twickenham",
+     scene: "A LLAMA grazes beside Horace Walpole's little Gothic castle at Strawberry Hill, its first stage now finished."}
+  - {year: 1757, peg: log, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Lord Mayor's State Coach is commissioned",
+     place: "Guildhall",
+     scene: "Carvers turn a gilded LOG into the Lord Mayor's State Coach, ordered for the Lord Mayor's Show."}
+  - {year: 1759, peg: elbow, confidence: high, source: "WP mirror: British Museum (15 Jan)",
+     event: "The British Museum opens at Montagu House",
+     place: "Bloomsbury",
+     scene: "Each visitor rubs ELBOW to ELBOW with strangers in Montagu House, Bloomsbury, as the British Museum opens its doors."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP mirror: Royal Society of Arts",
+     event: "The first exhibition of living British artists, at the Society of Arts",
+     place: "Strand",
+     scene: "Artists hang their canvases round a giant CHEESE in the Society of Arts' room: the first show of living British art."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP mirror: Osterley Park",
+     event: "Robert Adam begins to remodel Osterley House",
+     place: "Osterley",
+     scene: "Robert Adam lands in a JET at Osterley and begins to remodel the banker Child's house."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Syon House",
+     event: "Robert Adam begins the new interiors of Syon House",
+     place: "Syon Park",
+     scene: "Adam hangs a gilt CHAIN across the great hall of Syon House as his new interiors begin."}
+  - {year: 1762, peg: chain, confidence: medium, source: "Search: Kew Pagoda (1761 or 1762)",
+     event: "Chambers's Great Pagoda at Kew is finished",
+     place: "Kew",
+     scene: "Dragons on a CHAIN climb all ten storeys of Chambers's Great Pagoda at Kew."}
+  - {year: 1765, peg: jelly, confidence: medium, source: "Search: Mozart Symphony No. 1 (21 Feb)",
+     event: "Mozart's first symphony is first played, at the Little Theatre in the Haymarket",
+     place: "Haymarket",
+     scene: "The boy Mozart shakes like JELLY as his first symphony is played at the Little Theatre in the Haymarket."}
+  - {year: 1768, peg: chef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Philip Astley stages the first modern circus",
+     place: "Lambeth",
+     scene: "Philip Astley gallops round a ring in Lambeth while a CHEF juggles plates on horseback: the first circus."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Adam brothers finish the Adelphi terrace over the riverside",
+     place: "Strand",
+     scene: "The Adam brothers bet every COIN they own on the Adelphi, a terrace on vaults over the Thames shore."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP mirror: Pantheon (27 Jan)",
+     event: "Wyatt's domed Pantheon opens on Oxford Street",
+     place: "Oxford Street",
+     scene: "Society pays a gold COIN to enter Wyatt's domed Pantheon on Oxford Street on its first night."}
+  - {year: 1775, peg: eagle, confidence: medium, source: "Search: first Bach-Abel concert 1 Feb (WP 1774)",
+     event: "The Hanover Square Rooms open with a Bach-Abel concert",
+     place: "Hanover Square",
+     scene: "An EAGLE perches on the music stand as Bach and Abel play the first concert in the Hanover Square Rooms."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Robert Adam finishes remodelling Kenwood House",
+     place: "Hampstead",
+     scene: "A COWBOY rests his boots in Adam's new library at Kenwood House on Hampstead Heath."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Royal Circus, later the Surrey Theatre, opens",
+     place: "St George's Circus",
+     scene: "Horses run round an OVEN-hot ring at the new Royal Circus beside St George's Circus, Southwark."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Severndroog Castle, a memorial tower, is begun on Shooter's Hill",
+     place: "Shooter's Hill",
+     scene: "A FAIRY starts a three-sided tower on Shooter's Hill, Severndroog Castle, for a sea victory in India."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Boydell's Shakespeare Gallery opens in Pall Mall",
+     place: "Pall Mall",
+     scene: "Boydell pays with his gold FOB for scenes from Shakespeare and opens his gallery in Pall Mall."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Soane begins to rebuild the Bank of England",
+     place: "Threadneedle Street",
+     scene: "John Soane kicks his BOOT against the old walls and begins to rebuild the Bank of England in Threadneedle Street."}
+  - {year: 1793, peg: palm, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Robert Barker opens his panorama rotunda off Leicester Square",
+     place: "Leicester Square",
+     scene: "Robert Barker paints a PALM-lined view all round a rotunda off Leicester Square: the first built panorama."}
+  - {year: 1794, peg: bear, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Holland's huge rebuilt Theatre Royal, Drury Lane, opens",
+     place: "Drury Lane",
+     scene: "A BEAR roars on the vast new stage of Holland's rebuilt Theatre Royal, Drury Lane."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Grimaldi first plays his white-faced clown Joey at Sadler's Wells",
+     place: "Sadler's Wells",
+     scene: "Grimaldi paints a red SUN on each white cheek at Sadler's Wells: Joey the clown is born."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Marie Tussaud first shows her wax figures in London",
+     place: "Lyceum, Strand",
+     scene: "Marie Tussaud unpacks wax heads of the guillotined at the Lyceum and keeps them out of the SUN."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP mirror: Rosetta Stone; British Museum",
+     event: "The Rosetta Stone goes on show at the British Museum",
+     place: "Bloomsbury",
+     scene: "Soldiers drag the Rosetta Stone, taken from the French, into the SUN of a British Museum courtyard."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Soane finishes Pitzhanger Manor, his country villa at Ealing",
+     place: "Ealing",
+     scene: "Soane finishes Pitzhanger Manor at Ealing and hides a SEWER under his own country villa."}
+  - {year: 1805, peg: seal, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The British Institution is founded to show British art",
+     place: "Pall Mall",
+     scene: "Patrons press their SEAL on the British Institution, founded to show British art in the old Boydell gallery."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Wyatt's rebuilt Theatre Royal, Drury Lane, opens",
+     place: "Drury Lane",
+     scene: "Byron's opening address rolls off an actor's TONGUE as Wyatt's new Drury Lane opens."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Bullock's Egyptian Hall museum is finished on Piccadilly",
+     place: "Piccadilly",
+     scene: "A sphinx sticks out its TONGUE from the front of Bullock's Egyptian Hall, the new museum on Piccadilly."}
+  - {year: 1813, peg: tomb, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Philharmonic Society is formed and gives its first concert",
+     place: "Argyll Rooms",
+     scene: "A TOMB-sized double bass leads the first concert of the new Philharmonic Society."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Edmund Kean (26 Jan)",
+     event: "Edmund Kean's first Shylock at Drury Lane makes his name",
+     place: "Drury Lane",
+     scene: "Edmund Kean's Shylock stands like a TOWER over the Drury Lane stage, and the audience rises."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Elgin Marbles (June)",
+     event: "Parliament buys the Elgin Marbles for the British Museum",
+     place: "Bloomsbury",
+     scene: "Parliament hands the Elgin Marbles to the British Museum on a silver DISH."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Soane's Dulwich Picture Gallery opens to the public",
+     place: "Dulwich",
+     scene: "A DOG sniffs round the top-lit rooms of Soane's Dulwich Picture Gallery, the first built public art gallery in England."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Royal Coburg Theatre, later the Old Vic, opens",
+     place: "Waterloo Road",
+     scene: "A DOVE flies over the stage as the Royal Coburg Theatre, later the Old Vic, opens near Waterloo Bridge."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Nash's new Haymarket Theatre opens",
+     place: "Haymarket",
+     scene: "An ANT carries the six columns of Nash's portico to the new Haymarket Theatre."}
+  - {year: 1823, peg: gnome, confidence: high, source: "WP mirror: British Museum",
+     event: "Smirke begins the new British Museum with the King's Library wing",
+     place: "Bloomsbury",
+     scene: "A GNOME lays the first stone of Smirke's King's Library wing, and the new British Museum begins."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The National Gallery opens in Angerstein's house on Pall Mall",
+     place: "Pall Mall",
+     scene: "A picture HANGER hooks Angerstein's paintings to the walls of his Pall Mall house: the National Gallery opens."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Beethoven's Ninth Symphony has its British premiere",
+     place: "Argyll Rooms",
+     scene: "The Philharmonic chorus drives home Beethoven's Ninth like a NAIL at its first British performance."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Nash begins to rebuild Buckingham House as a palace",
+     place: "Buckingham Palace",
+     scene: "Nash drives a NAIL into Buckingham House and begins to rebuild it as a palace for George IV."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Oberon (12 April)",
+     event: "Weber's Oberon has its premiere at Covent Garden",
+     place: "Covent Garden",
+     scene: "An elf throws a magic NACHO across the Covent Garden stage at the premiere of Weber's Oberon."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Wellington Arch (1826-30)",
+     event: "Decimus Burton begins the arch at Hyde Park Corner",
+     place: "Hyde Park Corner",
+     scene: "Decimus Burton stacks NACHO-shaped stones at Hyde Park Corner and begins the Wellington Arch."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Marble Arch",
+     event: "Nash begins the Marble Arch in front of Buckingham Palace",
+     place: "Buckingham Palace",
+     scene: "Nash draws in INK a marble triumphal arch for the palace forecourt, and the masons begin."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Nash finishes the new St James's Park with its curved lake",
+     place: "St James's Park",
+     scene: "Nash pours a pot of INK across St James's Park, and the straight canal becomes a curving lake."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Beazley's new Lyceum Theatre opens",
+     place: "Wellington Street",
+     scene: "A HAMMER knocks the last board into Beazley's new Lyceum Theatre on Wellington Street."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Duke of York Column (April)",
+     event: "The statue of the Duke of York is raised onto his column",
+     place: "Waterloo Place",
+     scene: "A HAMMER fixes the bronze Duke of York on top of his column above Waterloo Place."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Institute of British Architects is formed",
+     scene: "Architects bang a HAMMER on the table and form the Institute of British Architects in London."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Madame Tussaud sets up her wax museum for good in Baker Street",
+     place: "Baker Street",
+     scene: "Madame Tussaud stops her travelling wax MILL and sets up her figures for good at the Baker Street Bazaar."}
+  # economy
+  - {year: 1669, peg: ship, confidence: high, source: "WP mirror: Royal Exchange",
+     event: "Jarman's second Royal Exchange opens",
+     place: "Cornhill",
+     scene: "Merchants walk round Jarman's new Royal Exchange and trade news of every SHIP on the seas."}
+  - {year: 1669, peg: ship, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Quaker goldsmiths Freame and Gould form a bank, a root of Barclays",
+     place: "City of London",
+     scene: "Quaker goldsmiths Freame and Gould count a SHIP's cargo of silver: their bank is a root of Barclays."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Covent Garden",
+     event: "The Earl of Bedford gets a charter for the Covent Garden market",
+     place: "Covent Garden",
+     scene: "A GOOSE squawks among the cabbages as the Earl of Bedford gets his charter for the Covent Garden market."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Board of Ordnance takes over the Warren at Woolwich, later the Royal Arsenal",
+     place: "Woolwich",
+     scene: "A CAT guards the gunpowder barrels at the Warren in Woolwich, now taken over by the Board of Ordnance."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Richard Hoare becomes a partner in the goldsmith's bank, later C. Hoare and Co",
+     place: "Cheapside",
+     scene: "Richard Hoare weighs a gold COIN under the sign of the golden bottle and becomes a partner in the bank."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Dwight sets up the Fulham Pottery",
+     place: "Fulham",
+     scene: "John Dwight fires stoneware as hard as a COIN at his new Fulham Pottery."}
+  - {year: 1676, peg: cage, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Robert Davis starts the hatter's that becomes James Lock and Co",
+     scene: "Robert Davis sells his first hat from a CAGE of hatboxes: the start of the hatters Lock and Co."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Joseph Truman acquires the Black Eagle Brewery",
+     place: "Brick Lane",
+     scene: "A COWBOY rolls barrels into the Black Eagle Brewery in Brick Lane, now Joseph Truman's."}
+  - {year: 1680, peg: vase, confidence: high, source: "WP mirror: Timeline of London",
+     event: "William Dockwra's London Penny Post begins",
+     scene: "William Dockwra drops a letter into a VASE, and for one penny it crosses London: the Penny Post."}
+  - {year: 1682, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Hungerford Market is built at Charing Cross",
+     place: "Charing Cross",
+     scene: "Bakers sell loaves hot from an OVEN in the new Hungerford Market by the river at Charing Cross."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Mrs White's Chocolate House opens, later White's club",
+     place: "Mayfair",
+     scene: "Francesco White serves hot chocolate on a PALM leaf in Mayfair: his chocolate house later becomes White's club."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Widow Bourne opens the shop that becomes Berry Bros. and Rudd",
+     place: "St James's Street",
+     scene: "Widow Bourne opens a grocer's shop in St James's Street beside a BEEHIVE: the root of Berry Bros."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP mirror: Timeline of London",
+     event: "An Act makes Billingsgate a free fish market",
+     place: "Billingsgate",
+     scene: "Fishwives light their clay PIPE each as an Act makes Billingsgate a free market for fish."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Howland Great Wet Dock opens at Rotherhithe",
+     place: "Rotherhithe",
+     scene: "Water pours through a PIPE into the Howland Great Wet Dock at Rotherhithe, the largest dock of its day."}
+  - {year: 1706, peg: sushi, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Thomas Twining opens his tea shop in the Strand",
+     place: "Strand",
+     scene: "Thomas Twining serves green tea with SUSHI at Tom's Coffee House in the Strand."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fortnum and Mason is in business in Piccadilly",
+     place: "Piccadilly",
+     scene: "William Fortnum skis down Piccadilly on a SKI of royal candle wax and opens his grocery with Mason."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Royal Brass Foundry is set up at Woolwich",
+     place: "Woolwich",
+     scene: "A DOG barks as the first cannon pour into moulds at the new Royal Brass Foundry at Woolwich."}
+  - {year: 1729, peg: knob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The East India Company's new East India House is finished",
+     place: "Leadenhall Street",
+     scene: "Directors turn the brass KNOB of the new East India House in Leadenhall Street and rule India from it."}
+  - {year: 1737, peg: mug, confidence: high, source: "Search: Fleet Market (30 Sept)",
+     event: "Fleet Market opens on the covered River Fleet",
+     place: "Farringdon Street",
+     scene: "Traders sell beer by the MUG on top of the buried River Fleet as Fleet Market opens."}
+  - {year: 1742, peg: rhino, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Samuel Whitbread forms a brewing partnership",
+     place: "Chiswell Street",
+     scene: "Samuel Whitbread harnesses a RHINO to his mash tun and starts brewing porter with his partners."}
+  - {year: 1743, peg: ram, confidence: medium, source: "WP mirror: Timeline of London (1743-45)",
+     event: "The Chelsea porcelain factory is set up (approximate)",
+     place: "Chelsea",
+     scene: "A porcelain RAM comes out of the kiln at the new Chelsea porcelain factory."}
+  - {year: 1744, peg: warrior, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Samuel Baker's book auctions in the Strand begin, the root of Sotheby's",
+     place: "Strand",
+     scene: "Samuel Baker sells a WARRIOR's library under the hammer in the Strand: the first sale of Sotheby's."}
+  - {year: 1744, peg: warrior, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Merchants at the Virginia and Baltick Coffee House form the Baltic Exchange",
+     place: "Threadneedle Street",
+     scene: "Merchants gather like a WARRIOR band at the Virginia and Baltick Coffee House: the root of the Baltic Exchange."}
+  - {year: 1752, peg: lion, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Whitechapel Bell Foundry casts the bell later named the Liberty Bell",
+     place: "Whitechapel",
+     scene: "A LION roars as the Whitechapel Bell Foundry casts the bell that becomes Philadelphia's Liberty Bell."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Lloyd's Register of Ships is first published",
+     place: "Lombard Street",
+     scene: "Underwriters grade every hull like a CHERRY, good or bad: Lloyd's Register of Ships is first printed."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Timeline of London",
+     event: "James Christie holds his first sale",
+     place: "Pall Mall",
+     scene: "James Christie brings his hammer down like a JUDGE's gavel at his first sale in Pall Mall."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Richard Tattersall opens his horse auction at Hyde Park Corner",
+     place: "Hyde Park Corner",
+     scene: "A JUDGE of horses, Richard Tattersall, opens his horse sale yard at Hyde Park Corner."}
+  - {year: 1769, peg: ship, confidence: medium, source: "Search: Eleanor Coade (Grace's Guide differs)",
+     event: "Eleanor Coade takes over the artificial stone works in Lambeth",
+     place: "Lambeth",
+     scene: "Eleanor Coade fires artificial stone hard enough for a SHIP's figurehead at her Lambeth works."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first Coal Exchange opens",
+     place: "Thames Street",
+     scene: "A GOOSE sells coal by the sack at the first Coal Exchange in Thames Street."}
+  - {year: 1781, peg: foot, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Barclay and Perkins take over the Anchor Brewery",
+     place: "Southwark",
+     scene: "Barclay and Perkins set FOOT in Thrale's Anchor Brewery at Southwark and take it over."}
+  - {year: 1790, peg: bees, confidence: high, source: "Search: RMG; Grace's Guide (20 Nov)",
+     event: "Perry's Brunswick Dock opens at Blackwall",
+     place: "Blackwall",
+     scene: "BEES swarm up the tall mast house of Perry's new Brunswick Dock at Blackwall."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Hatchard opens his bookshop in Piccadilly",
+     place: "Piccadilly",
+     scene: "John Hatchard sells books bound in PIG skin from his new shop on Piccadilly."}
+  - {year: 1798, peg: beehive, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Rules restaurant opens in Maiden Lane",
+     place: "Maiden Lane",
+     scene: "Thomas Rule serves oysters and honey from a BEEHIVE at his new restaurant in Maiden Lane."}
+  - {year: 1810, peg: dice, confidence: medium, source: "Search: Royal Mint Museum (1810-12)",
+     event: "The Royal Mint leaves the Tower for its new building on Tower Hill",
+     place: "Tower Hill",
+     scene: "The Royal Mint packs its DICE-shaped dies and leaves the Tower for its new building on Tower Hill."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Sake Dean Mahomet opens the Hindoostanee Coffee House, the first Indian restaurant",
+     place: "George Street",
+     scene: "Sake Dean Mahomet serves curry with DICE-cut chicken at the Hindoostanee Coffee House, the first Indian restaurant."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Building of the Tobacco Dock warehouse begins",
+     place: "Wapping",
+     scene: "Sailors with a TATTOO each roll tobacco barrels into the new Tobacco Dock warehouse at Wapping."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Jacques Mivart opens a hotel that becomes Claridge's",
+     place: "Brook Street",
+     scene: "Jacques Mivart's silver TONGUE welcomes guests to his Brook Street hotel, later Claridge's."}
+  - {year: 1815, peg: doll, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Margery becomes the first steamboat in regular service on the Thames",
+     place: "Gravesend",
+     scene: "The Margery puffs downriver with a DOLL at the wheel, the first steamboat in regular Thames service."}
+  - {year: 1815, peg: doll, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Jones, Watts and Doulton starts a stoneware pottery in Lambeth",
+     place: "Lambeth",
+     scene: "A stoneware DOLL comes out of the kiln at the new Lambeth pottery of Jones, Watts and Doulton."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Royal Small Arms Factory is finished at Enfield",
+     place: "Enfield Lock",
+     scene: "New muskets lie on a DISH at the Royal Small Arms Factory, finished at Enfield Lock."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Nash's Royal Opera Arcade, the first shopping arcade in London, is finished",
+     place: "Pall Mall",
+     scene: "A DOVE flies through Nash's Royal Opera Arcade, the first shopping arcade in London."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Burlington Arcade opens",
+     place: "Piccadilly",
+     scene: "Beadles ban whistling, but a TUBA plays at the opening of the Burlington Arcade off Piccadilly."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "George Shillibeer's horse omnibus starts to run",
+     place: "Paddington",
+     scene: "George Shillibeer's three-horse omnibus runs from Paddington to the Bank, a brass KNOB on its door."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Covent Garden",
+     event: "Fowler's market building is put up in Covent Garden",
+     place: "Covent Garden",
+     scene: "A MOUSE runs through the colonnades of Fowler's new market hall in Covent Garden."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The new Hungerford Market building and the Bermondsey Leather Market open",
+     place: "Charing Cross",
+     scene: "A MUMMY buys fish in Fowler's new Hungerford Market hall by the river."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Charles Henry Harrod starts as a grocer in Stepney, the root of Harrods",
+     place: "Stepney",
+     scene: "Charles Henry Harrod knocks up a grocer's sign with a HAMMER in Stepney: the start of Harrods."}
+  # society
+  - {year: 1670, peg: goose, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Leicester Square is laid out",
+     place: "Leicester Square",
+     scene: "A GOOSE waddles across the new Leicester Square, laid out in front of Leicester House."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Colonel Blood tries to steal the Crown Jewels",
+     place: "Tower of London",
+     scene: "Dressed as a parson, Colonel Blood hides the crown under his coat like a stolen CAT and runs from the Jewel House."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Theatre Royal in Bridges Street burns down",
+     place: "Drury Lane",
+     scene: "A spark the size of a COIN burns the Theatre Royal in Bridges Street to the ground."}
+  - {year: 1676, peg: cage, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire in Southwark destroys more than six hundred houses",
+     place: "Southwark",
+     scene: "A burning CAGE rolls down Borough High Street, and fire destroys over six hundred Southwark houses."}
+  - {year: 1682, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire in Wapping leaves many families homeless",
+     place: "Wapping",
+     scene: "Wapping burns like the inside of an OVEN, and about fifteen hundred people lose their homes."}
+  - {year: 1685, peg: waffle, confidence: high, source: "Search: Huguenot weavers; London Museum",
+     event: "Huguenot refugees settle in Spitalfields and weave silk",
+     place: "Spitalfields",
+     scene: "Huguenot weavers flee France and weave silk in WAFFLE patterns in their new Spitalfields lofts."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The annual May Fair opens near Shepherd Market",
+     place: "Mayfair",
+     scene: "A FISH juggler opens the first May Fair in the fields where Shepherd Market now stands."}
+  - {year: 1694, peg: bear, confidence: medium, source: "WP mirror: Timeline of London (approximate date)",
+     event: "Thomas Neale begins to build Seven Dials (approximate)",
+     place: "Seven Dials",
+     scene: "A BEAR dances round Thomas Neale's sundial pillar where seven new streets meet: Seven Dials begins."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire destroys the Palace of Whitehall",
+     place: "Whitehall",
+     scene: "A laundress's charcoal fire spreads like a burning BEEHIVE, and the Palace of Whitehall is destroyed."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Thames breaks through its bank at Dagenham and floods the marshes",
+     place: "Dagenham",
+     scene: "The Thames bursts the Dagenham river wall, and farmers SKI across the flooded marshes."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Hanover Square is laid out",
+     place: "Hanover Square",
+     scene: "Builders measure Hanover Square on a TOMB-quiet pasture and name it for the new royal house."}
+  - {year: 1715, peg: doll, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire in Thames Street destroys more than a hundred houses",
+     place: "Thames Street",
+     scene: "A DOLL maker's shop catches fire in Thames Street, and more than a hundred houses burn."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Four lodges form the first Grand Lodge of Freemasons",
+     place: "St Paul's Churchyard",
+     scene: "Four lodges meet at the Goose and Gridiron with a DOG at the door and form the first Grand Lodge."}
+  - {year: 1721, peg: ant, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Grosvenor Square is laid out",
+     place: "Mayfair",
+     scene: "An ANT army of builders lays out Grosvenor Square, the heart of the new Grosvenor estate."}
+  - {year: 1724, peg: hanger, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Jack Sheppard, the escaper of Newgate, is hanged at Tyburn",
+     place: "Tyburn",
+     scene: "Jack Sheppard, who broke out of Newgate again and again, hangs at Tyburn like a coat on a HANGER."}
+  - {year: 1725, peg: nail, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Jonathan Wild, thief-taker and secret master of thieves, is hanged",
+     place: "Tyburn",
+     scene: "The law finally drives a NAIL into Jonathan Wild, thief-taker and thief-master, and he hangs at Tyburn."}
+  - {year: 1728, peg: knife, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Queen Caroline divides Kensington Gardens from Hyde Park",
+     place: "Kensington Gardens",
+     scene: "Queen Caroline cuts Hyde Park with a KNIFE and keeps the west part as Kensington Gardens."}
+  - {year: 1731, peg: moth, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire at Ashburnham House damages the Cotton library",
+     place: "Westminster",
+     scene: "Fire leaps from shelf to shelf like a MOTH to a flame and burns Cotton's manuscripts at Ashburnham House."}
+  - {year: 1738, peg: movie, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Marylebone Gardens open as pleasure gardens",
+     place: "Marylebone",
+     scene: "Visitors pay at the gate and watch fireworks like a MOVIE in the new Marylebone Gardens."}
+  - {year: 1741, peg: radio, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Royal Military Academy opens at Woolwich",
+     place: "Woolwich",
+     scene: "Cadets salute a RADIO mast on the Woolwich parade as the Royal Military Academy opens to train gunners."}
+  - {year: 1742, peg: rhino, confidence: high, source: "WP mirror: Ranelagh Gardens (timeline 1743)",
+     event: "Ranelagh Gardens open in Chelsea",
+     place: "Chelsea",
+     scene: "A RHINO waltzes round the great Rotunda as Ranelagh Gardens open to the public in Chelsea."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Fire in Cornhill destroys property worth a fortune",
+     place: "Cornhill",
+     scene: "Fire spreads along Cornhill like coral on a REEF and destroys a fortune in houses and coffee houses."}
+  - {year: 1750, peg: lasso, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Two earthquakes a month apart shake London",
+     scene: "Two earthquakes shake London a month apart, and a LASSO of panic drags crowds out into the fields."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Elizabeth Canning comes home and says she was kidnapped; the case splits London",
+     place: "Aldermanbury",
+     scene: "Elizabeth Canning stumbles home to Aldermanbury thin as a starved LLAMA and says she was kidnapped."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Cock Lane ghost knocks, and all London comes to listen",
+     place: "Cock Lane",
+     scene: "A ghost rattles a CHAIN and knocks in a Cock Lane house, and Johnson joins the crowd that comes to listen."}
+  - {year: 1762, peg: chain, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Boodle's club is founded",
+     place: "Pall Mall",
+     scene: "New members sign their names with a gold CHAIN of pens at the first meeting of Boodle's."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Reynolds and Johnson found The Club",
+     place: "Gerrard Street",
+     scene: "Reynolds and Johnson share a CHERRY pie at the Turk's Head in Soho and found The Club."}
+  - {year: 1765, peg: jelly, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Almack's Assembly Rooms open in St James's",
+     place: "King Street",
+     scene: "Ladies eat JELLY at the opening of Almack's Assembly Rooms in King Street, St James's."}
+  - {year: 1775, peg: eagle, confidence: high, source: "WP mirror: Timeline of London (winter 1775-76)",
+     event: "A severe influenza epidemic kills many thousands",
+     scene: "An EAGLE of fever swoops over London in the winter, and influenza kills many thousands."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "WP mirror: Covent Garden",
+     event: "Martha Ray is shot outside the Covent Garden theatre",
+     place: "Covent Garden",
+     scene: "The Reverend Hackman draws two pistols like a COWBOY and shoots Martha Ray outside the Covent Garden theatre."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The last execution at Tyburn; hangings move to Newgate",
+     place: "Tyburn",
+     scene: "John Austin hangs at Tyburn for the last time, and the gallows moves to Newgate; the crowd's mouths turn to FOAM."}
+  - {year: 1784, peg: fairy, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Building of Somers Town begins north of the New Road",
+     place: "Somers Town",
+     scene: "A FAIRY pegs out streets for Somers Town on the fields north of the New Road."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP mirror: Royal London Hospital",
+     event: "The London Hospital Medical College is founded",
+     place: "Whitechapel",
+     scene: "Students eat a WAFFLE before the first lecture at the new medical college of the London Hospital."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The London Monster is arrested after a long run of knife attacks on women",
+     place: "St James's",
+     scene: "Like a swarm of BEES the London Monster stings women's skirts with a knife; Rhynwick Williams is arrested."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Building of Camden Town begins",
+     place: "Camden Town",
+     scene: "Lord Camden sets his BOOT on the fields of Kentish Town and lets plots for Camden Town."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP mirror: Royal Veterinary College",
+     event: "The Veterinary College of London is founded",
+     place: "Camden Town",
+     scene: "Vets fit a BOOT on a lame horse at the new Veterinary College in Camden Town."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP mirror: Pantheon",
+     event: "Fire destroys Wyatt's Pantheon on Oxford Street",
+     place: "Oxford Street",
+     scene: "A PIANO melts in the heat as fire destroys Wyatt's Pantheon on Oxford Street."}
+  - {year: 1794, peg: bear, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Ratcliff fire destroys more than four hundred homes",
+     place: "Ratcliff",
+     scene: "A BEAR of flame runs through Ratcliff and burns more than four hundred homes by the river."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP mirror: Timeline of London",
+     event: "London's coldest recorded day, at Greenwich",
+     place: "Greenwich",
+     scene: "A PEACH freezes as hard as stone at Greenwich on London's coldest recorded day."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP mirror: Timeline of London",
+     event: "John Hetherington wears the first top hat in public",
+     place: "Strand",
+     scene: "John Hetherington walks the Strand in the first top hat, and a PIG bolts in fright from the crowd."}
+  - {year: 1800, peg: sauce, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The first soup kitchens open in London",
+     scene: "In a hungry winter, the first London soup kitchens ladle out soup and SAUCE to the poor."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Hammersmith Ghost case: a ghost hunter shoots a bricklayer in white clothes",
+     place: "Hammersmith",
+     scene: "A man hunting the Hammersmith Ghost shoots a bricklayer in white work clothes beside a SEWER ditch."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Institution is founded for lectures and a library",
+     place: "Old Jewry",
+     scene: "City merchants serve SUSHI at the founding of the London Institution, a library and lecture hall."}
+  - {year: 1807, peg: ski, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "About forty people die in a crush at a hanging outside Newgate",
+     place: "Newgate",
+     scene: "The crowd slides as on a SKI slope outside Newgate, and about forty people die at a hanging."}
+  - {year: 1808, peg: sofa, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Fire destroys the Theatre Royal, Covent Garden",
+     place: "Covent Garden",
+     scene: "A velvet SOFA burns first, and the whole Theatre Royal, Covent Garden, falls in the fire."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Fire destroys the Theatre Royal, Drury Lane",
+     place: "Drury Lane",
+     scene: "No SOAP can wash off the soot: Drury Lane burns, and Sheridan drinks wine as he watches."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Berners Street Hoax sends crowds of tradesmen to one house",
+     place: "Berners Street",
+     scene: "Theodore Hook's hoax sends a SOAP seller and hundreds of other tradesmen to one house in Berners Street."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Ratcliff Highway murders kill two families",
+     place: "Ratcliff Highway",
+     scene: "A seaman with a TATTOO is blamed after two families are murdered on the Ratcliff Highway."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The last Thames frost fair",
+     place: "Thames",
+     scene: "Stalls rise like a TOWER of ice on the frozen Thames at the last frost fair."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Fire destroys the Custom House",
+     place: "Lower Thames Street",
+     scene: "Fire guts the Custom House on Lower Thames Street, and a TOWER of tax records burns."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Beer Flood: a vat bursts at the Horse Shoe Brewery",
+     place: "St Giles",
+     scene: "A beer vat as tall as a TOWER bursts at the Horse Shoe Brewery, and a wave of beer kills people in St Giles."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Great Stock Exchange Fraud: false news of Napoleon's death lifts prices",
+     place: "Capel Court",
+     scene: "False news of Napoleon's death runs to London, and Stock Exchange prices rise like a TOWER before the fall."}
+  - {year: 1814, peg: tower, confidence: high, source: "Search: Lord's (first match 22 June)",
+     event: "Thomas Lord opens his third ground, the present Lord's",
+     place: "St John's Wood",
+     scene: "Thomas Lord rolls his turf to St John's Wood, and MCC plays the first match beside a TOWER of seats."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Royal Academy of Music is founded",
+     place: "Tenterden Street",
+     scene: "A NUN plays the harp at the first lesson of the Royal Academy of Music."}
+  - {year: 1823, peg: gnome, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "George Birkbeck founds the London Mechanics' Institute",
+     scene: "Birkbeck teaches a GNOME and a hall of working men at the new London Mechanics' Institute."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Athenaeum club is founded",
+     scene: "Members hang their hats on a HANGER at the new Athenaeum, a club for men of science and letters."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Banker Henry Fauntleroy is hanged for forgery before a huge crowd",
+     place: "Newgate",
+     scene: "Banker Henry Fauntleroy hangs like a coat on a HANGER outside Newgate for forgery, before a vast crowd."}
+  - {year: 1824, peg: hanger, confidence: medium, source: "WP mirror: Timeline of London (1800s)",
+     event: "Thomas Cubitt is commissioned to build Belgravia and Pimlico",
+     place: "Belgravia",
+     scene: "Thomas Cubitt hangs his plans on a HANGER and begins to build Belgravia on the Five Fields."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Chunee the elephant is killed at Exeter Exchange",
+     place: "Strand",
+     scene: "Chunee the elephant runs mad at Exeter Exchange; soldiers fire volley after volley until he falls like a broken NACHO."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP mirror: King's College London",
+     event: "King's College London gets its royal charter",
+     place: "Strand",
+     scene: "Anglicans turn the KNOB on King's College London, chartered as a Church answer to the godless London University."}
+  - {year: 1830, peg: mouse, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The last hanging for piracy at Execution Dock",
+     place: "Wapping",
+     scene: "Two pirates hang at Execution Dock in Wapping for the last time, and a MOUSE gnaws through the old gibbet rope."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Burkers are hanged for murders to sell bodies to anatomists",
+     place: "Newgate",
+     scene: "The London Burkers sell murdered bodies to anatomists like pinned MOTH specimens and hang outside Newgate."}
+  - {year: 1832, peg: moon, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "Cholera spreads through London from the East End",
+     place: "East End",
+     scene: "Under a cholera MOON, the epidemic spreads from the East End across London."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: Kensal Green Cemetery",
+     event: "Kensal Green Cemetery opens, the first of the great garden cemeteries",
+     place: "Kensal Green",
+     scene: "A MUMMY is laid in the catacombs of Kensal Green, the first of London's great garden cemeteries."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The London Fire Engine Establishment is formed under James Braidwood",
+     scene: "James Braidwood wraps fire hoses like MUMMY bandages and leads the new London Fire Engine Establishment."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP mirror: Regent's Park; London timeline",
+     event: "Regent's Park first opens to the public",
+     place: "Regent's Park",
+     scene: "The Crown opens the gates of Regent's Park like a MILL sluice, and the public pour in two days a week."}
+  - {year: 1836, peg: match, confidence: medium, source: "WP mirror: Timeline of London (1800s)",
+     event: "The Boat Race is rowed from Westminster to Putney",
+     place: "Thames",
+     scene: "Oxford and Cambridge row their MATCH from Westminster to Putney, the first Boat Race in London."}
+  - {year: 1836, peg: match, confidence: high, source: "WP mirror: Timeline of London (1800s)",
+     event: "The University of London is chartered to examine and give degrees",
+     scene: "The Crown strikes a MATCH and lights up the University of London, chartered to give degrees."}
+world_refs:
+  - {year: 1666, event: "Great Fire of London", cell: western_europe_society_1500_1800}
+  - {year: 1672, event: "Royal African Company chartered", cell: western_europe_economy_1500_1800}
+  - {year: 1675, event: "Wren lays the first stone of new St Paul's", cell: western_europe_arts_1500_1800}
+  - {year: 1675, event: "Royal Observatory at Greenwich founded", cell: western_europe_science_1500_1800}
+  - {year: 1680, event: "Barbon's Fire Office", cell: western_europe_economy_1500_1800}
+  - {year: 1683, event: "Thames frost fair", cell: western_europe_society_1500_1800}
+  - {year: 1688, event: "Lloyd's coffee house first named", cell: western_europe_economy_1500_1800}
+  - {year: 1689, event: "Purcell's Dido and Aeneas at a Chelsea school", cell: western_europe_arts_1500_1800}
+  - {year: 1691, event: "Lloyd's coffee house moves to Lombard Street", cell: western_europe_economy_1500_1800}
+  - {year: 1694, event: "Bank of England founded", cell: western_europe_economy_1500_1800}
+  - {year: 1696, event: "Wren begins the Royal Hospital at Greenwich", cell: western_europe_arts_1500_1800}
+  - {year: 1696, event: "Hand in Hand Fire Office at Tom's Coffee House", cell: western_europe_economy_1500_1800}
+  - {year: 1696, event: "Vanbrugh's The Relapse first performed", cell: western_europe_arts_1500_1800}
+  - {year: 1697, event: "First service in new St Paul's", cell: western_europe_religion_1500_1800}
+  - {year: 1697, event: "Act limits licensed London brokers", cell: western_europe_economy_1500_1800}
+  - {year: 1698, event: "Castaing's price lists at Jonathan's Coffee House", cell: western_europe_economy_1500_1800}
+  - {year: 1698, event: "SPCK founded", cell: western_europe_society_1500_1800}
+  - {year: 1700, event: "Congreve's The Way of the World first performed", cell: western_europe_arts_1500_1800}
+  - {year: 1701, event: "Bevis Marks Synagogue dedicated", cell: western_europe_religion_1500_1800}
+  - {year: 1701, event: "Society for the Propagation of the Gospel chartered", cell: western_europe_religion_1500_1800}
+  - {year: 1703, event: "Great Storm", cell: western_europe_society_1500_1800}
+  - {year: 1709, event: "Steele starts The Tatler", cell: western_europe_arts_1500_1800}
+  - {year: 1710, event: "Wren's St Paul's finished", cell: western_europe_arts_1500_1800}
+  - {year: 1710, event: "Sun Fire Office founded", cell: western_europe_economy_1500_1800}
+  - {year: 1711, event: "Handel's Rinaldo opens", cell: western_europe_arts_1500_1800}
+  - {year: 1711, event: "The Spectator starts", cell: western_europe_arts_1500_1800}
+  - {year: 1711, event: "South Sea Company founded", cell: western_europe_economy_1500_1800}
+  - {year: 1715, event: "Doggett's Coat and Badge first rowed", cell: western_europe_society_1500_1800}
+  - {year: 1717, event: "Handel's Water Music on the Thames", cell: western_europe_arts_1500_1800}
+  - {year: 1720, event: "South Sea Bubble", cell: western_europe_economy_1500_1800}
+  - {year: 1720, event: "Royal Exchange and London Assurance chartered", cell: western_europe_economy_1500_1800}
+  - {year: 1726, event: "Lord Burlington begins Chiswick House", cell: western_europe_arts_1500_1800}
+  - {year: 1728, event: "Gay's The Beggar's Opera", cell: western_europe_arts_1500_1800}
+  - {year: 1732, event: "Covent Garden Theatre opens", cell: western_europe_arts_1500_1800}
+  - {year: 1734, event: "Bank of England moves to Threadneedle Street", cell: western_europe_economy_1500_1800}
+  - {year: 1734, event: "Lloyd's List first published", cell: western_europe_economy_1500_1800}
+  - {year: 1738, event: "Wesley at Aldersgate Street", cell: western_europe_religion_1500_1800}
+  - {year: 1739, event: "Foundling Hospital chartered", cell: western_europe_society_1500_1800}
+  - {year: 1739, event: "Great Frost", cell: western_europe_society_1500_1800}
+  - {year: 1741, event: "Garrick's debut at Goodman's Fields", cell: western_europe_arts_1500_1800}
+  - {year: 1744, event: "First Methodist Conference in London", cell: western_europe_religion_1500_1800}
+  - {year: 1749, event: "Music for the Royal Fireworks in Green Park", cell: western_europe_arts_1500_1800}
+  - {year: 1756, event: "Marine Society founded", cell: western_europe_society_1500_1800}
+  - {year: 1762, event: "Barings bank founded", cell: western_europe_economy_1500_1800}
+  - {year: 1768, event: "Royal Academy of Arts founded", cell: western_europe_arts_1500_1800}
+  - {year: 1769, event: "First Royal Academy exhibition", cell: western_europe_arts_1500_1800}
+  - {year: 1773, event: "Brokers open the Stock Exchange building", cell: western_europe_economy_1500_1800}
+  - {year: 1773, event: "She Stoops to Conquer first performed", cell: western_europe_arts_1500_1800}
+  - {year: 1774, event: "Lloyd's underwriters move to the Royal Exchange", cell: western_europe_economy_1500_1800}
+  - {year: 1774, event: "Royal Humane Society founded", cell: western_europe_society_1500_1800}
+  - {year: 1774, event: "Lindsey opens Essex Street Chapel: first lasting Unitarian church", cell: western_europe_religion_1500_1800}
+  - {year: 1775, event: "Sheridan's The Rivals first performed", cell: western_europe_arts_1500_1800}
+  - {year: 1777, event: "The School for Scandal first performed", cell: western_europe_arts_1500_1800}
+  - {year: 1780, event: "Gordon Riots", cell: western_europe_society_1500_1800}
+  - {year: 1782, event: "Fuseli's The Nightmare at the Royal Academy", cell: western_europe_arts_1500_1800}
+  - {year: 1787, event: "Marylebone Cricket Club founded; Lord's opens", cell: western_europe_society_1500_1800}
+  - {year: 1787, event: "Society for Effecting the Abolition of the Slave Trade", cell: western_europe_society_1500_1800}
+  - {year: 1788, event: "African Association founded", cell: western_europe_economy_1500_1800}
+  - {year: 1791, event: "Haydn arrives at Salomon's invitation", cell: western_europe_arts_1500_1800}
+  - {year: 1792, event: "Haydn's Surprise Symphony", cell: western_europe_arts_1500_1800}
+  - {year: 1795, event: "Haydn's last London Symphony", cell: western_europe_arts_1500_1800}
+  - {year: 1795, event: "London Missionary Society founded", cell: western_europe_religion_1500_1800}
+  - {year: 1797, event: "Bank of England stops gold payments; first pound notes", cell: western_europe_economy_1500_1800}
+  - {year: 1799, event: "Royal Institution founded", cell: western_europe_science_1500_1800}
+  - {year: 1801, event: "Stock Exchange opens at Capel Court", cell: western_europe_economy_1800_1945}
+  - {year: 1802, event: "West India Docks open", cell: western_europe_economy_1800_1945}
+  - {year: 1803, event: "Surrey Iron Railway opens", cell: western_europe_economy_1800_1945}
+  - {year: 1804, event: "Schroders founded", cell: western_europe_economy_1800_1945}
+  - {year: 1804, event: "British and Foreign Bible Society founded", cell: western_europe_religion_1800_1945}
+  - {year: 1805, event: "London Docks open at Wapping", cell: western_europe_economy_1800_1945}
+  - {year: 1806, event: "East India Docks open", cell: western_europe_economy_1800_1945}
+  - {year: 1807, event: "Surrey Commercial Docks open", cell: western_europe_economy_1800_1945}
+  - {year: 1807, event: "Gas street lighting shown on Pall Mall", cell: western_europe_science_1800_1945}
+  - {year: 1809, event: "Davy's arc lamp at the Royal Institution", cell: western_europe_science_1800_1945}
+  - {year: 1811, event: "Rothschild bank in London", cell: western_europe_economy_1800_1945}
+  - {year: 1816, event: "Spa Fields riots", cell: western_europe_politics_1800_1945}
+  - {year: 1819, event: "Keats writes his great odes in Hampstead", cell: western_europe_arts_1800_1945}
+  - {year: 1823, event: "Anti-Slavery Society founded", cell: western_europe_society_1800_1945}
+  - {year: 1824, event: "Society for the Prevention of Cruelty to Animals founded", cell: western_europe_society_1800_1945}
+  - {year: 1825, event: "Panic in London", cell: western_europe_economy_1800_1945}
+  - {year: 1826, event: "London University founded", cell: western_europe_society_1800_1945}
+  - {year: 1828, event: "St Katharine Docks open", cell: western_europe_economy_1800_1945}
+  - {year: 1829, event: "Metropolitan Police founded", cell: western_europe_politics_1800_1945}
+  - {year: 1830, event: "Royal Geographical Society founded", cell: western_europe_economy_1800_1945}
+  - {year: 1834, event: "Fire destroys the Palace of Westminster", cell: western_europe_society_1800_1945}
+out_refs:
+  - {year: 1670, event: "Penn and Mead trial: the jury refuses to convict (Bushel's Case)", reason: "national court case"}
+  - {year: 1678, event: "Sir Edmund Berry Godfrey found murdered on Primrose Hill", reason: "national Popish Plot"}
+  - {year: 1679, event: "Pope-burning procession in the City", reason: "national Exclusion Crisis"}
+  - {year: 1685, event: "Coronation of James II in Westminster Abbey", reason: "coronation"}
+  - {year: 1688, event: "William of Orange enters London", reason: "national revolution"}
+  - {year: 1689, event: "William and Mary proclaimed at Guildhall", reason: "national accession"}
+  - {year: 1698, event: "Peter the Great stays at Deptford", reason: "royal visit"}
+  - {year: 1702, event: "Coronation of Anne", reason: "coronation"}
+  - {year: 1714, event: "Coronation of George I", reason: "coronation"}
+  - {year: 1727, event: "Coronation of George II", reason: "coronation"}
+  - {year: 1735, event: "Walpole moves into 10 Downing Street", reason: "national government"}
+  - {year: 1745, event: "Black Friday panic at the Jacobite advance", reason: "national war"}
+  - {year: 1761, event: "Coronation of George III", reason: "coronation"}
+  - {year: 1762, event: "Royal family moves into Buckingham House", reason: "royal residence"}
+  - {year: 1792, event: "London Corresponding Society formed", reason: "national reform movement"}
+  - {year: 1795, event: "Mob attacks George III's coach", reason: "attack on the king"}
+  - {year: 1800, event: "Hadfield fires at George III in Drury Lane", reason: "attack on the king"}
+  - {year: 1803, event: "Despard conspirators executed", reason: "national conspiracy"}
+  - {year: 1805, event: "First Trooping the Colour on Horse Guards Parade", reason: "national army ceremony"}
+  - {year: 1806, event: "Nelson's funeral at St Paul's", reason: "state funeral"}
+  - {year: 1812, event: "Prime Minister Perceval shot in the Commons lobby", reason: "national government"}
+  - {year: 1814, event: "Grand Jubilee in the Royal Parks", reason: "national victory celebration"}
+  - {year: 1815, event: "Waterloo victory news and illuminations", reason: "national war"}
+  - {year: 1820, event: "Cato Street conspiracy against the cabinet", reason: "national conspiracy"}
+  - {year: 1821, event: "Coronation of George IV", reason: "coronation"}
+  - {year: 1829, event: "Wellington duels Winchilsea at Battersea Fields", reason: "national politicians"}
+  - {year: 1831, event: "Coronation of William IV", reason: "coronation"}
+  - {year: 1832, event: "Reform Act creates London borough seats", reason: "national election law"}
+  - {year: 1836, event: "London Working Men's Association formed", reason: "national reform movement"}

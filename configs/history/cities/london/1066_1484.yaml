@@ -1,0 +1,933 @@
+# City: London x 1066 to 1484 (medieval London). DRAFT 2026-11-19.
+# Area: Greater London, all 32 boroughs and the City (Westminster, Southwark, Bermondsey, Clerkenwell, Merton,
+# Kingston, Stratford, Lesnes, Eltham, Greenwich, Sheen, Isleworth, Harmondsworth, Romford, Enfield, Barnet, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (38 of 45 searches; no unauthorised book copies).
+# Main sources: WP mirror (Timeline of London, Tower of London, Old London Bridge, Old St Paul's, and other
+# 2023-10 articles), British History Online (VCH, Letter-Books, Survey of London), Magna Carta Project,
+# MOLA / Current Archaeology, parliament.uk, Goldsmiths' Company, Westminster Abbey.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1067, peg: jockey, confidence: high, source: "WP mirror: History of London",
+     event: "William I's writ to London keeps the citizens' old laws and rights",
+     place: "Guildhall",
+     scene: "A JOCKEY gallops William's small writ into the City and nails it up: London keeps its old laws."}
+  - {year: 1078, peg: cave, confidence: medium, source: "WP mirror: Tower of London (usually 1078)",
+     event: "Tower of London: work starts on the White Tower (approximate)",
+     place: "Tower Hill",
+     scene: "Norman masons empty a CAVE of Caen stone and stack it into a great white keep beside the Thames."}
+  - {year: 1097, peg: pig, confidence: high, source: "WP mirror: Tower of London",
+     event: "Tower of London: William Rufus orders a stone wall round the keep",
+     place: "Tower of London",
+     scene: "A PIG roots out the trench, and Rufus's masons raise a stone wall round the White Tower on its line."}
+  - {year: 1100, peg: sauce, confidence: high, source: "WP mirror: Tower of London",
+     event: "Bishop Ranulf Flambard becomes the first recorded prisoner in the Tower",
+     place: "White Tower",
+     scene: "Henry I's guards pour a lake of SAUCE round Bishop Flambard's cell: the Tower's first prisoner is stuck."}
+  - {year: 1101, peg: soda, confidence: high, source: "WP mirror: Tower of London (2 Feb)",
+     event: "Flambard makes his guards drunk and makes the first escape from the Tower",
+     place: "White Tower",
+     scene: "Flambard fills his guards with fizzy SODA and wine, then slides down a rope from the White Tower."}
+  - {year: 1127, peg: ink, confidence: medium, source: "WP mirror: Timeline of London; Clink (1144-49)",
+     event: "Southwark: a royal charter makes the bishop's Bankside the Liberty of the Clink",
+     place: "Bankside",
+     scene: "A bishop dips his pen in INK and signs Bankside away from the City as the Liberty of the Clink."}
+  - {year: 1128, peg: knife, confidence: high, source: "WP mirror: Guildhall, London",
+     event: "First written record of a London Guildhall",
+     place: "Guildhall",
+     scene: "A clerk cuts the word GUILDHALL into the parchment with his KNIFE: the City's hall enters the record."}
+  - {year: 1141, peg: radio, confidence: medium, source: "WP mirror: Timeline of London (July)",
+     event: "Londoners rise against Empress Matilda, and Queen Matilda's army takes back the city",
+     place: "Westminster",
+     scene: "A RADIO alarm blares over Westminster, and the citizens chase Empress Matilda from her dinner table."}
+  - {year: 1188, peg: fife, confidence: high, source: "WP mirror: Newgate Prison",
+     event: "Newgate: the gate becomes the City's prison",
+     place: "Newgate",
+     scene: "A jailer plays a FIFE as he locks the first prisoners into the rooms of the gate at Newgate."}
+  - {year: 1189, peg: fob, confidence: medium, source: "WP mirror: Lord Mayor of London (traditional first)",
+     event: "Henry Fitz-Ailwin becomes the first mayor of London",
+     place: "London Stone",
+     scene: "Henry Fitz-Ailwin hangs the City's first mayoral FOB on his belt beside London Stone."}
+  - {year: 1189, peg: fob, confidence: high, source: "WP mirror: Timeline of London",
+     event: "A mob attacks the Jews of London on the coronation day of Richard I",
+     place: "Old Jewry",
+     scene: "The mob tears the gold FOB off every Jewish door in Old Jewry and sets the houses on fire."}
+  - {year: 1191, peg: boot, confidence: high, source: "Source Book of London History; Magna Carta Project",
+     event: "St Paul's: Prince John and the magnates swear to uphold the London commune",
+     place: "St Paul's",
+     scene: "At St Paul's, Prince John swears on a BOOT full of City keys that London is a commune."}
+  - {year: 1196, peg: peach, confidence: high, source: "WP mirror: Timeline of London; St Mary-le-Bow",
+     event: "William Fitz Osbert (Longbeard) leads the poor against the aldermen and is hanged",
+     place: "St Mary-le-Bow, Tyburn",
+     scene: "Longbeard's poor followers pelt the aldermen with PEACH stones; he is smoked out of Bow church and hanged."}
+  - {year: 1197, peg: pig, confidence: high, source: "WP mirror: Fleet Prison",
+     event: "Fleet Prison is built on the east bank of the River Fleet",
+     place: "Farringdon Street",
+     scene: "Builders shut a PIG in a stone pen on the Fleet bank, the first cell of the Fleet Prison."}
+  - {year: 1199, peg: pipe, confidence: high, source: "WP mirror: History of London; Timeline",
+     event: "King John's charter lets the citizens choose the sheriffs of London and Middlesex",
+     place: "Guildhall",
+     scene: "Each citizen blows a PIPE in the Guildhall, and the loudest pair become sheriffs of London and Middlesex."}
+  - {year: 1200, peg: sauce, confidence: medium, source: "Search: VCH Surrey (1200; oldest surviving 1208)",
+     event: "Kingston upon Thames: King John's charter gives the town to its freemen",
+     place: "Kingston market place",
+     scene: "King John pours SAUCE over Kingston market place and hands the town to its freemen."}
+  - {year: 1213, peg: tomb, confidence: high, source: "WP mirror: Baynard's Castle (14 Jan)",
+     event: "King John destroys Baynard's Castle, Robert Fitzwalter's fort by the Thames",
+     place: "Baynard's Castle",
+     scene: "King John's men knock Baynard's Castle down into a TOMB of rubble beside the Thames."}
+  - {year: 1215, peg: doll, confidence: high, source: "WP mirror: Lord Mayor of London; Timeline",
+     event: "King John's charter lets the citizens choose a new mayor every year",
+     place: "Guildhall",
+     scene: "Every year the citizens dress a new DOLL in the mayor's robe, as King John's charter now allows."}
+  - {year: 1222, peg: nun, confidence: high, source: "WP mirror: Timeline of London (15 July)",
+     event: "Riot after London beats Westminster at wrestling; its leader Constantine is hanged",
+     place: "Westminster",
+     scene: "A wrestling NUN throws Westminster's champion; Londoners riot, and their leader Constantine is hanged."}
+  - {year: 1236, peg: match, confidence: high, source: "WP mirror: Newgate Prison",
+     event: "Newgate: the king makes a turret of the gate into more prison space",
+     place: "Newgate",
+     scene: "A jailer strikes a MATCH to light the new turret cell that the king adds to Newgate prison."}
+  - {year: 1237, peg: mug, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Chamberlain of London and the Freedom of the City are first recorded",
+     place: "Guildhall",
+     scene: "The first Chamberlain fills a MUG at Guildhall and toasts the first freemen of the City."}
+  - {year: 1241, peg: radio, confidence: medium, source: "Search: St Paul's Cross (first record 1241)",
+     event: "Paul's Cross: first record; the citizens meet there in their folkmoot",
+     place: "St Paul's churchyard",
+     scene: "A RADIO on top of Paul's Cross calls every citizen to the folkmoot in St Paul's churchyard."}
+  - {year: 1264, peg: cherry, confidence: high, source: "WP mirror: Timeline; History of London",
+     event: "John Fitz John's rebels kill the Jews of London",
+     place: "Old Jewry",
+     scene: "Fitz John's rebels stain Old Jewry red as CHERRY juice when they kill the Jews of London."}
+  - {year: 1275, peg: eagle, confidence: high, source: "WP mirror: Tower of London (1275-79)",
+     event: "Tower of London: Edward I starts the outer wall and St Thomas's Tower, the water-gate",
+     place: "Traitors' Gate",
+     scene: "An EAGLE carries stone to Edward I's new water-gate on the Thames, later called Traitors' Gate."}
+  - {year: 1285, peg: waffle, confidence: high, source: "Search: Spectator; Besant, History of London",
+     event: "Edward I takes the City into his own hand; a warden rules in place of the mayor",
+     place: "Guildhall",
+     scene: "Edward I presses the mayor's chain flat in a WAFFLE iron, and Ralph de Sandwich rules London as warden."}
+  - {year: 1298, peg: beehive, confidence: medium, source: "Search: Spectator (1296 part, 1298 mayor)",
+     event: "Edward I gives the City back its mayor and liberties for a fine",
+     place: "Guildhall",
+     scene: "The citizens buy back their mayor with a BEEHIVE full of silver, and Edward I gives back their liberties."}
+  - {year: 1304, peg: sewer, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The first Recorder of London, the City's lawyer, is appointed",
+     place: "Guildhall",
+     scene: "The first Recorder of London climbs out of a SEWER under Guildhall with the City's law books dry."}
+  - {year: 1321, peg: ant, confidence: high, source: "WP mirror: Tower of London",
+     event: "Margaret de Clare becomes the first woman prisoner in the Tower",
+     place: "Tower of London",
+     scene: "Guards lock Margaret de Clare in the Tower with a queen ANT: the first woman held there."}
+  - {year: 1323, peg: gnome, confidence: high, source: "WP mirror: Tower of London",
+     event: "Roger Mortimer escapes from the Tower with help from the sub-lieutenant",
+     place: "Tower of London",
+     scene: "A GNOME drugs the guards' wine, and Roger Mortimer climbs out through the Tower kitchens."}
+  - {year: 1326, peg: nacho, confidence: high, source: "WP mirror: Timeline of London (15 Oct)",
+     event: "A London mob kills Bishop Walter Stapledon in Cheapside",
+     place: "Cheapside",
+     scene: "The mob pelts Bishop Stapledon with NACHO chips, drags him to Cheapside and cuts off his head."}
+  - {year: 1327, peg: ink, confidence: high, source: "Search: Guildable Manor; AIM25 (6 Mar)",
+     event: "Edward III's charter gives the town of Southwark to the City",
+     place: "Borough High Street",
+     scene: "Edward III spills City-coloured INK across Borough High Street, and Southwark joins London on the map."}
+  - {year: 1354, peg: lawyer, confidence: medium, source: "WP mirror: Lord Mayor of London; Timeline",
+     event: "Edward III lets Thomas Legge take the title Lord Mayor",
+     place: "Guildhall",
+     scene: "A LAWYER reads out Edward III's grant, and Thomas Legge becomes the first LORD Mayor."}
+  - {year: 1365, peg: jelly, confidence: high, source: "WP mirror: Jewel Tower (1365-66)",
+     event: "Westminster: the moated Jewel Tower is built for the king's treasure",
+     place: "Jewel Tower",
+     scene: "Henry Yevele sets Edward III's gold cups in red JELLY inside the new moated Jewel Tower."}
+  - {year: 1373, peg: comb, confidence: high, source: "WP mirror: Marshalsea",
+     event: "Southwark: the first building for the Marshalsea prison",
+     place: "Borough High Street",
+     scene: "Southwark's good men set a giant COMB in the window as bars of the first Marshalsea prison house."}
+  - {year: 1377, peg: cake, confidence: high, source: "WP mirror: Timeline of London (20 Feb)",
+     event: "Londoners riot against John of Gaunt after he threatens the City's rights",
+     place: "Cheapside",
+     scene: "Londoners throw CAKE at John of Gaunt, and he runs from his fish dinner across the river."}
+  - {year: 1378, peg: cave, confidence: high, source: "Search: Stow, Survey; Letter-Book H",
+     event: "Ludgate becomes a prison for freemen of the City",
+     place: "Ludgate",
+     scene: "The City turns the rooms over Ludgate into a CAVE for freemen who cannot pay their debts."}
+  - {year: 1385, peg: waffle, confidence: high, source: "WP mirror: Lord Mayor of London",
+     event: "Rule: a man must serve as sheriff before he can become mayor",
+     place: "Guildhall",
+     scene: "A WAFFLE stamped SHERIFF is the ticket a man must eat before he may stand for mayor."}
+  - {year: 1392, peg: piano, confidence: high, source: "WP mirror: Timeline; Richard Whittington",
+     event: "Richard II takes London's liberties into his own hand",
+     place: "Guildhall",
+     scene: "Richard II slams a PIANO lid on the City's charters and takes London's government himself."}
+  - {year: 1397, peg: pig, confidence: high, source: "WP mirror: Richard Whittington (June)",
+     event: "Richard II makes Richard Whittington mayor; the City buys back its liberties",
+     place: "Guildhall",
+     scene: "Whittington rides a PIG into Guildhall as the king's mayor, with the money bag that buys back the City's liberties."}
+  - {year: 1406, peg: sushi, confidence: high, source: "WP mirror: Newgate Prison",
+     event: "Newgate: a separate tower and room for women prisoners",
+     place: "Newgate",
+     scene: "Women prisoners eat SUSHI in their own new tower at Newgate, kept apart from the men."}
+  - {year: 1411, peg: tattoo, confidence: medium, source: "WP mirror: Guildhall (1411); Timeline (1416)",
+     event: "Guildhall: work starts on the new hall of mason John Croxton",
+     place: "Guildhall",
+     scene: "John Croxton draws the plan of a great new Guildhall as a TATTOO on a mason's back and lays the first stone."}
+  - {year: 1415, peg: doll, confidence: medium, source: "WP mirror: Timeline of London (approximate)",
+     event: "Mayor Thomas Falconer opens Moorgate, a new gate in the wall",
+     place: "Moorgate",
+     scene: "A rag DOLL is the first to walk through Moorgate, the new hole cut in the wall to the marsh."}
+  - {year: 1419, peg: tuba, confidence: high, source: "Search: Cambridge, Urban History (Liber Albus)",
+     event: "Town clerk John Carpenter writes the Liber Albus, the City's book of customs",
+     place: "Guildhall",
+     scene: "John Carpenter blows a TUBA and reads out the City's customs from his new white book, the Liber Albus."}
+  - {year: 1419, peg: tuba, confidence: high, source: "WP mirror: Newgate Prison",
+     event: "City officers shut Newgate prison for a time",
+     place: "Newgate",
+     scene: "A TUBA blast empties Newgate, and City officers bolt its door shut behind the last prisoner."}
+  - {year: 1422, peg: nun, confidence: high, source: "WP mirror: Newgate Prison",
+     event: "Newgate: licence to rebuild the prison with Whittington's bequest",
+     place: "Newgate",
+     scene: "A NUN carries Whittington's gold to Newgate, and masons rebuild the prison with it."}
+  - {year: 1435, peg: mill, confidence: high, source: "WP mirror: Lord Mayor of London",
+     event: "Rule: the mayor must be chosen from the aldermen",
+     place: "Guildhall",
+     scene: "Only aldermen may climb the MILL stair to the mayor's seat, says the new ordinance."}
+  - {year: 1440, peg: horse, confidence: high, source: "WP mirror: Guildhall, London",
+     event: "Guildhall: the new hall is finished",
+     place: "Guildhall",
+     scene: "A HORSE hauls the last roof beam up onto Croxton's new Guildhall, and the hall is finished."}
+  - {year: 1441, peg: radio, confidence: disputed, source: "Search: Kingston (1441); WP Timeline (1481)",
+     event: "Kingston upon Thames: a charter makes the town a borough",
+     place: "Kingston",
+     scene: "A RADIO in Kingston market place announces the charter: the town is now a borough with its own bailiffs."}
+  - {year: 1447, peg: rock, confidence: high, source: "WP mirror: Tower of London",
+     event: "The Duke of Exeter, Constable of the Tower, brings the rack into use",
+     place: "Tower of London",
+     scene: "The Duke of Exeter ties ROCK weights to a prisoner on his new rack in the Tower."}
+  - {year: 1452, peg: lion, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "First record of a Lord Mayor's barge on the Thames",
+     place: "Thames to Westminster",
+     scene: "A golden LION figurehead leads the first recorded Lord Mayor's barge up the Thames to Westminster."}
+  - {year: 1456, peg: leech, confidence: medium, source: "Search: Davies; Edgar (1456 riot)",
+     event: "Londoners riot and break into the houses of Italian merchants",
+     place: "Lombard Street",
+     scene: "Shouting that every Italian is a LEECH, Londoners break into the merchants' houses along Lombard Street."}
+  - {year: 1460, peg: cheese, confidence: high, source: "WP mirror: Tower of London; Timeline (19 July)",
+     event: "Yorkists besiege the Tower; Lord Scales fires on the City, gives up, and boatmen kill him",
+     place: "Tower of London",
+     scene: "Lord Scales hurls burning CHEESE from the Tower onto the City, then gives up, and boatmen kill him."}
+  - {year: 1469, peg: ship, confidence: high, source: "WP mirror: St Mary-le-Bow",
+     event: "Common Council orders the Bow bell rung for curfew each night at nine",
+     place: "St Mary-le-Bow",
+     scene: "A SHIP's bell hangs in Bow church, and the Common Council orders it rung for curfew every night."}
+  - {year: 1471, peg: cat, confidence: high, source: "WP mirror: Timeline; Tower of London",
+     event: "Fauconberg's force attacks London, burns Southwark and fails at Aldgate and Bishopsgate",
+     place: "Aldgate, Southwark",
+     scene: "Fauconberg sets Southwark alight with a burning CAT, but the citizens throw him back from Aldgate."}
+  - {year: 1477, peg: cake, confidence: medium, source: "Search: Stow, Survey (17 Ed IV); WP (1476)",
+     event: "Mayor Ralph Josselyn mends the City wall with brick burnt in Moorfields",
+     place: "Moorfields, London Wall",
+     scene: "Josselyn bakes Moorfields clay into bricks like CAKE and mends the wall from Aldgate to Aldersgate."}
+  # science
+  - {year: 1101, peg: soda, confidence: disputed, source: "Search: St Giles (most 1101; BHO c. 1118)",
+     event: "Queen Matilda founds the leper hospital of St Giles in the fields",
+     place: "St Giles High Street",
+     scene: "Queen Matilda washes lepers in SODA water at her new hospital of St Giles in the fields."}
+  - {year: 1110, peg: dice, confidence: disputed, source: "Search: Stow (1110); WP Stratford Abbey (1177)",
+     event: "Bow Bridge: Queen Matilda builds a bow-arched stone bridge over the Lea at Stratford",
+     place: "Bow Bridge",
+     scene: "Matilda's DICE tumble into the Lea at the ford, so she orders a bow-arched stone bridge at Stratford."}
+  - {year: 1123, peg: gnome, confidence: high, source: "WP mirror: St Bartholomew's Hospital",
+     event: "Rahere founds St Bartholomew's Hospital at Smithfield",
+     place: "West Smithfield",
+     scene: "Rahere, the king's jester, sends a GNOME to carry the first sick man into his new hospital at Smithfield."}
+  - {year: 1163, peg: gem, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "London Bridge: Peter of Colechurch builds the last timber bridge",
+     place: "London Bridge",
+     scene: "Peter of Colechurch pays for the last timber London Bridge with a GEM from his church in Cheapside."}
+  - {year: 1173, peg: comb, confidence: medium, source: "WP mirror: St Thomas' Hospital (possibly 1173)",
+     event: "St Thomas's Hospital takes Becket's name and moves to a new street in Southwark (approximate)",
+     place: "St Thomas Street",
+     scene: "Canons COMB the sick out of the crowded priory and move Becket's new hospital to its own street."}
+  - {year: 1176, peg: cage, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "Peter of Colechurch starts the stone London Bridge",
+     place: "London Bridge",
+     scene: "Peter of Colechurch sinks a CAGE of elm piles into the Thames: the first pier of the stone bridge."}
+  - {year: 1197, peg: pig, confidence: high, source: "Search: BHO, Priory of St Mary Spital (14 June)",
+     event: "Walter Brown and Roisia found the hospital of St Mary Spital",
+     place: "Spitalfields",
+     scene: "Walter and Roisia chase a PIG off the field outside Bishopsgate and found St Mary Spital there."}
+  - {year: 1197, peg: pig, confidence: high, source: "Magna Carta Project: cl. 33 (14 July)",
+     event: "Richard I's charter orders the weirs out of the Thames and gives the river's care to the City",
+     place: "Thames",
+     scene: "City men drag a fish weir out of the Thames with a squealing PIG caught in it, as Richard I's charter orders."}
+  - {year: 1202, peg: sun, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "King John appoints Isembert of Saintes to finish London Bridge",
+     place: "London Bridge",
+     scene: "King John aims a beam of SUN at Isembert of Saintes: this Frenchman must finish London Bridge."}
+  - {year: 1209, peg: soap, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "The stone London Bridge is finished",
+     place: "London Bridge",
+     scene: "Builders scrub the last arch of the stone London Bridge with SOAP: the bridge is finished."}
+  - {year: 1219, peg: tuba, confidence: disputed, source: "WP mirror: Timeline (c. 1219); Kingston Bridge (1190s)",
+     event: "Kingston Bridge: the first timber bridge (approximate)",
+     place: "Kingston Bridge",
+     scene: "A TUBA sounds as the first wooden bridge opens at Kingston, the only crossing above London Bridge."}
+  - {year: 1237, peg: mug, confidence: high, source: "WP mirror: Great Conduit",
+     event: "The City gets the Tyburn springs for its water supply",
+     place: "Tyburn",
+     scene: "Gilbert de Sandford fills a MUG at the Tyburn springs and gives the water to the City."}
+  - {year: 1245, peg: railway, confidence: high, source: "WP mirror: Great Conduit",
+     event: "Work starts on the Great Conduit, lead pipes from Tyburn to Cheapside",
+     place: "Cheapside",
+     scene: "Workers lay a lead pipe like a RAILWAY line from Tyburn to the Great Conduit in Cheapside."}
+  - {year: 1247, peg: rock, confidence: high, source: "WP mirror: Bethlem Royal Hospital",
+     event: "Simon FitzMary founds the priory of St Mary of Bethlehem (Bedlam) at Bishopsgate",
+     place: "Bishopsgate",
+     scene: "Simon FitzMary sets a ROCK as the first stone of St Mary of Bethlehem outside Bishopsgate."}
+  - {year: 1281, peg: foot, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "Five arches of London Bridge fall, the first collapse",
+     place: "London Bridge",
+     scene: "Winter ice kicks like a giant FOOT, and five arches of London Bridge drop into the Thames."}
+  - {year: 1282, peg: oven, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "Two bridge wardens at Bridge House take charge of London Bridge",
+     place: "Bridge House, Southwark",
+     scene: "Two bridge wardens fire an OVEN at Bridge House and bake new stone for London Bridge repairs."}
+  - {year: 1306, peg: sushi, confidence: medium, source: "Search: City ordinance (1306; some 1307)",
+     event: "A ban on burning sea coal in London while Parliament sits",
+     place: "Westminster",
+     scene: "Londoners must eat cold SUSHI: no sea coal may burn in their fires while Parliament sits."}
+  - {year: 1308, peg: sofa, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "First record of the Woolwich ferry",
+     place: "Woolwich",
+     scene: "A ferryman rows a SOFA across the Thames at Woolwich, and the ferry enters the record."}
+  - {year: 1331, peg: moth, confidence: disputed, source: "Search: VCH (1329 licence); TNA (1331)",
+     event: "William Elsing founds a hospital of a hundred beds for the blind at Cripplegate",
+     place: "Cripplegate",
+     scene: "Blind men follow a MOTH to William Elsing's new hospital of a hundred beds at Cripplegate."}
+  - {year: 1367, peg: jockey, confidence: medium, source: "Search: parliament.uk (1367 clock tower)",
+     event: "Westminster: a clock tower with a striking bell, the first public chiming clock in England",
+     place: "New Palace Yard",
+     scene: "A JOCKEY strikes the great bell in the new Westminster clock tower on every hour."}
+  - {year: 1403, peg: sumo, confidence: high, source: "WP mirror: Bethlem Royal Hospital",
+     event: "Bethlem: first record of insane patients",
+     place: "Bishopsgate",
+     scene: "A SUMO wrestler counts six insane men in Bethlem: the first record of such patients there."}
+  - {year: 1421, peg: ant, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Whittington's Longhouse, a public latrine of many seats, opens by the Thames",
+     place: "Vintry",
+     scene: "An ANT colony could not fill all the seats of Whittington's Longhouse, the new public latrine."}
+  - {year: 1437, peg: mug, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "Two arches of London Bridge fall, the second collapse",
+     place: "London Bridge",
+     scene: "A giant MUG of ale tips over on London Bridge, and two arches wash away under its weight."}
+  - {year: 1440, peg: horse, confidence: high, source: "Search: VCH Middlesex, Paddington",
+     event: "Westminster Abbey lets the City take water from a field in Bayswater",
+     place: "Bayswater",
+     scene: "A HORSE drinks at the Bayswater spring that Westminster Abbey now lets the City pipe away."}
+  - {year: 1473, peg: comb, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Upper Holloway: St Anthony's chapel and leper house are built",
+     place: "Upper Holloway",
+     scene: "Lepers COMB their hair at the new leper house of St Anthony on the north road at Holloway."}
+  # religion
+  - {year: 1080, peg: vase, confidence: high, source: "WP mirror: St Mary-le-Bow",
+     event: "Archbishop Lanfranc founds the church of St Mary-le-Bow in Cheapside",
+     place: "Cheapside",
+     scene: "Lanfranc sets a stone VASE on bowed arches in Cheapside: the first church of St Mary-le-Bow."}
+  - {year: 1082, peg: oven, confidence: high, source: "WP mirror: Bermondsey Abbey",
+     event: "Aylwin Child founds the monastery at Bermondsey",
+     place: "Bermondsey",
+     scene: "Aylwin Child builds an OVEN in the Bermondsey marsh to bake bread for his new monks."}
+  - {year: 1087, peg: fox, confidence: high, source: "WP mirror: Old St Paul's Cathedral",
+     event: "Bishop Maurice starts a new St Paul's after the fire",
+     place: "St Paul's",
+     scene: "A FOX digs the first foundation trench of Bishop Maurice's Norman St Paul's in the ashes of the old church."}
+  - {year: 1106, peg: sushi, confidence: high, source: "WP mirror: Southwark Cathedral",
+     event: "Southwark: St Mary Overie becomes a priory of Augustinian canons",
+     place: "Southwark Cathedral",
+     scene: "Augustinian canons catch SUSHI in the Thames for their first meal at St Mary Overie priory."}
+  - {year: 1108, peg: sofa, confidence: medium, source: "WP mirror: Holy Trinity Aldgate (c. 1108)",
+     event: "Queen Matilda founds Holy Trinity Priory inside Aldgate",
+     place: "Aldgate",
+     scene: "Queen Matilda gives the canons her SOFA inside Aldgate, and Holy Trinity Priory begins."}
+  - {year: 1114, peg: tower, confidence: high, source: "WP mirror: Merton Priory",
+     event: "Gilbert the Norman founds Merton Priory",
+     place: "Merton, River Wandle",
+     scene: "Gilbert the Norman builds a timber TOWER by the Wandle, and Merton Priory begins."}
+  - {year: 1123, peg: gnome, confidence: high, source: "WP mirror: Smithfield; Timeline",
+     event: "Rahere founds the priory of St Bartholomew the Great",
+     place: "West Smithfield",
+     scene: "A GNOME holds the candle as Rahere's canons sing the first mass in St Bartholomew the Great."}
+  - {year: 1135, peg: mill, confidence: high, source: "WP mirror: Stratford Langthorne Abbey (25 July)",
+     event: "William de Montfichet founds Stratford Langthorne Abbey",
+     place: "West Ham",
+     scene: "William de Montfichet builds a MILL on the Lea for the white monks of his new abbey at Stratford."}
+  - {year: 1144, peg: warrior, confidence: high, source: "Search: Survey of London; Museum of St John",
+     event: "Jordan de Briset founds the priory of the Knights of St John at Clerkenwell",
+     place: "St John's Square, Clerkenwell",
+     scene: "A crusader WARRIOR plants the cross of St John on Jordan de Briset's field at Clerkenwell."}
+  - {year: 1145, peg: railway, confidence: medium, source: "Search: BHO (c. 1145)",
+     event: "Jordan de Briset founds St Mary's nunnery at Clerkenwell",
+     place: "Clerks' Well",
+     scene: "Nuns ride a RAILWAY trolley up to the Clerks' Well and found St Mary's nunnery above it."}
+  - {year: 1147, peg: rock, confidence: medium, source: "WP mirror: Timeline (1147); East Smithfield (1148)",
+     event: "Queen Matilda of Boulogne founds the hospital of St Katharine by the Tower",
+     place: "St Katharine Docks",
+     scene: "Queen Matilda of Boulogne sets her ROCK beside the Tower ditch for the hospital of St Katharine."}
+  - {year: 1178, peg: cave, confidence: high, source: "WP mirror: Lesnes Abbey",
+     event: "Richard de Luci founds Lesnes Abbey in honour of Becket",
+     place: "Abbey Wood",
+     scene: "Richard de Luci does penance in a CAVE at Lesnes and founds an abbey to the murdered Becket."}
+  - {year: 1185, peg: waffle, confidence: high, source: "WP mirror: Temple Church (10 Feb)",
+     event: "Heraclius, Patriarch of Jerusalem, consecrates the round Temple Church",
+     place: "Temple",
+     scene: "Patriarch Heraclius blesses the Templars' round church, as round as a WAFFLE iron, by Fleet Street."}
+  - {year: 1210, peg: dice, confidence: medium, source: "Search: Survey of London; VCH (c. 1210)",
+     event: "William son of William the goldsmith founds the nunnery of St Helen's Bishopsgate",
+     place: "St Helen's Bishopsgate",
+     scene: "The goldsmith's son throws DICE with St Paul's canons and wins their leave for nuns at St Helen's."}
+  - {year: 1220, peg: nose, confidence: medium, source: "WP mirror: Westminster Abbey (c. 1220)",
+     event: "Westminster Abbey: Henry III starts a Lady Chapel at the east end",
+     place: "Westminster Abbey",
+     scene: "Henry III lays the first stone of a Lady Chapel on the NOSE of Westminster Abbey, its east end."}
+  - {year: 1221, peg: ant, confidence: high, source: "WP mirror: Old St Paul's Cathedral",
+     event: "Old St Paul's: the steeple is put up",
+     place: "St Paul's",
+     scene: "An ANT climbs the new steeple of St Paul's, the highest point in the City."}
+  - {year: 1225, peg: nail, confidence: high, source: "WP mirror: Greyfriars, London",
+     event: "The Franciscans (Greyfriars) settle in London by Newgate",
+     place: "Newgate Street",
+     scene: "John Iwyn hammers a NAIL into the door of the grey friars' first house by Newgate."}
+  - {year: 1232, peg: moon, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Henry III founds the House of Converts for Jews in Chancery Lane",
+     place: "Chancery Lane",
+     scene: "Henry III hangs a stone MOON over his new House of Converts in Chancery Lane."}
+  - {year: 1240, peg: horse, confidence: high, source: "WP mirror: Old St Paul's Cathedral",
+     event: "Old St Paul's is consecrated",
+     place: "St Paul's",
+     scene: "Bishop Roger Niger rides a white HORSE up the nave to consecrate the finished Old St Paul's."}
+  - {year: 1240, peg: horse, confidence: high, source: "WP mirror: Temple Church (Ascension Day)",
+     event: "Temple Church: the new chancel is consecrated",
+     place: "Temple",
+     scene: "A Templar's HORSE stamps into the new hall-like chancel of the Temple Church on its consecration day."}
+  - {year: 1247, peg: rock, confidence: medium, source: "Search: Cambridge chapter (c. 1247)",
+     event: "Richard de Grey gives the Carmelites (Whitefriars) their first land off Fleet Street",
+     place: "Whitefriars",
+     scene: "Richard de Grey hands the white friars a ROCK from Fleet Street as the first stone of their house."}
+  - {year: 1249, peg: rope, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "The Crutched Friars settle in London",
+     place: "Crutched Friars, Tower Hill",
+     scene: "Friars with crosses on their staffs climb a ROPE over the wall near Tower Hill and settle there."}
+  - {year: 1253, peg: llama, confidence: disputed, source: "WP mirror: Austin Friars (Stow 1253; 1260s)",
+     event: "Humphrey de Bohun founds the Austin Friars' house in Broad Street",
+     place: "Austin Friars",
+     scene: "Humphrey de Bohun loads a LLAMA with timber for the new Austin Friars' house in Broad Street."}
+  - {year: 1257, peg: log, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "The Friars of the Sack (Brothers of Penitence) first settle in London",
+     place: "Old Jewry",
+     scene: "Friars in sacking roll a LOG into the City and build their first English house on it."}
+  - {year: 1262, peg: chain, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Kensington: the first church of St Mary Abbots",
+     place: "Kensington High Street",
+     scene: "The abbot of Abingdon hangs a CHAIN of keys on the door of the first St Mary Abbots at Kensington."}
+  - {year: 1276, peg: cage, confidence: medium, source: "WP mirror: Blackfriars; Baynard's Castle",
+     event: "The Dominicans (Blackfriars) move to a new site by the Thames at Ludgate",
+     place: "Blackfriars",
+     scene: "The black friars carry their altar in a CAGE from Holborn to their new house by the Thames at Ludgate."}
+  - {year: 1290, peg: bees, confidence: medium, source: "WP mirror: Timeline of London (by then)",
+     event: "Ely Place: St Etheldreda's chapel of the bishops of Ely is built (approximate)",
+     place: "Ely Place, Holborn",
+     scene: "BEES build a honeycomb chapel for the Bishop of Ely in his Holborn garden: St Etheldreda's."}
+  - {year: 1292, peg: piano, confidence: high, source: "Search: parliament.uk; York building accounts",
+     event: "Westminster: Edward I starts St Stephen's Chapel in the palace",
+     place: "Palace of Westminster",
+     scene: "Michael of Canterbury plays a PIANO of stone keys as Edward I's masons start St Stephen's Chapel."}
+  - {year: 1294, peg: bear, confidence: high, source: "WP mirror: East Smithfield",
+     event: "The Minoresses (Poor Clares) found their abbey; the Minories liberty forms",
+     place: "Minories",
+     scene: "A BEAR guards the gate of the Poor Clares' new abbey outside Aldgate, the start of the Minories."}
+  - {year: 1314, peg: tower, confidence: high, source: "WP mirror: Old St Paul's Cathedral",
+     event: "Old St Paul's: the New Work, the long east end, is finished",
+     place: "St Paul's",
+     scene: "Masons set the last stone of the long new east end of St Paul's under its tall TOWER."}
+  - {year: 1324, peg: hanger, confidence: medium, source: "Search: Temple, London (1324)",
+     event: "The Knights Hospitaller get the Templars' old Temple",
+     place: "Temple",
+     scene: "The Hospitallers hang their black robes on every HANGER in the empty Templars' hall."}
+  - {year: 1332, peg: moon, confidence: high, source: "WP mirror: Old St Paul's Cathedral",
+     event: "Old St Paul's: William de Ramsey builds the eight-sided chapter house",
+     place: "St Paul's",
+     scene: "William de Ramsey builds an eight-sided chapter house at St Paul's, its roof shaped like a full MOON."}
+  - {year: 1348, peg: reef, confidence: high, source: "WP mirror: Greyfriars, London",
+     event: "Greyfriars: the great Gothic church is finished",
+     place: "Newgate Street",
+     scene: "The grey friars' new church rises over Newgate like a coral REEF, the second-largest church in the City."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "WP mirror: Austin Friars, London",
+     event: "Austin Friars: the church is rebuilt on a grander scale",
+     place: "Austin Friars",
+     scene: "A rich LAWYER pays for the Austin Friars to tear down their church and build a far larger one."}
+  - {year: 1371, peg: cat, confidence: high, source: "WP mirror: London Charterhouse",
+     event: "Walter de Manny founds the Carthusian Charterhouse on the plague field",
+     place: "Charterhouse Square",
+     scene: "A silent Carthusian CAT walks across Manny's plague field, and the Charterhouse is founded on it."}
+  - {year: 1376, peg: cage, confidence: high, source: "WP mirror: Westminster Abbey",
+     event: "Westminster Abbey: work starts again on the nave",
+     place: "Westminster Abbey",
+     scene: "Abbot Litlyngton lifts the scaffold CAGE back onto the old nave, and Yevele's masons start again."}
+  - {year: 1377, peg: cake, confidence: medium, source: "WP mirror: Lambeth Palace",
+     event: "Lambeth: the tower of St Mary-at-Lambeth is built",
+     place: "Lambeth",
+     scene: "Masons stack the stone tower of St Mary-at-Lambeth in layers like a wedding CAKE."}
+  - {year: 1387, peg: fox, confidence: high, source: "WP mirror: Old London Bridge (1387-96)",
+     event: "Henry Yevele rebuilds the chapel of St Thomas on London Bridge",
+     place: "London Bridge",
+     scene: "A FOX hides in the crypt as Henry Yevele rebuilds Becket's chapel in the middle of London Bridge."}
+  - {year: 1390, peg: bees, confidence: high, source: "WP mirror: Bermondsey Abbey",
+     event: "Bermondsey priory becomes an independent abbey",
+     place: "Bermondsey",
+     scene: "BEES swarm out of the French mother hive, and Bermondsey priory becomes an abbey of its own."}
+  - {year: 1414, peg: tower, confidence: high, source: "WP mirror: Syon Abbey",
+     event: "Henry V founds the Charterhouse of Sheen",
+     place: "Sheen, Richmond",
+     scene: "Henry V raises a TOWER of cells for silent monks at Sheen: the Charterhouse of Jesus of Bethlehem."}
+  - {year: 1415, peg: doll, confidence: high, source: "WP mirror: Syon Abbey (22 Feb)",
+     event: "Henry V lays the first stone of Syon Abbey at Twickenham",
+     place: "Twickenham",
+     scene: "Henry V lays the first stone of Syon Abbey with a Bridgettine nun's DOLL on top of it."}
+  - {year: 1431, peg: moth, confidence: high, source: "WP mirror: Syon Abbey",
+     event: "Syon Abbey moves to its new site at Isleworth",
+     place: "Isleworth",
+     scene: "The nuns of Syon follow a MOTH upriver from Twickenham to their new house at Isleworth."}
+  - {year: 1435, peg: mill, confidence: high, source: "WP mirror: Lambeth Palace (1435-40)",
+     event: "Lambeth Palace: the Lollards' Tower is built",
+     place: "Lambeth Palace",
+     scene: "The archbishop grinds heretics like grain: his MILL stands in the new Lollards' Tower at Lambeth."}
+  # arts
+  - {year: 1149, peg: rope, confidence: medium, source: "WP mirror: Southwark Cathedral (1149); Clink",
+     event: "Southwark: the bishops of Winchester build Winchester Palace (approximate)",
+     place: "Clink Street",
+     scene: "Bishop Henry of Blois hangs a ROPE ladder from the rose window of his new palace on Clink Street."}
+  - {year: 1174, peg: car, confidence: medium, source: "Search: Cambridge Anthology (c. 1174-83)",
+     event: "William FitzStephen writes his Description of London (approximate)",
+     place: "Cheapside",
+     scene: "FitzStephen drives a CAR round London and notes skaters on Moorfields and football on Shrove Tuesday."}
+  - {year: 1235, peg: mill, confidence: medium, source: "WP mirror: Tower of London (1235; Timeline 1210)",
+     event: "Tower menagerie: Frederick II sends Henry III three leopards",
+     place: "Tower of London",
+     scene: "Frederick II's three leopards turn a MILL wheel in their new den, and the Tower menagerie begins."}
+  - {year: 1240, peg: horse, confidence: high, source: "WP mirror: Tower of London",
+     event: "The White Tower is first painted white",
+     place: "White Tower",
+     scene: "A HORSE drags a giant brush full of whitewash over the keep, and the White Tower gets its name."}
+  - {year: 1246, peg: roach, confidence: high, source: "WP mirror: Savoy Palace",
+     event: "Henry III gives Peter of Savoy land on the Strand for the Savoy Palace",
+     place: "Strand",
+     scene: "A ROACH runs off the Strand riverbank, and Peter of Savoy builds his palace where it lived."}
+  - {year: 1252, peg: lion, confidence: high, source: "WP mirror: Tower of London",
+     event: "Tower menagerie: the polar bear from Haakon IV fishes in the Thames on a chain",
+     place: "Tower Wharf",
+     scene: "Haakon's polar bear, chained on Tower Wharf, steals a fish from the LION in the next cage."}
+  - {year: 1255, peg: lily, confidence: high, source: "WP mirror: Tower of London; Timeline",
+     event: "Tower menagerie: an elephant from Louis IX gets a wooden house",
+     place: "Tower of London",
+     scene: "Louis IX's elephant eats a LILY at the door of its new wooden house in the Tower."}
+  - {year: 1268, peg: chef, confidence: high, source: "Search: Westminster Abbey; Exploring London",
+     event: "Westminster Abbey: Odericus of Rome lays the Cosmati pavement",
+     place: "Westminster Abbey",
+     scene: "A Roman CHEF named Odericus lays porphyry and glass like a pizza: the Cosmati pavement."}
+  - {year: 1305, peg: seal, confidence: high, source: "WP mirror: Eltham Palace",
+     event: "Eltham: Bishop Bek gives his manor house to the future Edward II",
+     place: "Eltham Palace",
+     scene: "Bishop Bek hands the future Edward II a wax SEAL and the keys of his moated house at Eltham."}
+  - {year: 1345, peg: railway, confidence: medium, source: "WP mirror: Timeline of London (c. 1345)",
+     event: "The Strand: Durham House, the bishop of Durham's palace, is built (approximate)",
+     place: "Strand",
+     scene: "A RAILWAY of barges brings stone for the Bishop of Durham's new palace on the Strand."}
+  - {year: 1353, peg: llama, confidence: high, source: "WP mirror: Bermondsey Abbey",
+     event: "Bermondsey: Edward III builds a manor house by the Thames",
+     place: "Bermondsey",
+     scene: "A LLAMA carries roof tiles to Edward III's new manor house on the Bermondsey riverbank."}
+  - {year: 1374, peg: car, confidence: high, source: "Search: Harvard Chaucer page; Letter-Book G",
+     event: "The City leases Geoffrey Chaucer the rooms over Aldgate",
+     place: "Aldgate",
+     scene: "Chaucer parks his CAR under Aldgate and moves into the rooms above the gate, rent-free for life."}
+  - {year: 1384, peg: fairy, confidence: medium, source: "Search: Westminster Chronicle (29 Aug)",
+     event: "Skinners' Well, Clerkenwell: the parish clerks' play runs for five days",
+     place: "Skinners' Well, Clerkenwell",
+     scene: "A FAIRY prompts the parish clerks through their five-day play beside Skinners' Well."}
+  - {year: 1394, peg: bear, confidence: high, source: "WP mirror: Syon Abbey",
+     event: "Sheen: Richard II tears down the palace where Queen Anne died",
+     place: "Sheen, Richmond",
+     scene: "In grief, Richard II sends a BEAR to tear down Sheen Palace, where Queen Anne died."}
+  - {year: 1409, peg: soap, confidence: medium, source: "Search: Stow, Survey of London",
+     event: "Skinners' Well: the clerks' play of the creation of the world runs eight days",
+     place: "Skinners' Well, Clerkenwell",
+     scene: "The clerks blow SOAP bubbles as planets in their eight-day play of the creation at Skinners' Well."}
+  - {year: 1425, peg: nail, confidence: high, source: "Search: City of London (600 years, 1425)",
+     event: "Guildhall Library is founded with Whittington's bequest",
+     place: "Guildhall",
+     scene: "Carpenter chains the first books to their desks with a NAIL each in the new Guildhall Library."}
+  - {year: 1427, peg: ink, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Harmondsworth: the Great Barn of Winchester College is finished",
+     place: "Harmondsworth",
+     scene: "A carpenter dips his oak beams in INK and marks every joint of the Great Barn at Harmondsworth."}
+  - {year: 1433, peg: mummy, confidence: high, source: "WP mirror: Palace of Placentia; Timeline",
+     event: "Greenwich: Humphrey of Gloucester starts Bella Court and fences Greenwich Park",
+     place: "Greenwich",
+     scene: "Duke Humphrey wraps Greenwich Park in a fence like a MUMMY and starts his palace, Bella Court."}
+  - {year: 1466, peg: judge, confidence: high, source: "WP mirror: Crosby Hall, London",
+     event: "Bishopsgate: wool merchant John Crosby builds the great hall of Crosby Place",
+     place: "Bishopsgate",
+     scene: "A JUDGE in a wool wig opens Sir John Crosby's great hall at Bishopsgate, the tallest house in the City."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "WP mirror: Timeline (1475); Eltham (1470s)",
+     event: "Eltham Palace: Edward IV starts the great hall",
+     place: "Eltham Palace",
+     scene: "An EAGLE drops the first oak beam of Edward IV's hammerbeam great hall at Eltham."}
+  - {year: 1480, peg: vase, confidence: high, source: "Search: DNB, Lettou (indulgence 1480)",
+     event: "John Lettou sets up the first printing press in the City of London",
+     place: "All Hallows, Thames Street",
+     scene: "John Lettou prints his first page on a VASE-shaped press in the City, not in Westminster."}
+  # economy
+  - {year: 1133, peg: mummy, confidence: high, source: "WP mirror: Timeline; Smithfield",
+     event: "A royal charter sets up the yearly Bartholomew Fair at Smithfield",
+     place: "West Smithfield",
+     scene: "A cloth MUMMY is the first stall at the new Bartholomew Fair on Smithfield."}
+  - {year: 1137, peg: mug, confidence: disputed, source: "WP mirror: Smithfield (1137); Timeline (1123)",
+     event: "Smithfield livestock market is founded",
+     place: "West Smithfield",
+     scene: "A drover pays for his first sale with a MUG of ale at the new Smithfield cattle market."}
+  - {year: 1157, peg: log, confidence: medium, source: "WP mirror: Steelyard",
+     event: "Cologne merchants use a hall at Thames Street and Cousin Lane",
+     place: "Dowgate",
+     scene: "Cologne merchants float a LOG of Rhine wine down to Dowgate and open their hall beside it."}
+  - {year: 1180, peg: vase, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Guild of Pepperers is first recorded",
+     place: "Cheapside",
+     scene: "The pepperers grind pepper in a VASE in Soper Lane and form their guild."}
+  - {year: 1229, peg: knob, confidence: high, source: "WP mirror: East Smithfield",
+     event: "East Smithfield gets a Whitsun fair",
+     place: "East Smithfield",
+     scene: "A KNOB of butter sells first at the new Whitsun fair in East Smithfield."}
+  - {year: 1246, peg: roach, confidence: high, source: "Search: Letter-Book C (13 Oct)",
+     event: "Richard of Cornwall grants Queenhithe dock to the City for a yearly rent",
+     place: "Queenhithe",
+     scene: "Richard of Cornwall hands the City a ROACH from Queenhithe dock, the City's now for a yearly rent."}
+  - {year: 1247, peg: rock, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Romford: a charter for a sheep market",
+     place: "Romford",
+     scene: "Shepherds tie their flocks to a ROCK in Romford market place, chartered for sheep."}
+  - {year: 1268, peg: chef, confidence: high, source: "WP mirror: Bermondsey Abbey",
+     event: "Bermondsey gets a Monday market and a fair at Charlton",
+     place: "Bermondsey, Charlton",
+     scene: "A CHEF cooks for the crowd at Bermondsey's first Monday market and the new fair at Charlton."}
+  - {year: 1272, peg: coin, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Fishmongers get a charter; the cordwainers and curriers get leather trade rights",
+     place: "Thames Street",
+     scene: "The fishmongers find a silver COIN in a salmon and buy their charter with it."}
+  - {year: 1279, peg: cowboy, confidence: high, source: "WP mirror: Tower of London",
+     event: "The Royal Mint is centred in the Tower",
+     place: "Tower of London",
+     scene: "A COWBOY rides into the Tower with saddlebags of silver: all coin is now struck there."}
+  - {year: 1282, peg: oven, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Mayor Henry le Waleys builds the Stocks Market for fish and meat",
+     place: "Stocks Market (Mansion House)",
+     scene: "Henry le Waleys builds an OVEN-hot stone market for fish and meat by the old stocks."}
+  - {year: 1303, peg: sumo, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Enfield: a charter for a market",
+     place: "Enfield Town",
+     scene: "A SUMO wrestler pushes the first cart into the new chartered market at Enfield."}
+  - {year: 1307, peg: ski, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Southwark: the Tabard inn opens",
+     place: "Borough High Street",
+     scene: "A pilgrim in a tabard rides a SKI down Borough High Street and stops at the new Tabard inn."}
+  - {year: 1322, peg: nun, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Armourers' guild is formed",
+     place: "Coleman Street",
+     scene: "A NUN in full plate armour joins the new Armourers' guild in Coleman Street."}
+  - {year: 1327, peg: ink, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Merchant Taylors and the Skinners get royal charters",
+     place: "Threadneedle Street",
+     scene: "A tailor and a skinner sign their new charters in the same INK, with the Goldsmiths watching."}
+  - {year: 1331, peg: moth, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Butchers' guild gets the right to control the meat trade",
+     place: "Newgate shambles",
+     scene: "A MOTH lands on bad meat at the Newgate shambles, and the new butchers' guild throws it out."}
+  - {year: 1361, peg: jet, confidence: medium, source: "WP mirror: Timeline of London (1361; charter 1364)",
+     event: "The Drapers' Company is founded",
+     place: "Cornhill",
+     scene: "A JET of wind blows bolts of cloth down Cornhill, and the drapers form a company to sell them."}
+  - {year: 1363, peg: gem, confidence: high, source: "WP mirror: Timeline of London (15 July)",
+     event: "The Vintners get a royal charter",
+     place: "Vintry",
+     scene: "A red GEM glows in the vintners' cup as they drink to their new charter in the Vintry."}
+  - {year: 1365, peg: jelly, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Plumbers' Company gets the right to control plumbers",
+     place: "Guildhall",
+     scene: "Lead melts like JELLY in the plumbers' pots as they win control of their trade."}
+  - {year: 1368, peg: chef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Poulters' Company gets the right to control poultry sales",
+     place: "Poultry",
+     scene: "A CHEF checks every goose in Poultry street, now under the new Poulters' Company."}
+  - {year: 1382, peg: oven, confidence: disputed, source: "Search: Custom House (1380, 1382, 1385)",
+     event: "John Churchman builds a Custom House on Wool Quay",
+     place: "Wool Quay",
+     scene: "John Churchman weighs wool sacks in an OVEN-sized scale in his new Custom House on Wool Quay."}
+  - {year: 1394, peg: bear, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Salters get a charter as the Guild of Corpus Christi",
+     place: "Bread Street",
+     scene: "A BEAR licks the salt barrels as the salters get their charter."}
+  - {year: 1395, peg: bell, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Saddlers' Company is incorporated",
+     place: "Foster Lane",
+     scene: "A BELL rings on every new saddle as the saddlers become a company."}
+  - {year: 1397, peg: pig, confidence: medium, source: "Search: Blackwell Hall (bought 1395-96)",
+     event: "Blackwell Hall becomes the City's cloth market",
+     place: "Basinghall Street",
+     scene: "A PIG wrapped in broadcloth is the first lot sold at the City's new cloth market, Blackwell Hall."}
+  - {year: 1403, peg: sumo, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Stationers' guild of writers and bookbinders forms",
+     place: "St Paul's churchyard",
+     scene: "A SUMO wrestler binds books at a stall by St Paul's, a member of the new Stationers' guild."}
+  - {year: 1428, peg: knife, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Grocers get a royal charter and finish their hall",
+     place: "Grocers' Hall, Princes Street",
+     scene: "The grocers cut the ribbon of their new hall with a spice KNIFE, charter in hand."}
+  - {year: 1445, peg: railway, confidence: medium, source: "Search: Leadenhall (1439-55; 1445)",
+     event: "Leadenhall: mayor Simon Eyre builds a public granary",
+     place: "Leadenhall",
+     scene: "A RAILWAY of grain carts rolls into Simon Eyre's new public granary at Leadenhall."}
+  - {year: 1448, peg: reef, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Haberdashers get a royal charter",
+     place: "Gresham Street",
+     scene: "Haberdashers sell hats trimmed with coral REEF as their new charter is read."}
+  - {year: 1461, peg: jet, confidence: medium, source: "WP mirror: Timeline (1461; others 1462)",
+     event: "The Barbers' Company is incorporated",
+     place: "Monkwell Street",
+     scene: "A barber shaves a customer with a JET of hot water, his company now incorporated."}
+  - {year: 1462, peg: chain, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Tallow Chandlers are incorporated",
+     place: "Dowgate Hill",
+     scene: "A CHAIN of tallow candles hangs over Dowgate Hill to light the new company's charter."}
+  - {year: 1463, peg: gem, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Ironmongers are incorporated",
+     place: "Fenchurch Street",
+     scene: "An ironmonger hammers a black iron GEM into the seal of his new company."}
+  - {year: 1468, peg: chef, confidence: high, source: "WP mirror: Steelyard; Timeline (29 July)",
+     event: "The Hansa merchants of the Steelyard are arrested as war with the Hansa starts",
+     place: "Steelyard, Dowgate",
+     scene: "Guards drag the Steelyard's CHEF away from his ovens with every Hansa merchant in London."}
+  - {year: 1471, peg: cat, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Dyers' Company is incorporated",
+     place: "Dowgate",
+     scene: "A white CAT falls in a woad vat and comes out blue as the dyers win their charter."}
+  - {year: 1474, peg: car, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Pewterers' Company is incorporated",
+     place: "Lime Street",
+     scene: "A pewter CAR with tin wheels rolls down Lime Street to the new Pewterers' Company."}
+  - {year: 1477, peg: cake, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Carpenters' Company gets a royal charter",
+     place: "London Wall",
+     scene: "The carpenters build a CAKE of oak beams to toast their royal charter."}
+  - {year: 1478, peg: cave, confidence: high, source: "Search: Goldsmiths' Company; Assay Office",
+     event: "Goldsmiths' Hall: an assay office with a paid assayer, and the yearly date letter",
+     place: "Foster Lane",
+     scene: "Christopher Elyot tests silver in a dark CAVE under Goldsmiths' Hall and stamps the year's letter."}
+  - {year: 1480, peg: vase, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Fullers' Company gets a charter",
+     place: "Thames Street",
+     scene: "A fuller stamps wool clean in a giant VASE as his company gets its charter."}
+  - {year: 1484, peg: fairy, confidence: high, source: "WP mirror: Timeline of London (10 Apr)",
+     event: "Mayor Robert Billesdon's award sets the order of the livery companies",
+     place: "Guildhall",
+     scene: "A FAIRY lines up the Skinners and Merchant Taylors in turns, as Billesdon's award decides."}
+  # society
+  - {year: 1070, peg: goose, confidence: medium, source: "WP mirror: History of London (c. 1070)",
+     event: "The first Jews settle in London, from Rouen (approximate)",
+     place: "Old Jewry",
+     scene: "A GOOSE leads the first Jewish families from Rouen to their new street, Old Jewry."}
+  - {year: 1087, peg: fox, confidence: high, source: "WP mirror: Timeline; Old St Paul's",
+     event: "A great fire burns much of the city and St Paul's",
+     place: "St Paul's",
+     scene: "A FOX with a burning tail runs through the thatch, and fire takes most of London and St Paul's."}
+  - {year: 1091, peg: boot, confidence: high, source: "WP mirror: History of London; St Mary-le-Bow",
+     event: "The London tornado destroys London Bridge and many houses and hits St Mary-le-Bow",
+     place: "Cheapside",
+     scene: "A tornado kicks like a giant BOOT, smashes London Bridge and throws the roof beams of Bow church into the street."}
+  - {year: 1135, peg: mill, confidence: medium, source: "WP mirror: Timeline (1135); Old London Bridge (1136)",
+     event: "Fire spreads from London Bridge across the city and damages St Paul's",
+     place: "London Bridge",
+     scene: "A burning MILL on London Bridge throws sparks across the city as far as St Paul's."}
+  - {year: 1161, peg: jet, confidence: medium, source: "Search: Wellcome; BHO (1161; some 1162)",
+     event: "Southwark: rules for the Bankside brothels (stews) under the Bishop of Winchester",
+     place: "Bankside",
+     scene: "A JET of Thames water washes Bankside's stews, and the bishop posts his rules on every door."}
+  - {year: 1205, peg: seal, confidence: high, source: "Search: VCH; Exploring London",
+     event: "Peter of Colechurch dies and is buried in the chapel on his bridge",
+     place: "London Bridge",
+     scene: "A SEAL carries Peter of Colechurch's coffin into the crypt of the chapel on his unfinished bridge."}
+  - {year: 1212, peg: tongue, confidence: high, source: "WP mirror: Timeline (10 July); Old London Bridge",
+     event: "The Great Fire of Southwark burns across London Bridge",
+     place: "Southwark, London Bridge",
+     scene: "A TONGUE of flame licks from Southwark across London Bridge and traps the crowd at both ends."}
+  - {year: 1236, peg: match, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Floods drown many people at Woolwich",
+     place: "Woolwich",
+     scene: "The Thames rises at Woolwich, and the people strike their last MATCH on the roofs."}
+  - {year: 1242, peg: rhino, confidence: medium, source: "Search: London Museum (1237, 1242)",
+     event: "The Thames floods Westminster Hall",
+     place: "Westminster Hall",
+     scene: "A RHINO wades through Westminster Hall when the Thames floods it to the judges' benches."}
+  - {year: 1258, peg: wolf, confidence: medium, source: "Search: Current Archaeology; MOLA (1257-58)",
+     event: "Famine after a volcanic winter; mass graves at St Mary Spital",
+     place: "Spitalfields",
+     scene: "A hungry WOLF of famine fills the burial pits of St Mary Spital after the volcano's cold year."}
+  - {year: 1271, peg: cat, confidence: high, source: "WP mirror: St Mary-le-Bow",
+     event: "The tower of St Mary-le-Bow falls and kills a man",
+     place: "Cheapside",
+     scene: "A CAT on the top of Bow church tower jumps, and the tower falls into Cheapside."}
+  - {year: 1299, peg: pipe, confidence: medium, source: "WP mirror: Timeline (1299; often 1298)",
+     event: "Fire damages the Palace of Westminster",
+     place: "Palace of Westminster",
+     scene: "A dropped PIPE sets the royal rooms of Westminster Palace on fire."}
+  - {year: 1303, peg: sumo, confidence: high, source: "WP mirror: Westminster Abbey",
+     event: "Thieves break into the king's treasury in the crypt of Westminster Abbey",
+     place: "Westminster Abbey chapter house",
+     scene: "A SUMO thief squeezes into the crypt under the abbey chapter house and steals the king's treasure."}
+  - {year: 1309, peg: soap, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Thames freezes over",
+     place: "Thames",
+     scene: "Londoners slide on SOAP across the frozen Thames from the City to Southwark."}
+  - {year: 1338, peg: movie, confidence: high, source: "WP mirror: Stratford Langthorne Abbey",
+     event: "Thames floods drive the monks out of Stratford Langthorne Abbey",
+     place: "West Ham",
+     scene: "The monks watch a MOVIE of the Thames flood, then leave Stratford Langthorne for Essex."}
+  - {year: 1344, peg: warrior, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Clifford's Inn, an inn of chancery for law students, is founded",
+     place: "Fleet Street",
+     scene: "A WARRIOR lays down his sword at the new Clifford's Inn off Fleet Street and starts to study law."}
+  - {year: 1346, peg: roach, confidence: medium, source: "Search: Temple (c. 1346; some 1347)",
+     event: "The Hospitallers let the Temple to lawyers",
+     place: "Temple",
+     scene: "Lawyers chase a ROACH out of the Templars' old hall and move in as tenants."}
+  - {year: 1348, peg: reef, confidence: high, source: "WP mirror: Timeline; East Smithfield",
+     event: "The Black Death reaches London; two plague cemeteries open in East Smithfield",
+     place: "East Smithfield",
+     scene: "Plague washes into London like a wave over a REEF, and East Smithfield fills two new cemeteries."}
+  - {year: 1348, peg: reef, confidence: high, source: "WP mirror: London Charterhouse; Smithfield",
+     event: "Walter de Manny rents Spital Croft as a plague burial ground",
+     place: "Charterhouse Square",
+     scene: "Walter de Manny marks out Spital Croft with coral from a REEF, and plague dead fill it."}
+  - {year: 1362, peg: chain, confidence: high, source: "WP mirror: Austin Friars, London",
+     event: "A storm blows down the steeple of Austin Friars",
+     place: "Austin Friars",
+     scene: "A storm snaps the CHAIN holding the Austin Friars' steeple, and it crashes down."}
+  - {year: 1374, peg: car, confidence: high, source: "WP mirror: Smithfield, London",
+     event: "Smithfield: a seven-day tournament",
+     place: "West Smithfield",
+     scene: "Knights in armour race a CAR round Smithfield for seven days of tournament."}
+  - {year: 1378, peg: cave, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Staple Inn becomes an inn of chancery",
+     place: "Holborn",
+     scene: "Law students leave the wool CAVE of Staple Inn's cellar and turn the hall into an inn of chancery."}
+  - {year: 1388, peg: fife, confidence: high, source: "WP mirror: Timeline of London",
+     event: "The Inner Temple and the Middle Temple are first recorded as societies",
+     place: "Temple",
+     scene: "A FIFE player splits the Temple's lawyers into two bands: Inner Temple and Middle Temple."}
+  - {year: 1390, peg: bees, confidence: high, source: "WP mirror: Smithfield, London",
+     event: "Smithfield: Richard II holds a great tournament",
+     place: "West Smithfield",
+     scene: "BEES with tiny lances joust at Richard II's great tournament on Smithfield."}
+  - {year: 1407, peg: ski, confidence: high, source: "WP mirror: Timeline of London",
+     event: "Plague in London",
+     place: "Cheapside",
+     scene: "Plague rides a SKI down Cheapside, and the bells toll from every parish."}
+  - {year: 1422, peg: nun, confidence: high, source: "WP mirror: Lincoln's Inn",
+     event: "Lincoln's Inn: the Black Books, its council records, begin",
+     place: "Lincoln's Inn",
+     scene: "A NUN writes the first page of Lincoln's Inn's Black Books, its council records."}
+  - {year: 1434, peg: hammer, confidence: high, source: "WP mirror: Timeline (23 Nov)",
+     event: "The Thames freezes below London Bridge",
+     place: "Below London Bridge",
+     scene: "Londoners need a HAMMER to break the ice on the Thames below London Bridge."}
+  - {year: 1442, peg: rhino, confidence: medium, source: "WP mirror: Timeline of London",
+     event: "Town clerk John Carpenter's bequest for the education of poor boys (later City of London School)",
+     place: "Guildhall",
+     scene: "A RHINO carries four poor boys to their lessons with John Carpenter's bequest."}
+  - {year: 1444, peg: warrior, confidence: high, source: "WP mirror: Timeline (24 Apr)",
+     event: "Lightning sets the spire of St Paul's on fire",
+     place: "St Paul's",
+     scene: "A WARRIOR in the clouds throws a spear of lightning, and the spire of St Paul's catches fire."}
+  - {year: 1467, peg: jockey, confidence: high, source: "Search: History Today (11-12 June)",
+     event: "Smithfield: Lord Scales jousts with the Bastard of Burgundy",
+     place: "West Smithfield",
+     scene: "Lord Scales unhorses the Bastard of Burgundy like a fallen JOCKEY at the Smithfield joust."}
+  - {year: 1469, peg: ship, confidence: high, source: "WP mirror: Southwark Cathedral",
+     event: "Southwark priory: the stone vault of the nave falls in",
+     place: "Southwark Cathedral",
+     scene: "The stone vault of St Mary Overie falls like a capsized SHIP onto the nave."}
+  - {year: 1481, peg: foot, confidence: high, source: "WP mirror: Old London Bridge",
+     event: "A latrine on London Bridge falls into the Thames, and five men drown",
+     place: "London Bridge",
+     scene: "A FOOT stamps through the bridge latrine floor, and five men fall into the Thames."}
+world_refs:
+  - {year: 1066, event: "Norman Conquest: William burns Southwark, and London submits", cell: western_europe_politics_500_1500}
+  - {year: 1097, event: "William Rufus builds Westminster Hall", cell: western_europe_arts_500_1500}
+  - {year: 1102, event: "Council of London bans the sale of English slaves", cell: western_europe_society_500_1500}
+  - {year: 1107, event: "Concordat of London", cell: western_europe_religion_500_1500}
+  - {year: 1155, event: "Weavers of London get a royal charter", cell: western_europe_economy_500_1500}
+  - {year: 1175, event: "Cologne merchants in London win freedom from tolls", cell: western_europe_economy_500_1500}
+  - {year: 1216, event: "Prince Louis of France enters London", cell: western_europe_politics_500_1500}
+  - {year: 1245, event: "Henry III starts the Gothic Westminster Abbey", cell: western_europe_arts_500_1500}
+  - {year: 1269, event: "New Westminster Abbey consecrated", cell: western_europe_arts_500_1500}
+  - {year: 1282, event: "German Hansa in London first named", cell: western_europe_economy_500_1500}
+  - {year: 1291, event: "Eleanor crosses, Cheapside and Charing Cross", cell: western_europe_arts_500_1500}
+  - {year: 1305, event: "William Wallace executed at Smithfield", cell: western_europe_politics_500_1500}
+  - {year: 1314, event: "Football banned in London", cell: western_europe_society_500_1500}
+  - {year: 1327, event: "Goldsmiths of London get a royal charter", cell: western_europe_economy_500_1500}
+  - {year: 1353, event: "Wool staple seated at Westminster", cell: western_europe_economy_500_1500}
+  - {year: 1381, event: "Peasants' Revolt: Savoy burnt, Tower stormed, Tyler killed at Smithfield", cell: western_europe_society_500_1500}
+  - {year: 1382, event: "Blackfriars Council (Earthquake Synod)", cell: western_europe_religion_500_1500}
+  - {year: 1393, event: "Hammerbeam roof for Westminster Hall", cell: western_europe_arts_500_1500}
+  - {year: 1394, event: "Mercers of London get a royal charter", cell: western_europe_economy_500_1500}
+  - {year: 1395, event: "Lollards post the Twelve Conclusions on Westminster Hall", cell: western_europe_religion_500_1500}
+  - {year: 1400, event: "Chaucer buried in Westminster Abbey", cell: western_europe_arts_500_1500}
+  - {year: 1407, event: "Merchant Adventurers get a royal charter", cell: western_europe_economy_500_1500}
+  - {year: 1414, event: "Oldcastle's Lollard rising at St Giles' Fields fails", cell: western_europe_politics_500_1500}
+  - {year: 1417, event: "Oldcastle hanged and burned at St Giles", cell: western_europe_religion_500_1500}
+  - {year: 1450, event: "Jack Cade's rebels enter London", cell: western_europe_politics_500_1500}
+  - {year: 1471, event: "Battle of Barnet", cell: western_europe_politics_500_1500}
+  - {year: 1475, event: "Hansa buys the Steelyard site", cell: western_europe_economy_500_1500}
+  - {year: 1476, event: "Caxton's press at Westminster", cell: western_europe_arts_500_1500}
+  - {year: 1477, event: "Caxton's Dictes, first dated book printed in England", cell: western_europe_arts_500_1500}
+  - {year: 1478, event: "Medici Bank closes its London branch", cell: western_europe_economy_500_1500}
+  - {year: 1483, event: "Princes vanish in the Tower", cell: western_europe_politics_500_1500}
+  - {year: 1484, event: "Caxton prints Aesop's Fables", cell: western_europe_arts_500_1500}
+out_refs:
+  - {year: 1066, event: "William I crowned in Westminster Abbey", reason: "coronation"}
+  - {year: 1100, event: "Henry I crowned at Westminster", reason: "coronation"}
+  - {year: 1161, event: "Edward the Confessor canonised (Westminster's royal saint)", reason: "papal act"}
+  - {year: 1170, event: "Henry the Young King crowned at Westminster", reason: "coronation"}
+  - {year: 1189, event: "Richard I crowned at Westminster", reason: "coronation"}
+  - {year: 1191, event: "First siege of the Tower: Longchamp gives up to Prince John", reason: "national power struggle"}
+  - {year: 1215, event: "Rebel barons occupy London", reason: "national war"}
+  - {year: 1236, event: "Statute of Merton passed at Merton Priory", reason: "national law"}
+  - {year: 1251, event: "Court of Arches founded at St Mary-le-Bow", reason: "national church court"}
+  - {year: 1263, event: "Rebels occupy London; Queen Eleanor pelted at London Bridge", reason: "national war"}
+  - {year: 1267, event: "Gilbert de Clare occupies London and besieges the Tower", reason: "national war"}
+  - {year: 1278, event: "Jews held in the Tower on coin-clipping charges", reason: "national coinage trials"}
+  - {year: 1296, event: "Stone of Scone brought to Westminster Abbey", reason: "national trophy"}
+  - {year: 1330, event: "Roger Mortimer seized and hanged at Tyburn", reason: "national power struggle"}
+  - {year: 1399, event: "Richard II held in the Tower and deposed", reason: "national power struggle"}
+  - {year: 1400, event: "Manuel II honoured with a joust at Eltham", reason: "imperial visit"}
+  - {year: 1401, event: "William Sawtrey, first Lollard burned, at Smithfield", reason: "national church court"}
+  - {year: 1406, event: "Prince James of Scotland held in the Tower", reason: "national prisoner"}
+  - {year: 1410, event: "John Badby burned for heresy at Smithfield", reason: "national church court"}
+  - {year: 1425, event: "Beaufort and Gloucester face off at London Bridge", reason: "national power struggle"}
+  - {year: 1437, event: "Henry VI's crown-wearing at Merton Priory", reason: "royal ceremony"}
+  - {year: 1460, event: "Warwick and March march on London", reason: "national war"}
+  - {year: 1461, event: "Edward IV proclaimed king at Baynard's Castle", reason: "accession"}
+  - {year: 1471, event: "Henry VI dies in the Tower", reason: "national power struggle"}
+  - {year: 1483, event: "Richard III offered the crown at Baynard's Castle", reason: "accession"}

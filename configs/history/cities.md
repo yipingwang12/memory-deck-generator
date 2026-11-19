@@ -196,14 +196,17 @@ city here; Tashkent is the best one if the user wants the region.
 
 Area: Greater London, all 32 boroughs and the City.
 
-| era slug | years |
-|---|---|
-| `pre43` | before 43 CE (prehistory, Iron Age) |
-| `43_409` | Londinium |
-| `410_1065` | Saxon Lundenwic to the Conquest |
-| `1066_1484` | medieval |
-| `1485_1665` | Tudor and Stuart, to the eve of the Great Fire |
-| `1666_1836` | Great Fire to Victoria |
-| `1837_1913` | Victorian and Edwardian |
-| `1914_1944` | the world wars |
-| `1945_present` | post-war |
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre43` | before 43 CE (prehistory, Iron Age) | 25 | ~50 |
+| `43_409` | Londinium | 25 | ~70 (built: 59) |
+| `410_1065` | Saxon Lundenwic to the Conquest | 25 | ~70 |
+| `1066_1484` | medieval | 45 | ~150 |
+| `1485_1665` | Tudor and Stuart, to the eve of the Great Fire | 45 | ~200 |
+| `1666_1836` | Great Fire to Victoria | 45 | ~250 |
+| `1837_1913` | Victorian and Edwardian | 45 | ~300 |
+| `1914_1944` | the world wars | 45 | ~150 |
+| `1945_present` | post-war | 45 | ~250 |
+
+Expected cards are a guide, not a target (capital: many events go to world_refs and out_refs).
+The 4 unverified Londinium cards stay (user, 2026-11-19).
