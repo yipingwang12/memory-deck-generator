@@ -311,11 +311,12 @@ First deck: d'Ascoli et al. 2026 (TRIBE v2, arXiv:2605.04326) — 24 cards from 
 - Next: a minimum anchor-height check measured in code rather than by eye.
 - **Renderer recorded** (2026-11-10): picking the renderer by "has ≥1 current Gemini picture" meant rewording a Gemini deck's scenes would silently flip it to Three.js. The sidecar now records `renderer` and the next build keeps it; `renderer:` in the scenes YAML switches on purpose.
 
-### 11b. Person MCQs (CoevCon attendees) — *in progress* (2026-11-17)
+### 11b. Person MCQs (CoevCon attendees) — *built* (2026-11-17/18)
 - Source: one sourced dossier per person (`career_planning/research_notes/CoevCon attendees/`), from a 20-agent research pass over 33 speakers and 96 other attendees. One person is one deck.
 - Rides `deck-companies` (`deck_type: person`, `artifact_prefix: people`); the quote check, volatility refusal and `checked` dates carry over unchanged. Data lives in the private `career_planning/coevcon_deck/`, never here.
 - **Etymology pilot**: memory-scene anchors and place images come from the meaning of names (Norman → "north man" → VIKING), each with a cited source, instead of from sound. `person_mnemonics` enforces the sources and writes the etymology into the scene text the quiz shows. A test of whether meaning-based images beat sound-based ones before wider use.
-- Quiz: the `CoevCon` priority collection, uncapped (all cards new at once), local-only artifacts.
+- Built: 66 decks / 1,227 cards (4 organizers, 28 speakers, 34 attendees); every deck passes the check with no FAIL or WARN. Refused facts carry `cardable: false` plus a `reason` and leave the coverage denominator.
+- Quiz: the `CoevCon` priority collection in its own window (Quiz CoevCon.app), uncapped (all cards new at once), local-only artifacts.
 
 ### 12. Source-file MCQs (`deck-code-mcq`) — *built*
 - Source: **one source file of a work repo**, read by an LLM session. One file is one deck.
