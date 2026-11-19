@@ -121,9 +121,13 @@ world_refs:
   includes London) → world_ref, not card.
 - `world_refs` sit after `dates:`, in date order. They carry no peg and no scene.
 - Capitals lose many events to world_refs and to the OUT rule. A thin era is correct; do not pad it.
-- After each wave of city eras, the main session runs the IDF duplicate scan (as for world waves,
-  `grid.md`) of the new city files against the world cells. The `deck-history-check` world_ref check
-  finds only an exact `(year, event)` match; a reworded duplicate card passes it.
+- After each wave of city eras, the main session runs the duplicate scan
+  `.venv/bin/deck-history-dups configs/history/cities/<city>/*.yaml` and decides each candidate pair
+  (reworded duplicate → world_ref; different aspect → keep). The `deck-history-check` world_ref check
+  finds only an exact `(year, event)` match; a reworded duplicate card passes it. The scan compares
+  each card with world dates and other city eras' cards of a near year (TF-IDF cosine ≥ 0.35, or two
+  shared rare words). It misses paraphrases that share no word and dates that differ by more than
+  its window (±2 years after 1000, ±5 before, wider BCE; doubled for approximate dates).
 
 ## Archaeological dates
 
