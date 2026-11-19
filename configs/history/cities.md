@@ -245,6 +245,11 @@ Group B, then Group C. Historic cities give many world_refs and fewer cards (Rom
 - **C, more depth**: Florence, Amsterdam, Prague, Lisbon, Kyiv, Edinburgh, Kraków, Budapest, Barcelona;
   Alexandria, Carthage–Tunis, Cape Town, Zanzibar or Mombasa; Rio de Janeiro, Philadelphia, Cusco,
   Montreal, Washington; Nanjing, Hangzhou, Hong Kong, Kathmandu, Yangon; Melbourne.
+- **D, GaWC 2024 Alpha tier and former giants** (user 2026-11-19: add the full Alpha tier): every Alpha++,
+  Alpha+, Alpha and Alpha− city not already listed: Dubai, Milan, Toronto, Frankfurt, Warsaw, Guangzhou,
+  Kuala Lumpur, Luxembourg, Taipei, Shenzhen, Brussels, Zurich, San Francisco, Riyadh, Santiago,
+  Düsseldorf, Stockholm, Munich, Dublin, Houston; plus Dhaka (UN #2 by population), Kaifeng, Córdoba,
+  Patna (Pataliputra). Several Alpha business hubs have thin city history: expect few eras.
 
 ## Cities and eras
 
