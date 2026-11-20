@@ -1,0 +1,512 @@
+# City: Moscow x 1613 to 1711 (the early Romanovs to the capital's move to Saint Petersburg). DRAFT 2026-11-19.
+# Area: Moscow city (2012 borders) and Moscow Oblast (Sergiyev Posad, Istra, Zvenigorod, Kolomna, Dmitrov, Podolsk, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). The tsars' court, the Patriarch's
+# councils and laws for the whole state -> out_refs. World-grid events -> world_refs.
+# Dates: memory pass + web check (44 searches; no unauthorised book copies).
+# Main sources: WP mirror (Moscow Print Yard, Izmaylovo Estate, Savvino-Storozhevsky Monastery, Naryshkin Baroque,
+# Trinity Lavra, Sukharev Tower, Bolshoy Kamenny Bridge; 2023-10), kreml.ru, museum and city pages, ruwiki summaries.
+# A building -> start of work unless the text says "finished", "opens" or "consecrated".
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1618, peg: dove, confidence: high, source: "WP mirror: Siege of Moscow (1618)",
+     event: "Siege of Moscow: Wladyslaw and Sahaidachny's Cossacks storm the Arbat and Tver Gates at night and fail",
+     place: "Arbat Gate, Bely Gorod",
+     scene: "At the Arbat Gate a white DOVE pecks out the eyes of the night stormers, and the Polish ladders fall back into the ditch."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP mirror: Trinity Lavra (abortive siege)",
+     event: "Wladyslaw's army besieges the Trinity Lavra and fails; a shot hole stays in the gates",
+     place: "Holy Gates, Trinity Lavra, Sergiyev Posad",
+     scene: "A cannonball shaped like a DOVE punches a hole in the Lavra's Holy Gates, but the monks hold the walls and the Poles march off."}
+  - {year: 1640, peg: horse, confidence: medium, source: "ancient-history-sites: Novospassky walls 1640-1642",
+     event: "Novospassky Monastery gets brick walls and towers that guard the southern road into Moscow",
+     place: "Novospassky Monastery, Krutitsy hill",
+     scene: "A brick-carrying HORSE builds the new red walls of Novospassky, tower by tower, to block the southern road into Moscow."}
+  - {year: 1649, peg: rope, confidence: high, source: "MChS: Nakaz o gradskom blagochinii, 30 April",
+     event: "Order on city good order: rules for fighting fires in Moscow and paid watchmen who patrol the streets",
+     place: "Zemsky Dvor, Red Square",
+     scene: "A watchman whirls a fire ROPE above Red Square and ties every householder to the new Moscow rules on fighting fires."}
+  - {year: 1654, peg: lawyer, confidence: medium, source: "Church Historian (2025): plague riot of 1654",
+     event: "Plague riot: Moscow crowds blame Patriarch Nikon's new icons for the plague and riot in the Kremlin",
+     place: "Cathedral Square, Kremlin",
+     scene: "In the plague-struck Kremlin a shouting LAWYER leads the crowd and accuses Nikon's new icons of bringing the pestilence."}
+  - {year: 1668, peg: chef, confidence: high, source: "Zaryadye Park: fire safety (alarm decree)",
+     event: "Tsar Alexis orders how the fire-alarm bells ring in the Nabatnaya, Tainitskaya and Troitskaya Towers",
+     place: "Nabatnaya Tower, Kremlin",
+     scene: "A CHEF beats the Nabatnaya Tower alarm bell with his ladle in the set order, and the Tainitskaya and Troitskaya bells answer."}
+  - {year: 1675, peg: eagle, confidence: unverified,
+     event: "A new stone building for the government offices (prikazy) is begun in the Kremlin",
+     place: "Ivanovskaya Square, Kremlin",
+     scene: "A double-headed EAGLE carries stone blocks to Ivanovskaya Square and stacks the long new building for the tsar's clerks."}
+  - {year: 1680, peg: vase, confidence: medium, source: "UCSC library: Resurrection Gate built in 1680",
+     event: "Resurrection Gate of the Kitay-gorod wall is rebuilt with two tent-roofed towers",
+     place: "Resurrection Gate, Red Square",
+     scene: "Two giant VASE shapes rise on the Kitay-gorod gate by Red Square and become its twin tent-roofed towers."}
+  - {year: 1685, peg: waffle, confidence: disputed, source: "gw2ru: Presburg 1684; HSE chronicle: Feb 1685",
+     event: "Pressburg, Peter's toy fortress, is built on the Yauza at Preobrazhenskoye",
+     place: "Yauza bank, Preobrazhenskoye",
+     scene: "Boy soldiers build a fortress of WAFFLE squares on the Yauza bank, and young Peter storms his toy Pressburg."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP mirror: Sukharev Tower (1692-1701)",
+     event: "Sukharev Tower is begun at the Sretensky Gate of the Earthen Town",
+     place: "Sretensky Gate, Zemlyanoy Gorod",
+     scene: "Builders stack PIANO on piano at the Sretensky Gate until the tall Sukharev Tower stands over the Earthen Town."}
+  - {year: 1697, peg: pig, confidence: medium, source: "WP: Ivan Tsykler (4 March N.S.)",
+     event: "Tsykler and Sokovnin, plotters against Peter, are executed; their heads go on poles in Red Square",
+     place: "Red Square",
+     scene: "On Red Square a PIG carries the plotter Tsykler's head on a pole, and the crowd sees the price of a plot."}
+  - {year: 1702, peg: sun, confidence: high, source: "kreml.ru: Arsenal (begun 1702, Peter's plan)",
+     event: "Work starts on the Kremlin Arsenal to Peter's own plan",
+     place: "Arsenal, Kremlin",
+     scene: "A hot SUN bakes the first bricks of Peter's Arsenal, and they slide into the long walls he drew himself."}
+  - {year: 1707, peg: ski, confidence: high, source: "ancient-history-sites; Zaryadye: bastions 1707-1708",
+     event: "Earth bastions go up around the Kremlin and Kitay-gorod against Charles XII",
+     place: "Kitay-gorod wall, Zaryadye",
+     scene: "Soldiers SKI down fresh earth slopes and pat them into bastions around the Kitay-gorod wall, ready for the Swedes."}
+  # science
+  - {year: 1633, peg: mummy, confidence: high, source: "kreml.ru: Vodovzvodnaya Tower (Galloway, 1633)",
+     event: "Galloway's machine in the Sviblova Tower pumps river water into the Kremlin; the tower becomes Vodovzvodnaya",
+     place: "Vodovzvodnaya Tower, Kremlin",
+     scene: "A MUMMY turns the wheel of Galloway's machine, and Moskva water climbs lead pipes into the Kremlin gardens."}
+  - {year: 1643, peg: ram, confidence: high, source: "WP mirror: Bolshoy Kamenny Bridge",
+     event: "Tsar Michael hires the Christler brothers to design the first stone bridge over the Moskva",
+     place: "Moskva river below the Kremlin",
+     scene: "A RAM butts a stone pier into the Moskva as the Christler brothers draw the first stone bridge for Tsar Michael."}
+  - {year: 1664, peg: cherry, confidence: high, source: "WP mirror: Izmaylovo Estate (1664-1670)",
+     event: "Dams on the Serebryanka make a chain of more than twenty ponds at Izmailovo",
+     place: "Serebryanka river, Izmailovo",
+     scene: "A giant CHERRY stone plugs the Serebryanka, and the river backs up into twenty Izmailovo ponds."}
+  - {year: 1672, peg: coin, confidence: high, source: "vokrugsveta; histrf: first public pharmacy",
+     event: "The first pharmacy open to all Muscovites starts trade in the New Gostiny Dvor",
+     place: "New Gostiny Dvor, Kitay-gorod",
+     scene: "In the New Gostiny Dvor any Muscovite drops a COIN on the counter and gets medicine from the tsar's pharmacy."}
+  - {year: 1682, peg: oven, confidence: medium, source: "histrf: third public pharmacy (1682)",
+     event: "A third pharmacy that serves people of all ranks opens in Moscow",
+     place: "Kitay-gorod",
+     scene: "An apothecary's OVEN dries herbs in Moscow's third public pharmacy, and townsmen of every rank queue for the powders."}
+  - {year: 1682, peg: oven, confidence: unverified,
+     event: "Tsar Feodor orders the first hospitals for the poor and sick in Moscow",
+     place: "Znamensky Monastery, Varvarka",
+     scene: "A great OVEN warms the sick poor in Feodor's new Moscow hospital, the first beds that the tsar pays for."}
+  - {year: 1692, peg: piano, confidence: disputed, source: "WP mirror: Bolshoy Kamenny Bridge (1687 or 1692)",
+     event: "The Big Stone Bridge, the first stone bridge over the Moskva, is finished",
+     place: "Bolshoy Kamenny Bridge",
+     scene: "A PIANO rolls across the new Big Stone Bridge from the Kremlin bank to Zamoskvorechye, the first stone crossing of the Moskva."}
+  - {year: 1701, peg: soda, confidence: high, source: "WP mirror: German Quarter; prlib: private pharmacies",
+     event: "Gregory in the German Quarter gets a patent for a private public pharmacy",
+     place: "German Quarter (Nemetskaya Sloboda)",
+     scene: "Gregory sells fizzy SODA cures from his own counter in the German Quarter, the first private pharmacy that Peter allows."}
+  # religion
+  - {year: 1624, peg: hanger, confidence: medium, source: "kreml.ru: Ivan the Great complex (Ogurtsov, 1624)",
+     event: "Bazhen Ogurtsov builds the Filaret belfry beside the Ivan the Great Bell Tower",
+     place: "Ivan the Great Bell Tower, Kremlin",
+     scene: "Ogurtsov hangs the great bells on a giant HANGER beside Ivan the Great, and the Filaret belfry takes its shape."}
+  - {year: 1627, peg: ink, confidence: high, source: "ruwiki: Pokrova v Rubtsove (1619-1627)",
+     event: "Tsar Michael's stone Church of the Intercession at Rubtsovo is finished, a vow for the end of the siege",
+     place: "Rubtsovo, Pokrovka",
+     scene: "Tsar Michael signs his vow in INK, and the stone Intercession church at Rubtsovo rises where the Cossack assault broke."}
+  - {year: 1631, peg: moth, confidence: medium, source: "ancient-history-sites: Nikitniki works 1631-1634",
+     event: "Merchant Grigory Nikitnikov starts the stone Church of the Trinity in Nikitniki",
+     place: "Nikitnikov Lane, Kitay-gorod",
+     scene: "A golden MOTH lands on merchant Nikitnikov's purse, and he pays for the stone Trinity church beside his house."}
+  - {year: 1635, peg: mill, confidence: high, source: "kreml.ru: Upper Saviour Cathedral (1635-1636)",
+     event: "Upper Saviour Cathedral, the tsar's private church above the Terem Palace, is begun",
+     place: "Terem Palace roof, Kremlin",
+     scene: "A MILL on the Terem roof grinds bricks into the small Upper Saviour Cathedral, the tsar's own church."}
+  - {year: 1644, peg: warrior, confidence: high, source: "WP mirror: Trinity Lavra (holy well, 1644)",
+     event: "A chapel is built over a holy spring found at the Trinity Lavra",
+     place: "Trinity Lavra, Sergiyev Posad",
+     scene: "A WARRIOR strikes the Lavra ground with his spear, a holy spring jumps up, and monks build a chapel over it."}
+  - {year: 1645, peg: railway, confidence: unverified,
+     event: "New Transfiguration Cathedral of the Novospassky Monastery, the Romanov burial church, is begun",
+     place: "Novospassky Monastery",
+     scene: "A small RAILWAY brings white stone up Krutitsy hill for the new Romanov burial cathedral of Novospassky."}
+  - {year: 1649, peg: rope, confidence: unverified,
+     event: "Church of the Kazan Icon at Kolomenskoye is built for the birth of the tsar's son Dmitry",
+     place: "Kolomenskoye",
+     scene: "Builders haul the blue domes up on a ROPE at Kolomenskoye to thank God for the new tsarevich Dmitry."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP mirror: Savvino-Storozhevsky Monastery",
+     event: "Tsar Alexis makes the Savvino-Storozhevsky Monastery his country residence and builds its gate church and belfry",
+     place: "Savvino-Storozhevsky Monastery, Zvenigorod",
+     scene: "Tsar Alexis throws a LASSO around the Zvenigorod monastery and pulls it into his own country residence."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP mirror: Timeline of Moscow",
+     event: "Church of the Nativity in Putinki, the last tent-roofed church in Moscow, is finished",
+     place: "Putinki, Malaya Dmitrovka",
+     scene: "A LION roars from the last tent roof of Putinki, and after it no Moscow church gets a tent."}
+  - {year: 1653, peg: llama, confidence: high, source: "kreml.ru: Patriarch's Palace (1653-1655)",
+     event: "Nikon starts the Patriarch's Palace with the Church of the Twelve Apostles in the Kremlin",
+     place: "Patriarch's Palace, Kremlin",
+     scene: "A LLAMA carries twelve apostle icons up Nikon's new stairs and sets them in the Patriarch's Palace church."}
+  - {year: 1669, peg: ship, confidence: medium, source: "orthochristian: Portaitissa of Moscow (19 May)",
+     event: "A copy of the Iveron Icon reaches Moscow and is set at the Neglinnaya Gate: start of the Iveron Chapel",
+     place: "Neglinnaya (Resurrection) Gate",
+     scene: "A SHIP from Mount Athos sails up the Neglinnaya and unloads the Iveron Icon at the city gate."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Izmaylovo Estate (1671-1679)",
+     event: "Cathedral of the Intercession on the Izmailovo island is begun, with a stone bridge to the shore",
+     place: "Izmailovo island",
+     scene: "A CAT walks the new stone bridge to Izmailovo island and lays the first tile of the Intercession Cathedral."}
+  - {year: 1672, peg: coin, confidence: high, source: "rusmania; academia: Kolomna Dormition 1672-1682",
+     event: "Archbishop Iosif pulls down the old Dormition Cathedral in Kolomna and starts a new one",
+     place: "Kolomna Kremlin",
+     scene: "Archbishop Iosif drops a COIN in the Kolomna Kremlin, and the old Dormition Cathedral falls for a new one."}
+  - {year: 1678, peg: cave, confidence: medium, source: "ancient-history-sites: Ostankino Trinity (1678)",
+     event: "Prince Cherkassky starts the Church of the Trinity at Ostankino",
+     place: "Ostankino",
+     scene: "Prince Cherkassky digs a CAVE for the foundations, and the red Trinity church of Ostankino grows above it."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: St. Nicholas in Khamovniki (1679-1682)",
+     event: "The Khamovniki weavers start their Church of St Nicholas",
+     place: "Khamovniki",
+     scene: "A COWBOY ropes bales of Khamovniki linen and trades them for bricks for the weavers' St Nicholas church."}
+  - {year: 1679, peg: cowboy, confidence: unverified,
+     event: "Church of St Gregory of Neocaesarea on Bolshaya Polyanka is finished, with tiles by Stepan Polubes",
+     place: "Bolshaya Polyanka",
+     scene: "A COWBOY gallops along Bolshaya Polyanka and nails Polubes's peacock-eye tiles round the St Gregory church."}
+  - {year: 1683, peg: foam, confidence: high, source: "sacred-destinations: Novodevichy (1683-1688)",
+     event: "Church of the Intercession over the south gate of the Novodevichy Convent is begun",
+     place: "Novodevichy Convent",
+     scene: "White FOAM pours over the Novodevichy south gate and sets hard as the Intercession church above it."}
+  - {year: 1684, peg: fairy, confidence: high, source: "Georgian Encyc.; orthodoxwiki: Donskoy (1684)",
+     event: "Great Cathedral of the Donskoy Monastery is begun",
+     place: "Donskoy Monastery",
+     scene: "A FAIRY waves her wand at the Donskoy field, and the five domes of the Great Cathedral start to grow."}
+  - {year: 1685, peg: waffle, confidence: high, source: "ancient-history-sites: consecrated 18 Jan",
+     event: "Resurrection Cathedral of the New Jerusalem Monastery is consecrated",
+     place: "New Jerusalem Monastery, Istra",
+     scene: "At Istra the metropolitan blesses a WAFFLE shaped like the Holy Sepulchre, and the Resurrection Cathedral is consecrated."}
+  - {year: 1685, peg: waffle, confidence: high, source: "sacred-destinations: Novodevichy (1685-1687)",
+     event: "Refectory Church of the Dormition at the Novodevichy Convent is begun",
+     place: "Novodevichy Convent",
+     scene: "Nuns lay the long refectory table with WAFFLE after waffle, and the Dormition refectory church closes round it."}
+  - {year: 1686, peg: fish, confidence: high, source: "Georgian Encyc.: Donskoy walls 1686-1711",
+     event: "New brick walls and towers of the Donskoy Monastery are begun",
+     place: "Donskoy Monastery",
+     scene: "A FISH swims round the Donskoy Monastery in a moat, and brick walls rise behind it, tower by tower."}
+  - {year: 1687, peg: fox, confidence: high, source: "sacred-destinations: Novodevichy (1687-1689)",
+     event: "Church of the Transfiguration over the north gate of the Novodevichy Convent is begun",
+     place: "Novodevichy Convent",
+     scene: "A red FOX runs through the Novodevichy north gate, and the Transfiguration church grows on the arch above it."}
+  - {year: 1687, peg: fox, confidence: high, source: "WP mirror: Kadashi church (1687-1695)",
+     event: "Church of the Resurrection in Kadashi is begun",
+     place: "Kadashi, Zamoskvorechye",
+     scene: "A FOX steals the Kadashi weavers' white lace and drapes it over their new Resurrection church."}
+  - {year: 1687, peg: fox, confidence: high, source: "WP mirror: Vysokopetrovsky Monastery",
+     event: "Church of Our Lady of Bogolyubovo with its refectory goes up in the Vysokopetrovsky Monastery",
+     place: "Vysokopetrovsky Monastery, Petrovka",
+     scene: "A FOX carries Naryshkin money down Petrovka and builds the Bogolyubovo church in the Vysokopetrovsky Monastery."}
+  - {year: 1690, peg: bees, confidence: high, source: "UNESCO nomination; sacred-destinations",
+     event: "Bell tower of the Novodevichy Convent is finished",
+     place: "Novodevichy Convent",
+     scene: "A swarm of BEES builds the tall Novodevichy bell tower floor by floor and rings its top bell."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP mirror: Naryshkin Baroque",
+     event: "Church of the Sign at the Sheremetev courtyard goes up",
+     place: "Sheremetev courtyard, Vozdvizhenka",
+     scene: "Boyar Sheremetev stamps his BOOT in his courtyard, and the Church of the Sign rises from the print."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP mirror: Naryshkin Baroque",
+     event: "Church of Saints Peter and Paul at Petrovsko-Razumovskoye goes up",
+     place: "Petrovsko-Razumovskoye",
+     scene: "A muddy BOOT kicks open the doors of the new Peter and Paul church at Petrovsko-Razumovskoye."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP mirror: Naryshkin Baroque (1691-1694)",
+     event: "Church of Our Lady of Vladimir at the Vladimir Gate of Kitay-gorod is begun",
+     place: "Vladimir Gate, Nikolskaya Street",
+     scene: "A pilgrim's BOOT treads the Vladimir Gate threshold, and a Naryshkin church to Our Lady of Vladimir grows beside it."}
+  - {year: 1692, peg: piano, confidence: medium, source: "rusmania: Kolomna bell tower (1692)",
+     event: "A tent-roofed bell tower goes up beside the Dormition Cathedral in Kolomna",
+     place: "Kolomna Kremlin",
+     scene: "A PIANO plays scales up the new Kolomna bell tower until its tent roof rings with them."}
+  - {year: 1692, peg: piano, confidence: unverified,
+     event: "Refectory with the Church of St Sergius at the Trinity Lavra is finished",
+     place: "Trinity Lavra, Sergiyev Posad",
+     scene: "Monks roll a painted PIANO into the long new refectory of the Lavra and sing under St Sergius's church."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP mirror: Naryshkin Baroque (1693-1696)",
+     event: "Epiphany Cathedral of the Epiphany Monastery in Kitay-gorod is begun",
+     place: "Epiphany Monastery, Nikolskaya",
+     scene: "A PALM leaf blesses the river water, and the Epiphany Cathedral rises over Kitay-gorod in red brick."}
+  - {year: 1693, peg: palm, confidence: medium, source: "WP mirror: Trinity Lavra; another source 1692",
+     event: "The Stroganovs' gate Church of the Nativity of John the Baptist at the Trinity Lavra is begun",
+     place: "Trinity Lavra gate, Sergiyev Posad",
+     scene: "A Stroganov PALM full of salt money pays for John the Baptist's church over the Lavra gate."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP mirror: Vysokopetrovsky Monastery",
+     event: "Gate Church of the Intercession with a bell tower is finished in the Vysokopetrovsky Monastery",
+     place: "Vysokopetrovsky Monastery, Petrovka",
+     scene: "A BEAR climbs the Vysokopetrovsky gate and hangs the bells in the new Intercession gate church."}
+  - {year: 1694, peg: bear, confidence: medium, source: "WP: Yakov Bukhvostov (1694-1697)",
+     event: "Yakov Bukhvostov starts the Church of the Saviour at Ubory for Pyotr Sheremetev",
+     place: "Ubory",
+     scene: "A BEAR from the Ubory woods hauls stone for Bukhvostov's Saviour church on Sheremetev's estate."}
+  - {year: 1696, peg: peach, confidence: high, source: "WP mirror: Naryshkin Baroque (1696-1699)",
+     event: "Church of the Assumption on Pokrovka, the most praised church of Naryshkin Baroque, is begun",
+     place: "Pokrovka Street",
+     scene: "A PEACH-coloured church grows on Pokrovka, tier on tier, until all Moscow calls the Assumption its finest."}
+  - {year: 1698, peg: beehive, confidence: disputed, source: "Bukhvostov list 1698-1704; also 1690-1697",
+     event: "Church of the Trinity at Troitse-Lykovo is begun",
+     place: "Troitse-Lykovo",
+     scene: "A BEEHIVE on the Moskva bank at Troitse-Lykovo turns into the honey-white Trinity church, tier by tier."}
+  - {year: 1704, peg: sewer, confidence: high, source: "WP: Znamenskaya Church, Dubrovitsy (11 Feb)",
+     event: "Golitsyn's carved stone Church of the Sign at Dubrovitsy is consecrated",
+     place: "Dubrovitsy, Podolsk",
+     scene: "A stone SEWER grate at Dubrovitsy blooms into carved saints, and the Church of the Sign is consecrated."}
+  - {year: 1709, peg: soap, confidence: medium, source: "ruwiki (academic.ru): John the Warrior",
+     event: "After a flood, Peter orders a new Church of St John the Warrior on Yakimanka for Poltava",
+     place: "Bolshaya Yakimanka",
+     scene: "Flood water leaves SOAP scum on the old church, so Peter moves St John the Warrior to dry Yakimanka ground."}
+  # arts
+  - {year: 1624, peg: hanger, confidence: medium, source: "kreml.ru; one source 1626",
+     event: "Ogurtsov and Galloway raise a stone tent-roofed top on the Spassky Tower",
+     place: "Spassky Tower, Red Square",
+     scene: "Galloway lifts a giant coat HANGER onto the Spassky Tower, and Ogurtsov hangs the new stone tent roof on it."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP mirror: Moscow Kremlin",
+     event: "New icons and frescoes fill the Church of the Deposition of the Robe in the Kremlin",
+     place: "Church of the Deposition of the Robe, Kremlin",
+     scene: "Painters dip brushes in INK and gold and cover the small Deposition of the Robe church with new saints."}
+  - {year: 1634, peg: hammer, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "Vasily Burtsov's Primer is printed in Moscow",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "Burtsov's HAMMER knocks the type into place, and Moscow children get their first printed Primer."}
+  - {year: 1642, peg: rhino, confidence: high, source: "kreml.ru: Dormition wall painting (1642-1643)",
+     event: "Painters repaint the walls of the Dormition Cathedral after the fire",
+     place: "Dormition Cathedral, Kremlin",
+     scene: "A RHINO shoulders up the scaffold in the Dormition Cathedral and holds the paint pots for the new frescoes."}
+  - {year: 1644, peg: warrior, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "Neverov and Christopher put up Gothic stone gates with towers at the Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A WARRIOR in armour guards the new Gothic gate towers of the Print Yard on Nikolskaya Street."}
+  - {year: 1648, peg: reef, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "Smotrytsky's Grammar is printed at the Moscow Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A coral REEF of type grows on the Print Yard press and prints Smotrytsky's Grammar for Moscow schools."}
+  - {year: 1651, peg: wallet, confidence: high, source: "lonelyplanet; WP: Amusement Palace",
+     event: "The Amusement Palace is built in the Kremlin as boyar chambers",
+     place: "Amusement (Poteshny) Palace, Kremlin",
+     scene: "Boyar Miloslavsky opens a fat WALLET and pays for the yellow Amusement Palace by the Kremlin wall."}
+  - {year: 1652, peg: lion, confidence: high, source: "kreml.ru: Archangel wall painting (1652-1666)",
+     event: "New wall paintings of the Archangel Cathedral are begun; Simon Ushakov's team finishes them",
+     place: "Archangel Cathedral, Kremlin",
+     scene: "A LION holds the ladder for Simon Ushakov while he paints the princes on the Archangel Cathedral walls."}
+  - {year: 1653, peg: llama, confidence: medium, source: "ancient-history-sites: Nikitniki paintings",
+     event: "Wall paintings of the Trinity Church in Nikitniki are made",
+     place: "Trinity Church in Nikitniki",
+     scene: "A LLAMA spits bright paint onto the Nikitniki walls, and the painters turn the colour into saints."}
+  - {year: 1655, peg: lily, confidence: high, source: "WP mirror: Tsar Bell",
+     event: "A second, much larger Tsar Bell is cast from the broken first one",
+     place: "Ivanovskaya Square, Kremlin",
+     scene: "A bronze LILY flower opens in the casting pit and becomes the huge second Tsar Bell of the Kremlin."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP mirror: Savvino-Storozhevsky Monastery",
+     event: "The Nativity Cathedral of the Savvino-Storozhevsky Monastery gets its new wall paintings",
+     place: "Savvino-Storozhevsky Monastery, Zvenigorod",
+     scene: "A LEECH sucks the old soot off the Zvenigorod cathedral walls, and painters cover them with new saints."}
+  - {year: 1667, peg: jockey, confidence: medium, source: "Britannica; amusingplanet (1667-1671; one says 1666)",
+     event: "Tsar Alexis starts the great wooden palace at Kolomenskoye, the 'eighth wonder of the world'",
+     place: "Kolomenskoye",
+     scene: "A JOCKEY gallops round Kolomenskoye and nails up roof after wooden roof of the tsar's eighth wonder."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP mirror: Kolomenskoye (1671-1673)",
+     event: "The Front Gates of the Kolomenskoye court are built",
+     place: "Kolomenskoye",
+     scene: "A carved CAT sits on top of the new Front Gates of Kolomenskoye and greets the tsar's guests."}
+  - {year: 1676, peg: cage, confidence: high, source: "WP mirror: Izmaylovo Estate",
+     event: "Work starts on the new tsar's court at Izmailovo",
+     place: "Izmailovo island",
+     scene: "Builders set a giant CAGE of scaffold on Izmailovo island for the tsar's new court."}
+  - {year: 1680, peg: vase, confidence: medium, source: "kreml.ru: Borovitskaya tent roof (1680)",
+     event: "Kremlin towers get tall tent roofs; the Borovitskaya Tower gets its pyramid top",
+     place: "Borovitskaya Tower, Kremlin",
+     scene: "Roofers turn a VASE upside down on the Borovitskaya Tower, and it becomes a pyramid-shaped tent roof."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP mirror: Trinity Lavra",
+     event: "Yaroslavl masters paint the inside of the Dormition Cathedral at the Trinity Lavra",
+     place: "Dormition Cathedral, Trinity Lavra",
+     scene: "A FAIRY sprinkles violet and blue dust in the Lavra's Dormition Cathedral, and the Yaroslavl painters fix it as frescoes."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP mirror: Savvino-Storozhevsky Monastery",
+     event: "Regent Sophia rebuilds Tsar Alexis's palace at the Savvino-Storozhevsky Monastery",
+     place: "Savvino-Storozhevsky Monastery, Zvenigorod",
+     scene: "Sophia catches a golden FISH in the Zvenigorod river and pays with its scales to rebuild her father's palace."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP: Krutitsy (1693-1694)",
+     event: "The Krutitsy Teremok, a gate gallery covered in coloured tiles, is finished",
+     place: "Krutitsy Metochion",
+     scene: "A dancing BEAR presses coloured tiles into the Krutitsy gate gallery until the Teremok shines."}
+  - {year: 1696, peg: peach, confidence: medium, source: "artstudies.sias.ru: 30 Sept; one source 1697",
+     event: "The first triumphal arch in Moscow stands at the Stone Bridge for the Azov victory",
+     place: "Bolshoy Kamenny Bridge",
+     scene: "Peter's soldiers march under an arch of PEACH garlands at the Stone Bridge, Moscow's first triumphal arch, home from Azov."}
+  - {year: 1696, peg: peach, confidence: high, source: "ancient-history-sites: Lefortovo (1696-1699)",
+     event: "Dmitry Aksamitov starts the palace on the Yauza that Peter gives to Lefort",
+     place: "Lefortovo Palace, Yauza",
+     scene: "Peter hands Lefort a PEACH, and the stone palace on the Yauza grows out of its stone."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP mirror: Izmaylovo Estate (January)",
+     event: "A new palace opens at Izmailovo after the old wooden one burns",
+     place: "Izmailovo",
+     scene: "A SUMO wrestler pushes open the doors of the new Izmailovo palace that replaces the burned wooden one."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP mirror: Moscow Print Yard; Timeline of Moscow",
+     event: "Vedomosti, the first printed Russian newspaper, comes out of the Moscow Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A SUMO wrestler sits on the Print Yard press and squeezes out the first sheet of Vedomosti."}
+  - {year: 1709, peg: soap, confidence: high, source: "artstudies.sias.ru: 21 Dec; mos.ru: seven arches",
+     event: "Poltava triumph: Peter's army marches through Moscow under seven triumphal arches with Swedish prisoners",
+     place: "Red Gate, Myasnitskaya",
+     scene: "Swedish prisoners blow SOAP bubbles of shame under seven triumphal arches as Peter's army parades through Moscow."}
+  # economy
+  - {year: 1614, peg: tower, confidence: medium, source: "Pozdeyeva (Acta Baltico-Slavica): 1614/1615",
+     event: "Book printing starts again in Moscow after the Time of Troubles",
+     place: "Kremlin",
+     scene: "Printers dig the type out of a burned TOWER and start the Moscow presses again after the Troubles."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "The Print Yard gets a new stone chamber on Nikolskaya Street and moves out of the Kremlin",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A typesetter follows his inky NOSE out of the Kremlin to the new stone Print Yard on Nikolskaya Street."}
+  - {year: 1625, peg: nail, confidence: medium, source: "WP mirror: Moscow Print Yard",
+     event: "Underground store rooms and tunnels to the Kremlin are dug under the Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "Diggers NAIL beams under the Print Yard and push a secret tunnel toward the Kremlin."}
+  - {year: 1635, peg: mill, confidence: high, source: "mos.ru; steklosouz: Dukhanino 1635 (charter 1634)",
+     event: "The first glassworks in Russia opens at Dukhanino near Moscow",
+     place: "Dukhanino, Dmitrov district",
+     scene: "A water MILL at Dukhanino blows the bellows, and Russia's first glassworks pours out green bottles."}
+  - {year: 1642, peg: rhino, confidence: high, source: "WP mirror: Moscow Print Yard (1642-1643)",
+     event: "New stone chambers of the Print Yard are built after the fire",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A RHINO carries the stones out of the ash and builds the Print Yard's new chambers on Nikolskaya."}
+  - {year: 1663, peg: gem, confidence: high, source: "WP mirror: Izmaylovo Estate",
+     event: "Tsar Alexis starts to turn Izmailovo into a model estate with farms, gardens and workshops",
+     place: "Izmailovo",
+     scene: "Tsar Alexis plants a GEM in the Izmailovo soil, and model farms, gardens and workshops grow round it."}
+  - {year: 1668, peg: chef, confidence: high, source: "mos.ru via search: Izmailovo glassworks 1668-1669",
+     event: "The Izmailovo glassworks is founded",
+     place: "Izmailovo",
+     scene: "A CHEF blows glass instead of soup at Izmailovo and fills the tsar's table with new goblets."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "The old Big Chamber of the Print Yard is pulled down and a new building goes up",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A COWBOY ropes the old Big Chamber of the Print Yard, pulls it down, and the new hall rises."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP mirror: Izmaylovo Estate",
+     event: "Young Peter finds an old English boat at the Izmailovo flax yard and learns to sail it",
+     place: "Izmailovo flax yard",
+     scene: "Young Peter blows a FIFE in the Izmailovo barn, pulls out the old English boat, and sails it on the pond."}
+  - {year: 1697, peg: pig, confidence: high, source: "ruwiki: Mints of Russia (1697)",
+     event: "The Red Mint is built near the Resurrection Gate of Kitay-gorod",
+     place: "Resurrection Gate, Nikolskaya",
+     scene: "A PIG-shaped money box sits by the Resurrection Gate and fills with silver from the new Red Mint."}
+  - {year: 1701, peg: soda, confidence: high, source: "ruwiki: Mints of Russia; kyiv2014 (1701-1737)",
+     event: "The Kadashi Mint opens in the old weavers' yard across the river",
+     place: "Kadashevskaya Sloboda",
+     scene: "In Kadashi a SODA fountain sprays copper coins out of the old weavers' yard, now a mint."}
+  - {year: 1705, peg: seal, confidence: high, source: "vm.ru: Khamovniki, Sukonny Dvor",
+     event: "The state Cloth Yard opens on the river bank opposite the Kremlin to weave army cloth",
+     place: "Sukonny Dvor, Bersenevka",
+     scene: "A SEAL weaves green army cloth on the river bank opposite the Kremlin, so Peter buys no more from abroad."}
+  - {year: 1705, peg: seal, confidence: high, source: "WP mirror: Vasily Kipriyanov (30 May decree)",
+     event: "Kiprianov's Civil Printing House, the first private press in Russia, is set up",
+     place: "Sukharev Tower area",
+     scene: "Kiprianov presses his SEAL into the first map from his own printing house, Russia's first private press."}
+  # society
+  - {year: 1620, peg: nose, confidence: medium, source: "snob.ru: Tver weavers moved in the 1620s",
+     event: "Weavers from Tver settle beyond the Earthen Rampart: the start of the Khamovniki quarter (approximate)",
+     place: "Khamovniki",
+     scene: "Tver weavers follow their NOSE to the linen smell beyond the Earthen Rampart and found Khamovniki."}
+  - {year: 1629, peg: knob, confidence: medium, source: "jour.fnisc.ru: fire of 10 April",
+     event: "Fire burns the western and eastern parts of the White Town",
+     place: "Bely Gorod",
+     scene: "A burning door KNOB rolls down the White Town streets and sets both its west and east ends on fire."}
+  - {year: 1634, peg: hammer, confidence: high, source: "WP mirror: Moscow Print Yard",
+     event: "Fire destroys every building of the Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "A red-hot HAMMER falls on the Print Yard roof, and every building of the press burns down."}
+  - {year: 1648, peg: reef, confidence: high, source: "WP mirror: Moscow uprising of 1648",
+     event: "Rioters set fire to the White Town and Kitay-gorod; thousands of houses burn",
+     place: "Bely Gorod and Kitay-gorod",
+     scene: "Rioters' torches turn the White Town into a burning REEF of roofs, and thousands of houses fall into ash."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP mirror: German Quarter",
+     event: "Foreigners must move out of the city to the New German Quarter on the Yauza",
+     place: "German Quarter (Nemetskaya Sloboda), Yauza",
+     scene: "A LION chases the foreign merchants out of the city streets to the new German Quarter on the Yauza."}
+  - {year: 1654, peg: lawyer, confidence: medium, source: "Leiden thesis; PMC: Apothecary Prikaz school",
+     event: "The Apothecary Prikaz opens the first medical school in Russia",
+     place: "Apothecary Prikaz, Kremlin",
+     scene: "A LAWYER swears in the first students of the Apothecary Prikaz school, Russia's first school for doctors."}
+  - {year: 1665, peg: jelly, confidence: medium, source: "Simeon of Polotsk: school from 1665 (one says 1664)",
+     event: "Simeon of Polotsk teaches Latin to young clerks at the Zaikonospassky Monastery school",
+     place: "Zaikonospassky Monastery, Nikolskaya",
+     scene: "Simeon of Polotsk feeds the young clerks Latin with a spoon of JELLY in the Zaikonospassky school."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP mirror: Moscow Print Yard; ruwiki: Typographic school",
+     event: "Hieromonk Timofei opens the Greek (Typographic) School at the Print Yard",
+     place: "Print Yard, Nikolskaya Street",
+     scene: "Timofei puts his FOOT on the Print Yard step, back from Constantinople, and opens a Greek school inside."}
+  - {year: 1689, peg: fob, confidence: high, source: "executedtoday; Deutsche Biographie (4 October)",
+     event: "Quirinus Kuhlmann, a German mystic poet, is burned alive on Red Square",
+     place: "Red Square",
+     scene: "Kuhlmann's watch FOB melts in the flames as the German poet burns alive with his books on Red Square."}
+  - {year: 1700, peg: sauce, confidence: high, source: "WP mirror: Izmaylovo Estate",
+     event: "Fire destroys the old wooden palace at Izmailovo",
+     place: "Izmailovo",
+     scene: "A pot of burning SAUCE tips over in the Izmailovo kitchen, and the whole wooden palace burns."}
+  - {year: 1701, peg: soda, confidence: high, source: "Kommersant; WP mirror: Tsar Bell",
+     event: "Great Kremlin fire: the tsar's court burns, the second Tsar Bell breaks, and fire crosses to Sadovniki",
+     place: "Kremlin and Sadovniki",
+     scene: "Firemen spray SODA water on the Kremlin, but the tsar's court burns, the Tsar Bell cracks, and Sadovniki catches fire."}
+  - {year: 1703, peg: sumo, confidence: medium, source: "vo.hse.ru: Glück's gymnasium 1703-1705",
+     event: "Pastor Ernst Glück's gymnasium opens in the Naryshkin palace",
+     place: "Naryshkin palace, Pokrovka",
+     scene: "A SUMO wrestler teaches Latin wrestling holds in Pastor Glück's new gymnasium in the Naryshkin palace."}
+
+world_refs:
+  - {year: 1625, event: "Galloway's striking clock on the Spassky Tower", cell: eastern_europe_science_1500_1800}
+  - {year: 1626, event: "Great fire burns most of Moscow and the Kremlin", cell: eastern_europe_society_1500_1800}
+  - {year: 1636, event: "Terem Palace in the Kremlin completed", cell: eastern_europe_arts_1500_1800}
+  - {year: 1636, event: "Brick Kazan Cathedral on Red Square consecrated", cell: eastern_europe_religion_1500_1800}
+  - {year: 1648, event: "Salt Riot in Moscow", cell: eastern_europe_politics_1500_1800}
+  - {year: 1654, event: "Plague empties Moscow", cell: eastern_europe_society_1500_1800}
+  - {year: 1656, event: "Nikon founds the New Jerusalem Monastery on the Istra", cell: eastern_europe_religion_1500_1800}
+  - {year: 1662, event: "Copper Riot in Moscow", cell: eastern_europe_politics_1500_1800}
+  - {year: 1663, event: "Moscow Bible printed", cell: eastern_europe_religion_1500_1800}
+  - {year: 1668, event: "Ushakov paints the Tree of the Muscovite State", cell: eastern_europe_arts_1500_1800}
+  - {year: 1671, event: "Stenka Razin executed in Moscow", cell: eastern_europe_politics_1500_1800}
+  - {year: 1672, event: "Artaxerxes Action staged at Preobrazhenskoye", cell: eastern_europe_arts_1500_1800}
+  - {year: 1680, event: "Simeon of Polotsk prints his Rhymed Psalter in the Kremlin", cell: eastern_europe_arts_1500_1800}
+  - {year: 1682, event: "Streltsy uprising", cell: eastern_europe_politics_1500_1800}
+  - {year: 1682, event: "Nikita Pustosvyat debates in the Faceted Palace and is executed", cell: eastern_europe_religion_1500_1800}
+  - {year: 1684, event: "Moscow order forbids fist fights", cell: eastern_europe_society_1500_1800}
+  - {year: 1687, event: "Slavic Greek Latin Academy opens", cell: eastern_europe_religion_1500_1800}
+  - {year: 1694, event: "Church of the Intercession at Fili completed", cell: eastern_europe_arts_1500_1800}
+  - {year: 1694, event: "Karion Istomin's picture primer printed", cell: eastern_europe_arts_1500_1800}
+  - {year: 1698, event: "Streltsy revolt crushed; mass executions", cell: eastern_europe_politics_1500_1800}
+  - {year: 1700, event: "Peter orders Western dress in Moscow", cell: eastern_europe_society_1500_1800}
+  - {year: 1701, event: "School of Mathematics and Navigation in the Sukharev Tower", cell: eastern_europe_science_1500_1800}
+  - {year: 1702, event: "Public theatre on Red Square ordered", cell: eastern_europe_arts_1500_1800}
+  - {year: 1703, event: "Magnitsky's Arithmetic printed", cell: eastern_europe_science_1500_1800}
+  - {year: 1706, event: "Moscow Apothecary Garden founded", cell: eastern_europe_science_1500_1800}
+  - {year: 1707, event: "Bidloo opens the first hospital and medical school in Moscow", cell: eastern_europe_science_1500_1800}
+  - {year: 1707, event: "Menshikov Tower completed", cell: eastern_europe_arts_1500_1800}
+  - {year: 1708, event: "First book in the civil script printed", cell: eastern_europe_arts_1500_1800}
+  - {year: 1709, event: "Bruce's calendar printed by Kiprianov", cell: eastern_europe_science_1500_1800}
+  - {year: 1710, event: "Bidloo finishes the first Russian surgery textbook", cell: eastern_europe_science_1500_1800}
+
+out_refs:
+  - {year: 1613, event: "Zemsky Sobor elects Michael Romanov tsar", reason: "election of the tsar"}
+  - {year: 1613, event: "Michael Romanov crowned in the Dormition Cathedral", reason: "coronation"}
+  - {year: 1618, event: "Truce of Deulino signed near the Trinity Lavra", reason: "treaty"}
+  - {year: 1619, event: "Filaret returns and becomes patriarch", reason: "patriarch"}
+  - {year: 1645, event: "Alexis becomes tsar", reason: "accession"}
+  - {year: 1646, event: "Heavy new salt tax", reason: "national tax"}
+  - {year: 1649, event: "Sobornoye Ulozhenie law code", reason: "national law"}
+  - {year: 1652, event: "Nikon elected patriarch", reason: "patriarch"}
+  - {year: 1653, event: "Nikon's new psalter drops the two-finger sign", reason: "church-wide reform"}
+  - {year: 1654, event: "Copper coins at the value of silver", reason: "national coinage"}
+  - {year: 1656, event: "Moscow council curses the two-finger sign", reason: "church council"}
+  - {year: 1658, event: "Nikon leaves the patriarch's throne for New Jerusalem", reason: "patriarch"}
+  - {year: 1663, event: "Copper coinage ends", reason: "national coinage"}
+  - {year: 1665, event: "Regular foreign post from Moscow to Vilnius", reason: "national post"}
+  - {year: 1666, event: "Great Moscow Council deposes Nikon", reason: "church council"}
+  - {year: 1667, event: "Great Moscow Council curses the old rite", reason: "church council"}
+  - {year: 1667, event: "New Trade Statute", reason: "national law"}
+  - {year: 1671, event: "Old Believer Feodosia Morozova arrested at her Moscow house", reason: "church schism"}
+  - {year: 1676, event: "Feodor III becomes tsar", reason: "accession"}
+  - {year: 1682, event: "Mestnichestvo abolished", reason: "national reform"}
+  - {year: 1682, event: "Prince Khovansky executed at Vozdvizhenskoye", reason: "court execution"}
+  - {year: 1683, event: "Toy regiment, later the Preobrazhensky Guards, formed at Preobrazhenskoye", reason: "national army"}
+  - {year: 1686, event: "Kyiv metropolis passes to the Moscow patriarchate", reason: "church-wide"}
+  - {year: 1689, event: "Peter flees to the Trinity Lavra and overthrows Sophia", reason: "court coup"}
+  - {year: 1694, event: "Kozhukhovo manoeuvres near Moscow", reason: "national army"}
+  - {year: 1696, event: "Ivan V dies; Peter rules alone", reason: "court"}
+  - {year: 1698, event: "Peter cuts the boyars' beards at Preobrazhenskoye", reason: "national decree"}
+  - {year: 1699, event: "Burmistr Chamber set up in Moscow for the townsmen of all Russia", reason: "national town reform"}
+  - {year: 1699, event: "Decree moves New Year to the first of January", reason: "national calendar"}
+  - {year: 1700, event: "Patriarch Adrian dies; no successor elected", reason: "patriarch"}
+  - {year: 1704, event: "Peter's coin reform", reason: "national coinage"}
+  - {year: 1708, event: "Moscow Governorate created", reason: "national reform"}
+  - {year: 1711, event: "Governing Senate created", reason: "national government"}

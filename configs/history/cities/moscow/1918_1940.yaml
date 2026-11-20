@@ -1,0 +1,729 @@
+# City: Moscow x 1918 to 1940 (Soviet capital to the eve of the war). DRAFT 2026-11-19.
+# Area: Moscow city in its 2012 borders and Moscow Oblast (Sergiyev Posad/Zagorsk, Istra, Kolomna,
+# Dmitrov, Dubna, Kashira, Shatura, Podlipki/Korolyov, Mytishchi, Khimki, Dolgoprudny, Butovo, Kommunarka, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Soviet government -> out_refs,
+# unless the city is the subject (city plan, Metro, demolitions, Mossovet) or the main stage (attacks, risings).
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: Moscow city site (mos.ru), The Moscow Times "Today in history", encyclopedia.com (Moscow),
+# M. Harrison metro chronology, RBTH / gw2ru, Britannica summaries, theatre and museum home pages.
+# A work -> first public appearance; a building -> opening; a demolition -> the year it is pulled down.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Kremlin closes to the public and becomes the seat of the Soviet government",
+     place: "Kremlin, Troitskaya Gate",
+     scene: "A guard DOVE slams the Troitskaya Gate shut on the crowd, and only commissars with passes walk into the Kremlin."}
+  - {year: 1918, peg: dove, confidence: medium, source: "encyclopedia.com: Lubyanka (March); LP gives 1919",
+     event: "Cheka moves into the Rossiya insurance company building on Lubyanka",
+     place: "Bolshaya Lubyanka",
+     scene: "A black DOVE carries the Cheka's files into the Rossiya insurance palace on Lubyanka Square and nests in its cellars."}
+  - {year: 1918, peg: dove, confidence: high, source: "soviethistory.msu.edu: Cheka and the Anarchists",
+     event: "Cheka raids the anarchist clubs and houses of Moscow in one night",
+     place: "Malaya Dmitrovka, House of Anarchy",
+     scene: "A DOVE with a Cheka cap drops grenades on the House of Anarchy on Malaya Dmitrovka and anarchists run out with hands raised."}
+  - {year: 1918, peg: dove, confidence: high, source: "Cambridge UL exhibit: 6 July, Mirbach's murder",
+     event: "Left SRs Blumkin and Andreyev kill the German ambassador Mirbach in his embassy",
+     place: "Denezhny Lane, German embassy",
+     scene: "In the Denezhny Lane embassy a DOVE with a forged pass shoots Count Mirbach at point-blank range."}
+  - {year: 1918, peg: dove, confidence: high, source: "Cambridge UL exhibit; Hafner, Russian Review (1991)",
+     event: "Left SR rising: rebels hold Dzerzhinsky and the Central Telegraph until Latvian riflemen crush them",
+     place: "Trekhsvyatitelsky Lane, Pokrovsky barracks",
+     scene: "A rebel DOVE locks Dzerzhinsky in a Trekhsvyatitelsky Lane cellar until Latvian riflemen shell it out."}
+  - {year: 1918, peg: dove, confidence: high, source: "Britannica/WP via search; BNA blog (Aug 30)",
+     event: "Fanny Kaplan shoots Lenin outside the Mikhelson factory",
+     place: "Mikhelson factory, Zamoskvorechye",
+     scene: "At the Mikhelson factory gate a DOVE fires two bullets into Lenin's shoulder and neck as he walks to his car."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP via search: shot on Sept 3 in a Kremlin yard",
+     event: "Kremlin commandant Malkov shoots Fanny Kaplan in a Kremlin courtyard and destroys her body",
+     place: "Kremlin, Autobase courtyard",
+     scene: "In a Kremlin garage yard a DOVE revs a lorry engine to hide the shot that kills Fanny Kaplan."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Kamenev becomes chairman of the Moscow Soviet",
+     place: "Mossovet, Tverskaya",
+     scene: "A DOVE pins the Mossovet chairman's sash on Kamenev on the balcony of the old governor's house on Tverskaya."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Kate Sharpley Library; gazeta.ru: Leontievsky Lane",
+     event: "Anarchist bomb in Leontievsky Lane kills twelve at the Moscow Party committee",
+     place: "Leontievsky Lane",
+     scene: "A TUBA packed with dynamite flies through the window of the Leontievsky Lane mansion and blows up the Moscow Party meeting."}
+  - {year: 1919, peg: tuba, confidence: medium, source: "Kate Sharpley Library: Kraskovo dacha",
+     event: "Cheka agents surround the anarchist bomb-makers at a dacha in Kraskovo, and they blow themselves up",
+     place: "Kraskovo dacha",
+     scene: "A TUBA sounds the Cheka charge round a Kraskovo dacha, and the anarchists inside blow their own house apart."}
+  - {year: 1919, peg: tuba, confidence: high, source: "Presidential Library; RBTH (Jan 6)",
+     event: "Koshelkov's gang stops Lenin's car in Sokolniki and robs him",
+     place: "Sokolnichesky highway",
+     scene: "Bandit Koshelkov points a TUBA at Lenin on the Sokolniki road and drives off in his car with his pistol."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Police break up the Trotskyist opposition's march on the anniversary of the revolution",
+     place: "Okhotny Ryad, Hotel Paris",
+     scene: "Trotsky's supporters hang banners from the Hotel Paris balcony, and police throw an INK pot that blots out every slogan."}
+  - {year: 1929, peg: knob, confidence: high, source: "Admin. divisions of Moscow Oblast (Jan 14, Jun 3)",
+     event: "Central Industrial Oblast, soon renamed Moscow Oblast, is formed from the Moscow, Tver, Ryazan and Tula provinces",
+     place: "Mossovet",
+     scene: "A clerk turns a giant KNOB on the map and four old provinces slide together into one Moscow Oblast."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP via search: Moscow committees (1930)",
+     event: "Kaganovich becomes first secretary of the Moscow Party committee",
+     place: "Staraya Square",
+     scene: "On Staraya Square a MOUSE hands Kaganovich the keys to the Moscow Party committee, and he starts a list of churches."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP via search: Bulganin, Mossovet chairman 1931-37",
+     event: "Bulganin becomes chairman of the Moscow Soviet",
+     place: "Mossovet, Tverskaya",
+     scene: "A MOTH lands on the Mossovet chairman's chair on Tverskaya, and Kaganovich seats Bulganin on it."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Moscow city is split off from the Oblast as a separate unit",
+     place: "Mossovet",
+     scene: "A MOTH chews a ring round the city on the Mossovet map, and Moscow tears away from its Oblast."}
+  - {year: 1932, peg: moon, confidence: medium, source: "Moscow Canal / Khimki Reservoir (Dmitlag 1932-37)",
+     event: "Dmitlag labour camp opens at Dmitrov to dig the Moscow-Volga Canal",
+     place: "Dmitrov, Borisoglebsky Monastery",
+     scene: "Under a cold MOON the camp guards of Dmitrov march convicts out of a monastery to dig the canal."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "gw2ru: Stalin transformed Moscow (wall 1934-35)",
+     event: "Workers begin to pull down the Kitay-gorod wall",
+     place: "Kitay-gorod, Teatralny proezd",
+     scene: "A HAMMER bigger than a tram smashes the brick Kitay-gorod wall and only a stump behind the Metropol stays."}
+  - {year: 1935, peg: mill, confidence: medium, source: "WP via search: city Jan 1934, oblast Mar 1935",
+     event: "Khrushchev takes over the Moscow regional Party committee from Kaganovich",
+     place: "Staraya Square",
+     scene: "A MILL on Staraya Square grinds Kaganovich's name off the Moscow Party door and stamps Khrushchev's on it."}
+  - {year: 1937, peg: mug, confidence: high, source: "Moscow Times; HNN: first victims Aug 8",
+     event: "NKVD begins mass shootings at the Butovo firing range",
+     place: "Butovo firing range",
+     scene: "At the Butovo range an NKVD officer fills a MUG with vodka before each night's shootings into the ditches."}
+  - {year: 1937, peg: mug, confidence: medium, source: "WP via search: Kommunarka 1937-41",
+     event: "NKVD begins to shoot and bury victims at Kommunarka, on Yagoda's old dacha",
+     place: "Kommunarka",
+     scene: "In Yagoda's old dacha garden at Kommunarka a MUG of lime pours over the first pit of shot officials."}
+  # science
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Bryansky (now Kievsky) railway station opens, by Rerberg",
+     place: "Kievsky station",
+     scene: "A DOVE winds the clock of Rerberg's new Bryansky station tower, and the first trains pull into the hall."}
+  - {year: 1922, peg: nun, confidence: high, source: "Presidential Library: Kashira plant opened (June)",
+     event: "Kashira power station, the first plant of the GOELRO plan, opens",
+     place: "Kashira",
+     scene: "A NUN pulls the switch at Kashira, and the first GOELRO current flies along the high wires to Moscow."}
+  - {year: 1922, peg: nun, confidence: medium, source: "mosizolyator: first high-voltage line",
+     event: "Kashira to Moscow line, the first high-voltage power line in Russia, starts work",
+     place: "Kashira to Moscow",
+     scene: "A NUN walks the high-voltage wire from Kashira to Moscow like a tightrope and carries the first power across."}
+  - {year: 1922, peg: nun, confidence: high, source: "Centennial of Flight; Deruluft (May 1)",
+     event: "Deruluft opens the first regular international air route, from Moscow to Konigsberg",
+     place: "Khodynka Central Aerodrome",
+     scene: "A NUN climbs into a Fokker at Khodynka with the first sack of air mail and flies off to Konigsberg."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Centennial of Flight: Dobrolet (July)",
+     event: "Dobrolet opens its first passenger air line, from Moscow to Nizhny Novgorod",
+     place: "Khodynka Central Aerodrome",
+     scene: "A GNOME buys the first Dobrolet ticket at Khodynka and flies to Nizhny Novgorod in a Junkers."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Sklifosovsky Institute of emergency medicine opens in the Sheremetev hospice",
+     place: "Sheremetev hospice, Sukharevskaya",
+     scene: "A GNOME in a white coat runs the first ambulance stretcher into the Sheremetev hospice, now the Sklifosovsky Institute."}
+  - {year: 1924, peg: hanger, confidence: high, source: "mos.ru: first bus route, Leyland buses",
+     event: "First city bus route opens with eight Leyland buses, Kalanchevskaya Square to Belorussky station",
+     place: "Myasnitskaya Street",
+     scene: "Eight red Leyland buses hang from a giant HANGER, and it sets them down on Kalanchevskaya Square for the first route."}
+  - {year: 1925, peg: nail, confidence: medium, source: "Unipro: Shaturskaya GRES, GOELRO plant",
+     event: "Shatura peat power station starts work",
+     place: "Shatura",
+     scene: "A NAIL of pressed peat goes into the Shatura boiler, and the new station lights the eastern Oblast."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Structurae; michaelharrison: first stage done",
+     event: "Kazansky railway station by Shchusev opens its main building",
+     place: "Komsomolskaya Square",
+     scene: "Shchusev hangs a NACHO from the tall Kazansky station tower, and its new halls open to the eastern lines."}
+  - {year: 1926, peg: nacho, confidence: unverified,
+     event: "Spring flood of the Moskva covers the low streets of Zamoskvorechye",
+     place: "Zamoskvorechye",
+     scene: "A floating NACHO paddles down the flooded streets of Zamoskvorechye past the half-sunk houses."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Bakhmetevsky bus garage by Melnikov and Shukhov opens",
+     place: "Obraztsova Street",
+     scene: "Melnikov dips Shukhov's steel roof in INK and lays it as a giant shed for the buses on Bakhmetevskaya Street."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Central Telegraph by Rerberg opens on Tverskaya",
+     place: "Tverskaya Street",
+     scene: "INK flows from Rerberg's Central Telegraph on Tverskaya into a thousand telegrams under its glass globe."}
+  - {year: 1929, peg: knob, confidence: medium, source: "Scientific Russia (Aug 3); m24.ru (Aug 29)",
+     event: "First electric suburban train runs from Moscow to Mytishchi",
+     place: "Yaroslavsky station to Mytishchi",
+     scene: "A driver turns the brass KNOB, and the first electric train glides from Yaroslavsky station to Mytishchi without smoke."}
+  - {year: 1929, peg: knob, confidence: high, source: "Moscow Times: today Nov 5; mos.ru",
+     event: "Moscow Planetarium opens, the first in Russia",
+     place: "Sadovaya-Kudrinskaya Street",
+     scene: "A KNOB on the Zeiss projector turns, and stars fill the silver dome of the new Moscow Planetarium."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "Moscow Aviation Institute is founded from the air faculty of the Higher Technical School",
+     place: "Leningradskoye highway",
+     scene: "A MOUSE in a flying helmet leads the air students out of the Bauman school into the new Aviation Institute."}
+  - {year: 1931, peg: moth, confidence: high, source: "Harrison: Metro chronology (June plenum)",
+     event: "Party plenum decides to build the Moscow Metro",
+     place: "Kremlin",
+     scene: "A MOTH lands on Kaganovich's plan of the Metro at the plenum and burns a tunnel line through the map."}
+  - {year: 1931, peg: moth, confidence: high, source: "Harrison: Metro chronology (November)",
+     event: "Metro builders dig the first trial section on Rusakovskaya Street",
+     place: "Rusakovskaya Street",
+     scene: "A MOTH digs the first Metro shaft in a small yard on Rusakovskaya Street and flutters out covered in clay."}
+  - {year: 1932, peg: moon, confidence: unverified,
+     event: "Dirigiblestroi airship works is founded at Dolgoprudny",
+     place: "Dolgoprudny",
+     scene: "A silver airship as round as the MOON floats out of the new Dirigiblestroi hangar at Dolgoprudny."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Scientific Russia: trolleybus (Nov 15)",
+     event: "First trolleybus line opens from Tverskaya Zastava to Vsekhsvyatskoye",
+     place: "Leningradskoye highway",
+     scene: "A MUMMY unwinds its bandages as the first trolleybus wires from Tverskaya Zastava to Vsekhsvyatskoye."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "Bykovo airport opens for passenger flights",
+     place: "Bykovo",
+     scene: "A MUMMY on the first passenger plane at Bykovo airport waves from its window as it takes off."}
+  - {year: 1934, peg: hammer, confidence: high, source: "Harrison: Metro chronology (Oct 15)",
+     event: "First trial Metro train runs from Kalanchevskaya Square to Sokolniki",
+     place: "Komsomolskaya to Sokolniki",
+     scene: "A HAMMER knocks the last bolt in the rail, and the first trial Metro train rolls from Kalanchevskaya to Sokolniki."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "Academy of Sciences moves from Leningrad to Moscow",
+     place: "Neskuchny Garden, Alexandrinsky Palace",
+     scene: "A HAMMER nails the Academy of Sciences sign onto the Alexandrinsky Palace in Neskuchny Garden after the move from Leningrad."}
+  - {year: 1934, peg: hammer, confidence: high, source: "kapitza.ras.ru: decree of Dec 23",
+     event: "Institute for Physical Problems is founded for Kapitsa",
+     place: "Vorobyovskoye highway",
+     scene: "A HAMMER builds Kapitsa's Institute for Physical Problems on Vorobyovy Gory while his English magnet waits in a crate."}
+  - {year: 1937, peg: mug, confidence: high, source: "Harrison: Metro chronology (March)",
+     event: "Metro opens its second stage, Ploshchad Revolyutsii to Kievskaya over the Smolensky Metro Bridge",
+     place: "Smolensky Metro Bridge",
+     scene: "A Metro train balanced on a MUG crosses the Moskva on the new Smolensky Metro Bridge to Kievskaya."}
+  - {year: 1937, peg: mug, confidence: medium, source: "prlib.ru: Ivankovo dam, Moscow Sea",
+     event: "Ivankovo dam on the Volga at Dubna fills the Moscow Sea for the canal",
+     place: "Dubna, Ivankovo dam",
+     scene: "A giant MUG fills at the Ivankovo dam in Dubna, and the Volga spills over to make the Moscow Sea."}
+  - {year: 1938, peg: movie, confidence: unverified,
+     event: "Metro extends the Arbat line to Kurskaya station",
+     place: "Kurskaya",
+     scene: "A MOVIE projector beams the Metro line east from Ploshchad Revolyutsii, and a train runs out onto Kurskaya."}
+  - {year: 1938, peg: movie, confidence: medium, source: "mos.ru: metro station list (Sep 11)",
+     event: "Gorkovsky Metro line opens from Teatralnaya to Sokol, with Mayakovskaya station",
+     place: "Mayakovskaya station",
+     scene: "Steel arches of Mayakovskaya light up like a MOVIE screen as the first Gorkovsky line train runs to Sokol."}
+  - {year: 1938, peg: movie, confidence: high, source: "Krymsky Bridge (May 1); Structurae",
+     event: "New Krymsky suspension bridge opens over the Moskva",
+     place: "Krymsky Bridge",
+     scene: "A MOVIE crew films the steel chains of the new Krymsky Bridge as the first lorries drive across."}
+  - {year: 1938, peg: movie, confidence: high, source: "Structurae: Great Stone Bridge (Kalmykov)",
+     event: "Bolshoy Kamenny steel bridge opens next to the Kremlin",
+     place: "Bolshoy Kamenny Bridge",
+     scene: "A MOVIE camera on the Kremlin wall films the new Bolshoy Kamenny arch as it rises over the river."}
+  - {year: 1938, peg: movie, confidence: disputed, source: "Structurae: built to 1937; others: opened 1938",
+     event: "Bolshoy Moskvoretsky Bridge opens below Red Square",
+     place: "Bolshoy Moskvoretsky Bridge",
+     scene: "A MOVIE poster on the new Bolshoy Moskvoretsky Bridge shows tanks driving off Red Square across the river."}
+  - {year: 1932, peg: moon, confidence: medium, source: "Pioneer railway; RBTH (Tbilisi claim, 1935)",
+     event: "Children's railway, the first in the world, opens in Gorky Park",
+     place: "Gorky Park",
+     scene: "A child driver steers a tiny steam engine round Gorky Park under the MOON, and pioneers sell the tickets."}
+  # religion
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Kremlin cathedrals close to worship after the last Easter service",
+     place: "Kremlin, Dormition Cathedral",
+     scene: "A DOVE puts out the last Easter candle in the Dormition Cathedral, and soldiers lock the Kremlin cathedrals."}
+  - {year: 1920, peg: nose, confidence: high, source: "UNESCO doc; Sergiev Posad museum (decree 20 April)",
+     event: "Decree closes the Trinity Lavra of Saint Sergius and makes it a museum",
+     place: "Sergiyev Posad, Trinity Lavra",
+     scene: "A commissar puts his NOSE into the Lavra treasury at Sergiyev Posad and pastes a museum label on every chalice."}
+  - {year: 1920, peg: nose, confidence: unverified,
+     event: "New Jerusalem Monastery at Istra closes and becomes a museum",
+     place: "Istra, New Jerusalem",
+     scene: "A clerk with a long NOSE turns the monks out of New Jerusalem at Istra and hangs up a museum sign."}
+  - {year: 1922, peg: nun, confidence: high, source: "Slavic Review: Polytechnic, Apr 26-May 6",
+     event: "Moscow trial of fifty-four priests and laymen who resisted the seizure of church valuables",
+     place: "Polytechnic Museum",
+     scene: "A NUN in the dock of the Polytechnic Museum hides a chalice under her habit as the judges sentence the Moscow priests."}
+  - {year: 1922, peg: nun, confidence: high, source: "orthodoxwiki; sacred-destinations (closed)",
+     event: "Novodevichy Convent closes and becomes a museum",
+     place: "Novodevichy Convent",
+     scene: "The last NUN of Novodevichy Convent hands her keys to a museum guide and walks out of the gate."}
+  - {year: 1929, peg: knob, confidence: high, source: "Wikipedia via search: Chudov Monastery razed",
+     event: "Chudov Monastery in the Kremlin is pulled down",
+     place: "Kremlin, Ivanovskaya Square",
+     scene: "A demolition worker turns a KNOB on the charge, and the Chudov Monastery falls inside the Kremlin."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Ascension Convent in the Kremlin is pulled down",
+     place: "Kremlin, Spasskaya Gate",
+     scene: "A crane with a steel KNOB swings into the Ascension Convent by the Spasskaya Gate and breaks the tsaritsas' tombs open."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "Crimson: closed 1930; WP: 1929-30",
+     event: "Danilov Monastery closes, and the NKVD turns it into a home for street children",
+     place: "Danilov Monastery",
+     scene: "A MOUSE locks the last monk out of the Danilov Monastery, and NKVD guards march street children in."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Harvard Gazette; Crimson (fall of year)",
+     event: "Danilov Monastery bells are sold abroad and go to Harvard",
+     place: "Danilov Monastery",
+     scene: "A MOUSE rides the great Danilov bell down from its tower onto a lorry bound for Harvard."}
+  - {year: 1931, peg: moth, confidence: medium, source: "WP via search: Iberian Gate demolished (1931)",
+     event: "Iberian Gate and Chapel at the entrance of Red Square are pulled down",
+     place: "Voskresenskiye Gate",
+     scene: "A MOTH eats the Iberian Chapel and both gate towers so the tanks can roll into Red Square."}
+  - {year: 1933, peg: mummy, confidence: unverified,
+     event: "Church of the Saviour on the Bor, the oldest church in the Kremlin, is pulled down",
+     place: "Kremlin, Grand Kremlin Palace yard",
+     scene: "A MUMMY walks out of the falling Church of the Saviour on the Bor, the oldest church in the Kremlin."}
+  - {year: 1936, peg: match, confidence: high, source: "WP via search: Kazan Cathedral torn down 1936",
+     event: "Kazan Cathedral on Red Square is pulled down",
+     place: "Red Square, Kazan Cathedral",
+     scene: "A MATCH lights the charge, and the little Kazan Cathedral at the corner of Red Square falls for the parades."}
+  - {year: 1937, peg: mug, confidence: disputed, source: "RBTH: Strastnoy to 1937; gw2ru: 1931",
+     event: "Strastnoy Monastery on Pushkin Square is pulled down",
+     place: "Pushkin Square",
+     scene: "A MUG of tea shakes in Pushkin's hand as the Strastnoy Monastery behind him falls into dust."}
+  - {year: 1938, peg: movie, confidence: unverified,
+     event: "Epiphany Cathedral in Yelokhovo becomes the main cathedral of the Moscow church",
+     place: "Yelokhovo, Epiphany Cathedral",
+     scene: "A MOVIE reel of the closed cathedrals ends, and Metropolitan Sergius carries his cross into the Yelokhovo Epiphany Cathedral."}
+  # arts
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Lenin helps pull down Vasnetsov's memorial cross to Grand Duke Sergei in the Kremlin",
+     place: "Kremlin, Senate Square",
+     scene: "On May Day a DOVE ties Lenin's rope to Vasnetsov's Kremlin cross, and they pull it down together."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Skobelev equestrian statue on Tverskaya Square is pulled down",
+     place: "Tverskaya Square",
+     scene: "A DOVE pecks through the bronze legs of General Skobelev's horse, and the statue crashes onto Tverskaya Square."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Romanov obelisk in the Alexander Garden is recut with the names of revolutionary thinkers",
+     place: "Alexander Garden",
+     scene: "A DOVE chisels the tsars' names off the Alexander Garden obelisk and carves Marx and Campanella in their place."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Robespierre monument opens in the Alexander Garden and is wrecked a few days later",
+     place: "Alexander Garden",
+     scene: "A DOVE unveils a concrete Robespierre in the Alexander Garden, and a few nights later it explodes."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Konenkov's plaque To the Fallen in the Struggle for Peace goes up on the Senate Tower",
+     place: "Kremlin, Senate Tower",
+     scene: "A winged DOVE carved by Konenkov flies onto the Senate Tower as his plaque for the fallen revolutionaries."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Alexander III statue near the Cathedral of Christ the Saviour is pulled down",
+     place: "Volkhonka",
+     scene: "A DOVE pulls the bronze Alexander III off his throne by the cathedral, and his head rolls down Volkhonka."}
+  - {year: 1918, peg: dove, confidence: medium, source: "Met: Shchukin and Morozov nationalised, late (year)",
+     event: "Shchukin and Morozov collections of modern French art become state museums",
+     place: "Shchukin mansion, Bolshoy Znamensky Lane",
+     scene: "A DOVE stamps state seals on Matisse's Dance in Shchukin's mansion, and the collection becomes a public museum."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Obelisk to the Soviet Constitution goes up on Sovetskaya Square, later with a statue of Freedom",
+     place: "Sovetskaya (Tverskaya) Square",
+     scene: "A TUBA band plays as the Soviet Constitution obelisk rises on the old Skobelev site, a statue of Freedom at its foot."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Tenth State Exhibition, Non-Objective Creation and Suprematism, opens",
+     place: "Bolshaya Dmitrovka",
+     scene: "Rodchenko shows his black-on-black paintings, and Malevich answers with a white TUBA on a white canvas."}
+  - {year: 1920, peg: nose, confidence: medium, source: "Jewish Museum NY: Chagall murals (1920/21)",
+     event: "Chagall paints his murals for the State Jewish Theatre on Bolshoy Chernyshevsky Lane",
+     place: "Bolshoy Chernyshevsky Lane",
+     scene: "Chagall paints a fiddler with a green NOSE across the walls of the small Jewish Theatre on Chernyshevsky Lane."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "Third OBMOKhU exhibition shows the constructivists' spatial constructions",
+     place: "Bolshaya Dmitrovka",
+     scene: "An ANT climbs Ioganson's hanging steel crosses at the OBMOKhU show, and the constructions spin in the air."}
+  - {year: 1922, peg: nun, confidence: medium, source: "Northwestern: Meyerhold (from the year)",
+     event: "Meyerhold stages The Magnificent Cuckold with Popova's constructivist set",
+     place: "Meyerhold Theatre, Sadovaya",
+     scene: "A NUN spins on Popova's wooden wheels and ramps as Meyerhold's actors leap through The Magnificent Cuckold."}
+  - {year: 1922, peg: nun, confidence: medium, source: "Northwestern; Jewish Museum NY (Dybbuk, Moscow)",
+     event: "Habima premieres The Dybbuk in Hebrew, directed by Vakhtangov",
+     place: "Habima studio, Bolshoy Nikitsky",
+     scene: "A NUN cries out as the Dybbuk's spirit speaks Hebrew through the bride in Vakhtangov's Habima staging."}
+  - {year: 1922, peg: nun, confidence: high, source: "Moscow Times; Persimfans (Feb 13, House of Unions)",
+     event: "Persimfans, an orchestra with no conductor, gives its first concert",
+     place: "House of Unions",
+     scene: "A NUN takes the conductor's podium away, and the Persimfans players in the House of Unions play together without one."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Kolomenskoye becomes a museum of old Russian wooden architecture under Baranovsky",
+     place: "Kolomenskoye",
+     scene: "A GNOME helps Baranovsky drag a wooden tower to Kolomenskoye for his new open-air museum."}
+  - {year: 1923, peg: gnome, confidence: medium, source: "GMNZI history; Pushkin Museum (1923 merger)",
+     event: "Shchukin and Morozov museums merge as the State Museum of New Western Art",
+     place: "Prechistenka, Morozov mansion",
+     scene: "A GNOME carries Shchukin's Picassos into Morozov's house and hangs them beside the Cezannes as one museum."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "Merkurov's Timiryazev monument opens at Nikitsky Gate",
+     place: "Nikitsky Gate",
+     scene: "A GNOME polishes the granite gown of Merkurov's Timiryazev at Nikitsky Gate on its first day."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Moscow Satire Theatre home page (founded)",
+     event: "Moscow Theatre of Satire opens",
+     place: "Theatre of Satire",
+     scene: "The first comic of the Theatre of Satire swings on a coat HANGER over the stage and mocks the NEP men."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Museum of the Revolution opens in the old English Club on Tverskaya",
+     place: "Tverskaya, English Club",
+     scene: "The English Club's gentlemen's coats on a HANGER are swapped for revolution banners in the new museum on Tverskaya."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Vorovsky monument by Kats goes up on Lubyanka beside the Cheka",
+     place: "Kuznetsky Most at Lubyanka",
+     scene: "A HANGER holds up the thin bronze Vorovsky as he is set down beside the Cheka on Lubyanka."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Bulgakov Museum: Vakhtangov (Oct 28)",
+     event: "Bulgakov's Zoyka's Apartment premieres at the Vakhtangov Theatre",
+     place: "Vakhtangov Theatre, Arbat",
+     scene: "Zoyka hides a NACHO in the sewing room of her secret salon on the Vakhtangov stage on the Arbat."}
+  - {year: 1926, peg: nacho, confidence: unverified,
+     event: "Meyerhold stages Gogol's The Government Inspector",
+     place: "Meyerhold Theatre, Sadovaya",
+     scene: "Khlestakov eats a NACHO off a silver dish as Meyerhold's Government Inspector rolls its scenes forward on platforms."}
+  - {year: 1927, peg: ink, confidence: medium, source: "Bolshoi collection record (Gliere, year)",
+     event: "Gliere's ballet The Red Poppy premieres at the Bolshoi",
+     place: "Bolshoi Theatre",
+     scene: "A Bolshoi ballerina dips a red poppy in INK and writes a revolution in China across the stage."}
+  - {year: 1927, peg: ink, confidence: high, source: "Harvard exhibit; Moscow Times: Red Gate (June 3)",
+     event: "Red Gate triumphal arch is pulled down to clear the Garden Ring",
+     place: "Krasnye Vorota",
+     scene: "Red INK pours over the baroque Red Gate as workers pull it down to make room for the Garden Ring traffic."}
+  - {year: 1927, peg: ink, confidence: medium, source: "Vice/MoMA: Izvestia, built 1926-27 by Barkhin",
+     event: "Izvestia newspaper building by Barkhin opens on Pushkin Square",
+     place: "Pushkin Square",
+     scene: "INK presses roar behind the round windows of Barkhin's new Izvestia building on Pushkin Square."}
+  - {year: 1928, peg: knife, confidence: high, source: "Bulgakov Museum: Crimson Island (Dec 11)",
+     event: "Bulgakov's The Crimson Island premieres at Tairov's Kamerny Theatre",
+     place: "Kamerny Theatre, Tverskoy Boulevard",
+     scene: "A KNIFE cuts the red curtain at Tairov's Kamerny Theatre, and Bulgakov's Crimson Island mocks the censors."}
+  - {year: 1928, peg: knife, confidence: medium, source: "Harvard exhibit; weburbanist (1928/29)",
+     event: "Golosov's Zuev Workers' Club with its glass cylinder is complete",
+     place: "Lesnaya Street",
+     scene: "A KNIFE slices a glass cylinder into the corner of Golosov's Zuev club on Lesnaya Street."}
+  - {year: 1928, peg: knife, confidence: unverified,
+     event: "Mostorg department store by the Vesnin brothers opens on Krasnaya Presnya",
+     place: "Krasnaya Presnya",
+     scene: "A KNIFE cuts the ribbon at the glass front of the Vesnins' Mostorg store on Krasnaya Presnya."}
+  - {year: 1929, peg: knob, confidence: unverified,
+     event: "Melnikov's Kauchuk Factory Club opens on Plyushchikha",
+     place: "Plyushchikha",
+     scene: "A rubber KNOB from the Kauchuk factory opens the door of Melnikov's round workers' club on Plyushchikha."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "Mayakovsky's The Bathhouse premieres at the Meyerhold Theatre",
+     place: "Meyerhold Theatre, Sadovaya",
+     scene: "A MOUSE runs out of Mayakovsky's time machine in The Bathhouse and bites the bureaucrat Pobedonosikov."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "Narkomfin: Ginzburg, built 1928-30 (several dates)",
+     event: "Ginzburg and Milinis's Narkomfin communal house is complete",
+     place: "Novinsky Boulevard",
+     scene: "A MOUSE runs along the long glass gallery of the Narkomfin house to the shared kitchen on Novinsky Boulevard."}
+  - {year: 1931, peg: moth, confidence: unverified,
+     event: "Iofan's House on the Embankment, the government apartment block, is complete",
+     place: "Bersenevskaya Embankment",
+     scene: "A MOTH flies past five hundred lit windows of Iofan's grey House on the Embankment across from the Kremlin."}
+  - {year: 1931, peg: moth, confidence: medium, source: "puppet.ru; Britannica: puppet theatre (Sept 16)",
+     event: "Obraztsov's State Central Puppet Theatre opens",
+     place: "Central Puppet Theatre",
+     scene: "Obraztsov puts a MOTH puppet on his hand and opens the State Central Puppet Theatre."}
+  - {year: 1931, peg: moth, confidence: medium, source: "romarchive; Romen Theatre (Jan or Dec)",
+     event: "Romen, the first Roma theatre, opens",
+     place: "Romen Theatre",
+     scene: "A MOTH flutters round the guitar of the first Romen singer as the Roma theatre opens."}
+  - {year: 1934, peg: hammer, confidence: high, source: "realty.rbc.ru; rambler: April-June demolition",
+     event: "Sukharev Tower is pulled down to widen the Garden Ring",
+     place: "Sukharevskaya Square",
+     scene: "A HAMMER swings through Peter's Sukharev Tower on the Garden Ring, and its bricks fill the square."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "Zholtovsky's classical apartment house on Mokhovaya is complete",
+     place: "Mokhovaya Street",
+     scene: "A HAMMER carves Corinthian columns on Zholtovsky's Mokhovaya house, and the modernists' era ends."}
+  - {year: 1935, peg: mill, confidence: high, source: "RFE/RL; Kremlin stars (October)",
+     event: "Red stars replace the double-headed eagles on the Kremlin towers",
+     place: "Spasskaya Tower",
+     scene: "A crane MILL lifts the gilt eagle off the Spasskaya Tower and swings a jewelled red star into its place."}
+  - {year: 1935, peg: mill, confidence: high, source: "Tulane Moscow architecture: STO (1932-35)",
+     event: "House of the Council of Labour and Defence by Langman is complete on Okhotny Ryad",
+     place: "Okhotny Ryad",
+     scene: "A MILL grinds grey stone into the tall front of Langman's Council of Labour house on Okhotny Ryad."}
+  - {year: 1935, peg: mill, confidence: high, source: "Moscow Times: Bright Stream at Bolshoi (Nov 30)",
+     event: "Shostakovich's ballet The Bright Stream reaches the Bolshoi",
+     place: "Bolshoi Theatre",
+     scene: "Kolkhoz dancers in The Bright Stream turn a MILL wheel on the Bolshoi stage."}
+  - {year: 1936, peg: match, confidence: unverified,
+     event: "Central Lenin Museum opens in the old City Duma building",
+     place: "Revolution Square",
+     scene: "A MATCH lights the lamps of the old City Duma hall, now the Central Lenin Museum by Revolution Square."}
+  - {year: 1936, peg: match, confidence: disputed, source: "Britannica: 1936; Fondation Le Corbusier: 1935",
+     event: "Le Corbusier's Centrosoyuz building on Myasnitskaya is complete",
+     place: "Myasnitskaya Street",
+     scene: "A MATCH lights the glass walls of Le Corbusier's Centrosoyuz on Myasnitskaya, standing on its pilotis."}
+  - {year: 1937, peg: mug, confidence: high, source: "RFE/RL; Kremlin stars (ruby glass, Nov)",
+     event: "Ruby glass stars replace the first Kremlin stars",
+     place: "Kremlin towers",
+     scene: "A ruby MUG glows red from inside like the new glass stars lit on the five Kremlin towers."}
+  - {year: 1937, peg: mug, confidence: unverified,
+     event: "Pushkin Museum of Fine Arts takes Pushkin's name",
+     place: "Volkhonka",
+     scene: "A MUG of ink marks Pushkin's name over the columns of the Fine Arts Museum on Volkhonka."}
+  - {year: 1938, peg: movie, confidence: high, source: "Papers Past (Jan 10); Cambridge NTQ",
+     event: "Meyerhold Theatre is closed by order",
+     place: "Meyerhold Theatre, Sadovaya",
+     scene: "A MOVIE projector shuts off, and a decree closes Meyerhold's theatre on the Sadovaya in mid-season."}
+  - {year: 1938, peg: movie, confidence: unverified,
+     event: "First rebuilt blocks of Gorky Street go up with Mordvinov's large apartment houses",
+     place: "Gorky Street",
+     scene: "A MOVIE crew films Mordvinov's new granite houses rising along the wide Gorky Street."}
+  - {year: 1939, peg: map, confidence: high, source: "Tulane Moscow architecture; TASS",
+     event: "Mukhina's Worker and Kolkhoz Woman goes up at the entrance of the Agricultural Exhibition",
+     place: "VSKhV north entrance",
+     scene: "Mukhina's steel worker and kolkhoz woman hold a MAP of Moscow and stride onto their new base at the exhibition gate."}
+  - {year: 1939, peg: map, confidence: medium, source: "mos.ru: moving buildings (Nov 4)",
+     event: "Savvinskoye Compound is moved back on rails to widen Gorky Street",
+     place: "Gorky Street, Savvinskoye Compound",
+     scene: "Engineers roll the Savvinskoye Compound back on rails, and a MAP of Gorky Street redraws its line."}
+  - {year: 1939, peg: map, confidence: unverified,
+     event: "Mossovet building is moved back to widen Gorky Street",
+     place: "Gorky Street, Mossovet",
+     scene: "The Mossovet building slides back on rails, and a clerk inside keeps writing on his MAP."}
+  - {year: 1939, peg: map, confidence: unverified,
+     event: "Prokofiev's Alexander Nevsky cantata premieres",
+     place: "Great Hall of the Conservatory",
+     scene: "A MAP of the frozen lake hangs over the Conservatory stage as the choir sings Prokofiev's battle on the ice."}
+  - {year: 1940, peg: horse, confidence: high, source: "meloman.ru; Structurae (opened Oct 12)",
+     event: "Tchaikovsky Concert Hall opens on Mayakovsky Square",
+     place: "Mayakovsky Square",
+     scene: "A HORSE plays Tchaikovsky on the piano at the gala that opens the new concert hall on Mayakovsky Square."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Alabyan's star-shaped Red Army Theatre building is complete",
+     place: "Suvorovskaya Square",
+     scene: "A cavalry HORSE trots the five points of Alabyan's star-shaped Red Army Theatre on Suvorovskaya Square."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Abramtsevo estate becomes a museum",
+     place: "Abramtsevo",
+     scene: "A DOVE flies into Mamontov's Abramtsevo house and sits on Vasnetsov's tiled bench as the first museum guests arrive."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Arkhangelskoye estate of the Yusupovs opens as a museum",
+     place: "Arkhangelskoye",
+     scene: "A TUBA plays on the Arkhangelskoye terraces as the Yusupov palace opens its doors as a museum."}
+  - {year: 1919, peg: tuba, confidence: unverified,
+     event: "Kuskovo estate of the Sheremetevs becomes a museum",
+     place: "Kuskovo",
+     scene: "A TUBA floats on the Kuskovo pond as the Sheremetev palace opens to the people as a museum."}
+  - {year: 1921, peg: ant, confidence: medium, source: "Natalya Sats theatre (predecessor, year)",
+     event: "Natalia Sats opens the Moscow Children's Theatre in an old cinema",
+     place: "Moscow Children's Theatre",
+     scene: "An ANT in a top hat leads the children into Natalia Sats's new theatre in an old cinema on Tverskaya."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "Moscow Operetta Theatre is founded",
+     place: "Moscow Operetta",
+     scene: "A soprano writes a can-can in INK as the Moscow Operetta Theatre gives its first show."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "all-andorra / Structurae: Red Army theatre (Feb 6)",
+     event: "Central Theatre of the Red Army opens its first season",
+     place: "Central House of the Red Army",
+     scene: "A MOUSE in an army cap opens the curtain at the first show of the Red Army Theatre."}
+  - {year: 1934, peg: hammer, confidence: unverified,
+     event: "Two throne halls of the Grand Kremlin Palace are joined into the Supreme Soviet hall",
+     place: "Grand Kremlin Palace",
+     scene: "A HAMMER knocks out the wall between the Andreevsky and Alexandrovsky halls to make one Supreme Soviet hall."}
+  - {year: 1936, peg: match, confidence: unverified,
+     event: "Triumphal Arch at Tverskaya Zastava is taken down",
+     place: "Tverskaya Zastava",
+     scene: "A MATCH lights the workmen's lamps as they take Bove's Triumphal Arch apart stone by stone at Tverskaya Zastava."}
+  - {year: 1937, peg: mug, confidence: medium, source: "gw2ru: Stalin transformed Moscow (1937 start)",
+     event: "Builders begin the Palace of Soviets on the site of the Cathedral of Christ the Saviour",
+     place: "Volkhonka, Palace of Soviets site",
+     scene: "A steel MUG the size of a house sets the first foundation ring of the Palace of Soviets in the cathedral pit."}
+  # economy
+  - {year: 1918, peg: dove, confidence: medium, source: "Metropol history; National: First House 1919",
+     event: "Hotel National and Hotel Metropol become the First and Second Houses of Soviets",
+     place: "Hotel National, Hotel Metropol",
+     scene: "A DOVE swaps the brass hotel signs of the National and the Metropol for Houses of Soviets plates."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "Einem confectionery becomes the Red October factory",
+     place: "Bersenevskaya Embankment",
+     scene: "A NUN pulls the Einem chocolate box off the line and sticks a Red October label on it."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "Guzhon steel works becomes the Hammer and Sickle plant",
+     place: "Hammer and Sickle plant, Lefortovo",
+     scene: "A NUN pours molten steel into a hammer-and-sickle mould at the old Guzhon works."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "All-Russian Agricultural and Handicraft Exhibition opens on the Krymsky Val",
+     place: "Krymsky Val",
+     scene: "A GNOME shows off a giant cabbage in Shchusev's wooden pavilions at the Krymsky Val farm exhibition."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Grace's Guide (Nov 1); ZiL (Nov 7 parade)",
+     event: "AMO factory builds the first Soviet trucks, the AMO-F-15",
+     place: "AMO plant, Simonovskaya",
+     scene: "A HANGER lowers the first AMO-F-15 truck off the line, and it drives straight into the anniversary parade."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Mosselprom building opens with Rodchenko and Mayakovsky's adverts on its walls",
+     place: "Kalashny Lane",
+     scene: "A NAIL hangs Rodchenko's sign 'Nowhere but Mosselprom' on the striped walls of the building in Kalashny Lane."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "GUM stops trading and becomes offices",
+     place: "Red Square, GUM",
+     scene: "A MOUSE runs through the empty shop arcades of GUM as clerks carry in desks for the new offices."}
+  - {year: 1931, peg: moth, confidence: medium, source: "ZiL article via search (Oct 1)",
+     event: "AMO plant is rebuilt and renamed ZIS, the Stalin plant",
+     place: "ZIS plant, Simonovskaya",
+     scene: "A MOTH eats the AMO letters off the factory gate, and the rebuilt plant reopens as ZIS."}
+  - {year: 1932, peg: moon, confidence: unverified,
+     event: "First State Ball Bearing Plant opens",
+     place: "GPZ-1, Dubrovka",
+     scene: "A MOON-shaped ball bearing rolls off the first line of the new ball-bearing plant at Dubrovka."}
+  - {year: 1935, peg: mill, confidence: high, source: "Structurae; RBTH: Hotel Moskva",
+     event: "Hotel Moskva opens on Okhotny Ryad",
+     place: "Okhotny Ryad",
+     scene: "A MILL grinds out the two unlike wings of the Hotel Moskva on Okhotny Ryad, and the first guests arrive."}
+  - {year: 1937, peg: mug, confidence: medium, source: "prlib.ru: Moscow Canal opened; geomerid",
+     event: "Khimki Northern River Station opens on the new canal",
+     place: "Khimki reservoir",
+     scene: "A MUG of champagne breaks on the first steamer at the Khimki river station, its spire topped with a star."}
+  - {year: 1939, peg: map, confidence: medium, source: "vdnh.ru: north entrance arch, first visitors",
+     event: "All-Union Agricultural Exhibition opens in Ostankino",
+     place: "VSKhV, Ostankino",
+     scene: "A MAP of all the Soviet republics opens into a gate, and visitors stream into the agricultural exhibition pavilions."}
+  - {year: 1940, peg: horse, confidence: low, source: "RBTH: KIM-10 dated to the year",
+     event: "KIM factory begins to build the KIM-10, the first Soviet small car",
+     place: "KIM plant, Tekstilshchiki",
+     scene: "A HORSE pulls the first small KIM-10 car off the line and is put out of work."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Petrograd gun works moves to Podlipki, the start of today's Korolyov",
+     place: "Podlipki",
+     scene: "A DOVE carries the Petrograd gun works to the Podlipki pine woods, and the factory town of Korolyov begins."}
+  - {year: 1924, peg: hanger, confidence: unverified,
+     event: "Moskinokombinat studio, later Mosfilm, releases its first film",
+     place: "Zhitnaya Street studio",
+     scene: "A film reel on a HANGER dries in the Zhitnaya Street studio, the first Moscow film of the future Mosfilm."}
+  # society
+  - {year: 1918, peg: dove, confidence: medium, source: "encyclopedia.com: Moscow (April)",
+     event: "Mossovet orders families to share flats, one room for each adult",
+     place: "Arbat flats",
+     scene: "A DOVE moves a worker's family into a professor's Arbat flat and draws chalk lines for one room each."}
+  - {year: 1920, peg: nose, confidence: high, source: "Britannica: Moscow modern city; Papers Past",
+     event: "Census counts about one million people, half the pre-war city",
+     place: "Moscow",
+     scene: "A census clerk counts by NOSE in the half-empty city, and the total stops near one million."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Moscow Times: Sokol; Sokol (March, Apr 11)",
+     event: "Sokol, the first cooperative garden village, is begun",
+     place: "Sokol",
+     scene: "A garden GNOME guards the first wooden cottages of the Sokol cooperative village by its pine trees."}
+  - {year: 1923, peg: gnome, confidence: unverified,
+     event: "CSKA sports club is founded as the army club OPPV",
+     place: "Ekaterininsky Park",
+     scene: "A GNOME in a red army shirt kicks off the first match of the army club in Ekaterininsky Park."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Usachevka, one of the first workers' housing estates, is begun",
+     place: "Usachevka",
+     scene: "A NAIL holds up the first brick wall of the Usachevka workers' estate on the Khamovniki fields."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Britannica; Nature: census of the USSR",
+     event: "Census counts about two million people in Moscow",
+     place: "Moscow",
+     scene: "A NACHO falls on every head as the census clerk counts two million mouths in Moscow."}
+  - {year: 1927, peg: ink, confidence: unverified,
+     event: "First Moscow crematorium opens in a church of the Donskoy Monastery",
+     place: "Donskoy Monastery",
+     scene: "INK smoke rises from the chimney of the new crematorium in the old Donskoy Monastery church."}
+  - {year: 1928, peg: knife, confidence: high, source: "mos.ru: opened Aug 12",
+     event: "Central Park of Culture and Leisure, later Gorky Park, opens",
+     place: "Gorky Park",
+     scene: "A KNIFE cuts the ribbon at the Central Park of Culture, and crowds pour onto the old exhibition ground."}
+  - {year: 1928, peg: knife, confidence: high, source: "arena-park.ru: first stage; Dynamo stadium",
+     event: "Dynamo Stadium opens in Petrovsky Park",
+     place: "Dynamo Stadium",
+     scene: "A KNIFE cuts the ribbon on the new Dynamo Stadium in Petrovsky Park as the first runners start."}
+  - {year: 1930, peg: mouse, confidence: unverified,
+     event: "Sergiyev Posad is renamed Zagorsk",
+     place: "Sergiyev Posad",
+     scene: "A MOUSE chews Saint Sergius's name off the station sign and leaves the name Zagorsk."}
+  - {year: 1935, peg: mill, confidence: high, source: "Moscow Times: today July 10; encyclopedia.com",
+     event: "General Plan for the Reconstruction of Moscow is adopted",
+     place: "Moscow",
+     scene: "A MILL grinds the old lanes into wide avenues on the General Plan map of Moscow."}
+  - {year: 1935, peg: mill, confidence: high, source: "Aviation Safety Network (May 18)",
+     event: "ANT-20 Maxim Gorky collides with an escort plane and crashes on Sokol",
+     place: "Sokol",
+     scene: "A spinning MILL sail on a stunt fighter clips the giant Maxim Gorky in a loop, and it falls onto the cottages of Sokol."}
+  - {year: 1935, peg: mill, confidence: medium, source: "Meduza; boell.de: society founded (year)",
+     event: "Spartak sports society is founded",
+     place: "Krasnaya Presnya",
+     scene: "The Starostin brothers paint Spartak's red rhombus on a MILL and kick a ball off its sails."}
+  - {year: 1936, peg: match, confidence: high, source: "These Football Times; gw2ru (July 6)",
+     event: "Spartak plays a football match on a felt pitch on Red Square for Stalin",
+     place: "Red Square",
+     scene: "A MATCH lights the parade torches, and Spartak plays football on a green felt carpet across Red Square."}
+  - {year: 1939, peg: map, confidence: high, source: "Nature: Soviet census; Britannica",
+     event: "Census counts about four million people in Moscow",
+     place: "Moscow",
+     scene: "The census MAP of Moscow swells to twice its size as four million names fill it."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "Moscow University takes the name of Lomonosov",
+     place: "Mokhovaya, Moscow University",
+     scene: "A HORSE draws Lomonosov's sledge to the Mokhovaya gate, and the university takes his name."}
+  - {year: 1918, peg: dove, confidence: unverified,
+     event: "Moscow Higher Women's Courses become the Second Moscow State University",
+     place: "Malaya Pirogovskaya",
+     scene: "A DOVE swaps the sign of the Higher Women's Courses on Pirogovskaya for Second Moscow State University."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "Communist University of the Toilers of the East opens",
+     place: "Strastnoy Boulevard",
+     scene: "An ANT from each Asian country climbs the steps of the new Communist University of the Toilers of the East."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Sun Yat-sen University for Chinese students opens on Volkhonka",
+     place: "Volkhonka",
+     scene: "A NAIL fixes Sun Yat-sen's portrait over the door on Volkhonka, and Chinese students file in."}
+  - {year: 1932, peg: moon, confidence: medium, source: "WP via search: Tverskaya renamed Gorky Street",
+     event: "Tverskaya Street is renamed Gorky Street",
+     place: "Tverskaya Street",
+     scene: "A MOON-faced Gorky bust looks down as workmen nail Gorky Street plates over Tverskaya's old signs."}
+world_refs:
+  - {year: 1918, event: "Soviet government moves its capital from Petrograd to Moscow", cell: eastern_europe_politics_1800_1945}
+  - {year: 1918, event: "Soviet state takes over the Tretyakov Gallery", cell: eastern_europe_arts_1800_1945}
+  - {year: 1918, event: "TsAGI aerohydrodynamic institute founded under Zhukovsky", cell: eastern_europe_science_1800_1945}
+  - {year: 1919, event: "First state film school founded in Moscow", cell: eastern_europe_arts_1800_1945}
+  - {year: 1919, event: "Soviet officials open the relics of Sergius of Radonezh at the Trinity Lavra", cell: eastern_europe_religion_1800_1945}
+  - {year: 1920, event: "Vkhutemas art and design school opens", cell: eastern_europe_arts_1800_1945}
+  - {year: 1921, event: "5x5=25 exhibition: Rodchenko's last paintings", cell: eastern_europe_arts_1800_1945}
+  - {year: 1922, event: "Vakhtangov's Princess Turandot premieres", cell: eastern_europe_arts_1800_1945}
+  - {year: 1922, event: "Shukhov radio tower at Shabolovka complete", cell: eastern_europe_science_1800_1945}
+  - {year: 1923, event: "Dynamo sports society founded by the secret police", cell: eastern_europe_society_1800_1945}
+  - {year: 1924, event: "Protazanov's film Aelita", cell: eastern_europe_arts_1800_1945}
+  - {year: 1924, event: "Shchusev's wooden Lenin Mausoleum opens on Red Square", cell: eastern_europe_arts_1800_1945}
+  - {year: 1925, event: "Battleship Potemkin premieres (Bolshoi Theatre gala)", cell: eastern_europe_arts_1800_1945}
+  - {year: 1926, event: "Bulgakov's The Days of the Turbins at the Moscow Art Theatre", cell: eastern_europe_arts_1800_1945}
+  - {year: 1926, event: "D'Herbigny secretly consecrates Catholic bishops in Moscow", cell: eastern_europe_religion_1800_1945}
+  - {year: 1926, event: "Bogdanov opens the first institute of blood transfusion", cell: eastern_europe_science_1800_1945}
+  - {year: 1926, event: "Chetverikov: population genetics of wild flies", cell: eastern_europe_science_1800_1945}
+  - {year: 1928, event: "Melnikov's Rusakov Workers' Club complete", cell: eastern_europe_arts_1800_1945}
+  - {year: 1928, event: "Landsberg and Mandelstam find combination scattering of light", cell: eastern_europe_science_1800_1945}
+  - {year: 1928, event: "First All-Union Spartakiad in Moscow", cell: eastern_europe_society_1800_1945}
+  - {year: 1929, event: "Mayakovsky's The Bedbug premieres", cell: eastern_europe_arts_1800_1945}
+  - {year: 1929, event: "Melnikov's cylindrical house complete", cell: eastern_europe_arts_1800_1945}
+  - {year: 1930, event: "Shchusev's stone Lenin Mausoleum complete", cell: eastern_europe_arts_1800_1945}
+  - {year: 1930, event: "Simonov Monastery blown up", cell: eastern_europe_religion_1800_1945}
+  - {year: 1930, event: "Yudin: first transfusion of blood from a dead body", cell: eastern_europe_science_1800_1945}
+  - {year: 1931, event: "Cathedral of Christ the Saviour blown up", cell: eastern_europe_arts_1800_1945}
+  - {year: 1931, event: "Road to Life, the first Soviet sound feature film", cell: eastern_europe_arts_1800_1945}
+  - {year: 1933, event: "Iofan wins the Palace of Soviets competition", cell: eastern_europe_arts_1800_1945}
+  - {year: 1933, event: "GIRD-09 rocket flight at Nakhabino", cell: eastern_europe_science_1800_1945}
+  - {year: 1934, event: "Tupolev ANT-20 Maxim Gorky first flies", cell: eastern_europe_science_1800_1945}
+  - {year: 1934, event: "Alexandrov's musical comedy Jolly Fellows", cell: eastern_europe_arts_1800_1945}
+  - {year: 1935, event: "First Moscow International Film Festival", cell: eastern_europe_arts_1800_1945}
+  - {year: 1935, event: "Mikhoels plays King Lear at the State Jewish Theatre", cell: eastern_europe_arts_1800_1945}
+  - {year: 1935, event: "Moscow Metro opens its first line", cell: eastern_europe_science_1800_1945}
+  - {year: 1936, event: "Alexandrov's film Circus", cell: eastern_europe_arts_1800_1945}
+  - {year: 1936, event: "Prokofiev's Peter and the Wolf premieres", cell: eastern_europe_arts_1800_1945}
+  - {year: 1937, event: "Moscow to Volga Canal opens and brings river water to Moscow", cell: eastern_europe_economy_1800_1945}
+  - {year: 1937, event: "Kapitsa finds superfluidity of liquid helium", cell: eastern_europe_science_1800_1945}
+  - {year: 1938, event: "Alexandrov's musical film Volga-Volga", cell: eastern_europe_arts_1800_1945}
+  - {year: 1938, event: "Eisenstein's Alexander Nevsky (Mosfilm)", cell: eastern_europe_arts_1800_1945}
+out_refs:
+  - {year: 1918, event: "First Red Army May Day parade on Khodynka Field", reason: "national army"}
+  - {year: 1918, event: "Fifth Congress of Soviets adopts the first Soviet constitution in the Bolshoi", reason: "national government"}
+  - {year: 1918, event: "Red Terror declared after the attack on Lenin", reason: "national government"}
+  - {year: 1919, event: "Comintern founded at its first congress in the Kremlin", reason: "international party body"}
+  - {year: 1919, event: "First communist subbotnik at the Moscow-Sortirovochnaya depot", reason: "national labour campaign"}
+  - {year: 1920, event: "Treaty of Moscow with Lithuania", reason: "treaty"}
+  - {year: 1921, event: "Treaty of Moscow with Turkey", reason: "treaty"}
+  - {year: 1921, event: "Tenth Party Congress introduces the New Economic Policy", reason: "party congress"}
+  - {year: 1922, event: "Congress of Soviets forms the USSR in the Bolshoi Theatre", reason: "national government"}
+  - {year: 1923, event: "Renovationist council deposes Patriarch Tikhon", reason: "church-wide council"}
+  - {year: 1924, event: "Lenin dies at Gorki; state funeral on Red Square", reason: "state funeral"}
+  - {year: 1925, event: "Patriarch Tikhon dies at the Donskoy Monastery", reason: "church head funeral"}
+  - {year: 1928, event: "Shakhty trial in the House of Unions", reason: "national court case"}
+  - {year: 1930, event: "Industrial Party trial", reason: "national court case"}
+  - {year: 1932, event: "Internal passports and residence permits (propiska) for Moscow and other cities", reason: "national law"}
+  - {year: 1934, event: "First Congress of Soviet Writers in the Hall of Columns", reason: "national congress"}
+  - {year: 1934, event: "Moscow welcomes the Chelyuskin crew with a parade", reason: "national celebration"}
+  - {year: 1936, event: "First Moscow Trial: Zinoviev and Kamenev", reason: "national court case"}
+  - {year: 1936, event: "Stalin Constitution adopted in the Kremlin", reason: "national government"}
+  - {year: 1937, event: "Show trial of the Seventeen (Pyatakov and Radek)", reason: "national court case"}
+  - {year: 1937, event: "Tukhachevsky and other generals tried and shot", reason: "national army purge"}
+  - {year: 1938, event: "Show trial of the Twenty-One (Bukharin and Rykov)", reason: "national court case"}
+  - {year: 1939, event: "Molotov-Ribbentrop Pact signed in the Kremlin", reason: "treaty"}
+  - {year: 1940, event: "Meyerhold shot in prison after his arrest", reason: "purge victim; city not the subject"}
+  - {year: 1940, event: "Politburo orders the Katyn massacre", reason: "national government"}
