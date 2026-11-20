@@ -21,6 +21,8 @@ Memory pass → web check → write → check, end to end. Never stop for review
 ## Sources and budget
 Follow cities.md "Sources and search budget": no unauthorised book copies (erenow.org and similar); your
 budget is {budget} searches and it is a maximum, not a target. Follow cities.md "Archaeological dates".
+Read Wikipedia only at wikipedia.org (the user opens a window for it). Do not use Wikipedia mirrors or
+other hosts that copy it to get around the block; if wikipedia.org does not answer, use other sources.
 
 ## Depth
 EXHAUSTIVE inside scope: every dated event you can find, specialist items included. Cover every subject
