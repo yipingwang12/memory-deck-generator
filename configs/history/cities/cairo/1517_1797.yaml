@@ -1,0 +1,638 @@
+# City: Cairo x 1517 to 1797 (Ottoman Cairo: the conquest to the eve of the French). DRAFT 2026-11-19.
+# Area: Greater Cairo (Cairo and Giza governorates) with Memphis, Saqqara, Dahshur and Abusir: al-Qahira, the
+# Citadel and Rumayla, Bulaq, Old Cairo, Azbakiyya, Birkat al-Fil, the Qarafa cemeteries, Roda, Giza.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Acts of the Ottoman pashas and
+# the beys' factional struggle -> out_refs; riots, protests, sieges, shelling and buildings are cards
+# (main-stage rule). Al-Azhar offices and the Coptic Patriarchate treated like the Holy See. World-grid
+# events -> world_refs.
+# Dates: memory pass + web check (45 searches max; no unauthorised book copies).
+# Main sources: aa-ken DB = Database of Islamic Architecture, Cairo collection (construction years from
+# Fukami and Behrens-Abouseif, monument number given); Hasebe, Memoirs of the Toyo Bunko 63 (protests in
+# Ottoman Cairo, from the chronicles of Ahmad Shalabi and al-Jabarti); WP (wikipedia.org) building articles.
+# A building -> its opening or completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1517, peg: dog, confidence: high, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Ottoman guns on the Citadel bombard the Sultan Hasan mosque, where Tuman Bay shelters",
+     scene: "A giant DOG of bronze, a cannon on the Citadel, barks cannonballs into the dome of Sultan Hasan where Tuman Bay hides."}
+  - {year: 1524, peg: hanger, confidence: high, source: "WP: Hain Ahmed Pasha (January); Arabic Post: 7 Feb",
+     event: "Ahmed Pasha the Traitor takes the Citadel and its janissary garrison",
+     scene: "Ahmed Pasha hooks each janissary of the Citadel on a coat HANGER and hangs the whole garrison on the wall."}
+  - {year: 1525, peg: nail, confidence: medium, source: "WP: Cairo Citadel (c. 1525)",
+     event: "Ibrahim Pasha builds Burj al-Muqattam, the great round tower of the Citadel (approximate)",
+     place: "Citadel",
+     scene: "Ibrahim Pasha drives one giant NAIL into the Citadel rock, and the round Burj al-Muqattam grows up around it."}
+  - {year: 1571, peg: cat, confidence: medium, source: "Hasebe, Toyo Bunko 63 (Shalabi; Mallawani differs)",
+     event: "Sufis climb the minarets of al-Azhar and call down God's vengeance on Iskandar Pasha",
+     place: "al-Azhar",
+     scene: "On the al-Azhar minaret a Sufi swings a howling CAT by the tail and curses Iskandar Pasha down below."}
+  - {year: 1677, peg: cake, confidence: high, source: "Hasebe, Toyo Bunko 63 (Zubda; Tuhfa)",
+     event: "Rioters loot and burn the grain stores of the Rumayla square under the Citadel",
+     place: "Rumayla",
+     scene: "A hungry crowd in the Rumayla sets fire to a grain warehouse and carries off a huge burning CAKE of bread."}
+  - {year: 1695, peg: bell, confidence: high, source: "Hasebe, Toyo Bunko 63 (Zubda; Tuhfa)",
+     event: "In the famine years rioters loot and burn the Rumayla grain market again",
+     place: "Rumayla",
+     scene: "A famine crowd rings a cracked BELL from the Citadel gate, then storms the Rumayla granaries with torches."}
+  - {year: 1699, peg: pipe, confidence: high, source: "History Cooperative: tobacco debate (April)",
+     event: "North African zealots attack smokers in the streets of Cairo to stop tobacco",
+     scene: "A North African zealot snatches a long tobacco PIPE from a smoker's lips in a Cairo lane and snaps it on his knee."}
+  - {year: 1703, peg: sumo, confidence: high, source: "Hasebe, Toyo Bunko 63 (February)",
+     event: "Market traders and the Shaykh al-Azhar climb to the Citadel to protest the coin crisis",
+     place: "Citadel",
+     scene: "A SUMO wrestler in a merchant's robe carries the Shaykh al-Azhar up the Citadel ramp to shout about bad coins."}
+  - {year: 1709, peg: soap, confidence: high, source: "Hasebe, Toyo Bunko 63",
+     event: "Gunfire and fighting break out inside al-Azhar over the choice of its new rector",
+     place: "al-Azhar",
+     scene: "Rival students slip on SOAP in the al-Azhar courtyard as musket shots fly over the vote for a new rector."}
+  - {year: 1721, peg: ant, confidence: high, source: "Hasebe, Toyo Bunko 63 (17 March)",
+     event: "Beys shell the Citadel from the Juyushi mosque and force Rajab Pasha down to the Rumayla",
+     place: "Juyushi mosque, Muqattam",
+     scene: "From the Juyushi mosque a giant ANT rolls cannonballs onto the Citadel until Rajab Pasha comes down to the Rumayla."}
+  - {year: 1722, peg: nun, confidence: medium, source: "Hasebe, Toyo Bunko 63 (after Aug)",
+     event: "Crowd angry at the price of wheat stones Ismail Bey, who flees into Bab al-Azab",
+     place: "Bab al-Azab",
+     scene: "A NUN with a basket of stones leads the wheat-price mob, pelting Ismail Bey until he bolts through Bab al-Azab."}
+  - {year: 1724, peg: hanger, confidence: high, source: "Hasebe, Toyo Bunko 63 (2 November)",
+     event: "Great Cairo uprising: crowds loot the markets of al-Qahira, attack al-Azhar and march on the Rumayla",
+     scene: "Rioters strip the al-Qahira market stalls and carry the loot on a long iron HANGER toward the Rumayla."}
+  - {year: 1730, peg: mouse, confidence: medium, source: "WP: Al-Azhar Mosque (1730-31)",
+     event: "Aghas harass people near al-Azhar; the mosque shuts its gates and the governor bans the aghas",
+     place: "al-Azhar",
+     scene: "Al-Azhar slams its gates on a MOUSE-sized agha who chased fugitives through the quarter, and the governor bans him."}
+  - {year: 1733, peg: mummy, confidence: high, source: "Hasebe, Toyo Bunko 63 (May)",
+     event: "Silk weavers' protest over bad coin fills al-Azhar and forces a currency decree",
+     place: "al-Azhar",
+     scene: "Silk weavers wrap a MUMMY in their unsold silk and carry it into al-Azhar until the governor fixes the coin."}
+  - {year: 1736, peg: match, confidence: medium, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "After unrest the Sultan Hasan mosque is closed, for many years",
+     place: "Sultan Hasan mosque",
+     scene: "Guards blow out the last MATCH inside Sultan Hasan and lock its great door after the fighting."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "WP: Cairo Citadel; aa-ken DB: Cairo monument 555",
+     event: "Radwan Katkhuda al-Julfi builds Bab al-Azab, the great gate of the Citadel",
+     place: "Citadel",
+     scene: "A LAWYER reads the deed aloud as the twin towers of Bab al-Azab rise over the Rumayla for Radwan Katkhuda."}
+  - {year: 1777, peg: cake, confidence: high, source: "Hasebe, Toyo Bunko 63 (June; al-Jabarti)",
+     event: "Al-Azhar scholars stop lessons and curse Yusuf Bey from the minarets; nearby shops close",
+     place: "al-Azhar",
+     scene: "Shaykh al-Dardir cancels lessons and young students hurl a CAKE of curses from the al-Azhar minarets at Yusuf Bey."}
+  - {year: 1785, peg: waffle, confidence: high, source: "Hasebe, Toyo Bunko 63 (24 December)",
+     event: "Students lock the gates of al-Azhar to win back their stipends",
+     place: "al-Azhar",
+     scene: "Hungry students bar the al-Azhar gates with a giant WAFFLE iron until the janissary chief pays their bread money."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP: Cairo Citadel",
+     event: "Yakan Pasha builds Bab al-Jabal, the small western gate of the Citadel",
+     place: "Citadel",
+     scene: "Yakan Pasha cuts the new Bab al-Jabal in the Citadel wall with a stone WAFFLE pattern on its arch."}
+  - {year: 1790, peg: bees, confidence: high, source: "Hasebe, Toyo Bunko 63 (1 Oct); WP Azhar: 1791",
+     event: "People of al-Husayniyya lock al-Azhar and beat drums on its minarets until the city wali is removed",
+     place: "al-Azhar",
+     scene: "Husayniyya butchers release angry BEES from the al-Azhar minarets, drumming, until the wali Ahmad Agha loses his post."}
+
+  # science
+  - {year: 1577, peg: cake, confidence: low, source: "Howard Vyse vol. 2 appendix (search snippet)",
+     event: "Italian visitors clear the sand and enter the Great Pyramid at Giza",
+     place: "Giza",
+     scene: "Italian travellers dig through the Giza sand with a CAKE knife and crawl into the Great Pyramid."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "aa-ken DB: Cairo monument 603",
+     event: "Water mill of Shurbagi Mirza is built",
+     scene: "The water wheel of Shurbagi Mirza turns with a TATTOO of a fish on each paddle."}
+  - {year: 1659, peg: elbow, confidence: high, source: "aa-ken DB: Cairo monument 593",
+     event: "Ibrahim Agha Mustahfizan builds a water trough for animals",
+     scene: "A thirsty donkey pushes its ELBOW into the new stone trough of Ibrahim Agha and splashes the street."}
+  - {year: 1685, peg: waffle, confidence: high, source: "aa-ken DB: Cairo monument 456",
+     event: "Qadi Muhammad al-Mahruqi builds a water trough for animals",
+     scene: "Camels drink from Qadi al-Mahruqi's new trough, its stone cut in a WAFFLE grid."}
+  - {year: 1692, peg: piano, confidence: medium, source: "Encyclopedia.com: Maillet (consul 1692-1708)",
+     event: "Benoit de Maillet becomes French consul in Cairo and starts his study of the Giza pyramids",
+     scene: "Consul Maillet hauls a PIANO up the Great Pyramid ladder to sound the hollow passages inside."}
+  - {year: 1737, peg: mug, confidence: high, source: "irishegyptology.com: Richard Pococke",
+     event: "Richard Pococke spends three months in Cairo and measures the pyramids of Giza and Saqqara",
+     scene: "Pococke uses a tin MUG as a plumb weight to measure the Saqqara step pyramid."}
+  - {year: 1737, peg: mug, confidence: medium, source: "WP: Voyage d'Egypte et de Nubie (1737-38)",
+     event: "Frederic Norden draws the pyramids and the Sphinx of Giza",
+     place: "Giza",
+     scene: "Norden sketches the Sphinx at Giza while his ink sits in a MUG balanced on its paw."}
+  - {year: 1776, peg: cage, confidence: high, source: "qalawun.aa-ken.jp: facility history",
+     event: "Abd al-Rahman Katkhuda renovates the Qalawun hospital, the Maristan",
+     place: "Bayn al-Qasrayn",
+     scene: "Katkhuda opens each rusty CAGE of the old Qalawun Maristan and fits new beds for the sick."}
+
+  # religion
+  - {year: 1524, peg: hanger, confidence: high, source: "Archnet: Takiyya Ibrahim al-Kulshani (1519-24)",
+     event: "Takiyya of Ibrahim al-Gulshani, the first Sufi lodge of Ottoman Cairo, is finished",
+     place: "Bab Zuwayla",
+     scene: "Ibrahim al-Gulshani hangs his dervish cloak on a HANGER inside his new lodge beside Bab Zuwayla."}
+  - {year: 1534, peg: hammer, confidence: high, source: "aa-ken DB: Cairo monument 297",
+     event: "Mosque of Rihan is built",
+     scene: "Rihan's mason taps the last tile of his mosque into place with a silver HAMMER."}
+  - {year: 1534, peg: hammer, confidence: high, source: "aa-ken DB: Cairo monument 510",
+     event: "Mosque of Shaykh Su'ud is built",
+     scene: "Shaykh Su'ud's followers raise his mosque by beating a HAMMER on a brass bowl to call the workers."}
+  - {year: 1538, peg: movie, confidence: high, source: "aa-ken DB: Cairo monument 212",
+     event: "Shahin al-Khalwati builds his mosque and minaret on the Muqattam cliff",
+     place: "Muqattam",
+     scene: "Shahin al-Khalwati films a MOVIE of the sunset from his new minaret on the Muqattam cliff."}
+  - {year: 1548, peg: reef, confidence: high, source: "aa-ken DB: Cairo monument 472",
+     event: "Mosque of Dawud Pasha is built",
+     scene: "Governor Dawud Pasha builds his mosque from coral blocks cut from a Red Sea REEF."}
+  - {year: 1575, peg: eagle, confidence: high, source: "aa-ken DB: Cairo monument 160; suyuti.net",
+     event: "Mosque of Masih Pasha in the Qarafa, for Shaykh Nur al-Din al-Qarafi, is completed",
+     place: "Qarafa",
+     scene: "An EAGLE drops the last dome stone onto Masih Pasha's mosque among the Qarafa tombs."}
+  - {year: 1578, peg: cave, confidence: high, source: "aa-ken DB: Cairo monument 181",
+     event: "Mosque of Murad Pasha is built",
+     scene: "Murad Pasha's workers dig the mosque foundation and break into a CAVE full of Mamluk lamps."}
+  - {year: 1585, peg: waffle, confidence: high, source: "aa-ken DB: Cairo monument 41",
+     event: "Mausoleum of Shaykh Sinan is built",
+     scene: "Pilgrims to the new tomb of Shaykh Sinan leave a sweet WAFFLE on its window grille."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP: Ottoman architecture in Egypt",
+     event: "An Ottoman pasha gives the madrasa of Sunqur Sa'di to the Mevlevi whirling dervishes",
+     place: "Suyufiyya street",
+     scene: "A Mevlevi dervish glides into the old Sunqur Sa'di madrasa on one SKI and starts to whirl."}
+  - {year: 1625, peg: nail, confidence: high, source: "Archnet: Yusuf Agha al-Hinn (1625)",
+     event: "Mosque of Yusuf Agha al-Hin is built in Mamluk style with an Ottoman minaret",
+     scene: "Yusuf Agha al-Hin fixes a slim Ottoman pencil minaret to his Mamluk-style mosque with one giant NAIL."}
+  - {year: 1631, peg: moth, confidence: medium, source: "Search: plaque Jan 1631; Forward says later",
+     event: "Synagogue of Rabbi Haim Capusi in the Jewish quarter is dedicated",
+     place: "Harat al-Yahud",
+     scene: "In Harat al-Yahud a MOTH circles the lamp as the plaque of Rabbi Haim Capusi's synagogue is unveiled."}
+  - {year: 1650, peg: lasso, confidence: high, source: "aa-ken DB: Cairo monument 365",
+     event: "Radwan Bey builds his mosque beside his market south of Bab Zuwayla",
+     place: "Khayamiyya",
+     scene: "Radwan Bey throws a LASSO round a minaret and drags it up beside his market south of Bab Zuwayla."}
+  - {year: 1655, peg: lily, confidence: high, source: "aa-ken DB: Cairo monument 535",
+     event: "Minaret of the shrine of Sidi Uqba and Dhu'l-Nun is built in the Qarafa",
+     place: "Qarafa",
+     scene: "A LILY sprouts from the top of the new minaret over the Qarafa tomb of Sidi Uqba."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "The northern minaret of the Sultan Hasan mosque collapses",
+     place: "Sultan Hasan mosque",
+     scene: "A giant ELBOW nudges the northern minaret of Sultan Hasan and it crashes into the square."}
+  - {year: 1660, peg: cheese, confidence: medium, source: "WP: Seat of the Coptic Pope (1660-1800)",
+     event: "Coptic popes move their seat to the church of the Virgin in Harat al-Rum",
+     place: "Harat al-Rum",
+     scene: "The Coptic pope rolls a great round CHEESE, his seat's supplies, from Harat Zuwayla to the Virgin's church in Harat al-Rum."}
+  - {year: 1660, peg: cheese, confidence: high, source: "aa-ken DB: Cairo monument 524",
+     event: "Mosque of Abdin Bey, also called Sidi Ruwaysh, is built",
+     scene: "Abdin Bey cuts a wheel of CHEESE for the workers on the day his mosque of Sidi Ruwaysh opens."}
+  - {year: 1669, peg: ship, confidence: high, source: "aa-ken DB: Cairo monument 193",
+     event: "Muhammad Katkhuda Mustahfizan rebuilds the minaret of the Aqsunqur (Blue) Mosque",
+     place: "Bab al-Wazir street",
+     scene: "Muhammad Katkhuda raises a new minaret on the Blue Mosque like the mast of a SHIP."}
+  - {year: 1672, peg: coin, confidence: medium, source: "WP: Sultan Hasan (1671-72)",
+     event: "A smaller new minaret and a new dome replace the fallen parts of the Sultan Hasan mosque",
+     place: "Sultan Hasan mosque",
+     scene: "Builders press a gold COIN into the mortar of Sultan Hasan's new, smaller minaret and new dome."}
+  - {year: 1680, peg: vase, confidence: high, source: "aa-ken DB: Cairo monument 415",
+     event: "Mosque of Dhu'l-Fiqar Bey is built",
+     scene: "Dhu'l-Fiqar Bey sets a tall VASE of lilies in the mihrab of his new mosque."}
+  - {year: 1697, peg: pig, confidence: high, source: "WP: Cairo Citadel; aa-ken DB: Cairo monument 145",
+     event: "Ahmad Katkhuda builds the al-Azab mosque in the lower enclosure of the Citadel",
+     place: "Citadel",
+     scene: "Azab soldiers chase a stray PIG out of the Citadel's lower enclosure so Ahmad Katkhuda can lay his mosque."}
+  - {year: 1698, peg: beehive, confidence: high, source: "aa-ken DB: Cairo monument 343",
+     event: "Mosque of Mustafa Shurbagi Mirza is built at Bulaq",
+     place: "Bulaq",
+     scene: "Bulaq dockers carry a BEEHIVE of blue tiles into the new mosque of Mustafa Mirza by the river."}
+  - {year: 1701, peg: soda, confidence: high, source: "aa-ken DB: Cairo monument 377",
+     event: "Governor Qara Muhammad Ali Pasha builds a minaret",
+     scene: "Qara Muhammad Pasha's minaret shoots up from the ground like a shaken SODA bottle."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "aa-ken DB: Cairo monument 126",
+     event: "Mosque and minaret of Alti Barmaq are built",
+     scene: "Alti Barmaq, the six-fingered shaykh, has a TATTOO of six fingers carved over his new mosque door."}
+  - {year: 1732, peg: moon, confidence: high, source: "aa-ken DB: Cairo monument 610",
+     event: "Mosque of al-Kurdi is built",
+     scene: "A crescent MOON is set on the finial of the new al-Kurdi mosque."}
+  - {year: 1734, peg: hammer, confidence: high, source: "aa-ken DB: Cairo monument 264",
+     event: "Uthman Katkhuda builds his mosque in the Azbakiyya",
+     place: "Azbakiyya",
+     scene: "Uthman Katkhuda swings a HAMMER on the lakeshore of the Azbakiyya and his mosque rises from the mud."}
+  - {year: 1735, peg: mill, confidence: high, source: "aa-ken DB: Cairo monument 109",
+     event: "Ahmad Katkhuda al-Kharbutli rebuilds the Fatimid mosque of al-Fakahani with a sabil-kuttab",
+     place: "al-Mu'izz street",
+     scene: "Ahmad al-Kharbutli grinds the old Fatimid stones of al-Fakahani in a MILL and rebuilds the mosque with them."}
+  - {year: 1744, peg: warrior, confidence: disputed, source: "aa-ken DB: monument 40 (gives 1175 AH / 1744)",
+     event: "Abd al-Rahman Katkhuda rebuilds the mosque of Shaykh Mutahhar",
+     place: "al-Mu'izz street",
+     scene: "A WARRIOR guards the scaffold while Katkhuda rebuilds the little mosque of Shaykh Mutahhar."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "Abd al-Rahman Katkhuda starts to enlarge al-Azhar with a new prayer hall that doubles it",
+     place: "al-Azhar",
+     scene: "Katkhuda's surveyors stretch a ROPE south of the old prayer hall and double al-Azhar's floor."}
+  - {year: 1749, peg: rope, confidence: high, source: "aa-ken DB: Cairo monument 383",
+     event: "Radwan Bey al-Faqari rebuilds the mosque of Abu Ja'far al-Tahawi",
+     scene: "Radwan Bey ties a ROPE round the leaning wall of al-Tahawi's mosque and pulls it straight again."}
+  - {year: 1752, peg: lion, confidence: medium, source: "aa-ken DB: Cairo monument 428",
+     event: "The Ayyubid madrasa al-Kamiliyya is restored",
+     place: "al-Mu'izz street",
+     scene: "A stone LION is chiselled off the crumbling gate of al-Kamiliyya as masons restore the old madrasa."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "aa-ken DB: Cairo monument 387",
+     event: "Mosque of Radwan Bey al-Razzaz is built",
+     scene: "A LAWYER counts out rice-merchant Radwan al-Razzaz's gold for the masons of his new mosque."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "aa-ken DB: Cairo monument 450",
+     event: "Abd al-Rahman Katkhuda builds the Shawazliya mosque",
+     scene: "A LAWYER from the court bargains with Katkhuda over the land, then signs, and the Shawazliya mosque goes up."}
+  - {year: 1759, peg: elbow, confidence: high, source: "aa-ken DB: Cairo monument 414",
+     event: "The eunuch Dawud builds the minaret of the al-Khalwati mosque",
+     scene: "The eunuch Dawud leans his ELBOW on the balcony of his new Khalwati minaret and calls the prayer."}
+  - {year: 1759, peg: elbow, confidence: high, source: "aa-ken DB: Cairo monument 451",
+     event: "Mosque of al-Hifni is built",
+     scene: "Students of Shaykh al-Hifni push ELBOW to elbow into his new mosque on its first Friday."}
+  - {year: 1762, peg: chain, confidence: high, source: "aa-ken DB: Cairo monument 378",
+     event: "Abd al-Rahman Katkhuda rebuilds the mosque of Sayyida Aisha",
+     place: "Sayyida Aisha",
+     scene: "Katkhuda hangs a silver CHAIN of lamps in the rebuilt shrine of Sayyida Aisha below the Citadel."}
+  - {year: 1762, peg: chain, confidence: high, source: "aa-ken DB: Cairo monument 436",
+     event: "Abd al-Rahman Katkhuda builds the mosque of Shaykh Ramadan",
+     scene: "A CHAIN of porters passes bricks hand to hand for Katkhuda's new mosque of Shaykh Ramadan."}
+  - {year: 1763, peg: gem, confidence: high, source: "aa-ken DB: Cairo monument 259",
+     event: "Mosque of Yusuf Shurbagi is built",
+     scene: "Yusuf Shurbagi sets a green GEM in the mihrab of his new mosque."}
+  - {year: 1767, peg: jockey, confidence: high, source: "aa-ken DB: Cairo monument 552",
+     event: "Mosque of al-Khodayri is built",
+     scene: "A JOCKEY gallops the foundation stone of the al-Khodayri mosque to the site."}
+  - {year: 1774, peg: car, confidence: high, source: "aa-ken DB: Cairo monument 442",
+     event: "Mosque of the Rifa'iya Sufis is built",
+     scene: "Rifa'i dervishes push a heavy stone CAR loaded with columns to their new mosque."}
+  - {year: 1780, peg: vase, confidence: high, source: "aa-ken DB: Cairo monument 68",
+     event: "The tomb of the Fatimid saint Muhammad al-Anwar is rebuilt",
+     scene: "Pilgrims set a VASE of basil on the rebuilt tomb of the saint Muhammad al-Anwar."}
+  - {year: 1781, peg: foot, confidence: medium, source: "vitrosearch.ch: patriarchal palace, Harat al-Rum",
+     event: "The Coptic patriarchal palace beside the Virgin's church in Harat al-Rum is enlarged",
+     place: "Harat al-Rum",
+     scene: "A giant FOOT kicks out the wall of the patriarch's palace in Harat al-Rum, and new rooms fill the gap."}
+  - {year: 1784, peg: fairy, confidence: high, source: "aa-ken DB: Cairo monument 459",
+     event: "Merchant Muhammad al-Mahruqi builds the mosque of Ali ibn al-Arabi",
+     scene: "A FAIRY sprinkles merchant al-Mahruqi's gold dust over the new mosque of Ali ibn al-Arabi."}
+  - {year: 1784, peg: fairy, confidence: high, source: "aa-ken DB: Cairo monument 608",
+     event: "Mosque of the Sadat al-Wafa'iya Sufi family is built",
+     place: "Qarafa",
+     scene: "A FAIRY lights the lamps of the Wafa'iya family's new mosque at the foot of the Muqattam."}
+  - {year: 1786, peg: fish, confidence: medium, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Salim Agha orders the Sultan Hasan mosque opened again",
+     place: "Sultan Hasan mosque",
+     scene: "Salim Agha unlocks Sultan Hasan with a key shaped like a FISH, and prayer returns after fifty years."}
+  - {year: 1792, peg: piano, confidence: high, source: "aa-ken DB: Cairo monument 302",
+     event: "Mosque of Sulayman Agha al-Hanafi is built",
+     scene: "Sulayman Agha al-Hanafi's carpenters build the minbar of his new mosque from an old PIANO."}
+  - {year: 1797, peg: pig, confidence: medium, source: "aa-ken DB: monument 319 (1212 AH); WP: order 1796",
+     event: "Murad Bey rebuilds the mosque of Amr ibn al-As in Old Cairo",
+     place: "Old Cairo",
+     scene: "Murad Bey's men drive a PIG out of the ruined arcades of Amr's mosque and rebuild them."}
+
+  # arts
+  - {year: 1522, peg: nun, confidence: high, source: "aa-ken DB: Cairo monument 258",
+     event: "Sabil of Hasan al-Rumi is built",
+     scene: "A NUN, far from home, drinks the first cup of water from Hasan al-Rumi's new sabil."}
+  - {year: 1535, peg: mill, confidence: high, source: "aa-ken DB: monument 52; search (941-43 AH)",
+     event: "Sabil-kuttab of Khusraw Pasha, the oldest Ottoman sabil left in Cairo, is built",
+     place: "al-Mu'izz street",
+     scene: "Khusraw Pasha's water MILL lifts water into his sabil on al-Mu'izz street, the first Ottoman fountain of Cairo."}
+  - {year: 1604, peg: sewer, confidence: high, source: "aa-ken DB: Cairo monument 229",
+     event: "Black eunuch Yusuf Agha al-Habashi builds a sabil",
+     scene: "Yusuf Agha al-Habashi taps a SEWER of clean water under the street to fill his sabil."}
+  - {year: 1605, peg: seal, confidence: medium, source: "aa-ken DB: Cairo monument 14",
+     event: "Sabil-kuttab of Amir Muhammad is built",
+     scene: "A SEAL balances the water jar on its nose at the window of Amir Muhammad's new sabil-kuttab."}
+  - {year: 1606, peg: sushi, confidence: high, source: "aa-ken DB: Cairo monument 364",
+     event: "House of Abd al-Hamid Wa'du is built",
+     scene: "Abd al-Hamid Wa'du serves SUSHI-sized Nile fish in the courtyard of his new house."}
+  - {year: 1618, peg: dove, confidence: high, source: "aa-ken DB: Cairo monument 397",
+     event: "Sabil of al-Naqadi is built",
+     scene: "A DOVE drinks from the bronze grille of al-Naqadi's new sabil."}
+  - {year: 1625, peg: nail, confidence: high, source: "aa-ken DB: Cairo monument 155",
+     event: "Governor Mustafa Pasha builds a sabil",
+     scene: "Governor Mustafa Pasha hangs a brass cup on a NAIL at the grille of his new sabil."}
+  - {year: 1630, peg: mouse, confidence: high, source: "aa-ken DB: Cairo monument 16",
+     event: "Sabil-kuttab of Qitas Bey is built",
+     scene: "A MOUSE reads the Quran with the boys in the kuttab of Qitas Bey's new sabil."}
+  - {year: 1632, peg: moon, confidence: high, source: "aa-ken DB: Cairo monument 167",
+     event: "Sabil-kuttab of Sulayman Shawish is built",
+     scene: "Sulayman Shawish carves a crescent MOON over his new sabil-kuttab."}
+  - {year: 1634, peg: hammer, confidence: high, source: "aa-ken DB: Cairo monument 219",
+     event: "House of Yusuf Bey is built",
+     scene: "Yusuf Bey's carpenter fixes the cedar ceiling of his new house with a HAMMER and bronze nails."}
+  - {year: 1646, peg: roach, confidence: high, source: "aa-ken DB: Cairo monument 23",
+     event: "Sabil-kuttab of al-Sayyid Ali ibn Bayz is built",
+     scene: "The water-giver of al-Sayyid Ali's new sabil flicks a ROACH off the marble basin."}
+  - {year: 1650, peg: lasso, confidence: high, source: "aa-ken DB: Cairo monument 208",
+     event: "Radwan Bey builds his palace beside his market south of Bab Zuwayla",
+     place: "Khayamiyya",
+     scene: "Radwan Bey throws a LASSO over a whole street south of Bab Zuwayla and pulls it into his palace."}
+  - {year: 1652, peg: lion, confidence: high, source: "aa-ken DB: Cairo monument 240",
+     event: "Amir Umar Agha builds a sabil",
+     scene: "Water pours from a bronze LION's mouth in Umar Agha's new sabil."}
+  - {year: 1652, peg: lion, confidence: high, source: "aa-ken DB: Cairo monuments 595, 613, 619",
+     event: "Ibrahim Agha Mustahfizan builds his houses near the Blue Mosque",
+     place: "Bab al-Wazir street",
+     scene: "Ibrahim Agha keeps a tame LION in the courtyard of his new houses by the Blue Mosque."}
+  - {year: 1654, peg: lawyer, confidence: high, source: "aa-ken DB: Cairo monument 541",
+     event: "House of al-Mulla is built",
+     scene: "A LAWYER reads the deed of al-Mulla's new house aloud in its reception hall."}
+  - {year: 1657, peg: log, confidence: high, source: "aa-ken DB: Cairo monument 57",
+     event: "Sabil of Isma'il al-Maghlawi is built near the Husayn mosque",
+     place: "Midan al-Husayn",
+     scene: "Isma'il al-Maghlawi floats a cedar LOG down the Khalij for the roof of his sabil by the Husayn mosque."}
+  - {year: 1664, peg: cherry, confidence: disputed, source: "aa-ken DB: monument 445 (1074 AH/1664; Fukami 1637)",
+     event: "Bayt al-Sitt Wasila is built behind al-Azhar",
+     place: "al-Azhar",
+     scene: "Sitt Wasila's painters fill the walls of her new house with CHERRY trees and Mecca views."}
+  - {year: 1673, peg: comb, confidence: high, source: "aa-ken DB: Cairo monument 17",
+     event: "Sabil-kuttab of Oda Bashi is built with blue Iznik tiles",
+     place: "Gamaliyya",
+     scene: "A tiler uses a COMB to spread blue Iznik tiles across Oda Bashi's new sabil-kuttab."}
+  - {year: 1675, peg: eagle, confidence: high, source: "aa-ken DB: Cairo monument 328",
+     event: "House of Shahin Agha Ahmad is built",
+     scene: "An EAGLE perches on the roof terrace of Shahin Agha Ahmad's new house."}
+  - {year: 1677, peg: cake, confidence: high, source: "aa-ken DB: Cairo monument 194",
+     event: "Sabil-kuttab of Abd al-Baqi Khayr al-Din is built",
+     scene: "Abd al-Baqi Khayr al-Din hands a honey CAKE to each boy of his new kuttab."}
+  - {year: 1677, peg: cake, confidence: high, source: "aa-ken DB: Cairo monument 268",
+     event: "Ali Agha, chief black eunuch, builds a sabil-kuttab",
+     scene: "Chief eunuch Ali Agha cuts a palace CAKE at the opening of his sabil-kuttab."}
+  - {year: 1694, peg: bear, confidence: high, source: "aa-ken DB: Cairo monument 243",
+     event: "Sabil-kuttab of Hasan Agha Kokalian is built",
+     scene: "A dancing BEAR drinks from the window of Hasan Agha Kokalian's new sabil-kuttab."}
+  - {year: 1699, peg: pipe, confidence: high, source: "aa-ken DB: Cairo monument 461",
+     event: "Sabil-kuttab of Ahmad Efendi Salim is built",
+     scene: "Water flows through a lead PIPE into the marble basin of Ahmad Efendi Salim's new sabil."}
+  - {year: 1701, peg: soda, confidence: high, source: "aa-ken DB: Cairo monument 405",
+     event: "Hasan Katkhuda of the Azab corps builds a sabil",
+     scene: "Azab soldier Hasan Katkhuda offers a fizzing SODA, not water, from his new sabil."}
+  - {year: 1710, peg: dice, confidence: high, source: "aa-ken DB: Cairo monument 197",
+     event: "Sabil-kuttab of Ali Bey al-Dimyati is built",
+     scene: "Ali Bey al-Dimyati wins the corner plot with a throw of DICE and builds his sabil-kuttab on it."}
+  - {year: 1713, peg: tomb, confidence: high, source: "aa-ken DB: Cairo monument 471",
+     event: "House of the merchant Mustafa Ja'far is built",
+     scene: "Mustafa Ja'far builds his house on an old TOMB and finds a coffee jar in the foundation."}
+  - {year: 1713, peg: tomb, confidence: high, source: "aa-ken DB: Cairo monument 73",
+     event: "Sabil-kuttab of Abu'l-Iqbal Arifin Bey is built",
+     scene: "Arifin Bey's sabil-kuttab rises beside a Mamluk TOMB and shares its old cistern."}
+  - {year: 1713, peg: tomb, confidence: medium, source: "aa-ken DB: Cairo monument 77 (1468, 1713)",
+     event: "Bayt Zaynab Khatun, a Mamluk house behind al-Azhar, is rebuilt",
+     place: "al-Azhar",
+     scene: "Builders open a sealed TOMB-like room of the Mamluk house of Zaynab Khatun and rebuild it."}
+  - {year: 1714, peg: tower, confidence: high, source: "aa-ken DB: Cairo monument 508",
+     event: "Sabil of Ibrahim Bey al-Monastirli is built",
+     scene: "Ibrahim Bey al-Monastirli's sabil stands like a little TOWER at the street corner."}
+  - {year: 1716, peg: dish, confidence: high, source: "aa-ken DB: Cairo monument 329",
+     event: "Sabil-kuttab of Muhammad Efendi al-Muhasibgi is built",
+     scene: "Accountant al-Muhasibgi counts coins on a copper DISH as his sabil-kuttab opens."}
+  - {year: 1718, peg: dove, confidence: high, source: "aa-ken DB: Cairo monument 150",
+     event: "Sabil-kuttab of Muhammad Katkhuda Mustahfizan is built",
+     scene: "A white DOVE nests in the kuttab loggia of Muhammad Katkhuda's new sabil."}
+  - {year: 1718, peg: dove, confidence: high, source: "aa-ken DB: Cairo monument 309",
+     event: "Chief black eunuch Beshir Agha builds a sabil-kuttab",
+     scene: "Beshir Agha releases a DOVE from Istanbul over his new sabil-kuttab in Cairo."}
+  - {year: 1719, peg: tuba, confidence: high, source: "aa-ken DB: Cairo monument 452",
+     event: "House of Amir Abdallah is built",
+     scene: "A TUBA player opens the housewarming at Amir Abdallah's new house."}
+  - {year: 1725, peg: nail, confidence: high, source: "aa-ken DB: Cairo monument 63",
+     event: "A house is built on the endowment of al-Sha'rani's mosque",
+     place: "Bab al-Sha'riyya",
+     scene: "The trustees of al-Sha'rani's mosque hammer the last NAIL into a rent house for its endowment."}
+  - {year: 1731, peg: moth, confidence: high, source: "aa-ken DB: Cairo monument 446",
+     event: "Abd al-Rahman al-Harawi builds Bayt al-Harawi behind al-Azhar",
+     place: "al-Azhar",
+     scene: "A MOTH lands on the painted ceiling of al-Harawi's new house behind al-Azhar."}
+  - {year: 1741, peg: radio, confidence: high, source: "aa-ken DB: Cairo monument 313",
+     event: "Sabil-kuttab of Sitt Saliha is built",
+     scene: "Sitt Saliha's kuttab boys chant so loud it sounds like a RADIO over the new sabil."}
+  - {year: 1746, peg: roach, confidence: high, source: "aa-ken DB: Cairo monument 226",
+     event: "Sabil-kuttab of Umar Bey is built",
+     scene: "Umar Bey's water-giver sweeps a ROACH from the new marble basin of his sabil-kuttab."}
+  - {year: 1753, peg: llama, confidence: high, source: "aa-ken DB: Cairo monument 331",
+     event: "Sabil-kuttab of Ibrahim Katkhuda Mustahfizan is built",
+     scene: "A LLAMA from a sultan's menagerie drinks at Ibrahim Katkhuda's new sabil."}
+  - {year: 1754, peg: lawyer, confidence: high, source: "aa-ken DB: Cairo monument 448",
+     event: "Abd al-Rahman Katkhuda builds the sabil of al-Ghurayib",
+     scene: "A LAWYER signs the water endowment as Katkhuda opens his sabil of al-Ghurayib."}
+  - {year: 1756, peg: leech, confidence: high, source: "WP: Ottoman arch. in Egypt; aa-ken DB: 394",
+     event: "Sultan Mustafa III founds a sabil-kuttab near the shrine of Sayyida Nafisa",
+     place: "Sayyida Nafisa",
+     scene: "A LEECH clings to the water jar at Sultan Mustafa's new sabil near Sayyida Nafisa."}
+  - {year: 1761, peg: jet, confidence: high, source: "aa-ken DB: Cairo monument 376",
+     event: "Sabil of Amir Khalil is built",
+     scene: "A JET of water shoots from the new sabil of Amir Khalil."}
+  - {year: 1770, peg: goose, confidence: high, source: "aa-ken DB: Cairo monument 600",
+     event: "Sabil-kuttab of Shaykh al-Iryan is built",
+     scene: "A GOOSE waddles to drink at Shaykh al-Iryan's new sabil-kuttab."}
+  - {year: 1772, peg: coin, confidence: high, source: "aa-ken DB: Cairo monument 262",
+     event: "Sabil of Yusuf Bey is built",
+     scene: "Yusuf Bey drops a gold COIN in the cistern of his new sabil for luck."}
+  - {year: 1776, peg: cage, confidence: high, source: "aa-ken DB: Cairo monument 540",
+     event: "House of Ali Katkhuda is built",
+     scene: "Ali Katkhuda hangs a CAGE of songbirds in the loggia of his new house."}
+  - {year: 1778, peg: cave, confidence: medium, source: "aa-ken DB: Cairo monument 235 (15th c., 1778)",
+     event: "Ahmad Katkhuda al-Razzaz joins two Mamluk courtyards into Bayt al-Razzaz",
+     place: "Darb al-Ahmar",
+     scene: "Ahmad al-Razzaz cuts a CAVE-like passage through the wall between two Mamluk courtyards and makes one palace."}
+  - {year: 1786, peg: fish, confidence: high, source: "aa-ken DB: Cairo monument 527",
+     event: "House of Shehata Ahmad is built",
+     scene: "Shehata Ahmad lays a mosaic FISH in the fountain of his new courtyard."}
+  - {year: 1792, peg: piano, confidence: high, source: "aa-ken DB: Cairo monument 30",
+     event: "Merchant Mahmud Muharram builds a sabil",
+     scene: "Merchant Mahmud Muharram's new sabil is fronted with keys of marble like a PIANO."}
+  - {year: 1796, peg: peach, confidence: high, source: "egymonuments.gov.eg; aa-ken DB: 358",
+     event: "Nafisa al-Bayda builds her sabil-kuttab by Bab Zuwayla",
+     place: "Bab Zuwayla",
+     scene: "Nafisa al-Bayda offers a PEACH with each cup of water at her new sabil by Bab Zuwayla."}
+  - {year: 1797, peg: pig, confidence: high, source: "aa-ken DB: Cairo monument 381",
+     event: "Sabil of Amir Janbalat is built",
+     scene: "A PIG-shaped water skin is emptied into the cistern of Amir Janbalat's new sabil."}
+
+  # economy
+  - {year: 1517, peg: dog, confidence: medium, source: "coinvarieties.com: Egypt AH 923 akcheh",
+     event: "The Cairo mint strikes the first Ottoman coins of Egypt",
+     scene: "A DOG with Selim's tughra on its collar stamps the first Ottoman silver coin at the Cairo mint."}
+  - {year: 1532, peg: moon, confidence: medium, source: "Taylor & Francis chapter; mashed.com",
+     event: "Riots and a crackdown on the coffeehouses of Cairo",
+     scene: "Under a full MOON, a mob smashes the coffee pots of a Cairo coffeehouse."}
+  - {year: 1539, peg: map, confidence: medium, source: "Search: Davud Pasha closes coffeehouses",
+     event: "Governor Davud Pasha orders the coffeehouses of Cairo closed and the beans seized",
+     scene: "Davud Pasha's men mark every coffeehouse on a city MAP and seal each door."}
+  - {year: 1541, peg: radio, confidence: high, source: "aa-ken DB: Cairo monument 539",
+     event: "Wikala of Sulayman Pasha is built",
+     scene: "Sulayman Pasha's new wikala fills with merchants, and a RADIO on the gate shouts the price of Indian pepper."}
+  - {year: 1557, peg: log, confidence: medium, source: "WP: History of Cairo (c. 1557, Geniza fragments)",
+     event: "A Soncino printer sets up the first printing press of the Middle East in Cairo, in Hebrew (approximate)",
+     scene: "The Soncino printer presses the first Hebrew page in Cairo under a heavy LOG screw press."}
+  - {year: 1583, peg: foam, confidence: high, source: "aa-ken DB: Cairo monument 538",
+     event: "Wikala of Hasan Pasha al-Wazir is built",
+     scene: "Bales of soap FOAM in the rain on the roof of Hasan Pasha's new wikala."}
+  - {year: 1618, peg: dove, confidence: high, source: "aa-ken DB: Cairo monument 265",
+     event: "Black eunuch Mustafa Agha builds the Wikala al-Qizlar",
+     scene: "Mustafa Agha sends a DOVE to Istanbul with the rent book of his new Wikala al-Qizlar."}
+  - {year: 1632, peg: moon, confidence: high, source: "aa-ken DB: Cairo monument 71",
+     event: "Wikala of Khalil Efendi al-Muqati'gui is built",
+     scene: "Khalil Efendi's camels unload under the MOON in the courtyard of his new wikala."}
+  - {year: 1637, peg: mug, confidence: high, source: "aa-ken DB: Cairo monument 411",
+     event: "Gold merchant Gamal al-Din al-Dhahabi builds his wikala",
+     scene: "Gamal al-Din al-Dhahabi weighs gold dust in a MUG in his new wikala."}
+  - {year: 1637, peg: mug, confidence: high, source: "aa-ken DB: Cairo monument 70",
+     event: "Wikala of Sulayman Bey al-Kharbutli is built",
+     scene: "Sulayman Bey al-Kharbutli toasts his new wikala with a MUG of sherbet."}
+  - {year: 1637, peg: mug, confidence: high, source: "aa-ken DB: Cairo monument 272",
+     event: "Wikala of Mustafa Bey Tabtebay is built",
+     scene: "A porter drops a MUG from the gallery of Mustafa Bey Tabtebay's new wikala."}
+  - {year: 1639, peg: map, confidence: medium, source: "aa-ken DB: Cairo monument 238 (1639-52)",
+     event: "Ibrahim Agha Mustahfizan starts his rental apartment block, a rab'",
+     scene: "Ibrahim Agha unrolls a MAP of flats for rent and starts his tall rab'."}
+  - {year: 1650, peg: lasso, confidence: medium, source: "WP: Qasaba of Radwan Bey (c. 1650; also 1637)",
+     event: "Radwan Bey builds the covered market street south of Bab Zuwayla, today the Tentmakers' Market",
+     place: "Khayamiyya",
+     scene: "Radwan Bey lassoes a long roof over the street south of Bab Zuwayla, and his covered LASSO market is born."}
+  - {year: 1673, peg: comb, confidence: high, source: "aa-ken DB: Cairo monuments 19, 591",
+     event: "Brothers Muhammad and Dhu'l-Fiqar Katkhuda build the Wikala of Oda Bashi",
+     place: "Gamaliyya",
+     scene: "Two brothers split a great COMB in half, one for each, at the gate of their Oda Bashi wikala."}
+  - {year: 1683, peg: foam, confidence: high, source: "aa-ken DB: Cairo monument 553",
+     event: "Wikala of Mustafa Shurbagi Mustahfizan is built",
+     scene: "Coffee FOAM spills from the cups of merchants in Mustafa Shurbagi's new wikala."}
+  - {year: 1715, peg: doll, confidence: high, source: "aa-ken DB: Cairo monument 232",
+     event: "Wikala of Mustafa Musali Shurbagi is built",
+     scene: "A trader sets a painted DOLL from Venice on the counter of Mustafa Shurbagi's new wikala."}
+  - {year: 1722, peg: nun, confidence: high, source: "Hasebe, Toyo Bunko 63 (20 August)",
+     event: "Cairo crowds protest the clipped silver coin, and the governor abolishes it",
+     scene: "A NUN holds up a clipped silver coin in the crowd until the governor bans the clipped money."}
+  - {year: 1773, peg: comb, confidence: low, source: "WP: Khan el-Khalili (El-Fishawy Cafe)",
+     event: "El-Fishawy coffeehouse opens in the Khan al-Khalili",
+     place: "Khan al-Khalili",
+     scene: "Fishawy serves his first coffee in the Khan al-Khalili and combs his moustache with a brass COMB."}
+  - {year: 1780, peg: vase, confidence: high, source: "aa-ken DB: Cairo monument 592",
+     event: "Hammam al-Malatili, a public bathhouse, is built",
+     scene: "Bathers pour hot water from a copper VASE in the new Malatili bathhouse."}
+  - {year: 1796, peg: peach, confidence: high, source: "egymonuments.gov.eg; aa-ken DB: 395",
+     event: "Nafisa al-Bayda builds her wikala by Bab Zuwayla, known as the Wikala of Candles",
+     place: "Bab Zuwayla",
+     scene: "Candle makers in Nafisa al-Bayda's new wikala dip wicks in PEACH-scented wax by Bab Zuwayla."}
+
+  # society
+  - {year: 1588, peg: fife, confidence: medium, source: "WP: Al-Azhar Mosque (around 1588)",
+     event: "The mystic Nafisa al-Bakriyya is buried inside al-Azhar, the last burial there for two centuries",
+     place: "al-Azhar",
+     scene: "A FIFE plays softly as Nafisa al-Bakriyya is laid to rest inside al-Azhar."}
+  - {year: 1667, peg: jockey, confidence: high, source: "aa-ken DB: Cairo monument 295",
+     event: "Mausoleum of Mustafa Agha Galiq is built",
+     scene: "A JOCKEY leads Mustafa Agha Galiq's riderless horse to his new mausoleum."}
+  - {year: 1673, peg: comb, confidence: high, source: "aa-ken DB: Cairo monument 356",
+     event: "A gate is built to close the lane of Harat al-Mabyada",
+     place: "Harat al-Mabyada",
+     scene: "The night watchman of Harat al-Mabyada shuts the new gate, its bars like the teeth of a COMB."}
+  - {year: 1686, peg: fish, confidence: high, source: "aa-ken DB: Cairo monument 384",
+     event: "Mausoleum of Radwan Bey, ruler of Egypt in all but name, is built",
+     place: "Qarafa",
+     scene: "Radwan Bey's tomb in the Qarafa is guarded by a stone FISH, sign of his Nile fortune."}
+  - {year: 1705, peg: seal, confidence: high, source: "aa-ken DB: Cairo monument 393",
+     event: "Mausoleum of Amna Qadin is built",
+     scene: "Mourners press a wax SEAL on the door of Amna Qadin's new mausoleum."}
+  - {year: 1753, peg: llama, confidence: high, source: "aa-ken DB: Cairo monument 389",
+     event: "Mausoleum of Mustafa Bey Shahin is built",
+     scene: "A LLAMA carries the marble for Mustafa Bey Shahin's mausoleum up the cemetery path."}
+  - {year: 1753, peg: llama, confidence: high, source: "aa-ken DB: Cairo monument 390",
+     event: "Mausoleum of Uthman Bey Abu Sayf is built",
+     scene: "Uthman Bey Abu Sayf's sword is laid on a LLAMA-wool shroud in his new mausoleum."}
+  - {year: 1757, peg: log, confidence: high, source: "aa-ken DB: Cairo monument 388",
+     event: "Badawiya Shahin builds the mausoleum of her daughter Ruqayya Dudu",
+     scene: "Badawiya Shahin carves her daughter Ruqayya Dudu's name on a cedar LOG over the tomb."}
+  - {year: 1766, peg: judge, confidence: high, source: "aa-ken DB: Cairo monument 271",
+     event: "Mausoleum of Uthman Bey Qazdoghli is built",
+     scene: "A JUDGE reads the endowment deed at the door of Uthman Bey Qazdoghli's new mausoleum."}
+  - {year: 1773, peg: comb, confidence: high, source: "aa-ken DB: Cairo monument 385",
+     event: "Mausoleum of Ali Bey al-Kabir is built in the Qarafa",
+     place: "Qarafa",
+     scene: "Ali Bey al-Kabir is buried with an ivory COMB, and his mausoleum rises in the Qarafa."}
+  - {year: 1776, peg: cage, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "Abd al-Rahman Katkhuda is buried in his own mausoleum inside al-Azhar",
+     place: "al-Azhar",
+     scene: "Katkhuda's coffin passes through a gilded CAGE screen into his tomb inside al-Azhar."}
+
+world_refs:
+  - {year: 1517, event: "Battle of Ridaniya at the gates of Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1517, event: "Ottomans take and sack Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1517, event: "Tuman Bay hanged at Bab Zuwayla", cell: north_africa_politics_1500_1800}
+  - {year: 1517, event: "Selim I sends Cairo's master craftsmen to Istanbul", cell: north_africa_arts_1500_1800}
+  - {year: 1517, event: "Selim I takes the Prophet's mantle from Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1517, event: "Selim I dismisses the four chief judges of Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1521, event: "Funerary mosque of Khayrbak completed", cell: north_africa_arts_1500_1800}
+  - {year: 1522, event: "Ibn Iyas ends his Cairo chronicle", cell: north_africa_arts_1500_1800}
+  - {year: 1524, event: "Ahmed Pasha declares himself sultan", cell: north_africa_politics_1500_1800}
+  - {year: 1524, event: "Cairo Purim", cell: north_africa_religion_1500_1800}
+  - {year: 1528, event: "Mosque of Sulayman Pasha in the Citadel", cell: north_africa_arts_1500_1800}
+  - {year: 1540, event: "Al-Haddad builds the western Gayer-Anderson house", cell: north_africa_arts_1500_1800}
+  - {year: 1543, event: "Takiyya of Sulayman Pasha", cell: north_africa_arts_1500_1800}
+  - {year: 1559, event: "Takiyya Sulaymaniyya completed", cell: north_africa_arts_1500_1800}
+  - {year: 1567, event: "Funerary mosque of Mahmud Pasha", cell: north_africa_arts_1500_1800}
+  - {year: 1571, event: "Sinan Pasha Mosque at Bulaq", cell: north_africa_arts_1500_1800}
+  - {year: 1580, event: "Prospero Alpini comes to Cairo", cell: north_africa_science_1500_1800}
+  - {year: 1586, event: "Cavalry soldiers kill the Ottoman governor", cell: north_africa_politics_1500_1800}
+  - {year: 1604, event: "Soldiers murder governor Ibrahim Pasha in Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1609, event: "Mutineers divide the quarters of Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1610, event: "Kara Mehmed Pasha retakes Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1610, event: "Mosque of Malika Safiyya", cell: north_africa_arts_1500_1800}
+  - {year: 1615, event: "Pietro della Valle buys mummies at Saqqara", cell: north_africa_science_1500_1800}
+  - {year: 1617, event: "Al-Maqqari settles in Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1619, event: "Plague of Jafar Pasha", cell: north_africa_society_1500_1800}
+  - {year: 1626, event: "Plague of Bayram Pasha", cell: north_africa_society_1500_1800}
+  - {year: 1628, event: "Al-Qusuni, physician at the Cairo hospital, writes his drug dictionary", cell: north_africa_science_1500_1800}
+  - {year: 1629, event: "Al-Burdayni Mosque completed", cell: north_africa_arts_1500_1800}
+  - {year: 1629, event: "Al-Maqqari writes Nafh al-tib in Cairo", cell: north_africa_arts_1500_1800}
+  - {year: 1630, event: "Capuchin mission in Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1632, event: "Al-Gazzar builds the larger house, later Bayt al-Kritliyya", cell: north_africa_arts_1500_1800}
+  - {year: 1633, event: "Agathange of Vendome reaches Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1634, event: "Work starts on the Zahabi House", cell: north_africa_arts_1500_1800}
+  - {year: 1639, event: "John Greaves measures the Great Pyramid", cell: north_africa_science_1500_1800}
+  - {year: 1643, event: "Plague of Maqsud Pasha", cell: north_africa_society_1500_1800}
+  - {year: 1648, event: "Al-Tablawi builds the house later called Bayt al-Suhaymi", cell: north_africa_arts_1500_1800}
+  - {year: 1652, event: "Aqsunqur (Blue) Mosque renovated", cell: north_africa_arts_1500_1800}
+  - {year: 1660, event: "Sabbatai Zevi settles in Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1663, event: "Sabbatai Zevi marries Sarah in Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1696, event: "Plague of the great Sharaqi", cell: north_africa_society_1500_1800}
+  - {year: 1700, event: "Ridwan al-Falaki's star spheres made in Cairo", cell: north_africa_science_1500_1800}
+  - {year: 1707, event: "Eighty days of faction fighting in Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1711, event: "Faqariya and Qasimiya civil war begins", cell: north_africa_politics_1500_1800}
+  - {year: 1711, event: "Turkish preacher against saints' tombs nearly starts a riot", cell: north_africa_religion_1500_1800}
+  - {year: 1724, event: "Assassins kill Shaykh al-Balad Ismail Bey", cell: north_africa_politics_1500_1800}
+  - {year: 1729, event: "Zawiya of Abd al-Rahman Katkhuda", cell: north_africa_arts_1500_1800}
+  - {year: 1730, event: "Assassins kill Dhu-l-Fiqar Bey", cell: north_africa_politics_1500_1800}
+  - {year: 1735, event: "Al-Azhar riwaq for blind students", cell: north_africa_arts_1500_1800}
+  - {year: 1742, event: "Ibrahim al-Nasikh's Cairo icon workshop begins", cell: north_africa_arts_1500_1800}
+  - {year: 1744, event: "Sabil-kuttab of Abd al-Rahman Katkhuda on al-Mu'izz street", cell: north_africa_arts_1500_1800}
+  - {year: 1750, event: "Takiyya Mahmudiyya", cell: north_africa_arts_1500_1800}
+  - {year: 1753, event: "Bab al-Muzayyinin of al-Azhar", cell: north_africa_arts_1500_1800}
+  - {year: 1754, event: "Earthquake hits Cairo", cell: north_africa_society_1500_1800}
+  - {year: 1754, event: "Murtada al-Zabidi settles in Cairo", cell: north_africa_religion_1500_1800}
+  - {year: 1755, event: "Assassins kill Ibrahim Bey", cell: north_africa_politics_1500_1800}
+  - {year: 1760, event: "Sabil-kuttab of Mustafa III", cell: north_africa_arts_1500_1800}
+  - {year: 1761, event: "Sabil-kuttab of Ruqayya Dudu", cell: north_africa_arts_1500_1800}
+  - {year: 1765, event: "Davison finds the lowest relieving chamber of the Great Pyramid", cell: north_africa_science_1500_1800}
+  - {year: 1767, event: "Ali Bey returns to Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1769, event: "Ali Bey strikes coins in his own name", cell: north_africa_economy_1500_1800}
+  - {year: 1774, event: "Mosque of Muhammad Bey Abu al-Dhahab", cell: north_africa_arts_1500_1800}
+  - {year: 1774, event: "Al-Zabidi finishes Taj al-Arus in Cairo", cell: north_africa_arts_1500_1800}
+  - {year: 1786, event: "Hasan Pasha enters Cairo", cell: north_africa_politics_1500_1800}
+  - {year: 1786, event: "Al-Dardir leads the Husayniyya protest", cell: north_africa_society_1500_1800}
+  - {year: 1787, event: "Gunpowder explosion in the market district", cell: north_africa_society_1500_1800}
+  - {year: 1788, event: "Musafirkhana palace finished", cell: north_africa_arts_1500_1800}
+  - {year: 1790, event: "Heavy rain floods parts of Cairo", cell: north_africa_society_1500_1800}
+  - {year: 1791, event: "Plague kills Ismail Bey", cell: north_africa_politics_1500_1800}
+  - {year: 1794, event: "Bayt al-Sinnari", cell: north_africa_arts_1500_1800}
+  - {year: 1794, event: "Rainstorm lashes Cairo", cell: north_africa_society_1500_1800}
+  - {year: 1795, event: "Al-Azhar scholars lead a tax protest", cell: north_africa_society_1500_1800}
+  - {year: 1796, event: "Al-Suhaymi buys and enlarges Bayt al-Suhaymi", cell: north_africa_arts_1500_1800}
+
+out_refs:
+  - {year: 1517, event: "Khayr Bey becomes the first Ottoman governor of Egypt", reason: "provincial government"}
+  - {year: 1522, event: "Governor Khayr Bey dies", reason: "governor's death"}
+  - {year: 1587, event: "Gabriel VIII becomes Coptic pope in Saint Mercurius, Old Cairo", reason: "patriarchal election"}
+  - {year: 1631, event: "Ridwan Bey begins to hold real power in Egypt", reason: "provincial government"}
+  - {year: 1672, event: "Evliya Celebi arrives in Cairo and describes its guilds", reason: "traveller's visit (unsure)"}
+  - {year: 1679, event: "First named Shaykh al-Azhar", reason: "al-Azhar office (Holy See rule)"}
+  - {year: 1743, event: "Ibrahim and Ridwan Bey seize joint power", reason: "beys' factional politics"}
+  - {year: 1760, event: "Ali Bey becomes Shaykh al-Balad", reason: "beys' factional politics"}
+  - {year: 1777, event: "Ismail Bey drives the Abu al-Dhahab faction out of Cairo", reason: "beys' factional politics (unsure)"}
+  - {year: 1778, event: "Ibrahim and Murad Bey return and force out Ismail Bey", reason: "beys' factional politics (unsure)"}
+  - {year: 1795, event: "Coptic chief scribe Ibrahim al-Jawhari dies", reason: "Coptic notable's death"}

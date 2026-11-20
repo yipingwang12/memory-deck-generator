@@ -394,3 +394,49 @@ under west_asia, so Step 0 greps both `eastern_europe_*` and `west_asia_*` cells
 | `1980_present` | the megacity | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Cairo (2026-11-19)
+
+Area: Greater Cairo (Cairo and Giza governorates) with Memphis, Saqqara, Dahshur and Abusir (user's
+choice): Heliopolis (Iunu), Giza, Old Cairo (Babylon fortress, Fustat), al-Qata'i and al-Askar, Fatimid
+al-Qahira, the Citadel, Bulaq, Helwan, Maadi, the Maadi and Omari prehistoric sites, the new cities (6th of
+October, New Cairo). Region: north_africa.
+
+- Ancient chronology: use one system for the whole city, the Oxford History of Ancient Egypt (Shaw 2000),
+  and write other dates in the source note. A king's date that rests on reign lengths is `approximate`.
+  Radiocarbon follows cities.md "Archaeological dates".
+- The OUT rule covers the kings' court while Memphis is the capital (Early Dynastic and Old Kingdom,
+  about 3000–2181 BCE, and later royal residence periods): accessions, jubilees, royal marriages and
+  funerals, decrees for the whole of Egypt, campaigns abroad. Pyramids, temples, tombs, the Apis burials
+  at the Serapeum and works for Memphis or Heliopolis are IN. Ptolemaic and Roman Egypt is ruled from
+  Alexandria: Memphis and Babylon events are IN; acts of the Alexandrian court are OUT unless the city is
+  the subject.
+- From 641 the city is the seat of Egypt's government: the Umayyad and Abbasid governors (provincial
+  government OUT), the Tulunids, the Ikhshidids, the Fatimid caliphs, the Ayyubids, the Mamluk sultans
+  and the Abbasid shadow caliphs (1261–1517), the Ottoman pashas, the khedives, the British agency, the
+  kings and the republic. Leave out their accessions, court events, laws for all of Egypt, treaties,
+  national elections and national court cases. A ruler's mosque, wall, gate, citadel, canal, hospital,
+  market, city law or fire and plague relief is IN.
+- Al-Azhar and the Coptic Patriarchate (in the city from the 11th century) are treated like the Holy
+  See: fatwas, councils and patriarchal elections are OUT unless the city is the subject. Building a
+  mosque, church or monastery is IN; a ceremony in it is OUT.
+- Main stage (IN as cards): the Arab siege of Babylon (640–641), the burning of Fustat (1168), plagues
+  and famines in the city, the Cairo revolts of 1798 and 1800, the massacre of the Mamluks at the
+  Citadel (1811), the 1882 occupation, the 1919 revolution in the streets, the Cairo fire (1952), the
+  1977 bread riots, the 1986 conscript riot, attacks in the city, the 2011 Tahrir protests, the 2013
+  Rabaa and Nahda sit-ins and their clearing.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre3100bce` | Palaeolithic, Neolithic, Omari, Maadi and Heliopolis cultures | 25 | ~50 |
+| `3100bce_2181bce` | Memphis founded, Early Dynastic, Old Kingdom pyramids | 45 | ~150 |
+| `2180bce_332bce` | First Intermediate Period to the Late Period | 45 | ~150 |
+| `331bce_640` | Ptolemaic, Roman and Byzantine Memphis and Babylon | 45 | ~120 |
+| `641_968` | Fustat, al-Askar, al-Qata'i | 45 | ~150 |
+| `969_1249` | Fatimid al-Qahira, Ayyubid Cairo | 45 | ~200 |
+| `1250_1516` | the Mamluk city | 45 | ~250 |
+| `1517_1797` | Ottoman Cairo | 45 | ~180 |
+| `1798_1922` | the French, Muhammad Ali, Ismail, the British | 45 | ~250 |
+| `1923_present` | the kingdom, the republic, the megacity | 45 | ~250 |
+
+Expected cards are a guide, not a target.

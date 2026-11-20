@@ -1,0 +1,837 @@
+# City: Cairo x 1250 to 1516 (the Mamluk city: Bahri and Burji sultans, the Citadel, al-Nasir Muhammad's
+# growth, the Black Death, the Burji builders, to the eve of the Ottoman conquest). DRAFT 2026-11-19.
+# Area: Greater Cairo (Cairo and Giza governorates): al-Qahira, the Citadel, Fustat and Old Cairo, Bulaq,
+# Rawda, the Khalij and its west bank, the Northern and Southern Cemeteries, Husayniyya, Azbakiyya, Matariyya.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Sultans' accessions, court
+# murders, national laws and national judiciary -> out_refs; sultans' and amirs' buildings, water works,
+# city offices and fighting in the streets are cards. World-grid events -> world_refs.
+# Dates: memory pass + web check (31 of 45 searches; no unauthorised book copies).
+# Main sources: Wikipedia (Cairo Citadel, Mamluk architecture, Al-Qarafa, Al-Azhar Mosque, Khalij and about
+# 40 monument articles), Lane-Poole, The Story of Cairo (1902, public domain, archive.org; its list of
+# rulers and monuments gives Hijri years), MIT 4.615 Architecture of Cairo handouts, Medievalists.net.
+# Hijri year over two Common Era years -> the CE year that holds most of it, confidence medium.
+# A building -> its completion unless the text says "starts"; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1260, peg: cheese, confidence: high, source: "WP: Bab Zuwayla",
+     event: "Qutuz hangs the envoys of Hulagu at Bab Zuwayla and refuses to surrender",
+     place: "Bab Zuwayla",
+     scene: "Qutuz ties the Mongol envoys to a giant CHEESE wheel and hoists it up Bab Zuwayla, where their heads hang as his answer to Hulagu."}
+  - {year: 1260, peg: cheese, confidence: low, source: "WP: Baybars (no year; early in his reign)",
+     event: "Shiite rising of al-Kurani: a night raid on the arms stores and stables of Cairo; leaders crucified at Bab Zuwayla",
+     place: "Bab Zuwayla",
+     scene: "Al-Kurani's rebels smash a CHEESE store at night to reach the Cairo arsenal; at dawn Baybars nails them to Bab Zuwayla."}
+  - {year: 1262, peg: chain, confidence: high, source: "WP: Palace of Bashtak",
+     event: "Baybars gives the old Fatimid palaces to the treasury, which opens the centre of Cairo to sale and new building",
+     place: "Bayn al-Qasrayn",
+     scene: "Baybars hammers a CHAIN round the ruined Fatimid palaces, then unlocks it so treasury clerks can sell the plots on Bayn al-Qasrayn."}
+  - {year: 1294, peg: bear, confidence: high, source: "Lane-Poole, Story of Cairo (text)",
+     event: "The Ashrafi mamluks besiege the Citadel; Kitbugha's troops crush them and nail rebels to Bab Zuwayla",
+     place: "Cairo Citadel, Bab Zuwayla",
+     scene: "A giant BEAR charges out of the Citadel at the besieging Ashrafi mamluks and pins the rebels to Bab Zuwayla."}
+  - {year: 1310, peg: dice, confidence: medium, source: "WP: Cairo Citadel (painted inscriptions dated)",
+     event: "Al-Nasir Muhammad has the vault of Bab al-Mudarraj, main gate of the Citadel, painted with his inscriptions",
+     place: "Cairo Citadel, Bab al-Mudarraj",
+     scene: "Painters roll DICE to pick colours, then cover the vault of Bab al-Mudarraj with al-Nasir's painted titles."}
+  - {year: 1320, peg: nose, confidence: high, source: "WP: Cairo Citadel",
+     event: "Al-Nasir Muhammad rebuilds Bab al-Qulla, the gate between the two enclosures of the Citadel",
+     place: "Cairo Citadel, Bab al-Qulla",
+     scene: "A giant stone NOSE becomes the new Bab al-Qulla; al-Nasir's guards march through its nostrils between the two Citadel enclosures."}
+  - {year: 1330, peg: mouse, confidence: medium, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Amir Muhammad ibn Baylik al-Muhsini becomes governor (wali) of Cairo",
+     place: "Cairo",
+     scene: "A MOUSE carries the governor's keys of Cairo up the Citadel steps and drops them in the hands of Ibn Baylik al-Muhsini."}
+  - {year: 1367, peg: jockey, confidence: high, source: "WP: Battle of Cairo (1367)",
+     event: "Battle of Cairo: Sultan Sha'ban crushes the rebellion of Amir Asandamur and his mamluks",
+     place: "Cairo, below the Citadel",
+     scene: "Asandamur's rebels charge the Citadel, but Sha'ban's JOCKEY gallops down the ramp and rides the rebel mamluks into the dust."}
+  - {year: 1391, peg: boot, confidence: high, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Rebel amirs fire from the roof of Sultan Hasan's mosque at the Citadel; Barquq has its steps destroyed and its door blocked",
+     place: "Mosque of Sultan Hasan, Rumayla square",
+     scene: "Barquq's sappers kick a giant BOOT through the stair of Sultan Hasan's mosque, so the rebels on its roof stop firing at the Citadel."}
+  - {year: 1399, peg: pipe, confidence: high, source: "WP: Al-Maqrizi",
+     event: "Al-Maqrizi becomes market inspector (muhtasib) of Cairo",
+     place: "Bayn al-Qasrayn markets",
+     scene: "Al-Maqrizi walks the Cairo markets with a PIPE and blows smoke on every false weight until the trader confesses."}
+  - {year: 1415, peg: doll, confidence: high, source: "WP: Bab Zuwayla (prison replaced 1415-22)",
+     event: "Al-Mu'ayyad pulls down the prison by Bab Zuwayla where he was once held, to build his mosque there",
+     place: "Bab Zuwayla, Khizanat Shama'il prison",
+     scene: "Al-Mu'ayyad swings a giant DOLL like a ram and smashes the prison by Bab Zuwayla where he once lay in chains."}
+  - {year: 1450, peg: lasso, confidence: medium, source: "WP: Sayf al-Din Inal (2 July)",
+     event: "Rebel young mamluks (julban) surround the sultan's top commanders on the way to the Citadel",
+     place: "road to the Citadel",
+     scene: "The julban throw a LASSO round Inal and the other commanders on the road to the Citadel and hold them in the street."}
+  - {year: 1473, peg: comb, confidence: high, source: "WP: Qaitbay",
+     event: "The rebel Shah Suwar and his brothers are executed in Cairo; their remains hang from Bab Zuwayla",
+     place: "Bab Zuwayla",
+     scene: "Shah Suwar is dragged into Cairo tied to a COMB of spikes; after the execution his remains hang from Bab Zuwayla."}
+  - {year: 1500, peg: sauce, confidence: high, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Sultan Janbalat orders the mosque of Sultan Hasan pulled down, but after three days his men give up",
+     place: "Mosque of Sultan Hasan",
+     scene: "Janbalat's men pour SAUCE of acid on the walls of Sultan Hasan's mosque for three days; the stone stays and they give up."}
+  - {year: 1501, peg: soda, confidence: medium, source: "History of the Crusades III (Wisconsin): Citadel falls Jan",
+     event: "Tumanbay's mamluks besiege the Citadel for seven days and take it from Sultan Janbalat",
+     place: "Cairo Citadel",
+     scene: "Tumanbay's troops ram a giant SODA bottle into the Citadel gate for seven days until it bursts open and Janbalat is seized."}
+  # science
+  - {year: 1319, peg: tuba, confidence: medium, source: "WP: Khalij (Cairo) (circa)",
+     event: "The Amir Husayn Bridge is built over the Khalij canal (approximate)",
+     place: "Khalij canal",
+     scene: "Amir Husayn lays a giant TUBA across the Khalij canal and people walk over its brass tube to the new west bank quarter."}
+  - {year: 1326, peg: nacho, confidence: high, source: "WP: Sabil (fountain); Archnet (AH 726) via search",
+     event: "Al-Nasir Muhammad adds a public water fountain (sabil) to his father's complex: the oldest surviving sabil in Cairo",
+     place: "Qalawun complex, Bayn al-Qasrayn",
+     scene: "A NACHO-shaped stone bowl fills with water at the corner of Qalawun's complex, and thirsty porters drink from Cairo's first surviving sabil."}
+  - {year: 1331, peg: moth, confidence: high, source: "WP: Khalij (Cairo)",
+     event: "Al-Nasir Muhammad restores Baybars' Bridge of the Lions over the Khalij",
+     place: "Qanatir al-Siba, Khalij canal",
+     scene: "A huge MOTH flutters over the Khalij and rebuilds the stone lions of Baybars' bridge for al-Nasir Muhammad."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "Search: Archnet; egymonuments.gov.eg (Sabil of Shaykhu)",
+     event: "Amir Shaykhu builds the first free-standing public fountain (sabil) of Cairo",
+     place: "Saliba street",
+     scene: "A LAWYER pleads at the window of Amir Shaykhu's new free-standing sabil, and the clerk hands him a cup of water."}
+  - {year: 1383, peg: foam, confidence: medium, source: "Lane-Poole, Story of Cairo (after van Berchem; AH 785)",
+     event: "A sundial is set up in the mosque of Qawsun",
+     place: "Mosque of Qawsun",
+     scene: "A timekeeper wipes sea FOAM off the new sundial in Qawsun's mosque, and its shadow at once marks the prayer hour."}
+  - {year: 1420, peg: nose, confidence: high, source: "WP: Maristan of al-Mu'ayyad (July 1418 to Aug 1420)",
+     event: "Al-Mu'ayyad's hospital near the Citadel is completed, the second public hospital of Cairo",
+     place: "Darb al-Ahmar, near Bab al-Wazir",
+     scene: "A doctor holds a giant NOSE under the dome of al-Mu'ayyad's new hospital by Bab al-Wazir: Cairo's second public infirmary is complete."}
+  - {year: 1466, peg: judge, confidence: medium, source: "Lane-Poole, Story of Cairo (after van Berchem; AH 871)",
+     event: "A sundial is set up in Inal's tomb-mosque",
+     place: "Northern Cemetery",
+     scene: "A JUDGE points his gavel's shadow across the new sundial in Inal's tomb-mosque to call the noon prayer."}
+  - {year: 1480, peg: vase, confidence: high, source: "WP: Cairo Citadel Aqueduct",
+     event: "Qaytbay repairs the aqueduct that carries Nile water up to the Citadel",
+     place: "Citadel aqueduct, Fumm al-Khalig",
+     scene: "Qaytbay's masons fill each broken arch of the Citadel aqueduct with a giant VASE so the Nile water flows again."}
+  # religion
+  - {year: 1252, peg: lion, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 650)",
+     event: "The Qutbiyya madrasa is founded",
+     place: "al-Qahira",
+     scene: "A LION pads into the empty hall of the new Qutbiyya madrasa and lies down as its first law teacher sits."}
+  - {year: 1256, peg: leech, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 654)",
+     event: "The Sahibiyya madrasa is built",
+     place: "al-Qahira",
+     scene: "A LEECH sucks the old plaster off a Fatimid house, and the vizier's builders raise the Sahibiyya madrasa on the clean wall."}
+  - {year: 1263, peg: gem, confidence: high, source: "WP: Mosque of Baybars (madrasa four years before 1267)",
+     event: "Baybars builds his madrasa, the Zahiriyya, on Bayn al-Qasrayn",
+     place: "Bayn al-Qasrayn",
+     scene: "Baybars sets a red GEM into the portal of his new Zahiriyya madrasa on Bayn al-Qasrayn and opens it to the law students."}
+  - {year: 1264, peg: cherry, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 662)",
+     event: "Baybars restores the shrine of al-Husayn",
+     place: "Mashhad al-Husayn, near Khan al-Khalili",
+     scene: "Baybars sets a red CHERRY lamp on the restored tomb of al-Husayn, and the pilgrims crowd back into the shrine."}
+  - {year: 1265, peg: jelly, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 663)",
+     event: "Amir Aybak al-Afram builds his mosque",
+     place: "Fustat, Basatin side",
+     scene: "Amir al-Afram pours a bowl of JELLY into a mould, and it sets into the walls of his new mosque near Fustat."}
+  - {year: 1267, peg: jockey, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 665)",
+     event: "The Muhadhdhibiyya madrasa is built",
+     place: "al-Qahira",
+     scene: "A JOCKEY rides his horse through the door of the new Muhadhdhibiyya madrasa and reins up in front of the law teacher."}
+  - {year: 1273, peg: comb, confidence: medium, source: "WP: Mosque of Baybars",
+     event: "Baybars builds a second, larger mosque in the south of Cairo; nothing of it remains",
+     place: "southern Cairo",
+     scene: "Baybars combs the southern fields with a giant COMB, and a big Friday mosque rises in the furrows; later it vanishes without a trace."}
+  - {year: 1277, peg: cake, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 676)",
+     event: "The Fariqaniyya madrasa is built",
+     place: "al-Qahira",
+     scene: "A giant CAKE is cut in the courtyard of the new Fariqaniyya madrasa, and the first students eat at its opening."}
+  - {year: 1289, peg: fob, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 688)",
+     event: "Amir Aydakin al-Bunduqdar builds his Sufi convent, the Bunduqdariyya",
+     place: "Saliba area",
+     scene: "Aydakin the crossbowman shoots a key-shaped FOB onto a plot near the Saliba road, and his Sufi convent rises there."}
+  - {year: 1293, peg: palm, confidence: medium, source: "Medievalists.net (after al-Maqrizi)",
+     event: "Riots against Christians break out after a rich Christian drags a Muslim debtor through the streets",
+     place: "Cairo streets",
+     scene: "A rich Christian drags his debtor through Cairo on a rope tied to a PALM trunk, and the crowd riots against the Christians."}
+  - {year: 1299, peg: pipe, confidence: high, source: "WP: Al-Qarafa (zawiya dated 1298-99)",
+     event: "Zawiya and tomb of Shaykh Zayn al-Din Yusuf: its pilgrims start the Qadiriya quarter in the southern cemetery",
+     place: "al-Qadiriya street, Southern Cemetery",
+     scene: "Pilgrims blow smoke from a long PIPE at Zayn al-Din Yusuf's tomb, and their houses rise round it to make the Qadiriya quarter."}
+  - {year: 1299, peg: pipe, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 698)",
+     event: "Amir Mangutimur builds his madrasa",
+     place: "al-Qahira",
+     scene: "Amir Mangutimur blows into a long PIPE, and the walls of his new madrasa rise like smoke rings."}
+  - {year: 1300, peg: sauce, confidence: medium, source: "WP: Al-Salih Tala'i Mosque (minbar dated 1299-1300)",
+     event: "Amir Baktimur gives a carved minbar to the Mosque of al-Salih Tala'i, now one of the oldest in Cairo",
+     place: "Mosque of al-Salih Tala'i, Bab Zuwayla",
+     scene: "Amir Baktimur pours a bowl of SAUCE over a new wooden minbar to darken it and gives it to the Mosque of al-Salih Tala'i."}
+  - {year: 1301, peg: soda, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 700)",
+     event: "Amir Qarasunqur builds his madrasa",
+     place: "Gamaliya, near Bab al-Nasr",
+     scene: "A SODA bottle bursts on the empty plot near Bab al-Nasr, and Amir Qarasunqur's madrasa froths up out of the foam."}
+  - {year: 1303, peg: sumo, confidence: high, source: "WP: Mosque of Amr ibn al-As",
+     event: "Amir Salar restores the Mosque of Amr in Fustat after the earthquake",
+     place: "Mosque of Amr ibn al-As, Fustat",
+     scene: "A SUMO wrestler lifts the fallen columns of the Mosque of Amr back into place for Amir Salar after the earthquake."}
+  - {year: 1304, peg: sewer, confidence: high, source: "Lane-Poole, Story of Cairo (text); WP: Al-Hakim Mosque",
+     event: "Baybars al-Jashankir restores the mosque of al-Hakim and its minaret tops after the earthquake",
+     place: "Mosque of al-Hakim, Bab al-Futuh",
+     scene: "Baybars al-Jashankir climbs down a SEWER shaft into the cracked foundations of al-Hakim's mosque and props the minarets up again."}
+  - {year: 1308, peg: sofa, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 707)",
+     event: "Amir Taybars builds his mosque",
+     place: "Cairo",
+     scene: "Amir Taybars hangs a SOFA from the roof beams of his new mosque so the old imam can rest between prayers."}
+  - {year: 1309, peg: soap, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "Amir Taybars adds his madrasa and tomb, the Taybarsiyya, to al-Azhar",
+     place: "al-Azhar Mosque",
+     scene: "Amir Taybars scrubs a corner of al-Azhar with SOAP and builds his Taybarsiyya madrasa and tomb on the clean ground."}
+  - {year: 1314, peg: tower, confidence: medium, source: "Medievalists.net (after al-Maqrizi)",
+     event: "A crowd attacks a church whose Copts borrowed candles from a mosque",
+     place: "Cairo",
+     scene: "A crowd storms a church TOWER to take back the candles the Copts borrowed from a mosque."}
+  - {year: 1315, peg: doll, confidence: high, source: "WP: Madrasa of Sunqur Sa'di (1315-21); Lane-Poole AH 715",
+     event: "Amir Sunqur Sa'di starts his madrasa, a convent for women and his tomb, with a slender minaret",
+     place: "Suyufiyya street",
+     scene: "Sunqur Sa'di props a slender DOLL on the roof of his madrasa, and it stiffens into a stone minaret."}
+  - {year: 1319, peg: tuba, confidence: high, source: "Lane-Poole, Story of Cairo (AH 719); WP: Khalij (Cairo)",
+     event: "Amir Husayn builds his mosque by the Khalij",
+     place: "Khalij canal, west of al-Qahira",
+     scene: "Amir Husayn sounds a TUBA from the minaret of his new mosque by the Khalij, and the canal boatmen come to pray."}
+  - {year: 1319, peg: tuba, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 719)",
+     event: "Amir al-Malik al-Jukandar builds his madrasa, the Malikiyya",
+     place: "Gamaliya",
+     scene: "The polo master al-Malik swings a TUBA instead of a mallet and knocks the foundation stone of his Malikiyya madrasa into place."}
+  - {year: 1325, peg: nail, confidence: high, source: "WP: Khanqah of Baybars II",
+     event: "Al-Nasir Muhammad reopens the closed khanqah of Baybars al-Jashankir and erases Baybars' name from it",
+     place: "Gamaliya street",
+     scene: "Al-Nasir pulls a NAIL from the shut door of Baybars' khanqah, reopens it and chisels his rival's name off the frieze."}
+  - {year: 1326, peg: nacho, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 726)",
+     event: "The Baktimuriyya madrasa is built",
+     place: "Cairo",
+     scene: "Amir Baktimur dips a NACHO in mortar and sticks it on the last wall of his new madrasa."}
+  - {year: 1330, peg: mouse, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 730)",
+     event: "Amir Qawsun builds his mosque",
+     place: "Qawsun street",
+     scene: "Amir Qawsun releases a MOUSE in the empty plot, and his workmen follow it to mark out the walls of his new mosque."}
+  - {year: 1335, peg: mill, confidence: high, source: "WP: Cairo Citadel; WP: Mosque of al-Nasir Muhammad",
+     event: "Al-Nasir Muhammad rebuilds his Citadel mosque higher, with a green-tiled dome",
+     place: "Cairo Citadel",
+     scene: "A MILL wheel cranks the walls of al-Nasir's Citadel mosque higher, and a dome of green tiles drops onto the top."}
+  - {year: 1335, peg: mill, confidence: high, source: "WP: Sultaniyya Mausoleum; WP: Al-Qarafa",
+     event: "Khanqah and tomb of Amir Qawsun are built in the southern cemetery",
+     place: "Southern Cemetery",
+     scene: "Amir Qawsun's sufis grind flour in a MILL in the courtyard of his new khanqah among the southern tombs."}
+  - {year: 1336, peg: match, confidence: medium, source: "WP: Mosque of Ulmas al-Hajib (Mosque of Bashtak)",
+     event: "Amir Bashtak builds his mosque",
+     place: "Suq al-Silah street",
+     scene: "Amir Bashtak strikes a MATCH and lights the first lamp in his new mosque on the market street."}
+  - {year: 1337, peg: mug, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 737)",
+     event: "Amir Aydumur builds his mosque",
+     place: "Cairo",
+     scene: "Amir Aydumur fills a MUG with water and pours it in the new ablution basin of his mosque."}
+  - {year: 1338, peg: movie, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 738)",
+     event: "The Mosque of al-Turkumani is built",
+     place: "Cairo",
+     scene: "Al-Turkumani projects a MOVIE of his new mosque onto an empty lot, and the masons build it stone by stone from the picture."}
+  - {year: 1339, peg: map, confidence: disputed, source: "WP Al-Azhar 1339; Lane-Poole 1331 text, AH 734 list",
+     event: "Amir Aqbugha adds his madrasa, the Aqbughawiyya, with dome and minaret to al-Azhar",
+     place: "al-Azhar Mosque",
+     scene: "Amir Aqbugha unrolls a MAP of al-Azhar and draws his dome and minaret on the ablution court; masons build it there."}
+  - {year: 1340, peg: horse, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 740)",
+     event: "The Mosque of Sitt Miska, a lady of al-Nasir Muhammad's household, is built",
+     place: "Hilmiyya, south of al-Qahira",
+     scene: "Sitt Miska rides a white HORSE to the door of her new mosque and gives its keys to the imam."}
+  - {year: 1345, peg: railway, confidence: high, source: "WP: Mosque of Aslam al-Silahdar",
+     event: "Amir Aslam al-Silahdar completes his mosque and tomb",
+     place: "Darb Shughlan, Darb al-Ahmar",
+     scene: "A RAILWAY track runs straight to the door of Aslam al-Silahdar's new mosque, and the last tile car unloads."}
+  - {year: 1347, peg: rock, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 748)",
+     event: "Amir Arghun al-Isma'ili builds his mosque",
+     place: "Cairo",
+     scene: "Amir Arghun breaks a ROCK in two, and his new mosque rises from the two halves."}
+  - {year: 1347, peg: rock, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 748)",
+     event: "Amir Qutlubugha al-Dhahabi builds his mosque",
+     place: "Cairo",
+     scene: "Amir Qutlubugha rolls a gold ROCK into the foundation trench of his new mosque."}
+  - {year: 1348, peg: reef, confidence: high, source: "WP: Al-Qarafa; MIT 4.615 handout 10",
+     event: "Khanqah and tomb of Princess Tughay: one of the first buildings of the Northern Cemetery",
+     place: "Northern Cemetery",
+     scene: "A coral REEF grows out of the desert sand east of Cairo and hardens into the domed khanqah of Princess Tughay."}
+  - {year: 1349, peg: rope, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 750)",
+     event: "Amir Manjak al-Silahdar builds his mosque",
+     place: "below the Citadel",
+     scene: "Amir Manjak ties a ROPE from the Citadel to the street below, and his new mosque climbs up it."}
+  - {year: 1349, peg: rope, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 750)",
+     event: "The Kharrubiyya madrasa of the Karimi spice merchants is built in Fustat",
+     place: "Fustat, by the Nile",
+     scene: "The Karimi spice merchants tie a ROPE of pepper sacks round a plot in Fustat and build the Kharrubiyya madrasa there."}
+  - {year: 1360, peg: cheese, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 761)",
+     event: "Princess Tatar al-Hijaziyya builds her madrasa and tomb",
+     place: "Gamaliya",
+     scene: "Princess Tatar slices a round of CHEESE for the students in the new madrasa she has built in Gamaliya."}
+  - {year: 1360, peg: cheese, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 761)",
+     event: "Bashir Agha al-Jamdar builds his madrasa, the Bashiriyya",
+     place: "Cairo",
+     scene: "Bashir Agha the wardrobe keeper hides a CHEESE in his robe and pays the masons of the new Bashiriyya madrasa with it."}
+  - {year: 1360, peg: cheese, confidence: high, source: "WP: Al-Hakim Mosque",
+     event: "Sultan Hasan restores the mosque of al-Hakim",
+     place: "Mosque of al-Hakim, Bab al-Futuh",
+     scene: "Sultan Hasan's men fill the cracks of al-Hakim's mosque with soft CHEESE that hardens into new plaster."}
+  - {year: 1362, peg: chain, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 763)",
+     event: "The eunuch Sabiq al-Din Mithqal builds his madrasa, the Sabiqiyya",
+     place: "Gamaliya",
+     scene: "Sabiq al-Din Mithqal binds the stones of his new madrasa together with an iron CHAIN."}
+  - {year: 1362, peg: chain, confidence: medium, source: "WP: Al-Sayyida Nafisa Mosque (some sources)",
+     event: "The Abbasid caliph al-Mutawakkil gets charge of the shrine of Sayyida Nafisa",
+     place: "Sayyida Nafisa shrine",
+     scene: "A golden CHAIN of keys to the Sayyida Nafisa shrine is hung round the neck of the shadow caliph al-Mutawakkil."}
+  - {year: 1371, peg: cat, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 772)",
+     event: "Amir Asanbugha builds his madrasa",
+     place: "Cairo",
+     scene: "Amir Asanbugha's CAT walks along the top of the new madrasa wall and marks where the dome goes."}
+  - {year: 1388, peg: fife, confidence: medium, source: "Ahram Online (Ibn Khaldoun in Egypt)",
+     event: "Ibn Khaldun becomes head of the Baybarsiyya khanqah",
+     place: "Khanqah of Baybars II, Gamaliya",
+     scene: "The Sufis of Baybars' khanqah hand Ibn Khaldun a FIFE, and he plays it to lead their evening devotion as their new head."}
+  - {year: 1393, peg: palm, confidence: medium, source: "WP: Aqmar Mosque (1393 or 1397)",
+     event: "Amir Yalbugha al-Salimi restores the Aqmar mosque and adds a minaret and shops",
+     place: "Aqmar Mosque, al-Mu'izz street",
+     scene: "Yalbugha al-Salimi plants a PALM trunk beside the old Aqmar mosque, and it turns into a minaret above new shop stalls."}
+  - {year: 1393, peg: palm, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 795)",
+     event: "Amir Inal al-Yusufi builds his madrasa",
+     place: "Darb al-Ahmar",
+     scene: "Amir Inal plants a PALM in the courtyard of his new madrasa on the Darb al-Ahmar."}
+  - {year: 1395, peg: bell, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 797)",
+     event: "The eunuch Muqbil al-Zimam builds his madrasa",
+     place: "Cairo",
+     scene: "Muqbil al-Zimam rings a BELL over the door of his new madrasa, and the boys run in."}
+  - {year: 1397, peg: pig, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "Barquq's new stone minaret at al-Azhar is faulty and must be pulled down",
+     place: "al-Azhar Mosque",
+     scene: "A PIG roots at the base of Barquq's new stone minaret at al-Azhar until it leans, and the builders pull it down."}
+  - {year: 1402, peg: sun, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 804)",
+     event: "Amir Sudun min Zada builds his madrasa-mosque",
+     place: "Suq al-Silah street",
+     scene: "Amir Sudun strikes a SUN-shaped gong on Suq al-Silah street, and the doors of his new madrasa open."}
+  - {year: 1407, peg: ski, confidence: high, source: "WP: Mosque of Jamal al-Din al-Ustadar",
+     event: "Mosque-madrasa of Amir Jamal al-Din al-Ustadar is built on the main street",
+     place: "Gamaliya, al-Mu'izz street",
+     scene: "Jamal al-Din the steward glides down al-Mu'izz street on a SKI and stops where his new madrasa-mosque stands."}
+  - {year: 1411, peg: tattoo, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 814)",
+     event: "The Mosque of Birkat al-Ratli is built by the pond north of the city",
+     place: "Birkat al-Ratli",
+     scene: "A diver with a TATTOO of a minaret climbs out of the Ratli pond, and a new mosque stands on its bank."}
+  - {year: 1412, peg: tongue, confidence: high, source: "WP: Aqsunqur Mosque",
+     event: "Amir Tughan builds the ablution fountain in the court of the Aqsunqur mosque",
+     place: "Aqsunqur (Blue) Mosque, Bab al-Wazir",
+     scene: "A giant TONGUE spits water into a basin, and Amir Tughan sets the ablution fountain in the court of the Blue Mosque."}
+  - {year: 1413, peg: tomb, confidence: medium, source: "WP: Mosque of Qanibay al-Muhammadi (816 AH)",
+     event: "Amir Qanibay al-Muhammadi completes his mosque beside Shaykhu's mosque",
+     place: "Saliba street",
+     scene: "Amir Qanibay crowns his own TOMB with a dome and a minaret, and his mosque stands complete next to Shaykhu's on Saliba Street."}
+  - {year: 1414, peg: tower, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "Taj al-Din al-Shawbaki, governor and market inspector of Cairo, rebuilds the leaning minaret of al-Azhar",
+     place: "al-Azhar Mosque",
+     scene: "Al-Shawbaki, governor of Cairo, pulls down the leaning minaret of al-Azhar and puts up a straight brick TOWER in its place."}
+  - {year: 1414, peg: tower, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 817)",
+     event: "The Mosque of al-Basiti is built",
+     place: "Cairo",
+     scene: "Al-Basiti climbs a TOWER of bricks and sets the crescent on his new mosque."}
+  - {year: 1418, peg: dove, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 821)",
+     event: "Abd al-Ghani al-Fakhri builds his madrasa",
+     place: "Cairo",
+     scene: "A DOVE carries Abd al-Ghani al-Fakhri's purse to the masons, and his madrasa is built."}
+  - {year: 1420, peg: nose, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 823)",
+     event: "Qadi Abd al-Basit, the treasury chief, builds his madrasa-mosque",
+     place: "Khurunfish street",
+     scene: "Qadi Abd al-Basit holds his NOSE against the dust and pays his builders to finish the madrasa on Khurunfish street."}
+  - {year: 1422, peg: nun, confidence: high, source: "WP: Maristan of al-Mu'ayyad (March)",
+     event: "Barsbay turns al-Mu'ayyad's unused hospital into a Friday mosque",
+     place: "Darb al-Ahmar, near Bab al-Wazir",
+     scene: "A NUN carries out the empty hospital beds of al-Mu'ayyad's infirmary, and Barsbay's imam climbs its new pulpit for Friday prayer."}
+  - {year: 1427, peg: ink, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 830)",
+     event: "Amir Janibak builds his mosque",
+     place: "below the Citadel",
+     scene: "Amir Janibak dips his pen in INK and signs the endowment of his new mosque below the Citadel."}
+  - {year: 1427, peg: ink, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 830)",
+     event: "Amir Fayruz builds his madrasa",
+     place: "Cairo",
+     scene: "Fayruz spills a bottle of turquoise INK, and his builders use it to paint the tiles of his new madrasa."}
+  - {year: 1428, peg: knife, confidence: medium, source: "WP: Ibn Hajar al-Asqalani (December; after Ibn Iyas)",
+     event: "A great celebration near Cairo marks the completion of Ibn Hajar's commentary Fath al-Bari",
+     place: "outside Cairo",
+     scene: "Ibn Hajar cuts the cord round the last volume of Fath al-Bari with a silver KNIFE, and the crowd outside Cairo cheers."}
+  - {year: 1432, peg: moon, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "The minaret of al-Azhar is rebuilt again",
+     place: "al-Azhar Mosque",
+     scene: "Builders hang a crescent MOON on the top of al-Azhar's newly rebuilt minaret."}
+  - {year: 1440, peg: horse, confidence: high, source: "WP: Mosque of Taghribirdi (Oct-Nov)",
+     event: "Amir Taghribirdi, father of the historian Ibn Taghribirdi, completes his mosque and tomb",
+     place: "Saliba street",
+     scene: "Amir Taghribirdi rides a HORSE up Saliba Street to open his new mosque and tomb."}
+  - {year: 1440, peg: horse, confidence: high, source: "WP: Al-Azhar Mosque",
+     event: "The treasurer Jawhar al-Qanqaba'i adds his madrasa and tomb, the Jawhariyya, to al-Azhar",
+     place: "al-Azhar Mosque",
+     scene: "Jawhar the treasurer rides a HORSE loaded with gold into al-Azhar and pays for the Jawhariyya madrasa, where he is later buried."}
+  - {year: 1444, peg: warrior, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 848)",
+     event: "Qadi Yahya Zayn al-Din builds his first mosque and tomb",
+     place: "Bayn al-Nahdayn, near the Khalij",
+     scene: "A WARRIOR guards the door while Qadi Yahya lays out the carpets of his new mosque by the Khalij."}
+  - {year: 1449, peg: rope, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 853)",
+     event: "Sultan Jaqmaq builds a mosque in the city",
+     place: "Cairo",
+     scene: "Sultan Jaqmaq ties a ROPE round the old houses, pulls them down and builds his mosque on the space."}
+  - {year: 1451, peg: wallet, confidence: high, source: "WP: Khanqah-Mausoleum of Sultan Barsbay",
+     event: "The Mosque of al-Ghamri is built in the Bab al-Sha'riyya quarter",
+     place: "Bab al-Sha'riyya",
+     scene: "A fat WALLET bursts open over the Bab al-Sha'riyya quarter, and its coins pay the builders of the Mosque of al-Ghamri."}
+  - {year: 1456, peg: leech, confidence: medium, source: "Lane-Poole (AH 855-60); MIT 4.615 handout 14 (1451-56)",
+     event: "Inal completes his funerary complex in the Northern Cemetery, built up step by step from a tomb to a mosque, khanqah and school",
+     place: "Northern Cemetery",
+     scene: "A LEECH grows fatter each year on Inal's desert tomb until it holds a khanqah, a madrasa and a fountain."}
+  - {year: 1471, peg: cat, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 876)",
+     event: "Amir Timraz builds his mosque",
+     place: "Cairo",
+     scene: "Amir Timraz lets a CAT loose in his new mosque to keep the mice away from the carpets."}
+  - {year: 1474, peg: car, confidence: high, source: "WP: Funerary complex of Sultan Qaytbay",
+     event: "Qaytbay builds a new dome over the shrine of the mystic Abd Allah al-Manufi in the desert cemetery",
+     place: "Northern Cemetery",
+     scene: "Qaytbay drives a CAR loaded with a ready-made dome to al-Manufi's grave and sets it over the saint's shrine."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "Lane-Poole, Story of Cairo (text and list, AH 880)",
+     event: "Qaytbay builds his town madrasa on the Qal'at al-Kabsh hill near Ibn Tulun",
+     place: "Qal'at al-Kabsh, near Ibn Tulun",
+     scene: "An EAGLE lands on the Qal'at al-Kabsh hill, and Qaytbay builds his town madrasa where it perches."}
+  - {year: 1478, peg: cave, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 883)",
+     event: "Amir Ghanim al-Bahlawan builds his mosque",
+     place: "Darb al-Ahmar",
+     scene: "Ghanim the wrestler carries a stone out of a CAVE on his back and sets it as the threshold of his new mosque."}
+  - {year: 1480, peg: vase, confidence: high, source: "Lane-Poole, Story of Cairo (text 1480; list AH 885)",
+     event: "Qadi Abu Bakr ibn Muzhir, head of the chancery, completes his madrasa",
+     place: "Bayn al-Sayarij, Gamaliya",
+     scene: "Abu Bakr ibn Muzhir sets a painted VASE in the window of his new madrasa, and its colours spread over the ceiling."}
+  - {year: 1483, peg: foam, confidence: high, source: "WP: Khanqah of Faraj ibn Barquq",
+     event: "Qaytbay gives a carved stone pulpit to the khanqah of Faraj ibn Barquq",
+     place: "Khanqah of Faraj ibn Barquq, Northern Cemetery",
+     scene: "A wave of FOAM sets a stone minbar down in Faraj's khanqah, and Qaytbay's name appears carved on its door."}
+  - {year: 1485, peg: waffle, confidence: high, source: "WP: Abu al-'Ila Mosque",
+     event: "The merchant Nur al-Din al-Burullusi builds the Abu al-'Ila mosque at Bulaq",
+     place: "Bulaq",
+     scene: "The merchant al-Burullusi pays for the Abu al-'Ila mosque at Bulaq with a WAFFLE of gold coins pressed together."}
+  - {year: 1486, peg: fish, confidence: medium, source: "WP: Al-Suyuti",
+     event: "Qaytbay makes al-Suyuti shaykh of the khanqah of Baybars II; protests by the Sufis later remove him",
+     place: "Khanqah of Baybars II, Gamaliya",
+     scene: "Al-Suyuti is handed a FISH as his badge of office at Baybars' khanqah, but the angry Sufis slap him with it and push him out."}
+  - {year: 1488, peg: fife, confidence: high, source: "WP: Ben Ezra Synagogue",
+     event: "The Ben Ezra synagogue in Fustat is repaired and renovated",
+     place: "Ben Ezra synagogue, Old Cairo",
+     scene: "A FIFE player leads the Jews of Fustat back into the repaired Ben Ezra synagogue for its first Sabbath after the work."}
+  - {year: 1491, peg: boot, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 896)",
+     event: "Qaytbay builds a madrasa on Rawda island",
+     place: "Rawda island",
+     scene: "Qaytbay rows a BOOT across the Nile to Rawda island, and a new madrasa grows out of it on the bank."}
+  - {year: 1495, peg: bell, confidence: medium, source: "Search: Archnet (Madrasa of Azbak al-Yusufi, 1494-95)",
+     event: "Amir Azbak al-Yusufi completes his mosque-madrasa",
+     place: "Saliba area, near Ibn Tulun",
+     scene: "Amir Azbak al-Yusufi rings a BELL at the door of his new madrasa and the students file in."}
+  - {year: 1503, peg: sumo, confidence: high, source: "WP: Sultan al-Ghuri Complex (May)",
+     event: "Al-Ghuri opens his mosque-madrasa with a great banquet; the shadow caliph attends",
+     place: "al-Ghuriya, al-Mu'izz street",
+     scene: "A SUMO wrestler carries the banquet table into al-Ghuri's new mosque on the eve of the feast, and the guests eat."}
+  - {year: 1503, peg: sumo, confidence: high, source: "Lane-Poole (text and list, AH 908)",
+     event: "Amir Qanibay, master of the horse, builds his madrasa below the Citadel",
+     place: "Rumayla square, below the Citadel",
+     scene: "Qanibay the master of the horse rides a SUMO wrestler instead of a stallion to the foot of the Citadel and opens his madrasa."}
+  - {year: 1504, peg: sewer, confidence: high, source: "WP: Sultan al-Ghuri Complex (Oct-Nov)",
+     event: "Relics of the Prophet are moved into the mausoleum of al-Ghuri",
+     place: "al-Ghuriya, al-Mu'izz street",
+     scene: "Porters lift a SEWER cover from the street and carry the Prophet's relics down the new passage into al-Ghuri's mausoleum."}
+  - {year: 1505, peg: seal, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 911)",
+     event: "Amir Qanibay Qara al-Rammah builds his madrasa",
+     place: "Nasiriyya, by the Khalij",
+     scene: "Qanibay the lancer spears a SEAL in the Khalij canal and builds his madrasa on the bank where it lands."}
+  - {year: 1507, peg: ski, confidence: high, source: "Search: Archnet (Williams), MIT Dome (1506-07)",
+     event: "Amir Qurqumas completes his funerary complex in the Northern Cemetery",
+     place: "Northern Cemetery",
+     scene: "Amir Qurqumas slides down from the Citadel on a SKI and stops at the door of his new tomb complex in the desert cemetery."}
+  # arts
+  - {year: 1251, peg: wallet, confidence: high, source: "WP: Mausoleum of Shajar al-Durr",
+     event: "Painters decorate the dome of Shajar al-Durr's tomb with lotus buds and arabesques",
+     place: "al-Khalifa street",
+     scene: "A painter flicks a blue-green WALLET open like a palette and paints lotus buds inside the dome of Shajar al-Durr's tomb."}
+  - {year: 1284, peg: fairy, confidence: medium, source: "WP: Qalawun (she died 1283-84); Lane-Poole list",
+     event: "Tomb of Fatima Khatun, wife of Qalawun and mother of al-Salih Ali, is built in the southern cemetery",
+     place: "al-Ashraf street, Southern Cemetery",
+     scene: "A FAIRY with a wand raises the domed tomb of Fatima Khatun, Qalawun's wife, in the southern cemetery."}
+  - {year: 1288, peg: fife, confidence: high, source: "WP: Al-Qarafa (tomb dated)",
+     event: "Tomb of Sultan al-Ashraf Khalil is built on al-Khalifa street",
+     place: "al-Khalifa street",
+     scene: "A FIFE player marches down al-Khalifa street and pipes the dome of al-Ashraf Khalil's new tomb into place."}
+  - {year: 1292, peg: piano, confidence: medium, source: "WP: Cairo Citadel (hall built 1291-92)",
+     event: "Al-Ashraf Khalil builds a reception hall, the Qa'a al-Ashrafiyya, in the Citadel",
+     place: "Cairo Citadel",
+     scene: "Al-Ashraf Khalil rolls a grand PIANO into his new reception hall in the Citadel and plays at its opening."}
+  - {year: 1293, peg: palm, confidence: high, source: "WP: Amir Alin Aq Palace; MIT 4.615 handout 12",
+     event: "Palace of Amir Alin Aq rises on the Darb al-Ahmar, with one of the largest two-iwan halls",
+     place: "Darb al-Ahmar",
+     scene: "A PALM tree grows through the roof of Amir Alin Aq's new hall on the Darb al-Ahmar and holds up its high ceiling."}
+  - {year: 1300, peg: tomb, confidence: medium, source: "WP: Hanging Church (panels in the British Museum)",
+     event: "The Hanging Church gets a door of carved wooden panels with Christian scenes (approximate)",
+     place: "Hanging Church, Old Cairo",
+     scene: "A TOMB door of ten carved saints' panels is hung in the Hanging Church, and the Copts walk through it to Mass."}
+  - {year: 1311, peg: tattoo, confidence: medium, source: "WP: Cairo Citadel 1311; MIT handout 10 gives 1315",
+     event: "Al-Nasir Muhammad pulls down his brother's throne hall and builds the Great Iwan in the Citadel",
+     place: "Cairo Citadel",
+     scene: "Al-Nasir Muhammad has a giant TATTOO of a domed throne hall on his arm; masons copy it and the Great Iwan rises in the Citadel."}
+  - {year: 1314, peg: tower, confidence: medium, source: "WP: Cairo Citadel (1313-14); MIT handout 12 gives 1311",
+     event: "Al-Nasir Muhammad builds the Ablaq (Striped) Palace on the Citadel",
+     place: "Cairo Citadel",
+     scene: "A striped TOWER of red and black stone grows on the Citadel cliff and opens into al-Nasir's Ablaq Palace over the city."}
+  - {year: 1323, peg: gnome, confidence: high, source: "Lane-Poole, Story of Cairo (cites al-Maqrizi)",
+     event: "Al-Nasir Muhammad rebuilds the Castle of the Ram (Qal'at al-Kabsh) palace on the hill near Ibn Tulun",
+     place: "Qal'at al-Kabsh, near Ibn Tulun",
+     scene: "A GNOME with a ram's horns lays the last stone of al-Nasir's rebuilt Castle of the Ram on the hill by Ibn Tulun."}
+  - {year: 1324, peg: hanger, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 724)",
+     event: "Tomb of Princess Urdutekin, a wife of al-Nasir Muhammad, is built",
+     place: "Southern Cemetery",
+     scene: "Princess Urdutekin's coffin is carried in on a giant HANGER and hung under the dome of her new tomb."}
+  - {year: 1333, peg: mummy, confidence: high, source: "WP: Cairo Citadel (MIT gives 1334)",
+     event: "Al-Nasir Muhammad rebuilds the Great Iwan, the throne hall that chroniclers call the grandest building in Cairo",
+     place: "Cairo Citadel",
+     scene: "A MUMMY of the old throne hall is unwrapped, and al-Nasir's Great Iwan stands up again under a green dome."}
+  - {year: 1334, peg: hammer, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 734)",
+     event: "Tomb of Amir Tashtimur, the Green Pea dome, is built",
+     place: "Southern Cemetery",
+     scene: "A HAMMER taps green tiles onto the dome of Tashtimur's new tomb, and the people call it the Green Pea."}
+  - {year: 1341, peg: radio, confidence: high, source: "WP: Aqsunqur Mosque",
+     event: "Tomb of the boy sultan al-Ashraf Kujuk is built, later taken into the Aqsunqur mosque",
+     place: "Bab al-Wazir street",
+     scene: "A RADIO plays a lullaby inside the small domed tomb of the boy sultan Kujuk on Bab al-Wazir street."}
+  - {year: 1344, peg: warrior, confidence: high, source: "WP: Cairo Citadel (February)",
+     event: "Al-Salih Isma'il opens the Duhaysha, a richly decorated hall in the Citadel",
+     place: "Cairo Citadel",
+     scene: "A WARRIOR draws his sword and cuts the ribbon of al-Salih Isma'il's gilded Duhaysha hall in the Citadel."}
+  - {year: 1350, peg: lasso, confidence: medium, source: "MIT 4.615 handout 12",
+     event: "The Qa'a of Muhibb al-Din, a merchant's house, is built off the main street of al-Qahira",
+     place: "off al-Mu'izz street",
+     scene: "The merchant Muhibb al-Din throws a LASSO round a plot off the main street and pulls up the walls of his hall."}
+  - {year: 1355, peg: lily, confidence: medium, source: "WP: Church of the Virgin Mary (Haret Zuweila) (about)",
+     event: "An icon of the Annunciation is painted for the church of the Virgin in Haret Zuwayla (approximate)",
+     place: "Church of the Virgin, Haret Zuwayla",
+     scene: "A LILY in the angel's hand is painted last, and the Annunciation icon is hung in the church of the Virgin in Haret Zuwayla."}
+  - {year: 1356, peg: leech, confidence: medium, source: "WP: Great Pyramid of Giza (said to have been)",
+     event: "Casing stones stripped from the Great Pyramid are carted to Cairo for Sultan Hasan's building",
+     place: "Giza pyramids",
+     scene: "A giant LEECH sucks the white casing stones off the Great Pyramid, and carts haul them across the Nile to Sultan Hasan's site."}
+  - {year: 1358, peg: wolf, confidence: medium, source: "Lane-Poole, Story of Cairo (text)",
+     event: "Shaykhu's mosque gets its carved wooden minbar",
+     place: "Saliba street",
+     scene: "A carpenter's WOLF cub gnaws star patterns into the wooden minbar of Shaykhu's mosque."}
+  - {year: 1360, peg: cheese, confidence: high, source: "WP: Cairo Citadel; WP: Al-Nasir Hasan",
+     event: "Sultan Hasan completes the Qa'a al-Baysariyya, a domed palace tower over fifty metres high in the Citadel",
+     place: "Cairo Citadel",
+     scene: "A tower of CHEESE wheels stacked fifty metres high becomes Sultan Hasan's domed Baysariyya palace in the Citadel."}
+  - {year: 1363, peg: gem, confidence: high, source: "WP: Mosque-Madrasa of Sultan Hasan",
+     event: "Work on Sultan Hasan's mosque-madrasa stops, two years after his murder; parts stay unfinished",
+     place: "Mosque of Sultan Hasan",
+     scene: "The masons drop their last GEM inlay in the dust and walk away; Sultan Hasan's mosque stays unfinished."}
+  - {year: 1364, peg: cherry, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 765)",
+     event: "Tomb of Princess Tulbiya, a wife of Sultan Hasan, is built",
+     place: "Southern Cemetery",
+     scene: "A CHERRY tree is planted at the door of Princess Tulbiya's new tomb in the southern cemetery."}
+  - {year: 1375, peg: eagle, confidence: high, source: "WP: Maristan of al-Mu'ayyad",
+     event: "Sultan Sha'ban starts a grand madrasa and tomb for himself near the Citadel",
+     place: "Bab al-Wazir, below the Citadel",
+     scene: "An EAGLE drops the first marble block below the Citadel, and Sha'ban's grand tomb-madrasa starts to rise."}
+  - {year: 1378, peg: cave, confidence: high, source: "WP: Great Sphinx of Giza (al-Maqrizi)",
+     event: "The Sufi Muhammad Sa'im al-Dahr breaks the face of the Great Sphinx to stop peasants making offerings to it",
+     place: "Giza plateau",
+     scene: "Sa'im al-Dahr marches out of a CAVE on the Giza plateau and hammers the nose off the Great Sphinx while the peasants watch."}
+  - {year: 1381, peg: foot, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 783)",
+     event: "Tomb of Anas, father of Barquq, is built",
+     place: "Cairo",
+     scene: "A giant FOOT stamps a hollow in the desert, and Barquq lays his father Anas in the domed tomb built over it."}
+  - {year: 1382, peg: oven, confidence: medium, source: "MIT 4.615 handout 14",
+     event: "Tomb of Yunus al-Dawadar with its ribbed dome: the first monument of the Burji period",
+     place: "Northern Cemetery",
+     scene: "A ribbed OVEN dome cools in the desert, and Yunus al-Dawadar is laid inside the first Burji tomb."}
+  - {year: 1395, peg: bell, confidence: medium, source: "WP: Khanqah of Faraj ibn Barquq; Lane-Poole list (AH 797)",
+     event: "Madrasa and tomb of Mahmud al-Kurdi, the steward: the first carved zigzag stone dome of Cairo",
+     place: "Cairo",
+     scene: "A BELL-shaped dome is carved with zigzags over Mahmud al-Kurdi's tomb: the first of Cairo's carved stone domes."}
+  - {year: 1411, peg: tattoo, confidence: high, source: "WP: Maristan of al-Mu'ayyad",
+     event: "Faraj pulls down Sha'ban's unfinished madrasa and reuses its stone for new buildings",
+     place: "Bab al-Wazir, below the Citadel",
+     scene: "Faraj's workmen peel the marble off Sha'ban's unfinished madrasa like a TATTOO and stick it onto new buildings."}
+  - {year: 1412, peg: tongue, confidence: high, source: "WP: Aqmar Mosque",
+     event: "The upper part of the Aqmar mosque minaret falls",
+     place: "Aqmar Mosque, al-Mu'izz street",
+     scene: "A giant TONGUE licks the top of the Aqmar minaret until it breaks off and crashes onto al-Mu'izz street."}
+  - {year: 1418, peg: dove, confidence: high, source: "WP: Mosque of Sultan al-Muayyad (al-Maqrizi)",
+     event: "The unsafe eastern minaret of al-Mu'ayyad's mosque on Bab Zuwayla is pulled down and rebuilt",
+     place: "Bab Zuwayla",
+     scene: "A DOVE lands on the eastern minaret of al-Mu'ayyad's mosque, the tower shakes, and the builders pull it down and start again."}
+  - {year: 1427, peg: ink, confidence: high, source: "WP: Mosque of Sultan al-Muayyad",
+     event: "The western minaret of al-Mu'ayyad's mosque falls and is rebuilt at once",
+     place: "Mosque of al-Mu'ayyad, side street",
+     scene: "A bottle of INK spills down the western minaret of al-Mu'ayyad's mosque, the tower falls, and Barsbay's masons rebuild it the same week."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 880)",
+     event: "Amir Yashbak min Mahdi rebuilds the old palace of Qawsun below the Citadel",
+     place: "below the Citadel",
+     scene: "Amir Yashbak flies an EAGLE over Qawsun's ruined palace, and the building rises again under his name."}
+  - {year: 1480, peg: vase, confidence: medium, source: "WP: Bayt al-Razzaz (around)",
+     event: "Qaytbay builds the first part of the house later called Bayt al-Razzaz, with rich mashrabiya windows (approximate)",
+     place: "Bab al-Wazir street",
+     scene: "Qaytbay's carpenter carves a VASE pattern into the mashrabiya of the new house on Bab al-Wazir street."}
+  - {year: 1481, peg: foot, confidence: medium, source: "Lane-Poole (list, AH 886, circa)",
+     event: "Yashbak min Mahdi builds the Qubbat al-Fadawiyya, a great dome in the northern desert (approximate)",
+     place: "Abbasiya",
+     scene: "Yashbak plants a giant FOOT in the desert north of Cairo, and its heel swells into the Qubbat al-Fadawiyya dome."}
+  - {year: 1485, peg: waffle, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 890)",
+     event: "Qaytbay builds a palace and a loggia (maq'ad)",
+     place: "Cairo",
+     scene: "Qaytbay leans on a WAFFLE-patterned railing in the new arcaded loggia of his palace."}
+  - {year: 1496, peg: peach, confidence: medium, source: "WP: Cairo Citadel (built 1495-96)",
+     event: "Amir Ya'qub Shah al-Mihmandar builds a domed pavilion outside the Citadel with a text on the victory at Adana",
+     place: "outside the Citadel, east side",
+     scene: "Ya'qub Shah carves a PEACH-shaped dome outside the Citadel and writes Qaytbay's victory over the Ottomans on it."}
+  - {year: 1496, peg: peach, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 901)",
+     event: "Amir Mamay al-Sayfi builds his loggia (maq'ad) with its arcade, later called Bayt al-Qadi",
+     place: "Bayt al-Qadi square, Gamaliya",
+     scene: "Amir Mamay bites a PEACH under the five arches of his new loggia, and later judges sit there."}
+  - {year: 1501, peg: soda, confidence: medium, source: "Lane-Poole, Story of Cairo, monument list (AH 906)",
+     event: "Tomb of Sultan al-Adil Tumanbay is built outside the city",
+     place: "Raydaniyya, Abbasiya",
+     scene: "A SODA can fizzes over in the desert, and the tomb of Tumanbay rises out of the foam outside the city."}
+  - {year: 1502, peg: sun, confidence: medium, source: "Lane-Poole (text 1502; list AH 908)",
+     event: "Amir Khayrbak builds his tomb on the Bab al-Wazir road",
+     place: "Bab al-Wazir street",
+     scene: "The SUN bakes the bricks of Amir Khayrbak's new tomb on the Bab al-Wazir road until the dome is hard."}
+  - {year: 1504, peg: sewer, confidence: high, source: "WP: Mausoleum of Tarabay al-Sharifi (1503-04)",
+     event: "Amir Tarabay al-Sharifi builds his tomb with a fountain and school",
+     place: "Bab al-Wazir street",
+     scene: "Amir Tarabay lifts a SEWER grate and water flows into the fountain of his new tomb on Bab al-Wazir street."}
+  - {year: 1504, peg: sewer, confidence: medium, source: "WP: Sultan al-Ghuri Complex (1503-04)",
+     event: "Tomb of Azrumuk in the Northern Cemetery is decorated with blue tiles",
+     place: "Northern Cemetery",
+     scene: "Azrumuk's tilers dip blue tiles in a SEWER channel and fix them glistening on his tomb in the Northern Cemetery."}
+  - {year: 1512, peg: tongue, confidence: high, source: "WP: Sultan al-Ghuri Complex",
+     event: "The unstable dome of al-Ghuri's mausoleum is rebuilt",
+     place: "al-Ghuriya",
+     scene: "A giant TONGUE licks the cracked dome of al-Ghuri's mausoleum until it falls, and masons build it again."}
+  - {year: 1513, peg: tomb, confidence: high, source: "WP: Sultan al-Ghuri Complex",
+     event: "Al-Ghuri's mausoleum dome is rebuilt a second time",
+     place: "al-Ghuriya",
+     scene: "A heavy stone TOMB lid crashes through the cracked dome of al-Ghuri's mausoleum, and the masons rebuild the dome a second time."}
+  # economy
+  - {year: 1341, peg: radio, confidence: medium, source: "WP: Wikala of Qawsun (before 1341; AH 742)",
+     event: "Amir Qawsun builds his wikala on Gamaliya street, the first merchants' inn of its kind in Cairo",
+     place: "Gamaliya street",
+     scene: "A RADIO blares prices from the gate of Qawsun's new wikala on Gamaliya street, and the first merchants carry their bales inside."}
+  - {year: 1426, peg: nacho, confidence: high, source: "Lane-Poole, Story of Cairo (text)",
+     event: "The galley fleet for the conquest of Cyprus is built at the new port of Bulaq",
+     place: "Bulaq dockyard",
+     scene: "Shipwrights at Bulaq fill each new war galley with NACHO crates and launch the fleet down the Nile to Cyprus."}
+  - {year: 1428, peg: knife, confidence: disputed, source: "WP Bulaq: Barsbay; Soton thesis 13th c.; Britannica 1560",
+     event: "Bulaq becomes the main river port of Cairo",
+     place: "Bulaq",
+     scene: "A giant KNIFE cuts the ropes of the grain boats at Fustat, and they all drift down to moor at Bulaq, Cairo's new main port."}
+  - {year: 1456, peg: leech, confidence: medium, source: "Search: WP Hammam of Sultan Inal",
+     event: "Sultan Inal builds a public bath (hammam)",
+     place: "al-Nahhasin, al-Mu'izz street",
+     scene: "A LEECH clings to a bather in the steam of Sultan Inal's new hammam on al-Mu'izz street."}
+  - {year: 1481, peg: foot, confidence: high, source: "WP: Wikala of Qaytbay; MIT 4.615 handout 13",
+     event: "Qaytbay builds a merchants' inn and apartment block by Bab al-Nasr",
+     place: "Bab al-Nasr",
+     scene: "A giant FOOT kicks open the gate of Qaytbay's new wikala by Bab al-Nasr, and the camel caravans file into its court."}
+  # society
+  - {year: 1265, peg: jelly, confidence: high, source: "WP: Al-Qarafa",
+     event: "Baybars turns the plain north of the Citadel into the Maydan al-Qabaq, a great hippodrome for games and parades",
+     place: "Maydan al-Qabaq, below the Muqattam",
+     scene: "Baybars' riders shoot arrows at a JELLY target swinging on a pole in his new Maydan al-Qabaq hippodrome."}
+  - {year: 1290, peg: bees, confidence: high, source: "WP: Al-Qarafa; WP: Sultaniyya Mausoleum",
+     event: "The Bahri Mamluks open a new cemetery south of the Citadel on a former training ground",
+     place: "south of the Citadel",
+     scene: "A swarm of BEES drives the soldiers off their training ground south of the Citadel, and the Mamluks dig their new cemetery there."}
+  - {year: 1295, peg: bell, confidence: medium, source: "Lane-Poole, Story of Cairo (text: plague after the revolt)",
+     event: "Plague: seven hundred dead are carried out of one gate of Cairo in a single day",
+     place: "Cairo gates",
+     scene: "A BELL tolls at one Cairo gate seven hundred times in a day as the dead are carried out."}
+  - {year: 1313, peg: tomb, confidence: high, source: "Lane-Poole, Story of Cairo (quotes al-Maqrizi)",
+     event: "A proclamation invites all to build on the land the Nile has left: the Bulaq quarter is founded",
+     place: "Bulaq",
+     scene: "A crier stands on a TOMB by the new river bank and calls emirs, soldiers and merchants to build at Bulaq; their houses spring up."}
+  - {year: 1320, peg: nose, confidence: high, source: "WP: Al-Qarafa",
+     event: "Al-Nasir Muhammad ends the games at the Maydan al-Qabaq; Sufis move onto the empty ground",
+     place: "Maydan al-Qabaq",
+     scene: "Al-Nasir slams a door on the NOSE of the last horseman at Maydan al-Qabaq, and Sufis pitch their lodges on the field."}
+  - {year: 1321, peg: ant, confidence: high, source: "Medievalists.net (after al-Maqrizi)",
+     event: "Fires burn quarters of Cairo for weeks; Christians are blamed for arson",
+     place: "Cairo",
+     scene: "An ANT colony carries burning naphtha rags from roof to roof, and Cairo burns for weeks while the crowd blames the Christians."}
+  - {year: 1326, peg: nacho, confidence: high, source: "WP: History of Cairo",
+     event: "Ibn Battuta reaches Cairo and describes it as the chief city of Egypt",
+     place: "Cairo",
+     scene: "Ibn Battuta bites into a NACHO in a Cairo market and writes that this crowded city is the chief of all Egypt."}
+  - {year: 1340, peg: horse, confidence: medium, source: "WP: History of Cairo",
+     event: "Cairo has close to half a million people, the largest city west of China (approximate)",
+     place: "Cairo",
+     scene: "Half a million people ride one HORSE through Cairo's gates, and it carries them all: the largest city west of China."}
+  - {year: 1350, peg: lasso, confidence: medium, source: "Britannica: Bulaq (search summary)",
+     event: "The Nile moves west and the island of Bulaq joins the east bank (approximate)",
+     place: "Bulaq",
+     scene: "The Nile throws a LASSO round Bulaq island and pulls it onto the east bank of Cairo."}
+  - {year: 1382, peg: oven, confidence: high, source: "Ahram Online; Britannica (later years of Ibn Khaldun)",
+     event: "Ibn Khaldun arrives in Cairo and starts to teach at al-Azhar",
+     place: "al-Azhar",
+     scene: "Ibn Khaldun pulls his notes for the Muqaddimah from an OVEN and lectures on them to the students of al-Azhar."}
+  - {year: 1405, peg: seal, confidence: medium, source: "WP: History of the Mamluk Sultanate",
+     event: "A severe plague strikes Cairo after the famine",
+     place: "Cairo",
+     scene: "A dying SEAL drags the plague out of the Nile into Cairo's streets the year after the famine."}
+  - {year: 1415, peg: doll, confidence: medium, source: "WP: History of the Mamluk Sultanate (1415-17)",
+     event: "Plague returns to Cairo and lasts into a third year",
+     place: "Cairo",
+     scene: "A plague DOLL sits in every Cairo doorway for three years, and the death carts pass below it."}
+  - {year: 1458, peg: wolf, confidence: medium, source: "Dergipark article (after Ibn Taghribirdi, AH 862)",
+     event: "A great fire burns Bulaq",
+     place: "Bulaq",
+     scene: "A WOLF knocks over a lamp in a Bulaq warehouse, and the fire races along the river quarter."}
+  - {year: 1476, peg: cage, confidence: medium, source: "Search: BAB and Duke summaries (880 AH)",
+     event: "Amir Azbak digs the Azbakiyya pond and starts the Azbakiyya quarter west of the Khalij",
+     place: "Azbakiyya",
+     scene: "Amir Azbak opens a CAGE of water birds over the new pond he has dug west of the Khalij, and houses rise round the Azbakiyya."}
+  - {year: 1481, peg: foot, confidence: medium, source: "Search: Chalyan-Daffner thesis, Heidelberg (AH 886)",
+     event: "A disastrous earthquake damages buildings in Cairo",
+     place: "Cairo",
+     scene: "A giant FOOT stamps on Cairo, and the shock cracks walls and domes across the city."}
+  - {year: 1483, peg: foam, confidence: medium, source: "Search: Cambridge (Fabri pilgrimage)",
+     event: "The pilgrim Felix Fabri visits Cairo and describes its streets and markets",
+     place: "Cairo",
+     scene: "Felix Fabri slips on FOAM in a Cairo market street and fills his notebook with what he sees."}
+  - {year: 1488, peg: fife, confidence: medium, source: "Search: Sefarad (Obadiah, 1488); My Jewish Learning",
+     event: "Rabbi Obadiah of Bertinoro passes through Cairo and writes about its size and wealth",
+     place: "Cairo",
+     scene: "Obadiah of Bertinoro plays a FIFE at Cairo's gate, then writes home comparing its crowds and wealth with the cities of Italy."}
+  - {year: 1500, peg: doll, confidence: medium, source: "Search: Muslim Heritage (first decade of AH 10th century)",
+     event: "Coffee reaches the Yemeni students of al-Azhar and spreads to the streets of Cairo (approximate)",
+     place: "al-Azhar",
+     scene: "A Yemeni student pours coffee into a DOLL's cup at al-Azhar to stay awake through the night prayers, and soon all Cairo drinks it."}
+world_refs:
+  - {year: 1250, event: "Shajar al-Durr builds her own mausoleum", cell: north_africa_arts_500_1500}
+  - {year: 1253, event: "Al-Tifashi, collector of Andalusi song texts, dies in Cairo", cell: north_africa_arts_500_1500}
+  - {year: 1258, event: "Court poet Baha al-Din Zuhayr dies in an epidemic", cell: north_africa_arts_500_1500}
+  - {year: 1264, event: "Famine in Egypt under Baybars", cell: north_africa_society_500_1500}
+  - {year: 1266, event: "Baybars restores the Friday prayer at al-Azhar", cell: north_africa_religion_500_1500}
+  - {year: 1267, event: "Baybars begins his great mosque at Husayniyya", cell: north_africa_arts_500_1500}
+  - {year: 1267, event: "Ibn Daniyal's shadow play mocks Baybars' campaign against vice", cell: north_africa_arts_500_1500}
+  - {year: 1274, event: "Ibn Khallikan completes his biographical dictionary", cell: north_africa_arts_500_1500}
+  - {year: 1281, event: "Al-Marrakushi compiles in Cairo his book on sundials and astrolabes", cell: north_africa_science_500_1500}
+  - {year: 1285, event: "Qalawun's hospital, madrasa and mausoleum complex", cell: north_africa_arts_500_1500}
+  - {year: 1288, event: "Ibn al-Nafis leaves his house and books to the Mansuri hospital", cell: north_africa_science_500_1500}
+  - {year: 1290, event: "Ibn Manzur completes the Lisan al-Arab", cell: north_africa_arts_500_1500}
+  - {year: 1294, event: "Sandstorm and famine in Egypt", cell: north_africa_society_500_1500}
+  - {year: 1296, event: "Lajin restores the Mosque of Ibn Tulun", cell: north_africa_arts_500_1500}
+  - {year: 1296, event: "Oirat refugees settled in the Husayniyya quarter", cell: north_africa_society_500_1500}
+  - {year: 1303, event: "Mausoleum of Salar and Sanjar", cell: north_africa_arts_500_1500}
+  - {year: 1303, event: "Earthquake: minarets fall in Cairo", cell: north_africa_society_500_1500}
+  - {year: 1304, event: "Madrasa of al-Nasir Muhammad with the Gothic portal from Acre", cell: north_africa_arts_500_1500}
+  - {year: 1306, event: "Seven-volume Qur'an of Baybars al-Jashankir", cell: north_africa_arts_500_1500}
+  - {year: 1309, event: "Ibn Ata Allah dies in Cairo", cell: north_africa_religion_500_1500}
+  - {year: 1310, event: "Khanqah of Baybars al-Jashankir completed", cell: north_africa_arts_500_1500}
+  - {year: 1312, event: "Al-Nasir Muhammad renews the Citadel aqueduct", cell: north_africa_science_500_1500}
+  - {year: 1313, event: "Maydan below the Citadel made a polo and parade ground again", cell: north_africa_society_500_1500}
+  - {year: 1318, event: "Al-Nasir Muhammad's mosque in the Citadel", cell: north_africa_arts_500_1500}
+  - {year: 1321, event: "Mobs in Cairo destroy Coptic churches", cell: north_africa_religion_500_1500}
+  - {year: 1324, event: "Mansa Musa's gold in Cairo", cell: subsaharan_africa_economy_500_1500}
+  - {year: 1325, event: "Mosque of Ahmad al-Mihmandar", cell: north_africa_arts_500_1500}
+  - {year: 1325, event: "Nasiri canal dug west of Cairo", cell: north_africa_science_500_1500}
+  - {year: 1330, event: "Mosque of Emir Ulmas the chamberlain", cell: north_africa_arts_500_1500}
+  - {year: 1333, event: "Al-Nuwayri finishes the Nihayat al-Arab", cell: north_africa_arts_500_1500}
+  - {year: 1334, event: "Vienna Maqamat painted in Cairo", cell: north_africa_arts_500_1500}
+  - {year: 1337, event: "Portal of Emir Qawsun's palace", cell: north_africa_arts_500_1500}
+  - {year: 1339, event: "Palace of Emir Bashtak on Bayn al-Qasrayn", cell: north_africa_arts_500_1500}
+  - {year: 1340, event: "Mosque of Emir al-Maridani", cell: north_africa_arts_500_1500}
+  - {year: 1342, event: "Al-Jaldaki, alchemist of Cairo, dies", cell: north_africa_science_500_1500}
+  - {year: 1347, event: "Mosque of Emir Aqsunqur", cell: north_africa_arts_500_1500}
+  - {year: 1348, event: "Black Death kills about a third of Cairo", cell: north_africa_society_500_1500}
+  - {year: 1348, event: "Ibn al-Akfani of the Mansuri hospital dies of plague", cell: north_africa_science_500_1500}
+  - {year: 1349, event: "Mosque of Emir Shaykhu", cell: north_africa_arts_500_1500}
+  - {year: 1352, event: "Palace of Emir Taz", cell: north_africa_arts_500_1500}
+  - {year: 1354, event: "Riots destroy churches and force conversions", cell: north_africa_religion_500_1500}
+  - {year: 1355, event: "Khanqah of Shaykhu", cell: north_africa_arts_500_1500}
+  - {year: 1356, event: "Madrasa of Sarghitmish", cell: north_africa_arts_500_1500}
+  - {year: 1356, event: "Sultan Hasan begins his mosque-madrasa", cell: north_africa_arts_500_1500}
+  - {year: 1361, event: "A minaret of Sultan Hasan's mosque falls", cell: north_africa_arts_500_1500}
+  - {year: 1366, event: "Ibn Nubata dies in Cairo", cell: north_africa_arts_500_1500}
+  - {year: 1369, event: "Madrasa of Umm Sultan Sha'ban", cell: north_africa_arts_500_1500}
+  - {year: 1371, event: "Al-Damiri writes the Life of Animals", cell: north_africa_science_500_1500}
+  - {year: 1373, event: "Madrasa of Uljay al-Yusufi", cell: north_africa_arts_500_1500}
+  - {year: 1374, event: "Famine under Sultan Sha'ban", cell: north_africa_society_500_1500}
+  - {year: 1382, event: "Khan al-Khalili first built", cell: north_africa_economy_500_1500}
+  - {year: 1383, event: "Mosque of Aytimish al-Bajasi", cell: north_africa_arts_500_1500}
+  - {year: 1384, event: "Ibn Khaldun becomes Maliki chief judge of Cairo", cell: north_africa_religion_500_1500}
+  - {year: 1386, event: "Madrasa of Barquq on Bayn al-Qasrayn", cell: north_africa_arts_500_1500}
+  - {year: 1389, event: "Cairo executes Copts who returned to Christianity", cell: north_africa_religion_500_1500}
+  - {year: 1394, event: "Famine under Barquq", cell: north_africa_society_500_1500}
+  - {year: 1403, event: "Low Nile and plague start a famine", cell: north_africa_society_500_1500}
+  - {year: 1405, event: "Al-Maqrizi writes Ighathat al-Umma", cell: north_africa_economy_500_1500}
+  - {year: 1407, event: "Faraj's mint strikes a ducat-weight gold coin", cell: north_africa_economy_500_1500}
+  - {year: 1411, event: "Khanqah of Faraj ibn Barquq", cell: north_africa_arts_500_1500}
+  - {year: 1412, event: "Al-Qalqashandi completes the Subh al-Asha", cell: north_africa_arts_500_1500}
+  - {year: 1419, event: "Mass prayer outside Cairo against plague and drought", cell: north_africa_society_500_1500}
+  - {year: 1420, event: "Mosque of al-Mu'ayyad with minarets on Bab Zuweila", cell: north_africa_arts_500_1500}
+  - {year: 1425, event: "Madrasa-mosque of Barsbay", cell: north_africa_arts_500_1500}
+  - {year: 1425, event: "Barsbay strikes the gold ashrafi", cell: north_africa_economy_500_1500}
+  - {year: 1430, event: "Plague kills tens of thousands in Cairo", cell: north_africa_society_500_1500}
+  - {year: 1432, event: "Khanqah and mausoleum of Barsbay", cell: north_africa_arts_500_1500}
+  - {year: 1438, event: "Plague in the year Barsbay dies", cell: north_africa_society_500_1500}
+  - {year: 1442, event: "Al-Maqrizi, historian of Cairo's streets, dies", cell: north_africa_arts_500_1500}
+  - {year: 1444, event: "Plague returns", cell: north_africa_society_500_1500}
+  - {year: 1447, event: "Ibn al-Majdi, timekeeper of al-Azhar, dies", cell: north_africa_science_500_1500}
+  - {year: 1449, event: "Ibn Hajar al-Asqalani dies in Cairo", cell: north_africa_religion_500_1500}
+  - {year: 1449, event: "Plague strikes Egypt again", cell: north_africa_society_500_1500}
+  - {year: 1460, event: "Plague in Cairo", cell: north_africa_society_500_1500}
+  - {year: 1470, event: "Ibn Taghribirdi dies in Cairo", cell: north_africa_arts_500_1500}
+  - {year: 1471, event: "Al-Wafa'i, chief timekeeper of al-Azhar, dies", cell: north_africa_science_500_1500}
+  - {year: 1474, event: "Qaitbay's funerary complex", cell: north_africa_arts_500_1500}
+  - {year: 1476, event: "Plague from Aleppo reaches Egypt", cell: north_africa_society_500_1500}
+  - {year: 1477, event: "Wakala of Qaytbay by al-Azhar", cell: north_africa_economy_500_1500}
+  - {year: 1479, event: "Qaitbay's public fountain with a Qur'an school", cell: north_africa_arts_500_1500}
+  - {year: 1480, event: "Qaitbay restores the dome of Imam al-Shafi'i", cell: north_africa_arts_500_1500}
+  - {year: 1481, event: "Mosque of Qijmas al-Ishaqi", cell: north_africa_arts_500_1500}
+  - {year: 1492, event: "Great plague in Cairo", cell: north_africa_society_500_1500}
+  - {year: 1495, event: "Qaitbay's minaret at al-Azhar", cell: north_africa_arts_500_1500}
+  - {year: 1495, event: "Sibt al-Maridini, timekeeper of al-Azhar, dies", cell: north_africa_science_500_1500}
+  - {year: 1505, event: "Sultan al-Ghuri's complex", cell: north_africa_arts_1500_1800}
+  - {year: 1505, event: "Wikala of al-Ghuri", cell: north_africa_arts_1500_1800}
+  - {year: 1505, event: "Al-Suyuti dies in his Nile garden retreat", cell: north_africa_religion_1500_1800}
+  - {year: 1506, event: "Al-Ghuri rebuilds the Citadel aqueduct", cell: north_africa_science_1500_1800}
+  - {year: 1509, event: "Al-Ghuri's double-topped minaret at al-Azhar", cell: north_africa_arts_1500_1800}
+  - {year: 1511, event: "Al-Ghuri rebuilds Khan al-Khalili", cell: north_africa_arts_1500_1800}
+  - {year: 1513, event: "Plague in Cairo in the last Mamluk years", cell: north_africa_society_1500_1800}
+out_refs:
+  - {year: 1250, event: "Shajar al-Durr becomes sultan; Mamluks take power", reason: "national accession"}
+  - {year: 1251, event: "Aybak shuts the Bahri mamluk barracks on Rawda", reason: "national army"}
+  - {year: 1254, event: "Aybak has Aktay killed in the Citadel", reason: "court murder"}
+  - {year: 1257, event: "Aybak murdered in his bath; Shajar al-Durr killed", reason: "court murder"}
+  - {year: 1260, event: "Baybars becomes sultan", reason: "national accession"}
+  - {year: 1261, event: "Baybars installs an Abbasid caliph in Cairo", reason: "caliphal court"}
+  - {year: 1265, event: "Four chief judges appointed in Cairo", reason: "national judiciary"}
+  - {year: 1265, event: "Crusader captives from Caesarea and Arsuf paraded through Cairo", reason: "foreign war triumph"}
+  - {year: 1279, event: "Qalawun becomes sultan", reason: "national accession"}
+  - {year: 1280, event: "Coptic scribes dismissed from the war office", reason: "national administration"}
+  - {year: 1290, event: "Al-Ashraf Khalil becomes sultan", reason: "national accession"}
+  - {year: 1300, event: "Church of Saint Mercurius becomes the seat of the Coptic pope", reason: "patriarchate"}
+  - {year: 1301, event: "Dress decree for Christians and Jews", reason: "national law"}
+  - {year: 1306, event: "Ibn Taymiyya tried in Cairo and jailed in the Citadel", reason: "national court case"}
+  - {year: 1315, event: "Nasiri land survey", reason: "national law"}
+  - {year: 1323, event: "Qawsun forces Amir Sunqur Sa'di to leave Egypt", reason: "court rivalry"}
+  - {year: 1341, event: "Death of al-Nasir Muhammad; succession fights", reason: "court event"}
+  - {year: 1366, event: "Yalbugha's naval review on the Nile at Cairo", reason: "national army"}
+  - {year: 1382, event: "Barquq takes the throne", reason: "national accession"}
+  - {year: 1412, event: "Shaykh takes the sultanate", reason: "national accession"}
+  - {year: 1426, event: "King Janus of Cyprus brought captive to Cairo", reason: "foreign war triumph"}
+  - {year: 1428, event: "Barsbay's pepper monopoly", reason: "national trade law"}
+  - {year: 1453, event: "Inal orders celebrations in Cairo for the fall of Constantinople", reason: "court ceremony"}
+  - {year: 1458, event: "Inal receives James II of Cyprus in the Citadel palace", reason: "court event"}
+  - {year: 1468, event: "Qaitbay becomes sultan", reason: "national accession"}
+  - {year: 1481, event: "Qaitbay gives the Ottoman prince Cem refuge in Cairo", reason: "court event"}
+  - {year: 1501, event: "Qansuh al-Ghuri becomes sultan", reason: "national accession"}
+  - {year: 1516, event: "Al-Ghuri leaves Cairo for Syria with the army", reason: "national army"}
+  - {year: 1516, event: "Tuman Bay proclaimed sultan in Cairo", reason: "national accession"}
