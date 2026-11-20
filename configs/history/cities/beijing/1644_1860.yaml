@@ -1,0 +1,761 @@
+# City: Beijing x 1644 to 1860 (the Qing capital to the Second Opium War). DRAFT 2026-11-20.
+# Area: Beijing Municipality (old Inner and Outer cities, Western Hills, Summer Palaces, Changping Ming Tombs,
+# Tongzhou, Miyun, Fangshan, Yanqing). Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). The Qing court (accessions,
+# funerals, embassies, treaties, empire-wide decrees and projects) -> out_refs. World-grid events -> world_refs.
+# Dates: memory pass + web check (42 searches; no unauthorised book copies).
+# Main sources: en and zh Wikipedia (wikipedia.org), Beijing city and news pages (visitbeijing, bjd.com.cn),
+# London Gazette, Qing shi jishi benmo (Wikisource), journal pages.
+# Lunar dates late in a Chinese year are converted to the CE year of the day.
+# A building -> start of work unless the text says "finished", "opens" or "consecrated".
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1644, peg: warrior, confidence: high, source: "zh WP: Forbidden City",
+     event: "Li Zicheng sets fire to the Forbidden City palaces as he leaves; only Wuying Hall and a few halls survive",
+     place: "Forbidden City",
+     scene: "A retreating WARRIOR of Li Zicheng throws torches into the Forbidden City halls, and only Wuying Hall stands above the flames."}
+  - {year: 1644, peg: warrior, confidence: unverified,
+     event: "Li Zicheng's Shun soldiers torture Ming officials in their houses to take their silver",
+     place: "officials' houses, Inner City",
+     scene: "A Shun WARRIOR squeezes a Ming minister in a wooden press in his own courtyard until silver ingots drop from his sleeves."}
+  - {year: 1644, peg: warrior, confidence: medium, source: "Baqi tongzhi (Wikisource search)",
+     event: "Qing set up the South and North patrol battalions to police the capital",
+     place: "Outer City streets",
+     scene: "A Manchu WARRIOR splits the capital's streets with one sword stroke into the beats of the new South and North patrol battalions."}
+  - {year: 1657, peg: log, confidence: medium, source: "Baqi tongzhi (Wikisource search)",
+     event: "A Middle battalion joins the capital's patrol battalions",
+     place: "Inner City",
+     scene: "A heavy LOG rolls into the gap between the North and South patrol camps and becomes the new Middle battalion's barracks."}
+  - {year: 1673, peg: comb, confidence: unverified,
+     event: "Yang Qilong, a false Third Prince of the Ming, plans a rising in Beijing; officials find the plot and crush it",
+     place: "Inner City",
+     scene: "Yang Qilong's men hide a Ming crown in a COMB, but the guards rake out the plot two days before the rising."}
+  - {year: 1727, peg: ink, confidence: medium, source: "UZH China-West chronology: Eluosi guan",
+     event: "Russian Hostel compound for Russian envoys and the church mission is set up",
+     place: "Dongjiaominxiang",
+     scene: "Russian envoys pour INK over a plan of Dongjiaominxiang and draw the walls of their new Russian Hostel."}
+  - {year: 1729, peg: knob, confidence: medium, source: "163.com: Bujun tongling yamen history",
+     event: "The capital's gendarmerie office takes the formal name Office of the Infantry Commander",
+     place: "Nine Gates",
+     scene: "The Infantry Commander screws a brass KNOB with his new title onto the gendarmerie office door at the Nine Gates."}
+  - {year: 1748, peg: reef, confidence: high, source: "zh WP: Tuancheng Yanwuting",
+     event: "Tuancheng drill ground and the Scaling Ladder Battalion are set up in the Western Hills",
+     place: "Tuancheng, Fragrant Hills",
+     scene: "Soldiers of the new Scaling Ladder Battalion climb stone towers built like a REEF below the Tuancheng drill ground."}
+  - {year: 1761, peg: jet, confidence: high, source: "zh WP: Tuancheng Yanwuting",
+     event: "A stele in four languages at Tuancheng praises the Scaling Ladder Battalion",
+     place: "Tuancheng",
+     scene: "A JET of ink sprays four scripts, Han, Manchu, Mongol and Tibetan, onto the Tuancheng stele that praises the ladder soldiers."}
+  - {year: 1766, peg: judge, confidence: medium, source: "visitbeijing: Yongdingmen (one source 1750)",
+     event: "Yongding Gate is rebuilt with a gate tower, an arrow tower and a barbican",
+     place: "Yongdingmen",
+     scene: "A JUDGE in red robes orders an arrow tower and a barbican added to Yongding Gate, and bricklayers obey his gavel."}
+  - {year: 1781, peg: foot, confidence: medium, source: "Baqi tongzhi (Wikisource search)",
+     event: "The capital's patrol force is fixed at five battalions",
+     place: "Outer City",
+     scene: "A giant FOOT with five toes stamps the city map, and each toe becomes one of the five patrol battalions."}
+  - {year: 1803, peg: sumo, confidence: high, source: "zh WP: History of Beijing",
+     event: "Chen De attacks the Jiaqing Emperor with a knife at a palace gate",
+     place: "Shenwu Gate",
+     scene: "A SUMO guard throws himself on the cook Chen De as his knife flashes at the Jiaqing Emperor's sedan at the palace gate."}
+  - {year: 1813, peg: tomb, confidence: unverified,
+     event: "Lin Qing, leader of the Tianli sect attack on the palace, is executed by slicing",
+     place: "execution ground, Outer City",
+     scene: "Executioners slice Lin Qing on the execution ground and drop the pieces of the sect leader into an open TOMB."}
+  - {year: 1853, peg: llama, confidence: high, source: "zh WP: History of Beijing",
+     event: "Taiping Northern Expedition: martial law, panic and mass flight in Beijing; rice prices jump",
+     place: "city gates",
+     scene: "Panicked families load a LLAMA with rice sacks and squeeze out through the gate as martial law closes Beijing."}
+  - {year: 1859, peg: elbow, confidence: high, source: "Qing shi jishi benmo (Wikisource)",
+     event: "Grand Secretary Bojun is beheaded for the bribery scandal of the capital examination",
+     place: "execution ground, Outer City",
+     scene: "The executioner's ELBOW swings down and beheads Grand Secretary Bojun for selling places in the capital examination."}
+  - {year: 1860, peg: cheese, confidence: high, source: "zh WP: Battle of Baliqiao",
+     event: "Battle of Zhangjiawan: Anglo-French troops beat the Qing army south of Tongzhou",
+     place: "Zhangjiawan, Tongzhou",
+     scene: "Anglo-French cannonballs made of CHEESE roll through Zhangjiawan and scatter the Qing lines south of Tongzhou."}
+  - {year: 1860, peg: cheese, confidence: high, source: "en WP: Old Summer Palace",
+     event: "Qing troops seize Harry Parkes and his party under a truce near Tongzhou; many die under torture",
+     place: "Tongzhou; Board of Punishments prison",
+     scene: "Sengge Rinchen's men tie Harry Parkes to a cart of CHEESE and drag the truce party to the Board of Punishments prison."}
+  - {year: 1860, peg: cheese, confidence: high, source: "zh WP: Battle of Baliqiao",
+     event: "Battle of Baliqiao: the allies take the Eight Li Bridge and rout Sengge Rinchen's cavalry",
+     place: "Baliqiao, Tongzhou",
+     scene: "Allied gunners build a wall of CHEESE wheels on the Eight Li Bridge, and Sengge Rinchen's cavalry break against it."}
+  - {year: 1860, peg: cheese, confidence: high, source: "en WP: Old Summer Palace",
+     event: "French and British troops enter the Yuanmingyuan and loot it for days",
+     place: "Yuanmingyuan",
+     scene: "French soldiers fill their packs like CHEESE graters, scraping gold, jade and silk from the Yuanmingyuan halls for days."}
+  - {year: 1860, peg: cheese, confidence: high, source: "London Gazette, Oct 1860 dispatches",
+     event: "Prince Gong opens the Anding Gate; allied troops take it and the city surrenders",
+     place: "Anding Gate",
+     scene: "Prince Gong hands a wheel of CHEESE through the Anding Gate, and two hundred allied troops march in to hold it."}
+
+  # science
+  - {year: 1662, peg: chain, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Lugou (Marco Polo) Bridge is repaired",
+     place: "Lugou Bridge",
+     scene: "Masons haul new granite blocks onto Lugou Bridge with an iron CHAIN and fit them between the stone lions."}
+  - {year: 1668, peg: chef, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "A stele recording the repair of Lugou Bridge is set up at its east end",
+     place: "Lugou Bridge, east end",
+     scene: "A CHEF carves the bridge repair record into a stone slab like a cake and stands it at Lugou Bridge's east end."}
+  - {year: 1668, peg: chef, confidence: high, source: "zh WP: Beijing Ancient Observatory",
+     event: "Ming astronomical instruments come back from Nanjing to the Beijing observatory; some are melted down",
+     place: "Ancient Observatory, Jianguomen",
+     scene: "A CHEF melts Nanjing's old bronze armillary in a cooking pot on the observatory platform to cast new instruments."}
+  - {year: 1669, peg: ship, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Lugou Bridge is repaired again after flood damage",
+     place: "Lugou Bridge",
+     scene: "A flood-borne SHIP rams Lugou Bridge, and workers patch the broken arches around its wrecked hull."}
+  - {year: 1698, peg: beehive, confidence: high, source: "CUHK J. Chinese Studies; bjd.com.cn",
+     event: "First dykes on the Wuding River; Kangxi renames it the Yongding (Ever Calm) River",
+     place: "Yongding River near Lugou",
+     scene: "A BEEHIVE of dyke workers walls in the wild Wuding River, and Kangxi writes its calm new name, Yongding, on the bank."}
+  - {year: 1715, peg: doll, confidence: high, source: "zh WP: Beijing Ancient Observatory",
+     event: "Kilian Stumpf's altazimuth instrument is added to the observatory, and the platform is enlarged",
+     place: "Ancient Observatory",
+     scene: "Kilian Stumpf sets a bronze DOLL on the new altazimuth at the observatory, and its arms swing to measure star heights."}
+  - {year: 1724, peg: hanger, confidence: high, source: "zh WP: Beijing Ancient Observatory",
+     event: "The observatory starts daily weather records, kept for nearly two centuries",
+     place: "Ancient Observatory",
+     scene: "Astronomers hang each day's rain and wind notes on a HANGER at the observatory, and the weather record begins."}
+  - {year: 1729, peg: knob, confidence: high, source: "visitbeijing: forty-li stone road",
+     event: "Work begins on the stone road from Chaoyang Gate to Tongzhou for grain carts",
+     place: "Chaoyang Gate to Tongzhou",
+     scene: "A giant stone KNOB rolls from Chaoyang Gate to Tongzhou and flattens a paved road behind it for the grain carts."}
+  - {year: 1732, peg: moon, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Yongzheng's repair of Lugou Bridge",
+     place: "Lugou Bridge",
+     scene: "Masons repair Lugou Bridge's worn arches by the light of a full MOON reflected in the Yongding River."}
+  - {year: 1733, peg: mummy, confidence: high, source: "visitbeijing: forty-li stone road",
+     event: "Yongzheng's stele for the Tongzhou stone road is set up",
+     place: "Tongzhou",
+     scene: "A MUMMY wrapped in road maps stands up as the Tongzhou stone road stele, carved with Yongzheng's own words."}
+  - {year: 1749, peg: rope, confidence: medium, source: "en WP: Summer Palace",
+     event: "West Lake is dug out and enlarged into Kunming Lake, a reservoir for the capital; the spoil raises Longevity Hill",
+     place: "Kunming Lake",
+     scene: "Diggers haul mud baskets on a long ROPE out of West Lake, making Kunming Lake and heaping up Longevity Hill."}
+  - {year: 1752, peg: lion, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Qianlong's repair of Lugou Bridge",
+     place: "Lugou Bridge",
+     scene: "A carved stone LION on Lugou Bridge wakes up and helps the masons lift new slabs into the worn deck."}
+  - {year: 1757, peg: log, confidence: medium, source: "visitbeijing (one source)",
+     event: "The Chaoyang Gate to Tongzhou stone road is rebuilt",
+     place: "Chaoyang Gate road",
+     scene: "Workers roll each new paving stone over a LOG to rebuild the worn Chaoyang Gate to Tongzhou road."}
+  - {year: 1771, peg: cat, confidence: high, source: "zh WP: Beijing Ancient Observatory",
+     event: "Two Ming celestial globes at the observatory are melted and recast as two bronze lions",
+     place: "Ancient Observatory",
+     scene: "A CAT pushes two old Ming star globes into the furnace, and two bronze lions climb out of the mould."}
+  - {year: 1785, peg: waffle, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Major repair of Lugou Bridge begins",
+     place: "Lugou Bridge",
+     scene: "Masons press a WAFFLE-pattern iron frame into Lugou Bridge's cracked deck and fill it with new granite."}
+  - {year: 1786, peg: fish, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "A stele recording the Lugou Bridge repair is set up at its west end",
+     place: "Lugou Bridge, west end",
+     scene: "A giant FISH leaps from the Yongding River and lands upright as the repair stele at the west end of Lugou Bridge."}
+  - {year: 1800, peg: sauce, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "An edict forbids officials at Lugou Bridge to take more than the legal toll",
+     place: "Lugou Bridge",
+     scene: "Toll clerks at Lugou Bridge must spill back every extra coin like SAUCE, as the edict allows only the legal toll."}
+
+  # religion
+  - {year: 1645, peg: railway, confidence: high, source: "zh WP: Wanshou Temple (Beijing)",
+     event: "Wanshou Temple is renamed the Imperially Built Wanshou Temple that Protects the Nation",
+     place: "Wanshou Temple, Haidian",
+     scene: "A RAILWAY sign painter rewrites Wanshou Temple's gate board with its new name, Imperially Built Temple that Protects the Nation."}
+  - {year: 1650, peg: lasso, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "Adam Schall starts to rebuild the church at Xuanwu Gate (the South Church)",
+     place: "Xuanwumen",
+     scene: "Adam Schall throws a LASSO round the old chapel at Xuanwu Gate and pulls it down to build the South Church."}
+  - {year: 1651, peg: wallet, confidence: high, source: "en WP: Beihai Park",
+     event: "The White Dagoba is built on Jade Flower Island to honour the Fifth Dalai Lama's visit",
+     place: "Jade Flower Island, Beihai",
+     scene: "A white WALLET puffs up into a bottle-shaped stupa on Jade Flower Island to welcome the Fifth Dalai Lama."}
+  - {year: 1651, peg: wallet, confidence: high, source: "zh WP: Xihuang Temple",
+     event: "Shunzhi orders the Western Yellow Temple built to house the Fifth Dalai Lama",
+     place: "Xihuang Temple, Andingmen",
+     scene: "The Dalai Lama's yellow WALLET unfolds into the halls of the Western Yellow Temple north of Anding Gate."}
+  - {year: 1651, peg: wallet, confidence: high, source: "zh WP: Wangfujing Church",
+     event: "Freed Jesuits Buglio and Magalhaes build a small chapel, start of the East Church",
+     place: "Wangfujing",
+     scene: "Two freed Jesuit slaves empty Zheng Zhilong's WALLET into bricks for a small chapel, the first East Church at Wangfujing."}
+  - {year: 1651, peg: wallet, confidence: high, source: "zh WP: Dongyue Temple (Beijing)",
+     event: "The Hall of the Bingling Duke at the Dongyue Temple is restored",
+     place: "Dongyue Temple, Chaoyangmen",
+     scene: "A lost WALLET found in the Dongyue Temple pays the painters who restore the Hall of the Bingling Duke."}
+  - {year: 1652, peg: lion, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "Schall's rebuilt South Church is finished; Shunzhi visits it often",
+     place: "Xuanwumen",
+     scene: "A stone LION opens the doors of Schall's finished South Church, and the young Shunzhi walks in again and again."}
+  - {year: 1655, peg: lily, confidence: high, source: "zh WP: Forbidden City",
+     event: "Kunning Palace is rebuilt on the Shenyang model for Manchu shaman rites",
+     place: "Kunning Palace",
+     scene: "Manchu shamans plant a LILY spirit pole in the rebuilt Kunning Palace and boil sacrifice pots in the Shenyang style."}
+  - {year: 1662, peg: chain, confidence: high, source: "zh WP: Wangfujing Church",
+     event: "The first European-style East Church is finished",
+     place: "Wangfujing",
+     scene: "Builders lift the stone cross onto the new European-style East Church with a CHAIN, the first on the site."}
+  - {year: 1665, peg: jelly, confidence: high, source: "zh WP: Wangfujing Church",
+     event: "The East Church is torn down in the anti-Christian wave after Yang Guangxian's charges",
+     place: "Wangfujing",
+     scene: "Yang Guangxian's men smear the East Church walls with JELLY, push them over and leave the Jesuits a ruin."}
+  - {year: 1676, peg: cage, confidence: high, source: "zh WP: Niujie Mosque",
+     event: "The Niujie Mosque is repaired",
+     place: "Niujie",
+     scene: "Hui craftsmen build a bamboo CAGE of scaffold round the Niujie Mosque and renew its worn roofs."}
+  - {year: 1680, peg: vase, confidence: high, source: "en WP: Beihai Park",
+     event: "The White Dagoba, thrown down by the earthquake, is rebuilt",
+     place: "Jade Flower Island, Beihai",
+     scene: "Workers glue the broken White Dagoba together like a white VASE and stand it again on Jade Flower Island."}
+  - {year: 1685, peg: waffle, confidence: high, source: "zh WP: Wanshou Temple (Beijing)",
+     event: "Kangxi rebuilds the Wanshou Temple and adds a western travelling palace, nearly doubling it",
+     place: "Wanshou Temple",
+     scene: "Kangxi stamps a WAFFLE iron on the Wanshou Temple plan, and a second grid of halls doubles the temple westward."}
+  - {year: 1685, peg: waffle, confidence: medium, source: "theworldofchinese: Albazinians; orthodox.cn",
+     event: "Albazin Cossack captives settle by Dongzhi Gate and get a temple as their Saint Nicholas chapel",
+     place: "Dongzhimen, Northern Compound",
+     scene: "Albazin Cossacks share a WAFFLE breakfast in a borrowed temple by Dongzhi Gate and hang their Saint Nicholas icon."}
+  - {year: 1693, peg: palm, confidence: high, source: "zh WP: Xishiku Church",
+     event: "Kangxi gives French Jesuits land near the West Gate of the Imperial City after they cure his fever",
+     place: "Canchikou, Imperial City",
+     scene: "Kangxi opens his PALM and drops a deed for land in the Imperial City into the French Jesuits' hands."}
+  - {year: 1694, peg: bear, confidence: high, source: "zh WP: Niujie Mosque",
+     event: "Kangxi clears the Niujie Hui of a false rebellion charge; a plaque at the mosque records it",
+     place: "Niujie Mosque",
+     scene: "A BEAR tears up the false rebellion charge against the Niujie Hui, and Kangxi's edict plaque hangs in their mosque."}
+  - {year: 1696, peg: peach, confidence: high, source: "zh WP: Niujie Mosque",
+     event: "Kangxi's overhaul of the Niujie Mosque is finished; the gate gets an imperial plaque",
+     place: "Niujie Mosque",
+     scene: "An imperial PEACH-wood plaque, Imperially Bestowed Mosque, goes up over the gate of the finished Niujie Mosque."}
+  - {year: 1698, peg: beehive, confidence: disputed, source: "orthodox.cn: 1698; another source: 1696",
+     event: "The Albazinians' Saint Sophia church is consecrated",
+     place: "Northern Compound, Dongzhimen",
+     scene: "Father Maxim sprinkles holy water over a BEEHIVE-shaped dome and consecrates the Albazinians' Saint Sophia church."}
+  - {year: 1702, peg: sun, confidence: high, source: "zh WP: Dongyue Temple (Beijing)",
+     event: "Rebuilding of the burned Dongyue Temple is finished with Kangxi's money",
+     place: "Dongyue Temple",
+     scene: "The SUN rises on the Dongyue Temple, rebuilt with Kangxi's silver after the fire, and gilds its new roofs."}
+  - {year: 1703, peg: sumo, confidence: high, source: "zh WP: Xishiku Church",
+     event: "The French Jesuits' North Church opens at Canchikou",
+     place: "Canchikou, Imperial City",
+     scene: "A SUMO wrestler pushes open the doors of the French Jesuits' new North Church at Canchikou."}
+  - {year: 1703, peg: sumo, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "Work starts on a European-style South Church",
+     place: "Xuanwumen",
+     scene: "A SUMO wrestler lifts the old Chinese roof off the South Church so masons can start a European building."}
+  - {year: 1713, peg: tomb, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "The European-style South Church is finished after ten years",
+     place: "Xuanwumen",
+     scene: "Jesuits carry the plans out of a TOMB-like crypt and ring the bells of the finished European South Church."}
+  - {year: 1716, peg: dish, confidence: disputed, source: "orthodox.cn: 1716; other sources: 1715",
+     event: "The first Russian Ecclesiastical Mission under Hilarion Lezhaisky arrives in Beijing",
+     place: "Northern Compound",
+     scene: "Archimandrite Hilarion unpacks icons from a silver DISH at the Northern Compound, and the first Russian Mission begins."}
+  - {year: 1721, peg: ant, confidence: high, source: "zh WP: Xuanwumen and Wangfujing churches",
+     event: "With the Portuguese king's money, the South and East churches are rebuilt after the earthquake",
+     place: "Xuanwumen; Wangfujing",
+     scene: "A giant ANT carries Portuguese gold coins to the South and East churches and rebuilds both after the earthquake."}
+  - {year: 1723, peg: gnome, confidence: high, source: "zh WP: Xizhimen Church",
+     event: "Teodorico Pedrini buys land inside Xizhi Gate and builds the West Church",
+     place: "Xizhimen",
+     scene: "A GNOME sells Teodorico Pedrini a plot inside Xizhi Gate, and the musician priest builds the West Church on it."}
+  - {year: 1723, peg: gnome, confidence: high, source: "zh WP: Xihuang Temple",
+     event: "Mongol nobles and the Jebtsundamba Khutughtu give statues and scriptures; the Western Yellow Temple is renovated",
+     place: "Xihuang Temple",
+     scene: "A Mongol GNOME rides into the Western Yellow Temple on a camel loaded with statues and scriptures for its renovation."}
+  - {year: 1732, peg: moon, confidence: medium, source: "orthodox.cn: Chinese Messenger",
+     event: "The Russian Candlemas (Sretensky) church is consecrated at the Southern Compound",
+     place: "Dongjiaominxiang",
+     scene: "A crescent MOON on an onion dome lights the new Candlemas church at the Russian Southern Compound."}
+  - {year: 1733, peg: mummy, confidence: high, source: "visitbeijing: Juesheng Temple stele",
+     event: "Work begins on the Juesheng Temple (later the Big Bell Temple)",
+     place: "Juesheng Temple, Haidian",
+     scene: "A MUMMY of a monk lays the first stone of the Juesheng Temple by its stele, on a site chosen by feng shui."}
+  - {year: 1734, peg: hammer, confidence: high, source: "zh WP: Fayuan Temple (Beijing)",
+     event: "Fayuan Temple is overhauled, renamed and made the school of monastic discipline",
+     place: "Fayuan Temple, Xuannan",
+     scene: "A HAMMER knocks down the old name board, and the overhauled temple reopens as Fayuan, the school of monastic rules."}
+  - {year: 1734, peg: hammer, confidence: high, source: "visitbeijing: Wofo Temple; en WP",
+     event: "The Sleeping Buddha Temple is rebuilt and renamed Shifang Pujue Temple",
+     place: "Wofo Temple, Western Hills",
+     scene: "Yongzheng's HAMMER nails his own name board, Shifang Pujue, over the rebuilt Sleeping Buddha Temple."}
+  - {year: 1743, peg: ram, confidence: high, source: "zh WP: Wanshou Temple; visitbeijing",
+     event: "The great Yongle bell is moved from Wanshou Temple to Juesheng Temple",
+     place: "Juesheng Temple",
+     scene: "A giant RAM butts the huge Yongle bell along an ice road from Wanshou Temple to Juesheng Temple."}
+  - {year: 1746, peg: roach, confidence: medium, source: "bjnews: Beihai Chanfu Temple (one source)",
+     event: "Qianlong turns a hall on the north shore of Beihai into the Chanfu Temple",
+     place: "Beihai north shore",
+     scene: "A ROACH scuttles out as Qianlong turns the old north-shore hall of Beihai into the Buddhist Chanfu Temple."}
+  - {year: 1748, peg: reef, confidence: high, source: "ctrip; visitbeijing: Biyun Temple",
+     event: "The Diamond Throne Pagoda of the Biyun (Azure Clouds) Temple is built",
+     place: "Biyun Temple, Fragrant Hills",
+     scene: "Five white spires rise like a coral REEF on the Diamond Throne Pagoda at the Azure Clouds Temple."}
+  - {year: 1749, peg: rope, confidence: medium, source: "sohu: Temple of Heaven; en WP gives 1740",
+     event: "The Circular Mound Altar is enlarged and paved with new stone and white marble",
+     place: "Temple of Heaven",
+     scene: "Surveyors stretch a ROPE round the Circular Mound Altar to mark its larger white marble rings."}
+  - {year: 1751, peg: wallet, confidence: high, source: "Temple of Heaven site via search",
+     event: "The Hall of Great Offerings is renamed the Hall of Prayer for Good Harvests and gets all-blue tiles",
+     place: "Temple of Heaven",
+     scene: "A blue WALLET swallows the three-colour roof tiles, and the renamed Hall of Prayer for Good Harvests comes out all blue."}
+  - {year: 1751, peg: wallet, confidence: high, source: "zh WP: Wanshou Temple (Beijing)",
+     event: "Qianlong restores and enlarges the Wanshou Temple for his mother's sixtieth birthday",
+     place: "Wanshou Temple",
+     scene: "A birthday WALLET bursts open over the Wanshou Temple, and new halls rise for Qianlong's mother at sixty."}
+  - {year: 1761, peg: jet, confidence: high, source: "zh WP: Wanshou Temple (Beijing)",
+     event: "A second rebuilding for the empress dowager's seventieth birthday brings the Wanshou Temple to its largest size",
+     place: "Wanshou Temple",
+     scene: "A JET of yellow glaze coats the new roofs as the Wanshou Temple reaches its largest size for the dowager's birthday."}
+  - {year: 1761, peg: jet, confidence: high, source: "zh WP: Dongyue Temple (Beijing)",
+     event: "A major renovation of the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "A JET of paint from a fire pump renews the faded hell-court statues during the Dongyue Temple's great renovation."}
+  - {year: 1770, peg: goose, confidence: high, source: "visitbeijing: Beihai Wanfolou",
+     event: "The Pavilion of Ten Thousand Buddhas is built at Beihai for the empress dowager's eightieth birthday",
+     place: "Beihai, west of Chanfu Temple",
+     scene: "A golden GOOSE lays ten thousand little Buddhas into the niches of the new Beihai pavilion for the dowager's birthday."}
+  - {year: 1771, peg: cat, confidence: high, source: "zh WP: Xihuang Temple",
+     event: "The Western Yellow Temple is renovated at the Changkya Khutughtu's request",
+     place: "Xihuang Temple",
+     scene: "The Changkya lama's CAT scratches the old paint from the Western Yellow Temple, and painters renew it."}
+  - {year: 1778, peg: cave, confidence: high, source: "zh WP: Fayuan Temple (Beijing)",
+     event: "A major renovation of the Fayuan Temple begins; Qianlong later gives it a plaque",
+     place: "Fayuan Temple",
+     scene: "Monks crawl out of a CAVE of scaffolds as the Fayuan Temple renovation starts under Qianlong's patronage."}
+  - {year: 1780, peg: vase, confidence: high, source: "chinanews: Zhaomiao; en WP: Fragrant Hills Pagoda",
+     event: "The Zhao Temple and its glazed-tile pagoda are built at the Fragrant Hills for the Sixth Panchen Lama",
+     place: "Zhaomiao, Fragrant Hills",
+     scene: "A glazed VASE grows into a seven-storey pagoda beside the Tibetan-style Zhao Temple built for the Panchen Lama."}
+  - {year: 1782, peg: oven, confidence: high, source: "zh WP: Xihuang Temple",
+     event: "The Qingjing Huacheng stupa is built at the Western Yellow Temple for the dead Sixth Panchen Lama",
+     place: "Xihuang Temple",
+     scene: "Marble carvers bake the Panchen Lama's robes in an OVEN and seal the ashes inside the white Qingjing Huacheng stupa."}
+  - {year: 1807, peg: ski, confidence: high, source: "zh WP: Wangfujing Church",
+     event: "Fire in the East Church; the Qing seize the compound and pull the church down",
+     place: "Wangfujing",
+     scene: "Officials SKI down the smoking ruins of the East Church after the fire and pull its walls to the ground."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "zh WP: Xizhimen Church",
+     event: "The Qing expel four priests, pull down the West Church and seize its land",
+     place: "Xizhimen",
+     scene: "Officials TATTOO a seizure mark on the West Church gate, expel four priests and pull the church down."}
+  - {year: 1827, peg: ink, confidence: high, source: "zh WP: Xishiku Church",
+     event: "The Qing seal the North Church at Canchikou and seize all its property",
+     place: "Canchikou",
+     scene: "A magistrate brushes INK seals across the North Church doors at Canchikou and seizes everything inside."}
+  - {year: 1838, peg: movie, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "The Qing seize the South Church and ban Catholic worship in it",
+     place: "Xuanwumen",
+     scene: "The last MOVIE of a Catholic Mass flickers out as Qing officials lock the South Church at Xuanwu Gate."}
+  - {year: 1860, peg: cheese, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "The South Church is given back after the war and Bishop Mouly reopens it",
+     place: "Xuanwumen",
+     scene: "Bishop Mouly cuts a wheel of CHEESE on the altar to celebrate the South Church given back and reopened."}
+
+  # arts
+  - {year: 1651, peg: wallet, confidence: high, source: "ifeng; visitbeijing: Tiananmen",
+     event: "Chengtian Gate is rebuilt and renamed Tiananmen, Gate of Heavenly Peace",
+     place: "Tiananmen",
+     scene: "Shunzhi stamps the name Tiananmen on a red WALLET and hangs it as the name board of the rebuilt Chengtian Gate."}
+  - {year: 1655, peg: lily, confidence: high, source: "zh WP: Jingshan Park",
+     event: "Wansui Hill north of the palace is renamed Jingshan",
+     place: "Jingshan",
+     scene: "A giant LILY blooms on the hill north of the palace, and its petals spell the new name Jingshan."}
+  - {year: 1667, peg: jockey, confidence: high, source: "zh WP: Forbidden City",
+     event: "Duan Gate, between Tiananmen and the Meridian Gate, is rebuilt",
+     place: "Duanmen",
+     scene: "A JOCKEY gallops through the rebuilt Duan Gate between Tiananmen and the Meridian Gate."}
+  - {year: 1671, peg: cat, confidence: unverified,
+     event: "Theatres are banned in the Inner City; playhouses gather outside Qianmen",
+     place: "Qianmen",
+     scene: "A CAT chases the actors out of the Inner City, and they set up their playhouses outside Qianmen."}
+  - {year: 1677, peg: cake, confidence: high, source: "zh WP: Jingyi Garden",
+     event: "Kangxi begins a travelling palace by the Xiangshan Temple in the Fragrant Hills",
+     place: "Fragrant Hills",
+     scene: "Kangxi cuts the first slice of a CAKE shaped like a hill and lays out his travelling palace in the Fragrant Hills."}
+  - {year: 1680, peg: vase, confidence: high, source: "zh WP: Jingming Garden",
+     event: "Kangxi begins the Chengxin Garden at Jade Spring Hill",
+     place: "Yuquan Hill",
+     scene: "Kangxi fills a VASE at the Jade Spring and pours it out to mark the lakes of his new Chengxin Garden."}
+  - {year: 1683, peg: foam, confidence: high, source: "zh WP: Forbidden City",
+     event: "Kangxi starts to rebuild the palace halls still in ruins since the fires of the conquest",
+     place: "Forbidden City",
+     scene: "Builders scrub the black soot from the ruined palace halls with soap FOAM as Kangxi's great rebuilding begins."}
+  - {year: 1684, peg: fairy, confidence: high, source: "en and zh WP: History of Beijing",
+     event: "Kangxi builds the Changchun Garden on the site of the Ming Qinghua Garden in Haidian",
+     place: "Haidian",
+     scene: "A FAIRY waves her wand over the old Ming Qinghua Garden in Haidian, and Kangxi's Changchun Garden appears."}
+  - {year: 1689, peg: fob, confidence: high, source: "zh WP: Ningshou Palace",
+     event: "Ningshou Palace is built in the east of the Forbidden City for the empress dowager",
+     place: "Ningshou Palace",
+     scene: "The empress dowager checks her watch FOB as builders finish the new Ningshou Palace for her in the east."}
+  - {year: 1692, peg: piano, confidence: high, source: "zh WP: Jingming Garden",
+     event: "The Chengxin Garden at Jade Spring Hill is renamed Jingming Garden",
+     place: "Yuquan Hill",
+     scene: "A PIANO rolls up Jade Spring Hill and plays a new tune, and the Chengxin Garden takes the name Jingming."}
+  - {year: 1694, peg: bear, confidence: high, source: "zh WP: Yonghe Temple",
+     event: "Kangxi builds a mansion for his son Yinzhen, the future Yonghe Palace",
+     place: "Yonghegong, northeast Inner City",
+     scene: "A BEAR carries roof beams for the new mansion of Prince Yinzhen, the house that later becomes the Yonghe Palace."}
+  - {year: 1695, peg: bell, confidence: medium, source: "visitbeijing: Taihe Hall (1695 to 1697)",
+     event: "Rebuilding of the Hall of Supreme Harmony begins",
+     place: "Taihe Hall, Forbidden City",
+     scene: "A BELL rings as the first new pillar rises for the burned Hall of Supreme Harmony."}
+  - {year: 1712, peg: tongue, confidence: high, source: "zh WP: Zhengyici",
+     event: "Zhengyici guild hall is enlarged with a large wooden opera stage",
+     place: "Zhengyici, Qianmen",
+     scene: "An actor's long TONGUE unrolls like a carpet across the new wooden opera stage of the Zhengyici guild hall."}
+  - {year: 1725, peg: nail, confidence: high, source: "zh WP: Old Summer Palace",
+     event: "Yongzheng begins the great expansion of the Yuanmingyuan with the Hall of Rectitude and Honour",
+     place: "Yuanmingyuan",
+     scene: "Yongzheng drives a golden NAIL into the first beam of the Hall of Rectitude and Honour in the Yuanmingyuan."}
+  - {year: 1725, peg: nail, confidence: high, source: "zh WP: Yonghe Temple",
+     event: "Yongzheng raises his old mansion to a palace and names it Yonghe Palace",
+     place: "Yonghegong",
+     scene: "Yongzheng hammers a NAIL through a gold board reading Yonghe Palace over the gate of his old princely mansion."}
+  - {year: 1735, peg: mill, confidence: high, source: "zh WP: Jingyi Garden",
+     event: "Yongzheng enlarges the Fragrant Hills travelling palace",
+     place: "Fragrant Hills",
+     scene: "A water MILL on the Fragrant Hills stream grinds stone for Yongzheng's larger travelling palace."}
+  - {year: 1737, peg: mug, confidence: high, source: "zh WP: Old Summer Palace",
+     event: "Qianlong moves into the Yuanmingyuan and starts a second expansion",
+     place: "Yuanmingyuan",
+     scene: "Qianlong raises a tea MUG on his first morning in the Yuanmingyuan and orders more halls and lakes."}
+  - {year: 1740, peg: horse, confidence: high, source: "zh WP: Forbidden City",
+     event: "Jianfu Palace, Chongfu Palace and the Rain Flower Pavilion are begun in the west of the Forbidden City",
+     place: "western Forbidden City",
+     scene: "A HORSE drags timbers into the west of the Forbidden City for the Jianfu Palace and the Rain Flower Pavilion."}
+  - {year: 1744, peg: warrior, confidence: high, source: "zh and en WP: Old Summer Palace",
+     event: "The expansion of the Yuanmingyuan reaches its Forty Scenes; court painters paint them in an album",
+     place: "Yuanmingyuan",
+     scene: "A WARRIOR guards forty painted silk leaves, each one of the Forty Scenes of the finished Yuanmingyuan."}
+  - {year: 1745, peg: railway, confidence: high, source: "zh WP: Jingyi Garden",
+     event: "Qianlong turns the Fragrant Hills palace into a great garden with Twenty-eight Scenes",
+     place: "Fragrant Hills",
+     scene: "A RAILWAY of carts climbs the Fragrant Hills and drops off twenty-eight scenic pavilions for Qianlong's garden."}
+  - {year: 1747, peg: rock, confidence: high, source: "zh WP: Jingyi Garden",
+     event: "Qianlong names the Fragrant Hills garden the Jingyi (Garden of Tranquillity)",
+     place: "Fragrant Hills",
+     scene: "Qianlong carves the name Jingyi, Garden of Tranquillity, into a ROCK at the Fragrant Hills gate."}
+  - {year: 1747, peg: rock, confidence: high, source: "en WP: Beihai Park",
+     event: "Rare calligraphy from the imperial collection is engraved in stone at Beihai's Pavilion of Reviewing the Past",
+     place: "Yuegulou, Beihai",
+     scene: "Carvers copy old masters' calligraphy onto ROCK slabs and line the walls of Beihai's Pavilion of Reviewing the Past."}
+  - {year: 1749, peg: rope, confidence: medium, source: "zh WP: Old Summer Palace (1749; also 1751)",
+     event: "The Changchun (Eternal Spring) Garden beside the Yuanmingyuan is finished",
+     place: "Changchunyuan",
+     scene: "Qianlong cuts a silk ROPE at the gate of the finished Eternal Spring Garden next to the Yuanmingyuan."}
+  - {year: 1749, peg: rope, confidence: high, source: "zh WP: Jingshan Park",
+     event: "Shouhuang Hall is rebuilt on the central axis north of Jingshan",
+     place: "Shouhuang Hall, Jingshan",
+     scene: "Surveyors stretch a ROPE along Beijing's central axis and rebuild Shouhuang Hall exactly on the line."}
+  - {year: 1750, peg: lasso, confidence: high, source: "zh WP: Jingshan Park",
+     event: "The five pavilions on the peaks of Jingshan are built",
+     place: "Jingshan",
+     scene: "A builder throws a LASSO over each of Jingshan's five peaks and pulls up a pavilion on every one."}
+  - {year: 1751, peg: wallet, confidence: high, source: "thepaper / guide: Xieqiqu",
+     event: "Xieqiqu, the first European-style palace of the Yuanmingyuan, is finished",
+     place: "Xiyanglou, Changchunyuan",
+     scene: "A baroque WALLET with marble scrolls unfolds into Xieqiqu, the first finished European palace of the Yuanmingyuan."}
+  - {year: 1751, peg: wallet, confidence: high, source: "zh WP: Lugou Bridge",
+     event: "Qianlong's Morning Moon over Lugou stele and pavilion are set up by the bridge",
+     place: "Lugou Bridge",
+     scene: "A moon-shaped jade WALLET becomes the carved top of Qianlong's Morning Moon over Lugou stele by the bridge."}
+  - {year: 1751, peg: wallet, confidence: high, source: "en WP: Summer Palace",
+     event: "Huishan Garden, a copy of Wuxi's Jichang Garden, is built in the Qingyi Garden",
+     place: "Xiequ Garden, Summer Palace",
+     scene: "A WALLET from Wuxi opens, and the whole Jichang Garden pours out below Longevity Hill as Huishan Garden."}
+  - {year: 1755, peg: lily, confidence: high, source: "en WP: Summer Palace",
+     event: "The Bronze Ox on Kunming Lake and the Bronze Pavilion are cast",
+     place: "Kunming Lake",
+     scene: "The Bronze Ox lies down among the LILY pads of Kunming Lake to guard the shore against floods."}
+  - {year: 1757, peg: log, confidence: medium, source: "bjnews: Jingxinzhai (one source)",
+     event: "Jingxinzhai, a garden within a garden, is built on the north shore of Beihai",
+     place: "Jingxinzhai, Beihai",
+     scene: "A LOG bridge leads the crown prince into Jingxinzhai, the new small study garden on Beihai's north shore."}
+  - {year: 1759, peg: elbow, confidence: high, source: "thepaper: Haiyantang",
+     event: "Haiyantang, the largest European palace, is finished with its twelve zodiac water clock fountain",
+     place: "Haiyantang, Xiyanglou",
+     scene: "The bronze rat lifts its ELBOW and spouts water, starting the twelve zodiac heads' clock at the finished Haiyantang."}
+  - {year: 1762, peg: chain, confidence: high, source: "en WP: Summer Palace",
+     event: "Suzhou Street, a copy of a canal shopping street, is built behind Longevity Hill",
+     place: "Suzhou Street, Summer Palace",
+     scene: "A CHAIN of shop fronts unrolls along the back lake of Longevity Hill as Suzhou Street for court shoppers."}
+  - {year: 1764, peg: cherry, confidence: high, source: "en WP: Summer Palace",
+     event: "The Qingyi Garden (later the Summer Palace) is finished",
+     place: "Summer Palace",
+     scene: "Qianlong puts a CHERRY on the Tower of Buddhist Incense like a cake, and the Qingyi Garden is finished."}
+  - {year: 1771, peg: cat, confidence: high, source: "zh WP: Ningshou Palace",
+     event: "Qianlong begins to rebuild the Ningshou Palace area as his retirement palace",
+     place: "Ningshou Palace",
+     scene: "Qianlong's CAT stretches out in the Ningshou courtyard as builders start his retirement palace and garden."}
+  - {year: 1772, peg: coin, confidence: high, source: "zh WP: Old Summer Palace",
+     event: "Several small gardens join to form the Qichun Garden",
+     place: "Qichunyuan, Yuanmingyuan",
+     scene: "Qianlong melts small garden plots into one big COIN and stamps it with the name Qichun Garden."}
+  - {year: 1772, peg: coin, confidence: high, source: "visitbeijing; stdaily: Changyinge",
+     event: "Work starts on the Changyinge, a three-storey opera stage in the Forbidden City",
+     place: "Changyinge, Ningshou Palace",
+     scene: "An actor drops a COIN through the trap doors of all three floors of the new Changyinge stage to test its machines."}
+  - {year: 1774, peg: car, confidence: high, source: "cbgc.scol.com.cn: Wei Changsheng",
+     event: "Qinqiang actor Wei Changsheng first comes to Beijing and fails",
+     place: "Outer City theatres",
+     scene: "Wei Changsheng rides into Beijing in a CAR full of costumes, but the theatre crowds stay away and he goes home."}
+  - {year: 1776, peg: cage, confidence: high, source: "zh WP: Ningshou Palace; Changyinge",
+     event: "Qianlong's Ningshou Palace and its Changyinge stage are finished",
+     place: "Ningshou Palace",
+     scene: "Qianlong opens a golden bird CAGE in the finished Ningshou garden, and the Changyinge stage starts its first play."}
+  - {year: 1776, peg: cage, confidence: high, source: "zh WP: Wenyuan Pavilion",
+     event: "The Wenyuan Pavilion is finished behind Wenhua Hall to hold the Complete Library of the Four Treasuries",
+     place: "Wenyuange, Forbidden City",
+     scene: "Librarians lock thousands of volumes into the black-tiled Wenyuan Pavilion like birds in a CAGE safe from fire."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "en WP: Wei Changsheng; cbgc.scol.com.cn",
+     event: "Wei Changsheng's Shuangqing troupe takes Beijing by storm with the Rolling Tower play",
+     place: "Outer City theatres",
+     scene: "Wei Changsheng ropes the Beijing audience like a COWBOY with his Rolling Tower play, and every theatre fills."}
+  - {year: 1780, peg: vase, confidence: high, source: "zh WP: Prince Gong Mansion",
+     event: "Heshen begins a mansion by Shichahai, the future Prince Gong Mansion",
+     place: "Shichahai",
+     scene: "Heshen fills a jade VASE with bribe silver and pours it into the foundations of his new mansion by Shichahai."}
+  - {year: 1783, peg: foam, confidence: high, source: "zh WP: Guozijian",
+     event: "A glazed-tile memorial arch is built inside the Jixian Gate of the Imperial Academy",
+     place: "Guozijian",
+     scene: "Green and yellow glaze FOAM covers the new memorial arch inside the Imperial Academy's Jixian Gate."}
+  - {year: 1785, peg: waffle, confidence: high, source: "en WP: Wei Changsheng",
+     event: "Qinqiang opera and Wei Changsheng are banned from Beijing",
+     place: "Outer City theatres",
+     scene: "Officials throw Wei Changsheng's costumes onto a WAFFLE iron and burn them as Qinqiang opera is banned from Beijing."}
+  - {year: 1788, peg: fife, confidence: high, source: "zh WP: Prince Gong Mansion",
+     event: "Heshen's mansion is largely finished",
+     place: "Shichahai",
+     scene: "Heshen plays a FIFE in his finished mansion garden by Shichahai while servants carry in his treasure."}
+  - {year: 1799, peg: pipe, confidence: high, source: "zh WP: Prince Gong Mansion",
+     event: "Jiaqing gives the seized Heshen mansion to Prince Qing, Yonglin",
+     place: "Shichahai",
+     scene: "Prince Yonglin lights a PIPE in Heshen's seized mansion, given to him by the new Jiaqing Emperor."}
+  - {year: 1809, peg: soap, confidence: high, source: "zh WP: Old Summer Palace",
+     event: "The Qichun Garden is enlarged with a western part",
+     place: "Qichunyuan",
+     scene: "Gardeners slide new pavilions on SOAP into the western part of the enlarged Qichun Garden."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "en WP: Summer Palace",
+     event: "Huishan Garden at the Qingyi Garden is renamed Xiequ Garden",
+     place: "Summer Palace",
+     scene: "Jiaqing puts a TATTOO of the new name, Xiequ, on the gate post of the old Huishan Garden."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "maigoo: Huguang Guild Hall (one source)",
+     event: "The Huguang Guild Hall is rebuilt with its opera stage",
+     place: "Huguang Guild Hall, Hufangqiao",
+     scene: "A MOUSE runs across the new opera stage of the rebuilt Huguang Guild Hall during the first play."}
+  - {year: 1852, peg: lion, confidence: high, source: "zh WP: Prince Gong Mansion",
+     event: "Prince Gong moves into the old Heshen mansion, from then the Prince Gong Mansion",
+     place: "Prince Gong Mansion, Shichahai",
+     scene: "A stone LION at the gate bows as Prince Gong moves in, and the old Heshen house becomes his mansion."}
+
+  # economy
+  - {year: 1667, peg: jockey, confidence: high, source: "zh WP: Zhengyici",
+     event: "Zhejiang silver-shop merchants found the Zhengyici guild hall for the wealth god",
+     place: "Zhengyici, Qianmen",
+     scene: "A Zhejiang silver dealer rides in like a JOCKEY with saddlebags of ingots and founds the Zhengyici guild hall."}
+  - {year: 1669, peg: ship, confidence: high, source: "zh WP: Beijing Tongrentang",
+     event: "Le Xianyang opens the Tongrentang medicine shop",
+     place: "Tongrentang, Dashilan",
+     scene: "Le Xianyang unloads a SHIP of herbs and opens the first Tongrentang medicine room in Beijing."}
+  - {year: 1669, peg: ship, confidence: low, source: "zh WP: Wang Zhihe (tradition)",
+     event: "Wang Zhihe opens his fermented tofu shop after he fails the examination (traditional date)",
+     place: "Outer City",
+     scene: "A failed scholar loads a SHIP with stinking fermented tofu, and Wang Zhihe's shop opens in Beijing."}
+  - {year: 1672, peg: coin, confidence: high, source: "zh WP: Rongbaozhai",
+     event: "Songzhuzhai stationery shop, the future Rongbaozhai, is founded in Liulichang",
+     place: "Liulichang",
+     scene: "A scholar pays one COIN for brushes at the new Songzhuzhai shop, the future Rongbaozhai, in Liulichang."}
+  - {year: 1698, peg: beehive, confidence: medium, source: "Harvard dissertation abstract (caravans)",
+     event: "Russian state caravans start to trade at Beijing",
+     place: "Russian Hostel",
+     scene: "Russian camels carry a BEEHIVE of furs into Beijing, and the first state caravan opens its stalls."}
+  - {year: 1702, peg: sun, confidence: high, source: "zh WP: Beijing Tongrentang",
+     event: "Tongrentang moves to the south side of Dashilan outside Qianmen",
+     place: "Dashilan",
+     scene: "Tongrentang's signboard is carried under the morning SUN to its new home on the south side of Dashilan."}
+  - {year: 1723, peg: gnome, confidence: high, source: "zh WP: Beijing Tongrentang",
+     event: "Tongrentang becomes supplier of medicines to the imperial palace",
+     place: "Dashilan",
+     scene: "A GNOME from the palace medicine office carries Tongrentang pills through the Forbidden City gate."}
+  - {year: 1738, peg: movie, confidence: high, source: "zh WP: Duyichu",
+     event: "Wang Ruifu from Shanxi opens a wine shop on Xianyukou, the future Duyichu restaurant",
+     place: "Xianyukou, Qianmen",
+     scene: "Wang Ruifu shows a MOVIE in his new wine shop on Xianyukou, and customers crowd the future Duyichu."}
+  - {year: 1738, peg: movie, confidence: medium, source: "maigoo: Tianfuhao",
+     event: "Liu Fengxiang opens the Tianfuhao sauced-meat shop near Xidan",
+     place: "Xidan",
+     scene: "A MOVIE star queues for a sauced pork knuckle at Liu Fengxiang's new Tianfuhao shop near Xidan."}
+  - {year: 1741, peg: radio, confidence: unverified,
+     event: "The Shaguoju pork restaurant opens by the Xisi",
+     place: "Xisi",
+     scene: "A RADIO announces that the Shaguoju restaurant at Xisi has opened, with its pork stewed in one huge clay pot."}
+  - {year: 1755, peg: lily, confidence: medium, source: "Toyo Bunko paper; Harvard abstract",
+     event: "The last Russian state caravan trades at Beijing; trade moves to Kyakhta",
+     place: "Russian Hostel",
+     scene: "The last Russian caravan lays a funeral LILY on its empty stalls in Beijing and turns north to Kyakhta."}
+  - {year: 1773, peg: comb, confidence: medium, source: "bjd.com.cn: Liulichang",
+     event: "Liulichang becomes a great book market as Four Treasuries scholars buy books there",
+     place: "Liulichang",
+     scene: "Four Treasuries scholars COMB the stalls of Liulichang for rare books, and the book market booms."}
+  - {year: 1775, peg: eagle, confidence: medium, source: "visitbeijing: Yueshengzhai",
+     event: "Ma Qingrui founds the Yueshengzhai sauced-beef shop",
+     place: "Qianmen",
+     scene: "An EAGLE swoops on Ma Qingrui's first tray of sauced beef at his new Yueshengzhai shop by Qianmen."}
+  - {year: 1780, peg: vase, confidence: high, source: "en and zh WP: History of Beijing",
+     event: "The Muslim restaurant Baikui opens beside the Longfu Temple",
+     place: "Longfu Temple",
+     scene: "A Hui cook serves lamb from a blue VASE at the new Baikui restaurant beside the Longfu Temple."}
+  - {year: 1785, peg: waffle, confidence: medium, source: "visitbeijing: Yitiaolong",
+     event: "Yitiaolong lamb hotpot restaurant opens outside Qianmen",
+     place: "Qianmen Street",
+     scene: "A cook lays mutton slices on a WAFFLE grid over the brass hotpot at the new Yitiaolong restaurant by Qianmen."}
+  - {year: 1807, peg: ski, confidence: high, source: "bjd.com.cn: Huguang Guild Hall",
+     event: "Officials from Hunan and Hubei found the Huguang Guild Hall",
+     place: "Hufangqiao",
+     scene: "Hunan and Hubei officials SKI down the snowy lane at Hufangqiao and found their Huguang Guild Hall."}
+  - {year: 1811, peg: tattoo, confidence: unverified,
+     event: "The Ma Juyuan hat shop is founded",
+     place: "Dashilan",
+     scene: "A hatter puts a TATTOO of the name Ma Juyuan on the felt of his first official hat at his new Dashilan shop."}
+  - {year: 1853, peg: llama, confidence: high, source: "zh WP: Neiliansheng",
+     event: "Neiliansheng shoe shop opens on Dongjiangmi Lane, making court boots",
+     place: "Dongjiangmi Lane",
+     scene: "A LLAMA tries on the first pair of black court boots at the new Neiliansheng shop in Dongjiangmi Lane."}
+  - {year: 1853, peg: llama, confidence: medium, source: "artron; ifeng: Xianfeng coinage",
+     event: "Beijing's two mints cast big-value coins, up to a thousand cash, and then iron cash",
+     place: "Board of Revenue mint",
+     scene: "A LLAMA kicks the Board of Revenue mint's press, and out drop huge coins marked a thousand cash."}
+
+  # society
+  - {year: 1644, peg: warrior, confidence: medium, source: "bjd.com.cn: Siling",
+     event: "Changping officials bury the Chongzhen Emperor and his empress in Consort Tian's tomb (later Siling)",
+     place: "Siling, Ming Tombs, Changping",
+     scene: "A Changping WARRIOR opens Consort Tian's tomb and lays the dead Chongzhen Emperor between his empress and consort."}
+  - {year: 1648, peg: reef, confidence: medium, source: "ancientwarhistory; ctext Dorgon entry",
+     event: "Han civilians must leave the Inner City; it becomes a banner quarter and they move to the Outer City",
+     place: "Inner City",
+     scene: "A REEF of banner tents fills the Inner City, and Han families carry their goods south to the Outer City."}
+  - {year: 1659, peg: elbow, confidence: high, source: "zh WP: Wanshou Temple (Beijing)",
+     event: "Fire destroys most of the Wanshou Temple",
+     place: "Wanshou Temple",
+     scene: "A monk knocks over a lamp with his ELBOW, and fire burns most of the Wanshou Temple except the east quarters."}
+  - {year: 1665, peg: jelly, confidence: high, source: "zh WP: Wangfujing Church",
+     event: "Beijing earthquake; the frightened court frees Verbiest and the jailed Jesuits",
+     place: "Board of Punishments prison",
+     scene: "The ground shakes like JELLY under the Board of Punishments, and the jailers free Verbiest and the Jesuits."}
+  - {year: 1679, peg: cowboy, confidence: medium, source: "visitbeijing; m.gmw.cn: Taihe Hall",
+     event: "Fire burns down the Hall of Supreme Harmony",
+     place: "Taihe Hall",
+     scene: "A careless COWBOY drops his torch in the Hall of Supreme Harmony, and the throne hall burns to the ground."}
+  - {year: 1685, peg: waffle, confidence: high, source: "zh WP: Jingshan Park",
+     event: "An official school for children of banner households opens by the north gate of Jingshan",
+     place: "Jingshan north gate",
+     scene: "Banner children eat a WAFFLE breakfast on their first day at the new Jingshan official school."}
+  - {year: 1688, peg: fife, confidence: unverified,
+     event: "Ferdinand Verbiest is buried in the Zhalan cemetery",
+     place: "Zhalan cemetery",
+     scene: "A court FIFE plays a slow tune as Ferdinand Verbiest is buried in the Zhalan cemetery beside Ricci."}
+  - {year: 1698, peg: beehive, confidence: high, source: "zh WP: Dongyue Temple (Beijing)",
+     event: "Fire destroys most of the central buildings of the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "A burning BEEHIVE falls from the eaves, and fire eats the central halls of the Dongyue Temple."}
+  - {year: 1708, peg: sofa, confidence: medium, source: "Tongwen Guan entry; Chinese scholars via search",
+     event: "The Russian language school opens to train banner interpreters",
+     place: "Inner City",
+     scene: "Banner students sit on a SOFA chanting Russian verbs in the new Russian language school."}
+  - {year: 1720, peg: nose, confidence: high, source: "zh WP: Wangfujing and Xuanwumen churches",
+     event: "The Shacheng earthquake shakes Beijing and throws down the East Church and damages the South Church",
+     place: "Wangfujing; Xuanwumen",
+     scene: "The earthquake hits the East Church on its NOSE, and the tower falls while the South Church cracks."}
+  - {year: 1766, peg: judge, confidence: unverified,
+     event: "Giuseppe Castiglione is buried in the Zhalan cemetery",
+     place: "Zhalan cemetery",
+     scene: "A JUDGE of painting lays a brush on the grave as Giuseppe Castiglione is buried in the Zhalan cemetery."}
+  - {year: 1775, peg: eagle, confidence: high, source: "zh WP: Xuanwumen Church",
+     event: "Fire damages the South Church; Qianlong gives ten thousand taels to restore it",
+     place: "Xuanwumen",
+     scene: "An EAGLE drops silver from Qianlong, ten thousand taels, into the smoking South Church at Xuanwu Gate."}
+  - {year: 1780, peg: vase, confidence: medium, source: "visitbeijing: Zhengyangmen fires",
+     event: "Fire burns the Zhengyang Gate tower",
+     place: "Zhengyangmen (Qianmen)",
+     scene: "A paper lantern VASE tips over in the Zhengyang Gate tower, and the gate burns above Qianmen Street."}
+  - {year: 1784, peg: fairy, confidence: high, source: "zh WP: Guozijian",
+     event: "The Biyong Hall, the emperor's lecture hall, is built at the Imperial Academy",
+     place: "Guozijian",
+     scene: "A FAIRY raises the square Biyong Hall in a round moat at the Imperial Academy for the emperor's lectures."}
+  - {year: 1797, peg: pig, confidence: high, source: "Qingshi gao; jgcm.ac.cn",
+     event: "Fire destroys the Palace of Heavenly Purity and the Hall of Union",
+     place: "Qianqing Palace",
+     scene: "A roast PIG over the palace kitchen fire sets the Palace of Heavenly Purity and the Hall of Union ablaze."}
+  - {year: 1797, peg: pig, confidence: high, source: "jgcm.ac.cn: Longfu Temple timbers",
+     event: "Longfu Temple's Zhenru Hall is pulled down to give timber for the burned palace",
+     place: "Longfu Temple",
+     scene: "A PIG drags the great beams of Longfu Temple's Zhenru Hall to the palace to rebuild the burned halls."}
+  - {year: 1801, peg: soda, confidence: high, source: "Kyoto Univ. paper; SpringerPlus",
+     event: "The Yongding River breaks its dyke near Lugou; floods drive refugees into Beijing and relief work follows",
+     place: "Lugou; Youanmen",
+     scene: "The Yongding River fizzes over the Lugou dyke like SODA, and flooded farmers crowd into Beijing for relief grain."}
+  - {year: 1821, peg: ant, confidence: medium, source: "Academia Sinica museum record",
+     event: "An epidemic in the capital delays the Shuntian examination by a month",
+     place: "Shuntian examination hall",
+     scene: "An ANT carries the sick candidates' brushes out of the Shuntian examination hall, and the epidemic pushes the exam back a month."}
+  - {year: 1836, peg: match, confidence: high, source: "zh WP: Dongyue Temple (Beijing)",
+     event: "Abbot Ma Yilin renovates the Dongyue Temple and opens a free school in it",
+     place: "Dongyue Temple",
+     scene: "Abbot Ma Yilin strikes a MATCH to light the lamps of the free school he opens in the Dongyue Temple."}
+
+world_refs:
+  - {year: 1644, event: "Beijing falls to Li Zicheng; the Chongzhen Emperor hangs himself", cell: east_asia_politics_1500_1800}
+  - {year: 1644, event: "Qing forces enter Beijing and make it their capital", cell: east_asia_politics_1500_1800}
+  - {year: 1644, event: "Qing mints in Beijing cast the first Shunzhi coins", cell: east_asia_economy_1500_1800}
+  - {year: 1644, event: "Beijing observatory gets new Jesuit instruments", cell: east_asia_science_1500_1800}
+  - {year: 1656, event: "Longmen ordinations at the White Cloud Temple", cell: east_asia_religion_1500_1800}
+  - {year: 1669, event: "Verbiest takes over the observatory after the gnomon test", cell: east_asia_science_1500_1800}
+  - {year: 1673, event: "Verbiest's six bronze instruments for the observatory", cell: east_asia_science_1500_1800}
+  - {year: 1674, event: "Verbiest casts cannons for Kangxi", cell: east_asia_science_1500_1800}
+  - {year: 1679, event: "Sanhe-Pinggu earthquake near Beijing", cell: east_asia_society_1500_1800}
+  - {year: 1689, event: "Palace of Eternal Life first Beijing performance", cell: east_asia_arts_1500_1800}
+  - {year: 1696, event: "Palace glass workshop founded", cell: east_asia_science_1500_1800}
+  - {year: 1709, event: "Yuanmingyuan garden site given to Prince Yinzhen", cell: east_asia_arts_1500_1800}
+  - {year: 1713, event: "Academy of Mathematics (Mengyangzhai)", cell: east_asia_science_1500_1800}
+  - {year: 1715, event: "Castiglione arrives in Beijing as court painter", cell: east_asia_arts_1500_1800}
+  - {year: 1730, event: "Beijing earthquake damages the capital", cell: east_asia_society_1500_1800}
+  - {year: 1744, event: "Yonghe Palace becomes a lamasery", cell: east_asia_religion_1500_1800}
+  - {year: 1744, event: "Qianlong orders a new armillary sphere for the observatory", cell: east_asia_science_1500_1800}
+  - {year: 1747, event: "European-style palaces begun at the Yuanmingyuan", cell: east_asia_arts_1500_1800}
+  - {year: 1747, event: "Benoist's fountain waterworks at the Yuanmingyuan", cell: east_asia_science_1500_1800}
+  - {year: 1750, event: "Garden of Clear Ripples (Summer Palace) built", cell: east_asia_arts_1500_1800}
+  - {year: 1754, event: "Hallerstein's armillary sphere at the observatory", cell: east_asia_science_1500_1800}
+  - {year: 1768, event: "Luo Qing's tomb at Miyun destroyed", cell: east_asia_religion_1500_1800}
+  - {year: 1775, event: "Jesuit suppression takes effect in Beijing", cell: east_asia_religion_1500_1800}
+  - {year: 1790, event: "Four Great Anhui Troupes reach Beijing", cell: east_asia_arts_1500_1800}
+  - {year: 1792, event: "Discourse on Lamas stele at the Yonghe Temple", cell: east_asia_religion_1500_1800}
+  - {year: 1813, event: "Eight Trigrams rebels enter the Forbidden City", cell: east_asia_politics_1800_1945}
+  - {year: 1828, event: "Hubei troupes join the Anhui troupes in Beijing", cell: east_asia_arts_1800_1945}
+  - {year: 1845, event: "Peking opera fully formed", cell: east_asia_arts_1800_1945}
+  - {year: 1860, event: "Allied troops burn the Summer Palace", cell: east_asia_politics_1800_1945}
+
+out_refs:
+  - {year: 1644, event: "Li Zicheng is enthroned in Wuying Hall before he flees", reason: "accession"}
+  - {year: 1644, event: "Dorgon holds a state funeral for the Chongzhen Emperor", reason: "imperial funeral"}
+  - {year: 1644, event: "Shunzhi enters the Forbidden City; Beijing becomes the Qing capital", reason: "accession and seat of the court"}
+  - {year: 1652, event: "The Fifth Dalai Lama visits Beijing and stays at the Western Yellow Temple", reason: "state visit"}
+  - {year: 1661, event: "Shunzhi is cremated at Jingshan", reason: "imperial funeral"}
+  - {year: 1726, event: "Yongzheng confines his brother Yinti at Jingshan", reason: "court affair"}
+  - {year: 1728, event: "Exam candidates must speak Beijing Mandarin", reason: "empire-wide examination rule"}
+  - {year: 1773, event: "Siku Quanshu office opens", reason: "empire-wide project"}
+  - {year: 1780, event: "The Sixth Panchen Lama dies at the Western Yellow Temple", reason: "state guest"}
+  - {year: 1782, event: "Qianlong's banquet for the Siku compilers in the Wenyuan Pavilion", reason: "court banquet"}
+  - {year: 1795, event: "Titsingh's Dutch embassy at the Yuanmingyuan", reason: "foreign embassy"}
+  - {year: 1796, event: "Thousand Elders Banquet in Huangji Hall", reason: "court banquet"}
+  - {year: 1821, event: "Jingshan opera troupes merged into the Nanfu", reason: "court office"}
+  - {year: 1827, event: "Nanfu renamed Shengpingshu", reason: "court office"}
+  - {year: 1860, event: "Xianfeng flees to Chengde", reason: "court flight"}
+  - {year: 1860, event: "Convention of Peking signed at the Board of Rites", reason: "treaty"}

@@ -440,3 +440,44 @@ October, New Cairo). Region: north_africa.
 | `1923_present` | the kingdom, the republic, the megacity | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Beijing (2026-11-20)
+
+Area: Beijing Municipality (user's choice): the old Inner and Outer cities, the Western Hills, the Summer
+Palaces, Zhoukoudian (Fangshan), the Ming Tombs (Changping), the Great Wall at Badaling, Mutianyu, Juyongguan
+and Simatai, Marco Polo Bridge (Lugou), Tongzhou (the Grand Canal's north end), Miyun, Pinggu, Yanqing.
+Region: east_asia.
+
+- Dates: give the CE year of the event itself. A lunar-calendar date late in a Chinese year can fall in
+  the next CE year; convert it (policy.md "Date conversion") and write the Chinese date in the source.
+- The OUT rule covers each court while the city is its seat: the Liao Southern Capital (938–1122) only
+  when the Liao court is there; the Jin court at Zhongdu (1153–1215); the Yuan court at Dadu (1267/1272–
+  1368); the Ming court (1421–1644, and the Yongle court at Beiping before 1421 for empire-wide acts);
+  the Qing court (1644–1911); the Beiyang government (1912–1928); the People's Republic (from 1949).
+  Leave out their accessions, court rituals, imperial examinations, decrees and laws for the whole
+  state, Party congresses and plenums, national elections and treaties. A ruler's palace, wall, gate,
+  temple, garden, canal, tomb or city plan is IN (the Forbidden City, the Temple of Heaven, the Ming
+  Tombs, the Summer Palaces, the 1950s ring roads).
+- 1928–1949 the capital is Nanjing (the city is Beiping, then occupied): national events in the city are
+  IN, except the occupiers' puppet governments' acts for the whole of north China (OUT).
+- Main stage (IN as cards): the Mongol siege and sack of Zhongdu (1214–1215), the Oirat siege after Tumu
+  (1449), Altan Khan's raid (1550), Li Zicheng's capture and the Qing entry (1644), the burning of the
+  Old Summer Palace (1860), the Boxer siege of the legations and the Allied occupation (1900–1901), the
+  May Fourth demonstrations (1919), the Marco Polo Bridge incident and the occupation (1937), the PLA's
+  entry (1949), the Red Guard rallies in Tiananmen Square (1966), the Tiananmen incident (1976), the
+  1989 protests and the crackdown, attacks in the city, the 2008 and 2022 Olympics.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1045bce` | Peking Man at Zhoukoudian, Upper Cave, Donghulin, Shangzhai, Xiajiadian | 25 | ~50 |
+| `1045bce_937` | Ji and Yan, Youzhou under Qin to Tang, An Lushan's base | 45 | ~120 |
+| `938_1271` | Liao Nanjing, Jin Zhongdu, the Mongol conquest | 45 | ~150 |
+| `1272_1420` | Yuan Dadu, Ming Beiping, Yongle's rebuilding | 45 | ~180 |
+| `1421_1643` | the Ming capital | 45 | ~250 |
+| `1644_1860` | the Qing capital to the Second Opium War | 45 | ~220 |
+| `1861_1927` | self-strengthening, the Boxers, the early Republic | 45 | ~220 |
+| `1928_1948` | Beiping, the Japanese occupation, the civil war | 45 | ~150 |
+| `1949_1976` | the People's Republic to the death of Mao | 45 | ~200 |
+| `1977_present` | reform, 1989, the Olympics, the megacity | 45 | ~250 |
+
+Expected cards are a guide, not a target.

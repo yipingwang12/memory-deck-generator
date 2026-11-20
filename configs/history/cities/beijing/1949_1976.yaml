@@ -1,0 +1,813 @@
+# City: Beijing x 1949 to 1976 (the People's Republic to the death of Mao). DRAFT 2026-11-20.
+# Area: Beijing Municipality (old Inner and Outer cities, Haidian, Chaoyang, Fengtai, Shijingshan,
+# Changping and the Ming Tombs, Fangshan and Zhoukoudian, Tongzhou, Daxing, Shunyi, Huairou, Miyun,
+# Pinggu, Yanqing). Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Events of the People's
+# Republic as a state (Party congresses and plenums, national laws, state visits, state funerals) ->
+# out_refs, unless the city is the subject or the main stage (wall demolitions, Red August, Red Guard
+# attacks on embassies, the Tsinghua fighting, the mourning crowds of 1976).
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: en and zh Wikipedia (History of Beijing, Beijing city fortifications, Beijing Subway,
+# Red August and single articles), Xinhua, People's Daily, China Daily, 12371.cn, Huanqiu, Papers Past.
+# A work -> first public appearance (premiere, opening); a building -> its opening or completion.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1949, peg: rope, confidence: high, source: "zh WP: Beijing history (22 Jan)",
+     event: "Fu Zuoyi accepts the peaceful handover of Beiping and leads his troops out of the city",
+     place: "Beiping city gates",
+     scene: "Fu Zuoyi ties his army in a ROPE and leads it out of the Beiping gates without one shot."}
+  - {year: 1949, peg: rope, confidence: high, source: "zh WP: Beijing history (3 Feb)",
+     event: "The People's Liberation Army holds its formal entry parade into Beiping",
+     place: "Yongdingmen, Qianmen",
+     scene: "A long ROPE of tanks and trucks pulls the People's Liberation Army through Yongdingmen into Beiping for the entry parade."}
+  - {year: 1949, peg: rope, confidence: medium, source: "rmzxw.com.cn: conference 9-14 Aug, Zhongshan Hall",
+     event: "Beiping holds its first conference of representatives of all circles",
+     place: "Zhongshan Hall, Zhongshan Park",
+     scene: "Three hundred delegates pass a ROPE hand to hand in Zhongshan Hall to vote at Beiping's first all-circles conference."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: List of mayors of Beijing",
+     event: "Nie Rongzhen becomes mayor of Beijing",
+     scene: "Marshal Nie Rongzhen climbs a ROPE to the city hall roof and raises his flag as mayor of Beijing."}
+  - {year: 1949, peg: rope, confidence: high, source: "zh WP: Beijing history (27 Sep)",
+     event: "The Consultative Conference renames Beiping as Beijing and makes it the capital",
+     scene: "A ROPE pulls down the Beiping name board and hoists a new Beijing sign over the capital's gate."}
+  - {year: 1950, peg: lasso, confidence: high, source: "ifeng: legation barracks seized, notices 6 Jan",
+     event: "The Military Control Commission posts orders to take the foreign barracks in the old Legation Quarter",
+     place: "Dongjiaominxiang",
+     scene: "A LASSO of Military Control notices loops the Legation Quarter barracks and drags them away from the foreign consulates."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: List of mayors of Beijing",
+     event: "Peng Zhen becomes mayor of Beijing and keeps the post to the Cultural Revolution",
+     scene: "Peng Zhen takes the city WALLET in Beijing city hall and holds the purse strings for fifteen years."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "China Digital Times: 199 shot at three sites",
+     event: "Campaign to Suppress Counter-revolutionaries: Beijing police shoot about two hundred prisoners at three sites on one day",
+     scene: "Each prisoner's WALLET drops into the dust as Beijing police shoot two hundred men on one March day."}
+  - {year: 1951, peg: wallet, confidence: high, source: "executedtoday; WP: Tiananmen Mortar Plot",
+     event: "Riva and Yamaguchi are shot for an alleged mortar plot against the Tiananmen rostrum",
+     place: "Tiananmen",
+     scene: "Police find a WALLET map of the Tiananmen rostrum on Riva and Yamaguchi, and both men face the firing squad."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Chang'an Avenue",
+     event: "The Chang'an Left and Right Gates are pulled down to widen the avenue",
+     place: "Chang'an Avenue",
+     scene: "A stone LION from Tiananmen butts down the Chang'an Left and Right Gates so the avenue runs straight."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Beijing city fortifications; thepaper.cn",
+     event: "Xibianmen is pulled down, the first city gate to fall",
+     place: "Xibianmen",
+     scene: "A LION claws the Xibianmen gate tower to rubble, the first Beijing city gate to fall."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Chaoyangmen gate tower is pulled down",
+     place: "Chaoyangmen",
+     scene: "A LLAMA kicks the Chaoyangmen gate tower apart, and carts haul its bricks east."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Beijing city fortifications",
+     event: "Guangqumen and Zuo'anmen on the Outer City wall lose their towers and barbicans",
+     place: "Guangqumen, Zuo'anmen",
+     scene: "A LLAMA spits at Guangqumen and Zuo'anmen, and their towers and barbicans crumble on the Outer City wall."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Fuchengmen barbican and its arrow-tower platform are pulled down",
+     place: "Fuchengmen",
+     scene: "A coal LLAMA drags the last bricks of the Fuchengmen barbican out of the coal gate."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP: Beijing city fortifications (other sources: later)",
+     event: "The Gate of China is pulled down to open Tiananmen Square",
+     place: "Gate of China, Tiananmen Square",
+     scene: "A LAWYER reads the demolition order, and workers tear down the Gate of China to open Tiananmen Square."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Taoranting Park",
+     event: "The East and West Chang'an Street memorial arches are taken down",
+     place: "Chang'an Avenue",
+     scene: "A LAWYER signs away the Chang'an Street memorial arches, and cranes lift them off the avenue."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP: Beijing city fortifications (1954-1956)",
+     event: "Workers start to take down Beianmen, the north gate of the Imperial City",
+     place: "Beianmen, Di'anmen Street",
+     scene: "A LAWYER in robes pries the first beam off Beianmen on the Imperial City's north side."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Beijing city fortifications",
+     event: "Fuxingmen is pulled down completely",
+     place: "Fuxingmen",
+     scene: "A giant LILY's roots split Fuxingmen gate apart until it falls into the western road."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Deshengmen gate tower platform is removed and the arrow tower stays",
+     place: "Deshengmen",
+     scene: "A LILY garland marks the Deshengmen arrow tower that stays while workers cart away the gate tower's platform."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The You'anmen barbican and arrow tower are pulled down",
+     place: "You'anmen",
+     scene: "A LEECH sucks the bricks out of the You'anmen barbican and arrow tower until they sink."}
+  - {year: 1956, peg: leech, confidence: medium, source: "Huanqiu: Beijing boundary history",
+     event: "Changping County moves from Hebei to Beijing",
+     place: "Changping",
+     scene: "A LEECH clings to the Ming Tombs road and pulls Changping County from Hebei into Beijing."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Yongdingmen gate tower and arrow tower are pulled down",
+     place: "Yongdingmen",
+     scene: "A LOG battering ram knocks down the Yongdingmen gate tower at the south end of the city axis."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Guang'anmen gate tower and the northwest corner tower are pulled down",
+     place: "Guang'anmen",
+     scene: "A LOG raft floats the timbers of Guang'anmen and the northwest corner tower down the moat."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Beijing city fortifications",
+     event: "Jianguomen and its stretch of Inner City wall are torn down",
+     place: "Jianguomen",
+     scene: "A rolling LOG flattens Jianguomen and its stretch of Inner City wall."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Dongbianmen gate tower is pulled down for the new railway station",
+     place: "Dongbianmen",
+     scene: "A WOLF pack tears down the Dongbianmen tower to clear ground for the new Beijing railway station."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Chaoyangmen arrow tower and the You'anmen gate tower are pulled down",
+     place: "Chaoyangmen, You'anmen",
+     scene: "A WOLF howls on the bare Chaoyangmen platform after workers pull down its arrow tower."}
+  - {year: 1958, peg: wolf, confidence: high, source: "zh WP: Beijing history; WP: Beijing city fortifications",
+     event: "Demolition of the Outer City wall speeds up, and its bricks feed backyard furnaces",
+     place: "Outer City wall",
+     scene: "A WOLF drags Outer City wall bricks into backyard steel furnaces during the Great Leap."}
+  - {year: 1958, peg: wolf, confidence: high, source: "Huanqiu: State Council approval 7 March",
+     event: "Tong, Shunyi, Daxing, Liangxiang and Fangshan counties move from Hebei to Beijing",
+     place: "Tongzhou, Daxing, Fangshan",
+     scene: "A WOLF herds five Hebei counties across the line into Beijing: Tong, Shunyi, Daxing, Liangxiang and Fangshan."}
+  - {year: 1958, peg: wolf, confidence: high, source: "zh WP: Beijing history; Huanqiu (October)",
+     event: "Huairou, Miyun, Pinggu and Yanqing join Beijing, and the city grows to about sixteen thousand square km",
+     place: "Miyun, Yanqing",
+     scene: "A WOLF bounds north over the Great Wall hills and claims Miyun, Huairou, Pinggu and Yanqing for Beijing."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Qincheng Prison",
+     event: "Qincheng Prison for political prisoners is built in Changping with Soviet aid",
+     place: "Qincheng, Changping",
+     scene: "A WOLF guards the new cell blocks of Qincheng Prison below the Yanshan hills."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP: Beijing city fortifications; WP: Beijing Subway",
+     event: "Demolition of the Inner City wall for the subway starts; the Xuanwumen, Dongzhimen and Fuchengmen gate towers fall",
+     place: "Xuanwumen",
+     scene: "A JELLY of mud slides from the subway trench and swallows the Xuanwumen gate tower."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP: Beijing city fortifications",
+     event: "Zhou Enlai orders the Zhengyangmen gate tower and arrow tower saved",
+     place: "Zhengyangmen (Qianmen)",
+     scene: "Zhou Enlai coats Zhengyangmen in a JELLY shield so the subway gangs cannot pull it down."}
+  - {year: 1966, peg: judge, confidence: medium, source: "marxists.org CR chronicle (8 May)",
+     event: "The army and Guangming dailies attack the Three-Family Village column of the Beijing Party writers",
+     scene: "A JUDGE reads out the Three-Family Village essays and brands Deng Tuo and the Beijing Party writers as enemies."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: List of mayors of Beijing",
+     event: "Peng Zhen falls; Li Xuefeng takes the Beijing Party committee and Wu De becomes mayor",
+     scene: "A JUDGE bangs his gavel, Peng Zhen falls, and Li Xuefeng takes the Beijing Party committee's seal."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing (25 May)",
+     event: "Nie Yuanzi puts up her big-character poster at Peking University",
+     place: "Peking University",
+     scene: "A JUDGE's red brush paints Nie Yuanzi's big poster on the Peking University canteen wall."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing (29 May)",
+     event: "Students at the Tsinghua University middle school form the first Red Guard group",
+     place: "Tsinghua University middle school",
+     scene: "A JUDGE pins the first Red Guard armbands on students in the Tsinghua middle school garden."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing (18 June)",
+     event: "Peking University students hold the first violent struggle session against teachers",
+     place: "Peking University",
+     scene: "Students drag a JUDGE in a dunce cap across the Peking University campus at the first struggle session."}
+  - {year: 1966, peg: judge, confidence: medium, source: "Papers Past: Reuters, August",
+     event: "Red Guards rename the street of the Soviet embassy Anti-Revisionism Street",
+     place: "Soviet embassy, Dongzhimen",
+     scene: "A JUDGE nails a new sign by the Soviet embassy gate: Anti-Revisionism Street."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The Chongwenmen gate tower is pulled down",
+     place: "Chongwenmen",
+     scene: "A JUDGE condemns Chongwenmen, and its gate tower crashes onto the subway works."}
+  - {year: 1967, peg: jockey, confidence: medium, source: "WP: Embassy of Russia, Beijing",
+     event: "Red Guards besiege the Soviet embassy, and Soviet families leave the city",
+     place: "Soviet embassy",
+     scene: "A JOCKEY on a loudspeaker truck circles the Soviet embassy while Red Guards besiege it for weeks."}
+  - {year: 1967, peg: jockey, confidence: high, source: "aboluowang; CDT: Kuai Dafu account (10 April)",
+     event: "Tsinghua Red Guards hold a mass struggle session against Wang Guangmei",
+     place: "Tsinghua University",
+     scene: "A JOCKEY drives Wang Guangmei, in qipao and ping-pong-ball necklace, before a vast Tsinghua crowd."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: List of mayors; zh WP: Workers' Stadium",
+     event: "The Beijing Revolutionary Committee is set up under Xie Fuzhi",
+     place: "Workers' Stadium",
+     scene: "Xie Fuzhi rides a JOCKEY's horse into the Workers' Stadium to found the Beijing Revolutionary Committee."}
+  - {year: 1967, peg: jockey, confidence: medium, source: "WP: Embassy of Indonesia, Beijing",
+     event: "Red Guards storm the Indonesian embassy",
+     place: "Indonesian embassy",
+     scene: "A JOCKEY leads Red Guards over the Indonesian embassy wall, and they sack its rooms."}
+  - {year: 1967, peg: jockey, confidence: high, source: "zh WP: burning of the British office (22 Aug)",
+     event: "Red Guards burn the British chargé d'affaires' office and beat its staff",
+     place: "British office, Guanghua Road",
+     scene: "A JOCKEY gallops a burning car into the British office compound as Red Guards set the building alight."}
+  - {year: 1968, peg: chef, confidence: high, source: "zh WP: Tsinghua Hundred Day War (23 April)",
+     event: "The Hundred Day War between Red Guard factions starts at Tsinghua University",
+     place: "Tsinghua University",
+     scene: "A CHEF forges spears from kitchen steel as Tsinghua factions start the Hundred Day War on campus."}
+  - {year: 1968, peg: chef, confidence: high, source: "zh WP: Tsinghua Hundred Day War (27 July)",
+     event: "A Workers' Mao Zedong Thought Propaganda Team enters Tsinghua and ends the fighting",
+     place: "Tsinghua University",
+     scene: "A factory CHEF leads thirty thousand workers into Tsinghua and stops the faction fighting."}
+  - {year: 1968, peg: chef, confidence: high, source: "zh WP: Tsinghua Hundred Day War (28 July)",
+     event: "Mao meets the five Beijing Red Guard leaders at night and ends their power",
+     place: "Great Hall of the People",
+     scene: "Mao serves the five Beijing Red Guard leaders a cold CHEF's breakfast of blame and ends their power."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Beijing city fortifications; thepaper.cn",
+     event: "Xizhimen and Andingmen are pulled down for the subway loop",
+     place: "Xizhimen, Andingmen",
+     scene: "A SHIP's anchor hooks Xizhimen and Andingmen and drags both gates into the subway trench."}
+  - {year: 1969, peg: ship, confidence: high, source: "zh WP: Beijing Underground City",
+     event: "Work starts on the Underground City air-raid tunnels under Qianmen and Dazhalan",
+     place: "Qianmen, Dazhalan",
+     scene: "A SHIP's hatch opens in a Qianmen shop floor into the new air-raid tunnels of the Underground City."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP: List of mayors of Beijing",
+     event: "Wu De becomes Party first secretary and mayor of Beijing after Xie Fuzhi",
+     scene: "Wu De picks up the COIN seal of the Beijing Revolutionary Committee after Xie Fuzhi dies."}
+  - {year: 1976, peg: cage, confidence: high, source: "People's Daily caption (11 Jan); HKBU poster",
+     event: "A million mourners line Chang'an Avenue as Zhou Enlai's hearse passes",
+     place: "Chang'an Avenue",
+     scene: "Zhou Enlai's hearse, a glass CAGE on wheels, rolls past a million silent mourners on Chang'an Avenue."}
+  - {year: 1976, peg: cage, confidence: medium, source: "cpc.people.com.cn: October rallies",
+     event: "Crowds rally and march in Beijing to cheer the fall of the Gang of Four",
+     place: "Tiananmen Square",
+     scene: "Marchers carry the Gang of Four in a paper CAGE across Tiananmen Square to cheer their fall."}
+  # science
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Peking Man (field seasons)",
+     event: "Digging at Zhoukoudian starts again and finds Peking Man teeth",
+     place: "Zhoukoudian",
+     scene: "A ROPE lowers diggers back into the Zhoukoudian cave, and they lift out Peking Man teeth."}
+  - {year: 1950, peg: lasso, confidence: high, source: "zh WP: Longxugou",
+     event: "Work starts to rebuild the open sewer of Dragon Beard Ditch",
+     place: "Longxugou, Tianqiao",
+     scene: "Workers LASSO the stinking Dragon Beard Ditch and pull it into a covered sewer pipe."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Trams in Beijing",
+     event: "The tram ring route through Xisi, Xidan, Tiananmen and Dongsi runs again",
+     place: "Xisi, Dongsi",
+     scene: "A LASSO of tram wire ties Xisi, Xidan, Tiananmen and Dongsi back into one running ring."}
+  - {year: 1951, peg: wallet, confidence: unverified,
+     event: "The state takes over Peking Union Medical College and its hospital from the Rockefeller trust",
+     place: "Dongdan",
+     scene: "The state empties the Rockefeller WALLET at Peking Union hospital and takes the hospital over."}
+  - {year: 1952, peg: lion, confidence: high, source: "zh WP: Beijing Friendship Hospital",
+     event: "The Soviet Red Cross Hospital is founded, later the Beijing Friendship Hospital",
+     place: "Tianqiao",
+     scene: "A LION on a Red Cross flag guards the new Soviet Red Cross Hospital, Beijing's first big new hospital."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Guanting Reservoir (13 May)",
+     event: "Guanting Reservoir on the Yongding River is completed, the first large reservoir of the new state",
+     place: "Guanting, Yanqing",
+     scene: "A LAWYER cuts the ribbon on the Guanting dam, and the Yongding River fills Beijing's first large reservoir."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Fengtai-Shacheng railway",
+     event: "The Fengtai–Shacheng railway opens through the Yongding River gorge",
+     place: "Yongding River gorge, Mentougou",
+     scene: "A LILY wreath hangs on Tunnel Number One as the Fengtai–Shacheng railway opens along the Yongding gorge."}
+  - {year: 1956, peg: leech, confidence: high, source: "zh WP: Ming Dingling (mid-May)",
+     event: "Digging starts at Dingling, the tomb of the Wanli emperor",
+     place: "Dingling, Changping",
+     scene: "A LEECH-shaped trench bites into the Dingling mound as the dig for the Wanli emperor's tomb begins."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Beijing Jishuitan Hospital",
+     event: "Jishuitan Hospital opens for bone injuries",
+     place: "Jishuitan, Xicheng",
+     scene: "A LEECH crawls off a stretcher at the gate of the new Jishuitan Hospital, built for broken bones."}
+  - {year: 1957, peg: log, confidence: high, source: "zh WP: Ming Dingling (19 Sep)",
+     event: "Archaeologists open the stone gate of the Dingling underground palace",
+     place: "Dingling, Changping",
+     scene: "A LOG lever swings the great stone gate of the Dingling underground palace open."}
+  - {year: 1957, peg: log, confidence: high, source: "zh WP: Yongding River diversion canal",
+     event: "The Yongding River diversion canal from Sanjiadian to the city moat carries water",
+     place: "Sanjiadian, Yuyuantan",
+     scene: "Yongding water floats a LOG from Sanjiadian down the new canal to Yuyuantan and the city moat."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Trams in Beijing (26 Feb)",
+     event: "Beijing's first trolleybus line opens from Fuchengmen",
+     place: "Fuchengmen",
+     scene: "A LOG blocks the tram track, so Beijing's first trolleybus glides past on overhead wires at Fuchengmen."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Beijing Planetarium",
+     event: "The Beijing Planetarium opens, the first large planetarium in China",
+     place: "Xizhimenwai",
+     scene: "A LOG of star charts rolls out under the dome of the new Beijing Planetarium, the first in China."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Beijing Capital International Airport",
+     event: "Beijing Capital Airport opens",
+     place: "Shunyi",
+     scene: "A WOLF chases the first plane down the new runway at Beijing Capital Airport."}
+  - {year: 1958, peg: wolf, confidence: high, source: "12371.cn: Ming Tombs Reservoir, Jan-June",
+     event: "Four hundred thousand volunteers build the Ming Tombs Reservoir in about five months",
+     place: "Ming Tombs, Changping",
+     scene: "Four hundred thousand diggers drive a WOLF out of the Ming Tombs valley and fill it with a reservoir."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "chineseposters.net: Mao at the site, 25 May",
+     event: "Mao shovels earth at the Ming Tombs Reservoir site",
+     place: "Ming Tombs Reservoir dam",
+     scene: "Mao lifts one shovel of earth, and a WOLF carries it up the Ming Tombs Reservoir dam for the cameras."}
+  - {year: 1958, peg: wolf, confidence: high, source: "zh WP: Huairou Reservoir (March-July)",
+     event: "Huairou Reservoir is built in one hundred and twenty days",
+     place: "Huairou",
+     scene: "A WOLF digs for a hundred and twenty days, and the Huairou Reservoir fills behind its dam."}
+  - {year: 1958, peg: wolf, confidence: high, source: "Chaoyang Hospital site (24 Feb)",
+     event: "Chaoyang Hospital opens east of the old city",
+     place: "Chaoyang",
+     scene: "A WOLF bites through the ribbon at the new Chaoyang Hospital east of the city wall."}
+  - {year: 1959, peg: elbow, confidence: high, source: "ourchinastory: opens 15 Sep; WP",
+     event: "The new Beijing Railway Station opens, built in about eight months",
+     place: "Beijing Railway Station, Dongcheng",
+     scene: "The clock's ELBOW hand on the twin towers strikes as the new Beijing Railway Station opens."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "Sina/Beijing Evening News: first coke oven 18 Nov",
+     event: "The Beijing Coking Plant lights its first oven, and the city gets piped coal gas",
+     place: "Beijing Coking Plant, Chaoyang",
+     scene: "An ELBOW of gas pipe runs from the new Beijing Coking Plant to the Great Hall, the city's first piped gas."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: Beijing-Chengde railway (1955-1959)",
+     event: "The Beijing–Chengde railway is finished north of Huairou through the Great Wall",
+     place: "Huairou",
+     scene: "An ELBOW of track bends north from Huairou through the Great Wall to finish the Beijing–Chengde line."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Miyun Reservoir (1 Sep)",
+     event: "Miyun Reservoir is completed and becomes Beijing's main source of drinking water",
+     place: "Miyun",
+     scene: "A CHEESE wheel of a dam holds back the Chao and Bai rivers at Miyun, Beijing's new water store."}
+  - {year: 1961, peg: jet, confidence: high, source: "zh WP: Jingmi Diversion Canal",
+     event: "The first section of the Jingmi Diversion Canal from Miyun is finished",
+     place: "Jingmi canal",
+     scene: "A JET of Miyun water shoots down the first section of the Jingmi canal toward Beijing."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "Xinhua: Yuan Dadu survey 1964-1974",
+     event: "The Yuan Dadu archaeology team starts its survey of the buried Mongol city",
+     place: "Yuan Dadu walls, Haidian",
+     scene: "A CHERRY-red string marks the buried Yuan Dadu walls as the archaeology team starts its survey."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP: Beijing Subway (1 July)",
+     event: "Building work on the Beijing subway starts with a groundbreaking ceremony",
+     place: "Beijing subway",
+     scene: "Leaders press their spades into a JELLY of wet earth at the groundbreaking for the Beijing subway."}
+  - {year: 1966, peg: judge, confidence: high, source: "zh WP: Jingmi Diversion Canal (May)",
+     event: "The Jingmi Diversion Canal from Miyun to the city is completed",
+     place: "Jingmi canal, Kunming Lake",
+     scene: "A JUDGE checks the levels and declares the Jingmi canal from Miyun to the city complete."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Trams in Beijing (6 May)",
+     event: "The last tram runs in Beijing, from Yongdingmen to the Beijing Gymnasium",
+     place: "Yongdingmen",
+     scene: "A JUDGE punches the last ticket on the Yongdingmen tram, and Beijing's tram service ends."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Peking Man (Skull V)",
+     event: "Diggers at Zhoukoudian find more pieces of Peking Man Skull Five",
+     place: "Zhoukoudian",
+     scene: "A JUDGE fits a new Zhoukoudian bone to an old cast, and Peking Man Skull Five grows more complete."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP: Beijing city fortifications",
+     event: "Workers find the Yuan gate Heyimen inside the Xizhimen arrow tower",
+     place: "Xizhimen",
+     scene: "A SHIP's figurehead appears in the broken Xizhimen arrow tower: the Yuan gate Heyimen, sealed for centuries."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Beijing Subway (11 Nov)",
+     event: "An electrical fire on the new subway kills three people",
+     place: "Beijing subway",
+     scene: "A SHIP's bell clangs in the dark tunnel as an electrical fire kills three people on the new subway."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP: Beijing Subway",
+     event: "The army takes control of the Beijing subway",
+     place: "Beijing subway",
+     scene: "A GOOSE-stepping soldier takes over each station as the army runs the Beijing subway."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP: Beijing Subway (15 Jan)",
+     event: "The subway opens to riders who carry work-unit letters",
+     place: "Gongzhufen",
+     scene: "A CAT slips through the Gongzhufen gate as the subway opens to riders with work-unit letters."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP: Beijing Subway (27 Dec)",
+     event: "Subway riders no longer need letters to buy tickets",
+     place: "Beijing subway",
+     scene: "A COIN alone now buys a subway ticket, and Beijing riders no longer need work-unit letters."}
+  - {year: 1972, peg: coin, confidence: high, source: "Papers Past: Hospital renamed (1 Jan)",
+     event: "The Anti-Imperialist Hospital, the old Union hospital, is renamed Capital Hospital",
+     place: "Dongdan",
+     scene: "A COIN-sized new badge reads Capital Hospital as the old Union hospital drops its Anti-Imperialist name."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP: Beijing city fortifications",
+     event: "The east, south and west city moats are covered and become sewers",
+     place: "old city moats",
+     scene: "A giant COIN lid seals the old city moat, and it becomes a covered sewer."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP: Beijing-Yuanping railway",
+     event: "The Beijing–Yuanping railway opens from Shijingshan through the mountains",
+     place: "Shijingshan",
+     scene: "A COMB of a hundred tunnels opens as the Beijing–Yuanping railway starts service from Shijingshan."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP: Beijing Subway",
+     event: "The subway line is extended west to Pingguoyuan",
+     place: "Pingguoyuan",
+     scene: "A COMB of new track teeth reaches Pingguoyuan as the subway line extends west."}
+  - {year: 1973, peg: comb, confidence: high, source: "thepaper/peopleapp: Liulihe team formed",
+     event: "Large-scale digging starts at Liulihe, the first capital of the state of Yan",
+     place: "Liulihe, Fangshan",
+     scene: "A COMB-toothed trowel uncovers bronzes of the Yan lords at Liulihe in Fangshan."}
+  - {year: 1974, peg: car, confidence: high, source: "zh WP: Fuxingmen Bridge",
+     event: "The Fuxingmen overpass opens, the first interchange on the Second Ring Road",
+     place: "Fuxingmen",
+     scene: "A CAR loops round the new Fuxingmen overpass, the first interchange on the Second Ring Road."}
+  - {year: 1974, peg: car, confidence: high, source: "zh WP: Dabaotai Han tomb (June)",
+     event: "Workers find the Western Han tomb of Dabaotai, and digging starts",
+     place: "Guogongzhuang, Fengtai",
+     scene: "A CAR-sized digger strikes charcoal at Guogongzhuang and opens the Han tomb of Dabaotai."}
+  # religion
+  - {year: 1955, peg: lily, confidence: medium, source: "zh WP: China Islamic Institute (March/Nov)",
+     event: "The China Islamic Institute opens in Beijing",
+     place: "Niujie, Xicheng",
+     scene: "A LILY carved over the door marks the new China Islamic Institute in Beijing's Hui quarter."}
+  - {year: 1956, peg: leech, confidence: high, source: "zh WP: Buddhist Academy of China (28 Sep)",
+     event: "The Buddhist Academy of China opens at Fayuan Temple",
+     place: "Fayuan Temple",
+     scene: "A LEECH in monk's robes unlocks Fayuan Temple and opens the Buddhist Academy of China inside."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "Christianity Today 1982: 4 of 66 churches",
+     event: "The united worship campaign cuts Beijing's open Protestant churches to four",
+     scene: "A WOLF locks sixty-two Beijing church doors, and only four stay open for united worship."}
+  - {year: 1964, peg: cherry, confidence: high, source: "zh WP: Lingguang Temple (25 June)",
+     event: "The Buddha Tooth Relic Pagoda is completed at Lingguang Temple",
+     place: "Lingguang Temple, Badachu",
+     scene: "A CHERRY-red casket carries the Buddha's tooth up into the new pagoda at Lingguang Temple."}
+  - {year: 1971, peg: cat, confidence: unverified,
+     event: "Nantang, the South Cathedral, reopens for Mass for foreign diplomats",
+     place: "Nantang, Xuanwumen",
+     scene: "A CAT slips into Nantang as its doors reopen for Mass for foreign diplomats."}
+  - {year: 1972, peg: coin, confidence: unverified,
+     event: "The Rice Market Church reopens for Protestant worship by foreigners",
+     place: "Rice Market Church, Dongcheng",
+     scene: "A COIN drops in the plate at the Rice Market Church, reopened for Protestant foreigners."}
+  # arts
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Beijing Film Studio (20 April)",
+     event: "Beiping Film Studio is founded, later the Beijing Film Studio",
+     scene: "A ROPE of film runs through the first camera of the new Beiping Film Studio."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Monument to the People's Heroes",
+     event: "Mao lays the foundation stone of the Monument to the People's Heroes",
+     place: "Tiananmen Square",
+     scene: "Mao lays the foundation stone of the Monument to the People's Heroes, and a ROPE marks out its square."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Tiananmen",
+     event: "A single portrait of Mao goes up on Tiananmen gate",
+     place: "Tiananmen",
+     scene: "Workers haul Mao's huge portrait up Tiananmen gate on a ROPE for the founding day."}
+  - {year: 1950, peg: lasso, confidence: high, source: "zh WP: Working People's Cultural Palace (1 May)",
+     event: "The Imperial Ancestral Temple opens as the Working People's Cultural Palace",
+     place: "Taimiao",
+     scene: "Workers LASSO the Imperial Ancestral Temple gates open, and it becomes the Working People's Cultural Palace."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Central Academy of Fine Arts (April)",
+     event: "The Central Academy of Fine Arts is formed under Xu Beihong",
+     scene: "Xu Beihong throws a LASSO round two art schools and pulls them into the Central Academy of Fine Arts."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Central Academy of Drama (April)",
+     event: "The Central Academy of Drama is founded under Ouyang Yuqian",
+     scene: "Ouyang Yuqian twirls a stage LASSO to open the Central Academy of Drama."}
+  - {year: 1951, peg: wallet, confidence: high, source: "zh WP: Longxugou (1 Feb)",
+     event: "Lao She's play Dragon Beard Ditch premieres",
+     scene: "A slum WALLET floats down Dragon Beard Ditch on stage as Lao She's play premieres."}
+  - {year: 1951, peg: wallet, confidence: high, source: "zh WP: Longxugou (December)",
+     event: "The Beijing government names Lao She People's Artist",
+     scene: "The Beijing mayor fills Lao She's WALLET with the title People's Artist for Dragon Beard Ditch."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Beijing People's Art Theatre (12 June)",
+     event: "The Beijing People's Art Theatre is founded with Cao Yu as its head",
+     scene: "Cao Yu tames a stage LION and founds the Beijing People's Art Theatre."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Monument to the People's Heroes (1 Aug)",
+     event: "Building work on the Monument to the People's Heroes starts",
+     place: "Tiananmen Square",
+     scene: "A LION hauls the first granite block to Tiananmen as building of the Monument to the People's Heroes starts."}
+  - {year: 1952, peg: lion, confidence: high, source: "zh WP: Taoranting Park (April-October)",
+     event: "Workers dig the lakes of Taoranting Park, the first new park of the new state",
+     place: "Taoranting",
+     scene: "A LION digs out the Taoranting lakes, and Beijing gets its first new park."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Tiananmen (9 March)",
+     event: "A portrait of Stalin hangs on Tiananmen in place of Mao's for his death",
+     place: "Tiananmen",
+     scene: "A LLAMA carries Stalin's portrait up Tiananmen, where it replaces Mao's on the day of mourning."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Tianqiao Theatre (16 Jan)",
+     event: "The Tianqiao Theatre opens, first called the Peace Theatre",
+     place: "Tianqiao",
+     scene: "A LAWYER in the front row opens the new Tianqiao Theatre, first called the Peace Theatre."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Beijing Exhibition Center",
+     event: "The Soviet Exhibition Centre opens, later the Beijing Exhibition Centre",
+     place: "Xizhimenwai",
+     scene: "A LAWYER from Moscow cuts the ribbon under the gilded spire of the Soviet Exhibition Centre."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Xu Beihong Memorial Hall",
+     event: "Xu Beihong's home opens as his memorial hall",
+     place: "Dongshoulu Street",
+     scene: "A LAWYER hands Xu Beihong's widow the key, and his home opens as a memorial hall."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: National Ballet of China",
+     event: "The Beijing Dance School, the first ballet school in China, is founded",
+     scene: "A LAWYER in ballet shoes signs the founding papers of the Beijing Dance School."}
+  - {year: 1955, peg: lily, confidence: high, source: "zh WP: China National Peking Opera Company (January)",
+     event: "The China Peking Opera Company is founded with Mei Lanfang as its head",
+     scene: "Mei Lanfang opens a LILY fan and declares the China Peking Opera Company founded, himself its first head."}
+  - {year: 1955, peg: lily, confidence: high, source: "zh WP: Taoranting Park",
+     event: "Taoranting Park opens with the old Chang'an Street arches set up inside",
+     place: "Taoranting",
+     scene: "A LILY pond greets the first visitors as Taoranting Park opens with the old Chang'an arches inside."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Beijing Zoo",
+     event: "Xijiao Park is renamed Beijing Zoo and shows giant pandas for the first time",
+     place: "Beijing Zoo, Xizhimenwai",
+     scene: "A panda chews a LILY at the gate as Xijiao Park becomes Beijing Zoo with its first pandas."}
+  - {year: 1956, peg: leech, confidence: high, source: "zh WP: Capital Theatre",
+     event: "The Capital Theatre becomes the home of the Beijing People's Art Theatre",
+     place: "Capital Theatre, Wangfujing",
+     scene: "Actors pull a LEECH off the new Capital Theatre curtain and stage Sunrise there first."}
+  - {year: 1956, peg: leech, confidence: high, source: "zh WP: Beijing Lu Xun Museum (19 Oct)",
+     event: "The Lu Xun Museum opens beside his old home",
+     place: "Fuchengmen",
+     scene: "A LEECH dipped in ink writes Lu Xun's name over the door of the new Lu Xun Museum at Fuchengmen."}
+  - {year: 1957, peg: log, confidence: high, source: "zh WP: Beijing Academy of Painting (14 May)",
+     event: "The Beijing Chinese Painting Academy is founded",
+     scene: "Qi Baishi paints a LOG with a shrimp on it to open the Beijing Chinese Painting Academy."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Teahouse (29 March)",
+     event: "Lao She's Teahouse premieres at the Capital Theatre",
+     place: "Capital Theatre",
+     scene: "A WOLF in a Qing queue drinks tea in Wang Lifa's teahouse as Lao She's Teahouse premieres."}
+  - {year: 1958, peg: wolf, confidence: high, source: "China Daily: premiere 30 July, Tianqiao",
+     event: "Beijing Dance School gives the first Chinese Swan Lake",
+     place: "Tianqiao Theatre",
+     scene: "A WOLF in the wings stalks the white swan as Bai Shuxiang dances China's first Swan Lake."}
+  - {year: 1958, peg: wolf, confidence: unverified,
+     event: "The Central Conservatory of Music moves from Tianjin to Beijing",
+     scene: "A WOLF carries the Central Conservatory's pianos from Tianjin to Beijing on its back."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Cultural Palace of Nationalities",
+     event: "The Cultural Palace of Nationalities opens on West Chang'an Avenue",
+     place: "West Chang'an Avenue",
+     scene: "An ELBOW of peacock-blue roof crowns the new Cultural Palace of Nationalities on West Chang'an."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Diaoyutai State Guesthouse (Oct 1958-Aug 1959)",
+     event: "The Diaoyutai State Guesthouse is completed",
+     place: "Diaoyutai",
+     scene: "An ELBOW of lake shore wraps round the new Diaoyutai State Guesthouse."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Ten Great Buildings",
+     event: "The National Agricultural Exhibition Hall opens with the tenth-anniversary show",
+     place: "Agricultural Exhibition Hall, Chaoyang",
+     scene: "An ELBOW of corn tops the new National Agricultural Exhibition Hall for the tenth-anniversary show."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: National Museum of China",
+     event: "The building of the Museums of Chinese History and the Revolution is completed",
+     place: "Tiananmen Square",
+     scene: "An ELBOW of colonnade faces the Great Hall as the Museums of History and Revolution building is finished."}
+  - {year: 1959, peg: elbow, confidence: high, source: "zh WP: Ming Dingling (1 Oct)",
+     event: "The Dingling Museum opens",
+     place: "Dingling, Changping",
+     scene: "An ELBOW of gold crown gleams in the case as the new Dingling Museum opens."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Tiananmen Square (Nov 1958-Aug 1959)",
+     event: "Tiananmen Square is enlarged to four times its size",
+     place: "Tiananmen Square",
+     scene: "A bulldozer's ELBOW clears the homes until Tiananmen Square is four times larger."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: National Ballet of China (31 Dec)",
+     event: "The Experimental Ballet Company of the Beijing Dance School is founded",
+     scene: "A dancer's ELBOW lifts in an arabesque to launch the Experimental Ballet Company."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Military Museum (1 Aug)",
+     event: "The Military Museum of the Chinese People's Revolution opens",
+     place: "Fuxing Road",
+     scene: "A CHEESE-yellow star crowns the Military Museum as it opens on Army Day."}
+  - {year: 1961, peg: jet, confidence: disputed, source: "Kyoto Univ. repository: Feb 1961; WP: 1962",
+     event: "Wu Han's opera Hai Rui Dismissed from Office opens, with Ma Lianliang as Hai Rui",
+     scene: "A JET of applause greets Ma Lianliang as Hai Rui in Wu Han's opera with the Beijing Peking Opera Company."}
+  - {year: 1963, peg: gem, confidence: medium, source: "WP: National Art Museum of China (built 1958-1962)",
+     event: "The China Art Gallery opens",
+     place: "Wusi Street",
+     scene: "A GEM-blue tile roof crowns the China Art Gallery as it opens on Wusi Street."}
+  - {year: 1964, peg: cherry, confidence: high, source: "marxists.org: opening speech 5 June",
+     event: "The festival of Peking opera on modern themes opens in Beijing",
+     scene: "A CHERRY-red star replaces the emperor's crown as the festival of modern Peking opera opens."}
+  - {year: 1964, peg: cherry, confidence: high, source: "chinanews: premiere 26 Sep, Tianqiao",
+     event: "The ballet The Red Detachment of Women premieres",
+     place: "Tianqiao Theatre",
+     scene: "Wu Qionghua leaps across the Tianqiao stage with a CHERRY-red rifle at the Red Detachment premiere."}
+  - {year: 1964, peg: cherry, confidence: high, source: "zh WP: The East Is Red (2 Oct)",
+     event: "The song-and-dance epic The East Is Red premieres",
+     place: "Great Hall of the People",
+     scene: "Three thousand dancers form a giant CHERRY-red sun in the Great Hall at The East Is Red premiere."}
+  - {year: 1966, peg: judge, confidence: high, source: "zh WP: Xu Beihong Memorial Hall",
+     event: "Xu Beihong's memorial hall is pulled down for the subway",
+     place: "Dongshoulu Street",
+     scene: "A JUDGE orders Xu Beihong's memorial hall torn down for the subway route."}
+  - {year: 1967, peg: jockey, confidence: high, source: "China Daily; chineseposters.net (4 May)",
+     event: "Tsinghua students unveil the first large Mao statue of the Cultural Revolution",
+     place: "Tsinghua second gate",
+     scene: "A JOCKEY's whip points up at the giant Mao statue unveiled at Tsinghua's second gate."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Tiananmen",
+     event: "Tiananmen gate is secretly pulled down and rebuilt behind scaffolding",
+     place: "Tiananmen",
+     scene: "A SHIP's scaffold hides Tiananmen while workers secretly pull it down and rebuild it."}
+  - {year: 1971, peg: cat, confidence: high, source: "zh WP: Palace Museum",
+     event: "The Palace Museum reopens after five years of closure",
+     place: "Forbidden City",
+     scene: "A CAT slips through the reopened Meridian Gate as the Palace Museum ends five years of closure."}
+  - {year: 1973, peg: comb, confidence: medium, source: "Papers Past; Penn exhibit (March)",
+     event: "The London Philharmonic gives the first concerts of a Western orchestra in the city since the revolution",
+     scene: "John Pritchard taps a COMB on his music stand to start the London Philharmonic's first Beijing concert."}
+  - {year: 1973, peg: comb, confidence: high, source: "whyy; NCUSCR (September)",
+     event: "The Philadelphia Orchestra plays in Beijing, the first American orchestra in China",
+     place: "Nationalities Cultural Palace",
+     scene: "Ormandy conducts with a COMB for a baton as the Philadelphia Orchestra plays in Beijing."}
+  - {year: 1974, peg: car, confidence: medium, source: "WP: Black Painting incident",
+     event: "Paintings taken from Beijing hotels go on show as Black Paintings for attack",
+     place: "China Art Gallery, Beijing Hotel",
+     scene: "A CAR of critics hauls hotel paintings to the China Art Gallery for the Black Paintings show."}
+  - {year: 1976, peg: cage, confidence: high, source: "zh WP: Chairman Mao Memorial Hall (24 Nov)",
+     event: "The foundation of Chairman Mao's Memorial Hall is laid",
+     place: "Tiananmen Square",
+     scene: "Workers lower a crystal CAGE plan into the foundation of Chairman Mao's Memorial Hall on the square."}
+  # economy
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Beijing Daily (1 Oct)",
+     event: "The Beijing Daily starts, edited by Mayor Peng Zhen",
+     scene: "A LION roars from the Beijing Daily's first front page, edited by Mayor Peng Zhen."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Friendship Hotel (20 Sep)",
+     event: "The West Suburb Guesthouse for foreign experts opens, later the Friendship Hotel",
+     place: "Haidian",
+     scene: "A LAWYER for the Soviet experts checks into the new West Suburb Guesthouse, later the Friendship Hotel."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Beijing Hotel",
+     event: "The west wing of the Beijing Hotel is completed",
+     place: "Beijing Hotel, Wangfujing",
+     scene: "A LAWYER signs the guest book in the new west wing of the Beijing Hotel."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "zh WP: Tongrentang",
+     event: "Tongrentang pharmacy becomes a joint state-private firm",
+     place: "Dashilan",
+     scene: "A LAWYER draws up the papers that make Tongrentang pharmacy a joint state-private firm."}
+  - {year: 1955, peg: lily, confidence: high, source: "zh WP: Beijing Department Store (September)",
+     event: "The Beijing Department Store opens in Wangfujing",
+     place: "Wangfujing",
+     scene: "A LILY on the counter greets the first shoppers at the new state department store in Wangfujing."}
+  - {year: 1956, peg: leech, confidence: high, source: "Xinhua: rally of 15 Jan, Tiananmen",
+     event: "Beijing is the first city to finish the socialist change of private trade and industry",
+     place: "Tiananmen Square",
+     scene: "A LEECH of state capital clings to every Beijing shop as Peng Zhen declares the socialist change complete."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: 798 Art Zone",
+     event: "Joint Factory Seven-One-Eight, built with East German help, starts production",
+     place: "Jiuxianqiao, Dashanzi",
+     scene: "A LOG of Bauhaus roof arches covers the East German-built Joint Factory at Jiuxianqiao as it starts work."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: China Central Television (1 May)",
+     event: "Peking Television, the first TV station in China, goes on air",
+     scene: "A WOLF howls into the camera as Peking Television signs on, the first TV station in China."}
+  - {year: 1958, peg: wolf, confidence: high, source: "zh WP: Beijing Evening News (15 March)",
+     event: "The Beijing Evening News starts",
+     scene: "A WOLF reads the first Beijing Evening News under a street lamp."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: Ten Great Buildings",
+     event: "The Minzu Hotel opens on West Chang'an Avenue",
+     place: "West Chang'an Avenue",
+     scene: "An ELBOW of white tower rises over West Chang'an as the Minzu Hotel opens."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: Ten Great Buildings",
+     event: "The Overseas Chinese Hotel opens",
+     place: "Wangfujing",
+     scene: "Overseas guests rest an ELBOW on the balcony rail of the new Overseas Chinese Hotel."}
+  - {year: 1964, peg: cherry, confidence: high, source: "zh WP: Beijing Friendship Store (1 Dec)",
+     event: "The Friendship Store for foreigners opens on Donghuamen Street",
+     place: "Donghuamen",
+     scene: "A CHERRY tin sits on the first shelf as the Friendship Store opens for foreigners on Donghuamen Street."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Beijing Daily (September)",
+     event: "The Beijing Daily stops publication",
+     scene: "A JUDGE shuts the Beijing Daily presses, and the paper stops."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: Shougang Group",
+     event: "The Shijingshan steel works is renamed Capital Iron and Steel",
+     place: "Shijingshan",
+     scene: "A JOCKEY rides a steel ingot out of the Shijingshan works, now named Capital Iron and Steel."}
+  - {year: 1973, peg: comb, confidence: high, source: "zh WP: Beijing Friendship Store (1 April)",
+     event: "The Friendship Store moves into its new building on Jianguomenwai",
+     place: "Jianguomenwai",
+     scene: "A COMB of display counters fills the new Friendship Store building on Jianguomenwai."}
+  - {year: 1974, peg: car, confidence: high, source: "zh WP: Beijing Hotel",
+     event: "The tall east wing of the Beijing Hotel opens",
+     place: "Beijing Hotel, Wangfujing",
+     scene: "A CAR pulls up to the new east wing of the Beijing Hotel, kept low so it cannot look into Zhongnanhai."}
+  # society
+  - {year: 1949, peg: rope, confidence: high, source: "WP: History of Beijing",
+     event: "Police close all of Beijing's brothels and send the women to re-education",
+     place: "Bada Hutong",
+     scene: "Police cut a ROPE of red lanterns at Bada Hutong and close every brothel in Beijing."}
+  - {year: 1949, peg: rope, confidence: high, source: "zh WP: Babaoshan Revolutionary Cemetery (November)",
+     event: "Babaoshan Revolutionary Cemetery is set up",
+     place: "Babaoshan, Shijingshan",
+     scene: "A ROPE lowers the Eighteen Martyrs' remains into the first grave of the new Babaoshan cemetery."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Beijing city fortifications (1 Dec)",
+     event: "Xi'anmen, the west gate of the Imperial City, burns down by accident",
+     place: "Xi'anmen",
+     scene: "A LASSO of flame wraps Xi'anmen, the Imperial City's west gate, and it burns down by accident."}
+  - {year: 1950, peg: lasso, confidence: medium, source: "WP: Renmin University of China",
+     event: "Renmin University of China is formed from North China University and other schools",
+     scene: "A LASSO ties North China University and other schools together into Renmin University of China."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "WP: Minzu University of China",
+     event: "The Central Institute for Nationalities is founded",
+     place: "Weigongcun",
+     scene: "A WALLET of state funds opens the Central Institute for Nationalities at Weigongcun."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Yenching University",
+     event: "Yenching University closes, and Peking University moves onto its campus",
+     place: "Yanyuan, Haidian",
+     scene: "The stone LION at Yenching's gate gets a new badge as Peking University moves onto the campus."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Fu Jen Catholic University",
+     event: "Fu Jen Catholic University is merged into Beijing Normal University",
+     place: "Dingfu Street",
+     scene: "A LION swallows Fu Jen Catholic University whole into Beijing Normal University."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Beihang; zh WP: Eight Colleges",
+     event: "The eight institutes on Xueyuan Road are set up, the Institute of Aeronautics among them",
+     place: "Xueyuan Road, Haidian",
+     scene: "A winged LION leads eight new institutes, aeronautics, steel, geology and mining among them, onto Xueyuan Road."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: History of Beijing",
+     event: "Beijing bans opium completely",
+     scene: "Police feed seized opium to a bonfire shaped like a LION as Beijing bans the drug completely."}
+  - {year: 1955, peg: lily, confidence: high, source: "chinanews; Sina (August)",
+     event: "Yang Hua leads the Beijing Youth Volunteer Land Reclamation Team to the northeast",
+     place: "Shijingshan",
+     scene: "Yang Hua plants a LILY flag on a truck and leads sixty Beijing youths to break new land in the northeast."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: History of Beijing (April)",
+     event: "The city's sparrow war: millions of people kill hundreds of thousands of sparrows in three days",
+     scene: "A WOLF bangs a gong on a Beijing roof while millions drive sparrows to drop from exhaustion."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: USTC (September)",
+     event: "The University of Science and Technology of China is founded in Beijing",
+     place: "Yuquan Road",
+     scene: "A WOLF leaps through the gate of the new University of Science and Technology of China on Yuquan Road."}
+  - {year: 1959, peg: elbow, confidence: high, source: "zh WP: Workers' Stadium (31 Aug)",
+     event: "The Workers' Stadium opens after about eleven months of building",
+     place: "Workers' Stadium, Chaoyang",
+     scene: "The stands curve like a giant ELBOW round the new Workers' Stadium, built in under a year."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: History of Beijing (May)",
+     event: "Beijing residents must eat wild plants as Great Leap food runs short",
+     scene: "Beijing residents boil an ELBOW of wild root in the lanes as Great Leap food runs short."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "chineseposters.net: urban communes, April",
+     event: "Urban people's communes are set up in Beijing",
+     scene: "A CHEESE ration is cut in the canteen of a new urban people's commune in a Beijing lane."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP: 1961 World Table Tennis Championships",
+     event: "The World Table Tennis Championships at the Workers' Gymnasium; Zhuang Zedong wins",
+     place: "Workers' Gymnasium",
+     scene: "Zhuang Zedong smashes the ball like a JET across the Workers' Gymnasium and wins the world title."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP: Beijing Language and Culture University (June)",
+     event: "The Higher Preparatory School for Foreign Students opens, later the Beijing Language Institute",
+     scene: "A CHAIN of foreign students links arms at the gate of the new preparatory school for foreign students."}
+  - {year: 1965, peg: jelly, confidence: high, source: "zh WP: Workers' Stadium",
+     event: "The Second National Games are held at the Workers' Stadium",
+     place: "Workers' Stadium",
+     scene: "A JELLY-red torch lights the bowl of the Workers' Stadium for the Second National Games."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing (29 July)",
+     event: "Classes stop in all Beijing universities and high schools",
+     scene: "A JUDGE locks every Beijing university and high school, and classes stop."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Bian Zhongyun (5 Aug)",
+     event: "Red Guards beat vice-principal Bian Zhongyun to death, the first teacher killed in Beijing",
+     place: "Girls' Middle School of Beijing Normal University",
+     scene: "Students drag their vice-principal Bian Zhongyun before a JUDGE of Red Guards and beat her to death."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Lao She (24 Aug)",
+     event: "Lao She drowns in Taiping Lake after a Red Guard beating at the Confucius Temple",
+     place: "Taiping Lake",
+     scene: "A JUDGE's paper dunce cap floats on Taiping Lake where Lao She drowns after the Confucius Temple beating."}
+  - {year: 1966, peg: judge, confidence: high, source: "zh WP: Ming Dingling (24 Aug)",
+     event: "Red Guards burn the remains of the Wanli emperor and his empresses at Dingling",
+     place: "Dingling, Changping",
+     scene: "A JUDGE of Red Guards sentences the Wanli emperor's bones, and they burn in front of Dingling."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Daxing Massacre",
+     event: "Daxing massacre: local militia kill hundreds of people of bad class background",
+     place: "Daxing",
+     scene: "A JUDGE of the Daxing militia orders whole families killed, babies and old people among them."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing; WP: Red August",
+     event: "Red August: Red Guards kill at least one thousand seven hundred people in Beijing",
+     scene: "A JUDGE counts nearly two thousand Beijing dead from the Red Guard beatings of August and September."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: History of Beijing",
+     event: "Red Guards ransack over a hundred thousand Beijing homes in one month",
+     scene: "Red Guards with a JUDGE's warrant ransack over a hundred thousand Beijing homes in one month."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Red August",
+     event: "Red Guards drive tens of thousands of families of bad class out of Beijing",
+     scene: "A JUDGE stamps exile papers, and tens of thousands of families are driven out of Beijing."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP: Capital Indoor Stadium",
+     event: "The Capital Indoor Stadium is completed on land taken from the zoo",
+     place: "Capital Indoor Stadium, Xizhimenwai",
+     scene: "A CHEF lowers a giant lid over the new Capital Indoor Stadium, built on land taken from the zoo."}
+  - {year: 1970, peg: goose, confidence: high, source: "zh WP: Yu Luoke (5 March)",
+     event: "Yu Luoke, author of On Family Background, is sentenced and shot after a rally at the Workers' Stadium",
+     place: "Workers' Stadium",
+     scene: "A GOOSE-necked loudspeaker reads Yu Luoke's death sentence to a hundred thousand people in the Workers' Stadium."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP: USTC (early 1970)",
+     event: "The University of Science and Technology of China moves from Beijing to Hefei",
+     place: "Yuquan Road",
+     scene: "A GOOSE flock flies the University of Science and Technology of China out of Beijing to Hefei."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP: Capital Indoor Stadium; ping-pong diplomacy",
+     event: "Ping-pong diplomacy: the US table tennis team plays at the Capital Indoor Stadium",
+     place: "Capital Indoor Stadium",
+     scene: "A CAT chases the ball as US and Chinese players meet at the Capital Indoor Stadium in ping-pong diplomacy."}
+  - {year: 1971, peg: cat, confidence: high, source: "chineseposters.net; Peking Review (November)",
+     event: "The Afro-Asian Table Tennis Friendship Invitational is held at the Capital Gymnasium",
+     place: "Capital Indoor Stadium",
+     scene: "A black CAT sits on the net as Asian and African teams play the friendship invitational in Beijing."}
+  - {year: 1975, peg: eagle, confidence: high, source: "zh WP: Workers' Stadium",
+     event: "The Third National Games are held at the Workers' Stadium",
+     place: "Workers' Stadium",
+     scene: "An EAGLE carries the torch into the Workers' Stadium for the Third National Games."}
+world_refs:
+  - {year: 1949, event: "Communists take Beijing without a fight", cell: east_asia_politics_1945_present}
+  - {year: 1949, event: "Mao proclaims the People's Republic at Tiananmen", cell: east_asia_politics_1945_present}
+  - {year: 1949, event: "Political Consultative Conference meets in Beijing", cell: east_asia_politics_1945_present}
+  - {year: 1949, event: "First congress of writers and artists meets in Beijing", cell: east_asia_arts_1945_present}
+  - {year: 1949, event: "Chinese Academy of Sciences is founded", cell: east_asia_science_1945_present}
+  - {year: 1950, event: "Beijing Film Academy is founded", cell: east_asia_arts_1945_present}
+  - {year: 1953, event: "Islamic Association of China first meets in Beijing", cell: east_asia_religion_1945_present}
+  - {year: 1953, event: "Buddhist Association of China founded at Guangji Temple", cell: east_asia_religion_1945_present}
+  - {year: 1954, event: "First National People's Congress adopts the constitution", cell: east_asia_politics_1945_present}
+  - {year: 1955, event: "Police arrest pastor Wang Mingdao in Beijing", cell: east_asia_religion_1945_present}
+  - {year: 1956, event: "Fifth Research Academy for missiles is founded", cell: east_asia_science_1945_present}
+  - {year: 1957, event: "Taoist Association founded at Baiyun Temple", cell: east_asia_religion_1945_present}
+  - {year: 1957, event: "Catholic Patriotic Association is founded", cell: east_asia_religion_1945_present}
+  - {year: 1958, event: "Monument to the People's Heroes is unveiled", cell: east_asia_arts_1945_present}
+  - {year: 1958, event: "First Chinese digital computer runs", cell: east_asia_science_1945_present}
+  - {year: 1958, event: "First heavy-water research reactor goes critical", cell: east_asia_science_1945_present}
+  - {year: 1959, event: "Great Hall of the People is completed", cell: east_asia_arts_1945_present}
+  - {year: 1959, event: "First large digital computer is completed", cell: east_asia_science_1945_present}
+  - {year: 1959, event: "First National Games open in Beijing", cell: east_asia_society_1945_present}
+  - {year: 1962, event: "Seven Thousand Cadres Conference in Beijing", cell: east_asia_politics_1945_present}
+  - {year: 1965, event: "First total synthesis of bovine insulin", cell: east_asia_science_1945_present}
+  - {year: 1966, event: "May Sixteen Notification starts the Cultural Revolution", cell: east_asia_politics_1945_present}
+  - {year: 1966, event: "Red Guards rally in Tiananmen Square for Mao", cell: east_asia_politics_1945_present}
+  - {year: 1966, event: "Destroy the Four Olds campaign", cell: east_asia_politics_1945_present}
+  - {year: 1966, event: "Red Guards attack Liu Shaoqi", cell: east_asia_politics_1945_present}
+  - {year: 1966, event: "Chen Jingrun announces his prime theorem", cell: east_asia_science_1945_present}
+  - {year: 1967, event: "Beijing festival of the first model operas", cell: east_asia_arts_1945_present}
+  - {year: 1969, event: "Ninth Party Congress names Lin Biao heir", cell: east_asia_politics_1945_present}
+  - {year: 1969, event: "Beijing Subway opens", cell: east_asia_science_1945_present}
+  - {year: 1971, event: "Kissinger's secret visit to Beijing", cell: east_asia_politics_1945_present}
+  - {year: 1971, event: "Tu Youyou's wormwood extract clears malaria parasites", cell: east_asia_science_1945_present}
+  - {year: 1972, event: "Nixon visits China", cell: east_asia_politics_1945_present}
+  - {year: 1972, event: "Tu Youyou's team isolates artemisinin", cell: east_asia_science_1945_present}
+  - {year: 1973, event: "Tenth Party Congress", cell: east_asia_politics_1945_present}
+  - {year: 1973, event: "Chen Jingrun publishes his full proof", cell: east_asia_science_1945_present}
+  - {year: 1975, event: "Fourth National People's Congress sets the Four Modernisations", cell: east_asia_politics_1945_present}
+  - {year: 1976, event: "Zhou Enlai dies", cell: east_asia_politics_1945_present}
+  - {year: 1976, event: "Tiananmen Incident", cell: east_asia_politics_1945_present}
+  - {year: 1976, event: "Mao Zedong dies", cell: east_asia_politics_1945_present}
+  - {year: 1976, event: "Gang of Four is arrested", cell: east_asia_politics_1945_present}
+  - {year: 1976, event: "Tangshan earthquake", cell: east_asia_society_1945_present}
+out_refs:
+  - {year: 1949, event: "Party Central Committee moves from Xibaipo into Beiping", reason: "national leadership"}
+  - {year: 1949, event: "Nationalist-Communist peace talks at the Six Nations Hotel", reason: "national negotiations"}
+  - {year: 1951, event: "Seventeen Point Agreement on Tibet signed in Beijing", reason: "treaty"}
+  - {year: 1952, event: "Asia and Pacific peace conference at the Peace Hotel", reason: "international conference"}
+  - {year: 1956, event: "Eighth Party Congress", reason: "Party congress"}
+  - {year: 1959, event: "Tenth anniversary National Day parade", reason: "national celebration"}
+  - {year: 1966, event: "Eleventh Plenum adopts the Sixteen Points", reason: "Party plenum"}
+  - {year: 1967, event: "Rebels seize the Foreign Ministry", reason: "national ministry"}
+  - {year: 1968, event: "Twelfth Plenum expels Liu Shaoqi", reason: "Party plenum"}
+  - {year: 1969, event: "Lin Biao's Order Number One sends leaders out of Beijing", reason: "national army"}
+  - {year: 1970, event: "Mass rally in Tiananmen for Mao's statement of May twentieth", reason: "state rally"}
+  - {year: 1972, event: "Tanaka and Zhou sign the Japan-China normalisation at Diaoyutai", reason: "state visit"}
+  - {year: 1972, event: "Beijing Zoo pandas go to the United States", reason: "diplomatic gift"}
+  - {year: 1976, event: "Politburo dismisses Deng Xiaoping after the Tiananmen Incident", reason: "Politburo decision"}
+  - {year: 1976, event: "Hua Guofeng becomes Party chairman", reason: "Party leadership"}
+  - {year: 1976, event: "Memorial rally for Mao in Tiananmen Square", reason: "state funeral"}
+  - {year: 1976, event: "Central decision to build Mao's Memorial Hall", reason: "central decision"}

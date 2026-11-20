@@ -1,0 +1,994 @@
+# City: Beijing x 1421 to 1643 (the Ming capital: Zhengtong's gates, the Oirat siege, Jiajing's altars and
+# Outer City, Wanli's temples and tombs, palace fires, the Wanggongchang blast, the Jin and Qing raids). DRAFT 2026-11-20.
+# Area: Beijing Municipality (Inner and Outer cities, Imperial City and Western Park, Western Hills, Changping and
+# the Ming Tombs, Badaling, Mutianyu, Juyongguan, Lugou, Tongzhou and Zhangjiawan, Miyun, Huairou, Fangshan).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Ming court events (accessions,
+# imperial burials, court purges, national decrees and armies) -> out_refs; palaces, gates, walls, temples, tombs,
+# fires, raids, riots and public executions in the city -> cards (main-stage rule). World-grid events -> world_refs.
+# Dates: memory pass + web check (24 of 45 searches; no unauthorised book copies).
+# Main sources: Ming shi annals (juan 7-24) and river treatises (juan 86-87) on zh.wikisource; zh and en
+# Wikipedia (Beijing walls, Outer City, Zhengyangmen, Forbidden City halls, temples, mosques, Ming Tombs, Leopard
+# House, Jisi incident); visitbeijing.com.cn, people.com.cn and thepaper.cn through search summaries.
+# Lunar dates late in a Chinese year -> the Western year of the day (Man Gui's death, Chongzhen 2/12 -> 1630).
+# A building -> its completion unless the text says "work starts". A book -> its completion or printing.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1428, peg: knife, confidence: high, source: "Ming shi j9: Xuande 3/8",
+     event: "Xuande abolishes the Beijing branch ministry and the rear army command of the capital region",
+     place: "Beijing branch ministry",
+     scene: "A KNIFE cuts the seal of the Beijing branch ministry in two, and its clerks carry their desks out of the capital office."}
+  - {year: 1436, peg: match, confidence: disputed, source: "zh WP Beijing walls (1436); en WP Fortifications (1435)",
+     event: "Work starts on gate towers, barbicans, arrow towers and corner towers for the nine Inner City gates",
+     place: "nine Inner City gates",
+     scene: "A burning MATCH runs along the Inner City wall and lights nine gates, and a tower and barbican spring up at each flame."}
+  - {year: 1436, peg: match, confidence: high, source: "zh WP Zhengyangmen (Zhengtong 1)",
+     event: "Lizheng Gate gets an arrow tower and the largest barbican of the city",
+     place: "Lizheng Gate (Zhengyangmen)",
+     scene: "Builders stack giant MATCH boxes in front of Lizheng Gate into the biggest barbican in Beijing, then top it with an arrow tower."}
+  - {year: 1439, peg: map, confidence: high, source: "zh WP Zhengyangmen (Zhengtong 4)",
+     event: "Lizheng Gate is renamed Zhengyangmen, and other Inner City gates get new names",
+     place: "Zhengyangmen",
+     scene: "An official unrolls a city MAP, scratches out Lizheng and writes Zhengyangmen over the south gate, then renames its sister gates."}
+  - {year: 1439, peg: map, confidence: high, source: "en WP Fortifications of Beijing",
+     event: "Stone bridges replace the wooden bridges over the moat at the nine Inner City gates",
+     place: "Inner City moat",
+     scene: "A stone MAP of the moat is laid flat across the water at each gate and becomes a stone bridge where planks stood."}
+  - {year: 1445, peg: railway, confidence: high, source: "en WP Fortifications of Beijing",
+     event: "The inner face of the Inner City wall is faced with brick, and the wall and moat system is complete",
+     place: "Inner City wall",
+     scene: "A RAILWAY of brick carts runs along the inside of the Inner City wall and cases its earth face in brick."}
+  - {year: 1449, peg: rope, confidence: medium, source: "search: Ma Shun accounts (Defense of Beijing)",
+     event: "Angry officials beat Wang Zhen's ally Ma Shun to death at a court session after Tumu",
+     place: "palace court, Forbidden City",
+     scene: "Officials loop a ROPE round guard commander Ma Shun at court, drag him down and beat Wang Zhen's ally to death."}
+  - {year: 1449, peg: rope, confidence: high, source: "Ming shi j11: Zhengtong 14/8",
+     event: "Before the Oirat siege, grain from the Tongzhou granaries is moved into the capital",
+     place: "Tongzhou granaries",
+     scene: "Soldiers tie each Tongzhou grain sack to one long ROPE and haul the granaries into the capital before the Oirats come."}
+  - {year: 1449, peg: rope, confidence: medium, source: "search: thepaper.cn, Tongzhou city history",
+     event: "Tongzhou builds a New City wall beside the old town to guard the canal granaries",
+     place: "Tongzhou New City",
+     scene: "A ROPE pegged round the Tongzhou granaries is pulled tight, and a new city wall rises along it beside the old town."}
+  - {year: 1464, peg: cherry, confidence: high, source: "Ming shi j13: Tianshun 8/3",
+     event: "The new prison of the Embroidered Uniform Guard is torn down",
+     place: "Embroidered Uniform Guard prison",
+     scene: "Workers pelt the new Embroidered Uniform Guard prison with CHERRY stones until its walls fall and the cells stand open."}
+  - {year: 1476, peg: cage, confidence: high, source: "zh WP Beijing walls (Chenghua 12)",
+     event: "An official first proposes an outer wall around the growing suburbs of the capital",
+     place: "southern suburbs",
+     scene: "An official draws a giant CAGE round the crowded southern suburbs and proposes it as an outer wall for the capital."}
+  - {year: 1505, peg: seal, confidence: medium, source: "en WP Badaling (1504/1505); visitbeijing",
+     event: "The Badaling fortress is built as the outer post of Juyong Pass",
+     place: "Badaling",
+     scene: "A SEAL flops onto the ridge north of Juyong Pass and balances the first bricks of the Badaling fortress on its nose."}
+  - {year: 1516, peg: dish, confidence: high, source: "Ming shi j16: Zhengde 11/7-8",
+     event: "Mongol raiders hit Baiyangkou pass, and the throne gives rice to Wanping villagers they ruined",
+     place: "Baiyangkou, Changping",
+     scene: "Mongol horsemen smash every DISH in Baiyangkou pass, and officials then fill new dishes with rice for ruined Wanping villagers."}
+  - {year: 1523, peg: gnome, confidence: high, source: "Ming shi j17: Jiajing 2/1",
+     event: "Mongol raiders attack the Shahe fort north of the capital",
+     place: "Shahe fort, Changping",
+     scene: "A GNOME on the Shahe fort wall drops rocks on Mongol raiders who storm the fort north of the capital."}
+  - {year: 1523, peg: gnome, confidence: high, source: "Ming shi j17: Jiajing 2/5",
+     event: "Raiders break in at Shitangling near Miyun and kill the commander Yin Long",
+     place: "Shitangling, Miyun",
+     scene: "Raiders pour through the Shitangling pass near Miyun, and a GNOME lays the fallen commander Yin Long on his shield."}
+  - {year: 1534, peg: hammer, confidence: high, source: "zh WP Huangshicheng (Jiajing 13)",
+     event: "Work starts on the Imperial Archives (Huangshicheng), a stone hall for the dynasty's records",
+     place: "Huangshicheng, Nanchizi",
+     scene: "A HAMMER chisels stone vaults east of the palace, and work starts on a fireproof archive for the Ming records."}
+  - {year: 1536, peg: match, confidence: high, source: "zh WP Huangshicheng (Jiajing 15)",
+     event: "The Imperial Archives is finished and named Huangshicheng",
+     place: "Huangshicheng",
+     scene: "A MATCH held to the Huangshicheng's stone walls cannot burn them, so Jiajing names the finished fireproof archive."}
+  - {year: 1539, peg: map, confidence: medium, source: "visitbeijing: Badaling east gate (Jiajing 18)",
+     event: "Badaling's east gate gets the inscription 'Juyong waizhen', outer garrison of Juyong",
+     place: "Badaling east gate",
+     scene: "A carver copies a MAP of the pass onto Badaling's east gate and writes 'outer garrison of Juyong' over it."}
+  - {year: 1542, peg: rhino, confidence: high, source: "zh WP Beijing walls (Jiajing 21)",
+     event: "Censor-in-chief Mao Bowen asks the throne to build an outer city wall",
+     place: "southern suburbs",
+     scene: "Mao Bowen rides a RHINO round the open suburbs to show raiders could charge in, and asks for an outer wall."}
+  - {year: 1548, peg: reef, confidence: medium, source: "en WP Xia Yan (31 Oct 1548; place not given)",
+     event: "Former grand secretary Xia Yan is executed in the capital",
+     place: "West Market",
+     scene: "Xia Yan's career runs onto Yan Song's REEF, and the former grand secretary dies on the execution block in the capital."}
+  - {year: 1550, peg: lasso, confidence: high, source: "zh WP Beijing Outer City (Jiajing 29)",
+     event: "Work starts on three walled suburbs outside the front gates but stops when residents protest",
+     place: "outside Zhengyangmen",
+     scene: "Officials throw a LASSO round the shops outside the front gates to wall them in, but angry residents cut it."}
+  - {year: 1551, peg: wallet, confidence: medium, source: "people.com.cn (Dong Yaohui): Changping garrison",
+     event: "The Changping garrison is set up to guard the Ming Tombs and the passes north of the capital",
+     place: "Changping",
+     scene: "The court opens a WALLET for a new Changping garrison, and its soldiers march to guard the tombs and northern passes."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Beijing Outer City (Jiajing 32)",
+     event: "Work starts on the Outer City wall, with the south wall first after Yan Song cuts the plan",
+     place: "Outer City south wall",
+     scene: "A LLAMA drags the first sledge of earth along the south line, after Yan Song cuts the ring plan to one wall."}
+  - {year: 1553, peg: llama, confidence: high, source: "Ming shi j18: Jiajing 32/10",
+     event: "The south wall of the Outer City is finished, and the capital gets its 'convex' outline",
+     place: "Outer City",
+     scene: "A LLAMA sits on the finished Outer City wall, and the capital's outline below it now bulges south like a step."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Yongdingmen (Jiajing 32)",
+     event: "Work starts on Yongdingmen, the main south gate of the Outer City",
+     place: "Yongdingmen",
+     scene: "A LLAMA kneels on the central axis, and builders set Yongdingmen's first gate stones on its back."}
+  - {year: 1555, peg: lily, confidence: high, source: "en WP Yang Jisheng (12 Nov 1555)",
+     event: "Yang Jisheng, who accused Yan Song, is executed in the capital",
+     place: "West Market",
+     scene: "A white LILY falls from Yang Jisheng's hand as he dies for accusing Yan Song before the capital crowd."}
+  - {year: 1563, peg: gem, confidence: medium, source: "Ming shi j18: Jiajing 42/10",
+     event: "Raiders break through Qiangziling and plunder near the capital, which is put under martial law",
+     place: "Qiangziling, Miyun",
+     scene: "Raiders pry a GEM out of the Qiangziling wall, the breach opens, and the capital closes its gates under martial law."}
+  - {year: 1564, peg: cherry, confidence: high, source: "zh WP Outer City; en WP Fortifications",
+     event: "Barbicans are added to the Outer City gates",
+     place: "Outer City gates",
+     scene: "Builders press a half-round CHERRY of brick onto the front of each Outer City gate as a barbican."}
+  - {year: 1564, peg: cherry, confidence: medium, source: "thepaper.cn: Zhangjiawan wall (Jiajing 43)",
+     event: "Zhangjiawan, the canal port south of Tongzhou, gets a town wall",
+     place: "Zhangjiawan",
+     scene: "Canal boatmen at Zhangjiawan spit CHERRY stones into mortar and build a wall to guard their grain port."}
+  - {year: 1568, peg: chef, confidence: medium, source: "en WP Mutianyu; people.com.cn",
+     event: "Qi Jiguang takes command of troop training for Jizhou, Changping and Baoding",
+     place: "Jizhou-Changping front",
+     scene: "Qi Jiguang puts on a CHEF's apron and drills the Changping and Jizhou garrisons like kitchen boys."}
+  - {year: 1569, peg: ship, confidence: high, source: "en WP Mutianyu",
+     event: "The Mutianyu section of the Great Wall is rebuilt",
+     place: "Mutianyu",
+     scene: "A stone SHIP sails up the Mutianyu ridge, and its hull becomes the rebuilt wall with towers for masts."}
+  - {year: 1571, peg: cat, confidence: medium, source: "people.com.cn citing Ming shi (autumn Longqing 5)",
+     event: "Qi Jiguang's hollow watchtowers on the Jizhou wall are finished",
+     place: "Jizhou-Changping wall",
+     scene: "A CAT runs along the wall north of Beijing and curls into each new hollow watchtower that Qi Jiguang finishes."}
+  - {year: 1582, peg: oven, confidence: medium, source: "visitbeijing: Badaling west gate (Wanli 10)",
+     event: "Wu Dui rebuilds Badaling's west gate and inscribes it 'Beimen suoyao', key of the northern gate",
+     place: "Badaling west gate",
+     scene: "Wu Dui bakes a giant bronze key in an OVEN and hangs it over Badaling's west gate as the north's lock."}
+  - {year: 1591, peg: boot, confidence: high, source: "Ming shi j20: Wanli 19/10",
+     event: "Officers of the capital garrison riot at Chang'an Gate",
+     place: "Chang'an Gate",
+     scene: "Garrison officers kick their BOOT heels against Chang'an Gate and shout in a riot over their pay."}
+  - {year: 1605, peg: seal, confidence: high, source: "Ming shi j21: Wanli 33/1",
+     event: "The Outer City wall is repaired after the rains of the year before",
+     place: "Outer City wall",
+     scene: "A SEAL slaps fresh mortar into the rain gaps of the Outer City wall with its flippers."}
+  - {year: 1629, peg: knob, confidence: high, source: "zh WP Jisi incident (Chongzhen 2/11/15)",
+     event: "Later Jin troops defeat Man Gui and Hou Shilu at Shunyi and cross the river near Tongzhou",
+     place: "Shunyi",
+     scene: "Jin horsemen twist the KNOB of the Shunyi river gate, rout Man Gui's men and ride on toward Tongzhou."}
+  - {year: 1629, peg: knob, confidence: high, source: "zh WP Jisi incident (Chongzhen 2/11/29)",
+     event: "Yuan Chonghuan raids the Later Jin camp at Nanhaizi south of the capital",
+     place: "Nanhaizi (Nanyuan)",
+     scene: "Yuan Chonghuan turns the KNOB of the Nanhaizi park gate at night and bursts into the sleeping Jin camp."}
+  - {year: 1630, peg: mouse, confidence: medium, source: "zh WP Jisi incident; Man Gui (Chongzhen 2/12/16)",
+     event: "Battle of Yongdingmen: Jin troops kill the generals Man Gui and Sun Zushou outside the Outer City",
+     place: "Yongdingmen",
+     scene: "A MOUSE army of Jin cavalry swarms outside Yongdingmen and drags down the generals Man Gui and Sun Zushou."}
+  - {year: 1636, peg: match, confidence: high, source: "Ming shi j23: Chongzhen 9/7",
+     event: "Qing troops take Changping and kill the pass commissioner Wang Zhaokun",
+     place: "Changping",
+     scene: "Qing troops strike a MATCH at the gate of Changping, take the town and kill its commissioner Wang Zhaokun."}
+  - {year: 1636, peg: match, confidence: medium, source: "He Guanbiao, BIHP 76 (2005) via search",
+     event: "Qing raiders burn Deling, the Tianqi Emperor's tomb",
+     place: "Deling, Ming Tombs",
+     scene: "A Qing raider throws a lit MATCH into the halls of Deling, and the Tianqi Emperor's new tomb burns."}
+  - {year: 1636, peg: match, confidence: high, source: "Ming shi j23: Chongzhen 9/7",
+     event: "The captured rebel chief Gao Yingxiang is executed in the capital",
+     place: "capital execution ground",
+     scene: "The rebel 'Dashing King' Gao Yingxiang burns out like a MATCH on the capital's execution ground."}
+  - {year: 1638, peg: movie, confidence: high, source: "Ming shi j24: Chongzhen 11/9",
+     event: "Qing troops break in at Qiangziling, kill the governor Wu Aheng and force martial law in the capital",
+     place: "Qiangziling, Miyun",
+     scene: "A MOVIE reel shows Qing riders bursting through Qiangziling and killing Wu Aheng, and the capital shuts its gates."}
+  - {year: 1642, peg: rhino, confidence: high, source: "Ming shi j24: Chongzhen 15/11",
+     event: "Qing armies invade by several routes; nobles guard the nine gates and a eunuch runs the city defence",
+     place: "nine Inner City gates",
+     scene: "A RHINO stands in each of the nine gates, ridden by a noble, as a eunuch commands the city's defence."}
+  - {year: 1643, peg: ram, confidence: medium, source: "Ming shi j24: Chongzhen 15/12 (early 1643)",
+     event: "Qing raiders burn Xianling, the Hongxi Emperor's tomb at the Ming Tombs",
+     place: "Xianling, Ming Tombs",
+     scene: "A RAM butts the gate of Xianling open, and Qing raiders set the Hongxi Emperor's tomb on fire."}
+  # science
+  - {year: 1423, peg: gnome, confidence: high, source: "Ming shi j86: Yongle 21",
+     event: "Dikes are built along the canal river bank south of Tongzhou",
+     place: "Tongzhou river bank",
+     scene: "A GNOME pats earth into a long dike along the canal south of Tongzhou to keep the river in."}
+  - {year: 1428, peg: knife, confidence: high, source: "Ming shi j87: Xuande 3",
+     event: "The Lugou river dike collapses, and workers are sent to repair it",
+     place: "Lugou dike",
+     scene: "The Hun river slices through the Lugou dike like a KNIFE, and workers rush to fill the cut."}
+  - {year: 1436, peg: match, confidence: high, source: "Ming shi j87: Zhengtong 1",
+     event: "Li Yong repairs the collapsed river banks at Lugou bridge; the work ends a year later",
+     place: "Lugou bridge",
+     scene: "Li Yong lays the river banks at Lugou bridge like MATCH sticks, one beside the next, until they hold."}
+  - {year: 1439, peg: map, confidence: high, source: "zh WP Beijing Ancient Observatory (Zhengtong 4)",
+     event: "Bronze copies of the armillary sphere, simplified instrument, gnomon and celestial globe are finished",
+     place: "Beijing observatory",
+     scene: "Casters pour bronze over a star MAP, and an armillary sphere, a gnomon and a celestial globe come out finished."}
+  - {year: 1444, peg: warrior, confidence: high, source: "zh WP Lugou Bridge (Zhengtong 9/3)",
+     event: "Lugou (Marco Polo) Bridge is repaired",
+     place: "Lugou Bridge",
+     scene: "A stone WARRIOR climbs down from the Lugou bridge rail and resets its broken arches."}
+  - {year: 1446, peg: roach, confidence: medium, source: "search: visitbeijing (Zhengtong 11)",
+     event: "Work starts on Yongtong (Bali) Bridge, a stone bridge over the Tonghui river west of Tongzhou",
+     place: "Baliqiao",
+     scene: "A ROACH carries the first stone across the Tonghui river eight li west of Tongzhou, and Yongtong Bridge begins."}
+  - {year: 1446, peg: roach, confidence: high, source: "zh WP Beijing Ancient Observatory (Zhengtong 11)",
+     event: "The Shadow Gauge Hall is finished beside the observatory terrace",
+     place: "Beijing observatory",
+     scene: "A ROACH runs along the noon shadow on the bronze gauge in the new Shadow Gauge Hall and marks its length."}
+  - {year: 1455, peg: lily, confidence: high, source: "zh WP Beijing Ancient Observatory (Jingtai 6)",
+     event: "A second observatory is built near the Altar of Soil and Grain to check the main terrace",
+     place: "near Shejitan",
+     scene: "A LILY stands on a small new star platform beside the Altar of Soil and Grain and checks the main terrace's readings."}
+  - {year: 1475, peg: eagle, confidence: high, source: "Ming shi j13: Chenghua 11/8",
+     event: "The Tonghui canal from Tongzhou to the capital is dredged",
+     place: "Tonghui canal",
+     scene: "An EAGLE scoops mud out of the Tonghui canal with its claws so grain boats can reach the capital."}
+  - {year: 1483, peg: foam, confidence: high, source: "Ming shi j87: Chenghua 19",
+     event: "Minister Du Qian is put in charge of the Lugou river dikes",
+     place: "Lugou river",
+     scene: "Du Qian stands on the Lugou dike and pushes the river FOAM back with his staff of office."}
+  - {year: 1490, peg: bees, confidence: high, source: "zh WP Lugou Bridge (Hongzhi 3)",
+     event: "Lugou Bridge is repaired again",
+     place: "Lugou Bridge",
+     scene: "BEES fill the cracks in Lugou bridge with wax that sets hard as stone."}
+  - {year: 1507, peg: ski, confidence: high, source: "Ming shi j86: Zhengde 2",
+     event: "The Tonghui canal is dredged, and twelve locks and forty-one dams are repaired to Tongzhou",
+     place: "Tonghui canal",
+     scene: "A boatman on one SKI glides down the newly dredged Tonghui canal and jumps twelve repaired locks to Tongzhou."}
+  - {year: 1523, peg: gnome, confidence: high, source: "zh WP Beijing Ancient Observatory (Jiajing 2)",
+     event: "A wind pole with twenty-eight iron hoops for the lunar mansions is set up at the observatory",
+     place: "Beijing observatory",
+     scene: "A GNOME climbs the new wind pole on the observatory and hangs twenty-eight iron hoops, one per lunar mansion."}
+  - {year: 1528, peg: knife, confidence: high, source: "Ming shi j86: Jiajing 7",
+     event: "Censor Wu Zhong finishes reopening the Tonghui canal locks, and grain boats again reach the city",
+     place: "Dongbianmen, Dahe Bridge",
+     scene: "Wu Zhong cuts the silt from the Tonghui locks with a KNIFE, and grain boats glide again to the city wall."}
+  - {year: 1541, peg: radio, confidence: high, source: "zh WP Lugou Bridge (Jiajing 20)",
+     event: "Lugou Bridge is repaired",
+     place: "Lugou Bridge",
+     scene: "A RADIO on the parapet of Lugou bridge calls the masons, and they reset the worn arches."}
+  - {year: 1555, peg: lily, confidence: high, source: "zh WP Lugou Bridge (Jiajing 34)",
+     event: "Lugou Bridge is repaired, and the Hun river is cleared from Liulin to Caoqiao",
+     place: "Lugou Bridge",
+     scene: "Workers pull a LILY pond of weeds out of the Hun river below Lugou bridge and patch the arches."}
+  - {year: 1556, peg: leech, confidence: high, source: "zh WP Lugou Bridge (Jiajing 35)",
+     event: "Lugou Bridge gets a second repair in two years",
+     place: "Lugou Bridge",
+     scene: "A LEECH clings to a cracked pier of Lugou bridge until the masons come back a second year and seal it."}
+  - {year: 1562, peg: chain, confidence: high, source: "Ming shi j87: Jiajing 41",
+     event: "Minister Li Lei orders the banks of the Lugou river repaired",
+     place: "Lugou river",
+     scene: "Li Lei drags a CHAIN of laden carts along the Lugou banks and orders every weak bank rebuilt."}
+  - {year: 1563, peg: gem, confidence: high, source: "Ming shi j87: Jiajing 41, next year",
+     event: "Stone dikes about nine hundred and sixty zhang long are built on both banks of the Lugou river",
+     place: "Lugou river",
+     scene: "Masons set each stone of the new Lugou dikes like a GEM in a ring, on the east and west banks."}
+  - {year: 1573, peg: comb, confidence: high, source: "Ming shi j20: Wanli 1/7",
+     event: "Grain boats reach Miyun by canal for the first time",
+     place: "Miyun",
+     scene: "A COMB rakes a channel up the Chao river, and the first grain boats float to Miyun."}
+  - {year: 1603, peg: sumo, confidence: high, source: "Ming shi j86: Wanli 31",
+     event: "The White river from Tongzhou to Tianjin is dredged, and the spoil builds dikes on both banks",
+     place: "White river, Tongzhou",
+     scene: "A SUMO wrestler shoves the mud from the White river at Tongzhou onto both banks as new dikes."}
+  - {year: 1605, peg: seal, confidence: medium, source: "search: thepaper.cn (Tongyun bridge)",
+     event: "The stone Tongyun Bridge at Zhangjiawan is finished and named by Wanli",
+     place: "Zhangjiawan",
+     scene: "Wanli stamps his SEAL on the new stone bridge at Zhangjiawan and names it Tongyun."}
+  - {year: 1642, peg: rhino, confidence: unverified,
+     event: "Adam Schall casts cannon for the Ming in a foundry near the palace",
+     place: "palace foundry",
+     scene: "Adam Schall pours molten bronze into a RHINO-shaped mould near the palace and lifts out a Ming cannon."}
+  # religion
+  - {year: 1427, peg: ink, confidence: high, source: "zh WP Niujie Mosque (Xuande 2)",
+     event: "Niujie Mosque is enlarged",
+     place: "Niujie Mosque",
+     scene: "Hui builders draw the new halls of Niujie Mosque in INK, and the mosque grows to fill the drawing."}
+  - {year: 1428, peg: knife, confidence: high, source: "zh WP Dajue Temple (Xuande 3)",
+     event: "The temple at Yangtai Hill in the Western Hills is rebuilt and renamed Dajue Temple",
+     place: "Dajue Temple, Western Hills",
+     scene: "A monk carves the new name Dajue into the old temple gate with a KNIFE after the rebuilding."}
+  - {year: 1428, peg: knife, confidence: high, source: "zh WP White Cloud Temple (Xuande 3)",
+     event: "The Sanqing Pavilion and Siyu Hall are built at the White Cloud Temple",
+     place: "White Cloud Temple",
+     scene: "Daoist carpenters shape the Sanqing Pavilion of the White Cloud Temple with one long KNIFE."}
+  - {year: 1433, peg: mummy, confidence: high, source: "zh WP Miaoying Temple (Xuande 8)",
+     event: "Xuande orders the White Pagoda repaired and sets up a stele for the work",
+     place: "White Pagoda (Miaoying)",
+     scene: "Workers wrap the cracked White Pagoda in bandages like a MUMMY and set a stele at its foot."}
+  - {year: 1438, peg: movie, confidence: high, source: "zh WP White Cloud Temple (Zhengtong 3)",
+     event: "The Jade Emperor Hall and Thunder Ancestor Hall are founded at the White Cloud Temple",
+     place: "White Cloud Temple",
+     scene: "A MOVIE of thunder plays on the White Cloud Temple wall, and the Thunder Ancestor Hall rises under the flashes."}
+  - {year: 1439, peg: map, confidence: high, source: "zh WP Fahai Temple, Beijing (Zhengtong 4)",
+     event: "The eunuch Li Tong starts building Fahai Temple at Moshikou",
+     place: "Fahai Temple, Moshikou",
+     scene: "The eunuch Li Tong spreads a MAP on the hill at Moshikou and marks out the halls of Fahai Temple."}
+  - {year: 1442, peg: rhino, confidence: high, source: "zh WP Niujie Mosque (Zhengtong 7)",
+     event: "Niujie Mosque is repaired and its facing hall is added",
+     place: "Niujie Mosque",
+     scene: "A RHINO carries roof beams down Niujie street, and the mosque's new facing hall goes up."}
+  - {year: 1443, peg: ram, confidence: high, source: "zh WP Zhihua Temple (Zhengtong 8)",
+     event: "The eunuch Wang Zhen starts building Zhihua Temple as his family temple",
+     place: "Zhihua Temple, Lumicang",
+     scene: "Wang Zhen drives a RAM pulling a cart of black glazed tiles to Lumicang to start his Zhihua Temple."}
+  - {year: 1443, peg: ram, confidence: high, source: "zh WP Fahai Temple, Beijing (Zhengtong 8)",
+     event: "Fahai Temple is finished and named by Yingzong",
+     place: "Fahai Temple",
+     scene: "A RAM butts open the new gates of Fahai Temple, and Yingzong's name tablet goes up over them."}
+  - {year: 1443, peg: ram, confidence: high, source: "zh WP White Cloud Temple (Zhengtong 8)",
+     event: "The Lingxing Gate is built at the White Cloud Temple",
+     place: "White Cloud Temple",
+     scene: "A RAM carries the posts of the Lingxing Gate to the White Cloud Temple and stands them up with its horns."}
+  - {year: 1444, peg: warrior, confidence: high, source: "zh WP Zhihua Temple (Zhengtong 9)",
+     event: "Zhihua Temple's bell is cast, and an imperial order confirms the temple",
+     place: "Zhihua Temple",
+     scene: "A temple WARRIOR swings a beam against Zhihua Temple's new bell as the imperial order is read."}
+  - {year: 1446, peg: roach, confidence: high, source: "zh WP Dajue Temple (Zhengtong 11)",
+     event: "Dajue Temple is greatly renovated",
+     place: "Dajue Temple",
+     scene: "A ROACH runs out of the old Dajue halls as builders renovate every roof."}
+  - {year: 1447, peg: rock, confidence: high, source: "zh WP Dongsi Mosque (Zhengtong 12)",
+     event: "Hui official Chen You pays to rebuild the Dongsi Mosque",
+     place: "Dongsi Mosque",
+     scene: "Chen You splits a ROCK full of silver and pays for every beam of the rebuilt Dongsi Mosque."}
+  - {year: 1447, peg: rock, confidence: high, source: "zh WP Dongyue Temple (Zhengtong 12)",
+     event: "Yingzong has the Dongyue Temple outside Chaoyangmen repaired",
+     place: "Dongyue Temple, Chaoyangmen",
+     scene: "Yingzong rolls the ROCK of Mount Tai to the Dongyue Temple outside Chaoyangmen and orders its halls repaired."}
+  - {year: 1452, peg: lion, confidence: high, source: "zh WP Longfu Temple, Beijing (Jingtai 3)",
+     event: "The Jingtai Emperor orders the great Longfu Temple built",
+     place: "Longfu Temple",
+     scene: "A stone LION roars, and a huge workforce starts the great Longfu Temple for the Jingtai Emperor."}
+  - {year: 1453, peg: llama, confidence: high, source: "zh WP Longfu Temple, Beijing (Jingtai 4/3)",
+     event: "Longfu Temple is finished",
+     place: "Longfu Temple",
+     scene: "A LLAMA carries the last roof tile up to Longfu Temple, and the great temple is finished."}
+  - {year: 1456, peg: leech, confidence: high, source: "zh WP White Cloud Temple (Jingtai 7)",
+     event: "The Lingguan Hall of the White Cloud Temple is rebuilt",
+     place: "White Cloud Temple",
+     scene: "A LEECH drops off the rotten beams of the Lingguan Hall, and Daoists rebuild the hall around it."}
+  - {year: 1457, peg: log, confidence: high, source: "zh WP Guangji Temple, Beijing (Tianshun 1)",
+     event: "Shanxi monks led by Puhui start rebuilding Guangji Temple on its old site",
+     place: "Guangji Temple, Xisi",
+     scene: "The monk Puhui rolls a LOG from Shanxi onto the ruins at Xisi and begins rebuilding Guangji Temple."}
+  - {year: 1457, peg: log, confidence: high, source: "zh WP Miaoying Temple (Tianshun 1)",
+     event: "The eunuch Liao Xiu pays to rebuild the temple of the White Pagoda",
+     place: "White Pagoda temple",
+     scene: "Liao Xiu floats a LOG of silver to the White Pagoda and starts rebuilding the temple at its foot."}
+  - {year: 1457, peg: log, confidence: medium, source: "Ming shi j12: Tianshun 1/10 (place not given)",
+     event: "Restored Yingzong gives the dead eunuch Wang Zhen a shrine named Jingzhong",
+     place: "Zhihua Temple",
+     scene: "Yingzong carves a LOG into Wang Zhen's statue and sets it in a shrine named Jingzhong."}
+  - {year: 1458, peg: wolf, confidence: high, source: "zh WP Xiannongtan (Tianshun 2)",
+     event: "A fasting palace (later Qingchenggong) is built at the Altar of Agriculture",
+     place: "Xiannongtan",
+     scene: "A WOLF guards the new fasting palace at the Altar of Agriculture so the emperor can fast before ploughing."}
+  - {year: 1462, peg: chain, confidence: high, source: "zh WP Zhihua Temple (Tianshun 6)",
+     event: "Yingzong gives Zhihua Temple a set of the Buddhist canon and a stele",
+     place: "Zhihua Temple",
+     scene: "Porters carry the Buddhist canon into Zhihua Temple on a CHAIN of carts, and a stele rises beside it."}
+  - {year: 1466, peg: judge, confidence: high, source: "zh WP Guangji Temple, Beijing (Chenghua 2)",
+     event: "Chenghua names the rebuilt temple Hongci Guangji Temple",
+     place: "Guangji Temple",
+     scene: "A JUDGE bangs his gavel over the rebuilt temple at Xisi and names it Hongci Guangji Temple."}
+  - {year: 1466, peg: judge, confidence: low, source: "search: one report (Chenghua 2)",
+     event: "Yu Qian's old house in Dongdan becomes a shrine to him after his name is cleared",
+     place: "Yu Qian Shrine, Xibiaobei Hutong",
+     scene: "A JUDGE clears Yu Qian's name and turns the key of his Dongdan house, which opens as his shrine."}
+  - {year: 1468, peg: chef, confidence: high, source: "zh WP Miaoying Temple (Chenghua 4)",
+     event: "The rebuilt White Pagoda temple is finished and named Miaoying Temple",
+     place: "Miaoying Temple",
+     scene: "A CHEF ices the White Pagoda like a cake for the opening feast of the newly named Miaoying Temple."}
+  - {year: 1473, peg: comb, confidence: high, source: "zh WP Zhenjue Temple (Chenghua 9/11)",
+     event: "The five-spire Diamond Throne Pagoda of Zhenjue Temple is finished",
+     place: "Zhenjue (Five Pagoda) Temple",
+     scene: "A COMB with five teeth stands on a stone throne at Zhenjue Temple and hardens into the five-spire pagoda."}
+  - {year: 1474, peg: car, confidence: high, source: "zh WP Niujie Mosque (Chenghua 10)",
+     event: "Chenghua names the Niujie mosque 'Libai Temple'",
+     place: "Niujie Mosque",
+     scene: "A CAR drives the Chenghua name board 'Libai Temple' down Niujie street to the mosque gate."}
+  - {year: 1478, peg: cave, confidence: high, source: "zh WP Dajue Temple (Chenghua 14)",
+     event: "Dajue Temple is renovated again, and a stele records the work",
+     place: "Dajue Temple",
+     scene: "Monks pull a stele out of a Western Hills CAVE and set it before Dajue Temple to record the renovation."}
+  - {year: 1486, peg: fish, confidence: high, source: "zh WP Dongsi Mosque (Chenghua 22)",
+     event: "The Dongsi Mosque gets its minaret (Bangke Tower)",
+     place: "Dongsi Mosque",
+     scene: "A FISH swims up the air above the Dongsi Mosque, and a minaret rises in its wake for the call to prayer."}
+  - {year: 1491, peg: boot, confidence: high, source: "zh WP Imperial Ancestral Temple (Hongzhi 4)",
+     event: "Work starts on the Tiao Temple for distant ancestors behind the Imperial Ancestral Temple",
+     place: "Imperial Ancestral Temple",
+     scene: "A BOOT kicks the first stake behind the Ancestral Temple, and builders start a hall for the distant ancestors."}
+  - {year: 1496, peg: peach, confidence: high, source: "zh WP Niujie Mosque (Hongzhi 9)",
+     event: "Niujie Mosque is repaired and gets its north and south stele pavilions",
+     place: "Niujie Mosque",
+     scene: "Two PEACH stones planted at Niujie Mosque grow into the north and south stele pavilions."}
+  - {year: 1510, peg: dice, confidence: high, source: "zh WP Chengen Temple, Beijing (Zhengde 5)",
+     event: "The eunuch Wen Xiang starts building Chengen Temple at Moshikou",
+     place: "Chengen Temple, Moshikou",
+     scene: "Wen Xiang rolls DICE on the road at Moshikou and starts Chengen Temple where they stop."}
+  - {year: 1512, peg: tongue, confidence: high, source: "zh WP Leopard House (Zhengde 7/11)",
+     event: "Zhengde orders the Zhenguo Temple built in the Imperial City beside his Leopard House",
+     place: "Leopard House",
+     scene: "Zhengde sticks out his TONGUE at protesting ministers and orders the Zhenguo Temple built beside his Leopard House."}
+  - {year: 1513, peg: tomb, confidence: high, source: "zh WP Dahui Temple (Zhengde 8)",
+     event: "The eunuch Zhang Xiong founds Dahui (Big Buddha) Temple",
+     place: "Dahui Temple, Haidian",
+     scene: "Zhang Xiong opens a TOMB-sized bronze mould and lifts out the giant Buddha of his new Dahui Temple."}
+  - {year: 1513, peg: tomb, confidence: high, source: "zh WP Chengen Temple, Beijing (Zhengde 8)",
+     event: "Chengen Temple at Moshikou is finished",
+     place: "Chengen Temple",
+     scene: "The last wall of Chengen Temple closes around its courtyard like a TOMB, and the temple is finished."}
+  - {year: 1514, peg: tower, confidence: high, source: "zh WP Biyun Temple (Zhengde 9)",
+     event: "The eunuch Yu Jing enlarges Biyun Temple and starts his own tomb behind it",
+     place: "Biyun Temple, Western Hills",
+     scene: "Yu Jing builds a TOWER of new halls at Biyun Temple and digs his own tomb in the hill behind."}
+  - {year: 1525, peg: nail, confidence: high, source: "Ming shi j17: Jiajing 4/5",
+     event: "Jiajing builds the Shimiao shrine for his father, Emperor Xian",
+     place: "Shimiao, Imperial City",
+     scene: "Jiajing hammers a golden NAIL into the tablet of his father and sets it in the new Shimiao shrine."}
+  - {year: 1529, peg: knob, confidence: medium, source: "zh WP White Cloud Temple (Jiajing jichou)",
+     event: "A gilt bronze incense burner is cast for the White Cloud Temple",
+     place: "White Cloud Temple",
+     scene: "A gilt KNOB tops the lid of the new bronze incense burner cast for the White Cloud Temple."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Ditan (Jiajing 9)",
+     event: "The square Altar of Earth (Fangze altar) is built in the northern suburb",
+     place: "Ditan",
+     scene: "A MOUSE digs a square hole in the northern suburb, and Jiajing builds the Altar of Earth around it."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Ritan (Jiajing 9)",
+     event: "The Altar of the Sun is built outside Chaoyangmen",
+     place: "Ritan, Chaoyangmen",
+     scene: "A MOUSE rolls a red sun disk out of Chaoyangmen and parks it on the new Altar of the Sun."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Yuetan (Jiajing 9)",
+     event: "The Altar of the Moon is built outside Fuchengmen",
+     place: "Yuetan, Fuchengmen",
+     scene: "A MOUSE nibbles a white moon disk outside Fuchengmen and sets it on the new Altar of the Moon."}
+  - {year: 1530, peg: mouse, confidence: high, source: "Ming shi j17: Jiajing 9/1",
+     event: "The Altar of Sericulture for the empress's silkworm rites is built in the northern suburb",
+     place: "northern suburb",
+     scene: "A MOUSE spins silk round four posts in the northern suburb, and the Altar of Sericulture rises there."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Xiannongtan (Jiajing 9)",
+     event: "The Altar of Agriculture gets new altars for the gods of heaven and earth",
+     place: "Xiannongtan",
+     scene: "A MOUSE divides the Altar of Agriculture's yard into two and builds an altar of heaven gods and one of earth gods."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Qiniandian (Jiajing 9)",
+     event: "The Imperial Vault of Heaven is first built at the Temple of Heaven, as the Hall of Supreme Peace",
+     place: "Temple of Heaven",
+     scene: "A MOUSE builds a round blue-roofed nest north of the Round Altar, and it becomes the Imperial Vault of Heaven."}
+  - {year: 1530, peg: mouse, confidence: high, source: "zh WP Beijing Confucius Temple (Jiajing 9)",
+     event: "The Chongsheng Shrine for Confucius's ancestors is added to the Confucius Temple",
+     place: "Confucius Temple, Guozijian Street",
+     scene: "A MOUSE carries Confucius's ancestors' tablets into a new back shrine of the Confucius Temple."}
+  - {year: 1531, peg: moth, confidence: high, source: "zh WP Temple of Ancient Monarchs (Jiajing 10/9)",
+     event: "The Temple of Ancient Monarchs is finished on the old Baoan Temple site near Fuchengmen",
+     place: "Lidai Diwang Miao",
+     scene: "A MOTH flutters along the row of past rulers' tablets in the finished Temple of Ancient Monarchs near Fuchengmen."}
+  - {year: 1532, peg: moon, confidence: high, source: "zh WP Qiniandian (Jiajing 11)",
+     event: "The Chongyu Altar is built east of the Round Altar at the Temple of Heaven",
+     place: "Temple of Heaven",
+     scene: "A MOON lands east of the Round Altar and flattens into the new Chongyu Altar."}
+  - {year: 1534, peg: hammer, confidence: high, source: "en WP Temple of Heaven (1534)",
+     event: "The Altar of Heaven and Earth is renamed the Temple of Heaven",
+     place: "Temple of Heaven",
+     scene: "A HAMMER knocks 'and Earth' off the gate board, and the altar becomes the Temple of Heaven."}
+  - {year: 1535, peg: mill, confidence: high, source: "Ming shi j17: Jiajing 14/2",
+     event: "Work starts on the Nine Temples, separate halls for each ancestor at the Ancestral Temple",
+     place: "Imperial Ancestral Temple",
+     scene: "A MILL grinds the one Ancestral Temple into nine pieces, and work starts on nine separate halls."}
+  - {year: 1537, peg: mug, confidence: medium, source: "Ming shi j17: Jiajing 15/12 (early 1537)",
+     event: "The Nine Temples of the Ancestral Temple are finished",
+     place: "Imperial Ancestral Temple",
+     scene: "Jiajing pours wine into nine MUG cups, one on the altar of each finished ancestor hall."}
+  - {year: 1538, peg: movie, confidence: high, source: "zh WP Qiniandian (Jiajing 17)",
+     event: "Jiajing orders the old Great Sacrifice Hall at the Temple of Heaven torn down",
+     place: "Temple of Heaven",
+     scene: "A MOVIE runs backwards and the old Great Sacrifice Hall at the Temple of Heaven comes down beam by beam."}
+  - {year: 1542, peg: rhino, confidence: high, source: "zh WP Dagaoxuandian (Jiajing 21/4)",
+     event: "The Daoist Dagaoxuan Hall is finished north-west of the Forbidden City",
+     place: "Dagaoxuan Hall",
+     scene: "A RHINO carries the Daoist Tao Zhongwen to the finished Dagaoxuan Hall, where Jiajing will pray."}
+  - {year: 1545, peg: railway, confidence: high, source: "zh WP Qiniandian (Jiajing 24/8)",
+     event: "The round triple-roofed Hall of Great Offering (now Hall of Prayer for Good Harvests) is finished",
+     place: "Temple of Heaven",
+     scene: "A circular RAILWAY loops three times round the Temple of Heaven and stacks the three blue roofs of the new hall."}
+  - {year: 1545, peg: railway, confidence: high, source: "Ming shi j18: Jiajing 24/6",
+     event: "The Imperial Ancestral Temple is rebuilt as one hall after the fire",
+     place: "Imperial Ancestral Temple",
+     scene: "A RAILWAY brings timber from the south, and the burnt Nine Temples come back as one great Ancestral Temple."}
+  - {year: 1560, peg: cheese, confidence: high, source: "zh WP Dongyue Temple (Jiajing 39)",
+     event: "A palace eunuch pays for repairs to the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "A eunuch trades a wheel of CHEESE of silver for new roof tiles at the Dongyue Temple."}
+  - {year: 1565, peg: jelly, confidence: high, source: "Ming shi j18: Jiajing 44/6",
+     event: "The Yuzhi (Jade Fungus) Palace is built after a fungus grows on a pillar of Ruizong's temple",
+     place: "Yuzhi Palace, Imperial City",
+     scene: "A fungus swells like JELLY on a temple pillar, and Jiajing builds the Jade Fungus Palace to honour it."}
+  - {year: 1575, peg: eagle, confidence: medium, source: "zh WP Dongyue Temple (Cisheng; no reign year)",
+     event: "Empress Dowager Cisheng pays for a major restoration of the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "An EAGLE drops Empress Dowager Cisheng's silver on the Dongyue Temple, and its halls are restored."}
+  - {year: 1576, peg: cage, confidence: high, source: "zh WP Cishou Temple Pagoda (Wanli 4)",
+     event: "Wanli founds Cishou Temple for his mother and finishes its pagoda at Balizhuang",
+     place: "Cishou Temple Pagoda, Balizhuang",
+     scene: "Wanli stacks thirteen CAGE rings into an octagonal pagoda at Balizhuang for his mother's Cishou Temple."}
+  - {year: 1577, peg: cake, confidence: high, source: "zh WP Wanshou Temple, Beijing (Wanli 5/3)",
+     event: "Work starts on Wanshou Temple by the Changhe river to store sutras",
+     place: "Wanshou Temple, Changhe",
+     scene: "A CAKE floats down the Changhe river and lands on the site where work starts on Wanshou Temple."}
+  - {year: 1578, peg: cave, confidence: high, source: "zh WP Wanshou Temple, Beijing (Wanli 6/6)",
+     event: "Wanshou Temple is finished, and Zhang Juzheng writes its stele",
+     place: "Wanshou Temple",
+     scene: "Zhang Juzheng carves the stele of the finished Wanshou Temple inside a CAVE of sutra shelves."}
+  - {year: 1584, peg: fairy, confidence: high, source: "zh WP Guangji Temple, Beijing (Wanli 12)",
+     event: "Guangji Temple is enlarged",
+     place: "Guangji Temple",
+     scene: "A FAIRY waves her wand over Guangji Temple, and new halls stretch its courtyards."}
+  - {year: 1592, peg: piano, confidence: high, source: "zh WP Dongyue Temple (Wanli 20)",
+     event: "After a dream, Wanli orders many new buildings at the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "Wanli dreams of a PIANO playing at the Dongyue Temple, wakes and orders new halls built where each note fell."}
+  - {year: 1592, peg: piano, confidence: high, source: "zh WP Dahui Temple (Wanli 20)",
+     event: "Dahui (Big Buddha) Temple is restored",
+     place: "Dahui Temple",
+     scene: "Monks roll a PIANO out of the cracked Dahui hall and restore the temple round its giant Buddha."}
+  - {year: 1592, peg: piano, confidence: high, source: "zh WP Miaoying Temple (Wanli 20)",
+     event: "The White Pagoda gets a major repair, recorded on a copper stele",
+     place: "White Pagoda",
+     scene: "Workers hoist a PIANO-sized copper stele onto the repaired White Pagoda to record the work."}
+  - {year: 1598, peg: beehive, confidence: high, source: "en WP Matteo Ricci (7 Sep 1598)",
+     event: "Matteo Ricci first reaches Beijing but cannot get into the palace and leaves",
+     place: "Beijing",
+     scene: "Ricci knocks on the palace like a BEEHIVE, angry guards buzz out, and he leaves Beijing for now."}
+  - {year: 1605, peg: seal, confidence: high, source: "zh WP Huode Zhenjun Temple (Wanli 33)",
+     event: "The Fire God Temple at Di'anmen is enlarged and given glazed tiles to guard the palace from fire",
+     place: "Huode Zhenjun Temple, Shichahai",
+     scene: "A SEAL balances green glazed tiles on its nose and roofs the Fire God Temple to keep fire from the palace."}
+  - {year: 1607, peg: ski, confidence: high, source: "zh WP Dongyue Temple (Wanli 35)",
+     event: "Palace officials add the glazed memorial archway at the Dongyue Temple",
+     place: "Dongyue Temple",
+     scene: "Palace officials SKI down a glazed slope and stop under the new glazed archway of the Dongyue Temple."}
+  - {year: 1607, peg: ski, confidence: high, source: "zh WP Wanshou Temple, Beijing (Wanli 35)",
+     event: "The great Yongle bell is moved to Wanshou Temple",
+     place: "Wanshou Temple",
+     scene: "Workers slide the great Yongle bell to Wanshou Temple on giant SKI runners over ice."}
+  - {year: 1613, peg: tomb, confidence: high, source: "zh WP Niujie Mosque (Wanli 41)",
+     event: "Niujie Mosque is repaired, and a stele records it",
+     place: "Niujie Mosque",
+     scene: "Builders open a TOMB-like crack in Niujie Mosque's wall, fill it and carve the repair on a stele."}
+  - {year: 1617, peg: dog, confidence: high, source: "en WP Diego de Pantoja (18 Mar 1617)",
+     event: "Diego de Pantoja and the other Jesuits are expelled from Beijing",
+     place: "Jesuit house, Xuanwumen",
+     scene: "A DOG chases Diego de Pantoja and the Jesuits out of their Xuanwumen house and through the city gate."}
+  - {year: 1623, peg: gnome, confidence: high, source: "zh WP Biyun Temple (Tianqi 3)",
+     event: "Wei Zhongxian enlarges Biyun Temple and Yu Jing's unfinished tomb for himself",
+     place: "Biyun Temple",
+     scene: "A GNOME digs out Yu Jing's empty tomb at Biyun Temple and carves Wei Zhongxian's name on it."}
+  - {year: 1623, peg: gnome, confidence: unverified,
+     event: "Adam Schall arrives in Beijing",
+     place: "Jesuit house, Xuanwumen",
+     scene: "A GNOME rings the Xuanwumen gate bell, and the young Jesuit Adam Schall walks into Beijing behind him."}
+  - {year: 1627, peg: ink, confidence: high, source: "Ming shi j22: Tianqi 7/5",
+     event: "A living shrine to Wei Zhongxian is approved beside the Imperial College",
+     place: "Imperial College (Guozijian)",
+     scene: "Student Lu Wanling writes in INK a request for a Wei Zhongxian shrine beside the Imperial College, and it is approved."}
+  # arts
+  - {year: 1425, peg: nail, confidence: medium, source: "Ming shi j9: buried at Xianling, Hongxi 1/9",
+     event: "Xianling, the small tomb of the Hongxi Emperor, is built at the Ming Tombs",
+     place: "Xianling, Ming Tombs",
+     scene: "Builders NAIL together the plain small Xianling for the Hongxi Emperor, west of Changling, in a few months."}
+  - {year: 1427, peg: ink, confidence: high, source: "zh WP Ming Tombs (Changling completed)",
+     event: "Changling, the Yongle Emperor's tomb, is completed",
+     place: "Changling, Ming Tombs",
+     scene: "A calligrapher dips a giant brush in INK and paints the last name board over the finished Changling."}
+  - {year: 1435, peg: mill, confidence: medium, source: "Ming shi j9: buried at Jingling, Xuande 10",
+     event: "Jingling, the Xuande Emperor's tomb, is built at the Ming Tombs",
+     place: "Jingling, Ming Tombs",
+     scene: "A MILL grinds stone for Jingling at the foot of Heishan for the Xuande Emperor's tomb."}
+  - {year: 1440, peg: horse, confidence: high, source: "Ming shi j10: Zhengtong 5/3",
+     event: "Work starts on rebuilding the burnt halls and palaces of the Forbidden City",
+     place: "Forbidden City",
+     scene: "A team of HORSE carts drags great logs into the Forbidden City to rebuild the burnt halls."}
+  - {year: 1440, peg: horse, confidence: high, source: "zh WP Qianqing Palace (Zhengtong 5)",
+     event: "The Qianqing Palace is rebuilt after the fire of Yongle's last years",
+     place: "Qianqing Palace",
+     scene: "A HORSE lifts the new ridge beam of the Qianqing Palace into place with its teeth."}
+  - {year: 1441, peg: radio, confidence: high, source: "Ming shi j10: Zhengtong 6/11",
+     event: "The rebuilt Fengtian, Huagai and Jinshen halls and the inner palaces are finished",
+     place: "Forbidden City",
+     scene: "A RADIO in the Fengtian Hall announces the three rebuilt halls finished, and an amnesty follows."}
+  - {year: 1443, peg: ram, confidence: high, source: "zh WP Fahai Temple, Beijing (Wan Fuqing)",
+     event: "Court painters led by Wan Fuqing finish the Fahai Temple murals",
+     place: "Fahai Temple",
+     scene: "Wan Fuqing ties brushes to a RAM's horns, and the ram paints gilded Buddhas across the Fahai Temple walls."}
+  - {year: 1446, peg: roach, confidence: high, source: "zh WP Zhihua Temple (Zhengtong 11)",
+     event: "Wang Zhen brings court music into Zhihua Temple, the start of its music tradition",
+     place: "Zhihua Temple",
+     scene: "A ROACH plays a court flute in Zhihua Temple, and Wang Zhen's monks learn the palace tunes from it."}
+  - {year: 1456, peg: leech, confidence: high, source: "zh WP Ming Qingling; Ming shi j11",
+     event: "Work starts on a tomb for the Jingtai Emperor at the Ming Tombs",
+     place: "Ming Tombs",
+     scene: "A LEECH sucks a grave pit into the Tianshou hills, and work starts on the Jingtai Emperor's own tomb."}
+  - {year: 1457, peg: log, confidence: high, source: "zh WP Ming Qingling (Tianshun 1/5)",
+     event: "Restored Yingzong has five thousand troops tear down Jingtai's unfinished tomb",
+     place: "Ming Tombs",
+     scene: "Soldiers drag every LOG out of Jingtai's unfinished tomb, and the restored Yingzong leaves only a pit."}
+  - {year: 1457, peg: log, confidence: high, source: "Ming shi j11: Jingtai 8/2",
+     event: "The deposed Jingtai Emperor gets a prince's tomb in the Western Hills",
+     place: "Jingtai tomb, Jinshankou",
+     scene: "A single LOG marks the deposed Jingtai Emperor's small prince's tomb in the Western Hills."}
+  - {year: 1458, peg: wolf, confidence: high, source: "zh WP Leopard House (Tianshun 2)",
+     event: "The Taisu Hall is built in the Western Park",
+     place: "Western Park",
+     scene: "A WOLF howls on the shore of the Western Park lake where the new Taisu Hall stands."}
+  - {year: 1464, peg: cherry, confidence: medium, source: "en WP Ming tombs table (Yuling, 1449 entry)",
+     event: "Yuling, the Zhengtong Emperor's tomb, is built at the Ming Tombs",
+     place: "Yuling, Ming Tombs",
+     scene: "A CHERRY tree is planted on the mound of Yuling, the new tomb of the twice-crowned Zhengtong Emperor."}
+  - {year: 1465, peg: jelly, confidence: high, source: "zh WP Tiananmen (Chenghua 1)",
+     event: "Chengtian Gate is rebuilt as a double-roofed gate tower nine bays wide",
+     place: "Chengtianmen (Tiananmen)",
+     scene: "Builders pour red JELLY into a nine-bay mould, and it sets as the new double-roofed Chengtian Gate."}
+  - {year: 1487, peg: fox, confidence: medium, source: "en WP Ming tombs table (Maoling)",
+     event: "Maoling, the Chenghua Emperor's tomb, is built at the Ming Tombs",
+     place: "Maoling, Ming Tombs",
+     scene: "A FOX digs into the slope of Juying hill, and Maoling for the Chenghua Emperor rises over its den."}
+  - {year: 1499, peg: pipe, confidence: high, source: "Ming shi j15: Hongzhi 12/9",
+     event: "The burnt Qingning Palace is rebuilt",
+     place: "Qingning Palace",
+     scene: "A builder blows smoke from a PIPE through the rebuilt Qingning Palace to test its new chimneys."}
+  - {year: 1505, peg: seal, confidence: medium, source: "en WP Ming tombs table (Tailing)",
+     event: "Tailing, the Hongzhi Emperor's tomb, is built at the Ming Tombs",
+     place: "Tailing, Ming Tombs",
+     scene: "A SEAL pushes stone blocks up Shijia hill and lays the base of Tailing for the Hongzhi Emperor."}
+  - {year: 1507, peg: ski, confidence: high, source: "Ming shi j16: Zhengde 2/8",
+     event: "Zhengde builds the Leopard House, his private palace and zoo in the Imperial City",
+     place: "Leopard House, Western Park",
+     scene: "Zhengde rides a SKI past leopard cages into his new Leopard House and never returns to the palace."}
+  - {year: 1512, peg: tongue, confidence: high, source: "zh WP Leopard House (Zhengde 7/10)",
+     event: "The Ministry of Works says the Leopard House has cost over two hundred thousand taels; Zhengde will not stop",
+     place: "Leopard House",
+     scene: "A leopard licks the silver ledger with its TONGUE, and Zhengde refuses to stop the costly Leopard House."}
+  - {year: 1521, peg: ant, confidence: disputed, source: "Ming shi j17 (Zhengde 16/11); zh WP Qianqing (1519)",
+     event: "The Qianqing and Kunning palaces are rebuilt after the fireworks fire",
+     place: "Qianqing Palace",
+     scene: "An ANT army carries new beams into the burnt Qianqing Palace and rebuilds it hall by hall."}
+  - {year: 1521, peg: ant, confidence: medium, source: "en WP Ming tombs table (Kangling)",
+     event: "Kangling, the Zhengde Emperor's tomb, is built at the Ming Tombs",
+     place: "Kangling, Ming Tombs",
+     scene: "An ANT hill grows on Jinling hill and hardens into Kangling, the Zhengde Emperor's tomb."}
+  - {year: 1525, peg: nail, confidence: high, source: "Ming shi j17: Jiajing 4/8-10",
+     event: "Renshou Palace is rebuilt, and the Yude Hall and the Jingfu and Anxi palaces are built",
+     place: "Forbidden City",
+     scene: "Carpenters NAIL up the new Renshou Palace, then the Yude Hall and two more palaces beside it."}
+  - {year: 1531, peg: moth, confidence: high, source: "Ming shi j17: Jiajing 10/7",
+     event: "Jiajing's new palaces in the Western Park are finished",
+     place: "Western Park",
+     scene: "A MOTH circles the lanterns of Jiajing's finished Western Park palaces on the lake shore."}
+  - {year: 1536, peg: match, confidence: unverified,
+     event: "Work starts on Yongling, the Jiajing Emperor's tomb, while he still lives",
+     place: "Yongling, Ming Tombs",
+     scene: "Jiajing strikes a MATCH at Yangcui hill and lights the first kiln for his own tomb, Yongling."}
+  - {year: 1538, peg: movie, confidence: high, source: "Ming shi j17: Jiajing 17/7",
+     event: "The Cining Palace for the empress dowager is finished",
+     place: "Cining Palace",
+     scene: "The empress dowager watches a MOVIE in the finished Cining Palace west of the inner court."}
+  - {year: 1540, peg: horse, confidence: high, source: "zh WP Ming Tombs (Jiajing 19)",
+     event: "The five-bay stone memorial archway is built at the start of the Ming Tombs' Spirit Way",
+     place: "Ming Tombs Spirit Way",
+     scene: "A stone HORSE trots off the Spirit Way and stands under the new five-bay stone archway at its start."}
+  - {year: 1540, peg: horse, confidence: high, source: "Ming shi j17: Jiajing 19/11",
+     event: "The Ciqing Palace is finished",
+     place: "Ciqing Palace",
+     scene: "A HORSE pulls the last roof beam into the Ciqing Palace east of the inner court."}
+  - {year: 1562, peg: chain, confidence: high, source: "Ming shi j18: Jiajing 41/3",
+     event: "Jiajing's burnt palace in the Western Park is rebuilt as the Wanshou Palace",
+     place: "Wanshou Palace, Western Park",
+     scene: "A CHAIN of boats brings timber across the Western Park lake, and the Wanshou Palace rises from the ashes."}
+  - {year: 1562, peg: chain, confidence: high, source: "Ming shi j18: Jiajing 41/9",
+     event: "The three great halls are finished and renamed Huangji, Zhongji and Jianji",
+     place: "Forbidden City",
+     scene: "Jiajing pulls a CHAIN, and three old name boards drop to show Huangji, Zhongji and Jianji on the rebuilt halls."}
+  - {year: 1572, peg: coin, confidence: medium, source: "en WP Ming tombs table (Zhaoling)",
+     event: "Zhaoling, the Longqing Emperor's tomb, is built at the Ming Tombs",
+     place: "Zhaoling, Ming Tombs",
+     scene: "Officials stack COIN piles on Dayu hill, and Zhaoling for the Longqing Emperor rises on them."}
+  - {year: 1575, peg: eagle, confidence: high, source: "zh WP Ming Zhaoling (Wanli 3)",
+     event: "Zhaoling is rebuilt after its paving sinks in heavy rain",
+     place: "Zhaoling",
+     scene: "An EAGLE lifts the sunken paving stones of Zhaoling out of the mud, and builders relay the tomb."}
+  - {year: 1579, peg: cowboy, confidence: high, source: "zh WP Beihai Park (Wanli 7)",
+     event: "The old Guanghan Hall on Qionghua Island collapses",
+     place: "Qionghua Island, Beihai",
+     scene: "A COWBOY lassos the leaning Guanghan Hall on Qionghua Island, and it crashes down."}
+  - {year: 1584, peg: fairy, confidence: high, source: "zh WP Ming Dingling (Wanli 12/11)",
+     event: "Work starts on Dingling, the Wanli Emperor's tomb",
+     place: "Dingling, Ming Tombs",
+     scene: "A FAIRY taps Dashi hill with her wand, and work starts on Dingling for the young Wanli Emperor."}
+  - {year: 1585, peg: waffle, confidence: high, source: "Ming shi j20: Wanli 13/6",
+     event: "The burnt Cining Palace is rebuilt",
+     place: "Cining Palace",
+     scene: "Builders press the new Cining Palace roof like a WAFFLE iron, tile grid over tile grid."}
+  - {year: 1590, peg: bees, confidence: high, source: "zh WP Ming Dingling (Wanli 18/6)",
+     event: "Dingling is finished after six years of work",
+     place: "Dingling",
+     scene: "BEES seal the stone doors of Dingling's underground palace with wax as six years of work end."}
+  - {year: 1592, peg: piano, confidence: high, source: "zh WP Wanshu zaji (Wanli 20)",
+     event: "Wanping magistrate Shen Bang finishes the Wanshu zaji, notes on his half of the capital",
+     place: "Wanping county office",
+     scene: "Shen Bang plays a PIANO in the Wanping office, and each key types a note on streets and customs."}
+  - {year: 1600, peg: sauce, confidence: high, source: "Ming shi j21: Wanli 28/8",
+     event: "The Ciqing Palace for the crown prince is finished",
+     place: "Ciqing Palace",
+     scene: "Cooks pour SAUCE on the opening feast in the finished Ciqing Palace of the crown prince."}
+  - {year: 1602, peg: sun, confidence: high, source: "zh WP Beihai Park (Wanli 30)",
+     event: "The Five Dragon Pavilions are built on the north shore of the Western Park lake",
+     place: "Beihai north shore",
+     scene: "The SUN sets on the north shore of the lake, and five dragon pavilions rise on the water in its glow."}
+  - {year: 1604, peg: sewer, confidence: disputed, source: "Ming shi j21 (Wanli 32/3); zh WP Qianqing (1598)",
+     event: "The Qianqing Palace is finished again after the fire of eight years before",
+     place: "Qianqing Palace",
+     scene: "Workers pump the ash of the old Qianqing Palace into a SEWER and finish the new palace above it."}
+  - {year: 1615, peg: doll, confidence: high, source: "Ming shi j21: Wanli 43/intercalary 8",
+     event: "Work starts on rebuilding the three great halls burnt in the fire of eighteen years before",
+     place: "Forbidden City",
+     scene: "A carpenter builds a DOLL's house of the three great halls as the model to start rebuilding them."}
+  - {year: 1626, peg: nacho, confidence: high, source: "Ming shi j22: Tianqi 6/9",
+     event: "The rebuilt Huangji Hall (now the Hall of Supreme Harmony) is finished",
+     place: "Huangji Hall",
+     scene: "Tianqi carves a NACHO-shaped ridge beast himself and sets it on the finished Huangji Hall."}
+  - {year: 1627, peg: ink, confidence: high, source: "Ming shi j22: Tianqi 7/8",
+     event: "The Zhongji and Jianji halls are finished, and the three great halls stand again",
+     place: "Forbidden City",
+     scene: "A painter writes the names Zhongji and Jianji in INK on the last two finished halls."}
+  - {year: 1635, peg: mill, confidence: high, source: "zh WP Dijing jingwu lue (Chongzhen 8)",
+     event: "Liu Tong and Yu Yizheng publish the Dijing jingwu lue, a guide to the capital's sights",
+     place: "Beijing",
+     scene: "A MILL grinds the capital's temples and gardens into the pages of Liu Tong and Yu Yizheng's guide."}
+  # economy
+  - {year: 1521, peg: ant, confidence: high, source: "Ming shi j16: Zhengde 16/3",
+     event: "Zhengde's last order closes the imperial shops in and around the capital",
+     place: "imperial shops",
+     scene: "An ANT colony carries off the goods as the imperial shops in and around the capital close for good."}
+  - {year: 1560, peg: cheese, confidence: unverified,
+     event: "Huizhou merchants found the She county native-place lodge (huiguan) in the capital",
+     place: "Shexian Huiguan, Xuanwumen",
+     scene: "She county merchants cut a CHEESE wheel to open their new native-place lodge outside Xuanwumen."}
+  - {year: 1595, peg: bell, confidence: medium, source: "ahnu.edu.cn paper on Huizhou huiguan",
+     event: "Jixi merchants found the Liang'an native-place lodge near Liulichang",
+     place: "Liang'an Huiguan, Liulichang",
+     scene: "Jixi merchants ring a BELL at Liulichang to open the Liang'an lodge for travellers from home."}
+  - {year: 1596, peg: peach, confidence: high, source: "Ming shi j20: Wanli 24/10",
+     event: "Palace eunuchs start to collect a trade tax at Tongzhou",
+     place: "Tongzhou",
+     scene: "A eunuch squeezes a tax PEACH from every boat at Tongzhou wharf until the juice runs."}
+  - {year: 1622, peg: nun, confidence: high, source: "zh WP Baoquan bureau (Tianqi 2)",
+     event: "The Ministry of Revenue opens its own mint in the capital's Jiaozhong ward",
+     place: "Jiaozhong ward",
+     scene: "A NUN strikes the first coins of the new Revenue mint in Jiaozhong ward with a heavy die."}
+  # society
+  - {year: 1421, peg: ant, confidence: high, source: "Ming shi j7: Yongle 19/4; zh WP Hall of Sup. Harmony",
+     event: "Lightning sets fire to the Fengtian, Huagai and Jinshen halls months after they open",
+     place: "Forbidden City",
+     scene: "An ANT colony flees the three great halls as lightning burns the new Fengtian Hall months after it opens."}
+  - {year: 1422, peg: nun, confidence: high, source: "Ming shi j7; zh WP Qianqing Palace",
+     event: "Fire destroys the Qianqing Palace",
+     place: "Qianqing Palace",
+     scene: "A NUN beats a gong in the dark as fire runs through the new Qianqing Palace."}
+  - {year: 1444, peg: warrior, confidence: high, source: "Ming shi j10: Zhengtong 9/3",
+     event: "The new Imperial College (Taixue) is finished and opens with a rite to Confucius",
+     place: "Guozijian",
+     scene: "A WARRIOR lays down his sword at the gate of the finished Imperial College and bows to Confucius."}
+  - {year: 1448, peg: reef, confidence: medium, source: "en WP History of Beijing",
+     event: "The capital has nearly a million people on the eve of the Tumu crisis",
+     place: "Beijing",
+     scene: "A human REEF of nearly a million people packs the capital's lanes before Tumu."}
+  - {year: 1457, peg: log, confidence: high, source: "Ming shi j12: Tianshun 1/7; zh WP Tiananmen",
+     event: "Lightning fire burns down Chengtian Gate",
+     place: "Chengtianmen (Tiananmen)",
+     scene: "Lightning splits the great LOG beam of Chengtian Gate, and the whole gate burns."}
+  - {year: 1461, peg: jet, confidence: high, source: "Ming shi j12: Tianshun 5/9",
+     event: "An earthquake with a loud roar shakes the capital",
+     place: "Beijing",
+     scene: "A JET roars low over the capital, and the ground shakes under the noise."}
+  - {year: 1471, peg: cat, confidence: high, source: "Ming shi j13: Chenghua 7/5",
+     event: "Officials bury the bones of the dead left out in the capital",
+     place: "Beijing",
+     scene: "A CAT leads officials to bones lying in the capital's lanes, and they bury every one."}
+  - {year: 1472, peg: coin, confidence: high, source: "Ming shi j13: Chenghua 8/4, 8/12",
+     event: "Drought dries up the canal, and the hungry in the capital get relief",
+     place: "Tonghui canal",
+     scene: "A COIN rolls along the dry canal bed, and officials hand rice to the capital's hungry."}
+  - {year: 1475, peg: eagle, confidence: high, source: "Ming shi j13: Chenghua 11/4",
+     event: "Fire breaks out at the Qianqing Gate",
+     place: "Qianqing Gate",
+     scene: "An EAGLE flaps over the burning Qianqing Gate and fans the flames toward the inner court."}
+  - {year: 1484, peg: fairy, confidence: high, source: "Ming shi j14: Chenghua 20/1",
+     event: "A strong earthquake shakes the capital, and the court halts building works",
+     place: "Beijing",
+     scene: "A FAIRY stamps her foot, the capital's earth heaves, and the court halts all building works."}
+  - {year: 1489, peg: fob, confidence: high, source: "Ming shi j15: Hongzhi 2/7, 2/11",
+     event: "Long heavy rain floods the capital, and famine follows in Shuntian prefecture",
+     place: "Beijing",
+     scene: "A pocket watch FOB fills with rainwater as long rains flood the capital and Shuntian goes hungry."}
+  - {year: 1493, peg: palm, confidence: high, source: "Ming shi j15: Hongzhi 6/11",
+     event: "Refugees crowding into the capital are given relief",
+     place: "Beijing",
+     scene: "Officials drop grain into the open PALM of each refugee crowding into the capital."}
+  - {year: 1498, peg: beehive, confidence: high, source: "Ming shi j15: Hongzhi 11/10",
+     event: "Fire burns the Qingning Palace",
+     place: "Qingning Palace",
+     scene: "A BEEHIVE under the eaves catches fire, and the flames spread through the Qingning Palace."}
+  - {year: 1514, peg: tower, confidence: high, source: "zh WP Qianqing Palace (Zhengde 9/1/16)",
+     event: "Lantern Festival fireworks burn down the Qianqing and Kunning palaces",
+     place: "Qianqing Palace",
+     scene: "A TOWER of Lantern Festival fireworks topples onto the Qianqing Palace and burns it and Kunning."}
+  - {year: 1518, peg: dove, confidence: high, source: "Ming shi j16: Zhengde 13/1",
+     event: "In the floods, refugees in the capital get rice and the dead are buried",
+     place: "Beijing",
+     scene: "A DOVE drops rice into the hands of flood refugees in the capital as officials bury the dead."}
+  - {year: 1522, peg: nun, confidence: high, source: "Ming shi j17: Jiajing 1/1",
+     event: "Fire damages the rear hall of the Qingning Palace",
+     place: "Qingning Palace",
+     scene: "A NUN throws water on the burning rear hall of the Qingning Palace in the first month of Jiajing."}
+  - {year: 1525, peg: nail, confidence: high, source: "Ming shi j17: Jiajing 4/3",
+     event: "Fire destroys the Renshou Palace",
+     place: "Renshou Palace",
+     scene: "A red-hot NAIL drops from a lamp into the Renshou Palace, and the palace burns."}
+  - {year: 1526, peg: nacho, confidence: high, source: "Ming shi j17: Jiajing 5/2",
+     event: "The hungry of the capital get famine relief",
+     place: "Beijing",
+     scene: "Officials hand out one NACHO-thin cake to each hungry family in the capital."}
+  - {year: 1541, peg: radio, confidence: high, source: "Ming shi j17: Jiajing 20/4",
+     event: "Fire destroys the Nine Temples of the Ancestral Temple and burns the tablets of Yongle and Hongxi",
+     place: "Imperial Ancestral Temple",
+     scene: "A RADIO crackles with sparks in the Ancestral Temple, and fire eats eight of the nine ancestor halls."}
+  - {year: 1547, peg: rock, confidence: high, source: "Ming shi j18: Jiajing 26/11",
+     event: "Fire breaks out in the Great Inner palace",
+     place: "Forbidden City",
+     scene: "A burning ROCK falls into the Great Inner palace, and the inner courts catch fire."}
+  - {year: 1557, peg: log, confidence: high, source: "Ming shi j18: Jiajing 36/4",
+     event: "Lightning fire burns the three great halls and their gates",
+     place: "Forbidden City",
+     scene: "Lightning sets each great LOG pillar alight, and the three great halls and their gates burn down."}
+  - {year: 1561, peg: jet, confidence: high, source: "Ming shi j18: Jiajing 40/11",
+     event: "Fire destroys Jiajing's Yongshou Palace in the Western Park",
+     place: "Western Park",
+     scene: "A JET of flame shoots across the Western Park lake and burns Jiajing's Yongshou Palace."}
+  - {year: 1571, peg: cat, confidence: high, source: "Ming shi j19: Longqing 5/6",
+     event: "Three earthquakes shake the capital in one month",
+     place: "Beijing",
+     scene: "A CAT on the capital's roofs is thrown off three times in one month by the shaking ground."}
+  - {year: 1584, peg: fairy, confidence: medium, source: "Ming shi j20: Wanli 11/12 (early 1584)",
+     event: "Fire burns the Cining Palace of the empress dowager",
+     place: "Cining Palace",
+     scene: "A FAIRY's lantern falls in the Cining Palace, and the empress dowager's palace burns."}
+  - {year: 1587, peg: fox, confidence: high, source: "Ming shi j20: Wanli 15/4, 15/6",
+     event: "Drought and a great epidemic strike the capital, then heavy rain; the poor get relief",
+     place: "Beijing",
+     scene: "A sick FOX runs through the dry capital lanes as the great epidemic spreads, then the rains come."}
+  - {year: 1596, peg: peach, confidence: high, source: "Ming shi j20: Wanli 24/3",
+     event: "Fire burns the Qianqing and Kunning palaces",
+     place: "Qianqing Palace",
+     scene: "A PEACH lamp splits in the Qianqing Palace, and fire takes it and the Kunning Palace."}
+  - {year: 1597, peg: pig, confidence: high, source: "Ming shi j21: Wanli 25/6",
+     event: "Fire burns the Huangji, Zhongji and Jianji halls",
+     place: "Forbidden City",
+     scene: "A PIG knocks over a brazier, and the Huangji, Zhongji and Jianji halls burn together."}
+  - {year: 1599, peg: pipe, confidence: high, source: "Ming shi j21: Wanli 27/10, 27/12",
+     event: "The hungry of the capital and the migrants who come there for food get relief",
+     place: "Beijing",
+     scene: "A PIPE of porridge runs from the granary into the bowls of hungry migrants in the capital."}
+  - {year: 1604, peg: sewer, confidence: high, source: "Ming shi j21: Wanli 32/7",
+     event: "Heavy rain breaks the capital's walls, and flood victims get relief",
+     place: "city walls",
+     scene: "Every SEWER overflows in the heavy rain, and the water punches holes in the capital's walls."}
+  - {year: 1610, peg: dice, confidence: high, source: "Ming shi j21: Wanli 38/4; zh WP Zhengyangmen",
+     event: "Fire burns the arrow tower of Zhengyangmen",
+     place: "Zhengyangmen",
+     scene: "Guards throwing DICE knock over a lamp, and the Zhengyangmen arrow tower burns."}
+  - {year: 1611, peg: tattoo, confidence: disputed, source: "zh WP Zhalan cemetery (1611); en WP Ricci (1610)",
+     event: "Matteo Ricci is buried at Zhalan outside Fuchengmen, the first Jesuit grave in Beijing",
+     place: "Zhalan cemetery",
+     scene: "Xu Guangqi marks a cross TATTOO on the stone over Ricci's grave at Zhalan outside Fuchengmen."}
+  - {year: 1616, peg: dish, confidence: high, source: "Ming shi j21: Wanli 44/11",
+     event: "Fire burns the Daoist Longde Hall in the palace",
+     place: "Longde Hall",
+     scene: "An oil DISH tips over at the altar of the Longde Hall, and the Daoist hall burns."}
+  - {year: 1619, peg: tuba, confidence: high, source: "Ming shi j21: Wanli 47/4",
+     event: "Fire breaks out at the armour depot",
+     place: "armour depot",
+     scene: "A TUBA blares the alarm as fire races through the stacked helmets of the armour depot."}
+  - {year: 1622, peg: nun, confidence: medium, source: "search: Donglin history (Shoushan, 1622)",
+     event: "Zou Yuanbiao and Feng Congwu open the Shoushan Academy near Xuanwumen",
+     place: "Shoushan Academy, Xuanwumen",
+     scene: "A NUN opens the gate of the new Shoushan Academy near Xuanwumen, and Zou Yuanbiao's first students crowd in."}
+  - {year: 1625, peg: nail, confidence: high, source: "Ming shi j22: Tianqi 5/7",
+     event: "Wei Zhongxian's party has the Shoushan Academy torn down",
+     place: "Shoushan Academy",
+     scene: "Wei Zhongxian's men pull out every NAIL of the Shoushan Academy until the lecture hall falls."}
+  - {year: 1626, peg: nacho, confidence: high, source: "en WP Wanggongchang Explosion (30 May 1626)",
+     event: "The Wanggongchang gunpowder depot explodes and kills up to twenty thousand people",
+     place: "Wanggongchang",
+     scene: "A spark lands on a NACHO pile of gunpowder at Wanggongchang, and the blast flattens the south-west of the city."}
+  - {year: 1626, peg: nacho, confidence: high, source: "Ming shi j22: Tianqi 6, summer",
+     event: "Floods strike the capital in the summer after the explosion",
+     place: "Beijing",
+     scene: "Floodwater floats a NACHO raft down the capital's streets in the summer after the blast."}
+  - {year: 1632, peg: moon, confidence: high, source: "Ming shi j23: Chongzhen 5/6",
+     event: "Heavy rain floods the capital",
+     place: "Beijing",
+     scene: "The MOON shines on a lake where the capital's streets were after the great rain."}
+  - {year: 1634, peg: hammer, confidence: high, source: "Ming shi j23: Chongzhen 7/9",
+     event: "Fire breaks out at the armour depot (Wanggongchang in the Veritable Records)",
+     place: "armour depot",
+     scene: "A smith's HAMMER strikes a spark in the armour depot, and the stores burn again."}
+  - {year: 1640, peg: horse, confidence: high, source: "Ming shi j24: Chongzhen 13/intercalary 1",
+     event: "The hungry of the capital get famine relief in a year of drought and locusts",
+     place: "Beijing",
+     scene: "A thin HORSE pulls the relief cart through the capital as drought and locusts starve the region."}
+  - {year: 1641, peg: radio, confidence: high, source: "Ming shi j24: Chongzhen 14/7",
+     event: "A great epidemic strikes the capital",
+     place: "Beijing",
+     scene: "A RADIO in every lane reports the dead as a great epidemic spreads through the capital."}
+  - {year: 1641, peg: radio, confidence: high, source: "Ming shi j24: Chongzhen 14/8",
+     event: "The rebuilt Imperial College is finished, and a rite to Confucius is held",
+     place: "Guozijian",
+     scene: "A RADIO broadcasts the rite to Confucius from the rebuilt Imperial College."}
+world_refs:
+  - {year: 1421, event: "Beijing: Yongle starts the Northern Buddhist canon", cell: east_asia_religion_500_1500}
+  - {year: 1442, event: "Beijing Ancient Observatory: Ming bronze instruments set up", cell: east_asia_science_500_1500}
+  - {year: 1445, event: "Zhengtong Daoist canon completed and printed", cell: east_asia_religion_500_1500}
+  - {year: 1449, event: "Yu Qian defends Beijing against Esen", cell: east_asia_politics_500_1500}
+  - {year: 1457, event: "Yu Qian executed after the Duomen coup", cell: east_asia_politics_500_1500}
+  - {year: 1461, event: "Cao Qin's revolt in Beijing fails", cell: east_asia_politics_500_1500}
+  - {year: 1510, event: "Eunuch Liu Jin arrested and executed", cell: east_asia_politics_1500_1800}
+  - {year: 1524, event: "Left Gate protest: Jiajing has officials beaten", cell: east_asia_politics_1500_1800}
+  - {year: 1530, event: "Round altar at the Temple of Heaven built", cell: east_asia_arts_1500_1800}
+  - {year: 1536, event: "Jiajing destroys Buddhist images in the Forbidden City", cell: east_asia_religion_1500_1800}
+  - {year: 1542, event: "Palace women try to strangle the Jiajing Emperor", cell: east_asia_politics_1500_1800}
+  - {year: 1550, event: "Gengxu incident: Altan Khan raids the outskirts of Beijing", cell: east_asia_politics_1500_1800}
+  - {year: 1567, event: "Copy of the Yongle Encyclopedia completed", cell: east_asia_arts_1500_1800}
+  - {year: 1601, event: "Ricci enters the Forbidden City", cell: east_asia_religion_1500_1800}
+  - {year: 1601, event: "Ricci gives the Wanli Emperor two chiming clocks", cell: east_asia_science_1500_1800}
+  - {year: 1602, event: "Ricci's world map printed at Beijing", cell: east_asia_science_1500_1800}
+  - {year: 1602, event: "Li Zhi kills himself in prison", cell: east_asia_religion_1500_1800}
+  - {year: 1603, event: "Zibo Zhenke dies in prison in Beijing", cell: east_asia_religion_1500_1800}
+  - {year: 1605, event: "South Church (Nantang) built in Beijing", cell: east_asia_arts_1500_1800}
+  - {year: 1605, event: "Ai Tian of Kaifeng visits Ricci in Beijing", cell: east_asia_religion_1500_1800}
+  - {year: 1607, event: "Xu Guangqi and Ricci publish Euclid in Chinese", cell: east_asia_science_1500_1800}
+  - {year: 1610, event: "Ricci dies in Beijing; Wanli grants a burial plot", cell: east_asia_religion_1500_1800}
+  - {year: 1612, event: "De Ursis and Xu Guangqi publish Western Hydraulics", cell: east_asia_science_1500_1800}
+  - {year: 1615, event: "Attack with the stick on the crown prince", cell: east_asia_politics_1500_1800}
+  - {year: 1623, event: "Western cannon bursts at a test in Beijing", cell: east_asia_science_1500_1800}
+  - {year: 1625, event: "Wei Zhongxian purges the Donglin officials", cell: east_asia_politics_1500_1800}
+  - {year: 1626, event: "Schall's Explanation of the Telescope printed", cell: east_asia_science_1500_1800}
+  - {year: 1629, event: "Jisi incident: Hong Taiji raids to the walls of Beijing", cell: east_asia_politics_1500_1800}
+  - {year: 1629, event: "Xu Guangqi told to reform the calendar", cell: east_asia_science_1500_1800}
+  - {year: 1630, event: "Yuan Chonghuan executed by slow slicing", cell: east_asia_politics_1500_1800}
+  - {year: 1630, event: "Schall and Rho come to Beijing for the calendar reform", cell: east_asia_science_1500_1800}
+  - {year: 1634, event: "Chongzhen calendar books finished", cell: east_asia_science_1500_1800}
+  - {year: 1643, event: "Schall and Jiao Xu publish Essentials of Gunnery", cell: east_asia_science_1500_1800}
+  - {year: 1643, event: "Plague peaks in Beijing", cell: east_asia_society_1500_1800}
+out_refs:
+  - {year: 1421, event: "Ming capital formally moves to Beijing (world_dates)", reason: "court decree"}
+  - {year: 1424, event: "Yongle buried at Changling", reason: "imperial funeral"}
+  - {year: 1425, event: "Hongxi orders the capital moved back to Nanjing", reason: "court decision"}
+  - {year: 1441, event: "Beijing stops being called the temporary capital", reason: "court decree"}
+  - {year: 1449, event: "Wang Zhen's clan executed", reason: "court purge"}
+  - {year: 1450, event: "Retired emperor returns and is kept in the Southern Palace", reason: "court event"}
+  - {year: 1452, event: "Capital troops reorganised into regiments", reason: "national army"}
+  - {year: 1457, event: "Duomen coup restores Yingzong", reason: "palace coup"}
+  - {year: 1477, event: "Western Depot set up under Wang Zhi", reason: "national secret police"}
+  - {year: 1482, event: "Western Depot abolished", reason: "national secret police"}
+  - {year: 1521, event: "Zhengde dies in the Leopard House", reason: "imperial death"}
+  - {year: 1545, event: "Yuan Shizu's tablet removed from the Temple of Ancient Monarchs", reason: "court ritual"}
+  - {year: 1620, event: "Taichang buried in Jingtai's old tomb site (Qingling)", reason: "imperial funeral"}
+  - {year: 1620, event: "Red pill case and palace removal case", reason: "court event"}
+  - {year: 1630, event: "Yuan Chonghuan arrested at court", reason: "court event"}
+  - {year: 1642, event: "Minister of War Chen Xinjia executed", reason: "national court case"}
