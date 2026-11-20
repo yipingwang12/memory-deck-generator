@@ -199,6 +199,39 @@ Not on the list: historic cities that are not major today (Jerusalem, Kyoto, Xi'
 Samarkand); megacities with little old history (Karachi, Dhaka, Kinshasa, Shenzhen). Central Asia has no
 city here; Tashkent is the best one if the user wants the region.
 
+### Moscow (2026-11-19)
+
+Area: Moscow city and Moscow Oblast (user's choice): the city in its 2012 borders, Kolomenskoye,
+Tsaritsyno, and the Oblast: Sergiyev Posad (Trinity Lavra), Istra (New Jerusalem), Borodino, Abramtsevo,
+Kolomna, Zvenigorod, Dmitrov, Dubna, Korolyov, Zelenograd. Region: eastern_europe.
+
+- The OUT rule covers the grand princes' and tsars' court while Moscow is the seat (about 1328–1712, and
+  1728–1730 when Peter II's court returns) and the Soviet and Russian governments from March 1918:
+  accessions, coronations, court weddings and funerals, decrees and laws for the whole state, Party
+  congresses, national elections, treaties. Coronations in the Kremlin stay OUT also while St Petersburg
+  is the capital. A ruler's building, walls, fire relief, city plan or Metro is IN.
+- The Metropolitan and later Patriarch of Moscow is treated like the Holy See: councils, synods,
+  elections and church-wide reforms are OUT unless the city is the subject. Building a church or
+  monastery (the Trinity Lavra, New Jerusalem) is IN; a ceremony in it is OUT.
+- Main stage (IN as cards): sacks and sieges (1382, 1571, 1610–1612), the Salt, Copper and Plague riots,
+  the Streltsy risings, the 1812 fire and the Battle of Borodino (inside the area), 1905, the October
+  fighting of 1917, the 1941 battle for Moscow, purges and show trials as city events only when the
+  city is the subject, the 1991 coup and the 1993 crisis in the streets, attacks in the city.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1147` | prehistory, Fatyanovo and Dyakovo cultures, the Vyatichi | 25 | ~50 |
+| `1147_1460` | first mention to the eve of Ivan III | 45 | ~150 |
+| `1461_1612` | Ivan III to the end of the Time of Troubles | 45 | ~200 |
+| `1613_1711` | early Romanovs to the capital's move | 45 | ~200 |
+| `1712_1812` | the old capital to the fire of 1812 | 45 | ~180 |
+| `1813_1917` | rebuilding to the revolution | 45 | ~250 |
+| `1918_1940` | Soviet capital to the eve of war | 45 | ~180 |
+| `1941_1991` | the war to the end of the Soviet Union | 45 | ~220 |
+| `1992_present` | post-Soviet | 45 | ~200 |
+
+Expected cards are a guide, not a target.
+
 ## Planned eras for the remaining cities (approved 2026-11-19)
 
 Area for each city: City list. Each era runs from its start to the year before the next one. Budgets:
