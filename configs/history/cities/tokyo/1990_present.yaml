@@ -1,0 +1,950 @@
+# City: Tokyo x 1990 to the present (the bubble's end, the sarin attack, the 2011 earthquake, the 2021 Olympics).
+# DRAFT 2026-11-20.
+# Area: Tokyo Metropolis (23 special wards, Tama area, Izu and Ogasawara islands); Kamakura, Yokohama,
+# Kawasaki, Saitama and Chiba are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: Wikipedia at wikipedia.org (English and Japanese: History of Tokyo, line, station and building
+# articles), Tokyo Metropolitan Government pages, Japan Times and news reports.
+# A work -> first public appearance (premiere, opening); a building -> its opening.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Tokyo Metropolitan Government Building",
+     event: "The Metropolitan Government moves into its new twin-tower city hall in Nishi-Shinjuku",
+     place: "Nishi-Shinjuku",
+     scene: "A giant BOOT steps from Marunouchi to Nishi-Shinjuku and stamps down Tange's twin towers as the new city hall."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Governor of Tokyo",
+     event: "Comedian Yukio Aoshima wins the governor's election with no party behind him",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Voters ring a BELL for comedian Yukio Aoshima and carry him, with no party, into the governor's office."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Aum Shinrikyo",
+     event: "Station staff find an Aum cyanide gas device burning in a Shinjuku station toilet",
+     place: "Shinjuku Station",
+     scene: "A BELL in a Shinjuku station toilet fizzes with Aum's cyanide gas, and staff smother it before it kills."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Aum Shinrikyo; History of Tokyo",
+     event: "An Aum parcel bomb explodes in the governor's office and injures his secretary",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "A BELL-shaped parcel bursts open in Governor Aoshima's city hall office and tears his secretary's hands."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: History of Tokyo (refs, 31 May)",
+     event: "Governor Aoshima cancels the World City Expo planned for the waterfront",
+     place: "Odaiba",
+     scene: "Aoshima tolls a funeral BELL over the empty Odaiba lots and strikes the World City Expo off the map."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Akiruno",
+     event: "Akigawa and Itsukaichi merge into the new city of Akiruno",
+     place: "Akiruno",
+     scene: "Akigawa and Itsukaichi melt their two temple bells into one BELL and hang it over the new city of Akiruno."}
+  - {year: 1996, peg: peach, confidence: high, source: "Friday Digital; Time Out Tokyo",
+     event: "City workers and police clear the homeless shelters from the Shinjuku station underground passage",
+     place: "Shinjuku Station west passage",
+     scene: "A PEACH truck of city workers rolls into the Shinjuku underground passage and crushes the homeless men's cardboard huts."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Governor of Tokyo; Shintaro Ishihara",
+     event: "Novelist Shintaro Ishihara wins the governor's election as an independent",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Novelist Shintaro Ishihara puffs a PIPE of victory smoke over city hall as voters make him governor."}
+  - {year: 2000, peg: sauce, confidence: medium, source: "Japan Times editorial, March 2002",
+     event: "Tokyo taxes the big banks on the size of their business, not on their profits",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Ishihara pours a heavy SAUCE over the big banks' whole turnover, taxing their size, not their profit."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Special wards of Tokyo",
+     event: "The twenty-three special wards become basic local governments under a reform of the local autonomy law",
+     place: "the special wards",
+     scene: "Each of the twenty-three wards gets its own SAUCE bottle as the reform makes it a basic local government."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Nishitokyo",
+     event: "Tanashi and Hoya merge into the new city of Nishitokyo",
+     place: "Nishitokyo",
+     scene: "Tanashi and Hōya pour themselves into one glass of SODA, and the new city of Nishitokyo fizzes up."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Prime Minister's Official Residence",
+     event: "The new Prime Minister's Official Residence of glass and steel opens in Nagatacho",
+     place: "Nagatachō",
+     scene: "A glass SUN rises over Nagatachō as the new prime minister's office opens beside the old one."}
+  - {year: 2002, peg: sun, confidence: medium, source: "Japan Times editorial, 28 March 2002",
+     event: "The Tokyo District Court rules the Tokyo bank tax illegal",
+     place: "Tokyo District Court, Kasumigaseki",
+     scene: "A courtroom SUN melts Ishihara's bank tax as the Tokyo District Court calls the ordinance illegal."}
+  - {year: 2002, peg: sun, confidence: high, source: "Japan Times, 25 June and 2 Nov 2002",
+     event: "Chiyoda ward starts the first street smoking ban with fines in Japan",
+     place: "Kanda, Chiyoda",
+     scene: "The SUN burns out every cigarette on Chiyoda's pavements as ward wardens fine the first street smokers."}
+  - {year: 2003, peg: sumo, confidence: high, source: "Japan Times, 2 Oct 2003; DieselNet",
+     event: "Tokyo bans diesel trucks and buses that fail its soot limits",
+     place: "Tokyo roads",
+     scene: "A SUMO wrestler shoves sooty diesel trucks back over the city line as Tokyo's soot limits begin."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Shintaro Ishihara",
+     event: "Ishihara wins a second term as governor with seven votes in ten",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "A SUMO wrestler hoists Ishihara up on seven of every ten ballots for his second term."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Shintaro Ishihara",
+     event: "Ishihara wins a third term as governor",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Ishihara races on one SKI past every rival and through the gate of a third term."}
+  - {year: 2009, peg: soap, confidence: high, source: "Japan Times, 13 July 2009",
+     event: "The Democratic Party of Japan becomes the largest party in the Metropolitan Assembly",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "Voters scrub the assembly chamber with SOAP and seat the Democratic Party as its largest group."}
+  - {year: 2010, peg: dice, confidence: high, source: "Tokyo Metropolitan Government (cap-and-trade page)",
+     event: "Tokyo starts the first city cap-and-trade scheme for carbon in Asia",
+     place: "Tokyo office towers",
+     scene: "Tokyo rolls DICE to set each office tower's carbon cap as Asia's first city emissions trading begins."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Bill 156",
+     event: "The Metropolitan Assembly passes Bill on sexual images of minors in manga and anime",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "Assembly members stamp censor DICE onto manga pages as they pass Bill 156 on sexual images of minors."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Shintaro Ishihara",
+     event: "Ishihara wins a fourth term as governor",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Ishihara gets a fourth-term TATTOO inked on his arm the night he wins again."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Anti-nuclear movement in Japan",
+     event: "Sixty thousand people rally in central Tokyo against nuclear power",
+     place: "Meiji Shrine Outer Garden",
+     scene: "Sixty thousand marchers in the Meiji Shrine Outer Garden each wear an anti-nuclear TATTOO on their cheek."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Anti-nuclear movement in Japan",
+     event: "Huge Friday crowds protest outside the prime minister's office against restarting reactors",
+     place: "Nagatachō",
+     scene: "A Friday crowd sticks out its TONGUE at the prime minister's office against restarting the reactors."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Shintaro Ishihara",
+     event: "Ishihara resigns as governor to found a national party",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Ishihara pokes out his TONGUE at city hall and walks off to found a national party."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Governor of Tokyo",
+     event: "Writer Naoki Inose wins the governor's election with a record vote",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Writer Naoki Inose licks the record ballot count with his TONGUE as he takes the governor's chair."}
+  - {year: 2013, peg: tomb, confidence: medium, source: "WP: Governor of Tokyo",
+     event: "Governor Inose resigns over a cash loan from a hospital group",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Inose's hidden cash bag turns into a TOMB, and the hospital-group scandal buries his governorship."}
+  - {year: 2013, peg: tomb, confidence: medium, source: "ja.WP: 帰宅困難者",
+     event: "Tokyo's ordinance on stranded commuters takes effect and tells firms to keep staff in after a quake",
+     place: "Tokyo offices",
+     scene: "Office workers wait in a quiet TOMB of a lobby as the new ordinance tells firms to keep staff in after a quake."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Governor of Tokyo",
+     event: "Yoichi Masuzoe wins the governor's election",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Masuzoe climbs a TOWER of ballots to the governor's seat."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Tokyo Metropolitan Assembly",
+     event: "Assembly members heckle assemblywoman Ayaka Shiomura with sexist shouts",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "Hecklers in the TOWER of the assembly gallery shout 'get married' at Ayaka Shiomura as she asks about childbirth support."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Hachioji",
+     event: "Hachioji becomes a core city with more powers",
+     place: "Hachiōji",
+     scene: "Hachiōji rides a DOLL lift up the ladder of local government to core-city powers."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Recognition of same-sex unions in Japan",
+     event: "Shibuya ward starts the first same-sex partnership certificates in Japan",
+     place: "Shibuya Ward Office",
+     scene: "A bride DOLL and her partner receive Shibuya ward's first same-sex partnership certificate."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: SEALDs",
+     event: "Tens of thousands protest outside the Diet against the security bills",
+     place: "National Diet, Nagatachō",
+     scene: "A giant DOLL with a SEALDs placard leads tens of thousands to the Diet gates against the security bills."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Governor of Tokyo",
+     event: "Governor Masuzoe resigns over his use of public money",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Masuzoe's expense receipts pile up on a DISH until he resigns as governor."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Yuriko Koike",
+     event: "Yuriko Koike wins the election as the first woman governor of Tokyo",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "A green satellite DISH beams Yuriko Koike into city hall as Tokyo's first woman governor."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Yuriko Koike",
+     event: "Koike's Tomin First no Kai wins the Metropolitan Assembly election",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "A green DOG pack of Tomin First candidates chases the Liberal Democrats out of the assembly."}
+  - {year: 2018, peg: dove, confidence: high, source: "Japan Times editorial, 30 June 2018",
+     event: "The Metropolitan Assembly passes an ordinance against passive smoking in restaurants",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "A DOVE beats the smoke out of Tokyo's restaurants with its wings as the assembly passes the anti-smoking ordinance."}
+  - {year: 2018, peg: dove, confidence: high, source: "Japan Times, 5 Oct 2018; HRW",
+     event: "Tokyo's human rights ordinance bans hate speech and discrimination by sexual orientation",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "A white DOVE carries Tokyo's human rights ordinance, banning hate speech, into the assembly."}
+  - {year: 2018, peg: dove, confidence: high, source: "SoraNews24; Anime News Network",
+     event: "Halloween crowds overturn a light truck on Shibuya's Center Gai",
+     place: "Center Gai, Shibuya",
+     scene: "A drunk Halloween crowd flips a light truck on Center Gai, and a DOVE flies up from the wreck."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Anime News Network, 19 June 2019; Japan Times",
+     event: "Shibuya ward bans street drinking around the station at Halloween and New Year",
+     place: "Shibuya Station",
+     scene: "A Shibuya ward TUBA blows a stop note at every street drinker round the station on Halloween night."}
+  - {year: 2020, peg: nose, confidence: medium, source: "ja.WP: 東京都の歴史",
+     event: "Governor Koike asks Tokyo residents to stay home to stop COVID-19",
+     place: "Shibuya crossing",
+     scene: "A giant masked NOSE blocks the Shibuya crossing as Koike asks Tokyo to stay home."}
+  - {year: 2020, peg: nose, confidence: high, source: "Nation Thailand; Time Out Tokyo, 2 June 2020",
+     event: "Koike issues the first Tokyo Alert and lights the Rainbow Bridge red",
+     place: "Rainbow Bridge",
+     scene: "The Rainbow Bridge glows red like a cold NOSE as Koike issues the first Tokyo Alert."}
+  - {year: 2020, peg: nose, confidence: medium, source: "WP: Yuriko Koike",
+     event: "Koike wins a second term as governor",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Koike rides a giant green NOSE back into city hall for a second term."}
+  - {year: 2022, peg: nun, confidence: high, source: "Tokyo Metropolitan Government; Bloomberg",
+     event: "Tokyo's partnership oath system for same-sex couples starts",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "A NUN stamps Tokyo's first partnership oath certificates for same-sex couples."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Tokyo Metropolitan Assembly; Yuriko Koike",
+     event: "Koike wins a third term as governor",
+     place: "Tokyo City Hall, Shinjuku",
+     scene: "Koike hangs her third green sash on a HANGER in the governor's office."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Tokyo Metropolitan Assembly",
+     event: "Tomin First stays the largest party in the Metropolitan Assembly election",
+     place: "Metropolitan Assembly, Shinjuku",
+     scene: "Tomin First hammers a NAIL through its green banner over the assembly floor as the largest group again."}
+  # science
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Tokyo Station",
+     event: "The Keiyo Line reaches deep platforms under Tokyo Station",
+     place: "Tokyo Station",
+     scene: "BEES swarm down the long tunnel as the Keiyō Line reaches its deep platforms under Tokyo Station."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Narita Express",
+     event: "The Narita Express starts running from Tokyo Station",
+     place: "Tokyo Station",
+     scene: "A red-and-black BOOT kicks off from Tokyo Station as the first Narita Express."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Tokyo Station",
+     event: "The Tohoku and Joetsu Shinkansen are extended from Ueno to Tokyo Station",
+     place: "Tokyo Station",
+     scene: "A bullet-train BOOT kicks through from Ueno and stops at the Tokyo Station platforms."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Tokyo Metro",
+     event: "The Namboku Line opens between Komagome and Akabane-Iwabuchi",
+     place: "Komagome",
+     scene: "A miner's BOOT breaks through the Namboku Line tunnel from Komagome to Akabane-Iwabuchi."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Toei Oedo Line",
+     event: "The first section of Line Twelve, the future Oedo Line, opens from Hikarigaoka to Nerima",
+     place: "Nerima",
+     scene: "A child's rubber BOOT rides alone on the short first stretch of Line Twelve, Hikarigaoka to Nerima."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Rainbow Bridge (Tokyo)",
+     event: "The Rainbow Bridge opens across the harbour to Odaiba",
+     place: "Rainbow Bridge",
+     scene: "A PALM tree sprouts on each tower of the Rainbow Bridge as it opens to Odaiba."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Haneda Airport",
+     event: "Haneda's new West Passenger Terminal, Big Bird, opens",
+     place: "Haneda Airport",
+     scene: "A huge Big Bird lands in a PALM tree at Haneda as the new west terminal opens."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Yurikamome",
+     event: "The driverless Yurikamome opens from Shimbashi to Ariake",
+     place: "Shimbashi",
+     scene: "Each driverless Yurikamome car rings a BELL as the line opens from Shimbashi to Ariake."}
+  - {year: 1995, peg: bell, confidence: high, source: "ja.WP: 東京都の歴史",
+     event: "The Ariake water reclamation centre begins to treat sewage",
+     place: "Ariake",
+     scene: "A BELL-shaped tank at Ariake starts to clean the waterfront's sewage."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Rinkai Line",
+     event: "The Rinkai Line opens from Shin-Kiba to Tokyo Teleport",
+     place: "Shin-Kiba",
+     scene: "A PEACH-coloured train dives under the bay on the first Rinkai Line run to Tokyo Teleport."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Haneda Airport",
+     event: "Haneda completes its new offshore runway on reclaimed land",
+     place: "Haneda Airport",
+     scene: "A PIG runs the length of Haneda's new runway on the reclaimed bay."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Tama Toshi Monorail Line",
+     event: "The Tama Monorail opens from Kamikitadai to Tachikawa-Kita",
+     place: "Tachikawa",
+     scene: "A BEEHIVE hangs under the first Tama Monorail car between Kamikitadai and Tachikawa-Kita."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Tama Toshi Monorail Line",
+     event: "The Tama Monorail is extended south to Tama Center",
+     place: "Tama Center",
+     scene: "The Tama Monorail pours south like SAUCE over the hills to Tama Center."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Tokyo Metro",
+     event: "The Namboku Line is completed to Meguro with through trains onto the Tokyu Meguro Line",
+     place: "Meguro",
+     scene: "Engineers flood the last Namboku tunnel to Meguro with SAUCE, and Tōkyū trains slide through."}
+  - {year: 2000, peg: sauce, confidence: medium, source: "WP: Toei Oedo Line (infobox)",
+     event: "The Oedo Line loop is completed",
+     place: "Tochōmae",
+     scene: "A chef ladles SAUCE round the plate in the shape of the finished Ōedo loop."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Suica",
+     event: "JR East introduces the Suica smart card",
+     place: "JR East stations",
+     scene: "Commuters wave a can of SODA over the gate, and the first Suica cards open it."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Rinkai Line",
+     event: "The Rinkai Line reaches Osaki",
+     place: "Ōsaki",
+     scene: "The SUN rises at Ōsaki as the last section of the Rinkai Line opens there."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Tokyo Metro",
+     event: "The Hanzomon Line reaches Oshiage with through trains onto the Tobu lines",
+     place: "Oshiage",
+     scene: "A SUMO wrestler pushes the Hanzōmon Line east to Oshiage and onto Tōbu tracks."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "WP: Shinagawa Station (1 or 10 October)",
+     event: "Shinkansen platforms open at Shinagawa Station",
+     place: "Shinagawa Station",
+     scene: "A SUMO wrestler stops a bullet train with one hand at the new Shinagawa platforms."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Haneda Airport",
+     event: "Haneda's Terminal Two opens",
+     place: "Haneda Airport",
+     scene: "Haneda's Terminal Two rises out of a SEWER trench and opens to passengers."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Tsukuba Express",
+     event: "The Tsukuba Express opens from Akihabara",
+     place: "Akihabara",
+     scene: "A SEAL balances the first Tsukuba Express train on its nose at Akihabara."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Yurikamome",
+     event: "The Yurikamome is extended from Ariake to Toyosu",
+     place: "Toyosu",
+     scene: "A SUSHI conveyor belt carries the Yurikamome on from Ariake to Toyosu."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Suica",
+     event: "The PASMO card starts on the private railways, subways and buses",
+     place: "Tokyo subway gates",
+     scene: "Commuters slide a SKI through the private-rail gates, tapping the first PASMO cards."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Central Circular Route",
+     event: "The first section of the Yamate Tunnel opens",
+     place: "Yamate-dōri",
+     scene: "A SKI jumper shoots through the new Yamate Tunnel under Yamate-dōri."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Nippori-Toneri Liner",
+     event: "The Nippori-Toneri Liner opens",
+     place: "Nippori",
+     scene: "A SOFA rides the driverless Nippori-Toneri Liner on its first day."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Tokyo Metro",
+     event: "The Fukutoshin Line opens from Ikebukuro to Shibuya",
+     place: "Meiji-dōri",
+     scene: "A SOFA slides under Meiji-dōri on the first Fukutoshin Line train to Shibuya."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP: Central Circular Route",
+     event: "The Yamate Tunnel is extended south to Ohashi",
+     place: "Ōhashi",
+     scene: "Drivers shake DICE in the Yamate Tunnel's new southern stretch to Ōhashi."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Haneda Airport",
+     event: "Haneda opens its new international terminal and its fourth runway",
+     place: "Haneda Airport",
+     scene: "Jets roll DICE across Haneda's new fourth runway as the international terminal opens."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: History of Tokyo",
+     event: "Rolling blackouts cut power to Tokyo districts by turns after the quake",
+     place: "Tokyo",
+     scene: "A TATTOO artist works by candle as rolling blackouts switch off Tokyo districts by turns."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Univ. of Tokyo report; AP, 23 March 2011",
+     event: "Radioactive iodine at the Kanamachi purification plant makes Tokyo warn against tap water for babies",
+     place: "Kanamachi Water Purification Plant",
+     scene: "A radiation TATTOO appears on the Kanamachi tap water, and mothers stop giving it to babies."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Tokyo Tower",
+     event: "The quake bends the tip of Tokyo Tower's antenna",
+     place: "Shiba Park",
+     scene: "The quake bends Tokyo Tower's antenna tip like a needle bent by a TATTOO artist."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Tokyo Gate Bridge",
+     event: "The Tokyo Gate Bridge opens over the bay",
+     place: "Tokyo Gate Bridge",
+     scene: "Two steel dinosaurs touch TONGUE to TONGUE over the bay as the Tokyo Gate Bridge opens."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shibuya Station",
+     event: "The Tokyu Toyoko Line moves underground at Shibuya with through trains onto the Fukutoshin Line",
+     place: "Shibuya Station",
+     scene: "A TOMB swallows the old Tōyoko Line terminal at Shibuya as its trains move underground."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shimo-Kitazawa Station",
+     event: "The Odakyu Line moves underground at Shimokitazawa",
+     place: "Shimokitazawa",
+     scene: "Odakyū trains vanish into a TOMB under Shimokitazawa, and the street crossings fall silent."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Chuo Shinkansen",
+     event: "Construction of the Chuo Shinkansen maglev, with its terminal at Shinagawa, begins",
+     place: "Shinagawa",
+     scene: "A maglev drill TOWER sinks into the ground at Shinagawa as Chūō Shinkansen work begins."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Ueno-Tokyo Line",
+     event: "The Ueno-Tokyo Line opens",
+     place: "Ueno",
+     scene: "A rag DOLL stitches Ueno to Tokyo Station with the new through line on the Shinkansen viaduct."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Central Circular Route",
+     event: "The last Yamate Tunnel section opens to Shinagawa and closes the Central Circular Route",
+     place: "Ōi",
+     scene: "A DOLL drives the last car through to Shinagawa and closes the ring of the Central Circular Route."}
+  - {year: 2018, peg: dove, confidence: medium, source: "rail-history sites; Odakyu plan PDF",
+     event: "The Odakyu Line completes four tracks from Yoyogi-Uehara to Noborito",
+     place: "Setagaya",
+     scene: "A DOVE flies along four parallel Odakyū tracks, now complete from Yoyogi-Uehara to Noborito."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Shibuya Station",
+     event: "The Ginza Line platform at Shibuya moves east to a new site",
+     place: "Shibuya Station",
+     scene: "A giant NOSE pushes the Ginza Line platform fifty metres east above Shibuya."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Takanawa Gateway Station",
+     event: "Takanawa Gateway Station opens on the Yamanote Line",
+     place: "Takanawa Gateway",
+     scene: "A giant NOSE sniffs the paper roof of the new Takanawa Gateway Station."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Harajuku Station",
+     event: "The new Harajuku Station building opens",
+     place: "Harajuku",
+     scene: "The old wooden Harajuku station sneezes from its NOSE as the new glass station opens beside it."}
+  - {year: 2020, peg: nose, confidence: high, source: "Jakarta Post; Japan Times, March 2020",
+     event: "Haneda starts new flight paths over central Tokyo",
+     place: "central Tokyo sky",
+     scene: "Jets brush the NOSE of Shinjuku's towers on Haneda's new approach over central Tokyo."}
+  # religion
+  - {year: 1991, peg: boot, confidence: medium, source: "Religion in Modern Asia Newsletter; Nanzan papers",
+     event: "Kofuku no Kagaku followers protest at Kodansha over Friday magazine articles",
+     place: "Kodansha, Otowa",
+     scene: "Kōfuku no Kagaku followers march in a BOOT-stamping crowd on Kodansha's Otowa office against Friday magazine."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Tokyo Camii",
+     event: "The rebuilt Tokyo Camii mosque opens",
+     place: "Yoyogi-Uehara",
+     scene: "The dome of the new Tokyo Camii fills like a SAUCE bowl as the mosque opens at Yoyogi-Uehara."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Soka Gakkai Global; SGHQ facility page",
+     event: "Soka Gakkai opens its Hall of the Great Vow in Shinanomachi",
+     place: "Shinanomachi",
+     scene: "Sōka Gakkai turns a white TOMB-like hall in Shinanomachi into its Hall of the Great Vow."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Tokyo Japan Temple",
+     event: "The renovated Tokyo Japan Temple of the Latter-day Saints is rededicated",
+     place: "Minami-Azabu",
+     scene: "Even a NUN tours the renovated Tokyo Japan Temple before it is rededicated in Minami-Azabu."}
+  # arts
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Tokyo Metropolitan Theatre",
+     event: "The Tokyo Metropolitan Art Space opens in Ikebukuro",
+     place: "Ikebukuro",
+     scene: "BEES hum the first concert in the new Tokyo Metropolitan Art Space at Ikebukuro."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Edo-Tokyo Museum",
+     event: "Kikutake's Edo-Tokyo Museum opens in Ryogoku",
+     place: "Ryōgoku",
+     scene: "A PALM tree grows up between the stilts of Kikutake's Edo-Tokyo Museum as it opens at Ryōgoku."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Fukiage Palace",
+     event: "The new Fukiage Palace is completed as the emperor's home in the palace grounds",
+     place: "Imperial Palace",
+     scene: "Gardeners plant a PALM at the door of the new Fukiage Palace as the emperor's home is finished."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Museum of Contemporary Art Tokyo",
+     event: "The Museum of Contemporary Art Tokyo opens in Kiba",
+     place: "Kiba Park",
+     scene: "A steel BELL becomes the first artwork rung at the new Museum of Contemporary Art in Kiba."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Tokyo Big Sight",
+     event: "The Comic Market moves to Tokyo Big Sight",
+     place: "Tokyo Big Sight",
+     scene: "Cosplayers pelt each other with a PEACH as Comiket fills Tokyo Big Sight for the first time."}
+  - {year: 1996, peg: peach, confidence: high, source: "ja.WP: 東京オペラシティ",
+     event: "Tokyo Opera City Tower opens in Hatsudai with its concert hall",
+     place: "Hatsudai",
+     scene: "A PEACH drops from the top of the new Tokyo Opera City Tower onto its wooden concert hall roof."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Tokyo International Forum",
+     event: "Rafael Vinoly's Tokyo International Forum opens",
+     place: "Yūrakuchō",
+     scene: "A PIG skates down the glass hull of Viñoly's Tokyo International Forum on opening day."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: New National Theatre Tokyo",
+     event: "The New National Theatre gives its first public performances",
+     place: "Hatsudai",
+     scene: "A PIG in a tutu dances the first show on the stage of the New National Theatre."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Fuji Television",
+     event: "Fuji TV moves into Tange's headquarters with its titanium sphere in Odaiba",
+     place: "Odaiba",
+     scene: "A PIG rolls inside the titanium sphere of Fuji TV's new Odaiba headquarters."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Tokyo National Museum",
+     event: "The Heiseikan gallery opens at the Tokyo National Museum",
+     place: "Ueno Park",
+     scene: "A PIPE pours steam over the granite front of the new Heiseikan at the Tokyo National Museum."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Tokyo National Museum",
+     event: "Taniguchi's Gallery of Horyu-ji Treasures opens at the Tokyo National Museum",
+     place: "Ueno Park",
+     scene: "A curator smokes a PIPE by the reflecting pool of Taniguchi's new Gallery of Hōryū-ji Treasures."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Miraikan",
+     event: "Miraikan, the National Museum of Emerging Science, opens in Odaiba",
+     place: "Odaiba",
+     scene: "A robot made of SODA cans greets the first visitors at Miraikan in Odaiba."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: 21_21 Design Sight",
+     event: "Tadao Ando's 21_21 Design Sight opens in Tokyo Midtown",
+     place: "Tokyo Midtown, Akasaka",
+     scene: "Issey Miyake folds a SKI into the steel roof of Ando's 21_21 Design Sight."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Taro Okamoto",
+     event: "Taro Okamoto's mural Myth of Tomorrow is put up in Shibuya station",
+     place: "Shibuya Mark City",
+     scene: "A SOFA burns in Taro Okamoto's Myth of Tomorrow as the giant mural goes up in Shibuya station."}
+  - {year: 2009, peg: soap, confidence: high, source: "Anime News Network, 10 July 2009",
+     event: "A life-size Gundam statue stands in Shiokaze Park, Odaiba",
+     place: "Odaiba",
+     scene: "A life-size Gundam scrubs itself with SOAP in Shiokaze Park, Odaiba."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Nezu Museum",
+     event: "Kengo Kuma's new Nezu Museum opens in Aoyama",
+     place: "Minami-Aoyama",
+     scene: "Kuma washes the bamboo path of the new Nezu Museum with SOAP before it reopens in Aoyama."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Akasaka Palace",
+     event: "Akasaka Palace is named a National Treasure",
+     place: "Akasaka",
+     scene: "Inspectors polish Akasaka Palace with SOAP as it is named a National Treasure."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Kabuki-za",
+     event: "The old Kabuki-za closes before it is pulled down",
+     place: "Ginza",
+     scene: "Actors throw DICE onto the stage at the old Kabuki-za's last show before the wreckers come."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Mitsubishi Ichigokan Museum",
+     event: "The rebuilt Mitsubishi Ichigokan opens as a museum in Marunouchi",
+     place: "Marunouchi",
+     scene: "Builders stack red bricks like DICE to rebuild Mitsubishi Ichigokan as a Marunouchi museum."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Tokyo Station",
+     event: "The restoration of Tokyo Station's Marunouchi building and its domes is completed",
+     place: "Tokyo Station",
+     scene: "A giant TONGUE licks the rebuilt domes of Tokyo Station's restored Marunouchi building."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Kabuki-za",
+     event: "Kengo Kuma's new Kabuki-za opens",
+     place: "Ginza",
+     scene: "A kabuki ghost climbs out of a TOMB onto the stage of Kuma's new Kabuki-za."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Hachiko",
+     event: "A statue of Hachiko greeting Professor Ueno is unveiled at the University of Tokyo",
+     place: "University of Tokyo, Yayoi",
+     scene: "A bronze DOLL of Hachikō leaps up at Professor Ueno at the University of Tokyo."}
+  - {year: 2015, peg: doll, confidence: medium, source: "ja.WP: 新宿東宝ビル",
+     event: "A giant Godzilla head is mounted on the Toho building in Kabukicho",
+     place: "Kabukichō",
+     scene: "Godzilla snatches a DOLL off the Kabukichō rooftop as his giant head is mounted on the Toho building."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: National Museum of Western Art",
+     event: "Le Corbusier's National Museum of Western Art becomes a World Heritage Site",
+     place: "Ueno Park",
+     scene: "UNESCO serves Le Corbusier's Ueno museum on a World Heritage DISH."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Sumida Hokusai Museum",
+     event: "Kazuyo Sejima's Sumida Hokusai Museum opens",
+     place: "Kamezawa, Sumida",
+     scene: "A DISH painted with Hokusai's waves hangs in Sejima's new Sumida Hokusai Museum."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: TeamLab (art collective)",
+     event: "teamLab Borderless digital art museum opens in Odaiba",
+     place: "Odaiba",
+     scene: "A DOVE of light flies through the walls of teamLab Borderless in Odaiba."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Artizon Museum",
+     event: "The Artizon Museum, the rebuilt Bridgestone gallery, opens in Kyobashi",
+     place: "Kyōbashi",
+     scene: "A Bridgestone tyre bounces off a marble NOSE as the Artizon Museum opens in Kyōbashi."}
+  - {year: 2022, peg: nun, confidence: high, source: "ja.WP: 九段会館",
+     event: "The rebuilt Kudan Kaikan reopens as Kudan Kaikan Terrace",
+     place: "Kudanshita",
+     scene: "A NUN walks under the saved old front of Kudan Kaikan as it reopens as an office tower."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Tokyo Metropolitan Government Building",
+     event: "City hall's projection-mapping show sets a world record",
+     place: "Nishi-Shinjuku",
+     scene: "A coat HANGER of light hangs over the twin towers of city hall in the record projection-mapping show."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Edo-Tokyo Museum",
+     event: "The Edo-Tokyo Museum reopens after four years of renovation",
+     place: "Ryōgoku",
+     scene: "A NACHO platter is served under the stilts of the Edo-Tokyo Museum as it reopens."}
+  # economy
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Nikkei 225",
+     event: "The Nikkei falls by nearly two-fifths in a year as the Tokyo stock bubble bursts",
+     place: "Tokyo Stock Exchange, Kabutochō",
+     scene: "BEES sting the Tokyo Stock Exchange board, and the Nikkei falls by nearly two-fifths in a year."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Park Hyatt Tokyo",
+     event: "Shinjuku Park Tower opens with the Park Hyatt Tokyo at its top",
+     place: "Nishi-Shinjuku",
+     scene: "A BEAR sips whisky in the new Park Hyatt bar at the top of Shinjuku Park Tower."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Yebisu Garden Place",
+     event: "Yebisu Garden Place opens on the old Sapporo brewery site",
+     place: "Ebisu",
+     scene: "A BEAR drinks beer in Yebisu Garden Place on the old brewery ground."}
+  - {year: 1994, peg: bear, confidence: high, source: "ja.WP: 東京協和信用組合",
+     event: "Two Tokyo credit unions, Tokyo Kyowa and Anzen, fail",
+     place: "Tokyo",
+     scene: "A BEAR crushes two Tokyo credit unions, Tokyo Kyowa and Anzen, under its paws."}
+  - {year: 1995, peg: bell, confidence: high, source: "ja.WP: 東京都の歴史",
+     event: "Tokyo MX, the city's own television station, begins broadcasting",
+     place: "Hirakawachō",
+     scene: "A BELL rings in the first broadcast of Tokyo MX, the city's own television station."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Bank of Tokyo-Mitsubishi",
+     event: "Mitsubishi Bank and the Bank of Tokyo merge into the Bank of Tokyo-Mitsubishi",
+     place: "Marunouchi",
+     scene: "Mitsubishi Bank and the Bank of Tokyo squeeze into one PEACH: the Bank of Tokyo-Mitsubishi."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Tokyo Big Sight",
+     event: "Tokyo Big Sight convention centre opens in Ariake",
+     place: "Ariake",
+     scene: "Each upside-down pyramid holds a PEACH as Tokyo Big Sight opens in Ariake."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Yamaichi Securities",
+     event: "Yamaichi Securities announces it will close",
+     place: "Kabutochō",
+     scene: "A PIG in a suit weeps at Yamaichi's press conference as the brokerage shuts."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Long-Term Credit Bank of Japan",
+     event: "The Long-Term Credit Bank of Japan is nationalised",
+     place: "Uchisaiwaichō",
+     scene: "The state lifts the Long-Term Credit Bank out of a BEEHIVE of bad loans and nationalises it."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "The Tokyo Stock Exchange closes its trading floor and moves all trades to computers",
+     place: "Kabutochō",
+     scene: "A PIPE plays the last post as traders leave the Tokyo Stock Exchange floor for screens."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Mizuho Financial Group",
+     event: "Three banks form Mizuho Holdings",
+     place: "Marunouchi",
+     scene: "Three banks melt into one SAUCE pan as Mizuho Holdings forms."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Marunouchi Building",
+     event: "The rebuilt Marunouchi Building opens",
+     place: "Marunouchi",
+     scene: "Office workers bask under a SUN lamp on the top floor of the new Marunouchi Building."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Roppongi Hills",
+     event: "Mori Building's Roppongi Hills opens",
+     place: "Roppongi",
+     scene: "A SUMO wrestler hauls Mori's tower up out of four hundred small lots as Roppongi Hills opens."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Tokyo Metro",
+     event: "The Teito Rapid Transit Authority becomes the company Tokyo Metro",
+     place: "Ueno",
+     scene: "The old subway authority goes down a SEWER and comes up as the company Tokyo Metro."}
+  - {year: 2005, peg: seal, confidence: medium, source: "WP: Shintaro Ishihara; Timeline of Tokyo",
+     event: "ShinGinko Tokyo, the city's bank for small firms, opens",
+     place: "Ōtemachi",
+     scene: "Ishihara hands a SEAL the vault key of ShinGinko Tokyo, the city's bank for small firms."}
+  - {year: 2005, peg: seal, confidence: high, source: "ja.WP: 東京都の歴史",
+     event: "The Metropolitan Expressway becomes a private company",
+     place: "Kasumigaseki",
+     scene: "A SEAL balances the Shuto Expressway on its nose as the road becomes a private company."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "A system failure stops the Tokyo Stock Exchange for most of a day",
+     place: "Kabutochō",
+     scene: "A SEAL chews the cables, and the Tokyo Stock Exchange trades for only ninety minutes."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "A Mizuho trader's typing error sells J-Com shares at one yen each",
+     place: "Kabutochō",
+     scene: "A SEAL flops on a Mizuho keyboard and sells J-Com shares at one yen each."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Bank of Tokyo-Mitsubishi",
+     event: "The Bank of Tokyo-Mitsubishi and UFJ Bank merge",
+     place: "Marunouchi",
+     scene: "Two SUSHI counters are pushed together into one: the Bank of Tokyo-Mitsubishi UFJ."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "The Livedoor shock floods the Tokyo Stock Exchange with orders and stops trading early",
+     place: "Kabutochō",
+     scene: "A tidal wave of SUSHI orders swamps the stock exchange after the Livedoor raid, and it shuts early."}
+  - {year: 2006, peg: sushi, confidence: high, source: "ja.WP: 表参道ヒルズ",
+     event: "Tadao Ando's Omotesando Hills opens",
+     place: "Omotesandō",
+     scene: "Ando lays a long SUSHI roll down Omotesandō as his Omotesando Hills opens."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Tokyo Midtown",
+     event: "Tokyo Midtown opens with the city's tallest tower",
+     place: "Akasaka",
+     scene: "A SKI slope runs down Midtown Tower, the city's new tallest, as Tokyo Midtown opens."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: The Peninsula Tokyo",
+     event: "The Peninsula Tokyo hotel opens",
+     place: "Yūrakuchō",
+     scene: "A page boy carries a guest's SKI into the new Peninsula Tokyo in Yūrakuchō."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Nikkei 225",
+     event: "The Nikkei falls to its lowest point since the bubble",
+     place: "Kabutochō",
+     scene: "The Nikkei sinks deep into a SOFA at its lowest point since the bubble."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Japan Airlines",
+     event: "Japan Airlines files for bankruptcy",
+     place: "Tennōzu Isle",
+     scene: "JAL's crane logo crashes onto a pile of DICE as the airline files for bankruptcy."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Shibuya Station",
+     event: "Shibuya Hikarie opens",
+     place: "Shibuya",
+     scene: "Shibuya Hikarie sticks out a glass TONGUE over Shibuya station as it opens."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "The Tokyo and Osaka exchanges merge into Japan Exchange Group",
+     place: "Kabutochō",
+     scene: "Tokyo and Osaka bury their rivalry in one TOMB and rise as Japan Exchange Group."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Mt. Gox",
+     event: "The bitcoin exchange Mt. Gox stops trading and files for bankruptcy in Tokyo",
+     place: "Shibuya",
+     scene: "Bitcoins drop down a TOWER chute at Mt. Gox in Shibuya, and the exchange goes bankrupt."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Timeline of Tokyo",
+     event: "Toranomon Hills opens over the new Loop Road Number Two tunnel",
+     place: "Toranomon",
+     scene: "A TOWER rises over the Loop Road tunnel as Toranomon Hills opens."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Tsukiji fish market",
+     event: "Governor Koike postpones the move of Tsukiji market to Toyosu",
+     place: "Tsukiji",
+     scene: "Koike sets a DISH of Toyosu soil on the table and stops the Tsukiji move."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Ginza Six",
+     event: "Ginza Six opens on the old Matsuzakaya site",
+     place: "Ginza",
+     scene: "A DOG trots in through the doors of Ginza Six, the largest store in Ginza, on opening day."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Coincheck",
+     event: "Thieves steal about half a billion NEM coins from Coincheck",
+     place: "Shibuya",
+     scene: "A thief's DOVE flies off with half a billion NEM coins from Coincheck in Shibuya."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Tsukiji fish market",
+     event: "Tsukiji market closes and the wholesale market moves to Toyosu",
+     place: "Tsukiji",
+     scene: "Fishmongers release a DOVE from the last Tsukiji auction and carry their tuna to Toyosu."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Tokyo Midtown Hibiya",
+     event: "Tokyo Midtown Hibiya opens",
+     place: "Hibiya",
+     scene: "A DOVE lands on the curved glass top of the new Tokyo Midtown Hibiya."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Hotel Okura Tokyo",
+     event: "The rebuilt Okura Tokyo hotel opens",
+     place: "Toranomon",
+     scene: "A TUBA plays in the rebuilt lobby of The Okura Tokyo as it opens."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Shibuya Station",
+     event: "Shibuya Scramble Square opens as the tallest tower in Shibuya",
+     place: "Shibuya",
+     scene: "A TUBA blasts from the rooftop deck as Shibuya Scramble Square opens as Shibuya's tallest tower."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Tokyo International Cruise Terminal",
+     event: "The Tokyo International Cruise Terminal opens at Aomi",
+     place: "Aomi",
+     scene: "A cruise ship's NOSE noses into the new Tokyo International Cruise Terminal at Aomi."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "A system fault stops all trading on the Tokyo Stock Exchange for a whole day",
+     place: "Kabutochō",
+     scene: "A server's sneezing NOSE stops all trading on the Tokyo Stock Exchange for a whole day."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Miyashita Park",
+     event: "Miyashita Park reopens as a park on the roof of a shopping mall",
+     place: "Shibuya",
+     scene: "A NOSE sniffs the new rooftop park of Miyashita Park above its row of shops in Shibuya."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Tokyo Stock Exchange",
+     event: "The Tokyo Stock Exchange splits its listings into Prime, Standard and Growth",
+     place: "Kabutochō",
+     scene: "A NUN sorts the listed firms into Prime, Standard and Growth at the stock exchange."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Tokyu Kabukicho Tower",
+     event: "Tokyu Kabukicho Tower opens",
+     place: "Kabukichō",
+     scene: "A GNOME in a hotel robe waves from the top of the new Tokyu Kabukichō Tower."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Reuters via Jakarta Post; NBC",
+     event: "Workers strike at Seibu Ikebukuro, the first department-store strike in decades",
+     place: "Ikebukuro",
+     scene: "A GNOME pickets the shut doors of Seibu Ikebukuro in the first department-store strike in decades."}
+  - {year: 2023, peg: gnome, confidence: medium, source: "WP: Azabudai Hills",
+     event: "Azabudai Hills opens with the tallest building in Japan",
+     place: "Azabudai",
+     scene: "A GNOME climbs to the top of Mori JP Tower as Azabudai Hills opens with Japan's tallest building."}
+  - {year: 2023, peg: gnome, confidence: medium, source: "WP: History of Tokyo (refs)",
+     event: "Tokyo Midtown Yaesu opens beside Tokyo Station",
+     place: "Yaesu",
+     scene: "A GNOME rides the escalator into Tokyo Midtown Yaesu on its opening day opposite Tokyo Station."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Nikkei 225",
+     event: "The Nikkei closes above its bubble-era record at last",
+     place: "Kabutochō",
+     scene: "A coat HANGER lifts the Nikkei above its bubble peak at last."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Nikkei 225",
+     event: "The Nikkei has the largest one-day fall in its history",
+     place: "Kabutochō",
+     scene: "The Nikkei drops off its HANGER in the largest one-day fall in its history."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Tokyo Metro",
+     event: "Tokyo Metro lists its shares on the Tokyo Stock Exchange",
+     place: "Kabutochō",
+     scene: "Tokyo Metro hangs its shares on a HANGER in the Prime market on their first day."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Takanawa Gateway Station",
+     event: "Takanawa Gateway City opens its first towers on the old rail yard",
+     place: "Takanawa",
+     scene: "A NAIL fixes Takanawa Gateway City's first tower to the old rail yard as it opens."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Nikkei 225",
+     event: "The Nikkei closes above fifty thousand for the first time",
+     place: "Kabutochō",
+     scene: "A NAIL holds the Nikkei above fifty thousand for the first time."}
+  # society
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Mike Tyson vs. Buster Douglas",
+     event: "Buster Douglas knocks out Mike Tyson in the Tokyo Dome",
+     place: "Tokyo Dome",
+     scene: "BEES sting Mike Tyson's eye, and Buster Douglas knocks him out in the Tokyo Dome."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: 1991 World Championships in Athletics",
+     event: "Tokyo hosts the World Athletics Championships, where Lewis and Powell set world records",
+     place: "National Stadium",
+     scene: "Mike Powell leaps over a giant BOOT into a long-jump world record at the old National Stadium."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Tokyo Rainbow Pride",
+     event: "The first gay and lesbian pride parade in Japan marches in Tokyo",
+     place: "Shinjuku",
+     scene: "A rainbow BEAR leads Japan's first gay and lesbian parade through Tokyo."}
+  - {year: 1995, peg: bell, confidence: medium, source: "WP: Aum Shinrikyo",
+     event: "Aum members abduct Kiyoshi Kariya, head of a notary office, in Shinagawa",
+     place: "Shinagawa",
+     scene: "Aum men gag Kiyoshi Kariya with a BELL rope and bundle him into a van in Shinagawa."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Aum Shinrikyo",
+     event: "A gunman shoots and wounds Takaji Kunimatsu, chief of the National Police Agency, outside his home",
+     place: "Minami-Senju, Arakawa",
+     scene: "A gunman fires past the door BELL at Takaji Kunimatsu, head of the National Police, outside his Arakawa home."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Aum Shinrikyo",
+     event: "A man stabs Aum leader Hideo Murai outside the Aum Tokyo headquarters",
+     place: "Minami-Aoyama",
+     scene: "A knifeman stabs Aum's Hideo Murai, and the cult's BELL falls silent at its Aoyama headquarters."}
+  - {year: 1996, peg: peach, confidence: high, source: "NPR; Japan Times timeline, 2006",
+     event: "The trial of Shoko Asahara opens at the Tokyo District Court",
+     place: "Tokyo District Court, Kasumigaseki",
+     scene: "Asahara sits silent before a PEACH on the judge's bench as his trial opens in the Tokyo District Court."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Japan Times; Friday Digital",
+     event: "Fire sweeps the Shinjuku cardboard village and kills four homeless people",
+     place: "Shinjuku Station west exit",
+     scene: "A burning BEEHIVE of cardboard huts kills four homeless people under Shinjuku station."}
+  - {year: 1999, peg: pipe, confidence: high, source: "ja.WP: 池袋通り魔殺人事件",
+     event: "A man with a hammer and knife kills two shoppers in Ikebukuro",
+     place: "Higashi-Ikebukuro",
+     scene: "Shoppers flee down a drain PIPE as a man with a hammer and knife kills two in Ikebukuro."}
+  - {year: 2000, peg: sauce, confidence: high, source: "ja.WP: 中目黒駅構内列車脱線衝突事故",
+     event: "A Hibiya Line car derails at Naka-Meguro and five passengers die",
+     place: "Naka-Meguro",
+     scene: "A Hibiya Line car slides off the rails on spilt SAUCE at Naka-Meguro, and five people die."}
+  - {year: 2000, peg: sauce, confidence: high, source: "jishin.go.jp report, 2 July 2000",
+     event: "A strong earthquake of the Miyake swarm shakes Kozushima",
+     place: "Kōzushima",
+     scene: "A SAUCE bottle bursts on Kōzushima as a strong quake from the Miyake swarm shakes the island."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Lucie Blackman",
+     event: "Lucie Blackman disappears after a date from a Roppongi hostess bar",
+     place: "Roppongi",
+     scene: "Lucie Blackman leaves her Roppongi bar, and only her SAUCE-stained glass is left behind."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Setagaya family murder",
+     event: "An unknown killer murders a family of four in their Setagaya home",
+     place: "Kamisoshigaya, Setagaya",
+     scene: "The Setagaya killer drips ice-cream SAUCE in the house where he has killed a family of four."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Timeline of Tokyo",
+     event: "Tokyo Stadium opens in Chofu",
+     place: "Chōfu",
+     scene: "Fans spray SODA over the stands as Tokyo Stadium opens in Chōfu."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Myojo 56 building fire",
+     event: "Fire in the Myojo 56 building in Kabukicho kills forty-four people",
+     place: "Kabukichō",
+     scene: "A SODA machine melts in the blazing stairwell of the Myojo 56 building as forty-four people die."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Shoko Asahara",
+     event: "The Tokyo District Court sentences Shoko Asahara to death",
+     place: "Tokyo District Court, Kasumigaseki",
+     scene: "A judge flushes Asahara's hopes down a SEWER and sentences him to death."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Miyake-jima",
+     event: "Miyakejima residents return home after four years of evacuation",
+     place: "Miyakejima",
+     scene: "A SEAL swims ahead of the ferry as Miyakejima's people come home after four years."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Tokyo Metropolitan University",
+     event: "Four metropolitan colleges merge into the new Tokyo Metropolitan University",
+     place: "Minami-Ōsawa, Hachiōji",
+     scene: "A SEAL juggles four college crests until they merge into the new Tokyo Metropolitan University."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Tokyo Marathon",
+     event: "The first Tokyo Marathon is run",
+     place: "Nishi-Shinjuku",
+     scene: "A runner on one SKI leads thirty thousand from city hall in Shinjuku in the first Tokyo Marathon."}
+  - {year: 2007, peg: ski, confidence: high, source: "Japan Times, 22 May 2007",
+     event: "Measles shuts universities in Tokyo",
+     place: "Tokyo campuses",
+     scene: "Students in SKI masks stay home as measles shuts Tokyo universities."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Iwo Jima",
+     event: "Iwo Jima's official name changes to Ioto",
+     place: "Iwo Jima",
+     scene: "A mapmaker on a SKI crosses Iwo Jima's sulphur slopes and rewrites its name as Iōtō."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Akihabara massacre",
+     event: "A man drives a truck into the Akihabara crowd and stabs passers-by; seven die",
+     place: "Akihabara",
+     scene: "A truck smashes a SOFA across the Akihabara crossing, and the driver stabs passers-by; seven die."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Bids for the 2016 Summer Olympics",
+     event: "Tokyo loses its bid for the next Summer Olympics in the second round",
+     place: "Tokyo",
+     scene: "Tokyo's bid team washes its hopes away with SOAP as Copenhagen votes it out in round two."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "ja.WP: 九段会館",
+     event: "The quake brings down the ceiling of the Kudan Kaikan hall during a graduation and kills two",
+     place: "Kudanshita",
+     scene: "The TATTOO-patterned ceiling of Kudan Kaikan crashes onto a graduation and kills two."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Cabinet Office white paper (5.15 million)",
+     event: "Millions of commuters walk home or sleep in stations as the trains stop after the quake",
+     place: "Tokyo streets",
+     scene: "Millions walk home in lines of light, each with a TATTOO of the train map on the arm."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Ogasawara Islands",
+     event: "The Ogasawara Islands become a natural World Heritage Site",
+     place: "Ogasawara Islands",
+     scene: "A Bonin flying fox gets a World Heritage TATTOO as UNESCO lists the Ogasawara Islands."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Nishinoshima (Ogasawara)",
+     event: "An eruption builds a new island off Nishinoshima that joins the old island",
+     place: "Nishinoshima",
+     scene: "A volcanic TOMB rises from the sea off Nishinoshima and joins the old island."}
+  - {year: 2014, peg: tower, confidence: high, source: "Weather.com; Weather Underground",
+     event: "Heavy snowstorms bury Tokyo under the deepest snow in decades",
+     place: "central Tokyo",
+     scene: "A snow TOWER twenty-seven centimetres high buries the streets of central Tokyo."}
+  - {year: 2014, peg: tower, confidence: high, source: "WHO WPSAR; CDC EID",
+     event: "Mosquitoes in Yoyogi Park spread the first local dengue fever in Japan since the war",
+     place: "Yoyogi Park",
+     scene: "Mosquitoes swarm out of a TOWER in Yoyogi Park and spread Japan's first local dengue since the war."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Japan National Stadium",
+     event: "The government scraps Zaha Hadid's design for the new National Stadium",
+     place: "Kasumigaoka",
+     scene: "Abe drops Zaha Hadid's stadium model into a DOLL's toy bin over its soaring cost."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Concerns and controversies at the 2020 Summer Olympics",
+     event: "The organisers withdraw Kenjiro Sano's emblem for the Tokyo Games after plagiarism claims",
+     place: "Toranomon",
+     scene: "A DOLL holds up Sano's Olympic emblem, and the organisers tear it down over plagiarism claims."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: B.League",
+     event: "The B.League opens with its first game at Yoyogi National Gymnasium",
+     place: "Yoyogi National Gymnasium",
+     scene: "A basketball spins on a DISH at Yoyogi National Gymnasium as the B.League's first game tips off."}
+  - {year: 2018, peg: dove, confidence: high, source: "SoraNews24; JMA",
+     event: "Ome reaches forty degrees, the first time a place in Tokyo does so",
+     place: "Ōme",
+     scene: "A DOVE pants in Ōme as the city hits 40.8 degrees, the first forty in Tokyo."}
+  - {year: 2018, peg: dove, confidence: medium, source: "WP: Carlos Ghosn",
+     event: "Prosecutors arrest Nissan chairman Carlos Ghosn when his jet lands at Haneda",
+     place: "Haneda Airport",
+     scene: "Prosecutors catch Carlos Ghosn like a DOVE in a net as his jet lands at Haneda."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Higashi-Ikebukuro runaway car crash",
+     event: "A runaway car driven by an old man kills a mother and her daughter in Higashi-Ikebukuro",
+     place: "Higashi-Ikebukuro",
+     scene: "A runaway car blasts through a TUBA band at Higashi-Ikebukuro and kills a mother and her daughter."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Tokyo Metropolitan Government history page",
+     event: "Tokyo's population passes fourteen million",
+     place: "Tokyo",
+     scene: "A TUBA bellows a fanfare as Tokyo's population passes fourteen million."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Japan National Stadium",
+     event: "Kengo Kuma's new National Stadium is completed",
+     place: "Kasumigaoka",
+     scene: "A wooden TUBA as wide as the roof sounds from the timber eaves of Kuma's finished National Stadium."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Carlos Ghosn",
+     event: "Carlos Ghosn slips out of his Tokyo home and flees Japan while on bail",
+     place: "Minato",
+     scene: "Carlos Ghosn hides in a TUBA-sized music box and slips out of Tokyo while on bail."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Timeline of Tokyo",
+     event: "Tokyo confirms its first case of COVID-19",
+     place: "Tokyo",
+     scene: "A NOSE swab finds Tokyo's first case of COVID-19."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Yoshiro Mori",
+     event: "Yoshiro Mori resigns as head of the Tokyo Games organisers after remarks about women",
+     place: "Harumi",
+     scene: "An ANT bites Yoshirō Mori after his remark about women, and he quits as head of the Tokyo Games."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: 2020 Summer Paralympics",
+     event: "Tokyo hosts the postponed Summer Paralympics",
+     place: "National Stadium",
+     scene: "An ANT in a racing wheelchair speeds round the National Stadium at the Tokyo Paralympics."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Nippori-Toneri Liner",
+     event: "A strong earthquake derails a Nippori-Toneri Liner train",
+     place: "Adachi",
+     scene: "An ANT colony shakes loose as a strong quake knocks a Nippori-Toneri Liner train off its guideway."}
+  - {year: 2021, peg: ant, confidence: high, source: "ja.WP: 京王線刺傷事件",
+     event: "A man dressed as the Joker stabs a passenger and sets fire on a Keio Line train",
+     place: "Kokuryō, Chōfu",
+     scene: "A Joker-costumed man sets a fire on a Keiō train, and passengers crawl out of windows like an ANT army."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Concerns and controversies at the 2020 Summer Olympics",
+     event: "Prosecutors arrest Tokyo Games board member Haruyuki Takahashi for bribery",
+     place: "Tokyo",
+     scene: "A NUN hands prosecutors the bribe ledger, and Haruyuki Takahashi of the Tokyo Games board is arrested."}
+  - {year: 2023, peg: gnome, confidence: medium, source: "Tokyo Weekender; Japan Times explainer",
+     event: "Tokyo approves the Jingu Gaien redevelopment that fells many trees",
+     place: "Jingū Gaien",
+     scene: "A GNOME hugs a ginkgo as Tokyo approves the Jingū Gaien redevelopment that fells the trees."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Japan Times, 9 May 2023",
+     event: "Masked robbers smash a Ginza watch shop and take Rolex watches",
+     place: "Ginza",
+     scene: "A masked GNOME smashes a Ginza watch case and runs off with the Rolexes."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: 2024 Haneda Airport runway collision",
+     event: "A JAL airliner hits a coast guard plane on a Haneda runway; five coast guard crew die",
+     place: "Haneda Airport",
+     scene: "A JAL airliner snaps a coast guard plane like a coat HANGER on Haneda's runway; five crew die."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Institute of Science Tokyo",
+     event: "Tokyo Tech and Tokyo Medical and Dental University merge into the Institute of Science Tokyo",
+     place: "Ōokayama",
+     scene: "A coat HANGER joins Tokyo Tech and the Medical and Dental University into Science Tokyo."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Harumi Flag",
+     event: "Residents move into Harumi Flag, the former Olympic Village",
+     place: "Harumi",
+     scene: "Families hang their coats on a HANGER in the old Olympic Village flats at Harumi Flag."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Japan Times; Jiji Press, 28 Oct 2024",
+     event: "Developers begin to cut down trees for the Jingu Gaien redevelopment",
+     place: "Jingū Gaien",
+     scene: "A chainsaw hangs from a HANGER as developers start felling trees in Jingū Gaien."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: 2025 World Athletics Championships",
+     event: "Tokyo hosts the World Athletics Championships in the National Stadium",
+     place: "National Stadium",
+     scene: "A sprinter's spike is a NAIL that pins the finish line at the National Stadium in the World Athletics Championships."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: 2025 Summer Deaflympics",
+     event: "Tokyo hosts the Deaflympics",
+     place: "Tokyo",
+     scene: "Deaf athletes drive a NAIL through their banner into the stadium wall for the first Deaflympics in Japan."}
+world_refs:
+  - {year: 1993, event: "Aum sprays anthrax from its building in Tokyo", cell: east_asia_religion_1945_present}
+  - {year: 1995, event: "Aum Shinrikyo releases sarin gas in the Tokyo subway", cell: east_asia_society_1945_present}
+  - {year: 1995, event: "A court orders Aum Shinrikyo dissolved", cell: east_asia_religion_1945_present}
+  - {year: 2000, event: "All residents of Miyakejima are evacuated", cell: east_asia_society_1945_present}
+  - {year: 2001, event: "The Ghibli Museum opens in Mitaka", cell: east_asia_arts_1945_present}
+  - {year: 2002, event: "Yasukuni opens the present Yushukan museum", cell: east_asia_religion_1945_present}
+  - {year: 2003, event: "The Mori Art Museum opens in Roppongi Hills", cell: east_asia_arts_1945_present}
+  - {year: 2005, event: "The idol group AKB48 forms in Akihabara", cell: east_asia_arts_1945_present}
+  - {year: 2007, event: "The National Art Center, Tokyo opens", cell: east_asia_arts_1945_present}
+  - {year: 2007, event: "The Tama Art University Library is built", cell: east_asia_arts_1945_present}
+  - {year: 2011, event: "Great Tohoku earthquake and tsunami", cell: east_asia_society_1945_present}
+  - {year: 2011, event: "An arsonist sets fire to the main gate of Yasukuni", cell: east_asia_religion_1945_present}
+  - {year: 2011, event: "Aum fugitive Makoto Hirata surrenders", cell: east_asia_religion_1945_present}
+  - {year: 2012, event: "Tokyo Skytree opens", cell: east_asia_science_1945_present}
+  - {year: 2012, event: "Police capture the last Aum fugitive, Katsuya Takahashi", cell: east_asia_religion_1945_present}
+  - {year: 2013, event: "Landslide on Izu Oshima after a typhoon", cell: east_asia_society_1945_present}
+  - {year: 2013, event: "Tokyo wins the vote to host the Summer Olympics", cell: east_asia_society_1945_present}
+  - {year: 2018, event: "Japan executes Shoko Asahara and six other Aum members", cell: east_asia_religion_1945_present}
+  - {year: 2018, event: "Tokyo Medical University lowered women's entrance scores", cell: east_asia_society_1945_present}
+  - {year: 2019, event: "Japan hosts the Rugby World Cup", cell: east_asia_society_1945_present}
+  - {year: 2019, event: "Typhoon Hagibis floods rivers, the Tama River in Setagaya among them", cell: east_asia_society_1945_present}
+  - {year: 2020, event: "Japan postpones the Tokyo Olympics for a year", cell: east_asia_society_1945_present}
+  - {year: 2021, event: "Tokyo holds the Summer Olympics without spectators", cell: east_asia_society_1945_present}
+  - {year: 2021, event: "Nikkei rises above thirty thousand for the first time since the bubble", cell: east_asia_economy_1945_present}
+out_refs:
+  - {year: 1990, event: "Aum's Shinri Party runs candidates in the general election", reason: "national election"}
+  - {year: 1990, event: "Enthronement ceremony of Emperor Akihito at the Imperial Palace", reason: "imperial ritual"}
+  - {year: 1990, event: "Emperor Akihito performs the Daijosai", reason: "imperial ritual"}
+  - {year: 1993, event: "Crown Prince Naruhito marries Masako; wedding parade", reason: "imperial wedding"}
+  - {year: 1993, event: "G7 summit meets in Tokyo", reason: "international summit"}
+  - {year: 1993, event: "The Liberal Democrats lose power; Hosokawa forms a coalition", reason: "national government"}
+  - {year: 2001, event: "The central ministries are reorganised", reason: "national government"}
+  - {year: 2002, event: "Five abductees return from North Korea through Haneda", reason: "national event"}
+  - {year: 2004, event: "National universities become independent corporations", reason: "national law"}
+  - {year: 2012, event: "Governor Ishihara starts a fund to buy the Senkaku Islands", reason: "subject outside the city"}
+  - {year: 2016, event: "Emperor Akihito's video message hints at abdication", reason: "imperial address"}
+  - {year: 2019, event: "Emperor Akihito abdicates", reason: "imperial succession"}
+  - {year: 2019, event: "Enthronement ceremony and parade of Emperor Naruhito", reason: "imperial ritual"}
+  - {year: 2019, event: "Pope Francis says Mass in the Tokyo Dome", reason: "papal visit"}
+  - {year: 2020, event: "The prime minister declares a state of emergency for Tokyo and six prefectures", reason: "national government"}
+  - {year: 2022, event: "State funeral of Shinzo Abe in the Nippon Budokan", reason: "state funeral"}
+  - {year: 2023, event: "South Korean president Yoon visits Tokyo", reason: "state visit"}
+  - {year: 2024, event: "Bank of Japan ends negative interest rates", reason: "national central bank"}

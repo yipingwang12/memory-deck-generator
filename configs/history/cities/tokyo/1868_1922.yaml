@@ -1,0 +1,1159 @@
+# City: Tokyo x 1868 to 1922 (Meiji Tokyo to the eve of the earthquake). DRAFT 2026-11-20.
+# Area: Tokyo Metropolis (23 wards, Tama, Izu and Ogasawara islands); Yokohama, Kawasaki, Kamakura OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National and imperial
+# events -> out_refs. World-grid events -> world_refs (world cell year). Dates: memory pass + web check
+# (searches within the budget of 45; no unauthorised book copies). Main sources: Japanese and English
+# Wikipedia (wikipedia.org) per-site articles; U-Tokyo lecture table "Tokyo large disasters" (fires and
+# floods); municipal, university and company pages.
+# Lunisolar dates before 1873 are converted to the Gregorian year of the day (a fire on Meiji 2/12/12
+# falls in January 1870). A work -> first public appearance. A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Ueno Park; Tokyo-fu",
+     event: "Battle of Ueno: the imperial army destroys the Shogitai on Ueno hill and burns most of Kan'ei-ji",
+     place: "Ueno hill",
+     scene: "A CHEF fires a cannon from Hongo across the pond and roasts the Shogitai camp on Ueno hill."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Edo Prefecture (Edo-fu) is set up to govern the city",
+     place: "Edo Castle",
+     scene: "A CHEF writes 'Edo-fu' on a new office sign and nails it over the old town magistrate's gate."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Imperial edict renames Edo as Tokyo, the Eastern Capital; Edo-fu becomes Tokyo-fu",
+     place: "Edo Castle",
+     scene: "A CHEF scrapes the word Edo off a giant rice cake and pipes 'Tokyo' in its place with icing."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Tokyo-fu moves its office into a seized daimyo residence",
+     place: "Uchisaiwaicho",
+     scene: "A CHEF carries the prefecture's desks into a seized daimyo mansion and sets up the Tokyo-fu office in its kitchen."}
+  - {year: 1868, peg: chef, confidence: unverified,
+     event: "Emperor Meiji makes his first entry into Tokyo; Edo Castle becomes Tokyo Castle",
+     place: "Edo Castle",
+     scene: "A CHEF in a palanquin parade lifts the young emperor through the castle gate on his first entry to Tokyo."}
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Tokyo-fu dismisses the old town headmen and divides the city into fifty wards (bangumi)",
+     place: "Nihonbashi",
+     scene: "A SHIP's anchor drops on the town map and cracks it into fifty pieces while the old headmen are sent home."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Hirosawa Saneomi",
+     event: "Assassins kill the councillor Hirosawa Saneomi in his house",
+     place: "Fujimi-cho, Kojimachi",
+     scene: "A black CAT slips into Hirosawa's Kojimachi bedroom at night and lets the assassins in."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Metropolitan Police Department",
+     event: "Tokyo-fu forms the rasotsu, a city police of three thousand men, mostly from Satsuma",
+     place: "Tokyo-fu office",
+     scene: "A CAT in a policeman's cap drills three thousand Satsuma men into the first Tokyo street patrol."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Tokyo-fu is re-formed with its modern core area after the neighbouring prefectures are abolished",
+     scene: "A CAT stretches across the map and pulls Shinagawa and Kosuge prefectures into one new Tokyo-fu."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "The whole Tama region is put under Kanagawa Prefecture",
+     place: "Hachioji",
+     scene: "A giant COIN rolls west from Tokyo and drops Hachioji and all of Tama into Kanagawa's purse."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Metropolitan Police Department",
+     event: "The Tokyo Metropolitan Police (Keishicho) is set up on Kawaji Toshiyoshi's plan",
+     place: "Kajibashi",
+     scene: "A police CAR with Kawaji Toshiyoshi at the wheel drives out of the first Keishicho gate."}
+  - {year: 1874, peg: car, confidence: medium, source: "Japanese Wiki Corpus: Kuichigai Incident",
+     event: "Kuichigai incident: swordsmen attack Iwakura Tomomi at night in Akasaka; he survives",
+     place: "Kuichigai slope, Akasaka",
+     scene: "A CAR swerves off the Kuichigai slope and Iwakura rolls into the moat as swordsmen slash at its doors."}
+  - {year: 1876, peg: cage, confidence: high, source: "JACAR glossary: Ogasawara Islands",
+     event: "Japan's rule over the Ogasawara Islands is accepted by the powers; the Home Ministry takes charge",
+     place: "Chichijima",
+     scene: "A CAGE drops over Chichijima, and the Home Ministry locks the Ogasawara Islands inside Japan."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Metropolitan Police Department",
+     event: "The Keishicho is abolished and merged into the Home Ministry during the samurai risings",
+     scene: "A CAKE shaped like the Keishicho is swallowed whole by the Home Ministry in one bite."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "The Izu Islands pass from Shizuoka Prefecture to Tokyo-fu",
+     place: "Oshima",
+     scene: "A sea CAVE opens under Oshima and drags the Izu Islands from Shizuoka across the bay into Tokyo-fu."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Tokyo City",
+     event: "The new local government law divides Tokyo-fu into fifteen wards and six districts",
+     scene: "A CAVE wall splits into fifteen tunnels for the city wards and six for the country districts."}
+  - {year: 1880, peg: vase, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "The Ogasawara Islands pass from the Home Ministry to Tokyo-fu, which opens a branch office",
+     place: "Chichijima",
+     scene: "A VASE full of Ogasawara islands is handed from the Home Minister to the Tokyo governor."}
+  - {year: 1881, peg: foot, confidence: high, source: "ja WP: Metropolitan Police Department",
+     event: "The Keishicho is set up again as the police of the capital",
+     scene: "A FOOT in a police boot kicks open the shut Keishicho door, and the capital's police force returns."}
+  - {year: 1886, peg: fish, confidence: unverified,
+     event: "Ende and Böckmann draw a plan for a government district at Hibiya",
+     place: "Hibiya",
+     scene: "A FISH swims across the Hibiya marsh and draws Ende and Böckmann's boulevards of ministries with its tail."}
+  - {year: 1888, peg: fife, confidence: high, source: "ja WP: Tokyo City",
+     event: "The Tokyo City Improvement Ordinance (Shiku Kaisei) sets up the first modern city plan",
+     scene: "A FIFE plays as surveyors widen Tokyo's streets on the first city improvement plan."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Tokyo City; Tokyo-fu",
+     event: "Tokyo City is formed from the fifteen wards; the prefectural governor also acts as mayor",
+     scene: "A gold watch FOB ties fifteen ward keys together into one ring, and the governor clips it to his belt as mayor."}
+  - {year: 1889, peg: fob, confidence: medium, source: "en WP: Tokyo City",
+     event: "The first Tokyo City Council is elected",
+     scene: "A FOB swings like a pendulum over the ballot box and counts the votes for the first city council."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Mori Arinori",
+     event: "A nationalist stabs the education minister Mori Arinori at his residence",
+     place: "Nagatacho",
+     scene: "A watch FOB snaps as the assassin's knife cuts Mori Arinori's coat outside his Nagatacho house."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Okuma Shigenobu attack",
+     event: "Kurushima Tsuneki of the Gen'yosha throws a bomb at Okuma Shigenobu's carriage",
+     place: "Foreign Ministry gate, Kasumigaseki",
+     scene: "A watch FOB is the bomb Kurushima hurls at Okuma's carriage at the Foreign Ministry gate."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Imperial Diet building",
+     event: "The first temporary Diet building is completed at Hibiya",
+     place: "Uchisaiwaicho",
+     scene: "BEES build a wooden hive-shaped hall at Hibiya in weeks, just before the first members arrive."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Imperial Diet building; U-Tokyo disaster table",
+     event: "The temporary Diet building burns down, apparently from an electrical fault",
+     place: "Uchisaiwaicho",
+     scene: "A BOOT kicks a sparking electric cable, and the wooden Diet hall at Hibiya burns to the ground."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Imperial Diet building",
+     event: "The second temporary Diet building is completed on the same site",
+     place: "Uchisaiwaicho",
+     scene: "A giant BOOT stamps the ashes flat and a second wooden Diet hall rises out of its footprint."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Iwo Jima",
+     event: "Imperial decree puts Iwo Jima and the Volcano Islands under Tokyo-fu's Ogasawara office",
+     place: "Iwo Jima",
+     scene: "A BOOT steps onto the sulphur rock and stamps 'Iwo Jima, Tokyo-fu' into the volcanic ash."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "The three Tama districts move from Kanagawa Prefecture to Tokyo-fu",
+     place: "Tachikawa",
+     scene: "A PALM tree's roots pull the three Tama districts out of Kanagawa and replant them in Tokyo-fu."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Tokyo City; en WP: Timeline of Tokyo",
+     event: "The shared Tokyo-fu and Tokyo City hall is completed in Yurakucho",
+     place: "Yurakucho",
+     scene: "A BEAR lays the last brick of the new city hall in Yurakucho and moves the governor's desk in."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Ministry of Justice old building",
+     event: "Ende and Böckmann's red-brick Ministry of Justice building is completed",
+     place: "Kasumigaseki",
+     scene: "A BELL rings from the red-brick tower as the Ministry of Justice moves into its German building."}
+  - {year: 1895, peg: bell, confidence: unverified,
+     event: "The Keishicho prison moves to a new site at Sugamo",
+     place: "Sugamo",
+     scene: "A BELL on a prison cart clangs as the convicts march north to the new Sugamo prison."}
+  - {year: 1896, peg: peach, confidence: high, source: "ja WP: Tokyo-fu (history)",
+     event: "Higashi-Tama and Minami-Toshima districts merge into Toyotama District",
+     place: "Nakano",
+     scene: "A PEACH splits in two and grows back as one fruit, Toyotama District, over Nakano and Shinjuku."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Torishima",
+     event: "Tokyo-fu puts Torishima under its Ogasawara branch office",
+     place: "Torishima",
+     scene: "A PIG swims to Torishima with a Tokyo-fu flag in its mouth and claims the albatross island."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Tokyo City; Tokyo-fu",
+     event: "The special city system ends: Tokyo City gets its own mayor and office",
+     scene: "A BEEHIVE splits in two, and the city bees fly off from the prefecture bees to a hive of their own."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Mayor of Tokyo City",
+     event: "Matsuda Hideo becomes the first mayor of Tokyo City",
+     scene: "A BEEHIVE crown is placed on Matsuda Hideo's head as Tokyo's first mayor takes his chair."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Minamitorishima",
+     event: "Tokyo-fu notice puts Minamitorishima (Marcus Island) under its Ogasawara office",
+     place: "Minamitorishima",
+     scene: "A BEEHIVE is nailed to the lone palm of Minamitorishima, marking the island as Tokyo-fu land."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ja WP: Tokyo City",
+     event: "Court convicts all defendants in the Tokyo City Council bribery case",
+     place: "Tokyo City Council",
+     scene: "A judge pours SAUCE over the bribe money of every city councillor and finds all of them guilty."}
+  - {year: 1901, peg: soda, confidence: high, source: "ja WP: Hoshi Toru",
+     event: "Iba Sotaro stabs Hoshi Toru, chairman of the city council, in the council chamber",
+     place: "Tokyo City Council chamber",
+     scene: "A SODA bottle shatters on the council table as Iba Sotaro's sword strikes Hoshi Toru in his chair."}
+  - {year: 1902, peg: sun, confidence: high, source: "ja WP: Minamitorishima",
+     event: "Minamitorishima incident: a Japanese cruiser lands before the American Rosehill can claim the island",
+     place: "Minamitorishima",
+     scene: "The rising SUN on the cruiser Kasagi beats Rosehill's ship to Minamitorishima, and Japanese sailors land first."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Mayor of Tokyo City",
+     event: "Ozaki Yukio becomes mayor of Tokyo City",
+     scene: "A SUMO wrestler lifts Ozaki Yukio onto the mayor's chair at the Yurakucho city hall."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Metropolitan Police Department",
+     event: "The Keishicho brings in mounted police",
+     scene: "A SUMO wrestler in police uniform climbs onto the first Keishicho horse and patrols Ginza."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Toden",
+     event: "A Hibiya Park rally against tram fare rises turns into a riot; crowds stone the trams",
+     place: "Hibiya Park",
+     scene: "SUSHI rolls fly from the Hibiya crowd and smash the windows of trams that raised their fares."}
+  - {year: 1908, peg: sofa, confidence: high, source: "en WP: Red Flag Incident",
+     event: "Red Flag incident: police break up a socialist meeting at the Kinkikan and arrest Osugi Sakae and others",
+     place: "Kinkikan, Kanda",
+     scene: "Police carry Osugi Sakae out of the Kinkikan on a SOFA wrapped in his own red flag."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP ja: Kotoku Shusui (24 Jan, Tokyo Prison)",
+     event: "Kotoku Shusui and ten others are hanged at Tokyo Prison in Ichigaya after the High Treason trial",
+     place: "Tokyo Prison, Ichigaya",
+     scene: "A noose TATTOO tightens round Kotoku Shusui's neck in Ichigaya's Tokyo Prison, and ten more hang after the treason trial."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Tokyo City",
+     event: "Tokyo City's gift of three thousand cherry trees is planted in Washington",
+     scene: "A TONGUE licks the stamp on a crate of Tokyo City cherry trees bound for the Potomac."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Mayor of Tokyo City",
+     event: "Sakatani Yoshiro becomes mayor of Tokyo City",
+     scene: "A long TONGUE unrolls like a red carpet up the city hall steps for the new mayor Sakatani."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Nogi Maresuke (13 Sept, Akasaka)",
+     event: "General Nogi and his wife Shizuko kill themselves at their Akasaka house as the emperor's cortege leaves",
+     place: "Nogi house, Akasaka",
+     scene: "General Nogi's blade, sharp as a steel TONGUE, ends his life and his wife Shizuko's at their Akasaka house as the cortege leaves."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Abe Moritaro",
+     event: "A nationalist stabs Abe Moritaro, head of the Foreign Ministry political bureau, at Reinanzaka",
+     place: "Reinanzaka, Akasaka",
+     scene: "A TOMB slab slides down Reinanzaka and blocks Abe Moritaro's escape from the knife at his own gate."}
+  - {year: 1914, peg: tower, confidence: unverified,
+     event: "Crowds at a Hibiya rally against the Siemens scandal storm toward the Diet and clash with police",
+     place: "Hibiya",
+     scene: "A TOWER of angry protesters climbs the Diet gate from Hibiya, shouting about navy bribes."}
+  - {year: 1915, peg: doll, confidence: high, source: "ja WP: Mayor of Tokyo City",
+     event: "Okuda Gijin becomes mayor of Tokyo City",
+     scene: "A DOLL in a frock coat is set on the mayor's desk, carved in the likeness of Okuda Gijin."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Mayor of Tokyo City",
+     event: "Tajiri Inajiro becomes mayor of Tokyo City",
+     scene: "A DOVE drops the city seal into Tajiri Inajiro's hands on the city hall steps."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Mayor of Tokyo City; Goto Shinpei",
+     event: "Goto Shinpei becomes mayor of Tokyo City",
+     scene: "Goto Shinpei's long NOSE sniffs out the city's bad roads as he takes the mayor's chair."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Tokyo City",
+     event: "Naito-shinjuku town is merged into Yotsuya Ward",
+     place: "Naito-shinjuku",
+     scene: "Yotsuya Ward's huge NOSE breathes in and sucks the town of Naito-shinjuku into its borders."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Imperial Diet building",
+     event: "Ground is broken for the permanent Diet building at Nagatacho",
+     place: "Nagatacho",
+     scene: "A NOSE-shaped shovel digs the first earth of the stone Diet building on Nagatacho hill."}
+  - {year: 1920, peg: nose, confidence: unverified,
+     event: "Tens of thousands march in Tokyo for universal male suffrage",
+     place: "Shiba Park",
+     scene: "A giant paper NOSE leads the march of tens of thousands through Shiba for votes for every man."}
+  - {year: 1921, peg: ant, confidence: unverified,
+     event: "Mayor Goto proposes his eight hundred million yen plan to rebuild Tokyo's streets and services",
+     scene: "An ANT army carries Goto's huge plan for new roads, parks and sewers into the city council."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Tokyo City",
+     event: "The Tokyo City Planning Area is designated under the City Planning Act",
+     scene: "A NUN draws a ring round Tokyo and its suburbs on the map, the first city planning area."}
+  - {year: 1922, peg: nun, confidence: unverified,
+     event: "The Tokyo Institute for Municipal Research is founded with Yasuda Zenjiro's gift",
+     place: "Hibiya",
+     scene: "A NUN files the city's statistics into the first shelves of the new municipal research institute."}
+
+  # science
+  - {year: 1870, peg: goose, confidence: high, source: "ja WP: Rickshaw",
+     event: "Tokyo-fu licenses the rickshaw; the first ones run from Nihonbashi",
+     place: "Nihonbashi",
+     scene: "A GOOSE pulls the first rickshaw off the south end of Nihonbashi bridge with a passenger aboard."}
+  - {year: 1872, peg: coin, confidence: high, source: "Shinagawa City history; Minato City",
+     event: "Trains start a provisional service between Shinagawa and Yokohama",
+     place: "Shinagawa station",
+     scene: "A COIN buys the first ticket at Shinagawa, and the train runs to Yokohama months before Shimbashi opens."}
+  - {year: 1872, peg: coin, confidence: medium, source: "ja WP: Nihonbashi (bridge)",
+     event: "Nihonbashi is rebuilt as a new wooden bridge",
+     place: "Nihonbashi",
+     scene: "A COIN is set under the new wooden Nihonbashi as carpenters peg its last plank."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Tokyo Gas",
+     event: "Gas lamps from the Shiba gas works light the streets of Ginza",
+     place: "Ginza",
+     scene: "A CAR-sized gas pipe snakes from Shiba to Ginza and lights the brick street lamps."}
+  - {year: 1875, peg: eagle, confidence: high, source: "ja WP: Juntendo University",
+     event: "Juntendo moves to Yushima and opens Juntendo Hospital",
+     place: "Yushima",
+     scene: "An EAGLE carries Juntendo's sign from Shitaya and hangs it over the new hospital at Yushima."}
+  - {year: 1875, peg: eagle, confidence: high, source: "ja WP: Ryogoku Bridge",
+     event: "Ryogoku Bridge is rebuilt as a Western-style wooden bridge",
+     place: "Ryogoku Bridge",
+     scene: "An EAGLE drops new beams across the Sumida, and a Western-style Ryogoku Bridge takes shape."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Azuma Bridge",
+     event: "A new wooden bridge across the Sumida at Asakusa is built and named Azuma Bridge",
+     place: "Asakusa",
+     scene: "A CAGE of wooden beams spans the Sumida at Asakusa, and the new bridge is christened Azuma."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "ja WP: Komagome Hospital",
+     event: "An isolation hospital for cholera opens at Komagome",
+     place: "Komagome",
+     scene: "A COWBOY ropes cholera patients off the street and herds them into the new Komagome isolation hospital."}
+  - {year: 1882, peg: oven, confidence: high, source: "ja WP: Toden",
+     event: "The Tokyo Horse Tramway opens between Shimbashi and Nihonbashi",
+     place: "Shimbashi",
+     scene: "An OVEN on rails, pulled by two horses, carries passengers from Shimbashi to Nihonbashi."}
+  - {year: 1882, peg: oven, confidence: unverified,
+     event: "Tokyo Electric Light lights an arc lamp in Ginza and crowds come to see it",
+     place: "Ginza",
+     scene: "An OVEN door opens in Ginza and a blinding arc lamp shines out at the gaping crowd."}
+  - {year: 1883, peg: foam, confidence: high, source: "ja WP: Yamanote Line",
+     event: "Nippon Railway opens its line from Ueno to Kumagaya; Ueno station opens",
+     place: "Ueno station",
+     scene: "FOAM bursts from a champagne bottle on the first train out of Ueno station toward Kumagaya."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Tokyo Sewerage Bureau; Chiyoda tourism",
+     event: "Tokyo-fu starts the Kanda sewer, the first modern sewer in Japan, of egg-shaped brick",
+     place: "Kanda",
+     scene: "A FAIRY lays egg-shaped bricks under Kanda and builds Japan's first modern sewer."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Yayoi pottery",
+     event: "A new kind of pottery is found at Yayoi-cho, Hongo, and gives the Yayoi period its name",
+     place: "Yayoi-cho, Hongo",
+     scene: "A FAIRY digs a red pot out of a Hongo shell mound, and the Yayoi period gets its name."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Yamanote Line",
+     event: "Nippon Railway opens the Shinagawa line from Shinagawa to Akabane with Shinjuku and Shibuya stations",
+     place: "Shinjuku",
+     scene: "A WAFFLE iron presses a railway through the fields of Shibuya and Shinjuku from Shinagawa to Akabane."}
+  - {year: 1886, peg: fish, confidence: high, source: "ja WP: Japanese Red Cross Medical Center",
+     event: "The Hakuaisha (Red Cross) hospital opens at Iidamachi",
+     place: "Iidamachi",
+     scene: "A FISH with a red cross on its fin carries the first patient into the Hakuaisha hospital at Iidamachi."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Azuma Bridge",
+     event: "Azuma Bridge is rebuilt as the first iron bridge on the Sumida",
+     place: "Asakusa",
+     scene: "A FOX trots over the new iron trusses of Azuma Bridge, the first iron bridge on the Sumida."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Kobu Railway",
+     event: "The Kobu Railway opens from Shinjuku to Tachikawa",
+     place: "Shinjuku station",
+     scene: "A FOB chain hooks the first Kobu train at Shinjuku and pulls it west to Tachikawa."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Kobu Railway",
+     event: "The Kobu Railway reaches Hachioji",
+     place: "Hachioji",
+     scene: "A FOB ticks the last minute as the Kobu line's first train steams into Hachioji station."}
+  - {year: 1890, peg: bees, confidence: high, source: "tabi-mag; gendai.media",
+     event: "Telephone exchange service starts in Tokyo, with about one hundred and fifty subscribers",
+     place: "Kojimachi",
+     scene: "BEES buzz down the new wires as Tokyo's first telephone exchange connects its first callers."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Japanese Red Cross Medical Center",
+     event: "The Japanese Red Cross Hospital and its nursing school move to Hiroo, Shibuya",
+     place: "Hiroo",
+     scene: "A BOOT stamped with a red cross marches the nurses and beds out to the new Hiroo hospital."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Yodobashi Purification Plant",
+     event: "Groundbreaking ceremony for the modern waterworks at Yodobashi",
+     place: "Yodobashi",
+     scene: "A PALM tree is uprooted at Yodobashi as the first spade starts Tokyo's modern waterworks."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Kobu Railway",
+     event: "The Kobu Railway extends east from Shinjuku to Ushigome",
+     place: "Ushigome",
+     scene: "A BEAR digs a cutting through Yotsuya and lays the Kobu track from Shinjuku to Ushigome."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Ome Line",
+     event: "The Ome Railway opens on narrow gauge from Tachikawa to Ome",
+     place: "Ome",
+     scene: "A BEAR from the Okutama hills rides the little narrow-gauge train from Tachikawa into Ome."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Seibu Kokubunji Line",
+     event: "The Kawagoe Railway opens from Kokubunji to Higashimurayama",
+     place: "Kokubunji",
+     scene: "A BEAR pushes the first Kawagoe Railway train north out of Kokubunji station."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Kobu Railway",
+     event: "The Kobu Railway reaches Iidamachi",
+     place: "Iidamachi",
+     scene: "A BELL clangs at the new Iidamachi terminus as the Kobu train arrives from Ushigome."}
+  - {year: 1896, peg: peach, confidence: medium, source: "ja WP: Tokyo Electric Light",
+     event: "Tokyo Electric Light completes the Asakusa power station with German AEG generators at fifty hertz",
+     place: "Asakusa",
+     scene: "A PEACH-shaped German generator hums at Asakusa and fixes eastern Japan's current at fifty cycles."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Eitai Bridge",
+     event: "Eitai Bridge is rebuilt as the first steel road bridge in Japan",
+     place: "Eitai Bridge",
+     scene: "A PIG rolls a steel girder across the Sumida, and Eitai becomes Japan's first steel road bridge."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Yodobashi Purification Plant",
+     event: "The Yodobashi purification plant starts to supply filtered water to Kanda and Nihonbashi",
+     place: "Yodobashi",
+     scene: "A BEEHIVE filter drips clean Tama River water into the new pipes to Kanda and Nihonbashi."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: Tobu Isesaki Line",
+     event: "The Tobu Railway opens from Kita-Senju to Kuki",
+     place: "Kita-Senju",
+     scene: "A PIPE-smoking driver takes the first Tobu train from Kita-Senju out over the Arakawa fields."}
+  - {year: 1901, peg: soda, confidence: high, source: "ja WP: St. Luke's International Hospital",
+     event: "Rudolf Teusler opens St. Luke's Hospital in Tsukiji",
+     place: "Tsukiji",
+     scene: "A SODA fountain sprays disinfectant as Teusler opens the door of St. Luke's in Tsukiji."}
+  - {year: 1901, peg: soda, confidence: high, source: "ja WP: Yamanote Line",
+     event: "The Shinagawa line and the planned Toshima line are named the Yamanote line",
+     scene: "A SODA bottle is broken on a locomotive and the circle line gets its name, Yamanote."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Toden",
+     event: "Tokyo Densha Tetsudo runs the first electric trams in Tokyo, Shinagawa to Shimbashi",
+     place: "Shinagawa",
+     scene: "A SUMO wrestler grabs the overhead wire and the first electric tram jolts from Shinagawa to Shimbashi."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Toden",
+     event: "Tokyo Shigai Tetsudo opens its electric line from Sukiyabashi to Kandabashi",
+     place: "Sukiyabashi",
+     scene: "A SUMO wrestler pushes a stalled street tram from Sukiyabashi to Kandabashi on its opening run."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Yamanote Line",
+     event: "The Toshima line opens from Ikebukuro to Tabata; Ikebukuro station opens",
+     place: "Ikebukuro",
+     scene: "A SUMO ring is staked out in the Ikebukuro fields, and the new station is built on it."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ja WP: Kobu Railway",
+     event: "The Kobu Railway runs electric trains between Iidamachi and Nakano, the first on a Japanese steam line",
+     place: "Iidamachi",
+     scene: "A SEWER worker plugs a cable into the Kobu line, and electric cars hum from Iidamachi to Nakano."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ja WP: Toden",
+     event: "Tokyo Denki Tetsudo opens its tramway along the outer moat to Ochanomizu",
+     place: "Ochanomizu",
+     scene: "A SEWER grate opens on the moat road and a new tram climbs out, bound for Ochanomizu."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ja WP: Ryogoku Bridge",
+     event: "Ryogoku Bridge reopens as an iron bridge",
+     place: "Ryogoku Bridge",
+     scene: "A SEWER rat cuts the ribbon on the new iron Ryogoku Bridge and scurries across first."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Yamanote Line",
+     event: "Harajuku station opens and Ebisu takes passengers",
+     place: "Harajuku",
+     scene: "A SUSHI chef opens a stall in the new Harajuku station and sells the first platform tickets."}
+  - {year: 1907, peg: ski, confidence: high, source: "ja WP: Tamagawa Electric Railway",
+     event: "The Tamagawa Electric Railway opens from Shibuya to Futako-Tamagawa",
+     place: "Dogenzaka",
+     scene: "A SKI jumper slides down Dogenzaka and lands on the first Tamaden tram bound for the Tama River."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ja WP: Yokohama Line",
+     event: "The Yokohama Railway opens from Hachioji to Higashi-Kanagawa to carry Tama silk to the port",
+     place: "Hachioji",
+     scene: "A SOFA stuffed with Hachioji silk rides the new Yokohama Railway down to the port."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Yamanote Line",
+     event: "Electric trains start on the Yamanote line; the line runs on to a new Karasumori terminus",
+     place: "Karasumori",
+     scene: "A SOAP bubble of electric sparks carries the first Yamanote electric train into Karasumori."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Yamanote Line",
+     event: "The brick viaduct line is extended from Karasumori to Yurakucho",
+     place: "Yurakucho",
+     scene: "Giant DICE stacked as brick arches carry the railway from Karasumori over the streets to Yurakucho."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Nihonbashi (bridge)",
+     event: "The stone Nihonbashi bridge, with bronze lions and kirin, opens",
+     place: "Nihonbashi",
+     scene: "A bronze kirin with a TATTOO of Tokyo's crest guards the stone Nihonbashi on its opening day."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Arakawa Diversion Channel",
+     event: "After the great flood the government decides to dig the Arakawa diversion channel",
+     place: "Arakawa",
+     scene: "An engineer's TATTOO is a map of the new channel, and he draws it on the land east of Senju."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Oji Electric Tramway",
+     event: "The Oji Electric Tramway opens its first section, Otsuka to Asukayama",
+     place: "Asukayama",
+     scene: "A cherry-blossom TATTOO on the driver's arm points the first Oji tram up to Asukayama."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "ja WP: Yodobashi Purification Plant",
+     event: "The second stage of the Yodobashi waterworks is finished",
+     place: "Yodobashi",
+     scene: "A water-drop TATTOO grows on the plant manager's arm as Yodobashi doubles its filter beds."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Manseibashi Station",
+     event: "Tatsuno Kingo's red-brick Manseibashi station opens as the Chuo line terminus",
+     place: "Manseibashi",
+     scene: "A red TONGUE of brick unrolls along the Kanda River and becomes Manseibashi station."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Keisei Electric Railway",
+     event: "Keisei opens its first line from Oshiage to the Edogawa",
+     place: "Oshiage",
+     scene: "A TONGUE of rails licks east from Oshiage to the Edogawa as the first Keisei train runs."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Keio Electric Tramway",
+     event: "The Keio Electric Tramway opens from Sasazuka to Chofu",
+     place: "Sasazuka",
+     scene: "A TOMB stone at Sasazuka is moved aside to lay the first Keio track west to Chofu."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Arakawa Diversion Channel",
+     event: "Digging of the Arakawa diversion channel begins",
+     place: "Arakawa",
+     scene: "Workers dig a channel as long as a TOMB row east of Senju to lead the Arakawa floods to the sea."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Oji Electric Tramway",
+     event: "The Oji tramway opens its line to Minowa",
+     place: "Minowa",
+     scene: "A TOMB lantern lights the first Oji tram as it rolls into Minowa."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Tobu Tojo Line",
+     event: "The Tojo Railway opens from Ikebukuro to Tanomosawa",
+     place: "Ikebukuro",
+     scene: "A signal TOWER at Ikebukuro waves the first Tojo train north toward Tanomosawa."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Keihin-Tohoku Line",
+     event: "Electric trains start between Tokyo station and Yokohama but break down and stop within a week",
+     place: "Tokyo station",
+     scene: "A TOWER of guests sits stalled in the first Keihin electric train, and the line shuts after six days."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Kitasato Institute",
+     event: "Kitasato Shibasaburo founds the Kitasato Institute at Shirokane",
+     place: "Shirokane",
+     scene: "A TOWER of test tubes rises at Shirokane as Kitasato opens his own institute."}
+  - {year: 1914, peg: tower, confidence: medium, source: "ja WP: Mikawashima Water Reclamation",
+     event: "Building of the Mikawashima sewage treatment plant begins",
+     place: "Mikawashima",
+     scene: "A TOWER crane lowers the first settling tank into the mud at Mikawashima."}
+  - {year: 1915, peg: doll, confidence: high, source: "ja WP: Keio Electric Tramway",
+     event: "The Keio line reaches Shinjuku",
+     place: "Shinjuku Oiwake",
+     scene: "A DOLL waves from the window as the Keio tram reaches Shinjuku Oiwake for the first time."}
+  - {year: 1915, peg: doll, confidence: medium, source: "ja WP: Seibu Ikebukuro Line",
+     event: "The Musashino Railway opens from Ikebukuro to Hanno",
+     place: "Ikebukuro",
+     scene: "A DOLL from Hanno rides the first Musashino train into Ikebukuro."}
+  - {year: 1916, peg: dish, confidence: high, source: "ja WP: Keio Electric Tramway",
+     event: "The Keio line reaches Fuchu",
+     place: "Fuchu",
+     scene: "A DISH of Fuchu shrine sake greets the first Keio tram at its new Fuchu terminus."}
+  - {year: 1919, peg: tuba, confidence: high, source: "ja WP: Yamanote Line",
+     event: "The Chuo line reaches Tokyo station and trains run a figure-eight route through the city",
+     place: "Tokyo station",
+     scene: "A TUBA's coiled tube is the figure-eight route the trains run from Nakano through Tokyo to Ueno."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Mikawashima Water Reclamation",
+     event: "The Mikawashima plant, the first sewage treatment plant in Japan, starts work",
+     place: "Mikawashima",
+     scene: "A NUN opens the valve at Mikawashima, and Japan's first sewage plant cleans the city's water."}
+
+  # religion
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Zojoji",
+     event: "Anti-Buddhist activists set fire to Zojoji",
+     place: "Shiba",
+     scene: "A burning CAR rolls into Zojoji's great hall at New Year, and anti-Buddhist arsonists cheer."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Tsukiji Catholic Church",
+     event: "The first Catholic church in Tokyo is founded in Tsukiji",
+     place: "Tsukiji",
+     scene: "A CAR full of French missionaries parks in Tsukiji and unloads the altar of Tokyo's first Catholic church."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Tsukiji Catholic Church",
+     event: "Bishop Osouf makes Tsukiji the seat of the northern Japan vicariate",
+     place: "Tsukiji",
+     scene: "Bishop Osouf sets his mitre on a CAKE in Tsukiji church and makes it his cathedral."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Tsukiji Catholic Church",
+     event: "The brick Tsukiji Catholic church is dedicated",
+     place: "Tsukiji",
+     scene: "A brick CAVE with a Gothic door is blessed in Tsukiji as the new Catholic church."}
+  - {year: 1880, peg: vase, confidence: high, source: "ja WP: Tokyo Daijingu",
+     event: "A hall for worship of the Ise gods (later Tokyo Daijingu) is founded at Hibiya",
+     place: "Hibiya",
+     scene: "A VASE of Ise sacred water is set down at Hibiya, and Tokyo gets its own shrine to the Ise gods."}
+  - {year: 1880, peg: vase, confidence: high, source: "ja WP: Tokyo YMCA",
+     event: "The Tokyo YMCA is founded",
+     scene: "A VASE engraved YMCA is placed on the table at the founding meeting of Tokyo's young Christians."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Tokyo YMCA",
+     event: "The Tokyo YMCA hall is completed at Kanda Mitoshiro-cho",
+     place: "Kanda",
+     scene: "A BEAR carries the YMCA sign up the steps of the new brick hall in Kanda."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Tsukiji Catholic Church",
+     event: "The Catholic bishop's seat moves from Tsukiji to Sekiguchi church",
+     place: "Sekiguchi",
+     scene: "The bishop follows his NOSE from Tsukiji up to Sekiguchi and puts his throne in the new cathedral."}
+
+  # arts
+  - {year: 1872, peg: coin, confidence: high, source: "en WP: Timeline of Tokyo",
+     event: "The Yushima Seido exposition, the first public exhibition in Japan, is held",
+     place: "Yushima Seido",
+     scene: "A golden COIN of a shachi fish draws crowds to the first public exhibition at the Yushima Confucian hall."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Imperial Library",
+     event: "The Shosekikan, the first modern public library in Tokyo, opens at Yushima Seido",
+     place: "Yushima Seido",
+     scene: "A COIN pays the reading fee at the Shosekikan, Tokyo's first public library at Yushima."}
+  - {year: 1872, peg: coin, confidence: medium, source: "ja WP: Shintomi-za",
+     event: "The Morita-za theatre moves to Shintomi-cho and becomes the Shintomi-za",
+     place: "Shintomi-cho",
+     scene: "A kabuki actor flips a COIN and moves the Morita-za from Asakusa to Shintomi-cho."}
+  - {year: 1873, peg: comb, confidence: high, source: "ja WP: Meiji-za",
+     event: "The Kishoza theatre (later the Meiji-za) opens at Hisamatsu-cho, Nihonbashi",
+     place: "Hisamatsu-cho",
+     scene: "A COMB parts the crowd at the riverbank as the Kishoza theatre opens its doors in Nihonbashi."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Shintomi-za",
+     event: "The Shintomi-za reopens as a Western-style theatre with gas lights",
+     place: "Shintomi-cho",
+     scene: "Gas lights flare inside the Shintomi-za like a CAVE of fire as the Western-style theatre reopens."}
+  - {year: 1881, peg: foot, confidence: high, source: "ja WP: National Industrial Exhibition",
+     event: "The second National Industrial Exhibition opens in Ueno, in Josiah Conder's brick hall",
+     place: "Ueno Park",
+     scene: "A giant FOOT steps out of Conder's new brick hall at Ueno to open the second national exhibition."}
+  - {year: 1882, peg: oven, confidence: high, source: "ja WP: Ueno Park",
+     event: "The national museum opens in Conder's building at Ueno, with a zoo beside it",
+     place: "Ueno Park",
+     scene: "An OVEN of bricks at Ueno opens as the national museum, and zoo animals peer out of its back door."}
+  - {year: 1887, peg: fox, confidence: medium, source: "ja WP: Asakusa Rokku",
+     event: "The Tokiwaza theatre opens in the Asakusa Rokku",
+     place: "Asakusa Rokku",
+     scene: "A FOX in a kimono sells the first tickets at the new Tokiwaza theatre in Asakusa Rokku."}
+  - {year: 1888, peg: fife, confidence: high, source: "ja WP: Meiji Palace",
+     event: "The Meiji Palace is completed on the old Nishinomaru of Edo Castle",
+     place: "Imperial Palace",
+     scene: "A FIFE sounds from the roof of the new Meiji Palace as builders finish it on the old castle ground."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: National Industrial Exhibition",
+     event: "The third National Industrial Exhibition opens in Ueno with more than a million visitors",
+     place: "Ueno Park",
+     scene: "BEES swarm in their millions to the halls of the third national exhibition at Ueno."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Sogakudo",
+     event: "The Sogakudo concert hall of the Tokyo Music School is completed",
+     place: "Ueno",
+     scene: "BEES hum in tune inside the new wooden Sogakudo, Japan's first Western concert hall."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Meiji-za",
+     event: "Ichikawa Sadanji buys the Chitoseza and renames it the Meiji-za",
+     place: "Hisamatsu-cho",
+     scene: "Ichikawa Sadanji slaps his PALM on the deed and renames the theatre the Meiji-za."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Shunkyo Kagami-jishi",
+     event: "Kagami-jishi (the lion dance) premieres at the Kabuki-za with Ichikawa Danjuro the Ninth",
+     place: "Kabuki-za",
+     scene: "Danjuro, as the lion, whips his long mane against a PALM tree on the Kabuki-za stage."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Omura Masujiro",
+     event: "Okuma Ujihiro's statue of Omura Masujiro, the first Western-style bronze statue in Japan, is unveiled",
+     place: "Yasukuni Shrine",
+     scene: "Omura's bronze statue raises its PALM over Kudan hill, the first Western bronze statue in Japan."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Mitsubishi Ichigokan",
+     event: "Josiah Conder's red-brick Mitsubishi Ichigokan, the first office block in Marunouchi, is completed",
+     place: "Marunouchi",
+     scene: "A BEAR in a bowler hat opens the first office in Conder's red-brick block on the empty Marunouchi field."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Wako",
+     event: "Hattori Kintaro's clock tower is built in Ginza",
+     place: "Ginza 4-chome",
+     scene: "A BEAR winds the giant clock on Hattori's new tower at the Ginza crossing."}
+  - {year: 1896, peg: peach, confidence: high, source: "ja WP: Former Iwasaki House",
+     event: "Josiah Conder's Western-style Iwasaki house is completed at Yushima",
+     place: "Yushima",
+     scene: "A PEACH tree grows through the veranda of Conder's wooden Iwasaki mansion at Yushima."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Saigo Takamori statue",
+     event: "Takamura Koun's statue of Saigo Takamori with his dog is unveiled in Ueno Park",
+     place: "Ueno Park",
+     scene: "Saigo's bronze dog sniffs a BEEHIVE at Ueno as Takamura Koun's statue is unveiled."}
+  - {year: 1900, peg: sauce, confidence: unverified,
+     event: "The bronze statue of Kusunoki Masashige on horseback is set up in front of the palace",
+     place: "Imperial Palace outer garden",
+     scene: "Kusunoki's bronze horse rears over a pot of SAUCE spilled on the palace plaza."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Orfeo ed Euridice",
+     event: "Tokyo Music School students stage Gluck's Orfeo at the Sogakudo, the first opera performed by Japanese",
+     place: "Sogakudo, Ueno",
+     scene: "A SUMO wrestler sings Orfeo at the Sogakudo, and students stage the first opera by Japanese."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Denkikan",
+     event: "The Denkikan in Asakusa opens as Japan's first permanent cinema",
+     place: "Asakusa Rokku",
+     scene: "A SUMO bout flickers on the screen of the Denkikan, the first cinema in Japan."}
+  - {year: 1905, peg: seal, confidence: high, source: "ja WP: Hibiya Park",
+     event: "The bandstand in Hibiya Park is completed and band concerts start",
+     place: "Hibiya Park",
+     scene: "A SEAL plays the trumpet in the new Hibiya bandstand at the first open-air concert."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Imperial Library",
+     event: "The Imperial Library building at Ueno opens",
+     place: "Ueno Park",
+     scene: "A SUSHI chef stacks books instead of fish on the shelves of the new Imperial Library at Ueno."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Shinjuku Gyoen",
+     event: "Shinjuku Gyoen opens as an imperial garden",
+     place: "Shinjuku",
+     scene: "A SUSHI chef lays out the lawns and plane trees of Shinjuku Gyoen like a giant plate."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Hibiya Park",
+     event: "Tokyo City founds its public library in Hibiya Park",
+     place: "Hibiya Park",
+     scene: "A SUSHI conveyor belt delivers the first books to the Tokyo City library in Hibiya Park."}
+  - {year: 1907, peg: ski, confidence: high, source: "ja WP: Ueno Park",
+     event: "The Tokyo Industrial Exhibition is held in Ueno Park",
+     place: "Ueno Park",
+     scene: "A SKI lift carries visitors over the pavilions of the Tokyo Industrial Exhibition at Ueno."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "ja WP: Yurakuza",
+     event: "The Yurakuza, a Western-style theatre with chairs, opens near Sukiyabashi",
+     place: "Sukiyabashi",
+     scene: "A red SOFA replaces the tatami boxes, and the audience sits on chairs in the new Yurakuza."}
+  - {year: 1909, peg: soap, confidence: unverified,
+     event: "Katayama Tokuma's Hyokeikan, a museum for the crown prince's wedding, opens at Ueno",
+     place: "Ueno Park",
+     scene: "A SOAP bubble lifts the green dome onto Katayama's Hyokeikan museum at Ueno."}
+  - {year: 1910, peg: dice, confidence: medium, source: "en WP: Timeline of Tokyo",
+     event: "Luna Park amusement park opens in Asakusa",
+     place: "Asakusa Rokku",
+     scene: "Giant DICE roll down the slide of Luna Park, the new fun fair in Asakusa."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Bungei Kyokai",
+     event: "The Bungei Kyokai gives the first complete Hamlet in Japan at the Imperial Theatre",
+     place: "Imperial Theatre",
+     scene: "Hamlet holds up a skull with a TATTOO on it on the Imperial Theatre stage, in Japan's first full Hamlet."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Bungei Kyokai",
+     event: "Matsui Sumako plays Nora in A Doll's House for the Bungei Kyokai",
+     place: "Imperial Theatre",
+     scene: "Nora rolls up her sleeve to show a TATTOO saying 'free' and slams the door on her husband."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Shuzenji Monogatari",
+     event: "Okamoto Kido's Shuzenji Monogatari premieres at the Meiji-za with Ichikawa Sadanji the Second",
+     place: "Meiji-za",
+     scene: "The mask carver of Shuzenji carves a death-mask TATTOO into his mask at the Meiji-za premiere."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Ueno Park",
+     event: "The Tokyo Taisho Exposition is held in Ueno Park",
+     place: "Ueno Park",
+     scene: "A TOWER with a moving staircase carries visitors up at the Taisho Exposition in Ueno."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Nika Association",
+     event: "The Nika Association holds its first exhibition at Takenodai hall in Ueno",
+     place: "Takenodai, Ueno",
+     scene: "A TOWER of rejected modern canvases becomes the first Nika exhibition at Ueno."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Asakusa Opera",
+     event: "Asakusa Opera begins with Onna Gunshutsu at the Tokiwaza",
+     place: "Tokiwaza, Asakusa",
+     scene: "A DOG in a soldier's helmet sings the first number of Asakusa Opera at the Tokiwaza."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Former Furukawa Gardens",
+     event: "Josiah Conder's stone Furukawa house and garden are completed at Nishigahara",
+     place: "Nishigahara",
+     scene: "A DOG digs in the rose terraces below Conder's stone Furukawa house at Nishigahara."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Peace Memorial Tokyo Exposition",
+     event: "The Peace Memorial Tokyo Exposition opens in Ueno with Horiguchi Sutemi's Peace Tower and model homes",
+     place: "Ueno Park",
+     scene: "A NUN rings the bell on Horiguchi's Peace Tower and opens the model homes of the Culture Village at Ueno."}
+
+  # economy
+  - {year: 1868, peg: chef, confidence: medium, source: "kotobank; samurai-archives: Tsukiji Hotel",
+     event: "Shimizu Kisuke's Tsukiji Hotel, the first Western-style hotel in Japan, is built",
+     place: "Tsukiji",
+     scene: "A CHEF in a white hat serves the first dinner in Shimizu Kisuke's Tsukiji Hotel."}
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Kimuraya",
+     event: "Kimura Yasubei opens the bakery that becomes Kimuraya in Shiba",
+     place: "Shiba",
+     scene: "A SHIP's biscuit is the first bread Kimura Yasubei bakes in his little Shiba shop."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Shiseido",
+     event: "Fukuhara Arinobu opens the Shiseido pharmacy, Japan's first Western-style pharmacy, in Ginza",
+     place: "Ginza",
+     scene: "A COIN buys the first bottle of medicine at Fukuhara's Shiseido pharmacy in Ginza."}
+  - {year: 1872, peg: coin, confidence: high, source: "en WP: Timeline of Tokyo",
+     event: "The Tokyo Nichi Nichi Shimbun, Tokyo's first daily newspaper, starts",
+     scene: "A COIN buys the first copy of the Tokyo Nichi Nichi from a newsboy on Nihonbashi."}
+  - {year: 1873, peg: comb, confidence: high, source: "ja WP: Oji Paper (first)",
+     event: "Shibusawa Eiichi founds the Shoshi Kaisha paper company (later Oji Paper)",
+     scene: "A COMB rakes pulp into the first sheet of paper of Shibusawa's new paper company."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Kimuraya",
+     event: "Kimuraya bakery in Ginza makes the first anpan, bread filled with bean paste",
+     place: "Ginza",
+     scene: "A CAR-sized bun splits open in Kimuraya's Ginza window, full of sweet bean paste: the first anpan."}
+  - {year: 1875, peg: eagle, confidence: high, source: "ja WP: Oji Paper (first)",
+     event: "The Oji paper mill opens",
+     place: "Oji",
+     scene: "An EAGLE flies over Oji with the first roll of machine-made paper from the new mill."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: IHI",
+     event: "Hirano Tomiji takes over the Ishikawajima yard, the first private shipyard in Japan",
+     place: "Ishikawajima",
+     scene: "Hirano Tomiji unlocks the CAGE gate of Ishikawajima yard and makes it Japan's first private shipyard."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Ueno Park",
+     event: "The Seiyoken Western restaurant opens in Ueno Park",
+     place: "Ueno Park",
+     scene: "A CAGE of live lobsters is carried into the new Seiyoken restaurant in Ueno Park."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Tokyo Chamber of Commerce",
+     event: "The Tokyo Chamber of Commerce is founded with Shibusawa Eiichi as president",
+     scene: "Shibusawa calls the merchants into a CAVE of ledgers and founds the Tokyo Chamber of Commerce."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Tokyo Gas",
+     event: "Tokyo-fu sells its gas works to Shibusawa and Okura, who found the Tokyo Gas Company",
+     place: "Shiba",
+     scene: "A WAFFLE iron heated on city gas is the price Shibusawa and Okura pay for the prefecture's gas works."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Kao",
+     event: "Nagase Tomiro opens the Nagase shop (later Kao) at Bakurocho",
+     place: "Bakurocho",
+     scene: "A FOX opens a soap and toiletries shop at Bakurocho: the Nagase store that becomes Kao."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Yebisu beer",
+     event: "The Japan Beer Brewery company (Yebisu) is founded",
+     place: "Mita village, Meguro",
+     scene: "A FOX taps a keg in the Meguro fields at the founding of the Japan Beer Brewery."}
+  - {year: 1888, peg: fife, confidence: high, source: "en WP: Timeline of Tokyo",
+     event: "The Tokyo Asahi Shimbun starts publication",
+     scene: "A FIFE pipes the first edition of the Tokyo Asahi out of the press."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: IHI",
+     event: "The Ishikawajima yard becomes the Ishikawajima Shipyard company",
+     place: "Ishikawajima",
+     scene: "A FOB of company keys is handed over as Ishikawajima yard becomes a limited company."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Yebisu beer",
+     event: "Yebisu beer goes on sale",
+     place: "Mita village, Meguro",
+     scene: "BEES swarm a barrel of the first Yebisu beer rolled out of the Meguro brewery."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Imperial Hotel",
+     event: "The Imperial Hotel opens beside the Rokumeikan",
+     place: "Uchisaiwaicho",
+     scene: "BEES carry the guests' bags into the brand-new Imperial Hotel next to the Rokumeikan."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Lion Corporation",
+     event: "Kobayashi Tomijiro opens the soap shop that becomes Lion in Kanda",
+     place: "Kanda",
+     scene: "A BOOT is scrubbed clean with the first soap sold at Kobayashi's shop in Kanda, later Lion."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Tokyo Gas",
+     event: "Tokyo Gas completes its own gas works at Senju",
+     place: "Senju",
+     scene: "A PALM tree of flame burns on top of the new Tokyo Gas works at Senju."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: NEC",
+     event: "Iwadare Kunihiko and Western Electric found the Nippon Electric Company (NEC)",
+     place: "Mita",
+     scene: "A telephone PIPE runs from Western Electric's office into Iwadare's new NEC workshop at Mita."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: Morinaga",
+     event: "Morinaga Taichiro opens a Western confectionery workshop (later Morinaga)",
+     place: "Akasaka",
+     scene: "A PIPE of hot caramel pours into Morinaga Taichiro's first sweets workshop in Akasaka."}
+  - {year: 1902, peg: sun, confidence: high, source: "ja WP: Shiseido",
+     event: "Shiseido opens a soda fountain in its Ginza pharmacy, the first to sell ice cream and soda in Japan",
+     place: "Ginza",
+     scene: "The SUN melts an ice cream cone at the new Shiseido soda fountain in Ginza."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Toden",
+     event: "The three tram companies merge as the Tokyo Railway Company",
+     scene: "Three SUSHI rolls squeeze into one long roll: the three tram firms merge into Tokyo Railway."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Toden",
+     event: "Tokyo City buys the Tokyo Railway Company and sets up its Electric Bureau to run the trams",
+     scene: "A city crest TATTOO is stamped on every tram as Tokyo City buys the tramways."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Toden",
+     event: "Tokyo City tram workers strike on New Year's Eve, the first transit strike in Japan",
+     scene: "Tram men show a strike TATTOO and leave their cars in the snow on New Year's Eve."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Cafe Printemps",
+     event: "Matsuyama Shozo opens the Cafe Printemps in Ginza, the first cafe in Japan",
+     place: "Ginza",
+     scene: "A painter with a TATTOO pours the first coffee at the Cafe Printemps in Ginza."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Taxi",
+     event: "The Taxi Jidosha company, the first taxi firm in Japan, starts service from Yurakucho",
+     place: "Yurakucho",
+     scene: "A meter sticks out its TONGUE in Yurakucho as Japan's first taxi takes a fare."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Mitsukoshi Nihonbashi",
+     event: "Mitsukoshi opens its Renaissance-style store in Nihonbashi with Japan's first escalator",
+     place: "Nihonbashi",
+     scene: "Shoppers ride the first escalator in Japan up Mitsukoshi's new TOWER past the bronze lions."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Tokyo Kaijo Building",
+     event: "The Tokyo Kaijo Building, the first building in Japan called a 'building', is completed",
+     place: "Marunouchi",
+     scene: "A DOVE lands on the roof of the seven-floor Tokyo Kaijo Building, tallest in Marunouchi."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Tokyo Underground Railway",
+     event: "Hayakawa Noritsugu's Tokyo Underground Railway company is founded",
+     scene: "Hayakawa sticks his NOSE into a hole under Ginza and founds the Tokyo Underground Railway."}
+
+  # society
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Keio Gijuku",
+     event: "Fukuzawa Yukichi names his school Keio Gijuku at Shiba Shinsenza",
+     place: "Shiba Shinsenza",
+     scene: "A CHEF bakes 'Keio Gijuku' into the bread for Fukuzawa's students at Shiba Shinsenza."}
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Tsukiji Foreign Settlement",
+     event: "The Tsukiji foreign settlement opens",
+     place: "Tsukiji",
+     scene: "A foreign SHIP docks at Tsukiji and its merchants move into the new foreign settlement."}
+  - {year: 1870, peg: goose, confidence: medium, source: "U-Tokyo disaster table; en WP: History of Tokyo",
+     event: "Fire burns Kanda Aioi-cho; the Akiba fire shrine set up on the site gives Akihabara its name",
+     place: "Akihabara",
+     scene: "A GOOSE flaps out a Kanda fire, and the cleared ground becomes Akiba's field, Akihabara."}
+  - {year: 1870, peg: goose, confidence: medium, source: "U-Tokyo disaster table",
+     event: "Fire burns thousands of houses at Motosukiya-cho, Kyobashi",
+     place: "Kyobashi",
+     scene: "A burning GOOSE flies over Kyobashi and sets thousands of roofs alight."}
+  - {year: 1870, peg: goose, confidence: medium, source: "Rikkyo archive chronology",
+     event: "The mission girls' school that becomes Joshi Gakuin opens",
+     place: "Tsukiji",
+     scene: "A GOOSE leads the first girls into the mission schoolroom that becomes Joshi Gakuin."}
+  - {year: 1871, peg: cat, confidence: medium, source: "U-Tokyo disaster table",
+     event: "Fire burns more than a thousand houses at Naniwa-cho, Nihonbashi",
+     place: "Nihonbashi",
+     scene: "A CAT knocks over a charcoal brazier in Naniwa-cho and the fire sweeps Nihonbashi."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Keio Gijuku",
+     event: "Keio Gijuku moves to the former Shimabara daimyo residence at Mita",
+     place: "Mita",
+     scene: "A CAT leads Fukuzawa's students up the hill to their new home at Mita."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Large fires; U-Tokyo disaster table",
+     event: "The Ginza fire burns thousands of houses from Wadakura gate to Tsukiji",
+     place: "Ginza",
+     scene: "A red-hot COIN rolls from Wadakura gate down to Tsukiji and burns Ginza flat."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Aoyama Cemetery",
+     event: "Aoyama Cemetery opens on a former daimyo estate",
+     place: "Aoyama",
+     scene: "A COIN is laid on the first grave at Aoyama, Tokyo's first new public cemetery."}
+  - {year: 1873, peg: comb, confidence: high, source: "U-Tokyo disaster table; ja WP: Meiji Palace",
+     event: "Fire destroys the Nishinomaru palace of Edo Castle, the emperor's home",
+     place: "Nishinomaru",
+     scene: "A burning COMB falls in the palace's women's quarters, and the whole Nishinomaru palace burns."}
+  - {year: 1873, peg: comb, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns thousands of houses from Higashi-Fukuda-cho, Kanda",
+     place: "Kanda",
+     scene: "A COMB of flame rakes through Kanda and burns thousands of houses."}
+  - {year: 1873, peg: comb, confidence: high, source: "ja WP: Ueno Park; Asakusa Rokku",
+     event: "A state proclamation makes Ueno, Asakusa, Shiba, Fukagawa and Asukayama Tokyo's first public parks",
+     place: "Ueno",
+     scene: "A COMB parts the temple grounds of Ueno, Asakusa and Shiba into Tokyo's first public parks."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Aoyama Cemetery",
+     event: "Aoyama becomes a public cemetery for all citizens",
+     place: "Aoyama",
+     scene: "A hearse CAR drives through Aoyama's open gate, now a cemetery for every citizen."}
+  - {year: 1874, peg: car, confidence: high, source: "Rikkyo University Library",
+     event: "Bishop Channing Williams opens a school in Tsukiji, the start of Rikkyo",
+     place: "Tsukiji",
+     scene: "A CAR full of English primers parks at Bishop Williams's house in Tsukiji: the first Rikkyo school."}
+  - {year: 1874, peg: car, confidence: high, source: "Aoyama Gakuin history",
+     event: "A Methodist girls' school opens at Azabu, the start of Aoyama Gakuin",
+     place: "Azabu",
+     scene: "A CAR drops the first pupils at a Methodist girls' school in Azabu, the seed of Aoyama Gakuin."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Hitotsubashi University history",
+     event: "Mori Arinori opens the Shoho Koshujo business school in Ginza, the start of Hitotsubashi",
+     place: "Ginza Owari-cho",
+     scene: "An EAGLE teaches bookkeeping in Mori Arinori's business school in Ginza."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Ueno Park",
+     event: "Ueno Park opens with a ceremony",
+     place: "Ueno Park",
+     scene: "A CAGE of doves is opened at Ueno, and the crowd walks into the newly finished park."}
+  - {year: 1876, peg: cage, confidence: high, source: "U-Tokyo disaster table; ja WP: Shintomi-za",
+     event: "Fire from Sukiya-cho burns thousands of houses in Nihonbashi and Kyobashi",
+     place: "Nihonbashi",
+     scene: "A bird CAGE of burning bamboo falls in Sukiya-cho and the fire spreads to the Shintomi-za."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Technical Fine Arts School",
+     event: "The Technical Fine Arts School opens with the Italians Fontanesi and Ragusa as teachers",
+     place: "Toranomon",
+     scene: "A bird CAGE is the first still life Fontanesi sets up for his students at the Technical Fine Arts School."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Gakushuin",
+     event: "Gakushuin opens as the school for the peerage at Kanda Nishiki-cho",
+     place: "Kanda Nishiki-cho",
+     scene: "A CAKE with a noble crest is cut at the opening of Gakushuin in Kanda."}
+  - {year: 1878, peg: cave, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns thousands of houses from Kuromon-cho, Kanda",
+     place: "Kanda",
+     scene: "A CAVE of smoke swallows Kanda Kuromon-cho as thousands of houses burn."}
+  - {year: 1878, peg: cave, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Tama, Arakawa and Ayase rivers flood the low city",
+     place: "Shitamachi",
+     scene: "A CAVE river bursts out under the low city, and the Arakawa floods every street."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire from Hakuya-cho burns more than ten thousand houses in Nihonbashi",
+     place: "Nihonbashi",
+     scene: "A COWBOY's campfire in Hakuya-cho runs wild and burns ten thousand Nihonbashi houses."}
+  - {year: 1880, peg: vase, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns thousands of houses from Kaji-cho, Kanda",
+     place: "Kanda",
+     scene: "A VASE of oil tips over in a Kanda smithy and the fire sweeps Kaji-cho."}
+  - {year: 1880, peg: vase, confidence: high, source: "Senshu University repository",
+     event: "Tokyo Hogakusha (later Hosei University) holds its opening ceremony",
+     scene: "A VASE of law books is set on the table at the opening of Tokyo Hogakusha, later Hosei."}
+  - {year: 1880, peg: vase, confidence: high, source: "Senshu University repository",
+     event: "Senshu Gakko (later Senshu University) opens",
+     scene: "A VASE breaks for luck at the opening of Senshu Gakko, the economics and law school."}
+  - {year: 1881, peg: foot, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Kanda fire from Matsueda-cho burns more than ten thousand houses",
+     place: "Kanda",
+     scene: "A FOOT kicks over a lamp in Matsueda-cho and the wind spreads fire over ten thousand Kanda houses."}
+  - {year: 1881, peg: foot, confidence: high, source: "U-Tokyo disaster table",
+     event: "A second Kanda fire, from Yanagi-cho, burns thousands of houses",
+     place: "Kanda",
+     scene: "A burning FOOT stamps through Yanagi-cho only weeks after the last Kanda fire."}
+  - {year: 1881, peg: foot, confidence: high, source: "Tokyo Urban Development Bureau (via search)",
+     event: "The Tokyo Fire Prevention Ordinance orders tile roofs and fireproof walls on main streets",
+     scene: "A FOOT stamps tiles onto every roof on the main roads as the fire prevention order comes in."}
+  - {year: 1881, peg: foot, confidence: high, source: "Meiji University publications",
+     event: "Meiji Law School (later Meiji University) opens at Sukiyabashi",
+     place: "Sukiyabashi",
+     scene: "A FOOT in a French judge's shoe steps into the new Meiji Law School at Sukiyabashi."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Asakusa Rokku",
+     event: "Asakusa Park is divided into numbered districts; the Sixth (Rokku) becomes the entertainment quarter",
+     place: "Asakusa Rokku",
+     scene: "A FAIRY waves her wand and cuts Asakusa Park into six numbered districts, the sixth for shows."}
+  - {year: 1884, peg: fairy, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Arakawa and Sumida flood the low city",
+     place: "Sumida",
+     scene: "A FAIRY in a rowboat rescues families from their roofs as the Sumida floods."}
+  - {year: 1885, peg: waffle, confidence: high, source: "U-Tokyo disaster table; ja WP: Azuma Bridge",
+     event: "A July flood sweeps away Azuma Bridge and the Senju Bridge girders",
+     place: "Asakusa",
+     scene: "A WAFFLE-shaped girder from Senju Bridge floats down the flood and knocks Azuma Bridge away."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "Chuo University chronology",
+     event: "The English Law School (later Chuo University) is founded in Kanda",
+     place: "Kanda",
+     scene: "A WAFFLE stamped with English law is served at the founding of the English Law School in Kanda."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Gakushuin",
+     event: "The Peeresses' School opens at Yotsuya",
+     place: "Yotsuya",
+     scene: "Noble girls eat WAFFLE cakes at the opening of the Peeresses' School in Yotsuya."}
+  - {year: 1887, peg: fox, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns more than a thousand houses at Kakigara-cho, Nihonbashi",
+     place: "Kakigara-cho",
+     scene: "A FOX with a torch tail runs through the rice exchange streets of Kakigara-cho."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Torishima",
+     event: "Tamaoki Han'emon lands on Torishima and starts albatross hunting",
+     place: "Torishima",
+     scene: "A FOX leaps ashore with Tamaoki Han'emon on Torishima and chases the albatross colonies."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Iwo Jima",
+     event: "Tanaka Eijiro leads the first Japanese settlers to Iwo Jima for sulphur and sharks",
+     place: "Iwo Jima",
+     scene: "A FOB compass leads Tanaka Eijiro's schooner from Chichijima to settle sulphur-rich Iwo Jima."}
+  - {year: 1889, peg: fob, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Tama and Arakawa rivers flood the city",
+     scene: "A FOB watch floats down the flooded street as the Tama and Arakawa overflow."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Tokyo School of Fine Arts",
+     event: "The Tokyo School of Fine Arts opens its classes at Ueno",
+     place: "Ueno",
+     scene: "A gilded FOB is the first piece of metalwork made at the new Tokyo School of Fine Arts."}
+  - {year: 1889, peg: fob, confidence: high, source: "Senshu University repository",
+     event: "Nihon Law School (later Nihon University) is founded",
+     scene: "A FOB stamped with the national law code hangs at the founding of Nihon Law School."}
+  - {year: 1890, peg: bees, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns more than a thousand houses at Sanken-cho, Asakusa",
+     place: "Asakusa",
+     scene: "BEES flee their burning hives as fire races through Sanken-cho in Asakusa."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Keio Gijuku",
+     event: "Keio Gijuku opens its university department",
+     place: "Mita",
+     scene: "BEES of learning fly into the new university department at Keio, Mita."}
+  - {year: 1892, peg: piano, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire from Sarugaku-cho burns thousands of houses in Kanda",
+     place: "Kanda",
+     scene: "A burning PIANO crashes down the Sarugaku-cho slope and sets thousands of Kanda houses alight."}
+  - {year: 1892, peg: piano, confidence: high, source: "ja WP: Tsukishima",
+     event: "Tsukishima No. 1, reclaimed from dredged Tokyo Bay mud, is completed",
+     place: "Tsukishima",
+     scene: "A PIANO stands on new mud in Tokyo Bay, the first ground of reclaimed Tsukishima."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Meiji Tokyo earthquake",
+     event: "The Meiji Tokyo earthquake, magnitude seven, kills about thirty people",
+     scene: "A BEAR shakes the brick chimneys of Tokyo off the roofs in the magnitude-seven earthquake."}
+  - {year: 1896, peg: peach, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Tama, Arakawa and Naka rivers flood thousands of houses",
+     scene: "A giant PEACH floats down the flooded Arakawa past thousands of drowned houses."}
+  - {year: 1896, peg: peach, confidence: high, source: "ja WP: Minamitorishima",
+     event: "Mizutani Shinroku reaches Minamitorishima and starts albatross hunting",
+     place: "Minamitorishima",
+     scene: "Mizutani Shinroku plants a PEACH stone on Minamitorishima and claims the lonely island."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Ryogoku Bridge",
+     event: "The railing of Ryogoku Bridge breaks under the fireworks crowd and people fall into the Sumida",
+     place: "Ryogoku Bridge",
+     scene: "A fat PIG leans on Ryogoku Bridge's railing at the fireworks and it snaps into the Sumida."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Large fires",
+     event: "The Hachioji fire burns thousands of buildings",
+     place: "Hachioji",
+     scene: "A PIG roasting on a spit sets Hachioji's silk town on fire."}
+  - {year: 1898, peg: beehive, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns more than a thousand houses at Haruki-cho, Hongo",
+     place: "Hongo",
+     scene: "A BEEHIVE smoker drops in Haruki-cho and fire spreads through Hongo."}
+  - {year: 1902, peg: sun, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Arakawa and Sumida flood more than ten thousand houses",
+     place: "Sumida",
+     scene: "The SUN cannot dry the ten thousand flooded homes along the Sumida."}
+  - {year: 1902, peg: sun, confidence: high, source: "ja WP: Torishima",
+     event: "Torishima erupts and kills all one hundred and twenty-five people on the island",
+     place: "Torishima",
+     scene: "The SUN goes dark over Torishima as the volcano buries every one of its villagers."}
+  - {year: 1907, peg: ski, confidence: high, source: "U-Tokyo disaster table",
+     event: "Floods of the Arakawa and Tama flood tens of thousands of houses",
+     scene: "A SKI boat rushes through the flooded streets as the Arakawa and Tama overflow."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ja WP: Gakushuin",
+     event: "Gakushuin moves to Mejiro",
+     place: "Mejiro",
+     scene: "A SOFA from the peers' school is carried up to the new Gakushuin campus at Mejiro."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Haneda Ground",
+     event: "The Haneda sports ground opens on reclaimed land",
+     place: "Haneda",
+     scene: "A SOAP-smooth running track is laid on the reclaimed Haneda shore for the new sports ground."}
+  - {year: 1910, peg: dice, confidence: high, source: "U-Tokyo disaster table; ja WP: 1910 flood",
+     event: "The great flood: the Tone, Arakawa and Tama flood nearly two hundred thousand Tokyo houses",
+     place: "Shitamachi",
+     scene: "Giant DICE float through the drowned low city, where water stands for weeks."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Yoshiwara fire burns thousands of houses in the pleasure quarter",
+     place: "Yoshiwara",
+     scene: "A courtesan's dragon TATTOO comes alive and breathes fire over the whole Yoshiwara."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Haneda Ground",
+     event: "Olympic trials at Haneda pick Kanakuri Shiso for the marathon",
+     place: "Haneda",
+     scene: "Kanakuri wins the Haneda marathon trial with an Olympic-ring TATTOO on his calf."}
+  - {year: 1912, peg: tongue, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire burns more than a thousand houses at the Susaki pleasure quarter, Fukagawa",
+     place: "Susaki",
+     scene: "A TONGUE of flame licks along the Susaki quarter by the bay."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Izu Oshima",
+     event: "Mount Mihara on Izu Oshima starts an eruption that lasts two years",
+     place: "Izu Oshima",
+     scene: "Mount Mihara sticks out a TONGUE of lava toward the Oshima villages."}
+  - {year: 1913, peg: tomb, confidence: high, source: "U-Tokyo disaster table",
+     event: "Fire from Misaki-cho burns thousands of houses in Kanda",
+     place: "Kanda",
+     scene: "A TOMB lantern falls in Misaki-cho and fire burns thousands of Kanda houses."}
+  - {year: 1914, peg: tower, confidence: high, source: "U-Tokyo disaster table",
+     event: "The Arakawa floods tens of thousands of houses",
+     scene: "A TOWER of flood water rolls down the Arakawa into tens of thousands of homes."}
+  - {year: 1917, peg: dog, confidence: high, source: "U-Tokyo disaster table",
+     event: "A typhoon storm surge floods the bay shore and kills about five hundred people",
+     place: "Fukagawa",
+     scene: "A DOG swims from a roof in Fukagawa as the storm surge drowns hundreds by the bay."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Denenchofu",
+     event: "Shibusawa Eiichi and partners found the Den-en Toshi company to build a garden suburb",
+     place: "Denenchofu",
+     scene: "A DOVE flies over the Tama fields with Shibusawa's plan for a garden city."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Keio Gijuku",
+     event: "Keio becomes a university and opens its hospital at Shinanomachi",
+     place: "Shinanomachi",
+     scene: "A doctor checks the NOSE of the first patient at the new Keio University hospital."}
+  - {year: 1921, peg: ant, confidence: high, source: "U-Tokyo disaster table; ja WP: Large fires",
+     event: "Fire burns more than a thousand houses at Tamachi, Asakusa",
+     place: "Asakusa",
+     scene: "An ANT colony flees as fire runs through more than a thousand Asakusa houses."}
+  - {year: 1921, peg: ant, confidence: high, source: "ja WP: Emperor's Cup",
+     event: "The first national football cup final is played at Hibiya Park; Tokyo Shukyudan wins",
+     place: "Hibiya Park",
+     scene: "An ANT heads the winning goal for Tokyo Shukyudan at the first cup final in Hibiya Park."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Mejiro Bunkamura",
+     event: "Tsutsumi Yasujiro's company starts to sell lots at Mejiro Bunkamura, a suburb of Western-style homes",
+     place: "Mejiro",
+     scene: "A NUN buys the first lot in Tsutsumi's Mejiro Culture Village of Western-style homes."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Imperial Hotel",
+     event: "The first Imperial Hotel building burns down beside Wright's new hotel",
+     place: "Uchisaiwaicho",
+     scene: "A NUN runs from the blazing old Imperial Hotel as Wright's half-built hotel stands beside it."}
+
+world_refs:
+  - {year: 1868, event: "Edo Castle surrenders without a fight", cell: east_asia_politics_1800_1945}
+  - {year: 1869, event: "Emperor moves to Tokyo, which becomes the capital", cell: east_asia_politics_1800_1945}
+  - {year: 1869, event: "Tokyo-Yokohama telegraph opens", cell: east_asia_economy_1800_1945}
+  - {year: 1869, event: "Tokyo Shokonsha (Yasukuni) is founded", cell: east_asia_religion_1800_1945}
+  - {year: 1870, event: "Nikolai moves the Orthodox mission to Tokyo", cell: east_asia_religion_1800_1945}
+  - {year: 1872, event: "Ginza Bricktown is planned after the fire", cell: east_asia_arts_1800_1945}
+  - {year: 1872, event: "First railway Shimbashi-Yokohama", cell: east_asia_economy_1800_1945}
+  - {year: 1872, event: "Horace Wilson teaches baseball in Tokyo", cell: east_asia_society_1800_1945}
+  - {year: 1873, event: "First National Bank opens in Tokyo", cell: east_asia_economy_1800_1945}
+  - {year: 1873, event: "Imperial College of Engineering opens", cell: east_asia_science_1800_1945}
+  - {year: 1875, event: "Tokyo Meteorological Observatory", cell: east_asia_science_1800_1945}
+  - {year: 1875, event: "Tanaka's Ginza workshop (Toshiba)", cell: east_asia_science_1800_1945}
+  - {year: 1875, event: "Tokyo Women's Normal School opens", cell: east_asia_society_1800_1945}
+  - {year: 1877, event: "First National Industrial Exhibition at Ueno", cell: east_asia_economy_1800_1945}
+  - {year: 1877, event: "Morse excavates the Omori shell mound", cell: east_asia_science_1800_1945}
+  - {year: 1877, event: "Tokyo Sugaku Kaisha is founded", cell: east_asia_science_1800_1945}
+  - {year: 1877, event: "University of Tokyo is founded", cell: east_asia_society_1800_1945}
+  - {year: 1878, event: "Tokyo Stock Exchange is founded", cell: east_asia_economy_1800_1945}
+  - {year: 1878, event: "Takebashi incident", cell: east_asia_politics_1800_1945}
+  - {year: 1878, event: "Assassination of Okubo Toshimichi", cell: east_asia_politics_1800_1945}
+  - {year: 1878, event: "Ayrton's arc lamp in Tokyo", cell: east_asia_science_1800_1945}
+  - {year: 1878, event: "Shimbashi Athletic Club baseball team", cell: east_asia_society_1800_1945}
+  - {year: 1879, event: "Tokyo Shokonsha renamed Yasukuni Shrine", cell: east_asia_religion_1800_1945}
+  - {year: 1879, event: "Cholera epidemic", cell: east_asia_society_1800_1945}
+  - {year: 1880, event: "Seismological Society of Japan", cell: east_asia_science_1800_1945}
+  - {year: 1880, event: "Yasuda bank opens", cell: east_asia_economy_1800_1945}
+  - {year: 1881, event: "Sei-I-Kwai medical school (Jikei)", cell: east_asia_science_1800_1945}
+  - {year: 1881, event: "Nippon Railway company is founded", cell: east_asia_economy_1800_1945}
+  - {year: 1882, event: "Bank of Japan opens", cell: east_asia_economy_1800_1945}
+  - {year: 1882, event: "Yushukan museum opens at Yasukuni", cell: east_asia_religion_1800_1945}
+  - {year: 1882, event: "Kano Jigoro founds the Kodokan", cell: east_asia_society_1800_1945}
+  - {year: 1882, event: "Tokyo Senmon Gakko (Waseda) is founded", cell: east_asia_society_1800_1945}
+  - {year: 1883, event: "Conder's Rokumeikan is completed", cell: east_asia_arts_1800_1945}
+  - {year: 1883, event: "Tokyo Electric Light Company is founded", cell: east_asia_economy_1800_1945}
+  - {year: 1885, event: "Nippon Yusen is formed", cell: east_asia_economy_1800_1945}
+  - {year: 1886, event: "Cholera epidemic", cell: east_asia_society_1800_1945}
+  - {year: 1887, event: "Tokyo Electric Light power station at Nihonbashi", cell: east_asia_science_1800_1945}
+  - {year: 1887, event: "Tokyo Music School is founded", cell: east_asia_arts_1800_1945}
+  - {year: 1887, event: "Peace Preservation Ordinance expels critics from Tokyo", cell: east_asia_politics_1800_1945}
+  - {year: 1887, event: "Inoue Enryo's Tetsugakukan (Toyo University)", cell: east_asia_religion_1800_1945}
+  - {year: 1887, event: "Emperor Meiji attends kabuki", cell: east_asia_arts_1800_1945}
+  - {year: 1888, event: "Tokyo Astronomical Observatory at Azabu", cell: east_asia_science_1800_1945}
+  - {year: 1889, event: "The Kabuki-za opens", cell: east_asia_arts_1800_1945}
+  - {year: 1889, event: "Tokaido Main Line Tokyo-Kobe completed", cell: east_asia_economy_1800_1945}
+  - {year: 1890, event: "Ryounkaku opens in Asakusa", cell: east_asia_arts_1800_1945}
+  - {year: 1890, event: "First electric streetcar at the Ueno exhibition", cell: east_asia_science_1800_1945}
+  - {year: 1891, event: "Nippon Railway Ueno-Aomori line", cell: east_asia_economy_1800_1945}
+  - {year: 1891, event: "Nikolai-do is consecrated", cell: east_asia_religion_1800_1945}
+  - {year: 1891, event: "Catholic archdiocese of Tokyo", cell: east_asia_religion_1800_1945}
+  - {year: 1892, event: "Kitasato's Institute for Infectious Diseases", cell: east_asia_science_1800_1945}
+  - {year: 1892, event: "Hattori's Seikosha clock factory", cell: east_asia_economy_1800_1945}
+  - {year: 1895, event: "Salvation Army begins work in Japan", cell: east_asia_religion_1800_1945}
+  - {year: 1896, event: "Tatsuno's Bank of Japan head office", cell: east_asia_arts_1800_1945}
+  - {year: 1896, event: "Kuroda Seiki founds the Hakubakai", cell: east_asia_arts_1800_1945}
+  - {year: 1898, event: "Okakura founds the Japan Art Institute", cell: east_asia_arts_1800_1945}
+  - {year: 1899, event: "Shibata films Momijigari", cell: east_asia_arts_1800_1945}
+  - {year: 1899, event: "Kiyozawa Manshi's Kokodo", cell: east_asia_religion_1800_1945}
+  - {year: 1900, event: "Tsuda Umeko's school for women", cell: east_asia_society_1800_1945}
+  - {year: 1900, event: "Yoshioka Yayoi's medical school for women", cell: east_asia_society_1800_1945}
+  - {year: 1901, event: "Japan Women's University", cell: east_asia_society_1800_1945}
+  - {year: 1901, event: "Tanaka Shozo's petition to the emperor", cell: east_asia_society_1800_1945}
+  - {year: 1902, event: "Industrial Bank of Japan opens", cell: east_asia_economy_1800_1945}
+  - {year: 1902, event: "Masaoka Shiki dies in Tokyo", cell: east_asia_arts_1800_1945}
+  - {year: 1903, event: "First Waseda-Keio baseball game", cell: east_asia_society_1800_1945}
+  - {year: 1904, event: "Mitsukoshi becomes a department store", cell: east_asia_economy_1800_1945}
+  - {year: 1905, event: "Hibiya riots", cell: east_asia_politics_1800_1945}
+  - {year: 1905, event: "Tongmenghui founded in Tokyo", cell: east_asia_politics_1800_1945}
+  - {year: 1906, event: "Bungei Kyokai founded at Waseda", cell: east_asia_arts_1800_1945}
+  - {year: 1906, event: "Railway Nationalization Act (Kobu and Nippon railways)", cell: east_asia_economy_1800_1945}
+  - {year: 1907, event: "First Bunten exhibition", cell: east_asia_arts_1800_1945}
+  - {year: 1907, event: "Spring Willow Society in Tokyo", cell: east_asia_arts_1800_1945}
+  - {year: 1907, event: "Post-war stock crash in Tokyo", cell: east_asia_economy_1800_1945}
+  - {year: 1909, event: "Akasaka Palace is completed", cell: east_asia_arts_1800_1945}
+  - {year: 1909, event: "Ryogoku Kokugikan opens", cell: east_asia_arts_1800_1945}
+  - {year: 1909, event: "First Japanese film studio in Tokyo", cell: east_asia_arts_1800_1945}
+  - {year: 1909, event: "Osanai Kaoru's Free Theatre", cell: east_asia_arts_1800_1945}
+  - {year: 1910, event: "First powered flight at Yoyogi", cell: east_asia_science_1800_1945}
+  - {year: 1910, event: "Shirase sails for Antarctica", cell: east_asia_economy_1800_1945}
+  - {year: 1911, event: "Imperial Theatre opens", cell: east_asia_arts_1800_1945}
+  - {year: 1911, event: "Seito magazine is founded", cell: east_asia_arts_1800_1945}
+  - {year: 1912, event: "Nikkatsu is formed", cell: east_asia_arts_1800_1945}
+  - {year: 1912, event: "Japan Tourist Bureau is founded", cell: east_asia_economy_1800_1945}
+  - {year: 1913, event: "Taisho crisis street protests", cell: east_asia_politics_1800_1945}
+  - {year: 1913, event: "Geijutsuza is founded", cell: east_asia_arts_1800_1945}
+  - {year: 1913, event: "Sophia University is founded", cell: east_asia_religion_1800_1945}
+  - {year: 1914, event: "Tokyo Station opens", cell: east_asia_arts_1800_1945}
+  - {year: 1914, event: "Yamada Kosaku's first Japanese symphony premieres", cell: east_asia_arts_1800_1945}
+  - {year: 1915, event: "Construction of Meiji Shrine begins", cell: east_asia_religion_1800_1945}
+  - {year: 1917, event: "RIKEN is founded", cell: east_asia_science_1800_1945}
+  - {year: 1917, event: "Far Eastern Championship Games in Tokyo", cell: east_asia_society_1800_1945}
+  - {year: 1917, event: "Namakura Gatana and Imokawa Mukuzo shown", cell: east_asia_arts_1800_1945}
+  - {year: 1917, event: "Nippon Kogaku is founded", cell: east_asia_economy_1800_1945}
+  - {year: 1918, event: "Rice riots (Tokyo riots included)", cell: east_asia_society_1800_1945}
+  - {year: 1918, event: "Spanish flu", cell: east_asia_society_1800_1945}
+  - {year: 1919, event: "February 8 Declaration by Korean students", cell: east_asia_politics_1800_1945}
+  - {year: 1919, event: "Imperial Art Exhibition (Teiten)", cell: east_asia_arts_1800_1945}
+  - {year: 1920, event: "Meiji Shrine is dedicated", cell: east_asia_religion_1800_1945}
+  - {year: 1920, event: "First May Day rally in Ueno Park", cell: east_asia_society_1800_1945}
+  - {year: 1920, event: "Shochiku film company is founded", cell: east_asia_arts_1800_1945}
+  - {year: 1920, event: "Bunriha modernist architects", cell: east_asia_arts_1800_1945}
+  - {year: 1921, event: "Hara Takashi assassinated at Tokyo station", cell: east_asia_politics_1800_1945}
+
+out_refs:
+  - {year: 1871, event: "Abolition of the han proclaimed at the Tokyo palace", reason: "national government"}
+  - {year: 1885, event: "Cabinet system begins; Ito Hirobumi first prime minister", reason: "national government"}
+  - {year: 1889, event: "Meiji Constitution promulgated in the Meiji Palace", reason: "national law"}
+  - {year: 1890, event: "First Imperial Diet meets", reason: "national government"}
+  - {year: 1890, event: "Imperial Rescript on Education is issued", reason: "national law"}
+  - {year: 1900, event: "Ito Hirobumi founds the Rikken Seiyukai in Tokyo", reason: "national party"}
+  - {year: 1901, event: "Social Democratic Party founded and banned in Tokyo", reason: "national party"}
+  - {year: 1912, event: "Emperor Meiji dies in the palace; funeral at Aoyama parade ground", reason: "imperial funeral"}
+  - {year: 1919, event: "City Planning Act for the six great cities", reason: "national law"}
+  - {year: 1920, event: "First national census", reason: "national government"}
+  - {year: 1921, event: "Crown Prince Hirohito becomes regent", reason: "imperial court"}
+  - {year: 1922, event: "Japanese Communist Party founded in secret in Tokyo", reason: "national party"}

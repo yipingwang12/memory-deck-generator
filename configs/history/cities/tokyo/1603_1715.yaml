@@ -1,0 +1,741 @@
+# City: Tokyo x 1603 to 1715 (the shogunate's capital to the Shotoku era). DRAFT 2026-11-20.
+# Area: Tokyo Metropolis (23 wards, Tama, Izu and Ogasawara islands). Kamakura, Yokohama, Kawasaki OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (33 searches of 45; no unauthorised book copies).
+# Main sources: Wikipedia (ja and en: Edo Castle, Fires in Edo, temples, shrines, theatres, aqueducts, islands),
+# Tokyo ward and city pages, NAOJ, NTA, Kobe city, SPF island studies, shop founding pages.
+# Lunisolar dates -> Gregorian year of the day (Genroku 6/12/7 -> January 1694; Genroku 16/11/29 -> January 1704).
+# A building -> its opening or completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1606, peg: sushi, confidence: high, source: "WP ja: Edo Castle (Keicho 11 works)",
+     event: "Daimyo ship stone to Edo for the great expansion of Edo Castle",
+     place: "Edo Castle",
+     scene: "A giant SUSHI roll of granite slides off a daimyo barge at Edo, and his men stack it into the new castle walls."}
+  - {year: 1606, peg: sushi, confidence: high, source: "Okayama pref.; tabi-mag (Keicho 11)",
+     event: "Ukita Hideie lands on Hachijo, the first exile on the island",
+     place: "Hachijo-jima",
+     scene: "Ukita Hideie steps off the exile boat on Hachijo and shares his last SUSHI with his two sons: the island prison opens."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP en/ja: Edo Castle",
+     event: "The Keicho keep of Edo Castle is completed, with gold-ornamented roofs",
+     place: "Edo Castle Honmaru",
+     scene: "A SKI jumper launches from the gold roofs of the new Keicho keep, the highest point in Edo."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "WP ja: Edo Castle (Keicho 16)",
+     event: "Eastern daimyo dig the moats of Nishi-no-maru and Fukiage",
+     place: "Nishi-no-maru",
+     scene: "A TATTOO artist inks a moat plan on each eastern daimyo's back, and they dig it round Nishi-no-maru and Fukiage."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP ja: Edo Castle (Keicho 17)",
+     event: "Western daimyo ship Izu stone; the Sanjikken canal is dug",
+     place: "Sanjikken-bori",
+     scene: "A huge TONGUE licks blocks of Izu stone off western daimyo ships and lays them along the new Sanjikken canal."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP ja: Edo Castle (Genna 6)",
+     event: "Eastern daimyo rebuild the square masugata gates from Uchi-Sakurada to Shimizu",
+     place: "Sakurada gate",
+     scene: "A giant NOSE pokes through each square masugata gate from Sakurada to Shimizu, and eastern daimyo rebuild the walls round it."}
+  - {year: 1623, peg: gnome, confidence: medium, source: "WP en/ja: Edo Castle (infobox gives a year earlier)",
+     event: "Hidetada pulls down the first keep and builds the Genna keep",
+     place: "Edo Castle Honmaru",
+     scene: "A GNOME pulls down the old Keicho keep stone by stone and builds Hidetada's new Genna keep in its place."}
+  - {year: 1623, peg: gnome, confidence: medium, source: "WP ja: Edo (Genna 9)",
+     event: "Townsmen are barred from living on samurai land",
+     place: "Marunouchi",
+     scene: "A GNOME guard throws townsmen's bundles out of the warrior quarter: commoners may no longer live on samurai land."}
+  - {year: 1628, peg: knife, confidence: high, source: "serai.jp; president.jp (Kan'ei 5, 8/10)",
+     event: "Toyoshima Nobumitsu kills senior councillor Inoue Masanari in a castle corridor",
+     place: "Nishi-no-maru corridor",
+     scene: "Toyoshima's KNIFE flashes in the Nishi-no-maru corridor and kills senior councillor Inoue Masanari over a broken marriage match."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP ja: Machi-bugyo (Kan'ei 8)",
+     event: "The North and South town magistrates of Edo are formally set up",
+     place: "Tokiwabashi",
+     scene: "A MOTH splits in two over Tokiwabashi, one half north and one half south: Edo now has two town magistrates."}
+  - {year: 1634, peg: hammer, confidence: high, source: "WP ja: Edo Castle (Kan'ei 11)",
+     event: "Fire destroys the Nishi-no-maru palace and towers",
+     place: "Nishi-no-maru",
+     scene: "A burning HAMMER smashes through the Nishi-no-maru palace roof, and the flames take its towers."}
+  - {year: 1636, peg: match, confidence: high, source: "WP en/ja: Edo Castle (Kan'ei 13)",
+     event: "About a hundred and twenty daimyo dig the outer moat from Iidabashi to Tameike",
+     place: "Yotsuya",
+     scene: "A MATCH lit at Iidabashi burns a line through Yotsuya to Tameike, and one hundred and twenty daimyo dig the outer moat along it."}
+  - {year: 1638, peg: movie, confidence: high, source: "WP en/ja: Edo Castle",
+     event: "The Kan'ei keep, the tallest of Edo Castle, is completed",
+     place: "Edo Castle Honmaru",
+     scene: "A MOVIE camera films the whole plain from the top of Iemitsu's new Kan'ei keep, the tallest tower Edo ever had."}
+  - {year: 1639, peg: map, confidence: high, source: "WP ja: Edo Castle (Kan'ei 16)",
+     event: "Fire destroys the Honmaru palace of Edo Castle",
+     place: "Edo Castle Honmaru",
+     scene: "A burning MAP of the Honmaru curls up in the shogun's hands, and the main palace of Edo Castle burns with it."}
+  - {year: 1640, peg: horse, confidence: high, source: "WP ja: Edo Castle (Kan'ei 17)",
+     event: "The Honmaru palace is rebuilt",
+     place: "Edo Castle Honmaru",
+     scene: "A HORSE drags the last cypress beam into the Honmaru, and the burnt main palace rises again."}
+  - {year: 1647, peg: rock, confidence: high, source: "WP ja: Edo Castle (Shoho 4)",
+     event: "An earthquake brings down part of the castle stone walls",
+     place: "Edo Castle",
+     scene: "An earthquake shakes a ROCK loose, and a stretch of Edo Castle's stone wall tumbles into the moat."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP ja: Suzugamori execution ground",
+     event: "Suzugamori execution ground opens on the Tokaido at Edo's southern edge",
+     place: "Suzugamori",
+     scene: "At Suzugamori on the Tokaido, a WALLET falls open and spills crosses and stakes: Edo's new southern execution ground."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP ja: Kozukappara execution ground",
+     event: "Kozukappara execution ground opens south of Senju bridge",
+     place: "Kozukappara",
+     scene: "A WALLET full of iron nails pins up the first cross at Kozukappara, Edo's new northern execution ground by Senju bridge."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP en/ja: Edo Castle (Manji 2)",
+     event: "The Honmaru palace is rebuilt after the fire; the Fujimi tower stands in for the lost keep",
+     place: "Fujimi-yagura",
+     scene: "An ELBOW props up the new Fujimi tower in place of the burnt keep, and the Honmaru palace rises behind it."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP: Fires in Edo; WP ja: Edo (Kanbun 2)",
+     event: "Ueno, Asakusa, Shiba and about three hundred towns come under the town magistrates",
+     place: "Asakusa",
+     scene: "A CHAIN reaches out from the town magistrates' office and loops round Ueno, Asakusa and Shiba: three hundred towns join the city."}
+  - {year: 1680, peg: vase, confidence: high, source: "WP ja: Zojo-ji (Enpo 8)",
+     event: "Naito Tadakatsu kills Nagai Naonaga at Zojo-ji during Ietsuna's memorial rites",
+     place: "Zojo-ji",
+     scene: "Naito Tadakatsu pulls a blade from behind an offering VASE at Zojo-ji and cuts down Nagai Naonaga during Ietsuna's memorial."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP ja: Echigo disturbance (Enpo 9/6/22)",
+     event: "Echigo disturbance: Takada retainers Oguri Shigeyoshi and Ando Jizaemon are exiled to Izu Oshima",
+     place: "Izu Oshima",
+     scene: "Exiled Takada retainers Oguri Shigeyoshi and Ando set FOOT on the black sand of Izu Oshima after the Echigo feud verdict."}
+  - {year: 1683, peg: foam, confidence: high, source: "WP ja: Kodenmacho prison (Tenna 3)",
+     event: "Kodenmacho jail adds the agari-zashiki cells for hatamoto and senior priests",
+     place: "Kodenmacho",
+     scene: "Jailers scrub FOAM over a clean new cell at Kodenmacho: the agari-zashiki is only for hatamoto and senior priests."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP ja: Hotta Masatoshi (Jokyo 1, 8/28)",
+     event: "Inaba Masayasu stabs Great Elder Hotta Masatoshi inside Edo Castle",
+     place: "Edo Castle",
+     scene: "A FAIRY with a dagger, Inaba Masayasu, darts down the castle corridor and stabs Great Elder Hotta Masatoshi."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP ja: Hanabusa Itcho (Genroku 11)",
+     event: "Painter Hanabusa Itcho is exiled to Miyakejima",
+     place: "Miyakejima",
+     scene: "A BEEHIVE of angry bees chases the painter Hanabusa Itcho out of Edo and onto the exile boat to Miyakejima."}
+  - {year: 1702, peg: sun, confidence: high, source: "WP ja: Machi-bugyo (Genroku 15)",
+     event: "A third, middle town magistrate is added under Niwa Nagamori",
+     place: "Edo",
+     scene: "A third SUN rises over Edo's courts: the shogunate adds a middle town magistrate, Niwa Nagamori, beside North and South."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP ja: Yoshida Dennai (Genroku 16/4)",
+     event: "Yoshida Dennai and other sons of the Ako ronin are exiled to Izu Oshima",
+     place: "Izu Oshima",
+     scene: "A SUMO wrestler rows Yoshida Dennai and the other young sons of the Ako ronin out to exile on Izu Oshima."}
+  - {year: 1707, peg: ski, confidence: high, source: "WP ja: Machi-bugyo (Hoei 4)",
+     event: "The town magistrate's office moves from Tokiwabashi to Sukiyabashi",
+     place: "Sukiyabashi",
+     scene: "Clerks slide the town magistrate's files on a SKI along the frozen moat from Tokiwabashi to the new office at Sukiyabashi."}
+  - {year: 1709, peg: soap, confidence: high, source: "WP ja: Dog kennels of the shogunate (Hoei 6/1)",
+     event: "The Nakano dog kennels are pulled down",
+     place: "Nakano",
+     scene: "A flood of SOAP suds washes the huge Nakano dog kennels flat, and Edo's strays run free."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP ja: Machi-bugyo (Shotoku 3)",
+     event: "Suburban towns under the rural deputies come under the town magistrates' police",
+     place: "Edo suburbs",
+     scene: "The town magistrate digs up the TOMB stone that marked the city edge and carries it outward past the suburban towns."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP ja: Ejima-Ikushima affair (Shotoku 4)",
+     event: "Ejima affair: the kabuki actor Ikushima Shingoro is exiled to Miyakejima",
+     place: "Miyakejima",
+     scene: "Actor Ikushima Shingoro is locked in a lookout TOWER on Miyakejima, exiled for his theatre party with the lady Ejima."}
+  # science
+  - {year: 1603, peg: sumo, confidence: high, source: "WP ja: Edo Castle (Keicho 8)",
+     event: "Daimyo level Kanda hill and fill the Hibiya inlet for the new town",
+     place: "Hibiya inlet",
+     scene: "A SUMO wrestler shoves Kanda hill into the Hibiya inlet, and the flat new land becomes the lower town."}
+  - {year: 1603, peg: sumo, confidence: high, source: "WP ja: Nihonbashi bridge (Keicho 8)",
+     event: "The first wooden Nihonbashi bridge is built",
+     place: "Nihonbashi",
+     scene: "Two SUMO wrestlers lock arms over the river and become the first wooden arch of Nihonbashi."}
+  - {year: 1604, peg: sewer, confidence: high, source: "WP ja: Nihonbashi bridge (Keicho 9)",
+     event: "Nihonbashi becomes the start of the five highways; milestone mounds are built",
+     place: "Nihonbashi",
+     scene: "A SEWER cover on Nihonbashi becomes mile zero, and milestone mounds march out from it along all five highways."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP ja: Ome Kaido (Keicho 11)",
+     event: "The Ome road is built to carry lime from Nariki to the castle works",
+     place: "Ome Kaido",
+     scene: "Carts as white as SUSHI rice roll down the new Ome road with Nariki lime to plaster Edo Castle."}
+  - {year: 1606, peg: sushi, confidence: medium, source: "smtrc town archives (c. Keicho 11)",
+     event: "Asano Yukinaga dams the Tameike reservoir at Akasaka (approximate)",
+     place: "Tameike",
+     scene: "Asano Yukinaga rolls up the Akasaka valley like a SUSHI mat behind an earth dam and fills Tameike, Edo's water pond."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP ja: Kanda River (Genna 6)",
+     event: "Date Masamune's men cut Kanda hill at Ochanomizu and turn the Hirakawa east",
+     place: "Ochanomizu",
+     scene: "Date Masamune's diggers drive a gorge like a NOSE through Kanda hill at Ochanomizu, and the Hirakawa turns east."}
+  - {year: 1625, peg: nail, confidence: high, source: "WP ja: Senju-juku (Kan'ei 2)",
+     event: "Senju becomes the first post station on the Nikko and Oshu roads",
+     place: "Senju",
+     scene: "A NAIL fixes the first post-station sign of the Nikko road on a Senju inn: horses and porters change here."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP ja: Kanda Josui (Kan'ei 6, Mito Kinen)",
+     event: "Kanda aqueduct water reaches the Mito mansion",
+     place: "Koishikawa",
+     scene: "A servant turns a brass KNOB at the Mito mansion in Koishikawa, and Kanda aqueduct water pours out."}
+  - {year: 1632, peg: moon, confidence: high, source: "NDL; Tokyo Met. Library map list (Kan'ei 9)",
+     event: "Bushu Toshima-gori Edo-sho zu: the first map of the castle town",
+     place: "Edo",
+     scene: "A full MOON lights a surveyor as he draws the first map of the castle town, the Bushu Toshima-gori Edo-sho zu."}
+  - {year: 1638, peg: movie, confidence: high, source: "WP ja: Koishikawa Botanical Garden",
+     event: "The shogunate opens medicinal herb gardens at Azabu and Otsuka",
+     place: "Azabu",
+     scene: "A MOVIE crew films the first medicinal herbs sprouting in the shogun's new gardens at Azabu and Otsuka."}
+  - {year: 1654, peg: lawyer, confidence: high, source: "WP: Tamagawa Aqueduct (June 1654)",
+     event: "The Tamagawa aqueduct is fully working, with its pipes under the city",
+     place: "Yotsuya Okido",
+     scene: "A LAWYER signs off the last underground pipe, and Tamagawa water flows past Yotsuya gate into the city."}
+  - {year: 1655, peg: lily, confidence: high, source: "WP ja: Nobidome Yosui (Joo 4)",
+     event: "The Nobidome canal is dug from the Tamagawa at Kodaira in forty days",
+     place: "Kodaira",
+     scene: "A LILY floats down the new Nobidome canal, dug from the Tamagawa at Kodaira in only forty days."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP en/ja: Ryogoku Bridge (Manji 2)",
+     event: "Ryogoku bridge is built across the Sumida",
+     place: "Ryogoku",
+     scene: "A giant ELBOW bends over the Sumida and becomes Ryogoku bridge, the escape route the fire victims lacked."}
+  - {year: 1659, peg: elbow, confidence: disputed, source: "WP ja: Kameari Josui (records: Manji 2; Enpo 3; Genroku)",
+     event: "The Honjo (Kameari) aqueduct brings water to the new Honjo district",
+     place: "Honjo",
+     scene: "An ELBOW pipe carries water from the Kameari ponds under the paddies to the new Honjo streets east of the Sumida."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP ja: Kanda River; Edo Castle (Manji 3)",
+     event: "Date Tsunamune widens the Ochanomizu cut, the last daimyo-paid castle work",
+     place: "Ochanomizu",
+     scene: "Date Tsunamune's men slice the Ochanomizu cut wider like a CHEESE knife: the last daimyo-paid work of the castle."}
+  - {year: 1660, peg: cheese, confidence: medium, source: "WP ja: Aoyama Josui (Manji 3; page year garbled)",
+     event: "The Aoyama aqueduct branches from the Tamagawa at Yotsuya",
+     place: "Aoyama",
+     scene: "Workers bore a wooden pipe full of holes like CHEESE and branch Tamagawa water from Yotsuya to the Aoyama mansions."}
+  - {year: 1664, peg: cherry, confidence: medium, source: "Meguro city history page (Kanbun 4)",
+     event: "The Mita aqueduct branches from the Tamagawa to Shirokane and Mita",
+     place: "Shirokane",
+     scene: "A CHERRY pit floats down the new Mita aqueduct from the Tamagawa to the daimyo gardens of Shirokane."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP ja: Kanda Josui (Kanbun 7)",
+     event: "Tamagawa water is first sent into the Kanda aqueduct",
+     place: "Inokashira",
+     scene: "A JOCKEY steers a stream of Tamagawa water into the Kanda aqueduct channel for the first time."}
+  - {year: 1670, peg: goose, confidence: high, source: "NDL: Kanbun map, first sheet (Kanbun 10)",
+     event: "Shinpan Edo Oezu, the first sheet of the Kanbun great map of Edo, is printed",
+     place: "Edo",
+     scene: "A GOOSE quill draws every street of Edo to one scale on the first sheet of the Kanbun great map."}
+  - {year: 1672, peg: coin, confidence: medium, source: "WP ja: Shinobazu Pond",
+     event: "A stone bridge joins Benten island to the shore of Shinobazu pond",
+     place: "Shinobazu pond",
+     scene: "A pilgrim's COIN rings on the new stone bridge as she walks across to Benten island in Shinobazu pond."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP ja: Ogasawara; SPF island studies (Enpo 3)",
+     event: "The shogunate ship Fukoku-maru surveys the Bonin Islands and claims them",
+     place: "Chichijima",
+     scene: "An EAGLE carries the shogunate's signboard to Chichijima and plants it: this island is inside Great Japan."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP ja: Koishikawa Botanical Garden (Jokyo 1)",
+     event: "The Azabu herb garden moves to Koishikawa, the start of the Koishikawa garden",
+     place: "Koishikawa",
+     scene: "A FAIRY carries the Azabu herb beds through the air to Tsunayoshi's old villa: the Koishikawa herb garden begins."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP ja: Rokugo Bridge (Jokyo 5)",
+     event: "A flood destroys Rokugo bridge on the Tama; a ferry replaces it",
+     place: "Rokugo",
+     scene: "A FIFE plays a lament as the Tama flood smashes Rokugo bridge, and a ferryman poles in to take its place."}
+  - {year: 1690, peg: bees, confidence: medium, source: "NAOJ koyomi (Genroku 2/11/22 = January)",
+     event: "Shibukawa Harumi builds the shogunate's first observatory at Honjo",
+     place: "Honjo",
+     scene: "BEES swarm up Shibukawa Harumi's new star platform at Honjo, the shogunate's first observatory."}
+  - {year: 1694, peg: bear, confidence: medium, source: "WP ja: Shin-Ohashi (Genroku 6/12/7 = January)",
+     event: "Shin-Ohashi, the third bridge on the Sumida, is built",
+     place: "Shin-Ohashi",
+     scene: "A BEAR wades into the middle of the Sumida and holds up the deck of Shin-Ohashi, the third bridge."}
+  - {year: 1696, peg: peach, confidence: high, source: "WP ja: Senkawa Josui (Genroku 9)",
+     event: "The Senkawa aqueduct is dug from the Tamagawa to Sugamo",
+     place: "Sugamo",
+     scene: "PEACH blossoms float down the new Senkawa aqueduct that Tahei and Tokubei dig from the Tamagawa to Sugamo."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP ja: Eitai Bridge (Genroku 11/8/1)",
+     event: "Eitai bridge opens across the Sumida to Fukagawa",
+     place: "Eitai-bashi",
+     scene: "A BEEHIVE hangs from the rail of the new Eitai bridge as the first crowds walk over to Fukagawa."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP ja: Naito-Shinjuku (Genroku 12)",
+     event: "Naito-Shinjuku opens as a new post station on the Koshu road",
+     place: "Naito-Shinjuku",
+     scene: "An Asakusa merchant lights a PIPE in the first inn of Naito-Shinjuku, the new post station on the Koshu road."}
+  - {year: 1703, peg: sumo, confidence: high, source: "NAOJ koyomi (Genroku 16)",
+     event: "Shibukawa's observatory moves from low Honjo to Surugadai",
+     place: "Surugadai",
+     scene: "A SUMO wrestler carries Shibukawa's star platform out of the Honjo damp and sets it on the high ground of Surugadai."}
+  # religion
+  - {year: 1603, peg: sumo, confidence: high, source: "WP ja: Kanda Myojin (Keicho 8)",
+     event: "Kanda Myojin moves to Kandadai for the castle works",
+     place: "Kandadai",
+     scene: "A SUMO wrestler lifts Kanda Myojin off its old site by the castle and sets it down at Kandadai."}
+  - {year: 1604, peg: sewer, confidence: high, source: "WP ja: Hie Shrine (Keicho 9)",
+     event: "Sanno (Hie) shrine moves out of Edo Castle so townsmen can worship there",
+     place: "Hayabusa-cho",
+     scene: "A SEWER worker carries the Sanno shrine out through the castle drains to Hayabusa-cho, where townsmen can pray."}
+  - {year: 1605, peg: seal, confidence: high, source: "WP ja: Zojo-ji (Keicho 10)",
+     event: "Zojo-ji's first halls and pagodas rise at Shiba",
+     place: "Zojo-ji",
+     scene: "A SEAL balances the first pagoda of Zojo-ji on its nose and sets it down on the new Shiba site."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP ja: Ikegami Honmon-ji (Keicho 11)",
+     event: "Kato Kiyomasa builds the great hall of Ikegami Honmon-ji",
+     place: "Ikegami Honmon-ji",
+     scene: "Kato Kiyomasa serves SUSHI at his mother's memorial and pays for Ikegami Honmon-ji's new great hall."}
+  - {year: 1608, peg: sofa, confidence: medium, source: "WP ja: Ikegami Honmon-ji (list says a year earlier)",
+     event: "The five-storey pagoda of Ikegami Honmon-ji is built",
+     place: "Ikegami Honmon-ji",
+     scene: "Lady Okabe sits on a SOFA and gives the order: Ikegami Honmon-ji's five-storey pagoda rises on the hill."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP ja: Sengaku-ji (Keicho 17)",
+     event: "Ieyasu founds Sengaku-ji beside Sakurada gate",
+     place: "Sakurada",
+     scene: "Ieyasu wags his TONGUE in praise of Monan Sokan and founds Sengaku-ji for him beside Sakurada gate."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP ja: Izu Oshima (Keicho 17)",
+     event: "Julia Ota, a Christian court lady, is exiled to Izu Oshima",
+     place: "Izu Oshima",
+     scene: "Julia Ota holds her TONGUE and her rosary as the exile boat drops her on Izu Oshima."}
+  - {year: 1613, peg: tomb, confidence: medium, source: "WP: Luis Sotelo; Vatican martyr list",
+     event: "After Sotelo opens a church at Asakusa Torigoe, twenty-three Christians are executed in Edo",
+     place: "Asakusa Torigoe",
+     scene: "Twenty-three Christians walk from Sotelo's Torigoe church to one TOMB: the shogun's men execute them in Edo."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP ja: Kanda Myojin (Genna 2)",
+     event: "Kanda Myojin moves to its present hill above the Kanda river",
+     place: "Sotokanda",
+     scene: "Priests carry Kanda Myojin up the slope on a giant DISH to its present hill above the Kanda river."}
+  - {year: 1617, peg: dog, confidence: high, source: "WP ja: Tsukiji Hongan-ji (Genna 3)",
+     event: "A Nishi Hongan-ji branch temple is founded by the shore at Yokoyama-cho",
+     place: "Yokoyama-cho",
+     scene: "A DOG guards the new Nishi Hongan-ji branch temple on the shore at Yokoyama-cho, near Asakusa gate."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP ja: Okunitama Shrine (Genna 4)",
+     event: "Hidetada founds a Toshogu at the Okunitama shrine in Fuchu",
+     place: "Fuchu",
+     scene: "A DOVE carries Ieyasu's spirit to Fuchu, where Hidetada founds a Toshogu in the old provincial shrine."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP ja: Senso-ji (Genna 4)",
+     event: "The Nitenmon gate is built at Senso-ji for its Toshogu",
+     place: "Senso-ji",
+     scene: "A DOVE nests on the roof of the new Nitenmon gate, built for the Toshogu inside Senso-ji."}
+  - {year: 1622, peg: nun, confidence: medium, source: "WP ja: Zojo-ji (pages give Genna 7 and 8)",
+     event: "The two-storey Sangedatsumon gate of Zojo-ji is built",
+     place: "Zojo-ji",
+     scene: "A NUN walks through the new two-storey Sangedatsumon of Zojo-ji and leaves her three passions behind."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP ja: Ueno Toshogu (Kan'ei 4)",
+     event: "Todo Takatora founds the Ueno Toshogu on his own land",
+     place: "Ueno",
+     scene: "Todo Takatora writes Ieyasu's name in gold INK over the gate of the Toshogu he founds at Ueno."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP ja: Tomioka Hachimangu (Kan'ei 4)",
+     event: "Tomioka Hachiman shrine is founded at Fukagawa",
+     place: "Fukagawa",
+     scene: "A priest draws the plan of Tomioka Hachiman in INK on the fresh sand of Fukagawa, and the shrine rises there."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP ja: Kan'ei-ji (Kan'ei 8)",
+     event: "Kan'ei-ji builds the Kiyomizu Kannon hall and a five-storey pagoda at Ueno",
+     place: "Ueno",
+     scene: "A MOTH flies from Kyoto's Kiyomizu to Ueno hill and lands on its new copy, the Kiyomizu Kannon hall of Kan'ei-ji."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP ja: Kan'ei-ji (Kan'ei 8)",
+     event: "Hori Naoyori pays for the first Great Buddha at Ueno",
+     place: "Ueno",
+     scene: "A MOTH lands on the nose of Ueno's first Great Buddha as Hori Naoyori hands over the money for it."}
+  - {year: 1632, peg: moon, confidence: high, source: "Tokorozawa pref. page; tabi-mag (Kan'ei 9)",
+     event: "Hidetada's mausoleum, the Taitoku-in, is built at Zojo-ji",
+     place: "Zojo-ji",
+     scene: "Under a MOON, lacquerers finish Hidetada's gold Taitoku-in mausoleum at Zojo-ji."}
+  - {year: 1633, peg: mummy, confidence: high, source: "WP ja: Ueno Toshogu (Kan'ei 10)",
+     event: "Sakai Tadayo gives the stone torii of the Ueno Toshogu",
+     place: "Ueno Toshogu",
+     scene: "Sakai Tadayo's men haul a stone torii, wrapped like a MUMMY in straw, up Ueno hill to the Toshogu."}
+  - {year: 1639, peg: map, confidence: high, source: "WP ja: Kan'ei-ji (Kan'ei 16)",
+     event: "Kan'ei-ji's pagoda burns and Doi Toshikatsu rebuilds it the same year",
+     place: "Ueno",
+     scene: "Doi Toshikatsu redraws the MAP of Ueno hill with the burnt pagoda back on it, rebuilt before the year ends."}
+  - {year: 1641, peg: radio, confidence: high, source: "WP ja: Sengaku-ji (Kan'ei 18)",
+     event: "Sengaku-ji burns and is rebuilt at Takanawa by five daimyo",
+     place: "Takanawa",
+     scene: "A RADIO announces Sengaku-ji's new home: five daimyo rebuild the burnt temple on the Takanawa shore."}
+  - {year: 1642, peg: rhino, confidence: high, source: "WP ja: Senso-ji (Kan'ei 19)",
+     event: "Fire destroys the Toshogu at Senso-ji, which is never rebuilt",
+     place: "Senso-ji",
+     scene: "A burning RHINO charges through Senso-ji and tramples its Toshogu, which nobody ever rebuilds."}
+  - {year: 1643, peg: ram, confidence: medium, source: "WP: Giuseppe Chiara; samurai-archives",
+     event: "Giuseppe Chiara is held in Edo and renounces his faith under torture",
+     place: "Koishikawa",
+     scene: "Inoue Masashige's guards batter Giuseppe Chiara like a RAM until he renounces his faith in Edo."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP ja: Tsukudajima (Shoho 3)",
+     event: "The fishermen of Tsukudajima found their Sumiyoshi shrine",
+     place: "Tsukudajima",
+     scene: "A ROACH swims out to Tsukuda island and finds the Settsu fishermen raising Sumiyoshi shrine for their sea god."}
+  - {year: 1648, peg: reef, confidence: high, source: "WP ja: Senso-ji (Keian 1)",
+     event: "Senso-ji's five-storey pagoda is built",
+     place: "Senso-ji",
+     scene: "A coral REEF grows up from the Asakusa ground storey by storey and becomes Senso-ji's five-storey pagoda."}
+  - {year: 1649, peg: rope, confidence: high, source: "WP ja: Senso-ji (Keian 2)",
+     event: "Senso-ji's main hall is rebuilt",
+     place: "Senso-ji",
+     scene: "A thick ROPE hauls the ridge beam of Senso-ji's rebuilt main hall up into place."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP ja: Ueno Toshogu (Keian 4)",
+     event: "Iemitsu rebuilds the Ueno Toshogu in its present form",
+     place: "Ueno Toshogu",
+     scene: "Iemitsu empties his WALLET of gold leaf over the rebuilt Ueno Toshogu."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP ja: Hie Shrine (Manji 2)",
+     event: "Sanno (Hie) shrine moves to its present site in Nagatacho",
+     place: "Nagatacho",
+     scene: "An ELBOW nudges the burnt Sanno shrine up the Akasaka hill to its new site in Nagatacho."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP ja: Okunitama Shrine (Kanbun 7 ridge board)",
+     event: "Kuze Hiroyuki rebuilds the main hall of the Okunitama shrine in Fuchu",
+     place: "Fuchu",
+     scene: "A JOCKEY gallops to Fuchu with Ietsuna's order, and Kuze Hiroyuki raises Okunitama's new main hall."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP ja: Kozukappara execution ground (Kanbun 7)",
+     event: "Eko-in builds a hall at Kozukappara to bury the executed",
+     place: "Minami-Senju",
+     scene: "A JOCKEY brings the abbot of Eko-in to Kozukappara, and he builds a hall to bury the executed."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP ja: Tsukiji Hongan-ji",
+     event: "Hongan-ji is rebuilt on land reclaimed from the sea at Tsukiji",
+     place: "Tsukiji",
+     scene: "A COWBOY ropes the sea sand off Hatchobori into new land, and Hongan-ji rises on it as the Tsukiji temple."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP ja: Gokoku-ji",
+     event: "Tsunayoshi founds Gokoku-ji as his mother Keishoin's prayer temple",
+     place: "Otowa",
+     scene: "Keishoin sets her FOOT on the old Takada herb garden, and Tsunayoshi founds Gokoku-ji there for her prayers."}
+  - {year: 1681, peg: foot, confidence: high, source: "NDL landmarks; tabi-mag (Tenna 1)",
+     event: "The Kanda and Sanno festivals start to take turns each year",
+     place: "Kanda Myojin",
+     scene: "The shogun puts his FOOT down between Kanda and Sanno: their great festivals now take turns, one each year."}
+  - {year: 1688, peg: fife, confidence: medium, source: "nippon.com (Genroku 1)",
+     event: "The Kanda festival procession enters Edo Castle for the first time",
+     place: "Edo Castle",
+     scene: "A FIFE leads the Kanda festival floats through the castle gate for the first time, and the shogun watches."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP ja: Senso-ji (Genroku 5)",
+     event: "The bronze bell of Senso-ji's Benten hill is cast",
+     place: "Bentenyama",
+     scene: "A PIANO chord rings out of the new bronze bell on Senso-ji's Benten hill, Asakusa's time bell."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP ja: Gohyaku Rakan-ji (Genroku 8)",
+     event: "Shoun Genkei founds the Rakan-ji at Honjo for his carved Rakan statues",
+     place: "Honjo Gotsume",
+     scene: "Shoun Genkei rings a BELL among his five hundred carved Rakan and opens the new Rakan-ji at Honjo."}
+  - {year: 1697, peg: pig, confidence: high, source: "WP ja: Gokoku-ji (Genroku 10)",
+     event: "The main hall of Gokoku-ji is built",
+     place: "Gokoku-ji",
+     scene: "A gilded PIG of good luck rides the ridge beam up as carpenters finish Gokoku-ji's great main hall."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP ja: Kan'ei-ji (Genroku 11)",
+     event: "Kan'ei-ji's great main hall, the Konpon Chudo, is completed",
+     place: "Ueno",
+     scene: "Bees from a BEEHIVE gild the Konpon Chudo, the great main hall Yanagisawa finishes at Kan'ei-ji."}
+  - {year: 1703, peg: sumo, confidence: high, source: "bunshun (Matsui); tabi-mag (Genroku 16)",
+     event: "Narita's Fudo statue has its first Edo showing at Eitai-ji, Fukagawa",
+     place: "Eitai-ji, Fukagawa",
+     scene: "A SUMO wrestler carries Narita's Fudo statue into Eitai-ji at Fukagawa for its first showing in Edo."}
+  - {year: 1706, peg: sushi, confidence: high, source: "WP ja: Nezu Shrine (Hoei 3)",
+     event: "Tsunatoyo builds the present halls of Nezu shrine",
+     place: "Nezu",
+     scene: "Tsunatoyo serves SUSHI to the carpenters who raise Nezu shrine's new lacquered halls on his old Kofu mansion site."}
+  - {year: 1710, peg: dice, confidence: high, source: "WP ja: Ikegami Honmon-ji (Hoei 7)",
+     event: "The great hall of Ikegami Honmon-ji burns down",
+     place: "Ikegami Honmon-ji",
+     scene: "A DICE of burning charcoal rolls off a brazier and burns down Ikegami Honmon-ji's great hall."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP ja: Nezu Shrine (Shotoku 4)",
+     event: "Nezu shrine's festival enters Edo Castle, for this one year only",
+     place: "Nezu",
+     scene: "Nezu's portable shrines climb past the castle TOWER: this one year, Nezu's festival marches into Edo Castle."}
+  # arts
+  - {year: 1621, peg: ant, confidence: medium, source: "Kano Tanyu bio (WP); bijutsutecho says a later year",
+     event: "Kano Tan'yu settles in Edo outside Kajibashi gate",
+     place: "Kajibashi",
+     scene: "An ANT carries Kano Tan'yu's brushes to his new house outside Kajibashi gate, the Edo home of his painting school."}
+  - {year: 1624, peg: hanger, confidence: high, source: "WP ja: Nakamura-za (Kan'ei 1)",
+     event: "Saruwaka Kanzaburo opens Edo's first kabuki theatre at Nakabashi, later the Nakamura-za",
+     place: "Nakabashi",
+     scene: "Saruwaka Kanzaburo hangs his drum on a HANGER at Nakabashi and opens Edo's first kabuki theatre."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP ja: Koishikawa Korakuen (Kan'ei 6)",
+     event: "Tokugawa Yorifusa begins the Korakuen garden at the Mito mansion",
+     place: "Koishikawa",
+     scene: "Yorifusa turns the KNOB of a wooden sluice and fills the first pond of the Korakuen garden at Koishikawa."}
+  - {year: 1632, peg: moon, confidence: high, source: "WP ja: Nakamura-za (Kan'ei 9)",
+     event: "The Nakamura-za moves from Nakabashi to Negi-cho",
+     place: "Negi-cho",
+     scene: "Under a full MOON, actors carry the Nakamura-za stage from Nakabashi to Negi-cho, closer to the castle."}
+  - {year: 1634, peg: hammer, confidence: high, source: "WP ja: Ichimura-za (Kan'ei 11)",
+     event: "Murayama Matasaburo opens the Murayama-za, later the Ichimura-za",
+     place: "Nihonbashi",
+     scene: "Murayama Matasaburo swings a HAMMER on the last stage board and opens the Murayama-za, the later Ichimura-za."}
+  - {year: 1636, peg: match, confidence: high, source: "WP ja: Edo Castle (Kan'ei 13)",
+     event: "The first Ninomaru palace opens, with Kobori Enshu's pond garden",
+     place: "Ninomaru",
+     scene: "Kobori Enshu strikes a MATCH and lights the tea house lantern by his new pond garden at the Ninomaru palace."}
+  - {year: 1642, peg: rhino, confidence: high, source: "WP ja: Yamamura-za (Kan'ei 19)",
+     event: "The Yamamura-za kabuki theatre opens at Kobiki-cho, in present Ginza",
+     place: "Kobiki-cho",
+     scene: "A RHINO in a kabuki wig crashes onto the stage on opening day of the Yamamura-za in Kobiki-cho."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP ja: Nakamura-za (Keian 4)",
+     event: "The Nakamura-za moves to Sakai-cho, the later theatre street",
+     place: "Sakai-cho",
+     scene: "Kanzaburo packs the takings in his WALLET and moves the Nakamura-za to Sakai-cho, the later theatre street."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP ja: Ichimura-za (Shoo 1)",
+     event: "Ichimura Uzaemon buys the Murayama-za and renames it the Ichimura-za",
+     place: "Fukiya-cho",
+     scene: "A LION dancer, Ichimura Uzaemon, buys the Murayama-za and paints his own name over its door."}
+  - {year: 1654, peg: lawyer, confidence: high, source: "WP ja: Hama-rikyu Gardens (Joo 3)",
+     event: "Tokugawa Tsunashige gets reclaimed shore land, the later Hama palace garden",
+     place: "Shiodome",
+     scene: "A LAWYER hands Tokugawa Tsunashige the deed to new shore land at Shiodome, the site of his villa garden."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP ja: Morita-za (Manji 3)",
+     event: "Morita Tarobei opens the Morita-za at Kobiki-cho",
+     place: "Kobiki-cho",
+     scene: "Morita Tarobei cuts the opening rope with a CHEESE knife, and the Morita-za starts its first play in Kobiki-cho."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP ja: Nezu Shrine (Kanbun 2)",
+     event: "Edo meisho-ki, the first printed guide to Edo, is published",
+     place: "Edo",
+     scene: "A CHAIN of famous places, linked page by page, becomes the Edo meisho-ki, the first printed guide to the city."}
+  - {year: 1680, peg: vase, confidence: high, source: "Koto city page; asahi-net (Enpo 8)",
+     event: "Basho moves into his hut at Fukagawa",
+     place: "Fukagawa",
+     scene: "Basho sets a VASE with a banana shoot by the door of his new Fukagawa hut, which takes its name from the plant."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP ja: Ichikawa Danjuro I (Jokyo 2)",
+     event: "Danjuro I plays Sakata Kinpei at the Ichimura-za and fixes the aragoto style",
+     place: "Ichimura-za",
+     scene: "Danjuro I, red-faced as Sakata Kinpei, stamps a giant WAFFLE flat at the Ichimura-za, and Edo's rough aragoto style is born."}
+  - {year: 1686, peg: fish, confidence: medium, source: "WP ja: Kyu-Shiba-rikyu (Jokyo 3; sources vary)",
+     event: "Okubo Tadatomo lays out the Rakujuen garden at Shiba",
+     place: "Shiba",
+     scene: "A FISH leaps in the sea-water pond of Rakujuen, the garden Okubo Tadatomo lays out at his Shiba mansion."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP en: Edo Castle",
+     event: "The Momijiyama library is built in Edo Castle",
+     place: "Momijiyama",
+     scene: "A librarian sets a PALM-leaf sutra on the first shelf of the new Momijiyama library inside Edo Castle."}
+  - {year: 1702, peg: sun, confidence: high, source: "WP ja: Rikugien (Genroku 15)",
+     event: "Yanagisawa Yoshiyasu completes the Rikugien garden at Komagome",
+     place: "Komagome",
+     scene: "Yanagisawa Yoshiyasu watches the SUN set over the hill of Rikugien, finished after seven years at Komagome."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP ja: Yamamura-za (Genroku 16)",
+     event: "Keisei Asama Soga, an early play on the Ako incident, opens at the Yamamura-za",
+     place: "Yamamura-za",
+     scene: "A SUMO wrestler in a ronin's mask stomps across the Yamamura-za stage in Keisei Asama Soga, the first Ako play."}
+  - {year: 1709, peg: soap, confidence: high, source: "WP ja: Hama-rikyu Gardens (Hoei 6)",
+     event: "Shogun Ienobu makes Hama Goten his seaside palace and launches boats there",
+     place: "Hama Goten",
+     scene: "Ienobu greases the boat ramp with SOAP and launches pleasure boats at his new seaside palace, Hama Goten."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP ja: Yamamura-za (Shotoku 3)",
+     event: "Danjuro II first plays Sukeroku at the Yamamura-za",
+     place: "Yamamura-za",
+     scene: "Danjuro II as Sukeroku springs out from behind a TOMB-black umbrella on the Yamamura-za stage."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP ja: Ejima-Ikushima affair; Yamamura-za",
+     event: "The Yamamura-za loses its licence after the Ejima affair; Edo keeps three theatres",
+     place: "Kobiki-cho",
+     scene: "A TOWER of the shogun's inner palace topples onto the Yamamura-za: after the Ejima affair its licence is gone."}
+  # economy
+  - {year: 1620, peg: nose, confidence: high, source: "NTA tax museum (Genna 6)",
+     event: "The shogunate builds the Asakusa rice granaries on the Sumida",
+     place: "Kuramae",
+     scene: "A giant NOSE sniffs fresh rice in the new Asakusa granaries, built on Sumida mud from Torigoe hill."}
+  - {year: 1625, peg: nail, confidence: medium, source: "timeout; tabi-mag (shop tradition)",
+     event: "Tokuemon of Yagenbori mixes the first seven-spice pepper",
+     place: "Yagenbori",
+     scene: "Tokuemon grinds red pepper with a NAIL file at Yagenbori by Ryogoku and mixes the first seven-spice blend."}
+  - {year: 1653, peg: llama, confidence: unverified,
+     event: "Ozu Seizaemon opens his paper shop at Odenma-cho",
+     place: "Odenma-cho",
+     scene: "A LLAMA carries bales of paper into Ozu Seizaemon's new shop at Odenma-cho."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP: Fires in Edo (Meireki 2)",
+     event: "Izumiya digs the first fireproof underground store (anagura) at Nihonbashi",
+     place: "Nihonbashi",
+     scene: "A LEECH burrows under Izumiya's Nihonbashi shop and leaves the first fireproof cellar for his goods."}
+  - {year: 1657, peg: log, confidence: high, source: "WP ja: Kiba (Koto)",
+     event: "After the fire, timber dealers must move their yards to Fukagawa",
+     place: "Fukagawa",
+     scene: "Timber dealers float every LOG across the Sumida to their new yards at Fukagawa."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP ja: Shirokiya (Kanbun 2)",
+     event: "Omura Hikotaro opens the Shirokiya shop at Nihonbashi",
+     place: "Nihonbashi-dori",
+     scene: "Omura Hikotaro hangs a CHAIN of combs and hairpins in the window of his new Shirokiya shop at Nihonbashi."}
+  - {year: 1670, peg: goose, confidence: high, source: "SPF island studies (Kanbun 10)",
+     event: "An Awa tangerine ship bound for Edo is wrecked on Hahajima in the Bonins",
+     place: "Hahajima",
+     scene: "A GOOSE leads the wrecked tangerine ship of Awa to Hahajima, and the crew are the first Japanese on the Bonins."}
+  - {year: 1683, peg: foam, confidence: high, source: "WP ja: Mitsukoshi (Tenna 3)",
+     event: "Echigoya moves from Honcho to Surugacho after a fire",
+     place: "Surugacho",
+     scene: "Wet FOAM still drips from the fire buckets as Mitsui reopens the Echigoya at its new Surugacho site."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP ja: Senso-ji (Jokyo 2)",
+     event: "Shops are first allowed on the approach to Senso-ji, the start of Nakamise",
+     place: "Nakamise",
+     scene: "A WAFFLE stall opens on the approach to Senso-ji: the first Nakamise shops are allowed."}
+  - {year: 1690, peg: bees, confidence: high, source: "yamamotoyama.co.jp (Genroku 3)",
+     event: "Yamamoto Kahei opens the Yamamotoyama tea shop at Nihonbashi",
+     place: "Nihonbashi-dori",
+     scene: "BEES buzz over the tea chests in Yamamoto Kahei's new Yamamotoyama shop at Nihonbashi."}
+  - {year: 1694, peg: bear, confidence: medium, source: "Kobe city sea-trade history (Genroku 7)",
+     event: "Osakaya Ihei joins ten wholesaler groups into the Tokumi-doiya against cargo fraud",
+     place: "Nihonbashi",
+     scene: "A BEAR of a merchant, Osakaya Ihei, hugs ten wholesaler guilds of Nihonbashi into one Tokumi-doiya against cargo fraud."}
+  - {year: 1699, peg: pipe, confidence: high, source: "Ninben company history (Genroku 12)",
+     event: "Takatsu Ihei founds the Ninben dried-bonito business at Nihonbashi",
+     place: "Nihonbashi",
+     scene: "Takatsu Ihei shaves dried bonito with a PIPE-shaped plane on his Nihonbashi stall: the founding of Ninben."}
+  - {year: 1702, peg: sun, confidence: medium, source: "gltjp; intojapanwaraku (Genroku 15, tax record)",
+     event: "The Ozawa sake brewery (Sawanoi) is founded at Sawai in Ome",
+     place: "Ome Sawai",
+     scene: "The SUN warms the Sawai valley in Ome as the Ozawa family's first sake brewery opens."}
+  - {year: 1714, peg: tower, confidence: high, source: "WP ja: Kanda vegetable market (Shotoku 4)",
+     event: "A vegetable office at Kanda Tamachi starts to supply Edo Castle",
+     place: "Kanda Tamachi",
+     scene: "A TOWER of radishes rises at Kanda Tamachi, the new vegetable office that feeds Edo Castle."}
+  # society
+  - {year: 1606, peg: sushi, confidence: medium, source: "WP ja: Hachijo-jima (records give two years)",
+     event: "A submarine eruption off Hachijo makes a new island",
+     place: "Hachijo-jima",
+     scene: "The sea off Hachijo boils like SUSHI rice, and a new volcanic island pushes up through the waves."}
+  - {year: 1612, peg: tongue, confidence: unverified,
+     event: "The kabukimono gang leader Otori Ichibei is executed in Edo",
+     place: "Edo",
+     scene: "Otori Ichibei sticks out his TONGUE at the town magistrate, and the shogunate beheads the kabukimono gang leader."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP ja: Tsukudajima (Kan'ei 3)",
+     event: "Hatamoto Ishikawa gets an island at the river mouth, named Ishikawajima",
+     place: "Ishikawajima",
+     scene: "Ishikawa Hachizaemon eats a NACHO on the island Iemitsu gives him at the river mouth, which takes his name."}
+  - {year: 1643, peg: ram, confidence: high, source: "WP ja: Miyakejima (Kan'ei 20)",
+     event: "Mount Oyama on Miyakejima erupts",
+     place: "Miyakejima",
+     scene: "Lava butts like a RAM down the slopes of Miyakejima as Mount Oyama erupts."}
+  - {year: 1644, peg: warrior, confidence: high, source: "WP ja: Tsukudajima (Shoho 1)",
+     event: "The Settsu fishermen complete and name Tsukudajima island",
+     place: "Tsukudajima",
+     scene: "A fisherman WARRIOR from Settsu stacks the last embankment stone, and the island of Tsukudajima is complete."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP: Fires in Edo (Shoho 3)",
+     event: "Kites are banned after a burning kite falls on the castle's Kitte gate",
+     place: "Kitte gate",
+     scene: "A ROACH rides a burning kite onto Edo Castle's Kitte gate, and two days later the city bans kites."}
+  - {year: 1648, peg: reef, confidence: high, source: "WP: Fires in Edo (Keian 1)",
+     event: "Making fireworks inside the city is banned",
+     place: "Edo",
+     scene: "A stray rocket sets a REEF of wooden roofs alight, and the town magistrate bans making fireworks inside Edo."}
+  - {year: 1648, peg: reef, confidence: medium, source: "WP ja: Edo; env.go.jp (one source a year later)",
+     event: "A town order bans dumping garbage in streets and ditches",
+     place: "Edo",
+     scene: "A REEF of garbage blocks a town ditch, and a new town order bans dumping in streets and drains."}
+  - {year: 1653, peg: llama, confidence: high, source: "WP: Fires in Edo (Joo 2)",
+     event: "Bathhouses may not light fires before the evening",
+     place: "Edo",
+     scene: "A LLAMA stands guard at a bathhouse stove: no bath fire may burn in Edo until six in the evening."}
+  - {year: 1655, peg: lily, confidence: high, source: "env.go.jp white paper; Yokohama city (Meireki 1)",
+     event: "Eitai-ura at Fukagawa becomes Edo's official refuse dump",
+     place: "Eitai-ura",
+     scene: "A LILY sprouts from the first boatload of town refuse tipped at Eitai-ura, Edo's new official dump."}
+  - {year: 1656, peg: leech, confidence: high, source: "Kodaira city; Tokyo urban dev. bureau (Meireki 2)",
+     event: "Ogawa Kurobei founds Ogawa new village on Musashino with Tamagawa water",
+     place: "Kodaira",
+     scene: "A LEECH clings to Ogawa Kurobei's leg as he cuts an inlet from the Tamagawa and founds Ogawa village."}
+  - {year: 1657, peg: log, confidence: disputed, source: "WP ja: Banzuiin Chobei (grave: Keian 3; also Meireki 3)",
+     event: "Hatamoto gang leader Mizuno Jurozaemon kills the town boss Banzuiin Chobei",
+     place: "Mizuno mansion",
+     scene: "Mizuno Jurozaemon traps Banzuiin Chobei in his bathhouse and clubs him with a LOG."}
+  - {year: 1657, peg: log, confidence: medium, source: "bunshun; daily.co.jp (one says a year earlier)",
+     event: "The bath-girl bathhouses (yuna-buro) are banned",
+     place: "Edo",
+     scene: "Town officers bar the door of every bath-girl house in Edo with a LOG."}
+  - {year: 1657, peg: log, confidence: medium, source: "Cabinet Office Meireki report; WP: Edo Castle",
+     event: "After the fire, the Gosanke mansions leave the castle and Fukiage becomes a firebreak",
+     place: "Fukiage",
+     scene: "Porters roll each Gosanke mansion out of the castle on LOG rollers, and Fukiage is left an empty firebreak."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP ja: Kichijoji (Manji 2)",
+     event: "Townsmen burnt out of the Kichijo-ji temple town start to farm Musashino",
+     place: "Kichijoji",
+     scene: "A burnt-out townsman of Kichijo-ji pushes his ELBOW through the Musashino grass and starts the village named after his temple."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP: Fires in Edo (Kanbun 1)",
+     event: "Thatched roofs are banned on new buildings",
+     place: "Edo",
+     scene: "A JET of sparks lands on a thatched roof, and Edo bans thatch on every new house."}
+  - {year: 1661, peg: jet, confidence: medium, source: "WP: Fires in Edo (around Kanbun 1)",
+     event: "The reclamation of Honjo is completed (approximate)",
+     place: "Honjo",
+     scene: "A JET of dredged sand fills the last marsh of Honjo, and the new district east of the Sumida is dry land."}
+  - {year: 1664, peg: cherry, confidence: high, source: "WP ja: Banzuiin Chobei (Kanbun 4)",
+     event: "Mizuno Jurozaemon is ordered to kill himself for coming to court improperly dressed",
+     place: "Hyojosho",
+     scene: "Mizuno Jurozaemon swaggers into court with a CHERRY branch in his loose collar and is ordered to cut his belly."}
+  - {year: 1668, peg: chef, confidence: high, source: "WP: Fires in Edo (Kanbun 8, 1/2)",
+     event: "An arson fire burns much of Edo (Kanbun great fire)",
+     place: "Edo",
+     scene: "A crazed CHEF sets his kitchen alight on purpose, and the Kanbun fire spreads across Edo."}
+  - {year: 1669, peg: ship, confidence: medium, source: "WP ja: Kozukappara; Senju-juku (era Kanbun 9)",
+     event: "Nineteen temples move their cremation grounds to Kozukappara",
+     place: "Kozukappara",
+     scene: "A funeral SHIP carries the cremation fires of nineteen Asakusa and Shitaya temples up the river to Kozukappara."}
+  - {year: 1682, peg: oven, confidence: high, source: "WP: Fires in Edo (Tenna 1, 12/28)",
+     event: "A great fire burns part of Edo at the end of Tenna 1",
+     place: "Edo",
+     scene: "A rice-cake OVEN left burning on the last night of the year sets off a great fire in Edo."}
+  - {year: 1684, peg: fairy, confidence: medium, source: "WP ja: Izu Oshima (Tenna eruption to 1690s)",
+     event: "Izu Oshima begins its long Tenna eruption",
+     place: "Mihara-yama",
+     scene: "A FAIRY of fire dances out of Mihara crater, and Izu Oshima starts years of eruption."}
+  - {year: 1691, peg: boot, confidence: high, source: "Aichi U. paper (Buko nenpyo: Genroku 4)",
+     event: "A measles epidemic spreads through Edo",
+     place: "Edo",
+     scene: "A BOOT of sickness kicks open door after door in Edo as the measles runs through the city."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP ja: Dog kennels of the shogunate (Genroku 8)",
+     event: "The huge Nakano kennel opens for Edo's stray dogs",
+     place: "Nakano",
+     scene: "A BELL clangs at the gate of the huge Nakano kennel as officials herd tens of thousands of strays inside."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP ja: Dog kennels of the shogunate (Genroku 8)",
+     event: "Dog kennels open at Okubo and on Yanagisawa's old Yotsuya mansion",
+     place: "Yotsuya",
+     scene: "A BELL hangs on Yanagisawa's old Yotsuya gate, now a kennel that fills with stray bitches."}
+  - {year: 1703, peg: sumo, confidence: high, source: "WP ja: Izu Oshima (Genroku 16, 11/23)",
+     event: "The Genroku tsunami breaks the Habu crater lake open to the sea",
+     place: "Habu, Izu Oshima",
+     scene: "A SUMO wave throws itself against the rim at Habu and breaks the crater lake open to the sea: a new harbour."}
+  - {year: 1704, peg: sewer, confidence: high, source: "WP: Fires in Edo (Genroku 16, 11/29)",
+     event: "The Mito-sama fire, six days after the earthquake, burns more land than the Meireki fire",
+     place: "Koishikawa",
+     scene: "A SEWER of flame bursts from the Mito mansion at Koishikawa and burns more of Edo than the Meireki fire did."}
+  - {year: 1704, peg: sewer, confidence: high, source: "WP ja: Ichikawa Danjuro I (Genroku 17, 2/19)",
+     event: "The actor Ikushima Hanroku stabs Danjuro I to death on the Ichimura-za stage",
+     place: "Ichimura-za",
+     scene: "Ikushima Hanroku climbs out of a SEWER trapdoor in the Ichimura-za stage and stabs Danjuro I in mid-scene."}
+  - {year: 1712, peg: tongue, confidence: high, source: "WP ja: Miyakejima (Shotoku 2)",
+     event: "Mount Oyama on Miyakejima erupts again",
+     place: "Miyakejima",
+     scene: "A red TONGUE of lava licks down Miyakejima once more in the Shotoku eruption."}
+world_refs:
+  - {year: 1612, event: "Silver mint (Ginza) moves to Edo", cell: east_asia_economy_1500_1800}
+  - {year: 1617, event: "Yoshiwara licensed as Edo's pleasure quarter", cell: east_asia_society_1500_1800}
+  - {year: 1619, event: "Higaki cargo ships start the Osaka-Edo run", cell: east_asia_economy_1500_1800}
+  - {year: 1623, event: "Great Martyrdom of Edo", cell: east_asia_religion_1500_1800}
+  - {year: 1624, event: "Tenkai founds Kan'ei-ji at Ueno", cell: east_asia_religion_1500_1800}
+  - {year: 1630, event: "Hayashi Razan's school land at Shinobugaoka", cell: east_asia_religion_1500_1800}
+  - {year: 1632, event: "Razan's Sensei-den hall at Shinobugaoka", cell: east_asia_religion_1500_1800}
+  - {year: 1636, event: "Kan'ei Tsuho minted in bulk at Edo", cell: east_asia_economy_1500_1800}
+  - {year: 1639, event: "Tokai-ji built in Shinagawa for Takuan", cell: east_asia_religion_1500_1800}
+  - {year: 1637, event: "Tenkai starts printing the Buddhist canon (Kan'ei-ji)", cell: east_asia_religion_1500_1800}
+  - {year: 1641, event: "Oke-machi fire", cell: east_asia_society_1500_1800}
+  - {year: 1643, event: "Daimyo fire brigades in Edo", cell: east_asia_society_1500_1800}
+  - {year: 1646, event: "Christian prison mansion built in Edo", cell: east_asia_religion_1500_1800}
+  - {year: 1649, event: "Keian earthquake damages Edo", cell: east_asia_society_1500_1800}
+  - {year: 1650, event: "Schamberger teaches surgery in Edo", cell: east_asia_science_1500_1800}
+  - {year: 1651, event: "Keian plot of Yui Shosetsu and Marubashi Chuya", cell: east_asia_politics_1500_1800}
+  - {year: 1652, event: "Joo plot to burn Edo crushed", cell: east_asia_politics_1500_1800}
+  - {year: 1653, event: "Work starts on the Tamagawa aqueduct", cell: east_asia_science_1500_1800}
+  - {year: 1657, event: "Great Fire of Meireki", cell: east_asia_society_1500_1800}
+  - {year: 1657, event: "Eko-in founded for the fire dead", cell: east_asia_society_1500_1800}
+  - {year: 1657, event: "Yoshiwara moves to Asakusa as Shin Yoshiwara", cell: east_asia_society_1500_1800}
+  - {year: 1658, event: "Hatamoto fire brigades in Edo", cell: east_asia_society_1500_1800}
+  - {year: 1668, event: "Kameido mint casts the Bunsen coins", cell: east_asia_economy_1500_1800}
+  - {year: 1671, event: "Kawamura Zuiken's eastern sea route for rice to Edo", cell: east_asia_science_1500_1800}
+  - {year: 1673, event: "Mitsui opens the Echigoya in Edo", cell: east_asia_economy_1500_1800}
+  - {year: 1673, event: "Ichikawa Danjuro I on the Edo stage", cell: east_asia_arts_1500_1800}
+  - {year: 1683, event: "Money-exchange houses allowed in Edo", cell: east_asia_economy_1500_1800}
+  - {year: 1683, event: "Great Fire of Tenna", cell: east_asia_society_1500_1800}
+  - {year: 1683, event: "Yaoya Oshichi burned at Suzugamori", cell: east_asia_society_1500_1800}
+  - {year: 1684, event: "Charity sumo at Tomioka Hachiman", cell: east_asia_society_1500_1800}
+  - {year: 1686, event: "Basho's old-pond haiku (Fukagawa)", cell: east_asia_arts_1500_1800}
+  - {year: 1689, event: "Basho sets out for the deep north from Senju", cell: east_asia_arts_1500_1800}
+  - {year: 1690, event: "Hayashi Confucian hall moves to Yushima", cell: east_asia_religion_1500_1800}
+  - {year: 1698, event: "Chokugaku fire", cell: east_asia_society_1500_1800}
+  - {year: 1701, event: "Asano draws his sword on Kira in Edo Castle", cell: east_asia_politics_1500_1800}
+  - {year: 1703, event: "Forty-seven ronin kill Kira and are ordered to die", cell: east_asia_politics_1500_1800}
+  - {year: 1703, event: "Genroku earthquake hits Edo", cell: east_asia_society_1500_1800}
+  - {year: 1703, event: "Street-corner sumo banned in Edo", cell: east_asia_society_1500_1800}
+  - {year: 1707, event: "Fuji Hoei eruption; ash falls on Edo", cell: east_asia_society_1500_1800}
+  - {year: 1709, event: "Arai Hakuseki questions Sidotti in Edo", cell: east_asia_religion_1500_1800}
+  - {year: 1709, event: "Ogyu Sorai opens his Ken'en school at Nihonbashi", cell: east_asia_religion_1500_1800}
+  - {year: 1714, event: "Sidotti dies in his underground cell", cell: east_asia_religion_1500_1800}
+out_refs:
+  - {year: 1603, event: "Tokugawa Ieyasu becomes shogun; Edo is the seat of the shogunate", reason: "shogunal succession"}
+  - {year: 1605, event: "Hidetada becomes shogun", reason: "shogunal succession"}
+  - {year: 1607, event: "First Joseon embassy received by the shogun", reason: "foreign embassy"}
+  - {year: 1609, event: "Rodrigo de Vivero received at Edo Castle", reason: "foreign visit"}
+  - {year: 1623, event: "Iemitsu becomes shogun", reason: "shogunal succession"}
+  - {year: 1632, event: "Former shogun Hidetada dies", reason: "shogunal death"}
+  - {year: 1635, event: "Alternate attendance (sankin-kotai) becomes law", reason: "national edict"}
+  - {year: 1651, event: "Ietsuna becomes shogun", reason: "shogunal succession"}
+  - {year: 1680, event: "Tsunayoshi becomes shogun", reason: "shogunal succession"}
+  - {year: 1687, event: "Laws of Compassion protect dogs", reason: "national edict"}
+  - {year: 1691, event: "Kaempfer's audience with Tsunayoshi", reason: "foreign visit"}
+  - {year: 1695, event: "Genroku recoinage", reason: "national coinage"}
+  - {year: 1709, event: "Ienobu becomes shogun and ends the dog laws", reason: "shogunal succession, national edict"}
+  - {year: 1711, event: "Korean embassy received under Arai Hakuseki's new rules", reason: "foreign embassy"}
+  - {year: 1712, event: "Ienobu dies; the child Ietsugu becomes shogun", reason: "shogunal succession"}
+  - {year: 1714, event: "Shotoku recoinage", reason: "national coinage"}

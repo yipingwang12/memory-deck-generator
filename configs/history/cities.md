@@ -481,3 +481,45 @@ Region: east_asia.
 | `1977_present` | reform, 1989, the Olympics, the megacity | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Tokyo (2026-11-20)
+
+Area: Tokyo Metropolis (user's choice): the 23 special wards, the Tama area (Fuchū, the old Musashi
+provincial capital; Hachiōji; Takao; Ōme; Okutama), and the Izu and Ogasawara islands (Ōshima, Miyake,
+Hachijō, Chichijima, Iwo Jima). Kamakura, Yokohama, Kawasaki and the rest of Kanagawa and Saitama are OUT
+(different prefectures). Region: east_asia.
+
+- Dates: before 1873 Japan used the lunisolar calendar. Give the Gregorian (or Julian, before 1582) year
+  of the event; a date late in a Japanese year can fall in the next CE year. Write the Japanese era date
+  in the source (policy.md "Date conversion").
+- The OUT rule covers each government while the city is its seat: the Tokugawa shogunate (1603–1867) and
+  the imperial and national government (from 1868: the court, the Diet, the cabinet, the ministries, the
+  Supreme Court). Leave out shogunal successions, edicts and laws for the whole country (the seclusion
+  edicts, the sankin-kōtai rule, the Kansei and Tenpō reforms as national acts), imperial accessions and
+  rituals, national laws, elections, cabinet changes and treaties signed in the city. The city's own
+  acts are IN: the Edo machi-bugyō, town fire brigades, the Tokyo prefecture and Metropolitan government,
+  governors. A ruler's castle, palace, temple, shrine, garden, mausoleum or city plan is IN (Edo Castle,
+  Kan'ei-ji, Zōjō-ji, Meiji Shrine, the Imperial Palace, Yasukuni).
+- Ōta Dōkan's castle (1457) and the Late Hōjō hold (to 1590) are local rulers: IN.
+- Main stage (IN as cards): the Great Meireki Fire (1657), the Akō rōnin attack on Kira (1703) and their
+  seppuku, the Great Ansei earthquake (1855), the Sakuradamon incident (1860), the surrender of Edo Castle
+  and the Battle of Ueno (1868), the emperor's arrival (1868–1869), the Hibiya riots (1905), the 1918 rice
+  riots in the city, the Great Kantō earthquake and its massacres (1923), assassinations in the city (Hara
+  1921, Hamaguchi 1930, Inukai 1932, Asanuma 1960), the February 26 incident (1936), the Doolittle raid
+  (1942), the Battle of Iwo Jima and the firebombing of Tokyo (1945), the Kyūjō incident (1945), the
+  surrender in Tokyo Bay (1945), the Occupation and GHQ (1945–1952), the Tokyo Trials (1946–1948), the
+  Anpo protests (1960), the 1964 Olympics, the university struggles (Yasuda Auditorium 1969), the return of
+  the Ogasawara islands (1968), the sarin attack (1995), the 2011 earthquake in the city, the 2021 Olympics.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1457` | Paleolithic and Jōmon shell mounds (Ōmori), Yayoi, Musashi province, Sensō-ji, Masakado, the Edo clan | 35 | ~80 |
+| `1457_1602` | Ōta Dōkan's Edo Castle, the Late Hōjō, Ieyasu's arrival (1590) | 30 | ~70 |
+| `1603_1715` | the shogunate's capital to the Shōtoku era | 45 | ~200 |
+| `1716_1867` | the Kyōhō reforms to the fall of the shogunate | 45 | ~230 |
+| `1868_1922` | Meiji Tokyo to the eve of the earthquake | 45 | ~250 |
+| `1923_1945` | the earthquake, rebuilding, militarism, the war | 45 | ~200 |
+| `1946_1989` | the Occupation, recovery, the Olympics, the bubble | 45 | ~230 |
+| `1990_present` | the bubble's end, the sarin attack, the 2011 earthquake, the 2021 Olympics | 45 | ~200 |
+
+Expected cards are a guide, not a target.
