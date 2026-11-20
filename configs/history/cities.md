@@ -523,3 +523,45 @@ Hachijō, Chichijima, Iwo Jima). Kamakura, Yokohama, Kawasaki and the rest of Ka
 | `1990_present` | the bubble's end, the sarin attack, the 2011 earthquake, the 2021 Olympics | 45 | ~200 |
 
 Expected cards are a guide, not a target.
+
+### Delhi (2026-11-20)
+
+Area: the National Capital Region as decided: the NCT of Delhi (the seven historic cities: Lal Kot and
+Qila Rai Pithora, Siri, Tughlaqabad, Jahanpanah, Firozabad, Purana Qila/Dinpanah, Shahjahanabad; New
+Delhi; Mehrauli; Shahdara) plus Gurugram, Faridabad (Anangpur dam, Surajkund), Noida and Ghaziabad (Loni).
+Panipat, Tarain, Meerut, Agra, Mathura and Sonipat are OUT (outside the area). Region: south_asia.
+
+- Dates: Hijri and Vikram Samvat dates go to the CE year of the event; write the original date in the
+  source (policy.md "Date conversion"). A Persian chronicle year that straddles two CE years → the CE
+  year of the event if known, else medium confidence.
+- The Tomar and Chauhan rulers (to 1192) are local: IN.
+- The OUT rule covers each court while the city is its seat: the Delhi Sultanate (1206–1526, not while
+  it sits at Daulatabad 1327–c.1335 or at Agra under Sikandar and Ibrahim Lodi 1506–1526, when only the
+  city's own events are IN); the Mughal court when seated in Delhi (Humayun 1533–1540 and 1555–1556,
+  Shah Jahan's Shahjahanabad from 1648 to 1857); the British Raj from 1912 (the capital move announced
+  at the 1911 Durbar); the Republic of India from 1947. Leave out their accessions, court rituals,
+  decrees and laws for the whole state, embassies received, Parliament acts, national elections,
+  cabinet changes and treaties. A ruler's fort, palace, mosque, tomb, garden, canal or city plan is IN
+  (the Qutb complex, Tughlaqabad, Humayun's Tomb, the Red Fort, the Jama Masjid, Lutyens' Delhi).
+- Main stage (IN as cards): the Mongol raids on the city (1299, 1303), Timur's sack (1398), Babur's and
+  Humayun's entries, Nadir Shah's massacre (1739), Ahmad Shah Durrani's sacks (1757, 1760), the Maratha
+  and Rohilla seizures (1771, 1788), the Battle of Delhi (1803), the 1857 rising and siege, the Durbars
+  (1877, 1903, 1911), the Hardinge bomb (1912), Bhagat Singh's Assembly bomb (1929), New Delhi's
+  inauguration (1931), the Partition riots and refugee camps (1947), Gandhi's assassination (1948),
+  the Asian Games (1951, 1982), the Emergency demolitions (Turkman Gate 1976), Indira Gandhi's
+  assassination and the anti-Sikh riots (1984), the Uphaar fire (1997), the Parliament attack (2001),
+  the 2005 and 2008 bombings, the Commonwealth Games (2010), the 2012 gang rape and protests, the 2019
+  Jamia/Shaheen Bagh protests, the 2020 riots, the farmers' sit-in at the borders (2020–2021).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1060` | prehistoric quartzite tools, PGW at Purana Qila, the Ashokan edict, the Iron Pillar, Anangpur and Surajkund | 30 | ~60 |
+| `1060_1205` | the Tomar Lal Kot, Prithviraj Chauhan's Qila Rai Pithora, the Ghurid conquest, the Qutb begins | 30 | ~60 |
+| `1206_1525` | the Delhi Sultanate: Mamluk, Khalji, Tughlaq, Sayyid, Lodi | 45 | ~200 |
+| `1526_1707` | Babur to Aurangzeb, Sher Shah, Shahjahanabad | 45 | ~180 |
+| `1708_1857` | the later Mughals, the sacks, the Marathas, the British Resident, 1857 | 45 | ~200 |
+| `1858_1946` | the Raj, the Durbars, New Delhi, the national movement | 45 | ~220 |
+| `1947_1983` | Partition, the refugee city, the Emergency, the Asian Games | 45 | ~200 |
+| `1984_present` | 1984, the metro, the NCR boom, attacks, protests | 45 | ~220 |
+
+Expected cards are a guide, not a target.
