@@ -347,6 +347,11 @@ Vatican City is inside the area. Region: western_europe.
   Building a basilica is IN; a ceremony in it is OUT, as for Paris.
 - The traditional dates of the kings and of the founding are legendary (Legendary dates): OUT. Cards for
   the regal period come from archaeology (Latial culture, Forum drainage, the first temples).
+- Republican dates known only from an ancient historian (Livy, Dionysius, Plutarch; added 2026-11-21): the
+  ancient text, or a standard year-by-year listing of it (attalus.org, Broughton's Magistrates via a
+  summary page, a Wikipedia article citing the passage), counts as the source. Use `medium`, keep
+  `(traditional date)` in the event for the early Republic (before the Gallic sack), and cite the passage
+  (`"Livy 3.44-48 (attalus.org)"`). Such a card is not `unverified`.
 
 | era slug | years | searches | expected cards |
 |---|---|---|---|
