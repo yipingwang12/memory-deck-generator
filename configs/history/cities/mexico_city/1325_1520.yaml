@@ -1,0 +1,310 @@
+# City: Mexico City x 1325 to 1520 (Tenochtitlan, Tlatelolco, Texcoco and the Triple Alliance). DRAFT 2026-11-21.
+# Area: Valley of Mexico metro (CDMX, all 16 boroughs, and the State of Mexico municipalities of the valley:
+# Texcoco, Huexotla, Tenayuca, Tepexpan, Acolman, Cuautitlan, Chalco, Xaltocan ...). Tula, Toluca, Cholula OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Accessions, royal births and deaths
+# and campaigns far from the valley -> out_refs. World-grid events (latin_america cells) -> world_refs.
+# Dates: memory pass + web check (31 of 45 searches; no unauthorised book copies). Mexica year names are converted
+# with the correlation each source uses; chronicle variants -> disputed with both years in source.
+# Main sources: wikipedia.org (Tenochtitlan, Templo Mayor, Nezahualcoyotl, Tlatelolco, Moctezuma I and II,
+# Chimalpopoca, Chapultepec, Xochimilco, Iztapalapa, Palace of Axayacatl, La Noche Triste), UNAM Noticonquista,
+# INAH pages, UCSD Aztec chronology (D. K. Jordan), Gaceta UNAM, World History Encyclopedia.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year (approximate round years: first two digits).
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1376, peg: cage, confidence: medium, source: "UCSD Aztec chronology; warhistory.org: Chalco war from 1376",
+     event: "Chalco war begins: the Mexica fight the Chalca for their Tepanec masters",
+     place: "Chalco",
+     scene: "A bamboo CAGE on the Chalco shore traps the first Chalca captives of the Mexica, and the long Chalco war starts."}
+  - {year: 1376, peg: cage, confidence: medium, source: "WP: Xochimilco",
+     event: "Xochimilco: Tenochtitlan attacks the town, which calls Azcapotzalco for help and must pay it tribute",
+     place: "Xochimilco",
+     scene: "Mexica canoes try to drag a CAGE over Xochimilco, but Tepanec allies lock the town inside it as a tribute payer."}
+  - {year: 1395, peg: bell, confidence: disputed, source: "WP: Xaltocan c. 1395; UCSD chronology 1407",
+     event: "Xaltocan: Cuauhtitlan, the Tepanecs and the Mexica take the Otomi island town",
+     place: "Xaltocan",
+     scene: "A great BELL rings over the Xaltocan lagoon as Cuauhtitlan, Tepanec and Mexica warriors storm the Otomi island."}
+  - {year: 1411, peg: tattoo, confidence: low, source: "UCSD Aztec chronology",
+     event: "Chalco: the Mexica capture the town, but other towns set it free again",
+     place: "Chalco",
+     scene: "Mexica warriors TATTOO their glyph on the Chalco gate, but allied towns scrub the TATTOO off and free Chalco."}
+  - {year: 1415, peg: doll, confidence: medium, source: "WP: Nezahualcoyotl (war c. 1415; Huexotla meeting)",
+     event: "Tepanec war on Texcoco begins; at Huexotla Ixtlilxochitl names Nezahualcoyotl crown prince",
+     place: "Huexotla",
+     scene: "At Huexotla, Ixtlilxochitl crowns a small DOLL of his son Nezahualcoyotl as heir while Tepanec war drums start."}
+  - {year: 1423, peg: gnome, confidence: medium, source: "WP: Nezahualcoyotl (Alva Ixtlilxochitl)",
+     event: "Nezahualcoyotl's aunts win his release, and he may live in Tenochtitlan",
+     place: "Tenochtitlan",
+     scene: "Two aunts carry a GNOME in a reed basket through Tenochtitlan's gate: the exiled Nezahualcoyotl may live in the city."}
+  - {year: 1426, peg: nacho, confidence: low, source: "UCSD Aztec chronology",
+     event: "Tlatelolco: Maxtla's killers murder the ruler Tlacateotl",
+     place: "Tlatelolco",
+     scene: "Maxtla's killer hides an obsidian blade inside a NACHO and serves it to Tlacateotl, ruler of Tlatelolco."}
+  - {year: 1427, peg: ink, confidence: disputed, source: "WP: Chimalpopoca 1427; UCSD chronology 1426",
+     event: "Tenochtitlan: Maxtla of Azcapotzalco has the ruler Chimalpopoca killed",
+     place: "Tenochtitlan",
+     scene: "Maxtla's agent pours black INK over Chimalpopoca's name glyph in Tenochtitlan, and the young ruler dies that night."}
+  - {year: 1428, peg: knife, confidence: medium, source: "UCSD Aztec chronology; Mexica podcast ep. 11",
+     event: "Tenochtitlan: Maxtla's Tepanec army besieges the island city",
+     place: "Tenochtitlan",
+     scene: "A giant Tepanec KNIFE cuts every causeway to Tenochtitlan, and Maxtla's army rings the island city."}
+  - {year: 1428, peg: knife, confidence: disputed, source: "INAH Anales: Coyoacan 1428; WP Coyoacan 1429-1431",
+     event: "Coyoacan: Itzcoatl and his allies conquer the Tepanec town",
+     place: "Coyoacan",
+     scene: "Itzcoatl drives a Mexica KNIFE into the Tepanec palace door at Coyoacan, and the town falls."}
+  - {year: 1428, peg: knife, confidence: disputed, source: "WP: Nezahualcoyotl 1428; UCSD chronology 1426",
+     event: "Texcoco: Nezahualcoyotl takes back the Acolhua lands from the Tepanecs",
+     place: "Texcoco",
+     scene: "Nezahualcoyotl cuts the Tepanec banner from Texcoco's palace with a flint KNIFE and takes back his father's city."}
+  - {year: 1516, peg: dish, confidence: medium, source: "WP: Ixtlilxochitl II; Moctezuma II (succession)",
+     event: "Texcoco: after Nezahualpilli's death, Ixtlilxochitl revolts against Cacama; civil war splits the realm in three",
+     place: "Texcoco",
+     scene: "Nezahualpilli's sons smash the royal DISH of Texcoco into three pieces, and Ixtlilxochitl takes one piece to war."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "Noticonquista (Kruell); CDMX: Macroplaza Cuitlahuac",
+     event: "Iztapalapa: Cuitlahuac receives Cortes in his palace and garden the day before Tenochtitlan",
+     place: "Iztapalapa",
+     scene: "Cuitlahuac plays a TUBA of welcome in his Iztapalapa garden, and Cortes sleeps one night among the cedar halls."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "WP: Palace of Axayacatl",
+     event: "Spaniards lodge in the palace of Axayacatl and turn it into a fort",
+     place: "Palace of Axayacatl",
+     scene: "Spanish soldiers fill a TUBA with gunpowder and set it on the roof of Axayacatl's palace, now their fort."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "WP: Qualpopoca; AHA: Moctezuma captive",
+     event: "Qualpopoca and his captains are burned at the stake before the Templo Mayor",
+     place: "Templo Mayor plaza",
+     scene: "A burning TUBA blares in the Templo Mayor plaza while Qualpopoca and his captains burn at the stake."}
+  - {year: 1520, peg: nose, confidence: medium, source: "WP: Cacamatzin; Moctezuma II (early 1520)",
+     event: "Cacama of Texcoco plots against the Spaniards and is seized in his own palace",
+     place: "Texcoco",
+     scene: "Moctezuma's men grab Cacama by the NOSE in his Texcoco palace and drag the plotting king to Spanish chains."}
+  - {year: 1520, peg: nose, confidence: medium, source: "WP: La Noche Triste; Palace of Axayacatl",
+     event: "After the Toxcatl killings, the Mexica besiege the Spaniards in the palace of Axayacatl",
+     place: "Palace of Axayacatl",
+     scene: "Mexica warriors press their NOSE to every wall of Axayacatl's palace and starve the trapped Spaniards of food."}
+  - {year: 1520, peg: nose, confidence: medium, source: "Gaceta UNAM (24 June); El Universal (25 June)",
+     event: "Cortes rides back into Tenochtitlan along the Tlacopan causeway",
+     place: "Tlacopan causeway",
+     scene: "Cortes's horse leads with its NOSE along the empty Tlacopan causeway as he rides back into silent Tenochtitlan."}
+  - {year: 1520, peg: nose, confidence: medium, source: "World History Encyclopedia: Fall of Tenochtitlan",
+     event: "Street war: Cortes storms the temple of Yopico and sets it on fire",
+     place: "Yopico temple",
+     scene: "A flaming NOSE of a torch pushes up the Yopico temple steps, and Cortes burns the shrine above the city."}
+  - {year: 1520, peg: nose, confidence: medium, source: "Noticonquista (Kruell: Cuitlahuac e Iztapalapa)",
+     event: "Cortes frees Cuitlahuac to calm the city, but he leads the Mexica attack instead",
+     place: "Palace of Axayacatl",
+     scene: "Cortes unties a rope from Cuitlahuac's NOSE to send him as peacemaker; Cuitlahuac runs out and leads the attack."}
+  - {year: 1520, peg: nose, confidence: medium, source: "WP: La Noche Triste; Cacamatzin",
+     event: "Cacama and the Mexica prince Chimalpopoca die during the Spanish flight",
+     place: "Tlacopan causeway",
+     scene: "In the night flight on the causeway, a Spanish blade cuts the NOSE ring of the captive Cacama, and he dies."}
+  - {year: 1520, peg: nose, confidence: high, source: "Noticonquista (Inoue: Texcoco); Cortes, Cartas",
+     event: "Cortes enters Texcoco on the last day of the year and makes it his base; Coanacoch flees",
+     place: "Texcoco",
+     scene: "Cortes pokes his NOSE into empty Texcoco on the last night of the year and makes the palace his base."}
+  # science
+  - {year: 1426, peg: nacho, confidence: high, source: "WP: Chimalpopoca; UCSD Aztec chronology",
+     event: "Tezozomoc helps Chimalpopoca build a wooden aqueduct from Chapultepec",
+     place: "Chapultepec",
+     scene: "Tezozomoc lays a long wooden trough shaped like a NACHO from Chapultepec, and spring water runs to Tenochtitlan."}
+  - {year: 1429, peg: knob, confidence: disputed, source: "WP: Iztapalapa 1429; CDMX, Mexico Desconocido 1432",
+     event: "Itzcoatl begins the Iztapalapa causeway with Xochimilca labour and the Xoloc fort",
+     place: "Iztapalapa causeway",
+     scene: "Xochimilca workers turn a stone KNOB at each step, and the Iztapalapa causeway grows across the lake to Xoloc."}
+  - {year: 1446, peg: roach, confidence: low, source: "Chilango: Avenida Tlahuac history",
+     event: "Causeway joins the island town of Cuitlahuac (Tlahuac) to Iztapalapa",
+     place: "Tlahuac",
+     scene: "A giant ROACH lies down in the lake and becomes the causeway from Cuitlahuac island to Iztapalapa."}
+  - {year: 1449, peg: rope, confidence: disputed, source: "WP: Nezahualcoyotl c. 1445/1449; WP Tenochtitlan c. 1453",
+     event: "Dike of Nezahualcoyotl: a long stone and timber dike splits fresh water from the salt lake",
+     place: "Lake Texcoco",
+     scene: "Nezahualcoyotl stretches a ROPE across Lake Texcoco, and a stone dike rises along it to keep salt water out."}
+  - {year: 1506, peg: sushi, confidence: medium, source: "WP: Moctezuma II",
+     event: "Moctezuma II builds a new aqueduct from Chapultepec to Tenochtitlan and Tlatelolco",
+     place: "Chapultepec",
+     scene: "A row of SUSHI rolls forms a hollow stone pipe from Chapultepec, and fresh water flows to both island cities."}
+  # religion
+  - {year: 1376, peg: cage, confidence: medium, source: "WP: Tlatelolco (altepetl), Cuacuauhpitzahuac 1376-1417",
+     event: "Tlatelolco: the first two stages of the main pyramid rise (approximate)",
+     place: "Tlatelolco",
+     scene: "Tlatelolco builders stack a CAGE of stone blocks twice over, and the twin city's first pyramid stands."}
+  - {year: 1417, peg: dog, confidence: medium, source: "WP: Tlatelolco (altepetl), Tlacateotl 1417-1428",
+     event: "Tlatelolco: the third stage of the main pyramid is built (approximate)",
+     place: "Tlatelolco",
+     scene: "A stone DOG carries mortar up the Tlatelolco pyramid and buries the old temple under a third shell."}
+  - {year: 1428, peg: knife, confidence: medium, source: "WP: Tlatelolco (altepetl), Cuauhtlatoa 1428-1460",
+     event: "Tlatelolco: the fourth and fifth stages of the main pyramid are built (approximate)",
+     place: "Tlatelolco",
+     scene: "Cuauhtlatoa carves two new stairways into the Tlatelolco pyramid with an obsidian KNIFE, its fourth and fifth shells."}
+  - {year: 1460, peg: cheese, confidence: medium, source: "WP: Tlatelolco (altepetl), Moquihuix 1460-1473",
+     event: "Tlatelolco: Moquihuix builds the sixth stage of the main pyramid (approximate)",
+     place: "Tlatelolco",
+     scene: "Moquihuix spreads a sixth layer over the Tlatelolco pyramid like melted CHEESE, the last stage before his fall."}
+  - {year: 1502, peg: sun, confidence: low, source: "Grunge/INAH plaque: Moctezuma's seventh shell",
+     event: "Templo Mayor: Moctezuma II begins the seventh and last stage (approximate)",
+     place: "Templo Mayor",
+     scene: "Moctezuma II sets a stone SUN on top of the Templo Mayor as the cap of its seventh and last shell."}
+  - {year: 1507, peg: ski, confidence: high, source: "INAH; CDMX Museo Fuego Nuevo; WP Iztapalapa",
+     event: "Huixachtecatl: the last New Fire ceremony is drilled on the hill",
+     place: "Cerro de la Estrella",
+     scene: "A priest drills fire with a wooden SKI on the Huixachtecatl summit: the last New Fire before the conquest."}
+  - {year: 1507, peg: ski, confidence: medium, source: "WP: Iztapalapa; CDMX: Museo Fuego Nuevo",
+     event: "Huixachtecatl: Moctezuma II builds the Ayauhcalli temple on the summit for the New Fire",
+     place: "Cerro de la Estrella",
+     scene: "Workers drag temple stones up the Huixachtecatl slope on a SKI, and the Ayauhcalli rises on the summit."}
+  - {year: 1507, peg: ski, confidence: medium, source: "Ancient History Sites; Time Out: Tenayuca",
+     event: "Tenayuca: the double pyramid gets its last enlargement",
+     place: "Tenayuca",
+     scene: "Masons slide a final layer of stone down a SKI ramp over the Tenayuca pyramid, its last enlargement."}
+  - {year: 1519, peg: tuba, confidence: medium, source: "WP: Templo Mayor (14 Nov 1519); catholic.net",
+     event: "Cortes has a cross and an image of the Virgin set on the Templo Mayor",
+     place: "Templo Mayor",
+     scene: "A Spanish TUBA blasts on the Templo Mayor summit as soldiers set up a cross and an image of the Virgin."}
+  - {year: 1519, peg: tuba, confidence: low, source: "Rubial (Revista UNAM), Pareja chronicle; sources differ",
+     event: "First Mass in Tenochtitlan at a chapel in the palace of Axayacatl",
+     place: "Palace of Axayacatl",
+     scene: "Friar Olmedo uses a TUBA bell to call soldiers to the first Mass in a chapel inside Axayacatl's palace."}
+  # arts
+  - {year: 1425, peg: nail, confidence: low, source: "WP: Chapultepec (the 1420s)",
+     event: "Chapultepec: Nezahualcoyotl builds the first palace on the hill (approximate)",
+     place: "Chapultepec",
+     scene: "Young Nezahualcoyotl hammers the first NAIL into a palace beam on Chapultepec hill among the cypress trees."}
+  - {year: 1460, peg: cheese, confidence: medium, source: "Google Arts / MNA: Piedra del Ex Arzobispado 1440-1481",
+     event: "Stone of Motecuhzoma I: a great sacrificial disc carved with conquest scenes (approximate)",
+     place: "Sacred Precinct",
+     scene: "Sculptors carve a disc like a huge wheel of CHEESE with eleven conquest scenes: the Stone of Motecuhzoma I."}
+  - {year: 1465, peg: jelly, confidence: medium, source: "WP: Chapultepec",
+     event: "Chapultepec: Moctezuma I has his portrait carved into the rock at the foot of the hill",
+     place: "Chapultepec",
+     scene: "A sculptor presses a JELLY mould against the Chapultepec cliff, and Moctezuma I's face stays carved in the rock."}
+  - {year: 1479, peg: cowboy, confidence: medium, source: "WP: Palace of Axayacatl (finished by 1479)",
+     event: "The palace of Axayacatl is finished west of the Sacred Precinct",
+     place: "Palace of Axayacatl",
+     scene: "A COWBOY ropes the last roof beam into place, and Axayacatl's palace stands complete beside the Sacred Precinct."}
+  - {year: 1502, peg: sun, confidence: high, source: "National Geographic; La Jornada: 10 Rabbit glyph",
+     event: "Tlaltecuhtli monolith: the largest Mexica sculpture is carved with the date Ten Rabbit",
+     place: "Templo Mayor",
+     scene: "The SUN sets as sculptors cut the Ten Rabbit glyph into the huge Tlaltecuhtli earth-goddess slab."}
+  - {year: 1507, peg: ski, confidence: medium, source: "Umberger 2010 (Caso); WP: Teocalli of the Sacred War",
+     event: "Teocalli of the Sacred War: a stone temple model with Moctezuma II and the New Fire date",
+     place: "Sacred Precinct",
+     scene: "A sculptor slides a little stone temple off a SKI: the Teocalli, with Moctezuma II beside the sun disc."}
+  - {year: 1517, peg: dog, confidence: low, source: "WP: Casas Nuevas de Moctezuma (two years before Spaniards)",
+     event: "Casas Nuevas: Moctezuma II builds his new palace with gardens and a zoo (approximate)",
+     place: "National Palace site",
+     scene: "A jaguar and a DOG share a cage in the zoo of the Casas Nuevas, Moctezuma II's newly built palace."}
+  # economy
+  - {year: 1428, peg: knife, confidence: medium, source: "WP: Azcapotzalco",
+     event: "Azcapotzalco: the ruined Tepanec capital becomes a slave market",
+     place: "Azcapotzalco",
+     scene: "A trader uses a KNIFE to cut the ropes of captives sold in the ruins of Azcapotzalco, now a slave market."}
+  - {year: 1519, peg: tuba, confidence: high, source: "Noticonquista (Davila: mercado de Tlatelolco); Bernal Diaz",
+     event: "Cortes and his men tour the great market of Tlatelolco",
+     place: "Tlatelolco market",
+     scene: "A Spanish soldier trades his TUBA for cacao beans in the vast Tlatelolco market, larger than any in Rome."}
+  # society
+  - {year: 1352, peg: lion, confidence: medium, source: "WP: Xochimilco",
+     event: "Xochimilco: the ruler Caxtoltzin moves the town onto the island of Tlilan",
+     place: "Xochimilco",
+     scene: "A LION swims across the Xochimilco lagoon carrying Caxtoltzin, who moves his whole town onto Tlilan island."}
+  - {year: 1443, peg: ram, confidence: medium, source: "WP: Nezahualcoyotl (Tira de Tepechpan)",
+     event: "Tepechpan: lord Cuacuauhtzin dies in war, and Nezahualcoyotl marries his bride Azcalxochitzin",
+     place: "Tepechpan",
+     scene: "A RAM charges Cuacuauhtzin of Tepechpan into a fatal battle, and Nezahualcoyotl leads away his bride Azcalxochitzin."}
+  - {year: 1446, peg: roach, confidence: high, source: "WP: Moctezuma I; Mexica podcast (locusts)",
+     event: "Locust swarm eats the maize of the Valley of Mexico",
+     place: "Valley of Mexico",
+     scene: "A cloud of locusts big as ROACH swarms strips every maize field in the valley around Tenochtitlan."}
+  - {year: 1499, peg: pipe, confidence: low, source: "EcuRed; WHE: Ahuitzotl (Duran)",
+     event: "Coyoacan: Ahuitzotl has the ruler Tzotzomatzin killed for his warning against the Acuecuexco aqueduct",
+     place: "Coyoacan",
+     scene: "Tzotzomatzin of Coyoacan blocks the Acuecuexco PIPE with his hand to warn of flood, and Ahuitzotl has him killed."}
+  - {year: 1503, peg: sumo, confidence: low, source: "UCSD Aztec chronology",
+     event: "Flood in Tenochtitlan",
+     place: "Tenochtitlan",
+     scene: "A SUMO wrestler falls into Lake Texcoco, and the wave floods the streets of Tenochtitlan."}
+  - {year: 1505, peg: seal, confidence: medium, source: "WP: Moctezuma II",
+     event: "Drought: crops fail, and famine lasts three years",
+     place: "Tenochtitlan",
+     scene: "A SEAL flops on the cracked dry bed of the chinampa canals, and famine starts for three years."}
+  - {year: 1514, peg: tower, confidence: low, source: "WP: Moctezuma II (snowstorms)",
+     event: "Snowstorms destroy crops and houses",
+     place: "Valley of Mexico",
+     scene: "Snow piles into a white TOWER on the chinampas and crushes the maize and the reed houses."}
+world_refs:
+  - {year: 1325, event: "The Mexica found Tenochtitlan on an island in Lake Texcoco", cell: latin_america_politics_500_1500}
+  - {year: 1325, event: "First shrine to Huitzilopochtli", cell: latin_america_religion_500_1500}
+  - {year: 1337, event: "Dissident Mexica found Tlatelolco", cell: latin_america_politics_500_1500}
+  - {year: 1337, event: "The Acolhua make Texcoco their capital", cell: latin_america_politics_500_1500}
+  - {year: 1351, event: "New Fire ceremony", cell: latin_america_religion_500_1500}
+  - {year: 1367, event: "Tezozomoc becomes ruler of Azcapotzalco", cell: latin_america_politics_500_1500}
+  - {year: 1375, event: "Second Templo Mayor with twin shrines", cell: latin_america_religion_500_1500}
+  - {year: 1376, event: "Acamapichtli first tlatoani of Tenochtitlan", cell: latin_america_politics_500_1500}
+  - {year: 1396, event: "Huitzilihuitl becomes tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1400, event: "Mexica schools: telpochcalli and calmecac", cell: latin_america_society_500_1500}
+  - {year: 1403, event: "New Fire ceremony", cell: latin_america_religion_500_1500}
+  - {year: 1409, event: "Ixtlilxochitl I succeeds at Texcoco", cell: latin_america_politics_500_1500}
+  - {year: 1414, event: "Ixtlilxochitl I claims the title Lord of the Chichimecs", cell: latin_america_politics_500_1500}
+  - {year: 1417, event: "Chimalpopoca becomes tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1418, event: "Chapultepec aqueduct begun", cell: latin_america_science_500_1500}
+  - {year: 1418, event: "Tezozomoc defeats Texcoco and kills Ixtlilxochitl I", cell: latin_america_politics_500_1500}
+  - {year: 1426, event: "Maxtla seizes Azcapotzalco", cell: latin_america_politics_500_1500}
+  - {year: 1427, event: "Itzcoatl becomes tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1427, event: "Third Templo Mayor begun", cell: latin_america_religion_500_1500}
+  - {year: 1428, event: "Triple Alliance destroys Azcapotzalco", cell: latin_america_politics_500_1500}
+  - {year: 1428, event: "Commoners swear to serve the nobles if they win", cell: latin_america_society_500_1500}
+  - {year: 1430, event: "Itzcoatl conquers Xochimilco", cell: latin_america_politics_500_1500}
+  - {year: 1430, event: "Itzcoatl and Tlacaelel burn the old books", cell: latin_america_religion_500_1500}
+  - {year: 1431, event: "Nezahualcoyotl crowned at Texcoco", cell: latin_america_politics_500_1500}
+  - {year: 1431, event: "Third Templo Mayor staircase with Four Reed", cell: latin_america_religion_500_1500}
+  - {year: 1432, event: "Itzcoatl conquers Mixquic", cell: latin_america_politics_500_1500}
+  - {year: 1433, event: "Itzcoatl conquers Cuitlahuac", cell: latin_america_politics_500_1500}
+  - {year: 1440, event: "Moctezuma I elected tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1440, event: "Fourth Templo Mayor begun", cell: latin_america_religion_500_1500}
+  - {year: 1446, event: "Open war between the Mexica and Chalco", cell: latin_america_politics_500_1500}
+  - {year: 1449, event: "Flood destroys the Chapultepec aqueduct", cell: latin_america_science_500_1500}
+  - {year: 1450, event: "Texcotzingo gardens and baths", cell: latin_america_arts_500_1500}
+  - {year: 1450, event: "Moctezuma I's dress laws", cell: latin_america_society_500_1500}
+  - {year: 1450, event: "Frost begins the great famine", cell: latin_america_society_500_1500}
+  - {year: 1454, event: "Famine of One Rabbit at its worst", cell: latin_america_society_500_1500}
+  - {year: 1455, event: "New Fire ceremony after the famine", cell: latin_america_religion_500_1500}
+  - {year: 1465, event: "Moctezuma I conquers Chalco", cell: latin_america_politics_500_1500}
+  - {year: 1465, event: "Texcoco: temple to Tloque Nahuaque", cell: latin_america_religion_500_1500}
+  - {year: 1466, event: "Nezahualcoyotl rebuilds the Chapultepec aqueduct", cell: latin_america_science_500_1500}
+  - {year: 1469, event: "Axayacatl becomes tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1469, event: "House of the Eagle Warriors", cell: latin_america_religion_500_1500}
+  - {year: 1472, event: "Nezahualcoyotl dies; Nezahualpilli elected", cell: latin_america_politics_500_1500}
+  - {year: 1473, event: "Coyolxauhqui Stone", cell: latin_america_arts_500_1500}
+  - {year: 1473, event: "Battle of Tlatelolco", cell: latin_america_politics_500_1500}
+  - {year: 1475, event: "Earthquake in Tenochtitlan", cell: latin_america_society_500_1500}
+  - {year: 1479, event: "Song of the Women of Chalco", cell: latin_america_arts_500_1500}
+  - {year: 1479, event: "Aztec Sun Stone carved", cell: latin_america_science_500_1500}
+  - {year: 1481, event: "Tizoc elected tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1481, event: "Fifth Templo Mayor", cell: latin_america_religion_500_1500}
+  - {year: 1484, event: "Stone of Tizoc", cell: latin_america_arts_500_1500}
+  - {year: 1486, event: "Tizoc dies; Ahuitzotl tlatoani", cell: latin_america_politics_500_1500}
+  - {year: 1486, event: "Tizoc restores the Chalco kingships", cell: latin_america_politics_500_1500}
+  - {year: 1486, event: "Huey Tzompantli built", cell: latin_america_religion_500_1500}
+  - {year: 1487, event: "Ahuitzotl dedicates the enlarged Templo Mayor", cell: latin_america_religion_500_1500}
+  - {year: 1491, event: "Coatlicue statue", cell: latin_america_arts_500_1500}
+  - {year: 1499, event: "Acuecuexco aqueduct floods Tenochtitlan", cell: latin_america_society_500_1500}
+  - {year: 1519, event: "Cortes enters Tenochtitlan and meets Moctezuma", cell: latin_america_politics_1500_1800}
+  - {year: 1519, event: "Cortes takes Moctezuma hostage", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Toxcatl massacre", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Moctezuma dies as a captive", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Noche Triste", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Battle of Otumba", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Cuitlahuac becomes ruler", cell: latin_america_politics_1500_1800}
+  - {year: 1520, event: "Smallpox epidemic; Cuitlahuac dies", cell: latin_america_society_1500_1800}
+out_refs:
+  - {year: 1372, event: "Cuacuauhpitzahuac becomes first ruler of Tlatelolco", reason: "accession"}
+  - {year: 1402, event: "Nezahualcoyotl is born at Texcoco", reason: "royal birth"}
+  - {year: 1428, event: "Totoquihuaztli first tlatoani of Tlacopan", reason: "accession"}
+  - {year: 1460, event: "Moquihuix becomes ruler of Tlatelolco", reason: "accession"}
+  - {year: 1465, event: "Nezahualpilli is born", reason: "royal birth"}
+  - {year: 1475, event: "Itzquauhtzin installed as governor of Tlatelolco", reason: "accession"}
+  - {year: 1476, event: "Cuitlahuac is born", reason: "royal birth"}
+  - {year: 1487, event: "Tlacaelel dies", reason: "court death"}
+  - {year: 1502, event: "Ahuitzotl dies; Moctezuma II becomes tlatoani", reason: "royal death and accession"}
+  - {year: 1504, event: "Wars between the Mexica and Tlaxcala begin", reason: "campaign outside the valley"}
+  - {year: 1515, event: "Nezahualpilli dies; Cacama elected at Texcoco", reason: "royal death and accession"}
+  - {year: 1519, event: "Tetlepanquetzal becomes tlatoani of Tlacopan", reason: "accession"}

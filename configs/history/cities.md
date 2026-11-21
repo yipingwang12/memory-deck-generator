@@ -608,3 +608,52 @@ Princeton and Monmouth are OUT. Region: north_america.
 | `2001_present` | 9/11, rebuilding, Bloomberg, Sandy, COVID | 45 | ~220 |
 
 Expected cards are a guide, not a target.
+
+### Mexico City (2026-11-20)
+
+Area: the Valley of Mexico metro as decided: Mexico City (all 16 boroughs: Xochimilco, Tlalpan with Cuicuilco,
+Milpa Alta, Coyoacán and the rest) and the State of Mexico municipalities of the valley
+(Teotihuacan and San Juan Teotihuacán, Texcoco, Tenayuca/Tlalnepantla, Naucalpan, Ecatepec, Nezahualcóyotl,
+Chalco, Tepotzotlán, Tlatilco, Tepexpan, Huexotla, Acolman, Cuautitlán). Tula, Toluca, Puebla, Cholula,
+Cuernavaca, Pachuca and Veracruz are OUT. Region: latin_america.
+
+- Dates: before the Gregorian switch in New Spain (1583–1584) give the Julian date with the CE year.
+  Convert Mexica xiuhpohualli year-names (e.g. 2 Reed) to CE years with the correlation the source uses;
+  where sources differ (e.g. founding 1325 vs 1345, Tlatelolco 1337) use the common one and mark the card
+  disputed with the other in the source.
+- Archaeological dates: follow cities.md "Archaeological dates" (calibrated BCE/CE; uncalibrated BP only →
+  disputed).
+- The Mexica rulers of Tenochtitlan, the rulers of Tlatelolco and Texcoco (Nezahualcóyotl) and the Triple
+  Alliance are local and IN (accessions of tlatoque are court ritual and OUT as accessions, but wars,
+  buildings, floods, dikes, temple stages, the New Fire ceremony on Huixachtlan/Cerro de la Estrella are IN).
+  Campaigns far from the valley are OUT.
+- The OUT rule covers each government while the city is its seat: the Viceroyalty of New Spain
+  (1535–1821: viceroys' acts, laws and decrees for the whole of New Spain; viceroys' arrivals and
+  accessions); the Audiencias (1527–1535, acts for all New Spain); the national governments from 1821
+  (empire, republic, the Second Empire 1864–1867): national laws, constitutions, presidential
+  inaugurations, national elections. Acts about the city itself are IN (the 1521 traza, the drainage of the
+  valley (Desagüe, Gran Canal), the city ayuntamiento, Federal District creation 1824 and its changes, the
+  1928 abolition of municipalities, the 1997 first elected head of government, the 2016 constitution and
+  the CDMX name). The Catholic Church: archbishops' consecrations and church councils for all of New Spain
+  are OUT; cathedrals, basilicas, convents, the Inquisition's autos-de-fé in the city are IN.
+- Main stage (IN as cards): the siege and fall of Tenochtitlan (1520–1521, La Noche Triste, the Toxcatl
+  massacre), the 1629 great flood, the 1624 and 1692 riots, Hidalgo at Monte de las Cruces (1810),
+  Iturbide's entry (1821), the Parián riot (1828), the Battles of
+  Churubusco, Molino del Rey and Chapultepec and the US occupation (1847–1848), the French entry (1863),
+  the Republic's return (1867), the Decena Trágica (1913), the Zapatista/Villista occupation (1914–1915),
+  Obregón's assassination at La Bombilla (1928), Trotsky's assassination (1940), the 1957 earthquake,
+  the 1968 Tlatelolco massacre and the Olympics, the 1971 Corpus Christi (Halconazo) massacre, the 1985
+  earthquake, the 1986 World Cup final, the 2017 earthquake, the 2021 Line 12 collapse.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre100bce` | Tlapacoya, Tepexpan, Tlatilco, Cuicuilco, Copilco, early Teotihuacan | 30 | ~50 |
+| `100bce_1324` | Teotihuacan, Xitle, the Toltec-era valley, Tenayuca, Texcoco, Azcapotzalco, Culhuacan | 35 | ~80 |
+| `1325_1520` | Tenochtitlan and Tlatelolco, the Triple Alliance, Nezahualcóyotl, the Templo Mayor, Cortés's arrival | 45 | ~150 |
+| `1521_1699` | the fall, the Spanish city, the drainage, floods, the 1624 and 1692 riots | 45 | ~180 |
+| `1700_1820` | the Bourbon city, the Academy of San Carlos, the independence war | 45 | ~180 |
+| `1821_1910` | independence, the US and French occupations, the Reform, the Porfiriato | 45 | ~230 |
+| `1911_1967` | the Revolution, the Decena Trágica, growth, the university city, the 1957 quake | 45 | ~230 |
+| `1968_present` | Tlatelolco, the Olympics, the 1985 quake, the elected city, the 2017 quake | 45 | ~230 |
+
+Expected cards are a guide, not a target.

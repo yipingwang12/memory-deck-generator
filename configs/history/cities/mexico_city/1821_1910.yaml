@@ -1,0 +1,906 @@
+# City: Mexico City x 1821 to 1910 (independence, the US and French occupations, the Reform, the Porfiriato).
+# DRAFT 2026-11-21.
+# Area: the Valley of Mexico metro (the 16 boroughs of Mexico City: Tacubaya, Mixcoac, San Angel, Coyoacan,
+# Tlalpan, Azcapotzalco, Xochimilco ...; and the valley municipalities of the State of Mexico). Rules: cities.md,
+# then policy.md. Grouped by theme ("Theme of each subject"). National governments seated in the city ->
+# out_refs. World-grid events -> world_refs (world cell year). Dates: memory pass + web check (45 searches; no
+# unauthorised book copies). Main sources: Wikipedia (en, es): Timeline and History of Mexico City, Historia de
+# la Ciudad de Mexico, Tranvias en la Ciudad de Mexico, Paseo de la Reforma, Zocalo, National Palace and per-site
+# articles; CDMX tourism historical timeline; INAH, UNAM, Colmex studies found by search.
+# A work -> first public appearance (opening, premiere, first issue). A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1821, peg: ant, confidence: high, source: "CDMX tourism timeline: Independence movement",
+     event: "Bustamante beats the royalists at Azcapotzalco, the last battle of the independence war",
+     place: "Azcapotzalco",
+     scene: "A giant ANT drags the last royalist cannon off the field at Azcapotzalco, and the war for independence ends."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP: History of Mexico City",
+     event: "Army of the Three Guarantees marches into the city",
+     place: "Calle de Plateros",
+     scene: "An ANT army in green, white and red marches down Calle de Plateros and takes Mexico City for Iturbide."}
+  - {year: 1822, peg: nun, confidence: medium, source: "WP: History of Mexico City",
+     event: "Sergeant Pio Marcha and a street crowd proclaim Iturbide emperor at night",
+     place: "Calle de San Francisco",
+     scene: "A NUN beats a drum at night on Calle de San Francisco, and the shouting crowd behind her proclaims Iturbide emperor."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Congress makes a circle of two leagues around the main plaza the Federal District",
+     place: "Zocalo",
+     scene: "A coat HANGER, bent into a huge circle two leagues wide, drops around the Zocalo and marks the new Federal District."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Decree gives the towns outside the district radius back to their states",
+     scene: "A NACHO snaps along the district circle, and the towns on the outer crumbs fall back to their own states."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "State of Mexico government leaves the capital for Texcoco",
+     place: "Texcoco",
+     scene: "A bottle of INK spills from a State of Mexico desk and trickles east out of the capital to Texcoco."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP es: Motin de la Acordada",
+     event: "Acordada revolt begins at the Acordada prison against the election of Gomez Pedraza",
+     place: "La Acordada prison",
+     scene: "A KNIFE cuts the lock of the Acordada armoury, and Lobato's rebels seize guns against Gomez Pedraza's election."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP: Zocalo",
+     event: "Rioters loot and wreck the Parian market in the main plaza",
+     place: "Parian, Zocalo",
+     scene: "A huge KNIFE slashes open the silk stalls of the Parian, and the mob loots the merchants' goods in the plaza."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Chamber of Deputies moves into the old theatre hall of the National Palace",
+     place: "National Palace",
+     scene: "A brass KNOB turns on the old viceregal theatre door, and the deputies file in to make it their chamber."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Centralist republic ends the Federal District; the city joins the Department of Mexico",
+     scene: "A MUG of centralist coffee pours over the district map and dissolves its border into the Department of Mexico."}
+  - {year: 1840, peg: horse, confidence: medium, source: "Search: Historia Mexicana; WP: National Palace",
+     event: "Urrea and Gomez Farias seize the National Palace and hold President Bustamante; a twelve-day siege follows",
+     place: "National Palace",
+     scene: "A federalist HORSE kicks open the National Palace gate, and Urrea's men grab President Bustamante in his bed."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "Search: Historia Mexicana; UNAM, 6 December",
+     event: "Crowd pulls down Santa Anna's statue in the Volador market",
+     place: "Plaza del Volador",
+     scene: "A WARRIOR crowd ropes Santa Anna's bronze statue in the Volador market and pulls it face down onto the stones."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "Search: Mexico Desconocido; Texas Legislative Library",
+     event: "Rioters dig up Santa Anna's buried leg at Santa Paula and drag it through the streets",
+     place: "Santa Paula cemetery",
+     scene: "A WARRIOR digs up Santa Anna's buried leg at Santa Paula and drags it through the streets on a rope."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "New Chamber of Deputies hall is built in the National Palace, the Senate above it",
+     place: "National Palace",
+     scene: "A RAILWAY crane lifts the beams of a new Chamber of Deputies hall into the National Palace, with the Senate on top."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Restored federal constitution re-creates the Federal District",
+     scene: "A ROACH scurries round the old two-league circle and redraws the Federal District on the restored federal map."}
+  - {year: 1846, peg: roach, confidence: high, source: "Search: St Andrews pronunciamientos; archontology",
+     event: "Salas's garrison rises at the Ciudadela and overthrows Paredes",
+     place: "La Ciudadela",
+     scene: "A giant ROACH leads Salas's soldiers out of the Ciudadela gate and chases President Paredes from the capital."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP es: Batalla de Padierna",
+     event: "Battle of Padierna (Contreras): US troops rout Valencia's army",
+     place: "Padierna, Contreras",
+     scene: "A ROCK avalanche rolls down the lava field at Padierna and scatters Valencia's Mexican army before the American attack."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle for Mexico City",
+     event: "Battle of Molino del Rey: US troops take the mills below Chapultepec",
+     place: "Molino del Rey",
+     scene: "A ROCK smashes the millstones of Molino del Rey as American troops storm the mill at heavy cost."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Saint Patrick's Battalion",
+     event: "US army hangs sixteen Saint Patrick's Battalion men at San Angel",
+     place: "Plaza de San Jacinto, San Angel",
+     scene: "A ROCK falls from a cart in San Angel plaza, and sixteen Irish San Patricios drop from the gallows rope."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Saint Patrick's Battalion",
+     event: "US army hangs four Saint Patrick's Battalion men at Mixcoac",
+     place: "Mixcoac",
+     scene: "Four San Patricios stand on a ROCK at Mixcoac; soldiers kick the ROCK away and the men hang."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle for Mexico City",
+     event: "US divisions break through the Belen and San Cosme gates into the city",
+     place: "Garita de Belen, Garita de San Cosme",
+     scene: "A ROCK flies from an American cannon and smashes the Belen gate, while a second ROCK breaks San Cosme."}
+  - {year: 1847, peg: rock, confidence: medium, source: "WP: Battle for Mexico City",
+     event: "City people fire on US soldiers from the rooftops after the entry",
+     place: "Calle de Plateros",
+     scene: "Townspeople hurl a ROCK and shoot muskets from the flat roofs of Plateros at the American columns below."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle for Mexico City; WP es Historia",
+     event: "Quitman becomes US military governor; the city has two governments",
+     place: "National Palace",
+     scene: "General Quitman sits on a ROCK throne in the National Palace as the first American governor of the city."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "US government orders a larger Federal District, which the towns stop with protests",
+     scene: "An American surveyor drives a ROCK marker far beyond the district line, and the angry towns roll it back."}
+  - {year: 1848, peg: reef, confidence: unverified,
+     event: "US army leaves Mexico City after the peace",
+     place: "Zocalo",
+     scene: "A REEF of blue uniforms drains out of the Zocalo as the last American soldiers march away to Veracruz."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Arista builds the Mariana door of the National Palace and makes the north wing a barracks",
+     place: "National Palace",
+     scene: "A LASSO pulls the old prison door shut, and Arista's masons cut the new Mariana door in the palace wall."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Santa Anna extends the district to many towns and the middle of Lake Texcoco",
+     place: "Lake Texcoco",
+     scene: "A LAWYER unrolls Santa Anna's decree and stretches the district border out to the middle of Lake Texcoco."}
+  - {year: 1855, peg: lily, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "Tlalpan becomes part of the Federal District",
+     place: "Tlalpan",
+     scene: "A white LILY grows over the boundary stone at Tlalpan and pulls the town into the Federal District."}
+  - {year: 1857, peg: log, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "Coyoacan becomes part of the Federal District",
+     place: "Coyoacan",
+     scene: "A LOG rolls over the old line at Coyoacan and carries the town into the Federal District."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Battle of Tacubaya (1859)",
+     event: "Battle of Tacubaya: Marquez's conservatives beat Degollado's liberals",
+     place: "Tacubaya",
+     scene: "An ELBOW of conservative cannon smashes Degollado's liberal line at Tacubaya, and the liberals run."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Battle of Tacubaya; CDMX timeline",
+     event: "Marquez has liberal prisoners and army doctors shot at Tacubaya",
+     place: "Tacubaya",
+     scene: "An ELBOW pins a liberal army doctor against the Tacubaya wall, and Marquez's firing squad shoots him with the prisoners."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Juarez's decree adds State of Mexico towns to the Federal District",
+     scene: "A JET of ink from Juarez's pen sprays over the map and paints State of Mexico towns into the district."}
+  - {year: 1861, peg: jet, confidence: unverified,
+     event: "Leandro Valle is captured and shot at Monte de las Cruces",
+     place: "Monte de las Cruces",
+     scene: "A JET of gunfire from Marquez's squad kills General Leandro Valle on the pine slopes of Monte de las Cruces."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Decree divides the district into the municipality of Mexico and five partidos",
+     scene: "A CHAIN is cut into five links and one big link: five partidos and the municipality of Mexico."}
+  - {year: 1863, peg: gem, confidence: unverified,
+     event: "Juarez's government leaves the capital before the French arrive",
+     place: "National Palace",
+     scene: "A GEM-studded flag comes down at the National Palace, and Juarez folds it and rides north out of the capital."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "French troops occupy Mexico City",
+     place: "Zocalo",
+     scene: "A huge GEM shaped like a French eagle rolls into the Zocalo, and Forey's army occupies the city behind it."}
+  - {year: 1863, peg: gem, confidence: medium, source: "Search: Sarmiento; UAM (INAH: 1862)",
+     event: "Belen college becomes the city's main prison",
+     place: "Belen de las Mochas",
+     scene: "A GEM lock clicks on the old Belen college gate, and the prisoners of the Acordada march in."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Empire ends the Federal District; the city joins the Department of the Valley of Mexico",
+     scene: "A CHERRY falls on the district map, and its juice spreads into the imperial Department of the Valley of Mexico."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Siege of Mexico City",
+     event: "Republican armies begin the siege of the imperial city",
+     scene: "A JOCKEY in republican colours gallops round the city walls, and Diaz's army closes the siege ring."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Siege of Mexico City",
+     event: "Imperial garrison surrenders and Porfirio Diaz enters the city",
+     scene: "Porfirio Diaz rides into the city on a JOCKEY's racehorse as the imperial garrison lays down its arms."}
+  - {year: 1867, peg: jockey, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "Imperialist general Santiago Vidaurri is shot in the Plaza de Santo Domingo",
+     place: "Plaza de Santo Domingo",
+     scene: "A JOCKEY's starting pistol fires in the Plaza de Santo Domingo, and the squad shoots Vidaurri in the back."}
+  - {year: 1871, peg: cat, confidence: high, source: "Search: Rocha report; encyclopedia.com: La Ciudadela",
+     event: "Rebels seize the Ciudadela and free Belen prisoners to fight; Rocha retakes it next day",
+     place: "La Ciudadela",
+     scene: "A CAT leaps over the Ciudadela wall with the rebels, but Rocha's troops chase it out by morning."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Fire destroys the Chamber of Deputies hall in the National Palace",
+     place: "National Palace",
+     scene: "A red-hot COIN drops on the deputies' benches, and fire eats the whole chamber in the National Palace."}
+  - {year: 1872, peg: coin, confidence: high, source: "Search: Congreso CDMX; Camara de Diputados",
+     event: "Deputies move into the Teatro Iturbide on Donceles",
+     place: "Teatro Iturbide, Donceles",
+     scene: "The deputies buy their way into the Teatro Iturbide with a COIN at the box office and sit in the stalls."}
+  - {year: 1876, peg: cage, confidence: medium, source: "Search: Zeta Tijuana (entry date given as 6 Dec)",
+     event: "Diaz's army enters the capital after its victory at Tecoac",
+     place: "Garita de San Lazaro",
+     scene: "Porfirian troops roll a CAGE on wheels through the eastern city gate and lock Lerdo's capital inside it."}
+  - {year: 1883, peg: foam, confidence: medium, source: "Search: F. Gutierrez, El motin de diciembre",
+     event: "Nickel riot: crowds attack shops over the new nickel coins",
+     place: "Zocalo",
+     scene: "Nickel coins dissolve in FOAM as an angry crowd in the plaza throws them at the shop windows."}
+  - {year: 1884, peg: fairy, confidence: medium, source: "Search: F. Gutierrez, deuda inglesa",
+     event: "Street protests against the English debt conversion",
+     place: "Calle de Plateros",
+     scene: "A FAIRY tears the English debt bond in half on Plateros, and workers and students cheer in the street."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP es: Palacio de Lecumberri",
+     event: "Work begins on the Lecumberri penitentiary",
+     place: "Lecumberri",
+     scene: "A giant WAFFLE iron presses the star-shaped grid of the Lecumberri penitentiary into the ground."}
+  - {year: 1892, peg: piano, confidence: high, source: "Search: UNAM IIH, Orijel Serrano; CONICET",
+     event: "Students lead street protests and riots against Diaz's re-election",
+     place: "Plaza de Santo Domingo",
+     scene: "Students push a PIANO off a Santo Domingo balcony onto the police lines and shout no to Diaz's re-election."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP: Attack against Porfirio Diaz of 1897",
+     event: "Arnulfo Arroyo strikes President Diaz in the Alameda on Independence Day",
+     place: "Alameda Central",
+     scene: "A PIG charges through the Alameda crowd and knocks Porfirio Diaz's plumed hat off his head."}
+  - {year: 1897, peg: pig, confidence: medium, source: "Search: Colmex; NYT report",
+     event: "Arroyo is lynched inside the police station",
+     place: "Inspeccion de Policia",
+     scene: "A mob drives a PIG through the police station door, and Arroyo dies in his cell that night."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "District reorganised into a central municipality and six prefectures",
+     scene: "A BEEHIVE splits into one central comb and six outer cells, the new prefectures of the district."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP es: Palacio de Lecumberri",
+     event: "Lecumberri penitentiary opens",
+     place: "Lecumberri",
+     scene: "A pot of SAUCE spills down the star-shaped corridors of Lecumberri as Diaz opens the new penitentiary."}
+  - {year: 1900, peg: sauce, confidence: medium, source: "Search: Sarmiento, Belen to Lecumberri",
+     event: "Belen becomes the jail for people who wait for trial",
+     place: "Belen",
+     scene: "Guards pour SAUCE on the Belen register and rewrite it: from now only people waiting for trial."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP es: Historia de la Ciudad de Mexico",
+     event: "Law reorganises the district into the municipality of Mexico and twelve others",
+     scene: "A SUMO wrestler stamps the district into thirteen squares as the new municipal law takes effect."}
+  - {year: 1903, peg: sumo, confidence: unverified,
+     event: "Liberals hang a black banner, The Constitution is dead, from the El Hijo del Ahuizote balcony",
+     place: "El Hijo del Ahuizote office",
+     scene: "A SUMO wrestler hangs a black banner, The Constitution is dead, from the El Hijo del Ahuizote balcony."}
+  - {year: 1909, peg: soap, confidence: medium, source: "Search: Congreso CDMX",
+     event: "Second fire damages the deputies' chamber on Donceles",
+     place: "Donceles",
+     scene: "A bar of SOAP catches fire in the Donceles chamber, and flames burn the deputies' hall a second time."}
+  - {year: 1910, peg: dice, confidence: medium, source: "Search: Tzintzun; academic article",
+     event: "Anti-American riots in the streets after the lynching of Antonio Rodriguez in Texas",
+     place: "Avenida San Francisco",
+     scene: "Rioters throw DICE at American shop windows on San Francisco street to avenge Antonio Rodriguez."}
+  - {year: 1910, peg: dice, confidence: high, source: "CDMX tourism timeline: Porfiriato",
+     event: "Work begins on the new Federal Legislative Palace",
+     place: "Plaza de la Republica",
+     scene: "A giant DICE lands on the empty lot, and builders start the steel frame of the Legislative Palace."}
+  # science
+  - {year: 1835, peg: mill, confidence: medium, source: "Search: Bicentenario; Mexico News Daily",
+     event: "Eugene Robertson makes the first balloon flight in Mexico from the San Pablo bullring",
+     place: "Plaza de toros de San Pablo",
+     scene: "A MILL wheel sail fills with hot gas and lifts Robertson's basket out of the San Pablo bullring."}
+  - {year: 1840, peg: horse, confidence: high, source: "Search: INAH Alquimia, El Cosmopolita",
+     event: "First daguerreotype in the capital shows the cathedral",
+     place: "Cathedral",
+     scene: "A HORSE stands still for minutes in front of the cathedral while the first daguerreotype in the city records it."}
+  - {year: 1841, peg: radio, confidence: unverified,
+     event: "Superior Council of Health is created for the capital",
+     scene: "A RADIO crackles from the cabildo: the new Health Council orders the streets swept and the sick kept apart."}
+  - {year: 1847, peg: rock, confidence: high, source: "Search: Hospital Juarez history (medigraphic)",
+     event: "San Pablo college becomes a hospital for the wounded of the war",
+     place: "San Pablo",
+     scene: "A ROCK-strewn cart unloads wounded soldiers from Churubusco at San Pablo college, the new war hospital."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Chalco railway company runs a tram from Tacubaya along Avenida Chapultepec",
+     place: "Avenida Chapultepec",
+     scene: "A LEECH clings to the rails along Avenida Chapultepec and pulls the first Tacubaya tram behind it."}
+  - {year: 1857, peg: log, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "First railway in the valley opens, from the city to La Villa de Guadalupe",
+     place: "La Villa",
+     scene: "A LOG becomes a steam locomotive and puffs from the city to La Villa on the first railway line."}
+  - {year: 1857, peg: log, confidence: medium, source: "Search: N+ and Vanguardia (start disputed in practice)",
+     event: "First public gas lamps light the streets",
+     scene: "A burning LOG lights a row of gas lamps on the central streets for the first time."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Tacubaya mule tram opens from the Zocalo to Tacubaya",
+     place: "Tacubaya",
+     scene: "A WOLF in harness pulls the first Tacubaya mule tram from the Zocalo, its passengers holding on."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Colonia Guerrero",
+     event: "Paseo Guerrero is opened through the demolished part of San Fernando monastery",
+     place: "San Fernando",
+     scene: "A wheel of CHEESE rolls through the broken cloister of San Fernando and flattens the new Paseo Guerrero."}
+  - {year: 1864, peg: cherry, confidence: unverified,
+     event: "Medical section of the French scientific commission begins, later the National Academy of Medicine",
+     scene: "Doctors toast with CHERRY brandy as their medical society, later the National Academy of Medicine, first meets."}
+  - {year: 1865, peg: jelly, confidence: unverified,
+     event: "Empress Carlota founds the House of Maternity",
+     scene: "A JELLY cradle rocks in Carlota's new House of Maternity, and the first mothers give birth there."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "Paseo de la Emperatriz, later Reforma, opens to the public",
+     place: "Paseo de la Reforma",
+     scene: "A JOCKEY gallops the first ride down the new Paseo de la Emperatriz from Chapultepec to the city."}
+  - {year: 1868, peg: chef, confidence: medium, source: "WP: Alameda Central (Vanguardia: 1872)",
+     event: "Gas lamps are installed in the Alameda",
+     place: "Alameda Central",
+     scene: "A CHEF lights the gas lamps of the Alameda one by one with his kitchen taper."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Tacubaya tram network extends to San Angel and Tlalpan",
+     place: "San Angel, Tlalpan",
+     scene: "A SHIP on rails sails south from Tacubaya, opening tram stops at San Angel and Tlalpan."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "Avenue receives the name Paseo de la Reforma",
+     place: "Paseo de la Reforma",
+     scene: "A COIN stamped Reforma is set into the first roundabout, and the avenue takes its new name."}
+  - {year: 1872, peg: coin, confidence: high, source: "Search: Revista del Hospital Juarez",
+     event: "City council renames the San Pablo hospital Hospital Juarez",
+     place: "San Pablo",
+     scene: "A COIN with Juarez's face is nailed over the San Pablo hospital door the day after his death."}
+  - {year: 1877, peg: cake, confidence: unverified,
+     event: "Central Meteorological Observatory opens in the National Palace",
+     place: "National Palace",
+     scene: "A CAKE on the National Palace roof catches rain in a gauge, the first reading of the Central Meteorological Observatory."}
+  - {year: 1878, peg: cave, confidence: high, source: "Search: Expansion; Mexico Daily Post",
+     event: "First telephone call in Mexico links police headquarters and Tlalpan",
+     place: "Tlalpan",
+     scene: "A voice echoes from a CAVE in Tlalpan down the new wire to police headquarters: the first telephone call."}
+  - {year: 1878, peg: cave, confidence: high, source: "CDMX tourism timeline: Porfiriato",
+     event: "Passenger trains start at San Lazaro station",
+     place: "San Lazaro",
+     scene: "A train bursts out of a CAVE at San Lazaro station and runs the first passengers east to Puebla."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP es: Colonia San Rafael",
+     event: "La Veronica aqueduct is pulled down as lead water pipes arrive",
+     place: "La Veronica",
+     scene: "A COWBOY lassoes the arches of the Veronica aqueduct and pulls them down; lead pipes carry the water now."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Palace of the Inquisition",
+     event: "Old Inquisition chapel becomes the Academy of Medicine",
+     place: "Palace of the Inquisition",
+     scene: "A COWBOY doctor hangs his stethoscope on the Inquisition altar, now the hall of the Academy of Medicine."}
+  - {year: 1881, peg: foot, confidence: high, source: "Search: Mexico Desconocido, alumbrado",
+     event: "Knight company lights the Zocalo and Alameda with Brush electric lamps",
+     place: "Zocalo, Alameda",
+     scene: "A giant FOOT presses a switch, and forty Brush arc lamps blaze in the Zocalo and a hundred in the Alameda."}
+  - {year: 1886, peg: fish, confidence: unverified,
+     event: "Board of the Valley Drainage is set up to finish the Gran Canal",
+     scene: "A FISH swims into the board room, and the new drainage board vows to empty the valley's lakes."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Zocalo",
+     event: "Zocalo walks are paved with asphalt",
+     place: "Zocalo",
+     scene: "A hot BOOT stamps black asphalt over the Zocalo walks."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: Alameda Central",
+     event: "Electric lights replace the gas lamps of the Alameda",
+     place: "Alameda Central",
+     scene: "A PIANO keyboard switches off each gas flame in the Alameda and turns on an electric bulb."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: Zocalo",
+     event: "Zocalo tram station and lighting change to electricity",
+     place: "Zocalo",
+     scene: "A BEAR yanks the gas pipes out of the Zocalo and plugs in electric wires for the lamps."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "First incandescent street lamp on Reforma, under a city contract for electric lighting",
+     place: "Paseo de la Reforma",
+     scene: "A BEAR screws the first incandescent bulb into a lamp post on Reforma, and it glows."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "City council allows trams to change from mules to electric traction",
+     scene: "A PEACH stone drops on the council table, and the vote passes: the mule trams will go electric."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP es: Gran Canal del Desague",
+     event: "Gran Canal del Desague is completed to drain the valley",
+     place: "Gran Canal",
+     scene: "A river of SAUCE flows north down the finished Gran Canal and empties the valley's floodwater."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "First electric tram runs from Chapultepec to Tacubaya",
+     place: "Tacubaya",
+     scene: "A SAUCE boat on rails hums from Chapultepec to Tacubaya, the first electric tram in the city."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "Search: Colmex, Diaz report",
+     event: "Diaz reports four main sewer collectors of Gayol's system finished",
+     scene: "A SUMO wrestler crawls through the four new brick sewer collectors of Gayol's drainage system."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP es: Hospital General de Mexico",
+     event: "General Hospital of Mexico opens in Colonia Doctores",
+     place: "Colonia Doctores",
+     scene: "A SEAL in a white coat cuts the ribbon at the General Hospital, and the first patients arrive."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Santa Maria la Ribera",
+     event: "Geological Institute building is completed in Santa Maria la Ribera",
+     place: "Santa Maria la Ribera",
+     scene: "SUSHI rolls are made of rock layers on the stone facade of the new Geological Institute."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Necaxa power lets the electric tram network grow fast",
+     scene: "A bar of SOAP slides down the Necaxa power line, and new tram lines branch across the city."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: History of Mexico City",
+     event: "La Castaneda asylum opens at Mixcoac",
+     place: "Mixcoac",
+     scene: "A DICE game ends as the first patients walk into the new La Castaneda asylum at Mixcoac."}
+  - {year: 1910, peg: dice, confidence: medium, source: "CDMX tourism timeline: Porfiriato",
+     event: "Avenida Centenario opens with asphalt and electric street lamps",
+     scene: "A DICE rolls down smooth new asphalt on Avenida Centenario under bright electric lamps."}
+  # religion
+  - {year: 1856, peg: leech, confidence: unverified,
+     event: "Part of the San Francisco convent is torn down to open Calle Independencia",
+     place: "San Francisco convent",
+     scene: "A LEECH sucks the stones out of the San Francisco cloister, and a new street, Independencia, cuts through."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Basilica of Our Lady of Guadalupe",
+     event: "Capuchin nuns are put out of their convent at Guadalupe",
+     place: "Villa de Guadalupe",
+     scene: "A GEM falls from the Capuchin altar at Guadalupe as soldiers lead the nuns out of their convent."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Basilica of Our Lady of Guadalupe",
+     event: "Renovation of the Guadalupe collegiate church begins",
+     place: "Villa de Guadalupe",
+     scene: "A FOX carries away the old altarpiece at Tepeyac as workers start the Guadalupe renovation."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Basilica of Our Lady of Guadalupe",
+     event: "Guadalupe renovation ends with a Carrara marble altar",
+     place: "Villa de Guadalupe",
+     scene: "A BELL rings over the new white Carrara marble altar as the Guadalupe renovation ends."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Colonia Guerrero",
+     event: "Church of the Immaculate Heart of Mary is finished in Colonia Guerrero",
+     place: "Colonia Guerrero",
+     scene: "The SUN lights the new towers of the Immaculate Heart of Mary church in Colonia Guerrero."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: Basilica of Our Lady of Guadalupe",
+     event: "Collegiate church of Guadalupe becomes a basilica",
+     place: "Villa de Guadalupe",
+     scene: "A SEWER cover marked Basilica is set in the Guadalupe atrium as the church gets its new rank."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP es: Colonia Roma",
+     event: "Gorozpe builds the church of the Holy Family in Colonia Roma",
+     place: "Colonia Roma",
+     scene: "A DICE of concrete becomes the first block of Gorozpe's Holy Family church in Colonia Roma."}
+  # arts
+  - {year: 1822, peg: nun, confidence: high, source: "WP: Equestrian statue of Charles IV",
+     event: "Statue of Charles IV moves to the university courtyard for its safety",
+     place: "University courtyard",
+     scene: "A NUN leads El Caballito, Tolsa's bronze horse, off the plaza into the university courtyard."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "El Iris literary magazine is published",
+     scene: "A NACHO bookmark marks the first page of El Iris, the city's literary magazine."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "El Cocinero Mexicano cookbook is published",
+     scene: "A MOTH flutters out of the first copy of El Cocinero Mexicano, the city's new cookbook."}
+  - {year: 1841, peg: radio, confidence: unverified,
+     event: "El Siglo Diez y Nueve newspaper first appears",
+     scene: "A RADIO reads the first issue of El Siglo Diez y Nueve aloud in a cafe."}
+  - {year: 1843, peg: ram, confidence: medium, source: "WP: Zocalo",
+     event: "Santa Anna's independence monument gets only its base, the zocalo, in the main plaza",
+     place: "Zocalo",
+     scene: "A RAM butts the half-built monument in the main plaza until only its stone base, the zocalo, remains."}
+  - {year: 1843, peg: ram, confidence: unverified,
+     event: "Fanny Calderon de la Barca's Life in Mexico is published",
+     scene: "A RAM carries Fanny Calderon de la Barca's Life in Mexico in its horns through the city streets."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Search: Britannica; Chilango (10 February)",
+     event: "Gran Teatro de Santa Anna opens, designed by Lorenzo de la Hidalga",
+     place: "Calle de Vergara",
+     scene: "A WARRIOR plays the violin on stage at the masked ball that opens the Gran Teatro de Santa Anna."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Search: Historia Mexicana (13 June)",
+     event: "Statue of Santa Anna is set up in the Volador market on his birthday",
+     place: "Plaza del Volador",
+     scene: "A WARRIOR lifts the bronze Santa Anna onto its pedestal in the Volador market on the general's birthday."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Academy of San Carlos",
+     event: "National lottery is given to the Academy of San Carlos to fund it",
+     place: "Academy of San Carlos",
+     scene: "A WARRIOR draws lottery tickets from a drum, and the prize money pays for the Academy of San Carlos."}
+  - {year: 1844, peg: warrior, confidence: unverified,
+     event: "El Monitor Republicano newspaper first appears",
+     scene: "A WARRIOR waves the first issue of El Monitor Republicano from a street corner."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP: Equestrian statue of Charles IV",
+     event: "Statue of Charles IV moves to the Bucareli roundabout",
+     place: "Glorieta de Bucareli",
+     scene: "A LION pulls El Caballito on a sledge from the university to the Bucareli roundabout."}
+  - {year: 1856, peg: leech, confidence: high, source: "Search: academic; hmdb marker",
+     event: "Teatro Iturbide opens on Donceles, built by Arbeu",
+     place: "Donceles",
+     scene: "A LEECH buys the first ticket and sucks the gold paint off the boxes at the new Teatro Iturbide."}
+  - {year: 1859, peg: elbow, confidence: unverified,
+     event: "Paniagua's Catalina di Guisa, an opera by a Mexican, premieres",
+     place: "Gran Teatro Nacional",
+     scene: "An ELBOW nudges the conductor, and Paniagua's Catalina di Guisa begins at the Gran Teatro Nacional."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Chapultepec Castle",
+     event: "Maximilian's architects begin to remodel Chapultepec Castle as the imperial residence",
+     place: "Chapultepec Castle",
+     scene: "A CHERRY tree is planted on the roof garden as Maximilian's architects rebuild Chapultepec Castle."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Maximilian has de la Hidalga build the marble staircase of the National Palace",
+     place: "National Palace",
+     scene: "A CHERRY rolls down the new marble staircase of the National Palace as Maximilian climbs it."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: National Museum of Anthropology",
+     event: "National Museum moves to the old mint on Calle de Moneda",
+     place: "Calle de Moneda",
+     scene: "A JELLY mould shaped like the Sun Stone slides into the old mint on Calle de Moneda, the museum's new home."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Zocalo",
+     event: "Paseo del Zocalo garden opens with fountains, iron benches and hydrogen gas lamps",
+     place: "Zocalo",
+     scene: "A JUDGE sits on one of seventy-two iron benches in the new Zocalo garden under hydrogen gas lamps."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Teatro Arbeu opens",
+     place: "Teatro Arbeu",
+     scene: "An EAGLE perches on the curtain rod and lifts the curtain at the opening night of the Teatro Arbeu."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP es: Monumento a Colon",
+     event: "Columbus monument by Charles Cordier is set up on Reforma",
+     place: "Paseo de la Reforma",
+     scene: "A CAKE in the shape of Columbus is lifted onto Cordier's pedestal on Reforma."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP: Zocalo",
+     event: "Escandon gives a kiosk, set on Santa Anna's old base in the Zocalo",
+     place: "Zocalo",
+     scene: "A CAVE opens in Santa Anna's old base, and Escandon's iron kiosk rises from it with four candelabras."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: National Conservatory of Music of Mexico",
+     event: "Symphony orchestra of the National Conservatory is founded",
+     place: "National Conservatory",
+     scene: "A FOOT taps the first beat for the National Conservatory's new symphony orchestra."}
+  - {year: 1885, peg: waffle, confidence: high, source: "Search: INAH Boletin de Monumentos",
+     event: "Sun Stone moves from the cathedral tower to the National Museum",
+     place: "Cathedral, Calle de Moneda",
+     scene: "A huge WAFFLE carries the Sun Stone off the cathedral tower and down the street to the National Museum."}
+  - {year: 1885, peg: waffle, confidence: unverified,
+     event: "El Hijo del Ahuizote satirical weekly first appears",
+     scene: "A WAFFLE stamped with a cartoon of Diaz sells on the street as the first El Hijo del Ahuizote."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Monument to Cuauhtemoc",
+     event: "Monument to Cuauhtemoc is unveiled on Reforma",
+     place: "Paseo de la Reforma",
+     scene: "A FOX pulls the cloth off Noreña's bronze Cuauhtemoc on Reforma before Diaz and the crowd."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "Each state receives two pedestals on Reforma for statues of its heroes",
+     place: "Paseo de la Reforma",
+     scene: "A FIFE plays as each state's flag is fixed to its pair of empty pedestals along Reforma."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "Casarin's statues of Itzcoatl and Ahuizotl are unveiled on Reforma",
+     place: "Paseo de la Reforma",
+     scene: "A PIANO is rolled away to reveal Casarin's green bronze kings Itzcoatl and Ahuizotl on Reforma."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Diaz brings the Dolores bell to the National Palace",
+     place: "National Palace",
+     scene: "A PEACH swings like a clapper inside Hidalgo's Dolores bell, now hung over the National Palace balcony."}
+  - {year: 1896, peg: peach, confidence: unverified,
+     event: "Reyes Spindola founds El Imparcial, a cheap mass newspaper",
+     scene: "A PEACH costs one cent, and so does the first issue of Reyes Spindola's El Imparcial."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP es: Paseo de la Reforma",
+     event: "Statues of Itzcoatl and Ahuizotl move to the Viga canal: the Indios Verdes",
+     place: "Canal de la Viga",
+     scene: "A BEEHIVE swarms the two bronze kings off Reforma and sets them down by the Viga canal."}
+  - {year: 1900, peg: sauce, confidence: medium, source: "WP: Regeneracion",
+     event: "Flores Magon brothers publish the first issue of Regeneracion",
+     scene: "The Flores Magon brothers pour SAUCE on the ink rollers and print the first Regeneracion."}
+  - {year: 1900, peg: sauce, confidence: unverified,
+     event: "Ricardo Castro's opera Atzimba premieres",
+     scene: "A SAUCE boat floats across the stage as Ricardo Castro's Atzimba opens."}
+  - {year: 1901, peg: soda, confidence: medium, source: "WP: Gran Teatro Nacional; search",
+     event: "Gran Teatro Nacional is pulled down to extend Avenida Cinco de Mayo",
+     place: "Avenida Cinco de Mayo",
+     scene: "A SODA bottle shakes and explodes, blowing down the Gran Teatro Nacional so Cinco de Mayo can run through."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: National Museum of Anthropology",
+     event: "Museum's natural history collections split off; the rest becomes the archaeology, history and ethnography museum",
+     place: "Calle de Moneda",
+     scene: "A SUSHI knife cuts the museum in two: the stuffed animals to the Chopo, the stones stay on Moneda."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Boari's Palacio Postal opens",
+     place: "Palacio Postal",
+     scene: "A SKI slides down the gilded staircase of Boari's Palacio Postal, carrying the first letters."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP es: Hemiciclo a Juarez",
+     event: "Hemiciclo a Juarez is unveiled in the Alameda",
+     place: "Alameda Central",
+     scene: "A giant DICE of white marble opens to show Lazzerini's seated Juarez in the Alameda."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Santa Maria la Ribera",
+     event: "Moorish Kiosk moves from the Alameda to Santa Maria la Ribera",
+     place: "Alameda de Santa Maria",
+     scene: "A DICE is rolled, and the Moorish Kiosk lands in the square of Santa Maria la Ribera."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: National Museum of Anthropology",
+     event: "National Museum of Archaeology, History and Ethnography reopens on Moneda",
+     place: "Calle de Moneda",
+     scene: "Diaz rolls a DICE across the museum floor on Moneda as the renewed galleries open."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP: Museo Universitario del Chopo",
+     event: "Chopo iron hall houses the Japanese pavilion of the centennial exhibition",
+     place: "Santa Maria la Ribera",
+     scene: "A DICE of jade sits in the Chopo glass hall as the Japanese pavilion opens."}
+  # economy
+  - {year: 1831, peg: moth, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "La Fama Montanesa textile mill is founded in Tlalpan",
+     place: "Tlalpan",
+     scene: "A MOTH eats its way through cotton bales at La Fama Montanesa, the new mill in Tlalpan."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP: Zocalo",
+     event: "Santa Anna has the Parian market pulled down",
+     place: "Zocalo",
+     scene: "A RAM batters down the walls of the Parian market in the main plaza on Santa Anna's order."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "Search: UNAM thesis, Mercado del Volador",
+     event: "Work begins on the new Volador market",
+     place: "Plaza del Volador",
+     scene: "A WARRIOR lays the first stone of the new Volador market beside the National Palace."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Liverpool (store)",
+     event: "Jean Baptiste Ebrard founds the Liverpool store",
+     scene: "Ebrard puts a ROCK on his counter as a paperweight and opens the first Liverpool clothing stall."}
+  - {year: 1850, peg: lasso, confidence: medium, source: "Search: market regulation (other source: built in prior year)",
+     event: "Iturbide market opens in the Plazuela de San Juan",
+     place: "Plazuela de San Juan",
+     scene: "A LASSO ropes in shoppers to the new covered Iturbide market at San Juan."}
+  - {year: 1855, peg: lily, confidence: unverified,
+     event: "Hotel Iturbide opens in the Iturbide palace",
+     place: "Palacio de Iturbide",
+     scene: "A LILY sits on each pillow of the new Hotel Iturbide in the emperor's old palace."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "First permanent La Merced market buildings go up",
+     place: "La Merced",
+     scene: "A GEM-blue roof covers the stalls as the first permanent La Merced market buildings rise."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Search: encyclopedia.com; ABM chronology",
+     event: "Bank of London, Mexico and South America opens, the first commercial bank",
+     scene: "A CHERRY is the first deposit counted at the Bank of London and Mexico, the country's first commercial bank."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Drogueria de la Profesa drugstore opens",
+     place: "La Profesa",
+     scene: "A JUDGE weighs powders on brass scales at the new Drogueria de la Profesa."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "La Concordia restaurant opens",
+     scene: "A CHEF in a tall hat serves the first dinner at La Concordia restaurant."}
+  - {year: 1875, peg: eagle, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "Hotel Gillow opens in the city centre",
+     place: "Isabel la Catolica",
+     scene: "An EAGLE carries guests' bags up the stairs of the new Hotel Gillow."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Federal District Railway Company is formed and lays mule tram lines",
+     scene: "A CAVE of stables fills with mules as the Federal District Railway Company lays its tram lines."}
+  - {year: 1880, peg: vase, confidence: medium, source: "Search: INAH; CDMX (El Universal: later)",
+     event: "Covered La Merced market is completed",
+     place: "La Merced",
+     scene: "A VASE of flowers stands on the first stall of the finished La Merced market."}
+  - {year: 1882, peg: oven, confidence: high, source: "Search: MPRA; Expansion",
+     event: "Mexican Telephone Company is formed and starts service in the capital",
+     scene: "An OVEN-sized switchboard hums as the Mexican Telephone Company connects its first customers."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Tram company is reorganised and takes over most city lines",
+     scene: "An OVEN melts the rival tram companies into one, and it runs most lines in the city."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Fabrica Linera textile mill is set up",
+     scene: "A FOX tangles itself in linen thread at the new Fabrica Linera mill."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: El Palacio de Hierro",
+     event: "Palacio de Hierro iron-framed store opens",
+     place: "Calle 20 de Noviembre",
+     scene: "A BOOT kicks the iron door open as the five-storey Palacio de Hierro store opens to shoppers."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: Mexican Stock Exchange",
+     event: "Bolsa Nacional stock exchange is founded on Plateros",
+     place: "Calle de Plateros",
+     scene: "A BEAR sells the first shares on Plateros street at the new Bolsa Nacional."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: El Buen Tono",
+     event: "Pugibet founds the El Buen Tono cigarette company",
+     scene: "A BEAR rolls the first El Buen Tono cigarette in Pugibet's new factory."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Mexican Stock Exchange",
+     event: "Bolsa de Mexico is inaugurated after the two exchanges merge",
+     place: "Calle de Plateros",
+     scene: "A BELL rings on Plateros to open trading at the merged Bolsa de Mexico."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: El Palacio de Hierro",
+     event: "El Palacio de Hierro becomes a public company",
+     scene: "A BEEHIVE of shareholders fills the Palacio de Hierro, now a sociedad anonima."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Gran Hotel Ciudad de Mexico",
+     event: "Centro Mercantil store opens beside the Zocalo",
+     place: "Zocalo",
+     scene: "A PIPE organ plays as the Centro Mercantil store opens its doors on the Zocalo."}
+  - {year: 1900, peg: sauce, confidence: high, source: "CDMX tourism timeline: Porfiriato",
+     event: "Diaz opens the Mercado de la Paz in Tlalpan",
+     place: "Tlalpan",
+     scene: "SAUCE vendors set up the first stalls as Diaz opens the Mercado de la Paz in Tlalpan."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP es: Tranvias en la Ciudad de Mexico",
+     event: "Mexico Electric Tramways company takes over the city tram network",
+     scene: "A SODA fizzes as the electric tram company takes the keys to the whole city network."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Mexican Light and Power Company",
+     event: "Mexican Light and Power Company is founded to bring hydro power to the city",
+     scene: "The SUN shines on a Canadian charter: Mexican Light and Power will light the capital."}
+  - {year: 1903, peg: sumo, confidence: high, source: "CDMX tourism timeline: Porfiriato",
+     event: "Sanborn brothers open their first soda fountain",
+     place: "Palacio Postal",
+     scene: "A SUMO wrestler sits on a stool at the first Sanborns soda fountain and orders breakfast."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Mexico City Banking Company is founded",
+     scene: "A SUMO wrestler guards the vault of the new Mexico City Banking Company."}
+  - {year: 1905, peg: seal, confidence: medium, source: "Search: Letras Historicas (CMGLE study)",
+     event: "Mexican Light and Power takes over the gas and electric light company",
+     scene: "A SEAL swallows the old gas and electric light company whole for Mexican Light and Power."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Hotel Geneve opens in Colonia Juarez",
+     place: "Colonia Juarez",
+     scene: "A SKI leans by the reception desk of the new Hotel Geneve in Colonia Juarez."}
+  # society
+  - {year: 1822, peg: nun, confidence: medium, source: "Search: UNAM thesis; Historia Mexicana",
+     event: "Lancasterian Company is founded and opens the Escuela del Sol",
+     scene: "A NUN rings the bell at the Escuela del Sol, the first Lancasterian school of the new company."}
+  - {year: 1823, peg: gnome, confidence: unverified,
+     event: "General and Public Archive of the Nation is founded",
+     scene: "A GNOME files the viceroys' papers into the boxes of the new General Archive."}
+  - {year: 1832, peg: moon, confidence: high, source: "CDMX tourism timeline: Independent Mexico",
+     event: "San Fernando cemetery begins to take burials",
+     place: "San Fernando",
+     scene: "A pale MOON shines on the first grave dug in the San Fernando cemetery."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP: Panteon de San Fernando",
+     event: "Santa Anna opens the private cemeteries to the public during the cholera",
+     place: "San Fernando",
+     scene: "A MUMMY pushes open the private cemetery gates as Santa Anna orders them opened for cholera dead."}
+  - {year: 1833, peg: mummy, confidence: medium, source: "Search: constitucion1917.gob.mx (decree of 23 October)",
+     event: "Gomez Farias closes the university and sets up a Board of Public Instruction",
+     place: "University",
+     scene: "A MUMMY wraps the university doors in bandages, and the Board of Public Instruction moves in."}
+  - {year: 1834, peg: hammer, confidence: medium, source: "Search: constitucion1917.gob.mx",
+     event: "University opens again after Santa Anna reverses the reforms",
+     place: "University",
+     scene: "A HAMMER knocks the boards off the university doors, and the professors return."}
+  - {year: 1842, peg: rhino, confidence: high, source: "Search: Mexico Desconocido; INAH Boletin",
+     event: "Santa Anna's amputated leg is buried with honours at Santa Paula",
+     place: "Santa Paula cemetery",
+     scene: "A RHINO carries Santa Anna's leg in a glass case to Santa Paula, where cannons salute its burial."}
+  - {year: 1845, peg: railway, confidence: unverified,
+     event: "Earthquake damages churches and houses in the city",
+     scene: "A RAILWAY track buckles in the earthquake, and church towers crack across the city."}
+  - {year: 1850, peg: lasso, confidence: medium, source: "Search: UNAM thesis on cholera of that year",
+     event: "Cholera epidemic kills thousands in the city",
+     scene: "A LASSO drags cholera carts full of dead through the city streets."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP: Chapingo Autonomous University",
+     event: "National School of Agriculture opens at San Jacinto",
+     place: "San Jacinto",
+     scene: "A LAWYER signs the deed, and the National School of Agriculture opens in the San Jacinto convent."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP: Palace of the Inquisition",
+     event: "Medical school buys the Palace of the Inquisition",
+     place: "Plaza de Santo Domingo",
+     scene: "A LAWYER hands the medical school the keys to the old Inquisition palace."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "Britannica: Henriette Sontag",
+     event: "Soprano Henriette Sontag dies of cholera during her season",
+     scene: "A LAWYER reads the will of Henriette Sontag, the soprano killed by cholera in the city."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Flood covers the city",
+     scene: "A LEECH floats down flooded streets of the city."}
+  - {year: 1858, peg: wolf, confidence: unverified,
+     event: "Earthquake damages buildings in the city",
+     scene: "A WOLF howls as the earthquake shakes houses and cracks church domes in the city."}
+  - {year: 1859, peg: elbow, confidence: medium, source: "WP es: Colonia San Rafael (infobox)",
+     event: "Colonia de los Arquitectos, the first planned new quarter, is founded",
+     place: "San Rafael",
+     scene: "An ELBOW of a draughtsman rests on the plan of Colonia de los Arquitectos, the first new quarter."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Panteon de San Fernando",
+     event: "San Fernando cemetery is made the Pantheon of Illustrious Men",
+     place: "San Fernando",
+     scene: "A wheel of CHEESE seals the gate of San Fernando, now the Pantheon of Illustrious Men."}
+  - {year: 1861, peg: jet, confidence: medium, source: "Search: UAEH study (UNAM: permit two years earlier)",
+     event: "Santa Maria la Ribera quarter is founded on the La Teja hacienda",
+     place: "Santa Maria la Ribera",
+     scene: "A JET of water from a garden hose marks out the first streets of Santa Maria la Ribera."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: National Autonomous University of Mexico",
+     event: "Maximilian closes the Royal and Pontifical University for good",
+     place: "University",
+     scene: "A JELLY seal stamps the university doors shut for good on Maximilian's order."}
+  - {year: 1865, peg: jelly, confidence: disputed, source: "Atlas Obscura (Apuntes: one year earlier)",
+     event: "French cemetery of La Piedad is founded",
+     place: "La Piedad",
+     scene: "A JELLY angel stands over the first tomb in the French cemetery of La Piedad."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: National Conservatory of Music of Mexico",
+     event: "National Conservatory of Music is founded by Agustin Caballero",
+     place: "National Conservatory",
+     scene: "A JUDGE bangs the gavel as Caballero opens the National Conservatory of Music."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Search: COMIE; El Siglo de Torreon",
+     event: "National School for the Deaf is founded",
+     scene: "A JOCKEY signs with his hands to the first pupils of the National School for the Deaf."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Search: Historia Mexicana, toros",
+     event: "Juarez's decree bans bullfights in the Federal District",
+     scene: "A JOCKEY leads the last bull out of the ring as the bullfight ban takes effect in the district."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Biblioteca Nacional de Mexico",
+     event: "Decree puts the National Library in the San Agustin church",
+     place: "San Agustin church",
+     scene: "A JOCKEY carries armfuls of books into the empty San Agustin church, the new National Library."}
+  - {year: 1870, peg: goose, confidence: high, source: "Search: Mexico Desconocido; UNAM thesis",
+     event: "Ignacio Trigueros founds the National School for the Blind",
+     scene: "A GOOSE guides blind pupils into Trigueros's National School for the Blind."}
+  - {year: 1871, peg: cat, confidence: unverified,
+     event: "School of Arts and Trades for Women opens",
+     scene: "A CAT sits by the sewing machines of the new School of Arts and Trades for Women."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Panteon de San Fernando",
+     event: "Juarez is buried in the San Fernando cemetery",
+     place: "San Fernando",
+     scene: "A gold COIN is laid on Juarez's coffin as it goes into his tomb at San Fernando."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: Colonia Guerrero",
+     event: "Colonia Guerrero is laid out on the San Fernando college's horse grounds",
+     place: "Colonia Guerrero",
+     scene: "A COMB rakes straight streets through the old horse fields: Colonia Guerrero."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Panteon de Dolores",
+     event: "Panteon Civil de Dolores opens",
+     place: "Panteon de Dolores",
+     scene: "An EAGLE circles over the first graves of the Dolores civil cemetery."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Panteon de Dolores",
+     event: "First burial in the Rotunda of Illustrious Men at Dolores",
+     place: "Panteon de Dolores",
+     scene: "A CAGE of iron railings closes round the first tomb in the Rotunda of Illustrious Men."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Casa de los Azulejos",
+     event: "Jockey Club takes the top floor of the Casa de los Azulejos",
+     place: "Casa de los Azulejos",
+     scene: "A FOOT in a riding boot steps onto the tiled stairs of the Casa de los Azulejos, the Jockey Club's new home."}
+  - {year: 1886, peg: fish, confidence: high, source: "Search: Revista de Indias",
+     event: "Spanish cemetery opens",
+     place: "Panteon Espanol",
+     scene: "A FISH is carved on the gate of the new Spanish cemetery as the first burial takes place."}
+  - {year: 1887, peg: fox, confidence: high, source: "Search: La Jornada, plazas de toros",
+     event: "Bullfights return: the San Rafael bullring opens",
+     place: "San Rafael",
+     scene: "A FOX in a matador's suit faces the first bull in the new San Rafael ring."}
+  - {year: 1887, peg: fox, confidence: medium, source: "Search: UNAM thesis, Escuela Normal",
+     event: "Normal School for Teachers opens",
+     scene: "A FOX in spectacles teaches the first class at the Normal School for Teachers."}
+  - {year: 1890, peg: bees, confidence: medium, source: "Search: education history (decree two years earlier)",
+     event: "Normal School for Women Teachers begins classes",
+     scene: "BEES buzz around the first class of the Normal School for Women Teachers."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Limantour has Colonia Bucareli laid out",
+     place: "Colonia Juarez",
+     scene: "BEES mark the plots of Colonia Bucareli with wax on Limantour's order."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP es: Colonia San Rafael",
+     event: "Colonia San Rafael grows out of the Arquitectos quarter",
+     place: "San Rafael",
+     scene: "A BOOT steps west from the Arquitectos quarter and makes new streets: Colonia San Rafael."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Colonia Doctores",
+     event: "City council approves the street plan of Colonia Doctores",
+     place: "Colonia Doctores",
+     scene: "A BELL rings in the cabildo as councillors approve the street plan of Colonia Doctores."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Colonia del Paseo is approved on the La Teja lands",
+     place: "Colonia Juarez",
+     scene: "A BEEHIVE grows street by street on the La Teja lands: Colonia del Paseo."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Census counts about three hundred and forty-five thousand people",
+     scene: "A census clerk tallies the city's people with drops of SAUCE: about three hundred forty-five thousand."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Dance of the Forty-One",
+     event: "Police raid a private dance and arrest forty-one men",
+     place: "Calle de la Paz",
+     scene: "A SODA bottle pops at a private dance, and police burst in and arrest forty-one men."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Nueva del Paseo extends the colonia westward",
+     place: "Colonia Juarez",
+     scene: "A SODA stream flows west and fills new lots: Nueva del Paseo."}
+  - {year: 1902, peg: sun, confidence: disputed, source: "Search: El Financiero (WP es infobox: two years later)",
+     event: "Colonia Roma is founded by Orrin, Lascurain and Lamm",
+     place: "Colonia Roma",
+     scene: "The SUN rises over Orrin's circus tents as the first lots of Colonia Roma are sold."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Colonia Condesa",
+     event: "Colonia Condesa is established on the old hacienda",
+     place: "Colonia Condesa",
+     scene: "The SUN shines on the countess's hacienda as it is cut into the lots of Colonia Condesa."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Primera Fuerza",
+     event: "First football league begins with Reforma AC, British Club and Mexico Cricket Club",
+     scene: "The SUN shines on the first league match as Reforma Athletic Club kicks off."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Mexico City Improvement Company buys the land for Colonia Americana",
+     place: "Colonia Juarez",
+     scene: "A SEWER pipe stamped Mexico City Improvement Company is laid in the new Colonia Americana."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: Colonia Doctores",
+     event: "Casa Amiga de la Obrera opens for working mothers",
+     place: "Colonia Doctores",
+     scene: "A SEWER grate glints as mothers bring their children to the Casa Amiga de la Obrera."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP es: Colonia Juarez",
+     event: "Four colonias are joined as Colonia Juarez",
+     place: "Colonia Juarez",
+     scene: "Four SUSHI rolls are pressed into one plate: the new Colonia Juarez."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Timeline of Mexico City",
+     event: "Earthquake shakes the city on two days",
+     scene: "A bar of SOAP slides across shaking floors as the earthquake hits the city two days running."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: National Autonomous University of Mexico",
+     event: "Justo Sierra founds the National University of Mexico",
+     scene: "Justo Sierra throws a DICE onto the table, and the National University of Mexico begins."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP: Colonia Condesa",
+     event: "Jockey Club racetrack in Condesa is inaugurated",
+     place: "Colonia Condesa",
+     scene: "A DICE decides the first race at the Jockey Club track in Condesa."}
+  - {year: 1910, peg: dice, confidence: high, source: "Search: Infobae; Mexico Desconocido",
+     event: "Bandit El Tigre de Santa Julia is shot in Belen prison",
+     place: "Belen",
+     scene: "A DICE game ends in Belen yard as the squad shoots El Tigre de Santa Julia."}
+world_refs:
+  - {year: 1825, event: "National Museum founded", cell: latin_america_science_1800_1945}
+  - {year: 1833, event: "Establishment of Medical Sciences replaces the university faculty", cell: latin_america_science_1800_1945}
+  - {year: 1833, event: "Cholera epidemic", cell: latin_america_society_1800_1945}
+  - {year: 1836, event: "Academia de Letran founded", cell: latin_america_arts_1800_1945}
+  - {year: 1837, event: "Ignacio Ramirez at the Academia de Letran", cell: latin_america_religion_1800_1945}
+  - {year: 1847, event: "Revolt of the Polkos", cell: latin_america_politics_1800_1945}
+  - {year: 1847, event: "Battle of Churubusco", cell: latin_america_politics_1800_1945}
+  - {year: 1847, event: "Battle of Chapultepec", cell: latin_america_politics_1800_1945}
+  - {year: 1847, event: "US army occupies Mexico City", cell: latin_america_politics_1800_1945}
+  - {year: 1848, event: "Treaty of Guadalupe Hidalgo signed at the Villa de Guadalupe", cell: latin_america_politics_1800_1945}
+  - {year: 1850, event: "Liceo Hidalgo founded", cell: latin_america_arts_1800_1945}
+  - {year: 1851, event: "Telegraph Mexico City to Nopalucan", cell: latin_america_science_1800_1945}
+  - {year: 1854, event: "National anthem first sung", cell: latin_america_arts_1800_1945}
+  - {year: 1857, event: "Plan of Tacubaya", cell: latin_america_politics_1800_1945}
+  - {year: 1861, event: "Juarez retakes Mexico City", cell: latin_america_politics_1800_1945}
+  - {year: 1863, event: "Second Empire declared by the notables", cell: latin_america_politics_1800_1945}
+  - {year: 1863, event: "Cantolla's hot-air balloon over the city", cell: latin_america_science_1800_1945}
+  - {year: 1866, event: "Morales' Ildegonda premieres", cell: latin_america_arts_1800_1945}
+  - {year: 1867, event: "Juarez restores the Republic in the capital", cell: latin_america_politics_1800_1945}
+  - {year: 1868, event: "Mexican Society of Natural History founded", cell: latin_america_science_1800_1945}
+  - {year: 1868, event: "National Preparatory School opens in San Ildefonso", cell: latin_america_society_1800_1945}
+  - {year: 1869, event: "Altamirano's El Renacimiento", cell: latin_america_arts_1800_1945}
+  - {year: 1871, event: "Ortega's Guatimotzin premieres", cell: latin_america_arts_1800_1945}
+  - {year: 1873, event: "Mexican Railway to Veracruz opens", cell: latin_america_economy_1800_1945}
+  - {year: 1873, event: "William Butler leads the Methodist mission", cell: latin_america_religion_1800_1945}
+  - {year: 1875, event: "Students debate Spiritism", cell: latin_america_religion_1800_1945}
+  - {year: 1878, event: "National Astronomical Observatory on Chapultepec", cell: latin_america_science_1800_1945}
+  - {year: 1884, event: "Banco Nacional de Mexico formed", cell: latin_america_economy_1800_1945}
+  - {year: 1884, event: "Mexican Central Railway to El Paso", cell: latin_america_economy_1800_1945}
+  - {year: 1884, event: "Antonio Alzate Scientific Society founded", cell: latin_america_science_1800_1945}
+  - {year: 1887, event: "Matilde Montoya, first woman physician", cell: latin_america_society_1800_1945}
+  - {year: 1888, event: "Posada's print shop", cell: latin_america_arts_1800_1945}
+  - {year: 1888, event: "Geological Institute founded", cell: latin_america_science_1800_1945}
+  - {year: 1888, event: "National Medical Institute approved", cell: latin_america_science_1800_1945}
+  - {year: 1894, event: "Revista Azul founded", cell: latin_america_arts_1800_1945}
+  - {year: 1895, event: "Papal coronation of the Virgin of Guadalupe", cell: latin_america_religion_1800_1945}
+  - {year: 1896, event: "Lumiere film screening", cell: latin_america_arts_1800_1945}
+  - {year: 1896, event: "X-ray at Hospital Juarez", cell: latin_america_science_1800_1945}
+  - {year: 1898, event: "Revista Moderna founded", cell: latin_america_arts_1800_1945}
+  - {year: 1898, event: "Toscano's Don Juan Tenorio film", cell: latin_america_arts_1800_1945}
+  - {year: 1904, event: "Teatro Nacional (Bellas Artes) construction begins", cell: latin_america_arts_1800_1945}
+  - {year: 1905, event: "National Bacteriological Institute founded", cell: latin_america_science_1800_1945}
+  - {year: 1908, event: "Tacubaya observatory building opens", cell: latin_america_science_1800_1945}
+  - {year: 1909, event: "Ateneo de la Juventud founded", cell: latin_america_arts_1800_1945}
+  - {year: 1910, event: "Independence Column unveiled on Reforma", cell: latin_america_arts_1800_1945}
+  - {year: 1910, event: "Dr. Atl's first modern mural", cell: latin_america_arts_1800_1945}
+  - {year: 1910, event: "Braniff's flight at Balbuena", cell: latin_america_science_1800_1945}
+  - {year: 1910, event: "National Seismological Service station at Tacubaya", cell: latin_america_science_1800_1945}
+out_refs:
+  - {year: 1821, event: "Act of Independence signed in the National Palace", reason: "national government"}
+  - {year: 1822, event: "Iturbide crowned emperor in the cathedral", reason: "coronation"}
+  - {year: 1822, event: "Iturbide dissolves Congress", reason: "national government"}
+  - {year: 1824, event: "Federal constitution issued", reason: "national law"}
+  - {year: 1824, event: "Guadalupe Victoria takes office as president", reason: "presidential inauguration"}
+  - {year: 1836, event: "Seven Laws centralist constitution", reason: "national law"}
+  - {year: 1841, event: "Bases of Tacubaya bring Santa Anna back to power", reason: "national pronouncement"}
+  - {year: 1846, event: "Salas restores the federal constitution of the republic", reason: "national law"}
+  - {year: 1847, event: "Armistice of Tacubaya", reason: "national truce"}
+  - {year: 1857, event: "Constitution sworn by Congress", reason: "national law"}
+  - {year: 1864, event: "Maximilian and Carlota enter the capital", reason: "imperial arrival"}
+  - {year: 1872, event: "Juarez dies in the National Palace", reason: "head of state's death"}
+  - {year: 1882, event: "Manuel Gonzalez makes Chapultepec Castle the presidential residence", reason: "national government"}
+  - {year: 1884, event: "Diaz takes office for his second term", reason: "presidential inauguration"}
+  - {year: 1909, event: "Anti-Reelectionist Centre founded", reason: "national party"}
+  - {year: 1910, event: "Centennial celebrations of independence", reason: "national ceremony"}

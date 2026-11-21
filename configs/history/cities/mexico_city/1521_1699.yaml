@@ -1,0 +1,805 @@
+# City: Mexico City x 1521 to 1699 (the fall, the Spanish city, the drainage, floods, the riots of 1624 and 1692). DRAFT 2026-11-21.
+# Area: Valley of Mexico metro (all 16 CDMX boroughs + State of Mexico valley municipalities: Texcoco, Acolman, Naucalpan, Ecatepec, Tepotzotlán, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Viceroyalty, Audiencia and national acts -> out_refs.
+# World-grid events -> world_refs (latin_america cells). Dates: memory pass + web check (35 of 45 searches; no unauthorised book copies).
+# Main sources: wikipedia.org (en/es: History of Mexico City, Cathedral, National Palace, Enrico Martinez, convent and church pages),
+# CDMX historical timeline, INAH, UNAM, Estudios y fuentes del arte 6 (1983, nuns' choirs), Rev Mex Anestesiol 2025, Urban History 2016.
+# A building -> its first stone, opening or dedication as named in the event; a work -> its first public appearance; a phase -> its start.
+# Dates before 1584 are Julian. Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1521, peg: ant, confidence: high, source: "WP: Xochimilco (16 Apr)",
+     event: "Cortés's army storms the lake town of Xochimilco and sacks it",
+     place: "Xochimilco",
+     scene: "A giant ANT army swarms over the Xochimilco chinampas, kills the defenders and loots the town for Cortés."}
+  - {year: 1521, peg: ant, confidence: medium, source: "WP: Fall of Tenochtitlan (April)",
+     event: "Thirteen brigantines go into Lake Texcoco from a canal at Texcoco",
+     place: "Texcoco",
+     scene: "A giant ANT drags thirteen brigantines down the Texcoco canal and pushes them out onto the lake."}
+  - {year: 1521, peg: ant, confidence: medium, source: "WP: Fall of Tenochtitlan (no day)",
+     event: "Alvarado and Olid cut the Chapultepec aqueduct, the island city's water supply",
+     place: "Chapultepec",
+     scene: "An ANT with steel jaws chews through the Chapultepec aqueduct, and the fresh water to Tenochtitlan stops."}
+  - {year: 1521, peg: ant, confidence: medium, source: "WP: Fall of Tenochtitlan (St John's feast)",
+     event: "Mexica warriors beat back Cortés's assault on a causeway and sacrifice the Spanish captives",
+     place: "Templo Mayor",
+     scene: "Mexica warriors flick a giant ANT off the causeway, and priests sacrifice its captured riders on the Templo Mayor."}
+  - {year: 1521, peg: ant, confidence: unverified,
+     event: "Spanish forces take the Tlatelolco market, the last Mexica stronghold",
+     place: "Tlatelolco",
+     scene: "A giant ANT climbs the Tlatelolco market temple and raises the Spanish flag over the last Mexica stronghold."}
+  - {year: 1521, peg: ant, confidence: medium, source: "WP: Fall of Tenochtitlan (torture)",
+     event: "Cortés's men burn the feet of Cuauhtémoc to make him show the lost gold",
+     place: "Coyoacán",
+     scene: "In Coyoacán a fire ANT bites Cuauhtémoc's burned feet while Spaniards shout at him to show the gold."}
+  - {year: 1521, peg: ant, confidence: high, source: "WP: Coyoacán",
+     event: "Coyoacán becomes the Spanish seat while Tenochtitlan is rebuilt",
+     place: "Coyoacán",
+     scene: "A queen ANT sets up the Spanish colony's nest in Coyoacán while workers rebuild the ruined island city."}
+  - {year: 1523, peg: gnome, confidence: high, source: "Heraldica.org; UNAM: city coat of arms",
+     event: "Charles V grants Mexico City its coat of arms (day disputed)",
+     scene: "A royal herald carves the castle and lions of Mexico City's new coat of arms onto a giant GNOME's chest."}
+  - {year: 1524, peg: hanger, confidence: unverified, source: "UNAM thesis: Atarazanas first building",
+     event: "The Atarazanas fortress rises on the eastern shore to hold the brigantines",
+     place: "Atarazanas",
+     scene: "Cortés's soldiers stack stone walls round a giant HANGER, and the brigantines hang inside the new Atarazanas fortress."}
+  - {year: 1524, peg: hanger, confidence: high, source: "WP: Gonzalo de Salazar (29 Dec)",
+     event: "Salazar and Chirino seize the city government while Cortés is in Honduras",
+     place: "Plaza Mayor",
+     scene: "Salazar hangs Cortés's decree on a HANGER and pushes it into a closet; he and Chirino now rule the city."}
+  - {year: 1526, peg: nacho, confidence: high, source: "WP: Gonzalo de Salazar (29 Jan)",
+     event: "Cortés's friends storm Salazar's house and show him in a cage on the main square",
+     place: "Plaza Mayor",
+     scene: "Cortés's men pour hot NACHO cheese over Salazar and lock him in a cage on the main square."}
+  - {year: 1527, peg: ink, confidence: unverified,
+     event: "The council houses rise on the south side of the main square",
+     place: "Plaza Mayor",
+     scene: "Masons build the first council houses on the main square, and the aldermen sign their acts with INK."}
+  - {year: 1548, peg: reef, confidence: medium, source: "La Razón column (18 Aug)",
+     event: "A royal decree names Mexico City very noble, distinguished and very loyal",
+     scene: "A REEF of royal coral spells very noble, distinguished and very loyal into Mexico City's council door."}
+  - {year: 1559, peg: elbow, confidence: high, source: "CDMX timeline; WP: Xochimilco",
+     event: "Philip II gives Xochimilco the title of city",
+     place: "Xochimilco",
+     scene: "A Xochimilco boatman uses a royal title deed as a sail on his canoe, and an ELBOW-shaped royal seal stamps it a city."}
+  - {year: 1562, peg: chain, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "The Crown buys Cortés's palace from his son: it becomes the viceroy's palace",
+     place: "Palacio Nacional",
+     scene: "The Crown pays Martín Cortés with a CHAIN of gold coins and takes his palace on the square for the viceroys."}
+  - {year: 1630, peg: mouse, confidence: medium, source: "WP: History of Mexico City",
+     event: "After the flood a plan to move the capital to dry ground fails: owners and council oppose it",
+     scene: "Property owners tie the flooded city to its island with a MOUSE-gnawed rope, and the plan to move it fails."}
+  - {year: 1645, peg: railway, confidence: high, source: "WP: Centro histórico de Tlalpan (28 Aug)",
+     event: "The viceroy makes San Agustín de las Cuevas (Tlalpan) a villa",
+     place: "Tlalpan",
+     scene: "At the Tlalpan fiesta the viceroy drives a gold RAILWAY spike into the plaza and names San Agustín de las Cuevas a villa."}
+  - {year: 1692, peg: piano, confidence: medium, source: "Urban History (2016): palace archives",
+     event: "Sigüenza y Góngora saves archives from the burning palace during the riot",
+     place: "Palacio Nacional",
+     scene: "Sigüenza smashes a burning PIANO out of the doorway and carries the palace archives out of the fire."}
+  - {year: 1693, peg: palm, confidence: unverified,
+     event: "Friar Diego Valverde starts to rebuild the viceroy's palace after the riot",
+     place: "Palacio Nacional",
+     scene: "Friar Valverde plants a PALM in the burnt palace yard and starts to lay new stones round it."}
+  # science
+  - {year: 1540, peg: horse, confidence: medium, source: "UANL text: Amor de Dios (Zumárraga)",
+     event: "Zumárraga's Hospital del Amor de Dios opens for patients with syphilis",
+     place: "Amor de Dios",
+     scene: "A huge HORSE carries syphilis patients through the door of Zumárraga's new Amor de Dios hospital."}
+  - {year: 1553, peg: llama, confidence: medium, source: "WP es: Barrio de San Juan (some say earlier)",
+     event: "A royal decree founds the Hospital Real de Naturales for sick Indians",
+     place: "San Juan Moyotlan",
+     scene: "A royal LLAMA carries sick Nahua patients into the new Hospital Real de Naturales in San Juan."}
+  - {year: 1555, peg: lily, confidence: high, source: "UNAM (Gurría): cabildo act 25 Oct",
+     event: "Viceroy Velasco builds the San Lázaro dike round the east of the city",
+     place: "San Lázaro",
+     scene: "A giant LILY pad curves round the east side of the city, and the San Lázaro dike holds the lake back."}
+  - {year: 1555, peg: lily, confidence: medium, source: "UNAM (Gurría): Gudiel, 26 Nov",
+     event: "Francisco Gudiel proposes a drain through Huehuetoca; no work follows",
+     place: "Huehuetoca",
+     scene: "Gudiel draws a drain to Huehuetoca on a LILY leaf, and the council lets the leaf float away."}
+  - {year: 1563, peg: gem, confidence: medium, source: "INAH search: cabildo buys Santa Fe springs",
+     event: "The city council buys the Santa Fe springs for the city's water",
+     place: "Santa Fe",
+     scene: "The council pays for the Santa Fe springs with a GEM the size of a fist and claims the water for the city."}
+  - {year: 1567, peg: jockey, confidence: disputed, source: "es WP: San Hipólito 1567; thesis 1566; en WP 1569",
+     event: "Bernardino Álvarez opens San Hipólito, the first hospital for the insane in the Americas",
+     place: "San Hipólito",
+     scene: "A JOCKEY in a friar's robe rides the insane from the streets into Álvarez's new San Hipólito hospital."}
+  - {year: 1571, peg: cat, confidence: medium, source: "INAH search: Santa Fe aqueduct (Dec)",
+     event: "Work starts on the Santa Fe aqueduct to the city",
+     place: "Santa Fe",
+     scene: "A CAT with a trowel lays the first stones of the Santa Fe aqueduct, and water starts its long way to the city."}
+  - {year: 1572, peg: coin, confidence: high, source: "search: Pedro López, San Lázaro",
+     event: "Doctor Pedro López opens the San Lázaro leper hospital",
+     place: "San Lázaro",
+     scene: "Pedro López pays with a gold COIN and opens San Lázaro, and the city's lepers walk in through the gate."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP es: Iglesia de la Santísima",
+     event: "The Brotherhood of San Pedro founds a hospital for sick and old priests",
+     place: "La Santísima",
+     scene: "A CAKE with a priest's cap on top marks the brotherhood's new hospital for sick old priests."}
+  - {year: 1582, peg: oven, confidence: high, source: "search: Pedro López, Desamparados",
+     event: "Pedro López founds the Hospital de los Desamparados",
+     place: "Desamparados",
+     scene: "Pedro López lifts poor abandoned people out of the street into a warm OVEN-heated ward: the Desamparados opens."}
+  - {year: 1602, peg: sun, confidence: high, source: "Rev Mex Anestesiol: hospitaller orders",
+     event: "Rodríguez del Vado and his wife found the Hospital del Espíritu Santo",
+     place: "Espíritu Santo",
+     scene: "A rich couple tip their fortune out of a SUN-hot chest to found the Espíritu Santo hospital."}
+  - {year: 1603, peg: sumo, confidence: medium, source: "INAH: Santa Fe arcade (Montesclaros)",
+     event: "Masons start the stone arcade of the Santa Fe aqueduct",
+     place: "Tlaxpana",
+     scene: "A SUMO wrestler lifts the first stone arches of the Santa Fe aqueduct into place at the Tlaxpana."}
+  - {year: 1604, peg: sewer, confidence: high, source: "INAH catalogue: San Cristóbal dike",
+     event: "After a flood the viceroy rebuilds the San Cristóbal Ecatepec dike",
+     place: "Ecatepec",
+     scene: "A SEWER pipe the size of a causeway becomes the San Cristóbal dike at Ecatepec and holds the northern lake back."}
+  - {year: 1604, peg: sewer, confidence: high, source: "Rev Mex Anestesiol: 25 Feb deed",
+     event: "The Brothers of San Juan de Dios take over the Desamparados hospital",
+     place: "San Juan de Dios",
+     scene: "The Brothers of San Juan de Dios climb out of a SEWER grate and take the keys of the Desamparados hospital."}
+  - {year: 1609, peg: soap, confidence: high, source: "WP: Enrico Martínez (13 May)",
+     event: "Enrico Martínez finishes the Huehuetoca drain tunnel",
+     place: "Huehuetoca",
+     scene: "Martínez pulls a SOAP plug out of the Huehuetoca tunnel, and the lake water drains out to the north."}
+  - {year: 1614, peg: tower, confidence: high, source: "WP: Enrico Martínez",
+     event: "Dutch engineer Adrian Boot arrives to judge the drainage works",
+     place: "Huehuetoca",
+     scene: "Adrian Boot climbs out of a TOWER on a Dutch ship and points at the Huehuetoca tunnel: it is wrong."}
+  - {year: 1614, peg: tower, confidence: medium, source: "Rev Mex Anestesiol: hospitaller orders",
+     event: "The San Juan de Dios brothers move their hospital into a new building",
+     place: "San Juan de Dios",
+     scene: "The San Juan de Dios brothers carry beds up a new hospital TOWER west of Santo Domingo."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP: Enrico Martínez (3 Apr)",
+     event: "The king approves Martínez's drainage plan and orders work at once",
+     place: "Huehuetoca",
+     scene: "A royal DISH arrives with Martínez's drainage plan on it, stamped yes: start at once."}
+  - {year: 1620, peg: nose, confidence: high, source: "INAH: Santa Fe arcade finished",
+     event: "The Santa Fe aqueduct arcade is finished and brings water to the Mariscala fountain",
+     place: "La Mariscala",
+     scene: "A huge NOSE drinks at the end of the Santa Fe arches, and the Mariscala fountain overflows."}
+  - {year: 1623, peg: gnome, confidence: high, source: "WP: Enrico Martínez",
+     event: "Viceroy Gelves stops the drainage and sends the water back into the lakes",
+     place: "Huehuetoca",
+     scene: "Gelves plugs the Huehuetoca tunnel with a fat GNOME, and the water flows back into the lakes."}
+  - {year: 1628, peg: knife, confidence: high, source: "Rev Mex Anestesiol: hospitaller orders",
+     event: "Antonine canons arrive and build the San Antonio Abad hospital for ergotism",
+     place: "San Antonio Abad",
+     scene: "An Antonine canon cuts burning sores with a KNIFE in the new San Antonio Abad hospital."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP: Enrico Martínez (21 Sep)",
+     event: "Martínez, arrested for blocking the tunnel, is set free to repair it",
+     place: "Huehuetoca",
+     scene: "A jailer turns a KNOB, Martínez walks free from his cell, and he runs to repair the Huehuetoca tunnel."}
+  - {year: 1637, peg: mug, confidence: medium, source: "WP es: Tajo de Nochistongo",
+     event: "Work starts to turn the Huehuetoca tunnel into an open cut",
+     place: "Nochistongo",
+     scene: "A giant MUG scoops the roof off the Nochistongo tunnel, and the open cut begins."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP: Hospital de Jesús Nazareno",
+     event: "The Hospital de Jesús holds one of the first teaching autopsies in the Americas",
+     place: "Hospital de Jesús",
+     scene: "Students watch a surgeon open a body on a ROACH-covered table in the Hospital de Jesús."}
+  - {year: 1665, peg: jelly, confidence: high, source: "WP: Hospital de Jesús Nazareno",
+     event: "Cortés's hospital is dedicated and takes the name Jesús Nazareno",
+     place: "Hospital de Jesús",
+     scene: "A JELLY image of Jesus of Nazareth slides onto the gate of Cortés's hospital, and it takes his name."}
+  - {year: 1675, peg: eagle, confidence: high, source: "Rev Mex Anestesiol: 31 Mar",
+     event: "The Bethlehemite brothers open the Hospital de Belén for convalescents",
+     place: "Belén",
+     scene: "An EAGLE carries the keys of the new Belén hospital to the Bethlehemite brothers."}
+  - {year: 1687, peg: fox, confidence: high, source: "CDMX timeline",
+     event: "Jesuits found the Hospital del Divino Salvador for insane women",
+     place: "Divino Salvador",
+     scene: "A Jesuit FOX leads insane women out of the streets to the new Divino Salvador hospital."}
+  # religion
+  - {year: 1521, peg: ant, confidence: medium, source: "WP es: Templo de San Hipólito (inscription)",
+     event: "Cortés builds a chapel for the Spaniards killed on the Tacuba causeway",
+     place: "San Hipólito",
+     scene: "A soldier ANT carries the bones of the Noche Triste dead into a new chapel on the Tacuba causeway."}
+  - {year: 1522, peg: nun, confidence: medium, source: "WP: Coyoacán (1520 to 1552)",
+     event: "Friars begin the church of San Juan Bautista in Coyoacán",
+     place: "Coyoacán",
+     scene: "A NUN rings the first bell of San Juan Bautista while friars lay its walls in Coyoacán."}
+  - {year: 1524, peg: hanger, confidence: medium, source: "WP: Cathedral (Sepúlveda)",
+     event: "The first church on the main square rises on the Aztec sacred precinct",
+     place: "Plaza Mayor",
+     scene: "Workers hang a church bell from a HANGER on the stones of the Aztec sacred precinct: the first church rises."}
+  - {year: 1525, peg: nail, confidence: medium, source: "WP es: Museo Nacional del Virreinato",
+     event: "Franciscans build the church of San Pedro at Tepotzotlán (approximate)",
+     place: "Tepotzotlán",
+     scene: "A Franciscan hammers a NAIL into the roof beam of the new San Pedro church at Tepotzotlán."}
+  - {year: 1526, peg: nacho, confidence: high, source: "WP es: Iglesia de la Santísima",
+     event: "The tailors' guild pays for a small chapel where La Santísima later stands",
+     place: "La Santísima",
+     scene: "Tailors sew a small chapel from cloth and stitch a NACHO-yellow cross on its roof."}
+  - {year: 1528, peg: knife, confidence: high, source: "WP: Hernando Alonso (17 Oct)",
+     event: "Hernando Alonso burns at the stake, the first person burned in the New World",
+     place: "Plaza Mayor",
+     scene: "A burning KNIFE cuts the rope round Hernando Alonso's stake, and he is the first to burn in New Spain."}
+  - {year: 1529, peg: knob, confidence: high, source: "CDMX timeline",
+     event: "Work begins on the church of San Pedro Apóstol at Tláhuac",
+     place: "Tláhuac",
+     scene: "A giant KNOB on the door of San Pedro at Tláhuac turns, and the church builders walk in."}
+  - {year: 1530, peg: mouse, confidence: high, source: "WP: Historic center of Mexico City",
+     event: "Zumárraga builds the archbishop's palace on the base of a Tezcatlipoca temple",
+     place: "Arzobispado",
+     scene: "A MOUSE runs off the old Tezcatlipoca platform as Zumárraga sets his palace on top of it."}
+  - {year: 1535, peg: mill, confidence: high, source: "WP: Xochimilco",
+     event: "Work begins on the San Bernardino de Siena church at Xochimilco",
+     place: "Xochimilco",
+     scene: "A MILL wheel turns in a Xochimilco canal and hoists stones for the new San Bernardino church."}
+  - {year: 1538, peg: movie, confidence: high, source: "WP: Xochimilco",
+     event: "Xochimilco's people stop the Church from moving their friars to Mexico City",
+     place: "Xochimilco",
+     scene: "Xochimilco families block the canal with a giant MOVIE screen, and their friars cannot leave."}
+  - {year: 1539, peg: map, confidence: high, source: "INAH guide: Acolman",
+     event: "The Augustinians begin the convent of San Agustín at Acolman",
+     place: "Acolman",
+     scene: "An Augustinian unrolls a MAP of the cloister at Acolman and lays its first stone."}
+  - {year: 1540, peg: horse, confidence: high, source: "Estudios y fuentes del arte 6 (1983): Concepción",
+     event: "Zumárraga founds La Concepción, the first house of nuns in New Spain",
+     place: "La Concepción",
+     scene: "The first nuns of New Spain ride a white HORSE through the gate of Zumárraga's La Concepción."}
+  - {year: 1541, peg: radio, confidence: high, source: "WP es: Templo de San Agustín",
+     event: "Work starts on the great convent of San Agustín",
+     place: "San Agustín",
+     scene: "A RADIO mast is the first pole the Augustinians raise for their great convent south of the main square."}
+  - {year: 1552, peg: lion, confidence: disputed, source: "WP es: Culhuacán (1552 to 1569; Chimalpain 1607)",
+     event: "Augustinians build a convent and church at Culhuacán",
+     place: "Culhuacán",
+     scene: "An Augustinian LION guards the new convent gate at Culhuacán while friars teach Nahuatl inside."}
+  - {year: 1556, peg: leech, confidence: medium, source: "WP: Santo Domingo (Mexico City)",
+     event: "The Dominicans begin their second church at Santo Domingo",
+     place: "Santo Domingo",
+     scene: "Dominicans lay the second Santo Domingo church on a giant LEECH that sinks slowly into the mud."}
+  - {year: 1570, peg: goose, confidence: medium, source: "UNAM: beaterios (papal bull)",
+     event: "A papal bull recognises the founders of the Santa Clara convent",
+     place: "Santa Clara",
+     scene: "A papal GOOSE flies in with the bull, and the beatas become Santa Clara's first nuns."}
+  - {year: 1573, peg: comb, confidence: high, source: "Estudios y fuentes del arte 6 (1983): Regina",
+     event: "Regina Coeli, the city's second convent of nuns, is founded",
+     place: "Regina Coeli",
+     scene: "The nuns of Regina Coeli sweep a new cloister with a golden COMB on the day of their founding."}
+  - {year: 1574, peg: car, confidence: medium, source: "WP: Virgin of Los Remedios (1574; or 1575)",
+     event: "A chapel to the Virgin of Los Remedios rises on the Cerro de los Pájaros at Naucalpan",
+     place: "Naucalpan",
+     scene: "A CAR made of stone climbs the Cerro de los Pájaros and becomes the first Los Remedios chapel."}
+  - {year: 1577, peg: cake, confidence: medium, source: "UNAM thesis: first visit of Remedios",
+     event: "The Virgin of Los Remedios is carried into Mexico City for the first time",
+     place: "Cathedral",
+     scene: "Bearers set the Los Remedios image on a giant CAKE float and carry it into the city for the first time."}
+  - {year: 1580, peg: vase, confidence: high, source: "Estudios y fuentes del arte 6; WP: Jesús María",
+     event: "The convent of Jesús María opens for poor daughters of conquistadors",
+     place: "Jesús María",
+     scene: "Fifteen poor girls step out of a giant VASE into the new Jesús María convent."}
+  - {year: 1580, peg: vase, confidence: medium, source: "Estudios y fuentes del arte 6: Balvanera",
+     event: "A house of beatas that becomes the Balvanera convent opens (approximate)",
+     place: "Balvanera",
+     scene: "Beatas plant one flower in a cracked VASE and pray: their small house later becomes Balvanera."}
+  - {year: 1580, peg: vase, confidence: high, source: "CDMX timeline",
+     event: "The Dominican hermitage of San Jacinto at San Ángel becomes a church",
+     place: "San Ángel",
+     scene: "Dominicans stand a blue VASE on the altar, and the San Jacinto hermitage becomes a church."}
+  - {year: 1580, peg: vase, confidence: medium, source: "WP es: Museo Nacional del Virreinato",
+     event: "The Jesuits begin their college at Tepotzotlán (approximate)",
+     place: "Tepotzotlán",
+     scene: "A Jesuit novice paints the first wall of the Tepotzotlán college with a brush from a VASE."}
+  - {year: 1585, peg: waffle, confidence: high, source: "WP es: San Jerónimo; Medellín (1983)",
+     event: "The convent of San Jerónimo, later Sor Juana's house, is founded",
+     place: "San Jerónimo",
+     scene: "Hieronymite nuns roll a WAFFLE-patterned stone into place as the first stone of San Jerónimo."}
+  - {year: 1585, peg: waffle, confidence: medium, source: "WP es: La Profesa",
+     event: "The Jesuits found the first church of La Profesa",
+     place: "La Profesa",
+     scene: "Jesuit Pedro Mercado buys a WAFFLE-shaped lot with donors' gold and founds La Profesa."}
+  - {year: 1586, peg: fish, confidence: high, source: "WP es: Templo del Carmen (15 Jan)",
+     event: "Discalced Carmelites take over the San Sebastián hermitage",
+     place: "San Sebastián",
+     scene: "Barefoot Carmelites walk into the San Sebastián hermitage, and a FISH swims in its font."}
+  - {year: 1587, peg: fox, confidence: disputed, source: "WP es: Churubusco c. 1587; INAH search 1581",
+     event: "The Discalced Franciscans (Dieguinos) take over the Churubusco convent",
+     place: "Churubusco",
+     scene: "A red FOX in Dieguino sandals takes the Churubusco convent keys from the old friars."}
+  - {year: 1587, peg: fox, confidence: high, source: "WP es: Templo de San Agustín",
+     event: "The church of San Agustín is finished",
+     place: "San Agustín",
+     scene: "A FOX climbs to the top of San Agustín and plants the last cross: the church is finished."}
+  - {year: 1590, peg: bees, confidence: medium, source: "WP: Santo Domingo (chronology unclear)",
+     event: "The first church of Santo Domingo is consecrated",
+     place: "Santo Domingo",
+     scene: "Swarms of BEES fill the new Santo Domingo church with wax candles for its consecration."}
+  - {year: 1590, peg: bees, confidence: high, source: "WP: Tacubaya (wall date)",
+     event: "The Dominican convent at Tacubaya, now La Candelaria, is built",
+     place: "Tacubaya",
+     scene: "BEES build a honeycomb on the Tacubaya convent wall in the shape of its date."}
+  - {year: 1593, peg: palm, confidence: high, source: "WP es: Santa Catalina de Siena (3 Jul)",
+     event: "Dominican nuns from Oaxaca found the Santa Catalina de Siena convent",
+     place: "Santa Catalina de Siena",
+     scene: "Dominican nuns from Oaxaca fan themselves with a PALM leaf in their new Santa Catalina convent."}
+  - {year: 1594, peg: bear, confidence: high, source: "Estudios y fuentes del arte 6: Encarnación",
+     event: "Conceptionist nuns found the convent of La Encarnación",
+     place: "La Encarnación",
+     scene: "A BEAR stands guard at the gate while Conceptionist nuns move into La Encarnación."}
+  - {year: 1594, peg: bear, confidence: high, source: "WP: Convent of La Merced",
+     event: "Mercedarian friars begin their first church at La Merced",
+     place: "La Merced",
+     scene: "A BEAR in a white Mercedarian habit digs the foundations of the first La Merced church."}
+  - {year: 1598, peg: beehive, confidence: high, source: "WP es: Iglesia de San Lorenzo (14 Nov)",
+     event: "Philip II signs the decree that founds the convent of San Lorenzo",
+     place: "San Lorenzo",
+     scene: "Philip II signs San Lorenzo's founding decree on the back of a sleeping BEEHIVE."}
+  - {year: 1598, peg: beehive, confidence: high, source: "WP es: Barrio de San Juan (18 Jun)",
+     event: "Poor Clares move into San Juan de la Penitencia in the Indian barrio",
+     place: "San Juan Moyotlan",
+     scene: "Poor Clares carry a BEEHIVE into the old San Juan hostel, now the convent of San Juan de la Penitencia."}
+  - {year: 1599, peg: pipe, confidence: disputed, source: "WP es: San Hipólito (1590 or 1599)",
+     event: "Work starts on the church of San Hipólito",
+     place: "San Hipólito",
+     scene: "A PIPE organ marches up the Tacuba road and starts to build the church of San Hipólito."}
+  - {year: 1600, peg: sauce, confidence: high, source: "Estudios y fuentes del arte 6 (17 Sep)",
+     event: "The first nuns enter the Santa Inés convent of Diego Caballero",
+     place: "Santa Inés",
+     scene: "Nuns from La Concepción carry a pot of SAUCE into Santa Inés, their new cloister."}
+  - {year: 1601, peg: soda, confidence: unverified,
+     event: "Franciscan nuns found the convent of Santa Isabel",
+     place: "Santa Isabel",
+     scene: "Franciscan nuns pop open a SODA bottle to bless the new Santa Isabel convent."}
+  - {year: 1601, peg: soda, confidence: high, source: "WP es: Jesús Nazareno; Medellín (1983)",
+     event: "Alonso Pérez de Castañeda begins the church of Jesús Nazareno",
+     place: "Jesús Nazareno",
+     scene: "A SODA fountain gushes at the hospital door as Pérez de Castañeda starts the Jesús Nazareno church."}
+  - {year: 1604, peg: sewer, confidence: medium, source: "Medellín (1983): San Pedro y San Pablo",
+     event: "The Jesuit church of San Pedro y San Pablo is built",
+     place: "San Pedro y San Pablo",
+     scene: "Jesuits pull the vault of San Pedro y San Pablo up through an open SEWER hole."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP: Desierto de los Leones (23 Jan)",
+     event: "Carmelites lay the first stone of the Desierto de los Leones hermitage",
+     place: "Desierto de los Leones",
+     scene: "A Carmelite friar lays the first stone of the Desierto in the forest, on a plate of SUSHI."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP es: Templo del Carmen (3 Feb)",
+     event: "The Carmelites move into their new convent of El Carmen",
+     place: "El Carmen",
+     scene: "The Carmelites SKI from the old San Sebastián hermitage into their new convent of El Carmen."}
+  - {year: 1610, peg: dice, confidence: medium, source: "CDMX timeline 1610; Medellín (1983) 1609",
+     event: "The church of Santiago Tlatelolco is finished",
+     place: "Tlatelolco",
+     scene: "Santiago rides a pair of DICE down the new nave of Tlatelolco church: the building is finished."}
+  - {year: 1610, peg: dice, confidence: medium, source: "WP es: La Profesa",
+     event: "The first church of La Profesa is finished",
+     place: "La Profesa",
+     scene: "Jesuits roll DICE onto the roof of La Profesa, and the first church is finished."}
+  - {year: 1610, peg: dice, confidence: unverified,
+     event: "Conceptionist nuns found the convent of San José de Gracia",
+     place: "San José de Gracia",
+     scene: "Conceptionist nuns throw DICE for the cells of their new convent of San José de Gracia."}
+  - {year: 1615, peg: doll, confidence: high, source: "WP: El Carmen complex (29 Jun)",
+     event: "Andrés de San Miguel founds the Carmelite college of San Ángel",
+     place: "San Ángel",
+     scene: "Friar Andrés lays out the San Ángel college with a DOLL's house model in his hand."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP es: Santa Teresa la Antigua (1 Mar)",
+     event: "Carmelite nuns move into the new convent of Santa Teresa la Antigua",
+     place: "Santa Teresa la Antigua",
+     scene: "Carmelite nuns carry a gold DISH of relics into the new convent of Santa Teresa."}
+  - {year: 1621, peg: ant, confidence: high, source: "Estudios y fuentes del arte 6: Jesús María",
+     event: "The royal convent of Jesús María moves to its new site and is finished",
+     place: "Jesús María",
+     scene: "An ANT colony carries the nuns of Jesús María on their backs to their finished new convent."}
+  - {year: 1622, peg: nun, confidence: high, source: "INAH: Guadalupe church (Nov)",
+     event: "Archbishop Pérez de la Serna dedicates a new church at Tepeyac",
+     place: "Tepeyac",
+     scene: "A NUN carries the Guadalupe image into Pérez de la Serna's new church at Tepeyac."}
+  - {year: 1623, peg: gnome, confidence: high, source: "WP es: Santa Catalina de Siena (7 Mar)",
+     event: "The church of Santa Catalina de Siena is dedicated",
+     place: "Santa Catalina de Siena",
+     scene: "A GNOME rings the bell as the archbishop dedicates the church of Santa Catalina de Siena."}
+  - {year: 1623, peg: gnome, confidence: high, source: "WP es: San Jerónimo; Medellín (1983)",
+     event: "The church of San Jerónimo opens",
+     place: "San Jerónimo",
+     scene: "A GNOME opens the doors of the new San Jerónimo church to the city."}
+  - {year: 1628, peg: knife, confidence: high, source: "WP: Virgin of Los Remedios",
+     event: "The Los Remedios chapel gets a vault and a dome",
+     place: "Naucalpan",
+     scene: "A KNIFE carves a dome out of a stone block and sets it on the Los Remedios chapel."}
+  - {year: 1628, peg: knife, confidence: high, source: "CDMX timeline",
+     event: "Work begins on the parish church of San Pedro at Cuajimalpa",
+     place: "Cuajimalpa",
+     scene: "A KNIFE cuts the first line of the San Pedro church in the hill soil of Cuajimalpa."}
+  - {year: 1629, peg: knob, confidence: high, source: "INAH: Guadalupe image (Sep)",
+     event: "The archbishop brings the Guadalupe image by canoe to the cathedral during the flood",
+     place: "Cathedral",
+     scene: "The archbishop paddles a canoe with a giant KNOB as its prow and brings the Guadalupe image to the cathedral."}
+  - {year: 1634, peg: hammer, confidence: high, source: "INAH: Guadalupe image (14 May)",
+     event: "The Guadalupe image goes back to Tepeyac after the flood",
+     place: "Tepeyac",
+     scene: "A HAMMER-carrying crowd escorts the Guadalupe image back along the causeway to Tepeyac."}
+  - {year: 1635, peg: mill, confidence: high, source: "Estudios y fuentes del arte 6: San Bernardo",
+     event: "Nuns leave Regina Coeli after a quarrel and found San Bernardo",
+     place: "San Bernardo",
+     scene: "Angry nuns leave Regina Coeli through a MILL door and found the convent of San Bernardo."}
+  - {year: 1636, peg: match, confidence: high, source: "Estudios y fuentes del arte 6 (19 Mar)",
+     event: "The church of Regina Coeli is dedicated",
+     place: "Regina Coeli",
+     scene: "A lit MATCH lights the first candle as Regina Coeli church is dedicated."}
+  - {year: 1637, peg: mug, confidence: medium, source: "WP es: Centro histórico de Tlalpan",
+     event: "Work begins on the present church of San Agustín at Tlalpan",
+     place: "Tlalpan",
+     scene: "A MUG of cement starts the walls of the new San Agustín church in Tlalpan."}
+  - {year: 1642, peg: rhino, confidence: high, source: "WP: Mexican Inquisition",
+     event: "The Inquisition arrests about a hundred and fifty crypto-Jews in a few days",
+     place: "Holy Office",
+     scene: "Inquisition guards carry a RHINO cage through the city and push a hundred and fifty suspected crypto-Jews into it."}
+  - {year: 1649, peg: rope, confidence: high, source: "WP: Basilica of Guadalupe",
+     event: "Laso de la Vega builds the Capilla de Indios at Tepeyac",
+     place: "Tepeyac",
+     scene: "Laso de la Vega ties a ROPE round stones and pulls up the Capilla de Indios at Tepeyac."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP es: Iglesia de San Lorenzo (16 Jul)",
+     event: "Gómez de Trasmonte's new church of San Lorenzo is dedicated",
+     place: "San Lorenzo",
+     scene: "A LASSO of flowers circles the new San Lorenzo church on its dedication day."}
+  - {year: 1655, peg: lily, confidence: high, source: "Estudios y fuentes del arte 6 (13 Nov)",
+     event: "The new church of La Concepción is blessed",
+     place: "La Concepción",
+     scene: "A LILY grows over the door of La Concepción as the new church is blessed."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP: Mexico City Cathedral (2 Feb)",
+     event: "The cathedral receives its first dedication while still unfinished",
+     place: "Cathedral",
+     scene: "A LEECH sucks the last scaffold off the unfinished cathedral for its first dedication."}
+  - {year: 1659, peg: elbow, confidence: high, source: "WP: William Lamport (auto of 19 Nov)",
+     event: "William Lamport, the Irish rebel, dies at an auto de fe",
+     place: "San Diego quemadero",
+     scene: "Lamport twists free from an ELBOW lock, hangs himself at the San Diego quemadero, and the fire takes his body."}
+  - {year: 1665, peg: jelly, confidence: high, source: "Estudios y fuentes del arte 6: Capuchinas",
+     event: "Capuchin nuns found the convent of San Felipe de Jesús",
+     place: "Capuchinas",
+     scene: "Capuchin nuns spread JELLY on bread for the poor in their new San Felipe de Jesús convent."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP: Basilica of Guadalupe",
+     event: "The Capilla del Cerrito rises on top of the Tepeyac hill",
+     place: "Tepeyac",
+     scene: "A JUDGE climbs the Tepeyac hill and lays the first stone of the Cerrito chapel at the top."}
+  - {year: 1667, peg: jockey, confidence: high, source: "WP es: Iglesia de la Santísima (19 Sep)",
+     event: "The church of La Santísima is consecrated",
+     place: "La Santísima",
+     scene: "A JOCKEY rides three horses, one for each person of the Trinity, into La Santísima for its consecration."}
+  - {year: 1670, peg: goose, confidence: high, source: "WP es: Museo Nacional del Virreinato",
+     event: "The Jesuits begin the church of San Francisco Javier at Tepotzotlán",
+     place: "Tepotzotlán",
+     scene: "A GOOSE pecks the first stone into place for the Jesuit church at Tepotzotlán."}
+  - {year: 1671, peg: cat, confidence: high, source: "Estudios y fuentes del arte 6 (21 Nov)",
+     event: "The new Balvanera church is blessed",
+     place: "Balvanera",
+     scene: "A CAT sleeps on the altar of the new Balvanera church as the priest blesses it."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP es: Cosme y Damián (11 Jan)",
+     event: "The church of San Cosme y San Damián is dedicated",
+     place: "San Cosme",
+     scene: "An EAGLE drops two doctors' bags on the dome as San Cosme church is dedicated."}
+  - {year: 1678, peg: cave, confidence: medium, source: "INAH search: Churubusco rebuilt",
+     event: "The merchant Diego del Castillo pays to rebuild Churubusco's church and convent",
+     place: "Churubusco",
+     scene: "Diego del Castillo walks out of a CAVE with a chest of silver and rebuilds Churubusco convent."}
+  - {year: 1684, peg: fairy, confidence: high, source: "WP es: Santa Teresa la Antigua (10 Sep)",
+     event: "The rebuilt church of Santa Teresa la Antigua is finished",
+     place: "Santa Teresa la Antigua",
+     scene: "A FAIRY waves her wand, and the new Baroque church of Santa Teresa la Antigua is finished."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP es: Jesús Nazareno (8 Dec)",
+     event: "The church of Jesús Nazareno is dedicated",
+     place: "Jesús Nazareno",
+     scene: "A FIFE plays at the door as Jesús Nazareno church is dedicated, finished after many years."}
+  - {year: 1690, peg: bees, confidence: medium, source: "WP: Timeline 1690; EFAM 1983: finished 1691",
+     event: "The new church of San Bernardo is consecrated",
+     place: "San Bernardo",
+     scene: "BEES fly out of the gilded plaster of the new San Bernardo church as it is consecrated."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP es: Templo de San Agustín",
+     event: "The rebuilt church of San Agustín is finished after the fire",
+     place: "San Agustín",
+     scene: "A PIANO is hoisted into the new organ loft as the last stone of rebuilt San Agustín is set."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP: Basilica of Guadalupe (25 Mar)",
+     event: "Work starts on a new basilica at Tepeyac",
+     place: "Tepeyac",
+     scene: "A BELL tower falls from the sky onto Tepeyac and becomes the first stone of the new basilica."}
+  # arts
+  - {year: 1522, peg: nun, confidence: high, source: "WP: National Palace (Mexico)",
+     event: "Cortés begins his palace on the site of Moctezuma's palace",
+     place: "Palacio Nacional",
+     scene: "A NUN carries red tezontle stones from Moctezuma's ruined palace to build Cortés's new palace."}
+  - {year: 1524, peg: hanger, confidence: high, source: "WP: Historic center of Mexico City",
+     event: "Gerónimo de Aguilar builds the house that later holds the first press",
+     place: "Casa de la Primera Imprenta",
+     scene: "Gerónimo de Aguilar builds a house on the edge of the old sacred precinct and hangs his coat on a HANGER inside."}
+  - {year: 1541, peg: radio, confidence: high, source: "WP: Juan Pablos",
+     event: "Juan Pablos prints a news report on the earthquake that destroyed Guatemala City",
+     place: "Casa de la Primera Imprenta",
+     scene: "A crackling RADIO reports the Guatemala earthquake, and Juan Pablos prints the news on his press."}
+  - {year: 1588, peg: fife, confidence: high, source: "WP: Mexico City Cathedral",
+     event: "Simon Pereyns paints Saint Christopher for the cathedral",
+     place: "Cathedral",
+     scene: "Pereyns paints Saint Christopher carrying the Christ child across a river full of FIFE players."}
+  - {year: 1592, peg: piano, confidence: high, source: "WP: Alameda Central (11 Jan)",
+     event: "Viceroy Luis de Velasco II orders the Alameda, the city's public park",
+     place: "Alameda",
+     scene: "Velasco plants poplar trees in a row of PIANO keys, and the Alameda park opens to the people."}
+  - {year: 1596, peg: peach, confidence: high, source: "WP: Casa de los Azulejos",
+     event: "Diego Suárez de Peredo buys the mansion that becomes the Casa de los Azulejos",
+     place: "Casa de los Azulejos",
+     scene: "Suárez de Peredo buys the mansion with a ripe PEACH of gold, and it later wears blue tiles."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP: Mexico City Cathedral",
+     event: "Baltasar de Echave Orio paints the Flagellation for the cathedral",
+     place: "Cathedral",
+     scene: "Echave Orio paints the Flagellation, with a white DOVE above the bound Christ, for the cathedral."}
+  - {year: 1620, peg: nose, confidence: high, source: "Americas (journal): April",
+     event: "Bramón's Los sirgueros de la Virgen, the first novel of New Spain, is printed",
+     scene: "Bramón's goldfinch singers fly out of a printed book and peck the NOSE of the reader: the first novel of New Spain."}
+  - {year: 1628, peg: knife, confidence: high, source: "Historia Mexicana (Boyer): Trasmonte view",
+     event: "Juan Gómez de Trasmonte paints a bird's-eye view of the city",
+     scene: "Gómez de Trasmonte cuts the city's outline with a KNIFE and paints its streets from the sky."}
+  - {year: 1653, peg: llama, confidence: high, source: "WP: Mexico City Cathedral",
+     event: "The great bells Doña María and La Ronca go up in the cathedral",
+     place: "Cathedral",
+     scene: "A LLAMA hauls the bells Doña María and La Ronca up the cathedral tower."}
+  - {year: 1673, peg: comb, confidence: medium, source: "El Nuevo Diario: Coliseo built c. 1671 to 1673",
+     event: "The Coliseo, the first theatre building of New Spain, opens beside the Hospital Real de Naturales",
+     place: "Hospital Real de Naturales",
+     scene: "Actors comb their wigs with a COMB on the stage of the new Coliseo beside the Indian hospital."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP: Mexico City Cathedral",
+     event: "The central part of the cathedral's main façade is finished",
+     place: "Cathedral",
+     scene: "An EAGLE lands on the top of the cathedral's finished central façade and spreads its wings."}
+  - {year: 1685, peg: waffle, confidence: high, source: "CDMX timeline",
+     event: "Painters begin the Techialoyan codex of Cuajimalpa",
+     place: "Cuajimalpa",
+     scene: "A WAFFLE of amate paper fills with Cuajimalpa's fields and churches: the Techialoyan codex begins."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP: Mexico City Cathedral",
+     event: "The cathedral's main portal and east portals are built",
+     place: "Cathedral",
+     scene: "A FIFE band marches out of the cathedral's new main portal."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP es: Mercurio Volante",
+     event: "Sigüenza y Góngora publishes the Mercurio Volante, a news sheet",
+     scene: "Sigüenza ties the Mercurio Volante to a PALM leaf, and the wind carries the news across the city."}
+  # economy
+  - {year: 1524, peg: hanger, confidence: unverified,
+     event: "Merchants open shops under the Portal de Mercaderes on the main square",
+     place: "Portal de Mercaderes",
+     scene: "Merchants hang cloth from a HANGER on every arch of the Portal de Mercaderes."}
+  - {year: 1536, peg: match, confidence: high, source: "WP es: Casa de Moneda de México",
+     event: "The mint strikes its first silver coins next to the palace",
+     place: "Calle de Moneda",
+     scene: "A MATCH lights the mint furnace, and the first Carlos and Juana silver coins drop out."}
+  - {year: 1550, peg: lasso, confidence: high, source: "CDMX timeline",
+     event: "Viceroy Mendoza lets Xochimilco hold its own tianguis",
+     place: "Xochimilco",
+     scene: "Mendoza throws a LASSO round the Xochimilco square and makes it a market for traders."}
+  - {year: 1557, peg: log, confidence: unverified,
+     event: "The city council issues ordinances for the guild of painters and gilders",
+     scene: "A painter signs the guild ordinances with a brush dipped in a LOG of gold leaf."}
+  - {year: 1559, peg: elbow, confidence: high, source: "WP es: Antonio de Espinosa (2 Aug)",
+     event: "Antonio de Espinosa ends Juan Pablos's printing monopoly and opens his own press",
+     scene: "Espinosa bends his ELBOW to break Pablos's padlock and prints his first book."}
+  - {year: 1563, peg: gem, confidence: high, source: "WP: Pedro Ocharte",
+     event: "Pedro Ocharte takes over Juan Pablos's press",
+     scene: "Ocharte sets a GEM-studded type case on Juan Pablos's old press and takes it over."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP: Tacubaya",
+     event: "The Casa Amarilla opens in Tacubaya as an inn for travellers",
+     place: "Tacubaya",
+     scene: "A tired DOVE lands at the yellow Casa Amarilla inn in Tacubaya and takes a room."}
+  - {year: 1620, peg: nose, confidence: medium, source: "CDMX: Antigua Alhóndiga",
+     event: "The grain exchange (alhóndiga) moves to the street that takes its name",
+     place: "Calle de la Alhóndiga",
+     scene: "A giant NOSE sniffs out maize sacks and leads the alhóndiga to its new street."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "WP es: Casa de Moneda de México",
+     event: "The mint strikes gold coins for the first time",
+     place: "Calle de Moneda",
+     scene: "A COWBOY rides into the mint and shakes the first gold coins out of his hat."}
+  - {year: 1692, peg: piano, confidence: high, source: "Urban History (2016): Galve's bans",
+     event: "After the riot the viceroy bans pulque and closes the Baratillo flea market",
+     place: "Plaza Mayor",
+     scene: "Guards drop a PIANO lid on the pulque jars, smash them, and nail the Baratillo stalls shut."}
+  - {year: 1697, peg: pig, confidence: high, source: "Urban History (2016): AHDF Pulquerías",
+     event: "Pulque becomes legal again in the city",
+     scene: "A PIG pulls a pulque cart back into the city, and the taverns open again."}
+  # society
+  - {year: 1522, peg: nun, confidence: medium, source: "WP: History of Mexico City (1521 to 1522)",
+     event: "Alonso García Bravo lays out the grid of the Spanish city (traza)",
+     place: "Traza",
+     scene: "García Bravo stretches a cord across the ruins, and a NUN pegs out the straight streets of the traza."}
+  - {year: 1524, peg: hanger, confidence: high, source: "WP es: Cosme y Damián (10 Sep)",
+     event: "Cortés gives the San Cosme lands to conquistadors for orchards",
+     place: "San Cosme",
+     scene: "Cortés hangs orchards on a HANGER and hands them out to his conquistadors at San Cosme."}
+  - {year: 1528, peg: knife, confidence: medium, source: "Hispanopedia: Paseo del Pendón (31 Jul)",
+     event: "The council orders a yearly feast of San Hipólito: the Paseo del Pendón",
+     place: "San Hipólito",
+     scene: "A KNIFE cuts the royal banner free, and the council parades it to San Hipólito every year."}
+  - {year: 1529, peg: knob, confidence: high, source: "WP: Xochimilco",
+     event: "Martín de Valencia starts the Feria de la Nieve, an ice fair, at Xochimilco",
+     place: "Xochimilco",
+     scene: "Martín de Valencia scoops snow onto a KNOB of ice, and Xochimilco's ice fair begins."}
+  - {year: 1534, peg: hammer, confidence: high, source: "CDMX timeline",
+     event: "Cortés renames San Pedro Cuauhximalpa and founds towns in Cuajimalpa",
+     place: "Cuajimalpa",
+     scene: "Cortés drops a HAMMER on the Cuajimalpa hills, and new towns spring up round San Pedro."}
+  - {year: 1548, peg: reef, confidence: high, source: "WP es: Barrio de San Juan",
+     event: "A royal decree founds the Colegio de San Juan de Letrán for mestizo boys",
+     place: "San Juan de Letrán",
+     scene: "Mestizo boys build a coral REEF of books in the new college of San Juan de Letrán."}
+  - {year: 1548, peg: reef, confidence: unverified,
+     event: "The confraternity of the Holy Sacrament founds the Colegio de Niñas for girls",
+     place: "Colegio de Niñas",
+     scene: "A coral REEF forms the gate of the Colegio de Niñas, and girls run into their new school."}
+  - {year: 1553, peg: llama, confidence: high, source: "UNAM: first lectures (3 Jun)",
+     event: "The university gives its first lectures",
+     place: "University",
+     scene: "A LLAMA in a doctor's cap gives the first lecture at the new university."}
+  - {year: 1555, peg: lily, confidence: high, source: "WP: History of Mexico City",
+     event: "A great flood fills the streets of the city",
+     scene: "A LILY pad floats down the flooded streets past the half-drowned houses."}
+  - {year: 1573, peg: comb, confidence: unverified,
+     event: "The Colegio de Santa María de Todos los Santos opens for graduates",
+     place: "Todos los Santos",
+     scene: "A COMB tidies the gowns of the graduates in the new college of Todos los Santos."}
+  - {year: 1574, peg: car, confidence: medium, source: "UNAM: Jesuit colleges from this year",
+     event: "The Jesuits open their first colleges in the city",
+     place: "San Pedro y San Pablo",
+     scene: "Jesuits drive a school CAR full of students to their first college in the city."}
+  - {year: 1580, peg: vase, confidence: high, source: "WP: History of Mexico City",
+     event: "A great flood fills the city",
+     scene: "A VASE floats out of a flooded house and bobs along the streets."}
+  - {year: 1584, peg: fairy, confidence: high, source: "UNAM (de la Torre): 29 Jun",
+     event: "The first stone of the university building is laid on the Plaza del Volador",
+     place: "Plaza del Volador",
+     scene: "Professors lay the university's first stone on a FAIRY's ring on the Plaza del Volador."}
+  - {year: 1595, peg: bell, confidence: medium, source: "El Tlacuache (INAH): measles with mumps",
+     event: "Measles and mumps strike the city together",
+     scene: "A giant BELL tolls for the dead as measles and mumps sweep through the city at once."}
+  - {year: 1604, peg: sewer, confidence: medium, source: "WP: History of Mexico City",
+     event: "A major flood strikes the city",
+     scene: "Water pours out of every SEWER grate, and the city streets flood."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP: History of Mexico City",
+     event: "A major flood hits the city",
+     scene: "A man rides one SKI like a board along the flooded Calle de Tacuba past drowned shops."}
+  - {year: 1609, peg: soap, confidence: high, source: "WP: Xochimilco",
+     event: "A monastery school opens at Xochimilco with classes in rhetoric and theology",
+     place: "Xochimilco",
+     scene: "Students in Xochimilco wash their slates with SOAP and start lessons in rhetoric and theology."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "Earthquake table (search): 25 Aug",
+     event: "An earthquake brings down part of the San Francisco convent",
+     place: "San Francisco",
+     scene: "A giant TATTOO on the ground cracks open and part of the San Francisco convent falls into it."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP: Colegio de San Ildefonso",
+     event: "San Ildefonso absorbs the old college of San Pedro y San Pablo",
+     place: "San Ildefonso",
+     scene: "A DOVE carries the students of ruined San Pedro y San Pablo into San Ildefonso."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP: Enrico Martínez",
+     event: "A flood hits the city, and the council asks the viceroy for action",
+     scene: "Aldermen paddle an INK pot boat to the palace to ask the viceroy for help with the flood."}
+  - {year: 1645, peg: railway, confidence: medium, source: "WP: History of Mexico City",
+     event: "Another flood strikes the city",
+     scene: "A RAILWAY car floats across the flooded main square while people wade past."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP: William Lamport (Christmas Eve)",
+     event: "Lamport escapes the Inquisition jail for a day and posts attacks on the Holy Office",
+     place: "Plaza Mayor",
+     scene: "Lamport throws a LASSO over the jail wall, climbs out, and pastes posters against the Inquisition on the square."}
+  - {year: 1653, peg: llama, confidence: medium, source: "Earthquake table (search): January",
+     event: "An earthquake damages Santo Domingo and the church of Azcapotzalco",
+     place: "Azcapotzalco",
+     scene: "A LLAMA stamps its hoof, and cracks run through Santo Domingo and the church of Azcapotzalco."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP: Mexican Inquisition (6 Nov)",
+     event: "Fourteen men accused of sodomy are burned by order of the criminal court",
+     place: "San Lázaro",
+     scene: "The criminal court throws fourteen men onto a WOLF-guarded pyre near San Lázaro."}
+  - {year: 1674, peg: car, confidence: medium, source: "WP: History of Mexico City",
+     event: "A flood strikes the city",
+     scene: "A CAR floats down the flooded streets with water up to its seats."}
+  - {year: 1676, peg: cage, confidence: high, source: "WP es: Templo de San Agustín (11 Dec)",
+     event: "Fire destroys the church of San Agustín",
+     place: "San Agustín",
+     scene: "A burning CAGE drops from the roof, and fire destroys the church of San Agustín in one night."}
+  - {year: 1682, peg: oven, confidence: medium, source: "Manzanilla list (search): 19 Mar",
+     event: "A strong earthquake opens the ground and brings down some houses",
+     scene: "An OVEN door bursts open under the city, the ground splits, and houses fall."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP: Mexico City Riot of 1692",
+     event: "Floods ruin the maize and wheat crops around the city",
+     scene: "A BOOT stamps the drowned maize into the mud, and the city's granaries stay empty."}
+  - {year: 1692, peg: piano, confidence: high, source: "Urban History (2016): 21 Jun ordinance",
+     event: "Indians must leave the Spanish traza; Sigüenza y Góngora redraws its limits",
+     place: "Traza",
+     scene: "Sigüenza draws the traza line with PIANO wire, and Indian families must carry their goods out past it."}
+world_refs:
+  - {year: 1521, event: "Cuauhtémoc becomes the last ruler of Tenochtitlan", cell: latin_america_politics_1500_1800}
+  - {year: 1521, event: "Siege of Tenochtitlan begins", cell: latin_america_politics_1500_1800}
+  - {year: 1521, event: "Fall of Tenochtitlan: Cuauhtémoc captured", cell: latin_america_politics_1500_1800}
+  - {year: 1523, event: "Pedro de Gante's school for Indian children at Texcoco", cell: latin_america_society_1500_1800}
+  - {year: 1524, event: "Mexico City council set up on the ruins", cell: latin_america_politics_1500_1800}
+  - {year: 1524, event: "Cortés leaves Mexico City for Honduras", cell: latin_america_politics_1500_1800}
+  - {year: 1524, event: "Hospital de Jesús founded", cell: latin_america_science_1500_1800}
+  - {year: 1524, event: "The Twelve Franciscans arrive", cell: latin_america_religion_1500_1800}
+  - {year: 1524, event: "Coloquios: Aztec priests and the friars", cell: latin_america_religion_1500_1800}
+  - {year: 1525, event: "Martín de Valencia's primary school", cell: latin_america_society_1500_1800}
+  - {year: 1526, event: "Dominican friars arrive", cell: latin_america_religion_1500_1800}
+  - {year: 1526, event: "First recorded bullfight", cell: latin_america_society_1500_1800}
+  - {year: 1528, event: "Zumárraga arrives as bishop-elect", cell: latin_america_religion_1500_1800}
+  - {year: 1530, event: "Diocese of Mexico created", cell: latin_america_religion_1500_1800}
+  - {year: 1531, event: "Virgin of Guadalupe at Tepeyac (traditional date)", cell: latin_america_religion_1500_1800}
+  - {year: 1531, event: "Measles epidemic in central Mexico", cell: latin_america_society_1500_1800}
+  - {year: 1532, event: "Vasco de Quiroga's hospital-town of Santa Fe", cell: latin_america_religion_1500_1800}
+  - {year: 1533, event: "Augustinian friars arrive", cell: latin_america_religion_1500_1800}
+  - {year: 1535, event: "Royal decree founds the mint", cell: latin_america_economy_1500_1800}
+  - {year: 1536, event: "Trial of Martín Ocelotl", cell: latin_america_religion_1500_1800}
+  - {year: 1536, event: "Colegio de Santa Cruz de Tlatelolco opens", cell: latin_america_society_1500_1800}
+  - {year: 1537, event: "Alleged slave plot ends in hangings", cell: latin_america_society_1500_1800}
+  - {year: 1539, event: "Don Carlos Ometochtzin of Texcoco burned", cell: latin_america_religion_1500_1800}
+  - {year: 1539, event: "Juan Pablos prints the first book of the Americas", cell: latin_america_religion_1500_1800}
+  - {year: 1539, event: "Feather mosaic of the Mass of Saint Gregory", cell: latin_america_arts_1500_1800}
+  - {year: 1541, event: "Codex Mendoza (approximate)", cell: latin_america_arts_1500_1800}
+  - {year: 1545, event: "First great cocoliztli epidemic", cell: latin_america_society_1500_1800}
+  - {year: 1546, event: "Mexico becomes an archdiocese", cell: latin_america_religion_1500_1800}
+  - {year: 1551, event: "Royal decree founds the university", cell: latin_america_society_1500_1800}
+  - {year: 1552, event: "Badiano herbal finished at Tlatelolco", cell: latin_america_science_1500_1800}
+  - {year: 1554, event: "Cervantes de Salazar's Latin dialogues on the city", cell: latin_america_arts_1500_1800}
+  - {year: 1554, event: "Recognitio summularum printed", cell: latin_america_religion_1500_1800}
+  - {year: 1555, event: "First Mexican Provincial Council", cell: latin_america_religion_1500_1800}
+  - {year: 1556, event: "Montúfar praises the Guadalupe cult", cell: latin_america_religion_1500_1800}
+  - {year: 1556, event: "Sumario compendioso, first arithmetic book", cell: latin_america_science_1500_1800}
+  - {year: 1557, event: "Physica speculatio printed", cell: latin_america_religion_1500_1800}
+  - {year: 1560, event: "Acolman church Plateresque facade", cell: latin_america_arts_1500_1800}
+  - {year: 1565, event: "Second Mexican Provincial Council", cell: latin_america_religion_1500_1800}
+  - {year: 1566, event: "Martín Cortés plot: the Ávila brothers beheaded", cell: latin_america_politics_1500_1800}
+  - {year: 1569, event: "Philip II orders the Mexico Inquisition tribunal", cell: latin_america_religion_1500_1800}
+  - {year: 1570, event: "Opera medicinalia, first medical book", cell: latin_america_science_1500_1800}
+  - {year: 1571, event: "Holy Office tribunal opens", cell: latin_america_religion_1500_1800}
+  - {year: 1572, event: "First Jesuits arrive", cell: latin_america_religion_1500_1800}
+  - {year: 1573, event: "Cathedral construction begins", cell: latin_america_arts_1500_1800}
+  - {year: 1574, event: "First auto de fe of the Holy Office", cell: latin_america_religion_1500_1800}
+  - {year: 1575, event: "Hernando Franco becomes cathedral chapel master", cell: latin_america_arts_1500_1800}
+  - {year: 1576, event: "Second great cocoliztli epidemic", cell: latin_america_society_1500_1800}
+  - {year: 1576, event: "Hernández autopsies of cocoliztli victims", cell: latin_america_science_1500_1800}
+  - {year: 1577, event: "Florentine Codex finished (approximate)", cell: latin_america_arts_1500_1800}
+  - {year: 1577, event: "Flores de varia poesía anthology", cell: latin_america_arts_1500_1800}
+  - {year: 1578, event: "First chair of medicine at the university", cell: latin_america_science_1500_1800}
+  - {year: 1578, event: "López de Hinojosos's Summa of surgery", cell: latin_america_science_1500_1800}
+  - {year: 1579, event: "Farfán's treatise on anatomy and surgery", cell: latin_america_science_1500_1800}
+  - {year: 1585, event: "Third Mexican Provincial Council", cell: latin_america_religion_1500_1800}
+  - {year: 1588, event: "Jesuits found San Ildefonso", cell: latin_america_society_1500_1800}
+  - {year: 1591, event: "Cárdenas's Problems and Marvellous Secrets", cell: latin_america_science_1500_1800}
+  - {year: 1592, event: "Merchant guild (Consulado) set up", cell: latin_america_economy_1500_1800}
+  - {year: 1596, event: "Carvajal family burned as secret Jews", cell: latin_america_religion_1500_1800}
+  - {year: 1604, event: "Balbuena's Grandeza mexicana", cell: latin_america_arts_1500_1800}
+  - {year: 1606, event: "Enrico Martínez's Repertory of the Times", cell: latin_america_science_1500_1800}
+  - {year: 1607, event: "Martínez starts the Huehuetoca drainage tunnel", cell: latin_america_science_1500_1800}
+  - {year: 1610, event: "González de Eslava's spiritual dialogues", cell: latin_america_arts_1500_1800}
+  - {year: 1612, event: "Thirty-five Africans hanged for an alleged plot", cell: latin_america_society_1500_1800}
+  - {year: 1615, event: "Ximénez prints Hernández's plant work", cell: latin_america_science_1500_1800}
+  - {year: 1624, event: "Tumult drives Viceroy Gelves out of his palace", cell: latin_america_politics_1500_1800}
+  - {year: 1629, event: "Great flood: the city under water for five years", cell: latin_america_society_1500_1800}
+  - {year: 1637, event: "First chair of mathematics and astrology", cell: latin_america_science_1500_1800}
+  - {year: 1642, event: "Bishop Palafox removes Viceroy Escalona", cell: latin_america_politics_1500_1800}
+  - {year: 1648, event: "Miguel Sánchez's Imagen de la Virgen María", cell: latin_america_religion_1500_1800}
+  - {year: 1649, event: "Laso de la Vega's Huei tlamahuiçoltica", cell: latin_america_religion_1500_1800}
+  - {year: 1649, event: "Great Auto de Fe", cell: latin_america_religion_1500_1800}
+  - {year: 1666, event: "Guadalupe inquiry: sworn testimony for Rome", cell: latin_america_religion_1500_1800}
+  - {year: 1667, event: "Cathedral closes its last vault and is consecrated", cell: latin_america_arts_1500_1800}
+  - {year: 1668, event: "Sigüenza's Primavera indiana", cell: latin_america_arts_1500_1800}
+  - {year: 1672, event: "Sigüenza takes the chair of mathematics", cell: latin_america_science_1500_1800}
+  - {year: 1680, event: "Sor Juana's Neptune arch", cell: latin_america_arts_1500_1800}
+  - {year: 1680, event: "Sigüenza's arch with Aztec rulers", cell: latin_america_arts_1500_1800}
+  - {year: 1681, event: "Sigüenza's Manifesto against Comets", cell: latin_america_science_1500_1800}
+  - {year: 1681, event: "Kino's Astronomical Exposition of the Comet", cell: latin_america_science_1500_1800}
+  - {year: 1683, event: "Los empeños de una casa premieres", cell: latin_america_arts_1500_1800}
+  - {year: 1683, event: "Sigüenza's Triunfo parténico", cell: latin_america_arts_1500_1800}
+  - {year: 1684, event: "Villalpando's canvases for the cathedral sacristy", cell: latin_america_arts_1500_1800}
+  - {year: 1688, event: "Florencia's Estrella del Norte de México", cell: latin_america_religion_1500_1800}
+  - {year: 1690, event: "Sigüenza's Libra astronómica", cell: latin_america_science_1500_1800}
+  - {year: 1690, event: "Infortunios de Alonso Ramírez", cell: latin_america_arts_1500_1800}
+  - {year: 1692, event: "Maize riot burns the viceroy's palace", cell: latin_america_society_1500_1800}
+  - {year: 1692, event: "Sigüenza named royal geographer", cell: latin_america_science_1500_1800}
+  - {year: 1695, event: "Death of Sor Juana in a plague", cell: latin_america_arts_1500_1800}
+  - {year: 1695, event: "Villalpando's view of the Plaza Mayor", cell: latin_america_arts_1500_1800}
+out_refs:
+  - {year: 1522, event: "Charles V names Cortés governor and captain-general of New Spain", reason: "national government"}
+  - {year: 1527, event: "First Audiencia of Mexico set up", reason: "national government (Audiencia)"}
+  - {year: 1529, event: "Cortés made Marquis of the Valley, with Coyoacán in the grant", reason: "royal grant"}
+  - {year: 1535, event: "Antonio de Mendoza arrives as first viceroy", reason: "viceroy's arrival"}
+  - {year: 1552, event: "Crown, encomenderos and Indian towns agree to share the new cathedral's cost", reason: "crown decision for New Spain"}
+  - {year: 1559, event: "Funeral honours for Charles V under Arciniega's catafalque", reason: "royal ceremony"}
+  - {year: 1564, event: "Visitor Valderrama doubles the tribute of the Indians", reason: "national tax policy"}
+  - {year: 1624, event: "The Audiencia orders Archbishop Pérez de la Serna out of New Spain", reason: "national government (Audiencia)"}
+  - {year: 1693, event: "Royal orders repeat the pulque ban for all New Spain", reason: "law for all New Spain"}
+  - {year: 1696, event: "The king becomes patron of the Bethlehemite hospitals", reason: "royal patronage"}
