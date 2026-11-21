@@ -565,3 +565,46 @@ Panipat, Tarain, Meerut, Agra, Mathura and Sonipat are OUT (outside the area). R
 | `1984_present` | 1984, the metro, the NCR boom, attacks, protests | 45 | ~220 |
 
 Expected cards are a guide, not a target.
+
+### New York (2026-11-20)
+
+Area: the metropolitan area as decided: the five boroughs; Long Island (Nassau, Suffolk); Westchester; and
+northern New Jersey (Hudson, Bergen, Essex, Passaic, Union, Morris and Middlesex counties: Newark, Jersey
+City, Hoboken, Paterson, Elizabeth, Morristown, Menlo Park, New Brunswick). Albany, West Point, Trenton,
+Princeton and Monmouth are OUT. Region: north_america.
+
+- Dates: before 1752 the English colonies used the Julian calendar with the year starting on 25 March;
+  New Amsterdam used the Gregorian calendar. Give the CE year of the event (New Style year for January–
+  March dates) and write the original date in the source.
+- The OUT rule covers each government while the city is its seat: the New Netherland government at New
+  Amsterdam (1625–1664: acts for the whole colony); the Province of New York (1664–1776: acts of the
+  governor, council and assembly for the whole province); the State of New York while it sits in the
+  city (1784–1797: state laws for the whole state); the Confederation Congress (1785–1789) and the US
+  federal government (1789–1790): national laws, the Bill of Rights, the Judiciary Act, inaugurations,
+  treaties. Colonial and state acts about the city itself are IN (the Dongan and Montgomerie charters,
+  the 1811 Commissioners' Plan, the 1898 consolidation, city charters).
+- The United Nations is treated like the Holy See: General Assembly and Security Council acts are OUT;
+  the headquarters, its building and events where the city is the subject are IN.
+- National and international finance: a crash or panic on Wall Street is IN (the city is the main stage);
+  Federal Reserve policy and national laws about banks are OUT.
+- Main stage (IN as cards): the Esopus and Kieft's War massacres in the area (Pavonia 1643), the 1664 and
+  1673 surrenders, Leisler's Rebellion and his hanging (1689–1691), the 1712 slave revolt and the 1741
+  conspiracy trials, the Stamp Act riots (1765), the Battle of Long Island and the British occupation
+  (1776–1783), the Great Fire of 1776, Nathan Hale's hanging, Evacuation Day (1783), the Doctors' Riot
+  (1788), the Great Fire of 1835, the Astor Place riot (1849), the Draft Riots (1863), the Orange riots
+  (1870–1871), the Triangle fire (1911), the Wall Street bombing (1920), the 1929 crash, the Harlem riots
+  (1935, 1943, 1964), the Stonewall uprising (1969), the 1977 blackout, the 1993 and 2001 World Trade
+  Center attacks, Occupy Wall Street (2011), Hurricane Sandy (2012), the 2020 COVID wave in the city.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1609` | Paleo-Indian and Archaic sites, the Lenape, Verrazzano (1524) | 30 | ~50 |
+| `1609_1782` | Hudson, New Amsterdam, colonial New York, the Revolution and occupation | 45 | ~200 |
+| `1783_1860` | Evacuation Day, the federal capital, the canal port, immigration, Central Park | 45 | ~230 |
+| `1861_1897` | the Civil War, Tweed, the Brooklyn Bridge, the Gilded Age | 45 | ~230 |
+| `1898_1929` | consolidation, the subway, Ellis Island, Harlem, the skyscrapers, the crash | 45 | ~260 |
+| `1930_1964` | the Depression, La Guardia, Moses, the UN, the World's Fairs | 45 | ~250 |
+| `1965_2000` | the fiscal crisis, the blackout, hip hop, the 1990s revival | 45 | ~250 |
+| `2001_present` | 9/11, rebuilding, Bloomberg, Sandy, COVID | 45 | ~220 |
+
+Expected cards are a guide, not a target.
