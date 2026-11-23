@@ -1,0 +1,706 @@
+# City: Seoul x 1876 to 1909 (the opening, Jemulpo, the Imo and Gapsin incidents, the Korean Empire, trams and
+# railways). DRAFT 2026-11-22.
+# Area: Seoul Capital Area (Hanyang/Hanseong, Jeong-dong, Yongsan, Mapo, Yeongdeungpo, Incheon and Jemulpo,
+# Ganghwa, Palmido, Suwon, Siheung, Gyeonggi). Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). The Joseon court and the Korean
+# Empire sit in the city: accessions, court rituals, national laws, treaties -> out_refs. Palaces, walls, gates,
+# altars, tombs, legation buildings and settlements -> cards. Main stage (the 1894 palace seizure, the Chunsaengmun
+# plot, the Manmin Gongdonghoe meetings, the Chemulpo battle, the 1905 troops at the palace, the 1907 riots, the 1908
+# march on the city, the 1909 attack on Yi Wan-yong) -> cards. World-grid events -> world_refs (world cell year).
+# Dates: memory pass + web check (45 searches max; no unauthorised book copies). Main sources: ko and en Wikipedia
+# (per-site and per-event articles), encykorea.aks.ac.kr, Seoul mediahub, Incheon city pages, Pressian, Korea Times.
+# Lunar dates converted to the Western year of the day. A building -> its opening or completion; a work -> its
+# first public appearance; a phase -> its start. Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1880, peg: vase, confidence: high, source: "Pressian; JACAR: Japanese legation in Seoul",
+     event: "Japan opens its legation at Cheongsugwan outside the West Gate, the first foreign legation in the city",
+     place: "Cheongsugwan, outside Seodaemun",
+     scene: "Hanabusa sets a Japanese VASE on the shelf of Cheongsugwan outside the West Gate, and the house becomes Japan's legation."}
+  - {year: 1882, peg: oven, confidence: high, source: "ko WP: 용산 기지",
+     event: "About three thousand Qing troops sent against the Imo mutiny camp at Yongsan",
+     place: "Yongsan",
+     scene: "Three thousand Qing soldiers light a camp OVEN on the Yongsan riverside and stay there after the Imo mutiny."}
+  - {year: 1883, peg: foam, confidence: high, source: "ko WP: 인천광역시의 역사",
+     event: "A lease agreement sets up the Japanese settlement at Jemulpo",
+     place: "Jemulpo, today's Jung-gu office",
+     scene: "Japanese merchants pour FOAM along the Jemulpo shore and build their leased settlement where it dries."}
+  - {year: 1883, peg: foam, confidence: high, source: "ko WP: 덕수궁; Seoul mediahub",
+     event: "Minister Foote buys Min Gye-ho's house in Jeong-dong for the US legation, the first land sold to a Westerner",
+     place: "Jeong-dong",
+     scene: "Minister Foote pays in dollars and carries a tub of FOAM into Min Gye-ho's Jeong-dong house, now the American legation."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ko WP: 인천광역시의 역사 (2 April)",
+     event: "The Qing settlement regulations set aside the Chinese settlement on the Jemulpo slope, the start of Chinatown",
+     place: "Jemulpo, Seollin-dong slope",
+     scene: "A Qing FAIRY waves her wand over the Jemulpo slope, and Chinese shop houses rise in the new Qing settlement."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ko WP: 인천광역시의 역사 (3 October)",
+     event: "The General Foreign Settlement of Jemulpo is set up for Western residents with its own council",
+     place: "Jemulpo, Eungbongsan hill",
+     scene: "A FAIRY draws one shared boundary around the Jemulpo hill, and Americans, British and Germans settle there together."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ko WP: 주한 영국 대사관",
+     event: "Britain uses Shin Heon's tiled house in Jeong-dong as its consulate",
+     place: "Jeong-dong",
+     scene: "A British FAIRY hoists the Union Jack over Shin Heon's tiled house in Jeong-dong, now Britain's consulate."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ko WP: 구 러시아 공사관",
+     event: "Russia begins its legation building on the Jeong-dong hill",
+     place: "Jeong-dong hill",
+     scene: "Russian workers lay a brick WAFFLE as the first course on the Jeong-dong hilltop and begin the Russian legation."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "Seoul mediahub: Namsan Japanese legation site",
+     event: "After the Gapsin coup Japan takes the Waeseongdae ground at the foot of Namsan for its new legation",
+     place: "Waeseongdae, Yejang-dong",
+     scene: "Japanese diplomats carry a giant WAFFLE up the Namsan slope and set their new legation on the Waeseongdae ground."}
+  - {year: 1888, peg: fife, confidence: high, source: "Pressian; Korea Times; en WP: Baby Riot of 1888",
+     event: "Baby riot: rumours that foreigners steal children bring crowds to foreign hospitals, schools and churches in Seoul",
+     place: "Jejungwon and the Jeong-dong missions",
+     scene: "A FIFE shrieks the rumour of stolen babies through Seoul's alleys, and crowds mass at the Jejungwon gate."}
+  - {year: 1890, peg: bees, confidence: high, source: "ko WP: 구 러시아 공사관",
+     event: "The Russian legation building with its white tower is completed on the Jeong-dong hill",
+     place: "Jeong-dong hill",
+     scene: "BEES seal the last brick into the white tower, and the Russian legation on the Jeong-dong hill stands complete."}
+  - {year: 1891, peg: boot, confidence: medium, source: "ko WP: 주한 영국 대사관 (begun May 1890)",
+     event: "Britain's red-brick consulate building in Jeong-dong is completed",
+     place: "Jeong-dong",
+     scene: "A British BOOT kicks the last red brick into place, and the new consulate building in Jeong-dong is finished."}
+  - {year: 1894, peg: bear, confidence: high, source: "Gojong Sillok via Ajunews; en WP: Japanese occupation of Gyeongbokgung",
+     event: "Japanese troops break in through Yeongchumun and seize Gyeongbokgung and the king",
+     place: "Yeongchumun, Gyeongbokgung",
+     scene: "A huge BEAR in Japanese uniform smashes through Yeongchumun gate at dawn and seizes Gyeongbokgung palace."}
+  - {year: 1894, peg: bear, confidence: high, source: "Kyunghyang; encykorea: Kim Ok-gyun",
+     event: "Kim Ok-gyun's body, sent back from Shanghai, is dismembered on the Yanghwajin sands as a warning",
+     place: "Yanghwajin sands",
+     scene: "A BEAR tears Kim Ok-gyun's corpse apart on the Yanghwajin sands, and the pieces go out across the country."}
+  - {year: 1895, peg: bell, confidence: high, source: "ko WP: 한성부 (26 May)",
+     event: "Hanseong-bu becomes one of twenty-three equal prefectures and loses its capital status",
+     place: "Hanseong-bu office",
+     scene: "A BELL tolls at the Hanseong-bu office, and the capital drops to one of twenty-three equal prefectures."}
+  - {year: 1895, peg: bell, confidence: high, source: "ko WP: 춘생문 사건 (28 November)",
+     event: "Chunsaengmun incident: soldiers try to climb into Gyeongbokgung to free the king and fail",
+     place: "Chunsaengmun, Gyeongbokgung",
+     scene: "Soldiers climb the wall at Chunsaengmun to free the king, but an alarm BELL wakes the guards and the plot fails."}
+  - {year: 1896, peg: peach, confidence: high, source: "ko WP: 김홍집 (11 February, solar)",
+     event: "Soldiers and a crowd kill Prime Minister Kim Hong-jip at Gwanghwamun",
+     place: "Gwanghwamun",
+     scene: "An angry crowd pelts Prime Minister Kim Hong-jip with PEACH stones at Gwanghwamun and beats him to death."}
+  - {year: 1896, peg: peach, confidence: medium, source: "ko WP: 한성부 (23-bu reversed after a year)",
+     event: "Hanseong-bu leaves the prefecture system and becomes the capital district again under the thirteen provinces",
+     place: "Hanseong-bu office",
+     scene: "Officials hang a golden PEACH back on the Hanseong-bu gate, and the city stands alone again as the capital."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP Agwan pacheon: 20 Feb",
+     event: "Gojong leaves the Russian legation and returns to Gyeongungung, a year after his flight",
+     place: "Russian legation, Jeong-dong",
+     scene: "Gojong rides out of the Russian legation on a PIG's back and trots down the Jeong-dong lane into Gyeongungung."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 만민공동회 (10 March)",
+     event: "About ten thousand people meet at Jongno for the first great Manmin Gongdonghoe against the Russian advisers",
+     place: "Jongno crossroads",
+     scene: "Ten thousand people swarm out of a BEEHIVE at the Jongno crossroads and demand that the Russian advisers go."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 만민공동회 (29 October)",
+     event: "The joint meeting of officials and people at Jongno adopts the Six Articles; the butcher Pak Seong-chun opens it",
+     place: "Jongno",
+     scene: "The butcher Pak Seong-chun climbs a BEEHIVE stage at Jongno and opens the meeting that adopts the Six Articles."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 만민공동회 (25 December)",
+     event: "Peddlers of the Hwangguk Hyeophoe attack the protesters, and troops break up the Manmin Gongdonghoe",
+     place: "Jongno",
+     scene: "Peddlers of the Hwangguk Hyeophoe kick over the protesters' BEEHIVE at Jongno, and troops clear the street."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ko WP: 서울 전차",
+     event: "A tram kills a five-year-old child at Jongno 2-ga, and the crowd destroys and burns the tram",
+     place: "Jongno 2-ga",
+     scene: "A crowd jams a burning PIPE into the tram that killed a child at Jongno 2-ga, and the car goes up in flames."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 제물포 해전 (9 February)",
+     event: "Battle of Chemulpo: the Russian cruiser Varyag and gunboat Korietz are scuttled off Jemulpo",
+     place: "off Jemulpo, near Palmido",
+     scene: "The crew of the Varyag opens a SEWER valve off Jemulpo and sinks the cruiser beside the gunboat Korietz."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "Pressian: Japanese army in Seoul (3 April)",
+     event: "The Japanese Korea Garrison Army sets up its headquarters at Daegwanjeong in Sogong-dong",
+     place: "Daegwanjeong, Sogong-dong",
+     scene: "Japanese officers climb out of a SEWER into Daegwanjeong in Sogong-dong and set up the Korea Garrison Army headquarters."}
+  - {year: 1905, peg: seal, confidence: high, source: "Seoul mediahub: Jungmyeongjeon; Pressian",
+     event: "Armed Japanese troops and gendarmes surround Gyeongungung and Jungmyeongjeon while the ministers meet on the protectorate treaty",
+     place: "Jungmyeongjeon, Gyeongungung",
+     scene: "Japanese troops, a barking SEAL at their head, ring Jungmyeongjeon with cannon while the ministers meet inside."}
+  - {year: 1905, peg: seal, confidence: high, source: "ko WP Min Yeong-hwan: 30 Nov, at his home",
+     event: "Min Yeong-hwan kills himself at his home in protest at the Eulsa treaty",
+     place: "Gyeonji-dong, Jongno",
+     scene: "A SEAL weeps on the doorstep of Min Yeong-hwan's Gyeonji-dong house, where he has taken his life over the Eulsa treaty."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Seoul archives: Yongsan timeline; Kyunghyang",
+     event: "The Japanese army begins building its garrison base on the seized Yongsan land",
+     place: "Yongsan",
+     scene: "Japanese engineers lay out the Yongsan fields like a SUSHI tray and begin the garrison base."}
+  - {year: 1907, peg: ski, confidence: medium, source: "Seoul mediahub: Namsan Residency-General site",
+     event: "The Residency-General moves into a new building at Waeseongdae on Namsan; the old legation becomes the Resident-General's house",
+     place: "Waeseongdae, Namsan",
+     scene: "A Japanese official rides a SKI down Namsan and opens the doors of the new Residency-General building at Waeseongdae."}
+  - {year: 1907, peg: ski, confidence: high, source: "encykorea: Gojong's abdication (19 July)",
+     event: "Protest against the forced abdication: soldiers and crowds attack the Jongno police box and fight Japanese police",
+     place: "Jongno police box",
+     scene: "A rioter swings a SKI through the Jongno police box window as soldiers and crowds fight Japanese police."}
+  - {year: 1907, peg: ski, confidence: high, source: "ko WP: 숭례문",
+     event: "The city wall beside Sungnyemun is pulled down, and the gate stands alone",
+     place: "Sungnyemun",
+     scene: "A giant SKI blade slices through the wall beside Sungnyemun, and the gate stands alone on its island."}
+  - {year: 1907, peg: ski, confidence: high, source: "encykorea: Yeon Gi-u; Incheon city: Yu Myeong-gyu",
+     event: "Disbanded Ganghwa garrison soldiers rise, seize the armoury and fight the Japanese",
+     place: "Ganghwa garrison armoury",
+     scene: "Ganghwa garrison soldiers smash the armoury door with a SKI and carry out its rifles against the Japanese."}
+  - {year: 1908, peg: sofa, confidence: high, source: "encykorea; Seoul Shinmun: 13-province army",
+     event: "The Righteous Army of the thirteen provinces under Heo Wi reaches thirty li outside Dongdaemun and is driven back",
+     place: "Mangu-ri, outside Dongdaemun",
+     scene: "Heo Wi's Righteous Army drags a SOFA to thirty li outside Dongdaemun, but Japanese troops at Mangu-ri drive it back."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 숭례문 (September)",
+     event: "Seventy-seven kan of wall near Sungnyemun and Soeuimun are demolished",
+     place: "between Sungnyemun and Soeuimun",
+     scene: "A SOFA tumbles through the breach as seventy-seven kan of wall near Sungnyemun and Soeuimun come down."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 서대문형무소 (October)",
+     event: "Gyeongseong Prison, later Seodaemun Prison, opens outside the West Gate",
+     place: "Hyeonjeo-dong, outside Seodaemun",
+     scene: "Japanese guards lock a SOFA in the first cell as Gyeongseong Prison opens outside the West Gate."}
+  - {year: 1908, peg: sofa, confidence: high, source: "Encykorea / Maeil: 21 Oct, Seodaemun prison",
+     event: "The Righteous Army leader Heo Wi is hanged in Gyeongseong Prison",
+     place: "execution house, Gyeongseong Prison",
+     scene: "Guards strap Heo Wi to a SOFA under the gallows rope in the prison's execution house, and the Righteous Army leader dies."}
+  - {year: 1909, peg: soap, confidence: high, source: "ko WP: 이재명 (22 December)",
+     event: "Lee Jae-myeong stabs Prime Minister Yi Wan-yong in front of Myeongdong Cathedral",
+     place: "Myeongdong Cathedral",
+     scene: "Lee Jae-myeong slides across SOAP-slick steps and stabs Yi Wan-yong in front of Myeongdong Cathedral."}
+  # science
+  - {year: 1884, peg: fairy, confidence: high, source: "ko WP: 우정총국 (18 November)",
+     event: "The Ujeongchongguk starts the first modern postal service",
+     place: "Ujeongchongguk, Gyeonji-dong",
+     scene: "A FAIRY with a mail bag flies out of the Ujeongchongguk and delivers the first modern letters in Seoul."}
+  - {year: 1885, peg: waffle, confidence: high, source: "encykorea; inews24: 한성전보총국 (28 September)",
+     event: "The Hanseong Telegraph Office opens, and the Seoul-Incheon telegraph line starts",
+     place: "Hanseong Telegraph Office, Sejong-ro",
+     scene: "Morse clicks race along a WAFFLE-patterned wire from the Hanseong Telegraph Office to Incheon."}
+  - {year: 1886, peg: fish, confidence: disputed, source: "Seoul mediahub 1886; Pressian argues early 1887",
+     event: "Jejungwon hospital moves from Jae-dong to a larger royal plot at Gurigae",
+     place: "Gurigae (Euljiro)",
+     scene: "Doctors carry a FISH tank full of medicines from Jae-dong to Gurigae, Jejungwon's larger new site."}
+  - {year: 1896, peg: peach, confidence: high, source: "ko WP: 경인선 (29 March)",
+     event: "James Morse wins the concession for the Seoul-Incheon railway",
+     place: "Hanseong",
+     scene: "James Morse bites into a PEACH shaped like a locomotive and wins the concession for the Seoul-Incheon railway."}
+  - {year: 1896, peg: peach, confidence: medium, source: "koreascience: Hanseong city works papers",
+     event: "The Hanseong city works start: main streets are widened and roadside shacks are cleared",
+     place: "Jongno and Namdaemun-ro",
+     scene: "Road gangs roll a giant PEACH down Jongno, flatten the roadside shacks and widen the street."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP: 경인선 (22 March)",
+     event: "Ground-breaking at Ugakhyeon in Incheon starts work on the Seoul-Incheon railway",
+     place: "Ugakhyeon, Incheon",
+     scene: "A PIG digs the first spadeful at Ugakhyeon in Incheon, and work on the Seoul-Incheon railway begins."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 서울 전차 (15 September)",
+     event: "A ceremony in front of Heunghwamun starts the building of the Seoul tram line",
+     place: "Heunghwamun",
+     scene: "Workers pull tram rails out of a BEEHIVE in front of Heunghwamun at the ceremony that starts the tram works."}
+  - {year: 1899, peg: pipe, confidence: high, source: "theme.archives.go.kr; ko WP: 서울 전차",
+     event: "The Dongdaemun power plant is completed to drive the trams",
+     place: "inside Dongdaemun",
+     scene: "Steam roars from a PIPE inside Dongdaemun as the new power plant spins the dynamo for the trams."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Pressian: Gwangjewon (24 April)",
+     event: "The Interior Ministry opens a state hospital, later called Gwangjewon",
+     place: "Hanseong",
+     scene: "A nurse pumps medicine through a PIPE into the first patient at the Interior Ministry's new state hospital, later Gwangjewon."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ko WP: 한강철교 (5 July)",
+     event: "The first Hangang Railway Bridge opens",
+     place: "Hangang Railway Bridge, Noryangjin",
+     scene: "A giant SAUCE bottle rolls across the new Hangang Railway Bridge on the first train into Seoul."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ko WP: 서울역 (8 July)",
+     event: "The Seoul-Incheon line reaches the city, and Namdaemun Station opens in a small wooden shed",
+     place: "Namdaemun Station, below Yeomcheon bridge",
+     scene: "Passengers step off at a wooden SAUCE shed below Yeomcheon bridge: Namdaemun Station opens."}
+  - {year: 1900, peg: sauce, confidence: high, source: "theme.archives.go.kr; Hwangseong Sinmun via hankyung (10 April)",
+     event: "Three electric street lamps light up Jongno, the first public electric lights",
+     place: "Jongno",
+     scene: "Three lamps on Jongno set a giant SAUCE pot glowing gold: the first electric street lights in Seoul."}
+  - {year: 1900, peg: sauce, confidence: disputed, source: "ko WP: 서울 전차 (body 1900; timeline January 1901)",
+     event: "The tram line is extended from Namdaemun to Yongsan",
+     place: "Namdaemun to Yongsan",
+     scene: "A tram drags a trail of SAUCE from Namdaemun down to the Yongsan riverside on the new line."}
+  - {year: 1901, peg: soda, confidence: high, source: "ko WP: 서울 전차 (July)",
+     event: "A Seodaemun-Namdaemun tram track closes a loop of the city lines",
+     place: "Seodaemun to Namdaemun",
+     scene: "A tram fizzes like SODA along the new Seodaemun-Namdaemun track and closes the loop of Seoul's lines."}
+  - {year: 1901, peg: soda, confidence: high, source: "ko WP: 경부선 (20 or 21 August)",
+     event: "Ground-breaking at Yeongdeungpo starts the northern end of the Seoul-Busan railway",
+     place: "Yeongdeungpo",
+     scene: "Officials pop a SODA bottle at Yeongdeungpo and break ground for the Seoul-Busan railway."}
+  - {year: 1902, peg: sun, confidence: high, source: "etnews; Seoul Shinmun (20 March)",
+     event: "The Seoul-Incheon public telephone line opens",
+     place: "Hanseong and Incheon",
+     scene: "A SUN-shaped receiver rings in Hanseong and Incheon answers: the first public telephone line opens."}
+  - {year: 1902, peg: sun, confidence: medium, source: "etnews: Hanseong telephone office (June)",
+     event: "The Hanseong telephone exchange starts city telephone service",
+     place: "Hanseong telephone office",
+     scene: "Operators plug cords into a switchboard shaped like the SUN and connect the city's first telephone subscribers."}
+  - {year: 1902, peg: sun, confidence: high, source: "ko WP: 경부선 (10 October)",
+     event: "The Yeongdeungpo-Myeonghak section, the first stretch of the Seoul-Busan line, is finished",
+     place: "Yeongdeungpo to Myeonghak (Anyang)",
+     scene: "Track gangs lay rail under a blazing SUN from Yeongdeungpo to Myeonghak, the first finished stretch of the Busan line."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ko WP: 팔미도 등대 (1 June)",
+     event: "Palmido lighthouse, the first modern lighthouse in Korea, is first lit",
+     place: "Palmido island",
+     scene: "A SUMO wrestler lights the lamp on Palmido island, and the first modern lighthouse in Korea guides ships to Jemulpo."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "Seoul environment news; K-water history",
+     event: "Collbran and Bostwick win the concession to supply Seoul with piped water",
+     place: "Hanseong",
+     scene: "Collbran and Bostwick throw a SUMO champion into the Han River and win the concession to pipe its water to Seoul."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 경의선; Pressian (March)",
+     event: "Japanese army engineers start the Seoul-Sinuiju military railway at Yongsan",
+     place: "Yongsan to Mapo",
+     scene: "Japanese army engineers dig a SEWER-deep cutting at Yongsan to begin the military railway to Sinuiju."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Sillok wiki; theme.archives.go.kr (15 June)",
+     event: "The agricultural model farm is set up at Seodun in Suwon",
+     place: "Seodun-dong, Suwon",
+     scene: "Officials plant rice in neat SUSHI rows at Seodun in Suwon, where the agricultural model farm is set up."}
+  - {year: 1907, peg: ski, confidence: high, source: "Sillok wiki: 권업모범장 (15 May)",
+     event: "The main Suwon model farm holds its opening ceremony",
+     place: "Seodun-dong, Suwon",
+     scene: "Ministers glide in on a SKI across the paddies and open the main Suwon model farm."}
+  - {year: 1907, peg: ski, confidence: high, source: "ko WP: 대한의원 (March)",
+     event: "Building starts on the Daehan Uiwon hospital east of Changgyeonggung",
+     place: "Daehan Uiwon, Yeongeon-dong",
+     scene: "Builders dig with a SKI as a shovel and begin the Daehan Uiwon hospital on the hill east of Changgyeonggung."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 대한의원 (November)",
+     event: "The Daehan Uiwon main building with its clock tower is completed",
+     place: "Daehan Uiwon, Yeongeon-dong",
+     scene: "Patients rest on a SOFA under the new clock tower as the Daehan Uiwon main building is completed."}
+  - {year: 1908, peg: sofa, confidence: high, source: "Seoul environment news; K-water (1 September)",
+     event: "The Ttukdo water plant starts Seoul's first tap water supply",
+     place: "Ttukdo (Ttukseom)",
+     scene: "A SOFA floats on clean water from the Ttukdo filter beds as Seoul's first tap water flows."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 홍예문 (begun 1905)",
+     event: "Japanese army engineers complete Hongyemun, the stone arch road through the Incheon hill",
+     place: "Hongyemun, Incheon",
+     scene: "Japanese engineers push a SOFA through the stone arch of Hongyemun, the new road cut through the Incheon hill."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 경부선 (1 April)",
+     event: "Siheung Station opens on the Seoul-Busan line",
+     place: "Siheung Station (Geumcheon)",
+     scene: "A train stops to unload a SOFA at the new Siheung Station south of Yeongdeungpo."}
+  - {year: 1909, peg: soap, confidence: high, source: "ko WP: 경인선 (March)",
+     event: "Improvement works on the Seoul-Incheon line end and cut the route by more than a kilometre",
+     place: "Seoul-Incheon line",
+     scene: "Engineers scrub the Seoul-Incheon line with SOAP and straighten its curves, and the route gets shorter."}
+  # religion
+  - {year: 1885, peg: waffle, confidence: high, source: "ko WP: 내리교회 (29 July)",
+     event: "Appenzeller founds Naeri Church in Jemulpo",
+     place: "Naeri, Jemulpo",
+     scene: "Appenzeller nails a WAFFLE-iron sign over a Jemulpo house door, and Naeri Church is founded inside."}
+  - {year: 1889, peg: fob, confidence: high, source: "ko WP: 답동성당 (July)",
+     event: "The Jemulpo Catholic parish is founded, and Father Wilhelm says its first Mass",
+     place: "Dapdong, Jemulpo",
+     scene: "Father Wilhelm hangs his FOB watch on the altar and says the first Mass of the new Jemulpo parish."}
+  - {year: 1891, peg: boot, confidence: high, source: "ko WP: 내리교회",
+     event: "Naeri Church builds the Jemulpo Wesley Chapel, its first chapel",
+     place: "Naeri, Jemulpo",
+     scene: "Appenzeller's BOOT kicks open the door of the new Jemulpo Wesley Chapel at Naeri."}
+  - {year: 1893, peg: palm, confidence: high, source: "ko WP: 대한성공회 강화성당 (24 July)",
+     event: "The Anglican mission founds its church on Ganghwa",
+     place: "Ganghwa town",
+     scene: "Anglican missionaries plant a PALM by Ganghwa town and found the island's church."}
+  - {year: 1893, peg: palm, confidence: disputed, source: "ko WP: 승동교회 (pastor list 1893; text 1894)",
+     event: "Samuel Moore founds the Gondanggol church, later Seungdong Church",
+     place: "Gondanggol",
+     scene: "Samuel Moore preaches under a PALM in Gondanggol, and the church that becomes Seungdong begins."}
+  - {year: 1896, peg: peach, confidence: medium, source: "ko WP: 답동성당 (consecrated 4 November; history 1897)",
+     event: "The brick Dapdong church in Jemulpo is consecrated",
+     place: "Dapdong, Jemulpo",
+     scene: "A priest sprinkles holy water on the PEACH-coloured brick front as the Dapdong church is consecrated."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP: 환구단",
+     event: "The Hwangudan, a three-tier granite altar of heaven, is built in Sogong-dong",
+     place: "Sogong-dong",
+     scene: "Masons stack three granite tiers on a stone PIG's back, and the Hwangudan altar of heaven rises in Sogong-dong."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP: 정동제일교회 (26 December)",
+     event: "The red-brick Bethel Chapel of the Jeong-dong Methodist church is dedicated",
+     place: "Jeong-dong",
+     scene: "A PIG hauls the last red brick into place, and the Bethel Chapel of the Jeong-dong Methodists is dedicated."}
+  - {year: 1898, peg: beehive, confidence: medium, source: "en WP: Keijo Shrine; journal 41-2 (other source 1892)",
+     event: "Japanese residents found the Namsan Daijingu shrine at Waeseongdae",
+     place: "Waeseongdae, Namsan",
+     scene: "Japanese residents carry a golden BEEHIVE up Namsan as the offering that founds the Daijingu shrine."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ko WP: 환구단",
+     event: "The octagonal Hwangungu shrine is built north of the Hwangudan altar",
+     place: "Sogong-dong",
+     scene: "A three-roofed octagonal PIPE rises north of the altar: Hwangungu, the shrine for the heaven tablets."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ko WP: 대한성공회 강화성당 (15 November)",
+     event: "Bishop Corfe builds the hanok-style Anglican church on Ganghwa",
+     place: "Ganghwa town",
+     scene: "Bishop Corfe pours SAUCE over the timber beams of the hanok-style Anglican church he builds on Ganghwa."}
+  - {year: 1901, peg: soda, confidence: high, source: "ko WP: 내리교회 (December)",
+     event: "Naeri Church replaces its old chapel with a cross-shaped brick church",
+     place: "Naeri, Jemulpo",
+     scene: "The Naeri congregation fizzes SODA over the old chapel, pulls it down and raises a cross-shaped brick church."}
+  # arts
+  - {year: 1887, peg: fox, confidence: medium, source: "Pressian; encykorea: Paichai (September or December)",
+     event: "Paichai school opens its brick schoolhouse, the first Renaissance-style building in Korea",
+     place: "Jeong-dong",
+     scene: "A FOX peeks out of the half-basement of Paichai's new brick schoolhouse, the first Renaissance-style building in Korea."}
+  - {year: 1891, peg: boot, confidence: high, source: "ko WP: 경복궁",
+     event: "Gwanmungak in Gyeongbokgung is rebuilt to a Western design by a Russian architect",
+     place: "Gwanmungak, Gyeongbokgung",
+     scene: "A Russian architect's BOOT kicks the old pavilion into a Western shape, and Gwanmungak rises in Gyeongbokgung."}
+  - {year: 1895, peg: bell, confidence: high, source: "en WP: Yeongeunmun Gate; encykorea (February)",
+     event: "Yeongeunmun, the gate for Chinese envoys, is pulled down; only its pillar bases stay",
+     place: "Yeongeunmun, outside Donuimun",
+     scene: "Reformers ring a BELL and pull down Yeongeunmun, the gate for Chinese envoys; only its pillar bases stay."}
+  - {year: 1896, peg: peach, confidence: high, source: "ko WP: 독립문; encykorea (21 November)",
+     event: "The cornerstone of the Independence Gate is laid on the Yeongeunmun site",
+     place: "Yeongeunmun site",
+     scene: "Yi Wan-yong sets a PEACH-shaped cornerstone on the old Yeongeunmun site to begin the Independence Gate."}
+  - {year: 1897, peg: pig, confidence: high, source: "encykorea; Sillok wiki: 독립문 (20 November; ko WP 1898)",
+     event: "The granite Independence Gate is completed",
+     place: "Independence Gate, Hyeonjeo-dong",
+     scene: "Masons lift a granite PIG onto the top block, and the Independence Gate stands finished."}
+  - {year: 1897, peg: pig, confidence: high, source: "encykorea: 독립관 (May)",
+     event: "The old Mohwagwan is remodelled as Dongnimgwan, the Independence Club's hall",
+     place: "Dongnimgwan (old Mohwagwan)",
+     scene: "A PIG carries the crown prince's name board into the remodelled Mohwagwan, now Dongnimgwan, the Independence Club's hall."}
+  - {year: 1897, peg: pig, confidence: medium, source: "ko WP: 탑골공원",
+     event: "John McLeavy Brown lays out Tapgol Park around the Wongaksa pagoda, the first Western-style park",
+     place: "Tapgol Park, Jongno",
+     scene: "John McLeavy Brown leads a PIG around the Wongaksa pagoda to clear the ground for Tapgol Park."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP: 덕수궁",
+     event: "Hamnyeongjeon and Junmyeongjeon are built in Gyeongungung as the king's new halls",
+     place: "Gyeongungung",
+     scene: "A PIG drags timber into Gyeongungung, where Hamnyeongjeon and Junmyeongjeon rise as the king's new halls."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ko WP: 덕수궁",
+     event: "Suokheon, the Western-style library later called Jungmyeongjeon, is built",
+     place: "Jungmyeongjeon, Jeong-dong",
+     scene: "A smoking PIPE rests on the desk of the new Suokheon library, the building later called Jungmyeongjeon."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ko WP: 덕수궁",
+     event: "Building starts on Seokjojeon, the stone Western-style hall of Gyeongungung",
+     place: "Seokjojeon, Gyeongungung",
+     scene: "Masons spread SAUCE-thick mortar on the first granite blocks of Seokjojeon in Gyeongungung."}
+  - {year: 1900, peg: tuba, confidence: medium, source: "ko WP: 덕수궁 (around 1900)",
+     event: "Jeonggwanheon, Gojong's Western-style pavilion, is built in Gyeongungung (approximate)",
+     place: "Jeonggwanheon, Gyeongungung",
+     scene: "Builders top Jeonggwanheon with a roof shaped like a TUBA bell, Gojong's Western pavilion in Gyeongungung."}
+  - {year: 1901, peg: soda, confidence: high, source: "ko WP: 경복궁",
+     event: "Badly built Gwanmungak in Gyeongbokgung is demolished",
+     place: "Gwanmungak, Gyeongbokgung",
+     scene: "SODA fizzes through the cracked walls of Gwanmungak, and the badly built Western pavilion comes down."}
+  - {year: 1901, peg: soda, confidence: disputed, source: "ko WP: 덕수궁 1901; ko WP: 경희궁 1902",
+     event: "A raised footbridge links Gyeongungung with Gyeonghuigung",
+     place: "Saemunan-ro",
+     scene: "A SODA bottle rolls over the new raised footbridge from Gyeongungung to Gyeonghuigung."}
+  - {year: 1902, peg: sun, confidence: high, source: "ko WP: 덕수궁 (October)",
+     event: "The two-storey throne hall Junghwajeon and its gate Junghwamun are completed in Gyeongungung",
+     place: "Junghwajeon, Gyeongungung",
+     scene: "The SUN rises over the double roof of Junghwajeon, the new throne hall of Gyeongungung, finished with Junghwamun."}
+  - {year: 1902, peg: sun, confidence: high, source: "ko WP: 협률사 (December)",
+     event: "Hyeomnyulsa, the first indoor theatre in Korea, gives its first performances",
+     place: "Hyeomnyulsa, Saemunan",
+     scene: "Performers spin a painted SUN on the round stage of Hyeomnyulsa, the first indoor theatre in Korea."}
+  - {year: 1902, peg: sun, confidence: medium, source: "encykorea: 칭경기념비 (Seoul city: finished 1903)",
+     event: "The monument for Gojong's fortieth year on the throne is set up at the Gwanghwamun crossroads with the Ginyeombi-jeon pavilion",
+     place: "Gwanghwamun crossroads",
+     scene: "Masons carve a SUN on the stone for Gojong's fortieth year and roof it with Ginyeombi-jeon at the Gwanghwamun crossroads."}
+  - {year: 1902, peg: sun, confidence: high, source: "ko WP: 환구단",
+     event: "Three stone drums carved with dragons are set up in front of Hwangungu for Gojong's fortieth year",
+     place: "Hwangungu, Sogong-dong",
+     scene: "Three dragon-carved stone drums soak up the SUN in front of Hwangungu, set there for Gojong's fortieth year."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ko WP: 덕수궁",
+     event: "Junghwajeon is rebuilt with a single roof after the fire",
+     place: "Junghwajeon, Gyeongungung",
+     scene: "Carpenters rebuild Junghwajeon with one flat roof like a SUSHI plate after the great fire."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ko WP: 덕수궁 (25 April)",
+     event: "The main gate Daeanmun is renamed Daehanmun",
+     place: "Daehanmun",
+     scene: "A SUSHI chef carves the new name board, and Daeanmun becomes Daehanmun, the main gate of Gyeongungung."}
+  - {year: 1907, peg: ski, confidence: high, source: "ko WP: 덕수궁 (July)",
+     event: "After Gojong's abdication Gyeongungung is renamed Deoksugung",
+     place: "Gyeongungung",
+     scene: "A SKI knocks the old name board off the gate, and Gyeongungung becomes Deoksugung."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "ko WP: 창덕궁 (about 1908)",
+     event: "Injeongjeon in Changdeokgung gets a Western interior: wooden floors, furniture and electric lamps",
+     place: "Injeongjeon, Changdeokgung",
+     scene: "Workers set a velvet SOFA on the new wooden floor of Injeongjeon under its first electric lamps."}
+  - {year: 1908, peg: sofa, confidence: high, source: "encykorea; colonialkorea.com (December)",
+     event: "The three-storey brick YMCA hall opens at Jongno",
+     place: "YMCA, Jongno 2-ga",
+     scene: "Young men sink into a SOFA in the new three-storey brick YMCA hall at Jongno on its opening day."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 광무대 (6 September)",
+     event: "Park Seung-pil takes over the Gwangmudae theatre by Dongdaemun and reopens it",
+     place: "Gwangmudae, Dongdaemun",
+     scene: "Park Seung-pil drags a SOFA into the Gwangmudae theatre by Dongdaemun and reopens it as its new owner."}
+  - {year: 1909, peg: soap, confidence: high, source: "ko WP: 경복궁",
+     event: "Geoncheonggung, where the queen was killed, is demolished",
+     place: "Geoncheonggung, Gyeongbokgung",
+     scene: "Japanese crews scrub Geoncheonggung away with SOAP: the hall where the queen was killed is torn down."}
+  - {year: 1909, peg: soap, confidence: high, source: "ko WP: 이왕가박물관 (1 November); ko WP: 창경궁",
+     event: "Changgyeonggung opens to the public as a zoo, botanical garden and royal museum",
+     place: "Myeongjeongjeon, Changgyeonggung",
+     scene: "A zoo elephant blows SOAP bubbles over Myeongjeongjeon as Changgyeonggung opens as zoo, garden and royal museum."}
+  - {year: 1909, peg: soap, confidence: high, source: "ko WP: 창경궁 (begun 1907)",
+     event: "The iron-and-glass greenhouse of Changgyeonggung is completed",
+     place: "Changgyeonggung greenhouse",
+     scene: "Gardeners wash the last glass panes of the Changgyeonggung greenhouse with SOAP as it is completed."}
+  # economy
+  - {year: 1883, peg: foam, confidence: high, source: "encykorea; Herald: Incheon customs (16 June)",
+     event: "The Incheon customs house opens, the first local customs office in Korea",
+     place: "Jemulpo",
+     scene: "Customs officers skim FOAM off the first cargo landed at Jemulpo as the Incheon customs house opens."}
+  - {year: 1883, peg: foam, confidence: high, source: "encykorea; Incheon city: Dai-ichi Bank Incheon",
+     event: "Japan's Dai-ichi Bank opens an agency in Jemulpo",
+     place: "Jemulpo Japanese settlement",
+     scene: "Japanese bankers count coins out of a tub of FOAM at the new Dai-ichi Bank agency in Jemulpo."}
+  - {year: 1884, peg: fairy, confidence: high, source: "encykorea: 세창양행",
+     event: "Meyer and Co. opens its Jemulpo branch, the trading house Sechang",
+     place: "Jemulpo",
+     scene: "A German FAIRY unpacks needles, lamps and matches at Sechang, the new Meyer house in Jemulpo."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ko WP: 경희궁 (September)",
+     event: "The royal sericulture office in Gyeonghuigung is put under the German Maertens",
+     place: "Gyeonghuigung",
+     scene: "A silk FAIRY spins cocoons in Gyeonghuigung, where the German Maertens now runs the royal sericulture office."}
+  - {year: 1888, peg: fife, confidence: high, source: "ko WP: 대불호텔",
+     event: "The Daebul Hotel in Jemulpo is rebuilt as a three-storey Western building",
+     place: "Daebul Hotel, Jemulpo",
+     scene: "A FIFE player greets guests at the new three-storey brick Daebul Hotel in Jemulpo."}
+  - {year: 1891, peg: boot, confidence: high, source: "ko WP: 제물포구락부 (August)",
+     event: "Foreign residents open the Jemulpo Club",
+     place: "Jemulpo foreign settlement",
+     scene: "A foreign resident hangs his BOOT by the door of the new Jemulpo Club, the meeting house of the settlement."}
+  - {year: 1896, peg: peach, confidence: high, source: "encykorea: 조선은행 (June)",
+     event: "Kim Jong-han and other officials found the Joseon Bank in Hanseong",
+     place: "Hanseong",
+     scene: "Kim Jong-han stacks coins into a PEACH basket as officials found the Joseon Bank in Hanseong."}
+  - {year: 1896, peg: peach, confidence: medium, source: "encykorea: 인천미두취인소 (reopened June 1899)",
+     event: "Japanese brokers open the Incheon rice exchange",
+     place: "Incheon Japanese settlement",
+     scene: "Japanese brokers bid on rice futures packed in PEACH crates at the new Incheon rice exchange."}
+  - {year: 1897, peg: pig, confidence: high, source: "Seoul mediahub; theme.archives.go.kr: Namdaemun market",
+     event: "Changnaejang, a permanent market, opens in the Seonhyecheong yard, the start of Namdaemun Market",
+     place: "Seonhyecheong, Namchang-dong",
+     scene: "Traders herd a PIG into the old Seonhyecheong yard, and Changnaejang, the first permanent market, opens."}
+  - {year: 1897, peg: pig, confidence: high, source: "ko WP: 한성은행 (19 February)",
+     event: "The Hanseong Bank is founded",
+     place: "Hanseong",
+     scene: "A PIG money box fills with the first deposits at the newly founded Hanseong Bank."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 경인선 (10 May)",
+     event: "Morse sells the Seoul-Incheon railway rights to the Japanese Gyeongin Railway syndicate",
+     place: "Hanseong",
+     scene: "Japanese investors buy the whole BEEHIVE of the Seoul-Incheon railway from Morse, and their syndicate takes it."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Woori Bank history; theme.archives.go.kr (January)",
+     event: "The Daehan Cheonil Bank is founded with court money",
+     place: "Hanseong",
+     scene: "Court money flows through a golden PIPE into the vault of the new Daehan Cheonil Bank."}
+  - {year: 1899, peg: pipe, confidence: high, source: "encykorea: 구 인천 일본 제일은행 지점 (July)",
+     event: "The stone hall of the Dai-ichi Bank Incheon branch is completed",
+     place: "Incheon Japanese settlement",
+     scene: "Masons fit the last granite PIPE drain, and the stone hall of the Dai-ichi Bank in Incheon is complete."}
+  - {year: 1902, peg: sun, confidence: high, source: "ko WP: 손탁호텔 (October)",
+     event: "Antoinette Sontag opens her Western-style hotel in Jeong-dong",
+     place: "Sontag Hotel, Jeong-dong",
+     scene: "Antoinette Sontag hangs a golden SUN over the door of her new Western-style hotel in Jeong-dong."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 서울 전차",
+     event: "Hanseong Electric Company becomes the Korea-America Electric Company",
+     place: "Jongno",
+     scene: "American financiers drop the old name board into a SEWER: Hanseong Electric becomes the Korea-America Electric Company."}
+  - {year: 1905, peg: seal, confidence: high, source: "ko WP: 광장시장 (July)",
+     event: "Park Seung-jik and other merchants found the Gwangjang Company and open the Dongdaemun market",
+     place: "Yeji-dong, Dongdaemun",
+     scene: "Park Seung-jik's merchants stamp a SEAL on the Gwangjang Company charter and open the market by Dongdaemun."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "ko WP: 인천광역시의 역사",
+     event: "Harbour works on the Incheon inner port begin",
+     place: "Incheon inner harbour",
+     scene: "Japanese engineers wall in the Incheon inner harbour like a SUSHI box to begin the port works."}
+  - {year: 1907, peg: ski, confidence: high, source: "Incheon museum; theme.archives.go.kr: Juan",
+     event: "A test field at Juan starts the first solar salt making in Korea",
+     place: "Juan, Incheon",
+     scene: "A SKI glides over the glittering salt pans at Juan, the first solar salt field in Korea."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 서울 전차 (30 September)",
+     event: "The Japan-Korea Gas Company is founded",
+     place: "Hanseong",
+     scene: "Japanese investors pump coal gas into a SOFA cushion and found the Japan-Korea Gas Company."}
+  - {year: 1909, peg: soap, confidence: disputed, source: "ko WP: 서울 전차 (timeline 1909; book quote October 1908)",
+     event: "The Japan-Korea Gas Company buys the Korea-America Electric Company and its trams",
+     place: "tram depot, Dongdaemun",
+     scene: "Japan-Korea Gas washes the American name off the tram depot with SOAP and takes over the trams and lights."}
+  - {year: 1909, peg: soap, confidence: high, source: "en WP: Gwangtonggwan; Woori Bank (May)",
+     event: "Gwangtonggwan, the head office of the Daehan Cheonil Bank, is completed",
+     place: "Gwangtonggwan, Namdaemun-ro",
+     scene: "Clerks polish the domed corner of Gwangtonggwan with SOAP as the Daehan Cheonil Bank head office opens."}
+  # society
+  - {year: 1883, peg: foam, confidence: high, source: "ko WP: 한성순보 (31 October)",
+     event: "The Bakmunguk prints the first Hanseong Sunbo, the first newspaper in Korea",
+     place: "Bakmunguk",
+     scene: "The Bakmunguk press squeezes FOAM ink onto the first Hanseong Sunbo, the first newspaper in Korea."}
+  - {year: 1883, peg: foam, confidence: high, source: "encykorea: 동문학",
+     event: "Moellendorff opens Dongmunhak, a school for English interpreters",
+     place: "Hanseong",
+     scene: "Moellendorff's students blow English words in FOAM bubbles at Dongmunhak, the new interpreter school."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "ko WP: 경신중학교 (other sources 1886)",
+     event: "Underwood opens his school in Jeong-dong, later Gyeongsin School",
+     place: "Jeong-dong",
+     scene: "Underwood feeds his first boys a WAFFLE breakfast at his new school in Jeong-dong, later Gyeongsin."}
+  - {year: 1886, peg: fish, confidence: high, source: "ko WP: 한성순보 (25 January)",
+     event: "The Hanseong Jubo starts and continues the Hanseong Sunbo",
+     place: "Bakmunguk",
+     scene: "A FISH flops off the press with the first Hanseong Jubo, the weekly that revives Seoul's newspaper."}
+  - {year: 1886, peg: fish, confidence: medium, source: "Seoul Shinmun: first newspaper advertisement",
+     event: "Sechang's notice in the Hanseong Jubo is the first newspaper advertisement in Korea",
+     place: "Bakmunguk",
+     scene: "Sechang wraps a FISH in the Hanseong Jubo page that carries the first newspaper advertisement in Korea."}
+  - {year: 1886, peg: fish, confidence: high, source: "Korea Times: cholera of 1886; kukinews",
+     event: "Cholera kills hundreds a day in Seoul, and carts take the bodies out of the gates",
+     place: "Gwanghuimun and the city gates",
+     scene: "Carts heaped like a FISH catch carry hundreds of cholera dead a day out through Seoul's gates."}
+  - {year: 1887, peg: fox, confidence: high, source: "ko WP: 정신여자고등학교 (June)",
+     event: "Annie Ellers opens a girls' school in Jeong-dong, later Jeongsin Girls' School",
+     place: "Jeong-dong",
+     scene: "Annie Ellers chases a FOX from the doorstep and opens her Jeong-dong girls' school, later Jeongsin."}
+  - {year: 1890, peg: bees, confidence: high, source: "ko WP: 양화진외국인선교사묘원 (28 July)",
+     event: "The Yanghwajin hill is set aside as the foreigners' cemetery",
+     place: "Yanghwajin",
+     scene: "BEES swarm over the Yanghwajin hill as it is set aside as the cemetery for foreigners."}
+  - {year: 1892, peg: piano, confidence: high, source: "ko WP: 내리교회",
+     event: "Mr and Mrs Jones found Yeonghwa School at Naeri Church in Jemulpo",
+     place: "Naeri, Jemulpo",
+     scene: "Mrs Jones plays a PIANO for the first pupils of Yeonghwa School at Naeri Church in Jemulpo."}
+  - {year: 1893, peg: palm, confidence: high, source: "ko WP: 통제영학당 (October)",
+     event: "The Tongjeyeong naval school opens at Gapgot on Ganghwa",
+     place: "Gapgot, Ganghwa",
+     scene: "Naval cadets climb a PALM-trunk mast at Gapgot on Ganghwa on the first day of the Tongjeyeong naval school."}
+  - {year: 1895, peg: bell, confidence: medium, source: "Pressian; kukinews: cholera of 1895",
+     event: "Cholera strikes Seoul; Avison heads the quarantine work from Jejungwon",
+     place: "Jejungwon",
+     scene: "Avison rings an alarm BELL at Jejungwon and leads the fight against the cholera that sweeps Seoul."}
+  - {year: 1896, peg: peach, confidence: high, source: "ko WP: 독립신문 (7 April)",
+     event: "The first Tongnip Sinmun appears, in Korean script and English",
+     place: "Jeong-dong",
+     scene: "Seo Jae-pil prints the first Tongnip Sinmun on PEACH paper, in Korean script and English."}
+  - {year: 1897, peg: pig, confidence: high, source: "encykorea: Hongneung (22 November); Seoul mediahub",
+     event: "The murdered queen is buried in Hongneung at Cheongnyangni",
+     place: "Hongneung, Cheongnyangni",
+     scene: "A PIG digs the great burial mound of Hongneung at Cheongnyangni, the murdered queen's tomb."}
+  - {year: 1898, peg: beehive, confidence: high, source: "encykorea: 매일신문 (9 April)",
+     event: "The Paichai students' weekly becomes the Maeil Sinmun, the first daily newspaper in Korea",
+     place: "Paichai school, Jeong-dong",
+     scene: "Paichai students turn their weekly into a buzzing BEEHIVE of daily news: the Maeil Sinmun, the first daily in Korea."}
+  - {year: 1898, peg: beehive, confidence: high, source: "encykorea: 제국신문 (10 August)",
+     event: "Yi Jong-il starts the Jeguk Sinmun",
+     place: "Hanseong",
+     scene: "Yi Jong-il pours honey from a BEEHIVE over the presses that roll out the first Jeguk Sinmun."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 황성신문 (5 September)",
+     event: "The first Hwangseong Sinmun appears in mixed script",
+     place: "Hanseong",
+     scene: "Scholars print the first Hwangseong Sinmun in mixed script inside a humming BEEHIVE of a press room."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ko WP: 배화여자고등학교 (2 October)",
+     event: "Josephine Campbell founds the Carolina school for girls, later Baehwa",
+     place: "Gogan-dong (Naeja-dong)",
+     scene: "Josephine Campbell calls girls out of a BEEHIVE into the Carolina school at Gogan-dong, later Baehwa."}
+  - {year: 1899, peg: pipe, confidence: medium, source: "SNUH history; Pressian",
+     event: "Uihakgyo, the state medical school, opens at Hun-dong",
+     place: "Hun-dong",
+     scene: "Students listen through a PIPE-shaped stethoscope on the first day of Uihakgyo, the state medical school."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ko WP: 독립신문 (4 December)",
+     event: "The government buys the Tongnip Sinmun and closes it",
+     place: "Jeong-dong",
+     scene: "A government official knocks the ash from his PIPE onto the last Tongnip Sinmun and shuts the paper down."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ko WP: 덕수궁",
+     event: "Fire breaks out in Seonwonjeon, the hall of royal portraits in Gyeongungung",
+     place: "Seonwonjeon, Gyeongungung",
+     scene: "Fire spills like burning SAUCE through Seonwonjeon, the hall of royal portraits in Gyeongungung."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 덕수궁 (14 April)",
+     event: "A great night fire destroys Junghwajeon and other halls of Gyeongungung",
+     place: "Gyeongungung",
+     scene: "Fire races through Gyeongungung at night, and water pumped from every SEWER cannot save Junghwajeon."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 대한매일신보 (18 July)",
+     event: "Ernest Bethell starts the Daehan Maeil Sinbo with Yang Gi-tak",
+     place: "Hanseong",
+     scene: "Ernest Bethell pulls the first Daehan Maeil Sinbo out of a SEWER of censorship, safe under his British name."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ko WP: 휘문고등학교",
+     event: "Min Yeong-hwi opens Gwangseong Uisuk, later Hwimun School",
+     place: "Gwansanggam site, Gye-dong",
+     scene: "Min Yeong-hwi's first pupils climb up out of a SEWER pipe into Gwangseong Uisuk, the school later named Hwimun."}
+  - {year: 1906, peg: sushi, confidence: high, source: "OSEN; Korea Times; protoball (February)",
+     event: "The YMCA team plays the German language school at Hullyeonwon in the first baseball game in Korea",
+     place: "Hullyeonwon ground",
+     scene: "A YMCA batter knocks a SUSHI roll over Hullyeonwon field in the first baseball game in Korea, against the German school."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ko WP: 진명여자고등학교 (April)",
+     event: "Jinmyeong Girls' School opens on land from Lady Eom",
+     place: "Hanseong",
+     scene: "Principal Eom Jun-won cuts a SUSHI roll instead of a ribbon to open Jinmyeong Girls' School on royal land."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ko WP: 만세보 (17 June)",
+     event: "Cheondogyo starts the daily Mansebo with O Se-chang as president",
+     place: "Hanseong",
+     scene: "O Se-chang rolls the first Mansebo around a SUSHI roll, the new Cheondogyo daily."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "ko WP: 경성일보 (infobox June; text September)",
+     event: "Ito merges two Japanese papers into the Keijo Nippo, the Residency-General's newspaper",
+     place: "Hanseong",
+     scene: "Ito presses two Japanese papers into one SUSHI roll: the Keijo Nippo, voice of the Residency-General."}
+  - {year: 1907, peg: ski, confidence: low, source: "en WP: Timeline of Seoul",
+     event: "The Seoul Sanitation Association is founded",
+     place: "Hanseong",
+     scene: "Sanitation men SKI through the slush and sweep Seoul's lanes for the new Sanitation Association."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ko WP: 경기여자고등학교 (1 April)",
+     event: "The Hanseong Government Higher Girls' School opens",
+     place: "Seobu, Hanseong",
+     scene: "Girls sit on a long SOFA in the first class of the Hanseong Government Higher Girls' School."}
+world_refs:
+  - {year: 1876, event: "Treaty of Ganghwa opens Korean ports", cell: east_asia_politics_1800_1945}
+  - {year: 1877, event: "Bishop Ridel arrested in Seoul and freed", cell: east_asia_religion_1800_1945}
+  - {year: 1882, event: "Imo Incident: soldiers riot in Seoul", cell: east_asia_politics_1800_1945}
+  - {year: 1882, event: "Shufeldt Treaty signed at Jemulpo", cell: east_asia_politics_1800_1945}
+  - {year: 1883, event: "Incheon opens as a treaty port", cell: east_asia_economy_1800_1945}
+  - {year: 1883, event: "Jeonhwanguk mint set up", cell: east_asia_economy_1800_1945}
+  - {year: 1884, event: "Gapsin Coup at the Ujeongchongguk banquet", cell: east_asia_politics_1800_1945}
+  - {year: 1884, event: "Horace Allen arrives", cell: east_asia_religion_1800_1945}
+  - {year: 1885, event: "Jejungwon opens", cell: east_asia_science_1800_1945}
+  - {year: 1885, event: "Underwood and Appenzeller land at Incheon", cell: east_asia_religion_1800_1945}
+  - {year: 1885, event: "Appenzeller founds Paichai school", cell: east_asia_society_1800_1945}
+  - {year: 1886, event: "Mary Scranton opens Ewha school", cell: east_asia_society_1800_1945}
+  - {year: 1886, event: "Yugyeong Gongwon royal English school opens", cell: east_asia_society_1800_1945}
+  - {year: 1887, event: "First electric lights in Gyeongbokgung", cell: east_asia_economy_1800_1945}
+  - {year: 1887, event: "Edison-company plant lights Gyeongbokgung", cell: east_asia_science_1800_1945}
+  - {year: 1887, event: "Underwood founds Saemunan Church", cell: east_asia_religion_1800_1945}
+  - {year: 1887, event: "Appenzeller organizes the Chungdong Methodist congregation", cell: east_asia_religion_1800_1945}
+  - {year: 1891, event: "Catholic seminary opens in Seoul", cell: east_asia_religion_1800_1945}
+  - {year: 1892, event: "Myeongdong Cathedral cornerstone laid", cell: east_asia_religion_1800_1945}
+  - {year: 1892, event: "Yakhyeon Church completed", cell: east_asia_religion_1800_1945}
+  - {year: 1895, event: "Empress Myeongseong killed at Gyeongbokgung", cell: east_asia_politics_1800_1945}
+  - {year: 1895, event: "Ban on monks entering Seoul lifted", cell: east_asia_religion_1800_1945}
+  - {year: 1895, event: "Hanseong Normal School opens", cell: east_asia_society_1800_1945}
+  - {year: 1896, event: "Gojong flees to the Russian legation", cell: east_asia_politics_1800_1945}
+  - {year: 1896, event: "Independence Club founded in Seoul", cell: east_asia_politics_1800_1945}
+  - {year: 1896, event: "Park Seung-jik opens his shop in Seoul", cell: east_asia_economy_1800_1945}
+  - {year: 1897, event: "Gojong proclaims the Korean Empire at the Hwangudan", cell: east_asia_politics_1800_1945}
+  - {year: 1898, event: "Hanseong Electric Company founded", cell: east_asia_economy_1800_1945}
+  - {year: 1898, event: "Myeongdong Cathedral consecrated", cell: east_asia_religion_1800_1945}
+  - {year: 1898, event: "Choe Si-hyeong executed in Seoul", cell: east_asia_religion_1800_1945}
+  - {year: 1898, event: "Seoul women's rights circular", cell: east_asia_society_1800_1945}
+  - {year: 1899, event: "Gyeongin railway opens Noryangjin to Incheon", cell: east_asia_economy_1800_1945}
+  - {year: 1899, event: "Gyeongin railway opens, the first in Korea", cell: east_asia_science_1800_1945}
+  - {year: 1899, event: "Seoul's first streetcar line opens", cell: east_asia_economy_1800_1945}
+  - {year: 1899, event: "First electric streetcar in Seoul", cell: east_asia_science_1800_1945}
+  - {year: 1899, event: "Wonheungsa founded outside the East Gate", cell: east_asia_religion_1800_1945}
+  - {year: 1900, event: "Martyrs' relics moved to the Myeongdong crypt", cell: east_asia_religion_1800_1945}
+  - {year: 1903, event: "Dongdaemun electric company film screening", cell: east_asia_arts_1800_1945}
+  - {year: 1903, event: "Seoul YMCA founded", cell: east_asia_society_1800_1945}
+  - {year: 1903, event: "First Korean emigrants from Jemulpo arrive in Hawaii", cell: east_asia_society_1800_1945}
+  - {year: 1904, event: "Japan-Korea Protocol signed in Seoul", cell: east_asia_politics_1800_1945}
+  - {year: 1904, event: "Jejungwon becomes Severance Hospital", cell: east_asia_science_1800_1945}
+  - {year: 1905, event: "Eulsa Treaty signed at Jungmyeongjeon", cell: east_asia_politics_1800_1945}
+  - {year: 1905, event: "Seoul-Busan Gyeongbu railway opens", cell: east_asia_economy_1800_1945}
+  - {year: 1905, event: "Emigrants sail from Chemulpo to Yucatan", cell: east_asia_society_1800_1945}
+  - {year: 1905, event: "Boseong College founded", cell: east_asia_society_1800_1945}
+  - {year: 1906, event: "Residency-General opens in Seoul", cell: east_asia_politics_1800_1945}
+  - {year: 1906, event: "Gyeongui railway from Seoul opens", cell: east_asia_economy_1800_1945}
+  - {year: 1906, event: "Lady Eom founds Myeongsin girls' school, later Sookmyung", cell: east_asia_society_1800_1945}
+  - {year: 1907, event: "Gojong forced to abdicate", cell: east_asia_politics_1800_1945}
+  - {year: 1907, event: "Korean army disbanded; Namdaemun fighting", cell: east_asia_politics_1800_1945}
+  - {year: 1907, event: "Dansungsa theatre opens", cell: east_asia_arts_1800_1945}
+  - {year: 1908, event: "Wongaksa theatre opens", cell: east_asia_arts_1800_1945}
+  - {year: 1908, event: "Silvery World staged at Wongaksa", cell: east_asia_arts_1800_1945}
+  - {year: 1908, event: "Oriental Development Company founded", cell: east_asia_economy_1800_1945}
+  - {year: 1909, event: "Bank of Korea opens", cell: east_asia_economy_1800_1945}
+  - {year: 1909, event: "Na Cheol founds Dangungyo in Seoul", cell: east_asia_religion_1800_1945}
+out_refs:
+  - {year: 1882, event: "Treaty of Jemulpo signed after the Imo mutiny", reason: "treaty signed in the area"}
+  - {year: 1883, event: "Treaties with Britain and Germany signed in Hanseong", reason: "treaty signed in the city"}
+  - {year: 1885, event: "Treaty of Hanseong with Japan after the Gapsin coup", reason: "treaty signed in the city"}
+  - {year: 1894, event: "Gunguk Gimucheo sits in Gyeongbokgung for the Gabo reforms", reason: "national government"}
+  - {year: 1898, event: "British consulate in Seoul becomes a legation", reason: "diplomatic rank"}
+  - {year: 1899, event: "Prince Heinrich of Prussia visits Seoul", reason: "foreign royal visit"}
+  - {year: 1905, event: "Hwangseong Sinmun prints the editorial Siilyabangseongdaegok", reason: "national press protest"}
+  - {year: 1907, event: "Daehan Maeil Sinbo sets up the national debt fund office", reason: "national movement"}
+  - {year: 1907, event: "Japanese crown prince Yoshihito visits Seoul", reason: "foreign royal visit"}
+  - {year: 1907, event: "Sunjong moves to Changdeokgung", reason: "court residence"}

@@ -704,3 +704,45 @@ islands of Zhejiang are OUT (the Donghai Bridge and the Lingang end are IN). Reg
 | `1991_present` | Pudong, the Metro, the towers, Expo 2010, the megacity | 45 | ~200 |
 
 Expected cards are a guide, not a target.
+
+### Seoul (2026-11-22)
+
+Area: the Seoul Capital Area as decided: Seoul (Hanyang/Hanseong/Gyeongseong, Bukhansan, the Han River,
+Baekje's Wiryeseong sites at Pungnap and Mongchon, Amsa-dong), Incheon (Jemulpo, Ganghwa, Gyodong, the
+western islands), and Gyeonggi Province (Suwon Hwaseong, Namhansanseong, Gwangju, Yongin, Paju, Panmunjom,
+Yeoncheon Jeongok-ri, Goyang Haengju). Gaeseong is OUT (North Korea). Region: east_asia.
+
+- Dates: give the CE year of the event itself. A lunar-calendar date late in a Korean year can fall in the
+  next CE year; convert it (policy.md "Date conversion") and write the lunar date in the source.
+- The OUT rule covers each government while the city (or a place in the area) is its seat: the Baekje court
+  at Wiryeseong (to 475); the Goryeo court at Ganghwa (1232–1270); the Joseon court at Hanyang (1394–1910,
+  except 1399–1405 at Gaeseong); the Korean Empire (1897–1910); the Japanese Government-General (1910–1945:
+  laws and orders for all Korea); the US Army Military Government (1945–1948); the Republic of Korea (from
+  1948). Leave out their accessions, court rituals, state examinations, decrees and laws for the whole
+  state, national elections, constitutions and treaties. A ruler's palace, wall, gate, shrine, tomb,
+  fortress or city plan is IN (Gyeongbokgung, Jongmyo, the Hanyang wall, Hwaseong, the royal tombs,
+  Namhansanseong, the Cheonggyecheon works, the subway).
+- Main stage (IN as cards): the Goguryeo capture of Wiryeseong (475), the Mongol attacks on Ganghwa, the
+  Imjin War in the area (the palaces burned 1592, Haengju 1593), Yi Gwal's capture of the capital (1624),
+  the siege of Namhansanseong (1636–1637), the French (1866) and US (1871) expeditions to Ganghwa, the
+  Unyo incident (1875), the Imo mutiny (1882), the Gapsin coup (1884), Queen Min's murder at Gyeongbokgung
+  (1895), the king's flight to the Russian legation (1896), the 1907 army disbandment fighting, the March
+  First Movement (1919), the June Tenth Movement (1926), the fall and recaptures of Seoul and the Incheon
+  landing (1950–1951), the Panmunjom armistice (1953), the April Revolution (1960), the coup troops in the
+  city (1961, 1979), the Blue House raid (1968), the June Struggle (1987), the 1988 Olympics, the Seongsu
+  Bridge and Sampoong collapses (1994, 1995), the 2002 World Cup, the 2008 Sungnyemun fire, the candlelight
+  protests (2016–2017), the Itaewon crush (2022), martial law at the National Assembly (2024).
+  Treaties signed in the area (Ganghwa 1876, Jemulpo 1882, Eulsa 1905) are OUT as treaties; the event in
+  the city around them (troops at the palace in 1905) is IN.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1392` | Jeongok-ri, Amsa-dong, dolmens of Ganghwa, Baekje Wiryeseong, Goguryeo and Silla Hanju, Goryeo Namgyeong, the Ganghwa court | 35 | ~90 |
+| `1392_1591` | Joseon founds Hanyang, the palaces and wall, Sejong's city, the purges in the capital | 45 | ~150 |
+| `1592_1875` | the Imjin War, the Manchu invasions, Namhansanseong, Hwaseong, the French and US attacks on Ganghwa | 45 | ~180 |
+| `1876_1909` | the opening, Jemulpo, the Imo and Gapsin incidents, the Korean Empire, trams and railways | 45 | ~180 |
+| `1910_1945` | Gyeongseong under Japanese rule, March First, the Government-General building | 45 | ~180 |
+| `1946_1987` | liberation, the Korean War, the April Revolution, growth, the June Struggle | 45 | ~220 |
+| `1988_present` | the Olympics, the collapses, Cheonggyecheon, candlelight, Itaewon, 2024 martial law | 45 | ~220 |
+
+Expected cards are a guide, not a target.

@@ -1,0 +1,667 @@
+# City: Seoul x 1592 to 1875 (the Imjin War to the Unyo incident). DRAFT 2026-11-22.
+# Area: Seoul Capital Area (Seoul, Incheon with Ganghwa and Gyodong, Gyeonggi with Suwon, Namhansanseong,
+# Gimpo, Paju, Goyang, Guri, Yeoju). Gaeseong out. Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). The Joseon court's acts for the
+# whole state (accessions, rituals, national laws and armies, treaties) -> out_refs. World-grid events -> world_refs.
+# Royal tombs, palaces, shrines and forts built by the court are IN (cities.md Seoul section).
+# Dates: memory pass + web check (searches within the 45 cap; no unauthorised book copies).
+# Main sources: ko and en Wikipedia (wikipedia.org), Encykorea, Sillok wiki, Seoul and Gyeonggi pages.
+# Lunar dates are given as the Gregorian year of the day (a late lunar-year date can fall in the next year).
+# A building -> start of work unless the text says "rebuilt", "finished" or "is made"; a tomb -> burial year.
+# Peg: last two digits of the year. Approximate year ending 00 -> first two digits.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1592, peg: piano, confidence: high, source: "en WP: Battle of Imjin River (1592)",
+     event: "Battle of the Imjin River: the Japanese break Kim Myeong-won's river line north of Paju",
+     scene: "A PIANO slides off a Japanese raft at the Imjin ferry near Paju and smashes Kim Myeong-won's river line."}
+  - {year: 1592, peg: piano, confidence: medium, source: "Encykorea: Yangju battle (lunar 5th or 6th month)",
+     event: "Haeyuryeong, Yangju: Sin Gak defeats a Japanese raiding party",
+     scene: "Sin Gak pushes a PIANO down the Haeyuryeong pass in Yangju and flattens a Japanese raiding party."}
+  - {year: 1593, peg: palm, confidence: high, source: "en WP: Timeline of the Imjin War (17 or 18 May)",
+     event: "The Japanese army leaves Hanseong and the Ming army enters the ruined capital",
+     scene: "A giant PALM sweeps the last Japanese troops out of Hanseong's gates, and Ming soldiers march into the ruins."}
+  - {year: 1616, peg: dish, confidence: high, source: "ko WP: Hanyangdoseong",
+     event: "The Hanyang city wall is repaired after the war damage",
+     scene: "Masons lay a cracked Hanyang wall stone on a DISH and carry it back into the gap left by the war."}
+  - {year: 1618, peg: dove, confidence: high, source: "ko WP: Ganghwa outer wall",
+     event: "Gwanghaegun repairs the old outer wall along the Ganghwa coast",
+     scene: "A DOVE drops stones into the broken gaps of the Ganghwa coastal wall for Gwanghaegun."}
+  - {year: 1621, peg: ant, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Gwanghaegun starts to rebuild Namhansanseong in stone",
+     scene: "An ANT the size of an ox carries the first cut stone up Namhansan to start Gwanghaegun's new mountain wall."}
+  - {year: 1624, peg: hanger, confidence: high, source: "ko WP: Yi Gwal's rebellion (lunar 2nd month)",
+     event: "Battle of Gilmajae (Anhyeon): government troops defeat Yi Gwal on the ridge west of the capital",
+     place: "Gilmajae (Anhyeon)",
+     scene: "Government troops hang Yi Gwal's rebel banner on a coat HANGER at the top of the Gilmajae ridge."}
+  - {year: 1624, peg: hanger, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Work starts on the main wall of Namhansanseong",
+     scene: "Monk builders hang their chisels on a HANGER at the Namhansan ridge and start the main wall."}
+  - {year: 1626, peg: nacho, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Namhansanseong is finished; the Gwangju office and the Sueocheong garrison move inside",
+     scene: "A NACHO the size of a mountain closes the last gap of Namhansanseong, and the Gwangju office moves inside."}
+  - {year: 1627, peg: ink, confidence: high, source: "ko WP: Ganghwa Yusubu",
+     event: "Ganghwa becomes a Yusubu (special magistracy) after Injo flees there from the Manchus",
+     scene: "Injo signs the Ganghwa Yusubu charter in INK while Manchu horsemen wait across the strait."}
+  - {year: 1629, peg: knob, confidence: medium, source: "Encykorea: Gyodong town wall",
+     event: "Gyodong town wall is built when the Gyeonggi naval command moves to Gyodong",
+     scene: "Sailors twist a KNOB on the Gyodong gate, and the Gyeonggi navy moves its base behind the new wall."}
+  - {year: 1633, peg: mummy, confidence: high, source: "Encykorea: Tongeoyeong",
+     event: "Gyodong: the Tongeoyeong, naval command of three provinces, is set up to guard Ganghwa",
+     scene: "A MUMMY in admiral's robes takes command of three provinces' fleets from the Gyodong harbour."}
+  - {year: 1637, peg: mug, confidence: high, source: "ko WP: Second Manchu invasion (lunar 12/14 = Jan 1637)",
+     event: "Siege of Namhansanseong: Injo and his court hold out inside the fortress",
+     scene: "Injo drinks melted snow from a tin MUG on the Namhansanseong wall while Qing campfires circle below."}
+  - {year: 1637, peg: mug, confidence: high, source: "ko WP: Second Manchu invasion (lunar 1/22)",
+     event: "Qing troops cross to Ganghwa and take the island and the royal family",
+     scene: "Qing soldiers row across the strait in a giant MUG, storm Ganghwa town and seize the royal family."}
+  - {year: 1637, peg: mug, confidence: high, source: "Inzo sillok via Encykorea: Kim Sang-yong",
+     event: "Kim Sang-yong blows himself up with gunpowder on the Ganghwa south gate as the town falls",
+     place: "Ganghwa south gate",
+     scene: "Kim Sang-yong lights a MUG of gunpowder on the Ganghwa south gate tower and dies in the blast."}
+  - {year: 1641, peg: radio, confidence: high, source: "ko WP: Gyeonggi Gamyeong",
+     event: "The Gyeonggi provincial office outside Donuimun is rebuilt after the Manchu war",
+     scene: "A RADIO on the new roof of the Gyeonggi provincial office outside Donuimun announces that the governor is back."}
+  - {year: 1652, peg: lion, confidence: high, source: "ko WP: Ganghwa sanseong",
+     event: "Part of the Ganghwa town wall is repaired",
+     scene: "A LION shoulders fallen stones back into the broken Ganghwa town wall."}
+  - {year: 1654, peg: lawyer, confidence: disputed, source: "Hamel journal: Seoul 26 Jul 1654; en WP says 1655",
+     event: "Hendrick Hamel's shipwrecked Dutch crew is brought from Jeju to the capital and held there as royal guards",
+     scene: "A Joseon LAWYER reads the king's order to Hamel's ragged Dutch sailors at the Hanseong gate: they stay and serve as guards."}
+  - {year: 1656, peg: leech, confidence: high, source: "ko WP: Chojijin",
+     event: "Chojijin fort is built on the Ganghwa coast against invaders from the sea",
+     scene: "A LEECH clamps onto the Ganghwa shore and grows into the stone walls of Chojijin fort."}
+  - {year: 1658, peg: wolf, confidence: high, source: "ko WP: Gwangseongbo",
+     event: "Gwangseongbo fort is set up on the Ganghwa strait",
+     scene: "A WOLF digs the first trench of Gwangseongbo fort on the cliff above the Ganghwa strait."}
+  - {year: 1666, peg: judge, confidence: medium, source: "ko WP: Chojijin (Hyeonjong 7)",
+     event: "The Chojijin naval post moves from Ansan to Ganghwa and becomes a fortress",
+     scene: "A JUDGE bangs his gavel, and the Chojijin naval post sails from Ansan to its new Ganghwa fort."}
+  - {year: 1677, peg: cake, confidence: high, source: "ko WP: Ganghwa sanseong",
+     event: "Ganghwa magistrate Heo Jil rebuilds and enlarges the town wall",
+     scene: "Heo Jil stacks stones like layers of a CAKE and doubles the Ganghwa town wall."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "Encykorea: Ganghwa dondae",
+     event: "Forty-eight dondae watch forts are built around the Ganghwa coast in about eighty days",
+     scene: "A COWBOY gallops round the Ganghwa coast and ropes up forty-eight stone watch forts in eighty days."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "ko WP: Chojijin",
+     event: "Chojijin is finished as a walled fortress",
+     scene: "A COWBOY nails the last gate onto Chojijin and declares the walled fort complete."}
+  - {year: 1682, peg: oven, confidence: high, source: "ko WP: Munsusanseong",
+     event: "Work starts on Munsusanseong in Gimpo, across the strait from Ganghwa",
+     scene: "Builders fire bricks in an OVEN on the Gimpo hill and start Munsusanseong facing Ganghwa."}
+  - {year: 1686, peg: fish, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Bongam outer wall is added to Namhansanseong",
+     scene: "A huge FISH flops onto Bongam peak and hardens into a new outer wall for Namhansanseong."}
+  - {year: 1693, peg: palm, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Hanbong outer wall is added to Namhansanseong",
+     scene: "A giant PALM presses a new outer wall onto Hanbong peak beside Namhansanseong."}
+  - {year: 1694, peg: bear, confidence: high, source: "ko WP: Munsusanseong",
+     event: "Munsusanseong in Gimpo is finished",
+     scene: "A BEAR sets the last stone on Munsusanseong and stands guard over the Gimpo shore."}
+  - {year: 1700, peg: sauce, confidence: high, source: "Encykorea: Jinmuyeong",
+     event: "The Jinmuyeong defence command sets up its headquarters on Ganghwa",
+     scene: "Soldiers pour SAUCE over the plans of the new Jinmuyeong headquarters on Ganghwa and seal the command."}
+  - {year: 1704, peg: sewer, confidence: high, source: "ko WP: Hanyangdoseong",
+     event: "Large repairs of the Hanyang wall start with labour from the five garrisons",
+     scene: "Soldiers of five garrisons climb out of a SEWER under Namsan and start to rebuild the Hanyang wall."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "ko WP: Hanyangdoseong",
+     event: "The Hanyang wall repairs are finished",
+     scene: "A TATTOO artist inks the finish date onto the last repaired stone of the Hanyang wall."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "Bukhansanseong is built in one season on Bukhansan",
+     scene: "A giant TATTOO of a mountain fortress spreads across Bukhansan's granite and turns into real walls."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "en WP: Timeline of Seoul",
+     event: "Donuimun and Gwanghuimun gates are rebuilt",
+     scene: "Two gatekeepers show a TATTOO of a gate, and builders copy it into new Donuimun and Gwanghuimun."}
+  - {year: 1711, peg: tattoo, confidence: medium, source: "ko WP: Ganghwa sanseong (Sukjong 37 or 47)",
+     event: "The Anparu south gate of the Ganghwa town wall is built",
+     scene: "A TATTOO of a south gate on a soldier's back becomes the stone Anparu gate of Ganghwa."}
+  - {year: 1712, peg: tongue, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "The king orders the Jungseong inner wall inside Bukhansanseong",
+     scene: "A long TONGUE licks across the Bukhansan valley and leaves the Jungseong inner wall behind it."}
+  - {year: 1714, peg: tower, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "Jungseongmun gate of Bukhansanseong is finished",
+     scene: "A TOWER of stone rises out of the Bukhansan valley and opens as Jungseongmun gate."}
+  - {year: 1715, peg: doll, confidence: high, source: "ko WP: Tangchundaeseong",
+     event: "Hongjimun gate is built north of the capital",
+     scene: "A DOLL in red paint stands in the arch of the new Hongjimun gate north of the capital."}
+  - {year: 1715, peg: doll, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "The Geumwiyeong garrison moves its post below Boguksa in Bukhansanseong",
+     scene: "A soldier carries a DOLL in Geumwiyeong uniform to its new post below Boguksa in Bukhansanseong."}
+  - {year: 1718, peg: dove, confidence: high, source: "ko WP: Tangchundaeseong",
+     event: "Work starts on Tangchundaeseong, the wall from Hanyang to Bukhansanseong",
+     scene: "A DOVE lays the first stone of Tangchundaeseong between the Hanyang wall and Bukhansanseong."}
+  - {year: 1719, peg: tuba, confidence: high, source: "ko WP: Tangchundaeseong",
+     event: "Tangchundaeseong is finished after a second forty-day season",
+     scene: "A TUBA blows the end of work as the last stone of Tangchundaeseong drops into place."}
+  - {year: 1719, peg: tuba, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Namgyeokdae battery is built at Namhansanseong",
+     scene: "A soldier fires a TUBA like a cannon from the new Namgyeokdae battery of Namhansanseong."}
+  - {year: 1739, peg: map, confidence: high, source: "ko WP: Jeongjoksanseong",
+     event: "Jeongjoksanseong is rebuilt and its south gate gets the Jonghaeru pavilion",
+     scene: "A MAP of the old Jeongjoksan wall is unrolled, and builders raise the Jonghaeru pavilion on its south gate."}
+  - {year: 1741, peg: radio, confidence: high, source: "en WP: Timeline of Seoul",
+     event: "Changuimun gate is rebuilt",
+     scene: "A RADIO hangs in the new Changuimun gate and plays as the gatekeepers open it again."}
+  - {year: 1743, peg: ram, confidence: high, source: "ko WP: Hanyangdoseong",
+     event: "The Hanyang wall is repaired again",
+     scene: "A RAM butts loose stones back into place along the Hanyang wall."}
+  - {year: 1743, peg: ram, confidence: high, source: "ko WP: Ganghwa outer wall",
+     event: "Ganghwa's earth outer wall is rebuilt in brick after rain erodes it",
+     scene: "A RAM rams fired bricks into the rain-cut earth wall along the Ganghwa coast."}
+  - {year: 1745, peg: railway, confidence: high, source: "ko WP: Gwangseongbo",
+     event: "Gwangseongbo is rebuilt and its gate gets the name Anhaeru",
+     scene: "A RAILWAY carriage brings the Anhaeru name board to the rebuilt gate of Gwangseongbo."}
+  - {year: 1751, peg: wallet, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Seojangdae command post of Namhansanseong is rebuilt with two storeys",
+     scene: "A WALLET full of silver pays for the second storey of Seojangdae on Namhansanseong."}
+  - {year: 1753, peg: llama, confidence: high, source: "ko WP: Hanyangdoseong (Yeongjo 29)",
+     event: "Bastions (chiseong) are added to the Hanyang wall between Heunginjimun and Gwanghuimun",
+     scene: "A LLAMA spits stones that harden into new bastions on the Hanyang wall near Heunginjimun."}
+  - {year: 1753, peg: llama, confidence: high, source: "ko WP: Namhansanseong",
+     event: "East and west gun platforms of Sinnamseong are built at Namhansanseong",
+     scene: "A LLAMA carries cannon up to the new Sinnamseong platforms south of Namhansanseong."}
+  - {year: 1760, peg: cheese, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "A gate pavilion is built on Sonammun of Bukhansanseong",
+     scene: "Builders roof Sonammun at Bukhansanseong with a wheel of CHEESE, then with real tiles."}
+  - {year: 1777, peg: cake, confidence: medium, source: "Jeongjo sillok via search: Jeongyu incident",
+     event: "Assassins climb onto the roof of Jonhyeongak in Gyeonghuigung to kill King Jeongjo",
+     scene: "Assassins throw roof tiles at Jonhyeongak in Gyeonghuigung, but Jeongjo blocks them with a stale CAKE."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Namhansanseong walls are repaired; the gates get the names Jihwamun and Jeonseungmun",
+     scene: "A COWBOY paints the names Jihwamun and Jeonseungmun on the repaired gates of Namhansanseong."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "Encykorea: Tongeoyeong",
+     event: "The Tongeoyeong naval command moves from Gyodong to Ganghwa",
+     scene: "A COWBOY lassos the Tongeoyeong flagship at Gyodong and drags it to Ganghwa."}
+  - {year: 1789, peg: fob, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "The Suwon town moves to the foot of Paldalsan to make room for Sado's tomb",
+     scene: "Suwon's townsfolk hang their keys on a FOB and carry the whole town to the foot of Paldalsan."}
+  - {year: 1793, peg: palm, confidence: high, source: "Encykorea: Jangyongyeong",
+     event: "Suwon becomes Hwaseong Yusubu with the Jangyong outer garrison",
+     scene: "Chae Je-gong opens his PALM and receives the seal of Hwaseong Yusubu as its first governor."}
+  - {year: 1794, peg: bear, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "Work starts on Seojangdae, the command post on Paldalsan",
+     scene: "A BEAR climbs to the top of Paldalsan and lays the first beam of Seojangdae."}
+  - {year: 1795, peg: bell, confidence: high, source: "Encykorea: Gwangju Yusubu",
+     event: "Gwangju becomes a Yusubu again; the Sueocheong headquarters moves into Namhansanseong",
+     scene: "The Gwangju governor rings a BELL at Namhansanseong as the Sueocheong headquarters moves in."}
+  - {year: 1795, peg: bell, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "Work starts on Dongjangdae, the east command post and drill ground of Hwaseong",
+     scene: "A drill sergeant swings a BELL to start work on Dongjangdae, the east drill ground of Hwaseong."}
+  - {year: 1796, peg: peach, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "Seobuk Gongsimdon, the northwest lookout tower of Hwaseong, is finished",
+     scene: "A PEACH stone rolls into the hollow northwest tower of Hwaseong and plugs the last firing slot."}
+  - {year: 1812, peg: tongue, confidence: high, source: "ko WP: Munsusanseong",
+     event: "Munsusanseong in Gimpo is rebuilt",
+     scene: "A long TONGUE licks the moss off Munsusanseong, and Gimpo masons rebuild the wall."}
+  - {year: 1833, peg: mummy, confidence: high, source: "ko WP: 1833 (lunar 3rd month)",
+     event: "Hanseong rice riot: crowds burn the stores of rice merchants who hoard rice",
+     place: "Mapo and Hanseong rice shops",
+     scene: "A MUMMY of a Mapo rice merchant burns while hungry crowds smash his hoarded rice stores."}
+  - {year: 1865, peg: jelly, confidence: high, source: "ko WP: Hanseong-bu",
+     event: "Hanseong-bu adds the Gyeongmogung ward; the capital now has forty-seven wards",
+     scene: "A JELLY mould shaped like Gyeongmogung ward drops into the Hanseong map and makes forty-seven wards."}
+  - {year: 1866, peg: judge, confidence: high, source: "ko WP: French campaign against Korea",
+     event: "French warships sail up the Han River to Yanghwajin, next to Seoul",
+     place: "Yanghwajin",
+     scene: "A JUDGE in a French admiral's hat steers a gunboat up the Han River to Yanghwajin."}
+  - {year: 1866, peg: judge, confidence: high, source: "ko WP: French campaign against Korea",
+     event: "Battle of Munsusanseong: Han Seong-geun's men ambush the French landing party",
+     scene: "A JUDGE sentences the French landing party, and Han Seong-geun's men spring the ambush at Munsusanseong."}
+  - {year: 1866, peg: judge, confidence: high, source: "ko WP: Jeongjoksanseong",
+     event: "Battle of Jeongjoksanseong: Yang Heon-su's tiger hunters drive the French back",
+     scene: "Yang Heon-su's tiger hunters fire from Jeongjoksanseong, and a JUDGE orders the French to retreat."}
+  - {year: 1866, peg: judge, confidence: high, source: "Encykorea: Jinmuyeong",
+     event: "The Jinmuyeong on Ganghwa is raised in rank and gets about three thousand gunners",
+     scene: "A JUDGE pins a higher rank on the Jinmuyeong flag, and three thousand gunners march into Ganghwa."}
+  - {year: 1869, peg: ship, confidence: high, source: "ko WP: Heunginjimun",
+     event: "Heunginjimun, the east gate, is rebuilt",
+     scene: "A SHIP sails up the Cheonggyecheon and unloads timber for the rebuilt Heunginjimun gate."}
+  # science
+  - {year: 1688, peg: fife, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Gwancheondae, a stone platform for star watching, is built at Changgyeonggung",
+     scene: "An astronomer plays a FIFE on top of the new Gwancheondae platform at Changgyeonggung to count the stars."}
+  - {year: 1760, peg: cheese, confidence: high, source: "ko WP: Cheonggyecheon (2nd month)",
+     event: "Yeongjo has the Cheonggyecheon dredged; the mud makes artificial hills near Ogansumun",
+     scene: "Workers dig a mountain of CHEESE-like mud out of the Cheonggyecheon and pile it near Ogansumun."}
+  - {year: 1773, peg: comb, confidence: high, source: "ko WP: Cheonggyecheon",
+     event: "Stone embankments straighten the Cheonggyecheon to near Ogansumun",
+     scene: "A giant COMB runs down the Cheonggyecheon and straightens it between new stone banks."}
+  - {year: 1790, peg: bees, confidence: high, source: "Jeongjo sillok via Seoul Mediahub",
+     event: "Noryang is chosen for the pontoon bridge; Jeongjo names the rest pavilion Yongyangbongjeojeong",
+     place: "Noryang",
+     scene: "BEES swarm over Noryang and line up boats into a bridge beside the Yongyangbongjeojeong pavilion."}
+  - {year: 1795, peg: bell, confidence: high, source: "Geumcheon-gu: Siheung haenggung",
+     event: "Jeongjo opens the new Siheung road and the Siheung rest palace for his visits to Hwaseong",
+     scene: "A BELL rings at each milestone of the new Siheung road as Jeongjo rides south to Hwaseong."}
+  - {year: 1795, peg: bell, confidence: medium, source: "Sillok wiki: Siheung haenggung (built or rebuilt)",
+     event: "Manangyo, a stone bridge at Anyang, is built on the royal road",
+     scene: "A stone BELL hangs under the arches of Manangyo bridge at Anyang as the royal road crosses."}
+  - {year: 1795, peg: bell, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "Hwahongmun, the north sluice gate of Hwaseong, is finished",
+     scene: "Suwoncheon water pours through the seven arches of Hwahongmun and rings a BELL above the sluice."}
+  - {year: 1796, peg: peach, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "The arch of Namsumun, the south sluice gate of Hwaseong, is finished",
+     scene: "A giant PEACH is the keystone of Namsumun's arch over the Suwoncheon."}
+  - {year: 1798, peg: beehive, confidence: disputed, source: "Encykorea 1798; Kyeonggi Ilbo 1797",
+     event: "Mannyeonje reservoir is built in front of Sado's tomb",
+     scene: "A BEEHIVE drips honey into the new Mannyeonje reservoir below Hyeollyeongwon."}
+  - {year: 1799, peg: pipe, confidence: high, source: "Kyeonggi Ilbo: Chukmanje",
+     event: "Chukmanje reservoir (Seoho) is built west of Hwaseong for a royal farm",
+     scene: "A PIPE pours the king's thirty thousand nyang into Chukmanje, the new west lake of Hwaseong."}
+  # religion
+  - {year: 1598, peg: beehive, confidence: high, source: "Encykorea: Gwanwangmyo",
+     event: "A Ming officer builds Namgwanwangmyo, a shrine to Guan Yu, outside Sungnyemun",
+     scene: "A Ming officer sets a clay Guan Yu in a BEEHIVE of a shrine outside Sungnyemun."}
+  - {year: 1598, peg: beehive, confidence: high, source: "Encykorea: Seonmusa",
+     event: "Seonmusa shrine to the Ming commander Xing Jie is built in the capital",
+     scene: "A BEEHIVE buzzes in Seonmusa shrine as the board for Xing Jie goes up in the capital."}
+  - {year: 1599, peg: pipe, confidence: high, source: "ko WP: Dongmyo",
+     event: "Work starts on Dongmyo, the eastern shrine to Guan Yu, outside Heunginjimun",
+     scene: "A Ming envoy lights a PIPE and marks out Dongmyo outside Heunginjimun for Guan Yu."}
+  - {year: 1601, peg: soda, confidence: high, source: "ko WP: Dongmyo",
+     event: "Dongmyo is finished",
+     scene: "A SODA fountain foams in the courtyard as Dongmyo opens outside Heunginjimun."}
+  - {year: 1602, peg: sun, confidence: high, source: "Encykorea: Seonggyungwan",
+     event: "Daeseongjeon, the Confucian shrine hall of Seonggyungwan, is rebuilt",
+     scene: "The SUN rises over the rebuilt Daeseongjeon hall of Seonggyungwan for the first rite after the war."}
+  - {year: 1608, peg: sofa, confidence: high, source: "ko WP: Jongmyo",
+     event: "Jongmyo main hall and Yeongnyeongjeon are rebuilt after the war fire",
+     scene: "Royal spirit tablets ride a SOFA back into the rebuilt main hall of Jongmyo."}
+  - {year: 1615, peg: doll, confidence: unverified,
+     event: "Jaun Seowon, an academy for Yi I, is founded at Paju",
+     scene: "Paju scholars set a DOLL of Yi I on the altar of the new Jaun Seowon."}
+  - {year: 1619, peg: tuba, confidence: medium, source: "Heritage wiki: Hwagyesa",
+     event: "Hwagyesa temple is rebuilt after a fire with help from the Deokheung family",
+     scene: "A TUBA blasts the ashes away, and Hwagyesa rises again on the slope of Bukhansan."}
+  - {year: 1621, peg: ant, confidence: high, source: "ko WP: Jeondeungsa",
+     event: "Jeondeungsa temple on Ganghwa is rebuilt after a fire",
+     scene: "An ANT colony carries new beams up Jeongjoksan to rebuild burnt Jeondeungsa."}
+  - {year: 1622, peg: nun, confidence: high, source: "ko WP: Jeondeungsa",
+     event: "Daeungjeon, the main hall of Jeondeungsa, is finished",
+     scene: "A NUN climbs Jeondeungsa's roof and sets the last tile on its new Daeungjeon hall."}
+  - {year: 1625, peg: nail, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Seven temples for the monk soldiers, among them Gukcheongsa, are founded in Namhansanseong",
+     scene: "A monk soldier drives a NAIL into the gate of Gukcheongsa, the first of seven Namhansanseong temples."}
+  - {year: 1638, peg: movie, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Sungnyeoljeon, a shrine to King Onjo of Baekje, is set up in Namhansanseong",
+     scene: "A MOVIE of Baekje's King Onjo plays inside the new Sungnyeoljeon shrine in Namhansanseong."}
+  - {year: 1641, peg: radio, confidence: medium, source: "Encykorea: Chungnyeolsa (1641 or 1642)",
+     event: "Chungnyeolsa shrine is built on Ganghwa for Kim Sang-yong and the others who died there",
+     scene: "A RADIO reads out the names of Kim Sang-yong and the Ganghwa dead in the new Chungnyeolsa shrine."}
+  - {year: 1650, peg: lasso, confidence: medium, source: "itwiki/Encykorea: Simgok Seowon (1649 or 1650)",
+     event: "Simgok Seowon at Yongin, the academy for Jo Gwang-jo, gets a royal name board",
+     scene: "A royal LASSO swings the Simgok name board over the gate of Jo Gwang-jo's academy at Yongin."}
+  - {year: 1651, peg: wallet, confidence: high, source: "ko WP: Bongeunsa",
+     event: "The monk sculptor Seungil carves the wooden Buddha triad of Bongeunsa",
+     scene: "Seungil pulls a chisel from his WALLET and carves three wooden Buddhas for Bongeunsa."}
+  - {year: 1667, peg: jockey, confidence: high, source: "ko WP: Jongmyo",
+     event: "Yeongnyeongjeon at Jongmyo is extended by one bay on each side",
+     scene: "A JOCKEY rides along Yeongnyeongjeon at Jongmyo and adds one bay at each end."}
+  - {year: 1704, peg: sewer, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Daebodan, an altar to the Ming emperor Wanli, is built behind Changdeokgung",
+     scene: "Officials climb out of a SEWER behind Changdeokgung to bow at the new Daebodan altar to the Ming emperor."}
+  - {year: 1722, peg: nun, confidence: high, source: "ko WP: Chilgung",
+     event: "Daebingung shrine is built for Jang Hui-bin, mother of King Gyeongjong",
+     scene: "A NUN lights incense for Jang Hui-bin in the new Daebingung shrine."}
+  - {year: 1724, peg: hanger, confidence: high, source: "ko WP: Chilgung",
+     event: "Yuksanggung shrine is built for Lady Choe, mother of King Yeongjo",
+     scene: "Yeongjo hangs his mother's robe on a HANGER in the new Yuksanggung shrine."}
+  - {year: 1726, peg: nacho, confidence: high, source: "ko WP: Jongmyo",
+     event: "Jongmyo main hall is extended by four bays",
+     scene: "A NACHO chip four bays long snaps onto the end of the Jongmyo main hall."}
+  - {year: 1743, peg: ram, confidence: medium, source: "ko WP: Chilgung",
+     event: "Jeogyeonggung, a separate shrine for Lady Kim, mother of Wonjong, is set up",
+     scene: "A RAM carries Lady Kim's spirit tablet to the new Jeogyeonggung shrine."}
+  - {year: 1764, peg: cherry, confidence: high, source: "ko WP: Gyeongmogung",
+     event: "Sueunmyo, the shrine of Crown Prince Sado, moves to the hill east of Changgyeonggung",
+     scene: "A CHERRY tree uproots itself and carries Sado's Sueunmyo shrine to the hill east of Changgyeonggung."}
+  - {year: 1776, peg: cage, confidence: high, source: "ko WP: Gyeongmogung",
+     event: "Jeongjo renames his father's shrine Gyeongmogung",
+     scene: "Jeongjo opens a golden CAGE and frees a new name board, Gyeongmogung, over his father's shrine."}
+  - {year: 1788, peg: fife, confidence: medium, source: "ko WP: Chilgung",
+     event: "The shrine of Lady Yi, mother of Sado, gets the name Seonhuigung",
+     scene: "A FIFE plays as the new Seonhuigung board goes up over Lady Yi's shrine."}
+  - {year: 1790, peg: bees, confidence: high, source: "Encykorea: Yongjusa Daeungbojeon",
+     event: "Yongjusa temple is built at Hwaseong to pray for Sado's tomb",
+     scene: "BEES build a golden comb that becomes Yongjusa beside Sado's tomb at Hwaseong."}
+  - {year: 1794, peg: bear, confidence: medium, source: "search: Heungcheonsa (Seoul Mediahub, namu)",
+     event: "Heungcheonsa temple is rebuilt on its present site near Jeongneung",
+     scene: "A BEAR carries Heungcheonsa's bell to its new home on the slope near Jeongneung."}
+  - {year: 1801, peg: soda, confidence: high, source: "ko WP: Hwaseong Haenggung",
+     event: "Hwaryeongjeon is built beside the Hwaseong rest palace for Jeongjo's portrait",
+     scene: "A SODA bottle bursts in salute as Jeongjo's portrait enters the new Hwaryeongjeon at Hwaseong."}
+  - {year: 1824, peg: hanger, confidence: high, source: "ko WP: Chilgung",
+     event: "Gyeongugung shrine is built for Lady Bak, mother of King Sunjo",
+     scene: "Sunjo hangs a silk banner on a HANGER in Gyeongugung, his mother's new shrine."}
+  - {year: 1836, peg: match, confidence: high, source: "ko WP: Jongmyo",
+     event: "Jongmyo main hall reaches nineteen bays; Yeongnyeongjeon is extended again",
+     scene: "A MATCH lights nineteen lamps, one for each bay of the lengthened Jongmyo main hall."}
+  - {year: 1842, peg: rhino, confidence: high, source: "ko WP: Haengjusanseong",
+     event: "Haengju Seowon is built by royal order to honour Gwon Yul",
+     scene: "A RHINO charges up Haengju hill and clears the ground for the new Haengju Seowon honouring Gwon Yul."}
+  - {year: 1856, peg: leech, confidence: high, source: "Encykorea: Hwaeom sutra woodblocks",
+     event: "Bongeunsa carves new woodblocks of the Hwaeom sutra and stores them in the Panjeon",
+     scene: "Monks at Bongeunsa feed a LEECH on ink and print the Hwaeom sutra from new woodblocks."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "search: Heungcheonsa (namu, heritage wiki)",
+     event: "With the Daewongun's help Heungcheonsa is rebuilt and gets back its old name",
+     scene: "The Daewongun pours JELLY over Heungcheonsa's old name board and it shines again."}
+  - {year: 1866, peg: judge, confidence: medium, source: "Heritage wiki: Hwagyesa",
+     event: "Hwagyesa is repaired with gifts from the Daewongun",
+     scene: "A JUDGE hands the Daewongun's silver to the monks of Hwagyesa for new halls."}
+  # arts
+  - {year: 1593, peg: palm, confidence: high, source: "ko WP: Deoksugung",
+     event: "Seokeodang is built at Jeongneung Haengung, the house that serves as a temporary palace",
+     scene: "A PALM leaf roofs Seokeodang, the plain house that becomes Seonjo's palace at Jeongneung."}
+  - {year: 1603, peg: sumo, confidence: high, source: "ko WP: Haengjusanseong",
+     event: "The first Haengju victory stele is set up on the summit",
+     scene: "A SUMO wrestler hauls the Haengju victory stele up the hill and plants it on the summit."}
+  - {year: 1607, peg: ski, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Donhwamun, the main gate of Changdeokgung, is rebuilt",
+     scene: "A carpenter on a SKI slides the new beams down to Donhwamun at Changdeokgung."}
+  - {year: 1611, peg: tattoo, confidence: high, source: "ko WP: Deoksugung",
+     event: "Jeongneung Haengung becomes a royal palace with the name Gyeongungung",
+     scene: "A TATTOO of the name Gyeongungung appears on the gatepost of the old Jeongneung Haengung."}
+  - {year: 1616, peg: dish, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Changgyeonggung is rebuilt with Myeongjeongjeon hall and Honghwamun gate",
+     scene: "Carpenters carry Myeongjeongjeon's roof on a giant DISH back to Changgyeonggung."}
+  - {year: 1617, peg: dog, confidence: high, source: "search: Ingyeonggung (Seoul Museum of History)",
+     event: "Gwanghaegun starts Ingyeonggung palace below Inwangsan",
+     scene: "A DOG digs the foundations of Gwanghaegun's Ingyeonggung palace below Inwangsan."}
+  - {year: 1617, peg: dog, confidence: high, source: "search: Gyeongdeokgung (Sillok wiki)",
+     event: "Work starts on Gyeongdeokgung, later called Gyeonghuigung",
+     scene: "A DOG sniffs out the lucky rock where Gwanghaegun starts Gyeongdeokgung."}
+  - {year: 1620, peg: nose, confidence: high, source: "Sillok wiki: Gyeongdeokgung (11th month)",
+     event: "Gyeongdeokgung (Gyeonghuigung) is finished",
+     scene: "A NOSE of carved stone sniffs approval as the last hall of Gyeongdeokgung is roofed."}
+  - {year: 1620, peg: nose, confidence: high, source: "ko WP: Deoksugung",
+     event: "Gyeongungung buildings are pulled down and their timber taken to other palaces",
+     scene: "A giant NOSE sniffs Gyeongungung's halls and blows their timber away to other palaces."}
+  - {year: 1626, peg: nacho, confidence: high, source: "ko WP: Namhansanseong",
+     event: "The Namhansanseong temporary palace (Haenggung) is finished",
+     scene: "The king's cook serves a NACHO on the new floor of the Namhansanseong Haenggung."}
+  - {year: 1639, peg: map, confidence: medium, source: "Sillok wiki: Samjeondo stele (lunar 12th month)",
+     event: "The Samjeondo stele praising the Qing emperor is set up at the surrender site",
+     scene: "A Qing officer unrolls a MAP and plants the Samjeondo stele on the surrender ground at Songpa."}
+  - {year: 1647, peg: rock, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Changdeokgung is rebuilt after the coup fire",
+     scene: "A ROCK from Ingyeonggung rolls down to Changdeokgung and becomes its rebuilt hall."}
+  - {year: 1660, peg: cheese, confidence: high, source: "ko WP: Jeongjoksanseong",
+     event: "The Jeongjoksan archive and Seonwonbogak are set up on Ganghwa for the royal records",
+     scene: "Archivists seal the Annals of Joseon in a wheel of CHEESE inside the new Jeongjoksan archive."}
+  - {year: 1672, peg: coin, confidence: high, source: "ko WP: Namhansanseong",
+     event: "Jisudang pavilion is built at Namhansanseong",
+     scene: "Buyun Yi Se-hwa drops a COIN into the lotus pond of the new Jisudang pavilion."}
+  - {year: 1712, peg: tongue, confidence: high, source: "ko WP: Bukhansanseong",
+     event: "The Bukhansanseong temporary palace (Haenggung) is finished",
+     scene: "A TONGUE of mist rolls back from Bukhansan to show the finished Haenggung."}
+  - {year: 1741, peg: radio, confidence: high, source: "Encykorea: Gyeonggyo myeongseung cheop",
+     event: "Jeong Seon finishes Gyeonggyo myeongseung cheop, his album of the Han River around the capital",
+     scene: "Jeong Seon's RADIO plays Yi Byeong-yeon's poems while he paints Han River views at Yangcheon."}
+  - {year: 1760, peg: cheese, confidence: high, source: "ko WP: Gyeonghuigung",
+     event: "Gyeongdeokgung is renamed Gyeonghuigung",
+     scene: "A wheel of CHEESE stamped Gyeonghuigung replaces the old name board over the west palace."}
+  - {year: 1782, peg: oven, confidence: high, source: "ko WP: Oegyujanggak (2nd month)",
+     event: "Jeongjo founds the Oegyujanggak, an outer royal library, on Ganghwa",
+     scene: "Jeongjo lays the royal books in an OVEN-like stone vault, the new Oegyujanggak on Ganghwa."}
+  - {year: 1789, peg: fob, confidence: high, source: "ko WP: Hwaseong Haenggung",
+     event: "The Hwaseong rest palace is built with Bongsudang hall",
+     scene: "A FOB of keys opens Bongsudang, the first hall of the Hwaseong rest palace."}
+  - {year: 1794, peg: bear, confidence: high, source: "ko WP: Suwon Hwaseong",
+     event: "Work starts on Banghwasuryujeong, the northeast corner pavilion of Hwaseong",
+     scene: "A BEAR sits on the rocks above the Yongyeon pond and starts Banghwasuryujeong."}
+  - {year: 1796, peg: peach, confidence: high, source: "ko WP: Hwaseong Haenggung",
+     event: "The Hwaseong rest palace is finished",
+     scene: "A PEACH rolls from Bongsudang to Naeposa as the Hwaseong rest palace is finished."}
+  - {year: 1797, peg: pig, confidence: high, source: "Encykorea: Wonhaeng eulmyo jeongni uigwe",
+     event: "Wonhaeng eulmyo jeongni uigwe, the record of the royal visit to Hwaseong, is printed",
+     scene: "A PIG prints the Hwaseong visit record with the new Jeongni metal type."}
+  - {year: 1801, peg: soda, confidence: high, source: "Encykorea: Hwaseong seongyeok uigwe (9th month)",
+     event: "Hwaseong seongyeok uigwe, the record of building the fortress, is printed",
+     scene: "A SODA bottle presses the last page of the Hwaseong building record in metal type."}
+  - {year: 1804, peg: sewer, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Injeongjeon, the throne hall of Changdeokgung, is rebuilt",
+     scene: "Carpenters climb out of a SEWER under Changdeokgung with timber for the new Injeongjeon."}
+  - {year: 1828, peg: knife, confidence: medium, source: "ko WP: Yeongyeongdang (c. 1827 to 1828)",
+     event: "Crown Prince Hyomyeong builds Yeongyeongdang, a scholar-style house, in the Changdeokgung garden",
+     scene: "Prince Hyomyeong carves Yeongyeongdang's plain beams with a KNIFE in the Changdeokgung garden."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "en WP: Donggwoldo (around)",
+     event: "Donggwoldo, the bird's-eye painting of Changdeokgung and Changgyeonggung, is made (approximate)",
+     scene: "A MOUSE runs across every roof of the East Palaces as the painters draw Donggwoldo."}
+  - {year: 1831, peg: moth, confidence: high, source: "ko WP: Gyeonghuigung (4th month)",
+     event: "Gyeonghuigung is rebuilt after the fire",
+     scene: "A MOTH flies out of the ashes as Yungbokjeon and Hoesangjeon of Gyeonghuigung rise again."}
+  - {year: 1834, peg: hammer, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Tongmyeongjeon, Yeongchunheon and Jibokheon of Changgyeonggung are rebuilt",
+     scene: "A HAMMER knocks together Tongmyeongjeon and Yeongchunheon again at Changgyeonggung."}
+  - {year: 1840, peg: horse, confidence: medium, source: "Encykorea: Suseon jeondo (1840s)",
+     event: "Suseon jeondo, a woodblock map of the capital, is printed (approximate)",
+     scene: "A HORSE gallops over a woodblock map of Hanyang, and every street prints as Suseon jeondo."}
+  - {year: 1843, peg: ram, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Yanghwadang at Changgyeonggung is rebuilt",
+     scene: "A RAM pushes the new pillars of Yanghwadang upright at Changgyeonggung."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Encykorea: Hanyangga",
+     event: "Hansan Geosa writes Hanyangga, a long song about the sights of the capital",
+     scene: "A WARRIOR sings Hanyangga from Jongno to the palace gates, line by line."}
+  - {year: 1845, peg: railway, confidence: high, source: "ko WP: Haengjusanseong",
+     event: "A new Haengju victory stele is set up in front of the Haengju Seowon site",
+     scene: "A RAILWAY flatcar brings the new Haengju victory stele to the hilltop."}
+  - {year: 1847, peg: rock, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Nakseonjae is built in Changdeokgung",
+     scene: "A ROCK garden grows behind the plain new Nakseonjae in Changdeokgung."}
+  - {year: 1853, peg: llama, confidence: high, source: "ko WP: Yongheunggung",
+     event: "Yongheunggung is built on Ganghwa on the site of King Cheoljong's farmhouse",
+     scene: "A LLAMA munches the thatch of Cheoljong's old Ganghwa farmhouse, and tile-roofed Yongheunggung rises."}
+  - {year: 1856, peg: leech, confidence: high, source: "Encykorea: Bongeunsa Panjeon name board",
+     event: "Kim Jeong-hui writes the Panjeon name board at Bongeunsa, his last work",
+     scene: "Kim Jeong-hui dips a LEECH in ink and writes the Panjeon board at Bongeunsa."}
+  - {year: 1864, peg: cherry, confidence: high, source: "ko WP: Unhyeongung (9th month)",
+     event: "Norakdang and Nowandang of Unhyeongung are finished",
+     scene: "A CHERRY tree blossoms over the finished Norakdang of Unhyeongung."}
+  - {year: 1865, peg: jelly, confidence: high, source: "ko WP: Gyeongbokgung (lunar 4th month)",
+     event: "Work starts to rebuild Gyeongbokgung under the Daewongun",
+     scene: "The Daewongun pours JELLY into the ruined Gyeongbokgung site, and the first new pillars set."}
+  - {year: 1865, peg: jelly, confidence: high, source: "ko WP: Gyeonghuigung",
+     event: "Gyeonghuigung halls are pulled down for timber for Gyeongbokgung",
+     scene: "Workers slide Gyeonghuigung's beams down a river of JELLY to the Gyeongbokgung site."}
+  - {year: 1866, peg: judge, confidence: high, source: "ko WP: Oegyujanggak",
+     event: "French troops burn the Oegyujanggak and carry off its royal books",
+     scene: "A JUDGE watches French soldiers carry the royal books out of the burning Oegyujanggak."}
+  - {year: 1867, peg: jockey, confidence: high, source: "ko WP: Gyeongbokgung",
+     event: "Gyeonghoeru pavilion is built anew on its pond at Gyeongbokgung",
+     scene: "A JOCKEY rides a stone horse across the pond to the new Gyeonghoeru."}
+  - {year: 1867, peg: jockey, confidence: high, source: "en WP: Timeline of Seoul",
+     event: "Gwanghwamun gate is rebuilt",
+     scene: "A JOCKEY gallops through the newly rebuilt Gwanghwamun."}
+  - {year: 1870, peg: goose, confidence: high, source: "ko WP: Unhyeongung",
+     event: "Irodang of Unhyeongung is finished",
+     scene: "A GOOSE settles in the courtyard of the finished Irodang at Unhyeongung."}
+  - {year: 1871, peg: cat, confidence: medium, source: "Encykorea: Cheokhwabi (lunar 4th month order)",
+     event: "The Daewongun sets up an anti-foreign stele (Cheokhwabi) at Jongno crossroads",
+     scene: "A CAT sits on the new Cheokhwabi at Jongno and hisses at every foreign ship."}
+  - {year: 1873, peg: comb, confidence: high, source: "ko WP: Gyeongbokgung",
+     event: "Geoncheonggung is built in the north of Gyeongbokgung",
+     scene: "Gojong combs his hair with a COMB in the plain new rooms of Geoncheonggung."}
+  # society
+  - {year: 1592, peg: piano, confidence: high, source: "ko WP: Changdeokgung; Gyeongbokgung (arson disputed)",
+     event: "Gyeongbokgung, Changdeokgung and Changgyeonggung burn as the capital falls",
+     scene: "A burning PIANO rolls through Gyeongbokgung, Changdeokgung and Changgyeonggung and sets every hall alight."}
+  - {year: 1606, peg: sushi, confidence: high, source: "Encykorea: Seonggyungwan",
+     event: "Myeongnyundang, the lecture hall of Seonggyungwan, is rebuilt",
+     scene: "Students eat SUSHI on the floor of the rebuilt Myeongnyundang at Seonggyungwan."}
+  - {year: 1608, peg: sofa, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Mokneung, the tomb of King Seonjo, is made at Donggureung in Guri",
+     scene: "Seonjo's coffin rides a SOFA to Mokneung beside Geonwolleung in Guri."}
+  - {year: 1623, peg: gnome, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Fire during the Injo coup destroys much of Changdeokgung",
+     scene: "A GNOME with a torch runs through Changdeokgung during the coup, and the halls burn."}
+  - {year: 1626, peg: nacho, confidence: high, source: "Encykorea: Seonggyungwan",
+     event: "Seonggyungwan's library Jongyeonggak and its dining hall are restored",
+     scene: "Students carry a NACHO platter into the restored dining hall beside Jongyeonggak."}
+  - {year: 1627, peg: ink, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Jangneung, the tomb of Wonjong, Injo's father, is made at Gimpo",
+     scene: "Injo writes his father's name in INK on the stone of Jangneung at Gimpo."}
+  - {year: 1630, peg: mouse, confidence: high, source: "search: Mokneung (Encykorea)",
+     event: "Mokneung of King Seonjo is moved to a new site in Donggureung",
+     scene: "A MOUSE gnaws through Mokneung's wet old mound, and the tomb moves to drier ground in Donggureung."}
+  - {year: 1635, peg: mill, confidence: medium, source: "en WP via search: Jangneung (Injo)",
+     event: "Jangneung is first made at Unjeon-ri, Paju, for Queen Inryeol; King Injo later lies beside her",
+     scene: "A water MILL turns by the stream at Unjeon-ri as Queen Inryeol is laid in the first Jangneung."}
+  - {year: 1643, peg: ram, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "The tomb of the deposed Gwanghaegun is made at Namyangju",
+     scene: "A RAM butts open the hillside at Namyangju for the plain grave of Gwanghaegun."}
+  - {year: 1648, peg: reef, confidence: high, source: "ko WP: History of Seoul",
+     event: "A household count gives Hanseong about ninety-six thousand people",
+     scene: "A census clerk sails a REEF of tally sticks into Hanseong-bu: about ninety-six thousand people."}
+  - {year: 1659, peg: elbow, confidence: unverified,
+     event: "Yeongneung, the tomb of King Hyojong, is first made at Donggureung",
+     scene: "Hyojong's warhorse kneels, and an ELBOW of earth rises into his first mound at Donggureung."}
+  - {year: 1664, peg: cherry, confidence: high, source: "Encykorea: Seonggyungwan",
+     event: "Biccheondang hall and two dormitories are built at Seonggyungwan",
+     scene: "A CHERRY tree drops blossoms on the new Biccheondang hall of Seonggyungwan."}
+  - {year: 1669, peg: ship, confidence: high, source: "ko WP: History of Seoul",
+     event: "A household count gives Hanseong about one hundred and ninety-four thousand people",
+     scene: "A SHIP unloads crates of registers at Mapo: Hanseong now counts about one hundred ninety-four thousand people."}
+  - {year: 1673, peg: comb, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Yeongneung of King Hyojong is moved to Yeoju",
+     scene: "Hyojong's coffin rides down the Namhan River to Yeoju on a giant COMB."}
+  - {year: 1674, peg: car, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Sungneung, the tomb of King Hyeonjong, is made at Donggureung",
+     scene: "A CAR made of grave stones carries Hyeonjong to Sungneung in Donggureung."}
+  - {year: 1678, peg: cave, confidence: high, source: "ko WP: History of Seoul",
+     event: "After famine and plague a household count gives Hanseong about one hundred and sixty-seven thousand people",
+     scene: "A CAVE swallows the lost families, and Hanseong's count drops to about one hundred sixty-seven thousand."}
+  - {year: 1680, peg: vase, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Ingneung, the tomb of Queen Ingyeong, is made in the Seooreung group at Goyang",
+     scene: "Mourners carry Queen Ingyeong's coffin into Ingneung in a painted VASE."}
+  - {year: 1688, peg: fife, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Hwireung, the tomb of Queen Jangryeol, is made at Donggureung",
+     scene: "A FIFE plays the funeral tune at Hwireung as Queen Jangryeol is laid in Donggureung."}
+  - {year: 1701, peg: soda, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Myeongneung is made at Goyang for Queen Inhyeon; King Sukjong later lies there",
+     scene: "A SODA cask of tears pours over Queen Inhyeon's new mound at Myeongneung."}
+  - {year: 1718, peg: dove, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Hyereung, the tomb of Queen Danui, is made at Donggureung",
+     scene: "A DOVE carries Queen Danui's name tablet to Hyereung in Donggureung."}
+  - {year: 1724, peg: hanger, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Uineung, the tomb of King Gyeongjong, is made at Seokgwan-dong in the capital's east",
+     scene: "Gyeongjong's robe hangs on a stone HANGER beside the new Uineung at Seokgwan-dong."}
+  - {year: 1728, peg: knife, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Yeongneung of the crown prince Hyojang (Jinjong) is made at Paju",
+     scene: "A KNIFE cuts the turf for the young crown prince's Yeongneung at Paju."}
+  - {year: 1731, peg: moth, confidence: high, source: "search: Jangneung (Injo)",
+     event: "Jangneung, the tomb of King Injo, is moved to Galhyeon-ri, Paju",
+     scene: "A MOTH swarm drives the snakes from Injo's old tomb, and Jangneung moves to Galhyeon-ri."}
+  - {year: 1743, peg: ram, confidence: high, source: "Encykorea: Seonggyungwan",
+     event: "Yugilgak, a hall for archery equipment, is built at Seonggyungwan",
+     scene: "A RAM stands guard over the bows and arrows in the new Yugilgak of Seonggyungwan."}
+  - {year: 1757, peg: log, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Hongneung, the tomb of Queen Jeongseong, is made at Goyang",
+     scene: "A LOG coffin of Queen Jeongseong rolls into Hongneung at Seooreung."}
+  - {year: 1762, peg: chain, confidence: medium, source: "ko WP: Yunggeolleung (Yeonguwon)",
+     event: "Crown Prince Sado is buried at Baebongsan in Yangju (now Dongdaemun-gu)",
+     scene: "Mourners drag a CHAIN of lanterns up Baebongsan to bury Crown Prince Sado."}
+  - {year: 1776, peg: cage, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Wonneung, the tomb of King Yeongjo, is made at Donggureung",
+     scene: "Yeongjo's coffin passes through a gilded CAGE gate into Wonneung at Donggureung."}
+  - {year: 1789, peg: fob, confidence: high, source: "Encykorea: Hyeollyeongwon (10th month)",
+     event: "Sado's tomb moves from Baebongsan to Hwasan at Suwon as Hyeollyeongwon",
+     scene: "Jeongjo hangs his father's name on a FOB and carries the tomb from Baebongsan to Hwasan."}
+  - {year: 1790, peg: bees, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Tongmyeongjeon at Changgyeonggung burns",
+     scene: "A swarm of BEES with burning wings sets Tongmyeongjeon of Changgyeonggung on fire."}
+  - {year: 1800, peg: sauce, confidence: high, source: "ko WP: Yunggeolleung",
+     event: "Geolleung, the tomb of King Jeongjo, is made east of his father's tomb at Hwaseong",
+     scene: "Mourners pour SAUCE on the funeral rice as Jeongjo is laid in Geolleung beside his father."}
+  - {year: 1803, peg: sumo, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Injeongjeon, the throne hall of Changdeokgung, burns",
+     scene: "A SUMO wrestler crashes into the lamps of Injeongjeon, and the throne hall of Changdeokgung burns."}
+  - {year: 1821, peg: ant, confidence: medium, source: "Korea Times: cholera in Korea, 1821",
+     event: "Cholera spreads into the crowded capital and kills many",
+     scene: "An ANT colony spreads cholera through the alleys of Hanseong, and the dead fill the gates."}
+  - {year: 1821, peg: ant, confidence: high, source: "ko WP: Yunggeolleung",
+     event: "Geolleung of King Jeongjo is moved so Queen Hyoui can lie beside him",
+     scene: "An ANT train carries Jeongjo's coffin to the new Geolleung to lie with Queen Hyoui."}
+  - {year: 1829, peg: knob, confidence: high, source: "ko WP: Gyeonghuigung (10th month)",
+     event: "Fire destroys most halls of Gyeonghuigung",
+     scene: "A burning door KNOB starts the fire that eats most of Gyeonghuigung's halls."}
+  - {year: 1830, peg: mouse, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Fire in Hwangyeongjeon of Changgyeonggung burns several halls",
+     scene: "A MOUSE with a candle starts a fire in Hwangyeongjeon, and Yeongchunheon burns too."}
+  - {year: 1830, peg: mouse, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Suneung, the tomb of the crown prince Hyomyeong (Munjo), is made near Uineung",
+     scene: "Mourners lay Prince Hyomyeong in Suneung while a MOUSE guards his silk shoes."}
+  - {year: 1833, peg: mummy, confidence: high, source: "ko WP: Changdeokgung",
+     event: "Fire destroys Huijeongdang, Daejojeon and other halls of Changdeokgung",
+     scene: "A MUMMY's torch sets fire to Huijeongdang and Daejojeon in Changdeokgung."}
+  - {year: 1833, peg: mummy, confidence: high, source: "ko WP: Changgyeonggung",
+     event: "Fire destroys Tonghwajeon of Changgyeonggung; it is never rebuilt",
+     scene: "A MUMMY unwraps its burning bandages in Tonghwajeon of Changgyeonggung, and the hall is lost for good."}
+  - {year: 1834, peg: hammer, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Inneung, the tomb of King Sunjo, is first made at Paju",
+     scene: "Sunjo's coffin is lowered at Paju with a HAMMER and a rope into the first Inneung."}
+  - {year: 1839, peg: map, confidence: high, source: "ko WP: Gyeongmogung",
+     event: "Bongan-gak at Gyeongmogung burns",
+     scene: "A burning MAP of the shrine falls on Bongan-gak at Gyeongmogung, and it goes up in flames."}
+  - {year: 1849, peg: rope, confidence: high, source: "ko WP: Joseon royal tombs",
+     event: "Gyeongneung, the tomb of King Heonjong, is made at Donggureung",
+     scene: "Heonjong's coffin is tied with a ROPE and lowered into Gyeongneung at Donggureung."}
+  - {year: 1855, peg: lily, confidence: medium, source: "ko WP: Joseon royal tombs (note)",
+     event: "Suneung of Prince Hyomyeong moves to Donggureung",
+     scene: "A LILY grows on Suneung's new mound in Donggureung."}
+  - {year: 1856, peg: leech, confidence: high, source: "ko WP: Joseon royal tombs (note)",
+     event: "Inneung of King Sunjo moves to a hill beside Heolleung (now Seocho-gu)",
+     scene: "A LEECH sucks Inneung out of the Paju hill and drops it beside Heolleung in Seocho."}
+  - {year: 1858, peg: wolf, confidence: high, source: "search: Siheung haenggung (Geumcheon-gu)",
+     event: "Fire destroys the Siheung rest palace",
+     scene: "A WOLF knocks over a brazier, and the Siheung rest palace burns to the ground."}
+  - {year: 1864, peg: cherry, confidence: medium, source: "ko WP: Joseon royal tombs (lists 1863, death year)",
+     event: "Yereung, the tomb of King Cheoljong, is made at Seosamneung in Goyang",
+     scene: "A CHERRY branch lies on Cheoljong's coffin as he is laid in Yereung at Goyang."}
+  - {year: 1873, peg: comb, confidence: high, source: "search: Jagyeongjeon (Sillok wiki, 12th month)",
+     event: "Fire destroys Jagyeongjeon and nearby halls of the new Gyeongbokgung",
+     scene: "A flaming COMB drops into Jagyeongjeon, and the fire spreads through the new Gyeongbokgung."}
+world_refs:
+  - {year: 1592, event: "King Seonjo flees and the Japanese take Hanseong", cell: east_asia_politics_1500_1800}
+  - {year: 1592, event: "Slaves burn the slave registers in Seoul", cell: east_asia_society_1500_1800}
+  - {year: 1593, event: "Battle of Haengju", cell: east_asia_politics_1500_1800}
+  - {year: 1608, event: "Daedong rice tax begins in Gyeonggi", cell: east_asia_politics_1500_1800}
+  - {year: 1609, event: "Changdeokgung rebuilt after the Imjin War", cell: east_asia_arts_1500_1800}
+  - {year: 1623, event: "Injo coup deposes Gwanghaegun", cell: east_asia_politics_1500_1800}
+  - {year: 1624, event: "Yi Gwal's rebellion takes Hanseong", cell: east_asia_politics_1500_1800}
+  - {year: 1636, event: "Second Manchu invasion starts", cell: east_asia_politics_1500_1800}
+  - {year: 1637, event: "Injo surrenders to Hong Taiji at Samjeondo", cell: east_asia_politics_1500_1800}
+  - {year: 1663, event: "Seoul household register: most residents slaves", cell: east_asia_society_1500_1800}
+  - {year: 1709, event: "Jeong Je-du founds the Ganghwa school", cell: east_asia_religion_1500_1800}
+  - {year: 1742, event: "Tangpyeong stele at Seonggyungwan", cell: east_asia_politics_1500_1800}
+  - {year: 1751, event: "Jeong Seon paints Inwangjesaekdo", cell: east_asia_arts_1500_1800}
+  - {year: 1762, event: "Crown Prince Sado dies locked in a rice chest", cell: east_asia_politics_1500_1800}
+  - {year: 1776, event: "Kyujanggak founded at Changdeokgung", cell: east_asia_politics_1500_1800}
+  - {year: 1785, event: "Police raid the Catholic meeting in Myeongdong", cell: east_asia_religion_1500_1800}
+  - {year: 1789, event: "Pontoon bridge over the Han for the royal visits", cell: east_asia_science_1500_1800}
+  - {year: 1791, event: "Sinhae Tonggong ends the Seoul shops' monopoly", cell: east_asia_economy_1500_1800}
+  - {year: 1792, event: "Jeong Yak-yong designs the Hwaseong walls and crane", cell: east_asia_science_1500_1800}
+  - {year: 1794, event: "Hwaseong Fortress begun", cell: east_asia_arts_1500_1800}
+  - {year: 1795, event: "Daeyu royal farm and Manseokgeo reservoir at Hwaseong", cell: east_asia_economy_1500_1800}
+  - {year: 1795, event: "Zhou Wenmo's first Easter Mass in Seoul", cell: east_asia_religion_1500_1800}
+  - {year: 1796, event: "Hwaseong Fortress completed", cell: east_asia_arts_1500_1800}
+  - {year: 1801, event: "Sinyu persecution: Zhou Wenmo executed", cell: east_asia_religion_1800_1945}
+  - {year: 1839, event: "Gihae persecution: Imbert, Maubant, Chastan executed", cell: east_asia_religion_1800_1945}
+  - {year: 1846, event: "Kim Taegon beheaded at Saenamteo", cell: east_asia_religion_1800_1945}
+  - {year: 1866, event: "Byeongin persecution", cell: east_asia_religion_1800_1945}
+  - {year: 1866, event: "French campaign against Korea at Ganghwa", cell: east_asia_politics_1800_1945}
+  - {year: 1867, event: "Gyeongbokgung rebuilding completed", cell: east_asia_arts_1800_1945}
+  - {year: 1871, event: "US expedition attacks the Ganghwa forts", cell: east_asia_politics_1800_1945}
+  - {year: 1875, event: "Ganghwa Island (Unyo) incident", cell: east_asia_politics_1800_1945}
+out_refs:
+  - {year: 1593, event: "Military Training Agency (Hullyeon dogam) founded", reason: "national army"}
+  - {year: 1608, event: "Gwanghaegun takes the throne at Jeongneung Haengung", reason: "royal accession"}
+  - {year: 1618, event: "Queen Dowager Inmok confined in the west palace", reason: "royal court"}
+  - {year: 1627, event: "Peace with Later Jin made on Ganghwa", reason: "treaty"}
+  - {year: 1645, event: "Crown Prince Sohyeon returns from Shenyang and dies", reason: "royal court"}
+  - {year: 1682, event: "Geumwiyeong garrison founded", reason: "national army"}
+  - {year: 1776, event: "Jeongjo becomes king", reason: "royal accession"}
+  - {year: 1795, event: "Jeongjo's royal visit to Hwaseong; Lady Hyegyeong's sixtieth birthday feast", reason: "royal ceremony"}
+  - {year: 1849, event: "Cheoljong brought from Ganghwa to the throne", reason: "royal accession"}
+  - {year: 1866, event: "Gojong marries Queen Min at Unhyeongung", reason: "royal wedding"}
+  - {year: 1873, event: "The Daewongun loses power", reason: "royal court"}
