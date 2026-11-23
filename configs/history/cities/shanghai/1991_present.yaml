@@ -1,0 +1,749 @@
+# City: Shanghai x 1991 to the present (Pudong, the Metro, the towers, the World Expo, the megacity). DRAFT 2026-11-22.
+# Area: Shanghai Municipality (Huangpu and the old city, Jing'an, Xuhui, Hongkou, Yangpu, Pudong with Nanhui and
+# Lingang, Minhang, Baoshan, Jiading, Songjiang, Qingpu, Jinshan, Fengxian, Chongming, Changxing, Hengsha).
+# Yangshan port islands (Zhejiang) are OUT; the Donghai Bridge is IN.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches; no unauthorised book copies).
+# Main sources: Wikipedia at wikipedia.org (Timeline of Shanghai, Shanghai Metro and single articles),
+# China Daily, Shanghai Daily (shine.cn), Shanghai and Pudong government pages, news reports.
+# A work -> first public appearance (premiere, opening); a building -> its opening.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Party Secretary of Shanghai (20 March)",
+     event: "Wu Bangguo becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "A BOOT kicks open the Party office door on Kangping Road, and Wu Bangguo marches in as city Party secretary."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Mayor of Shanghai (April)",
+     event: "Huang Ju becomes mayor of Shanghai", place: "City hall on the Bund",
+     scene: "Huang Ju pulls on the mayor's giant BOOT in the old city hall on the Bund and stamps his first order."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Shanghai County merges into Minhang District", place: "Minhang",
+     scene: "A PIANO rolls across the border of Shanghai County and crushes it flat into Minhang District."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Jiading County becomes Jiading District", place: "Jiading",
+     scene: "A PIANO tuner in the Jiading town hall retunes the old county into a city district."}
+  - {year: 1992, peg: piano, confidence: medium, source: "WP: Pudong; Admin divisions (1 or 11 October)",
+     event: "The State Council approves the Pudong New Area from Chuansha County and parts of three city districts",
+     place: "Chuansha",
+     scene: "A PIANO falls on the Chuansha County map, and its keys stamp out the borders of the new Pudong New Area."}
+  - {year: 1993, peg: palm, confidence: medium, source: "WP: Pudong; Timeline of Shanghai",
+     event: "The Pudong New Area government starts work", place: "Pudong",
+     scene: "A PALM tree opens its fronds as the roof of the first Pudong New Area office, and officials sit down under it."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Party Secretary of Shanghai (28 September)",
+     event: "Huang Ju becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "A BEAR hands Huang Ju the Party secretary's seal on Kangping Road and pushes him from the mayor's chair."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Mayor of Shanghai (February)",
+     event: "Xu Kuangdi becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "A BELL rings over People's Square city hall as Xu Kuangdi takes the mayor's office."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Jinshan County becomes Jinshan District", place: "Jinshan",
+     scene: "A PIG roots up the Jinshan County sign and buries a new Jinshan District sign in its place."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Songjiang County becomes Songjiang District", place: "Songjiang",
+     scene: "A BEEHIVE swarms over Songjiang's old prefecture town and seals it into a city district."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Qingpu County becomes Qingpu District", place: "Qingpu",
+     scene: "A PIPE carries Qingpu's water towns out of the county and into the city as a district."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Nanshi, the old walled-town district, merges into Huangpu", place: "Old City (Nanshi)",
+     scene: "A flood of SAUCE pours over the old Nanshi city ring and dissolves it into Huangpu District."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Fengxian and Nanhui counties become districts", place: "Fengxian and Nanhui",
+     scene: "A SODA bottle fizzes over Fengxian and Nanhui and washes off their county names on the same day."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Mayor of Shanghai (December)",
+     event: "Chen Liangyu becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "Chen Liangyu toasts with a SODA as he sits down in the mayor's chair at People's Square."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: APEC China 2001 (20-21 Oct)",
+     event: "APEC leaders meet in Shanghai at the International Convention Center and the new Science and Technology Museum",
+     place: "Shanghai International Convention Center, Pudong",
+     scene: "Bush, Putin and Jiang, all in silk Tang jackets, raise SODA glasses at the Pudong convention centre for the APEC leaders' photo."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Party Secretary of Shanghai (15 November)",
+     event: "Chen Liangyu becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "The SUN rises over Kangping Road and shines only on Chen Liangyu as the new Party secretary."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Mayor of Shanghai (February)",
+     event: "Han Zheng becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "A SUMO wrestler lifts Han Zheng into the mayor's seat at People's Square."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Party Secretary (24 Sept); pension scandal",
+     event: "Chen Liangyu is removed as Party secretary over the misuse of the city pension fund",
+     place: "Kangping Road Party office",
+     scene: "A SUSHI chef slices Chen Liangyu off the Party board for feeding pension money to property deals."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Party Secretary of Shanghai (24 September)",
+     event: "Han Zheng becomes acting Party secretary as well as mayor", place: "People's Square city hall",
+     scene: "Han Zheng balances a SUSHI tray in each hand, one for the mayor's job and one for the acting Party post."}
+  - {year: 2006, peg: sushi, confidence: high, source: "China Daily (15 June)",
+     event: "Shanghai Cooperation Organisation heads of state meet in Shanghai for the group's fifth anniversary",
+     place: "Shanghai International Convention Center, Pudong",
+     scene: "Six presidents share one SUSHI boat in the Pudong convention centre and sign the fifth-anniversary declaration of the Shanghai Cooperation Organisation."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Party Secretary of Shanghai (24 March)",
+     event: "Xi Jinping becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "Xi Jinping glides down a SKI slope from Zhejiang into the Shanghai Party office as its new secretary."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Party Secretary of Shanghai (27 October)",
+     event: "Yu Zhengsheng follows Xi Jinping as Party secretary after seven months", place: "Kangping Road Party office",
+     scene: "Xi Jinping hands his SKI poles to Yu Zhengsheng after seven months and leaves Shanghai for Beijing."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Shanghai pension scandal (11 April)",
+     event: "A Tianjin court gives Chen Liangyu eighteen years in prison for bribes and the pension scandal",
+     place: "Tianjin No. 2 court",
+     scene: "Chen Liangyu sinks into a prison SOFA in Tianjin for eighteen years over Shanghai's pension money."}
+  - {year: 2008, peg: sofa, confidence: high, source: "AP, AsiaNews: maglev strolls, 12-13 January",
+     event: "Residents 'stroll' at People's Square and Nanjing Road against the maglev extension",
+     place: "People's Square",
+     scene: "Hundreds of residents carry a SOFA through People's Square in a 'stroll' against the maglev line near their homes."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Admin divisions; Pudong (April-May)",
+     event: "Nanhui District merges into Pudong New Area", place: "Nanhui",
+     scene: "A bar of SOAP washes the Nanhui name off the coast, and Pudong spreads down to the sea at Lingang."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Luwan District merges into Huangpu", place: "Luwan",
+     scene: "A TATTOO artist inks the Huangpu name over Luwan on the city map."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Party Secretary of Shanghai (20 November)",
+     event: "Han Zheng becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "Han Zheng sticks out his TONGUE to lick the seal of the Party secretary's office on Kangping Road."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Mayor of Shanghai (26 December)",
+     event: "Yang Xiong becomes acting mayor of Shanghai", place: "People's Square city hall",
+     scene: "A TONGUE rolls out like a red carpet for Yang Xiong to walk into the mayor's office."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: CICA (21 May)",
+     event: "The fourth CICA summit of Asian leaders meets in Shanghai",
+     place: "Shanghai",
+     scene: "Asian leaders stack a TOWER of trust blocks at the CICA summit in Shanghai, and Xi calls for a new Asian security plan."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Zhabei District merges into Jing'an", place: "Zhabei",
+     scene: "A Russian DOLL named Jing'an opens up and swallows the smaller Zhabei doll whole."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Administrative divisions of Shanghai",
+     event: "Chongming, the last county, becomes a district", place: "Chongming Island",
+     scene: "A satellite DISH on Chongming Island beams out the news that Shanghai has no counties left."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Mayor of Shanghai (20 January)",
+     event: "Ying Yong becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "A DOG fetches the mayor's chain and drops it at Ying Yong's feet in People's Square city hall."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Party Secretary of Shanghai (29 October)",
+     event: "Li Qiang becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "A guard DOG lets Li Qiang through the gate of the Party office and stays at his heel as secretary."}
+  - {year: 2017, peg: dog, confidence: medium, source: "WP: Timeline of Shanghai (10 June)",
+     event: "Residents protest on Nanjing Road against new city housing rules", place: "Nanjing Road",
+     scene: "A DOG leads a crowd of flat owners down Nanjing Road, barking against the new housing rules."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Mayor of Shanghai (23 March)",
+     event: "Gong Zheng becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "Gong Zheng wears a giant NOSE mask as he takes the mayor's chair in the first COVID spring."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: 2022 COVID-19 protests in China (26 Nov)",
+     event: "Young people hold a candle vigil with blank sheets on Urumqi Middle Road and call for Xi to step down",
+     place: "Urumqi Middle Road",
+     scene: "A NUN lights candles and raises a blank sheet of paper on Urumqi Middle Road, and the crowd shouts with her."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: 2022 COVID-19 protests in China (27 Nov)",
+     event: "Police beat and detain BBC journalist Edward Lawrence at the Urumqi Road protest", place: "Urumqi Middle Road",
+     scene: "Police drag a NUN to the ground in handcuffs on Urumqi Road; she wears the press badge of the BBC."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Party Secretary of Shanghai (28 October)",
+     event: "Chen Jining becomes Party secretary of Shanghai", place: "Kangping Road Party office",
+     scene: "A NUN rings the bell at Kangping Road to bring in Chen Jining as Party secretary."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Mayor of Shanghai (4 September)",
+     event: "Zhu Zhongming becomes mayor of Shanghai", place: "People's Square city hall",
+     scene: "Zhu Zhongming crunches a NACHO at his first mayor's meeting in People's Square city hall."}
+  # science
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Nanpu Bridge; Huangpu River",
+     event: "Nanpu Bridge opens, the first bridge across the Huangpu in the city centre", place: "Nanpu Bridge",
+     scene: "A giant BOOT steps over the Huangpu on the cables of the Nanpu Bridge, the first downtown crossing by bridge."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Line 1 (Shanghai Metro) (28 May)",
+     event: "The first Metro section opens: Line 1 from Xujiahui south", place: "Xujiahui station",
+     scene: "A PALM leaf waves the first Shanghai Metro train out of Xujiahui station on Line 1."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Yangpu Bridge (October)",
+     event: "Yangpu Bridge opens with the longest cable-stayed span in the world", place: "Yangpu Bridge",
+     scene: "A PALM tree on each Yangpu Bridge tower stretches its fronds out into the longest cable-stayed span on Earth."}
+  - {year: 1994, peg: bear, confidence: high, source: "Search: Inner Ring Road completed December",
+     event: "The Inner Ring elevated road is completed, the city's first elevated ring", place: "Inner Ring Road",
+     scene: "A BEAR runs one full lap above the rooftops on the new Inner Ring elevated road."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Line 1 (Shanghai Metro) (10 April)",
+     event: "Full Line 1 opens from the Railway Station to Jinjiang Park", place: "Shanghai Railway Station",
+     scene: "A BELL rings at Shanghai Railway Station as the first through train runs all the way to Jinjiang Park."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Yan'an Elevated Road (2 December)",
+     event: "The first section of the Yan'an Elevated Road opens to Hongqiao Airport", place: "Yan'an Road",
+     scene: "A PEACH rolls along the new Yan'an Elevated Road from the Inner Ring all the way to Hongqiao Airport."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Line 1 (28 December)",
+     event: "Line 1 extends south from Jinjiang Park to Xinzhuang", place: "Xinzhuang",
+     scene: "A PEACH stone grows into new track and pushes Line 1 south from Jinjiang Park to Xinzhuang."}
+  - {year: 1996, peg: peach, confidence: low, source: "Window magazine: opening due November",
+     event: "The second tube of the Yan'an East Road tunnel opens under the Huangpu", place: "Yan'an East Road tunnel",
+     scene: "A PEACH bores a second tube under the Huangpu beside the old Yan'an East Road tunnel."}
+  - {year: 1997, peg: pig, confidence: medium, source: "WP: Huangpu River; Timeline (Pudong page: 1996)",
+     event: "Xupu Bridge opens across the Huangpu", place: "Xupu Bridge",
+     scene: "A PIG trots across the Xupu Bridge on opening day, the third bridge over the Huangpu."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Shanghai Pudong International Airport",
+     event: "Work starts on Pudong International Airport on the coast", place: "Pudong airport site",
+     scene: "A PIG digs the first hole for Pudong airport in the coastal mud flats."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Shanghai Pudong International Airport",
+     event: "Pudong International Airport opens and takes most international flights from Hongqiao",
+     place: "Pudong airport",
+     scene: "A giant PIPE sucks the international jets from Hongqiao across the river to the new Pudong airport."}
+  - {year: 1999, peg: pipe, confidence: medium, source: "WP: Shanghai Metro (table Sep 1999, text 2000)",
+     event: "Metro Line 2 opens and runs under the Huangpu to Lujiazui", place: "Lujiazui station",
+     scene: "A PIPE under the Huangpu carries the first Line 2 trains from People's Square to Lujiazui."}
+  - {year: 1999, peg: pipe, confidence: medium, source: "WP: Timeline of Shanghai",
+     event: "The Shanghai public transport card comes into use", place: "Metro gates",
+     scene: "A PIPE organ toots each time a rider taps the new transport card at a Metro gate."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Line 3 (Shanghai Metro) (26 December)",
+     event: "The Pearl Line, the first elevated Metro line, starts trial service", place: "Shanghai South to Jiangwan",
+     scene: "A river of SAUCE lifts the Pearl Line trains high above the streets from Shanghai South to Jiangwan."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Shanghai maglev train (March)",
+     event: "Work starts on the maglev line from Longyang Road to Pudong airport", place: "Longyang Road",
+     scene: "A SODA can pops open at Longyang Road and its bubbles float the first maglev beams into place."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "WP: Huangpu River; Timeline (Pudong page: 2002)",
+     event: "Lupu Bridge opens, then the longest steel arch bridge in the world", place: "Lupu Bridge",
+     scene: "A SUMO wrestler bends steel into the great Lupu arch and plants its feet on both river banks."}
+  - {year: 2003, peg: sumo, confidence: high, source: "China Daily: first gas arrives (7 October)",
+     event: "Gas from the West-East Pipeline arrives in Shanghai", place: "Baihe gate station",
+     scene: "A SUMO wrestler hauls the West-East gas pipe all the way from Shaanxi and plugs it into Shanghai."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Shanghai maglev train (12 November)",
+     event: "The maglev reaches five hundred and one km/h in a test run", place: "Maglev line",
+     scene: "A SUMO wrestler rides the maglev nose as it hits five hundred and one km/h in a test run."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Shanghai Metro (25 November)",
+     event: "Metro Line 5 opens to Minhang", place: "Xinzhuang",
+     scene: "A SUMO wrestler pushes the first Line 5 train out of Xinzhuang towards Minhang."}
+  - {year: 2004, peg: sewer, confidence: disputed, source: "WP: maglev (10 Oct 2003 or 1 Jan 2004)",
+     event: "The maglev starts full public service to Pudong airport", place: "Longyang Road",
+     scene: "A SEWER cover flips at Longyang Road and the maglev floats out for its first full day of paying riders."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Pudong airport (17 March)",
+     event: "Pudong airport opens its second runway", place: "Pudong airport",
+     scene: "A SEAL slides down the new second runway at Pudong airport ahead of the first jet."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Donghai Bridge (10 December)",
+     event: "Donghai Bridge opens, over thirty km across the sea to the Yangshan port", place: "Luchaogang",
+     scene: "A SEAL swims beside the Donghai Bridge for thirty km of open sea from Luchaogang to Yangshan."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Line 4 (Shanghai Metro) (31 December)",
+     event: "Metro Line 4 opens its first C-shaped section", place: "Damuqiao Road",
+     scene: "A SEAL curls its body into a C on the Line 4 tracks from Damuqiao Road to Hongqiao Road."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: Shanghai South railway station",
+     event: "The new round Shanghai South railway station opens", place: "Shanghai South station",
+     scene: "A SUSHI belt spins under the round roof of the new Shanghai South station and carries passengers to the trains."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Shanghai Metro (29 December)",
+     event: "Metro Lines 6, 8 and 9 all open on one day", place: "Shanghai Metro",
+     scene: "Three SKI jumpers land at once on three new Metro lines, numbers six, eight and nine."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Line 4 (Shanghai Metro) (29 December)",
+     event: "Line 4 closes its loop after the tunnel collapse delay", place: "Dongjiadu",
+     scene: "A SKI track bends round Dongjiadu and finally joins the two ends of Line 4 into a loop."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Pudong airport (26 March)",
+     event: "Pudong airport opens Terminal 2 and a third runway", place: "Pudong airport",
+     scene: "Travellers relax on a SOFA that slides through the doors of the new Terminal 2 at Pudong."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Waibaidu Bridge (April)",
+     event: "The Waibaidu (Garden) Bridge is cut free and floated to a Pudong shipyard for repair", place: "Suzhou Creek",
+     scene: "A crane lifts the steel Waibaidu Bridge onto a barge like a giant SOFA and floats it down to Pudong."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Waibaidu Bridge (8 April)",
+     event: "The restored Waibaidu Bridge returns to Suzhou Creek and reopens", place: "Waibaidu Bridge",
+     scene: "The Waibaidu Bridge comes back scrubbed with SOAP and shining, and walkers cross it again."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Yangtze River Tunnel and Bridge",
+     event: "The Yangtze River tunnel and bridge open from Pudong to Changxing and Chongming", place: "Changxing Island",
+     scene: "A bar of SOAP slides through the Yangtze tunnel to Changxing and over the bridge to Chongming."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Synchrotron Radiation Facility",
+     event: "The Shanghai synchrotron light source opens to users", place: "Zhangjiang",
+     scene: "A SOAP bubble races round the Zhangjiang synchrotron ring and bursts into a beam of X-ray light."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Metro (5 December)",
+     event: "Metro Line 7 opens", place: "Meilan Lake",
+     scene: "A SOAP slide carries the first Line 7 train from Meilan Lake down to Pudong."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Metro (31 December)",
+     event: "Metro Line 11 opens to Jiading", place: "Jiading",
+     scene: "A SOAP line on the floor guides Line 11 trains out to Jiading and its car town."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Hongqiao International Airport (16 March)",
+     event: "Hongqiao airport opens Terminal 2 and a second runway", place: "Hongqiao airport",
+     scene: "Two DICE roll down the new second runway at Hongqiao and stop at the doors of Terminal 2."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Line 10 (Shanghai Metro) (10 April)",
+     event: "Metro Line 10 opens", place: "Xintiandi station",
+     scene: "A DICE cube rolls out of Xintiandi station as the first Line 10 train."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Shanghai Hongqiao railway station (1 July)",
+     event: "Hongqiao railway station opens with the Shanghai-Nanjing intercity line", place: "Hongqiao station",
+     scene: "A DICE cube the size of Hongqiao station opens its sides, and fast trains to Nanjing roll out."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Shanghai-Hangzhou HSR (26 October)",
+     event: "The Shanghai-Hangzhou high-speed railway opens", place: "Hongqiao station",
+     scene: "A DICE cube rides the nose of the first Hangzhou bullet train out of Hongqiao."}
+  - {year: 2010, peg: dice, confidence: medium, source: "Shanghai Daily: supply from mid-2010",
+     event: "Qingcaosha reservoir on Changxing Island starts to supply the city with Yangtze water", place: "Changxing Island",
+     scene: "A DICE cube drops into Qingcaosha reservoir, and clean Yangtze water flows to city taps."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP: The Bund (28 March)",
+     event: "Bund traffic goes into a tunnel and the widened riverside promenade reopens", place: "The Bund",
+     scene: "A DICE cube rolls the Bund traffic down into a tunnel and leaves a wide promenade on top."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP: Timeline of Shanghai",
+     event: "Minpu Bridge opens across the Huangpu in Minhang", place: "Minpu Bridge",
+     scene: "A DICE cube rolls across the double-deck Minpu Bridge in Minhang on its first day."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Jinshan railway (28 September)",
+     event: "The Jinshan commuter railway opens from Shanghai South to Jinshanwei", place: "Jinshanwei",
+     scene: "A long TONGUE unrolls as track from Shanghai South down to Jinshanwei on the coast."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Shanghai Metro (30 December)",
+     event: "Metro Line 13 opens", place: "Jinyun Road",
+     scene: "A TONGUE licks open the gates of Line 13 at Jinyun Road on its first day."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shanghai Metro (16 October)",
+     event: "Line 11 runs past the city border into Kunshan in Jiangsu", place: "Huaqiao",
+     scene: "A TOMB on the Shanghai border opens as a tunnel, and Line 11 rolls through into Kunshan."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shanghai Metro (29 December)",
+     event: "Metro Lines 12 and 16 open on the same day", place: "Longyang Road",
+     scene: "Two TOMB doors open at Longyang Road, and Lines 12 and 16 leave on their first trips."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Hongqiao International Airport (26 March)",
+     event: "Hongqiao Terminal 1 reopens after a full renovation", place: "Hongqiao Terminal 1",
+     scene: "A DOG cuts the ribbon with its teeth at the rebuilt Hongqiao Terminal 1."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Shanghai Metro (30 December)",
+     event: "Metro Line 17 opens to Qingpu and Zhujiajiao", place: "Zhujiajiao",
+     scene: "A DOG pulls the first Line 17 train out to the canals of Zhujiajiao."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Pujiang line (31 March)",
+     event: "The Pujiang line opens, the first driverless Metro line", place: "Pujiang",
+     scene: "A DOVE sits in the empty driver's seat of the first Pujiang line train, which runs with no driver."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Pudong airport (September)",
+     event: "Pudong airport opens its satellite concourse", place: "Pudong airport",
+     scene: "A TUBA blasts as the first jets pull up to the new satellite concourse at Pudong airport."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Shanghai Metro (26 December)",
+     event: "Metro Line 18 opens", place: "Pudong",
+     scene: "A NOSE sniffs the fresh paint in the first Line 18 cars as they leave in Pudong."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Shanghai Metro (23 January)",
+     event: "Metro Line 15 opens", place: "Gucun Park",
+     scene: "An ANT colony digs the Line 15 tunnel from Gucun Park and rides the first train."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Shanghai Metro (30 December)",
+     event: "Metro Line 14 opens under Lujiazui", place: "Lujiazui",
+     scene: "An ANT drives the first Line 14 train deep under Lujiazui."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Shanghai maglev train (May)",
+     event: "The maglev's top speed is cut from four hundred and thirty-one to three hundred km/h", place: "Maglev line",
+     scene: "An ANT pulls the brake lever on the maglev and slows it to three hundred km/h for good."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Search: China Daily, Shanghai govt (27 December)",
+     event: "The Airport Link line opens between Hongqiao and Pudong airports", place: "Hongqiao Terminal 2",
+     scene: "A HANGER hooks onto the Airport Link train at Hongqiao and swings it to Pudong airport in forty minutes."}
+  # religion
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: Aloysius Jin Luxian",
+     event: "The Holy See recognises Bishop Jin Luxian as apostolic administrator of Shanghai", place: "Xujiahui",
+     scene: "A SUSHI plate from Rome arrives at Xujiahui with a papal letter that recognises Bishop Jin Luxian."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: Timeline of Shanghai",
+     event: "The City God Temple is restored and returned to worship", place: "City God Temple",
+     scene: "A SUSHI offering is laid at the restored City God Temple by the Yu Garden as worship starts again."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Jing'an Temple (19 December)",
+     event: "Jing'an Temple installs a fifteen-tonne silver Buddha", place: "Jing'an Temple",
+     scene: "Monks polish a fifteen-tonne silver Buddha with SOAP as it is lifted into Jing'an Temple."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP: Jing'an Temple",
+     event: "The Jing'an Temple pagoda is completed", place: "Jing'an Temple",
+     scene: "A stack of golden DICE becomes the new pagoda on top of Jing'an Temple."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Thaddeus Ma Daqin (7 July)",
+     event: "Bishop Ma Daqin quits the Patriotic Association at his ordination and is confined at Sheshan",
+     place: "St Ignatius Cathedral, Xujiahui",
+     scene: "Ma Daqin uses his TONGUE at his ordination in St Ignatius Cathedral to quit the Patriotic Association."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Aloysius Jin Luxian (27 April)",
+     event: "Bishop Jin Luxian of Shanghai dies", place: "Xujiahui",
+     scene: "Bishop Jin Luxian is laid in a TOMB after decades of leading the Shanghai Catholics."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Thaddeus Ma Daqin (16 March)",
+     event: "Underground bishop Joseph Fan Zhongliang dies", place: "Shanghai",
+     scene: "The bell TOWER of Sheshan tolls for the underground bishop Fan Zhongliang."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Thaddeus Ma Daqin (16 March)",
+     event: "The Holy See recognises Ma Daqin as Bishop of Shanghai while he is still confined", place: "Sheshan",
+     scene: "A TOWER at Sheshan Seminary flies the papal flag for its own prisoner, Ma Daqin, now Rome's bishop."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Joseph Shen Bin (4 April)",
+     event: "The state installs Joseph Shen Bin as Bishop of Shanghai without Vatican approval",
+     place: "St Ignatius Cathedral, Xujiahui",
+     scene: "A GNOME crowns Shen Bin bishop in St Ignatius Cathedral before Rome has said yes."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Joseph Shen Bin (15 July)",
+     event: "Pope Francis names Shen Bin Bishop of Shanghai after the fact", place: "St Ignatius Cathedral, Xujiahui",
+     scene: "A GNOME runs from Rome to Xujiahui with the late papal letter that makes Shen Bin's post legal."}
+  # arts
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Oriental Pearl Tower (30 July)",
+     event: "Work starts on the Oriental Pearl Tower in Lujiazui", place: "Lujiazui",
+     scene: "A BOOT stamps the first pile of the Oriental Pearl Tower into the Lujiazui mud."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: The Bund",
+     event: "The People's Heroes Memorial Tower is built in Huangpu Park", place: "Huangpu Park",
+     scene: "Three stone PALM leaves rise into the People's Heroes Memorial Tower at the north end of the Bund."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Shanghai International Film Festival",
+     event: "The first Shanghai International Film Festival is held", place: "Shanghai",
+     scene: "A PALM tree holds up the screen for the first Shanghai International Film Festival."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Oriental Pearl Tower (18 November)",
+     event: "The Oriental Pearl Tower is completed, the tallest structure in China", place: "Lujiazui",
+     scene: "A BEAR climbs to the top pearl of the finished Oriental Pearl Tower, now the tallest structure in China."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Oriental Pearl Tower (1 May)",
+     event: "The Oriental Pearl Tower opens to visitors", place: "Lujiazui",
+     scene: "A BELL in the top pearl rings as the first visitors ride up the Oriental Pearl Tower."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Shanghai Museum (12 October)",
+     event: "The new Shanghai Museum opens on People's Square in a ding-shaped building", place: "People's Square",
+     scene: "A giant bronze ding full of PEACH fruit opens its doors on People's Square as the new Shanghai Museum."}
+  - {year: 1996, peg: peach, confidence: medium, source: "WP: Shanghai Library (completed 1996)",
+     event: "The new Shanghai Library building opens on Huaihai Road", place: "Huaihai Road",
+     scene: "A PEACH tree grows books on every branch in the new Shanghai Library on Huaihai Road."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Shanghai Biennale",
+     event: "The first Shanghai Biennale opens at the Shanghai Art Museum", place: "Shanghai Art Museum",
+     scene: "A PEACH painted twice as big as a car hangs at the first Shanghai Biennale."}
+  - {year: 1996, peg: peach, confidence: medium, source: "WP: List of tallest buildings in Shanghai",
+     event: "King Tower becomes the tallest building in Shanghai", place: "King Tower",
+     scene: "A PEACH sits on the top of King Tower, the new tallest building in the city."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Shanghai World Financial Center (27 Aug)",
+     event: "The foundation stone of the Shanghai World Financial Center is laid", place: "Lujiazui",
+     scene: "A PIG lays the foundation stone of the World Financial Center, and then the Asian crisis stops work."}
+  - {year: 1998, peg: beehive, confidence: medium, source: "WP: Jin Mao Tower (28 August)",
+     event: "Jin Mao Tower is dedicated, the new tallest building in Shanghai", place: "Lujiazui",
+     scene: "A BEEHIVE in the shape of a pagoda grows into Jin Mao Tower, the tallest in the city."}
+  - {year: 2000, peg: sauce, confidence: high, source: "Search: opened 25 February",
+     event: "The Shanghai Urban Planning Exhibition Center opens on People's Square", place: "People's Square",
+     scene: "A whole scale model of Shanghai floats in SAUCE inside the new Urban Planning Exhibition Center."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: China Art Museum, Shanghai (18 March)",
+     event: "The Shanghai Art Museum moves into the old Race Club building on People's Square", place: "Race Club building",
+     scene: "Horses carry paintings in SAUCE pots into the old Race Club, the new Shanghai Art Museum."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Shanghai Biennale",
+     event: "The Shanghai Biennale invites foreign artists and becomes international", place: "Shanghai Art Museum",
+     scene: "Foreign artists pour SAUCE from many countries into the third Shanghai Biennale."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Shanghai Science and Technology Museum",
+     event: "The Shanghai Science and Technology Museum opens", place: "Century Square, Pudong",
+     scene: "A SODA volcano erupts in the new Science and Technology Museum in Pudong on opening day."}
+  - {year: 2001, peg: soda, confidence: medium, source: "WP: List of tallest buildings; Timeline",
+     event: "Plaza 66 Tower 1 is completed on West Nanjing Road", place: "West Nanjing Road",
+     scene: "A tall SODA bottle grows into Plaza 66 on West Nanjing Road."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Expo 2010 (3 December, Monte Carlo)",
+     event: "The BIE awards the World Expo to Shanghai", place: "Monte Carlo vote",
+     scene: "The SUN shines on Shanghai's name as the BIE vote in Monte Carlo gives it the World Expo."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Shanghai World Financial Center",
+     event: "Work on the Shanghai World Financial Center starts again with a taller design", place: "Lujiazui",
+     scene: "A SUMO wrestler restarts the stalled World Financial Center and pushes it to one hundred and one floors."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "WP: List of tallest buildings; Timeline",
+     event: "Tomorrow Square is completed on People's Square", place: "People's Square",
+     scene: "A SUMO wrestler twists the top of Tomorrow Square into its sharp crown."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Shanghai Oriental Art Center (1 July)",
+     event: "Paul Andreu's Oriental Art Center opens in Pudong", place: "Oriental Art Center",
+     scene: "A SEAL balances a ball on its nose in the petal-shaped hall of the new Oriental Art Center."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: Tallest list (Timeline: 2005)",
+     event: "The Shimao International Plaza is completed on Nanjing Road", place: "Nanjing Road",
+     scene: "A SUSHI chef tops the Shimao Plaza with two prongs above Nanjing Road."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Shanghai Jewish Refugees Museum",
+     event: "The Shanghai Jewish Refugees Museum opens in the Ohel Moshe synagogue", place: "Ohel Moshe, Hongkou",
+     scene: "A pair of old SKI boots from a Vienna refugee stands in the new museum in the Ohel Moshe synagogue."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Shanghai World Financial Center (14 Sept)",
+     event: "The Shanghai World Financial Center is topped out", place: "Lujiazui",
+     scene: "A SKI jumper lands on the last steel girder of the World Financial Center and tops it out."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Shanghai World Financial Center (28 Aug)",
+     event: "The Shanghai World Financial Center opens with the highest roof in the world", place: "Lujiazui",
+     scene: "Visitors sit on a SOFA in the bottle-opener gap of the World Financial Center, the highest roof in the world."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Shanghai Tower (29 November)",
+     event: "Ground is broken for the Shanghai Tower", place: "Lujiazui",
+     scene: "A SOFA is dug into the Lujiazui mud as the first stone of the Shanghai Tower."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Mercedes-Benz Arena (30 April)",
+     event: "The Expo Cultural Center, later the Mercedes-Benz Arena, opens", place: "Expo site, Pudong",
+     scene: "A flying-saucer DICE lands on the Expo site and opens as the Expo Cultural Center."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Expo 2010 (1 May)",
+     event: "The World Expo opens on both banks of the Huangpu", place: "Expo site",
+     scene: "A red DICE the shape of the China Pavilion rolls open the World Expo on both banks of the Huangpu."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Expo 2010 (16 October)",
+     event: "The Expo admits over a million visitors in one day, a record", place: "Expo site",
+     scene: "A million DICE pour through the Expo gates in one day, a record crowd."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Expo 2010 (31 October)",
+     event: "The Expo closes after over seventy-three million visits, the most of any world's fair",
+     place: "Expo site",
+     scene: "A DICE counter on the Expo Axis stops at seventy-three million, more than any world's fair."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Power Station of Art (1 October)",
+     event: "The Power Station of Art opens in the old Nanshi power plant", place: "Nanshi power plant",
+     scene: "A TONGUE of flame from the old Nanshi power plant chimney lights up the new Power Station of Art."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: China Art Museum, Shanghai (1 October)",
+     event: "The China Art Museum opens in the red Expo China Pavilion", place: "China Pavilion",
+     scene: "A red TONGUE rolls out of the China Pavilion and welcomes visitors to the new China Art Museum."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Long Museum (18 December)",
+     event: "Liu Yiqian and Wang Wei open the Long Museum in Pudong", place: "Long Museum Pudong",
+     scene: "A dragon's TONGUE unrolls a scroll from Liu Yiqian's collection in the new Long Museum Pudong."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shanghai Tower (3 August)",
+     event: "The Shanghai Tower is topped out, the tallest building in China", place: "Lujiazui",
+     scene: "A TOMB lid is set as the last beam on the twisting Shanghai Tower, now taller than any building in China."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Long Museum (28 March)",
+     event: "The Long Museum West Bund opens in a former coal wharf", place: "West Bund",
+     scene: "A coal TOWER on the West Bund wharf turns into the vaulted Long Museum."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Yuz Museum Shanghai (17 May)",
+     event: "Budi Tek opens the Yuz Museum in an old Longhua Airport hangar", place: "Longhua Airport hangar",
+     scene: "The control TOWER of old Longhua Airport waves Budi Tek's art into the hangar of the Yuz Museum."}
+  - {year: 2014, peg: tower, confidence: high, source: "Search: Gramophone, Shanghai Daily (6 Sept)",
+     event: "Isozaki's Shanghai Symphony Hall opens with Lang Lang", place: "Fuxing Road",
+     scene: "A TOWER of speakers tips over as Lang Lang plays the first chord in Isozaki's Symphony Hall."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Shanghai Jewish Refugees Museum",
+     event: "A copper wall with the names of over thirteen thousand Jewish refugees is unveiled", place: "Ohel Moshe, Hongkou",
+     scene: "A copper TOWER wall in Hongkou spells out the names of thirteen thousand Jewish refugees."}
+  - {year: 2015, peg: doll, confidence: disputed, source: "WP: tallest list 2015; Shanghai Tower 2014",
+     event: "The Shanghai Tower is completed, over six hundred metres high", place: "Lujiazui",
+     scene: "A DOLL spins the twisting skin onto the finished Shanghai Tower, over six hundred metres high."}
+  - {year: 2015, peg: doll, confidence: medium, source: "WP: Shanghai Natural History Museum",
+     event: "The Natural History Museum moves from the Cotton Exchange to Jing'an Sculpture Park", place: "Jing'an Sculpture Park",
+     scene: "A dinosaur DOLL walks out of the old Cotton Exchange and into the shell-shaped museum in Jing'an Sculpture Park."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Shanghai Tower (July)",
+     event: "The Shanghai Tower observation deck opens", place: "Shanghai Tower",
+     scene: "A DISH of tea is served to the first visitors on the Shanghai Tower observation deck."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Expo 2010 (1 May)",
+     event: "The World Expo Museum opens on the old Expo site", place: "Expo site, Puxi",
+     scene: "A DOG digs up old Expo badges and buries them in the cases of the new World Expo Museum."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Search: Dezeen, Pompidou (6-8 November)",
+     event: "Chipperfield's West Bund Museum opens with the Centre Pompidou", place: "West Bund",
+     scene: "Macron blows a French TUBA to open the Centre Pompidou rooms in the West Bund Museum."}
+  - {year: 2021, peg: ant, confidence: medium, source: "WP: Shanghai Astronomy Museum",
+     event: "The Shanghai Astronomy Museum, the largest planetarium building, opens in Lingang", place: "Lingang",
+     scene: "An ANT looks through the dome of the huge Shanghai Astronomy Museum in Lingang."}
+  - {year: 2021, peg: ant, confidence: high, source: "Search: Pudong govt, China Daily (8 July)",
+     event: "Jean Nouvel's Museum of Art Pudong opens in Lujiazui", place: "Lujiazui",
+     scene: "An ANT carries a Tate painting into Jean Nouvel's white Museum of Art Pudong."}
+  - {year: 2022, peg: nun, confidence: high, source: "Search: Pudong govt, Caixin (28 September)",
+     event: "Shanghai Library East opens beside Century Park", place: "Century Park",
+     scene: "A NUN reads by the huge windows of the new Shanghai Library East beside Century Park."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Search: Pudong govt (2 Feb); full open Dec",
+     event: "Shanghai Museum East opens in Pudong", place: "Century Avenue",
+     scene: "A HANGER lifts ancient bronzes out of People's Square and hangs them in Shanghai Museum East."}
+  - {year: 2025, peg: nail, confidence: medium, source: "WP: List of tallest buildings in Shanghai",
+     event: "Xujiahui Center Tower 1 is completed, the fourth tallest in the city", place: "Xujiahui",
+     scene: "A NAIL hammered into Xujiahui grows into Xujiahui Center Tower 1."}
+  # economy
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Shanghai Futures Exchange (28 May)",
+     event: "The Shanghai Metal Exchange opens", place: "Shanghai",
+     scene: "A PIANO made of copper and zinc bars plays the opening bell of the Shanghai Metal Exchange."}
+  - {year: 1992, peg: piano, confidence: medium, source: "WP: Zhangjiang Hi-Tech Park (July)",
+     event: "The Zhangjiang Hi-Tech Park is set up in Pudong", place: "Zhangjiang",
+     scene: "A PIANO keyboard of silicon chips plays as the Zhangjiang Hi-Tech Park opens in the fields of Pudong."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Shanghai Pudong Development Bank (9 Jan)",
+     event: "The Shanghai Pudong Development Bank opens", place: "Pudong",
+     scene: "A PALM tree drops coins into the first vault of the Pudong Development Bank."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: SAIC-GM (12 June)",
+     event: "Shanghai GM is founded as a joint venture of SAIC and General Motors", place: "Jinqiao",
+     scene: "A PIG signs the Shanghai GM contract with SAIC and General Motors in Jinqiao."}
+  - {year: 1997, peg: pig, confidence: medium, source: "Search: SSE history (one source: 1998)",
+     event: "The Shanghai Stock Exchange moves from the Astor House to Lujiazui", place: "Lujiazui",
+     scene: "A PIG carries the trading floor out of the Astor House Hotel and over the river to Lujiazui."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: SAIC-GM (April)",
+     event: "The first Buick Regal comes off the Shanghai GM line in Jinqiao", place: "Jinqiao",
+     scene: "A PIPE of chrome becomes the exhaust of the first Buick Regal from Jinqiao."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Trip.com Group (June)",
+     event: "Ctrip is founded in Shanghai", place: "Shanghai",
+     scene: "A PIPE blows tickets all over China from the small Shanghai office of the new Ctrip."}
+  - {year: 1999, peg: pipe, confidence: high, source: "Search: Shanghai Daily (20 September)",
+     event: "East Nanjing Road becomes a pedestrian street", place: "Nanjing Road",
+     scene: "A piper plays a PIPE down East Nanjing Road and leads the cars out of the new walking street."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Shanghai Futures Exchange (December)",
+     event: "The Shanghai Futures Exchange is formed from three exchanges", place: "Shanghai",
+     scene: "A three-way PIPE joins the metal, food and commodity exchanges into the new Shanghai Futures Exchange."}
+  - {year: 1999, peg: pipe, confidence: medium, source: "WP: Jin Mao Tower",
+     event: "The Grand Hyatt opens in Jin Mao Tower, the highest hotel in the world", place: "Jin Mao Tower",
+     scene: "A bellboy smokes a PIPE on the eighty-seventh floor of the Grand Hyatt, the highest hotel on Earth."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: SMIC (3 April)",
+     event: "Zhang Rujing founds the chip maker SMIC in Zhangjiang", place: "Zhangjiang",
+     scene: "Zhang Rujing pours chip SAUCE onto wafers in the first SMIC plant at Zhangjiang."}
+  - {year: 2001, peg: soda, confidence: medium, source: "WP: Xintiandi",
+     event: "Shui On's Xintiandi opens in rebuilt shikumen lanes", place: "Xintiandi",
+     scene: "A SODA bar opens in a rebuilt shikumen lane house at Xintiandi."}
+  - {year: 2002, peg: sun, confidence: high, source: "Search: WGC, Shanghai govt (30 October)",
+     event: "The Shanghai Gold Exchange starts trading", place: "Shanghai",
+     scene: "The SUN melts into gold bars on the trading floor of the new Shanghai Gold Exchange."}
+  - {year: 2002, peg: sun, confidence: medium, source: "WP: Timeline of Shanghai",
+     event: "The Super Brand Mall opens in Lujiazui", place: "Lujiazui",
+     scene: "A SUN lamp lights the ten floors of the new Super Brand Mall in Lujiazui."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "WP: Port of Shanghai",
+     event: "Shanghai International Port Group takes over from the Port Authority", place: "Port of Shanghai",
+     scene: "A SUMO wrestler pushes the old Port Authority off the quay and the new Port Group takes its place."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Comac (11 May)",
+     event: "COMAC, the state airliner maker, is founded in Shanghai", place: "Pudong",
+     scene: "A SOFA with wings flies out of the new COMAC office in Pudong."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Bilibili (26 June)",
+     event: "Xu Yi starts the Mikufans site that becomes Bilibili", place: "Shanghai",
+     scene: "A SOAP opera clip scrolls with flying comments on the new Mikufans site, later Bilibili."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Disneyland (4 November)",
+     event: "The state approves Shanghai Disneyland", place: "Chuansha",
+     scene: "Mickey washes the approval stamp with SOAP until it shines: Shanghai Disneyland is a go."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Port of Shanghai",
+     event: "Shanghai passes Singapore as the busiest container port in the world", place: "Port of Shanghai",
+     scene: "A container DICE rolls past Singapore and stops on Shanghai, the busiest box port on Earth."}
+  - {year: 2010, peg: dice, confidence: medium, source: "WP: Peace Hotel",
+     event: "The Peace Hotel reopens as the Fairmont Peace Hotel after three years of work", place: "The Bund",
+     scene: "The old jazz band throws DICE in the reopened Fairmont Peace Hotel on the Bund."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: Shanghai Disneyland (April)",
+     event: "Ground is broken for Shanghai Disneyland", place: "Chuansha",
+     scene: "Mickey's face is a TATTOO on the first shovel that breaks ground for Shanghai Disneyland."}
+  - {year: 2014, peg: tower, confidence: high, source: "Search: HKEX, BIS (17 November)",
+     event: "The Shanghai-Hong Kong Stock Connect opens", place: "Lujiazui",
+     scene: "A TOWER bridge links the Shanghai and Hong Kong exchanges, and buy orders run across it."}
+  - {year: 2015, peg: doll, confidence: medium, source: "WP: Pinduoduo",
+     event: "Colin Huang founds Pinduoduo in Shanghai", place: "Changning",
+     scene: "A DOLL drags friends into a group buy on the new Pinduoduo app."}
+  - {year: 2015, peg: doll, confidence: medium, source: "Search: NECC (Wikipedia, China Daily)",
+     event: "The four-leaf National Exhibition and Convention Center opens at Hongqiao", place: "Hongqiao",
+     scene: "A DOLL plucks a four-leaf clover the size of the new exhibition center at Hongqiao."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: New Development Bank (27 February)",
+     event: "The BRICS New Development Bank signs its Shanghai headquarters agreement", place: "Lujiazui",
+     scene: "Five BRICS hands set a DISH of coins on the table in Shanghai as the New Development Bank's home."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Shanghai Disneyland (16 June)",
+     event: "Shanghai Disneyland opens", place: "Chuansha",
+     scene: "Mickey spins a satellite DISH on the castle tower to open Shanghai Disneyland."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Nanjing Road (December)",
+     event: "The largest Starbucks in the world, a Reserve Roastery, opens on West Nanjing Road", place: "HKRI Taikoo Hui",
+     scene: "A DOG sniffs the coffee beans roasting in the largest Starbucks in the world on West Nanjing Road."}
+  - {year: 2018, peg: dove, confidence: high, source: "Search: Xinhua, Caixin (26 March)",
+     event: "Yuan crude oil futures start trading on the Shanghai energy exchange", place: "Shanghai Futures Exchange",
+     scene: "A DOVE dipped in crude oil lands on the board as yuan oil futures start trading."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Gigafactory Shanghai (July)",
+     event: "Tesla signs an agreement with the city to build a car plant", place: "Lingang",
+     scene: "A DOVE carries Elon Musk's signed car plant deal to the Shanghai government."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: China International Import Expo",
+     event: "The first China International Import Expo opens at the National Exhibition and Convention Center",
+     place: "National Exhibition and Convention Center, Qingpu",
+     scene: "Xi Jinping frees a DOVE over the four-leaf-clover halls of the National Exhibition and Convention Center to open the first Import Expo."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Gigafactory Shanghai (7 January)",
+     event: "Tesla breaks ground on its Lingang plant", place: "Lingang",
+     scene: "A TUBA blast shakes the Lingang fields as Tesla breaks ground for its plant."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Gigafactory Shanghai (30 December)",
+     event: "The first Shanghai-built Teslas are handed over", place: "Lingang",
+     scene: "A TUBA band plays as the first Lingang-built Teslas roll out to their owners within a year."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Search: CGTN, Bloomberg (22 July)",
+     event: "The STAR Market starts trading at the Shanghai Stock Exchange", place: "Lujiazui",
+     scene: "A gold TUBA sounds the bell, and all twenty-five STAR Market stocks jump on their first day."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Lingang New City (August)",
+     event: "Lingang becomes a special area of the Free Trade Zone", place: "Lingang",
+     scene: "A TUBA trumpets as the Free Trade Zone fence moves out to take in Lingang."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: SMIC (July)",
+     event: "SMIC lists on the STAR Market", place: "Lujiazui",
+     scene: "A NOSE sniffs the fresh silicon as SMIC's shares join the STAR Market board."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Shanghai Tower (19 June)",
+     event: "The J Hotel opens in the Shanghai Tower", place: "Shanghai Tower",
+     scene: "An ANT checks in at the J Hotel high in the Shanghai Tower."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Shanghai Disneyland (20 December)",
+     event: "Zootopia land opens at Shanghai Disneyland", place: "Shanghai Disneyland",
+     scene: "A GNOME rides with Judy Hopps into the new Zootopia land."}
+  # society
+  - {year: 1994, peg: bear, confidence: medium, source: "WP: Shanghai University",
+     event: "Four colleges merge into the new Shanghai University", place: "Baoshan",
+     scene: "A BEAR hugs four colleges together into the new Shanghai University."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Shanghai Shenhua F.C.",
+     event: "Shanghai Shenhua wins the national league title", place: "Hongkou",
+     scene: "A BELL rings over Hongkou as Shanghai Shenhua takes the national league title."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Shanghai International Marathon (28 Sept)",
+     event: "The first Shanghai marathon is run", place: "The Bund",
+     scene: "A PEACH bounces at the head of the runners in the first Shanghai marathon."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Shanghai Sharks",
+     event: "The Shanghai Sharks basketball club is founded", place: "Shanghai",
+     scene: "A shark bites a PEACH as the club badge of the new Shanghai Sharks."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Shanghai Stadium",
+     event: "Shanghai Stadium opens for the Eighth National Games held in the city", place: "Xuhui",
+     scene: "A PIG lights the torch in the new Shanghai Stadium to start the Eighth National Games."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Korean Air Cargo Flight 6316 (15 April)",
+     event: "A Korean Air cargo jet crashes in Xinzhuang after take-off from Hongqiao and kills eight",
+     place: "Xinzhuang, Minhang",
+     scene: "A burning PIPE falls from the sky onto Xinzhuang as the Korean Air cargo jet crashes after Hongqiao."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Timeline of Shanghai",
+     event: "The census counts over sixteen million people in Shanghai", place: "Shanghai",
+     scene: "Census takers count sixteen million bowls of SAUCE on Shanghai tables."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: Thames Town",
+     event: "The city plans 'One City, Nine Towns', foreign-style new towns in the suburbs", place: "Songjiang",
+     scene: "A SODA fountain sprays nine foreign-style new towns onto the suburbs of Shanghai."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Shanghai Sharks",
+     event: "Yao Ming leads the Shanghai Sharks to the national basketball title", place: "Shanghai",
+     scene: "Yao Ming dunks the SUN through the hoop and wins the title for the Shanghai Sharks."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Shanghai Masters (tennis)",
+     event: "Shanghai holds the Tennis Masters Cup for the first time", place: "Pudong",
+     scene: "A tennis player serves the SUN across the net at the first Masters Cup in Shanghai."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Line 4 (Shanghai Metro) (1 July)",
+     event: "A Metro Line 4 tunnel floods and collapses at Dongjiadu and breaks the flood wall", place: "Dongjiadu",
+     scene: "A SUMO wrestler sits on the Line 4 tunnel at Dongjiadu and crushes it and the flood wall into quicksand."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Lingang New City",
+     event: "Work starts on Lingang new city round Dishui Lake", place: "Lingang",
+     scene: "A SUMO wrestler stamps a round hole in the Nanhui mud that fills up as Dishui Lake."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "WP: Zhou Zhengyi (June)",
+     event: "Property tycoon Zhou Zhengyi is detained over land and loan deals", place: "Jing'an",
+     scene: "A SUMO wrestler sits on tycoon Zhou Zhengyi until the police take him away over land deals."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Shanghai International Circuit (6 June)",
+     event: "The Shanghai International Circuit opens in Jiading", place: "Anting, Jiading",
+     scene: "A SEWER pipe curves into the shape of the Chinese 'shang' track at Anting."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: 2004 Chinese Grand Prix (26 September)",
+     event: "The first Formula One Chinese Grand Prix is held, Barrichello wins", place: "Shanghai International Circuit",
+     scene: "Barrichello's Ferrari bursts out of a SEWER and wins the first Chinese Grand Prix."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Shanghai Port F.C. (25 December)",
+     event: "Xu Genbao founds the club that becomes Shanghai Port", place: "Chongming",
+     scene: "A SEAL kicks the first ball at Xu Genbao's academy on Chongming, the start of Shanghai Port."}
+  - {year: 2005, peg: seal, confidence: medium, source: "WP: Shanghai Masters (tennis)",
+     event: "The Tennis Masters Cup moves to the new Qizhong arena", place: "Qizhong, Minhang",
+     scene: "A SEAL opens the steel petals of the Qizhong arena roof for the Masters Cup."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Thames Town",
+     event: "Thames Town, an English-style new town, is completed in Songjiang", place: "Songjiang",
+     scene: "A SUSHI chef serves fish and chips in the mock-Tudor square of Thames Town."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Shanghai maglev train (11 August)",
+     event: "A maglev car catches fire after leaving Pudong airport", place: "Maglev line",
+     scene: "A SUSHI grill in the maglev car bursts into flames after the train leaves Pudong airport."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Special Olympics World Summer Games",
+     event: "Shanghai holds the Special Olympics World Summer Games", place: "Shanghai Stadium",
+     scene: "Athletes from one hundred and sixty-five nations carry the SKI torch into Shanghai Stadium."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Yang Jia (1 July)",
+     event: "Yang Jia stabs six police officers to death at the Zhabei police station", place: "Zhabei police station",
+     scene: "Yang Jia hides a knife in a SOFA at the Zhabei police station and kills six officers."}
+  - {year: 2008, peg: sofa, confidence: high, source: "RSSSF; Olympedia (Shanghai games from 7 Aug)",
+     event: "Shanghai Stadium hosts Olympic football matches of the Beijing Games",
+     place: "Shanghai Stadium",
+     scene: "Argentina's forwards dribble round a SOFA set on the Shanghai Stadium pitch in an Olympic football match of the Beijing Games."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Lotus Riverside (27 June)",
+     event: "A new thirteen-storey block at Lotus Riverside topples over whole", place: "Minhang",
+     scene: "A bar of SOAP slips from under the Lotus Riverside block, and the whole building falls flat on its side."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Shanghai Masters (tennis)",
+     event: "The first Shanghai Masters tennis tournament is played", place: "Qizhong, Minhang",
+     scene: "Players wash their racquets with SOAP for the first Shanghai Masters at Qizhong."}
+  - {year: 2009, peg: soap, confidence: medium, source: "WP: Timeline of Shanghai",
+     event: "Shanghai Pride is held for the first time", place: "Shanghai",
+     scene: "Rainbow SOAP bubbles float over the first Shanghai Pride."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: 2010 Shanghai fire (15 November)",
+     event: "Welding sparks set a renovated tower block on Jiaozhou Road on fire and kill fifty-eight", place: "Jiaozhou Road",
+     scene: "Burning DICE fall from the bamboo scaffold onto the Jiaozhou Road tower, and it burns floor by floor."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Timeline of Shanghai",
+     event: "The census counts twenty-three million people in Shanghai", place: "Shanghai",
+     scene: "Census takers roll twenty-three million DICE, one for each person in the city."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: 2011 World Aquatics Championships",
+     event: "Shanghai holds the World Aquatics Championships", place: "Oriental Sports Center",
+     scene: "A world-map TATTOO on each swimmer's back marks the World Aquatics Championships at the Oriental Sports Center."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "Search: China Daily (27 September)",
+     event: "Two Line 10 trains collide after a signal failure and injure over two hundred and seventy people",
+     place: "Yuyuan Garden to Laoximen",
+     scene: "A signal light falls off like a TATTOO, and one Line 10 train rams another between Yuyuan and Laoximen."}
+  - {year: 2012, peg: tongue, confidence: medium, source: "WP: NYU Shanghai (September)",
+     event: "NYU Shanghai is founded, the first Sino-American university", place: "Lujiazui",
+     scene: "A purple TONGUE licks the seal of NYU Shanghai, the first joint US-Chinese university."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Search: WPSAR, EID (31 March, 6 April)",
+     event: "The first H7N9 bird flu case is announced in Shanghai; the city shuts all live poultry markets",
+     place: "Shanghai",
+     scene: "A chicken TOMB is sealed on every live poultry market in Shanghai after the first H7N9 case."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Huangpu River (March)",
+     event: "Thousands of dead pigs float down the Huangpu", place: "Huangpu River, Songjiang",
+     scene: "A floating TOMB of thousands of dead pigs drifts down the Huangpu past Songjiang."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Search: AP, Reuters (6 December)",
+     event: "Smog reaches a record level; schools close and flights stop", place: "Shanghai",
+     scene: "Smog covers the city like a TOMB, and schools close as the soot reaches a record."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: ShanghaiTech University (30 September)",
+     event: "ShanghaiTech University is founded in Zhangjiang", place: "Zhangjiang",
+     scene: "Students climb out of a TOMB-shaped lab as the first class of ShanghaiTech University."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shanghai Shenhua F.C. (18 February)",
+     event: "The football association strips Shenhua of its old title for match fixing", place: "Hongkou",
+     scene: "Shenhua's old title trophy is put in a TOMB for match fixing."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: 2014 Shanghai stampede (31 December)",
+     event: "A New Year's Eve crush on the Bund kills thirty-six people", place: "Chen Yi Square, the Bund",
+     scene: "The crowd at Chen Yi Square falls like a TOWER of bodies on the Bund steps on New Year's Eve."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Shanghai Port F.C.",
+     event: "Shanghai SIPG wins its first national Super League title", place: "Shanghai Stadium",
+     scene: "A red DOVE carries the Super League trophy to SIPG for the first time."}
+  - {year: 2018, peg: dove, confidence: high, source: "Search: China Daily, RFA (28 June)",
+     event: "A man stabs two boys to death outside a primary school in Xuhui", place: "Pubei Road, Xuhui",
+     scene: "A white DOVE flies over Pubei Road, where two schoolboys die by a stranger's knife."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Search: Library of Congress, China Daily (1 July)",
+     event: "Compulsory household waste sorting comes into force", place: "Shanghai",
+     scene: "Residents throw dry waste, wet waste and bottles into four bins, each shaped like a TUBA."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Pudong Football Stadium (31 October)",
+     event: "Pudong Football Stadium opens with the League of Legends world final", place: "Pudong Football Stadium",
+     scene: "A gamer's NOSE presses on the screen as the League of Legends final opens the Pudong stadium."}
+  - {year: 2020, peg: nose, confidence: high, source: "Search: Shanghai govt (census 1 November)",
+     event: "The census counts almost twenty-five million people in Shanghai", place: "Shanghai",
+     scene: "A census taker stamps a NOSE count of almost twenty-five million on the Shanghai census form."}
+  - {year: 2022, peg: nun, confidence: medium, source: "WP: Shanghai Stadium (rebuilt 2020-2022)",
+     event: "Shanghai Stadium reopens rebuilt as a football ground", place: "Xuhui",
+     scene: "A NUN pulls up the old running track and rolls out pure football grass in Shanghai Stadium."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Shanghai Port F.C.",
+     event: "Shanghai Port wins the Super League title", place: "Pudong Football Stadium",
+     scene: "A GNOME lifts the Super League trophy for Shanghai Port in the Pudong stadium."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Shanghai International Circuit",
+     event: "Formula One returns to Shanghai after four years", place: "Shanghai International Circuit",
+     scene: "A HANGER lifts the F1 cars back onto the Shanghai circuit after four empty years."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Shanghai International Circuit",
+     event: "The first Shanghai ePrix of Formula E is held", place: "Shanghai International Circuit",
+     scene: "A HANGER hooks a charging cable onto each car at the first Shanghai ePrix."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Typhoon Bebinca (16 September)",
+     event: "Typhoon Bebinca hits Lingang, the strongest storm in the city since Gloria", place: "Lingang",
+     scene: "Typhoon Bebinca tears every coat HANGER from Lingang balconies, the worst storm since Gloria."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "WP: Shanghai Sharks",
+     event: "The Shanghai Sharks win the national basketball title again", place: "Shanghai",
+     scene: "A shark crunches a NACHO and lifts the national basketball trophy again."}
+world_refs:
+  - {year: 1998, event: "The Shanghai Grand Theatre opens", cell: east_asia_arts_1945_present}
+  - {year: 2001, event: "Shanghai Cooperation Organisation is set up", cell: east_asia_politics_1945_present}
+  - {year: 2002, event: "Shanghai maglev first run with the premier and the chancellor", cell: east_asia_science_1945_present}
+  - {year: 2005, event: "Anti-Japanese protests in Chinese cities", cell: east_asia_politics_1945_present}
+  - {year: 2007, event: "Shanghai stock index peaks above six thousand", cell: east_asia_economy_1945_present}
+  - {year: 2011, event: "Beijing-Shanghai high-speed railway opens", cell: east_asia_science_1945_present}
+  - {year: 2012, event: "Senkaku nationalisation and anti-Japan protests", cell: east_asia_politics_1945_present}
+  - {year: 2013, event: "Shanghai Free Trade Zone opens", cell: east_asia_politics_1945_present}
+  - {year: 2017, event: "C919 first flight from Pudong", cell: east_asia_science_1945_present}
+  - {year: 2022, event: "Shanghai lockdown", cell: east_asia_society_1945_present}
+  - {year: 2023, event: "C919 commercial service from Hongqiao", cell: east_asia_science_1945_present}
+out_refs:
+  - {year: 2015, event: "Chinese stock market crash after the June peak", reason: "national stock market"}
+  - {year: 2022, event: "Li Qiang leaves Shanghai to become premier", reason: "national office"}

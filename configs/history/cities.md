@@ -662,3 +662,45 @@ Cuernavaca, Pachuca and Veracruz are OUT. Region: latin_america.
 | `1968_present` | Tlatelolco, the Olympics, the 1985 quake, the elected city, the 2017 quake | 45 | ~230 |
 
 Expected cards are a guide, not a target.
+
+### Shanghai (2026-11-22)
+
+Area: Shanghai Municipality as decided: the old walled county town (Nanshi), the International Settlement
+and the French Concession, Hongkou, Zhabei, Pudong, Wusong and Baoshan, Minhang, Songjiang (the old
+prefecture seat, Guangfulin), Qingpu (Songze, Fuquanshan, Qinglong town), Jiading, Jinshan, Fengxian,
+Nanhui, Chongming, Changxing and Hengsha islands. Suzhou, Kunshan, Hangzhou, Ningbo and the Yangshan port
+islands of Zhejiang are OUT (the Donghai Bridge and the Lingang end are IN). Region: east_asia.
+
+- Dates: give the CE year of the event itself. A lunar-calendar date late in a Chinese year can fall in
+  the next CE year; convert it (policy.md "Date conversion") and write the Chinese date in the source.
+- Shanghai was never the national capital, so the OUT rule is narrow: imperial and national laws, edicts,
+  examinations and reforms for the whole state stay OUT (Song, Yuan, Ming, Qing courts; the Beiyang,
+  Nanjing and wartime governments; the People's Republic). Acts about the county, the prefecture or the
+  city are IN (the county's founding in 1292, the city wall in 1553, the customs house, the Treaty
+  opening in 1843, the 1927 Special Municipality, the 1958 county transfers from Jiangsu, Pudong New Area
+  1990/1992, the Free Trade Zone 2013).
+- Foreign bodies seated in the city: the Shanghai Municipal Council, the French Conseil municipal and the
+  Mixed Court are local governments and IN. The Korean Provisional Government (1919–1932) and the national
+  party headquarters seated in the concessions: their founding, a raid on them or an attack in the city is
+  IN; their acts for the whole country are OUT. The First Congress of the Chinese Communist Party (1921,
+  in the French Concession) is IN as a city event; later Party congresses and plenums held elsewhere are OUT.
+- The Reformed Government and the Wang Jingwei regime (seated in Nanjing): their acts for occupied China
+  are OUT; their and the Japanese acts in the city (the Settlement's seizure in 1941, the Hongkew ghetto
+  1943) are IN.
+- Main stage (IN as cards): the wokou raids (1553–1555), the British capture of Wusong and Shanghai (1842),
+  the Small Swords rising (1853–1855), the Taiping attacks and the Ever-Victorious Army (1860–1862), the
+  1905 Mixed Court riot, the 1911 revolution in the city, the May Thirtieth Movement (1925), the workers'
+  uprisings and the April 12 purge (1927), the January 28 incident (1932), the Battle of Shanghai and
+  Bloody Saturday (1937), the Communist capture (1949), the January Storm (1967), the 1989 protests in the
+  city, Expo 2010, the 2014 Bund stampede, the 2022 lockdown.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1292` | Songze, Majiabang, Liangzhu at Fuquanshan, Maqiao, Qinglong port, Huating county, the Song market town | 25 | ~50 |
+| `1292_1842` | the county under Yuan, Ming and Qing, cotton, the wokou, the city wall, Xu Guangqi, the Yu Garden, the Opium War | 45 | ~150 |
+| `1843_1926` | the treaty port, the concessions, the Small Swords and the Taiping, the Bund, 1911, May Thirtieth | 45 | ~250 |
+| `1927_1949` | the Special Municipality, 1932 and 1937, the occupation, the refugees, the civil war | 45 | ~200 |
+| `1950_1990` | the People's Republic, the Cultural Revolution base, reform, the opening of Pudong | 45 | ~180 |
+| `1991_present` | Pudong, the Metro, the towers, Expo 2010, the megacity | 45 | ~200 |
+
+Expected cards are a guide, not a target.

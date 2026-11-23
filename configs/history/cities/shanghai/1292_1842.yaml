@@ -1,0 +1,654 @@
+# City: Shanghai x 1292 to 1842 (the county under Yuan, Ming and Qing: cotton, the wokou, the city wall,
+# Xu Guangqi, the Yu Garden, the guild halls, the Opium War). DRAFT 2026-11-22.
+# Area: Shanghai Municipality (old walled county town, Songjiang, Qingpu and Zhujiajiao, Jiading and Nanxiang,
+# Baoshan and Wusong, Pudong, Chuansha, Nanhui, Fengxian, Jinshan, Minhang, Chongming). Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Imperial edicts, national
+# trade rules, court cases and treaties -> out_refs; county acts, walls, raids, sieges, riots, temples,
+# gardens, guild halls, water works and disasters in the area -> cards (main-stage rule). World-grid events -> world_refs.
+# Dates: memory pass + web check (30 of 45 searches; no unauthorised book copies).
+# Main sources: zh and en Wikipedia (wikipedia.org: Shanghai County, Songjiang Prefecture, district pages,
+# City God Temple, Confucian Temple, Yu Garden, Wusong River, Battle of Wusong, guild halls, gardens);
+# Wu Daxin, Jiajing wokou and Shanghai officials (NCNU Ming history conference paper); thepaper.cn.
+# Lunar dates late in a Chinese year -> the Western year of the day (wall finished, 12th month Jiajing 32 -> 1554).
+# A building -> start of work unless the text says "finished", "opens" or "completed".
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1292, peg: piano, confidence: high, source: "zh WP Shanghai County (decree 1291, formed spring 1292)",
+     event: "Shanghai County is formed from five townships of Huating, with its seat in Shanghai town",
+     place: "Shanghai town on the Huangpu",
+     scene: "A PIANO lid slams on the Huating map, cuts off five townships, and they fall round Shanghai town as a new county."}
+  - {year: 1296, peg: peach, confidence: high, source: "zh WP Jiading District (Yuanzhen 2)",
+     event: "Jiading County is raised to Jiading Prefecture",
+     place: "Jiading",
+     scene: "A giant PEACH swells over Jiading until the county sign bursts and a bigger prefecture sign grows in its place."}
+  - {year: 1299, peg: pipe, confidence: high, source: "zh WP Shanghai County (Dade 3)",
+     event: "The Shanghai county office moves into the old maritime trade office north of the Fangbang",
+     place: "Fangbang creek",
+     scene: "A clerk blows the county seal through a long PIPE into the empty maritime trade office beside the Fangbang."}
+  - {year: 1326, peg: nacho, confidence: high, source: "zh WP Songjiang Prefecture (Taiding 3)",
+     event: "Songjiang Prefecture is abolished; Huating and Shanghai go under Jiaxing",
+     place: "Songjiang",
+     scene: "A hot NACHO melts the Songjiang prefecture seal, and the Jiaxing official scoops up Huating and Shanghai."}
+  - {year: 1328, peg: knife, confidence: high, source: "zh WP Songjiang Prefecture (Tianli 1)",
+     event: "Songjiang Prefecture is restored over Huating and Shanghai",
+     place: "Songjiang",
+     scene: "A KNIFE cuts Huating and Shanghai loose from Jiaxing and sews them back under a new Songjiang prefecture flag."}
+  - {year: 1358, peg: wolf, confidence: high, source: "zh WP Jiading District (Zhizheng 18)",
+     event: "Zhang Shicheng's troops rebuild the Jiading wall in brick and widen the moat",
+     place: "Jiading wall",
+     scene: "A WOLF pack in Zhang Shicheng's colours carries bricks in their jaws and stacks a new brick wall round Jiading."}
+  - {year: 1369, peg: ship, confidence: high, source: "zh WP Chongming District (Hongwu 2)",
+     event: "Chongming Prefecture becomes a county after erosion shrinks its land and people",
+     place: "Chongming",
+     scene: "A small SHIP carries half of eroded Chongming away, and the Ming clerk paints 'county' over 'prefecture'."}
+  - {year: 1369, peg: ship, confidence: high, source: "zh WP Jiading District (Hongwu 2)",
+     event: "Jiading returns to county status under Suzhou Prefecture",
+     place: "Jiading",
+     scene: "A Suzhou SHIP tows the Jiading prefecture sign up the river and brings back a small county sign."}
+  - {year: 1386, peg: fish, confidence: high, source: "zh WP Jinshan Wei (Hongwu 19)",
+     event: "Tang He builds the walled Jinshan Guard on the coast against Japanese raiders",
+     place: "Jinshan Wei",
+     scene: "Tang He slaps a huge FISH down on the Jinshan shore, and its scales turn into a walled guard town."}
+  - {year: 1386, peg: fish, confidence: high, source: "zh WP Baoshan District (Hongwu 19)",
+     event: "The Wusong River garrison battalion is set up on the west bank of the Wusong mouth",
+     place: "Wusong mouth",
+     scene: "A FISH in Ming armour swims into the Wusong mouth and plants a garrison flag on the west bank."}
+  - {year: 1386, peg: fish, confidence: high, source: "zh WP Nanhui County (Ming, against wokou)",
+     event: "A garrison town is walled at Nanhuizui, now Huinan, against Japanese raiders",
+     place: "Nanhuizui (Huinan)",
+     scene: "Soldiers stack dried FISH like bricks into a square wall at Nanhuizui to keep the pirates out."}
+  - {year: 1386, peg: fish, confidence: high, source: "zh WP Gaoqiao Town (Hongwu 19)",
+     event: "The Qingpu fort is set up at Gaoqiao to guard the Yangtze mouth",
+     place: "Qingpu fort, Gaoqiao",
+     scene: "A giant FISH beaches itself at Gaoqiao, and soldiers build the Qingpu fort on its back to watch the Yangtze."}
+  - {year: 1420, peg: nose, confidence: high, source: "zh WP Chongming District (Yongle 18)",
+     event: "Sea erosion forces Chongming to move its county seat north to the Yaoliu sandbank",
+     place: "Yaoliu sandbank",
+     scene: "A NOSE sniffs the sea eating the old Chongming seat and leads the officials north to a new walled sandbank."}
+  - {year: 1430, peg: mouse, confidence: high, source: "zh WP Fengjing Town (Xuande 5)",
+     event: "Fengjing town is split along its river between Songjiang and Jiaxing",
+     place: "Fengjing",
+     scene: "A MOUSE gnaws Fengjing in two along the river: the north half to Songjiang, the south half to Jiaxing."}
+  - {year: 1529, peg: knob, confidence: high, source: "zh WP Chongming District (Jiajing 8)",
+     event: "The Chongming seat falls into the sea; Du Ji builds an earthen town at Majiabang",
+     place: "Majiabang, Sansha",
+     scene: "A door KNOB is all that floats from the drowned Chongming seat, and Du Ji hangs it on a new earth town."}
+  - {year: 1537, peg: mug, confidence: high, source: "zh WP Baoshan District (Jiajing 16)",
+     event: "A new walled town is built for the Wusong garrison",
+     place: "Wusong",
+     scene: "A giant MUG turned upside down at Wusong becomes the round wall of the garrison's new town."}
+  - {year: 1542, peg: rhino, confidence: high, source: "zh WP Qingpu District (Jiajing 21, 4/10)",
+     event: "Qingpu County is founded, with its seat at Qinglong town",
+     place: "Qinglong town",
+     scene: "A RHINO pushes a new county gate into Qinglong town, and Qingpu's first magistrate rides through on its back."}
+  - {year: 1553, peg: llama, confidence: high, source: "Wu Daxin NCNU paper (Jiajing 32, 4th-5th month)",
+     event: "Wokou under Xiao Xian sack the unwalled Shanghai county town; the magistrate flees and officials die",
+     place: "Shanghai county office",
+     scene: "A LLAMA leads Xiao Xian's pirates through the unwalled streets and kicks down the burning Shanghai county office."}
+  - {year: 1553, peg: llama, confidence: high, source: "Wu Daxin NCNU paper (Ming shilu j400)",
+     event: "Wokou take the Wusong and Nanhui garrison forts",
+     place: "Wusong and Nanhui forts",
+     scene: "A pirate LLAMA spits over the walls of Wusong and Nanhui, and both garrison forts open their gates."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Qingpu District (Jiajing 32)",
+     event: "Wokou destroy the Qingpu county seat, and the county is abolished",
+     place: "Qinglong town",
+     scene: "A LLAMA tramples the Qingpu county seal into the ashes of Qinglong town, and the county ceases to exist."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Jiading District (Jiajing 32)",
+     event: "Magistrate Wan Siqian beats off the first wokou attack on Jiading and raises the wall",
+     place: "Jiading wall",
+     scene: "Wan Siqian rides a LLAMA along the Jiading wall, kicks the pirate ladders down, then lifts the wall higher."}
+  - {year: 1553, peg: llama, confidence: high, source: "thepaper.cn (Jiajing 32, 10th lunar month)",
+     event: "Work starts on the Shanghai city wall against the wokou",
+     place: "Shanghai county town",
+     scene: "A LLAMA team drags the first stones round Shanghai town, and gentry money pays for a wall against pirates."}
+  - {year: 1554, peg: lawyer, confidence: medium, source: "zh WP Shanghai timeline (1554); thepaper: end of 12th month",
+     event: "The Shanghai city wall is finished, with six gates and a moat",
+     place: "Shanghai city wall",
+     scene: "A LAWYER signs off the Shanghai wall: six gates, a full moat, finished in three months."}
+  - {year: 1554, peg: lawyer, confidence: high, source: "Wu Daxin NCNU paper (Jiajing 33 spring)",
+     event: "Xiao Xian's wokou besiege the new Shanghai wall for a month; Dong Bangzheng holds the town",
+     place: "Shanghai city wall",
+     scene: "A LAWYER in armour, Dong Bangzheng, argues from the new Shanghai wall for a month until the pirates give up."}
+  - {year: 1554, peg: lawyer, confidence: high, source: "zh WP Chongming District (Jiajing 33, 7 May)",
+     event: "Wokou break into Chongming town; magistrate Tang Yicen dies after street fighting",
+     place: "Chongming town",
+     scene: "A LAWYER, magistrate Tang Yicen, fights pirates street by street in Chongming and falls with his sword drawn."}
+  - {year: 1554, peg: lawyer, confidence: high, source: "zh WP Qingpu District (Jiajing 33)",
+     event: "Wokou raid Tanghang and Zhujiajiao and seize the grain boats",
+     place: "Zhujiajiao",
+     scene: "Pirates force a LAWYER at Zhujiajiao to sign over the grain boats of Tanghang, then row them away."}
+  - {year: 1555, peg: lily, confidence: high, source: "zh WP Chongming District (Jiajing 34)",
+     event: "Chongming builds a brick wall against the wokou in ten months",
+     place: "Chongming town",
+     scene: "Builders press LILY flowers into every brick of Chongming's new wall and finish it in ten months."}
+  - {year: 1555, peg: lily, confidence: medium, source: "en WP Jiajing wokou raids (1555)",
+     event: "Wokou make Zhelin, south of Shanghai, their main coastal base",
+     place: "Zhelin, Fengxian",
+     scene: "Pirates plant a black LILY flag on the Zhelin shore and turn the town into their main base."}
+  - {year: 1556, peg: leech, confidence: medium, source: "zh WP Qingpu District (Jiajing 35, 5th month)",
+     event: "Captain Liu Tang beats the wokou at Mao Lake and Dianshan Lake",
+     place: "Dianshan Lake",
+     scene: "Liu Tang throws a LEECH onto each pirate boat on Dianshan Lake, and the raiders jump overboard."}
+  - {year: 1557, peg: log, confidence: high, source: "zh WP Nanhui County (Jiajing 36)",
+     event: "The Chuansha fort is built for coastal defence",
+     place: "Chuansha",
+     scene: "Soldiers roll a LOG wall round Chuansha and turn the fishing village into a coastal fort."}
+  - {year: 1572, peg: coin, confidence: high, source: "zh WP Qingpu District (Longqing 6, 9/1)",
+     event: "Qingpu County is founded again after Zhang Jiayin's memorial",
+     place: "Qingpu",
+     scene: "A gold COIN with Zhang Jiayin's memorial on it drops into a box, and Qingpu County gets its seal back."}
+  - {year: 1573, peg: comb, confidence: high, source: "zh WP Qingpu District (Wanli 1)",
+     event: "Magistrate Shi Jifang moves the Qingpu seat to Tanghang, now Qingpu town",
+     place: "Tanghang (Qingpu town)",
+     scene: "Shi Jifang drags a giant COMB across the map and moves the Qingpu seat from Qinglong to Tanghang."}
+  - {year: 1576, peg: cage, confidence: high, source: "zh WP Qingpu District (Wanli 4)",
+     event: "Qingpu town gets its city wall",
+     place: "Qingpu town",
+     scene: "Workers lift a huge iron CAGE round Qingpu town, and its bars harden into a new city wall."}
+  - {year: 1577, peg: cake, confidence: high, source: "zh WP Baoshan District (Wanli 5)",
+     event: "The Wusong garrison is renamed the Baoshan garrison battalion",
+     place: "Wusong",
+     scene: "Soldiers at Wusong cut a CAKE iced 'Baoshan' and nail the new name over the garrison gate."}
+  - {year: 1588, peg: fife, confidence: high, source: "zh WP Chongming District (Wanli 16)",
+     event: "The new Chongming county town at Changsha, now Chengqiao, is finished with five gates",
+     place: "Changsha (Chengqiao)",
+     scene: "A FIFE plays at five new gates as Chongming's officials march into their finished town at Changsha."}
+  - {year: 1616, peg: dish, confidence: high, source: "zh WP Minchao Dong huan (Wanli 44, 3/15)",
+     event: "A Songjiang crowd burns Dong Qichang's mansion of more than two hundred rooms",
+     place: "Dong Qichang's house, Songjiang",
+     scene: "The angry Songjiang crowd fills a huge DISH with burning oil and throws it over Dong Qichang's mansion."}
+  - {year: 1645, peg: railway, confidence: medium, source: "Nanjiang yishi (Shen Youlong dies at Songjiang's fall)",
+     event: "Songjiang falls to the Qing; the defender Shen Youlong is killed by an arrow",
+     place: "Songjiang wall",
+     scene: "A RAILWAY of Qing cannon carts rolls through Songjiang's broken gate, and an arrow kills Shen Youlong on the wall."}
+  - {year: 1647, peg: rock, confidence: medium, source: "zh WP Wu Shengzhao (Shunzhi 4, 4/15)",
+     event: "Songjiang commander Wu Shengzhao plots to rise for the Ming and is caught",
+     place: "Songjiang",
+     scene: "Wu Shengzhao hides his Ming plot under a ROCK in the Songjiang camp, but Qing officers lift it and seize him."}
+  - {year: 1647, peg: rock, confidence: medium, source: "zh WP Chen Zilong (1647, Kuatang Bridge)",
+     event: "Arrested Ming loyalist Chen Zilong breaks his chains and drowns himself at Kuatang Bridge",
+     place: "Kuatang Bridge, Songjiang",
+     scene: "Chen Zilong smashes his chains on a ROCK at Kuatang Bridge and leaps into the water."}
+  - {year: 1656, peg: leech, confidence: high, source: "zh WP Songjiang Prefecture (Shunzhi 13)",
+     event: "Lou County is cut from Huating and shares the Songjiang prefecture town",
+     place: "Songjiang town",
+     scene: "A LEECH sucks half of Huating's land away and spits out Lou County inside the same Songjiang wall."}
+  - {year: 1659, peg: elbow, confidence: medium, source: "zh WP Zheng Chenggong northern campaign (Shunzhi 16, 8/9)",
+     event: "Koxinga's fleet lands at Chongming after the Nanjing defeat but fails to take the town",
+     place: "Chongming town",
+     scene: "Koxinga's ELBOW smashes at the Chongming wall, but the Qing cannon break his landing and his fleet sails south."}
+  - {year: 1660, peg: cheese, confidence: high, source: "zh WP Baoshan District (Shunzhi 17)",
+     event: "The Wusong West Fort is built at Yangjiazui",
+     place: "Yangjiazui, Wusong",
+     scene: "Masons cut a wheel of CHEESE into blocks and build the Wusong West Fort at Yangjiazui."}
+  - {year: 1675, peg: eagle, confidence: high, source: "zh WP Chongming District (Kangxi 14)",
+     event: "Chongming's five city gates are repaired and get new names",
+     place: "Chongming town",
+     scene: "An EAGLE carries five new name boards and hangs one over each repaired Chongming gate."}
+  - {year: 1718, peg: dove, confidence: high, source: "zh WP Baoshan District (Kangxi 57)",
+     event: "The Wusong East Fort is built on the east bank of the Huangpu",
+     place: "Wusong east bank",
+     scene: "A white DOVE drops the last stone on the Huangpu's east bank, and the Wusong East Fort faces its twin."}
+  - {year: 1725, peg: nail, confidence: high, source: "zh WP Baoshan District (Yongzheng 3, 8th month)",
+     event: "Baoshan County is split off from Jiading",
+     place: "Baoshan",
+     scene: "A NAIL is hammered through the Jiading map, and the east part tears off as Baoshan County."}
+  - {year: 1726, peg: nacho, confidence: medium, source: "zh WP Fengxian, Nanhui pages (1726); Songjiang page: 1724 order",
+     event: "Fengxian, Nanhui and Jinshan counties start work, cut from Huating, Shanghai and Lou",
+     place: "Fengxian, Nanhui, Jinshan",
+     scene: "A NACHO plate is broken into three, and each piece becomes a county seal: Fengxian, Nanhui, Jinshan."}
+  - {year: 1726, peg: nacho, confidence: medium, source: "zh WP Baoshan District (seat moves the year after 1725)",
+     event: "The Baoshan county seat moves into the Wusong garrison town",
+     place: "Wusong",
+     scene: "A hot NACHO tray carries the Baoshan county seal into the old Wusong garrison town."}
+  - {year: 1730, peg: mouse, confidence: high, source: "zh WP Songjiang Prefecture (Yongzheng 8)",
+     event: "Fuquan County is merged into Qingpu",
+     place: "Qingpu",
+     scene: "A MOUSE nibbles the Fuquan county seal to nothing, and Qingpu swallows its land."}
+  - {year: 1730, peg: mouse, confidence: high, source: "zh WP Su-Song-Tai Circuit (Yongzheng 8, 8th month)",
+     event: "The Su-Song circuit intendant moves his seat to Shanghai and takes charge of its customs",
+     place: "Shanghai county town",
+     scene: "A MOUSE carries the intendant's seal from Suzhou to Shanghai and sits on the customs ledger."}
+  - {year: 1731, peg: moth, confidence: high, source: "zh WP Su-Song-Tai Circuit (Yongzheng 9)",
+     event: "The circuit intendant's office is built inside Shanghai's Great East Gate",
+     place: "Great East Gate",
+     scene: "A MOTH lands on the new intendant's office just inside Shanghai's Great East Gate."}
+  - {year: 1810, peg: dice, confidence: disputed, source: "zh WP Nanhui, Pudong (1810); Songjiang page (1805)",
+     event: "Chuansha becomes a subprefecture cut from Shanghai and Nanhui",
+     place: "Chuansha",
+     scene: "Two DICE roll from Shanghai and Nanhui and land on Chuansha fort, which becomes its own subprefecture."}
+  - {year: 1842, peg: rhino, confidence: high, source: "zh WP Battle of Wusong (16 June)",
+     event: "British ships take the Wusong forts; Chen Huacheng dies at the West Fort guns",
+     place: "Wusong West Fort",
+     scene: "A RHINO charges from HMS Cornwallis into the Wusong West Fort, where old Chen Huacheng dies at his gun."}
+  - {year: 1842, peg: rhino, confidence: high, source: "zh WP Battle of Wusong; City God Temple (19-23 June)",
+     event: "British troops occupy Shanghai county town for five days and use the City God Temple as base",
+     place: "City God Temple",
+     scene: "A British RHINO sleeps in the Shanghai City God Temple for five days, then marches out to the ships."}
+  # science
+  - {year: 1304, peg: sewer, confidence: high, source: "zh WP Wusong River (Dade 8)",
+     event: "Ren Renfa dredges the Wusong River for thirty-eight li to the Jiading border",
+     place: "Wusong River",
+     scene: "Ren Renfa pulls a giant SEWER pipe of mud out of the Wusong River all the way to Jiading."}
+  - {year: 1324, peg: hanger, confidence: high, source: "zh WP Wusong River (Taiding 1)",
+     event: "Officials and Ren Renfa dredge the Wusong River again",
+     place: "Wusong River",
+     scene: "Ren Renfa hooks a coat HANGER into the silted Wusong River and drags out a second load of mud."}
+  - {year: 1325, peg: nail, confidence: high, source: "zh WP Zhidanyuan Yuan sluice (Taiding 2)",
+     event: "Ren Renfa designs the stone sluice at Zhaopu, now the Zhidanyuan site",
+     place: "Zhidanyuan, Putuo",
+     scene: "Ren Renfa drives a giant iron NAIL through stone slabs at Zhaopu to pin his new sluice gate."}
+  - {year: 1341, peg: radio, confidence: high, source: "zh WP Wusong River (Zhizheng 1)",
+     event: "Officials dredge the Wusong River once more",
+     place: "Wusong River",
+     scene: "A RADIO on the dredging boat calls the crews back to the Wusong River for another round of mud."}
+  - {year: 1403, peg: sumo, confidence: high, source: "zh WP Baoshan District (Yongle 1)",
+     event: "Xia Yuanji cuts the Fanjiabang channel, and the Huangpu takes over the Wusong outlet",
+     place: "Fanjiabang",
+     scene: "A SUMO wrestler, Xia Yuanji, shoves the Huangpu through the Fanjiabang so it swallows the Wusong mouth."}
+  - {year: 1412, peg: tongue, confidence: high, source: "zh WP Baoshan District (Yongle 10)",
+     event: "Chen Xuan raises Baoshan, an earth hill with beacons, as a landmark for ships",
+     place: "Baoshan hill, Gaoqiao shore",
+     scene: "A fiery TONGUE licks from the top of the new Baoshan hill and guides grain ships into the Yangtze."}
+  - {year: 1458, peg: wolf, confidence: high, source: "zh WP Wusong River (Tianshun 2)",
+     event: "After a Taihu flood, the lower Wusong is dredged to the Wusong patrol post",
+     place: "lower Wusong River",
+     scene: "A WOLF digs with its paws along the lower Wusong after the Taihu flood until water flows to the patrol post."}
+  - {year: 1472, peg: coin, confidence: high, source: "zh WP Baoshan District (Chenghua 8)",
+     event: "Magistrate Bai Siming adds sea dikes at Baoshan and Liuhe",
+     place: "Baoshan coast",
+     scene: "Bai Siming stacks giant COIN rolls along the Baoshan shore into a sea dike."}
+  - {year: 1474, peg: car, confidence: high, source: "zh WP Wusong River (Chenghua 10)",
+     event: "The middle reach of the Wusong River is dredged",
+     place: "middle Wusong River",
+     scene: "A CAR with a plough drives along the middle Wusong riverbed and scoops out the silt."}
+  - {year: 1522, peg: nun, confidence: high, source: "zh WP Wusong River (Jiajing 1)",
+     event: "The upper Wusong River is dredged",
+     place: "upper Wusong River",
+     scene: "A NUN with a shovel leads villagers into the upper Wusong and digs out its choked bed."}
+  - {year: 1569, peg: ship, confidence: high, source: "zh WP Wusong River (Longqing 3)",
+     event: "Governor Hai Rui dredges the Wusong and Huangpu",
+     place: "Wusong River",
+     scene: "Hai Rui stands on a SHIP's bow and orders the Wusong and Huangpu dredged without bribes."}
+  - {year: 1571, peg: cat, confidence: high, source: "zh WP Fangsheng Bridge (Longqing 5)",
+     event: "Monk Xingchao starts Fangsheng Bridge, a five-arch stone bridge at Zhujiajiao",
+     place: "Zhujiajiao",
+     scene: "A CAT walks the five stone arches of new Fangsheng Bridge at Zhujiajiao, where monks forbid it to fish."}
+  - {year: 1584, peg: fairy, confidence: medium, source: "thepaper.cn Pudong seawall (Wanli 12)",
+     event: "Shanghai's magistrate starts the outer seawall in Pudong, later the Qingong seawall",
+     place: "Pudong coast",
+     scene: "A FAIRY waves her wand along thirty km of Pudong coast and an earth seawall rises behind her."}
+  - {year: 1673, peg: comb, confidence: high, source: "zh WP Wusong River (1673)",
+     event: "The Old Zha sluice bridge is built on the Wusong River",
+     place: "Wusong River near Fujian Road",
+     scene: "Builders set a huge COMB across the Wusong River, and its teeth become the gates of the Old Zha bridge."}
+  - {year: 1735, peg: mill, confidence: high, source: "zh WP Wusong River (1735)",
+     event: "The New Zha sluice bridge is built at Jinjiawan",
+     place: "Jinjiawan, Wusong River",
+     scene: "A water MILL wheel turns in the gates of the New Zha sluice bridge at Jinjiawan."}
+  - {year: 1763, peg: gem, confidence: high, source: "zh WP Wusong River (1763)",
+     event: "The Yue River is cut south of Huangdu to bypass the river bends",
+     place: "Huangdu",
+     scene: "A GEM-tipped drill cuts the straight Yue River south of Huangdu past the crowded bends."}
+  - {year: 1808, peg: sofa, confidence: high, source: "zh WP Huangpu River (Jiaqing 13)",
+     event: "A charity ferry office runs eight long ferries across the Huangpu",
+     place: "Huangpu ferries",
+     scene: "Eight ferry boats shaped like a SOFA carry passengers across the Huangpu for free."}
+  - {year: 1812, peg: tongue, confidence: high, source: "zh WP Fangsheng Bridge (Jiaqing 17)",
+     event: "Fangsheng Bridge at Zhujiajiao is rebuilt",
+     place: "Zhujiajiao",
+     scene: "A giant TONGUE licks each stone of Fangsheng Bridge back into its arch at Zhujiajiao."}
+  - {year: 1827, peg: ink, confidence: high, source: "zh WP Wusong River (1827)",
+     event: "The Caojiadu reach is dredged and the New Zha bridge is pulled down",
+     place: "Caojiadu",
+     scene: "Workers pour INK on the old New Zha bridge, knock it down and dredge Caojiadu clean."}
+  # religion
+  - {year: 1294, peg: bear, confidence: high, source: "zh WP Shanghai Confucian Temple (Zhiyuan 31)",
+     event: "Magistrate Zhou Ruji orders the Shanghai Confucian Temple built east of the county office",
+     place: "east of the county office",
+     scene: "A BEAR carries a statue of Confucius to the plot east of the Shanghai county office."}
+  - {year: 1302, peg: sun, confidence: high, source: "zh WP Shanghai Confucian Temple (Dade 6)",
+     event: "Fan Tianzhen pays to enlarge the Confucian Temple with halls, gates and a new statue",
+     place: "Shanghai Confucian Temple",
+     scene: "A SUN-shaped gold coin from Fan Tianzhen buys new halls and gates for the Shanghai Confucian Temple."}
+  - {year: 1310, peg: dice, confidence: high, source: "zh WP Shanghai Confucian Temple (Zhida 3)",
+     event: "Qu Tingfa pays for a new Confucian Temple north of the Zhaojiabang",
+     place: "Zhaojiabang",
+     scene: "Qu Tingfa rolls a DICE and moves the Confucian Temple north across the Zhaojiabang."}
+  - {year: 1314, peg: tower, confidence: high, source: "zh WP Shanghai Confucian Temple (Yanyou 1)",
+     event: "Magistrate Wang Gui moves the Confucian Temple back to its first site and enlarges it",
+     place: "Shanghai Confucian Temple",
+     scene: "Wang Gui carries the Confucian Temple TOWER back on his shoulders to its old site."}
+  - {year: 1320, peg: nose, confidence: high, source: "zh WP Zhenru Temple (Yanyou 7, 6/21)",
+     event: "Zhenru Temple's main hall is built; its beam carries the date",
+     place: "Zhenru Temple",
+     scene: "A carpenter's NOSE touches the beam of Zhenru Temple's new main hall as he paints the date on it."}
+  - {year: 1353, peg: llama, confidence: high, source: "zh WP Jiading Confucian Temple (Zhizheng 13)",
+     event: "Jiading Confucian Temple completes its Lingxing Gate and Yucai arch",
+     place: "Jiading Confucian Temple",
+     scene: "A LLAMA walks through the new Lingxing Gate of the Jiading Confucian Temple."}
+  - {year: 1354, peg: lawyer, confidence: medium, source: "zh WP Songjiang Mosque (Zhizheng era)",
+     event: "A Muslim darughachi founds the Songjiang Mosque (approximate)",
+     place: "Songjiang Mosque",
+     scene: "A LAWYER, the Muslim darughachi of Songjiang, signs the deed for the town's first mosque."}
+  - {year: 1362, peg: chain, confidence: high, source: "zh WP Huang Daopo (Zhizheng renyin)",
+     event: "Zhang Shouzhong moves Huang Daopo's shrine beside his family tomb at Wunijing",
+     place: "Wunijing",
+     scene: "Zhang Shouzhong pulls Huang Daopo's shrine on a CHAIN to a new site beside his family tomb."}
+  - {year: 1369, peg: ship, confidence: high, source: "zh WP Jing'an Temple (Hongwu 2)",
+     event: "Jing'an Temple casts a bronze bell that still survives",
+     place: "Jing'an Temple",
+     scene: "Monks pour bronze into a mould shaped like a SHIP's bell at Jing'an Temple."}
+  - {year: 1370, peg: goose, confidence: high, source: "zh WP Qiuxia Garden (Hongwu 3)",
+     event: "Magistrate Hu Yong'an moves the Jiading City God Temple to its present site",
+     place: "Jiading City God Temple",
+     scene: "A GOOSE carries the Jiading City God statue in its beak to the temple's new site."}
+  - {year: 1388, peg: fife, confidence: high, source: "zh WP Xilin Pagoda (Hongwu 21)",
+     event: "Monk Chunhou rebuilds the Xilin hall and pagoda at Songjiang as Xilin Temple",
+     place: "Xilin Temple, Songjiang",
+     scene: "Monk Chunhou plays a FIFE to collect alms and rebuilds the Xilin pagoda in Songjiang."}
+  - {year: 1403, peg: sumo, confidence: high, source: "zh WP Shanghai City God Temple (Yongle 1)",
+     event: "The Shanghai City God Temple is founded in the old Huo Guang shrine",
+     place: "City God Temple",
+     scene: "A SUMO wrestler carries the City God into the old Huo Guang shrine, and it becomes Shanghai's City God Temple."}
+  - {year: 1407, peg: ski, confidence: high, source: "zh WP Songjiang Mosque (Yongle 5)",
+     event: "The Songjiang Mosque prayer hall is built by imperial order",
+     place: "Songjiang Mosque",
+     scene: "A SKI slides down from the imperial order and becomes the roof of the Songjiang Mosque prayer hall."}
+  - {year: 1439, peg: map, confidence: high, source: "zh WP Shanghai Confucian Temple (Zhengtong 4)",
+     event: "Magistrate Zhang Zhen enlarges the Confucian Temple with an archery pavilion and halls",
+     place: "Shanghai Confucian Temple",
+     scene: "Zhang Zhen unrolls a MAP and adds an archery pavilion to the Shanghai Confucian Temple."}
+  - {year: 1444, peg: warrior, confidence: high, source: "zh WP Xilin Pagoda (Zhengtong 9)",
+     event: "After it falls, the Xilin Pagoda is rebuilt behind the main hall",
+     place: "Xilin Temple, Songjiang",
+     scene: "A WARRIOR monk lifts the fallen Xilin Pagoda and sets it up again behind the main hall."}
+  - {year: 1460, peg: cheese, confidence: high, source: "zh WP Jiading Confucian Temple (Tianshun 4)",
+     event: "Jiading Confucian Temple rebuilds its Dacheng Hall and lecture hall",
+     place: "Jiading Confucian Temple",
+     scene: "A wheel of CHEESE rolls into the Jiading Confucian Temple and turns into the new Dacheng Hall."}
+  - {year: 1484, peg: fairy, confidence: high, source: "zh WP Shanghai Confucian Temple (Chenghua 20)",
+     event: "Magistrate Liu Wan builds the Zunjing library pavilion at the Confucian Temple",
+     place: "Shanghai Confucian Temple",
+     scene: "A FAIRY flies the classics into the new Zunjing pavilion of the Shanghai Confucian Temple."}
+  - {year: 1519, peg: tuba, confidence: high, source: "zh WP Shanghai Confucian Temple (Zhengde 14)",
+     event: "Magistrate Zheng Luoshu rebuilds the Dacheng Hall of the Confucian Temple",
+     place: "Shanghai Confucian Temple",
+     scene: "A TUBA blast knocks down the old Dacheng Hall, and Zheng Luoshu rebuilds it."}
+  - {year: 1535, peg: mill, confidence: high, source: "zh WP Shanghai City God Temple (Jiajing 14)",
+     event: "The City God Temple gate is rebuilt as a paifang archway",
+     place: "City God Temple",
+     scene: "A MILL wheel turns at the City God Temple and grinds the narrow gate into a tall paifang."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Shanghai Tianhou Temple (Jiajing 32)",
+     event: "The Shunji Mazu temple is pulled down to clear ground for the wall defences",
+     place: "Shunji Temple",
+     scene: "A LLAMA kicks down the Shunji Mazu temple to clear a field of fire for the new wall."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Longhua Temple (Jiajing 32)",
+     event: "Longhua Temple is renamed Wanshou Cihua Chan Temple",
+     place: "Longhua Temple",
+     scene: "A LLAMA wears a new name plate, Wanshou Cihua, into the gate of Longhua Temple."}
+  - {year: 1573, peg: comb, confidence: high, source: "zh WP Qushui Garden (Wanli 1)",
+     event: "The Qingpu City God Temple is founded",
+     place: "Qingpu City God Temple",
+     scene: "A COMB with a City God carved on its spine is set up as the idol of the new Qingpu temple."}
+  - {year: 1586, peg: fish, confidence: high, source: "zh WP Longhua Temple (Wanli 14)",
+     event: "The great bell for Longhua Temple's main hall is cast",
+     place: "Longhua Temple",
+     scene: "A bronze FISH-shaped clapper strikes the newly cast bell in Longhua Temple's main hall."}
+  - {year: 1600, peg: sauce, confidence: high, source: "zh WP Chenxiang Pavilion (Wanli 28)",
+     event: "Pan Yunduan builds the Chenxiang Pavilion for a sandalwood Guanyin from a wreck",
+     place: "Chenxiang Pavilion",
+     scene: "Pan Yunduan pours SAUCE off a sandalwood Guanyin from a shipwreck and sets it in his new pavilion."}
+  - {year: 1603, peg: sumo, confidence: high, source: "zh WP Jiading Confucian Temple (Wanli 31)",
+     event: "Jiading Confucian Temple is fully renovated and its waterways join as Huilongtan",
+     place: "Jiading Confucian Temple",
+     scene: "A SUMO wrestler pushes the five Jiading creeks together in front of the renovated Confucian Temple."}
+  - {year: 1608, peg: sofa, confidence: high, source: "zh WP Xu Guangqi (Wanli 36)",
+     event: "Xu Guangqi brings Lazzaro Cattaneo to Shanghai, and Catholic mission work starts there",
+     place: "Xu family home, Shanghai",
+     scene: "Xu Guangqi lifts Father Cattaneo off a SOFA in his Shanghai home and has him preach to the household."}
+  - {year: 1621, peg: ant, confidence: high, source: "zh WP Jiading District (Tianqi 1)",
+     event: "Jesuits including Aleni come to Jiading and open a church",
+     place: "Jiading",
+     scene: "An ANT carries Aleni's cross into Jiading and builds a church hill around it."}
+  - {year: 1627, peg: ink, confidence: high, source: "zh WP Jiading District (Tianqi 7)",
+     event: "Jesuits hold the Jiading conference at Sun Yuanhua's house on the Chinese name of God",
+     place: "Sun Yuanhua's house, Jiading",
+     scene: "Jesuits dip their brushes in INK at Sun Yuanhua's house and argue how to write God's name."}
+  - {year: 1640, peg: horse, confidence: high, source: "zh WP Jingyi Tang (Chongzhen 13)",
+     event: "Brancati buys the Pan mansion and makes it the Jingyi Tang church",
+     place: "Pan family mansion",
+     scene: "A HORSE brings Brancati to the Pan mansion, and he hangs a cross over its hall: Jingyi Tang."}
+  - {year: 1677, peg: cake, confidence: high, source: "zh WP Songjiang Mosque (Kangxi 16)",
+     event: "A stele records the repair of the Songjiang Mosque",
+     place: "Songjiang Mosque",
+     scene: "Masons carve the mosque's repair record on a stone CAKE in Songjiang."}
+  - {year: 1683, peg: foam, confidence: high, source: "zh WP Shanghai City God Temple (Kangxi 22)",
+     event: "Two drum pavilions are built at the City God Temple",
+     place: "City God Temple",
+     scene: "Drummers beat on FOAM drums in the two new pavilions of the City God Temple."}
+  - {year: 1700, peg: sauce, confidence: high, source: "zh WP Yunxiang Temple (Kangxi 39)",
+     event: "The Kangxi Emperor's plaque renames the Nanxiang temple Yunxiang Temple",
+     place: "Nanxiang",
+     scene: "Monks pour SAUCE to fix Kangxi's plaque, Yunxiang Temple, over the gate in Nanxiang."}
+  - {year: 1730, peg: mouse, confidence: high, source: "zh WP Huang Daopo (Yongzheng 8)",
+     event: "A shrine to Huang Daopo is set up at Longhua village",
+     place: "Longhua village",
+     scene: "A MOUSE spins cotton thread in the new Huang Daopo shrine at Longhua."}
+  - {year: 1730, peg: mouse, confidence: high, source: "zh WP Shanghai Confucian Temple (Yongzheng 8)",
+     event: "Intendant Wang Chenghui builds the Kuixing Pavilion at the Confucian Temple",
+     place: "Shanghai Confucian Temple",
+     scene: "A MOUSE climbs to the top of the new Kuixing Pavilion at the Confucian Temple's south-east corner."}
+  - {year: 1731, peg: moth, confidence: high, source: "zh WP Jingyi Tang (Yongzheng 9)",
+     event: "Jingyi Tang church is taken under the Catholic ban and made a Guandi temple",
+     place: "Jingyi Tang",
+     scene: "A MOTH eats the cross off the Jingyi Tang church, and a Guandi statue takes its place."}
+  - {year: 1747, peg: rock, confidence: high, source: "zh WP Shanghai City God Temple (Qianlong 12)",
+     event: "The burnt inner hall of the City God Temple is rebuilt",
+     place: "City God Temple",
+     scene: "Builders roll a ROCK into the ashes and rebuild the City God's inner hall on it."}
+  - {year: 1794, peg: bear, confidence: high, source: "zh WP Shanghai City God Temple (Qianlong 59)",
+     event: "A Daoist society pays for a rear building at the City God Temple",
+     place: "City God Temple",
+     scene: "A BEAR from the Daoist society carries the beams of the City God Temple's new rear building."}
+  - {year: 1801, peg: soda, confidence: high, source: "zh WP Chenxiang Pavilion (Jiaqing 6)",
+     event: "Li Tingjing pays to rebuild the Chenxiang Pavilion on its present site",
+     place: "Chenxiang Pavilion",
+     scene: "Li Tingjing opens a SODA bottle and toasts the rebuilt Chenxiang Pavilion."}
+  - {year: 1814, peg: tower, confidence: high, source: "zh WP Chenxiang Pavilion (Jiaqing 19)",
+     event: "The Chenxiang Pavilion adds a Great Hero Hall",
+     place: "Chenxiang Pavilion",
+     scene: "A TOWER of monks stands on each other's shoulders to raise the Great Hero Hall at Chenxiang Pavilion."}
+  - {year: 1836, peg: match, confidence: high, source: "zh WP Shanghai City God Temple (Daoguang 16)",
+     event: "Merchants repair the burnt west corridor and opera stage of the City God Temple",
+     place: "City God Temple",
+     scene: "A MATCH started the fire, and merchants rebuild the City God Temple's west corridor and stage."}
+  # arts
+  - {year: 1366, peg: judge, confidence: medium, source: "Siku tiyao on Chuogeng lu (preface Zhizheng bingwu)",
+     event: "Tao Zongyi's Nancun Chuogeng Lu, written at Sijing, carries its preface",
+     place: "Nancun, Sijing",
+     scene: "A JUDGE reads Tao Zongyi's notes, written on leaves at Sijing, and stamps the preface."}
+  - {year: 1370, peg: goose, confidence: medium, source: "zh WP Fangta Park (Hongwu 3)",
+     event: "The brick-carved screen wall with a tan beast is made at Songjiang",
+     place: "Fangta Park, Songjiang",
+     scene: "A GOOSE pecks a greedy tan beast into the brick screen wall of Songjiang's city temple."}
+  - {year: 1460, peg: cheese, confidence: high, source: "zh WP Jiading District (Tianshun 4)",
+     event: "Magistrate Long Jin raises Yingkui Hill beside the Jiading county school",
+     place: "Jiading county school",
+     scene: "Long Jin piles up a mountain of CHEESE beside the Jiading school and names it Yingkui Hill."}
+  - {year: 1544, peg: warrior, confidence: medium, source: "zh WP Guyi Garden (Jiajing era)",
+     event: "Min Shiji builds the Yi Garden at Nanxiang (approximate)",
+     place: "Nanxiang",
+     scene: "A WARRIOR, Min Shiji, lays down his sword and plants bamboo in his new Yi Garden at Nanxiang."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Jingyi Tang (Jiajing 32)",
+     event: "Pan Yunduan builds a large mansion with the Shichuntang hall in Shanghai",
+     place: "Pan family mansion",
+     scene: "A LLAMA carries carved beams into Pan Yunduan's grand Shichuntang hall in Shanghai."}
+  - {year: 1559, peg: elbow, confidence: high, source: "zh WP Yu Garden (Jiajing 38)",
+     event: "Pan Yunduan starts the Yu Garden on vegetable plots west of his house",
+     place: "Yu Garden",
+     scene: "Pan Yunduan digs out the cabbages with his ELBOW and starts the Yu Garden for his parents."}
+  - {year: 1559, peg: elbow, confidence: high, source: "zh WP Luxiang Garden (Jiajing 38)",
+     event: "Gu Mingshi starts the Luxiang Garden; a Zhao Mengfu stone found in the pond names it",
+     place: "Luxiang Garden",
+     scene: "Gu Mingshi's ELBOW hits a stone in his new pond: Zhao Mengfu's 'Luxiang' carving names the garden."}
+  - {year: 1588, peg: fife, confidence: high, source: "zh WP Jiading District (Wanli 16)",
+     event: "Magistrate Xiong Mi digs Huilong Pool between the school and Yingkui Hill",
+     place: "Huilongtan, Jiading",
+     scene: "Xiong Mi plays a FIFE as diggers open Huilong Pool between the Jiading school and Yingkui Hill."}
+  - {year: 1628, peg: knife, confidence: medium, source: "zh WP Chen Zilong (early Chongzhen)",
+     event: "Chen Zilong and five Songjiang scholars found the Ji She literary society",
+     place: "Songjiang",
+     scene: "Six Songjiang scholars cut their names into a table with a KNIFE: the Ji She society is born."}
+  - {year: 1634, peg: hammer, confidence: medium, source: "ihchina.cn: Gu Shouqian colophon, Chongzhen 7",
+     event: "Han Ximeng finishes her Gu embroidery album after Song and Yuan paintings",
+     place: "Luxiang Garden",
+     scene: "Han Ximeng uses a HAMMER-shaped thimble to push her needle through eight embroidered Song and Yuan paintings."}
+  - {year: 1709, peg: soap, confidence: high, source: "zh WP Yu Garden (1709)",
+     event: "Gentry build the East Garden, or Inner Garden, beside the City God Temple",
+     place: "Inner Garden",
+     scene: "Gentry wash their hands with SOAP and open the little East Garden beside the City God Temple."}
+  - {year: 1726, peg: nacho, confidence: high, source: "zh WP Qiuxia Garden (Yongzheng 4)",
+     event: "The Gong family garden becomes the back garden of the Jiading City God Temple",
+     place: "Qiuxia Garden, Jiading",
+     scene: "A NACHO tray carries the Gong family's garden deed to the Jiading City God Temple."}
+  - {year: 1745, peg: railway, confidence: high, source: "zh WP Qushui Garden (Qianlong 10)",
+     event: "The Qingpu City God Temple garden, later Qushui Garden, is built",
+     place: "Qushui Garden, Qingpu",
+     scene: "A model RAILWAY winds round the ponds of the new City God garden in Qingpu."}
+  - {year: 1746, peg: roach, confidence: high, source: "zh WP Baoshan District (Qianlong 11)",
+     event: "The first Baoshan County gazetteer is printed",
+     place: "Baoshan",
+     scene: "A ROACH runs across the fresh pages of the first Baoshan gazetteer as it leaves the press."}
+  - {year: 1748, peg: reef, confidence: high, source: "zh WP Guyi Garden (1748 autumn)",
+     event: "Ye Jin finishes rebuilding the Nanxiang garden and names it Guyi Garden",
+     place: "Guyi Garden, Nanxiang",
+     scene: "Ye Jin builds a coral REEF of rocks in the Nanxiang pond and renames the garden Guyi Garden."}
+  - {year: 1760, peg: cheese, confidence: high, source: "zh WP Yu Garden (Qianlong 25)",
+     event: "Merchants buy the old Yu Garden and rebuild it as the City God Temple's West Garden",
+     place: "Yu Garden",
+     scene: "Merchants pay with wheels of CHEESE for the ruined Yu Garden and rebuild it as the West Garden."}
+  - {year: 1763, peg: gem, confidence: high, source: "zh WP Shuyin Lou (Qianlong 28)",
+     event: "Shen Chu builds the Shuyin Lou mansion in the old town",
+     place: "Shuyin Lou",
+     scene: "Shen Chu sets a GEM in the carved gate of his new Shuyin Lou library mansion."}
+  - {year: 1784, peg: fairy, confidence: high, source: "zh WP Huxinting (Qianlong 49)",
+     event: "Cloth merchants build the six-sided Huxinting pavilion in the Yu Garden lake",
+     place: "Huxinting",
+     scene: "A FAIRY with a bolt of cloth lands in the Yu Garden lake, and Huxinting rises under her feet."}
+  - {year: 1789, peg: fob, confidence: high, source: "zh WP Guyi Garden (Qianlong 53)",
+     event: "Nanxiang people buy Guyi Garden for the town's City God Temple",
+     place: "Guyi Garden, Nanxiang",
+     scene: "Nanxiang townsfolk melt down every gold FOB in town to buy Guyi Garden for their City God Temple."}
+  - {year: 1798, peg: beehive, confidence: high, source: "zh WP Qushui Garden (Jiaqing 3)",
+     event: "The Qingpu City God garden is renamed Qushui Garden",
+     place: "Qushui Garden, Qingpu",
+     scene: "A BEEHIVE drips honey along the winding stream, and the Qingpu garden takes the name Qushui."}
+  # economy
+  - {year: 1685, peg: waffle, confidence: high, source: "zh WP Jianghai Customs (Kangxi 24)",
+     event: "The Jiang customs house opens at Chongque in Huating, now Fengxian",
+     place: "Chongque, Fengxian",
+     scene: "A WAFFLE iron stamps 'Jiang Customs' on every junk that lands at Chongque."}
+  - {year: 1687, peg: fox, confidence: high, source: "zh WP Jianghai Customs (Kangxi 26)",
+     event: "The Jiang customs house moves inside the Baodai Gate of Shanghai town",
+     place: "Baodai Gate (Xiaodongmen)",
+     scene: "A FOX carries the customs ledgers through the Baodai Gate into Shanghai town."}
+  - {year: 1715, peg: doll, confidence: high, source: "zh WP Shangchuan Huiguan (Kangxi 54)",
+     event: "Shipowners of Chongming, Nantong and Shanghai build the Shangchuan guild hall",
+     place: "Shangchuan Huiguan",
+     scene: "A DOLL dressed as a sand-boat captain sits on the altar of the new shipowners' guild hall."}
+  - {year: 1757, peg: log, confidence: high, source: "zh WP Quanzhang Huiguan (1757)",
+     event: "Quanzhou and Zhangzhou merchants start the Quanzhang guild hall",
+     place: "Quanzhang Huiguan",
+     scene: "Fujian merchants roll a LOG of camphor wood up from the dock to start the Quanzhang guild hall."}
+  - {year: 1764, peg: cherry, confidence: high, source: "zh WP Shangchuan Huiguan (Qianlong 29)",
+     event: "The Shangchuan guild hall is rebuilt with an opera stage",
+     place: "Shangchuan Huiguan",
+     scene: "A CHERRY tree grows through the floor of the shipowners' hall and becomes its new opera stage."}
+  - {year: 1797, peg: pig, confidence: high, source: "zh WP Siming Gongsuo (Jiaqing 2)",
+     event: "Ningbo people start the Siming mortuary hall north of Shanghai town",
+     place: "Siming Gongsuo",
+     scene: "A PIG with a coin bank in its belly pays for the Ningbo people's mortuary hall north of Shanghai."}
+  - {year: 1825, peg: nail, confidence: high, source: "zh WP Grain transport (Daoguang 5)",
+     event: "A sea transport bureau for tribute grain is set up in Shanghai",
+     place: "Shanghai county town",
+     scene: "A NAIL fixes the sign of the new sea grain bureau to a Shanghai office door."}
+  - {year: 1832, peg: moon, confidence: high, source: "en WP Hugh Hamilton Lindsay (1832)",
+     event: "The East India Company ship Lord Amherst visits Shanghai to test trade and is turned away",
+     place: "Wusong and Shanghai",
+     scene: "The Lord Amherst sails up the Huangpu under the MOON, but the intendant orders it away."}
+  # society
+  - {year: 1315, peg: doll, confidence: high, source: "zh WP Baoshan District (Yanyou 2)",
+     event: "The Dongyang charity school opens at Dachang, with a sign by Zhao Mengfu",
+     place: "Dachang",
+     scene: "A DOLL holds Zhao Mengfu's sign over the door of the new Dongyang charity school."}
+  - {year: 1356, peg: leech, confidence: medium, source: "chinawriter.com.cn (Zhizheng 16)",
+     event: "Scholar Tao Zongyi settles at Nancun in Sijing",
+     place: "Nancun, Sijing",
+     scene: "A LEECH clings to Tao Zongyi's leg as he wades into the Sijing fields and settles at Nancun to farm."}
+  - {year: 1553, peg: llama, confidence: high, source: "zh WP Gaoqiao Town (Jiajing 32)",
+     event: "After wokou take the Qingpu fort town, merchants move south and Gaoqiao starts to grow",
+     place: "Gaoqiao",
+     scene: "Merchants load their goods on a LLAMA and flee the burnt Qingpu fort town south to Gaoqiao."}
+  - {year: 1582, peg: oven, confidence: high, source: "zh WP Gaoqiao Town (Wanli 10)",
+     event: "Sea surges wash away the neglected Baoshan beacon hill at Gaoqiao",
+     place: "Baoshan hill, Gaoqiao shore",
+     scene: "A sea surge bursts out of a giant OVEN door and washes the neglected Baoshan beacon hill away."}
+  - {year: 1619, peg: tuba, confidence: high, source: "zh WP Baoshan District (Wanli 47)",
+     event: "Part of the old Wusong garrison town falls into the sea",
+     place: "Wusong",
+     scene: "A TUBA sounds the alarm as the old Wusong garrison wall slides into the sea."}
+  - {year: 1641, peg: radio, confidence: high, source: "zh WP Xu Guangqi (Chongzhen 14)",
+     event: "Xu Guangqi is buried at Gaochang township, now Guangqi Park in Xujiahui",
+     place: "Xujiahui",
+     scene: "A RADIO plays a slow march as Xu Guangqi's coffin goes into the earth at Xujiahui."}
+  - {year: 1696, peg: peach, confidence: unverified,
+     event: "A typhoon storm surge drowns many people on the Shanghai and Chongming coast",
+     place: "Chongming coast",
+     scene: "The typhoon hurls a giant PEACH of seawater over the Chongming dikes, and it drowns the coastal villages."}
+  - {year: 1732, peg: moon, confidence: medium, source: "thepaper.cn Pudong seawall (Yongzheng 10, 7/16-17)",
+     event: "A typhoon breaks the Pudong seawall in many places",
+     place: "Pudong seawall",
+     scene: "A MOON-pulled storm tide punches holes along the Pudong seawall in one night."}
+  - {year: 1748, peg: reef, confidence: high, source: "zh WP Jingye School; Jingyi Tang (Qianlong 13)",
+     event: "Intendant Weng Zao founds the Shenjiang Academy in the old priests' house",
+     place: "Shenjiang Academy",
+     scene: "Weng Zao builds a REEF of desks in the old priests' house and opens the Shenjiang Academy."}
+  - {year: 1766, peg: judge, confidence: high, source: "zh WP Yunxiang Temple (Qianlong 31)",
+     event: "Fire breaks out at Yunxiang Temple in Nanxiang",
+     place: "Yunxiang Temple, Nanxiang",
+     scene: "A JUDGE's candle tips over in Yunxiang Temple, and Nanxiang watches the halls burn."}
+  - {year: 1770, peg: goose, confidence: disputed, source: "zh WP Jingye School (1770); Jingyi Tang page (1771)",
+     event: "The Shenjiang Academy is renamed Jingye Academy",
+     place: "Jingye Academy",
+     scene: "A GOOSE honks the new name, Jingye, over the gate of the Shenjiang Academy."}
+  - {year: 1828, peg: knife, confidence: high, source: "zh WP Jiading District (Daoguang 8)",
+     event: "Governor Tao Shu founds the Zhenchuan Academy in Jiading",
+     place: "Zhenchuan Academy, Anting",
+     scene: "Tao Shu uses a KNIFE to cut the ribbon of the new Zhenchuan Academy in Jiading."}
+  - {year: 1835, peg: mill, confidence: high, source: "zh WP Baoshan District (Daoguang 15)",
+     event: "Storms destroy more than five thousand zhang of Baoshan sea dikes",
+     place: "Baoshan coast",
+     scene: "Storm waves turn a MILL wheel backwards and grind five thousand zhang of Baoshan dikes into mud."}
+  - {year: 1842, peg: rhino, confidence: high, source: "zh WP Luxiang Garden (Daoguang 22)",
+     event: "A gunpowder store in the old Luxiang Garden explodes and flattens the site",
+     place: "Luxiang Garden",
+     scene: "A RHINO kicks a powder keg in the old Luxiang Garden, and the blast flattens it."}
+world_refs:
+  - {year: 1295, event: "Huang Daopo brings her cotton gin and treadle wheel to Wunijing", cell: east_asia_science_500_1500}
+  - {year: 1607, event: "Xu Guangqi trials sweet potato and cotton on his Shanghai land", cell: east_asia_science_1500_1800}
+  - {year: 1639, event: "Chen Zilong prints Xu Guangqi's Complete Treatise on Agriculture", cell: east_asia_science_1500_1800}
+  - {year: 1645, event: "Jiading massacres", cell: east_asia_politics_1500_1800}
+  - {year: 1826, event: "Shanghai sand boats carry tribute grain by sea to Tianjin", cell: east_asia_economy_1800_1945}
+  - {year: 1842, event: "Treaty of Nanjing opens Shanghai as a treaty port", cell: east_asia_economy_1800_1945}
+out_refs:
+  - {year: 1369, event: "Hongwu gives ranks to the city gods of all counties, Shanghai included", reason: "national decree"}
+  - {year: 1645, event: "Qing queue order reaches Jiading and Shanghai", reason: "national decree"}
+  - {year: 1661, event: "Jiangnan tax arrears case punishes Songjiang and Shanghai gentry", reason: "national court case"}
+  - {year: 1684, event: "Kangxi lifts the sea ban, and junks return to Shanghai", reason: "national edict"}
+  - {year: 1724, event: "Yongzheng bans Catholicism", reason: "national edict"}
+  - {year: 1757, event: "Western ships are limited to Canton and leave the Jiang customs", reason: "national trade rule"}
+  - {year: 1825, event: "Court orders the tribute grain sent by sea", reason: "national policy"}
+  - {year: 1840, event: "Chen Huacheng is named Jiangnan provincial commander", reason: "national army"}
