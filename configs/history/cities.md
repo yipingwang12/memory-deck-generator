@@ -825,3 +825,52 @@ Chaul, Pune, Nashik, Surat, Daman and Raigad fort are OUT. Region: south_asia.
 | `1992_present` | the riots and bombings, the renaming, the 2005 floods, 26/11, the Metro and the sea link | 45 | ~200 |
 
 Expected cards are a guide, not a target.
+
+### Kolkata (2026-11-24)
+
+Area: the Kolkata Metropolitan Area as decided: Kolkata (Sutanuti, Gobindapur, Kalikata, Kalighat, Garden
+Reach and Metiabruz, Alipore, Ballygunge, Dum Dum, Salt Lake, New Town), Howrah and Shibpur, Barrackpore and
+the Hooghly mill towns on both banks (Titagarh, Barasat, Belur, Dakshineswar, Uttarpara, Konnagar, Baranagar),
+Serampore (Danish Frederiksnagore), Chandannagar (French), Chinsurah (Dutch) with Hooghly town and Bandel
+(Portuguese Ugolim), Bansberia and Tribeni, Budge Budge, Baruipur. Saptagram/Satgaon counts when a source places
+the event there. Murshidabad, Plassey (Palashi), Chandraketugarh, Tamralipta, Kalna and Nabadwip are OUT.
+Region: south_asia.
+
+- Dates: give the CE year. Bengali (Bangabda), Hijri and Shaka dates convert per policy.md. English records
+  before 1752 may give Old Style dates — use the CE year of the event.
+- The OUT rule covers each government while the area is its seat: the Company's Presidency of Fort William
+  (from 1700: acts for the whole Bengal Presidency, council appointments); the Governor-General / Viceroy of
+  India (1773 Regulating Act to 1911: India-wide laws, the Permanent Settlement, the Sati and Widow Remarriage
+  Acts as laws, appointments, arrivals); the Lieutenant-Governor / Governor of Bengal (1854–1947: province-wide
+  acts); the state of West Bengal from 1947 (state laws, chief ministers, state elections). Acts about the city
+  are IN: the Mayor's Court, the 1772 move of the treasury to Calcutta, the Lottery Committee, the Calcutta
+  Corporation (1876/1899/1923), the Improvement Trust, the Port Commissioners, the 1911 transfer of the capital
+  to Delhi as a city event (the city stops being capital), the 2001 renaming to Kolkata, the Kolkata Municipal
+  Corporation's acts.
+- The European settlements are local governments, IN: Portuguese Hooghly, Dutch Chinsurah, Danish Serampore,
+  French Chandannagar (France's Indian capital was Pondicherry; Chandannagar's acts are city events), the Ostend
+  Company at Bankibazar. The Nawabs' government at Murshidabad is OUT, but its acts in the area (the 1756 capture
+  of Calcutta, the renaming to Alinagar) are IN.
+- National bodies founded or meeting in the city are IN as city events (the Asiatic Society 1784, the British
+  Indian Association, the Indian Association 1876, Congress sessions held in Calcutta, the Muslim League
+  sessions held there, the Brahmo Samaj, the Ramakrishna Mission at Belur).
+- Courts seated in the city: the Supreme Court of Judicature at Fort William (1774) and the Calcutta High
+  Court (1862) are IN as city institutions; their famous trials held in the city are IN (Nandakumar hanged
+  1775, the Alipore Bomb Case 1908–1909).
+- Main stage (IN as cards): the 1756 siege and the Black Hole, the 1757 recapture, the 1824 Barrackpore mutiny,
+  the 1857 Mangal Pandey shooting and hanging at Barrackpore, Wajid Ali Shah's exile at Metiabruz (1856), the
+  1905 anti-partition protests and boycott in the city (the partition itself is OUT), the 1926 riots, the 1930
+  Writers' Building attack, the 1943 famine in the city, the 1946 Direct Action Day killings, the 1946 INA
+  trial protests, Gandhi's 1947 fast at Beliaghata, the 1950 and 1964 riots, the 1959 food movement, the
+  Naxalite killings (1970–1971), the 1971 refugees at Salt Lake, the 1993 Bowbazar blast, the 2007 Nandigram
+  protests in the city (Nandigram itself is OUT), the 2024 R. G. Kar protests.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1690` | Kalighat and Bengali texts, Saptagram and Tribeni, Portuguese Hooghly and Bandel, the 1632 siege, Dutch Chinsurah, the English factories at Hooghly | 35 | ~90 |
+| `1690_1856` | Job Charnock, Fort William, the 1756–1757 wars, the Company's capital, the Bengal Renaissance, Serampore and Chandannagar | 45 | ~250 |
+| `1857_1910` | 1857 at Barrackpore, the University, the High Court, the Corporation, the jute mills, Tagore and Vivekananda, Swadeshi | 45 | ~220 |
+| `1911_1946` | the capital leaves, the revolutionaries, the Corporation under C. R. Das and Bose, the Howrah Bridge, the famine, the 1946 killings | 45 | ~200 |
+| `1947_present` | partition refugees, the Left Front, the Naxalites, the Metro, the renaming, Salt Lake and New Town, Singur and Nandigram | 45 | ~250 |
+
+Expected cards are a guide, not a target.

@@ -1,0 +1,863 @@
+# City: Kolkata x 1857 to 1910 (1857 at Barrackpore, the University, the High Court, the Corporation, the jute
+# mills, Tagore and Vivekananda, Swadeshi). DRAFT 2026-11-24.
+# Area: Kolkata Metropolitan Area (Kolkata, Howrah and Shibpur, Barrackpore and the Hooghly mill towns on both
+# banks, Baranagar, Dakshineswar, Belur, Serampore, Chandannagar, Chinsurah, Bandel, Budge Budge). Region: south_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# The OUT rule covers the Governor-General / Viceroy of India and the Lieutenant-Governor of Bengal (laws for
+# India or the province, appointments, royal visits). Acts about the city, Congress sessions held in the city,
+# trials held in the city and attacks in the city are IN. World-grid events -> world_refs (world cell year).
+# Dates: memory pass + web check (45 searches; no unauthorised book copies). Main sources: Wikipedia articles per
+# site at wikipedia.org, Banglapedia (Calcutta, Calcutta Corporation, Theatre, Hindu Mela, Indian Association),
+# Hansard, FIBIS, company and college pages.
+# A work -> first public appearance (opening, premiere, first exhibition). A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1857, peg: log, confidence: high, source: "Search: FIBIS 19th BNI; Bengal Infantry",
+     event: "The 19th Bengal Native Infantry, mutinous at Berhampore, is disbanded at Barrackpore",
+     place: "Barrackpore parade ground",
+     scene: "On the Barrackpore parade ground, a LOG rolls along the ranks of the 19th and knocks every musket from their hands."}
+  - {year: 1857, peg: log, confidence: high, source: "Search: Bengal Infantry WP; ttef (6 May)",
+     event: "The 34th Bengal Native Infantry is disbanded at Barrackpore after Mangal Pandey's shots",
+     place: "Barrackpore cantonment",
+     scene: "A burning LOG in the Barrackpore cantonment eats the colours of the 34th regiment, and its sepoys walk home disbanded."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP: Wajid Ali Shah; Scroll (Panic Sunday)",
+     event: "Panic Sunday: Canning orders Wajid Ali Shah taken from Metiabruz and held in Fort William",
+     place: "Fort William",
+     scene: "A heavy LOG is barred across the cell door in Fort William, and the exiled King of Awadh sits locked behind it."}
+  - {year: 1857, peg: log, confidence: unverified,
+     event: "European residents form the Calcutta Volunteer Guards for the city's defence",
+     place: "Town Hall",
+     scene: "Clerks drill at the Town Hall with a wooden LOG on each shoulder: the new Calcutta Volunteer Guards."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Calcutta High Court (1 July)",
+     event: "The High Court of Judicature at Fort William opens under Chief Justice Barnes Peacock",
+     place: "Old Supreme Court building",
+     scene: "A gold CHAIN of office drops over Barnes Peacock's robes, and the new Calcutta High Court opens its doors."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Howrah",
+     event: "Howrah Municipality is set up",
+     place: "Howrah",
+     scene: "A surveyor's CHAIN is stretched around Howrah town, and inside it the first Howrah Municipality takes charge."}
+  - {year: 1863, peg: gem, confidence: high, source: "Banglapedia: Calcutta Corporation; Hansard",
+     event: "Municipal Act: all the Justices of the Peace of the town become the city's municipal body",
+     place: "Town Hall",
+     scene: "Each Justice of the Peace pins a GEM to his coat in the Town Hall and so joins the new municipal body of Calcutta."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Serampore",
+     event: "The Serampore village committee becomes Serampore Municipality",
+     place: "Serampore",
+     scene: "A wobbling JELLY seal is pressed on the old Danish court house, and the Serampore village committee becomes a municipality."}
+  - {year: 1868, peg: chef, confidence: high, source: "Search: WP GPO; Victorian Web (Granville)",
+     event: "Granville's domed General Post Office is completed on the site of the old Fort William",
+     place: "Dalhousie Square",
+     scene: "A CHEF ices the great white dome onto Granville's General Post Office on Dalhousie Square like a giant cake."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Baranagar",
+     event: "North Suburban Municipality is formed for Chitpur, Cossipore, Baranagar and Dakshineswar",
+     place: "Cossipore",
+     scene: "A SHIP sails up the Hooghly past Chitpur, Cossipore and Dakshineswar, and its flag marks them as one North Suburban Municipality."}
+  - {year: 1871, peg: cat, confidence: high, source: "Search: WP J. P. Norman; Spectator Sept 1871",
+     event: "Acting Chief Justice John Paxton Norman is stabbed to death on the Town Hall steps",
+     place: "Town Hall steps",
+     scene: "A wild CAT leaps from the Town Hall pillars and claws Justice Norman's back as he climbs the steps to court."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Calcutta High Court",
+     event: "The Gothic High Court building by Walter Granville is completed",
+     place: "Esplanade Row West",
+     scene: "A giant COIN is set as the keystone of the last Gothic arch, and Granville's High Court building stands finished."}
+  - {year: 1876, peg: cage, confidence: high, source: "Banglapedia: Calcutta Corporation; WP KMC",
+     event: "Municipal Consolidation Act: ratepayers elect two-thirds of seventy-two commissioners",
+     place: "Town Hall",
+     scene: "Ratepayers open a CAGE at the Town Hall, and forty-eight elected commissioners fly out to sit on the new Corporation."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP: Writers' Building (1877-82)",
+     event: "Writers' Buildings becomes the Bengal Secretariat and gets three new blocks",
+     place: "Writers' Buildings",
+     scene: "Ashley Eden slices a long CAKE of red brick into three new blocks behind Writers' Buildings for his Secretariat clerks."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Chandannagar (1 August)",
+     event: "French Chandannagar gets a municipality; Charles Dumaine is the first mayor",
+     place: "Chandannagar Strand",
+     scene: "Charles Dumaine lifts a French VASE of tricolour flowers on the Chandannagar Strand and becomes the town's first mayor."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Baranagar",
+     event: "North Suburban Municipality splits into Cossipore-Chitpur and Baranagar municipalities",
+     place: "Baranagar",
+     scene: "A giant FOOT stamps down on the Baranagar road and splits North Suburban Municipality into two towns."}
+  - {year: 1883, peg: foam, confidence: medium, source: "WP: Howrah (1882-83)",
+     event: "Bally Municipality is formed, separate from Howrah",
+     place: "Bally",
+     scene: "A wave of river FOAM washes over the Bally ghat and cuts it loose from Howrah as a municipality of its own."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Surendranath Banerjee; Hansard 1883",
+     event: "High Court jails Surendranath Banerjea for contempt; crowds protest in the streets",
+     place: "High Court",
+     scene: "Students outside the High Court froth with FOAM of anger as Surendranath Banerjea is led to jail for contempt."}
+  - {year: 1883, peg: foam, confidence: high, source: "Banglapedia: Indian Association",
+     event: "The Indian Association holds the first Indian National Conference in Calcutta",
+     place: "Albert Hall, College Street",
+     scene: "Delegates from all over India drink from one FOAM-topped jug in Albert Hall, the first National Conference."}
+  - {year: 1883, peg: foam, confidence: unverified,
+     event: "Europeans meet at the Town Hall to protest against the Ilbert Bill",
+     place: "Town Hall",
+     scene: "Angry planters spray FOAM from soda bottles across the Town Hall floor in their meeting against the Ilbert Bill."}
+  - {year: 1885, peg: waffle, confidence: high, source: "Banglapedia: Indian Association",
+     event: "Second Indian National Conference meets in Calcutta",
+     place: "Calcutta",
+     scene: "A second WAFFLE iron is pressed shut on the Conference table, and the National Conference meets again in Calcutta."}
+  - {year: 1886, peg: fish, confidence: high, source: "Banglapedia: Indian Association (Dec)",
+     event: "The second Congress session meets in Calcutta; the Indian Association joins the Congress",
+     place: "Town Hall",
+     scene: "Two FISH swim into one bowl in the Town Hall: the Indian Association merges into the Congress at its Calcutta session."}
+  - {year: 1888, peg: fife, confidence: high, source: "Banglapedia: Calcutta Corporation",
+     event: "Municipal Act adds the suburbs south-east of Circular Road and raises the commissioners to seventy-five",
+     place: "Circular Road",
+     scene: "A FIFE player marches across Circular Road, and the suburbs of Entally and Ballygunge follow him into the city."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Congress holds its sixth session in Calcutta under Pherozeshah Mehta",
+     place: "Calcutta",
+     scene: "A swarm of BEES hums around Pherozeshah Mehta's chair as the sixth Congress session meets in Calcutta."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP: KMC; Banglapedia Calcutta (Dec)",
+     event: "Corporation adopts its first coat of arms with two adjutant birds",
+     place: "Corporation office",
+     scene: "Two adjutant birds each hold a PEACH in their beaks on the new Corporation coat of arms."}
+  - {year: 1897, peg: pig, confidence: high, source: "Hansard 5 and 9 July: Chitpur disturbances",
+     event: "Chitpur riot: crowds fight police over land said to hold a mosque",
+     place: "Tallah, Chitpur",
+     scene: "A PIG is driven onto the disputed Tallah land, and two thousand men riot against the police at Chitpur."}
+  - {year: 1898, peg: beehive, confidence: high, source: "India Forum; Hansard 5 May 1898",
+     event: "Plague panic: crowds and a carters' strike stop plague segregation in the city",
+     place: "Jaun Bazaar, Entally",
+     scene: "Carters tip a BEEHIVE in Jaun Bazaar, and plague officers flee the angry swarm of the city's poor."}
+  - {year: 1899, peg: pipe, confidence: high, source: "Banglapedia: Calcutta Corporation",
+     event: "Mackenzie Act cuts the commissioners to fifty; twenty-eight elected commissioners resign",
+     place: "Town Hall",
+     scene: "Twenty-eight commissioners snap their PIPE in two and walk out of the Corporation against the Mackenzie Act."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Bhatpara",
+     event: "Bhatpara becomes a municipality, separate from Naihati",
+     place: "Bhatpara",
+     scene: "A jute-mill PIPE puffs a new municipal flag over Bhatpara, cut away from Naihati."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Baranagar (1 Aug)",
+     event: "Kamarhati Municipality is formed from part of Baranagar",
+     place: "Kamarhati",
+     scene: "A long water PIPE laid along the Kamarhati road becomes the boundary of the new Kamarhati Municipality."}
+  - {year: 1901, peg: soda, confidence: unverified,
+     event: "Congress meets in Calcutta; Gandhi attends and speaks on South Africa",
+     place: "Calcutta",
+     scene: "A young Gandhi shakes a SODA bottle to speak on South Africa at the Calcutta Congress session."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Anushilan Samiti (24 Mar)",
+     event: "Anushilan Samiti, a secret physical-culture society, is founded in Calcutta",
+     place: "Calcutta",
+     scene: "Young men swing clubs under the rising SUN in a Calcutta courtyard and swear the Anushilan Samiti oath."}
+  - {year: 1904, peg: sewer, confidence: high, source: "Banglapedia: Swadeshi Movement (March)",
+     event: "A great Town Hall conference protests against the plan to partition Bengal",
+     place: "Town Hall",
+     scene: "Speakers at the Town Hall pour Curzon's partition plan down a SEWER grate to cheers."}
+  - {year: 1905, peg: seal, confidence: high, source: "Search: Federation Hall; indianculture.gov.in",
+     event: "Ananda Mohan Bose lays the Federation Hall foundation stone on partition day",
+     place: "Upper Circular Road",
+     scene: "A SEAL flops onto the plot on Upper Circular Road and presses Bengal's unity into the Federation Hall foundation stone."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "WP: Anushilan Samiti (March)",
+     event: "The revolutionary weekly Jugantar starts in Calcutta",
+     place: "Calcutta",
+     scene: "Barin Ghosh wraps each copy of the new Jugantar weekly around a roll of SUSHI and hands it out in Calcutta lanes."}
+  - {year: 1906, peg: sushi, confidence: unverified,
+     event: "Bipin Chandra Pal starts the daily Bande Mataram; Aurobindo joins it",
+     place: "Calcutta",
+     scene: "Aurobindo prints the first Bande Mataram daily on a SUSHI mat in a Calcutta press room."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Alipore bomb case (29 Aug)",
+     event: "Kanailal Dutta and Satyendranath Bose shoot the approver Naren Goswami in Alipore Jail",
+     place: "Alipore Jail",
+     scene: "In the Alipore Jail hospital, Kanailal fires from behind a SOFA and kills the approver Naren Goswami."}
+  - {year: 1908, peg: sofa, confidence: unverified,
+     event: "Kanailal Dutta is hanged in Alipore Jail",
+     place: "Alipore Jail",
+     scene: "Kanailal Dutta sleeps soundly on a prison SOFA on his last night, then goes to the Alipore gallows smiling."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Alipore bomb case (November)",
+     event: "Police officer Nandalal Banerjee, who caught Prafulla Chaki, is shot dead in Calcutta",
+     place: "Serpentine Lane",
+     scene: "A SOFA is dragged across Serpentine Lane, and gunmen behind it shoot down Nandalal Banerjee."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Alipore bomb case (November)",
+     event: "Jitendranath Roy tries to shoot Lieutenant-Governor Andrew Fraser at Overtoun Hall",
+     place: "Overtoun Hall, YMCA",
+     scene: "Andrew Fraser ducks behind a SOFA in Overtoun Hall as the student's pistol misfires."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Alipore bomb case; Anushilan Samiti",
+     event: "Public prosecutor Ashutosh Biswas is shot dead at the Alipore court",
+     place: "Alipore court",
+     scene: "Ashutosh Biswas slips on a bar of SOAP on the Alipore court steps as Charu Bose's bullet hits him."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Alipore bomb case (6 May)",
+     event: "Alipore Bomb Case verdict: Barin Ghosh condemned, Aurobindo acquitted",
+     place: "Alipore Sessions Court",
+     scene: "Judge Beachcroft washes Aurobindo's name clean with SOAP and acquits him, but sentences Barin Ghosh to death."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Alipore bomb case; Anushilan Samiti",
+     event: "Deputy Superintendent Shamsul Alam is shot dead on the High Court steps",
+     place: "Calcutta High Court",
+     scene: "Two DICE roll down the High Court steps beside Shamsul Alam, shot dead by Biren Dutta Gupta."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP: Anushilan Samiti (no date)",
+     event: "Howrah-Sibpur Conspiracy Case: Jatin Mukherjee and others are arrested",
+     place: "Howrah, Shibpur",
+     scene: "Police shake a cup of DICE in Shibpur and pull out Jatin Mukherjee's name for the Howrah conspiracy trial."}
+  # science
+  - {year: 1857, peg: log, confidence: high, source: "Search: Oriental Gas Company Act (Act V)",
+     event: "Oriental Gas Company Act lets the company open Calcutta streets for gas pipes",
+     place: "Narkeldanga gasworks",
+     scene: "Workmen lever up the paving with a LOG to lay the Oriental Gas Company's first pipes under the Calcutta streets."}
+  - {year: 1859, peg: elbow, confidence: high, source: "Search: Living Waters Museum drainage",
+     event: "William Clark's underground drainage scheme for Calcutta is approved and work begins",
+     place: "Chitpur Road",
+     scene: "William Clark bends a brick sewer like an ELBOW under Chitpur Road and starts Calcutta's underground drains."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Sealdah railway station (2 Dec)",
+     event: "Sealdah station opens as the Calcutta terminus of the Eastern Bengal Railway to Kushtia",
+     place: "Sealdah",
+     scene: "A CHAIN of tin-roofed carriages couples up at the new Sealdah station and steams off toward Kushtia."}
+  - {year: 1862, peg: chain, confidence: medium, source: "WP: Sealdah railway station (May)",
+     event: "The railway from Calcutta reaches Port Canning",
+     place: "Sealdah to Canning",
+     scene: "A CHAIN of rails runs south from Calcutta through Sonarpur and pulls the first train into Port Canning."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: NRS Medical College",
+     event: "The old Sealdah market building becomes the Sealdah Municipal Hospital",
+     place: "Sealdah",
+     scene: "A CHERRY seller is swept out of the old Sealdah market hall, and hospital beds fill his stall."}
+  - {year: 1865, peg: jelly, confidence: high, source: "Search: puronokolkata; archiseek (4 Mar)",
+     event: "Foundation stone of the Dalhousie Institute, a hall for science and letters",
+     place: "Dalhousie Square",
+     scene: "Cecil Beadon lowers a stone into wet JELLY mortar on Dalhousie Square: the Dalhousie Institute begins."}
+  - {year: 1868, peg: chef, confidence: medium, source: "Banglapedia: Calcutta Corporation",
+     event: "Palta waterworks start the first filtered water supply in Asia",
+     place: "Palta",
+     scene: "A CHEF at Palta strains the Hooghly through a cloth, and filtered water flows to Calcutta's taps."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Sealdah railway station",
+     event: "Walter Granville's station building at Sealdah is completed",
+     place: "Sealdah",
+     scene: "A SHIP's figurehead is set over the arch of Granville's new Sealdah station building."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: NRS Medical College (1 Dec)",
+     event: "Sealdah Medical School opens (later Campbell, now NRS Medical College)",
+     place: "Sealdah",
+     scene: "Students at the new Sealdah Medical School COMB through their first anatomy book beside the hospital beds."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Alipore Zoological Gardens (6 May)",
+     event: "Alipore Zoological Garden opens to the public",
+     place: "Alipore",
+     scene: "Keepers unlock the first CAGE at Alipore, and the Calcutta public streams in to see the tigers."}
+  - {year: 1877, peg: cake, confidence: unverified,
+     event: "Alipore meteorological observatory starts work",
+     place: "Alipore",
+     scene: "A weather vane spins on top of a CAKE-shaped tower at Alipore, the new meteorological observatory."}
+  - {year: 1878, peg: cave, confidence: disputed, source: "Banglapedia: 1878; ICE: sewers 1875",
+     event: "Calcutta's underground drainage system is completed",
+     place: "Palmer's Bridge",
+     scene: "Sewage rushes through a brick CAVE under the city to Palmer's Bridge: Calcutta's underground drains are complete."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Calcutta Tramways Co (1 Nov)",
+     event: "Ripon opens the horse tram again from Sealdah to Armenian Ghat",
+     place: "Bowbazar",
+     scene: "Lord Ripon breaks a VASE of flowers on the horse tram at Sealdah, and it rolls again to Armenian Ghat."}
+  - {year: 1881, peg: foot, confidence: medium, source: "Search: Eden Hospital (opened 1881, patients 1882)",
+     event: "Eden Hospital opens at the Medical College",
+     place: "College Street",
+     scene: "A nurse sets a newborn's tiny FOOT in ink at the new Eden Hospital of the Medical College."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Calcutta Tramways Company",
+     event: "Steam locomotives are tried on the Calcutta tram lines",
+     place: "Kidderpore line",
+     scene: "A tram with an OVEN for a boiler puffs steam down the Kidderpore line in a trial run."}
+  - {year: 1882, peg: oven, confidence: unverified,
+     event: "Bengal Central Railway opens from Dum Dum toward Bongaon",
+     place: "Dum Dum",
+     scene: "Station staff at Dum Dum bake the first ticket in an OVEN as the Bengal Central train leaves for Bongaon."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: R. G. Kar Medical College",
+     event: "R. G. Kar founds the Calcutta School of Medicine, the first private medical school",
+     place: "Baithakkhana",
+     scene: "Dr R. G. Kar cuts open a FISH in a rented room to teach the first class of his Calcutta School of Medicine."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Jubilee Bridge (16 Feb)",
+     event: "Jubilee Bridge opens across the Hooghly between Naihati and Bandel",
+     place: "Naihati to Bandel",
+     scene: "A FOX runs across the steel spans of the new Jubilee Bridge from Naihati to Bandel ahead of the first train."}
+  - {year: 1887, peg: fox, confidence: high, source: "Search: WP Ezra Hospital",
+     event: "Ezra Hospital opens, built by the Ezra family for Jewish patients",
+     place: "Medical College campus",
+     scene: "Mozelle Ezra feeds a sick FOX in the first bed of the new Ezra Hospital at the Medical College."}
+  - {year: 1889, peg: fob, confidence: low, source: "WP: Mahatma Gandhi Road (1889)",
+     event: "Harrison Road is the first street in Calcutta lit by electric lamps",
+     place: "Harrison Road",
+     scene: "A gold watch FOB flashes on Harrison Road as the first electric street lamps switch on."}
+  - {year: 1891, peg: boot, confidence: medium, source: "Search: Medical College history list",
+     event: "Shama Charan Laha Eye Hospital opens at the Medical College",
+     place: "College Street",
+     scene: "An eye doctor peers into a BOOT for the light at the new Shama Charan Laha Eye Hospital."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: CESC Limited",
+     event: "Calcutta Electric Lighting Act sets the first electric supply licence for the city",
+     place: "Calcutta",
+     scene: "An electric BELL rings across Calcutta's maps as the Electric Lighting Act licenses the first supply area."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP: Howrah",
+     event: "Howrah Municipality starts a filtered water supply",
+     place: "Howrah",
+     scene: "Howrah children wash a PEACH under the first filtered-water tap in their town."}
+  - {year: 1896, peg: peach, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "The first motor cars arrive in Calcutta",
+     place: "Chowringhee",
+     scene: "A motor car shaped like a PEACH chugs down Chowringhee, the first in Calcutta."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: CESC; Banglapedia (17 Apr)",
+     event: "CESC's first power station at Emambagh Lane starts the city's electric supply",
+     place: "Emambagh Lane",
+     scene: "A tall PIPE chimney at Emambagh Lane puffs smoke, and electric current flows into Calcutta's homes."}
+  - {year: 1900, peg: tuba, confidence: medium, source: "Banglapedia: Calcutta (around this year)",
+     event: "Chinese traders bring hand-pulled rickshaws to Calcutta (approximate)",
+     place: "Bowbazar",
+     scene: "A Chinese trader pulls a rickshaw through Bowbazar with a brass TUBA tooting on the seat."}
+  - {year: 1902, peg: sun, confidence: medium, source: "WP: R. G. Kar Medical College",
+     event: "R. G. Kar's medical school moves to its own school and hospital at Belgachia",
+     place: "Belgachia",
+     scene: "The SUN rises over Belgachia, and R. G. Kar's students carry their beds into their own hospital."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Howrah railway station (1 Dec)",
+     event: "The new red-brick Howrah station building by Halsey Ricardo opens",
+     place: "Howrah",
+     scene: "A SEAL balances the clock on the tower of the new red-brick Howrah station as the first train pulls in."}
+  # religion
+  - {year: 1863, peg: gem, confidence: medium, source: "Search: Metiabruz imambaras",
+     event: "Wajid Ali Shah builds the Bait-un-Nijat imambara at Metiabruz",
+     place: "Metiabruz",
+     scene: "Wajid Ali Shah sets a green GEM above the door of the Bait-un-Nijat imambara at Metiabruz for Muharram."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Search: Sibtainabad Imambara (several)",
+     event: "Sibtainabad Imambara, a small copy of Lucknow's Bara Imambara, is built at Metiabruz",
+     place: "Metiabruz",
+     scene: "A CHERRY red dome rises at Metiabruz: Wajid Ali Shah's Sibtainabad Imambara copies Lucknow's great one."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: St. James' Church (25 July)",
+     event: "Bishop Cotton consecrates St James' Church",
+     place: "Lower Circular Road",
+     scene: "Bishop Cotton sprinkles CHERRY blossom on the altar and consecrates St James' Church on Lower Circular Road."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "WP: Ramakrishna",
+     event: "Totapuri initiates Ramakrishna into sannyasa at Dakshineswar",
+     place: "Dakshineswar",
+     scene: "Totapuri melts a lump of JELLY in the Dakshineswar sacred fire and initiates Ramakrishna as a monk."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Search: WP Calcutta Jain Temple",
+     event: "Rai Badridas builds the Parasnath Jain temple in Maniktala",
+     place: "Badridas Temple Street",
+     scene: "A JOCKEY in jewelled silks rides around Badridas's new mirror-glass Jain temple in Maniktala."}
+  - {year: 1869, peg: ship, confidence: medium, source: "Search: Theistic directory (Feb 1869)",
+     event: "Keshub's Brahmo Samaj of India consecrates its Bharatvarshiya Brahma Mandir",
+     place: "Mechua Bazar",
+     scene: "A SHIP's bell rings in the new Bharatvarshiya Brahma Mandir as Keshub's followers fill it for the first service."}
+  - {year: 1876, peg: cage, confidence: disputed, source: "WP Keshub: 1876; memory: March 1875",
+     event: "Keshub Chandra Sen first meets Ramakrishna at a garden house in Belgharia",
+     place: "Belgharia",
+     scene: "Ramakrishna opens a bird CAGE in a Belgharia garden, and Keshub Chandra Sen meets him for the first time."}
+  - {year: 1881, peg: foot, confidence: unverified,
+     event: "Narendranath Datta (later Vivekananda) first meets Ramakrishna",
+     place: "Simla, north Calcutta",
+     scene: "Ramakrishna puts his FOOT on young Narendranath's chest, and the boy feels the world dissolve."}
+  - {year: 1881, peg: foot, confidence: unverified,
+     event: "Sadharan Brahmo Samaj opens its prayer hall on Cornwallis Street",
+     place: "Cornwallis Street",
+     scene: "The Sadharan Brahmos set the FOOT of their new prayer hall on Cornwallis Street and open its doors."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Keshub Chandra Sen (8 Jan)",
+     event: "Keshub Chandra Sen dies at his house in Calcutta",
+     place: "Lily Cottage",
+     scene: "A FAIRY carries Keshub Chandra Sen's soul out of Lily Cottage as two thousand mourners follow."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Chandannagar (27 Jan)",
+     event: "The Sacred Heart Church of Chandannagar is opened by Archbishop Goethals",
+     place: "Chandannagar",
+     scene: "A FAIRY rings the bells of the new Sacred Heart Church in Chandannagar as Archbishop Goethals blesses it."}
+  - {year: 1892, peg: piano, confidence: unverified,
+     event: "Ramakrishna's monks move their math from Baranagar to Alambazar",
+     place: "Alambazar",
+     scene: "The young monks carry a PIANO-sized trunk of relics from Baranagar to the new math at Alambazar."}
+  - {year: 1897, peg: pig, confidence: high, source: "Search: vivekananda.net (28 Feb)",
+     event: "Calcutta gives Vivekananda a public reception after his return from the West",
+     place: "Sobhabazar",
+     scene: "Five thousand people cheer as Vivekananda arrives at Sobhabazar on a carriage pulled not by horses but by a PIG."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Search: Nivedita (25 Mar)",
+     event: "Vivekananda initiates Margaret Noble as Sister Nivedita",
+     place: "Nilambar Mukherjee garden, Belur",
+     scene: "Vivekananda hands Margaret Noble a BEEHIVE and names her Sister Nivedita, the dedicated one."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: Belur Math (9 Dec)",
+     event: "Vivekananda places Ramakrishna's relics on the new Belur Math land",
+     place: "Belur",
+     scene: "Vivekananda carries Ramakrishna's relic urn on his shoulder to Belur and sets it down like a golden BEEHIVE."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Udbodhan (January)",
+     event: "Vivekananda starts the Bengali monthly Udbodhan",
+     place: "Bagbazar",
+     scene: "Trigunatitananda prints the first Udbodhan monthly with ink blown through a PIPE in a Bagbazar press."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Belur Math",
+     event: "Vivekananda holds the first Kumari Puja at Belur Math",
+     place: "Belur Math",
+     scene: "Vivekananda offers a girl a glass of SODA and flowers, and worships her as the goddess at the first Belur Kumari Puja."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Udbodhan",
+     event: "Saradananda starts building the Udbodhan house for Sarada Devi",
+     place: "Bagbazar",
+     scene: "Saradananda slides bricks down a SKI ramp to build the Udbodhan house for Sarada Devi in Bagbazar."}
+  - {year: 1909, peg: soap, confidence: unverified,
+     event: "Sarada Devi moves into the Udbodhan house in Bagbazar",
+     place: "Bagbazar",
+     scene: "Sarada Devi washes the threshold of the Udbodhan house with SOAP and moves into the upper floor."}
+  # arts
+  - {year: 1859, peg: elbow, confidence: high, source: "Banglapedia: Theatre",
+     event: "Belgachia Theatre premieres Madhusudan Dutt's Sharmishtha",
+     place: "Belgachia Villa",
+     scene: "Madhusudan Dutt nudges the curtain open with his ELBOW, and Sharmishtha premieres at the Belgachia Theatre."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Banglapedia: Calcutta",
+     event: "The Calcutta School of Art becomes the Government School of Art",
+     place: "Bowbazar",
+     scene: "The government paints a CHERRY seal on the Calcutta School of Art and takes it over."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Madhusudan Dutt's Padmavati has its first stage performance",
+     place: "Calcutta",
+     scene: "Three goddesses fight over a golden pot of JELLY in the first stage performance of Padmavati."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Madhusudan Dutt's tragedy Krishna Kumari has its first stage performance",
+     place: "Shobhabazar",
+     scene: "A JOCKEY gallops on stage with poison for Princess Krishna Kumari at the play's first Calcutta performance."}
+  - {year: 1873, peg: comb, confidence: high, source: "Banglapedia: Theatre; Calcutta (16 Aug)",
+     event: "Bengal Theatre opens with Sharmishtha and the first actresses on the Bengali stage",
+     place: "Beadon Street",
+     scene: "Actress Golap combs her hair with a COMB on stage at Beadon Street, the first woman to act in a Bengali theatre."}
+  - {year: 1873, peg: comb, confidence: high, source: "Banglapedia: Calcutta (31 Dec)",
+     event: "The Great National Theatre opens",
+     place: "Beadon Street",
+     scene: "A huge COMB rakes up the curtain of the new Great National Theatre on New Year's Eve."}
+  - {year: 1874, peg: car, confidence: high, source: "Search: BL record; Victorian Web (Foley)",
+     event: "Foley's bronze equestrian statue of Outram is unveiled on the Maidan",
+     place: "Chowringhee and Park Street",
+     scene: "Outram's bronze horse steps off a CAR made of rebel cannon metal onto its plinth at Chowringhee and Park Street."}
+  - {year: 1876, peg: cage, confidence: high, source: "Banglapedia: Theatre (19 Feb)",
+     event: "Great National Theatre stages the farce Gajadananda; police stop the show",
+     place: "Great National Theatre",
+     scene: "Police lock the actors of Gajadananda in a CAGE after the farce mocks the Prince of Wales's host."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP: Girish Chandra Ghosh",
+     event: "Girish Chandra Ghosh's first play Agamani is staged at the Great National Theatre",
+     place: "Great National Theatre",
+     scene: "Girish Ghosh carries a festival CAKE onto the Great National stage for his first play, Agamani."}
+  - {year: 1878, peg: cave, confidence: high, source: "Search: Indian Museum (1 Apr)",
+     event: "The Indian Museum opens to the public in its new building",
+     place: "Chowringhee",
+     scene: "The public walks into the Indian Museum as into a treasure CAVE of birds and Bharhut stones on Chowringhee."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Writers' Building",
+     event: "Woodington's statues are set up along the terrace of Writers' Buildings",
+     place: "Writers' Buildings",
+     scene: "Woodington washes sea FOAM off his stone figures and lifts them onto the Writers' Buildings terrace."}
+  - {year: 1887, peg: fox, confidence: medium, source: "Banglapedia: Theatre; Calcutta",
+     event: "The Emerald Theatre lights its stage with electric light from a dynamo",
+     place: "Beadon Street",
+     scene: "A FOX runs a treadmill dynamo backstage, and electric light floods the Emerald Theatre stage."}
+  - {year: 1889, peg: fob, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "The Calcutta Art Society is founded",
+     place: "Calcutta",
+     scene: "Painters swing a watch FOB like a pendulum to time their sketches at the first Calcutta Art Society meeting."}
+  - {year: 1890, peg: bees, confidence: high, source: "Banglapedia: Calcutta (11 Jan)",
+     event: "The Bengal Theatre is renamed the Royal Bengal Theatre",
+     place: "Beadon Street",
+     scene: "BEES swarm into the shape of a crown above the Beadon Street door: the Bengal Theatre becomes the Royal Bengal Theatre."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: National Library of India",
+     event: "The Imperial Library is formed from the Calcutta secretariat libraries",
+     place: "Calcutta",
+     scene: "Clerks pack the secretariat books into one giant BOOT and march it off as the new Imperial Library."}
+  - {year: 1892, peg: piano, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "The Indian Association for the Promotion of Fine Arts and a National Gallery is founded",
+     place: "Calcutta",
+     scene: "A grand PIANO carries the first paintings into the rooms of the new National Gallery society."}
+  - {year: 1897, peg: pig, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Amarendranath Dutta founds the Classic Theatre with coloured stage lights",
+     place: "Beadon Street",
+     scene: "A PIG glows red, green and blue under the coloured lights of Amarendranath Dutta's new Classic Theatre."}
+  - {year: 1901, peg: soda, confidence: high, source: "Banglapedia: Calcutta (20 Apr)",
+     event: "The Royal Bengal Theatre closes",
+     place: "Beadon Street",
+     scene: "The last audience leaves a SODA bottle on the stage as the Royal Bengal Theatre shuts its doors."}
+  - {year: 1902, peg: sun, confidence: disputed, source: "Search: BL record 1902; WP Black Hole 1901",
+     event: "Curzon's marble copy of the Holwell monument to the Black Hole dead goes up",
+     place: "Dalhousie Square",
+     scene: "Curzon polishes the marble Holwell monument until the SUN blazes on it at Dalhousie Square."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Victoria Memorial",
+     event: "Curzon unveils Frampton's bronze statue of Queen Victoria",
+     place: "Maidan",
+     scene: "The SUN flashes on Frampton's bronze Queen Victoria as Curzon pulls off the cover on the Maidan."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: National Library of India (30 Jan)",
+     event: "The Imperial Library opens to readers in Metcalfe Hall",
+     place: "Metcalfe Hall",
+     scene: "A SUMO wrestler sits reading in Metcalfe Hall on the first day the Imperial Library opens."}
+  - {year: 1905, peg: seal, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Dwijendralal Roy's Rana Pratap Singha has its premiere",
+     place: "Calcutta",
+     scene: "Rana Pratap rides onto the stage on a SEAL instead of a horse in Dwijendralal Roy's new play."}
+  - {year: 1905, peg: seal, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "Vangiya Kala Sangsad, an arts society, is founded",
+     place: "Calcutta",
+     scene: "Young artists dip a SEAL's whiskers in paint to sign the first paper of the Vangiya Kala Sangsad."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Victoria Memorial (4 Jan)",
+     event: "The Prince of Wales lays the foundation stone of the Victoria Memorial",
+     place: "Maidan",
+     scene: "Prince George sets the Victoria Memorial foundation stone on a plate of SUSHI on the Maidan."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Dwijendralal Roy's Nurjahan has its premiere",
+     place: "Calcutta",
+     scene: "Empress Nurjahan lies on a Mughal SOFA in the first performance of Dwijendralal Roy's Nurjahan."}
+  - {year: 1909, peg: soap, confidence: medium, source: "Banglapedia: Theatre",
+     event: "Dwijendralal Roy's Shahjahan has its premiere",
+     place: "Calcutta",
+     scene: "Shah Jahan, prisoner of his son, blows SOAP bubbles toward the Taj in the first performance of Roy's Shahjahan."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Victoria Memorial",
+     event: "Work starts on the superstructure of the Victoria Memorial",
+     place: "Maidan",
+     scene: "Masons stack white marble blocks like DICE on the Maidan as the Victoria Memorial walls start to rise."}
+  # economy
+  - {year: 1863, peg: gem, confidence: high, source: "Search: Andrew Yule company site",
+     event: "Andrew Yule arrives and founds the managing agency Andrew Yule and Co.",
+     place: "Clive Street",
+     scene: "Andrew Yule hangs a GEM over his Clive Street door and opens his managing agency."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: National Bank of India",
+     event: "Calcutta City Banking Corporation is formed; it soon becomes the National Bank of India",
+     place: "Calcutta",
+     scene: "A GEM rolls across the counter of the Calcutta City Banking Corporation and turns it into the National Bank of India."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Search: FIBIS Bird & Company",
+     event: "Captain Sam Bird founds Bird and Co., labour contractors and managing agents",
+     place: "Calcutta",
+     scene: "Captain Sam Bird pays his first labour gang with a CHERRY each and so founds Bird and Company."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Serampore",
+     event: "The second jute mill of the Hooghly opens at Serampore",
+     place: "Serampore",
+     scene: "A JUDGE in a wig of raw jute opens the gates of the new Serampore jute mill."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Kolkata Port; Banglapedia",
+     event: "A River Trust takes over the port of Calcutta but soon fails",
+     place: "Strand",
+     scene: "A JUDGE hands the port keys to the new River Trust on the Strand, then takes them back when it fails."}
+  - {year: 1867, peg: jockey, confidence: disputed, source: "FIBIS: 1866; company: 1867",
+     event: "George Balmer and Alexander Lawrie found Balmer Lawrie and Co.",
+     place: "Calcutta",
+     scene: "A Scots JOCKEY carries Balmer and Lawrie on one horse into Calcutta, and they open their trading house."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: Amrita Bazar Patrika",
+     event: "Amrita Bazar Patrika moves to Calcutta and becomes an English-Bengali weekly",
+     place: "Bagbazar",
+     scene: "A CAT carries the Amrita Bazar Patrika in its mouth from Jessore to a new office in Calcutta."}
+  - {year: 1871, peg: cat, confidence: medium, source: "WP: Kolkata Port (1871-72)",
+     event: "Port Commissioners build new jetties; berths rise to over a hundred ships",
+     place: "Strand Road",
+     scene: "A CAT walks the length of six new jetties on Strand Road, past more than a hundred berthed ships."}
+  - {year: 1873, peg: comb, confidence: high, source: "Search: FIBIS Fort Gloster",
+     event: "Fort Gloster jute mill is set up at Bauria",
+     place: "Bauria",
+     scene: "Mill hands at Bauria COMB the first raw jute in the new Fort Gloster mill."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: New Market (1 Jan)",
+     event: "The New Market, designed by R. R. Bayne, opens on Lindsay Street",
+     place: "Lindsay Street",
+     scene: "A CAR of goods rolls through the Gothic arches of the New Market on Lindsay Street on its opening day."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Banglapedia: Statesman",
+     event: "Robert Knight starts The Statesman as a one-anna daily",
+     place: "Chowringhee",
+     scene: "An EAGLE drops the first one-anna copy of The Statesman on every Calcutta doorstep."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Surendranath Banerjee",
+     event: "Surendranath Banerjea takes over The Bengalee newspaper",
+     place: "Calcutta",
+     scene: "A COWBOY ropes The Bengalee newspaper and hands the reins to Surendranath Banerjea as its new editor."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Titagarh; Bhatpara",
+     event: "Titagarh Paper Mills are set up at Titagarh and Kankinara",
+     place: "Titagarh",
+     scene: "Wet pulp bakes into sheets in a giant OVEN at the new Titagarh Paper Mills."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Bhatpara",
+     event: "Kankinara jute mill starts production",
+     place: "Kankinara",
+     scene: "The Hooghly churns into FOAM under the waterwheel as the Kankinara jute mill starts its looms."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Search: WP Kidderpore",
+     event: "Kidderpore is chosen as the site for the port's wet docks",
+     place: "Kidderpore",
+     scene: "A FAIRY taps her wand on the Kidderpore mud flats, and engineers mark out the wet docks there."}
+  - {year: 1886, peg: fish, confidence: high, source: "Search: FIBIS Shaw Wallace",
+     event: "Shaw Wallace and Co. is formed in Calcutta",
+     place: "Calcutta",
+     scene: "A FISH flips from the wreck of Shaw Finlayson into a new tank labelled Shaw Wallace and Company."}
+  - {year: 1886, peg: fish, confidence: unverified,
+     event: "Calcutta Tea Traders Association is formed",
+     place: "Mission Row",
+     scene: "Brokers pour tea over a FISH-shaped scale as the Calcutta Tea Traders Association holds its first sale."}
+  - {year: 1890, peg: bees, confidence: medium, source: "Banglapedia: Jute Industry",
+     event: "Calcutta jute mills reach the same output as the mills of Dundee",
+     place: "Hooghly mill belt",
+     scene: "BEES carry jute fibre from the Hooghly mills and fill a hive as big as all of Dundee's."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Amrita Bazar Patrika",
+     event: "Amrita Bazar Patrika becomes a daily",
+     place: "Bagbazar",
+     scene: "A newsboy runs from Bagbazar every morning in one BOOT: the Amrita Bazar Patrika is now daily."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Howrah",
+     event: "Shalimar Paints opens a large paint works at Howrah",
+     place: "Howrah",
+     scene: "The SUN dries the first tins of paint on the bank at the new Shalimar works in Howrah."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Kolkata Port",
+     event: "The second Kidderpore dock is completed",
+     place: "Kidderpore",
+     scene: "The SUN shines on the water of the second Kidderpore dock as its gates open to ships."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: New Market",
+     event: "Nahoum and Sons, a Jewish confectionery, opens in the New Market",
+     place: "New Market",
+     scene: "Nahoum bakes a SUN-shaped cheese cake on his first day in the New Market."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: New Market (2 Dec)",
+     event: "The New Market is officially named Sir Stuart Hogg Market",
+     place: "Lindsay Street",
+     scene: "A SUMO wrestler hoists the sign Sir Stuart Hogg Market over the New Market gate."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Search: National Insurance (5 Dec)",
+     event: "National Insurance Company, the oldest Indian general insurer, is founded in Calcutta",
+     place: "Calcutta",
+     scene: "The Dutia brothers insure a plate of SUSHI as the first policy of the National Insurance Company."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "Banglapedia: Swadeshi Movement (Aug)",
+     event: "Banga Lakshmi Cotton Mills is launched as a Swadeshi company",
+     place: "Serampore",
+     scene: "Swadeshi workers spin cotton into SUSHI rolls of cloth at the new Banga Lakshmi mill."}
+  - {year: 1906, peg: sushi, confidence: high, source: "Banglapedia: Swadeshi Movement (Sept)",
+     event: "Calcutta customs records a fall in sales of Manchester cloth under the boycott",
+     place: "Custom House",
+     scene: "Bales of Manchester cloth lie unsold like stale SUSHI in the Calcutta Custom House."}
+  - {year: 1907, peg: ski, confidence: medium, source: "Search: insurance history (Jorasanko)",
+     event: "Hindusthan Co-operative Insurance is founded in the Tagore house at Jorasanko",
+     place: "Jorasanko",
+     scene: "A SKI leans in a room of the Tagore house at Jorasanko where Hindusthan Co-operative Insurance is born."}
+  - {year: 1907, peg: ski, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "Port Commissioners start a river ferry service",
+     place: "Hooghly ghats",
+     scene: "The Port Commissioners' first ferry tows a water SKI across the Hooghly from ghat to ghat."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: New Market",
+     event: "The northern part of the New Market is built",
+     place: "New Market",
+     scene: "Traders scrub the new northern wing of the New Market with SOAP before they open their stalls."}
+  # society
+  - {year: 1857, peg: log, confidence: high, source: "WP: Howrah",
+     event: "Santragachi Minor School opens, Howrah's first Bengali-medium school",
+     place: "Santragachi",
+     scene: "Pupils sit on a LOG under a tree at Santragachi, the first Bengali-medium school in Howrah."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: University of Calcutta",
+     event: "Bankim Chandra Chattopadhyay and Jadunath Bose are the first graduates of the University",
+     place: "Town Hall",
+     scene: "A WOLF in a gown hands degrees to Bankim Chandra and Jadunath Bose, the University's first two graduates."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Calcutta Rowing Club",
+     event: "Calcutta Rowing Club is founded",
+     place: "Chandpal Ghat",
+     scene: "A WOLF pulls the oar in the first six-oared boat of the Calcutta Rowing Club."}
+  - {year: 1858, peg: wolf, confidence: high, source: "Banglapedia: Calcutta (April)",
+     event: "First recorded football match is played in Calcutta",
+     place: "Esplanade",
+     scene: "A WOLF dribbles the ball on the Esplanade in the first recorded football match in Calcutta."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Vidyasagar College",
+     event: "Thakurdas Chakraborty founds the Metropolitan Training School (later Vidyasagar's)",
+     place: "Arpuly Lane",
+     scene: "Thakurdas Chakraborty pushes open a classroom door with his ELBOW in Arpuly Lane: the Metropolitan school begins."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: St. Xavier's College (16 Jan)",
+     event: "The Jesuits found St Xavier's College",
+     place: "Park Street",
+     scene: "Father Depelchin cuts a wheel of CHEESE into forty pieces for the first forty students of St Xavier's College."}
+  - {year: 1862, peg: chain, confidence: disputed, source: "WP Polo Club: 1862; Banglapedia: 1863",
+     event: "Calcutta Polo Club, the oldest polo club still playing, is founded",
+     place: "Maidan",
+     scene: "Captain Sherer swings a CHAIN for a polo stick on the Maidan and founds the Calcutta Polo Club."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: St. James' School (25 July)",
+     event: "Bishop Cotton founds St James' School",
+     place: "Lower Circular Road",
+     scene: "Bishop Cotton gives each new boy a CHERRY on the opening day of St James' School."}
+  - {year: 1864, peg: cherry, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "Ballygunge Cricket Club is founded",
+     place: "Ballygunge",
+     scene: "A batsman at the new Ballygunge Cricket Club hits a CHERRY for six."}
+  - {year: 1864, peg: cherry, confidence: low, source: "WP: Eden Gardens (citation needed)",
+     event: "Eden Gardens becomes a cricket ground",
+     place: "Eden Gardens",
+     scene: "Groundsmen roll a red CHERRY over the Eden Gardens lawn and mark it as a cricket ground."}
+  - {year: 1866, peg: judge, confidence: high, source: "Banglapedia: Calcutta Corporation",
+     event: "The municipality sets up public slaughter-houses",
+     place: "Tangra",
+     scene: "A JUDGE in a butcher's apron opens the first municipal slaughter-house."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Banglapedia: Hindu Mela (April)",
+     event: "The first Hindu Mela shows national crafts on the last day of the Bengali year",
+     place: "Calcutta",
+     scene: "A JOCKEY parades handloom cloth and clay toys at the first Hindu Mela fair."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Search: BSI report; Vidyasagar Univ paper",
+     event: "A cyclone strikes Calcutta and the Botanic Garden",
+     place: "Botanic Garden, Shibpur",
+     scene: "A JOCKEY is blown off his horse as the cyclone flattens trees in the Botanic Garden at Shibpur."}
+  - {year: 1871, peg: cat, confidence: unverified,
+     event: "A dengue epidemic sweeps Calcutta",
+     place: "Calcutta",
+     scene: "A CAT shivers with dengue fever on every doorstep as the epidemic sweeps Calcutta."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Vidyasagar College",
+     event: "Vidyasagar's Metropolitan Institution starts teaching college classes",
+     place: "Shankar Ghosh Lane",
+     scene: "Vidyasagar pays the first college fee with one COIN, and the Metropolitan Institution teaches college classes."}
+  - {year: 1873, peg: comb, confidence: medium, source: "WP: University of Calcutta (1872 or 1873)",
+     event: "The University's Senate House opens on College Square",
+     place: "College Square",
+     scene: "Graduates COMB their hair before the first convocation in the new Senate House on College Square."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Banglapedia: Indian Association (25 Sept)",
+     event: "Sisir Kumar Ghosh founds the India League",
+     place: "Calcutta",
+     scene: "An EAGLE carries Sisir Kumar Ghosh's banner over the first meeting of the India League."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP: Calcutta Boys' School",
+     event: "James Thoburn founds the Calcutta Boys' School",
+     place: "Surendranath Banerjee Road",
+     scene: "Reverend Thoburn cuts a birthday CAKE for the first class of the Calcutta Boys' School."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: IIEST Shibpur",
+     event: "The Civil Engineering College moves to Bishop's College at Shibpur",
+     place: "Shibpur",
+     scene: "Engineering students carry a VASE of drawing pens across the river to the old Bishop's College at Shibpur."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Calcutta Polo Club",
+     event: "The first Ezra Cup, the oldest polo trophy, is played",
+     place: "Maidan",
+     scene: "The winning polo team raises a silver VASE, the first Ezra Cup, on the Maidan."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: City College",
+     event: "Ananda Mohan Bose's City College opens for the Sadharan Brahmo Samaj",
+     place: "Amherst Street",
+     scene: "Ananda Mohan Bose sets his FOOT on the step of the new City College on Amherst Street."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Surendranath College",
+     event: "Surendranath Banerjea's school becomes Ripon College",
+     place: "Harrison Road",
+     scene: "A FAIRY taps Surendranath's school, and it becomes Ripon College."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "The Shobhabazar and Town football clubs are founded",
+     place: "Shobhabazar",
+     scene: "Shobhabazar boys kick a WAFFLE for a ball in their new football club."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Bangabasi College (27 Nov)",
+     event: "Girish Chandra Bose founds Bangabasi College",
+     place: "Bowbazar",
+     scene: "A FOX in spectacles takes the register on the first day of Bangabasi College."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Wajid Ali Shah (1 Sept)",
+     event: "Wajid Ali Shah dies at Metiabruz and is buried in his Sibtainabad Imambara",
+     place: "Metiabruz",
+     scene: "A FOX sits by the grave of Wajid Ali Shah in the Sibtainabad Imambara at Metiabruz."}
+  - {year: 1887, peg: fox, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "Lawn tennis championships start in Calcutta",
+     place: "Calcutta",
+     scene: "A FOX serves the first ball at the new Calcutta lawn tennis championships."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Mohammedan SC (22 Feb)",
+     event: "The Jubilee Club takes the name Mohammedan Sporting Club",
+     place: "Calcutta",
+     scene: "A football BOOT kicks the old Jubilee Club sign away, and Mohammedan Sporting Club is painted in its place."}
+  - {year: 1892, peg: piano, confidence: high, source: "Banglapedia: Calcutta",
+     event: "Shobhabazar beats the East Surrey Regiment in the Trades Cup, the first Indian win over a British side",
+     place: "Maidan",
+     scene: "Shobhabazar players push a PIANO into the East Surrey goal and win the Trades Cup."}
+  - {year: 1893, peg: palm, confidence: high, source: "Search: RSSSF IFA Shield finals",
+     event: "Royal Irish Rifles win the first IFA Shield",
+     place: "Maidan",
+     scene: "Royal Irish Rifles soldiers climb a PALM tree on the Maidan to hang the first IFA Shield."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Tollygunge Club",
+     event: "William Cruikshank founds the Tollygunge Club",
+     place: "Tollygunge",
+     scene: "A riding BELL rings at the Tollygunge estate as Cruikshank opens his new club."}
+  - {year: 1895, peg: bell, confidence: high, source: "Banglapedia: Calcutta",
+     event: "First Beighton Cup hockey tournament",
+     place: "Maidan",
+     scene: "A BELL rings for the first bully-off of the Beighton Cup on the Maidan."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: University of Calcutta",
+     event: "University of Calcutta starts postgraduate teaching and research",
+     place: "College Street",
+     scene: "Research students climb out of a SEWER of old exam papers and begin postgraduate work at the University."}
+  - {year: 1905, peg: seal, confidence: medium, source: "Banglapedia: Calcutta",
+     event: "Bengal Hockey Association is founded",
+     place: "Calcutta",
+     scene: "A SEAL balances a hockey ball on its nose at the founding of the Bengal Hockey Association."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Jadavpur University (25 July)",
+     event: "Bengal Technical Institute opens on Upper Circular Road",
+     place: "Upper Circular Road",
+     scene: "Swadeshi students build a SUSHI-rolling machine in the first workshop of the Bengal Technical Institute."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "Banglapedia: Indian Association",
+     event: "National Council of Education opens its Bengal National College",
+     place: "Bowbazar",
+     scene: "Aurobindo hands out SUSHI to the first students of the Bengal National College."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: University of Calcutta",
+     event: "Ashutosh Mukherjee becomes Vice-Chancellor of the University",
+     place: "Senate House",
+     scene: "Ashutosh Mukherjee eats SUSHI at his desk in the Senate House as the new Vice-Chancellor."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Scottish Church College",
+     event: "Two Scottish mission colleges merge as the Scottish Churches College",
+     place: "Cornwallis Street",
+     scene: "Two Scottish professors share one SOFA on Cornwallis Street as their colleges merge."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: University of Calcutta (Jan)",
+     event: "The University College of Law opens",
+     place: "College Street",
+     scene: "Law students wash their gowns with SOAP before the first lecture of the University College of Law."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Jadavpur University (7 July)",
+     event: "The technical education society merges with the National Council of Education",
+     place: "Upper Circular Road",
+     scene: "Two DICE roll into one cup: the technical society and the National Council of Education merge."}
+world_refs:
+  - {year: 1857, event: "Borneo Company steam jute mill (Baranagar)", cell: south_asia_economy_1800_1945}
+  - {year: 1857, event: "Mangal Pandey fires on his officers at Barrackpore", cell: south_asia_politics_1800_1945}
+  - {year: 1857, event: "Mangal Pandey is hanged after a court-martial", cell: south_asia_politics_1800_1945}
+  - {year: 1857, event: "University of Calcutta is founded", cell: south_asia_society_1800_1945}
+  - {year: 1857, event: "Kaliprasanna Singha's home theatre stages Shakuntala", cell: south_asia_arts_1800_1945}
+  - {year: 1857, event: "Alaler Gharer Dulal starts as a serial", cell: south_asia_arts_1800_1945}
+  - {year: 1858, event: "Belgachia Theatre stages Ratnavali", cell: south_asia_arts_1800_1945}
+  - {year: 1858, event: "Eastern Bengal Railway Company is incorporated", cell: south_asia_economy_1800_1945}
+  - {year: 1861, event: "First tea auction in India, Calcutta", cell: south_asia_economy_1800_1945}
+  - {year: 1862, event: "Hutom Pyanchar Naksha satirises Calcutta", cell: south_asia_arts_1800_1945}
+  - {year: 1863, event: "Muhammadan Literary Society in Calcutta", cell: south_asia_society_1800_1945}
+  - {year: 1864, event: "Calcutta cyclone", cell: south_asia_society_1800_1945}
+  - {year: 1865, event: "First Brahmo schism", cell: south_asia_religion_1800_1945}
+  - {year: 1870, event: "Calcutta Port Act creates the Port Commissioners", cell: south_asia_economy_1800_1945}
+  - {year: 1872, event: "National Theatre opens with Nil Darpan", cell: south_asia_arts_1800_1945}
+  - {year: 1872, event: "Timothy Lewis finds filarial worms in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1872, event: "Calcutta Football Club is founded", cell: south_asia_society_1800_1945}
+  - {year: 1873, event: "Horse tramway Sealdah to Armenian Ghat", cell: south_asia_science_1800_1945}
+  - {year: 1874, event: "Howrah pontoon bridge opens", cell: south_asia_science_1800_1945}
+  - {year: 1875, event: "Indian Museum building completed", cell: south_asia_arts_1800_1945}
+  - {year: 1876, event: "Indian Association founded", cell: south_asia_politics_1800_1945}
+  - {year: 1876, event: "Indian Association for the Cultivation of Science", cell: south_asia_science_1800_1945}
+  - {year: 1878, event: "Calcutta Art Studio opens", cell: south_asia_arts_1800_1945}
+  - {year: 1878, event: "Sadharan Brahmo Samaj splits from Keshub", cell: south_asia_religion_1800_1945}
+  - {year: 1878, event: "Lewis describes a trypanosome in Calcutta rats", cell: south_asia_science_1800_1945}
+  - {year: 1879, event: "First electric light demonstration in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1879, event: "Bethune College, first women's college", cell: south_asia_society_1800_1945}
+  - {year: 1880, event: "Keshub's New Dispensation", cell: south_asia_religion_1800_1945}
+  - {year: 1881, event: "Tagore's Valmiki Pratibha first staged", cell: south_asia_arts_1800_1945}
+  - {year: 1881, event: "Indian Tea Association formed", cell: south_asia_economy_1800_1945}
+  - {year: 1882, event: "Telephone exchange opens in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1883, event: "Star Theatre opens", cell: south_asia_arts_1800_1945}
+  - {year: 1883, event: "Calcutta International Exhibition", cell: south_asia_economy_1800_1945}
+  - {year: 1883, event: "First women graduates, Calcutta University", cell: south_asia_society_1800_1945}
+  - {year: 1884, event: "Chaitanya Lila at the Star Theatre", cell: south_asia_arts_1800_1945}
+  - {year: 1884, event: "Indian Jute Manufacturers Association", cell: south_asia_economy_1800_1945}
+  - {year: 1884, event: "Magen David Synagogue", cell: south_asia_religion_1800_1945}
+  - {year: 1884, event: "Kadambini Ganguly admitted to Calcutta Medical College", cell: south_asia_science_1800_1945}
+  - {year: 1884, event: "Koch isolates the cholera bacillus in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1886, event: "Ramakrishna dies at Cossipore", cell: south_asia_religion_1800_1945}
+  - {year: 1886, event: "Baranagar Math", cell: south_asia_religion_1800_1945}
+  - {year: 1886, event: "Kadambini Ganguly qualifies as a doctor", cell: south_asia_science_1800_1945}
+  - {year: 1889, event: "Mohun Bagan founded", cell: south_asia_society_1800_1945}
+  - {year: 1890, event: "Botanical Survey of India founded", cell: south_asia_science_1800_1945}
+  - {year: 1892, event: "Kidderpore wet dock opens", cell: south_asia_economy_1800_1945}
+  - {year: 1892, event: "Maha Bodhi Society moves to Calcutta", cell: south_asia_religion_1800_1945}
+  - {year: 1893, event: "Minerva Theatre opens with Macbeth", cell: south_asia_arts_1800_1945}
+  - {year: 1893, event: "Indian Football Association founded", cell: south_asia_society_1800_1945}
+  - {year: 1894, event: "Haffkine's cholera vaccinations in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1895, event: "Bose's first paper to the Asiatic Society", cell: south_asia_science_1800_1945}
+  - {year: 1895, event: "Bose's microwave demonstration at the Town Hall", cell: south_asia_science_1800_1945}
+  - {year: 1896, event: "Havell principal of the Calcutta School of Art", cell: south_asia_arts_1800_1945}
+  - {year: 1896, event: "Tagore sings Vande Mataram at the Calcutta Congress", cell: south_asia_arts_1800_1945}
+  - {year: 1896, event: "Petroleum wharf at Budge Budge", cell: south_asia_economy_1800_1945}
+  - {year: 1897, event: "Ramakrishna Mission founded", cell: south_asia_religion_1800_1945}
+  - {year: 1897, event: "CESC takes the lighting licence", cell: south_asia_science_1800_1945}
+  - {year: 1898, event: "Hiralal Sen's first films", cell: south_asia_arts_1800_1945}
+  - {year: 1898, event: "Ross: malaria parasite in the mosquito salivary gland", cell: south_asia_science_1800_1945}
+  - {year: 1898, event: "Plague breaks out in Calcutta", cell: south_asia_society_1800_1945}
+  - {year: 1898, event: "Nivedita's girls' school in Bagbazar", cell: south_asia_society_1800_1945}
+  - {year: 1899, event: "The Math moves to Belur", cell: south_asia_religion_1800_1945}
+  - {year: 1901, event: "Bengal Chemical and Pharmaceutical Works", cell: south_asia_science_1800_1945}
+  - {year: 1902, event: "Madan's bioscope tent on the maidan", cell: south_asia_arts_1800_1945}
+  - {year: 1902, event: "Gauhar Jaan's first gramophone recordings", cell: south_asia_arts_1800_1945}
+  - {year: 1902, event: "Vivekananda dies at Belur Math", cell: south_asia_religion_1800_1945}
+  - {year: 1902, event: "Electric trams in Calcutta", cell: south_asia_science_1800_1945}
+  - {year: 1905, event: "Abanindranath vice-principal of the art school", cell: south_asia_arts_1800_1945}
+  - {year: 1905, event: "Partition day: Bengalis tie rakhi in protest", cell: south_asia_politics_1800_1945}
+  - {year: 1905, event: "Swadeshi boycott resolution at the Town Hall", cell: south_asia_politics_1800_1945}
+  - {year: 1906, event: "Calcutta Congress session names swaraj", cell: south_asia_politics_1800_1945}
+  - {year: 1907, event: "Indian Society of Oriental Art", cell: south_asia_arts_1800_1945}
+  - {year: 1907, event: "Elphinstone Picture Palace", cell: south_asia_arts_1800_1945}
+  - {year: 1907, event: "Raman starts research at the IACS", cell: south_asia_science_1800_1945}
+  - {year: 1908, event: "Calcutta Stock Exchange Association", cell: south_asia_economy_1800_1945}
+  - {year: 1908, event: "Calcutta passes Dundee in jute", cell: south_asia_economy_1800_1945}
+  - {year: 1908, event: "Maniktala raid; Aurobindo arrested", cell: south_asia_politics_1800_1945}
+  - {year: 1909, event: "Ramakrishna Mission registered", cell: south_asia_religion_1800_1945}
+  - {year: 1910, event: "Imperial Tobacco Company of India registered", cell: south_asia_economy_1800_1945}
+out_refs:
+  - {year: 1857, event: "Canning's press gagging act", reason: "India-wide law"}
+  - {year: 1858, event: "Government of India Act ends Company rule", reason: "India-wide law"}
+  - {year: 1861, event: "Indian Councils Act", reason: "India-wide law"}
+  - {year: 1862, event: "Lord Elgin becomes Viceroy", reason: "appointment"}
+  - {year: 1864, event: "John Lawrence becomes Viceroy", reason: "appointment"}
+  - {year: 1872, event: "Special Marriages Act for Brahmo weddings", reason: "India-wide law"}
+  - {year: 1875, event: "Prince of Wales visits Calcutta", reason: "royal visit"}
+  - {year: 1876, event: "Dramatic Performances Act", reason: "India-wide law"}
+  - {year: 1878, event: "Vernacular Press Act", reason: "India-wide law"}
+  - {year: 1883, event: "Ilbert Bill introduced", reason: "India-wide law"}
+  - {year: 1885, event: "Bengal Tenancy Act", reason: "provincial law"}
+  - {year: 1890, event: "Anglo-Chinese Convention of Calcutta on Sikkim", reason: "treaty"}
+  - {year: 1899, event: "Lord Curzon becomes Viceroy", reason: "appointment"}
+  - {year: 1904, event: "Indian Universities Act", reason: "India-wide law"}
+  - {year: 1905, event: "Curzon announces the partition of Bengal", reason: "provincial government"}
+  - {year: 1906, event: "Prince of Wales visits Calcutta", reason: "royal visit"}
+  - {year: 1909, event: "Morley-Minto Indian Councils Act", reason: "India-wide law"}
+  - {year: 1910, event: "Lord Hardinge becomes Viceroy", reason: "appointment"}
