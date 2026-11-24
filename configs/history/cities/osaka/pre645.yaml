@@ -1,0 +1,440 @@
+# City: Osaka x prehistory to 644 (Palaeolithic and Jomon camps by the old Kawachi Bay, Yayoi villages
+# (Ama, Ikegami-Sone, Kami, Uryudo), the Mozu and Furuichi kofun, Naniwa port and its guest houses,
+# Sumiyoshi, Shitennoji and the Asuka temples, the royal tombs of the Shinaga valley). DRAFT 2026-11-24.
+# Area: Osaka Prefecture (Osaka city with Naniwa, Uemachi, Tennoji, Sumiyoshi; Sakai and Mozu; Habikino and
+# Fujiidera (Furuichi); Takatsuki, Ibaraki, Ikeda, Hirakata, Yao, Kashiwara, Taishi, Tondabayashi, Izumi,
+# Kishiwada, Shijonawate). Kyoto, Nara, Kobe and the rest of Hyogo are out. Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Kofun and royal tombs are
+# burials -> society. National events (court diplomacy, royal visits, legendary shrine foundings) -> out_refs.
+# World-grid events -> world_refs.
+# Dates: memory pass + web check (23 of 30 searches; no unauthorised book copies). Main sources: Nihon Shoki
+# text (zh Wikisource, books 10-24); ja Wikipedia (kofun, temple, shrine and site articles; year articles for
+# reign-year conversion); Osaka prefecture and city heritage pages, Takatsuki city, Kashiwara museum,
+# nabunken site reports through search summaries.
+# Nihon Shoki dates before about 500 are the chronicle's own: marked (traditional date), confidence low.
+# Lunisolar dates: the CE year of the reign year; a date late in a Japanese year that can fall in the next CE
+# year is converted, and the Japanese date is in the source.
+# Kofun and sites: the conventional c. date or the midpoint of the half-century the source gives; a phase ->
+# its start. >= 10,000 years -> years_ago. Approximate year ending 00 -> first two digits (under 1000: year // 10).
+# Peg: last two digits of the year otherwise.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 399, peg: pipe, confidence: low, source: "Nihon Shoki 12 (Richu): after Nintoku 87",
+     event: "Prince Suminoe no Nakatsu sets fire to the crown prince's palace at Naniwa (traditional date)",
+     place: "Naniwa palace",
+     scene: "Prince Suminoe no Nakatsu lights a long PIPE and blows fire into the crown prince's palace at Naniwa."}
+  - {year: 608, peg: sofa, confidence: high, source: "Nihon Shoki 22: Suiko 16, 4th month",
+     event: "A new guest house is built on top of the Korean lodge at Naniwa for the Sui envoy Pei Shiqing",
+     place: "Koraikan, Naniwa",
+     scene: "Carpenters stack a new guest house on the Korean lodge at Naniwa and put a SOFA inside for the Sui envoy."}
+  - {year: 630, peg: mouse, confidence: high, source: "Nihon Shoki 23: Jomei 2 (this year)",
+     event: "The Naniwa Ogori hall and the guest houses for the three Korean kingdoms are repaired",
+     place: "Naniwa Ogori",
+     scene: "A MOUSE with a hammer repairs the holes it chewed in the Naniwa Ogori hall and the three Korean guest houses."}
+  - {year: 561, peg: jet, confidence: high, source: "Nihon Shoki 19: Kinmei 22 (this year)",
+     event: "The court ranks the envoys of the foreign states in order at the Naniwa Ogori hall",
+     place: "Naniwa Ogori",
+     scene: "A JET taxis through the Naniwa Ogori hall and parks each foreign envoy in a numbered rank, the highest state first."}
+  # science
+  - {year: -100, peg: dice, confidence: low, source: "ja WP: Ikegami-Sone site (Middle Yayoi well)",
+     event: "Ikegami-Sone: villagers cut a giant well from one hollow camphor trunk (approximate)",
+     place: "Ikegami-Sone, Izumi",
+     scene: "Ikegami-Sone villagers hollow a huge camphor trunk like a DICE cup and sink it into the ground as their well."}
+  - {year: 323, peg: gnome, confidence: low, source: "ja WP: Nintoku (Nintoku 11/10); 323 = Nintoku 11",
+     event: "Naniwa: the Horie canal is dug to drain the Kawachi lake into the sea (traditional date)",
+     place: "Naniwa Horie",
+     scene: "A GNOME with a spade cuts the Horie canal across the Naniwa sandbar, and the Kawachi lake pours out to sea."}
+  - {year: 323, peg: gnome, confidence: low, source: "ja WP: Mamuta embankment (Nintoku 11/10)",
+     event: "Mamuta embankment is built on the north river against floods (traditional date)",
+     place: "Mamuta, Kadoma",
+     scene: "A GNOME lies down in a flood gap of the Mamuta embankment and the north river stops at his back."}
+  - {year: 325, peg: nail, confidence: low, source: "ja WP: Nintoku (Nintoku 13/10); 325 = Nintoku 13",
+     event: "Yokono embankment is built in the Ikuno area (traditional date)",
+     place: "Yokono, Ikuno",
+     scene: "Workers drive a giant NAIL into the soft ground at Yokono to fix the new embankment."}
+  - {year: 326, peg: nacho, confidence: low, source: "ja WP: Nintoku (Nintoku 14/11); 326 = Nintoku 14",
+     event: "Inokai ford: a bridge is built, the first bridge named in the Nihon Shoki (traditional date)",
+     place: "Tsuruhashi, Ikuno",
+     scene: "A giant NACHO chip lies across the Inokai ford, and the people of Ikuno walk over Japan's first named bridge."}
+  - {year: 326, peg: nacho, confidence: low, source: "ja WP: Nintoku (Nintoku 14/11)",
+     event: "A great road is laid out in the capital at Naniwa (traditional date)",
+     place: "Naniwa",
+     scene: "Road builders pave the great road of Naniwa with flat NACHO chips from the palace gate to the south."}
+  - {year: 326, peg: nacho, confidence: low, source: "ja WP: Nintoku (Nintoku 14/11)",
+     event: "The Koku ditch is dug to water the fields of southern Kawachi (traditional date)",
+     place: "Koku, Tondabayashi",
+     scene: "A NACHO-shaped plough cuts the Koku ditch, and water runs into the dry fields of southern Kawachi."}
+  - {year: 470, peg: goose, confidence: low, source: "Nihon Shoki 14: Yuryaku 14, 1st month",
+     event: "The Shihatsu road is opened for the envoys of Wu who land at Suminoe (traditional date)",
+     place: "Shihatsu road, Sumiyoshi",
+     scene: "A GOOSE leads the Wu envoys from Suminoe port along the new Shihatsu road, and its feet stamp the road flat."}
+  - {year: 475, peg: eagle, confidence: medium, source: "Osaka pref.: Kyuhoji site (late 5th c. well)",
+     event: "Kyuhoji: a well is lined with the bow and stern of a plank-built boat (approximate)",
+     place: "Kyuhoji, Yao",
+     scene: "An EAGLE drops the bow of a worn-out boat into a pit at Kyuhoji, and the villagers make it a well."}
+  - {year: 607, peg: ski, confidence: high, source: "Nihon Shoki 22: Suiko 15 (winter)",
+     event: "The Totori and Yosami ponds are made in Kawachi",
+     place: "Yosami pond, Sumiyoshi",
+     scene: "A SKI cuts two long grooves in the Kawachi plain, and they fill with water as the Totori and Yosami ponds."}
+  - {year: 613, peg: tomb, confidence: high, source: "ja WP: Takenouchi Kaido; Nihon Shoki Suiko 21/11",
+     event: "A great road is laid from Naniwa to the capital, the first official road in Japan",
+     place: "Takenouchi Kaido",
+     scene: "A great TOMB stone rolls from Naniwa through Taishi to Asuka, and its track becomes Japan's first official road."}
+  - {year: 616, peg: dish, confidence: high, source: "ja WP: Sayama-ike (tree-ring date of east pipe, Suiko 24)",
+     event: "Sayama pond: logs for the outflow pipe of the oldest dam reservoir in Japan are felled",
+     place: "Sayama-ike, Osakasayama",
+     scene: "Builders lay a giant DISH of earth across the valley at Sayama, and the oldest dam lake in Japan fills."}
+  # religion
+  - {year: 211, peg: tattoo, confidence: low, source: "ja WP: Sumiyoshi Taisha (Jingu regency 11)",
+     event: "Sumiyoshi Shrine is founded for the three sea gods (traditional date)",
+     place: "Sumiyoshi",
+     scene: "Empress Jingu draws a wave TATTOO on the beach at Sumiyoshi, and the three sea gods take it as their shrine."}
+  - {year: 552, peg: lion, confidence: medium, source: "Nihon Shoki 19: Kinmei 13, 10th month",
+     event: "Officials throw the first Buddha image into the Horie canal at Naniwa",
+     place: "Naniwa Horie",
+     scene: "A LION roars as officials throw the first Buddha image into the Horie canal at Naniwa."}
+  - {year: 553, peg: llama, confidence: medium, source: "Nihon Shoki 19: Kinmei 14, 5th month",
+     event: "Chinu sea: a shining camphor log is taken from the sea and carved into Buddha images",
+     place: "Chinu sea, Izumi",
+     scene: "A LLAMA swims out into the Chinu sea, drags in a glowing camphor log, and carvers make Buddha images from it."}
+  - {year: 559, peg: elbow, confidence: low, source: "ja WP: Konda Hachimangu (Kinmei 20, shrine tradition)",
+     event: "Konda Hachiman Shrine is founded in front of the tomb of Ojin (traditional date)",
+     place: "Konda, Habikino",
+     scene: "A giant ELBOW pushes up the first shrine of Konda Hachiman in front of Ojin's tomb mound."}
+  - {year: 577, peg: cake, confidence: medium, source: "Nihon Shoki 20: Bidatsu 6, 11th month",
+     event: "Monks, a nun and temple builders from Baekje are placed at Prince Owake's temple in Naniwa",
+     place: "Owake temple, Naniwa",
+     scene: "Baekje monks, a nun and temple carpenters share a welcome CAKE in Prince Owake's temple at Naniwa."}
+  - {year: 587, peg: fox, confidence: low, source: "ja WP: Shitennoji (hall at Tamatsukuri, inferred)",
+     event: "Tamatsukuri: a first hall for the Four Heavenly Kings is built (tradition)",
+     place: "Tamatsukuri",
+     scene: "A FOX carries four wooden kings from the battlefield to Tamatsukuri and sets them in Shitennoji's first hall."}
+  - {year: 594, peg: bear, confidence: low, source: "ja WP: Domyoji (temple tradition, Suiko 2)",
+     event: "Domyoji, the Haji clan temple, is founded in Haji no Yashima's house (traditional date)",
+     place: "Domyoji, Fujiidera",
+     scene: "Haji no Yashima opens his house to a BEAR in monk's robes, and it becomes the Haji clan temple Domyoji."}
+  - {year: 594, peg: bear, confidence: low, source: "ja WP: Taisei Shogunji (temple gives Suiko 2)",
+     event: "Taisei Shogunji gets its name beside the place where Mononobe no Moriya fell (traditional date)",
+     place: "Taisei Shogunji, Yao",
+     scene: "A BEAR guards Moriya's grave mound in Yao while monks hang the name board of Taisei Shogunji."}
+  - {year: 598, peg: beehive, confidence: high, source: "Nihon Shoki 22: Suiko 6, 4th month",
+     event: "Two magpies from Silla are kept at the Naniwa shrine and nest there",
+     place: "Naniwa shrine",
+     scene: "Two Silla magpies build their nest on a BEEHIVE in the Naniwa shrine grove and lay eggs."}
+  - {year: 623, peg: gnome, confidence: high, source: "Nihon Shoki 22: Suiko 31, 7th month",
+     event: "Relics, a golden stupa and banners from Silla are placed in Shitennoji",
+     place: "Shitennoji",
+     scene: "A GNOME carries a small golden stupa full of Silla relics into Shitennoji and hangs the banners."}
+  - {year: 625, peg: nail, confidence: medium, source: "ja WP: Shibukawa haiji (first half of 7th c.)",
+     event: "Shibukawa temple is built near the old Mononobe estate in Yao (approximate)",
+     place: "Shibukawa, Yao",
+     scene: "Builders NAIL lotus tiles onto Shibukawa temple, close to the old Mononobe estate in Yao."}
+  - {year: 625, peg: nail, confidence: medium, source: "ja WP: Shindo haiji (Asuka, first half of 7th c.)",
+     event: "Shindo temple, one of the oldest in southern Kawachi, is built (approximate)",
+     place: "Shindo, Tondabayashi",
+     scene: "A giant NAIL pins the first roof beam of Shindo temple, the oldest temple in southern Kawachi."}
+  - {year: 625, peg: nail, confidence: medium, source: "Osaka city: Kuwazu site (7th c. first half, oldest)",
+     event: "Kuwazu: a wooden charm tablet, the oldest found in Japan, goes into a well (approximate)",
+     place: "Kuwazu, Higashisumiyoshi",
+     scene: "A villager at Kuwazu drives a NAIL through a Daoist charm tablet and drops it down the well."}
+  # arts
+  - {year: -52, peg: lion, confidence: high, source: "ja WP: Ikegami-Sone (pillar felled 52 BCE)",
+     event: "Ikegami-Sone: a pillar is felled for the great raised hall at the centre of the village",
+     place: "Ikegami-Sone, Izumi",
+     scene: "A LION drags a felled cypress pillar to the centre of Ikegami-Sone, and villagers raise the great hall on it."}
+  - {year: 291, peg: boot, confidence: low, source: "Nihon Shoki 10: Ojin 22, 3rd month",
+     event: "Ojin stays at the Osumi palace in Naniwa (traditional date)",
+     place: "Osumi palace, Higashiyodogawa",
+     scene: "Ojin pulls off a muddy BOOT at the door of his new Osumi palace on the Naniwa shore."}
+  - {year: 313, peg: tomb, confidence: low, source: "ja WP: Nintoku (Nintoku 1/1); Takatsu palace",
+     event: "Nintoku makes the Takatsu palace at Naniwa his capital (traditional date)",
+     place: "Takatsu palace, Uemachi",
+     scene: "Nintoku builds his Takatsu palace on top of a TOMB-shaped hill at the north end of Uemachi."}
+  - {year: 406, peg: sushi, confidence: low, source: "Nihon Shoki 12: Hanzei 1, 10th month",
+     event: "Hanzei makes the Shibagaki palace at Tajihi his capital (traditional date)",
+     place: "Shibagaki shrine, Matsubara",
+     scene: "Hanzei weaves his Shibagaki palace fence from SUSHI rolls of brushwood at Tajihi."}
+  - {year: 419, peg: tuba, confidence: low, source: "Nihon Shoki 13: Ingyo 8",
+     event: "Ingyo builds the Chinu palace for his lover Sotoorihime (traditional date)",
+     place: "Chinu palace, Izumisano",
+     scene: "Ingyo plays a TUBA under the window of the new Chinu palace to call Sotoorihime."}
+  - {year: 450, peg: lasso, confidence: medium, source: "ja WP: Konda Maruyama Kofun (5th c.)",
+     event: "Konda Maruyama: gilt-bronze dragon fittings for a horse saddle go into the tomb (approximate)",
+     place: "Konda Maruyama, Habikino",
+     scene: "A gold LASSO hangs on the gilt-bronze dragon saddle buried in the Konda Maruyama mound."}
+  - {year: 465, peg: jelly, confidence: low, source: "Nihon Shoki 14: Yuryaku 9, 7th month",
+     event: "Homuda: a red horse given near Ojin's tomb turns into a clay haniwa horse (traditional date)",
+     place: "Konda Gobyoyama, Habikino",
+     scene: "A red horse wobbles like JELLY at dawn by Ojin's tomb and sets hard into a clay haniwa horse."}
+  - {year: 550, peg: lasso, confidence: medium, source: "Osaka pref.: Takaida caves (mid-6th to early 7th c.)",
+     event: "Takaida: people cut cave tombs and scratch boats and people on the walls (approximate)",
+     place: "Takaida, Kashiwara",
+     scene: "A boatman with a LASSO is scratched on the soft rock wall of a Takaida cave tomb."}
+  # economy
+  - {year: -200, peg: nose, confidence: low, source: "ja WP: Higashi-Nara site (Yayoi, 35 moulds)",
+     event: "Higashi-Nara: smiths cast bronze bells in stone moulds in a moated village (approximate)",
+     place: "Higashi-Nara, Ibaraki",
+     scene: "A bronze smith at Higashi-Nara wipes his NOSE and pours hot metal into a stone bell mould."}
+  - {year: 400, peg: horse, confidence: medium, source: "Osaka pref.: Shitomiyakita (Middle Kofun)",
+     event: "Shitomiyakita: migrants from Korea start horse farms by the Kawachi lake (approximate)",
+     place: "Shitomiyakita, Shijonawate",
+     scene: "Korean grooms lead the first HORSE off the boat and start a horse farm on the shore of the Kawachi lake."}
+  - {year: 400, peg: horse, confidence: medium, source: "Kashiwara museum: large forges appear c. 5th c.",
+     event: "Ogata: a large smithing village starts to make iron armour and tools (approximate)",
+     place: "Ogata, Kashiwara",
+     scene: "A HORSE works the bellows in the Ogata forge, and smiths rivet iron armour by the hundred."}
+  - {year: 435, peg: mill, confidence: medium, source: "ja WP: Hoenzaka site (2nd quarter of 5th c.)",
+     event: "Hoenzaka: sixteen large raised storehouses are built on the north tip of Uemachi (approximate)",
+     place: "Hoenzaka, Uemachi",
+     scene: "A MILL on Uemachi grinds grain into sixteen giant raised storehouses above Naniwa port."}
+  - {year: 450, peg: lasso, confidence: medium, source: "ja WP: Ota Chausuyama Kofun (Shin-ike, mid-5th c.)",
+     event: "Shin-ike: a large workshop starts to fire haniwa for the Mishima tombs (approximate)",
+     place: "Shin-ike, Takatsuki",
+     scene: "Potters at Shin-ike tie a LASSO round a stack of fresh haniwa and drag them to the kiln."}
+  - {year: 470, peg: goose, confidence: low, source: "Nihon Shoki 14: Yuryaku 14, 1st month",
+     event: "Envoys from Wu land at Suminoe port with weavers and seamstresses (traditional date)",
+     place: "Suminoe port, Sumiyoshi",
+     scene: "A GOOSE flies over the Wu ship as it lands weavers and seamstresses at Suminoe port."}
+  - {year: 534, peg: hammer, confidence: medium, source: "Nihon Shoki 18: Ankan 1, 10th month",
+     event: "The Naniwa royal granary estate is given to a consort of Ankan",
+     place: "Naniwa",
+     scene: "A HAMMER bangs a new owner's sign onto the Naniwa royal granary for Ankan's consort."}
+  - {year: 535, peg: mill, confidence: medium, source: "Nihon Shoki 18: Ankan 1, intercalary 12th month",
+     event: "Mishima: the Takefu royal granary estate is set up from local rice land",
+     place: "Takefu, Takatsuki",
+     scene: "A MILL starts to turn at Takefu in Mishima, grinding the rice of the new royal granary estate."}
+  - {year: 535, peg: mill, confidence: medium, source: "Nihon Shoki 18: Ankan 2, 9th month",
+     event: "Cattle are let loose to graze on Osumi island and Himejima in Naniwa",
+     place: "Himejima, Nishiyodogawa",
+     scene: "Cows walk round a MILL on Himejima and graze the pine fields of Osumi island in Naniwa."}
+  - {year: 536, peg: match, confidence: medium, source: "Nihon Shoki 18: Senka 1, 5th month",
+     event: "Rice from the Mamuta royal granary in Kawachi is shipped to Kyushu",
+     place: "Mamuta, Kadoma",
+     scene: "Boatmen strike a MATCH to light the lamps and load Mamuta rice on ships bound for Kyushu."}
+  - {year: 608, peg: sofa, confidence: high, source: "Nihon Shoki 22: Suiko 16, 6th month",
+     event: "Thirty decorated boats meet the Sui envoy Pei Shiqing at Naniwa port",
+     place: "Naniwa port",
+     scene: "Thirty decorated boats carry a red SOFA out to Naniwa port, and the Sui envoy Pei Shiqing sits on it."}
+  - {year: 632, peg: moon, confidence: high, source: "ja WP: Gao Biaoren; Nihon Shoki Jomei 4, 10th month",
+     event: "The Tang envoy Gao Biaoren lands at Naniwa port and thirty-two decorated boats meet him",
+     place: "Naniwa port",
+     scene: "Under a full MOON, thirty-two decorated boats row out of Naniwa port to bring in the Tang envoy Gao Biaoren."}
+  - {year: 642, peg: rhino, confidence: high, source: "Nihon Shoki 24: Kogyoku 1, 2nd and 5th months",
+     event: "Goguryeo and Baekje ships dock at Naniwa port; their gifts are checked in the Naniwa hall",
+     place: "Naniwa port",
+     scene: "A RHINO stands on the Naniwa quay and pushes each Goguryeo and Baekje gift box into the hall for checking."}
+  # society
+  - {year: 571, peg: cat, confidence: high, source: "Nihon Shoki 19: Kinmei 32, 5th month",
+     event: "King Kinmei lies in state (mogari) at Furuichi before his burial",
+     place: "Furuichi, Habikino",
+     scene: "A black CAT lays dead King Kinmei on the mourning bier at Furuichi and guards his body until the burial."}
+  - {years_ago: 20000, year: -18000, peg: nose, confidence: unverified,
+     event: "Kokufu: hunters strike knives from sanukite cores by the Setouchi method (approximate)",
+     place: "Kokufu, Fujiidera",
+     scene: "A hunter at Kokufu taps a sanukite core on his NOSE and strikes off a wing-shaped knife blade."}
+  - {year: -6000, peg: cheese, confidence: medium, source: "ja WP: Kawachi Lake (bay c. 6000-5000 BCE)",
+     event: "The sea fills the Kawachi Bay to the foot of Mount Ikoma (approximate)",
+     place: "Kawachi Bay",
+     scene: "The rising sea eats into the land like a mouse into CHEESE and makes the Kawachi Bay up to Mount Ikoma."}
+  - {year: -5000, peg: lasso, confidence: low, source: "ja WP: Kokufu site (Early Jomon earrings)",
+     event: "Kokufu: Early Jomon people are buried with stone slit earrings (approximate)",
+     place: "Kokufu, Fujiidera",
+     scene: "A Jomon mourner at Kokufu ties a LASSO of cord through the stone slit earrings of the dead."}
+  - {year: -2000, peg: nose, confidence: medium, source: "Osaka city: Morinomiya (Late Jomon oyster layer)",
+     event: "Morinomiya: Late Jomon people pile oyster shells into a midden on the Uemachi shore (approximate)",
+     place: "Morinomiya",
+     scene: "A Jomon fisher at Morinomiya holds his NOSE and throws another basket of oyster shells onto the midden."}
+  - {year: -1000, peg: dice, confidence: medium, source: "Osaka city: Morinomiya (Seta clam layer)",
+     event: "Morinomiya: the midden changes to freshwater clams as the bay becomes the Kawachi lagoon (approximate)",
+     place: "Morinomiya",
+     scene: "Fresh water rolls in like DICE, and the Morinomiya fishers now throw freshwater clam shells on the midden."}
+  - {year: -500, peg: lasso, confidence: medium, source: "Takatsuki city: Ama site (Early Yayoi, 2,500 years)",
+     event: "Ama: an Early Yayoi village with a moat and rice paddies is set up in Mishima (approximate)",
+     place: "Ama, Takatsuki",
+     scene: "A farmer at Ama throws a LASSO round the first rice paddies of Mishima and pulls a moat round his village."}
+  - {year: -200, peg: nose, confidence: medium, source: "ja WP: Ikegami-Sone (2nd c. BCE pottery)",
+     event: "Ikegami-Sone grows into one of the largest moated villages of the Yayoi (approximate)",
+     place: "Ikegami-Sone, Izumi",
+     scene: "The moat round Ikegami-Sone grows like a long NOSE as the village becomes one of the largest of the Yayoi."}
+  - {year: -200, peg: nose, confidence: low, source: "nabunken: Kitoragawa (Middle Yayoi centre)",
+     event: "Kitoragawa: a large wetland village on the east shore of the Kawachi lagoon (approximate)",
+     place: "Kitoragawa, Higashiosaka",
+     scene: "A Kitoragawa villager pokes his NOSE out of the reeds of the lagoon shore and pulls up his wooden hoe."}
+  - {year: -100, peg: dice, confidence: low, source: "Osaka city: Kami Y1 (Middle Yayoi, 23 burials)",
+     event: "Kami: a large Yayoi mound tomb with twenty-three wooden coffins (approximate)",
+     place: "Kami, Hirano",
+     scene: "Twenty-three wooden coffins are stacked like DICE inside the big Yayoi mound at Kami."}
+  - {year: -100, peg: dice, confidence: low, source: "ja WP: Uryudo site (tomb No. 2, 18 burials)",
+     event: "Uryudo: a square moated tomb with eighteen burials in wood, earth and jars (approximate)",
+     place: "Uryudo, Higashiosaka",
+     scene: "Mourners at Uryudo throw DICE to choose the place of each of eighteen burials in the square moated tomb."}
+  - {year: 100, peg: dice, confidence: medium, source: "Takatsuki city: Koshobe-Shibatani (Late Yayoi)",
+     event: "Koshobe-Shibatani: a Late Yayoi village of about a hundred houses on a high hill (approximate)",
+     place: "Koshobe-Shibatani, Takatsuki",
+     scene: "Lookouts throw DICE in their hilltop village at Koshobe-Shibatani and watch the Yodo plain for raiders."}
+  - {year: 200, peg: nose, confidence: medium, source: "ja WP: Kawachi Lake (c. 1,800-1,600 years ago)",
+     event: "Sand bars close the bay mouth and the Kawachi lagoon becomes the Kawachi lake (approximate)",
+     place: "Kawachi lake",
+     scene: "A long sand NOSE grows from Uemachi across the bay mouth and shuts the Kawachi lake off from the sea."}
+  - {year: 275, peg: eagle, confidence: medium, source: "ja WP: Ama-miyayama Kofun (late 3rd c.)",
+     event: "Ama-miyayama Kofun: a lord is buried with a Wei mirror dated Qinglong three (approximate)",
+     place: "Ama-miyayama, Takatsuki",
+     scene: "An EAGLE carries a Wei mirror up the hill to Ama-miyayama and lays it on the lord's coffin."}
+  - {year: 300, peg: mouse, confidence: low, source: "ja WP: Tamateyama group (Early Kofun)",
+     event: "Tamateyama: thirteen keyhole tombs are built on a hill above the Yamato river (approximate)",
+     place: "Tamateyama, Kashiwara",
+     scene: "A MOUSE runs along a row of thirteen keyhole tombs on Tamateyama above the Yamato river."}
+  - {year: 325, peg: nail, confidence: medium, source: "ja WP: Shikinzan Kofun (early 4th c.)",
+     event: "Shikinzan Kofun: a lord is buried with mirrors and three unique shell bracelets (approximate)",
+     place: "Shikinzan, Ibaraki",
+     scene: "A NAIL of shell pins three unique bracelets to the arm of the lord in the Shikinzan tomb."}
+  - {year: 325, peg: nail, confidence: medium, source: "ja WP: Tsugeyama Kofun (first half of 4th c.)",
+     event: "Tsugeyama Kofun: two stone chambers are sealed, and they stay unrobbed (approximate)",
+     place: "Tsugeyama, Takatsuki",
+     scene: "A giant NAIL seals the two stone chambers of Tsugeyama, and no robber opens them."}
+  - {year: 350, peg: lasso, confidence: medium, source: "ja WP: Ikeda Chausuyama Kofun (mid-4th c.)",
+     event: "Ikeda Chausuyama: a small copy of a great Nara tomb is built on the Ina river (approximate)",
+     place: "Chausuyama, Ikeda",
+     scene: "A builder throws a LASSO round a hill in Ikeda and pulls it into a small copy of a great Nara tomb."}
+  - {year: 355, peg: lily, confidence: low, source: "ja WP: Nintoku (falconry, Nintoku 43/9)",
+     event: "The first falconry hunt in Japan is held on the Mozu plain (traditional date)",
+     place: "Mozu plain",
+     scene: "A trained hawk drops on a pheasant in a field of LILY flowers on the Mozu plain, the first falcon hunt."}
+  - {year: 370, peg: goose, confidence: medium, source: "ja WP: Tsudo Shiroyama Kofun (c. 370)",
+     event: "Tsudo Shiroyama, the first great keyhole tomb of Furuichi, with waterbird haniwa (approximate)",
+     place: "Tsudo Shiroyama, Fujiidera",
+     scene: "A clay GOOSE swims on the moat island of Tsudo Shiroyama, the first great tomb of Furuichi."}
+  - {year: 375, peg: eagle, confidence: medium, source: "ja WP: Izumi Koganezuka (late 4th c.)",
+     event: "Izumi Koganezuka: a tomb holds a mirror inscribed Jingchu three (approximate)",
+     place: "Koganezuka, Izumi",
+     scene: "An EAGLE drops a mirror marked Jingchu three into the Koganezuka tomb in Izumi."}
+  - {year: 379, peg: cowboy, confidence: low, source: "ja WP: Nintoku (tomb site, Nintoku 67/5)",
+     event: "Mozu gets its name: a shrike flies from a dead deer's ear at Nintoku's tomb site (traditional date)",
+     place: "Mozu, Sakai",
+     scene: "A COWBOY looks into a dead deer's ear at the tomb site, and a shrike flies out: Mozu gets its name."}
+  - {year: 380, peg: vase, confidence: medium, source: "ja WP: Nakatsuyama Kofun (c. 380)",
+     event: "Nakatsuyama, the second largest tomb of Furuichi, is built (approximate)",
+     place: "Nakatsuyama, Fujiidera",
+     scene: "Builders pour earth from a giant VASE until Nakatsuyama stands as the second largest tomb of Furuichi."}
+  - {year: 390, peg: bees, confidence: medium, source: "ja WP: Chibuoka Kofun (late 4th c.)",
+     event: "Chibuoka, one of the first tombs of the Mozu group, is built on the shore (approximate)",
+     place: "Chibuoka, Sakai",
+     scene: "BEES swarm out of the new Chibuoka mound on the Mozu shore, the first of the great Mozu tombs."}
+  - {year: 400, peg: horse, confidence: medium, source: "ja WP: Kamiishizu Misanzai (381-400 / early 5th c.)",
+     event: "Kamiishizu Misanzai, the third largest keyhole tomb in Japan, is built at Mozu (approximate)",
+     place: "Kamiishizu Misanzai, Sakai",
+     scene: "A team of HORSE carts piles earth into Kamiishizu Misanzai, the third largest tomb in Japan."}
+  - {year: 425, peg: nail, confidence: medium, source: "ja WP: Itasuke Kofun (first half of 5th c.)",
+     event: "Itasuke Kofun is built with helmet-shaped haniwa (approximate)",
+     place: "Itasuke, Sakai",
+     scene: "A potter fixes a NAIL-spiked clay helmet on top of the new Itasuke mound in Mozu."}
+  - {year: 425, peg: nail, confidence: medium, source: "ja WP: Gobyoyama Kofun, Mozu (first half 5th c.)",
+     event: "Mozu Gobyoyama, the fourth largest tomb of Mozu, is built (approximate)",
+     place: "Gobyoyama, Sakai",
+     scene: "A NAIL marks the centre as builders shape Gobyoyama, the fourth largest Mozu tomb."}
+  - {year: 425, peg: nail, confidence: medium, source: "ja WP: Hakayama Kofun (first half of 5th c.)",
+     event: "Hakayama Kofun is built beside the Konda mound with a turtle-shell stone coffin (approximate)",
+     place: "Hakayama, Habikino",
+     scene: "A mason taps a NAIL into the stone coffin lid at Hakayama and carves a turtle-shell pattern."}
+  - {year: 450, peg: lasso, confidence: medium, source: "ja WP: Ota Chausuyama Kofun (mid-5th c.)",
+     event: "Ota Chausuyama, the largest tomb in Mishima, is built (approximate)",
+     place: "Ota Chausuyama, Ibaraki",
+     scene: "A LASSO round Ota Chausuyama pulls the mound up into the largest tomb of Mishima."}
+  - {year: 460, peg: cheese, confidence: medium, source: "ja WP: Kurohimeyama Kofun (mid-late 5th c.)",
+     event: "Kurohimeyama: twenty-four suits of armour, the most in any tomb in Japan (approximate)",
+     place: "Kurohimeyama, Sakai",
+     scene: "Twenty-four iron armour suits stand in rows like CHEESE wheels in the Kurohimeyama tomb."}
+  - {year: 475, peg: eagle, confidence: medium, source: "ja WP: Ichinoyama Kofun (late 5th c.)",
+     event: "Ichinoyama, the tomb now called Ingyo's, is built in Furuichi (approximate)",
+     place: "Ichinoyama, Fujiidera",
+     scene: "An EAGLE spreads its wings over the new Ichinoyama mound, the tomb given to Ingyo."}
+  - {year: 475, peg: eagle, confidence: medium, source: "ja WP: Haji Nisanzai (late 5th c.)",
+     event: "Haji Nisanzai, the last great tomb of Mozu, is built with a wide wooden bridge (approximate)",
+     place: "Haji Nisanzai, Sakai",
+     scene: "An EAGLE pulls away the wide wooden bridge over the moat after the funeral at Haji Nisanzai."}
+  - {year: 475, peg: eagle, confidence: medium, source: "ja WP: Karusato Otsuka Kofun (late 5th c.)",
+     event: "Karusato Otsuka, the tomb now called Yamato Takeru's swan tomb, is built (approximate)",
+     place: "Karusato Otsuka, Habikino",
+     scene: "A white EAGLE lands on Karusato Otsuka, the mound later called the swan tomb of Yamato Takeru."}
+  - {year: 490, peg: bees, confidence: medium, source: "ja WP: Okamisanzai Kofun (end of 5th c.)",
+     event: "Okamisanzai, the tomb now called Chuai's, is built in Furuichi (approximate)",
+     place: "Okamisanzai, Fujiidera",
+     scene: "BEES build their comb in the moat bank of Okamisanzai, the tomb given to Chuai."}
+  - {year: 500, peg: lasso, confidence: medium, source: "ja WP: Minegazuka Kofun (early 6th c.)",
+     event: "Minegazuka: a lord with a double moat is buried with sword, horse gear and glass beads (approximate)",
+     place: "Minegazuka, Habikino",
+     scene: "Mourners lower a LASSO of glass beads onto the lord in the double-moated Minegazuka tomb."}
+  - {year: 500, peg: lasso, confidence: medium, source: "ja WP: Ichisuka group (6th to mid-7th c., 262)",
+     event: "Ichisuka: migrant families start a cemetery of small round tombs with model cooking stoves (approximate)",
+     place: "Ichisuka, Kanan",
+     scene: "A migrant family ties a LASSO round a model cooking stove and lowers it into a small round tomb at Ichisuka."}
+  - {year: 530, peg: mouse, confidence: medium, source: "ja WP: Imashirozuka (first half 6th c.; Keitai)",
+     event: "Imashirozuka, the tomb of Keitai, is built with a great haniwa ritual ground (approximate)",
+     place: "Imashirozuka, Takatsuki",
+     scene: "A MOUSE scurries between the rows of haniwa warriors and shrine maidens on the Imashirozuka ritual ground."}
+  - {year: 535, peg: mill, confidence: medium, source: "Nihon Shoki 18: Ankan 2, 12th month; ja WP",
+     event: "Ankan is buried at the Takaya hill tomb in Furuichi",
+     place: "Takaya Tsukiyama, Habikino",
+     scene: "A MILL grinds white glass beads for the bowl buried with Ankan in the Takaya hill tomb at Furuichi."}
+  - {year: 562, peg: chain, confidence: medium, source: "Nihon Shoki 19: Kinmei 23, 11th month",
+     event: "Silla people settle at Haniho in Mishima, Settsu",
+     place: "Haniho, Mishima",
+     scene: "A CHAIN of Silla captives walks into Haniho in Mishima and sets up a new village there."}
+  - {year: 575, peg: eagle, confidence: medium, source: "ja WP: Kawachi Otsukayama Kofun (late 6th c.)",
+     event: "Kawachi Otsukayama, the last giant keyhole tomb, is built (approximate)",
+     place: "Kawachi Otsukayama, Matsubara",
+     scene: "An EAGLE drops the last load of earth on Kawachi Otsukayama, the last giant keyhole tomb in Japan."}
+  - {year: 583, peg: foam, confidence: high, source: "Nihon Shoki 20; ja WP Nichira (Bidatsu 12)",
+     event: "Nichira, envoy from Baekje, is moved to the Naniwa guest house and killed by his own men",
+     place: "Naniwa guest house",
+     scene: "Nichira's Baekje servants stab him in the Naniwa guest house, and FOAM bubbles from his mouth."}
+  - {year: 587, peg: fox, confidence: medium, source: "Nihon Shoki 21: Sushun (Yomei 2, 7th month)",
+     event: "Tottoribe no Yorozu dies in the Chinu hills; his white dog dies by his body",
+     place: "Tenjinyama, Kishiwada",
+     scene: "A white FOX-like dog circles Yorozu's body in the Chinu hills and dies beside him."}
+  - {year: 591, peg: boot, confidence: medium, source: "Nihon Shoki 21: Sushun 4, 4th month",
+     event: "Bidatsu is buried in his mother's tomb at Shinaga",
+     place: "Taishi Nishiyama, Taishi",
+     scene: "Bearers set Bidatsu's BOOT at the door of his mother's tomb at Shinaga and close it."}
+  - {year: 593, peg: palm, confidence: high, source: "Nihon Shoki 22: Suiko 1, 9th month",
+     event: "Yomei's body is moved to a new tomb at Shinaga in Kawachi",
+     place: "Kasuga Mukaiyama, Taishi",
+     scene: "Bearers carry Yomei's coffin on a PALM-leaf litter from Iware to the new tomb at Shinaga."}
+  - {year: 603, peg: sumo, confidence: high, source: "Nihon Shoki 22: Suiko 11, 2nd month",
+     event: "Prince Kume, Shotoku's brother, is buried on Hanyu hill in Kawachi",
+     place: "Hanyu hill, Habikino",
+     scene: "A SUMO wrestler carries Prince Kume's coffin up Hanyu hill after his death on the Kyushu march."}
+  - {year: 619, peg: tuba, confidence: high, source: "Nihon Shoki 22: Suiko 27, 7th month",
+     event: "A Settsu fisherman catches a child-shaped creature in his net in the Horie canal",
+     place: "Naniwa Horie",
+     scene: "A fisherman in the Horie canal pulls up a TUBA-shaped net, and a creature like a child sits inside."}
+  - {year: 622, peg: nun, confidence: disputed, source: "ja WP: Eifukuji (622); Nihon Shoki gives 621",
+     event: "Prince Shotoku is buried in his mother's tomb at Shinaga",
+     place: "Eifukuji, Taishi",
+     scene: "A NUN lights the lamp as Prince Shotoku and his consort are laid beside his mother in the Shinaga tomb."}
+  - {year: 628, peg: knife, confidence: low, source: "ja WP: Suiko (buried in Takeda's tomb; site moved)",
+     event: "Suiko is buried in her son Takeda's tomb; the tomb named for her is at Shinaga",
+     place: "Yamada Takatsuka, Taishi",
+     scene: "A KNIFE cuts open Prince Takeda's tomb so that his mother Suiko can lie beside him."}
+  - {year: 643, peg: ram, confidence: high, source: "Nihon Shoki 24: Kogyoku 2, 3rd month",
+     event: "Fire burns the hall of the Baekje guest house at Naniwa and houses of the people",
+     place: "Baekje guest house, Naniwa",
+     scene: "A burning RAM charges through the Baekje guest-house hall at Naniwa and sets the people's houses on fire."}
+world_refs:
+  - {year: 316, event: "Nintoku sees no cooking smoke and frees the people from tax", cell: east_asia_society_500bce_500ce}
+  - {year: 400, event: "Suemura kilns: Korean potters start Sue ware", cell: east_asia_economy_500bce_500ce}
+  - {year: 410, event: "Konda Gobyoyama keyhole tomb", cell: east_asia_arts_500bce_500ce}
+  - {year: 450, event: "Daisen Kofun, the largest keyhole tomb", cell: east_asia_arts_500bce_500ce}
+  - {year: 507, event: "Keitai becomes Yamato king at Kusuba palace", cell: east_asia_politics_500_1500}
+  - {year: 585, event: "Moriya throws the Buddha image into the Naniwa canal", cell: east_asia_religion_500_1500}
+  - {year: 587, event: "The Soga destroy the Mononobe at Shibukawa", cell: east_asia_politics_500_1500}
+  - {year: 593, event: "Prince Shotoku founds Shitennoji at Naniwa", cell: east_asia_religion_500_1500}
+out_refs:
+  - {year: -663, event: "Jimmu lands at Naniwa and is beaten back at the Kusaka slope", reason: "legendary date"}
+  - {year: -663, event: "Hiraoka Shrine founded on Kamitsudake", reason: "legendary date"}
+  - {year: -660, event: "Ikukunitama Shrine founded on Uemachi by Jimmu", reason: "legendary date"}
+  - {year: 272, event: "Ikasuri Shrine building dedicated", reason: "legendary date"}
+  - {year: 512, event: "Mononobe at the Naniwa lodge: four Mimana districts given to Baekje", reason: "court foreign policy"}
+  - {year: 540, event: "Kinmei visits the Hafuritsu palace at Naniwa; Otomo no Kanamura retires to Sumiyoshi", reason: "royal visit"}
+  - {year: 642, event: "Baekje prince Qiao-qi watches a hunt at the Yosami granary", reason: "court diplomacy"}

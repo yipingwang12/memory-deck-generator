@@ -746,3 +746,44 @@ Yeoncheon Jeongok-ri, Goyang Haengju). Gaeseong is OUT (North Korea). Region: ea
 | `1988_present` | the Olympics, the collapses, Cheonggyecheon, candlelight, Itaewon, 2024 martial law | 45 | ~220 |
 
 Expected cards are a guide, not a target.
+
+### Osaka (2026-11-24)
+
+Area: Osaka Prefecture as decided: Osaka city (Naniwa, Uemachi plateau, Semba, Shimanouchi, Dōjima,
+Nakanoshima, Tennōji, Sumiyoshi), Sakai, the Mozu and Furuichi kofun groups (Habikino, Fujiidera), Hirakata,
+Takatsuki (Imashirozuka), Ibaraki, Suita (Expo '70 site), Toyonaka, Ikeda, Kishiwada, Izumi, Kaizuka,
+Kawachi-Nagano (Kongō-ji, Kanshin-ji), Chihaya-Akasaka, Kansai Airport. Kyoto, Nara, Kobe and the rest of
+Hyōgo (Amagasaki, Itami) are OUT. Region: east_asia.
+
+- Dates: give the CE year of the event itself. Before 1873 Japan used a lunisolar calendar: a date late in a
+  Japanese year can fall in the next CE year; convert it (policy.md "Date conversion") and write the
+  Japanese date (era name, month, day) in the source.
+- Early dates: Nihon Shoki dates before about 500 (Nintoku's Takatsu palace, Ōjin's Ōsumi palace) follow
+  cities.md "Legendary dates": `(traditional date)` in the event, confidence low or disputed. Kofun dates come
+  from archaeology ("Archaeological dates").
+- The OUT rule covers each government while the area is its seat: the court at Naniwa (Naniwa-Nagara-Toyosaki
+  palace 645–655, Shōmu's capital 744–745): edicts and reforms for the whole state, accessions, court rituals;
+  the palace itself and its buildings are IN. Hideyoshi at Osaka Castle (1583–1598) and Hideyori's court
+  (to 1615): national acts (the sword hunt, land surveys, the invasions of Korea, edicts for all Japan) are OUT;
+  the castle, the city plan, canals, the merchant moves and events in the city are IN. Tokugawa Yoshinobu at
+  Osaka Castle (1866–1868): shogunal acts OUT, events in the city IN. The Tokugawa and Meiji-and-later national
+  governments sit elsewhere, so only their laws for the whole state are OUT; acts about the city (the Osaka
+  castellan and magistrates, the Mint, the city's charter, the 1925 Greater Osaka merger, the 2015 and 2020
+  Osaka Metropolis referendums) are IN.
+- The Ishiyama Hongan-ji (1496–1580) is treated like the Holy See: the sect's councils and doctrine are OUT;
+  the temple's building, its town and the Ishiyama war (1570–1580) are IN.
+- Main stage (IN as cards): the fall of the Ishiyama Hongan-ji (1580), the sieges of Osaka (1614–1615), the
+  Ōshio Heihachirō rising (1837), Yoshinobu's flight from the castle (1868), the 1903 Industrial Exposition,
+  the 1918 rice riots, the Muroto typhoon (1934), the air raids (1945), Expo '70, the 1995 earthquake in the
+  prefecture, the Ikeda school attack (2001), the G20 summit (2019), Expo 2025.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre645` | Jōmon and Yayoi sites (Ikegami-Sone), the Mozu-Furuichi kofun, Naniwa port, Shitennō-ji, Sumiyoshi | 30 | ~70 |
+| `645_1495` | the Naniwa palaces, Gyōki, Watanabe port, Kusunoki Masashige, Sakai the free city | 45 | ~120 |
+| `1496_1614` | the Ishiyama Hongan-ji, Sakai's merchants and tea, Hideyoshi's castle and city | 45 | ~150 |
+| `1615_1867` | the sieges' end, the merchant city, Dōjima rice, bunraku and kabuki, Ōshio | 45 | ~200 |
+| `1868_1944` | the Mint, industry, "Great Osaka", the 1903 Expo, the Muroto typhoon, the war | 45 | ~230 |
+| `1945_present` | the air raids' ruins, Expo '70, Kansai Airport, the 1995 quake, Expo 2025 | 45 | ~230 |
+
+Expected cards are a guide, not a target.

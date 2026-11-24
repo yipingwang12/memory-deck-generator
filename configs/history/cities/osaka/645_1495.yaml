@@ -1,0 +1,740 @@
+# City: Osaka x 645 to 1495 (the Naniwa palaces, Settsu-shiki, Gyoki's works, Watanabe port, the Kusunoki wars,
+# the Hatakeyama wars in Kawachi, Sakai the trade port). DRAFT 2026-11-24.
+# Area: Osaka Prefecture (Osaka city, Sakai, Kawachi and Izumi towns, Mishima: Takatsuki, Ibaraki, Shimamoto/Minase,
+# Minoh, Suita). Kyoto, Nara, Kobe and the rest of Hyogo (Amagasaki, Itami, Minatogawa) are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. OUT rule: the court at Naniwa (645-655, 744-745) and the Southern Court's
+# seats at Kongo-ji, Kanshin-ji and Sumiyoshi (court acts only; battles in the area are cards).
+# Dates: memory pass + web check (14 of 45 searches; fetches of ja.wikipedia at wikipedia.org; no mirrors,
+# no unauthorised book copies). Main sources: ja.wikipedia (Naniwa-no-miya, Settsu-shiki, Naniwa-tsu, Kawachi
+# and Izumi provinces, Kusunoki Masashige, Masatsura and Masanori, Chihaya and Ishizu battles, Meio coup, temple
+# and shrine articles); Sakai city (kango toshi page); Osakasayama city (Chogen stele); MLIT (Mamuta dike).
+# Lunisolar dates: the Julian year of the day (policy.md "Date conversion"); era date in the source.
+# Traditional temple and shrine founding dates are kept, marked (traditional date), confidence low.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Approximate year ending 00 -> first two digits. Peg: last two digits of the year otherwise.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 645, peg: railway, confidence: high, source: "ja WP: Naniwa-no-miya (Taika 1, 12th month)",
+     event: "Kotoku moves the court from Asuka to Naniwa after the Isshi incident",
+     place: "Naniwa, Uemachi plateau",
+     scene: "A RAILWAY of ox carts carries Kotoku's whole court from Asuka down to the Naniwa shore."}
+  - {year: 653, peg: llama, confidence: unverified,
+     event: "Naka no Oe takes the court back to Asuka and leaves Kotoku alone at Naniwa",
+     place: "Naniwa palace",
+     scene: "A LLAMA loaded with court boxes follows Naka no Oe out of Naniwa, and Kotoku stands alone in his empty palace."}
+  - {year: 677, peg: cake, confidence: high, source: "ja WP: Settsu-shiki (Tenmu 6, 10th month)",
+     event: "Settsu-shiki, the special office for Naniwa, is first named: Tajihi no Kimi Maro heads it",
+     place: "Naniwa",
+     scene: "Tajihi no Maro cuts a CAKE shaped like Naniwa port and takes the first slice as head of the Settsu-shiki."}
+  - {year: 684, peg: fairy, confidence: medium, source: "ja WP: Settsu-shiki (Tenmu 12, 12th month 17th)",
+     event: "Tenmu orders two capitals and names Naniwa the second one",
+     place: "Naniwa palace",
+     scene: "A FAIRY taps Naniwa with her wand, and a second capital rises beside Asuka on Tenmu's order."}
+  - {year: 716, peg: dish, confidence: high, source: "ja WP: Izumi province (Reiki 2, 4th month)",
+     event: "Izumi-gen: the court splits Otori, Izumi and Hine districts from Kawachi as a special domain",
+     place: "Izumi, south of Sakai",
+     scene: "A court cook cuts Kawachi like a DISH and serves the southern slice, Otori, Izumi and Hine, as the Izumi domain."}
+  - {year: 720, peg: nose, confidence: high, source: "ja WP: Kawachi province (Yoro 4, 11th month)",
+     event: "Kawachi: Katashita and Katagami districts merge as Ogata district",
+     place: "Kashiwara",
+     scene: "A giant NOSE sniffs out the line between Katashita and Katagami and rubs it away: one Ogata district."}
+  - {year: 740, peg: horse, confidence: high, source: "ja WP: Kawachi province (Tenpyo 12, 8th month)",
+     event: "Izumi-gen is abolished and its three districts go back to Kawachi",
+     place: "Izumi",
+     scene: "A Kawachi HORSE drags the three Izumi districts back into its own province."}
+  - {year: 744, peg: warrior, confidence: high, source: "ja WP: Naniwa-no-miya (Tenpyo 16, 2nd month 26th)",
+     event: "Shomu's edict makes Naniwa the capital",
+     place: "Naniwa palace",
+     scene: "A WARRIOR reads Shomu's edict from the Naniwa palace gate: Naniwa is now the capital."}
+  - {year: 745, peg: railway, confidence: high, source: "ja WP: Naniwa-no-miya (Tenpyo 17, 1st month 1st)",
+     event: "The court leaves Naniwa: Shigaraki is named the capital",
+     place: "Naniwa palace",
+     scene: "A RAILWAY track runs out of the Naniwa palace gate, and the court rolls away to Shigaraki after one year."}
+  - {year: 757, peg: log, confidence: high, source: "ja WP: Izumi province (Tenpyo-hoji 1, 5th month)",
+     event: "Izumi becomes a separate province again",
+     place: "Izumi provincial office, Izumi city",
+     scene: "A surveyor lays a LOG across the plain and splits Izumi from Kawachi for good as a new province."}
+  - {year: 769, peg: ship, confidence: high, source: "ja WP: Kawachi province (Jingo-keiun 3)",
+     event: "Kawachi province is made the Kawachi-shiki, a capital office for the Western Capital",
+     place: "Yao",
+     scene: "A SHIP of Nara officials sails into Kawachi and turns the province office into the Kawachi-shiki of the Western Capital."}
+  - {year: 793, peg: palm, confidence: high, source: "ja WP: Settsu-shiki (Enryaku 12, 3rd month 9th)",
+     event: "Settsu-shiki is abolished: Settsu becomes an ordinary province",
+     place: "Naniwa",
+     scene: "Kanmu's PALM wipes the Settsu-shiki name off its board, and Naniwa's office becomes plain Settsu province."}
+  - {year: 825, peg: nail, confidence: medium, source: "ja WP: Izumi province (Tencho 2, 3rd and 7th months)",
+     event: "A plan to move four Settsu districts into Izumi is dropped after local protest",
+     place: "Settsu-Izumi border",
+     scene: "Settsu villagers pull out every NAIL of the new boundary posts until the court drops its plan."}
+  - {year: 844, peg: warrior, confidence: high, source: "ja WP: Naniwa-tsu (Shoku Nihon Koki, Jowa 11)",
+     event: "The Naniwa Korokan guest house for foreign envoys closes and becomes the Settsu provincial office",
+     place: "Naniwa",
+     scene: "A WARRIOR takes down the envoys' sign at the Korokan and nails up the Settsu provincial office board."}
+  - {year: 1020, peg: nose, confidence: medium, source: "ja WP: Tsuboi Hachiman-gu (Kannin 4)",
+     event: "Minamoto no Yorinobu becomes governor of Kawachi: the Kawachi Genji settle at Tsuboi",
+     place: "Tsuboi, Habikino",
+     scene: "Minamoto no Yorinobu follows his NOSE to Tsuboi and plants the Kawachi Genji house there as governor."}
+  - {year: 1322, peg: nun, confidence: low, source: "ja WP: Kusunoki Masashige (Genko 2)",
+     event: "Kusunoki Masashige attacks the Watanabe band for the Kamakura shogunate",
+     place: "Watanabe",
+     scene: "A NUN rows Kusunoki Masashige into Watanabe port, where he strikes the river band for the shogun."}
+  - {year: 1331, peg: moth, confidence: high, source: "ja WP: Kusunoki Masashige (Genko 1, 10th month 21st)",
+     event: "Siege of Shimo-Akasaka: the castle falls and Kusunoki Masashige burns it and slips away",
+     place: "Shimo-Akasaka, Chihaya-Akasaka",
+     scene: "Masashige lets the Akasaka fort burn like a MOTH in a lamp and vanishes into the night."}
+  - {year: 1332, peg: moon, confidence: medium, source: "ja WP: Chihaya battle, Masashige (4th month; or 12th)",
+     event: "Kusunoki Masashige raises troops again and takes back Akasaka castle",
+     place: "Akasaka, Chihaya-Akasaka",
+     scene: "Under the MOON, Masashige's men hide in rice carts, roll into Akasaka castle and take it back."}
+  - {year: 1332, peg: moon, confidence: high, source: "ja WP: Masashige (Genko 2, 5th month 21st)",
+     event: "Battle of Tennoji: Kusunoki Masashige routs the Rokuhara army at Watanabe bridge",
+     place: "Watanabe bridge and Tennoji",
+     scene: "The MOON shines on Watanabe bridge as Rokuhara riders crowd it and Masashige pushes them into the river."}
+  - {year: 1332, peg: moon, confidence: medium, source: "ja WP: Masashige (Genko 2, 7th month 27th)",
+     event: "Masashige lights fires on the hills, and Utsunomiya Kintsuna leaves Tennoji without a battle",
+     place: "Tennoji",
+     scene: "Masashige hangs a paper MOON over a thousand hill fires, and Utsunomiya, fooled, leaves Tennoji without one fight."}
+  - {year: 1333, peg: mummy, confidence: high, source: "ja WP: Shitenno-ji (Genko 3, 1st month 19th)",
+     event: "Second battle of Tennoji: Kusunoki Masashige wins at the temple",
+     place: "Shitenno-ji",
+     scene: "A MUMMY rises from the Shitenno-ji pagoda and leads Masashige's men to victory in the temple yard."}
+  - {year: 1333, peg: mummy, confidence: high, source: "ja WP: Chihaya battle (Genko 3, leap 2nd month 1st)",
+     event: "Kami-Akasaka castle falls after the shogunate army cuts its water pipe",
+     place: "Kami-Akasaka, Chihaya-Akasaka",
+     scene: "A MUMMY blocks the hidden water pipe of Kami-Akasaka, and the thirsty garrison opens the gate."}
+  - {year: 1333, peg: mummy, confidence: high, source: "ja WP: Chihaya battle (Genko 3, 2nd month 27th)",
+     event: "Siege of Chihaya castle begins: a huge shogunate army surrounds Masashige on Mount Kongo",
+     place: "Chihaya castle, Mount Kongo",
+     scene: "A MUMMY of straw stands on Chihaya's wall, and the shogunate's great army settles down to besiege it."}
+  - {year: 1333, peg: mummy, confidence: high, source: "ja WP: Chihaya battle (Genko 3, 5th month 9th-10th)",
+     event: "The shogunate army leaves Chihaya: Masashige's castle holds to the end",
+     place: "Chihaya castle",
+     scene: "The beaten shogunate army carries its dead down Mount Kongo like MUMMY bundles, and Chihaya still stands."}
+  - {year: 1333, peg: mummy, confidence: medium, source: "ja WP: Masashige (8th month 5th; year by context)",
+     event: "Kusunoki Masashige becomes governor of Kawachi and Settsu",
+     place: "Kawachi provincial office",
+     scene: "A MUMMY unwraps the governor's seals of Kawachi and Settsu and hands them to Masashige."}
+  - {year: 1338, peg: movie, confidence: medium, source: "ja WP: Battle of Ishizu (5th month 6th)",
+     event: "Kitabatake Akiie's army burns Ishizu and the Sakai shore",
+     place: "Ishizu and Sakai-ura",
+     scene: "A MOVIE projector lights the night as Akiie's troops set the Sakai shore and Ishizu on fire."}
+  - {year: 1338, peg: movie, confidence: high, source: "ja WP: Battle of Ishizu (5th month 22nd)",
+     event: "Battle of Ishizu: Ko no Moronao's army kills Kitabatake Akiie near Sakai",
+     place: "Ishizu, Sakai",
+     scene: "Akiie falls from his horse at Ishizu like the last frame of a MOVIE, and Moronao's men kill him."}
+  - {year: 1347, peg: rock, confidence: high, source: "ja WP: Kusunoki Masatsura (Shohei 2, 9th month 17th)",
+     event: "Battle of Fujiidera: Kusunoki Masatsura beats Hosokawa Akiuji",
+     place: "Fujiidera",
+     scene: "Masatsura rolls a ROCK down on Hosokawa's camp at Fujiidera, and the shogun's army runs."}
+  - {year: 1347, peg: rock, confidence: high, source: "ja WP: Kusunoki Masatsura (Shohei 2, 11th month 26th)",
+     event: "Battle of Sumiyoshi and Tennoji: Masatsura beats Yamana Tokiuji and saves drowning enemies at Watanabe",
+     place: "Sumiyoshi, Tennoji and Watanabe bridge",
+     scene: "Masatsura's men pull Yamana's drowning soldiers onto a ROCK below Watanabe bridge after the rout."}
+  - {year: 1352, peg: lion, confidence: medium, source: "ja WP: Kusunoki Masanori (Bunna 1, 9th month 30th)",
+     event: "Southern and Northern armies fight at Watanabe and Kanzaki",
+     place: "Watanabe and Kanzaki",
+     scene: "A LION of the Southern army leaps from Watanabe to Kanzaki, fighting along the river."}
+  - {year: 1353, peg: llama, confidence: medium, source: "ja WP: Kusunoki Masanori (Bunna 2, 3rd month 23rd)",
+     event: "Southern and Northern armies fight at Suita",
+     place: "Suita",
+     scene: "A LLAMA charges across the Suita paddies between Southern and Northern lines."}
+  - {year: 1353, peg: llama, confidence: medium, source: "ja WP: Kusunoki Masanori (Bunna 2, 5th month 16th)",
+     event: "Battle at Watanabe: Kusunoki Masanori opens the road to Kyoto",
+     place: "Watanabe",
+     scene: "Masanori rides a LLAMA over the Watanabe ford and opens the road to Kyoto for the Southern army."}
+  - {year: 1355, peg: lily, confidence: medium, source: "ja WP: Kusunoki Masanori (Bunna 4, 2nd month 6th)",
+     event: "Fighting at Akutagawa: the Southern army retreats through Tennoji and Sumiyoshi",
+     place: "Akutagawa, Takatsuki",
+     scene: "Southern soldiers drop a LILY at Akutagawa and fall back south through Tennoji and Sumiyoshi."}
+  - {year: 1360, peg: cheese, confidence: high, source: "ja WP: Kongo-ji, Masanori (Enbun 5, 3rd month 17th)",
+     event: "Hatakeyama Kunikiyo takes Kongo-ji and burns more than forty sub-temples",
+     place: "Kongo-ji, Amano, Kawachi-Nagano",
+     scene: "Hatakeyama's soldiers melt forty Kongo-ji halls like CHEESE in one great fire."}
+  - {year: 1360, peg: cheese, confidence: medium, source: "ja WP: Kusunoki Masanori (Enbun 5, 5th month 9th)",
+     event: "Akasaka castle falls to the shogunate army after a night attack",
+     place: "Akasaka, Chihaya-Akasaka",
+     scene: "Shogunate soldiers bait the Akasaka guards with CHEESE in the night and take the castle at dawn."}
+  - {year: 1371, peg: cat, confidence: medium, source: "ja WP: Kusunoki Masanori (Oan 4, 4th-11th months)",
+     event: "The Southern army besieges Kuriwari castle, held by Masanori for the north",
+     place: "Kuriwari castle, Kawachi",
+     scene: "A CAT claws at Kuriwari castle for seven months as the Southern army tries to take it from Masanori."}
+  - {year: 1373, peg: comb, confidence: medium, source: "ja WP: Masanori; Kongo-ji (Oan 6, 8th month 10th)",
+     event: "The Southern palace at Amano (Kongo-ji) falls to Masanori and the Northern army",
+     place: "Kongo-ji, Amano",
+     scene: "Masanori runs a COMB of soldiers through Amano valley and takes the Southern palace at Kongo-ji."}
+  - {year: 1382, peg: oven, confidence: medium, source: "ja WP: Wakae castle (Eitoku 2)",
+     event: "Hatakeyama Motokuni becomes shugo of Kawachi: two centuries of Hatakeyama rule begin",
+     place: "Kawachi",
+     scene: "Hatakeyama Motokuni lights his family OVEN in Kawachi and keeps it hot for a hundred years and more."}
+  - {year: 1382, peg: oven, confidence: medium, source: "ja WP: Sakai city timeline; Masanori (Kowa 2)",
+     event: "Battle of Hirao: Yamana Ujikiyo defeats Kusunoki Masanori",
+     place: "Hirao, Kawachi",
+     scene: "Yamana Ujikiyo shoves Masanori's army into an OVEN at Hirao, and the old Kusunoki leader flees."}
+  - {year: 1392, peg: piano, confidence: high, source: "Sakai city: kango toshi page (Genchu 9)",
+     event: "Ouchi Yoshihiro becomes shugo of Izumi and makes Sakai his base",
+     place: "Sakai",
+     scene: "Ouchi Yoshihiro rolls a PIANO into Sakai port and plays it as the new lord of Izumi."}
+  - {year: 1408, peg: sofa, confidence: medium, source: "ja WP: Kishiwada castle (Oei 15)",
+     event: "The Hosokawa become joint shugo of Izumi and take Kishiwada castle",
+     place: "Kishiwada",
+     scene: "Two Hosokawa lords share one SOFA in Kishiwada castle as joint governors of Izumi."}
+  - {year: 1460, peg: cheese, confidence: medium, source: "ja WP: Wakae castle (Choroku 4, 9th month)",
+     event: "Hatakeyama Yoshinari, driven from Kyoto, enters Wakae castle: first record of the castle",
+     place: "Wakae, Higashiosaka",
+     scene: "Hatakeyama Yoshinari hides behind a wall of CHEESE wheels as he slips into Wakae castle."}
+  - {year: 1461, peg: jet, confidence: medium, source: "ja WP: Takeyama siege (Kansho 1, 12th month 19th)",
+     event: "Siege of Takeyama castle begins: the shogunate attacks Hatakeyama Yoshinari",
+     place: "Takeyama castle, Tondabayashi",
+     scene: "A JET of shogunate arrows screams up Mount Takeyama, and the long siege of Yoshinari starts."}
+  - {year: 1463, peg: gem, confidence: high, source: "ja WP: Takeyama siege (Kansho 4, 4th month 15th)",
+     event: "Takeyama castle falls after more than two years: Yoshinari flees to Mount Koya",
+     place: "Takeyama castle, Tondabayashi",
+     scene: "Masanaga's men pry Takeyama open like a GEM box, and Yoshinari runs off to Mount Koya."}
+  - {year: 1477, peg: cake, confidence: medium, source: "ja WP: Wakae castle (Bunmei 9)",
+     event: "Hatakeyama Yoshinari takes Wakae castle; Yusa Naganao escapes by boat from Tennoji",
+     place: "Wakae, Higashiosaka",
+     scene: "Yoshinari cuts Wakae castle like a CAKE, and Yusa Naganao paddles away from Tennoji on a boat."}
+  - {year: 1479, peg: cowboy, confidence: medium, source: "ja WP: Wakae, Takaya castle (Bunmei 11)",
+     event: "Hatakeyama Yoshinari builds the Konda residence and Takaya castle as his Kawachi base",
+     place: "Konda and Takaya, Habikino",
+     scene: "A COWBOY ropes the Furuichi kofun mound, and Yoshinari builds Takaya castle on top of it."}
+  - {year: 1484, peg: fairy, confidence: high, source: "Sakai city: kango toshi page (Bunmei 16)",
+     event: "Sakai's merchant council, the egoshu, first appears in the records",
+     place: "Sakai, Aguchi shrine",
+     scene: "A FAIRY writes the names of Sakai's ten ruling merchants, the egoshu, in the town book."}
+  - {year: 1493, peg: palm, confidence: high, source: "ja WP: Meio coup (Meio 2, 3rd month 26th)",
+     event: "The shogun's army besieges Hatakeyama Motoie in Takaya castle",
+     place: "Takaya castle, Habikino",
+     scene: "The shogun Yoshitane closes his PALM round Takaya castle and squeezes Motoie inside."}
+  - {year: 1493, peg: palm, confidence: medium, source: "ja WP: Meio coup (leap 4th month 21st)",
+     event: "Battle at Sakai: Akamatsu Masanori defeats the Kii army coming to help Masanaga",
+     place: "Sakai",
+     scene: "Akamatsu swats the Kii relief army off the Sakai shore with one PALM."}
+  - {year: 1493, peg: palm, confidence: high, source: "ja WP: Meio coup (leap 4th month 25th)",
+     event: "Shokaku-ji falls: Hatakeyama Masanaga kills himself, and the shogun Yoshitane surrenders",
+     place: "Shokaku-ji, Hirano",
+     scene: "Masanaga lays his PALM on his sword in burning Shokaku-ji, and Yoshitane walks out to surrender."}
+  - {year: 1493, peg: palm, confidence: medium, source: "ja WP: Meio coup (Meio 2, 9th month 10th)",
+     event: "Uehara Motohide burns Sumiyoshi shrine, where he believes Hatakeyama Hisanobu hides",
+     place: "Sumiyoshi taisha",
+     scene: "Uehara holds a torch in his PALM and sets the Sumiyoshi halls alight to smoke out Hisanobu."}
+  - {year: 659, peg: elbow, confidence: high, source: "Nihon Shoki 26: Saimei 5/7/3 (Iki no Hakatoko)",
+     event: "An embassy to Tang under Sakaibe no Iwashiki and Tsumori no Kisa sails from Mitsu port at Naniwa",
+     place: "Mitsu port, Naniwa",
+     scene: "A giant ELBOW shoves the two Tang embassy ships off the Mitsu quay at Naniwa, and they sail west."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "ja WP: Go-Murakami (Shohei 9, 3rd month)",
+     event: "The captive Northern Court emperors Kogon, Komyo and Suko are held at Kongo-ji",
+     place: "Kanzo-in, Kongo-ji, Amano",
+     scene: "A LAWYER locks the three captive Northern emperors in Kongo-ji's Kanzo-in and keeps the key for the Southern Court."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "ja WP: Go-Murakami (Shohei 9, 10th month)",
+     event: "The Southern Court settles in the area: Go-Murakami makes the Mani-in of Kongo-ji his temporary palace",
+     place: "Mani-in, Kongo-ji, Amano",
+     scene: "A LAWYER signs the lease on Kongo-ji's Mani-in, and Go-Murakami's Southern Court moves in as its tenant."}
+  - {year: 1368, peg: chef, confidence: high, source: "ja WP: Go-Murakami (Shohei 23/3/11)",
+     event: "Go-Murakami dies at the Sumiyoshi temporary palace (Suminoe-dono)",
+     place: "Suminoe-dono, Sumiyoshi",
+     scene: "A CHEF blows out the night lamp in Sumiyoshi's Suminoe-dono, and Go-Murakami dies in the dark of the palace."}
+  # science
+  - {year: 731, peg: moth, confidence: medium, source: "Osakasayama city: Chogen stele; ja WP Gyoki: 732",
+     event: "Gyoki rebuilds the Sayama pond dike for the farmers below",
+     place: "Sayama-ike, Osakasayama",
+     scene: "A MOTH-winged Gyoki flies above Sayama pond, directing farmers who raise its broken dike."}
+  - {year: 762, peg: chain, confidence: high, source: "ja WP: Sayama-ike (Tenpyo-hoji 6)",
+     event: "The Sayama pond dike breaks; the court repairs it with eighty-three thousand workers",
+     place: "Sayama-ike, Osakasayama",
+     scene: "A CHAIN of eighty-three thousand workers passes earth hand to hand to close the broken Sayama dike."}
+  - {year: 770, peg: goose, confidence: high, source: "MLIT Mamuta dike page (Shoku Nihongi, Hoki 1)",
+     event: "The Mamuta and Shiki river dikes are repaired by thirty thousand workers",
+     place: "Mamuta dike, Neyagawa and Kadoma",
+     scene: "A GOOSE flock lands on the Mamuta dike, and thirty thousand workers pack the earth under them."}
+  - {year: 785, peg: waffle, confidence: high, source: "ja WP: Settsu-shiki, Naniwa-tsu (Enryaku 4, 1st)",
+     event: "Wake no Kiyomaro cuts a channel from the Yodo to the Mikuni (Kanzaki) river",
+     place: "Eguchi, Higashiyodogawa",
+     scene: "Wake no Kiyomaro cuts a WAFFLE grid of canals and joins the Yodo to the Kanzaki river."}
+  - {year: 788, peg: fife, confidence: high, source: "ja WP: Wake no Kiyomaro (Enryaku 7)",
+     event: "Wake no Kiyomaro tries to cut the Uemachi plateau to drain Kawachi into the sea and fails",
+     place: "Kawahori-guchi, Tennoji",
+     scene: "Kiyomaro's FIFE calls two hundred thousand diggers to the Uemachi ridge, but the cut stops half done."}
+  - {year: 1202, peg: sun, confidence: high, source: "Osakasayama city: Chogen stele (Kennin 2)",
+     event: "Chogen rebuilds the Sayama pond with stone pipes from old coffins",
+     place: "Sayama-ike, Osakasayama",
+     scene: "The SUN rises on Chogen's stone pipes as his monks and farmers drag them into Sayama dike."}
+  # religion
+  - {year: 650, peg: lasso, confidence: medium, source: "ja WP: Yachu-ji (c. Hakuchi 1, excavation)",
+     event: "Yachu-ji temple is built at Habikino (approximate)",
+     place: "Yachu-ji, Habikino",
+     scene: "Builders LASSO the first roof beams of Yachu-ji up onto their posts in Habikino."}
+  - {year: 650, peg: lasso, confidence: low, source: "ja WP: Osaka Tenmangu (Hakuchi 1, tradition)",
+     event: "Taishogun shrine, the root of Osaka Tenmangu, is founded beside Naniwa palace (traditional date)",
+     place: "Tenma, Kita-ku",
+     scene: "A guard throws a LASSO round a corner of Naniwa palace ground and marks the plot for the Taishogun shrine."}
+  - {year: 650, peg: lasso, confidence: low, source: "ja WP: Hiraoka shrine (Hakuchi 1, tradition)",
+     event: "Hiraoka shrine moves from Mount Kamitsu to its present site (traditional date)",
+     place: "Hiraoka, Higashiosaka",
+     scene: "The Hiraoka priests LASSO their shrine and drag it down Mount Ikoma to its new site."}
+  - {year: 697, peg: pig, confidence: low, source: "ja WP: Kabusan-ji (tradition)",
+     event: "En no Gyoja founds Kabusan-ji on the hills above Takatsuki (traditional date)",
+     place: "Kabusan-ji, Takatsuki",
+     scene: "En no Gyoja rides a wild PIG up the Takatsuki hills and stops where Kabusan-ji will stand."}
+  - {year: 701, peg: soda, confidence: low, source: "ja WP: Kanshin-ji (Taiho 1, tradition)",
+     event: "En no Gyoja founds Unshin-ji, later Kanshin-ji (traditional date)",
+     place: "Kanshin-ji, Kawachi-Nagano",
+     scene: "En no Gyoja pours SODA from a spring at Kawachi-Nagano and founds a temple beside it."}
+  - {year: 704, peg: sewer, confidence: low, source: "ja WP: Ebara-ji (Keiun 1, tradition)",
+     event: "Gyoki turns his birth house into a temple, Ebara-ji (traditional date)",
+     place: "Ebara-ji, Sakai",
+     scene: "Gyoki digs a SEWER round his family house in Sakai and turns the house into Ebara-ji temple."}
+  - {year: 706, peg: sushi, confidence: medium, source: "ja WP: Otori taisha (Keiun 3)",
+     event: "Hagoromo-hama shrine of the Otori shrine group is set up",
+     place: "Takaishi",
+     scene: "Fishermen offer SUSHI on the Hagoromo shore as they set up a new shrine for Otori."}
+  - {year: 708, peg: sofa, confidence: low, source: "ja WP: Otori taisha (Wado 1, Gyoki Nenpu)",
+     event: "Gyoki founds Shinpo-ji beside Otori shrine (traditional date)",
+     place: "Otori, Sakai",
+     scene: "Gyoki sets a SOFA for the Buddha next to Otori shrine and opens Shinpo-ji."}
+  - {year: 716, peg: dish, confidence: low, source: "ja WP: Kushuon-in (Reiki 2)",
+     event: "Gyoki founds Kushuon-in at Hirakata (traditional date)",
+     place: "Kushuon-in, Hirakata",
+     scene: "Gyoki sets an alms DISH on the Hirakata bank of the Yodo and starts Kushuon-in there."}
+  - {year: 724, peg: hanger, confidence: low, source: "ja WP: Eifuku-ji (Jinki 1, tradition)",
+     event: "Shomu orders two temple compounds at Shotoku's tomb, the start of Eifuku-ji (traditional date)",
+     place: "Eifuku-ji, Taishi",
+     scene: "Shomu hangs a temple robe on a HANGER by Prince Shotoku's tomb and orders Eifuku-ji built."}
+  - {year: 725, peg: nail, confidence: low, source: "ja WP: Fujii-dera (Jinki 2, tradition)",
+     event: "Fujii-dera is founded and its dry-lacquer thousand-armed Kannon made (traditional date)",
+     place: "Fujii-dera, Fujiidera",
+     scene: "A NAIL holds each of the thousand hands of Fujii-dera's new lacquer Kannon in place."}
+  - {year: 725, peg: nail, confidence: low, source: "ja WP: Kushuon-in (Jinki 2)",
+     event: "Kushuon-in at Hirakata is finished (traditional date)",
+     place: "Kushuon-in, Hirakata",
+     scene: "Gyoki drives the last NAIL into Kushuon-in's roof on the Yodo bank."}
+  - {year: 726, peg: nacho, confidence: low, source: "ja WP: Koon-ji (Jinki 3, tradition)",
+     event: "Gyoki founds Koon-ji at Kaizuka (traditional date)",
+     place: "Koon-ji, Kaizuka",
+     scene: "Gyoki shares a NACHO with Kaizuka farmers and asks them to build Koon-ji."}
+  - {year: 727, peg: ink, confidence: high, source: "ja WP: Doto (Jinki 4; tiles dated Jinki 5)",
+     event: "Gyoki starts Ono-dera and its stepped earth pagoda, the Doto",
+     place: "Doto, Naka-ku, Sakai",
+     scene: "Gyoki's followers write their names in INK on tiles and stack them into the Doto earth pagoda."}
+  - {year: 727, peg: ink, confidence: low, source: "ja WP: Katsuo-ji (Jinki 4, engi)",
+     event: "The brothers Zenchu and Zensan build a hermitage, the start of Katsuo-ji (traditional date)",
+     place: "Katsuo-ji, Minoh",
+     scene: "Two brothers draw the plan of a hermitage in INK on a Minoh rock: the first Katsuo-ji."}
+  - {year: 738, peg: movie, confidence: medium, source: "ja WP: Kumeda-dera (Tenpyo 10)",
+     event: "Gyoki founds Kumeda-dera to keep up the Kumeda pond",
+     place: "Kumeda-dera, Kishiwada",
+     scene: "A MOVIE of Gyoki's monks digging Kumeda pond plays in the new Kumeda-dera hall."}
+  - {year: 744, peg: warrior, confidence: low, source: "ja WP: Mizuma-dera (Tenpyo 16, tradition)",
+     event: "Gyoki founds Mizuma-dera at Kaizuka (traditional date)",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "A WARRIOR lays down his sword at Mizuma, and Gyoki builds a temple on the spot."}
+  - {year: 744, peg: warrior, confidence: low, source: "ja WP: Aguchi shrine (Tenpyo 16)",
+     event: "Gyoki builds Nenbutsu-ji inside the Aguchi shrine grounds in Sakai (traditional date)",
+     place: "Aguchi shrine, Sakai",
+     scene: "A WARRIOR guards Aguchi shrine while Gyoki raises Nenbutsu-ji inside its fence."}
+  - {year: 749, peg: rope, confidence: medium, source: "ja WP: Sumiyoshi taisha (Tenpyo-shoho 1)",
+     event: "Sumiyoshi shrine holds its first periodic rebuilding (shikinen sengu), by the shrine's count",
+     place: "Sumiyoshi taisha",
+     scene: "Carpenters pull a ROPE and lift new Sumiyoshi halls to replace the old ones for the first time."}
+  - {year: 774, peg: car, confidence: medium, source: "ja WP: Kabusan-ji (Hoki 5)",
+     event: "Prince Kaijo comes from Katsuo-ji and revives Kabusan-ji",
+     place: "Kabusan-ji, Takatsuki",
+     scene: "Prince Kaijo drives a CAR full of sutras from Katsuo-ji to Kabusan-ji and opens it again."}
+  - {year: 775, peg: eagle, confidence: medium, source: "ja WP: Katsuo-ji (Hoki 6)",
+     event: "Prince Kaijo finishes copying the Great Wisdom Sutra and the new hall is named Miroku-ji",
+     place: "Katsuo-ji, Minoh",
+     scene: "An EAGLE carries Kaijo's last sutra scroll into the new hall, and it is named Miroku-ji."}
+  - {year: 807, peg: ski, confidence: medium, source: "ja WP: Fujii-dera (Daido 1)",
+     event: "Prince Abo rebuilds Fujii-dera",
+     place: "Fujii-dera, Fujiidera",
+     scene: "Prince Abo rides a SKI down from Nara loaded with timber and rebuilds Fujii-dera."}
+  - {year: 812, peg: tongue, confidence: medium, source: "ja WP: Sumiyoshi taisha (Konin 3)",
+     event: "Sumiyoshi's periodic rebuilding is cut to the main halls only",
+     place: "Sumiyoshi taisha",
+     scene: "A court official sticks out his TONGUE at the bill and orders only Sumiyoshi's main halls rebuilt."}
+  - {year: 812, peg: tongue, confidence: low, source: "ja WP: Hirokawa-dera (Konin 3, tradition)",
+     event: "Kukai restores Hirokawa-dera at Kanan (traditional date)",
+     place: "Hirokawa-dera, Kanan",
+     scene: "Kukai's TONGUE chants a spell, and the fallen halls of Hirokawa-dera stand up again."}
+  - {year: 815, peg: doll, confidence: low, source: "ja WP: Kanshin-ji (Konin 6, tradition)",
+     event: "Kukai carves a Nyoirin Kannon and names the temple Kanshin-ji (traditional date)",
+     place: "Kanshin-ji, Kawachi-Nagano",
+     scene: "Kukai carves a Kannon no bigger than a DOLL and names the temple Kanshin-ji."}
+  - {year: 821, peg: ant, confidence: low, source: "ja WP: Taiyu-ji (Konin 12, tradition)",
+     event: "Kukai builds a hermitage at Kita-ku, the start of Taiyu-ji (traditional date)",
+     place: "Taiyu-ji, Kita-ku",
+     scene: "An ANT colony carries Kukai's sacred-tree Jizo into a straw hut, the first Taiyu-ji."}
+  - {year: 827, peg: ink, confidence: medium, source: "ja WP: Kanshin-ji (Tencho 4)",
+     event: "Jitsue and Shinjo start the buildings of Kanshin-ji",
+     place: "Kanshin-ji, Kawachi-Nagano",
+     scene: "Jitsue signs the plan of Kanshin-ji in INK, and his pupil Shinjo starts the first hall."}
+  - {year: 836, peg: match, confidence: high, source: "ja WP: Shitenno-ji (Jowa 3)",
+     event: "Lightning strikes and damages the Shitenno-ji pagoda",
+     place: "Shitenno-ji",
+     scene: "Lightning strikes the Shitenno-ji pagoda like a giant MATCH and burns its top."}
+  - {year: 843, peg: ram, confidence: low, source: "ja WP: Taiyu-ji (Jowa 10, tradition)",
+     event: "Minamoto no Toru enlarges the temple with seven halls and names it Taiyu-ji",
+     place: "Taiyu-ji, Kita-ku",
+     scene: "Minamoto no Toru's RAM butts down the old fence, and seven new halls of Taiyu-ji rise."}
+  - {year: 850, peg: lasso, confidence: high, source: "ja WP: Ikukunitama shrine (Kasho 3)",
+     event: "The Yasoshima festival on the Naniwa shore is first recorded",
+     place: "Naniwa shore, Ikutama",
+     scene: "A court envoy throws a LASSO of sacred cloth over the Naniwa islands for the first recorded Yasoshima rite."}
+  - {year: 862, peg: chain, confidence: medium, source: "ja WP: Kumata shrine (Jogan 4)",
+     event: "Sakanoue no Masamichi enshrines Gozu Tenno at Hirano: Kumata shrine is founded",
+     place: "Kumata shrine, Hirano",
+     scene: "Sakanoue drags the Gozu Tenno god to Hirano on a CHAIN and founds Kumata shrine."}
+  - {year: 879, peg: cowboy, confidence: low, source: "ja WP: Soji-ji Ibaraki (Gangyo 3, tradition)",
+     event: "Fujiwara no Yamakage founds Soji-ji at Ibaraki (traditional date)",
+     place: "Soji-ji, Ibaraki",
+     scene: "A COWBOY rides a giant turtle to Ibaraki, and Yamakage builds Soji-ji where it stops."}
+  - {year: 880, peg: vase, confidence: low, source: "ja WP: Katsuo-ji (Gangyo 4, engi)",
+     event: "Katsuo-ji's prayers cure Emperor Seiwa, and the temple gets the name Shoo-ji",
+     place: "Katsuo-ji, Minoh",
+     scene: "The monk Gyojun fills a VASE with temple water for the sick Seiwa, and Katsuo-ji becomes Shoo-ji."}
+  - {year: 947, peg: rock, confidence: medium, source: "ja WP: Domyo-ji (Tenryaku 1)",
+     event: "Domyo-ji gets its name and a Kannon said to be carved by Michizane",
+     place: "Domyo-ji, Fujiidera",
+     scene: "Monks carve the name Domyo-ji on a ROCK and set Michizane's Kannon in the hall."}
+  - {year: 949, peg: rope, confidence: high, source: "ja WP: Osaka Tenmangu (Tenryaku 3)",
+     event: "Emperor Murakami orders Osaka Tenmangu built where seven pines shine",
+     place: "Osaka Tenmangu, Tenma",
+     scene: "Seven glowing pines hold up a ROPE fence, and Murakami's men build Osaka Tenmangu inside it."}
+  - {year: 951, peg: wallet, confidence: medium, source: "ja WP: Tenjin Matsuri (Tenryaku 5, 6th month 1st)",
+     event: "The Tenjin Matsuri begins: a sacred spear floats down the river from Tenmangu",
+     place: "Okawa river, Tenma",
+     scene: "A WALLET-shaped boat drifts down the Okawa with a sacred spear in it, and the first Tenjin Matsuri follows it."}
+  - {year: 960, peg: cheese, confidence: high, source: "ja WP: Shitenno-ji (Tentoku 4)",
+     event: "Fire burns down all of Shitenno-ji",
+     place: "Shitenno-ji",
+     scene: "Shitenno-ji's halls melt like CHEESE in one great fire, and nothing is left."}
+  - {year: 1007, peg: ski, confidence: high, source: "ja WP: Shitenno-ji (Kanko 4)",
+     event: "The Shitenno-ji Engi, said to be in Prince Shotoku's hand, is found in the Golden Hall",
+     place: "Shitenno-ji Golden Hall",
+     scene: "A SKI pole pokes a hidden box in the Golden Hall, and Shotoku's Shitenno-ji Engi falls out."}
+  - {year: 1051, peg: wallet, confidence: medium, source: "ja WP: Konda Hachiman-gu (Eisho 6)",
+     event: "Konda Hachiman shrine moves to its present site beside the Ojin tomb",
+     place: "Konda Hachiman-gu, Habikino",
+     scene: "Konda priests empty their WALLET to carry their shrine south to the Ojin tomb."}
+  - {year: 1064, peg: cherry, confidence: medium, source: "ja WP: Tsuboi Hachiman-gu (Kohei 7)",
+     event: "The Kawachi Genji found Tsuboi Hachiman after the Earlier Nine Years' War",
+     place: "Tsuboi Hachiman-gu, Habikino",
+     scene: "Back from the north, the Kawachi Genji plant a CHERRY tree and build Tsuboi Hachiman beside it."}
+  - {year: 1096, peg: peach, confidence: low, source: "ja WP: Fujii-dera (Eicho 1)",
+     event: "Fujii Yasumoto repairs the ruined Fujii-dera",
+     place: "Fujii-dera, Fujiidera",
+     scene: "Fujii Yasumoto pays for Fujii-dera's new roof with one golden PEACH."}
+  - {year: 1113, peg: tomb, confidence: medium, source: "ja WP: Aguchi shrine (Ten'ei 4)",
+     event: "Aguchi shrine takes in the gods of two nearby shrines and becomes Aguchi Mimura Daimyojin",
+     place: "Aguchi shrine, Sakai",
+     scene: "The gods of two Sakai shrines leave their TOMB-like old halls and move into Aguchi shrine."}
+  - {year: 1127, peg: ink, confidence: high, source: "ja WP: Dainenbutsu-ji (Daiji 2)",
+     event: "Ryonin founds Dainenbutsu-ji at Hirano, head temple of the Yuzu Nenbutsu",
+     place: "Dainenbutsu-ji, Hirano",
+     scene: "Ryonin writes the first Yuzu Nenbutsu names in INK and founds Dainenbutsu-ji at Hirano."}
+  - {year: 1173, peg: comb, confidence: medium, source: "ja WP: Eifuku-ji (Joan era)",
+     event: "Taira no Shigemori repairs the halls of Eifuku-ji (approximate)",
+     place: "Eifuku-ji, Taishi",
+     scene: "Shigemori runs a COMB along the cracked roofs of Eifuku-ji and his carpenters mend each line."}
+  - {year: 1180, peg: vase, confidence: medium, source: "ja WP: Kongo-ji (Jisho 4)",
+     event: "A local lord gives land, and Kongo-ji rebuilds its Golden Hall and Founder's Hall",
+     place: "Kongo-ji, Amano",
+     scene: "A local lord sets a VASE of land deeds on Kongo-ji's altar, and the Golden Hall rises again."}
+  - {year: 1184, peg: fairy, confidence: medium, source: "ja WP: Katsuo-ji (Juei 3)",
+     event: "Katsuo-ji burns in the fighting of the Ichinotani campaign",
+     place: "Katsuo-ji, Minoh",
+     scene: "A FAIRY flees as Genpei war fires sweep over the Minoh hills and Katsuo-ji burns."}
+  - {year: 1185, peg: waffle, confidence: medium, source: "ja WP: Isshin-ji (Bunji 1, spring)",
+     event: "Honen builds a grass hut by Shitenno-ji's west gate, the start of Isshin-ji",
+     place: "Isshin-ji, Tennoji",
+     scene: "Honen builds a grass hut like a WAFFLE west of Shitenno-ji and watches the sun set into the sea."}
+  - {year: 1188, peg: fife, confidence: medium, source: "ja WP: Katsuo-ji (Bunji 4)",
+     event: "Minamoto no Yoritomo orders Katsuo-ji rebuilt",
+     place: "Katsuo-ji, Minoh",
+     scene: "Yoritomo blows a FIFE in Kamakura, and carpenters march to Minoh to rebuild Katsuo-ji."}
+  - {year: 1190, peg: bees, confidence: medium, source: "ja WP: Mizuma-dera (Kenkyu 1)",
+     event: "Mizuma-dera completes its seven main halls",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "BEES build seven combs, and at Mizuma-dera seven main halls stand complete."}
+  - {year: 1190, peg: bees, confidence: medium, source: "ja WP: Kumata shrine (Kenkyu 1)",
+     event: "Kumata shrine enshrines a Kumano god and builds its third main hall",
+     place: "Kumata shrine, Hirano",
+     scene: "A swarm of BEES brings the Kumano god to Hirano, and Kumata shrine builds a third hall for it."}
+  - {year: 1196, peg: peach, confidence: medium, source: "ja WP: Konda Hachiman-gu (Kenkyu 7)",
+     event: "Yoritomo restores Konda Hachiman and gives it a portable shrine, now a National Treasure",
+     place: "Konda Hachiman-gu, Habikino",
+     scene: "Yoritomo sets a golden PEACH on the new Konda Hachiman mikoshi and gives the shrine both."}
+  - {year: 1208, peg: sofa, confidence: medium, source: "ja WP: Katsuo-ji (Jogen 2-4)",
+     event: "Honen, back from exile in Sanuki, stays at Katsuo-ji",
+     place: "Katsuo-ji, Minoh",
+     scene: "Honen sinks onto a SOFA at Katsuo-ji, tired after his exile in Sanuki."}
+  - {year: 1224, peg: hanger, confidence: high, source: "ja WP: Ikukunitama shrine (Gennin 1)",
+     event: "The Yasoshima festival is held for the last time on record",
+     place: "Naniwa shore",
+     scene: "The court envoy puts the Yasoshima robes on a HANGER for the last time."}
+  - {year: 1240, peg: horse, confidence: medium, source: "ja WP: Minase-jingu (Ninji 1)",
+     event: "A memorial hall for Go-Toba is built on the Minase palace site, the start of Minase shrine",
+     place: "Minase-jingu, Shimamoto",
+     scene: "Go-Toba's old HORSE walks into the new memorial hall on the Minase palace site."}
+  - {year: 1245, peg: railway, confidence: medium, source: "ja WP: Ebara-ji (Kangen 3)",
+     event: "Eison revives Ebara-ji",
+     place: "Ebara-ji, Sakai",
+     scene: "Eison rides a RAILWAY from Nara to Sakai and brings Ebara-ji back to life."}
+  - {year: 1275, peg: eagle, confidence: medium, source: "ja WP: Hiraoka shrine (Kenji 1)",
+     event: "Eison leads over a hundred monks at Hiraoka shrine in prayers against the Mongols",
+     place: "Hiraoka shrine, Higashiosaka",
+     scene: "Eison's hundred monks chant at Hiraoka until a temple EAGLE flies west to meet the Mongol fleet."}
+  - {year: 1298, peg: beehive, confidence: medium, source: "ja WP: Domyo-ji (Einin 6)",
+     event: "Ninsho makes Domyo-ji a prayer temple of the Kamakura shogunate",
+     place: "Domyo-ji, Fujiidera",
+     scene: "Ninsho hangs a shogunate BEEHIVE on Domyo-ji's gate: the temple now prays for Kamakura."}
+  - {year: 1320, peg: nose, confidence: medium, source: "ja WP: Kongo-ji (Gen'o 2)",
+     event: "Kongo-ji rebuilds its Golden Hall",
+     place: "Kongo-ji, Amano",
+     scene: "A carpenter measures the new Golden Hall of Kongo-ji with his NOSE pressed to each beam."}
+  - {year: 1321, peg: ant, confidence: medium, source: "ja WP: Dainenbutsu-ji (Genko 1)",
+     event: "Homyo revives Dainenbutsu-ji and starts the Manbu Oneri procession",
+     place: "Dainenbutsu-ji, Hirano",
+     scene: "An ANT in a bodhisattva mask leads Homyo's first Manbu Oneri procession through Hirano."}
+  - {year: 1321, peg: ant, confidence: medium, source: "ja WP: Kumata shrine (Genko 1)",
+     event: "Go-Daigo gives Kumata shrine a name board; its three main halls are complete",
+     place: "Kumata shrine, Hirano",
+     scene: "An ANT carries Go-Daigo's name board up to Kumata shrine, now with its three halls."}
+  - {year: 1334, peg: hammer, confidence: medium, source: "ja WP: Kanshin-ji (c. Kenmu 1)",
+     event: "Kusunoki Masashige builds the outer hall of Kanshin-ji's Golden Hall for Go-Daigo",
+     place: "Kanshin-ji, Kawachi-Nagano",
+     scene: "Masashige swings a HAMMER himself on the outer hall of Kanshin-ji's Golden Hall."}
+  - {year: 1334, peg: hammer, confidence: medium, source: "ja WP: Takemikumari shrine (Kenmu 1)",
+     event: "Kusunoki Masashige rebuilds Takemikumari shrine and moves it to its present hill",
+     place: "Takemikumari shrine, Chihaya-Akasaka",
+     scene: "Masashige carries Takemikumari shrine up its new hill and fixes it there with a HAMMER."}
+  - {year: 1335, peg: mill, confidence: medium, source: "ja WP: Shitenno-ji (Kenmu 2, 5th month 8th)",
+     event: "Go-Daigo copies the Shitenno-ji Engi by hand and marks it with his palm prints",
+     place: "Shitenno-ji",
+     scene: "Go-Daigo dips his hands in ink at a MILL stone and presses them on his copy of the Engi."}
+  - {year: 1336, peg: match, confidence: medium, source: "ja WP: Kongo-ji (Engen 1, 10th month 1st)",
+     event: "Go-Daigo makes Kongo-ji an imperial prayer temple",
+     place: "Kongo-ji, Amano",
+     scene: "Go-Daigo strikes a MATCH and lights the first imperial prayer lamp at Kongo-ji."}
+  - {year: 1337, peg: mug, confidence: medium, source: "ja WP: Takemikumari shrine (Engen 2, 4th month 27th)",
+     event: "Takemikumari shrine gets the top divine rank; Nangi shrine for Masashige is set up",
+     place: "Takemikumari shrine, Chihaya-Akasaka",
+     scene: "Priests raise a MUG of sake to the top-ranked god of Takemikumari and to Masashige's new shrine beside it."}
+  - {year: 1348, peg: reef, confidence: medium, source: "ja WP: Eifuku-ji (Jowa 4, 1st month 12th)",
+     event: "The halls of Eifuku-ji burn in the fighting after Shijo Nawate",
+     place: "Eifuku-ji, Taishi",
+     scene: "Ko no Moronao's soldiers break on Eifuku-ji like a wave on a REEF and leave its halls burning."}
+  - {year: 1357, peg: log, confidence: medium, source: "ja WP: Kongo-ji (Enbun 2, 10th month 9th)",
+     event: "The monk Monkan dies at Kongo-ji",
+     place: "Kongo-ji, Amano",
+     scene: "Monkan, Go-Daigo's bold monk, lies down on a LOG bed at Kongo-ji and dies."}
+  - {year: 1361, peg: jet, confidence: low, source: "ja WP: Shitenno-ji (Koan 1, 9th month 24th)",
+     event: "The Golden Hall of Shitenno-ji, felled by the earthquake, is dedicated again",
+     place: "Shitenno-ji Golden Hall",
+     scene: "A JET of incense smoke rises as monks dedicate Shitenno-ji's Golden Hall again after the earthquake."}
+  - {year: 1423, peg: gnome, confidence: medium, source: "ja WP: Katsuo-ji (Oei 30)",
+     event: "Ashikaga Yoshimochi makes Katsuo-ji a prayer temple of the shogunate",
+     place: "Katsuo-ji, Minoh",
+     scene: "A GNOME brings Yoshimochi's order up the Minoh hills: Katsuo-ji will pray for the shogun."}
+  - {year: 1425, peg: nail, confidence: medium, source: "ja WP: Aguchi shrine (Oei 32)",
+     event: "Aguchi shrine in Sakai becomes an imperial prayer site",
+     place: "Aguchi shrine, Sakai",
+     scene: "A court messenger drives a NAIL through the imperial order onto Aguchi shrine's gate."}
+  - {year: 1432, peg: moon, confidence: high, source: "Sakai city: kango toshi page (Eikyo 4)",
+     event: "Ikkyu Sojun first comes to Sakai",
+     place: "Sakai",
+     scene: "Ikkyu walks into Sakai under a full MOON, wooden sword at his belt, to mock the rich merchants."}
+  - {year: 1434, peg: hammer, confidence: medium, source: "ja WP: Sumiyoshi taisha (Eikyo 6)",
+     event: "Sumiyoshi's thirty-fifth periodic rebuilding; then the rebuildings stop for a long time",
+     place: "Sumiyoshi taisha",
+     scene: "The last carpenter puts down his HAMMER at Sumiyoshi, and no rebuilding follows for many years."}
+  - {year: 1454, peg: lawyer, confidence: medium, source: "ja WP: Konda Hachiman-gu (Kyotoku 3)",
+     event: "The Hatakeyama feud begins and its fighting ruins the halls of Konda Hachiman",
+     place: "Konda Hachiman-gu, Habikino",
+     scene: "A LAWYER reads two Hatakeyama claims to the family seat, and the feuding armies wreck Konda Hachiman."}
+  - {year: 1463, peg: gem, confidence: medium, source: "ja WP: Hirokawa-dera (Kansho 4)",
+     event: "Hatakeyama Masanaga makes Hirokawa-dera his base against Takeyama, and the temple burns",
+     place: "Hirokawa-dera, Kanan",
+     scene: "Masanaga's camp fire leaps from Hirokawa-dera's lamps, and the temple burns like a red GEM."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "ja WP: Rennyo; search: Deguchi Gobo (Kosen-ji)",
+     event: "Rennyo leaves Yoshizaki and settles at Deguchi in Kawachi (Kosen-ji)",
+     place: "Kosen-ji, Deguchi, Hirakata",
+     scene: "An EAGLE carries Rennyo from Yoshizaki down the Yodo and sets him at Deguchi."}
+  - {year: 1475, peg: eagle, confidence: low, source: "ja WP: Hiraoka shrine (Bunmei 7, Gojintokuki)",
+     event: "Parishioners rebuild Hiraoka shrine",
+     place: "Hiraoka shrine, Higashiosaka",
+     scene: "Hiraoka villagers carve an EAGLE for the gate of their rebuilt shrine."}
+  - {year: 1493, peg: palm, confidence: medium, source: "ja WP: Fujii-dera (Meio 2)",
+     event: "Fire in the Hatakeyama fighting destroys the gates and three-storey pagoda of Fujii-dera",
+     place: "Fujii-dera, Fujiidera",
+     scene: "Fujii-dera's thousand-armed Kannon lifts a PALM, but the Hatakeyama fire takes the pagoda and gates."}
+  - {year: 1494, peg: bear, confidence: medium, source: "ja WP: Minase-jingu (Meio 3)",
+     event: "Go-Tsuchimikado enshrines Go-Toba's spirit and names the shrine Minase-no-miya",
+     place: "Minase-jingu, Shimamoto",
+     scene: "A BEAR carries Go-Toba's spirit from Oki to Minase, and the shrine becomes Minase-no-miya."}
+  - {year: 1495, peg: bell, confidence: medium, source: "ja WP: Katsuo-ji (Meio 4, 2nd month 14th)",
+     event: "Fire breaks out at Katsuo-ji",
+     place: "Katsuo-ji, Minoh",
+     scene: "Katsuo-ji's BELL rings the alarm as fire runs through the halls."}
+  # arts
+  - {year: 652, peg: lion, confidence: high, source: "ja WP: Naniwa-no-miya (Hakuchi 3, 9th month)",
+     event: "The Naniwa Nagara-Toyosaki palace is completed",
+     place: "Naniwa palace site, Hoenzaka",
+     scene: "A stone LION guards the new gate of the Naniwa Nagara-Toyosaki palace, the largest palace yet."}
+  - {year: 666, peg: judge, confidence: high, source: "ja WP: Yachu-ji (Tenji 5, inscription)",
+     event: "Yachu-ji's gilt bronze Miroku statue is inscribed with its date",
+     place: "Yachu-ji, Habikino",
+     scene: "A JUDGE scratches the date into the base of Yachu-ji's bronze Miroku as a record."}
+  - {year: 726, peg: nacho, confidence: high, source: "ja WP: Naniwa-no-miya, Settsu-shiki (Jinki 3)",
+     event: "Fujiwara no Umakai is put in charge of rebuilding Naniwa palace with tiled roofs on stone bases",
+     place: "Naniwa palace site, Hoenzaka",
+     scene: "Umakai crunches a NACHO and orders tiled roofs on stone bases for the new Naniwa palace."}
+  - {year: 769, peg: ship, confidence: high, source: "ja WP: Kawachi province (Jingo-keiun 3)",
+     event: "The Yugi palace at Yao is made the Western Capital for Shotoku and Dokyo",
+     place: "Yugi palace, Yao",
+     scene: "Dokyo sails a SHIP up the Yamato river to Yao, home of his clan, and the Yugi palace becomes the Western Capital."}
+  - {year: 784, peg: fairy, confidence: high, source: "ja WP: Naniwa-no-miya (Enryaku 3)",
+     event: "Naniwa palace's Great Hall and other buildings are taken down and moved to Nagaoka-kyo",
+     place: "Naniwa palace site, Hoenzaka",
+     scene: "A FAIRY lifts the Great Hall of Naniwa palace beam by beam and flies it to Nagaoka."}
+  - {year: 1200, peg: sauce, confidence: high, source: "ja WP: Minase-jingu (Shoji 2, 1st month)",
+     event: "Go-Toba takes Minamoto no Michichika's villa at Minase as his country palace",
+     place: "Minase, Shimamoto",
+     scene: "Go-Toba tastes the river SAUCE at Michichika's villa, likes Minase, and makes the villa his palace."}
+  - {year: 1217, peg: dog, confidence: medium, source: "ja WP: Minase-jingu (Kenpo 5)",
+     event: "A new Minase palace is built on the hill after the floods",
+     place: "Minase, Shimamoto",
+     scene: "Go-Toba's DOG runs up the hill above the flooded river, and the new Minase palace is built there."}
+  - {year: 1234, peg: hammer, confidence: medium, source: "ja WP: Kongo-ji (Tenpuku 2, inscription)",
+     event: "The sculptor Gyokai carves Kongo-ji's Fudo Myoo",
+     place: "Kongo-ji, Amano",
+     scene: "Gyokai's HAMMER and chisel cut the fierce face of Kongo-ji's Fudo Myoo."}
+  - {year: 1279, peg: cowboy, confidence: medium, source: "ja WP: Kongo-ji (Koan 2)",
+     event: "Kongo-ji's pair of wooden guardian kings is made",
+     place: "Kongo-ji, Amano",
+     scene: "Two wooden guardian kings in COWBOY stances take their posts at Kongo-ji's gate."}
+  - {year: 1351, peg: wallet, confidence: medium, source: "ja WP: Konda Hachiman-gu (Shohei 6)",
+     event: "A Tennoji court musician makes the kakko drum body for Konda Hachiman",
+     place: "Konda Hachiman-gu, Habikino",
+     scene: "A Tennoji musician pays from his own WALLET for wood and carves Konda Hachiman's kakko drum."}
+  - {year: 1410, peg: dice, confidence: medium, source: "ja WP: Konda Hachiman-gu (Oei 17)",
+     event: "Konda Hachiman's great seated drum is made",
+     place: "Konda Hachiman-gu, Habikino",
+     scene: "Drum makers throw DICE to pick the hide for Konda Hachiman's great seated drum."}
+  # economy
+  - {year: 762, peg: chain, confidence: medium, source: "ja WP: Naniwa-tsu (Shoku Nihongi, Tenpyo-hoji 6)",
+     event: "A large envoy ship cannot enter Naniwa-tsu: the port is silting up",
+     place: "Naniwa-tsu",
+     scene: "Sailors drop a CHAIN to measure the mud of Naniwa-tsu, and the big envoy ship sticks fast."}
+  - {year: 845, peg: railway, confidence: medium, source: "ja WP: Naniwa-tsu (Shoku Nihon Koki, Jowa 12)",
+     event: "Workers cut the weeds that choke the Naniwa canal to keep the port open",
+     place: "Naniwa Horie canal",
+     scene: "A RAILWAY of weed-cutting boats runs up the Naniwa canal and clears it for ships."}
+  - {year: 1185, peg: waffle, confidence: high, source: "ja WP: Battle of Yashima (Genryaku 2, 2nd 16th)",
+     event: "Yoshitsune sails from Watanabe port in a storm with five ships to attack Yashima",
+     place: "Watanabe-no-tsu",
+     scene: "Yoshitsune's five ships toss like a WAFFLE on boiling water as they leave Watanabe port in the storm for Yashima."}
+  - {year: 1336, peg: match, confidence: medium, source: "ja WP: Sakai city timeline",
+     event: "Sakai Kita-no-sho becomes an estate of Sumiyoshi shrine",
+     place: "Sakai Kita-no-sho",
+     scene: "Sumiyoshi priests strike a MATCH and burn their seal onto the deed of Sakai's northern estate."}
+  - {year: 1337, peg: mug, confidence: low, source: "ja WP: Sakai city timeline ('said to'); Sakai city",
+     event: "The Ouo night fish market of Sakai is said to begin",
+     place: "Sakai shore, Shukuin",
+     scene: "Fishermen fill a MUG with sake for Sumiyoshi's god and auction their catch at the first Sakai night market."}
+  - {year: 1389, peg: fob, confidence: medium, source: "ja WP: Aguchi shrine (Koo 1)",
+     event: "The rich Sakai merchant Noenya Shua gives rice fields to Aguchi shrine",
+     place: "Aguchi shrine, Sakai",
+     scene: "Noenya Shua unhooks the gold FOB from his belt and buys rice fields for Aguchi shrine."}
+  - {year: 1432, peg: moon, confidence: medium, source: "ja WP: Kongo-ji (c. Eikyo 4)",
+     event: "Kongo-ji starts to sell its Amano sake (approximate)",
+     place: "Kongo-ji, Amano",
+     scene: "Kongo-ji monks sell the first jars of Amano sake under the MOON."}
+  - {year: 1469, peg: ship, confidence: high, source: "Sakai city: kango toshi page (Bunmei 1)",
+     event: "A Ming tally-trade ship comes back to Sakai for the first time",
+     place: "Sakai port",
+     scene: "A Ming SHIP heavy with silk and coins sails round Shikoku and docks at Sakai for the first time."}
+  - {year: 1476, peg: cage, confidence: high, source: "Sakai city: kango toshi page (Bunmei 8)",
+     event: "A Ming tally-trade ship leaves Sakai for China for the first time",
+     place: "Sakai port",
+     scene: "Sakai merchants open the CAGE of the port, and the first Ming ship from Sakai flies out to China."}
+  # society
+  - {year: 686, peg: fish, confidence: high, source: "ja WP: Naniwa-no-miya (Shucho 1, 1st month)",
+     event: "Fire from the treasury burns down Naniwa palace",
+     place: "Naniwa palace site, Hoenzaka",
+     scene: "A burning FISH-oil lamp in the treasury sets all of Naniwa palace on fire."}
+  - {year: 776, peg: cage, confidence: high, source: "ja WP: Eifuku-ji (Hoki 7, epitaph)",
+     event: "Takaya no Hirahito is buried with a dated stone epitaph at Taishi",
+     place: "Eifuku-ji area, Taishi",
+     scene: "Mourners lower Takaya no Hirahito's dated epitaph into a stone CAGE beside his grave."}
+  - {year: 784, peg: fairy, confidence: high, source: "ja WP: Settsu-shiki (Enryaku 3, 5th month)",
+     event: "Settsu-shiki reports a huge swarm of toads at Shitenno-ji, an omen before the move to Nagaoka",
+     place: "Shitenno-ji",
+     scene: "A FAIRY counts twenty thousand toads crawling out of Shitenno-ji's pond, and the Settsu office reports the omen."}
+  - {year: 1054, peg: lawyer, confidence: low, source: "ja WP: Sakai city timeline (c. 1054)",
+     event: "The name Sakai first appears, in a poem by Fujiwara no Sadayori (approximate)",
+     place: "Sakai",
+     scene: "A LAWYER finds the word Sakai in Sadayori's poem and files it as the town's first written name."}
+  - {year: 1190, peg: bees, confidence: high, source: "ja WP: Hirokawa-dera (Bunji 6)",
+     event: "The poet-monk Saigyo dies at Hirokawa-dera",
+     place: "Hirokawa-dera, Kanan",
+     scene: "BEES hum in the blossom as Saigyo dies under the cherry trees of Hirokawa-dera, as his poem wished."}
+  - {year: 1202, peg: sun, confidence: high, source: "ja WP: Minase-jingu (Kennin 2, 5th month)",
+     event: "The Minase river floods and washes away part of Go-Toba's palace",
+     place: "Minase, Shimamoto",
+     scene: "The SUN comes out on a brown Minase river that has carried off half of Go-Toba's palace."}
+  - {year: 1205, peg: seal, confidence: medium, source: "ja WP: Hine-no-sho (Genkyu 2)",
+     event: "Mount Koya tries to open new fields at Hine and gives up",
+     place: "Hine, Izumisano",
+     scene: "A SEAL stamps Koya's plan for Hine fields, but the monks soon give the wild land up."}
+  - {year: 1210, peg: dice, confidence: low, source: "ja WP: Sakai city timeline (c. 1210)",
+     event: "Sakai Kita-no-sho, the northern estate of Sakai in Settsu, is formed (approximate)",
+     place: "Sakai Kita-no-sho",
+     scene: "Two lords throw DICE on the Settsu-Izumi border and mark out Sakai's northern estate."}
+  - {year: 1216, peg: dish, confidence: high, source: "ja WP: Minase-jingu (Kenpo 4, 8th month)",
+     event: "A storm floods the Minase river and badly damages the palace again",
+     place: "Minase, Shimamoto",
+     scene: "The flood turns Minase palace into a DISH of mud and broken beams."}
+  - {year: 1231, peg: moth, confidence: low, source: "ja WP: Sakai city timeline (c. 1231)",
+     event: "Kotani castle is built at Sakai (approximate)",
+     place: "Kotani, Sakai",
+     scene: "A giant MOTH carries the first stones up a Sakai hill and builds Kotani castle."}
+  - {year: 1234, peg: hammer, confidence: high, source: "ja WP: Hine-no-sho (Tenpuku 2)",
+     event: "Kujo Michiie gets an imperial order to open the Hine estate",
+     place: "Hine, Izumisano",
+     scene: "Kujo Michiie's men drive in the first HAMMER-struck boundary stakes of the Hine estate."}
+  - {year: 1300, peg: tomb, confidence: low, source: "ja WP: Sakai city timeline (c. 1300)",
+     event: "Sakai Minami-no-sho, the southern estate of Sakai in Izumi, is formed (approximate)",
+     place: "Sakai Minami-no-sho",
+     scene: "Izumi farmers mark Sakai's southern estate from the Mozu TOMB mounds to the shore."}
+  - {year: 1469, peg: ship, confidence: medium, source: "ja WP: Sakai city timeline",
+     event: "Sakai's northern and southern estates merge into one town",
+     place: "Sakai, Oshoji street",
+     scene: "A SHIP's plank bridges the Oshoji line, and Sakai's north and south estates become one town."}
+  - {year: 1494, peg: bear, confidence: low, source: "Sakai city: kango toshi page (Meio 3, with '?')",
+     event: "Fire burns all of Sakai Minami-no-sho",
+     place: "Sakai Minami-no-sho",
+     scene: "A burning BEAR runs through the southern estate of Sakai and sets every house alight."}
+world_refs:
+  - {year: 646, event: "Taika Reform edict issued at Naniwa", cell: east_asia_politics_500_1500}
+  - {year: 887, event: "Ninna tsunami on the Settsu coast", cell: east_asia_society_500_1500}
+  - {year: 901, event: "Michizane's exile journey (prayers at Domyo-ji and Taishogun shrine)", cell: east_asia_politics_500_1500}
+  - {year: 1332, event: "Sumiyoshi shrine trade ship to Yuan", cell: east_asia_economy_500_1500}
+  - {year: 1348, event: "Battle of Shijo Nawate", cell: east_asia_politics_500_1500}
+  - {year: 1361, event: "Shohei earthquake (Shitenno-ji Golden Hall falls; Naniwa tsunami)", cell: east_asia_society_500_1500}
+  - {year: 1399, event: "Oei Rebellion at Sakai", cell: east_asia_politics_500_1500}
+  - {year: 1488, event: "Three Poets at Minase", cell: east_asia_arts_500_1500}
+out_refs:
+  - {year: 650, event: "White pheasant presented at Naniwa; era renamed Hakuchi", reason: "court ritual"}
+  - {year: 654, event: "Kotoku dies at Naniwa", reason: "imperial death"}
+  - {year: 726, event: "Shomu visits Naniwa on his way to Inami-no", reason: "imperial visit"}
+  - {year: 734, event: "Settsu-shiki performs Kishibe music for Shomu's visit", reason: "imperial visit"}
+  - {year: 898, event: "Retired emperor Uda visits Sumiyoshi", reason: "imperial visit"}
+  - {year: 1039, event: "Sumiyoshi placed among the Twenty-Two Shrines", reason: "national shrine ranking"}
+  - {year: 1195, event: "Yoritomo sends a horse to Sumiyoshi", reason: "national ruler's offering"}
+  - {year: 1359, event: "Go-Murakami moves his court to Kanshin-ji", reason: "Southern Court seat"}
+  - {year: 1361, event: "Go-Murakami moves to the Tsumori house at Sumiyoshi", reason: "Southern Court seat"}
+  - {year: 1368, event: "Chokei succeeds Go-Murakami at Sumiyoshi", reason: "imperial accession"}
+  - {year: 1369, event: "Kusunoki Masanori goes over to the Northern Court", reason: "national politics"}

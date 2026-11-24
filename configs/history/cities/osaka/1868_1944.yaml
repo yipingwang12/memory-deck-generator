@@ -1,0 +1,1203 @@
+# City: Osaka x 1868 to 1944 (the Mint, industry, Greater Osaka, the Expo, the Muroto typhoon, the war). DRAFT 2026-11-24.
+# Area: Osaka Prefecture (Osaka city, Sakai, Takatsuki, Hirakata, Suita, Toyonaka, Ikeda, Kishiwada, Fuse ...);
+# Kyoto, Nara, Kobe and the rest of Hyogo OUT (Koshien, Takarazuka, Ashiya are OUT).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National and imperial
+# events -> out_refs. World-grid events -> world_refs (world cell year). Dates: memory pass + web check
+# (searches within the budget of 45; no unauthorised book copies). Main sources: Japanese and English
+# Wikipedia (wikipedia.org) per-site and per-company articles; Osaka Prefecture, Hirakata and Osaka City pages.
+# Lunisolar dates before 1873 are converted to the Gregorian year of the day. A work or building -> first
+# public appearance or opening. A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Castle (Keio 4/1/6)",
+     event: "Tokugawa Yoshinobu escapes from Osaka Castle at night and sails to Edo",
+     place: "Osaka Castle",
+     scene: "A CHEF hides the last shogun in a rice sack and rows him out of Osaka Castle by night to an Edo-bound ship."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Castle (Keio 4/1/9)",
+     event: "A fire from the Honmaru kitchen burns the castle palace and many turrets on the day of the hand-over",
+     place: "Osaka Castle Honmaru",
+     scene: "A CHEF knocks over his stove in the Honmaru kitchen, and the flames eat the castle palace on hand-over day."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Sakai incident (Keio 4/2/15)",
+     event: "Sakai incident: Tosa soldiers fire on French sailors and kill eleven at Sakai port",
+     place: "Sakai port",
+     scene: "A Tosa CHEF fires his musket from the Sakai quay, and eleven French sailors fall into the harbour."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Sakai incident (Keio 4/2/23)",
+     event: "Eleven Tosa soldiers cut their bellies at Myokoku-ji before French officers; nine are spared",
+     place: "Myokoku-ji, Sakai",
+     scene: "A CHEF lays eleven knives on the mats of Myokoku-ji, and the French captain stops the twelfth man."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Prefectural Office",
+     event: "The Osaka Court becomes Osaka Prefecture (Osaka-fu) in the old west magistrate's office",
+     place: "Honmachibashi",
+     scene: "A CHEF paints 'Osaka-fu' over the old magistrate's gate sign at Honmachibashi."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Prefecture (history)",
+     event: "Sakai Prefecture is set up to govern Sakai and Izumi",
+     place: "Sakai",
+     scene: "A CHEF carves a separate Sakai-ken seal from a block of tofu and stamps Izumi province with it."}
+  - {year: 1874, peg: car, confidence: high, source: "ja WP: Osaka Prefectural Office (July)",
+     event: "Osaka Prefecture moves into its second office on Enokojima",
+     place: "Enokojima",
+     scene: "A CAR drives the prefecture's files over the bridge to the new Western-style office on Enokojima."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "ja WP: Osaka City (history)",
+     event: "The four big districts become four wards: Higashi, Nishi, Minami and Kita",
+     scene: "A COWBOY lassoes the old city into four pens and brands them East, West, South and North wards."}
+  - {year: 1881, peg: foot, confidence: high, source: "ja WP: Osaka Prefecture; ja WP: Sakai",
+     event: "Sakai Prefecture is merged into Osaka Prefecture",
+     place: "Sakai",
+     scene: "A giant FOOT steps on the Sakai-ken border and presses Sakai flat into Osaka Prefecture."}
+  - {year: 1882, peg: oven, confidence: high, source: "ja WP: Osaka Prison (December)",
+     event: "Horikawa Prison opens in Nishinari, the start of the Osaka prison",
+     place: "Horikawa",
+     scene: "A guard locks the first prisoners in a brick OVEN of a cell at the new Horikawa Prison."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Osaka Castle",
+     event: "Part of the Wakayama Castle palace is moved to Osaka Castle as the garrison headquarters (Kishu Goten)",
+     place: "Osaka Castle",
+     scene: "Soldiers carry the Wakayama palace to Osaka Castle on a giant WAFFLE and set it up as their headquarters."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Osaka Prefecture (history)",
+     event: "Nara Prefecture splits off from Osaka Prefecture again",
+     scene: "A FOX bites through the map at the Ikoma hills and runs off with Nara, free of Osaka Prefecture."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Osaka City (history)",
+     event: "Osaka City is founded under the special city system; the governor acts as mayor",
+     place: "Osaka Prefectural Office",
+     scene: "The governor hangs the new Osaka City key on his own watch FOB, so he is mayor too."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Sakai City (1 April)",
+     event: "Sakai becomes a city",
+     place: "Sakai",
+     scene: "A merchant of Sakai swings a gold FOB engraved 'Sakai City' on its first day as a city."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Osaka City; en WP: Timeline of Osaka",
+     event: "First expansion: Osaka City annexes parts of Nishinari and Higashinari counties",
+     scene: "A PIG roots up the city boundary stones and drags them out into the Nishinari and Higashinari fields."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Mayor of Osaka (12 Oct)",
+     event: "The special city system ends; Tamura Taihei becomes the first elected mayor",
+     scene: "Councillors pull a BEEHIVE off the governor's head and set it on Tamura Taihei, the first own mayor."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: Osaka City Hall",
+     event: "The first city hall opens in a temporary wooden building on Enokojima",
+     place: "Enokojima",
+     scene: "A PIPE organ plays as the city staff move into the first wooden city hall on Enokojima."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: Kawaguchi settlement (17 July)",
+     event: "The Kawaguchi foreign settlement is returned and becomes Kawaguchi-cho of Nishi Ward",
+     place: "Kawaguchi",
+     scene: "A foreign consul hands his PIPE to the ward head as Kawaguchi settlement becomes Kawaguchi-cho."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Kita Great Fire (25 Dec)",
+     event: "Mayor Yamashita Shigetake resigns over the misuse of the Kita fire relief goods",
+     scene: "Mayor Yamashita slips on a bar of SOAP from the stolen relief boxes and falls out of office."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Kita Great Fire (1 April)",
+     event: "Osaka sets up city fire stations after the Kita fire",
+     scene: "A fire chief rolls DICE to place the new city fire stations across burnt Kita."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Osaka City Hall",
+     event: "The second city hall opens in a temporary building in Dojima",
+     place: "Dojima",
+     scene: "A long TONGUE licks the new 'City Hall' sign onto the temporary wooden office in Dojima."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Mayor of Osaka (15 Oct)",
+     event: "Ikegami Shiro becomes mayor",
+     scene: "Ikegami Shiro climbs out of the TOMB of two short-lived mayors and takes the mayor's chair."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Seki Hajime (10 July)",
+     event: "Seki Hajime, a Tokyo professor, becomes deputy mayor of Osaka",
+     scene: "Seki Hajime climbs down from his Tokyo ivory TOWER and sits at the Osaka deputy mayor's desk."}
+  - {year: 1918, peg: dove, confidence: medium, source: "en WP: Timeline of Osaka",
+     event: "The city sets up its Social Bureau for welfare work",
+     scene: "A DOVE carries the first welfare files into the new Social Bureau office of Osaka City."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Osaka Prison (June)",
+     event: "The Osaka prison moves to its present site in Sakai",
+     place: "Sakai",
+     scene: "A guard leads the prisoners by the NOSE from Horikawa down the road to the new jail in Sakai."}
+  - {year: 1921, peg: ant, confidence: high, source: "Search: city hall finished May (wiki, city pdf)",
+     event: "The Nakanoshima city hall is completed, the tallest building in the city",
+     place: "Nakanoshima",
+     scene: "An ANT carries the last stone to the top of the new city hall tower on Nakanoshima."}
+  - {year: 1923, peg: gnome, confidence: high, source: "ja WP: Mayor of Osaka (30 Nov)",
+     event: "Seki Hajime becomes mayor",
+     scene: "A GNOME crowns Seki Hajime with a city-planner's hat in the Nakanoshima city hall."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Dai-Osaka (1 April)",
+     event: "Greater Osaka: the city annexes forty-four towns and villages, grows to thirteen wards and becomes the largest city in Japan",
+     scene: "Mayor Seki drives a NAIL through forty-four village maps and fixes them to Osaka, now Japan's biggest city."}
+  - {year: 1926, peg: nacho, confidence: high, source: "ja WP: Osaka Prefectural Office (31 Oct)",
+     event: "The prefectural office building at Otemae is completed",
+     place: "Otemae",
+     scene: "Clerks eat a NACHO to celebrate the end of work on the stone prefectural office at Otemae."}
+  - {year: 1928, peg: knife, confidence: medium, source: "Search: Osaka blackout drill 5 July (T&F book)",
+     event: "Osaka holds a big air defence drill with blackouts and sirens",
+     scene: "A KNIFE cuts every street lamp wire in Osaka as sirens sound in the air defence drill."}
+  - {year: 1932, peg: moon, confidence: high, source: "ja WP: Dai-Osaka (1 Oct)",
+     event: "Taisho and Asahi wards are made; the city has fifteen wards",
+     scene: "Under a full MOON two new wards, Taisho and Asahi, are cut from old ones, and the count hits fifteen."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Tenjinbashi (17 June)",
+     event: "Go-Stop incident: a soldier and a policeman fight at the Tenroku crossing, and the army and police clash",
+     place: "Tenroku crossing",
+     scene: "A MUMMY of a soldier walks against the red light at Tenroku, and the policeman who stops him starts an army-police war."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Seki Hajime (26 Jan, 1 Feb)",
+     event: "Mayor Seki dies in office; the city holds its first municipal funeral in Tennoji Park",
+     place: "Tennoji Park",
+     scene: "A paper MILL turns the city plans into mourning paper for Mayor Seki's funeral in Tennoji Park."}
+  - {year: 1942, peg: rhino, confidence: high, source: "ja WP: Osaka Castle (25 Sept)",
+     event: "The army closes the castle keep and the castle grounds to the public",
+     place: "Osaka Castle",
+     scene: "An army RHINO blocks the Osaka Castle gate and charges every visitor who comes near the keep."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Osaka City (history)",
+     event: "Seven new wards make twenty-two; the ward assemblies are dissolved for the war",
+     scene: "A RAM butts the ward assembly doors shut while seven new ward signs go up across Osaka."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Kankanshiki (Meiji 1/3/26)",
+     event: "Emperor Meiji stays in Osaka and reviews the fleet off Tenpozan from the shore, the first naval review",
+     place: "Tenpozan",
+     scene: "A CHEF lines up six warships off Tenpozan like dishes on a counter, and young Emperor Meiji inspects them from the shore."}
+  - {year: 1875, peg: eagle, confidence: high, source: "ja WP: Osaka Conference (Meiji 8/2/11)",
+     event: "Osaka Conference: Okubo, Kido and Itagaki agree at Kitahama on Kido's and Itagaki's return to the government",
+     place: "Kagai restaurant, Kitahama",
+     scene: "An EAGLE flies out of Kitahama's Kagai restaurant and carries Kido and Itagaki back into the government in its claws."}
+  - {year: 1875, peg: eagle, confidence: high, source: "ja WP: Aikokusha (Meiji 8/2/22)",
+     event: "Itagaki founds the Aikokusha, a nation-wide political society, in Osaka",
+     place: "Osaka",
+     scene: "An EAGLE hatches the Aikokusha from an egg in an Osaka nest, and Itagaki's people's-rights clubs flock to it."}
+  - {year: 1885, peg: waffle, confidence: high, source: "web: ne.jp/asahi/puff/mdg (Nov, Osaka)",
+     event: "Osaka Incident: police arrest Oi Kentaro's group in Osaka before their plot for Korea starts",
+     place: "Osaka",
+     scene: "Osaka police trap Oi Kentaro's plotters in a giant WAFFLE iron and snap it shut before they can sail for Korea."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Hakko jiken (Aug 26 issue; Oct 15)",
+     event: "Hakko incident: the government prosecutes the Osaka Asahi Shimbun, and its president Murayama resigns",
+     place: "Osaka Asahi Shimbun office",
+     scene: "A government DOVE pecks the words 'white rainbow' out of the Osaka Asahi, and president Murayama walks out of his paper."}
+  # politics: new cities in the prefecture
+  - {year: 1922, peg: nun, confidence: medium, source: "Search: Kishiwada city 1 Nov (list)",
+     event: "Kishiwada becomes a city",
+     place: "Kishiwada",
+     scene: "A NUN rings the castle-town bell as Kishiwada becomes a city."}
+  - {year: 1936, peg: match, confidence: medium, source: "Search: Toyonaka city 15 Oct (list)",
+     event: "Toyonaka becomes a city",
+     place: "Toyonaka",
+     scene: "Commuters strike a MATCH on the Hankyu platform and light the 'Toyonaka City' lantern."}
+  - {year: 1937, peg: mug, confidence: medium, source: "Search: Fuse city 1 April (list)",
+     event: "Fuse becomes a city east of Osaka",
+     place: "Fuse",
+     scene: "Factory hands raise a MUG of tea in Fuse to toast their new city charter."}
+  - {year: 1939, peg: map, confidence: medium, source: "Search: Ikeda city 29 April (list)",
+     event: "Ikeda becomes a city",
+     place: "Ikeda",
+     scene: "A clerk draws Ikeda's new city line on a MAP of the Hankyu suburbs."}
+  - {year: 1940, peg: horse, confidence: medium, source: "Search: Suita city 1 April (list)",
+     event: "Suita becomes a city",
+     place: "Suita",
+     scene: "A brewery HORSE pulls the 'Suita City' banner past the beer works."}
+  - {year: 1943, peg: ram, confidence: medium, source: "Search: Takatsuki city 1 Jan (list)",
+     event: "Takatsuki becomes a city",
+     place: "Takatsuki",
+     scene: "A RAM breaks the town gate of Takatsuki on New Year's Day and the town becomes a city."}
+  # science
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Osaka University (history)",
+     event: "Osaka Prefecture opens a temporary hospital and medical school at Daifukuji",
+     place: "Daifukuji, Uehonmachi",
+     scene: "A hospital SHIP runs aground at Daifukuji temple, and its Dutch doctors start the first Western hospital in Osaka."}
+  - {year: 1870, peg: goose, confidence: high, source: "ja WP: Koraibashi",
+     event: "Koraibashi becomes Osaka's first iron bridge, the Kurogane-bashi",
+     place: "Koraibashi",
+     scene: "A GOOSE hammers iron plates over the old wooden Koraibashi and makes the first iron bridge in Osaka."}
+  - {year: 1870, peg: goose, confidence: high, source: "ja WP: Osaka Castle",
+     event: "The army sets up a noon gun at Osaka Castle to give the time",
+     place: "Osaka Castle",
+     scene: "A GOOSE pulls the noon gun cord on the castle wall, and all Osaka sets its clocks."}
+  - {year: 1873, peg: comb, confidence: high, source: "Search: Osaka City pdf; JSCE heritage",
+     event: "Shinsaibashi is rebuilt as a German-made iron arch bridge",
+     place: "Shinsaibashi",
+     scene: "A giant iron COMB from Germany is laid over the Nagahori canal and becomes the Shinsaibashi bridge."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Osaka Station (26 July)",
+     event: "The Osaka–Mukomachi railway opens, the first part of the Kyoto line",
+     place: "Osaka Station",
+     scene: "A steam engine pulls a bird CAGE of passengers from Osaka toward Kyoto on the new line."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Naniwabashi",
+     event: "The north half of Naniwabashi is rebuilt in iron",
+     place: "Naniwabashi",
+     scene: "Smiths weld an iron CAGE over the north half of Naniwabashi."}
+  - {year: 1877, peg: cake, confidence: medium, source: "ja WP: Osaka Prefecture (history)",
+     event: "The railway between Osaka and Kyoto is completed",
+     scene: "Railway men cut a CAKE shaped like a train at the line's Kyoto end, now joined to Osaka."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Old Sakai Lighthouse (15 Sept)",
+     event: "The wooden Western-style Sakai lighthouse is first lit",
+     place: "Sakai port",
+     scene: "A candle on a giant CAKE becomes the first beam of the new Sakai lighthouse."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Osaka Station",
+     event: "The Umeda canal (Dojima irihori) is dug to link Osaka Station with the waterways",
+     place: "Umeda",
+     scene: "Diggers open a long CAVE of water from Dojima to the Umeda station yard for cargo boats."}
+  - {year: 1880, peg: vase, confidence: high, source: "ja WP: Osaka University (history)",
+     event: "The Osaka Prefectural Hospital and Medical School are formally set up",
+     scene: "A doctor pours medicine from a VASE in the new Prefectural Hospital ward."}
+  - {year: 1882, peg: oven, confidence: high, source: "ja WP: Osaka Regional Met. Observatory (1 July)",
+     event: "The Osaka weather observatory opens at Dojima",
+     place: "Dojima",
+     scene: "A weatherman reads the first thermometer on top of an OVEN at the new Dojima observatory."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Hankai Railway (29 Dec)",
+     event: "The Hankai Railway opens from Namba to the Yamato River, the first private railway to run in Japan",
+     place: "Namba",
+     scene: "A WAFFLE-iron train rolls out of Namba on the Hankai line, the first private railway train in Japan."}
+  - {year: 1888, peg: fife, confidence: high, source: "ja WP: Tenjinbashi",
+     event: "Tenjinbashi is rebuilt as a steel truss bridge with German parts",
+     place: "Tenjinbashi",
+     scene: "A FIFE player marches across the new German steel truss of Tenjinbashi, rebuilt after the flood."}
+  - {year: 1888, peg: fife, confidence: high, source: "ja WP: Hankai Railway (15 May)",
+     event: "The Hankai Railway reaches Sakai",
+     place: "Sakai",
+     scene: "A FIFE whistle signals the first Hankai train into Sakai."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Osaka Railway (14 May)",
+     event: "The Osaka Railway opens from Minatomachi to Kashiwara",
+     place: "Minatomachi",
+     scene: "The Osaka Railway driver checks his watch FOB and pulls out of Minatomachi for Kashiwara."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Osaka Dento (20 May)",
+     event: "Osaka Dento starts the city's electric supply from its Nishi-Dotonbori power station",
+     place: "Nishi-Dotonbori",
+     scene: "A spark jumps from a watch FOB at Nishi-Dotonbori, and the first electric lamps of Osaka light up."}
+  - {year: 1892, peg: piano, confidence: high, source: "ja WP: Osaka Railway",
+     event: "The Osaka Railway reaches Nara through the Kamese tunnel",
+     scene: "The Osaka Railway train carries a PIANO through the Kamese tunnel and delivers it in Nara."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Osaka Railway (17 Oct)",
+     event: "The Osaka Railway completes the Joto line from Tennoji to Osaka, the east half of today's Loop",
+     place: "Tamatsukuri",
+     scene: "A BELL rings at Tamatsukuri as the Joto line closes the gap to Osaka Station."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Osaka Waterworks Bureau (13 Nov)",
+     event: "Osaka opens its modern water supply, the fourth in Japan",
+     scene: "A BELL-shaped tap gushes clean Yodo water into an Osaka street for the first time."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Osaka Castle",
+     event: "The Otemae reservoir is built beside the castle keep base",
+     place: "Osaka Castle",
+     scene: "A giant BELL is turned upside down beside the keep base and filled as the Otemae reservoir."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Osaka Station (5 April)",
+     event: "The Nishinari Railway opens from Osaka to Ajikawaguchi",
+     place: "Ajikawaguchi",
+     scene: "A BEEHIVE on the first Nishinari train buzzes all the way from Osaka to the Ajikawaguchi docks."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Nankai Electric Railway (30 Jan)",
+     event: "The Koya Railway opens from Okoji to Sayama, the start of the Koya line",
+     scene: "Monks carry a BEEHIVE onto the first Koya Railway train from Okoji to Sayama."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ja WP: Nankai Electric Railway (26 Oct)",
+     event: "Nankai opens its Tennoji branch from Tengachaya",
+     scene: "A SAUCE pot spills along the new Nankai branch from Tengachaya to Tennoji."}
+  - {year: 1901, peg: soda, confidence: medium, source: "ja WP: Osaka Station (1 July; table says 1902)",
+     event: "The second Osaka Station, a Gothic stone building, opens",
+     place: "Umeda",
+     scene: "A SODA fountain bubbles in the hall of the new Gothic stone Osaka Station."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Osaka City Tram (12 Sept)",
+     event: "Osaka opens Japan's first city-run tramway, from Hanazonobashi to the Chikko pier",
+     place: "Hanazonobashi",
+     scene: "A SUMO wrestler pushes the first city tram from Hanazonobashi to the Chikko pier."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Nankai Electric Railway (21 March)",
+     event: "The Nankai line from Namba to Wakayama-shi is completed",
+     scene: "A SUMO wrestler stretches the Nankai rails from Namba all the way to Wakayama."}
+  - {year: 1905, peg: seal, confidence: high, source: "ja WP: Hanshin Electric Railway (12 April)",
+     event: "The Hanshin electric railway opens from Deiri in Osaka to Sannomiya in Kobe",
+     place: "Deiribashi",
+     scene: "A SEAL balances the first Hanshin car on its nose from Deiribashi to Kobe."}
+  - {year: 1905, peg: seal, confidence: high, source: "ja WP: Osaka Gas (October)",
+     event: "Osaka Gas starts the city's gas supply",
+     scene: "A SEAL blows the first gas flame out of a new street lamp in Osaka."}
+  - {year: 1907, peg: ski, confidence: high, source: "ja WP: Nankai Electric Railway (21 Aug)",
+     event: "Nankai runs its first electric trains from Namba to Hamadera",
+     place: "Namba",
+     scene: "A SKI-shaped pantograph sparks on the first Nankai electric train to Hamadera beach."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ja WP: Osaka City Tram (1 Aug)",
+     event: "The city opens its east–west and north–south tram lines",
+     scene: "Passengers sit on a SOFA on the first tram that crosses Osaka east to west."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ja WP: Midosuji",
+     event: "Yotsubashi-suji is completed as the first north–south trunk road from Umeda to Namba",
+     place: "Yotsubashi-suji",
+     scene: "Workers drag a SOFA from Umeda to Namba along the new Yotsubashi-suji road."}
+  - {year: 1909, peg: soap, confidence: high, source: "Search: Osaka City pdf (Shinsaibashi)",
+     event: "Shinsaibashi is rebuilt as Osaka's first stone bridge, with gas lamps",
+     place: "Shinsaibashi",
+     scene: "Masons scrub the new stone arches of Shinsaibashi with SOAP before the gas lamps go on."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Sotojima Hoyoen (1 April)",
+     event: "The Sotojima leprosy sanatorium opens in Nishinari",
+     place: "Sotojima",
+     scene: "Nurses hand SOAP to the first patients at the Sotojima sanatorium by the sea."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Hankyu (10 March)",
+     event: "The Minoo Arima tramway opens from Umeda to Takarazuka and Minoo",
+     place: "Umeda",
+     scene: "Kobayashi Ichizo throws DICE and the first Minoo Arima car rolls from Umeda toward Minoo."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Keihan (15 April)",
+     event: "The Keihan electric line opens from Tenmabashi to Gojo in Kyoto",
+     place: "Tenmabashi",
+     scene: "A giant DICE rolls along the Yodo bank as the first Keihan car leaves Tenmabashi."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Yodo River; ja WP: Shin-Yodogawa",
+     event: "The New Yodo River cut is completed with the Kema weir and lock",
+     place: "Kema",
+     scene: "Engineers roll a DICE-shaped lock gate into place at Kema, and the Yodo floods go down the new cut."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "Sakai builds a reservoir and water purification plant",
+     place: "Sakai",
+     scene: "A DICE drops into the clear water of the new Sakai reservoir."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "ja WP: Hankai Line (1 Dec)",
+     event: "The Hankai electric tramway opens from Ebisucho to Sakai",
+     place: "Ebisucho",
+     scene: "The tram driver shows a TATTOO of Sakai on his arm as the first Hankai tram leaves Ebisucho."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Hankai Line (1 April)",
+     event: "The Hankai tramway reaches Hamadera",
+     place: "Hamadera",
+     scene: "A TONGUE of track licks the beach at Hamadera as the tram arrives."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Osaka City Tram (1 May)",
+     event: "The Sakaisuji tram line opens",
+     place: "Sakaisuji",
+     scene: "A TONGUE of steel rail unrolls down Sakaisuji, and the tram follows it."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Ikoma Tunnel; ja WP: Daiki",
+     event: "The Ikoma tunnel is completed and the Osaka Electric Tramway opens from Uehonmachi to Nara",
+     place: "Ikoma tunnel",
+     scene: "A TOWER of rock falls away at the Ikoma tunnel mouth, and the first Daiki car runs from Uehonmachi to Nara."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Osaka Waterworks Bureau",
+     event: "The Shibashima water intake and pump station are completed",
+     place: "Shibashima",
+     scene: "A water TOWER at Shibashima pumps Yodo water to the whole city."}
+  - {year: 1915, peg: doll, confidence: high, source: "ja WP: Naniwabashi",
+     event: "Naniwabashi is rebuilt on Sakaisuji with lion statues at its ends",
+     place: "Naniwabashi",
+     scene: "A DOLL rides one of the four stone lions on the new Naniwabashi."}
+  - {year: 1916, peg: dish, confidence: high, source: "ja WP: Osaka City Tram (27 March)",
+     event: "The third tram construction stage is completed",
+     scene: "Tram men set a DISH of rice on each of the new rails of the third tram stage."}
+  - {year: 1916, peg: dish, confidence: high, source: "ja WP: Osaka University (history)",
+     event: "The Shiomi Institute of Physical and Chemical Research is set up",
+     scene: "A chemist heats a DISH of salts in the new Shiomi Institute laboratory."}
+  - {year: 1919, peg: tuba, confidence: high, source: "ja WP: Midosuji",
+     event: "Mayor Ikegami announces the plan to widen Midosuji to forty-four metres",
+     place: "Midosuji",
+     scene: "Mayor Ikegami blows a TUBA down narrow Midosuji and the sound pushes the walls back to forty-four metres."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Hankyu (16 July)",
+     event: "The Hankyu Kobe line opens from Juso to Kobe",
+     place: "Juso",
+     scene: "A Hankyu car sticks its NOSE out of Juso and runs west to Kobe."}
+  - {year: 1923, peg: gnome, confidence: high, source: "ja WP: Osaka Dento; ja WP: Osaka City Tram",
+     event: "The city buys Osaka Dento and runs the electric supply itself",
+     scene: "A GNOME turns the Osaka Dento power switch over to the city's Electric Bureau."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Koraibashi (April)",
+     event: "A tram safety island, the first in Japan, is set up at Koraibashi",
+     place: "Koraibashi",
+     scene: "Workers NAIL down a raised safety island at the Koraibashi tram stop."}
+  - {year: 1926, peg: nacho, confidence: high, source: "ja WP: Midosuji",
+     event: "Work begins to widen Midosuji and to dig the subway under it",
+     place: "Midosuji",
+     scene: "A digger scoops out Midosuji like a NACHO full of dip for the subway below."}
+  - {year: 1927, peg: ink, confidence: high, source: "ja WP: Hitachi Zosen; en WP: Timeline",
+     event: "The Dojima Ohashi bridge is built over the Dojima River",
+     place: "Dojima River",
+     scene: "Steel arches rise from the Dojima River like strokes of INK on a page."}
+  - {year: 1927, peg: ink, confidence: high, source: "ja WP: Osaka Municipal Bus (26 Feb)",
+     event: "The first city bus route opens from Abenobashi to Hirano",
+     place: "Abenobashi",
+     scene: "The conductor stamps the first city bus ticket in red INK at Abenobashi."}
+  - {year: 1927, peg: ink, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "The Hankai Ohashi bridge over the Yamato River is completed",
+     place: "Yamato River",
+     scene: "An INK line on the map becomes the new Hankai Ohashi bridge over the Yamato River."}
+  - {year: 1929, peg: knob, confidence: high, source: "ja WP: Koraibashi",
+     event: "Koraibashi is rebuilt as a concrete arch bridge",
+     place: "Koraibashi",
+     scene: "A builder turns a KNOB and the concrete arch of the new Koraibashi sets hard."}
+  - {year: 1932, peg: moon, confidence: high, source: "ja WP: Osaka City Tram (26 July)",
+     event: "The fourth tram construction stage is completed",
+     scene: "Under the MOON the last rail of the fourth tram stage is bolted down."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Midosuji Line (20 May)",
+     event: "The first city subway in Japan opens from Umeda to Shinsaibashi",
+     place: "Umeda",
+     scene: "A MUMMY climbs out of the ground at Shinsaibashi after the first ride on the Midosuji subway."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Tenjinbashi",
+     event: "Tenjinbashi is rebuilt as a three-span arch bridge",
+     place: "Tenjinbashi",
+     scene: "A HAMMER rings on the three new arches of Tenjinbashi."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Osaka Station (1 June)",
+     event: "The Tokaido and Joto lines at Osaka Station are raised onto viaducts",
+     place: "Osaka Station",
+     scene: "A giant HAMMER knocks the Osaka Station tracks up onto a viaduct overnight."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Osaka University (Sept)",
+     event: "Osaka Imperial University founds the Research Institute for Microbial Diseases",
+     scene: "A scientist smashes a test tube with a HAMMER to show the new institute's first microbe."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Yodoyabashi",
+     event: "Yodoyabashi and Oebashi are rebuilt as concrete arch bridges",
+     place: "Yodoyabashi",
+     scene: "A water MILL turns under the two new arches of Yodoyabashi and Oebashi."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Midosuji Line (30 Oct)",
+     event: "The subway reaches Namba",
+     place: "Namba",
+     scene: "A MILL wheel pushes the subway tunnel from Shinsaibashi on to Namba."}
+  - {year: 1937, peg: mug, confidence: high, source: "ja WP: Midosuji (11 May)",
+     event: "Midosuji is completed as a forty-four-metre boulevard with ginkgo trees",
+     place: "Midosuji",
+     scene: "Citizens raise a MUG of beer under the new ginkgo trees of the wide Midosuji boulevard."}
+  - {year: 1937, peg: mug, confidence: high, source: "ja WP: Nankai Building (1 Nov)",
+     event: "Nankai's Namba station platforms are raised onto a viaduct",
+     place: "Namba Station",
+     scene: "A MUG of tea stays level as the Nankai platforms at Namba rise onto the viaduct."}
+  - {year: 1938, peg: movie, confidence: high, source: "ja WP: Midosuji Line (21 April)",
+     event: "The subway reaches Tennoji",
+     place: "Tennoji",
+     scene: "A MOVIE crew films the first three-car subway train as it reaches Tennoji."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: Osaka International Airport (17 Jan)",
+     event: "The Osaka Second Airfield opens on the Toyonaka–Itami border",
+     place: "Toyonaka",
+     scene: "A pilot spreads a MAP on the wing and lands first at the new Osaka Second Airfield."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: Midosuji Line (March)",
+     event: "Hanshin moves its Umeda station underground",
+     place: "Umeda",
+     scene: "A MAP of Umeda folds downward, and the Hanshin trains go under the street."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: Osaka University (Nov)",
+     event: "The Institute of Scientific and Industrial Research is founded",
+     scene: "Professors pin a MAP of Osaka factories to the wall of the new industrial research institute."}
+  - {year: 1940, peg: horse, confidence: high, source: "ja WP: Osaka Station (1 June)",
+     event: "The third Osaka Station building opens, only partly built because of the war",
+     place: "Osaka Station",
+     scene: "A HORSE trots into the half-built third Osaka Station, where the hotel floors never come."}
+  - {year: 1940, peg: horse, confidence: high, source: "ja WP: Osaka Municipal Bus (1 June)",
+     event: "The city takes over the private Ao Bus company",
+     scene: "A HORSE tows the blue Ao Buses into the city bus garage."}
+  - {year: 1942, peg: rhino, confidence: high, source: "ja WP: Yotsubashi Line (10 May)",
+     event: "The Yotsubashi subway line opens from Daikokucho to Hanazonocho",
+     place: "Daikokucho",
+     scene: "A RHINO digs the short Yotsubashi subway tunnel with its horn from Daikokucho."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: Osaka City Tram (1 April)",
+     event: "The city buys the Hankai Dentetsu tramway; the tram network reaches its longest",
+     scene: "A WARRIOR drags the Hankai tram line into the city depot, and the network is at its longest."}
+  # religion
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Kawaguchi Christ Church",
+     event: "Bishop Channing Moore Williams settles near the Kawaguchi settlement and opens a chapel and a school",
+     place: "Kawaguchi",
+     scene: "Bishop Williams steps off a SHIP at Kawaguchi and opens the first Anglican chapel in Osaka in his house."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Naniwa Church (20 Jan)",
+     event: "Naniwa Church is founded with Sawayama Paul as its pastor, the first self-supporting church in Japan",
+     scene: "Sawayama Paul bakes a CAKE from his flock's own coins and opens Naniwa Church with no mission money."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "ja WP: Hokoku Shrine Osaka (Meiji 12/11/18)",
+     event: "Toyokuni (Hokoku) Shrine to Toyotomi Hideyoshi is built at the east end of Nakanoshima",
+     place: "Nakanoshima",
+     scene: "A COWBOY ropes Hideyoshi's spirit back to Osaka and ties it to the new shrine on Nakanoshima."}
+  - {year: 1882, peg: oven, confidence: high, source: "ja WP: Kawaguchi Christ Church (7 May)",
+     event: "St Timothy's chapel in the Kawaguchi settlement is dedicated",
+     place: "Kawaguchi",
+     scene: "The bishop blesses a bread OVEN in the new St Timothy's chapel at Kawaguchi."}
+  - {year: 1887, peg: fox, confidence: high, source: "ja WP: Isshin-ji",
+     event: "Isshin-ji makes its first bone Buddha (okotsu-butsu) from the ashes of many thousands of dead",
+     place: "Isshin-ji, Tennoji",
+     scene: "A temple FOX grinds the ashes of fifty thousand dead into powder, and monks cast the first bone Buddha of Isshin-ji."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Kawaguchi Christ Church",
+     event: "Two Anglican congregations unite as Kawaguchi Christ Church",
+     place: "Kawaguchi",
+     scene: "Two congregations step into one giant BOOT and walk on as Kawaguchi Christ Church."}
+  - {year: 1894, peg: bear, confidence: high, source: "ja WP: Tamatsukuri Catholic Church",
+     event: "The Catholic St Agnes chapel is built at Tamatsukuri",
+     place: "Tamatsukuri",
+     scene: "A BEAR carries a statue of St Agnes into the new Catholic chapel at Tamatsukuri."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Shitennoji",
+     event: "Shitennoji builds the octagonal Hakkakutei pavilion and casts a giant bell",
+     place: "Shitennoji",
+     scene: "A SUMO wrestler lifts the giant new Shotoku bell into place at Shitennoji."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Hokoku Shrine Osaka",
+     event: "Hokoku Shrine moves along Nakanoshima to make room for the Central Public Hall",
+     place: "Nakanoshima",
+     scene: "A long TONGUE licks up Hokoku Shrine and sets it down west of the library to clear the hall site."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Kawaguchi Christ Church",
+     event: "The brick Kawaguchi Christ Church chapel by William Wilson is completed",
+     place: "Kawaguchi",
+     scene: "William Wilson presses his NOSE to the last brick of the new Kawaguchi Christ Church."}
+  - {year: 1921, peg: ant, confidence: high, source: "ja WP: Hokoku Shrine Osaka",
+     event: "Hokoku Shrine separates from Kyoto's Toyokuni Shrine and becomes a prefectural shrine",
+     scene: "An ANT cuts the thread between the Kyoto and Osaka shrines, and Hokoku stands alone as a prefectural shrine."}
+  - {year: 1930, peg: mouse, confidence: high, source: "ja WP: Naniwa Church",
+     event: "Naniwa Church's present building is completed with advice from William Merrell Vories",
+     scene: "A church MOUSE climbs the Gothic tower of the new Naniwa Church that Vories helps to plan."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: PL Kyodan (27 Oct)",
+     event: "Hito no Michi dedicates a thousand-mat temporary hall at Fuse before about seventy thousand followers",
+     place: "Fuse",
+     scene: "A HAMMER nails down a thousand tatami mats at Fuse, and seventy thousand Hito no Michi followers kneel on them."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Shitennoji (21 Sept)",
+     event: "The Muroto typhoon blows down the Shitennoji pagoda onto the Golden Hall; fifteen people die",
+     place: "Shitennoji",
+     scene: "The typhoon swings the Shitennoji pagoda like a HAMMER down onto the Golden Hall."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Sumiyoshi Taisha",
+     event: "Sumiyoshi Taisha holds its forty-sixth periodic rebuilding",
+     place: "Sumiyoshi Taisha",
+     scene: "Priests strike a MATCH to light the lamps of the freshly rebuilt Sumiyoshi halls."}
+  - {year: 1940, peg: horse, confidence: high, source: "ja WP: Shitennoji (22 May)",
+     event: "Shitennoji's seventh five-storey pagoda is completed with copper tiles",
+     place: "Shitennoji",
+     scene: "A HORSE hauls the last copper tiles up the new five-storey pagoda of Shitennoji."}
+  - {year: 1940, peg: horse, confidence: high, source: "ja WP: Osaka Gokoku Shrine (4 May)",
+     event: "Osaka Gokoku Shrine for the war dead is enshrined at Suminoe",
+     place: "Suminoe",
+     scene: "A white HORSE carries the spirits of the war dead to the new Gokoku Shrine at Suminoe."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Shitennoji (April)",
+     event: "Shitennoji's giant bell is taken down and given up for metal",
+     place: "Shitennoji",
+     scene: "A RAM knocks the giant Shitennoji bell off its frame, and it goes to the metal drive."}
+  # arts
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Senpukan",
+     event: "Thomas Waters's Senpukan, the reception hall of the Mint, is completed",
+     place: "Mint, Kawasaki",
+     scene: "A CAT sits on the white veranda of Waters's new Senpukan, the Mint's Western guest hall."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Bunraku-za",
+     event: "The third Bunrakuken opens the Bunraku-za puppet theatre in Matsushima",
+     place: "Matsushima",
+     scene: "A puppeteer flips a COIN and opens the Bunraku-za in the Matsushima pleasure quarter."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Bunraku-za",
+     event: "The Bunraku-za moves into the grounds of Goryo Shrine",
+     place: "Goryo Shrine",
+     scene: "A FAIRY carries the Bunraku puppets into the Goryo Shrine grounds and they play there."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Hokoku Shrine Osaka",
+     event: "A statue of Toyotomi Hideyoshi is set up in Osaka Castle",
+     place: "Osaka Castle",
+     scene: "A SUMO wrestler hoists the bronze Hideyoshi onto his plinth inside Osaka Castle."}
+  - {year: 1904, peg: sewer, confidence: high, source: "ja WP: Nakanoshima Library (25 Feb)",
+     event: "The Osaka Library on Nakanoshima, a gift of the Sumitomo family, opens",
+     place: "Nakanoshima",
+     scene: "Sumitomo money flows up out of a SEWER grate and builds the domed library on Nakanoshima."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Bunraku-za (March)",
+     event: "Shochiku buys the Bunraku-za",
+     place: "Goryo Shrine",
+     scene: "Shochiku pays for the Bunraku-za with a crate of SOAP and takes over the puppets."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Tsutenkaku (3 July)",
+     event: "The first Tsutenkaku tower and the Luna Park amusement park open in Shinsekai",
+     place: "Shinsekai",
+     scene: "A giant TONGUE sticks up into the Shinsekai sky as the first Tsutenkaku, with Luna Park at its feet."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "Search: Yoshimoto history (bunshun, shashi)",
+     event: "The Yoshimoto couple take over the Daini Bungeikan comedy hall in Tenma, the start of Yoshimoto",
+     place: "Tenma",
+     scene: "Sei Yoshimoto sticks out her TONGUE at the audience as she opens her first comedy hall behind Tenma shrine."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Tennoji Park",
+     event: "The Expo meeting hall is moved into Tennoji Park as the Tennoji Public Hall",
+     place: "Tennoji Park",
+     scene: "Workers lift the Expo hall out of its TOMB of storage and set it up as the Tennoji Public Hall."}
+  - {year: 1914, peg: tower, confidence: high, source: "Search: Osaka City board pdf (July)",
+     event: "The Sennichimae Rakutenchi entertainment hall opens on the burnt Minami site",
+     place: "Sennichimae",
+     scene: "A lit domed TOWER crowns the new Rakutenchi pleasure hall on the ashes of Sennichimae."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Tennoji Park",
+     event: "The Expo art gallery becomes the Osaka Municipal Citizens' Museum",
+     place: "Tennoji Park",
+     scene: "A DOG guards the old Expo gallery, now the Municipal Citizens' Museum."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Osaka Central Public Hall (17 Nov)",
+     event: "The Osaka Central Public Hall, Iwamoto Einosuke's gift, opens on Nakanoshima",
+     place: "Nakanoshima",
+     scene: "A DOVE lands on the red-brick dome of the new Central Public Hall, which Iwamoto paid for."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: OSK Nippon Revue (April)",
+     event: "Shochiku founds its girls' revue school in Tennoji, the start of the OSK revue",
+     place: "Tennoji",
+     scene: "A NUN teaches the first Shochiku revue girls to dance in Tennoji."}
+  - {year: 1923, peg: gnome, confidence: high, source: "ja WP: Osaka Shochikuza (17 May)",
+     event: "The Osaka Shochikuza opens in Dotonbori, built after La Scala",
+     place: "Dotonbori",
+     scene: "A GNOME in opera dress opens the doors of the Shochikuza, Dotonbori's little La Scala."}
+  - {year: 1926, peg: nacho, confidence: high, source: "ja WP: Bunraku-za",
+     event: "Fire destroys the Goryo Bunraku-za",
+     place: "Goryo Shrine",
+     scene: "A NACHO fryer catches fire and burns down the Goryo Bunraku-za with the puppets inside."}
+  - {year: 1926, peg: nacho, confidence: high, source: "ja WP: OSK Nippon Revue (1 April)",
+     event: "The Shochiku girls' revue stages its first Haru no Odori spring dances",
+     place: "Shochikuza",
+     scene: "Revue girls throw a NACHO with each kick line at the first Haru no Odori."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "en WP: Timeline of Osaka",
+     event: "The Asahi Kaikan concert hall opens",
+     scene: "The orchestra eats a NACHO in the interval at the new Asahi Kaikan concert hall."}
+  - {year: 1928, peg: knife, confidence: high, source: "ja WP: Tennoji Park",
+     event: "The open-air Tennoji Music Hall with seats for thousands opens",
+     place: "Tennoji Park",
+     scene: "A conductor waves a KNIFE as a baton in the new open-air Tennoji Music Hall."}
+  - {year: 1930, peg: mouse, confidence: high, source: "Search: NII paper (Showa 5, January)",
+     event: "The Western-style Yotsubashi Bunraku-za opens",
+     place: "Yotsubashi",
+     scene: "A MOUSE sits in one of the new chairs at the Western-style Yotsubashi Bunraku-za."}
+  - {year: 1931, peg: moth, confidence: high, source: "ja WP: Osaka Castle (7 Nov)",
+     event: "The rebuilt concrete keep of Osaka Castle opens as a museum, paid for by citizens",
+     place: "Osaka Castle",
+     scene: "A MOTH flies to the gold tigers on the new concrete keep that citizens paid for."}
+  - {year: 1932, peg: moon, confidence: high, source: "ja WP: Osaka Kabukiza (28 Sept)",
+     event: "The Osaka Kabukiza opens in Sennichimae",
+     place: "Sennichimae",
+     scene: "A kabuki actor bows to the MOON on the roof of the new Osaka Kabukiza."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Search: Gas Building 1933 (Osaka City pdf)",
+     event: "Yasui Takeo's Gas Building on Midosuji is completed",
+     place: "Midosuji",
+     scene: "A MUMMY unwraps itself to show the striped Gas Building rising on Midosuji."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "Search: Yoshimoto history (bunshun)",
+     event: "Entatsu and Achako's talking manzai 'Sokeisen' becomes a hit",
+     scene: "Entatsu and Achako play a baseball MUMMY in their talking manzai, and Osaka laughs."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Osaka Municipal Museum of Art (1 May)",
+     event: "The Osaka Municipal Museum of Art opens on the old Sumitomo house site",
+     place: "Tennoji Park",
+     scene: "A curator strikes a MATCH to light the lamps of the new Municipal Museum of Art."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Kyoikuto",
+     event: "The Education Tower for teachers and children killed in the typhoon is built in Osaka Castle Park",
+     place: "Osaka Castle Park",
+     scene: "Children strike a MATCH to light the lamp at the new Education Tower for the typhoon dead."}
+  - {year: 1937, peg: mug, confidence: high, source: "ja WP: Osaka Electric Science Museum (13 March)",
+     event: "The Electric Science Museum opens with the first planetarium in Japan",
+     place: "Yotsubashi",
+     scene: "A MUG of stars spills across the dome of Japan's first planetarium at the Electric Science Museum."}
+  - {year: 1937, peg: mug, confidence: high, source: "ja WP: OSK Nippon Revue (16 Dec)",
+     event: "Fire guts the Osaka Gekijo revue theatre in Sennichimae",
+     place: "Sennichimae",
+     scene: "A MUG of oil tips over backstage and burns out the Osaka Gekijo revue hall."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Tsutenkaku (16 Jan)",
+     event: "Fire from the next-door cinema damages the first Tsutenkaku",
+     place: "Shinsekai",
+     scene: "A burning RAM runs out of the Ohashi-za cinema and sets the Tsutenkaku legs on fire."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Tsutenkaku (20 Feb)",
+     event: "The first Tsutenkaku is cut up for its steel",
+     place: "Shinsekai",
+     scene: "A RAM butts down the damaged Tsutenkaku, and its steel goes to the war."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Hokoku Shrine Osaka",
+     event: "The bronze Hideyoshi statue is given up for metal",
+     place: "Osaka Castle",
+     scene: "A RAM knocks the bronze Hideyoshi off his plinth for the metal drive."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: OSK Nippon Revue (4 March)",
+     event: "The spring dances are cut short when luxury shows are ordered closed",
+     scene: "A WARRIOR drops the curtain on the spring dances in mid-show."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: Osaka Kabukiza (5 March)",
+     event: "The Osaka Kabukiza stops its shows under the wartime order",
+     place: "Sennichimae",
+     scene: "A WARRIOR bars the Kabukiza doors with his spear under the wartime order."}
+  # economy
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Port (Keio 3/12/7)",
+     event: "Osaka is opened to foreign trade on the same day that Kobe port opens",
+     scene: "A CHEF unlocks the Osaka market gate and sells the first foreign merchant a bowl of rice."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Osaka Port (Keio 4/7/15)",
+     event: "Osaka port opens to foreign ships, with Tomishima as the open quay",
+     place: "Tomishima",
+     scene: "A CHEF on the Tomishima quay waves in the first foreign steamer to the opened port."}
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Japan Mint (Keio 4/intercal. 4/21)",
+     event: "The new government sets up a coinage office, the start of the Osaka Mint",
+     scene: "A CHEF melts old shogunate gold in his wok at the new government coinage office."}
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Dojima Rice Market",
+     event: "The new government closes the Dojima rice exchange and takes the domain warehouses",
+     place: "Dojima",
+     scene: "A government SHIP sails off with the Dojima rice, and the old exchange shuts."}
+  - {year: 1870, peg: goose, confidence: high, source: "ja WP: Osaka Artillery Arsenal (Meiji 3/2/3)",
+     event: "The army arsenal office (Zoheishi) is set up at Osaka Castle with machines from Nagasaki",
+     place: "Osaka Castle",
+     scene: "A GOOSE flies the Nagasaki lathes to Osaka Castle, and the army's arsenal starts to forge guns."}
+  - {year: 1870, peg: goose, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "Satsuma opens a spinning mill at Ebisujima in Sakai",
+     place: "Ebisujima, Sakai",
+     scene: "A GOOSE spins cotton thread on the British machines of the Satsuma mill at Sakai."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Japan Mint (Meiji 4/2/15)",
+     event: "The Mint holds its opening ceremony on the Okawa",
+     place: "Mint, Kawasaki",
+     scene: "A CAT presses the first silver yen in the steam mill of the new Osaka Mint."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Dojima Rice Market",
+     event: "The Dojima rice exchange opens again",
+     place: "Dojima",
+     scene: "A CAT opens the shutters of the Dojima rice exchange, and the dealers flock back."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Osaka Port; ja WP: Kawaguchi settlement",
+     event: "The last foreign ship of the early period calls at Osaka; traders move to Kobe",
+     place: "Kawaguchi",
+     scene: "The Kawaguchi merchants pack their bags and follow a CAT onto the last ship to Kobe."}
+  - {year: 1872, peg: coin, confidence: high, source: "ja WP: Itochu (January)",
+     event: "Ito Chubei sets up the Benchu shop in Honmachi, the base of Itochu and Marubeni",
+     place: "Honmachi",
+     scene: "Ito Chubei drops the first COIN in the till of his Benchu cloth shop in Honmachi."}
+  - {year: 1873, peg: comb, confidence: high, source: "ja WP: Osaka City (history)",
+     event: "Iwasaki Yataro founds Mitsubishi Shokai in Nishi-Nagahori",
+     place: "Nishi-Nagahori",
+     scene: "Iwasaki Yataro carves three diamonds into a COMB and names his Osaka firm Mitsubishi."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Dojima Rice Market (2 Nov)",
+     event: "The Dojima Rice Trading Exchange (Beishokaisho) opens",
+     place: "Dojima",
+     scene: "Dealers shout rice prices through a CAGE at the new Dojima Rice Trading Exchange."}
+  - {year: 1876, peg: cage, confidence: high, source: "ja WP: Osaka Mainichi (20 Feb)",
+     event: "The Osaka Nippo newspaper is founded",
+     scene: "A newsboy lets the first Osaka Nippo papers fly out of a bird CAGE."}
+  - {year: 1877, peg: cake, confidence: high, source: "ja WP: Sogo Shinsaibashi",
+     event: "The Sogo kimono shop moves to Shinsaibashi-suji",
+     place: "Shinsaibashi-suji",
+     scene: "The Sogo family carries a CAKE of kimono silk into their new shop on Shinsaibashi-suji."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Osaka Chamber of Commerce (Aug)",
+     event: "Godai Tomoatsu and others found the Osaka Chamber of Commerce",
+     place: "Kitamido",
+     scene: "Godai Tomoatsu leads the merchants out of a CAVE of decline and into the first Chamber of Commerce meeting."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Shionogi (17 March)",
+     event: "Shiono Gisaburo opens his medicine wholesale shop in Doshomachi, the start of Shionogi",
+     place: "Doshomachi",
+     scene: "Shiono Gisaburo stores herbal medicine in a CAVE behind his new Doshomachi shop."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "ja WP: Asahi Shimbun (25 Jan)",
+     event: "The Asahi Shimbun is founded in Osaka",
+     scene: "A COWBOY rides through Osaka tossing the first issue of the Asahi Shimbun."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "ja WP: Osaka Artillery Arsenal (10 Oct)",
+     event: "The army works at the castle is named the Osaka Artillery Arsenal",
+     place: "Osaka Castle",
+     scene: "A COWBOY test-fires a cannon from the newly named Osaka Artillery Arsenal."}
+  - {year: 1881, peg: foot, confidence: high, source: "ja WP: Hitachi Zosen (1 April)",
+     event: "Edward Hunter founds the Osaka Iron Works shipyard at the river mouth",
+     place: "Ajikawa",
+     scene: "Edward Hunter puts his FOOT on the mud at Ajikawa and starts the Osaka Iron Works yard."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Osaka Shosen (1 May)",
+     event: "Fifty-five shipowners form the Osaka Shosen Kaisha shipping line",
+     place: "Tomishima",
+     scene: "A FAIRY ties the boats of fifty-five owners together into one Osaka Shosen fleet."}
+  - {year: 1888, peg: fife, confidence: high, source: "ja WP: Osaka Mainichi (20 Nov)",
+     event: "The Osaka Nippo is renamed the Osaka Mainichi Shimbun",
+     scene: "A FIFE plays as the newspaper's sign changes to Osaka Mainichi."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Nippon Life (4 July)",
+     event: "Nippon Life Insurance is founded in Osaka",
+     scene: "An insurance agent swings a FOB watch to count the years of the first Nippon Life policies."}
+  - {year: 1889, peg: fob, confidence: high, source: "ja WP: Asahi Breweries (Nov)",
+     event: "Osaka Beer Company is founded",
+     scene: "A brewer hangs a bottle opener on his FOB chain and founds the Osaka Beer Company."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Kubota (Feb)",
+     event: "Kubota Gonshiro opens a foundry, the start of Kubota",
+     scene: "BEES swarm out of the hot moulds at Kubota Gonshiro's new foundry."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Osaka Shosen (July)",
+     event: "Osaka Shosen opens its first overseas route, Osaka to Busan",
+     scene: "BEES follow the first Osaka Shosen ship across the strait to Busan."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Asahi Breweries (Oct)",
+     event: "The Osaka Beer brewery at Suita is completed",
+     place: "Suita",
+     scene: "Workers stamp barley with a giant BOOT in the new Suita brewery."}
+  - {year: 1892, peg: piano, confidence: high, source: "ja WP: Asahi Breweries (May)",
+     event: "Asahi Beer goes on sale",
+     scene: "A PIANO player in a beer hall pours the first glass of Asahi Beer."}
+  - {year: 1893, peg: palm, confidence: high, source: "ja WP: Dojima Rice Market (9 Sept)",
+     event: "The Dojima exchange becomes the Osaka Dojima Rice Exchange company",
+     place: "Dojima",
+     scene: "A dealer slaps his PALM on the board as the rice exchange becomes a share company."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Sumitomo Bank (1 Nov)",
+     event: "Sumitomo Bank opens in Osaka",
+     scene: "A BELL rings over the Sumitomo copper counter as the bank opens its doors."}
+  - {year: 1895, peg: bell, confidence: high, source: "ja WP: Takeda Pharmaceutical",
+     event: "Takeda opens its own factory in Osaka and starts to make medicines",
+     scene: "A BELL calls the first shift to Takeda's new medicine factory in Osaka."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Sumitomo Metal (1 April)",
+     event: "Sumitomo opens its copper rolling mill",
+     scene: "A PIG of raw copper goes through the rollers of the new Sumitomo mill."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Osaka Gas (April)",
+     event: "Osaka Gas is founded in Kujo",
+     place: "Kujo",
+     scene: "A PIG sniffs the first gas tank of the new Osaka Gas company in Kujo."}
+  - {year: 1897, peg: pig, confidence: high, source: "ja WP: Osaka Port",
+     event: "Work on the first harbour of Osaka starts with a ceremony at Tenpozan",
+     place: "Tenpozan",
+     scene: "A PIG in a hard hat digs the first spade of the harbour works at Tenpozan."}
+  - {year: 1898, peg: beehive, confidence: high, source: "ja WP: Hankai Railway (1 Oct)",
+     event: "Nankai takes over the Hankai Railway",
+     scene: "Nankai swallows the Hankai Railway like a bear takes a BEEHIVE."}
+  - {year: 1899, peg: pipe, confidence: high, source: "ja WP: Hanshin Electric Railway (12 June)",
+     event: "The company that becomes Hanshin Electric Railway is founded",
+     scene: "Promoters smoke a PIPE and sign the papers for an Osaka–Kobe electric railway company."}
+  - {year: 1900, peg: sauce, confidence: high, source: "ja WP: Hitachi Zosen (April)",
+     event: "Osaka Iron Works opens its Sakurajima shipyard",
+     place: "Sakurajima",
+     scene: "A SAUCE bottle breaks on the bow of the first hull at the Sakurajima yard."}
+  - {year: 1901, peg: soda, confidence: high, source: "ja WP: Sumitomo Metal",
+     event: "Sumitomo opens its steel casting works",
+     scene: "Molten steel fizzes like SODA in the new Sumitomo casting works."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Osaka Port",
+     event: "The great Chikko pier is completed",
+     place: "Chikko",
+     scene: "A SUMO wrestler stamps the last pile into the great Chikko pier."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Keihan (19 Nov)",
+     event: "The Keihan Electric Railway company is founded",
+     scene: "Founders eat SUSHI at the first board meeting of Keihan Electric Railway."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Asahi Breweries (March)",
+     event: "Osaka Beer merges into Dai Nippon Brewery",
+     scene: "Three brewers share one SUSHI plate as Osaka Beer joins Dai Nippon Brewery."}
+  - {year: 1907, peg: ski, confidence: high, source: "ja WP: Hankyu (19 Oct)",
+     event: "The Minoo Arima Electric Tramway company is formally founded",
+     scene: "Kobayashi Ichizo rides a SKI down to the founding meeting of the Minoo Arima tramway."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Daiki (16 Sept)",
+     event: "The company that becomes the Osaka Electric Tramway (Kintetsu's root) is founded",
+     scene: "Founders throw DICE to choose the route over Mount Ikoma for their new tramway company."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Yanmar (March)",
+     event: "Yamaoka Magokichi founds the engine works that becomes Yanmar",
+     scene: "Yamaoka Magokichi licks the oil off a gas engine with his TONGUE in his small Kita works."}
+  - {year: 1914, peg: tower, confidence: high, source: "ja WP: Toyobo (26 June)",
+     event: "Osaka Spinning and Mie Spinning merge as Toyo Boseki",
+     scene: "Two spinning firms stack their bobbins into one TOWER called Toyobo."}
+  - {year: 1916, peg: dish, confidence: high, source: "ja WP: Hitachi Zosen (12 June)",
+     event: "Osaka Iron Works workers strike for pay and are all dismissed",
+     scene: "The shipyard boss smashes the strikers' rice DISH and fires every worker."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Panasonic Holdings (June)",
+     event: "Matsushita Konosuke starts to make light sockets in a rented house in Inokuno",
+     place: "Inokuno",
+     scene: "A DOG sleeps beside the press where young Matsushita makes his first light sockets."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Osaka City (May)",
+     event: "Osaka Jidosha, the city's first taxi company, starts",
+     scene: "A DOG rides in the front seat of Osaka's first taxi."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Itochu (Dec)",
+     event: "Ito Chubei's firm splits into the trading houses that become Itochu and Marubeni",
+     scene: "A DOVE breaks the Ito firm in two: Itochu flies one way and Marubeni the other."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Nomura Securities",
+     event: "Nomura Tokushichi founds the Osaka Nomura Bank",
+     scene: "A DOVE carries the first deposit into the Osaka Nomura Bank."}
+  - {year: 1918, peg: dove, confidence: high, source: "Search: AIJ paper (April, four sites)",
+     event: "The city opens four public retail markets to hold down food prices",
+     scene: "A DOVE sells cheap rice at one of the four new city markets."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Daimaru Shinsaibashi",
+     event: "Daimaru becomes a company and its Osaka store burns down the same year",
+     place: "Shinsaibashi",
+     scene: "Daimaru staff hold their NOSE in the smoke of their burnt Shinsaibashi store."}
+  - {year: 1920, peg: nose, confidence: high, source: "ja WP: Osaka Port",
+     event: "Osaka Customs moves its head office from Tomishima to Chikko",
+     place: "Chikko",
+     scene: "Customs men follow their NOSE to the sea and move from Tomishima to Chikko."}
+  - {year: 1921, peg: ant, confidence: high, source: "ja WP: Shimano",
+     event: "Shimano Shozaburo opens his iron works in Sakai",
+     place: "Sakai",
+     scene: "An ANT rides the first bicycle freewheel out of Shimano's small Sakai works."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Osaka Port",
+     event: "The Tenpozan pier is completed",
+     place: "Tenpozan",
+     scene: "A NUN waves a liner off from the new Tenpozan pier."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Daimaru Shinsaibashi",
+     event: "Daimaru's rebuilt Shinsaibashi store by Vories opens its first stage",
+     place: "Shinsaibashi",
+     scene: "A NUN rides the escalator in the first stage of Vories's Daimaru store."}
+  - {year: 1924, peg: hanger, confidence: high, source: "ja WP: Daikin (25 Oct)",
+     event: "Yamada Akira founds Osaka Kinzoku Kogyosho, the start of Daikin, to make radiator tubes",
+     scene: "Yamada Akira hangs the first aircraft radiator tubes on a HANGER in his small shop."}
+  - {year: 1924, peg: hanger, confidence: high, source: "ja WP: Sharp (Sept)",
+     event: "Hayakawa Tokuji moves to Tanabe in Osaka after the Kanto earthquake and starts again",
+     place: "Tanabe",
+     scene: "Hayakawa hangs his pencil sign on a HANGER in a new shop in Tanabe after losing all in Tokyo."}
+  - {year: 1924, peg: hanger, confidence: high, source: "ja WP: Osaka City Tram (3-11 July)",
+     event: "City tram workers strike",
+     scene: "Tram drivers hang their caps on a HANGER and walk off the job."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: NHK Osaka (28 Feb, 1 June)",
+     event: "The Osaka Broadcasting Station is founded and starts to broadcast from the Mitsukoshi roof",
+     place: "Mitsukoshi, Koraibashi",
+     scene: "Engineers NAIL a radio mast to the Mitsukoshi roof, and Osaka's first broadcasts go out."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Sharp",
+     event: "Hayakawa makes Japan's first home-built crystal radio sets",
+     place: "Tanabe",
+     scene: "Hayakawa uses a NAIL as the cat's whisker of Japan's first home-made crystal radio."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Daibiru (Sept)",
+     event: "The Osaka Building (Daibiru) is completed on Nakanoshima",
+     place: "Nakanoshima",
+     scene: "Riveters drive the last NAIL into the big Osaka Building on Nakanoshima."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Nomura Securities (25 Dec)",
+     event: "Nomura Securities is founded in Osaka",
+     scene: "A clerk drives a NAIL through Nomura's brass plate and fixes it to the first securities office in Osaka."}
+  - {year: 1925, peg: nail, confidence: high, source: "ja WP: Takeda Pharmaceutical (29 Jan)",
+     event: "Takeda's firms merge as the company Takeda Chobei Shoten",
+     place: "Doshomachi",
+     scene: "A NAIL joins the two Takeda shop signs in Doshomachi into one company sign."}
+  - {year: 1929, peg: knob, confidence: high, source: "ja WP: Hankyu (15 April)",
+     event: "Hankyu Department Store opens in the Umeda terminal building",
+     place: "Umeda",
+     scene: "A commuter turns a door KNOB at Umeda station and walks straight into the Hankyu store."}
+  - {year: 1929, peg: knob, confidence: high, source: "ja WP: Osaka Port",
+     event: "The first harbour works of Osaka are completed",
+     place: "Chikko",
+     scene: "The harbour master turns a KNOB and the lights of the finished harbour come on."}
+  - {year: 1930, peg: mouse, confidence: high, source: "ja WP: Sumitomo Bank",
+     event: "The Sumitomo Building in Kitahama is completed",
+     place: "Kitahama",
+     scene: "A MOUSE runs over the stone columns of the new Sumitomo Building."}
+  - {year: 1931, peg: moth, confidence: high, source: "ja WP: Osaka Central Wholesale Market (11 Nov)",
+     event: "The Central Wholesale Market opens and the old Tenma and Zakoba markets close",
+     place: "Noda, Fukushima",
+     scene: "A MOTH follows the fish and vegetable traders from Zakoba and Tenma to the new central market."}
+  - {year: 1932, peg: moon, confidence: high, source: "ja WP: Nankai Building (15 July)",
+     event: "Takashimaya opens its store in the Nankai Building at Namba",
+     place: "Namba",
+     scene: "A paper MOON hangs over the opening sale of Takashimaya in the Nankai Building."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Sanwa Bank (9 Dec)",
+     event: "Three Osaka banks merge as Sanwa Bank",
+     scene: "A MUMMY wraps three Osaka banks into one bundle called Sanwa."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Yanmar (23 Dec)",
+     event: "Yanmar builds its own small high-speed diesel engine",
+     scene: "A MUMMY cranks Yanmar's first small diesel engine, and it roars."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Panasonic Holdings",
+     event: "Matsushita moves to a big factory at Kadoma and sets up business divisions",
+     place: "Kadoma",
+     scene: "A MUMMY marches the Matsushita workers out to the big new factory at Kadoma."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Hanshin (29 March)",
+     event: "Hanshin Mart, the start of Hanshin Department Store, opens at Umeda",
+     place: "Umeda",
+     scene: "A MUMMY buys bandages at the new Hanshin Mart by the Umeda station."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: Daimaru Shinsaibashi",
+     event: "Daimaru's Art Deco Shinsaibashi store is completed",
+     place: "Shinsaibashi",
+     scene: "A MUMMY admires the Art Deco peacock over the finished Daimaru store."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Osaka Stock Exchange (April)",
+     event: "The new Osaka Stock Exchange building opens in Kitahama",
+     place: "Kitahama",
+     scene: "A MILL wheel of share prices turns in the round hall of the new Kitahama exchange."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Sogo Shinsaibashi (1 Oct)",
+     event: "Murano Togo's new Sogo store opens on Midosuji",
+     place: "Shinsaibashi",
+     scene: "A MILL of glass louvres turns on the face of Murano's new Sogo store."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Sumitomo Metal (Sept)",
+     event: "Sumitomo's copper and steel works merge as Sumitomo Metal Industries",
+     scene: "A rolling MILL presses Sumitomo copper and steel into one company."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Panasonic Holdings (15 Dec)",
+     event: "Matsushita Electric Industrial is formed as a company",
+     place: "Kadoma",
+     scene: "A MILL stamps 'Matsushita Electric Industrial' on the share papers in Kadoma."}
+  - {year: 1935, peg: mill, confidence: high, source: "Search: RIHGA history (gltjp, oldphotos)",
+     event: "The Shin-Osaka Hotel opens on Nakanoshima",
+     place: "Nakanoshima",
+     scene: "A MILL wheel on the roof drives the air-cooling of the new Shin-Osaka Hotel."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: NHK Osaka (12 Dec)",
+     event: "The Osaka Broadcasting Hall is completed at Babacho",
+     place: "Babacho",
+     scene: "An announcer strikes a MATCH in the new Broadcasting Hall studio as it goes on air."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: Osaka Port",
+     event: "Osaka port handles the most cargo in Japan",
+     place: "Chikko",
+     scene: "On the shipping MAP Osaka's port is now the biggest circle in Japan."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: Dojima Rice Market",
+     event: "The Dojima rice exchange closes under rice controls",
+     place: "Dojima",
+     scene: "A clerk rolls up the old Dojima rice MAP and shuts the exchange for good."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Hitachi Zosen (11 March)",
+     event: "Osaka Iron Works is renamed Hitachi Zosen",
+     scene: "A RAM butts the old Osaka Iron Works sign into the river, and 'Hitachi Zosen' goes up."}
+  - {year: 1943, peg: ram, confidence: high, source: "ja WP: Keihan; ja WP: Hankyu (1 Oct)",
+     event: "Keihan and Hankyu are merged into one wartime railway company",
+     scene: "A RAM yokes the Keihan and Hankyu trains together for the war."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: Daiki; ja WP: Nankai (1 June)",
+     event: "Nankai and Kansai Kyuko merge as Kinki Nippon Railway (Kintetsu)",
+     scene: "A WARRIOR binds the Nankai and Kansai Kyuko flags into one Kintetsu banner."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: Osaka Port",
+     event: "The Chikko central jetty is completed and harbour work stops for the war",
+     place: "Chikko",
+     scene: "A WARRIOR lays the last stone of the Chikko central jetty and walks off to war."}
+  # society
+  - {year: 1868, peg: chef, confidence: high, source: "ja WP: Kawaguchi settlement (15 Sept)",
+     event: "The first land auction in the Kawaguchi foreign settlement sells twenty-six lots",
+     place: "Kawaguchi",
+     scene: "A CHEF auctions twenty-six lots of Kawaguchi riverbank to foreign merchants."}
+  - {year: 1869, peg: ship, confidence: high, source: "ja WP: Seimikyoku (Meiji 2/5/1)",
+     event: "The Seimikyoku chemistry school opens at Otemae with Gratama as head teacher",
+     place: "Otemae",
+     scene: "Gratama's chemistry SHIP explodes in a flask at the new Seimikyoku school at Otemae."}
+  - {year: 1871, peg: cat, confidence: high, source: "ja WP: Osaka Gokoku Shrine (Meiji 4)",
+     event: "The Sanadayama army cemetery is set up",
+     place: "Sanadayama",
+     scene: "A black CAT guards the first soldiers' graves at the new Sanadayama army cemetery."}
+  - {year: 1873, peg: comb, confidence: high, source: "Search: Osaka Pref. Sumiyoshi Park (2 Aug)",
+     event: "Sumiyoshi Park opens under the new park order, the oldest park in Osaka",
+     place: "Sumiyoshi",
+     scene: "A gardener rakes the pine sand with a COMB on the opening day of Sumiyoshi Park."}
+  - {year: 1873, peg: comb, confidence: high, source: "Search: Osaka Pref. Hamadera Park (24 Dec)",
+     event: "Hamadera pine grove is made a park after Okubo stops the felling",
+     place: "Hamadera",
+     scene: "Okubo grabs the woodcutter's saw and gives him a COMB, and Hamadera pine grove becomes a park."}
+  - {year: 1873, peg: comb, confidence: high, source: "ja WP: Kitano High School (April)",
+     event: "The Ou Gakko Western school opens in Minami-Mido, the start of Kitano school",
+     place: "Minami-Mido",
+     scene: "Pupils COMB their hair Western style on the first day of the Ou Gakko in Minami-Mido."}
+  - {year: 1878, peg: cave, confidence: high, source: "ja WP: Naniwa Church (Jan)",
+     event: "Naniwa and Osaka churches found Baika Girls' School",
+     scene: "Girls light lamps in a CAVE-dark room on the first day of Baika Girls' School."}
+  - {year: 1880, peg: vase, confidence: high, source: "ja WP: Osaka City University",
+     event: "The Osaka Commercial Training Institute is founded, the root of Osaka City University",
+     scene: "Merchants' sons learn bookkeeping by counting coins in a VASE at the new commercial school."}
+  - {year: 1883, peg: foam, confidence: high, source: "ja WP: Japan Mint",
+     event: "The Mint opens its cherry-tree walk to the public, the start of the Torinuke",
+     place: "Mint, Kawasaki",
+     scene: "Cherry petals FOAM over the crowds on the Mint's first open cherry walk."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Kita Great Fire (9 Jan)",
+     event: "The Honmachi Magari-yaki fire burns about fifteen hundred houses",
+     place: "Honmachi",
+     scene: "A fire FAIRY bends the flames round the Honmachi corner and burns fifteen hundred homes."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Osaka Jogakuin (7 Jan)",
+     event: "Wilmina Girls' School opens in the Kawaguchi settlement",
+     place: "Kawaguchi",
+     scene: "A FAIRY rings the bell of the new Wilmina Girls' School in Kawaguchi."}
+  - {year: 1884, peg: fairy, confidence: high, source: "ja WP: Momoyama Gakuin",
+     event: "Church Missionary Society teachers open Trinity school in Kawaguchi, the root of Momoyama Gakuin",
+     place: "Kawaguchi",
+     scene: "A FAIRY with a mortarboard opens the Trinity boys' school in Kawaguchi."}
+  - {year: 1885, peg: waffle, confidence: high, source: "ja WP: Meiji 18 Yodo River flood",
+     event: "The great Yodo River flood breaks the levees, swamps north Osaka and sweeps away Tenjinbashi and Tenmabashi",
+     place: "Tenmabashi",
+     scene: "The flood floats a WAFFLE of broken planks from Tenjinbashi and Tenmabashi down the Okawa."}
+  - {year: 1886, peg: fish, confidence: high, source: "ja WP: Kansai University (Nov)",
+     event: "Kansai Law School opens in a temple, the root of Kansai University",
+     place: "Kyomachibori",
+     scene: "Law students study by a FISH pond in the temple that houses the new Kansai Law School."}
+  - {year: 1890, peg: bees, confidence: high, source: "ja WP: Kita Great Fire (5 Sept)",
+     event: "The Shinmachi fire burns about two thousand houses",
+     place: "Shinmachi",
+     scene: "Burning BEES swarm through Shinmachi and set two thousand houses on fire."}
+  - {year: 1891, peg: boot, confidence: high, source: "ja WP: Nakanoshima Park (1 Dec)",
+     event: "Nakanoshima Park opens, the city's first municipal park",
+     place: "Nakanoshima",
+     scene: "A BOOT steps onto the fresh lawn of Nakanoshima Park on its opening day."}
+  - {year: 1896, peg: peach, confidence: high, source: "ja WP: Osaka University",
+     event: "Osaka Industrial School is founded",
+     scene: "Students weld a steel PEACH on the first day of the Osaka Industrial School."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "Plague cases appear in Osaka",
+     scene: "A PIPE of rats spills out of a warehouse, and plague reaches Osaka."}
+  - {year: 1903, peg: sumo, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "The Sakai aquarium opens in Ohama Park, the Expo's second site",
+     place: "Ohama Park, Sakai",
+     scene: "A SUMO wrestler presses his face to the glass of the new Sakai aquarium."}
+  - {year: 1905, peg: seal, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "A camp for Russian prisoners of war is set up at Hamadera",
+     place: "Hamadera",
+     scene: "A SEAL guards Russian prisoners of war on the Hamadera beach."}
+  - {year: 1906, peg: sushi, confidence: high, source: "ja WP: Sakai City (history)",
+     event: "Hamadera beach and its swimming school open",
+     place: "Hamadera",
+     scene: "Swimmers eat SUSHI on the sand after the first lesson at the Hamadera swimming school."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Kita Great Fire (31 July)",
+     event: "The Kita Great Fire starts at a knitting factory and burns more than eleven thousand houses",
+     place: "Kuushincho, Kita",
+     scene: "A lamp falls on a box of SOAP flakes in a knitting works, and the Kita fire eats eleven thousand houses."}
+  - {year: 1909, peg: soap, confidence: high, source: "ja WP: Tennoji Park (15 Oct)",
+     event: "Tennoji Park opens on part of the old Expo grounds",
+     place: "Tennoji",
+     scene: "Children blow SOAP bubbles on the old Expo lawns, now Tennoji Park."}
+  - {year: 1910, peg: dice, confidence: high, source: "ja WP: Hankyu (June)",
+     event: "Hankyu sells the Ikeda Muromachi houses by instalments, the first railway suburb estate",
+     place: "Ikeda",
+     scene: "Kobayashi Ichizo rolls DICE for each family that buys a Muromachi house on monthly payments."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Kita Great Fire (16 Jan)",
+     event: "The Minami Great Fire starts in Namba Shinchi and burns about five thousand houses",
+     place: "Namba Shinchi",
+     scene: "A TONGUE of fire licks out of Namba Shinchi and eats five thousand houses."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Osaka City (22 Sept)",
+     event: "A storm floods about twenty thousand houses",
+     scene: "The storm sticks out its TONGUE and floods twenty thousand Osaka homes."}
+  - {year: 1912, peg: tongue, confidence: high, source: "ja WP: Keihan (6 Oct)",
+     event: "The chrysanthemum doll show moves to Hirakata, the start of Hirakata Park",
+     place: "Hirakata",
+     scene: "A chrysanthemum doll sticks out its TONGUE at the crowd on the first day of the Hirakata show."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Ikoma Tunnel (26 Jan)",
+     event: "A cave-in in the Ikoma tunnel kills nineteen workers and traps about a hundred and fifty",
+     place: "Ikoma tunnel",
+     scene: "The Ikoma tunnel roof falls and turns the dig into a TOMB for nineteen workers."}
+  - {year: 1913, peg: tomb, confidence: high, source: "ja WP: Toyonaka Ground (1 May)",
+     event: "The Toyonaka ground opens, the first baseball field in Kansai",
+     place: "Toyonaka",
+     scene: "A batter hits the first ball over a TOMB at the edge of the new Toyonaka ground."}
+  - {year: 1915, peg: doll, confidence: high, source: "ja WP: Tennoji Zoo (1 Jan)",
+     event: "Tennoji Zoo opens",
+     place: "Tennoji Park",
+     scene: "A DOLL rides a camel through the gate of the new Tennoji Zoo."}
+  - {year: 1917, peg: dog, confidence: high, source: "ja WP: Osaka City (5 May)",
+     event: "A warehouse explodes in Yasui-cho and kills forty-three people",
+     place: "Yasui-cho, Kita",
+     scene: "A DOG runs from the blast as the Yasui-cho warehouse explodes."}
+  - {year: 1917, peg: dog, confidence: high, source: "Search: Takatsuki Otsuka-kire (MLIT, KGU)",
+     event: "The Otsuka levee breaks at Takatsuki and the Taisho flood reaches Osaka",
+     place: "Otsuka, Takatsuki",
+     scene: "A DOG digs through the Otsuka levee, and the Yodo floods all the way to Osaka."}
+  - {year: 1918, peg: dove, confidence: high, source: "ja WP: Toyonaka Ground (Jan)",
+     event: "The first Japan football championship, the root of the high school rugby and soccer cups, is played at Toyonaka",
+     place: "Toyonaka",
+     scene: "A DOVE heads the ball into the net at the first school football championship in Toyonaka."}
+  - {year: 1919, peg: tuba, confidence: high, source: "ja WP: Dai-Osaka",
+     event: "Osaka opens Japan's first child guidance centre and public nurseries",
+     scene: "A TUBA plays a lullaby at the first public nursery in Osaka."}
+  - {year: 1919, peg: tuba, confidence: high, source: "ja WP: Osaka University (Nov)",
+     event: "Osaka Medical College becomes a university",
+     scene: "Medical students play a TUBA to celebrate their college becoming a university."}
+  - {year: 1921, peg: ant, confidence: high, source: "ja WP: Osaka School of Foreign Languages",
+     event: "The Osaka School of Foreign Languages is founded",
+     scene: "An ANT reads a dictionary on the first day of the Osaka School of Foreign Languages."}
+  - {year: 1922, peg: nun, confidence: high, source: "ja WP: Kansai University (May, June)",
+     event: "Kansai University moves to Senriyama and becomes a university",
+     place: "Senriyama",
+     scene: "A NUN leads the Kansai University students up the hill to the new Senriyama campus."}
+  - {year: 1927, peg: ink, confidence: high, source: "ja WP: Osaka Medical and Pharm. University",
+     event: "The Osaka Higher Medical School is approved at Takatsuki",
+     place: "Takatsuki",
+     scene: "The minister signs the Takatsuki medical school charter in red INK."}
+  - {year: 1928, peg: knife, confidence: high, source: "ja WP: Osaka City University",
+     event: "The Osaka University of Commerce opens, the first city university in Japan",
+     scene: "Mayor Seki cuts the ribbon of the city's own University of Commerce with a KNIFE."}
+  - {year: 1929, peg: knob, confidence: high, source: "ja WP: Hanazono Rugby Ground (22 Nov)",
+     event: "Hanazono, the first rugby ground in Japan, opens",
+     place: "Hanazono",
+     scene: "A player turns the KNOB of the clubhouse door and runs onto the first rugby ground in Japan."}
+  - {year: 1931, peg: moth, confidence: high, source: "ja WP: Osaka University (May)",
+     event: "Osaka Imperial University is founded with Nagaoka Hantaro as its first president",
+     scene: "A MOTH lands on Nagaoka Hantaro's gown as he opens Osaka Imperial University."}
+  - {year: 1931, peg: moth, confidence: high, source: "ja WP: Kansai University (Sept)",
+     event: "The Kansai Six University Baseball League is formed",
+     scene: "Six university teams chase a MOTH across the infield in the first league game."}
+  - {year: 1931, peg: moth, confidence: high, source: "ja WP: Osaka Castle",
+     event: "Osaka Castle Park opens",
+     place: "Osaka Castle",
+     scene: "A MOTH flutters over families picnicking in the new Osaka Castle Park."}
+  - {year: 1933, peg: mummy, confidence: high, source: "ja WP: OSK Nippon Revue (16 June)",
+     event: "The Shochiku revue girls strike in the 'Pink Dispute'",
+     scene: "A MUMMY in a pink tutu leads the revue girls out on strike."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Sotojima Hoyoen (21 Sept)",
+     event: "The Muroto storm surge destroys the Sotojima leprosy sanatorium and kills nearly two hundred people",
+     place: "Sotojima",
+     scene: "The storm surge swings a HAMMER of water through the Sotojima wards."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Osaka Kabukiza (1-3 Jan)",
+     event: "The national figure skating championships are held on the Kabukiza roof rink",
+     place: "Sennichimae",
+     scene: "A skater taps the ice with a HAMMER on the Kabukiza roof before her national final."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ja WP: Osaka City Tram (26 April)",
+     event: "The city trams hire their first women conductors",
+     scene: "A woman conductor punches tickets with a little HAMMER on the city tram."}
+  - {year: 1935, peg: mill, confidence: high, source: "ja WP: Hanshin (10 Dec)",
+     event: "Hanshin founds the professional baseball club Osaka Tigers",
+     scene: "A tiger turns a MILL wheel at the founding of the Osaka Tigers."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Hankyu (23 Jan)",
+     event: "Hankyu forms its professional baseball team, later the Braves",
+     scene: "Kobayashi Ichizo strikes a MATCH to the Hankyu team's first contract."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Osaka Station; ja WP: Osaka City (10 Feb)",
+     event: "A cave-in at the Umeda subway works kills two and tilts the station building",
+     place: "Umeda",
+     scene: "A workman's MATCH lights the hole where the Umeda subway dig caves in under the station."}
+  - {year: 1936, peg: match, confidence: high, source: "ja WP: Osaka City (18 July)",
+     event: "Ice candy with salmonella poisons many people and kills twenty-five",
+     scene: "A MATCH-stick ice candy spreads salmonella, and twenty-five people die."}
+  - {year: 1938, peg: movie, confidence: medium, source: "ja WP: SoftBank Hawks (1 March; box: 22 Feb)",
+     event: "Nankai founds its baseball team Nankai-gun with the Sakai Ohama ground as home",
+     place: "Sakai",
+     scene: "A MOVIE camera films the first practice of Nankai's new team at Sakai Ohama."}
+  - {year: 1939, peg: map, confidence: high, source: "Search: Hirakata City pdf (1 March)",
+     event: "The army's Kin'ya ammunition depot explodes in Hirakata and kills ninety-four people",
+     place: "Kin'ya, Hirakata",
+     scene: "Shells blow the Kin'ya depot off the MAP of Hirakata in twenty-nine blasts."}
+  - {year: 1939, peg: map, confidence: high, source: "ja WP: SoftBank Hawks",
+     event: "Nakamozu baseball stadium is completed in Sakai",
+     place: "Nakamozu, Sakai",
+     scene: "A groundsman draws the diamond on the MAP of the new Nakamozu stadium."}
+  - {year: 1940, peg: horse, confidence: high, source: "ja WP: Nishinari Line derailment (29 Jan)",
+     event: "A petrol railcar derails and burns at Ajikawaguchi; nearly two hundred people die",
+     place: "Ajikawaguchi",
+     scene: "A HORSE bolts as the derailed railcar bursts into flames at Ajikawaguchi."}
+  - {year: 1944, peg: warrior, confidence: high, source: "ja WP: Osaka City Tram (25 Dec)",
+     event: "The city starts to train women as tram drivers",
+     scene: "A woman WARRIOR takes the tram controls in her first driving lesson."}
+world_refs:
+  - {year: 1871, event: "National post starts; first mail between Tokyo and Osaka", cell: east_asia_economy_1800_1945}
+  - {year: 1874, event: "Osaka-Kobe railway and Osaka Station open", cell: east_asia_economy_1800_1945}
+  - {year: 1878, event: "Osaka Stock Exchange opens", cell: east_asia_economy_1800_1945}
+  - {year: 1879, event: "Cholera epidemic (Osaka cases included)", cell: east_asia_society_1800_1945}
+  - {year: 1882, event: "Shibusawa founds the Osaka Spinning Company", cell: east_asia_economy_1800_1945}
+  - {year: 1882, event: "Kishida Toshiko's first women's rights speech in Osaka", cell: east_asia_society_1800_1945}
+  - {year: 1883, event: "Osaka Spinning mill starts to run", cell: east_asia_economy_1800_1945}
+  - {year: 1886, event: "Cholera epidemic (Osaka cases included)", cell: east_asia_society_1800_1945}
+  - {year: 1887, event: "First synod in Osaka forms the Nippon Sei Ko Kai", cell: east_asia_religion_1800_1945}
+  - {year: 1897, event: "Cinematographe shows the first projected films at the Nanchi Enbujo", cell: east_asia_arts_1800_1945}
+  - {year: 1903, event: "Fifth National Industrial Exposition at Tennoji and Sakai", cell: east_asia_economy_1800_1945}
+  - {year: 1915, event: "First national middle school baseball championship at Toyonaka", cell: east_asia_society_1800_1945}
+  - {year: 1918, event: "Matsushita founds his electric firm at Ohiraki", cell: east_asia_economy_1800_1945}
+  - {year: 1918, event: "Rice riots (Osaka riots included)", cell: east_asia_society_1800_1945}
+  - {year: 1918, event: "Spanish flu (Osaka included)", cell: east_asia_society_1800_1945}
+  - {year: 1922, event: "Ezaki Glico starts to sell caramel in Osaka", cell: east_asia_economy_1800_1945}
+  - {year: 1923, event: "Osaka hosts the Far Eastern Championship Games", cell: east_asia_society_1800_1945}
+  - {year: 1934, event: "Muroto typhoon kills thousands, many children in Osaka schools", cell: east_asia_society_1800_1945}
+  - {year: 1934, event: "Kikuchi's Cockcroft-Walton accelerator at Osaka", cell: east_asia_science_1800_1945}
+  - {year: 1935, event: "Yukawa publishes the meson theory at Osaka Imperial University", cell: east_asia_science_1800_1945}
+  - {year: 1941, event: "Rice rationing in six big cities (Osaka included)", cell: east_asia_economy_1800_1945}
+  - {year: 1943, event: "Stock exchanges merged into the Japan Securities Exchange", cell: east_asia_economy_1800_1945}
+  - {year: 1944, event: "City schoolchildren evacuated (Osaka included)", cell: east_asia_society_1800_1945}
+out_refs:
+  - {year: 1868, event: "Okubo proposes moving the capital to Osaka", reason: "national government"}
+  - {year: 1871, event: "Sumiyoshi Taisha is ranked a major state shrine", reason: "national shrine rank"}
+  - {year: 1880, event: "League for a National Assembly is formed in Osaka", reason: "national party"}
+  - {year: 1888, event: "Osaka garrison becomes the Fourth Division", reason: "national army"}
+  - {year: 1889, event: "Tokaido Line opens through from Shimbashi to Kobe", reason: "national railway"}
+  - {year: 1907, event: "Kansai Railway is nationalised", reason: "national railway"}
+  - {year: 1919, event: "City Planning Act for the six great cities", reason: "national law"}
+  - {year: 1923, event: "Imperial edict rejects moving the capital to Osaka", reason: "imperial edict"}
+  - {year: 1926, event: "NHK formed from the Tokyo, Osaka and Nagoya stations", reason: "national broadcaster"}
+  - {year: 1929, event: "Emperor Showa visits the Hirano spinning mill", reason: "imperial visit"}
+  - {year: 1931, event: "Fourth Division headquarters built in Osaka Castle", reason: "national army"}
+  - {year: 1935, event: "Puyi is received at the Central Public Hall", reason: "state visit"}
+  - {year: 1937, event: "Hito no Michi is dissolved on a lese-majeste charge", reason: "national religious suppression"}
+  - {year: 1940, event: "Osaka Asahi and Tokyo Asahi take one title", reason: "national newspaper"}
+  - {year: 1942, event: "Miso, soy sauce and clothing rationing", reason: "national rationing"}
+  - {year: 1943, event: "Osaka Mainichi and Tokyo Nichi Nichi become the Mainichi Shimbun", reason: "national newspaper"}
+  - {year: 1944, event: "Evening newspapers stop", reason: "national order"}

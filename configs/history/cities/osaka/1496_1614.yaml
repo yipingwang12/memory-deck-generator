@@ -1,0 +1,914 @@
+# City: Osaka x 1496 to 1614 (Rennyo's Osaka Gobo and the Ishiyama Hongan-ji, the Sakai kubo and the free
+# merchant city, the Miyoshi at Akutagawa and Iimori, Nobunaga's siege, Hideyoshi's castle and castle town,
+# Hideyori's temples, the Winter Siege to the end of the Western year 1614). DRAFT 2026-11-24.
+# Area: Osaka Prefecture (Osaka city, Sakai, Hirano, Takatsuki, Ibaraki, Ikeda, Hirakata, Daito and Shijonawate
+# (Iimori), Yao and Higashiosaka (Wakae), Habikino (Takaya), Kishiwada, Kaizuka, Tondabayashi, Kawachinagano,
+# Minoh). Kyoto, Nara, Kobe, Amagasaki and Itami (Arioka) are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Hideyoshi's and Hideyori's national
+# acts, Toyotomi births and deaths and Hongan-ji sect affairs -> out_refs; the castle, the city plan, canals,
+# temples, battles, sieges and public events in the city -> cards (main-stage rule). World-grid events -> world_refs.
+# Dates: memory pass + web check (19 of 45 searches; no unauthorised book copies).
+# Main sources: ja.wikipedia.org (Ishiyama Hongan-ji, Osaka Castle, Osaka Winter Campaign, Sakai City, Sakai kubo,
+# Akutagawa-yama, Iimoriyama, Takaya, Takatsuki, Kishiwada, Ibaraki, Ikeda and Wakae castles, Shitenno-ji,
+# Sumiyoshi, Ikukunitama, Hirano-go and about 30 other articles); en.wikipedia.org; Oita City; New Advent.
+# Lunisolar dates -> the Julian (before 1582) or Gregorian year of the day. Keicho 19/12/1 = 31 December 1614,
+# so the Sanada-maru fight, the bombardment and the peace fall in 1615 (next era).
+# A building -> its completion unless the text says "work starts".
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1497, peg: pig, confidence: high, source: "ja WP Takaya Castle (Meio 6)",
+     event: "Hatakeyama Naoyori takes Takaya Castle from Hatakeyama Yoshitoyo",
+     place: "Takaya Castle, Habikino",
+     scene: "A PIG charges up the Takaya Castle mound in Habikino and tosses Yoshitoyo's banner off, and Naoyori rides in behind it."}
+  - {year: 1500, peg: sauce, confidence: high, source: "ja WP Kishiwada Castle (Meio 9)",
+     event: "Hatakeyama Naooki attacks Kishiwada; the Hosokawa lords of Izumi die in the castle",
+     place: "Kishiwada Castle",
+     scene: "Naooki's men pour boiling SAUCE over the Kishiwada walls, and the two Hosokawa lords of Izumi drown in it inside."}
+  - {year: 1504, peg: sewer, confidence: high, source: "ja WP Takaya Castle (Eisho 1)",
+     event: "Hatakeyama Naoyori makes peace with Yoshihide and enters Takaya Castle",
+     place: "Takaya Castle",
+     scene: "Two Hatakeyama cousins climb out of one SEWER under Takaya Castle, shake hands, and Naoyori walks up into the keep."}
+  - {year: 1506, peg: sushi, confidence: high, source: "ja WP Takaya Castle (Eisho 3)",
+     event: "Akazawa Tomotsune captures Takaya Castle for the Hosokawa",
+     place: "Takaya Castle",
+     scene: "Akazawa's soldiers storm Takaya Castle on a giant SUSHI roll used as a battering ram."}
+  - {year: 1506, peg: sushi, confidence: medium, source: "ja WP Ishiyama Hongan-ji (Eisho 3)",
+     event: "Osaka disturbance: Jitsunyo sends the Osaka followers to war for Hosokawa Masamoto against their will",
+     place: "Osaka Gobo",
+     scene: "At the Osaka Gobo gate a SUSHI chef hands out spears instead of rolls, and the unwilling followers march off to Masamoto's war."}
+  - {year: 1508, peg: sofa, confidence: high, source: "ja WP Ikeda Castle (Settsu) (Eisho 5)",
+     event: "Hosokawa Takakuni takes Ikeda Castle; Ikeda Sadamasa kills himself",
+     place: "Ikeda Castle",
+     scene: "Takakuni's troops carry a SOFA into Ikeda Castle as a throne, while Sadamasa ends his life in the next room."}
+  - {year: 1516, peg: dish, confidence: high, source: "ja WP Akutagawa-yama Castle (Eisho 13)",
+     event: "Akutagawa-yama Castle first appears in records, with Nose Yorinori as castellan",
+     place: "Akutagawa-yama, Takatsuki",
+     scene: "Nose Yorinori writes the new castle's name on a DISH at a renga party on Akutagawa-yama, its first record."}
+  - {year: 1520, peg: nose, confidence: high, source: "ja WP Takaya Castle (Eisho 17)",
+     event: "Hatakeyama Yoshihide loses Takaya Castle; Hatakeyama Harunaga takes it back the same year",
+     place: "Takaya Castle",
+     scene: "A giant NOSE sneezes Yoshihide out of Takaya Castle, and Harunaga climbs back in before the year ends."}
+  - {year: 1527, peg: ink, confidence: high, source: "ja WP Sakai kubo (Daiei 7/3)",
+     event: "Sakai kubo: Miyoshi Motonaga lands at Sakai with Ashikaga Yoshitsuna and Hosokawa Harumoto and sets up a rival shogunate",
+     place: "Sakai",
+     scene: "On the Sakai beach Motonaga writes a rival shogun's government into being with a brush of INK on a merchant's door."}
+  - {year: 1527, peg: ink, confidence: high, source: "ja WP Akutagawa-yama Castle (Daiei 7)",
+     event: "Akutagawa-yama Castle surrenders to Harumoto's side and the Nose leave",
+     place: "Akutagawa-yama Castle",
+     scene: "The Nose clan signs Akutagawa-yama Castle over to Harumoto in black INK and walks down the hill."}
+  - {year: 1527, peg: ink, confidence: high, source: "ja WP Takatsuki Castle (Daiei 7)",
+     event: "First record of Takatsuki Castle: Yakushiji Kuninaga flees there after Katsuragawara",
+     place: "Takatsuki Castle",
+     scene: "Fleeing Kuninaga spills INK across a page as he runs into Takatsuki Castle, and the castle's name enters the records."}
+  - {year: 1531, peg: moth, confidence: high, source: "ja WP Sakai kubo (Kyoroku 4/3/6)",
+     event: "Ikeda Castle falls to Hosokawa Takakuni's advancing army",
+     place: "Ikeda Castle",
+     scene: "A giant MOTH eats through the gate of Ikeda Castle, and Takakuni's army flies in behind it."}
+  - {year: 1531, peg: moth, confidence: high, source: "ja WP Iimoriyama Castle (Kyoroku 4/8)",
+     event: "Hatakeyama Yoshitaka and Miyoshi Katsumune attack Kizawa Nagamasa at Iimoriyama; Harumoto orders them back",
+     place: "Iimoriyama, Daito",
+     scene: "A MOTH lands on Harumoto's order paper, and Katsumune's army pulls back from the slopes of Iimoriyama."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Iimoriyama Castle (Tenbun 1/6/15)",
+     event: "An Ikko ikki army falls on the besiegers of Iimoriyama and kills Miyoshi Katsumune and two hundred men",
+     place: "Iimoriyama",
+     scene: "Under a full MOON thousands of Ikko farmers pour over Iimoriyama ridge and crush Katsumune's siege camp from behind."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Iimoriyama Castle (Tenbun 1/6/17)",
+     event: "Hatakeyama Yoshitaka, beaten by the ikki, kills himself at the Ishikawa dojo",
+     place: "Ishikawa dojo, Kawachi",
+     scene: "The MOON shines into the Ishikawa dojo as cornered Yoshitaka kneels and ends his own life."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Sakai kubo (Kyoroku 5/6/20)",
+     event: "The ikki surround Miyoshi Motonaga at Kenpon-ji in Sakai and force him to kill himself",
+     place: "Kenpon-ji, Sakai",
+     scene: "A crescent MOON blade falls on Kenpon-ji in Sakai, and Motonaga dies inside as ikki farmers ring the temple."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Sakai kubo (Kyoroku 5/10)",
+     event: "Ashikaga Yoshitsuna leaves Sakai for Awa; the Sakai kubo ends",
+     place: "Sakai port",
+     scene: "The rival shogun Yoshitsuna sails out of Sakai port in a MOON-shaped boat, and the Sakai government sinks behind him."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Takaya Castle (Tenbun 1)",
+     event: "Hongan-ji forces capture Takaya Castle after their victory at Iimoriyama",
+     place: "Takaya Castle",
+     scene: "Ikko farmers hoist a paper MOON lantern over the Takaya Castle keep they have just stormed."}
+  - {year: 1533, peg: mummy, confidence: high, source: "ja WP Ikeda Castle; Akutagawa-yama Castle",
+     event: "Hosokawa Harumoto, beaten by the ikki, comes back from Awaji to Ikeda and Akutagawa-yama castles",
+     place: "Ikeda Castle",
+     scene: "Bandaged like a MUMMY after the ikki's blows, Harumoto limps off the Awaji boat and back into Ikeda Castle."}
+  - {year: 1535, peg: mill, confidence: high, source: "ja WP Ishiyama Hongan-ji (Tenbun 4/11)",
+     event: "Ishiyama Hongan-ji and Hosokawa Harumoto make peace after three years of war",
+     place: "Ishiyama Hongan-ji",
+     scene: "Hongan-ji monks and Harumoto's captains grind their spears into flour at one MILL beside the Osaka temple, and the war stops."}
+  - {year: 1539, peg: map, confidence: high, source: "ja WP Akutagawa-yama Castle (Tenbun 8/7/28)",
+     event: "Miyoshi Nagayoshi occupies Akutagawa-yama, then gives it back under a peace and moves to Koshimizu Castle",
+     place: "Akutagawa-yama Castle",
+     scene: "Young Nagayoshi rolls up his MAP of Akutagawa-yama Castle and hands the castle back under the peace."}
+  - {year: 1542, peg: rhino, confidence: high, source: "ja WP Battle of Taiheiji (Tenbun 11/3/17)",
+     event: "Battle of Taiheiji: Kizawa Nagamasa is killed by the Hosokawa and Miyoshi allies",
+     place: "Taiheiji, Kashiwara",
+     scene: "A RHINO charges through the Taiheiji temple grounds in Kashiwara and tramples Kizawa Nagamasa's army flat."}
+  - {year: 1543, peg: ram, confidence: high, source: "ja WP Miyoshi Nagayoshi (Tenbun 12/8/16)",
+     event: "Miyoshi Nagayoshi attacks Sakai on Hosokawa Harumoto's orders",
+     place: "Sakai",
+     scene: "Nagayoshi drives a battering RAM against the moat gate of Sakai on Harumoto's order."}
+  - {year: 1546, peg: roach, confidence: high, source: "ja WP Miyoshi Nagayoshi (Tenbun 15/8)",
+     event: "Miyoshi Nagayoshi enters Sakai and enemies besiege him there",
+     place: "Sakai",
+     scene: "A giant ROACH coils round the Sakai moat with enemy soldiers on its back and traps Nagayoshi inside the merchant town."}
+  - {year: 1547, peg: rock, confidence: high, source: "ja WP Akutagawa-yama Castle (Tenbun 16/6/25)",
+     event: "Yakushiji Motofusa surrenders Akutagawa-yama Castle to Harumoto",
+     place: "Akutagawa-yama Castle",
+     scene: "Motofusa rolls a white ROCK down from Akutagawa-yama Castle as his sign of surrender to Harumoto."}
+  - {year: 1547, peg: rock, confidence: high, source: "ja WP Battle of Shari-ji (Tenbun 16/7/21)",
+     event: "Battle of Shari-ji: Miyoshi Nagayoshi defeats Hosokawa Ujitsuna and Yusa Naganori",
+     place: "Shari-ji, Ikuno",
+     scene: "Nagayoshi hurls a ROCK from the Shari-ji temple wall in Ikuno and smashes Yusa Naganori's battle line."}
+  - {year: 1547, peg: rock, confidence: high, source: "ja WP Takaya Castle (Tenbun 16)",
+     event: "Miyoshi Jikkyu attacks Takaya Castle",
+     place: "Takaya Castle",
+     scene: "Jikkyu's catapult flings a huge ROCK at the Takaya Castle keep in Habikino."}
+  - {year: 1548, peg: reef, confidence: high, source: "ja WP Miyoshi Nagayoshi (Tenbun 17/10/28)",
+     event: "Miyoshi Nagayoshi besieges Enami Castle",
+     place: "Enami Castle, Joto",
+     scene: "Nagayoshi's boats ring Enami Castle in the Yodo marshes like a coral REEF, and no supply can get through."}
+  - {year: 1551, peg: wallet, confidence: high, source: "ja WP Ishiyama Hongan-ji (Tenbun 20/12/6)",
+     event: "First record of firearms used in the Ishiyama Hongan-ji",
+     place: "Ishiyama Hongan-ji",
+     scene: "A Hongan-ji monk pulls a small matchlock out of his WALLET and fires the temple's first recorded shot."}
+  - {year: 1552, peg: lion, confidence: high, source: "ja WP Takaya Castle (Tenbun 21)",
+     event: "Hatakeyama Takamasa becomes lord of Takaya Castle",
+     place: "Takaya Castle",
+     scene: "A LION carries Hatakeyama Takamasa up the steps of Takaya Castle and sets him on the lord's seat."}
+  - {year: 1553, peg: llama, confidence: high, source: "ja WP Akutagawa-yama Castle (Tenbun 22)",
+     event: "Miyoshi Nagayoshi starves out Akutagawa-yama Castle and makes it his seat",
+     place: "Akutagawa-yama Castle",
+     scene: "A LLAMA eats the last rice of the Akutagawa-yama garrison, the castle gives up, and Nagayoshi moves in as ruler of the Kinai."}
+  - {year: 1557, peg: log, confidence: high, source: "ja WP Hirano-go (Koji 3)",
+     event: "Seventeen Hirano elders petition against the Miyoshi deputies and claim self-government",
+     place: "Hirano-go",
+     scene: "Seventeen Hirano elders sign their petition on a LOG and roll it at the Miyoshi deputies' office."}
+  - {year: 1558, peg: wolf, confidence: high, source: "ja WP Kishiwada Castle (Eiroku 1)",
+     event: "Miyoshi Jikkyu, Sogo Kazumasa and Atagi Fuyuyasu enter Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "Three Miyoshi brothers ride into Kishiwada Castle on one big grey WOLF."}
+  - {year: 1559, peg: elbow, confidence: high, source: "ja WP Miyoshi Nagayoshi (Eiroku 2/8/1)",
+     event: "Miyoshi Nagayoshi takes Takaya Castle and drives out Hatakeyama Takamasa",
+     place: "Takaya Castle",
+     scene: "Nagayoshi throws an ELBOW into Takamasa's ribs and shoves him out of the Takaya Castle gate."}
+  - {year: 1559, peg: elbow, confidence: high, source: "ja WP Miyoshi Nagayoshi (Eiroku 2/8/4)",
+     event: "Miyoshi forces capture Iimoriyama Castle",
+     place: "Iimoriyama Castle",
+     scene: "A Miyoshi captain hooks his ELBOW over the top wall of Iimoriyama Castle and pulls his soldiers in to seize it."}
+  - {year: 1560, peg: cheese, confidence: high, source: "ja WP Miyoshi Nagayoshi (Eiroku 3/7/22)",
+     event: "Miyoshi and Hatakeyama armies fight in present Yao and Higashiosaka",
+     place: "Yao",
+     scene: "Miyoshi and Hatakeyama soldiers throw wheels of CHEESE at each other across the rice fields of Yao."}
+  - {year: 1560, peg: cheese, confidence: high, source: "ja WP Iimoriyama Castle (Eiroku 3/11/13)",
+     event: "Miyoshi Nagayoshi moves his seat to Iimoriyama Castle and starts to enlarge it",
+     place: "Iimoriyama Castle",
+     scene: "Nagayoshi builds new stone terraces on Iimoriyama out of giant blocks of CHEESE and moves his court in."}
+  - {year: 1560, peg: cheese, confidence: high, source: "ja WP Takaya Castle (Eiroku 3)",
+     event: "Nagayoshi makes his brother Miyoshi Jikkyu castellan of Takaya",
+     place: "Takaya Castle",
+     scene: "Nagayoshi hands Jikkyu the keys of Takaya Castle stuck in a round of CHEESE."}
+  - {year: 1560, peg: cheese, confidence: high, source: "ja WP Kishiwada Castle (Eiroku 3)",
+     event: "Miyoshi Jikkyu carries out a major rebuilding of Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "Jikkyu's masons rebuild the Kishiwada walls with yellow CHEESE bricks."}
+  - {year: 1561, peg: jet, confidence: high, source: "ja WP Takaya Castle (Eiroku 4)",
+     event: "Hatakeyama Takamasa, with Negoro monks, retakes Takaya Castle",
+     place: "Takaya Castle",
+     scene: "Takamasa and the Negoro monks fly over Habikino in a JET and drop onto the Takaya Castle keep."}
+  - {year: 1562, peg: chain, confidence: high, source: "ja WP Kyokoji battle; Kishiwada Castle",
+     event: "Battle of Kumeda: Hatakeyama forces kill Miyoshi Jikkyu",
+     place: "Kumeda, Kishiwada",
+     scene: "Hatakeyama soldiers wrap a CHAIN around Jikkyu by Kumeda pond in Kishiwada and pull him down."}
+  - {year: 1562, peg: chain, confidence: high, source: "ja WP Kyokoji battle (Eiroku 5/5/20)",
+     event: "Battle of Kyokoji: Miyoshi Nagayoshi crushes the Hatakeyama and Negoro army",
+     place: "Kyokoji, Yao",
+     scene: "Nagayoshi's men swing a long CHAIN across the Kyokoji fields in Yao and sweep the Hatakeyama army away."}
+  - {year: 1564, peg: cherry, confidence: high, source: "ja WP Miyoshi Nagayoshi (Eiroku 7/5/9)",
+     event: "Atagi Fuyuyasu is forced to kill himself at Iimoriyama Castle",
+     place: "Iimoriyama Castle",
+     scene: "Nagayoshi drops a poisoned CHERRY into his brother Fuyuyasu's cup at Iimoriyama Castle."}
+  - {year: 1564, peg: cherry, confidence: high, source: "ja WP Miyoshi Nagayoshi (Eiroku 7/7/4)",
+     event: "Miyoshi Nagayoshi dies at Iimoriyama Castle; his death is kept secret",
+     place: "Iimoriyama Castle",
+     scene: "Retainers hide dead Nagayoshi under a pile of CHERRY blossoms at Iimoriyama so no one learns of his death."}
+  - {year: 1566, peg: judge, confidence: high, source: "ja WP Kishiwada Castle (Eiroku 9)",
+     event: "The Miyoshi Three defeat Matsuura Mitsu, who holds out in Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "A JUDGE in black robes locks Matsuura Mitsu inside Kishiwada Castle while the Miyoshi Three wait outside."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Akutagawa-yama Castle (Eiroku 11/9/30)",
+     event: "Nobunaga's army burns the Akutagawa market; the Miyoshi flee and Ashikaga Yoshiaki enters the castle",
+     place: "Akutagawa-yama Castle",
+     scene: "A CHEF flambes the whole Akutagawa market, and Yoshiaki strolls up through the smoke into the empty castle."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Ikeda Castle (Settsu) (Eiroku 11)",
+     event: "Nobunaga takes Ikeda Castle; Ikeda Katsumasa submits and keeps his lands",
+     place: "Ikeda Castle",
+     scene: "A CHEF serves Katsumasa's surrender to Nobunaga on a silver plate in the hall of Ikeda Castle."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Takatsuki Castle (Eiroku 11/9/28)",
+     event: "Takatsuki Castle surrenders to Nobunaga with little fight",
+     place: "Takatsuki Castle",
+     scene: "The Takatsuki garrison opens its gate to a CHEF carrying Nobunaga's banner like a ladle."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Takaya Castle (Eiroku 11)",
+     event: "Miyoshi Yasunaga flees Takaya; Hatakeyama Akitaka returns as Nobunaga's governor of half of Kawachi",
+     place: "Takaya Castle",
+     scene: "A CHEF chases Yasunaga out of the Takaya kitchen with a cleaver, and Akitaka takes the empty seat."}
+  - {year: 1569, peg: ship, confidence: high, source: "ja WP Akutagawa-yama; Takatsuki Castle",
+     event: "Nobunaga gives Takatsuki Castle to Wada Koremasa, who moves there from Akutagawa-yama",
+     place: "Takatsuki Castle",
+     scene: "Wada Koremasa sails a SHIP down the Akuta river from the mountain castle and docks it at Takatsuki Castle."}
+  - {year: 1570, peg: goose, confidence: high, source: "ja WP Sakai magistrate; Sakai (Genki 1)",
+     event: "Nobunaga sends Matsui Yukan to Sakai as its administrator and starts direct rule",
+     place: "Sakai",
+     scene: "A GOOSE flies into the Sakai council room with Nobunaga's letter and seats Matsui Yukan above the merchants."}
+  - {year: 1570, peg: goose, confidence: high, source: "ja WP Noda-Fukushima battle (Genki 1/7/21)",
+     event: "The Miyoshi Three build Noda and Fukushima forts in the Osaka delta",
+     place: "Noda and Fukushima",
+     scene: "Miyoshi soldiers pile two forts out of GOOSE feathers and mud at Noda and Fukushima in the delta."}
+  - {year: 1570, peg: goose, confidence: high, source: "ja WP Noda-Fukushima battle (Genki 1/8/26)",
+     event: "Nobunaga camps at Tennoji to attack the Noda and Fukushima forts",
+     place: "Tennoji",
+     scene: "Nobunaga pitches his war tent at Tennoji and points a GOOSE quill at the Noda forts on his map."}
+  - {year: 1570, peg: goose, confidence: high, source: "ja WP Noda-Fukushima battle (Genki 1/9/13)",
+     event: "The defenders break the Yodo embankment; a high tide floods the Oda camps and forts",
+     place: "Yodo river, Fukushima",
+     scene: "A giant GOOSE pecks a hole in the Yodo embankment, and sea water floods Nobunaga's tents at Fukushima."}
+  - {year: 1571, peg: cat, confidence: high, source: "ja WP Ibaraki Castle (Genki 2/8/28)",
+     event: "Battle of Shiraikawara: Araki Murashige and Nakagawa Kiyohide kill Wada Koremasa",
+     place: "Shiraikawara, Ibaraki",
+     scene: "A wild CAT leaps from the Shiraikawara riverbed in Ibaraki and claws Wada Koremasa from his horse."}
+  - {year: 1571, peg: cat, confidence: high, source: "ja WP Ibaraki Castle (Genki 2/9/1)",
+     event: "Araki's army takes Ibaraki Castle and it burns",
+     place: "Ibaraki Castle",
+     scene: "A CAT knocks a lantern into the straw of Ibaraki Castle as Araki's men break in, and the castle burns."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Akutagawa-yama; Takatsuki Castle",
+     event: "The Takayama father and son drive out Wada Korenaga and take Takatsuki Castle",
+     place: "Takatsuki Castle",
+     scene: "Takayama Ukon rakes Wada Korenaga out of Takatsuki Castle with a huge COMB."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Akutagawa-yama Castle (Genki 4)",
+     event: "Akutagawa-yama Castle is abandoned after about sixty years",
+     place: "Akutagawa-yama",
+     scene: "The last guard drops his COMB on the empty floor of Akutagawa-yama Castle and walks away for good."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Wakae Castle (Tensho 1/7)",
+     event: "Defeated shogun Ashikaga Yoshiaki takes refuge in Wakae Castle",
+     place: "Wakae Castle, Higashiosaka",
+     scene: "Ashikaga Yoshiaki hides at Wakae Castle and combs dust from his hair with a broken shogun's COMB."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Wakae Castle (Tensho 1/11)",
+     event: "Siege of Wakae: retainers let Sakuma's army in and Miyoshi Yoshitsugu kills himself",
+     place: "Wakae Castle",
+     scene: "Wakae retainers slide a COMB under the gate bar, open it for Sakuma's army, and Yoshitsugu dies inside."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Takaya Castle (Tensho 1)",
+     event: "Yusa Nobunori attacks his lord Hatakeyama Akitaka at Takaya and Akitaka kills himself",
+     place: "Takaya Castle",
+     scene: "Yusa Nobunori stabs a sharp COMB into his lord's door at Takaya, and Akitaka takes his own life."}
+  - {year: 1574, peg: car, confidence: high, source: "ja WP Takaya Castle (Tensho 2/4/2)",
+     event: "Miyoshi Yasunaga and Yusa Nobunori hold Takaya Castle against Nobunaga",
+     place: "Takaya Castle",
+     scene: "Yasunaga parks a burnt-out CAR across the Takaya Castle gate and holds off Nobunaga's siege."}
+  - {year: 1575, peg: eagle, confidence: high, source: "ja WP Takaya Castle (Tensho 3/4/8)",
+     event: "Oda forces attack Takaya; Miyoshi Yasunaga surrenders and the castle is pulled down",
+     place: "Takaya Castle",
+     scene: "An EAGLE tears the roof off Takaya Castle, Yasunaga gives up, and the castle is never rebuilt."}
+  - {year: 1575, peg: eagle, confidence: high, source: "ja WP Kishiwada Castle (Tensho 3)",
+     event: "Retainers kill Matsuura Mitsu in Kishiwada; Matsuura Munekiyo becomes lord",
+     place: "Kishiwada Castle",
+     scene: "An EAGLE swoops down on Matsuura Mitsu in the Kishiwada courtyard, and Munekiyo picks up the lord's fan."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Battle of Tennoji (1576) (4/14)",
+     event: "Nobunaga rings the Hongan-ji with forts at Noda, Moriguchi and Tennoji",
+     place: "Noda, Moriguchi, Tennoji",
+     scene: "Nobunaga's men build a CAGE of forts at Noda, Moriguchi and Tennoji and lock the Hongan-ji inside."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Battle of Tennoji (1576) (5/3)",
+     event: "Hongan-ji troops break the Oda attack on the Kizu fort and kill Hanawa Naomasa",
+     place: "Kizu fort",
+     scene: "Hongan-ji troops spring a CAGE trap at the Kizu fort and Hanawa Naomasa dies inside it."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Battle of Tennoji (1576) (5/7)",
+     event: "Battle of Tennoji: Nobunaga breaks the siege of the Tennoji fort and is shot in the leg",
+     place: "Tennoji fort",
+     scene: "Nobunaga smashes open the CAGE around the Tennoji fort, and a Hongan-ji bullet grazes his leg as he breaks through."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Wakae Castle (Tensho 4/5)",
+     event: "Nobunaga directs the siege of the Hongan-ji from Wakae Castle",
+     place: "Wakae Castle",
+     scene: "Nobunaga sits in a bird CAGE on the Wakae Castle tower and shouts siege orders toward Osaka."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Iimoriyama Castle (Tensho 4)",
+     event: "Iimoriyama Castle falls and is abandoned",
+     place: "Iimoriyama Castle",
+     scene: "An empty CAGE swings in the wind on the abandoned walls of Iimoriyama Castle."}
+  - {year: 1577, peg: cake, confidence: high, source: "ja WP Ishiyama war (Tensho 5/8/17)",
+     event: "Matsunaga Hisahide leaves his siege camp at Tennoji and rebels against Nobunaga",
+     place: "Tennoji siege camp",
+     scene: "Matsunaga Hisahide kicks over the CAKE at the Tennoji siege camp and rides off to rebel."}
+  - {year: 1577, peg: cake, confidence: high, source: "ja WP Ibaraki Castle (Tensho 5)",
+     event: "Nakagawa Kiyohide becomes lord of Ibaraki Castle and enlarges it",
+     place: "Ibaraki Castle",
+     scene: "Kiyohide adds new layers to Ibaraki Castle like tiers on a wedding CAKE."}
+  - {year: 1577, peg: cake, confidence: high, source: "ja WP Kishiwada Castle (Tensho 5)",
+     event: "Oda Nobuharu moves into Kishiwada Castle for the Kishu campaign",
+     place: "Kishiwada Castle",
+     scene: "Oda Nobuharu carries a war CAKE into Kishiwada Castle and cuts it toward Kii on the map."}
+  - {year: 1578, peg: cave, confidence: medium, source: "search: serai.jp, christiantoday (Tensho 6)",
+     event: "Takayama Ukon leaves Araki's revolt and submits Takatsuki to Nobunaga",
+     place: "Takatsuki Castle",
+     scene: "Takayama Ukon walks out of a dark CAVE of divided loyalty below Takatsuki and kneels before Nobunaga."}
+  - {year: 1578, peg: cave, confidence: disputed, source: "ja WP Ibaraki Castle (10/28); Ishiyama war (11/24)",
+     event: "Nakagawa Kiyohide surrenders Ibaraki Castle to Nobunaga",
+     place: "Ibaraki Castle",
+     scene: "Kiyohide comes out of a CAVE under Ibaraki Castle with his hands up and hands the castle to Nobunaga."}
+  - {year: 1580, peg: vase, confidence: high, source: "ja WP Ikeda Castle (Settsu) (Tensho 8)",
+     event: "Nobunaga orders Ikeda Castle abandoned",
+     place: "Ikeda Castle",
+     scene: "Nobunaga smashes a VASE on the Ikeda Castle floor, and the garrison leaves the old castle for good."}
+  - {year: 1580, peg: vase, confidence: high, source: "ja WP Wakae Castle (Tensho 8)",
+     event: "Wakae Castle is pulled down; the Wakae Three build Yao Castle",
+     place: "Wakae and Yao",
+     scene: "The Wakae Three carry the last VASE out of Wakae Castle and set it on the new walls of Yao Castle."}
+  - {year: 1580, peg: vase, confidence: high, source: "ja WP Tsuda Nobusumi (Tensho 8/8)",
+     event: "Tsuda Nobusumi becomes keeper of Osaka for Nobunaga after the Hongan-ji leaves",
+     place: "Osaka (former Hongan-ji site)",
+     scene: "Tsuda Nobusumi puts a VASE of flowers on the burnt Hongan-ji hill and moves in as Nobunaga's keeper of Osaka."}
+  - {year: 1580, peg: vase, confidence: medium, source: "ja WP Sakai City chronology",
+     event: "Nobunaga makes Sakai his direct domain and ends its self-government",
+     place: "Sakai",
+     scene: "Nobunaga drops the Sakai council's seal into a VASE and carries the city off as his own domain."}
+  - {year: 1581, peg: foot, confidence: high, source: "ja WP Kishiwada Castle (Tensho 9)",
+     event: "Hachiya Yoritaka becomes lord of Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "Hachiya Yoritaka plants one FOOT on the Kishiwada gate stone and claims the castle."}
+  - {year: 1582, peg: oven, confidence: high, source: "ja WP Tsuda Nobusumi (Tensho 10/6/5)",
+     event: "After Honno-ji, Oda Nobutaka's men kill Tsuda Nobusumi in Osaka's Senkan tower and show his body at Sakai",
+     place: "Senkan tower, Osaka",
+     scene: "Nobutaka's men trap Nobusumi in the Senkan tower like bread in an OVEN, then carry his body to the Sakai road."}
+  - {year: 1582, peg: oven, confidence: medium, source: "ja WP Sakai City chronology",
+     event: "Tokugawa Ieyasu, on a sightseeing visit to Sakai, hears of Honno-ji and escapes home through Iga",
+     place: "Sakai",
+     scene: "Ieyasu jumps out of a Sakai bakery OVEN door at the news from Kyoto and runs east toward Iga."}
+  - {year: 1582, peg: oven, confidence: high, source: "ja WP Osaka Castle (Tensho 10/6)",
+     event: "Ikeda Tsuneoki enters Osaka after the Battle of Yamazaki",
+     place: "Osaka",
+     scene: "Ikeda Tsuneoki marches into Osaka and lights a camp OVEN on the cold Hongan-ji ruins."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Osaka Castle (Tensho 11/6)",
+     event: "Hideyoshi moves Ikeda Tsuneoki to Mino and takes Osaka for himself",
+     place: "Osaka",
+     scene: "Hideyoshi blows FOAM across the Osaka hill, and Ikeda Tsuneoki slides off it all the way to Mino."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Osaka Castle (Tensho 11)",
+     event: "Kato Kiyomasa, Katagiri Katsumoto and Hosokawa Tadaoki go to Shodoshima as quarry heads for the castle stone",
+     place: "Osaka Castle stone",
+     scene: "Barges carry Shodoshima granite to Osaka on a sea of white FOAM, with Kato Kiyomasa shouting from the bow."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Kishiwada Castle (Tensho 11)",
+     event: "Hideyoshi gives Kishiwada Castle to Nakamura Kazuuji to hold the south against the Kii leagues",
+     place: "Kishiwada Castle",
+     scene: "Nakamura Kazuuji sprays a wall of FOAM across the Kishiwada road to stop the Kii leagues coming north."}
+  - {year: 1584, peg: fairy, confidence: high, source: "ja WP Kishiwada Castle (Tensho 12)",
+     event: "Battle of Kishiwada: Negoro, Saika and Kokawa forces attack; Nakamura Kazuuji holds the castle",
+     place: "Kishiwada Castle",
+     scene: "A FAIRY riding an octopus beats back the Negoro and Saika attackers from the Kishiwada walls, as the Tako Jizo legend tells."}
+  - {year: 1584, peg: fairy, confidence: high, source: "ja WP Tondabayashi jinaimachi",
+     event: "Hideyoshi takes Tondabayashi as his direct land and ends its temple-town freedom",
+     place: "Tondabayashi",
+     scene: "A FAIRY flies off with the Tondabayashi temple-town charter and drops it on Hideyoshi's tax desk."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Osaka Castle; en WP Osaka Castle",
+     event: "The main keep of Osaka Castle is completed",
+     place: "Osaka Castle keep",
+     scene: "Each gold-tiled floor of Osaka Castle's new keep is a giant WAFFLE stacked on the one below until the keep stands complete."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Sengokubori Castle (Tensho 13/3/21)",
+     event: "Toyotomi Hidetsugu storms Sengokubori Castle; its powder store explodes and the Negoro garrison dies",
+     place: "Sengokubori Castle, Kaizuka",
+     scene: "A burning WAFFLE lands on the Sengokubori powder store in Kaizuka, it blows up, and Hidetsugu's men take the castle."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Kishiwada Castle (Tensho 13)",
+     event: "Koide Hidemasa becomes lord of Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "Koide Hidemasa takes a WAFFLE stamped with the Kishiwada crest from Hideyoshi's hand and becomes its lord."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Takatsuki Castle (Tensho 13)",
+     event: "Takayama Ukon is moved to Akashi; Takatsuki becomes Toyotomi land",
+     place: "Takatsuki Castle",
+     scene: "Takayama Ukon packs his WAFFLE iron and rides west to Akashi, leaving Takatsuki Castle to Hideyoshi."}
+  - {year: 1586, peg: fish, confidence: high, source: "ja WP Osaka Castle (phase 2: Tensho 14-16)",
+     event: "Second phase of Osaka Castle work: the ninomaru",
+     place: "Osaka Castle ninomaru",
+     scene: "Workers fill the new ninomaru moat of Osaka Castle with water and FISH swim round the second ring of walls."}
+  - {year: 1586, peg: fish, confidence: high, source: "ja WP Sakai magistrate (1586)",
+     event: "Ishida Mitsunari becomes administrator of Sakai",
+     place: "Sakai",
+     scene: "Ishida Mitsunari weighs every FISH on the Sakai quay and writes the tax in his new magistrate's book."}
+  - {year: 1586, peg: fish, confidence: high, source: "ja WP Ibaraki Castle (Tensho 14)",
+     event: "Nakagawa Hidemasa is moved to Miki; Ibaraki becomes Hideyoshi's direct land",
+     place: "Ibaraki Castle",
+     scene: "Nakagawa Hidemasa carries his clan's FISH banner out of Ibaraki Castle on the road to Miki."}
+  - {year: 1594, peg: bear, confidence: high, source: "ja WP Osaka Castle (phase 3: Bunroku 3-5)",
+     event: "Third phase of Osaka Castle work: the outer moat and works (sogamae) round the whole town",
+     place: "Osaka Castle sogamae",
+     scene: "A BEAR digs a moat right round the Osaka town with its claws, and the castle's outer ring is closed."}
+  - {year: 1597, peg: pig, confidence: high, source: "ja WP Kishiwada Castle (Keicho 2)",
+     event: "Koide Hidemasa completes the keep of Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "A PIG carries the last roof tile up to Koide Hidemasa's new keep at Kishiwada."}
+  - {year: 1598, peg: beehive, confidence: high, source: "ja WP Osaka Castle (phase 4: Keicho 3)",
+     event: "Fourth phase of Osaka Castle work: sannomaru, gate works and daimyo mansions",
+     place: "Osaka Castle sannomaru",
+     scene: "Daimyo build their mansions round the new sannomaru like cells in a BEEHIVE."}
+  - {year: 1599, peg: pipe, confidence: high, source: "ja WP Katagiri Katsumoto (Keicho 4/1/10)",
+     event: "Toyotomi Hideyori moves from Fushimi into Osaka Castle",
+     place: "Osaka Castle honmaru",
+     scene: "A piper plays a PIPE at the head of six-year-old Hideyori's procession through the Osaka Castle gate."}
+  - {year: 1599, peg: pipe, confidence: medium, source: "search: president.jp (Keicho 4/9)",
+     event: "Tokugawa Ieyasu moves into the west bailey of Osaka Castle and builds a second keep there",
+     place: "Osaka Castle west bailey",
+     scene: "Ieyasu stacks a second keep in the west bailey of Osaka Castle like a tall smoking PIPE beside Hideyori's."}
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP Hosokawa Gracia (Keicho 5/7/17)",
+     event: "Hosokawa Gracia dies in her Osaka mansion when Ishida's men come to take her hostage",
+     place: "Hosokawa mansion, Tamatsukuri",
+     scene: "Gracia refuses Ishida's hostage men, and her retainer ends her life as flames spread through the Osaka mansion like spilled SAUCE."}
+  - {year: 1600, peg: sauce, confidence: medium, source: "search: serai.jp, gendai.media (Keicho 5/9)",
+     event: "Captured Ishida Mitsunari, Konishi Yukinaga and Ankokuji Ekei are paraded through Osaka and Sakai",
+     place: "Osaka and Sakai streets",
+     scene: "Crowds in Osaka and Sakai throw SAUCE at the cart carrying the bound Ishida, Konishi and Ekei."}
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP Sakai magistrate (1600)",
+     event: "Ieyasu appoints Naruse Masanari and two others as administrators of Sakai",
+     place: "Sakai",
+     scene: "Ieyasu's three new Sakai administrators each dip a brush in SAUCE and sign the city's books."}
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP Hirano-go (Keicho 5)",
+     event: "After Sekigahara, Ieyasu bans plunder in Hirano",
+     place: "Hirano-go",
+     scene: "Ieyasu nails a no-plunder notice to the Hirano gate with a dab of SAUCE as glue."}
+  - {year: 1601, peg: soda, confidence: high, source: "ja WP Ibaraki Castle (Keicho 6)",
+     event: "Katagiri Katsumoto and his brother Sadataka become lords of Ibaraki Castle",
+     place: "Ibaraki Castle",
+     scene: "The Katagiri brothers toast with SODA in the Ibaraki Castle hall on the day they take it over."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Katagiri Katsumoto (Keicho 19/9/23)",
+     event: "A plot to kill Katagiri Katsumoto inside Osaka Castle comes out; he barricades his house",
+     place: "Katagiri mansion, Osaka Castle",
+     scene: "Katagiri Katsumoto hears of the murder plot in the castle TOWER and barricades his own house below."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (10/1)",
+     event: "Katagiri Katsumoto leaves Osaka Castle with his men for Ibaraki Castle",
+     place: "Osaka Castle to Ibaraki",
+     scene: "Katagiri Katsumoto climbs down a rope from an Osaka Castle TOWER and leads four thousand men north to Ibaraki."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (10/2)",
+     event: "The Toyotomi call ronin to Osaka Castle and seize the Tokugawa rice stores in Osaka",
+     place: "Osaka Castle",
+     scene: "Hideyori's men ring a bell from the keep TOWER, and ronin stream in as rice sacks are pulled from the Tokugawa stores."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (10/13)",
+     event: "Toyotomi troops under Ono Harutane seize Sakai from the shogun's officers",
+     place: "Sakai",
+     scene: "Ono Harutane plants the Toyotomi flag on the Sakai watch TOWER and chases out the shogun's officers."}
+  - {year: 1614, peg: tower, confidence: medium, source: "ja WP Osaka no jin (Keicho 19/10)",
+     event: "The Toyotomi try to cut the Yodo embankment to flood the land round Osaka; the Tokugawa stop them",
+     place: "Yodo embankment",
+     scene: "A siege TOWER rolls onto the Yodo embankment to cut it open, and Tokugawa scouts push it back before the water breaks out."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Hirano-go (Keicho 19/11/5)",
+     event: "Toyotomi troops burn Hirano and carry off members of the Sueyoshi family",
+     place: "Hirano-go",
+     scene: "Usuda Hayato sets the Hirano watch TOWER on fire and drags the Sueyoshi merchants away."}
+  - {year: 1614, peg: tower, confidence: medium, source: "ja WP Sumiyoshi Taisha (Keicho 19)",
+     event: "Ieyasu issues a protection notice to Sumiyoshi shrine",
+     place: "Sumiyoshi shrine",
+     scene: "Ieyasu hangs his protection notice on the Sumiyoshi shrine gate TOWER, and his soldiers leave the shrine alone."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka no jin (11/18)",
+     event: "Ieyasu holds a war council with Hidetada at the Chausuyama camp",
+     place: "Chausuyama",
+     scene: "Ieyasu and Hidetada climb a wooden TOWER on the Chausuyama mound and plan the attack with Osaka Castle in view."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (11/19)",
+     event: "Battle of the Kizugawaguchi fort: Tokugawa troops take the Toyotomi fort at the river mouth",
+     place: "Kizugawaguchi fort",
+     scene: "Hachisuka's men push over the TOWER of the Kizugawaguchi fort into the river mouth."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (11/26)",
+     event: "Battle of Imafuku: Satake Yoshinobu's men fight Kimura Shigenari on the dikes",
+     place: "Imafuku",
+     scene: "On the Imafuku dike Kimura Shigenari's men drive Satake's soldiers back into their own TOWER."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (11/26)",
+     event: "Battle of Shigino: Uesugi Kagekatsu's army takes the Toyotomi fort across the Yamato river",
+     place: "Shigino",
+     scene: "Uesugi soldiers climb a TOWER of rice bales at Shigino and jump into the Toyotomi fort."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (11/29)",
+     event: "Battle of Bakurofuchi: Tokugawa troops take the Bakurofuchi fort",
+     place: "Bakurofuchi",
+     scene: "The Bakurofuchi fort's TOWER falls into the water while its Toyotomi commander is away drinking."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka Winter Campaign (11/29)",
+     event: "Battle of Noda and Fukushima: Tokugawa boats drive Toyotomi ships off the river mouths",
+     place: "Noda and Fukushima",
+     scene: "Kuki's warships ram the floating TOWER of the Toyotomi fleet off Noda and sink it in the Fukushima channel."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Osaka no jin (11/30)",
+     event: "The Toyotomi give up their outer forts and pull back into Osaka Castle",
+     place: "Osaka Castle",
+     scene: "Toyotomi soldiers pull down the last outer TOWER and run back inside the walls of Osaka Castle."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Kishiwada Castle (Keicho 19)",
+     event: "Matsudaira Nobuyoshi takes command of Kishiwada Castle for the siege",
+     place: "Kishiwada Castle",
+     scene: "Matsudaira Nobuyoshi climbs the Kishiwada TOWER and turns its guns north toward Osaka."}
+
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP: Mori Terumoto (Keicho 5/7/19)",
+     event: "Mori Terumoto enters the west bailey of Osaka Castle as head of the Western army",
+     place: "Nishinomaru, Osaka Castle",
+     scene: "A tide of red SAUCE carries Terumoto into Osaka Castle's west bailey and sets him on the Western army's command seat."}
+
+  # science
+  - {year: 1528, peg: knife, confidence: high, source: "ja WP Ishodaizen (Kyoroku 1)",
+     event: "Asai no Sozui prints the Ishodaizen in Sakai, the first medical book printed for general readers",
+     place: "Sakai",
+     scene: "Asai no Sozui cuts the printing blocks of the Sakai medical book with a surgeon's KNIFE."}
+  - {year: 1585, peg: waffle, confidence: disputed, source: "ja WP Higashi-yokobori (1585; other view 1594)",
+     event: "Higashi-yokobori, the west outer moat of Osaka Castle and the city's oldest canal, is dug",
+     place: "Higashi-yokobori",
+     scene: "Diggers press a giant WAFFLE iron into the Osaka ground, and its first long groove fills with water as Higashi-yokobori."}
+  - {year: 1596, peg: peach, confidence: high, source: "ja WP Bunroku embankment (Bunroku 3 - Keicho 1)",
+     event: "The Bunroku embankment along the Yodo is finished, from Hirakata to Nagara; its top becomes the Kyo road",
+     place: "Yodo river, Hirakata to Nagara",
+     scene: "Mori Terumoto lays a long line of PEACH stones from Hirakata to Nagara, and the finished Yodo embankment grows up along it."}
+  - {year: 1612, peg: tongue, confidence: medium, source: "ja WP Dotonbori (Keicho 17, said)",
+     event: "Yasui Doton and partners start to dig the Dotonbori canal",
+     place: "Dotonbori",
+     scene: "A giant TONGUE licks a long wet trench west from Higashi-yokobori, and Yasui Doton names the new canal."}
+
+  # religion
+  - {year: 1496, peg: peach, confidence: high, source: "ja WP Ishiyama Hongan-ji (Meio 5/9/24)",
+     event: "Rennyo starts to build the Osaka Gobo on the Uemachi plateau beside Ikukunitama shrine",
+     place: "Uemachi plateau",
+     scene: "Old Rennyo plants a PEACH stone on the bare Uemachi hill, and the Osaka Gobo grows up out of it."}
+  - {year: 1497, peg: pig, confidence: high, source: "ja WP Ishiyama Hongan-ji (Meio 6/11)",
+     event: "The Osaka Gobo is completed with stone walls and a gate",
+     place: "Osaka Gobo",
+     scene: "A PIG drags the last foundation stone into the Osaka Gobo's new wall, and Rennyo moves into the finished temple."}
+  - {year: 1502, peg: sun, confidence: high, source: "ja WP Kanshin-ji (Bunki 2)",
+     event: "Kanshin-ji rebuilds its Tatekake-no-to hall",
+     place: "Kanshin-ji, Kawachinagano",
+     scene: "The SUN dries the new plaster of the half-built pagoda hall at Kanshin-ji in Kawachinagano."}
+  - {year: 1517, peg: dog, confidence: disputed, source: "ja WP Sumiyoshi Taisha (table 1517; text 1521)",
+     event: "Sumiyoshi shrine is rebuilt in its 36th periodic rebuilding",
+     place: "Sumiyoshi shrine",
+     scene: "A shrine DOG carries new cypress planks across the Sumiyoshi grounds for the periodic rebuilding."}
+  - {year: 1526, peg: nacho, confidence: high, source: "ja WP Nanshu-ji (Daiei 6/8)",
+     event: "Kogaku Soko names his Sakai hermitage the Nanshu-an",
+     place: "Nanshu-an, Sakai",
+     scene: "Zen master Kogaku Soko writes Nanshu-an on a giant NACHO and nails it over his Sakai hermitage door."}
+  - {year: 1532, peg: moon, confidence: high, source: "ja WP Ishiyama Hongan-ji; Osaka (1532)",
+     event: "After the burning of Yamashina, Shonyo moves the Hongan-ji to the Osaka Gobo",
+     place: "Osaka Gobo",
+     scene: "Shonyo carries the burnt Hongan-ji banner from Yamashina to Osaka by the light of the MOON and hangs it on the Gobo."}
+  - {year: 1533, peg: mummy, confidence: high, source: "ja WP Ishiyama Hongan-ji (Tenbun 2/7/25)",
+     event: "The founder's image is enshrined at Osaka; the Ishiyama Hongan-ji becomes the head temple",
+     place: "Ishiyama Hongan-ji",
+     scene: "Monks carry Shinran's image wrapped like a MUMMY into the Osaka hall, and it becomes the head temple."}
+  - {year: 1542, peg: rhino, confidence: high, source: "ja WP Sumiyoshi Taisha (Tenbun 11)",
+     event: "Sumiyoshi shrine is rebuilt in its 37th periodic rebuilding",
+     place: "Sumiyoshi shrine",
+     scene: "A RHINO hauls cypress logs over the Sumiyoshi arched bridge for the shrine's new halls."}
+  - {year: 1546, peg: roach, confidence: high, source: "ja WP Ikukunitama shrine (Tenbun 15)",
+     event: "The Hongan-ji holds a great festival for the moving of Ikukunitama shrine and gives its priests swords",
+     place: "Ikukunitama shrine",
+     scene: "A ROACH crawls out of the five hundred swords the Hongan-ji gives the Ikukunitama priests at the shrine's moving festival."}
+  - {year: 1549, peg: rope, confidence: high, source: "ja WP Kanshin-ji (Tenbun 18)",
+     event: "Kanshin-ji rebuilds its Kariteimo guardian hall",
+     place: "Kanshin-ji",
+     scene: "Carpenters pull the roof beams of the Kariteimo hall at Kanshin-ji into place with a thick ROPE."}
+  - {year: 1550, peg: lasso, confidence: high, source: "ja WP Sakai City; en WP Sakai",
+     event: "Francis Xavier visits Sakai on his way to Kyoto",
+     place: "Sakai",
+     scene: "Francis Xavier throws a LASSO from his boat onto a Sakai mooring post and steps ashore with his cross."}
+  - {year: 1557, peg: log, confidence: high, source: "ja WP Nanshu-ji (Koji 3)",
+     event: "Miyoshi Nagayoshi founds Nanshu-ji in Sakai for his father, with Dairin Soto as first abbot",
+     place: "Nanshu-ji, Sakai",
+     scene: "Nagayoshi lays a cedar LOG as the ridge beam of Nanshu-ji in Sakai for his dead father."}
+  - {year: 1560, peg: cheese, confidence: medium, source: "ja WP Tondabayashi jinaimachi (Eiroku 3)",
+     event: "Monk Shoshu of Kosho-ji buys waste land on the Ishikawa and founds the Tondabayashi temple town",
+     place: "Tondabayashi",
+     scene: "Shoshu pays for the bare Ishikawa riverbank with a wheel of CHEESE, and the Tondabayashi temple town rises on it."}
+  - {year: 1562, peg: chain, confidence: unverified,
+     event: "Nichiren monk Nisshin founds Myokoku-ji in Sakai with Miyoshi Jikkyu's help",
+     place: "Myokoku-ji, Sakai",
+     scene: "Miyoshi Jikkyu drags a cycad on a CHAIN into the Myokoku-ji garden that Nisshin founds in Sakai."}
+  - {year: 1564, peg: cherry, confidence: unverified,
+     event: "Miyoshi retainers at Iimoriyama Castle are baptised by Jesuit preachers",
+     place: "Iimoriyama Castle",
+     scene: "A Jesuit drops a CHERRY into each baptismal bowl as dozens of Miyoshi samurai become Christians at Iimoriyama."}
+  - {year: 1565, peg: jelly, confidence: high, source: "ja WP Gaspar Vilela (Eiroku 8)",
+     event: "Expelled from Kyoto, Gaspar Vilela takes refuge in Sakai",
+     place: "Sakai",
+     scene: "Vilela slips into Sakai on a cart of fruit JELLY and hides from the Kyoto mob among the merchants."}
+  - {year: 1566, peg: judge, confidence: unverified,
+     event: "Christian soldiers of the two enemy armies hear Christmas Mass together in Sakai",
+     place: "Sakai",
+     scene: "A JUDGE calls a truce in a Sakai merchant's hall, and Christian samurai of both armies kneel at one Christmas Mass."}
+  - {year: 1573, peg: comb, confidence: high, source: "ja WP Nanshu-ji (Genki 4)",
+     event: "Nanshu-ji in Sakai is named one of the Ten Zen Temples",
+     place: "Nanshu-ji",
+     scene: "Shogun Yoshiaki pins a golden COMB on the Nanshu-ji gate, and the Sakai temple joins the Ten Zen Temples."}
+  - {year: 1574, peg: car, confidence: low, source: "ja WP Nanshu-ji (Tensho 2)",
+     event: "Matsunaga Hisahide's soldiers burn Nanshu-ji and loot a golden statue from the Miyoshi shrine",
+     place: "Nanshu-ji",
+     scene: "Matsunaga's soldiers load the golden Miyoshi statue into a CAR and drive off as Nanshu-ji burns."}
+  - {year: 1574, peg: car, confidence: medium, source: "ja WP Tondabayashi jinaimachi (Tensho 2)",
+     event: "Jokoku-ji moves from Ebitani village into Tondabayashi",
+     place: "Tondabayashi",
+     scene: "Monks tow the whole Jokoku-ji temple into Tondabayashi behind a CAR."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Shitenno-ji (Tensho 4/5/3)",
+     event: "Shitenno-ji burns in the fighting round the Tennoji fort",
+     place: "Shitenno-ji",
+     scene: "Fire from the Tennoji fort leaps into Shitenno-ji, and its pagoda burns like a wooden CAGE."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Sumiyoshi Taisha (Tensho 4)",
+     event: "Sumiyoshi shrine burns in the Ishiyama war",
+     place: "Sumiyoshi shrine",
+     scene: "The Sumiyoshi halls burn, and their red pillars stand black like the bars of a CAGE."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Takatsuki Castle (Tensho 4)",
+     event: "The Takayama family build a church inside Takatsuki Castle",
+     place: "Takatsuki Castle",
+     scene: "Takayama Ukon sets a church bell in a wooden CAGE tower inside Takatsuki Castle."}
+  - {year: 1576, peg: cage, confidence: high, source: "ja WP Wakae Castle (Tensho 4)",
+     event: "Ikeda Norimasa builds a church at Wakae",
+     place: "Wakae",
+     scene: "Ikeda Norimasa frees doves from a CAGE at the door of his new Wakae church."}
+  - {year: 1580, peg: vase, confidence: high, source: "ja WP Ikukunitama shrine (Tensho 8)",
+     event: "Ikukunitama shrine burns in the Ishiyama war",
+     place: "Ikukunitama shrine",
+     scene: "A burning arrow shatters the altar VASE at Ikukunitama shrine, and the halls catch fire."}
+  - {year: 1580, peg: vase, confidence: high, source: "ja WP Ishiyama Hongan-ji (Tensho 8/8/2)",
+     event: "Kyonyo hands over the Ishiyama Hongan-ji and the temple burns for two days and a night",
+     place: "Ishiyama Hongan-ji",
+     scene: "Kyonyo walks out of the Ishiyama Hongan-ji, an oil VASE tips behind him, and the temple burns for two days."}
+  - {year: 1583, peg: foam, confidence: medium, source: "New Advent (Osaka); Organtino (wiki corpus)",
+     event: "The first church in Osaka opens on land Hideyoshi gives to Organtino",
+     place: "Osaka church",
+     scene: "Organtino splashes holy-water FOAM on the doors of Osaka's first church at Christmas."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Takatsuki Castle (Tensho 11)",
+     event: "A Jesuit seminary opens at Takatsuki",
+     place: "Takatsuki",
+     scene: "Seminary boys at Takatsuki blow soap FOAM off their Latin primers on the first day of school."}
+  - {year: 1583, peg: foam, confidence: disputed, source: "ja WP Ikukunitama (1583 start; 1585 trad; 1598)",
+     event: "Ikukunitama shrine is moved off the castle hill to its present site",
+     place: "Ikukunitama shrine",
+     scene: "Bearers carry Ikukunitama shrine on a wave of FOAM from the castle hill down to Nishitakatsu."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Zama shrine (Tensho 11)",
+     event: "Zama shrine is moved to its present site near Nishi-yokobori",
+     place: "Zama shrine",
+     scene: "Zama shrine floats on river FOAM from the castle grounds to its new site by Nishi-yokobori."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Tenma Hongan-ji (timeline 1583-1585)",
+     event: "The Hongan-ji moves from Saginomori to Kaizuka in Izumi",
+     place: "Kaizuka Gobo",
+     scene: "Kennyo lands at Kaizuka on sea FOAM and hangs the Hongan-ji banner on the Kaizuka Gobo."}
+  - {year: 1584, peg: fairy, confidence: high, source: "ja WP Shitenno-ji (Tensho 12)",
+     event: "The main hall of Shitenno-ji is rebuilt",
+     place: "Shitenno-ji",
+     scene: "A FAIRY taps the new kondo of Shitenno-ji with her wand, and it stands again on the burnt ground."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Tenma Hongan-ji (Tensho 13)",
+     event: "Hideyoshi gives the Hongan-ji land at Tenma and Kennyo moves there",
+     place: "Tenma Hongan-ji",
+     scene: "Hideyoshi hands Kennyo a WAFFLE shaped like the Tenma plot across the river, and the Hongan-ji moves in."}
+  - {year: 1586, peg: fish, confidence: high, source: "ja WP Konda Hachimangu (Tensho 14)",
+     event: "Konda Hachimangu shrine burns down",
+     place: "Konda Hachimangu, Habikino",
+     scene: "A dried FISH offering catches fire on the Konda Hachimangu altar in Habikino, and the shrine burns down."}
+  - {year: 1587, peg: fox, confidence: high, source: "ja WP Hosokawa Gracia (Tensho 15/2/21)",
+     event: "Hosokawa Gracia slips out of her mansion to visit the Osaka church",
+     place: "Osaka church",
+     scene: "Hosokawa Tama wears a FOX mask to slip past her guards and enter the Osaka church for the first time."}
+  - {year: 1587, peg: fox, confidence: high, source: "ja WP Hosokawa Gracia (Tensho 15)",
+     event: "Hosokawa Tama is baptised Gracia in her Osaka mansion",
+     place: "Hosokawa mansion, Osaka",
+     scene: "A tame FOX holds the water bowl as her maid baptises Hosokawa Tama with the name Gracia in the Osaka mansion."}
+  - {year: 1594, peg: bear, confidence: high, source: "ja WP Shitenno-ji (Bunroku 3)",
+     event: "Hideyoshi's restoration of Shitenno-ji starts; the main hall becomes two storeys",
+     place: "Shitenno-ji",
+     scene: "A BEAR lifts the roof of Shitenno-ji's main hall and sets a second storey under it."}
+  - {year: 1594, peg: bear, confidence: high, source: "ja WP Kanshin-ji (Bunroku 3)",
+     event: "Hideyoshi gives Kanshin-ji a temple estate of twenty-five koku",
+     place: "Kanshin-ji",
+     scene: "A BEAR carries twenty-five sacks of rice up the hill path to Kanshin-ji as Hideyoshi's gift."}
+  - {year: 1597, peg: pig, confidence: high, source: "ja WP Twenty-six Martyrs (10 January 1597)",
+     event: "The Christian prisoners leave Osaka on foot for execution at Nagasaki",
+     place: "Osaka",
+     scene: "A PIG cart leads the bound Christians out of Osaka on the west road, and they walk behind it toward Nagasaki."}
+  - {year: 1598, peg: beehive, confidence: medium, source: "ja WP Ikukunitama shrine (Keicho 3)",
+     event: "Hideyoshi gives Ikukunitama shrine land worth three hundred koku",
+     place: "Ikukunitama shrine",
+     scene: "Hideyoshi hangs a BEEHIVE full of rice-gold at the gate of Ikukunitama shrine as its new estate."}
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP Shitenno-ji (Keicho 5)",
+     event: "Hideyori has a five-storey pagoda moved from Gakuan-ji to Shitenno-ji",
+     place: "Shitenno-ji",
+     scene: "Workers slide a whole five-storey pagoda into Shitenno-ji on a river of soy SAUCE."}
+  - {year: 1601, peg: soda, confidence: high, source: "ja WP Shitenno-ji (Keicho 6/10)",
+     event: "Hideyori gives Shitenno-ji a thousand koku",
+     place: "Shitenno-ji",
+     scene: "Hideyori pours a thousand bottles of SODA into the Shitenno-ji offering box."}
+  - {year: 1603, peg: sumo, confidence: high, source: "ja WP Tamatsukuri Inari (Keicho 8)",
+     event: "Hideyori rebuilds Tamatsukuri Inari shrine and gives it a stone torii",
+     place: "Tamatsukuri Inari shrine",
+     scene: "A SUMO wrestler hoists Hideyori's stone torii and plants it at the door of Tamatsukuri Inari."}
+  - {year: 1603, peg: sumo, confidence: high, source: "ja WP Katsuo-ji (Keicho 8)",
+     event: "Hideyori rebuilds the mountain gate of Katsuo-ji",
+     place: "Katsuo-ji, Minoh",
+     scene: "A SUMO wrestler shoulders the new mountain gate up the Minoh slope to Katsuo-ji."}
+  - {year: 1605, peg: seal, confidence: high, source: "ja WP Kongo-ji (Keicho 10)",
+     event: "Hideyori starts a great restoration of Kongo-ji's halls and pagoda",
+     place: "Kongo-ji, Kawachinagano",
+     scene: "A SEAL balances the Tahoto finial on its nose as Hideyori's carpenters restore Kongo-ji."}
+  - {year: 1606, peg: sushi, confidence: high, source: "ja WP Kongo-ji (Keicho 11)",
+     event: "Hideyori rebuilds the Mikagedo of Kongo-ji",
+     place: "Kongo-ji",
+     scene: "Kongo-ji monks pay Hideyori's carpenters in SUSHI as the new Mikagedo hall goes up."}
+  - {year: 1606, peg: sushi, confidence: high, source: "ja WP Ikukunitama shrine (Keicho 11/10)",
+     event: "Hideyori has Katagiri Katsumoto rebuild Ikukunitama shrine",
+     place: "Ikukunitama shrine",
+     scene: "Katagiri Katsumoto lays out a SUSHI feast for the builders of Ikukunitama's splendid new halls."}
+  - {year: 1606, peg: sushi, confidence: high, source: "ja WP Konda Hachimangu (Keicho 11)",
+     event: "Hideyori rebuilds the main hall, gate and worship hall of Konda Hachimangu",
+     place: "Konda Hachimangu",
+     scene: "A SUSHI roll the size of a beam becomes the ridgepole of Konda Hachimangu's rebuilt main hall."}
+  - {year: 1606, peg: sushi, confidence: high, source: "ja WP Sumiyoshi Taisha (Keicho 11)",
+     event: "Hideyori orders the 38th rebuilding of Sumiyoshi shrine; the stone legs of the arched bridge survive from it",
+     place: "Sumiyoshi shrine, Sorihashi",
+     scene: "Hideyori's masons set stone SUSHI-shaped piers under the Sumiyoshi arched bridge."}
+  - {year: 1607, peg: ski, confidence: high, source: "ja WP Sumiyoshi Taisha (Keicho 12)",
+     event: "Hideyori's rebuilding of Sumiyoshi shrine is completed with its north and south storehouses",
+     place: "Sumiyoshi shrine",
+     scene: "Priests SKI down the steep arched bridge at Sumiyoshi to open the finished storehouses."}
+  - {year: 1614, peg: tower, confidence: high, source: "ja WP Shitenno-ji (Keicho 19/11/6)",
+     event: "Shitenno-ji burns down in the Winter Siege; only the East Gate survives",
+     place: "Shitenno-ji",
+     scene: "Fire from burning houses jumps to the Shitenno-ji pagoda TOWER, and only the East Gate stands next morning."}
+
+  # arts
+  - {year: 1533, peg: mummy, confidence: high, source: "ja WP Takeno Joo (Tenbun 2/3/26)",
+     event: "Tea master Takeno Joo moves home to Sakai",
+     place: "Sakai",
+     scene: "Takeno Joo unwraps his tea bowls like a MUMMY's bandages in his new Sakai house."}
+  - {year: 1533, peg: mummy, confidence: unverified,
+     event: "Asai no Sozui prints the Tenbun edition of the Analects in Sakai",
+     place: "Sakai",
+     scene: "Asai no Sozui wraps fresh sheets of the Analects round a MUMMY to dry in his Sakai print shop."}
+  - {year: 1555, peg: lily, confidence: high, source: "ja WP Takeno Joo (Koji 1/10/29)",
+     event: "Takeno Joo dies in Sakai and is buried at Nanshu-ji",
+     place: "Nanshu-ji, Sakai",
+     scene: "Rikyu lays a single white LILY on Takeno Joo's grave at Nanshu-ji in Sakai."}
+  - {year: 1565, peg: jelly, confidence: high, source: "ja WP Tsuda Sogyu (1565-1587)",
+     event: "Tsuda Sogyu of Sakai starts his tea diary, part of the Tennojiya kaiki",
+     place: "Tennojiya, Sakai",
+     scene: "Tsuda Sogyu writes the first page of his tea diary in Sakai with a brush dipped in plum JELLY."}
+  - {year: 1578, peg: cave, confidence: high, source: "ja WP Tsuda Sogyu (Tensho 6)",
+     event: "Nobunaga visits Sakai and takes tea at Tsuda Sogyu's house",
+     place: "Tsuda Sogyu's house, Sakai",
+     scene: "Nobunaga ducks through the tiny door of Tsuda Sogyu's tea room in Sakai, dark as a CAVE, and drinks."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Osaka Castle (Tensho 11/7)",
+     event: "Hideyoshi holds a tea gathering at Osaka soon after he moves in",
+     place: "Osaka Castle",
+     scene: "Hideyoshi whisks green tea FOAM for his generals on the building site of Osaka Castle."}
+  - {year: 1584, peg: fairy, confidence: high, source: "ja WP Sen no Rikyu (Tensho 12)",
+     event: "Sen no Rikyu builds a two-mat tea room in the Yamazato bailey of Osaka Castle",
+     place: "Yamazato bailey, Osaka Castle",
+     scene: "A FAIRY folds herself into Rikyu's new two-mat tea room in the Yamazato garden of Osaka Castle."}
+  - {year: 1586, peg: fish, confidence: high, source: "Oita City (Tensho 14/4)",
+     event: "Otomo Sorin visits Hideyoshi at Osaka Castle and asks for help against the Shimazu",
+     place: "Osaka Castle",
+     scene: "Otomo Sorin offers Hideyoshi a giant FISH from Bungo in the gold hall of Osaka Castle and begs for help."}
+  - {year: 1591, peg: boot, confidence: high, source: "ja WP Sen no Rikyu (Tensho 19)",
+     event: "Hideyoshi sends Sen no Rikyu home to Sakai under house arrest",
+     place: "Rikyu's house, Sakai",
+     scene: "Hideyoshi's BOOT kicks Rikyu out of Kyoto, and the tea master lands under guard in his Sakai house."}
+  - {year: 1596, peg: peach, confidence: high, source: "ja WP Osaka Castle (Bunroku 5)",
+     event: "The honmaru palace of Osaka Castle is rebuilt to receive the Ming envoys",
+     place: "Osaka Castle honmaru",
+     scene: "Painters gild a giant PEACH on every screen of the rebuilt Osaka honmaru palace for the Ming envoys' arrival."}
+  - {year: 1596, peg: peach, confidence: high, source: "ja WP Osaka Castle (Bunroku 5)",
+     event: "The Gokurakubashi bridge in Osaka Castle is rebuilt as a covered gate bridge",
+     place: "Gokurakubashi, Osaka Castle",
+     scene: "Carpenters roof the Gokurakubashi bridge in Osaka Castle with PEACH-coloured tiles and turn it into a gate tower."}
+  - {year: 1600, peg: sauce, confidence: high, source: "ja WP Osaka Castle (Keicho 5/5/12)",
+     event: "The Gokurakubashi gate bridge is taken out of Osaka Castle and moved to the Hokoku shrine",
+     place: "Gokurakubashi, Osaka Castle",
+     scene: "Workers lift the Gokurakubashi off its moat in Osaka Castle and carry it away dripping with SAUCE."}
+  - {year: 1604, peg: sewer, confidence: high, source: "ja WP Osaka Castle (Keicho 9)",
+     event: "Hideyori builds a new two-storey thousand-mat hall in Osaka Castle",
+     place: "Osaka Castle honmaru",
+     scene: "Hideyori's carpenters build a thousand-mat hall in Osaka Castle on top of a SEWER they cover with gold."}
+
+  # economy
+  - {year: 1499, peg: pipe, confidence: medium, source: "ja WP Sakai City chronology",
+     event: "Hosokawa Masamoto takes Sakai under his direct rule as a protected trade port",
+     place: "Sakai port",
+     scene: "Hosokawa Masamoto lays a long PIPE from Sakai port to his treasury and takes the trade money directly."}
+  - {year: 1502, peg: sun, confidence: medium, source: "ja WP Sakai City chronology",
+     event: "Goldfish come to Sakai from Ming China, the first in Japan",
+     place: "Sakai",
+     scene: "A Ming junk lands at Sakai, and the SUN flashes on the first goldfish ever seen in Japan."}
+  - {year: 1536, peg: match, confidence: medium, source: "ja WP Sakai City chronology",
+     event: "The Egoshu, the merchant council that runs Sakai, is formed",
+     place: "Sakai",
+     scene: "Thirty-six Sakai merchants light one MATCH together and swear to run the city as one council."}
+  - {year: 1543, peg: ram, confidence: medium, source: "ja WP Sakai City; Sakai City archive",
+     event: "Sakai smiths start to make matchlock guns soon after the guns reach Tanegashima (approximate)",
+     place: "Sakai gunsmiths",
+     scene: "A Sakai smith hammers a gun barrel on an anvil shaped like a RAM's head."}
+  - {year: 1561, peg: jet, confidence: high, source: "ja WP Sakai; Gaspar Vilela (Eiroku 4/8/17)",
+     event: "Gaspar Vilela writes that Sakai is rich and ruled by its councillors like Venice",
+     place: "Sakai",
+     scene: "Vilela's letter flies to Europe by JET and tells Rome that Sakai is a Venice of the East."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Hirano-go; Imai Sokyu (Eiroku 11)",
+     event: "Nobunaga demands war money from Sakai, Ishiyama and Hirano; Sakai asks Hirano to resist with it",
+     place: "Sakai and Hirano",
+     scene: "Nobunaga's CHEF serves the Sakai merchants a bill for twenty thousand kan, and they run to Hirano for help."}
+  - {year: 1568, peg: chef, confidence: high, source: "ja WP Imai Sokyu (Eiroku 11)",
+     event: "Imai Sokyu becomes Nobunaga's deputy for the five Sakai villages",
+     place: "Sakai",
+     scene: "Imai Sokyu puts on a CHEF's hat as Nobunaga's deputy and stirs the tax pot of the five Sakai villages."}
+  - {year: 1569, peg: ship, confidence: high, source: "ja WP Sakai (1569)",
+     event: "Sakai pays Nobunaga's war money and submits to him",
+     place: "Sakai",
+     scene: "Sakai merchants load a SHIP with silver for Nobunaga and fill in their own defiance."}
+  - {year: 1569, peg: ship, confidence: high, source: "ja WP Imai Sokyu (Eiroku 12)",
+     event: "Imai Sokyu gets salt-tax rights in Settsu and rights to pass on the Yodo river",
+     place: "Yodo river",
+     scene: "Imai Sokyu's salt SHIP sails up the Yodo past every toll post without paying."}
+  - {year: 1578, peg: cave, confidence: high, source: "ja WP 2nd Kizugawaguchi (Tensho 6/7/17)",
+     event: "Kuki Yoshitaka's new iron-plated ships put in at Sakai and astonish the crowds",
+     place: "Sakai port",
+     scene: "Kuki's iron ships glide out of a sea CAVE into Sakai port, and crowds on the quay gasp."}
+  - {year: 1578, peg: cave, confidence: high, source: "ja WP 2nd Kizugawaguchi (Tensho 6/9/30)",
+     event: "Nobunaga reviews the new iron ships at Sakai",
+     place: "Sakai port",
+     scene: "Nobunaga walks the deck of each iron ship in Sakai harbour and knocks on the plates echoing like a CAVE."}
+  - {year: 1594, peg: bear, confidence: high, source: "ja WP Luzon Sukezaemon (Bunroku 3/7/20)",
+     event: "Sakai merchant Luzon Sukezaemon presents Luzon jars to Hideyoshi",
+     place: "Osaka Castle",
+     scene: "Luzon Sukezaemon's BEAR carries a tower of Luzon tea jars into Hideyoshi's hall."}
+  - {year: 1598, peg: beehive, confidence: high, source: "ja WP Luzon Sukezaemon (Keicho 3)",
+     event: "Luzon Sukezaemon gives his Sakai house to Daian-ji and flees abroad before Hideyoshi takes it",
+     place: "Daian-ji, Sakai",
+     scene: "Luzon Sukezaemon hands his Sakai mansion, golden as a BEEHIVE, to the Daian-ji monks and sails away."}
+  - {year: 1604, peg: sewer, confidence: high, source: "ja WP Hirano-go (Keicho 9)",
+     event: "Hirano's Sueyoshi family send out their first red seal trade ship",
+     place: "Hirano-go",
+     scene: "The Sueyoshi red seal ship sails out from Hirano through a SEWER pipe to the open sea."}
+
+  # society
+  - {year: 1496, peg: peach, confidence: medium, source: "ja WP Osaka (place name, 1496)",
+     event: "The name Osaka first appears in writing, in a letter of Rennyo",
+     place: "Ikutama estate, Osaka",
+     scene: "Rennyo writes the word Osaka on a PEACH skin, the first time the name appears."}
+  - {year: 1510, peg: dice, confidence: unverified,
+     event: "An earthquake strikes Settsu and Kawachi and damages Shitenno-ji",
+     place: "Shitenno-ji",
+     scene: "The ground shakes Shitenno-ji like DICE in a cup, and roof tiles rain onto the temple yard."}
+  - {year: 1522, peg: nun, confidence: high, source: "ja WP Takaya Castle (Daiei 2)",
+     event: "A great fire burns most of Takaya Castle",
+     place: "Takaya Castle",
+     scene: "A NUN runs from Takaya Castle with a water bucket as fire eats most of the castle."}
+  - {year: 1535, peg: mill, confidence: medium, source: "ja WP Ishiyama Hongan-ji (Tenbun 4)",
+     event: "The Ishiyama temple town adds the Hiyamachi and Aomachi wards",
+     place: "Ishiyama temple town",
+     scene: "A MILL wheel turns at the edge of the Hongan-ji town and grinds out two new wards, Hiyamachi and Aomachi."}
+  - {year: 1541, peg: radio, confidence: high, source: "ja WP Ishiyama Hongan-ji (Tenbun 10/8/11)",
+     event: "A storm blows down the watch towers of the Ishiyama Hongan-ji",
+     place: "Ishiyama Hongan-ji",
+     scene: "A RADIO crackles a storm warning, and the Ishiyama Hongan-ji watch towers fall in the wind."}
+  - {year: 1541, peg: radio, confidence: medium, source: "ja WP Ishiyama Hongan-ji (Tenbun 10)",
+     event: "Zosakumachi and Yokomachi are added; the Ishiyama temple town reaches ten wards",
+     place: "Ishiyama temple town",
+     scene: "A RADIO announcer counts to ten as Zosakumachi and Yokomachi join the Hongan-ji temple town."}
+  - {year: 1583, peg: foam, confidence: high, source: "ja WP Semba (1583)",
+     event: "Hideyoshi calls merchants from Fushimi, Hirano and Sakai to build the Osaka castle town",
+     place: "Osaka castle town",
+     scene: "Merchants from Sakai and Hirano ride into Osaka on a wave of FOAM and build the first castle-town streets."}
+  - {year: 1584, peg: fairy, confidence: high, source: "ja WP Hirano-go (Frois letter, Jan 1584)",
+     event: "Frois calls Hirano a town of very rich people; Hideyoshi asks its merchants to move to Osaka",
+     place: "Hirano-go",
+     scene: "A FAIRY lifts a rich Hirano merchant's house in her arms and carries it to Osaka."}
+  - {year: 1585, peg: waffle, confidence: high, source: "ja WP Semba (1585)",
+     event: "Building of Nakajima north of the Okawa, later Tenma, begins",
+     place: "Nakajima (Tenma)",
+     scene: "Builders lay out the Nakajima streets north of the Okawa in a WAFFLE grid, the start of Tenma."}
+  - {year: 1585, peg: waffle, confidence: medium, source: "ja WP Ishiyama Hongan-ji (Uno diary, Tensho 13/5/3)",
+     event: "The Tenma temple town is laid out seven by five blocks",
+     place: "Tenma temple town",
+     scene: "Uno Mondo measures the Tenma temple town on a WAFFLE of seven by five squares."}
+  - {year: 1596, peg: peach, confidence: high, source: "ja WP Keicho-Fushimi earthquake; Sakai City",
+     event: "The Keicho-Fushimi earthquake brings down houses in Osaka and Sakai; more than six hundred die in Sakai",
+     place: "Sakai and Osaka",
+     scene: "The earthquake shakes Sakai like a PEACH tree, and its houses drop like fruit on more than six hundred people."}
+  - {year: 1598, peg: beehive, confidence: high, source: "ja WP Semba; search: Osaka city reports",
+     event: "Houses inside the new sannomaru are moved out, and the Semba merchant district is laid out",
+     place: "Semba",
+     scene: "Hirano and Sakai merchants swarm out of the castle area like a BEEHIVE and build the Semba grid."}
+
+world_refs:
+  - {year: 1531, event: "Battle of Daimotsu: Hosokawa Takakuni loses", cell: east_asia_politics_1500_1800}
+  - {year: 1593, event: "Hideyori is born in Osaka Castle", cell: east_asia_politics_1500_1800}
+  - {year: 1549, event: "Miyoshi Nagayoshi turns on Hosokawa Harumoto (Battle of Eguchi)", cell: east_asia_politics_1500_1800}
+  - {year: 1560, event: "The shamisen reaches Japan from Ryukyu", cell: east_asia_arts_1500_1800}
+  - {year: 1570, event: "Ishiyama Hongan-ji war starts", cell: east_asia_politics_1500_1800}
+  - {year: 1576, event: "First battle of Kizugawaguchi", cell: east_asia_politics_1500_1800}
+  - {year: 1578, event: "Second battle of Kizugawaguchi", cell: east_asia_politics_1500_1800}
+  - {year: 1580, event: "Ishiyama Hongan-ji surrenders to Nobunaga", cell: east_asia_politics_1500_1800}
+  - {year: 1583, event: "Osaka Castle is begun by Hideyoshi", cell: east_asia_arts_1500_1800}
+  - {year: 1591, event: "Hideyoshi moves Hongan-ji from Tenma to Kyoto", cell: east_asia_religion_1500_1800}
+  - {year: 1596, event: "Ming envoys name Hideyoshi king of Japan at Osaka", cell: east_asia_politics_1500_1800}
+  - {year: 1604, event: "Itowappu: Kyoto, Sakai and Nagasaki guild buys Portuguese silk", cell: east_asia_economy_1500_1800}
+  - {year: 1614, event: "Winter siege of Osaka", cell: east_asia_politics_1500_1800}
+
+out_refs:
+  - {year: 1523, event: "Ningbo incident: Hosokawa envoys from Sakai fight the Ouchi envoys", reason: "event abroad"}
+  - {year: 1554, event: "Shonyo dies; Kennyo heads the Hongan-ji", reason: "sect succession"}
+  - {year: 1564, event: "Miyoshi Nagayoshi's heirs keep his death secret for three years", reason: "court event"}
+  - {year: 1585, event: "Hideyoshi becomes kampaku", reason: "national office"}
+  - {year: 1587, event: "Hideyoshi orders the Jesuits out of Japan", reason: "national edict"}
+  - {year: 1589, event: "Hideyoshi's seat moves to the Jurakudai in Kyoto", reason: "court move"}
+  - {year: 1598, event: "Hideyoshi dies at Fushimi; Katagiri named Hideyori's guardian", reason: "Toyotomi death"}
+  - {year: 1602, event: "Ieyasu founds Higashi Hongan-ji; the sect splits", reason: "sect affair, Kyoto"}
+  - {year: 1611, event: "Hideyori meets Ieyasu at Nijo Castle", reason: "Toyotomi court, Kyoto"}
+  - {year: 1614, event: "Hoko-ji bell inscription incident", reason: "Toyotomi court, Kyoto"}

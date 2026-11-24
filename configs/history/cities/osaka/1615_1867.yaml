@@ -1,0 +1,884 @@
+# City: Osaka x 1615 to 1867 (the end of the sieges, the merchant city, Dojima rice, puppet theatre and kabuki, Oshio). DRAFT 2026-11-24.
+# Area: Osaka Prefecture (Osaka city, Sakai, Hirakata, Takatsuki, Kishiwada, Kaizuka, Kawachi); Kyoto, Nara, Kobe, Amagasaki, Itami out. Region: east_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Acts of the shogunate for the whole
+# country (successions, edicts, national reforms, treaties) and shogunal stays in Osaka Castle -> out_refs. World-grid events -> world_refs.
+# Dates: memory pass + web check (searches within the 45 cap; no unauthorised book copies).
+# Main sources: ja Wikipedia (wikipedia.org), NDL, Osaka University repository, Ritsumeikan papers, company histories.
+# Lunisolar dates are given as the Gregorian year of the day (a late Japanese-year date can fall in the next year).
+# A building -> start of work unless the text says "rebuilt", "finished" or "opens".
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 19/12/4 = Jan)",
+     event: "Sanada-maru: Sanada Yukimura's earthwork throws back the Tokugawa attack in the winter siege",
+     place: "Sanada-maru, south of Osaka Castle",
+     scene: "A giant Daruma DOLL rolls off the Sanada-maru earthwork like a boulder and knocks the Maeda and Ii attackers back into the dry moat."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 19/12/16); en WP: Jan",
+     event: "Tokugawa cannon bombard Osaka Castle, and a shot hits the keep",
+     place: "Bizenjima and the Osaka Castle keep",
+     scene: "A cannon on Bizenjima fires a porcelain DOLL across the river, and it smashes into the Osaka Castle keep."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 19/12/22); en WP: Jan 22",
+     event: "The winter siege ends in peace, and Tokugawa men fill the outer moats of Osaka Castle",
+     place: "Osaka Castle moats",
+     scene: "Tokugawa soldiers shovel earth onto a sleeping DOLL in each Osaka Castle moat after the peace, until the outer moats lie flat."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 20/4/28)",
+     event: "Toyotomi troops burn the port city of Sakai, a Tokugawa supply base",
+     place: "Sakai",
+     scene: "A Toyotomi soldier throws a burning paper DOLL onto the Sakai warehouses, and the whole port city goes up in flames."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 20/4/29)",
+     event: "Battle of Kashii: Asano troops defeat Ono Harufusa's march toward Kishu",
+     place: "Kashii, Izumisano",
+     scene: "A giant wooden DOLL blocks the Kashii road and knocks back Ono Harufusa's column on its way south to Kishu."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 20/5/6)",
+     event: "Battles of Domyoji and Konda: Goto Matabei dies stopping the Tokugawa army on the Yamato road",
+     place: "Domyoji, Fujiidera",
+     scene: "Goto Matabei's armoured DOLL stands alone at Domyoji and falls under the Tokugawa army marching in from the Yamato road."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 20/5/6)",
+     event: "Battle of Yao and Wakae: Kimura Shigenari falls to the Ii troops on the Kawachi road",
+     place: "Wakae, Higashiosaka",
+     scene: "Kimura Shigenari's perfumed DOLL of a warrior gets its head cut off by the red-armoured Ii troops in the Wakae rice fields."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Osaka no jin (Keicho 20/5/7)",
+     event: "Battle of Tennoji and Okayama, the last field battle before the castle falls",
+     place: "Chausuyama, Tennoji",
+     scene: "Sanada Yukimura charges down Chausuyama on a war DOLL with red armour and breaks Ieyasu's lines at Tennoji, then falls."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Isshin-ji",
+     event: "Honda Tadatomo dies in the front line at Tennoji; his grave is at Isshin-ji",
+     place: "Isshin-ji, Tennoji",
+     scene: "The monks of Isshin-ji bury Honda Tadatomo's DOLL in its armour, killed at the very front of the Tennoji charge."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Matsudaira Tadaaki",
+     event: "Matsudaira Tadaaki becomes lord of Osaka and starts to rebuild the burned city",
+     place: "Osaka Castle ruins",
+     scene: "Matsudaira Tadaaki lifts a scorched DOLL out of the Osaka ashes and orders the townsmen to rebuild their streets."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Takatsuki-jo",
+     event: "Naito Nobumasa becomes lord of Takatsuki Castle",
+     place: "Takatsuki Castle",
+     scene: "Naito Nobumasa sets his family DOLL on the Takatsuki Castle altar as the new lord of the castle."}
+  - {year: 1617, peg: dog, confidence: high, source: "ja WP: Takatsuki-jo (Genna 3/12)",
+     event: "The shogunate starts to rebuild Takatsuki Castle as a modern fortress under Toki Sadayoshi",
+     place: "Takatsuki Castle",
+     scene: "A DOG digs new moats around Takatsuki Castle for Toki Sadayoshi, and shogunate builders raise modern walls behind it."}
+  - {year: 1618, peg: dove, confidence: high, source: "ja WP: Sakai bugyo",
+     event: "The Sakai government office is renamed the Sakai magistrate (Sakai bugyo)",
+     place: "Sakai",
+     scene: "A DOVE carries a new signboard to the Sakai office: from today the town is run by the Sakai magistrate."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Osaka jodai; Matsudaira Tadaaki",
+     event: "Osaka becomes direct shogunate land; Tadaaki moves to Koriyama and Naito Nobumasa becomes the first castellan",
+     place: "Osaka Castle",
+     scene: "A TUBA blows Matsudaira Tadaaki out of Osaka toward Koriyama, and Naito Nobumasa marches in as the first shogunal castellan."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Osaka machi-bugyo (Genna 5/8/22)",
+     event: "First East and West town magistrates of Osaka: Kugai Masatoshi and Shimada Naotoki",
+     place: "Magistrate offices, Uemachi",
+     scene: "Two TUBA players march to the East and West offices and seat Kugai and Shimada as Osaka's first town magistrates."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Kishiwada-jo",
+     event: "Matsudaira Yasushige takes Kishiwada Castle and builds its outer defences and castle town",
+     place: "Kishiwada Castle",
+     scene: "Matsudaira Yasushige marches into Kishiwada behind a brass TUBA and orders an outer ring of walls around the castle town."}
+  - {year: 1620, peg: nose, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The shogunate starts to rebuild Osaka Castle on top of the buried Toyotomi castle",
+     place: "Osaka Castle",
+     scene: "A giant NOSE sniffs out the buried Toyotomi castle, and Tokugawa builders pile new stone walls right on top of it."}
+  - {year: 1620, peg: nose, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The Sengan and Inui turrets of the new Osaka Castle are built",
+     place: "Sengan yagura, Osaka Castle",
+     scene: "A stone NOSE pokes out of the outer moat wall and grows into the Sengan turret, while its twin becomes the Inui turret."}
+  - {year: 1623, peg: gnome, confidence: high, source: "ja WP: Osaka jodai",
+     event: "The shogunate sets up the Kyobashi and Tamatsukuri garrison posts (jōban) at Osaka Castle",
+     place: "Kyobashi gate, Osaka Castle",
+     scene: "A GNOME in armour takes up guard at the Kyobashi gate, and a second GNOME guards Tamatsukuri: the new garrison posts."}
+  - {year: 1623, peg: gnome, confidence: high, source: "ja WP: Kishiwada-jo",
+     event: "The Fushimi turret is moved from Fushimi Castle to Kishiwada Castle",
+     place: "Kishiwada Castle",
+     scene: "A GNOME carries a whole turret on its back from Fushimi to Kishiwada and drops it into the second bailey."}
+  - {year: 1625, peg: nail, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The gold storehouse (kinzo) of Osaka Castle is built",
+     place: "Kinzo, Osaka Castle",
+     scene: "A carpenter hammers the last iron NAIL into the gold storehouse door, and the shogun's gold is locked inside Osaka Castle."}
+  - {year: 1626, peg: nacho, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The new main keep of Osaka Castle is finished",
+     place: "Osaka Castle keep",
+     scene: "A cook sets one giant golden NACHO on top of the castle as the roof, and the new Osaka keep is finished."}
+  - {year: 1628, peg: knife, confidence: high, source: "ja WP: Osaka-jo",
+     event: "Third building phase at Osaka Castle: the Otemon gate and the First and Sixth turrets",
+     place: "Otemon gate",
+     scene: "A KNIFE carves the Otemon gate out of a huge granite block for the third phase of the castle works."}
+  - {year: 1629, peg: knob, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The rebuilding of Osaka Castle is finished",
+     place: "Osaka Castle",
+     scene: "A builder turns the last brass KNOB on the castle's front door and declares the new Osaka Castle complete."}
+  - {year: 1640, peg: horse, confidence: high, source: "ja WP: Kishiwada-jo (Kan'ei 17)",
+     event: "Okabe Nobukatsu moves from Takatsuki to Kishiwada; the Okabe rule Kishiwada until the Meiji era",
+     place: "Kishiwada Castle",
+     scene: "Okabe Nobukatsu rides a white HORSE from Takatsuki into Kishiwada Castle, and his family stays until the Meiji era."}
+  - {year: 1649, peg: rope, confidence: high, source: "ja WP: Takatsuki-jo",
+     event: "Nagai Naokiyo becomes lord of Takatsuki; the Nagai keep the castle to the end of the era",
+     place: "Takatsuki Castle",
+     scene: "Nagai Naokiyo ties a ROPE around Takatsuki Castle's keep, and his family holds that rope for two hundred years."}
+  - {year: 1660, peg: cheese, confidence: high, source: "ja WP: Osaka-jo (Manji 3/6/18)",
+     event: "Lightning hits the gunpowder store near the Aoya gate of Osaka Castle; the blast wrecks the castle",
+     place: "Aoya gate, Osaka Castle",
+     scene: "Lightning strikes a powder store packed like a wheel of CHEESE by the Aoya gate, and the blast blows the castle apart."}
+  - {year: 1665, peg: jelly, confidence: high, source: "ja WP: Osaka-jo (Kanbun 5/1/2)",
+     event: "Lightning hits a roof fish of the Osaka Castle keep; the keep burns down and is not rebuilt",
+     place: "Osaka Castle keep",
+     scene: "Lightning melts the keep's golden roof fish into burning JELLY, and the Osaka keep burns to the ground, never rebuilt."}
+  - {year: 1685, peg: waffle, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The stone gunpowder store (ensho-gura) of Osaka Castle is built",
+     place: "Ensho-gura, Osaka Castle",
+     scene: "Masons stack granite blocks like a WAFFLE into a fireproof gunpowder store that no lightning can break."}
+  - {year: 1696, peg: peach, confidence: high, source: "ja WP: Sakai bugyo",
+     event: "The Sakai magistrate is abolished; Sakai comes under the Osaka town magistrates",
+     place: "Sakai",
+     scene: "The Osaka magistrate picks up Sakai like a ripe PEACH and drops it into his own basket: no more Sakai magistrate."}
+  - {year: 1702, peg: sun, confidence: high, source: "ja WP: Sakai bugyo",
+     event: "The Sakai magistrate office is set up again",
+     place: "Sakai",
+     scene: "The SUN rises again over the Sakai magistrate's office after six dark years under Osaka."}
+  - {year: 1783, peg: foam, confidence: high, source: "ja WP: Osaka-jo (Tenmei 3/10/11)",
+     event: "Lightning burns the Ote Tamon turret of Osaka Castle",
+     place: "Tamon yagura, Osaka Castle",
+     scene: "Firemen spray FOAM on the burning Ote Tamon turret after lightning hits it, but it burns down."}
+  - {year: 1827, peg: ink, confidence: high, source: "ja WP: Kishiwada-jo",
+     event: "Lightning burns the keep of Kishiwada Castle; it is not rebuilt",
+     place: "Kishiwada Castle",
+     scene: "Lightning splashes black INK over Kishiwada Castle, and the keep burns away, leaving only its stone base."}
+  - {year: 1830, peg: mouse, confidence: high, source: "ja WP: Oshio Heihachiro",
+     event: "Oshio Heihachiro leaves his post as police officer (yoriki) of the East magistrate",
+     place: "East magistrate's office",
+     scene: "Oshio Heihachiro hands his yoriki badge to a MOUSE and walks out of the East magistrate's office for good."}
+  - {year: 1837, peg: mug, confidence: high, source: "ja WP: Oshio Heihachiro (Tenpo 8/2)",
+     event: "Before the rising, Oshio sells his books and gives the money to the poor",
+     place: "Senshindo, Tenma",
+     scene: "Oshio fills a MUG with coins from his sold library and hands it to each starving family in Tenma."}
+  - {year: 1837, peg: mug, confidence: high, source: "ja WP: Oshio no ran (Tenpo 8/3/27)",
+     event: "Oshio kills himself with gunpowder and fire in a merchant's house at Utsubo",
+     place: "Utsubo Aburakake-cho",
+     scene: "Trapped in a merchant's back room at Utsubo, Oshio lights a MUG of gunpowder and dies in the fire."}
+  - {year: 1838, peg: movie, confidence: high, source: "ja WP: Oshio no ran (Tenpo 9/8)",
+     event: "The salted bodies of Oshio and eighteen others are crucified at the Tobita execution ground",
+     place: "Tobita execution ground",
+     scene: "A crowd at Tobita watches like at a MOVIE as eighteen salted bodies and Oshio's are raised on crosses."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "ja WP: Tenpozan",
+     event: "The Russian warship Diana appears off Tenpozan; the city fears an attack",
+     place: "Tenpozan",
+     scene: "A Russian LAWYER stands on the Diana's deck off Tenpozan and reads demands while all Osaka runs to the riverbanks."}
+  - {year: 1855, peg: lily, confidence: high, source: "ja WP: Sakai-shi",
+     event: "The shogunate builds a gun battery with eight cannon at Sakai port",
+     place: "Sakai port",
+     scene: "Eight cannon bloom like iron LILY flowers on the new Sakai battery, all pointed at the sea."}
+  - {year: 1867, peg: jockey, confidence: high, source: "ja WP: Sakai bugyo",
+     event: "The Sakai magistrate is abolished again; Sakai comes under the Osaka town magistrates",
+     place: "Sakai",
+     scene: "A JOCKEY rides off with the Sakai magistrate's seal and hands it to the Osaka magistrates in the last shogunate reform."}
+  - {year: 1863, peg: gem, confidence: high, source: "ja WP: Tenchugumi (Bunkyu 3/8/15)",
+     event: "Tenchugumi rebels sail from Osaka, land at Sakai and march into Kawachi",
+     place: "Doi river bank, Sakai",
+     scene: "The Tenchugumi rebels ride a huge floating GEM from Osaka down the coast and run it aground on the Doi river bank at Sakai."}
+  - {year: 1866, peg: judge, confidence: high, source: "ja WP: Tokugawa Iemochi (Keio 2/7/20)",
+     event: "Shogun Iemochi dies of beriberi in Osaka Castle",
+     place: "Osaka Castle",
+     scene: "A JUDGE in black robes reads out a sentence of beriberi, and young Shogun Iemochi dies on his Osaka Castle bed."}
+  # science
+  - {year: 1616, peg: dish, confidence: medium, source: "ja WP: Hirakata-juku (Genna 2 c.)",
+     event: "Hirakata, Moriguchi, Yodo and Fushimi become post stations of the Kyoto road",
+     place: "Hirakata",
+     scene: "A DISH of rice cakes is set out at each new post station, Hirakata and Moriguchi, along the Kyoto road."}
+  - {year: 1617, peg: dog, confidence: high, source: "ja WP: Edobori-gawa",
+     event: "Edobori canal is dug as part of Tadaaki's rebuilding of Osaka",
+     place: "Edobori",
+     scene: "A DOG digs a straight trench west from the Nishiyokobori, and water fills it: the new Edobori canal."}
+  - {year: 1617, peg: dog, confidence: high, source: "ja WP: Kyomachibori-gawa",
+     event: "Kyomachibori canal is dug by townsmen who moved from Kyomachi in Fushimi",
+     place: "Kyomachibori",
+     scene: "Townsmen from Fushimi pull a DOG sled loaded with spades and dig Kyomachibori, named after their old street."}
+  - {year: 1622, peg: nun, confidence: medium, source: "ja WP: Nagahori-gawa (other view: Kan'ei 2)",
+     event: "Nagahori canal is dug by merchants from Fushimi, among them Okada Shinsai",
+     place: "Nagahori",
+     scene: "A NUN with a spade leads Fushimi merchants as they dig the long Nagahori canal across the south of the city."}
+  - {year: 1622, peg: nun, confidence: high, source: "ja WP: Shinsaibashi",
+     event: "Okada Shinsai builds a wooden bridge over the new Nagahori canal: Shinsaibashi",
+     place: "Shinsaibashi",
+     scene: "A NUN walks across the first wooden Shinsaibashi bridge that merchant Okada Shinsai lays over the Nagahori canal."}
+  - {year: 1624, peg: hanger, confidence: high, source: "ja WP: Kaibori-gawa",
+     event: "Kaibori canal is dug at the request of the merchant Kaibuya",
+     place: "Kaibori",
+     scene: "The merchant Kaibuya hangs his name sign on a HANGER over the new Kaibori canal that he asked the city to dig."}
+  - {year: 1626, peg: nacho, confidence: high, source: "ja WP: Tachiuribori-gawa",
+     event: "Tachiuribori canal is finished by Shishikuiya Jiroemon",
+     place: "Tachiuribori",
+     scene: "Shishikuiya Jiroemon uses a giant NACHO as a shovel and finishes the Tachiuribori canal after six years."}
+  - {year: 1630, peg: mouse, confidence: high, source: "ja WP: Satsumabori-gawa",
+     event: "Satsumabori canal is finished by Satsumaya Nihei, an elder of the Tenma group",
+     place: "Satsumabori",
+     scene: "An army of MOUSE diggers works for Satsumaya Nihei and finishes the Satsumabori canal south of Okazaki bridge."}
+  - {year: 1661, peg: jet, confidence: high, source: "ja WP: Naniwabashi",
+     event: "Naniwabashi and Tenjinbashi become public bridges kept by the shogunate",
+     place: "Naniwabashi",
+     scene: "A shogunate JET drops repair crews on Naniwabashi and Tenjinbashi: from now on the government keeps both bridges."}
+  - {year: 1672, peg: coin, confidence: high, source: "ja WP: Shinmachi yukaku",
+     event: "Shinmachi bridge is built over the Nishiyokobori canal to the pleasure quarter",
+     place: "Shinmachi bridge",
+     scene: "Pleasure-seekers pay one COIN each to cross the new Shinmachi bridge over the Nishiyokobori canal."}
+  - {year: 1684, peg: fairy, confidence: high, source: "ja WP: Kyu-Yodogawa",
+     event: "Kawamura Zuiken cuts through Kujo island and names the new channel the Ajikawa",
+     place: "Ajikawa, Kujo",
+     scene: "A FAIRY with a giant shovel cuts Kujo island in half for Kawamura Zuiken, and ships sail straight up the new Ajikawa."}
+  - {year: 1698, peg: beehive, confidence: high, source: "ja WP: Horie-gawa",
+     event: "Kawamura Zuiken digs the Horie canal to open the new Horie district",
+     place: "Horie",
+     scene: "Kawamura Zuiken knocks down a BEEHIVE in the Horie marsh and digs a canal, and a new town buzzes along it."}
+  - {year: 1704, peg: sewer, confidence: high, source: "ja WP: Yamato-gawa",
+     event: "The Yamato River is diverted west to the sea near Sakai after eight months of work",
+     place: "New Yamato River, Sakai",
+     scene: "Diggers turn the whole Yamato River like a SEWER pipe so it runs west past Sakai and no longer floods Kawachi."}
+  - {year: 1733, peg: mummy, confidence: high, source: "ja WP: Kozu-irihorikawa",
+     event: "Fukushimaya and Bizenya start to build the Nishi-Takatsu new land",
+     place: "Nishi-Takatsu",
+     scene: "Two merchants unwrap a MUMMY of marsh mud at Nishi-Takatsu and turn it into new building land."}
+  - {year: 1734, peg: hammer, confidence: high, source: "ja WP: Kozu-irihorikawa",
+     event: "The upper Takatsu canal is dug for the Nishi-Takatsu new land",
+     place: "Takatsu canal",
+     scene: "A HAMMER pounds a straight channel into Nishi-Takatsu, and boats float up the new Takatsu canal."}
+  - {year: 1766, peg: judge, confidence: high, source: "ja WP: Naniwabashi",
+     event: "Landfill pushes the east tip of Nakanoshima out toward Naniwabashi",
+     place: "Nakanoshima east tip",
+     scene: "A JUDGE stamps an order and workers dump earth until the tip of Nakanoshima reaches out toward Naniwabashi."}
+  - {year: 1771, peg: cat, confidence: medium, source: "ja WP: Asada Goryu (c. Meiwa 8)",
+     event: "Asada Goryu leaves Kitsuki and starts to teach astronomy and medicine in Osaka (approximate)",
+     place: "Osaka",
+     scene: "Asada Goryu's CAT jumps onto his star chart in his new Osaka house as he starts to teach astronomy."}
+  - {year: 1790, peg: bees, confidence: medium, source: "ja WP: Iwahashi Zenbei (Kansei 2 c.)",
+     event: "Iwahashi Zenbei of Kaizuka becomes famous for his telescopes (approximate)",
+     place: "Kaizuka",
+     scene: "Iwahashi Zenbei points his new telescope at a swarm of BEES on the moon, and all Kaizuka lines up to look."}
+  - {year: 1801, peg: soda, confidence: medium, source: "ja WP: Hashimoto Sokichi (early Kyowa)",
+     event: "Hashimoto Sokichi opens the Shirando school of Dutch learning in Osaka (approximate)",
+     place: "Osaka",
+     scene: "Hashimoto Sokichi pours SODA for his first students as he opens the Shirando school of Dutch learning."}
+  - {year: 1813, peg: tomb, confidence: high, source: "ja WP: Hashimoto Sokichi (Bunka 10/8)",
+     event: "Osaka censors refuse to let Hashimoto's electricity book be printed",
+     place: "Osaka",
+     scene: "The censors lock Hashimoto Sokichi's electricity book in a stone TOMB, and it is never printed."}
+  - {year: 1820, peg: nose, confidence: high, source: "ja WP: Yamagata Banto",
+     event: "Yamagata Banto, chief clerk of the merchant house Masuya, finishes his work Yume no shiro",
+     place: "Masuya, Osaka",
+     scene: "Yamagata Banto pokes his NOSE into the sun-centred heavens and writes the last page of Yume no shiro."}
+  - {year: 1831, peg: moth, confidence: high, source: "ja WP: Tenpozan; Kyu-Yodogawa",
+     event: "The Tenpo great dredging of the Ajikawa starts; the spoil makes the hill Tenpozan",
+     place: "Tenpozan",
+     scene: "A giant MOTH flaps over the Ajikawa mouth as dredgers pile river mud into a new hill: Tenpozan."}
+  - {year: 1838, peg: movie, confidence: high, source: "ja WP: Tenma-horikawa",
+     event: "The Tenma canal is extended upstream to give work to the poor after the Oshio fire",
+     place: "Tenma canal",
+     scene: "Burned-out Tenma families dig the canal longer for wages, filmed like a MOVIE crew rebuilding after the Oshio fire."}
+  - {year: 1849, peg: rope, confidence: high, source: "ja WP: Joto-kan (Kaei 2/11/7)",
+     event: "Ogata Koan, Hino Teiya and Kasahara Ryosaku open the Osaka vaccination house (Joto-kan)",
+     place: "Furute-machi, Osaka",
+     scene: "Ogata Koan pulls a ROPE of children into the new Joto-kan and gives each one a cowpox vaccination."}
+  - {year: 1858, peg: wolf, confidence: high, source: "ja WP: Joto-kan (Ansei 5/4/24)",
+     event: "The shogunate approves the Osaka vaccination house; vaccination becomes licensed",
+     place: "Joto-kan",
+     scene: "A shogunate WOLF howls its approval outside the Joto-kan, and Osaka's cowpox vaccination becomes official."}
+  - {year: 1860, peg: cheese, confidence: high, source: "ja WP: Tekijuku; Joto-kan",
+     event: "The Osaka vaccination house moves next to the south side of the Tekijuku",
+     place: "Kitahama",
+     scene: "Ogata Koan moves the vaccination house next to his Tekijuku, carrying cowpox in a CHEESE box down the street."}
+  # religion
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Dainenbutsu-ji",
+     event: "Dainenbutsu-ji gets a fixed temple site in Hirano from the local official Suekichi",
+     place: "Hirano",
+     scene: "Suekichi hands the wandering Dainenbutsu-ji a paper DOLL of a temple, and it finally settles in Hirano."}
+  - {year: 1617, peg: dog, confidence: high, source: "ja WP: Sumiyoshi taisha",
+     event: "Sumiyoshi shrine holds its 39th periodic rebuilding",
+     place: "Sumiyoshi taisha",
+     scene: "A shrine DOG carries the god from the old to the new halls at Sumiyoshi's 39th rebuilding."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Nanshu-ji",
+     event: "Takuan Soho rebuilds the Zen temple Nanshu-ji on a new site in Sakai",
+     place: "Nanshu-ji, Sakai",
+     scene: "Takuan Soho blows a TUBA over the burned ground of Sakai and calls Nanshu-ji to rise again on its new site."}
+  - {year: 1621, peg: ant, confidence: high, source: "ja WP: Tenjin matsuri",
+     event: "The Tenjin festival's spear-floating rite stops; the shrine's resting place moves to Zakoba",
+     place: "Zakoba",
+     scene: "An ANT carries the Tenjin god's resting place to the Zakoba fish market, and the spear rite on the river stops."}
+  - {year: 1623, peg: gnome, confidence: high, source: "ja WP: Shitenno-ji",
+     event: "Shitenno-ji is rebuilt by order of Tokugawa Hidetada after the war",
+     place: "Shitenno-ji",
+     scene: "A GNOME foreman raises the burned halls of Shitenno-ji again on the order of shogun Hidetada."}
+  - {year: 1637, peg: mug, confidence: high, source: "ja WP: Hozen-ji",
+     event: "Hozen-ji moves to its present site at Sennichimae",
+     place: "Hozen-ji, Sennichimae",
+     scene: "A monk carries Hozen-ji's holy water in a MUG from Uehonmachi to its new home by the Sennichi cemetery."}
+  - {year: 1644, peg: warrior, confidence: high, source: "ja WP: Hozen-ji",
+     event: "Hozen-ji starts its thousand-day nenbutsu services, which name the Sennichimae district",
+     place: "Hozen-ji, Sennichimae",
+     scene: "A WARRIOR monk chants the nenbutsu for a thousand days at Hozen-ji, and the street takes the name Sennichimae."}
+  - {year: 1653, peg: llama, confidence: high, source: "ja WP: Nanshu-ji",
+     event: "The Buddha hall of Nanshu-ji in Sakai is rebuilt",
+     place: "Nanshu-ji, Sakai",
+     scene: "A LLAMA carries roof beams up to the new Zen Buddha hall of Nanshu-ji in Sakai."}
+  - {year: 1655, peg: lily, confidence: high, source: "ja WP: Sumiyoshi taisha",
+     event: "Sumiyoshi shrine holds its 40th periodic rebuilding",
+     place: "Sumiyoshi taisha",
+     scene: "Priests lay a white LILY on each of the four new halls at Sumiyoshi's 40th rebuilding."}
+  - {year: 1656, peg: leech, confidence: high, source: "ja WP: Tenjin matsuri",
+     event: "The Tenjin festival's resting place moves to Ebisujima",
+     place: "Ebisujima, Kawaguchi",
+     scene: "A LEECH drags the Tenjin god's boat down the river to the new resting place on Ebisujima."}
+  - {year: 1660, peg: cheese, confidence: high, source: "ja WP: Tondabayashi jinaimachi",
+     event: "Myokei-ji, the centre of the Tondabayashi temple town, is rebuilt with gifts from its members",
+     place: "Tondabayashi",
+     scene: "The temple members of Tondabayashi each bring a wheel of CHEESE to sell, and the coins rebuild Myokei-ji."}
+  - {year: 1661, peg: jet, confidence: high, source: "ja WP: Mizuma-dera",
+     event: "The three-storey pagoda of Mizuma-dera in Kaizuka is rebuilt",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "A JET of builders lifts three roofs one on top of the other at Mizuma-dera: the pagoda stands again."}
+  - {year: 1663, peg: gem, confidence: high, source: "ja WP: Dainenbutsu-ji",
+     event: "A new main hall of Dainenbutsu-ji in Hirano is built",
+     place: "Dainenbutsu-ji, Hirano",
+     scene: "A GEM set in the roof ridge flashes over Hirano as the new main hall of Dainenbutsu-ji is finished."}
+  - {year: 1703, peg: sumo, confidence: disputed, source: "ja WP: Kishiwada danjiri (one theory; other 1745)",
+     event: "Lord Okabe Nagayasu brings Fushimi Inari into Kishiwada Castle; one origin of the danjiri festival (traditional date)",
+     place: "Kishiwada Castle",
+     scene: "A SUMO wrestler carries the Fushimi Inari fox into Kishiwada Castle, and the town pulls the first danjiri float."}
+  - {year: 1780, peg: vase, confidence: high, source: "ja WP: Doshomachi",
+     event: "The Shinno shrine of the medicine god Sukunahikona is set up in Doshomachi",
+     place: "Doshomachi",
+     scene: "The medicine dealers of Doshomachi set a VASE of herbs on a new altar for the medicine god Sukunahikona."}
+  - {year: 1784, peg: fairy, confidence: high, source: "ja WP: Mizuma-dera",
+     event: "Fire destroys the main hall of Mizuma-dera",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "A FAIRY drops a lantern in Mizuma-dera, and the main hall of the Kaizuka temple burns to the ground."}
+  - {year: 1802, peg: sun, confidence: medium, source: "ja WP: Shitenno-ji (Kyowa 1/12/5)",
+     event: "Lightning sets the Shitenno-ji pagoda on fire; the golden hall and the east half of the temple burn",
+     place: "Shitenno-ji",
+     scene: "A bolt from the SUN hits the Shitenno-ji pagoda, and the fire eats the golden hall and the east half of the temple."}
+  - {year: 1810, peg: dice, confidence: high, source: "ja WP: Sumiyoshi taisha",
+     event: "The four present main halls of Sumiyoshi shrine are built",
+     place: "Sumiyoshi taisha",
+     scene: "Four red DICE land in a row at Sumiyoshi and grow into the four main halls that still stand today."}
+  - {year: 1813, peg: tomb, confidence: high, source: "ja WP: Shitenno-ji",
+     event: "Shitenno-ji's sixth five-storey pagoda and halls are rebuilt",
+     place: "Shitenno-ji",
+     scene: "Builders lift a five-storey pagoda out of the TOMB of ashes at Shitenno-ji: the sixth pagoda stands."}
+  - {year: 1827, peg: ink, confidence: high, source: "ja WP: Mizuma-dera",
+     event: "Lord Okabe Nagachika of Kishiwada rebuilds the main hall of Mizuma-dera",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "Okabe Nagachika signs the building order in red INK, and the main hall of Mizuma-dera rises again."}
+  - {year: 1834, peg: hammer, confidence: high, source: "ja WP: Mizuma-dera",
+     event: "The pagoda of Mizuma-dera is rebuilt by the Kishiwada lord",
+     place: "Mizuma-dera, Kaizuka",
+     scene: "A HAMMER taps the last bronze bell onto the new three-storey pagoda of Mizuma-dera."}
+  - {year: 1843, peg: ram, confidence: high, source: "ja WP: Osaka Tenmangu",
+     event: "The main halls of Osaka Tenmangu are rebuilt after the Oshio fire",
+     place: "Osaka Tenmangu",
+     scene: "A RAM butts the charred beams of Tenmangu aside, and carpenters raise the main halls that stand today."}
+  - {year: 1845, peg: railway, confidence: high, source: "ja WP: Ikukunitama jinja",
+     event: "The buildings of Ikukunitama shrine are rebuilt",
+     place: "Ikukunitama shrine",
+     scene: "A RAILWAY of handcarts brings new timber up the Uemachi slope to rebuild Ikukunitama shrine."}
+  - {year: 1852, peg: lion, confidence: high, source: "ja WP: Hozen-ji",
+     event: "Hozen-ji burns down",
+     place: "Hozen-ji, Sennichimae",
+     scene: "A stone LION at Hozen-ji's gate roars as the flames eat the temple."}
+  - {year: 1855, peg: lily, confidence: high, source: "ja WP: Hozen-ji",
+     event: "Hozen-ji is rebuilt",
+     place: "Hozen-ji, Sennichimae",
+     scene: "A LILY grows out of the ashes of Hozen-ji, and the temple stands again three years after the fire."}
+  - {year: 1863, peg: gem, confidence: high, source: "ja WP: Shitenno-ji",
+     event: "A lamp left burning sets fire to the Shoryo-in hall of Shitenno-ji",
+     place: "Shitenno-ji",
+     scene: "A temple lamp tips over and its flame, bright as a GEM, burns the Shoryo-in hall of Shitenno-ji."}
+  - {year: 1865, peg: jelly, confidence: high, source: "ja WP: Tenjin matsuri",
+     event: "The Tenjin festival is cancelled while the shogun stays in Osaka Castle; it is not held again until the Meiji era",
+     place: "Osaka Tenmangu",
+     scene: "The Tenjin boats sit stuck in JELLY on the river: the festival stops while the shogun is in the castle."}
+  # arts
+  - {year: 1626, peg: nacho, confidence: high, source: "NDL: Dotonbori neighborhood",
+     event: "The first theatre is built in Dotonbori",
+     place: "Dotonbori",
+     scene: "A crowd munches NACHO chips in the first theatre on the Dotonbori bank, and the play district begins."}
+  - {year: 1633, peg: mummy, confidence: high, source: "ja WP: Dotonbori-gawa",
+     event: "Shioya Kuroemon and others from Kyoto start young men's kabuki in Dotonbori",
+     place: "Dotonbori",
+     scene: "Shioya Kuroemon unwraps a MUMMY costume on the Dotonbori stage, and the first young men's kabuki show begins."}
+  - {year: 1652, peg: lion, confidence: high, source: "ja WP: Kado-za",
+     event: "The Kado-za theatre opens in Dotonbori",
+     place: "Kado-za, Dotonbori",
+     scene: "A paper LION dances through the doors of the new Kado-za on the corner of Dotonbori."}
+  - {year: 1653, peg: llama, confidence: high, source: "ja WP: Dotonbori-gawa",
+     event: "The town magistrate allows adult men's kabuki (yaro kabuki) and licenses five Dotonbori theatres",
+     place: "Dotonbori",
+     scene: "A LLAMA carries five theatre licences down Dotonbori from the magistrate, and grown men take the kabuki stage."}
+  - {year: 1661, peg: jet, confidence: medium, source: "ja WP: Naka-za (opening 1661; name 1653)",
+     event: "The Naka-za theatre opens in Dotonbori",
+     place: "Naka-za, Dotonbori",
+     scene: "A JET of stage smoke opens the curtain at the new Naka-za, the middle theatre of Dotonbori."}
+  - {year: 1662, peg: chain, confidence: medium, source: "Waraku; ja WP: Dotonbori-gawa",
+     event: "Takeda Omi opens his mechanical-puppet (karakuri) theatre in Dotonbori",
+     place: "Dotonbori",
+     scene: "Takeda Omi pulls a CHAIN, and his clockwork puppets tumble, write letters and change faces on the Dotonbori stage."}
+  - {year: 1673, peg: comb, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku leads a ten-thousand-verse haikai gathering at Ikukunitama shrine (Ikutama manku)",
+     place: "Ikukunitama shrine",
+     scene: "Saikaku runs a COMB through ten thousand linked verses at Ikutama shrine and prints them as the Ikutama manku."}
+  - {year: 1677, peg: cake, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku composes sixteen hundred verses alone in one day and night at Ikutama shrine",
+     place: "Ikukunitama shrine",
+     scene: "Saikaku eats one CAKE and writes sixteen hundred verses alone in a day and night at Ikutama shrine."}
+  - {year: 1680, peg: vase, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku composes four thousand verses alone in one day at Ikutama shrine",
+     place: "Ikukunitama shrine",
+     scene: "Saikaku drops each finished verse into a VASE until four thousand fill it in one day at Ikutama shrine."}
+  - {year: 1684, peg: fairy, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku composes more than twenty thousand verses alone in one day and night before Sumiyoshi shrine",
+     place: "Sumiyoshi taisha",
+     scene: "A FAIRY counts Saikaku's verses at Sumiyoshi through the night and stops past twenty thousand."}
+  - {year: 1685, peg: waffle, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Chikamatsu and Takemoto Gidayu's Shusse Kagekiyo premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Chikamatsu hands Gidayu a WAFFLE with Kagekiyo's name on it, and their first joint play opens at the Takemoto-za."}
+  - {year: 1686, peg: fish, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku's Five Women Who Loved Love (Koshoku gonin onna) is published",
+     place: "Osaka",
+     scene: "Five women in love swim out of a FISH tank and onto the pages of Saikaku's new book."}
+  - {year: 1692, peg: piano, confidence: high, source: "ja WP: Ihara Saikaku",
+     event: "Saikaku's Worldly Mental Calculations (Seken munesan'yo) is published",
+     place: "Osaka",
+     scene: "An Osaka shopkeeper tallies his New Year debts on PIANO keys in Saikaku's Worldly Mental Calculations."}
+  - {year: 1693, peg: palm, confidence: high, source: "ja WP: Ihara Saikaku (Genroku 6/8/10)",
+     event: "Ihara Saikaku dies in Osaka",
+     place: "Kagiya-machi",
+     scene: "Saikaku's brush drops from his PALM in his Osaka house, and the city's great storyteller dies."}
+  - {year: 1694, peg: bear, confidence: high, source: "ja WP: Matsuo Basho (Genroku 7/10/12)",
+     event: "Matsuo Basho dies at the house of Hanaya Niemon by the Minami Mido; last poem: dreams over withered fields",
+     place: "Minami-Kyuhoji-machi",
+     scene: "A sick BEAR dreams of running over withered fields beside Basho's bed near the Minami Mido, and the poet dies."}
+  - {year: 1703, peg: sumo, confidence: high, source: "ja WP: Toyotake-za",
+     event: "Toyotake Wakatayu opens the Toyotake-za puppet theatre in Dotonbori",
+     place: "Toyotake-za, Dotonbori",
+     scene: "A SUMO wrestler leaves the Takemoto-za and plants his own banner across Dotonbori: the rival Toyotake-za."}
+  - {year: 1705, peg: seal, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Takeda Izumo becomes manager of the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "A SEAL balances the Takemoto-za's money box on its nose and hands it to Takeda Izumo, the new manager."}
+  - {year: 1708, peg: sofa, confidence: high, source: "ja WP: Yodoya",
+     event: "Chikamatsu's puppet play on the rise and fall of the Yodoya house premieres",
+     place: "Takemoto-za, Dotonbori",
+     scene: "The puppet of the Yodoya heir sinks into a silk SOFA, then loses it all in Chikamatsu's new play."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Chikamatsu's The Courier for Hell (Meido no hikyaku) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "The courier Chubei breaks the seal on stolen gold, and the word hell appears as a TATTOO on his arm."}
+  - {year: 1720, peg: nose, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Chikamatsu's The Love Suicides at Amijima (Shinju ten no Amijima) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "The paper merchant Jihei leads the courtesan Koharu to Amijima, his NOSE red from tears, in Chikamatsu's last love-suicide play."}
+  - {year: 1734, peg: hammer, confidence: medium, source: "ja WP: Takemoto-za (three-man puppets: memory)",
+     event: "Ashiya Doman Ouchi kagami premieres at the Takemoto-za; three-man puppets appear",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Three puppeteers swing one HAMMER together and the fox-wife puppet moves like a living woman."}
+  - {year: 1739, peg: map, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Hiragana seisuiki premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "A MAP of the Genpei wars written in simple kana letters unrolls across the Takemoto-za stage."}
+  - {year: 1745, peg: railway, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Summer Festival: Mirror of Osaka (Natsu matsuri Naniwa kagami) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Danshichi kills his father-in-law in the mud while the Osaka summer festival rolls past like a RAILWAY of floats."}
+  - {year: 1747, peg: rock, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Yoshitsune and the Thousand Cherry Trees (Yoshitsune senbon zakura) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "The fox Tadanobu leaps from a ROCK under a thousand cherry trees and follows Yoshitsune across the Takemoto-za stage."}
+  - {year: 1749, peg: rope, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Futatsu chocho kuruwa nikki, a play about two sumo wrestlers, premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Two sumo wrestlers pull a ROPE across the Takemoto-za stage in the new play of the two butterflies."}
+  - {year: 1752, peg: lion, confidence: medium, source: "ja WP: Toyotake-za (Horeki 1/12)",
+     event: "Ichinotani futaba gunki premieres at the Toyotake-za and runs for a year",
+     place: "Toyotake-za, Dotonbori",
+     scene: "A LION-faced Kumagai cuts off his own son's head at Ichinotani, and the Toyotake-za fills every day for a year."}
+  - {year: 1758, peg: wolf, confidence: medium, source: "ja WP: Toyotake-za (Horeki 7/12; 15-month run)",
+     event: "Gion sairei shinkoki premieres at the Toyotake-za and runs for fifteen months",
+     place: "Toyotake-za, Dotonbori",
+     scene: "Princess Yuki is tied to a cherry tree and draws a WOLF with her toe in the petals; the play runs fifteen months."}
+  - {year: 1762, peg: chain, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Oshu Adachigahara premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Abe no Sadato drags a CHAIN through the snow of Adachigahara in Chikamatsu Hanji's new play."}
+  - {year: 1761, peg: jet, confidence: high, source: "ja WP: Toyotake-za (Horeki 11/2/14)",
+     event: "Fire destroys the Toyotake-za",
+     place: "Toyotake-za, Dotonbori",
+     scene: "A JET of flame shoots out of the Toyotake-za roof, and the puppet theatre burns down."}
+  - {year: 1765, peg: jelly, confidence: high, source: "ja WP: Toyotake-za",
+     event: "The Toyotake-za gives up puppets and becomes a kabuki theatre",
+     place: "Toyotake-za, Dotonbori",
+     scene: "The Toyotake-za puppets melt into JELLY, and live kabuki actors step onto the stage in their place."}
+  - {year: 1766, peg: judge, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Honcho nijushiko (The Twenty-Four Paragons of Filial Piety) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "A JUDGE in the Takemoto-za audience weeps as Princess Yaegaki flies over the frozen lake with the fox helmet."}
+  - {year: 1767, peg: jockey, confidence: high, source: "ja WP: Takemoto-za",
+     event: "The Takemoto-za closes",
+     place: "Takemoto-za, Dotonbori",
+     scene: "A JOCKEY rides the last puppet out of the Takemoto-za, and the doors shut after eighty years."}
+  - {year: 1771, peg: cat, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Imoseyama onna teikin premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "A CAT watches the lovers on the two banks of the Yoshino river in Chikamatsu Hanji's new Imoseyama play."}
+  - {year: 1773, peg: comb, confidence: high, source: "ja WP: Toyotake-za",
+     event: "Sesshu Gappo ga tsuji premieres",
+     place: "Toyotake-za line, Osaka",
+     scene: "Tamate gives her stepson poisoned sake from a COMB-shaped cup, then saves him with her own liver's blood at Gappo's crossroads."}
+  - {year: 1780, peg: vase, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Shinpan utazaimon (the Osome and Hisamatsu play) premieres at the Takemoto-za",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Omitsu cuts her hair and drops it into a VASE, giving Hisamatsu up to Osome in the new play."}
+  - {year: 1783, peg: foam, confidence: high, source: "ja WP: Takemoto-za",
+     event: "Igagoe dochu sugoroku, a play of the Iga revenge, premieres",
+     place: "Takemoto-za, Dotonbori",
+     scene: "Masaemon's horse runs through the FOAM of the Tokaido rivers to the revenge at Iga in Hanji's last play."}
+  - {year: 1794, peg: bear, confidence: medium, source: "Rekihaku report: Katsura Bunji (c. Kansei 6)",
+     event: "The first Katsura Bunji opens a regular storytelling hall (yose) at Zama shrine (approximate)",
+     place: "Zama shrine",
+     scene: "Katsura Bunji tells funny stories to a BEAR in his new storytelling hall at Zama shrine, and the bear laughs."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "ja WP: Uemura Bunrakuken",
+     event: "Uemura Bunrakuken's puppet troupe moves to the Inari shrine at Bakuro-machi: the Inari theatre",
+     place: "Inari shrine, Bakuro-machi",
+     scene: "A fox TATTOO on the puppeteer's arm leads Bunrakuken's troupe into the Inari shrine grounds."}
+  - {year: 1826, peg: nacho, confidence: high, source: "ja WP: Kado-za",
+     event: "Siebold watches the play Imoseyama at the Kado-za on his way back from Edo",
+     place: "Kado-za, Dotonbori",
+     scene: "Siebold eats a NACHO in the Kado-za box and takes notes on Imoseyama for his book on Japan."}
+  - {year: 1855, peg: lily, confidence: high, source: "ja WP: Ansei Nankai jishin",
+     event: "A stone at Taisho bridge records the tsunami and warns people never to flee a quake by boat",
+     place: "Taisho bridge, Naniwa",
+     scene: "A stone LILY grows at the Taisho bridge with words cut in it: do not run from the next tsunami in a boat."}
+  - {year: 1856, peg: leech, confidence: high, source: "ja WP: Uemura Bunrakuken",
+     event: "The Bunrakuken puppet troupe goes back to the Inari shrine at Bakuro-machi and plays again",
+     place: "Inari shrine, Bakuro-machi",
+     scene: "A LEECH stuck on the old Inari stage pulls the Bunrakuken puppets back home to play again."}
+  # economy
+  - {year: 1634, peg: hammer, confidence: high, source: "Osaka city: Tsurigane yashiki (Kan'ei 11/int. 7/26)",
+     event: "Iemitsu frees the townsmen of Osaka from ground rent (jishigin) for ever",
+     place: "Osaka Castle and the three Osaka districts",
+     scene: "Iemitsu brings a HAMMER down on the ground-rent strongbox of the Osaka townsmen and smashes it for ever."}
+  - {year: 1615, peg: doll, confidence: disputed, source: "ja WP: Nakanoshima (1615); Yodoya (1609 to 1614)",
+     event: "The Yodoya merchant house starts to develop the island of Nakanoshima",
+     place: "Nakanoshima",
+     scene: "Yodoya Joan sets a merchant DOLL on the empty sand island of Nakanoshima and claims it for warehouses."}
+  - {year: 1616, peg: dish, confidence: high, source: "ja WP: Tenma aomono ichiba",
+     event: "Osaka's vegetable market opens at the south end of Kyobashi",
+     place: "Kyobashi",
+     scene: "Farmers pile radishes on a big DISH at the south end of Kyobashi, and the vegetable market opens."}
+  - {year: 1618, peg: dove, confidence: medium, source: "Kikkoman food culture no. 15",
+     event: "Zakoba becomes Osaka's only fish market",
+     place: "Zakoba",
+     scene: "A DOVE chases every other fish seller out of town, and Zakoba becomes Osaka's only fish market."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Konoike Zen'emon",
+     event: "The Konoike sake-brewing family moves to Osaka",
+     place: "Osaka",
+     scene: "The Konoike family rolls sake barrels into Osaka behind a TUBA band and opens their city house."}
+  - {year: 1622, peg: nun, confidence: high, source: "ja WP: Kaibori-gawa",
+     event: "Dried-fish merchants move to the Kaibori area and build a seafood wholesale district",
+     place: "Kaibori",
+     scene: "A NUN haggles over salted fish with merchants who just moved to Kaibori and built their wholesale street."}
+  - {year: 1623, peg: gnome, confidence: medium, source: "smtrc town archives (c. Genna 9)",
+     event: "Sumitomo Tomomochi brings the Nanban copper-refining method from Kyoto to Osaka (approximate)",
+     place: "Uchi-Awaji-machi",
+     scene: "A GNOME smelter pours silver out of Sumitomo's copper with the new Nanban method in his Osaka workshop."}
+  - {year: 1625, peg: nail, confidence: high, source: "ja WP: Konoike Zen'emon",
+     event: "The Konoike house starts shipping goods between Osaka and Edo",
+     place: "Osaka port",
+     scene: "Konoike nails a NAIL into the hull of his first ship to Edo, loaded with Osaka sake."}
+  - {year: 1627, peg: ink, confidence: high, source: "ja WP: Shinmachi yukaku",
+     event: "Brothels across Osaka are gathered into the walled Shinmachi pleasure quarter",
+     place: "Shinmachi",
+     scene: "The magistrate draws an INK wall on the map and moves all of Osaka's brothels inside it: Shinmachi."}
+  - {year: 1632, peg: moon, confidence: high, source: "ja WP: Yodoya",
+     event: "Yodoya joins the silk-allotment (itowappu) guild and starts foreign trade",
+     place: "Yodoya house",
+     scene: "Yodoya unrolls Chinese silk by the light of the MOON as the newest member of the silk-allotment guild."}
+  - {year: 1638, peg: movie, confidence: high, source: "ja WP: Yodoya",
+     event: "Yodoya starts to handle Kaga rice for the Maeda domain",
+     place: "Yodoya, Kitahama",
+     scene: "A MOVIE reel shows Kaga rice bales sliding off Maeda ships into Yodoya's warehouses."}
+  - {year: 1651, peg: wallet, confidence: high, source: "ja WP: Tenma aomono ichiba",
+     event: "The town magistrate takes the vegetable market site; the market moves to Katamachi",
+     place: "Katamachi",
+     scene: "The magistrate snaps shut his WALLET on the Kyobashi market land, and the vegetable sellers move to Katamachi."}
+  - {year: 1653, peg: llama, confidence: high, source: "ja WP: Tenma aomono ichiba; NDL",
+     event: "The vegetable market moves to the Tenma river bank",
+     place: "Tenma",
+     scene: "A LLAMA loaded with cabbages trots across the bridge to the new vegetable market on the Tenma bank."}
+  - {year: 1656, peg: leech, confidence: high, source: "ja WP: Konoike Zen'emon",
+     event: "Konoike stops brewing sake and becomes a money-changer",
+     place: "Konoike house",
+     scene: "Konoike pours out his last sake barrel, and a LEECH of profit sucks gold coins into his new money-exchange shop."}
+  - {year: 1670, peg: goose, confidence: medium, source: "the-shashi: Sumitomo Bank history",
+     event: "The Ten Money-Changers (Junin ryogae) are set up as head money-changers of Osaka",
+     place: "Osaka",
+     scene: "Ten money-changers each hold a golden GOOSE, chosen by the magistrate to rule Osaka's money trade."}
+  - {year: 1678, peg: cave, confidence: high, source: "Tanabe annual report; Yasushi paper",
+     event: "Tanabeya Gohei opens a medicine shop at Tosabori, the start of Tanabe Pharmaceutical",
+     place: "Tosabori",
+     scene: "Tanabeya Gohei brings herbs out of a CAVE and brews the first Tanabeya medicine in his shop at Tosabori."}
+  - {year: 1694, peg: bear, confidence: high, source: "ja WP: Taru-kaisen",
+     event: "Osaka shippers form the Twenty-Four Groups guild for cargo to Edo",
+     place: "Osaka port",
+     scene: "Twenty-four merchants sign a pact on the back of a BEAR rug: all Edo cargo goes on guild ships."}
+  - {year: 1701, peg: soda, confidence: high, source: "ja WP: Doza",
+     event: "The Osaka Copper Office (doza) is set up at Ishi-machi",
+     place: "Ishi-machi",
+     scene: "A SODA fizzes green as copper bars arrive at the new Osaka Copper Office in Ishi-machi."}
+  - {year: 1705, peg: seal, confidence: high, source: "ja WP: Konoike shinden kaisho",
+     event: "Konoike starts to make new rice fields on the old Yamato riverbed",
+     place: "Konoike shinden, Higashiosaka",
+     scene: "A SEAL flops across the dry Yamato riverbed, and Konoike's men plough it into new rice fields."}
+  - {year: 1707, peg: ski, confidence: high, source: "ja WP: Konoike shinden kaisho",
+     event: "The Konoike new-field office (kaisho) is finished",
+     place: "Konoike shinden, Higashiosaka",
+     scene: "A manager rides a SKI over the flooded paddies to the new Konoike office that runs the reclaimed fields."}
+  - {year: 1722, peg: nun, confidence: medium, source: "ja WP: Doshomachi (Kyoho 7)",
+     event: "The inspection office for Japanese medicines (Wayaku aratame kaisho) opens in Doshomachi",
+     place: "Doshomachi",
+     scene: "A NUN sniffs each herb at the new Doshomachi inspection office and rejects the fake medicines."}
+  - {year: 1723, peg: gnome, confidence: medium, source: "ja WP: Dojima kome ichiba (Kyoho 7/12)",
+     event: "The shogunate allows forward rice trading at Dojima up to one thousand koku",
+     place: "Dojima",
+     scene: "A GNOME trader sells rice he does not have yet: the shogunate now allows forward deals at Dojima."}
+  - {year: 1726, peg: nacho, confidence: high, source: "ja WP: Shinsaibashi",
+     event: "Shimomura opens the Matsuya kimono shop at Shinsaibashi with fixed cash prices: the start of Daimaru Osaka",
+     place: "Shinsaibashi-suji",
+     scene: "Shimomura sets one fixed price tag on each NACHO and kimono at his new Shinsaibashi shop: cash only."}
+  - {year: 1730, peg: mouse, confidence: high, source: "ja WP: Taru-kaisen",
+     event: "Sake wholesalers leave the Higaki shippers and start the barrel ships (taru kaisen)",
+     place: "Osaka port",
+     scene: "A MOUSE rolls sake barrels off the slow Higaki ships onto fast new barrel ships to Edo."}
+  - {year: 1731, peg: moth, confidence: high, source: "ja WP: Dojima kome ichiba",
+     event: "The shogunate grants the first rice-broker licences at Dojima",
+     place: "Dojima",
+     scene: "Hundreds of MOTH wings flutter as the shogunate hands out the first Dojima rice-broker licences."}
+  - {year: 1738, peg: movie, confidence: high, source: "ja WP: Doza",
+     event: "The Osaka Copper Office opens again at Uchi-Ryogae-machi",
+     place: "Uchi-Ryogae-machi",
+     scene: "A MOVIE projector shows the Copper Office sign rising again over Uchi-Ryogae-machi."}
+  - {year: 1740, peg: horse, confidence: high, source: "ja WP: Kozu-irihorikawa",
+     event: "Ginza officials set up a copper-coin mint in Tennoji village",
+     place: "Tennoji",
+     scene: "A HORSE turns the press wheel at the new Tennoji mint, stamping copper coins one by one."}
+  - {year: 1752, peg: lion, confidence: high, source: "ja WP: Kozu-irihorikawa",
+     event: "The shogunate builds the Tennoji rice storehouse on the old mint site",
+     place: "Tennoji",
+     scene: "A stone LION guards the new shogunate rice storehouse at Tennoji, built where the mint once stood."}
+  - {year: 1761, peg: jet, confidence: unverified,
+     event: "The shogunate orders the first forced loan (goyokin) from Osaka merchants",
+     place: "Osaka",
+     scene: "A shogunate JET swoops over Kitahama and scoops up the gold of every rich Osaka merchant as a forced loan."}
+  - {year: 1766, peg: judge, confidence: high, source: "ja WP: Doza",
+     event: "The Osaka Copper Office is set up for the third time; it lasts to the Meiji era",
+     place: "Osaka",
+     scene: "A JUDGE bangs his gavel three times: the Osaka Copper Office opens for the third and last time."}
+  - {year: 1772, peg: coin, confidence: high, source: "ja WP: Tenma aomono ichiba; NDL",
+     event: "The Tenma vegetable market gets an officially licensed guild",
+     place: "Tenma",
+     scene: "Each Tenma vegetable wholesaler drops a COIN in the licence box, and their guild becomes official."}
+  - {year: 1772, peg: coin, confidence: high, source: "NDL: Markets in Osaka",
+     event: "Eighty-four Zakoba fresh-fish wholesale licences are officially granted",
+     place: "Zakoba",
+     scene: "A fish spits out a COIN for each of the eighty-four Zakoba wholesalers who get a licence."}
+  - {year: 1781, peg: foot, confidence: high, source: "ja WP: Takeda Yakuhin",
+     event: "Takeda Chobei opens a drug shop in Doshomachi, the start of Takeda Pharmaceutical",
+     place: "Doshomachi",
+     scene: "Takeda Chobei sets his FOOT in Doshomachi and opens a herb shop that becomes Takeda Pharmaceutical."}
+  - {year: 1790, peg: bees, confidence: high, source: "ja WP: Kimura Kenkado",
+     event: "Kimura Kenkado loses his ward-elder post for breaking the sake-brewing rules",
+     place: "Kita-Horie",
+     scene: "Swarming BEES chase Kimura Kenkado out of his elder's office for brewing more sake than the rules allow."}
+  - {year: 1798, peg: beehive, confidence: high, source: "ja WP: Tenma aomono ichiba; NDL",
+     event: "Farmers from twenty-six nearby villages may sell inside the Tenma market",
+     place: "Tenma",
+     scene: "Twenty-six villages of farmers swarm into the Tenma market like a BEEHIVE, now free to sell inside."}
+  - {year: 1798, peg: beehive, confidence: high, source: "NDL: Markets in Osaka",
+     event: "Zakoba fish wholesalers open their first guild office",
+     place: "Zakoba",
+     scene: "Fish wholesalers hang a BEEHIVE sign over their first Zakoba guild office."}
+  - {year: 1809, peg: soap, confidence: high, source: "ja WP: Tenma aomono ichiba",
+     event: "The Kizu-Namba market gets permission to sell thirteen kinds of vegetables",
+     place: "Kizu",
+     scene: "Kizu farmers wash thirteen kinds of vegetables with SOAP for their new licensed market."}
+  - {year: 1830, peg: mouse, confidence: high, source: "ja WP: Shinsaibashi",
+     event: "Sogo Ihei opens a used-clothes shop in Osaka, the start of Sogo",
+     place: "Sakai-suji",
+     scene: "A MOUSE finds a used kimono in Sogo Ihei's new shop near Ichimon shrine, the first Sogo store."}
+  - {year: 1851, peg: wallet, confidence: high, source: "ja WP: Dojima kome ichiba",
+     event: "Dojima rice brokers get their licences again when the guilds return",
+     place: "Dojima",
+     scene: "Each Dojima rice broker pulls his licence back out of his WALLET as the guilds come back."}
+  # society
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Sakai-shi",
+     event: "Sakai becomes shogunate land and is rebuilt on a grid with new moats (Genna town plan)",
+     place: "Sakai",
+     scene: "A planner lays wooden DOLL houses in neat rows on the burned Sakai ground: the new grid with its moat."}
+  - {year: 1615, peg: doll, confidence: high, source: "ja WP: Sennichimae",
+     event: "The city graves are moved to the new Sennichi cemetery with an execution ground and cremation site",
+     place: "Sennichimae",
+     scene: "A gravedigger carries a stone DOLL from each old graveyard to the big new Sennichi cemetery."}
+  - {year: 1616, peg: dish, confidence: high, source: "ja WP: Shinmachi yukaku",
+     event: "Kimura Matajiro asks the shogunate for a licensed pleasure quarter in Osaka",
+     place: "Osaka",
+     scene: "Kimura Matajiro offers the shogun's man a DISH of sweets and asks for a licensed quarter."}
+  - {year: 1619, peg: tuba, confidence: high, source: "ja WP: Senba",
+     event: "Tenma joins the Osaka castle town",
+     place: "Tenma",
+     scene: "A TUBA band marches across Tenmabashi, and Tenma joins the Osaka town."}
+  - {year: 1678, peg: cave, confidence: high, source: "ja WP: Shinmachi yukaku",
+     event: "Yugiri, the famous courtesan of Shinmachi, dies young",
+     place: "Shinmachi",
+     scene: "The Shinmachi courtesan Yugiri dies young, and her lovers carry her into the dark CAVE of a tomb at Jokoku-ji."}
+  - {year: 1679, peg: cowboy, confidence: high, source: "ja WP: Hirakata-juku (Enpo 7/7)",
+     event: "A great fire in Hirakata post station burns the old shogunal rest palace",
+     place: "Hirakata",
+     scene: "A COWBOY's campfire spreads through Hirakata post station and burns the shogun's old rest palace."}
+  - {year: 1685, peg: waffle, confidence: high, source: "ja WP: Sonezaki-gawa",
+     event: "Dojima new land opens on the left bank of the Sonezaki river",
+     place: "Dojima",
+     scene: "Workers press river mud flat like a WAFFLE, and the Dojima new land opens for houses and teahouses."}
+  - {year: 1703, peg: sumo, confidence: high, source: "ja WP: Tsuyu no Tenjin (Genroku 16)",
+     event: "Ohatsu of the Tenmaya and the clerk Tokubei die together in the Tenjin wood at Sonezaki",
+     place: "Tsuyu no Tenjin, Sonezaki",
+     scene: "A SUMO wrestler finds Ohatsu and Tokubei dead together in the Tenjin wood, a month before Chikamatsu stages it."}
+  - {year: 1708, peg: sofa, confidence: high, source: "ja WP: Sonezaki-gawa",
+     event: "Sonezaki new land opens on the right bank of the Sonezaki river",
+     place: "Sonezaki",
+     scene: "Teahouse owners drag a red SOFA onto the fresh Sonezaki new land, and the pleasure district opens."}
+  - {year: 1717, peg: dog, confidence: high, source: "ja WP: Gansuido",
+     event: "Tsuchihashi Tomonao and Hirano elders open the merchant academy Gansuido in Hirano",
+     place: "Hirano",
+     scene: "A DOG fetches the first book for the Hirano elders as they open Gansuido, their own merchant academy."}
+  - {year: 1724, peg: hanger, confidence: high, source: "ja WP: Dojima; Osaka Tenmangu (Kyoho 9/3/21)",
+     event: "The Myochi fire burns most of Osaka, Tenmangu and the magistrate offices among them",
+     place: "Osaka",
+     scene: "Flames run along a clothes HANGER from house to house until most of Osaka, Tenmangu and the magistrates' offices burn."}
+  - {year: 1732, peg: moon, confidence: high, source: "ja WP: Gansuido",
+     event: "Gansuido feeds thousands at Dainenbutsu-ji in the famine; the domain rewards it",
+     place: "Dainenbutsu-ji, Hirano",
+     scene: "Gansuido scholars ladle rice gruel under the MOON for thousands of starving people at Dainenbutsu-ji."}
+  - {year: 1745, peg: railway, confidence: high, source: "ja WP: Kozu-irihorikawa",
+     event: "The Nishi-Takatsu new land becomes part of the three Osaka wards (Osaka sango)",
+     place: "Nishi-Takatsu",
+     scene: "A RAILWAY of new streets links Nishi-Takatsu to the city, and the new land joins the three Osaka wards."}
+  - {year: 1767, peg: jockey, confidence: high, source: "ja WP: Kaitokudo",
+     event: "Nakai Riken leaves the Kaitokudo and opens his own school, Suisaikan",
+     place: "Osaka",
+     scene: "Nakai Riken rides away from the Kaitokudo like a JOCKEY and opens his own school, Suisaikan."}
+  - {year: 1783, peg: foam, confidence: high, source: "ja WP: Senba",
+     event: "The Kanijima new land is built as a new pleasure district",
+     place: "Kanijima",
+     scene: "Crabs crawl out of the sea FOAM onto Kanijima, the new pleasure district built on reclaimed land."}
+  - {year: 1792, peg: piano, confidence: high, source: "Osaka Univ. repository; ja WP: Kaitokudo",
+     event: "A great fire burns the Kaitokudo academy to the ground",
+     place: "Kaitokudo",
+     scene: "Flames run across the keys of a PIANO in the Kaitokudo lecture hall, and the academy burns down."}
+  - {year: 1796, peg: peach, confidence: high, source: "Osaka Univ. repository; ja WP: Kaitokudo",
+     event: "Nakai Chikuzan rebuilds the Kaitokudo",
+     place: "Kaitokudo",
+     scene: "Nakai Chikuzan plants a PEACH tree in the yard of the rebuilt Kaitokudo."}
+  - {year: 1802, peg: sun, confidence: high, source: "Ritsumeikan papers; MLIT Yodo river history",
+     event: "The Yodo river levees break at many places; the worst break is at Shimeno (Neyagawa)",
+     place: "Shimeno, Neyagawa",
+     scene: "The SUN disappears as the Yodo river breaks its levees at Shimeno and floods the Kawachi plain."}
+  - {year: 1807, peg: ski, confidence: medium, source: "ja WP: Yodogawa (Unkin zuihitsu)",
+     event: "Lake Biwa overflows after heavy rain and the flood reaches Osaka",
+     place: "Osaka",
+     scene: "Osaka townsmen SKI over flooded streets after Lake Biwa spills down the Yodo into the city."}
+  - {year: 1824, peg: hanger, confidence: high, source: "ja WP: Oshio Heihachiro",
+     event: "Oshio Heihachiro opens his Wang Yangming school, Senshindo, at his house",
+     place: "Senshindo, Tenma",
+     scene: "Oshio hangs his scholar's robe on a HANGER at home in Tenma and opens the Senshindo school."}
+  - {year: 1825, peg: nail, confidence: high, source: "ja WP: Hakuen shoin",
+     event: "Fujisawa Togai opens the Chinese-studies school Hakuen shoin",
+     place: "Osaka",
+     scene: "Fujisawa Togai drives a NAIL to hang the Hakuen shoin sign, a school that later outgrows the Kaitokudo."}
+  - {year: 1829, peg: knob, confidence: unverified,
+     event: "Osaka Christian case: Toyoda Mitsugi and others are crucified",
+     place: "Osaka",
+     scene: "A KNOB on a secret cupboard opens to show Toyoda Mitsugi's cross, and the magistrates crucify her."}
+  - {year: 1837, peg: mug, confidence: high, source: "ja WP: Oshio no ran",
+     event: "The Oshio fire burns one fifth of Osaka around Tenma; about seventy thousand people lose their homes",
+     place: "Tenma",
+     scene: "A burning MUG of oil spills across Tenma, and one fifth of Osaka goes up in flames."}
+  - {year: 1842, peg: rhino, confidence: medium, source: "ja WP: Sennichimae (Tenpo reform)",
+     event: "The Tenpo reforms make kabuki and puppet-theatre people live at Sakamachi and Namba Shinchi",
+     place: "Sakamachi, Sennichimae",
+     scene: "A RHINO herds kabuki actors and puppeteers into Sakamachi by order of the Tenpo reforms."}
+  - {year: 1845, peg: railway, confidence: high, source: "ja WP: Tekijuku",
+     event: "Ogata Koan buys a merchant house in Kasho-machi and moves the Tekijuku there",
+     place: "Kitahama",
+     scene: "Ogata Koan loads his Dutch books onto a RAILWAY handcart and moves the Tekijuku into the Kasho-machi house."}
+  - {year: 1846, peg: roach, confidence: high, source: "ja WP: Tekijuku",
+     event: "Omura Masujiro enters the Tekijuku",
+     place: "Tekijuku",
+     scene: "Omura Masujiro squashes a ROACH on the crowded Tekijuku floor on his first night as a student."}
+  - {year: 1855, peg: lily, confidence: high, source: "ja WP: Tekijuku",
+     event: "Fukuzawa Yukichi enters the Tekijuku",
+     place: "Tekijuku",
+     scene: "Fukuzawa Yukichi pins a LILY to his robe and walks into the Tekijuku to study Dutch."}
+  - {year: 1862, peg: chain, confidence: high, source: "ja WP: Tekijuku",
+     event: "Ogata Koan leaves the Tekijuku for Edo to serve as shogunal doctor",
+     place: "Tekijuku",
+     scene: "The shogunate pulls a gold CHAIN, and Ogata Koan leaves his Osaka Tekijuku for Edo."}
+  # politics (fortress repair)
+  - {year: 1845, peg: railway, confidence: high, source: "ja WP: Osaka-jo",
+     event: "Full repairs of Osaka Castle start, paid by a levy on the townsmen",
+     place: "Osaka Castle",
+     scene: "Each townsman drops silver into a RAILWAY wagon that rolls up to the castle to pay for its repairs."}
+  - {year: 1848, peg: reef, confidence: high, source: "ja WP: Osaka-jo",
+     event: "The Otemon gate and Tamon turret of Osaka Castle are repaired",
+     place: "Otemon gate",
+     scene: "Masons pull coral off the stone REEF at the Otemon gate and rebuild the Tamon turret on top."}
+world_refs:
+  - {year: 1615, event: "Summer siege of Osaka; the Toyotomi line ends", cell: east_asia_politics_1500_1800}
+  - {year: 1615, event: "Dotonbori canal finished", cell: east_asia_science_1500_1800}
+  - {year: 1619, event: "Higaki cargo ships from Osaka to Edo", cell: east_asia_economy_1500_1800}
+  - {year: 1652, event: "Ban on young men's kabuki (Dotonbori)", cell: east_asia_arts_1500_1800}
+  - {year: 1682, event: "Saikaku's Life of an Amorous Man", cell: east_asia_arts_1500_1800}
+  - {year: 1683, event: "Kawamura Zuiken clears the Yodo mouths", cell: east_asia_science_1500_1800}
+  - {year: 1684, event: "Takemoto-za opens in Dotonbori", cell: east_asia_arts_1500_1800}
+  - {year: 1688, event: "Saikaku's Japanese Family Storehouse", cell: east_asia_arts_1500_1800}
+  - {year: 1697, event: "Dojima rice market licensed", cell: east_asia_economy_1500_1800}
+  - {year: 1703, event: "Sonezaki Shinju premieres", cell: east_asia_arts_1500_1800}
+  - {year: 1705, event: "Yodoya fortune seized", cell: east_asia_economy_1500_1800}
+  - {year: 1707, event: "Hoei earthquake and tsunami (Osaka canals)", cell: east_asia_society_1500_1800}
+  - {year: 1715, event: "Battles of Coxinga at the Takemoto-za", cell: east_asia_arts_1500_1800}
+  - {year: 1724, event: "Kaitokudo founded", cell: east_asia_religion_1500_1800}
+  - {year: 1726, event: "Kaitokudo chartered", cell: east_asia_religion_1500_1800}
+  - {year: 1730, event: "Dojima rice futures recognised", cell: east_asia_economy_1500_1800}
+  - {year: 1735, event: "Minimum rice prices in Edo and Osaka", cell: east_asia_economy_1500_1800}
+  - {year: 1745, event: "Tominaga Nakamoto's Shutsujo kogo", cell: east_asia_religion_1500_1800}
+  - {year: 1746, event: "Sugawara Denju Tenarai Kagami premieres", cell: east_asia_arts_1500_1800}
+  - {year: 1748, event: "Kanadehon Chushingura opens in Osaka", cell: east_asia_arts_1500_1800}
+  - {year: 1758, event: "Namiki Shozo's revolving stage", cell: east_asia_arts_1500_1800}
+  - {year: 1773, event: "Shogunate takes over the Dojima exchange", cell: east_asia_economy_1500_1800}
+  - {year: 1776, event: "Ueda Akinari's Tales of Moonlight and Rain", cell: east_asia_arts_1500_1800}
+  - {year: 1782, event: "Nakai Chikuzan heads the Kaitokudo", cell: east_asia_religion_1500_1800}
+  - {year: 1787, event: "Tenmei rice riots in Osaka", cell: east_asia_politics_1500_1800}
+  - {year: 1787, event: "Takahashi Yoshitoki studies under Asada Goryu", cell: east_asia_science_1500_1800}
+  - {year: 1811, event: "Hashimoto Sokichi's book on electricity", cell: east_asia_science_1800_1945}
+  - {year: 1822, event: "First cholera reaches Osaka", cell: east_asia_society_1800_1945}
+  - {year: 1837, event: "Oshio Heihachiro's rising", cell: east_asia_society_1800_1945}
+  - {year: 1838, event: "Ogata Koan opens the Tekijuku", cell: east_asia_science_1800_1945}
+  - {year: 1849, event: "Ogata Koan's Byogaku tsuron", cell: east_asia_science_1800_1945}
+  - {year: 1854, event: "Ansei Nankai tsunami in Osaka", cell: east_asia_society_1800_1945}
+  - {year: 1866, event: "Riots of 1866 reach Osaka", cell: east_asia_society_1800_1945}
+  - {year: 1867, event: "Ee ja nai ka crowds in Osaka", cell: east_asia_society_1800_1945}
+out_refs:
+  - {year: 1615, event: "Laws for the Military Houses", reason: "national law"}
+  - {year: 1615, event: "Execution of Hideyori's son Kunimatsu at Rokujo-gawara", reason: "event outside the area (Kyoto)"}
+  - {year: 1672, event: "Kawamura Zuiken opens the western sea route", reason: "national shipping route"}
+  - {year: 1795, event: "Takahashi Yoshitoki and Hazama Shigetomi go to Edo for the calendar", reason: "national calendar office"}
+  - {year: 1841, event: "Tenpo reform dissolves the merchant guilds", reason: "national law"}
+  - {year: 1858, event: "Ansei treaties name Osaka as a city to open", reason: "national treaty"}
+  - {year: 1863, event: "Shogun Iemochi inspects the Osaka bay defences", reason: "shogunal visit"}
+  - {year: 1865, event: "Iemochi makes Osaka Castle his base against Choshu", reason: "national army"}
+  - {year: 1866, event: "Yoshinobu takes over the Tokugawa house after Iemochi's death", reason: "shogunal succession"}
+  - {year: 1867, event: "Yoshinobu receives foreign envoys at Osaka Castle", reason: "national diplomacy"}
