@@ -787,3 +787,41 @@ Hyōgo (Amagasaki, Itami) are OUT. Region: east_asia.
 | `1945_present` | the air raids' ruins, Expo '70, Kansai Airport, the 1995 quake, Expo 2025 | 45 | ~230 |
 
 Expected cards are a guide, not a target.
+
+### Mumbai (2026-11-24)
+
+Area: the Mumbai Metropolitan Region as decided: the seven islands and Mumbai city and suburbs (Mahim, Sion,
+Worli, Bandra, Juhu, Andheri, Borivali with Sanjay Gandhi Park and Kanheri), Elephanta (Gharapuri), Thane,
+Kalyan, Bhiwandi, Vasai (Bassein) and Sopara (Nala Sopara), Navi Mumbai, Uran, Panvel, Karnala, Matheran.
+Chaul, Pune, Nashik, Surat, Daman and Raigad fort are OUT. Region: south_asia.
+
+- Dates: give the CE year. Hindu and Islamic calendar dates in inscriptions convert per policy.md; old
+  Portuguese and English records before 1752 may give Julian or Old Style dates — use the CE year of the event.
+- The OUT rule covers each government while the area is its seat: the Portuguese Província do Norte at Bassein
+  (1534–1739: acts for the whole Northern Province, captains' appointments); the Bombay Presidency government
+  from 1687 (when the Company's western seat moves from Surat) to 1947: acts for the whole presidency, governors'
+  arrivals; Bombay State and Maharashtra from 1947 (state laws, chief ministers, state elections). Acts about the
+  city are IN: the Company's takeover (1668), the 1715 wall, the Hornby Vellard, the reclamations, the Municipal
+  Corporation (1865/1888), the BEST, the Bombay Improvement Trust, the BMC's acts, the 1960 creation of
+  Maharashtra with Bombay as capital as a city event, the 1995 renaming to Mumbai. Treaties ceding the islands
+  (1534 Bassein, 1661 marriage treaty) are OUT; the handovers in the city (1534 at Bassein, 1665, 1668) are IN.
+- Local rulers IN: the Silhara kings of the north Konkan (Thane/Puri), Bimbadev's Mahikavati (Mahim), the
+  Gujarat Sultanate's governors at Mahim and Thane.
+- National bodies founded or meeting in the city are IN as city events (the Indian National Congress founded at
+  Gokuldas Tejpal College, 1885; Congress sessions held in Bombay; the 1942 Quit India resolution at Gowalia Tank).
+- Main stage (IN as cards): the Portuguese capture of Bassein and Thane (1530s), the Maratha siege of Bassein
+  (1739), the Sidi raids on Bombay (1689–1690), the 1857 executions on the Esplanade, the 1874 and 1893 riots,
+  the 1896 plague, the 1908 Tilak strike, the 1921 Prince of Wales riots, the 1944 Victoria Dock explosion, the
+  1946 naval mutiny, the 1955–1956 Flora Fountain firings and riots, the 1982 textile strike, the 1992–1993 riots, the 1993
+  bombings, the 2005 floods, the 2006 train bombings, the 2008 attacks, the 2011 bombings.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1534` | Kandivali stone tools, Sopara and Ashoka, Kanheri, Elephanta, Jogeshwari, the Silharas, Mahikavati, the Gujarat Sultanate | 35 | ~90 |
+| `1534_1667` | Portuguese Bassein and Bombay, the churches and forts, the cession to England | 45 | ~100 |
+| `1668_1856` | the Company's Bombay, the wall and dockyard, the reclamations, the Parsis, the first railway | 45 | ~200 |
+| `1857_1946` | the cotton boom, the Municipal Corporation, the Gothic city, plague, Congress, Quit India, the 1946 mutiny | 45 | ~250 |
+| `1947_1991` | Bombay State, Samyukta Maharashtra, the mills and the strike, Navi Mumbai, Bollywood | 45 | ~200 |
+| `1992_present` | the riots and bombings, the renaming, the 2005 floods, 26/11, the Metro and the sea link | 45 | ~200 |
+
+Expected cards are a guide, not a target.

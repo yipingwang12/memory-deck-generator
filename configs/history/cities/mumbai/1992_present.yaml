@@ -1,0 +1,906 @@
+# City: Mumbai x 1992 to the present (the riots and bombings, the renaming, the 2005 floods, 26/11, the Metro and the sea link). DRAFT 2026-11-24.
+# Area: the Mumbai Metropolitan Region as decided: the island city and suburbs (Colaba, Fort, Dadar, Worli, Bandra,
+# Andheri, Ghatkopar, Borivali), Elephanta, Thane, Mumbra, Kalyan, Bhiwandi, Vasai-Virar, Mira-Bhayandar,
+# Navi Mumbai, Uran (JNPT), Panvel. Pune, Nagpur, Nashik and Raigad fort are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# Maharashtra is seated in the city: state laws, chief ministers and state elections are OUT; the BMC, the city's
+# other municipal bodies, trials for city attacks and main-stage events (riots, bombings, sit-ins) are IN.
+# World-grid events -> world_refs. Dates: memory pass + web check (42 of 45 searches; no unauthorised book copies).
+# Main sources: wikipedia.org (Timeline of Mumbai, History of Mumbai, Mumbai Metro, Mumbai Suburban Railway,
+# CSMIA, List of mayors of Mumbai, single articles), news reports (Business Standard, Scroll, Free Press Journal,
+# Al Jazeera, Deccan Herald), official pages (Apple Newsroom, PMO, VVCMC, MBMC, Adani, MSEDCL).
+# A building or line -> its opening to the public or inauguration; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1992, peg: piano, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Chandrakant Handore of the Republican Party becomes mayor of Bombay",
+     place: "Municipal Corporation Building",
+     scene: "Councillors roll a PIANO into the corporation hall, and Chandrakant Handore plays his way into the mayor's chair."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "R. R. Singh of the Congress becomes mayor of Bombay",
+     place: "Municipal Corporation Building",
+     scene: "Councillors wave PALM fronds and carry R. R. Singh of the Congress up the corporation steps to the mayor's seat."}
+  - {year: 1993, peg: palm, confidence: unverified,
+     event: "The state sets up the Srikrishna Commission to inquire into the Bombay riots",
+     place: "Bombay",
+     scene: "Justice Srikrishna opens a PALM-leaf register in a Bombay courtroom and starts to record who led the riots."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Nirmala Samant Prabhavalkar becomes mayor of Bombay",
+     place: "Municipal Corporation Building",
+     scene: "A BEAR hangs the mayor's gold chain on Nirmala Samant Prabhavalkar at the top of the corporation staircase."}
+  - {year: 1995, peg: bell, confidence: medium, source: "FPJ (May); WP: Mumbai (Nov, central govt)",
+     event: "The Shiv Sena government renames Bombay as Mumbai",
+     place: "Gateway of India",
+     scene: "A great BELL rings over the Gateway as Shiv Sainiks chisel BOMBAY off the city sign and carve MUMBAI."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "R. T. Kadam becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "R. T. Kadam rings the council BELL with his own hand to open his first sitting as mayor."}
+  - {year: 1996, peg: peach, confidence: medium, source: "Dawn: civic body renamed early in year",
+     event: "The Bombay Municipal Corporation takes the name Brihanmumbai Municipal Corporation",
+     place: "Municipal Corporation Building",
+     scene: "A painter writes BRIHANMUMBAI in PEACH paint over the old Bombay name on the corporation's Gothic gate."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Milind Vaidya of the Shiv Sena becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Shiv Sainiks throw a basket of PEACH fruit in the air as Milind Vaidya takes the mayor's seat."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Bombay riots",
+     event: "The Shiv Sena government disbands the Srikrishna Commission, then restores it after protests",
+     place: "Bombay",
+     scene: "The minister throws the riot inquiry files into a PEACH crate in January; in May protesters carry the crate back."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Vishakha Raut becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A clay PIG bank of votes breaks open on the council table and spills out Vishakha Raut's name as mayor."}
+  - {year: 1997, peg: pig, confidence: high, source: "HRW; WP: 1997 Ramabai killings",
+     event: "Police fire on Dalits who protest a desecrated Ambedkar statue in Ramabai Nagar and kill ten",
+     place: "Ramabai Ambedkar Nagar, Ghatkopar",
+     scene: "Reserve police shoot over a PIG pen in Ramabai Nagar into Dalits who protest the sandal garland; ten fall dead."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Nandu Satam becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Councillors buzz like a BEEHIVE round Nandu Satam and lift him into the mayor's chair."}
+  - {year: 1998, peg: beehive, confidence: medium, source: "WP: Bombay riots (hearings to 1998)",
+     event: "The Srikrishna Commission gives its report on the riots and names Shiv Sena leaders",
+     place: "Mantralaya",
+     scene: "Justice Srikrishna drops a BEEHIVE of evidence on the minister's desk; the bees sting Shiv Sena names into the report."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Hareshwar Patil becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A brass band PIPE plays on the corporation steps as Hareshwar Patil walks in to start his term as mayor."}
+  - {year: 2000, peg: sauce, confidence: medium, source: "WP: Bombay riots",
+     event: "Police arrest Bal Thackeray over his riot-time editorials; a court soon drops the case",
+     place: "Bandra",
+     scene: "Police handcuff Bal Thackeray over riot editorials written in red SAUCE, but the magistrate wipes the case away."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Mahadeo Deole becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A rising SUN shines through the corporation's stained glass onto Mahadeo Deole as he takes the mayor's oath."}
+  - {year: 2002, peg: sun, confidence: high, source: "MBMC official site",
+     event: "Mira-Bhayandar becomes a municipal corporation",
+     place: "Mira Road",
+     scene: "A SUN-shaped seal stamps the Mira-Bhayandar council papers, and the town becomes a full municipal corporation."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: History of Mumbai",
+     event: "A bomb under a seat of an empty BEST bus explodes near Ghatkopar station",
+     place: "Ghatkopar station",
+     scene: "A bomb under a bus seat bursts like a small SUN outside Ghatkopar station and kills two people."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: History of Mumbai",
+     event: "A bomb on a bicycle explodes near Vile Parle station",
+     place: "Vile Parle station",
+     scene: "A SUMO wrestler rides a bicycle to Vile Parle station; the bomb in its basket explodes and kills one person."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: History of Mumbai",
+     event: "A bomb in a train compartment explodes as it enters Mulund station",
+     place: "Mulund station",
+     scene: "A SUMO wrestler is thrown off his feet when a bomb rips the compartment apart as the train enters Mulund."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: History of Mumbai",
+     event: "A bomb under a BEST bus seat explodes in Ghatkopar and kills four",
+     place: "Ghatkopar",
+     scene: "The bus seat under a SUMO wrestler explodes in Ghatkopar, and four passengers die around him."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: History of Mumbai; Deccan Herald",
+     event: "Two car bombs explode at the Gateway of India and Zaveri Bazaar and kill more than fifty",
+     place: "Gateway of India and Zaveri Bazaar",
+     scene: "Two taxis packed with explosives blow up, one by the Gateway, one at Zaveri Bazaar; a SUMO wrestler lies among fifty-two dead."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Datta Dalvi becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A SEAL balances the mayor's crest on its nose and drops it into Datta Dalvi's hands."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: 1993 Bombay bombings",
+     event: "The TADA court convicts four Memon family members for the serial bombings",
+     place: "TADA court, Arthur Road",
+     scene: "The TADA judge rolls four Memon names into a SUSHI roll of guilt and reads the verdict for the bombings."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Shubha Raul becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Shubha Raul glides down the corporation staircase on a SKI and lands in the mayor's chair."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: 1993 Bombay bombings",
+     event: "The TADA court sentences Yakub Memon and several bomb planters to death",
+     place: "TADA court, Arthur Road",
+     scene: "The judge snaps a SKI pole in two for each bomb planter and for Yakub Memon: death sentences."}
+  - {year: 2007, peg: ski, confidence: medium, source: "WP: 1993 Bombay bombings (report Aug 1)",
+     event: "The TADA court gives actor Sanjay Dutt six years for illegal arms from the bombing plot",
+     place: "TADA court, Arthur Road",
+     scene: "Police find a rifle hidden in Sanjay Dutt's SKI bag, and the TADA judge gives him six years."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: 2008 attacks on Bihari migrants",
+     event: "MNS workers attack north Indian taxi drivers and hawkers after a clash in Dadar",
+     place: "Dadar",
+     scene: "MNS men drag a north Indian hawker's SOFA stall into the Dadar street and smash taxis around it."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Railway Recruitment Board exam attack",
+     event: "MNS workers beat north Indian railway exam candidates; police arrest Raj Thackeray",
+     place: "Railway exam centres, suburbs",
+     scene: "MNS men tear up answer sheets and throw exam candidates off a SOFA; two days later police arrest Raj Thackeray."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Bombay riots",
+     event: "A court sentences former Shiv Sena MP Madhukar Sarpotdar for the riots, one of few riot convictions",
+     place: "Sessions court",
+     scene: "Madhukar Sarpotdar sinks into a SOFA as the court gives him one year for the riots, and he gets bail at once."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: 2008 Mumbai attacks",
+     event: "The trial of the gunman Ajmal Kasab starts at a special court in Arthur Road Jail",
+     place: "Arthur Road Jail",
+     scene: "Guards scrub Ajmal Kasab's cell with SOAP as his trial opens in the special court inside Arthur Road Jail."}
+  - {year: 2009, peg: soap, confidence: high, source: "Deccan Herald: 2003 blasts chronology",
+     event: "The POTA court sentences three people to death for the Gateway and Zaveri Bazaar car bombs",
+     place: "POTA court",
+     scene: "The POTA judge writes three death sentences on a bar of SOAP for the Gateway and Zaveri Bazaar car bombs."}
+  - {year: 2009, peg: soap, confidence: high, source: "VVCMC official site",
+     event: "Vasai-Virar City Municipal Corporation is formed",
+     place: "Virar",
+     scene: "A bar of SOAP washes the old council names off the boards, and Vasai, Virar and Nalasopara join in one corporation."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Shraddha Jadhav becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Shraddha Jadhav blows a SOAP bubble that floats the mayor's chain down onto her shoulders."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: 2008 Mumbai attacks",
+     event: "The special court convicts Ajmal Kasab on all charges and sentences him to death",
+     place: "Arthur Road Jail",
+     scene: "The judge throws a DICE that shows only death: Kasab is guilty on all eighty-six counts."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: 2011 Mumbai bombings",
+     event: "Three bombs explode at Zaveri Bazaar, Opera House and Dadar and kill twenty-six",
+     place: "Zaveri Bazaar, Opera House, Dadar",
+     scene: "Three bombs burn a triangle TATTOO on the city map at Zaveri Bazaar, Opera House and Dadar within twelve minutes."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: 2008 Mumbai attacks",
+     event: "The Bombay High Court upholds Kasab's death sentence",
+     place: "Bombay High Court",
+     scene: "The High Court judges stamp a TATTOO of the word DEATH again on Kasab's file and uphold the sentence."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Sunil Prabhu becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Sunil Prabhu bites his TONGUE through the long count, then rises as mayor of Mumbai."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Business Standard; WP: Azad Maidan riots",
+     event: "A rally against the Assam and Myanmar violence turns into a riot at Azad Maidan; two die",
+     place: "Azad Maidan",
+     scene: "A TONGUE of fire licks over burning media vans at Azad Maidan as the rally turns into a riot; two die."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Snehal Ambekar becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "Snehal Ambekar climbs the corporation's clock TOWER and rings in her term as mayor."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Palghar district",
+     event: "Palghar district is cut out of Thane district and takes Vasai-Virar",
+     place: "Thane district",
+     scene: "A surveyor's TOWER splits the Thane district map, and the northern half, with Vasai-Virar, becomes Palghar district."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: 2006 Mumbai train bombings",
+     event: "The MCOCA court sentences five men to death for the train bombings",
+     place: "MCOCA special court",
+     scene: "The MCOCA judge lines up five DOLL figures in train seats and sentences five bombers to death."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Panvel Municipal Corporation",
+     event: "Panvel, the country's oldest municipal council, becomes a municipal corporation",
+     place: "Panvel",
+     scene: "Panvel's old council hands its seal on a silver DISH to the new municipal corporation."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Vishwanath Mahadeshwar becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A DOG with the mayor's chain in its mouth trots up the steps and drops it at Vishwanath Mahadeshwar's feet."}
+  - {year: 2017, peg: dog, confidence: unverified,
+     event: "BMC election: the Shiv Sena and the BJP fight separately and finish almost level",
+     place: "Mumbai wards",
+     scene: "A Sena DOG and a BJP DOG run neck and neck through the wards, and the count ends almost level."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: 1993 Bombay bombings",
+     event: "The TADA court convicts Mustafa Dossa for the bombing conspiracy",
+     place: "TADA court",
+     scene: "A police sniffer DOG leads the TADA court to Mustafa Dossa, and the judge convicts him of the bombing plot."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: 2018 Bhima Koregaon violence (3 Jan)",
+     event: "The Maharashtra bandh after the Bhima Koregaon violence stops suburban trains, and the dabbawalas suspend deliveries",
+     place: "Suburban railway lines",
+     scene: "Bandh protesters sit on the suburban tracks; a DOVE perches on a stalled local, and the dabbawalas leave their lunch boxes home."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Kishori Pednekar becomes mayor",
+     place: "Municipal Corporation Building",
+     scene: "A TUBA blasts from the corporation balcony as Kishori Pednekar, a former nurse, is elected mayor."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Business Standard; Al Jazeera",
+     event: "Police arrest protesters as the Metro cuts trees in Aarey Colony for a car shed",
+     place: "Aarey Colony",
+     scene: "Protesters chain themselves to a TUBA in the Aarey forest as saws cut the trees and police drag them to vans."}
+  - {year: 2020, peg: nose, confidence: high, source: "Scroll; The Quint",
+     event: "Stranded migrant workers crowd Bandra station in the lockdown; police use batons",
+     place: "Bandra station",
+     scene: "A thousand migrants press NOSE to NOSE outside Bandra station, and police batons break up the crowd."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "The corporators' term ends; an administrator runs the BMC with no mayor for almost four years",
+     place: "Municipal Corporation Building",
+     scene: "A silent NUN locks the empty mayor's chamber, and a civil servant runs the city alone for four years."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Free Press Journal; Business Standard",
+     event: "Gunmen shoot former minister Baba Siddique dead in Bandra East",
+     place: "Nirmal Nagar, Bandra East",
+     scene: "Gunmen fire from behind a clothes HANGER rack outside his son's Bandra office, and Baba Siddique falls dead."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: 2006 Mumbai train bombings",
+     event: "The Bombay High Court acquits all twelve men convicted of the train bombings",
+     place: "Bombay High Court",
+     scene: "The High Court pulls every NAIL out of the train-bombing case, and all twelve convicts walk free."}
+  - {year: 2025, peg: nail, confidence: high, source: "Scroll; Business Today",
+     event: "Manoj Jarange's Maratha quota fast fills Azad Maidan until the state accepts most demands",
+     place: "Azad Maidan",
+     scene: "Manoj Jarange sits on a bed of NAIL points at Azad Maidan for five days until the state gives in."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: 2026 BMC election",
+     event: "BMC election: the BJP-led alliance wins a majority and ends Shiv Sena rule of the corporation",
+     place: "Mumbai wards",
+     scene: "The BJP scoops the biggest NACHO plate of seats, and the Shiv Sena loses the corporation."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: List of mayors of Mumbai",
+     event: "Ritu Tawde of the BJP becomes mayor after the four-year gap",
+     place: "Municipal Corporation Building",
+     scene: "Ritu Tawde cuts a NACHO-shaped ribbon on the long-locked mayor's chamber and sits in the empty chair."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Brihanmumbai Municipal Corporation",
+     event: "Ashwini Bhide takes office as municipal commissioner",
+     place: "Municipal Corporation Building",
+     scene: "Ashwini Bhide, the Metro builder, takes the commissioner's keys from a NACHO basket on the corporation desk."}
+  # science
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "Ladies Special local trains, with every seat for women, start to run",
+     place: "Western line",
+     scene: "A PIANO in the first coach plays as the first Ladies Special pulls out with only women on board."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP: CSM International Airport",
+     event: "Airport Terminal 1A opens for Indian Airlines",
+     place: "Santacruz airport",
+     scene: "Indian Airlines rolls a grand PIANO through the doors of the new Terminal 1A at Santacruz to open it."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: History of Mumbai; WP: CST",
+     event: "Victoria Terminus is renamed Chhatrapati Shivaji Terminus",
+     place: "Victoria Terminus",
+     scene: "Workers lift a PEACH-coloured board with Shivaji's name over the Gothic door, and Victoria Terminus becomes CST."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: CSM International Airport",
+     event: "Sahar Airport is renamed Chhatrapati Shivaji International Airport",
+     place: "Sahar",
+     scene: "A PIPE band marches across the Sahar runway and the airport sign changes to Chhatrapati Shivaji International."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: CSM International Airport",
+     event: "Terminal 2C opens at the international airport for Air India",
+     place: "Sahar",
+     scene: "A long glass PIPE of a corridor opens at Sahar, and Air India passengers walk into the new Terminal 2C."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The Mumbai Railway Vikas Corporation is formed to upgrade the suburban railway",
+     place: "Churchgate",
+     scene: "Engineers lay a giant PIPE of rails across the city map: the new corporation that will rebuild the suburban network."}
+  - {year: 1999, peg: pipe, confidence: medium, source: "WP: Bandra-Worli Sea Link (stone; build from 2000)",
+     event: "The foundation stone of the Bandra-Worli Sea Link is laid",
+     place: "Bandra Reclamation",
+     scene: "A PIPE pile goes into the mud of Mahim Bay: the first stone of the future Bandra-Worli Sea Link."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: BEST",
+     event: "A BEST bus route starts to take cashless smart cards",
+     place: "Churchgate to World Trade Centre",
+     scene: "A BEST conductor drops his coin bag into a SEWER: on the Churchgate route, riders now tap smart cards."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: CSM International Airport",
+     event: "The government gives the airport to a GVK-led company for private management",
+     place: "Sahar",
+     scene: "GVK takes the airport keys off a SUSHI tray, and a private company starts to run Mumbai airport."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The first of the new Siemens twelve-coach trains enters service",
+     place: "Western line",
+     scene: "A gleaming Siemens train slides out of the shed on SKI runners, the first of a hundred and twenty-nine new rakes."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Navi Mumbai International Airport",
+     event: "The Union cabinet approves a new airport at Navi Mumbai",
+     place: "Ulwe, Navi Mumbai",
+     scene: "A minister plants a SKI pole in the Ulwe marsh and marks the site of a second Mumbai airport."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Mumbai Metro",
+     event: "Construction starts on Metro Line 1, Versova to Ghatkopar",
+     place: "Andheri",
+     scene: "A crane lifts a SOFA-sized concrete segment onto the first pillar of the Versova-Ghatkopar Metro."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Mumbai Monorail",
+     event: "The foundation stone of the Mumbai Monorail is laid",
+     place: "Chembur",
+     scene: "A slippery SOAP bar slides along a single concrete beam in Chembur: the foundation stone of the Monorail."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "Fifteen-coach local trains start to run",
+     place: "Western line",
+     scene: "Commuters push a long SOAP bar of a train onto the platform: the first fifteen-coach local."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Kokilaben Dhirubhai Ambani Hospital",
+     event: "Kokilaben Dhirubhai Ambani Hospital opens in Andheri",
+     place: "Four Bungalows, Andheri",
+     scene: "Nurses wash the first patient with SOAP in the new Kokilaben Dhirubhai Ambani Hospital at Andheri."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: CSM International Airport",
+     event: "An Air India jumbo catches fire while it taxis; all on board escape",
+     place: "Sahar airport",
+     scene: "Leaking fuel foams like SOAP under an Air India jumbo engine, it catches fire, and all two hundred escape."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Bandra-Worli Sea Link",
+     event: "All eight lanes of the Bandra-Worli Sea Link open",
+     place: "Bandra-Worli Sea Link",
+     scene: "A DICE rolls along the cable-stayed deck and lands on eight: all eight lanes of the sea link open."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: CSM International Airport",
+     event: "Terminal 1C opens at the domestic airport",
+     place: "Santacruz",
+     scene: "A giant DICE rolls into the Santacruz forecourt and unfolds into the new Terminal 1C."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Mumbai Metro",
+     event: "The central government gives first approval to the underground Metro Line 3",
+     place: "Colaba to SEEPZ",
+     scene: "A long TONGUE of a tunnel licks under the city map from Colaba to SEEPZ as Delhi approves Metro Line 3."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Eastern Freeway (Mumbai)",
+     event: "The first section of the Eastern Freeway opens, Orange Gate to Anik",
+     place: "Orange Gate",
+     scene: "An elevated road rises over the dock warehouses like a TOMB lid lifted, and cars race from Orange Gate to Anik."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The first Bombardier local train is flagged off at Lokmanya Tilak Terminus",
+     place: "Lokmanya Tilak Terminus, Kurla",
+     scene: "The first Bombardier train bursts out of a TOMB-like shed at Kurla terminus and is flagged off."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Mumbai Monorail",
+     event: "The first Monorail line opens, Chembur to Wadala",
+     place: "Chembur to Wadala",
+     scene: "A pink Monorail car glides from TOWER to TOWER on one beam between Chembur and Wadala, India's first."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: CSM International Airport",
+     event: "International flights move to the new Terminal 2 at Sahar",
+     place: "Sahar",
+     scene: "Passengers walk under the peacock-feather columns of Terminal 2 as its control TOWER sends the first international flight off."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Santacruz-Chembur Link Road",
+     event: "The Santacruz-Chembur Link Road opens",
+     place: "Kurla",
+     scene: "A double-decker flyover arcs like a falling TOWER over Kurla and links Santacruz with Chembur."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Mumbai Metro",
+     event: "Metro Line 1, Versova to Ghatkopar, opens",
+     place: "Versova to Ghatkopar",
+     scene: "The first Metro train rolls past a TOWER of waiting commuters at Andheri on the Versova-Ghatkopar line."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Eastern Freeway (Mumbai)",
+     event: "The Eastern Freeway opens in full to Ghatkopar",
+     place: "Panjarpol to Ghatkopar",
+     scene: "The last span drops into place beside a gas TOWER at Panjarpol, and the freeway runs all the way to Ghatkopar."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: CSM International Airport",
+     event: "Domestic flights start at Terminal 2 with Vistara's first flight",
+     place: "Sahar",
+     scene: "A cabin attendant DOLL in aubergine waves Vistara's first flight out of Terminal 2, the first domestic flight there."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The whole suburban network is converted from DC to AC power",
+     place: "Central and Western lines",
+     scene: "Engineers swap the last DC switch on the Central line for a new AC DISH, and the whole network runs on AC."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The first air-conditioned suburban train arrives in Mumbai",
+     place: "Kurla car shed",
+     scene: "A DISH of ice cubes rides on the roof of the first air-conditioned local train as it arrives at the shed."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Mumbai Trans Harbour Link",
+     event: "The foundation stone of the Mumbai Trans Harbour Link is laid",
+     place: "Sewri",
+     scene: "Modi sets a DISH-shaped foundation stone at Sewri for the bridge that will cross the harbour to Navi Mumbai."}
+  - {year: 2017, peg: dog, confidence: medium, source: "WP: Mumbai Suburban Railway (also 2016)",
+     event: "The first air-conditioned local train starts passenger service on the Western line",
+     place: "Churchgate to Borivali",
+     scene: "A panting DOG lies on the cool floor of the first air-conditioned local as it carries passengers from Churchgate."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Chhatrapati Shivaji Terminus",
+     event: "Chhatrapati Shivaji Terminus is renamed Chhatrapati Shivaji Maharaj Terminus",
+     place: "CST",
+     scene: "A DOG in a Maratha turban carries the word MAHARAJ up the station facade and adds it to the name."}
+  - {year: 2018, peg: dove, confidence: high, source: "MSEDCL; Governance Now",
+     event: "An undersea cable brings mains electricity to Elephanta Island for the first time",
+     place: "Elephanta (Gharapuri)",
+     scene: "A DOVE flies the end of a seven-km undersea cable to Elephanta, and the island's bulbs light for the first time."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Navi Mumbai International Airport",
+     event: "The foundation stone of Navi Mumbai International Airport is laid",
+     place: "Ulwe, Navi Mumbai",
+     scene: "Modi releases a white DOVE over the Ulwe marsh and unveils the foundation plaque of Navi Mumbai airport."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Prabhadevi railway station",
+     event: "Elphinstone Road station is renamed Prabhadevi",
+     place: "Prabhadevi station",
+     scene: "A DOVE carries off the old Elphinstone Road board and drops a new Prabhadevi sign onto the platform."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: CSM International Airport",
+     event: "The airport is renamed Chhatrapati Shivaji Maharaj International Airport",
+     place: "Sahar",
+     scene: "A DOVE lands on the airport sign and pecks the word MAHARAJ into Shivaji's name."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Mumbai Monorail",
+     event: "The Monorail extends from Wadala to Jacob Circle",
+     place: "Wadala to Jacob Circle",
+     scene: "A Monorail car plays a TUBA fanfare as it glides on from Wadala over the mills to Jacob Circle."}
+  - {year: 2020, peg: nose, confidence: high, source: "Free Press Journal; Business Standard",
+     event: "Local trains stop for the COVID-19 lockdown",
+     place: "Suburban network",
+     scene: "A local train holds its NOSE against the buffer at Churchgate and stops; the city's lifeline halts for the lockdown."}
+  - {year: 2020, peg: nose, confidence: medium, source: "Free Press Journal (handed over mid-May)",
+     event: "A jumbo COVID-19 field hospital opens on the MMRDA ground at Bandra-Kurla Complex",
+     place: "Bandra-Kurla Complex",
+     scene: "Workers raise a tent hospital at BKC in weeks, and a thousand beds fill with patients holding oxygen to their NOSE."}
+  - {year: 2020, peg: nose, confidence: unverified,
+     event: "A grid failure blacks out Mumbai and stops the local trains for hours",
+     place: "Mumbai grid",
+     scene: "A grid breaker sneezes like a NOSE at dawn, and every light and local train in Mumbai stops for hours."}
+  - {year: 2021, peg: ant, confidence: high, source: "Business Standard; Free Press Journal",
+     event: "Local trains open to all passengers again after ten months",
+     place: "Suburban network",
+     scene: "Commuters stream like ANT columns back into the local trains after ten months, inside fixed time slots."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Mumbai Metro",
+     event: "The first sections of Metro Lines 2A and 7 open in the western suburbs",
+     place: "Dahisar to Dahanukarwadi and Aarey",
+     scene: "A NUN rides the first yellow and red Metro trains along the Dahisar end of Lines 2A and 7."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Mumbai Metro",
+     event: "Metro Lines 2A and 7 open in full to Andheri",
+     place: "Andheri",
+     scene: "A GNOME rides the last stretch of Lines 2A and 7 into Andheri as both lines open in full."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: BEST (TOI)",
+     event: "India's first battery electric double-decker bus starts on a BEST route",
+     place: "Colaba",
+     scene: "A GNOME waves from the top deck of India's first electric double-decker as it whispers away from the BEST depot."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Business Today; Railway Gazette",
+     event: "Navi Mumbai Metro Line 1 opens, Belapur to Pendhar",
+     place: "Belapur to Pendhar",
+     scene: "A GNOME rides the first Navi Mumbai Metro train from Belapur to Pendhar after twelve years of waiting."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: CSM International Airport",
+     event: "A Learjet crash-lands in heavy rain at the airport",
+     place: "Sahar airport",
+     scene: "A garden GNOME rides a Learjet that skids off the wet runway in a thunderstorm at Mumbai airport."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Autocar Pro; Business Standard",
+     event: "The first phase of the Coastal Road opens, Marine Lines to Worli",
+     place: "Marine Drive to Worli",
+     scene: "Cars dive into the twin tunnels under Malabar Hill as a HANGER of road hooks Marine Lines to Worli."}
+  - {year: 2024, peg: hanger, confidence: medium, source: "All India Radio",
+     event: "The Coastal Road's northbound arm opens from Marine Drive to Haji Ali",
+     place: "Haji Ali",
+     scene: "The northbound lanes swing out like a coat HANGER round the Haji Ali shrine as the second arm opens."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "The Nerul-Uran suburban line extension opens",
+     place: "Kharkopar to Uran",
+     scene: "A local train runs on a rail bent like a HANGER around the creek and reaches Uran for the first time."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: CSM International Airport",
+     event: "An Emirates jet hits a flock of flamingos on approach; at least thirty-six birds die",
+     place: "Ghatkopar sky, airport approach",
+     scene: "Pink flamingos hang like coats on a HANGER over Ghatkopar until an Emirates jet flies through them; thirty-six die."}
+  - {year: 2024, peg: hanger, confidence: medium, source: "WP: Mumbai Metro (5 or 7 October)",
+     event: "Underground Metro Line 3 opens its first section, Aarey to Bandra-Kurla Complex",
+     place: "Aarey to BKC",
+     scene: "The first underground Metro train hangs from a HANGER of light in the new Aarey to BKC tunnel."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Mumbai Metro",
+     event: "Metro Line 3 extends from Bandra-Kurla Complex to Worli",
+     place: "Acharya Atre Chowk, Worli",
+     scene: "Tunnel men drive the last NAIL into a sleeper at Acharya Atre Chowk, and Line 3 trains reach Worli."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Mumbai Monorail",
+     event: "The Monorail stops all service for repairs and upgrades",
+     place: "Chembur to Jacob Circle",
+     scene: "Engineers NAIL a closed sign across every Monorail station after repeated breakdowns stop the line."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Navi Mumbai International Airport",
+     event: "Navi Mumbai International Airport is inaugurated",
+     place: "Ulwe, Navi Mumbai",
+     scene: "Modi hammers a gold NAIL into the lotus-shaped roof and opens Navi Mumbai's new airport."}
+  - {year: 2025, peg: nail, confidence: medium, source: "WP: Mumbai Metro (8 or 9 October)",
+     event: "Metro Line 3 opens in full to Cuffe Parade",
+     place: "Cuffe Parade",
+     scene: "The last NAIL goes into the track at Cuffe Parade, and Line 3 runs the full length under the island city."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: CSM International Airport",
+     event: "Workers start to demolish old domestic Terminal 1A",
+     place: "Santacruz",
+     scene: "A wrecking ball knocks every NAIL out of the roof of old Terminal 1A at Santacruz."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Navi Mumbai International Airport",
+     event: "Navi Mumbai airport starts commercial flights; the first plane lands from Bengaluru",
+     place: "Ulwe, Navi Mumbai",
+     scene: "An IndiGo jet lands at eight in the morning on Christmas Day and its tyre scrapes the first NAIL mark on the new runway."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "WP: Mumbai Metro (7 or 8 April)",
+     event: "Metro Line 9 and the first part of Line 2B open, to Kashigaon and Mandale",
+     place: "Mira-Bhayandar and Mandale",
+     scene: "Metro trains carry NACHO trays to Kashigaon in Mira-Bhayandar and to Mandale as Lines 9 and 2B open."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Mumbai Metro",
+     event: "Metro Line 2B extends to Chembur",
+     place: "Chembur",
+     scene: "A yellow Metro train pulls into Chembur with a NACHO cheese stripe on its nose as Line 2B reaches the eastern suburbs."}
+  # religion
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Global Vipassana Pagoda",
+     event: "Building work starts on the Global Vipassana Pagoda at Gorai",
+     place: "Gorai",
+     scene: "Masons pour stone SAUCE into the first ring of the giant Vipassana dome at Gorai."}
+  - {year: 2006, peg: sushi, confidence: high, source: "Daily Star (Reuters); MPCB report",
+     event: "Crowds drink Mahim Creek water after a rumour that the sea has turned sweet",
+     place: "Mahim Creek",
+     scene: "Pilgrims dip SUSHI rice bowls into Mahim Creek and drink, sure that the sea near the dargah has turned sweet."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Global Vipassana Pagoda",
+     event: "President Pratibha Patil opens the Global Vipassana Pagoda",
+     place: "Gorai",
+     scene: "Pratibha Patil washes the golden dome with SOAP and water and opens the Global Vipassana Pagoda."}
+  - {year: 2019, peg: tuba, confidence: medium, source: "WP: Knesset Eliyahoo (Firstpost)",
+     event: "Kneseth Eliyahoo Synagogue reopens in its blue colour after a year of restoration",
+     place: "Kala Ghoda",
+     scene: "A TUBA painted bright blue sounds as the restored Kneseth Eliyahoo Synagogue opens its doors at Kala Ghoda."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Brihanmumbai Municipal Corporation",
+     event: "The BMC demolishes an old Jain temple in Vile Parle and Jains protest",
+     place: "Vile Parle",
+     scene: "A BMC bulldozer pulls the NAIL from the old Jain temple's door in Vile Parle, and Jains march in protest."}
+  # arts
+  - {year: 1993, peg: palm, confidence: medium, source: "WP: Royal Opera House (Mumbai)",
+     event: "The Royal Opera House closes",
+     place: "Charni Road",
+     scene: "The last usher puts a PALM on the Royal Opera House door and pulls it shut for twenty-three years."}
+  - {year: 1995, peg: bell, confidence: high, source: "WP: Maratha Mandir",
+     event: "Dilwale Dulhania Le Jayenge opens at Maratha Mandir and starts its never-ending run",
+     place: "Maratha Mandir",
+     scene: "A cow BELL rings at Maratha Mandir before the first show of DDLJ, and it keeps ringing every day for decades."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Mumbai Film Festival",
+     event: "The Mumbai Academy of the Moving Image (MAMI) is founded",
+     place: "Mumbai",
+     scene: "A PIG in director's glasses cuts the reel ribbon, and the Mumbai Academy of the Moving Image is founded."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: CSMVS",
+     event: "The Prince of Wales Museum is renamed Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+     place: "Kala Ghoda",
+     scene: "A BEEHIVE on the museum dome swarms over the old Prince of Wales name and leaves Shivaji's name behind."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: NCPA",
+     event: "The Jamshed Bhabha Theatre opens at the NCPA",
+     place: "Nariman Point",
+     scene: "An organ PIPE sounds the first note in the new Jamshed Bhabha Theatre at the NCPA."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Chhatrapati Shivaji Terminus",
+     event: "Chhatrapati Shivaji Terminus becomes a UNESCO World Heritage Site",
+     place: "CST",
+     scene: "UNESCO inspectors climb out of a SEWER under the Gothic station and fix the World Heritage plaque to its wall."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Dr. Bhau Daji Lad Museum",
+     event: "The restoration of the Bhau Daji Lad Museum wins UNESCO's top conservation award",
+     place: "Byculla",
+     scene: "A SEAL balances UNESCO's conservation award on its nose in the gilded hall of the Bhau Daji Lad Museum."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Symphony Orchestra of India",
+     event: "The NCPA founds the Symphony Orchestra of India",
+     place: "NCPA, Nariman Point",
+     scene: "Violinists tune up over a SUSHI dinner at the NCPA, and India's first professional symphony orchestra is born."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Dr. Bhau Daji Lad Museum",
+     event: "The Bhau Daji Lad Museum reopens after five years of restoration",
+     place: "Byculla",
+     scene: "Visitors sink into a restored Victorian SOFA as the Bhau Daji Lad Museum reopens after five years."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: CSMVS",
+     event: "The CSMVS museum opens five new galleries in its East Wing",
+     place: "Kala Ghoda",
+     scene: "Curators carry a carved SOFA into one of five new East Wing galleries at the Shivaji museum."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Antilia (building)",
+     event: "Antilia, Mukesh Ambani's tower house, is completed",
+     place: "Altamount Road",
+     scene: "Twenty-seven floors stack up like DICE on Altamount Road, and Mukesh Ambani's house Antilia is completed."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: The Imperial (Mumbai)",
+     event: "The Imperial twin towers are completed, the tallest buildings in India",
+     place: "Tardeo",
+     scene: "Two towers rise like stacked DICE at Tardeo and take the title of India's tallest buildings."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: University of Mumbai",
+     event: "Restoration of the Rajabai Clock Tower is completed",
+     place: "Fort",
+     scene: "A clockwork DOLL strikes the bell again in the restored Rajabai Clock Tower after two years of work."}
+  - {year: 2015, peg: doll, confidence: high, source: "PMO; Business Standard (ANI)",
+     event: "Modi lays the foundation stone of the Ambedkar memorial at the Indu Mill compound",
+     place: "Indu Mill, Dadar",
+     scene: "Modi sets a small DOLL of Ambedkar on a plaque at Indu Mill, the seed of a planned giant statue."}
+  - {year: 2016, peg: dish, confidence: high, source: "Business Standard; PMO",
+     event: "Modi performs the water ceremony for a giant Shivaji memorial in the sea off Mumbai",
+     place: "Arabian Sea off Marine Drive",
+     scene: "Modi pours a DISH of holy water into the Arabian Sea from a hovercraft to start the Shivaji statue."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Royal Opera House (Mumbai)",
+     event: "The restored Royal Opera House holds its first performance after twenty-three years",
+     place: "Charni Road",
+     scene: "Patricia Rozario sings over a DISH of rose petals as the restored Royal Opera House fills again."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: NCPA",
+     event: "The NCPA stage musical Mughal-e-Azam premieres",
+     place: "NCPA, Nariman Point",
+     scene: "Anarkali dances on a mirrored DISH floor in the NCPA's Broadway-style Mughal-e-Azam."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Royal Opera House (Mumbai)",
+     event: "The Royal Opera House restoration wins a UNESCO conservation award",
+     place: "Charni Road",
+     scene: "A DOG in a bow tie carries UNESCO's conservation award up the gilded stairs of the Royal Opera House."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Victorian Gothic and Art Deco Ensembles",
+     event: "UNESCO lists the Victorian Gothic and Art Deco buildings of the Oval Maidan as World Heritage",
+     place: "Oval Maidan",
+     scene: "A DOVE flies over the Oval Maidan from Gothic towers to Art Deco flats, and UNESCO lists both rows."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Mumbai Indians site; Gulf Today",
+     event: "A statue of Sachin Tendulkar is unveiled at the Wankhede Stadium",
+     place: "Wankhede Stadium",
+     scene: "A GNOME pulls the cloth off Sachin Tendulkar's bronze statue as it hits a lofted drive beside his stand at Wankhede."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Dr. Bhau Daji Lad Museum",
+     event: "The Bhau Daji Lad Museum reopens after a second restoration",
+     place: "Byculla",
+     scene: "A gilder taps the last NAIL into a gold-leaf cornice, and the Bhau Daji Lad Museum opens again."}
+  # economy
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Jawaharlal Nehru Port",
+     event: "The Nhava Sheva International Container Terminal opens, India's first private container terminal",
+     place: "Nhava Sheva, Uran",
+     scene: "A crane lifts a SAUCE-red container onto the first private terminal at Nhava Sheva."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Jawaharlal Nehru Port",
+     event: "Gateway Terminals India opens a third container terminal at the port",
+     place: "Nhava Sheva, Uran",
+     scene: "A SUSHI-roll stack of containers rises on the new Gateway Terminals quay, the port's third terminal."}
+  - {year: 2008, peg: sofa, confidence: high, source: "Business Traveller; Al Jazeera",
+     event: "The Taj Tower wing and the Trident reopen three weeks after the attacks",
+     place: "Colaba and Nariman Point",
+     scene: "Staff carry a fresh SOFA into the Trident lobby and the Taj Tower, and both hotels reopen three weeks after the attacks."}
+  - {year: 2010, peg: dice, confidence: high, source: "Business Traveller",
+     event: "The Oberoi hotel reopens after its rebuilding",
+     place: "Nariman Point",
+     scene: "A DICE rolls across the new marble of the Oberoi lobby as the hotel reopens after the attack."}
+  - {year: 2010, peg: dice, confidence: high, source: "Business Traveller",
+     event: "The Taj Mahal Palace reopens its restored heritage wing",
+     place: "Apollo Bunder",
+     scene: "A DICE carved from the burnt dome's stone rolls down the restored staircase as the Taj Palace wing reopens."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Bharat Diamond Bourse",
+     event: "The Bharat Diamond Bourse opens at Bandra-Kurla Complex",
+     place: "Bandra-Kurla Complex",
+     scene: "Traders roll diamonds like DICE across the counters of the new Bharat Diamond Bourse at BKC."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: 2010 Mumbai oil spill",
+     event: "The MSC Chitra collides with the Khalijia III off Mumbai and spills oil",
+     place: "Mumbai harbour mouth",
+     scene: "The MSC Chitra rolls like a DICE after the collision and drops containers and oil into the harbour."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Fast Casual; Tata Consumer",
+     event: "Starbucks opens its first Indian store in the Elphinstone Building",
+     place: "Horniman Circle",
+     scene: "A barista burns his TONGUE on the first latte in India at the new Starbucks in Horniman Circle."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: INS Kalvari (S21)",
+     event: "Mazagon Dock launches Kalvari, the first Scorpene submarine built in India",
+     place: "Mazagon Dock",
+     scene: "A DOLL breaks a coconut on the hull, and the submarine Kalvari slides into the harbour from Mazagon Dock."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Jawaharlal Nehru Port",
+     event: "The Nhava Sheva (India) Gateway Terminal starts work",
+     place: "Nhava Sheva, Uran",
+     scene: "A radar DISH turns on the new quay as the Nhava Sheva Gateway Terminal handles its first ship."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: BEST (NDTV)",
+     event: "BEST workers strike over unpaid wages and take buses off the roads",
+     place: "BEST depots",
+     scene: "A DOG sleeps in an empty BEST depot as thirty-six thousand workers strike for their wages."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: INS Kalvari (S21)",
+     event: "The submarine Kalvari is commissioned at Mazagon Dock",
+     place: "Mazagon Dock",
+     scene: "A navy DOG barks as Modi commissions the submarine Kalvari at Mazagon Dock."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Jawaharlal Nehru Port",
+     event: "PSA's Bharat Mumbai Container Terminal opens its first phase",
+     place: "Nhava Sheva, Uran",
+     scene: "A DOG chases the first truck out of the new Bharat Mumbai Container Terminal at Nhava Sheva."}
+  - {year: 2018, peg: dove, confidence: high, source: "Adani Transmission release; Business Standard",
+     event: "Adani buys Reliance Infrastructure's Mumbai power supply business",
+     place: "Mumbai suburbs",
+     scene: "A DOVE carries the suburbs' power cable from Reliance's hand to Adani's for eighteen thousand crore."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: BEST (Indian Express)",
+     event: "BEST workers strike for nine days",
+     place: "BEST depots",
+     scene: "A lone TUBA plays in the empty Colaba bus depot through nine days of BEST strike."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: CSM International Airport",
+     event: "Adani takes control of Mumbai airport from GVK",
+     place: "Sahar",
+     scene: "An ANT colony carries GVK's shares out of the terminal and stacks them at Adani's door: seventy-four percent."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Apple Newsroom",
+     event: "Apple opens its first store in India at Bandra-Kurla Complex",
+     place: "Jio World Drive, BKC",
+     scene: "Tim Cook lifts the shutter, and a GNOME runs in first to buy an iPhone at Apple BKC."}
+  - {year: 2023, peg: gnome, confidence: high, source: "Autocar Pro; ETV Bharat",
+     event: "The black-and-yellow Premier Padmini taxis leave the roads",
+     place: "Prabhadevi",
+     scene: "A GNOME waves goodbye from the back seat of the last black-and-yellow Padmini taxi as it leaves the road."}
+  - {year: 2025, peg: nail, confidence: high, source: "Business Traveller; The Week",
+     event: "The Mumbai International Cruise Terminal opens at Ballard Pier",
+     place: "Ballard Pier",
+     scene: "A cruise liner ties up at the new Ballard Pier terminal, its rope hooked over a giant NAIL on the quay."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: BEST (The Hindu)",
+     event: "BEST workers strike again and stop buses and power supply",
+     place: "BEST depots",
+     scene: "Striking BEST workers share a NACHO tray in the empty depot while buses stand still and power lines go untended."}
+  # society
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Gulshan Kumar",
+     event: "Gunmen kill music producer Gulshan Kumar outside a temple in Andheri",
+     place: "Jeet Nagar, Andheri",
+     scene: "Gunmen shoot Gulshan Kumar outside the Shiva temple in Andheri as a PIG bank of his cassette money breaks."}
+  - {year: 2000, peg: sauce, confidence: medium, source: "WP: 2000 Mumbai landslide (78); FPJ (67)",
+     event: "A landslide after heavy rain buries a slum in Ghatkopar",
+     place: "Azad Nagar, Ghatkopar",
+     scene: "A hillside slides like hot SAUCE onto the Ghatkopar slum at high tide and buries scores of people."}
+  - {year: 2002, peg: sun, confidence: high, source: "Open; WP: J. Dey",
+     event: "Salman Khan's car runs over people on the pavement outside a Bandra bakery",
+     place: "Hill Road, Bandra",
+     scene: "Salman Khan's Land Cruiser mounts the pavement at SUN-rise outside a Bandra bakery and crushes sleeping workers."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Tata Mumbai Marathon",
+     event: "The first Mumbai Marathon is run",
+     place: "Marine Drive",
+     scene: "Runners leap over an open SEWER on Marine Drive in the first Mumbai Marathon."}
+  - {year: 2005, peg: seal, confidence: medium, source: "WP: List of structural failures",
+     event: "The Sadaf Manzil building collapses in Nagpada and kills eleven",
+     place: "Nagpada",
+     scene: "A SEAL barks a warning as the old Sadaf Manzil collapses in Nagpada and buries eleven people."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Homi Bhabha National Institute",
+     event: "The Homi Bhabha National Institute is founded at BARC",
+     place: "Anushakti Nagar, Trombay",
+     scene: "A SEAL stamps the degree charter of the new Homi Bhabha National Institute at Trombay."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Mumbai Indians",
+     event: "The Mumbai Indians cricket team is founded",
+     place: "Wankhede Stadium",
+     scene: "Reliance buys a blue SOFA for the dressing room, and the Mumbai Indians are founded."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: DY Patil Stadium",
+     event: "DY Patil Stadium opens in Navi Mumbai",
+     place: "Nerul, Navi Mumbai",
+     scene: "Fans sink into a padded SOFA in the stands as the new DY Patil Stadium opens at Nerul."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: 2008 IPL final",
+     event: "The first IPL final is played at DY Patil Stadium; Rajasthan Royals win",
+     place: "Nerul, Navi Mumbai",
+     scene: "Shane Warne lies on a SOFA in the dugout as the Rajasthan Royals win the first IPL final at Nerul."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Institute of Chemical Technology",
+     event: "The chemical technology institute becomes a university and takes the name Institute of Chemical Technology",
+     place: "Matunga",
+     scene: "Chemists lift a lab SOFA onto the Matunga lawn and toast their new university status as the Institute of Chemical Technology."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "CPJ; WP: J. Dey",
+     event: "Gunmen on motorcycles kill crime journalist J. Dey in Powai",
+     place: "Powai",
+     scene: "Gunmen on motorcycles shoot J. Dey in Powai; his notebook bears a TATTOO of underworld names."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Business Standard; WP: Mantralaya",
+     event: "Fire guts floors of Mantralaya, the state secretariat, and kills five",
+     place: "Mantralaya",
+     scene: "A TONGUE of fire licks up from a short circuit and eats the files on three floors of Mantralaya; five die."}
+  - {year: 2012, peg: tongue, confidence: high, source: "Business Standard; Al Jazeera",
+     event: "Bal Thackeray is cremated at Shivaji Park before huge crowds",
+     place: "Shivaji Park",
+     scene: "A TONGUE of flame rises from Bal Thackeray's pyre at Shivaji Park as hundreds of thousands watch."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: 2013 Thane building collapse",
+     event: "An illegal building under construction collapses at Shil Phata, Mumbra, and kills seventy-four",
+     place: "Shil Phata, Mumbra",
+     scene: "An illegal block falls like a TOMB on Shil Phata in Mumbra and buries seventy-four people."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: Shakti Mills gang rape",
+     event: "Five men gang-rape a photojournalist in the empty Shakti Mills compound",
+     place: "Shakti Mills, Mahalaxmi",
+     scene: "The empty Shakti Mills becomes a TOMB-dark trap where five men attack a young photojournalist."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: INS Sindhurakshak",
+     event: "Explosions sink the submarine Sindhurakshak at its berth in the naval dockyard; eighteen die",
+     place: "Naval Dockyard",
+     scene: "Explosions turn the submarine Sindhurakshak into a steel TOMB that sinks at its dockyard berth with eighteen men."}
+  - {year: 2013, peg: tomb, confidence: high, source: "Al Jazeera; Business Standard",
+     event: "A municipal building collapses near Dockyard Road and kills sixty-one",
+     place: "Babu Genu market, Mazagaon",
+     scene: "A BMC staff building folds like a TOMB near Dockyard Road station and kills sixty-one people."}
+  - {year: 2013, peg: tomb, confidence: high, source: "ESPN; Scroll",
+     event: "Sachin Tendulkar plays his last Test at the Wankhede and says goodbye to the crowd",
+     place: "Wankhede Stadium",
+     scene: "Sachin Tendulkar bows to the Wankhede pitch as if to a TOMB of twenty-four years, and the crowd chants his name."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: 2014 Mumbai stampede",
+     event: "A crush outside the Bohra leader's house kills eighteen mourners before his funeral",
+     place: "Saifee Mahal, Malabar Hill",
+     scene: "Mourners crush against the gate of the Syedna's house TOWER on Malabar Hill; eighteen die before the funeral."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Shakti Mills gang rape",
+     event: "A sessions court sentences three Shakti Mills rapists to death as repeat offenders",
+     place: "Sessions court",
+     scene: "The judge climbs a TOWER of evidence and sentences three Shakti Mills rapists to death as repeat offenders."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Mumbai City FC",
+     event: "Mumbai City FC is founded",
+     place: "Mumbai Football Arena, Andheri",
+     scene: "A football bounces off a floodlight TOWER in Andheri, and Mumbai City FC is founded."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Mumbai alcohol poisonings; Quint",
+     event: "Poisoned liquor kills about a hundred people in the Malvani slum",
+     place: "Laxmi Nagar, Malvani",
+     scene: "A rag DOLL lies beside a ten-rupee bottle of methanol liquor in Malvani, where about a hundred die."}
+  - {year: 2015, peg: doll, confidence: high, source: "Zee News; Mongabay India",
+     event: "The northern Thane Creek becomes a flamingo sanctuary",
+     place: "Thane Creek",
+     scene: "Pink flamingo DOLL figures line the Thane Creek mud as the state declares it a sanctuary."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Deonar dumping ground",
+     event: "A fire at the Deonar dump fills the eastern suburbs with smoke and closes schools",
+     place: "Deonar",
+     scene: "The Deonar garbage mountain burns like a smoking DISH, and the BMC shuts seventy-four schools."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: 2017 Mumbai stampede",
+     event: "A stampede on the Elphinstone Road footbridge kills twenty-three commuters",
+     place: "Elphinstone Road station",
+     scene: "Rush-hour commuters run in the rain like a DOG pack onto the narrow Elphinstone footbridge; twenty-three are crushed."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: 2017 Mumbai flood; Bloomberg",
+     event: "The heaviest rain in twelve years floods the city and stops trains and flights",
+     place: "Santacruz and Andheri",
+     scene: "A DOG swims down the flooded Andheri subway as the heaviest rain in twelve years stops the city."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Kamala Mills fire",
+     event: "Fire in rooftop restaurants at Kamala Mills kills fourteen",
+     place: "Kamala Mills, Lower Parel",
+     scene: "A hot-DOG grill sets the Kamala Mills rooftop pub on fire after midnight, and fourteen guests die."}
+  - {year: 2018, peg: dove, confidence: high, source: "Free Press Journal; Deccan Herald",
+     event: "A chartered King Air plane crashes at a building site in Ghatkopar and kills five",
+     place: "Jagruti Nagar, Ghatkopar",
+     scene: "A test-flight plane falls like a shot DOVE onto a Ghatkopar building site; the crew and one walker die."}
+  - {year: 2018, peg: dove, confidence: medium, source: "Governance Now (one source)",
+     event: "Part of the Gokhale road bridge falls onto the tracks at Andheri",
+     place: "Andheri station",
+     scene: "A DOVE flies out as part of the Gokhale bridge drops onto the Andheri tracks in the monsoon rain."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: 2019 Mumbai foot overbridge collapse",
+     event: "The Himalaya footbridge at CSMT collapses and kills six",
+     place: "CSMT, Badaruddin Tayabji Lane",
+     scene: "A brass TUBA falls through the Himalaya footbridge as it caves in outside CSMT; six die."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Business Standard chronology",
+     event: "A wall collapses onto huts in Malad in heavy rain and kills about thirty",
+     place: "Pimpripada, Malad",
+     scene: "A wall falls on Malad's hillside huts in the night rain like a dropped TUBA; about thirty die."}
+  - {year: 2019, peg: tuba, confidence: high, source: "Business Standard; The Quint",
+     event: "The Kesarbai building collapses in Dongri",
+     place: "Dongri",
+     scene: "The old Kesarbai building in Dongri falls on a TUBA player's family; more than ten people die."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Dharavi",
+     event: "Dharavi reports its first COVID-19 case",
+     place: "Dharavi",
+     scene: "A garment shop owner in Dharavi sneezes through his NOSE: Asia's largest slum has its first COVID case."}
+  - {year: 2020, peg: nose, confidence: high, source: "The Quint; Deccan Herald",
+     event: "The old Jilani building collapses in Bhiwandi and kills about forty",
+     place: "Bhiwandi",
+     scene: "The Jilani building's NOSE of a balcony cracks at dawn and the whole block falls in Bhiwandi; about forty die."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Antilia (building)",
+     event: "A car with explosives and a threat letter is found near Antilia",
+     place: "Carmichael Road",
+     scene: "An ANT crawls over twenty gelatin sticks in a parked car near Antilia, with a threat letter to the Ambanis."}
+  - {year: 2021, peg: ant, confidence: high, source: "Scroll; Al Jazeera",
+     event: "Fire at a COVID hospital inside Dreams Mall in Bhandup kills about ten patients",
+     place: "Dreams Mall, Bhandup",
+     scene: "Fire runs like a red ANT trail through the Dreams Mall shops into the COVID ward above; about ten patients die."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Virar hospital fire",
+     event: "Fire in the intensive care unit of a Virar COVID hospital kills thirteen",
+     place: "Vijay Vallabh Hospital, Virar",
+     scene: "An air-conditioner spark runs like an ANT along the wire into the Virar ICU, and thirteen COVID patients die."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Cyclone Tauktae",
+     event: "Cyclone Tauktae passes Mumbai with record May rain and closes the airport",
+     place: "Mumbai coast",
+     scene: "Cyclone Tauktae blows an ANT hill of six hundred trees across the roads and shuts the airport for eleven hours."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: 2021 Mumbai landslide; Al Jazeera",
+     event: "Night rain sets off landslides and wall collapses in Chembur and Vikhroli",
+     place: "Chembur and Vikhroli",
+     scene: "Hillsides crumble like ANT hills onto huts in Chembur and Vikhroli in the night rain; about thirty die."}
+  - {year: 2022, peg: nun, confidence: high, source: "Business Standard; Scroll",
+     event: "Adani wins the bid to rebuild Dharavi",
+     place: "Dharavi",
+     scene: "A NUN opens the sealed bids, and Adani's offer to rebuild Dharavi beats DLF's by three thousand crore."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Wankhede Stadium",
+     event: "India beats New Zealand in the World Cup semi-final at the Wankhede; Shami takes seven wickets",
+     place: "Wankhede Stadium",
+     scene: "A GNOME counts seven wickets on his fingers as Shami tears through New Zealand in the Wankhede semi-final."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: Ghatkopar hoarding collapse",
+     event: "A huge billboard falls on a petrol pump in Ghatkopar in a storm and kills seventeen",
+     place: "Chheda Nagar, Ghatkopar",
+     scene: "A storm tears a giant billboard off its steel HANGER frame and drops it on a Ghatkopar petrol pump; seventeen die."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Scroll; All India Radio",
+     event: "An electric BEST bus runs into people and vehicles in Kurla and kills seven",
+     place: "Kurla West",
+     scene: "A BEST bus with a new driver swings like a loose HANGER through the Kurla crowd and kills seven."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Al Jazeera; Business Standard",
+     event: "A navy speedboat hits the Elephanta ferry Neelkamal; thirteen die",
+     place: "Off Butcher Island, harbour",
+     scene: "A navy speedboat on trial spins out of control and hooks the ferry Neelkamal like a HANGER; thirteen drown."}
+  - {year: 2025, peg: nail, confidence: high, source: "Business Standard; RNZ (Reuters)",
+     event: "An intruder stabs actor Saif Ali Khan in his Bandra flat",
+     place: "Bandra West",
+     scene: "A burglar with a knife like a NAIL stabs Saif Ali Khan in his Bandra flat at night."}
+  - {year: 2025, peg: nail, confidence: high, source: "Business Today; ThePrint (IMD)",
+     event: "The earliest monsoon in seventy-five years floods a new underground Metro station",
+     place: "Acharya Atre Chowk, Worli",
+     scene: "Monsoon water pours down the stairs of the new Worli Metro station and drips off every NAIL in the ceiling."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: Wankhede Stadium",
+     event: "A stand at the Wankhede is named after Rohit Sharma",
+     place: "Wankhede Stadium",
+     scene: "Rohit Sharma hammers a NAIL to hang his name board on the new stand at the Wankhede."}
+  - {year: 2025, peg: nail, confidence: high, source: "WP: 2025 Women's World Cup final",
+     event: "India's women win their first World Cup in the final at DY Patil Stadium",
+     place: "Nerul, Navi Mumbai",
+     scene: "India's captain hammers a golden NAIL through the last South African stump at Nerul and lifts the first women's World Cup."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Wankhede Stadium",
+     event: "India beats England in the T20 World Cup semi-final at the Wankhede with a ground-record total",
+     place: "Wankhede Stadium",
+     scene: "Indian batsmen hit NACHO chips into the Garware stand as they post the Wankhede's highest T20 total against England."}
+  - {year: 2026, peg: nacho, confidence: low, source: "Free Press Journal headline only",
+     event: "A hill slope collapses in Ghatkopar West in the monsoon and kills seven",
+     place: "Ghatkopar West",
+     scene: "A monsoon hillside slides like spilled NACHO cheese onto huts in Ghatkopar West, and seven die."}
+world_refs:
+  - {year: 1992, event: "Bombay riots after the Babri Masjid demolition", cell: south_asia_society_1945_present}
+  - {year: 1992, event: "Harshad Mehta's securities scam", cell: south_asia_economy_1945_present}
+  - {year: 1993, event: "Bombay serial bombings", cell: south_asia_politics_1945_present}
+  - {year: 1993, event: "Jet Airways starts flying", cell: south_asia_economy_1945_present}
+  - {year: 1994, event: "National Stock Exchange starts trading", cell: south_asia_economy_1945_present}
+  - {year: 1995, event: "VSNL opens public internet service", cell: south_asia_science_1945_present}
+  - {year: 1996, event: "National Gallery of Modern Art opens in Cowasji Jehangir Hall", cell: south_asia_arts_1945_present}
+  - {year: 1999, event: "First Kala Ghoda Arts Festival", cell: south_asia_arts_1945_present}
+  - {year: 2005, event: "Mumbai flood", cell: south_asia_society_1945_present}
+  - {year: 2005, event: "Kingfisher Airlines first flight Mumbai to Delhi", cell: south_asia_economy_1945_present}
+  - {year: 2006, event: "Serial bombs on suburban trains", cell: south_asia_politics_1945_present}
+  - {year: 2008, event: "Mumbai attacks by Lashkar gunmen", cell: south_asia_politics_1945_present}
+  - {year: 2009, event: "Bandra-Worli Sea Link opens", cell: south_asia_science_1945_present}
+  - {year: 2011, event: "Cricket World Cup final at Wankhede", cell: south_asia_society_1945_present}
+  - {year: 2012, event: "Haji Ali Dargah bans women from the inner tomb", cell: south_asia_religion_1945_present}
+  - {year: 2016, event: "Women return to the inner tomb of Haji Ali", cell: south_asia_religion_1945_present}
+  - {year: 2018, event: "Apsara-U reactor goes critical at Trombay", cell: south_asia_science_1945_present}
+  - {year: 2019, event: "Jet Airways stops all flights", cell: south_asia_economy_1945_present}
+  - {year: 2020, event: "Yes Bank frozen and rescued", cell: south_asia_economy_1945_present}
+  - {year: 2023, event: "Nita Mukesh Ambani Cultural Centre opens", cell: south_asia_arts_1945_present}
+  - {year: 2024, event: "Atal Setu opens across the harbour", cell: south_asia_science_1945_present}
+out_refs:
+  - {year: 1995, event: "Shiv Sena-BJP government sworn in at Shivaji Park", reason: "state government"}
+  - {year: 2007, event: "Archbishop Oswald Gracias is made a cardinal", reason: "Holy See"}
+  - {year: 2012, event: "Supreme Court upholds Kasab's death sentence", reason: "national court outside the area"}
+  - {year: 2013, event: "Supreme Court upholds Yakub Memon's death sentence and Sanjay Dutt's term", reason: "national court outside the area"}
+  - {year: 2014, event: "Fadnavis sworn in as chief minister at the Wankhede", reason: "state government"}
+  - {year: 2015, event: "Yakub Memon is hanged in Nagpur", reason: "outside the area"}
+  - {year: 2015, event: "Maharashtra bans beef", reason: "state law"}
+  - {year: 2017, event: "Bullet train foundation stone in Ahmedabad", reason: "outside the area"}
+  - {year: 2018, event: "Bhima Koregaon violence near Pune", reason: "outside the area"}
+  - {year: 2019, event: "Uddhav Thackeray sworn in at Shivaji Park", reason: "state government"}
+  - {year: 2020, event: "Sushant Singh Rajput's death and the national inquiry", reason: "national investigation"}
+  - {year: 2022, event: "Shiv Sena split and the Shinde government", reason: "state government"}
+  - {year: 2024, event: "Ratan Tata dies in Mumbai", reason: "national figure"}
+  - {year: 2025, event: "Tahawwur Rana is extradited to Delhi", reason: "national government"}

@@ -1,0 +1,788 @@
+# City: Mumbai x 1668 to 1856 (the Company's Bombay, the wall and dockyard, the reclamations, the Parsis, the first railway). DRAFT 2026-11-24.
+# Area: Mumbai Metropolitan Region (seven islands, Mahim, Sion, Worli, Bandra, Salsette with Kanheri, Elephanta, Thane, Kalyan,
+# Bhiwandi, Vasai and Arnala, Navi Mumbai with Belapur, Uran, Panvel, Matheran). Chaul, Pune, Surat, Raigad fort are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Bombay Presidency acts and governors -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (45 searches max; no unauthorised book copies).
+# Main sources: Gazetteer of Bombay City and Island (1909, archive.org), wikipedia.org (History of Mumbai, forts, temples, ships),
+# Fergusson's Cave Temples of India, Karaka's History of the Parsis, news and heritage pages.
+# Old Style dates -> CE year of the event. A building -> its completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1668, peg: chef, confidence: high, source: "Bombay City Gazetteer (1909) II; WP: History of Mumbai",
+     event: "Company commissioners take over Bombay from Captain Gary, the king's governor",
+     place: "Bombay Castle",
+     scene: "A CHEF in Company colours takes the castle keys from Captain Gary and runs the Company flag up over Bombay Castle."}
+  - {year: 1670, peg: goose, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Gerald Aungier arrives from Surat to govern Bombay",
+     place: "Bombay Castle",
+     scene: "Gerald Aungier steps off a GOOSE that paddled him from Surat and opens the gate of Bombay Castle as its new governor."}
+  - {year: 1672, peg: coin, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Aungier sets up a court of judicature with George Wilcox as judge",
+     place: "old Custom House",
+     scene: "A gold COIN spins on the bench, and George Wilcox, Bombay's first judge, slaps it down to open the new court."}
+  - {year: 1672, peg: coin, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Sidi Yakut's Mughal fleet enters Bombay harbour and plunders the islanders",
+     place: "Bombay harbour",
+     scene: "Sidi Yakut's sailors load stolen COIN chests from Bombay fishermen into their boats off Butcher Island."}
+  - {year: 1673, peg: comb, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Dutch fleet under Rijcklof van Goens tries to take Bombay and turns back",
+     place: "Bombay Castle",
+     scene: "Aungier's gunners fire a giant COMB from the castle wall, and it rakes van Goens's Dutch ships back out to sea."}
+  - {year: 1674, peg: car, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "English garrison mutinies over pay and food",
+     place: "Bombay Castle",
+     scene: "Unpaid English soldiers mutiny, push a CAR full of rations to the castle gate, and refuse to march for Aungier."}
+  - {year: 1675, peg: eagle, confidence: medium, source: "WP: Worli Fort",
+     event: "English build Worli Fort on the north-west coast of the island (approximate)",
+     place: "Worli",
+     scene: "An EAGLE lays the stones of a small watch fort on Worli rock to spot raiders coming over the Mahim bay."}
+  - {year: 1677, peg: cake, confidence: medium, source: "WP: Sion Hillock Fort",
+     event: "Company finishes the fort on Sion hillock, built over eight years",
+     place: "Sion",
+     scene: "Masons set the last stone on Sion hillock as a CAKE on top of the new fort, facing the Salsette creek."}
+  - {year: 1680, peg: vase, confidence: medium, source: "WP: Sewri Fort",
+     event: "Sewri Fort is complete as a watch post over the harbour",
+     place: "Sewri",
+     scene: "A huge VASE of cannon balls is placed on the Sewri fort wall to watch the eastern harbour."}
+  - {year: 1682, peg: oven, confidence: medium, source: "WP: Battle of Kalyan",
+     event: "Mughal general Bahadur Khan takes Kalyan from the Marathas",
+     place: "Kalyan",
+     scene: "Bahadur Khan's Mughal soldiers roast Maratha banners in an OVEN at the Kalyan gate after they take the town."}
+  - {year: 1683, peg: foam, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Captain Richard Keigwin seizes Bombay and rules in the king's name",
+     place: "Bombay Castle",
+     scene: "Keigwin in a FOAM-covered uniform jumps on the deputy governor and takes Bombay Castle for the king."}
+  - {year: 1684, peg: fairy, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Keigwin gives Bombay up to Admiral Grantham for a pardon",
+     place: "Bombay Castle",
+     scene: "A FAIRY waves a royal pardon over Keigwin, and he hands the castle keys to Admiral Thomas Grantham."}
+  - {year: 1689, peg: fob, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Sidi Yakut Khan lands at Sewri and takes all the island except the castle",
+     place: "Sewri",
+     scene: "Sidi Yakut Khan swings a heavy watch FOB like a weapon as his army storms ashore at Sewri."}
+  - {year: 1690, peg: bees, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Sidi Yakut Khan razes Mazagaon fort and leaves Bombay after peace",
+     place: "Mazagaon",
+     scene: "A swarm of BEES chases Sidi Yakut Khan's men off the ruins of Mazagaon fort and back to their ships."}
+  - {year: 1710, peg: dice, confidence: medium, source: "WP: History of Mumbai",
+     event: "Builders complete the works of Bombay Castle",
+     place: "Bombay Castle",
+     scene: "A pair of DICE rolls along the new castle ramparts as the builders finish the last bastion."}
+  - {year: 1716, peg: dish, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Governor Boone's town wall from Dongri to Mendham's Point is finished",
+     place: "Dongri to Mendham's Point",
+     scene: "Charles Boone serves the last brick on a DISH, and the wall from Dongri to Mendham's Point closes round the town."}
+  - {year: 1720, peg: nose, confidence: medium, source: "LawyersClubIndia: Trial of Rama Komathi; Gazetteer II",
+     event: "Boone's court finds the merchant Rama Kamati guilty on forged letters",
+     place: "Bombay Castle",
+     scene: "Boone pushes a forged letter up Rama Kamati's NOSE in court and the judges find the merchant guilty."}
+  - {year: 1722, peg: nun, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Portuguese fire on Mahim fort, and English shells hit the Bandra college",
+     place: "Mahim fort",
+     scene: "A NUN in Bandra's Jesuit college runs as English shells from Mahim fort answer the Portuguese guns."}
+  - {year: 1728, peg: knife, confidence: high, source: "Bombay City Gazetteer (1909) II; tifr Bombay history",
+     event: "Mayor's Court is set up in Bombay",
+     place: "Bombay Green",
+     scene: "The new Mayor of Bombay cuts the ribbon of his court with a big KNIFE."}
+  - {year: 1737, peg: mug, confidence: high, source: "Gazetteer II; WP: Chimaji Appa",
+     event: "Chimaji Appa's Marathas take Thane fort and Salsette from the Portuguese",
+     place: "Thane fort",
+     scene: "Chimaji Appa raises a MUG of victory on the Thane fort wall as the Portuguese flag comes down."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP: Arnala Fort",
+     event: "Marathas surprise the Portuguese at Arnala and build a new island fort",
+     place: "Arnala island",
+     scene: "Shankaraji Keshav's men cross to Arnala island in a giant MUG and start a new stone fort there."}
+  - {year: 1737, peg: mug, confidence: medium, source: "WP: Belapur Fort",
+     event: "Chimaji Appa takes Belapur fort from the Portuguese",
+     place: "Belapur",
+     scene: "Maratha soldiers smash a Portuguese MUG on the Belapur fort steps and run up the bhagwa flag."}
+  - {year: 1737, peg: mug, confidence: medium, source: "WP: Ghodbunder Fort",
+     event: "Marathas besiege Ghodbunder fort and seize it from the Portuguese",
+     place: "Ghodbunder",
+     scene: "Maratha gunners fire a stone MUG over the Ghodbunder fort wall above the Ulhas creek."}
+  - {year: 1737, peg: mug, confidence: medium, source: "WP: Riwa Fort",
+     event: "Riwa Fort is built at Dharavi over the Mahim creek",
+     place: "Dharavi",
+     scene: "Workers carry a MUG of mortar up the Dharavi hill to finish the small Riwa watch fort over the Mahim creek."}
+  - {year: 1739, peg: map, confidence: medium, source: "WP: Fort George, Mumbai",
+     event: "Dongri hill is cut down because attackers could fire from it onto the town",
+     place: "Dongri",
+     scene: "Engineers spread a MAP of Dongri hill on the ground and dig the hilltop away beside the town wall."}
+  - {year: 1743, peg: ram, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Ditch round the whole Fort is finished",
+     place: "Bombay Fort",
+     scene: "A RAM butts the last earth out, and the sea fills the new ditch that now runs all round the Bombay Fort walls."}
+  - {year: 1753, peg: llama, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Royal charter sets up a Court of Requests for small debts",
+     place: "Bombay Fort",
+     scene: "A LLAMA spits on a debtor in the new Court of Requests, where small debts get a quick hearing."}
+  - {year: 1757, peg: log, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Council member is made Town Scavenger to clean the streets",
+     place: "Bazaar Gate",
+     scene: "A council member drags a LOG broom down Bazaar Gate street as Bombay's first Town Scavenger."}
+  - {year: 1757, peg: log, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Old Fort house becomes the Governor's house",
+     place: "Bombay Fort",
+     scene: "The governor rolls a LOG into the fireplace of the old Fort house, his new Government House."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP: Fort George, Mumbai; Gazetteer II",
+     event: "Engineers blow up Dongri fort and build Fort George in its place",
+     place: "Dongri",
+     scene: "A SHIP's cannon blows up old Dongri fort, and Fort George, named for King George, rises on the site."}
+  - {year: 1771, peg: cat, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Bhandari militia becomes a regular police force",
+     place: "Bombay Fort",
+     scene: "A CAT in a police turban leads the Bhandari militia, now Bombay's first regular police, on night watch."}
+  - {year: 1774, peg: car, confidence: high, source: "WP: History of Mumbai; Gazetteer III",
+     event: "British storm Thane fort and take Salsette, Elephanta and Karanja; John Watson dies",
+     place: "Thane fort",
+     scene: "A British CAR rams the Thane fort gate, and Salsette, Elephanta and Karanja fall, but Watson dies."}
+  - {year: 1780, peg: vase, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Post of Deputy of Police is created, and James Todd gets it",
+     place: "Bazaar Gate",
+     scene: "James Todd, Deputy of Police, keeps his prisoners in a big VASE outside Bazaar Gate."}
+  - {year: 1780, peg: vase, confidence: medium, source: "esamskriti: Battle of Malanggad",
+     event: "British troops take Kalyan from the Marathas after a bombardment",
+     place: "Kalyan",
+     scene: "British gunners load a VASE into a mortar and fire it at the Kalyan walls until the town falls."}
+  - {year: 1780, peg: vase, confidence: high, source: "FIBIS: Siege of Bassein Fort 1780; Gazetteer II",
+     event: "Goddard's army takes Bassein fort after a month of siege",
+     place: "Bassein fort",
+     scene: "Goddard's troops smash the Bassein fort gate with a stone VASE and enter on the eleventh of December."}
+  - {year: 1780, peg: vase, confidence: low, source: "hajimalangdargah blog; sahyadristohindukush blog",
+     event: "British lift their siege of Malanggad fort near Kalyan",
+     place: "Malanggad",
+     scene: "A Maratha guard on Malanggad tips a VASE of rocks down the cliff, and the British end their siege."}
+  - {year: 1781, peg: foot, confidence: medium, source: "WP: Arnala Fort",
+     event: "British take Arnala fort on its island",
+     place: "Arnala island",
+     scene: "A British FOOT soldier wades through the sea to Arnala and plants a flag on the fort."}
+  - {year: 1794, peg: bear, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Deputy of Police becomes Superintendent of Police",
+     place: "Bombay Fort",
+     scene: "A BEAR in a police coat gets the new title Superintendent of Police at the Bombay courthouse."}
+  - {year: 1798, peg: beehive, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Recorder's Court replaces the Mayor's Court, and the first Justices of the Peace are named",
+     place: "Hornby House",
+     scene: "A BEEHIVE swarms the old Mayor's Court, and the new Recorder's Court and Justices of the Peace move in."}
+  - {year: 1804, peg: sewer, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Umarkhadi Common Gaol is completed",
+     place: "Umarkhadi",
+     scene: "Prisoners are flushed through a SEWER into the new Umarkhadi gaol, which Governor Duncan completes."}
+  - {year: 1807, peg: ski, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Act lets the Bench of Justices of Bombay levy rates for town works",
+     place: "Bombay Fort",
+     scene: "The Justices of Bombay collect the first town rates on SKI lifts up Malabar hill."}
+  - {year: 1812, peg: tongue, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Regulation sets up police magistrates and a Court of Petty Sessions",
+     place: "Bombay Fort",
+     scene: "A police magistrate holds a TONGUE of fire to light the first Court of Petty Sessions in Bombay."}
+  - {year: 1816, peg: dish, confidence: medium, source: "Bombay City Gazetteer (1909) II",
+     event: "Trimbakji Dengle, the Peshwa's minister, escapes from prison in Thane fort",
+     place: "Thane fort",
+     scene: "Trimbakji Dengle climbs out of Thane fort and down the river wall on a long DISH towel."}
+  - {year: 1817, peg: dog, confidence: medium, source: "WP: Belapur Fort",
+     event: "Captain Charles Gray takes Belapur fort for the Company",
+     place: "Belapur",
+     scene: "Captain Gray's DOG runs up the Belapur fort ramp and pulls down the Maratha flag."}
+  - {year: 1818, peg: dove, confidence: medium, source: "WP: Ghodbunder Fort",
+     event: "British occupy Ghodbunder fort and make it a district headquarters",
+     place: "Ghodbunder",
+     scene: "A DOVE carries the district collector's papers into Ghodbunder fort, the new British headquarters."}
+  - {year: 1823, peg: gnome, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Act replaces the Recorder's Court with a Supreme Court of Judicature at Bombay",
+     place: "Hornby House",
+     scene: "A GNOME in a judge's wig knocks the Recorder off the bench and opens the Supreme Court of Bombay."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP: Fort George, Mumbai; Gazetteer III",
+     event: "Governor's residence moves from the Fort to Parel",
+     place: "Parel",
+     scene: "The governor turns the KNOB of the Parel house door and leaves the old Fort house for good."}
+  - {year: 1832, peg: moon, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Parsis and Hindus riot against an order to kill stray dogs",
+     place: "Bombay bazaar",
+     scene: "A pariah dog bites the MOON-shaped badge of a dog-killer constable, and Parsi and Hindu mobs close every shop."}
+  - {year: 1845, peg: railway, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Act creates a Board of Conservancy for the town's sanitation",
+     place: "Bombay Fort",
+     scene: "The new Board of Conservancy sends a RAILWAY of dung carts through the Fort streets."}
+  - {year: 1850, peg: lasso, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Khoja factions riot at Mahim on the last day of Muharram",
+     place: "Mahim",
+     scene: "Two Khoja factions fight with a LASSO in the Mahim streets, and three men die."}
+  - {year: 1851, peg: wallet, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Muslims attack Parsis after a newspaper article on the Prophet",
+     place: "Jama Masjid",
+     scene: "An angry crowd at the Jama Masjid tears a Parsi editor's WALLET of newspapers and runs to attack Parsi shops."}
+  - {year: 1852, peg: lion, confidence: high, source: "gktoday; MCGM heritage note; WP: Jagannath Shankarseth",
+     event: "Jagannath Shankarseth founds the Bombay Association, the first political body of the presidency",
+     place: "Bombay",
+     scene: "Jagannath Shankarseth tames a LION at the first meeting of the Bombay Association."}
+  # science
+  - {year: 1727, peg: ink, confidence: medium, source: "Bombay City Gazetteer (1909) II",
+     event: "Captain Bates finishes a dam at Worli against the sea",
+     place: "Worli",
+     scene: "Captain Bates plugs the Worli breach with INK-black stones, and the sea stops flooding the flats."}
+  - {year: 1728, peg: knife, confidence: high, source: "WP: History of Mumbai; tifr Bombay history",
+     event: "First land reclamation starts at Mahalaxmi",
+     place: "Mahalaxmi",
+     scene: "A giant KNIFE cuts the sea back from the Mahalaxmi shore, and the first reclaimed land appears."}
+  - {year: 1771, peg: cat, confidence: medium, source: "lighthouse.nic.in: Prongs Reef Lighthouse",
+     event: "Watch tower on Old Woman's Island becomes a lighthouse",
+     place: "Old Woman's Island, Colaba",
+     scene: "A CAT climbs the old watch tower on Old Woman's Island and lights the first lamp of Bombay's lighthouse."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP: Hornby Vellard; Gazetteer II",
+     event: "Hornby Vellard is completed and closes the Great Breach",
+     place: "Breach Candy",
+     scene: "A FAIRY seals the Great Breach with Hornby's stone wall, and the flats behind Worli dry out."}
+  - {year: 1789, peg: fob, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Medical and Literary Society is founded with a library",
+     place: "Bombay Fort",
+     scene: "Army doctors stack medical books on a FOB chain and open the library of their new society."}
+  - {year: 1803, peg: sumo, confidence: disputed, source: "Gazetteer II, tifr: 1803; WP Sion Causeway: January 1805",
+     event: "Sion Causeway links Bombay island to Salsette",
+     place: "Sion",
+     scene: "A SUMO wrestler lies across the Sion creek, and carts roll over his back from Bombay to Kurla."}
+  - {year: 1804, peg: sewer, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "James Mackintosh founds the Literary Society of Bombay",
+     place: "Parel",
+     scene: "Mackintosh reads papers on Indian learning to a SEWER rat at the first meeting of the Literary Society."}
+  - {year: 1826, peg: nacho, confidence: medium, source: "WP: Sion Causeway",
+     event: "Sion Causeway is made twice as wide",
+     place: "Sion",
+     scene: "A giant NACHO is laid beside the Sion Causeway and doubles the width of the road to Salsette."}
+  - {year: 1829, peg: knob, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Literary Society becomes the Bombay Branch of the Royal Asiatic Society",
+     place: "Bombay Fort",
+     scene: "A brass door KNOB with the Royal Asiatic crest is screwed onto the Literary Society's door."}
+  - {year: 1830, peg: mouse, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Agri-Horticultural Society of Western India is founded",
+     place: "Sewri",
+     scene: "A MOUSE plants the first seeds in the garden of the new Agri-Horticultural Society."}
+  - {year: 1831, peg: moth, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Geographical Society is founded",
+     place: "Colaba Observatory",
+     scene: "A MOTH flies over a globe at the first meeting of the Bombay Geographical Society."}
+  - {year: 1834, peg: hammer, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Native Dispensary opens to treat Indian patients",
+     place: "Bombay",
+     scene: "A doctor uses a HAMMER to tap the knees of the first patients at the Native Dispensary."}
+  - {year: 1835, peg: mill, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Medical and Physical Society of Bombay is founded",
+     place: "Bombay Fort",
+     scene: "Bombay doctors turn a MILL wheel to grind drugs at the first meeting of the Medical and Physical Society."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: Hornby Vellard; Gazetteer II",
+     event: "Colaba Causeway joins Colaba to Bombay island",
+     place: "Colaba",
+     scene: "A MOVIE camera rolls along the new Colaba Causeway, the last road that joins Colaba to Bombay."}
+  - {year: 1839, peg: map, confidence: high, source: "Fergusson, Cave Temples of India (Heidelberg)",
+     event: "James Bird opens the stupas at Kanheri and finds an inscribed copper plate",
+     place: "Kanheri caves",
+     scene: "James Bird unrolls a MAP of the Kanheri caves, digs into a stupa, and finds a copper plate inside."}
+  - {year: 1841, peg: radio, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Branch of the Royal Asiatic Society publishes its first journal",
+     place: "Town Hall",
+     scene: "A RADIO announcer reads aloud the first journal of the Bombay Asiatic Society in the Town Hall."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "WP: Prong's Lighthouse",
+     event: "Colaba Point Lighthouse is built",
+     place: "Colaba Point",
+     scene: "A WARRIOR holds up a burning torch at Colaba Point as the new lighthouse is lit."}
+  - {year: 1845, peg: railway, confidence: medium, source: "Gazetteer II: opened; WP timeline: completed next year",
+     event: "Mahim Causeway, paid for by Lady Avabai Jamsetjee, opens from Mahim to Bandra",
+     place: "Mahim",
+     scene: "Lady Avabai Jamsetjee lays a RAILWAY of stones across the Mahim creek so travellers can reach Bandra safely."}
+  - {year: 1845, peg: railway, confidence: high, source: "Free Press Journal: JJ Hospital museum; ThePrint",
+     event: "Sir Jamsetjee Jejeebhoy Hospital opens at Byculla",
+     place: "Byculla",
+     scene: "Sir Jamsetjee drives a RAILWAY carriage of patients up to the doors of his new hospital at Byculla."}
+  - {year: 1850, peg: lasso, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Willoughby turns the first sod of the Great Indian Peninsula Railway",
+     place: "Sion",
+     scene: "Willoughby throws a LASSO round the first sod of the railway and pulls it from the Bombay ground."}
+  - {year: 1856, peg: leech, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "A natural history society starts in Bombay and soon fails",
+     place: "Bombay",
+     scene: "A LEECH crawls over the specimens of a new natural history society that closes within months."}
+  - {year: 1856, peg: leech, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Governor-General Dalhousie lays the first stone of the Vihar water works",
+     place: "Vihar",
+     scene: "Lord Dalhousie lowers a LEECH-shaped stone into the Vihar valley to start Bombay's first piped-water dam."}
+  # religion
+  - {year: 1672, peg: coin, confidence: medium, source: "WP: Timeline of Mumbai; Gazetteer III (between two dates)",
+     event: "Modi Hirji Vachha builds the first Parsi Tower of Silence on Malabar Hill",
+     place: "Malabar Hill",
+     scene: "Modi Hirji Vachha stamps a COIN on the first stone of the Parsi Tower of Silence on Malabar Hill."}
+  - {year: 1674, peg: car, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Shrine of Makhdoom Ali Mahimi at Mahim is repaired and enlarged",
+     place: "Mahim",
+     scene: "Pilgrims at Mahim push a CAR of new stones to enlarge Makhdoom Ali Mahimi's shrine."}
+  - {year: 1709, peg: soap, confidence: high, source: "Gazetteer III; WP: Timeline of Mumbai",
+     event: "Banaji Limji builds the Fort Agiary, the first Parsi fire temple in Bombay",
+     place: "Fort",
+     scene: "Banaji Limji lights the holy fire with a SOAP-shaped sandalwood block in Bombay's first agiary."}
+  - {year: 1715, peg: doll, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Stephen Strutt lays the foundation stone of the church on Bombay Green",
+     place: "Bombay Green",
+     scene: "Deputy governor Strutt lays the church's first stone with a DOLL on top for Reverend Cobbe."}
+  - {year: 1715, peg: doll, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Rama Kamat builds the present Walkeshwar temple on Malabar Point",
+     place: "Walkeshwar, Banganga",
+     scene: "Rama Kamat carries a DOLL of Shiva up to Malabar Point and builds the Walkeshwar temple round it."}
+  - {year: 1720, peg: nose, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Boone orders all Portuguese priests to leave Bombay",
+     place: "Bombay",
+     scene: "Boone blows a NOSE-flute and the Portuguese priests file out of Bombay's churches onto boats."}
+  - {year: 1721, peg: ant, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Chapel of Mount Carmel is built",
+     place: "Bombay",
+     scene: "An ANT colony carries tiny bricks to build the Carmelite chapel of Mount Carmel."}
+  - {year: 1733, peg: mummy, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Maneckji Nowroji Sett builds a Parsi fire temple in the Fort",
+     place: "Fort",
+     scene: "Maneckji Sett wraps a MUMMY of sandalwood and burns it in his new agiary in the Fort."}
+  - {year: 1737, peg: mug, confidence: disputed, source: "Gazetteer III temples: c. 1737, done 1753; Gazetteer II: 1760",
+     event: "Mumbadevi temple moves from the Fort area to Bhuleshwar, built by Pandu Sonar",
+     place: "Bhuleshwar",
+     scene: "Pandu Sonar carries the goddess Mumbadevi in a MUG from the old Fort plain to a new temple at Bhuleshwar."}
+  - {year: 1738, peg: movie, confidence: medium, source: "WP: Mount Mary Church, Bandra",
+     event: "Maratha raiders destroy the church of Mount Mary at Bandra",
+     place: "Bandra",
+     scene: "Maratha raiders throw a MOVIE projector through the window and burn the church of Mount Mary at Bandra."}
+  - {year: 1748, peg: reef, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Mahim shrine of Makhdoom Ali Mahimi gets its verandahs",
+     place: "Mahim",
+     scene: "A coral REEF grows round Makhdoom Ali Mahimi's tomb and forms the new verandahs."}
+  - {year: 1750, peg: lasso, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Maneckji Sett's Tower of Silence is built on Malabar Hill (approximate)",
+     place: "Malabar Hill",
+     scene: "Maneckji Sett's heirs throw a LASSO round the stones of a second Tower of Silence on Malabar Hill."}
+  - {year: 1760, peg: cheese, confidence: medium, source: "WP: Mount Mary Church, Bandra",
+     event: "Mount Mary church at Bandra is rebuilt with a new statue",
+     place: "Bandra",
+     scene: "Bandra fishermen rebuild Mount Mary church and carry in the Virgin's new statue on a wheel of CHEESE."}
+  - {year: 1780, peg: vase, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "First Babulnath shrine to Shiva is built on Malabar Hill (approximate)",
+     place: "Malabar Hill",
+     scene: "Babul the cowherd sets a black lingam in a VASE under a tree on Malabar Hill, the first Babulnath shrine."}
+  - {year: 1785, peg: waffle, confidence: medium, source: "tifr Mahalakshmi page; MCGM heritage note",
+     event: "Ramji Shivji builds the Mahalakshmi temple after the Vellard closes the breach",
+     place: "Mahalaxmi",
+     scene: "Ramji Shivji fishes the goddess out of the sea with a WAFFLE net and builds her temple at Mahalaxmi."}
+  - {year: 1786, peg: fish, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Muncherji Readymoney builds a private Tower of Silence",
+     place: "Malabar Hill",
+     scene: "Muncherji Readymoney stacks his gold like FISH scales to pay for his family's own Tower of Silence."}
+  - {year: 1794, peg: bear, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Church of Our Lady of Health is built at Cavel",
+     place: "Cavel",
+     scene: "A BEAR helps the Catholics of Cavel lift the roof onto the new church of Our Lady of Health."}
+  - {year: 1798, peg: beehive, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Dadysett family's Tower of Silence is consecrated with Governor Duncan's leave",
+     place: "Malabar Hill",
+     scene: "Dady Nasarwanji Dadysett holds a BEEHIVE of incense at the consecration of his family's Tower of Silence."}
+  - {year: 1801, peg: soda, confidence: high, source: "WP: Siddhivinayak Temple, Mumbai",
+     event: "Laxman Vithu and Deubai Patil build the Siddhivinayak temple at Prabhadevi",
+     place: "Prabhadevi",
+     scene: "Deubai Patil pours SODA over the small Ganesh idol of her new Siddhivinayak temple at Prabhadevi."}
+  - {year: 1802, peg: sun, confidence: high, source: "Gazetteer III; WP: Jama Masjid, Mumbai",
+     event: "Jama Masjid over a tank in the market is completed",
+     place: "Jama Masjid",
+     scene: "The SUN rises over the finished Jama Masjid, built on pillars above a tank in the market."}
+  - {year: 1810, peg: dice, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Gloria Church at Mazagaon is rebuilt",
+     place: "Mazagaon",
+     scene: "Mazagaon Catholics throw DICE to pick the builders who rebuild the old Gloria Church."}
+  - {year: 1819, peg: tuba, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "St Andrew's Church of Scotland opens near the ramparts",
+     place: "Fort",
+     scene: "A TUBA booms the first psalm as Scottish worshippers open St Andrew's Kirk beside the Fort ramparts."}
+  - {year: 1826, peg: nacho, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Lightning destroys the spire of St Andrew's Church",
+     place: "Fort",
+     scene: "A bolt of lightning hits a giant NACHO on top of St Andrew's spire and the spire falls."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Present Bhuleshwar temple is built by subscription (approximate)",
+     place: "Bhuleshwar",
+     scene: "Merchants of Bhuleshwar pay for a new black-stone temple with coins carried by a MOUSE."}
+  - {year: 1831, peg: moth, confidence: medium, source: "WP: Mahalakshmi Temple, Mumbai",
+     event: "Merchant Dhakji Dadaji builds the present Mahalakshmi temple",
+     place: "Mahalaxmi",
+     scene: "Dhakji Dadaji lights a MOTH-shaped lamp in the new Mahalakshmi temple on the sea hill."}
+  - {year: 1832, peg: moon, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Framji Cowasji Banaji's Tower of Silence is consecrated",
+     place: "Malabar Hill",
+     scene: "Framji Cowasji Banaji blesses his new Tower of Silence under a full MOON on Malabar Hill."}
+  - {year: 1838, peg: movie, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bishop Thomas Carr is installed, and St Thomas's becomes a cathedral",
+     place: "St Thomas Cathedral",
+     scene: "A MOVIE crew films Bishop Carr's enthronement as St Thomas's church becomes Bombay's cathedral."}
+  - {year: 1840, peg: horse, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Gujarati merchants complete the new Babulnath temple (approximate)",
+     place: "Malabar Hill",
+     scene: "Gujarati Bania merchants ride a white HORSE up Malabar Hill to open the larger Babulnath temple."}
+  - {year: 1843, peg: ram, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bene Israel open a second synagogue in Dontad street",
+     place: "Dontad street",
+     scene: "A RAM's horn sounds as the Bene Israel open their new synagogue in Dontad street."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "A fifth Tower of Silence, paid for by public subscription, is consecrated",
+     place: "Malabar Hill",
+     scene: "A Parsi WARRIOR guards the gate as priests consecrate the fifth Tower of Silence."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Afghan Church; Live History India",
+     event: "Governor George Clerk lays the foundation stone of the Afghan Church at Colaba",
+     place: "Colaba",
+     scene: "Governor Clerk sets the first stone of the Afghan Church on a ROCK at Colaba in memory of the Kabul dead."}
+  # arts
+  - {year: 1770, peg: goose, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Theatre is built by subscription on Bombay Green",
+     place: "Bombay Green",
+     scene: "A GOOSE in a ruff acts the first play on the stage of the new Bombay Theatre."}
+  - {year: 1789, peg: fob, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Herald, the city's first newspaper, appears",
+     place: "Bazaar Gate",
+     scene: "A newsboy waves the Bombay Herald, hung from a FOB chain, at the Bazaar Gate."}
+  - {year: 1790, peg: bees, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Courier starts publication",
+     place: "Fort",
+     scene: "The first Bombay Courier is printed on BEES' wax paper and buzzes out to every house in the Fort."}
+  - {year: 1791, peg: boot, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Gazette appears for the first time",
+     place: "Fort",
+     scene: "A BOOT kicks open the office door and the first Bombay Gazette flies out."}
+  - {year: 1812, peg: tongue, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Fardunji Marzban opens the Bombay Samachar printing press",
+     place: "Fort",
+     scene: "Fardunji Marzban licks a giant TONGUE of ink across the type of his new Gujarati press."}
+  - {year: 1814, peg: tower, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Marzban's press prints the first Gujarati calendar",
+     place: "Fort",
+     scene: "The first printed Gujarati calendar is nailed to a TOWER in the Fort bazaar."}
+  - {year: 1814, peg: tower, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay merchants put up Bacon's statue of Marquess Wellesley",
+     place: "Bombay Green",
+     scene: "Bombay merchants hoist Bacon's marble Wellesley onto a TOWER of crates on the Green."}
+  - {year: 1814, peg: tower, confidence: high, source: "Gazetteer III; Google Arts and Culture",
+     event: "Head and neck of the stone elephant of Elephanta fall off",
+     place: "Elephanta",
+     scene: "The stone elephant of Elephanta drops its head and neck on a TOWER of rubble."}
+  - {year: 1816, peg: dish, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Literary Society opens a museum beside its library",
+     place: "Fort",
+     scene: "Curators set the first exhibits on a giant DISH in the Literary Society's new museum."}
+  - {year: 1819, peg: tuba, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Renovated Bombay Theatre reopens, only for plays",
+     place: "Bombay Green",
+     scene: "A TUBA bellows the first note as the repaired Bombay Theatre on the Green reopens for plays only."}
+  - {year: 1822, peg: nun, confidence: high, source: "Gazetteer III; WP: Timeline of Mumbai",
+     event: "First issue of the Gujarati paper Bombay Samachar",
+     place: "Fort",
+     scene: "A NUN reads aloud the first Bombay Samachar to Parsi merchants in the Fort."}
+  - {year: 1831, peg: moth, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Gujarati paper Jam-e-Jamshed starts",
+     place: "Fort",
+     scene: "A MOTH flies out of the first copy of the Jam-e-Jamshed, a Parsi trade paper."}
+  - {year: 1832, peg: moon, confidence: high, source: "Free Press Journal; WP: Balshastri Jambhekar",
+     event: "Balshastri Jambhekar starts the Bombay Durpan, the first Marathi newspaper",
+     place: "Bombay",
+     scene: "Balshastri Jambhekar holds the Durpan mirror up to the MOON and prints the first Marathi newspaper."}
+  - {year: 1833, peg: mummy, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Chantrey's statue of Mountstuart Elphinstone is set up in the Town Hall",
+     place: "Town Hall",
+     scene: "A MUMMY unwraps itself to show Chantrey's marble Elphinstone in the Town Hall."}
+  - {year: 1838, peg: movie, confidence: high, source: "Gazetteer III; WP: Timeline of Mumbai",
+     event: "Bombay Times and Journal of Commerce, later the Times of India, first appears",
+     place: "Fort",
+     scene: "A MOVIE poster announces the first Bombay Times, later the Times of India, on every Fort wall."}
+  - {year: 1846, peg: roach, confidence: unverified,
+     event: "Grant Road Theatre, on land from Jagannath Shankarseth, opens",
+     place: "Grant Road",
+     scene: "A ROACH runs across the stage on opening night of the Grant Road Theatre."}
+  - {year: 1851, peg: wallet, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Dadabhai Naoroji and friends start the Rast Goftar",
+     place: "Fort",
+     scene: "Dadabhai Naoroji pays for the first Rast Goftar out of his own WALLET."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "Alkazi Foundation: photographic society journals",
+     event: "Photographic Society of Bombay, the first in India, is founded",
+     place: "Geographical Society rooms",
+     scene: "A LAWYER poses stiffly for a glass-plate photograph at the first Photographic Society meeting."}
+  # economy
+  - {year: 1710, peg: dice, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Governor Aislabie builds new warehouses at the Company's bandar",
+     place: "Company's bandar",
+     scene: "Aislabie stacks bales in his new warehouses at the bandar and rolls DICE for the first cargo."}
+  - {year: 1762, peg: chain, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Second dry dock is completed beside the first",
+     place: "Bombay Dockyard",
+     scene: "A CHAIN pulls the gates shut on the second dry dock at the Bombay Dockyard."}
+  - {year: 1765, peg: jelly, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Third dock at the Bombay Dockyard is completed",
+     place: "Bombay Dockyard",
+     scene: "A JELLY of wet lime fills the last joint of the third dock in the Bombay Dockyard."}
+  - {year: 1776, peg: cage, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "A regular ferry boat starts between Bombay and Thane",
+     place: "Thane creek",
+     scene: "Passengers ride a floating CAGE that ferries them every day from Bombay to Thane."}
+  - {year: 1794, peg: bear, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "A mutton market is built",
+     place: "Bombay",
+     scene: "A BEAR sells mutton at the first stall of Bombay's new mutton market."}
+  - {year: 1802, peg: sun, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Front row of warehouses at the bandar becomes the Custom House",
+     place: "Bombay Dockyard",
+     scene: "Customs men turn the front warehouses into the Custom House and stamp each bale with a SUN."}
+  - {year: 1807, peg: ski, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Captain Cowper completes the Duncan Dock",
+     place: "Bombay Dockyard",
+     scene: "Captain Cowper skids down the dock walls on a SKI to open the new Duncan Dock."}
+  - {year: 1809, peg: soap, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Duncan's Green Market is rebuilt after the fire",
+     place: "Fort",
+     scene: "Vegetable sellers lay out greens on a SOAP-smooth floor in Duncan's rebuilt market."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP: HMS Minden",
+     event: "Duncan Dock floats out HMS Minden, built of teak by the Wadias",
+     place: "Bombay Dockyard",
+     scene: "A pair of DICE rolls along the deck as HMS Minden floats out of the Duncan Dock."}
+  - {year: 1813, peg: tomb, confidence: high, source: "WP: HMS Cornwallis",
+     event: "Jamsetjee Bomanjee Wadia launches HMS Cornwallis at the Bombay Dockyard",
+     place: "Bombay Dockyard",
+     scene: "Jamsetjee Bomanjee Wadia launches HMS Cornwallis down a slipway shaped like a TOMB."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP: History of Mumbai; Gazetteer III",
+     event: "Wellington Pier at Apollo Bandar opens for passengers",
+     place: "Apollo Bandar",
+     scene: "Passengers walk off their ships down a giant TUBA laid as a gangway onto the new Wellington Pier at Apollo Bandar."}
+  - {year: 1829, peg: knob, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Major John Hawkins completes the new Mint",
+     place: "Mint",
+     scene: "Major Hawkins taps the last column of the new Mint with a KNOB of silver."}
+  - {year: 1832, peg: moon, confidence: medium, source: "WP: David Sassoon (treasurer)",
+     event: "David Sassoon settles in Bombay from Baghdad and opens his trading firm",
+     place: "Bombay",
+     scene: "David Sassoon lands at Bombay from Baghdad under a MOON and opens a trading house."}
+  - {year: 1834, peg: hammer, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "First cargo of ice from America reaches Bombay",
+     place: "Apollo Bandar",
+     scene: "A block of American ice is lifted from a ship with a HAMMER at the Bombay docks."}
+  - {year: 1837, peg: mug, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Hope Hall Family Hotel opens at Mazagaon, Bombay's first proper hotel",
+     place: "Mazagaon",
+     scene: "Guests raise a MUG of tea in the hall of the new Hope Hall Family Hotel at Mazagaon."}
+  - {year: 1843, peg: ram, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Ice House is built by subscription near the Dockyard",
+     place: "Bombay Dockyard",
+     scene: "A RAM butts open the cold doors of the new Ice House near the Dockyard."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "Bombay City Gazetteer (1909) III",
+     event: "Cotton Green at Colaba is set apart for the cotton trade (approximate)",
+     place: "Colaba",
+     scene: "A WARRIOR stacks cotton bales on the new Cotton Green at Colaba."}
+  - {year: 1845, peg: railway, confidence: medium, source: "WP: History of Mumbai",
+     event: "Commercial Bank of India is founded in Bombay",
+     place: "Fort",
+     scene: "A RAILWAY clerk opens the first account at the Commercial Bank of India."}
+  - {year: 1845, peg: railway, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Aga Mahomed Rahim Shirazi builds a private dock at Mazagaon",
+     place: "Mazagaon",
+     scene: "Aga Mahomed Rahim Shirazi floats a RAILWAY wagon into his new private dock at Mazagaon."}
+  - {year: 1856, peg: leech, confidence: medium, source: "WP: Bombay Spinning and Weaving Company",
+     event: "C. N. Davar opens his second mill, the Bombay Throstle Mill",
+     place: "Tardeo",
+     scene: "C. N. Davar puts a LEECH on each spindle of his new Bombay Throstle Mill."}
+  # society
+  - {year: 1715, peg: doll, confidence: high, source: "Bombay City Gazetteer (1909) I",
+     event: "Population of Bombay has fallen to about sixteen thousand",
+     place: "Bombay",
+     scene: "A DOLL-maker on the empty Bombay streets counts only sixteen thousand people left under Boone."}
+  - {year: 1744, peg: warrior, confidence: high, source: "Bombay City Gazetteer (1909) I",
+     event: "Population of Bombay grows to about seventy thousand",
+     place: "Bombay",
+     scene: "A WARRIOR counts seventy thousand people as they pass the Bombay gates."}
+  - {year: 1746, peg: roach, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Government gives out new building land outside the Fort walls",
+     place: "Esplanade",
+     scene: "A ROACH runs out of the crowded Fort to the new building plots on the Esplanade."}
+  - {year: 1748, peg: reef, confidence: high, source: "Gazetteer II; WP: History of Mumbai",
+     event: "New building rules lead to demolitions and moves to reclaimed land",
+     place: "Fort",
+     scene: "A coral REEF pushes over houses in the Fort and new building rules move the people onto reclaimed land."}
+  - {year: 1760, peg: cheese, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Government demolishes the burial ground at Mendham's Point for the defences",
+     place: "Mendham's Point",
+     scene: "A wheel of CHEESE rolls over the old graves at Mendham's Point as the engineers clear them."}
+  - {year: 1763, peg: gem, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "New Sonapur cemetery opens",
+     place: "Sonapur",
+     scene: "A GEM marks the first grave in the new Sonapur cemetery on the Back Bay road."}
+  - {year: 1768, peg: chef, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Old Mazagaon estate is divided into building plots",
+     place: "Mazagaon",
+     scene: "A CHEF slices the old Mazagaon estate into building plots and serves them to new house builders."}
+  - {year: 1770, peg: goose, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Koli houses on top of Dongri hill are removed",
+     place: "Dongri",
+     scene: "A GOOSE drives the Koli fishermen out of their huts on top of Dongri hill."}
+  - {year: 1772, peg: coin, confidence: high, source: "Gazetteer II; tifr Bombay history",
+     event: "Order keeps Indians from building in the European part of the Fort",
+     place: "Fort",
+     scene: "A COIN-sorting machine splits the Fort and keeps Indian houses out of the English streets."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Esplanade is extended and cleared of all buildings",
+     place: "Esplanade",
+     scene: "A COWBOY ropes every hut on the Esplanade and drags them away to open the ground."}
+  - {year: 1780, peg: vase, confidence: high, source: "Bombay City Gazetteer (1909) I",
+     event: "Count puts the population of Bombay above one hundred thousand",
+     place: "Bombay",
+     scene: "A clerk counts more than a hundred thousand people as they drop into a VASE."}
+  - {year: 1795, peg: bell, confidence: medium, source: "WP: History of Mumbai",
+     event: "Kamathi labourers from the Deccan settle in Kamathipura",
+     place: "Kamathipura",
+     scene: "Kamathi labourers ring a BELL as they build their huts in Kamathipura."}
+  - {year: 1797, peg: pig, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "First recorded horse races in Bombay",
+     place: "Byculla",
+     scene: "A PIG wins the first horse race in Bombay as the crowd cheers."}
+  - {year: 1803, peg: sumo, confidence: high, source: "Gazetteer II; WP: History of Mumbai",
+     event: "Great fire destroys most of the bazaar inside the Fort",
+     place: "Fort",
+     scene: "A SUMO wrestler beats out flames as the great fire burns the Fort bazaar."}
+  - {year: 1806, peg: sushi, confidence: medium, source: "Bombay City Gazetteer (1909) I",
+     event: "Population reaches about two hundred thousand after the famine",
+     place: "Bombay",
+     scene: "Famine refugees pour onto Bombay island on SUSHI boats until Mackintosh counts two hundred thousand people."}
+  - {year: 1815, peg: doll, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Archdeacon Barnes founds the Bombay Education Society, the first in India",
+     place: "Byculla",
+     scene: "Archdeacon Barnes teaches poor children to read from a DOLL's house school."}
+  - {year: 1822, peg: nun, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Bombay Native School Book and School Society is formed",
+     place: "Bombay",
+     scene: "A NUN prints schoolbooks in Marathi and Gujarati for the new Native School Book Society."}
+  - {year: 1823, peg: gnome, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Byculla Assembly Rooms open",
+     place: "Byculla",
+     scene: "A GNOME unlocks the doors of the Byculla Assembly Rooms and leads the first ball."}
+  - {year: 1824, peg: hanger, confidence: high, source: "Bombay City Gazetteer (1909) II",
+     event: "Drought causes a water famine, and wells are dug on the Esplanade",
+     place: "Esplanade",
+     scene: "A coat HANGER is used to dig new wells on the Esplanade in the dry year."}
+  - {year: 1827, peg: ink, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Citizens raise funds for Elphinstone professorships",
+     place: "Bombay",
+     scene: "Citizens dip a quill in INK and sign for professorships to honour Elphinstone."}
+  - {year: 1832, peg: moon, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "John Wilson opens an English school in the Fort, origin of Wilson College",
+     place: "Military Square",
+     scene: "John Wilson teaches English to boys under a MOON-shaped lamp in his new Fort school."}
+  - {year: 1833, peg: mummy, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Byculla Club is founded",
+     place: "Byculla",
+     scene: "A MUMMY signs the first page of the members' book and founds the Byculla Club."}
+  - {year: 1834, peg: hammer, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Jain merchants found the Panjrapol, a home for old and sick animals",
+     place: "Bhuleshwar",
+     scene: "A cow with a HAMMER bandage walks into the new Panjrapol for old and sick animals."}
+  - {year: 1835, peg: mill, confidence: medium, source: "WP: Elphinstone College",
+     event: "Elphinstone College is formally constituted",
+     place: "Town Hall",
+     scene: "Professors grind chalk in a MILL as Elphinstone College is set up."}
+  - {year: 1837, peg: mug, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Sailors' Home opens",
+     place: "Bombay",
+     scene: "Tired sailors raise a MUG of tea at the opening of the Sailors' Home."}
+  - {year: 1842, peg: rhino, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Royal Bombay Golf Club is founded",
+     place: "Bombay",
+     scene: "A RHINO swings the first golf club at the founding of the Bombay Golf Club."}
+  - {year: 1843, peg: ram, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Dr. George Buist opens an industrial school for young offenders at Sewri",
+     place: "Sewri",
+     scene: "Dr. Buist teaches young offenders to build a RAM-shaped cart at his Sewri school."}
+  - {year: 1844, peg: warrior, confidence: high, source: "Bombay City Gazetteer (1909) III",
+     event: "Lodge Rising Star, a masonic lodge for Parsis, is founded",
+     place: "Colaba",
+     scene: "A WARRIOR in a Parsi hat holds the square and compass at Lodge Rising Star."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Buddhi Vardhak Sabha",
+     event: "Elphinstone students found the Students' Literary and Scientific Society",
+     place: "Elphinstone Institution",
+     scene: "A coral REEF of books grows round the students as they found their Literary and Scientific Society."}
+  - {year: 1849, peg: rope, confidence: high, source: "Karaka, History of the Parsis (Heidelberg)",
+     event: "Students' Society opens the first girls' schools in Bombay",
+     place: "Bombay",
+     scene: "Parsi girls climb a ROPE into the classrooms of the first girls' schools in Bombay."}
+  - {year: 1849, peg: rope, confidence: unverified,
+     event: "Jamsetjee Jejeebhoy Parsi Benevolent Institution is founded",
+     place: "Fort",
+     scene: "Sir Jamsetjee throws a ROPE to poor Parsi children and pulls them into his new free school."}
+  - {year: 1849, peg: rope, confidence: medium, source: "Bombay City Gazetteer (1909) I",
+     event: "Survey counts about half a million people in Bombay",
+     place: "Bombay",
+     scene: "Surveyors tie half a million people into a single ROPE line across the island."}
+  - {year: 1850, peg: lasso, confidence: high, source: "Live History India; WP: Matheran",
+     event: "Thane collector Hugh Malet climbs Matheran hill and finds a hill station site",
+     place: "Matheran",
+     scene: "Hugh Malet throws a LASSO over the top of Matheran hill and climbs up to find a cool plateau."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP: Elphinstone College; Gazetteer III",
+     event: "Elphinstone College separates from the high school",
+     place: "Elphinstone Institution",
+     scene: "A LEECH lets go of the high school as Elphinstone College becomes a separate college."}
+world_refs:
+  - {year: 1668, event: "Charles II leases Bombay to the Company", cell: south_asia_economy_1500_1800}
+  - {year: 1672, event: "Bombay mint strikes its first coins", cell: south_asia_economy_1500_1800}
+  - {year: 1674, event: "Bhimji Parekh brings a printing press to Bombay", cell: south_asia_science_1500_1800}
+  - {year: 1675, event: "Bombay has about sixty thousand people", cell: south_asia_society_1500_1800}
+  - {year: 1686, event: "Company moves its main holdings from Surat to Bombay", cell: south_asia_economy_1500_1800}
+  - {year: 1692, event: "Plague kills most Europeans at Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1698, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1702, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1717, event: "Farrukhsiyar lets the English coin money at the Bombay mint", cell: south_asia_economy_1500_1800}
+  - {year: 1718, event: "St Thomas church opens in Bombay", cell: south_asia_religion_1500_1800}
+  - {year: 1719, event: "First charity school opens in Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1735, event: "Company founds the Bombay Dockyard", cell: south_asia_economy_1500_1800}
+  - {year: 1736, event: "Lovji Nusserwanjee Wadia comes from Surat to Bombay", cell: south_asia_economy_1500_1800}
+  - {year: 1739, event: "Marathas take Vasai and the Northern Province", cell: south_asia_politics_1500_1800}
+  - {year: 1740, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1742, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1750, event: "Bombay Dock, first dry dock in Asia", cell: south_asia_economy_1500_1800}
+  - {year: 1762, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1770, event: "Mazagaon docks are built", cell: south_asia_economy_1500_1800}
+  - {year: 1778, event: "Bombay Dockyard launches the Britannia", cell: south_asia_economy_1500_1800}
+  - {year: 1783, event: "Dadyseth Atash Behram is consecrated", cell: south_asia_religion_1500_1800}
+  - {year: 1796, event: "Gate of Mercy, first Bene Israel synagogue in Bombay", cell: south_asia_religion_1500_1800}
+  - {year: 1799, event: "Cyclone strikes Bombay", cell: south_asia_society_1500_1800}
+  - {year: 1802, event: "Anna Dusthall is vaccinated against smallpox in Bombay", cell: south_asia_science_1800_1945}
+  - {year: 1802, event: "Treaty of Bassein", cell: south_asia_politics_1800_1945}
+  - {year: 1803, event: "Famine strikes the Deccan and the Bombay region", cell: south_asia_society_1800_1945}
+  - {year: 1817, event: "HMS Trincomalee is launched at Bombay Dockyard", cell: south_asia_science_1800_1945}
+  - {year: 1818, event: "Cholera pandemic reaches Bombay", cell: south_asia_society_1800_1945}
+  - {year: 1826, event: "Colaba Observatory is set up", cell: south_asia_science_1800_1945}
+  - {year: 1830, event: "Hugh Lindsay steams from Bombay to Suez", cell: south_asia_science_1800_1945}
+  - {year: 1830, event: "Wadia Atash Behram is consecrated", cell: south_asia_religion_1800_1945}
+  - {year: 1833, event: "Ardaseer Cursetjee launches the Indus", cell: south_asia_science_1800_1945}
+  - {year: 1833, event: "Bombay Town Hall is completed", cell: south_asia_arts_1800_1945}
+  - {year: 1836, event: "Bombay Chamber of Commerce is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1840, event: "Bank of Bombay is incorporated", cell: south_asia_economy_1800_1945}
+  - {year: 1842, event: "Bank of Western India opens in Bombay", cell: south_asia_economy_1800_1945}
+  - {year: 1845, event: "Grant Medical College is founded", cell: south_asia_science_1800_1945}
+  - {year: 1848, event: "Aga Khan I settles in Bombay", cell: south_asia_religion_1800_1945}
+  - {year: 1848, event: "Parsis in Bombay start their own cricket club", cell: south_asia_society_1800_1945}
+  - {year: 1849, event: "Great Indian Peninsula Railway is incorporated", cell: south_asia_economy_1800_1945}
+  - {year: 1851, event: "Rahnumae Mazdayasnan Sabha is founded in Bombay", cell: south_asia_religion_1800_1945}
+  - {year: 1853, event: "First passenger train runs from Bori Bunder to Thane", cell: south_asia_science_1800_1945}
+  - {year: 1853, event: "Parsi Natak Mandali stages Rustam and Sohrab", cell: south_asia_arts_1800_1945}
+  - {year: 1854, event: "Davar founds the Bombay Spinning and Weaving Company", cell: south_asia_economy_1800_1945}
+  - {year: 1854, event: "GIP Railway opens its workshops at Byculla", cell: south_asia_science_1800_1945}
+  - {year: 1854, event: "Line reaches Kalyan over the Thane viaducts", cell: south_asia_science_1800_1945}
+  - {year: 1855, event: "BB&CI Railway Company is incorporated", cell: south_asia_economy_1800_1945}
+out_refs:
+  - {year: 1679, event: "English and Maratha ships fight off Khanderi island", reason: "outside the area (off Alibag)"}
+  - {year: 1690, event: "Governor Sir John Child dies in Bombay", reason: "presidency governor"}
+  - {year: 1715, event: "Charles Boone takes office as governor", reason: "presidency governor's arrival"}
+  - {year: 1756, event: "Gheria expedition sails from Bombay against Tulaji Angre", reason: "presidency war outside the area"}
+  - {year: 1773, event: "Regulating Act puts Bombay under the Governor-General in Bengal", reason: "Act for the whole presidency"}
+  - {year: 1775, event: "Treaty of Surat with Raghunath Rao", reason: "national treaty"}
+  - {year: 1782, event: "Treaty of Salbai gives Salsette to the Company and Bassein back to the Marathas", reason: "national treaty"}
+  - {year: 1801, event: "Arthur Wellesley stays in Bombay for the Egypt expedition", reason: "military visit"}
+  - {year: 1818, event: "Peshwa's lands, Kalyan included, pass to the Company", reason: "presidency annexation"}
+  - {year: 1827, event: "Sadr courts move from Surat to Bombay", reason: "presidency government"}
+  - {year: 1830, event: "Malcolm opens the Bhor Ghat road", reason: "outside the area"}
+  - {year: 1834, event: "Earl of Clare becomes governor under a new Act", reason: "presidency governor"}
+  - {year: 1837, event: "Queen Victoria is proclaimed in Bombay", reason: "national proclamation"}
+  - {year: 1840, event: "Board of Education for the presidency is set up", reason: "presidency government"}

@@ -1,0 +1,374 @@
+# City: Mumbai x prehistory to 1533 (Kandivali stone tools to the Portuguese raids on Bassein). DRAFT 2026-11-24.
+# Area: Mumbai Metropolitan Region as decided: the seven islands, Mahim, Worli, Parel, Salsette (Kanheri,
+# Jogeshwari, Mandapeshwar, Mahakali, Magathane, Eksar, Manori, Deonar), Elephanta (Gharapuri, Morbandar),
+# Thane, Kalyan, Ambernath, Bhiwandi (Bhadana, Lonad), Vasai, Sopara, Arnala, Uran (Ranvad), Panvel, Karnala.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (35 searches; no unauthorised book copies).
+# Main sources: Wikipedia (History of Mumbai, History of Mumbai under Islamic rule, Kanheri Caves, Elephanta
+# Caves, Nala Sopara, Shilahara kings, Bhima of Mahikavati, Vasai, Fort Vasai, Arnala Fort); Kielhorn (Indian
+# Antiquary 13) and Epigraphia Indica 3 and 12 on the Kanheri, Bhadana, Thana and Bhandup records (jainqq.org);
+# LiveHistoryIndia (Sopara, the Kalachuris, the BARC inscription); ASI Gharapuri dig reports (FPJ, The Week, 2026).
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Shaka year + 78 (or 79) -> CE. >= 10,000 years -> years_ago (peg = first two digits).
+# Approximate year ending 00 -> first two digits; under 1000 -> year // 10. Peg: last two digits otherwise.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 450, peg: lasso, confidence: medium, source: "FPJ 2026: Indrasena plate, 4th-6th c. AD",
+     event: "Morbandar, Gharapuri: the Traikutaka king Indrasena issues a copper-plate charter (approximate)",
+     place: "Morbandar, Elephanta",
+     scene: "King Indrasena's clerk throws a LASSO round a copper plate charter and drops it into a big storage jar at Morbandar."}
+  - {year: 610, peg: dice, confidence: medium, source: "WP: History of Mumbai (Chalukyas invade 610)",
+     event: "Pulakeshin II's Chalukya fleet besieges Puri, the Konkan Mauryas' capital, perhaps on Gharapuri (approximate)",
+     place: "Gharapuri (Elephanta)",
+     scene: "Chalukya sailors throw giant DICE from hundreds of ships onto Puri's walls until the Konkan Maurya king gives up the island."}
+  - {year: 700, peg: goose, confidence: medium, source: "FPJ 2026: Navsarika Chalukya plate, 7th-8th c.",
+     event: "Morbandar, Gharapuri: Jayashraya Mangalarasa of the Navsarika Chalukyas issues a copper-plate grant (approximate)",
+     place: "Morbandar, Elephanta",
+     scene: "A GOOSE carries Jayashraya Mangalarasa's sealed copper plate across the harbour and lays it in a warehouse jar at Morbandar."}
+  - {year: 810, peg: dice, confidence: medium, source: "WP: Shilahara (c. 800); WP History of Mumbai, TIFR (810)",
+     event: "Kapardin I starts the Silhara line that rules the north Konkan and the islands",
+     place: "Puri and Thane",
+     scene: "Kapardin I rolls the DICE at Puri and wins the north Konkan; his Silhara heirs keep the islands for four centuries."}
+  - {year: 997, peg: pig, confidence: high, source: "EI 3: Bhadana grant, Saka 919 = June 997",
+     event: "Bhadana plates: the Silhara king Aparajita grants Bhadana village near Bhiwandi",
+     place: "Bhadana, near Bhiwandi",
+     scene: "A PIG digs up three copper plates near Bhiwandi: King Aparajita's charter gives the whole village of Bhadana away."}
+  - {year: 1017, peg: dog, confidence: high, source: "EI 12: Thana plates of A.D. 1017",
+     event: "Thana plates: the Silhara king Arikesari makes a land grant in the land of Sri-Sthanaka",
+     place: "Thane",
+     scene: "A DOG at Thane fetches King Arikesari's copper plates and drops them at the feet of the Brahmins who receive the land."}
+  - {year: 1026, peg: nacho, confidence: high, source: "EI 12: Bhandup plates, Saka 948 = 1026",
+     event: "Bhandup plates: Chhittaraja grants a field at Noura in Salsette, beside the king's highway",
+     place: "Bhandup, Salsette",
+     scene: "Chhittaraja marks the edge of the Noura field on the king's highway with a line of NACHO chips for the new owner."}
+  - {year: 1140, peg: horse, confidence: low, source: "WP: Aparaditya I (envoy undated; Kashmir court c. 1140)",
+     event: "Aparaditya sends the envoy Tejakantha from the Silhara court to the court of Kashmir (approximate)",
+     place: "Thane, the Silhara court",
+     scene: "Tejakantha rides a HORSE from the Silhara court at Thane all the way to Kashmir with King Aparaditya's letters."}
+  - {year: 1148, peg: reef, confidence: medium, source: "WP: Haripaladeva (inscriptions Saka 1070-1076)",
+     event: "Thane district: the first of King Haripala's dated Silhara inscriptions is cut",
+     place: "Thane district",
+     scene: "King Haripala's masons carve his first dated inscription on a stone dragged up from a REEF in Thane creek."}
+  - {year: 1184, peg: fairy, confidence: medium, source: "WP: Mallikarjuna (Shilahara): Lonad, Saka 1106",
+     event: "Lonad, near Bhiwandi: a Silhara stone inscription records a royal gift",
+     place: "Lonad, near Bhiwandi",
+     scene: "A FAIRY chisels the Silhara king's gift into a stone slab at Lonad and blows the dust off the letters."}
+  - {year: 1184, peg: fairy, confidence: low, source: "WP: Fort Vasai infobox (built 1184, Yadavas)",
+     event: "Vasai: the Yadavas of Devagiri build a first fort, by one account",
+     place: "Vasai",
+     scene: "A FAIRY lays the first stones of a Yadava fort at Vasai, but her wand fades: only one account says she did."}
+  - {year: 1186, peg: fish, confidence: medium, source: "WP: Mallikarjuna (Shilahara): Parel, Saka 1108",
+     event: "Parel: a Silhara stone inscription is set up on Bombay island",
+     place: "Parel",
+     scene: "A huge FISH jumps out of the Parel marsh and stands up as a stone slab, with a Silhara king's inscription cut into it."}
+  - {year: 1248, peg: reef, confidence: low, source: "Search: Karnala fort sites (Yadavas 1248-1318)",
+     event: "Karnala: the Yadavas of Devagiri hold the hill fort above Panvel",
+     place: "Karnala fort, near Panvel",
+     scene: "Yadava soldiers build Karnala's walls from blocks of REEF coral hauled up the thumb-shaped hill above Panvel."}
+  - {year: 1265, peg: jelly, confidence: medium, source: "WP: Someshvara (Shilahara), 'may' be 1265",
+     event: "Eksar, Borivali: the Yadava Mahadeva's army and fleet defeat Someshvara, the last Silhara king; he drowns",
+     place: "Eksar, Borivali",
+     scene: "King Someshvara flees the Yadavas by sea from Eksar, but his ship sinks in a sea of JELLY and the Silhara line drowns with him."}
+  - {year: 1272, peg: coin, confidence: high, source: "EI 12; WP: Thana plates of Achyuta Nayaka, 1272",
+     event: "Thana plates: Achyuta Nayaka, the Yadava governor, rules the north Konkan from Thane",
+     place: "Thane",
+     scene: "Achyuta Nayaka stamps the Yadava king's COIN onto his copper plates at Thane to show who rules the Konkan now."}
+  - {year: 1290, peg: bees, confidence: low, source: "WP: Bhima of Mahikavati (Persian record of 1436)",
+     event: "Raja Bimba-shah takes the north Konkan from Karson, by a later Persian record",
+     place: "north Konkan",
+     scene: "Raja Bimba sends a swarm of BEES after Karson, who runs out of the north Konkan and leaves it to Bimba."}
+  - {year: 1295, peg: bell, confidence: medium, source: "LiveHistory (Rajwade): 1295; Bimbakhyan: 1294",
+     event: "Bimbadev makes Mahim (Mahikavati) his capital",
+     place: "Mahim",
+     scene: "Bimbadev hangs his royal BELL in a new palace at Mahim and rings it: Mahikavati is now the capital of the islands."}
+  - {year: 1299, peg: pipe, confidence: low, source: "WP: Bhima of Mahikavati (danapatra of 1299)",
+     event: "Bimbadev grants land on the Bombay islands to Purushottam Kavle",
+     place: "Mahim",
+     scene: "Bimbadev measures out a field on the islands with a long PIPE and hands the grant deed to Purushottam Kavle."}
+  - {year: 1303, peg: sumo, confidence: medium, source: "WP: History of Mumbai; LiveHistory (reign 1295-1303)",
+     event: "Bimbadev, king at Mahim, dies",
+     place: "Mahim",
+     scene: "Old Bimbadev loses his last bout to a SUMO wrestler of death on the sand at Mahim and his short reign ends."}
+  - {year: 1318, peg: dove, confidence: medium, source: "WP: History of Mumbai; LiveHistory (BARC article)",
+     event: "Khalji forces under Mubarak take Mahim and Salsette",
+     place: "Mahim and Salsette",
+     scene: "Mubarak's Khalji army sends a DOVE with the Delhi flag over Mahim fort, and Salsette surrenders behind it."}
+  - {year: 1348, peg: reef, confidence: disputed, source: "WP History of Mumbai: 1348; TIFR: Salsette invaded 1343",
+     event: "Muslim forces take Salsette and the islands from the local Hindu chiefs",
+     place: "Salsette and Mahim",
+     scene: "Sultanate ships run over the REEF at Mahim and land troops who take Salsette and the islands from the Hindu chiefs."}
+  - {year: 1366, peg: judge, confidence: medium, source: "LiveHistory: Ranvad (Uran) inscription, 1366",
+     event: "Ranvad, Uran: an inscription of King Hambirarao of Thane-Konkan is set up",
+     place: "Ranvad, Uran",
+     scene: "A JUDGE in a wig reads out Hambirarao's decree at Ranvad in Uran while a mason cuts it into stone."}
+  - {year: 1368, peg: chef, confidence: high, source: "LiveHistory: BARC stone, 23 Oct 1368 (Hijri and Saka)",
+     event: "Deonar: Hambirarao, vassal of Firuz Shah Tughlaq, gives land to a commander; his capital is Mahim-Bimbasthane",
+     place: "Deonar (now the BARC campus)",
+     scene: "A CHEF at Deonar carves out a slice of land like a cake and serves it to Hambirarao's commander on a stone plate."}
+  - {year: 1391, peg: boot, confidence: medium, source: "WP: History of Mumbai under Islamic rule (1391)",
+     event: "The north Konkan passes to Zafar Khan's Gujarat; a governor sits at Mahim",
+     place: "Mahim",
+     scene: "Zafar Khan's Gujarat BOOT steps onto the north Konkan coast and kicks open the gate for a new governor at Mahim."}
+  - {year: 1429, peg: knob, confidence: medium, source: "WP: History of Mumbai under Islamic rule (1429-30)",
+     event: "After the Gujarat governor Rai Qutb dies, the Bahmani army takes Mahim and Salsette",
+     place: "Mahim",
+     scene: "Rai Qutb dies, and a Bahmani officer turns the KNOB of Mahim fort's door and walks in unopposed."}
+  - {year: 1492, peg: piano, confidence: medium, source: "WP: Bahadur Khan Gilani (raids 1491-1494)",
+     event: "Yaqut, Bahadur Khan Gilani's officer, sacks and burns the port of Mahim with twelve ships (approximate)",
+     place: "Mahim",
+     scene: "Twelve pirate ships ram a burning PIANO into the quay at Mahim, and Yaqut's men sack the port by its light."}
+  - {year: 1493, peg: palm, confidence: low, source: "WP: Bahadur Khan Gilani (storm, undated)",
+     event: "A storm off Mahim wrecks the Gujarat fleet that Mahmud Begada sends against Gilani (approximate)",
+     place: "off Mahim",
+     scene: "A storm off Mahim tears up whole PALM trees and smashes them into Mahmud Begada's fleet until it sinks."}
+  - {year: 1509, peg: soap, confidence: high, source: "WP: History of Mumbai (21 Jan 1509); Vasai",
+     event: "The Portuguese capture a Gujarat barge in Bandra creek and make their first landing at Mahim",
+     place: "Bandra creek and Mahim",
+     scene: "Portuguese sailors slide their boat over a bar of SOAP into Bandra creek, grab a Gujarat barge, and step ashore at Mahim."}
+  - {year: 1516, peg: dish, confidence: medium, source: "WP: Arnala Fort (1516; builder named as Begada)",
+     event: "Arnala: the Gujarat Sultanate builds a fort on the island at the mouth of the Vaitarna",
+     place: "Arnala island",
+     scene: "Gujarat builders set a fort like a round stone DISH on Arnala island to guard the mouth of the Vaitarna."}
+  - {year: 1529, peg: knob, confidence: medium, source: "WP: History of Mumbai (1528-29)",
+     event: "Lopo Vaz de Sampaio seizes the fort of Mahim while Gujarat fights at Chaul",
+     place: "Mahim fort",
+     scene: "Lopo Vaz de Sampaio twists the brass KNOB of Mahim fort's gate while its Gujarat garrison is away at Chaul."}
+  - {year: 1530, peg: mouse, confidence: medium, source: "WP: Vasai; Fort Vasai (1530)",
+     event: "António da Silveira's Portuguese fleet plunders and burns Bassein",
+     place: "Vasai (Bassein)",
+     scene: "A MOUSE carries a lit fuse through Bassein's bazaar for António da Silveira, and the town burns behind it."}
+  - {year: 1530, peg: mouse, confidence: medium, source: "WP: Arnala Fort (bastion 1530)",
+     event: "Arnala: the Portuguese build a bastion at the west end of the island",
+     place: "Arnala island",
+     scene: "Portuguese masons on Arnala build a round bastion so tight that not even a MOUSE can slip in from the west."}
+  - {year: 1531, peg: moth, confidence: medium, source: "WP: Fort Vasai (1531, Saldanha)",
+     event: "António de Saldanha burns Bassein again to punish Bahadur Shah, who will not give up Diu",
+     place: "Vasai (Bassein)",
+     scene: "A giant MOTH flies to António de Saldanha's torch and sets Bassein alight a second time, because Bahadur Shah keeps Diu."}
+  - {year: 1533, peg: mummy, confidence: high, source: "WP: Nuno da Cunha (20 Jan 1533); Fort Vasai",
+     event: "Nuno da Cunha's fleet storms Malik Tokan's new Gujarat fort at Bassein and destroys it",
+     place: "Vasai (Bassein)",
+     scene: "Nuno da Cunha's soldiers break into Malik Tokan's new fort at Bassein and wrap its walls like a MUMMY before they pull them down."}
+  - {year: 1533, peg: mummy, confidence: medium, source: "WP: Fort Vasai; Vasai (1533)",
+     event: "Diogo da Silveira burns the coast from Bandra through Thane to Bassein and takes thousands of slaves",
+     place: "Bandra, Thane, Vasai",
+     scene: "Diogo da Silveira's men bind thousands of captives like a MUMMY in ropes after they burn Bandra, Thane and Bassein."}
+
+  # science
+  - {year: 145, peg: railway, confidence: medium, source: "WP: Kanheri Caves (cistern, Vasishthiputra 130-160)",
+     event: "Kanheri: a water cistern is cut; its inscription names the queen of Vasishthiputra Satakarni (approximate)",
+     place: "Kanheri, caves 5 and 6",
+     scene: "A RAILWAY of stone channels carries rain down Kanheri hill into the new cistern of Vasishthiputra Satakarni's queen."}
+  - {year: 550, peg: lasso, confidence: medium, source: "VisionIAS/FPJ 2026: ASI dig, 1,500-year-old reservoir",
+     event: "Gharapuri: builders cut a stepped water reservoir in the Kalachuri period (approximate)",
+     place: "Elephanta island",
+     scene: "Kalachuri workers lower a LASSO of buckets down the new stepped reservoir on Gharapuri and pull up fresh water."}
+  - {year: 1127, peg: ink, confidence: medium, source: "WP: Banganga Tank (AD 1127, Lakshman Prabhu)",
+     event: "Malabar Hill: Lakshman Prabhu, a Silhara minister, builds the Banganga tank",
+     place: "Banganga, Walkeshwar",
+     scene: "Lakshman Prabhu pours a bottle of INK into a stone basin on Malabar Hill and it fills with fresh water: the Banganga tank."}
+
+  # religion
+  - {year: -250, peg: lasso, confidence: disputed, source: "LiveHistory: Mauryan; INHCRF: Satavahana, 2nd c. CE",
+     event: "Sopara: the first Buddhist stupa is built (approximate)",
+     place: "Burud Rajacha Kot, Sopara",
+     scene: "Monks at Sopara throw a LASSO round the first brick dome of the stupa and pull it tight into shape."}
+  - {year: -200, peg: nose, confidence: medium, source: "WP: Elephanta Caves (stupa c. 2nd c. BCE)",
+     event: "Elephanta: Buddhists raise a large stupa and seven small ones on the island (approximate)",
+     place: "Stupa Hill, Elephanta",
+     scene: "A giant NOSE on Elephanta's eastern hill sneezes, and a big stupa and seven small stupas pop up out of the soil."}
+  - {year: -100, peg: dice, confidence: disputed, source: "WP: Mahakali Caves (4th c. BCE-6th c. CE; cave 9 1st c. BCE)",
+     event: "Kondivite (Mahakali) caves, Andheri: Buddhist monks cut the first cells (approximate)",
+     place: "Kondivite, Andheri",
+     scene: "Monks in Andheri cut their first cells out of a basalt block shaped like a DICE, one face at a time."}
+  - {year: 170, peg: goose, confidence: medium, source: "WP: Kanheri Caves (Yajna Sri, c. 170)",
+     event: "Kanheri: the Great Chaitya (cave three) is cut under Yajna Sri Satakarni (approximate)",
+     place: "Kanheri, cave 3",
+     scene: "A GOOSE honks down the long nave of Kanheri's new Great Chaitya, cut in the reign of Yajna Sri Satakarni."}
+  - {year: 450, peg: lasso, confidence: low, source: "Wondermondo: Lonad caves c. 5th c. AD",
+     event: "Lonad, near Bhiwandi: Buddhists cut a rock-cut cave temple (approximate)",
+     place: "Lonad, near Bhiwandi",
+     scene: "Monks at Lonad haul a LASSO tight round a basalt face and cut their cave temple into the hill behind it."}
+  - {year: 494, peg: bear, confidence: medium, source: "WP: Kanheri Caves (494-495 CE Traikutaka)",
+     event: "Kanheri: an inscription dated in the Traikutaka era records a gift to the monks",
+     place: "Kanheri",
+     scene: "A BEAR carves the Traikutaka year into Kanheri's rock with its claws while monks receive the gift."}
+  - {year: 520, peg: nose, confidence: medium, source: "WP: History of Mumbai (520-525); Spink",
+     event: "Jogeshwari: the great Shiva cave temple is cut, one of the earliest major cave temples (approximate)",
+     place: "Jogeshwari",
+     scene: "A huge stone NOSE pokes out of the Jogeshwari ridge, and masons hollow it into a vast Shiva cave temple."}
+  - {year: 550, peg: lasso, confidence: medium, source: "WP: Kanheri Caves (Darbar cave, probably 6th c.)",
+     event: "Kanheri: the Darbar cave, a large assembly hall, is cut (approximate)",
+     place: "Kanheri, cave 11",
+     scene: "Monks use a LASSO to pull the long stone benches of the Darbar hall into rows for the Kanheri assembly."}
+  - {year: 550, peg: lasso, confidence: disputed, source: "WP: Mandapeshwar Caves (6th c. and 8th c. both given)",
+     event: "Mandapeshwar, Borivali: Shaiva rock-cut caves are cut (approximate)",
+     place: "Mandapeshwar, Borivali",
+     scene: "A cowherd at Borivali lassoes Shiva's bull with a LASSO, and it leads him into the new Mandapeshwar cave shrine."}
+  - {year: 550, peg: lasso, confidence: medium, source: "Durgbharari: Magathane caves 6th c. CE",
+     event: "Magathane, Borivali: Mahayana monks cut a prayer hall and monastery (approximate)",
+     place: "Magathane, Borivali",
+     scene: "Mahayana monks at Magathane drag their prayer hall out of the rock with a LASSO looped round its pillars."}
+  - {year: 550, peg: lasso, confidence: medium, source: "WP: Kalyan (Cosmas, 6th c.)",
+     event: "Cosmas Indicopleustes reports a bishop at Kalliana (Kalyan) for its Christians (approximate)",
+     place: "Kalyan",
+     scene: "A bishop at Kalyan swings a LASSO and gathers his little Christian flock, as Cosmas writes down."}
+  - {year: 640, peg: horse, confidence: low, source: "WP: Vasai (June or July 640); LiveHistory Sopara",
+     event: "The Chinese pilgrim Xuanzang perhaps visits Sopara and its monasteries",
+     place: "Sopara",
+     scene: "Xuanzang's HORSE stops at the gate of a Sopara monastery, and the pilgrim counts the monks inside."}
+  - {year: 843, peg: ram, confidence: medium, source: "Kielhorn IA 13: Saka 765 (doubtful) = 843-44",
+     event: "Kanheri: Pullashakti, Silhara vassal of Amoghavarsha, records a gift for cave repairs and monks' books",
+     place: "Kanheri",
+     scene: "A RAM butts the cracked wall of a Kanheri cave, and Pullashakti's gift pays to repair it and buy the monks books."}
+  - {year: 854, peg: lawyer, confidence: high, source: "Kielhorn IA 13: Saka 775 = 12 Sept 854",
+     event: "Kanheri: Gomin Avighnakara from Gauda (Bengal) endows the monks under Amoghavarsha and Kapardin II",
+     place: "Kanheri, the Darbar cave",
+     scene: "A LAWYER from Bengal reads out Gomin Avighnakara's endowment deed in the Darbar cave at Kanheri."}
+  - {year: 877, peg: cake, confidence: medium, source: "Kielhorn IA 13: Saka 799 = 877-78",
+     event: "Kanheri: Kapardin II's record of a gift to the monks of Krishnagiri",
+     place: "Kanheri (Krishnagiri)",
+     scene: "Kapardin II's servant carries a giant CAKE up the Krishnagiri steps as the king's gift to the monks."}
+  - {year: 1000, peg: dice, confidence: low, source: "WP: Kanheri Caves (late 10th c.)",
+     event: "Kanheri: the young Atisha studies under Rahulagupta at Krishnagiri (approximate)",
+     place: "Kanheri (Krishnagiri)",
+     scene: "Rahulagupta rolls DICE marked with Buddhist terms to test the young Atisha in a Kanheri cell."}
+  - {year: 1060, peg: cheese, confidence: high, source: "Search: Ambarnath inscription, Saka 982",
+     event: "Ambernath: the Shiva temple begun under Chhittaraja is completed under Mummuniraja",
+     place: "Ambernath",
+     scene: "Mummuniraja's officers set the last carved stone on the Ambernath temple tower like the last slice on a CHEESE wheel."}
+  - {year: 1127, peg: ink, confidence: medium, source: "WP: Walkeshwar Temple (1127 AD)",
+     event: "Malabar Hill: Lakshman Prabhu builds the Walkeshwar temple",
+     place: "Walkeshwar, Malabar Hill",
+     scene: "Lakshman Prabhu signs the plan of the Walkeshwar temple in INK, and its stone walls rise on Malabar Hill."}
+  - {year: 1322, peg: nun, confidence: medium, source: "WP: Odoric (high probability 1322)",
+     event: "Thane: Odoric of Pordenone takes the bones of the four martyred friars to carry east",
+     place: "Thane",
+     scene: "A NUN helps Odoric dig up the four friars' bones at Thane and pack them for his road to China."}
+  - {year: 1323, peg: gnome, confidence: medium, source: "Yule, Cathay: letter at Thana, January 1323",
+     event: "Thane: the Dominican Jordanus writes home from the city of the martyrs about his mission",
+     place: "Thane",
+     scene: "A GNOME holds the inkpot while Jordanus writes his letter from Thane about the few new converts."}
+  - {year: 1333, peg: mummy, confidence: unverified, source: "WP: Nala Sopara (14th c.; no year)",
+     event: "Jinaprabhasuri lists Sopara among the Jain holy places",
+     place: "Sopara",
+     scene: "Jinaprabhasuri unwraps a MUMMY of old palm-leaf lists and adds Sopara to the Jain holy places."}
+  - {year: 1372, peg: coin, confidence: medium, source: "WP: Makhdoom Ali Mahimi (born 1372)",
+     event: "Mahim: the Sufi scholar Makhdoom Ali Mahimi is born",
+     place: "Mahim",
+     scene: "A gold COIN falls into the cradle of the baby Makhdoom Ali Mahimi in a Konkani Muslim house at Mahim."}
+  - {year: 1431, peg: moth, confidence: medium, source: "WP: Haji Ali Dargah (completed 1431)",
+     event: "Worli: the Haji Ali Dargah is built on an islet in the sea",
+     place: "Haji Ali, off Worli",
+     scene: "A giant white MOTH lands on a rock off Worli and folds its wings into the white dome of the Haji Ali Dargah."}
+  - {year: 1431, peg: moth, confidence: medium, source: "WP: Makhdoom Ali Mahimi (died 1431)",
+     event: "Mahim: Makhdoom Ali Mahimi dies and is buried; his grave becomes a dargah",
+     place: "Mahim",
+     scene: "A MOTH lands on the green cloth over Makhdoom Ali Mahimi's new grave at Mahim, and pilgrims start to come."}
+
+  # arts
+  - {year: 750, peg: lasso, confidence: disputed, source: "LiveHistory: 7th-8th c.; WP Nala Sopara: 8th-9th c.",
+     event: "Sopara: eight bronze Buddha images are put into the stupa's relic coffer (approximate)",
+     place: "Sopara stupa",
+     scene: "A monk lowers eight bronze Buddhas on a LASSO into the open relic coffer of the Sopara stupa."}
+  - {year: 950, peg: lasso, confidence: low, source: "LiveHistory Sopara: wooden Tara, Kanheri, 10th c.",
+     event: "Kanheri: a carved wooden image of Tara is made (approximate)",
+     place: "Kanheri",
+     scene: "A woodcarver at Kanheri ties a LASSO round a teak log and cuts the goddess Tara out of it."}
+  - {year: 1265, peg: jelly, confidence: disputed, source: "Search: Eksar stones 1265 (Someshvara) or 1020 (Bhoja)",
+     event: "Eksar, Borivali: hero stones show a sea battle with warships",
+     place: "Eksar, Borivali",
+     scene: "A sculptor at Eksar carves warships fighting on waves of JELLY into tall hero stones for the dead."}
+
+  # economy
+  - {year: 150, peg: lasso, confidence: medium, source: "WP: History of Mumbai (Ptolemy, 150 CE)",
+     event: "Ptolemy's Geography names the islands Heptanesia and the port of Soupara (approximate)",
+     place: "Sopara and the islands",
+     scene: "Ptolemy throws a LASSO round seven islands on his map and writes Heptanesia, with Soupara beside them."}
+  - {year: 170, peg: goose, confidence: medium, source: "LiveHistory Sopara (Yajnashri coins, 2nd c. CE)",
+     event: "Sopara: coins of Yajna Sri Satakarni pass in the port's markets (approximate)",
+     place: "Sopara",
+     scene: "A GOOSE at the Sopara market lays Yajna Sri Satakarni's coins, and the traders spend them at once."}
+  - {year: 350, peg: lasso, confidence: medium, source: "WP: Elephanta Caves (Kshatrapa coins, 4th c.)",
+     event: "Elephanta: Western Satrap coins come to the island (approximate)",
+     place: "Elephanta island",
+     scene: "A trader hauls a LASSO full of Western Satrap silver coins up the beach of Elephanta island."}
+  - {year: 562, peg: chain, confidence: medium, source: "LiveHistory, FPJ 2026: Krishnaraja c. 550-575",
+     event: "Elephanta: coins of the Kalachuri king Krishnaraja circulate on the island (approximate)",
+     place: "Elephanta island",
+     scene: "Krishnaraja's copper coins pour off a long CHAIN into Elephanta's tills, more than thirty of them."}
+  - {year: 916, peg: dish, confidence: low, source: "LiveHistory Sopara (Masudi, 10th c.)",
+     event: "Al-Masudi names Sopara a market and seat of government (approximate)",
+     place: "Sopara",
+     scene: "Al-Masudi eats from a brass DISH in the Sopara market and notes it as a town of trade and rule."}
+  - {year: 1030, peg: mouse, confidence: medium, source: "LiveHistory Sopara (al-Biruni, 11th c.)",
+     event: "Al-Biruni names Sopara and Thane among the towns of the Konkan coast (approximate)",
+     place: "Sopara and Thane",
+     scene: "A MOUSE runs along al-Biruni's map of the Konkan coast and stops at Sopara and Thane."}
+  - {year: 1094, peg: bear, confidence: medium, source: "WP: Thane (1094); EI 12: Kharepatan plates 1095",
+     event: "A Silhara charter lists Sri-Sthanaka (Thane) as a port where ships pay dues",
+     place: "Thane creek",
+     scene: "A BEAR on the Thane quay collects the Silhara king's dues from each ship that ties up."}
+  - {year: 1154, peg: lawyer, confidence: medium, source: "LiveHistory Sopara (al-Idrisi, 12th c.)",
+     event: "Al-Idrisi describes Sopara and Thane in his geography (approximate)",
+     place: "Sopara and Thane",
+     scene: "A LAWYER reads al-Idrisi's notes on Sopara and Thane to King Roger's court in Sicily."}
+  - {year: 1292, peg: piano, confidence: medium, source: "WP: History of Mumbai (May-September 1292)",
+     event: "Marco Polo's fleet passes the harbour; he describes the kingdom of Tana and its trade",
+     place: "Thane",
+     scene: "Marco Polo plays a PIANO on deck as his fleet passes Tana, and he notes its leather, cotton and pirates."}
+  - {year: 1508, peg: sofa, confidence: medium, source: "WP: History of Mumbai; TIFR (1508)",
+     event: "Francisco de Almeida's ship is the first Portuguese ship to enter the harbour",
+     place: "Bombay harbour",
+     scene: "Francisco de Almeida lies on a SOFA on deck as the first Portuguese ship sails into Bombay harbour."}
+  - {year: 1514, peg: tower, confidence: medium, source: "WP: Vasai; Fort Vasai (Barbosa, 1514)",
+     event: "Duarte Barbosa describes Baxay (Vasai), a good seaport of the king of Gujarat",
+     place: "Vasai",
+     scene: "Duarte Barbosa climbs a TOWER at Baxay and writes that it is a good seaport of the king of Gujarat."}
+  - {year: 1526, peg: nacho, confidence: medium, source: "WP: History of Mumbai; Military history of Bassein",
+     event: "The Portuguese set up a trading post (factory) at Bassein",
+     place: "Vasai (Bassein)",
+     scene: "Portuguese merchants open their first factory at Bassein and pay for it with a crate of NACHO chips."}
+
+  # society
+  - {years_ago: 200000, year: -198000, peg: nose, confidence: unverified, source: "Todd 1939 via Antiquity: Acheulian type, no date",
+     event: "Kandivali: early humans leave handaxes and cleavers in the river gravels (approximate)",
+     place: "Kandivali",
+     scene: "An early human at Kandivali sniffs with a big NOSE along the river gravel and drops his handaxe and cleaver there."}
+  - {years_ago: 30000, year: -28000, peg: mouse, confidence: low, source: "HT 2018 (Parab): Khindipada tools c. 30,000 yr",
+     event: "Khindipada, near Tulsi lake: people make large stone tools (approximate)",
+     place: "Khindipada, Sanjay Gandhi National Park",
+     scene: "A hunter near Tulsi lake knocks a MOUSE-sized flake off a big stone and shapes it into a tool."}
+  - {years_ago: 15000, year: -13000, peg: doll, confidence: low, source: "HT/IBTimes 2018: Manori tools 10-15,000 yr",
+     event: "Manori: stone tools are made at a hilltop workshop near the beach (approximate)",
+     place: "Manori",
+     scene: "A child on Manori hill plays with a stone DOLL while the adults chip tools out of chert around her."}
+  - {year: 1125, peg: nail, confidence: disputed, source: "Kane: 1st half 12th c.; WP: Aparaditya 1170-1197",
+     event: "The Silhara king Aparaditya writes the Apararka, a law commentary on the Yajnavalkya Smriti (approximate)",
+     place: "Thane, the Silhara court",
+     scene: "King Aparaditya hammers each rule of his Apararka law commentary onto the palace door with a NAIL."}
+  - {year: 1298, peg: beehive, confidence: medium, source: "WP: History of Mumbai (around 1298)",
+     event: "Bimbadev brings Pathare Prabhu families to settle at Mahim",
+     place: "Mahim",
+     scene: "Pathare Prabhu families pour out of Bimbadev's ships at Mahim like bees from a BEEHIVE and build their houses."}
+
+world_refs:
+  - {year: -259, event: "Ashoka's first dharma tour (Rock Edict eight, Sopara copy)", cell: south_asia_religion_500bce_500ce}
+  - {year: -257, event: "Ashoka's Rock Edict nine (Sopara copy)", cell: south_asia_society_500bce_500ce}
+  - {year: -250, event: "Missionaries leave Pataliputra; Dhammarakkhita to Aparanta (Sopara)", cell: south_asia_religion_500bce_500ce}
+  - {year: -100, event: "Kanheri: Buddhist monks begin to cut caves", cell: south_asia_religion_500bce_500ce}
+  - {year: 50, event: "Periplus: the port of Kalliena (Kalyan) is shut", cell: south_asia_economy_500bce_500ce}
+  - {year: 550, event: "Elephanta: the Shiva cave temple is completed", cell: south_asia_religion_500_1500}
+  - {year: 1321, event: "Thane: Thomas of Tolentino and three Franciscans are killed", cell: south_asia_religion_500_1500}
+  - {year: 1429, event: "Gujarat takes Thana and Mahim from the Bahmanis", cell: south_asia_politics_500_1500}
+
+out_refs:
+  - {year: -250, event: "Mauryan rule reaches the north Konkan coast", reason: "imperial conquest"}
+  - {year: -185, event: "The Satavahanas take the north Konkan after the Mauryas", reason: "regional dynastic change"}
+  - {year: 400, event: "Vada inscription of the Konkan Maurya king Suketuvarman", reason: "outside the area (Vada)"}
+  - {year: 750, event: "Dantidurga's Rashtrakutas take the north Konkan", reason: "regional conquest"}
+  - {year: 1020, event: "Paramara Bhoja conquers the Konkan; Arikesari submits", reason: "regional war, place not known"}
+  - {year: 1053, event: "Chinchani inscription: Brahmins from Sri-sthana settle at Samyana", reason: "outside the area (Chinchani)"}
+  - {year: 1161, event: "Kumarapala's campaign kills the Konkan king Mallikarjuna", reason: "regional war, place not known"}
+  - {year: 1494, event: "Bahmani forces kill Bahadur Khan Gilani near Kolhapur", reason: "outside the area"}

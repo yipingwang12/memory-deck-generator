@@ -1,0 +1,862 @@
+# City: Mumbai x 1857 to 1946 (the cotton boom, the Municipal Corporation, the Gothic city, plague, Congress,
+# Quit India, the 1946 mutiny). DRAFT 2026-11-24.
+# Area: Mumbai Metropolitan Region (the island city, the suburbs from Bandra to Borivali, Thane, Kalyan, Vasai,
+# Navi Mumbai, Uran, Panvel). Region: south_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# The OUT rule covers the Bombay Presidency government (governors, presidency laws and courts). Congress and
+# Muslim League sessions held in the city are IN (cities.md Mumbai section). World-grid events -> world_refs.
+# Dates: memory pass + web check (45 searches; no unauthorised book copies). Main sources: Wikipedia articles per
+# site at wikipedia.org, Hansard and Papers Past (contemporary press), Bombay administration reports (QDL),
+# Belur Math, Wadia hospitals, ESPNcricinfo, Mumbai Police and BMC heritage pages.
+# A work -> first public appearance (opening, premiere, first exhibition). A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1857, peg: log, confidence: high, source: "Search: ILN; foblc.org.uk (15 Oct)",
+     event: "Two sepoys, Syed Hussain and Mangal Gadiya, are blown from guns on the Esplanade",
+     place: "Esplanade (Azad Maidan)",
+     scene: "On the Esplanade a huge LOG is rammed into a cannon mouth, and the gun blasts the two sepoys apart before the crowd."}
+  - {year: 1862, peg: chain, confidence: medium, source: "Search: Fort George WP; ramparts removed 1862-64",
+     event: "Governor Frere orders the walls and ramparts of the Fort to be pulled down",
+     place: "Fort",
+     scene: "A giant CHAIN hooked to Frere's carriage drags the Fort ramparts down stone by stone into the moat."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Frank Souter (14 Dec)",
+     event: "Frank Souter becomes Commissioner of Police of Bombay",
+     place: "Police office, Fort",
+     scene: "A CHERRY pinned like a badge on Frank Souter's chest makes him Commissioner of Police of Bombay."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Brihanmumbai Municipal Corporation",
+     event: "Municipal Act makes the Corporation a body corporate; Arthur Crawford is the first Municipal Commissioner",
+     place: "Town Hall",
+     scene: "Arthur Crawford sets a great JELLY on the Town Hall table and carves it into the new Municipal Corporation."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: BMC (Bombay Act III)",
+     event: "Municipal Act gives the Corporation sixty-four members; ratepayers elect half of them",
+     place: "Town Hall",
+     scene: "Each ratepayer drops a COIN into the ballot box at the Town Hall and elects a corporator."}
+  - {year: 1872, peg: coin, confidence: medium, source: "Search: walking tour, Wilkins Venetian Gothic",
+     event: "Public Works Department building, by Wilkins, is completed",
+     place: "Fort",
+     scene: "Wilkins tosses a COIN onto the last Gothic arch, and the Public Works Department moves into its new building."}
+  - {year: 1874, peg: car, confidence: medium, source: "Search: Wilkins Old Secretariat 1874 (BL says 1872)",
+     event: "Old Secretariat, by Wilkins, is completed on the Esplanade",
+     place: "Esplanade",
+     scene: "A CAR loaded with files drives up the Venetian Gothic steps and fills the new Secretariat."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: History of Mumbai (February)",
+     event: "Parsi and Muslim riots break out over a published article about the Prophet",
+     place: "Parsi quarter, Fort",
+     scene: "An angry mob overturns a CAR in the Parsi quarter after an article about the Prophet appears in print."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP: Bombay High Court (Nov)",
+     event: "High Court building is completed on the Esplanade",
+     place: "High Court, Esplanade",
+     scene: "Judges walk out of a dark CAVE into the bright new Gothic High Court that rises on the Esplanade."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Municipal Corporation Building (9 Dec)",
+     event: "Foundation stone of the Municipal Corporation Building is laid opposite Victoria Terminus",
+     place: "Opposite Victoria Terminus",
+     scene: "A FAIRY lowers the foundation stone of the Municipal building with her wand, across the road from the terminus."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: History of Bombay under British rule (31 Jan)",
+     event: "Mehta, Telang and Tyabji found the Bombay Presidency Association",
+     place: "Fort",
+     scene: "Mehta, Telang and Tyabji sign the Bombay Presidency Association's charter on a giant WAFFLE."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: BMC; History of Mumbai",
+     event: "City of Bombay Municipal Act sets the Corporation's powers",
+     place: "Town Hall",
+     scene: "A FIFE plays as the new Municipal Act is read, and the Commissioner and Corporation split the city's powers."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP: List of presidents of the INC",
+     event: "Indian National Congress holds its fifth session in Bombay under Wedderburn",
+     place: "Bombay",
+     scene: "Wedderburn checks a gold FOB watch and opens Congress's fifth session in a Bombay hall."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Municipal Corporation Building",
+     event: "Municipal Corporation Building, by Stevens, is completed",
+     place: "Opposite Victoria Terminus",
+     scene: "Stevens plants a tall PALM on top of the new Municipal Corporation dome and the corporators move in."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: History of Mumbai (11 Aug)",
+     event: "Hindu-Muslim riot breaks out; scores die",
+     place: "Jumma Masjid area",
+     scene: "Rioters near the Jumma Masjid tear PALM fronds from the trees and beat each other in the street."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: History of Mumbai (9 March)",
+     event: "Riot against plague measures; dock and railway workers strike",
+     place: "Madanpura",
+     scene: "Mill hands smash a plague hospital and throw a BEEHIVE at the health squad; dockers then stop work."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: History of Mumbai (9 Dec)",
+     event: "City of Bombay Improvement Trust is created to clear slums and cut new roads",
+     place: "Bombay",
+     scene: "The new Improvement Trust knocks down a slum full of plague and builds a clean BEEHIVE of airy blocks."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: List of presidents of the INC",
+     event: "Congress holds its session in Bombay under Henry Cotton",
+     place: "Bombay",
+     scene: "Henry Cotton climbs out of a SEWER onto the Bombay Congress stage and takes the president's chair."}
+  - {year: 1908, peg: sofa, confidence: high, source: "Search: Hansard 28 July; Papers Past",
+     event: "Mill workers strike for six days against Tilak's sentence; troops fire on crowds",
+     place: "Girangaon (Parel)",
+     scene: "Strikers drag a SOFA across a Parel street as a barricade, one day for each year of Tilak's sentence."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: General Post Office, Mumbai (13 March)",
+     event: "General Post Office, by Begg, is completed",
+     place: "GPO, near Victoria Terminus",
+     scene: "Postmen carry mail out of a stone TOMB and sort it under the new General Post Office dome."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: List of presidents of the INC",
+     event: "Congress holds its session in Bombay under S. P. Sinha",
+     place: "Bombay",
+     scene: "S. P. Sinha, dressed as a giant DOLL, takes the chair at the Bombay Congress session."}
+  - {year: 1915, peg: doll, confidence: high, source: "Search: WP list of AIML presidents (30 Dec)",
+     event: "Muslim League holds its session in Bombay under Mazharul Haque",
+     place: "Bombay",
+     scene: "Mazharul Haque passes a DOLL across the hall to Congress delegates as the League meets beside them in Bombay."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: List of presidents of the INC",
+     event: "Congress holds a special session in Bombay under Hasan Imam",
+     place: "Bombay",
+     scene: "Hasan Imam lets a DOVE fly over the Bombay special session that debates the reform scheme."}
+  - {year: 1918, peg: dove, confidence: medium, source: "WP: History of Mumbai (December)",
+     event: "Nationalists break up the meeting at the Town Hall for a Willingdon memorial",
+     place: "Town Hall",
+     scene: "Protesters chase a DOVE through the Town Hall and stop the vote for a memorial to Lord Willingdon."}
+  - {year: 1920, peg: nose, confidence: unverified,
+     event: "Bombay Suburban District is formed for the Salsette suburbs",
+     place: "Bandra",
+     scene: "A Collector in Bandra traces the new Suburban District boundary across Salsette with his NOSE."}
+  - {year: 1921, peg: ant, confidence: high, source: "Search: The Wire; Papers Past (31 July)",
+     event: "Gandhi lights a bonfire of foreign cloth at the Elphinstone Mill compound",
+     place: "Elphinstone Mill, Parel",
+     scene: "A giant ANT drags foreign cloth onto a heap at the Elphinstone Mill, and Gandhi sets it on fire."}
+  - {year: 1926, peg: nacho, confidence: medium, source: "Search: Arthur Road Jail built 1925-26",
+     event: "Arthur Road Jail opens",
+     place: "Arthur Road, Chinchpokli",
+     scene: "Warders lock the first prisoner into Arthur Road Jail and pass him one NACHO through the bars."}
+  - {year: 1929, peg: knob, confidence: high, source: "Search: Hansard 11 Feb; Papers Past",
+     event: "Mill workers and Pathans clash; Hindu-Muslim riots spread",
+     place: "Mill district",
+     scene: "Mill workers rip the door KNOB from an oil depot where Pathan watchmen guard it, and the riot spreads."}
+  - {year: 1930, peg: mouse, confidence: medium, source: "Search: Scroll (Bombay Congress Bulletin)",
+     event: "Thousands of satyagrahis raid the Wadala salt pans",
+     place: "Wadala salt pans",
+     scene: "A MOUSE army of satyagrahis scurries over the Wadala salt pans and carries off salt grain by grain."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Babu Genu Said (12 Dec)",
+     event: "Babu Genu dies under a lorry of foreign cloth that he tries to stop",
+     place: "Kalbadevi",
+     scene: "Babu Genu lies across the road in Kalbadevi like a MOUSE before a cat, and the foreign-cloth lorry runs him over."}
+  - {year: 1931, peg: moth, confidence: high, source: "Search: WP list of mayors of Mumbai",
+     event: "Corporation president becomes Mayor; J. B. Boman-Behram is the first",
+     place: "Municipal Corporation Building",
+     scene: "A MOTH lands on Boman-Behram's chain of office and turns the Corporation's president into the first Mayor."}
+  - {year: 1932, peg: moon, confidence: high, source: "Search: Papers Past May reports",
+     event: "Hindu-Muslim riots kill scores in the city",
+     place: "Bhendi Bazaar",
+     scene: "Under a red MOON rioters fight from house to house through Bhendi Bazaar."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Search: Municipal (Amendment) Act, 28 Sep",
+     event: "Improvement Trust is dissolved and joins the Municipal Corporation",
+     place: "Municipal Corporation Building",
+     scene: "The Improvement Trust is wrapped up like a MUMMY and laid inside the Municipal Corporation's vault."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: List of presidents of the INC",
+     event: "Congress holds its session in Bombay under Rajendra Prasad",
+     place: "Worli",
+     scene: "Rajendra Prasad bangs a HAMMER to open the Congress session in its tent city at Worli."}
+  - {year: 1936, peg: match, confidence: high, source: "Search: WP list of AIML presidents (11-12 April)",
+     event: "Muslim League holds its session in Bombay under Wazir Hasan",
+     place: "Bombay",
+     scene: "Jinnah strikes a MATCH at the Bombay session under Wazir Hasan and the League revives."}
+  - {year: 1936, peg: match, confidence: medium, source: "Pritchett/Columbia Ambedkar timeline (Aug; one Oct)",
+     event: "Ambedkar founds the Independent Labour Party in Bombay",
+     place: "Bombay",
+     scene: "Ambedkar stands a giant MATCH up as a flagpole in a mill chawl and raises the new Independent Labour Party flag."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Aruna Asaf Ali (9 Aug)",
+     event: "Aruna Asaf Ali hoists the Congress flag at Gowalia Tank after the leaders' arrest",
+     place: "Gowalia Tank Maidan",
+     scene: "Aruna Asaf Ali rides a RHINO through the police line and raises the Congress flag at Gowalia Tank."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Usha Mehta (27 Aug)",
+     event: "Usha Mehta's secret Congress Radio goes on the air",
+     place: "Girgaum",
+     scene: "Usha Mehta hides her radio transmitter inside a RHINO's horn and broadcasts the secret Congress Radio."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Usha Mehta (12 Nov)",
+     event: "Police find the Congress Radio and arrest Usha Mehta",
+     place: "Girgaum",
+     scene: "Police tear the hidden transmitter off a RHINO's back and arrest Usha Mehta beside it."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Royal Indian Navy mutiny (22 Feb)",
+     event: "Mutiny riots: troops fire on crowds in the streets; curfew; up to hundreds die",
+     place: "Parel and Dadar",
+     scene: "A giant ROACH leads the Parel crowd over the barricades for the mutineers, and troops open fire on it."}
+  - {year: 1946, peg: roach, confidence: high, source: "Search: Papers Past; Hansard 18 Nov",
+     event: "Communal riots in September kill hundreds in the city",
+     place: "Bhendi Bazaar",
+     scene: "A ROACH carries a knife through the lanes of Bhendi Bazaar and the September stabbings spread house by house."}
+  # science
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Grant Road station (28 Nov)",
+     event: "BB&CI Railway runs its first train from Grant Road to Gujarat",
+     place: "Grant Road",
+     scene: "A CHERRY-red engine steams out of Grant Road on the first BB&CI train to Ahmedabad."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "Search: gas lamps on Bhendi Bazaar (National Herald)",
+     event: "First gas street lamps light Bhendi Bazaar and Esplanade Road",
+     place: "Bhendi Bazaar",
+     scene: "A lamplighter fills the Bhendi Bazaar lamps with glowing JELLY, and the first gas flame lights the street."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Mumbai Suburban Railway (12 April)",
+     event: "First suburban train service runs from Virar to Backbay",
+     place: "Backbay station",
+     scene: "A JOCKEY rides the first suburban train from Virar to Backbay with a whip in his hand."}
+  - {year: 1870, peg: goose, confidence: medium, source: "WP: Churchgate station (infobox 10 Jan)",
+     event: "Churchgate station opens on the BB&CI line",
+     place: "Churchgate",
+     scene: "A GOOSE waddles through the old Church Gate and lays the first platform of Churchgate station."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: Mumbai Suburban Railway",
+     event: "BB&CI line is extended south to Colaba",
+     place: "Colaba",
+     scene: "A giant COMB rakes rails along the Colaba Causeway and pulls the line south to a new terminus."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: Gokuldas Tejpal Hospital (8 April)",
+     event: "Gokuldas Tejpal Hospital is completed",
+     place: "Esplanade",
+     scene: "The first patient arrives at Gokuldas Tejpal Hospital in a horse CAR and goes into the new ward."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP: CSMT (May)",
+     event: "Work begins on Victoria Terminus at Bori Bunder",
+     place: "Bori Bunder",
+     scene: "Navvies dig a CAVE for the foundations at Bori Bunder, and Victoria Terminus starts to rise."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "Search: Citizen Matters (WP says 1897)",
+     event: "Tulsi waterworks are completed and supply the city",
+     place: "Tulsi Lake",
+     scene: "A COWBOY ropes the Tasso river into Tulsi Lake and sends the water down pipes to the city."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Crawford Market",
+     event: "Crawford Market is the first building in India lit by electricity",
+     place: "Crawford Market",
+     scene: "An electric OVEN glows inside Crawford Market, and bulbs light up every stall around it."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Cama and Albless Hospital (30 July)",
+     event: "Cama Hospital for women and children opens",
+     place: "Cama Hospital",
+     scene: "A nurse carries a newborn wrapped like a FISH into the new Cama Hospital for women."}
+  - {year: 1888, peg: fife, confidence: medium, source: "WP: Bandra station",
+     event: "Bandra station gets its main building",
+     place: "Bandra",
+     scene: "A FIFE player stands on the gabled roof of the new Bandra station and calls the commuters in."}
+  - {year: 1890, peg: bees, confidence: high, source: "Search: Acworth hospital (7 Nov)",
+     event: "Homeless Leper Asylum (later Acworth) opens at Matunga",
+     place: "Matunga",
+     scene: "Commissioner Acworth keeps BEES away from fifty patients in the new Matunga leper asylum."}
+  - {year: 1891, peg: boot, confidence: disputed, source: "WP: Powai Lake (dammed 1891; start 1889)",
+     event: "Powai dam is finished and makes Powai Lake for the water supply",
+     place: "Powai",
+     scene: "A giant BOOT stamps down across the Powai valley and dams the stream into a lake."}
+  - {year: 1892, peg: piano, confidence: medium, source: "WP: Tansa Lake (infobox)",
+     event: "Tansa dam opens and sends water to the city",
+     place: "Tansa",
+     scene: "A PIANO's keys open the Tansa dam sluices one by one, and water flows to Bombay."}
+  - {year: 1892, peg: piano, confidence: unverified,
+     event: "Infectious diseases hospital opens at Arthur Road",
+     place: "Arthur Road",
+     scene: "Doctors wheel a PIANO out of the new Arthur Road fever hospital to make room for cholera beds."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: History of Mumbai (10 Jan)",
+     event: "Haffkine's plague laboratory moves into old Government House at Parel",
+     place: "Parel",
+     scene: "Haffkine smokes a PIPE as he carries his plague cultures into old Government House at Parel."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Harbour line (12 Dec)",
+     event: "First section of the Harbour line opens, Kurla to Reay Road",
+     place: "Reay Road",
+     scene: "A giant DICE rolls down the new Harbour line from Kurla and stops at Reay Road."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Institute of Science, Mumbai",
+     event: "Foundation stone of the Royal Institute of Science is laid",
+     place: "Institute of Science, Fort",
+     scene: "A TATTOO of a flask is carved into the foundation stone of the Royal Institute of Science."}
+  - {year: 1914, peg: tower, confidence: medium, source: "Search: Bombay admin report 1914-15",
+     event: "New pumping engines are put into the Love Grove sewage station",
+     place: "Love Grove, Worli",
+     scene: "A pumping TOWER at Love Grove lifts the city's sewage and throws it out to sea."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP: BEST (September)",
+     event: "Double-decker trams start to run",
+     place: "Colaba to Dadar tram route",
+     scene: "A giraffe on the top deck of the first double-decker tram pokes its NOSE over the street."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP: Institute of Science, Mumbai",
+     event: "Royal Institute of Science building is completed",
+     place: "Institute of Science, Fort",
+     scene: "A chemist sniffs with his NOSE in the first laboratory of the finished Royal Institute of Science."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Harbour line",
+     event: "Elevated railway links the Harbour line to Victoria Terminus",
+     place: "Dockyard Road to Sandhurst Road",
+     scene: "Riveters drive the last NAIL into the elevated track that carries Harbour trains to Victoria Terminus."}
+  - {year: 1925, peg: nail, confidence: medium, source: "WP: Topiwala National Medical College",
+     event: "Dr Nair opens the B. Y. L. Nair Charitable Hospital",
+     place: "Mumbai Central",
+     scene: "Dr Nair hammers a NAIL to hang his mother's portrait in the new Nair Hospital ward."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Timeline of Mumbai (22 Jan)",
+     event: "King Edward Memorial Hospital opens at Parel",
+     place: "Parel",
+     scene: "A doctor at the new KEM Hospital in Parel takes a NACHO out of a patient's throat."}
+  - {year: 1926, peg: nacho, confidence: high, source: "Search: Raj Bhavan; NWMH",
+     event: "Nowrosjee Wadia Maternity Hospital opens at Parel",
+     place: "Parel",
+     scene: "A mother eats a NACHO after the first birth in the Nowrosjee Wadia Maternity Hospital."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: BEST (15 July)",
+     event: "First motor bus runs from Afghan Church to Crawford Market",
+     place: "Afghan Church",
+     scene: "The first BEST motor bus carries a giant NACHO from the Afghan Church to Crawford Market."}
+  - {year: 1928, peg: knife, confidence: medium, source: "WP: Juhu Aerodrome",
+     event: "Juhu aerodrome opens; the Bombay Flying Club trains there",
+     place: "Juhu",
+     scene: "A KNIFE cuts a grass strip out of the Juhu palms, and the Flying Club's first plane takes off."}
+  - {year: 1929, peg: knob, confidence: medium, source: "Search: Pearl chronology (Bombay-Kalyan)",
+     event: "Electric suburban trains reach Kalyan",
+     place: "Kalyan",
+     scene: "The motorman turns a brass KNOB and the first electric local hums into Kalyan."}
+  - {year: 1929, peg: knob, confidence: medium, source: "Search: Indian Pediatrics (12 Dec; other 1928)",
+     event: "Bai Jerbai Wadia Hospital for Children opens",
+     place: "Parel",
+     scene: "A child turns the door KNOB of the new Bai Jerbai Wadia Hospital for Children."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Mumbai Central station (18 Dec)",
+     event: "Bombay Central station opens as the BB&CI terminus",
+     place: "Bombay Central",
+     scene: "A MOUSE cuts the ribbon of the new Bombay Central terminus and long-distance trains roll in."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Churchgate station (31 Dec)",
+     event: "Colaba station closes; Churchgate becomes the line's terminus",
+     place: "Colaba",
+     scene: "A MOUSE nibbles through the rails at Colaba, and the trains stop at Churchgate instead."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "WP: Mumbai Suburban Railway",
+     event: "Salsette-Trombay Railway closes and is pulled up",
+     place: "Trombay",
+     scene: "Gangs with a HAMMER prise up the Salsette-Trombay rails, and the line to Trombay is gone."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: BEST",
+     event: "Double-decker buses start to run",
+     place: "Bombay",
+     scene: "Passengers on the top deck of the first double-decker bus raise a MUG of tea over the street."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP: Marine Drive, Mumbai",
+     event: "Pallonji Mistry builds the Marine Drive road and promenade",
+     place: "Marine Drive",
+     scene: "A HORSE pulls Pallonji's road roller along the reclaimed Back Bay and lays Marine Drive."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Tata Memorial Hospital (28 Feb)",
+     event: "Tata Memorial Hospital for cancer opens at Parel",
+     place: "Parel",
+     scene: "A RADIO set announces Bombay's first cancer hospital as Tata Memorial opens at Parel."}
+  - {year: 1942, peg: rhino, confidence: medium, source: "WP: CSMIA (opened 1942)",
+     event: "RAF Santa Cruz airfield opens",
+     place: "Santa Cruz",
+     scene: "A RHINO flattens the paddy fields at Santa Cruz into a runway for RAF bombers."}
+  # religion
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Afghan Church (7 Jan)",
+     event: "Afghan Church (St John the Evangelist) is consecrated at Colaba",
+     place: "Colaba",
+     scene: "A WOLF in a bishop's mitre consecrates the Afghan Church at Colaba for the dead of the Afghan war."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Maharaj Libel Case (22 April)",
+     event: "Maharaj Libel Case ends; the court finds Karsandas Mulji guilty but awards trivial damages",
+     place: "Supreme Court, Bombay",
+     scene: "The Maharaj sues in a gold CHAIN, but Karsandas Mulji pays almost nothing for exposing him."}
+  - {year: 1864, peg: cherry, confidence: unverified,
+     event: "David Sassoon builds the Magen David Synagogue at Byculla",
+     place: "Byculla",
+     scene: "David Sassoon sets a CHERRY on the blue spire of the new Magen David Synagogue in Byculla."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Afghan Church (10 June)",
+     event: "Afghan Church spire is completed",
+     place: "Colaba",
+     scene: "Builders stack JELLY on JELLY until the Afghan Church spire stands finished over Colaba."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Henry Steel Olcott (16 Feb)",
+     event: "Blavatsky and Olcott land in Bombay and set up the Theosophical Society's base",
+     place: "Girgaum",
+     scene: "A COWBOY rows Blavatsky and Olcott ashore at Bombay, and they set up the Theosophists' house in Girgaum."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Knesset Eliyahoo",
+     event: "Jacob Sassoon's Knesset Eliyahoo Synagogue is completed",
+     place: "Kala Ghoda",
+     scene: "A blue FAIRY paints the facade of the Knesset Eliyahoo Synagogue near Kala Ghoda."}
+  - {year: 1890, peg: bees, confidence: unverified,
+     event: "Babulnath temple is rebuilt with its present spire",
+     place: "Malabar Hill",
+     scene: "BEES carry stones up Malabar Hill and build the new spire of the Babulnath temple."}
+  - {year: 1897, peg: pig, confidence: medium, source: "Search: list of Atash Behrams (17 Oct)",
+     event: "Anjuman Atash Behram is consecrated at Dhobi Talao",
+     place: "Dhobi Talao",
+     scene: "A PIG runs from the holy fire as priests consecrate the Anjuman Atash Behram at Dhobi Talao."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "WP: Mount Mary Church (rebuilt)",
+     event: "Mount Mary church at Bandra is rebuilt",
+     place: "Bandra",
+     scene: "Pilgrims climb out of a SEWER onto the hill and find the rebuilt Mount Mary church at Bandra."}
+  - {year: 1905, peg: seal, confidence: medium, source: "WP: Holy Name Cathedral (completed)",
+     event: "Holy Name Church is completed at Colaba",
+     place: "Colaba",
+     scene: "A SEAL balances the cross on top of the new Holy Name Church in Colaba."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Gloria Church",
+     event: "New Gloria Church opens at Byculla",
+     place: "Byculla",
+     scene: "Franciscans carry the old church's TOMB slab from Mazagaon into the new Gloria Church at Byculla."}
+  - {year: 1920, peg: nose, confidence: medium, source: "WP: Timeline of Mumbai",
+     event: "People of many quarters join to keep the public Ganesh festival at Chinchpokli",
+     place: "Chinchpokli",
+     scene: "The Ganesh idol at Chinchpokli lifts its trunk-NOSE to bless crowds from all over the city."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Search: Belur Math; Raj Bhavan",
+     event: "Swami Shivananda lays the foundation stone of the Ramakrishna Mission at Khar",
+     place: "Khar",
+     scene: "A GNOME hands Swami Shivananda the trowel, and he lays the Ramakrishna Mission stone at Khar."}
+  # arts
+  - {year: 1862, peg: chain, confidence: high, source: "Search: WP Jijamata Udyaan (19 Nov)",
+     event: "Lady Frere opens Victoria Gardens at Byculla",
+     place: "Byculla",
+     scene: "Lady Frere cuts a flower CHAIN at the gate and opens Victoria Gardens to the public."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Bhau Daji Lad Museum",
+     event: "Foundation stone of the Victoria and Albert Museum is laid in the gardens",
+     place: "Byculla",
+     scene: "A CHAIN of workers lowers the foundation stone of the Victoria and Albert Museum in Byculla."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Wellington Fountain",
+     event: "Wellington Fountain is put up in memory of Wellington's visits",
+     place: "Colaba Causeway",
+     scene: "Wellington's statue spouts red JELLY from the new fountain at the end of the Colaba road."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Rajabai Clock Tower (1 March)",
+     event: "Foundation stone of the Rajabai Clock Tower is laid",
+     place: "University, Fort",
+     scene: "A SHIP's anchor drops into the university lawn and becomes the foundation stone of the Rajabai Tower."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP: David Sassoon Library",
+     event: "David Sassoon Library building is completed",
+     place: "Kala Ghoda",
+     scene: "A GOOSE reads in the garden of the new David Sassoon Library at Kala Ghoda."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Bhau Daji Lad Museum (2 May)",
+     event: "Victoria and Albert Museum opens at Byculla",
+     place: "Byculla",
+     scene: "Visitors drop a COIN at the gate and walk into the new Victoria and Albert Museum."}
+  - {year: 1872, peg: coin, confidence: high, source: "Search: victorianweb; RCT (29 April)",
+     event: "Noble's marble statue of Queen Victoria is unveiled under its canopy",
+     place: "Esplanade near Victoria Terminus",
+     scene: "The Gaekwad of Baroda pays with a COIN, and Noble's marble Queen Victoria is unveiled."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Horniman Circle Gardens",
+     event: "Elphinstone Circle garden is completed",
+     place: "Horniman Circle",
+     scene: "Gardeners plant a ring of trees round a giant COIN in the middle of the new Elphinstone Circle."}
+  - {year: 1874, peg: car, confidence: unverified,
+     event: "University Convocation Hall, by Gilbert Scott, is completed",
+     place: "University, Fort",
+     scene: "Graduates drive a CAR under the rose window of the new Convocation Hall."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Search: livehistoryindia (29 June)",
+     event: "Equestrian statue of the Prince of Wales (Kala Ghoda) is unveiled",
+     place: "Kala Ghoda",
+     scene: "A COWBOY pulls the cloth off Boehm's black horse statue, and the place gets the name Kala Ghoda."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Hanging Gardens of Mumbai",
+     event: "Hanging Gardens are laid out over the Malabar Hill reservoir",
+     place: "Malabar Hill",
+     scene: "A giant FOOT presses earth over the Malabar Hill reservoir, and the Hanging Gardens grow on top."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Elphinstone College",
+     event: "Elphinstone College building at Kala Ghoda is completed",
+     place: "Kala Ghoda",
+     scene: "A FIFE band leads the Elphinstone students into their new Gothic college at Kala Ghoda."}
+  - {year: 1899, peg: pipe, confidence: unverified,
+     event: "BB&CI Railway headquarters, by Stevens, is completed at Churchgate",
+     place: "Churchgate",
+     scene: "Stevens blows smoke from a PIPE into the dome of the new BB&CI headquarters at Churchgate."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: CSMVS (11 Nov)",
+     event: "Prince of Wales lays the foundation stone of the Prince of Wales Museum",
+     place: "Kala Ghoda",
+     scene: "A SEAL balances the foundation stone on its nose until the Prince of Wales sets it in place."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP: Royal Opera House (1911; also 1912)",
+     event: "Royal Opera House is opened while still unfinished",
+     place: "Girgaum",
+     scene: "A singer with a TATTOO of a lyre sings the first aria in the unfinished Royal Opera House."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Gateway of India (31 March)",
+     event: "Foundation stone of the Gateway of India is laid at Apollo Bunder",
+     place: "Apollo Bunder",
+     scene: "Governor Sydenham lays a TOMB-sized foundation stone for the Gateway on Apollo Bunder."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: CSMVS",
+     event: "Prince of Wales Museum building is completed and serves as a war hospital",
+     place: "Kala Ghoda",
+     scene: "Nurses lay wounded soldiers and a broken DOLL in beds under the new museum dome."}
+  - {year: 1923, peg: gnome, confidence: medium, source: "WP: BMC",
+     event: "Statue of Pherozeshah Mehta is put up by the Municipal Building",
+     place: "Municipal Corporation Building",
+     scene: "A GNOME polishes the bronze shoes of the new Pherozeshah Mehta statue by the Municipal Building."}
+  - {year: 1933, peg: mummy, confidence: high, source: "Search: Time Out; livehistoryindia (14 Oct)",
+     event: "Regal Cinema, the first Art Deco cinema, opens at Colaba",
+     place: "Colaba",
+     scene: "A MUMMY unwraps in the Art Deco foyer of the new Regal Cinema and laughs at Laurel and Hardy."}
+  - {year: 1935, peg: mill, confidence: medium, source: "Search: WP Hunterwali (Super Cinema)",
+     event: "Wadia's Hunterwali, with Fearless Nadia, premieres at Super Cinema",
+     place: "Grant Road",
+     scene: "Fearless Nadia swings from a MILL wheel and cracks her whip in Hunterwali at the Super Cinema."}
+  - {year: 1937, peg: mug, confidence: medium, source: "WP: Marine Drive (1937-39)",
+     event: "First Art Deco blocks rise on Marine Drive (Kapur, Zaver and Keval Mahal)",
+     place: "Marine Drive",
+     scene: "Builders pour concrete from a giant MUG into the curved balconies of Keval Mahal on Marine Drive."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Eros Cinema (10 Feb)",
+     event: "Eros Cinema opens at Churchgate",
+     place: "Churchgate",
+     scene: "The first MOVIE flickers on the screen of the new Eros Cinema opposite Churchgate."}
+  - {year: 1938, peg: movie, confidence: high, source: "Search: TIFR Metro page (8 June)",
+     event: "MGM's Metro Cinema opens at Dhobi Talao",
+     place: "Dhobi Talao",
+     scene: "The MGM lion roars out of the first MOVIE at the new Metro Cinema."}
+  - {year: 1944, peg: warrior, confidence: disputed, source: "WP: Prithvi Theatres (1944; 1942 in text)",
+     event: "Prithviraj Kapoor founds the touring Prithvi Theatres",
+     place: "Bombay",
+     scene: "Prithviraj Kapoor, dressed as a WARRIOR king, opens Prithvi Theatres with Shakuntala."}
+  # economy
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP: Timeline of Mumbai",
+     event: "Chartered Bank of India, Australia and China opens its Bombay branch",
+     place: "Fort",
+     scene: "A WOLF in a pinstripe suit opens the Chartered Bank's first branch office in the Fort."}
+  - {year: 1863, peg: gem, confidence: medium, source: "WP: History of Mumbai",
+     event: "Bombay Shipping and Iron Shipping companies start",
+     place: "Bombay harbour",
+     scene: "Merchants pay for an iron steamer with a GEM, and the Bombay Shipping Company sails its own ships."}
+  - {year: 1863, peg: gem, confidence: medium, source: "Search: Act of 12 May (legitquest)",
+     event: "An Act lets the Bombay Gas Company lay pipes in the streets",
+     place: "Lalbaug",
+     scene: "A gas flame burns like a blue GEM as the Bombay Gas Company digs its first pipe trench."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Back Bay (crash of 1865)",
+     event: "Back Bay Reclamation Company fails in the crash; its strip goes to the railway",
+     place: "Back Bay",
+     scene: "The Back Bay landfill wobbles like JELLY and sinks with the share crash; the railway takes the strip."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: History of Mumbai",
+     event: "Bombay Coast and River Steam Navigation Company starts ferries to the islands",
+     place: "Ferry Wharf",
+     scene: "A JUDGE in his wig steers the first steam ferry from Ferry Wharf to the harbour islands."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Crawford Market",
+     event: "Crawford Market is completed",
+     place: "Crawford Market",
+     scene: "A SHIP unloads crates of mangoes straight into the new stalls of Crawford Market."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Jamsetji Tata",
+     event: "Jamsetji Tata buys an oil mill at Chinchpokli and makes it the Alexandra cotton mill",
+     place: "Chinchpokli",
+     scene: "Jamsetji Tata turns a SHIP's wheel and the Chinchpokli oil mill starts to spin cotton."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: Esplanade Mansion (4 Feb)",
+     event: "Watson's Hotel, of cast iron, opens on the Esplanade",
+     place: "Kala Ghoda",
+     scene: "A CAT walks along the cast-iron balcony of the new Watson's Hotel and greets the first guests."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Search: Freemason 1876 (11 Nov)",
+     event: "Prince of Wales lays the foundation stone of Prince's Dock",
+     place: "Prince's Dock",
+     scene: "An EAGLE drops the Masonic trowel to the Prince of Wales, and he lays the stone of Prince's Dock."}
+  - {year: 1875, peg: eagle, confidence: unverified,
+     event: "Albert Sassoon opens Sassoon Dock at Colaba",
+     place: "Colaba",
+     scene: "An EAGLE snatches the first fish landed at the new Sassoon Dock in Colaba."}
+  - {year: 1880, peg: vase, confidence: high, source: "Search: National Archives (1 Jan)",
+     event: "Prince's Dock opens to traffic",
+     place: "Prince's Dock",
+     scene: "A steamer carries a giant VASE into the new Prince's Dock on its first day of traffic."}
+  - {year: 1887, peg: fox, confidence: medium, source: "Search: WP Tata Textiles",
+     event: "Tata buys the Dharamsi Mill at Kurla and renames it Svadeshi Mills",
+     place: "Kurla",
+     scene: "A FOX buys the bankrupt Kurla mill for Tata and paints Svadeshi over the gate."}
+  - {year: 1891, peg: boot, confidence: unverified,
+     event: "Merewether dry dock opens beside Victoria Dock",
+     place: "Victoria Dock",
+     scene: "A giant BOOT stands in the empty Merewether dry dock while workers scrape a ship's hull."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: The Times of India",
+     event: "Bennett, Coleman and Company buys The Times of India",
+     place: "Bori Bunder",
+     scene: "Bennett and Coleman buy The Times of India and sign the deal on a PIANO lid."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Indian Hotels Company (registered)",
+     event: "Jamsetji Tata registers the Indian Hotels Company",
+     place: "Apollo Bunder",
+     scene: "The SUN rises over Apollo Bunder as Tata registers the Indian Hotels Company to build his hotel."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Tata Power",
+     event: "Tata Hydro-Electric Power Supply Company is founded to power the mills",
+     place: "Bombay House",
+     scene: "Tata rolls a DICE on the board table and starts a hydro company to light Bombay's mills."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Ballard Estate",
+     event: "Port Trust starts to reclaim Ballard Estate",
+     place: "Ballard Estate",
+     scene: "The Port Trust dumps earth around a TOWER in the harbour mud, and Ballard Estate rises."}
+  - {year: 1918, peg: dove, confidence: medium, source: "WP: Kohinoor Film Company (1918-19)",
+     event: "Dwarkadas Sampat founds the Kohinoor Film Company",
+     place: "Dadar",
+     scene: "Sampat releases a DOVE from the roof of his new Kohinoor film studio."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP: Back Bay",
+     event: "Back Bay reclamation scheme (Lloyd's Folly) starts",
+     place: "Back Bay",
+     scene: "Governor Lloyd holds his NOSE as dredgers pump sea mud into Back Bay."}
+  - {year: 1923, peg: gnome, confidence: medium, source: "Search: Bombay admin review (1 Nov)",
+     event: "New Cotton Green at Sewri opens for the cotton trade",
+     place: "Sewri",
+     scene: "A GNOME rolls the first cotton bale onto the new Cotton Green at Sewri."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: History of Mumbai",
+     event: "Back Bay scandal: the reclamation runs far over cost",
+     place: "Back Bay",
+     scene: "The Back Bay accounts sink in a pile of NACHO crumbs as the reclamation costs run out of control."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Parle Products",
+     event: "Chauhan family founds Parle Products at Vile Parle",
+     place: "Vile Parle",
+     scene: "The Chauhans turn the KNOB of their first oven at Vile Parle and Parle sweets come out."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Ranjit Movietone",
+     event: "Ranjit Film Company starts making films at Dadar",
+     place: "Dadar",
+     scene: "Chandulal Shah turns the camera KNOB and the Ranjit studio shoots its first film."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Wadia Movietone",
+     event: "Wadia brothers found Wadia Movietone",
+     place: "Parel",
+     scene: "A MUMMY in stunt boots signs a contract with the Wadia brothers at their new Movietone studio."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: Mazagon Dock Shipbuilders",
+     event: "Mazagon Dock Limited is registered as a company",
+     place: "Mazagaon",
+     scene: "A shipwright's HAMMER rings as Mazagon Dock Limited is registered."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Parle Products",
+     event: "Parle starts to bake biscuits at Vile Parle for the army",
+     place: "Vile Parle",
+     scene: "A soldier spreads a MAP over a tin of the first Parle biscuits from Vile Parle."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP: Timeline of Mumbai",
+     event: "Reclamation starts for the land that becomes Nariman Point",
+     place: "Nariman Point",
+     scene: "A sea HORSE watches dredgers fill the bay where Nariman Point will stand."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Mehboob Studios",
+     event: "Mehboob Khan founds Mehboob Productions",
+     place: "Bombay",
+     scene: "Mehboob Khan stamps a RHINO-shaped logo on the first reel of Mehboob Productions."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Filmistan",
+     event: "Ashok Kumar and S. Mukherjee leave Bombay Talkies and found Filmistan at Goregaon",
+     place: "Goregaon",
+     scene: "A RAM butts open the gate of the new Filmistan studio on S. V. Road at Goregaon."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Air India (29 July)",
+     event: "Tata Airlines becomes a public company named Air India",
+     place: "Bombay House",
+     scene: "A ROACH paints the name Air India on a Tata plane's tail as the airline goes public."}
+  - {year: 1946, peg: roach, confidence: medium, source: "WP: The Times of India",
+     event: "Bennett, Coleman and Company is sold to Ramkrishna Dalmia",
+     place: "Bori Bunder",
+     scene: "Dalmia finds a ROACH in the Times of India press room on the day he buys the company."}
+  # society
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Cathedral and John Connon School (14 Nov)",
+     event: "Cathedral grammar school is founded",
+     place: "Fort",
+     scene: "The bishop gives each first pupil a piece of CHEESE at the new Cathedral school."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Search: Statesman's Year-Book (Feb census)",
+     event: "First census of the city counts about eight hundred thousand people",
+     place: "Bombay",
+     scene: "Census clerks count every head in Bombay by dropping a CHERRY into a jar for each person."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: St Xavier's College (2 Jan)",
+     event: "German Jesuits found St Xavier's College",
+     place: "Dhobi Talao",
+     scene: "German Jesuits sail a SHIP into Bombay and unload desks for St Xavier's College."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Bombay Gymkhana (19 June)",
+     event: "Bombay Gymkhana is founded",
+     place: "Azad Maidan",
+     scene: "An EAGLE flies over the new Bombay Gymkhana and drops a cricket ball on the maidan."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Mahalaxmi Racecourse",
+     event: "Mahalaxmi Racecourse is built",
+     place: "Mahalaxmi",
+     scene: "Horses race through sea FOAM on the reclaimed flat at the new Mahalaxmi Racecourse."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "Search: parsikhabar (formed 1885)",
+     event: "Parsee Gymkhana is formed on the Back Bay shore",
+     place: "Marine Lines",
+     scene: "Parsi cricketers eat a WAFFLE for tea at their new gymkhana on the Back Bay shore."}
+  - {year: 1886, peg: fish, confidence: medium, source: "WP: History of Mumbai",
+     event: "Bombay Veterinary College is founded at Parel",
+     place: "Parel",
+     scene: "A vet at the new Parel veterinary college pulls a FISH bone out of a horse's mouth."}
+  - {year: 1887, peg: fox, confidence: high, source: "Search: Mumbai Fire Brigade (1 April)",
+     event: "Fire brigade passes from the police to the Municipal Corporation",
+     place: "Byculla",
+     scene: "A FOX in a fire helmet hands the brigade's hose from the police to the Municipal Corporation."}
+  - {year: 1890, peg: bees, confidence: medium, source: "WP: Dabbawala",
+     event: "Mahadeo Havaji Bachche starts the dabbawala lunch delivery",
+     place: "Grant Road",
+     scene: "Bachche's dabbawalas swarm like BEES through the stations, each carrying lunch tins to offices."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Rovers Cup",
+     event: "Rovers Cup football tournament starts",
+     place: "Cooperage ground",
+     scene: "A soldier's BOOT kicks the winning goal for the Worcesters in the first Rovers Cup."}
+  - {year: 1892, peg: piano, confidence: medium, source: "Search: zoroastrians.net (1890 also given)",
+     event: "Islam Gymkhana is founded on the Back Bay shore",
+     place: "Marine Lines",
+     scene: "Members roll a PIANO into the pavilion of the new Islam Gymkhana beside the Parsis."}
+  - {year: 1894, peg: bear, confidence: medium, source: "Search: mail-archive; zoroastrians.net",
+     event: "P. J. Hindu Gymkhana is founded",
+     place: "Marine Lines",
+     scene: "A BEAR bowls the first ball at the new P. J. Hindu Gymkhana on Marine Lines."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Bombay City Improvement Trust",
+     event: "Dadar-Matunga-Wadala-Sion scheme, the first planned suburb, begins",
+     place: "Dadar and Matunga",
+     scene: "Surveyors lay a long PIPE from Dadar to Sion and mark plots for the first planned suburb."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "WP: Timeline of Mumbai",
+     event: "Franciscan Brothers found St Francis D'Assisi High School at Borivali",
+     place: "Borivali",
+     scene: "A Franciscan Brother teaches the first class at Borivali from an old SOFA."}
+  - {year: 1910, peg: dice, confidence: disputed, source: "WP: The Bombay Chronicle (1910); other page 1913",
+     event: "Pherozeshah Mehta founds the Bombay Chronicle",
+     place: "Fort",
+     scene: "Pherozeshah Mehta rolls a DICE on the editor's desk and the first Bombay Chronicle goes to press."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP: Timeline of Mumbai; WP Dadar",
+     event: "King George English School opens at Dadar",
+     place: "Dadar",
+     scene: "Pupils of the new King George School at Dadar stick out their TONGUE at the English grammar."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Sydenham College (October)",
+     event: "Sydenham College, the first college of commerce in Asia, opens",
+     place: "Churchgate",
+     scene: "Commerce students keep their ledgers on a stone TOMB in the first classroom of Sydenham College."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Willingdon Sports Club (18 May)",
+     event: "Lord Willingdon founds the Willingdon Sports Club with no colour bar",
+     place: "Mahalaxmi",
+     scene: "Willingdon's DOG chases the doorman of the whites-only Yacht Club, and he opens his own club for all."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: History of Mumbai (January)",
+     event: "First big general strike of the textile mills",
+     place: "Girangaon",
+     scene: "A TUBA blasts at dawn, and every mill in Girangaon falls silent in the first general strike."}
+  - {year: 1920, peg: nose, confidence: medium, source: "Search: BDD chawls, Bombay Development Directorate",
+     event: "Development Directorate starts building industrial chawls at Worli, Naigaum and DeLisle Road",
+     place: "Worli",
+     scene: "Workers holding their NOSE against the dust raise the first concrete chawls at Worli."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Shivaji Park",
+     event: "Municipal Corporation lays out Mahim Park (Shivaji Park)",
+     place: "Dadar",
+     scene: "A gardener hammers a NAIL into the sign of the new Mahim Park, later Shivaji Park, at Dadar."}
+  - {year: 1925, peg: nail, confidence: unverified,
+     event: "Bawla murder: gunmen shoot a Malabar Hill merchant and take his companion Mumtaz Begum",
+     place: "Malabar Hill",
+     scene: "Gunmen on Malabar Hill rip the car's door off its NAIL hinges and shoot Bawla dead."}
+  - {year: 1928, peg: knife, confidence: high, source: "Search: Indian Labour Archives (May)",
+     event: "Communists form the Girni Kamgar Union of mill workers",
+     place: "Parel",
+     scene: "Dange holds up a red KNIFE and cuts the ribbon of the Girni Kamgar Union office in Parel."}
+  - {year: 1929, peg: knob, confidence: high, source: "Search: Hansard 6 May",
+     event: "Girni Kamgar Union calls a general strike of the mills",
+     place: "Girangaon",
+     scene: "A union man twists off every engine KNOB in Girangaon, and a hundred thousand workers walk out."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Institute of Chemical Technology (1 Oct)",
+     event: "University Department of Chemical Technology (UDCT) is founded",
+     place: "Matunga",
+     scene: "A MUMMY stirs a dye vat in the first laboratory of the University Department of Chemical Technology."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Brabourne Stadium (8 Nov)",
+     event: "Cricket Club of India is incorporated",
+     place: "Churchgate",
+     scene: "A MUMMY in whites signs the papers that found the Cricket Club of India."}
+  - {year: 1935, peg: mill, confidence: high, source: "Search: ESPNcricinfo (9-12 March)",
+     event: "Bombay beats Northern India in the first Ranji Trophy final",
+     place: "Bombay Gymkhana",
+     scene: "Vajifdar's arm turns like a MILL wheel at the Gymkhana, and Bombay wins the first Ranji final."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: SNDT Women's University",
+     event: "SNDT Women's University moves its seat from Poona to Bombay",
+     place: "Churchgate",
+     scene: "A MATCH lights the lamp in the new Bombay office of SNDT Women's University."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Tata Institute of Social Sciences",
+     event: "Sir Dorabji Tata Graduate School of Social Work (TISS) is founded",
+     place: "Nagpada",
+     scene: "Social work students strike a MATCH to light the stove in a Nagpada slum on their first day."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: Brabourne Stadium (7 Dec)",
+     event: "Brabourne Stadium opens",
+     place: "Churchgate",
+     scene: "Governor Lumley raises a MUG of beer and opens Brabourne Stadium on reclaimed land."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: Bombay Pentangular",
+     event: "A fifth team, The Rest, joins: the Bombay Pentangular begins",
+     place: "Brabourne Stadium",
+     scene: "The Rest team walks in carrying a fifth MUG, and the Quadrangular becomes the Pentangular."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: Ramnarain Ruia College (June)",
+     event: "Ramnarain Ruia College opens at Matunga",
+     place: "Matunga",
+     scene: "The first Ruia College students drink from a MUG of chai at their new Matunga campus."}
+  - {year: 1939, peg: map, confidence: disputed, source: "WP: Dadar (1939); Podar often 1941",
+     event: "Podar College of Commerce opens at Matunga",
+     place: "Matunga",
+     scene: "Commerce students trace trade routes on a MAP in the first class of Podar College."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Siddharth College (8 July)",
+     event: "Ambedkar founds the People's Education Society",
+     place: "Fort",
+     scene: "Ambedkar sends poor students to school on a free RAILWAY ticket from his People's Education Society."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Siddharth College (20 June)",
+     event: "Ambedkar's Siddharth College opens",
+     place: "Fort",
+     scene: "Ambedkar sweeps a ROACH from the first classroom of Siddharth College."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Bombay Pentangular",
+     event: "Bombay Pentangular cricket tournament ends",
+     place: "Brabourne Stadium",
+     scene: "A ROACH crawls over the last Pentangular scorecard, and the communal tournament ends."}
+
+world_refs:
+  - {year: 1857, event: "University of Bombay is founded", cell: south_asia_society_1800_1945}
+  - {year: 1857, event: "Sir J. J. School of Art opens", cell: south_asia_arts_1800_1945}
+  - {year: 1860, event: "Vihar Lake waterworks", cell: south_asia_science_1800_1945}
+  - {year: 1861, event: "American Civil War cotton boom", cell: south_asia_economy_1800_1945}
+  - {year: 1864, event: "Flora Fountain is completed", cell: south_asia_arts_1800_1945}
+  - {year: 1865, event: "Share mania collapses", cell: south_asia_economy_1800_1945}
+  - {year: 1867, event: "Prarthana Samaj is founded", cell: south_asia_religion_1800_1945}
+  - {year: 1868, event: "Old Bank of Bombay is liquidated", cell: south_asia_economy_1800_1945}
+  - {year: 1868, event: "Jamsetji Tata starts his trading firm", cell: south_asia_economy_1800_1945}
+  - {year: 1870, event: "Bombay Mutual Life Assurance Society", cell: south_asia_economy_1800_1945}
+  - {year: 1873, event: "Bombay Port Trust is set up", cell: south_asia_economy_1800_1945}
+  - {year: 1874, event: "Horse tramway from Colaba", cell: south_asia_science_1800_1945}
+  - {year: 1874, event: "Oriental Government Security Life Assurance Company", cell: south_asia_economy_1800_1945}
+  - {year: 1875, event: "Bombay Millowners' Association", cell: south_asia_economy_1800_1945}
+  - {year: 1875, event: "Native Share and Stock Brokers' Association (Bombay Stock Exchange)", cell: south_asia_economy_1800_1945}
+  - {year: 1875, event: "Arya Samaj is formed in Bombay", cell: south_asia_religion_1800_1945}
+  - {year: 1876, event: "Naoroji reads Poverty of India", cell: south_asia_economy_1800_1945}
+  - {year: 1877, event: "First Bombay Presidency match", cell: south_asia_society_1800_1945}
+  - {year: 1878, event: "Rajabai Clock Tower is completed", cell: south_asia_arts_1800_1945}
+  - {year: 1879, event: "Bombay Dyeing is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1882, event: "Telephone exchange opens", cell: south_asia_science_1800_1945}
+  - {year: 1883, event: "Bombay Natural History Society is founded", cell: south_asia_science_1800_1945}
+  - {year: 1885, event: "First session of the Indian National Congress", cell: south_asia_politics_1800_1945}
+  - {year: 1886, event: "Journal of the Bombay Natural History Society", cell: south_asia_science_1800_1945}
+  - {year: 1887, event: "Victoria Jubilee Technical Institute opens", cell: south_asia_science_1800_1945}
+  - {year: 1888, event: "Victoria Terminus is completed", cell: south_asia_arts_1800_1945}
+  - {year: 1888, event: "Bombay Art Society is founded", cell: south_asia_arts_1800_1945}
+  - {year: 1890, event: "Bombay Mill-Hands Association", cell: south_asia_society_1800_1945}
+  - {year: 1891, event: "Victoria Dock opens", cell: south_asia_economy_1800_1945}
+  - {year: 1892, event: "First first-class Presidency match", cell: south_asia_society_1800_1945}
+  - {year: 1894, event: "Ravi Varma's lithographic press", cell: south_asia_arts_1800_1945}
+  - {year: 1896, event: "Bubonic plague breaks out", cell: south_asia_society_1800_1945}
+  - {year: 1896, event: "Lumiere films are shown", cell: south_asia_arts_1800_1945}
+  - {year: 1896, event: "Mhatre's To the Temple wins a prize", cell: south_asia_arts_1800_1945}
+  - {year: 1896, event: "Haffkine's plague laboratory at Byculla", cell: south_asia_science_1800_1945}
+  - {year: 1897, event: "Haffkine tests his plague vaccine", cell: south_asia_science_1800_1945}
+  - {year: 1897, event: "Godrej lever lock", cell: south_asia_economy_1800_1945}
+  - {year: 1898, event: "Indian Plague Commission meets in Bombay", cell: south_asia_society_1800_1945}
+  - {year: 1899, event: "Bhatavdekar films The Wrestlers", cell: south_asia_arts_1800_1945}
+  - {year: 1902, event: "Godrej safe", cell: south_asia_economy_1800_1945}
+  - {year: 1903, event: "Taj Mahal Palace Hotel opens", cell: south_asia_arts_1800_1945}
+  - {year: 1905, event: "BEST power station for trams", cell: south_asia_science_1800_1945}
+  - {year: 1906, event: "Bank of India is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1907, event: "Electric trams", cell: south_asia_science_1800_1945}
+  - {year: 1907, event: "Indian Merchants' Chamber", cell: south_asia_economy_1800_1945}
+  - {year: 1907, event: "Tata Iron and Steel Company is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1907, event: "Bombay tournament becomes the Triangular", cell: south_asia_society_1800_1945}
+  - {year: 1908, event: "Paluskar's Bombay Gandharva Mahavidyalaya", cell: south_asia_arts_1800_1945}
+  - {year: 1911, event: "Central Bank of India", cell: south_asia_economy_1800_1945}
+  - {year: 1912, event: "Torne's Shree Pundalik", cell: south_asia_arts_1800_1945}
+  - {year: 1912, event: "Bombay tournament becomes the Quadrangular", cell: south_asia_society_1800_1945}
+  - {year: 1913, event: "Phalke's Raja Harishchandra opens", cell: south_asia_arts_1800_1945}
+  - {year: 1914, event: "Alexandra Dock opens", cell: south_asia_economy_1800_1945}
+  - {year: 1915, event: "Gandhi returns to India at Bombay", cell: south_asia_politics_1800_1945}
+  - {year: 1915, event: "Tata hydroelectric power reaches Bombay", cell: south_asia_science_1800_1945}
+  - {year: 1917, event: "Phalke's Lanka Dahan", cell: south_asia_arts_1800_1945}
+  - {year: 1918, event: "Bombay mint strikes gold sovereigns", cell: south_asia_economy_1800_1945}
+  - {year: 1918, event: "Godrej Soaps", cell: south_asia_economy_1800_1945}
+  - {year: 1918, event: "Influenza pandemic reaches Bombay", cell: south_asia_society_1800_1945}
+  - {year: 1919, event: "Gandhi's hartal against the Rowlatt Act", cell: south_asia_politics_1800_1945}
+  - {year: 1919, event: "New India Assurance", cell: south_asia_economy_1800_1945}
+  - {year: 1919, event: "Union Bank of India", cell: south_asia_economy_1800_1945}
+  - {year: 1919, event: "Scindia's SS Loyalty sails for Britain", cell: south_asia_economy_1800_1945}
+  - {year: 1920, event: "Godrej vegetable-oil soap", cell: south_asia_economy_1800_1945}
+  - {year: 1920, event: "Electric signals Dadar to Currey Road", cell: south_asia_science_1800_1945}
+  - {year: 1920, event: "All India Trade Union Congress is founded", cell: south_asia_society_1800_1945}
+  - {year: 1920, event: "Ambedkar's Mooknayak", cell: south_asia_society_1800_1945}
+  - {year: 1921, event: "Prince of Wales hartal and riots", cell: south_asia_politics_1800_1945}
+  - {year: 1921, event: "East India Cotton Association", cell: south_asia_economy_1800_1945}
+  - {year: 1922, event: "Prince of Wales Museum opens", cell: south_asia_arts_1800_1945}
+  - {year: 1923, event: "Radio Club of Bombay broadcasts", cell: south_asia_science_1800_1945}
+  - {year: 1924, event: "Gateway of India opens", cell: south_asia_arts_1800_1945}
+  - {year: 1924, event: "Bahishkrit Hitakarini Sabha", cell: south_asia_society_1800_1945}
+  - {year: 1925, event: "First electric train, Victoria Terminus to Kurla", cell: south_asia_science_1800_1945}
+  - {year: 1925, event: "Plague Laboratory is renamed the Haffkine Institute", cell: south_asia_science_1800_1945}
+  - {year: 1926, event: "Imperial Film Company", cell: south_asia_arts_1800_1945}
+  - {year: 1927, event: "Indian Broadcasting Company's Bombay station", cell: south_asia_science_1800_1945}
+  - {year: 1928, event: "Colaba-Borivali line is electrified", cell: south_asia_science_1800_1945}
+  - {year: 1928, event: "Colour-light signals VT to Byculla", cell: south_asia_science_1800_1945}
+  - {year: 1928, event: "Six-month textile general strike", cell: south_asia_society_1800_1945}
+  - {year: 1928, event: "Simon Commission arrives and meets black flags", cell: south_asia_politics_1800_1945}
+  - {year: 1930, event: "Deccan Queen starts", cell: south_asia_science_1800_1945}
+  - {year: 1931, event: "Alam Ara opens", cell: south_asia_arts_1800_1945}
+  - {year: 1932, event: "Gandhi is arrested and civil disobedience resumes", cell: south_asia_politics_1800_1945}
+  - {year: 1932, event: "J. R. D. Tata's first airmail to Juhu", cell: south_asia_science_1800_1945}
+  - {year: 1933, event: "First Test match in India at the Bombay Gymkhana", cell: south_asia_society_1800_1945}
+  - {year: 1934, event: "Bombay Talkies is founded", cell: south_asia_arts_1800_1945}
+  - {year: 1935, event: "Jawani Ki Hawa", cell: south_asia_arts_1800_1945}
+  - {year: 1935, event: "Cipla is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1936, event: "Achhut Kanya", cell: south_asia_arts_1800_1945}
+  - {year: 1936, event: "Associated Cement Companies is formed", cell: south_asia_economy_1800_1945}
+  - {year: 1937, event: "Reserve Bank moves its central office to Bombay", cell: south_asia_economy_1800_1945}
+  - {year: 1937, event: "Sher-Gil wins the Bombay Art Society gold medal", cell: south_asia_arts_1800_1945}
+  - {year: 1938, event: "Larsen and Toubro start their firm", cell: south_asia_economy_1800_1945}
+  - {year: 1941, event: "Habib Bank opens in Bombay", cell: south_asia_economy_1800_1945}
+  - {year: 1942, event: "Quit India resolution", cell: south_asia_politics_1800_1945}
+  - {year: 1942, event: "Arrest of Gandhi and the Congress leaders", cell: south_asia_politics_1800_1945}
+  - {year: 1942, event: "Asian Paints is founded", cell: south_asia_economy_1800_1945}
+  - {year: 1943, event: "Kismet", cell: south_asia_arts_1800_1945}
+  - {year: 1943, event: "Indian People's Theatre Association", cell: south_asia_arts_1800_1945}
+  - {year: 1944, event: "Fort Stikine explosion in the docks", cell: south_asia_society_1800_1945}
+  - {year: 1944, event: "Gandhi-Jinnah talks", cell: south_asia_politics_1800_1945}
+  - {year: 1944, event: "Premier Automobiles", cell: south_asia_economy_1800_1945}
+  - {year: 1945, event: "Tata Institute of Fundamental Research", cell: south_asia_science_1945_present}
+  - {year: 1946, event: "Royal Indian Navy mutiny", cell: south_asia_politics_1945_present}
+
+out_refs:
+  - {year: 1862, event: "Bombay High Court is set up by letters patent", reason: "presidency court"}
+  - {year: 1875, event: "Prince of Wales visits Bombay", reason: "royal visit"}
+  - {year: 1890, event: "Lord Harris arrives as Governor of Bombay", reason: "governor's arrival"}
+  - {year: 1905, event: "Prince and Princess of Wales visit Bombay", reason: "royal visit"}
+  - {year: 1911, event: "George the Fifth and Queen Mary land at Apollo Bunder", reason: "royal visit"}
+  - {year: 1916, event: "Tilak's and Besant's Home Rule Leagues are founded at Belgaum and Adyar", reason: "founded outside the area; national politics"}
+  - {year: 1918, event: "Willingdon's Provincial War Conference", reason: "presidency government"}
+  - {year: 1937, event: "B. G. Kher forms the first Congress ministry of Bombay Presidency", reason: "provincial government"}
+  - {year: 1946, event: "Bombay Legislative Assembly elections", reason: "provincial elections"}
