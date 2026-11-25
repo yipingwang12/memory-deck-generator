@@ -1,0 +1,823 @@
+# City: Bangkok x 1932 to 1972 (the 1932 revolution, the coups, the war and bombing, the Vietnam War boom, the
+# merger into Bangkok Metropolis). DRAFT 2026-11-24.
+# Area: Bangkok Metropolitan Region (Phra Nakhon and Thonburi with all districts, Nonthaburi, Pathum Thani,
+# Samut Prakan, Samut Sakhon, Nakhon Pathom). Ayutthaya, Bang Pa-in and Pattaya are OUT. Region: southeast_asia.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National events -> out_refs.
+# The OUT rule covers the Thai national government (constitutions, cabinets, prime ministers, elections, royal
+# ceremonies, treaties). Coups with troops in the city, attacks and mass protests are main stage (cities.md).
+# World-grid events -> world_refs. Dates: BE converted to CE (BE - 543; Jan-Mar before 1941 checked).
+# Dates: memory pass + web check (searches within the budget of 45; no unauthorised book copies). Main sources:
+# Wikipedia at wikipedia.org (English and Thai articles per site), Bangkok Post "Thailand Journey" timeline,
+# FRUS, Papers Past, Khaosod English, EGAT, UN photo archive.
+# A work -> first public appearance (opening, premiere, first exhibition). A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1935, peg: mill, confidence: medium, source: "Papers Past: Bangkok, 24 Feb 1935",
+     event: "A gunman shoots Phibun, the defence minister, in the neck and arm after a football match",
+     place: "Bangkok football ground",
+     scene: "A gunman fires from behind a MILL wheel and hits Phibun in the neck as he climbs into his car after football."}
+  - {year: 1937, peg: mug, confidence: high, source: "thWP: Bangkok Municipality (27 May)",
+     event: "Bangkok Municipality starts work; Phraya Ramrakop is its first mayor",
+     place: "Phra Nakhon",
+     scene: "Phraya Ramrakop raises a giant MUG of office over Phra Nakhon and becomes the first mayor of the Bangkok Municipality."}
+  - {year: 1937, peg: mug, confidence: medium, source: "Search: Municipal Act docs (Thon Buri, 1937)",
+     event: "Thonburi Municipality is set up on the west bank",
+     place: "Thonburi",
+     scene: "A huge MUG lands on the west bank and pours out a new town council: the Thonburi Municipality."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Songsuradet rebellion (29 Jan 1939)",
+     event: "Songsuradet affair: Phibun's police arrest dozens of officers and politicians in one night",
+     place: "Bangkok",
+     scene: "Phibun's police spread a MAP of Bangkok at dawn, mark each suspect's house, and arrest dozens in the Songsuradet purge."}
+  - {year: 1939, peg: map, confidence: medium, source: "executedtoday (NYT, Dec 1939); WP Songsuradet",
+     event: "Eighteen men of the Songsuradet case are shot by firing squad at Bang Khwang prison",
+     place: "Bang Khwang prison, Nonthaburi",
+     scene: "A MAP of a false plot is nailed to the Bang Khwang wall, and the firing squad shoots the eighteen men named on it."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Bombing of Bangkok in WWII (7-8 Jan)",
+     event: "First Allied air raid on Bangkok hits Hua Lamphong station and kills about thirty people",
+     place: "Hua Lamphong",
+     scene: "A flying RHINO drops the first Allied bombs at night onto Hua Lamphong station and its tracks burst into flame."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Bombing of Bangkok in WWII (28 Jan)",
+     event: "RAF Blenheims miss the Wat Liap power plant and hit Chuchip market and Kasat Suek bridge",
+     place: "Kasat Suek bridge",
+     scene: "A RHINO bomber misses the Wat Liap chimneys and crashes its bombs into Chuchip market stalls instead."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Bombing of Bangkok in WWII (26 Dec)",
+     event: "US Tenth Air Force bombs Hua Lamphong, Khlong Toei port, Bang Sue arsenal and the power plants",
+     place: "Bang Sue arsenal",
+     scene: "An American RHINO charges through the sky and drops bombs on Bang Sue arsenal and the Khlong Toei docks."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Bombing of Bangkok in WWII (13 Apr)",
+     event: "Sixteen Liberators set out for Bang Sue arsenal; only four reach it",
+     place: "Bang Sue",
+     scene: "Only four of sixteen bombers follow the leading RAM all the way to Bang Sue arsenal; the rest turn back."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Bombing of Bangkok in WWII (19, 23 Dec)",
+     event: "Liberators raid Hua Lamphong station and then Khlong Toei port with flares",
+     place: "Khlong Toei port",
+     scene: "A RAM lights flares over Khlong Toei port at night so that Liberators can bomb the quays."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Bombing of Bangkok in WWII (5 Jun)",
+     event: "Nearly a hundred B-29 bombers attack the Makkasan railway yards",
+     place: "Makkasan railway yards",
+     scene: "A giant WARRIOR rides the first B-29 over Makkasan and hurls bombs onto the railway workshops."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Bombing of Bangkok in WWII (24 Nov)",
+     event: "Fifty B-29s attack Bangkok in three waves; one is shot down into the Gulf",
+     place: "Bangkok sky",
+     scene: "A Thai WARRIOR on the ground shoots one B-29 of three bomber waves down into the Gulf of Thailand."}
+  - {year: 1944, peg: warrior, confidence: high, source: "Phnom Penh Post (July 1944); JSS Batson 1974",
+     event: "The Assembly rejects Phibun's plan to move the capital to Phetchabun, so Bangkok stays the capital",
+     place: "Ananta Samakhom Throne Hall",
+     scene: "A WARRIOR plants his spear in Bangkok's soil and refuses to march to malarial Phetchabun, and the Assembly votes the move down."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Rama VI Bridge (7 Feb)",
+     event: "Allied bombing tears out the centre of the Rama VI Bridge",
+     place: "Rama VI Bridge, Bang Sue",
+     scene: "Bombs cut the RAILWAY in the middle of the Rama VI Bridge and the centre span drops into the Chao Phraya."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Bombing of Bangkok in WWII (7 Apr)",
+     event: "US Mustangs strafe Don Mueang airfield and destroy seven Thai air force planes",
+     place: "Don Mueang airfield",
+     scene: "Mustangs fly low along the RAILWAY beside Don Mueang and shoot seven Thai planes to pieces on the field."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Bombing of Bangkok in WWII (14 Apr)",
+     event: "RAF Liberators attack the Wat Liap power plant, the city's main power station",
+     place: "Wat Liap power plant",
+     scene: "A burning RAILWAY wagon full of RAF bombs rolls into the Wat Liap power plant and the city lights go out."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Bombing of Bangkok in WWII (18 Apr)",
+     event: "Liberators bomb the lock gates of Khlong Phasi Charoen; one crashes at the Bang Yang lock",
+     place: "Khlong Phasi Charoen",
+     scene: "A RAILWAY of bombs falls along Khlong Phasi Charoen and smashes its lock gates; one Liberator crashes at Bang Yang."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Bombing of Bangkok in WWII (9 Sep)",
+     event: "British and Indian troops land; the RAF sets up its headquarters at Don Mueang",
+     place: "Don Mueang",
+     scene: "Indian soldiers step off a RAILWAY train at Don Mueang and the RAF hoists its headquarters flag over the airfield."}
+  - {year: 1945, peg: railway, confidence: medium, source: "Search: Yaowarat incident (c. 20 Sep 1945)",
+     event: "Yaowarat incident: Chinese and Thai police clash with guns in Chinatown",
+     place: "Yaowarat Road",
+     scene: "A RAILWAY of Chinese flags along Yaowarat Road starts a gun fight between Chinese crowds and Thai police."}
+  - {year: 1946, peg: roach, confidence: medium, source: "thWP: Sanam Luang (19 Jan)",
+     event: "Allied and Indian occupation troops parade at Sanam Luang before King Ananda and Mountbatten",
+     place: "Sanam Luang",
+     scene: "A giant ROACH leads the Allied occupation troops in a march past Mountbatten across Sanam Luang."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: ESCAP (1949 move)",
+     event: "UN Economic Commission for Asia and the Far East moves its headquarters from Shanghai to Bangkok",
+     place: "Bangkok",
+     scene: "A long ROPE pulls the ECAFE offices all the way from Shanghai and ties them down in Bangkok."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "UN photo archive (ECAFE to Sala Santitham, Jul)",
+     event: "ECAFE moves into Sala Santitham, the Peace Hall that Thailand gives it free",
+     place: "Sala Santitham, Ratchadamnoen Nok",
+     scene: "A LAWYER hands the UN the keys of Sala Santitham, the Peace Hall, and charges no rent."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "BP Thailand Journey (4 Oct)",
+     event: "New city limits add ninety thousand people and take the capital past one million",
+     place: "Bangkok boundary",
+     scene: "A LAWYER redraws the city line with a red pen, and the Bangkok census counter rolls past one million."}
+  - {year: 1955, peg: lily, confidence: high, source: "BP Thailand Journey (23 Feb)",
+     event: "SEATO holds its first council meeting in Bangkok and puts its secretariat in the city",
+     place: "Bangkok",
+     scene: "Eight foreign ministers sign beside a LILY pond and plant the SEATO secretariat in Bangkok."}
+  - {year: 1955, peg: lily, confidence: high, source: "thWP: Sanam Luang (27 Aug)",
+     event: "First Hyde Park rally at Sanam Luang, against a school textbook",
+     place: "Sanam Luang",
+     scene: "A speaker climbs on a giant LILY in the middle of Sanam Luang and opens the first Hyde Park rally."}
+  - {year: 1957, peg: log, confidence: high, source: "Khaosod English; FRUS (2 Mar 1957)",
+     event: "Chulalongkorn and Thammasat students march on Government House against the dirty election",
+     place: "Government House",
+     scene: "Students from both universities carry a LOG like a battering ram through police lines toward Government House."}
+  - {year: 1959, peg: elbow, confidence: low, source: "BP Thailand Journey (24 Nov 1959)",
+     event: "Bangkok and Thonburi are put under one civil service administration; the two mayor posts end",
+     place: "Phra Nakhon and Thonburi",
+     scene: "An ELBOW knocks the two mayors' chairs off the river banks, and one civil servant now runs both cities."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "WP: Bangkok (Litchfield Plan, 1960)",
+     event: "The government orders the Litchfield Plan for the city's land use and transport",
+     place: "Bangkok",
+     scene: "American planners cut a huge CHEESE map of Bangkok into zones and roads: the Litchfield Plan."}
+  - {year: 1965, peg: jelly, confidence: medium, source: "WP: SEAMEO (30 Nov 1965)",
+     event: "SEAMEO, the regional education ministers' body, is founded with its secretariat in Bangkok",
+     place: "Bangkok",
+     scene: "Education ministers set a big JELLY in the shape of Southeast Asia on a Bangkok table and found SEAMEO."}
+  - {year: 1971, peg: cat, confidence: high, source: "thWP: Bangkok (Announcement 24, 21 Dec)",
+     event: "Revolutionary Council merges Phra Nakhon and Thonburi provinces into one capital province",
+     place: "Phra Nakhon and Thonburi",
+     scene: "A CAT stretches across the Chao Phraya with paws on both banks and joins Phra Nakhon to Thonburi."}
+  - {year: 1971, peg: cat, confidence: medium, source: "thWP: Bangkok Municipality (Announcement 25)",
+     event: "The Bangkok and Thonburi municipalities merge into one city municipality under the governor",
+     place: "City Hall",
+     scene: "A CAT sweeps two town hall nameplates into one basket and hands the basket to the provincial governor."}
+  - {year: 1972, peg: coin, confidence: high, source: "thWP: Bangkok Municipality (Ann. 335, 13 Dec)",
+     event: "Bangkok Metropolitan Administration replaces the province and municipality of the capital",
+     place: "Bangkok City Hall, Sao Chingcha",
+     scene: "A gold COIN stamped Krung Thep Maha Nakhon drops into City Hall and the province and municipality vanish."}
+  # science
+  - {year: 1932, peg: moon, confidence: high, source: "WP: Phramongkutklao Hospital (26 Nov)",
+     event: "Army medical division opens at Phaya Thai Palace, start of Phramongkutklao Hospital",
+     place: "Phaya Thai Palace",
+     scene: "A MOON-faced army doctor sets up beds in Phaya Thai Palace and opens the military hospital."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: Phahonyothin Road (Mar-Jul)",
+     event: "Prachathipat Road, later Phahonyothin Road, is built from the city to Don Mueang",
+     place: "Phahonyothin Road",
+     scene: "A giant HAMMER pounds a new road north from the city to Don Mueang in only four months."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Paknam Railway (bought 1936)",
+     event: "The government buys the Paknam Railway from its company",
+     place: "Paknam Railway, Hua Lamphong",
+     scene: "The state lights a MATCH under the Paknam Railway Company's share papers and takes the line for itself."}
+  - {year: 1936, peg: match, confidence: medium, source: "WP: Sukhumvit Road (opened 1936)",
+     event: "Sukhumvit Road opens east from the city",
+     place: "Sukhumvit Road",
+     scene: "A burning MATCH runs east like a fuse and lays down the new Sukhumvit Road behind it."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Rama IV Road (1947)",
+     event: "Khlong Hua Lamphong is drained and filled to widen Rama IV Road",
+     place: "Rama IV Road",
+     scene: "Workers tip ROCK after rock into Khlong Hua Lamphong until the canal becomes part of Rama IV Road."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: King Chulalongkorn Memorial Hosp. (4 Jun)",
+     event: "Chulalongkorn Hospital becomes the teaching hospital of a new medical faculty",
+     place: "Chulalongkorn Hospital, Pathum Wan",
+     scene: "A ROCK engraved Faculty of Medicine is set in front of Chulalongkorn Hospital, and students enter the wards."}
+  - {year: 1949, peg: rope, confidence: medium, source: "WP: Memorial Bridge (rebuilt 1949)",
+     event: "Memorial Bridge is rebuilt after wartime bomb damage",
+     place: "Memorial Bridge",
+     scene: "Engineers pull the broken Memorial Bridge spans back together with a thick ROPE and reopen it to traffic."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Bhumibol Adulyadej Hospital (27 Mar)",
+     event: "Air force's Bhumibol Adulyadej Hospital opens near Don Mueang",
+     place: "Bang Khen, near Don Mueang",
+     scene: "Air force pilots lower the first patient on a ROPE into the new Bhumibol Adulyadej Hospital."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Trams in Bangkok; MEA (1 Jan 1950)",
+     event: "The Danish tram and power concession ends; the state takes over as Bangkok Electricity Authority",
+     place: "Wat Liap power plant",
+     scene: "A Thai official throws a LASSO over the Danish company's trams and power plant and pulls them into state hands."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: Rajavithi Hospital (16 Apr)",
+     event: "The Women's Hospital, now Rajavithi Hospital, opens",
+     place: "Ratchawithi Road",
+     scene: "A WALLET opens and new mothers step out of it into the wards of the Women's Hospital."}
+  - {year: 1952, peg: lion, confidence: high, source: "BP Thailand Journey (25 Mar)",
+     event: "A new passenger terminal opens at Don Mueang airport",
+     place: "Don Mueang",
+     scene: "A LION cuts the ribbon at the new passenger terminal of Don Mueang and roars at the first arrivals."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Police General Hospital (13 Oct)",
+     event: "Police General Hospital opens on Rama I Road",
+     place: "Rama I Road",
+     scene: "A LION in police uniform carries injured officers into the new Police General Hospital on Rama I Road."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Maeklong Railway (1952)",
+     event: "The Maeklong Railway from Thonburi to Mahachai comes under the State Railway",
+     place: "Pak Khlong San",
+     scene: "A LION in a State Railway cap swallows the little Maeklong line from Thonburi to Mahachai."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Rama VI Bridge (12 Dec 1953)",
+     event: "Rebuilt Rama VI Bridge reopens to trains and cars",
+     place: "Rama VI Bridge",
+     scene: "A LLAMA walks the first train across the rebuilt Rama VI Bridge."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Queen Sirikit Nat. Inst. Child Health",
+     event: "Children's Hospital opens beside the Women's Hospital",
+     place: "Ratchawithi Road",
+     scene: "A LAWYER in a white coat reads the opening deed of the Children's Hospital to a crowd of sick children."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Krung Thep Bridge (31 Aug)",
+     event: "Work starts on the Krung Thep Bridge over the Chao Phraya",
+     place: "Krung Thep Bridge",
+     scene: "A LAWYER signs the contract and drives the first pile of the Krung Thep Bridge into the river bed."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Metropolitan Electricity Authority (1 Aug)",
+     event: "Metropolitan Electricity Authority is set up for the capital",
+     place: "Bangkok",
+     scene: "A WOLF bites through two old power cables and joins them into one: the Metropolitan Electricity Authority."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Krung Thep Bridge (25 Jun)",
+     event: "Krung Thep Bridge opens to traffic",
+     place: "Krung Thep Bridge",
+     scene: "A giant ELBOW pushes up the lifting span of the new Krung Thep Bridge and cars start to cross."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: Nonthaburi Bridge (1959)",
+     event: "Nonthaburi Bridge opens over the Chao Phraya",
+     place: "Nonthaburi",
+     scene: "An ELBOW bends over the river at Nonthaburi and becomes the bridge's arch."}
+  - {year: 1959, peg: elbow, confidence: low, source: "WP: AFRIMS (after the Bangkok cholera)",
+     event: "SEATO cholera research laboratory opens in Bangkok after the epidemic",
+     place: "Royal Thai Army Medical Center",
+     scene: "An ELBOW in a lab coat stirs cholera samples in the new SEATO laboratory in Bangkok."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Paknam Railway; Rama IV Road (1 Jan 1960)",
+     event: "Paknam Railway closes and its track makes way for Rama IV Road",
+     place: "Rama IV Road",
+     scene: "Road crews pave over the Paknam rails with melted CHEESE, and the last train is gone from Rama IV Road."}
+  - {year: 1961, peg: jet, confidence: high, source: "thWP: Wongwian Yai (1 Jan 1961)",
+     event: "Pak Khlong San station closes; Wongwian Yai becomes the Maeklong line terminus",
+     place: "Wongwian Yai",
+     scene: "A JET blows the old Pak Khlong San station away, and the Mahachai trains now stop at Wongwian Yai."}
+  - {year: 1961, peg: jet, confidence: high, source: "EGAT: North Bangkok Power Plant (17 May)",
+     event: "North Bangkok Power Plant at Bang Kruai opens, the largest of its time",
+     place: "Bang Kruai, Nonthaburi",
+     scene: "A JET of steam spins the turbines of the North Bangkok Power Plant and the city's lights glow brighter."}
+  - {year: 1963, peg: gem, confidence: high, source: "BP Thailand Journey (16 Jul)",
+     event: "Thailand's first automatic traffic lights start work at junctions in Bangkok",
+     place: "Bangkok junctions",
+     scene: "A red GEM, a yellow GEM and a green GEM light up in turn at a Bangkok junction and stop the traffic."}
+  - {year: 1964, peg: cherry, confidence: high, source: "BP Thailand Journey (18 Aug)",
+     event: "Bangkok Planetarium opens on Sukhumvit Road",
+     place: "Sukhumvit Road",
+     scene: "A CHERRY rolls up the dome of the new Bangkok Planetarium and lights up as the first star."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP: Ramathibodi Hospital (30 Dec)",
+     event: "Foundation stone of Ramathibodi medical school and hospital is laid at Phaya Thai",
+     place: "Phaya Thai",
+     scene: "A block of JELLY is pressed into the ground at Phaya Thai as the foundation stone of Ramathibodi."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Vibhavadi Rangsit Road (27 Jun)",
+     event: "The Superhighway, now Vibhavadi Rangsit Road, opens to Don Mueang",
+     place: "Vibhavadi Rangsit Road",
+     scene: "A JUDGE bangs his gavel and opens the straight new Superhighway to Don Mueang."}
+  - {year: 1966, peg: judge, confidence: high, source: "BP Thailand Journey (12 Nov)",
+     event: "Bangkok's first flyover opens at the Pratunam junction",
+     place: "Pratunam",
+     scene: "A JUDGE drives first over Bangkok's first flyover at Pratunam, high above the jam on Phetchaburi Road."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: Metropolitan Waterworks Authority (16 Aug)",
+     event: "Metropolitan Waterworks Authority starts and joins the waterworks of Bangkok, Thonburi and Nonthaburi",
+     place: "Bangkok",
+     scene: "A JOCKEY rides three water mains together into one pipe: the Metropolitan Waterworks Authority."}
+  - {year: 1968, peg: chef, confidence: high, source: "BP Thailand Journey (15 Jul); Siriraj",
+     event: "Siriraj surgeons separate conjoined twins for the first time in Thailand",
+     place: "Siriraj Hospital",
+     scene: "A CHEF in surgical gloves cuts two joined baby twins apart in Siriraj, and both survive."}
+  - {year: 1968, peg: chef, confidence: high, source: "BP Thailand Journey (1 Oct); WP Trams",
+     event: "Bangkok's last nine trams leave their tracks; tram service ends",
+     place: "Charoen Krung Road",
+     scene: "A CHEF lifts the last nine trams off Charoen Krung Road with a giant spatula and ends tram service."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Ramathibodi Hospital (3 May)",
+     event: "Ramathibodi Hospital and its medical faculty open",
+     place: "Rama VI Road",
+     scene: "A SHIP docks at Rama VI Road and unloads the first patients into Ramathibodi Hospital."}
+  - {year: 1972, peg: coin, confidence: high, source: "Search: Bangkok Medical Journal (26 Feb)",
+     event: "Bangkok Hospital, an early private hospital, opens on New Phetchaburi Road",
+     place: "Soi Soonvijai",
+     scene: "Patients pay a COIN at the door of the new private Bangkok Hospital on New Phetchaburi Road."}
+  - {year: 1972, peg: coin, confidence: high, source: "Search: MRTA history (27 Nov)",
+     event: "Expressway Authority of Thailand is set up to build toll roads",
+     place: "Bangkok",
+     scene: "A toll COIN rolls along a raised road plan and founds the Expressway Authority."}
+  # religion
+  - {year: 1933, peg: mummy, confidence: medium, source: "Search: thaisikh.com (land 1932, done 1933)",
+     event: "Sikhs complete the Gurdwara Siri Guru Singh Sabha in Pahurat",
+     place: "Pahurat",
+     scene: "A MUMMY in a saffron turban unwraps itself and becomes the domed Gurdwara of Pahurat."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Wat Traimit (1935)",
+     event: "A plaster-covered Buddha from Wat Phraya Krai is moved to Wat Traimit",
+     place: "Wat Traimit",
+     scene: "A windmill-powered MILL cart hauls a big plaster Buddha from the ruined Wat Phraya Krai to Wat Traimit."}
+  - {year: 1940, peg: horse, confidence: high, source: "thWP: Wat Phra Si Mahathat (18 Sep 1940)",
+     event: "Phibun proposes Wat Phra Si Mahathat at Bang Khen, the People's Party temple, and building starts",
+     place: "Bang Khen",
+     scene: "A HORSE ploughs the rice field at Bang Khen where the People's Party temple will rise."}
+  - {year: 1941, peg: radio, confidence: high, source: "thWP: Wat Phra Si Mahathat (25 Apr 1941)",
+     event: "The spire is raised on the great chedi of Wat Phra Si Mahathat",
+     place: "Bang Khen",
+     scene: "A RADIO mast is hoisted on the chedi of Wat Phra Si Mahathat as its golden spire."}
+  - {year: 1942, peg: rhino, confidence: high, source: "thWP: Wat Phra Si Mahathat (24 Jun 1942)",
+     event: "Wat Phra Si Mahathat at Bang Khen is dedicated as a monastery",
+     place: "Bang Khen",
+     scene: "A RHINO kneels at the gate of Wat Phra Si Mahathat as the first monks move in."}
+  - {year: 1946, peg: roach, confidence: unverified,
+     event: "Mahamakut Buddhist University starts university classes for monks at Wat Bowonniwet",
+     place: "Wat Bowonniwet",
+     scene: "A ROACH in monk's robes sits the first university lecture at Wat Bowonniwet."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Mahachulalongkorn Buddhist University starts university classes at Wat Mahathat",
+     place: "Wat Mahathat",
+     scene: "Monks sit on ROCK benches in Wat Mahathat for the first class of Mahachulalongkorn University."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Wat Traimit (1947)",
+     event: "Wat Traimit builds its ordination hall",
+     place: "Wat Traimit",
+     scene: "Monks set the boundary ROCK stones around the new ordination hall of Wat Traimit."}
+  - {year: 1949, peg: rope, confidence: medium, source: "Search: Holy Redeemer parish (Redemptorists)",
+     event: "Redemptorists found the Holy Redeemer parish for English speakers",
+     place: "Ruam Rudi",
+     scene: "A Redemptorist priest ties a ROPE around a group of foreign Catholics and makes them a parish."}
+  - {year: 1952, peg: lion, confidence: medium, source: "Search: Mosqpedia, Ton Son Mosque (1952)",
+     event: "Ton Son Mosque, the oldest in Bangkok, is rebuilt in reinforced concrete",
+     place: "Ton Son Mosque, Bangkok Yai",
+     scene: "A LION tears down the old wooden Ton Son Mosque and lifts up a concrete one in its place."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "Search: Holy Redeemer; Nation (1954)",
+     event: "Holy Redeemer Church is built in Thai temple style on Soi Ruam Rudi",
+     place: "Soi Ruam Rudi",
+     scene: "A LAWYER buys the swamp on Ruam Rudi and a church with a Thai temple roof rises on it."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Wat Traimit (1955)",
+     event: "The Wat Traimit Buddha is dropped while it is moved, and its plaster cracks to show solid gold",
+     place: "Wat Traimit",
+     scene: "A crane drops the plaster Buddha into a LILY pond, and the cracked shell shows solid gold."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Wat Traimit (1956)",
+     event: "Wat Traimit becomes a royal temple of the second class",
+     place: "Wat Traimit",
+     scene: "A LEECH sticks the royal seal of the second class onto the gate of Wat Traimit."}
+  - {year: 1963, peg: gem, confidence: medium, source: "Search: lovethailand; BfV (1962 or 1963)",
+     event: "Phra Viriyang starts Wat Dhammamongkol on swampy land beside Sukhumvit",
+     place: "Sukhumvit, Phra Khanong",
+     scene: "Phra Viriyang finds a GEM in the Sukhumvit swamp and uses it to start Wat Dhammamongkol."}
+  # arts
+  - {year: 1932, peg: moon, confidence: medium, source: "WP: Memorial Bridge (6 Apr; Rama I monument)",
+     event: "King Prajadhipok unveils the statue of Rama I at the head of Memorial Bridge",
+     place: "Memorial Bridge, Phra Nakhon",
+     scene: "A full MOON rises behind the new bronze Rama I as the cloth falls off the statue at the bridge."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Sala Chalermkrung (2 Jul; lead 3 Jul)",
+     event: "Sala Chalermkrung, a modern cinema and theatre, opens",
+     place: "Charoen Krung Road",
+     scene: "A MUMMY on screen opens the first show at Sala Chalermkrung, the new air-cooled cinema."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: Bangkok National Museum (1934)",
+     event: "Fine Arts Department takes over the Bangkok Museum, later the National Museum",
+     place: "Front Palace, Phra Nakhon",
+     scene: "A Fine Arts official knocks the new name plate onto the Front Palace museum with a HAMMER."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Boworadet rebellion (monument 1936)",
+     event: "Constitution Defence Monument for the defeat of the Boworadet rebels is set up at Lak Si",
+     place: "Lak Si, Bang Khen",
+     scene: "A giant MATCH lights a bronze flame on the new Constitution Defence Monument at Lak Si."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Democracy Monument (24 Jun 1939)",
+     event: "Groundbreaking of the Democracy Monument on Ratchadamnoen Avenue",
+     place: "Ratchadamnoen Avenue",
+     scene: "Officials unroll a MAP on Ratchadamnoen Avenue and dig the first hole for the Democracy Monument."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Ratchadamnoen Avenue (1939)",
+     event: "Ratchadamnoen Klang is rebuilt: houses along the road are pulled down for new blocks",
+     place: "Ratchadamnoen Klang",
+     scene: "A town planner tears a MAP down the middle of Ratchadamnoen, and the old shophouses fall with it."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Democracy Monument (24 Jun 1940)",
+     event: "Democracy Monument opens on Ratchadamnoen Avenue",
+     place: "Ratchadamnoen Avenue",
+     scene: "Four winged HORSE statues guard the constitution tray as the Democracy Monument opens."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Ratchadamnoen Avenue (24 Jun 1941)",
+     event: "Rebuilt Ratchadamnoen Klang with its Art Deco blocks officially opens",
+     place: "Ratchadamnoen Klang",
+     scene: "A RADIO on every Art Deco balcony plays the anthem as rebuilt Ratchadamnoen Klang opens."}
+  - {year: 1942, peg: rhino, confidence: high, source: "thWP: Lumphini Park (27 Mar 1942)",
+     event: "The statue of King Vajiravudh is unveiled at the gate of Lumphini Park",
+     place: "Lumphini Park",
+     scene: "A RHINO pulls the cover off the bronze King Vajiravudh at the gate of Lumphini Park."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Victory Monument (24 Jun 1942)",
+     event: "Victory Monument for the Franco-Thai war is completed at Phaya Thai",
+     place: "Victory Monument, Ratchathewi",
+     scene: "A RHINO horn rises as the bayonet-shaped obelisk of the Victory Monument at Phaya Thai."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Ratchadamnoen Avenue (1949)",
+     event: "Sala Chaloem Thai theatre opens on Ratchadamnoen Avenue",
+     place: "Ratchadamnoen Klang",
+     scene: "Stagehands pull the curtain ROPE at the new Sala Chaloem Thai and the first play begins."}
+  - {year: 1949, peg: rope, confidence: high, source: "Search: Google Arts, 1st Nat. Exhibition (1949)",
+     event: "Silpa Bhirasri's first National Exhibition of Art opens",
+     place: "Bangkok",
+     scene: "Silpa Bhirasri hangs modern Thai paintings on a ROPE for the first National Exhibition of Art."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Suan Pakkad Palace (1952)",
+     event: "Suan Pakkad Palace opens as a museum of Thai art",
+     place: "Si Ayutthaya Road",
+     scene: "A stone LION opens the gate of Suan Pakkad Palace to the first museum visitors."}
+  - {year: 1953, peg: llama, confidence: medium, source: "thWP: Lumphini Park (1953)",
+     event: "Lumphini Hall opens for ballroom dancing with the Suntharaporn band",
+     place: "Lumphini Park",
+     scene: "A LLAMA waltzes to the Suntharaporn band on the opening night of Lumphini Hall."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "thWP: Wongwian Yai (17 Apr 1954)",
+     event: "King Taksin monument is unveiled at Wongwian Yai",
+     place: "Wongwian Yai, Thonburi",
+     scene: "A LAWYER reads Taksin's record as the bronze king on his horse is unveiled at Wongwian Yai."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Jim Thompson House (1959)",
+     event: "Jim Thompson finishes his house of old teak houses beside Khlong Saen Saep",
+     place: "Khlong Saen Saep, Pathum Wan",
+     scene: "An ELBOW pushes six old teak houses together beside Khlong Saen Saep to make Jim Thompson's home."}
+  - {year: 1963, peg: gem, confidence: high, source: "BP Thailand Journey (25 Mar)",
+     event: "The Ugly American with Marlon Brando has its world premiere at the Chalerm Thai theatre",
+     place: "Sala Chaloem Thai",
+     scene: "Marlon Brando holds up a GEM on the stage of the Chalerm Thai at the world premiere of The Ugly American."}
+  - {year: 1963, peg: gem, confidence: medium, source: "thWP: Muang Boran (1963)",
+     event: "Work starts on the Ancient City open-air museum in Samut Prakan",
+     place: "Samut Prakan",
+     scene: "Lek Viriyaphant sets a GEM in the Samut Prakan mud and starts building the Ancient City."}
+  - {year: 1965, peg: jelly, confidence: high, source: "WP: National Theatre (Thailand) (1965)",
+     event: "National Theatre opens beside Sanam Luang",
+     place: "Sanam Luang",
+     scene: "A khon dancer in a JELLY mask steps onto the stage of the new National Theatre."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Siam Square (1966)",
+     event: "Siam cinema opens in Siam Square",
+     place: "Siam Square",
+     scene: "A JUDGE in the front row bangs his gavel to start the first film at the Siam cinema."}
+  - {year: 1966, peg: judge, confidence: high, source: "Search: NL Thailand at Tha Wasukri (5 May)",
+     event: "National Library opens its Thai-style building at Tha Wasukri",
+     place: "Tha Wasukri, Samsen Road",
+     scene: "A JUDGE carries the first stack of palm-leaf books into the new National Library at Tha Wasukri."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP: Siam Square (1968)",
+     event: "Lido cinema opens in Siam Square",
+     place: "Siam Square",
+     scene: "A CHEF sells popcorn at the door of the new Lido cinema in Siam Square."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Siam Square (1969)",
+     event: "Scala cinema opens with a single big screen in Siam Square",
+     place: "Siam Square",
+     scene: "A SHIP sails across the big screen on the opening night of the Scala cinema."}
+  - {year: 1972, peg: coin, confidence: high, source: "thWP: Muang Boran (11 Feb 1972)",
+     event: "Ancient City, a park of copies of Thai monuments, opens in Samut Prakan",
+     place: "Samut Prakan",
+     scene: "Visitors drop a COIN in the box and walk into the Ancient City among small copies of Thai temples."}
+  # economy
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Boon Rawd Brewery (1933)",
+     event: "Boon Rawd builds the first Thai brewery at Bang Krabue",
+     place: "Bang Krabue, Samsen",
+     scene: "A MUMMY stirs the first vat of beer in Boon Rawd's new brewery at Bang Krabue."}
+  - {year: 1934, peg: hammer, confidence: medium, source: "WP: Boon Rawd Brewery (1934)",
+     event: "The first bottles of Singha beer leave the Boon Rawd line",
+     place: "Bang Krabue",
+     scene: "A HAMMER knocks the cap onto the first bottle of Singha beer at Bang Krabue."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Bangkok Port (6 Aug 1935)",
+     event: "A royal decree takes land at Khlong Toei for a modern port",
+     place: "Khlong Toei",
+     scene: "A rice MILL on the Khlong Toei bank is pulled down by royal decree to make room for the new port."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Bangkok Port (1938)",
+     event: "Building of Khlong Toei port and dredging of the river begin",
+     place: "Khlong Toei",
+     scene: "A MOVIE camera films the first dredger scooping mud from the Chao Phraya for Khlong Toei port."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Metropolitan Electricity Authority (1939)",
+     event: "Siam Electricity Company becomes Thailand Electricity Corporation",
+     place: "Wat Liap power plant",
+     scene: "A worker crosses out Siam on the company MAP and writes Thailand on the power company's sign."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Ratchadamnoen Avenue (1942)",
+     event: "Royal Rattanakosin Hotel opens on Ratchadamnoen Avenue",
+     place: "Ratchadamnoen Klang",
+     scene: "A RHINO in a bellboy's cap checks in the first guests at the Royal Rattanakosin Hotel."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Bangkok Bank (1 Dec 1944)",
+     event: "Bangkok Bank opens, founded by Chin Sophonpanich and partners",
+     place: "Bangkok",
+     scene: "A WARRIOR guards the first safe of Bangkok Bank while Chin Sophonpanich counts the deposits."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Kasikornbank (8 Jun 1945)",
+     event: "Thai Farmers Bank opens in its first office on Sua Pa Road",
+     place: "Sua Pa Road",
+     scene: "A RAILWAY of rice sacks rolls into the first Thai Farmers Bank office on Sua Pa Road."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Patpong (1946)",
+     event: "Luang Patpongpanich buys the plot that becomes Patpong",
+     place: "Patpong, Silom",
+     scene: "A ROACH sells Luang Patpongpanich a swampy plot with a teak house off Silom: the future Patpong."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Bangkok Post; BP timeline (1 Aug)",
+     event: "Bangkok Post, an English daily, publishes its first issue",
+     place: "Bangkok",
+     scene: "A ROACH runs off the press with the first Bangkok Post rolled up on its back."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Bangkok Port (1947)",
+     event: "Khlong Toei port opens after its first stage is complete",
+     place: "Khlong Toei",
+     scene: "The first cargo ship ties up to a ROCK bollard on the new quay of Khlong Toei port."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Mandarin Oriental (12 Jun 1947)",
+     event: "Oriental Hotel reopens under new partners with Germaine Krull as manager",
+     place: "Oriental Hotel, Charoen Krung",
+     scene: "Germaine Krull breaks a ROCK of wartime rubble at the Oriental's door and reopens the hotel."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Central Group (1947)",
+     event: "Tiang and Samrit Chirathivat open the first Central store near the Oriental Hotel",
+     place: "Charoen Krung Road",
+     scene: "The Chirathivat family stacks imported magazines on a ROCK counter in the first Central shop."}
+  - {year: 1948, peg: reef, confidence: disputed, source: "WP: Jim Thompson House 1948; BP timeline 1951",
+     event: "Jim Thompson founds the Thai Silk Company",
+     place: "Bangkok",
+     scene: "Jim Thompson pulls bright silk off a coral REEF and sells it as the Thai Silk Company."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP: Dusit Thani Bangkok (1948)",
+     event: "Chanut Piyaoui opens the Princess Hotel on Charoen Krung Road",
+     place: "Charoen Krung Road",
+     scene: "A REEF of flowers frames the door as Chanut Piyaoui opens the Princess Hotel."}
+  - {year: 1948, peg: reef, confidence: high, source: "thWP: Sanam Luang (1948)",
+     event: "A market opens on Sanam Luang",
+     place: "Sanam Luang",
+     scene: "Traders spread stalls of fish and coral REEF shells across Sanam Luang for the new market."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Thai Rath (5 Jan 1950)",
+     event: "Kampol Wacharapol starts the picture daily Khao Phap Raiwan",
+     place: "Bangkok",
+     scene: "Kampol throws a LASSO around a stack of news photos and drags out the first Khao Phap Raiwan."}
+  - {year: 1950, peg: lasso, confidence: medium, source: "WP: Samutprakarn Crocodile Farm (1950)",
+     event: "Uthai Youngpraphakorn starts the Samut Prakan Crocodile Farm",
+     place: "Samut Prakan",
+     scene: "Uthai catches a crocodile with a LASSO and starts the Samut Prakan Crocodile Farm."}
+  - {year: 1951, peg: wallet, confidence: high, source: "BP Thailand Journey (1 Nov)",
+     event: "Siamese Airways and Pan Overseas Airlines Siam merge into Thai Airways",
+     place: "Don Mueang",
+     scene: "Two airline WALLET purses are zipped into one, and Thai Airways takes off from Don Mueang."}
+  - {year: 1953, peg: llama, confidence: high, source: "BP Thailand Journey (18 Mar)",
+     event: "Pepsi opens a bottling plant on Silom Road",
+     place: "Silom Road",
+     scene: "A LLAMA spits fizzy Pepsi into bottles at the new plant on Silom Road."}
+  - {year: 1955, peg: lily, confidence: high, source: "BP Thailand Journey (24 Jun); WP TV",
+     event: "First television station in Thailand starts broadcasting in Bangkok",
+     place: "Bang Khun Phrom",
+     scene: "A LILY on the first television screen in Bangkok opens its petals as the station goes on air."}
+  - {year: 1956, peg: leech, confidence: medium, source: "WP: Central Group (1956; table 1927)",
+     event: "Central Department Store opens in Wang Burapha, then the biggest in the country",
+     place: "Wang Burapha",
+     scene: "A LEECH clings to the escalator rail on opening day of Central Department Store at Wang Burapha."}
+  - {year: 1956, peg: leech, confidence: high, source: "thWP: Erawan Hotel (9 Nov)",
+     event: "The state-owned Erawan Hotel opens at Ratchaprasong",
+     place: "Ratchaprasong",
+     scene: "A LEECH hangs from the trunk of the three-headed elephant on the sign as the Erawan Hotel opens."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: TMBThanachart Bank (8 Nov 1957)",
+     event: "Thai Military Bank is founded",
+     place: "Bangkok",
+     scene: "Soldiers stack gold bars on a LOG and open Thai Military Bank."}
+  - {year: 1957, peg: log, confidence: high, source: "thWP: Sanam Luang (1957)",
+     event: "The Sanam Luang market moves to Ratchini Road after complaints about the smell",
+     place: "Ratchini Road, Khlong Lot",
+     scene: "Traders float their stalls on a LOG down Khlong Lot from Sanam Luang to Ratchini Road."}
+  - {year: 1958, peg: wolf, confidence: high, source: "thWP: Army TV (25 Jan 1958)",
+     event: "Army television starts broadcasting from Suan Amphon",
+     place: "Suan Amphon",
+     scene: "A WOLF in an army helmet howls into the camera on the first night of Army TV at Suan Amphon."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Mandarin Oriental (1958)",
+     event: "Oriental Hotel's Garden Wing opens with the city's first lift",
+     place: "Oriental Hotel",
+     scene: "A WOLF rides the first lift in Bangkok up the Oriental's new Garden Wing."}
+  - {year: 1961, peg: jet, confidence: high, source: "BP Thailand Journey (1 Jul)",
+     event: "American businessmen open Thailand's first stock exchange in Bangkok",
+     place: "Bangkok",
+     scene: "A JET writes share prices in the sky above the first Bangkok stock exchange."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP: Thai Rath (25 Dec 1962)",
+     event: "Kampol Wacharapol founds the daily Thai Rath",
+     place: "Bangkok",
+     scene: "Kampol links the old papers with a CHAIN and the first Thai Rath comes off the press."}
+  - {year: 1963, peg: gem, confidence: medium, source: "WP: Siam Square (built 1962-1963)",
+     event: "First block of Siam Square, an open-air shopping area, is finished",
+     place: "Siam Square",
+     scene: "Shop owners set a GEM above the door of the first finished block of Siam Square."}
+  - {year: 1964, peg: cherry, confidence: high, source: "BP Thailand Journey (10 Feb)",
+     event: "Toyota opens a car assembly plant in Samut Prakan",
+     place: "Samut Prakan",
+     scene: "A red CHERRY pickup truck rolls off the first line of the Toyota plant in Samut Prakan."}
+  - {year: 1964, peg: cherry, confidence: medium, source: "thWP: Thai Daimaru (10 Dec 1964)",
+     event: "Thai Daimaru, with the first escalator in Thailand, opens at Ratchaprasong",
+     place: "Ratchaprasong",
+     scene: "Shoppers ride the first escalator in Thailand at Thai Daimaru, each with a CHERRY in hand."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Krungthai Bank (14 Mar 1966)",
+     event: "Two state banks merge into Krung Thai Bank",
+     place: "Bangkok",
+     scene: "A JUDGE glues two bank books together and names the result Krung Thai Bank."}
+  - {year: 1966, peg: judge, confidence: high, source: "Search: Siam InterContinental (1966)",
+     event: "Siam InterContinental Hotel opens on land of Sa Pathum Palace",
+     place: "Rama I Road",
+     scene: "A JUDGE signs the palace land lease, and the Siam InterContinental opens on Rama I Road."}
+  - {year: 1967, peg: jockey, confidence: medium, source: "WP: Patpong (1967)",
+     event: "Grand Prix, the first go-go bar in Patpong, opens",
+     place: "Patpong",
+     scene: "A JOCKEY dances on the raised stage of the Grand Prix, the first go-go bar on Patpong."}
+  - {year: 1967, peg: jockey, confidence: high, source: "BP Thailand Journey (24 Jun)",
+     event: "First colour television show is seen on eight sets in front of the Royal Hotel",
+     place: "Royal Hotel, Ratchadamnoen",
+     scene: "A JOCKEY in bright silks rides across eight colour sets in front of the Royal Hotel."}
+  - {year: 1967, peg: jockey, confidence: high, source: "BP Thailand Journey (Nov 1967)",
+     event: "Army Channel Seven starts the first regular colour broadcasts in Southeast Asia",
+     place: "Bangkok",
+     scene: "A JOCKEY on Channel Seven appears in full colour for the first time in Southeast Asia."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP: Dusit Thani (27 Feb); BP timeline",
+     event: "Dusit Thani Hotel opens as the tallest building in the capital",
+     place: "Silom and Rama IV corner",
+     scene: "A GOOSE perches on the golden spire of the new Dusit Thani, the tallest building in Bangkok."}
+  - {year: 1970, peg: goose, confidence: high, source: "thWP: Channel 3 (26 Mar 1970)",
+     event: "Thai TV Channel Three starts broadcasting",
+     place: "Phetkasem Road",
+     scene: "A GOOSE flaps three times in front of the camera and Channel Three goes on air."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP: Bank of Ayudhya (15 May 1970)",
+     event: "Bank of Ayudhya moves its head office to Phloen Chit Road",
+     place: "Phloen Chit Road",
+     scene: "A GOOSE carries the bank's head office sign from Ayutthaya to Phloen Chit Road."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP: The Nation (1 Jul 1971)",
+     event: "Suthichai Yoon founds The Voice of the Nation, an English daily",
+     place: "Bangkok",
+     scene: "A CAT shouts the first headline of The Voice of the Nation from a Bangkok news stand."}
+  - {year: 1971, peg: cat, confidence: high, source: "Search: CPEB site; IFC (1971)",
+     event: "Supatra Singholaka starts the Chao Phraya Express Boat service",
+     place: "Chao Phraya River",
+     scene: "A CAT rides the bow of the first Chao Phraya Express Boat down the river."}
+  # society
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Silpakorn University (1933)",
+     event: "School of Fine Arts opens under the Fine Arts Department",
+     place: "Wang Tha Phra",
+     scene: "Art students wrap a MUMMY in plaster bandages in the first class of the School of Fine Arts."}
+  - {year: 1934, peg: hammer, confidence: high, source: "thWP: Sanam Luang (4 Dec 1934)",
+     event: "First Chulalongkorn and Thammasat traditional football match at Sanam Luang",
+     place: "Sanam Luang",
+     scene: "A HAMMER kicks off the first Chula versus Thammasat football match on Sanam Luang."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Thammasat University (1935)",
+     event: "Thammasat moves to its Tha Phra Chan campus, bought from the army",
+     place: "Tha Phra Chan",
+     scene: "Students turn an old army MILL at Tha Phra Chan into the classrooms of Thammasat."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: Supachalasai Stadium (1937)",
+     event: "Building starts on the National Stadium on part of the old Windsor Palace grounds",
+     place: "Pathum Wan",
+     scene: "A builder raises a MUG on the Windsor Palace ruins and starts the National Stadium."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Supachalasai Stadium (1938)",
+     event: "National Stadium opens with the men's athletics games",
+     place: "Pathum Wan",
+     scene: "A MOVIE camera films the first sprint race in the new National Stadium."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Dusit Zoo (1938)",
+     event: "Dusit Zoo opens to the public in the Khao Din palace park",
+     place: "Dusit",
+     scene: "A MOVIE crew films palace deer as the gates of Dusit Zoo open to the public."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Triam Udom Suksa School (3 Jan 1938)",
+     event: "Chulalongkorn University sets up the Triam Udom Suksa preparatory school",
+     place: "Pathum Wan",
+     scene: "A MOVIE star rings the bell on the first day of the Triam Udom Suksa school."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Kasetsart University (1938)",
+     event: "College of Agriculture moves to Bang Khen",
+     place: "Bang Khen",
+     scene: "A MOVIE crew films the College of Agriculture's ploughs as they arrive at Bang Khen."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Don Mueang Int. Airport (18 Mar 1938)",
+     event: "Two air force Goshawk fighters collide over Don Mueang while they practise for an air show",
+     place: "Don Mueang",
+     scene: "Two Goshawks fly into each other above Don Mueang like a crash in a war MOVIE."}
+  - {year: 1938, peg: movie, confidence: medium, source: "thWP: Lumphini Park (1938)",
+     event: "Cabinet gives Lumphini Park to the Bangkok Municipality",
+     place: "Lumphini Park",
+     scene: "The cabinet hands the mayor a MOVIE reel of Lumphini Park and the park becomes city property."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP: Univ. of the Thai Chamber of Commerce",
+     event: "College of Commerce, the first private college, is founded",
+     place: "Bangkok",
+     scene: "A HORSE carries ledgers into the first class of the private College of Commerce."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Rajadamnern Stadium (1 Mar 1941)",
+     event: "Foundation stone of Rajadamnern boxing stadium is laid",
+     place: "Ratchadamnoen Nok",
+     scene: "A RADIO announcer lays the foundation stone of Rajadamnern Stadium."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Kasetsart University (2 Feb 1943)",
+     event: "Kasetsart University is founded at Bang Khen",
+     place: "Bang Khen",
+     scene: "A RAM butts open the gate of the new Kasetsart University at Bang Khen."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Silpakorn University (12 Oct 1943)",
+     event: "The School of Fine Arts becomes Silpakorn University",
+     place: "Wang Tha Phra",
+     scene: "A RAM carved by Silpa Bhirasri's students wears the new name Silpakorn University."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Rajadamnern Stadium (23 Dec 1945)",
+     event: "Rajadamnern Stadium opens with its first boxing match",
+     place: "Ratchadamnoen Nok",
+     scene: "Two boxers fight the first bout at Rajadamnern while a RAILWAY of fans queues outside."}
+  - {year: 1949, peg: rope, confidence: high, source: "thWP: Thong-in Phuriphat (4 Mar 1949)",
+     event: "Police kill four former ministers, Pridi's allies, at Thung Bang Khen",
+     place: "Thung Bang Khen, Phahonyothin Road",
+     scene: "Police lead four former ministers in ROPE ties off a truck at Bang Khen and shoot them."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Srinakharinwirot University (1949)",
+     event: "Higher Teacher Training School opens at Prasarnmit",
+     place: "Prasarnmit, Sukhumvit",
+     scene: "Teachers in training climb a ROPE into the new Higher Teacher Training School at Prasarnmit."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: International School Bangkok (1951)",
+     event: "International Children's Center, the first international school in Thailand, opens",
+     place: "US Embassy grounds, Ratchadamri",
+     scene: "Diplomats' children pay their fees from a WALLET at the first international school."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Srinakharinwirot University (1953)",
+     event: "The Prasarnmit school becomes the College of Education, granting degrees",
+     place: "Prasarnmit",
+     scene: "A LLAMA in a mortarboard takes the first education degree at Prasarnmit."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Dusit Zoo (1954)",
+     event: "The city hands Dusit Zoo to the state Zoological Park Organization",
+     place: "Dusit Zoo",
+     scene: "A LAWYER signs Dusit Zoo over from the city to the Zoological Park Organization."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Lumpinee Boxing Stadium (8 Dec 1956)",
+     event: "Lumpinee Boxing Stadium opens on Rama IV Road",
+     place: "Rama IV Road",
+     scene: "A boxer pulls a LEECH off his shin and wins the first fight at Lumpinee Stadium."}
+  - {year: 1958, peg: wolf, confidence: medium, source: "Search: Walter Reed; Silpa Mag (1958)",
+     event: "A cholera epidemic hits Bangkok and spreads to many provinces",
+     place: "Bangkok",
+     scene: "A WOLF drinks from a Bangkok canal and spreads cholera through the city."}
+  - {year: 1958, peg: wolf, confidence: high, source: "FRUS 1958-60 v15 d501 (7 Nov)",
+     event: "A large fire burns a district of Thonburi",
+     place: "Thonburi",
+     scene: "A WOLF knocks over a lamp and fire sweeps through the shophouses of Thonburi."}
+  - {year: 1958, peg: wolf, confidence: high, source: "FRUS 1958-60 v15 d501 (9 Nov)",
+     event: "Sarit has two men he calls arsonists shot against a temple wall without trial",
+     place: "Thonburi temple wall",
+     scene: "A WOLF in Sarit's uniform orders two accused arsonists shot against a temple wall."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Chulalongkorn University (20 Jun 1958)",
+     event: "Chulalongkorn University Demonstration School opens",
+     place: "Pathum Wan",
+     scene: "A WOLF teaches the first class at the Chula Demonstration School while trainee teachers watch."}
+  - {year: 1959, peg: elbow, confidence: high, source: "BP Thailand Journey; ONCB (1 July 1959)",
+     event: "Opium ban: more than eight thousand opium pipes burn in a bonfire on Sanam Luang",
+     place: "Sanam Luang",
+     scene: "A giant ELBOW swings a torch into a mountain of eight thousand opium pipes on Sanam Luang, and the opium ban starts in smoke."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: KMUTNB (18 May 1959)",
+     event: "North Bangkok Technical School, the Thai-German school, opens",
+     place: "Bang Sue",
+     scene: "A German instructor bends an ELBOW joint of steel pipe on the first day of the Thai-German school."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Asian Institute of Technology (1959)",
+     event: "SEATO Graduate School of Engineering opens at Chulalongkorn University",
+     place: "Chulalongkorn Faculty of Engineering",
+     scene: "An ELBOW of a SEATO engineer leans on a drawing board in the new graduate school."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "WP: KMUTT (4 Feb or 18 Apr 1960)",
+     event: "Thonburi Technical College is founded",
+     place: "Bang Mot, Thonburi",
+     scene: "Students cut CHEESE-shaped gears in the first workshop of Thonburi Technical College."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: KMITL (1960)",
+     event: "Nonthaburi telecommunications training centre opens with Japanese help",
+     place: "Nonthaburi",
+     scene: "Trainees send a telegraph message about CHEESE on the first day at the Nonthaburi telecom centre."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: International School Bangkok (1960)",
+     event: "International School Bangkok moves to Sukhumvit Soi Fifteen",
+     place: "Sukhumvit Soi Fifteen",
+     scene: "Pupils carry their desks and CHEESE sandwiches from the embassy to the new Sukhumvit school."}
+  - {year: 1962, peg: chain, confidence: medium, source: "WP: Bangkok University (1962)",
+     event: "Thai Polytechnic Institute, later Bangkok University, opens at Kluay Nam Thai",
+     place: "Kluay Nam Thai",
+     scene: "Surat Osathanugrah unlocks a CHAIN at Kluay Nam Thai and opens the Thai Polytechnic Institute."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: NIDA (1 Apr 1966)",
+     event: "National Institute of Development Administration opens as a graduate school",
+     place: "Bang Kapi",
+     scene: "A JUDGE hands out the first places at the National Institute of Development Administration."}
+  - {year: 1966, peg: judge, confidence: medium, source: "WP: Silpakorn University (1966)",
+     event: "Silpakorn opens its Sanam Chandra Palace campus in Nakhon Pathom",
+     place: "Sanam Chandra Palace, Nakhon Pathom",
+     scene: "A JUDGE rules Wang Tha Phra too small and sends Silpakorn students to the Sanam Chandra Palace."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: Asian Institute of Technology (Oct)",
+     event: "The SEATO school gets its charter as the Asian Institute of Technology",
+     place: "Bangkok",
+     scene: "A JOCKEY rides off with the SEATO sign and hands back the new name: Asian Institute of Technology."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: 1967 SEAP Games (9-16 Dec)",
+     event: "Bangkok holds the fourth SEAP Games",
+     place: "National Stadium",
+     scene: "A JOCKEY carries the SEAP Games torch round the National Stadium track."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP: Assumption University (1969)",
+     event: "Montfort Brothers open the Assumption School of Business",
+     place: "Bangkok",
+     scene: "The Montfort Brothers launch a SHIP called Assumption School of Business."}
+  - {year: 1971, peg: cat, confidence: high, source: "BP Thailand Journey (15 May)",
+     event: "Ramkhamhaeng, the first open university, takes in about fifty thousand freshmen at the National Stadium",
+     place: "National Stadium",
+     scene: "A CAT tries to count fifty thousand new Ramkhamhaeng students packed into the National Stadium."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP: KMUTT (21 Apr 1971)",
+     event: "Three technical schools join as King Mongkut's Institute of Technology",
+     place: "Thonburi, North Bangkok, Lat Krabang",
+     scene: "A CAT with three tails ties the Thonburi, North Bangkok and Nonthaburi schools into one institute."}
+  - {year: 1971, peg: cat, confidence: medium, source: "thWP: Lumphini Park (13 Aug 1971)",
+     event: "A fire destroys the Kinnaree Nava floating restaurant in Lumphini Park",
+     place: "Lumphini Park",
+     scene: "A CAT chews an electric cable and the Kinnaree Nava restaurant burns down on the Lumphini lake."}
+  - {year: 1972, peg: coin, confidence: medium, source: "WP: Assumption University (1972)",
+     event: "The school becomes the Assumption Business Administration College",
+     place: "Bangkok",
+     scene: "A COIN stamped ABAC is handed to the first students of the Assumption Business Administration College."}
+world_refs:
+  - {year: 1932, event: "Khana Ratsadon overthrows the absolute monarchy", cell: southeast_asia_politics_1800_1945}
+  - {year: 1932, event: "Long Thang, first Thai sound film, premieres", cell: southeast_asia_arts_1800_1945}
+  - {year: 1932, event: "Memorial Bridge opens over the Chao Phraya", cell: southeast_asia_science_1800_1945}
+  - {year: 1933, event: "Sri Krung makes the first colour Thai film", cell: southeast_asia_arts_1800_1945}
+  - {year: 1933, event: "Phraya Phahon takes power in a counter-coup", cell: southeast_asia_politics_1800_1945}
+  - {year: 1933, event: "Boworadet Rebellion fails at Don Mueang and Bang Khen", cell: southeast_asia_politics_1800_1945}
+  - {year: 1934, event: "Pridi founds Thammasat", cell: southeast_asia_society_1800_1945}
+  - {year: 1935, event: "Two thousand monks gather in Bangkok", cell: southeast_asia_religion_1800_1945}
+  - {year: 1938, event: "Srikrung releases the film Klua Mia", cell: southeast_asia_arts_1800_1945}
+  - {year: 1939, event: "Siam Commercial Bank takes a Thai name", cell: southeast_asia_economy_1800_1945}
+  - {year: 1940, event: "Pridi makes The King of the White Elephant", cell: southeast_asia_arts_1800_1945}
+  - {year: 1941, event: "Japan invades; Japanese troops pass through Bangkok", cell: southeast_asia_politics_1800_1945}
+  - {year: 1941, event: "State takes over the Siam Steam Navigation Company", cell: southeast_asia_economy_1800_1945}
+  - {year: 1942, event: "Great flood puts Bangkok under water", cell: southeast_asia_society_1800_1945}
+  - {year: 1942, event: "Bank of Thailand opens", cell: southeast_asia_economy_1800_1945}
+  - {year: 1943, event: "University of Medical Sciences (Mahidol) formed", cell: southeast_asia_science_1800_1945}
+  - {year: 1946, event: "King Ananda found shot dead in the Grand Palace", cell: southeast_asia_politics_1945_present}
+  - {year: 1947, event: "Army coup overthrows the Pridi faction", cell: southeast_asia_politics_1945_present}
+  - {year: 1949, event: "Palace Rebellion in the Grand Palace", cell: southeast_asia_politics_1945_present}
+  - {year: 1951, event: "Manhattan Rebellion on the Chao Phraya", cell: southeast_asia_politics_1945_present}
+  - {year: 1955, event: "Work begins on Phutthamonthon", cell: southeast_asia_religion_1945_present}
+  - {year: 1956, event: "Erawan Shrine Brahma statue enshrined", cell: southeast_asia_religion_1945_present}
+  - {year: 1957, event: "Golden Doll film awards first given", cell: southeast_asia_arts_1945_present}
+  - {year: 1957, event: "Sarit's coup ends Phibun's rule", cell: southeast_asia_politics_1945_present}
+  - {year: 1958, event: "Mae Nak Phra Khanong film released", cell: southeast_asia_arts_1945_present}
+  - {year: 1958, event: "Sarit's second coup", cell: southeast_asia_politics_1945_present}
+  - {year: 1959, event: "First SEAP Games in Bangkok", cell: southeast_asia_society_1945_present}
+  - {year: 1960, event: "Thai Airways International founded", cell: southeast_asia_economy_1945_present}
+  - {year: 1962, event: "Thai Research Reactor TRR-1 goes critical", cell: southeast_asia_science_1945_present}
+  - {year: 1965, event: "Bangkok becomes a Catholic archdiocese", cell: southeast_asia_religion_1945_present}
+  - {year: 1966, event: "Bangkok holds the Asian Games", cell: southeast_asia_society_1945_present}
+  - {year: 1967, event: "Bangkok Declaration founds ASEAN", cell: southeast_asia_politics_1945_present}
+  - {year: 1970, event: "Bangkok holds the Asian Games again", cell: southeast_asia_society_1945_present}
+  - {year: 1970, event: "Monrak luk thung musical film", cell: southeast_asia_arts_1945_present}
+  - {year: 1970, event: "Wat Phra Dhammakaya founded north of Bangkok", cell: southeast_asia_religion_1945_present}
+  - {year: 1971, event: "Thanom's coup against his own government", cell: southeast_asia_politics_1945_present}
+  - {year: 1972, event: "Michai Kitbunchu named Archbishop of Bangkok", cell: southeast_asia_religion_1945_present}
+out_refs:
+  - {year: 1932, event: "First People's Assembly meets in the Ananta Samakhom Throne Hall", reason: "national legislature"}
+  - {year: 1932, event: "Permanent constitution granted in the Ananta Samakhom Throne Hall", reason: "national law"}
+  - {year: 1938, event: "Phibun becomes prime minister", reason: "national government"}
+  - {year: 1939, event: "Siam renamed Thailand", reason: "national law"}
+  - {year: 1941, event: "Victory parade for the Franco-Thai war in Bangkok", reason: "national celebration"}
+  - {year: 1943, event: "Tojo visits Bangkok and Wat Phra Kaew", reason: "state visit"}
+  - {year: 1945, event: "Free Thai victory parade on Ratchadamnoen", reason: "national celebration"}
+  - {year: 1946, event: "King Ananda walks through Sampheng and Yaowarat", reason: "royal visit"}
+  - {year: 1950, event: "Royal cremation of King Ananda at Sanam Luang", reason: "royal ceremony"}
+  - {year: 1950, event: "Coronation of King Bhumibol", reason: "royal ceremony"}
+  - {year: 1954, event: "Supreme Court sentences three men for the king's death", reason: "national court case"}
+  - {year: 1960, event: "Royal Ploughing Ceremony moves to Sanam Luang", reason: "royal ceremony"}
+  - {year: 1966, event: "Lyndon Johnson visits and gets a Chulalongkorn degree", reason: "state visit"}
+  - {year: 1972, event: "Queen Elizabeth the Second visits Bangkok", reason: "state visit"}
+  - {year: 1972, event: "Investiture of the Crown Prince", reason: "royal ceremony"}

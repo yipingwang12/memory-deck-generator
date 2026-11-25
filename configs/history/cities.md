@@ -874,3 +874,45 @@ Region: south_asia.
 | `1947_present` | partition refugees, the Left Front, the Naxalites, the Metro, the renaming, Salt Lake and New Town, Singur and Nandigram | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Bangkok (2026-11-24)
+
+Area: the Bangkok Metropolitan Region as decided: Bangkok (Rattanakosin Island, Phra Nakhon, Dusit, Sampanthawong
+and Yaowarat, Bang Rak, Pathum Wan, Lat Phrao, Don Mueang, Lat Krabang with Suvarnabhumi), Thonburi on the west
+bank, Nonthaburi, Pathum Thani (Sam Khok, Rangsit, Thammasat Rangsit), Samut Prakan (Paknam, Phra Samut Chedi,
+the Muang Boran park), Samut Sakhon (Tha Chin, Mahachai), Nakhon Pathom (Phra Pathom Chedi, Phra Prathon,
+Salaya). Ayutthaya, Bang Pa-in, Ratchaburi, Khu Bua, Suphanburi, Chachoengsao and Pattaya are OUT.
+Region: southeast_asia.
+
+- Dates: give the CE year. Buddhist Era (BE) = CE + 543; Chula Sakarat (CS) = CE − 638. Until 1940 the Thai
+  official year began on 1 April (before 1889 it followed the lunar calendar, starting in about April), so a
+  January–March date in a BE year before 2484 falls in CE = BE − 542. Convert each date, do not subtract blindly.
+- The OUT rule covers each government while the area is its seat: the Thonburi Kingdom (1767–1782: Taksin's
+  campaigns, appointments, laws for the kingdom); the Rattanakosin Kingdom / Siam / Thailand from 1782 (royal
+  accessions, coronations and cremations as ceremonies, national laws, treaties signed in Bangkok such as the
+  Burney 1826 and Bowring 1855 treaties, cabinets, constitutions, elections, prime ministers). Acts about the city
+  are IN: the founding of Rattanakosin (1782), the city pillar, the walls, canals (khlongs), roads (Charoen Krung
+  1864), the trams, the Sanitary Department (1897), the Bangkok municipality (1937), the 1971–1972 merger of
+  Phra Nakhon and Thonburi and the Bangkok Metropolitan Administration (1972), governors' elections, the BTS,
+  MRT and airports.
+- Ayutthaya's acts in the area are IN (the customs post at Bang Kok, the Wichaiprasit fort, the Thonburi
+  canal shortcuts, the 1688 siege of the French at Bangkok). The Ayutthaya court itself is OUT of area.
+- Main stage (IN as cards): the 1688 siege, the 1767 Thonburi rally, Taksin's execution (1782), the 1874–1875
+  Front Palace crisis, the 1893 Paknam incident and blockade, the 1912 palace plot arrests, the 1932 revolution at
+  the Royal Plaza, the 1933 Boworadet fighting at Don Mueang and Bang Khen, the Second World War bombing of Bangkok,
+  King Ananda's death in the Grand Palace (1946), the 1949 Palace Rebellion, the 1951 Manhattan Rebellion, coups
+  with troops in the city (the decrees after are OUT), 14 October 1973, 6 October 1976, Black May 1992, the 2008
+  airport and Government House occupations, the 2010 crackdown, the 2013–2014 shutdown, the 2015 Erawan shrine
+  bombing, the 2020–2021 protests, the 2025 building collapse in the Myanmar earthquake.
+- International games, summits and congresses held in the city are IN as city events (the Asian Games 1966,
+  1970, 1978, 1998; APEC 2003 and 2022).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1767` | Dvaravati Nakhon Pathom and Phra Pathom Chedi, the Bang Kok customs post, Thonburi under Ayutthaya, the forts, the 1688 siege | 35 | ~80 |
+| `1767_1867` | Taksin's Thonburi, the founding of Rattanakosin, the Grand Palace and wats, the Chinese of Sampeng, the first Western houses | 45 | ~200 |
+| `1868_1931` | Chulalongkorn's city: roads, trams, railways, Dusit, Paknam 1893, the first schools and hospitals, Vajiravudh | 45 | ~220 |
+| `1932_1972` | the 1932 revolution, the coups, the war and bombing, the Vietnam War boom, the merger into Bangkok Metropolis | 45 | ~200 |
+| `1973_present` | 1973 and 1976, the BMA, Black May, the BTS and MRT, Suvarnabhumi, the yellow and red shirts, the 2020 protests | 45 | ~250 |
+
+Expected cards are a guide, not a target.
