@@ -1,0 +1,989 @@
+# City: Jakarta x 1966 to the present (1966, Ali Sadikin's city, Malari, Tanjung Priok 1984, 1998, the bombings,
+# the MRT, the floods, the move to Nusantara). DRAFT 2026-11-24.
+# Area: Jabodetabek as decided: DKI Jakarta (Kota, Glodok, Menteng, Senayan, Kemayoran, Tanjung Priok, Ancol, the
+# Thousand Islands), Bogor, Depok, Tangerang (with Serpong and South Tangerang), Bekasi. Rules: cities.md, then policy.md.
+# Grouped by theme ("Theme of each subject"), in date order inside each theme.
+# The Republic is seated in the city: presidents, cabinets, national laws, elections -> out_refs.
+# Governors, city and regional laws, buildings, transit and main-stage events (riots, occupations, bombs) are IN.
+# World-grid events -> world_refs (world year kept). Dates: memory pass + web check (45 searches; no book copies).
+# Main sources: wikipedia.org (en, id), Tirto, Kompas, detik, Jakarta Post, Setkab, news reports.
+# A building or line -> its opening to the public; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1966, peg: judge, confidence: high, source: "Tirto: Arief Rachman Hakim shot (24 Feb)",
+     event: "KAMI student march: palace guards shoot the UI student Arief Rachman Hakim",
+     place: "Merdeka Palace",
+     scene: "A JUDGE in a Cakrabirawa helmet fires into the KAMI march and kills the student Arief Rachman Hakim outside the palace."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Governor of Jakarta (28 Apr)",
+     event: "Marine general Ali Sadikin becomes governor of Jakarta",
+     place: "Jakarta City Hall",
+     scene: "A JUDGE swears in the marine general Ali Sadikin at City Hall and gives him the keys of Jakarta."}
+  - {year: 1966, peg: judge, confidence: medium, source: "WP: Timeline of Jakarta (Nas 2005)",
+     event: "Jakarta divides into five municipalities: Central, North, South, East and West",
+     scene: "A JUDGE cuts the map of Jakarta into five slices: Central, North, South, East and West."}
+  - {year: 1967, peg: jockey, confidence: high, source: "IPDN journal: DPR-GR decision of 3 May",
+     event: "City council approves the twenty-year Jakarta Master Plan",
+     place: "Jakarta City Hall",
+     scene: "A JOCKEY gallops the approved Jakarta Master Plan across the council table and starts its twenty-year run."}
+  - {year: 1970, peg: goose, confidence: high, source: "detik: Bang Ali and urbanisation (5 Aug)",
+     event: "Ali Sadikin declares Jakarta a closed city to new migrants without a job or house",
+     scene: "A GOOSE guards the city gate and hisses away every migrant who has no job or house in Jakarta."}
+  - {year: 1976, peg: cage, confidence: high, source: "JDIH ESDM: Inpres No. 13 of the year",
+     event: "Presidential instruction makes Jakarta, Bogor, Tangerang and Bekasi one Jabotabek planning region",
+     scene: "A CAGE closes around Jakarta, Bogor, Tangerang and Bekasi and locks them into one Jabotabek planning region."}
+  - {year: 1976, peg: cage, confidence: medium, source: "WP: Timeline of Jakarta (Kusno 2014)",
+     event: "Blok G tower of City Hall is built as the model for Jakarta's high-rises",
+     place: "Jalan Medan Merdeka Selatan",
+     scene: "A CAGE of steel beams climbs behind the old City Hall and becomes the Blok G tower."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP: Governor of Jakarta",
+     event: "Tjokropranolo succeeds Ali Sadikin as governor",
+     place: "Jakarta City Hall",
+     scene: "Tjokropranolo cuts the farewell CAKE of Ali Sadikin and sits down in the governor's chair."}
+  - {year: 1981, peg: foot, confidence: high, source: "ASEAN / WP: ASEAN Headquarters (9 May)",
+     event: "Suharto opens the ASEAN Secretariat building on Jalan Sisingamangaraja",
+     place: "Jalan Sisingamangaraja",
+     scene: "A giant FOOT kicks open the door of the new ASEAN Secretariat building on Jalan Sisingamangaraja."}
+  - {year: 1982, peg: oven, confidence: high, source: "Tirto; Viva archive (18 Mar)",
+     event: "Lapangan Banteng riot: a Golkar campaign rally ends in fighting and fires",
+     place: "Lapangan Banteng",
+     scene: "An OVEN of fire roars up the Golkar stage at Lapangan Banteng as rival crowds fight across the square."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP: Governor of Jakarta",
+     event: "R. Soeprapto becomes governor",
+     place: "Jakarta City Hall",
+     scene: "An OVEN bakes a brass nameplate for R. Soeprapto, and he becomes governor at City Hall."}
+  - {year: 1984, peg: fairy, confidence: high, source: "Tirto; WP: terrorist incidents (4 Oct)",
+     event: "Bombs hit two Bank Central Asia branches and a Chinatown shopping centre",
+     place: "Jalan Gajah Mada",
+     scene: "A FAIRY's wand carries a bomb into the BCA bank on Jalan Gajah Mada and blows out its windows."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP: Governor of Jakarta",
+     event: "Wiyogo Atmodarminto becomes governor",
+     place: "Jakarta City Hall",
+     scene: "A FOX in an army cap, Wiyogo Atmodarminto, slips into the governor's office at City Hall."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Governor of Jakarta",
+     event: "Soerjadi Soedirdja becomes governor",
+     place: "Jakarta City Hall",
+     scene: "A PIANO plays the oath music at City Hall, and Soerjadi Soedirdja becomes governor."}
+  - {year: 1992, peg: piano, confidence: high, source: "WP: Jakarta Convention Center",
+     event: "Tenth summit of the Non-Aligned Movement meets in the Jakarta Convention Center",
+     place: "Jakarta Convention Center",
+     scene: "A PIANO with the flags of a hundred nations opens the Non-Aligned summit in the Jakarta Convention Center."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Tangerang (28 Feb)",
+     event: "Tangerang becomes a city apart from its regency",
+     scene: "A PALM leaf stamps the charter that makes Tangerang a city apart from its regency."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Bekasi (10 Mar)",
+     event: "Bekasi becomes a city apart from its regency",
+     scene: "A PIG roots up the old regency fence, and Bekasi becomes a city of its own."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Governor of Jakarta",
+     event: "Sutiyoso becomes governor",
+     place: "Jakarta City Hall",
+     scene: "A PIG in a general's beret, Sutiyoso, trots into City Hall as the new governor."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Merdeka; Viva; Tirto (18 May)",
+     event: "Students occupy the parliament building in Senayan and demand Suharto's fall",
+     place: "DPR/MPR building, Senayan",
+     scene: "A BEEHIVE of students covers the green domes of parliament in Senayan and refuses to leave until Suharto goes."}
+  - {year: 1998, peg: beehive, confidence: high, source: "Christianity Today; HRW (22 Nov)",
+     event: "Ketapang riot: mobs burn and loot churches after a fight at a gambling hall",
+     place: "Ketapang, Jalan Gajah Mada",
+     scene: "Rioters pour out of a smashed BEEHIVE of a gambling hall in Ketapang and burn the churches nearby."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Depok (20 Apr)",
+     event: "Depok becomes a city apart from Bogor Regency",
+     scene: "A plumber's PIPE saws Depok off Bogor Regency, and Depok becomes a city."}
+  - {year: 1999, peg: pipe, confidence: high, source: "detik; Jakarta Post (24 Sep)",
+     event: "Semanggi II: soldiers shoot the UI student Yap Yun Hap in protests against an emergency bill",
+     place: "Semanggi",
+     scene: "A rifle as long as a PIPE fires from an army truck at Semanggi and kills the student Yap Yun Hap."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Philippine consulate bombing (1 Aug)",
+     event: "Car bomb outside the Philippine ambassador's house in Menteng kills two people",
+     place: "Menteng",
+     scene: "A SAUCE pan packed with explosive blows up in a parked car outside the Philippine ambassador's house in Menteng."}
+  - {year: 2000, peg: sauce, confidence: high, source: "WP: Jakarta Stock Exchange bombing (13 Sep)",
+     event: "Car bomb in the basement of the Jakarta Stock Exchange kills drivers and sets cars on fire",
+     place: "Jakarta Stock Exchange, Sudirman",
+     scene: "Burning SAUCE floods the Stock Exchange basement as a car bomb sets the parked cars on fire."}
+  - {year: 2000, peg: sauce, confidence: medium, source: "WP: Thousand Islands (27 Jul)",
+     event: "Thousand Islands become a regency of Jakarta",
+     place: "Pulau Panggang",
+     scene: "A SAUCE bottle with a message floats to Pulau Panggang: the Thousand Islands are now a regency."}
+  - {year: 2001, peg: soda, confidence: high, source: "RCTI+; APSN (1 Aug)",
+     event: "Bomb in Atrium Plaza, Senen, injures six people",
+     place: "Atrium Plaza, Senen",
+     scene: "A SODA can bomb bursts in the Atrium Plaza in Senen and injures six shoppers."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Governor of Jakarta",
+     event: "City council re-elects Sutiyoso as governor",
+     place: "Jakarta City Hall",
+     scene: "The council lifts a paper SUN over Sutiyoso's head and re-elects him governor for a second term."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: 2007 Jakarta gubernatorial election (8 Aug)",
+     event: "Fauzi Bowo wins the first direct election for governor",
+     scene: "A SKI jumper flies over Adang Daradjatun and lands in City Hall: Fauzi Bowo wins the first direct vote."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Monas incident (1 Jun)",
+     event: "Monas incident: FPI men attack a rally for religious freedom",
+     place: "Merdeka Square",
+     scene: "FPI men throw a SOFA into the religious-freedom rally beside Monas and beat its marchers with sticks."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: South Tangerang (26 Nov)",
+     event: "South Tangerang becomes a city apart from Tangerang Regency",
+     place: "Ciputat",
+     scene: "Movers carry a SOFA out of Tangerang Regency into a new town hall: South Tangerang becomes a city."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: 2012 Jakarta gubernatorial election",
+     event: "Joko Widodo defeats Fauzi Bowo in the runoff for governor",
+     scene: "A TONGUE of runoff ballots rolls out of the boxes and carries Joko Widodo past Fauzi Bowo into City Hall."}
+  - {year: 2014, peg: tower, confidence: high, source: "WP: Governor of Jakarta (19 Nov)",
+     event: "Basuki Tjahaja Purnama (Ahok) becomes the first ethnic Chinese governor",
+     place: "Jakarta City Hall",
+     scene: "A TOWER of red lanterns lifts Ahok into the governor's chair, the first ethnic Chinese governor of Jakarta."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: November 2016 Jakarta protests",
+     event: "Islamist rally of 4 November against Governor Ahok turns violent at night",
+     place: "Jalan Medan Merdeka Utara",
+     scene: "Marchers smash a police DISH antenna near the palace as the 4 November rally against Ahok turns violent."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: 2017 Jakarta gubernatorial election",
+     event: "Anies Baswedan defeats Ahok in the runoff for governor",
+     scene: "A DOG chases Ahok out of City Hall as Anies Baswedan wins the runoff for governor."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Governor of Jakarta (15 Jun)",
+     event: "Djarot Saiful Hidayat becomes governor after Ahok goes to prison",
+     place: "Jakarta City Hall",
+     scene: "A DOG carries the governor's sash from Ahok's empty cell to Djarot Saiful Hidayat at City Hall."}
+  - {year: 2017, peg: dog, confidence: high, source: "Jakarta Post; Liputan6 (24 May)",
+     event: "Suicide bombers kill three police officers at the Kampung Melayu bus terminal",
+     place: "Kampung Melayu terminal",
+     scene: "Two suicide bombers hide behind a DOG kennel at Kampung Melayu terminal and blow up three police officers."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: 2018 Mako Brimob standoff",
+     event: "Terror inmates take a block of the Mako Brimob jail in Depok; five police officers die",
+     place: "Mako Brimob, Depok",
+     scene: "Inmates turn a Mako Brimob cell block into a DOVE coop of hostages and kill five police officers."}
+  - {year: 2018, peg: dove, confidence: high, source: "Jawa Pos; Kontan (26 Sep)",
+     event: "Governor Anies revokes the permits for thirteen reclamation islands in Jakarta Bay",
+     place: "Jakarta Bay",
+     scene: "A DOVE pulls the plug on thirteen planned islands in Jakarta Bay as Anies revokes their permits."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: May 2019 Jakarta protests and riots",
+     event: "Riots after the presidential result burn police posts in Tanah Abang",
+     place: "Tanah Abang",
+     scene: "Rioters beat a TUBA like a drum in Tanah Abang and burn police posts after the election result."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: September 2019 Indonesian protests",
+     event: "Students fight police outside parliament against the new KPK law and criminal code",
+     place: "DPR/MPR building, Senayan",
+     scene: "Students blast a TUBA at the parliament gates and fight police over the KPK law and the criminal code."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: National Police headquarters shooting",
+     event: "A woman fires a pistol at National Police headquarters, and guards shoot her dead",
+     place: "Police headquarters, Kebayoran Baru",
+     scene: "A lone ANT walks into police headquarters with a pistol, fires, and the guards shoot her dead."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Heru Budi Hartono",
+     event: "Heru Budi Hartono becomes acting governor after Anies's term ends",
+     place: "Jakarta City Hall",
+     scene: "A NUN pins the acting governor's badge on Heru Budi Hartono when Anies's term ends."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Setkab: UU No. 2 (25 Apr)",
+     event: "Law turns DKI Jakarta into the Special Region of Jakarta (DKJ)",
+     scene: "A HANGER drops the word 'Capital' from Jakarta's sign: the law makes it the Special Region of Jakarta."}
+  - {year: 2024, peg: hanger, confidence: high, source: "WP: 2024 Jakarta gubernatorial election (27 Nov)",
+     event: "Pramono Anung wins the election for governor",
+     scene: "Pramono Anung hangs his campaign jacket on the HANGER at City Hall after he wins the governor's election."}
+  - {year: 2025, peg: nail, confidence: high, source: "CNN Indonesia; Katadata (7 Nov)",
+     event: "Explosions in the mosque of SMAN 72 Kelapa Gading wound dozens at Friday prayer",
+     place: "SMAN 72, Kelapa Gading",
+     scene: "Explosions blow every NAIL out of the SMAN 72 school mosque during Friday prayer, and dozens of students are hurt."}
+  # science
+  - {year: 1966, peg: judge, confidence: medium, source: "WP: Timeline of Jakarta (Kooy 2014)",
+     event: "Pejompangan II water treatment plant starts work",
+     place: "Pejompangan",
+     scene: "A JUDGE drinks the first clean glass from the new Pejompangan II water plant and declares it open."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP: East Flood Canal",
+     event: "Dutch engineers publish the master plan for drainage and flood control of Jakarta",
+     scene: "A COMB of new canals is drawn across the map of Jakarta in the Dutch drainage master plan."}
+  - {year: 1974, peg: car, confidence: high, source: "WP: Halim Perdanakusuma airport",
+     event: "Halim airport starts international flights",
+     place: "Halim Perdanakusuma",
+     scene: "A CAR-sized jet taxis to the Halim apron, now open to international flights."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP: KRL Commuterline",
+     event: "New Japanese electric trains start the modern commuter service",
+     place: "Manggarai",
+     scene: "A CAGE-shaped electric car from Nippon Sharyo rolls into Manggarai and replaces the old commuter locomotives."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP: Jagorawi Toll Road (9 Mar)",
+     event: "Jagorawi, the first toll road in Indonesia, opens between Jakarta and Bogor",
+     place: "Cawang",
+     scene: "A CAVE man pays the first toll and drives down the new Jagorawi road from Jakarta to Bogor."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP: Jakarta-Tangerang Toll Road (27 Nov)",
+     event: "Jakarta-Tangerang toll road opens",
+     scene: "A FAIRY flies the opening ribbon along the new Jakarta-Tangerang toll road."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP: Soekarno-Hatta International Airport",
+     event: "Soekarno-Hatta airport opens at Cengkareng",
+     place: "Cengkareng",
+     scene: "A WAFFLE grid of Javanese pavilion roofs opens at Cengkareng: Soekarno-Hatta airport starts work."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP: Kemayoran Airport (31 Mar)",
+     event: "Kemayoran airport closes, and its flights move to Cengkareng",
+     place: "Kemayoran",
+     scene: "A WAFFLE iron flattens the Kemayoran runway as its last flight leaves for Cengkareng."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP: Prof. Dr. Sedyatmo Toll Road",
+     event: "Sedyatmo toll road to the new airport is completed",
+     scene: "A WAFFLE grid of piles carries the Sedyatmo toll road over the swamp to the new airport."}
+  - {year: 1985, peg: waffle, confidence: high, source: "Kemkes: Harapan Kita heart hospital",
+     event: "Harapan Kita national heart hospital opens",
+     place: "Slipi",
+     scene: "A heart-shaped WAFFLE hangs over the door of Harapan Kita, the new national heart hospital."}
+  - {year: 1988, peg: fife, confidence: high, source: "WP: Jakarta-Cikampek Toll Road (19 Nov)",
+     event: "Jakarta-Cikampek toll road opens through Bekasi",
+     scene: "A FIFE band marches the first cars onto the Jakarta-Cikampek toll road through Bekasi."}
+  - {year: 1988, peg: fife, confidence: high, source: "Jakarta Post: the becak ban",
+     event: "City council bans becaks from all of Jakarta",
+     scene: "A FIFE shrills at City Hall, and the council bans every becak from Jakarta's streets."}
+  - {year: 1989, peg: fob, confidence: medium, source: "BPK: Keppres No. 50 (tolls from 10 Oct)",
+     event: "Elevated inner-city toll road Cawang-Tomang starts to charge tolls",
+     scene: "A FOB key opens the toll gate on the elevated Cawang-Tomang inner-city road."}
+  - {year: 1990, peg: bees, confidence: high, source: "ANU paper; CS Monitor (Mar)",
+     event: "City teams seize becaks and dump them in Jakarta Bay as reefs",
+     place: "Jakarta Bay",
+     scene: "A swarm of BEES lifts seized becaks off Jalan Thamrin and drops them into Jakarta Bay as a reef."}
+  - {year: 1990, peg: bees, confidence: medium, source: "WP: Jakarta Outer Ring Road",
+     event: "First section of the Jakarta Outer Ring Road opens",
+     scene: "BEES fly a ring around Jakarta: the first section of the Outer Ring Road opens."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Dharmais Hospital (30 Oct)",
+     event: "Suharto opens Dharmais, the national cancer hospital",
+     place: "Slipi",
+     scene: "Suharto cuts a PALM frond ribbon and opens Dharmais, the national cancer hospital."}
+  - {year: 1998, peg: beehive, confidence: unverified,
+     event: "City water company PAM Jaya gives its supply to two foreign-led firms",
+     scene: "Two foreign firms split the BEEHIVE of Jakarta's water pipes between them as PAM Jaya gives up its supply."}
+  - {year: 2002, peg: sun, confidence: medium, source: "Jakarta govt (rendahemisi); Culture Trip",
+     event: "First Car Free Day closes Jalan Thamrin to cars",
+     place: "Jalan Thamrin",
+     scene: "Cyclists ride under a SUN umbrella down an empty Jalan Thamrin on the first Car Free Day."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: TransJakarta (15 Jan)",
+     event: "TransJakarta, the first bus rapid transit in Southeast Asia, starts on Jalan Sudirman",
+     place: "Jalan Sudirman",
+     scene: "A TransJakarta bus climbs out of a SEWER onto its own lane on Sudirman: the first busway starts."}
+  - {year: 2004, peg: sewer, confidence: high, source: "WP: Jakarta Monorail",
+     event: "Monorail building starts, then stops after a few weeks for lack of money",
+     place: "Jalan Rasuna Said",
+     scene: "A SEWER of debts swallows the money, and the monorail stops after a few pillars."}
+  - {year: 2007, peg: ski, confidence: medium, source: "Suara.com; NOW!Jakarta",
+     event: "Car Free Day becomes a regular city programme",
+     place: "Jalan Thamrin",
+     scene: "A SKI team glides down Thamrin every month as Car Free Day becomes a regular city programme."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Cipto Mangunkusumo Hospital",
+     event: "New main building of Cipto Mangunkusumo hospital opens",
+     place: "Salemba",
+     scene: "Seven hundred SOFA beds fill the new main building of the Cipto Mangunkusumo hospital."}
+  - {year: 2013, peg: tomb, confidence: medium, source: "WP: Jakarta MRT; TransJakarta",
+     event: "Building of the first MRT line starts",
+     place: "Jalan Sudirman",
+     scene: "A TOMB-deep shaft opens under Jalan Sudirman as building of the first MRT line starts."}
+  - {year: 2014, peg: tower, confidence: high, source: "Dutch Water Sector; CNN Indonesia (9 Oct)",
+     event: "Giant sea wall project (NCICD) starts at the Pluit pump house",
+     place: "Pluit",
+     scene: "A TOWER of sheet piles rises at Pluit as the giant sea wall project starts."}
+  - {year: 2016, peg: dish, confidence: medium, source: "IDN Times: Pergub No. 164",
+     event: "Odd-even plate rule replaces the three-in-one rule on central roads",
+     place: "Jalan Sudirman",
+     scene: "A police DISH sorts the cars by odd and even plates, and the three-in-one rule ends."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Soekarno-Hatta Terminal 3 (9 Aug)",
+     event: "Terminal 3 of Soekarno-Hatta airport opens",
+     place: "Soekarno-Hatta airport",
+     scene: "A huge DISH of a roof covers the new Terminal 3 of Soekarno-Hatta airport."}
+  - {year: 2017, peg: dog, confidence: medium, source: "WP: Semanggi Interchange",
+     event: "New Semanggi loop flyover opens",
+     place: "Semanggi",
+     scene: "A DOG chases its tail round and round the new Semanggi loop flyover."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Soekarno-Hatta Airport Rail Link (26 Dec)",
+     event: "Airport rail link opens to Soekarno-Hatta",
+     place: "Sudirman station",
+     scene: "A DOG rides the first airport train from Sudirman station to Soekarno-Hatta."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: Jakarta LRT (1 Dec)",
+     event: "First Jakarta LRT line opens from Kelapa Gading to Velodrome",
+     place: "Kelapa Gading",
+     scene: "A TUBA rolls down the elevated track from Kelapa Gading to Velodrome on the first LRT train."}
+  - {year: 2019, peg: tuba, confidence: high, source: "WP: 2019 Java blackout (4 Aug)",
+     event: "Java blackout cuts power in Jakarta and stops the MRT",
+     scene: "A TUBA cannot play in the dark: the Java blackout cuts Jakarta's power and stops the MRT."}
+  - {year: 2020, peg: nose, confidence: high, source: "CNN Indonesia; Kompas (23 Mar)",
+     event: "Athletes' village in Kemayoran becomes an emergency COVID-19 hospital",
+     place: "Wisma Atlet, Kemayoran",
+     scene: "A giant NOSE swab stands at the gate of Wisma Atlet, now an emergency COVID-19 hospital."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Manggarai railway station (26 Dec)",
+     event: "First phase of the new Manggarai central station opens",
+     place: "Manggarai",
+     scene: "A NUN directs the trains in the new upper hall of Manggarai central station."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Jabodebek LRT (28 Aug)",
+     event: "Jabodebek LRT opens to Bekasi and Cibubur",
+     scene: "A GNOME rides the driverless Jabodebek LRT out to Bekasi and Cibubur."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Banjir Kanal Timur (31 Jul)",
+     event: "Tunnel from the Ciliwung to the East Flood Canal opens",
+     scene: "A GNOME digs the tunnel that sends the Ciliwung's flood into the East Flood Canal."}
+  - {year: 2026, peg: nacho, confidence: high, source: "WP: Jakarta LRT (16 Sep)",
+     event: "Jakarta LRT extends from Velodrome to Manggarai",
+     scene: "A NACHO cart rides the extended LRT from Velodrome all the way to Manggarai."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "WP: Jakarta Monorail",
+     event: "Workers start to pull down the abandoned monorail pillars",
+     place: "Jalan Rasuna Said",
+     scene: "Workers snap the old monorail pillars like NACHO chips on Rasuna Said."}
+  # religion
+  - {year: 1971, peg: cat, confidence: high, source: "VOI: Sunda Kelapa Mosque (31 Mar)",
+     event: "Sunda Kelapa Mosque with its boat-shaped roof opens in Menteng",
+     place: "Menteng",
+     scene: "A CAT sails the boat-shaped roof of the new Sunda Kelapa Mosque into Menteng."}
+  - {year: 1999, peg: pipe, confidence: high, source: "Tirto; Liputan6: At-Tin (26 Dec)",
+     event: "At-Tin Mosque opens at Taman Mini",
+     place: "Taman Mini",
+     scene: "A tall PIPE of white marble becomes the minaret of the new At-Tin Mosque at Taman Mini."}
+  - {year: 2003, peg: sumo, confidence: medium, source: "Orami; VOI: Jakarta Islamic Centre",
+     event: "Jakarta Islamic Centre opens on the old Kramat Tunggak red-light site",
+     place: "Kramat Tunggak, Koja",
+     scene: "A SUMO wrestler sweeps Kramat Tunggak clean, and the Jakarta Islamic Centre rises in its place."}
+  - {year: 2005, peg: seal, confidence: high, source: "APF library; Liputan6 (9 Jul)",
+     event: "Mob attacks the Ahmadiyya Mubarak campus at Parung, Bogor",
+     place: "Parung, Bogor",
+     scene: "A mob breaks the SEAL on the gate of the Ahmadiyya Mubarak campus at Parung and attacks its members."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Messiah Cathedral (20 Sep)",
+     event: "Messiah Cathedral, a huge Reformed church, is dedicated in Kemayoran",
+     place: "Kemayoran",
+     scene: "A SOFA for thousands fills the vast hall of Messiah Cathedral, dedicated in Kemayoran."}
+  - {year: 2010, peg: dice, confidence: high, source: "Christian Post (Setara); APSN (12 Sep)",
+     event: "Mob attacks HKBP church members at Ciketing, Bekasi, and stabs an elder",
+     place: "Ciketing, Bekasi",
+     scene: "A mob rolls DICE of stones at the HKBP worshippers in Ciketing, Bekasi, and stabs an elder."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Vihara Dharma Bhakti",
+     event: "Fire burns the old Dharma Bhakti temple in Glodok",
+     place: "Glodok",
+     scene: "A paper DOLL for the offerings catches fire and burns the old Dharma Bhakti temple in Glodok."}
+  - {year: 2017, peg: dog, confidence: high, source: "Setkab; Tempo (15 Apr)",
+     event: "Jokowi opens the KH Hasyim Asy'ari Grand Mosque in West Jakarta",
+     place: "Jalan Daan Mogot",
+     scene: "A Betawi roof with DOG-tooth eaves crowns the new KH Hasyim Asy'ari Grand Mosque on Daan Mogot."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Tunnel of Friendship",
+     event: "Tunnel of Friendship links Istiqlal Mosque and the Cathedral",
+     place: "Istiqlal Mosque",
+     scene: "An ANT digs the Tunnel of Friendship under the road from Istiqlal Mosque to the Cathedral."}
+  - {year: 2022, peg: nun, confidence: medium, source: "IDX Channel; Mojok: JIC dome fire",
+     event: "Fire collapses the dome of the Jakarta Islamic Centre mosque",
+     place: "Kramat Tunggak, Koja",
+     scene: "The great dome of the Jakarta Islamic Centre burns and falls like a NUN's black veil."}
+  - {year: 2024, peg: hanger, confidence: high, source: "Jakarta Post; Vatican News (5 Sept)",
+     event: "Pope Francis says Mass for over eighty thousand people at Gelora Bung Karno",
+     place: "Gelora Bung Karno, Senayan",
+     scene: "A crane HANGER lowers Pope Francis onto the altar in Gelora Bung Karno, and he says Mass for over eighty thousand."}
+  # arts
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Dirgantara Monument",
+     event: "Dirgantara statue of a flying man at Pancoran is completed",
+     place: "Pancoran",
+     scene: "A JUDGE in a flying robe leaps from the column at Pancoran: the Dirgantara statue is complete."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP: Taman Ismail Marzuki (17 Jun)",
+     event: "Jakarta Arts Council (DKJ) is founded",
+     place: "Taman Ismail Marzuki",
+     scene: "A SHIP of painters and poets docks at Cikini and founds the Jakarta Arts Council."}
+  - {year: 1969, peg: ship, confidence: disputed, source: "WP: Lubang Buaya (1969; memory 1973)",
+     event: "Sacred Pancasila Monument to the murdered generals opens at Lubang Buaya",
+     place: "Lubang Buaya",
+     scene: "Seven bronze generals stand on the deck of a stone SHIP at Lubang Buaya: the Sacred Pancasila Monument opens."}
+  - {year: 1970, peg: goose, confidence: medium, source: "WP: Timeline of Jakarta (Jakarta Post)",
+     event: "Jakarta holds the Asia Pacific Film Festival",
+     scene: "A GOOSE walks the red carpet as Jakarta holds the Asia Pacific Film Festival."}
+  - {year: 1972, peg: coin, confidence: high, source: "id.WP: Patung Pemuda Membangun (Mar)",
+     event: "Youth Statue at the Senayan roundabout is unveiled",
+     place: "Senayan roundabout",
+     scene: "A bronze youth lifts a flaming COIN high over the Senayan roundabout: the Youth Statue is unveiled."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP: Satriamandala Museum (5 Oct)",
+     event: "Satriamandala armed forces museum opens",
+     place: "Jalan Gatot Subroto",
+     scene: "A COIN with an army badge drops into the till as the Satriamandala museum opens its doors."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP: Youth Pledge Museum (20 May)",
+     event: "Old boarding house on Jalan Kramat Raya reopens as the Youth Pledge building",
+     place: "Jalan Kramat Raya 106",
+     scene: "A COMB tidies the old Kramat 106 boarding house, and it reopens as the Youth Pledge building."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP: Balai Sarbini (11 Mar)",
+     event: "Suharto opens the Balai Sarbini hall",
+     place: "Semanggi",
+     scene: "A giant COMB lifts its teeth like a stage curtain, and Suharto opens the Balai Sarbini hall at Semanggi."}
+  - {year: 1974, peg: car, confidence: high, source: "WP: Jakarta History Museum",
+     event: "Old Stadhuis opens as the Jakarta History Museum",
+     place: "Fatahillah Square",
+     scene: "A CAR full of old VOC chests parks at the Stadhuis, which opens as the Jakarta History Museum."}
+  - {year: 1974, peg: car, confidence: high, source: "WP: Jakarta Convention Center (3 Apr)",
+     event: "Jakarta Convention Center opens in Senayan",
+     place: "Senayan",
+     scene: "A CAR-sized cake opens the Jakarta Convention Center in Senayan."}
+  - {year: 1974, peg: car, confidence: high, source: "id.WP: Museum Kebangkitan Nasional (20 May)",
+     event: "Old STOVIA school opens as the National Awakening Building",
+     place: "Jalan Abdul Rahman Saleh",
+     scene: "A CAR of medical students in old STOVIA caps drives into the school, which opens as the National Awakening Building."}
+  - {year: 1974, peg: car, confidence: high, source: "Jurnal Cikini IKJ; WP: Indonesian New Art Movement",
+     event: "Young artists issue the Black December protest against the jury of the painting exhibition",
+     place: "Taman Ismail Marzuki",
+     scene: "Young painters drape a CAR in black cloth at TIM in the Black December protest against the jury."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP: Wayang Museum (13 Aug)",
+     event: "Wayang Museum opens on Fatahillah Square",
+     place: "Fatahillah Square",
+     scene: "An EAGLE wayang puppet flaps open the doors of the new Wayang Museum on Fatahillah Square."}
+  - {year: 1975, peg: eagle, confidence: high, source: "Jurnal Cikini IKJ; Taratsa",
+     event: "New Art Movement holds its first exhibition at TIM",
+     place: "Taman Ismail Marzuki",
+     scene: "An EAGLE made of plastic junk hangs at TIM in the first New Art Movement exhibition."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP: Museum of Fine Arts and Ceramics (20 Aug)",
+     event: "Fine Art and Ceramics Museum opens in the old court of justice",
+     place: "Fatahillah Square",
+     scene: "A CAGE of porcelain vases opens in the old court of justice: the Fine Art and Ceramics Museum."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP: Textile Museum (28 Jul)",
+     event: "Textile Museum opens in Palmerah",
+     place: "Palmerah",
+     scene: "A CAGE wrapped in batik and songket opens as the new Textile Museum in Palmerah."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP: Maritime Museum (7 Jul)",
+     event: "Old VOC warehouses open as the Maritime Museum",
+     place: "Sunda Kelapa",
+     scene: "A CAKE shaped like a pinisi ship opens the Maritime Museum in the old VOC warehouses."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP: Taman Prasasti Museum (9 Jul)",
+     event: "Old Tanah Abang cemetery opens as the Taman Prasasti museum",
+     place: "Tanah Abang",
+     scene: "Ali Sadikin puts a CAKE on a Dutch tombstone and opens the Taman Prasasti museum."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP: National Library of Indonesia",
+     event: "National Library of Indonesia is founded from four older libraries",
+     scene: "Four libraries pour their books into one VASE: the National Library of Indonesia is founded."}
+  - {year: 1980, peg: vase, confidence: high, source: "AKDN: Aga Khan Award, Kampung Improvement",
+     event: "Aga Khan Award for Architecture goes to Jakarta's Kampung Improvement Programme",
+     scene: "A crystal VASE, the Aga Khan Award, is set down in a paved Jakarta kampung for its improvement programme."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP: Lubang Buaya (1 Oct)",
+     event: "Sacred Pancasila Museum with dioramas opens at Lubang Buaya",
+     place: "Lubang Buaya",
+     scene: "A FOOT soldier steps out of a diorama in the new Sacred Pancasila Museum at Lubang Buaya."}
+  - {year: 1984, peg: fairy, confidence: high, source: "id.WP: Museum Kebangkitan Nasional (7 Feb)",
+     event: "National Awakening Museum opens in the old STOVIA building",
+     place: "Jalan Abdul Rahman Saleh",
+     scene: "A FAIRY joins four small museums in the old STOVIA building into one National Awakening Museum."}
+  - {year: 1984, peg: fairy, confidence: high, source: "TMII official site (20 Apr)",
+     event: "Keong Emas IMAX theatre opens in Taman Mini",
+     place: "Taman Mini",
+     scene: "A FAIRY lights the giant screen of the golden-snail Keong Emas theatre in Taman Mini."}
+  - {year: 1987, peg: fox, confidence: medium, source: "id.WP: Patung Arjuna Wijaya",
+     event: "Arjuna Wijaya chariot statue is set up on Jalan Thamrin",
+     place: "Jalan Medan Merdeka Barat",
+     scene: "A FOX drives Arjuna's chariot and eight bronze horses into the fountain at the end of Jalan Thamrin."}
+  - {year: 1987, peg: fox, confidence: high, source: "id.WP: Gedung Kesenian Jakarta",
+     event: "Old Schouwburg reopens as the Gedung Kesenian Jakarta after restoration",
+     place: "Pasar Baru",
+     scene: "A FOX in a tailcoat reopens the old Schouwburg as the Gedung Kesenian Jakarta."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Lubang Buaya",
+     event: "Museum of PKI Treason opens at Lubang Buaya",
+     place: "Lubang Buaya",
+     scene: "BEES swarm the dioramas of the new Museum of PKI Treason at Lubang Buaya."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Purna Bhakti Pertiwi Museum (23 Aug)",
+     event: "Suharto opens the Purna Bhakti Pertiwi museum of his gifts at Taman Mini",
+     place: "Taman Mini",
+     scene: "A cone roof like a PALM-leaf rice basket covers Suharto's gifts in the new Purna Bhakti Pertiwi museum."}
+  - {year: 1994, peg: bear, confidence: high, source: "WP: Si Doel Anak Sekolahan (16 Jan)",
+     event: "Si Doel Anak Sekolahan, a series about a Betawi family, first airs",
+     scene: "A BEAR in a Betawi sarong drives Si Doel's old oplet van across the screen as the series first airs."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Mandiri Museum (2 Oct)",
+     event: "Bank Mandiri museum opens in the old bank building at Kota",
+     place: "Kota",
+     scene: "A BEEHIVE of old tellers' cages opens as the Bank Mandiri museum at Kota."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: National Gallery of Indonesia (8 May)",
+     event: "National Gallery of Indonesia is established on Medan Merdeka Timur",
+     place: "Medan Merdeka Timur",
+     scene: "A PIPE of paint pours colour over the old school on Medan Merdeka Timur: the National Gallery is established."}
+  - {year: 2003, peg: sumo, confidence: high, source: "id.WP: Patung Jenderal Sudirman (16 Aug)",
+     event: "Statue of General Sudirman is unveiled on Jalan Sudirman",
+     place: "Jalan Sudirman",
+     scene: "A SUMO wrestler hoists the bronze General Sudirman onto his plinth on Jalan Sudirman."}
+  - {year: 2003, peg: sumo, confidence: high, source: "id.WP: Museum Layang-Layang (21 Mar)",
+     event: "Indonesian Kite Museum opens in Pondok Labu",
+     place: "Pondok Labu",
+     scene: "A SUMO-sized kite lifts off at Pondok Labu as the Indonesian Kite Museum opens."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Kota Tua Jakarta",
+     event: "Revitalisation of the Kota Tua old town begins",
+     place: "Kota Tua",
+     scene: "A SEAL scrubs the old walls of Kota Tua as the revitalisation of the old town begins."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: National Museum of Indonesia",
+     event: "National Museum opens its new north building",
+     place: "Medan Merdeka Barat",
+     scene: "A SKI lift carries visitors up the new north building of the National Museum."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Jakarta Fashion Week",
+     event: "First Jakarta Fashion Week is held at Pacific Place",
+     place: "Pacific Place",
+     scene: "Models walk a catwalk of SOFA cushions at Pacific Place in the first Jakarta Fashion Week."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Djakarta Warehouse Project",
+     event: "First Djakarta Warehouse Project dance festival is held",
+     scene: "A DJ dances on a SOFA in a warehouse at the first Djakarta Warehouse Project festival."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Bank Indonesia Museum (21 Jul)",
+     event: "Bank Indonesia Museum opens in the old Javasche Bank building",
+     place: "Kota",
+     scene: "Workers wash the old Javasche Bank with SOAP, and it opens as the Bank Indonesia Museum."}
+  - {year: 2009, peg: soap, confidence: medium, source: "WP: Timeline of Jakarta",
+     event: "Aula Simfonia Jakarta concert hall opens in Kemayoran",
+     place: "Kemayoran",
+     scene: "A SOAP bubble of sound fills the new Aula Simfonia concert hall in Kemayoran."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: National Library of Indonesia (14 Sep)",
+     event: "Jokowi opens the new National Library tower on Medan Merdeka Selatan",
+     place: "Medan Merdeka Selatan",
+     scene: "A DOG carries the first book up the new National Library tower on Medan Merdeka Selatan."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Museum MACAN",
+     event: "Museum MACAN, the first modern and contemporary art museum, opens",
+     place: "Kebon Jeruk",
+     scene: "A DOG painted with stripes like a macan prowls the new Museum MACAN of modern art."}
+  # economy
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Sarinah",
+     event: "Sarinah, the first department store and first skyscraper, opens on Jalan Thamrin",
+     place: "Jalan Thamrin",
+     scene: "A JUDGE rides the first escalator in Sarinah, Jakarta's first department store."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Ancol Dreamland",
+     event: "Ancol Dreamland resort opens on Jakarta Bay",
+     place: "Ancol",
+     scene: "A JUDGE in swimming trunks bangs his gavel on the sand and opens Ancol Dreamland."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Senen (Block I, 1962 to 1966)",
+     event: "The first block of the Proyek Senen shopping centre is finished",
+     place: "Senen",
+     scene: "A JUDGE in a hard hat tops out the first concrete block of Proyek Senen, and the old market traders move in."}
+  - {year: 1967, peg: jockey, confidence: high, source: "VOI; Kontan: casinos (26 Jul)",
+     event: "Ali Sadikin legalises gambling; the first city casino opens at Petak Sembilan",
+     place: "Petak Sembilan, Glodok",
+     scene: "A JOCKEY bets his saddle at the first legal casino in Petak Sembilan."}
+  - {year: 1968, peg: chef, confidence: high, source: "WP: Jakarta Fair (5 Jun)",
+     event: "Jakarta Fair opens on Medan Merdeka",
+     place: "Medan Merdeka",
+     scene: "A CHEF grills kerak telor at the first Jakarta Fair on Medan Merdeka."}
+  - {year: 1969, peg: ship, confidence: medium, source: "WP: Wisma Nusantara",
+     event: "Wisma Nusantara, one of the first office towers, is completed on Jalan Thamrin",
+     place: "Jalan Thamrin",
+     scene: "A SHIP's mast tops the new Wisma Nusantara tower on Jalan Thamrin."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP: Tempo (6 Mar)",
+     event: "Tempo news magazine first appears",
+     scene: "A CAT carries the first Tempo magazine in its mouth to every newsstand in Jakarta."}
+  - {year: 1971, peg: cat, confidence: medium, source: "WP: Timeline of Jakarta",
+     event: "Prambors radio starts to broadcast",
+     place: "Menteng",
+     scene: "A CAT sings into the microphone as Prambors radio starts to broadcast."}
+  - {year: 1974, peg: car, confidence: high, source: "WP: Hotel Borobudur (23 Mar)",
+     event: "Hotel Borobudur Inter-Continental opens, the largest hotel in Jakarta",
+     place: "Lapangan Banteng",
+     scene: "A CAR the size of a stupa parks at the new Hotel Borobudur, the largest hotel in Jakarta."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP: Ratu Plaza (12 Dec)",
+     event: "Ratu Plaza, the first superblock with a mall, opens on Jalan Sudirman",
+     place: "Jalan Sudirman",
+     scene: "A VASE the height of a tower holds the shops and flats of Ratu Plaza, the first superblock."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP: The Jakarta Post (25 Apr)",
+     event: "The Jakarta Post newspaper first appears",
+     scene: "FOAM spills off the printing press as the first Jakarta Post comes out."}
+  - {year: 1985, peg: waffle, confidence: high, source: "WP: Ancol Dreamland (29 Aug)",
+     event: "Dunia Fantasi theme park opens in Ancol",
+     place: "Ancol",
+     scene: "A WAFFLE stall stands at the gate as the Dunia Fantasi theme park opens in Ancol."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP: RCTI (24 Aug)",
+     event: "RCTI, the first private television station, starts regular broadcasts",
+     place: "Kebon Jeruk",
+     scene: "A FOB watch swings on the screen as RCTI, the first private station, starts regular broadcasts."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Plaza Indonesia (1 Mar)",
+     event: "Plaza Indonesia mall opens at the Hotel Indonesia roundabout",
+     place: "Bundaran HI",
+     scene: "BEES carry gold bags into the new Plaza Indonesia at the Hotel Indonesia roundabout."}
+  - {year: 1990, peg: bees, confidence: high, source: "WP: Mal Kelapa Gading",
+     event: "Kelapa Gading Plaza, later Mal Kelapa Gading, opens",
+     place: "Kelapa Gading",
+     scene: "BEES build a honeycomb of shops in Kelapa Gading: the new plaza opens."}
+  - {year: 1990, peg: bees, confidence: medium, source: "WP: Mega Kuningan",
+     event: "Mega Kuningan business district is started on state land",
+     place: "Kuningan",
+     scene: "BEES lay out a grid of towers on empty land in Kuningan: the Mega Kuningan district starts."}
+  - {year: 1991, peg: boot, confidence: high, source: "WP: Pondok Indah Mall",
+     event: "Pondok Indah Mall opens in South Jakarta",
+     place: "Pondok Indah",
+     scene: "A BOOT shop is the first to open in the new Pondok Indah Mall."}
+  - {year: 1991, peg: boot, confidence: medium, source: "WP: Timeline of Jakarta",
+     event: "Jakarta Fair moves from Medan Merdeka to Kemayoran",
+     place: "Kemayoran",
+     scene: "A BOOT kicks the Jakarta Fair off Medan Merdeka onto the old Kemayoran airfield."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Wisma 46",
+     event: "Wisma 46, the tallest building in Indonesia for twenty years, is completed",
+     place: "Jalan Sudirman",
+     scene: "A PEACH-shaped pen nib tops Wisma 46, now the tallest building in Indonesia."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Plaza Senayan (26 Apr)",
+     event: "Plaza Senayan mall opens",
+     place: "Senayan",
+     scene: "A PEACH tree grows in the atrium of the new Plaza Senayan mall."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Mal Taman Anggrek (28 Aug)",
+     event: "Mal Taman Anggrek opens as the largest mall in Southeast Asia",
+     place: "Slipi",
+     scene: "A PEACH the size of a mall drops at Slipi: Taman Anggrek opens as the largest mall in Southeast Asia."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Lippo Karawaci",
+     event: "Lippo Supermal opens in Karawaci, the largest mall west of Jakarta",
+     place: "Karawaci",
+     scene: "A PEACH basket the size of a stadium opens as the Lippo Supermal in Karawaci."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Bank Mandiri (2 Oct)",
+     event: "Bank Mandiri is formed from four failed state banks",
+     scene: "Four broken state banks crawl into one BEEHIVE and come out as Bank Mandiri."}
+  - {year: 1998, peg: beehive, confidence: high, source: "WP: Detik.com (9 Jul)",
+     event: "Detik.com news site starts",
+     scene: "A BEEHIVE of reporters buzzes out the first news on Detik.com."}
+  - {year: 2005, peg: seal, confidence: medium, source: "WP: Tanah Abang",
+     event: "New Blok A of Tanah Abang market opens",
+     place: "Tanah Abang",
+     scene: "A SEAL balances bolts of cloth in the new Blok A of Tanah Abang market."}
+  - {year: 2006, peg: sushi, confidence: high, source: "WP: Senayan City (21 Sep)",
+     event: "Senayan City mall opens",
+     place: "Senayan",
+     scene: "A SUSHI bar is the first to open in the new Senayan City mall."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "WP: Grand Indonesia (soft opening, Sep)",
+     event: "Grand Indonesia mall opens beside Hotel Indonesia",
+     place: "Bundaran HI",
+     scene: "A SUSHI chef cuts the ribbon as Grand Indonesia mall opens beside Hotel Indonesia."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Indonesia Stock Exchange (30 Nov)",
+     event: "Jakarta and Surabaya stock exchanges merge into the Indonesia Stock Exchange",
+     place: "Sudirman",
+     scene: "A SKI binding locks Jakarta and Surabaya together: the two stock exchanges merge into the Indonesia Stock Exchange."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: Pacific Place Jakarta",
+     event: "Pacific Place mall opens in the SCBD",
+     place: "SCBD",
+     scene: "A SKI slope of escalators opens inside the new Pacific Place mall."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Tokopedia (6 Feb)",
+     event: "Tokopedia online marketplace is founded",
+     scene: "A green owl sells a bar of SOAP on the new Tokopedia marketplace."}
+  - {year: 2009, peg: soap, confidence: medium, source: "Search: Kempinski; WP: Hotel Indonesia",
+     event: "Hotel Indonesia reopens as Hotel Indonesia Kempinski",
+     place: "Bundaran HI",
+     scene: "Workers scrub Hotel Indonesia with SOAP, and it reopens as Hotel Indonesia Kempinski."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Gojek (5 Oct)",
+     event: "Gojek is founded as a motorcycle-taxi call centre",
+     scene: "An ojek driver throws DICE for his next fare, and Gojek starts as a call centre."}
+  - {year: 2010, peg: dice, confidence: high, source: "WP: Bukalapak (10 Jan)",
+     event: "Bukalapak online marketplace is founded",
+     scene: "A small shop sells a pair of DICE on the new Bukalapak marketplace."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: Traveloka",
+     event: "Traveloka travel-booking company is founded",
+     scene: "A TONGUE licks a stamp on the first plane ticket that Traveloka books."}
+  - {year: 2015, peg: doll, confidence: high, source: "WP: Gojek",
+     event: "Gojek launches its app for rides, deliveries and food",
+     scene: "A DOLL in a green jacket rides on the new Gojek app for rides, parcels and food."}
+  - {year: 2016, peg: dish, confidence: high, source: "Setkab; Jakarta Post (13 Sep)",
+     event: "Jokowi opens the New Priok Container Terminal One at Kalibaru",
+     place: "Kalibaru, Tanjung Priok",
+     scene: "A crane lifts a DISH of containers onto the new Kalibaru terminal as Jokowi opens it."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Gama Tower",
+     event: "Gama Tower becomes the tallest building in Indonesia",
+     place: "Kuningan",
+     scene: "A DISH antenna on Gama Tower now tops every other building in Indonesia."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Meikarta (17 Aug)",
+     event: "Meikarta new-city project is launched at Cikarang",
+     place: "Cikarang",
+     scene: "A DOG in a tie sells flats in Meikarta at Cikarang on its launch day."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Tanah Abang (7 Dec)",
+     event: "Skybridge for street sellers opens over the road at Tanah Abang",
+     place: "Tanah Abang",
+     scene: "A DOVE lands on the new skybridge over Tanah Abang, now full of street sellers."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Tokopedia (17 May)",
+     event: "Gojek and Tokopedia merge to form GoTo",
+     scene: "An ANT bridge joins Gojek and Tokopedia into one GoTo company."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Autograph Tower",
+     event: "Autograph Tower at Thamrin Nine becomes the tallest building in Indonesia",
+     place: "Thamrin Nine",
+     scene: "A NUN climbs to the top of Autograph Tower, now the tallest building in Indonesia."}
+  # society
+  - {year: 1966, peg: judge, confidence: high, source: "WP: Ragunan Zoo (22 Jun)",
+     event: "Ragunan Zoo opens in Pasar Minggu",
+     place: "Ragunan, Pasar Minggu",
+     scene: "A JUDGE bangs his gavel on the zoo gate, and the animals move into the new Ragunan Zoo."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP: YARSI University (15 Apr)",
+     event: "YARSI medical college is founded",
+     place: "Cempaka Putih",
+     scene: "A JOCKEY in a white coat rides into Cempaka Putih and founds the YARSI medical college."}
+  - {year: 1968, peg: chef, confidence: high, source: "id.WP: Tabrakan kereta api Ratujaya 1968 (20 Sep)",
+     event: "Two trains collide at Ratu Jaya, Depok, in one of the worst rail crashes in Indonesia",
+     place: "Ratu Jaya, Depok",
+     scene: "A CHEF's dining car folds in half when two trains collide head-on at Ratu Jaya in Depok."}
+  - {year: 1969, peg: ship, confidence: medium, source: "AKDN; Archnet: Kampung Improvement",
+     event: "City starts the Kampung Improvement Programme for paths, drains and water",
+     scene: "A SHIP of cement sails into the kampung alleys and lays paved paths and drains."}
+  - {year: 1970, peg: goose, confidence: high, source: "Kompas: Kramat Tunggak (27 Apr decree)",
+     event: "Governor's decree moves sex workers into the Kramat Tunggak red-light complex",
+     place: "Kramat Tunggak, Koja",
+     scene: "A GOOSE herds the sex workers of Senen into the fenced Kramat Tunggak complex in Koja."}
+  - {year: 1974, peg: car, confidence: medium, source: "WP: Timeline of Jakarta (Tjahjono 2003)",
+     event: "Condet is set aside as a Betawi heritage area",
+     place: "Condet",
+     scene: "A CAR stops at a gate in the salak orchards: Condet is set aside as a Betawi heritage area."}
+  - {year: 1974, peg: car, confidence: high, source: "WP: Bina Nusantara University (21 Oct)",
+     event: "Modern Computer Course, later BINUS University, opens",
+     place: "Kemanggisan",
+     scene: "A CAR full of punch cards parks in Kemanggisan as the Modern Computer Course opens."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP: 2013 Jakarta flood (list of floods)",
+     event: "Severe flood hits Jakarta",
+     scene: "Floodwater lifts every bird CAGE off the kampung roofs in a severe Jakarta flood."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP: Jakarta Institute of Arts (25 Jun)",
+     event: "Jakarta Arts Education Institute, later IKJ, opens at TIM",
+     place: "Taman Ismail Marzuki",
+     scene: "A CAGE door swings open at TIM, and the first art students of the institute, later IKJ, fly in."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP: Bintaro Jaya",
+     event: "Bintaro Jaya new town is started by Jaya Real Property",
+     place: "Bintaro",
+     scene: "A COWBOY ropes off rice fields in Bintaro and starts the new town of Bintaro Jaya."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP: East Flood Canal",
+     event: "January flood makes the city change its West Flood Canal plan",
+     scene: "A COWBOY paddles his horse through the January flood to the canal engineers' office."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP: 1979 Southeast Asian Games (21 Sep)",
+     event: "Jakarta holds the Southeast Asian Games for the first time",
+     place: "Senayan",
+     scene: "A COWBOY lassoes the SEA Games torch and carries it into Senayan for Jakarta's first Games."}
+  - {year: 1984, peg: fairy, confidence: high, source: "WP: Universitas Terbuka (4 Sep)",
+     event: "Universitas Terbuka, the open university, opens at Pondok Cabe",
+     place: "Pondok Cabe",
+     scene: "A FAIRY mails lectures from Pondok Cabe to students all over Indonesia as Universitas Terbuka opens."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP: 1987 Bintaro train crash (19 Oct)",
+     event: "Bintaro rail crash: two trains collide head-on; more than a hundred people die",
+     place: "Pondok Betung, Bintaro",
+     scene: "Two trains crush a FOX between their noses as they collide head-on at Bintaro."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP: University of Indonesia",
+     event: "University of Indonesia moves its main campus to Depok",
+     place: "Depok",
+     scene: "A FOX carries the yellow UI jacket from Salemba to the new Depok campus by the lakes."}
+  - {year: 1987, peg: fox, confidence: high, source: "WP: 1987 Southeast Asian Games (9 Sep)",
+     event: "Jakarta holds the Southeast Asian Games for the second time",
+     place: "Senayan",
+     scene: "A FOX runs the SEA Games torch around the Senayan track for Jakarta's second Games."}
+  - {year: 1989, peg: fob, confidence: high, source: "WP: Bumi Serpong Damai (16 Jan)",
+     event: "Bumi Serpong Damai new town is inaugurated",
+     place: "Serpong",
+     scene: "A FOB on the minister's chain unlocks the gate of the new town Bumi Serpong Damai."}
+  - {year: 1989, peg: fob, confidence: high, source: "RMOL; CNN Indonesia: Bantargebang",
+     event: "Bantargebang landfill opens in Bekasi for Jakarta's rubbish",
+     place: "Bantargebang, Bekasi",
+     scene: "Jakarta's first rubbish truck tips a gold FOB onto an empty pit at Bantargebang, the new landfill."}
+  - {year: 1993, peg: palm, confidence: high, source: "Viva; Metro TV (2 Nov)",
+     event: "Two commuter trains collide at Ratu Jaya, Depok; twenty people die",
+     place: "Ratu Jaya, Depok",
+     scene: "Two commuter trains meet on one track at Ratu Jaya and smash a PALM tree; twenty people die."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Pelita Harapan University",
+     event: "Pelita Harapan University opens in Lippo Karawaci",
+     place: "Karawaci",
+     scene: "A PALM-lined campus opens in Karawaci: Pelita Harapan University teaches in English."}
+  - {year: 1993, peg: palm, confidence: high, source: "WP: Lippo Karawaci",
+     event: "Lippo Karawaci new town opens on former swamp",
+     place: "Karawaci",
+     scene: "A PALM forest grows out of the Karawaci swamp as Lippo's new town opens."}
+  - {year: 1994, peg: bear, confidence: medium, source: "WP: Alam Sutera",
+     event: "Alam Sutera new town is founded in Serpong",
+     place: "Serpong",
+     scene: "A BEAR digs the first foundation of Alam Sutera in Serpong."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: 2013 Jakarta flood (list of floods)",
+     event: "Severe flood covers much of Jakarta",
+     scene: "Floodwater rolls a PEACH crate down Jalan Thamrin as a severe flood covers much of Jakarta."}
+  - {year: 1996, peg: peach, confidence: high, source: "Jakarta Post: fires at Senen market (23 Nov)",
+     event: "Fire burns about seven hundred and fifty kiosks of Pasar Senen",
+     place: "Pasar Senen",
+     scene: "A PEACH stall catches fire first, and the blaze eats hundreds of kiosks in Pasar Senen."}
+  - {year: 1996, peg: peach, confidence: high, source: "WP: Bina Nusantara University (8 Aug)",
+     event: "Bina Nusantara becomes a university",
+     place: "Kemanggisan",
+     scene: "A PEACH-coloured cap lands on the Binus tower as it becomes a university."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: Persija Jakarta (19 Dec)",
+     event: "Persija's supporters' club, The Jakmania, is founded",
+     scene: "A PIG in an orange Persija scarf leads the first chants of The Jakmania."}
+  - {year: 1997, peg: pig, confidence: high, source: "WP: 1997 Southeast Asian Games (11 Oct)",
+     event: "Jakarta holds the Southeast Asian Games for the third time",
+     place: "Senayan",
+     scene: "A PIG carries the torch around Senayan as Jakarta holds its third SEA Games."}
+  - {year: 1999, peg: pipe, confidence: high, source: "Kompas; VOI (31 Dec)",
+     event: "Governor Sutiyoso closes the Kramat Tunggak red-light complex",
+     place: "Kramat Tunggak, Koja",
+     scene: "A PIPE wrench locks the gate of Kramat Tunggak, and the red-light complex closes for good."}
+  - {year: 1999, peg: pipe, confidence: high, source: "WP: Jakarta State University (4 Aug)",
+     event: "Teachers' college IKIP Jakarta becomes the State University of Jakarta",
+     place: "Rawamangun",
+     scene: "A PIPE organ plays as the teachers' college IKIP Jakarta becomes the State University of Jakarta."}
+  - {year: 2001, peg: soda, confidence: high, source: "WP: 2001 Liga Indonesia final (7 Oct)",
+     event: "Persija beats PSM in the Liga Indonesia final at Senayan",
+     place: "Gelora Bung Karno",
+     scene: "A SODA fountain sprays orange as Persija beats PSM in the Liga Indonesia final at Senayan."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: 2013 Jakarta flood (list of floods)",
+     event: "Severe flood covers much of Jakarta",
+     scene: "A SUN umbrella floats down Jalan Thamrin in the great flood that covers much of Jakarta."}
+  - {year: 2002, peg: sun, confidence: high, source: "WP: Ragunan Zoo",
+     event: "Schmutzer Primate Centre opens in Ragunan Zoo",
+     place: "Ragunan",
+     scene: "A gorilla lies in the SUN on a rope bridge as the Schmutzer Primate Centre opens."}
+  - {year: 2003, peg: sumo, confidence: high, source: "WP: Tanah Abang",
+     event: "Fire burns part of Tanah Abang market",
+     place: "Tanah Abang",
+     scene: "A SUMO wrestler carries bolts of cloth out of the burning Tanah Abang market."}
+  - {year: 2005, peg: seal, confidence: high, source: "CIDRAP; WHO (Jul)",
+     event: "First confirmed human bird-flu deaths in Indonesia: a father and his daughters in Tangerang",
+     place: "Tangerang",
+     scene: "The WHO SEAL stamps H5N1 on the file of a Tangerang father: the first human bird-flu deaths in Indonesia."}
+  - {year: 2005, peg: seal, confidence: high, source: "WP: Ragunan Zoo (19 Sep)",
+     event: "Ragunan Zoo closes for weeks after bird flu is found in its birds",
+     place: "Ragunan",
+     scene: "A SEAL closes the gate of Ragunan Zoo after bird flu is found in its aviary."}
+  - {year: 2006, peg: sushi, confidence: medium, source: "RMOL: Bantargebang history",
+     event: "Rubbish landslide at Bantargebang buries scavengers",
+     place: "Bantargebang, Bekasi",
+     scene: "A giant SUSHI roll of rubbish slides down Bantargebang's Zone 3 and buries the scavengers below."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: 2007 Jakarta flood (2 Feb)",
+     event: "February flood covers much of the city; more than fifty people die",
+     scene: "The water is deep enough to SKI on: the February flood covers much of Jakarta."}
+  - {year: 2007, peg: ski, confidence: high, source: "WP: 2007 AFC Asian Cup final (29 Jul)",
+     event: "Iraq beats Saudi Arabia in the Asian Cup final at Gelora Bung Karno",
+     place: "Gelora Bung Karno",
+     scene: "Younis Mahmoud heads the ball off a SKI ramp, and Iraq wins the Asian Cup final at Gelora Bung Karno."}
+  - {year: 2008, peg: sofa, confidence: high, source: "WP: Prof. Dr. Sedyatmo Toll Road",
+     event: "Flood closes the airport toll road; nearly a thousand flights are delayed",
+     place: "Sedyatmo toll road",
+     scene: "A SOFA floats on the flooded airport toll road, and nearly a thousand flights must wait."}
+  - {year: 2009, peg: soap, confidence: high, source: "WP: Situ Gintung (27 Mar)",
+     event: "Situ Gintung dam bursts in South Tangerang; about a hundred people die",
+     place: "Situ Gintung, Ciputat",
+     scene: "A bar of SOAP slips out of the Situ Gintung dam at dawn, and its lake drowns about a hundred people."}
+  - {year: 2009, peg: soap, confidence: high, source: "Gridoto; Kompas TV (18 Jan)",
+     event: "Fire at Pertamina's Plumpang fuel depot kills a guard",
+     place: "Plumpang, Koja",
+     scene: "A SOAP-slick fuel spill catches fire at the Plumpang depot and kills a security guard."}
+  - {year: 2011, peg: tattoo, confidence: high, source: "WP: 2011 Southeast Asian Games (11 Nov)",
+     event: "Jakarta and Palembang hold the Southeast Asian Games",
+     place: "Senayan",
+     scene: "Jakarta and Palembang share one TATTOO of the SEA Games emblem as they host the Games together."}
+  - {year: 2012, peg: tongue, confidence: high, source: "WP: 2012 Mount Salak Sukhoi crash (9 May)",
+     event: "Sukhoi Superjet on a demonstration flight crashes into Mount Salak",
+     place: "Mount Salak, Bogor",
+     scene: "A TONGUE of cloud swallows the Sukhoi Superjet, and it flies into Mount Salak."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: 2013 Jakarta flood; Jakarta LRT",
+     event: "January flood breaks the Latuharhari embankment and fills the city centre",
+     place: "Jalan Latuharhari",
+     scene: "Floodwater pours over the broken Latuharhari embankment and turns an office basement into a TOMB."}
+  - {year: 2013, peg: tomb, confidence: high, source: "WP: 2013 Bintaro train crash (9 Dec)",
+     event: "Commuter train hits a fuel tanker at Bintaro; the women's car burns",
+     place: "Bintaro",
+     scene: "The fuel tanker becomes a burning TOMB when a commuter train hits it at the Bintaro crossing."}
+  - {year: 2014, peg: tower, confidence: high, source: "detik; Suara.com (25 Apr)",
+     event: "Fire burns block three of Pasar Senen",
+     place: "Pasar Senen",
+     scene: "Fire climbs the Pasar Senen TOWER block by block and burns its third block to the frame."}
+  - {year: 2015, peg: doll, confidence: high, source: "CNN Indonesia (20 Aug)",
+     event: "City clears Kampung Pulo on the Ciliwung; residents burn a digger",
+     place: "Kampung Pulo",
+     scene: "Residents of Kampung Pulo throw a DOLL at the digger, then burn it, as the city clears their homes."}
+  - {year: 2016, peg: dish, confidence: high, source: "CNN Indonesia (29 Feb); Jakarta Post",
+     event: "City demolishes the Kalijodo red-light district",
+     place: "Kalijodo",
+     scene: "A bulldozer scoops Kalijodo's bars into one big DISH and dumps them in the canal."}
+  - {year: 2016, peg: dish, confidence: high, source: "WP: Mirna Salihin (6 Jan)",
+     event: "Mirna Salihin dies after cyanide in her iced coffee at a Grand Indonesia café",
+     place: "Grand Indonesia",
+     scene: "A DISH of iced Vietnamese coffee at a Grand Indonesia café carries the cyanide that kills Mirna Salihin."}
+  - {year: 2016, peg: dish, confidence: high, source: "Jakarta Post (28 Sep)",
+     event: "City clears Bukit Duri on the Ciliwung bank",
+     place: "Bukit Duri",
+     scene: "Excavators scrape Bukit Duri off the Ciliwung bank like rice off a DISH."}
+  - {year: 2016, peg: dish, confidence: high, source: "detik; Liputan6 (26 Dec)",
+     event: "Robbers lock eleven people in a tiny bathroom in Pulomas; six suffocate",
+     place: "Pulomas",
+     scene: "Robbers lock eleven people in a Pulomas bathroom no bigger than a DISH rack, and six suffocate."}
+  - {year: 2017, peg: dog, confidence: high, source: "WP: Kalijodo (22 Feb)",
+     event: "Kalijodo park and skate park open on the cleared site",
+     place: "Kalijodo",
+     scene: "A DOG skateboards in the new Kalijodo park on the cleared red-light site."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Gelora Bung Karno Main Stadium (14 Jan)",
+     event: "Rebuilt Gelora Bung Karno stadium reopens before the Asian Games",
+     place: "Gelora Bung Karno",
+     scene: "A DOVE flies over the new red and white seats as the rebuilt Gelora Bung Karno stadium reopens."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: Maritime Museum (16 Jan)",
+     event: "Fire burns most of the Maritime Museum warehouses",
+     place: "Sunda Kelapa",
+     scene: "A DOVE flees the burning roof beams of the old Maritime Museum warehouses."}
+  - {year: 2018, peg: dove, confidence: high, source: "WP: 2018 Asian Para Games (6 Oct)",
+     event: "Jakarta holds the Asian Para Games",
+     scene: "A DOVE with one wing pulls a wheelchair racer over the line at the Asian Para Games."}
+  - {year: 2018, peg: dove, confidence: high, source: "Liputan6; bola.com (9 Dec)",
+     event: "Persija wins the Liga 1 title at Gelora Bung Karno",
+     place: "Gelora Bung Karno",
+     scene: "A DOVE in Persija orange carries the Liga 1 trophy around Gelora Bung Karno."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: 2020 Jakarta floods (1 Jan)",
+     event: "New Year floods across Greater Jakarta kill dozens",
+     scene: "Only a NOSE stays above water as the New Year flood swamps Bekasi and Jakarta."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Large-scale social restrictions",
+     event: "First COVID-19 cases in Indonesia: two women in Depok",
+     place: "Depok",
+     scene: "A NOSE swab from two women in Depok shows the first COVID-19 cases in Indonesia."}
+  - {year: 2020, peg: nose, confidence: high, source: "WP: Large-scale social restrictions",
+     event: "Jakarta becomes the first region to impose large-scale social restrictions",
+     scene: "A giant mask covers Jakarta's NOSE: the city is the first region to impose large-scale social restrictions."}
+  - {year: 2020, peg: nose, confidence: high, source: "Merdeka; Tirto (22 Aug)",
+     event: "Fire destroys the main building of the Attorney General's Office",
+     place: "Kebayoran Baru",
+     scene: "Firefighters follow their NOSE to the Attorney General's main building, which burns all night."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Sriwijaya Air Flight 182 (9 Jan)",
+     event: "Sriwijaya Air flight crashes into the sea off the Thousand Islands; all on board die",
+     place: "Thousand Islands",
+     scene: "The Sriwijaya jet dives like an ANT into the sea off the Thousand Islands, and all on board die."}
+  - {year: 2021, peg: ant, confidence: high, source: "WP: Tangerang prison fire (8 Sep)",
+     event: "Fire in Tangerang prison kills forty-nine inmates",
+     place: "Tangerang prison",
+     scene: "An ANT nest of crowded cells in Tangerang prison catches fire at night, and forty-nine inmates die."}
+  - {year: 2021, peg: ant, confidence: high, source: "Mongabay; Kompas (16 Sep)",
+     event: "Court rules that the president and the governor failed to stop Jakarta's air pollution",
+     place: "Central Jakarta District Court",
+     scene: "An ANT army of thirty-two citizens marches into court and wins its case against Jakarta's dirty air."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Ferdy Sambo (8 Jul)",
+     event: "Brigadier Yosua is shot dead at General Ferdy Sambo's house in Duren Tiga",
+     place: "Duren Tiga",
+     scene: "Shots ring out behind a NUN statue in Ferdy Sambo's Duren Tiga house, and Brigadier Yosua dies."}
+  - {year: 2022, peg: nun, confidence: high, source: "WP: Jakarta International Stadium",
+     event: "Jakarta International Stadium opens in Tanjung Priok",
+     place: "Tanjung Priok",
+     scene: "A NUN kicks off the first match in the new Jakarta International Stadium."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: 2023 Plumpang oil depot fire; BPBD",
+     event: "Fire at the Plumpang fuel depot spreads to houses and kills more than thirty people",
+     place: "Plumpang, Koja",
+     scene: "A GNOME village of houses beside the Plumpang depot burns when the fuel pipes catch fire."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: National Museum of Indonesia (16 Sep)",
+     event: "Fire collapses part of the roof of the National Museum's old building",
+     place: "Medan Merdeka Barat",
+     scene: "Fire runs along the roof of the National Museum and drops it on a GNOME statue in the old hall."}
+  - {year: 2023, peg: gnome, confidence: high, source: "WP: Indonesia Arena; 2023 FIBA World Cup",
+     event: "New Indonesia Arena holds games of the Basketball World Cup",
+     place: "Senayan",
+     scene: "A GNOME slam-dunks in the new Indonesia Arena as Jakarta co-hosts the Basketball World Cup."}
+  - {year: 2025, peg: nail, confidence: high, source: "Liputan6; Jakarta Post (15 Jan)",
+     event: "Fire burns the upper floors of Glodok Plaza; many people die",
+     place: "Glodok Plaza",
+     scene: "Flames pull every NAIL from the upper floors of Glodok Plaza, and many workers die inside."}
+  - {year: 2026, peg: nacho, confidence: medium, source: "Kompas; Mongabay (8 Mar)",
+     event: "Rubbish landslide at Bantargebang kills several people",
+     place: "Bantargebang, Bekasi",
+     scene: "A NACHO pile of rubbish slides down Bantargebang and buries several people."}
+world_refs:
+  - {year: 1967, event: "LIPI, the Indonesian Institute of Sciences, is founded", cell: southeast_asia_science_1945_present}
+  - {year: 1968, event: "Taman Ismail Marzuki arts centre opens", cell: southeast_asia_arts_1945_present}
+  - {year: 1970, event: "Paul VI makes the first papal visit to Indonesia", cell: southeast_asia_religion_1945_present}
+  - {year: 1974, event: "Malari riots against Japanese investment", cell: southeast_asia_politics_1945_present}
+  - {year: 1975, event: "Indonesian Ulema Council (MUI) founded", cell: southeast_asia_religion_1945_present}
+  - {year: 1975, event: "National Monument (Monas) is completed", cell: southeast_asia_arts_1945_present}
+  - {year: 1975, event: "Taman Mini Indonesia Indah opens", cell: southeast_asia_arts_1945_present}
+  - {year: 1977, event: "Teater Koma is founded", cell: southeast_asia_arts_1945_present}
+  - {year: 1977, event: "Jakarta Stock Exchange is reopened", cell: southeast_asia_economy_1945_present}
+  - {year: 1978, event: "Istiqlal Mosque is completed", cell: southeast_asia_arts_1945_present}
+  - {year: 1984, event: "Tanjung Priok massacre", cell: southeast_asia_politics_1945_present}
+  - {year: 1987, event: "Siwabessy reactor at Serpong starts work", cell: southeast_asia_science_1945_present}
+  - {year: 1989, event: "John Paul II visits Jakarta", cell: southeast_asia_religion_1945_present}
+  - {year: 1992, event: "Eijkman Institute reopens in Jakarta", cell: southeast_asia_science_1945_present}
+  - {year: 1994, event: "APEC leaders set the Bogor Goals", cell: southeast_asia_economy_1945_present}
+  - {year: 1996, event: "Army-backed thugs storm the PDI headquarters", cell: southeast_asia_politics_1945_present}
+  - {year: 1998, event: "Trisakti shootings", cell: southeast_asia_politics_1945_present}
+  - {year: 1998, event: "Semanggi shootings", cell: southeast_asia_politics_1945_present}
+  - {year: 1998, event: "May riots against Chinese Indonesians", cell: southeast_asia_society_1945_present}
+  - {year: 1999, event: "Jakarta International Film Festival begins", cell: southeast_asia_arts_1945_present}
+  - {year: 2000, event: "Christmas Eve church bombings", cell: southeast_asia_politics_1945_present}
+  - {year: 2003, event: "Jakarta Marriott Hotel bombing", cell: southeast_asia_politics_1945_present}
+  - {year: 2004, event: "Australian embassy bombing", cell: southeast_asia_politics_1945_present}
+  - {year: 2005, event: "First Java Jazz Festival", cell: southeast_asia_arts_1945_present}
+  - {year: 2009, event: "Ritz-Carlton and Marriott hotel bombings", cell: southeast_asia_politics_1945_present}
+  - {year: 2016, event: "Sarinah attacks", cell: southeast_asia_politics_1945_present}
+  - {year: 2016, event: "Mass rally of 2 December against Ahok", cell: southeast_asia_religion_1945_present}
+  - {year: 2017, event: "Governor Ahok jailed for blasphemy", cell: southeast_asia_politics_1945_present}
+  - {year: 2018, event: "Jakarta and Palembang hold the Asian Games", cell: southeast_asia_society_1945_present}
+  - {year: 2019, event: "Jakarta MRT opens", cell: southeast_asia_science_1945_present}
+  - {year: 2019, event: "Jokowi names East Kalimantan for the new capital", cell: southeast_asia_politics_1945_present}
+  - {year: 2020, event: "Omnibus Law protests", cell: southeast_asia_politics_1945_present}
+  - {year: 2022, event: "Law creates Nusantara as the new capital", cell: southeast_asia_politics_1945_present}
+  - {year: 2023, event: "Whoosh high-speed railway to Bandung opens", cell: southeast_asia_science_1945_present}
+  - {year: 2024, event: "Istiqlal Declaration signed by Pope Francis and Imam Nasaruddin Umar", cell: southeast_asia_religion_1945_present}
+  - {year: 2025, event: "Protests over lawmakers' allowances", cell: southeast_asia_politics_1945_present}
+out_refs:
+  - {year: 1966, event: "Supersemar: Sukarno hands power to Suharto", reason: "national government"}
+  - {year: 1967, event: "Assembly makes Suharto acting president", reason: "national government"}
+  - {year: 1971, event: "First New Order general election", reason: "national election"}
+  - {year: 1972, event: "Spelling reform: Djakarta becomes Jakarta", reason: "national spelling law"}
+  - {year: 1998, event: "Suharto resigns at Merdeka Palace", reason: "national government"}
+  - {year: 2000, event: "Banten province is formed and takes Tangerang", reason: "provincial government"}
+  - {year: 2014, event: "Joko Widodo becomes president", reason: "national government"}
+  - {year: 2024, event: "Prabowo Subianto is sworn in as president", reason: "national government"}

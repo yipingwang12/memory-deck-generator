@@ -916,3 +916,46 @@ Region: southeast_asia.
 | `1973_present` | 1973 and 1976, the BMA, Black May, the BTS and MRT, Suvarnabhumi, the yellow and red shirts, the 2020 protests | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Jakarta (2026-11-24)
+
+Area: Jabodetabek as decided: DKI Jakarta (Sunda Kelapa, Kota and old Batavia, Glodok, Pasar Ikan, Weltevreden
+and Gambir, Menteng, Meester Cornelis/Jatinegara, Kebayoran Baru, Tanjung Priok, Ancol, the Thousand Islands with
+Onrust), Bogor (Buitenzorg, Batutulis, the Ciaruteun and Kebon Kopi inscriptions, Pakuan Pajajaran, Puncak),
+Depok, Tangerang (with Serpong), Bekasi (the Buni culture, Batujaya temples if a source places them in Bekasi or
+Karawang — Karawang is OUT). Banten Lama and Serang, Rengasdengklok, Karawang, Bandung and Cirebon are OUT.
+Region: southeast_asia.
+
+- Dates: give the CE year. Saka dates in inscriptions = CE + 78; Hijri and Javanese (Anno Javanico) dates
+  convert per policy.md.
+- The OUT rule covers each government while the area is its seat: the Sunda Kingdom at Pakuan Pajajaran
+  (Bogor, from about 1482 to 1579: acts for the whole kingdom); the VOC Governor-General and Council of the Indies
+  at Batavia (1619–1799: Indies-wide decrees, appointments, campaigns and treaties elsewhere); the Dutch, French
+  and British governments of the East Indies at Batavia and Buitenzorg (1800–1942: Daendels's and Raffles's
+  Java-wide reforms, the Cultivation System, laws for the colony, governors-general); the Japanese military
+  administration of Java (1942–1945: Java-wide decrees); the Republic of Indonesia from 1945 (except 1946–1949
+  when the capital was Yogyakarta): national laws, cabinets, presidents, elections. Acts about the city are IN:
+  Batavia's walls, canals, town hall and Stadhuis, the move south to Weltevreden, the 1905 Gemeente Batavia, the
+  DKI Jakarta province (1961/1964), governors of Jakarta, the 2022–2024 law moving the capital to Nusantara as a
+  city event (the city stops being capital).
+- Main stage (IN as cards): Fatahillah's capture of Sunda Kelapa (1527), Coen's destruction of Jayakarta (1619),
+  the Mataram sieges (1628, 1629), Erberveld's execution (1722), the 1740 Chinese massacre, the British capture
+  and the battle of Meester Cornelis (1811), the 1926 PKI rising in Batavia, the Japanese entry (1942), the
+  Proclamation at Pegangsaan Timur 56 (1945, read in the city), the Ikada rally (1945), the 1945–1946 fighting in
+  Jakarta, the 1965 killings of the generals and Lubang Buaya, the 1966 student demonstrations, the 1974 Malari
+  riots, the 1984 Tanjung Priok killings, the 27 July 1996 attack, the 1998 Trisakti shootings and May riots,
+  Semanggi, the bombings (2000 Stock Exchange, 2003 Marriott, 2004 Australian embassy, 2009 hotels, 2016 Thamrin),
+  the 2016–2017 mass rallies and Ahok's trial, the 2019 riots, the floods (1621 onwards, 2002, 2007, 2020).
+- National bodies founded or meeting in the city are IN as city events (Budi Utomo at STOVIA 1908, the 1928 Youth
+  Pledge congress, the Volksraad's opening, the PPKI sessions). International games and summits held in the city
+  are IN (Asian Games 1962 and 2018, GANEFO 1963, ASEAN's founding 1967 in Bangkok is OUT).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1527` | the Buni culture, Tarumanagara inscriptions (Ciaruteun, Tugu), Batujaya, Pakuan Pajajaran, Sunda Kelapa and the 1522 Portuguese padrão | 35 | ~70 |
+| `1527_1799` | Jayakarta, Coen's Batavia, the Mataram sieges, the castle and canals, the Chinese, the 1740 massacre, the VOC's end | 45 | ~200 |
+| `1800_1941` | Daendels's Weltevreden, the British, Buitenzorg's garden, Tanjung Priok, the Gemeente, Budi Utomo, the Youth Pledge | 45 | ~220 |
+| `1942_1965` | the Japanese occupation, the Proclamation, the revolution in Jakarta, Sukarno's monuments, the Asian Games, 1965 | 45 | ~180 |
+| `1966_present` | 1966, Ali Sadikin's city, Malari, Tanjung Priok 1984, 1998, the bombings, the MRT, the floods, the move to Nusantara | 45 | ~250 |
+
+Expected cards are a guide, not a target.
