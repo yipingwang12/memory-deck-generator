@@ -959,3 +959,46 @@ Region: southeast_asia.
 | `1966_present` | 1966, Ali Sadikin's city, Malari, Tanjung Priok 1984, 1998, the bombings, the MRT, the floods, the move to Nusantara | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Tehran (2026-11-24)
+
+Area: Tehran Province as decided: Tehran city (the Arg and Golestan Palace, the bazaar, Shemiran with Tajrish,
+Darband, Niavaran and Sa'dabad, Evin, Jaleh/Shohada Square, Azadi), Rey (Ray, ancient Rhages: Cheshmeh Ali,
+Tepe Mil, the Tughril tower, the Shah Abdol-Azim shrine, Bibi Shahrbanu), Varamin (the Jameh mosque, Pishva,
+Qal'eh Iraj), Damavand (the mountain and town), Firuzkuh, Shahriar, Eslamshahr, Pakdasht, Lavasan, Robat Karim,
+Qods, Parand, Imam Khomeini Airport. Karaj and Alborz Province (separated 2010), Qazvin, Qom and Kashan (Fin)
+are OUT. Region: west_asia.
+
+- Dates: give the CE year. Lunar Hijri dates convert per policy.md. Solar Hijri (SH) years begin at the March
+  equinox: a date from about 21 March to 31 December falls in CE = SH + 621, a date from 1 January to about
+  20 March in CE = SH + 622. Convert each date, do not add blindly.
+- The OUT rule covers each government while the area is its seat: the Buyid emirate at Rey (Rukn al-Dawla to
+  Majd al-Dawla, about 943–1029) and the Seljuk court at Rey under Tughril (about 1043–1063): acts for the whole
+  realm; the Qajar state from 1786 (Agha Mohammad Khan makes Tehran capital) to 1925; the Pahlavi state
+  (1925–1979); the Islamic Republic from 1979: national laws, accessions and coronations as ceremonies, treaties
+  signed in Tehran, cabinets, the Majlis's acts, elections, presidents. Acts about the city are IN: Tahmasp's
+  walls (1553), Agha Mohammad Khan's choice of Tehran as capital as a city event, Naser al-Din Shah's new walls
+  (1867), the municipality (baladiyeh, 1907/1910), Reza Shah's demolition of the walls and gates, the street
+  plans, the Tehran metro, the city council and mayors.
+- Main stage (IN as cards): the Mongol sack of Rey (1220), Griboyedov's killing at the Russian legation (1829),
+  the 1891–1892 tobacco protest in Tehran, Naser al-Din Shah's assassination at Shah Abdol-Azim (1896), the
+  1905–1906 basts at the shrine and the British legation, the 1908 bombardment of the Majlis, the 1909 capture
+  of Tehran by the constitutionalists, the 1921 coup (Reza Khan's entry), the 1941 Allied entry, the 1952 30 Tir
+  rising, the 1953 coup street fighting, the 15 Khordad 1963 rising, Black Friday at Jaleh Square (1978),
+  Khomeini's return and Behesht-e Zahra speech (1979), the US embassy seizure (1979–1981), the Iraqi missile
+  strikes on Tehran (1985, 1988), the 1981 Hafte Tir and prime minister's office bombings, the 1988 prison
+  executions at Evin, the 1999 student protests, the 2009 Green Movement protests, the 2017 attacks on the Majlis
+  and Khomeini's mausoleum, the 2020 shooting down of flight PS752 near Parand, Mahsa Amini's death (2022) and the
+  protests in the city, Haniyeh's killing in Tehran (2024), the Israeli and US strikes on Tehran (2025).
+- International summits and games held in the city are IN as city events (the 1943 Tehran Conference, the 1974
+  Asian Games, the 1997 OIC summit, the 2012 Non-Aligned summit).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1220` | Cheshmeh Ali, Rhages of the Medes and Seleucids, Arsacid and Sasanian Rey, the Islamic conquest, the Buyids and Seljuks at Rey, Tughril's tomb | 35 | ~90 |
+| `1220_1785` | the Mongol sack, Varamin under the Ilkhans, Clavijo's Tehran, Tahmasp's walls, Safavid and Zand Tehran | 35 | ~70 |
+| `1786_1924` | the Qajar capital, Golestan, Griboyedov, Naser al-Din's city, Dar al-Funun, the tobacco protest, the Constitutional Revolution, 1921 | 45 | ~220 |
+| `1925_1978` | Reza Shah's avenues, the 1941 occupation, the Tehran Conference, 1953, the White Revolution, Azadi tower, the 1978 revolution | 45 | ~220 |
+| `1979_present` | 1979, the embassy, the war and the missiles, the metro and Milad tower, 1999, 2009, 2017, 2022, the 2025 strikes | 45 | ~250 |
+
+Expected cards are a guide, not a target.
