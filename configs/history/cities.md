@@ -1218,3 +1218,43 @@ OUT. Region: subsaharan_africa.
 | `1991_present` | the capital move to Abuja (1991), June 12, the Ikeja explosion, the Lekki free zone, Eko Atlantic, the BRT and the Blue Line rail (2023), Ebola (2014), #EndSARS (2020), the Dangote refinery (2023) | 45 | ~180 |
 
 Expected cards are a guide, not a target.
+
+### Johannesburg (2026-11-26)
+
+Area: Gauteng Province as decided (Johannesburg with the CBD, Ferreirasdorp, Braamfontein, Hillbrow, Sophiatown,
+Alexandra, Soweto with Orlando and Kliptown, Melville Koppies; the Witwatersrand mines and towns: Krugersdorp,
+Roodepoort, Germiston, Boksburg, Benoni, Springs, Randfontein; Pretoria/Tshwane with Church Square, the Union
+Buildings, the Voortrekker Monument, Mamelodi, Atteridgeville; Sharpeville, Vereeniging, Vanderbijlpark and Sebokeng;
+Kempton Park with OR Tambo airport; the Cradle of Humankind (Sterkfontein, Swartkrans, Kromdraai, Rising Star) and
+Cullinan). Taung, Mapungubwe, Rustenburg, Marikana and Hartbeespoort's dam in North West are OUT. Region:
+subsaharan_africa.
+
+- The OUT rule covers each government while the area is its seat: the South African Republic (ZAR, Transvaal) with
+  its seat at Pretoria (from 1860); the Transvaal Colony (1902–1910); the Union of South Africa (1910–1961) and the
+  Republic (from 1961) with Pretoria as administrative capital; the Transvaal Province (1910–1994, seated in
+  Pretoria); Gauteng Province (from 1994, seated in Johannesburg): national and provincial laws (apartheid laws
+  such as the Population Registration Act and the Group Areas Act are OUT), parliaments, cabinets, presidents,
+  elections, treaties and conventions signed in the area (the Pretoria Convention 1881). Acts about the area are IN
+  (the proclamation of the Johannesburg goldfields (1886), Pretoria's founding, the Johannesburg municipality
+  (1897), the Natives (Urban Areas) acts applied to Johannesburg townships, the Sophiatown and Alexandra removals,
+  Soweto's naming (1963), the Tshwane and City of Johannesburg metros (2000)).
+- Main stage (IN as cards): the siege of Pretoria (1880–1881), the Jameson Raid ending at Doornkop (1896), the
+  British capture of Johannesburg and Pretoria (1900), the Vereeniging peace talks (1902), the 1913 and 1922 Rand
+  strikes and the Rand Rebellion, the 1946 African mine workers' strike, the Congress of the People and the
+  Freedom Charter at Kliptown (1955), the Treason Trial (1956–1961), the Women's March to the Union Buildings
+  (1956), the Sharpeville massacre (1960), the Rivonia raid (1963) and the Rivonia Trial (1963–1964), the Soweto
+  uprising (1976), the Church Street bombing (1983), the Vaal uprising (1984), Boipatong (1992), the assassination
+  of Chris Hani (1993), the Shell House shooting (1994). The 1994 presidential inauguration at the Union Buildings
+  is unsure: list it in the report.
+- International congresses, summits and games held in the area are IN as city events (the 1995 Rugby World Cup
+  final at Ellis Park, the 2002 Earth Summit, the 2010 FIFA World Cup final at Soccer City, BRICS summits in
+  Johannesburg, the 2025 G20 summit).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1886` | the hominin sites (Sterkfontein, Swartkrans, Kromdraai, Rising Star), Stone Age and Iron Age sites, the Tswana towns (Kweneng, Kaditshwene is OUT), Mzilikazi's Ndebele (1820s–1837), the Voortrekkers, Pretoria (1855), the ZAR capital (1860), the siege of Pretoria (1880–1881) | 35 | ~80 |
+| `1886_1947` | the gold discovery and the proclamation (1886), the mining camp and the Rand, the Corner House, the Jameson Raid, the 1900 capture, Gandhi in Johannesburg, the Union Buildings (1913), the 1922 rebellion, Wits University, Sophiatown, Orlando, the 1946 strike | 45 | ~220 |
+| `1948_1993` | the townships and removals, Kliptown, the Women's March, Sharpeville, Rivonia, Soweto 1976, the Carlton Centre, the Church Street bomb, the Vaal uprising, the 1980s states of emergency in the townships, Mandela's release rally at Soccer City (1990), Boipatong, Hani | 45 | ~220 |
+| `1994_present` | Shell House, the 1995 Rugby World Cup final, Gauteng and the metros, the Constitutional Court at Constitution Hill, Gautrain (2010), the 2010 World Cup, the 2008 xenophobic attacks, the 2021 unrest, Hillbrow and the 2023 Marshalltown fire, the 2025 G20 summit | 45 | ~180 |
+
+Expected cards are a guide, not a target.
