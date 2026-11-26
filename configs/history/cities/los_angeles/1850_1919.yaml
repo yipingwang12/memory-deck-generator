@@ -1,0 +1,958 @@
+# City: Los Angeles x 1850 to 1919 (the American city and county, the vigilante years, the railroads, the
+# boom of the eighties, oil, the free harbor, the red cars, the aqueduct, the citrus belt, the first film studios).
+# DRAFT 2026-11-26.
+# Area: the metropolitan area: Los Angeles County, Orange County and the Inland Empire (Riverside and San Bernardino
+# counties). Ventura County, Santa Barbara and San Diego County are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National and state events -> out_refs.
+# World-grid events -> world_refs (world cell year). Dates: memory pass + web check (no unauthorised book copies).
+# Main sources: Wikipedia (wikipedia.org) Timeline of Los Angeles, History of Los Angeles and the articles named in
+# each source field; Timeline of San Bernardino; Orange County Historical Society chronology; LA History Archive
+# timeline; Water and Power Associates museum timeline; Homestead Museum blog.
+# A work -> first public appearance; a building -> opening; a town -> founding or incorporation as stated.
+# Film studios are companies (economy); films and theatres are arts. Universities and schools are society.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Timeline of Los Angeles (4 Apr)",
+     event: "Los Angeles is incorporated as an American city",
+     scene: "A vaquero's LASSO loops around the old adobe pueblo and pulls it into the first American city charter of Los Angeles."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Los Angeles County is formed by the new state",
+     scene: "Surveyors lay a LASSO on the map from the coast to the desert, and its loop becomes the first Los Angeles County line."}
+  - {year: 1852, peg: lion, confidence: high, source: "en.WP: Treaty of Temecula (signed January 1852, never ratified)",
+     event: "Luiseño and Cahuilla leaders sign the Treaty of Temecula; the US Senate never ratifies it",
+     place: "Temecula",
+     scene: "A LION lies across the treaty table at Temecula while the Luiseño and Cahuilla leaders sign."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP: Timeline of San Bernardino",
+     event: "San Bernardino County is cut from Los Angeles County",
+     scene: "A LLAMA bites the huge desert corner off the Los Angeles County map, and that piece becomes San Bernardino County."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP: Timeline of San Bernardino (13 Apr; also 1857)",
+     event: "San Bernardino incorporates as a city",
+     scene: "A LAWYER in a Mormon hat writes the charter on the Council House table, and San Bernardino becomes a city."}
+  - {year: 1856, peg: leech, confidence: high, source: "Homestead Museum blog: Ruiz killing, 19 Jul",
+     event: "Deputy Jenkins kills Antonio Ruiz; armed Mexican residents gather on Fort Hill and the marshal is shot",
+     scene: "Deputy Jenkins clings like a LEECH to Ruiz's guitar for a debt, shoots him, and angry Mexican residents arm on Fort Hill."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "County voters approve a split of southern California as the Territory of Colorado",
+     scene: "A giant ELBOW shoves southern California away from the north as Los Angeles County votes for a Territory of Colorado."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: Culver City",
+     event: "US Army sets up Camp Latham on Ballona Creek",
+     scene: "A Union bugler fires a JET of creek water from his bugle and wakes the new Camp Latham tents on Ballona Creek."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Drum Barracks",
+     event: "The Union Army finishes Drum Barracks at Wilmington",
+     scene: "Union officers set one huge GEM in the gate as the last stone, and Drum Barracks at Wilmington is finished."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of San Bernardino",
+     event: "A militia campaign kills Serrano people in the San Bernardino Mountains for a month",
+     scene: "Settler militiamen use a JUDGE's gavel as a war club and kill Serrano families through the San Bernardino Mountains for a month."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Police Department is formed",
+     scene: "The first Los Angeles policemen march down the gangplank of a SHIP moored in the Plaza and start the city police force."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Anaheim (18 Mar)",
+     event: "Anaheim incorporates as a city",
+     scene: "Anaheim's German vintners unlock a CAGE of wine casks and toast the vote that makes their colony a city."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Palm Springs",
+     event: "The US government sets aside the Agua Caliente Reservation at Palm Springs",
+     scene: "A checkerboard CAGE of survey fences closes around the hot spring as Washington creates the Agua Caliente Reservation."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Pechanga Band (27 Jun executive order)",
+     event: "Presidential order creates the Pechanga Reservation for the evicted Temecula people",
+     scene: "Evicted Temecula families light a stone OVEN in their hidden valley, and a presidential order makes it the Pechanga Reservation."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: History of Riverside",
+     event: "Riverside incorporates as a city",
+     scene: "Orange-juice FOAM spills over the ballot box as the Riverside colony votes itself a city."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Old Plaza Firehouse",
+     event: "The Plaza Firehouse is built, the oldest fire station of Los Angeles",
+     scene: "A FAIRY in a brass helmet slides down the pole of the new brick Plaza Firehouse beside the old Plaza."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: History of Pasadena (Mar)",
+     event: "Pasadena incorporates as a city",
+     scene: "A trout-like FISH leaps from the Arroyo Seco onto the ballot table, and the Indiana colonists make Pasadena a city."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Santa Monica (30 Nov)",
+     event: "Santa Monica incorporates as a city",
+     scene: "Santa Monica fishermen weigh a huge FISH on the town hall scales, and its weight seals the vote to incorporate."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Santa Ana (1 Jun)",
+     event: "Santa Ana incorporates as a city",
+     scene: "A river FISH flops onto the new seal of Santa Ana and stamps it as the town incorporates."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The paid city fire department of Los Angeles is established",
+     scene: "A FISH spits a hose-stream on a blazing roof as Los Angeles hires its first paid city firemen."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Pomona incorporates as a city",
+     scene: "A FOX in the fruit goddess's crown signs the papers, and Pomona, named after her, becomes a city."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Long Beach incorporates as a city",
+     scene: "A temperance FIFE band marches down the long sand, and Long Beach incorporates for the first time."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Redlands (26 Nov or 3 Dec)",
+     event: "Redlands incorporates as a city",
+     scene: "A FIFE carved from red clay pipes the tune as Redlands votes itself a city among the orange groves."}
+  - {year: 1889, peg: fob, confidence: medium, source: "Brooks v. Fischer: legislature 23 or 31 Jan",
+     event: "A new freeholders' charter takes effect, and the old Common Council ends",
+     scene: "The mayor locks the new Los Angeles charter to his watch FOB, and the old Common Council walks out for good."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP: History of Orange County (1 Aug)",
+     event: "Orange County splits from Los Angeles County, with Santa Ana as its seat",
+     scene: "Orange growers snap the watch FOB chain that ties them to Los Angeles, and Orange County is born with Santa Ana its seat."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Ontario, California (10 Dec)",
+     event: "Ontario, the Chaffeys' model colony, incorporates as a city",
+     scene: "A cowboy BOOT stamps the Euclid Avenue median, and the Chaffey brothers' model colony of Ontario becomes a city."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: San Bernardino",
+     event: "The government sets up the Serrano reservation of Santos Manuel (San Manuel)",
+     scene: "Santos Manuel's BOOT print marks the foothill land that the government sets aside as the San Manuel Reservation."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: History of Riverside (11 Mar)",
+     event: "Riverside County is formed from San Bernardino and San Diego counties",
+     scene: "A PALM frond slices the citrus country off San Bernardino County, and Riverside County is born."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP: History of Long Beach (13 Dec)",
+     event: "Long Beach incorporates again after it dissolved",
+     scene: "A PIG roots up the old town papers, and Long Beach votes itself back into being as a city."}
+  - {year: 1903, peg: sumo, confidence: high, source: "Ballotpedia; scocablog: charter amendments",
+     event: "Los Angeles adds the initiative, referendum and recall to its charter",
+     scene: "A SUMO wrestler throws a crooked councilman out of City Hall: Los Angeles writes the recall into its charter."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Hollywood, Los Angeles (9 Nov)",
+     event: "Hollywood incorporates as a city by a narrow vote",
+     scene: "A SUMO wrestler presses the ballots flat, and the fig-orchard village of Hollywood narrowly votes itself a city."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "Ballotpedia: 16 Sep; court voids it in 1905",
+     event: "The first recall election in the country removes councilman James Davenport",
+     scene: "Voters flush councilman Davenport down a SEWER in the first recall election in the country."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: Hollywood, Los Angeles (30 Jan)",
+     event: "Hollywood voters ban liquor sales",
+     scene: "Hollywood pours every bottle of whisky down the SEWER and bans liquor sales in the town."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Timeline of San Bernardino",
+     event: "San Bernardino adopts its first city charter",
+     scene: "A SEAL stamps its flipper on the first city charter of San Bernardino."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Vernon incorporates as a city",
+     scene: "A SEAL balances a factory chimney on its nose as the town of Vernon incorporates."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Glendale (15 Feb)",
+     event: "Glendale incorporates as a city",
+     scene: "Glendale's first trustees press a SUSHI roll on the papers as their seal, and the town incorporates."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Los Angeles annexes the Shoestring strip to reach the harbor",
+     scene: "A long thin SUSHI roll stretches from downtown to the sea: Los Angeles annexes the narrow Shoestring strip toward the harbor."}
+  - {year: 1906, peg: sushi, confidence: medium, source: "WP: Timeline of Los Angeles (Watts town 1907?)",
+     event: "Watts incorporates as a city",
+     scene: "A railway worker eats SUSHI at the Watts junction as the town of Watts incorporates."}
+  - {year: 1908, peg: sofa, confidence: high, source: "LA City Planning; PBS SoCal: Residence District",
+     event: "The Residence District Ordinance zones districts for homes only",
+     scene: "A SOFA may stay but the laundry must go: Los Angeles zones whole districts for homes only."}
+  - {year: 1909, peg: soap, confidence: high, source: "LA History Archive: 1 Apr",
+     event: "Mayor Arthur Harper resigns before a recall vote, and George Alexander takes office",
+     scene: "Reformers scrub City Hall with SOAP, Mayor Harper slips out before the recall vote, and George Alexander takes office."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: History of Los Angeles",
+     event: "San Pedro and Wilmington consolidate with Los Angeles",
+     scene: "A SOAP bubble floats from City Hall down to the harbor and swallows San Pedro and Wilmington into Los Angeles."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: History of Los Angeles",
+     event: "The city bans free speech in the streets except at the Plaza",
+     scene: "Police push a bar of SOAP into the mouth of every street speaker; only the Plaza stays open for speeches."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Pacific Electric",
+     event: "Huntington Beach incorporates as a city",
+     scene: "Surf washes SOAP suds over the new town hall as Huntington Beach incorporates."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Hollywood, Los Angeles (7 Feb)",
+     event: "Hollywood consolidates with Los Angeles for its water",
+     scene: "Hollywood rolls the DICE and trades its independence for a pipe of Los Angeles water."}
+  - {year: 1910, peg: dice, confidence: high, source: "LA History Archive",
+     event: "Alice Stebbins Wells joins the police, the first policewoman in the country",
+     scene: "Alice Stebbins Wells pins a badge shaped like a DICE to her dress, the first policewoman in the country."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Burbank incorporates as a city",
+     scene: "Burbank's farmers TATTOO the new city seal on their arms as Burbank incorporates."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "San Fernando incorporates as a city",
+     scene: "The mission bell of San Fernando is a TATTOO on the arm of each trustee as the town incorporates."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: History of Los Angeles (1 Dec)",
+     event: "The McNamara brothers plead guilty, and socialist Job Harriman loses the mayoral election",
+     scene: "The McNamaras' guilty plea wipes the winning TATTOO off Job Harriman's arm, and the socialist loses the mayor's race."}
+  - {year: 1912, peg: tongue, confidence: high, source: "LA History Archive (16 Feb)",
+     event: "Margaret Adams becomes the first woman sheriff's deputy in the country",
+     scene: "Margaret Adams bites her TONGUE and takes the oath as the first woman sheriff's deputy in the country."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Huntington Library (25 Apr)",
+     event: "San Marino incorporates around Henry Huntington's estate",
+     scene: "Henry Huntington draws the line of San Marino around his future marble TOMB and the town incorporates."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: History of Los Angeles (25 Dec)",
+     event: "Police charge an IWW rally in the Plaza on Christmas Day; a bystander dies",
+     scene: "Police turn the Plaza into a TOMB on Christmas Day: they charge the IWW rally, kill a bystander and arrest dozens."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Beverly Hills (28 Jan / Sep)",
+     event: "Beverly Hills incorporates as a city",
+     scene: "Beverly Hills raises a water TOWER of its own as it incorporates and takes over its water."}
+  - {year: 1914, peg: tower, confidence: high, source: "LA History Archive",
+     event: "Los Angeles County opens the first public defender's office in the country",
+     scene: "A TOWER of law books shields poor defendants as Los Angeles County opens the first public defender's office."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: History of Los Angeles",
+     event: "Los Angeles annexes the San Fernando Valley and almost triples its area",
+     scene: "A giant DOLL opens its arms and hugs the San Fernando Valley into Los Angeles, which almost triples in size."}
+  - {year: 1916, peg: dish, confidence: high, source: "LA History Archive",
+     event: "Georgia Ann Robinson becomes the first Black policewoman in the country",
+     scene: "Georgia Ann Robinson carries her badge on a silver DISH as the first Black policewoman of Los Angeles."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Culver City (20 Sep)",
+     event: "Culver City incorporates as a city",
+     scene: "Harry Culver's DOG barks at the polls, and Culver City incorporates."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: El Segundo (18 Jan)",
+     event: "El Segundo, the Standard Oil town, incorporates",
+     scene: "A DOG guards the round oil tanks as El Segundo, the Standard Oil refinery town, incorporates."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Gandier ordinance bans the sale of alcohol in Los Angeles",
+     scene: "A thirsty DOG laps up the last beer in the gutter as the Gandier ordinance bans liquor sales in Los Angeles."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Glendale (9 Jan)",
+     event: "Tropico joins Glendale",
+     scene: "A DOVE carries Tropico's flag across the boundary to Glendale, and the two towns become one."}
+  - {year: 1918, peg: dove, confidence: high, source: "en.WP: Ricardo Flores Magón (convicted 1918 in Los Angeles federal court)",
+     event: "Ricardo Flores Magón is convicted in the Los Angeles federal court for his anarchist manifesto",
+     place: "federal court, Los Angeles",
+     scene: "A DOVE flies out of the Los Angeles courtroom as Flores Magón is sentenced for his manifesto."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Navy sets up Naval Base San Pedro",
+     scene: "A Navy band TUBA booms on the San Pedro docks as the Navy opens its base there."}
+  # science
+  - {year: 1858, peg: wolf, confidence: high, source: "Daughters of Charity; PCAD: Aguilar House",
+     event: "The Daughters of Charity open the first hospital in Los Angeles",
+     scene: "A WOLF limps into the Aguilar adobe, and the Daughters of Charity nurse it in the first Los Angeles hospital."}
+  - {year: 1868, peg: chef, confidence: medium, source: "WP: Timeline of LA (waterandpower: 1867)",
+     event: "Gas street lamps light Los Angeles streets for the first time",
+     scene: "A CHEF climbs a ladder with a long match and lights the first gas street lamps of Los Angeles."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The city dams the Echo Park reservoir",
+     scene: "A CHEF stirs a giant soup pot in the hills: the city dams the Echo Park reservoir."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Los Angeles (26 Oct)",
+     event: "The Los Angeles and San Pedro Railroad opens, the first railroad in Southern California",
+     scene: "A SHIP at San Pedro unloads straight into the cars of the first railroad to Los Angeles."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: History of Los Angeles",
+     event: "Horse-drawn streetcars start in Los Angeles",
+     scene: "A horse pulls the first street CAR of Los Angeles along Spring Street."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: Point Fermin Light",
+     event: "Point Fermin Lighthouse is lit above San Pedro",
+     scene: "A CAR-sized lamp is lit in the wooden tower of Point Fermin Lighthouse above San Pedro."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles and Independence Railroad opens to the Santa Monica wharf",
+     scene: "An EAGLE races the first train of the Los Angeles and Independence Railroad to the Santa Monica wharf."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: History of Los Angeles",
+     event: "Southern Pacific finishes the San Fernando Tunnel; Los Angeles joins San Francisco by rail",
+     scene: "Charles Crocker drives the last spike into an iron CAGE of rails at Lang, and Los Angeles joins San Francisco by rail."}
+  - {year: 1882, peg: oven, confidence: high, source: "Water and Power museum: 30/31 Dec",
+     event: "Arc lamps on tall masts give Los Angeles its first electric street lights",
+     scene: "An OVEN of white light blazes on a tall mast at Main Street: the first electric street lamps of Los Angeles."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Timeline of San Bernardino (13 Sep)",
+     event: "The California Southern Railroad reaches San Bernardino",
+     scene: "The first California Southern locomotive rolls into San Bernardino in a cloud of white FOAM."}
+  - {year: 1884, peg: fairy, confidence: high, source: "CA landmark 725; Huntington Library",
+     event: "Frank Brown's Bear Valley Dam forms Big Bear Lake to water Redlands",
+     scene: "A FAIRY lays a thin stone arch across Bear Valley, and Big Bear Lake fills to water the Redlands groves."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: History of Los Angeles (to 1902)",
+     event: "The first cable car line opens in Los Angeles",
+     scene: "A WAFFLE-grid cable slot runs up Second Street: the first cable cars of Los Angeles climb the hill."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: Timeline of San Bernardino (9 Nov)",
+     event: "The California Southern drives its last spike in Cajon Pass; Santa Fe trains reach Los Angeles",
+     scene: "A WAFFLE iron presses the last spike into Cajon Pass, and Santa Fe trains from the east run through to Los Angeles."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Pacific Electric",
+     event: "Electric streetcars start in Los Angeles",
+     scene: "A FOX chases the blue sparks along the wire of the first electric streetcar in Los Angeles."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Santa Ana",
+     event: "The Santa Fe line from Los Angeles to San Diego opens through Santa Ana",
+     scene: "A FOX races the first Santa Fe train through Santa Ana on the new line from Los Angeles to San Diego."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: History of Los Angeles",
+     event: "Southern Pacific opens Arcade Depot in Los Angeles",
+     scene: "A station master blows a FIFE to call the first departures at the new Southern Pacific Arcade Depot."}
+  - {year: 1888, peg: fife, confidence: medium, source: "WP: West Los Angeles VA (land given in 1887)",
+     event: "A national home for disabled soldiers opens at Sawtelle",
+     scene: "An old Union drummer plays the FIFE as the national soldiers' home opens on Arcadia Baker's land at Sawtelle."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Timeline of Los Angeles (4 Jul)",
+     event: "The Mount Lowe Railway opens above Altadena",
+     scene: "Thaddeus Lowe's incline car climbs past a PALM tree up to Echo Mountain on opening day of the Mount Lowe Railway."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Timeline of Los Angeles (29 Jul)",
+     event: "Santa Fe opens La Grande Station in Los Angeles",
+     scene: "The Santa Fe crowns a PALM-lined La Grande Station with a Moorish dome and opens it."}
+  - {year: 1893, peg: palm, confidence: high, source: "Edison Tech Center; IEEE Spectrum (Sep)",
+     event: "Mill Creek plant near Redlands starts, an early three-phase AC power plant",
+     scene: "Mountain water spins a PALM-leaf turbine at Mill Creek, and three-phase current lights Redlands."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Patton State Hospital",
+     event: "The state asylum for Southern California opens at Highland (later Patton)",
+     scene: "A PALM shades the gate of the new Highland state asylum near San Bernardino on opening day."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: History of Los Angeles",
+     event: "Work starts on the San Pedro breakwater",
+     scene: "A long stone PIPE pushes out into San Pedro Bay as work on the breakwater begins."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Angels Flight funicular opens on Bunker Hill",
+     scene: "Two funicular cars pass like SODA bottles on a tray as Angels Flight opens up Bunker Hill."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Children's Hospital Los Angeles is founded",
+     scene: "A nurse gives a feverish child a fizzy SODA in the first ward of Children's Hospital Los Angeles."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Pacific Electric (4 Jul)",
+     event: "The Pacific Electric line from Los Angeles to Long Beach opens",
+     scene: "A red car races under the SUN from Los Angeles to Long Beach on the first Pacific Electric line."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Los Angeles takes over its water system from the private company",
+     scene: "The SUN dries up the private water company's lease, and Los Angeles takes its water works into city hands."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Santa Catalina Island",
+     event: "The first commercial wireless telegraph station opens at Avalon",
+     scene: "A SUN-powered radio mast at Avalon sends the first commercial wireless messages from Catalina to the mainland."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: Mount Wilson Observatory",
+     event: "The Carnegie Institution founds the Mount Wilson Solar Observatory",
+     scene: "Hale hauls a giant SEWER pipe up Mount Wilson as a telescope tube, and Carnegie money founds the solar observatory."}
+  - {year: 1904, peg: sewer, confidence: high, source: "OC History: chronology; WP: Pacific Electric",
+     event: "Pacific Electric red cars first reach Orange County at Huntington Beach",
+     scene: "A red car rolls out of a SEWER tunnel onto the beach: Pacific Electric reaches Orange County at Huntington Beach."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Mount Wilson Observatory",
+     event: "The Snow Solar Telescope is finished on Mount Wilson",
+     scene: "A SEAL balances the Snow telescope's mirror on its nose and points the sunlight into the Mount Wilson lab."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles and Salt Lake Railroad opens",
+     scene: "A SEAL rides the cowcatcher of the first train of the Los Angeles and Salt Lake Railroad across the desert."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Los Angeles Aqueduct",
+     event: "Voters approve the first bond for the Owens Valley aqueduct",
+     scene: "Voters press a wax SEAL on the first bond to buy Owens Valley water for Los Angeles."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Loma Linda University",
+     event: "Seventh-day Adventists found the Loma Linda Sanitarium",
+     scene: "Ellen White's SEAL of approval is pressed on the hilltop hotel, and the Adventists open the Loma Linda Sanitarium."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: History of Riverside",
+     event: "The University of California opens its Citrus Experiment Station in Riverside",
+     scene: "A SUSHI chef slices oranges under a microscope at the new Citrus Experiment Station in Riverside."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Los Angeles Aqueduct (12 Jun)",
+     event: "Voters approve the large bond to build the aqueduct",
+     scene: "A SKI jumper slides from the Sierra down the bond paper: voters fund the building of the aqueduct."}
+  - {year: 1907, peg: ski, confidence: medium, source: "WP: Timeline of LA (History of LA: 1906)",
+     event: "Silver Lake Reservoir is built",
+     scene: "A water-SKI wake crosses the new Silver Lake Reservoir, filled for the city's homes."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Los Angeles Aqueduct (Oct)",
+     event: "Construction of the Los Angeles Aqueduct begins",
+     scene: "Mulholland drags a SOFA into the Owens Valley desert and sits on it as aqueduct construction begins."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Loma Linda University",
+     event: "The College of Medical Evangelists at Loma Linda is chartered as a medical school",
+     scene: "Students scrub with SOAP before anatomy class as Loma Linda's College of Medical Evangelists becomes a chartered medical school."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: 1910 Dominguez Air Meet (10-20 Jan)",
+     event: "The air meet at Dominguez Field, the first major air show in the country",
+     scene: "Paulhan drops DICE from his biplane over Dominguez Field at the first big air show in the country."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: History of Los Angeles",
+     event: "The San Pedro breakwater is finished",
+     scene: "Workers drop the last DICE-shaped boulder, and the San Pedro breakwater is finished."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Vin Fiz Flyer (5 Nov, 10 Dec)",
+     event: "Cal Rodgers ends the first flight across the country at Pasadena and Long Beach",
+     scene: "Cal Rodgers lands at Pasadena with a coast-to-coast TATTOO on his wings, then rolls his plane into the sea at Long Beach."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Santa Catalina Island (10 May)",
+     event: "Glenn Martin flies a seaplane from Newport Bay to Avalon",
+     scene: "Glenn Martin's seaplane licks the waves like a TONGUE from Newport Bay to Avalon, a record flight over the sea."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Mount Wilson Observatory",
+     event: "The tall solar tower on Mount Wilson is finished",
+     scene: "A long TONGUE of sunlight drops down the new tall solar tower on Mount Wilson into the deep pit spectrograph."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Colorado Street Bridge (Dec)",
+     event: "The Colorado Street Bridge opens over the Arroyo Seco in Pasadena",
+     scene: "Concrete arches curve like a TOMB vault over the Arroyo Seco as the Colorado Street Bridge opens."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The county starts its excavation of the La Brea tar pits",
+     scene: "Diggers open a TOMB of black tar at Rancho La Brea, and the county's dig of the fossil pits begins."}
+  - {year: 1913, peg: tomb, confidence: high, source: "Water and Power museum",
+     event: "Tiny Broadwick makes the first parachute jump by a woman from an airplane, over Griffith Park",
+     scene: "Tiny Broadwick leaps from a biplane over Griffith Park, and her parachute opens above a TOMB-still crowd."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Southern Pacific opens Central Station",
+     scene: "A clock TOWER rises over the new Southern Pacific Central Station as the trains move in."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Redlands",
+     event: "Pacific Electric finishes its line from Los Angeles to San Bernardino",
+     scene: "A red car climbs a signal TOWER at San Bernardino, the end of the new Pacific Electric line from Los Angeles."}
+  - {year: 1915, peg: doll, confidence: high, source: "Homestead Museum; LA County water history",
+     event: "After the great flood, the state creates the Los Angeles County Flood Control District",
+     scene: "A rag DOLL floats past the wrecked bridges, and the state answers with the Los Angeles County Flood Control District."}
+  - {year: 1917, peg: dog, confidence: high, source: "LADWP news; GEM wiki (18 Mar)",
+     event: "San Francisquito Power Plant No. 1 starts, the first aqueduct power plant of Los Angeles",
+     scene: "A DOG turns the aqueduct turbine in San Francisquito Canyon, and Los Angeles makes its own electric power."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: California Institute of Technology",
+     event: "Robert Millikan comes to Throop College from Chicago",
+     scene: "A DOG carries Robert Millikan's oil-drop apparatus from Chicago to Pasadena, and he joins Throop College."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Mount Wilson Observatory",
+     event: "An interferometer is fitted to the Hooker telescope on Mount Wilson",
+     scene: "Astronomers bolt a TUBA-long interferometer beam across the top of the Hooker telescope on Mount Wilson."}
+  # religion
+  - {year: 1854, peg: lawyer, confidence: high, source: "Water and Power museum: timeline",
+     event: "The first Jewish services are held in Los Angeles",
+     scene: "A LAWYER from the pueblo unrolls the Torah at the first Jewish service in Los Angeles."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: Wilshire Boulevard Temple",
+     event: "Congregation B'nai B'rith is chartered in Los Angeles",
+     scene: "A CHAIN of six-pointed stars hangs on the state charter of Congregation B'nai B'rith."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Biddy Mason",
+     event: "The First African Methodist Episcopal Church is organized in Biddy Mason's home",
+     scene: "Biddy Mason drops a silver COIN in the plate as the First AME Church is organized in her Spring Street home."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: Wilshire Boulevard Temple",
+     event: "The first synagogue of Los Angeles is built at Second Street and Broadway",
+     scene: "A golden COMB tops the Star of David on the first synagogue of Los Angeles at Second and Broadway."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Cathedral of Saint Vibiana",
+     event: "The Cathedral of Saint Vibiana is dedicated",
+     scene: "Saint Vibiana's relics arrive in a golden CAGE, and the new cathedral on Main Street is dedicated."}
+  - {year: 1887, peg: fox, confidence: high, source: "LA History Archive (8 May)",
+     event: "The Salvation Army starts its street meetings in Los Angeles",
+     scene: "A FOX beats the Salvation Army drum at Temple and Broadway as the first street meetings begin."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Timeline of San Bernardino",
+     event: "Congregation Emanu-El is chartered in San Bernardino",
+     scene: "A Jewish pioneer's dusty BOOT stands by the ark as Congregation Emanu-El is chartered in San Bernardino."}
+  - {year: 1899, peg: pipe, confidence: medium, source: "WP: Vivekananda in California (Dec)",
+     event: "Swami Vivekananda arrives and starts to teach Vedanta in Los Angeles",
+     scene: "Swami Vivekananda smokes a PIPE of incense in a Los Angeles parlor and teaches his first Vedanta class there."}
+  - {year: 1900, peg: sauce, confidence: high, source: "vivekananda.net; WP: Vivekananda in California",
+     event: "Vivekananda lectures at the Shakespeare Club in Pasadena",
+     scene: "Vivekananda stirs a SAUCE of Vedanta and yoga for the women of the Shakespeare Club in Pasadena."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Japanese Buddhist church of Los Angeles is founded on Jackson Street",
+     scene: "A SEAL balances a temple bell on its nose as the Buddhist church opens on Jackson Street."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Mount Rubidoux (26 Apr)",
+     event: "The cross to Junipero Serra is dedicated on Mount Rubidoux",
+     scene: "Frank Miller rides a SKI lift to the summit of Mount Rubidoux and dedicates the cross to Father Serra."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Mount Rubidoux (Apr)",
+     event: "The first Easter sunrise service in the country is held on Mount Rubidoux",
+     scene: "Worshippers wash their faces with SOAP in the dawn dew at the first Easter sunrise service on Mount Rubidoux."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Krotona",
+     event: "Theosophists found the Krotona colony in Hollywood",
+     scene: "A Theosophist's TONGUE chants on a Hollywood hillside as the Krotona colony is founded."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Aimee Semple McPherson (Oct)",
+     event: "Aimee Semple McPherson arrives in Los Angeles and starts her revivals",
+     scene: "A white DOVE flies ahead of Aimee McPherson's car into Los Angeles, and her first revival fills the hall."}
+  # arts
+  - {year: 1851, peg: wallet, confidence: medium, source: "WP: Timeline of Los Angeles (1852 letters?)",
+     event: "Hugo Reid's letters on the Indians of Los Angeles County appear in the Star",
+     scene: "Hugo Reid writes on the Tongva with a quill pulled from a WALLET, and the Star prints his letters."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP: History of Los Angeles",
+     event: "The Merced Theatre opens, the first theatre of Los Angeles",
+     scene: "A GOOSE takes a bow on the stage of the Merced, the first theatre in Los Angeles."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Child's Grand Opera House opens",
+     scene: "A FAIRY sings the first aria on the stage of Child's Grand Opera House in Los Angeles."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Bradbury Building opens with its iron and glass court",
+     scene: "A PALM grows tall in the sunlit iron-lace court of the new Bradbury Building."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Water and Power museum: timeline",
+     event: "Los Angeles gets its first symphony orchestra",
+     scene: "A BEEHIVE hums in tune as the first Los Angeles symphony orchestra plays."}
+  - {year: 1902, peg: sun, confidence: medium, source: "WP: Tally's Electric Theater (Apr; Mirror: May)",
+     event: "Tally's Electric Theater opens, an early permanent movie theater",
+     scene: "The SUN shines through a projector lens at Tally's Electric Theater on Main Street, a hall made for films."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Mason Opera House (8 Jun)",
+     event: "The Mason Opera House opens on Broadway",
+     scene: "A SUMO wrestler sings the first aria as the Mason Opera House opens on Broadway."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Art Students League of Los Angeles is organized",
+     scene: "Art students paint SUSHI still lifes at the first class of the Art Students League of Los Angeles."}
+  - {year: 1908, peg: sofa, confidence: medium, source: "WP: History of Hollywood (claim; also 1907)",
+     event: "Selig shoots The Count of Monte Cristo partly in Los Angeles",
+     scene: "The Count of Monte Cristo escapes onto a SOFA on a Los Angeles beach in Selig's film."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Gamble House (built 1908-09)",
+     event: "Greene and Greene finish the Gamble House in Pasadena",
+     scene: "Craftsmen rub teak with SOAP until it glows as Greene and Greene finish the Gamble House in Pasadena."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP: Selig Polyscope; Timeline (Hollywood hist: 1910)",
+     event: "Selig opens the first Los Angeles film studio at Edendale",
+     scene: "Selig's crew build a stage out of SOAP boxes at Edendale, the first film studio in Los Angeles."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Natural History Museum LA (17 Dec)",
+     event: "Agricultural Park becomes Exposition Park as the museum cornerstone is laid",
+     scene: "A DICE-shaped cornerstone is laid, and Agricultural Park takes the name Exposition Park."}
+  - {year: 1911, peg: tattoo, confidence: medium, source: "WP: Hollywood, LA (Oct; claim disputed)",
+     event: "Nestor opens the first film studio in Hollywood, at a Sunset Boulevard roadhouse",
+     scene: "Nestor's cameraman gets a camera TATTOO in an old Sunset Boulevard roadhouse, the first Hollywood studio."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP: John Steven McGroarty (29 Apr)",
+     event: "McGroarty's The Mission Play opens at San Gabriel",
+     scene: "A padre's TONGUE speaks the first line of McGroarty's Mission Play at San Gabriel."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Natural History Museum LA (6 Nov)",
+     event: "The Los Angeles County Museum of History, Science and Art opens",
+     scene: "A mammoth climbs out of its TOMB into the rotunda as the county museum opens in Exposition Park."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Kid Auto Races at Venice (7 Feb)",
+     event: "Kid Auto Races at Venice: the Tramp's first film in public",
+     scene: "Chaplin's Tramp climbs a TOWER of spectators to get into the camera's view at the Venice kid car races."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Charles Fletcher Lummis (Aug)",
+     event: "The Southwest Museum building opens in Highland Park",
+     scene: "Lummis rings the bell in the TOWER of the new Southwest Museum above the Arroyo."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Pasadena Playhouse",
+     event: "Gilmor Brown forms the Community Playhouse Association of Pasadena",
+     scene: "Gilmor Brown's DOG takes a bow at the first show of the Community Playhouse Association of Pasadena."}
+  - {year: 1918, peg: dove, confidence: high, source: "LA Conservancy; Cinema Treasures (1 Feb)",
+     event: "Sid Grauman opens the Million Dollar Theatre",
+     scene: "A DOVE flies over the screen as Sid Grauman opens the Million Dollar Theatre with The Silent Man."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Laguna Art Museum",
+     event: "The Laguna Beach Art Association is founded",
+     scene: "A DOVE perches on an easel in Laguna Beach as the plein-air painters found the Laguna Beach Art Association."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Beverly Hills",
+     event: "Mary Pickford and Douglas Fairbanks buy land on Summit Drive for Pickfair",
+     scene: "Douglas Fairbanks plays a TUBA on the empty hilltop in Beverly Hills that he and Mary Pickford buy for Pickfair."}
+  # economy
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Star, the first newspaper of the city, starts",
+     scene: "An editor pulls his last dollar from his WALLET and prints the first issue of the Los Angeles Star."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Wilmington, Los Angeles",
+     event: "Phineas Banning buys land and starts the port town of New San Pedro",
+     scene: "A sea WOLF captain, Phineas Banning, stakes out the mudflats where he builds his port town, New San Pedro."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Soap Company opens",
+     scene: "John Forthmann boils tallow into bars that look like CHEESE and opens the Los Angeles Soap Company."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: San Bernardino",
+     event: "Gold is found in Holcomb Valley above San Bernardino",
+     scene: "Holcomb's rifle shot breaks a rock, and gold glints like CHEESE in Holcomb Valley; the rush begins."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Irvine Company; OC History chronology",
+     event: "James Irvine and partners buy coastal ranchos for a sheep ranch",
+     scene: "James Irvine pays for Rancho San Joaquin with a bowl of CHERRY stones, and sheep cover the future Irvine Ranch."}
+  - {year: 1864, peg: cherry, confidence: high, source: "OC History: chronology",
+     event: "Anaheim Landing opens as the port of the Anaheim colony",
+     scene: "A CHERRY red flag marks Anaheim Landing, where wine casks leave the colony by boat."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: History of Long Beach",
+     event: "Flint, Bixby and Company buys Rancho Los Cerritos",
+     scene: "A JUDGE's gavel falls as Juan Temple sells Rancho Los Cerritos to Flint, Bixby and Company."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Isaias W. Hellman (1 Sep)",
+     event: "Hellman, Temple and Company opens, the first bank in Los Angeles",
+     scene: "A CHEF counts gold coins into the vault of Hellman, Temple and Company, the first bank in Los Angeles."}
+  - {year: 1870, peg: goose, confidence: medium, source: "WP: Pico House (built 1869-70)",
+     event: "Pio Pico opens the Pico House hotel on the Plaza",
+     scene: "A GOOSE checks in first at Pio Pico's grand Pico House hotel on the Plaza."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: History of Los Angeles",
+     event: "The Farmers and Merchants Bank, the first incorporated bank of the city, is founded",
+     scene: "A CAT guards the vault as Hellman and Downey open the Farmers and Merchants Bank."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: Port of Los Angeles",
+     event: "Banning dredges a channel from San Pedro Bay to Wilmington",
+     scene: "A CAT digs like a dredge and cuts Banning's ship channel from San Pedro Bay to Wilmington."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: History of Riverside",
+     event: "Eliza Tibbets plants Bahia navel orange trees in Riverside",
+     scene: "Eliza Tibbets runs a COMB through the leaves of her two navel orange trees from Washington in Riverside."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Pico Canyon well, the first commercial oil well in the West, near Newhall",
+     scene: "Oil gushes up through a CAGE of timbers in Pico Canyon, the first paying oil well in the West."}
+  - {year: 1877, peg: cake, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The first oranges ship from Los Angeles to eastern markets",
+     scene: "A CAKE of oranges rides the train east: the first shipment of Los Angeles oranges for the eastern markets."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Daily Times starts publication",
+     scene: "A FOOT kicks open the press room door as the first Los Angeles Daily Times rolls off the press."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Calico, San Bernardino County",
+     event: "Prospectors strike silver at Calico and open the Silver King Mine",
+     scene: "A prospector's FOOT kicks a rock in the Calico Hills, and silver shows: the Silver King Mine opens."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Hamburger's department store opens",
+     scene: "A FOOT-long counter fills the first floor as Hamburger's department store opens in Los Angeles."}
+  - {year: 1882, peg: oven, confidence: high, source: "OC History: chronology",
+     event: "The first paying oil well of Orange County is drilled near Brea Canyon",
+     scene: "An OVEN of hot crude spills from the first good oil well in Brea Canyon."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Ontario, California",
+     event: "The Chaffey brothers found the Ontario model colony and its water company",
+     scene: "The Chaffey brothers bake a model town in an OVEN: Ontario colony, with water shares for every plot."}
+  - {year: 1884, peg: fairy, confidence: medium, source: "WP: Anaheim (OC chronology: 1886-87)",
+     event: "A vine disease starts to destroy Anaheim's vineyards",
+     scene: "A dark FAIRY flies through Anaheim's vineyards, and a strange disease kills the vines."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: History of Pasadena",
+     event: "The Raymond Hotel opens on Bacon Hill in Pasadena",
+     scene: "Winter tourists carry a FISH up Bacon Hill to the kitchen of the new Raymond Hotel."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Timeline of San Bernardino; Timeline of LA",
+     event: "A railroad fare war drops tickets from the Midwest to one dollar and starts a land boom",
+     scene: "A FISH sells for more than a train ticket: the railroad fare war drops fares to one dollar, and the boom begins."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The land boom collapses",
+     scene: "A FIFE plays a sad tune over empty town lots as the Southern California land boom collapses."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Chamber of Commerce is founded",
+     scene: "Businessmen march behind a FIFE to the first meeting of the Los Angeles Chamber of Commerce."}
+  - {year: 1888, peg: fife, confidence: high, source: "OC History: chronology",
+     event: "The McFadden wharf is built at Newport Beach",
+     scene: "A sailor plays a FIFE at the end of the new wharf at Newport Beach."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: History of Pasadena",
+     event: "Colonel Green finishes the Hotel Green in Pasadena",
+     scene: "A green FIFE whistles the bellhops to work as the six-floor Hotel Green opens in Pasadena."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Oil Exchange is founded",
+     scene: "An oil trader swings his watch FOB as the Los Angeles Oil Exchange opens for business."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: Los Angeles City Oil Field (4 Nov)",
+     event: "Doheny and Canfield strike oil near Westlake Park",
+     scene: "Edward Doheny digs under a PIANO-sized shaft near Westlake Park, and oil floods up: the Los Angeles City field booms."}
+  - {year: 1893, peg: palm, confidence: high, source: "OC History: chronology; WP: Riverside",
+     event: "Growers form the Southern California Fruit Exchange, later Sunkist",
+     scene: "Orange growers stack crates under a PALM and form the Southern California Fruit Exchange, later Sunkist."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: History of Los Angeles",
+     event: "Southern Pacific opens the Long Wharf at Santa Monica",
+     scene: "A BEAR walks the whole length of the Long Wharf at Santa Monica, then the longest in the world."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: Irvine Company",
+     event: "James Irvine II incorporates the Irvine Company",
+     scene: "James Irvine II signs the papers with a BEAR paw, and the Irvine Company is incorporated."}
+  - {year: 1896, peg: peach, confidence: high, source: "Pitzer archive (Pesotta); WP: Employers Group",
+     event: "Otis's Merchants and Manufacturers Association forms to keep the open shop",
+     scene: "Harrison Gray Otis hands each merchant a PEACH and makes the Merchants and Manufacturers Association fight unions."}
+  - {year: 1896, peg: peach, confidence: high, source: "OC History: chronology",
+     event: "The first sugar beet factory of Orange County opens at Los Alamitos",
+     scene: "A sugar-glazed PEACH rolls out of the first beet sugar factory at Los Alamitos."}
+  - {year: 1897, peg: pig, confidence: high, source: "WP: Port of Los Angeles",
+     event: "A federal board chooses San Pedro over Santa Monica for the deep-water harbor",
+     scene: "Admiral Walker's PIG roots at San Pedro, not Santa Monica: the board picks San Pedro for the free harbor."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: Timeline of Los Angeles (1 Sep)",
+     event: "Huntington and Hellman form the Los Angeles Railway",
+     scene: "Henry Huntington swats at a BEEHIVE of rival trolley lines and merges them into the Los Angeles Railway."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP: Automobile Club of Southern California (13 Dec)",
+     event: "The Automobile Club of Southern California is founded",
+     scene: "Motorists spill SAUCE on a road map at the founding meeting of the Automobile Club of Southern California."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Pacific Electric (1 Nov)",
+     event: "Huntington and Hellman incorporate the Pacific Electric Railway",
+     scene: "Henry Huntington pops a red SODA bottle and launches the Pacific Electric Railway."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: History of Los Angeles",
+     event: "The Salt Lake oil field is found west of the city",
+     scene: "Oil spouts under the SUN from the new Salt Lake field near the tar pits."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Hollywood, Los Angeles",
+     event: "H. J. Whitley opens the Hollywood Hotel",
+     scene: "Guests sit in the SUN on the long porch of the new Hollywood Hotel."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Hearst starts the Los Angeles Examiner",
+     scene: "A SUMO wrestler drops the first bundle of Hearst's Los Angeles Examiner on the street."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: History of Riverside",
+     event: "Frank Miller renames the Glenwood the Mission Inn",
+     scene: "A SUMO wrestler rings the mission bells as the Glenwood becomes the Mission Inn in Riverside."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Bimini Baths open",
+     scene: "A SUMO wrestler splashes into the hot pool on the opening day of the Bimini Baths."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Alexandria Hotel opens downtown",
+     scene: "Waiters serve SUSHI under the marble columns of the new Alexandria Hotel downtown."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Bullock's (4 Mar)",
+     event: "John Bullock opens his department store at Seventh and Broadway",
+     scene: "A SKI display fills the window as John Bullock opens his department store at Seventh and Broadway."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Port of Los Angeles (9 Dec)",
+     event: "The Port of Los Angeles and its Board of Harbor Commissioners are founded",
+     scene: "A harbor commissioner rides a SKI across San Pedro Bay to open the Port of Los Angeles."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The City Market wholesale produce terminal is built",
+     scene: "Farmers wash carrots with SOAP at the new City Market produce terminal."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Santa Monica",
+     event: "The municipal Santa Monica Pier is built",
+     scene: "A giant bar of SOAP slides along the new Santa Monica Pier into the bay."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Port of Long Beach (24 Jun)",
+     event: "The Port of Long Beach is founded on mudflats at the river mouth",
+     scene: "A sailor's anchor TATTOO marks the mudflats where Long Beach founds its port."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: El Segundo",
+     event: "Standard Oil buys land for its El Segundo refinery",
+     scene: "Standard Oil stamps its TATTOO on the sand dunes and builds its second West Coast refinery: El Segundo."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Pacific Electric (1 Sep)",
+     event: "The Great Merger joins eight lines into the new Pacific Electric Railway",
+     scene: "Eight red cars get one matching TATTOO in the Great Merger that makes the new Pacific Electric."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "WP: Timeline of San Bernardino (Mar)",
+     event: "San Bernardino holds the first National Orange Show",
+     scene: "Oranges are stacked into a giant TATTOO pattern at the first National Orange Show in San Bernardino."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Santa Ana",
+     event: "Glenn L. Martin founds his aircraft company in Santa Ana",
+     scene: "Glenn Martin licks his TONGUE across a wing seam and founds his aircraft company in Santa Ana."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Beverly Hills",
+     event: "The Beverly Hills Hotel is finished",
+     scene: "A pink TONGUE of carpet rolls out of the new Beverly Hills Hotel in the bean fields."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Balboa Amusement Producing Co. (Apr)",
+     event: "The Balboa film company starts in Long Beach",
+     scene: "Balboa's cameraman films a pirate climbing out of a sand TOMB on the Long Beach shore."}
+  - {year: 1914, peg: tower, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The first ship through the Panama Canal arrives at Los Angeles",
+     scene: "A freighter carries a Panama TOWER on its deck into San Pedro, the first ship through the new canal."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: Universal Studios Hollywood (15 Mar)",
+     event: "Carl Laemmle opens Universal City",
+     scene: "Carl Laemmle cuts the ribbon with a DOLL in a cowboy hat, and Universal City opens to the crowds."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Grand Central Market (Oct)",
+     event: "Grand Central Market opens on Broadway",
+     scene: "A DOG steals a sausage from a stall on the first day of the Grand Central Market."}
+  - {year: 1917, peg: dog, confidence: high, source: "WP: Port of Los Angeles",
+     event: "A shipyard opens at the Port of Los Angeles",
+     scene: "A ship's DOG barks from the first hull on the slipway of the new shipyard at the port."}
+  - {year: 1918, peg: dove, confidence: medium, source: "WP: Charlie Chaplin Studios (built from Nov 1917)",
+     event: "Charlie Chaplin finishes his studio on La Brea Avenue",
+     scene: "The Tramp's DOVE flies over the mock-Tudor cottages of Chaplin's new studio on La Brea."}
+  - {year: 1918, peg: dove, confidence: medium, source: "WP: Timeline of LA; Water and Power museum",
+     event: "Warner Bros. opens a studio in Hollywood",
+     scene: "A DOVE lands on the first Warner Bros. sound stage in Hollywood."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Culver City",
+     event: "Thomas Ince builds his studio in Culver City",
+     scene: "Thomas Ince releases a DOVE over the white colonnade of his new studio in Culver City."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Santa Catalina Island",
+     event: "William Wrigley buys control of Santa Catalina Island",
+     scene: "William Wrigley blows a gum bubble out of a TUBA and buys up Santa Catalina Island."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Culver City",
+     event: "Hal Roach builds his studio in Culver City",
+     scene: "A TUBA honks a comic note as Hal Roach opens his comedy studio in Culver City."}
+  - {year: 1919, peg: tuba, confidence: high, source: "OC History: chronology",
+     event: "Oil is found on the Chapman ranch in Placentia",
+     scene: "Oil bursts out of a TUBA buried on the Chapman ranch in Placentia."}
+  # society
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Timeline of San Bernardino (Sep)",
+     event: "Mormon settlers buy Rancho San Bernardino and found a colony",
+     scene: "Mormon elders empty a WALLET of gold to buy Rancho San Bernardino from the Lugos and found their colony."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "LA History Archive",
+     event: "Isaac Ogier organizes the Los Angeles Rangers, a vigilante company",
+     scene: "A LAWYER, Isaac Ogier, swears in a hundred riders as the Los Angeles Rangers."}
+  - {year: 1855, peg: lily, confidence: high, source: "LA History Archive (15 Jan); Homestead Museum",
+     event: "Mayor Stephen Foster resigns to lead the mob that lynches David Brown",
+     scene: "Mayor Foster drops a LILY on his desk, resigns, and leads the mob that hangs David Brown."}
+  - {year: 1855, peg: lily, confidence: high, source: "Water and Power museum: timeline",
+     event: "The first public schoolhouse of Los Angeles is built",
+     scene: "A teacher puts a LILY on her desk in the first public schoolhouse of Los Angeles."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP: Biddy Mason; LA History Archive (Jan)",
+     event: "Judge Benjamin Hayes frees Biddy Mason and her family",
+     scene: "Judge Hayes pulls the slaveholder's LEECH off Biddy Mason and her family and sets them free."}
+  - {year: 1857, peg: log, confidence: high, source: "Homestead Museum; camemorial.org (23 Jan)",
+     event: "The Flores-Daniel gang kills Sheriff James Barton and his posse near San Juan Capistrano",
+     scene: "Outlaws fire from behind a LOG near San Juan Capistrano and kill Sheriff Barton and three lawmen."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Juan Flores (outlaw) (14 Feb)",
+     event: "Juan Flores is hanged on Fort Hill before a large crowd",
+     scene: "Juan Flores climbs a LOG gallows on Fort Hill and is hanged before thousands."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: History of Orange County",
+     event: "German settlers found Anaheim as a vineyard colony",
+     scene: "German winegrowers roll a LOG to mark the first vineyard row of their new Anaheim colony."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: San Bernardino",
+     event: "Brigham Young recalls the Mormons, and most leave San Bernardino",
+     scene: "Mormon wagons rumble out over a LOG bridge, and San Bernardino empties when Brigham Young calls them home."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: San Bernardino",
+     event: "Violence peaks in San Bernardino in the Ainsworth-Gentry affair",
+     scene: "An ELBOW in a saloon brawl starts the Ainsworth-Gentry gunfights in the streets of San Bernardino."}
+  - {year: 1863, peg: gem, confidence: high, source: "LAist; LA Daily Mirror (7 Feb)",
+     event: "A smallpox epidemic sweeps Los Angeles and kills many Native people",
+     scene: "A GEM of a vaccination scab is the only shield as smallpox sweeps through the Native homes of Los Angeles."}
+  - {year: 1863, peg: gem, confidence: high, source: "OC History: chronology",
+     event: "A two-year drought kills most rancho cattle and ends the cattle era",
+     scene: "The last rancho steer drops a GEM of water from its nose and dies in the drought that ends the cattle era."}
+  - {year: 1865, peg: jelly, confidence: high, source: "Water and Power museum; WP: Timeline of LA",
+     event: "Saint Vincent's College opens, the first college in Los Angeles",
+     scene: "A Vincentian priest spreads JELLY on bread for the first students of Saint Vincent's College."}
+  - {year: 1865, peg: jelly, confidence: high, source: "LA History Archive",
+     event: "A gunfight at the Bella Union hotel leads to a ban on carrying weapons",
+     scene: "A bullet shatters a JELLY jar in the Bella Union, and the council bans carrying pistols and knives."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Town square (later Pershing Square) is dedicated",
+     scene: "A JUDGE in a straw hat dedicates the dusty town square that becomes Pershing Square."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Santa Ana",
+     event: "William Spurgeon founds Santa Ana",
+     scene: "William Spurgeon climbs a SHIP's mast-tall sycamore to survey his new town of Santa Ana."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP: History of Riverside",
+     event: "The Southern California Colony Association founds Riverside",
+     scene: "A GOOSE leads John North's colonists along the river to found Riverside."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP: Westminster",
+     event: "Lemuel Webber founds Westminster as a Presbyterian temperance colony",
+     scene: "A sober GOOSE refuses the wine as Lemuel Webber founds the temperance colony of Westminster."}
+  - {year: 1870, peg: goose, confidence: high, source: "LA History Archive",
+     event: "A mob hangs Michel Lachenais at a Los Angeles corral",
+     scene: "A GOOSE honks the alarm as vigilantes drag Michel Lachenais from jail and hang him at a corral."}
+  - {year: 1871, peg: cat, confidence: high, source: "OC History: chronology",
+     event: "Alfred Chapman and Andrew Glassell found Orange",
+     scene: "A CAT sleeps in the round plaza as Chapman and Glassell lay out the town of Orange."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: Los Angeles Public Library",
+     event: "The Los Angeles Library Association forms, the start of the public library",
+     scene: "Citizens pay a COIN each to join the Los Angeles Library Association and open a reading room."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: History of Pasadena (31 Jan)",
+     event: "The Indiana Colony, the future Pasadena, is founded",
+     scene: "Indiana settlers unload a CAR of orange seedlings on the hill above the Arroyo, the colony that becomes Pasadena."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: History of Los Angeles (14 May)",
+     event: "Posse captures the bandit Tiburcio Vasquez near Los Angeles",
+     scene: "A posse traps Tiburcio Vasquez in an adobe and carries him off in a CAR to the jail."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Santa Monica",
+     event: "Robert Baker and Arcadia Bandini de Baker found Santa Monica",
+     scene: "An EAGLE soars over the bluffs as the first lots of the new town of Santa Monica are sold."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP: Pechanga Band",
+     event: "The sheriff evicts the Temecula people from their village",
+     scene: "An EAGLE flies from Temecula as the sheriff drives its people out of their village."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: University of Southern California (6 Oct)",
+     event: "The University of Southern California opens",
+     scene: "A VASE of roses sits on Widney's desk as USC opens its doors to its first students."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: History of Long Beach",
+     event: "William Willmore buys Bixby land and founds Willmore City",
+     scene: "William Willmore sets a VASE of flowers on an empty lot and founds Willmore City, later Long Beach."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Redlands",
+     event: "Redlands is founded",
+     scene: "A settler's FOOT sinks into red earth as Judson and Brown found Redlands."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: History of Los Angeles",
+     event: "The State Normal School opens in Los Angeles, the forerunner of UCLA",
+     scene: "The first teacher trainees warm their hands by an OVEN at the State Normal School."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: University of Southern California",
+     event: "Chaffey College of Agriculture opens in Ontario as a USC branch",
+     scene: "Students study seed beds by a FOAM-white irrigation flume at the new Chaffey College in Ontario."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Homestead Museum (17 Feb); LA County water",
+     event: "The great flood of February sweeps away bridges on the Los Angeles River",
+     scene: "A water FAIRY tears the First Street bridge from its piers in the great flood on the Los Angeles River."}
+  - {year: 1884, peg: fairy, confidence: medium, source: "Little Tokyo Hist. Soc. (1884; NPS 1885)",
+     event: "Charles Hama opens the Kame restaurant, the start of Little Tokyo",
+     scene: "A FAIRY serves the first bowl of rice at Charles Hama's Kame restaurant on East First Street."}
+  - {year: 1884, peg: fairy, confidence: medium, source: "WP: Timeline of Long Beach (WP history: c. 1880)",
+     event: "Willmore City is renamed Long Beach",
+     scene: "A FAIRY paints the new name Long Beach over the Willmore City sign."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Hollywood, Los Angeles (Aug)",
+     event: "Harvey Wilcox files the map of a subdivision called Hollywood",
+     scene: "A FOX runs through Wilcox's fig orchard as he files the map of the new subdivision called Hollywood."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Glendale (11 Mar)",
+     event: "The first town plat of Glendale is filed",
+     scene: "A FOX sleeps in the glen as the founders file the first plat of Glendale."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Timeline of Los Angeles (20 Apr)",
+     event: "Occidental College is founded",
+     scene: "A FOX runs across the campus as the Presbyterians found Occidental College."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Pomona College (14 Oct)",
+     event: "Congregationalists found Pomona College",
+     scene: "A FOX watches from an orange grove as Congregationalists found Pomona College."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Whittier College",
+     event: "Quakers found Whittier College",
+     scene: "Quaker teachers lead a FOX into the classroom on the founding day of Whittier College."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Southern California land boom peaks; dozens of towns are laid out",
+     scene: "A FOX sells town lots from a brass band wagon at the top of the Southern California land boom."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Pomona College (12 Sep)",
+     event: "Pomona College holds its first classes and then moves to Claremont",
+     scene: "A FIFE calls the first Pomona College students into class in a rented cottage."}
+  - {year: 1889, peg: fob, confidence: high, source: "LA History Archive",
+     event: "Modesta Avila is convicted for blocking the railroad across her land",
+     scene: "Modesta Avila hangs a watch FOB on a clothesline over the tracks to block the train, and the court convicts her."}
+  - {year: 1889, peg: fob, confidence: medium, source: "Water and Power museum: timeline",
+     event: "USC and Saint Vincent's play the first college football game in Los Angeles",
+     scene: "A referee swings a watch FOB to time the first college football game in Los Angeles: USC against Saint Vincent's."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP: Tournament of Roses Parade (1 Jan)",
+     event: "The Valley Hunt Club holds the first Tournament of Roses in Pasadena",
+     scene: "BEES swarm the flower-decked carriages at the first Tournament of Roses in Pasadena."}
+  - {year: 1890, peg: bees, confidence: high, source: "OC History: chronology",
+     event: "The first Orange County Fair is held",
+     scene: "BEES buzz around the prize honey at the first Orange County Fair."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Caltech (23 Sep)",
+     event: "Amos Throop founds Throop University in Pasadena, the future Caltech",
+     scene: "Amos Throop hangs his BOOT on a nail and opens Throop University, the school that becomes Caltech."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: Fred C. Nelles facility (Jul)",
+     event: "The Whittier State School for young offenders opens",
+     scene: "A warden's BOOT stamps the gate of the new Whittier State School for young offenders."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: Sherman Indian High School",
+     event: "The Perris Indian School opens",
+     scene: "A PIANO plays as the first Native students enter the Perris Indian School."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "La Fiesta de Los Angeles is first held",
+     scene: "A dancing BEAR leads the floats in the first Fiesta de Los Angeles."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: History of Pasadena (Easter)",
+     event: "The Raymond Hotel in Pasadena burns",
+     scene: "A fire BELL clangs on Easter morning as the Raymond Hotel burns on its hill."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Highland Park joins the city of Los Angeles",
+     scene: "A BELL rings on the Arroyo Seco as Highland Park joins Los Angeles."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP: Griffith Park (16 Dec)",
+     event: "Griffith J. Griffith gives Griffith Park to Los Angeles",
+     scene: "Griffith J. Griffith hands the city a PEACH as big as a mountain: the land of Griffith Park."}
+  - {year: 1897, peg: pig, confidence: high, source: "OC History: chronology",
+     event: "James Irvine gives Irvine Park to Orange County",
+     scene: "James Irvine leads a PIG through the oak grove he gives to the county as Irvine Park."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: Redlands",
+     event: "The A. K. Smiley Public Library opens in Redlands",
+     scene: "A BEEHIVE of readers fills the new A. K. Smiley Public Library in Redlands."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: 1899 San Jacinto earthquake (25 Dec)",
+     event: "The San Jacinto earthquake kills six Soboba elders on Christmas morning",
+     scene: "A Christmas PIPE falls from the shaking adobe wall that kills six Soboba elders near San Jacinto."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: History of Long Beach",
+     event: "The Pike amusement zone opens in Long Beach",
+     scene: "Swimmers bake in the SUN on the sand beside the new Pike amusement zone in Long Beach."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: History of Los Angeles",
+     event: "The first racially restrictive housing covenant in Los Angeles is written",
+     scene: "A cold hand blocks out the SUN over a house deed with the first race covenant of Los Angeles."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP: Sherman Indian HS (1903; also Dec 1904)",
+     event: "The Indian school moves from Perris to Riverside as the Sherman Institute",
+     scene: "A SUMO wrestler carries the school bell from Perris to Riverside, and the Sherman Institute opens."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Timeline of Los Angeles (3 Sep)",
+     event: "Griffith J. Griffith shoots his wife at a Santa Monica hotel",
+     scene: "A SUMO wrestler grabs Griffith's arm too late: he shoots his wife in a Santa Monica hotel room."}
+  - {year: 1903, peg: sumo, confidence: high, source: "WP: Los Angeles Angels (PCL)",
+     event: "The Los Angeles Angels play their first Pacific Coast League season",
+     scene: "A SUMO wrestler catches the first pitch of the Los Angeles Angels' first Pacific Coast League season."}
+  - {year: 1904, peg: sewer, confidence: high, source: "Water and Power museum: timeline",
+     event: "Los Angeles founds the first city playground department in the country",
+     scene: "Children slide down a SEWER pipe in the first city playground run by a playground department."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Venice, Los Angeles (4 Jul)",
+     event: "Abbot Kinney opens Venice of America",
+     scene: "A SEAL swims the new canals as Abbot Kinney opens Venice of America."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Beverly Hills",
+     event: "The Rodeo Land and Water Company names its tract Beverly Hills",
+     scene: "Surveyors eat SUSHI in the bean fields as the Rodeo Land and Water Company names its tract Beverly Hills."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Glendale",
+     event: "Forest Lawn Cemetery opens in Glendale",
+     scene: "A mourner leaves SUSHI by a grave on the first day of Forest Lawn Cemetery in Glendale."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: George Freeth (Jul)",
+     event: "George Freeth gives surfing exhibitions at Venice",
+     scene: "George Freeth stands on his long board like on a SKI and rides the Venice waves in the first California surfing shows."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Redlands",
+     event: "The University of Redlands is founded",
+     scene: "The founders carry a SKI up the hill as they found the University of Redlands."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Los Angeles City Oil Field",
+     event: "Spilled oil burns for three days on Echo Lake",
+     scene: "A burning SKI slides across Echo Lake as spilled oil burns on the water for three days."}
+  - {year: 1907, peg: ski, confidence: high, source: "Arcadia marker; Racing Museum (7 Dec)",
+     event: "Lucky Baldwin opens his Santa Anita racetrack",
+     scene: "Lucky Baldwin's jockeys race on SKI-smooth dirt at his new Santa Anita track."}
+  - {year: 1908, peg: sofa, confidence: high, source: "San Pedro Bay Hist. Soc. (18 Apr)",
+     event: "The Great White Fleet visits San Pedro, Long Beach, Santa Monica and Redondo",
+     scene: "Sailors lounge on a beach SOFA as the Great White Fleet anchors off San Pedro and the crowds cheer."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: George Freeth (16 Dec)",
+     event: "George Freeth saves seven Japanese fishermen at Venice",
+     scene: "George Freeth rows a floating SOFA through the storm and saves seven Japanese fishermen at Venice."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: Willie Boy",
+     event: "Posses hunt Willie Boy from Banning across the Morongo desert",
+     scene: "Posses track Willie Boy's SOAP-smooth trail from Banning across the Morongo desert."}
+  - {year: 1909, peg: soap, confidence: high, source: "WP: History of Los Angeles",
+     event: "The red-light district near the Plaza closes",
+     scene: "Reformers scrub the red-light district with SOAP, and its brothels near the Plaza close."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: Los Angeles Motordrome (8 Apr)",
+     event: "The Los Angeles Motordrome opens at Playa del Rey, the first board track",
+     scene: "Race cars roll like DICE around the wooden boards of the new Motordrome at Playa del Rey."}
+  - {year: 1910, peg: dice, confidence: high, source: "WP: California Institute of Technology",
+     event: "Throop moves to its new campus in Pasadena",
+     scene: "Throop's students roll DICE to choose rooms on the new Pasadena campus."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Torrance (Oct)",
+     event: "Jared Torrance founds Torrance as a planned industrial town",
+     scene: "An Olmsted plan rolls out like a TONGUE as Jared Torrance founds his planned town."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The County of Los Angeles Public Library is established",
+     scene: "A librarian licks her TONGUE and stamps the first book of the Los Angeles County Public Library."}
+  - {year: 1912, peg: tongue, confidence: high, source: "LA History Archive",
+     event: "Charlotta Bass takes over the California Eagle newspaper",
+     scene: "Charlotta Bass gives the California Eagle a sharp TONGUE against racism as she takes it over."}
+  - {year: 1912, peg: tongue, confidence: high, source: "WP: George Freeth",
+     event: "George Freeth forms the Hui Nalu surf club at Redondo Beach",
+     scene: "A surfer sticks out his TONGUE at the waves as George Freeth forms the first surf club at Redondo Beach."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: History of Long Beach (24 May)",
+     event: "The Pine Avenue pier auditorium collapses in Long Beach and kills dozens",
+     scene: "The pier deck drops like a TOMB lid under a holiday crowd, and dozens die at Long Beach."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Culver City",
+     event: "Harry Culver founds Culver City",
+     scene: "Harry Culver unrolls his plan on a TOMB-flat field between Los Angeles and Venice and founds Culver City."}
+  - {year: 1913, peg: tomb, confidence: high, source: "OC History: chronology",
+     event: "Fullerton Junior College opens",
+     scene: "A TOMB-quiet classroom fills as Fullerton Junior College opens."}
+  - {year: 1914, peg: tower, confidence: high, source: "Homestead Museum (Feb)",
+     event: "The great flood of February strikes the Los Angeles basin",
+     scene: "Flood water climbs a TOWER at Long Beach as the great flood sweeps the Los Angeles basin."}
+  - {year: 1915, peg: doll, confidence: high, source: "WP: Santa Catalina Island (29 Nov)",
+     event: "A fire burns half of Avalon",
+     scene: "A burning DOLL house collapses as fire sweeps half the buildings of Avalon on Catalina."}
+  - {year: 1916, peg: dish, confidence: medium, source: "Salt Lake newspaper; Calisphere (18 Jan)",
+     event: "The flood of January washes away bridges on the Los Angeles River",
+     scene: "A DISH of flood water tips over the Los Angeles River and carries away its bridges."}
+  - {year: 1916, peg: dish, confidence: high, source: "OC History: chronology",
+     event: "The Joy Zone amusement park opens in Seal Beach",
+     scene: "A roller coaster car loops like a DISH spinning on a pole at the new Joy Zone in Seal Beach."}
+  - {year: 1918, peg: dove, confidence: high, source: "influenzaarchive.org; LAPL (10-11 Oct)",
+     event: "The influenza epidemic closes schools, theaters and churches in Los Angeles",
+     scene: "A sick DOVE coughs on the locked door of a Los Angeles theater shut by the flu order."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: 1918 San Jacinto earthquake (21 Apr)",
+     event: "The San Jacinto earthquake wrecks San Jacinto and Hemet",
+     scene: "A DOVE flies out of a falling brick shop as the earthquake wrecks the business streets of San Jacinto."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Hollywood, Los Angeles",
+     event: "H. J. Whitley develops Whitley Heights in the Hollywood hills",
+     scene: "A DOVE nests on a red-tile roof as Whitley builds his Mediterranean village of Whitley Heights."}
+  - {year: 1918, peg: dove, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Otis Art Institute is founded",
+     scene: "A DOVE poses for the first life class at the Otis Art Institute."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Timeline of Los Angeles (Sep)",
+     event: "The Southern Branch of the University of California opens, the future UCLA",
+     scene: "A TUBA plays the first rally song at the Southern Branch of the University of California, the future UCLA."}
+  - {year: 1919, peg: tuba, confidence: high, source: "WP: Pacific Electric",
+     event: "The Los Angeles streetcar strike turns violent",
+     scene: "Strikers drop a TUBA on the tracks to stop the streetcars in the violent Los Angeles streetcar strike."}
+world_refs:
+  - {year: 1862, event: "Great Flood in California and the West", cell: north_america_society_1800_1945}
+  - {year: 1871, event: "Los Angeles Chinese massacre", cell: north_america_society_1800_1945}
+  - {year: 1884, event: "Helen Hunt Jackson publishes Ramona", cell: north_america_arts_1800_1945}
+  - {year: 1895, event: "Bresee founds the Church of the Nazarene in Los Angeles", cell: north_america_religion_1800_1945}
+  - {year: 1902, event: "First Rose Bowl game", cell: north_america_society_1800_1945}
+  - {year: 1906, event: "Azusa Street Revival", cell: north_america_religion_1800_1945}
+  - {year: 1908, event: "Hale shows magnetic fields in sunspots", cell: north_america_science_1800_1945}
+  - {year: 1908, event: "Sixty-inch telescope first light on Mount Wilson", cell: north_america_science_1800_1945}
+  - {year: 1910, event: "Griffith's In Old California shot in Hollywood", cell: north_america_arts_1800_1945}
+  - {year: 1910, event: "Los Angeles Times bombing", cell: north_america_society_1800_1945}
+  - {year: 1912, event: "Mack Sennett founds Keystone Studios", cell: north_america_arts_1800_1945}
+  - {year: 1913, event: "Los Angeles Aqueduct opens", cell: north_america_science_1800_1945}
+  - {year: 1914, event: "The Squaw Man, first feature shot in Hollywood", cell: north_america_arts_1800_1945}
+  - {year: 1915, event: "The Birth of a Nation premieres in Los Angeles", cell: north_america_arts_1800_1945}
+  - {year: 1916, event: "Griffith's Intolerance released", cell: north_america_arts_1800_1945}
+  - {year: 1917, event: "Hooker telescope first light on Mount Wilson", cell: north_america_science_1800_1945}
+  - {year: 1919, event: "Los Angeles Philharmonic first concert", cell: north_america_arts_1800_1945}
+  - {year: 1919, event: "United Artists founded", cell: north_america_arts_1800_1945}
+out_refs:
+  - {year: 1850, event: "California becomes a state", reason: "state admission"}
+  - {year: 1851, event: "Garra revolt of Cupeno and Cahuilla people", reason: "main stage San Diego County"}
+  - {year: 1851, event: "Land Act: rancho owners must prove their grants", reason: "federal law"}
+  - {year: 1863, event: "State law bars Indian and Chinese testimony against whites", reason: "state law"}
+  - {year: 1882, event: "Chinese Exclusion Act", reason: "federal law"}
+  - {year: 1905, event: "Colorado River breaks into the Salton Sink and forms the Salton Sea", reason: "mainly Imperial County"}
+  - {year: 1911, event: "California women win the vote", reason: "state law"}
+  - {year: 1911, event: "Magonista revolt in Baja California directed from Los Angeles", reason: "Mexican revolution"}
+  - {year: 1913, event: "California Alien Land Law", reason: "state law"}

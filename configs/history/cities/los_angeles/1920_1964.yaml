@@ -1,0 +1,872 @@
+# City: Los Angeles x 1920 to 1964 (the 1920s boom, City Hall, the St. Francis Dam, the 1932 Olympics,
+# Boulder Dam power, the aircraft industry, the Zoot Suit Riots, the freeways, Disneyland, the Dodgers and
+# Chavez Ravine). DRAFT 2026-11-26.
+# Area: Los Angeles County, Orange County and the Inland Empire (Riverside and San Bernardino counties).
+# Ventura County, Santa Barbara and San Diego County are OUT. The Watts riots (1965) are in the next era.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National and state events ->
+# out_refs. World-grid events -> world_refs.
+# Dates: memory pass + web check (no unauthorised book copies). Main sources: WP (Timeline of Los Angeles,
+# History of Los Angeles, Timeline of Long Beach, History of Palm Springs, Pacific Electric, Arroyo Seco
+# Parkway, LAX, Lockheed, Douglas, Colorado River Aqueduct, 1938 flood, and the single articles named in each
+# source field), plus the pages named.
+# A work -> first public appearance; a building -> opening; an estate -> first tenants.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1921, peg: ant, confidence: high, source: "WP: List of mayors of Los Angeles",
+     event: "George Cryer becomes mayor; Kent Parrot's machine runs City Hall for eight years",
+     scene: "A giant ANT carries George Cryer up the City Hall steps while boss Kent Parrot steers it with reins."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP: Timeline of Long Beach",
+     event: "Signal Hill incorporates as a separate city, an oil island inside Long Beach",
+     scene: "An oil-black HANGER hooks Signal Hill and lifts it out of Long Beach as a city of its own."}
+  - {year: 1925, peg: nail, confidence: high, source: "lacity.gov: City Charter (adopted 1924)",
+     event: "The new city charter takes effect: a council of fifteen districts and strong commissions",
+     scene: "A NAIL fixes the new charter to the City Hall door and splits the council into fifteen districts."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Los Angeles City Hall (26 Apr)",
+     event: "City Hall is dedicated; its tower is the only building allowed above the height limit",
+     scene: "A shining KNIFE stands on its point in the Civic Center and becomes the white tower of the new City Hall."}
+  - {year: 1928, peg: knife, confidence: high, source: "Rogers, St. Francis Dam (ASCE); WP: W. Mulholland",
+     event: "William Mulholland retires from the city water department after the St. Francis Dam disaster",
+     scene: "A KNIFE cuts William Mulholland's name off the water department door as he retires after the dam disaster."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: List of mayors of Los Angeles",
+     event: "John C. Porter, a reform candidate backed by churches, becomes mayor",
+     scene: "Church women hand John Porter a door KNOB as a sceptre, and the reform candidate is mayor."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: List of mayors of Los Angeles",
+     event: "Frank Shaw becomes mayor; contracts go to friends without bids",
+     scene: "A MUMMY wrapped in city contracts hands them out to Frank Shaw's friends in the mayor's office."}
+  - {year: 1936, peg: match, confidence: high, source: "Smithsonian: LA's 1936 bum blockade",
+     event: "Police chief James Davis sends LAPD officers to the state borders to turn back poor migrants: the bum blockade",
+     scene: "A giant MATCH blocks the Arizona highway, and LAPD officers turn the Dust Bowl jalopies back."}
+  - {year: 1938, peg: movie, confidence: high, source: "lacityhistory.org: Harry Raymond bombing (14 Jan)",
+     event: "A car bomb set by LAPD intelligence officers wounds investigator Harry Raymond in Boyle Heights",
+     scene: "A MOVIE reel packed with dynamite explodes under Harry Raymond's car in his Boyle Heights garage."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: List of mayors of Los Angeles (26 Sep)",
+     event: "Voters recall Mayor Frank Shaw; Judge Fletcher Bowron becomes mayor",
+     scene: "A MOVIE of Shaw's scandals plays to the voters, and they recall him and elect Fletcher Bowron."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: History of Palm Springs (20 Apr)",
+     event: "Palm Springs incorporates as a city",
+     scene: "A MOVIE star signs the papers on the desert floor, and Palm Springs becomes a city."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Terminal Island",
+     event: "The federal prison on Terminal Island opens",
+     scene: "A MOVIE crew builds cell blocks on Terminal Island, and they open as a real federal prison."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The federal courthouse on Spring Street opens",
+     scene: "A white HORSE gallops up the steps of the new Spring Street federal courthouse and opens the doors."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: North American Aviation (5-9 Jun)",
+     event: "Army troops with bayonets end a strike at the North American Aviation plant in Inglewood",
+     scene: "A RADIO crackles an order, and soldiers with bayonets march into the Inglewood aircraft plant to break the strike."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Battle of Los Angeles (24-25 Feb)",
+     event: "Battle of Los Angeles: anti-aircraft guns fire all night at an imagined Japanese raid; five people die",
+     scene: "A RHINO charges through the night sky over Santa Monica while every anti-aircraft gun in the city fires at nothing."}
+  - {year: 1947, peg: rock, confidence: high, source: "South Coast AQMD: 50 years of progress (14 Oct)",
+     event: "Los Angeles County creates the first air pollution control district in the nation",
+     scene: "A ROCK with the county seal plugs a smoking chimney, and the nation's first air pollution district starts work."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Edward R. Roybal",
+     event: "Edward Roybal is elected to the city council, its first Latino member in the century",
+     scene: "A ROPE ladder lowered from Boyle Heights lets Edward Roybal climb into the city council chamber."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: William H. Parker (9 Aug)",
+     event: "William Parker becomes LAPD chief and starts a long reform of the force",
+     scene: "A LASSO thrown by William Parker pulls the whole LAPD into line on his first day as chief."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Bloody Christmas (1951)",
+     event: "Five police officers are convicted for the Bloody Christmas beatings",
+     scene: "A LION in a judge's robe sends five LAPD officers from the dock to prison for the Christmas beatings."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: List of mayors of Los Angeles",
+     event: "Norris Poulson defeats Bowron for mayor on a campaign against public housing",
+     scene: "A LLAMA spits on the public housing plans, and Norris Poulson rides it into the mayor's office."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Lakewood, California (16 Apr)",
+     event: "Lakewood incorporates as the first contract city, buying its services from the county",
+     scene: "A LAWYER signs a contract for each service, and Lakewood becomes a city that buys everything from the county."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Los Angeles City Hall",
+     event: "Voters remove the height limit on buildings, so towers can rise above City Hall",
+     scene: "A LOG floating in the voting box breaks the height limit, and office towers shoot up past City Hall."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Chavez Ravine (3 Jun)",
+     event: "Voters approve the deal that gives Chavez Ravine to the Dodgers",
+     scene: "A WOLF drops a yes ballot in the box and runs off with the deed to Chavez Ravine for the Dodgers."}
+  - {year: 1959, peg: elbow, confidence: high, source: "ProQuest abstract; NPR Code Switch (8 May)",
+     event: "Deputies evict the Arechiga family, the last holdouts in Chavez Ravine, and bulldoze their house",
+     scene: "An iron ELBOW of a bulldozer smashes the Arechiga house in Chavez Ravine after deputies carry the family out."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Timeline of Los Angeles (July)",
+     event: "The Democratic National Convention meets at the new Sports Arena and nominates John F. Kennedy",
+     scene: "A wheel of CHEESE rolls across the Sports Arena floor and stops at John F. Kennedy's feet as delegates cheer."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP: List of mayors of Los Angeles",
+     event: "Sam Yorty becomes mayor",
+     scene: "A JET lands on the City Hall lawn and Sam Yorty steps out as the new mayor."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The city creates its Cultural Heritage Board to name historic monuments",
+     scene: "A golden CHAIN is put around the old Leonis Adobe as the new Cultural Heritage Board names its first monument."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Tom Bradley (Apr)",
+     event: "Tom Bradley becomes the first Black member elected to the city council",
+     scene: "A GEM on a council badge shines as Tom Bradley, the first Black council member, takes his seat."}
+  # science
+  - {year: 1925, peg: nail, confidence: high, source: "LAist / PE Magazine: Subway Terminal (1 Dec)",
+     event: "The Hollywood Subway and the Subway Terminal Building open: Red Cars run underground into downtown",
+     scene: "A giant NAIL bores the tunnel under Bunker Hill, and the first Red Car rolls into the Subway Terminal."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Los Angeles International Airport (1 Oct)",
+     event: "The city leases Mines Field in Westchester and opens it as an airfield, the start of LAX",
+     scene: "A KNIFE cuts a runway through the Westchester bean fields, and the first plane lands at Mines Field."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Colorado River Aqueduct (6 Dec)",
+     event: "The Metropolitan Water District of Southern California is incorporated",
+     scene: "A KNIFE slices a map of Southern California into member cities and ties them all to one water pipe."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Grand Central Airport (22 Feb)",
+     event: "The Grand Central Air Terminal building opens in Glendale",
+     scene: "A giant KNOB tops the control tower of the new Grand Central Air Terminal in Glendale like a beacon."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Timeline of Los Angeles (Aug)",
+     event: "The airship Graf Zeppelin lands at Mines Field after its flight from Tokyo",
+     scene: "A KNOB on the mooring mast at Mines Field catches the nose of the Graf Zeppelin after its flight from Tokyo."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Hollywood Burbank Airport (30 May)",
+     event: "United Airport opens in Burbank, later the Lockheed Air Terminal",
+     scene: "A MOUSE cuts the ribbon on the Spanish terminal of United Airport in Burbank during the air show."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: California Institute of Technology",
+     event: "Caltech opens the Kerckhoff Marine Laboratory at Corona del Mar",
+     scene: "A MOUSE in a diving mask studies sea urchins in Caltech's new marine laboratory at Corona del Mar."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: Arroyo Seco Parkway",
+     event: "The first Figueroa Street Tunnels open through Elysian Park",
+     scene: "A giant MOTH chews three holes through the Elysian Park hill, and cars drive through the new Figueroa tunnels."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: Colorado River Aqueduct (29 Sep)",
+     event: "Voters approve the bonds to build the Colorado River Aqueduct",
+     scene: "A MOTH flies into the ballot box and drops a yes vote for the Colorado River Aqueduct bonds."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: California Institute of Technology",
+     event: "Albert Einstein first visits Caltech to work with its astronomers",
+     scene: "A MOTH lands on Einstein's hair as he talks relativity with the Mount Wilson astronomers at Caltech."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Colorado River Aqueduct (Jan)",
+     event: "Work on the Colorado River Aqueduct starts near Thousand Palms",
+     scene: "A MUMMY swings the first pick at Thousand Palms and starts the aqueduct across the desert."}
+  - {year: 1933, peg: mummy, confidence: medium, source: "WP: Douglas DC-1 (1 Jul); place memory",
+     event: "The Douglas DC-1 makes its first flight from Clover Field, Santa Monica",
+     scene: "A MUMMY in a leather helmet lifts the silver DC-1 off Clover Field on its first flight."}
+  - {year: 1933, peg: mummy, confidence: high, source: "KCRW / CA OHP: LA County General Hospital (Dec)",
+     event: "The new Los Angeles County General Hospital opens in Boyle Heights",
+     scene: "A MUMMY is the first patient to be unwrapped in the new white tower of County General Hospital."}
+  - {year: 1933, peg: mummy, confidence: high, source: "CA OHP: Contractor's General Hospital",
+     event: "Sidney Garfield opens a desert hospital at Desert Center for aqueduct workers; its prepaid plan leads to Kaiser Permanente",
+     scene: "A MUMMY pays five cents a day at Garfield's Desert Center hospital, and the first prepaid health plan begins."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Griffith Observatory (14 May)",
+     event: "Griffith Observatory opens on Mount Hollywood",
+     scene: "A MILL wheel on Mount Hollywood turns the dome of the new Griffith Observatory toward the stars."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Hughes H-1 Racer (13 Sep)",
+     event: "Howard Hughes sets a speed record in his H-1 racer over Martin Field near Santa Ana",
+     scene: "A MILL's sails spin into a propeller and pull Howard Hughes's H-1 to a speed record over Santa Ana."}
+  - {year: 1935, peg: mill, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Army Corps of Engineers starts to line Ballona Creek with concrete",
+     scene: "A MILL grinds the banks of Ballona Creek into smooth concrete walls."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Jet Propulsion Laboratory (31 Oct)",
+     event: "Caltech students test a rocket motor in the Arroyo Seco: the start of JPL",
+     scene: "A burning MATCH lights the rocket motor in the Arroyo Seco, and Caltech students run for cover."}
+  - {year: 1936, peg: match, confidence: high, source: "History.com; LADWP (9 Oct)",
+     event: "Power from Boulder Dam first reaches Los Angeles over the longest high-voltage line",
+     scene: "A giant MATCH at the end of the power line from Boulder Dam lights every bulb on Broadway."}
+  - {year: 1937, peg: mug, confidence: high, source: "WP: Hughes H-1 Racer (19 Jan)",
+     event: "Howard Hughes flies non-stop from Los Angeles to New York in a record time",
+     scene: "Howard Hughes drinks from a MUG of coffee in his H-1 and lands in New York before it is cold."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Arroyo Seco Parkway (22 Mar)",
+     event: "Work starts on the Arroyo Seco Parkway, the first freeway in the West",
+     scene: "A MOVIE director shouts action, and the first shovel breaks ground for the Arroyo Seco Parkway in South Pasadena."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Los Angeles Union Station (3 May)",
+     event: "Union Station opens on the site of old Chinatown",
+     scene: "A MAP of every railroad in the West unrolls across the waiting room as Union Station opens."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Colorado River Aqueduct (7 Jan)",
+     event: "Colorado River water first flows through the aqueduct to Lake Mathews",
+     scene: "A blue MAP of the desert fills with water as the Colorado River first flows into Lake Mathews."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Hollywood Freeway (15 Jun)",
+     event: "The Cahuenga Pass Freeway opens, the first part of the Hollywood Freeway",
+     scene: "A HORSE bites through the ribbon, and the first freeway cars climb the Cahuenga Pass."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Arroyo Seco Parkway (30 Dec)",
+     event: "The Arroyo Seco Parkway opens from Pasadena to downtown",
+     scene: "A HORSE races a car down the new Arroyo Seco Parkway from Pasadena to downtown and loses."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Los Angeles flood of 1938",
+     event: "Hansen Dam is completed on Tujunga Wash",
+     scene: "A HORSE pushes the last earth into place at Hansen Dam and the Tujunga Wash stops at its feet."}
+  - {year: 1940, peg: horse, confidence: medium, source: "WP: North American P-51 Mustang (26 Oct); place memory",
+     event: "The NA-73X, prototype of the P-51 Mustang, makes its first flight at Mines Field",
+     scene: "A wild HORSE named Mustang bolts off the runway at Mines Field and climbs into the sky."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Los Angeles flood of 1938",
+     event: "Sepulveda Dam is built across the Los Angeles River in the Valley",
+     scene: "A RADIO tower falls across the Los Angeles River in the Valley and becomes Sepulveda Dam."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Los Angeles flood of 1938",
+     event: "The Flood Control Act lets the Army line the Los Angeles River with concrete",
+     scene: "A RADIO announces the act, and concrete trucks pour a channel along the whole Los Angeles River."}
+  - {year: 1941, peg: radio, confidence: high, source: "WP: Timeline of Anaheim",
+     event: "Prado Dam is built on the Santa Ana River",
+     scene: "A RADIO-controlled bulldozer piles the Prado Dam across the Santa Ana River above Anaheim."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Lockheed Constellation (9 Jan)",
+     event: "The Lockheed Constellation makes its first flight from Burbank",
+     scene: "A RAM butts the triple-tailed Constellation off the Burbank runway on its first flight."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Lockheed Corporation",
+     event: "Lockheed sets up its secret Skunk Works in Burbank",
+     scene: "A RAM guards the tent of Lockheed's secret Skunk Works in Burbank and butts away every visitor."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Jet Propulsion Laboratory (Nov)",
+     event: "The Caltech rocket group takes the name Jet Propulsion Laboratory",
+     scene: "A RAM with a rocket on its back paints the new name Jet Propulsion Laboratory on the Arroyo Seco shed."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: RAND Corporation (1 Oct)",
+     event: "Project RAND starts at Douglas Aircraft in Santa Monica",
+     scene: "A RAILWAY signal in Santa Monica switches to RAND, and Douglas engineers start to think about future war."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Los Angeles International Airport (9 Dec)",
+     event: "The big airlines move from Burbank to the Los Angeles airport",
+     scene: "A ROACH army carries the airline signs from Burbank to the Westchester airport in one night."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Terminal Island (2 Nov)",
+     event: "Howard Hughes flies the huge wooden H-4 Hercules, the Spruce Goose, for one mile off Long Beach",
+     scene: "A ROCK tied to the wooden Spruce Goose drops away as Hughes lifts the giant boat off Long Beach harbour."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP: RAND Corporation (14 May)",
+     event: "The RAND Corporation becomes an independent non-profit think tank in Santa Monica",
+     scene: "A REEF of papers breaks free from Douglas Aircraft and becomes the RAND Corporation in Santa Monica."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Los Angeles International Airport",
+     event: "The municipal airport is renamed Los Angeles International Airport",
+     scene: "A ROPE pulls a new sign onto the Westchester terminal: Los Angeles International Airport."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Los Angeles flood of 1938",
+     event: "Santa Fe Dam is completed on the San Gabriel River",
+     scene: "A ROPE of earth wraps around the San Gabriel River at Irwindale and becomes Santa Fe Dam."}
+  - {year: 1952, peg: lion, confidence: high, source: "Caltech: Fifty Years of Clearing the Skies",
+     event: "Arie Haagen-Smit at Caltech shows that car exhaust and sunlight make Los Angeles smog",
+     scene: "A LION breathes car exhaust into Haagen-Smit's flask in sunlight, and brown smog fills the Caltech lab."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Arroyo Seco Parkway (22 Sep)",
+     event: "The Four Level Interchange opens, the first stack interchange in the world",
+     scene: "A LLAMA climbs from level to level of the new Four Level Interchange downtown."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Wilmington Oil Field",
+     event: "Long Beach starts to pump water into the Wilmington oil field to stop the land sinking",
+     scene: "A LLAMA spits water into the Wilmington oil wells, and the sinking Long Beach docks stop going down."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Hollywood Freeway (16 Apr)",
+     event: "The Hollywood Freeway opens from the Valley to downtown",
+     scene: "A LAWYER in a convertible is the first to drive the Hollywood Freeway from the Valley to downtown."}
+  - {year: 1954, peg: lawyer, confidence: medium, source: "WP: Lockheed Corporation (place memory)",
+     event: "The Lockheed Hercules transport makes its first flight at Burbank",
+     scene: "A LAWYER pushes the boxy Hercules transport down the Burbank runway until it flies."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Los Angeles flood of 1938",
+     event: "Whittier Narrows Dam is completed",
+     scene: "A LEECH sucks the flood water out of the San Gabriel River behind the new Whittier Narrows Dam."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Jet Propulsion Laboratory (Dec)",
+     event: "JPL in Pasadena moves from the Army to the new NASA",
+     scene: "A WOLF in army uniform hands the keys of JPL in Pasadena to a NASA official."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Disneyland",
+     event: "The Disneyland Monorail opens, the first daily monorail in the Western Hemisphere",
+     scene: "An ELBOW-shaped beam carries the first Disneyland Monorail train above Tomorrowland."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Port of Long Beach",
+     event: "Operation Big Squirt stops the land sinking in Long Beach",
+     scene: "A CHEESE press squirts water into the oil sands, and Long Beach stops sinking."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP: Los Angeles International Airport (25 Jun)",
+     event: "The Theme Building and the first jet-age terminals open at LAX",
+     scene: "A JET lands on the arches of the new Theme Building at LAX like a flying saucer."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP: Pacific Electric (9 Apr)",
+     event: "The last Red Car runs from Los Angeles to Long Beach; Pacific Electric passenger rail ends",
+     scene: "A JET roars over the last Red Car on its final run to Long Beach."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Pacific Electric; LA Times (31 Mar)",
+     event: "The last Los Angeles streetcar runs",
+     scene: "A red GEM falls from the last Yellow Car as it rolls into the barn for good."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Vincent Thomas Bridge (15 Nov)",
+     event: "The Vincent Thomas Bridge opens from San Pedro to Terminal Island",
+     scene: "A green GEM hangs from the cables of the new Vincent Thomas Bridge over the main channel."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Palm Springs Aerial Tramway (Sep)",
+     event: "The Palm Springs Aerial Tramway opens up Mount San Jacinto",
+     scene: "A GEM rides the new tram cabin from the desert floor up the cliffs of Mount San Jacinto."}
+  - {year: 1964, peg: cherry, confidence: high, source: "NASA: Ranger 7 (31 Jul)",
+     event: "JPL's Ranger 7 sends back the first close-up pictures of the Moon",
+     scene: "A CHERRY falls onto the Moon, and the JPL screens in Pasadena fill with close-up craters."}
+  # religion
+  - {year: 1922, peg: nun, confidence: medium, source: "Catholic sources: Archdiocese of LA history (1 Jun)",
+     event: "Rome creates the Diocese of Los Angeles-San Diego",
+     scene: "A NUN draws a new line on the map and the Diocese of Los Angeles-San Diego is born."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Yogananda sets up the Self-Realization Fellowship on Mount Washington",
+     scene: "Yogananda drives a golden NAIL into the old hotel on Mount Washington and makes it his ashram."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: History of Los Angeles",
+     event: "St. Vincent de Paul Church is built on Figueroa Street",
+     scene: "A NAIL holds the gold dome of St. Vincent de Paul Church on Figueroa Street."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Hongwanji Buddhist temple in Little Tokyo gets a new building",
+     scene: "A NAIL fixes the last roof tile on the new Hongwanji temple in Little Tokyo."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Disappearance of Aimee Semple McPherson (18 May)",
+     event: "Aimee Semple McPherson vanishes at Venice Beach; she returns weeks later with a kidnap story",
+     scene: "A NACHO floats on the waves at Venice Beach where Sister Aimee disappears, and her followers search the sea."}
+  - {year: 1929, peg: knob, confidence: high, source: "LA Conservancy: Wilshire Boulevard Temple (Jun)",
+     event: "Wilshire Boulevard Temple is dedicated",
+     scene: "Rabbi Magnin polishes a KNOB on the Torah ark as Wilshire Boulevard Temple is dedicated under its dome."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Little Tokyo Hongwanji temple gets betsuin status from Kyoto",
+     scene: "A MOTH from Kyoto lands on the Little Tokyo temple and gives it the rank of betsuin."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: John Joseph Cantwell (11 Jul)",
+     event: "Los Angeles becomes an archdiocese; John Cantwell is its first archbishop",
+     scene: "A MATCH lights the candles at St. Vibiana's as John Cantwell becomes the first archbishop of Los Angeles."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The first Church of Scientology opens in Los Angeles",
+     scene: "A LAWYER signs the papers for the first Church of Scientology in Los Angeles."}
+  - {year: 1955, peg: lily, confidence: high, source: "Patch; WP: Robert Schuller (Mar)",
+     event: "Robert Schuller starts preaching from the roof of the Orange Drive-In theatre",
+     scene: "A LILY grows on the snack-bar roof of the Orange Drive-In, where Robert Schuller preaches to parked cars."}
+  - {year: 1956, peg: leech, confidence: high, source: "Church News; WP: LA California Temple (11 Mar)",
+     event: "The Los Angeles Mormon Temple in Westwood is dedicated, then the largest of the church",
+     scene: "A LEECH climbs the tower of the new Mormon Temple in Westwood and becomes its gold angel."}
+  - {year: 1961, peg: jet, confidence: medium, source: "Christianity Today (single source)",
+     event: "Schuller's walk-in, drive-in church opens in Garden Grove",
+     scene: "A JET flies over the Garden Grove church where people sit in pews and in cars at the same time."}
+  # arts
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Frank Lloyd Wright's Hollyhock House is built on Olive Hill",
+     scene: "An ANT colony carves hollyhock flowers into every wall of Wright's house on Olive Hill."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Watts Towers",
+     event: "Simon Rodia starts to build the Watts Towers",
+     scene: "An ANT carries broken plates up the steel frame as Simon Rodia starts his towers in Watts."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Broadway Theater District",
+     event: "The State Theatre opens on Broadway",
+     scene: "An ANT the size of a car takes a seat in the new State Theatre on Broadway."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Grauman's Egyptian Theatre opens on Hollywood Boulevard",
+     scene: "A NUN in pharaoh's dress sells tickets at the new Egyptian Theatre on Hollywood Boulevard."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Ramona Pageant; CA OHP (13 Apr)",
+     event: "The Ramona Pageant is first performed in the hills near Hemet",
+     scene: "A GNOME plays Alessandro in the first Ramona Pageant on the hillside near Hemet."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Broadway Theater District",
+     event: "Grauman's Metropolitan, later the Paramount, opens at Sixth and Hill",
+     scene: "A GNOME opens the curtain of the vast Metropolitan Theatre at Sixth and Hill."}
+  - {year: 1925, peg: nail, confidence: high, source: "Clio; LA theatres blog (May)",
+     event: "The Pasadena Playhouse opens its theatre",
+     scene: "A NAIL holds up the curtain on the opening night of the Pasadena Playhouse."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Los Angeles Central Library (Jul)",
+     event: "Goodhue's Central Library opens downtown",
+     scene: "A NACHO forms the tiled pyramid on top of the new Central Library, and readers climb inside."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Orpheum Theatre and the El Capitan Theatre open",
+     scene: "A NACHO is thrown on stage on the opening night of the Orpheum on Broadway."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Shrine Auditorium is rebuilt",
+     scene: "A NACHO becomes the Moorish dome on the rebuilt Shrine Auditorium."}
+  - {year: 1926, peg: nacho, confidence: unverified,
+     event: "Schindler's Lovell Beach House is completed in Newport Beach",
+     scene: "A NACHO rests on the concrete frames that lift Schindler's Lovell Beach House above the Newport sand."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: Grauman's Chinese Theatre (30 Apr)",
+     event: "Mary Pickford and Douglas Fairbanks put the first footprints in the forecourt of Grauman's Chinese",
+     scene: "Mary Pickford dips her shoe in INK and stamps the first footprint into the Chinese Theatre's wet cement."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: Grauman's Chinese Theatre (18 May)",
+     event: "Grauman's Chinese Theatre opens with the premiere of The King of Kings",
+     scene: "A dragon writes The King of Kings in INK across the screen on the opening night of the Chinese Theatre."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: Broadway Theater District",
+     event: "The United Artists, Tower and Mayan theatres open",
+     scene: "A Mayan god writes in INK on the door, and the Mayan, Tower and United Artists theatres open."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Huntington Library",
+     event: "The Huntington Library and art collections open to the public in San Marino",
+     scene: "A KNIFE cuts the cord, and the public walks into the Huntington to see the Blue Boy."}
+  - {year: 1929, peg: knob, confidence: high, source: "SAH Archipedia; Dwell: Lovell Health House",
+     event: "Neutra's Lovell Health House, a steel-frame modern house, is completed in the Los Feliz hills",
+     scene: "A steel KNOB bolts together the frame of Neutra's Lovell Health House on the Los Feliz hillside."}
+  - {year: 1929, peg: knob, confidence: high, source: "LA Conservancy; Homestead Museum (29 May)",
+     event: "William Wrigley's Casino opens at Avalon on Catalina Island",
+     scene: "Wrigley turns a giant KNOB, and the round Avalon Casino rises on Catalina Island for its opening night."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Pantages Theatre (4 Jun)",
+     event: "The Pantages Theatre opens on Hollywood Boulevard",
+     scene: "A MOUSE runs through the gold Art Deco lobby of the Pantages on its opening night."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Greek Theatre opens in Griffith Park",
+     scene: "A MOUSE in a Greek toga sings on the stage of the new Greek Theatre in Griffith Park."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: Broadway Theater District",
+     event: "The Los Angeles Theatre opens on Broadway",
+     scene: "A MOTH flies into the crystal chandeliers of the new Los Angeles Theatre on Broadway."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: Griffith Observatory",
+     event: "The Astronomers Monument, a New Deal work, is put up at Griffith Observatory",
+     scene: "A HAMMER carves six astronomers into the column on the Griffith Observatory lawn."}
+  - {year: 1939, peg: map, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Raymond Chandler publishes The Big Sleep, his first Philip Marlowe novel, set in Los Angeles",
+     scene: "A MAP of Los Angeles leads Philip Marlowe through the rain in The Big Sleep."}
+  - {year: 1939, peg: map, confidence: unverified,
+     event: "Nathanael West publishes The Day of the Locust, a novel of Hollywood",
+     scene: "A MAP of Hollywood burns at the end of The Day of the Locust as the riot rages."}
+  - {year: 1940, peg: horse, confidence: unverified,
+     event: "The Hollywood Palladium dance hall opens on Sunset Boulevard",
+     scene: "A HORSE dances to Tommy Dorsey's band on the opening night of the Hollywood Palladium."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Jazz at the Philharmonic (2 Jul)",
+     event: "Norman Granz holds the first Jazz at the Philharmonic concert, a benefit for the Sleepy Lagoon defendants",
+     scene: "A WARRIOR blows a tenor saxophone on the stage of the Philharmonic Auditorium at the first jazz concert."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: History of Palm Springs",
+     event: "Richard Neutra designs the Kaufmann Desert House in Palm Springs",
+     scene: "A ROACH crosses the white glass walls of Neutra's Kaufmann Desert House in Palm Springs."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Hollywood, Los Angeles",
+     event: "The Hollywoodland sign loses its last four letters and becomes the Hollywood sign",
+     scene: "A ROPE pulls the letters L-A-N-D off the hill, and the sign reads only Hollywood."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: 25th Academy Awards (19 Mar)",
+     event: "The Academy Awards are televised for the first time, from the Pantages",
+     scene: "A LLAMA walks onto the Pantages stage, and the first televised Oscar show goes out to millions."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "J. Paul Getty opens his museum in his ranch house in Malibu",
+     scene: "A LAWYER counts Getty's Greek statues in the Malibu ranch house as the museum opens."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP: Watts Towers (4 Jul)",
+     event: "A fire burns Rodia's house, and the city orders the Watts Towers torn down",
+     scene: "A LEECH sticks a demolition order on the Watts Towers after fire burns Rodia's house."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Ferus Gallery opens on La Cienega Boulevard",
+     scene: "A LOG on La Cienega Boulevard is the first artwork in the new Ferus Gallery."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Watts Towers (10 Oct)",
+     event: "A load test shows the Watts Towers are strong, and the demolition is stopped",
+     scene: "A crane pulls on an ELBOW of the Watts Towers with five tons, and the tower does not move."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: Timeline of Los Angeles (venue memory)",
+     event: "The first Grammy Awards are given at the Beverly Hilton",
+     scene: "An ELBOW winds the first golden gramophone at the Beverly Hilton."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Hollywood, Los Angeles (8 Feb)",
+     event: "The Hollywood Walk of Fame officially opens",
+     scene: "A wheel of CHEESE rolls down Hollywood Boulevard and stamps a star into every square."}
+  - {year: 1962, peg: chain, confidence: high, source: "Artforum; WP: New Painting of Common Objects (25 Sep)",
+     event: "The Pasadena Art Museum opens New Painting of Common Objects, the first museum show of Pop Art",
+     scene: "A CHAIN of soup cans and comic strips hangs across the Pasadena Art Museum for the first Pop Art show."}
+  - {year: 1962, peg: chain, confidence: high, source: "en.WP: Death of Marilyn Monroe (4–5 August 1962, Brentwood)",
+     event: "Marilyn Monroe is found dead at her home in Brentwood",
+     place: "Fifth Helena Drive, Brentwood",
+     scene: "A CHAIN of reporters' cars blocks Fifth Helena Drive in Brentwood after Marilyn Monroe is found dead."}
+  - {year: 1963, peg: gem, confidence: high, source: "Norton Simon Museum: Duchamp to Pop (Oct)",
+     event: "The Pasadena Art Museum opens Marcel Duchamp's first major museum retrospective",
+     scene: "A GEM sits in Duchamp's urinal on a plinth as his first retrospective opens at the Pasadena Art Museum."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP: Los Angeles Music Center (6 Dec)",
+     event: "The Dorothy Chandler Pavilion opens; Zubin Mehta conducts the Philharmonic",
+     scene: "A CHERRY on Zubin Mehta's baton glows as he opens the new Dorothy Chandler Pavilion."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Whisky a Go Go opens on the Sunset Strip",
+     scene: "A CHERRY in a glass of whisky shakes as go-go dancers start in a cage on the Sunset Strip."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Master Chorale is founded",
+     scene: "A CHERRY tree sings in a hundred voices as the Los Angeles Master Chorale is founded."}
+  # economy
+  - {year: 1920, peg: nose, confidence: unverified,
+     event: "Oil is found at Huntington Beach and starts an oil boom in Orange County",
+     scene: "A NOSE smells crude oil as the first gusher blows on the Huntington Beach mesa."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Long Beach Oil Field (25 Jun)",
+     event: "Alamitos No. 1 blows in on Signal Hill and starts the Long Beach oil boom",
+     scene: "A giant ANT hill on Signal Hill bursts open, and a black gusher of oil shoots into the sky."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Long Beach Oil Field",
+     event: "The Santa Fe Springs oil field is found",
+     scene: "An ANT taps the ground at Santa Fe Springs and oil bubbles up around its feet."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Douglas Aircraft Company (22 Jul)",
+     event: "Donald Douglas founds the Douglas Company in Santa Monica",
+     scene: "An ANT builds the first Douglas plane in the back room of a Santa Monica barber shop."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Ambassador Hotel (1 Jan)",
+     event: "The Ambassador Hotel opens on Wilshire Boulevard",
+     scene: "An ANT the size of a doorman opens the doors of the new Ambassador Hotel on Wilshire."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Timeline of Los Angeles (2 May)",
+     event: "The Los Angeles Steamship Company starts overnight sailings to San Francisco",
+     scene: "An ANT captains the first night steamer from San Pedro to San Francisco."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Radio stations KFI, KHJ and KNX start to broadcast",
+     scene: "A NUN sings into the first microphone of KFI, and radios across the basin crackle."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Los Angeles Union Stock Yards are set up in Vernon",
+     scene: "A NUN counts cattle at the gates of the new Union Stock Yards."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: History of Los Angeles",
+     event: "The Los Angeles basin produces about a quarter of the world's oil",
+     scene: "A GNOME fills one barrel in four of the world's oil from the derricks of the basin."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Biltmore Hotel opens on Pershing Square",
+     scene: "A GNOME carries luggage up the steps of the new Biltmore on Pershing Square."}
+  - {year: 1923, peg: gnome, confidence: high, source: "Britannica; Il Post: Warner Bros. (4 Apr)",
+     event: "The four Warner brothers incorporate Warner Bros. Pictures, with its studio on Sunset Boulevard",
+     scene: "A GNOME signs the papers as the four Warner brothers incorporate their studio on Sunset Boulevard."}
+  - {year: 1924, peg: hanger, confidence: high, source: "Hollywood Reporter; MGM history (17 Apr)",
+     event: "Metro-Goldwyn-Mayer is formed with its studio in Culver City",
+     scene: "A coat HANGER holds the lion costume in the wardrobe of the new MGM studio in Culver City."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP: Port of Long Beach",
+     event: "Long Beach voters approve bonds to build up the harbour",
+     scene: "A HANGER hooks a new pier onto Long Beach harbour after voters pass the bonds."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Lockheed Corporation (13 Dec)",
+     event: "The Lockheed Aircraft Company is formed in Hollywood",
+     scene: "A NACHO falls off the wing of the first Lockheed plane in the new Hollywood shop."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Julian Petroleum stock fraud collapses",
+     scene: "INK runs on the fake Julian Pete shares, and thousands of Angelenos lose their savings."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Lockheed Corporation (Mar)",
+     event: "Lockheed moves to Burbank",
+     scene: "A KNIFE cuts the Lockheed sign off the Hollywood shop and nails it to a Burbank hangar."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Bullocks Wilshire opens, a department store built for shoppers in cars",
+     scene: "A gear-stick KNOB guides a shopper's car straight into the rear motor court of the new Bullocks Wilshire."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: History of Los Angeles",
+     event: "The black-and-gold Richfield Tower is completed",
+     scene: "A gold KNOB on top of the black Richfield Tower glows like an oil flame."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Venice, Los Angeles",
+     event: "Oil is found on the Venice Peninsula; derricks soon cover the area",
+     scene: "A KNOB on a pipe in Venice turns, and oil derricks spring up between the canals."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Olvera Street opens as a restored Mexican marketplace",
+     scene: "A MOUSE sells candles from a stall on the newly restored Olvera Street."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Terminal Island",
+     event: "Ford opens its Long Beach assembly plant on Terminal Island",
+     scene: "A MOUSE drives the first Ford off the assembly line on Terminal Island."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP: Wilmington Oil Field",
+     event: "The Wilmington oil field is found under the harbour",
+     scene: "A MOON rises over the harbour, and oil gushes from the Wilmington field below it."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP: Lockheed Corporation",
+     event: "Robert Gross and his partners buy the bankrupt Lockheed company",
+     scene: "A MOON shines on Robert Gross as he buys bankrupt Lockheed in Burbank for a small sum."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP: Port of Long Beach",
+     event: "Long Beach becomes a home port of the Pacific Fleet",
+     scene: "The MOON lights battleships that drop anchor off Long Beach, their new home port."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: The Original Farmers Market (14 Jul)",
+     event: "The Farmers Market opens at Third and Fairfax",
+     scene: "A HAMMER nails up the first stall as farmers sell from their trucks at Third and Fairfax."}
+  - {year: 1935, peg: mill, confidence: unverified,
+     event: "Twentieth Century and Fox Film merge into Twentieth Century-Fox, with its studio in Century City",
+     scene: "A MILL grinds the Fox and Twentieth Century logos into one, and searchlights sweep the new studio."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Crossroads of the World, a shopping court shaped like a ship, opens on Sunset",
+     scene: "A MATCH lights the beacon on the ship-shaped Crossroads of the World on Sunset Boulevard."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: History of Palm Springs",
+     event: "La Plaza opens in Palm Springs, the first self-contained shopping centre in Southern California",
+     scene: "A MATCH lights the shop lamps around La Plaza in Palm Springs."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Hollywood, Los Angeles",
+     event: "CBS opens Columbia Square on Sunset Boulevard",
+     scene: "A MOVIE lot on Sunset turns into CBS Columbia Square, and radio shows go out across the nation."}
+  - {year: 1940, peg: horse, confidence: high, source: "McDonald's FAQ (15 May)",
+     event: "The McDonald brothers open their first restaurant in San Bernardino",
+     scene: "A HORSE eats the first McDonald's barbecue at the stand on E Street in San Bernardino."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Hollywood Burbank Airport",
+     event: "Lockheed buys the Burbank airport and renames it Lockheed Air Terminal",
+     scene: "A HORSE drags the United sign off the Burbank terminal and Lockheed nails up its own."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: History of Knott's Berry Farm",
+     event: "Walter Knott starts to build a Ghost Town at his berry farm in Buena Park",
+     scene: "A HORSE pulls an old Arizona saloon into Walter Knott's berry farm to start the Ghost Town."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Port of Long Beach",
+     event: "The Navy buys land on Terminal Island and builds the Long Beach Naval Shipyard",
+     scene: "A HORSE tows a battleship into the new Navy dry dock on Terminal Island."}
+  - {year: 1941, peg: radio, confidence: medium, source: "WP: California Shipbuilding Corp. (production May)",
+     event: "Calship on Terminal Island starts to build Liberty ships",
+     scene: "A RADIO counts down as the first Liberty ship slides off the Calship ways on Terminal Island."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Kaiser Steel (30 Dec)",
+     event: "Henry Kaiser lights Bess, the first blast furnace of his Fontana steel mill",
+     scene: "A RHINO charges into the Fontana blast furnace and lights Big Bess for Henry Kaiser."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Capitol Records",
+     event: "Johnny Mercer and partners found Capitol Records in Hollywood",
+     scene: "A RHINO sings Johnny Mercer songs into the first Capitol Records microphone on Vine Street."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Mattel (Jan)",
+     event: "Harold Matson and Ruth and Elliot Handler found Mattel in a Los Angeles garage",
+     scene: "A RAILWAY toy train runs out of the Handlers' garage, the first Mattel workshop."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Pacific Electric",
+     event: "National City Lines buys the Los Angeles Railway, the city's streetcars",
+     scene: "A RAILWAY tycoon from National City Lines buys every Yellow Car in Los Angeles."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Fender (company)",
+     event: "Leo Fender founds the Fender Electric Instrument Company in Fullerton",
+     scene: "A ROACH plays a steel guitar in Leo Fender's Fullerton workshop."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Hollywood, Los Angeles (22 Jan)",
+     event: "KTLA starts, the first commercial TV station west of the Mississippi",
+     scene: "A ROCK breaks through the TV screen as KTLA starts the first commercial broadcast in the West."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Harry and Esther Snyder open the first In-N-Out Burger in Baldwin Park",
+     scene: "A REEF of burgers passes through a two-way speaker at the first In-N-Out in Baldwin Park."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP: Panorama City",
+     event: "Fritz Burns and Henry Kaiser build Panorama City, a planned suburb in the Valley",
+     scene: "A REEF of identical roofs spreads over the Valley as Kaiser and Burns build Panorama City."}
+  - {year: 1950, peg: lasso, confidence: high, source: "musicradar; WP: Fender (spring)",
+     event: "Fender puts the Esquire and Broadcaster solid-body electric guitars on sale",
+     scene: "A LASSO of guitar cord catches the first Fender Broadcaster as it comes off the Fullerton bench."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: Pacific Electric",
+     event: "The Los Angeles Metropolitan Transit Authority is created",
+     scene: "A WALLET of public money pays for the new Metropolitan Transit Authority."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: Lakewood, California",
+     event: "Lakewood Center shopping mall opens",
+     scene: "A WALLET opens at the tills of the new Lakewood Center mall."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP: Pacific Electric",
+     event: "Pacific Electric sells its passenger service to Metropolitan Coach Lines",
+     scene: "A LLAMA pulls the Red Cars out of the Pacific Electric barn to the Metropolitan Coach Lines yard."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP: Fender (Aug)",
+     event: "Fender brings out the Stratocaster",
+     scene: "A LAWYER signs the patent on the sleek new Fender Stratocaster in Fullerton."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Disneyland (17 Jul)",
+     event: "Disneyland opens in Anaheim",
+     scene: "A giant LILY opens its petals into the gates of Disneyland, and the first crowds pour into the Anaheim park."}
+  - {year: 1956, peg: leech, confidence: high, source: "LA Conservancy: Capitol Records Tower",
+     event: "The round Capitol Records Tower is completed on Vine Street",
+     scene: "A LEECH sucks the stack of records into the round Capitol Records Tower on Vine."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: History of Los Angeles",
+     event: "Toyota opens its first American office in Hollywood",
+     scene: "A LOG cabin in Hollywood becomes Toyota's first American office, with one small car outside."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP: Pacific Electric (3 Mar)",
+     event: "The Metropolitan Transit Authority starts to run all bus and rail lines as one system",
+     scene: "A WOLF in a driver's cap runs every bus and Red Car in the basin as one network."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Port of Los Angeles",
+     event: "Matson's Hawaiian Merchant brings the first containers to the Port of Los Angeles",
+     scene: "An ELBOW crane lifts the first steel box off the Hawaiian Merchant at the Port of Los Angeles."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP: Kaiser Steel",
+     event: "Kaiser starts to ship iron ore to Japan from the Port of Long Beach",
+     scene: "A CHAIN of ore ships from Long Beach to Japan carries Kaiser's iron."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP: Pacific Electric (Sep)",
+     event: "The Southern California Rapid Transit District takes over from the MTA",
+     scene: "A CHERRY painted on every bus marks the new Rapid Transit District as it takes over from the MTA."}
+  # society
+  - {year: 1920, peg: nose, confidence: high, source: "WP: Venice, Los Angeles (Dec)",
+     event: "Fire destroys the Abbot Kinney Pier in Venice",
+     scene: "A NOSE smells smoke as the Abbot Kinney Pier in Venice burns into the sea."}
+  - {year: 1920, peg: nose, confidence: high, source: "WP: California Institute of Technology",
+     event: "Throop College of Technology in Pasadena takes the name California Institute of Technology",
+     scene: "A NOSE sniffs the new name Caltech painted over the old Throop sign in Pasadena."}
+  - {year: 1921, peg: ant, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Chouinard Art Institute is founded",
+     scene: "An ANT paints its first canvas at the new Chouinard Art Institute."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP: Rose Bowl (stadium) (28 Oct)",
+     event: "The Rose Bowl stadium opens in the Arroyo Seco in Pasadena",
+     scene: "A NUN kicks off the first game in the new Rose Bowl stadium in the Arroyo Seco."}
+  - {year: 1922, peg: nun, confidence: high, source: "WP: History of Los Angeles",
+     event: "Sawtelle joins the City of Los Angeles",
+     scene: "A NUN marches the veterans of Sawtelle into the City of Los Angeles."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: Rose Bowl (stadium) (1 Jan)",
+     event: "The first Rose Bowl Game in the new stadium: USC beats Penn State",
+     scene: "A GNOME in a USC sweater scores in the first Rose Bowl Game played in the stadium."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: LA Memorial Coliseum (1 May)",
+     event: "The Los Angeles Memorial Coliseum opens",
+     scene: "A GNOME lights the torch above the peristyle of the new Coliseum."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: History of Los Angeles",
+     event: "Hyde Park and Eagle Rock join the City of Los Angeles",
+     scene: "A GNOME rolls the big Eagle Rock into the City of Los Angeles."}
+  - {year: 1923, peg: gnome, confidence: high, source: "WP: 1923 San Pedro maritime strike (15 May)",
+     event: "Police arrest Upton Sinclair on Liberty Hill in San Pedro for reading the Constitution to striking dockers",
+     scene: "A GNOME policeman pulls Upton Sinclair off Liberty Hill as he reads the Bill of Rights to the dockers."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Pneumonic plague breaks out in the Mexican quarter near the Plaza",
+     scene: "A HANGER on a quarantine rope closes the plague streets near the Plaza."}
+  - {year: 1924, peg: hanger, confidence: high, source: "WP: Timeline of Los Angeles (31 May)",
+     event: "Fire at the Hope Development School in Playa del Rey kills two dozen girls",
+     scene: "A burning coat HANGER falls in the Hope Development School as fire kills two dozen girls."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Claremont Colleges (14 Oct)",
+     event: "The Claremont Colleges consortium is founded",
+     scene: "A NAIL joins Pomona and a new graduate school into the Claremont Colleges."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Olympic Auditorium opens for boxing",
+     scene: "A NAIL in a boxing glove knocks out the first fighter at the new Olympic Auditorium."}
+  - {year: 1925, peg: nail, confidence: high, source: "WP: Venice, Los Angeles (Nov)",
+     event: "Venice votes to join the City of Los Angeles",
+     scene: "A NAIL pins the Venice canals onto the map of Los Angeles after the vote."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: History of Los Angeles",
+     event: "Watts joins the City of Los Angeles",
+     scene: "A NACHO cart rolls down the Watts tracks into the City of Los Angeles."}
+  - {year: 1926, peg: nacho, confidence: high, source: "WP: Claremont Colleges",
+     event: "Scripps College for women is founded in Claremont",
+     scene: "A NACHO picnic for women students opens the new Scripps College in Claremont."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: UCLA (1 Feb)",
+     event: "The Southern Branch is renamed the University of California at Los Angeles",
+     scene: "INK writes the name UCLA over Southern Branch on the Vermont Avenue gate."}
+  - {year: 1927, peg: ink, confidence: high, source: "WP: Murder of Marion Parker (Dec)",
+     event: "William Hickman kidnaps and murders twelve-year-old Marion Parker",
+     scene: "INK on a ransom note signed The Fox demands money for kidnapped Marion Parker."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Walter Collins vanishes; the LAPD returns the wrong boy to his mother",
+     scene: "A KNIFE cuts Christine Collins's heart as the LAPD hands her a boy who is not her missing son."}
+  - {year: 1928, peg: knife, confidence: high, source: "WP: Wineville Chicken Coop murders (19 Sep)",
+     event: "The Wineville chicken coop murders are found; Gordon Northcott is arrested",
+     scene: "A KNIFE is found in the chicken coop at Wineville, and Gordon Northcott is caught in Canada."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: UCLA",
+     event: "UCLA moves to its new Westwood campus with Royce Hall",
+     scene: "A KNOB of brick tops each tower of Royce Hall as UCLA opens its new Westwood campus."}
+  - {year: 1929, peg: knob, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Loyola moves to its new campus in Westchester",
+     scene: "A KNOB rolls down the Westchester bluff, and Loyola's priests follow it to their new campus."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: History of Los Angeles",
+     event: "The census counts over one million people in Los Angeles",
+     scene: "A MOUSE becomes the millionth resident counted by the census taker in Los Angeles."}
+  - {year: 1930, peg: mouse, confidence: high, source: "WP: Wineville Chicken Coop murders (1 Nov)",
+     event: "Wineville changes its name to Mira Loma to escape the murders",
+     scene: "A MOUSE paints over the Wineville sign and writes Mira Loma."}
+  - {year: 1931, peg: moth, confidence: high, source: "Zinn Education Project; LAist (26 Feb)",
+     event: "Immigration agents raid La Placita park near the Plaza and detain hundreds of Mexicans",
+     scene: "A MOTH flies up from La Placita as immigration agents surround the crowd and demand papers."}
+  - {year: 1931, peg: moth, confidence: high, source: "WP: History of Los Angeles",
+     event: "A judge orders the city to open its swimming pools to all races",
+     scene: "A MOTH eats the 'whites only' sign off a city pool as the judge opens the pools to all."}
+  - {year: 1932, peg: moon, confidence: high, source: "WP: History of Los Angeles",
+     event: "Tujunga joins the City of Los Angeles",
+     scene: "A MOON rises over Tujunga as it joins the City of Los Angeles."}
+  - {year: 1932, peg: moon, confidence: high, source: "Britannica; PBS SoCal: first Olympic Village",
+     event: "The first Olympic Village houses the male athletes in the Baldwin Hills",
+     scene: "The MOON shines on rows of cottages in the Baldwin Hills, the first Olympic Village, where the men athletes sleep."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: History of Los Angeles (3 Oct)",
+     event: "A brush fire in Griffith Park kills twenty-nine relief workers",
+     scene: "A MUMMY of smoke wraps the relief workers in Griffith Park as the brush fire kills twenty-nine."}
+  - {year: 1933, peg: mummy, confidence: high, source: "WP: Timeline of Los Angeles (12 Oct)",
+     event: "The Los Angeles garment workers' strike begins",
+     scene: "A MUMMY unrolls bolts of cloth into a picket line as the garment workers strike."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: Santa Anita Park (25 Dec)",
+     event: "Santa Anita Park racetrack opens in Arcadia",
+     scene: "A HAMMER rings the starting bell on Christmas Day at the new Santa Anita racetrack."}
+  - {year: 1934, peg: hammer, confidence: high, source: "ILWU; Zinn Ed. Project (15 May)",
+     event: "Police fire on striking dockers in Wilmington during the West Coast waterfront strike; two die",
+     scene: "A HAMMER is raised by striking dockers at the Wilmington stockade when police open fire."}
+  - {year: 1934, peg: hammer, confidence: high, source: "WP: History of Palm Springs",
+     event: "Charles Farrell and Ralph Bellamy open the Racquet Club in Palm Springs",
+     scene: "A HAMMER serves the first tennis ball at the new Racquet Club in Palm Springs."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: History of Orange County",
+     event: "Orange County citrus pickers strike; growers and police crush the strike",
+     scene: "A MATCH burns in the orange groves as police break up the striking citrus pickers."}
+  - {year: 1936, peg: match, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Mexican and Japanese workers strike in the Venice celery fields",
+     scene: "A MATCH sets the celery fields alight as the workers of Venice walk off the farms."}
+  - {year: 1936, peg: match, confidence: high, source: "NPS: Joshua Tree park history (10 Aug)",
+     event: "Joshua Tree National Monument is created after Minerva Hoyt's campaign",
+     scene: "A giant MATCH stands as a fence post among the Joshua trees, marking the desert as a national monument."}
+  - {year: 1937, peg: mug, confidence: high, source: "Pepperdine: History of Pepperdine (Sep)",
+     event: "George Pepperdine College opens in South Los Angeles",
+     scene: "A MUG with George Pepperdine's name opens the doors of his new college on Vermont Avenue."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Los Angeles flood of 1938 (Mar)",
+     event: "The great flood kills over a hundred people across Los Angeles, Orange and Riverside counties",
+     scene: "A MOVIE set floats down the flooded Los Angeles River and smashes the bridges as the great flood hits."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Timeline of Los Angeles (10 Jun)",
+     event: "Hollywood Park racetrack opens in Inglewood",
+     scene: "A MOVIE mogul cuts the ribbon at Hollywood Park, the racetrack the studio stars build in Inglewood."}
+  - {year: 1938, peg: movie, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "China City and New Chinatown open for the Chinese pushed out by Union Station",
+     scene: "A MOVIE set of pagodas becomes China City, a new home for the Chinese pushed out by Union Station."}
+  - {year: 1940, peg: horse, confidence: high, source: "WP: Santa Anita Park",
+     event: "Seabiscuit wins the Santa Anita Handicap in his last race",
+     scene: "A HORSE named Seabiscuit wins the Santa Anita Handicap at last, before a huge crowd."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Terminal Island (Feb)",
+     event: "Japanese Americans on Terminal Island are given two days to leave their fishing village",
+     scene: "A RHINO bulldozes the Japanese fishing village on Terminal Island after the families get two days to leave."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Santa Anita Park (Apr)",
+     event: "Santa Anita racetrack becomes an assembly centre for over eighteen thousand Japanese Americans",
+     scene: "A RHINO guards the horse stalls at Santa Anita where Japanese-American families must sleep."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Sleepy Lagoon murder (2 Aug)",
+     event: "Jos\u00e9 D\u00edaz is found dying at the Sleepy Lagoon reservoir; police round up hundreds of Mexican youths",
+     scene: "A RHINO charges into the barrio after the Sleepy Lagoon killing and rounds up hundreds of youths."}
+  - {year: 1942, peg: rhino, confidence: high, source: "WP: Village Green",
+     event: "Baldwin Hills Village, a garden estate, is completed",
+     scene: "A RHINO grazes on the shared lawns of the new Baldwin Hills Village."}
+  - {year: 1942, peg: rhino, confidence: unverified,
+     event: "Bette Davis and John Garfield open the Hollywood Canteen for servicemen",
+     scene: "A RHINO in uniform dances with Bette Davis at the new Hollywood Canteen."}
+  - {year: 1943, peg: ram, confidence: high, source: "WP: Sleepy Lagoon murder (13 Jan)",
+     event: "Twelve young Mexican Americans are convicted in the Sleepy Lagoon trial",
+     scene: "A RAM in a judge's robe butts twelve young men into San Quentin after the Sleepy Lagoon trial."}
+  - {year: 1943, peg: ram, confidence: high, source: "AQMD; Smithsonian (26 Jul)",
+     event: "The first bad smog attack darkens downtown; people think it is a gas attack",
+     scene: "A RAM in a gas mask gropes through the brown smog that falls on downtown."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Sleepy Lagoon murder (Oct)",
+     event: "An appeals court reverses the Sleepy Lagoon convictions",
+     scene: "A WARRIOR breaks the chains of the Sleepy Lagoon defendants as the appeals court frees them."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Work starts on Park La Brea housing",
+     scene: "A WARRIOR digs the first foundation at Park La Brea near the tar pits."}
+  - {year: 1944, peg: warrior, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Imperial Courts and Jordan Downs public housing estates are built in Watts",
+     scene: "A WARRIOR stands guard at the new Jordan Downs housing in Watts."}
+  - {year: 1945, peg: railway, confidence: high, source: "WP: Hollywood Black Friday; Hollywood Reporter (5 Oct)",
+     event: "Hollywood Black Friday: strikers and guards fight at the Warner Bros. gate in Burbank",
+     scene: "A RAILWAY spike flies at the Warner Bros. gate in Burbank as strikers fight the guards."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: LA Memorial Coliseum",
+     event: "The Cleveland Rams move to Los Angeles and play at the Coliseum",
+     scene: "A ROACH in a Rams helmet runs onto the Coliseum field for the new home team."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Hughes XF-11 (7 Jul)",
+     event: "Howard Hughes crashes the XF-11 into houses in Beverly Hills on its first flight",
+     scene: "A ROACH crawls from the burning XF-11 wreck in Beverly Hills as Hughes is pulled out."}
+  - {year: 1946, peg: roach, confidence: high, source: "WP: Claremont Colleges",
+     event: "Claremont Men's College is founded",
+     scene: "A ROACH in a blazer enters the new Claremont Men's College."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP: Black Dahlia (15 Jan)",
+     event: "The body of Elizabeth Short, the Black Dahlia, is found in a vacant lot in Leimert Park",
+     scene: "A black ROCK marks the vacant lot on Norton Avenue where the Black Dahlia is found."}
+  - {year: 1947, peg: rock, confidence: high, source: "History.com; Mob Museum (20 Jun)",
+     event: "Gangster Bugsy Siegel is shot dead in Beverly Hills",
+     scene: "A ROCK shatters the window of the Linden Drive house as a sniper kills Bugsy Siegel."}
+  - {year: 1947, peg: rock, confidence: unverified,
+     event: "Los Angeles State College is founded",
+     scene: "A ROCK becomes the cornerstone of the new Los Angeles State College."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Timeline of Long Beach",
+     event: "Los Angeles-Orange County State College, later Long Beach State, opens",
+     scene: "A ROPE ladder leads the first students into the new state college in Long Beach."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Edward R. Roybal",
+     event: "Roybal, Fred Ross and Tony R\u00edos found the Community Service Organization",
+     scene: "A ROPE ties the voters of Boyle Heights into the new Community Service Organization."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Los Angeles Valley College opens",
+     scene: "A ROPE bridge carries the first students into Los Angeles Valley College."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Lakewood, California (24 Mar)",
+     event: "Sales open at Lakewood; thirty thousand people queue to see the model homes",
+     scene: "A LASSO pulls thirty thousand buyers into the line for Lakewood's model homes."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP: Timeline of Los Angeles (11 Dec)",
+     event: "Mob lawyer Sam Rummel is shot dead in Laurel Canyon",
+     scene: "A LASSO from the dark catches Sam Rummel at his Laurel Canyon door before the shot."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP: Bloody Christmas (1951) (25 Dec)",
+     event: "Bloody Christmas: drunk police beat seven young prisoners at the Central Jail",
+     scene: "A WALLET with a police badge falls on the cell floor as officers beat seven prisoners at Christmas."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP: Timeline of Long Beach",
+     event: "Long Beach holds the first Miss Universe and Miss USA pageants",
+     scene: "A LION puts the crown on the first Miss Universe in Long Beach."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Claremont Colleges",
+     event: "Harvey Mudd College is founded in Claremont",
+     scene: "A LILY grows in a test tube at the new Harvey Mudd College."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Nickerson Gardens housing estate is built in Watts",
+     scene: "A LILY garden blooms between the rows of the new Nickerson Gardens in Watts."}
+  - {year: 1957, peg: log, confidence: high, source: "WP: Timeline of Riverside (22 Sep)",
+     event: "Riverside International Raceway opens",
+     scene: "A LOG rolls off the track at the first race of the new Riverside Raceway."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Memorial Sports Arena opens next to the Coliseum",
+     scene: "An ELBOW pushes open the doors of the new Sports Arena beside the Coliseum."}
+  - {year: 1959, peg: elbow, confidence: medium, source: "WP: LA Memorial Coliseum",
+     event: "The Dodgers win the World Series; three games draw over ninety thousand to the Coliseum",
+     scene: "An ELBOW of the Dodgers' pitcher wins the World Series before ninety thousand fans in the Coliseum."}
+  - {year: 1959, peg: elbow, confidence: disputed, source: "WP: Cooper Do-nuts Riot (May; date and place doubtful)",
+     event: "Cooper Do-nuts riot: gay and transgender customers fight back against police downtown",
+     scene: "An ELBOW knocks a box of doughnuts into a policeman's face at the Cooper Do-nuts cafe."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "The Lakers move from Minneapolis to Los Angeles",
+     scene: "A wheel of CHEESE rolls in from Minneapolis and the Lakers bounce it at the Sports Arena."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP: Bel Air Fire (5-8 Nov)",
+     event: "The Bel Air fire burns about five hundred homes in Bel Air and Brentwood",
+     scene: "A JET of flame from Mulholland drives through Bel Air and burns five hundred homes."}
+  - {year: 1961, peg: jet, confidence: high, source: "SABR; WP: 1961 Los Angeles Angels season",
+     event: "The new Los Angeles Angels play their first season at Wrigley Field",
+     scene: "A JET with halo wings flies over Wrigley Field as the new Angels play their first season."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP: Chavez Ravine; History of Los Angeles",
+     event: "Dodger Stadium opens in Chavez Ravine",
+     scene: "A CHAIN of cars winds up Chavez Ravine to the first game in Dodger Stadium."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Baldwin Hills Reservoir (14 Dec)",
+     event: "The Baldwin Hills Dam breaks; the flood kills five and destroys hundreds of homes",
+     scene: "A GEM-shaped crack splits the Baldwin Hills Dam, and water pours down onto the houses."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Claremont Colleges",
+     event: "Pitzer College is founded in Claremont",
+     scene: "A GEM is set in the gate as the new Pitzer College opens in Claremont."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP: Timeline of Los Angeles",
+     event: "Building starts on Century City on the old Fox studio backlot",
+     scene: "A GEM grows into an office tower on the old Fox backlot as Century City begins."}
+  - {year: 1964, peg: cherry, confidence: high, source: "UCI Libraries; American Presidency Project (20 Jun)",
+     event: "President Johnson dedicates the new University of California, Irvine campus on the Irvine Ranch",
+     scene: "A CHERRY tree is planted by President Johnson on the empty Irvine Ranch meadow to dedicate UC Irvine."}
+world_refs:
+  - {year: 1922, event: "Hollywood Bowl opens", cell: north_america_arts_1800_1945}
+  - {year: 1923, event: "Aimee Semple McPherson opens Angelus Temple", cell: north_america_religion_1800_1945}
+  - {year: 1923, event: "Disney brothers found their studio in Los Angeles", cell: north_america_arts_1800_1945}
+  - {year: 1923, event: "Hollywoodland sign erected", cell: north_america_arts_1800_1945}
+  - {year: 1925, event: "Hubble shows Andromeda lies outside the Milky Way (Mount Wilson)", cell: north_america_science_1800_1945}
+  - {year: 1925, event: "The Gold Rush premieres in Hollywood", cell: north_america_arts_1800_1945}
+  - {year: 1927, event: "Academy of Motion Picture Arts and Sciences founded", cell: north_america_arts_1800_1945}
+  - {year: 1927, event: "Foursquare Gospel church incorporated", cell: north_america_religion_1800_1945}
+  - {year: 1928, event: "St. Francis Dam fails", cell: north_america_society_1800_1945}
+  - {year: 1929, event: "First Academy Awards in Hollywood", cell: north_america_arts_1800_1945}
+  - {year: 1929, event: "Hubble: galaxies move away (Mount Wilson)", cell: north_america_science_1800_1945}
+  - {year: 1930, event: "All Quiet on the Western Front premieres in Los Angeles", cell: north_america_arts_1800_1945}
+  - {year: 1930, event: "Hollywood adopts the Production Code", cell: north_america_arts_1800_1945}
+  - {year: 1932, event: "Carl Anderson discovers the positron (Caltech)", cell: north_america_science_1800_1945}
+  - {year: 1932, event: "Siqueiros paints America Tropical on Olvera Street", cell: latin_america_arts_1800_1945}
+  - {year: 1932, event: "Summer Olympics in Los Angeles", cell: north_america_society_1800_1945}
+  - {year: 1933, event: "Long Beach earthquake", cell: north_america_society_1800_1945}
+  - {year: 1933, event: "Zwicky infers dark matter (Caltech)", cell: north_america_science_1800_1945}
+  - {year: 1935, event: "Douglas DC-3 first flight", cell: north_america_science_1800_1945}
+  - {year: 1935, event: "Richter magnitude scale (Caltech)", cell: north_america_science_1800_1945}
+  - {year: 1937, event: "Snow White premieres in Los Angeles", cell: north_america_arts_1800_1945}
+  - {year: 1939, event: "Pauling publishes The Nature of the Chemical Bond (Caltech)", cell: north_america_science_1800_1945}
+  - {year: 1943, event: "Zoot Suit Riots", cell: north_america_society_1800_1945}
+  - {year: 1944, event: "Baade resolves stars in Andromeda (Mount Wilson)", cell: north_america_science_1800_1945}
+  - {year: 1947, event: "Fuller Theological Seminary founded in Pasadena", cell: north_america_religion_1945_present}
+  - {year: 1947, event: "Mendez v. Westminster", cell: north_america_society_1945_present}
+  - {year: 1948, event: "McDonald brothers reopen with the Speedee system", cell: north_america_economy_1945_present}
+  - {year: 1949, event: "Billy Graham's Los Angeles tent crusade", cell: north_america_religion_1945_present}
+  - {year: 1949, event: "Eames House completed", cell: north_america_arts_1945_present}
+  - {year: 1950, event: "Mattachine Society founded", cell: north_america_society_1945_present}
+  - {year: 1958, event: "Dodgers open their first season in Los Angeles", cell: north_america_society_1945_present}
+  - {year: 1958, event: "Explorer 1 (built by JPL)", cell: north_america_science_1945_present}
+  - {year: 1959, event: "Feynman at Caltech: Plenty of Room at the Bottom", cell: north_america_science_1945_present}
+  - {year: 1960, event: "Maiman's first laser at Hughes, Malibu", cell: north_america_science_1945_present}
+  - {year: 1960, event: "Stahl House completed", cell: north_america_arts_1945_present}
+  - {year: 1962, event: "Mariner 2 flies past Venus (JPL)", cell: north_america_science_1945_present}
+  - {year: 1962, event: "Warhol's Campbell's Soup Cans at Ferus Gallery", cell: north_america_arts_1945_present}
+  - {year: 1964, event: "Gell-Mann's quark model (Caltech)", cell: north_america_science_1945_present}
+out_refs:
+  - {year: 1934, event: "Upton Sinclair's EPIC campaign for governor", reason: "state election"}
+  - {year: 1942, event: "Bracero Program with Mexico", reason: "national treaty"}
+  - {year: 1942, event: "Executive Order on removal of Japanese Americans", reason: "presidential act"}
+  - {year: 1947, event: "HUAC hearings on the Hollywood Ten in Washington", reason: "congressional hearing outside the area"}
+  - {year: 1948, event: "Paramount antitrust decision splits studios from theatres", reason: "national court case"}
+  - {year: 1956, event: "Dalip Singh Saund elected to Congress from Riverside County", reason: "national election"}
+  - {year: 1962, event: "Nixon's 'last press conference' after losing the governor race", reason: "state election"}
+  - {year: 1962, event: "Roybal elected to Congress", reason: "national election"}
+  - {year: 1964, event: "Proposition 14 repeals the state fair housing act", reason: "state law"}

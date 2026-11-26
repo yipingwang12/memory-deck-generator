@@ -1,0 +1,648 @@
+# City: Los Angeles x 1781 to 1849 (the pueblo, the Plaza church, San Fernando, the ranchos, Mexican independence and
+# secularisation, the capital years, the 1846-1847 battles, the gold rush years). DRAFT 2026-11-26.
+# Area: Los Angeles County (with Catalina and San Clemente), Orange County and the Inland Empire (Riverside and
+# San Bernardino counties). Ventura, Santa Barbara and San Diego counties are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Acts for all Alta California while
+# Los Angeles was its seat, and Mexican or US national acts -> out_refs. World-grid events -> world_refs.
+# The 1850 incorporation and county belong to the next era.
+# Dates: memory pass + web check (45 searches max; no unauthorised book copies).
+# Main sources: wikipedia.org (Timeline of Los Angeles; History of Los Angeles; List of ranchos of California; mission,
+# battle, adobe and person articles), Los Angeles Almanac chronology (laalmanac.com hi01a/b/c), Homestead Museum blog,
+# NPS (Old Spanish Trail, Island of the Blue Dolphins), California OHP landmark pages, PBS SoCal Lost LA.
+# A building -> its opening or completion; a rancho -> its grant year; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1781, peg: foot, confidence: high, source: "WP: Los Angeles Plaza (26 August)",
+     event: "Governor Neve's instruction lays out the pueblo's plaza, house lots and public buildings",
+     place: "the first plaza by the Los Angeles River",
+     scene: "Governor Neve's giant FOOT paces out the corners of the first plaza and stamps a lot for each settler family."}
+  - {year: 1786, peg: fish, confidence: high, source: "LA Almanac hi01a; WP: Pueblo de Los Angeles",
+     event: "José Vanegas, an Indigenous settler, becomes alcalde of the pueblo",
+     scene: "The settlers hand José Vanegas a silver FISH as his staff of office, and he rules the pueblo as its first alcalde."}
+  - {year: 1787, peg: fox, confidence: medium, source: "WP: History of Los Angeles",
+     event: "Governor Fages issues his instructions for the pueblo's corporal and guard",
+     scene: "A FOX in a corporal's coat takes Governor Fages's written orders and starts to guard the pueblo gate."}
+  - {year: 1810, peg: dice, confidence: low, source: "LA Almanac hi01b only",
+     event: "An Indian revolt breaks out at Mission San Gabriel",
+     scene: "Mission Indians throw DICE at the padres' door at San Gabriel and rise against the mission soldiers."}
+  - {year: 1812, peg: tongue, confidence: medium, source: "LA Almanac hi01b; WP: Los Angeles City Council",
+     event: "The pueblo elects its first ayuntamiento, a town council",
+     scene: "A huge TONGUE calls out each settler's vote, and the pueblo elects its first ayuntamiento council."}
+  - {year: 1812, peg: tongue, confidence: medium, source: "WP: History of San Bernardino",
+     event: "Serrano warriors attack and destroy the Politana mission station in the San Bernardino Valley",
+     place: "Politana, San Bernardino Valley",
+     scene: "A Serrano war TONGUE of flame licks across the Politana chapel and burns the mission station to the ground."}
+  - {year: 1815, peg: doll, confidence: high, source: "NPS: Boris Tarasov (17 September); LA Almanac",
+     event: "Spanish soldiers seize Russian otter hunters at San Pedro and jail them in the pueblo",
+     place: "San Pedro Bay",
+     scene: "A Russian nesting DOLL splits open on the San Pedro beach and spills Aleut hunters straight into the pueblo jail."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP: Mission San Juan Capistrano (14 December)",
+     event: "Bouchard's privateers raid San Juan Capistrano and burn houses",
+     place: "Mission San Juan Capistrano",
+     scene: "Bouchard's privateers tear the wings off a white DOVE of peace and set fire to the houses of San Juan Capistrano."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP: Battle of Cahuenga Pass (5 December)",
+     event: "Battle of Cahuenga Pass: rebels wound Governor Victoria and force him out",
+     place: "Cahuenga Pass",
+     scene: "A giant MOTH blinds Governor Victoria's lancers in Cahuenga Pass, and the rebels' lance wounds him out of office."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP: Timeline of Los Angeles (23 May); LA Almanac",
+     event: "The Mexican Congress raises the pueblo to the rank of ciudad",
+     scene: "The Mexican Congress feeds the little pueblo into a MILL, and a stamped ciudad, a city, rolls out the other side."}
+  - {year: 1835, peg: mill, confidence: high, source: "en.WP: History of Los Angeles (Mexican Congress decree of 23 May 1835)",
+     event: "The Mexican Congress names Los Angeles the capital of Alta California",
+     place: "the Plaza, Los Angeles",
+     scene: "A courier from Mexico City rides into the Plaza on a MILL wagon and nails the capital decree to the church door."}
+  - {year: 1841, peg: radio, confidence: low, source: "Trembling on the Brink blog (LA jails) only",
+     event: "A cuartel jail is built on the hill above the Plaza",
+     place: "the hill above the Plaza",
+     scene: "A tall RADIO mast rises on the hill above the Plaza and becomes the bars of the new cuartel jail."}
+  - {year: 1842, peg: rhino, confidence: medium, source: "WP: Manuel Micheltorena; Homestead Museum (August)",
+     event: "Governor Micheltorena's convict soldiers camp in the pueblo for a month",
+     scene: "Micheltorena's convict soldiers ride a RHINO through the pueblo's yards and trample every hen house flat."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: Battle of Providencia (19-20 February)",
+     event: "Battle of Providencia: Californio rebels defeat Governor Micheltorena near Cahuenga Pass",
+     place: "Rancho Providencia, San Fernando Valley",
+     scene: "Castro and Alvarado lay a RAILWAY across Rancho Providencia and roll Governor Micheltorena's army out of California."}
+  - {year: 1845, peg: railway, confidence: high, source: "en.WP: Pío Pico (governor 1845–1846, capital at Los Angeles)",
+     event: "Governor Pío Pico makes Los Angeles the seat of Alta California's government",
+     place: "Los Angeles Plaza",
+     scene: "Pío Pico lays a RAILWAY track from Monterey to the Los Angeles Plaza and carries the governor's desk down it."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Siege of Los Angeles; LA Almanac (13 August)",
+     event: "Commodore Stockton and Frémont march in and occupy the pueblo",
+     place: "the Plaza",
+     scene: "A giant ROACH marches ahead of Stockton and Frémont into the Plaza and hoists the first American flag over the pueblo."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Siege of Los Angeles (22-30 September)",
+     event: "Siege of Los Angeles: Flores' Californios force Gillespie's garrison to surrender and leave",
+     place: "Fort Hill",
+     scene: "Flores' Californios shut Gillespie's garrison on Fort Hill like a ROACH in a dry jar until thirst makes it give up."}
+  - {year: 1846, peg: roach, confidence: medium, source: "WP: Juan Flaco; LA History: Guinn (dates vary)",
+     event: "Juan Flaco Brown rides north for days to carry Gillespie's call for help",
+     scene: "A ROACH hides Gillespie's tiny message in Juan Flaco's hair and spurs his horse north from the trapped pueblo."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Battle of Chino (26-27 September)",
+     event: "Battle of Chino: Californios burn the ranch house roof and capture Wilson's Americans",
+     place: "Rancho Santa Ana del Chino adobe",
+     scene: "A burning ROACH drops from the blazing roof of the Chino ranch house, and Wilson's riflemen surrender to Varela."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Battle of Dominguez Rancho (8-9 October)",
+     event: "Battle of Dominguez Rancho: the Old Woman's Gun drives Mervine's sailors back to their ships",
+     place: "Rancho San Pedro, near Compton",
+     scene: "The Old Woman's Gun fires a giant ROACH into Mervine's marching sailors and chases them back to San Pedro Bay."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle of Rio San Gabriel (8 January)",
+     event: "Battle of Río San Gabriel: Kearny and Stockton force the river crossing",
+     place: "San Gabriel River ford near Pico Rivera",
+     scene: "Stockton's sailors drag their cannon over a ROCK in the San Gabriel River ford and blast Flores' lancers off the bluff."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle of Rio San Gabriel; Timeline of LA",
+     event: "Battle of La Mesa: the Americans beat Flores' last charge by the Los Angeles River",
+     place: "La Mesa, near Vernon",
+     scene: "Flores' last lancer charge smashes against a ROCK of American squares on the mesa near Vernon and breaks."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Battle of Rio San Gabriel (10 January)",
+     event: "American forces reoccupy the pueblo and Gillespie raises the flag again",
+     place: "the Plaza",
+     scene: "Gillespie climbs a ROCK above the Plaza and raises again the flag that the siege had made him haul down."}
+  - {year: 1847, peg: rock, confidence: high, source: "El Pueblo HM: Avila Adobe (10-19 January)",
+     event: "Stockton takes the Ávila Adobe as his headquarters",
+     place: "Ávila Adobe, Olvera Street",
+     scene: "Stockton's officers roll a ROCK through the door of the Ávila Adobe and set up headquarters in its parlour."}
+  - {year: 1847, peg: rock, confidence: medium, source: "militarymuseum.org: Fort Moore (17 or 23 March)",
+     event: "The Mormon Battalion ends its march across the continent in Los Angeles",
+     scene: "Mormon Battalion soldiers roll a ROCK all the way from Iowa and drop it in the Los Angeles Plaza at the end of their march."}
+  - {year: 1847, peg: rock, confidence: high, source: "WP: Fort Moore Pioneer Memorial (4 July)",
+     event: "Fort Moore is dedicated on the hill with the town's first Fourth of July flag raising",
+     place: "Fort Hill",
+     scene: "Mormon soldiers sink Fort Moore's flagpole into a ROCK on the hill and raise the flag on the first Fourth of July."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Stephen Clark Foster (1 January); LA Almanac",
+     event: "Governor Mason makes Stephen Foster alcalde in place of the old ayuntamiento",
+     scene: "Governor Mason's REEF wrecks the old ayuntamiento's boat, and young Stephen Foster wades ashore as alcalde."}
+  - {year: 1849, peg: rope, confidence: medium, source: "LA Almanac hi01c",
+     event: "John Temple becomes the first American elected to the town council",
+     scene: "John Temple climbs a ROPE into the council chamber, the first American whom the town votes onto its council."}
+  - {year: 1849, peg: rope, confidence: medium, source: "LA Almanac hi01c",
+     event: "Military Governor Riley names Agustín Olvera a judge in Los Angeles",
+     scene: "Governor Riley ties a judge's ROPE belt around Agustín Olvera's robe and seats him on the Los Angeles bench."}
+  # science
+  - {year: 1781, peg: foot, confidence: medium, source: "WP: Zanja Madre (built at the founding)",
+     event: "The settlers dig the Zanja Madre to bring river water to the pueblo fields",
+     place: "the Zanja Madre",
+     scene: "Settlers drag a giant FOOT through the mud and cut the Zanja Madre ditch from the river to their fields."}
+  - {year: 1786, peg: fish, confidence: medium, source: "LA Almanac hi01a",
+     event: "José Argüello draws the earliest known map of Los Angeles",
+     scene: "José Argüello draws the pueblo's streets and fields on the skin of a FISH, the earliest known map of Los Angeles."}
+  - {year: 1795, peg: bell, confidence: medium, source: "WP: History of Los Angeles",
+     event: "Sergeant Pablo Cota leads an expedition into the San Fernando Valley",
+     place: "San Fernando Valley",
+     scene: "Sergeant Pablo Cota rings a BELL at each spring as his men explore the San Fernando Valley for a mission site."}
+  - {year: 1810, peg: dice, confidence: low, source: "LA Almanac hi01b only",
+     event: "San Fernando padres dam the Los Angeles River and a court rules for the pueblo's water",
+     place: "upper Los Angeles River",
+     scene: "The court throws DICE against the San Fernando padres' dam, and the river water flows back to the pueblo."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP: Mission San Gabriel Arcángel",
+     event: "Mission San Gabriel builds its water-driven grist mill, El Molino Viejo",
+     place: "El Molino Viejo, San Marino",
+     scene: "Creek water spins a stone DISH at San Gabriel's new grist mill and grinds the mission's wheat into flour."}
+  - {year: 1820, peg: nose, confidence: medium, source: "WP: History of Los Angeles",
+     event: "El Camino Viejo opens an inland road from Los Angeles to the San Francisco Bay",
+     scene: "A long NOSE sniffs a trail north up the San Joaquin Valley and becomes El Camino Viejo to the Bay."}
+  - {year: 1823, peg: gnome, confidence: medium, source: "Bradshaw Trail WP; HMDB Whitewater (1823-25)",
+     event: "Romero's expedition seeks a road to Sonora through San Gorgonio Pass",
+     place: "San Gorgonio Pass",
+     scene: "A GNOME guides Captain Romero's riders through San Gorgonio Pass to the Cahuilla village at Whitewater."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP: Timeline of LA (27 November); LA Almanac",
+     event: "Jedediah Smith's trappers reach Mission San Gabriel, the first Americans to come overland",
+     place: "Mission San Gabriel",
+     scene: "Jedediah Smith's starving trappers stagger out of the desert and eat every NACHO at Mission San Gabriel."}
+  - {year: 1830, peg: mouse, confidence: high, source: "NPS: Antonio Armijo (30 or 31 January)",
+     event: "Armijo's mule caravan from New Mexico reaches San Gabriel and opens the Old Spanish Trail",
+     place: "Mission San Gabriel",
+     scene: "A MOUSE rides on the lead mule of Armijo's caravan from Abiquiú and opens the Old Spanish Trail to San Gabriel."}
+  - {year: 1845, peg: railway, confidence: medium, source: "WP: Benjamin Davis Wilson; bigbear.com",
+     event: "Benjamin Wilson's posse hunts bears and names Big Bear Lake",
+     place: "Big Bear Valley",
+     scene: "Wilson's riders lasso eleven bears that pull a RAILWAY car into the mountain valley that he names Big Bear Lake."}
+  - {year: 1849, peg: rope, confidence: high, source: "Huntington: Ord plan (29 August); WP Timeline",
+     event: "Lieutenant Ord surveys the city and maps its streets and lots",
+     scene: "Lieutenant Ord stretches a surveyor's ROPE from the Plaza south and marks out the new streets and lots for sale."}
+  - {year: 1849, peg: rope, confidence: low, source: "LA Almanac hi01c only",
+     event: "The town sets up its first water department for the zanjas",
+     scene: "The new water department pulls a ROPE to open the sluice gate of the zanja for each farmer in turn."}
+  # religion
+  - {year: 1784, peg: fairy, confidence: high, source: "WP: La Iglesia ... Reina de los Ángeles",
+     event: "The Asistencia, a chapel of Mission San Gabriel, is built on the first plaza",
+     place: "the first plaza",
+     scene: "A FAIRY carries the mission bell from San Gabriel and sets up a small chapel on the pueblo's first plaza."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP: Mission San Juan Capistrano (2 February)",
+     event: "Building starts on the Great Stone Church of San Juan Capistrano",
+     place: "Mission San Juan Capistrano",
+     scene: "A PIG drags the first great stone into place at San Juan Capistrano, and the stone church begins."}
+  - {year: 1805, peg: seal, confidence: high, source: "WP: Mission San Gabriel Arcángel",
+     event: "The stone church of Mission San Gabriel is completed",
+     place: "Mission San Gabriel",
+     scene: "A SEAL balances the last stone of the buttressed church on its nose, and Mission San Gabriel's church is complete."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP: Mission San Juan Capistrano (7 September)",
+     event: "The Great Stone Church of San Juan Capistrano is completed and blessed",
+     place: "Mission San Juan Capistrano",
+     scene: "The padres bless the domes of the Great Stone Church with a plate of SUSHI at San Juan Capistrano."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP: Mission San Fernando (6 December)",
+     event: "Mission San Fernando blesses its new church",
+     place: "Mission San Fernando",
+     scene: "Father Muñoz sprinkles holy water over a SUSHI roll on the altar and blesses San Fernando's new church."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP: Mission San Fernando",
+     event: "Mission San Fernando starts to build its long convento",
+     place: "Mission San Fernando",
+     scene: "Builders stack giant DICE in a long row at San Fernando and begin the mission's great convento."}
+  - {year: 1810, peg: dice, confidence: disputed, source: "WP: History of San Bernardino (20 May; one account)",
+     event: "Father Dumetz names the San Bernardino Valley on the saint's day (traditional date)",
+     place: "San Bernardino Valley",
+     scene: "Father Dumetz rolls DICE onto a field altar on Saint Bernardine's day and names the valley San Bernardino."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP: Mission San Gabriel Arcángel (8 December)",
+     event: "Earthquake throws down the bell tower of Mission San Gabriel; a bell wall replaces it",
+     place: "Mission San Gabriel",
+     scene: "The quake shakes a bronze bell's TONGUE loose, and San Gabriel's bell tower crashes into the courtyard."}
+  - {year: 1814, peg: tower, confidence: high, source: "WP: La Iglesia ... Reina de los Ángeles (18 August)",
+     event: "Father Gil y Taboada lays the cornerstone of the Plaza Church",
+     place: "the Plaza Church",
+     scene: "Father Gil y Taboada lays the cornerstone, and a bell TOWER grows from it for the pueblo's own church."}
+  - {year: 1819, peg: tuba, confidence: medium, source: "WP: History of San Bernardino; SB Sun 1960",
+     event: "Mission San Gabriel sets up the San Bernardino estancia at the Guachama rancheria",
+     place: "Guachama, San Bernardino Valley",
+     scene: "A TUBA blares across the Guachama rancheria, and San Gabriel's cattle crowd into the new San Bernardino estancia."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP: La Iglesia ... Reina de los Ángeles (8 December)",
+     event: "The Plaza Church is completed and dedicated",
+     place: "the Plaza Church",
+     scene: "A NUN rings the new bells as the padres dedicate the finished Plaza Church on the feast of the Immaculate Conception."}
+  - {year: 1826, peg: nacho, confidence: low, source: "LA Almanac hi01b only",
+     event: "The pueblo gets its first permanently assigned priest",
+     scene: "The pueblo welcomes its first resident priest with a NACHO feast at the Plaza Church door."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "WP: History of San Bernardino (1829); usmissiontrail",
+     event: "Adobe buildings of the San Bernardino Asistencia go up as an outpost of San Gabriel (approximate)",
+     place: "San Bernardino Asistencia, Redlands",
+     scene: "A MOUSE pats adobe bricks into walls and builds the San Bernardino Asistencia for Mission San Gabriel."}
+  - {year: 1833, peg: mummy, confidence: medium, source: "WP: Mission San Juan Capistrano",
+     event: "Mission San Juan Capistrano is secularized",
+     place: "Mission San Juan Capistrano",
+     scene: "A MUMMY unwinds the Franciscan cord from San Juan Capistrano and hands its keys to a civil administrator."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: Mission San Fernando (October)",
+     event: "Mission San Fernando is secularized and Antonio del Valle takes charge of its estates",
+     place: "Mission San Fernando",
+     scene: "Antonio del Valle bangs a HAMMER on the convento door and takes San Fernando's estates from the padres."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: Mission San Gabriel; waymarking marker",
+     event: "Mission San Gabriel is handed to a civil administrator",
+     place: "Mission San Gabriel",
+     scene: "A civil administrator nails the secularization order to San Gabriel's church door with a HAMMER."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: Mission San Juan Capistrano",
+     event: "Governor Pico sells the San Juan Capistrano mission to John Forster and James McKinley",
+     place: "Mission San Juan Capistrano",
+     scene: "John Forster buys the whole San Juan Capistrano mission for the price of a toy RAILWAY at Pico's auction."}
+  - {year: 1846, peg: roach, confidence: medium, source: "Homestead Museum; Berkeley record (April or June)",
+     event: "Governor Pico sells the lands of Mission San Gabriel to Hugo Reid and William Workman",
+     place: "Mission San Gabriel",
+     scene: "A ROACH carries the deed to San Gabriel's mission lands from Governor Pico to Hugo Reid and William Workman."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: List of ranchos; WP: Mission San Fernando",
+     event: "Governor Pico sells Mission San Fernando's lands to Eulogio de Celis",
+     place: "Mission San Fernando",
+     scene: "Eulogio de Celis pays Pico, and a ROACH runs across the whole San Fernando Valley that he now owns."}
+  # arts
+  - {year: 1795, peg: bell, confidence: medium, source: "LA Almanac hi01a; WP Timeline (done by 1810)",
+     event: "Building starts on the Casa de Rancho San Antonio, later the Gage Mansion",
+     place: "Bell Gardens",
+     scene: "Antonio Lugo's builders ring a BELL and lay the first adobes of the Casa de Rancho San Antonio in Bell Gardens."}
+  - {year: 1818, peg: dove, confidence: high, source: "California OHP No. 145; WP: Avila Adobe",
+     event: "Francisco Ávila builds the Ávila Adobe, the oldest house that still stands in the city",
+     place: "Ávila Adobe, Olvera Street",
+     scene: "A DOVE nests on the tarred roof of Francisco Ávila's new adobe, the oldest house left in Los Angeles."}
+  - {year: 1821, peg: ant, confidence: medium, source: "WP: Los Angeles Plaza (21 June petition)",
+     event: "José Antonio Carrillo gets a lot on the new Plaza and builds the Carrillo House",
+     place: "the Plaza, Pico House site",
+     scene: "An ANT colony carries adobe bricks to José Antonio Carrillo's lot and raises his house on the new Plaza."}
+  - {year: 1826, peg: nacho, confidence: high, source: "California OHP No. 152; Dominguez Rancho Museum",
+     event: "Manuel Domínguez builds the Dominguez Rancho Adobe",
+     place: "Rancho San Pedro, Rancho Dominguez",
+     scene: "Manuel Domínguez builds the thick walls of his ranch house from giant NACHO chips baked like adobe bricks."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: Centinela Adobe",
+     event: "Ygnacio Machado builds the Centinela Adobe",
+     place: "Centinela Valley, Westchester",
+     scene: "Ygnacio Machado's HAMMER pegs the roof beams of the Centinela Adobe above the Centinela springs."}
+  - {year: 1834, peg: hammer, confidence: medium, source: "WP: Timeline of Los Angeles",
+     event: "Former mission Indians build the adobe later owned by Andrés and Rómulo Pico",
+     place: "Mission Hills",
+     scene: "Former mission Indians swing a HAMMER of stone to shape the beams of the adobe that the Picos later own."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP: La Casa Primera de Rancho San Jose; NPS",
+     event: "Ygnacio Palomares builds La Casa Primera on Rancho San José",
+     place: "Pomona",
+     scene: "Ygnacio Palomares lifts a MUG of chocolate in the doorway of La Casa Primera, the first house of Rancho San José."}
+  - {year: 1839, peg: map, confidence: high, source: "WP: Hugo Reid Adobe",
+     event: "Hugo Reid builds his adobe at Santa Anita",
+     place: "Arcadia",
+     scene: "Hugo Reid spreads a MAP of the Santa Anita springs on the floor and builds his adobe exactly on its mark."}
+  - {year: 1839, peg: map, confidence: medium, source: "LA Almanac hi01b",
+     event: "The first house with two storeys rises on the Plaza",
+     place: "the Plaza",
+     scene: "A MAP of the Plaza folds up into two floors and becomes the first two-storey house in the pueblo."}
+  - {year: 1840, peg: horse, confidence: medium, source: "WP: Los Angeles Plaza (map table)",
+     event: "The Coronel Adobe is built on the Plaza",
+     place: "the Plaza",
+     scene: "A HORSE treads mud and straw into adobe bricks for the Coronel family's house on the Plaza."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Workman and Temple Homestead Museum",
+     event: "William Workman builds his adobe house on Rancho La Puente",
+     place: "Workman House, City of Industry",
+     scene: "A RHINO stamps flat the ground at La Puente, and William Workman raises his adobe house on it."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Los Cerritos Ranch House; rancholoscerritos.org",
+     event: "John Temple builds the two-storey Los Cerritos ranch house",
+     place: "Rancho Los Cerritos, Long Beach",
+     scene: "A WARRIOR stands on the balcony of John Temple's new two-storey ranch house at Los Cerritos and guards the herds."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Leonis Adobe; leonisadobemuseum.org",
+     event: "The first rooms of the Leonis Adobe are built",
+     place: "Calabasas",
+     scene: "A WARRIOR digs clay from the Calabasas creek bed and builds the first four rooms of the Leonis Adobe."}
+  # economy
+  - {year: 1783, peg: foam, confidence: medium, source: "WP: Mission San Juan Capistrano",
+     event: "San Juan Capistrano makes the first wine in Alta California",
+     place: "Mission San Juan Capistrano",
+     scene: "Purple FOAM bubbles over the vats at San Juan Capistrano as the mission presses Alta California's first wine."}
+  - {year: 1804, peg: sewer, confidence: medium, source: "LA Almanac hi01b; LA History Archive timeline",
+     event: "Mission San Gabriel plants the first orange grove in California",
+     place: "Mission San Gabriel",
+     scene: "Orange seedlings sprout from a SEWER grate in San Gabriel's garden and grow into California's first orange grove."}
+  - {year: 1805, peg: seal, confidence: high, source: "Strudwick 2014 (WNAN Monographs); LA Almanac",
+     event: "Shaler beaches the Lelia Byrd on Catalina for repairs and names Port Roussillon",
+     place: "Isthmus Cove, Santa Catalina Island",
+     scene: "A SEAL pushes Shaler's leaking Lelia Byrd onto the Catalina beach, and the first American ship visit begins."}
+  - {year: 1823, peg: gnome, confidence: medium, source: "WP: Casa de San Pedro; California OHP No. 920",
+     event: "McCulloch and Hartnell build a hide house at San Pedro for the mission hide trade",
+     place: "San Pedro Bay",
+     scene: "A GNOME stacks cow hides from San Gabriel to the roof of the new adobe hide house above San Pedro Bay."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP: History of Los Angeles; LA Almanac",
+     event: "John Temple and John Rice open the pueblo's first general store",
+     scene: "John Temple writes the first price list in INK and opens the pueblo's first general store with John Rice."}
+  - {year: 1830, peg: mouse, confidence: low, source: "accessgenealogy: History of San Gabriel Mission",
+     event: "San Bernardino Valley herders kill thousands of cattle for San Gabriel's hide and tallow trade",
+     place: "San Bernardino Valley",
+     scene: "A MOUSE carries tallow candles from the San Bernardino slaughter grounds to San Gabriel's trading store."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP: Jean-Louis Vignes",
+     event: "Jean-Louis Vignes buys land by the river and plants the El Aliso vineyard",
+     place: "El Aliso, Aliso Street",
+     scene: "A MOTH lands on the white alder at Vignes's gate, and the El Aliso vineyard spreads out beneath it."}
+  - {year: 1831, peg: moth, confidence: medium, source: "WP: Abel Stearns",
+     event: "Abel Stearns builds a three-storey flour mill on Spring Street",
+     place: "North Spring Street",
+     scene: "A MOTH flies out of the flour dust of Abel Stearns's new three-storey mill on Spring Street."}
+  - {year: 1834, peg: hammer, confidence: medium, source: "WP: Casa de San Pedro; California OHP No. 920",
+     event: "Abel Stearns buys the San Pedro hide house and makes it his landing warehouse",
+     place: "San Pedro Bay",
+     scene: "Abel Stearns bangs the auctioneer's HAMMER, buys the old San Pedro hide house from San Gabriel and makes it his warehouse."}
+  - {year: 1834, peg: hammer, confidence: medium, source: "WP: Jean-Louis Vignes",
+     event: "Vignes plants the first orange trees in the pueblo, brought from San Gabriel",
+     place: "El Aliso",
+     scene: "Vignes digs holes with a HAMMER claw and plants San Gabriel orange trees, the first in the pueblo."}
+  - {year: 1834, peg: hammer, confidence: low, source: "LA Almanac hi01b only",
+     event: "Mission San Gabriel slaughters a great part of its cattle for hides and tallow",
+     place: "Mission San Gabriel",
+     scene: "Vaqueros swing a slaughter HAMMER over San Gabriel's herds and ship the hides away before secularization."}
+  - {year: 1835, peg: mill, confidence: high, source: "California OHP No. 189; WP: Pueblo de Los Angeles",
+     event: "Richard Henry Dana loads hides at San Pedro and throws them down the Capistrano cliff",
+     place: "Dana Point",
+     scene: "Richard Henry Dana throws cow hides off the Capistrano cliff as if a MILL's sails fling them down to the Pilgrim."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP: Jean-Louis Vignes; WP: History of LA",
+     event: "Vignes makes the first recorded shipment of California wine",
+     place: "San Pedro",
+     scene: "A HORSE hauls Vignes's wine barrels to San Pedro and onto the Monsoon, the first wine that California ships."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: William Wolfskill; LA Almanac",
+     event: "William Wolfskill plants the first commercial orange grove in California",
+     place: "near Alameda Street",
+     scene: "William Wolfskill's RADIO plays to his young orange trees, the first grove grown in California to sell its fruit."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Placerita Canyon State Park; LA Almanac",
+     event: "Francisco López finds gold on wild onion roots in Placerita Canyon",
+     place: "Oak of the Golden Dream, Placerita Canyon",
+     scene: "A RHINO roots up wild onions under the oak in Placerita Canyon, and Francisco López sees gold on the roots."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Abel Stearns",
+     event: "Abel Stearns sends the first California gold to the United States Mint",
+     scene: "Abel Stearns loads a sack of Placerita gold on a RHINO that carries it all the way to the Mint in Philadelphia."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Abel Stearns",
+     event: "Abel Stearns buys Rancho Los Alamitos",
+     place: "Rancho Los Alamitos, Long Beach",
+     scene: "Abel Stearns rides a RHINO across Rancho Los Alamitos and buys every hill of it on the spot."}
+  - {year: 1849, peg: rope, confidence: medium, source: "MCHS: California cattle boom; WP: History of LA",
+     event: "Gold-rush demand for beef starts a cattle boom on the Los Angeles ranchos",
+     scene: "Vaqueros tie the ranchos' cattle on one long ROPE and lead them north to sell beef at gold-rush prices."}
+  # society
+  - {year: 1781, peg: foot, confidence: high, source: "WP: History of Los Angeles (18 July)",
+     event: "The settler families reach Mission San Gabriel, and those with smallpox go into quarantine",
+     place: "Mission San Gabriel",
+     scene: "Smallpox blisters on a settler's FOOT force the soldiers to quarantine her party outside Mission San Gabriel."}
+  - {year: 1784, peg: fairy, confidence: medium, source: "WP: History of Los Angeles",
+     event: "The first recorded marriages take place in the pueblo",
+     scene: "A FAIRY ties the bridal lasso around the pueblo's first couples to marry in the record books."}
+  - {year: 1790, peg: bees, confidence: medium, source: "LA Almanac hi01a",
+     event: "A census counts the people of the pueblo and finds it still a small village",
+     scene: "A swarm of BEES buzzes from door to door and counts every settler in the census of the little pueblo."}
+  - {year: 1800, peg: sauce, confidence: medium, source: "WP: History of Los Angeles",
+     event: "About thirty flat-roofed adobes stand around the plaza",
+     place: "the first plaza",
+     scene: "Settlers pour tar SAUCE onto thirty flat adobe roofs around the plaza."}
+  - {year: 1800, peg: sauce, confidence: high, source: "WP: Mission San Juan Capistrano (22 November)",
+     event: "Tremors from a San Diego earthquake crack the walls of the Capistrano stone church",
+     place: "Mission San Juan Capistrano",
+     scene: "The earthquake spills red SAUCE down long cracks in the half-built stone church of San Juan Capistrano."}
+  - {year: 1801, peg: soda, confidence: medium, source: "eScholarship: Tongva and Chumash pandemic of 1801",
+     event: "A pandemic sweeps the Tongva at the missions",
+     place: "Mission San Gabriel",
+     scene: "A bottle of fizzing SODA turns to blood in the mouths of Tongva neophytes as the pandemic sweeps San Gabriel."}
+  - {year: 1811, peg: tattoo, confidence: medium, source: "LA Almanac hi01b",
+     event: "Severe floods hit the pueblo",
+     scene: "The flood waters leave a muddy TATTOO of tide lines on every adobe wall in the pueblo."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP: Mission San Juan Capistrano (8 December)",
+     event: "Earthquake brings down the Great Stone Church of San Juan Capistrano and kills about forty people at mass",
+     place: "Mission San Juan Capistrano",
+     scene: "The ground sticks out a stone TONGUE at San Juan Capistrano and the domes fall on the people at mass."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP: Mission San Fernando (21 December)",
+     event: "A second earthquake cracks the church at San Fernando and new beams must hold its wall",
+     place: "Mission San Fernando",
+     scene: "Twenty beams prop up San Fernando's church wall like splints on a cracked TONGUE after the second quake."}
+  - {year: 1815, peg: doll, confidence: high, source: "WP: Los Angeles Plaza; LA Almanac",
+     event: "A great flood moves the river channel and drives the pueblo to higher ground",
+     scene: "The flood carries a child's DOLL from the old plaza, and the settlers follow it up to higher ground."}
+  - {year: 1815, peg: doll, confidence: medium, source: "LA Almanac hi01b",
+     event: "José Antonio Rocha becomes the first foreigner to settle in the pueblo",
+     scene: "José Antonio Rocha unpacks a Portuguese DOLL in his new house, the pueblo's first foreign settler."}
+  - {year: 1817, peg: dog, confidence: medium, source: "LA Almanac; Loyola HS archives timeline",
+     event: "Máximo Piña opens the pueblo's first school in his home",
+     scene: "A DOG sits at a bench in Máximo Piña's house and learns its letters in the pueblo's first school."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP: Joseph John Chapman; LA Almanac",
+     event: "Joseph Chapman, a captured privateer sailor, settles in the pueblo, its first American",
+     scene: "A DOVE lands on Joseph Chapman's shoulder and turns the captured privateer into the pueblo's first American settler."}
+  - {year: 1820, peg: nose, confidence: medium, source: "WP: Timeline of Los Angeles",
+     event: "The pueblo has about six hundred and fifty people",
+     scene: "A giant NOSE sniffs six hundred and fifty breakfasts cooking in the adobes around the Plaza."}
+  - {year: 1825, peg: nail, confidence: medium, source: "LA Almanac hi01b; WP: Yaanga (spring flood)",
+     event: "A spring flood turns the river back to its outlet at San Pedro",
+     scene: "A giant NAIL pins the river's mouth back at San Pedro after the spring flood pulls it from Ballona."}
+  - {year: 1828, peg: knife, confidence: medium, source: "LA Almanac hi01b; WP: Yaanga",
+     event: "Juan Domingo buys land at the Tongva village of Yaanga for a vineyard and expels its people",
+     place: "Yaanga",
+     scene: "Juan Domingo cuts the vines of his new vineyard with a KNIFE and drives the Yaanga villagers from their homes."}
+  - {year: 1831, peg: moth, confidence: medium, source: "WP: William Wolfskill",
+     event: "Wolfskill and Yount's trappers reach Los Angeles from Taos across the desert",
+     scene: "Trappers from Taos follow a MOTH across the Mojave by night and ride into Los Angeles."}
+  - {year: 1832, peg: moon, confidence: medium, source: "LA Almanac hi01b",
+     event: "Heavy floods hit the pueblo",
+     scene: "A full MOON pulls the swollen river over its banks and floods the pueblo's fields."}
+  - {year: 1836, peg: match, confidence: high, source: "Homestead Museum; executedtoday (7 April)",
+     event: "The first vigilance committee seizes and shoots Gervasio Alipás and María del Rosario Villa",
+     scene: "The vigilantes strike a MATCH and fire on Alipás and Villa, the first lynching by a California vigilance committee."}
+  - {year: 1836, peg: match, confidence: high, source: "WP: Yaanga; WP: Timeline of Los Angeles",
+     event: "The town forces the Yaanga villagers to move near Commercial and Alameda streets",
+     place: "Commercial and Alameda streets",
+     scene: "Town officials burn the Yaanga huts with a MATCH and force the villagers onto flood land near Alameda Street."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: Yaanga (27 April)",
+     event: "Yaanga leaders petition the council, which orders Juan Domingo's fence removed",
+     place: "Yaanga",
+     scene: "Yaanga leaders show the council a MOVIE of Juan Domingo's fence, and the council orders it torn down."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: Mission San Juan Capistrano (29 July)",
+     event: "San Juan Capistrano becomes a secular town, a pueblo",
+     place: "San Juan Capistrano",
+     scene: "A RADIO announces that San Juan Capistrano is no longer a mission but a free pueblo with its own lots."}
+  - {year: 1841, peg: radio, confidence: high, source: "Homestead Museum marker (5 November); LA Almanac",
+     event: "The Rowland-Workman party, the first wagon train of settlers from New Mexico, reaches the San Gabriel Valley",
+     place: "San Gabriel Valley",
+     scene: "The Rowland-Workman wagon train follows a RADIO beacon from New Mexico and rolls into the San Gabriel Valley."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: History of San Bernardino",
+     event: "New Mexican colonists settle at Politana on the Lugo rancho",
+     place: "Politana, San Bernardino Valley",
+     scene: "New Mexican colonists ride a RHINO into the Lugo rancho and build their huts at Politana."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "PBS SoCal: Border Medicine",
+     event: "With no doctor in a smallpox epidemic, the council orders travellers to quarantine outside the pueblo",
+     scene: "A WARRIOR blocks the pueblo road with his lance and sends every traveller to quarantine in the smallpox year."}
+  - {year: 1844, peg: warrior, confidence: medium, source: "PBS SoCal: Lost Cemeteries; Big Orange Landmarks",
+     event: "The Plaza Church burial ground closes and a new Catholic cemetery opens on Buena Vista Street",
+     place: "Old Calvary Cemetery, North Broadway",
+     scene: "A WARRIOR carries the dead from the full Plaza churchyard up the hill to the new cemetery on Buena Vista Street."}
+  - {year: 1845, peg: railway, confidence: medium, source: "WP: History of San Bernardino; WP: Agua Mansa",
+     event: "New Mexican colonists found Agua Mansa and La Placita on the Santa Ana River",
+     place: "Agua Mansa, Colton",
+     scene: "New Mexican colonists build a RAILWAY of adobe houses along both banks of the Santa Ana River at Agua Mansa."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: Yaanga; WP: Timeline of Los Angeles",
+     event: "The Yaanga villagers are moved again, across the river to Pueblito in Boyle Heights",
+     place: "Boyle Heights",
+     scene: "A RAILWAY flatcar carries the Yaanga villagers across the river and dumps them at Pueblito in Boyle Heights."}
+  - {year: 1846, peg: roach, confidence: disputed, source: "WP: Temecula massacre (Dec 1846); Pechanga (Jan 1847)",
+     event: "Temecula massacre: Lugo's Californios and Cahuilla allies kill many Luiseño",
+     place: "Temecula Valley",
+     scene: "A ROACH crawls over the unburied Luiseño dead in a Temecula canyon after the Californio and Cahuilla attack."}
+  - {year: 1847, peg: rock, confidence: medium, source: "WP: Yaanga",
+     event: "The council has Pueblito razed and its Tongva people scatter",
+     place: "Pueblito, Boyle Heights",
+     scene: "Council men roll a ROCK through Pueblito on a cold autumn night and flatten the last Tongva village."}
+  - {year: 1848, peg: reef, confidence: medium, source: "WP: History of LA; PBS SoCal: Sonoratown",
+     event: "Sonoran miners on the way to the gold fields start to settle north of the Plaza: Sonoratown",
+     place: "north of the Plaza",
+     scene: "Sonoran miners build a REEF of shacks behind the old adobes north of the Plaza, and Sonoratown is born."}
+  # society: ranchos (grant year)
+  - {year: 1784, peg: fairy, confidence: high, source: "WP: List of ranchos; LA Almanac",
+     event: "Rancho San Pedro is granted to Juan José Domínguez",
+     place: "Rancho San Pedro, South Bay",
+     scene: "A FAIRY taps Juan José Domínguez with her wand and the whole South Bay becomes his Rancho San Pedro."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP: List of ranchos; LA Almanac",
+     event: "Rancho Los Nietos is granted to Manuel Nieto",
+     place: "Los Nietos, Long Beach to Whittier",
+     scene: "Manuel Nieto rides a FAIRY's coach from the San Gabriel River to the sea, all of it his Rancho Los Nietos."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP: List of ranchos; LA Almanac",
+     event: "Rancho San Rafael is granted to José María Verdugo",
+     place: "Glendale",
+     scene: "A FAIRY lands on José María Verdugo's saddle and grants him the Arroyo Seco hills of Rancho San Rafael."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Los Feliz is granted to José Vicente Feliz",
+     place: "Los Feliz and Griffith Park",
+     scene: "José Vicente Feliz rings a cow BELL over the hills of Los Feliz and claims them as his rancho."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Las Vírgenes is granted to Miguel Ortega",
+     place: "Agoura Hills",
+     scene: "The SUN rises over the Las Vírgenes hills and shines a grant onto Miguel Ortega's cattle."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Topanga Malibu Sequit is granted to José Bartolomé Tapia",
+     place: "Malibu",
+     scene: "José Tapia's cattle climb out of a SEWER onto the Malibu beach, and the Topanga Malibu Sequit coast is his."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Los Palos Verdes is granted to José Dolores Sepúlveda",
+     place: "Palos Verdes Peninsula",
+     scene: "José Dolores Sepúlveda washes the Palos Verdes peninsula with SOAP and keeps it as his rancho."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho San Antonio is granted to Antonio María Lugo",
+     place: "Bell Gardens to Vernon",
+     scene: "Antonio María Lugo throws DICE across the plain south of the pueblo and wins Rancho San Antonio."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Santiago de Santa Ana, the first Orange County rancho, is granted to Yorba and Peralta",
+     place: "Santa Ana River",
+     scene: "José Antonio Yorba rolls DICE along the Santa Ana River and wins the first rancho in Orange County."}
+  - {year: 1819, peg: tuba, confidence: high, source: "WP: List of ranchos",
+     event: "Leandro Serrano gets the Temescal rancho, the first settlement in Riverside County",
+     place: "Temescal Valley, Corona",
+     scene: "Leandro Serrano blows a TUBA in Temescal Canyon and calls his herds onto the first rancho of Riverside County."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP: List of ranchos; WP Timeline",
+     event: "Rancho Rincón de los Bueyes is granted",
+     place: "Culver City and Mid-City",
+     scene: "An ANT drives a team of oxen into the corner of the plain that becomes Rancho Rincón de los Bueyes."}
+  - {year: 1823, peg: gnome, confidence: high, source: "WP: List of ranchos; WP Timeline",
+     event: "Rancho Las Ciénegas is granted to Francisco Ávila",
+     place: "Mid-Wilshire",
+     scene: "A GNOME splashes through the marshes of Las Ciénegas and hands the swamp to Francisco Ávila."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP: List of ranchos; WP Timeline",
+     event: "Rancho La Brea is granted, with its tar pits",
+     place: "Hancock Park, La Brea tar pits",
+     scene: "Antonio Rocha cuts tar from the La Brea pits with a KNIFE to roof the pueblo, and the rancho is his."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Los Nietos is split into Los Cerritos, Los Alamitos, Los Coyotes, Las Bolsas and Santa Gertrudes",
+     place: "Long Beach to Huntington Beach",
+     scene: "A HAMMER splits Nieto's great rancho into five pieces for his heirs, from Los Cerritos to Las Bolsas."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho San Pascual, later Pasadena, is granted",
+     place: "Pasadena",
+     scene: "A HAMMER drives the boundary stakes of Rancho San Pascual into the Arroyo Seco where Pasadena will grow."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP: List of ranchos; WP: La Casa Primera",
+     event: "Rancho San José is granted to Palomares and Vejar, the start of Pomona",
+     place: "Pomona Valley",
+     scene: "Palomares and Vejar clink a MUG together to toast their grant of Rancho San José in the Pomona Valley."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho San Juan Cajón de Santa Ana, later Anaheim, is granted to Juan Pacífico Ontiveros",
+     place: "Anaheim and Fullerton",
+     scene: "Juan Pacífico Ontiveros fills a MUG from the Santa Ana River and drinks to his new rancho, later Anaheim."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Rodeo de las Aguas, later Beverly Hills, is granted to María Rita Valdez",
+     place: "Beverly Hills",
+     scene: "María Rita Valdez stars in a MOVIE where the streams of Beverly Hills meet on her new rancho."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Jurupa, later Riverside, is granted to Juan Bandini",
+     place: "Riverside",
+     scene: "Juan Bandini rides across a MOVIE screen into the Jurupa hills, and the land of Riverside is his."}
+  - {year: 1839, peg: map, confidence: high, source: "WP: List of ranchos; WP: History of LA",
+     event: "Rancho San Vicente y Santa Mónica is granted to Francisco Sepúlveda",
+     place: "Santa Monica and Brentwood",
+     scene: "Francisco Sepúlveda unrolls a MAP of the Westside from Santa Monica Bay to the hills and claims it all."}
+  - {year: 1839, peg: map, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho La Ballona is granted to the Machado and Talamantes families",
+     place: "Ballona Creek, Culver City",
+     scene: "The Machados draw a MAP in the mud of Ballona Creek and share the wetland rancho with the Talamantes family."}
+  - {year: 1839, peg: map, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Cucamonga is granted to Tiburcio Tapia",
+     place: "Rancho Cucamonga",
+     scene: "Tiburcio Tapia nails a MAP of the Cucamonga springs to his door and starts his rancho below the mountains."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Tujunga is granted to Francisco and Pedro López",
+     place: "Sunland-Tujunga",
+     scene: "The López brothers ride a HORSE up the Tujunga wash and claim the canyon as their rancho."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Santa Ana del Chino is granted to Antonio María Lugo",
+     place: "Chino",
+     scene: "Antonio María Lugo hears on the RADIO that the Chino plain is his, and herds his cattle onto it."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Azusa de Duarte is granted to Andrés Duarte",
+     place: "Duarte",
+     scene: "Andrés Duarte tunes a RADIO at the mouth of the San Gabriel canyon and claims the land that bears his name."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho La Bolsa Chica is granted to Joaquín Ruiz",
+     place: "Huntington Beach wetlands",
+     scene: "Joaquín Ruiz's RADIO floats in the Bolsa Chica wetland as he claims the little pocket of coast."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho La Puente is granted to John Rowland",
+     place: "La Puente",
+     scene: "John Rowland's RHINO crosses the little bridge over San José Creek, and Rancho La Puente is his."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: History of San Bernardino (21 June)",
+     event: "Rancho San Bernardino is granted to the Lugo family",
+     place: "San Bernardino",
+     scene: "The Lugo sons ride a RHINO across the whole San Bernardino Valley on the day it becomes their rancho."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho San Joaquín, later Irvine, is granted to José Andrés Sepúlveda",
+     place: "Irvine and Newport Bay",
+     scene: "A RHINO charges across the San Joaquín hills to Newport Bay as José Andrés Sepúlveda takes his grant."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Cahuenga is granted to José Miguel Triunfo",
+     place: "North Hollywood and Studio City",
+     scene: "A RAM butts the boundary stones of Rancho Cahuenga into the valley floor for José Miguel Triunfo."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Providencia, later Burbank, is granted to Vicente de la Ossa",
+     place: "Burbank",
+     scene: "Vicente de la Ossa's RAM leads his flock onto Rancho Providencia, the land of later Burbank."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Aguaje de la Centinela, later Inglewood, is granted to Ygnacio Machado",
+     place: "Inglewood",
+     scene: "A WARRIOR keeps sentinel at the Centinela spring as Ygnacio Machado receives the rancho of later Inglewood."}
+  - {year: 1845, peg: railway, confidence: medium, source: "WP: List of ranchos (marker says 1841)",
+     event: "Rancho Santa Anita is granted to Hugo Reid",
+     place: "Arcadia",
+     scene: "Hugo Reid lays a RAILWAY of fences around the Santa Anita springs, now his full rancho."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: List of ranchos; LA Almanac",
+     event: "Rancho Los Encinos is granted to three Indigenous men, Ramón, Francisco and Roque",
+     place: "Encino",
+     scene: "Ramón, Francisco and Roque drive a RAILWAY handcar to the oak springs of Encino, their new rancho."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: List of ranchos",
+     event: "Rancho Misión Vieja is granted to John Forster",
+     place: "Mission Viejo",
+     scene: "John Forster drives a RAILWAY spike into the hills behind Capistrano and claims Rancho Misión Vieja."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: List of ranchos; WP: Santa Catalina Island",
+     event: "Governor Pico grants Santa Catalina Island to Thomas Robbins",
+     place: "Santa Catalina Island",
+     scene: "A ROACH swims to Santa Catalina with Pico's grant in its jaws and hands the whole island to Thomas Robbins."}
+  - {year: 1846, peg: roach, confidence: high, source: "Homestead Museum (12 May)",
+     event: "Governor Pico grants San Clemente Island to Andrés Pico and William Workman",
+     place: "San Clemente Island",
+     scene: "A ROACH plants Pico's flag on San Clemente Island and gives it to Andrés Pico and William Workman."}
+  - {year: 1847, peg: rock, confidence: medium, source: "OAC finding aid; SB County history (some say 1849)",
+     event: "Louis Rubidoux buys the larger part of Rancho Jurupa",
+     place: "Rubidoux, Riverside",
+     scene: "Louis Rubidoux climbs the ROCK that will bear his name and buys the Jurupa land spread out below it."}
+world_refs:
+  - {year: 1781, event: "Pueblo of Los Angeles founded", cell: north_america_politics_1500_1800}
+  - {year: 1782, event: "Serra Chapel at San Juan Capistrano completed", cell: north_america_religion_1500_1800}
+  - {year: 1785, event: "Toypurina leads a rebellion at Mission San Gabriel", cell: north_america_politics_1500_1800}
+  - {year: 1797, event: "Mission San Fernando Rey de España founded", cell: north_america_religion_1500_1800}
+  - {year: 1847, event: "Treaty of Cahuenga ends fighting in California", cell: north_america_politics_1800_1945}
+out_refs:
+  - {year: 1822, event: "Alta California swears loyalty to the Mexican Empire; the pueblo takes the oath", reason: "national independence"}
+  - {year: 1833, event: "Mexican Congress passes the act to secularize the missions", reason: "national law"}
+  - {year: 1834, event: "Governor Figueroa's decree confiscates the missions", reason: "provincial government"}
+  - {year: 1836, event: "Carlos Antonio Carrillo claims the governorship from Los Angeles", reason: "provincial government"}
+  - {year: 1840, event: "Diocese of the Two Californias replaces Sonora for the parish", reason: "church-wide decision"}
+  - {year: 1843, event: "Commodore Jones meets Governor Micheltorena in Los Angeles over the Monterey seizure", reason: "diplomatic meeting"}
+  - {year: 1846, event: "United States declares war on Mexico", reason: "national war"}
+  - {year: 1846, event: "Stockton proclaims California a United States territory", reason: "national proclamation"}
+  - {year: 1847, event: "Frémont acts as military governor of California from Los Angeles", reason: "provincial government"}
+  - {year: 1848, event: "Treaty of Guadalupe Hidalgo cedes California to the United States", reason: "national treaty"}
+  - {year: 1849, event: "Manuel Domínguez and Abel Stearns sit for Los Angeles at the Monterey constitutional convention", reason: "state constitution"}

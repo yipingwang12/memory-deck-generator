@@ -1298,3 +1298,40 @@ Plata, Luján, Pilar, Escobar, Campana, Zárate and Colonia del Sacramento are O
 | `1984_present` | democracy, the city autonomy (1996), the embassy and AMIA bombings, 2001, Cromañón, the Metrobus, the 2018 Youth Olympics and G20, the 2022 World Cup celebrations at the Obelisk | 45 | ~220 |
 
 Expected cards are a guide, not a target.
+
+### Los Angeles (2026-11-26)
+
+Area: the metropolitan area as decided: Los Angeles County (Los Angeles with the Plaza and Olvera Street,
+Downtown, Hollywood, Watts, Boyle Heights, Venice, the San Fernando Valley, San Pedro and the port; Long Beach;
+Pasadena; Santa Monica; Burbank; Glendale; Malibu; Catalina Island; the Los Angeles River), Orange County (Anaheim,
+Santa Ana, Irvine, Mission San Juan Capistrano, Huntington Beach, Newport Beach) and the Inland Empire (Riverside
+and San Bernardino counties: Riverside, San Bernardino, Ontario, Palm Springs and the Coachella Valley, Joshua Tree,
+Big Bear). Ventura County, Santa Barbara and San Diego County are OUT. Region: north_america.
+
+- The OUT rule covers Alta California's government while the area was its seat (the Mexican congress named Los
+  Angeles the capital in 1835; Governor Pío Pico governed from Los Angeles in 1845–1847): acts for all Alta
+  California in those years. Otherwise Los Angeles was never a state or national capital: only acts for the whole
+  of California, Mexico or the United States are OUT (state and federal laws, presidential acts, national court
+  cases). Acts about the area are IN (the 1781 founding, the 1850 city and county, the Owens Valley aqueduct, the
+  Colorado River Aqueduct, the freeway plans, city charters and mayors, LA court cases).
+- Indigenous history is IN (the Tongva, Tataviam, Acjachemen, Serrano and Cahuilla villages; the missions San
+  Gabriel (1771), San Juan Capistrano (1776) and San Fernando (1797)).
+- Main stage (IN as cards): the Battle of Dominguez Rancho (1846) and the Battles of Río San Gabriel and La Mesa
+  (1847), the Treaty of Cahuenga (1847), the Chinese massacre (1871), the Los Angeles Times bombing (1910), the St.
+  Francis Dam failure (1928), the Zoot Suit Riots (1943), the Watts riots (1965), Robert F. Kennedy's
+  assassination at the Ambassador Hotel (1968), the East LA Chicano Moratorium (1970), the 1992 riots, the
+  Northridge earthquake (1994), the January 2025 wildfires, the June 2025 immigration-raid protests and the troop
+  deployment in the city.
+- International congresses, summits, games and fairs held in the area are IN as city events (the 1932 and 1984
+  Olympics, the 1994 World Cup final at the Rose Bowl, the 2026 World Cup matches; Academy Awards ceremonies are
+  arts cards).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1781` | the La Brea tar pits finds, Los Angeles Man and early sites, the Tongva villages (Yaanga), Cabrillo (1542), Vizcaíno (1602), Portolà (1769), the San Gabriel mission (1771), Anza (1774), San Juan Capistrano (1776) | 35 | ~70 |
+| `1781_1849` | the pueblo's founding (1781), the Plaza church, San Fernando (1797), the ranchos, Mexican independence and secularisation, the capital years, the 1846–1847 battles, Cahuenga, the gold rush years | 45 | ~120 |
+| `1850_1919` | the city and county (1850), the 1871 massacre, the railroads (1876, 1885), the boom of the 1880s, oil (1892), the port at San Pedro, Hollywood and the film industry, the Times bombing, the aqueduct (1913), Orange County (1889) and the citrus belt | 45 | ~220 |
+| `1920_1964` | the 1920s boom, the City Hall (1928), the St. Francis Dam, the 1932 Olympics, the Hoover Dam power, the aircraft industry, the Zoot Suit Riots, the freeways, Disneyland (1955), the Dodgers and Chavez Ravine | 45 | ~250 |
+| `1965_present` | Watts, RFK, the Moratorium, Bradley, the 1984 Olympics, the Metro Rail (1990), 1992, Northridge, the Getty Center, the 2025 fires and protests, the 2028 Olympics preparations | 45 | ~250 |
+
+Expected cards are a guide, not a target.
