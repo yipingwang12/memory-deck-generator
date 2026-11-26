@@ -1,0 +1,780 @@
+# City: Buenos Aires x 1810 to 1879 (the May Revolution, the 1820 anarchy, Rivadavia's city works, Rosas and the Mazorca,
+# the blockades, Caseros and the siege of 1852-53, the first railways and trams, the epidemics, the Teatro Colon). DRAFT 2026-11-26.
+# Area: Greater Buenos Aires (CABA and the 24 partidos of the conurbation: Avellaneda (Barracas al Sud), Lanus, Lomas de Zamora,
+# Quilmes, La Matanza, Moron, San Isidro, San Fernando, Tigre, General San Martin (Santos Lugares), Tres de Febrero (Caseros),
+# Merlo, Moreno, Almirante Brown (Adrogue), Esteban Echeverria (Monte Grande) and the rest). La Plata, Ensenada, Lujan and
+# Colonia are OUT. Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Acts of the Junta,
+# Directorate, province (governors seated in the city), State of Buenos Aires and nation -> out_refs unless the city is
+# the subject. World-grid events -> world_refs (world cell year). Dates: memory pass + web check (44 of 45 searches;
+# no unauthorised book copies). Main sources: WP en Timeline of Buenos Aires; WP es Historia de la ciudad de Buenos Aires,
+# Fiebre amarilla en Buenos Aires, La Mazorca, Sitio de Buenos Aires, Ferrocarril Oeste, Ferrocarril del Sud, Tranvias,
+# Plaza de Mayo, Cabildo, partido articles; WP en Northern, Ensenada and Great Southern railways; buenosaires.gob.ar;
+# turismo.buenosaires.gob.ar; argentina.gob.ar; UBA; CONICET papers; press archives found by search.
+# A building -> its opening (or "work starts" when named); a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1811, peg: tattoo, confidence: unverified,
+     event: "Revolution of five and six April: crowds from the outskirts fill the main square and force out Moreno's party",
+     place: "Plaza de la Victoria",
+     scene: "Outskirt crowds with a TATTOO of the junta on their arms pack the Plaza de la Victoria and push the Morenists out."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "WP es: Motin de las Trenzas",
+     event: "Braids Mutiny: the Patricios regiment holds its barracks to keep its braids; troops storm it and shoot ten leaders in public",
+     place: "Patricios barracks",
+     scene: "A soldier's braid with a TATTOO of the Patricios crest is cut off as troops storm the barracks and shoot the ringleaders."}
+  - {year: 1812, peg: tongue, confidence: high, source: "EcuRed; La Nacion: la plaza del heroe y el villano",
+     event: "Martin de Alzaga is shot for a plot against the Triumvirate; his body hangs three days in the main square",
+     place: "Plaza de la Victoria",
+     scene: "A slave's TONGUE betrays Alzaga's plot, and his body swings three days from the gallows in the Plaza de la Victoria."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP en: Revolution of 8 October 1812; Cronista",
+     event: "Revolution of eight October: San Martin's grenadiers fill the main square and the First Triumvirate falls",
+     place: "Plaza de la Victoria",
+     scene: "San Martin's grenadiers stand in the plaza while a giant TONGUE licks the First Triumvirate off the Cabildo balcony."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP es: Anarquia del Ano XX",
+     event: "Colonel Pagola's city militia seize the Fort in a revolt",
+     place: "the Fort",
+     scene: "Colonel Pagola leads his militia over the Fort wall, and the cannon's NOSE swings round to cover the main square."}
+  - {year: 1820, peg: nose, confidence: high, source: "WP es: Anarquia del Ano XX",
+     event: "Rosas's Colorados del Monte attack the city and defeat Pagola's rebels",
+     scene: "Rosas's red-capped horsemen ride into the city behind a red NOSE banner and crush Pagola's rebels in the streets."}
+  - {year: 1821, peg: ant, confidence: medium, source: "Ternavasio (Bol. Ravignani); FaHCE paper; Dec 20 or 24",
+     event: "A law abolishes the Cabildo of Buenos Aires after more than two centuries",
+     place: "the Cabildo",
+     scene: "A giant ANT carries the Cabildo's council chairs out of the arcade, and the town council ends."}
+  - {year: 1821, peg: ant, confidence: medium, source: "FaHCE paper: reforma judicial de 1821",
+     event: "The same reform creates a Police Department and seven justices of the peace for the city",
+     scene: "A uniformed ANT takes the Cabildo's police baton and marches off to head the new Police Department."}
+  - {year: 1826, peg: nacho, confidence: medium, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Capitalisation law makes the city the national capital under Rivadavia",
+     scene: "Rivadavia plants a flag in a NACHO shaped like the city and declares the whole plate the national capital."}
+  - {year: 1829, peg: knob, confidence: medium, source: "WP es: Sitio de Buenos Aires",
+     event: "Rosas's rural forces besiege Lavalle in the city for four months",
+     scene: "Rosas's gauchos twist the door KNOB of every city gate shut, and Lavalle sits trapped inside for four months."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP es: Revolucion de los Restauradores",
+     event: "Revolution of the Restorers: a crowd stops a press trial and gathers at Barracas against Governor Balcarce",
+     place: "Barracas",
+     scene: "A MUMMY wrapped in copies of the Restaurador de las Leyes leads the crowd out of the courtroom to Barracas."}
+  - {year: 1833, peg: mummy, confidence: high, source: "WP es: Revolucion de los Restauradores",
+     event: "Olazabal's government troops fight the Restorers at the Maldonado stream",
+     place: "arroyo Maldonado",
+     scene: "A MUMMY floats down the Maldonado stream while Olazabal's troops and the Restorers fire across the water."}
+  - {year: 1833, peg: mummy, confidence: medium, source: "WP es: La Mazorca (infobox)",
+     event: "The Mazorca, Rosas's armed political police, is formed",
+     scene: "Rosas's men unwrap a MUMMY and find a corncob inside: the Mazorca is born in the city's back streets."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP es: La Mazorca",
+     event: "The Mazorca fires on the houses of Garcia and Vidal and kills a passer-by: its first public attack",
+     scene: "A Mazorca HAMMER smashes the shutters of Garcia's house, and a stray shot kills a man in the street."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP en: Timeline of Buenos Aires",
+     event: "French fleet begins its blockade of the port",
+     scene: "A French warship projects a MOVIE of closed docks on the city's riverfront: the blockade starts."}
+  - {year: 1839, peg: map, confidence: high, source: "El Litoral (Alaniz); WP en: Manuel Vicente Maza",
+     event: "Assassins stab Manuel Vicente Maza in the Hall of Representatives; his son Ramon is shot in his cell",
+     place: "Sala de Representantes",
+     scene: "Two men in ponchos stab Maza over a MAP of the province spread on his desk in the Hall of Representatives."}
+  - {year: 1840, peg: horse, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "French blockade of the port ends",
+     scene: "A HORSE tows the last French warship out of the river mouth, and the port opens again."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP es: La Mazorca",
+     event: "Mazorca men kill Lynch, Riglos, Oliden and Mason as they try to escape to Montevideo",
+     scene: "A HORSE gallops riderless along the shore after the Mazorca cuts down four men at the boat for Montevideo."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP es: La Mazorca",
+     event: "After Lavalle withdraws, the Mazorca starts weeks of terror killings in the city",
+     scene: "Mazorca riders tie severed heads to a HORSE's saddle and parade it through the streets until Rosas stops them."}
+  - {year: 1842, peg: rhino, confidence: medium, source: "WP es: La Mazorca",
+     event: "After the infernal machine sent to Manuelita Rosas, a second Mazorca terror hits the city",
+     scene: "A RHINO charges through the city streets after the bomb box reaches Manuelita, and the second terror begins."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP es: La Mazorca",
+     event: "The Popular Restorer Society, the Mazorca's parent body, is dissolved",
+     scene: "A ROACH eats the charter of the Popular Restorer Society, and Rosas's club dissolves."}
+  - {year: 1848, peg: reef, confidence: high, source: "buenosaires.gob.ar: fusilamiento de Camila O'Gorman",
+     event: "Camila O'Gorman and the priest Ladislao Gutierrez are shot at the Santos Lugares camp",
+     place: "Santos Lugares",
+     scene: "A coral REEF grows over two chairs in the Santos Lugares yard where Camila and her priest face the firing squad."}
+  - {year: 1852, peg: lion, confidence: high, source: "Academia Nacional de la Historia, boletin 9",
+     event: "Scattered troops loot the city the day after Caseros",
+     scene: "A LION leads the deserters from Caseros through the shops of the city, and they loot everything."}
+  - {year: 1852, peg: lion, confidence: medium, source: "Academia Nacional de la Historia (19 or 20 Feb)",
+     event: "Urquiza's victorious army parades into the city",
+     scene: "Urquiza rides into the city on a LION at the head of his army, and the porteños watch from the balconies."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP es: Revolucion del 11 de septiembre de 1852",
+     event: "Revolution of eleven September: troops in the main square and the Cabildo bell restore porteño rule",
+     place: "Plaza de Mayo",
+     scene: "A LION rings the Cabildo bell at dawn, and troops pour into the plaza to take the city back from Urquiza."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP es: Sitio de Buenos Aires",
+     event: "Hilario Lagos's army lays siege to the city",
+     scene: "A LION paces outside the city ditches as Hilario Lagos closes the ring of his siege."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP es: Sitio de Buenos Aires",
+     event: "Commodore Coe hands the besieging fleet over to the city",
+     scene: "Commodore Coe sells his fleet for a LLAMA loaded with gold, and the warships sail to the city side."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP es: Sitio de Buenos Aires",
+     event: "Urquiza gives up the siege and sails for Parana",
+     scene: "Urquiza's last LLAMA trots onto the boat for Parana, and the siege of the city ends."}
+  - {year: 1853, peg: llama, confidence: medium, source: "WP es: La Mazorca; Canal26 (12 or 17 Oct)",
+     event: "Mazorca killers Badia and Troncoso are executed and hung in public",
+     scene: "A LLAMA spits at the gallows where the Mazorca men Badia and Troncoso hang in public view."}
+  - {year: 1853, peg: llama, confidence: medium, source: "WP es: La Mazorca",
+     event: "Mazorca chiefs Ciriaco Cuitino and Leandro Alen are hanged",
+     scene: "A LLAMA pulls the cart from under Cuitino and Alen, and the Mazorca chiefs hang."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "The city is divided into eleven parishes, each with two municipal officers",
+     scene: "A LLAMA walks a chalk line through the city and splits it into eleven parishes, each with two officers."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Provincial law creates the Municipal Corporation of the city",
+     scene: "A LAWYER reads out the law in the Cabildo, and the city gets its Municipal Corporation."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Municipal Corporation holds its first session",
+     scene: "A LEECH gavels the table and opens the first session of the Municipal Corporation."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP es: Cabildo de Buenos Aires",
+     event: "A new English clock by Thwaites and Reed replaces the old Spanish clock in the Cabildo tower",
+     place: "Cabildo",
+     scene: "A wheel of CHEESE drops out of the Cabildo tower as workmen hang the new English Thwaites and Reed clock."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Compromise law makes the city the seat of the national government for five years",
+     scene: "A CHAIN links the national government to the city for five years under the compromise law."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "A new municipal system for the city starts",
+     scene: "City councillors pour the new municipal system into a JELLY mould, and it sets for eleven years."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Law moves the city boundary north to the Maldonado stream, taking land from Flores and Belgrano",
+     place: "arroyo Maldonado",
+     scene: "A JOCKEY rides the new city boundary out to the Maldonado stream and takes land from Flores and Belgrano."}
+  - {year: 1875, peg: eagle, confidence: high, source: "Di Stefano (CONICET); Pasado Abierto",
+     event: "Anticlerical riot: a mob sacks the archbishop's palace and burns the Jesuit Colegio del Salvador",
+     place: "Colegio del Salvador",
+     scene: "An EAGLE drops a torch on the Jesuit Colegio del Salvador as the mob sacks the archbishop's palace."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "Provincial Organic Law of Municipalities gives the city a central council and parish councils",
+     scene: "A CAGE of parish councils hangs below a central council cage: the new law organises the city."}
+  - {year: 1877, peg: cake, confidence: high, source: "argentina.gob.ar; WP en: Penitenciaria Nacional",
+     event: "Bunge's National Penitentiary opens on the Las Heras road; Cabildo prisoners move there",
+     place: "Avenida Las Heras",
+     scene: "Prisoners march from the Cabildo to the new Penitentiary carrying a CAKE with a file baked inside."}
+  - {year: 1878, peg: cave, confidence: disputed, source: "WP es: Casa Rosada (1876, 1878 or 1879)",
+     event: "Kihlberg's Post Office building is finished on the site of the old Fort",
+     place: "Casa Rosada",
+     scene: "Kihlberg digs a letter CAVE into the old Fort's ruins and crowns it with the new Post Office building."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "WP es: Cabildo de Buenos Aires",
+     event: "Pedro Benoit raises the Cabildo tower and gives it an Italian front",
+     place: "Cabildo",
+     scene: "A COWBOY lassos the Cabildo tower and hauls it ten metres higher for Pedro Benoit."}
+  # science
+  - {year: 1823, peg: gnome, confidence: disputed, source: "WP es: Plaza de Mayo (1823); other source gives 1824",
+     event: "Gas lamps light the main square for the first time on the May festival",
+     place: "Plaza de la Victoria",
+     scene: "A GNOME climbs a ladder and lights the first of the gas lamps around the Plaza on the May festival."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP es: Hospital Britanico de Buenos Aires",
+     event: "British residents found the British Hospital as a dispensary on Independencia street",
+     scene: "A WARRIOR in a red coat sets up a medicine chest on Independencia street: the British Hospital begins."}
+  - {year: 1852, peg: lion, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "A Board of Health is created for the city",
+     scene: "A LION in a doctor's coat sits at the head of the new Board of Health table."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP es: Hospital Italiano de Buenos Aires",
+     event: "The Italian Benevolent Society founds the Italian Hospital and lays its first stone in Barracas",
+     place: "Barracas",
+     scene: "A LLAMA carries the first stone of the Italian Hospital to its site in Barracas."}
+  - {year: 1856, peg: leech, confidence: high, source: "Canal de la Capital via search; WP es: Plaza de Mayo",
+     event: "Public gas street lighting is inaugurated in the main square",
+     place: "Plaza de la Victoria",
+     scene: "A LEECH sucks gas from the new pipes and makes every lamp around the Plaza flare at once."}
+  - {year: 1856, peg: leech, confidence: medium, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "Western Railway extends a water pipe from La Recoleta to Parque station",
+     scene: "A giant LEECH stretches from La Recoleta to Parque station and carries river water to the railway."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Ferrocarril Oeste de Buenos Aires",
+     event: "The locomotives La Porteña and La Argentina arrive from England",
+     scene: "A LEECH clings to the boiler of La Porteña as cranes lift the first locomotives onto the quay."}
+  - {year: 1857, peg: log, confidence: medium, source: "core.ac.uk via search",
+     event: "First electric telegraph in the Plata starts work with the first railway service",
+     scene: "A telegraph wire hums along a LOG fence beside the new railway and sends the city's first message."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP es: Ferrocarril Oeste de Buenos Aires",
+     event: "Western Railway is extended to Ramos Mejia",
+     place: "Ramos Mejia",
+     scene: "A WOLF races La Porteña along the new track to Ramos Mejia and loses."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP es: Ferrocarril Oeste de Buenos Aires",
+     event: "Western Railway reaches Moron",
+     place: "Moron",
+     scene: "A giant ELBOW pushes the railhead forward until the track reaches Moron."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP es: Partido de Merlo",
+     event: "Merlo railway station opens",
+     place: "Merlo",
+     scene: "The stationmaster at Merlo bends his ELBOW to raise the signal for the first train."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP es: Partido de Moreno",
+     event: "Governor Llavallol opens Moreno station and the town grows around it",
+     place: "Moreno",
+     scene: "Governor Llavallol cuts a CHEESE ribbon at Moreno station, and the new town springs up beside it."}
+  - {year: 1861, peg: jet, confidence: medium, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "A rule bans cesspits near drinking-water wells",
+     scene: "A JET of clean water shoots up from a well after workmen fill in the cesspit beside it."}
+  - {year: 1861, peg: jet, confidence: medium, source: "WP es: Hospital Britanico (Timeline: built 1859)",
+     event: "British Hospital moves to Defensa and Caseros streets",
+     place: "Defensa and Caseros",
+     scene: "A JET of steam drives the British Hospital's beds on rails to their new home at Defensa and Caseros."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP en: Buenos Aires Northern Railway",
+     event: "Northern Railway opens from Retiro to Belgrano",
+     place: "Belgrano",
+     scene: "A CHAIN of carriages rolls from Retiro to the new Belgrano station on the Northern Railway."}
+  - {year: 1862, peg: chain, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "French Hospital and Irish Hospital are established",
+     scene: "A CHAIN of French and Irish nurses passes beds hand to hand into two new hospitals."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP en: Buenos Aires Northern Railway",
+     event: "Northern Railway reaches San Isidro",
+     place: "San Isidro",
+     scene: "A GEM glints on the river cliff at San Isidro as the first Northern Railway train pulls in."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP en: Trams in Buenos Aires",
+     event: "First horse trams carry passengers from Plaza de Mayo to the Retiro railway terminal",
+     scene: "Horses pull a tram car studded with a GEM from Plaza de Mayo to Retiro: the first trams run."}
+  - {year: 1863, peg: gem, confidence: medium, source: "WP es: Hospital Borda (infobox 1865)",
+     event: "Hospice of San Buenaventura for mentally ill men, the later Borda Hospital, is founded",
+     scene: "A GEM-eyed friar opens the gate of the San Buenaventura hospice for mentally ill men."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP en: Buenos Aires Northern Railway",
+     event: "Northern Railway reaches San Fernando",
+     place: "San Fernando",
+     scene: "A CHERRY tree drops fruit on the first Northern Railway train to reach San Fernando."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Southern Railway works begin at the future Constitucion station",
+     place: "Plaza Constitucion",
+     scene: "A navvy digs up a CHERRY pit as Southern Railway works begin at Constitucion."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP es: Ferrocarril del Sud; WP en: BAGSR",
+     event: "Southern Railway opens its first section from Constitucion through Barracas and Lomas de Zamora",
+     place: "Constitucion",
+     scene: "A JELLY wobbles on the dining-car table as the first Southern Railway train leaves Constitucion."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP en: Buenos Aires Northern Railway",
+     event: "Northern Railway reaches Tigre",
+     place: "Tigre",
+     scene: "A train carriage full of JELLY wobbles into Tigre as the Northern Railway reaches the delta town."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP en: Buenos Aires and Ensenada Port Railway",
+     event: "Wheelwright's Boca railway reaches Tres Esquinas in Barracas",
+     place: "Tres Esquinas",
+     scene: "Wheelwright's train rolls on rails greased with JELLY to Tres Esquinas in Barracas."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP en: Buenos Aires and Ensenada Port Railway",
+     event: "Railway branch opens to the La Boca pier on the Riachuelo",
+     place: "Muelle de La Boca",
+     scene: "A JUDGE in robes rides the first train down the branch to the La Boca pier on the Riachuelo."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP en: Trams in Buenos Aires",
+     event: "Horse tram links Monserrat with the Constitucion railway terminal",
+     scene: "A JUDGE drives a horse tram from Monserrat to Constitucion and rules the fare."}
+  - {year: 1866, peg: judge, confidence: medium, source: "atlantic-cable.com: River Plate cable",
+     event: "Telegraph line with a river cable links Buenos Aires and Montevideo",
+     scene: "A JUDGE taps Morse code in Buenos Aires, and his message crosses the river cable to Montevideo."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "AySA library via search",
+     event: "John Coghlan's water supply, drainage and paving project is approved",
+     scene: "A JOCKEY gallops Coghlan's water plan to the city council, and they approve it."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Lanus station opens on the Southern Railway",
+     place: "Lanus",
+     scene: "A CHEF serves soup on the platform of the new Lanus station."}
+  - {year: 1868, peg: chef, confidence: high, source: "normas.gba.gob.ar via search",
+     event: "Provincial law permits tramways in the city",
+     scene: "A CHEF lays tram rails like spaghetti down the street after the law permits tramways."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP en: Obras Sanitarias; AySA library",
+     event: "Recoleta water plant sends the first filtered running water into the city",
+     place: "La Recoleta",
+     scene: "A SHIP pumps river water into the sand filters at La Recoleta, and clean water runs from city taps."}
+  - {year: 1869, peg: ship, confidence: medium, source: "Epocas article via search",
+     event: "An iron water tank opens on the Plaza Lorea",
+     place: "Plaza Lorea",
+     scene: "A SHIP's iron hull is turned upside down on the Plaza Lorea and filled as the city's water tank."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP en: Trams in Buenos Aires",
+     event: "First urban horse tram lines run from Plaza de Mayo west to Plaza Miserere",
+     scene: "A GOOSE pulls a tram car west along Rivadavia from Plaza de Mayo to Plaza Miserere."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP es: Partido de Avellaneda",
+     event: "The first public drinking-water tap opens in Barracas al Sud",
+     place: "Barracas al Sud",
+     scene: "A GOOSE drinks from the first public water tap in Barracas al Sud."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Temperley station opens on the Southern Railway",
+     place: "Temperley",
+     scene: "A CAT sleeps on the bench of the new Temperley station as the first train stops."}
+  - {year: 1871, peg: cat, confidence: high, source: "UPC paper; WP es: Fiebre amarilla",
+     event: "The province hires John Bateman for water, drains, sewers and paving",
+     scene: "A CAT signs Bateman's contract with a paw, and the engineer starts to plan the city's sewers."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Ferrocarril Oeste de Buenos Aires",
+     event: "The Train of Death carries coffins on the Western Railway to the new cemetery",
+     scene: "A black CAT rides the Train of Death on top of the coffins bound for the Chacarita."}
+  - {year: 1871, peg: cat, confidence: high, source: "buenosaires.gob.ar: barrio Barracas",
+     event: "Iron bridge over the Riachuelo at Barracas opens",
+     place: "Barracas",
+     scene: "A CAT walks across the new iron bridge over the Riachuelo at Barracas."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP en: Buenos Aires Northern Railway",
+     event: "Central Station opens on the Paseo de Julio",
+     place: "Paseo de Julio",
+     scene: "A giant COIN rolls into the new Central Station on the Paseo de Julio and pays the first fare."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Partido de Quilmes; WP en: BAEPR",
+     event: "Ensenada railway reaches Quilmes",
+     place: "Quilmes",
+     scene: "A COIN drops into the first ticket box at Quilmes as the Ensenada railway arrives."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP es: Ferrocarril del Sud (Sep or Nov)",
+     event: "Adrogue station opens on the Southern Railway",
+     place: "Adrogue",
+     scene: "Esteban Adrogue flips a COIN on the platform of the new station that bears his name."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Rail link opens between Tres Esquinas and Barracas al Norte",
+     scene: "A COIN rolls along the new link line from Tres Esquinas to Barracas al Norte."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "General water and sewer project for the city is approved",
+     scene: "Councillors drop a COIN into the sewer model and approve the city's general water and sewer plan."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Hospital Italiano de Buenos Aires",
+     event: "Italian Hospital reopens with a hundred and fifty beds",
+     scene: "An Italian nurse puts a COIN on each of the hundred and fifty new beds of the reopened hospital."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Banfield station opens on the Southern Railway",
+     place: "Banfield",
+     scene: "A COMB parts the long grass so the first train can stop at the new Banfield station."}
+  - {year: 1874, peg: car, confidence: medium, source: "WP en: Obras Sanitarias; Colegio de Escribanos (1873)",
+     event: "Bateman's sewer and drainage network starts to work",
+     scene: "A CAR drives down into Bateman's new brick sewer and finds the drains working."}
+  - {year: 1875, peg: eagle, confidence: high, source: "buenosaires.gob.ar: Hospital de Ninos",
+     event: "Children's Hospital, first in Latin America, opens on calle Victoria",
+     place: "calle Victoria",
+     scene: "An EAGLE carries a sick child to the door of the first children's hospital in Latin America."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "City creates rubbish dumps and centralises rubbish collection",
+     scene: "An EAGLE drops the city's rubbish onto the new central dump outside the town."}
+  # religion
+  - {year: 1829, peg: knob, confidence: high, source: "buenosaires.gob.ar: Espacio Cultural San Andres",
+     event: "Founding service of the Scots Presbyterian church of St Andrew",
+     scene: "A Scots minister turns the KNOB of a rented hall door and holds the first St Andrew's service."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP es: Basilica de San Jose de Flores",
+     event: "The first permanent church of San Jose de Flores opens",
+     place: "Flores",
+     scene: "A MOTH flies into the candles of the new San Jose de Flores church on its first day."}
+  - {year: 1835, peg: mill, confidence: high, source: "buenosaires.gob.ar; censo 1855 (Timeline: 1838)",
+     event: "St Andrew's Scots church opens on Piedras street",
+     place: "calle Piedras",
+     scene: "A Scottish MILL grinds the stones for the new St Andrew's church on Piedras street, and it opens."}
+  - {year: 1843, peg: ram, confidence: high, source: "censobuenosaires1855.com; turismo BA",
+     event: "First Methodist church opens on Cangallo street",
+     place: "calle Cangallo",
+     scene: "A RAM butts open the doors of the first Methodist church on Cangallo street."}
+  - {year: 1853, peg: llama, confidence: medium, source: "censobuenosaires1855.com (another: 1854)",
+     event: "German Evangelical church opens on Esmeralda street",
+     place: "calle Esmeralda",
+     scene: "A LLAMA carries the Lutheran hymn books into the new German church on Esmeralda street."}
+  - {year: 1856, peg: leech, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Irish Sisters of Mercy open a convent in the city",
+     scene: "Irish Sisters of Mercy put a LEECH on a fever patient in their new city convent."}
+  - {year: 1862, peg: chain, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Archbishop's palace is built",
+     scene: "Masons hoist the bishop's mitre by a CHAIN onto the roof of the new episcopal palace."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP es: Cementerio de la Recoleta",
+     event: "Recoleta cemetery loses its consecration after a dispute over a Freemason's burial",
+     place: "La Recoleta",
+     scene: "A priest pries the GEM out of the Recoleta gate cross after the quarrel over a Freemason's grave."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP es: Iglesia Inmaculada Concepcion (Belgrano)",
+     event: "First stone of La Redonda, the round church of Belgrano",
+     place: "Belgrano",
+     scene: "Nicolas Canale pours JELLY into a round mould to show the plan of La Redonda in Belgrano."}
+  - {year: 1876, peg: cage, confidence: disputed, source: "WP es: Iglesia de Santa Felicitas (date unclear)",
+     event: "Santa Felicitas church in Barracas, built in memory of Felicitas Guerrero, is finished",
+     place: "Barracas",
+     scene: "Felicitas's parents open a golden CAGE and release a dove inside the new Santa Felicitas church."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP es: Partido de Almirante Brown",
+     event: "San Gabriel Arcangel church opens in Adrogue",
+     place: "Adrogue",
+     scene: "The archangel Gabriel steps out of a CAVE and blows his trumpet at the new Adrogue church."}
+  - {year: 1878, peg: cave, confidence: high, source: "WP es: Iglesia Inmaculada Concepcion (Belgrano)",
+     event: "La Redonda church in Belgrano opens",
+     place: "Belgrano",
+     scene: "The round dome of La Redonda opens like a CAVE mouth, and Belgrano's people file in."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP es: Basilica de San Jose de Flores",
+     event: "First stone of the new basilica of San Jose de Flores",
+     place: "Flores",
+     scene: "A COWBOY drags the first stone of the new Flores basilica into place with his lasso."}
+  # arts
+  - {year: 1810, peg: dice, confidence: high, source: "WP en: Gazeta de Buenos Ayres; Billiken",
+     event: "First issue of the Gaceta de Buenos Aires, printed at the Foundling press",
+     scene: "Mariano Moreno rolls DICE on the press bed, and the first Gaceta comes off the Foundling press."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "WP es: Piramide de Mayo",
+     event: "Pyramid of May is unveiled in the main square for the revolution's anniversary",
+     place: "Plaza de Mayo",
+     scene: "Master builder Canete puts a TATTOO of the May sun on the new Pyramid in the main square."}
+  - {year: 1822, peg: nun, confidence: medium, source: "WP es: Catedral metropolitana de Buenos Aires",
+     event: "Work starts on Catelin's neoclassical portico of the cathedral",
+     place: "Catedral",
+     scene: "A NUN holds the plumb line as masons raise the first of the cathedral's twelve columns."}
+  - {year: 1822, peg: nun, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "An Academy of Music is founded",
+     scene: "A NUN conducts the first class of the new Academy of Music."}
+  - {year: 1823, peg: gnome, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Philharmonic Association is founded",
+     scene: "A GNOME tunes the violins of the new Philharmonic Association."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP en: Teatro de la Victoria; LN",
+     event: "Teatro de la Victoria opens with a comedy by Ventura de la Vega",
+     place: "calle Victoria",
+     scene: "A MOVIE poster for the Ventura de la Vega comedy hangs over the door of the new Teatro de la Victoria."}
+  - {year: 1838, peg: movie, confidence: medium, source: "cervantesvirtual: historia del teatro",
+     event: "The old Coliseo theatre is renamed Teatro Argentino",
+     scene: "Workmen paint a new MOVIE-style marquee: the old Coliseo becomes the Teatro Argentino."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Piramide de Mayo; WP es: Plaza de Mayo",
+     event: "Prilidiano Pueyrredon rebuilds the Pyramid of May and lays out gardens in the main square",
+     place: "Plaza de Mayo",
+     scene: "Prilidiano Pueyrredon pulls a LEECH off the old Pyramid and wraps it in a new, taller shell."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP es: Parque Tres de Febrero",
+     event: "First exhibition of industry and agriculture opens at Palermo",
+     place: "Palermo",
+     scene: "A WOLF wins first prize at the first exhibition of industry and farming at Palermo."}
+  - {year: 1862, peg: chain, confidence: high, source: "turismo.buenosaires.gob.ar; NYC Parks plaque",
+     event: "Daumas's statue of San Martin, the country's first equestrian statue, is unveiled",
+     place: "Plaza San Martin",
+     scene: "Workmen pull a CHAIN and the cloth drops off Daumas's bronze San Martin on his rearing horse."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP es: Catedral metropolitana de Buenos Aires",
+     event: "Dubourdieu carves the cathedral pediment with Joseph meeting his brothers",
+     place: "Catedral",
+     scene: "A CHAIN of stone brothers embraces Joseph on the cathedral pediment as Dubourdieu carves them."}
+  - {year: 1862, peg: chain, confidence: high, source: "La Nacion via search",
+     event: "First issue of La Nacion Argentina",
+     scene: "A CHAIN of newsboys passes the first La Nacion Argentina down Calle Peru."}
+  - {year: 1864, peg: cherry, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Franco-Argentine Theatre opens",
+     scene: "French actors throw a CHERRY into the audience on the first night of the Franco-Argentine Theatre."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Coliseum concert hall is built",
+     scene: "The orchestra's drum wobbles like JELLY at the first concert in the new Coliseum hall."}
+  - {year: 1869, peg: ship, confidence: high, source: "argentina.gob.ar: diario La Prensa",
+     event: "Jose C. Paz founds the newspaper La Prensa",
+     scene: "Jose C. Paz launches a paper SHIP named La Prensa down the gutter of Calle Moreno."}
+  - {year: 1870, peg: goose, confidence: high, source: "La Nacion; Diario de Cuyo",
+     event: "Mitre founds the newspaper La Nacion",
+     scene: "Mitre writes the first La Nacion with a GOOSE quill."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP es: Plaza de Mayo",
+     event: "Two fountains are set up east and west of the Pyramid in the main square",
+     place: "Plaza de la Victoria",
+     scene: "A GOOSE splashes in each of the two new fountains beside the Pyramid of May."}
+  - {year: 1872, peg: coin, confidence: high, source: "turismo.buenosaires.gob.ar: Teatro Opera",
+     event: "Teatro de la Opera opens on Corrientes street with Il Trovatore",
+     place: "calle Corrientes",
+     scene: "Pestalardo throws a gold COIN on the stage as the Teatro de la Opera opens with Il Trovatore."}
+  - {year: 1872, peg: coin, confidence: medium, source: "cervantesvirtual: historia del teatro",
+     event: "The old Teatro Argentino is pulled down",
+     scene: "Wreckers find a colonial COIN in the rubble of the old Teatro Argentino."}
+  - {year: 1873, peg: comb, confidence: high, source: "buenosaires.gob.ar: Monumento a Belgrano",
+     event: "Carrier-Belleuse's equestrian statue of Belgrano is unveiled in the main square",
+     place: "Plaza de Mayo",
+     scene: "Sarmiento runs a COMB through the bronze horse's mane as Belgrano's statue is unveiled."}
+  - {year: 1876, peg: cage, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Society for the Encouragement of Fine Arts is founded",
+     scene: "Young painters open a CAGE of songbirds at the first meeting of the Fine Arts Encouragement Society."}
+  - {year: 1876, peg: cage, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Buenos Aires Orchestral Society is founded",
+     scene: "The conductor of the new Orchestral Society leads his players out of a CAGE onto the stage."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "turismo.buenosaires.gob.ar; Cadena 3",
+     event: "Politeama Argentino theatre opens on Corrientes with Sarmiento at the party",
+     place: "calle Corrientes",
+     scene: "A COWBOY circus act opens the new Politeama on Corrientes while Sarmiento claps."}
+  # economy
+  - {year: 1818, peg: dove, confidence: medium, source: "WP es: Plaza de Mayo",
+     event: "Work starts on the new arcade of shops along the Cabildo street",
+     place: "Plaza de la Victoria",
+     scene: "A DOVE carries bricks for the arches of the new shopping arcade on the Cabildo street."}
+  - {year: 1822, peg: nun, confidence: high, source: "Banco Provincia history; gba.gob.ar",
+     event: "Banco de Buenos Ayres opens and issues the first Argentine banknotes",
+     scene: "A NUN counts the first Argentine banknotes as the Banco de Buenos Ayres opens its doors."}
+  - {year: 1836, peg: match, confidence: medium, source: "WP es: Plaza de Mayo",
+     event: "Tomas de Anchorena buys the Old Arcade on the main square",
+     place: "Recova Vieja",
+     scene: "Anchorena strikes a MATCH to read the deed: the Old Arcade is his."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP es: Plaza Miserere",
+     event: "Plaza Miserere market is renamed Once de Septiembre after the revolution",
+     place: "Plaza Miserere",
+     scene: "A LION paints ONCE DE SEPTIEMBRE over the old sign of the Miserere cattle market."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "argentina.gob.ar; BCBA history",
+     event: "Buenos Aires Stock Exchange is founded",
+     scene: "A LAWYER rings the opening bell of the new Buenos Aires Stock Exchange."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "A passenger pier is built out into the river in front of the port captain's office",
+     place: "Capitania del Puerto",
+     scene: "Passengers step from boats onto a pier built of giant LILY pads reaching far into the river."}
+  - {year: 1856, peg: leech, confidence: medium, source: "Billiken; C5N (opens 1859)",
+     event: "Mercado del Plata, the first covered food market, is built by Adrogue and Pellegrini",
+     scene: "A LEECH sells fish under the first fully roofed market hall, the Mercado del Plata."}
+  - {year: 1857, peg: log, confidence: disputed, source: "WP es: Aduana Taylor (1857); WP es Historia (1859)",
+     event: "Taylor's semicircular New Customs House opens behind the Fort",
+     place: "Aduana Taylor",
+     scene: "Edward Taylor rolls a LOG of cargo into the vaults of his new semicircular customs house."}
+  - {year: 1858, peg: wolf, confidence: high, source: "buenosaires.gob.ar: Cafe Tortoni",
+     event: "Frenchman Touan opens the Cafe Tortoni on Rivadavia street",
+     place: "calle Rivadavia",
+     scene: "A WOLF in a waiter's apron serves the first coffee at Touan's new Cafe Tortoni."}
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Maua's bank opens a branch in the city",
+     scene: "A WOLF guards the vault of the Baron of Maua's new bank."}
+  - {year: 1861, peg: jet, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Mercado del Comercio is built",
+     scene: "Traders spray a JET of water to clean the stalls of the new Mercado del Comercio."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP es: Ferrocarril del Sud",
+     event: "Edward Lumb signs the contract for the Great Southern Railway",
+     scene: "Edward Lumb signs the railway contract with a pen on a gold CHAIN."}
+  - {year: 1862, peg: chain, confidence: high, source: "BCBA history via search",
+     event: "Mitre opens the Stock Exchange's first own building",
+     scene: "Mitre cuts a CHAIN across the doors of the Stock Exchange's first building."}
+  - {year: 1863, peg: gem, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "London and River Plate Bank opens in the city",
+     scene: "A British clerk locks a GEM in the safe of the new London and River Plate Bank."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP es: Ferrocarril Oeste de Buenos Aires",
+     event: "The province takes full ownership of the Western Railway",
+     scene: "The governor pockets the GEM of the Western Railway as the province becomes its only owner."}
+  - {year: 1863, peg: gem, confidence: medium, source: "Banco Provincia history via search",
+     event: "The city's bank takes the name Banco de la Provincia de Buenos Aires",
+     scene: "A jeweller sets a GEM in the new sign: Banco de la Provincia de Buenos Aires."}
+  - {year: 1864, peg: cherry, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Lorea market opens",
+     scene: "A stallholder sells the first CHERRY at the new Lorea market."}
+  - {year: 1866, peg: judge, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Mercado de la Independencia opens",
+     scene: "A JUDGE weighs the meat at the new Mercado de la Independencia."}
+  - {year: 1866, peg: judge, confidence: high, source: "argentina.gob.ar: Sociedad Rural Argentina",
+     event: "Cattle ranchers led by Eduardo Olivera found the Sociedad Rural Argentina",
+     scene: "A JUDGE in a gaucho hat signs the charter of the Sociedad Rural for Olivera and the ranchers."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Mercado del Norte opens",
+     scene: "A JOCKEY rides his horse through the stalls of the new Mercado del Norte."}
+  - {year: 1868, peg: chef, confidence: medium, source: "WP en: Port of Buenos Aires",
+     event: "A law orders studies for a modern port near the city",
+     scene: "A CHEF draws the plan of a modern port on the tablecloth for the surveyors."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP en: Trams in Buenos Aires",
+     event: "Lacroze brothers found the Tramway Central; the Mendez brothers found the Tramway Once de Septiembre",
+     scene: "The Lacroze and Mendez brothers race two tram cars, each pulled by a GOOSE, along parallel streets."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "A law bans the meat-salting plants from the city",
+     place: "Riachuelo",
+     scene: "A CAT watches the meat-salting plants on the Riachuelo shut their gates under the new law."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP en: Port of Buenos Aires; buenosaires.gob.ar",
+     event: "Seeber's company builds the Catalinas pier and warehouses on reclaimed land",
+     place: "Catalinas",
+     scene: "Francisco Seeber pays a COIN for every cartload of fill that builds the Catalinas pier."}
+  - {year: 1873, peg: comb, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "A la Ciudad de Londres department store opens",
+     scene: "Ladies try a silver COMB at the counter of the new A la Ciudad de Londres store."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP en: Sociedad Rural Argentina; HCDN",
+     event: "First Rural Exhibition of the Sociedad Rural at Florida and Paraguay streets",
+     place: "Florida and Paraguay",
+     scene: "A prize bull and an EAGLE share the blue ribbon at the first Rural Exhibition on Florida street."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP es: La Boca; Huergo via search",
+     event: "Luis Huergo wins the contest for the Riachuelo port works at La Boca",
+     place: "La Boca",
+     scene: "Luis Huergo opens a CAGE at the mouth of the Riachuelo and lets the dredgers out to deepen it."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Cafe de Hansen opens in the Palermo woods",
+     place: "Palermo",
+     scene: "Hansen serves CAKE under the trees of Palermo at his new cafe."}
+  # society
+  - {year: 1810, peg: dice, confidence: high, source: "WP es: Biblioteca Nacional; WP es: Cabildo",
+     event: "Primera Junta decree creates the Public Library of Buenos Aires",
+     scene: "Moreno rolls DICE carved from book spines, and the Junta creates the Public Library."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP es: Biblioteca Nacional Mariano Moreno",
+     event: "Public Library opens to readers at Moreno and Peru streets",
+     place: "Manzana de las Luces",
+     scene: "A giant TONGUE turns the pages for the first readers in the Public Library at Moreno and Peru."}
+  - {year: 1812, peg: tongue, confidence: high, source: "WP es: Partido de Quilmes",
+     event: "Triumvirate decree ends the Quilmes Indian reduction and frees its people",
+     place: "Quilmes",
+     scene: "A TONGUE reads the decree aloud in Quilmes, and the reduction's people walk free."}
+  - {year: 1815, peg: doll, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Academy of Jurisprudence is founded",
+     scene: "Law students argue a case for a DOLL at the first class of the Academy of Jurisprudence."}
+  - {year: 1821, peg: ant, confidence: high, source: "UBA noticias; Infobae",
+     event: "University of Buenos Aires is inaugurated in the church of San Ignacio",
+     place: "San Ignacio",
+     scene: "An ANT in a doctor's cap gives the opening lecture of the University in the church of San Ignacio."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP es: Partido de San Fernando",
+     event: "San Fernando becomes a partido",
+     place: "San Fernando",
+     scene: "An ANT colony on the San Fernando canal bank elects its own district council."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP es: Cementerio de la Recoleta",
+     event: "Recoleta, the first public cemetery, opens beside the Recollect friary",
+     place: "La Recoleta",
+     scene: "A NUN digs the first grave in the new Recoleta cemetery beside the old friary."}
+  - {year: 1822, peg: nun, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The city renames its streets",
+     scene: "A NUN paints new names on the street corners of the city."}
+  - {year: 1823, peg: gnome, confidence: high, source: "ifinra.org; Encyclopedia.com",
+     event: "Decree creates the Sociedad de Beneficencia, a ladies' charity for the city's hospitals and orphans",
+     scene: "A GNOME in a lace shawl takes the orphanage keys from the friars for the new Sociedad de Beneficencia."}
+  - {year: 1825, peg: nail, confidence: high, source: "bridgetoargentina.com; RSCDS",
+     event: "The ship Symmetry lands Scottish settlers for the Monte Grande colony",
+     place: "Monte Grande",
+     scene: "Scottish settlers hammer the first NAIL into a farmhouse among the thistles of Monte Grande."}
+  - {year: 1832, peg: moon, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "English cemetery opens for Protestants",
+     scene: "A pale MOON shines on the first Protestant graves in the new English cemetery."}
+  - {year: 1833, peg: mummy, confidence: medium, source: "WP es: Barracas (Buenos Aires)",
+     event: "Bullfights are held in Barracas to honour Governor Rosas",
+     place: "Barracas",
+     scene: "A MUMMY in a red cape fights a bull in Barracas in honour of Rosas."}
+  - {year: 1836, peg: match, confidence: high, source: "WP es: Partido de General San Martin",
+     event: "Rosas founds the town of Santos Lugares by decree",
+     place: "Santos Lugares",
+     scene: "Rosas strikes a MATCH and lights the first fire of the new town of Santos Lugares."}
+  - {year: 1836, peg: match, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "City census counts about sixty-two thousand people",
+     scene: "A census clerk counts the city's sixty-two thousand people by the light of one MATCH."}
+  - {year: 1841, peg: radio, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Foreign Club is founded",
+     scene: "Foreign merchants gather round a RADIO for news from home at the new Foreign Club."}
+  - {year: 1852, peg: lion, confidence: high, source: "HCDN; WP en: Club del Progreso",
+     event: "Club del Progreso is founded by Diego de Alvear and Rufino de Elizalde",
+     scene: "A LION in a frock coat opens the first meeting of the Club del Progreso."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP es: Fiebre amarilla; WP en: Timeline",
+     event: "Yellow fever epidemic hits the city",
+     scene: "A yellow LION prowls the city streets and fever spreads behind it."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP es: Partido de Avellaneda",
+     event: "Barracas al Sud, the later Avellaneda, becomes a partido",
+     place: "Barracas al Sud",
+     scene: "A LION guards the south bank of the Riachuelo, now the new partido of Barracas al Sud."}
+  - {year: 1852, peg: lion, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Faculty of Medicine is founded",
+     scene: "A LION lies on the dissecting table at the first class of the new Faculty of Medicine."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "WP es: Partido de La Matanza",
+     event: "La Matanza becomes a partido",
+     place: "La Matanza",
+     scene: "A LAWYER reads the decree to the cattle ranchers: La Matanza is now a partido."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Natural History Society of the Plata and a Gymnastic Club are founded",
+     scene: "A LAWYER swings on the rings of the new Gymnastic Club while naturalists measure him."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP es: Belgrano (Buenos Aires)",
+     event: "The settlement of La Calera is founded on Rosas's old lands and named Belgrano",
+     place: "Belgrano",
+     scene: "A LILY blooms in the lime kiln of La Calera, and the new village takes the name Belgrano."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Partido de La Matanza",
+     event: "Justo Villegas founds San Justo, the seat of La Matanza",
+     place: "San Justo",
+     scene: "A LEECH marks the town square of San Justo on Justo Villegas's map."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP es: Partido de General San Martin",
+     event: "Santos Lugares is refounded as the town of General San Martin",
+     place: "General San Martin",
+     scene: "A LEECH sucks the name Rosas off the town sign, and Santos Lugares becomes General San Martin."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP es: Belgrano (Buenos Aires)",
+     event: "First racecourse of Buenos Aires opens in Belgrano",
+     place: "Plaza Castelli",
+     scene: "Racehorses leap a LOG on the first racecourse of the city in Belgrano."}
+  - {year: 1857, peg: log, confidence: medium, source: "MUNTREF: Los hoteles de inmigrantes",
+     event: "Immigrants' Asylum opens at Corrientes and Veinticinco de Mayo",
+     scene: "Newly landed immigrants sleep on LOG bunks in the first Immigrants' Asylum by the pier."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Institute for the deaf and dumb is founded",
+     scene: "A teacher taps a LOG drum so her deaf pupils feel the beat at the new institute."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "A milder yellow fever epidemic kills some hundreds",
+     scene: "A yellow WOLF slinks through the port quarter and carries off some hundreds."}
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "A poorhouse is opened",
+     scene: "A WOLF guards the door of the new poorhouse and lets the hungry in."}
+  - {year: 1861, peg: jet, confidence: medium, source: "WP es: Partido de Lomas de Zamora (Jul or Sep)",
+     event: "Lomas de Zamora becomes a partido",
+     place: "Lomas de Zamora",
+     scene: "Esteban Adrogue flies a JET of fireworks over the hills: Lomas de Zamora is a partido."}
+  - {year: 1863, peg: gem, confidence: high, source: "Boletin Oficial; La Nacion",
+     event: "Mitre's decree founds the Colegio Nacional de Buenos Aires",
+     place: "Manzana de las Luces",
+     scene: "Mitre sets a GEM in the crest of the Colegio Nacional on the Manzana de las Luces."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP es: Partido de General San Martin",
+     event: "General San Martin becomes a partido",
+     place: "General San Martin",
+     scene: "Felix Ballester takes a CHERRY from the judge's bowl as the new partido of General San Martin starts."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP es: Partido de Merlo",
+     event: "Merlo becomes a partido",
+     place: "Merlo",
+     scene: "Juan Dillon plants a CHERRY tree by Merlo station for the new partido."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP es: Partido de Moreno",
+     event: "Moreno becomes a partido",
+     place: "Moreno",
+     scene: "A CHERRY falls on the map of the province and stains a new partido: Moreno."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP en: Buenos Aires Cricket and Rugby Club",
+     event: "Buenos Aires Cricket Club is founded and plays at Palermo",
+     place: "Palermo",
+     scene: "A batsman hits a red CHERRY for six across the new Buenos Aires Cricket Club ground at Palermo."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Scenna via Fiquepron; La Nacion",
+     event: "Cholera epidemic reaches the city and kills about two thousand",
+     scene: "A pale JOCKEY rides the cholera through the city's wells, and two thousand die."}
+  - {year: 1868, peg: chef, confidence: disputed, source: "WP en: Colegio del Salvador (1868; other 1870)",
+     event: "Jesuits open the Colegio del Salvador",
+     scene: "A Jesuit CHEF rings the dinner bell for the first pupils of the Colegio del Salvador."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "Yellow fever case at the Hotel Roma on Cangallo street",
+     place: "Hotel Roma",
+     scene: "A yellow GOOSE checks into the Hotel Roma on Cangallo street, and the fever comes with it."}
+  - {year: 1870, peg: goose, confidence: high, source: "buenosaires.gob.ar: Bomberos de la Ciudad",
+     event: "The first formal fire company of thirty police firemen is formed",
+     scene: "Thirty police firemen chase a burning GOOSE down the street with their new hand pump."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "A public meeting in the main square forms the Popular Commission against the fever",
+     place: "Plaza de la Victoria",
+     scene: "A CAT climbs the Pyramid as the crowd in the plaza elects the Popular Commission against the fever."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "Jose Roque Perez, head of the Popular Commission, dies of the fever",
+     scene: "A black CAT sits on the grave of Roque Perez, the commission head killed by the fever."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "Worst day of the epidemic: more than five hundred deaths",
+     scene: "A CAT with nine lives loses them all on the day more than five hundred die."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Cementerio de la Chacarita",
+     event: "Chacarita cemetery opens for the fever dead",
+     place: "Chacarita",
+     scene: "A CAT digs the first grave in the new Chacarita cemetery for the fever dead."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP es: Fiebre amarilla en Buenos Aires",
+     event: "City orders the eviction of tenement houses during the fever",
+     scene: "A CAT is thrown out with the tenants as the city empties the fever tenements."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP es: Iglesia de Santa Felicitas",
+     event: "A rejected suitor shoots Felicitas Guerrero at her Barracas estate",
+     place: "Barracas",
+     scene: "Felicitas Guerrero drops a wedding COIN as her rejected suitor shoots her at the Barracas estate."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP es: Partido de Almirante Brown",
+     event: "Almirante Brown becomes a partido with Adrogue as its town",
+     place: "Adrogue",
+     scene: "Admiral Brown's statue uses a COMB to part the streets of Adrogue for the new partido."}
+  - {year: 1873, peg: comb, confidence: high, source: "barc.com.ar; La Nacion",
+     event: "Buenos Aires Rowing Club is founded at a cafe on Florida street",
+     scene: "Rowers dip their oars like a COMB into the Riachuelo for the new Buenos Aires Rowing Club."}
+  - {year: 1874, peg: car, confidence: high, source: "WP es: Parque Tres de Febrero",
+     event: "Sarmiento's law creates the Tres de Febrero park on Rosas's lands at Palermo",
+     place: "Palermo",
+     scene: "Sarmiento drives a CAR through Rosas's old estate at Palermo and marks it as a public park."}
+  - {year: 1875, peg: eagle, confidence: high, source: "WP es: Parque Tres de Febrero; HC",
+     event: "Tres de Febrero park opens; thirty-five thousand people attend",
+     place: "Palermo",
+     scene: "An EAGLE lands on the magnolia President Avellaneda plants as the Palermo park opens."}
+  - {year: 1876, peg: cage, confidence: high, source: "WP es: Partido de Avellaneda",
+     event: "New cemetery of Barracas al Sud opens",
+     place: "Barracas al Sud",
+     scene: "A CAGE gate creaks open on the new cemetery of Barracas al Sud."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Rivadavia Library is founded",
+     scene: "A COWBOY returns a borrowed book to the new Rivadavia Library."}
+world_refs:
+  - {year: 1810, event: "May Revolution: the First Junta replaces the viceroy", cell: latin_america_politics_1800_1945}
+  - {year: 1813, event: "Lopez y Planes' Marcha Patriotica adopted", cell: latin_america_arts_1800_1945}
+  - {year: 1822, event: "Rivadavia's Church reform ends tithes and takes over small monasteries", cell: latin_america_religion_1800_1945}
+  - {year: 1823, event: "Revolt against Rivadavia's Church reform fails", cell: latin_america_religion_1800_1945}
+  - {year: 1823, event: "Rivadavia founds the Public Museum", cell: latin_america_science_1800_1945}
+  - {year: 1824, event: "Buenos Aires takes the Baring Brothers loan", cell: latin_america_economy_1800_1945}
+  - {year: 1825, event: "British subjects get freedom of worship in Buenos Aires", cell: latin_america_religion_1800_1945}
+  - {year: 1831, event: "St John's Anglican church opens", cell: latin_america_religion_1800_1945}
+  - {year: 1836, event: "Rosas lets the Jesuits return", cell: latin_america_religion_1800_1945}
+  - {year: 1837, event: "Salon Literario at Marcos Sastre's bookshop", cell: latin_america_arts_1800_1945}
+  - {year: 1843, event: "Rosas expels the Jesuits again", cell: latin_america_religion_1800_1945}
+  - {year: 1845, event: "British and French fleets blockade Buenos Aires", cell: latin_america_politics_1800_1945}
+  - {year: 1851, event: "Marmol's Amalia, set in Rosas's Buenos Aires", cell: latin_america_arts_1800_1945}
+  - {year: 1852, event: "Battle of Caseros: Urquiza overthrows Rosas", cell: latin_america_politics_1800_1945}
+  - {year: 1857, event: "First Teatro Colon opens with La traviata", cell: latin_america_arts_1800_1945}
+  - {year: 1857, event: "Ferrocarril Oeste: first railway in Argentina opens", cell: latin_america_economy_1800_1945}
+  - {year: 1862, event: "Burmeister becomes director of the Public Museum", cell: latin_america_science_1800_1945}
+  - {year: 1862, event: "Congregacion Israelita founded", cell: latin_america_religion_1800_1945}
+  - {year: 1866, event: "Buenos Aires becomes a metropolitan archdiocese", cell: latin_america_religion_1800_1945}
+  - {year: 1867, event: "Palermo: the first football match in Argentina", cell: latin_america_society_1800_1945}
+  - {year: 1871, event: "Yellow fever epidemic kills about an eighth of Buenos Aires", cell: latin_america_society_1800_1945}
+  - {year: 1871, event: "Blanes shows Un episodio de la fiebre amarilla", cell: latin_america_arts_1800_1945}
+  - {year: 1871, event: "Echeverria's El matadero first published", cell: latin_america_arts_1800_1945}
+  - {year: 1872, event: "Argentine Scientific Society founded", cell: latin_america_science_1800_1945}
+  - {year: 1875, event: "First Salesian missionaries arrive", cell: latin_america_religion_1800_1945}
+  - {year: 1876, event: "Le Frigorifique brings chilled meat", cell: latin_america_economy_1800_1945}
+out_refs:
+  - {year: 1812, event: "A Chamber of Appeals replaces the Real Audiencia in the Cabildo", reason: "court of the whole territory"}
+  - {year: 1816, event: "The Congress of Tucuman moves to Buenos Aires", reason: "national congress"}
+  - {year: 1820, event: "Rondeau resigns and the Directorate ends", reason: "national government"}
+  - {year: 1826, event: "Rivadavia becomes the first president", reason: "national government"}
+  - {year: 1828, event: "Lavalle overthrows Governor Dorrego, who is shot at Navarro", reason: "provincial coup; execution outside the area"}
+  - {year: 1833, event: "Governor Balcarce resigns after the Restorers' revolt", reason: "provincial government"}
+  - {year: 1853, event: "Urquiza swears the national constitution at Flores", reason: "national act"}
+  - {year: 1859, event: "Pact of San Jose de Flores", reason: "treaty signed in the area"}
+  - {year: 1860, event: "Buenos Aires is named provisional capital", reason: "national act"}
+  - {year: 1868, event: "Vice President Marcos Paz dies of cholera", reason: "national leader"}
+  - {year: 1874, event: "Mitre's revolution against Avellaneda's election", reason: "national revolt; fighting outside the area"}

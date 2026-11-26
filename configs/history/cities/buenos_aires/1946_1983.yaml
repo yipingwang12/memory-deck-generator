@@ -1,0 +1,801 @@
+# City: Buenos Aires x 1946 to 1983 (Perón's Buenos Aires, Ezeiza airport, the 1953 bombs and the 1955 bombing of the Plaza de Mayo,
+# the 1956 shootings, the villas miseria and the eradication plans, the end of the trams, the Ezeiza massacre, the Triple A and guerrilla
+# attacks, the junta years and the detention centres (ESMA, Club Atlético, Olimpo), the Mothers, the 1978 World Cup, the urban motorways,
+# the 1982 rallies, the return of democracy in December 1983). DRAFT 2026-11-26.
+# Area: Greater Buenos Aires as decided: the Autonomous City (CABA) and the 24 partidos of the conurbation (Avellaneda, Lanús, Lomas de
+# Zamora, Quilmes, La Matanza, Morón, San Isidro, Vicente López, San Fernando, Tigre, San Martín, Tres de Febrero, Ezeiza, ...).
+# La Plata, Luján, Pilar, Escobar, Campana, Zárate and Colonia del Sacramento are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). National government acts -> out_refs.
+# World-grid events -> world_refs (latin_america cells). Dates: memory pass + web check (searches within the 45 budget; no unauthorised book copies).
+# Main sources: wikipedia.org (es/en: intendentes of Buenos Aires, Bombardeo de la Plaza de Mayo, Masacre de Ezeiza, Fusilamientos de
+# José León Suárez, subte lines, Autopista 25 de Mayo, Teatro San Martín, Centro Cultural Recoleta, Planetario, stadium pages, detention
+# centres, PEVE, CEAMSE, Televisión en Argentina, Historia de la ciudad de Buenos Aires, Timeline of Buenos Aires), La Nación, Infobae,
+# Perfil, Billiken, Reuters archive, Ford and Mercedes-Benz press pages.
+# A work -> its first public appearance (opening, premiere, publication).
+# Peg: last two digits of the year. All dates Gregorian.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1946, peg: roach, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (6 Jun)",
+     event: "Emilio Siri becomes intendente of Buenos Aires, Perón's first city head",
+     place: "Palacio Municipal",
+     scene: "A ROACH in a city sash climbs the Palacio Municipal stairs and pins the intendente badge on Emilio Siri."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (26 Nov)",
+     event: "Juan Debenedetti becomes intendente of Buenos Aires",
+     place: "Palacio Municipal",
+     scene: "Siri lowers a ROPE from the Palacio Municipal balcony and Juan Debenedetti climbs up it into the intendente's chair."}
+  - {year: 1951, peg: wallet, confidence: high, source: "La Izquierda Diario; HCD (22 Aug)",
+     event: "Cabildo Abierto: the CGT fills Avenida 9 de Julio to ask Evita to run for vice-president",
+     place: "Avenida 9 de Julio",
+     scene: "A huge crowd on 9 de Julio waves a giant WALLET marked vice-president at Evita, and she will not take it."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (20 Feb)",
+     event: "Jorge Sabaté becomes intendente of Buenos Aires",
+     place: "Palacio Municipal",
+     scene: "A LION carries Jorge Sabaté in its jaws into the intendente's office on Avenida de Mayo and drops him in the chair."}
+  - {year: 1952, peg: lion, confidence: high, source: "en.WP: Eva Perón (died 26 July 1952; wake at the Ministry of Labour and Congress)",
+     event: "Eva Perón dies; for two weeks crowds queue through the rain to file past her coffin",
+     place: "Ministry of Labour and the National Congress",
+     scene: "A stone LION at the Congress steps is buried under flowers as the queue for Evita's coffin runs for blocks in the rain."}
+  - {year: 1953, peg: llama, confidence: high, source: "La Nación; Infobae; WebSearch (15 Apr; five to seven dead)",
+     event: "Plaza de Mayo: bombs explode during a CGT rally for Perón, one in the Line A station, and kill several people",
+     place: "Plaza de Mayo",
+     scene: "A LLAMA loaded with two bombs walks into the Line A station under the Plaza de Mayo and the blast shakes the CGT rally."}
+  - {year: 1953, peg: llama, confidence: high, source: "Perfil; La Nación; WebSearch (night of 15 Apr)",
+     event: "After the bombs, Peronist groups burn the Jockey Club on Florida street",
+     place: "Florida street",
+     scene: "A burning LLAMA runs through the doors of the Jockey Club on Florida street and the old club library goes up in flames."}
+  - {year: 1953, peg: llama, confidence: high, source: "El Heraldo; La Nación; WebSearch (15 Apr)",
+     event: "The same night, crowds burn the Socialist Casa del Pueblo and attack the Radical and conservative party offices",
+     place: "Casa del Pueblo, Rivadavia street",
+     scene: "A mob drives a LLAMA with a torch tied to its tail into the Socialist Casa del Pueblo on Rivadavia street."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (27 Oct)",
+     event: "Bernardo Gago becomes intendente of Buenos Aires, the last of Perón's city heads",
+     place: "Palacio Municipal",
+     scene: "A LAWYER reads the appointment of Bernardo Gago aloud in the Palacio Municipal and hands him the city keys."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP es: Bombardeo de la Plaza de Mayo (16 Jun; over 300 dead)",
+     event: "Navy and air force planes bomb and strafe the Plaza de Mayo and the Casa Rosada and kill over three hundred people",
+     place: "Plaza de Mayo",
+     scene: "Navy planes drop bombs shaped like white LILY flowers on the Plaza de Mayo, and the crowd round the Casa Rosada falls."}
+  - {year: 1955, peg: lily, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (26 Sep)",
+     event: "Miguel Madero becomes intendente after the coup that ousts Perón",
+     place: "Palacio Municipal",
+     scene: "Miguel Madero tears Perón's portrait off the intendente's wall and hangs a LILY wreath in its place."}
+  - {year: 1955, peg: lily, confidence: high, source: "educ.ar (La Prensa 1 Sep); Cronista (31 Aug)",
+     event: "Perón tells a CGT crowd in the Plaza de Mayo that five enemies will fall for each Peronist",
+     place: "Plaza de Mayo",
+     scene: "Perón throws five LILY wreaths from the balcony for each one of his own and threatens the Plaza de Mayo crowd's foes."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP es: Fusilamientos de José León Suárez (9 Jun)",
+     event: "José León Suárez: police shoot twelve civilian prisoners in the garbage dumps after Valle's uprising; five die",
+     place: "José León Suárez, San Martín",
+     scene: "A giant LEECH crawls out of the José León Suárez garbage dump where police shoot twelve prisoners in the dark."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP es: Fusilamientos de José León Suárez (night 9-10 Jun)",
+     event: "Lanús: police shoot six prisoners in the early hours of the uprising night",
+     place: "Lanús",
+     scene: "A LEECH on the police station wall in Lanús counts six prisoners who walk out to a firing squad before dawn."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP es: Fusilamientos de José León Suárez (12 Jun)",
+     event: "General Juan José Valle is shot by firing squad at the National Penitentiary on Las Heras avenue",
+     place: "Penitenciaría Nacional, Las Heras",
+     scene: "A LEECH sticks to General Valle's blindfold as the firing squad of the National Penitentiary on Las Heras takes aim."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (8 Jun)",
+     event: "Luis María de la Torre Campos becomes intendente under Aramburu",
+     place: "Palacio Municipal",
+     scene: "Aramburu peels a LEECH off the intendente's chair and seats Luis María de la Torre Campos in it."}
+  - {year: 1957, peg: log, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (26 Jan)",
+     event: "Eduardo Bergalli becomes intendente of Buenos Aires",
+     place: "Palacio Municipal",
+     scene: "Eduardo Bergalli rolls a LOG through the Palacio Municipal door and uses it as his intendente's desk."}
+  - {year: 1957, peg: log, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (20 Sep)",
+     event: "Ernesto Florit becomes intendente, the last of the Liberating Revolution",
+     place: "Palacio Municipal",
+     scene: "Ernesto Florit saws Bergalli's LOG desk in half and takes the intendente's seat in the autumn of the military regime."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (14 May)",
+     event: "Hernán Giralt becomes intendente under Frondizi and governs the city for four years",
+     place: "Palacio Municipal",
+     scene: "A WOLF guards the Palacio Municipal door for four years while Hernán Giralt, Frondizi's intendente, governs inside."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP es: Frigorífico Lisandro de la Torre (15-17 Jan)",
+     event: "Mataderos: workers occupy the Lisandro de la Torre meatpacking plant against its sale; tanks break in",
+     place: "Mataderos",
+     scene: "A tank's steel ELBOW smashes the gates of the Lisandro de la Torre plant in Mataderos and the workers inside are driven out."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP en: Capture of Adolf Eichmann (11 May)",
+     event: "San Fernando: Israeli agents seize Adolf Eichmann outside his house on Garibaldi street",
+     place: "Garibaldi street, San Fernando",
+     scene: "Mossad agents lure Adolf Eichmann with a wheel of CHEESE on Garibaldi street, San Fernando, and push him into a car."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP es: Penitenciaría Nacional (6 Sep)",
+     event: "Demolition of the National Penitentiary on Las Heras begins",
+     place: "Las Heras avenue",
+     scene: "A JET of water from the wreckers' hoses brings down the director's house of the National Penitentiary on Las Heras."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (26 Jun)",
+     event: "Architect Alberto Prebisch, designer of the Obelisk, becomes intendente",
+     place: "Palacio Municipal",
+     scene: "Alberto Prebisch wears the intendente's CHAIN with a small silver Obelisk on it, the monument he designed."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP es: Penitenciaría Nacional (closed 5 Feb; trotyl)",
+     event: "The National Penitentiary closes and explosives bring down its walls; the site becomes Parque Las Heras",
+     place: "Parque Las Heras",
+     scene: "Explosives snap the last prison CHAIN as the National Penitentiary walls fall, and grass grows on Parque Las Heras."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (17 Oct)",
+     event: "Francisco Rabanal becomes intendente under Illia",
+     place: "Palacio Municipal",
+     scene: "Illia hands Francisco Rabanal a GEM set in the city seal, and Rabanal takes the intendente's chair."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (6 Jul)",
+     event: "Eugenio Schettini becomes intendente after Onganía's coup",
+     place: "Palacio Municipal",
+     scene: "A JUDGE in a military cap bangs the gavel and installs Eugenio Schettini as Onganía's intendente."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (8 Sep)",
+     event: "Manuel Iricíbar becomes intendente of Buenos Aires",
+     place: "Palacio Municipal",
+     scene: "A JOCKEY gallops up Avenida de Mayo and hands the intendente's whip to Manuel Iricíbar."}
+  - {year: 1969, peg: ship, confidence: high, source: "WP es: Augusto Timoteo Vandor (30 Jun)",
+     event: "Metalworkers' union leader Augusto Vandor is shot dead in the UOM headquarters",
+     place: "UOM headquarters, La Rioja street",
+     scene: "Gunmen hide inside a model SHIP in the UOM headquarters hall and shoot union boss Augusto Vandor five times."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Pedro Eugenio Aramburu (29 May)",
+     event: "Montoneros kidnap former president Aramburu from his flat in the city",
+     place: "Montevideo street",
+     scene: "Montoneros dressed as soldiers lead former president Aramburu out of his flat like a GOOSE on a string."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (31 Mar)",
+     event: "Saturnino Montero Ruiz becomes intendente under Lanusse",
+     place: "Palacio Municipal",
+     scene: "A CAT leaps onto the intendente's desk and Saturnino Montero Ruiz, Lanusse's man, sits down beside it."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP es: Sheraton Buenos Aires Hotel (FAR bomb, 22nd floor)",
+     event: "FAR guerrillas explode a bomb on the twenty-second floor of the new Sheraton hotel and kill a guest",
+     place: "Sheraton hotel, Retiro",
+     scene: "A bomb hidden in a COIN box explodes on the twenty-second floor of the new Sheraton in Retiro."}
+  - {year: 1972, peg: coin, confidence: high, source: "Conclusión; C5N; La Izquierda Diario (17 Nov)",
+     event: "Perón lands at Ezeiza after seventeen years of exile, under rain and a huge army cordon",
+     place: "Ezeiza airport",
+     scene: "Perón steps off the plane at Ezeiza and a COIN shower falls on Rucci's umbrella and the army cordon."}
+  - {year: 1972, peg: coin, confidence: medium, source: "Conclusión; educ.ar: Gaspar Campos (18-19 Nov)",
+     event: "Vicente López: crowds gather at Perón's house on Gaspar Campos street; Perón and Balbín embrace there",
+     place: "Gaspar Campos street, Vicente López",
+     scene: "Perón and Balbín flip a COIN at the gate of the Gaspar Campos house and embrace before the crowd."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires (6 Dec)",
+     event: "A decree-law enlarges the city council to sixty members and creates fourteen neighbourhood councils",
+     place: "Concejo Deliberante",
+     scene: "Each of sixty new city councillors drops a COIN into the slot, and fourteen neighbourhood councils open their doors."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (4 Jun)",
+     event: "Leopoldo Frenkel becomes intendente under Cámpora",
+     place: "Palacio Municipal",
+     scene: "Leopoldo Frenkel runs a COMB through the military files of the Palacio Municipal and throws them out the window."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP es: Masacre de Ezeiza (20 Jun; at least 13 dead)",
+     event: "Ezeiza massacre: Peronist factions shoot at each other at Puente 12 as crowds wait for Perón",
+     place: "Puente 12, Riccheri motorway",
+     scene: "Gunmen on the Puente 12 stage fire from behind a giant COMB at the Peronist Youth columns waiting for Perón."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (30 Aug)",
+     event: "José Embrioni becomes intendente and holds office to the coup",
+     place: "Palacio Municipal",
+     scene: "José Embrioni combs his hair with a COMB in the intendente's mirror for three years until the coup."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP es: José Ignacio Rucci (25 Sep)",
+     event: "CGT leader José Ignacio Rucci is shot dead outside a house in Flores",
+     place: "Flores",
+     scene: "A sniper's bullet snaps the COMB in José Ignacio Rucci's pocket as he walks out of a house in Flores."}
+  - {year: 1973, peg: comb, confidence: high, source: "La Izquierda Diario; Aletheia (25 May)",
+     event: "Devotazo: crowds surround Villa Devoto prison and political prisoners walk free at midnight",
+     place: "Villa Devoto prison",
+     scene: "Crowds at Villa Devoto prison pull the cell bars apart like the teeth of a COMB and the political prisoners walk out."}
+  - {year: 1974, peg: car, confidence: high, source: "Reuters archive; La Izquierda Diario (1 Nov)",
+     event: "Tigre: a bomb on his boat kills federal police chief Alberto Villar and his wife",
+     place: "Tigre",
+     scene: "Police chief Villar's cabin cruiser, loaded like a CAR ferry, blows apart as it leaves the port of Tigre."}
+  - {year: 1974, peg: car, confidence: high, source: "WP es: Pozo de Banfield (Nov 1974 to Oct 1978)",
+     event: "Banfield: the provincial police investigations brigade begins to hold secret prisoners, the Pozo de Banfield",
+     place: "Banfield, Lomas de Zamora",
+     scene: "A police CAR backs into the Banfield brigade yard and unloads hooded prisoners into the secret pit."}
+  - {year: 1974, peg: car, confidence: high, source: "Infobae; La Nación (1 May)",
+     event: "Perón calls the Montoneros beardless fools and they walk out of the Plaza de Mayo",
+     place: "Plaza de Mayo",
+     scene: "Perón points from the balcony, and the Montoneros columns climb into a CAR and leave half the Plaza de Mayo empty."}
+  - {year: 1974, peg: car, confidence: high, source: "Infobae; La Gaceta; A24 (12 Jun)",
+     event: "Perón's last speech from the Casa Rosada balcony: the people's voice is the most wonderful music",
+     place: "Plaza de Mayo",
+     scene: "A CAR horn plays the most wonderful music under the Casa Rosada balcony as Perón speaks to the crowd for the last time."}
+  - {year: 1974, peg: car, confidence: high, source: "Infobae; Benielli, aacademica (15 Jul)",
+     event: "San Justo: gunmen kill former interior minister Arturo Mor Roig at a grill restaurant",
+     place: "San Justo, La Matanza",
+     scene: "Gunmen jump out of a CAR at a San Justo grill and shoot Arturo Mor Roig at his lunch table."}
+  - {year: 1974, peg: car, confidence: high, source: "Revista Ab (UNPAZ); Página/12 (31 Jul)",
+     event: "The Triple A kills deputy Rodolfo Ortega Peña in a taxi on Carlos Pellegrini street",
+     place: "Arenales and Carlos Pellegrini",
+     scene: "Triple A gunmen riddle the taxi CAR of deputy Ortega Peña at Arenales and Carlos Pellegrini."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP es: El Vesubio (1975 as La Ponderosa)",
+     event: "La Matanza: the Triple A begins to use the El Vesubio site, then called La Ponderosa, as a secret prison",
+     place: "El Vesubio, La Matanza",
+     scene: "A black EAGLE of the Triple A nests on the La Ponderosa sheds and drops hooded prisoners inside."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP es: Ataque al batallón de Monte Chingolo (23 Dec)",
+     event: "Monte Chingolo: the ERP attacks the army arsenal battalion and is crushed",
+     place: "Monte Chingolo, Lanús",
+     scene: "An army EAGLE swoops on the ERP fighters at the Monte Chingolo arsenal fence and tears their attack apart."}
+  - {year: 1975, peg: eagle, confidence: medium, source: "historiaobrera; Perfil (27 Jun)",
+     event: "Rodrigazo: the CGT general strike brings a huge crowd to the Plaza de Mayo against the wage cap",
+     place: "Plaza de Mayo",
+     scene: "A union EAGLE tears up Isabel's wage cap above the Plaza de Mayo as the striking crowd cheers."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (2 Apr)",
+     event: "Air force brigadier Osvaldo Cacciatore becomes intendente of the junta",
+     place: "Palacio Municipal",
+     scene: "Brigadier Cacciatore locks the city council in a CAGE and takes the intendente's chair for the junta."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: Escuela de Mecánica de la Armada (1976 to 1983)",
+     event: "The Navy Mechanics School (ESMA) officers' club becomes a secret detention and torture centre",
+     place: "ESMA, Avenida del Libertador",
+     scene: "Navy officers build a CAGE in the attic of the ESMA officers' club and fill it with hooded prisoners."}
+  - {year: 1976, peg: cage, confidence: medium, source: "WP es: Automotores Orletti (May to Nov 1976)",
+     event: "Floresta: Automotores Orletti, a garage, becomes a secret prison for Operation Condor",
+     place: "Venancio Flores street, Floresta",
+     scene: "Agents roll down the steel CAGE door of the Automotores Orletti garage in Floresta behind a car full of prisoners."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: Atentado contra la Policía Federal Argentina de 1976 (2 Jul)",
+     event: "A Montoneros bomb brings down the roof of the federal police dining hall and kills twenty-three people",
+     place: "Superintendencia de Seguridad Federal, Moreno street",
+     scene: "A bomb in a bird CAGE under a table brings the police dining hall roof down on Moreno street at lunch."}
+  - {year: 1976, peg: cage, confidence: unverified,
+     event: "A bomb under his bed kills federal police chief General Cesáreo Cardozo at home",
+     place: "Belgrano",
+     scene: "A bomb in a bird CAGE under the bed kills police chief Cardozo in his Buenos Aires flat."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: Hospital Posadas (28 Mar)",
+     event: "Haedo: troops occupy the Posadas hospital and seize staff",
+     place: "Haedo, Morón",
+     scene: "Troops lock the Posadas hospital staff in a CAGE in the Haedo yard four days after the coup."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: Club Atlético (12 Feb to 28 Dec 1977)",
+     event: "San Telmo: the Club Atlético secret detention centre opens in a police basement on Paseo Colón",
+     place: "Paseo Colón, San Telmo",
+     scene: "Guards lower prisoners into the basement on Paseo Colón like layers of a dark CAKE, the Club Atlético."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: Rodolfo Walsh (25 Mar)",
+     event: "Rodolfo Walsh is shot down in the street by a navy task group a day after he posts his open letter to the junta",
+     place: "San Juan and Entre Ríos avenues",
+     scene: "Rodolfo Walsh posts his open letter hidden in a CAKE box, and the next day a navy squad shoots him on San Juan avenue."}
+  - {year: 1977, peg: cake, confidence: medium, source: "WP es: Mansión Seré (1977-1978)",
+     event: "Castelar: the air force uses the Mansión Seré as a secret detention centre",
+     place: "Mansión Seré, Castelar",
+     scene: "Air force guards serve prisoners a stale CAKE in the locked upper rooms of the Mansión Seré in Castelar."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: Iglesia de la Santa Cruz (8-10 Dec)",
+     event: "Santa Cruz church: navy agents led by Astiz seize relatives of the disappeared and two French nuns",
+     place: "Santa Cruz church, San Cristóbal",
+     scene: "Astiz carries a CAKE into the Santa Cruz church meeting, then his squad drags the mothers and two French nuns away."}
+  - {year: 1977, peg: cake, confidence: high, source: "NSA Archive chronology; IACHR report (15 Apr)",
+     event: "Security forces seize La Opinión editor Jacobo Timerman",
+     place: "La Opinión",
+     scene: "Police smash the CAKE on Timerman's desk at La Opinión and take him away to secret prisons."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP es: Club Atlético (demolished early 1978)",
+     event: "The Club Atlético building is demolished for the 25 de Mayo motorway",
+     place: "Paseo Colón, San Telmo",
+     scene: "Bulldozers fill the Club Atlético CAVE under Paseo Colón with rubble so the motorway can pass over it."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP es: El Olimpo (16 Aug 1978 to Jan 1979)",
+     event: "Floresta: El Olimpo secret detention centre opens in a police vehicle depot",
+     place: "Ramón Falcón street, Floresta",
+     scene: "Guards wall up a CAVE inside the Floresta police depot, call it El Olimpo, and fill it with prisoners."}
+  - {year: 1978, peg: cave, confidence: medium, source: "WP en: Armando Lambruschini (1 or 2 Aug)",
+     event: "A Montoneros bomb in Admiral Lambruschini's building kills his young daughter Paula and two neighbours",
+     place: "Palermo",
+     scene: "A bomb in the CAVE under Admiral Lambruschini's bed brings the building down on his daughter Paula."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: ESMA (1979 IACHR visit)",
+     event: "Inter-American Commission on Human Rights visits; the navy alters the ESMA officers' club to hide its prisoners",
+     place: "ESMA, Avenida del Libertador",
+     scene: "A navy COWBOY herds the ESMA prisoners onto a boat and paints over the attic stairs before the commission arrives."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: Cárcel de Caseros (23 Apr)",
+     event: "Parque Patricios: the new Caseros prison tower opens",
+     place: "Parque Patricios",
+     scene: "A COWBOY lassoes the last concrete block onto the tall new Caseros prison in Parque Patricios."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "Press (NZ) 29-09-1979; La Nación (27 Sep)",
+     event: "Olivos: Montoneros bomb the house of economy official Walter Klein; his guards die and the family is dug out",
+     place: "Olivos, Vicente López",
+     scene: "A Montoneros COWBOY lights two bombs in Walter Klein's Olivos house, and the family is dug out of the rubble."}
+  - {year: 1981, peg: foot, confidence: disputed, source: "WP es: Marchas de la Resistencia (1981); Madres page: Dec 1980",
+     event: "The Mothers of the Plaza de Mayo walk the first twenty-four-hour March of Resistance round the square",
+     place: "Plaza de Mayo",
+     scene: "Each Mother puts one tired FOOT in front of the other round the Plaza de Mayo for twenty-four hours."}
+  - {year: 1981, peg: foot, confidence: high, source: "Tiempo Argentino; La Voz de San Justo (7 Nov)",
+     event: "Liniers: the CGT marches to San Cayetano church for Peace, Bread and Work, the first mass march against the junta",
+     place: "San Cayetano church, Liniers",
+     scene: "Ten thousand workers march on FOOT from the Vélez ground to San Cayetano church chanting for bread and work."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (31 Mar)",
+     event: "Guillermo del Cioppo becomes intendente under Galtieri",
+     place: "Palacio Municipal",
+     scene: "Guillermo del Cioppo takes Cacciatore's chair out of the OVEN still hot and sits in it as intendente."}
+  - {year: 1982, peg: oven, confidence: high, source: "iProfesional; Perfil; WebSearch (2 Apr)",
+     event: "A huge crowd fills the Plaza de Mayo to cheer the landing on the Falklands; Galtieri speaks from the balcony",
+     place: "Plaza de Mayo",
+     scene: "Galtieri bakes a flag-shaped cake in an OVEN on the Casa Rosada balcony as the packed Plaza de Mayo cheers."}
+  - {year: 1982, peg: oven, confidence: high, source: "Infobae; El Independiente; WebSearch (10 Apr)",
+     event: "Tens of thousands rally again in the Plaza de Mayo as US mediator Haig arrives",
+     place: "Plaza de Mayo",
+     scene: "Haig opens the Casa Rosada door and an OVEN-hot wave of chanting from the Plaza de Mayo crowd hits him."}
+  - {year: 1982, peg: oven, confidence: medium, source: "La Nación 15-06-2022; WebSearch (14-15 Jun)",
+     event: "After the surrender, angry crowds in the Plaza de Mayo clash with police firing tear gas and rubber bullets",
+     place: "Plaza de Mayo",
+     scene: "The angry crowd throws an OVEN door at the Casa Rosada and police answer with tear gas across the Plaza de Mayo."}
+  - {year: 1982, peg: oven, confidence: medium, source: "La Capital MdP; Conclusión (30 Mar; thousands held)",
+     event: "The CGT march for Peace, Bread and Work toward the Plaza de Mayo is broken up and thousands are arrested",
+     place: "Plaza de Mayo",
+     scene: "Police push Ubaldini's marchers away from the Plaza de Mayo with the heat of an OVEN and fill the vans with prisoners."}
+  - {year: 1982, peg: oven, confidence: high, source: "Río Negro; La Capital MdP (16 Dec)",
+     event: "March for Democracy fills the Plaza de Mayo; a plain-clothes policeman shoots worker Dalmiro Flores",
+     place: "Plaza de Mayo",
+     scene: "A plain-clothes policeman steps out of a green Falcon as hot as an OVEN and shoots Dalmiro Flores in the back."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP es: Intendentes de la Ciudad de Buenos Aires (10 Dec)",
+     event: "Julio César Saguier becomes the first intendente of the restored democracy",
+     place: "Palacio Municipal",
+     scene: "Julio César Saguier blows the junta's FOAM off the intendente's desk on the first day of democracy."}
+  - {year: 1983, peg: foam, confidence: disputed, source: "Diario de Cuyo; alfonsin.org (25-28 Oct)",
+     event: "Alfonsín closes his campaign before a vast crowd on 9 de Julio at the Obelisk",
+     place: "Avenida 9 de Julio",
+     scene: "Alfonsín recites the constitution's preamble from a stage of white FOAM before a million people at the Obelisk."}
+  - {year: 1983, peg: foam, confidence: medium, source: "La Nación; Diario de Cuyo (28 Oct, also 27)",
+     event: "Peronist closing rally on 9 de Julio: Herminio Iglesias burns a coffin marked with the Radical party name",
+     place: "Avenida 9 de Julio",
+     scene: "Herminio Iglesias sets fire to a coffin of FOAM painted with the Radical colours on the 9 de Julio stage."}
+
+  # science
+  - {year: 1947, peg: rock, confidence: medium, source: "WP es: Aeroparque (27 Feb 1947); WP en timeline: 1948",
+     event: "The Aeroparque city airport opens on the river shore in Palermo",
+     place: "Aeroparque, Costanera Norte",
+     scene: "A plane lands on a flat ROCK fill on the Palermo river shore and the Aeroparque opens to flights."}
+  - {year: 1948, peg: reef, confidence: high, source: "WP es: Ruta Nacional A002 (opened 1948)",
+     event: "The Riccheri motorway to Ezeiza opens, the first motorway in Argentina",
+     place: "Riccheri motorway",
+     scene: "A REEF of white concrete rises out of the La Matanza fields and becomes the Riccheri, Argentina's first motorway."}
+  - {year: 1948, peg: reef, confidence: high, source: "Canal26; El Litoral (4 Jun)",
+     event: "The first trolleybus line runs from Plaza Italia to Puente Saavedra",
+     place: "Plaza Italia",
+     scene: "A trolleybus pole hooks the wire over a REEF of rooftops and runs from Plaza Italia to Puente Saavedra."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP es: Aeropuerto Ministro Pistarini (30 Apr)",
+     event: "Perón opens Ezeiza international airport",
+     place: "Ezeiza",
+     scene: "Perón cuts a ROPE stretched across the Ezeiza runway and the first plane takes off from the new airport."}
+  - {year: 1949, peg: rope, confidence: medium, source: "gem.wiki; IAPG (Dec 1949)",
+     event: "The Comodoro Rivadavia gas pipeline opens and brings natural gas to Buenos Aires",
+     place: "Llavallol",
+     scene: "A steel ROPE of pipe runs from Patagonia to Llavallol and Buenos Aires stoves light with natural gas."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "The widening of Avenida Belgrano is complete",
+     place: "Avenida Belgrano",
+     scene: "A gaucho throws a LASSO round the old Avenida Belgrano houses and drags them back to make the street wide."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP es: Historia de la ciudad de Buenos Aires",
+     event: "The northern avenue to General Paz takes the name Avenida del Libertador",
+     place: "Avenida del Libertador",
+     scene: "A LASSO hooks the new Avenida del Libertador sign onto the northern avenue for San Martín's centenary."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP es: Avenida 9 de Julio",
+     event: "Avenida 9 de Julio opens from Tucumán to Córdoba avenue",
+     place: "Avenida 9 de Julio",
+     scene: "A LASSO drags the next block of 9 de Julio open from Tucumán to Córdoba."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "WP es: Autopista Perito Moreno",
+     event: "Avenida del Justicialismo is built to link south and west after the Pompeya refuse burning ends",
+     place: "Pompeya",
+     scene: "Road workers pave Avenida del Justicialismo over the old Pompeya refuse line with cobbles from a fat WALLET."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "Evita Perón official site; GBA (in use 1951)",
+     event: "Avellaneda: the Eva Perón Foundation's Presidente Perón hospital opens",
+     place: "Avellaneda",
+     scene: "Evita opens her WALLET and pays for the new Presidente Perón hospital in Avellaneda."}
+  - {year: 1952, peg: lion, confidence: high, source: "GBA health ministry (1952)",
+     event: "Lanús: the Evita hospital of the Eva Perón Foundation opens",
+     place: "Lanús",
+     scene: "A LION carved over the door guards the new Evita hospital in Lanús."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP en: Buenos Aires Underground (6 Aug)",
+     event: "Line A of the subway opens the Pasco and Alberti stations",
+     place: "Line A, Rivadavia avenue",
+     scene: "A LLAMA trots down the stairs of the new Pasco and Alberti stations on Line A under Rivadavia."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: Hospital Posadas (Apr)",
+     event: "Haedo: the National Health Institute opens in the unfinished Eva Perón Foundation hospital",
+     place: "Haedo, Morón",
+     scene: "A WOLF in a white coat opens the National Health Institute in the empty Haedo hospital that Evita began."}
+  - {year: 1960, peg: cheese, confidence: medium, source: "WP es/en: Línea E (9 Jul or 9 Dec)",
+     event: "Line E opens its new Boedo station",
+     place: "Boedo",
+     scene: "A Line E train noses through a tunnel of CHEESE and stops at the new Boedo station."}
+  - {year: 1963, peg: gem, confidence: medium, source: "Billiken; WebSearch (19 or 20 Feb)",
+     event: "The last city tram runs; the network closes after nearly a century",
+     place: "Buenos Aires streets",
+     scene: "The last tram of Buenos Aires rolls into the depot with a GEM lamp on its roof and the network goes dark."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP es: Línea E (24 Apr)",
+     event: "Line E is extended under the city centre to Bolívar by the Plaza de Mayo; its Constitución branch closes",
+     place: "Bolívar station",
+     scene: "A JUDGE orders the Line E train off its Constitución track and down a new tunnel to Bolívar by the Plaza de Mayo."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP es: Planetario Galileo Galilei (20 Dec)",
+     event: "Palermo: the Galileo Galilei planetarium is inaugurated",
+     place: "Palermo parks",
+     scene: "A JUDGE in a star-covered robe strikes the gavel on the dome and opens the Galileo Galilei planetarium in Palermo."}
+  - {year: 1966, peg: judge, confidence: medium, source: "Canal26; WP en list (30 Apr)",
+     event: "The last trolleybus runs",
+     place: "Buenos Aires streets",
+     scene: "A JUDGE cuts the overhead wire with a gavel and the last trolleybus of Buenos Aires stops."}
+  - {year: 1969, peg: ship, confidence: high, source: "WebSearch: New Pueyrredón Bridge (19 Dec)",
+     event: "The New Pueyrredón Bridge opens over the Riachuelo to Avellaneda",
+     place: "Riachuelo, Avellaneda",
+     scene: "A tall SHIP passes under the new concrete Pueyrredón Bridge as the first cars cross the Riachuelo to Avellaneda."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Hospital Posadas (Apr)",
+     event: "Haedo: the hospital opens its wards as the Policlínico Alejandro Posadas",
+     place: "Haedo, Morón",
+     scene: "A GOOSE pushes the first patient trolley into the new wards of the Posadas hospital in Haedo."}
+  - {year: 1971, peg: cat, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Florida street becomes a pedestrian street",
+     place: "Florida street",
+     scene: "A CAT chases the last car off Florida street, and the street belongs to walkers from then on."}
+  - {year: 1971, peg: cat, confidence: high, source: "WP es: Avenida 9 de Julio",
+     event: "Avenida 9 de Julio is opened north to Santa Fe and south to Independencia",
+     place: "Avenida 9 de Julio",
+     scene: "A CAT runs along the new 9 de Julio lanes north to Santa Fe and south to Independencia."}
+  - {year: 1973, peg: comb, confidence: medium, source: "WP es: Línea E (23 Jun or 23 Jul)",
+     event: "Line E is extended west to José María Moreno station",
+     place: "Caballito",
+     scene: "A giant COMB digs the Line E tunnel west under Caballito to the new José María Moreno station."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: CEAMSE",
+     event: "Cacciatore bans private refuse incinerators and shuts the city refuse plants",
+     place: "Buenos Aires flats",
+     scene: "Cacciatore locks every building incinerator in a CAGE and the chimneys of the city stop smoking."}
+  - {year: 1976, peg: cage, confidence: high, source: "WP es: Historia de la ciudad; Autopista 25 de Mayo",
+     event: "The city draws up the urban motorways plan of eight motorways across the capital",
+     place: "Palacio Municipal",
+     scene: "Planners draw eight motorways like the bars of a CAGE over the map of Buenos Aires."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: CEAMSE",
+     event: "City and province create CEAMSE to carry refuse to sanitary landfills",
+     place: "Villa Domínico",
+     scene: "CEAMSE trucks pour the city's refuse into the Villa Domínico landfill in layers, like a giant CAKE."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: Autopista 25 de Mayo (10 Jun)",
+     event: "International tender for the first two urban motorways, 25 de Mayo and Perito Moreno",
+     place: "Palacio Municipal",
+     scene: "Eleven foreign consortia bid for the first two motorways with a CAKE shaped like an overpass."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP es: Historia de la ciudad (2 Nov)",
+     event: "Work begins on the 25 de Mayo and Perito Moreno motorways after mass expropriations",
+     place: "San Cristóbal",
+     scene: "Bulldozers cut a CAVE through rows of expropriated houses in San Cristóbal for the motorway pillars."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP es: Autopista 25 de Mayo (6 Dec)",
+     event: "Cacciatore opens the elevated 25 de Mayo and Perito Moreno motorways",
+     place: "Autopista 25 de Mayo",
+     scene: "Cacciatore smashes a VASE on the first pillar of the elevated 25 de Mayo motorway and the traffic rolls."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP es: Terminal de Ómnibus de Retiro (1 May)",
+     event: "The Retiro long-distance bus terminal opens",
+     place: "Retiro",
+     scene: "Long-distance buses wash off the road FOAM and pull into the new Retiro bus terminal."}
+
+  # arts
+  - {year: 1946, peg: roach, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "The Buenos Aires Philharmonic is founded",
+     place: "Teatro Colón",
+     scene: "A ROACH lifts a conductor's baton in the Colón pit and the new Buenos Aires Philharmonic plays its first chord."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP es: Teatro General San Martín",
+     event: "The municipal theatre on Corrientes is renamed Teatro General San Martín",
+     place: "Avenida Corrientes",
+     scene: "A LASSO pulls down the old sign of the municipal theatre on Corrientes and hoists the name General San Martín."}
+  - {year: 1954, peg: lawyer, confidence: high, source: "WP es: Teatro General San Martín (24 Jun)",
+     event: "Work begins on the new Teatro San Martín building by Mario Roberto Álvarez",
+     place: "Avenida Corrientes",
+     scene: "A LAWYER signs the contract on Corrientes and Roggio's diggers start the new San Martín theatre."}
+  - {year: 1956, peg: leech, confidence: medium, source: "WP es: Biblioteca Nacional (Palacio Unzué stood to 1956)",
+     event: "The Palacio Unzué, Perón's residence where Evita died, is demolished",
+     place: "Palacio Unzué, Recoleta",
+     scene: "The new regime sets a huge LEECH on the Palacio Unzué walls and it sucks Perón's residence down to the ground."}
+  - {year: 1956, peg: leech, confidence: high, source: "WP es: Museo de Arte Moderno de Buenos Aires",
+     event: "Rafael Squirru founds the Museum of Modern Art, at first a museum with no building",
+     place: "Buenos Aires",
+     scene: "Rafael Squirru carries the new Museum of Modern Art on his back like a LEECH from hall to hall."}
+  - {year: 1957, peg: log, confidence: high, source: "WP es: Edificio Alas",
+     event: "The Alas building is complete, the tallest building in Buenos Aires for decades",
+     place: "Edificio Alas, San Nicolás",
+     scene: "A crane stacks the last LOG on top of the Alas tower and it beats every other skyscraper in Buenos Aires."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: Monumento a Justo José de Urquiza",
+     event: "Palermo: the Urquiza monument by Renzo Baldi and Héctor Rocha is inaugurated",
+     place: "Palermo",
+     scene: "A bronze WOLF crouches at the foot of the new Urquiza monument in Palermo."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP es: Teatro General San Martín (25 May)",
+     event: "Intendente Giralt inaugurates the new Teatro San Martín on Corrientes",
+     place: "Avenida Corrientes",
+     scene: "Giralt cuts a ribbon of CHEESE in the glass lobby of the new Teatro San Martín on Corrientes."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP es: Historia de la ciudad",
+     event: "Sesquicentennial exhibition for the May Revolution draws fewer visitors than planned",
+     place: "Avenida Figueroa Alcorta",
+     scene: "Organizers of the Sesquicentennial exhibition put out tons of CHEESE for crowds that do not come."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP es: Palacio Unzué (built from 1962)",
+     event: "Work begins on the new National Library on the site of the Palacio Unzué",
+     place: "Recoleta",
+     scene: "A CHAIN of cranes lifts the first concrete of Testa's National Library on the old Unzué site."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP en: Don Rodrigo; Cambridge Tempo (24 Jul)",
+     event: "Teatro Colón: Ginastera's opera Don Rodrigo premieres",
+     place: "Teatro Colón",
+     scene: "King Don Rodrigo throws a CHERRY at the Colón audience at the premiere of Ginastera's opera."}
+  - {year: 1966, peg: judge, confidence: high, source: "WP en: Teatro Colón",
+     event: "Raúl Soldi paints the new canvas of the Teatro Colón dome",
+     place: "Teatro Colón",
+     scene: "A JUDGE holds Raúl Soldi's ladder as he paints dancers on the new canvas of the Teatro Colón dome."}
+  - {year: 1967, peg: jockey, confidence: medium, source: "WP en: Timeline of Buenos Aires",
+     event: "Palermo: the Japanese Garden opens",
+     place: "Palermo",
+     scene: "A JOCKEY rides his horse over the red bridge of the new Japanese Garden in Palermo."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP en: Bomarzo (opera); Los Andes (Aug)",
+     event: "Onganía bans Ginastera's opera Bomarzo at the Teatro Colón",
+     place: "Teatro Colón",
+     scene: "Onganía, dressed as a JOCKEY, rides onto the Colón stage and whips the Bomarzo cast out."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Teatro General San Martín",
+     event: "The Centro Cultural San Martín opens on Sarmiento street; a fire nearly destroys the Podestá mural",
+     place: "Sarmiento street",
+     scene: "A GOOSE flaps out of the new Centro Cultural San Martín as a fire licks the Podestá mural."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Instituto Di Tella (May)",
+     event: "The Di Tella Institute closes its art and music centres on Florida street",
+     place: "Florida street",
+     scene: "A GOOSE locks the door of the Di Tella art rooms on Florida street, and the avant-garde leaves."}
+  - {year: 1970, peg: goose, confidence: medium, source: "La Izquierda Diario; Cambridge (Nov)",
+     event: "Palermo: the first B.A. Rock festival plays in the old velodrome",
+     place: "Palermo velodrome",
+     scene: "A GOOSE plays electric guitar on the cracked track of the Palermo velodrome at the first B.A. Rock."}
+  - {year: 1971, peg: cat, confidence: high, source: "Canal26; ASN (10 Oct)",
+     event: "A plane carrying nine Teatro Colón dancers, Fontenla and Neglia among them, crashes into the river after take-off",
+     place: "Aeroparque, Río de la Plata",
+     scene: "A CAT watches from the pier as the plane with the Colón dancers falls into the river off Aeroparque."}
+  - {year: 1973, peg: comb, confidence: high, source: "WP es: Obelisco de Buenos Aires (Dec)",
+     event: "The Obelisk is decorated as a Christmas tree",
+     place: "Obelisk",
+     scene: "Workers COMB tinsel down the sides of the Obelisk and turn it into a Christmas tree."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP es: Feria Internacional del Libro de Buenos Aires",
+     event: "The Buenos Aires Book Fair is created",
+     place: "Buenos Aires",
+     scene: "An EAGLE carries the first book to the new Buenos Aires Book Fair."}
+  - {year: 1975, peg: eagle, confidence: high, source: "WP es: Obelisco de Buenos Aires",
+     event: "A turning ring on the Obelisk reads silence is health",
+     place: "Obelisk",
+     scene: "An EAGLE perches on the turning ring of the Obelisk that tells the city silence is health."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: Teatro General San Martín",
+     event: "The San Martín theatre opens the experimental Cunill Cabanellas hall",
+     place: "Avenida Corrientes",
+     scene: "A COWBOY rides onto the small stage of the new experimental Cunill Cabanellas hall at the San Martín."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP es: Centro Cultural Recoleta (Dec)",
+     event: "Recoleta: the old asylum becomes the Centro Cultural Ciudad de Buenos Aires by Testa, Bedel and Benedit",
+     place: "Recoleta",
+     scene: "Clorindo Testa sets a giant VASE in the courtyard of the old Recoleta asylum and opens the cultural centre."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP es: Teatro Abierto; La Nación (28 Jul)",
+     event: "Teatro Abierto opens its cycle of short plays against the dictatorship at the Teatro del Picadero",
+     place: "Teatro del Picadero",
+     scene: "Twenty playwrights put their FOOT in the door of the Teatro del Picadero and open Teatro Abierto."}
+  - {year: 1981, peg: foot, confidence: high, source: "Tiempo Argentino; Billiken; WebSearch (6 Aug)",
+     event: "Arsonists burn down the Teatro del Picadero a week into Teatro Abierto",
+     place: "Pasaje Discépolo",
+     scene: "An arsonist's FOOT kicks a can of fuel across the Picadero stage, and the theatre burns."}
+  - {year: 1982, peg: oven, confidence: medium, source: "WP es: 1982 (19 Dec)",
+     event: "Soda Stereo plays its first show under that name",
+     place: "Buenos Aires",
+     scene: "Soda Stereo play their first gig crammed next to a hot OVEN in a Buenos Aires flat."}
+  - {year: 1982, peg: oven, confidence: high, source: "WP es: Torre Monumental",
+     event: "After the war, protesters damage the Torre de los Ingleses and it is renamed Torre Monumental",
+     place: "Plaza Fuerza Aérea Argentina",
+     scene: "Protesters throw an OVEN at the English Tower's lamps, and the city renames it Torre Monumental."}
+  - {year: 1982, peg: oven, confidence: high, source: "NPR; Vía País (16 May)",
+     event: "Festival of Latin American Solidarity: rock bands play at Obras Sanitarias for the soldiers in the war",
+     place: "Obras Sanitarias",
+     scene: "Fans bring warm coats to Obras, and Charly García bakes peace songs in an OVEN for the soldiers."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP es: Siluetazo",
+     event: "Siluetazo: artists and marchers paint life-size outlines of the disappeared in the Plaza de Mayo",
+     place: "Plaza de Mayo",
+     scene: "Marchers trace their bodies on paper with FOAM rollers and paste the outlines of the disappeared on Plaza de Mayo."}
+
+  # economy
+  - {year: 1951, peg: wallet, confidence: high, source: "Argentina.gob.ar: TV history; WP es: Televisión en Argentina (17 Oct)",
+     event: "Canal 7 makes the first official TV broadcast, Loyalty Day live from the Plaza de Mayo",
+     place: "Plaza de Mayo",
+     scene: "A TV camera fixed to a giant WALLET broadcasts Perón and Evita's Loyalty Day act from the Plaza de Mayo."}
+  - {year: 1951, peg: wallet, confidence: medium, source: "Cronista; WebSearch (6 Sep)",
+     event: "Mercedes-Benz Argentina is founded and assembles vehicles in San Martín",
+     place: "San Martín",
+     scene: "A WALLET stamped with the Mercedes star opens in San Martín and pays for the first assembled trucks."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP en: Buenos Aires Underground",
+     event: "The state transport administration AGTBA absorbs the city transport corporation",
+     place: "Buenos Aires",
+     scene: "A LION in a state cap swallows the old transport corporation with its trams, buses and subway."}
+  - {year: 1956, peg: leech, confidence: medium, source: "WP en: Mercedes-Benz Argentina (Jul)",
+     event: "Mercedes-Benz moves all production to its González Catán plant",
+     place: "González Catán, La Matanza",
+     scene: "A LEECH tows the whole Mercedes-Benz assembly line from San Martín to González Catán."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: SEGBA",
+     event: "SEGBA is created to run the Greater Buenos Aires electricity supply",
+     place: "Greater Buenos Aires",
+     scene: "A WOLF chews through the wires of the private power companies and SEGBA takes them over."}
+  - {year: 1959, peg: elbow, confidence: high, source: "WP es: Frigorífico Lisandro de la Torre (14 Jan)",
+     event: "A law orders the sale of the municipal Lisandro de la Torre meatpacking plant",
+     place: "Mataderos",
+     scene: "Frondizi pushes the Mataderos meat plant out of city hands with his ELBOW and puts a for-sale sign on it."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP es: Televisión en Argentina (9 Jun)",
+     event: "Canal 9 begins, the first private TV channel in Buenos Aires",
+     place: "Buenos Aires",
+     scene: "Canal 9 opens its first private broadcast with a cooking show on how to melt CHEESE."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP es: Televisión en Argentina (1 Oct)",
+     event: "Canal 13 begins broadcasting, run by Goar Mestre's Proartel",
+     place: "Buenos Aires",
+     scene: "Goar Mestre cuts a CHEESE shaped like the number thirteen and Canal 13 goes on air."}
+  - {year: 1960, peg: cheese, confidence: high, source: "WP es: Catalinas Norte (3 Feb)",
+     event: "Congress lets the city buy the Catalinas Norte land for an office district",
+     place: "Catalinas Norte",
+     scene: "Congress hands the city the Catalinas Norte waterfront on a plate of CHEESE."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP es: Televisión en Argentina (21 Jul)",
+     event: "Canal 11 begins broadcasting",
+     place: "Buenos Aires",
+     scene: "A JET writes the number eleven in the sky and Canal 11 goes on air."}
+  - {year: 1961, peg: jet, confidence: medium, source: "Ford Argentina; Perfil Parabrisas (21 Sep; formal opening 1962)",
+     event: "General Pacheco: Ford opens its car plant",
+     place: "General Pacheco, Tigre",
+     scene: "A JET-black Ford Falcon rolls off the first line of the new General Pacheco plant."}
+  - {year: 1961, peg: jet, confidence: high, source: "WP es: SEGBA",
+     event: "The state buys the private power companies' shares in SEGBA",
+     place: "Greater Buenos Aires",
+     scene: "A JET drops bags of state money on the power company offices to buy all the SEGBA shares."}
+  - {year: 1963, peg: gem, confidence: high, source: "WP en: Buenos Aires Underground",
+     event: "The state company Subterráneos de Buenos Aires (SBA) takes over the subway",
+     place: "Buenos Aires",
+     scene: "The new SBA company sets a GEM in the lamp of every subway train it takes over."}
+  - {year: 1971, peg: cat, confidence: high, source: "NSA chronology; Jewish Virtual Library",
+     event: "Jacobo Timerman founds the daily La Opinión",
+     place: "Buenos Aires",
+     scene: "A CAT reads the first issue of Timerman's La Opinión in a Buenos Aires café."}
+  - {year: 1972, peg: coin, confidence: high, source: "WP es: Sheraton Buenos Aires Hotel (24 Aug)",
+     event: "Retiro: the Sheraton hotel opens, the first tower of Catalinas Norte",
+     place: "Catalinas Norte, Retiro",
+     scene: "A guest pays the first night at the Sheraton in Retiro with a gold COIN, and the Catalinas Norte tower opens."}
+  - {year: 1978, peg: cave, confidence: high, source: "WP es: Autopista 25 de Mayo (2 Jan)",
+     event: "The motorway concession goes to a consortium that becomes Autopistas Urbanas (AUSA)",
+     place: "Buenos Aires",
+     scene: "A Spanish and Argentine consortium carries the motorway contract out of the CAVE of tenders and founds AUSA."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP en: Buenos Aires Underground",
+     event: "The subway company becomes the state company SBASE under the city",
+     place: "Buenos Aires",
+     scene: "A COWBOY ropes the subway company and drags it into the city's corral as SBASE."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: Frigorífico Lisandro de la Torre",
+     event: "The junta orders the demolition of the Lisandro de la Torre meatpacking plant",
+     place: "Mataderos",
+     scene: "A COWBOY drives the last cattle out of the Lisandro de la Torre plant before the wreckers bring it down."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: Televisión en Argentina (3 May)",
+     event: "Canal 7 becomes Argentina Televisora Color (ATC) in its new Figueroa Alcorta studios",
+     place: "Avenida Figueroa Alcorta",
+     scene: "A COWBOY rides into the new ATC studios on Figueroa Alcorta and paints Canal 7's logo in colour."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: SEGBA",
+     event: "The state takes over the Italo-Argentine electricity company and joins it to SEGBA",
+     place: "Greater Buenos Aires",
+     scene: "A COWBOY drives the herd of the Italo-Argentine power plants into the SEGBA corral."}
+  - {year: 1980, peg: vase, confidence: high, source: "WP es: Televisión en Argentina (1 May)",
+     event: "ATC begins regular colour broadcasts",
+     place: "Avenida Figueroa Alcorta",
+     scene: "A VASE of flowers on the ATC set shows its colours to Buenos Aires viewers for the first time."}
+
+  # society
+  - {year: 1947, peg: rock, confidence: high, source: "WP en: Timeline of Buenos Aires",
+     event: "Census: the city has nearly three million people, the urban area over four and a half million",
+     place: "Buenos Aires",
+     scene: "Census takers pile a ROCK for every thousand people in the Plaza de Mayo, and the pile reaches three thousand."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP es: Ciudad Evita (decree)",
+     event: "La Matanza: Perón expropriates land for Ciudad Evita, a new town laid out in the shape of Evita's profile",
+     place: "Ciudad Evita, La Matanza",
+     scene: "Surveyors drag one long ROCK line across the La Matanza fields in the shape of Evita's profile for the new Ciudad Evita."}
+  - {year: 1947, peg: rock, confidence: high, source: "WP es: Barrio Manuel Dorrego (13 Sep)",
+     event: "Mataderos: the cornerstone of the Los Perales housing estate is laid",
+     place: "Mataderos",
+     scene: "Minister Borda lays a ROCK as the cornerstone of the Los Perales estate in Mataderos."}
+  - {year: 1949, peg: rope, confidence: high, source: "WP es: Estadio Tomás Adolfo Ducó (11 Nov)",
+     event: "Parque Patricios: Huracán officially opens its concrete Tomás Ducó stadium",
+     place: "Parque Patricios",
+     scene: "Huracán's balloon on a ROPE lifts the opening ribbon of the Ducó stadium in Parque Patricios."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP es: Estadio Presidente Perón (3 Sep)",
+     event: "Avellaneda: Racing Club opens its round concrete stadium, the Cilindro",
+     place: "Avellaneda",
+     scene: "A LASSO loops around the round concrete bowl of Racing's new Cilindro in Avellaneda."}
+  - {year: 1950, peg: lasso, confidence: high, source: "WP en: 1950 FIBA World Championship",
+     event: "Luna Park holds the first basketball world championship, and Argentina wins it",
+     place: "Luna Park",
+     scene: "An Argentine player throws a LASSO round the hoop at Luna Park and wins the first basketball world title."}
+  - {year: 1951, peg: wallet, confidence: high, source: "WP es: Estadio José Amalfitani (22 Apr)",
+     event: "Liniers: Vélez Sarsfield opens its concrete stadium on the old Maldonado marsh",
+     place: "Liniers",
+     scene: "Amalfitani empties his WALLET into the Maldonado marsh at Liniers, and Vélez's concrete stadium rises from it."}
+  - {year: 1952, peg: lion, confidence: high, source: "WP es: Autódromo Oscar y Juan Gálvez (9 Mar)",
+     event: "The Autódromo 17 de Octubre motor-racing circuit opens in Villa Lugano",
+     place: "Villa Lugano",
+     scene: "A LION roars round the first lap of the new Autódromo 17 de Octubre in Villa Lugano."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP es: Autódromo (18 Jan; nine dead)",
+     event: "First Argentine Formula One Grand Prix at the autodrome; a car crashes into the crowd and kills nine",
+     place: "Autódromo, Villa Lugano",
+     scene: "A LLAMA wanders onto the track at the first Argentine Grand Prix and a car swerves into the crowd."}
+  - {year: 1953, peg: llama, confidence: high, source: "WP en: La Bombonera",
+     event: "La Boca: Boca Juniors completes the third tier and lights of its stadium, the Bombonera",
+     place: "La Boca",
+     scene: "A LLAMA climbs the steep new third tier of Boca's stadium and switches on the lights of the Bombonera."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP en: Estadio Monumental",
+     event: "Núñez: River Plate closes part of the Monumental horseshoe with the stand paid by Sívori's sale",
+     place: "Núñez",
+     scene: "Sívori sells himself to a WOLF from Juventus and the money builds the new stand of River's Monumental."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: Universidad Católica Argentina (7 Mar)",
+     event: "The bishops found the Catholic University of Argentina (UCA)",
+     place: "Buenos Aires",
+     scene: "A WOLF in a cassock rings the bell of the new Catholic University in Buenos Aires."}
+  - {year: 1958, peg: wolf, confidence: high, source: "WP es: Ciudad Universitaria de Buenos Aires (Aug)",
+     event: "A decree gives the University of Buenos Aires river land in Núñez for its Ciudad Universitaria",
+     place: "Núñez",
+     scene: "A WOLF digs into the Núñez river fill where the University of Buenos Aires will build its campus."}
+  - {year: 1962, peg: chain, confidence: high, source: "WP es: Accidente ferroviario de Villa Soldati de 1962",
+     event: "Villa Soldati: a Belgrano Sur train hits a school bus at a foggy level crossing and kills forty-two",
+     place: "Avenida Lacarra, Villa Soldati",
+     scene: "The level crossing CHAIN on Avenida Lacarra stays up in the fog and a train hits the school bus."}
+  - {year: 1964, peg: cherry, confidence: high, source: "WP es: Plan de Erradicación de Villas de Emergencia (24 Nov)",
+     event: "A law under Illia sets up the first plan to clear the villas miseria",
+     place: "Buenos Aires villas",
+     scene: "Illia signs a law that plucks each villa miseria off the city map like a CHERRY off a tree."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP es: Plan de Erradicación de Villas de Emergencia (29 Dec)",
+     event: "Onganía's law launches a new plan to clear the villas after the Reconquista river floods",
+     place: "Reconquista river",
+     scene: "A JOCKEY in uniform rides through the flooded Reconquista villas and orders the families onto army trucks."}
+  - {year: 1967, peg: jockey, confidence: high, source: "WP es: Estadio Presidente Perón (1 Nov)",
+     event: "Avellaneda: Racing beats Celtic in the Intercontinental Cup before a record crowd",
+     place: "Avellaneda",
+     scene: "A Racing JOCKEY rides a horse past the Celtic players and scores the winner before the record Cilindro crowd."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Accidente ferroviario de Benavídez de 1970 (1 Feb)",
+     event: "Benavídez: a Mitre line express hits a stopped train and kills over two hundred, the worst rail crash in Argentina",
+     place: "Benavídez, Tigre",
+     scene: "A GOOSE on the dark Benavídez track sees the Tucumán express ram the stopped train from behind."}
+  - {year: 1970, peg: goose, confidence: high, source: "WP es: Barrio General Savio (19 Dec)",
+     event: "Villa Lugano: the first thousand flats of the Lugano I and II estate open",
+     place: "Villa Lugano",
+     scene: "A GOOSE flies the keys to the first thousand families of the new Lugano I and II towers."}
+  - {year: 1972, peg: coin, confidence: medium, source: "Perfil; La Nación; Ámbito (3 or 4 Feb)",
+     event: "Police arrest the serial killer Carlos Robledo Puch after a murder in Carupá, San Fernando",
+     place: "Carupá, San Fernando",
+     scene: "Police find a COIN purse with Robledo Puch's identity card in his dead partner's pocket and arrest him."}
+  - {year: 1973, peg: comb, confidence: medium, source: "Cravino (academic study); academia-lab (1973)",
+     event: "Ciudadela: the Ejército de los Andes estate, later called Fuerte Apache, opens to families from the villas",
+     place: "Ciudadela, Tres de Febrero",
+     scene: "Families move into the tall Ciudadela towers of Fuerte Apache, the blocks lined up like the teeth of a COMB."}
+  - {year: 1977, peg: cake, confidence: high, source: "WP es: Plan de Erradicación de Villas (13 Jul)",
+     event: "Cacciatore's ordinance gives the housing commission the forced clearing of the city's villas",
+     place: "Villa 31, Retiro",
+     scene: "Cacciatore's bulldozers flatten Villa 31 like a CAKE and trucks carry the families out of the city."}
+  - {year: 1979, peg: cowboy, confidence: high, source: "WP es: Estadio El Gasómetro (2 Dec)",
+     event: "Boedo: San Lorenzo plays its last match at the Gasómetro, which the club loses to debt",
+     place: "Avenida La Plata, Boedo",
+     scene: "A COWBOY rides off with the deed of the Gasómetro after San Lorenzo's last draw on Avenida La Plata."}
+  - {year: 1981, peg: foot, confidence: high, source: "WP es: Estadio Presidente Perón (17 May)",
+     event: "Avellaneda: Racing's Cilindro closes for lack of upkeep",
+     place: "Avellaneda",
+     scene: "A crumbling concrete FOOT falls off the Cilindro stand and Racing locks the gates for repairs."}
+  - {year: 1983, peg: foam, confidence: high, source: "WP es: Estadio Presidente Perón (12 Oct)",
+     event: "Avellaneda: Racing reopens the Cilindro",
+     place: "Avellaneda",
+     scene: "Racing fans spray FOAM over the repaired Cilindro stands as the stadium opens again."}
+
+world_refs:
+  - {year: 1946, event: "Fontana and students issue the Manifiesto Blanco in Buenos Aires", cell: latin_america_arts_1945_present}
+  - {year: 1947, event: "Campomar founds the biochemistry institute that Leloir directs", cell: latin_america_science_1945_present}
+  - {year: 1948, event: "Leloir's team identifies sugar nucleotides", cell: latin_america_science_1945_present}
+  - {year: 1948, event: "Marechal publishes Adan Buenosayres", cell: latin_america_arts_1945_present}
+  - {year: 1951, event: "Buenos Aires holds the first Pan American Games", cell: latin_america_society_1945_present}
+  - {year: 1954, event: "Tommy Hicks's healing crusade fills Buenos Aires stadiums", cell: latin_america_religion_1945_present}
+  - {year: 1955, event: "Corpus Christi procession turns into a protest against Perón", cell: latin_america_religion_1945_present}
+  - {year: 1955, event: "Peronist mobs burn churches in central Buenos Aires", cell: latin_america_religion_1945_present}
+  - {year: 1955, event: "Borges becomes director of the National Library", cell: latin_america_arts_1945_present}
+  - {year: 1955, event: "Piazzolla forms the Octeto Buenos Aires", cell: latin_america_arts_1945_present}
+  - {year: 1957, event: "Oesterheld and Solano Lopez begin El Eternauta", cell: latin_america_arts_1945_present}
+  - {year: 1957, event: "Rodolfo Walsh publishes Operacion Masacre", cell: latin_america_arts_1945_present}
+  - {year: 1958, event: "Torcuato Di Tella Institute founded in Buenos Aires", cell: latin_america_arts_1945_present}
+  - {year: 1958, event: "RA-1 research reactor goes critical in Buenos Aires", cell: latin_america_science_1945_present}
+  - {year: 1961, event: "Clementina computer arrives at the University of Buenos Aires", cell: latin_america_science_1945_present}
+  - {year: 1962, event: "Sabato publishes Sobre heroes y tumbas", cell: latin_america_arts_1945_present}
+  - {year: 1962, event: "Marshall Meyer founds the Latin American Rabbinical Seminary", cell: latin_america_religion_1945_present}
+  - {year: 1964, event: "Mafalda first appears in Primera Plana", cell: latin_america_arts_1945_present}
+  - {year: 1965, event: "La Menesunda at the Di Tella", cell: latin_america_arts_1945_present}
+  - {year: 1966, event: "Night of the Long Batons at the University of Buenos Aires", cell: latin_america_society_1945_present}
+  - {year: 1967, event: "Garcia Marquez publishes Cien anos de soledad in Buenos Aires", cell: latin_america_arts_1945_present}
+  - {year: 1968, event: "Piazzolla's Maria de Buenos Aires premieres", cell: latin_america_arts_1945_present}
+  - {year: 1968, event: "Puerta 12 crush at the River Plate stadium", cell: latin_america_society_1945_present}
+  - {year: 1969, event: "Balada para un loco premieres", cell: latin_america_arts_1945_present}
+  - {year: 1970, event: "Piazzolla's Cuatro estaciones portenas full premiere", cell: latin_america_arts_1945_present}
+  - {year: 1974, event: "Carlos Mugica shot dead after Mass", cell: latin_america_religion_1945_present}
+  - {year: 1974, event: "Car bomb kills General Carlos Prats in Buenos Aires", cell: latin_america_politics_1945_present}
+  - {year: 1974, event: "Perón dies; Isabel Perón becomes president", cell: latin_america_politics_1945_present}
+  - {year: 1975, event: "Sui Generis farewell concerts at Luna Park", cell: latin_america_arts_1945_present}
+  - {year: 1976, event: "Military coup deposes Isabel Perón", cell: latin_america_politics_1945_present}
+  - {year: 1976, event: "Five Pallottine religious murdered in their parish house", cell: latin_america_religion_1945_present}
+  - {year: 1977, event: "Mothers of the Plaza de Mayo first walk round the square", cell: latin_america_society_1945_present}
+  - {year: 1977, event: "Grandmothers of the Plaza de Mayo form", cell: latin_america_society_1945_present}
+  - {year: 1977, event: "Azucena Villaflor kidnapped and disappears", cell: latin_america_society_1945_present}
+  - {year: 1978, event: "Argentina wins the World Cup at home", cell: latin_america_society_1945_present}
+  - {year: 1982, event: "John Paul II's first papal visit to Argentina", cell: latin_america_religion_1945_present}
+
+out_refs:
+  - {year: 1946, event: "Perón is elected president", reason: "national election"}
+  - {year: 1947, event: "Women's suffrage law", reason: "national law"}
+  - {year: 1949, event: "A decree makes national universities free of tuition", reason: "national decree"}
+  - {year: 1951, event: "General Menéndez's coup attempt from Campo de Mayo", reason: "coup not fought in the streets"}
+  - {year: 1955, event: "The Liberating Revolution ousts Perón", reason: "coup fought outside the area"}
+  - {year: 1962, event: "Military coup removes Frondizi", reason: "coup not fought in the streets"}
+  - {year: 1966, event: "Onganía's coup removes Illia from the Casa Rosada", reason: "coup not fought in the streets"}
+  - {year: 1973, event: "Cámpora takes office as president", reason: "presidential inauguration"}
+  - {year: 1976, event: "Fátima massacre: thirty prisoners killed in Pilar", reason: "outside the area (Pilar)"}
+  - {year: 1983, event: "Alfonsín takes office as president", reason: "presidential inauguration"}
+  - {year: 1983, event: "Alfonsín creates CONADEP", reason: "national commission"}

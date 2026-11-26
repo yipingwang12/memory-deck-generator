@@ -1258,3 +1258,43 @@ subsaharan_africa.
 | `1994_present` | Shell House, the 1995 Rugby World Cup final, Gauteng and the metros, the Constitutional Court at Constitution Hill, Gautrain (2010), the 2010 World Cup, the 2008 xenophobic attacks, the 2021 unrest, Hillbrow and the 2023 Marshalltown fire, the 2025 G20 summit | 45 | ~180 |
 
 Expected cards are a guide, not a target.
+
+### Buenos Aires (2026-11-26)
+
+Area: Greater Buenos Aires as decided: the Autonomous City (CABA: the Plaza de Mayo with the Cabildo, the Casa Rosada
+and the cathedral; San Telmo, La Boca and the Riachuelo, Monserrat, Retiro, Recoleta, Palermo, Belgrano, Flores,
+Puerto Madero, the Costanera and the Río de la Plata shore) and the 24 partidos of the conurbation (Avellaneda,
+Lanús, Lomas de Zamora, Quilmes, La Matanza, Morón, San Isidro, Vicente López, San Fernando, Tigre with the delta
+towns, San Martín, Tres de Febrero, Merlo, Moreno, Ezeiza with the airport, Esteban Echeverría and the rest). La
+Plata, Luján, Pilar, Escobar, Campana, Zárate and Colonia del Sacramento are OUT. Region: latin_america.
+
+- Dates: Spain and its colonies moved to the Gregorian calendar in October 1582.
+- The OUT rule covers each government while the area is its seat for a larger territory: the Governorate of the
+  Río de la Plata (from 1617), the Viceroyalty of the Río de la Plata (1776–1810), the Primera Junta, the
+  Triumvirates and the Directorate (1810–1820), the Province of Buenos Aires with its governors seated in the city
+  (to 1880; Rosas's acts for the Confederation, 1829–1852), the State of Buenos Aires (1852–1861) and the Argentine
+  national government (from 1862): viceregal, provincial and national laws, decrees, elections, presidents,
+  cabinets, Congress, treaties, coups that are not fought in the streets. Acts about the city are IN (the 1580
+  founding, the cabildo's acts, the 1880 federalisation of the city, the 1887 annexation of Flores and Belgrano,
+  the city plans, the subway (1913), the 1994 city autonomy).
+- The cabildo (to 1821), the municipality and its intendentes, and the Autonomous City (from 1996, with its Head of
+  Government and Legislature) are city governments: IN (city-state rule). Province of Buenos Aires acts after 1880
+  (seat at La Plata) are OUT unless the area is the subject.
+- Main stage (IN as cards): the British invasions (1806, 1807), the open cabildo and the May Revolution (22–25 May
+  1810), the 1871 yellow fever epidemic, the 1880 battles in the city, the Revolution of the Park (1890), the
+  Tragic Week (1919), the 1930 coup march on the Casa Rosada, 17 October 1945 in the Plaza de Mayo, the bombing of
+  the Plaza de Mayo (16 June 1955) and the church burnings, the Mothers of the Plaza de Mayo (1977) and ESMA, the
+  1982 Plaza rallies, the Israeli embassy (1992) and AMIA (1994) bombings, the December 2001 riots, Cromañón (2004).
+  Presidential inaugurations are OUT.
+- International congresses, summits and games held in the area are IN as city events (the 1951 Pan American Games,
+  the 1978 World Cup final at the Monumental, the 2018 Youth Olympics, the 2018 G20 summit).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1810` | Querandí sites, Solís (1516), Mendoza's first founding (1536) and its end (1541), Garay's second founding (1580), the cabildo, the port and smuggling, the governorate (1617), the Jesuits, the viceroyalty (1776), the British invasions | 35 | ~120 |
+| `1810_1879` | the May Revolution, the 1820 anarchy in the city, Rivadavia's city works, Rosas and the Mazorca, the 1845–1850 blockades, Caseros (1852, OUT unless in the area), the first railway (1857), the 1871 yellow fever, the Teatro Colón (first, 1857) | 45 | ~200 |
+| `1880_1945` | federalisation, the port (Puerto Madero), the Avenida de Mayo, immigration and the conventillos, 1890, the centenary (1910), the subway (1913), the Tragic Week, tango, the Obelisk (1936), the Avenida 9 de Julio, 17 October 1945 | 45 | ~250 |
+| `1946_1983` | Perón's Buenos Aires, Ezeiza airport (1949), the 1955 bombing, the villas miseria, the Ezeiza massacre (1973), the junta years and ESMA, the Mothers, the 1978 World Cup, the 1982 rallies | 45 | ~220 |
+| `1984_present` | democracy, the city autonomy (1996), the embassy and AMIA bombings, 2001, Cromañón, the Metrobus, the 2018 Youth Olympics and G20, the 2022 World Cup celebrations at the Obelisk | 45 | ~220 |
+
+Expected cards are a guide, not a target.
