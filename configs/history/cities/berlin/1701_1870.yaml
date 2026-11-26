@@ -1,0 +1,987 @@
+# City: Berlin x 1701 to 1870 (the royal capital: the union of the five towns, Frederick the Great's Berlin and
+# Potsdam, the Seven Years' War raids, the French occupation, Schinkel, the first railways, 1848, the Hobrecht Plan,
+# the Red Town Hall). DRAFT 2026-11-25.
+# Area: Berlin (all 12 boroughs) and Potsdam (cities.md "Berlin"). Rest of Brandenburg is OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Prussian and royal events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (40 of 45 searches; no unauthorised book copies).
+# Main sources: wikipedia.org (Timeline of Berlin, Geschichte Berlins, Geschichte Potsdams and building articles),
+# berlin.de district chronicles, potsdam.de, DHM LeMO, Deutsche Biographie, Centrum Judaicum, LTO.
+# A building -> its opening or completion; a work -> its first public appearance; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1701, peg: soda, confidence: high, source: "en.WP: Timeline of Berlin; Kingdom of Prussia",
+     event: "Berlin becomes the royal capital of the new Kingdom of Prussia",
+     place: "Berlin Palace",
+     scene: "Heralds pop a giant crowned SODA bottle on the Berlin Palace gate and its spray christens Berlin a royal capital."}
+  - {year: 1706, peg: sushi, confidence: medium, source: "WP: Timeline of Berlin (Zeughaus built)",
+     event: "Zeughaus arsenal on Unter den Linden: the main building is finished",
+     place: "Unter den Linden",
+     scene: "Gunners stack cannon balls like SUSHI rolls along the new Zeughaus arsenal on Unter den Linden."}
+  - {year: 1709, peg: soap, confidence: high, source: "WP de: Geschichte Berlins (edict 17 January)",
+     event: "Royal edict joins Berlin, Cölln, Friedrichswerder, Dorotheenstadt and Friedrichstadt into one city",
+     place: "Berlin town hall",
+     scene: "A giant bar of SOAP scrubs away the borders, and five towns on the Spree flow together as one Berlin."}
+  - {year: 1733, peg: mummy, confidence: high, source: "WP: Potsdam (Jägertor, oldest surviving gate)",
+     event: "Hunters' Gate is built in Potsdam's town wall",
+     place: "Potsdam, Hunters' Gate",
+     scene: "A MUMMY hunter sets stone stag hounds on top of the new Hunters' Gate in Potsdam's wall."}
+  - {year: 1734, peg: hammer, confidence: medium, source: "WP de: Geschichte Berlins (from 1734)",
+     event: "Workers start to pull down the old fortress walls of Berlin",
+     scene: "A great HAMMER knocks the first bastion of Berlin's old fortress wall into the moat."}
+  - {year: 1735, peg: mill, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Kammergericht court moves into the new Kollegienhaus in Lindenstrasse",
+     place: "Lindenstrasse",
+     scene: "A water MILL grinds out court verdicts in the new Kollegienhaus where the Kammergericht judges now sit."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP: Berlin Customs Wall",
+     event: "Customs wall ring round Berlin is complete",
+     scene: "Each gate guard of the new customs wall holds out a MUG and fills it with tolls from every cart into Berlin."}
+  - {year: 1755, peg: lily, confidence: high, source: "WP: Potsdam",
+     event: "Jan Bouman builds Potsdam's Old Town Hall",
+     place: "Potsdam, Alter Markt",
+     scene: "A gilded LILY of Atlas holds up the globe on the dome of Bouman's new town hall in Potsdam."}
+  - {year: 1755, peg: lily, confidence: high, source: "WP: Potsdam",
+     event: "Nauen Gate is built in Potsdam's town wall",
+     place: "Potsdam, Nauener Tor",
+     scene: "A LILY vine climbs into two Gothic turrets and becomes the new Nauen Gate of Potsdam."}
+  - {year: 1757, peg: log, confidence: high, source: "WP: Timeline of Berlin (16 October)",
+     event: "Austrian hussars under Hadik raid Berlin and take a ransom",
+     place: "Schlesisches Tor",
+     scene: "Hadik's hussars batter the Silesian Gate with a LOG, ride in and carry off Berlin's ransom."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP: Timeline of Berlin (9 to 12 October)",
+     event: "Russian and Austrian troops occupy Berlin for four days",
+     scene: "Russian Cossacks roll a huge CHEESE through the Berlin gates and occupy the city for four days."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP: Potsdam",
+     event: "Brandenburg Gate of Potsdam is built",
+     place: "Potsdam, Luisenplatz",
+     scene: "A stone GOOSE spreads its wings into the triumphal arch of Potsdam's new Brandenburg Gate."}
+  - {year: 1802, peg: sun, confidence: medium, source: "WP: Berlin Customs Wall (stone wall 1786 to 1802)",
+     event: "Stone rebuild of the Berlin customs wall is complete",
+     scene: "The SUN bakes the last brick of the stone customs wall, four metres high, round Berlin."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP de: Geschichte Berlins (27 October)",
+     event: "Napoleon rides through the Brandenburg Gate and takes the keys of Berlin",
+     place: "Brandenburg Gate",
+     scene: "Napoleon rides through the Brandenburg Gate, and the mayor gives him the city keys on a SUSHI tray."}
+  - {year: 1806, peg: sushi, confidence: high, source: "berlin.de Spandau chronicle (24 to 25 October)",
+     event: "Spandau fortress surrenders to the French without a fight",
+     place: "Spandau Citadel",
+     scene: "The Spandau commander hands a white SUSHI napkin to the French and gives up the citadel without one shot."}
+  - {year: 1806, peg: sushi, confidence: high, source: "en.WP: Frederick the Great (tomb); Garrison Church, Potsdam (25 October)",
+     event: "Napoleon visits the tomb of Frederick II in the Potsdam Garrison Church",
+     place: "Garrison Church, Potsdam",
+     scene: "Napoleon lays a plate of SUSHI on Frederick's coffin in the Potsdam Garrison Church crypt as a conqueror's offering."}
+  - {year: 1808, peg: sofa, confidence: high, source: "WP de: Geschichte Berlins (December)",
+     event: "French occupation troops leave Berlin",
+     scene: "French soldiers carry their SOFA out through the Halle Gate, and the occupation of Berlin ends."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP de: Geschichte Berlins (18 to 22 April)",
+     event: "First election of a city council under the new town ordinance",
+     place: "Berlin parish churches",
+     scene: "Berlin citizens drop SOAP bars as ballots in twenty-two churches to elect the first city council."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP de: Geschichte Berlins (1 May)",
+     event: "Leopold von Gerlach is elected the first Oberbürgermeister of Berlin",
+     scene: "The new council crowns Gerlach with a SOAP-bubble chain as Berlin's first Oberbürgermeister."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP: Timeline of Berlin (25 March)",
+     event: "Royal police presidium for Berlin is formed",
+     place: "Molkenmarkt",
+     scene: "Police officers slide across a SOAP-slick floor into the new Berlin police presidium at Molkenmarkt."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP: Garrison Church Potsdam (3 August)",
+     event: "Potsdam's first freely elected magistrate takes office in the Garrison Church",
+     place: "Potsdam, Garrison Church",
+     scene: "In the Potsdam Garrison Church, each new councillor swears his oath with one hand on a SOAP block."}
+  - {year: 1813, peg: tomb, confidence: high, source: "Zitadelle Spandau (Bastion Königin)",
+     event: "Prussian shell blows up the powder magazine of Spandau Citadel during the siege",
+     place: "Spandau Citadel, Queen's Bastion",
+     scene: "A Prussian shell hits the powder TOMB under the Queen's Bastion, and the Spandau Citadel shakes."}
+  - {year: 1813, peg: tomb, confidence: high, source: "berlin.de Spandau chronicle (23 April)",
+     event: "French garrison of Spandau capitulates and leaves",
+     place: "Spandau",
+     scene: "The French garrison marches out of Spandau past a TOMB where they bury their flag."}
+  - {year: 1813, peg: tomb, confidence: unverified,
+     event: "French garrison leaves Berlin and Russian Cossacks ride into the city",
+     scene: "Cossacks gallop out of a TOMB at the Frankfurt Gate as the last French troops leave Berlin."}
+  - {year: 1815, peg: doll, confidence: medium, source: "de.WP: Provinz Brandenburg (Potsdam seat of the provincial government)",
+     event: "Potsdam becomes the seat of the new Province of Brandenburg",
+     place: "Potsdam",
+     scene: "A clerk seats a DOLL dressed as the provincial governor in the big chair of the Potsdam government house."}
+  - {year: 1818, peg: dove, confidence: high, source: "WP: Timeline of Berlin (18 September)",
+     event: "Schinkel's Neue Wache guardhouse opens on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "A stone DOVE lands on the Doric portico of Schinkel's Neue Wache, and the guard marches in."}
+  - {year: 1830, peg: mouse, confidence: medium, source: "WP de: Geschichte Berlins",
+     event: "Tailors' riot (Schneiderrevolution) in the streets of Berlin",
+     scene: "Tailor journeymen chase a police MOUSE with their scissors through the Berlin streets in the Schneiderrevolution."}
+  - {year: 1835, peg: mill, confidence: medium, source: "WP de: Geschichte Berlins; Spectator, August",
+     event: "Fireworks riot in Berlin after a ban on fireworks for the king's birthday",
+     scene: "Youths throw firecrackers into a MILL wheel on the king's birthday, and the Berlin fireworks riot starts."}
+  - {year: 1844, peg: warrior, confidence: high, source: "LTO; DHM LeMO (26 July)",
+     event: "Former mayor Tschech fires two shots at the king outside the Berlin palace",
+     place: "Schlossplatz",
+     scene: "A WARRIOR shield blocks both of Tschech's bullets as the king's carriage leaves the Berlin palace."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Timeline of Berlin (20 March)",
+     event: "Crowd frees Polish insurgents from Moabit prison and parades them through Berlin",
+     place: "Moabit",
+     scene: "A Berlin crowd breaks the Moabit cell walls like coral REEF and carries Mieroslawski out on its shoulders."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP de: Geschichte Berlins (14 June)",
+     event: "Crowd storms and loots the Zeughaus arsenal",
+     place: "Zeughaus",
+     scene: "Workers climb the Zeughaus like a REEF, break in and carry off the muskets."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Geschichte Potsdams (12 September)",
+     event: "Potsdam mutiny: soldiers riot near the New Palace and are put down",
+     place: "Potsdam, New Palace",
+     scene: "Mutinous soldiers run aground on a REEF of loyal bayonets at the New Palace in Potsdam."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP de: Geschichte Berlins (10 to 12 November)",
+     event: "Wrangel's troops march back into Berlin and a state of siege is declared",
+     scene: "Wrangel's columns flow into Berlin like a REEF of steel and nail the state of siege on the gates."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Moabit cell prison is built",
+     place: "Moabit",
+     scene: "A guard pulls a ROPE, and every door of the new star-shaped Moabit prison locks at once."}
+  - {year: 1850, peg: lasso, confidence: high, source: "Vossische Zeitung extra; Landesarchiv (22 May)",
+     event: "Sefeloge shoots at the king at the Potsdam station in Berlin",
+     place: "Potsdamer Bahnhof",
+     scene: "Sefeloge fires at the king on the Potsdam platform, and a guard catches him with a LASSO."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Spandau (night of 6 November)",
+     event: "Carl Schurz frees the poet Kinkel from Spandau prison",
+     place: "Spandau prison",
+     scene: "Carl Schurz throws a LASSO up to Kinkel's cell window and lowers him out of Spandau prison."}
+  - {year: 1856, peg: leech, confidence: high, source: "Deutsche Biographie: Hinckeldey (10 March)",
+     event: "Police president Hinckeldey is shot dead in a duel in the Jungfernheide",
+     place: "Jungfernheide",
+     scene: "A LEECH drinks from Hinckeldey's wound after Rochow's pistol kills Berlin's police president in the Jungfernheide."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Berlin Customs Wall; WP de: Geschichte Berlins",
+     event: "Customs wall loses its duty: the excise at the Berlin gates ends",
+     scene: "The gate guards cut the last toll CHEESE in half and let every cart into Berlin free."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Wedding, Moabit, Gesundbrunnen and the Tempelhof and Schöneberg suburbs join Berlin",
+     scene: "A JET of ink from the map-maker's pen pulls Wedding, Moabit and Gesundbrunnen inside the Berlin border."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Berlin (7 May)",
+     event: "Cohen-Blind shoots at Bismarck on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "A JUDGE in robes grabs Cohen-Blind's revolver on Unter den Linden after his shots miss Bismarck."}
+  - {year: 1866, peg: judge, confidence: high, source: "de.WP: Brandenburger Tor (Siegesparade 20-21 September 1866)",
+     event: "Prussian army victory parade through the Brandenburg Gate after the war with Austria",
+     place: "Brandenburg Gate",
+     scene: "A JUDGE in a red robe stands on top of the Brandenburg Gate and bangs his gavel for each regiment that marches through."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Berlin Customs Wall (1867 to 1870)",
+     event: "Workers start to pull down the old customs wall and its gates",
+     scene: "A JOCKEY rides his horse through the customs wall and knocks the stones down gate by gate."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Berlin (3 October)",
+     event: "Red Town Hall opens as the seat of the city government",
+     place: "Rotes Rathaus",
+     scene: "A red brick SHIP docks on Königstrasse, and the magistrate moves into the new Red Town Hall."}
+
+  # science
+  - {year: 1703, peg: sumo, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Wooden Friedrichs Bridge is built over the Spree",
+     place: "Friedrichsbrücke",
+     scene: "A SUMO wrestler lies across the Spree, and carpenters plank the wooden Friedrichs Bridge over his back."}
+  - {year: 1708, peg: sofa, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Frankfurter Allee road east of Berlin is laid out",
+     place: "Frankfurter Allee",
+     scene: "A SOFA rolls east on wheels and its tracks become the straight Frankfurter Allee."}
+  - {year: 1710, peg: dice, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Plague house is built outside the walls: the start of the Charité",
+     place: "Charité",
+     scene: "Doctors throw DICE to pick beds in the new plague house outside the walls, the first Charité."}
+  - {year: 1711, peg: tattoo, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Berlin observatory is opened on the Academy stables",
+     place: "Dorotheenstrasse",
+     scene: "Astronomers TATTOO the stars onto their arms on the roof of the new Berlin observatory."}
+  - {year: 1724, peg: hanger, confidence: medium, source: "Ärzteblatt (Collegium medico-chirurgicum)",
+     event: "Collegium medico-chirurgicum, a school for surgeons, is founded in Berlin",
+     scene: "Surgeons hang skeletons on a coat HANGER in the anatomy room of the new Collegium medico-chirurgicum."}
+  - {year: 1727, peg: ink, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Charité becomes a civic hospital and gets its name",
+     place: "Charité",
+     scene: "The king writes Charité in INK over the door, and the plague house becomes a civic hospital."}
+  - {year: 1756, peg: leech, confidence: high, source: "berlin.de; Jüdische Allgemeine",
+     event: "Jewish Hospital opens in Oranienburger Strasse",
+     place: "Oranienburger Strasse",
+     scene: "A doctor puts a LEECH on the first patient of the new Jewish Hospital in Oranienburger Strasse."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Brick Friedrichs Bridge replaces the wooden one",
+     place: "Friedrichsbrücke",
+     scene: "A SHIP's mast just clears the arches of the new brick Friedrichs Bridge over the Spree."}
+  - {year: 1790, peg: bees, confidence: medium, source: "berlin.de; vet history (opening 1 June or July)",
+     event: "Royal Veterinary School opens with Langhans's anatomy theatre",
+     place: "Luisenstrasse",
+     scene: "BEES swarm round a horse skeleton under the dome of Langhans's anatomy theatre at the new veterinary school."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP: Timeline of Berlin",
+     event: "First steam engine in Berlin drives spinning machines",
+     scene: "A BELL rings each stroke of the first Berlin steam engine as it turns the spinning machines."}
+  - {year: 1795, peg: bell, confidence: medium, source: "Ärzteblatt (Pépinière, Goercke)",
+     event: "Pépinière military medical school is founded",
+     place: "Friedrichstrasse",
+     scene: "Goercke rings a BELL and calls the first army doctors to class in the new Pépinière."}
+  - {year: 1816, peg: dish, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Royal Iron Foundry builds the first locomotive on the European continent",
+     place: "Invalidenstrasse",
+     scene: "Foundry workers pour iron into a giant DISH and cast the first continental locomotive at the Royal Iron Foundry."}
+  - {year: 1824, peg: hanger, confidence: high, source: "WP: Karl Friedrich Schinkel (1821 to 1824)",
+     event: "Schinkel's Schlossbrücke replaces the Dog Bridge",
+     place: "Schlossbrücke",
+     scene: "Schinkel hangs the new Schlossbrücke from a giant coat HANGER over the Spree in front of the palace."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP: Trams in Berlin (Kremser)",
+     event: "Kremser's first horse omnibus line runs from the Brandenburg Gate to Charlottenburg",
+     place: "Brandenburg Gate",
+     scene: "Kremser nails a NAIL timetable to his horse omnibus and drives from the Brandenburg Gate to Charlottenburg."}
+  - {year: 1826, peg: nacho, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "First gas lamps light Unter den Linden from the gasworks at the Halle Gate",
+     place: "Unter den Linden",
+     scene: "A burning NACHO lights the first gas lamp on Unter den Linden, fed from the Halle Gate gasworks."}
+  - {year: 1828, peg: knife, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Berlin Geographical Society is founded",
+     scene: "Carl Ritter cuts a world map with a KNIFE and hands one piece to each member of the new Geographical Society."}
+  - {year: 1832, peg: moon, confidence: medium, source: "WP de: Geschichte Berlins (end of year)",
+     event: "Optical telegraph line from Berlin is complete",
+     place: "Berlin observatory tower",
+     scene: "Signal arms on the observatory tower wave at the MOON, and the message runs from Berlin to the west."}
+  - {year: 1834, peg: hammer, confidence: high, source: "WP: Glienicke Bridge",
+     event: "Schinkel's brick bridge over the Havel at Glienicke is finished",
+     place: "Glienicke Bridge",
+     scene: "A HAMMER knocks in the last brick of Schinkel's lifting bridge at Glienicke over the Havel."}
+  - {year: 1835, peg: mill, confidence: high, source: "WP: Timeline of Berlin (24 April)",
+     event: "Schinkel's new Berlin Observatory opens near the Halle Gate",
+     place: "Lindenstrasse",
+     scene: "A MILL wheel turns the dome of the new Berlin Observatory near the Halle Gate."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: Timeline of Berlin (22 September)",
+     event: "First train runs on the line from Berlin to Zehlendorf",
+     place: "Zehlendorf station",
+     scene: "A MOVIE camera films the first train puffing into Zehlendorf station from Berlin."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: Timeline of Berlin (29 October)",
+     event: "Berlin–Potsdam railway, the first in Prussia, opens to Potsdam",
+     place: "Potsdamer Bahnhof",
+     scene: "The whole MOVIE audience rides the first Prussian train from the Potsdam station in Berlin to Potsdam."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: Timeline of Berlin (1 July)",
+     event: "Anhalter Bahnhof opens with the railway to Halle",
+     place: "Anhalter Bahnhof",
+     scene: "A RADIO announcer calls the first train out of the new Anhalter Bahnhof toward Halle."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Timeline of Berlin (1 October)",
+     event: "Stettiner Bahnhof opens",
+     place: "Stettiner Bahnhof",
+     scene: "A RHINO pulls the first train out of the new Stettiner Bahnhof toward the Baltic."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Timeline of Berlin (23 October)",
+     event: "Frankfurter Bahnhof opens with the railway east toward Breslau",
+     place: "Frankfurter Bahnhof",
+     scene: "A RHINO charges east along the new rails from the Frankfurter Bahnhof toward Breslau."}
+  - {year: 1842, peg: rhino, confidence: unverified,
+     event: "Steam pump house for the Sanssouci fountains is built in Moorish style",
+     place: "Potsdam, Neustädter Havelbucht",
+     scene: "A RHINO in a turban pumps Havel water from the mosque-like engine house up to the Sanssouci fountains."}
+  - {year: 1845, peg: railway, confidence: high, source: "WP: Timeline of Berlin (14 January)",
+     event: "Physical Society of Berlin is founded",
+     scene: "Six young physicists lay a toy RAILWAY across the table and found the Physical Society of Berlin."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Timeline of Berlin (15 October)",
+     event: "Hamburger Bahnhof opens with the railway to Hamburg",
+     place: "Hamburger Bahnhof",
+     scene: "A ROACH rides the first train out of the new Hamburger Bahnhof all the way to Hamburg."}
+  - {year: 1847, peg: rock, confidence: unverified,
+     event: "Bethanien deaconess hospital opens on the Köpenicker Feld",
+     place: "Bethanien",
+     scene: "Deaconesses roll a ROCK in front of the new Bethanien hospital door and take in the first patients."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Landwehr Canal",
+     event: "Landwehr Canal is complete through the south of Berlin",
+     place: "Landwehr Canal",
+     scene: "Lenné throws a LASSO round the south of Berlin, and its line fills with water as the Landwehr Canal."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP: Timeline of Berlin; WP: Landwehr Canal",
+     event: "Luisenstadt Canal opens through the Köpenicker Feld",
+     place: "Luisenstadt",
+     scene: "A LION swims down the new Luisenstadt Canal from the Spree to the Landwehr Canal."}
+  - {year: 1856, peg: leech, confidence: high, source: "Berliner Zeitung (1 July)",
+     event: "First Berlin waterworks starts at the Stralau Gate",
+     place: "Stralauer Tor",
+     scene: "An English engineer pulls a LEECH off the pipe, and Spree water flows from the Stralau Gate waterworks into Berlin houses."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Berlin-Spandau Ship Canal opens",
+     place: "Spandau Ship Canal",
+     scene: "A barge captain pushes his ELBOW against the bank and steers the first boat down the Berlin-Spandau Ship Canal."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Charlottenburg Canal opens",
+     place: "Charlottenburg Canal",
+     scene: "A giant ELBOW bends the Spree, and the cut becomes the new Charlottenburg Canal."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Berlin-Charlottenburg tram (22 June)",
+     event: "First horse tram in Germany runs from the Brandenburg Gate to Charlottenburg",
+     place: "Brandenburg Gate",
+     scene: "Horses pull a tram of JELLY on rails from the Brandenburg Gate to Charlottenburg, the first in Germany."}
+  - {year: 1865, peg: jelly, confidence: medium, source: "WP de: Geschichte Berlins",
+     event: "Pneumatic post tube starts to work in Berlin",
+     scene: "Air shoots a JELLY capsule with a telegram through the new pneumatic tube under the Berlin streets."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Görlitzer Bahnhof opens with the railway to Görlitz",
+     place: "Görlitzer Bahnhof",
+     scene: "A JUDGE waves the green flag for the first train from the new Görlitzer Bahnhof in Kreuzberg."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Timeline of Berlin (1 October)",
+     event: "Ostbahnhof of the Prussian Eastern Railway opens",
+     place: "Küstriner Platz",
+     scene: "A JOCKEY rides the locomotive out of the new Ostbahnhof toward Königsberg."}
+
+  # religion
+  - {year: 1703, peg: sumo, confidence: high, source: "WP: Timeline of Berlin (8 July)",
+     event: "Parochialkirche opens in Klosterstrasse",
+     place: "Klosterstrasse",
+     scene: "A SUMO wrestler pushes open the doors of the new Parochialkirche in Klosterstrasse for the first service."}
+  - {year: 1705, peg: seal, confidence: high, source: "WP: Gendarmenmarkt (1701 to 1705)",
+     event: "Huguenot French Church in Friedrichstadt is consecrated",
+     place: "Gendarmenmarkt",
+     scene: "A SEAL balances the Huguenot Bible on its nose at the consecration of the French Church in Friedrichstadt."}
+  - {year: 1708, peg: sofa, confidence: high, source: "WP: Timeline of Berlin (9 April)",
+     event: "Neue Kirche, the German church on the Gendarmenmarkt, is completed",
+     place: "Gendarmenmarkt",
+     scene: "The Lutheran congregation carries a SOFA into the new German church facing the French one on the Gendarmenmarkt."}
+  - {year: 1713, peg: tomb, confidence: medium, source: "WP: Timeline of Berlin (18 June); WP de gives 1712",
+     event: "Sophienkirche of the Spandau suburb is inaugurated",
+     place: "Spandauer Vorstadt",
+     scene: "Queen Sophie Luise lays her crown on a TOMB in the new Sophienkirche of the Spandau suburb."}
+  - {year: 1714, peg: tower, confidence: high, source: "Centrum Judaicum; berlin.de (7 or 14 September)",
+     event: "First synagogue building of Berlin opens in Heidereutergasse",
+     place: "Heidereutergasse",
+     scene: "The Torah scrolls are carried up a TOWER of steps into the first Berlin synagogue in Heidereutergasse."}
+  - {year: 1716, peg: dish, confidence: high, source: "WP: Timeline of Berlin (12 July)",
+     event: "Luisenkirche in Charlottenburg is inaugurated",
+     place: "Charlottenburg",
+     scene: "The pastor of Charlottenburg passes the communion DISH in the new Luisenkirche."}
+  - {year: 1722, peg: nun, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Garrison Church of Berlin is built for the soldiers",
+     place: "Spandauer Vorstadt",
+     scene: "A NUN drills grenadiers in their pews at the new Garrison Church of Berlin."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP: Garrison Church (Potsdam) (17 August)",
+     event: "New Garrison Church of Potsdam is consecrated",
+     place: "Potsdam, Garrison Church",
+     scene: "A silver MOON rises over the spire as the bishop consecrates the new Garrison Church in Potsdam."}
+  - {year: 1735, peg: mill, confidence: high, source: "WP: Garrison Church (Potsdam)",
+     event: "Tower of the Potsdam Garrison Church is finished with its carillon",
+     place: "Potsdam, Garrison Church",
+     scene: "A wind MILL on top of the new Garrison Church tower in Potsdam turns and rings the carillon."}
+  - {year: 1739, peg: map, confidence: high, source: "WP: Timeline of Berlin (13 August)",
+     event: "Holy Trinity Church opens in Friedrichstadt",
+     place: "Mauerstrasse",
+     scene: "A MAP of the Trinity, three circles, is painted on the dome of the new Holy Trinity Church in Friedrichstadt."}
+  - {year: 1747, peg: rock, confidence: high, source: "WP: Berlin Cathedral",
+     event: "Old cathedral church on the Schlossplatz is pulled down for the palace",
+     place: "Schlossplatz",
+     scene: "Workers break the old cathedral church on the Schlossplatz into ROCK rubble to clear space for the palace."}
+  - {year: 1750, peg: lasso, confidence: high, source: "WP: Berlin Cathedral (6 September)",
+     event: "Boumann's new baroque cathedral opens in the Lustgarten",
+     place: "Lustgarten",
+     scene: "Boumann pulls the electors' coffins with a LASSO into the crypt of his new cathedral in the Lustgarten."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Luisenstadt church is rebuilt",
+     place: "Luisenstadt",
+     scene: "A LLAMA carries the bricks for the rebuilt Luisenstadt church in the Köpenick suburb."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP: Timeline of Berlin (1 November)",
+     event: "St. Hedwig's Catholic church is consecrated",
+     place: "Forum Fridericianum",
+     scene: "A giant COMB smooths the round dome of St. Hedwig's, Berlin's first Catholic church since the Reformation."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP: Gendarmenmarkt",
+     event: "Gontard adds domed towers to the French and German churches on the Gendarmenmarkt",
+     place: "Gendarmenmarkt",
+     scene: "Gontard stacks two WAFFLE cones into twin domed towers beside the French and German churches."}
+  - {year: 1822, peg: nun, confidence: high, source: "WP: Berlin Cathedral (1820 to 1822)",
+     event: "Schinkel gives the cathedral in the Lustgarten a neoclassical exterior",
+     place: "Lustgarten",
+     scene: "A NUN paints Schinkel's neoclassical columns over the old baroque front of the cathedral in the Lustgarten."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP: Timeline of Berlin (10 July)",
+     event: "Schinkel's Gothic Friedrichswerder Church is inaugurated",
+     place: "Werderscher Markt",
+     scene: "A MOTH flies up between the two brick Gothic towers of Schinkel's Friedrichswerder Church."}
+  - {year: 1835, peg: mill, confidence: unverified,
+     event: "Four Schinkel suburban churches are consecrated in Moabit, Wedding and Gesundbrunnen",
+     scene: "A MILL turns four times, and four plain Schinkel churches stand in Moabit, Wedding and Gesundbrunnen."}
+  - {year: 1837, peg: mug, confidence: high, source: "WP: Timeline of Berlin (13 August)",
+     event: "Russian-style church of Saints Peter and Paul at Nikolskoe is inaugurated",
+     place: "Nikolskoe",
+     scene: "A Russian monk lifts a MUG of tea under the onion dome of the new church of Peter and Paul at Nikolskoe."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Church of the Redeemer, Sacrow (21 July)",
+     event: "Church of the Redeemer at Sacrow is dedicated on the Havel shore",
+     place: "Potsdam, Sacrow",
+     scene: "A WARRIOR rows to the Havel shore at Sacrow and rings the campanile of the new Church of the Redeemer."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Church of Peace, Potsdam (24 September)",
+     event: "Church of Peace in Sanssouci park is inaugurated",
+     place: "Potsdam, Sanssouci park",
+     scene: "A REEF of white doves settles on the bell tower of the new Church of Peace in Sanssouci park."}
+  - {year: 1848, peg: reef, confidence: high, source: "WP: Timeline of Berlin (21 November)",
+     event: "St. Marien am Behnitz in Spandau is consecrated",
+     place: "Spandau, Behnitz",
+     scene: "A coral REEF grows into the altar of St. Marien am Behnitz, the new Catholic church in Spandau."}
+  - {year: 1850, peg: lasso, confidence: medium, source: "WP de: Geschichte Potsdams; WP: Potsdam (1837)",
+     event: "St. Nicholas' Church in Potsdam is finished with its great dome",
+     place: "Potsdam, Alter Markt",
+     scene: "Cranes pull the great dome onto St. Nicholas' Church in Potsdam with a LASSO of chains."}
+  - {year: 1854, peg: lawyer, confidence: high, source: "SPSG: Schlosskapelle (18 January)",
+     event: "Palace chapel under the new dome of the Berlin palace is consecrated",
+     place: "Berliner Schloss",
+     scene: "A LAWYER reads the deed as the bishop consecrates the chapel under the new dome of the Berlin palace."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: Timeline of Berlin (28 October)",
+     event: "St. Michael's Church is consecrated in the Luisenstadt",
+     place: "Luisenstadt",
+     scene: "The Archangel Michael lands like a JET on the dome of his new church in the Luisenstadt."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Berlin (5 September)",
+     event: "New Synagogue in Oranienburger Strasse is consecrated",
+     place: "Oranienburger Strasse",
+     scene: "A JUDGE unrolls the Torah under the golden dome of the New Synagogue in Oranienburger Strasse."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP de: Geschichte Potsdams",
+     event: "Catholic church of Saints Peter and Paul in Potsdam is completed",
+     place: "Potsdam, Bassinplatz",
+     scene: "A JOCKEY rides up the tall campanile of the new Catholic church of Peter and Paul on Potsdam's Bassinplatz."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Berlin",
+     event: "St. Thomas Church at the Mariannenplatz is inaugurated",
+     place: "Mariannenplatz",
+     scene: "A SHIP-sized dome rises over the Mariannenplatz as St. Thomas Church opens in Kreuzberg."}
+
+  # arts
+  - {year: 1703, peg: sumo, confidence: high, source: "Lessing ULB; SPSG (12 July)",
+     event: "Schlüter's equestrian statue of the Great Elector is unveiled on the Long Bridge",
+     place: "Long Bridge",
+     scene: "A SUMO wrestler lifts Schlüter's bronze Great Elector and his horse onto the Long Bridge."}
+  - {year: 1713, peg: tomb, confidence: medium, source: "WP: Charlottenburg Palace",
+     event: "Eosander's extension of Charlottenburg Palace is completed",
+     place: "Charlottenburg Palace",
+     scene: "Eosander builds the long palace wings and the domed tower of Charlottenburg on top of a TOMB."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Crown Prince's Palace on Unter den Linden is remodelled",
+     place: "Unter den Linden",
+     scene: "Builders hang a stone MOON over the remodelled facade of the Crown Prince's Palace on Unter den Linden."}
+  - {year: 1733, peg: mummy, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Princesses' Palace is built on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "A MUMMY in a ball gown moves into the new Princesses' Palace beside the Crown Prince's Palace."}
+  - {year: 1738, peg: movie, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Ordenspalais is built on Wilhelmplatz",
+     place: "Wilhelmplatz",
+     scene: "Knights of the order watch a MOVIE about their new Ordenspalais on Wilhelmplatz."}
+  - {year: 1739, peg: map, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Palace later named Prinz-Albrecht-Palais is built in Wilhelmstrasse",
+     place: "Wilhelmstrasse",
+     scene: "A builder unrolls a MAP of Wilhelmstrasse and puts a new palace, later the Prinz-Albrecht-Palais, on it."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Palais am Festungsgraben is built",
+     place: "Festungsgraben",
+     scene: "A LLAMA carries the furniture into the new Palais am Festungsgraben behind the Zeughaus."}
+  - {year: 1757, peg: log, confidence: high, source: "WP: Sanssouci Park",
+     event: "Neptune Grotto in Sanssouci park is finished",
+     place: "Potsdam, Sanssouci park",
+     scene: "Neptune rides a LOG out of his new shell grotto in Sanssouci park."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP: Sanssouci Park; WP: Timeline of Berlin",
+     event: "Picture Gallery in Sanssouci park is built, the oldest royal museum building in Germany",
+     place: "Potsdam, Sanssouci park",
+     scene: "A CHERRY drips red paint onto the first canvas hung in the new Picture Gallery at Sanssouci."}
+  - {year: 1764, peg: cherry, confidence: unverified,
+     event: "Chinese House in Sanssouci park is finished",
+     place: "Potsdam, Sanssouci park",
+     scene: "Gilded Chinese musicians eat CHERRY sweets on the round roof of the new Chinese House at Sanssouci."}
+  - {year: 1764, peg: cherry, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "Döbbelin's theatre opens, the first permanent German-language theatre in Berlin",
+     place: "Behrenstrasse",
+     scene: "Döbbelin juggles CHERRY stones on the stage of the first permanent German-language theatre in Berlin."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Ephraim Palace is built for the court banker in the Nikolai quarter",
+     place: "Nikolaiviertel",
+     scene: "A JUDGE in a wig approves the rounded gilded corner of Ephraim's new palace on the Mühlendamm."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP: Sanssouci Park (1770 to 1772)",
+     event: "Dragon House in Sanssouci park is finished",
+     place: "Potsdam, Klausberg",
+     scene: "A dragon spits out a COIN from each corner of the roof of the new Dragon House at Sanssouci."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP: Potsdam (1771 to 1772)",
+     event: "Gontard's Barberini Palace is built on Potsdam's Old Market",
+     place: "Potsdam, Alter Markt",
+     scene: "Gontard copies a Roman COIN and builds its palace, the Barberini, on Potsdam's Old Market."}
+  - {year: 1774, peg: car, confidence: high, source: "WP: Sanssouci Park",
+     event: "New Chambers in Sanssouci park are finished",
+     place: "Potsdam, Sanssouci park",
+     scene: "A gilded CAR drives guests up to the new guest palace, the New Chambers, at Sanssouci."}
+  - {year: 1774, peg: car, confidence: high, source: "BLB Karlsruhe (12 April); Kiel university",
+     event: "Goethe's Götz von Berlichingen has its first performance on stage, in Berlin",
+     place: "Behrenstrasse",
+     scene: "Götz drives an armoured CAR across the Berlin stage in the first performance of Goethe's play."}
+  - {year: 1774, peg: car, confidence: high, source: "WP: Timeline of Berlin",
+     event: "French Comedy House is set up on the Gendarmenmarkt",
+     place: "Gendarmenmarkt",
+     scene: "French actors climb out of a CAR into the new French Comedy House on the Gendarmenmarkt."}
+  - {year: 1780, peg: vase, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Royal Library, the curved Kommode, is built on the Opera square",
+     place: "Bebelplatz",
+     scene: "A giant VASE bends into the curved front of the new Royal Library, the Kommode, on the Opera square."}
+  - {year: 1786, peg: fish, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Bellevue Palace is built in the Tiergarten",
+     place: "Tiergarten",
+     scene: "A FISH jumps from the Spree into the gardens of the new Bellevue Palace in the Tiergarten."}
+  - {year: 1786, peg: fish, confidence: medium, source: "WP: Potsdam",
+     event: "New Garden in Potsdam is laid out in the English style",
+     place: "Potsdam, New Garden",
+     scene: "A FISH swims into the Heiliger See as gardeners lay out the English-style New Garden in Potsdam."}
+  - {year: 1787, peg: fox, confidence: high, source: "WP: Charlottenburg Palace",
+     event: "Charlottenburg palace garden is redesigned as an English landscape park",
+     place: "Charlottenburg Palace",
+     scene: "A FOX runs along the new winding paths of the English landscape park at Charlottenburg."}
+  - {year: 1789, peg: fob, confidence: medium, source: "WP: Potsdam",
+     event: "Marble Palace is built in Potsdam's New Garden",
+     place: "Potsdam, New Garden",
+     scene: "The king hangs a marble FOB on his watch chain and builds the Marble Palace on the Heiliger See."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP: Charlottenburg Palace (1788 to 1791)",
+     event: "Langhans's Palace Theatre at Charlottenburg is completed",
+     place: "Charlottenburg Palace",
+     scene: "An actor kicks his BOOT onto the stage of Langhans's new Palace Theatre at Charlottenburg."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP: Timeline of Berlin (24 May)",
+     event: "Sing-Akademie choral society is founded",
+     scene: "Fasch taps a BOOT to keep time as the first singers of the new Sing-Akademie rehearse."}
+  - {year: 1793, peg: palm, confidence: unverified,
+     event: "Schadow's Quadriga is set on top of the Brandenburg Gate",
+     place: "Brandenburg Gate",
+     scene: "A crane lifts Schadow's Quadriga in its PALM and sets it on top of the Brandenburg Gate."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP: Pfaueninsel (1794 to 1797)",
+     event: "Ruin-style palace on the Pfaueninsel is finished",
+     place: "Pfaueninsel",
+     scene: "A PIG paints the white wood palace on the Pfaueninsel to look like a ruined castle."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP de: Geschichte Berlins (2 to 21 December)",
+     event: "French take the Quadriga down from the Brandenburg Gate and ship it to Paris",
+     place: "Brandenburg Gate",
+     scene: "French soldiers wrap the Quadriga in SUSHI seaweed and load it on a ship for Paris."}
+  - {year: 1810, peg: dice, confidence: medium, source: "WP: Charlottenburg Palace (1810 to 1812)",
+     event: "Gentz builds the mausoleum for Queen Luise in the Charlottenburg park",
+     place: "Charlottenburg Palace",
+     scene: "Gentz throws DICE of granite into a small Doric temple, the queen's mausoleum, in the Charlottenburg park."}
+  - {year: 1814, peg: tower, confidence: medium, source: "SPSG: Grunewald Hunting Lodge; GHDI",
+     event: "Quadriga comes back from Paris to the Brandenburg Gate",
+     place: "Brandenburg Gate",
+     scene: "Victory drives the Quadriga up a TOWER of scaffold and back onto the Brandenburg Gate."}
+  - {year: 1816, peg: dish, confidence: unverified,
+     event: "E. T. A. Hoffmann's opera Undine has its premiere at the Schauspielhaus",
+     place: "Gendarmenmarkt",
+     scene: "The water spirit Undine rises from a DISH of water on the Gendarmenmarkt stage in Hoffmann's opera."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP: Timeline of Berlin (30 March)",
+     event: "Schinkel's iron National Monument for the Wars of Liberation opens on the Kreuzberg",
+     place: "Kreuzberg",
+     scene: "An iron ANT climbs Schinkel's Gothic spire on the hill that will give Kreuzberg its name."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP: Timeline of Berlin; WP: Gendarmenmarkt",
+     event: "Schinkel's Schauspielhaus opens on the Gendarmenmarkt",
+     place: "Gendarmenmarkt",
+     scene: "An ANT army carries Schinkel's Ionic columns up the steps of the new Schauspielhaus."}
+  - {year: 1824, peg: hanger, confidence: high, source: "Schloss Tegel; berlin.de (1820 to 1824)",
+     event: "Schinkel rebuilds Schloss Tegel for Wilhelm von Humboldt",
+     place: "Tegel",
+     scene: "Wilhelm von Humboldt hangs his Greek statues on a HANGER in Schinkel's rebuilt Schloss Tegel."}
+  - {year: 1824, peg: hanger, confidence: high, source: "Carthalia; museum-digital (August)",
+     event: "Königsstädtisches Theater opens on the Alexanderplatz",
+     place: "Alexanderplatz",
+     scene: "The curtain of the new Königsstädtisches Theater on the Alexanderplatz hangs from a giant HANGER."}
+  - {year: 1825, peg: nail, confidence: high, source: "WP: Charlottenburg Palace",
+     event: "Schinkel's New Pavilion is built in the Charlottenburg palace park",
+     place: "Charlottenburg Palace",
+     scene: "Schinkel hammers one NAIL and the square Italian villa, the New Pavilion, stands in the Charlottenburg park."}
+  - {year: 1826, peg: nacho, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "Glienicke Palace is rebuilt by Schinkel for Prince Carl",
+     place: "Glienicke",
+     scene: "Prince Carl eats a NACHO on the terrace of the Glienicke Palace that Schinkel rebuilds as an Italian villa."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP: Karl Friedrich Schinkel (1825 to 1827)",
+     event: "Sing-Akademie gets its own concert hall behind the Neue Wache",
+     place: "Am Festungsgraben",
+     scene: "The choir signs its name in INK on the wall of its new Sing-Akademie concert hall."}
+  - {year: 1827, peg: ink, confidence: high, source: "WP: Timeline of Berlin (29 April)",
+     event: "Mendelssohn's opera The Wedding of Camacho has its premiere",
+     place: "Schauspielhaus",
+     scene: "The young Mendelssohn spills INK over his score as The Wedding of Camacho opens in Berlin."}
+  - {year: 1829, peg: knob, confidence: high, source: "WP: Karl Friedrich Schinkel (1826 to 1829)",
+     event: "Charlottenhof Palace in Sanssouci park is finished",
+     place: "Potsdam, Charlottenhof",
+     scene: "The crown prince turns the KNOB of his new Charlottenhof Palace and walks into Schinkel's classical villa."}
+  - {year: 1831, peg: moth, confidence: high, source: "WP: Pfaueninsel",
+     event: "Schinkel's Palm House is built on the Pfaueninsel",
+     place: "Pfaueninsel",
+     scene: "A MOTH flies among the palms under the glass roof of Schinkel's new Palm House on the Pfaueninsel."}
+  - {year: 1836, peg: match, confidence: high, source: "WP: Karl Friedrich Schinkel (1832 to 1836)",
+     event: "Schinkel's red-brick Bauakademie building is finished",
+     place: "Schinkelplatz",
+     scene: "A MATCH lights a red brick cube, and the Bauakademie stands finished beside the Spree."}
+  - {year: 1840, peg: horse, confidence: medium, source: "WP: Potsdam (1829 to 1840)",
+     event: "Roman Baths in Sanssouci park are finished",
+     place: "Potsdam, Charlottenhof",
+     scene: "A HORSE swims into the bath pool of the new Roman Baths in Sanssouci park."}
+  - {year: 1840, peg: horse, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Two Peace Columns are put up in front of Charlottenburg Palace",
+     place: "Charlottenburg Palace",
+     scene: "A HORSE stands on its back legs between the two new Peace Columns in front of Charlottenburg Palace."}
+  - {year: 1841, peg: radio, confidence: high, source: "WP: Antigone (Mendelssohn) (28 October)",
+     event: "Mendelssohn's music for Sophocles' Antigone has its premiere at the New Palace",
+     place: "Potsdam, New Palace",
+     scene: "A RADIO plays Mendelssohn's Greek choruses as Antigone has its premiere in the New Palace."}
+  - {year: 1843, peg: ram, confidence: high, source: "WP: A Midsummer Night's Dream (Mendelssohn)",
+     event: "Mendelssohn's A Midsummer Night's Dream music, with the Wedding March, has its premiere at the New Palace",
+     place: "Potsdam, New Palace",
+     scene: "Bottom with a RAM's head dances to the first Wedding March in the New Palace at Potsdam."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Ein Feldlager in Schlesien (7 December)",
+     event: "Rebuilt opera house reopens with Meyerbeer's Ein Feldlager in Schlesien",
+     place: "Unter den Linden",
+     scene: "A Silesian WARRIOR marches on stage to reopen the rebuilt opera house in Meyerbeer's camp opera."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Kroll's pleasure establishment opens in the Tiergarten",
+     place: "Königsplatz",
+     scene: "A WARRIOR waltzes across the ballroom of Kroll's new pleasure establishment in the Tiergarten."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP: Babelsberg",
+     event: "Babelsberg Palace is completed for Prince Wilhelm",
+     place: "Babelsberg park",
+     scene: "Prince Wilhelm climbs a ROPE up the Gothic towers of his new Babelsberg Palace."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP: Otto Nicolai; Staatsoper (9 March)",
+     event: "Nicolai's The Merry Wives of Windsor has its premiere at the Royal Opera",
+     place: "Unter den Linden",
+     scene: "The merry wives tie Falstaff in a ROPE and drop him in the laundry basket at the Royal Opera."}
+  - {year: 1850, peg: lasso, confidence: unverified,
+     event: "Friedrich-Wilhelmstädtisches Theater opens",
+     place: "Schumannstrasse",
+     scene: "A cowboy LASSO pulls up the curtain of the new Friedrich-Wilhelmstädtisches Theater."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Timeline of Berlin (31 May)",
+     event: "Rauch's equestrian statue of Frederick the Great is unveiled on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "Old Fritz rides out of a giant WALLET onto his bronze horse on Unter den Linden."}
+  - {year: 1855, peg: lily, confidence: medium, source: "Landesdenkmalamt (1855); Museum Island gives 1859",
+     event: "Stüler's Neues Museum opens on the Museum Island",
+     place: "Museum Island",
+     scene: "Nefertiti's ancestors carry a LILY into Stüler's Neues Museum on the Museum Island."}
+  - {year: 1861, peg: jet, confidence: high, source: "SMB: Nationalgalerie profile",
+     event: "Banker Wagener leaves his paintings to the state: the start of the National Gallery",
+     scene: "Wagener sends his paintings by JET to the state, and the National Gallery begins."}
+  - {year: 1863, peg: gem, confidence: high, source: "Landtag Brandenburg (1847 to 1863)",
+     event: "Belvedere on the Pfingstberg is completed in a smaller form",
+     place: "Potsdam, Pfingstberg",
+     scene: "A GEM glitters on top of the twin towers of the new Belvedere on the Pfingstberg."}
+  - {year: 1864, peg: cherry, confidence: high, source: "Structurae: Orangerieschloss (1851 to 1864)",
+     event: "Orangery Palace in Sanssouci park is completed",
+     place: "Potsdam, Sanssouci park",
+     scene: "Gardeners roll a CHERRY tree into the long hall of the new Orangery Palace at Sanssouci."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Wallner Theater is built in the Luisenstadt",
+     place: "Wallnerstrasse",
+     scene: "A comic actor throws a CHERRY pie across the stage of the new Wallner Theater."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Kunstgewerbemuseum, the museum of decorative arts, is set up",
+     scene: "A CHEF lays out silver spoons and porcelain in the cases of the new Kunstgewerbemuseum."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Railway king Strousberg's palace is built in Wilhelmstrasse",
+     place: "Wilhelmstrasse",
+     scene: "A CHEF serves the railway king Strousberg on gold plates in his new palace in Wilhelmstrasse."}
+
+  # economy
+  - {year: 1704, peg: sewer, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "Newspaper later called the Vossische Zeitung is founded",
+     scene: "A paper boy climbs out of a SEWER and sells the first copies of the Berlin paper, the later Vossische Zeitung."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Nicolai bookshop opens for business",
+     scene: "The bookseller Nicolai opens a TOMB full of books and starts his Berlin shop."}
+  - {year: 1718, peg: dove, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Fire insurance society of Berlin is founded, one of the first insurers in Germany",
+     scene: "A DOVE carries a bucket of water to a burning roof, the badge of the new Berlin fire insurance society."}
+  - {year: 1720, peg: nose, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Späth tree nursery is founded",
+     scene: "Späth sticks a seedling in his NOSE and plants the first row of his tree nursery outside Berlin."}
+  - {year: 1722, peg: nun, confidence: high, source: "Deutsche Biographie: Splitgerber; berlin.de Spandau",
+     event: "Splitgerber and Daum start the royal rifle factory at Potsdam and Spandau",
+     place: "Potsdam and Spandau",
+     scene: "A NUN fires the first musket made in the new royal rifle factory of Potsdam and Spandau."}
+  - {year: 1723, peg: gnome, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Wegely founds a wool manufactory on the Spree island",
+     place: "Speicherinsel",
+     scene: "A GNOME spins wool on the Spree island in Wegely's new wool manufactory."}
+  - {year: 1739, peg: map, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "First stock exchange meeting is held in the Lustgarten pavilion",
+     place: "Lustgarten",
+     scene: "Merchants spread a MAP of trade routes on the table at the first Berlin stock exchange meeting in the Lustgarten."}
+  - {year: 1750, peg: lasso, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Hackescher Markt is laid out after the Spandau Gate is pulled down",
+     place: "Hackescher Markt",
+     scene: "Commandant von Hacke throws a LASSO round the empty gate site and makes it the Hackescher Markt."}
+  - {year: 1751, peg: wallet, confidence: high, source: "WP: KPM; Britannica: Berlin ware",
+     event: "Wegely opens the first porcelain manufactory in Berlin",
+     scene: "Wegely pays for kaolin from a fat WALLET and fires the first Berlin porcelain."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP: KPM; berlin.de: Gotzkowsky",
+     event: "Gotzkowsky opens his porcelain manufactory",
+     place: "Leipziger Strasse",
+     scene: "Gotzkowsky's kiln blows a JET of flame, and his new porcelain manufactory fires its first plates."}
+  - {year: 1763, peg: gem, confidence: high, source: "WP: Timeline of Berlin (19 September)",
+     event: "Frederick II buys Gotzkowsky's works: the Royal Porcelain Manufactory (KPM) is founded",
+     place: "Leipziger Strasse",
+     scene: "Frederick paints a blue sceptre GEM on a white plate, the mark of his new Royal Porcelain Manufactory."}
+  - {year: 1795, peg: bell, confidence: high, source: "Jewish Museum; berlin.de (Spandauer Strasse)",
+     event: "Joseph Mendelssohn founds the Mendelssohn bank",
+     place: "Spandauer Strasse",
+     scene: "Joseph Mendelssohn rings a BELL on his counter and opens his bank in Spandauer Strasse."}
+  - {year: 1796, peg: peach, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Josty confectioner's business is founded",
+     scene: "Josty sugars a PEACH and sells it from his new confectioner's shop in Berlin."}
+  - {year: 1800, peg: sauce, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Royal Mint moves into Gentz's new building on the Werderscher Markt",
+     place: "Werderscher Markt",
+     scene: "Hot SAUCE pours out of the presses as the Royal Mint strikes coins in its new building on the Werderscher Markt."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Royal Prussian Iron Foundry starts work outside the Oranienburg Gate",
+     place: "Invalidenstrasse",
+     scene: "Molten iron runs like a SEWER into the moulds of the new Royal Iron Foundry outside the Oranienburg Gate."}
+  - {year: 1805, peg: seal, confidence: high, source: "BBAW: Baier (built 1797 to 1805)",
+     event: "Stock exchange building in the Lustgarten opens",
+     place: "Lustgarten",
+     scene: "A SEAL claps its flippers as the brokers move into the new stock exchange building in the Lustgarten."}
+  - {year: 1810, peg: dice, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Kleist's Berliner Abendblätter, the first daily paper of Berlin, comes out",
+     scene: "Kleist throws DICE onto the press, and the first Berlin daily, the Berliner Abendblätter, comes out."}
+  - {year: 1815, peg: doll, confidence: high, source: "WP: Timeline of Berlin (10 March)",
+     event: "Nathan Israel opens his shop, later a big department store",
+     place: "Molkenmarkt",
+     scene: "Nathan Israel puts a DOLL in the window of his new shop near the Molkenmarkt."}
+  - {year: 1834, peg: hammer, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "Café Kranzler opens on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "Kranzler cracks the sugar with a HAMMER and serves cake at his new café on Unter den Linden."}
+  - {year: 1837, peg: mug, confidence: high, source: "DHM LeMO: Gründung Borsig",
+     event: "August Borsig founds his machine works at the Oranienburg Gate",
+     place: "Chausseestrasse",
+     scene: "Borsig raises a MUG of beer and opens his machine works in Chausseestrasse."}
+  - {year: 1838, peg: movie, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Bote and Bock music publishers start business",
+     scene: "Bote and Bock print sheet music for a MOVIE soundtrack in their new Berlin publishing house."}
+  - {year: 1841, peg: radio, confidence: medium, source: "Borsig history; Berliner Zeitung (race to Jüterbog)",
+     event: "Borsig's first locomotive beats a Stephenson engine in a race on the Anhalt railway",
+     place: "Anhalter Bahnhof",
+     scene: "A RADIO reporter shouts as Borsig's first locomotive beats the Stephenson engine on the Anhalt line."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Wöhlert opens a locomotive factory in Chausseestrasse",
+     place: "Chausseestrasse",
+     scene: "A RHINO pushes the first engine out of Wöhlert's new locomotive factory in Chausseestrasse."}
+  - {year: 1842, peg: rhino, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Springer publishing house starts business",
+     scene: "Julius Springer prints his first book on the back of a RHINO in his new Berlin publishing house."}
+  - {year: 1844, peg: warrior, confidence: high, source: "museum-digital medal; WP: Gewerbe-Ausstellung",
+     event: "General German Trade Exhibition opens in the Zeughaus",
+     place: "Zeughaus",
+     scene: "A steel WARRIOR shows off German machines at the trade exhibition inside the Zeughaus."}
+  - {year: 1846, peg: roach, confidence: high, source: "WP: Bus transport in Berlin (30 October)",
+     event: "Concessionierte Berliner Omnibus-Compagnie gets a licence for city bus lines",
+     scene: "A ROACH holds the licence as the new Berlin omnibus company starts five city lines."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Wolff's Telegraph Bureau news agency starts business",
+     scene: "Bernhard Wolff sends the news down a telegraph ROPE from his new Berlin news agency."}
+  - {year: 1849, peg: rope, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Gerson opens the first department store of Berlin",
+     place: "Werderscher Markt",
+     scene: "Shoppers pull a ROPE to ring the bell at Gerson's, the first Berlin department store, on the Werderscher Markt."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Timeline of Berlin (15 October)",
+     event: "Disconto-Gesellschaft bank is founded",
+     scene: "Hansemann opens a giant WALLET and founds the Disconto-Gesellschaft bank."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Schering's Green Pharmacy, the start of Schering AG, opens",
+     place: "Chausseestrasse",
+     scene: "Ernst Schering pays from his WALLET for the first chemicals of his Green Pharmacy in Chausseestrasse."}
+  - {year: 1852, peg: lion, confidence: high, source: "WP: Timeline of Berlin (3 October)",
+     event: "Schwartzkopff's iron foundry and machine works is founded",
+     place: "Chausseestrasse",
+     scene: "A LION roars as Schwartzkopff pours the first iron in his new foundry in Chausseestrasse."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP: Timeline of Berlin (1 October)",
+     event: "Carl Bechstein founds his piano factory",
+     scene: "A LLAMA plays the first grand piano from Carl Bechstein's new Berlin factory."}
+  - {year: 1853, peg: llama, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Borchardt delicatessen is founded",
+     scene: "A LLAMA delivers truffles and wine to the new Borchardt delicatessen."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Litfass puts up the first advertising columns in Berlin streets",
+     scene: "Ernst Litfass pastes posters round a giant LILY stem, the first advertising column in Berlin."}
+  - {year: 1856, peg: leech, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Berliner Handels-Gesellschaft bank is founded",
+     scene: "A LEECH signs the founding papers of the Berliner Handels-Gesellschaft bank."}
+  - {year: 1858, peg: wolf, confidence: high, source: "DHM: Borsig medal (21 August)",
+     event: "Borsig works in Moabit finishes its thousandth locomotive",
+     place: "Moabit",
+     scene: "A WOLF howls from the cab of Borsig's thousandth locomotive, the Borussia, at the Moabit works."}
+  - {year: 1862, peg: chain, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "Kempinski wine shop starts business",
+     scene: "Berthold Kempinski pulls a wine bottle up from his cellar on a CHAIN and opens his wine shop."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Timeline of Berlin",
+     event: "New stock exchange building in Burgstrasse is finished",
+     place: "Burgstrasse",
+     scene: "Brokers trade a GEM under the columns of the new stock exchange in Burgstrasse."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "WP: Timeline of Berlin",
+     event: "First market hall of Berlin is built on the Schiffbauerdamm",
+     place: "Schiffbauerdamm",
+     scene: "A JOCKEY rides through the stalls of the first Berlin market hall on the Schiffbauerdamm."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "ABOAG omnibus company is founded",
+     scene: "A CHEF drives the first horse bus of the new ABOAG company through Berlin."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Berliner Pfandbriefinstitut mortgage bank is founded",
+     scene: "A CHEF bakes a house-shaped cake and pays for it with the first bond of the Berliner Pfandbriefinstitut."}
+
+  # society
+  - {year: 1702, peg: sun, confidence: high, source: "WP: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Friedrichs orphanage and infirmary is founded in the Stralau suburb",
+     place: "Stralauer Vorstadt",
+     scene: "The SUN shines into the new Friedrichs orphanage in the Stralau suburb as the first orphans arrive."}
+  - {year: 1705, peg: seal, confidence: high, source: "WP de: Geschichte Berlins; WP: Timeline of Berlin",
+     event: "Settlement by the Lützenburg palace becomes the town of Charlottenburg",
+     place: "Charlottenburg",
+     scene: "A royal SEAL stamps town rights on the village by the palace, and it becomes Charlottenburg."}
+  - {year: 1717, peg: dog, confidence: medium, source: "WP de: Geschichte Berlins (1717 to 1719)",
+     event: "Royal powder factory is built northwest of Berlin, and Moabit begins",
+     place: "Moabit",
+     scene: "A DOG sniffs gunpowder at the new royal powder factory, and the first Moabit houses go up nearby."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Twelve hundred Bohemian Protestant exiles settle in Berlin",
+     place: "Friedrichstadt",
+     scene: "Bohemian exiles walk by MOON light into the Friedrichstadt and take up their new house plots."}
+  - {year: 1734, peg: hammer, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Pariser Platz and the round Rondell square are laid out in the new Friedrichstadt",
+     place: "Pariser Platz",
+     scene: "Surveyors HAMMER pegs into a square and a circle, Pariser Platz and the Rondell, at the Friedrichstadt gates."}
+  - {year: 1734, peg: hammer, confidence: medium, source: "Visit Berlin (1734 to 1742); potsdam.de gives 1733",
+     event: "Jan Bouman begins the Dutch Quarter in Potsdam for Dutch craftsmen",
+     place: "Potsdam, Dutch Quarter",
+     scene: "Jan Bouman swings a HAMMER on the first red-brick gable of Potsdam's Dutch Quarter."}
+  - {year: 1737, peg: mug, confidence: high, source: "berlin.de Neukölln chronicle; Radio Prague",
+     event: "Bohemian Protestant refugees found Böhmisch-Rixdorf",
+     place: "Rixdorf, Richardplatz",
+     scene: "Bohemian refugees share one MUG of milk round the village pump of their new Böhmisch-Rixdorf."}
+  - {year: 1743, peg: ram, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Opera square is laid out beside the new opera house",
+     place: "Bebelplatz",
+     scene: "A RAM butts the old houses aside, and the wide Opera square opens beside the opera house."}
+  - {year: 1747, peg: rock, confidence: high, source: "WP: Johann Julius Hecker (8 May)",
+     event: "Hecker opens the first Realschule in Berlin",
+     place: "Kochstrasse",
+     scene: "Hecker shows pupils real ROCK samples instead of Latin in his new Realschule, the first in Berlin."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Invalidenhaus for wounded soldiers opens",
+     place: "Invalidenstrasse",
+     scene: "Wounded soldiers hobble over a REEF of crutches into the new Invalidenhaus north of Berlin."}
+  - {year: 1751, peg: wallet, confidence: medium, source: "potsdam.de: Friedrichskirche (1751)",
+     event: "Bohemian weavers' colony of Nowawes is founded near Potsdam",
+     place: "Potsdam, Babelsberg",
+     scene: "Each Bohemian weaver gets a WALLET and a loom in the new colony of Nowawes, now Babelsberg."}
+  - {year: 1751, peg: wallet, confidence: high, source: "WP: Timeline of Berlin (22 September)",
+     event: "Building of the Ackerstrasse settlement, the Voigtland colony, starts",
+     place: "Ackerstrasse",
+     scene: "Builders from the Vogtland get a WALLET of royal money and start their houses in Ackerstrasse."}
+  - {year: 1753, peg: llama, confidence: high, source: "berlin.de Friedrichshagen; WP: Friedrichshagen",
+     event: "Spinners' colony of Friedrichshagen is founded on the Müggelsee",
+     place: "Friedrichshagen",
+     scene: "A LLAMA gives its wool to cotton spinners in the new colony of Friedrichshagen on the Müggelsee."}
+  - {year: 1762, peg: chain, confidence: high, source: "KuLaDig; berlin.de",
+     event: "Dorotheenstadt cemetery is laid out",
+     place: "Chausseestrasse",
+     scene: "A CHAIN closes the gate of the new Dorotheenstadt cemetery outside the Oranienburg Gate."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Bergakademie mining school is founded",
+     scene: "A GOOSE lays a silver egg in the new Bergakademie, and the mining students dig it out."}
+  - {year: 1778, peg: cave, confidence: high, source: "Jewish Virtual Library; uni-potsdam Haskala",
+     event: "Itzig and Friedländer found the Jewish Free School",
+     scene: "Itzig and Friedländer lead poor Jewish children out of a CAVE into the new Jewish Free School."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Berlinische Monatsschrift magazine starts, organ of the Wednesday Society",
+     scene: "The Wednesday Society blows FOAM off its beer and prints the first Berlinische Monatsschrift."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP: Timeline of Berlin (18 March)",
+     event: "Bauakademie school of building is founded",
+     scene: "The first building students draw a PIPE plan at the new Bauakademie."}
+  - {year: 1809, peg: soap, confidence: high, source: "WP: Timeline of Berlin (4 November)",
+     event: "Gesetzlose Gesellschaft dining club is founded",
+     scene: "Members of the Lawless Society blow SOAP bubbles over their first dinner, since their club has no rules."}
+  - {year: 1811, peg: tattoo, confidence: high, source: "berlin.de; Cambridge blog (21 November)",
+     event: "Kleist shoots Henriette Vogel and himself at the Kleiner Wannsee",
+     place: "Kleiner Wannsee",
+     scene: "A TATTOO of a pistol marks the spot on the Kleiner Wannsee shore where Kleist and Henriette Vogel die."}
+  - {year: 1813, peg: tomb, confidence: high, source: "WP de: Geschichte Berlins (28 May)",
+     event: "Last burnings at the stake in Prussia are carried out in the Jungfernheide",
+     place: "Jungfernheide",
+     scene: "Two arsonists burn on a pyre over a TOMB in the Jungfernheide, the last burning in Prussia."}
+  - {year: 1817, peg: dog, confidence: high, source: "WP de: Geschichte Berlins (29 July)",
+     event: "National Theatre on the Gendarmenmarkt burns down",
+     place: "Gendarmenmarkt",
+     scene: "A fire DOG howls as the National Theatre on the Gendarmenmarkt burns to its walls."}
+  - {year: 1821, peg: ant, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Beuth's Gewerbeinstitut, a technical school, is founded",
+     scene: "Beuth's students build a steam engine as busy as an ANT colony in the new Gewerbeinstitut."}
+  - {year: 1827, peg: ink, confidence: high, source: "Tagesspiegel (2 April); potsdam.de",
+     event: "Russian singers move into the Alexandrowka colony in Potsdam",
+     place: "Potsdam, Alexandrowka",
+     scene: "Twelve Russian singers sign their names in INK and move into the wooden houses of Alexandrowka."}
+  - {year: 1843, peg: ram, confidence: high, source: "Staatsoper; WP: Ein Feldlager (18 August)",
+     event: "Royal opera house on Unter den Linden burns down",
+     place: "Unter den Linden",
+     scene: "A burning RAM charges across the ballet stage, and the Royal opera house burns to its walls."}
+  - {year: 1844, peg: warrior, confidence: high, source: "WP: Timeline of Berlin; WP: Pfaueninsel",
+     event: "Berlin Zoological Garden opens, the first zoo in Germany",
+     place: "Tiergarten",
+     scene: "A WARRIOR leads the Pfaueninsel animals into their new cages at the Berlin Zoological Garden."}
+  - {year: 1848, peg: reef, confidence: high, source: "berlin.de; revolution histories (22 March)",
+     event: "Barricade dead are buried in a new cemetery in Friedrichshain",
+     place: "Friedrichshain",
+     scene: "Mourners lay a REEF of wreaths on the coffins of the barricade dead in the new Friedrichshain cemetery."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Stern's music school, later the Stern Conservatory, is founded",
+     scene: "Julius Stern pulls his first pupils into class with a LASSO of piano wire."}
+  - {year: 1850, peg: lasso, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Friedrich von Raumer founds the first public libraries of Berlin",
+     scene: "Friedrich von Raumer pulls books off the shelf with a LASSO and lends them free to Berliners."}
+  - {year: 1851, peg: wallet, confidence: high, source: "WP: Berlin Fire Brigade; Abgeordnetenhaus",
+     event: "Scabell sets up the Berlin Fire Brigade, the first professional fire brigade in Germany",
+     scene: "Scabell pays each firefighter from a WALLET, and the first professional fire brigade in Germany starts."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Hobrecht Plan sets the street layout for the growth of Berlin",
+     scene: "Hobrecht lays a surveyor's CHAIN over the fields round Berlin and draws the grid of future streets."}
+  - {year: 1866, peg: judge, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Westend villa colony is founded near Charlottenburg",
+     place: "Westend",
+     scene: "A JUDGE in a top hat moves into the first villa of the new Westend colony."}
+  - {year: 1866, peg: judge, confidence: high, source: "berlin.de Neukölln chronicle",
+     event: "Settlement of Neu-Britz is founded",
+     place: "Britz",
+     scene: "A JUDGE marks out house plots in the fields to found the settlement of Neu-Britz."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Berlin",
+     event: "Royal School of Art is founded",
+     scene: "A SHIP's figurehead is the first model drawn at the new Royal School of Art."}
+
+world_refs:
+  - {year: 1706, event: "Prussian blue pigment made in Berlin", cell: western_europe_science_1500_1800}
+  - {year: 1721, event: "Bach presents the Brandenburg Concertos in Berlin", cell: western_europe_arts_1500_1800}
+  - {year: 1742, event: "Berlin State Opera opens", cell: western_europe_arts_1500_1800}
+  - {year: 1747, event: "Sanssouci completed in Potsdam", cell: western_europe_arts_1500_1800}
+  - {year: 1747, event: "Bach presents The Musical Offering at Potsdam", cell: western_europe_arts_1500_1800}
+  - {year: 1747, event: "Marggraf finds sugar in beets in Berlin", cell: western_europe_science_1500_1800}
+  - {year: 1765, event: "Royal Giro and Loan Bank founded in Berlin", cell: western_europe_economy_1500_1800}
+  - {year: 1769, event: "New Palace in Potsdam finished", cell: western_europe_arts_1500_1800}
+  - {year: 1789, event: "Klaproth finds uranium in Berlin", cell: western_europe_science_1500_1800}
+  - {year: 1791, event: "Brandenburg Gate finished", cell: western_europe_arts_1500_1800}
+  - {year: 1806, event: "Napoleon's Berlin Decree", cell: western_europe_economy_1800_1945}
+  - {year: 1810, event: "University of Berlin founded", cell: western_europe_society_1800_1945}
+  - {year: 1811, event: "Jahn opens the gymnastics ground at Hasenheide", cell: western_europe_society_1800_1945}
+  - {year: 1819, event: "Society for Culture and Science of the Jews founded in Berlin", cell: western_europe_religion_1800_1945}
+  - {year: 1821, event: "Der Freischütz premieres in Berlin", cell: western_europe_arts_1800_1945}
+  - {year: 1821, event: "Seebeck finds the thermoelectric effect in Berlin", cell: western_europe_science_1800_1945}
+  - {year: 1824, event: "Berlin Missionary Society founded", cell: western_europe_religion_1800_1945}
+  - {year: 1829, event: "Mendelssohn revives the St Matthew Passion in Berlin", cell: western_europe_arts_1800_1945}
+  - {year: 1830, event: "Schinkel's Altes Museum opens", cell: western_europe_arts_1800_1945}
+  - {year: 1831, event: "Cholera reaches Berlin", cell: western_europe_society_1800_1945}
+  - {year: 1846, event: "Galle finds Neptune at Berlin Observatory", cell: western_europe_science_1800_1945}
+  - {year: 1847, event: "Siemens and Halske founded in Berlin", cell: western_europe_economy_1800_1945}
+  - {year: 1847, event: "Potato revolution hunger riots in Berlin", cell: western_europe_society_1800_1945}
+  - {year: 1848, event: "March Revolution barricade fighting in Berlin", cell: western_europe_politics_1800_1945}
+  - {year: 1850, event: "Clausius states the laws of thermodynamics in Berlin", cell: western_europe_science_1800_1945}
+  - {year: 1866, event: "Lette-Verein founded", cell: western_europe_society_1800_1945}
+  - {year: 1867, event: "Agfa founded near Berlin", cell: western_europe_economy_1800_1945}
+  - {year: 1870, event: "Deutsche Bank founded in Berlin", cell: western_europe_economy_1800_1945}
+
+out_refs:
+  - {year: 1715, event: "Treaty of Berlin signed in the city", reason: "treaty signed in the city"}
+  - {year: 1730, event: "Crown Prince Frederick and Katte court-martialled at Köpenick palace", reason: "royal family trial"}
+  - {year: 1732, event: "Treaty of the Three Black Eagles signed in Berlin", reason: "treaty signed in the city"}
+  - {year: 1740, event: "Frederick William I buried in the Potsdam Garrison Church", reason: "royal funeral"}
+  - {year: 1742, event: "Treaty of Berlin ends the First Silesian War", reason: "treaty signed in the city"}
+  - {year: 1750, event: "Voltaire joins Frederick II's court at Potsdam", reason: "royal court"}
+  - {year: 1772, event: "Prussian state Seehandlung trading company set up in Berlin", reason: "state enterprise"}
+  - {year: 1786, event: "Frederick II dies at Sanssouci", reason: "royal death"}
+  - {year: 1805, event: "Tsar Alexander I and Frederick William III swear friendship at Frederick II's tomb", reason: "royal alliance"}
+  - {year: 1808, event: "Prussian town ordinance (Städteordnung) passed", reason: "Prussian law"}
+  - {year: 1810, event: "Queen Luise buried in the Charlottenburg palace park", reason: "royal funeral"}
+  - {year: 1817, event: "First united Lutheran and Reformed service in the Potsdam Garrison Church", reason: "Prussian church union"}
+  - {year: 1847, event: "United Diet of Prussia meets in the Berlin palace", reason: "national parliament"}
+  - {year: 1847, event: "Trial of Polish insurgents in Berlin", reason: "national court case"}
+  - {year: 1848, event: "Prussian National Assembly meets in Berlin", reason: "national parliament"}
+  - {year: 1850, event: "Prussian municipal ordinance brings three-class voting to Berlin", reason: "Prussian law"}
+  - {year: 1850, event: "Prussian House of Lords established", reason: "national parliament"}
+  - {year: 1862, event: "Wilhelm I names Bismarck minister-president at Babelsberg", reason: "national cabinet"}
+  - {year: 1867, event: "North German Reichstag meets in Berlin", reason: "national parliament"}
+  - {year: 1870, event: "Wilhelm I leaves Berlin for the war against France", reason: "national war"}

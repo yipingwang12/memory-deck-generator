@@ -183,7 +183,7 @@ city at a time, then Tier 2, then Tier 3. Each city gets its section (area + era
 | 2 | Bangkok (`bangkok`) | southeast_asia | Bangkok Metropolitan Region (with Thonburi and the ring provinces); Ayutthaya out (decided 2026-11-19) |
 | 2 | Jakarta (`jakarta`) | southeast_asia | Jabodetabek (Bogor, Tangerang, Bekasi) (decided 2026-11-19) |
 | 2 | Tehran (`tehran`) | west_asia | Tehran Province (Rey, Varamin, Damavand) (decided 2026-11-19) |
-| 2 | Berlin (`berlin`) | western_europe | Berlin + Potsdam (decided 2026-11-19) |
+| 2 | Berlin (`berlin`) | western_europe | Berlin + Potsdam, with Sachsenhausen and Schönefeld/BER (decided 2026-11-19; exceptions 2026-11-25) |
 | 2 | Madrid (`madrid`) | western_europe | Community of Madrid (Alcalá de Henares, El Escorial, Aranjuez) (decided 2026-11-19) |
 | 2 | Chicago (`chicago`) | north_america | metropolitan area (Cook and collar counties, northwest Indiana) (decided 2026-11-19) |
 | 2 | São Paulo (`sao_paulo`) | latin_america | metropolitan region + Santos and São Vicente (decided 2026-11-19) |
@@ -1002,3 +1002,63 @@ are OUT. Region: west_asia.
 | `1979_present` | 1979, the embassy, the war and the missiles, the metro and Milad tower, 1999, 2009, 2017, 2022, the 2025 strikes | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Berlin (2026-11-25)
+
+Area: Berlin (all 12 boroughs: Mitte with old Berlin, Cölln, Friedrichswerder and Dorotheenstadt; Spandau with
+the citadel; Köpenick; Charlottenburg; Tempelhof; Kreuzberg; Prenzlauer Berg; Lichtenberg with Karlshorst and
+Hohenschönhausen; Plötzensee; Grunewald; Wannsee and Pfaueninsel; Gatow; Tegel) and Potsdam (Sanssouci, the
+New Palace, Cecilienhof and the New Garden, Babelsberg, the Garrison Church, Glienicke Bridge). Named
+exceptions (user decision 2026-11-25): the Sachsenhausen camp at Oranienburg and Schönefeld/BER airport are
+IN. The rest of Brandenburg is OUT: Brandenburg an der Havel, Lehnin, Seelow Heights, Bernau, Erkner,
+Rheinsberg, Halbe. Region: western_europe (Step 0 also greps the eastern_europe cells).
+
+- Dates: Brandenburg and Prussia moved from the Julian to the Gregorian calendar in 1700 (18 February
+  Julian was followed by 1 March Gregorian). Convert earlier dates per policy.md.
+- The OUT rule covers each government while the area is its seat:
+  - the margraves and electors of Brandenburg with their residence at Berlin-Cölln (from Frederick II's
+    palace, 1443–1451, to 1701) and at Potsdam: acts for the whole march or for Brandenburg-Prussia, accessions,
+    births, marriages and funerals of the house, treaties. The Edict of Potsdam (1685) is OUT; the Huguenot
+    colony in Berlin (its church, school, quarter) is IN.
+  - the Kingdom of Prussia (1701–1918), with Berlin and Potsdam as residences; the North German Confederation
+    (1867–1871); the German Empire (1871–1918); the Free State of Prussia (1918–1947); the Weimar Republic
+    (1919–1933); Nazi Germany (1933–1945): national and Prussian laws (the 1808 Städteordnung is OUT; the first
+    Berlin city council election under it, 1809, is IN), Reichstag and Landtag acts, cabinets, elections,
+    accessions, treaties signed in the city, Nazi decrees for the whole Reich.
+  - the Allied Control Council (1945–1948, acts for all Germany) is OUT; the Allied Kommandatura (acts for
+    Berlin) is IN. The GDR government seated in East Berlin (1949–1990): Volkskammer acts, SED congresses,
+    state funerals and national acts OUT. Federal German acts (Bonn) are OUT unless Berlin is the subject.
+  - reunified Germany with Berlin as seat (Bundestag from 1999, federal government): federal laws, elections,
+    cabinets, chancellors OUT. The state of Brandenburg seated in Potsdam (from 1990): state-wide acts OUT.
+- Berlin as a Land (West Berlin from 1950, all Berlin from 1990) is a city government: its Senate, House of
+  Representatives, governing mayors and Land laws are IN (city-state rule). Potsdam city acts are IN.
+- Acts about the city are IN even when a higher government makes them: the union of Berlin and Cölln (1307,
+  1432, 1709), the Berlin Customs Wall, the Hobrecht Plan (1862), the Greater Berlin Act (1920), Germania
+  plans, the sector division (1945), the Wall (1961), the Four Power Agreement on Berlin (1971), the 1991
+  capital decision and the move of the Bundestag (1999).
+- Main stage (IN as cards): the Berliner Unwille (1448), the Russian and Austrian raids (1757, 1760),
+  Napoleon's entry (1806), the March 1848 barricades, the November 1918 revolution in the city (the two
+  proclamations), the Spartacist rising (1919), the Kapp Putsch (1920), Rathenau's assassination (1922), the
+  Reichstag fire and the book burning (1933), the killings of 30 June 1934 in the city, Kristallnacht in
+  Berlin (1938), the deportations from Grunewald and Moabit, the Rosenstrasse protest (1943), 20 July 1944 at
+  the Bendlerblock, the air raids, the Battle of Berlin and the surrender at Karlshorst (1945), the blockade
+  and airlift (1948–1949), 17 June 1953, the Wall and the escapes, Kennedy (1963) and Reagan (1987), the fall
+  of the Wall (1989), the Breitscheidplatz attack (2016). The Day of Potsdam (1933) and the Wannsee Conference
+  (1942) are unsure: list them in the report.
+- International congresses, summits and games held in the area are IN as city events (the Congress of
+  Berlin 1878, the Berlin Conference 1884–1885, the 1936 Olympics, the Potsdam Conference 1945, the 1971
+  Four Power talks, the 2006 World Cup final, the 2009 World Athletics Championships).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1237` | prehistoric finds, Bronze Age sites, the Semnones, the Slav Hevelli at Spandau and Sprewanen at Köpenick, Jaxa, Albert the Bear (1157), the Spandau and Köpenick castles | 30 | ~50 |
+| `1237_1700` | Cölln (1237) and Berlin (1244), the 1307 union, the Hanse, the Unwille, the palace, the Reformation, the Thirty Years' War, the Great Elector's new towns, the Huguenots, the Academy of Arts | 45 | ~180 |
+| `1701_1870` | the royal capital, the 1709 union, Sanssouci, the Brandenburg Gate, the 1757/1760 raids, Napoleon, the university, Schinkel, the first railway (1838), 1848, the Hobrecht Plan, the Red Town Hall | 45 | ~250 |
+| `1871_1918` | the imperial capital, the Gründerzeit, the Stadtbahn, the Reichstag building, the U-Bahn (1902), the Captain of Köpenick, the 1918 revolution | 45 | ~250 |
+| `1919_1945` | the Spartacists, Greater Berlin (1920), the Kapp Putsch, the Golden Twenties, Tempelhof, 1933, the 1936 Olympics, Kristallnacht, Germania, the bombing, the battle and the surrender | 45 | ~250 |
+| `1946_1989` | the sectors, the blockade and airlift, 17 June 1953, the Wall and the escapes, Kennedy, the Four Power Agreement, the 750th anniversary, Reagan, 9 November 1989 | 45 | ~250 |
+| `1990_present` | reunification, the capital decision, the Wrapped Reichstag, the Bundestag move, the Hauptbahnhof, the Love Parade, the 2016 attack, BER (2020) | 45 | ~220 |
+
+Expected cards are a guide, not a target. The world grid holds many Berlin events (about 230 lines in the
+western_europe cells), so yields may be lower than the expected counts.
+

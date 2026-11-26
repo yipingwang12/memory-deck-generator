@@ -1,0 +1,892 @@
+# City: Berlin x 1237 to 1700 (Cölln and Berlin first named, the twin town, the Hanse, the Berliner Unwille,
+# the electors' castle, the Reformation, the Thirty Years' War, the Great Elector's fortress and new towns,
+# the Huguenots, to the Academy of Arts and the Lietzenburg). DRAFT 2026-11-25.
+# Area: Berlin (all 12 boroughs: Mitte with old Berlin, Cölln, Friedrichswerder and Dorotheenstadt; Spandau;
+# Köpenick; Charlottenburg; Tempelhof; Grunewald; Wannsee and Pfaueninsel; Gatow; Tegel ...) and Potsdam
+# (Bornstedt, Bornim, Golm, Sacrow, Groß Glienicke, Glienicke). Sachsenhausen and Schönefeld/BER: no events here.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Electoral court events -> out_refs.
+# World-grid events -> world_refs. Dates: memory pass + web check (22 of 45 searches; no unauthorised book copies).
+# Main sources: Wikipedia at wikipedia.org (de: Geschichte Berlins and about ninety district, church and building
+# articles; en: Timeline of Berlin, History of Berlin), berlin.de, potsdam.de, visitberlin, museumsportal-berlin.
+# Calendar: Julian dates before 1700 (Brandenburg changed in Feb 1700); only years are used.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1237, peg: mug, confidence: high, source: "WP de: Geschichte Berlins (Cölln 28 Oct)",
+     event: "Cölln first named: its priest Symeon witnesses the Brandenburg tithe treaty",
+     place: "Petriplatz",
+     scene: "A MUG of ink tips over the tithe treaty and leaves one wet word on it, Cölln: the town's first written name."}
+  - {year: 1244, peg: warrior, confidence: high, source: "WP de: Geschichte Berlins (Berlin 26 Jan)",
+     event: "Berlin first named: Symeon signs a charter as provost of Berlin",
+     place: "Nikolaikirche",
+     scene: "A WARRIOR carves the new name Berlin beside Provost Symeon's signature, the first time the town appears in writing."}
+  - {year: 1247, peg: rock, confidence: medium, source: "WP de: Geschichte Berlins (first known Schultheiss)",
+     event: "Marsilius de Berlin: first known Schultheiss, the margrave's officer over the town",
+     place: "Molkenmarkt",
+     scene: "The margrave hands a ROCK of office to Marsilius, and he becomes the first known Schultheiss to judge Berlin."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP de: Berliner Stadtmauer",
+     event: "Berlin and Cölln begin a fieldstone town wall (approximate)",
+     place: "Littenstrasse",
+     scene: "Masons throw a LASSO of fieldstones round Berlin and pull it tight into the first town wall."}
+  - {year: 1251, peg: wallet, confidence: high, source: "WP en: History of Berlin; WP de: Geschichte Berlins",
+     event: "Berlin first named a town (civitas) in a charter",
+     place: "Molkenmarkt",
+     scene: "A clerk stamps 'civitas' on Berlin's WALLET of privileges: the charter now calls the settlement a town."}
+  - {year: 1253, peg: llama, confidence: medium, source: "WP en: Timeline of Berlin",
+     event: "Oldest known town seal of Berlin",
+     place: "Old town hall",
+     scene: "A LLAMA presses its hoof into hot wax and leaves Berlin's oldest known town seal on the council letter."}
+  - {year: 1261, peg: jet, confidence: high, source: "WP en: History of Berlin",
+     event: "Cölln first named a town (civitas)",
+     place: "Petriplatz",
+     scene: "A JET drops a parchment on Cölln's market: the word civitas, town, now stands after Cölln's name too."}
+  - {year: 1261, peg: jet, confidence: medium, source: "WP de: Hohes Haus (Berlin)",
+     event: "Hohes Haus: the margraves' town residence first named as Aula Berlin",
+     place: "Klosterstrasse",
+     scene: "A second JET lands in the margraves' courtyard by Klosterstrasse; its pilot reads the sign 'Aula Berlin' aloud."}
+  - {year: 1270, peg: goose, confidence: medium, source: "WP de: Altes Rathaus (Berlin)",
+     event: "Berlin's first town hall at Spandauer Strasse and Königstrasse (approximate)",
+     place: "Spandauer Strasse",
+     scene: "A GOOSE lays the corner stone at the crossing of Spandauer and Königstrasse: Berlin's first town hall rises over it."}
+  - {year: 1307, peg: ski, confidence: high, source: "WP en: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Union of Berlin and Cölln; a joint town hall on the Lange Brücke",
+     place: "Lange Brücke",
+     scene: "Councillors of Berlin and Cölln SKI toward each other on the frozen Spree and meet in a joint town hall on the bridge."}
+  - {year: 1323, peg: gnome, confidence: medium, source: "WP de: Berlin-Köpenick",
+     event: "Köpenick joins the town league of the Middle March and Lower Lusatia",
+     place: "Köpenick Altstadt",
+     scene: "A GNOME from Köpenick signs the town league's roll and joins the other burghers' alliance."}
+  - {year: 1345, peg: railway, confidence: high, source: "WP de: Potsdam; Geschichte der Stadt Potsdam",
+     event: "Potsdam receives town rights from Margrave Louis",
+     place: "Alter Markt, Potsdam",
+     scene: "Margrave Louis lays a RAILWAY of town rights to Potsdam's market, and the hamlet becomes a chartered town."}
+  - {year: 1412, peg: tongue, confidence: medium, source: "WP de: Graues Kloster (Berlin)",
+     event: "Burghers meet in the Grey Friary and agitate against the town council",
+     place: "Grey Friary",
+     scene: "In the Grey Friary a burgher's sharp TONGUE whips the crowd against the patrician councillors."}
+  - {year: 1432, peg: moon, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "Berlin and Cölln merge into one town with one council",
+     place: "Lange Brücke",
+     scene: "Under a full MOON the two councils sit at one table on the bridge: Berlin and Cölln become one town."}
+  - {year: 1442, peg: rhino, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "Elector Frederick II breaks up the joint Berlin-Cölln council and takes the town keys",
+     place: "Lange Brücke",
+     scene: "A RHINO charges onto the bridge for Frederick II and smashes the joint council table in two."}
+  - {year: 1448, peg: reef, confidence: high, source: "WP en: Frederick II of Brandenburg; visitberlin",
+     event: "Berliner Unwille: citizens flood the elector's castle site; the town loses its rights",
+     place: "Schlossplatz",
+     scene: "Burghers break the dam and a REEF of Spree water floods the elector's castle pit; Frederick II takes their privileges."}
+  - {year: 1486, peg: fish, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "Johann Cicero makes the Cölln castle the electors' permanent residence",
+     place: "Schlossplatz",
+     scene: "Johann Cicero nails a FISH over the Cölln castle gate: the court stops travelling and stays in the town for good."}
+  - {year: 1560, peg: cheese, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Spandau Citadel: building of the new bastioned fortress starts",
+     place: "Spandau Citadel",
+     scene: "Builders stack wheels of CHEESE as models of the four bastions, then start the Spandau Citadel walls beside them."}
+  - {year: 1567, peg: jockey, confidence: high, source: "WP de: Knüppelkrieg",
+     event: "Knüppelkrieg: a staged fight between Berlin and Spandau burghers ends in a real brawl",
+     place: "Spandau",
+     scene: "A JOCKEY rides Joachim II's mock battle at Spandau; the losing Spandauers grab clubs and beat the Berliners."}
+  - {year: 1580, peg: vase, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Spandau Citadel: first garrison moves in",
+     place: "Spandau Citadel",
+     scene: "Soldiers carry their kit into the new citadel in a giant VASE and unpack it as the first garrison."}
+  - {year: 1594, peg: bear, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Spandau Citadel completed",
+     place: "Spandau Citadel",
+     scene: "A BEAR sets the last brick on the Spandau bastion and roars: the citadel is finished."}
+  - {year: 1615, peg: doll, confidence: high, source: "WP de: Berliner Dom; Berliner Zeitung",
+     event: "Berlin Tumult: Lutheran crowds plunder the houses of the Calvinist court preachers",
+     place: "Brüderstrasse, Cölln",
+     scene: "Lutheran rioters smash a court preacher's DOLL collection and loot his Cölln house in the Berlin Tumult."}
+  - {year: 1620, peg: nose, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Spandau town is ringed with earth ramparts",
+     place: "Spandau",
+     scene: "A giant NOSE sniffs round Spandau, and diggers follow its trail with a ring of earth ramparts."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP de: Berlin-Spandau",
+     event: "Thirty Years' War: a garrison is stationed in Spandau and its wall is strengthened",
+     place: "Spandau",
+     scene: "Soldiers march into Spandau carrying NACHO trays as rations and settle in as the war garrison."}
+  - {year: 1631, peg: moth, confidence: medium, source: "WP de: Festung Berlin; Zitadelle Spandau",
+     event: "Thirty Years' War: Swedish troops occupy Berlin and the Spandau Citadel",
+     place: "Spandau Citadel",
+     scene: "A Swedish MOTH swarm settles on the Spandau Citadel flagpole and eats the Brandenburg flag; Swedes hold the fort."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP de: Schloss Köpenick",
+     event: "Gustavus Adolphus makes Köpenick castle his headquarters and presses the elector",
+     place: "Köpenick Palace",
+     scene: "Gustavus Adolphus pins a map in Köpenick castle and a MOTH lands on Berlin; he presses Georg Wilhelm to join him."}
+  - {year: 1640, peg: horse, confidence: medium, source: "WP de: Festung Berlin",
+     event: "The suburbs of Berlin and Cölln are pulled down for a clear field of fire (approximate)",
+     place: "Spandauer Vorstadt",
+     scene: "A war HORSE drags the suburb houses down one by one, so the gunners on the wall can see the Swedes coming."}
+  - {year: 1658, peg: wolf, confidence: high, source: "WP de: Festung Berlin; berlin.de",
+     event: "Memhardt starts the star-shaped fortress round Berlin and Cölln",
+     place: "Hausvogteiplatz",
+     scene: "A WOLF digs the first bastion trench for Memhardt, and the star-shaped fortress begins round the twin town."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP de: Geschichte der Stadt Potsdam",
+     event: "Potsdam becomes the Great Elector's second residence",
+     place: "Potsdam Stadtschloss",
+     scene: "The Great Elector unpacks a hunting CHEESE in Potsdam and declares the small town his second residence."}
+  - {year: 1675, peg: eagle, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Swedish invasion: Swedish troops stand before the Spandau Citadel",
+     place: "Spandau Citadel",
+     scene: "A Brandenburg EAGLE circles above the Spandau Citadel and screams at the Swedish troops camped before its walls."}
+  - {year: 1678, peg: cave, confidence: high, source: "WP de: Friedrichswerdersche Kirche",
+     event: "Friedrichswerder town hall completed",
+     place: "Werderscher Markt",
+     scene: "The Friedrichswerder councillors move out of a dark CAVE into their new town hall on the Werder market."}
+  - {year: 1680, peg: vase, confidence: high, source: "WP de: Festung Berlin",
+     event: "Demolition of the medieval town wall begins",
+     place: "Littenstrasse",
+     scene: "Workers swing a heavy stone VASE like a wrecking ball and knock down the old town wall."}
+  - {year: 1683, peg: foam, confidence: high, source: "WP de: Festung Berlin; Leipziger Strasse",
+     event: "Leipzig Gate finished: the Berlin fortress is complete",
+     place: "Leipziger Tor",
+     scene: "Masons seal the Leipzig Gate with FOAM-white mortar, the last stone of the Berlin fortress."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP de: Berlin-Spandau",
+     event: "Spandau: the Lynar palace becomes a workhouse prison",
+     place: "Spandau",
+     scene: "A guard locks a FISH-smelling prisoner into the old Lynar palace, now Spandau's workhouse jail."}
+  - {year: 1690, peg: bees, confidence: high, source: "WP de: Dorotheenstadt",
+     event: "Dorotheenstadt gets its first two mayors, Rambonet and Schultesius",
+     place: "Dorotheenstadt",
+     scene: "BEES swarm round two new chains of office as Rambonet and Schultesius become the first mayors of Dorotheenstadt."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP de: Altes Rathaus (Berlin)",
+     event: "Nering starts the baroque extension of Berlin's town hall",
+     place: "Spandauer Strasse",
+     scene: "Nering lowers a PIANO-sized sandstone block as the foundation of the new town hall wing."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP de: Zeughaus (Berlin)",
+     event: "Zeughaus: Frederick III lays the foundation stone of the arsenal on Unter den Linden",
+     place: "Unter den Linden",
+     scene: "Frederick III rings a BELL and drops the foundation stone of the arsenal, the first building on Unter den Linden."}
+  # science
+  - {year: 1272, peg: coin, confidence: high, source: "WP de: Heilig-Geist-Spital; Georgenhospital",
+     event: "Holy Spirit and St George hospitals first named in the bakers' guild letter",
+     place: "Spandauer Strasse",
+     scene: "Bakers drop a COIN and a loaf each into the Holy Spirit and St George hospitals, as their guild letter orders."}
+  - {year: 1278, peg: cave, confidence: high, source: "WP de: Georgenhospital (Berlin)",
+     event: "St George's hospital named as a house for the sick",
+     place: "Georgentor",
+     scene: "Outside the Georgentor the sick crawl out of a CAVE into St George's new house for the sick."}
+  - {year: 1298, peg: beehive, confidence: high, source: "WP de: Mühlendamm (Berlin)",
+     event: "Mühlendamm: a record tells of busy shipping and rafting at the mill dam",
+     place: "Mühlendamm",
+     scene: "A BEEHIVE of rafts and barges crowds the mill dam between Berlin and Cölln."}
+  - {year: 1305, peg: seal, confidence: high, source: "WP de: Benediktinerinnenkloster Spandau",
+     event: "Spandau: the nunnery opens a hospital",
+     place: "Spandau nunnery",
+     scene: "A SEAL balances a soup bowl on its nose and serves the sick in the Spandau nuns' new hospital."}
+  - {year: 1411, peg: tattoo, confidence: high, source: "WP de: Gertraudenhospital (Berlin)",
+     event: "St Gertrude's hospital and chapel in Cölln consecrated",
+     place: "Spittelmarkt",
+     scene: "The bishop draws a cross TATTOO on the door of St Gertrude's hospital at Spittelmarkt and consecrates it."}
+  - {year: 1542, peg: rhino, confidence: medium, source: "WP de: Kurfürstendamm",
+     event: "Kurfürstendamm: a causeway from the castle to the Grunewald hunting lodge (approximate)",
+     place: "Kurfürstendamm",
+     scene: "A RHINO tramples a straight causeway through the marsh from the Cölln castle to the Grunewald lodge."}
+  - {year: 1573, peg: comb, confidence: high, source: "WP de: Unter den Linden",
+     event: "A bridle path from the castle to the Tiergarten, later Unter den Linden",
+     place: "Unter den Linden",
+     scene: "Elector Johann Georg drags a giant COMB west from the castle, and its teeth rake out a bridle path to the Tiergarten."}
+  - {year: 1598, peg: beehive, confidence: high, source: "WP de: Berliner Schloss",
+     event: "Electress Katharina founds the court pharmacy in the castle",
+     place: "Schlossplatz",
+     scene: "Electress Katharina fills jars with honey from a BEEHIVE and opens the court pharmacy in the castle."}
+  - {year: 1647, peg: rock, confidence: high, source: "WP de: Unter den Linden",
+     event: "Unter den Linden: the bridle path is planted with lime trees",
+     place: "Unter den Linden",
+     scene: "Gardeners split a ROCK row along the bridle path and plant lime trees in every crack: Unter den Linden."}
+  - {year: 1649, peg: rope, confidence: medium, source: "WP de: Lustgarten (Berlin)",
+     event: "Potatoes from the Netherlands first planted in the Lustgarten",
+     place: "Lustgarten",
+     scene: "A gardener lowers the first Dutch potatoes into the Lustgarten soil on a ROPE."}
+  - {year: 1657, peg: log, confidence: high, source: "WP de: Lustgarten (Berlin)",
+     event: "Elsholtz turns the Lustgarten into Berlin's first botanical garden",
+     place: "Lustgarten",
+     scene: "Elsholtz labels every plant on a LOG bench and the Lustgarten becomes Berlin's first botanical garden."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP de: Rathausbrücke (Berlin)",
+     event: "Lange Brücke rebuilt in wood, paid by Berlin and Cölln together",
+     place: "Lange Brücke",
+     scene: "A JET drops new timber beams, and Berlin and Cölln split the bill to rebuild the Lange Brücke."}
+  - {year: 1674, peg: car, confidence: high, source: "WP de: Georgenhospital (Berlin)",
+     event: "Dorotheen hospital for poor strangers opens by St George's",
+     place: "Georgenkirchplatz",
+     scene: "A broken-down CAR full of poor travellers stops at the new Dorotheen hospital, and nurses take them in."}
+  - {year: 1682, peg: oven, confidence: medium, source: "Berliner Mieterverein (order 1682; Paderborn: 1679)",
+     event: "Oil lamps light some Berlin streets on the Great Elector's order",
+     place: "Spandauer Strasse",
+     scene: "A lamplighter hangs a burning OVEN door from a post: Berlin's first street lamp lights the night."}
+  - {year: 1685, peg: waffle, confidence: medium, source: "WP de: Pfaueninsel",
+     event: "Pfaueninsel: the Great Elector gives the island to Kunckel for glassworks and a laboratory",
+     place: "Pfaueninsel",
+     scene: "Kunckel blows ruby glass in the shape of a WAFFLE in his new island laboratory on the Pfaueninsel."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Weidendammer Brücke",
+     event: "Neustädtische Brücke, a wooden drawbridge, built where the Weidendammer Brücke stands",
+     place: "Friedrichstrasse",
+     scene: "A WAFFLE-shaped wooden drawbridge lowers over the Spree and links the north bank to Dorotheenstadt."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP de: Hugenotten in Berlin",
+     event: "The French Hospital for poor refugees opens",
+     place: "Friedrichstrasse",
+     scene: "A refugee nurse serves FISH soup in the new French Hospital for sick and poor Huguenots."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP de: Leipziger Strasse (Berlin)",
+     event: "Leipziger Strasse laid out in the new Friedrichstadt",
+     place: "Leipziger Strasse",
+     scene: "A FIFE player marches west from the Leipzig Gate, and surveyors stake Leipziger Strasse behind him."}
+  - {year: 1688, peg: fife, confidence: medium, source: "WP en: Timeline of Berlin; Culture Trip",
+     event: "Jungfernbrücke over the Spree canal built (approximate)",
+     place: "Friedrichsgracht",
+     scene: "A second FIFE player stands on the new Spreegasse drawbridge, today's Jungfernbrücke, and tunes the lift with his notes."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP de: Pfaueninsel",
+     event: "Pfaueninsel: Kunckel's glassworks and laboratory burn down",
+     place: "Pfaueninsel",
+     scene: "Kunckel's watch FOB melts as fire guts his glassworks and laboratory on the Pfaueninsel."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP de: Rathausbrücke (Berlin)",
+     event: "Lange Brücke rebuilt in stone by Nering and Cayart",
+     place: "Lange Brücke",
+     scene: "A BEAR hauls the last sandstone arch into place, and the Lange Brücke stands in stone."}
+  # religion
+  - {year: 1239, peg: map, confidence: high, source: "WP de: Benediktinerinnenkloster Spandau",
+     event: "Margraves John I and Otto III found the Benedictine nunnery of St Mary at Spandau",
+     place: "Spandau",
+     scene: "The two margraves unroll a MAP of their lands and mark the spot for St Mary's nunnery at Spandau."}
+  - {year: 1240, peg: horse, confidence: medium, source: "WP de: Dorfkirche Marienfelde (c. 1220 per Pomplun)",
+     event: "Marienfelde village church, the oldest in Berlin (approximate)",
+     place: "Marienfelde",
+     scene: "A plough HORSE drags fieldstones to Marienfelde, and the oldest village church in Berlin grows from its load."}
+  - {year: 1240, peg: horse, confidence: high, source: "WP de: St. Nikolai (Spandau)",
+     event: "St Nicholas, Spandau, first named as the market church",
+     place: "Reformationsplatz, Spandau",
+     scene: "A HORSE trader swears his oath on the step of St Nicholas, which the record first names as Spandau's market church."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP de: Graues Kloster (Berlin)",
+     event: "Grey Friary: a Franciscan lector first recorded in Berlin",
+     place: "Klosterstrasse",
+     scene: "A Franciscan throws a LASSO of rope belt round a new pupil: the first lector of Berlin's Grey Friary."}
+  - {year: 1250, peg: lasso, confidence: medium, source: "WP de: Dorfkirche Tempelhof; Berlin-Karow",
+     event: "Fieldstone churches of Tempelhof, Karow, Kaulsdorf and Wartenberg (approximate)",
+     place: "Tempelhof",
+     scene: "A Templar ties a LASSO round fieldstones and pulls up the square church of Tempelhof."}
+  - {year: 1252, peg: lion, confidence: medium, source: "WP de: Graues Kloster (Berlin)",
+     event: "Franciscan provincial chapter of Saxony meets in Berlin",
+     place: "Grey Friary",
+     scene: "A LION walks into the Grey Friary cloister and takes the chair of the Franciscan provincial chapter of Saxony."}
+  - {year: 1270, peg: goose, confidence: medium, source: "WP de: Nikolaikirche (Berlin)",
+     event: "St Nicholas, Berlin: the nave rebuilt as a Gothic brick hall (approximate)",
+     place: "Nikolaikirche",
+     scene: "A GOOSE pecks out the old fieldstone nave of St Nicholas and lays red bricks for a Gothic hall."}
+  - {year: 1271, peg: cat, confidence: medium, source: "WP de: Graues Kloster (Berlin)",
+     event: "The margraves give the Franciscans land by the town wall",
+     place: "Klosterstrasse",
+     scene: "A CAT sleeps on the plot by the town wall that the margraves give to the Franciscans."}
+  - {year: 1290, peg: bees, confidence: high, source: "WP de: Graues Kloster; Komturei Tempelhof",
+     event: "Knight Jacob von Nybede gives the Franciscans a brickworks for their new church",
+     place: "Grey Friary",
+     scene: "BEES carry bricks from Nybede's gifted brickworks to the Franciscans, who build their new Grey Friary church."}
+  - {year: 1292, peg: piano, confidence: high, source: "WP de: Marienkirche (Berlin-Mitte)",
+     event: "St Mary's church first named as a parish church",
+     place: "Marienkirche",
+     scene: "A PIANO plays in St Mary's, which a January charter first calls a parish church."}
+  - {year: 1297, peg: pig, confidence: high, source: "WP de: Dominikanerkloster Cölln",
+     event: "Dominican friary in Cölln first named",
+     place: "Schlossplatz",
+     scene: "A PIG wanders into Cölln's new Dominican friary and the friars write its name in their first record."}
+  - {year: 1313, peg: tomb, confidence: high, source: "WP de: Heilig-Geist-Spital (Berlin)",
+     event: "Holy Spirit chapel first named, in a knight's gift charter",
+     place: "Spandauer Strasse",
+     scene: "Knight Grevelhout lays his gift charter on a TOMB slab in the brick Holy Spirit chapel."}
+  - {year: 1318, peg: dove, confidence: high, source: "WP de: Komturei Tempelhof",
+     event: "Tempelhof commandery passes from the Templars to the Hospitallers",
+     place: "Tempelhof",
+     scene: "A DOVE carries the Templar keys of Tempelhof across the fields to the Hospitallers."}
+  - {year: 1335, peg: mill, confidence: high, source: "WP de: Petrikirche (Berlin-Mitte)",
+     event: "Berlin's atonement treaty with the bishop for the provost's murder",
+     place: "Marienkirche",
+     scene: "Berliners grind penance at a MILL: they pay the bishop and raise an atonement cross for the dead provost."}
+  - {year: 1375, peg: eagle, confidence: high, source: "WP de: St. Nikolai (Potsdam)",
+     event: "Potsdam's parish church first named in the land book of Charles IV",
+     place: "Alter Markt, Potsdam",
+     scene: "An EAGLE flies over Potsdam with Charles IV's land book and drops it open at 'ecclesia parochialis'."}
+  - {year: 1450, peg: lasso, confidence: medium, source: "WP de: Berliner Dom (Timeline: 1454)",
+     event: "Erasmus chapel in the new castle consecrated as the court church",
+     place: "Schlossplatz",
+     scene: "A bishop throws a LASSO of incense smoke round the Erasmus chapel and consecrates the court church."}
+  - {year: 1452, peg: lion, confidence: high, source: "WP de: Nikolaikirche (Berlin)",
+     event: "Ulrich Zeuschel founds a Marian brotherhood at St Nicholas: the Lady chapel follows",
+     place: "Nikolaikirche",
+     scene: "A LION statue guards the new Lady chapel that Zeuschel's Marian brotherhood pays for at St Nicholas."}
+  - {year: 1464, peg: cherry, confidence: high, source: "WP de: Berlin-Stralau",
+     event: "Stralau village church completed on a fieldstone base",
+     place: "Stralau",
+     scene: "Fishermen of Stralau set a CHERRY on top of their new church tower: the brick church is finished."}
+  - {year: 1465, peg: jelly, confidence: high, source: "WP de: Berliner Dom",
+     event: "Pope Paul II confirms the collegiate chapter at the Erasmus chapel",
+     place: "Schlossplatz",
+     scene: "Pope Paul II seals his bull with red JELLY and confirms the canons of the castle chapel."}
+  - {year: 1468, peg: chef, confidence: medium, source: "WP de: St. Nikolai (Spandau)",
+     event: "St Nicholas, Spandau: the massive Gothic west tower built",
+     place: "Reformationsplatz, Spandau",
+     scene: "A CHEF stacks brick layers like a cake and tops St Nicholas in Spandau with its massive west tower."}
+  - {year: 1484, peg: fairy, confidence: high, source: "WP de: Jerusalemkirche (Berlin)",
+     event: "Jerusalem chapel first named outside Cölln",
+     place: "Lindenstrasse",
+     scene: "A FAIRY waves her wand on the road south of Cölln, and the record first names a Jerusalem chapel there."}
+  - {year: 1488, peg: fife, confidence: medium, source: "WP de: Berlin-Wittenau",
+     event: "Dalldorf (Wittenau) village church built (approximate)",
+     place: "Wittenau",
+     scene: "A FIFE plays as the farmers of Dalldorf roof their new village church."}
+  - {year: 1493, peg: palm, confidence: medium, source: "WP de: Graues Kloster (Berlin)",
+     event: "Berlin Franciscans adopt the Martinian constitutions and give up property",
+     place: "Grey Friary",
+     scene: "The friars hand their property to a PALM tree in the cloister and adopt the stricter Martinian rule."}
+  - {year: 1517, peg: dog, confidence: medium, source: "WP de: Petrikirche (Berlin-Mitte)",
+     event: "Cardinal Albrecht grants an indulgence for St Peter's, Cölln",
+     place: "Petriplatz",
+     scene: "A DOG carries Cardinal Albrecht's indulgence letter into St Peter's and drops it in the money chest."}
+  - {year: 1536, peg: match, confidence: high, source: "WP de: Berliner Dom; Dominikanerkloster Cölln",
+     event: "The Dominican church is rebuilt and consecrated as the court cathedral",
+     place: "Schlossplatz",
+     scene: "Joachim II strikes a MATCH and lights the candles in the old Dominican church, now the court cathedral."}
+  - {year: 1539, peg: map, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "Reformation: Lutheran communion in St Nicholas, Spandau, then in Berlin and Cölln",
+     place: "St Nicholas, Spandau",
+     scene: "Joachim II spreads a MAP of the Reformation on the altar of St Nicholas, Spandau, and takes communion in both kinds."}
+  - {year: 1541, peg: radio, confidence: high, source: "WP de: Benediktinerinnenkloster Spandau",
+     event: "Church visitation: the Spandau nunnery's property passes to the town",
+     place: "Spandau",
+     scene: "Visitors announce on the RADIO that the Spandau nuns' lands and church rights now belong to the town."}
+  - {year: 1552, peg: lion, confidence: high, source: "WP de: Dominikanerkloster Cölln; Berliner Dom",
+     event: "The great bell of the Wilsnack pilgrimage church hangs in the cathedral tower",
+     place: "Schlossplatz",
+     scene: "A LION hauls the giant Wilsnack bell up the old friary tower of the Cölln cathedral."}
+  - {year: 1608, peg: sofa, confidence: high, source: "WP de: Berliner Dom",
+     event: "Cathedral chapter dissolved: the cathedral becomes Cölln's main parish church",
+     place: "Schlossplatz",
+     scene: "The canons leave their SOFA in the cathedral, and the parish of Cölln sits down in it."}
+  - {year: 1632, peg: moon, confidence: high, source: "WP de: Parochialkirche (Berlin)",
+     event: "The Reformed congregation starts to use the cathedral in Cölln",
+     place: "Schlossplatz",
+     scene: "Under a pale MOON the Reformed congregation files into the cathedral and holds its first service there."}
+  - {year: 1636, peg: match, confidence: high, source: "WP de: Benediktinerinnenkloster Spandau",
+     event: "Spandau: the last buildings of the nunnery are pulled down",
+     place: "Spandau",
+     scene: "A soldier drops a MATCH, and workers pull down the last walls of St Mary's nunnery in Spandau."}
+  - {year: 1655, peg: lily, confidence: high, source: "WP de: Heilig-Geist-Spital (Berlin)",
+     event: "The Berlin garrison starts to use the Holy Spirit chapel for its services",
+     place: "Spandauer Strasse",
+     scene: "A soldier pins a LILY to his coat and marches into the Holy Spirit chapel, now the garrison church."}
+  - {year: 1672, peg: coin, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "French Reformed congregation founded in Berlin by early refugees",
+     place: "Werderscher Markt",
+     scene: "A Huguenot drops the first COIN into the collection box of Berlin's new French Reformed congregation."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Schloss Köpenick",
+     event: "Köpenick palace: Nering's Reformed palace church consecrated",
+     place: "Köpenick Palace",
+     scene: "A WAFFLE iron rings like a bell as Nering's palace church at Köpenick opens for its first service."}
+  - {year: 1687, peg: fox, confidence: high, source: "WP de: Dorotheenstädtische Kirche",
+     event: "Dorotheenstadt church consecrated with Reformed and Lutheran services",
+     place: "Dorotheenstrasse",
+     scene: "A FOX preaches twice in the new Dorotheenstadt church: a Reformed sermon at morning, a Lutheran one at afternoon."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP de: Jerusalemkirche (Berlin)",
+     event: "Jerusalem chapel enlarged by Simonetti with a widows' hospital",
+     place: "Lindenstrasse",
+     scene: "Simonetti hangs a gold FOB on the Jerusalem chapel door and doubles its size for the widows' hospital."}
+  - {year: 1694, peg: bear, confidence: high, source: "WP de: Sacrow (Potsdam)",
+     event: "Sacrow: a half-timbered church built for the village",
+     place: "Sacrow",
+     scene: "A BEAR raises the half-timbered frame of Sacrow's new church by the Havel."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP de: Luisenstadt-Kirche",
+     event: "Sebastian church in the Cölln suburb consecrated",
+     place: "Luisenstadt",
+     scene: "The BELL of the new Sebastian church rings over the Cölln suburb for its consecration."}
+  - {year: 1695, peg: bell, confidence: high, source: "WP de: Parochialkirche (Berlin)",
+     event: "Parochialkirche: Frederick III lays the foundation stone of the first Reformed church",
+     place: "Klosterstrasse",
+     scene: "Frederick III drops a Bible into a BELL-shaped pit as the foundation of the Reformed Parochialkirche."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP de: Parochialkirche (Berlin)",
+     event: "Parochialkirche: the nearly finished vault collapses",
+     place: "Klosterstrasse",
+     scene: "A BEEHIVE on the roof of the Parochialkirche grows too heavy, and the nearly finished vault crashes down."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP de: Friedrichswerdersche Kirche",
+     event: "Friedrichswerder: an old electoral stable becomes a shared church for three congregations",
+     place: "Werderscher Markt",
+     scene: "An organ PIPE pokes through the roof of the old stable on the Werder, now a church for three congregations."}
+  # arts
+  - {year: 1437, peg: mug, confidence: high, source: "WP de: Marienkirche (Berlin-Mitte)",
+     event: "St Mary's: bronze baptismal font cast",
+     place: "Marienkirche",
+     scene: "A bronze caster pours molten metal from a MUG into the mould of St Mary's baptismal font."}
+  - {year: 1443, peg: ram, confidence: high, source: "WP de: Berliner Schloss; berlin.de",
+     event: "Frederick II lays the foundation stone of the castle in Cölln",
+     place: "Schlossplatz",
+     scene: "A RAM butts the first foundation stone into the Cölln bank for Frederick II's castle."}
+  - {year: 1451, peg: wallet, confidence: high, source: "WP de: Berliner Schloss; Hohes Haus",
+     event: "Frederick II's castle on the Spree island completed; he moves in",
+     place: "Schlossplatz",
+     scene: "Frederick II carries his WALLET over the drawbridge and moves into his finished castle on the Spree island."}
+  - {year: 1527, peg: ink, confidence: high, source: "WP de: Grosser Tiergarten",
+     event: "Tiergarten: a hunting park for the electors laid out west of the town",
+     place: "Tiergarten",
+     scene: "A hunter rolls a giant INK pot across the field west of Berlin and marks out the electors' Tiergarten."}
+  - {year: 1538, peg: movie, confidence: medium, source: "WP de: Jagdschloss Grunewald; Berliner Schloss",
+     event: "Caspar Theiss rebuilds the castle as a Renaissance palace",
+     place: "Schlossplatz",
+     scene: "Caspar Theiss shows a MOVIE of Torgau's palace, then rebuilds the Cölln castle as a Renaissance palace."}
+  - {year: 1538, peg: movie, confidence: high, source: "WP de: Dominikanerkloster Cölln",
+     event: "Cranach's workshop paints the passion altars for the court cathedral",
+     place: "Schlossplatz",
+     scene: "Cranach films a MOVIE of the Passion and paints it frame by frame onto panels for the Cölln cathedral."}
+  - {year: 1543, peg: ram, confidence: high, source: "WP de: Jagdschloss Grunewald; WP en Timeline",
+     event: "Jagdschloss Grunewald: Joachim II's hunting lodge by the Grunewaldsee",
+     place: "Grunewald",
+     scene: "A RAM butts open the door of Joachim II's new hunting lodge on the Grunewald lake."}
+  - {year: 1558, peg: wolf, confidence: high, source: "WP de: Schloss Köpenick",
+     event: "Köpenick: Joachim II has a hunting palace built on the castle island",
+     place: "Köpenick Palace",
+     scene: "A WOLF chased by Joachim II runs onto Köpenick's castle island, where his new hunting palace stands."}
+  - {year: 1558, peg: wolf, confidence: medium, source: "museumsportal-berlin: Humboldt-Museum Schloss Tegel",
+     event: "Tegel: a manor house built for a court secretary of Joachim II",
+     place: "Schloss Tegel",
+     scene: "A second WOLF guards the new manor at Tegel that Joachim II's court secretary builds by the lake."}
+  - {year: 1560, peg: cheese, confidence: high, source: "WP de: Berlin-Dahlem",
+     event: "Dahlem manor house built, the oldest secular building in Berlin",
+     place: "Dahlem",
+     scene: "The Spiel family stores CHEESE in the cellar of their new Dahlem manor, today Berlin's oldest secular building."}
+  - {year: 1573, peg: comb, confidence: high, source: "WP de: Lustgarten (Berlin)",
+     event: "Johann Georg lays out a kitchen garden beside the castle, the later Lustgarten",
+     place: "Lustgarten",
+     scene: "Gardener Corbinianus rakes the castle meadow with a COMB and plants the kitchen garden of the Lustgarten."}
+  - {year: 1646, peg: roach, confidence: high, source: "WP de: Lustgarten (Berlin)",
+     event: "Lustgarten replanned in the Dutch style and given its name",
+     place: "Lustgarten",
+     scene: "A ROACH crawls along the new Dutch flower beds and reads the sign: Lustgarten."}
+  - {year: 1650, peg: lasso, confidence: high, source: "WP de: Lustgarten (Berlin)",
+     event: "Memhardt builds the Dutch-style pleasure house with a grotto in the Lustgarten",
+     place: "Lustgarten",
+     scene: "Memhardt throws a LASSO round a Dutch pleasure house and pulls it into the Lustgarten, grotto and all."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP de: Lustgarten; Berliner Schloss",
+     event: "Memhardt's plan, the first exact map of Berlin and Cölln",
+     place: "Schlossplatz",
+     scene: "A LION stands on Memhardt's plan of Berlin and Cölln, the first exact map of the twin town."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP de: Potsdam",
+     event: "Potsdam Lustgarten laid out before the palace",
+     place: "Lustgarten, Potsdam",
+     scene: "Gardeners spread a lawn as flat as a CHEESE board before Potsdam palace: the Lustgarten."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP de: Potsdamer Stadtschloss",
+     event: "Potsdam palace rebuilt in Dutch style by Memhardt",
+     place: "Alter Markt, Potsdam",
+     scene: "Memhardt pulls down the old castle with a CHAIN and raises a Dutch-style palace in Potsdam."}
+  - {year: 1663, peg: gem, confidence: high, source: "WP de: Unter den Linden",
+     event: "Kurprinzenpalais built at the start of Unter den Linden",
+     place: "Unter den Linden",
+     scene: "A GEM glints over the door of the new crown prince's palace at the head of Unter den Linden."}
+  - {year: 1664, peg: cherry, confidence: high, source: "WP de: Schloss Schönhausen",
+     event: "Niederschönhausen: Countess Dohna builds a Dutch-style manor and dairy",
+     place: "Schloss Schönhausen",
+     scene: "Countess Dohna plants a CHERRY tree beside her new Dutch-style manor and dairy at Niederschönhausen."}
+  - {year: 1666, peg: judge, confidence: high, source: "WP de: Marienkirche (Berlin-Mitte)",
+     event: "St Mary's tower rebuilt in baroque form by Smids",
+     place: "Marienkirche",
+     scene: "A JUDGE inspects the new baroque top that Smids puts on St Mary's fire-damaged tower and approves it."}
+  - {year: 1672, peg: coin, confidence: medium, source: "WP de: Bornim",
+     event: "Bornim: the Great Elector starts a pleasure palace",
+     place: "Bornim",
+     scene: "The Great Elector flips a COIN in his Bornim garden and orders a pleasure palace on the spot."}
+  - {year: 1677, peg: cake, confidence: high, source: "WP de: Schloss Köpenick",
+     event: "Köpenick palace: rebuilding and enlargement start",
+     place: "Köpenick Palace",
+     scene: "Builders cut a CAKE-shaped baroque wing onto the old Köpenick hunting palace."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Marstall (Potsdam)",
+     event: "Potsdam: Nering builds an orangery, later the Marstall",
+     place: "Lustgarten, Potsdam",
+     scene: "Nering lines the new Potsdam orangery with lemon trees in WAFFLE-pattern tubs."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Schloss Friedrichsfelde",
+     event: "Benjamin Raule builds a country house at Rosenfelde, later Friedrichsfelde palace",
+     place: "Friedrichsfelde",
+     scene: "Admiral Raule docks a WAFFLE-shaped barge at Rosenfelde and builds his country house beside it."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP de: Jagdschloss Glienicke",
+     event: "Jagdschloss Glienicke, the Great Elector's hunting lodge, completed by Dieussart",
+     place: "Glienicke",
+     scene: "Dieussart plants a PALM in the courtyard of the finished Glienicke hunting lodge."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP de: Festung Berlin",
+     event: "Nering builds the Hetzgarten, a theatre for animal fights, in a bastion",
+     place: "Bastion Hetzgarten",
+     scene: "A PALM tree crashes into Nering's bastion arena as bears and bulls fight in the new Hetzgarten."}
+  - {year: 1696, peg: peach, confidence: high, source: "WP de: Akademie der Künste (Berlin)",
+     event: "Frederick III founds the Academy of Arts",
+     place: "Unter den Linden",
+     scene: "A painter squashes a PEACH on his palette at the first meeting of the new Academy of Arts."}
+  - {year: 1697, peg: pig, confidence: high, source: "WP de: Schloss Charlottenburg",
+     event: "Lietzenburg: Godeau lays out a French baroque garden on the Spree",
+     place: "Charlottenburg",
+     scene: "Godeau trims hedges into PIG shapes in the new French garden at Lietzenburg."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP de: Berliner Schloss",
+     event: "Schlüter starts the baroque rebuilding of the castle",
+     place: "Schlossplatz",
+     scene: "Schlüter knocks a BEEHIVE out of the old castle wall and starts the baroque rebuilding."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP de: Schloss Charlottenburg",
+     event: "Lietzenburg palace inaugurated for Sophie Charlotte",
+     place: "Charlottenburg",
+     scene: "Sophie Charlotte blows a PIPE organ chord to open her new summer palace at Lietzenburg."}
+  - {year: 1700, peg: sauce, confidence: high, source: "WP de: Reiterstandbild des Grossen Kurfürsten",
+     event: "Jacobi casts Schlüter's equestrian statue of the Great Elector in one piece",
+     place: "Lange Brücke",
+     scene: "Jacobi pours bronze like SAUCE into one huge mould: the Great Elector's horse comes out in a single casting."}
+  # economy
+  - {year: 1272, peg: coin, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Bakers' guild confirmed, the oldest guild record of Berlin",
+     place: "Molkenmarkt",
+     scene: "A baker stamps a COIN into his loaf: Berlin's oldest guild letter confirms the bakers."}
+  - {year: 1284, peg: fairy, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Shoemakers receive their first guild letter",
+     place: "Molkenmarkt",
+     scene: "A FAIRY sews a guild seal into a shoe and hands the first guild letter to Berlin's shoemakers."}
+  - {year: 1289, peg: fob, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Cloth makers receive their rights",
+     place: "Molkenmarkt",
+     scene: "A cloth maker fastens a FOB of office to his bolt of cloth as the margraves grant the weavers their rights."}
+  - {year: 1311, peg: tattoo, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Butchers' guild founded",
+     place: "Molkenmarkt",
+     scene: "A butcher shows a cleaver TATTOO on his arm as the new butchers' guild opens its book."}
+  - {year: 1360, peg: cheese, confidence: high, source: "WP en: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Berlin-Cölln joins the Hanseatic League",
+     place: "Lange Brücke",
+     scene: "A Hanse cog unloads CHEESE at the Mühlendamm: Berlin-Cölln now trades as a Hanseatic town."}
+  - {year: 1397, peg: pig, confidence: medium, source: "ZLB: Handel und Gewerbe ... zur Zeit des Stadtbuches",
+     event: "Berlin Stadtbuch: the council records its laws and rights in one book",
+     place: "Old town hall",
+     scene: "The council clerk files every Berlin law in one book and locks it in a PIG-skin binding."}
+  - {year: 1442, peg: rhino, confidence: high, source: "WP en: Timeline of Berlin; WP de: Geschichte Berlins",
+     event: "Berlin leaves the Hanseatic League under the elector's pressure",
+     place: "Mühlendamm",
+     scene: "A RHINO butts the Hanse cog out of the Mühlendamm harbour, and Berlin leaves the league."}
+  - {year: 1448, peg: reef, confidence: high, source: "WP de: Mühlendamm (Berlin)",
+     event: "The Mühlendamm mills pass to the elector",
+     place: "Mühlendamm",
+     scene: "The elector plants a REEF of stakes round the Mühlendamm mills and takes their profits."}
+  - {year: 1540, peg: horse, confidence: medium, source: "WP en: Timeline of Berlin (WP de: 1539)",
+     event: "First printing press at work in Berlin",
+     place: "Klosterstrasse",
+     scene: "A HORSE turns the screw of Berlin's first printing press, and wet pages fall out."}
+  - {year: 1552, peg: lion, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Clockmakers' guild founded",
+     place: "Molkenmarkt",
+     scene: "A LION winds the first clock of the new clockmakers' guild with its paw."}
+  - {year: 1571, peg: cat, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "Inn Zum Nussbaum opens in Cölln",
+     place: "Fischerinsel",
+     scene: "A CAT curls up under the walnut sign of the new inn Zum Nussbaum in Cölln."}
+  - {year: 1574, peg: car, confidence: medium, source: "typeoff.de; Klosterruine Berlin",
+     event: "Thurneysser sets up a printing office and laboratory in the Grey Friary",
+     place: "Grey Friary",
+     scene: "Thurneysser drives a CAR full of oriental type into the Grey Friary and opens his printing office."}
+  - {year: 1617, peg: dog, confidence: high, source: "WP en: Vossische Zeitung; Zeller (De Gruyter)",
+     event: "Frischmann prints Berlin's first newspaper",
+     place: "Cölln post office",
+     scene: "Postmaster Frischmann's DOG runs through Cölln with the first printed Berlin newspaper in its mouth."}
+  - {year: 1645, peg: railway, confidence: medium, source: "WP de: Berlin-Friedrichswerder",
+     event: "Electoral cannon foundry (Giesshaus) set up on the Werder",
+     place: "Hinter dem Giesshaus",
+     scene: "Founders pour cannon metal along a RAILWAY of moulds in the new Werder foundry."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP en: Börse Berlin",
+     event: "Berlin exchange founded by the Great Elector",
+     place: "Lustgarten",
+     scene: "Merchants trade WAFFLE stocks at the first meeting of the new Berlin exchange."}
+  - {year: 1686, peg: fish, confidence: high, source: "WP de: Hugenotten in Berlin",
+     event: "Huguenot Pierre Mercier opens a tapestry workshop",
+     place: "Friedrichswerder",
+     scene: "Mercier weaves a FISH into the first tapestry of his new Berlin workshop."}
+  - {year: 1687, peg: fox, confidence: high, source: "WP de: Mühlendamm (Berlin)",
+     event: "Mühlendamm: the shops are rebuilt as stone arcades",
+     place: "Mühlendamm",
+     scene: "A FOX shopkeeper moves his stall into the new stone arcades on the Mühlendamm."}
+  - {year: 1693, peg: palm, confidence: high, source: "WP de: Mühlendamm (Berlin)",
+     event: "Merchants' hall above the Mühlendamm arcades, later used as the exchange",
+     place: "Mühlendamm",
+     scene: "Merchants put a potted PALM in their new hall above the Mühlendamm arcades and trade under it."}
+  # society
+  - {year: 1239, peg: map, confidence: high, source: "WP de: Berlin-Lankwitz; Berlin-Charlottenburg",
+     event: "Lankwitz and Lietzow first named: the oldest village record in Berlin",
+     place: "Lankwitz",
+     scene: "The margraves draw Lankwitz and Lietzow on a MAP for the Spandau nuns: Berlin's oldest village record."}
+  - {year: 1242, peg: rhino, confidence: high, source: "WP de: Berlin-Zehlendorf",
+     event: "Zehlendorf first named, in a sale contract",
+     place: "Zehlendorf",
+     scene: "A RHINO signs a sale contract with its horn, and the village Cedelendorp, Zehlendorf, enters the records."}
+  - {year: 1247, peg: rock, confidence: high, source: "WP de: Berlin-Lübars",
+     event: "Lübars first named",
+     place: "Lübars",
+     scene: "A shepherd at Lübars carves the village name on a ROCK, its first record."}
+  - {year: 1251, peg: wallet, confidence: high, source: "WP de: Berlin-Wedding",
+     event: "Wedding first named: a mill in the village Weddinge on the Panke",
+     place: "Wedding",
+     scene: "A miller drops his WALLET in the Panke beside his mill at Weddinge, the first record of Wedding."}
+  - {year: 1264, peg: cherry, confidence: high, source: "WP de: Berlin-Schöneberg",
+     event: "Schöneberg first named",
+     place: "Schöneberg",
+     scene: "A CHERRY tree blossoms on the beautiful hill, and the village Schöneberg first appears in a charter."}
+  - {year: 1265, peg: jelly, confidence: high, source: "WP de: Berlin-Friedrichsfelde",
+     event: "Rosenfelde (Friedrichsfelde) first named through its priest Ludwig",
+     place: "Friedrichsfelde",
+     scene: "Priest Ludwig of Rosenfelde spreads rose JELLY on bread, and the record first names his village."}
+  - {year: 1267, peg: jockey, confidence: high, source: "WP de: Berlin-Kladow; Groß Glienicke",
+     event: "Kladow and Groß Glienicke first named",
+     place: "Kladow",
+     scene: "A JOCKEY rides from Kladow to Groß Glienicke, and both villages enter the records on one day."}
+  - {year: 1270, peg: goose, confidence: high, source: "WP de: Berlin-Wartenberg",
+     event: "Wartenberg first named through Bernhardus de Wardenberge",
+     place: "Wartenberg",
+     scene: "A watch GOOSE honks on the hill of Wartenberg as Bernhardus signs the margraves' charter."}
+  - {year: 1272, peg: coin, confidence: high, source: "WP de: Berlin-Gatow",
+     event: "Gatow first named",
+     place: "Gatow",
+     scene: "A fisherman at Gatow pays his rent with a COIN, and the village enters the records."}
+  - {year: 1273, peg: comb, confidence: high, source: "WP de: Berlin-Staaken",
+     event: "Staaken first named as a parish village",
+     place: "Staaken",
+     scene: "The priest of Staaken parts his hair with a COMB for the charter that first names his parish."}
+  - {year: 1275, peg: eagle, confidence: high, source: "WP de: Berlin-Dahlem",
+     event: "Dahlem first named (Dalm)",
+     place: "Dahlem",
+     scene: "An EAGLE drops a parchment marked 'Dalm' over the fields: Dahlem's first record."}
+  - {year: 1284, peg: fairy, confidence: high, source: "WP de: Berlin-Blankenfelde",
+     event: "Blankenfelde first named through a Berlin councillor",
+     place: "Blankenfelde",
+     scene: "A FAIRY writes Johannes de Blankenfelte's name on a Berlin council charter, the village's first record."}
+  - {year: 1288, peg: fife, confidence: high, source: "WP de: Berlin-Lichtenberg",
+     event: "Lichtenberg first named in a border treaty between Stralau and Rosenfelde",
+     place: "Lichtenberg",
+     scene: "A FIFE signal settles the border between Stralau and Rosenfelde, and the treaty first names Lichtenberg."}
+  - {year: 1289, peg: fob, confidence: high, source: "WP de: Golm (Potsdam)",
+     event: "Golm first named",
+     place: "Golm",
+     scene: "A watch FOB swings over the Golm meadows as the village gets its first written mention."}
+  - {year: 1293, peg: palm, confidence: high, source: "WP de: Berlin-Wilmersdorf",
+     event: "Wilmersdorf first named, as a margraves' village",
+     place: "Wilmersdorf",
+     scene: "A PALM leaf fans the margraves' clerk as he writes Wilmersdorf into their list of villages."}
+  - {year: 1295, peg: bell, confidence: medium, source: "WP de: Jüdisches Leben in Berlin",
+     event: "Jews first recorded in Berlin",
+     place: "Jüdenhof",
+     scene: "A synagogue BELL rings in the Jüdenhof: the first record of Jews living in Berlin."}
+  - {year: 1300, peg: sauce, confidence: high, source: "WP de: Berlin-Marzahn",
+     event: "Marzahn first named (Morczane) by Margrave Albert III",
+     place: "Marzahn",
+     scene: "Albert III pours SAUCE on a map of the Barnim and writes the name Morczane, Marzahn, beside it."}
+  - {year: 1304, peg: sewer, confidence: high, source: "WP de: Geschichte der Stadt Potsdam; Bornstedt",
+     event: "Potsdam first called a small town; Bornstedt first named",
+     place: "Potsdam",
+     scene: "Water from a SEWER runs past the hamlet of Potsdam, which a charter first calls a small town."}
+  - {year: 1305, peg: seal, confidence: high, source: "WP de: Berlin-Britz",
+     event: "Britz first named",
+     place: "Britz",
+     scene: "A SEAL basks on the bank of the Britz pond on the day the village first appears in a charter."}
+  - {year: 1308, peg: sofa, confidence: high, source: "WP de: Berlin-Heiligensee",
+     event: "Heiligensee first named (Hyelegense)",
+     place: "Heiligensee",
+     scene: "A monk rests on a SOFA by the holy lake and writes Hyelegense, the first record of Heiligensee."}
+  - {year: 1311, peg: tattoo, confidence: high, source: "WP de: Berlin-Pankow",
+     event: "Pankow first named",
+     place: "Pankow",
+     scene: "A farmer shows a frog TATTOO by the Panke river, and Pankow enters the records."}
+  - {year: 1313, peg: tomb, confidence: high, source: "WP de: Berlin-Weissensee",
+     event: "Weissensee first named: four hides go to the Holy Spirit hospital",
+     place: "Weissensee",
+     scene: "A knight writes the deed of four hides in Weissensee on a TOMB lid for the Holy Spirit hospital."}
+  - {year: 1317, peg: dog, confidence: high, source: "WP de: Potsdam",
+     event: "Potsdam first named as castle and town",
+     place: "Potsdam",
+     scene: "A DOG guards the castle gate as the charter first names Potsdam both castle and town."}
+  - {year: 1319, peg: tuba, confidence: high, source: "WP de: Berlin-Heinersdorf; Berlin-Rahnsdorf",
+     event: "Heinersdorf and Rahnsdorf first named",
+     place: "Rahnsdorf",
+     scene: "A TUBA booms from Köpenick castle's account book, and Heinersdorf and Rahnsdorf appear in writing."}
+  - {year: 1322, peg: nun, confidence: high, source: "WP de: Berlin-Tegel; Berlin-Wittenau",
+     event: "Tegel and Dalldorf (Wittenau) first named",
+     place: "Tegel",
+     scene: "A NUN from the Spandau nunnery writes Tygel and Daldorff into her rent book: their first records."}
+  - {year: 1325, peg: nail, confidence: high, source: "WP de: Petrikirche (Berlin-Mitte); Marienkirche",
+     event: "Berliners drag Provost Nikolaus von Bernau from a house and kill him",
+     place: "Spandauer Strasse",
+     scene: "An angry crowd hammers a NAIL into the provost's door, drags out Nikolaus von Bernau and kills him."}
+  - {year: 1325, peg: nail, confidence: high, source: "WP de: Berlin-Köpenick",
+     event: "Köpenick first called a town (civitas)",
+     place: "Köpenick Altstadt",
+     scene: "A clerk drives a NAIL through Köpenick's charter: the word civitas, town, now stands on it."}
+  - {year: 1344, peg: warrior, confidence: high, source: "WP de: Berlin-Marienfelde; Berlin-Malchow",
+     event: "Marienfelde and Malchow first named",
+     place: "Marienfelde",
+     scene: "A WARRIOR rides from Malchow to Marienfelde with Louis the Elder's gift deed, the first record of both."}
+  - {year: 1345, peg: railway, confidence: high, source: "WP de: Berlin-Reinickendorf",
+     event: "Reinickendorf first named",
+     place: "Reinickendorf",
+     scene: "A RAILWAY clerk misspells Renekendorf in his ledger, the first record of Reinickendorf."}
+  - {year: 1348, peg: reef, confidence: high, source: "WP de: Berlin-Mariendorf",
+     event: "Mariendorf first named (Mergendorp)",
+     place: "Mariendorf",
+     scene: "A REEF of coral rises in the Mariendorf pond as the village appears as Mergendorp in a charter."}
+  - {year: 1349, peg: rope, confidence: medium, source: "WP de: Jüdisches Leben in Berlin",
+     event: "Black Death: first large persecution of the Jews of Berlin",
+     place: "Jüdenhof",
+     scene: "A mob ties a ROPE round the Jüdenhof gate during the plague year and attacks Berlin's Jews."}
+  - {year: 1349, peg: rope, confidence: high, source: "WP de: Berlin-Hermsdorf",
+     event: "Hermsdorf first named (Hermanstorp)",
+     place: "Hermsdorf",
+     scene: "A farmer pulls a ROPE of reeds from the Hermsdorf lake, and Hermanstorp appears in a deed."}
+  - {year: 1354, peg: lawyer, confidence: high, source: "WP de: Berlin-Schmargendorf",
+     event: "Schmargendorf first named",
+     place: "Schmargendorf",
+     scene: "A LAWYER writes the name Schmargendorf into a contract, the first record of the village."}
+  - {year: 1356, peg: leech, confidence: high, source: "WP de: Berlin-Rosenthal",
+     event: "Rosenthal first named as a parish village",
+     place: "Rosenthal",
+     scene: "A LEECH drops from a rose stem onto the charter that first names Rosenthal as a parish village."}
+  - {year: 1358, peg: wolf, confidence: high, source: "WP de: Berlin-Stralau",
+     event: "Berlin-Cölln buys the fishing village of Stralau and the Rummelsburger See",
+     place: "Stralau",
+     scene: "A WOLF swims from Berlin to Stralau and drags the fishing village and its lake back to the twin town."}
+  - {year: 1360, peg: cheese, confidence: high, source: "WP de: Berlin-Neukölln; Komturei Tempelhof",
+     event: "The Hospitallers turn their farm Richardsdorp into the village of Rixdorf",
+     place: "Richardplatz",
+     scene: "A Hospitaller cuts a CHEESE into twenty-five slices, one for each hide of the new village of Rixdorf."}
+  - {year: 1373, peg: comb, confidence: high, source: "WP de: Berlin-Rudow; Buckow; Bohnsdorf",
+     event: "Rudow, Buckow and Bohnsdorf first named",
+     place: "Rudow",
+     scene: "A COMB with three teeth scratches Rudow, Buckow and Bohnsdorf into one charter."}
+  - {year: 1375, peg: eagle, confidence: high, source: "WP de: Steglitz; Lichtenrade; Biesdorf (Landbuch)",
+     event: "Land book of Charles IV first names Steglitz, Lichtenrade, Biesdorf, Hellersdorf and more",
+     place: "Steglitz",
+     scene: "Charles IV's EAGLE lands on each village pond and counts the hides of Steglitz, Lichtenrade and Biesdorf for his land book."}
+  - {year: 1378, peg: cave, confidence: high, source: "WP de: Geschichte Berlins",
+     event: "Great fire in Cölln",
+     place: "Cölln",
+     scene: "A burning CAVE of smoke swallows Cölln, and the wooden houses of the island town burn."}
+  - {year: 1380, peg: vase, confidence: high, source: "WP de: Geschichte Berlins; WP en: History of Berlin",
+     event: "Great fire in Berlin destroys the town hall, churches and most town records",
+     place: "Old town hall",
+     scene: "A flaming VASE of oil falls in the town hall; the fire burns Berlin's churches and most of its records."}
+  - {year: 1435, peg: mill, confidence: high, source: "WP de: Komturei Tempelhof",
+     event: "Berlin and Cölln buy Tempelhof, Mariendorf, Marienfelde and Rixdorf from the Hospitallers",
+     place: "Tempelhof",
+     scene: "The Hospitallers grind their four villages through a MILL and sell the flour to Berlin and Cölln."}
+  - {year: 1484, peg: fairy, confidence: medium, source: "WP de: Altes Rathaus (Berlin)",
+     event: "Great town fire damages the Berlin town hall",
+     place: "Old town hall",
+     scene: "A FAIRY's wand sparks a blaze that burns through Berlin and scorches the town hall."}
+  - {year: 1510, peg: dice, confidence: high, source: "WP de: Berliner Hostienschänderprozess",
+     event: "Host desecration trial: Jews burned on the Neuer Markt",
+     place: "Neuer Markt",
+     scene: "Judges throw DICE over a false charge of host theft, and Jews are burned at the stake on the Neuer Markt."}
+  - {year: 1536, peg: match, confidence: high, source: "potsdam.de; WP en: Altes Rathaus (Potsdam)",
+     event: "Potsdam fire destroys large parts of the town and its first town hall",
+     place: "Alter Markt, Potsdam",
+     scene: "A dropped MATCH sets Potsdam ablaze, and the first town hall burns down to the ground."}
+  - {year: 1550, peg: lasso, confidence: medium, source: "potsdam.de: 993-1660",
+     event: "Second great fire in Potsdam",
+     place: "Potsdam",
+     scene: "A LASSO of flame whips round Potsdam's rebuilt houses, and the town burns a second time."}
+  - {year: 1573, peg: comb, confidence: high, source: "WP de: Jüdisches Leben in Berlin; Hostienschänderprozess",
+     event: "Lippold, mint master of Joachim II, executed in Berlin",
+     place: "Neuer Markt",
+     scene: "The hangman parts Lippold's beard with a COMB, then executes the mint master before a Berlin crowd."}
+  - {year: 1574, peg: car, confidence: high, source: "Klosterruine Berlin; WP de: Graues Kloster",
+     event: "Berlinisches Gymnasium zum Grauen Kloster founded in the former friary",
+     place: "Klosterstrasse",
+     scene: "Pupils climb out of a CAR into the old Grey Friary: the town's new grammar school opens."}
+  - {year: 1576, peg: cage, confidence: medium, source: "WP en: Timeline of Berlin (six thousand); The Berliner",
+     event: "Plague kills thousands in Berlin and Cölln",
+     place: "Cölln",
+     scene: "The plague flies out of a CAGE in Cölln and kills thousands in the twin town."}
+  - {year: 1581, peg: foot, confidence: medium, source: "WP de: Altes Rathaus (Berlin); Kommunal-Blatt",
+     event: "Third great town fire damages the Berlin town hall",
+     place: "Old town hall",
+     scene: "A burning FOOT stamps through Berlin and kicks in the town hall roof in the third great fire."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP de: St. Nikolai (Spandau)",
+     event: "Plague in Spandau kills about nine hundred people",
+     place: "Spandau",
+     scene: "The plague licks Spandau with its black TONGUE, and the churchyard of St Nicholas fills with dead."}
+  - {year: 1631, peg: moth, confidence: high, source: "potsdam.de: 993-1660",
+     event: "Plague in Potsdam kills at least three hundred",
+     place: "Potsdam",
+     scene: "A plague MOTH flutters through Potsdam's houses and kills three hundred townspeople."}
+  - {year: 1647, peg: rock, confidence: medium, source: "WP de: Joachimsthalsches Gymnasium",
+     event: "Joachimsthal Gymnasium reopens in Berlin after its school at Joachimsthal is destroyed (approximate)",
+     place: "Schlossplatz",
+     scene: "Pupils roll a ROCK from ruined Joachimsthal into Berlin and reopen their school by the castle square."}
+  - {year: 1648, peg: reef, confidence: high, source: "berlin.de: Die kurfürstliche Residenzstadt",
+     event: "End of the Thirty Years' War: Berlin-Cölln has six thousand people, half its pre-war number",
+     place: "Molkenmarkt",
+     scene: "A REEF of empty houses lines the Molkenmarkt: the war leaves Berlin-Cölln with half its people."}
+  - {year: 1662, peg: chain, confidence: high, source: "WP de: Berlin-Friedrichswerder; Neu-Kölln",
+     event: "Friedrichswerder raised to a town; Neu-Kölln suburb laid out",
+     place: "Werderscher Markt",
+     scene: "The Great Elector throws a CHAIN round the Werder island and declares it the new town of Friedrichswerder."}
+  - {year: 1672, peg: coin, confidence: high, source: "visitberlin: Alter Jüdischer Friedhof",
+     event: "Jewish cemetery on Grosse Hamburger Strasse: first burial",
+     place: "Grosse Hamburger Strasse",
+     scene: "Mordechai Model pays a COIN for a field outside the gate, and the Jewish community buries its first dead there."}
+  - {year: 1674, peg: car, confidence: high, source: "WP de: Dorotheenstadt; Unter den Linden",
+     event: "Dorotheenstadt founded north of Unter den Linden",
+     place: "Dorotheenstrasse",
+     scene: "Electress Dorothea drives a CAR along the fields north of the Linden and sells the plots of her new town."}
+  - {year: 1681, peg: foot, confidence: high, source: "WP de: Dorotheenstadt",
+     event: "The new town is named Dorotheenstadt after the electress",
+     place: "Dorotheenstadt",
+     scene: "Dorothea sets her FOOT on the town sign, and the new town takes her name: Dorotheenstadt."}
+  - {year: 1685, peg: waffle, confidence: high, source: "berlin.de; WP de: Hugenotten in Berlin",
+     event: "Huguenot refugees settle in Berlin in thousands",
+     place: "Gendarmenmarkt",
+     scene: "Huguenot families carry WAFFLE irons and silk looms through the Berlin gates and settle in their thousands."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Spandauer Vorstadt",
+     event: "Electress Dorothea lays out streets in the Spandauer Vorstadt",
+     place: "Oranienburger Strasse",
+     scene: "Dorothea cuts the Spandauer Vorstadt fields like a WAFFLE grid and sells the plots to Berliners and Huguenots."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP de: Berlin-Moabit",
+     event: "Moabit: settlement begins with a house at the edge of the game park",
+     place: "Moabit",
+     scene: "A game keeper hangs a WAFFLE sign on the first house in Moabit at the edge of the deer park."}
+  - {year: 1688, peg: fife, confidence: high, source: "WP de: Friedrichstadt (Berlin); Gendarmenmarkt",
+     event: "Friedrichstadt laid out with the Gendarmenmarkt",
+     place: "Gendarmenmarkt",
+     scene: "A FIFE corps marches across the fields, and Nering pegs out the Friedrichstadt grid and the Gendarmenmarkt."}
+  - {year: 1689, peg: fob, confidence: high, source: "WP de: Französisches Gymnasium Berlin",
+     event: "French Gymnasium founded for Huguenot children",
+     place: "Niederlagstrasse",
+     scene: "A teacher winds his FOB watch and rings in the first lesson of the French Gymnasium."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP de: Friedrichstadt (Berlin)",
+     event: "Friedrichstadt receives town rights",
+     place: "Friedrichstrasse",
+     scene: "Frederick III hangs the town charter on a BOOT by the Friedrichstrasse: Friedrichstadt is a town."}
+  - {year: 1691, peg: boot, confidence: high, source: "WP de: Zitadelle Spandau",
+     event: "Explosion on the Kronprinz bastion of the Spandau Citadel",
+     place: "Spandau Citadel",
+     scene: "A gunner kicks a powder keg with his BOOT, and the Kronprinz bastion of the citadel blows up."}
+world_refs:
+  - {year: 1666, event: "Paul Gerhardt is removed as pastor of St Nicholas, Berlin", cell: western_europe_religion_1500_1800}
+  - {year: 1671, event: "Jews expelled from Vienna settle in Berlin", cell: western_europe_religion_1500_1800}
+  - {year: 1700, event: "Leibniz founds the Society of Sciences in Berlin", cell: western_europe_science_1500_1800}
+out_refs:
+  - {year: 1349, event: "Towns of the march pay homage to the False Waldemar at Spandau", reason: "margravial succession dispute"}
+  - {year: 1356, event: "Golden Bull makes the margrave of Brandenburg an elector", reason: "imperial law"}
+  - {year: 1373, event: "Treaty of Fürstenwalde: Brandenburg passes to the Luxembourgs", reason: "margravial succession"}
+  - {year: 1411, event: "Frederick of Hohenzollern made governor of the march", reason: "margravial government"}
+  - {year: 1440, event: "Frederick II becomes elector", reason: "accession"}
+  - {year: 1446, event: "Frederick II expels the Jews from the march", reason: "march-wide decree"}
+  - {year: 1468, event: "Kammergericht, the electors' high court, first named", reason: "electoral high court"}
+  - {year: 1535, event: "Joachim II becomes elector", reason: "accession"}
+  - {year: 1571, event: "Joachim II dies at Köpenick hunting lodge", reason: "electoral death"}
+  - {year: 1573, event: "Jews expelled from the march for a century", reason: "march-wide decree"}
+  - {year: 1613, event: "Johann Sigismund takes Reformed communion in the Cölln cathedral", reason: "electoral confession"}
+  - {year: 1640, event: "Frederick William, the Great Elector, succeeds", reason: "accession"}
+  - {year: 1653, event: "Diet of the Kurmark in Berlin limits the nobles' power", reason: "state diet"}
+  - {year: 1662, event: "Tolerance edict and the Berlin religious colloquy", reason: "electoral church policy"}
+  - {year: 1667, event: "Excise tax ordinance for the towns of Brandenburg", reason: "march-wide tax law"}
+  - {year: 1682, event: "Edict founds the Brandenburg African Company", reason: "electoral trade policy"}
+  - {year: 1685, event: "Edict of Potsdam invites the Huguenots", reason: "electoral edict"}
+  - {year: 1685, event: "Collegium medicum, the supreme health authority of the state", reason: "state authority"}
+  - {year: 1688, event: "Great Elector dies; Frederick III succeeds", reason: "accession"}
+  - {year: 1698, event: "Edict frees Huguenot goods from export duty", reason: "state trade law"}
+  - {year: 1700, event: "Brandenburg changes to the Gregorian calendar", reason: "state law"}
+  - {year: 1700, event: "Secret talks at Schönhausen prepare the royal crown", reason: "electoral court"}
