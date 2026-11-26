@@ -1145,3 +1145,38 @@ Kenosha (Wisconsin) and Kankakee are OUT. Region: north_america.
 
 Expected cards are a guide, not a target.
 
+### São Paulo (2026-11-25)
+
+Area: the São Paulo Metropolitan Region (39 municipalities: São Paulo with the Pátio do Colégio, the Triangle,
+Luz, Brás, Mooca, Bixiga, Liberdade, Ipiranga, Avenida Paulista, Pinheiros, the Tietê and Pinheiros rivers;
+Guarulhos with the airport; the ABC (Santo André with Santo André da Borda do Campo, São Bernardo do Campo, São
+Caetano do Sul, Diadema); Osasco; Mogi das Cruzes; Santana de Parnaíba; Embu; the Cantareira and Billings and
+Guarapiranga reservoirs) plus Santos and São Vicente on the coast (the port, the 1532 town, the Serra do Mar road
+and railway down to them). Campinas, Jundiaí, Sorocaba and Cubatão's industrial zone outside these towns are OUT.
+Region: latin_america.
+
+- Dates: Portugal and its colonies moved to the Gregorian calendar in October 1582.
+- The OUT rule covers each government while the area is its seat: the Captaincy of São Vicente with its seat at
+  São Vicente (1532 to about 1681) and later in São Paulo; the Captaincy of São Paulo (1709–1821); the Province of
+  São Paulo (1822–1889); the State of São Paulo (from 1889): acts for the whole captaincy, province or state,
+  governors' and presidents' appointments, state elections and state laws. Brazil's national governments never sat
+  here: national laws, emperors' and presidents' acts are OUT unless the area is the subject. Acts about the city
+  are IN (the 1711 city status, the Faculty of Law (1827), the Santos railway concession, city plans, the metro,
+  mayors and the city council).
+- Main stage (IN as cards): Pedro I's Cry of Ipiranga (7 September 1822), the 1924 revolt and the bombardment of
+  the city, the 1932 Constitutionalist Revolution (the MMDC killings of 23 May, the city's war effort), the 1968
+  student fights (Rua Maria Antônia), Vladimir Herzog's death at DOI-CODI (1975) and the ecumenical service, the
+  ABC metalworkers' strikes (1978–1980), the Diretas Já rally at Praça da Sé (1984), the Carandiru massacre (1992),
+  the 2006 PCC attacks, the June 2013 protests.
+- International and national congresses, summits and games held in the area are IN as city events (the 1922 Week of
+  Modern Art, the São Paulo Biennial (1951), the 1963 Pan American Games, the 2014 World Cup opening).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1554` | sambaquis and prehistoric sites, the Tupiniquim, João Ramalho, Martim Afonso founds São Vicente (1532), the first sugar mill, Santos (1546), Santo André da Borda do Campo (1553) | 25 | ~50 |
+| `1554_1821` | the Jesuit college (1554), the 1560s wars and the move from Santo André, the bandeiras, the 1711 city charter, the captaincy seat, churches and convents, the Calçada do Lorena | 45 | ~150 |
+| `1822_1929` | the Cry of Ipiranga, the Faculty of Law, the Santos railway (1867), coffee, immigrants, Brás and the Hospedaria, abolition, Avenida Paulista, the Municipal Theatre, the 1917 general strike, the 1922 Week of Modern Art, the 1924 revolt | 45 | ~250 |
+| `1930_1984` | 1932, the University of São Paulo (1934), the Prestes Maia avenues, the Martinelli and Copan, the Biennial, Ibirapuera (1954), the ABC car industry, the metro (1974), the Joelma fire, Herzog, the ABC strikes, Diretas Já | 45 | ~250 |
+| `1985_present` | redemocratisation, Erundina, Carandiru, the Rodoanel, the Paulista Museum and MASP, the 2006 attacks, the 2013 protests, the 2014 World Cup, the 2014–2015 water crisis, the Formula 1 race at Interlagos | 45 | ~250 |
+
+Expected cards are a guide, not a target.
