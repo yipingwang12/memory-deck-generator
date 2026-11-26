@@ -1180,3 +1180,41 @@ Region: latin_america.
 | `1985_present` | redemocratisation, Erundina, Carandiru, the Rodoanel, the Paulista Museum and MASP, the 2006 attacks, the 2013 protests, the 2014 World Cup, the 2014–2015 water crisis, the Formula 1 race at Interlagos | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Lagos (2026-11-26)
+
+Area: Lagos State as decided (Lagos Island with Isale Eko, the Iga Idunganran palace, the Marina and Tinubu Square;
+Ikoyi; Victoria Island and Lekki; Ebute Metta, Yaba, Surulere, Mushin, Apapa with the port, Ajegunle; Ikeja with the
+airport and the cantonment; Agege; Badagry with the slave market, the Agia tree and the first storey building; Epe;
+Ikorodu; the Lagos Lagoon, Five Cowrie Creek and the Lekki coast). Ota, Abeokuta, Ijebu-Ode, Porto-Novo and Ouidah are
+OUT. Region: subsaharan_africa.
+
+- The Kingdom of Lagos (the Obas of Lagos, the Idejo chiefs, the Eko court) is a city government: its successions,
+  wars and acts are IN. Benin overlordship and Benin acts for the whole kingdom are OUT unless Lagos is the subject.
+- The Colony of Lagos (1862–1906) is a city government (the colony and the area are about the same): its governors,
+  ordinances and works are IN. The OUT rule covers each government while the area is its seat for a larger
+  territory: the Colony and Protectorate of Southern Nigeria (1906–1914), the Colony and Protectorate of Nigeria
+  (1914–1960) and the Federation and Federal Republic of Nigeria (1960 to 12 December 1991, the move to Abuja):
+  amalgamation, constitutions, national elections, cabinets, heads of state, national laws and decrees, coups that
+  are not fought in the city. Acts about the city are IN (the 1861 cession, the Lagos Town Council (1917), the
+  Lagos Executive Development Board, the Federal Territory (1954), the creation of Lagos State (1967), the capital
+  move decree (1976) and the move (1991)).
+- Lagos State (from 1967; seat at Ikeja from 1976) covers the whole area: it is a city government (city-state
+  rule). Its governors, the House of Assembly and state laws are IN.
+- Main stage (IN as cards): the British bombardment of Lagos (1851), the 1908 water-rate protests, the 1929
+  women's tax protests in the city, the 1945 general strike, the 1949 Iva Valley reaction protests in the city,
+  independence night at the Racecourse (1960) is unsure (list it in the report), the January 1966 coup killings in
+  the city, the 1976 assassination of Murtala Mohammed, FESTAC '77, the 1990 Orkar coup attempt at Dodan Barracks,
+  the June 12 protests (1993), the Ikeja cantonment explosion (2002), the 2012 Occupy Nigeria protests in the city,
+  the #EndSARS protests and the Lekki toll gate shooting (2020).
+- International congresses, festivals and games held in the area are IN as city events (FESTAC '77, the 1973 All
+  Africa Games, the 1980 African Cup of Nations, OAU summits held in Lagos).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1861` | prehistoric finds, the Awori settlement of Iddo and Ebute Metta, the Benin war camp (Eko), Ashipa and the Obas, the Portuguese name (1472), the slave trade at Lagos and Badagry, Kosoko and Akitoye, the missions at Badagry (1842), the 1851 bombardment, the consulate | 35 | ~100 |
+| `1861_1959` | the cession (1861), the colony, the Brazilian returnees, the Saro, the Lagos railway (1896–1901), the Eleko affair, Herbert Macaulay, the Town Council, the Yaba Higher College, Ikoyi, the 1945 strike, the Federal Territory (1954) | 45 | ~200 |
+| `1960_1990` | independence, the 1966 coups in the city, the civil war years, Lagos State (1967), the oil boom, the National Theatre and FESTAC, the Third Mainland Bridge, the capital move decree, the 1990 coup attempt | 45 | ~150 |
+| `1991_present` | the capital move to Abuja (1991), June 12, the Ikeja explosion, the Lekki free zone, Eko Atlantic, the BRT and the Blue Line rail (2023), Ebola (2014), #EndSARS (2020), the Dangote refinery (2023) | 45 | ~180 |
+
+Expected cards are a guide, not a target.
