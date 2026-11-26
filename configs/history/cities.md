@@ -1335,3 +1335,42 @@ Big Bear). Ventura County, Santa Barbara and San Diego County are OUT. Region: n
 | `1965_present` | Watts, RFK, the Moratorium, Bradley, the 1984 Olympics, the Metro Rail (1990), 1992, Northridge, the Getty Center, the 2025 fires and protests, the 2028 Olympics preparations | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Sydney (2026-11-26)
+
+Area: Greater Sydney as decided (Sydney Cove and The Rocks, the CBD, Port Jackson and its harbour islands, Botany
+Bay with La Perouse and Kurnell, Parramatta, Windsor and the Hawkesbury towns, Liverpool, Penrith, Campbelltown,
+Castle Hill and Rouse Hill, Bondi, Manly, Cronulla) plus the Blue Mountains (Katoomba,
+Leura, Blackheath, the 1813 crossing route) and Wollongong (the Illawarra coast, Port
+Kembla). The Central Coast, Newcastle, Lithgow, the Jenolan Caves and Canberra are OUT. Region: oceania.
+
+- The OUT rule covers each government while the area is its seat for a larger territory: the Colony of New South
+  Wales (1788–1901; its governors and Legislative Council acted for a colony that once included Victoria,
+  Queensland, Tasmania and New Zealand) and the State of New South Wales (from 1901): colony-wide and state-wide
+  laws and acts, governors' commissions, premiers, cabinets, state elections. The early settlement is the colony's
+  whole life: the governors' orders for Sydney, Parramatta and the Hawkesbury, the first buildings, the convict
+  works and the town plans are IN. The Commonwealth never sat in Sydney (Melbourne 1901–1927, then Canberra):
+  federal acts are OUT unless the area is the subject. Acts about the city are IN (the 1842 incorporation of
+  Sydney, the Sydney Harbour Bridge Act, the County of Cumberland plan, the Opera House, the city councils and
+  lord mayors, the Greater Sydney Commission).
+- Aboriginal history in the area is IN (the Eora, Darug, Dharawal, Guringai and Gundungurra peoples, rock
+  engravings, Bennelong and Pemulwuy, the frontier wars of the Hawkesbury and Appin).
+- Main stage (IN as cards): the arrival of the First Fleet and the flag at Sydney Cove (26 January 1788), the
+  Battle of Parramatta (1797), the Castle Hill convict rising (1804), the Rum Rebellion (1808), the Appin massacre
+  (1816), the 1938 Day of Mourning, de Groot at the Harbour Bridge opening (1932), the Japanese midget submarine
+  attack (1942), the 1970 Vietnam moratorium, the first Mardi Gras (1978), the Hilton bombing (1978), the 1988
+  bicentenary protest, the Cronulla riots (2005), the Lindt Café siege (2014), the Bondi Junction stabbings
+  (2024), the Bondi Beach Hanukkah shooting (December 2025).
+- International congresses, summits and games held in the area are IN as city events (the 1938 Empire Games, the
+  2000 Olympics and Paralympics, the 2003 Rugby World Cup final, the 2007 APEC summit, World Youth Day 2008, the
+  2023 Women's World Cup final).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1788` | rock shelters and the oldest dates (Parramatta River, Cranebrook, Shaws Creek), shell middens, engravings, the Eora clans, Cook at Kurnell (1770), Banks's plants | 35 | ~60 |
+| `1788_1850` | the First Fleet, the 1789 smallpox, Bennelong, Parramatta and the Hawkesbury, Pemulwuy, the Castle Hill rising, the Rum Rebellion, Macquarie's town, the Blue Mountains crossing (1813), the Bank of NSW (1817), the 1842 city council, the end of transportation (1840) | 45 | ~200 |
+| `1851_1913` | the gold years, the university (1850 Act, 1852 opening), the first railway (1855), the GPO, the 1891 strike, the plague of 1900, Federation day in Centennial Park (1901), Bondi, the Illawarra mines, the 1913 naming of the Harbour Bridge plans | 45 | ~220 |
+| `1914_1969` | the war years, the 1919 flu, the Harbour Bridge (1932), the 1938 Day of Mourning and Empire Games, the 1942 submarine attack, postwar migration, the Opera House competition (1957) and works, Utzon's exit (1966) | 45 | ~220 |
+| `1970_present` | the moratorium, the green bans, the Opera House opening (1973), Granville (1977), Mardi Gras, the bicentenary, the 1994 fires, the 2000 Olympics, Cronulla, APEC, the Lindt siege, the 2019–2020 fires, the metro (2019), Western Sydney Airport | 45 | ~250 |
+
+Expected cards are a guide, not a target.

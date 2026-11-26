@@ -1,0 +1,1043 @@
+# City: Sydney x 1851 to 1913 (the gold years, the university, the first railways, the municipalities, the GPO and
+# Town Hall, the Nepean water, the trams, the 1880s boom, the 1890s depression, the plague of 1900, Federation day,
+# Bondi and Manly surf, the Illawarra mines, Bradfield's harbour bridge plan and the 1913 fleet entry). DRAFT 2026-11-26.
+# Area: Greater Sydney (Sydney Cove and The Rocks, the CBD, Port Jackson and its islands, Botany Bay with La Perouse and
+# Kurnell, Parramatta, Windsor and the Hawkesbury towns, Liverpool, Penrith, Campbelltown, Castle Hill, Bondi, Manly,
+# Cronulla) plus the Blue Mountains (Katoomba, Leura, Blackheath, Medlow Bath) and Wollongong (the Illawarra coast,
+# Port Kembla). The Central Coast, Newcastle, Lithgow, the Jenolan Caves and Canberra are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Colony-wide and state-wide acts -> out_refs.
+# World-grid events -> world_refs (oceania cells, world cell year). Edge: all of 1851 is here; the outbreak of war in
+# August 1914 and all of 1914 belong to the next era.
+# Dates: memory pass + web check (45 searches; wikipedia.org pages fetched; no unauthorised book copies).
+# Main sources: WP (Timeline of Sydney, History of Sydney, Trams in Sydney, railway line, bridge, hospital, cathedral,
+# Town Hall, GPO, Central station, Cockatoo Island, Fort Denison, Bare Island, Rookwood, former LGA list), NSW Resources
+# Regulator, Hawkesbury Gazette, Navy.gov.au, Powerhouse, State Library NSW, Parliament of Australia FlagPost.
+# A work -> its first public appearance (opening, premiere, unveiling). A phase -> its start.
+# Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1853, peg: llama, confidence: high, source: "WP: Lord Mayor of Sydney (Dec 1853)",
+     event: "Colonial government dismisses the Sydney City Council; three commissioners run the city",
+     place: "Old Sydney Town Hall rooms, George Street",
+     scene: "A LLAMA kicks the mayor and aldermen out of the council chamber and three grey commissioners take their chairs."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP: Lord Mayor of Sydney (mayors resume)",
+     event: "Elected city council returns after the commissioners; George Thornton is mayor",
+     scene: "Ratepayers float George Thornton back into the council chamber on a LOG and the three commissioners jump off."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Fort Denison (14 Nov)",
+     event: "Fort Denison is completed on Pinchgut island against a Russian naval attack",
+     place: "Pinchgut, Port Jackson",
+     scene: "Convicts roll the last huge sandstone LOG into the Martello tower on Pinchgut, ready for Russian warships."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: Randwick City Council (23 Feb)",
+     event: "Randwick becomes the first suburban municipality under the new municipalities law",
+     scene: "Randwick householders push in with an ELBOW and grab the first municipal charter from the Sydney table."}
+  - {year: 1859, peg: elbow, confidence: medium, source: "City Hub: Waverley and Randwick councils",
+     event: "Wollongong is proclaimed a municipality, one of the first in the colony",
+     place: "Wollongong",
+     scene: "A coal-black ELBOW stamps the municipal seal on Wollongong's harbour wall beside the first council."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: List of former LGAs NSW (1 Aug)",
+     event: "Glebe becomes a municipality",
+     place: "Glebe",
+     scene: "An ELBOW bends out of a Glebe terrace window and bangs the gavel to open the new Glebe council."}
+  - {year: 1859, peg: elbow, confidence: high, source: "WP: List of former LGAs NSW (11 Aug)",
+     event: "Redfern becomes a municipality",
+     place: "Redfern",
+     scene: "Redfern's first mayor raises a giant ELBOW like a sceptre over the market gardens he now governs."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: List of former LGAs NSW (21 Feb)",
+     event: "Balmain becomes a municipality",
+     place: "Balmain",
+     scene: "Balmain shipwrights carve their new municipal seal into a wheel of CHEESE on Darling Street."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: List of former LGAs NSW (17 Apr)",
+     event: "Paddington becomes a municipality",
+     place: "Paddington",
+     scene: "Paddington voters elect a round CHEESE as their first council table and sit around it on Oxford Street."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: List of former LGAs NSW (1 Nov)",
+     event: "Marrickville becomes a municipality",
+     place: "Marrickville",
+     scene: "A JET of ink from the governor's pen sprays MARRICKVILLE across the gazette page as the new municipality."}
+  - {year: 1861, peg: jet, confidence: high, source: "City of Parramatta: council timeline (27 Nov)",
+     event: "Parramatta becomes a municipality",
+     place: "Parramatta",
+     scene: "A JET of river water fountains up in Parramatta and spells out the first municipal council of the old town."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: List of former LGAs NSW (13 Nov)",
+     event: "Camperdown becomes a municipality",
+     place: "Camperdown",
+     scene: "Camperdown's first mayor puts on a mayoral CHAIN made of the links of the suburb's new streets."}
+  - {year: 1862, peg: chain, confidence: high, source: "WP: List of former LGAs NSW (12 Dec)",
+     event: "Newtown becomes a municipality",
+     place: "Newtown",
+     scene: "A CHAIN drawn across King Street marks the boundary of the new Newtown municipality."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: List of former LGAs NSW (13 May)",
+     event: "St Leonards on the north shore becomes a municipality",
+     place: "St Leonards (North Sydney)",
+     scene: "A JOCKEY gallops off the ferry at Milsons Point and plants the municipal flag of St Leonards on the ridge."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Henry James O'Farrell (12 Mar)",
+     event: "Henry O'Farrell shoots Prince Alfred in the back at a picnic at Clontarf",
+     place: "Clontarf, Middle Harbour",
+     scene: "At the Clontarf picnic a CHEF wrestles the smoking revolver from O'Farrell after the shot hits Prince Alfred's back."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Sydney Town Hall",
+     event: "Prince Alfred lays the foundation stone of Sydney Town Hall on the old burial ground",
+     place: "George Street",
+     scene: "A CHEF ices the Town Hall foundation stone like a cake and Prince Alfred taps it into the old cemetery soil."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Cockatoo Island",
+     event: "Convicts leave Cockatoo Island for Darlinghurst Gaol; the prison becomes a girls' industrial school",
+     place: "Cockatoo Island",
+     scene: "A prison SHIP carries the last chained convicts off Cockatoo Island and lands schoolgirls in their place."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: List of former LGAs NSW (4 Mar)",
+     event: "Windsor becomes a municipality",
+     place: "Windsor",
+     scene: "A CAT on the steps of St Matthew's sits on the new Windsor council's seal and will not move."}
+  - {year: 1871, peg: cat, confidence: high, source: "City of Penrith: LGA history (12 May)",
+     event: "Penrith becomes a municipality",
+     place: "Penrith",
+     scene: "A CAT walks the Nepean riverbank and scratches the boundary line of the new Penrith municipality."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: List of former LGAs NSW (14 Dec)",
+     event: "Leichhardt becomes a municipality",
+     place: "Leichhardt",
+     scene: "A tabby CAT takes the mayor's chair at the first Leichhardt council and the aldermen cheer."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: List of former LGAs NSW (27 Jun)",
+     event: "Liverpool becomes a municipal district",
+     place: "Liverpool",
+     scene: "Liverpool ratepayers drop a COIN each into a box and buy their own municipal council."}
+  - {year: 1872, peg: coin, confidence: high, source: "WP: List of former LGAs NSW (18 Jun)",
+     event: "Richmond becomes a municipality",
+     place: "Richmond",
+     scene: "A giant COIN rolls down Windsor Street and stamps RICHMOND MUNICIPALITY on the dust."}
+  - {year: 1877, peg: cake, confidence: high, source: "Manly Council (WP): 6 Jan",
+     event: "Manly becomes a municipal district",
+     place: "Manly",
+     scene: "Manly bathers cut a sand CAKE on the Corso to mark their new municipal council."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Sydney Riot of 1879 (8 Feb)",
+     event: "Crowd invades the cricket ground after an umpiring decision and attacks Lord Harris's English team",
+     place: "Association Ground (SCG), Moore Park",
+     scene: "A COWBOY leads the mob over the fence at the Association Ground and lashes Lord Harris with a whip."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: List of former LGAs NSW (20 Jan)",
+     event: "Granville becomes a municipality",
+     place: "Granville",
+     scene: "Granville railway workers press a WAFFLE iron on the gazette and burn in their new municipality's name."}
+  - {year: 1885, peg: waffle, confidence: medium, source: "WP: Bare Island (1885; also 1886)",
+     event: "Bare Island fort at La Perouse is completed to guard Botany Bay",
+     place: "Bare Island, La Perouse",
+     scene: "Soldiers fire a giant WAFFLE from the new Bare Island guns to show Botany Bay is now defended."}
+  - {year: 1885, peg: waffle, confidence: high, source: "en.WP: New South Wales Sudan Contingent (sailed from Circular Quay, 3 March 1885)",
+     event: "Huge crowds see the Sudan contingent sail from Circular Quay, the first colonial force to fight abroad",
+     place: "Circular Quay",
+     scene: "A soldier on the troopship at Circular Quay waves a WAFFLE on his bayonet as two hundred thousand people cheer."}
+  - {year: 1888, peg: fife, confidence: medium, source: "Papers Past: Sydney dispatches May 1888",
+     event: "Anti-Chinese crowd storms Parliament House to stop the Afghan's Chinese passengers landing",
+     place: "Macquarie Street",
+     scene: "A FIFE player leads the anti-Chinese mob up Macquarie Street and into Parliament House until police block the chamber."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP: Sydney Town Hall (Centennial Hall)",
+     event: "Town Hall's Centennial Hall is completed",
+     place: "Sydney Town Hall",
+     scene: "The mayor opens the vast Centennial Hall door with the key on his watch FOB."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: List of former LGAs NSW (29 Dec)",
+     event: "Annandale becomes a municipality",
+     place: "Annandale",
+     scene: "Annandale residents plant a PALM on Johnston Street as the first act of their new council."}
+  - {year: 1893, peg: palm, confidence: medium, source: "en.WP: Australasian Federation League (formed at Sydney Town Hall, 1893); Edmund Barton",
+     event: "Barton and his friends form the Australasian Federation League at a meeting in Sydney Town Hall",
+     place: "Sydney Town Hall",
+     scene: "Edmund Barton plants a potted PALM on the Town Hall stage as the Federation League is born."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP: Fort Denison (Oct)",
+     event: "Charles Lightoller and two sailors fire an old Fort Denison cannon as a prank",
+     place: "Fort Denison",
+     scene: "Lightoller rams a bottle of SAUCE and cotton waste into the Fort Denison cannon and the blast breaks harbour windows."}
+  - {year: 1901, peg: soda, confidence: high, source: "en.WP: 1901 royal tour of the Duke and Duchess of Cornwall and York (Sydney, 27 May 1901)",
+     event: "The Duke and Duchess of Cornwall and York visit Sydney under triumphal arches",
+     place: "Sydney streets and Government House",
+     scene: "The Duke of York drinks a SODA under a triumphal arch of wheat sheaves in Bridge Street."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Lord Mayor of Sydney (23 Nov)",
+     event: "King Edward the Seventh makes the mayor of Sydney a Lord Mayor; Thomas Hughes is the first",
+     place: "Sydney Town Hall",
+     scene: "A golden SUN rises behind Thomas Hughes in the Town Hall as he becomes Sydney's first Lord Mayor."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP: History of Sydney",
+     event: "Manly Council allows daylight surf bathing in neck-to-knee costumes",
+     place: "Manly Beach",
+     scene: "A SUMO wrestler in a neck-to-knee costume waddles into the Manly surf at noon, now legal by council vote."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Fort Denison",
+     event: "Daily one o'clock time gun starts at Fort Denison",
+     place: "Fort Denison",
+     scene: "At one o'clock the Fort Denison gun fires a roll of SUSHI over the harbour and every ship sets its chronometer."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: List of former LGAs NSW (22 Dec)",
+     event: "Camperdown municipality is abolished and joins the City of Sydney",
+     place: "Camperdown",
+     scene: "Council workers carry Camperdown's council SOFA down Parramatta Road and drop it inside Sydney Town Hall."}
+  - {year: 1908, peg: sofa, confidence: high, source: "ANMM / Semaphore: 20 Aug",
+     event: "United States Great White Fleet enters Port Jackson before about half a million watchers",
+     place: "Port Jackson and the Heads",
+     scene: "Half a million Sydneysiders drag every SOFA onto the headlands to watch the white American battleships steam in."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "First section of Long Bay prison opens, the State Reformatory for Women",
+     place: "Long Bay, Malabar",
+     scene: "A warder hands each woman a bar of SOAP as the first block of Long Bay reformatory opens."}
+  - {year: 1913, peg: tomb, confidence: high, source: "Navy.gov.au: 4 Oct",
+     event: "New Royal Australian Navy fleet unit led by HMAS Australia enters Sydney Harbour",
+     place: "Sydney Heads to Farm Cove",
+     scene: "HMAS Australia steams past a sandstone TOMB on South Head and leads the new navy into the harbour."}
+  # science
+  - {year: 1856, peg: leech, confidence: high, source: "WP: Main Southern line (18 Aug)",
+     event: "Railway opens from Granville to Liverpool",
+     place: "Liverpool",
+     scene: "A giant LEECH clamps onto the Parramatta line at Granville and stretches its body south to Liverpool as new track."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Pyrmont Bridge (17 Mar)",
+     event: "First Pyrmont Bridge opens across Darling Harbour",
+     place: "Darling Harbour",
+     scene: "A WOLF trots across the new timber Pyrmont Bridge, the first road over Darling Harbour."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Main Southern line (4 May)",
+     event: "Railway reaches Campbelltown from Liverpool",
+     place: "Campbelltown",
+     scene: "A WOLF races the first train from Liverpool and loses at the Campbelltown platform."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Hornby Lighthouse",
+     event: "Hornby Lighthouse opens on inner South Head after the Dunbar wreck",
+     place: "Inner South Head",
+     scene: "A WOLF howls from the new red-and-white Hornby Lighthouse, warning ships away from the Dunbar's rocks."}
+  - {year: 1858, peg: wolf, confidence: high, source: "WP: Wollongong",
+     event: "Horse-drawn tramway carries coal from Mount Keira to Wollongong harbour",
+     place: "Mount Keira to Wollongong",
+     scene: "A WOLF pulls the first coal wagon down the Mount Keira tramway rails to the Wollongong harbour."}
+  - {year: 1860, peg: cheese, confidence: high, source: "WP: Parramatta (4 Jul) / Main Western line",
+     event: "Railway reaches today's Parramatta station and Blacktown",
+     place: "Parramatta",
+     scene: "A rolling wheel of CHEESE leads the first train into the new Parramatta station and on to Blacktown."}
+  - {year: 1861, peg: jet, confidence: high, source: "WP: Trams in Sydney",
+     event: "First horse tram runs along Pitt Street",
+     place: "Pitt Street",
+     scene: "A horse snorts a JET of steam and pulls the first tramcar along the Pitt Street rails."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Main Western line",
+     event: "Railway reaches Penrith",
+     place: "Penrith",
+     scene: "The engine driver hammers a GEM into the last rail at Penrith, the new end of the western line."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Main Southern line (1 Jul)",
+     event: "Menangle viaduct completes the railway from Campbelltown to Picton",
+     place: "Menangle, Nepean River",
+     scene: "A GEM-studded arch of the Menangle viaduct takes the first train across the Nepean to Picton."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: Richmond line (1 Dec)",
+     event: "Railway opens from Blacktown to Windsor and Richmond",
+     place: "Windsor and Richmond",
+     scene: "A CHERRY-red engine rolls through the Hawkesbury orchards to the new Windsor and Richmond stations."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Rookwood Cemetery (1 Jan)",
+     event: "Mortuary trains start to run into the new Haslem's Creek cemetery, later Rookwood",
+     place: "Rookwood",
+     scene: "A black funeral train glides into Haslem's Creek cemetery on rails of quivering JELLY."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: Wollongong",
+     event: "Corrimal Street gasworks gives Wollongong its first gas supply",
+     place: "Corrimal Street, Wollongong",
+     scene: "The Corrimal Street gasworks pumps glowing gas through a JELLY pipe and Wollongong's first lamps light."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Victoria Bridge, Penrith (11 Jul)",
+     event: "Victoria Bridge opens over the Nepean at Penrith for the western railway",
+     place: "Nepean River, Penrith",
+     scene: "A JOCKEY rides the first locomotive over the iron Victoria Bridge across the Nepean."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Main Western line",
+     event: "Little Zig Zag opens on Lapstone Hill to climb the Blue Mountains",
+     place: "Lapstone Hill, Glenbrook",
+     scene: "A JOCKEY zig-zags his horse up Lapstone Hill and the train follows his tracks back and forth."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Main Western line",
+     event: "Railway reaches Weatherboard, now Wentworth Falls",
+     place: "Wentworth Falls",
+     scene: "A JOCKEY waves the first train into Weatherboard station high in the Blue Mountains."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Main Western line",
+     event: "Railway reaches Mount Victoria across the Blue Mountains",
+     place: "Mount Victoria",
+     scene: "A CHEF serves hot pies from the cab as the first train pulls into Mount Victoria at the top of the range."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Sydney Hospital (Mar)",
+     event: "Lucy Osburn and five Nightingale nurses arrive at the Sydney Infirmary and start nurse training",
+     place: "Sydney Infirmary, Macquarie Street",
+     scene: "Lucy Osburn throws the dirty CHEF out of the infirmary kitchen and her Nightingale nurses scrub the wards."}
+  - {year: 1871, peg: cat, confidence: medium, source: "WP: Wollongong (citation needed)",
+     event: "First lighthouse at Wollongong harbour is completed, of wrought iron plates",
+     place: "Wollongong breakwater",
+     scene: "A CAT climbs the new iron lighthouse on the Wollongong breakwater and its eyes shine out to sea."}
+  - {year: 1874, peg: car, confidence: high, source: "Hawkesbury Gazette / WP: Windsor Bridge",
+     event: "Windsor Bridge opens over the Hawkesbury River",
+     place: "Windsor",
+     scene: "A CAR from the future crosses the new Windsor Bridge over the Hawkesbury on its first day."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: Central railway station",
+     event: "Second Sydney railway terminus opens at Redfern",
+     place: "Redfern",
+     scene: "A railway CAR rolls into the new brick terminus at Redfern, built to replace the old shed."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: Katoomba",
+     event: "Railway siding opens at The Crushers, the later Katoomba",
+     place: "Katoomba",
+     scene: "A quarry CAR full of crushed rock stops at the new siding called The Crushers, later Katoomba."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Trams in Sydney",
+     event: "Steam tram line opens to carry visitors to the International Exhibition",
+     place: "Elizabeth Street to the Garden Palace",
+     scene: "A COWBOY shovels coal into the first steam tram and drives exhibition crowds up Elizabeth Street."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "Taronga: history (Mar)",
+     event: "Zoological Society of New South Wales is founded",
+     scene: "A COWBOY ropes a kangaroo into the first meeting of the new Zoological Society."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Upper Nepean Scheme",
+     event: "Work starts on the Upper Nepean water scheme",
+     place: "Upper Nepean rivers",
+     scene: "Engineers pour the first VASE of Nepean water into the trench that starts Sydney's new supply."}
+  - {year: 1881, peg: foot, confidence: high, source: "WP: Gladesville Bridge (Feb)",
+     event: "First Gladesville Bridge opens across the Parramatta River",
+     place: "Gladesville",
+     scene: "A giant FOOT steps across the Parramatta River where the iron Gladesville Bridge now opens."}
+  - {year: 1881, peg: foot, confidence: medium, source: "NSW Health: smallpox history",
+     event: "Sanitary camp opens at Little Bay for smallpox patients, the start of the Coast Hospital",
+     place: "Little Bay",
+     scene: "Smallpox patients walk barefoot, FOOT by FOOT, along the sand to the new tents at Little Bay."}
+  - {year: 1881, peg: foot, confidence: unverified,
+     event: "Barrenjoey Head lighthouse is lit at the entrance to Broken Bay",
+     place: "Barrenjoey Head, Palm Beach",
+     scene: "A lighthouse keeper sets his FOOT on the last sandstone step and lights Barrenjoey's lamp over Broken Bay."}
+  - {year: 1882, peg: oven, confidence: medium, source: "WP: Gladesville Bridge (SMH ref 30 Nov)",
+     event: "Iron Cove Bridge opens between Drummoyne and Rozelle",
+     place: "Iron Cove",
+     scene: "Riveters heat the last bolts of the Iron Cove Bridge in an OVEN and hammer the span shut."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Royal Prince Alfred Hospital",
+     event: "Royal Prince Alfred Hospital opens beside the university",
+     place: "Camperdown",
+     scene: "Surgeons heat their instruments in a steaming OVEN as the first patients enter Royal Prince Alfred Hospital."}
+  - {year: 1882, peg: oven, confidence: high, source: "GPO plate via austehc (Mar)",
+     event: "First telephone exchange in New South Wales opens in Sydney",
+     scene: "Operators pull ringing telephones out of an OVEN and plug Sydney's first exchange together."}
+  - {year: 1882, peg: oven, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Building of the Eveleigh railway workshops starts",
+     place: "Eveleigh",
+     scene: "Navvies dig the footings of the Eveleigh workshops around a giant locomotive OVEN."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Sydney Hospital",
+     event: "Sydney Eye Hospital starts at Millers Point",
+     place: "Millers Point",
+     scene: "An OVEN door opens like an eyelid at Millers Point and the first eye patients step in."}
+  - {year: 1883, peg: foam, confidence: high, source: "WP: Macquarie Lighthouse",
+     event: "James Barnet's new Macquarie Lighthouse is lit with electric light",
+     place: "Dunbar Head, Vaucluse",
+     scene: "Electric light from Barnet's new Macquarie Lighthouse cuts through the sea FOAM below South Head."}
+  - {year: 1884, peg: fairy, confidence: high, source: "WP: Illawarra line",
+     event: "Illawarra railway opens from Sydney to Hurstville",
+     place: "Hurstville",
+     scene: "A FAIRY waves her wand and lays the first Illawarra rails from Redfern to Hurstville."}
+  - {year: 1884, peg: fairy, confidence: high, source: "Taronga / Centennial Parklands",
+     event: "Moore Park Zoo opens, the first public zoo in New South Wales",
+     place: "Billy Goat Swamp, Moore Park",
+     scene: "A FAIRY unlocks the gates of the new Moore Park Zoo and lets the crowds in to see the elephant."}
+  - {year: 1885, peg: waffle, confidence: high, source: "WP: Illawarra line (9 Dec)",
+     event: "Illawarra railway reaches Sutherland over the Georges River bridge at Como",
+     place: "Como and Sutherland",
+     scene: "A train crosses the Georges River at Como on a bridge shaped like a WAFFLE grid and stops at Sutherland."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Upper Nepean Scheme (30 Jan)",
+     event: "Hudson Brothers' temporary scheme brings Nepean water to the Botany Swamps in a drought",
+     place: "Botany Swamps",
+     scene: "A FISH swims out of the Nepean through Hudson's temporary pipes into the dry Botany Swamps."}
+  - {year: 1886, peg: fish, confidence: high, source: "Engineers Aust. tramways timeline",
+     event: "Cable tram opens from Milsons Point up to Ridge Street, North Sydney",
+     place: "Milsons Point to Ridge Street",
+     scene: "A cable hooks a giant FISH and drags it with the tram up the steep hill from Milsons Point."}
+  - {year: 1886, peg: fish, confidence: high, source: "Canada Bay Heritage (23 May)",
+     event: "Australian Gas Light Company opens its Mortlake gasworks",
+     place: "Mortlake",
+     scene: "A FISH flaps on the Mortlake wharf beside the coal barges as the huge new gasworks starts to burn."}
+  - {year: 1886, peg: fish, confidence: unverified,
+     event: "Main North railway opens from Strathfield to Hornsby",
+     place: "Strathfield to Hornsby",
+     scene: "A FISH leaps along the new rails from Strathfield and lands at the end of the line at Hornsby."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Hawkesbury River railway bridge",
+     event: "Railway opens from Hornsby to the Hawkesbury River",
+     place: "Hornsby to Brooklyn",
+     scene: "A FOX races the first train from Hornsby down the gullies to the Hawkesbury River ferry."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Illawarra line / Wollongong",
+     event: "Illawarra railway opens from Clifton through Wollongong to North Kiama",
+     place: "Wollongong",
+     scene: "A FOX chases the first train out of Clifton tunnel along the Illawarra coast to Wollongong station."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Upper Nepean Scheme / Prospect",
+     event: "Upper Nepean Scheme and Prospect Reservoir are completed",
+     place: "Prospect",
+     scene: "A FIFE band plays on the Prospect dam wall as Nepean water fills the new reservoir for Sydney."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Illawarra line",
+     event: "Waterfall to Clifton section completes the railway from Sydney to Wollongong",
+     place: "Otford and Stanwell Park tunnels",
+     scene: "A FIFE whistles through the last tunnel at Otford as the line from Waterfall joins Clifton."}
+  - {year: 1888, peg: fife, confidence: medium, source: "Silicon Chip: electrical energy pt 19",
+     event: "Julien battery tram makes a trial trip on the Botany tramway",
+     place: "Botany Road",
+     scene: "A FIFE player rides the silent battery tram on its trial trip to Botany, playing because no engine roars."}
+  - {year: 1889, peg: fob, confidence: high, source: "WP: Hawkesbury River railway bridge (1 May)",
+     event: "First Hawkesbury River railway bridge opens and links Sydney to Newcastle by rail",
+     place: "Brooklyn",
+     scene: "The governor hangs a gold FOB chain across the Hawkesbury bridge and cuts it to let the first train through."}
+  - {year: 1889, peg: fob, confidence: high, source: "NSW Heritage: Bondi Ocean Outfall Sewer",
+     event: "Bondi Ocean Outfall Sewer is completed and carries sewage out to sea, not into the harbour",
+     place: "Ben Buckler, Bondi",
+     scene: "An engineer drops his watch FOB down the new Bondi sewer and it shoots out into the ocean at Ben Buckler."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP: North Shore line (1 Jan)",
+     event: "North Shore railway opens from Hornsby to St Leonards",
+     place: "Hornsby to St Leonards",
+     scene: "A swarm of BEES flies ahead of the first train from Hornsby along the ridge to St Leonards."}
+  - {year: 1890, peg: bees, confidence: medium, source: "Silicon Chip / Railtram (Nov)",
+     event: "Experimental electric tram runs from Randwick to Waverley",
+     place: "Randwick to Waverley",
+     scene: "Electric BEES buzz along the overhead wire as the trial tram runs from Randwick to Waverley."}
+  - {year: 1892, peg: piano, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Suspension Bridge opens over Long Gully between Cammeray and Northbridge",
+     place: "Northbridge",
+     scene: "A grand PIANO hangs from the cables of the new Suspension Bridge over Long Gully and plays as it sways."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: North Shore line (1 May)",
+     event: "North Shore railway extends to Milsons Point",
+     place: "Milsons Point",
+     scene: "The first train to Milsons Point brushes a PALM tree on the harbour shore at the end of the line."}
+  - {year: 1893, peg: palm, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Women's Hospital opens, later the Crown Street Women's Hospital",
+     place: "Surry Hills",
+     scene: "Midwives fan new mothers with a PALM leaf in the first ward of the Crown Street hospital."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: Trams in Sydney (Oct)",
+     event: "First regular electric tram service runs on the Watsons Bay line",
+     place: "Watsons Bay line",
+     scene: "A BEEHIVE on the tram roof buzzes with electricity as the first electric service runs toward Watsons Bay."}
+  - {year: 1899, peg: pipe, confidence: high, source: "WP: Ultimo Power Station",
+     event: "Ultimo Power Station starts to supply the electric trams",
+     place: "Ultimo",
+     scene: "A tall PIPE chimney at Ultimo puffs smoke as the power station sends current to the city's trams."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP: Sydney Harbour Bridge",
+     event: "World design competition for a harbour bridge; Cruttwell wins first prize",
+     scene: "Judges pour SAUCE over the losing designs and pin Cruttwell's bridge plan up as the winner."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Pyrmont Bridge (28 Jun)",
+     event: "Electric swing bridge at Pyrmont opens",
+     place: "Darling Harbour",
+     scene: "The new Pyrmont Bridge swings open to the SUN on electric power and lets the tall ships pass."}
+  - {year: 1902, peg: sun, confidence: high, source: "WP: Upper Nepean Scheme",
+     event: "Building of Cataract Dam starts after a royal commission",
+     place: "Cataract River",
+     scene: "The drought SUN cracks the riverbed and workers start the Cataract Dam wall."}
+  - {year: 1902, peg: sun, confidence: medium, source: "WP: Sydney Harbour Bridge",
+     event: "Second harbour bridge competition: Norman Selfe wins with a steel cantilever",
+     scene: "Norman Selfe holds his steel cantilever drawing up to the SUN and the judges see it shine as the winner."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Glebe Island Bridge is rebuilt as a swing bridge",
+     place: "Glebe Island",
+     scene: "A SUMO wrestler pushes the new Glebe Island swing bridge round on its pivot."}
+  - {year: 1904, peg: sewer, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "City Council switches on electric street lighting",
+     scene: "Lamplighters throw their gas poles down a SEWER as electric street lamps light up George Street."}
+  - {year: 1906, peg: sushi, confidence: high, source: "WP: Central railway station (4 Aug)",
+     event: "New Central railway station opens on the old Devonshire Street cemetery",
+     place: "Haymarket",
+     scene: "A SUSHI chef serves the first travellers in the sandstone concourse of the new Central station."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Upper Nepean Scheme",
+     event: "Cataract Dam is completed",
+     place: "Cataract River",
+     scene: "A boy on a SKI slides down the curved new Cataract Dam wall into the filling reservoir."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: Wollongong",
+     event: "New Wollongong Hospital opens on Garden Hill",
+     place: "Garden Hill, Wollongong",
+     scene: "An injured miner on a SKI is pulled up Garden Hill to the doors of the new Wollongong Hospital."}
+  - {year: 1910, peg: dice, confidence: unverified,
+     event: "Harry Houdini flies his Voisin biplane at Rosehill racecourse",
+     place: "Rosehill",
+     scene: "Houdini throws a DICE from his biplane cockpit as he flies over the Rosehill racecourse."}
+  - {year: 1911, peg: tattoo, confidence: high, source: "City of Parramatta / WP: Hart (Nov)",
+     event: "Billy Hart flies from Penrith to Parramatta, an early cross-country flight",
+     place: "Penrith to Parramatta Park",
+     scene: "Billy Hart with a propeller TATTOO on his arm flies his biplane from Penrith and lands in Parramatta Park."}
+  - {year: 1912, peg: tongue, confidence: high, source: "NSW State Archives via search (1 Jul)",
+     event: "John Bradfield heads the new Sydney Harbour and City Transit Branch",
+     scene: "Bradfield sticks out his TONGUE like a bridge from his office desk to the north shore."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "NSW State Archives via search",
+     event: "Public Works Committee accepts Bradfield's cantilever design for a harbour bridge",
+     scene: "The committee stamps Bradfield's cantilever plan on a sandstone TOMB at Dawes Point, where the bridge will stand."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Fort Denison",
+     event: "Navigation light replaces the gun on top of the Fort Denison tower",
+     place: "Fort Denison",
+     scene: "Workers lift the old gun off the Fort Denison TOMB-like tower and bolt a navigation light in its place."}
+  # religion
+  - {year: 1856, peg: leech, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Moore Theological College opens at Liverpool",
+     place: "Liverpool",
+     scene: "A LEECH preaches from the pulpit of Moore College at Liverpool to the first Anglican students."}
+  - {year: 1856, peg: leech, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Edmund Blacket's new St Philip's Church on Church Hill is completed",
+     place: "Church Hill, York Street",
+     scene: "A LEECH sticks to the new Gothic tower of St Philip's on Church Hill and rings the bell."}
+  - {year: 1865, peg: jelly, confidence: high, source: "WP: St Mary's Cathedral, Sydney (29 Jun)",
+     event: "Fire destroys the old St Mary's Catholic Cathedral",
+     place: "College Street",
+     scene: "The roof of old St Mary's melts like red JELLY in the fire and the cathedral falls."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: St Mary's Cathedral, Sydney",
+     event: "Fire also destroys St Mary's temporary wooden church",
+     place: "College Street",
+     scene: "The wooden church beside St Mary's burns like a SHIP set alight for a Viking funeral."}
+  - {year: 1880, peg: vase, confidence: medium, source: "WP: Parramatta",
+     event: "Tower of St Patrick's Catholic church in Parramatta is completed",
+     place: "Parramatta",
+     scene: "Masons set a stone VASE on top of the new St Patrick's tower in Parramatta."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Katoomba",
+     event: "Main building of Katoomba's Methodist church, now Uniting, is built",
+     place: "Katoomba",
+     scene: "A FIFE leads the first hymn in the new Methodist church on the Katoomba ridge."}
+  - {year: 1889, peg: fob, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "St Patrick's Seminary is founded at Manly to train Catholic priests",
+     place: "Manly",
+     scene: "Cardinal Moran checks his gold FOB watch as the first seminarians enter St Patrick's on the Manly hill."}
+  - {year: 1894, peg: bear, confidence: high, source: "WP: La Perouse Mission Church (Nov)",
+     event: "Christian mission at La Perouse opens its first church for the Aboriginal community",
+     place: "La Perouse",
+     scene: "A BEAR helps Aboriginal families at La Perouse raise the small timber mission church above the bay."}
+  - {year: 1897, peg: pig, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Sacred Heart Monastery is built at Kensington",
+     place: "Kensington",
+     scene: "Missionary monks lead a PIG through the gates of the new Sacred Heart Monastery at Kensington."}
+  - {year: 1898, peg: beehive, confidence: high, source: "Glebe Society / NSW Heritage",
+     event: "Building of the Sze Yup Kwan Ti temple starts in Glebe",
+     place: "Victoria Road, Glebe",
+     scene: "Incense smoke swirls round a BEEHIVE on the altar of the new Sze Yup temple in Glebe."}
+  - {year: 1898, peg: beehive, confidence: high, source: "WP: St Mary's Cathedral, Sydney",
+     event: "St Mary's Cathedral's bells move into the new central tower",
+     place: "College Street",
+     scene: "Bell ringers carry the St Mary's bells up into the central tower past a buzzing BEEHIVE."}
+  - {year: 1909, peg: soap, confidence: high, source: "NSW Heritage / Bagnall",
+     event: "Yiu Ming temple opens in Alexandria",
+     place: "Retreat Street, Alexandria",
+     scene: "Worshippers wash the altar of the new Yiu Ming temple with SOAP before the first ceremony."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: St Mary's Cathedral, Sydney",
+     event: "Archbishop Kelly lays the foundation stone of St Mary's Cathedral nave",
+     place: "College Street",
+     scene: "Archbishop Kelly lays the nave stone on a crypt TOMB under St Mary's."}
+  - {year: 1913, peg: tomb, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Eileen O'Connor and Father McGrath found Our Lady's Nurses for the Poor at Coogee",
+     place: "Coogee",
+     scene: "Eileen O'Connor rises from her sickbed like from a TOMB and sends her nurses into Coogee's poor homes."}
+  # arts
+  - {year: 1855, peg: lily, confidence: high, source: "WP: Timeline of Sydney",
+     event: "Lola Montez shocks Sydney theatregoers with her Spider Dance",
+     place: "Royal Victoria Theatre, Pitt Street",
+     scene: "Lola Montez shakes a spider out of a LILY and dances wildly on the Sydney stage."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: History of Sydney",
+     event: "Australian Museum building opens to the public",
+     place: "College Street",
+     scene: "A fossil LOG greets the first visitors in the new sandstone Australian Museum on College Street."}
+  - {year: 1859, peg: elbow, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Great Hall of the University of Sydney is completed",
+     place: "Camperdown",
+     scene: "Professors raise an ELBOW in a toast under the hammerbeam roof of the new Great Hall."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Timeline of Sydney",
+     event: "Government buys the Subscription Library and opens the Sydney Free Public Library",
+     place: "Bent and Macquarie Streets",
+     scene: "A SHIP unloads crates of books at the door of the new Free Public Library, open to all."}
+  - {year: 1869, peg: ship, confidence: high, source: "WP: Central railway station (Mar)",
+     event: "Barnet's Gothic Mortuary station is completed for funeral trains",
+     place: "Regent Street, Chippendale",
+     scene: "A funeral SHIP on wheels waits under the carved Gothic arches of the new Mortuary station."}
+  - {year: 1871, peg: cat, confidence: high, source: "WP: Timeline of Sydney",
+     event: "New South Wales Academy of Art is founded",
+     scene: "A CAT walks across a wet canvas at the first meeting of the new Academy of Art."}
+  - {year: 1873, peg: comb, confidence: high, source: "WP: Sydney Town Hall",
+     event: "Town Hall clock tower is completed",
+     place: "George Street",
+     scene: "Builders set a giant COMB on top of the Town Hall clock tower as its crest."}
+  - {year: 1874, peg: car, confidence: high, source: "WP: General Post Office, Sydney (1 Sep)",
+     event: "First stage of Barnet's General Post Office opens on George Street",
+     place: "George Street",
+     scene: "A mail CAR drives through the new arcade of Barnet's GPO on its first day."}
+  - {year: 1875, peg: eagle, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Holtermann panorama of Sydney Harbour is photographed from a North Sydney tower",
+     place: "North Sydney",
+     scene: "An EAGLE perches on Holtermann's tower and watches him photograph the whole harbour on giant glass plates."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "City of Sydney: Captain Cook (25 Feb)",
+     event: "Woolner's statue of Captain Cook is unveiled in Hyde Park",
+     place: "Hyde Park",
+     scene: "A COWBOY lassoes the cloth off Woolner's bronze Captain Cook in Hyde Park before a holiday crowd."}
+  - {year: 1887, peg: fox, confidence: high, source: "AusStage: Her Majesty's (10 Sep)",
+     event: "Her Majesty's Theatre opens in Pitt Street",
+     place: "Pitt Street",
+     scene: "A FOX in a crown takes a bow on the opening night of Her Majesty's Theatre."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: General Post Office, Sydney",
+     event: "GPO is topped out and its Pitt Street colonnade opens",
+     place: "Pitt Street",
+     scene: "A FOX runs along the new Pitt Street colonnade of the GPO among the carved stone figures."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Timeline of Sydney",
+     event: "Charles Conder paints Departure of the Orient, Circular Quay",
+     place: "Circular Quay",
+     scene: "Charles Conder paints the steamer Orient leaving Circular Quay while a FIFE plays farewell."}
+  - {year: 1888, peg: fife, confidence: unverified,
+     event: "Boehm's statue of Queen Victoria is unveiled in Queen's Square",
+     place: "Queen's Square, Macquarie Street",
+     scene: "A FIFE band plays as the cloth falls from Queen Victoria's bronze statue in Queen's Square."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP: Sydney Town Hall",
+     event: "Hill and Son install the Grand Organ in Sydney Town Hall",
+     place: "Sydney Town Hall",
+     scene: "BEES swarm out of the giant pipes as the new Grand Organ in the Town Hall plays its first chord."}
+  - {year: 1890, peg: bees, confidence: high, source: "WP: Timeline of Sydney",
+     event: "Julian Ashton Art School is founded",
+     scene: "Julian Ashton's students draw a swarm of BEES on the first night of his art school."}
+  - {year: 1890, peg: bees, confidence: medium, source: "WP / Mosman Art Gallery (c.)",
+     event: "Curlew artists' camp is set up at Little Sirius Cove (approximate)",
+     place: "Little Sirius Cove, Mosman",
+     scene: "Streeton fights off BEES at his tent in the Curlew camp at Sirius Cove and paints the harbour."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP: General Post Office, Sydney (16 Sep)",
+     event: "GPO clock tower clock starts and Barnet's building is complete",
+     place: "Martin Place",
+     scene: "A giant BOOT kicks the pendulum and the GPO tower clock starts to strike over the city."}
+  - {year: 1893, peg: palm, confidence: high, source: "Powerhouse: Technological Museum (4 Aug)",
+     event: "Technological Museum opens in Harris Street, Ultimo",
+     place: "Harris Street, Ultimo",
+     scene: "A steam engine fans its PALM-leaf smoke inside the new Technological Museum at Ultimo."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: Timeline of Sydney",
+     event: "Arthur Streeton paints Railway Station, Redfern",
+     place: "Redfern station",
+     scene: "Streeton paints Redfern station in the rain under an umbrella of PALM leaves."}
+  - {year: 1897, peg: pig, confidence: high, source: "Monument Australia (22 Jun)",
+     event: "Simonetti's Governor Phillip fountain is unveiled in the Botanic Garden",
+     place: "Royal Botanic Garden",
+     scene: "A bronze PIG splashes in the basin of the new Governor Phillip fountain in the Botanic Garden."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Her Majesty's Theatre reopens after rebuilding",
+     place: "Pitt Street",
+     scene: "A SUMO wrestler tears down the burnt walls and Her Majesty's Theatre rises again."}
+  - {year: 1905, peg: seal, confidence: high, source: "Monument Australia / Papers Past (Jan)",
+     event: "Pomeroy's statue of Robert Burns is unveiled in the Domain",
+     place: "The Domain",
+     scene: "A SEAL reads Robert Burns's poems aloud as the cloth falls from his statue in the Domain."}
+  - {year: 1907, peg: ski, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "David Scott Mitchell's Australiana collection goes to the Public Library",
+     scene: "Mitchell's books slide on a SKI from his Darlinghurst house into the Public Library."}
+  - {year: 1910, peg: dice, confidence: high, source: "State Library NSW: history (Mar)",
+     event: "Mitchell Library building opens on Macquarie Street",
+     place: "Macquarie Street",
+     scene: "The governor rolls a DICE on the reading-room table to open the new Mitchell Library."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Culwulla Chambers is built, a tall tower that leads to a building height limit",
+     place: "Castlereagh Street",
+     scene: "Culwulla Chambers sticks out its TONGUE at the skyline and the city sets a height limit."}
+  # economy
+  - {year: 1853, peg: llama, confidence: medium, source: "WP: Manly ferry (1853; other srcs 1855)",
+     event: "Henry Gilbert Smith runs paddle steamer trips to Manly to sell his land",
+     place: "Manly",
+     scene: "A LLAMA stands on the deck of Smith's paddle steamer to Manly and spits on the land-sale posters."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP: Mort's Dock",
+     event: "Mort's Dock opens at Balmain, the first dry dock in Australia",
+     place: "Waterview Bay, Balmain",
+     scene: "A LILY pad floats in the empty basin of Mort's new dry dock at Balmain as the first ship comes in."}
+  - {year: 1855, peg: lily, confidence: high, source: "WP / ANU: Colonial Sugar Refining Co",
+     event: "Colonial Sugar Refining Company is founded in Sydney by Edward Knox",
+     scene: "Edward Knox stirs sugar into a LILY-white bowl and founds the Colonial Sugar Refining Company."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Cockatoo Island (Dec)",
+     event: "Fitzroy Dock on Cockatoo Island is completed; HMS Herald is the first ship in",
+     place: "Cockatoo Island",
+     scene: "HMS Herald floats into the new Fitzroy Dock on Cockatoo Island over a LOG used as a roller."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Hornby Lighthouse (Aug)",
+     event: "Dunbar is wrecked below South Head; a hundred and twenty-one die and one man lives",
+     place: "The Gap, South Head",
+     scene: "James Johnson clings to a LOG in the surf at The Gap, the only one alive from the Dunbar."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Hornby Lighthouse (Oct)",
+     event: "Catherine Adamson is wrecked inside North Head; twenty-one die",
+     place: "Inner North Head",
+     scene: "The Catherine Adamson drifts onto North Head rocks and splits like a rotten LOG in the night."}
+  - {year: 1858, peg: wolf, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Royal Navy takes over Garden Island as a naval base",
+     place: "Garden Island",
+     scene: "A WOLF in a Royal Navy cap claims Garden Island and chases the gardeners off."}
+  - {year: 1861, peg: jet, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Thomas Mort sets up freezing works at Darling Harbour",
+     place: "Darling Harbour",
+     scene: "Mort's freezing machine fires a JET of icy air at Darling Harbour and frosts the meat."}
+  - {year: 1868, peg: chef, confidence: high, source: "WP: Wollongong",
+     event: "Belmore Basin opens as the new harbour of Wollongong",
+     place: "Belmore Basin, Wollongong",
+     scene: "Lady Belmore's CHEF breaks a bottle on the quay to open the new Wollongong harbour basin."}
+  - {year: 1868, peg: chef, confidence: medium, source: "WP: Timeline of Sydney (first mention)",
+     event: "Maria Smith's chance seedling at Ryde gives the Granny Smith apple",
+     place: "Eastwood, Ryde",
+     scene: "A CHEF bites the first green apple from Granny Smith's Ryde orchard and calls it the best for pies."}
+  - {year: 1870, peg: goose, confidence: high, source: "WP: Mort's Dock / Cockatoo Island",
+     event: "Mort's Dock builds the first locally made locomotive; shipbuilding starts on Cockatoo Island",
+     place: "Balmain",
+     scene: "A GOOSE rides the first Balmain-built locomotive out of Mort's Dock and honks the whistle."}
+  - {year: 1871, peg: cat, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Sydney Exchange is founded for merchants and share traders",
+     scene: "A CAT walks the floor of the new Sydney Exchange and knocks the share prices off the board."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Fish market opens at Woolloomooloo",
+     place: "Woolloomooloo",
+     scene: "Fishmongers sell snapper for a COIN each at the new Woolloomooloo fish market."}
+  - {year: 1872, peg: coin, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Tooheys opens the Darling Brewery",
+     place: "Surry Hills",
+     scene: "Drinkers pay a COIN for the first pint from Tooheys' new Darling Brewery."}
+  - {year: 1878, peg: cave, confidence: high, source: "ANU Archives: CSR (16 Feb)",
+     event: "Colonial Sugar Refining Company's Pyrmont refinery starts work",
+     place: "Pyrmont",
+     scene: "A CAVE of white sugar piles up inside the new CSR refinery at Pyrmont."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Dymocks starts to sell books in George Street",
+     place: "George Street",
+     scene: "A COWBOY buys the first book in John Dymock's new George Street shop."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Katoomba",
+     event: "Carrington Hotel opens in Katoomba",
+     place: "Katoomba",
+     scene: "A hotel OVEN bakes scones for the first guests at the Carrington on the top of Katoomba."}
+  - {year: 1886, peg: fish, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "David Angus and George Robertson start their bookselling partnership",
+     place: "Market Street",
+     scene: "Angus and Robertson wrap their first books in FISH paper in their small Market Street shop."}
+  - {year: 1890, peg: bees, confidence: medium, source: "WP: Cockatoo Island (built to 1890)",
+     event: "Sutherland Dock on Cockatoo Island is completed",
+     place: "Cockatoo Island",
+     scene: "BEES swarm over a warship as the giant new Sutherland Dock on Cockatoo Island drains."}
+  - {year: 1890, peg: bees, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Hotel Metropole opens",
+     place: "Young Street",
+     scene: "Waiters at the new Hotel Metropole serve honey straight from BEES on silver plates."}
+  - {year: 1891, peg: boot, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Australia Hotel opens; Sarah Bernhardt is its first famous guest",
+     place: "Castlereagh Street",
+     scene: "Sarah Bernhardt kicks off a BOOT in the grand foyer of the new Australia Hotel."}
+  - {year: 1892, peg: piano, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Strand Arcade opens between George and Pitt Streets",
+     place: "George and Pitt Streets",
+     scene: "A PIANO plays under the glass roof of the new Strand Arcade as shoppers enter."}
+  - {year: 1896, peg: peach, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Australis motor car is built at Leichhardt",
+     place: "Leichhardt",
+     scene: "The first Australis motor car rolls out of a Leichhardt shed on wheels made of PEACH stones."}
+  - {year: 1898, peg: beehive, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Clyde Engineering is formed at Granville",
+     place: "Granville",
+     scene: "Clyde Engineering's workshop at Granville hums like a BEEHIVE as it builds its first engines."}
+  - {year: 1898, peg: beehive, confidence: medium, source: "WP: Quong Tart",
+     event: "Quong Tart's Elite Hall tea rooms open in the Queen Victoria Market building",
+     place: "Queen Victoria Market building",
+     scene: "Quong Tart pours tea with honey from a BEEHIVE for the mayor at his new Elite Hall tea rooms."}
+  - {year: 1901, peg: soda, confidence: high, source: "NSW Act 1901 no. 1 / SL NSW",
+     event: "Sydney Harbour Trust takes control of the wharves and resumes The Rocks and Millers Point",
+     place: "The Rocks and Millers Point",
+     scene: "The Harbour Trust pours SODA over the old wharves and hundreds of Rocks houses fizz away into public hands."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Mort's Dock",
+     event: "Mort's company opens its second dry dock at Woolwich",
+     place: "Woolwich",
+     scene: "A SODA bottle cracks on the gate of the new Woolwich Dock and the first ship floats in."}
+  - {year: 1904, peg: sewer, confidence: high, source: "WP: Hydro Majestic Hotel",
+     event: "Mark Foy's Hydro Majestic health resort opens at Medlow Bath",
+     place: "Medlow Bath",
+     scene: "Mark Foy flushes his health guests through a giant SEWER pipe into the steam baths of his new Hydro Majestic at Medlow Bath."}
+  - {year: 1905, peg: seal, confidence: high, source: "WP: Anthony Hordern & Sons",
+     event: "Anthony Hordern and Sons opens the New Palace Emporium at Brickfield Hill",
+     place: "Brickfield Hill",
+     scene: "A SEAL balances a ball on the doors of Hordern's huge New Palace Emporium on opening day."}
+  - {year: 1908, peg: sofa, confidence: high, source: "WP: Port Kembla, NSW",
+     event: "Electrolytic Refining and Smelting Company starts its copper smelter at Port Kembla",
+     place: "Port Kembla",
+     scene: "Molten copper pours onto a SOFA in the new Port Kembla smelter and sets it glowing."}
+  - {year: 1909, peg: soap, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Mark Foy's emporium opens on Liverpool Street",
+     place: "Liverpool Street",
+     scene: "Shop girls hand out free SOAP at the opening of Mark Foy's grand emporium on Liverpool Street."}
+  - {year: 1910, peg: dice, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "The Sun newspaper starts to publish in Sydney",
+     scene: "Newsboys roll a DICE to decide who shouts the first edition of The Sun."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Cockatoo Island",
+     event: "Cockatoo Island goes to the Commonwealth as the navy's dockyard",
+     place: "Cockatoo Island",
+     scene: "State officials bury their dockyard keys in a TOMB and the navy takes Cockatoo Island."}
+  # society
+  - {year: 1851, peg: wallet, confidence: high, source: "NSW Parliament education / NMA (27 Sep)",
+     event: "Thomas Mitchell and Stuart Donaldson fight the last known duel in Australia",
+     scene: "Mitchell's third shot hits Donaldson's WALLET-sized hat and both duellists walk away alive."}
+  - {year: 1852, peg: lion, confidence: high, source: "University of Sydney: history (11 Oct)",
+     event: "University of Sydney is formally inaugurated, the first university in Australia",
+     scene: "A LION in an academic gown roars the University of Sydney open before its first students."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP: Sydney Cricket Ground",
+     event: "Soldiers open the Garrison cricket ground, the start of the Sydney Cricket Ground",
+     place: "Moore Park",
+     scene: "A LAWYER in a wig bowls the first ball on the soldiers' new cricket ground at Moore Park."}
+  - {year: 1854, peg: lawyer, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "St Paul's College, the first university college, is founded",
+     place: "University of Sydney",
+     scene: "A LAWYER signs the charter of St Paul's, the first college of the university."}
+  - {year: 1857, peg: log, confidence: high, source: "WP: Sydney Grammar School (3 Aug)",
+     event: "Sydney Grammar School opens in College Street",
+     place: "College Street",
+     scene: "Sydney Grammar boys sit on a LOG for their first Latin lesson in College Street."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "St Vincent's Hospital is founded by the Sisters of Charity",
+     place: "Potts Point",
+     scene: "Sisters of Charity roll a LOG to the door of the first St Vincent's Hospital to hold it open."}
+  - {year: 1857, peg: log, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "St John's College at the university is founded",
+     place: "University of Sydney",
+     scene: "Catholic students build St John's College from a LOG pile beside the university."}
+  - {year: 1860, peg: cheese, confidence: high, source: "SL NSW: Randwick meeting (May)",
+     event: "Australian Jockey Club holds its first race meeting at Randwick",
+     place: "Randwick Racecourse",
+     scene: "Horses chase a rolling CHEESE round the new Randwick track before six thousand people."}
+  - {year: 1863, peg: gem, confidence: high, source: "WP: Cockatoo Island",
+     event: "Captain Thunderbolt escapes from Cockatoo Island by swimming",
+     place: "Cockatoo Island",
+     scene: "Captain Thunderbolt swims off Cockatoo Island with a stolen GEM in his teeth."}
+  - {year: 1863, peg: gem, confidence: high, source: "Newington College timeline (Jul)",
+     event: "Newington College opens at Newington House, Silverwater",
+     place: "Silverwater",
+     scene: "Methodist ministers place a GEM on the first desk at Newington House on the Parramatta River."}
+  - {year: 1863, peg: gem, confidence: medium, source: "WP: History of Sydney",
+     event: "Sydney University Football Club is founded, the first rugby club in Australia",
+     place: "University of Sydney",
+     scene: "Students kick a GEM-shaped ball across the university lawn at the first rugby club practice."}
+  - {year: 1864, peg: cherry, confidence: high, source: "WP: History of Sydney",
+     event: "Composer Isaac Nathan dies after a fall from the Pitt Street horse tram",
+     place: "Pitt Street",
+     scene: "Isaac Nathan slips on a CHERRY on the tram step and falls to his death in Pitt Street."}
+  - {year: 1866, peg: judge, confidence: high, source: "Papers Past / SL NSW (Mar)",
+     event: "Nitroglycerine explodes in a Bridge Street warehouse and wrecks the shipping agents' store",
+     place: "Bridge Street",
+     scene: "A JUDGE drops a bottle of nitroglycerine in the Bridge Street store and the whole building blows apart."}
+  - {year: 1867, peg: jockey, confidence: high, source: "Hawkesbury Gazette (Jun)",
+     event: "Great Hawkesbury flood drowns twelve of the Eather family at Cornwallis",
+     place: "Cornwallis, Windsor",
+     scene: "A JOCKEY on a swimming horse tries to reach the Eather family on their roof as the Hawkesbury rises."}
+  - {year: 1867, peg: jockey, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Measles epidemic kills hundreds of young children",
+     scene: "A JOCKEY covered in red spots gallops through the city carrying the measles from house to house."}
+  - {year: 1867, peg: jockey, confidence: high, source: "WP: Rookwood Cemetery (7 Jan)",
+     event: "First official burial at the Haslem's Creek necropolis, later Rookwood",
+     place: "Rookwood",
+     scene: "A JOCKEY in black leads the hearse to the first grave at the new Haslem's Creek necropolis."}
+  - {year: 1874, peg: car, confidence: medium, source: "WP: History of Sydney",
+     event: "Southern Rugby Union forms and starts a club competition in Sydney",
+     scene: "Rugby players push a CAR across the park at the first meeting of the Southern Rugby Union."}
+  - {year: 1877, peg: cake, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Waverley Cemetery opens on the cliffs at Bronte",
+     place: "Bronte",
+     scene: "Mourners lay a CAKE on the first grave of the new Waverley Cemetery above the Bronte cliffs."}
+  - {year: 1878, peg: cave, confidence: medium, source: "WP: History of Sydney",
+     event: "First first-class cricket match at the Association Ground, New South Wales against Victoria",
+     place: "Moore Park",
+     scene: "Victoria's batsmen hide in a CAVE as New South Wales bowls in the first first-class match at Moore Park."}
+  - {year: 1878, peg: cave, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Speakers' Corner starts in the Domain",
+     place: "The Domain",
+     scene: "A speaker shouts from the mouth of a CAVE in the Domain and the first Speakers' Corner crowd gathers."}
+  - {year: 1879, peg: cowboy, confidence: high, source: "WP: Royal National Park (26 Apr)",
+     event: "National Park is set aside south of the city, the first national park in Australia",
+     place: "Audley, Port Hacking",
+     scene: "A COWBOY fences off the bush south of Port Hacking and nails up the sign NATIONAL PARK."}
+  - {year: 1879, peg: cowboy, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Jesuits found St Aloysius College",
+     scene: "A COWBOY rides into the first classroom of the Jesuits' St Aloysius College and takes off his hat."}
+  - {year: 1880, peg: vase, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Children's Hospital opens in Glebe",
+     place: "Glebe",
+     scene: "Nurses put flowers in a VASE beside the first cots of the new Children's Hospital in Glebe."}
+  - {year: 1880, peg: vase, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Jesuits open Saint Ignatius' College at Riverview on the Lane Cove River",
+     place: "Riverview",
+     scene: "A rowing crew carries a VASE of river water to the first classroom at Riverview."}
+  - {year: 1880, peg: vase, confidence: high, source: "WP: Garden Island",
+     event: "First lawn tennis court in Australia is built on Garden Island",
+     place: "Garden Island",
+     scene: "Navy officers hit a tennis ball into a VASE on the first lawn tennis court, on Garden Island."}
+  - {year: 1881, peg: foot, confidence: high, source: "NSW Health: smallpox (25 May)",
+     event: "Smallpox epidemic starts in Sydney",
+     scene: "A spotted FOOT steps off the steamer Brisbane and carries smallpox into the Sydney streets."}
+  - {year: 1882, peg: oven, confidence: high, source: "WP: Sydney Cricket Ground (17 Feb)",
+     event: "First Test cricket match at the Sydney ground; Australia beats England",
+     place: "Moore Park",
+     scene: "Australia bakes England in an OVEN of a February day at the first Sydney Test."}
+  - {year: 1882, peg: oven, confidence: high, source: "MHNSW: Garden Palace fire (22 Sep)",
+     event: "Fire destroys the Garden Palace and the records and collections in it",
+     place: "Royal Botanic Garden",
+     scene: "The timber Garden Palace burns like an OVEN in forty minutes and the census papers turn to ash."}
+  - {year: 1882, peg: oven, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Royal Easter Show moves to the new Moore Park showground",
+     place: "Moore Park",
+     scene: "Farmers bake prize loaves in a field OVEN at the first show on the Moore Park ground."}
+  - {year: 1883, peg: foam, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Sydney High School is founded",
+     scene: "Boys wash the blackboards of the new Sydney High School with soap FOAM on the first day."}
+  - {year: 1883, peg: foam, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Anderson Stuart starts the University of Sydney medical school",
+     place: "University of Sydney",
+     scene: "Anderson Stuart scrubs his hands in FOAM and gives the first lecture of the new medical school."}
+  - {year: 1886, peg: fish, confidence: high, source: "WP: Mount Rennie rape case (9 Sep)",
+     event: "Mount Rennie gang rape of a young woman in Moore Park",
+     place: "Moore Park",
+     scene: "Police haul the Waterloo push out of the Moore Park scrub like a net of FISH after the Mount Rennie attack."}
+  - {year: 1887, peg: fox, confidence: high, source: "WP: Mount Rennie rape case (7 Jan)",
+     event: "Four youths are hanged at Darlinghurst Gaol for the Mount Rennie rape",
+     place: "Darlinghurst Gaol",
+     scene: "A FOX watches from the wall of Darlinghurst Gaol as four Mount Rennie youths go to the gallows."}
+  - {year: 1887, peg: fox, confidence: high, source: "NSW Resources Regulator (23 Mar)",
+     event: "Bulli colliery gas explosion kills eighty-one men and boys",
+     place: "Bulli",
+     scene: "A FOX runs from the Bulli mine mouth seconds before the gas blast throws out fire and kills the miners."}
+  - {year: 1887, peg: fox, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Girls' industrial school opens at Parramatta, the later Parramatta Girls Home",
+     place: "Parramatta",
+     scene: "A FOX paces outside the high walls of the new girls' industrial school at Parramatta."}
+  - {year: 1888, peg: fife, confidence: high, source: "WP: Centennial Park, Sydney",
+     event: "Centennial Park opens for the colony's hundredth anniversary",
+     place: "Centennial Park",
+     scene: "A FIFE band leads crowds through the gates of the new Centennial Park on Anniversary Day."}
+  - {year: 1888, peg: fife, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Louisa Lawson founds The Dawn, a journal for women",
+     scene: "Louisa Lawson plays a FIFE to wake the women of Sydney with the first issue of The Dawn."}
+  - {year: 1889, peg: fob, confidence: high, source: "NSW Act / NSW Heritage (21 Sep)",
+     event: "Act of Parliament founds the Women's College within the University of Sydney",
+     place: "University of Sydney",
+     scene: "A woman graduate hangs the Women's College charter on her watch FOB and walks into the university."}
+  - {year: 1889, peg: fob, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Sydney Church of England Grammar School, Shore, is founded",
+     place: "North Sydney",
+     scene: "The first Shore headmaster checks his FOB watch and rings the bell in North Sydney."}
+  - {year: 1891, peg: boot, confidence: high, source: "WP / WSU: Hawkesbury Agricultural College",
+     event: "Hawkesbury Agricultural College opens at Richmond",
+     place: "Richmond",
+     scene: "Students pull on a farm BOOT each and plough the first field at the new Hawkesbury Agricultural College."}
+  - {year: 1891, peg: boot, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Womanhood Suffrage League forms in Sydney with Mary Windeyer as president",
+     scene: "Mary Windeyer stamps her BOOT on the platform and opens the Womanhood Suffrage League."}
+  - {year: 1892, peg: piano, confidence: high, source: "WP: John and Sarah Makin (Oct)",
+     event: "Police find babies' bodies in the Makins' backyard at Macdonaldtown",
+     place: "Burren Street, Macdonaldtown",
+     scene: "Police dig under a broken PIANO in the Macdonaldtown yard and find the babies the Makins buried."}
+  - {year: 1892, peg: piano, confidence: high, source: "Women's College / womenaustralia.info",
+     event: "Women's College opens with Louisa Macdonald as principal",
+     place: "Strathmore, Glebe",
+     scene: "Louisa Macdonald plays the PIANO to welcome four students to the new Women's College."}
+  - {year: 1892, peg: piano, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Great Public Schools athletic association is founded",
+     scene: "Schoolboys race round a PIANO at the first sports meeting of the Great Public Schools."}
+  - {year: 1893, peg: palm, confidence: high, source: "WP: John and Sarah Makin (9 Mar)",
+     event: "Jury finds the baby farmers John and Sarah Makin guilty of murder",
+     place: "Darlinghurst Courthouse",
+     scene: "The judge puts his PALM on the Bible and sentences the Makins to death for murdering the infants."}
+  - {year: 1893, peg: palm, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Royal Sydney Golf Club is founded",
+     place: "Rose Bay",
+     scene: "Golfers tee off from a PALM tree on the first day of the Royal Sydney Golf Club."}
+  - {year: 1894, peg: bear, confidence: high, source: "ADB: Du Faur / Pittwater Online (Jun)",
+     event: "Ku-ring-gai Chase is reserved as a national park after Eccleston Du Faur's campaign",
+     place: "Ku-ring-gai Chase",
+     scene: "A BEAR hugs Eccleston Du Faur as he fences off the Ku-ring-gai bush as a park."}
+  - {year: 1895, peg: bell, confidence: high, source: "WP: La Perouse Mission Church",
+     event: "Seven acres at La Perouse become an Aboriginal reserve, the only one in Sydney",
+     place: "La Perouse",
+     scene: "A BELL rings at La Perouse as the government fences seven acres as Sydney's only Aboriginal reserve."}
+  - {year: 1896, peg: peach, confidence: high, source: "WP: Parramatta",
+     event: "Snow falls on Parramatta",
+     place: "Parramatta",
+     scene: "Snow covers a PEACH tree in a Parramatta orchard, a rare sight on the plains."}
+  - {year: 1900, peg: sauce, confidence: high, source: "WP: Katoomba (5 Jul)",
+     event: "Snowdrifts more than a man's height block parts of the Blue Mountains",
+     place: "Katoomba",
+     scene: "A Katoomba cook pours hot SAUCE on the snowdrifts but they stay higher than his head."}
+  - {year: 1901, peg: soda, confidence: high, source: "SL NSW / Papers Past (10 Jul)",
+     event: "Fire destroys Anthony Hordern and Sons' Haymarket store; people die",
+     place: "Haymarket",
+     scene: "Firemen spray SODA water at Hordern's Haymarket store but the whole block burns."}
+  - {year: 1901, peg: soda, confidence: medium, source: "Inner West Council / ADB: Stanton",
+     event: "Richard Stanton starts Haberfield as a garden suburb of Federation houses",
+     place: "Haberfield",
+     scene: "Richard Stanton toasts with SODA as his first Haberfield garden-suburb lots go up for sale."}
+  - {year: 1901, peg: soda, confidence: high, source: "WP: Central railway station",
+     event: "Removal of graves from the Devonshire Street cemetery starts for the new Central station",
+     place: "Devonshire Street, Surry Hills",
+     scene: "Gravediggers lift coffins from Devonshire Street and pass a SODA bottle around in the heat."}
+  - {year: 1901, peg: soda, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Royal Australian Historical Society is founded",
+     scene: "Historians open a dusty SODA bottle from the convict era at the first meeting of their society."}
+  - {year: 1903, peg: sumo, confidence: medium, source: "WP: Quong Tart (sources differ)",
+     event: "Quong Tart dies months after a robber beats him in his Queen Victoria Building office",
+     place: "Queen Victoria Building",
+     scene: "A robber hits Quong Tart like a SUMO wrestler in his QVB office and the tea merchant never recovers."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: 1907 bathing costume protests (20 Oct)",
+     event: "Men wear skirts at Bondi, Manly and Coogee to mock Waverley's bathing costume rule",
+     place: "Bondi Beach",
+     scene: "Men in frilly skirts carry a SKI down Bondi Beach to laugh at Waverley Council's costume rule."}
+  - {year: 1907, peg: ski, confidence: high, source: "WP: History of Sydney",
+     event: "New South Wales Rugby League is founded",
+     scene: "Rugby rebels carve NSW RUGBY LEAGUE on a SKI and slide away from the old union."}
+  - {year: 1907, peg: ski, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Wylie's Baths opens on the rocks at Coogee",
+     place: "Coogee",
+     scene: "Henry Wylie's daughter dives off a SKI board into his new rock pool at Coogee."}
+  - {year: 1908, peg: sofa, confidence: high, source: "MHNSW / Woollahra plaque (26 Dec)",
+     event: "Jack Johnson beats Tommy Burns for the world heavyweight title at Sydney Stadium",
+     place: "Rushcutters Bay",
+     scene: "Jack Johnson punches Tommy Burns onto a SOFA at Rushcutters Bay and takes the world title."}
+  - {year: 1912, peg: tongue, confidence: high, source: "NSW State Archives / AHURI (6 Jun)",
+     event: "Work starts on Daceyville, the first public housing estate in Australia",
+     place: "Daceyville",
+     scene: "A bulldozer TONGUE licks away the sand dunes at Daceyville for the first public housing estate."}
+  - {year: 1912, peg: tongue, confidence: medium, source: "WP: Timeline of Sydney",
+     event: "Natural living advocate William Chidley is declared insane and sent to Callan Park",
+     place: "Callan Park, Rozelle",
+     scene: "William Chidley, in his short silk tunic, sticks out his TONGUE at the court that sends him to Callan Park."}
+  - {year: 1913, peg: tomb, confidence: high, source: "Parliament of Australia FlagPost (Jul)",
+     event: "Smallpox epidemic: the Commonwealth puts Sydney under quarantine",
+     scene: "Health officers seal the city like a TOMB and no one leaves Sydney without a vaccination paper."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Parramatta",
+     event: "Parramatta High School opens, the first coeducational high school in Sydney",
+     place: "Parramatta",
+     scene: "Boys and girls climb out of a TOMB of old rules into the same classroom at Parramatta High."}
+  - {year: 1913, peg: tomb, confidence: high, source: "WP: Rookwood Cemetery",
+     event: "Rookwood village is renamed Lidcombe",
+     place: "Lidcombe",
+     scene: "Villagers tired of living beside a TOMB city paint over ROOKWOOD and write LIDCOMBE."}
+world_refs:
+  - {year: 1855, event: "Sydney Mint opens", cell: oceania_economy_1800_1945}
+  - {year: 1855, event: "First railway in New South Wales: Sydney to Parramatta", cell: oceania_economy_1800_1945}
+  - {year: 1855, event: "Sydney stonemasons win the eight-hour day", cell: oceania_society_1800_1945}
+  - {year: 1857, event: "Polding founds the Sisters of the Good Samaritan", cell: oceania_religion_1800_1945}
+  - {year: 1858, event: "Sydney Observatory drops its time ball for the first time", cell: oceania_science_1800_1945}
+  - {year: 1861, event: "Tebbutt discovers the Great Comet at Windsor", cell: oceania_science_1800_1945}
+  - {year: 1866, event: "Royal Society of New South Wales takes its name", cell: oceania_science_1800_1945}
+  - {year: 1868, event: "St Andrew's Anglican Cathedral is consecrated", cell: oceania_religion_1800_1945}
+  - {year: 1868, event: "Foundation stone of the new St Mary's Cathedral", cell: oceania_religion_1800_1945}
+  - {year: 1874, event: "New South Wales Academy of Art holds its first exhibition", cell: oceania_arts_1800_1945}
+  - {year: 1874, event: "Linnean Society of New South Wales is founded", cell: oceania_science_1800_1945}
+  - {year: 1876, event: "Trans-Tasman telegraph cable opens from La Perouse", cell: oceania_science_1800_1945}
+  - {year: 1878, event: "First performance of Advance Australia Fair in Sydney", cell: oceania_arts_1800_1945}
+  - {year: 1878, event: "Great Synagogue of Sydney opens", cell: oceania_religion_1800_1945}
+  - {year: 1878, event: "Miklouho-Maclay's marine station at Watsons Bay is approved", cell: oceania_science_1800_1945}
+  - {year: 1878, event: "Seamen strike against Chinese crews on ASN ships", cell: oceania_society_1800_1945}
+  - {year: 1879, event: "Garden Palace is built for the Sydney International Exhibition", cell: oceania_arts_1800_1945}
+  - {year: 1879, event: "Mataatua meeting house is shipped to the Sydney exhibition", cell: oceania_arts_1800_1945}
+  - {year: 1879, event: "First intercolonial trade union congress meets in Sydney", cell: oceania_society_1800_1945}
+  - {year: 1880, event: "First issue of The Bulletin", cell: oceania_arts_1800_1945}
+  - {year: 1880, event: "Art Gallery of New South Wales opens in a Garden Palace annexe", cell: oceania_arts_1800_1945}
+  - {year: 1882, event: "First section of the new St Mary's Cathedral is dedicated", cell: oceania_religion_1800_1945}
+  - {year: 1885, event: "First Plenary Council of Australasia opens at St Mary's", cell: oceania_religion_1800_1945}
+  - {year: 1888, event: "First meeting of the Australasian Association for the Advancement of Science", cell: oceania_science_1800_1945}
+  - {year: 1888, event: "Loir's Pasteur team tests chicken cholera on rabbits at Rodd Island", cell: oceania_science_1800_1945}
+  - {year: 1889, event: "Hargrave builds his rotary engine", cell: oceania_science_1800_1945}
+  - {year: 1890, event: "Maritime strike", cell: oceania_society_1800_1945}
+  - {year: 1891, event: "National Australasian Convention drafts a constitution", cell: oceania_politics_1800_1945}
+  - {year: 1891, event: "Streeton paints Fire's On at Lapstone", cell: oceania_arts_1800_1945}
+  - {year: 1893, event: "Banking crisis: banks fail or close their doors", cell: oceania_economy_1800_1945}
+  - {year: 1893, event: "Hargrave invents the box kite", cell: oceania_science_1800_1945}
+  - {year: 1894, event: "Stanwell Park: box kites lift Hargrave", cell: oceania_science_1800_1945}
+  - {year: 1894, event: "Ethel Turner's Seven Little Australians is published", cell: oceania_arts_1800_1945}
+  - {year: 1896, event: "Salon Lumiere shows the Manly ferry film", cell: oceania_arts_1800_1945}
+  - {year: 1896, event: "Streeton paints The purple noon's transparent might", cell: oceania_arts_1800_1945}
+  - {year: 1896, event: "Walter Withers wins the first Wynne Prize", cell: oceania_arts_1800_1945}
+  - {year: 1897, event: "First stage of Vernon's Art Gallery of New South Wales opens", cell: oceania_arts_1800_1945}
+  - {year: 1898, event: "Queen Victoria Building opens", cell: oceania_arts_1800_1945}
+  - {year: 1900, event: "Ashburton Thompson finds the plague bacillus in fleas from Sydney rats", cell: oceania_science_1800_1945}
+  - {year: 1900, event: "Bubonic plague reaches Sydney", cell: oceania_society_1800_1945}
+  - {year: 1901, event: "Federation: the Commonwealth begins (Centennial Park ceremony)", cell: oceania_politics_1800_1945}
+  - {year: 1902, event: "Mount Kembla mine explosion", cell: oceania_society_1800_1945}
+  - {year: 1902, event: "William Gocher swims at Manly in daylight", cell: oceania_society_1800_1945}
+  - {year: 1903, event: "All Blacks win their first rugby Test, at Sydney", cell: oceania_society_1800_1945}
+  - {year: 1906, event: "Bondi: Ormsby demonstrates the surf life-saving reel", cell: oceania_science_1800_1945}
+  - {year: 1907, event: "Bondi Surf Bathers' Life Saving Club forms", cell: oceania_society_1800_1945}
+  - {year: 1908, event: "First season of New South Wales rugby league", cell: oceania_society_1800_1945}
+  - {year: 1909, event: "Mary MacKillop dies in North Sydney", cell: oceania_religion_1800_1945}
+  - {year: 1909, event: "Defries makes the first powered flight in Australia at Victoria Park", cell: oceania_science_1800_1945}
+out_refs:
+  - {year: 1851, event: "Victoria separates from New South Wales", reason: "colonial boundary"}
+  - {year: 1856, event: "First NSW Parliament under responsible government opens in Macquarie Street", reason: "colonial parliament"}
+  - {year: 1858, event: "Municipalities Act lets districts outside the city incorporate", reason: "colony-wide law"}
+  - {year: 1859, event: "Queensland separates from New South Wales", reason: "colonial boundary"}
+  - {year: 1861, event: "Robertson Land Acts", reason: "colony-wide law"}
+  - {year: 1866, event: "Public Schools Act", reason: "colony-wide law"}
+  - {year: 1870, event: "Last British garrison troops leave Victoria Barracks", reason: "imperial army"}
+  - {year: 1880, event: "Public Instruction Act", reason: "colony-wide law"}
+  - {year: 1883, event: "Aborigines Protection Board is set up", reason: "colonial government"}
+  - {year: 1891, event: "Labor Electoral League wins its first seats in the NSW Parliament", reason: "colonial elections"}
+  - {year: 1899, event: "First NSW contingent sails from Sydney for the Boer War", reason: "colonial army"}
+  - {year: 1899, event: "NSW votes yes in the second federation referendum", reason: "colonial referendum"}
+  - {year: 1902, event: "Womanhood Suffrage Act gives NSW women the state vote", reason: "state law"}
+  - {year: 1906, event: "Shires Act creates Sutherland, Hornsby, Warringah and other shires", reason: "state law"}
+  - {year: 1909, event: "Aborigines Protection Act", reason: "state law"}
+  - {year: 1912, event: "Housing Act sets up the NSW Housing Board", reason: "state law"}
