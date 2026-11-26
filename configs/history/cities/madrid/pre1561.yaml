@@ -1,0 +1,686 @@
+# City: Madrid x before 1561 (prehistory of the Manzanares, Jarama and Lozoya valleys, the Carpetani, Roman
+# Complutum, Visigothic sites, Muslim Mayrit and Talamanca, the Christian conquest, the fueros, medieval Madrid and
+# Alcala, Cisneros's university and the Polyglot Bible, the Comuneros, Charles V's works; the court arrives in
+# the next era). DRAFT 2026-11-25.
+# Area: the Community of Madrid (Madrid city with El Pardo, Alcala de Henares, El Escorial, Aranjuez, Chinchon,
+# Getafe, Leganes, Alcobendas, Mostoles, Talamanca, Buitrago, Manzanares el Real, the Lozoya valley).
+# Toledo, Segovia, Guadalajara and Avila are OUT.
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Before 1561 the court
+# travels: Cortes, royal births, deaths and stays, and treaties -> out_refs. World-grid events -> world_refs.
+# Dates: memory pass + web check (33 of 40 searches; no unauthorised book copies). Julian calendar
+# (no date here is near a year end). Hijri dates converted (stele 308 AH -> 921).
+# Main sources: es.wikipedia.org (Historia de Madrid, Mayrit, Real Alcazar de Madrid, Muralla cristiana and
+# musulmana, Cerca del Arrabal, Fuero de Madrid, Historia de Alcala de Henares, Complutum, Universidad de
+# Alcala, Colegio de San Ildefonso, Biblia Poliglota, Talamanca de Jarama, Buitrago, Chinchon, Aranjuez,
+# El Pardo, El Paular, Manzanares el Real, San Pedro el Viejo, Capilla del Obispo, San Jeronimo el Real,
+# Descalzas Reales, San Felipe el Real, Hospital de Anton Martin, Hospital de Antezana, Isidro Labrador,
+# Escudo de Madrid, Leganes, Alcobendas, Mostoles, Calatalifa); en.wikipedia.org (History of Madrid,
+# Timeline of Madrid, Almoravid campaign 1109); comunidad.madrid (Pinilla del Valle, Valdocarros, Llano de
+# la Horca); Al-Qantara 2015 (Mayrit stele); madrid.es; cisneros.web.uah.es; themakingofmadrid.com.
+# Range -> conventional c. date; one work of uncertain date -> midpoint; a phase -> its start.
+# >= 10,000 years -> years_ago (peg = first two digits). Approximate year ending 00 -> first two digits
+# (under 1000: year // 10). Peg: last two digits of the year otherwise.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: -82, peg: oven, confidence: medium, source: "comunidad.madrid: Llano de la Horca (82-72 BC)",
+     event: "Llano de la Horca, Santorcaz: the Carpetan town rebuilds its defences in the Sertorian war (approximate)",
+     place: "Llano de la Horca, Santorcaz",
+     scene: "Carpetan builders stack mud bricks inside a giant OVEN to bake hard new walls for Llano de la Horca against Sertorius's armies."}
+  - {year: 74, peg: car, confidence: medium, source: "es.WP Historia de Alcala (edict of Vespasian, 74)",
+     event: "Complutum becomes a municipium by an edict of Vespasian",
+     place: "Forum of Complutum",
+     scene: "Vespasian's edict rides into Complutum on a CAR, and the townsmen climb in as new citizens of a municipium."}
+  - {year: 860, peg: cheese, confidence: medium, source: "es.WP Talamanca de Jarama (860)",
+     event: "Talamanca: emir Muhammad I builds the first defensive wall of Talamanka",
+     place: "Talamanca de Jarama",
+     scene: "Muhammad I's masons build Talamanka's first wall from giant blocks of CHEESE along the Jarama bank."}
+  - {year: 861, peg: jet, confidence: medium, source: "es.WP Talamanca de Jarama (861)",
+     event: "Christian troops under Count Rodrigo take Talamanka and kill many of its people",
+     place: "Talamanca de Jarama",
+     scene: "Count Rodrigo's army lands on Talamanka in a war JET and storms the walls, killing the people inside."}
+  - {year: 870, peg: goose, confidence: medium, source: "es.WP Mayrit; Real Alcazar (860-880, Muhammad I)",
+     event: "Mayrit: emir Muhammad I builds a fortress and wall on the bluff above the Manzanares (approximate)",
+     place: "Cuesta de la Vega",
+     scene: "A giant GOOSE lays the first stones of Mayrit's fortress on the bluff above the Manzanares for emir Muhammad I."}
+  - {year: 932, peg: moon, confidence: medium, source: "es.WP Mayrit; Muralla musulmana (932)",
+     event: "Ramiro II of Leon attacks Mayrit and pulls down its walls",
+     place: "Muslim wall, Mayrit",
+     scene: "Ramiro II rides a MOON down onto Mayrit at night and the falling moon knocks the fortress walls flat."}
+  - {year: 970, peg: goose, confidence: medium, source: "es.WP Alcala la Vieja (late 10th c., al-Hakam II)",
+     event: "Alcala la Vieja: a Muslim watchtower rises on the cliff over the Henares, later the fortress of Qal'at Abd al-Salam (approximate)",
+     place: "Alcala la Vieja",
+     scene: "A GOOSE stands on one leg on the Henares cliff as a living watchtower, the first stone of Qal'at Abd al-Salam."}
+  - {year: 1060, peg: cheese, confidence: low, source: "es.WP Chinchon (1060, Fernando I)",
+     event: "Fernando I of Leon takes Chinchon from the Muslims",
+     place: "Chinchon",
+     scene: "Fernando I rolls a giant wheel of CHEESE up the Chinchon hill and crushes the Muslim gate."}
+  - {year: 1062, peg: chain, confidence: medium, source: "es.WP Talamanca de Jarama (1062)",
+     event: "Fernando I's troops make the first assault on Talamanka",
+     place: "Talamanca de Jarama",
+     scene: "Fernando I's soldiers swing an iron CHAIN over Talamanka's wall and haul themselves up in the first assault."}
+  - {year: 1079, peg: cowboy, confidence: medium, source: "es.WP Talamanca (c. 1079; Madoz 1083-1084)",
+     event: "Alfonso VI's troops enter Talamanka (approximate)",
+     place: "Talamanca de Jarama",
+     scene: "A COWBOY in Alfonso VI's colours lassoes Talamanka's gate and drags it open for the Castilian troops."}
+  - {year: 1083, peg: foam, confidence: disputed, source: "es.WP Real Alcazar, Comunidad (1083); es.WP Mayrit (1085)",
+     event: "Alfonso VI takes Mayrit, probably by surrender, on his way to Toledo",
+     place: "Puerta de la Vega",
+     scene: "Mayrit's garrison waves white FOAM from the walls, and Alfonso VI rides in without a fight."}
+  - {year: 1109, peg: soap, confidence: medium, source: "en.WP Almoravid campaign 1109; es.WP Mayrit (fire)",
+     event: "Almoravid troops of Ali ibn Yusuf attack Madrid and burn the town",
+     place: "Campo del Moro",
+     scene: "Ali ibn Yusuf's Almoravids pour boiling SOAP over the walls and set the town alight below the Alcazar."}
+  - {year: 1118, peg: dove, confidence: high, source: "es.WP Historia de Alcala (3 May)",
+     event: "Archbishop Bernard of Toledo takes Qal'at Abd al-Salam, Alcala, for Castile",
+     place: "Alcala la Vieja",
+     scene: "Archbishop Bernard releases a white DOVE over Qal'at Abd al-Salam, and the Muslim garrison opens the gate to Castile."}
+  - {year: 1123, peg: gnome, confidence: medium, source: "es.WP Mayrit, Historia de Madrid (1123)",
+     event: "Madrid receives the title of villa and a royal charter of privileges",
+     place: "Puerta de Guadalajara",
+     scene: "A GNOME in royal livery hammers the word villa onto Madrid's gate and hands the council its charter."}
+  - {year: 1129, peg: knob, confidence: medium, source: "es.WP Historia de Alcala (1129)",
+     event: "Alfonso VII gives Alcala and its land to the archbishops of Toledo as a lordship",
+     place: "Alcala de Henares",
+     scene: "Alfonso VII turns a brass KNOB on Alcala's town gate and hands the key to the archbishop of Toledo."}
+  - {year: 1135, peg: mill, confidence: medium, source: "uah.es / UCM (Raimundo, Latin fuero 1135)",
+     event: "Alcala: Archbishop Raimundo gives the town its first Latin fuero, the Fuero Viejo",
+     place: "Alcala de Henares",
+     scene: "Archbishop Raimundo grinds the Fuero Viejo of Alcala out of a stone MILL, one Latin law per turn."}
+  - {year: 1152, peg: lion, confidence: medium, source: "UCM (1 May, Toledo); Alfonso VII privilege",
+     event: "Alfonso VII gives Madrid the forests and hills between Madrid and Segovia up to the sierra crest",
+     place: "Sierra de Guadarrama",
+     scene: "A LION sent by Alfonso VII paces the Guadarrama crest and roars that every slope below now belongs to Madrid."}
+  - {year: 1176, peg: cage, confidence: medium, source: "UCM (31 January, Toledo)",
+     event: "Alfonso VIII confirms Madrid's sierra lands and orders the border with Segovia marked",
+     place: "Sierra de Guadarrama",
+     scene: "Alfonso VIII locks the Segovian claims in an iron CAGE and sets it on the new border stones of Madrid's sierra."}
+  - {year: 1188, peg: fife, confidence: medium, source: "es.WP Talamanca de Jarama (1188)",
+     event: "Alfonso VIII gives Talamanca to the Church of Toledo",
+     place: "Talamanca de Jarama",
+     scene: "Alfonso VIII plays a FIFE as he leads the Talamanca villagers over to the canons of Toledo."}
+  - {year: 1197, peg: pig, confidence: medium, source: "es.WP Mayrit (1197); Historia de Alcala (last raid 1197)",
+     event: "Almohad troops besiege Madrid in their last raid on the Henares lands",
+     place: "Christian wall of Madrid",
+     scene: "A giant PIG in Almohad armour circles Madrid's walls for days, then trots back south in the last Muslim raid."}
+  - {year: 1202, peg: sun, confidence: high, source: "es.WP Fuero de Madrid (1202; caption 1211)",
+     event: "Alfonso VIII grants the Fuero de Madrid, the town's law code",
+     place: "Iglesia de San Salvador",
+     scene: "The SUN shines through the parchment of the Fuero de Madrid as Alfonso VIII seals Madrid's own law code."}
+  - {year: 1214, peg: tower, confidence: medium, source: "es.WP Talamanca de Jarama (1214)",
+     event: "Queen Berenguela gives Talamanca and fifty villages to Archbishop Jimenez de Rada",
+     place: "Talamanca de Jarama",
+     scene: "Berenguela stacks Talamanca and its fifty villages in a TOWER of baskets and hands it to Jimenez de Rada."}
+  - {year: 1222, peg: nun, confidence: medium, source: "es.WP Escudo de Madrid (1202 dispute, 1222 agreement)",
+     event: "Madrid's council and clergy settle their pasture dispute; the bear and the strawberry tree join in the town arms",
+     place: "Iglesia de San Salvador",
+     scene: "A NUN shares the strawberry tree with the council's bear, and the pasture quarrel ends on Madrid's shield."}
+  - {year: 1223, peg: gnome, confidence: disputed, source: "UCM / uah.es (1223; es.WP Historia de Alcala 1235)",
+     event: "Alcala: Archbishop Jimenez de Rada sets down the town fuero in Castilian",
+     place: "Palacio Arzobispal, Alcala",
+     scene: "A GNOME scribe copies Alcala's Latin fuero into Castilian at Jimenez de Rada's elbow."}
+  - {year: 1262, peg: chain, confidence: medium, source: "es.WP Fuero de Madrid; Comunidad de Madrid (1262)",
+     event: "Alfonso X gives Madrid the Fuero Real in place of its old fuero",
+     place: "Madrid",
+     scene: "Alfonso X wraps the old Fuero de Madrid in a CHAIN and lays his Fuero Real on top of it."}
+  - {year: 1275, peg: eagle, confidence: low, source: "UCM / MAPA article (1275)",
+     event: "Alfonso X takes the disputed Real de Manzanares under royal protection against Madrid and Segovia",
+     place: "Manzanares el Real",
+     scene: "An EAGLE of Alfonso X spreads its wings over the Real de Manzanares, and Madrid and Segovia both step back."}
+  - {year: 1346, peg: roach, confidence: high, source: "UNED/UCM (Segovia 1345, Madrid 1346, twelve regidores)",
+     event: "Alfonso XI replaces Madrid's open council with the regimiento of twelve regidores",
+     place: "Iglesia de San Salvador",
+     scene: "Twelve regidores climb out of a ROACH nest that Alfonso XI tips onto the council bench, and the open assembly ends."}
+  - {year: 1348, peg: reef, confidence: medium, source: "es.WP Historia de Madrid (Cortes de Alcala)",
+     event: "Alfonso XI puts Madrid among the towns with a vote in the Cortes",
+     place: "Alcala de Henares",
+     scene: "Alfonso XI pins a coral REEF badge on Madrid's proctor: one of the towns that now vote in the Cortes."}
+  - {year: 1368, peg: chef, confidence: medium, source: "es.WP Leganes (1368, Domingo Munoz)",
+     event: "Domingo Munoz of Leganes opens a gate of Madrid to the troops of Enrique II",
+     place: "Puerta de Moros",
+     scene: "Domingo Munoz dresses as a CHEF, carries a pot through Madrid's gate and leaves it open for Enrique II's men."}
+  - {year: 1368, peg: chef, confidence: medium, source: "es.WP Buitrago del Lozoya (1368)",
+     event: "Enrique II gives the lordship of Buitrago to Pedro Gonzalez de Mendoza",
+     place: "Buitrago del Lozoya",
+     scene: "A CHEF serves Buitrago on a silver platter to Pedro Gonzalez de Mendoza, Enrique II's reward."}
+  - {year: 1369, peg: ship, confidence: medium, source: "es.WP Alcobendas (1369)",
+     event: "Enrique II gives the village of Alcobendas to Pedro Gonzalez de Mendoza",
+     place: "Alcobendas",
+     scene: "Pedro Gonzalez de Mendoza sails a SHIP into Alcobendas: Enrique II's war prize after the fight with Pedro I."}
+  - {year: 1383, peg: foam, confidence: disputed, source: "es.WP Historia de Madrid, en.WP (1383); es.WP Leon V (Aug 1384)",
+     event: "Juan I gives the lordship of Madrid to the exiled King Leo V of Armenia",
+     place: "Alcazar de Madrid",
+     scene: "Leo V of Armenia rides into Madrid on a wave of FOAM, and Juan I hands him the town's lordship."}
+  - {year: 1405, peg: seal, confidence: low, source: "Real Alcazar studies (c. 1390 rebuild, c. 1405 new towers)",
+     event: "Enrique III raises new towers on the Alcazar of Madrid (approximate)",
+     place: "Alcazar de Madrid",
+     scene: "A SEAL balances each new tower on its nose and sets it on the Alcazar walls for Enrique III."}
+  - {year: 1412, peg: tongue, confidence: medium, source: "es.WP Muralla cristiana de Madrid (1412)",
+     event: "Rioters destroy the Puerta de Moros of Madrid",
+     place: "Puerta de Moros",
+     scene: "Rioters use a giant TONGUE to lick the Puerta de Moros until its stones collapse into the street."}
+  - {year: 1438, peg: movie, confidence: disputed, source: "es.WP Cerca del Arrabal (c. 1438; others 1454-1474)",
+     event: "Madrid builds the Cerca del Arrabal round its new suburbs during an epidemic",
+     place: "Cerca del Arrabal",
+     scene: "A MOVIE camera films the new suburb wall going up round the Arrabal, to keep the plague out."}
+  - {year: 1442, peg: rhino, confidence: medium, source: "UCM (regidores reduced by Juan II, 1442)",
+     event: "Juan II cuts the number of Madrid's regidores",
+     place: "Iglesia de San Salvador",
+     scene: "A RHINO charges through Madrid's council chamber and knocks several regidores off the bench for Juan II."}
+  - {year: 1464, peg: cherry, confidence: low, source: "UCM: Regimiento madrileno (1464-1515); Archivo de Villa",
+     event: "Madrid's council begins its oldest surviving book of acuerdos, the minutes of its meetings",
+     place: "Iglesia de San Salvador",
+     scene: "The town clerk writes the first council minutes in CHERRY juice; the oldest Libro de Acuerdos opens."}
+  - {year: 1475, peg: eagle, confidence: medium, source: "es.WP Castillo de Manzanares el Real (works by June 1475)",
+     event: "Manzanares el Real: the Mendoza begin the new castle beside the reservoir lands",
+     place: "Manzanares el Real",
+     scene: "An EAGLE carries stones from the old castle and builds the Mendoza's new castle at Manzanares el Real."}
+  - {year: 1476, peg: cage, confidence: medium, source: "es.WP, en.WP Real Alcazar (1476)",
+     event: "Followers of Juana la Beltraneja hold the Alcazar of Madrid under siege by Isabella's side",
+     place: "Alcazar de Madrid",
+     scene: "Isabella's men lock the Alcazar in a giant CAGE while Juana's followers shoot back through the bars."}
+  - {year: 1480, peg: vase, confidence: medium, source: "es.WP Chinchon (1480)",
+     event: "Chinchon becomes the lordship of Andres Cabrera and Beatriz de Bobadilla",
+     place: "Chinchon",
+     scene: "Beatriz de Bobadilla receives Chinchon in a VASE from Isabella and sets it on her table as her new lordship."}
+  - {year: 1489, peg: fob, confidence: medium, source: "es.WP Real Sitio de Aranjuez (1489)",
+     event: "The Order of Santiago's lands at Aranjuez pass to the crown",
+     place: "Aranjuez",
+     scene: "A FOB watch of the Order of Santiago clicks open at Aranjuez, and the crown's key fits it."}
+  - {year: 1509, peg: soap, confidence: high, source: "es.WP Historia de Alcala; uah.es Fuero Nuevo (1509)",
+     event: "Cisneros gives Alcala its Fuero Nuevo, the town law until the end of the old regime",
+     place: "Alcala de Henares",
+     scene: "Cisneros washes the Fuero Viejo with SOAP until the new text of the Fuero Nuevo shows through."}
+  - {year: 1520, peg: nose, confidence: high, source: "en.WP History of Madrid (by 17 June); madrid.es",
+     event: "Comuneros depose Madrid's corregidor Antonio de Astudillo",
+     place: "Iglesia de San Salvador",
+     scene: "A comunero tweaks the corregidor Astudillo by the NOSE and marches him out of Madrid's council."}
+  - {year: 1520, peg: nose, confidence: medium, source: "es.WP Real Alcazar; madrid.es (Vargas, Maria de Lago)",
+     event: "Comuneros besiege the Alcazar of Madrid; Maria de Lago, the alcaide's wife, holds it until it falls",
+     place: "Alcazar de Madrid",
+     scene: "Maria de Lago sniffs the smoke with a giant NOSE from the Alcazar tower and holds out until the comuneros break in."}
+  - {year: 1520, peg: nose, confidence: medium, source: "es.WP Chinchon (1520)",
+     event: "Comuneros destroy the castle of Chinchon",
+     place: "Chinchon",
+     scene: "Comuneros ram the Chinchon castle with a giant stone NOSE until the walls fall."}
+  - {year: 1521, peg: ant, confidence: medium, source: "es.WP Historia de Madrid (June 1521)",
+     event: "After Villalar the royal army enters Madrid and ends the comunero rule",
+     place: "Puerta de Guadalajara",
+     scene: "A giant ANT leads the royal army through the Puerta de Guadalajara and carries off the comunero council."}
+  - {year: 1525, peg: nail, confidence: high, source: "en.WP: Francis I of France (captivity in Madrid 1525-1526); es.WP: Torre de los Lujanes",
+     event: "Francis I of France, taken at Pavia, is held prisoner in Madrid",
+     place: "Torre de los Lujanes and the Alcázar",
+     scene: "Francis I hammers a NAIL into the door of his cell in the Torre de los Lujanes and counts his days."}
+  - {year: 1535, peg: mill, confidence: medium, source: "es.WP Muralla cristiana (c. 1535)",
+     event: "Charles I pulls down the old Puerta de Guadalajara and builds a richer gate (approximate)",
+     place: "Puerta de Guadalajara",
+     scene: "A water MILL grinds the old Puerta de Guadalajara to dust, and Charles I's new gate rises from the flour."}
+  - {year: 1539, peg: map, confidence: medium, source: "es.WP Cerca del Arrabal (1539)",
+     event: "The Puerta del Sol gate is pulled down",
+     place: "Puerta del Sol",
+     scene: "Workers spread a MAP of the new street over the Puerta del Sol and pull the gate down to match it."}
+  - {year: 1544, peg: warrior, confidence: disputed, source: "en.WP Coat of arms (1544); es.WP (1554; note 1548)",
+     event: "Charles V names Madrid Imperial and Coronada, and a crown joins the town arms",
+     place: "Iglesia de San Salvador",
+     scene: "A WARRIOR of Charles V sets a crown on the strawberry tree of Madrid's shield: Imperial and Coronada."}
+  # science
+  - {year: 76, peg: cage, confidence: medium, source: "UCM OBMD; Muy Interesante (76-77, milestone)",
+     event: "Roman road over the Fuenfria pass, Cercedilla, is built on the way from Titulcia to Segovia (approximate)",
+     place: "Fuenfria valley, Cercedilla",
+     scene: "Roman engineers lay the Fuenfria road stone by stone from a CAGE of paving slabs hauled up the pass."}
+  - {year: 100, peg: dice, confidence: low, source: "es.WP Talamanca de Jarama (1st or 2nd century)",
+     event: "Talamanca: Romans build a stone bridge over the Jarama (approximate)",
+     place: "Puente romano, Talamanca",
+     scene: "Roman builders roll a giant DICE across the Jarama, and its pips set the arches of the Talamanca bridge."}
+  - {year: 950, peg: lasso, confidence: low, source: "es.WP Mayrit (10th century)",
+     event: "Maslama al-Majriti, the astronomer called the Euclid of al-Andalus, is born in Mayrit (approximate)",
+     place: "Mayrit",
+     scene: "Young Maslama throws a LASSO round the stars over Mayrit and pulls them down to measure them."}
+  - {year: 1438, peg: movie, confidence: medium, source: "parroquiabuensuceso.es (1438, Juan II)",
+     event: "Juan II founds the Hospital del Buen Suceso by the Puerta del Sol for plague victims",
+     place: "Puerta del Sol",
+     scene: "A MOVIE projector beams Juan II's order onto a wall by the Puerta del Sol, and plague beds fill the new hospital."}
+  - {year: 1455, peg: lily, confidence: unverified,
+     event: "Buitrago: the Marques de Santillana founds the Hospital de San Salvador",
+     place: "Buitrago del Lozoya",
+     scene: "The Marques de Santillana lays a LILY on each bed of his new Buitrago hospital and opens its door."}
+  - {year: 1460, peg: cheese, confidence: unverified,
+     event: "Madrid: Hospital of Santa Catalina de los Donados is founded",
+     place: "Calle de los Donados",
+     scene: "A CHEESE-seller gives his whole shop to found the Santa Catalina hospital for Madrid's poor."}
+  - {year: 1483, peg: foam, confidence: high, source: "es.WP Hospital de Antezana (18 October)",
+     event: "Alcala: Luis de Antezana and Isabel de Guzman found the Hospital de Antezana by will",
+     place: "Calle Mayor, Alcala",
+     scene: "Luis de Antezana's will floats out of the FOAM of a basin, and his house in Alcala becomes a hospital."}
+  - {year: 1499, peg: pipe, confidence: medium, source: "Miradormadrid; RAH (1499; inscription 1507)",
+     event: "Beatriz Galindo, La Latina, and Francisco Ramirez found the Hospital de la Concepcion, the Hospital de La Latina",
+     place: "Calle de Toledo",
+     scene: "Beatriz Galindo smokes a long PIPE of incense over the first beds of her hospital on the Toledo road."}
+  - {year: 1552, peg: lion, confidence: high, source: "es.WP Hospital de Anton Martin (25 November)",
+     event: "Anton Martin founds a hospital of the Order of Saint John of God on the calle de Atocha",
+     place: "Calle de Atocha",
+     scene: "A LION guards the door as Anton Martin carries the first incurable patient into his new Atocha hospital."}
+  - {year: 1554, peg: lawyer, confidence: medium, source: "es.WP Real Sitio de Aranjuez (1554-1559)",
+     event: "Aranjuez: workers begin to lay out the tree-lined avenues of the royal estate",
+     place: "Aranjuez",
+     scene: "A LAWYER pulls a measuring tape across Aranjuez, and elms spring up in straight avenues behind it."}
+  # religion
+  - {year: 304, peg: sewer, confidence: medium, source: "es.WP Historia de Alcala (304)",
+     event: "Complutum: the boys Justus and Pastor are martyred outside the town",
+     place: "Campus Laudabilis, Complutum",
+     scene: "Two boys refuse to bow to the idols and are thrown into a SEWER outside Complutum, the town's martyrs."}
+  - {year: 412, peg: tongue, confidence: medium, source: "es.WP Historia de Alcala (412)",
+     event: "Asturius of Toledo becomes the first bishop of Complutum",
+     place: "Complutum",
+     scene: "Asturius rides from Toledo on a giant TONGUE and preaches as Complutum's first bishop."}
+  - {year: 414, peg: tower, confidence: medium, source: "es.WP Catedral Magistral (414)",
+     event: "A chapel rises over the martyrs' grave at Complutum to hold the relics of Justus and Pastor",
+     place: "Catedral Magistral, Alcala",
+     scene: "A TOWER of a chapel grows over the boys' grave and keeps the relics of Justus and Pastor."}
+  - {year: 1085, peg: waffle, confidence: low, source: "es.WP Muralla musulmana (legend, 9 November)",
+     event: "The image of the Virgin of the Almudena is found in Madrid's wall (traditional date)",
+     place: "Cuesta de la Vega",
+     scene: "Soldiers break a WAFFLE-shaped stone out of Madrid's wall and find the Virgin of the Almudena behind it."}
+  - {year: 1099, peg: pipe, confidence: medium, source: "es.WP Comunidad de Madrid (1099)",
+     event: "The old diocese of Complutum is joined to the archdiocese of Toledo",
+     place: "Alcala de Henares",
+     scene: "The bishop of Complutum puffs a PIPE, and the smoke drifts to Toledo: his diocese joins the archdiocese."}
+  - {year: 1122, peg: nun, confidence: medium, source: "es.WP Catedral Magistral (1122)",
+     event: "Alcala: the church of Justus and Pastor is rebuilt after the Christian conquest",
+     place: "Catedral Magistral, Alcala",
+     scene: "A NUN lays the first new stone of the church of Justus and Pastor in Christian Alcala."}
+  - {year: 1148, peg: reef, confidence: medium, source: "es.WP Basilica de Atocha (16 April 1148)",
+     event: "Pope Eugenius III names the shrine of Our Lady of Atocha (Antioquia) in a bull",
+     place: "Atocha",
+     scene: "Pope Eugenius III dives off a coral REEF with a bull naming Madrid's shrine of Our Lady of Antioquia."}
+  - {year: 1150, peg: lasso, confidence: medium, source: "es.WP Monasterio de Valdeiglesias (1150)",
+     event: "Pelayos de la Presa: the monastery of Santa Maria la Real de Valdeiglesias is founded (approximate)",
+     place: "Pelayos de la Presa",
+     scene: "A monk throws a LASSO round a Valdeiglesias oak and ties the first cell of the new monastery to it."}
+  - {year: 1172, peg: coin, confidence: high, source: "es.WP Isidro Labrador (30 November)",
+     event: "Isidro the Labourer, later Madrid's patron saint, dies in Madrid",
+     place: "Iglesia de San Andres",
+     scene: "Isidro the Labourer drops his last COIN in the poor box of San Andres and dies, Madrid's future patron."}
+  - {year: 1212, peg: tongue, confidence: medium, source: "es.WP Iglesia de San Andres (1212); Isidro (chapel 1213)",
+     event: "Isidro's body is taken from the grave and found whole; it goes into the church of San Andres",
+     place: "Iglesia de San Andres",
+     scene: "A TONGUE of light licks the earth from Isidro's grave and shows the body whole beside San Andres."}
+  - {year: 1217, peg: dog, confidence: low, source: "es.WP San Francisco el Grande (legend)",
+     event: "Francis of Assisi founds the convent of San Francisco in Madrid (traditional date)",
+     place: "San Francisco el Grande",
+     scene: "A DOG walks beside Francis of Assisi to the Madrid hermitage where he founds his convent."}
+  - {year: 1218, peg: dove, confidence: medium, source: "UCM; dominicos.org (tradition, late 1218)",
+     event: "Dominic of Guzman turns the Dominican house of Madrid into the women's convent of Santo Domingo el Real",
+     place: "Plaza de Santo Domingo",
+     scene: "Dominic of Guzman opens his hand and a DOVE flies into the friars' house, now a convent for nuns."}
+  - {year: 1321, peg: ant, confidence: low, source: "es.WP Buitrago (1321; also 15th century)",
+     event: "Buitrago: the church of Santa Maria del Castillo is finished",
+     place: "Buitrago del Lozoya",
+     scene: "An ANT colony carries the last roof tile up to Santa Maria del Castillo in Buitrago."}
+  - {year: 1344, peg: warrior, confidence: medium, source: "es.WP San Pedro el Viejo (1344, Algeciras)",
+     event: "Madrid: Alfonso XI orders the brick tower of San Pedro to mark the taking of Algeciras",
+     place: "San Pedro el Viejo",
+     scene: "A WARRIOR back from Algeciras stacks bricks into the Mudejar tower of San Pedro."}
+  - {year: 1390, peg: bees, confidence: high, source: "es.WP Monasterio de El Paular (1390)",
+     event: "Rascafria: building begins on the Carthusian monastery of El Paular",
+     place: "El Paular, Rascafria",
+     scene: "BEES build the first Carthusian cells of El Paular from wax in the Lozoya valley."}
+  - {year: 1454, peg: lawyer, confidence: medium, source: "es.WP Historia de Alcala (1454)",
+     event: "Alcala: Archbishop Carrillo turns the hermitage of San Juan de los Caballeros into the church of Santa Maria",
+     place: "Santa Maria la Mayor, Alcala",
+     scene: "A LAWYER reads Carrillo's deed, and the hermitage of San Juan de los Caballeros becomes a parish church."}
+  - {year: 1456, peg: leech, confidence: medium, source: "es.WP Diego de Alcala (1456)",
+     event: "Diego of Alcala moves to Carrillo's new Franciscan convent of Santa Maria de Jesus in Alcala",
+     place: "Santa Maria de Jesus, Alcala",
+     scene: "Brother Diego carries a LEECH jar into Carrillo's new convent and tends the sick there."}
+  - {year: 1463, peg: gem, confidence: high, source: "es.WP Diego de Alcala (13 November)",
+     event: "Diego of Alcala dies in his convent; he becomes the town's saint",
+     place: "Santa Maria de Jesus, Alcala",
+     scene: "Brother Diego dies holding a GEM-like rose, and Alcala's people crowd the convent of Santa Maria de Jesus."}
+  - {year: 1464, peg: cherry, confidence: high, source: "es.WP San Jeronimo el Real (1464)",
+     event: "Enrique IV founds the Hieronymite monastery of San Jeronimo by the Manzanares",
+     place: "Manzanares bank",
+     scene: "Enrique IV plants a CHERRY tree by the Manzanares, and Hieronymite monks build their cloister round it."}
+  - {year: 1497, peg: pig, confidence: high, source: "es.WP Catedral Magistral (1497-1514/1515)",
+     event: "Alcala: Cisneros begins the new Magistral church of Justus and Pastor, to Pedro Gumiel's plans",
+     place: "Catedral Magistral, Alcala",
+     scene: "A PIG digs the foundations of Cisneros's new Magistral with its snout, following Gumiel's plans."}
+  - {year: 1502, peg: sun, confidence: high, source: "es.WP Biblia Poliglota (1502)",
+     event: "Alcala: Cisneros's scholars begin the Complutensian Polyglot Bible",
+     place: "Colegio de San Ildefonso",
+     scene: "The SUN rises over Alcala as Cisneros's scholars open Hebrew, Greek and Latin texts side by side."}
+  - {year: 1503, peg: sumo, confidence: high, source: "es.WP San Jeronimo el Real (1503)",
+     event: "The monastery of San Jeronimo moves to the east of Madrid by order of the Catholic Monarchs",
+     place: "San Jeronimo el Real",
+     scene: "A SUMO wrestler lifts the monastery of San Jeronimo and carries it to the hill east of Madrid."}
+  - {year: 1508, peg: sofa, confidence: medium, source: "es.WP Historia de Alcala (1508)",
+     event: "Alcala: the house of the Columbus audience becomes the convent of San Juan de la Penitencia",
+     place: "San Juan de la Penitencia, Alcala",
+     scene: "Franciscan nuns carry a SOFA out of the old audience house in Alcala and make it their convent."}
+  - {year: 1510, peg: dice, confidence: medium, source: "es.WP Colegio Mayor de San Ildefonso (1510)",
+     event: "Alcala: the university chapel of San Ildefonso is finished",
+     place: "Capilla de San Ildefonso, Alcala",
+     scene: "Cisneros rolls a golden DICE onto the altar of San Ildefonso, and the university chapel opens."}
+  - {year: 1512, peg: tongue, confidence: low, source: "Miradormadrid (Concepcion Francisca, 1512)",
+     event: "Beatriz Galindo founds the convent of the Concepcion Francisca on the Toledo road",
+     place: "Calle de Toledo",
+     scene: "Beatriz Galindo signs the founding deed with her TONGUE dipped in ink, and Franciscan nuns move in."}
+  - {year: 1514, peg: tower, confidence: high, source: "es.WP Universidad de Alcala; Biblia Poliglota (January)",
+     event: "Arnao Guillen de Brocar prints the New Testament volume of the Polyglot Bible in Alcala",
+     place: "Colegio de San Ildefonso",
+     scene: "Brocar locks the Greek New Testament in a press shaped like a TOWER and pulls the first sheet."}
+  - {year: 1517, peg: dog, confidence: high, source: "es.WP Biblia Poliglota (July 1517)",
+     event: "Alcala: printing of the Polyglot Bible ends, four months before Cisneros dies",
+     place: "Colegio de San Ildefonso",
+     scene: "A DOG carries the last printed sheet of the Polyglot Bible to the old Cisneros."}
+  - {year: 1520, peg: nose, confidence: high, source: "es.WP Biblia Poliglota (1520, Leo X)",
+     event: "Pope Leo X approves the Complutensian Polyglot Bible for publication",
+     place: "Alcala de Henares",
+     scene: "Pope Leo X sniffs the Polyglot Bible with a giant NOSE and stamps it fit to sell."}
+  - {year: 1520, peg: nose, confidence: high, source: "es.WP Capilla del Obispo (1520-1535)",
+     event: "Madrid: building begins on the Capilla del Obispo beside San Andres",
+     place: "Plaza de la Paja",
+     scene: "A stone NOSE sticks out of the first wall of the Capilla del Obispo as the Vargas masons begin."}
+  - {year: 1523, peg: gnome, confidence: high, source: "es.WP Basilica de Atocha (11 July 1523)",
+     event: "A bull of Adrian VI makes the shrine of Atocha a Dominican convent",
+     place: "Atocha",
+     scene: "A GNOME carries Adrian VI's bull to Atocha, and Dominican friars move into the shrine."}
+  - {year: 1526, peg: nacho, confidence: medium, source: "es.WP Hospital de Antezana; Anales Complutenses",
+     event: "Ignatius of Loyola studies in Alcala and works as nurse and cook at the Hospital de Antezana",
+     place: "Hospital de Antezana",
+     scene: "Ignatius of Loyola cuts a NACHO for each patient in the Antezana kitchen between his classes."}
+  - {year: 1527, peg: ink, confidence: medium, source: "Autobiografia de Ignacio; Comillas",
+     event: "Alcala: the Inquisition jails Ignatius of Loyola and then frees him",
+     place: "Alcala de Henares",
+     scene: "An Inquisition judge spills INK over Ignatius's record in the Alcala jail, then lets him go."}
+  - {year: 1528, peg: knife, confidence: medium, source: "es.WP Isidro Labrador (1528)",
+     event: "Empress Isabel builds the first hermitage of San Isidro by his spring across the Manzanares",
+     place: "Ermita de San Isidro",
+     scene: "Empress Isabel cuts the ribbon with a KNIFE, and the hermitage of San Isidro opens by the spring."}
+  - {year: 1530, peg: mouse, confidence: medium, source: "es.WP Basilica de Colmenar Viejo (1530)",
+     event: "Colmenar Viejo: Rodrigo Gil de Hontanon builds the tower of the church of the Asuncion",
+     place: "Colmenar Viejo",
+     scene: "A MOUSE runs up the scaffold of Colmenar Viejo and sets the top stone of Gil de Hontanon's tower."}
+  - {year: 1534, peg: hammer, confidence: medium, source: "es.WP Chinchon (1534, Covarrubias)",
+     event: "Chinchon: work begins on the church of the Asuncion as a chapel of the count's palace",
+     place: "Chinchon",
+     scene: "A HAMMER in Covarrubias's hand taps out the first stone of the Asuncion chapel at Chinchon."}
+  - {year: 1535, peg: mill, confidence: medium, source: "es.WP Iglesia de San Andres (1535)",
+     event: "Bishop Gutierre de Vargas moves Isidro's body into the Capilla del Obispo",
+     place: "Capilla del Obispo",
+     scene: "Bishop Vargas grinds the church walls with a MILL wheel and wheels Isidro's body into his own chapel."}
+  - {year: 1546, peg: roach, confidence: medium, source: "es.WP Historia de Alcala (1546)",
+     event: "Alcala: the Jesuits open their first college",
+     place: "Calle Libreros, Alcala",
+     scene: "A ROACH runs across the bench of the new Jesuit college in Alcala, and the first class begins."}
+  - {year: 1547, peg: rock, confidence: high, source: "es.WP San Felipe el Real (bull of 20 June)",
+     event: "Paul III's bull founds the Augustinian convent of San Felipe el Real on the calle Mayor",
+     place: "Puerta del Sol",
+     scene: "Augustinian friars set a ROCK on the calle Mayor, and the steps of San Felipe el Real grow from it."}
+  - {year: 1559, peg: elbow, confidence: high, source: "es.WP Descalzas Reales (Assumption day)",
+     event: "The Descalzas Reales convent opens in Madrid with a procession of Poor Clare nuns",
+     place: "Plaza de las Descalzas",
+     scene: "Poor Clare nuns push the palace door open with an ELBOW and process into the Descalzas Reales."}
+  # arts
+  - {year: 50, peg: lasso, confidence: medium, source: "es.WP Complutum (mid 1st century)",
+     event: "Complutum: the Casa de los Grifos, a town house with painted griffins, is built (approximate)",
+     place: "Casa de los Grifos, Complutum",
+     scene: "A painter throws a LASSO round two griffins and paints them on the walls of the Casa de los Grifos."}
+  - {year: 290, peg: bees, confidence: medium, source: "es.WP Complutum (late 3rd century)",
+     event: "Complutum: the forum gets a monumental facade and new baths (approximate)",
+     place: "Forum of Complutum",
+     scene: "BEES build a honeycomb facade along Complutum's forum and fill the new baths with warm water."}
+  - {year: 1387, peg: fox, confidence: medium, source: "es.WP Real Sitio de Aranjuez (1387-1409)",
+     event: "Aranjuez: master Lorenzo Suarez de Figueroa begins a house for the masters of Santiago (approximate)",
+     place: "Aranjuez",
+     scene: "A FOX digs the cellar of the Santiago masters' house at Aranjuez for Suarez de Figueroa."}
+  - {year: 1405, peg: seal, confidence: medium, source: "es.WP Palacio Real de El Pardo (1405)",
+     event: "El Pardo: Enrique III builds a royal hunting house",
+     place: "El Pardo",
+     scene: "Enrique III's hunters drag a SEAL from the Manzanares and build the El Pardo lodge where it lands."}
+  - {year: 1471, peg: cat, confidence: low, source: "Directo al Paladar (1471); RAMHG disputes",
+     event: "Madrid: the Lujan family builds the Torre de los Lujanes on the Plaza de la Villa (approximate)",
+     place: "Plaza de la Villa",
+     scene: "A CAT climbs the brick Torre de los Lujanes as the Lujan masons set its top course."}
+  - {year: 1480, peg: vase, confidence: medium, source: "es.WP Castillo de Manzanares el Real (c. 1480)",
+     event: "Manzanares el Real: Juan Guas adds the Isabelline gallery and courtyard to the Mendoza castle (approximate)",
+     place: "Manzanares el Real",
+     scene: "Juan Guas carves the Manzanares castle gallery out of a giant VASE and sets it on the south wall."}
+  - {year: 1512, peg: tongue, confidence: medium, source: "es.WP Historia de Alcala (1512-1513)",
+     event: "Alcala: Leon Picardo and Felipe Bigarny make the high altarpiece of the Magistral",
+     place: "Catedral Magistral, Alcala",
+     scene: "Bigarny carves a saint's TONGUE on the Magistral altarpiece while Picardo paints it red."}
+  - {year: 1516, peg: dish, confidence: medium, source: "es.WP Colegio Mayor de San Ildefonso (1516)",
+     event: "Alcala: work begins on the Paraninfo, the university's great hall",
+     place: "Paraninfo, Alcala",
+     scene: "Cisneros sets a DISH on the floor, and the Paraninfo walls rise round it."}
+  - {year: 1518, peg: dove, confidence: medium, source: "es.WP Historia de Alcala (1518-1521)",
+     event: "Alcala: Domenico Fancelli begins the marble tomb of Cardinal Cisneros",
+     place: "Capilla de San Ildefonso, Alcala",
+     scene: "A DOVE lands on the marble block, and Fancelli carves Cisneros lying asleep beneath it."}
+  - {year: 1524, peg: hanger, confidence: medium, source: "es.WP Palacio Arzobispal de Alcala (1524)",
+     event: "Alcala: Alonso de Covarrubias builds a new west wing and staircase for Archbishop Fonseca",
+     place: "Palacio Arzobispal, Alcala",
+     scene: "Covarrubias hangs each step on a coat HANGER and builds Fonseca's grand staircase in the Alcala palace."}
+  - {year: 1530, peg: mouse, confidence: medium, source: "es.WP Historia de Alcala (1530-1535)",
+     event: "Alcala: the Patio de Filosofos of the university is built",
+     place: "Colegio de San Ildefonso",
+     scene: "A MOUSE studies logic on every column base of the new Patio de Filosofos."}
+  - {year: 1534, peg: hammer, confidence: medium, source: "es.WP Real Alcazar (c. 1534)",
+     event: "Jan Cornelisz Vermeyen draws the Alcazar of Madrid, its oldest known picture (approximate)",
+     place: "Manzanares bank",
+     scene: "Vermeyen hangs his drawing of the Alcazar from a HAMMER nailed to the riverbank."}
+  - {year: 1537, peg: mug, confidence: medium, source: "es.WP Real Alcazar (1537)",
+     event: "Charles I begins to double the Alcazar of Madrid as a palace, under Luis de Vega and Covarrubias",
+     place: "Alcazar de Madrid",
+     scene: "Luis de Vega pours plans out of a MUG, and the Alcazar doubles in size on the bluff."}
+  - {year: 1537, peg: mug, confidence: medium, source: "es.WP Casa de Cisneros (1537)",
+     event: "Madrid: Benito Jimenez de Cisneros builds the Plateresque Casa de Cisneros",
+     place: "Plaza de la Villa",
+     scene: "Benito Jimenez de Cisneros toasts with a MUG as the Plateresque facade of his house goes up."}
+  - {year: 1544, peg: warrior, confidence: medium, source: "es.WP Palacio Real de El Pardo (from 1544)",
+     event: "El Pardo: works begin to turn the castle into a palace for Charles V, to Luis de Vega's design",
+     place: "El Pardo",
+     scene: "A WARRIOR pulls down the El Pardo battlements and Luis de Vega puts palace windows in their place."}
+  - {year: 1547, peg: rock, confidence: medium, source: "es.WP Capilla del Obispo (1547-1550)",
+     event: "Madrid: Francisco Giralte carves the altarpiece and alabaster tombs of the Capilla del Obispo",
+     place: "Capilla del Obispo",
+     scene: "Giralte chisels the Vargas tombs out of a ROCK of alabaster in the Capilla del Obispo."}
+  - {year: 1553, peg: llama, confidence: high, source: "es.WP Colegio Mayor de San Ildefonso (1537-1553)",
+     event: "Alcala: Rodrigo Gil de Hontanon finishes the Plateresque facade of San Ildefonso",
+     place: "Plaza de San Diego, Alcala",
+     scene: "A LLAMA carries the last carved stone up the scaffold, and Gil de Hontanon's facade is done."}
+  - {year: 1556, peg: leech, confidence: medium, source: "es.WP Real Alcazar (1556-1564)",
+     event: "Madrid: Gaspar de Vega begins the Royal Stables beside the Alcazar",
+     place: "Plaza de la Armeria",
+     scene: "A LEECH pulls a long line across the ground, and Gaspar de Vega lays out the Royal Stables along it."}
+  - {year: 1558, peg: wolf, confidence: medium, source: "es.WP Palacio Real de El Pardo (1547-1558)",
+     event: "El Pardo: the new palace of Charles V is finished",
+     place: "El Pardo",
+     scene: "A WOLF howls from the finished corner tower of the new El Pardo palace."}
+  # economy
+  - {year: 1184, peg: fairy, confidence: medium, source: "es.WP Historia de Alcala (1184)",
+     event: "Alcala: the town fairs begin",
+     place: "Plaza del Mercado, Alcala",
+     scene: "A FAIRY opens the first Alcala fair and turns the traders' coins to silver."}
+  - {year: 1467, peg: jockey, confidence: medium, source: "en.WP History of Madrid (1467-1471)",
+     event: "Madrid: a royal mint strikes coins in the town for a few years",
+     place: "Madrid",
+     scene: "A JOCKEY gallops round the mint yard and stamps each coin with his horse's hoof."}
+  - {year: 1469, peg: ship, confidence: medium, source: "Dialnet (Plaza del Arrabal market, 1469)",
+     event: "Enrique IV moves Madrid's weekly market back inside the walls to the plaza of San Salvador",
+     place: "Plaza de San Salvador",
+     scene: "Traders load their stalls into a SHIP and sail the weekly market back to San Salvador."}
+  - {year: 1502, peg: sun, confidence: high, source: "cisneros.web.uah.es; Dialnet (1502)",
+     event: "Alcala: Estanislao Polono prints the Vita Christi, the first book printed in the town",
+     place: "Alcala de Henares",
+     scene: "The SUN dries the first printed page of the Vita Christi in Polono's Alcala workshop."}
+  - {year: 1511, peg: tattoo, confidence: medium, source: "Dialnet; comunidad.madrid (February 1511)",
+     event: "Arnao Guillen de Brocar opens his printing press in Alcala",
+     place: "Alcala de Henares",
+     scene: "Brocar has a TATTOO of a printing press on his arm and sets up the real one in Alcala."}
+  # society
+  - {years_ago: 500000, year: -498000, peg: lasso, confidence: medium, source: "El Debate / Comunidad de Madrid (mid Middle Pleistocene)",
+     event: "Cueva Des-Cubierta, Pinilla del Valle: a human molar shows people in the Lozoya valley, the oldest human fossil of the region",
+     place: "Pinilla del Valle",
+     scene: "A hyena drops a human tooth into a LASSO loop on the Des-Cubierta floor: the region's oldest human trace."}
+  - {years_ago: 250000, year: -248000, peg: nail, confidence: high, source: "comunidad.madrid: Valdocarros (about 250,000 years)",
+     event: "Valdocarros, Arganda: hunters cut up horses and deer with stone tools by the Jarama",
+     place: "Valdocarros, Arganda",
+     scene: "A hunter uses a giant NAIL as a stone blade and cuts up a horse by the Jarama."}
+  - {years_ago: 90000, year: -88000, peg: bees, confidence: high, source: "comunidad.madrid: Cueva del Camino (about 90,000 years)",
+     event: "Cueva del Camino, Pinilla del Valle: Neanderthal teeth lie among the bones of hunted animals",
+     place: "Pinilla del Valle",
+     scene: "BEES build a hive in the Cueva del Camino round two Neanderthal teeth."}
+  - {years_ago: 70000, year: -68000, peg: goose, confidence: medium, source: "comunidad.madrid: Navalmaillo (about 70,000; 70-77 ka)",
+     event: "Abrigo de Navalmaillo: Neanderthals camp in the rock shelter and work quartz tools",
+     place: "Pinilla del Valle",
+     scene: "A GOOSE warms itself at the Neanderthal hearth in the Navalmaillo shelter among quartz flakes."}
+  - {years_ago: 60000, year: -58000, peg: cheese, confidence: medium, source: "comunidad.madrid: Buena Pinta (about 60,000 years)",
+     event: "Cueva de la Buena Pinta: Neanderthal teeth are left in the cave",
+     place: "Pinilla del Valle",
+     scene: "A Neanderthal loses a tooth biting hard CHEESE in the Buena Pinta cave."}
+  - {years_ago: 43000, year: -41000, peg: ram, confidence: medium, source: "Live Science; Comunidad de Madrid (over 43,000 / 40,000 years)",
+     event: "Cueva Des-Cubierta: Neanderthals collect dozens of horned skulls of bison, aurochs and deer, perhaps as hunting trophies",
+     place: "Pinilla del Valle",
+     scene: "A Neanderthal sets a RAM's horned skull on the ash heap beside dozens of bison skulls in Des-Cubierta."}
+  - {years_ago: 40000, year: -38000, peg: horse, confidence: medium, source: "Comunidad de Madrid (over 40,000 years); child age 3-5 or 2-3",
+     event: "Cueva Des-Cubierta: the remains of a small Neanderthal child, the Lozoya child, lie by hearths, possibly a burial",
+     place: "Pinilla del Valle",
+     scene: "A Neanderthal father carves a small toy HORSE and lays it by the Lozoya child's grave hearth."}
+  - {year: -2250, peg: lasso, confidence: medium, source: "Comunidad de Madrid (Ciempozuelos beaker, 2250-1900 BC)",
+     event: "Ciempozuelos: Bell Beaker people bury their dead with finely incised beakers (approximate)",
+     place: "Ciempozuelos",
+     scene: "A mourner throws a LASSO of cord patterns round a beaker and sets it in the Ciempozuelos grave."}
+  - {year: -400, peg: horse, confidence: medium, source: "Comunidad de Madrid; Complutum 2017 (4th c. BC start, disputed)",
+     event: "Cerro de la Gavia, Vallecas: the Carpetani build a fortified village above the Manzanares (approximate)",
+     place: "Cerro de la Gavia, Villa de Vallecas",
+     scene: "A Carpetan HORSE drags timber up the Cerro de la Gavia, and a fortified village rises on the hill."}
+  - {year: -250, peg: lasso, confidence: medium, source: "comunidad.madrid: Llano de la Horca (mid 3rd c. BC)",
+     event: "Llano de la Horca, Santorcaz: the Carpetani build a large town of fourteen hectares (approximate)",
+     place: "Llano de la Horca, Santorcaz",
+     scene: "A Carpetan throws a LASSO round fourteen hectares of the Llano de la Horca and marks out a town."}
+  - {year: -30, peg: mouse, confidence: medium, source: "comunidad.madrid: Llano de la Horca (last third 1st c. BC)",
+     event: "Llano de la Horca is abandoned as people move to the Roman towns (approximate)",
+     place: "Llano de la Horca, Santorcaz",
+     scene: "A MOUSE is the last one left in the empty Carpetan streets of Llano de la Horca."}
+  - {year: 25, peg: nail, confidence: medium, source: "es.WP Historia de Alcala, Complutum (early 1st c.; quarter of 20s-30s)",
+     event: "Complutum: the people of the hill fort move down to the Henares plain and found the Roman town (approximate)",
+     place: "Complutum",
+     scene: "The townsfolk hammer a giant NAIL into the Henares plain and lay out Complutum's grid round it."}
+  - {year: 350, peg: lasso, confidence: low, source: "es.WP Complutum (4th century fire)",
+     event: "Complutum: an accidental fire destroys the Casa de los Grifos (approximate)",
+     place: "Casa de los Grifos, Complutum",
+     scene: "A LASSO of flame wraps round the Casa de los Grifos and burns the painted griffins."}
+  - {year: 650, peg: lasso, confidence: medium, source: "Comunidad de Madrid (7th c. Visigothic necropolis)",
+     event: "Cerro de la Gavia: Visigoths dig a cemetery over the ruins of the Carpetan houses (approximate)",
+     place: "Cerro de la Gavia, Villa de Vallecas",
+     scene: "A Visigoth gravedigger throws a LASSO round the old Carpetan walls and lays his dead between them."}
+  - {year: 697, peg: pig, confidence: low, source: "es.WP Historia de Madrid (tombstone, era 735)",
+     event: "Madrid: a Visigothic tombstone, possibly the oldest written record of Madrid, is carved",
+     place: "Madrid",
+     scene: "A PIG roots up a stone in old Madrid, and a Visigothic epitaph shows on its face."}
+  - {year: 921, peg: ant, confidence: high, source: "Al-Qantara 2015 (20 Ramadan 308 = 2 Feb 921)",
+     event: "Mayrit: a man is buried under an Arabic funerary stele, the oldest Arabic inscription found in Madrid",
+     place: "Maqbara of Mayrit",
+     scene: "An ANT carves Arabic letters into the stele over a man's grave in Mayrit."}
+  - {year: 939, peg: map, confidence: low, source: "es.WP Calatalifa (Ibn Hayyan, 939)",
+     event: "Calatalifa, Villaviciosa de Odon: Ibn Hayyan names the Muslim town for the first time",
+     place: "Calatalifa, Villaviciosa de Odon",
+     scene: "Ibn Hayyan spreads a MAP and writes the name Calatalifa beside the Guadarrama river."}
+  - {year: 1126, peg: nacho, confidence: medium, source: "en.WP Arrabal of Saint Martin (13 July 1126)",
+     event: "Alfonso VII gives a charter to the prior of San Martin, and the suburb of San Martin grows outside Madrid's wall",
+     place: "Plaza de San Martin",
+     scene: "Alfonso VII hands the prior of San Martin a NACHO of land outside the wall, and a suburb grows."}
+  - {year: 1144, peg: warrior, confidence: medium, source: "es.WP Mostoles (1144)",
+     event: "Mostoles appears in a charter of Alfonso VII, its first secure mention",
+     place: "Mostoles",
+     scene: "A WARRIOR reads Alfonso VII's charter and points to the tower of Mostoles: its first mention."}
+  - {year: 1208, peg: sofa, confidence: medium, source: "es.WP Alcobendas (1208)",
+     event: "Alcobendas is first named when Alfonso VIII sets the limits between Madrid and Segovia",
+     place: "Alcobendas",
+     scene: "Alfonso VIII drives a boundary stake with a SOFA leg and writes the name Alcobendas beside it."}
+  - {year: 1259, peg: elbow, confidence: medium, source: "en.WP Getafe (1259)",
+     event: "Getafe is first named in a document",
+     place: "Getafe",
+     scene: "A clerk writes Getafe in a deed and seals it with a stamp shaped like an ELBOW."}
+  - {year: 1280, peg: vase, confidence: medium, source: "es.WP Leganes (1280)",
+     event: "Leganes is founded by people who leave Butarque and Overa for healthier ground",
+     place: "Leganes",
+     scene: "Villagers carry their houses from the marsh in a VASE and set them down as Leganes."}
+  - {year: 1293, peg: palm, confidence: high, source: "es.WP Universidad de Alcala (20 May 1293)",
+     event: "Sancho IV licenses a Studium Generale in Alcala, the seed of the university",
+     place: "Alcala de Henares",
+     scene: "Sancho IV plants a PALM in Alcala, and students gather under it for the first Studium Generale."}
+  - {year: 1345, peg: railway, confidence: medium, source: "es.WP Leganes (1345)",
+     event: "Leganes becomes a village of Madrid's land",
+     place: "Leganes",
+     scene: "A RAILWAY track joins Leganes to Madrid, and the village enters the town's land."}
+  - {year: 1459, peg: elbow, confidence: medium, source: "es.WP Universidad de Alcala (bull of 17 July 1459)",
+     event: "Pius II's bull sets up three chairs of arts and grammar in Alcala",
+     place: "Santa Maria de Jesus, Alcala",
+     scene: "A teacher taps the board with an ELBOW at Alcala's new chair of grammar."}
+  - {year: 1492, peg: piano, confidence: medium, source: "es.WP Alcobendas (1492)",
+     event: "People of Alcobendas found San Sebastian de los Reyes on Madrid's land to escape their lord",
+     place: "San Sebastian de los Reyes",
+     scene: "Alcobendas villagers roll a PIANO up the hill and play it on Madrid's land: the founding of San Sebastian de los Reyes."}
+  - {year: 1499, peg: pipe, confidence: high, source: "es.WP Universidad de Alcala (13 April 1499)",
+     event: "Alexander VI issues the bulls that make the University of Alcala",
+     place: "Colegio de San Ildefonso",
+     scene: "Alexander VI rolls his bulls inside a PIPE and posts them to Cisneros for the new university."}
+  - {year: 1499, peg: pipe, confidence: disputed, source: "es.WP Colegio de San Ildefonso (14 March 1499); Universidad (1501)",
+     event: "Alcala: the first stone of the Colegio Mayor de San Ildefonso is laid",
+     place: "Plaza de San Diego, Alcala",
+     scene: "Cisneros taps the first stone of San Ildefonso with a long PIPE as a gavel."}
+  - {year: 1499, peg: pipe, confidence: high, source: "navalcarnero.es; es.WP (10 October)",
+     event: "The city of Segovia founds Navalcarnero",
+     place: "Navalcarnero",
+     scene: "Segovian settlers smoke a PIPE of peace on a hill and found Navalcarnero there."}
+  - {year: 1508, peg: sofa, confidence: high, source: "es.WP Universidad de Alcala (18 October)",
+     event: "Alcala: the first students begin classes at Cisneros's university",
+     place: "Colegio de San Ildefonso",
+     scene: "The first students crowd onto one SOFA in San Ildefonso for the opening lecture."}
+  - {year: 1510, peg: dice, confidence: high, source: "es.WP Universidad de Alcala (22 January)",
+     event: "Cisneros gives the university its constitutions",
+     place: "Colegio de San Ildefonso",
+     scene: "Cisneros throws a DICE, and each face lands on a rule of the new university constitutions."}
+  - {year: 1528, peg: knife, confidence: medium, source: "es.WP Historia de Alcala (1528)",
+     event: "Alcala: the Trilingual College of San Jeronimo opens for Latin, Greek and Hebrew",
+     place: "Colegio Trilingue, Alcala",
+     scene: "A scholar slices a page in three with a KNIFE: Latin, Greek and Hebrew for the Trilingual College."}
+  - {year: 1529, peg: knob, confidence: medium, source: "es.WP Historia de Alcala (1529)",
+     event: "Alcala: the college-convent of Santo Tomas de los Angeles is founded",
+     place: "Alcala de Henares",
+     scene: "A Dominican turns the door KNOB of the new college of Santo Tomas and the first students walk in."}
+  - {year: 1547, peg: rock, confidence: high, source: "Museo Casa Natal de Cervantes (9 October)",
+     event: "Miguel de Cervantes is baptised in Santa Maria la Mayor, Alcala",
+     place: "Santa Maria la Mayor, Alcala",
+     scene: "The priest pours water over baby Miguel de Cervantes from a ROCK font in Santa Maria la Mayor."}
+world_refs:
+  - {year: -5300, event: "Casa Montero, the oldest Neolithic flint mine in Iberia", cell: western_europe_science_pre500bce}
+  - {year: 1085, event: "Alfonso VI takes Toledo (Madrid's land passes to Castile)", cell: western_europe_politics_500_1500}
+  - {year: 1391, event: "Anti-Jewish riots across Castile, Madrid and Alcala included", cell: western_europe_society_500_1500}
+  - {year: 1492, event: "Expulsion of the Jews, from Madrid and Alcala too", cell: western_europe_society_500_1500}
+  - {year: 1502, event: "Castile's Muslims must convert or leave, the Madrid morería too", cell: western_europe_religion_1500_1800}
+  - {year: 1520, event: "Comuneros revolt begins in Castile", cell: western_europe_politics_1500_1800}
+  - {year: 1521, event: "Battle of Villalar ends the Comuneros revolt", cell: western_europe_politics_1500_1800}
+out_refs:
+  - {year: 977, event: "Almanzor starts a campaign from the fortress of Mayrit", reason: "caliphate army muster"}
+  - {year: 1308, event: "Treaty of Alcala de Henares between Castile and Aragon", reason: "treaty"}
+  - {year: 1309, event: "Cortes of Madrid under Fernando IV", reason: "Cortes"}
+  - {year: 1325, event: "Provincial synod of Toledo in the archbishop's palace at Alcala", reason: "church province, seat in Toledo"}
+  - {year: 1329, event: "Cortes of Madrid under Alfonso XI", reason: "Cortes"}
+  - {year: 1339, event: "Treaty of Madrid between Aragon and Castile", reason: "treaty"}
+  - {year: 1348, event: "Cortes of Alcala issue the Ordenamiento de Alcala", reason: "Cortes, national law"}
+  - {year: 1390, event: "Juan I dies at Alcala after a fall from his horse", reason: "royal death"}
+  - {year: 1391, event: "Cortes of Madrid in the minority of Enrique III", reason: "Cortes"}
+  - {year: 1435, event: "Cortes of Madrid under Juan II", reason: "Cortes"}
+  - {year: 1462, event: "Juana la Beltraneja is born in the Alcazar and sworn heir at San Pedro", reason: "royal birth"}
+  - {year: 1474, event: "Enrique IV dies in the Alcazar of Madrid", reason: "royal death"}
+  - {year: 1485, event: "Catherine of Aragon is born in the archbishop's palace at Alcala", reason: "royal birth"}
+  - {year: 1486, event: "Isabella first receives Columbus at Alcala", reason: "royal audience"}
+  - {year: 1503, event: "Ferdinand, the future emperor, is born at Alcala", reason: "royal birth"}
+  - {year: 1526, event: "Treaty of Madrid between Charles V and Francis I", reason: "treaty"}
+  - {year: 1528, event: "Cortes of Madrid swear Prince Philip as heir at San Jeronimo", reason: "Cortes"}
+  - {year: 1535, event: "Juana of Austria is born in Madrid", reason: "royal birth"}
+  - {year: 1551, event: "Young Juan of Austria is brought to Leganes to be raised", reason: "royal child"}

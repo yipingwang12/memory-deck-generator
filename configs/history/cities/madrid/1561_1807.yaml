@@ -1,0 +1,964 @@
+# City: Madrid x 1561 to 1807 (the court arrives to the eve of the French years). DRAFT 2026-11-25.
+# Area: the Community of Madrid (Madrid city, El Pardo, Casa de Campo, Alcalá de Henares, San Lorenzo de El Escorial, Aranjuez, Chinchón, Getafe, Boadilla, Nuevo Baztán, El Paular, ...).
+# Rules: cities.md, then policy.md. Grouped by theme ("Theme of each subject"). Court and national events -> out_refs.
+# Habsburg court from 1561 (Valladolid 1601 to 1606), Bourbons from 1700: palaces, royal sites and city works are IN; ceremonies, treaties and royal deaths are OUT.
+# World-grid events -> world_refs. Dates: memory pass + web check (20 of 45 searches; wikipedia.org raw pages; no unauthorised book copies).
+# Main sources: WP es (Madrid de los Austrias, building and institution articles), WP en Timeline of Madrid, Dialnet and university papers.
+# A building -> its opening or completion (or "work starts" when named); a work -> its first public appearance; a phase -> its start.
+# Dates after October 1582 are Gregorian; no event here needs a Julian conversion. Peg: last two digits of the year.
+# confidence: high | medium | low | disputed | unverified (no source found)
+dates:
+  # politics
+  - {year: 1566, peg: judge, confidence: high, source: "WP es: Cerca de Felipe II",
+     event: "Work starts on the Philip II wall, a customs fence round the grown town",
+     place: "Puerta del Sol",
+     scene: "A JUDGE lays the first brick of Philip II's new customs wall and checks every cart that enters Madrid."}
+  - {year: 1567, peg: jockey, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Philip II has the old Valnadú gate pulled down to open a square",
+     place: "Puerta de Valnadú",
+     scene: "A JOCKEY gallops straight through the old Valnadú gate, and the gate crashes down to leave an open square."}
+  - {year: 1590, peg: bees, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Crown and town council set up the Junta de Policía y Ornato to control building",
+     place: "Plaza de la Villa",
+     scene: "The BEES of the new Junta de Policía y Ornato sting every builder whose house breaks the street line."}
+  - {year: 1590, peg: bees, confidence: high, source: "en.WP: Antonio Pérez (escape 19 April 1590)",
+     event: "Antonio Pérez escapes from his Madrid prison and flees to Aragon",
+     place: "Madrid prison",
+     scene: "A swarm of BEES chases the guards from Antonio Pérez's Madrid cell door and he runs out to Aragon."}
+  - {year: 1601, peg: soda, confidence: high, source: "WP: Timeline of Madrid; WP es: Historia de Madrid",
+     event: "The court of Philip III leaves Madrid for Valladolid",
+     place: "Real Alcázar",
+     scene: "Philip III's court pours its SODA into barrels and rolls them out of the Alcázar toward Valladolid, leaving Madrid flat."}
+  - {year: 1602, peg: sun, confidence: high, source: "WP es: Monasterio de las Descalzas Reales (22 Apr)",
+     event: "Empress María gives a great feast at the Descalzas Reales to keep the court from leaving Madrid",
+     place: "Descalzas Reales",
+     scene: "Empress María lights a golden SUN over her Descalzas Reales feast to make Philip III bring the court back."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP: Timeline of Madrid; WP es: Aranjuez",
+     event: "The court of Philip III returns from Valladolid, and Madrid is the capital again",
+     place: "Real Alcázar",
+     scene: "The returning court carries a huge SUSHI platter back into the Alcázar, and Madrid is the capital again."}
+  - {year: 1621, peg: ant, confidence: high, source: "WP es: Rodrigo Calderón (21 Oct)",
+     event: "Rodrigo Calderón, fallen favourite of the Lerma years, is executed in the Plaza Mayor",
+     place: "Plaza Mayor",
+     scene: "A giant ANT climbs the Plaza Mayor scaffold and pushes Rodrigo Calderón's neck under the executioner's blade."}
+  - {year: 1625, peg: nail, confidence: high, source: "WP es: Cerca de Felipe IV",
+     event: "Philip IV orders a new brick and earth wall round Madrid, which stands until the nineteenth century",
+     scene: "Philip IV hammers a NAIL into each brick of the new city wall, which will hold Madrid in for two centuries."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP es: Navalcarnero",
+     event: "Navalcarnero buys its own jurisdiction from Segovia and becomes a free villa",
+     place: "Navalcarnero",
+     scene: "Navalcarnero signs in black INK and buys its own jurisdiction from Segovia to become a free villa."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP es: Palacio de Santa Cruz (Madrid)",
+     event: "Philip IV orders the Court Prison, the Cárcel de Corte, now the Palacio de Santa Cruz",
+     place: "Plaza de Santa Cruz",
+     scene: "Philip IV turns the iron KNOB of a new prison door, and the Cárcel de Corte rises beside Plaza de Santa Cruz."}
+  - {year: 1644, peg: warrior, confidence: high, source: "WP es: Casa de la Villa de Madrid",
+     event: "Work starts on the Casa de la Villa, the town hall of Madrid",
+     place: "Plaza de la Villa",
+     scene: "A WARRIOR digs the first trench for the Casa de la Villa so the town council can leave its rented rooms."}
+  - {year: 1687, peg: fox, confidence: high, source: "WP es: Alcalá de Henares (19 May)",
+     event: "Charles II gives Alcalá de Henares the title of city",
+     place: "Alcalá de Henares",
+     scene: "A FOX carries Charles II's charter into Alcalá de Henares, and the old university town becomes a city."}
+  - {year: 1692, peg: piano, confidence: medium, source: "WP es: Casa de la Villa (Plaza de la Villa: 1693)",
+     event: "The Casa de la Villa town hall opens",
+     place: "Plaza de la Villa",
+     scene: "The town council rolls a PIANO into the new Casa de la Villa and plays its first session in its own hall."}
+  - {year: 1699, peg: pipe, confidence: high, source: "WP es: Motín de los Gatos (28 Apr)",
+     event: "The Riot of the Cats, a bread riot, breaks out against hunger and high prices",
+     place: "Plaza Mayor",
+     scene: "Hungry Madrileños swing a lead PIPE at the palace windows in the Riot of the Cats and shout for cheap bread."}
+  - {year: 1706, peg: sushi, confidence: high, source: "WP es: Historia de Madrid; Guerra de Sucesión",
+     event: "Anglo-Portuguese allied troops occupy Madrid for the archduke Charles",
+     place: "Puerta de Alcalá",
+     scene: "Anglo-Portuguese troops roll a giant SUSHI barrel through Madrid's gates and occupy the town for the archduke."}
+  - {year: 1706, peg: sushi, confidence: high, source: "WP es: Chinchón",
+     event: "Troops of the archduke Charles wreck the castle of Chinchón, a town loyal to Philip V",
+     place: "Chinchón castle",
+     scene: "Archduke Charles's troops ram a SUSHI cart into Chinchón castle and smash its walls to punish the loyal town."}
+  - {year: 1710, peg: dice, confidence: high, source: "Dialnet; WP: 1710 in Spain (28 Sep)",
+     event: "Archduke Charles enters Madrid with Stanhope and Starhemberg for a second short occupation",
+     place: "Calle Mayor",
+     scene: "Archduke Charles rolls DICE in a silent Calle Mayor as he rides in, but Madrid stays loyal and he leaves in weeks."}
+  - {year: 1710, peg: dice, confidence: medium, source: "WP es: Torre de la Parada",
+     event: "Austrian troops attack the Torre de la Parada hunting lodge on Monte de El Pardo",
+     place: "Torre de la Parada",
+     scene: "Austrian soldiers throw burning DICE through the windows of the Torre de la Parada hunting lodge."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP es: Cuartel del Conde-Duque (4 Nov)",
+     event: "Philip V orders the Conde-Duque barracks for his guards, and Pedro de Ribera starts to build it",
+     place: "Calle del Conde Duque",
+     scene: "A guard DOG digs the foundations of Pedro de Ribera's huge Conde-Duque barracks for the king's Guardias de Corps."}
+  - {year: 1717, peg: dog, confidence: high, source: "WP es: Palacio de Uceda",
+     event: "Philip V buys the Uceda palace on Calle Mayor as the seat of the royal Councils",
+     place: "Calle Mayor",
+     scene: "A DOG carries the Councils' files in its mouth along Calle Mayor into the Uceda palace, now the Palacio de los Consejos."}
+  - {year: 1726, peg: nacho, confidence: high, source: "WP es: Puerta de San Vicente",
+     event: "Pedro de Ribera builds the first monumental San Vicente gate for the corregidor Vadillo",
+     place: "Puerta de San Vicente",
+     scene: "Pedro de Ribera sets a stone NACHO on top of his new San Vicente gate, the western entry to Madrid."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP es: Palacio Real de El Pardo",
+     event: "Ferdinand VI orders a wall about a hundred kilometres long round Monte de El Pardo",
+     place: "Monte de El Pardo",
+     scene: "Ferdinand VI ties a ROPE a hundred kilometres long round Monte de El Pardo, and masons build the wall along it."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP es: Puerta de Hierro (Madrid)",
+     event: "The Puerta de Hierro gate on the El Pardo road is finished",
+     place: "Puerta de Hierro",
+     scene: "A LLAMA trots through the finished iron gate, the Puerta de Hierro, on the road from Madrid to El Pardo."}
+  - {year: 1756, peg: leech, confidence: high, source: "WP: Timeline of Madrid; WP es: Puerta de Recoletos",
+     event: "Francisco Carlier builds the new Recoletos gate by the Salesas convent wall",
+     place: "Puerta de Recoletos",
+     scene: "A LEECH sucks the old portillo dry, and Carlier puts up the new Recoletos gate beside the Salesas convent wall."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP es: Palacio del Buen Retiro",
+     event: "After the riots the Buen Retiro palace becomes a barracks for the Aragon and Swiss regiments",
+     place: "Buen Retiro",
+     scene: "A JUDGE turns the Buen Retiro palace halls into barracks and fills them with Swiss soldiers after the riots."}
+  - {year: 1768, peg: chef, confidence: high, source: "Dialnet: Real Cédula 6 Oct",
+     event: "Madrid is divided into eight cuarteles and sixty-four barrios, each with an alcalde de barrio",
+     scene: "A CHEF slices the map of Madrid like a pie into eight cuarteles and sixty-four barrios, each with its own alcalde."}
+  - {year: 1768, peg: chef, confidence: high, source: "WP es: Real Casa de Correos",
+     event: "Jaime Marquet finishes the Real Casa de Correos on the Puerta del Sol",
+     place: "Puerta del Sol",
+     scene: "A CHEF bakes the Real Casa de Correos brick by brick on Puerta del Sol and hands Marquet the finished post office."}
+  - {year: 1775, peg: eagle, confidence: high, source: "WP es: Puerta de San Vicente",
+     event: "Sabatini's new San Vicente gate is finished at the foot of the rebuilt Cuesta de San Vicente",
+     place: "Puerta de San Vicente",
+     scene: "A stone EAGLE lands on Sabatini's new San Vicente gate at the foot of the rebuilt Cuesta de San Vicente."}
+  - {year: 1778, peg: cave, confidence: high, source: "WP es: Puerta de Alcalá; WP: Timeline of Madrid",
+     event: "Sabatini's Puerta de Alcalá, the new eastern gate of Madrid, is inaugurated",
+     place: "Puerta de Alcalá",
+     scene: "Sabatini cuts a CAVE of five arches through the new Puerta de Alcalá, the grand eastern gate of Madrid."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP es: Palacio de Godoy",
+     event: "Sabatini finishes the Palace of the Secretaries of State, the Palacio de Grimaldi",
+     place: "Calle de Bailén",
+     scene: "Sabatini pulls the Palace of the Secretaries of State out of an OVEN beside the Senate, and Floridablanca moves in."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP es: Real Sitio de San Lorenzo de El Escorial",
+     event: "Charles III puts a governor over the Real Sitio of San Lorenzo, above the prior and the mayor",
+     place: "San Lorenzo de El Escorial",
+     scene: "A new governor bakes the prior's and the mayor's powers into one loaf in an OVEN at San Lorenzo de El Escorial."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP es: Alcalá de Henares",
+     event: "Archbishop Lorenzana builds the new Puerta de Madrid gate of Alcalá de Henares",
+     place: "Alcalá de Henares",
+     scene: "Archbishop Lorenzana plays a FIFE on top of the new Puerta de Madrid as it replaces Alcalá's medieval gate."}
+  - {year: 1793, peg: palm, confidence: high, source: "WP es: Palacio de Santa Cruz (Madrid)",
+     event: "The rebuilt Court Prison building opens as the Audiencia, the law courts of Madrid",
+     place: "Plaza de Santa Cruz",
+     scene: "A PALM tree shades the rebuilt Santa Cruz palace as Villanueva hands it to Madrid's judges as their Audiencia."}
+  - {year: 1807, peg: ski, confidence: high, source: "WP es: Palacio de Buenavista (Madrid)",
+     event: "The town council expropriates the Buenavista palace and gives it to Godoy",
+     place: "Plaza de Cibeles",
+     scene: "Godoy rides a SKI down Calle de Alcalá to the Buenavista palace, which the town council has seized and given to him."}
+  # science
+  - {year: 1572, peg: coin, confidence: high, source: "WP es: Aranjuez",
+     event: "The Mar de Ontígola dam is finished to store water for Aranjuez",
+     place: "Aranjuez",
+     scene: "Philip II drops a COIN into the new Mar de Ontígola reservoir, which now stores water for Aranjuez."}
+  - {year: 1577, peg: cake, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The new Calle de Segovia is finished over the San Pedro ravine",
+     place: "Calle de Segovia",
+     scene: "Workmen spread a long CAKE of earth over the San Pedro ravine, and the new Calle de Segovia runs down to the river."}
+  - {year: 1583, peg: foam, confidence: medium, source: "WP es: Basílica Pontificia de San Miguel",
+     event: "The Hospital de los Italianos is founded under the papal nuncios",
+     place: "Calle de San Justo",
+     scene: "Italian brothers wash patients with FOAM in the new Hospital de los Italianos near the church of San Justo."}
+  - {year: 1584, peg: fairy, confidence: high, source: "WP es: Puente de Segovia; WP: Timeline of Madrid",
+     event: "The Segovia Bridge, attributed to Juan de Herrera, is finished over the Manzanares",
+     place: "Puente de Segovia",
+     scene: "A FAIRY taps Herrera's granite arches, and the Segovia Bridge carries the road over the Manzanares."}
+  - {year: 1587, peg: fox, confidence: medium, source: "WP es: Hospital General de Madrid",
+     event: "Philip II makes the hospital of the Incarnation and San Roque the General Hospital of Madrid",
+     place: "Carrera de San Jerónimo",
+     scene: "A FOX in a nurse's apron herds the sick of Madrid's small hospitals into one General Hospital."}
+  - {year: 1603, peg: sumo, confidence: high, source: "WP es: Hospital General de Atocha (9 Jun)",
+     event: "The sick move into the new General Hospital at the end of Calle de Atocha",
+     place: "Calle de Atocha",
+     scene: "A SUMO wrestler carries the sick one by one into the new General Hospital at the end of Calle de Atocha."}
+  - {year: 1606, peg: sushi, confidence: high, source: "WP es: Hospital de San Antonio de los Portugueses",
+     event: "The Hospital of San Antonio de los Portugueses is founded for poor Portuguese at court",
+     place: "Corredera de San Pablo",
+     scene: "A SUSHI cook from Lisbon serves the poor Portuguese patients of the new Hospital of San Antonio de los Portugueses."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The Buen Suceso hospital and church on the Puerta del Sol are finished",
+     place: "Puerta del Sol",
+     scene: "A doctor glides on one SKI across the Puerta del Sol with medicine for the finished Buen Suceso hospital."}
+  - {year: 1610, peg: dice, confidence: medium, source: "WP es: Viajes de agua de Madrid (1610-1621)",
+     event: "Work starts on the Amaniel water channel, a qanat to the royal Alcázar",
+     place: "Amaniel",
+     scene: "A giant DICE tumbles down the first shaft of the Amaniel water tunnel that will feed the Alcázar."}
+  - {year: 1617, peg: dog, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The town creates the Junta de Fuentes to run and repair its fountains",
+     scene: "A DOG guards every public fountain for the new Junta de Fuentes, which keeps Madrid's water running."}
+  - {year: 1620, peg: nose, confidence: medium, source: "WP es: Viajes de agua de Madrid (1613-1620)",
+     event: "The Castellana water channel, run by the town, is finished",
+     place: "Fuente Castellana",
+     scene: "Water from the Castellana springs drips off a giant NOSE into the town's public fountains at last."}
+  - {year: 1630, peg: mouse, confidence: medium, source: "WP es: Viajes de agua de Madrid (1617-1630)",
+     event: "The Upper and Lower Abroñigal water channels are finished",
+     place: "Abroñigal",
+     scene: "A MOUSE runs out of the finished Abroñigal tunnels just ahead of the water for the eastern fountains."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP es: Puente de Toledo (Madrid)",
+     event: "José de Villarreal finishes the first stone Toledo bridge, the Puente Toledana",
+     place: "Manzanares",
+     scene: "Villarreal lays a giant wheel of CHEESE across the Manzanares as the first stone Toledo bridge."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP es: Puente de Toledo (Madrid)",
+     event: "Pedro de Ribera's baroque Toledo Bridge is finished for the corregidor Vadillo",
+     place: "Puente de Toledo",
+     scene: "Ribera hangs the MOON over his finished baroque Toledo Bridge, the new road south across the Manzanares."}
+  - {year: 1734, peg: hammer, confidence: high, source: "WP es: Real Academia Nacional de Medicina",
+     event: "The Royal Medical Academy of Madrid grows out of a doctors' tertulia",
+     scene: "Doctors bang a HAMMER on the table of their tertulia, and the Royal Medical Academy of Madrid begins."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP es: Real Academia Nacional de Farmacia",
+     event: "Philip V approves the Royal College of Apothecaries of Madrid",
+     scene: "Madrid apothecaries pour their remedies into one MUG as Philip V approves their Royal College."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP es: Puente de San Fernando",
+     event: "The San Fernando bridge on the El Pardo road is built by Jaime Bort",
+     place: "Puente de San Fernando",
+     scene: "Workmen haul stone with a ROPE to finish the San Fernando bridge over the Manzanares on the El Pardo road."}
+  - {year: 1758, peg: wolf, confidence: high, source: "WP es: Hospital General de Atocha (1 Mar)",
+     event: "Work starts on Hermosilla's huge new General Hospital, later finished by Sabatini",
+     place: "Calle de Atocha",
+     scene: "A WOLF stretches the first cords for Hermosilla's huge new General Hospital on Calle de Atocha."}
+  - {year: 1761, peg: jet, confidence: high, source: "Comunidad de Madrid; WP: Royal Palace of Aranjuez",
+     event: "Charles III builds the Long Bridge, about three hundred metres, over the Jarama",
+     place: "Aranjuez",
+     scene: "A JET of Jarama water rushes under the new Long Bridge at Aranjuez, nearly three hundred metres of arches."}
+  - {year: 1761, peg: jet, confidence: high, source: "Dialnet: Instrucción, 14 May",
+     event: "Sabatini's instruction for paving, cleaning and cesspits in Madrid's streets is issued",
+     scene: "Sabatini's cleaning cart fires a JET of water down every street as his new rules for paving and cesspits begin."}
+  - {year: 1765, peg: jelly, confidence: medium, source: "Iustel: Real Orden 25 Sep",
+     event: "A royal order sets rules for night watchmen and lamps at house doors in Madrid",
+     scene: "Night watchmen fill each street lamp with JELLY-thick oil as the royal order puts a light at every door."}
+  - {year: 1770, peg: goose, confidence: high, source: "WP es: Canal del Manzanares",
+     event: "Work starts on the Manzanares Canal under a private grant to Pedro Martinengo",
+     place: "Manzanares",
+     scene: "A GOOSE paddles down the first lock of the Manzanares Canal, which Martinengo starts to dig south of Madrid."}
+  - {year: 1779, peg: cowboy, confidence: high, source: "WP es: Canal del Manzanares",
+     event: "Charles III buys the Manzanares Canal, which becomes a Royal Canal",
+     place: "Manzanares",
+     scene: "A COWBOY buys the Manzanares Canal for Charles III with a bag of gold, and it becomes the Royal Canal."}
+  - {year: 1781, peg: foot, confidence: high, source: "WP es: Real Jardín Botánico de Madrid",
+     event: "The Royal Botanic Garden opens at its new site beside the Paseo del Prado",
+     place: "Paseo del Prado",
+     scene: "A giant FOOT carries the Royal Botanic Garden from Migas Calientes and plants it beside the Paseo del Prado."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP es: Globo aerostático (6 Jun)",
+     event: "Charles Bouché's manned hot-air balloon crashes at take-off at Aranjuez",
+     place: "Aranjuez",
+     scene: "A FAIRY cuts the ropes too soon, and Bouché's hot-air balloon falls back to earth at Aranjuez."}
+  - {year: 1787, peg: fox, confidence: high, source: "WP es: Real Colegio de Cirugía de San Carlos (1 Oct)",
+     event: "The Royal College of Surgery of San Carlos opens in the General Hospital under Gimbernat",
+     place: "Calle de Atocha",
+     scene: "Gimbernat teaches a FOX anatomy in the General Hospital basement as the San Carlos College of Surgery opens."}
+  - {year: 1787, peg: fox, confidence: high, source: "WP es: Presa de El Gasco",
+     event: "Work starts on the El Gasco dam for Lemaur's Guadarrama canal",
+     place: "Torrelodones",
+     scene: "A FOX digs the foundations of the El Gasco dam for Lemaur's Guadarrama canal to Madrid."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP es: Vicente Lunardi (12 Aug)",
+     event: "Vincenzo Lunardi's balloon rises from the Buen Retiro gardens and comes down at Daganzo",
+     place: "Buen Retiro",
+     scene: "Lunardi lifts a PIANO under his balloon from the Buen Retiro gardens and sets it down at Daganzo."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP es: Agustín de Betancourt",
+     event: "Betancourt's Royal Machine Cabinet opens in the Buen Retiro palace",
+     place: "Buen Retiro",
+     scene: "Betancourt plays the PIANO keys of his catalogue, two hundred and seventy machine models, as his Royal Machine Cabinet opens."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP es: Presa de El Gasco (14-15 May)",
+     event: "A storm breaks part of the El Gasco dam, and work on the Guadarrama canal ends",
+     place: "Torrelodones",
+     scene: "A storm bursts a PIPE inside the El Gasco dam; its wall falls and the Guadarrama canal is abandoned."}
+  - {year: 1800, peg: sauce, confidence: high, source: "WP es: Telégrafo óptico",
+     event: "Betancourt's optical telegraph line from Madrid to Aranjuez starts to work",
+     place: "Aranjuez",
+     scene: "Betancourt's telegraph towers flash SAUCE-pan shutters to send signals from Madrid to Aranjuez."}
+  - {year: 1804, peg: sewer, confidence: high, source: "WP es: Real Observatorio de Madrid (18 Aug)",
+     event: "The first observation is made with Herschel's great telescope at the Royal Observatory",
+     place: "Retiro hill",
+     scene: "Astronomers climb out of a SEWER onto the Retiro hill and make the first observation with Herschel's great telescope."}
+  # religion
+  - {year: 1561, peg: jet, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Work starts on the convent of La Victoria near the Puerta del Sol",
+     place: "Puerta del Sol",
+     scene: "A JET of holy water blesses the first stones of the convent of La Victoria near the Puerta del Sol."}
+  - {year: 1564, peg: cherry, confidence: high, source: "WP es: Monasterio de las Descalzas Reales (Madrid)",
+     event: "The church of the Descalzas Reales, Juana of Austria's convent, is finished",
+     place: "Descalzas Reales",
+     scene: "Juana of Austria puts a CHERRY on the altar as the Descalzas Reales church opens on the feast of the Conception."}
+  - {year: 1567, peg: jockey, confidence: high, source: "WP es: Monasterio de El Escorial",
+     event: "The first Hieronymite monks move into the monastery at El Escorial",
+     place: "El Escorial",
+     scene: "A JOCKEY leads the first Hieronymite monks on horseback into their half-built monastery at El Escorial."}
+  - {year: 1575, peg: eagle, confidence: high, source: "WP es: Iglesia de San Sebastián (Madrid)",
+     event: "The church of San Sebastián on Calle de Atocha is finished",
+     place: "Calle de Atocha",
+     scene: "An EAGLE perches on the finished church of San Sebastián, the future parish of actors and poets."}
+  - {year: 1580, peg: vase, confidence: high, source: "WP es: Basílica de Atocha (25 Mar)",
+     event: "Madrid carries the Virgin of Atocha in procession for the king's recovery from the epidemic",
+     place: "Atocha",
+     scene: "Madrileños carry the Virgin of Atocha through the streets and set a VASE of flowers before her for the sick king."}
+  - {year: 1586, peg: fish, confidence: high, source: "WP es: Monasterio de El Escorial",
+     event: "The basilica of the Escorial is finished after eleven years of work",
+     place: "El Escorial",
+     scene: "A FISH swims round the great dome as builders close the basilica of the Escorial after eleven years."}
+  - {year: 1607, peg: ski, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The Corpus Christi convent, called the Carboneras, is founded by the Countess of Castellar",
+     place: "Plaza del Conde de Miranda",
+     scene: "The Countess of Castellar rides a SKI into the Plaza del Conde de Miranda to found the Corpus Christi convent of the Carboneras."}
+  - {year: 1609, peg: soap, confidence: disputed, source: "WP es: Trinitarias (Mesonero 1609; Répide 1612)",
+     event: "The convent of the Trinitarias Descalzas is founded in the Barrio de las Letras",
+     place: "Calle de Lope de Vega",
+     scene: "Trinitarian nuns scrub their new convent in the Barrio de las Letras with SOAP; it will later hold Cervantes's grave."}
+  - {year: 1612, peg: tongue, confidence: high, source: "WP es: Cristo yacente de El Pardo",
+     event: "Philip III founds the Capuchin convent at El Pardo",
+     place: "El Pardo",
+     scene: "A Capuchin friar sticks out his TONGUE at the cold as Philip III founds his convent on the hill at El Pardo."}
+  - {year: 1615, peg: doll, confidence: high, source: "WP es: Cristo yacente de El Pardo",
+     event: "The Capuchins of El Pardo receive Gregorio Fernández's Cristo yacente",
+     place: "El Pardo",
+     scene: "Philip III gives the Capuchins of El Pardo a life-size DOLL of the dead Christ, carved by Gregorio Fernández."}
+  - {year: 1615, peg: doll, confidence: high, source: "WP es: Catedral de las Fuerzas Armadas",
+     event: "The Duke of Uceda founds the convent of the Sacramento beside his palace",
+     place: "Calle Mayor",
+     scene: "The Duke of Uceda builds a DOLL's house convent, the Sacramento, beside his palace on Calle Mayor."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP es: Real Monasterio de la Encarnación (2 Jul)",
+     event: "The Royal Monastery of La Encarnación, founded by Queen Margaret, opens",
+     place: "Plaza de la Encarnación",
+     scene: "Queen Margaret's nuns carry a golden DISH into the new Royal Monastery of La Encarnación on its opening day."}
+  - {year: 1618, peg: dove, confidence: high, source: "WP es: Catedral Magistral de Alcalá de Henares",
+     event: "The tower of the Magistral church of Alcalá de Henares is finished",
+     place: "Alcalá de Henares",
+     scene: "A DOVE lands on the finished tower of the Magistral church of Alcalá, completed by Nicolás de Vergara."}
+  - {year: 1620, peg: nose, confidence: medium, source: "WP es: Juan de Tassis y Peralta (15 May)",
+     event: "Madrid holds fiestas and a poetry contest for the beatification of Isidro, its patron",
+     place: "Plaza Mayor",
+     scene: "Poets sniff a golden NOSE of incense at Madrid's fiestas for the newly beatified farmer Isidro, the town's patron."}
+  - {year: 1622, peg: nun, confidence: high, source: "en.WP: Isidore the Laborer (canonised 12 March 1622)",
+     event: "Isidro, the patron of Madrid, is made a saint; the city holds great festivals",
+     place: "Plaza Mayor",
+     scene: "A NUN dances with Isidro's statue across the Plaza Mayor as Madrid celebrates its new saint."}
+  - {year: 1623, peg: gnome, confidence: medium, source: "WP es: Iglesia de las Calatravas",
+     event: "The Calatrava nuns move their convent from Almonacid de Zorita to Madrid",
+     place: "Calle de Alcalá",
+     scene: "A GNOME guides the Calatrava nuns from Almonacid de Zorita to their new house in Madrid."}
+  - {year: 1624, peg: hanger, confidence: medium, source: "WP es: Iglesia de San Sebastián (Madrid)",
+     event: "Actors and playwrights found the Cofradía de la Novena at San Sebastián church",
+     place: "Calle de Atocha",
+     scene: "Actors hang their costumes on a HANGER in San Sebastián church and found the Cofradía de la Novena."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP es: Convento de las Bernardas (Alcalá)",
+     event: "The Bernardas convent of Alcalá de Henares, with its oval church, is finished",
+     place: "Alcalá de Henares",
+     scene: "Cardinal Sandoval blesses a NACHO on the altar of the new oval church of the Bernardas in Alcalá de Henares."}
+  - {year: 1626, peg: nacho, confidence: high, source: "WP es: Chinchón",
+     event: "The church of the Asunción at Chinchón is finished",
+     place: "Chinchón",
+     scene: "Chinchón villagers share a NACHO under their finished Asunción church, begun a century before as a palace chapel."}
+  - {year: 1632, peg: moon, confidence: high, source: "Princeton catalog; UAM thesis (4 Jul)",
+     event: "A general auto de fe against Portuguese judaizers is held in the Plaza Mayor",
+     place: "Plaza Mayor",
+     scene: "Under a pale MOON, Portuguese judaizers face the Inquisition's great auto de fe in the Plaza Mayor before Philip IV."}
+  - {year: 1633, peg: mummy, confidence: high, source: "WP es: Iglesia de San Antonio de los Alemanes",
+     event: "The oval church of San Antonio de los Portugueses is finished",
+     place: "Corredera de San Pablo",
+     scene: "A MUMMY lifts the oval dome onto the church of San Antonio de los Portugueses as its builders finish."}
+  - {year: 1641, peg: radio, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The convent church of San Plácido is built by Fray Lorenzo de San Nicolás",
+     place: "Calle de San Roque",
+     scene: "The new San Plácido convent church sends its bells over the RADIO to the whole of Calle de San Roque."}
+  - {year: 1645, peg: railway, confidence: high, source: "WP es: Iglesia de San Ginés (Madrid)",
+     event: "The rebuilt nave of San Ginés church is finished after the old church fell",
+     place: "Calle del Arenal",
+     scene: "A RAILWAY of carts brings bricks for Juan Ruiz to finish the new nave of San Ginés on Calle del Arenal."}
+  - {year: 1651, peg: wallet, confidence: high, source: "WP es: Colegiata de San Isidro (23 Sep)",
+     event: "The church of the Jesuit Colegio Imperial is consecrated to Saint Francis Xavier",
+     place: "Calle de Toledo",
+     scene: "Nuncio Rospigliosi opens his WALLET and consecrates the Jesuit church of the Colegio Imperial to Saint Francis Xavier."}
+  - {year: 1654, peg: lawyer, confidence: high, source: "Dialnet; UVa: Panteón (17 Mar)",
+     event: "The Pantheon of Kings under the Escorial basilica is finished and inaugurated",
+     place: "El Escorial",
+     scene: "A LAWYER signs the deed as the finished Pantheon of Kings opens under the high altar of the Escorial."}
+  - {year: 1668, peg: chef, confidence: high, source: "WP es: Basílica de San Francisco el Grande",
+     event: "The chapel of the Cristo de los Dolores of the Franciscan Third Order is finished",
+     place: "Calle de San Bernabé",
+     scene: "A CHEF in a Franciscan habit sets the last gilt on the new chapel of the Cristo de los Dolores."}
+  - {year: 1669, peg: ship, confidence: high, source: "WP es: Iglesia de San Andrés (Madrid) (15 May)",
+     event: "The domed chapel of San Isidro beside San Andrés church is finished",
+     place: "Plaza de los Carros",
+     scene: "A SHIP's crew of masons finishes the domed chapel of San Isidro beside San Andrés to hold the patron's body."}
+  - {year: 1678, peg: cave, confidence: high, source: "WP es: Iglesia de las Calatravas",
+     event: "The baroque church of the Calatravas on Calle de Alcalá is finished",
+     place: "Calle de Alcalá",
+     scene: "The Calatrava nuns step out of a CAVE into their finished baroque church on Calle de Alcalá."}
+  - {year: 1680, peg: vase, confidence: high, source: "EBSCO; WP es: Plaza Mayor (30 Jun)",
+     event: "The great auto de fe of the Inquisition is held in the Plaza Mayor before Charles II",
+     place: "Plaza Mayor",
+     scene: "Inquisitors smash a VASE on the Plaza Mayor stage and sentence more than a hundred people before Charles II."}
+  - {year: 1682, peg: oven, confidence: high, source: "El Debate; fundacionmedinaceli.org (Aug)",
+     event: "The ransomed statue of Jesús Nazareno, later Medinaceli, reaches the Trinitarian convent in Madrid",
+     place: "Plaza de Jesús",
+     scene: "Trinitarian friars lift the Jesús Nazareno statue, ransomed from Meknes, out of an OVEN-sized crate in their Madrid convent."}
+  - {year: 1685, peg: waffle, confidence: high, source: "WP es: Iglesia de las Comendadoras de Santiago",
+     event: "The church of the Comendadoras de Santiago is finished",
+     place: "Plaza de las Comendadoras",
+     scene: "A knight of Santiago eats a WAFFLE in the finished church of the Comendadoras de Santiago."}
+  - {year: 1698, peg: beehive, confidence: high, source: "WP es: Convento de las Trinitarias Descalzas",
+     event: "The church of the Trinitarias Descalzas, where Cervantes lies buried, is finished",
+     place: "Calle de Lope de Vega",
+     scene: "A BEEHIVE hums in the finished church of the Trinitarias, where Cervantes lies buried."}
+  - {year: 1718, peg: dove, confidence: high, source: "Miradormadrid; Commons (10 Sep)",
+     event: "Pedro de Ribera's hermitage of the Virgen del Puerto opens by the Segovia bridge",
+     place: "Paseo de la Virgen del Puerto",
+     scene: "A DOVE carries the Virgen del Puerto statue from the Colegio Imperial to Ribera's new hermitage by the river."}
+  - {year: 1724, peg: hanger, confidence: high, source: "WP es: Monasterio de Santa María de El Paular",
+     event: "Francisco Hurtado's baroque Sagrario at the El Paular charterhouse is finished",
+     place: "El Paular",
+     scene: "Carthusian monks hang coloured marble on a HANGER to finish Hurtado's baroque Sagrario at El Paular."}
+  - {year: 1725, peg: nail, confidence: medium, source: "WP es: Ermita de San Isidro (Madrid)",
+     event: "The hermitage of San Isidro above the Manzanares meadow is rebuilt",
+     place: "Pradera de San Isidro",
+     scene: "The Marquis of Valero hammers the last NAIL into the rebuilt San Isidro hermitage above the meadow."}
+  - {year: 1746, peg: roach, confidence: high, source: "WP es: Basílica Pontificia de San Miguel",
+     event: "Bonavía's church of San Justo, now the basilica of San Miguel, is consecrated",
+     place: "Calle de San Justo",
+     scene: "A ROACH scuttles across Bonavía's curved facade as the new church of San Justo is consecrated."}
+  - {year: 1748, peg: reef, confidence: high, source: "WP es: Iglesia de San José (Madrid)",
+     event: "Pedro de Ribera's church of San José on Calle de Alcalá is finished",
+     place: "Calle de Alcalá",
+     scene: "A coral REEF grows over the ornate facade of San José on Calle de Alcalá as Ribera's church is finished."}
+  - {year: 1752, peg: lion, confidence: medium, source: "WP es: Iglesia de San Antonio (Aranjuez)",
+     event: "Bonavía starts the church of San Antonio on the main square of Aranjuez",
+     place: "Aranjuez",
+     scene: "A LION lies down at the door as Bonavía starts the round church of San Antonio on the new square of Aranjuez."}
+  - {year: 1753, peg: llama, confidence: high, source: "WP es: Iglesia de San Marcos (Madrid) (22 Apr)",
+     event: "Ventura Rodríguez's church of San Marcos is consecrated",
+     place: "Calle de San Leonardo",
+     scene: "A LLAMA kneels inside Ventura Rodríguez's oval church of San Marcos on its consecration day."}
+  - {year: 1758, peg: wolf, confidence: high, source: "WP es: Convento de las Salesas Reales",
+     event: "Barbara of Braganza's convent and church of the Salesas Reales opens",
+     place: "Plaza de las Salesas",
+     scene: "A WOLF in a nun's veil opens the gates as Barbara of Braganza's Salesas Reales convent and church open."}
+  - {year: 1761, peg: jet, confidence: high, source: "WP es: Iglesia de San Cayetano (Madrid)",
+     event: "The church of San Cayetano is finished by Francisco de Moradillo",
+     place: "Calle de Embajadores",
+     scene: "A JET of incense shoots up from Moradillo's finished church of San Cayetano on Calle de Embajadores."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP es: Colegio Imperial de Madrid",
+     event: "The Jesuit church becomes the Colegiata de San Isidro and receives the patron's remains",
+     place: "Calle de Toledo",
+     scene: "A JOCKEY carries San Isidro's coffin from San Andrés to the Jesuits' empty church, now the Colegiata de San Isidro."}
+  - {year: 1784, peg: fairy, confidence: high, source: "WP es: Basílica de San Francisco el Grande",
+     event: "The basilica of San Francisco el Grande is finished",
+     place: "San Francisco el Grande",
+     scene: "A FAIRY sets the last stone on the huge dome of San Francisco el Grande, the biggest dome in Madrid."}
+  - {year: 1795, peg: bell, confidence: high, source: "WP es: Oratorio del Caballero de Gracia",
+     event: "Arnal finishes the oval oratory of the Caballero de Gracia that Villanueva began",
+     place: "Calle del Caballero de Gracia",
+     scene: "Arnal rings a BELL in the finished oval oratory of the Caballero de Gracia that Villanueva began."}
+  - {year: 1799, peg: pipe, confidence: high, source: "WP es: Ermita de San Antonio de la Florida (12 Jul)",
+     event: "The new chapel of San Antonio de la Florida opens",
+     place: "San Antonio de la Florida",
+     scene: "A PIPE organ plays as the new chapel of San Antonio de la Florida opens its doors."}
+  # arts
+  - {year: 1561, peg: jet, confidence: disputed, source: "WP es: Casa de Campo 1561; Historia de Madrid 1562",
+     event: "Philip II buys the Vargas estate across the Manzanares, the start of the Casa de Campo",
+     place: "Casa de Campo",
+     scene: "Philip II lands a royal JET on the Vargas estate across the Manzanares, and it becomes his Casa de Campo."}
+  - {year: 1562, peg: chain, confidence: high, source: "WP: Timeline of Madrid",
+     event: "Anton van den Wyngaerde draws a panorama of the new capital",
+     place: "Manzanares",
+     scene: "Wyngaerde links the houses of the new capital in a long CHAIN of ink and draws the first panorama of Madrid."}
+  - {year: 1564, peg: cherry, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Gaspar de Vega finishes the Royal Armoury beside the Alcázar",
+     place: "Plaza de la Armería",
+     scene: "Knights polish a CHERRY-red helmet in the finished Royal Armoury that Gaspar de Vega built beside the Alcázar."}
+  - {year: 1568, peg: chef, confidence: medium, source: "WP es: Corral de la Pacheca (5 Mar)",
+     event: "The first recorded play is staged at the Corral de la Pacheca",
+     place: "Calle del Príncipe",
+     scene: "A CHEF stirs up laughter in the first recorded play at the Corral de la Pacheca, staged for the Cofradía de la Pasión."}
+  - {year: 1583, peg: foam, confidence: high, source: "WP es: Teatro Español (21 Sep)",
+     event: "The Corral del Príncipe theatre opens",
+     place: "Calle del Príncipe",
+     scene: "Actors splash FOAM on the cheering crowd as the Corral del Príncipe opens on Calle del Príncipe."}
+  - {year: 1584, peg: fairy, confidence: high, source: "WP es: Teatro de la Cruz (16 Sep)",
+     event: "The Corral de la Cruz theatre opens",
+     place: "Calle de la Cruz",
+     scene: "A FAIRY drops from the rigging on the opening night of the Corral de la Cruz near the Plazuela del Ángel."}
+  - {year: 1585, peg: waffle, confidence: medium, source: "WP es: Casa de las Siete Chimeneas",
+     event: "The Casa de las Siete Chimeneas is built",
+     place: "Plaza del Rey",
+     scene: "Seven chimneys puff WAFFLE-scented smoke from the new Casa de las Siete Chimeneas on the Plaza del Rey."}
+  - {year: 1602, peg: sun, confidence: medium, source: "WP es: Corral de comedias de Alcalá (Alcalá: 1601)",
+     event: "The town corral de comedias of Alcalá de Henares opens on the market square",
+     place: "Plaza de Cervantes, Alcalá",
+     scene: "A SUN shines into the open-air yard as the new corral de comedias of Alcalá de Henares opens."}
+  - {year: 1610, peg: dice, confidence: high, source: "casamuseolopedevega.org (7 Sep)",
+     event: "Lope de Vega buys the house on Calle de Francos where he lives until his death",
+     place: "Calle de Cervantes",
+     scene: "Lope de Vega carries a giant DICE into his new house on Calle de Francos, bought from Captain Villegas."}
+  - {year: 1616, peg: dish, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Philip III's bronze horseman by Giambologna and Tacca arrives and stands in the Casa de Campo",
+     place: "Casa de Campo",
+     scene: "Philip III's bronze horse arrives from Florence on a giant DISH and stands in the Casa de Campo garden."}
+  - {year: 1619, peg: tuba, confidence: high, source: "WP es: Plaza Mayor; WP: Timeline of Madrid",
+     event: "Juan Gómez de Mora finishes the Plaza Mayor, with the Casa de la Panadería",
+     place: "Plaza Mayor",
+     scene: "A TUBA blasts as Juan Gómez de Mora finishes the Plaza Mayor, with the Casa de la Panadería on its north side."}
+  - {year: 1627, peg: ink, confidence: high, source: "WP es: Palacio de la Zarzuela",
+     event: "Philip IV orders a hunting lodge, the Zarzuela palace, near El Pardo",
+     place: "La Zarzuela",
+     scene: "Philip IV draws a hunting lodge in INK, and the little Zarzuela palace rises among the brambles near El Pardo."}
+  - {year: 1629, peg: knob, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Gómez de Mora's Fountain of Orpheus is finished",
+     scene: "Orpheus turns a KNOB on his lyre, and Gómez de Mora's new Fountain of Orpheus starts to flow."}
+  - {year: 1630, peg: mouse, confidence: high, source: "WP es: Fuente de la Mariblanca",
+     event: "The Fuente de la Fe, crowned by the Mariblanca statue, is set up on the Puerta del Sol",
+     place: "Puerta del Sol",
+     scene: "A MOUSE climbs the new Fuente de la Fe on the Puerta del Sol to sit beside the white Mariblanca on top."}
+  - {year: 1633, peg: mummy, confidence: medium, source: "WP es: Casa de Campo (Dec; Timeline 1637)",
+     event: "The Buen Retiro palace of Philip IV is inaugurated",
+     place: "Buen Retiro",
+     scene: "A MUMMY cuts the ribbon at the Buen Retiro palace that Olivares built for Philip IV east of the Prado."}
+  - {year: 1636, peg: match, confidence: high, source: "WP es: Real Alcázar de Madrid",
+     event: "Gómez de Mora's new south facade of the Alcázar is finished",
+     place: "Real Alcázar",
+     scene: "Gómez de Mora strikes a MATCH to light up the finished south facade of the Alcázar and its towers."}
+  - {year: 1637, peg: mug, confidence: high, source: "WP es: Casón del Buen Retiro",
+     event: "Alonso Carbonel builds the ballroom of the Buen Retiro, now the Casón",
+     place: "Casón del Buen Retiro",
+     scene: "Dancers raise a MUG of wine in Carbonel's new ballroom, the Casón, at the Buen Retiro palace."}
+  - {year: 1640, peg: horse, confidence: high, source: "WP es: Coliseo del Buen Retiro (4 Feb)",
+     event: "The Coliseo theatre of the Buen Retiro opens",
+     place: "Buen Retiro",
+     scene: "A stage HORSE flies on Cosimo Lotti's machines as the Coliseo theatre of the Buen Retiro opens."}
+  - {year: 1640, peg: horse, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Pietro Tacca finishes the bronze equestrian statue of Philip IV",
+     place: "Buen Retiro",
+     scene: "Pietro Tacca balances the bronze HORSE of Philip IV on its back legs for the Buen Retiro garden."}
+  - {year: 1642, peg: rhino, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The Count of Monclova builds the Moncloa house outside Madrid",
+     place: "Moncloa",
+     scene: "A RHINO charges through the gardens of the new Moncloa house that the Count of Monclova builds."}
+  - {year: 1655, peg: lily, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Juan Maza finishes the Abrantes palace",
+     place: "Calle Mayor",
+     scene: "Juan Maza plants a LILY at the door of the finished Abrantes palace on Calle Mayor."}
+  - {year: 1656, peg: leech, confidence: high, source: "WP es: Plano de Teixeira",
+     event: "Pedro Teixeira's great plan of Madrid is engraved in Antwerp",
+     place: "Antwerp",
+     scene: "Teixeira draws every house of Madrid, and a LEECH sucks up his ink so the plan can be engraved in Antwerp."}
+  - {year: 1657, peg: log, confidence: high, source: "APGRD Oxford; raco.cat (17 Jan)",
+     event: "Calderón's El golfo de las sirenas, a short sung zarzuela, is staged for the court",
+     place: "La Zarzuela",
+     scene: "Sirens sing from a floating LOG in Calderón's El golfo de las sirenas, staged for the court."}
+  - {year: 1660, peg: cheese, confidence: high, source: "WP es: Celos aun del aire matan (5 Dec)",
+     event: "Calderón and Hidalgo's opera Celos aun del aire matan is first performed",
+     place: "Buen Retiro",
+     scene: "A singer hurls a CHEESE through the air in Calderón and Hidalgo's sung opera Celos aun del aire matan."}
+  - {year: 1672, peg: coin, confidence: medium, source: "WP: Timeline of Madrid",
+     event: "The zarzuela Celos hacen estrellas by Vélez de Guevara and Hidalgo is first performed",
+     scene: "Stars made of gold COIN rain on the stage in Vélez de Guevara and Hidalgo's zarzuela Celos hacen estrellas."}
+  - {year: 1690, peg: bees, confidence: high, source: "WP es: Palacio de Anglona",
+     event: "The Anglona palace near the Plaza de la Paja is finished",
+     place: "Plaza de la Paja",
+     scene: "A swarm of BEES moves into the finished Anglona palace near the Plaza de la Paja."}
+  - {year: 1692, peg: piano, confidence: high, source: "WP es: Monasterio de El Escorial (31 Aug)",
+     event: "Charles II orders Luca Giordano to paint the vault of the Escorial staircase",
+     place: "El Escorial",
+     scene: "Luca Giordano paints the great staircase vault of the Escorial at the speed of a PIANO player's hands."}
+  - {year: 1708, peg: sofa, confidence: medium, source: "WP es: Teatro de los Caños del Peral",
+     event: "The Italian company of the Trufaldines asks to build a corral by the Caños del Peral",
+     place: "Caños del Peral",
+     scene: "The Italian Trufaldines drag a SOFA onto the stage of their new corral by the Caños del Peral wash-houses."}
+  - {year: 1713, peg: tomb, confidence: high, source: "WP es: Nuevo Baztán",
+     event: "José de Churriguera finishes the palace and church of Nuevo Baztán",
+     place: "Nuevo Baztán",
+     scene: "José de Churriguera closes the TOMB of the church crypt in his finished palace and church at Nuevo Baztán."}
+  - {year: 1732, peg: moon, confidence: high, source: "WP es: Fuente de la Fama (Madrid) (10 May)",
+     event: "Pedro de Ribera's baroque Fountain of Fame is finished at Antón Martín",
+     place: "Plazuela de Antón Martín",
+     scene: "Fame blows her trumpet at the MOON from Pedro de Ribera's new baroque fountain at Antón Martín."}
+  - {year: 1737, peg: mug, confidence: high, source: "WP es: Teatro de la Cruz",
+     event: "Pedro de Ribera's rebuilt Teatro de la Cruz opens with El hijo del sol, Faetonte",
+     place: "Calle de la Cruz",
+     scene: "Phaethon drinks fire from a MUG as Ribera's rebuilt Teatro de la Cruz opens with El hijo del sol, Faetonte."}
+  - {year: 1738, peg: movie, confidence: high, source: "WP es: Teatro de los Caños del Peral (16 Feb)",
+     event: "The new Caños del Peral theatre opens with Hasse's opera Demetrio",
+     place: "Caños del Peral",
+     scene: "A MOVIE-sized stage lights up as the new Caños del Peral theatre opens with Hasse's opera Demetrio."}
+  - {year: 1745, peg: railway, confidence: high, source: "WP es: Teatro Español",
+     event: "Sachetti and Ventura Rodríguez finish the rebuilt Teatro del Príncipe",
+     place: "Calle del Príncipe",
+     scene: "A toy RAILWAY carries scenery into the rebuilt Teatro del Príncipe, finished after ten years of work."}
+  - {year: 1752, peg: lion, confidence: high, source: "WP es: Real Academia de Bellas Artes (12 Apr)",
+     event: "The Royal Academy of Fine Arts of San Fernando is founded",
+     place: "Casa de la Panadería",
+     scene: "A stone LION opens the doors of the Royal Academy of Fine Arts of San Fernando, founded under Ferdinand VI."}
+  - {year: 1764, peg: cherry, confidence: high, source: "WP es: Real Alcázar de Madrid; Palacio Real",
+     event: "The new Royal Palace is finished, and Charles III moves in",
+     place: "Palacio Real",
+     scene: "Charles III puts a CHERRY on top of Sachetti's finished Royal Palace and moves in from the Buen Retiro."}
+  - {year: 1765, peg: jelly, confidence: high, source: "WP es: Palacio del Infante don Luis (Boadilla)",
+     event: "Ventura Rodríguez finishes the palace of the Infante Luis at Boadilla del Monte",
+     place: "Boadilla del Monte",
+     scene: "The Infante Luis serves JELLY in Ventura Rodríguez's finished palace at Boadilla del Monte."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP es: Calle Mayor (Madrid)",
+     event: "Antonio Espinosa publishes his new plan of Madrid",
+     scene: "Espinosa draws every block of Madrid on a plan as big as a SHIP's sail."}
+  - {year: 1772, peg: coin, confidence: high, source: "WP es: Teatro Real Coliseo de Carlos III",
+     event: "Marquet finishes the Royal Coliseum of Charles III, the court theatre of San Lorenzo",
+     place: "San Lorenzo de El Escorial",
+     scene: "Marquet drops a COIN in the box as his Royal Coliseum of Charles III opens at San Lorenzo de El Escorial."}
+  - {year: 1773, peg: comb, confidence: high, source: "WP es: Real Academia de Bellas Artes",
+     event: "The Academy of San Fernando moves into the Goyeneche palace on Calle de Alcalá",
+     place: "Calle de Alcalá",
+     scene: "Diego de Villanueva combs the baroque curls off the Goyeneche palace with a giant COMB before the Academy moves in."}
+  - {year: 1775, peg: eagle, confidence: high, source: "WP es: Casita del Príncipe (El Escorial)",
+     event: "Villanueva finishes the Casita del Príncipe, a garden palace at El Escorial",
+     place: "El Escorial",
+     scene: "An EAGLE nests on Villanueva's finished Casita del Príncipe, the prince's little garden palace at El Escorial."}
+  - {year: 1776, peg: cage, confidence: high, source: "WP es: Real Gabinete de Historia Natural (4 Nov)",
+     event: "The Royal Cabinet of Natural History opens to the public",
+     place: "Calle de Alcalá",
+     scene: "Dávila opens a CAGE of minerals and stuffed animals as the Royal Cabinet of Natural History opens."}
+  - {year: 1777, peg: cake, confidence: high, source: "WP es: Palacio de Buenavista (Madrid)",
+     event: "Arnal starts the Buenavista palace for the Duchess of Alba",
+     place: "Plaza de Cibeles",
+     scene: "Duchess Cayetana orders a palace like a CAKE, and Arnal starts the Buenavista palace above Cibeles."}
+  - {year: 1782, peg: oven, confidence: high, source: "WP es: Fuente de Cibeles",
+     event: "Ventura Rodríguez's Cibeles fountain is set up on the Salón del Prado",
+     place: "Plaza de Cibeles",
+     scene: "Cibeles drives her lion chariot out of an OVEN of white marble onto the new Salón del Prado."}
+  - {year: 1783, peg: foam, confidence: high, source: "WP es: Parque de El Capricho",
+     event: "The Duchess of Osuna buys the farm that becomes the garden of El Capricho",
+     place: "Alameda de Osuna",
+     scene: "The Duchess of Osuna buys a farm at Alameda de Osuna and fills its pond with FOAM for her garden, El Capricho."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP es: Palacio de Liria",
+     event: "The Liria palace of the Dukes of Berwick is finished",
+     place: "Calle de la Princesa",
+     scene: "The Duke of Berwick serves a WAFFLE in the finished Liria palace, the most comfortable house in Madrid."}
+  - {year: 1786, peg: fish, confidence: high, source: "WP es: Fuente de Neptuno (Madrid)",
+     event: "Ventura Rodríguez's Neptune fountain is finished on the Salón del Prado",
+     place: "Plaza de Cánovas del Castillo",
+     scene: "Neptune spears a FISH from his chariot in Ventura Rodríguez's finished fountain on the Salón del Prado."}
+  - {year: 1789, peg: fob, confidence: high, source: "WP es: Casa de la Villa de Madrid",
+     event: "Villanueva adds a colonnade to the Casa de la Villa for the Corpus Christi procession",
+     place: "Calle Mayor",
+     scene: "Villanueva hangs a FOB watch on the new colonnade of the Casa de la Villa so the royal family can watch the Corpus."}
+  - {year: 1792, peg: piano, confidence: high, source: "WP es: La comedia nueva o el café (7 Feb)",
+     event: "Moratín's La comedia nueva o El café is first performed",
+     place: "Teatro del Príncipe",
+     scene: "Moratín bangs a café PIANO as La comedia nueva mocks bad plays at the Teatro del Príncipe."}
+  - {year: 1798, peg: beehive, confidence: high, source: "WP es: Ermita de San Antonio de la Florida",
+     event: "Goya paints the dome of San Antonio de la Florida",
+     place: "San Antonio de la Florida",
+     scene: "Goya paints a crowd like a BEEHIVE round Saint Anthony's miracle in the dome of San Antonio de la Florida."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP es: Teatro de los Caños del Peral",
+     event: "Manuel García presents Mozart's Marriage of Figaro at the Caños del Peral",
+     place: "Caños del Peral",
+     scene: "Manuel García sings Figaro under a painted SUN as Mozart's Marriage of Figaro reaches the Caños del Peral."}
+  - {year: 1803, peg: sumo, confidence: high, source: "WP es: Casa del Labrador",
+     event: "The Casa del Labrador in the Prince's Garden at Aranjuez is finished",
+     place: "Aranjuez",
+     scene: "A SUMO wrestler lifts the last painted ceiling into the finished Casa del Labrador in the Prince's Garden at Aranjuez."}
+  - {year: 1803, peg: sumo, confidence: high, source: "WP es: Fuente de Apolo (Madrid)",
+     event: "The Fountain of Apollo on the Salón del Prado is inaugurated",
+     place: "Paseo del Prado",
+     scene: "A SUMO wrestler lifts Apollo onto the top of the new fountain on the Salón del Prado for the prince's wedding."}
+  - {year: 1805, peg: seal, confidence: high, source: "WP es: Palacio de Villahermosa (Madrid)",
+     event: "The Villahermosa palace on the Prado is rebuilt in neoclassical style",
+     place: "Paseo del Prado",
+     scene: "A SEAL balances the new neoclassical facade of the Villahermosa palace that faces the Prado."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP es: El sí de las niñas (24 Jan)",
+     event: "Moratín's El sí de las niñas is first performed at the Teatro de la Cruz",
+     place: "Teatro de la Cruz",
+     scene: "Doña Francisca refuses old Don Diego's SUSHI as El sí de las niñas opens at the Teatro de la Cruz."}
+  - {year: 1807, peg: ski, confidence: high, source: "WP es: Teatro Español",
+     event: "The Teatro del Príncipe reopens, rebuilt by Juan de Villanueva after the fire",
+     place: "Calle del Príncipe",
+     scene: "Villanueva slides on a SKI onto the stage of the Teatro del Príncipe as it reopens five years after the fire."}
+  # economy
+  - {year: 1610, peg: dice, confidence: high, source: "WP es: Posada del Peine",
+     event: "The Posada del Peine inn opens behind the Plaza Mayor",
+     place: "Calle de Postas",
+     scene: "Juan Posada rolls DICE with the first guests of his inn, the Posada del Peine, behind the Plaza Mayor."}
+  - {year: 1645, peg: railway, confidence: medium, source: "WP es: Real Casa de la Aduana",
+     event: "Madrid's first customs house, the Aduana, opens on the Plaza de la Leña",
+     place: "Calle de la Bolsa",
+     scene: "Customs men weigh goods off a RAILWAY of mule carts at Madrid's first Aduana on the Plaza de la Leña."}
+  - {year: 1661, peg: jet, confidence: high, source: "WP es: Gaceta de Madrid (Feb)",
+     event: "The first issue of the Gazette, later the Gaceta de Madrid, is printed",
+     scene: "A JET of fresh ink prints the first Gazette of political and military news in Madrid."}
+  - {year: 1667, peg: jockey, confidence: medium, source: "WP es: Cinco Gremios Mayores",
+     event: "The Five Major Guilds of Madrid form one corporation",
+     scene: "Jewellers, mercers, silk, cloth and drug merchants ride one JOCKEY together as the Five Major Guilds of Madrid."}
+  - {year: 1668, peg: chef, confidence: high, source: "WP es: Real Pósito de Madrid",
+     event: "The new Royal Granary near the Puerta de Alcalá is finished",
+     place: "Calle de Alcalá",
+     scene: "A CHEF fills the new Royal Granary near the Puerta de Alcalá with wheat to bake the town's bread."}
+  - {year: 1702, peg: sun, confidence: high, source: "WP es: Monte de Piedad de Madrid (3 Dec)",
+     event: "Father Francisco Piquer founds the Monte de Piedad pawn bank",
+     place: "Plaza de las Descalzas",
+     scene: "Father Piquer lends money under a golden SUN at his new Monte de Piedad, opposite the Descalzas Reales."}
+  - {year: 1721, peg: ant, confidence: high, source: "WP es: Real Fábrica de Tapices",
+     event: "Philip V founds the Royal Tapestry Factory of Santa Bárbara",
+     place: "Santa Bárbara",
+     scene: "An ANT weaves the first threads on the looms of Philip V's new Royal Tapestry Factory."}
+  - {year: 1725, peg: nail, confidence: high, source: "Guinness World Records",
+     event: "Botín opens on Calle de Cuchilleros, later called the oldest restaurant in the world",
+     place: "Calle de Cuchilleros",
+     scene: "Botín hangs a suckling pig on a NAIL beside the wood oven of his new inn on Calle de Cuchilleros."}
+  - {year: 1746, peg: roach, confidence: high, source: "WP es: San Fernando de Henares (29 Jun)",
+     event: "A royal decree sets up the Royal Cloth Factory at San Fernando de Henares",
+     place: "San Fernando de Henares",
+     scene: "A ROACH runs between the looms of the new Royal Cloth Factory at San Fernando de Henares."}
+  - {year: 1751, peg: wallet, confidence: medium, source: "WP: Timeline of Madrid",
+     event: "The Caracas Company sets up its headquarters in Madrid",
+     scene: "The Caracas Company carries its WALLET to Madrid and sets up its headquarters in the capital."}
+  - {year: 1758, peg: wolf, confidence: high, source: "WP es: Diario de Madrid (1 Feb)",
+     event: "The Diario noticioso, the first daily newspaper in Spain, appears in Madrid",
+     scene: "A WOLF delivers the first issue of the Diario noticioso, Spain's first daily newspaper, to Madrid's doors."}
+  - {year: 1760, peg: cheese, confidence: high, source: "WP es: Real Fábrica de Porcelana del Buen Retiro",
+     event: "Charles III founds the royal porcelain factory, La China, in the Buen Retiro",
+     place: "Buen Retiro",
+     scene: "Charles III's potters shape a porcelain CHEESE plate in the new China factory in the Buen Retiro gardens."}
+  - {year: 1766, peg: judge, confidence: high, source: "WP es: Real Cortijo de San Isidro",
+     event: "Charles III founds the model farm of the Real Cortijo de San Isidro at Aranjuez",
+     place: "Aranjuez",
+     scene: "A JUDGE in farm boots plants Charles III's model farm, the Real Cortijo de San Isidro, at Aranjuez."}
+  - {year: 1769, peg: ship, confidence: high, source: "WP es: Real Casa de la Aduana",
+     event: "Sabatini's Royal Customs House on Calle de Alcalá is nearly finished",
+     place: "Calle de Alcalá",
+     scene: "A SHIP's cargo is weighed in Sabatini's new Royal Customs House on Calle de Alcalá."}
+  - {year: 1775, peg: eagle, confidence: high, source: "WP es: Real Sociedad Económica Matritense (16 Sep)",
+     event: "The Madrid Economic Society of Friends of the Country is founded",
+     place: "Casa de la Villa",
+     scene: "Campomanes's EAGLE spreads its wings over the new Madrid Economic Society, opened at the town hall."}
+  - {year: 1778, peg: cave, confidence: high, source: "WP es: Real Fábrica de Platería Martínez (29 Apr)",
+     event: "The Royal Silverware Factory of Antonio Martínez is founded",
+     scene: "Antonio Martínez melts silver in a CAVE-like forge in his new Royal Silverware Factory."}
+  - {year: 1781, peg: foot, confidence: low, source: "Rutas Pangea (1781-1792)",
+     event: "Work starts on the Royal Factory of Spirits and Playing Cards, later the tobacco factory",
+     place: "Calle de Embajadores",
+     scene: "A FOOT stamps playing cards and brandy labels in Ballina's new Royal Factory of Spirits and Cards."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP es: Real Fábrica de Relojes",
+     event: "The Royal Clock Factory starts work in Madrid",
+     scene: "A FIFE marks the ticks as the Royal Clock Factory starts work in Madrid."}
+  - {year: 1788, peg: fife, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Work starts on the house of the Five Major Guilds by José de la Ballina",
+     scene: "The Five Major Guilds blow a FIFE as José de la Ballina starts their grand new house."}
+  # society
+  - {year: 1570, peg: goose, confidence: high, source: "WP es: Paseo del Prado",
+     event: "Philip II has rows of trees planted along the Prado Viejo, the first reform of the promenade",
+     place: "Paseo del Prado",
+     scene: "A GOOSE waddles under the first rows of trees planted along the Prado Viejo promenade."}
+  - {year: 1578, peg: cave, confidence: high, source: "WP es: Juan de Escobedo (31 Mar)",
+     event: "Hired men murder Juan de Escobedo, secretary of Don John of Austria, in a Madrid street",
+     place: "Calle Mayor",
+     scene: "Hired men jump out of a CAVE-dark alley and stab Juan de Escobedo in the street at night."}
+  - {year: 1590, peg: bees, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "The college of Doña María de Aragón, later the Senate building, opens",
+     place: "Plaza de la Marina Española",
+     scene: "BEES swarm into the new college of Doña María de Aragón, the building that later holds the Senate."}
+  - {year: 1599, peg: pipe, confidence: medium, source: "WP es: Hospital General de Atocha",
+     event: "Plague strikes Madrid; Bernardino de Obregón dies of it in the General Hospital",
+     place: "Calle de Atocha",
+     scene: "Plague slips through a PIPE into Madrid, and Bernardino de Obregón dies of it while he nurses the sick."}
+  - {year: 1604, peg: sewer, confidence: high, source: "WP es: Palacio Real de El Pardo (13 Mar)",
+     event: "A great fire destroys much of El Pardo palace and its paintings",
+     place: "El Pardo",
+     scene: "Fire races through El Pardo palace like flame in a SEWER and burns most of its paintings; Titian's Venus survives."}
+  - {year: 1622, peg: nun, confidence: high, source: "WP es: Juan de Tassis y Peralta; Gradas de San Felipe",
+     event: "The poet Count of Villamediana is murdered in Calle Mayor",
+     place: "Calle Mayor",
+     scene: "A NUN screams as an assassin kills the poet Count of Villamediana in Calle Mayor by the Oñate palace."}
+  - {year: 1625, peg: nail, confidence: high, source: "WP es: Instituto San Isidro",
+     event: "Philip IV gives the Jesuits the Reales Estudios of the Colegio Imperial",
+     place: "Calle de Toledo",
+     scene: "The Jesuits drive a NAIL through their timetable to the door of the new Royal Studies of the Colegio Imperial."}
+  - {year: 1631, peg: moth, confidence: high, source: "WP es: Plaza Mayor de Madrid",
+     event: "The first great fire burns part of the Plaza Mayor",
+     place: "Plaza Mayor",
+     scene: "A MOTH flies into a lamp as the first great fire burns along the arcades of the Plaza Mayor."}
+  - {year: 1652, peg: lion, confidence: high, source: "WP es: Basílica de Atocha (14 Aug)",
+     event: "The old church of Our Lady of Atocha burns down",
+     place: "Atocha",
+     scene: "A LION roars as the old church of Our Lady of Atocha burns down, and Philip IV orders it rebuilt."}
+  - {year: 1668, peg: chef, confidence: disputed, source: "WP es: Real Hospicio (25 Mar); Museo de Historia (1673)",
+     event: "The Congregation of the Ave María opens a hospice for the poor in Calle de Santa Isabel",
+     place: "Calle de Santa Isabel",
+     scene: "A CHEF feeds the poor as the Ave María congregation opens its hospice in Calle de Santa Isabel."}
+  - {year: 1671, peg: cat, confidence: high, source: "WP es: Monasterio de El Escorial",
+     event: "A great fire destroys thousands of manuscripts in the Escorial library",
+     place: "El Escorial",
+     scene: "A CAT drags burning codices out of the Escorial library as the great fire destroys thousands of manuscripts."}
+  - {year: 1672, peg: coin, confidence: high, source: "WP es: Plaza Mayor; Casa de la Panadería",
+     event: "The second great fire burns the Plaza Mayor and the Casa de la Panadería",
+     place: "Plaza Mayor",
+     scene: "Molten COIN drips from the burning Casa de la Panadería in the second great fire of the Plaza Mayor."}
+  - {year: 1680, peg: vase, confidence: high, source: "WP es: Puente de Toledo (Madrid)",
+     event: "A Manzanares flood sweeps away the newly finished Toledo bridge",
+     place: "Manzanares",
+     scene: "The flooded Manzanares fills like a VASE and sweeps away the new Toledo bridge just after its completion."}
+  - {year: 1690, peg: bees, confidence: high, source: "WP es: Madrid de los Austrias",
+     event: "Fire destroys the medieval church of Santos Justo y Pastor",
+     place: "Calle de San Justo",
+     scene: "BEES flee the smoke as fire destroys the medieval church of Santos Justo y Pastor."}
+  - {year: 1709, peg: soap, confidence: high, source: "WP es: Nuevo Baztán",
+     event: "Juan de Goyeneche founds Nuevo Baztán, a model town for his glass factory workers",
+     place: "Nuevo Baztán",
+     scene: "Juan de Goyeneche blows glass bubbles like SOAP bubbles in his new factory town, Nuevo Baztán."}
+  - {year: 1712, peg: tongue, confidence: high, source: "WP es: Biblioteca Nacional de España (1 Mar)",
+     event: "The Royal Library opens to the public",
+     place: "Pasadizo de la Encarnación",
+     scene: "The new Royal Library sticks out a TONGUE of open books and lets the public in at the Encarnación passage."}
+  - {year: 1718, peg: dove, confidence: high, source: "WP es: Gradas de San Felipe",
+     event: "Fire damages the church of San Felipe el Real by the Puerta del Sol",
+     place: "Calle Mayor",
+     scene: "A DOVE flies out of the burning church of San Felipe el Real above its famous steps."}
+  - {year: 1724, peg: hanger, confidence: high, source: "WP es: Iglesia de San Ginés (Madrid)",
+     event: "Fire damages San Ginés church",
+     place: "Calle del Arenal",
+     scene: "Flames climb up the San Ginés altar and burn a priest's robe on its HANGER in the sacristy."}
+  - {year: 1725, peg: nail, confidence: high, source: "WP es: Real Seminario de Nobles de Madrid",
+     event: "The Royal Seminary of Nobles, a school for young nobles, is founded",
+     place: "Calle de la Princesa",
+     scene: "A noble boy hangs his sword on a NAIL in the new Royal Seminary of Nobles run by the Jesuits."}
+  - {year: 1726, peg: nacho, confidence: high, source: "WP es: Real Hospicio de San Fernando",
+     event: "Pedro de Ribera finishes the Royal Hospice of San Fernando with its baroque doorway",
+     place: "Calle de Fuencarral",
+     scene: "Ribera carves a stone NACHO into the baroque doorway of his finished Royal Hospice on Calle de Fuencarral."}
+  - {year: 1729, peg: knob, confidence: medium, source: "esmadrid; WP: Escuelas Pías de San Fernando",
+     event: "The Escuelas Pías of San Fernando, the first Piarist school in Madrid, is founded",
+     place: "Lavapiés",
+     scene: "A Piarist father turns the KNOB of the first Escuelas Pías school in Lavapiés, free for poor children."}
+  - {year: 1734, peg: hammer, confidence: high, source: "WP es: Real Alcázar de Madrid",
+     event: "On Christmas Eve fire destroys the old Royal Alcázar",
+     place: "Real Alcázar",
+     scene: "Night watchmen beat a HAMMER on the bells as the Christmas Eve fire destroys the old Royal Alcázar."}
+  - {year: 1737, peg: mug, confidence: high, source: "museo.getafe.es",
+     event: "The Piarist school of Getafe opens",
+     place: "Getafe",
+     scene: "A Piarist teacher hands Getafe's first pupils a MUG of milk as the Escuelas Pías school opens."}
+  - {year: 1738, peg: movie, confidence: high, source: "WP es: Real Academia de la Historia (18 Apr)",
+     event: "Philip V creates the Royal Academy of History",
+     place: "Pasadizo de la Encarnación",
+     scene: "Scholars play an old MOVIE of Spain's past as Philip V creates the Royal Academy of History."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP es: Plaza de toros de la Puerta de Alcalá",
+     event: "The bullring by the Puerta de Alcalá opens, owned by the General Hospital",
+     place: "Puerta de Alcalá",
+     scene: "A bull pulls a ROPE round the new bullring by the Puerta de Alcalá, which earns money for the hospitals."}
+  - {year: 1749, peg: rope, confidence: high, source: "WP es: Planimetría General de Madrid",
+     event: "Work starts on the General Planimetry, a survey of every house and block in Madrid",
+     scene: "Surveyors stretch a ROPE along every block of Madrid as the General Planimetry survey begins."}
+  - {year: 1750, peg: lasso, confidence: high, source: "WP es: Aranjuez",
+     event: "Ferdinand VI approves the plan of the new town of Aranjuez and lets people settle there",
+     place: "Aranjuez",
+     scene: "Ferdinand VI throws a LASSO round a new grid of streets and opens Aranjuez to settlers."}
+  - {year: 1755, peg: lily, confidence: medium, source: "WP es: Madrid de los Austrias",
+     event: "Fire damages the church of La Encarnación, and Ventura Rodríguez restores it",
+     place: "Plaza de la Encarnación",
+     scene: "A LILY wilts in the heat as fire damages the Encarnación church, which Ventura Rodríguez later restores."}
+  - {year: 1756, peg: leech, confidence: high, source: "WP es: Iglesia de San Ginés (Madrid)",
+     event: "A second fire damages San Ginés church",
+     place: "Calle del Arenal",
+     scene: "A LEECH falls from the burning roof beams of San Ginés church in its second fire."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP es: Parque del Retiro; WP: Timeline of Madrid",
+     event: "Charles III opens the Buen Retiro gardens to the public",
+     place: "Buen Retiro",
+     scene: "A JOCKEY rides through the opened gates as Charles III lets the public walk in the Buen Retiro gardens."}
+  - {year: 1767, peg: jockey, confidence: high, source: "WP es: San Lorenzo de El Escorial (3 May)",
+     event: "Charles III allows houses by the Escorial monastery, the start of the town of San Lorenzo",
+     place: "San Lorenzo de El Escorial",
+     scene: "A JOCKEY marks out house plots beside the Escorial monastery as Charles III founds the town of San Lorenzo."}
+  - {year: 1771, peg: cat, confidence: high, source: "WP es: Instituto San Isidro (21 Oct)",
+     event: "The Reales Estudios reopen with fifteen chairs won by public examination",
+     place: "Calle de Toledo",
+     scene: "A CAT sits a public examination as the Royal Studies reopen with fifteen new chairs after the Jesuits leave."}
+  - {year: 1774, peg: car, confidence: high, source: "WP es: Casa de Fieras del Retiro",
+     event: "Charles III opens the Casa de Fieras, a royal menagerie, by the Retiro",
+     place: "Cuesta de Moyano",
+     scene: "A circus CAR full of lions and bears drives into the new royal menagerie, the Casa de Fieras, by the Retiro."}
+  - {year: 1777, peg: cake, confidence: high, source: "WP es: Universidad de Alcalá (histórica)",
+     event: "The university of Alcalá is separated from the college of San Ildefonso as the Royal University",
+     place: "Alcalá de Henares",
+     scene: "A CAKE is cut in two as the university of Alcalá leaves the college of San Ildefonso and becomes the Royal University."}
+  - {year: 1785, peg: waffle, confidence: high, source: "WP es: Universidad de Alcalá (6 Jun)",
+     event: "María Isidra de Guzmán becomes the first woman doctor in Spain at the university of Alcalá",
+     place: "Alcalá de Henares",
+     scene: "María Isidra de Guzmán eats a WAFFLE in her doctor's cap as the first woman doctor in Spain at Alcalá."}
+  - {year: 1790, peg: bees, confidence: high, source: "WP es: Plaza Mayor de Madrid",
+     event: "The third great fire burns a third of the Plaza Mayor",
+     place: "Plaza Mayor",
+     scene: "BEES swarm out of the smoke as the third great fire burns a third of the Plaza Mayor."}
+  - {year: 1791, peg: boot, confidence: high, source: "WP es: Palacio de Santa Cruz (Madrid)",
+     event: "Fire destroys the upper floor and the archive of the Court Prison",
+     place: "Plaza de Santa Cruz",
+     scene: "A burning BOOT kicks down the archive shelves as fire destroys the top floor of the Court Prison."}
+  - {year: 1793, peg: palm, confidence: high, source: "historiaveterinaria.org; UCM (18 Oct)",
+     event: "The Royal Veterinary School opens by the Puerta de Recoletos",
+     place: "Paseo de Recoletos",
+     scene: "A horse kicks a PALM leaf at the door as the Royal Veterinary School gives its first lesson by the Recoletos gate."}
+  - {year: 1797, peg: pig, confidence: high, source: "WP es: Plaza de toros de Aranjuez (14 May)",
+     event: "The bullring of Aranjuez opens",
+     place: "Aranjuez",
+     scene: "A PIG runs into the ring in front of the bull as the new bullring of Aranjuez opens."}
+  - {year: 1801, peg: soda, confidence: high, source: "WP es: Plaza de toros de la Puerta de Alcalá (11 May)",
+     event: "A bull kills the matador Pepe-Hillo in the Puerta de Alcalá bullring",
+     place: "Puerta de Alcalá",
+     scene: "A bull tosses Pepe-Hillo like a SODA bottle and kills him in the Puerta de Alcalá bullring."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP es: Escuela de Caminos (Nov)",
+     event: "Betancourt's School of Roads and Canals starts classes in the Buen Retiro palace",
+     place: "Buen Retiro",
+     scene: "Betancourt hangs a SUN over the Buen Retiro classroom as the first School of Roads and Canals starts lessons."}
+  - {year: 1802, peg: sun, confidence: high, source: "WP es: Teatro Español (11 Jul)",
+     event: "Fire destroys the Teatro del Príncipe",
+     place: "Calle del Príncipe",
+     scene: "A blazing SUN falls onto the stage, and fire destroys the Teatro del Príncipe."}
+  - {year: 1804, peg: sewer, confidence: medium, source: "Investigaciones Históricas; produccioncientifica.ucm",
+     event: "Famine and high bread prices strike Madrid in the subsistence crisis",
+     place: "Plaza Mayor",
+     scene: "Starving Madrileños search an empty SEWER for food as famine and high bread prices strike the town."}
+  - {year: 1806, peg: sushi, confidence: high, source: "WP es: Torre de la Parada",
+     event: "Lightning ruins the Torre de la Parada hunting lodge",
+     place: "Monte de El Pardo",
+     scene: "Lightning strikes a SUSHI platter on the roof of the Torre de la Parada and ruins the old hunting lodge."}
+world_refs:
+  - {year: 1561, event: "Philip II makes Madrid the capital", cell: western_europe_politics_1500_1800}
+  - {year: 1563, event: "Philip II lays the first stone of El Escorial", cell: western_europe_arts_1500_1800}
+  - {year: 1584, event: "El Escorial is finished", cell: western_europe_arts_1500_1800}
+  - {year: 1585, event: "Cervantes publishes La Galatea at Alcalá", cell: western_europe_arts_1500_1800}
+  - {year: 1605, event: "Don Quixote, part one, printed in Madrid", cell: western_europe_arts_1500_1800}
+  - {year: 1605, event: "Victoria publishes his Requiem in Madrid", cell: western_europe_arts_1500_1800}
+  - {year: 1609, event: "Lope de Vega publishes Arte nuevo de hacer comedias", cell: western_europe_arts_1500_1800}
+  - {year: 1613, event: "Cervantes publishes the Exemplary Novels", cell: western_europe_arts_1500_1800}
+  - {year: 1615, event: "Don Quixote, part two", cell: western_europe_arts_1500_1800}
+  - {year: 1619, event: "Fuenteovejuna published", cell: western_europe_arts_1500_1800}
+  - {year: 1627, event: "La selva sin amor, first Spanish opera, performed in Madrid", cell: western_europe_arts_1500_1800}
+  - {year: 1635, event: "Velázquez paints The Surrender of Breda for the Buen Retiro", cell: western_europe_arts_1500_1800}
+  - {year: 1636, event: "Calderón's Life Is a Dream published", cell: western_europe_arts_1500_1800}
+  - {year: 1656, event: "Velázquez paints Las Meninas in the Alcázar", cell: western_europe_arts_1500_1800}
+  - {year: 1713, event: "Real Academia Española founded", cell: western_europe_arts_1500_1800}
+  - {year: 1726, event: "Diccionario de Autoridades", cell: western_europe_arts_1500_1800}
+  - {year: 1735, event: "Work begins on the Royal Palace", cell: western_europe_arts_1500_1800}
+  - {year: 1755, event: "Royal Botanical Garden of Madrid founded", cell: western_europe_science_1500_1800}
+  - {year: 1766, event: "Esquilache riots", cell: western_europe_politics_1500_1800}
+  - {year: 1775, event: "Goya's first tapestry cartoons for Santa Bárbara", cell: western_europe_arts_1500_1800}
+  - {year: 1782, event: "Banco de San Carlos founded", cell: western_europe_economy_1500_1800}
+  - {year: 1785, event: "Villanueva begins the Prado building", cell: western_europe_arts_1500_1800}
+  - {year: 1790, event: "Royal Observatory on the Retiro hill", cell: western_europe_science_1500_1800}
+  - {year: 1799, event: "Goya publishes Los Caprichos", cell: western_europe_arts_1500_1800}
+out_refs:
+  - {year: 1598, event: "Philip II dies at El Escorial", reason: "royal death"}
+  - {year: 1599, event: "Margaret of Austria's royal entry through the Puerta de Alcalá", reason: "royal entry"}
+  - {year: 1615, event: "Isabel of Bourbon's royal entry into Madrid", reason: "royal entry"}
+  - {year: 1621, event: "Philip III dies in Madrid", reason: "royal death"}
+  - {year: 1621, event: "Treaty of Madrid on the Valtellina", reason: "treaty"}
+  - {year: 1623, event: "Prince Charles of England in Madrid for the Spanish Match", reason: "foreign royal visit"}
+  - {year: 1630, event: "Treaty of Madrid between England and Spain", reason: "treaty"}
+  - {year: 1643, event: "Philip IV makes the Virgin of Atocha protector of the monarchy", reason: "royal religious act"}
+  - {year: 1649, event: "Philip IV and Mariana of Austria hold their wedding rites at Navalcarnero", reason: "royal wedding"}
+  - {year: 1665, event: "Philip IV dies in Madrid", reason: "royal death"}
+  - {year: 1700, event: "Charles II dies; Philip V proclaimed king at the Alcázar", reason: "royal succession"}
+  - {year: 1701, event: "Philip V enters Madrid", reason: "royal entry"}
+  - {year: 1746, event: "Philip V dies at the Buen Retiro", reason: "royal death"}
+  - {year: 1752, event: "Treaty of Aranjuez", reason: "treaty"}
+  - {year: 1759, event: "Charles III enters Madrid as king", reason: "royal entry"}
+  - {year: 1763, event: "Charles III sets up the Lotería Real", reason: "national institution"}
+  - {year: 1788, event: "Charles III dies in Madrid", reason: "royal death"}
+  - {year: 1801, event: "Treaty of Aranjuez on Louisiana and Tuscany", reason: "treaty"}
+  - {year: 1801, event: "Treaty of Madrid with Portugal", reason: "treaty"}
+  - {year: 1807, event: "El Escorial conspiracy: Prince Ferdinand arrested", reason: "court plot"}

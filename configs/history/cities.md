@@ -1062,3 +1062,53 @@ Rheinsberg, Halbe. Region: western_europe (Step 0 also greps the eastern_europe 
 Expected cards are a guide, not a target. The world grid holds many Berlin events (about 230 lines in the
 western_europe cells), so yields may be lower than the expected counts.
 
+### Madrid (2026-11-25)
+
+Area: the Community of Madrid as decided: Madrid city (the Alcázar and Royal Palace, the Plaza Mayor, Puerta del
+Sol, the Retiro, the Prado and the Paseo, Atocha, Chamberí, Salamanca, Vallecas, Carabanchel, Barajas, Ciudad
+Universitaria, the Casa de Campo, El Pardo), Alcalá de Henares (Complutum, the university, Cervantes), San Lorenzo
+de El Escorial (the monastery, Cuelgamuros / Valley of the Fallen), Aranjuez, Chinchón, Getafe (Cerro de los
+Ángeles), Leganés, Alcobendas, Móstoles, Torrejón de Ardoz (the air base), Paracuellos de Jarama, Brunete,
+Navacerrada, Buitrago del Lozoya, the Lozoya and Canal de Isabel II works, the Jarama valley. Toledo, Segovia,
+Guadalajara and Ávila are OUT. Region: western_europe.
+
+- Dates: Spain moved from the Julian to the Gregorian calendar in October 1582 (4 October was followed by
+  15 October). Convert earlier dates per policy.md. Muslim Mayrit dates in Hijri convert per policy.md.
+- The OUT rule covers each government while the area is its seat:
+  - before 1561 the Castilian court travelled: a Cortes or a royal stay in Madrid, Alcalá or Aranjuez
+    (the Cortes of Madrid 1329, 1391, 1435; royal births and deaths) is OUT; town charters (fueros), town
+    council acts and buildings are IN.
+  - the Spanish Habsburg court from 1561 (Philip II makes Madrid the seat; IN as a city event) to 1700, except
+    Valladolid 1601–1606 (the move away in 1601 and the return in 1606 are IN as city events); the Bourbons
+    (1700–1808, 1814–1868, 1875–1931); Joseph Bonaparte (1808–1813); the First and Second Republics; Franco's
+    state (from 1939; the Republic left Madrid for Valencia in November 1936); democratic Spain from 1975:
+    national laws, accessions, coronations as ceremonies, royal births, marriages and funerals, Cortes and Congress
+    acts, cabinets, national elections, treaties signed in the area (Aranjuez 1752, 1801; Madrid 1526, 1750),
+    national court cases. Royal sites as buildings (El Escorial, Aranjuez, El Pardo, the Royal Palace) are IN.
+  - the Community of Madrid (from 1983) is the government of the area unit itself: its Assembly, presidents and
+    laws are IN, like the city council and mayors.
+- Acts about the city are IN even when a higher government makes them: the 1561 court move, Philip III's move
+  to Valladolid and back, the Ensanche (Castro plan, 1860), the Canal de Isabel II, the Gran Vía, the metro,
+  Franco's planning acts for Madrid, the 1983 statute of the Community.
+- Main stage (IN as cards): the Esquilache riots (1766), the Mutiny of Aranjuez (1808), the Dos de Mayo rising
+  and the Tres de Mayo shootings (1808), the 1854 Vicalvarada and revolution, the San Gil barracks rising (1866),
+  Prim's assassination (1870), the regicide attempt on the royal wedding (1906), Canalejas's assassination at
+  Puerta del Sol (1912), Dato's assassination (1921), the Republic proclaimed at Puerta del Sol (1931), the
+  burning of the convents (1931), Calvo Sotelo's killing (1936), the Montaña barracks (1936), the siege and
+  bombing of Madrid (1936–1939), the Paracuellos killings (1936), Casado's coup (1939), Carrero Blanco's
+  assassination (1973), the Atocha lawyers' massacre (1977), the 23-F coup in the Congress (1981), the 11-M
+  train bombings (2004), 15-M at Puerta del Sol (2011).
+- International congresses, summits and games held in the area are IN as city events (the 1982 World Cup final,
+  the 1991 Middle East Peace Conference, the NATO summits of 1997 and 2022, COP25 in 2019). National party
+  congresses and the Valley of the Fallen exhumation of Franco (2019) are unsure: list them in the report.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1561` | prehistoric sites of the Manzanares and Jarama, Complutum, Visigothic sites, Muslim Mayrit (Muhammad I's fort), the Christian conquest (1085), the fueros, medieval Madrid and Alcalá, Cisneros's university (1499) | 40 | ~120 |
+| `1561_1807` | the court arrives, El Escorial, the Plaza Mayor, the Buen Retiro, the Valladolid interval, the Bourbon palace, Charles III's city (Prado, Puerta de Alcalá, Botanic Garden), the Esquilache riots, Aranjuez | 45 | ~250 |
+| `1808_1930` | 1808, the French years, the Prado museum, the Canal de Isabel II, the Ensanche, the 1854 and 1868 revolutions, the first railway and tram, the metro (1919), the Gran Vía, the Telefónica | 45 | ~280 |
+| `1931_1975` | the Republic at Sol, the convent burnings, the siege, Franco's Madrid, the Valley of the Fallen, the Castellana, the 1960s growth, the 1973 assassination | 45 | ~250 |
+| `1976_present` | the Transition, Atocha 1977, the Movida, 23-F, the 1982 World Cup, the 1991 conference, Barajas T4, 11-M, 15-M, Madrid Río, the 2022 NATO summit | 45 | ~250 |
+
+Expected cards are a guide, not a target. The world grid holds about 90 Madrid lines in the western_europe cells.
+
