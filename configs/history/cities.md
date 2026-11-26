@@ -1410,3 +1410,43 @@ the Johor Strait). Johor Lama, Kota Tinggi, Muar, Batam, Bintan and Riau are OUT
 | `1965_present` | separation, the MacDonald House bombing, the British withdrawal (1971), Changi Airport (1981), the MRT (1987), SQ117, Nicoll Highway, the Esplanade, Marina Bay Sands, the 2010 Youth Olympics, Lee Kuan Yew's death (2015), COVID-19, the 2024 handover to Lawrence Wong | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Baghdad (2026-11-26)
+
+Area: Baghdad Governorate as decided (the Round City site, Karkh and Rusafa, Kadhimiya, Adhamiya, Mansour, Karrada,
+the Green Zone, Sadr City, Abu Ghraib, Tarmiyah, Mahmudiyah, the Tuwaitha nuclear site, Baghdad airport, the Diyala
+mouth) plus Ctesiphon and Seleucia on the Tigris (Salman Pak, Tell Umar, Taq Kasra) and the old sites inside the
+governorate (Tell Harmal / Shaduppum, Tell Muhammad, Aqar Quf / Dur-Kurigalzu). Samarra, Kish, Babylon, Kufa, Najaf,
+Karbala, Fallujah and Baqubah are OUT. Region: west_asia.
+
+- Dates: convert Islamic (Hijri) dates per policy.md; Ottoman Rumi dates likewise.
+- The OUT rule covers each court and government while the area is its seat: the Seleucid court at Seleucia
+  (about 305–240 BCE), the Parthian and Sasanian courts at Ctesiphon (about 129 BCE – 637 CE), the Abbasid
+  caliphs (762–1258, except the Samarra years 836–892), the Jalayirid sultans (about 1340–1410), the Ottoman
+  governors of the eyalet and vilayet of Baghdad (1534–1917) and the Mamluk pashas (1704–1831), the Kingdom of Iraq
+  (1921–1958) and the Republic (from 1958): accessions, court events, laws and acts for the whole empire, province
+  or country, campaigns abroad, treaties, national elections, cabinets, national court cases. A ruler's palace,
+  mosque, wall, gate, canal, bridge, hospital, madrasa, observatory, market, city law or flood and plague relief
+  is IN; so are the founding of the Round City (762), the House of Wisdom and the city's quarters.
+- Religious authorities (the Nestorian Catholicos at Seleucia-Ctesiphon and then Baghdad, the Abbasid-era
+  jurists) are treated like the Holy See: councils and elections OUT unless the city is the subject; building a
+  church, mosque, shrine or madrasa is IN.
+- Main stage (IN as cards): the Roman and Byzantine sieges of Ctesiphon (116, 165, 198, 283, 363, 628), the Arab
+  capture of Ctesiphon (637), the siege of Baghdad (812–813), the 865 siege, the Buyid entry (945), the Seljuk entry
+  (1055), the Mongol sack (1258), Timur's sacks (1393, 1401), the Safavid captures (1508, 1623), the Ottoman
+  captures (1534, 1638), the 1831 plague and flood, the Battle of Ctesiphon (1915), the British capture (1917), the
+  Farhud (1941), the 14 July 1958 revolution in the city, the 1963 coup fighting, the 1969 hangings in Liberation
+  Square, Osirak (1981), the Amiriyah shelter (1991), the 2003 invasion and the Firdos statue, Saddam's execution
+  (2006), the Karrada bombing (2016), the Tishreen protests (2019), the airport strike on Soleimani (2020).
+- International congresses, summits and games held in the area are IN as city events (the 1955 Baghdad Pact
+  meeting, the 1978 and 2012 Arab League summits, the 2025 Arab League summit).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre762` | Tell Harmal and the Shaduppum law tablets, Dur-Kurigalzu (Aqar Quf), Seleucia (about 305 BCE), Ctesiphon, the sieges, the Sasanian Taq Kasra, the Synod of Seleucia-Ctesiphon (410, unsure: list), the Arab capture (637) | 35 | ~80 |
+| `762_1257` | the Round City (762), Rusafa, the Barmakids' quarter, the House of Wisdom, paper mills (794), the 812–813 siege, the Mustansiriya (1233), the floods and riots, the Buyids and Seljuks in the city, the Nizamiyya (1067) | 45 | ~200 |
+| `1258_1916` | the Mongol sack, the Ilkhanid city, the Jalayirids, Timur, the Black and White Sheep, the Safavids and Ottomans, Murad IV (1638), the Mamluk pashas, the 1831 plague, Midhat Pasha's reforms (1869), the tramway (1870), the railway (1914), Ctesiphon (1915) | 45 | ~150 |
+| `1917_1978` | the British capture, the 1920 rising in the city, Faisal's capital, the 1941 coup and the Farhud, the 1948 Wathba, the 1958 revolution, the 1963 coups, the 1968 Baath coup, the 1969 hangings, the Development Board buildings, the Al-Shaheed and Victory Arch plans | 45 | ~180 |
+| `1979_present` | Saddam's Baghdad, the Iran–Iraq war missiles, Osirak, the 1991 bombing and Amiriyah, sanctions, the 2003 invasion, the Green Zone, Abu Ghraib, the 2006–2007 civil war, the 2016 Karrada bombing, the 2019 protests, the 2020 airport strike, the 2025 Arab League summit | 45 | ~200 |
+
+Expected cards are a guide, not a target.
