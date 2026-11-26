@@ -1112,3 +1112,36 @@ Guadalajara and Ávila are OUT. Region: western_europe.
 
 Expected cards are a guide, not a target. The world grid holds about 90 Madrid lines in the western_europe cells.
 
+### Chicago (2026-11-25)
+
+Area: the metropolitan area as decided: Cook County (Chicago with the Loop, the river and its branches, the
+lakefront and Lake Michigan shore, Fort Dearborn site, Hyde Park, Pullman, Bronzeville, Back of the Yards and the
+Union Stock Yards, Maxwell Street, O'Hare, Midway, Evanston, Oak Park, Cicero), the collar counties (DuPage, Kane,
+Lake, McHenry, Will: Joliet, Aurora, Elgin, Naperville, Waukegan, the Argonne site, Fermilab, Lockport and the
+I&M Canal) and northwest Indiana (Lake and Porter counties: Gary, Hammond, East Chicago, Whiting, the Indiana Dunes).
+Kenosha (Wisconsin) and Kankakee are OUT. Region: north_america.
+
+- Chicago was never a national or state capital (Illinois: Kaskaskia, Vandalia, Springfield; Indiana:
+  Indianapolis). So only acts for the whole state or country are OUT: Illinois and Indiana state laws, federal
+  laws, presidential acts, national court cases. Acts about the area are IN (the 1837 city charter, the I&M Canal
+  acts, the Sanitary District, the 1889 annexations, the Burnham Plan, Chicago court cases).
+- Indigenous history in the area is IN (Potawatomi, Miami, Illinois/Peoria villages; the 1795 Greenville and 1833
+  Chicago treaties ceding the site are IN as city events; national Indian policy is OUT).
+- National party conventions and congresses held in the area are IN as city events (the 1860 Wigwam convention,
+  the 1932 and 1968 conventions; the 1893 World's Columbian Exposition and the Parliament of Religions; the 1933
+  Century of Progress; the 1959 Pan American Games; the 1994 World Cup opening; the 2012 NATO summit).
+- Main stage (IN as cards): the Fort Dearborn battle (1812), the Great Fire (1871), the 1877 railroad strike in
+  the city, Haymarket (1886) and the trial and hangings, the Pullman strike (1894), the Eastland disaster (1915),
+  the 1919 race riot, the St. Valentine's Day massacre (1929), the Memorial Day massacre (1937), the 1966 open
+  housing marches, the 1968 riots and the convention protests, Fred Hampton's killing (1969), the 1995 heat wave.
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1833` | prehistoric and Mississippian sites, the portage, Marquette and Jolliet (1673), La Salle, the French mission, du Sable's post, Fort Dearborn (1803, 1812, 1816), the Potawatomi | 30 | ~60 |
+| `1833_1871` | the town and city charters, the 1833 treaty, the I&M Canal (1848), the railroads, the Board of Trade, raising the city, the Wigwam, Camp Douglas, the stock yards, the water tower, the Great Fire | 45 | ~200 |
+| `1872_1918` | the rebuilding, the skyscrapers, Haymarket, Hull House, the 1893 fair, the L, Pullman, the river reversal (1900), the Burnham Plan, the Eastland, the Great Migration | 45 | ~280 |
+| `1919_1955` | the race riot, the Capone years, 1929, the Century of Progress, the Depression, the Manhattan Project pile (1942), O'Hare, the first Daley election (1955) | 45 | ~250 |
+| `1956_present` | the Daley machine, expressways and housing projects, 1966 and 1968, Sears Tower, Harold Washington, the 1992 flood, the Bulls, Millennium Park, Obama, the 2012 NATO summit | 45 | ~250 |
+
+Expected cards are a guide, not a target.
+
