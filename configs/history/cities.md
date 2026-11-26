@@ -1374,3 +1374,39 @@ Kembla). The Central Coast, Newcastle, Lithgow, the Jenolan Caves and Canberra a
 | `1970_present` | the moratorium, the green bans, the Opera House opening (1973), Granville (1977), Mardi Gras, the bicentenary, the 1994 fires, the 2000 Olympics, Cronulla, APEC, the Lindt siege, the 2019–2020 fires, the metro (2019), Western Sydney Airport | 45 | ~250 |
 
 Expected cards are a guide, not a target.
+
+### Singapore (2026-11-26)
+
+Area: Singapore island and its islands (the Singapore River and the old town, Fort Canning, Kampong Glam, Chinatown,
+Little India, Tanjong Pagar, Keppel Harbour, Changi, Jurong, Sentosa (Blakang Mati), Pulau Ubin, Pulau Tekong, the
+causeway) plus Johor Bahru (the city, the Istana Besar, the Sultan Abu Bakar Mosque, Iskandar Puteri, Pasir Gudang,
+the Johor Strait). Johor Lama, Kota Tinggi, Muar, Batam, Bintan and Riau are OUT. Region: southeast_asia.
+
+- Singapore: the Straits Settlements government seated in Singapore (1832–1946; Penang and Malacca too) and
+  the British Malaya commands seated there are OUT for acts for all the Settlements or all Malaya; the Japanese
+  military administration of Malaya seated at Syonan (1942–1945) is OUT for Malaya-wide acts. The Crown Colony of
+  Singapore (1946–1959) and the State of Singapore (1959–1963) are city governments: IN. Malaysia (1963–1965) sat
+  in Kuala Lumpur: federal acts OUT unless Singapore is the subject. The Republic (from 1965) is a city-state: its
+  national acts are IN (city-state rule), but foreign treaties and summits abroad are OUT.
+- Johor Bahru: the seat of the Johor sultanate from 1866 (Tanjung Puteri; renamed Johor Bahru in 1862 or 1866, sources differ) and of the state of Johor:
+  sultans' accessions and state-wide acts OUT; the town's founding, mosque, palace, railway and causeway are IN.
+  Malaysian federal acts are OUT unless the area is the subject.
+- Acts about Singapore before 1965 are IN even when a higher government makes them (the 1819 treaty with Hussein
+  and the Temenggong, the 1824 treaty of cession, the 1826 Straits Settlements, the 1867 Crown colony, the 1946
+  separate colony, self-government (1959), merger (1963) and separation (9 August 1965)).
+- Main stage (IN as cards): the 1915 Singapore Mutiny, the Japanese invasion and the fall of Singapore (1942), Sook
+  Ching, the Japanese surrender at the Municipal Building (1945), the Maria Hertogh riots (1950), the Hock Lee bus
+  riots (1955), the 1956 Chinese middle schools riots, the 1964 race riots, the MacDonald House bombing (1965), the
+  Laju incident (1974), SQ117 (1991), the Nicoll Highway collapse (2004), the Little India riot (2013).
+- International congresses, summits and games held in the area are IN as city events (the 1971 Commonwealth
+  meeting, the 1992 ASEAN summit, the 2010 Youth Olympics, the 2018 Trump–Kim summit, the Shangri-La Dialogue,
+  the Formula One night race (2008)).
+
+| era slug | years | searches | expected cards |
+|---|---|---|---|
+| `pre1819` | Pulau Ujong, Temasek and Wang Dayuan (1330s), the Singapura kingdom and Fort Canning finds, Parameswara, the Portuguese burning of the river mouth (1613), the Johor-Riau years, Johor Bahru's prehistory | 30 | ~40 |
+| `1819_1941` | Raffles and Farquhar (1819), the 1822 town plan, the cession (1824), the Straits Settlements, the 1854 riots, Johor Bahru (1855–1866) and Abu Bakar, the Raffles Hotel, the 1915 mutiny, the causeway (1923), the naval base (1938) | 45 | ~220 |
+| `1942_1964` | the fall of Singapore, Sook Ching, Syonan, the 1945 surrender, the 1950s riots, Lim Yew Hock, the 1959 elections and self-government, HDB (1960), Jurong, merger, the 1964 riots, Konfrontasi bombs | 45 | ~180 |
+| `1965_present` | separation, the MacDonald House bombing, the British withdrawal (1971), Changi Airport (1981), the MRT (1987), SQ117, Nicoll Highway, the Esplanade, Marina Bay Sands, the 2010 Youth Olympics, Lee Kuan Yew's death (2015), COVID-19, the 2024 handover to Lawrence Wong | 45 | ~250 |
+
+Expected cards are a guide, not a target.
